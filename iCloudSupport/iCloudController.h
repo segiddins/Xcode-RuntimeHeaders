@@ -110,12 +110,12 @@
 - (void)iCloudServiceCenter:(id)arg1 didConnectDevice:(id)arg2;
 - (void)iCloudServiceCenter:(id)arg1 serviceAccountChanged:(id)arg2 onDevice:(id)arg3;
 - (void)iCloudServiceCenter:(id)arg1 serviceStatusChanged:(int)arg2 onDevice:(id)arg3;
-- (void)iCloudServiceCenter:(id)arg1 item:(id)arg2 didDownloadBytes:(long long)arg3 of:(long long)arg4 forDevice:(id)arg5;
-- (void)iCloudServiceCenter:(id)arg1 item:(id)arg2 didUploadBytes:(long long)arg3 of:(long long)arg4 forDevice:(id)arg5;
+- (void)iCloudServiceCenter:(id)arg1 item:(id)arg2 didDownloadBytes:(unsigned long long)arg3 of:(unsigned long long)arg4 forDevice:(id)arg5;
+- (void)iCloudServiceCenter:(id)arg1 item:(id)arg2 didUploadBytes:(unsigned long long)arg3 of:(unsigned long long)arg4 forDevice:(id)arg5;
 - (void)iCloudServiceCenter:(id)arg1 movedItem:(id)arg2 from:(id)arg3 to:(id)arg4 onDevice:(id)arg5;
 - (void)iCloudServiceCenter:(id)arg1 removedItem:(id)arg2 fromDevice:(id)arg3;
 - (void)iCloudServiceCenter:(id)arg1 addedItem:(id)arg2 toDevice:(id)arg3;
-- (void)iCloudServiceCenter:(id)arg1 item:(id)arg2 sizeChanged:(long long)arg3 onDevice:(id)arg4;
+- (void)iCloudServiceCenter:(id)arg1 item:(id)arg2 sizeChanged:(unsigned long long)arg3 onDevice:(id)arg4;
 - (void)iCloudServiceCenter:(id)arg1 item:(id)arg2 statusChanged:(unsigned long long)arg3 onDevice:(id)arg4;
 - (void)iCloudServiceCenter:(id)arg1 fetchedInitialItems:(id)arg2 fromDevice:(id)arg3;
 - (void)iCloudServiceCenter:(id)arg1 didReceiveAccountInformation:(id)arg2 fromDevice:(id)arg3;

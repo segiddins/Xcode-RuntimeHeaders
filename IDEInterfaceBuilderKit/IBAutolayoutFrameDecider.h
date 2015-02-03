@@ -34,6 +34,7 @@
 - (void)_propagateSize:(struct CGSize)arg1 toCanvasForItem:(id)arg2 forceFramesForIllegalStates:(BOOL)arg3;
 - (void)_propagateFrame:(struct CGRect)arg1 toCanvasForItem:(id)arg2 forceFramesForIllegalStates:(BOOL)arg3;
 - (struct CGRect)_frameToPropagateToCanvasItem:(id)arg1 suggestedFrame:(struct CGRect)arg2;
+- (BOOL)shouldPropagateFrameForFixedFrameItem:(id)arg1;
 - (id)layoutInfo;
 @property(readonly) IBAutolayoutEngine *engine;
 - (id)initWithArbitrationUnit:(id)arg1 driverOptions:(id)arg2 delegate:(id)arg3 statusInitializationBlock:(CDUnknownBlockType)arg4;

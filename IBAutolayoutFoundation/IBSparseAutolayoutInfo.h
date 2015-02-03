@@ -47,6 +47,10 @@
 - (void)registerArbitrationUnit:(id)arg1;
 - (void)setView:(id)arg1 hasAnyAmbiguity:(BOOL)arg2;
 - (BOOL)viewHasAnyAmbiguity:(id)arg1;
+- (void)setView:(id)arg1 hasCandidateReferencingConstraints:(BOOL)arg2;
+- (BOOL)viewHasCandidateReferencingConstraints:(id)arg1;
+- (void)setView:(id)arg1 canHaveUninitializedAutolayoutAmbiguityStatus:(BOOL)arg2;
+- (BOOL)viewCanHaveUninitializedAutolayoutAmbiguityStatus:(id)arg1;
 - (void)setView:(id)arg1 hasUninitializedAutolayoutStatus:(BOOL)arg2;
 - (BOOL)viewHasUninitializedAutolayoutStatus:(id)arg1;
 - (void)setView:(id)arg1 isVerticallyResizable:(BOOL)arg2;

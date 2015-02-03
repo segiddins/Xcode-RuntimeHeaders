@@ -10,6 +10,7 @@
 {
 }
 
+- (BOOL)requiresDeveloperAccount;
 - (BOOL)isAppStoreBound;
 - (int)supportedTask;
 

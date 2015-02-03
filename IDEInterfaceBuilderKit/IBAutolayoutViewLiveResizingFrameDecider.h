@@ -19,6 +19,7 @@
 + (void)initialize;
 - (void).cxx_destruct;
 - (void)decideAndSetFramesOfEntireViewHierarchyForLiveResizingViewToLayoutSize:(struct CGSize)arg1;
+- (BOOL)shouldPropagateFrameForFixedFrameItem:(id)arg1;
 - (id)initWithArbitrationUnit:(id)arg1 driverOptions:(id)arg2 delegate:(id)arg3 sizingView:(id)arg4 statusInitializationBlock:(id)arg5;
 
 @end

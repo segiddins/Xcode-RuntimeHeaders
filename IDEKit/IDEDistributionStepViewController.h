@@ -11,12 +11,14 @@
 @interface IDEDistributionStepViewController : IDEViewController
 {
     BOOL _wantsNextAction;
+    BOOL _cancelled;
     IDEDistributionContext *_context;
     IDEDistributionAssistantWindowController *_assistantWindowController;
 }
 
 + (BOOL)skipStepForContext:(id)arg1 assistantDirection:(int)arg2;
 + (void)initialize;
+@property(getter=isCancelled) BOOL cancelled; // @synthesize cancelled=_cancelled;
 @property(readonly) BOOL wantsNextAction; // @synthesize wantsNextAction=_wantsNextAction;
 @property(readonly) IDEDistributionAssistantWindowController *assistantWindowController; // @synthesize assistantWindowController=_assistantWindowController;
 @property(readonly) IDEDistributionContext *context; // @synthesize context=_context;

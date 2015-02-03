@@ -10,6 +10,7 @@
 {
 }
 
+- (BOOL)requiresDeveloperAccount;
 - (id)exportStepName;
 - (id)subtitle;
 - (id)title;

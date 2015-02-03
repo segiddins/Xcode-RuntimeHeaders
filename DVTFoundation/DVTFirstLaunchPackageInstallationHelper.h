@@ -28,6 +28,7 @@
 - (id)_cacheFilePath;
 - (id)darwinUserCacheDirectoryPath;
 - (void)_createCacheFileIfNeeded:(id)arg1;
+- (id)initWithDelegate:(id)arg1 packagesOnly:(BOOL)arg2;
 - (id)initWithDelegate:(id)arg1;
 @property __weak id <DVTPackageInstallerHelperDelegate> delegate;
 

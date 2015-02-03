@@ -12,6 +12,7 @@
 {
     DVTFuture *_recoveryFuture;
     unsigned long long _retryCounter;
+    BOOL _useLocalSigningAssets;
     DVTReplacementView *_replacementView;
     NSArray *_errors;
     NSSet *_devices;
@@ -24,6 +25,7 @@
 + (id)keyPathsForValuesAffectingCanGoPrevious;
 + (id)keyPathsForValuesAffectingTitle;
 + (void)initialize;
+@property BOOL useLocalSigningAssets; // @synthesize useLocalSigningAssets=_useLocalSigningAssets;
 @property(retain) NSSet *devices; // @synthesize devices=_devices;
 @property(retain, nonatomic) NSArray *errors; // @synthesize errors=_errors;
 @property(retain) DVTReplacementView *replacementView; // @synthesize replacementView=_replacementView;

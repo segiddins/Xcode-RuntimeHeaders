@@ -32,6 +32,8 @@
 - (id)constraintsAffectingLayoutOfView:(id)arg1 forOrientations:(unsigned long long)arg2 inEngine:(id)arg3;
 - (id)constraintsAffectingLayoutOfView:(id)arg1 forOrientations:(unsigned long long)arg2;
 - (id)computeStatusFromEngine:(id)arg1;
+- (void)_updateUninitializedAmbiguityStatusForMutableEffectiveAmbiguousViewStatusGroups:(id)arg1;
+- (id)_makeAmbiguityGroupForAmbiguityStatus:(id)arg1 orientationMask:(unsigned long long)arg2;
 - (id)_ambiguityStatusGroupsFromAmbiguousViewsToAmbiguityStatus:(id)arg1 engine:(id)arg2;
 - (id)_ambiguousViewGroupsByViewForOrientation:(unsigned long long)arg1 ambiguousViewsToAmbiguityStatus:(id)arg2 engine:(id)arg3 originalAmbiguityStatusMasksByView:(id)arg4;
 - (void)_determineAndAddAmbiguityGroupingForView:(id)arg1 relativeToView:(id)arg2 toMutableAmbiguousViewGroupsByView:(id)arg3 inOrientation:(unsigned long long)arg4 givenAmbiguityStatusMasksByViewAtBeginningOfPass:(id)arg5 engine:(id)arg6;

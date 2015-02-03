@@ -39,7 +39,7 @@
 - (id)addItemToCache:(id)arg1;
 - (id)cachedItemForLocalURL:(id)arg1 createIfNeeded:(BOOL)arg2;
 - (id)rootItem;
-- (id)cachedItemForLocalURL:(id)arg1 type:(id)arg2 status:(unsigned long long)arg3 size:(long long)arg4 modified:(id)arg5;
+- (id)cachedItemForLocalURL:(id)arg1 type:(id)arg2 status:(unsigned long long)arg3 size:(unsigned long long)arg4 modified:(id)arg5;
 - (BOOL)hasCachedItemForLocalURL:(id)arg1;
 - (void)processLine:(id)arg1;
 - (void)processBytes:(const char *)arg1 length:(unsigned long long)arg2;

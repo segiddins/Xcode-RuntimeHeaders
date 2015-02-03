@@ -11,12 +11,12 @@
 - (void)iCloudServiceCenter:(iCloudServiceCenter *)arg1 didConnectDevice:(DVTDevice *)arg2;
 - (void)iCloudServiceCenter:(iCloudServiceCenter *)arg1 serviceAccountChanged:(NSDictionary *)arg2 onDevice:(DVTDevice *)arg3;
 - (void)iCloudServiceCenter:(iCloudServiceCenter *)arg1 serviceStatusChanged:(int)arg2 onDevice:(DVTDevice *)arg3;
-- (void)iCloudServiceCenter:(iCloudServiceCenter *)arg1 item:(id <iCloudItem>)arg2 didDownloadBytes:(long long)arg3 of:(long long)arg4 forDevice:(DVTDevice *)arg5;
-- (void)iCloudServiceCenter:(iCloudServiceCenter *)arg1 item:(id <iCloudItem>)arg2 didUploadBytes:(long long)arg3 of:(long long)arg4 forDevice:(DVTDevice *)arg5;
+- (void)iCloudServiceCenter:(iCloudServiceCenter *)arg1 item:(id <iCloudItem>)arg2 didDownloadBytes:(unsigned long long)arg3 of:(unsigned long long)arg4 forDevice:(DVTDevice *)arg5;
+- (void)iCloudServiceCenter:(iCloudServiceCenter *)arg1 item:(id <iCloudItem>)arg2 didUploadBytes:(unsigned long long)arg3 of:(unsigned long long)arg4 forDevice:(DVTDevice *)arg5;
 - (void)iCloudServiceCenter:(iCloudServiceCenter *)arg1 movedItem:(id <iCloudItem>)arg2 from:(NSURL *)arg3 to:(NSURL *)arg4 onDevice:(DVTDevice *)arg5;
 - (void)iCloudServiceCenter:(iCloudServiceCenter *)arg1 removedItem:(id <iCloudItem>)arg2 fromDevice:(DVTDevice *)arg3;
 - (void)iCloudServiceCenter:(iCloudServiceCenter *)arg1 addedItem:(id <iCloudItem>)arg2 toDevice:(DVTDevice *)arg3;
-- (void)iCloudServiceCenter:(iCloudServiceCenter *)arg1 item:(id <iCloudItem>)arg2 sizeChanged:(long long)arg3 onDevice:(DVTDevice *)arg4;
+- (void)iCloudServiceCenter:(iCloudServiceCenter *)arg1 item:(id <iCloudItem>)arg2 sizeChanged:(unsigned long long)arg3 onDevice:(DVTDevice *)arg4;
 - (void)iCloudServiceCenter:(iCloudServiceCenter *)arg1 item:(id <iCloudItem>)arg2 statusChanged:(unsigned long long)arg3 onDevice:(DVTDevice *)arg4;
 - (void)iCloudServiceCenter:(iCloudServiceCenter *)arg1 fetchedInitialItems:(NSArray *)arg2 fromDevice:(DVTDevice *)arg3;
 - (void)iCloudServiceCenter:(iCloudServiceCenter *)arg1 didReceiveAccountInformation:(NSDictionary *)arg2 fromDevice:(DVTDevice *)arg3;

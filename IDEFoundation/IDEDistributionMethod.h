@@ -19,6 +19,7 @@
 @property(readonly) NSString *group; // @synthesize group=_group;
 @property(readonly) double sortOrder; // @synthesize sortOrder=_sortOrder;
 - (void).cxx_destruct;
+@property(readonly) BOOL requiresDeveloperAccount;
 @property(readonly) NSString *packagingStepIdentifier;
 @property(readonly) NSString *exportStepName;
 @property(readonly) NSDictionary *requiredProfileEntitlements;

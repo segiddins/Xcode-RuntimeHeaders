@@ -99,10 +99,10 @@
 - (BOOL)isRootItem;
 - (void)_setUploadProgress:(double)arg1;
 - (void)_setDownloadProgress:(double)arg1;
-- (id)initWithLocalURL:(id)arg1 type:(id)arg2 status:(unsigned long long)arg3 size:(long long)arg4 modified:(id)arg5 itemProvider:(id)arg6;
+- (id)initWithLocalURL:(id)arg1 type:(id)arg2 status:(unsigned long long)arg3 size:(unsigned long long)arg4 modified:(id)arg5 itemProvider:(id)arg6;
 - (id)initWithLocalURL:(id)arg1 itemProvider:(id)arg2;
-- (long long)_computedLocalSize;
-- (long long)_childrenSize;
+- (unsigned long long)_computedLocalSize;
+- (unsigned long long)_childrenSize;
 - (id)initWithJSON:(id)arg1 localURL:(id)arg2 itemProvider:(id)arg3;
 - (void)_takeDataFromJSON:(id)arg1;
 @property(readonly, nonatomic) NSString *localType; // @synthesize localType=_localType;

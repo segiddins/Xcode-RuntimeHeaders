@@ -16,6 +16,7 @@
 @property(readonly, nonatomic) __weak IBDocument *document; // @synthesize document=_document;
 - (void).cxx_destruct;
 - (void)endUndoGrouping;
+- (void)discardActionsAndClearChangeCountIfNeeded;
 - (void)removeAllActionsWithTarget:(id)arg1;
 - (void)removeAllActions;
 - (void)redo;

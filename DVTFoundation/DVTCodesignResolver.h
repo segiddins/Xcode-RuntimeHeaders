@@ -10,6 +10,7 @@
 {
 }
 
++ (id)adHocProfileCodesignableDeviceSentinel;
 + (id)appStoreProfileCodesignableDeviceSentinel;
 + (id)parametersForIdentity:(id)arg1 profileUUID:(id)arg2 andBundleIdentifier:(id)arg3 platform:(id)arg4 destinationDevice:(id)arg5 withError:(id *)arg6;
 + (id)parametersForIdentity:(id)arg1 profileUUID:(id)arg2 andBundleIdentifier:(id)arg3 requiringProfile:(_Bool)arg4 platform:(id)arg5 destinationDevice:(id)arg6 withError:(id *)arg7;

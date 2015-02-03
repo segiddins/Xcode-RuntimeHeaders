@@ -20,6 +20,7 @@
 - (void)ibPrimitiveRemoveConstraintsFromCandidateListOnly:(id <IBCollection>)arg1 keepingInDocument:(IBDocument *)arg2;
 - (void)ibPrimitiveAddConstraintsToCandidateListOnly:(id <IBCollection>)arg1 thatAreAlreadyInDocument:(IBDocument *)arg2;
 - (void)ibInvalidateCachedInstalledConstraints;
+- (BOOL)ibCanHaveUninitializedAutolayoutAmbiguityStatusInDocument:(IBDocument *)arg1;
 - (void)ibVerifyConstraintsAreSortedInDocument:(IBDocument *)arg1;
 - (void)ibRemoveCandidateConstraints:(id <IBCollection>)arg1;
 - (void)ibAddCandidateConstraints:(id <IBCollection>)arg1 offInEmptyConfigurationAndOnInConfiguration:(IBMemberConfiguration *)arg2;

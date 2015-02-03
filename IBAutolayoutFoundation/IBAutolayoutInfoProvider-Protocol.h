@@ -19,6 +19,8 @@
 - (NSObject *)arbitrationUnitRootForObject:(NSObject *)arg1;
 - (IBAutolayoutArbitrationUnit *)arbitrationUnitForObject:(id)arg1;
 - (NSArray *)allArbitrationUnits;
+- (BOOL)viewHasCandidateReferencingConstraints:(NSObject<IBAutolayoutItem> *)arg1;
+- (BOOL)viewCanHaveUninitializedAutolayoutAmbiguityStatus:(NSObject<IBAutolayoutItem> *)arg1;
 - (BOOL)viewHasAnyAmbiguity:(NSObject<IBAutolayoutItem> *)arg1;
 - (BOOL)viewHasUninitializedAutolayoutStatus:(NSObject<IBAutolayoutItem> *)arg1;
 - (BOOL)viewIsVerticallyResizable:(NSObject<IBAutolayoutItem> *)arg1;

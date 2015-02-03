@@ -33,6 +33,8 @@
 @property(nonatomic) BOOL useAutolayout; // @synthesize useAutolayout=_useAutolayout;
 @property(readonly, nonatomic) __weak IBDocument *document; // @synthesize document=_document;
 - (void).cxx_destruct;
+- (BOOL)viewHasCandidateReferencingConstraints:(id)arg1;
+- (BOOL)viewCanHaveUninitializedAutolayoutAmbiguityStatus:(id)arg1;
 - (BOOL)viewHasAnyAmbiguity:(id)arg1;
 - (BOOL)viewHasUninitializedAutolayoutStatus:(id)arg1;
 - (BOOL)viewIsVerticallyResizable:(id)arg1;

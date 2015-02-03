@@ -61,6 +61,7 @@
 - (void)takeScreenshot:(id)arg1;
 - (void)viewLogs:(id)arg1;
 @property(readonly) BOOL showApplicationList;
+- (void)viewWillUninstall;
 - (void)viewDidInstall;
 - (void)loadView;
 - (void)primitiveInvalidate;

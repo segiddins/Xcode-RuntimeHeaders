@@ -11,11 +11,13 @@
 @interface IDEAccountTeamPickerWindowController : DVTPagingSheetWindowController
 {
     BOOL _wantsMultipleSelection;
+    BOOL _wantsEmptySelectionOption;
     DVTTeamRecord *_previouslySelectedTeam;
     NSString *_userFacingReason;
     NSString *_comprehensiveUserFacingReason;
     CDUnknownBlockType _teamFilter;
     NSString *_noFilterResultsUserFacingReason;
+    NSString *_emptySelectionOptionTitle;
     NSMapTable *_selectedAccountsToTeamsMap;
     NSError *_error;
     NSMapTable *_allAccountsToAllTeamDictionariesFromToken;
@@ -26,6 +28,8 @@
 @property(copy, nonatomic) NSMapTable *allAccountsToAllTeamDictionariesFromToken; // @synthesize allAccountsToAllTeamDictionariesFromToken=_allAccountsToAllTeamDictionariesFromToken;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(retain, nonatomic) NSMapTable *selectedAccountsToTeamsMap; // @synthesize selectedAccountsToTeamsMap=_selectedAccountsToTeamsMap;
+@property(retain, nonatomic) NSString *emptySelectionOptionTitle; // @synthesize emptySelectionOptionTitle=_emptySelectionOptionTitle;
+@property(nonatomic) BOOL wantsEmptySelectionOption; // @synthesize wantsEmptySelectionOption=_wantsEmptySelectionOption;
 @property(retain, nonatomic) NSString *noFilterResultsUserFacingReason; // @synthesize noFilterResultsUserFacingReason=_noFilterResultsUserFacingReason;
 @property(copy, nonatomic) CDUnknownBlockType teamFilter; // @synthesize teamFilter=_teamFilter;
 @property(nonatomic) BOOL wantsMultipleSelection; // @synthesize wantsMultipleSelection=_wantsMultipleSelection;

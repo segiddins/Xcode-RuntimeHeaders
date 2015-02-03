@@ -84,7 +84,7 @@
     BOOL _topLevelViewsShouldMaintainOriginalFrameWhenMovedToTheTopLevel;
     BOOL _launchScreen;
     BOOL _shouldDisplayLockedMemberAlertForNextAutomaticUndo;
-    BOOL _markDocumentAsCleanAndDiscardUndoableEventsAtEndOfUndoGroup;
+    BOOL _shouldDiscardUndoActionsAndClearChangeCount;
     NSString *_defaultModuleName;
     IBClassDescriber *_classDescriber;
     IBSystemClassProvider *_systemClassProvider;
@@ -166,7 +166,7 @@
 + (id)documents;
 + (Class)metricsInferrerClass;
 @property(retain, nonatomic) IBTemporaryPasteboardClassProvider *temporaryPasteboardClassProvider; // @synthesize temporaryPasteboardClassProvider=_temporaryPasteboardClassProvider;
-@property BOOL markDocumentAsCleanAndDiscardUndoableEventsAtEndOfUndoGroup; // @synthesize markDocumentAsCleanAndDiscardUndoableEventsAtEndOfUndoGroup=_markDocumentAsCleanAndDiscardUndoableEventsAtEndOfUndoGroup;
+@property BOOL shouldDiscardUndoActionsAndClearChangeCount; // @synthesize shouldDiscardUndoActionsAndClearChangeCount=_shouldDiscardUndoActionsAndClearChangeCount;
 @property(retain, nonatomic) IBSourceCodeClassProvider *sourceCodeClassProvider; // @synthesize sourceCodeClassProvider=_sourceCodeClassProvider;
 @property(retain) NSObject *memberWarnedForLockedPropertyChange; // @synthesize memberWarnedForLockedPropertyChange=_memberWarnedForLockedPropertyChange;
 @property BOOL shouldDisplayLockedMemberAlertForNextAutomaticUndo; // @synthesize shouldDisplayLockedMemberAlertForNextAutomaticUndo=_shouldDisplayLockedMemberAlertForNextAutomaticUndo;
@@ -270,6 +270,8 @@
 - (void)createConfigurationPropertyStoragesForAllObjects;
 - (void)createConfigurationPropertyStorageIfNeededForObject:(id)arg1;
 - (id)configurationPropertyStorageForObject:(id)arg1;
+- (BOOL)viewHasCandidateReferencingConstraints:(id)arg1;
+- (BOOL)viewCanHaveUninitializedAutolayoutAmbiguityStatus:(id)arg1;
 - (BOOL)viewHasAnyAmbiguity:(id)arg1;
 - (BOOL)viewHasUninitializedAutolayoutStatus:(id)arg1;
 - (BOOL)viewIsVerticallyResizable:(id)arg1;
@@ -400,7 +402,7 @@
 - (id)effectiveVersionForDocumentDependency:(id)arg1;
 - (id)explicitVersionForDocumentDependency:(id)arg1;
 - (long long)allSystemsTarget;
-- (void)markDocumentAsCleanAndDiscardUndoableEvents;
+- (void)scheduleDiscardingUndoActionsAndClearingChangeCount;
 - (void)invokeWithUndoSuppressed:(CDUnknownBlockType)arg1;
 - (void)hintSelectionForUndo:(id)arg1;
 - (void)undoManagerWasReset:(id)arg1;
