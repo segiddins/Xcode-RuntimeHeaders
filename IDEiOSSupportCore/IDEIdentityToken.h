@@ -8,28 +8,26 @@
 
 #import "IDEArchivePackagerIdentityToken.h"
 
-@class DTDKProvisioningProfile, NSString;
+@class DVTSigningCertificate, NSString;
 
 @interface IDEIdentityToken : NSObject <IDEArchivePackagerIdentityToken>
 {
     int _status;
-    NSString *_commonName;
-    DTDKProvisioningProfile *_provisioningProfile;
-    NSString *_certificateType;
-    struct OpaqueSecCertificateRef *_certificate;
+    DVTSigningCertificate *_certificate;
+    id <DVTProvisioningProfile> _provisioningProfile;
 }
 
 + (id)tokenForSigningIdentityNamed:(id)arg1;
 + (id)tokenForProvisioningProfileNamed:(id)arg1;
 + (id)allTokensForBundleIdentifier:(id)arg1;
 + (id)allTokens;
-+ (id)refreshToken;
 + (id)dontSignToken;
 + (id)tokenWithProfile:(id)arg1;
-+ (id)tokenWithCertificate:(struct OpaqueSecCertificateRef *)arg1;
-+ (id)tokenWithCertificate:(struct OpaqueSecCertificateRef *)arg1 andProfile:(id)arg2;
++ (id)tokenWithCertificate:(id)arg1;
++ (id)tokenWithCertificate:(id)arg1 andProfile:(id)arg2;
 @property(readonly) int status; // @synthesize status=_status;
-@property(readonly, copy) DTDKProvisioningProfile *provisioningProfile; // @synthesize provisioningProfile=_provisioningProfile;
+@property(readonly) id <DVTProvisioningProfile> provisioningProfile; // @synthesize provisioningProfile=_provisioningProfile;
+@property(readonly) DVTSigningCertificate *certificate; // @synthesize certificate=_certificate;
 - (void).cxx_destruct;
 - (long long)compare:(id)arg1;
 @property(readonly) unsigned long long hash;
@@ -38,12 +36,10 @@
 - (id)displayName;
 - (id)unadornedDisplayName;
 - (id)relatedTokenForKey:(id)arg1;
-@property(readonly, copy) NSString *teamID;
-@property(readonly, copy) NSString *certificateType; // @synthesize certificateType=_certificateType;
-@property(readonly) struct OpaqueSecCertificateRef *certificate; // @synthesize certificate=_certificate;
-@property(readonly, copy) NSString *commonName; // @synthesize commonName=_commonName;
+@property(readonly) NSString *teamID;
+@property(readonly) NSString *certificateType;
+@property(readonly) NSString *commonName;
 - (id)certificateUtilities;
-- (void)dealloc;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

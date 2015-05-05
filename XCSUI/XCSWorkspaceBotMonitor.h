@@ -30,6 +30,7 @@
 @property(copy, nonatomic) NSArray *bots; // @synthesize bots=_bots;
 @property(retain, nonatomic) IDEWorkspace *workspace; // @synthesize workspace=_workspace;
 - (void).cxx_destruct;
+- (void)_performTransactionalUpdateBlockOnMainQueue:(CDUnknownBlockType)arg1;
 - (void)postAlertsForIntegrationID:(id)arg1 service:(id)arg2;
 - (void)updateBotClientsInService:(id)arg1;
 - (void)filterBotsToWorkspace:(BOOL)arg1;

@@ -11,11 +11,15 @@
 @interface IDEPlaygroundLayoutManager : DVTLayoutManager
 {
     DVTMutableRangeArray *_sectionCharRanges;
+    CDStruct_bf6d4a14 _inlineToysInset;
 }
 
++ (Class)_dvtDefaultTypesetterClass;
+@property CDStruct_bf6d4a14 inlineToysInset; // @synthesize inlineToysInset=_inlineToysInset;
 - (void).cxx_destruct;
 - (void)mergeAnnotationsAtParagraphIndex:(unsigned long long)arg1;
-- (void)textStorage:(id)arg1 edited:(unsigned long long)arg2 range:(struct _NSRange)arg3 changeInLength:(long long)arg4 invalidatedRange:(struct _NSRange)arg5;
+- (void)textStorage:(id)arg1 didReplaceCharactersInRange:(struct _NSRange)arg2 withString:(id)arg3 changeInLength:(long long)arg4;
+- (id)accessoryAnnotationsInTextContainer:(id)arg1;
 - (void)removeSectionWithCharacterRange:(struct _NSRange)arg1;
 - (void)addSectionWithCharacterRange:(struct _NSRange)arg1;
 @property(copy) NSArray *sectionCharacterRanges;

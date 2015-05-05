@@ -31,7 +31,7 @@
 @property unsigned long long cpuCount; // @synthesize cpuCount=_cpuCount;
 @property(copy) NSString *cpuKind; // @synthesize cpuKind=_cpuKind;
 - (void).cxx_destruct;
-- (void)stopDebuggingXPCServicesForPID:(int)arg1;
+- (void)stopDebuggingXPCServices:(id)arg1;
 - (void)debugXPCServices:(id)arg1;
 - (void)_enableExtension:(id)arg1;
 - (void)attachToServiceName:(id)arg1 pid:(int)arg2 parentPID:(int)arg3 stdoutFH:(id)arg4 stderrFH:(id)arg5;
@@ -50,6 +50,7 @@
 - (BOOL)supportsDebuggingForAskOnLaunch;
 - (BOOL)supportsUnhostedXPCServiceDebugging;
 - (BOOL)supportsXPCServiceDebugging;
+- (unsigned long long)supportedLaunchOptions;
 - (BOOL)canRunMultipleInstancesPerApp;
 - (BOOL)supportsDebugAsDifferentUser;
 - (BOOL)supportsDebuggingDocumentVersioning;

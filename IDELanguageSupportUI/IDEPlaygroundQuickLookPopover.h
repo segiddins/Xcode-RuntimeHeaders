@@ -18,6 +18,7 @@
 - (struct CGRect)_maxContentSizeForQuickLookOnScreen:(id)arg1;
 - (void)showQuickLookContentView:(id)arg1 relativeToRect:(struct CGRect)arg2 ofView:(id)arg3;
 - (void)showQuickLookContentView:(id)arg1 relativeToView:(id)arg2;
+- (void)showToyHostingViewController:(id)arg1 relativeToView:(id)arg2;
 - (id)init;
 
 @end

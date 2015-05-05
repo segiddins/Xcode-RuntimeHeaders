@@ -7,6 +7,6 @@
 #import "Xcode3Target.h"
 
 @interface Xcode3Target (Xcode3SourceListItemEditing)
-+ (id)supportedSourceListItemEditorClasses;
+- (id)supportedSourceListItemEditorClasses;
 @end
 

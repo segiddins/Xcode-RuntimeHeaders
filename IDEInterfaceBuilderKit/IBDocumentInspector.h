@@ -61,6 +61,8 @@
 - (BOOL)documentNeedsToUpgradeDependencyToEnableAutolayout:(id)arg1;
 - (id)upgradeTargetsForDocuments:(id)arg1;
 - (id)autolayoutDependencyExtensionParameterForDocument:(id)arg1 matchingVersion:(long long)arg2;
+- (BOOL)shouldShowUseConfigurationsCheckbox;
+- (BOOL)shouldShowUseAutolayoutCheckbox;
 - (void)setUseConfigurationsStateForUIOnly:(long long)arg1;
 - (void)setUseAutolayoutStateForUIOnly:(long long)arg1;
 - (void)resetLocalizationLocking:(id)arg1;

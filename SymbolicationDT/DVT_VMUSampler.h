@@ -99,6 +99,7 @@
 - (id)initWithTask:(unsigned int)arg1;
 - (id)initWithPID:(int)arg1;
 - (id)initWithPID:(int)arg1 orTask:(unsigned int)arg2 options:(unsigned long long)arg3;
+- (id)initWithPID:(int)arg1 task:(unsigned int)arg2 processName:(id)arg3 is64Bit:(BOOL)arg4 options:(unsigned long long)arg5;
 
 @end
 

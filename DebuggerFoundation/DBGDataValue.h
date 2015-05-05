@@ -58,6 +58,7 @@
 - (id)_childWithName:(id)arg1;
 - (void)classNameHierarchy:(CDUnknownBlockType)arg1;
 - (void)ensureAllDisplayablePropertiesAreLoaded:(CDUnknownBlockType)arg1;
+@property(readonly) BOOL mightRespondToSelectors;
 @property(readonly) BOOL representsNullObjectPointer;
 @property(readonly) BOOL representsNilObjectiveCObject;
 - (void)watch;

@@ -60,6 +60,7 @@
     NSString *_priorMasterDocumentPath;
     NSString *_outputStringsFilePath;
     NSString *_compilationOutputPath;
+    NSString *_compilationOutputDirectory;
     NSString *_strippingOutputPath;
     NSString *_documentOutputFormat;
     NSString *_minimumDeploymentTarget;
@@ -92,6 +93,7 @@
 @property(copy) NSString *minimumDeploymentTarget; // @synthesize minimumDeploymentTarget=_minimumDeploymentTarget;
 @property(copy) NSString *documentOutputFormat; // @synthesize documentOutputFormat=_documentOutputFormat;
 @property(copy) NSString *strippingOutputPath; // @synthesize strippingOutputPath=_strippingOutputPath;
+@property(copy) NSString *compilationOutputDirectory; // @synthesize compilationOutputDirectory=_compilationOutputDirectory;
 @property(copy) NSString *compilationOutputPath; // @synthesize compilationOutputPath=_compilationOutputPath;
 @property BOOL extractLocalizableArrays; // @synthesize extractLocalizableArrays=_extractLocalizableArrays;
 @property BOOL extractLocalizableToManyRelationships; // @synthesize extractLocalizableToManyRelationships=_extractLocalizableToManyRelationships;

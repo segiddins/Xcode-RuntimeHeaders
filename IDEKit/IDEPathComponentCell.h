@@ -14,9 +14,11 @@
     BOOL _isLastItem;
     BOOL _isFirstItem;
     NSImage *_realImage;
+    unsigned long long _textAlignment;
 }
 
 + (id)_textDrawingAttributes;
+@property unsigned long long textAlignment; // @synthesize textAlignment=_textAlignment;
 @property BOOL isFirstItem; // @synthesize isFirstItem=_isFirstItem;
 @property BOOL isLastItem; // @synthesize isLastItem=_isLastItem;
 @property int gradientStyle; // @synthesize gradientStyle=_gradientStyle;

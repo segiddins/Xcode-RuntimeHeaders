@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
     NSString *_masked_value_str;
     NSString *_summary_str;
     NSString *_expr_path_str;
+    int _lldbFormat;
     BOOL _value_has_changed;
     BOOL _uses_masked_value;
     BOOL _in_scope;
@@ -33,19 +34,20 @@ __attribute__((visibility("hidden")))
     BOOL _requestedSummary;
     BOOL _representsNilObjectiveCObject;
     BOOL _representsNullObjectPointer;
+    BOOL _mightRespondToSelectors;
     NSArray *_classNameHierarchy;
     BOOL _markedForInvalidationFromTheSessionThread;
     BOOL _isDictionarySynthesizedParent;
-    BOOL _isSessionThread;
     BOOL _shouldUsePlaceholderChildDataValues;
 }
 
 + (id)_dataValueWithDisplayName:(id)arg1 tag:(unsigned long long)arg2;
 + (id)supportedDataValueFormats;
 + (int)dynamicValueType;
++ (id)_persistenceKeyForValueWithName:(id)arg1 inStackFrame:(id)arg2;
++ (int)_persistedLLDBFormatForValueName:(id)arg1 inStackFrame:(id)arg2;
 + (void)initialize;
 @property(readonly) BOOL shouldUsePlaceholderChildDataValues; // @synthesize shouldUsePlaceholderChildDataValues=_shouldUsePlaceholderChildDataValues;
-@property(readonly) BOOL isSessionThread; // @synthesize isSessionThread=_isSessionThread;
 @property BOOL markedForInvalidationFromTheSessionThread; // @synthesize markedForInvalidationFromTheSessionThread=_markedForInvalidationFromTheSessionThread;
 - (id)parent;
 - (id)staticType;
@@ -59,13 +61,11 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (id)_dataValueFormatForLLDBFormat:(int)arg1;
-- (void)_updateValueFormatsForStackFrame:(id)arg1;
-- (void)_persistValueFormat:(id)arg1 stackFrame:(id)arg2;
-- (id)_contextNameForFormatsWithStackFrame:(id)arg1;
-- (id)_contextNameForStackFrame:(id)arg1;
+- (void)_persistLLDBFormat:(id)arg1;
 - (id)_classNameHierarchyStartingWithType:(struct SBType)arg1;
 - (void)classNameHierarchy:(CDUnknownBlockType)arg1;
 - (void)ensureAllDisplayablePropertiesAreLoaded:(CDUnknownBlockType)arg1;
+- (BOOL)mightRespondToSelectors;
 - (BOOL)_calculateRepresentsNullObjectPointer;
 - (BOOL)representsNullObjectPointer;
 - (BOOL)_calculateRepresentsNilObjectiveCObject;
@@ -79,7 +79,6 @@ __attribute__((visibility("hidden")))
 - (id)_lldbValueDescription;
 - (id)lldbDescription;
 - (void)setFormat:(id)arg1;
-- (void)_primitiveSetFormat:(id)arg1;
 - (id)format;
 - (const char *)valueAsCString;
 - (id)primitiveChildValues;

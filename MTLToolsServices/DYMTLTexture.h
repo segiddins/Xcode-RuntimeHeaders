@@ -54,14 +54,12 @@
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
-@property(readonly, nonatomic) int internalID;
 @property(readonly, nonatomic) BOOL isStatic;
 @property(readonly, copy, nonatomic) NSString *label;
 @property(readonly, nonatomic) unsigned long long objectID;
 @property(readonly, nonatomic) NSMutableDictionary *properties;
 @property(readonly, nonatomic) unsigned int resourceType;
 @property(readonly) Class superclass;
-@property(readonly, nonatomic) unsigned int target;
 
 @end
 

@@ -14,6 +14,9 @@
 - (id)lastObject;
 - (id)firstObject;
 - (long long)indexOfObject:(id)arg1;
+- (id)objectAtIndex:(unsigned long long)arg1;
+- (BOOL)ib_binarySearchForObject:(id)arg1 usingComparator:(long long (^)(id, id))arg2;
+- (unsigned long long)ib_indexOfFirstObjectPassingTest:(BOOL (^)(id))arg1;
 - (id <IBOrderedCollection>)ib_collectionByReversingObjects;
 - (id <IBOrderedCollection>)ib_collectionByRemovingObject:(id)arg1;
 - (id <IBOrderedCollection>)ib_collectionByInsertingObjects:(id <IBCollection>)arg1 atIndex:(long long)arg2;

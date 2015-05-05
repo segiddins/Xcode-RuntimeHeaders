@@ -20,7 +20,6 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_resumeActions;
     NSMutableArray *_actionsOnSessionThread;
     DVTDispatchLock *_actionsLock;
-    struct _opaque_pthread_t *_sessionThread;
     BOOL _shouldSetIsLongRunningConsoleCommand;
     BOOL _isLongRunningConsoleCommand;
     NSObject<OS_dispatch_queue> *_isLongRunningConsoleCommandQueue;
@@ -45,6 +44,7 @@ __attribute__((visibility("hidden")))
     BOOL _shouldIssueKillAfterPause;
     int _initialProfileScanType;
     int _actualProfileScanType;
+    struct _opaque_pthread_t *_sessionThreadIdentifier;
     NSMutableArray *_actionsWhenPaused;
     NSMutableArray *_expressionsWhenPaused;
 }
@@ -60,6 +60,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) int actualProfileScanType; // @synthesize actualProfileScanType=_actualProfileScanType;
 @property int initialProfileScanType; // @synthesize initialProfileScanType=_initialProfileScanType;
 @property(nonatomic, getter=isProfilingEnabled) BOOL profilingEnabled; // @synthesize profilingEnabled=_profilingEnabled;
+@property struct _opaque_pthread_t *sessionThreadIdentifier; // @synthesize sessionThreadIdentifier=_sessionThreadIdentifier;
 @property BOOL targetShouldNotAutoContinue; // @synthesize targetShouldNotAutoContinue=_targetShouldNotAutoContinue;
 @property BOOL isTracingOnDeviceAndTargetGotJetsam; // @synthesize isTracingOnDeviceAndTargetGotJetsam=_isTracingOnDeviceAndTargetGotJetsam;
 - (id).cxx_construct;
@@ -142,7 +143,6 @@ __attribute__((visibility("hidden")))
 - (void)_addBreakpointHitCallback:(struct SBBreakpoint)arg1;
 - (void)requestLoadDylibAtPath:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)requestMovePCInStackFrame:(id)arg1 toLineNumber:(unsigned long long)arg2;
-- (BOOL)supportsPCAnnotationDragging;
 - (BOOL)supportsMultiplePCAnnotation;
 - (void)executeDebuggerCommand:(id)arg1 threadID:(unsigned long long)arg2 stackFrameID:(unsigned long long)arg3;
 - (void)executeConsoleCommand:(id)arg1 threadID:(unsigned long long)arg2 stackFrameID:(unsigned long long)arg3;
@@ -165,7 +165,7 @@ __attribute__((visibility("hidden")))
 - (void)requestStepIn;
 - (void)_appendProcessControlAction:(int)arg1 scope:(int)arg2 arg:(unsigned long long)arg3 location:(id)arg4;
 - (void)_appendProcessControlAction:(int)arg1 scope:(int)arg2 arg:(unsigned long long)arg3;
-- (void)_setSessionThreadID:(struct _opaque_pthread_t *)arg1;
+- (void)_setSessionThreadIdentifier:(struct _opaque_pthread_t *)arg1;
 - (BOOL)currentThreadIsSessionThread;
 - (void)debuggerHasStandardOutput;
 - (void)_resetFlagsForTestingLongRunningConsoleCommand;

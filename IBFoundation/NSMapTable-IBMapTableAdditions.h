@@ -8,6 +8,7 @@
 
 @interface NSMapTable (IBMapTableAdditions)
 + (id)ib_strongToStrongObjectsMapTable;
+- (id)ib_objectForKey:(id)arg1 creatingIfNecessaryWithBlock:(CDUnknownBlockType)arg2;
 - (void)ib_addObject:(id)arg1 toSetForKey:(id)arg2;
 - (void)ib_addObject:(id)arg1 toArrayForKey:(id)arg2;
 - (id)ib_collectionOfClass:(Class)arg1 forKey:(id)arg2;

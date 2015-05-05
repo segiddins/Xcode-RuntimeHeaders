@@ -33,7 +33,7 @@
 @property(retain) DVTGradientImageButton *addAppButton; // @synthesize addAppButton=_addAppButton;
 @property(retain) DVTBorderedView *appsTableFooterView; // @synthesize appsTableFooterView=_appsTableFooterView;
 @property(retain) DVTTableView *appsTableView; // @synthesize appsTableView=_appsTableView;
-@property(retain, nonatomic) DVTDevice<DVTDeviceApplicationInstaller> *device; // @synthesize device=_device;
+@property(readonly, nonatomic) DVTDevice<DVTDeviceApplicationInstaller> *device; // @synthesize device=_device;
 - (void).cxx_destruct;
 - (void)_refreshAppsTable;
 - (void)_updateAppsTableFromDevice;
@@ -52,6 +52,7 @@
 - (void)tableViewSelectionDidChange:(id)arg1;
 - (void)loadView;
 - (void)primitiveInvalidate;
+- (id)initWithDevice:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

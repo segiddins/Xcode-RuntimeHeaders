@@ -15,6 +15,8 @@
 @interface IDETemplate : NSObject <NSPasteboardWriting, NSPasteboardReading, IDETemplateOptionParent>
 {
     BOOL _chooserOnly;
+    BOOL _hiddenFromLibrary;
+    BOOL _hiddenFromChooser;
     NSString *_defaultCompletionName;
     NSImage *_templateIcon;
     NSString *_mainTemplateFile;
@@ -48,6 +50,8 @@
 @property(retain, nonatomic) IDEWorkspace *workspace; // @synthesize workspace=_workspace;
 @property long long sortOrder; // @synthesize sortOrder=_sortOrder;
 @property(readonly, copy) NSString *buildableType; // @synthesize buildableType=_buildableType;
+@property(readonly) BOOL hiddenFromChooser; // @synthesize hiddenFromChooser=_hiddenFromChooser;
+@property(readonly) BOOL hiddenFromLibrary; // @synthesize hiddenFromLibrary=_hiddenFromLibrary;
 @property(readonly) BOOL chooserOnly; // @synthesize chooserOnly=_chooserOnly;
 @property(readonly, copy) NSArray *templateOptions; // @synthesize templateOptions=_templateOptions;
 @property(readonly) NSArray *templatePlatforms; // @synthesize templatePlatforms=_templatePlatforms;
@@ -70,6 +74,7 @@
 - (id)currentCompletionName;
 @property(readonly, copy) NSString *defaultCompletionName; // @synthesize defaultCompletionName=_defaultCompletionName;
 - (long long)templateCompare:(id)arg1;
+@property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)identifier;
@@ -81,7 +86,6 @@
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) Class superclass;
 
 @end

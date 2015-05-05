@@ -269,6 +269,8 @@
 - (void)ibResumeAutoResizingSubviews:(id)arg1;
 - (id)ibStopAutoResizingSubviewsWhileGrowingFromKnob:(long long)arg1 inDocument:(id)arg2;
 - (BOOL)ibPrefersFlippedFrameCoordinates;
+- (void)ibSizeToFit;
+- (BOOL)ibCanSizeToFit;
 - (BOOL)ibIsVerticallyResizable;
 - (BOOL)ibIsHorizontallyResizable;
 - (BOOL)ibIsSizable;
@@ -316,7 +318,8 @@
 @property(readonly, nonatomic) NSObject<IBIDEAutolayoutItem> *ibDesignableContentItem;
 - (id)ibDesignableContainerViewInDocument:(id)arg1;
 @property(readonly, nonatomic) NSView *ibDesignableContentView;
-@property(copy) NSView *ibArchivedDesignableContentView;
+- (void)setIbArchivedDesignableContentView:(id)arg1 unarchiver:(id)arg2;
+@property(readonly, nonatomic) NSView *ibArchivedDesignableContentView;
 - (void)ibRegisterUndoActionInDocument:(id)arg1 forChangeToStorage:(id)arg2 property:(id)arg3 fromValue:(id)arg4 inConfiguration:(id)arg5;
 - (void)ibDidAddWithDefaultChildrenToDocument:(id)arg1;
 - (BOOL)ibShouldIncludeKeyPath:(id)arg1 inInitialChildrenForDocument:(id)arg2;
@@ -324,6 +327,7 @@
 @property(retain) NSView *ibXcode5ContentView;
 - (id)ibXcode5ContentViewToUseForDocument:(id)arg1;
 - (void)ibVerifyXcode5ContentViewIsCorrectClassForDocument:(id)arg1;
+- (void)verifyFramesInSyncForViewsForAutoresizingMasks;
 - (void)ibVerifyXcode5ContentViewWithDocument:(id)arg1;
 - (void)ibDocumentDidChangeDevelopmentTarget:(id)arg1;
 - (id)ibContextLabelForAttributeSearchLocation:(id)arg1 inDocument:(id)arg2;
@@ -337,13 +341,14 @@
 - (void)ibForwardValueForAttribute:(id)arg1 toConfigurationPropertyStorage:(id)arg2 inConfiguration:(id)arg3;
 - (id)ibLocalPerConfigurationToManyChildRelationshipKeyPaths;
 - (id)ibLocalPerConfigurationAttributeKeyPaths;
+- (BOOL)ibAllowConfigurationPropertyMemberStorageUpdateForNonResizableFramesInDocument:(id)arg1;
 - (BOOL)ibIsChildTypicalConnectionTarget:(id)arg1;
 - (BOOL)ibSelectingChildWithMouseRequiresEditorConsent:(id)arg1;
 - (struct CGRect)ibRectForChild:(id)arg1 inFrameController:(id)arg2;
 - (id)ibSecondaryHitTestingRectsForChild:(id)arg1 inFrameController:(id)arg2;
 - (id)ibHitRectsForConstraint:(id)arg1 inFrameController:(id)arg2;
 - (void)ibDidRemoveChildren:(id)arg1 fromDocument:(id)arg2;
-- (void)ibWillRemoveFromDocument:(id)arg1 previouslyMemberOfGroup:(id)arg2;
+- (void)ibWillRemoveFromDocument:(id)arg1 previouslyMemberOfGroup:(id)arg2 identifierInGroup:(id)arg3;
 - (void)ibDidAddToDocument:(id)arg1 phase:(unsigned long long)arg2;
 - (id)ibBeginDesigningInDocument:(id)arg1;
 - (id)ibUnembedChildrenInDocument:(id)arg1;
@@ -359,7 +364,7 @@
 - (void)ibInvalidateWarningsAfterDescendant:(id)arg1 changedProperty:(id)arg2 inDocument:(id)arg3 fromValue:(id)arg4;
 - (BOOL)ibCanBeBaseObjectOfEditorFrame;
 - (id)ibAttributeSnapshot;
-- (void)ibTakePastedAttributes:(id)arg1;
+- (void)ibTakePastedAttributes:(id)arg1 inConfiguration:(id)arg2;
 - (id)ibPasteboardTypes;
 - (id)ibTypeNameForDefaultLabel;
 - (BOOL)ibUsesWidgetTypeForTypeNameForDefaultLabel;

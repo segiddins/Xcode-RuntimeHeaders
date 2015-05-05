@@ -6,13 +6,13 @@
 
 #import <GPUTraceDebuggerUI/GPUSharedUIState.h>
 
-@class DVTMapTable, DVTObservingToken, GPUTraceGroupItem, GPUTraceProgramGroup, IDELaunchSession, IDEWorkspace;
+@class DVTObservingToken, GPUTraceGroupItem, GPUTraceProgramGroup, IDELaunchSession, IDEWorkspace, NSMapTable;
 
 @interface GPUSharedWorkspaceUIState : GPUSharedUIState
 {
     IDEWorkspace *_workspace;
     DVTObservingToken *_debuggingAdditionsObservation;
-    DVTMapTable *_debuggingAdditionsObserversMap;
+    NSMapTable *_debuggingAdditionsObserversMap;
     GPUTraceGroupItem *_rootResourceGroup;
     GPUTraceProgramGroup *_rootProgramGroup;
     IDELaunchSession *_syntheticLaunchSession;

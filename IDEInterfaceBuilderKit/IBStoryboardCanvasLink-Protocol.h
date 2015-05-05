@@ -6,13 +6,13 @@
 
 #import "NSObject.h"
 
-@class NSObject;
+@class NSObject<IBPrimarySceneObject>;
 
 @protocol IBStoryboardCanvasLink <NSObject>
 @property(readonly) BOOL canvasLinkWantsExclusiveHook;
 @property(readonly) BOOL canvasLinkRequiresSourceCanvasFrame;
-@property(readonly) NSObject *canvasLinkDestination;
-@property(readonly) NSObject *canvasLinkSource;
+@property(readonly) NSObject<IBPrimarySceneObject> *canvasLinkDestination;
+@property(readonly) NSObject<IBPrimarySceneObject> *canvasLinkSource;
 - (BOOL)isSelectable;
 @end
 

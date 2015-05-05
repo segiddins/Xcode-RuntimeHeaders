@@ -27,6 +27,7 @@
     NSFileHandle *_stdinFileHandle;
     NSFileHandle *_stdoutFileHandle;
     NSFileHandle *_stderrFileHandle;
+    long long _externalDisplayType;
     NSString *_simulatedDeviceInfoName;
     NSString *_localizedClientName;
     NSNumber *_simulatedDeviceFamily;
@@ -40,6 +41,7 @@
 @property(copy) NSNumber *simulatedDeviceFamily; // @synthesize simulatedDeviceFamily=_simulatedDeviceFamily;
 @property(copy) NSString *localizedClientName; // @synthesize localizedClientName=_localizedClientName;
 @property(copy, nonatomic) NSString *simulatedDeviceInfoName; // @synthesize simulatedDeviceInfoName=_simulatedDeviceInfoName;
+@property long long externalDisplayType; // @synthesize externalDisplayType=_externalDisplayType;
 @property BOOL launchForBackgroundFetch; // @synthesize launchForBackgroundFetch=_launchForBackgroundFetch;
 @property(retain) NSFileHandle *stderrFileHandle; // @synthesize stderrFileHandle=_stderrFileHandle;
 @property(retain) NSFileHandle *stdoutFileHandle; // @synthesize stdoutFileHandle=_stdoutFileHandle;
@@ -56,8 +58,10 @@
 @property(retain, nonatomic) SimRuntime *runtime; // @synthesize runtime=_runtime;
 - (void).cxx_destruct;
 - (id)description;
-@property(copy, nonatomic) DTiPhoneSimulatorSystemRoot *simulatedSystemRoot;
+@property(retain, nonatomic) DTiPhoneSimulatorSystemRoot *simulatedSystemRoot;
 @property(retain, nonatomic) SimDevice *device; // @synthesize device=_device;
+@property(readonly, copy) NSDictionary *toolSpawnOptions;
+@property(readonly, copy) NSDictionary *appLaunchOptions;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)init;
 

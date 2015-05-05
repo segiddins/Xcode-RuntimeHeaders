@@ -12,9 +12,9 @@
 
 @interface DVTModelObject : NSObject <DVTModelObject>
 {
+    int _retainCount;
     DVTModelObjectGraph *_objectGraph;
     id _observationInfo;
-    int _retainCount;
 }
 
 - (void).cxx_destruct;

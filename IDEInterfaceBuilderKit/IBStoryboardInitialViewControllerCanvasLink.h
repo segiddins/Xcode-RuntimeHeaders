@@ -8,16 +8,20 @@
 
 #import "IBStoryboardCanvasLink.h"
 
-@class NSString;
+@class NSObject<IBPrimarySceneObject>, NSObject<IBStoryboardEntryPointIndicator>, NSString;
 
 @interface IBStoryboardInitialViewControllerCanvasLink : NSObject <IBStoryboardCanvasLink>
 {
-    NSObject *_canvasLinkSource;
-    NSObject *_canvasLinkDestination;
+    BOOL _selected;
+    NSObject<IBStoryboardEntryPointIndicator> *_entryPointIndicator;
+    NSObject<IBPrimarySceneObject> *_canvasLinkSource;
+    NSObject<IBPrimarySceneObject> *_canvasLinkDestination;
 }
 
-@property(readonly) NSObject *canvasLinkDestination; // @synthesize canvasLinkDestination=_canvasLinkDestination;
-@property(retain) NSObject *canvasLinkSource; // @synthesize canvasLinkSource=_canvasLinkSource;
+@property(nonatomic, getter=isSelected) BOOL selected; // @synthesize selected=_selected;
+@property(readonly) NSObject<IBPrimarySceneObject> *canvasLinkDestination; // @synthesize canvasLinkDestination=_canvasLinkDestination;
+@property(retain) NSObject<IBPrimarySceneObject> *canvasLinkSource; // @synthesize canvasLinkSource=_canvasLinkSource;
+@property(retain) NSObject<IBStoryboardEntryPointIndicator> *entryPointIndicator; // @synthesize entryPointIndicator=_entryPointIndicator;
 - (void).cxx_destruct;
 - (BOOL)isSelectable;
 @property(readonly) BOOL canvasLinkWantsExclusiveHook;

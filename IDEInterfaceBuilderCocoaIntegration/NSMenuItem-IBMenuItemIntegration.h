@@ -17,6 +17,7 @@
 - (BOOL)ibCanBeValidPopoverSegueSource;
 - (id)ibSegueTriggers;
 - (id)ibDefaultSegueTrigger;
+- (id)ibDefaultImage;
 - (void)setIbInspectedMixedStateImage:(id)arg1;
 - (id)ibInspectedMixedStateImage;
 - (void)setIbInspectedOnStateImage:(id)arg1;

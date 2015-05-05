@@ -6,7 +6,7 @@
 
 #import "NSWindowController.h"
 
-@class DVTBorderedView, DVTNotificationToken, DVTObservingToken, DVTRolloverImageButton, DVTScrollView, DVTTableView, IDEButtonWithBackgroundColor, IDEFirstLaunchExperienceViewController, IDEInfiniteLineBox, IDEWelcomeWindowHighlightButton, NSArrayController, NSBox, NSImageView, NSMutableArray, NSProgressIndicator, NSString, NSTextField, NSTrackingArea, NSView;
+@class DVTBorderedView, DVTNotificationToken, DVTObservingToken, DVTRolloverImageButton, DVTScrollView, DVTTableView, IDEButtonWithBackgroundColor, IDEFirstLaunchExperienceViewController, IDEInfiniteLineBox, IDERecentsHelper, IDEWelcomeWindowHighlightButton, NSArrayController, NSBox, NSImageView, NSProgressIndicator, NSString, NSTextField, NSTrackingArea, NSView;
 
 @interface IDEWelcomeWindowController : NSWindowController
 {
@@ -26,7 +26,7 @@
     BOOL _showingFirstLaunchExperience;
     DVTNotificationToken *_projectsScrollViewFrameChangeNotificationToken;
     DVTObservingToken *_projectsListChangedNotificationToken;
-    NSMutableArray *_watchedFilePaths;
+    IDERecentsHelper *_recentsHelper;
     id <IDEWelcomeWindowButtonProvider> _secretButtonProvider;
     BOOL _transientControlsHidden;
     NSArrayController *_projectsArrayController;
@@ -99,11 +99,7 @@
 - (void)_configureWindow;
 - (void)_configureWindowLauncherButtons;
 - (void)windowDidLoad;
-- (void)_clearRecentProjectsList;
 - (void)_setProgressIndicatorVisible:(BOOL)arg1;
-- (void)_updateRecentProjectsDoAsync:(BOOL)arg1;
-- (id)_processURLsFromRecentInfoArray:(id)arg1;
-- (void)_updateRecentProjects;
 - (void)windowWillLoad;
 @property(readonly) NSString *xcodeVersion;
 

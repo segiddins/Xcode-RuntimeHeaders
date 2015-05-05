@@ -14,8 +14,9 @@
 }
 
 - (void).cxx_destruct;
+- (id)url;
 - (id)quickLookViewForNaturalSize;
-- (id)initWithObjectReflection:(id)arg1;
+- (id)attributedTitle;
 
 @end
 

@@ -25,10 +25,11 @@
     DVTStackBacktrace *_finishBacktrace;
     struct vector<void (^)(long, signed char *), std::__1::allocator<void (^)(long, signed char *)>> _progressBlocks;
     struct vector<void (^)(DVTFutureState, id, NSError *), std::__1::allocator<void (^)(DVTFutureState, id, NSError *)>> _finishBlocks;
-    struct unordered_map<DVTFuture *, long, (null)<anonymous>::objc_pointer_hasher, std::__1::equal_to<DVTFuture *>, std::__1::allocator<std::__1::pair<DVTFuture *const, long>>> _linkedSubFutures;
+    struct unordered_map<DVTFuture *, long, (anonymous namespace)::objc_pointer_hasher, std::__1::equal_to<DVTFuture *>, std::__1::allocator<std::__1::pair<DVTFuture *const, long>>> _linkedSubFutures;
 }
 
 + (id)futureWithOperation:(id)arg1;
++ (id)cancelledFuture;
 + (id)futureWithResult:(id)arg1;
 + (id)futureWithError:(id)arg1;
 + (id)futureWithBlock:(CDUnknownBlockType)arg1;

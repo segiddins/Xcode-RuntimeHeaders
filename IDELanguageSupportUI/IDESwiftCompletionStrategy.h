@@ -12,8 +12,6 @@
 
 + (void)initialize;
 - (id)bestMatchForPrefix:(id)arg1 inCompletionItems:(id)arg2 withContext:(id)arg3;
-- (id)_buildSettingsForDocument:(id)arg1 index:(id)arg2;
-- (id)_buildSettingsFromDictionary:(id)arg1;
 - (id)completionItemsForDocumentLocation:(id)arg1 context:(id)arg2 highlyLikelyCompletionItems:(id *)arg3 areDefinitive:(char *)arg4;
 - (void)prepareForDocumentLocation:(id)arg1 context:(id)arg2;
 - (id)init;

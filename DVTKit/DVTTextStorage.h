@@ -87,7 +87,7 @@
 - (struct _NSRange)methodDefinitionRangeAtIndex:(unsigned long long)arg1;
 - (struct _NSRange)methodCallRangeAtIndex:(unsigned long long)arg1;
 - (id)importStatementStringAtCharacterIndex:(unsigned long long)arg1;
-- (id)importStatementStringAtCharacterIndex:(unsigned long long)arg1 isModule:(char *)arg2;
+- (id)importStatementStringAtCharacterIndex:(unsigned long long)arg1 effectiveRange:(struct _NSRange *)arg2 isModule:(char *)arg3;
 - (id)symbolNameAtCharacterIndex:(unsigned long long)arg1 nameRanges:(id *)arg2;
 - (unsigned long long)nextExpressionFromIndex:(unsigned long long)arg1 forward:(BOOL)arg2;
 @property(getter=isExpressionMovement) BOOL expressionMovement;
@@ -131,7 +131,6 @@
 - (struct _NSRange)characterRangeFromDocumentLocation:(id)arg1;
 - (void)_dumpLineOffsetsTable;
 - (id)_debugStringFromUnsignedIntegers:(const unsigned long long *)arg1 count:(unsigned long long)arg2;
-- (void)serviceAvailabilityNotification:(BOOL)arg1 message:(id)arg2;
 - (void)scheduleLazyInvalidationForRange:(struct _NSRange)arg1;
 - (void)_updateLazyInvalidationForEditedRange:(struct _NSRange)arg1 changeInLength:(long long)arg2;
 - (void)_processLazyInvalidation;

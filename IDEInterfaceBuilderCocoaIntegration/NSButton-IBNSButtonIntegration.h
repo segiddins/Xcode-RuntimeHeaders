@@ -10,6 +10,10 @@
 - (unsigned long long)ibOrientationsForSizingToFitFromLibrary;
 - (void)ibVerifyFrameToControlSizeConsistency;
 - (id)ibQualifyingInfoForDefaultLabel;
+- (id)ibLocalAttributeKeyPaths;
 - (id)ibInitialConnectionLabelSearchTerm;
+
+// Remaining properties
+@property(getter=isSpringLoaded) BOOL springLoaded;
 @end
 

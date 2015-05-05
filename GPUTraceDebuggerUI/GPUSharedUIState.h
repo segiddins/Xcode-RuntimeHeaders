@@ -8,12 +8,12 @@
 
 #import "DVTInvalidation.h"
 
-@class DVTMapTable, DVTStackBacktrace, NSObject<OS_dispatch_queue>, NSString;
+@class DVTStackBacktrace, NSMapTable, NSObject<OS_dispatch_queue>, NSString;
 
 @interface GPUSharedUIState : NSObject <DVTInvalidation>
 {
     NSObject<OS_dispatch_queue> *_queue;
-    DVTMapTable *_stateTable;
+    NSMapTable *_stateTable;
     NSString *_identifier;
 }
 

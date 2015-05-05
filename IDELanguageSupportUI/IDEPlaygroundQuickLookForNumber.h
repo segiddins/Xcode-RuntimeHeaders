@@ -6,15 +6,10 @@
 
 #import <IDELanguageSupportUI/IDEBasicPlaygroundQuickLookForObjectReflection.h>
 
-@class IDEPlaygroundLoggerObjectReflectionForNumber;
-
 @interface IDEPlaygroundQuickLookForNumber : IDEBasicPlaygroundQuickLookForObjectReflection
 {
-    IDEPlaygroundLoggerObjectReflectionForNumber *_objectReflectionForNumber;
 }
 
-@property(readonly) IDEPlaygroundLoggerObjectReflectionForNumber *objectReflectionForNumber; // @synthesize objectReflectionForNumber=_objectReflectionForNumber;
-- (void).cxx_destruct;
 - (id)initWithObjectReflection:(id)arg1;
 
 @end

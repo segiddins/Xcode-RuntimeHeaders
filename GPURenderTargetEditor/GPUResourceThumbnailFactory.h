@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class NSBundle, NSObject<OS_dispatch_semaphore>;
+@class NSBundle, NSCache, NSObject<OS_dispatch_semaphore>;
 
 __attribute__((visibility("hidden")))
 @interface GPUResourceThumbnailFactory : NSObject
@@ -18,14 +18,19 @@ __attribute__((visibility("hidden")))
         long long opaque2;
     } _freeRenderers;
     struct ImageRenderer *_renderers[8];
+    NSCache *_thumbnailImageCache;
 }
 
 + (id)sharedThumbnailFactory;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (void)invalidateThumbnailForResource:(id)arg1;
+- (id)thumbnailWithResourceItem:(id)arg1 withContentsScale:(double)arg2 nocache:(BOOL)arg3;
 - (id)thumbnailWithResourceItem:(id)arg1 withContentsScale:(double)arg2;
 - (id)defaultImageForResourceItem:(id)arg1;
-- (id)_generateThumbnailForImage:(id)arg1 withContentsScale:(double)arg2;
+- (id)_generateThumbnailForImage:(id)arg1 withContentsScale:(double)arg2 nocache:(BOOL)arg3;
+- (id)_imageFromThumbnailCacheForResourceItem:(id)arg1;
+- (void)_addImageToThumbnailCache:(id)arg1 forResourceItem:(id)arg2 withCost:(unsigned long long)arg3;
 - (void)dealloc;
 - (id)init;
 

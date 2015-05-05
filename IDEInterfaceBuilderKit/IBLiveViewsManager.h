@@ -27,7 +27,7 @@
 }
 
 + (id)managerForWorkspace:(id)arg1;
-+ (id)managersDictionary;
++ (id)managersByWorkspace;
 + (void)initialize;
 @property(retain) IBLiveViewsBundleBlueprintMap *bundlesByBlueprintMap; // @synthesize bundlesByBlueprintMap=_bundlesByBlueprintMap;
 @property(nonatomic, getter=isEnabled) BOOL enabled; // @synthesize enabled=_enabled;

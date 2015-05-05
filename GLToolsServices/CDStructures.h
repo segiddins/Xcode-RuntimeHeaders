@@ -257,6 +257,14 @@ struct vector<GPUTools::FD::Function, std::__1::allocator<GPUTools::FD::Function
     } __end_cap_;
 };
 
+struct vector<unsigned long long, std::__1::allocator<unsigned long long>> {
+    unsigned long long *__begin_;
+    unsigned long long *__end_;
+    struct __compressed_pair<unsigned long long *, std::__1::allocator<unsigned long long>> {
+        unsigned long long *__first_;
+    } __end_cap_;
+};
+
 #pragma mark Typedef'd Structures
 
 // Template types
@@ -286,4 +294,12 @@ typedef struct unordered_set<unsigned long long, std::__1::hash<unsigned long lo
         } _field4;
     } _field1;
 } unordered_set_febeaddf;
+
+typedef struct vector<unsigned long long, std::__1::allocator<unsigned long long>> {
+    unsigned long long *__begin_;
+    unsigned long long *__end_;
+    struct __compressed_pair<unsigned long long *, std::__1::allocator<unsigned long long>> {
+        unsigned long long *__first_;
+    } __end_cap_;
+} vector_7dcb3552;
 

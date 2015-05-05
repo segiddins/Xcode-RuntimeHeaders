@@ -6,11 +6,11 @@
 
 #import "NSObject.h"
 
-@class DVTTextDocumentLocation, IDELaunchSession, IDENavigableItem, IDEWorkspaceDocument;
+@class DVTTextDocumentLocation, IDEDebugSession, IDELaunchSession, IDENavigableItem, IDEWorkspaceDocument;
 
 @protocol IDEDebugSessionController <NSObject>
 + (IDENavigableItem *)descendantItemForRepresentedObject:(id)arg1 inRootNavigableItem:(IDENavigableItem *)arg2;
-@property(readonly) id <IDEDebugSession> debugSession;
+@property(readonly) IDEDebugSession *debugSession;
 - (void)openMemoryBrowser;
 - (void)setSelectedNavigableItemFromUserInterface:(IDENavigableItem *)arg1;
 - (void)mouseExitedSidebarLineArea;

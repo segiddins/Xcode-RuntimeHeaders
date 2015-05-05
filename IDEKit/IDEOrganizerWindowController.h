@@ -10,13 +10,12 @@
 #import "DVTStateRepositoryDelegate.h"
 #import "DVTStatefulObject.h"
 #import "IDEEditorAreaContainer.h"
-#import "NSToolbarDelegate.h"
 #import "NSWindowDelegate.h"
 #import "NSWindowRestoration.h"
 
 @class DVTDelayedInvocation, DVTExtension, DVTReplacementView, DVTStateRepository, DVTStateToken, IDEEditorArea, NSArray, NSDictionary, NSString;
 
-@interface IDEOrganizerWindowController : NSWindowController <NSToolbarDelegate, NSWindowRestoration, NSWindowDelegate, IDEEditorAreaContainer, DVTStatefulObject, DVTStateRepositoryDelegate, DVTReplacementViewDelegate>
+@interface IDEOrganizerWindowController : NSWindowController <NSWindowRestoration, NSWindowDelegate, IDEEditorAreaContainer, DVTStatefulObject, DVTStateRepositoryDelegate, DVTReplacementViewDelegate>
 {
     DVTReplacementView *_contentReplacementView;
     NSArray *_sources;
@@ -49,16 +48,6 @@
 - (void)replacementView:(id)arg1 willInstallViewController:(id)arg2;
 @property(readonly) IDEEditorArea *editorArea;
 - (void)showWindow:(id)arg1;
-- (void)selectPreviousTab:(id)arg1;
-- (void)selectNextTab:(id)arg1;
-- (void)selectNextTabForwards:(BOOL)arg1;
-- (id)_selectableToolbarItems;
-- (void)_selectToolbarItem:(id)arg1;
-- (id)toolbarSelectableItemIdentifiers:(id)arg1;
-- (id)toolbarDefaultItemIdentifiers:(id)arg1;
-- (id)toolbarAllowedItemIdentifiers:(id)arg1;
-- (id)toolbar:(id)arg1 itemForItemIdentifier:(id)arg2 willBeInsertedIntoToolbar:(BOOL)arg3;
-- (void)_setWindowTitleWithExtension:(id)arg1;
 - (id)currentOrganizerSource;
 - (void)showOrganizerSourceWithIdentifier:(id)arg1;
 - (void)windowDidLoad;

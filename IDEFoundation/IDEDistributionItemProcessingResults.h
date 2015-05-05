@@ -12,16 +12,19 @@
 
 @interface IDEDistributionItemProcessingResults : NSObject <NSCopying>
 {
+    BOOL _ignored;
     IDEDistributionItem *_item;
     NSDictionary *_entitlements;
     DVTFilePath *_path;
     NSString *_codesignCommandline;
 }
 
++ (id)itemResultsForIgnoredItem:(id)arg1;
 + (id)itemResultsForItem:(id)arg1 entitlements:(id)arg2 destinationPath:(id)arg3 andCommandline:(id)arg4;
 @property(readonly, nonatomic) NSString *codesignCommandline; // @synthesize codesignCommandline=_codesignCommandline;
 @property(readonly, nonatomic) DVTFilePath *path; // @synthesize path=_path;
 @property(readonly, nonatomic) NSDictionary *entitlements; // @synthesize entitlements=_entitlements;
+@property(readonly, nonatomic) BOOL ignored; // @synthesize ignored=_ignored;
 @property(readonly, nonatomic) IDEDistributionItem *item; // @synthesize item=_item;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;

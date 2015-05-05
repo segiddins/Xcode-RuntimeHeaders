@@ -22,15 +22,11 @@
 @property(copy) NSString *versionName; // @synthesize versionName;
 - (void).cxx_destruct;
 - (void)finishWithCompletionBlock:(CDUnknownBlockType)arg1;
-- (void)setPathForSelectedModel;
-- (void)setPathForCloneModel;
 - (BOOL)alwaysShowFinish;
 - (BOOL)canGoForward;
 - (BOOL)canGoBack;
 - (void)viewDidInstall;
-- (id)availableModelsAtPath:(id)arg1;
-- (long long)destinationIndex;
-- (id)destinationGroup;
+- (id)_availableModels;
 - (id)documentFilePath;
 
 @end

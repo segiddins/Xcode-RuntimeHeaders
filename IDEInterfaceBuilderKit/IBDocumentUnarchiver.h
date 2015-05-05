@@ -29,8 +29,10 @@
 @property(readonly) IBDocumentArchivingSchema *schema; // @synthesize schema;
 @property(readonly) id <IBUnarchivableDocument> unarchivedDocument; // @synthesize unarchivedDocument;
 - (void).cxx_destruct;
+- (id)duplicateValuesForAttributeName:(id)arg1;
 - (id)description;
 - (id)unarchiveTextWithBase64EncodingIndicatorAttributeName:(id)arg1;
+- (id)unarchiveWrappedEdgeInsetsForKey:(id)arg1;
 - (id)unarchiveWrappedInsetForKey:(id)arg1;
 - (id)unarchiveWrappedSizeForKey:(id)arg1;
 - (id)unarchiveWrappedBitmaskFromBitmask:(id)arg1 forKey:(id)arg2;
@@ -74,7 +76,7 @@
 - (id)unarchiveArrayWithName:(id)arg1 forOptionalKey:(id)arg2;
 - (id)unarchiveObjectReferenceArrayWithName:(id)arg1 referenceType:(id)arg2 forOptionalKey:(id)arg3;
 - (id)unarchiveObjectForKey:(id)arg1;
-- (id)unarchiveObjectArrayOrDictionaryFromElement:(id)arg1;
+- (id)unarchiveArrayDictionaryOrObjectFromElement:(id)arg1;
 - (void)raiseForUnexpectedChildElement:(id)arg1 expected:(id)arg2 key:(id)arg3;
 - (void)raiseForUnknownElement:(id)arg1;
 - (id)unarchiveDictionaryFromElement:(id)arg1;

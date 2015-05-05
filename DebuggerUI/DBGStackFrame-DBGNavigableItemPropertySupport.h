@@ -7,29 +7,8 @@
 #import "DBGStackFrame.h"
 
 #import "DBGNavigableItemPerformance.h"
-#import "IDEKeyDrivenNavigableItemRepresentedObject.h"
 
-@class DVTDocumentLocation, DVTFileDataType, IDEFileReference, NSImage, NSString;
-
-@interface DBGStackFrame (DBGNavigableItemPropertySupport) <IDEKeyDrivenNavigableItemRepresentedObject, DBGNavigableItemPerformance>
-+ (id)keyPathsForValuesAffectingNavigableItem_name;
+@interface DBGStackFrame (DBGNavigableItemPropertySupport) <DBGNavigableItemPerformance>
 - (BOOL)isGroupHeader:(id)arg1;
-@property(readonly) NSImage *navigableItem_image;
-- (id)_genericFrameImage;
-- (id)_createImageFromFilePath:(id)arg1 withRed:(float)arg2 green:(float)arg3 blue:(float)arg4 alpha:(float)arg5;
-@property(readonly) NSString *navigableItem_name;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) DVTDocumentLocation *navigableItem_contentDocumentLocation;
-@property(readonly) DVTFileDataType *navigableItem_documentType;
-@property(readonly) IDEFileReference *navigableItem_fileReference;
-@property(readonly) NSString *navigableItem_groupIdentifier;
-@property(readonly) BOOL navigableItem_isLeaf;
-@property(readonly) BOOL navigableItem_isMajorGroup;
-@property(readonly) NSString *navigableItem_toolTip;
-@property(readonly) Class superclass;
 @end
 

@@ -6,7 +6,11 @@
 
 #import "DVTiOSDevice.h"
 
-@interface DVTiOSDevice (IDEiOSSupportUI)
+#import "DVTBasicDeviceUI.h"
+
+@class NSArray, NSImage, NSSet, NSString;
+
+@interface DVTiOSDevice (IDEiOSSupportUI) <DVTBasicDeviceUI>
 + (BOOL)installProvisioningProfilesOnHost:(id)arg1;
 + (BOOL)installProvisioningProfileOnHost:(id)arg1;
 + (void)installNewlyAddedProfiles;
@@ -21,19 +25,34 @@
 - (_Bool)_askForAlternateApplicationIfNeeded:(id *)arg1;
 - (void)takeScreenshotWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (_Bool)canTakeScreenshot;
-- (void)disableDeviceForDevelopment;
-- (void)enableDeviceForDevelopment;
 - (void)addToPortal:(id)arg1;
-- (void)addToPortalWithCallback:(CDUnknownBlockType)arg1;
-- (id)addToPortalOperationForAccount:(id)arg1 teamTokenDictionaries:(id)arg2;
 - (void)requestProcessInformations:(CDUnknownBlockType)arg1;
-- (id)deviceSummaryPropertyDictionaries;
+@property(readonly) NSArray *deviceSummaryPropertyDictionaries;
 - (_Bool)supportsBatteryUpdateNotifications;
 - (id)activityImage;
-- (id)image;
+@property(readonly) NSImage *image;
 - (id)iconImage;
 - (id)statusImage;
 - (BOOL)shouldApplicationTerminate;
 - (void)userInterfacePresentAlertForNoRoutingCoverageFileAtPath:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly, copy) NSString *identifier;
+@property(readonly, copy, nonatomic) NSString *modelCode;
+@property(readonly, copy, nonatomic) NSString *modelName;
+@property(readonly, copy, nonatomic) NSString *modelUTI;
+@property(readonly, copy) NSString *name;
+@property(readonly, copy) NSString *nameForDeveloperPortal;
+@property(readonly, copy) NSString *operatingSystemBuild;
+@property(readonly, copy) NSString *operatingSystemVersion;
+@property(readonly, copy) NSString *platformIdentifier;
+@property(readonly, copy) NSString *processorDescription;
+@property(readonly, copy) NSSet *proxiedDevices;
+@property(readonly) BOOL showCompanionUI;
+@property(readonly) Class superclass;
+@property(readonly) BOOL supportsProvisioning;
 @end
 

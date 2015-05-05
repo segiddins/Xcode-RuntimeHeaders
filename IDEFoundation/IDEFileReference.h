@@ -12,7 +12,6 @@
 
 @interface IDEFileReference : IDEContainerItem <IDEStructureEditing>
 {
-    DVTFileDataType *_assignedFileDataType;
     DVTFilePath *_watchedFilePath;
     DVTFilePath *_oldWatchedFilePath;
     DVTFilePath *_resolvedFilePath;
@@ -35,6 +34,7 @@
     BOOL _sourceControlConflictStatusNeedsUpdate;
     BOOL _waitingForChangeNotificationsToResume;
     id <NSObject> _modelObjectGraphDidCoalesceNotificationToken;
+    DVTFileDataType *_assignedFileDataType;
 }
 
 + (BOOL)automaticallyNotifiesObserversOfAggregateSourceControlConflictStatus;
@@ -52,8 +52,8 @@
 + (id)keyPathsForValuesAffectingIdeModelObjectTypeIdentifier;
 @property(copy, nonatomic) DVTFileDataType *assignedFileDataType; // @synthesize assignedFileDataType=_assignedFileDataType;
 - (void).cxx_destruct;
-- (BOOL)structureEditSetName:(id)arg1 inContext:(id)arg2;
 - (void)_performMove:(id)arg1 newFilePath:(id)arg2 newPath:(id)arg3 inContext:(id)arg4;
+- (BOOL)structureEditSetName:(id)arg1 inContext:(id)arg2;
 - (id)_structureEditNameForSuggestedName:(id)arg1;
 - (BOOL)canStructureEditName;
 - (BOOL)structureEditRemoveSubitemsAtIndexes:(id)arg1 error:(id *)arg2;
@@ -68,7 +68,6 @@
 - (BOOL)allowRemovingContainerGroup;
 - (void)fileReferenceWasConfigured;
 - (void)_takeConfigurationFromFileReference:(id)arg1;
-- (void)primitiveInvalidate;
 - (void)debugPrintInnerStructure;
 - (void)_updateSourceControlStatusIfNeeded;
 - (void)_updateAggregateSourceControlConflictStatus;
@@ -104,6 +103,7 @@
 @property(readonly) DVTFilePath *expectedFilePath;
 - (BOOL)_resolvedFilePathIsValid;
 - (void)_resolvedFilePathDidChange:(id)arg1;
+- (BOOL)_filePathExists;
 - (void)_invalidateResolvedFilePathUsingPath:(id)arg1 resolutionStrategies:(id)arg2;
 - (void)_invalidateResolvedFilePath;
 - (void)_resolvedFilePathWasInvalidated;
@@ -114,6 +114,7 @@
 - (void)_invalidateStartingWith:(id)arg1;
 - (void)changePath:(id)arg1 resolutionStrategies:(id)arg2;
 - (void)_setContainer:(id)arg1;
+- (void)primitiveInvalidate;
 - (id)init;
 @property(readonly) NSString *sourceControlRepositoryURLString;
 @property(readonly) NSString *sourceControlCurrentRevision;

@@ -82,7 +82,7 @@
 - (void)uncheckItemsAtFilePaths:(id)arg1;
 - (void)checkItemsAtFilePaths:(id)arg1;
 - (void)refreshItemsAtFilePaths:(id)arg1;
-@property(readonly) IDESelection *contextMenuSelection;
+@property(readonly, copy) IDESelection *contextMenuSelection;
 @property(retain) NSMenu *contextMenu;
 - (id)filterPredicate;
 - (void)updateSelectedDocumentLocation;

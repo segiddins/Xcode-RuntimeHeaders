@@ -38,6 +38,7 @@ __attribute__((visibility("hidden")))
     BOOL _ignoreStateForDebugNavigator;
     BOOL _haveRequestedUIController;
     id <DVTCancellable> _uiControllerObserver;
+    id <DVTCancellable> _buttonBindingToken;
     BOOL _showOnlyInterestingContent;
     NSView *_localFilterView;
     DVTGradientImageButton *_showOnlyInterestingContentButton;
@@ -71,12 +72,15 @@ __attribute__((visibility("hidden")))
 - (void)configureMenuForProcessHeaderActionPopUpCell:(id)arg1;
 - (void)_threadContextuallyClicked;
 - (void)contextualMenuNeedsUpdate:(id)arg1;
-- (void)_showRedundantStateIssues:(id)arg1;
-- (void)_hideRedundantStateIssues:(id)arg1;
+- (void)_showAllIssues:(id)arg1;
+- (void)_showCrucialOrImportantIssuesImportantIssues:(id)arg1;
+- (void)_showCrucialIssues:(id)arg1;
 - (void)_setProgramSortByCost:(id)arg1;
 - (void)_setProgramSortByProgram:(id)arg1;
 - (void)_setProgramMetricsAsPercentage:(id)arg1;
 - (void)_setProgramMetricsAsTime:(id)arg1;
+- (void)_setShowShaderProfilingInFrameNavigator:(id)arg1;
+- (void)_setHideShaderProfilingInFrameNavigator:(id)arg1;
 - (void)_setShowGroupMarkerCalls:(id)arg1;
 - (void)_setHideGroupMarkerCalls:(id)arg1;
 - (void)_setShowEmptyMarkerGroups:(id)arg1;
@@ -123,6 +127,7 @@ __attribute__((visibility("hidden")))
 - (id)workspaceTabController;
 @property(readonly) IDENavigableItem *rootNavigableItem;
 - (id)initWithProcess:(id)arg1 debugNavigator:(id)arg2;
+- (id)initWithTopNavigableModel:(id)arg1 debugNavigator:(id)arg2;
 
 // Remaining properties
 @property(retain) DVTStackBacktrace *creationBacktrace;

@@ -33,6 +33,7 @@
 - (id)getStaticObjectIDArray:(unsigned long long)arg1 objectType:(unsigned int)arg2;
 - (void)enableStateDeltaGeneratorHeuristics;
 - (void)configureForArchive:(id)arg1;
+- (_Bool)isMultiSampledRenderingEnabledForContext:(unsigned long long)arg1;
 - (ContextStateMirror_daaf80d0 *)getStateMirrorContext:(unsigned long long)arg1;
 - (StateMirrorManager_77eb64af *)getStateMirrorManager;
 - (struct PerStateMirrorAnnotation *)getPerStateMirrorAnnotation;

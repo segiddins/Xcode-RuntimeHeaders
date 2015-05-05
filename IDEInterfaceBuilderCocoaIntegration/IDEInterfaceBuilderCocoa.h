@@ -16,7 +16,6 @@
 + (id)sharedInstance;
 - (void)setupPDFKit;
 - (void)setupImageKit;
-- (void)setupAddressBook;
 - (id)init;
 
 @end

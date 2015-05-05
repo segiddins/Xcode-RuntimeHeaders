@@ -14,6 +14,7 @@
     int _captureBlockMode;
     unsigned int _stateMirrorRetCode;
     BOOL _isPostMirrorHeuristic;
+    BOOL _isPreSortHeuristic;
     DYAnalyzerFindingPool *_weakFindingPool;
     DYAnalyzerHeuristicPool *_weakHeuristicPool;
     DYAnalyzerEngine *_weakEngine;
@@ -29,6 +30,7 @@
 @property(nonatomic) __weak DYAnalyzerEngine *weakEngine; // @synthesize weakEngine=_weakEngine;
 @property(nonatomic) __weak DYAnalyzerHeuristicPool *weakHeuristicPool; // @synthesize weakHeuristicPool=_weakHeuristicPool;
 @property(nonatomic) __weak DYAnalyzerFindingPool *weakFindingPool; // @synthesize weakFindingPool=_weakFindingPool;
+@property(readonly, nonatomic) BOOL isPreSortHeuristic; // @synthesize isPreSortHeuristic=_isPreSortHeuristic;
 @property(readonly, nonatomic) BOOL isPostMirrorHeuristic; // @synthesize isPostMirrorHeuristic=_isPostMirrorHeuristic;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) DYAnalyzerHeuristicPool *heuristicPool;
@@ -47,6 +49,7 @@
 - (void)startBlock:(int)arg1;
 - (void)processFunction:(const struct Function *)arg1 stateMirrorRetCode:(unsigned int)arg2;
 - (id)description;
+- (id)initWithIsPostMirrorHeuristic:(BOOL)arg1 isPreSortHeuristic:(BOOL)arg2;
 - (id)initWithIsPostMirrorHeuristic:(BOOL)arg1;
 - (id)init;
 

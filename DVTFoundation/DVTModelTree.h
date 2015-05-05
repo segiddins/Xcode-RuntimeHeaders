@@ -13,16 +13,16 @@
 
 @interface DVTModelTree : NSObject <DVTModelObject, DVTInvalidation>
 {
-    DVTModelObjectGraph *_objectGraph;
     DVTModelTreeNode *_rootNode;
+    DVTModelObjectGraph *_objectGraph;
 }
 
 + (BOOL)automaticallyNotifiesObserversOfSubclass_rootNode;
 + (void)synthesizeCoverAPIWithKeyForRootNode:(id)arg1;
 + (BOOL)automaticallyNotifiesObserversOfObjectGraph;
 + (void)initialize;
-@property(readonly) DVTModelTreeNode *subclass_rootNode; // @synthesize subclass_rootNode=_rootNode;
 @property(retain, nonatomic) DVTModelObjectGraph *objectGraph; // @synthesize objectGraph=_objectGraph;
+@property(readonly) DVTModelTreeNode *subclass_rootNode; // @synthesize subclass_rootNode=_rootNode;
 - (void).cxx_destruct;
 - (id)subclass_createRootNode;
 - (void)_recursivelyMoveNode:(id)arg1 fromObjectGraph:(id)arg2 toObjectGraph:(id)arg3;

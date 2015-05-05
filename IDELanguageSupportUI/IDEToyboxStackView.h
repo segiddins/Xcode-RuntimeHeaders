@@ -8,11 +8,12 @@
 
 #import "DVTInvalidation.h"
 
-@class DVTObservingToken, DVTStackBacktrace, IDEToy, IDEToybox, NSDate, NSString;
+@class DVTObservingToken, DVTStackBacktrace, IDEToy, IDEToybox, NSDate, NSMutableArray, NSString;
 
 @interface IDEToyboxStackView : DVTStackView_ML <DVTInvalidation>
 {
     DVTObservingToken *_toysObservingToken;
+    NSMutableArray *_toyHostingViewControllers;
     struct {
         unsigned int shouldChangeResultDisplayDate:1;
     } _delegateRespondsTo;

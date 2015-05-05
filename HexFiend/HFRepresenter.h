@@ -18,6 +18,7 @@
 }
 
 + (struct CGPoint)defaultLayoutPosition;
+- (void)invalidateRepresenter;
 - (struct CGPoint)layoutPosition;
 - (void)setLayoutPosition:(struct CGPoint)arg1;
 - (void)representerChangedProperties:(unsigned long long)arg1;

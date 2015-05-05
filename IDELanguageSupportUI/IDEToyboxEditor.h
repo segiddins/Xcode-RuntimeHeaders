@@ -8,19 +8,20 @@
 
 #import "IDEToyboxStackViewDelegate.h"
 
-@class DVTObservingToken, DVTStepperTextField, IDEPlaygroundEditor, IDEToy, IDEToybox, IDEToyboxStackView, NSDate, NSSlider, NSString;
+@class DVTBorderedView, DVTNotificationToken, DVTObservingToken, IDEPlaygroundEditor, IDEToy, IDEToybox, IDEToyboxStackView, NSDate, NSScrollView, NSString;
 
 @interface IDEToyboxEditor : IDEEditor <IDEToyboxStackViewDelegate>
 {
     id <DVTCancellable> _clipViewFillToken;
+    DVTBorderedView *_editorView;
+    NSScrollView *_scrollView;
     IDEToyboxStackView *_toyboxStackView;
-    NSSlider *_globalTimeSlider;
-    DVTStepperTextField *_timeTextField;
     IDEToybox *_toybox;
     IDEPlaygroundEditor *_currentPrimaryEditor;
     DVTObservingToken *_currentPrimaryEditorObservingToken;
     DVTObservingToken *_toyboxObservingToken;
     DVTObservingToken *_toyboxExecutionInProgressObservingToken;
+    DVTNotificationToken *_fontAndColorSettingsChangeObservingToken;
     NSDate *_selectedResultDisplayDate;
 }
 
@@ -29,14 +30,10 @@
 @property(retain, nonatomic) NSDate *selectedResultDisplayDate; // @synthesize selectedResultDisplayDate=_selectedResultDisplayDate;
 - (void).cxx_destruct;
 - (void)primitiveInvalidate;
+- (void)_fontAndColorSourceTextSettingsChanged;
 - (void)viewWillUninstall;
 - (void)viewDidInstall;
 @property(retain, nonatomic) IDEToy *selectedToy;
-- (BOOL)toyboxStackView:(id)arg1 shouldChangeResultDisplayDate:(id)arg2;
-- (void)_updateSelectedResultDisplayDate:(id)arg1;
-- (void)globalTimeSliderAction:(id)arg1;
-- (void)_disableGlobalTimeSlider;
-- (void)_updateGlobalTimeSlider;
 - (void)loadView;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 

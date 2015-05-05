@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class DVTDeveloperAccount, NSString;
+@class DVTDeveloperAccount, NSSet, NSString;
 
 @interface Xcode3TargetPortalEntitlementsCoordinatorSnapshot : NSObject
 {
@@ -16,12 +16,12 @@
     NSString *_platformIdentifier;
     NSString *_teamID;
     DVTDeveloperAccount *_developerAccount;
-    NSString *_deviceUUID;
-    NSString *_deviceName;
+    id <DVTCodesignableDevice> _targetDevice;
+    NSSet *_proxiedDevices;
 }
 
-@property(copy, nonatomic) NSString *deviceName; // @synthesize deviceName=_deviceName;
-@property(copy, nonatomic) NSString *deviceUUID; // @synthesize deviceUUID=_deviceUUID;
+@property(retain, nonatomic) NSSet *proxiedDevices; // @synthesize proxiedDevices=_proxiedDevices;
+@property(retain, nonatomic) id <DVTCodesignableDevice> targetDevice; // @synthesize targetDevice=_targetDevice;
 @property(retain, nonatomic) DVTDeveloperAccount *developerAccount; // @synthesize developerAccount=_developerAccount;
 @property(copy, nonatomic) NSString *teamID; // @synthesize teamID=_teamID;
 @property(retain, nonatomic) NSString *platformIdentifier; // @synthesize platformIdentifier=_platformIdentifier;

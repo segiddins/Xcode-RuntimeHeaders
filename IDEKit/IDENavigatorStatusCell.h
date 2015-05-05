@@ -24,12 +24,14 @@
 @property unsigned long long imageScaling; // @synthesize imageScaling=_imageScaling;
 - (void).cxx_destruct;
 - (struct CGSize)cellSize;
+- (struct CGSize)_cellTextSize;
 - (id)attributedStringValue;
 @property(copy) NSString *title; // @dynamic title;
 - (void)setHighlighted:(BOOL)arg1;
 - (void)_validateCachedAttributedStringValue;
 - (void)_clearAttributedStringValue;
 - (void)drawInteriorWithFrame:(struct CGRect)arg1 inView:(id)arg2;
+- (void)drawImageAndTextStatusWithFrame:(struct CGRect)arg1 inView:(id)arg2;
 - (void)drawImageStatusWithFrame:(struct CGRect)arg1 inView:(id)arg2;
 - (void)drawCharacterStatusWithFrame:(struct CGRect)arg1 inView:(id)arg2;
 - (void)drawTextStatusWithFrame:(struct CGRect)arg1 inView:(id)arg2;

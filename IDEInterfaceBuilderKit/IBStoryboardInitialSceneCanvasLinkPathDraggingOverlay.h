@@ -6,14 +6,18 @@
 
 #import <IDEInterfaceBuilderKit/IBCanvasOverlay.h>
 
-@class IBStoryboardInitialSceneCanvasLinkPath;
+@class IBStoryboardInitialSceneCanvasLinkPath, NSString;
 
 @interface IBStoryboardInitialSceneCanvasLinkPathDraggingOverlay : IBCanvasOverlay
 {
     IBStoryboardInitialSceneCanvasLinkPath *_linkPath;
+    BOOL _selected;
+    NSString *_title;
     CDStruct_f6143a38 _canvasLinkPathLine;
 }
 
+@property(nonatomic, getter=isSelected) BOOL selected; // @synthesize selected=_selected;
+@property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 @property(nonatomic) CDStruct_f6143a38 canvasLinkPathLine; // @synthesize canvasLinkPathLine=_canvasLinkPathLine;
 - (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;

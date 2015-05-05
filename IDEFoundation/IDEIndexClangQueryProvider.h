@@ -57,6 +57,7 @@
 - (id)_canonicalPathForPath:(id)arg1 index:(id)arg2;
 - (void)_logClangInvocationWithArguments:(id)arg1;
 - (id)pchFile;
+- (id)pchFileAsPassedInArgs;
 - (void)purgeCaches;
 - (BOOL)hasAST;
 - (void)dealloc;

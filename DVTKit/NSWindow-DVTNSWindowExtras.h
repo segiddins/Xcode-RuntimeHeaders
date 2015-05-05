@@ -8,15 +8,17 @@
 
 @interface NSWindow (DVTNSWindowExtras)
 + (BOOL)_dvt_shouldZoomOnDoubleClick;
-- (id)dvt_toolbarBottomEdgeLowerColor;
-- (id)dvt_toolbarBottomEdgeUpperColor;
-- (id)dvt_contentInsetColor;
-- (id)dvt_contentSeparatorColor;
+- (id)safari_toolbarBottomEdgeLowerColor;
+- (id)safari_contentInsetColor;
+- (id)safari_contentSeparatorColor;
 - (id)dvt_imageForRect:(struct CGRect)arg1;
 - (BOOL)_dvt_hasActiveAppearanceIgnoringKeyFocus;
+- (BOOL)_safari_hasActiveAppearanceIgnoringKeyFocus;
 - (BOOL)dvt_makeNonDeferred;
 - (struct CGImage *)_dvt_createCGImageForRect:(struct CGRect)arg1 excludingChildWindows:(id)arg2;
+- (struct CGPoint)safari_convertPointFromScreen:(struct CGPoint)arg1;
 - (struct CGPoint)dvt_convertPointFromScreen:(struct CGPoint)arg1;
+- (struct CGPoint)safari_convertPointToScreen:(struct CGPoint)arg1;
 - (struct CGPoint)dvt_convertPointToScreen:(struct CGPoint)arg1;
 @end
 

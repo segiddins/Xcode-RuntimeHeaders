@@ -6,17 +6,12 @@
 
 #import "NSView.h"
 
-@class NSBezierPath;
-
 @interface IDETemplateChooserSelectionView : NSView
 {
     BOOL _showsFirstResponder;
-    NSBezierPath *_path;
 }
 
 @property(nonatomic) BOOL showsFirstResponder; // @synthesize showsFirstResponder=_showsFirstResponder;
-- (void).cxx_destruct;
-- (void)setFrame:(struct CGRect)arg1;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)setNilValueForKey:(id)arg1;
 

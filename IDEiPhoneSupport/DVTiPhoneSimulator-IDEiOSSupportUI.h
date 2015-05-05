@@ -8,7 +8,7 @@
 
 @interface DVTiPhoneSimulator (IDEiOSSupportUI)
 - (id)deviceSummaryPropertyDictionaries;
-- (void)_updateLaunchSessionIcon:(id)arg1;
+- (void)_updateIconForPath:(id)arg1 launchSession:(id)arg2;
 - (id)_iconForApp:(id)arg1;
 - (id)image;
 @end

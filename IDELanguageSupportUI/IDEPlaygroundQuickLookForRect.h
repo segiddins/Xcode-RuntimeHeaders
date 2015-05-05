@@ -14,6 +14,7 @@
 }
 
 - (void).cxx_destruct;
+- (id)quickLookViewForUnadornedView;
 - (id)quickLookViewForResultsView;
 - (id)quickLookViewForNaturalSize;
 - (id)initWithObjectReflection:(id)arg1;

@@ -36,6 +36,12 @@ struct CoreFunction {
     void *internal_buffer;
 };
 
+struct DYShaderProfilerTiming {
+    struct Statistics _field1;
+    struct Statistics _field2;
+    struct Statistics _field3;
+};
+
 struct Function {
     struct CoreFunction core;
     unsigned long long timestamp;
@@ -53,7 +59,19 @@ struct Function {
     void *sm_context;
 };
 
+struct GPUMessageTraceActivity {
+    double _startTime;
+    double _endTime;
+    char _inProgress;
+};
+
 struct IFunctionDecoder;
+
+struct Statistics {
+    double _field1;
+    double _field2;
+    double _field3;
+};
 
 struct TFunctionStream<GPUTools::FD::Function, void>;
 

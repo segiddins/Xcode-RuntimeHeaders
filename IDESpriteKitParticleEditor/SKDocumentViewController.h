@@ -22,6 +22,7 @@
     NSPopUpButton *_addPopupButton;
     SKToolbarBackgroundView *_toolbarBackgroundView;
     SKFileSystemEventStream *_eventStream;
+    BOOL _lastScenePaused;
     SKEditView *_mainView;
     EditOverlayView *_overlayView;
     NSArray *_currentSelectedItems;
@@ -32,6 +33,7 @@
 @property(nonatomic) __weak EditOverlayView *overlayView; // @synthesize overlayView=_overlayView;
 @property(nonatomic) __weak SKEditView *mainView; // @synthesize mainView=_mainView;
 - (void).cxx_destruct;
+- (void)windowChangedOcclusionState:(id)arg1;
 - (void)setToolbarBackgroundViewActive:(BOOL)arg1;
 - (void)didEvaluateActionsOverride;
 - (void)replaceDidEvaluateActions:(id)arg1;

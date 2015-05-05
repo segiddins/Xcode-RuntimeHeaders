@@ -6,13 +6,13 @@
 
 #import "NSObject.h"
 
-@class NSColor, NSDate;
+@class IDEToyViewController, NSColor, NSDate;
 
 @protocol IDEToyViewControllerDelegate <NSObject>
 @property(retain) NSColor *customRightBorderColor;
 @property(retain) NSColor *customLeftBorderColor;
 
 @optional
-- (void)toyViewController:(id <IDEToyViewController>)arg1 didSelectNewResultDisplayDate:(NSDate *)arg2;
+- (void)toyViewController:(IDEToyViewController *)arg1 didSelectNewResultDisplayDate:(NSDate *)arg2;
 @end
 

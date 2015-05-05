@@ -10,6 +10,9 @@
 {
 }
 
++ (id)eventType;
++ (id)floatType;
++ (id)boolType;
 + (id)defaultType;
 + (Class)sourceCodeGeneratorClass;
 - (id)sourceCodeInsertionOptions;

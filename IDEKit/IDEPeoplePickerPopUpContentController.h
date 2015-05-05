@@ -32,10 +32,11 @@
 }
 
 + (id)defaultViewNibName;
-@property __weak id <RVPeoplePickerDelegate> delegate; // @synthesize delegate=_delegate;
-@property(readonly) BOOL pickingPerson; // @synthesize pickingPerson=_pickingPerson;
 @property(retain) IDEPeoplePickerContentViewController *currentVC; // @synthesize currentVC=_currentVC;
+@property(readonly) BOOL showingExisting; // @synthesize showingExisting=_showingExisting;
+@property(readonly) BOOL pickingPerson; // @synthesize pickingPerson=_pickingPerson;
 @property(readonly) ABPerson *selectedPerson; // @synthesize selectedPerson=_selectedPerson;
+@property __weak id <RVPeoplePickerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;

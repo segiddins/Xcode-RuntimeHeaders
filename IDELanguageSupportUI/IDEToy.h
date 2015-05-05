@@ -8,18 +8,37 @@
 
 #import "DVTInvalidation.h"
 
-@class DVTStackBacktrace, IDEToybox, NSError, NSMutableDictionary, NSString;
+@class DVTStackBacktrace, IDEToybox, NSArray, NSError, NSMutableArray, NSString;
 
 @interface IDEToy : NSObject <DVTInvalidation>
 {
-    NSMutableDictionary *_generationToDataDictionary;
-    unsigned long long _currentGeneration;
+    NSMutableArray *_generationResults;
+    BOOL _saveResultsFromDeserialization;
     BOOL _liveToy;
+    BOOL _displayInTimeline;
+    BOOL _executionIsInProgress;
+    BOOL _lastExpressionDidComplete;
+    BOOL _shouldTrackSuperviewWidth;
     IDEToybox *_toybox;
+    unsigned long long _persistence;
+    unsigned long long _generation;
+    NSArray *_previousGenerationResults;
+    unsigned long long _selectedRepresentationIndex;
+    struct CGSize _lockedSize;
 }
 
 + (void)initialize;
+@property(nonatomic) BOOL shouldTrackSuperviewWidth; // @synthesize shouldTrackSuperviewWidth=_shouldTrackSuperviewWidth;
+@property(nonatomic) unsigned long long selectedRepresentationIndex; // @synthesize selectedRepresentationIndex=_selectedRepresentationIndex;
+@property(nonatomic) struct CGSize lockedSize; // @synthesize lockedSize=_lockedSize;
+@property(retain) NSArray *previousGenerationResults; // @synthesize previousGenerationResults=_previousGenerationResults;
+@property(readonly) NSArray *generationResults; // @synthesize generationResults=_generationResults;
+@property(nonatomic) unsigned long long generation; // @synthesize generation=_generation;
+@property BOOL lastExpressionDidComplete; // @synthesize lastExpressionDidComplete=_lastExpressionDidComplete;
+@property BOOL executionIsInProgress; // @synthesize executionIsInProgress=_executionIsInProgress;
+@property(readonly, getter=shouldDisplayInTimeline) BOOL displayInTimeline; // @synthesize displayInTimeline=_displayInTimeline;
 @property(readonly, getter=isLiveToy) BOOL liveToy; // @synthesize liveToy=_liveToy;
+@property unsigned long long persistence; // @synthesize persistence=_persistence;
 @property(retain, nonatomic) IDEToybox *toybox; // @synthesize toybox=_toybox;
 - (void).cxx_destruct;
 - (void)primitiveInvalidate;
@@ -30,7 +49,6 @@
 - (void)executionGenerationDidEndAndCompleted:(BOOL)arg1;
 - (void)executionGenerationWillEnd;
 - (void)beginExecutionGeneration:(unsigned long long)arg1;
-- (id)viewControllerForDisplayingToy;
 - (id)init;
 
 // Remaining properties

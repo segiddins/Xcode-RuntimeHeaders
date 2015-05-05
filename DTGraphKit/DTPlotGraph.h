@@ -13,6 +13,7 @@
     NSMutableArray *_drawingOrderOfModels;
 }
 
+- (void).cxx_destruct;
 - (BOOL)validateModel:(id)arg1;
 - (id)_drawingOrderedModels:(id)arg1;
 - (long long)_maximumValueOfModel:(id)arg1;
@@ -25,7 +26,6 @@
 - (void)drawBorder:(struct CGRect)arg1;
 - (void)drawContent:(struct CGRect)arg1;
 - (void)drawBackground:(struct CGRect)arg1;
-- (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

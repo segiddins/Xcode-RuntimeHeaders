@@ -27,10 +27,10 @@
     unsigned long long _gridLineStyleBeforeEmptyContentStringShown;
     BOOL _skipGridLinesOnLastRow;
     BOOL _drawsGridLinesForEmptyContent;
-    double _gridLineInset;
+    CDStruct_2b6e6e30 _gridLineInset;
 }
 
-@property double gridLineInset; // @synthesize gridLineInset=_gridLineInset;
+@property CDStruct_2b6e6e30 gridLineInset; // @synthesize gridLineInset=_gridLineInset;
 @property BOOL drawsGridLinesForEmptyContent; // @synthesize drawsGridLinesForEmptyContent=_drawsGridLinesForEmptyContent;
 @property BOOL skipGridLinesOnLastRow; // @synthesize skipGridLinesOnLastRow=_skipGridLinesOnLastRow;
 @property int emptyContentStringStyle; // @synthesize emptyContentStringStyle=_emptyContentStringStyle;
@@ -59,6 +59,11 @@
 - (void)_hideEmptyContentString;
 - (struct CGSize)_adjustFrameSizeToFitSuperview:(struct CGSize)arg1;
 @property BOOL allowsSizingShorterThanClipView;
+- (void)_registerNibWithName:(id)arg1 usingIdentifier:(id)arg2;
+- (void)registerDVTTableRowViewNibUsingIdentifier:(id)arg1;
+- (void)registerDVTTableCellViewMultiLineNibUsingIdentifier:(id)arg1;
+- (void)registerDVTTableCellViewTwoLineNibUsingIdentifier:(id)arg1;
+- (void)registerDVTTableCellViewOneLineNibUsingIdentifier:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (void)dvt_commonInit;

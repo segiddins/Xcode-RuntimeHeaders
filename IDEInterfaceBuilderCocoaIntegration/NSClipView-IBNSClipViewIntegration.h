@@ -7,6 +7,8 @@
 #import "NSClipView.h"
 
 @interface NSClipView (IBNSClipViewIntegration)
+- (BOOL)ibAllowConfigurationPropertyMemberStorageUpdateForNonResizableFramesOfChildView:(id)arg1 inDocument:(id)arg2;
+- (BOOL)ibAllowConfigurationPropertyMemberStorageUpdateForNonResizableFramesInDocument:(id)arg1;
 - (void)ibSwizzledNSClipViewWorkaround12332156UpdateConstraints;
 - (BOOL)ibChildView:(id)arg1 shouldUseConstraintsInsteadOfAutoresizingWhenAddedToDocument:(id)arg2;
 - (BOOL)ibChildPrefersToVerticallyResizeWithContainer:(id)arg1;

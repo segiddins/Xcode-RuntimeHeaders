@@ -8,7 +8,7 @@
 
 #import "IDEAutoImportable.h"
 
-@class DVTFilePath, DVTSourceCodeLanguage, DVTSourceCodeSymbolKind, IDEIndexCollection, NSObject<IDEIndexQueryProvider>, NSString;
+@class DVTFilePath, DVTSourceCodeLanguage, DVTSourceCodeSymbolKind, IDEIndexCollection, NSString;
 
 @interface IDEIndexSymbol : IDEIndexSymbolOccurrence <IDEAutoImportable>
 {
@@ -73,7 +73,6 @@
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, nonatomic) NSObject<IDEIndexQueryProvider> *queryProvider;
 @property(readonly) Class superclass;
 
 @end

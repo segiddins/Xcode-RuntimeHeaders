@@ -12,6 +12,8 @@
 
 @interface IDETemplateInstantiationContext : IDEAssistantContext <NSCopying>
 {
+    BOOL _alwaysReplaceFiles;
+    BOOL _skipFileChooser;
     IDETemplate *_documentTemplate;
     DVTFilePath *_documentFilePath;
     NSArray *_instantiatedItems;
@@ -23,6 +25,8 @@
     IDEWorkspaceDocument *_createdDocument;
 }
 
+@property BOOL skipFileChooser; // @synthesize skipFileChooser=_skipFileChooser;
+@property BOOL alwaysReplaceFiles; // @synthesize alwaysReplaceFiles=_alwaysReplaceFiles;
 @property(retain) IDEWorkspaceDocument *createdDocument; // @synthesize createdDocument=_createdDocument;
 @property(copy) NSArray *templateSections; // @synthesize templateSections=_templateSections;
 @property(copy) NSArray *destinationBuildables; // @synthesize destinationBuildables=_destinationBuildables;
@@ -39,6 +43,7 @@
 @property(readonly, copy) NSArray *targetWorkspaces;
 - (id)destinationBlueprintProvider;
 - (void)loadAvailableTemplatesOfKind:(id)arg1 navigableItemCoordinator:(id)arg2;
+- (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end

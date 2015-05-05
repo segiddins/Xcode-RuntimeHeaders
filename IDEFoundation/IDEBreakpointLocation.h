@@ -18,6 +18,7 @@
     long long _startingLineNumber;
     long long _endingLineNumber;
     NSString *_characterRangeString;
+    BOOL _usesParentBreakpointCondition;
     DVTTextDocumentLocation *_documentLocation;
     NSString *_symbolName;
     NSString *_moduleName;
@@ -25,23 +26,29 @@
     unsigned long long _offsetFromSymbolStart;
 }
 
++ (id)propertiesAffectingPersistenceState;
 @property unsigned long long offsetFromSymbolStart; // @synthesize offsetFromSymbolStart=_offsetFromSymbolStart;
 @property(readonly) unsigned long long address; // @synthesize address=_address;
 @property(readonly) NSString *moduleName; // @synthesize moduleName=_moduleName;
 @property(readonly) NSString *symbolName; // @synthesize symbolName=_symbolName;
 @property(readonly) DVTTextDocumentLocation *documentLocation; // @synthesize documentLocation=_documentLocation;
+@property BOOL usesParentBreakpointCondition; // @synthesize usesParentBreakpointCondition=_usesParentBreakpointCondition;
 - (void).cxx_destruct;
 - (void)primitiveInvalidate;
+- (void)setUsesParentBreakpointConditionFromUTF8String:(char *)arg1 fromXMLUnarchiver:(id)arg2;
 - (void)dvt_awakeFromXMLUnarchiver:(id)arg1;
 - (void)dvt_encodeAttributesWithXMLArchiver:(id)arg1 version:(id)arg2;
 - (id)initFromXMLUnarchiver:(id)arg1 archiveVersion:(float)arg2;
 @property(retain) IDEBreakpoint *parentBreakpoint;
 - (BOOL)_isTextDocumentLocationEqual:(id)arg1;
 - (BOOL)isBreakpointLocationTheSameDisregardingAddress:(id)arg1;
+- (id)bucket;
 - (id)mutableLocations;
 - (id)locations;
 @property(readonly) DVTTextDocumentLocation *zeroBasedDocumentLocation;
 - (id)displayName;
+- (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)_dvt_IDEBreakpointLocationCommonInit;
 - (id)initWithDocumentTextLocation:(id)arg1 symbolName:(id)arg2 moduleName:(id)arg3 address:(unsigned long long)arg4;
 
 @end

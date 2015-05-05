@@ -11,7 +11,7 @@
 @protocol Xcode3SourceListItemEditing <NSObject>
 + (id <Xcode3SourceListItemEditing>)deserializedSourceListItem:(NSDictionary *)arg1;
 + (NSString *)pasteboardDataType;
-+ (NSArray *)supportedSourceListItemEditorClasses;
 - (NSDictionary *)serializedSourceListItem;
+- (NSArray *)supportedSourceListItemEditorClasses;
 @end
 

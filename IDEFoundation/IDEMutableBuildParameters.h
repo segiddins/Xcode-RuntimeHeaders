@@ -12,7 +12,7 @@
 {
 }
 
-@property(copy) IDEOverridingBuildProperties *overridingProperties; // @dynamic overridingProperties;
+@property(copy) IDEOverridingBuildProperties *overridingProperties;
 @property(copy) NSString *activeArchitecture; // @dynamic activeArchitecture;
 @property(retain) IDERunDestination *activeRunDestination; // @dynamic activeRunDestination;
 @property(copy) NSString *configurationName; // @dynamic configurationName;

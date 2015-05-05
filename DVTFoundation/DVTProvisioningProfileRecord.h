@@ -6,7 +6,7 @@
 
 #import "NSManagedObject.h"
 
-@class DVTAppIDRecord, DVTTeamRecord, NSData, NSDate, NSSet, NSString;
+@class DVTTeamRecord, NSData, NSDate, NSString;
 
 @interface DVTProvisioningProfileRecord : NSManagedObject
 {
@@ -14,10 +14,7 @@
 
 
 // Remaining properties
-@property(retain, nonatomic) DVTAppIDRecord *appId; // @dynamic appId;
-@property(retain, nonatomic) NSSet *certificates; // @dynamic certificates;
 @property(retain, nonatomic) NSDate *dateExpire; // @dynamic dateExpire;
-@property(retain, nonatomic) NSSet *devices; // @dynamic devices;
 @property(retain, nonatomic) NSString *name; // @dynamic name;
 @property(retain, nonatomic) NSString *proProPlatform; // @dynamic proProPlatform;
 @property(retain, nonatomic) NSData *profileData; // @dynamic profileData;

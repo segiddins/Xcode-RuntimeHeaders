@@ -20,7 +20,7 @@
     GPUTraceGroupItem *_domainProviderRootResourceGroup;
     GPUTraceProgramGroup *_domainProviderRootProgramGroup;
     NSMutableArray *_frames;
-    id <IDEDebugProcess> _rootProcessItem;
+    id <IDEDebugTopNavigableModel> _rootProcessItem;
     NSArray *_allTraceItems;
     NSMutableArray *_allPrograms;
     NSMutableArray *_allDisplayableItems;
@@ -43,7 +43,7 @@
 @property(readonly, nonatomic) NSMutableArray *allDisplayableItems; // @synthesize allDisplayableItems=_allDisplayableItems;
 @property(readonly, nonatomic) NSMutableArray *allPrograms; // @synthesize allPrograms=_allPrograms;
 @property(readonly, nonatomic) NSArray *allTraceItems; // @synthesize allTraceItems=_allTraceItems;
-@property(readonly, nonatomic) id <IDEDebugProcess> rootProcessItem; // @synthesize rootProcessItem=_rootProcessItem;
+@property(readonly, nonatomic) id <IDEDebugTopNavigableModel> rootProcessItem; // @synthesize rootProcessItem=_rootProcessItem;
 @property(readonly, nonatomic) NSMutableArray *frames; // @synthesize frames=_frames;
 @property(readonly, nonatomic) GPUTraceProgramGroup *domainProviderRootProgramGroup; // @synthesize domainProviderRootProgramGroup=_domainProviderRootProgramGroup;
 @property(readonly, nonatomic) GPUTraceGroupItem *domainProviderRootResourceGroup; // @synthesize domainProviderRootResourceGroup=_domainProviderRootResourceGroup;

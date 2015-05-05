@@ -13,6 +13,7 @@
     DVTHashTable *_actionMonitors;
 }
 
++ (void)adjustApplicationIconForEnvironment:(BOOL)arg1;
 + (void)initialize;
 - (void).cxx_destruct;
 - (void)endSheet:(id)arg1 returnCode:(long long)arg2;

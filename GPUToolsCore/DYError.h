@@ -10,6 +10,7 @@
 {
 }
 
+- (id)dy_errorSignature;
 - (id)localizedDescription;
 
 @end

@@ -15,7 +15,6 @@
 + (id)clickableStringForLegacyBotURL:(id)arg1;
 + (id)webURLForIntegration:(id)arg1;
 + (id)webURLForBot:(id)arg1;
-+ (void)determineUserBotCreationAndDeletionPrivileges;
 + (BOOL)canUserCreateAndDeleteBotsOnServiceForBotOrIntegration:(id)arg1;
 + (BOOL)canUserCreateBotsOnAnyService;
 + (void)addServerOnHostWindow:(id)arg1 connectionAddress:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;

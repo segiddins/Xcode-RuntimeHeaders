@@ -22,6 +22,8 @@
 - (void)toggleValueOfAutolayoutLiveResizingAbsoluteConstraintBreakageStrategy:(unsigned long long)arg1;
 - (void)debugMenuItemToggleApplyConstraintsToDescendants:(id)arg1;
 - (void)debugMenuItemToggleApplyConstraintsToSiblingsAndAncestors:(id)arg1;
+- (void)toggleValueOfAutolayoutEnableLiveResizing;
+- (void)debugMenuItemToggleEnableResizeWithConstraintsBehavior:(id)arg1;
 - (void)toggleValueOfAutolayoutLiveResizingStrategy:(unsigned long long)arg1;
 - (void)debugMenuItemToggleUpgradeRedundantConstraintsForFrameDecideThenConstraintAddition:(id)arg1;
 - (void)debugMenuItemToggleUpgradeRedundantConstraintsForPureConstraintAddition:(id)arg1;

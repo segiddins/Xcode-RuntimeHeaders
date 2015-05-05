@@ -8,7 +8,7 @@
 
 #import "NSFastEnumeration.h"
 
-@class NSMutableArray, NSMutableDictionary;
+@class NSArray, NSMutableArray, NSMutableDictionary;
 
 @interface DTStacks : NSObject <NSFastEnumeration>
 {
@@ -17,12 +17,12 @@
     NSMutableDictionary *_keyedStacks;
 }
 
+- (void).cxx_destruct;
 - (unsigned long long)countByEnumeratingWithState:(CDStruct_70511ce9 *)arg1 objects:(id *)arg2 count:(unsigned long long)arg3;
 - (id)description;
-- (void)dealloc;
 - (id)init;
-- (unsigned long long)count;
-- (id)allKeys;
+@property(readonly, nonatomic) unsigned long long count;
+@property(readonly, copy, nonatomic) NSArray *allKeys;
 - (id)stackForIndexedKey:(id)arg1;
 - (id)keyAtIndex:(unsigned long long)arg1;
 - (id)stacksWithRange:(struct _NSRange)arg1;

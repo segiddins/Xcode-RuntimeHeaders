@@ -45,6 +45,7 @@
     DVTScrollView *_consoleScrollView;
 }
 
++ (long long)availableCompletionTypes:(unsigned long long)arg1 fullTextAfterPrompt:(id)arg2 forDebugSession:(id)arg3;
 + (long long)version;
 + (void)configureStateSavingObjectPersistenceByName:(id)arg1;
 @property __weak DVTScrollView *consoleScrollView; // @synthesize consoleScrollView=_consoleScrollView;

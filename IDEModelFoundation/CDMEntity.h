@@ -40,6 +40,8 @@
 + (id)keyPathsForValuesAffectingSortedFetchedProperties;
 + (id)keyPathsForValuesAffectingSortedRelationships;
 + (id)keyPathsForValuesAffectingSortedAttributes;
++ (id)_stripModulePrefixFromClassName:(id)arg1;
++ (id)_addModulePrefix:(id)arg1 toClassName:(id)arg2;
 + (id)keyPathsForValuesAffectingAllRelationshipsIncludingInheritance;
 + (id)keyPathsForValuesAffectingAllAttributesIncludingInheritance;
 + (id)keyPathsForValuesAffectingAllPropertiesIncludingInheritance;
@@ -103,7 +105,7 @@
 - (BOOL)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;
 - (id)relationshipsIncludingInheritance;
-@property(readonly) NSString *effectiveRepresentedClassName;
+@property(readonly) BOOL hasRepresentedClassName;
 @property(readonly) NSArray *allProperties;
 - (void)updateAllProperties;
 - (id)targetedConfigurations;
@@ -121,8 +123,11 @@
 - (id)sortedFetchedProperties;
 - (id)sortedRelationships;
 - (id)sortedAttributes;
-- (id)code_entityFileName;
-- (id)proposedFileName;
+- (void)code_classReferences:(id *)arg1 headers:(id *)arg2;
+- (id)code_superclassInclude;
+- (id)code_effectiveSuperclassName;
+- (id)code_effectiveClassName;
+- (id)code_suggestedClassNameWithModulePrefix:(id)arg1;
 - (id)allRelationshipsIncludingInheritance;
 - (id)allAttributesIncludingInheritance;
 - (id)allPropertiesIncludingInheritance;

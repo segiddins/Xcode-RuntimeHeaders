@@ -18,11 +18,9 @@
 @interface IDEWorkspaceWindowController : NSWindowController <NSWindowDelegate, IDEEditorAreaContainer, DVTStatefulObject, DVTTabbedWindowControlling, DVTEditor, DVTInvalidation>
 {
     NSTimer *_springToFrontTimer;
-    NSString *_uniqueIdentifier;
     int _debugSessionState;
     NSMutableArray *_windowsOrderedOutForMiniDebugging;
     struct CGRect _restoreFrame;
-    struct CGRect _windowFrameBeforeFullScreen;
     struct CGSize _originalMinSize;
     struct CGPoint _miniRestoreOrigin;
     struct CGSize _collapsedRestoreSize;
@@ -32,7 +30,6 @@
     struct CGSize _contentViewFrozenSize;
     NSMutableArray *_topLevelViewOrder;
     NSMapTable *_viewHeightsForResizing;
-    DVTStateToken *_stateToken;
     NSMutableArray *_stateChangeObservingTokens;
     IDEEditorDocument *_lastObservedEditorDocument;
     IDEWorkspaceTabController *_activeWorkspaceTabController;
@@ -55,8 +52,6 @@
     BOOL _tabBarInTransition;
     BOOL _tabBarShownForTabDrag;
     BOOL _keepTabBarHiddenWhenCreatingTab;
-    BOOL _createNewTabUponLoadIfNoTabsExist;
-    BOOL _inMiniDebuggingMode;
     BOOL _isInMorphingToDebugging;
     BOOL _createdCollapsedRestoreFrame;
     BOOL _createdMediumRestoreFrame;
@@ -67,16 +62,19 @@
     BOOL _wasShowingUtilitiesBeforeMiniDebugging;
     BOOL _wasShowingEditorBeforeMiniDebugging;
     BOOL _isClosing;
-    BOOL _toggleFullscreenOnBecomeMain;
     BOOL _enteringFullScreenMode;
     BOOL _exitingFullScreenMode;
     BOOL _fullScreenTabBarAlwaysVisible;
+    BOOL _inMiniDebuggingMode;
+    BOOL _createNewTabUponLoadIfNoTabsExist;
     BOOL _didSetupFirstResponderInterposer;
     BOOL _shouldPerformWindowClose;
     DVTTabBarEnclosureView *_tabBarEnclosureView;
     NSTabView *_tabView;
+    NSString *_uniqueIdentifier;
     DVTWeakInterposer *_firstResponderInterposer;
     DVTBarBackground *_tabBarView;
+    DVTStateToken *_stateToken;
 }
 
 + (id)keyPathsForValuesAffectingUserWantsBreakpointsActivated;
@@ -86,16 +84,16 @@
 + (void)configureStateSavingObjectPersistenceByName:(id)arg1;
 + (id)workspaceWindowControllers;
 @property BOOL shouldPerformWindowClose; // @synthesize shouldPerformWindowClose=_shouldPerformWindowClose;
+@property(retain) DVTStateToken *stateToken; // @synthesize stateToken=_stateToken;
 @property(retain, nonatomic) DVTBarBackground *tabBarView; // @synthesize tabBarView=_tabBarView;
 @property BOOL didSetupFirstResponderInterposer; // @synthesize didSetupFirstResponderInterposer=_didSetupFirstResponderInterposer;
 @property(retain) DVTWeakInterposer *firstResponderInterposer; // @synthesize firstResponderInterposer=_firstResponderInterposer;
 @property(nonatomic) BOOL showToolbar; // @synthesize showToolbar=_showToolbar;
-@property(retain, nonatomic) NSTabView *tabView; // @synthesize tabView=_tabView;
-@property(retain, nonatomic) DVTTabBarEnclosureView *tabBarEnclosureView; // @synthesize tabBarEnclosureView=_tabBarEnclosureView;
 @property BOOL createNewTabUponLoadIfNoTabsExist; // @synthesize createNewTabUponLoadIfNoTabsExist=_createNewTabUponLoadIfNoTabsExist;
 @property(copy, nonatomic) NSString *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
-@property(retain) DVTStateToken *stateToken; // @synthesize stateToken=_stateToken;
 @property(readonly, getter=isInMiniDebuggingMode) BOOL inMiniDebuggingMode; // @synthesize inMiniDebuggingMode=_inMiniDebuggingMode;
+@property(retain, nonatomic) NSTabView *tabView; // @synthesize tabView=_tabView;
+@property(retain, nonatomic) DVTTabBarEnclosureView *tabBarEnclosureView; // @synthesize tabBarEnclosureView=_tabBarEnclosureView;
 - (void).cxx_destruct;
 - (void)moveFocusToEditor:(id)arg1;
 - (void)dicardEditing;
@@ -139,7 +137,6 @@
 - (BOOL)workspaceWindow:(id)arg1 interceptSetCursorForMouseLocation:(struct CGPoint)arg2;
 - (void)workspaceWindowDidRecalculateKeyViewLoop:(id)arg1;
 - (void)windowWillClose:(id)arg1;
-- (void)windowDidBecomeMain:(id)arg1;
 - (void)windowDidMove:(id)arg1;
 - (void)windowDidResize:(id)arg1;
 - (struct CGSize)windowWillResize:(id)arg1 toSize:(struct CGSize)arg2;
@@ -152,6 +149,7 @@
 - (void)primitiveInvalidate;
 - (void)_prepareBarsToExitFullScreen;
 - (void)_prepareBarsToEnterFullScreen;
+- (BOOL)isEnteringOrInFullScreenMode;
 - (BOOL)isInFullScreenMode;
 - (void)synchronizeWindowTitleWithDocumentName;
 - (void)_performCloseAll;
@@ -174,7 +172,7 @@
 - (void)_toggleTabBarWithAnimation:(BOOL)arg1 isShowing:(BOOL)arg2;
 - (id)_setAutoresizingMasksForOrderedViews:(id)arg1 toResizeOnly:(id)arg2;
 - (void)_collectViewInfoForResizing;
-- (void)_updateFullScreenAuxiliaryToolbarViewSizes;
+- (void)_updateAuxiliaryToolbarViewSizes;
 - (double)_originalHeightForView:(id)arg1;
 - (id)showTabNamed:(id)arg1;
 - (id)_showTab:(id)arg1;
@@ -217,6 +215,7 @@
 - (void)closeCurrentTab:(id)arg1;
 - (id)_newTabWithName:(id)arg1 cloneExisting:(BOOL)arg2 andShow:(BOOL)arg3 withInstalledTabControllerBlock:(CDUnknownBlockType)arg4;
 - (id)newTabWithName:(id)arg1 cloneExisting:(BOOL)arg2;
+- (void)newTabWithinWindow:(id)arg1;
 - (void)newTab:(id)arg1;
 - (BOOL)validateMenuItem:(id)arg1;
 - (BOOL)canCloseOtherTabs;
@@ -239,7 +238,8 @@
 @property(readonly) IDEWorkspaceTabController *activeWorkspaceTabController;
 - (void)_didChangeActiveWorkspaceTabController;
 - (id)workspaceTabControllers;
-@property(copy) NSString *stateSavingWindowFrame;
+- (void)setStateSavingWindowFrame:(id)arg1;
+- (id)stateSavingWindowFrame;
 - (void)commitStateToDictionary:(id)arg1;
 - (void)_configureStateSavingObservers;
 - (void)revertStateWithDictionary:(id)arg1;

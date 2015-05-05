@@ -33,7 +33,7 @@
 - (id)messageReceiveChannel:(id)arg1 queueForReceivingMessage:(SEL)arg2;
 - (id)messageReceiveChannelQueueForShutdownNotification:(id)arg1;
 - (void)runMessageChannel:(id)arg1;
-- (void)standardInputClosed:(id)arg1;
+- (void)standardInputClosed;
 - (void)initializeWithArguments:(id)arg1;
 
 // Remaining properties

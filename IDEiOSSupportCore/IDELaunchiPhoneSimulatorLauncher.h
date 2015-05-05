@@ -9,11 +9,10 @@
 #import "DTMISProcessControlServiceAuthorizedAPI.h"
 #import "IDERunOperationWorkerChaining.h"
 
-@class DTXChannel, DVTDispatchLock, DVTObservingToken, DVTiPhoneSimulator, NSString;
+@class DTXChannel, DVTDispatchLock, DVTObservingToken, DVTiPhoneSimulator, IDEPseudoTerminal, NSString;
 
 @interface IDELaunchiPhoneSimulatorLauncher : IDERunOperationWorker <IDERunOperationWorkerChaining, DTMISProcessControlServiceAuthorizedAPI>
 {
-    DVTiPhoneSimulator *_device;
     BOOL _debugSessionStarted;
     BOOL _responsibleForTermination;
     BOOL _setUpSimulatorSessionForAttaching;
@@ -22,10 +21,13 @@
     DVTDispatchLock *_lifeCycleLock;
     DVTObservingToken *_debugSessionStateObservingToken;
     BOOL _launchingToDebug;
+    DVTiPhoneSimulator *_device;
+    IDEPseudoTerminal *_pty;
     DTXChannel *_launchServiceChannel;
 }
 
 @property(retain) DTXChannel *launchServiceChannel; // @synthesize launchServiceChannel=_launchServiceChannel;
+@property(retain) IDEPseudoTerminal *pty; // @synthesize pty=_pty;
 @property(retain) DVTiPhoneSimulator *device; // @synthesize device=_device;
 @property(getter=isLaunchingToDebug) BOOL launchingToDebug; // @synthesize launchingToDebug=_launchingToDebug;
 - (void).cxx_destruct;

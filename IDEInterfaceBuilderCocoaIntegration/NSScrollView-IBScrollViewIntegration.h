@@ -23,7 +23,8 @@
 - (BOOL)ibChildViewHasCustomLayoutButAllowsEqualSizeConstraints:(id)arg1;
 - (BOOL)ibChildView:(id)arg1 canHaveUninitializedAutolayoutAmbiguityStatusInDocument:(id)arg2;
 - (BOOL)ibChildView:(id)arg1 shouldUseConstraintsInsteadOfAutoresizingWhenAddedToDocument:(id)arg2;
-- (void)setIbArchivedDesignableContentView:(id)arg1;
+- (void)setIbArchivedDesignableContentView:(id)arg1 unarchiver:(id)arg2;
+- (void)awakeAfterUsingDocumentUnarchiver:(id)arg1;
 - (id)ibArchivedDesignableContentView;
 - (void)setIbShadowedSubviews:(id)arg1;
 - (id)ibShadowedSubviews;

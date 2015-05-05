@@ -15,13 +15,13 @@ struct BreakpointLocation;
 struct Broadcaster;
 
 struct CGPoint {
-    double _field1;
-    double _field2;
+    double x;
+    double y;
 };
 
 struct CGRect {
-    struct CGPoint _field1;
-    struct CGSize _field2;
+    struct CGPoint origin;
+    struct CGSize size;
 };
 
 struct CGSize {
@@ -60,15 +60,7 @@ struct SBThread {
     struct shared_ptr<lldb_private::ExecutionContextRef> m_opaque_sp;
 };
 
-struct SwiftSyntaxStructure {
-    unsigned int _field1;
-    struct _NSRange _field2;
-    struct _NSRange _field3;
-    struct _NSRange _field4;
-    struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> _field5;
-    struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> _field6;
-    vector_056a6866 _field7;
-};
+struct SwiftSyntaxStructure;
 
 struct Target;
 
@@ -92,28 +84,9 @@ struct _NSRange {
 
 struct __shared_weak_count;
 
-struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> {
-    struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>::__rep, std::__1::allocator<char>> {
-        struct __rep {
-            union {
-                struct __long {
-                    unsigned long long _field1;
-                    unsigned long long _field2;
-                    char *_field3;
-                } _field1;
-                struct __short {
-                    union {
-                        unsigned char _field1;
-                        char _field2;
-                    } _field1;
-                    char _field2[23];
-                } _field2;
-                struct __raw {
-                    unsigned long long _field1[3];
-                } _field3;
-            } _field1;
-        } _field1;
-    } _field1;
+struct shared_ptr<SwiftSyntaxStructure> {
+    struct SwiftSyntaxStructure *__ptr_;
+    struct __shared_weak_count *__cntrl_;
 };
 
 struct shared_ptr<lldb_private::BreakpointLocation> {
@@ -141,15 +114,15 @@ struct shared_ptr<lldb_private::Target> {
     struct __shared_weak_count *__cntrl_;
 };
 
-struct vector<SwiftSyntaxStructure, std::__1::allocator<SwiftSyntaxStructure>> {
-    struct SwiftSyntaxStructure *__begin_;
-    struct SwiftSyntaxStructure *__end_;
-    struct __compressed_pair<SwiftSyntaxStructure *, std::__1::allocator<SwiftSyntaxStructure>> {
-        struct SwiftSyntaxStructure *__first_;
+struct vector<SwiftSyntaxToken, std::__1::allocator<SwiftSyntaxToken>>;
+
+struct vector<std::__1::shared_ptr<SwiftSyntaxStructure>, std::__1::allocator<std::__1::shared_ptr<SwiftSyntaxStructure>>> {
+    shared_ptr_99585c3b *__begin_;
+    shared_ptr_99585c3b *__end_;
+    struct __compressed_pair<std::__1::shared_ptr<SwiftSyntaxStructure>*, std::__1::allocator<std::__1::shared_ptr<SwiftSyntaxStructure>>> {
+        shared_ptr_99585c3b *__first_;
     } __end_cap_;
 };
-
-struct vector<SwiftSyntaxToken, std::__1::allocator<SwiftSyntaxToken>>;
 
 struct vector<std::__1::vector<SwiftSyntaxToken, std::__1::allocator<SwiftSyntaxToken>>, std::__1::allocator<std::__1::vector<SwiftSyntaxToken, std::__1::allocator<SwiftSyntaxToken>>>> {
     struct vector<SwiftSyntaxToken, std::__1::allocator<SwiftSyntaxToken>> *__begin_;
@@ -170,16 +143,24 @@ typedef struct {
     unsigned long long data[3];
 } CDStruct_3b0d17db;
 
-// Ambiguous groups
 typedef struct {
-    unsigned int didSelectNewResultDisplayDate:1;
-} CDStruct_b590ebd7;
+    double minX;
+    double maxX;
+    double minY;
+    double maxY;
+} CDStruct_bf6d4a14;
 
-typedef struct vector<SwiftSyntaxStructure, std::__1::allocator<SwiftSyntaxStructure>> {
-    struct SwiftSyntaxStructure *__begin_;
-    struct SwiftSyntaxStructure *__end_;
-    struct __compressed_pair<SwiftSyntaxStructure *, std::__1::allocator<SwiftSyntaxStructure>> {
-        struct SwiftSyntaxStructure *__first_;
+// Template types
+typedef struct shared_ptr<SwiftSyntaxStructure> {
+    struct SwiftSyntaxStructure *__ptr_;
+    struct __shared_weak_count *__cntrl_;
+} shared_ptr_99585c3b;
+
+typedef struct vector<std::__1::shared_ptr<SwiftSyntaxStructure>, std::__1::allocator<std::__1::shared_ptr<SwiftSyntaxStructure>>> {
+    shared_ptr_99585c3b *__begin_;
+    shared_ptr_99585c3b *__end_;
+    struct __compressed_pair<std::__1::shared_ptr<SwiftSyntaxStructure>*, std::__1::allocator<std::__1::shared_ptr<SwiftSyntaxStructure>>> {
+        shared_ptr_99585c3b *__first_;
     } __end_cap_;
-} vector_056a6866;
+} vector_c3e2d001;
 

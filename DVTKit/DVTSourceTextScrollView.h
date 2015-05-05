@@ -25,7 +25,6 @@
 - (void)setFrameSize:(struct CGSize)arg1;
 - (void)viewDidEndLiveResize;
 - (void)viewWillStartLiveResize;
-- (BOOL)accessibilityIsIgnored;
 
 @end
 

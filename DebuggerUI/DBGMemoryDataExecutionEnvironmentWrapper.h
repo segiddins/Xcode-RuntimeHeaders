@@ -27,7 +27,7 @@
 @property(readonly) NSString *navigableItem_name;
 - (void)_addMemoryDataGroupForProcess:(id)arg1;
 - (void)_removeMemoryDataGroupForProcess:(id)arg1;
-- (void)_handleTargetProcessChanged:(id)arg1;
+- (void)_handleProcessChanged:(id)arg1;
 - (void)_handleLaunchSessionsAdded:(id)arg1;
 - (void)_handleLaunchSessionsRemoved:(id)arg1;
 - (void)_handleLaunchSessionsChanged:(id)arg1;

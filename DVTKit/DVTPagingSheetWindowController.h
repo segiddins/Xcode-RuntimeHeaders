@@ -24,6 +24,7 @@
 - (void).cxx_destruct;
 - (void)dvt_sheetDidEnd:(id)arg1 returnCode:(long long)arg2 contextInfo:(void *)arg3;
 - (void)beginSheetModalForWindow:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
+- (void)configureWindowForContentView:(id)arg1;
 - (void)didEndSheetWithReturnCode:(long long)arg1;
 - (void)willBeginSheet;
 @property(retain, nonatomic) Class currentPageViewControllerClass;

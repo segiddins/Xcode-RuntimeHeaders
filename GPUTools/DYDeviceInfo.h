@@ -39,6 +39,7 @@
 @property(nonatomic) int platform; // @synthesize platform=_platform;
 - (BOOL)supportsCapabilitiesOfGraphicsAPI:(id)arg1 allowedClass:(Class)arg2;
 - (BOOL)versionIsOlderThan:(id)arg1;
+@property(readonly, nonatomic) BOOL isiOSPlatform;
 @property(readonly, nonatomic) BOOL sharedPermanentIdentifier; // @dynamic sharedPermanentIdentifier;
 - (void)encodeWithCoder:(id)arg1;
 - (id)debugDescription;

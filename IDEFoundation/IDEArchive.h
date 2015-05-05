@@ -16,6 +16,7 @@
     BOOL _savePending;
     BOOL _estimateInProgress;
     NSArray *_topLevelDistributionItems;
+    NSString *_archiveSize;
 }
 
 + (long long)_computedApproximateAppStoreFileSizeForArchiveContentPath:(id)arg1 forPlatform:(id)arg2;
@@ -24,15 +25,20 @@
 + (id)_availableArchivePathInDirectory:(id)arg1 withName:(id)arg2 creationDate:(id)arg3 usingFileManager:(id)arg4;
 + (id)_archivePathOverride;
 + (id)_archivePlistPathForArchivePath:(id)arg1;
++ (void)_copySCMBlueprintFromWorkspace:(id)arg1 toArchiveWithPath:(id)arg2 usingFileManager:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;
++ (BOOL)_copyWatchKitSupportFromDirectory:(id)arg1 toArchiveWithPath:(id)arg2 usingFileManager:(id)arg3 error:(id *)arg4;
++ (BOOL)_copySwiftSupportFromDirectory:(id)arg1 toArchiveWithPath:(id)arg2 usingFileManager:(id)arg3 error:(id *)arg4;
 + (BOOL)_copyProductDefinitionPlistFromDirectory:(id)arg1 toArchiveWithPath:(id)arg2 usingFileManager:(id)arg3 error:(id *)arg4;
 + (BOOL)_copydSYMsFromDirectory:(id)arg1 toArchiveWithPath:(id)arg2 usingFileManager:(id)arg3 error:(id *)arg4;
 + (id)_createArchiveWithName:(id)arg1 usingFileManager:(id)arg2 error:(id *)arg3;
 + (id)_folderPathForArchiveWithDate:(id)arg1;
-+ (id)createArchiveWithName:(id)arg1 schemeName:(id)arg2 platform:(id)arg3 products:(id)arg4 auxiliaryFiles:(id)arg5 usingFileManager:(id)arg6 error:(id *)arg7;
++ (void)createArchiveWithName:(id)arg1 schemeName:(id)arg2 platform:(id)arg3 products:(id)arg4 auxiliaryFiles:(id)arg5 workspace:(id)arg6 usingFileManager:(id)arg7 completionBlock:(CDUnknownBlockType)arg8;
 + (id)installArchiveWithArchivePath:(id)arg1 usingFileManager:(id)arg2;
 + (id)archiveWithArchivePath:(id)arg1;
 + (id)keyPathsForValuesAffectingProductDefinitionPlistPath;
 + (id)_productDefinitionPlistPathForArchivePath:(id)arg1;
++ (id)keyPathsForValuesAffectingSourceControlBlueprint;
++ (id)_sourceControlBlueprintDirectoryPathForArchivePath:(id)arg1;
 + (id)keyPathsForValuesAffectingDSYMDirectoryPath;
 + (id)_dSYMDirectoryPathForArchivePath:(id)arg1;
 + (id)keyPathsForValuesAffectingProductsDirectoryPath;
@@ -41,15 +47,13 @@
 @property(readonly) IDEArchivedContent *archivedContent; // @synthesize archivedContent=_archivedContent;
 @property(retain) DVTFilePath *path; // @synthesize path=_path;
 - (void).cxx_destruct;
-- (id)topLevelDistributionItemsWithLogAspect:(id)arg1 error:(id *)arg2;
-- (id)_distributionItemForPath:(id)arg1 pathsToItems:(id)arg2 pathsToChildPaths:(id)arg3 logAspect:(id)arg4 error:(id *)arg5;
-- (id)expandedCustomEntitlementsForItemAtPath:(id)arg1 error:(id *)arg2;
 - (void)estimateSizeInBackgroundForPlatform:(id)arg1;
 - (void)_saveArchive:(id)arg1;
 - (void)markDirty;
 - (id)objectForEnterpriseDistributionKey:(id)arg1;
 - (void)setObject:(id)arg1 forEnterpriseDistributionKey:(id)arg2;
 @property(copy) NSDictionary *enterpriseDistributionManifest;
+@property(readonly) NSString *archiveSize; // @synthesize archiveSize=_archiveSize;
 @property(copy) NSString *statusString;
 @property(copy) NSString *comment;
 @property long long estimatedAppStoreFileSize;
@@ -59,9 +63,14 @@
 @property(readonly) NSString *schemeName;
 @property(copy) NSString *name;
 @property(readonly) DVTFilePath *productDefinitionPlistPath;
+@property(readonly) DVTFilePath *sourceControlBlueprintDirectoryPath;
 @property(readonly) DVTFilePath *dSYMDirectoryPath;
 @property(readonly) DVTFilePath *productsDirectoryPath;
 @property(readonly) NSMutableDictionary *infoDictionary;
+@property(readonly) BOOL canSubmit;
+@property(readonly) BOOL canExport;
+@property(readonly) BOOL canValidate;
+- (BOOL)_canPerformTask:(int)arg1;
 @property(readonly) IDEArchivedApplication *application;
 - (id)_initWithPath:(id)arg1 infoDictionary:(id)arg2;
 

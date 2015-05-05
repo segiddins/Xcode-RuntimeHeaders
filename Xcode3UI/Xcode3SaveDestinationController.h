@@ -19,7 +19,7 @@
 
 @property(retain) DVTTableView *targetsTableView; // @synthesize targetsTableView=_targetsTableView;
 - (void).cxx_destruct;
-- (void)didFinishSaveSuccessfully:(BOOL)arg1;
+- (void)didFinishSaveSuccessfully:(BOOL)arg1 shouldEdit:(BOOL)arg2;
 - (void)destinationManagerGroupDidChange:(id)arg1;
 - (void)loadView;
 - (void)configureTargetsTableView;

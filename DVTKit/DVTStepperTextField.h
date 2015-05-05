@@ -15,16 +15,21 @@
     unsigned long long _scrubberMode;
     float _v0;
     float _delta;
+    BOOL _reachedStage2;
     double _minValue;
     double _maxValue;
     double _increment;
+    struct CGRect _rectForPulse;
 }
 
 + (Class)cellClass;
+@property BOOL reachedStage2; // @synthesize reachedStage2=_reachedStage2;
+@property struct CGRect rectForPulse; // @synthesize rectForPulse=_rectForPulse;
 @property double increment; // @synthesize increment=_increment;
 @property double maxValue; // @synthesize maxValue=_maxValue;
 @property double minValue; // @synthesize minValue=_minValue;
 - (void)textDidEndEditing:(id)arg1;
+- (void)gestureRecognizerAction:(id)arg1;
 - (void)mouseUp:(id)arg1;
 - (void)mouseDragged:(id)arg1;
 - (BOOL)_eventLocationIsOverMinusOrPlusButton:(id)arg1;
@@ -41,6 +46,7 @@
 - (void)_decrement;
 - (double)_incrementToUse;
 @property(readonly) double defaultIncrement;
+- (BOOL)allowsVibrancy;
 - (BOOL)isOpaque;
 - (void)_dvtStepperTextField_commonInit;
 - (id)initWithCoder:(id)arg1;

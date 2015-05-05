@@ -6,14 +6,16 @@
 
 #import "NSTextView.h"
 
-@class NSString;
+@class NSFont, NSString;
 
 @interface DVTTextViewWithPlaceholder : NSTextView
 {
     NSString *_centeredPlaceholderString;
     BOOL _didDrawPlaceholder;
+    NSFont *_placeholderFont;
 }
 
+@property(retain, nonatomic) NSFont *placeholderFont; // @synthesize placeholderFont=_placeholderFont;
 @property(copy) NSString *centeredPlaceholderString; // @synthesize centeredPlaceholderString=_centeredPlaceholderString;
 - (void).cxx_destruct;
 - (void)didChangeText;

@@ -6,12 +6,12 @@
 
 #import <IDELanguageSupportUI/IDEBasicPlaygroundQuickLookForObjectReflection.h>
 
-@class IDEPlaygroundLoggerObjectReflectionForImage, NSImageView, NSLayoutConstraint, NSView;
+@class NSImageView, NSLayoutConstraint, NSView;
 
 @interface IDEPlaygroundQuickLookForImage : IDEBasicPlaygroundQuickLookForObjectReflection
 {
     NSView *_quickLookForNaturalSize;
-    IDEPlaygroundLoggerObjectReflectionForImage *_objectReflectionForImage;
+    NSView *_quickLookForCollectionView;
     NSImageView *_imageView;
     NSLayoutConstraint *_imageWidth;
     NSLayoutConstraint *_imageHeight;
@@ -26,8 +26,8 @@
 @property __weak NSLayoutConstraint *imageHeight; // @synthesize imageHeight=_imageHeight;
 @property __weak NSLayoutConstraint *imageWidth; // @synthesize imageWidth=_imageWidth;
 @property __weak NSImageView *imageView; // @synthesize imageView=_imageView;
-@property(readonly) IDEPlaygroundLoggerObjectReflectionForImage *objectReflectionForImage; // @synthesize objectReflectionForImage=_objectReflectionForImage;
 - (void).cxx_destruct;
+- (id)quickLookViewForCollectionView;
 - (id)quickLookViewForResultsView;
 - (id)quickLookViewForNaturalSize;
 - (id)initWithObjectReflection:(id)arg1;

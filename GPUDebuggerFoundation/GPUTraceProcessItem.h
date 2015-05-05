@@ -6,11 +6,11 @@
 
 #import <GPUDebuggerFoundation/GPUTraceGroupItem.h>
 
-#import "IDEDebugProcess.h"
+#import "IDEDebugTopNavigableModel.h"
 
-@class IDELaunchSession, NSArray, NSString;
+@class DVTStackBacktrace, IDEDebugSession, IDELaunchSession, NSArray, NSString;
 
-@interface GPUTraceProcessItem : GPUTraceGroupItem <IDEDebugProcess>
+@interface GPUTraceProcessItem : GPUTraceGroupItem <IDEDebugTopNavigableModel>
 {
 }
 
@@ -21,12 +21,16 @@
 
 // Remaining properties
 @property(readonly, copy) NSString *associatedProcessUUID;
+@property(retain) DVTStackBacktrace *creationBacktrace;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
+@property(readonly) DVTStackBacktrace *invalidationBacktrace;
 @property(readonly) IDELaunchSession *launchSession;
 @property(readonly, nonatomic) NSArray *loadedCodeModules;
+@property(readonly, nonatomic) IDEDebugSession *parentDebugSession;
 @property(readonly) Class superclass;
+@property(readonly, nonatomic, getter=isValid) BOOL valid;
 
 @end
 

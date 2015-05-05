@@ -127,6 +127,7 @@
 - (CDStruct_b3ff9733)displayedLineRange;
 - (unsigned long long)totalLineCount;
 - (CDStruct_91ee6ea3)_maximumDisplayedRangeSet;
+- (void)invalidateController;
 - (void)removeRepresenter:(id)arg1;
 - (void)addRepresenter:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;

@@ -35,7 +35,6 @@
 - (id)endPointsFromBackToFrontAtPoint:(struct CGPoint)arg1 inView:(id)arg2 withContext:(id)arg3 forDocument:(id)arg4 connectionHandler:(id *)arg5;
 - (void)revealSpringLoadedObjectAndIndicateSuccess:(id)arg1;
 - (id)springLoadedObjectInfoAtPoint:(struct CGPoint)arg1 inView:(id)arg2 withContext:(id)arg3 forDocument:(id)arg4;
-- (void)pasteExcludingConnections:(id)arg1;
 - (void)dockViewPerformPaste:(id)arg1;
 - (void)dockView:(id)arg1 duplicateRepresentedObjects:(id)arg2;
 - (void)dockView:(id)arg1 cutRepresentedObjects:(id)arg2;

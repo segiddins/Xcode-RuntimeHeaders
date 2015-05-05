@@ -10,7 +10,7 @@
 {
 }
 
-+ (id)destinationPathForItem:(id)arg1 inDestinationRoot:(id)arg2;
++ (id)destinationPathForItem:(id)arg1 fromProductsRoot:(id)arg2 inDestinationRoot:(id)arg3;
 + (id)processingStepWithDistributionItem:(id)arg1;
 - (_Bool)processWithContext:(id)arg1 andError:(id *)arg2;
 - (id)name;

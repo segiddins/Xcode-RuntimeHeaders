@@ -22,6 +22,7 @@
     BOOL _onlySupportsAppStoreDeployment;
     BOOL _appStoreArchivesRequirePreciseSizeEstimate;
     BOOL _distributionShouldCopySwiftSupport;
+    BOOL _distributionShouldCopyWatchKitSupport;
     NSString *_platformIdentifier;
     NSString *_bundleFormatApplicationPathFormatString;
     NSString *_embeddedProvisioningProfileName;
@@ -43,6 +44,7 @@
 
 + (void)_initializePlatformInfo:(id)arg1 fromExtension:(id)arg2;
 + (id)extendedPlatformInfoForPlatformIdentifier:(id)arg1;
+@property(readonly) BOOL distributionShouldCopyWatchKitSupport; // @synthesize distributionShouldCopyWatchKitSupport=_distributionShouldCopyWatchKitSupport;
 @property(readonly) BOOL distributionShouldCopySwiftSupport; // @synthesize distributionShouldCopySwiftSupport=_distributionShouldCopySwiftSupport;
 @property(readonly) BOOL appStoreArchivesRequirePreciseSizeEstimate; // @synthesize appStoreArchivesRequirePreciseSizeEstimate=_appStoreArchivesRequirePreciseSizeEstimate;
 @property(readonly) NSArray *productTypesRequiringProvisioning; // @synthesize productTypesRequiringProvisioning=_productTypesRequiringProvisioning;

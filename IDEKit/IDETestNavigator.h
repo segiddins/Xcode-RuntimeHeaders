@@ -112,7 +112,7 @@
 @property(readonly) unsigned long long hash;
 @property(readonly, copy) NSMutableSet *mutableCollapsedItems; // @dynamic mutableCollapsedItems;
 @property(readonly, copy) NSMutableSet *mutableExpandedItems; // @dynamic mutableExpandedItems;
-@property(retain) IDETestNavigatorOutlineView *outlineView;
+@property(retain) IDETestNavigatorOutlineView *outlineView; // @dynamic outlineView;
 @property(readonly) Class superclass;
 
 @end

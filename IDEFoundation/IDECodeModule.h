@@ -6,32 +6,35 @@
 
 #import "NSObject.h"
 
-@class DVTFilePath, NSString;
+@class DVTFilePath, NSNumber, NSString;
 
 @interface IDECodeModule : NSObject
 {
+    NSString *_frameworkNameIncludingExtension;
     BOOL _isInBuiltProductDirectories;
     int _debugSymbolsLoadState;
+    NSNumber *_timestamp;
     DVTFilePath *_filePath;
-    NSString *_name;
-    NSString *_frameworkNameIncludingExtension;
     NSString *_identifier;
     unsigned long long _address;
-    NSString *_displayAddress;
-    NSString *_path;
 }
 
++ (id)keyPathsForValuesAffectingPath;
++ (id)keyPathsForValuesAffectingTimestamp;
++ (id)keyPathsForValuesAffectingName;
 + (id)frameworkNameIncludingExtensionFromPath:(id)arg1;
-@property int debugSymbolsLoadState; // @synthesize debugSymbolsLoadState=_debugSymbolsLoadState;
++ (id)logAspect;
+@property(nonatomic) int debugSymbolsLoadState; // @synthesize debugSymbolsLoadState=_debugSymbolsLoadState;
 @property(nonatomic) BOOL isInBuiltProductDirectories; // @synthesize isInBuiltProductDirectories=_isInBuiltProductDirectories;
-@property(readonly, nonatomic) NSString *path; // @synthesize path=_path;
-@property(readonly, nonatomic) NSString *displayAddress; // @synthesize displayAddress=_displayAddress;
-@property unsigned long long address; // @synthesize address=_address;
+@property(nonatomic) unsigned long long address; // @synthesize address=_address;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-@property(readonly, copy) NSString *frameworkNameIncludingExtension; // @synthesize frameworkNameIncludingExtension=_frameworkNameIncludingExtension;
-@property(readonly, copy) NSString *name; // @synthesize name=_name;
-@property(retain) DVTFilePath *filePath; // @synthesize filePath=_filePath;
+@property(copy, nonatomic) DVTFilePath *filePath; // @synthesize filePath=_filePath;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *path;
+@property(readonly, nonatomic) NSString *displayAddress;
+@property(readonly, nonatomic) NSNumber *timestamp; // @synthesize timestamp=_timestamp;
+@property(readonly, nonatomic) NSString *frameworkNameIncludingExtension;
+@property(readonly, nonatomic) NSString *name;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)initWithIdentifier:(id)arg1 pathString:(id)arg2;

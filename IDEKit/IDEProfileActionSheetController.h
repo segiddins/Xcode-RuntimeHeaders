@@ -8,7 +8,7 @@
 
 #import "IDECapsuleListViewDataSource.h"
 
-@class DVTBorderedView, DVTChoice, DVTFilePathFieldCell, DVTNotificationToken, DVTObservingToken, DVTStackView_ML, DVTTabChooserView, IDEArgumentsCapsuleSheetController, IDECapsuleListView, IDEEnvironmentVariablesCapsuleSheetController, IDEProfileSchemeAction, IDEScheme, IDEWorkspace, NSMutableArray, NSPopUpButton, NSString, NSTabView, NSTextField, NSView;
+@class DVTBorderedView, DVTChoice, DVTFilePathFieldCell, DVTNotificationToken, DVTObservingToken, DVTStackView_AppKitAutolayout, DVTStackView_ML, DVTTabChooserView, IDEArgumentsCapsuleSheetController, IDECapsuleListView, IDEEnvironmentVariablesCapsuleSheetController, IDEProfileSchemeAction, IDEScheme, IDEWorkspace, NSMutableArray, NSPopUpButton, NSString, NSTabView, NSTextField, NSView;
 
 @interface IDEProfileActionSheetController : IDEViewController <IDECapsuleListViewDataSource>
 {
@@ -27,6 +27,13 @@
     NSView *_resumeOptionView;
     NSView *_debugDocumentVersioningOptionView;
     NSView *_workingDirectoryOptionView;
+    DVTStackView_AppKitAutolayout *_infoStackView;
+    NSView *_executable_buildConfiguration;
+    NSView *_executable_runnable;
+    NSView *_executable_instrument;
+    NSView *_watchLaunchSettingsView;
+    NSPopUpButton *_watchInterfacePopup;
+    NSPopUpButton *_notificationPayloadPopup;
     DVTChoice *_infoChoice;
     DVTChoice *_conditionsChoice;
     DVTChoice *_optionsChoice;
@@ -65,6 +72,14 @@
 - (void)clearHighlightsInCapsuleView;
 - (void)_updateRunnablePopUp;
 - (void)_runnableBuildableProductsDidChange;
+- (void)_addMenuItemForBuildableProduct:(id)arg1 menu:(id)arg2;
+- (void)_updateWatchSettings;
+- (void)_notificationPayloadSelected:(id)arg1;
+- (id)notificationPayloadFileReferences;
+- (BOOL)_runnableIsWatchApp;
+- (void)_addMenuItemForWatchInterfaceMenu:(id)arg1 tag:(long long)arg2;
+- (void)watchInterfaceSelected:(id)arg1;
+- (void)_validateNotificationPopupForTag:(long long)arg1;
 - (void)runnablePopUpAction:(id)arg1;
 - (void)_updateMacroExpansionRunnablePopUpEnablement;
 - (void)_runnableDidUpdate;
@@ -74,6 +89,7 @@
 - (void)_updateAnalysisToolsPopUp;
 - (void)_selectedSchemeChanged:(id)arg1;
 - (void)primitiveInvalidate;
+- (void)_updateInfoTab;
 - (void)loadView;
 - (void)updateBoundContent;
 - (void)updateBoundIDERunContextBinding;

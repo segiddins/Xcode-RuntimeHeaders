@@ -50,7 +50,7 @@
 - (struct CGSize)ibPreferredSizeForSize:(struct CGSize)arg1;
 - (void)ibRemoveChildren:(id)arg1;
 - (id)ibDocumentationPropertyInfosForKeyPath:(id)arg1;
-- (void)ibTakeSnapshotValues:(id)arg1;
+- (void)ibTakeSnapshotValues:(id)arg1 inConfiguration:(id)arg2;
 - (id)ibDefaultFontForCurrentConfiguration;
 - (BOOL)ibTitleEditsSelf;
 - (BOOL)ibIsBaselineAtIndex:(long long)arg1 inMotionWithKnob:(long long)arg2;

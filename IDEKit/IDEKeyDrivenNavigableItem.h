@@ -26,6 +26,7 @@
 + (id)keyPathsForValuesAffectingImage;
 + (id)keyPathsForValuesAffectingName;
 + (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
++ (id)keyPathsForValuesAffectingLeaf;
 + (unsigned long long)countOfNavigableItemsForRepresentedObject:(id)arg1;
 + (id)navigableItemsForRepresentedObject:(id)arg1;
 + (id)keyPathsForValuesAffectingConflictStateForUpdateOrMerge;

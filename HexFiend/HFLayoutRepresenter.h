@@ -25,6 +25,7 @@
 - (void)addRepresenter:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (void)invalidateRepresenter;
 - (void)dealloc;
 - (id)init;
 - (id)representers;

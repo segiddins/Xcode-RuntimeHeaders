@@ -8,7 +8,7 @@
 
 #import "NSPopoverDelegate.h"
 
-@class DVTNotificationToken, DVTObservingToken, DVTRolloverImageButton, IDELoggerDrivenValueHistoryToy, IDEPlaygroundQuickLookController, IDEPlaygroundQuickLookPopover, IDESourceCodePlaygroundSection, IDESourceCodePlaygroundSectionAccessoryViewAnnotation, NSButton, NSFont, NSLayoutConstraint, NSString, NSView, _IDESourceCodePlaygroundSectionAnnotationView;
+@class DVTNotificationToken, DVTObservingToken, DVTRolloverImageButton, IDELoggerDrivenValueHistoryToy, IDEPlaygroundQuickLookController, IDEPlaygroundQuickLookPopover, IDESourceCodePlaygroundSection, IDESourceCodePlaygroundSectionAccessoryViewAnnotation, IDEToyHostingViewController, NSButton, NSFont, NSLayoutConstraint, NSString, NSView, _IDESourceCodePlaygroundSectionAnnotationView;
 
 @interface IDESourceCodePlaygroundSectionAnnotationViewController : DVTViewController <NSPopoverDelegate>
 {
@@ -16,20 +16,24 @@
     BOOL _valueHistoryConnected;
     IDEPlaygroundQuickLookPopover *_quickLookPopover;
     NSLayoutConstraint *_quickLookViewRightEdgeConstraint;
+    IDEToyHostingViewController *_associatedInlineToyHostingViewController;
+    IDEToyHostingViewController *_associatedQuickLookToyHostingViewController;
     BOOL _mouseIsOverView;
     BOOL _toyboxIsHighlightingToy;
     id <NSObject> _sourceTextSettingsChangedObserver;
     NSFont *_fontWhenViewUninstalled;
     DVTObservingToken *_accessoryAnnotationCollapsedObservingToken;
-    DVTObservingToken *_associatedValueHistoryToyIsValidObservingToken;
-    DVTNotificationToken *_toyboxDidHighlightToyNotificationToken;
-    DVTNotificationToken *_toyboxDidFinishHighlightingToyNotificationToken;
+    DVTObservingToken *_associatedInlineValueHistoryToyIsValidObservingToken;
+    DVTNotificationToken *_playgroundDidSelectToyNotificationToken;
+    DVTNotificationToken *_playgroundDidHighlightToyNotificationToken;
     BOOL _toyIsSelected;
     BOOL _associatedSourceCodeIsSelected;
     IDESourceCodePlaygroundSectionAccessoryViewAnnotation *_accessoryViewAnnotation;
-    CDUnknownBlockType _valueHistoryActionBlock;
+    CDUnknownBlockType _valueHistoryClickHandler;
+    CDUnknownBlockType _quickLookClickHandler;
     IDEPlaygroundQuickLookController *_quickLookController;
-    IDELoggerDrivenValueHistoryToy *_associatedValueHistoryToy;
+    IDELoggerDrivenValueHistoryToy *_associatedInlineValueHistoryToy;
+    IDELoggerDrivenValueHistoryToy *_associatedQuickLookValueHistoryToy;
     long long _currentDisplayState;
     NSView *_quickLookView;
     NSButton *_quickLookButton;
@@ -44,9 +48,12 @@
 @property(readonly) long long currentDisplayState; // @synthesize currentDisplayState=_currentDisplayState;
 @property(nonatomic) BOOL associatedSourceCodeIsSelected; // @synthesize associatedSourceCodeIsSelected=_associatedSourceCodeIsSelected;
 @property(nonatomic) BOOL toyIsSelected; // @synthesize toyIsSelected=_toyIsSelected;
-@property(retain, nonatomic) IDELoggerDrivenValueHistoryToy *associatedValueHistoryToy; // @synthesize associatedValueHistoryToy=_associatedValueHistoryToy;
+@property(retain) IDEToyHostingViewController *associatedInlineToyHostingViewController; // @synthesize associatedInlineToyHostingViewController=_associatedInlineToyHostingViewController;
+@property(retain, nonatomic) IDELoggerDrivenValueHistoryToy *associatedQuickLookValueHistoryToy; // @synthesize associatedQuickLookValueHistoryToy=_associatedQuickLookValueHistoryToy;
+@property(retain, nonatomic) IDELoggerDrivenValueHistoryToy *associatedInlineValueHistoryToy; // @synthesize associatedInlineValueHistoryToy=_associatedInlineValueHistoryToy;
 @property(retain, nonatomic) IDEPlaygroundQuickLookController *quickLookController; // @synthesize quickLookController=_quickLookController;
-@property(copy, nonatomic) CDUnknownBlockType valueHistoryActionBlock; // @synthesize valueHistoryActionBlock=_valueHistoryActionBlock;
+@property(copy) CDUnknownBlockType quickLookClickHandler; // @synthesize quickLookClickHandler=_quickLookClickHandler;
+@property(copy) CDUnknownBlockType valueHistoryClickHandler; // @synthesize valueHistoryClickHandler=_valueHistoryClickHandler;
 @property(retain) IDESourceCodePlaygroundSection *playgroundSection; // @synthesize playgroundSection=_playgroundSection;
 @property(retain) IDESourceCodePlaygroundSectionAccessoryViewAnnotation *accessoryViewAnnotation; // @synthesize accessoryViewAnnotation=_accessoryViewAnnotation;
 - (void).cxx_destruct;
@@ -59,13 +66,18 @@
 - (void)mouseExited:(id)arg1;
 - (void)mouseEntered:(id)arg1;
 - (void)_updateCurrentDisplayState;
+- (void)_updateShowHideInLineResultsButtonRolloverImage;
 - (void)_updateDisconnectedValueHistoryButtonUpdateVisibility:(BOOL)arg1;
 - (void)_updateConnectedValueHistoryButtonUpdateVisibility:(BOOL)arg1;
 - (id)_disconnectedValueHistoryButtonImage;
-- (void)_valueHistoryButtonAction:(id)arg1;
 - (void)_quickLookButtonAction:(id)arg1;
+- (void)_valueHistoryButtonAction:(id)arg1;
+@property BOOL showsInLineResult;
+@property(readonly) IDEToyHostingViewController *associatedQuickLookToyHostingViewController;
 - (BOOL)_supportsValueHistory;
 - (BOOL)_supportsQuickLookButton;
+- (void)_deregisterSelectionNotifications;
+- (void)_registerSelectionNotifications;
 - (void)viewWillUninstall;
 - (void)viewDidInstall;
 - (void)_rebuildUI;

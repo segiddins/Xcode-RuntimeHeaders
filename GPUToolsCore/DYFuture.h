@@ -27,8 +27,10 @@
 @property(retain, nonatomic) NSError *error; // @dynamic error;
 @property(retain, nonatomic) id result; // @dynamic result;
 - (void)_setResult:(id)arg1;
+- (int)intResult;
 - (unsigned int)uint32Result;
 - (BOOL)boolResult;
+- (void)waitUntilResolved;
 - (void)dealloc;
 - (id)init;
 

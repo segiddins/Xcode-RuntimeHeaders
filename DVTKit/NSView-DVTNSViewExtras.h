@@ -7,9 +7,13 @@
 #import "NSView.h"
 
 @interface NSView (DVTNSViewExtras)
-- (void)dvt_sortSubviewsUsingComparator:(CDUnknownBlockType)arg1;
+- (unsigned long long)safari_effectiveAutoresizingMaskIgnoringSuperviewMethodOverrides;
+- (void)safari_sortSubviewsUsingComparator:(CDUnknownBlockType)arg1;
 - (struct CGSize)currentEventOffsetFromEvent:(id)arg1;
-- (BOOL)_dvt_dragShouldBeginFromMouseDown:(id)arg1 withExpiration:(id)arg2 xHysteresis:(float)arg3 yHysteresis:(float)arg4;
+- (id)safari_nearestAncestorOfClass:(Class)arg1;
+- (BOOL)_safari_dragShouldBeginFromMouseDown:(id)arg1 withExpiration:(id)arg2 xHysteresis:(float)arg3 yHysteresis:(float)arg4;
+- (void)setSafari_backgroundColor:(id)arg1;
+- (id)safari_backgroundColor;
 - (struct CGSize)roundSizeInWindowCoordinates:(struct CGSize)arg1;
 @end
 

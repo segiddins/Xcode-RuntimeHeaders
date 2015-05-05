@@ -36,7 +36,7 @@
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(retain) id <IDEAttributedStringControlTextViewDelegate> delegate; // @dynamic delegate;
+@property id <IDEAttributedStringControlTextViewDelegate> delegate; // @dynamic delegate;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;

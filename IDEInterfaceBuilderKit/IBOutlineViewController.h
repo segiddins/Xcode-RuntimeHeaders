@@ -65,14 +65,13 @@
 - (void)deleteForward:(id)arg1;
 - (void)delete:(id)arg1;
 - (void)duplicate:(id)arg1;
-- (void)pasteExcludingConnections:(id)arg1;
 - (void)paste:(id)arg1;
-- (void)performPasteExcludingConnections:(BOOL)arg1;
+- (void)performPaste;
 - (void)invalidateWrapperTree;
 - (id)childGroupsOfMember:(id)arg1 atIndex:(long long)arg2;
 - (struct _NSRange)rangeOfChildGroup:(id)arg1 ofObject:(id)arg2;
 - (id)rangesForChildGroupsOfObject:(id)arg1;
-- (id)tellObject:(id)arg1 toAcceptPasteboard:(id)arg2 withContext:(id)arg3 excludingConnections:(BOOL)arg4 selectNewChildren:(BOOL)arg5;
+- (id)tellObject:(id)arg1 toAcceptPasteboard:(id)arg2 withContext:(id)arg3 selectNewChildren:(BOOL)arg4;
 - (void)copy:(id)arg1;
 - (BOOL)validateUserInterfaceItem:(id)arg1;
 - (id)supplementalTargetForAction:(SEL)arg1 sender:(id)arg2;

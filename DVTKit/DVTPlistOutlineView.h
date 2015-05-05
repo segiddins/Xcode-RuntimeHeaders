@@ -44,8 +44,5 @@
 - (void)keyDown:(id)arg1;
 - (BOOL)validateMenuItem:(id)arg1;
 
-// Remaining properties
-@property BOOL skipGridLinesOnLastRow;
-
 @end
 

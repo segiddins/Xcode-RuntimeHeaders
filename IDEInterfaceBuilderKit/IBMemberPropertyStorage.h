@@ -54,6 +54,7 @@
 - (void)addCandidates:(id)arg1 toToManyRelationship:(id)arg2 andTurnOnInConfiguration:(id)arg3;
 - (void)setMask:(id)arg1 forObject:(id)arg2 inToManyRelationship:(id)arg3 inConfiguration:(id)arg4;
 - (id)effectiveMaskForObject:(id)arg1 inToManyRelationship:(id)arg2 inConfiguration:(id)arg3;
+- (void)moveCandidates:(id)arg1 fromToManyRelationship:(id)arg2 toRelationship:(id)arg3 inStorage:(id)arg4 atIndex:(long long)arg5;
 - (void)turnOffObjects:(id)arg1 forToManyRelationship:(id)arg2 inConfiguration:(id)arg3;
 - (void)turnOnObjects:(id)arg1 forToManyRelationship:(id)arg2 inConfiguration:(id)arg3;
 - (void)turnObjects:(id)arg1 inToManyRelationship:(id)arg2 offInEmptyConfigurationAndOnInConfiguration:(id)arg3;
@@ -63,9 +64,11 @@
 - (void)intersectMasksForToManyRelationship:(id)arg1 toObjects:(id)arg2;
 - (BOOL)isObject:(id)arg1 explicitlyIncludedInAnyMaskForToManyRelationship:(id)arg2;
 - (void)enumerateExplicitPropertyValues:(CDUnknownBlockType)arg1;
+- (void)enumerateExplicitValuesForProperty:(id)arg1 withMutatingBlock:(CDUnknownBlockType)arg2;
 - (void)enumerateExplicitValuesForProperty:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
 - (void)setBits:(id)arg1 forToManyRelationship:(id)arg2 inConfiguration:(id)arg3;
 - (void)setEvaluatedValueInEmptyConfigurationByClearingInAllOtherConfigurations:(id)arg1 forAttribute:(id)arg2;
+- (void)setEvaluatedValueInEmptyConfiguration:(id)arg1 forAttribute:(id)arg2;
 - (void)setEvaluatedValue:(id)arg1 forAttribute:(id)arg2 inConfiguration:(id)arg3;
 - (void)promoteEffectiveValueToExplicitForProperty:(id)arg1 inConfiguration:(id)arg2;
 - (void)setEvaluatedValue:(id)arg1 forProperty:(id)arg2 inConfiguration:(id)arg3;
@@ -73,6 +76,7 @@
 - (void)didChangeValueForProperty:(id)arg1 inConfiguration:(id)arg2 fromValue:(id)arg3 toValue:(id)arg4;
 - (void)willChangeValueForProperty:(id)arg1 inConfiguration:(id)arg2 fromValue:(id)arg3 toValue:(id)arg4;
 - (id)effectiveEvaluatedValueForAttribute:(id)arg1 inConfiguration:(id)arg2;
+- (id)explicitEvaluatedValueForAttributeInEmptyConfiguration:(id)arg1;
 - (id)explicitEvaluatedValueForAttribute:(id)arg1 inConfiguration:(id)arg2;
 - (id)effectiveValueForProperty:(id)arg1 inConfiguration:(id)arg2;
 - (id)configurationsWithExplicitValuesForProperty:(id)arg1;

@@ -22,6 +22,7 @@
     GPUTraceSession *_currentTraceSession;
 }
 
++ (void)setGPUDebuggingAdditionUIControllerIdentifier:(id)arg1;
 + (void)initialize;
 @property __weak GPUTraceSession *currentTraceSession; // @synthesize currentTraceSession=_currentTraceSession;
 @property(retain) GPUDebuggingAddition *debuggingAddition; // @synthesize debuggingAddition=_debuggingAddition;

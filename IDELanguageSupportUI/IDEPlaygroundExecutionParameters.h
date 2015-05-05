@@ -13,6 +13,7 @@
 @interface IDEPlaygroundExecutionParameters : NSObject <NSSecureCoding>
 {
     DVTLineOffsetAwareStringWrapper *_sourceCodeToExecute;
+    DVTLineOffsetAwareStringWrapper *_sourceCodePreambleToExecute;
     NSURL *_documentFileURL;
     NSNumber *_documentContentTimestamp;
     CDUnknownBlockType _reportResultBlock;
@@ -36,11 +37,12 @@
 @property(readonly) CDUnknownBlockType reportResultBlock; // @synthesize reportResultBlock=_reportResultBlock;
 @property(readonly) NSNumber *documentContentTimestamp; // @synthesize documentContentTimestamp=_documentContentTimestamp;
 @property(readonly) NSURL *documentFileURL; // @synthesize documentFileURL=_documentFileURL;
+@property(readonly, copy) DVTLineOffsetAwareStringWrapper *sourceCodePreambleToExecute; // @synthesize sourceCodePreambleToExecute=_sourceCodePreambleToExecute;
 @property(readonly, copy) DVTLineOffsetAwareStringWrapper *sourceCodeToExecute; // @synthesize sourceCodeToExecute=_sourceCodeToExecute;
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithSourceCodeToExecute:(id)arg1 documentFileURL:(id)arg2 documentContentTimestamp:(id)arg3 autoTerminationDelay:(unsigned long long)arg4 executionPreparationParameters:(id)arg5 playgroundReportResultBlock:(CDUnknownBlockType)arg6 playgroundReportConsoleItemBlock:(CDUnknownBlockType)arg7 playgroundExecutionWillFinishBlock:(CDUnknownBlockType)arg8 playgroundExpressionCompleteBlock:(CDUnknownBlockType)arg9 playgroundDataHandlerBlock:(CDUnknownBlockType)arg10 errorHandlerBlock:(CDUnknownBlockType)arg11;
+- (id)initWithSourceCodeToExecute:(id)arg1 sourceCodePreambleToExecute:(id)arg2 documentFileURL:(id)arg3 documentContentTimestamp:(id)arg4 autoTerminationDelay:(unsigned long long)arg5 executionPreparationParameters:(id)arg6 playgroundReportResultBlock:(CDUnknownBlockType)arg7 playgroundReportConsoleItemBlock:(CDUnknownBlockType)arg8 playgroundExecutionWillFinishBlock:(CDUnknownBlockType)arg9 playgroundExpressionCompleteBlock:(CDUnknownBlockType)arg10 playgroundDataHandlerBlock:(CDUnknownBlockType)arg11 errorHandlerBlock:(CDUnknownBlockType)arg12;
 
 @end
 

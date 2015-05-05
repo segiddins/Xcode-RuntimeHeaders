@@ -9,7 +9,9 @@
 @class IBGroup, IBObjectRecord, NSObject, NSString;
 
 @protocol IBGroupDelegate <NSCoding>
+- (void)group:(IBGroup *)arg1 didRemoveIdentifier:(NSString *)arg2 forObject:(NSObject *)arg3;
 - (void)group:(IBGroup *)arg1 willRemoveIdentifier:(NSString *)arg2 forObject:(NSObject *)arg3;
+- (void)group:(IBGroup *)arg1 didAddIdentifier:(NSString *)arg2 forObject:(NSObject *)arg3;
 - (void)group:(IBGroup *)arg1 willAddIdentifier:(NSString *)arg2 forObject:(NSObject *)arg3;
 - (void)group:(IBGroup *)arg1 didReorderObject:(NSObject *)arg2;
 - (void)group:(IBGroup *)arg1 willReorderObject:(NSObject *)arg2;

@@ -61,7 +61,9 @@
 - (id)groups;
 - (void)group:(id)arg1 didReorderObject:(id)arg2;
 - (void)group:(id)arg1 willReorderObject:(id)arg2;
+- (void)group:(id)arg1 didRemoveIdentifier:(id)arg2 forObject:(id)arg3;
 - (void)group:(id)arg1 willRemoveIdentifier:(id)arg2 forObject:(id)arg3;
+- (void)group:(id)arg1 didAddIdentifier:(id)arg2 forObject:(id)arg3;
 - (void)group:(id)arg1 willAddIdentifier:(id)arg2 forObject:(id)arg3;
 - (void)group:(id)arg1 didRemoveObject:(id)arg2;
 - (void)group:(id)arg1 willRemoveObject:(id)arg2;
@@ -140,7 +142,7 @@
 - (void)willAddObject:(id)arg1 toParent:(id)arg2;
 - (void)didChangeMetadataPropertyFromValue:(id)arg1 toValue:(id)arg2 forKey:(id)arg3 ofMember:(id)arg4;
 - (void)didRemoveObject:(id)arg1 fromParent:(id)arg2;
-- (void)willRemoveObject:(id)arg1 previouslyMemberOfGroup:(id)arg2;
+- (void)willRemoveObject:(id)arg1 previouslyMemberOfGroup:(id)arg2 identifierInGroup:(id)arg3;
 - (void)didRemoveConnection:(id)arg1;
 - (void)willRemoveConnection:(id)arg1;
 - (void)didAddConnection:(id)arg1;
@@ -188,8 +190,10 @@
 - (long long)depthOfObject:(id)arg1;
 - (void)addObjectAndItsInitilallyDesignableChildren:(id)arg1 toParent:(id)arg2;
 - (id)pasteboardTypes;
-- (void)putObjects:(id)arg1 onPasteboard:(id)arg2 forOwner:(id)arg3 withArchivingDelegate:(id)arg4 context:(id)arg5;
-- (void)addObjects:(id)arg1 withTypes:(id)arg2 onPasteboard:(id)arg3 forOwner:(id)arg4 withArchivingDelegate:(id)arg5 context:(id)arg6;
+- (void)putObjects:(id)arg1 onPasteboard:(id)arg2 withArchivingDelegate:(id)arg3 context:(id)arg4;
+- (void)addObjects:(id)arg1 toPasteboard:(id)arg2 withArchivingDelegate:(id)arg3 context:(id)arg4;
+- (void)populatePasteboardWithAuxiliaryTypeInfoForObjects:(id)arg1 andConnections:(id)arg2 onPasteboard:(id)arg3;
+- (void)addObjects:(id)arg1 withTypes:(id)arg2 toPasteboard:(id)arg3 withArchivingDelegate:(id)arg4 context:(id)arg5;
 - (void)putExternalConnections:(id)arg1 ontoPasteboard:(id)arg2 forType:(id)arg3 forContainer:(id)arg4;
 - (id)localPasteboardTypeForGlobalType:(id)arg1;
 - (id)extractObjects:(id)arg1;
@@ -198,9 +202,9 @@
 - (void)insertRetargetedConnectionsFromPasteboard:(id)arg1 originalContainer:(id)arg2;
 - (void)insertExternalConnectionsFromType:(id)arg1 onPasteboard:(id)arg2 originalContainer:(id)arg3;
 - (void)refactorConnectionsOnPasteboard:(id)arg1 destinationContainer:(id)arg2 fromObject:(id)arg3 toObject:(id)arg4 exportingToGenericType:(BOOL)arg5;
-- (void)insertObjectsFromContainer:(id)arg1 asChildrenOfObject:(id)arg2 atIndex:(long long)arg3 includeConnections:(BOOL)arg4 includeGroups:(BOOL)arg5;
-- (void)insertObjectsFromContainer:(id)arg1 asChildrenOfObject:(id)arg2 atIndex:(long long)arg3 includeConnections:(BOOL)arg4 includeGroups:(BOOL)arg5 useOIDs:(BOOL)arg6;
-- (void)insertObjectsFromContainer:(id)arg1 asChildrenOfObject:(id)arg2 atIndex:(long long)arg3 includeConnections:(BOOL)arg4 includeGroups:(BOOL)arg5 explicitMemberIDs:(id)arg6;
+- (void)insertObjectsFromContainer:(id)arg1 asChildrenOfObject:(id)arg2 atIndex:(long long)arg3 includeGroups:(BOOL)arg4;
+- (void)insertObjectsFromContainer:(id)arg1 asChildrenOfObject:(id)arg2 atIndex:(long long)arg3 includeGroups:(BOOL)arg4 useOIDs:(BOOL)arg5;
+- (void)insertObjectsFromContainer:(id)arg1 asChildrenOfObject:(id)arg2 atIndex:(long long)arg3 includeGroups:(BOOL)arg4 explicitMemberIDs:(id)arg5;
 - (BOOL)areObjectsDivergent:(id)arg1;
 - (id)moveChildrenFromPasteboard:(id)arg1 ofType:(id)arg2 toParent:(id)arg3 atIndex:(long long)arg4;
 - (id)localPasteboardObjects:(id)arg1 ofType:(id)arg2;

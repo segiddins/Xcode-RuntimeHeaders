@@ -13,8 +13,12 @@
 }
 
 + (id)productTypeForIdentifier:(id)arg1 platform:(id)arg2;
+- (BOOL)shouldAutocreateSchemes;
+- (BOOL)isWatchAppExtension;
+- (BOOL)isWatchApplication;
 - (BOOL)isAppExtension;
 - (BOOL)isApplication;
+- (BOOL)isKindOfProductType:(id)arg1;
 @property(readonly) IDEProductType *superType;
 @property(readonly) DVTPlatform *platform;
 @property(readonly) NSString *localizedDescription;

@@ -20,6 +20,7 @@
 - (void)primitiveInvalidate;
 - (void)addNewDisplayableItem:(id)arg1;
 - (id)relatedDisplayableItems;
+- (id)navigableItem_subtitle;
 
 @end
 

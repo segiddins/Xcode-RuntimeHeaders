@@ -35,6 +35,7 @@
 @property(retain, nonatomic) id <DYResource> resource; // @synthesize resource=_resource;
 @property(retain, nonatomic) GPURenderJob *renderJob; // @synthesize renderJob=_renderJob;
 - (void).cxx_destruct;
+- (void)dumpImage:(id)arg1 asRaw:(BOOL)arg2;
 - (id)accessibleChildren;
 - (id)currentDisplayableItem;
 - (void)settingsUpdate;
@@ -50,7 +51,7 @@
 - (void)showInfo:(id)arg1;
 - (struct CGPoint)_popoverPointForParentButton:(id)arg1;
 - (void)hideButtons:(BOOL)arg1;
-@property(readonly, nonatomic) GPURenderBufferView *renderBufferView; // @dynamic renderBufferView;
+@property(readonly, nonatomic) __weak GPURenderBufferView *renderBufferView; // @dynamic renderBufferView;
 @property(readonly, nonatomic) NSString *name;
 @property(readonly) struct CGSize resourceImageSize;
 - (void)_updateConstraints;

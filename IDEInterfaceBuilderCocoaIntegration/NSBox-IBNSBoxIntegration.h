@@ -30,7 +30,7 @@
 - (BOOL)ibIsNSAppearanceContainer;
 - (id)ibDefaultFontKeyPath;
 - (BOOL)ibIsTitled;
-- (void)setIbArchivedDesignableContentView:(id)arg1;
+- (void)setIbArchivedDesignableContentView:(id)arg1 unarchiver:(id)arg2;
 - (id)ibArchivedDesignableContentView;
 - (id)ibDesignableContentView;
 - (id)ibQualifyingInfoForDefaultLabel;

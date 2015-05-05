@@ -9,22 +9,35 @@
 @interface DVT_VMUObjectGraph : DVT_VMUDirectedGraph
 {
     struct _VMUObjectGraphEdge *_referenceTable;
-    unsigned int _referenceTableCount;
     unsigned int _referenceTableCapacity;
-    CDStruct_599faf0f *_internalizedNodes;
+    struct _VMUObjectGraphEdgeLarge *_referenceTableLarge;
+    unsigned int _referenceTableLargeCount;
+    unsigned int _referenceTableLargeCapacity;
+    struct _VMUBlockNode *_internalizedNodes;
+    unsigned int _internalizedCount;
+    id *_classInfos;
+    unsigned int _classInfosCount;
     CDUnknownBlockType _nodeProvider;
+    DVT_VMUObjectGraph *_referenceGraph;
+    unsigned int _referenceGraphNodeNamespaceSize;
+    unsigned int _referenceGraphEdgeNamespaceSize;
+    int _referencingCount;
 }
 
-- (void)invertEdges;
+- (void)_modifyDerivativeGraphCount:(int)arg1;
 - (CDStruct_df82e459)referenceInfoWithName:(unsigned int)arg1;
-- (CDStruct_599faf0f)nodeWithName:(unsigned int)arg1;
-- (void)enumerateReferencesOfNode:(unsigned int)arg1 withBlock:(CDUnknownBlockType)arg2;
-- (void)enumerateReferencesWithBlock:(CDUnknownBlockType)arg1;
-- (void)enumerateMarkedObjects:(void *)arg1 withBlock:(CDUnknownBlockType)arg2;
-- (void)enumerateObjectsWithBlock:(CDUnknownBlockType)arg1;
+- (CDStruct_599faf0f)nodeDetails:(unsigned int)arg1;
+- (unsigned int)enumerateReferencesOfNode:(unsigned int)arg1 withBlock:(CDUnknownBlockType)arg2;
+- (unsigned int)enumerateReferencesWithBlock:(CDUnknownBlockType)arg1;
+- (unsigned int)enumerateMarkedObjects:(void *)arg1 withBlock:(CDUnknownBlockType)arg2;
+- (unsigned int)enumerateObjectsWithBlock:(CDUnknownBlockType)arg1;
+- (void)_renameWithNodeMap:(unsigned int *)arg1 edgeMap:(unsigned int *)arg2;
 - (unsigned int)addEdgeFromNode:(unsigned int)arg1 toNode:(unsigned int)arg2;
 - (unsigned int)addEdgeFromNode:(unsigned int)arg1 sourceOffset:(unsigned long long)arg2 withScanType:(int)arg3 toNode:(unsigned int)arg4 destinationOffset:(unsigned long long)arg5;
 - (void)internalizeNodes;
+- (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)archiveDictionaryRepresentation:(id)arg1 options:(unsigned long long)arg2;
+- (id)initWithArchived:(id)arg1 options:(unsigned long long)arg2;
 - (void)dealloc;
 - (id)initWithNodes:(unsigned int)arg1 nodeProvider:(CDUnknownBlockType)arg2;
 

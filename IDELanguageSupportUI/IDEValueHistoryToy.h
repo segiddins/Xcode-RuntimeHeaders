@@ -6,31 +6,18 @@
 
 #import <IDELanguageSupportUI/IDEToy.h>
 
-@class NSArray, NSMutableArray;
+@class NSMutableSet, NSSet;
 
 @interface IDEValueHistoryToy : IDEToy
 {
-    NSMutableArray *_currentResults;
-    BOOL _saveResultsFromDeserialization;
-    BOOL _executionIsInProgress;
-    BOOL _lastExpressionDidComplete;
-    NSArray *_previousResultsIfFromDeserialization;
-    unsigned long long _currentGeneration;
+    NSMutableSet *_mutableResultReflectionTags;
 }
 
-@property unsigned long long currentGeneration; // @synthesize currentGeneration=_currentGeneration;
-@property BOOL lastExpressionDidComplete; // @synthesize lastExpressionDidComplete=_lastExpressionDidComplete;
-@property BOOL executionIsInProgress; // @synthesize executionIsInProgress=_executionIsInProgress;
-@property(copy) NSArray *previousResultsIfFromDeserialization; // @synthesize previousResultsIfFromDeserialization=_previousResultsIfFromDeserialization;
-@property(copy, nonatomic) NSArray *currentResults; // @synthesize currentResults=_currentResults;
 - (void).cxx_destruct;
-- (void)processValueHistoryResult:(id)arg1;
+@property(readonly) NSSet *resultReflectionTags;
+- (void)_updateResultReflectionTagsForValueHistoryResult:(id)arg1;
 - (void)processPlaygroundResult:(id)arg1;
-- (void)executionGenerationDidEndAndCompleted:(BOOL)arg1;
-- (void)beginExecutionGeneration:(unsigned long long)arg1;
-- (void)_setupForNewCurrentGeneration:(unsigned long long)arg1;
-- (void)setToybox:(id)arg1;
-- (id)viewControllerForDisplayingToy;
+- (void)setGeneration:(unsigned long long)arg1;
 - (id)init;
 
 @end

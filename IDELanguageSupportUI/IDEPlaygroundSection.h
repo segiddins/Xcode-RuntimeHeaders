@@ -25,6 +25,7 @@
 - (void)primitiveInvalidate;
 - (void)resetPlaygroundSection;
 - (void)enableAllowsReset;
+- (id)stringConstructingFileWrapper:(id)arg1;
 - (id)xmlElementConstructingFileWrapper:(id)arg1;
 - (id)viewControllerForDisplayingPlaygroundSectionInEditor:(id)arg1;
 - (id)initWithXMLElement:(id)arg1 enclosingFileWrapper:(id)arg2 inPlaygroundDocument:(id)arg3;

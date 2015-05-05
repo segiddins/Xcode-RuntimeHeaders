@@ -9,7 +9,7 @@
 #import "DVTMorphingDragImageDropTarget.h"
 #import "NSTabViewDelegate.h"
 
-@class DVTNewTabButton, DVTTabButton, DVTTabbedWindowTabViewItem, NSImage, NSLock, NSString, NSTabViewItem;
+@class DVTNewTabButtonOldStyle, DVTTabButton, DVTTabbedWindowTabViewItem, NSImage, NSLock, NSString, NSTabViewItem, NSWindowController<DVTTabbedWindowControlling>;
 
 @interface DVTTabBarView : DVTSlidingViewsBar <DVTMorphingDragImageDropTarget, NSTabViewDelegate>
 {
@@ -17,7 +17,7 @@
     NSLock *_windowBackgroundImageLock;
     DVTTabbedWindowTabViewItem *_tabViewItemForOverflowButton;
     DVTTabButton *_tabSelectedBeforeTabDrag;
-    DVTNewTabButton *_newTabButton;
+    DVTNewTabButtonOldStyle *_newTabButton;
     NSTabViewItem *_seperatorUpdateLastSelectedTabViewItem;
     NSTabViewItem *_lastSelectedTabViewItem;
     int _modeOfSeparatorBeforeSpecialButtons;
@@ -94,7 +94,7 @@
 - (void)didDragTab:(id)arg1;
 - (void)willDragTab:(id)arg1;
 - (unsigned long long)numberOfTabs;
-- (void)moveTabViewItem:(id)arg1 toIndex:(long long)arg2;
+- (void)moveTabViewItem:(id)arg1 toIndex:(unsigned long long)arg2;
 - (void)performDragOperationForTabViewItem:(id)arg1 draggingInfo:(id)arg2;
 - (struct CGRect)clipRectForSlidingButton:(id)arg1;
 - (id)windowBackgroundImage;
@@ -104,7 +104,7 @@
 - (double)widthOfDraggingInfo:(id)arg1;
 - (id)viewPinnedToOverflowIndicator;
 - (unsigned long long)updateDropTarget:(id)arg1;
-- (void)setDropIndex:(long long)arg1;
+- (void)setDropIndex:(unsigned long long)arg1;
 - (void)refreshButtons;
 - (void)draggedSlidingView:(id)arg1;
 - (void)reorderedSlidingView:(id)arg1;
@@ -129,7 +129,7 @@
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
-@property(retain) id <DVTTabbedWindowControlling> tabbedWindowController;
+@property(retain) NSWindowController<DVTTabbedWindowControlling> *tabbedWindowController; // @dynamic tabbedWindowController;
 
 @end
 

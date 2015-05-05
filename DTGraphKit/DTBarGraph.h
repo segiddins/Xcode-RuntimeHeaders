@@ -6,6 +6,8 @@
 
 #import <DTGraphKit/DTGraph.h>
 
+@class NSArray, NSDictionary;
+
 @interface DTBarGraph : DTGraph
 {
     BOOL _hasWidthOrSpacingAttribute;
@@ -23,33 +25,33 @@
 - (id)_entries:(id)arg1 fittingIntoRect:(struct CGRect)arg2;
 - (id)sortedEntries:(id)arg1 fittingIntoRect:(struct CGRect)arg2;
 - (id)visibleEntries:(id)arg1;
-- (unsigned long long)numberOfBars;
+@property(readonly, nonatomic) unsigned long long numberOfBars;
 - (unsigned long long)numberOfEntriesThatFitRect:(struct CGRect)arg1;
-- (long long)maximumYValue;
+@property(readonly, nonatomic) long long maximumYValue;
 - (long long)_maximumValueOfSeries:(id)arg1;
-- (long long)minimumXValue;
-- (long long)maximumXValue;
-- (BOOL)hasBarSpacing;
+@property(readonly, nonatomic) long long minimumXValue;
+@property(readonly, nonatomic) long long maximumXValue;
+@property(readonly, nonatomic) BOOL hasBarSpacing;
 @property(readonly) double barSpacing;
 @property(readonly) double barWidth;
 - (struct CGRect)contentFrame;
 - (void)clearCache;
 - (id)initWithFrame:(struct CGRect)arg1;
-- (id)textAttributesForAxisLabels;
+@property(readonly, copy, nonatomic) NSDictionary *textAttributesForAxisLabels;
 - (double)widthToFill:(struct CGRect)arg1 numberOfEntries:(unsigned long long)arg2;
-- (id)divisionPositionsYAxis;
-- (id)divisionPositionsXAxis;
+@property(readonly, copy, nonatomic) NSArray *divisionPositionsYAxis;
+@property(readonly, copy, nonatomic) NSArray *divisionPositionsXAxis;
 @property(readonly) double yAxisSpacing;
 @property(readonly) double xAxisSpacing;
 - (void)getXAxisRect:(struct CGRect *)arg1 yAxisRect:(struct CGRect *)arg2;
-- (double)calculateVerticalBorderBuffer;
-- (double)calculateHorizontalBorderBuffer;
+@property(readonly, nonatomic) double calculateVerticalBorderBuffer;
+@property(readonly, nonatomic) double calculateHorizontalBorderBuffer;
 - (struct CGRect)calculateXAxisBoundsWithinBounds:(struct CGRect)arg1;
 - (struct CGRect)calculateYAxisBoundsWithinBounds:(struct CGRect)arg1;
 - (void)drawXAxis:(struct CGRect)arg1;
 - (void)drawYAxis:(struct CGRect)arg1;
 - (void)drawBorder:(struct CGRect)arg1;
-- (BOOL)canDrawBeyondContentRect;
+@property(readonly, nonatomic) BOOL canDrawBeyondContentRect;
 - (void)drawContent:(struct CGRect)arg1;
 - (void)drawBackground:(struct CGRect)arg1;
 - (void)drawRect:(struct CGRect)arg1;

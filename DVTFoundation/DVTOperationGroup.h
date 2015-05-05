@@ -24,6 +24,7 @@
 + (id)operationGroupWithSuboperations:(id)arg1;
 @property(readonly, copy) NSArray *suboperations; // @synthesize suboperations=_suboperations;
 - (void).cxx_destruct;
+- (id)notFinishedReasonWithDepth:(unsigned long long)arg1;
 - (id)description;
 - (void)cancel;
 - (void)start;

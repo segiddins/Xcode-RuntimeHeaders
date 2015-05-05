@@ -31,6 +31,7 @@
 - (void).cxx_destruct;
 - (void)trackFuture:(id)arg1;
 - (void)trackFuture:(id)arg1 cancel:(BOOL)arg2 error:(BOOL)arg3;
+- (id)notFinishedReasonWithDepth:(unsigned long long)arg1;
 - (id)stateString;
 - (void)enumerateUsingBlock:(CDUnknownBlockType)arg1;
 - (void)_enumerateWithStop:(char *)arg1 usingBlock:(CDUnknownBlockType)arg2;

@@ -21,6 +21,7 @@
 - (void)drawInRect:(struct CGRect)arg1 operation:(unsigned long long)arg2 fraction:(double)arg3;
 - (void)drawAtPoint:(struct CGPoint)arg1 operation:(unsigned long long)arg2 fraction:(double)arg3 unflip:(BOOL)arg4;
 - (void)drawInRect:(struct CGRect)arg1 operation:(unsigned long long)arg2 fraction:(double)arg3 unflip:(BOOL)arg4;
+- (void)lockFocusFlipped:(BOOL)arg1 during:(CDUnknownBlockType)arg2;
 - (void)drawWithCommands:(CDUnknownBlockType)arg1;
 @end
 

@@ -6,7 +6,7 @@
 
 #import <DebuggerFoundation/DBGViewSurface.h>
 
-@class DBGLayoutConstraintSet, DVTMapTable, NSImage;
+@class DBGLayoutConstraintSet, DVTMapTable;
 
 @interface DBGViewWindow : DBGViewSurface
 {
@@ -18,15 +18,13 @@
 @property unsigned long long orientation; // @synthesize orientation=_orientation;
 @property(retain) DBGLayoutConstraintSet *layoutConstraintSet; // @synthesize layoutConstraintSet=_layoutConstraintSet;
 - (void).cxx_destruct;
+- (void)primitiveInvalidate;
 - (id)viewObjectForAddress:(id)arg1;
 - (id)constraintForAddress:(id)arg1;
 - (id)childViewSurfaceForAddress:(id)arg1;
 - (id)window;
 - (id)initWithViewDescriber:(id)arg1 dictionary:(id)arg2;
 @property(readonly) DBGViewSurface *contentView;
-
-// Remaining properties
-@property(retain) NSImage *snapshot;
 
 @end
 

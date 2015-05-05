@@ -19,6 +19,7 @@
     BOOL _printNoticeMessages;
     BOOL _printMessageCategoryInfo;
     BOOL _compressPNGs;
+    BOOL _forceImagesOnWrite;
     NSString *_platformName;
     NSString *_compilationOutputPath;
     NSString *_partialInfoPlistOutputPath;
@@ -38,6 +39,7 @@
 @property(copy) NSString *partialInfoPlistOutputPath; // @synthesize partialInfoPlistOutputPath=_partialInfoPlistOutputPath;
 @property(copy) NSString *compilationOutputPath; // @synthesize compilationOutputPath=_compilationOutputPath;
 @property(copy) NSString *platformName; // @synthesize platformName=_platformName;
+@property BOOL forceImagesOnWrite; // @synthesize forceImagesOnWrite=_forceImagesOnWrite;
 @property BOOL compressPNGs; // @synthesize compressPNGs=_compressPNGs;
 @property BOOL printMessageCategoryInfo; // @synthesize printMessageCategoryInfo=_printMessageCategoryInfo;
 @property BOOL printNoticeMessages; // @synthesize printNoticeMessages=_printNoticeMessages;

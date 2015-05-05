@@ -7,7 +7,7 @@
 #import "NSMenu.h"
 
 @interface NSMenu (DVTNSMenuExtras)
-- (void)removeUselessMenuItemSeparators;
-- (void)dvt_popUpInRect:(struct CGRect)arg1 ofView:(id)arg2 didInsertInitialSeparator:(char *)arg3;
+- (void)safari_removeUselessMenuItemSeparators;
+- (void)safari_popUpInRect:(struct CGRect)arg1 ofView:(id)arg2 didInsertInitialSeparator:(char *)arg3;
 @end
 

@@ -137,6 +137,7 @@
 - (void)_addSortMenuToMenu:(id)arg1;
 - (void)_addToggleShowRawValueMenuItemToMenu:(id)arg1;
 - (void)_addToggleShowTypesMenuItemToMenu:(id)arg1;
+- (void)_contextualMenuNeedsUpdate:(id)arg1;
 - (void)menuNeedsUpdate:(id)arg1;
 - (void)addScopeChoice:(id)arg1 tag:(long long)arg2;
 - (void)hideCurrentPopoverUsingAnimation;

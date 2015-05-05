@@ -30,7 +30,6 @@
 - (id)identitiesForBundleIdentifier:(id)arg1 andIdentityFilter:(id)arg2;
 - (id)tokenForProvisioningProfileNamed:(id)arg1;
 - (id)tokenForSigningIdentityNamed:(id)arg1;
-- (id)refreshIdentity;
 - (id)dontSignIdentity;
 @property(readonly) _Bool supportsSymbolUploads;
 @property(readonly) _Bool supportsInstallerSigning;

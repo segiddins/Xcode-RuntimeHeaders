@@ -10,9 +10,8 @@
 {
 }
 
-+ (BOOL)wantsSeparateCompiledPackagesForTargetDevices;
 + (Class)metricsInferrerClass;
-+ (Class)libraryAssetProviderClassForPlatform:(id)arg1;
++ (Class)libraryAssetProviderClassForIdiom:(id)arg1;
 + (BOOL)wantsContainerViewInLibrary;
 + (BOOL)wantsViewControllersAtTopOfLibrary;
 + (BOOL)supportsPrototypeObjects;

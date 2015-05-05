@@ -213,6 +213,7 @@
 - (void)lastIntegrations:(unsigned long long)arg1 forBot:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)integrationCountForBot:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)allIntegrationsForBot:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)allRunningIntegrationsWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)readIssuesForIntegration:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)saveIssues:(id)arg1 forIntegration:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)readCommitHistoryForIntegration:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
@@ -225,6 +226,7 @@
 - (void)fetchIntegrationWithID:(id)arg1 includeCredentials:(BOOL)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)fetchIntegrationWithID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)createIntegration:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)_isUserOperationAllowedWithCompletionHandler:(CDUnknownBlockType)arg1 error:(id)arg2;
 - (void)currentLoggedUserCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)canUserCreateBots:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)canUserViewBots:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

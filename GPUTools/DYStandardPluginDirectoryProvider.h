@@ -12,12 +12,13 @@
 {
     NSBundle *_bundle;
     BOOL _includeDeveloperDirectory;
+    BOOL _includeBundleDirectory;
 }
 
 + (id)_developerDirectory;
 - (void)enumerateDirectories:(CDUnknownBlockType)arg1;
 - (void)dealloc;
-- (id)initWithBundle:(id)arg1 includeDeveloperDirectory:(BOOL)arg2;
+- (id)initWithBundle:(id)arg1 includeDeveloperDirectory:(BOOL)arg2 includeBundleDirectory:(BOOL)arg3;
 - (id)init;
 
 @end

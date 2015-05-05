@@ -47,7 +47,7 @@
 - (BOOL)ibCanRemoveChildren:(id)arg1;
 - (BOOL)ibCanBeBoundToFromObject:(id)arg1;
 - (id)ibQualifyingInfoForDefaultLabel;
-- (void)ibTakePastedAttributes:(id)arg1;
+- (void)ibTakePastedAttributes:(id)arg1 inConfiguration:(id)arg2;
 - (void)ibPopulateChildRelationOrder:(id)arg1;
 - (id)ibDocumentationPropertyInfosForKeyPath:(id)arg1;
 - (id)ibLocalLocalizableStringsAttributeKeyPaths;

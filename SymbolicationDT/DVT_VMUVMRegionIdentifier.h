@@ -22,6 +22,7 @@
 - (void)dealloc;
 - (id)initWithTask:(unsigned int)arg1;
 - (id)initWithTask:(unsigned int)arg1 options:(unsigned long long)arg2;
+- (id)initWithTask:(unsigned int)arg1 pid:(int)arg2 options:(unsigned long long)arg3;
 
 @end
 

@@ -11,6 +11,7 @@
 @interface DVT_VMUTaskMemoryScanner : NSObject
 {
     unsigned int _task;
+    unsigned int _suspensionToken;
     DVT_VMUObjectIdentifier *_objectIdentifier;
     DVT_VMUVMRegionIdentifier *_regionIdentifier;
     struct _VMUBlockNode *_blocks;
@@ -43,7 +44,7 @@
 - (id)nodeDescription:(unsigned int)arg1;
 - (void)setReferenceScanningLogger:(CDUnknownBlockType)arg1;
 - (void)setNodeScanningLogger:(CDUnknownBlockType)arg1;
-- (void)enumerateNodesWithBlock:(CDUnknownBlockType)arg1;
+- (unsigned int)enumerateNodesWithBlock:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) unsigned int mallocNodeCount;
 - (void *)contentForNode:(unsigned int)arg1;
 - (id)labelForMallocNode:(unsigned int)arg1;

@@ -6,25 +6,26 @@
 
 #import <DVTKit/DVTRolloverTrackingButton.h>
 
-@class NSColor, NSImage;
+@class NSImage;
 
 @interface DVTRolloverImageButton : DVTRolloverTrackingButton
 {
+    NSImage *_image;
+    NSImage *_alternateImage;
+    BOOL _settingRolloverImage;
     NSImage *_rolloverImage;
     NSImage *_alternateRolloverImage;
-    NSColor *_backgroundColor;
 }
 
 + (id)closeButtonImage;
-@property(copy) NSColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 @property(nonatomic) NSImage *alternateRolloverImage; // @synthesize alternateRolloverImage=_alternateRolloverImage;
 @property(nonatomic) NSImage *rolloverImage; // @synthesize rolloverImage=_rolloverImage;
 - (void).cxx_destruct;
 - (void)configureAsCloseButton;
-- (void)drawRect:(struct CGRect)arg1;
-- (void)awakeFromNib;
-- (id)initWithFrame:(struct CGRect)arg1;
-- (void)_setAttributes;
+- (void)_updateImages;
+- (void)mouseEnteredOrExited:(BOOL)arg1;
+- (void)setAlternateImage:(id)arg1;
+- (void)setImage:(id)arg1;
 
 @end
 

@@ -22,6 +22,7 @@
 - (BOOL)storyboardsAreAvailableForCompilationTargetReturningError:(id *)arg1;
 - (id)compileContentsOfStoryboardWithOptions:(id)arg1 errors:(id *)arg2;
 - (id)compiledWrappersFromCompilationResults:(id)arg1 withOptions:(id)arg2 error:(id *)arg3;
+- (id)stringByAppendingVariantSuffixToFilePath:(id)arg1 ifNeededForOptions:(id)arg2;
 - (id)infoPlistDictionaryForCompiledPackageWithViewControllerNibMap:(id)arg1;
 @property(readonly) NSString *infoPlistDesignatedEntryPointIdentifierKey;
 @property(readonly) NSString *infoPlistPackageVersionKey;

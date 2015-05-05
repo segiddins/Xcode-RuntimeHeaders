@@ -13,7 +13,6 @@
 @interface IDEExecutionEnvironment (IDEKitExecutionEnvironmentNavigableAdditions) <IDEKeyDrivenNavigableItemRepresentedObject>
 @property(readonly) NSArray *navigableDebugSessions;
 - (void)_observeLaunchSessionsAndAddToDebugSessions:(id)arg1;
-- (BOOL)_noMoreDebugSessions:(id)arg1;
 @property(readonly) NSString *navigableItem_name;
 
 // Remaining properties

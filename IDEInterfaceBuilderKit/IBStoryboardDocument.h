@@ -6,21 +6,22 @@
 
 #import <IDEInterfaceBuilderKit/IBDocument.h>
 
-@class DVTMutableOrderedSet, IBStoryboardMetricsInferrer, NSObject<IBPrimarySceneObject>;
+@class DVTMutableOrderedSet, IBStoryboardGlobalEntryPointIndicator, IBStoryboardMetricsInferrer, NSObject<IBPrimarySceneObject>, NSObject<IBStoryboardEntryPointIndicator>;
 
 @interface IBStoryboardDocument : IBDocument
 {
+    IBStoryboardGlobalEntryPointIndicator *_designatedEntryPointIndicator;
     DVTMutableOrderedSet *_segueConnections;
     NSObject<IBPrimarySceneObject> *_designatedEntryPoint;
 }
 
-+ (BOOL)wantsSeparateCompiledPackagesForTargetDevices;
 + (Class)documentGroupMemberWrapperClass;
 + (Class)metricsInferrerClass;
-+ (Class)libraryAssetProviderClassForPlatform:(id)arg1;
++ (Class)libraryAssetProviderClassForIdiom:(id)arg1;
 + (BOOL)wantsContainerViewInLibrary;
 + (BOOL)wantsViewControllersAtTopOfLibrary;
 + (BOOL)supportsPrototypeObjects;
+@property(readonly, nonatomic) NSObject<IBStoryboardEntryPointIndicator> *designatedEntryPointIndicator; // @synthesize designatedEntryPointIndicator=_designatedEntryPointIndicator;
 @property(retain, nonatomic) NSObject<IBPrimarySceneObject> *designatedEntryPoint; // @synthesize designatedEntryPoint=_designatedEntryPoint;
 - (void).cxx_destruct;
 - (BOOL)isStoryboardDocument;
@@ -42,6 +43,7 @@
 - (BOOL)supportsUserDefinedRuntimeAttributesForObject:(id)arg1;
 - (void)objectContainer:(id)arg1 didRemoveObject:(id)arg2 fromParent:(id)arg3;
 - (void)unarchivePlatformIndependentDataWithUnarchiver:(id)arg1;
+- (void)unarchiveDesignatedEntryPointWithUnarchiver:(id)arg1;
 - (void)archivePlatformIndependentDataWithDocumentArchiver:(id)arg1;
 - (void)unarchiveTopLevelObjects:(id)arg1;
 - (void)archiveTopLevelObjects:(id)arg1;
@@ -56,6 +58,8 @@
 - (id)fallbackControllersForSelectedMemberIDs:(id)arg1;
 - (id)primaryControllerForGeniusFinder;
 - (BOOL)isObjectCandidateForAutomaticGeniusResults:(id)arg1 givenSelectedObject:(id)arg2;
+- (void)objectContainer:(id)arg1 didRemoveIdentifier:(id)arg2 forObject:(id)arg3 inGroup:(id)arg4;
+- (void)objectContainer:(id)arg1 didAddIdentifier:(id)arg2 forObject:(id)arg3 inGroup:(id)arg4;
 - (void)objectContainer:(id)arg1 didRemoveConnection:(id)arg2;
 - (void)objectContainer:(id)arg1 didAddConnection:(id)arg2;
 - (id)objectConnectedByToOneSegueRelationship:(id)arg1 fromSourceObject:(id)arg2;
@@ -71,12 +75,16 @@
 - (long long)topLevelObjectIndexForGroupIndex:(long long)arg1 inGroup:(id)arg2;
 - (void)addTopLevelObjects:(id)arg1 toSceneGroup:(id)arg2 atIndex:(long long)arg3;
 - (BOOL)isBuiltInPlaceholder:(id)arg1 forSceneGroup:(id)arg2;
+- (void)removeObjects:(id)arg1;
+- (id)sceneGroupMemberWrapperForObject:(id)arg1;
+- (void)setGlobalEntryPoint:(id)arg1 withIndicator:(id)arg2 objectInspectedKeyPath:(id)arg3 storageChangeBlock:(CDUnknownBlockType)arg4;
 - (void)makeSceneForPrimarySceneObject:(id)arg1;
 - (void)addSceneExitPlaceholderToSceneGroup:(id)arg1;
 - (id)firstResponderForSceneGroup:(id)arg1;
 - (id)entryPointPrimarySceneObjects;
 - (id)groupForPrimarySceneObject:(id)arg1;
 - (id)sceneGroups;
+- (id)primarySceneObjectGraphSources;
 - (id)primarySceneObjects;
 - (BOOL)isObjectBuiltInPlaceholder:(id)arg1;
 - (BOOL)isObjectExitPlaceholder:(id)arg1;

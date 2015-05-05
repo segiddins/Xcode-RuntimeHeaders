@@ -50,6 +50,7 @@
 - (id)scopePopUpTitleForScopeItem:(long long)arg1;
 - (void)_handleSelectedScopeChange;
 - (id)contextNameForNode:(id)arg1;
+- (id)imageToUseInDefaultQuickLookForNode:(id)arg1;
 - (id)imageForNode:(id)arg1;
 - (BOOL)deleteNode:(id)arg1;
 - (id)_createPrintDescriptionButton;
@@ -59,6 +60,9 @@
 @property(readonly) CDUnknownBlockType nodeSortComparator;
 @property(readonly) id <IDEVariablesViewContextMenuDelegate> contextMenuDelegate;
 - (void)_addHelpMenuToMenu:(id)arg1;
+- (void)_addQuicklookMenuItemToMenu:(id)arg1 selectedVariable:(id)arg2;
+- (void)_addViewMemoryOfPointerMenuItemToMenu:(id)arg1 selectedVariable:(id)arg2;
+- (void)_addViewMemoryOfScalarMenuItemToMenu:(id)arg1 selectedVariable:(id)arg2;
 - (void)_addViewMemoryOfVariableMenuItemToMenu:(id)arg1 selectedVariable:(id)arg2;
 - (void)_addWatchVariableMenuItemToMenu:(id)arg1 selectedVariable:(id)arg2;
 - (void)_addDeleteExpressionMenuItemToMenu:(id)arg1 selectedVariables:(id)arg2;
@@ -97,6 +101,7 @@
 @property(readonly) NSString *contextNameForCurrentStackFrame;
 @property(readonly) NSString *globalContextName;
 - (id)_contextMenuSelectedValues;
+- (void)quicklookVariable:(id)arg1;
 - (void)changeDataValueFormat:(id)arg1;
 - (void)viewPointeeInMemoryBrowser:(id)arg1;
 - (void)viewInMemoryBrowser:(id)arg1;

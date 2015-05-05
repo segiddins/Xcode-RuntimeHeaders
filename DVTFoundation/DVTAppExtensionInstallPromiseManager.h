@@ -8,18 +8,21 @@
 
 #import "DVTDTApplicationWorkspaceClient.h"
 
-@class NSMapTable, NSString;
+@class DVTDispatchLock, NSMapTable, NSString;
 
 @interface DVTAppExtensionInstallPromiseManager : NSObject <DVTDTApplicationWorkspaceClient>
 {
+    float _promiseDelay;
     NSMapTable *_promiseMap;
+    DVTDispatchLock *_promiseMapLock;
 }
 
-+ (BOOL)listenForIDs:(id)arg1 promise:(id)arg2 channel:(id)arg3;
-+ (void)initialize;
++ (id)sharedManager;
 - (void).cxx_destruct;
 - (void)applicationUninstalled:(id)arg1;
 - (void)applicationInstalled:(id)arg1;
+- (void)listenForIDs:(id)arg1 promise:(id)arg2 channel:(id)arg3;
+- (id)_initInternal;
 - (id)init;
 
 // Remaining properties

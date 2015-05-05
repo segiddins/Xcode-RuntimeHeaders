@@ -6,11 +6,13 @@
 
 #import "NSObject.h"
 
-@class DTDKRemoteDeviceConnection, DTDKRemoteDeviceConsoleController, NSArray, NSMutableArray, NSNumber, NSSet, NSString;
+@class DTDKRemoteDeviceConnection, DTDKRemoteDeviceConsoleController, DVTNotificationToken, NSArray, NSMutableArray, NSNumber, NSSet, NSString;
 
 @interface DTDKRemoteDeviceToken : NSObject
 {
     NSMutableArray *_connections;
+    DVTNotificationToken *_connectionRemovedToken;
+    DVTNotificationToken *_connectionAddedToken;
     _Bool _inReloadApplications;
     _Bool _inReloadSystemApplications;
     _Bool _inReloadProvisioningProfiles;
@@ -72,6 +74,7 @@
 + (id)keyPathsForValuesAffectingDeviceHasInternalTools;
 + (id)keyPathsForValuesAffectingDeviceCrashReporterKey;
 + (id)keyPathsForValuesAffectingDeviceSoftwareVersion;
++ (id)keyPathsForValuesAffectingDeviceProcessorDescription;
 + (id)keyPathsForValuesAffectingHasLoaded_deviceChipID;
 + (id)keyPathsForValuesAffectingDeviceChipID;
 + (id)keyPathsForValuesAffectingHasLoadedDeviceDevelopmentStatus;
@@ -190,6 +193,7 @@
 @property(readonly, nonatomic) _Bool deviceHasStandardTools;
 @property(readonly, nonatomic) _Bool deviceHasInternalTools;
 @property(readonly, copy, nonatomic) NSString *deviceCrashReporterKey;
+@property(readonly, copy, nonatomic) NSString *deviceProcessorDescription;
 @property(readonly) _Bool hasLoaded_deviceChipID;
 - (id)reload_deviceChipID;
 - (_Bool)syncSetDevelopmentFlag:(BOOL)arg1 error:(id *)arg2;
@@ -289,7 +293,9 @@
 - (int)executeInSession:(CDUnknownBlockType)arg1;
 - (void)removeConnection:(id)arg1;
 - (void)addConnection:(id)arg1;
+- (_Bool)_hasDirectConnection;
 - (void)_updatePrimaryConnection;
+@property(readonly, copy, nonatomic) NSSet *proxiedDeviceTokens;
 @property(readonly) _Bool deviceIsPaired;
 @property(readonly, nonatomic) _Bool hasWirelessConnection;
 @property(readonly, nonatomic) _Bool hasWiredConnection;

@@ -18,6 +18,7 @@
 }
 
 - (void).cxx_destruct;
+- (void)viewWillUninstall;
 - (void)sizeToFitSuggestedSize:(struct CGSize)arg1 forAsset:(id)arg2;
 - (void)refreshWithAsset:(id)arg1 representedObject:(id)arg2;
 - (void)setDelegate:(id)arg1;

@@ -6,16 +6,18 @@
 
 #import "NSObject.h"
 
-@class NSArray, NSMutableArray, NSString;
+@class NSArray, NSMutableArray, NSSet, NSString;
 
 @interface IDEBuildPlan : NSObject
 {
     NSString *_debugName;
     NSMutableArray *_bucketList;
     BOOL _isImmutable;
+    NSSet *_productArtifactNodes;
 }
 
 @property(readonly) NSString *debugName; // @synthesize debugName=_debugName;
+@property(copy) NSSet *productArtifactNodes; // @synthesize productArtifactNodes=_productArtifactNodes;
 - (void).cxx_destruct;
 - (id)description;
 - (void)makeImmutable;

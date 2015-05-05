@@ -15,6 +15,7 @@
     BOOL _isFairPlayEncrypted;
     BOOL _isLeaf;
     BOOL _isHidden;
+    int _runnableDebuggingMode;
     NSString *_name;
     NSString *_version;
     NSString *_bundleIdentifier;
@@ -23,6 +24,7 @@
     NSString *_installedPath;
 }
 
+@property int runnableDebuggingMode; // @synthesize runnableDebuggingMode=_runnableDebuggingMode;
 @property(copy) NSString *installedPath; // @synthesize installedPath=_installedPath;
 @property BOOL isHidden; // @synthesize isHidden=_isHidden;
 @property BOOL isLeaf; // @synthesize isLeaf=_isLeaf;

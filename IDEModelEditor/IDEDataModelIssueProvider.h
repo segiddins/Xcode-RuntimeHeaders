@@ -4,31 +4,28 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDEIssueProvider.h"
+#import "IDEAbstractLiveIssueProvider.h"
 
 @class DVTNotificationToken, DVTObservingToken, IDEContainerQuery, NSMutableSet;
 
-@interface IDEDataModelIssueProvider : IDEIssueProvider
+@interface IDEDataModelIssueProvider : IDEAbstractLiveIssueProvider
 {
     IDEContainerQuery *filesQuery;
     NSMutableSet *openDocumentFilePaths;
     DVTObservingToken *kvoDocumentsToken;
     DVTNotificationToken *documentChangeToken;
+    DVTNotificationToken *_warningsChangedToken;
 }
 
-+ (int)providerType;
 - (void).cxx_destruct;
+- (id)documentDataTypeIdentifiers;
+- (Class)documentClass;
+- (id)updatedIssuesForDocument:(id)arg1;
 - (id)ideModelObjectTypeIdentifier;
 - (id)displayNameForIssueTypeIdentifier:(id)arg1;
-- (id)issuesForModel:(id)arg1 fileURL:(id)arg2 usingSettings:(id)arg3;
-- (id)settingsForFile:(id)arg1 document:(id)arg2;
-- (id)flagStringForName:(id)arg1;
-- (id)propertyStringForName:(id)arg1;
-- (void)generateIssuesForDocument:(id)arg1;
-- (void)noticeDocumentDidChange:(id)arg1;
-- (void)updateOpenDocuments;
 - (void)primitiveInvalidate;
 - (id)initWithIssueManager:(id)arg1 extension:(id)arg2;
+- (id)_settingsForDocument:(id)arg1;
 
 @end
 

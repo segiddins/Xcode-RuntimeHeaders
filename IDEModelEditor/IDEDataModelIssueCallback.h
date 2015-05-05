@@ -6,11 +6,11 @@
 
 #import "XDGenericErrorCallback.h"
 
-@class IDEIssueProvider, NSDictionary, NSMutableArray;
+@class IDEDataModelIssueProvider, NSDictionary, NSMutableArray;
 
 @interface IDEDataModelIssueCallback : XDGenericErrorCallback
 {
-    IDEIssueProvider *_provider;
+    IDEDataModelIssueProvider *_provider;
     NSMutableArray *_issues;
     NSDictionary *_settings;
 }

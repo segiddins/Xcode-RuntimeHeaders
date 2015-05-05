@@ -6,20 +6,22 @@
 
 #import "DVTStackView_ML.h"
 
-@class DVTNotificationToken, DVTObservingToken, IDESourceCodePlaygroundSectionViewController;
+@class IDESourceCodePlaygroundSectionViewController, NSMapTable;
 
 @interface IDEPlaygroundEditorStackView_ML : DVTStackView_ML
 {
     IDESourceCodePlaygroundSectionViewController *_sourceCodePlaygroundSectionViewController;
-    DVTObservingToken *_accessoryAnnotationWidthObservingToken;
-    DVTNotificationToken *_fontAndColorSettingsChangeObservingToken;
+    NSMapTable *_playgroundTextViewPreparedRectObservers;
 }
 
 - (void).cxx_destruct;
-- (void)drawRect:(struct CGRect)arg1;
 - (BOOL)isOpaque;
 - (void)willRemoveSubview:(id)arg1;
 - (void)didAddSubview:(id)arg1;
+- (id)findSubviewOfClass:(Class)arg1 inViewHierarchy:(id)arg2;
+- (void)recursivelyPrepareContentInRect:(struct CGRect)arg1 view:(id)arg2;
+- (void)prepareContentInRect:(struct CGRect)arg1;
+- (id)initWithFrame:(struct CGRect)arg1;
 
 @end
 

@@ -42,7 +42,7 @@
 - (void)searchAction:(id)arg1;
 - (void)_openSelectedMatch;
 - (void)windowDidResignKey:(id)arg1;
-- (void)_applicationWillDispatchAction:(SEL)arg1;
+- (void)_applicationWillDispatchAction:(SEL)arg1 fromSender:(id)arg2;
 - (void)beginOpeningQuicklyWithQueryString:(id)arg1;
 - (void)beginOpeningQuicklyScoped:(BOOL)arg1;
 - (void)_beginOpeningQuicklyWithQueryString:(id)arg1 scoped:(BOOL)arg2;

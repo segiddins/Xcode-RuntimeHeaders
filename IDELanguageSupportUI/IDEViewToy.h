@@ -30,14 +30,16 @@
 @property(readonly) BOOL lastExecutionDidComplete; // @synthesize lastExecutionDidComplete=_lastExecutionDidComplete;
 @property(readonly, copy) NSString *subjectIdentifier; // @synthesize subjectIdentifier=_subjectIdentifier;
 - (void).cxx_destruct;
+- (BOOL)shouldDisplayInTimeline;
 - (BOOL)isLiveToy;
 - (void)processPlaygroundResult:(id)arg1;
 - (void)executionGenerationDidEndAndCompleted:(BOOL)arg1;
 - (void)executionGenerationWillEnd;
 - (void)beginExecutionGeneration:(unsigned long long)arg1;
-- (id)viewControllerForDisplayingToy;
 - (void)setToybox:(id)arg1;
 @property(readonly) NSArray *windowImagesForCurrentGeneration;
+- (void)_invalidateCaptureTimer;
+- (void)primitiveInvalidate;
 - (id)initWithSubjectIdentifier:(id)arg1;
 
 @end

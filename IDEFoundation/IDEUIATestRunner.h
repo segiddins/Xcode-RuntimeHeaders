@@ -32,7 +32,7 @@
 - (id)initWithBuildableProduct:(id)arg1;
 
 // Remaining properties
-@property(retain) id <IDEBuildableProduct> buildableProduct;
+@property(retain) id <IDEBuildableProduct> buildableProduct; // @dynamic buildableProduct;
 
 @end
 

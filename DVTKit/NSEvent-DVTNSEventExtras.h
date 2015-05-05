@@ -7,11 +7,12 @@
 #import "NSEvent.h"
 
 @interface NSEvent (DVTNSEventExtras)
-+ (BOOL)dvt_mouseButtonIsDown;
-- (BOOL)dvt_isVerticalWheelEvent;
-- (BOOL)dvt_isWheelEvent;
-- (BOOL)dvt_isEscapeKeyEvent;
-- (BOOL)dvt_isMiddleButtonEvent;
-- (BOOL)_dvt_isKeyEvent:(unsigned short)arg1;
++ (BOOL)safari_mouseButtonIsDown;
+- (BOOL)safari_hasOptionKeyModifier;
+- (BOOL)safari_isVerticalWheelEvent;
+- (BOOL)safari_isWheelEvent;
+- (BOOL)safari_isEscapeKeyEvent;
+- (BOOL)safari_isMiddleButtonEvent;
+- (BOOL)_safari_isKeyEvent:(unsigned short)arg1;
 @end
 

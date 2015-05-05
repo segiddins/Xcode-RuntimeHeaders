@@ -6,25 +6,32 @@
 
 #import "NSObject.h"
 
+#import "DVTDirectoryServicesSessionDescription.h"
+
 @class DVTDeveloperAccount, NSData, NSString;
 
-@interface DVTDeveloperAccountSession : NSObject
+@interface DVTDeveloperAccountSession : NSObject <DVTDirectoryServicesSessionDescription>
 {
     id _identity;
     DVTDeveloperAccount *_account;
-    NSString *_sessionID;
     NSString *_prsID;
+    NSString *_sessionID;
     NSData *_sessionData;
 }
 
 @property(copy) NSData *sessionData; // @synthesize sessionData=_sessionData;
-@property(copy) NSString *prsID; // @synthesize prsID=_prsID;
 @property(copy) NSString *sessionID; // @synthesize sessionID=_sessionID;
+@property(copy) NSString *prsID; // @synthesize prsID=_prsID;
 @property(nonatomic) __weak DVTDeveloperAccount *account; // @synthesize account=_account;
 - (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
-- (unsigned long long)hash;
+@property(readonly) unsigned long long hash;
 @property struct OpaqueSecIdentityRef *identity;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

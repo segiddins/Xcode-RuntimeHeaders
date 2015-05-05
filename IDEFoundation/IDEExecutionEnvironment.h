@@ -8,7 +8,7 @@
 
 #import "DVTInvalidation.h"
 
-@class DVTMapTable, DVTStackBacktrace, IDEActivityLogSection, IDEBreakpointManager, IDEBuildOperation, IDEExecutionTracker, IDEInMemoryLogStore, IDELaunchSession, IDELogStore, IDEWorkspaceArena, NSArray, NSCountedSet, NSMapTable, NSMutableArray, NSMutableOrderedSet, NSOperationQueue, NSSet, NSString;
+@class DVTMapTable, DVTStackBacktrace, IDEActivityLogSection, IDEBreakpointManager, IDEBuildOperation, IDEExecutionTracker, IDEInMemoryLogStore, IDELaunchSession, IDELogStore, IDEWorkspace, IDEWorkspaceArena, NSArray, NSCountedSet, NSMapTable, NSMutableArray, NSMutableOrderedSet, NSOperationQueue, NSSet, NSString;
 
 @interface IDEExecutionEnvironment : NSObject <DVTInvalidation>
 {
@@ -31,6 +31,7 @@
     DVTMapTable *_ibLogsByBuildable;
     BOOL _handlingLaunchSessionStateChange;
     BOOL _settingLaunchSessionForTabChange;
+    IDEWorkspace *_workspace;
     IDEExecutionTracker *_currentExecutionTracker;
     IDEWorkspaceArena *_workspaceArena;
     id <IDEClientTracking> _clientTracker;
@@ -55,6 +56,7 @@
 @property(retain) id <IDEClientTracking> clientTracker; // @synthesize clientTracker=_clientTracker;
 @property(retain) IDEWorkspaceArena *workspaceArena; // @synthesize workspaceArena=_workspaceArena;
 @property(retain) IDEExecutionTracker *currentExecutionTracker; // @synthesize currentExecutionTracker=_currentExecutionTracker;
+@property(readonly) IDEWorkspace *workspace; // @synthesize workspace=_workspace;
 @property(copy) DVTMapTable *productNamesToBuildableProductsMapping; // @synthesize productNamesToBuildableProductsMapping=_productNamesToBuildableProductsMapping;
 @property(readonly) int lastBuildResult; // @synthesize lastBuildResult=_lastBuildResult;
 @property(readonly) int buildState; // @synthesize buildState=_buildState;

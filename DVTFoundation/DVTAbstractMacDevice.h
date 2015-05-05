@@ -28,7 +28,6 @@
 - (id)_applicationFromURL:(id)arg1;
 - (void)_addApplicationsFromDirectory:(id)arg1 toArray:(id)arg2;
 - (id)applicationForURL:(id)arg1;
-- (id)additionalApplicationsForDebuggingAppExtensions;
 @property(readonly) NSSet *systemApplications;
 @property(readonly) NSSet *applications;
 

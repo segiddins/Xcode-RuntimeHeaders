@@ -35,6 +35,7 @@
     DVTObservingToken *_isWorkspaceIdleToken;
     DVTObservingToken *_launchSessionsObservingToken;
     DVTObservingToken *_launchSessionsRunnablePIDObservingToken;
+    DVTNotificationToken *_launchSessionErrorToken;
     DVTObservingToken *_currentDebugSessionObserverToken;
     DVTNotificationToken *_applicationIsQuittingNotificationToken;
     DVTObservingToken *_currentExecutionTrackerObservingToken;
@@ -57,6 +58,7 @@
     DVTSystemActivityToken *_systemActivityToken;
     DVTObservingToken *_executionTrackerIsFinishedObservingToken;
     DVTObservingToken *_executionEnvironmentCurrentBuildOperationObservingToken;
+    DVTObservingToken *_simpleFilesFocusedObservingToken;
     DVTStackBacktrace *_creationBacktrace;
 }
 
@@ -159,6 +161,7 @@
 - (void)setupUISubsystems;
 - (void)_workspace:(id)arg1 failedToResolveContainerForProjectFile:(id)arg2;
 - (void)_setupLaunchSessionsObservation;
+- (void)_presentErrorForLaunch:(id)arg1;
 - (id)_firstErrorForExecutionTracker:(id)arg1;
 - (void)_recordWorkspaceStatisticsLater;
 - (void)_recordWorkspaceStatistics;
@@ -188,6 +191,7 @@
 @property(readonly, getter=isClosed) BOOL closed;
 - (id)_openingPerformanceMetricIdentifier;
 - (void)dvt_shouldDeallocate;
+- (BOOL)_isLocatedByURL:(id)arg1 becauseOfAutosavedContentsFile:(char *)arg2;
 - (id)initForURL:(id)arg1 withContentsOfURL:(id)arg2 ofType:(id)arg3 error:(id *)arg4;
 - (id)initWithType:(id)arg1 error:(id *)arg2;
 - (id)initWithWorkspace:(id)arg1;

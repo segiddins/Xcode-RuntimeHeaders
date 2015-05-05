@@ -34,7 +34,6 @@
 - (void)_adjustAvailableDevicesForChangeKind:(unsigned long long)arg1 addedObjects:(id)arg2 removedObjects:(id)arg3;
 - (void)_stopObservingDevice:(id)arg1;
 - (void)_startObservingDevice:(id)arg1;
-- (id)_observingTokensForDevice:(id)arg1 create:(BOOL)arg2;
 - (id)_discoverDeviceLocators;
 - (id)deviceAtDeviceLocation:(id)arg1;
 - (id)_deviceLocatorForDeviceLocationScheme:(id)arg1;

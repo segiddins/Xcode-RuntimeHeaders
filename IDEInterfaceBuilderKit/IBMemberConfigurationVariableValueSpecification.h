@@ -16,7 +16,8 @@
     double _presentationOrder;
 }
 
-+ (id)unspecifiedValueSpecification;
++ (id)unspecifiedValueSpecificationWithTitle:(id)arg1 abbreviation:(id)arg2;
++ (id)defaultUnspecifiedValueSpecification;
 @property(readonly) double presentationOrder; // @synthesize presentationOrder=_presentationOrder;
 @property(readonly) NSString *abbreviation; // @synthesize abbreviation=_abbreviation;
 @property(readonly) NSString *title; // @synthesize title=_title;

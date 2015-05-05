@@ -12,7 +12,7 @@
 #import "NSPathControlDelegate.h"
 #import "NSSplitViewDelegate.h"
 
-@class DVTControllerContentView, DVTDelayedMenuButton, DVTStackView_ML, IDECapsuleListView, IDEMappingModelAttributeMappingsController, IDEMappingModelRelationshipMappingsController, NSArray, NSPathControl, NSString, NSView;
+@class DVTControllerContentView, DVTDelayedMenuButton, DVTStackView_ML, IDECapsuleListView, IDEMappingModelAttributeMappingsController, IDEMappingModelRelationshipMappingsController, NSArray, NSMenu, NSPathControl, NSString, NSView;
 
 @interface IDEMappingModelEditor : IDEDMEditor <NSSplitViewDelegate, DVTOutlineViewDelegate, IDECapsuleListViewDataSource, NSPathControlDelegate, NSOpenSavePanelDelegate>
 {
@@ -20,6 +20,7 @@
     NSPathControl *sourcePathControl;
     NSPathControl *destinationPathControl;
     DVTDelayedMenuButton *addEntityMappingButton;
+    NSMenu *addEntityMappingButtonMenu;
     DVTStackView_ML *stackView;
     DVTControllerContentView *entityMappingEditorView;
     IDEMappingModelAttributeMappingsController *attributeMappingsController;

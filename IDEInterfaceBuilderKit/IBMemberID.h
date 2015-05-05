@@ -26,6 +26,7 @@
 + (id)uncachedMemberIDFromInteger:(long long)arg1;
 + (id)memberID;
 + (id)decodeWithBinaryUnarchiver:(id)arg1;
++ (BOOL)isValidIdentifier:(id)arg1;
 + (id)illegalMemberIdentifierCharacterSet;
 + (id)legalMemberIdentifierCharacterSet;
 - (void).cxx_destruct;

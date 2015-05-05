@@ -12,6 +12,7 @@
 
 + (double)collapsedHeightInBaseCoordinates;
 + (double)collapsedHeight;
+- (void)_windowChangedKeyState;
 - (void)drawRect:(struct CGRect)arg1;
 
 @end

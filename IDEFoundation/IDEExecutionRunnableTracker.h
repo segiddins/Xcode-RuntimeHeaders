@@ -17,6 +17,7 @@
 }
 
 - (void).cxx_destruct;
+- (id)notFinishedReasonWithDepth:(unsigned long long)arg1;
 - (void)runningDidFinish:(id)arg1 withError:(id)arg2;
 - (void)cancel;
 - (BOOL)isFinished;

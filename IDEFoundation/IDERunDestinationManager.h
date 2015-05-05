@@ -6,11 +6,11 @@
 
 #import "NSObject.h"
 
-@class DVTMapTable, DVTObservingToken, IDERunDestination, NSMutableSet, NSSet;
+@class DVTObservingToken, IDERunDestination, NSMapTable, NSMutableSet, NSSet;
 
 @interface IDERunDestinationManager : NSObject
 {
-    DVTMapTable *_runDestinationsByDeviceCache;
+    NSMapTable *_runDestinationsByDeviceCache;
     NSMutableSet *_availableRunDestinations;
     DVTObservingToken *_deviceManagerObservation;
     IDERunDestination *_fallbackRunDestination;
@@ -43,6 +43,8 @@
 - (void)_removeRunDestinationsForDevice:(id)arg1;
 - (void)_addRunDestinationsForDevice:(id)arg1;
 - (void)_setUpFallbackRunDestination;
+- (id)_fallbackSDK;
+- (id)_fallbackDevice;
 
 // Remaining properties
 @property(copy) NSSet *availableRunDestinations; // @dynamic availableRunDestinations;

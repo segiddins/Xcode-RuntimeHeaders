@@ -1066,3 +1066,22 @@ struct unordered_map<unsigned long long, std::__1::unique_ptr<GPUTools::Playback
     } __table_;
 };
 
+struct vector<unsigned long long, std::__1::allocator<unsigned long long>> {
+    unsigned long long *_field1;
+    unsigned long long *_field2;
+    struct __compressed_pair<unsigned long long *, std::__1::allocator<unsigned long long>> {
+        unsigned long long *_field1;
+    } _field3;
+};
+
+#pragma mark Typedef'd Structures
+
+// Template types
+typedef struct vector<unsigned long long, std::__1::allocator<unsigned long long>> {
+    unsigned long long *_field1;
+    unsigned long long *_field2;
+    struct __compressed_pair<unsigned long long *, std::__1::allocator<unsigned long long>> {
+        unsigned long long *_field1;
+    } _field3;
+} vector_cfeb9b06;
+

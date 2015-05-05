@@ -58,6 +58,7 @@ __attribute__((visibility("hidden")))
 @property(copy) NSMenuItem *toggleDeviceWireframeMenuItem; // @synthesize toggleDeviceWireframeMenuItem=_toggleDeviceWireframeMenuItem;
 @property(copy) NSMenuItem *toggleWireframeMenuItem; // @synthesize toggleWireframeMenuItem=_toggleWireframeMenuItem;
 - (void).cxx_destruct;
+- (void)dumpImages:(id)arg1 asRaw:(BOOL)arg2;
 - (void)commitStateToDictionary:(id)arg1;
 - (void)revertStateWithDictionary:(id)arg1;
 - (void)handleOpenScrubberTriggeredNewLocation:(id)arg1;

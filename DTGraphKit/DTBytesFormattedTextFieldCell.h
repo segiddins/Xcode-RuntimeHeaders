@@ -15,6 +15,7 @@
 }
 
 + (id)cellWithDefaultsIdentifier:(id)arg1;
+- (void).cxx_destruct;
 - (void)_toggleFormatting:(id)arg1;
 - (void)setFormatsObjectValue:(BOOL)arg1;
 - (id)initWithDefaultsIdentifier:(id)arg1;

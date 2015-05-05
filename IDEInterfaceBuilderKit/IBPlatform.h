@@ -8,7 +8,7 @@
 
 #import "IBScopedSingleton.h"
 
-@class IBInspectorSearchDataManager, NSArray, NSDictionary, NSSet, NSString;
+@class NSArray, NSSet, NSString;
 
 @interface IBPlatform : NSObject <IBScopedSingleton>
 {
@@ -21,10 +21,7 @@
     NSSet *_sourceCodeParserExtensions;
     NSSet *_connectionClasses;
     NSSet *_segueClasses;
-    NSSet *_embeddingPolicyExtensions;
-    NSDictionary *_segueClassesByClassID;
     NSArray *_displayOrderedConfigurations;
-    IBInspectorSearchDataManager *_searchDataManager;
 }
 
 + (id)platformForBuildSettingPlatformIdentifier:(id)arg1;
@@ -36,22 +33,16 @@
 - (BOOL)supportsLaunchScreen;
 - (Class)previewGeniusResultsItemGroupClass;
 - (id)validateVersion:(id)arg1 forCompilingDocument:(id)arg2;
-- (BOOL)shouldCopySeparateStringsFilesForDocument:(id)arg1 withTargetDevices:(id)arg2;
-- (BOOL)shouldCompileSeparatePackagesForDocument:(id)arg1 withTargetDevices:(id)arg2;
 - (id)xibPackageContentFileNames;
 - (id)storyboardPackageContentFileNames;
-- (Class)storyboardCompilerClass;
-- (Class)xibCompilerClass;
 - (id)sourceCodeParserClasses;
 - (id)frameworksExcludedFromSourceScanning;
 - (Class)fallbackSegueClassForUnknownSegueKind;
-- (Class)segueClassForClassIdentifier:(id)arg1;
 - (id)segueClasses;
 - (id)connectionClasses;
 - (id)connectionExtensionForConnectionClass:(Class)arg1;
 - (id)documentDependencyForType:(id)arg1;
 - (id)documentDependencies;
-- (id)embeddingPolicyExtensions;
 - (id)objectLibraryAssetProviderExtensions;
 - (id)excludedFrameworkExtensions;
 - (id)buildEnvironmentVerifiers;
@@ -61,22 +52,14 @@
 - (id)extensionsForExtensionPoint:(id)arg1;
 - (BOOL)matchesExtension:(id)arg1;
 - (id)typeIdentifierForPreservingContentsWhenWritingDocument;
-- (id)xibArchivingSchema;
-- (id)storyboardArchivingSchema;
 - (id)xibHybridPackageType;
 - (id)xibHybridPackageEditableDocumentFilename;
 - (id)xibPreferredFileType;
 - (Class)userDefinedRuntimeAttributesPlaceholderClass;
-- (Class)storyboardVerifierClass;
-- (Class)xibVerifierClass;
 - (void)updateDefaultSimulatedMetricsAfterChangingTargetRuntimeForDocument:(id)arg1;
-- (Class)simulatedMetricsContainerClass;
 - (id)segueTemplateToControllerKeyPath;
+- (Class)simulatedMetricsContainerClass;
 - (id)defaultStoryboardSegueClassName;
-- (BOOL)usesSceneExitPlaceholder;
-- (Class)storyboardAssetProviderClass;
-- (Class)xibAssetProviderClass;
-- (id)inspectorSearchDataManager;
 - (void)populateAdditionalSearchableAttributeKeyPaths:(id)arg1 ofClass:(Class)arg2 forInspectorCategory:(id)arg3;
 - (void)populateAdditionalInspectors:(id)arg1 ofClass:(Class)arg2 forCategory:(id)arg3;
 - (id)containerObserverForInterfaceBuilderDocumentsIdentifier;
@@ -89,12 +72,9 @@
 - (Class)designedClassForEncodedClassName:(id)arg1;
 - (void)unarchivePlatformDependentDocumentManagedDataForObject:(id)arg1 withDocumentUnarchiver:(id)arg2;
 - (void)archivePlatformDependentDocumentManagedDataForObject:(id)arg1 withDocumentArchiver:(id)arg2;
-- (void)unarchivePlatformDependentDataForDocument:(id)arg1 withDocumentUnarchiver:(id)arg2;
-- (void)archivePlatformDependentDataForDocument:(id)arg1 withDocumentArchiver:(id)arg2;
 - (id)sanitizedVersion:(id)arg1 forDocumentDependency:(id)arg2;
 - (void)documentDidUpgradeDevelopmentTarget:(id)arg1;
 - (BOOL)supportPerConfigurationProperties;
-- (id)userLabelForConfigurations;
 - (id)archiveKeyForUsesConfigurations;
 - (id)autolayoutStatusRequesterForTargetRuntime:(id)arg1 liveViewsManager:(id)arg2;
 - (Class)autolayoutFrameDecisionDriverClass;
@@ -116,10 +96,6 @@
 - (id)xibFirstResponderMemberID;
 - (id)xibFilesOwnerMemberID;
 - (BOOL)documentEditor:(id)arg1 validateUserInterfaceItem:(id)arg2;
-- (id)storyboardScenePasteboardType;
-- (id)storyboardPrimarySceneObjectPasteboardType;
-- (id)viewPasteboardType;
-- (id)objectPasteboardType;
 - (void)document:(id)arg1 didChangeTargetRuntimeWithContext:(id)arg2;
 - (void)document:(id)arg1 willChangeTargetRuntimeWithContext:(id)arg2;
 - (void)finishChangingTargetRuntimeForDocument:(id)arg1;
@@ -137,8 +113,6 @@
 - (id)interfaceBuilderDocumentDependency;
 - (id)deploymentVersionBuildSetting;
 - (id)runtimeConfigurableConstraintConstantKeyPath;
-- (Class)canvasConfigurationChooserControllerClass;
-- (id)memberConfigurationVariables;
 - (void)registerMemberConfigurationVariables;
 - (id)buildSettingIdentifier;
 - (id)backingPlatform;

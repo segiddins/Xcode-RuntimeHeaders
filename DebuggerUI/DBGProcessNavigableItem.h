@@ -26,9 +26,12 @@
     NSString *_filterString;
 }
 
++ (id)keyPathsForValuesAffectingLeaf;
 + (id)keyPathsForValuesAffectingSubtitle;
 + (id)keyPathsForValuesAffectingImage;
 + (id)keyPathsForValuesAffectingName;
++ (id)keyPathsForValuesAffectingTopNavigableModel;
++ (id)keyPathsForValuesAffectingProcess;
 + (id)_mainQueueName;
 @property(retain, nonatomic) DBGMemoryDataProcessWrapper *memoryDataGroup; // @synthesize memoryDataGroup=_memoryDataGroup;
 @property(copy, nonatomic) NSString *filterString; // @synthesize filterString=_filterString;
@@ -48,6 +51,8 @@
 - (id)subtitle;
 - (id)image;
 - (id)name;
+- (id)topNavigableModel;
+- (id)process;
 - (id)initWithRepresentedObject:(id)arg1;
 
 @end

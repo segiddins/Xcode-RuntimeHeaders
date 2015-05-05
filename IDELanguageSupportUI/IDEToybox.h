@@ -24,20 +24,22 @@
     BOOL _executionIsInProgress;
     BOOL _isReplayingSerializedResults;
     BOOL _lastExpressionDidComplete;
-    id <IDEToyboxDocumentLocationDelegate> _documentLocationDelegate;
+    id <IDEToyboxDelegate> _delegate;
+    NSDate *_resultDisplayDate;
     NSDate *_dateOfEarliestResultForCurrentExecutionGeneration;
     NSDate *_dateOfLatestResultForCurrentExecutionGeneration;
 }
 
-+ (id)toyboxWithXMLElement:(id)arg1 enclosingFileWrapper:(id)arg2 documentLocationDelegate:(id)arg3 error:(id *)arg4;
++ (id)toyboxWithXMLElement:(id)arg1 enclosingFileWrapper:(id)arg2 delegate:(id)arg3 error:(id *)arg4;
 + (void)initialize;
 @property BOOL lastExpressionDidComplete; // @synthesize lastExpressionDidComplete=_lastExpressionDidComplete;
 @property BOOL isReplayingSerializedResults; // @synthesize isReplayingSerializedResults=_isReplayingSerializedResults;
 @property BOOL executionIsInProgress; // @synthesize executionIsInProgress=_executionIsInProgress;
 @property(copy) NSDate *dateOfLatestResultForCurrentExecutionGeneration; // @synthesize dateOfLatestResultForCurrentExecutionGeneration=_dateOfLatestResultForCurrentExecutionGeneration;
 @property(copy) NSDate *dateOfEarliestResultForCurrentExecutionGeneration; // @synthesize dateOfEarliestResultForCurrentExecutionGeneration=_dateOfEarliestResultForCurrentExecutionGeneration;
+@property(copy) NSDate *resultDisplayDate; // @synthesize resultDisplayDate=_resultDisplayDate;
 @property(readonly) BOOL includesLiveToy; // @synthesize includesLiveToy=_includesLiveToy;
-@property(readonly) id <IDEToyboxDocumentLocationDelegate> documentLocationDelegate; // @synthesize documentLocationDelegate=_documentLocationDelegate;
+@property(readonly) id <IDEToyboxDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)addTimelineItems:(id)arg1 fromXMLUnarchiver:(id)arg2;
 - (void)dvt_encodeRelationshipsWithXMLArchiver:(id)arg1 version:(id)arg2;
@@ -45,6 +47,7 @@
 - (void)dvt_awakeFromXMLUnarchiver:(id)arg1;
 - (id)xmlData;
 - (void)saveToPlaygroundXMLElement:(id)arg1 playgroundFileWrapper:(id)arg2;
+@property(readonly) BOOL hasArchivableData;
 - (void)primitiveInvalidate;
 - (void)unregisterToy:(id)arg1 forResultsForChannelIdentifier:(id)arg2 subjectIdentifier:(id)arg3;
 - (id)registerToy:(id)arg1 forResultsForChannelIdentifier:(id)arg2 subjectIdentifier:(id)arg3;
@@ -57,7 +60,7 @@
 - (void)executionGenerationDidEndAndCompleted:(BOOL)arg1;
 - (void)executionGenerationWillEnd;
 - (void)beginExecutionGeneration:(unsigned long long)arg1 isReplayingSerializedResults:(BOOL)arg2;
-- (id)initWithDocumentLocationDelegate:(id)arg1;
+- (id)initWithDelegate:(id)arg1;
 - (id)init;
 
 // Remaining properties

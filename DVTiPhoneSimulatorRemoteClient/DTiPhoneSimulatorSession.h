@@ -8,7 +8,7 @@
 
 #import "DVTInvalidation.h"
 
-@class DTiPhoneSimulatorSessionConfig, DVTStackBacktrace, DVTiPhoneSimulatorMessenger, NSString, NSTimer;
+@class DTiPhoneSimulatorSessionConfig, DVTStackBacktrace, NSString;
 
 @interface DTiPhoneSimulatorSession : NSObject <DVTInvalidation>
 {
@@ -19,13 +19,9 @@
     NSString *_uuid;
     DTiPhoneSimulatorSessionConfig *_sessionConfig;
     long long _sessionLifecycleProgress;
-    NSTimer *_timeoutTimer;
-    DVTiPhoneSimulatorMessenger *_messenger;
 }
 
 + (void)initialize;
-@property(retain) DVTiPhoneSimulatorMessenger *messenger; // @synthesize messenger=_messenger;
-@property(retain, nonatomic) NSTimer *timeoutTimer; // @synthesize timeoutTimer=_timeoutTimer;
 @property(nonatomic) long long sessionLifecycleProgress; // @synthesize sessionLifecycleProgress=_sessionLifecycleProgress;
 @property(copy, nonatomic) DTiPhoneSimulatorSessionConfig *sessionConfig; // @synthesize sessionConfig=_sessionConfig;
 @property(readonly, copy, nonatomic) NSString *uuid; // @synthesize uuid=_uuid;
@@ -34,25 +30,16 @@
 @property int simulatedApplicationPID; // @synthesize simulatedApplicationPID=_simulatedApplicationPID;
 @property(retain, nonatomic) id <DTiPhoneSimulatorSessionDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (int)connectToServiceWithError:(id *)arg1;
 - (void)doUbiquityFetchEvent;
 - (void)doFetchEventForPID:(int)arg1;
 - (void)backgroundAllApps:(int)arg1;
-- (id)_invalidConfigError;
-- (void)_endSimulatorSession;
-- (void)_callDelegateResponseFromSessionStartedWithPID:(int)arg1 andError:(id)arg2;
-- (id)_sessionStartRequestInfoFromConfig:(id)arg1 withError:(id *)arg2;
-- (BOOL)_startToolSessionInSimulatorWithError:(id *)arg1;
-- (BOOL)_startApplicationSessionInSimulatorWithError:(id *)arg1;
-- (BOOL)_startBasicSessionInSimulatorWithError:(id *)arg1;
 - (BOOL)_startSessionInSimulatorWithError:(id *)arg1;
-- (void)_handleSessionEndedWithError:(id)arg1;
-- (void)_timeoutElapsed:(id)arg1;
 - (BOOL)attachedToTargetWithConfig:(id)arg1 error:(id *)arg2;
 - (void)stopLocationSimulation;
 - (void)simulateLocationWithLatitude:(id)arg1 longitude:(id)arg2;
 - (void)requestEndWithTimeout:(double)arg1;
 - (BOOL)requestStartWithConfig:(id)arg1 timeout:(double)arg2 error:(id *)arg3;
-- (BOOL)_setUpSimulatorMessengerWithConfig:(id)arg1 error:(id *)arg2;
 @property(readonly, copy) NSString *description;
 - (id)init;
 - (void)primitiveInvalidate;

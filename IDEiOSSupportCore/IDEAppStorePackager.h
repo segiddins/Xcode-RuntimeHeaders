@@ -25,7 +25,6 @@
 - (id)commandLineToolSearchPath;
 - (id)tokenForProvisioningProfileNamed:(id)arg1;
 - (id)tokenForSigningIdentityNamed:(id)arg1;
-- (id)refreshIdentity;
 - (id)dontSignIdentity;
 - (id)sdk;
 

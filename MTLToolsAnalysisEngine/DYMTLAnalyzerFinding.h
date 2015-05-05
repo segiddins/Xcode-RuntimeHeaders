@@ -16,6 +16,7 @@
 - (BOOL)isInefficientStateUpdate;
 - (BOOL)isRedundantCallOrQuery;
 - (BOOL)isRedundantCall;
+- (BOOL)isEncoderStatistics;
 - (BOOL)isFrameStatistics;
 - (BOOL)isDataRestoreUnnecessaryForFunc:(const struct Function *)arg1 targetArgIndex:(int)arg2 objectType:(unsigned int)arg3 analyzerEngine:(id)arg4;
 - (id)localizedKind;

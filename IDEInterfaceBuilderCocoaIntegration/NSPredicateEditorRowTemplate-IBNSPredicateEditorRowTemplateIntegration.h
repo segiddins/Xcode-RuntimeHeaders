@@ -29,7 +29,7 @@
 - (long long)ibTemplateViewIndexForSide:(long long)arg1;
 - (id)ibPasteboardTypes;
 - (void)ibPrepareForInsertion;
-- (void)ibTakeSnapshotValues:(id)arg1;
+- (void)ibTakeSnapshotValues:(id)arg1 inConfiguration:(id)arg2;
 @property(copy) NSArray *ibShadowedPopUpMenus;
 - (id)ibBeginDesigningInDocument:(id)arg1;
 - (Class)ibEditorClass;

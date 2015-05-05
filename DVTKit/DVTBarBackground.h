@@ -4,48 +4,51 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSView.h"
+#import <DVTKit/KeyLoopSplicingContainerView.h>
 
 #import "NSTabViewDelegate.h"
 
-@class DVTTabbedWindowTabViewItem, DVTViewController<DVTTabbedWindowTabContentControlling>, NSArray, NSColor, NSImage, NSString, NSTabView, NSWindowController<DVTTabbedWindowControlling>;
+@class DVTTabbedWindowTabViewItem, NSArray, NSColor, NSImage, NSString, NSTabView, NSView, NSVisualEffectView, NSWindowController<DVTTabbedWindowControlling>;
 
-@interface DVTBarBackground : NSView <NSTabViewDelegate>
+@interface DVTBarBackground : KeyLoopSplicingContainerView <NSTabViewDelegate>
 {
     BOOL _becomingFirstResponder;
+    NSView *_mainContentContainerView;
+    NSView *_bottomBorderView;
+    NSView *_backdropDarkeningView;
+    NSVisualEffectView *_backdropView;
     BOOL _mouseDownCanMoveWindow;
     BOOL _hasTopBorder;
     BOOL _hasBottomBorder;
     BOOL _usesScopeBarAppearance;
+    BOOL _usesModernToolbarAppearance;
     BOOL _allowDetachDrags;
     DVTTabbedWindowTabViewItem *_selectedTabViewItem;
     NSColor *_bottomBorderColor;
+    NSView *_contentView;
     NSColor *_backgroundColor;
     NSImage *_backgroundImage;
-    NSView *_firstChildKeyView;
-    NSView *_lastChildKeyView;
     id <DVTBarBackgroundDelegate> _delegate;
     NSWindowController<DVTTabbedWindowControlling> *_tabbedWindowController;
     NSTabView *_tabView;
-    NSView *_externalNextKeyView;
 }
 
 + (id)keyPathsForValuesAffectingActiveViewController;
 + (BOOL)isTabDrag:(id)arg1;
 + (BOOL)isMiniWindowDrag:(id)arg1;
-@property(retain, nonatomic) NSView *externalNextKeyView; // @synthesize externalNextKeyView=_externalNextKeyView;
 @property(nonatomic) __weak NSTabView *tabView; // @synthesize tabView=_tabView;
 @property(retain) NSWindowController<DVTTabbedWindowControlling> *tabbedWindowController; // @synthesize tabbedWindowController=_tabbedWindowController;
 @property(retain, nonatomic) id <DVTBarBackgroundDelegate> delegate; // @synthesize delegate=_delegate;
-@property(retain, nonatomic) NSView *lastChildKeyView; // @synthesize lastChildKeyView=_lastChildKeyView;
-@property(retain, nonatomic) NSView *firstChildKeyView; // @synthesize firstChildKeyView=_firstChildKeyView;
 @property(nonatomic) BOOL allowDetachDrags; // @synthesize allowDetachDrags=_allowDetachDrags;
-@property(readonly, nonatomic) NSImage *backgroundImage; // @synthesize backgroundImage=_backgroundImage;
-@property(copy, nonatomic) NSColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
+@property(retain, nonatomic) NSImage *backgroundImage; // @synthesize backgroundImage=_backgroundImage;
+@property(retain, nonatomic) NSColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
+@property(retain, nonatomic) NSView *contentView; // @synthesize contentView=_contentView;
+@property(nonatomic) BOOL usesModernToolbarAppearance; // @synthesize usesModernToolbarAppearance=_usesModernToolbarAppearance;
 @property(nonatomic) BOOL usesScopeBarAppearance; // @synthesize usesScopeBarAppearance=_usesScopeBarAppearance;
-@property(copy, nonatomic) NSColor *bottomBorderColor; // @synthesize bottomBorderColor=_bottomBorderColor;
+@property(retain, nonatomic) NSColor *bottomBorderColor; // @synthesize bottomBorderColor=_bottomBorderColor;
 @property(nonatomic) BOOL hasBottomBorder; // @synthesize hasBottomBorder=_hasBottomBorder;
 @property(nonatomic) BOOL hasTopBorder; // @synthesize hasTopBorder=_hasTopBorder;
+@property BOOL mouseDownCanMoveWindow; // @synthesize mouseDownCanMoveWindow=_mouseDownCanMoveWindow;
 - (void).cxx_destruct;
 - (BOOL)accessibilityIsIgnored;
 - (id)accessibilityAttributeValue:(id)arg1;
@@ -61,13 +64,10 @@
 - (void)willCollapse;
 - (void)didExpand;
 - (void)willExpand;
-- (void)removeFromSuperview;
-- (void)setNextKeyView:(id)arg1;
-- (BOOL)becomeFirstResponder;
-- (BOOL)acceptsFirstResponder;
 - (void)setDefaultKeyLoop;
-- (void)setMouseDownCanMoveWindow:(BOOL)arg1;
-- (BOOL)mouseDownCanMoveWindow;
+- (void)_addBackdropDarkeningViewForModernToolbarAppearance;
+- (void)_addBottomBorderViewForModernToolbarAppearance;
+- (void)_addBackdropViewForModernToolbarAppearance;
 - (BOOL)isOpaque;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)_drawBackgroundInRect:(struct CGRect)arg1;
@@ -81,20 +81,20 @@
 - (void)selectTabViewItem:(id)arg1;
 @property(readonly, nonatomic) DVTTabbedWindowTabViewItem *selectedTabViewItem; // @synthesize selectedTabViewItem=_selectedTabViewItem;
 @property(readonly) NSArray *tabViewItems;
-- (void)insertTabViewItem:(id)arg1 atIndex:(long long)arg2;
-- (void)moveTabViewItem:(id)arg1 toIndex:(long long)arg2;
+- (void)insertTabViewItem:(id)arg1 atIndex:(unsigned long long)arg2;
+- (void)moveTabViewItem:(id)arg1 toIndex:(unsigned long long)arg2;
 - (void)removeTabViewItem:(id)arg1;
 - (long long)indexOfTabViewItem:(id)arg1;
 - (id)tabViewItemAtIndex:(long long)arg1;
 @property(readonly) long long numberOfTabViewItems;
 - (id)newTabWithViewController:(id)arg1 atIndex:(unsigned long long)arg2;
-@property(readonly) DVTViewController<DVTTabbedWindowTabContentControlling> *activeViewController;
-- (void)awakeFromNib;
+- (id)activeViewController;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (void)commonInit;
-@property(readonly, nonatomic) NSColor *defaultBottomBorderLineColor;
-@property(readonly, nonatomic) NSColor *secondTopBorderLineColor;
-@property(readonly, nonatomic) NSColor *firstTopBorderLineColor;
+@property(readonly, retain, nonatomic) NSColor *defaultBottomBorderLineColor;
+@property(readonly, retain, nonatomic) NSColor *secondTopBorderLineColor;
+@property(readonly, retain, nonatomic) NSColor *firstTopBorderLineColor;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -14,6 +14,8 @@
 + (BOOL)_THREAD_shouldAddFileWithName:(id)arg1;
 + (void)initialize;
 - (id)displayName;
+- (BOOL)isEditable;
+- (id)createRootGroup;
 
 @end
 

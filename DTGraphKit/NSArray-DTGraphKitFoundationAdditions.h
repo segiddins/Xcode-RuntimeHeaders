@@ -7,6 +7,6 @@
 #import "NSArray.h"
 
 @interface NSArray (DTGraphKitFoundationAdditions)
-- (id)dt_onlyObject;
+@property(readonly, nonatomic) id dt_onlyObject;
 @end
 

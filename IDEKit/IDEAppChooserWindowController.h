@@ -9,7 +9,7 @@
 #import "DVTInvalidation.h"
 #import "NSTextFieldDelegate.h"
 
-@class DVTMutableOrderedDictionary, DVTSearchField, DVTStackBacktrace, IDEAppChooserModelObject, IDERunDestination, IDEScheme, IDESchemeCommand, NSArray, NSArrayController, NSButton, NSDictionary, NSIndexSet, NSLock, NSMutableArray, NSMutableSet, NSObject<OS_dispatch_queue>, NSProgressIndicator, NSString, NSTableView, NSWindow;
+@class DVTMutableOrderedDictionary, DVTSearchField, DVTStackBacktrace, IDEAppChooserModelObject, IDERunDestination, IDEScheme, IDESchemeCommand, NSArray, NSArrayController, NSButton, NSIndexSet, NSLock, NSMutableArray, NSMutableSet, NSObject<OS_dispatch_queue>, NSProgressIndicator, NSString, NSTableView, NSWindow;
 
 @interface IDEAppChooserWindowController : NSWindowController <NSTextFieldDelegate, DVTInvalidation>
 {
@@ -19,7 +19,6 @@
     NSMutableSet *_foundApplicationURLs;
     NSObject<OS_dispatch_queue> *_appChooserQueue;
     unsigned long long _type;
-    NSDictionary *_extensionToBundleIdentifierMap;
     NSWindow *_sheet;
     BOOL _haveFoundAtLeastOneUserAppOnDevice;
     NSArray *_orderedChooserApplications;
@@ -85,11 +84,11 @@
 - (id)_attachToExistingBundleIDPathExtension;
 - (void)_findRecentApplicationsFromURLs:(id)arg1;
 - (id)_addApplicationsAndReturnUniqueURLs:(id)arg1;
+- (id)_sentinelApplicationsForDebuggingAppExtensionsOnDevice:(id)arg1;
 - (void)_findLaunchersForDevice:(id)arg1;
 - (void)_findSystemApplicationsForDevice:(id)arg1;
 - (void)_findUserApplicationsForDevice:(id)arg1;
 - (void)_findInstalledApplications;
-- (void)_initializeBundleIdentifierMaps;
 - (id)_getRecentApplicationsFromUserDefaults;
 - (void)_updateSuggestedAppsForTargetExtensionIfAppropriateForSchemeCommand:(id)arg1;
 - (void)_updateRecentApplicationsWithApp:(id)arg1;

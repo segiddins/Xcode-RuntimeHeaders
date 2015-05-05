@@ -34,6 +34,7 @@
         unsigned int _delegateProvidesMenuItems:1;
         unsigned int _delegateProvidesAccessibilityDescriptions:1;
         unsigned int _delegateProvidesToolTips:1;
+        unsigned int _delegateResponseToTextAlignmentForTitleOfPathComponentCellAtIndex:1;
     } _idePathCellFlags;
     BOOL _needsToUpdateComponentCells;
     struct CGSize _cachedSizeWanted;
@@ -60,13 +61,15 @@
 - (void)menuWillOpen:(id)arg1;
 - (BOOL)trackMouse:(id)arg1 inRect:(struct CGRect)arg2 ofView:(id)arg3 untilMouseUp:(BOOL)arg4;
 - (void)_handleClickInComponentCell:(id)arg1 atPoint:(struct CGPoint)arg2 inRect:(struct CGRect)arg3 ofView:(id)arg4 event:(id)arg5;
-- (BOOL)_handleDragInComponentCell:(id)arg1 atPoint:(struct CGPoint)arg2 inRect:(struct CGRect)arg3 ofView:(id)arg4 event:(id)arg5;
+- (BOOL)_trackMouseInComponentCell:(id)arg1 atPoint:(struct CGPoint)arg2 inRect:(struct CGRect)arg3 ofView:(id)arg4 event:(id)arg5;
 - (BOOL)acceptsFirstResponder;
 - (unsigned long long)draggingSession:(id)arg1 sourceOperationMaskForDraggingContext:(long long)arg2;
 - (void)_performDragInComponentCell:(id)arg1 inRect:(struct CGRect)arg2 ofView:(id)arg3 event:(id)arg4;
 - (void)filterItems:(id)arg1 inMenu:(id)arg2 forSearchString:(id)arg3;
 - (void)_openURLInFinder:(id)arg1;
 - (void)popUpMenuForComponentCell:(id)arg1 inRect:(struct CGRect)arg2 ofView:(id)arg3;
+- (void)_handlePressureClickForCell:(id)arg1;
+- (BOOL)_wantsPressureEventForCell:(id)arg1;
 - (id)_urlForItem:(id)arg1;
 - (void)_populatePopUpMenuWithPath:(id)arg1 withURL:(id)arg2;
 - (void)_populatePopUpMenu:(id)arg1 withItems:(id)arg2;
@@ -93,6 +96,7 @@
 - (void)_updateDirtyCells:(id)arg1;
 - (id)lineageForNavigableItem:(id)arg1 rootItems:(id)arg2;
 - (id)_componentCellsFromItems:(id)arg1;
+- (unsigned long long)_delegate_textAlignmentForTitleOfPathComponentCell:(id)arg1 atIndex:(unsigned long long)arg2;
 - (id)_delegate_titleForPathComponentCell:(id)arg1 atIndex:(unsigned long long)arg2;
 - (id)_noSelectionComponentCell;
 - (id)_componentCellWithRepresentedObject:(id)arg1;

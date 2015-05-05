@@ -6,24 +6,31 @@
 
 #import "NSObject.h"
 
-@class DVTFileDataType, DVTFilePath, IDEScheme, NSError, NSString;
+@class DVTFileDataType, DVTFilePath, IDEScheme, IDESchemeBuildableReference, NSError, NSString;
 
 @interface IDERunnable : NSObject
 {
     DVTFileDataType *_dataType;
     NSError *_dataTypeDetectionError;
-    IDEScheme *_scheme;
     NSString *_bundleIdentifier;
+    int _runnableDebuggingMode;
+    IDEScheme *_scheme;
     DVTFilePath *_remotePath;
 }
 
++ (id)runnableForBuildProduct:(id)arg1 inScheme:(id)arg2;
+@property int runnableDebuggingMode; // @synthesize runnableDebuggingMode=_runnableDebuggingMode;
 @property(readonly, copy) DVTFilePath *remotePath; // @synthesize remotePath=_remotePath;
 @property(copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(retain) IDEScheme *scheme; // @synthesize scheme=_scheme;
 - (void).cxx_destruct;
+- (void)dvt_encodeAttributesWithXMLArchiver:(id)arg1 version:(id)arg2;
+- (void)setBundleIdentifierFromUTF8String:(char *)arg1 fromXMLUnarchiver:(id)arg2;
 - (int)runnableType;
 - (void)resolveBuildableFromImport;
+@property(readonly) BOOL requiresPairedProxyDevice;
 @property(readonly) BOOL hasRunnablePath;
+@property(readonly) IDESchemeBuildableReference *buildableReference;
 @property(readonly) id <IDEBuildableProduct> buildableProduct;
 - (id)runnableUTIType:(id *)arg1;
 - (id)pathToRunnableForBuildParameters:(id)arg1;

@@ -6,13 +6,12 @@
 
 #import "NSTextStorageDelegate.h"
 
-@class DVTSourceModelItem, DVTTextStorage, NSDictionary, NSString;
+@class DVTSourceModelItem, DVTTextStorage, NSDictionary;
 
 @protocol DVTTextStorageDelegate <NSTextStorageDelegate>
 
 @optional
 @property(readonly, nonatomic) NSDictionary *sourceLanguageServiceContext;
-- (void)sourceLanguageServiceAvailabilityNotification:(BOOL)arg1 message:(NSString *)arg2;
 - (BOOL)textStorageShouldAllowEditing:(DVTTextStorage *)arg1;
 - (void)textStorageDidUpdateSourceLandmarks:(DVTTextStorage *)arg1;
 - (long long)nodeTypeForItem:(DVTSourceModelItem *)arg1 withContext:(NSDictionary *)arg2;

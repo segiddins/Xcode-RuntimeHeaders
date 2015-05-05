@@ -12,12 +12,14 @@
 + (void)ibPopulateAdditionalInspectors:(id)arg1 forCategory:(id)arg2;
 + (long long)ibMemberType;
 - (id)ibDefaultImage;
+- (id)ibUserHostableDocumentClasses;
 - (BOOL)ibIsInspectorApplicable:(id)arg1 forCategory:(id)arg2;
 - (id)ibApplicableInspectorsForCategory:(id)arg1 suggestion:(id)arg2;
 - (void)ibRestoreDevelopmentStringArraysDuringCompilingInDocument:(id)arg1 usingContext:(id)arg2;
 - (void)ibSwapInLocalizableStringArraysDuringCompilingInDocument:(id)arg1 usingContext:(id)arg2;
 - (void)ibRestoreDevelopmentStringsDuringCompilingInDocument:(id)arg1 usingContext:(id)arg2;
 - (void)ibSwapInLocalizableStringsDuringCompilingInDocument:(id)arg1 usingContext:(id)arg2;
+- (void)ibSwapInLocalizableStringForDevelopmentString:(id)arg1 forKeyPath:(id)arg2 inDocument:(id)arg3 configuration:(id)arg4 context:(id)arg5;
 - (void)ibRestoreLocalizableStringsIfNeededInDocument:(id)arg1 withContext:(id)arg2;
 - (void)ibSwapInLocalizableStringsIfNeededInDocument:(id)arg1 withContext:(id)arg2;
 - (id)ibCoerceValueToPlistTypeForIBToolDisplay:(id)arg1 forKeyPath:(id)arg2 strictness:(long long)arg3;

@@ -13,5 +13,10 @@
 @property(readonly) NSView *iconView;
 - (NSView *)quickLookViewForResultsView;
 - (NSView *)quickLookViewForNaturalSize;
+
+@optional
+- (NSView *)quickLookViewForUnadornedView;
+- (NSView *)iconOnlyViewForCollectionView;
+- (NSView *)quickLookViewForCollectionView;
 @end
 

@@ -36,6 +36,7 @@
 + (id)determineBestInitialSelectionForObjects:(id)arg1 sourceObject:(id)arg2;
 + (id)prototypeConnectionsForObject:(id)arg1;
 + (id)prototypeConnectionsFromObject:(id)arg1 toObject:(id)arg2;
++ (BOOL)supportsIdiom:(id)arg1;
 + (BOOL)requiresConfigurations;
 + (BOOL)isDeprecatedInDocument:(id)arg1;
 + (id)effectiveMenuLabelForConnection:(id)arg1 inDocument:(id)arg2;

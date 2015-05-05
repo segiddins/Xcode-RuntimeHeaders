@@ -54,7 +54,7 @@
 - (void)editWithFrame:(struct CGRect)arg1 inView:(id)arg2 editor:(id)arg3 delegate:(id)arg4 event:(id)arg5;
 - (id)_attributedStringValue;
 - (struct CGSize)imageSize;
-@property(retain, nonatomic) NSImage *image;
+@property(retain) NSImage *image;
 - (id)_templateImageFromImage:(id)arg1 withColor:(id)arg2;
 
 @end

@@ -13,7 +13,7 @@
     Xcode3Target *_target;
 }
 
-+ (id)adaptedResourcesForLocalizedContainer:(id)arg1;
++ (id)adaptedResourcesForPopulationContext:(id)arg1;
 - (void).cxx_destruct;
 - (id)target;
 - (id)localizedGroupIdentifier;

@@ -6,20 +6,11 @@
 
 #import <IDEKit/IDELaunchActionOptionViewController.h>
 
-@class DVTObservingToken;
-
 @interface IDEOpenGLESOptionsController : IDELaunchActionOptionViewController
 {
-    DVTObservingToken *_frameCaptureModeObservingToken;
-    BOOL _enableGPUValidationMode;
 }
 
 + (BOOL)availableForScheme:(id)arg1;
-@property(nonatomic) BOOL enableGPUValidationMode; // @synthesize enableGPUValidationMode=_enableGPUValidationMode;
-- (void).cxx_destruct;
-- (void)primitiveInvalidate;
-- (void)viewWillUninstall;
-- (void)viewDidInstall;
 
 @end
 

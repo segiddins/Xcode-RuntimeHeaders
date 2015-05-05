@@ -26,6 +26,7 @@
 - (float)projectedAreaOfNode:(id)arg1;
 - (id)appropriateNodeFromHitTestResult:(id)arg1;
 - (id)appropriateResultFromHitTestResults:(id)arg1;
+- (id)menuForEvent:(id)arg1;
 - (void)magnifyWithEvent:(id)arg1;
 - (void)scrollWheel:(id)arg1;
 - (void)mouseDragged:(id)arg1;
@@ -34,7 +35,9 @@
 - (void)mouseUp:(id)arg1;
 - (void)mouseDown:(id)arg1;
 - (id)filterHitTestResults:(id)arg1 hitLocation:(struct CGPoint)arg2;
+- (id)filteredHitTestResultsFromGestureRecognizer:(id)arg1;
 - (id)filteredHitTestResultsFromEvent:(id)arg1;
+- (id)_filteredHitTestResultFromLocation:(struct CGPoint)arg1;
 - (BOOL)nodeIsPartOfRangeSlider:(id)arg1;
 - (id)rangeSliderNodeInHitTestResults:(id)arg1;
 - (id)init;

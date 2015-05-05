@@ -58,6 +58,7 @@
 - (id)objectLibraryAssetsFromNibContent:(id)arg1 fromProvider:(id)arg2;
 - (BOOL)shouldIncludeObjectLibraryAsset:(id)arg1 fromProvider:(id)arg2;
 - (id)objectPasteboardType;
+- (id)idiom;
 - (id)platform;
 - (id)allObjectLibraryAssetProviderExtensions;
 - (id)assetProviderForExtension:(id)arg1;

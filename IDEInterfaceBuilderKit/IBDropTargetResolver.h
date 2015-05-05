@@ -36,7 +36,7 @@
 - (struct CGRect)insertionPolicy:(id)arg1 rectInWindowSpaceForRepresentedObject:(id)arg2;
 - (id)insertionPolicy:(id)arg1 orderedRelationForKeyPath:(id)arg2 representedObject:(id)arg3;
 - (struct CGRect)dragAlignmentRectForRelatedObject:(id)arg1;
-- (struct CGRect)rectInWindowSpaceForEditedObject;
+- (struct CGRect)dragInsertionRectInWindowSpaceForEditedObject;
 - (struct CGRect)dragAndDropInsertionIndicator:(id)arg1 dragAlignmentRectForRelatedObject:(id)arg2;
 - (struct CGRect)dropRectForDragAndDropInsertionIndicator:(id)arg1;
 - (unsigned long long)orderedRelationInsertionEdgeForDragAndDropInsertionIndicator:(id)arg1;
@@ -61,6 +61,7 @@
 - (id)orderedRelationshipPolicyForToManyRelation:(id)arg1 pasteboardTypes:(id)arg2 primaryGrowthDirection:(long long)arg3 secondaryGrowthDirection:(long long)arg4;
 - (id)orderedRelationshipPolicyForToManyRelation:(id)arg1 pasteboardTypes:(id)arg2 growthDirection:(long long)arg3;
 - (id)orderedRelationshipPolicyForToManyRelation:(id)arg1 pasteboardType:(id)arg2 growthDirection:(long long)arg3;
+- (void)invalidatePolicies;
 - (void)populatePolicies:(id)arg1;
 @property(readonly) NSArray *policies;
 @property(readonly) NSView *editorView;

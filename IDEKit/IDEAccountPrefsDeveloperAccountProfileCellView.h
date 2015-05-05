@@ -15,7 +15,7 @@
 
 @property(retain) IDEAccountPrefsEntitlementsIconsView *iconsView; // @synthesize iconsView=_iconsView;
 - (void).cxx_destruct;
-@property(retain) id <DVTProvisioningProfile> objectValue;
+@property(retain) id <DVTProvisioningProfile> objectValue; // @dynamic objectValue;
 
 @end
 

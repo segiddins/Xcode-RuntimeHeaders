@@ -26,7 +26,7 @@
 - (void)menuNeedsUpdate:(id)arg1;
 @property(readonly, copy) NSString *description;
 - (id)initWithMenuDelegate:(id)arg1;
-@property __weak id <NSMenuDelegate> menuDelegate;
+@property __weak id <NSMenuDelegate><DVTInvalidation> menuDelegate;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

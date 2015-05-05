@@ -6,21 +6,22 @@
 
 #import "NSObject.h"
 
-@class NSMutableSet, NSObject<OS_dispatch_queue>, NSOperationQueue, NSString;
+@class DVTModelGraphTransactionScope, NSMutableSet, NSObject<OS_dispatch_queue>, NSOperationQueue, NSString;
 
 @interface DVTModelObjectGraph : NSObject
 {
-    NSString *_name;
-    NSOperationQueue *_asyncQueue;
-    NSOperationQueue *_changeQueue;
-    NSObject<OS_dispatch_queue> *_asyncDispatchQueue;
-    NSObject<OS_dispatch_queue> *_changeDispatchQueue;
+    DVTModelGraphTransactionScope *_transactionScope;
     NSMutableSet *_insertedObjects;
     NSMutableSet *_updatedObjects;
     NSMutableSet *_deletedObjects;
     BOOL _coalescePending;
     BOOL _changeNotificationsAreSuspended;
     BOOL _hasPendingChanges;
+    NSString *_name;
+    NSOperationQueue *_asyncQueue;
+    NSOperationQueue *_changeQueue;
+    NSObject<OS_dispatch_queue> *_asyncDispatchQueue;
+    NSObject<OS_dispatch_queue> *_changeDispatchQueue;
 }
 
 + (BOOL)automaticallyNotifiesObserversOfHasPendingChanges;
@@ -35,7 +36,6 @@
 - (void)didUpdateModelObject:(id)arg1;
 - (void)didInsertModelObject:(id)arg1;
 - (void)performBlockCoalescingModelChanges:(CDUnknownBlockType)arg1;
-- (void)_processPendingChanges;
 - (void)_locked_coalesceUpdates;
 - (void)_coalescingTick;
 - (void)_disassociateModelObject:(id)arg1;
@@ -43,6 +43,8 @@
 - (id)description;
 - (id)initWithName:(id)arg1 asyncDispatchQueue:(id)arg2 changeDispatchQueue:(id)arg3;
 - (id)initWithName:(id)arg1 asyncQueue:(id)arg2 changeQueue:(id)arg3;
+- (id)initWithName:(id)arg1 asyncDispatchQueue:(id)arg2 changeDispatchQueue:(id)arg3 transactionScope:(id)arg4;
+- (id)initWithName:(id)arg1 asyncQueue:(id)arg2 changeQueue:(id)arg3 transactionScope:(id)arg4;
 
 @end
 

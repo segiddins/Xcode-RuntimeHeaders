@@ -4,27 +4,15 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
-
-#import "DVTInvalidation.h"
 #import "IDEDebugSession.h"
 
-@class DBGProcess, DVTDispatchLock, DVTMapTable, DVTMutableOrderedDictionary, DVTObservingToken, DVTStackBacktrace, DVTTextDocumentLocation, IDEBreakpointManager, IDEConsoleAdaptor, IDELaunchSession, IDERunOperationWorker, NSArray, NSDate, NSDictionary, NSError, NSMapTable, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString;
+@class DVTDispatchLock, DVTMapTable, DVTMutableOrderedDictionary, DVTObservingToken, DVTTextDocumentLocation, IDEConsoleAdaptor, IDELaunchSession, IDERunOperationWorker, NSArray, NSDate, NSDictionary, NSError, NSMapTable, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString;
 
-@interface DBGDebugSession : NSObject <IDEDebugSession, DVTInvalidation>
+@interface DBGDebugSession : IDEDebugSession
 {
-    IDELaunchSession *_launchSession;
-    int _state;
-    int _coalescedState;
-    long long _exitCode;
-    BOOL _hasExitCode;
-    BOOL _hasCrashed;
-    BOOL _profilingSupported;
-    BOOL _isDetached;
     NSMapTable *_breakpointsToTokenSets;
     NSMapTable *_locationsToTokenSets;
     NSMapTable *_watchpointsToTokenSets;
-    DVTTextDocumentLocation *_instructionPointerLocation;
     BOOL _debuggerShouldAttachToTarget;
     NSMutableSet *_dataValuesObservers;
     DVTMapTable *_breakpointsToIdentifiers;
@@ -48,10 +36,12 @@
     DVTObservingToken *_breakpontsActivationObservingToken;
     DVTObservingToken *_breakpointListObserverToken;
     DVTObservingToken *_hasExitCodeObserverToken;
+    int _state;
+    int _coalescedState;
+    IDELaunchSession *_launchSession;
+    DVTTextDocumentLocation *_instructionPointerLocation;
     IDERunOperationWorker *_debugLauncher;
-    DBGProcess *_targetProcess;
     id <DBGDebugSessionBreakpointLifeCycleDelegate> _breakpointLifeCycleDelegate;
-    DVTTextDocumentLocation *_instructionPointerLocationForDisassembly;
     IDEConsoleAdaptor *_debuggerConsoleAdaptor;
     IDEConsoleAdaptor *_targetConsoleAdaptor;
     unsigned long long _CPUFirstIndicatorHigh;
@@ -72,7 +62,6 @@
 
 + (id)keyPathsForValuesAffectingTotalRunningTime;
 + (id)createErrorForFailureToLaunchExecutable:(id)arg1 launchSession:(id)arg2;
-+ (id)keyPathsForValuesAffectingProcess;
 + (void)initialize;
 @property(retain) NSMutableSet *stackFramesForDisassembly; // @synthesize stackFramesForDisassembly=_stackFramesForDisassembly;
 @property unsigned long long memoryDirtyPageSizeLow; // @synthesize memoryDirtyPageSizeLow=_memoryDirtyPageSizeLow;
@@ -94,20 +83,15 @@
 @property unsigned long long CPUFirstIndicatorHigh; // @synthesize CPUFirstIndicatorHigh=_CPUFirstIndicatorHigh;
 @property(retain) IDEConsoleAdaptor *targetConsoleAdaptor; // @synthesize targetConsoleAdaptor=_targetConsoleAdaptor;
 @property(retain) IDEConsoleAdaptor *debuggerConsoleAdaptor; // @synthesize debuggerConsoleAdaptor=_debuggerConsoleAdaptor;
-@property(copy, nonatomic) DVTTextDocumentLocation *instructionPointerLocationForDisassembly; // @synthesize instructionPointerLocationForDisassembly=_instructionPointerLocationForDisassembly;
-@property(retain, nonatomic) id <DBGDebugSessionBreakpointLifeCycleDelegate> breakpointLifeCycleDelegate; // @synthesize breakpointLifeCycleDelegate=_breakpointLifeCycleDelegate;
-@property(retain) DBGProcess *targetProcess; // @synthesize targetProcess=_targetProcess;
-@property(retain) IDERunOperationWorker *debugLauncher; // @synthesize debugLauncher=_debugLauncher;
 @property(readonly) BOOL debuggerShouldAttachToTarget; // @synthesize debuggerShouldAttachToTarget=_debuggerShouldAttachToTarget;
-@property(copy, nonatomic) DVTTextDocumentLocation *instructionPointerLocation; // @synthesize instructionPointerLocation=_instructionPointerLocation;
-@property(readonly) IDELaunchSession *launchSession; // @synthesize launchSession=_launchSession;
-@property BOOL isDetached; // @synthesize isDetached=_isDetached;
-@property(getter=isProfilingSupported) BOOL profilingSupported; // @synthesize profilingSupported=_profilingSupported;
-@property BOOL hasCrashed; // @synthesize hasCrashed=_hasCrashed;
-@property long long exitCode; // @synthesize exitCode=_exitCode;
-@property BOOL hasExitCode; // @synthesize hasExitCode=_hasExitCode;
+@property(retain, nonatomic) id <DBGDebugSessionBreakpointLifeCycleDelegate> breakpointLifeCycleDelegate; // @synthesize breakpointLifeCycleDelegate=_breakpointLifeCycleDelegate;
+@property(retain) IDERunOperationWorker *debugLauncher; // @synthesize debugLauncher=_debugLauncher;
+- (void)setInstructionPointerLocation:(id)arg1;
+- (id)instructionPointerLocation;
 @property int coalescedState; // @synthesize coalescedState=_coalescedState;
-@property int state; // @synthesize state=_state;
+- (int)state;
+- (void)setLaunchSession:(id)arg1;
+- (id)launchSession;
 - (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (BOOL)_shouldIgnoreOutputExitString;
@@ -141,9 +125,7 @@
 @property(readonly) BOOL isLoggingEnabled;
 - (void)_initializeLogging;
 - (id)logFilename;
-- (struct _NSRange)rangeOfExpressionForFullTextAtPrompt:(id)arg1;
 - (id)commandsExpectingExpressions;
-- (unsigned long long)availableCompletionTypes:(unsigned long long)arg1 fullTextAfterPrompt:(id)arg2;
 - (BOOL)canContinueToLocation:(id)arg1 withinBlockAtRange:(struct _NSRange)arg2;
 - (void)forceRefreshPausedStates;
 - (id)localizedStringForState:(int)arg1;
@@ -160,8 +142,8 @@
 - (BOOL)addStackFrameForDisassembly:(id)arg1;
 - (void)requestLoadDylibAtPath:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)requestMovePCInStackFrame:(id)arg1 toLineNumber:(unsigned long long)arg2;
-@property(readonly) BOOL supportsPCAnnotationDragging;
 @property(readonly) BOOL supportsMultiplePCAnnotation;
+@property(readonly) BOOL supportsPCAnnotationDragging;
 - (void)requestContinueToLocation:(id)arg1;
 - (void)requestStepIntoCallSymbol:(id)arg1 atLocation:(id)arg2;
 - (void)printDescriptionOfDataValueToConsole:(id)arg1 runAllThreads:(BOOL)arg2 completionHandler:(CDUnknownBlockType)arg3;
@@ -179,6 +161,7 @@
 - (void)requestStepOut;
 - (void)requestStepOverLine;
 - (void)requestStepIn;
+- (void)setState:(int)arg1;
 - (void)_delayedSetState;
 - (void)_recreateBreakpointIfNeccessary:(id)arg1;
 - (void)_createBreakpointIfNeccessary:(id)arg1;
@@ -208,22 +191,14 @@
 - (void)_addLocationObservers:(id)arg1;
 - (void)_removeBreakpointObservers:(id)arg1;
 - (void)_addBreakpointObservers:(id)arg1;
-@property(readonly) IDEBreakpointManager *breakpointManager;
-@property(readonly) id <IDEDebugProcess> process;
+- (void)setProcess:(id)arg1;
 - (id)initWithDebugLauncher:(id)arg1;
 
 // Remaining properties
 @property(readonly) NSArray *CPUFirstIndicators; // @dynamic CPUFirstIndicators;
-@property(retain) DVTStackBacktrace *creationBacktrace;
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) NSArray *energyMeasurements; // @dynamic energyMeasurements;
-@property(readonly) unsigned long long hash;
-@property(readonly) DVTStackBacktrace *invalidationBacktrace;
 @property(readonly) NSArray *memoryFirstIndicators; // @dynamic memoryFirstIndicators;
 @property(readonly) NSArray *memoryMeasurements; // @dynamic memoryMeasurements;
-@property(readonly) Class superclass;
-@property(readonly, nonatomic, getter=isValid) BOOL valid;
 
 @end
 

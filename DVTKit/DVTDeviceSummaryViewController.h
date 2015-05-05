@@ -10,24 +10,24 @@
 #import "DVTTableViewDelegate.h"
 #import "NSTableViewDataSource.h"
 
-@class DVTBorderedView, DVTDevice, DVTDeviceLogsSheetController, DVTDeviceSummaryAppsViewController, DVTObservingToken, DVTStackBacktrace, DVTStackView_AppKitAutolayout, DVTTableView, NSArray, NSBox, NSButton, NSImageView, NSString, NSView;
+@class DVTBorderedView, DVTDevice, DVTDeviceSummaryAppsViewController, DVTStackBacktrace, DVTStackView_AppKitAutolayout, DVTTableView, NSArray, NSBox, NSButton, NSImageView, NSScrollView, NSString, NSTextField, NSView;
 
 @interface DVTDeviceSummaryViewController : DVTViewController <DVTDevicesWindowDetailViewController, NSTableViewDataSource, DVTTableViewDelegate>
 {
-    NSArray *_aboutInfo;
-    DVTObservingToken *_aboutInfoObservationToken;
-    DVTObservingToken *_availabilityObservingToken;
-    DVTObservingToken *_wirelessEnabledObservingToken;
-    DVTObservingToken *_wirelessObservingToken;
-    DVTObservingToken *_showApplicationsObservingToken;
-    DVTDeviceLogsSheetController *_deviceLogsSheetController;
+    NSArray *_additionalSliceControllers;
     DVTDevice *_device;
     NSArray *_additionalSliceViewControllerClasses;
     Class _deviceLogsViewControllerClass;
     DVTTableView *_aboutTableView;
+    NSTextField *_proxiedDeviceLabel;
+    NSImageView *_proxiedDeviceIcon;
+    DVTTableView *_proxiedDeviceTableView;
+    NSScrollView *_proxiedDeviceScrollView;
+    DVTBorderedView *_proxiedDeviceScrollViewSeparator;
     DVTStackView_AppKitAutolayout *_stackView;
     NSView *_violaterSlice;
     NSView *_aboutSlice;
+    NSView *_proxiedDeviceSlice;
     NSImageView *_violaterImageView;
     NSBox *_violaterSliceSeparator;
     DVTBorderedView *_tableHeaderLine;
@@ -35,10 +35,17 @@
     DVTDeviceSummaryAppsViewController *_appsViewController;
     NSString *_violaterMessage;
     NSString *_violaterDescription;
+    NSArray *_deviceInfo;
+    NSArray *_proxyInfo;
 }
 
++ (id)keyPathsForValuesAffectingProxiedDevice;
++ (id)keyPathsForValuesAffectingShowProxiedDeviceSlice;
++ (id)keyPathsForValuesAffectingShowViolater;
 + (id)defaultViewNibBundle;
 + (id)defaultViewNibName;
+@property(copy) NSArray *proxyInfo; // @synthesize proxyInfo=_proxyInfo;
+@property(copy) NSArray *deviceInfo; // @synthesize deviceInfo=_deviceInfo;
 @property(retain) NSString *violaterDescription; // @synthesize violaterDescription=_violaterDescription;
 @property(retain) NSString *violaterMessage; // @synthesize violaterMessage=_violaterMessage;
 @property(retain) DVTDeviceSummaryAppsViewController *appsViewController; // @synthesize appsViewController=_appsViewController;
@@ -46,9 +53,15 @@
 @property(retain) DVTBorderedView *tableHeaderLine; // @synthesize tableHeaderLine=_tableHeaderLine;
 @property(retain) NSBox *violaterSliceSeparator; // @synthesize violaterSliceSeparator=_violaterSliceSeparator;
 @property(retain) NSImageView *violaterImageView; // @synthesize violaterImageView=_violaterImageView;
+@property(retain) NSView *proxiedDeviceSlice; // @synthesize proxiedDeviceSlice=_proxiedDeviceSlice;
 @property(retain) NSView *aboutSlice; // @synthesize aboutSlice=_aboutSlice;
 @property(retain) NSView *violaterSlice; // @synthesize violaterSlice=_violaterSlice;
 @property(retain) DVTStackView_AppKitAutolayout *stackView; // @synthesize stackView=_stackView;
+@property(retain) DVTBorderedView *proxiedDeviceScrollViewSeparator; // @synthesize proxiedDeviceScrollViewSeparator=_proxiedDeviceScrollViewSeparator;
+@property(retain) NSScrollView *proxiedDeviceScrollView; // @synthesize proxiedDeviceScrollView=_proxiedDeviceScrollView;
+@property(retain) DVTTableView *proxiedDeviceTableView; // @synthesize proxiedDeviceTableView=_proxiedDeviceTableView;
+@property(retain) NSImageView *proxiedDeviceIcon; // @synthesize proxiedDeviceIcon=_proxiedDeviceIcon;
+@property(retain) NSTextField *proxiedDeviceLabel; // @synthesize proxiedDeviceLabel=_proxiedDeviceLabel;
 @property(retain) DVTTableView *aboutTableView; // @synthesize aboutTableView=_aboutTableView;
 @property(readonly) Class deviceLogsViewControllerClass; // @synthesize deviceLogsViewControllerClass=_deviceLogsViewControllerClass;
 @property(readonly) NSArray *additionalSliceViewControllerClasses; // @synthesize additionalSliceViewControllerClasses=_additionalSliceViewControllerClasses;
@@ -61,7 +74,9 @@
 - (void)takeScreenshot:(id)arg1;
 - (void)viewLogs:(id)arg1;
 @property(readonly) BOOL showApplicationList;
-- (void)viewWillUninstall;
+@property(readonly) id <DVTBasicDeviceUI> proxiedDevice;
+@property(readonly) BOOL showProxiedDeviceSlice;
+@property(readonly) BOOL showViolater;
 - (void)viewDidInstall;
 - (void)loadView;
 - (void)primitiveInvalidate;

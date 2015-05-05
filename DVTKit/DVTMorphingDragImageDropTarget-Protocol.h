@@ -13,5 +13,8 @@
 - (void)morphingDragImage:(DVTMorphingDragImageController *)arg1 draggingExited:(id <NSDraggingInfo>)arg2;
 - (unsigned long long)morphingDragImage:(DVTMorphingDragImageController *)arg1 draggingUpdated:(id <NSDraggingInfo>)arg2;
 - (unsigned long long)morphingDragImage:(DVTMorphingDragImageController *)arg1 draggingEntered:(id <NSDraggingInfo>)arg2;
+
+@optional
+- (BOOL)wantsPeriodicDraggingUpdatesForMorphingDragImage:(DVTMorphingDragImageController *)arg1;
 @end
 

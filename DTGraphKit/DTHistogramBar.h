@@ -22,6 +22,7 @@
 @property(nonatomic) unsigned long long binOffset; // @synthesize binOffset;
 @property DTHistogramBin *bin; // @synthesize bin;
 @property(nonatomic) unsigned long long height; // @synthesize height;
+- (void).cxx_destruct;
 
 @end
 

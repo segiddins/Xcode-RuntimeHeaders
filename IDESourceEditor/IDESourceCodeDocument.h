@@ -51,6 +51,7 @@
 }
 
 + (id)keyPathsForValuesAffecting_firstEditorWorkspace;
++ (id)allEditorDocumentBuildSettingsProviderClasses;
 + (id)keyPathsForValuesAffectingSourceLanguageServiceContext;
 + (id)syntaxColoringPrefetchLogAspect;
 + (id)topLevelStructureLogAspect;
@@ -67,6 +68,7 @@
 @property(retain, nonatomic) DVTSourceCodeLanguage *language; // @synthesize language=_language;
 @property(readonly) DVTTextStorage *textStorage; // @synthesize textStorage=_textStorage;
 - (void).cxx_destruct;
+- (id)derivedContentProviderForType:(id)arg1;
 - (void)_delayedDropRecomputableState:(id)arg1;
 - (void)_restoreRecomputableState;
 - (void)_dropRecomputableState;
@@ -122,7 +124,6 @@
 - (id)diffDataSource;
 - (id)textViewWillReturnPrintJobTitle:(id)arg1;
 - (id)printOperationWithSettings:(id)arg1 error:(id *)arg2;
-- (void)sourceLanguageServiceAvailabilityNotification:(BOOL)arg1 message:(id)arg2;
 - (BOOL)textStorageShouldAllowEditing:(id)arg1;
 - (void)textStorageDidUpdateSourceLandmarks:(id)arg1;
 - (void)textStorageDidProcessEditing:(id)arg1;
@@ -153,6 +154,7 @@
 - (BOOL)canSaveAs;
 - (BOOL)canSave;
 @property(readonly) DVTPerformanceMetric *openingPerformanceMetric;
+- (id)buildSettings;
 - (id)editedContents;
 @property(readonly, copy) NSString *description;
 - (id)displayName;

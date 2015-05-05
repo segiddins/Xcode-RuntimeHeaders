@@ -10,16 +10,16 @@
 
 @interface DVTMorphingDragImageView : NSView
 {
-    NSImage *_startImage;
-    NSImage *_endImage;
-    double _progress;
+    NSImage *startImage;
+    NSImage *endImage;
+    float progress;
 }
 
-@property(nonatomic) double progress; // @synthesize progress=_progress;
-@property(retain, nonatomic) NSImage *endImage; // @synthesize endImage=_endImage;
-@property(retain, nonatomic) NSImage *startImage; // @synthesize startImage=_startImage;
+@property(nonatomic) float progress; // @synthesize progress;
 - (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
+@property(retain, nonatomic) NSImage *endImage; // @synthesize endImage;
+@property(retain, nonatomic) NSImage *startImage; // @synthesize startImage;
 
 @end
 

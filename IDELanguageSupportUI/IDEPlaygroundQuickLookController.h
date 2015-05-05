@@ -15,12 +15,13 @@
     id <IDEPlaygroundQuickLookProvider> _quickLookProvider;
 }
 
-+ (BOOL)_craigWWDCDemoNoDimming;
 + (id)createSingleLineViewUsingQuickLookProvider:(id)arg1;
 @property(retain, nonatomic) id <IDEPlaygroundQuickLookProvider> quickLookProvider; // @synthesize quickLookProvider=_quickLookProvider;
 - (void).cxx_destruct;
 - (void)fontAndColorSourceTextSettingsChanged;
 @property(getter=isEnabled) BOOL enabled;
+- (id)iconOnlyViewForCollectionView;
+- (id)quickLookViewForCollectionView;
 - (id)quickLookViewForResultsView;
 - (id)quickLookViewForNaturalSize;
 - (id)quickLookViewForSingleLineSize;

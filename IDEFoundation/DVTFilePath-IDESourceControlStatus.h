@@ -12,6 +12,7 @@
 + (id)containerTypeIdentifiersKeyedByImportantSubpaths;
 + (id)importantSubpathsKeyedByContainerTypeIdentifier;
 @property(readonly) NSArray *IDESourceControl_importantSubpaths;
+- (id)IDESourceControl_importantSubpathsWithFileType:(id)arg1;
 - (id)IDESourceControl_containerFilePathIncludingAssetCatalogs:(BOOL)arg1;
 @property(readonly) DVTFilePath *IDESourceControl_containerFilePath;
 - (void)removeAssociatedWorkingTree:(id)arg1;

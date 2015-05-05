@@ -8,14 +8,18 @@
 
 #import "NSTextFieldDelegate.h"
 
-@class IDELogBreakpointAction, NSString;
+@class IDELogBreakpointAction, NSString, NSTextField;
 
 @interface IDELogBreakpointActionEditor : NSViewController <NSTextFieldDelegate>
 {
     IDELogBreakpointAction *_action;
+    NSTextField *_messageField;
 }
 
+@property __weak NSTextField *messageField; // @synthesize messageField=_messageField;
 - (void).cxx_destruct;
+- (void)commandDidChange:(id)arg1;
+- (void)awakeFromNib;
 - (id)initWithAction:(id)arg1;
 
 // Remaining properties

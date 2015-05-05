@@ -7,6 +7,6 @@
 #import "NSWindow.h"
 
 @interface NSWindow (DVTMorphingDragImageControllerExtras)
-- (id)_DVTMorphingDragImageController_displayIfNeeded;
+- (id)_safari_displayIfNeeded;
 @end
 

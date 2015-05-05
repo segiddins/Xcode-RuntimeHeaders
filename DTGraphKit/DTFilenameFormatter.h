@@ -14,7 +14,6 @@
 - (id)stringForObjectValue:(id)arg1;
 - (BOOL)showPathExtensions;
 - (void)setShowPathExtensions:(BOOL)arg1;
-- (void)dealloc;
 - (id)init;
 
 @end

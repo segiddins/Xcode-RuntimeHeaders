@@ -8,32 +8,35 @@
 
 #import "NSAnimationDelegate.h"
 
-@class DVTMorphingDragImageView, NSAnimation, NSImage, NSPasteboard, NSString, NSView, NSWindow;
+@class DVTMorphingDragImageView, NSAnimation, NSImage, NSPasteboard, NSString, NSTimer, NSView, NSWindow;
 
 @interface DVTMorphingDragImageController : NSObject <NSAnimationDelegate>
 {
-    NSImage *originalImage;
-    struct CGSize maxImageSize;
-    struct CGSize originalViewOffset;
-    NSPasteboard *dragPasteboard;
-    id dragSource;
-    NSView *sourceView;
-    NSWindow *dragWindow;
-    DVTMorphingDragImageView *dragImageView;
-    NSAnimation *morphAnimation;
-    NSAnimation *slideBackAnimation;
-    struct CGPoint slideBackStartTranslation;
-    struct CGPoint slideBackEndTranslation;
-    NSWindow *windowUnderMouse;
-    id <DVTMorphingDragImageDropTarget> targetUnderMouse;
-    NSString *runLoopMode;
-    BOOL dragDone;
+    NSImage *_originalImage;
+    struct CGSize _maxImageSize;
+    struct CGSize _originalViewOffset;
+    NSPasteboard *_dragPasteboard;
+    id _dragSource;
+    NSView *_sourceView;
+    DVTMorphingDragImageView *_dragImageView;
+    NSAnimation *_morphAnimation;
+    NSAnimation *_slideBackAnimation;
+    struct CGPoint _slideBackStartTranslation;
+    struct CGPoint _slideBackEndTranslation;
+    BOOL _dragDone;
+    NSWindow *_windowUnderMouse;
+    id <DVTMorphingDragImageDropTarget> _targetUnderMouse;
+    NSTimer *_periodicEventTimer;
     BOOL _targetAcceptsDrag;
-    BOOL mouseOverSystemWindow;
-    BOOL scheduledRedisplay;
+    BOOL _mouseOverSystemWindow;
+    BOOL _scheduledRedisplay;
+    NSWindow *_dragWindow;
+    NSString *_runLoopMode;
 }
 
 + (void)dragImage:(id)arg1 maximumSize:(struct CGSize)arg2 fromView:(id)arg3 at:(struct CGPoint)arg4 pasteboard:(id)arg5 source:(id)arg6 inMode:(id)arg7;
+@property(copy, nonatomic) NSString *runLoopMode; // @synthesize runLoopMode=_runLoopMode;
+@property(readonly, nonatomic) NSWindow *dragWindow; // @synthesize dragWindow=_dragWindow;
 - (void).cxx_destruct;
 - (void)_morphToDragImage:(id)arg1 force:(BOOL)arg2;
 - (void)_sendMovedToPointOnScreenToDragSource;
@@ -46,19 +49,21 @@
 - (void)_animateMorphWindow;
 - (void)_dragComplete;
 - (void)_applicationDidResignActive;
+- (void)_firePeriodicEvent:(id)arg1;
+- (void)_stopPeriodicEventTimer;
+- (void)_startPeriodicEventTimerIfNeeded;
 - (void)_handleMouseUp;
 - (void)_handleFlagsChanged;
 - (void)_handleMouseDragged;
 - (void)_handleEvent:(id)arg1;
-- (id)_runLoopMode;
 - (void)_runDrag;
 - (void)_prepareForDragWithImage:(id)arg1;
 - (void)_dragImage:(id)arg1 maximumSize:(struct CGSize)arg2 fromView:(id)arg3 at:(struct CGPoint)arg4 pasteboard:(id)arg5 source:(id)arg6 inMode:(id)arg7;
 - (void)_redisplayWindows;
 - (void)_scheduleRedisplay;
 - (void)animationDidEnd:(id)arg1;
-- (id)dragWindow;
 - (void)morphToDragImage:(id)arg1;
+- (void)dealloc;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

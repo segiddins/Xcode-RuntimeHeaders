@@ -25,7 +25,7 @@
 @property(retain) NSURL *destinationModelURL;
 - (void)reloadSourceModel;
 @property(retain) NSURL *sourceModelURL;
-- (id)knownFileReferences;
+- (id)_projectPath;
 @property(readonly) NSArray *ideTopLevelStructureObjects;
 - (BOOL)writeToURL:(id)arg1 ofType:(id)arg2 error:(id *)arg3;
 - (BOOL)writeToURL:(id)arg1 ofType:(id)arg2 forSaveOperation:(unsigned long long)arg3 originalContentsURL:(id)arg4 error:(id *)arg5;

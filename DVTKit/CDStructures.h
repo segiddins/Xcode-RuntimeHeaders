@@ -96,6 +96,8 @@ struct _DVTLayoutManagerFlags {
     unsigned int disableAnnotationAdjustment:1;
     unsigned int severeBubbleAnnotationsMiniaturized:1;
     unsigned int temporaryLinkIsAlternate:1;
+    unsigned int autoHighlightTokensEnabled:1;
+    unsigned int delegateRespondsToTokenizableRangesWithRange:1;
 };
 
 struct _DVTTextChangeEntry {
@@ -127,4 +129,9 @@ typedef struct {
     double minY;
     double maxY;
 } CDStruct_bf6d4a14;
+
+typedef struct {
+    double leftInset;
+    double rightInset;
+} CDStruct_2b6e6e30;
 

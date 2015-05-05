@@ -27,6 +27,7 @@
 - (void)primitiveInvalidate;
 @property(readonly, copy) NSString *description;
 - (void)terminate;
+- (id)notFinishedReasonWithDepth:(unsigned long long)arg1;
 - (void)finishedWithError:(id)arg1;
 - (void)start;
 - (void)setRunOperation:(id)arg1;

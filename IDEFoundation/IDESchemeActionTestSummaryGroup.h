@@ -34,7 +34,6 @@
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(copy) NSMutableArray *mutableSubtests; // @dynamic mutableSubtests;
-@property(copy) NSString *name;
 @property(copy) NSArray *subtests; // @dynamic subtests;
 @property(readonly) Class superclass;
 

@@ -19,9 +19,9 @@
     NSArray *_instantiatedItems;
 }
 
+@property(copy) NSArray *instantiatedItems; // @synthesize instantiatedItems=_instantiatedItems;
 @property unsigned long long destinationIndex; // @synthesize destinationIndex=_destinationIndex;
 @property(retain) IDEGroup *destinationGroup; // @synthesize destinationGroup=_destinationGroup;
-@property(copy) NSArray *instantiatedItems; // @synthesize instantiatedItems=_instantiatedItems;
 @property(copy) NSArray *destinationTypes; // @synthesize destinationTypes=_destinationTypes;
 @property(copy) NSString *destinationType; // @synthesize destinationType=_destinationType;
 @property(retain) DVTFilePath *destinationFilePath; // @synthesize destinationFilePath=_destinationFilePath;

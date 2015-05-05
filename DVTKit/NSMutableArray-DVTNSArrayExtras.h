@@ -7,6 +7,6 @@
 #import "NSMutableArray.h"
 
 @interface NSMutableArray (DVTNSArrayExtras)
-- (BOOL)removeUselessMenuItemSeparators;
+- (BOOL)safari_removeUselessMenuItemSeparators;
 @end
 

@@ -26,14 +26,16 @@
 - (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (void)_respondToFileChangeOnDiskWithFilePath:(id)arg1;
-- (id)initWithFilePath:(id)arg1 extension:(id)arg2 workspace:(id)arg3 error:(id *)arg4;
+- (id)initWithFilePath:(id)arg1 extension:(id)arg2 workspace:(id)arg3 options:(id)arg4 error:(id *)arg5;
 - (void)_filePathDidChange:(id)arg1;
 - (void)_decrementReadingCount;
 - (void)_incrementReadingCount;
 @property(readonly, nonatomic) BOOL isReading;
 - (void)setActivity:(int)arg1;
 - (id)_THREAD_fileNamesAtFilePath:(id)arg1;
+- (id)newFileReferenceForChildFilePath:(id)arg1;
 - (void)_updateSubitemsWithFileNames:(id)arg1;
+- (void)_addFileReferenceNamed:(id)arg1;
 - (id)_itemBaseFilePathForFilePath:(id)arg1;
 - (id)createRootGroup;
 

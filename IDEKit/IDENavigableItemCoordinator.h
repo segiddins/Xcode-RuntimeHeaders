@@ -8,7 +8,7 @@
 
 #import "DVTInvalidation.h"
 
-@class DVTDelayedInvocation, DVTMapTable, DVTStackBacktrace, NSHashTable, NSMapTable, NSMutableDictionary, NSMutableSet, NSString;
+@class DVTDelayedInvocation, DVTMapTable, DVTModelGraphTransactionScope, DVTStackBacktrace, NSHashTable, NSMapTable, NSMutableDictionary, NSMutableSet, NSString;
 
 @interface IDENavigableItemCoordinator : NSObject <DVTInvalidation>
 {
@@ -22,6 +22,7 @@
     NSMutableSet *_pendingGraphChangedItems;
     NSMutableSet *_pendingPropertyChangedItems;
     NSMutableSet *_pendingForgettingItems;
+    DVTModelGraphTransactionScope *_transactionScope;
     id <IDENavigableItemCoordinatorDelegate> _delegate;
     struct __navigableItemCoordinatorFlags {
         unsigned int _delegateRespondsToDocumentForNavigableItem:1;
@@ -56,7 +57,8 @@
 - (void)delayedPostGraphAndPropertyChangeNotifications:(id)arg1;
 - (void)processPendingChanges;
 - (void)_postNotificationNamed:(id)arg1 forChangedItems:(id)arg2;
-- (void)postDidForgetNotification;
+- (void)_postDidForgetNotification;
+- (void)_postWillForgetNotification:(id)arg1;
 @property(retain, nonatomic) id <IDENavigableItemCoordinatorDelegate> delegate;
 - (id)navigableItemFromArchivableRepresentation:(id)arg1 forWorkspace:(id)arg2 error:(id *)arg3;
 - (id)_navigableItemFromArchivableRepresentation:(id)arg1 rootItem:(id)arg2 error:(id *)arg3;

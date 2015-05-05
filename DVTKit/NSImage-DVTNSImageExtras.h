@@ -8,8 +8,8 @@
 
 @interface NSImage (DVTNSImageExtras)
 + (id)dvt_PNGNamed:(id)arg1;
-- (id)dvt_flatImageWithColor:(id)arg1;
-- (id)dvt_imageByScalingToSize:(struct CGSize)arg1 withImageInterpolation:(unsigned long long)arg2;
-- (id)dvt_imageByApplyingShadowForDragging;
+- (id)safari_flatImageWithColor:(id)arg1;
+- (id)safari_imageByScalingToSize:(struct CGSize)arg1 withImageInterpolation:(unsigned long long)arg2;
+- (id)safari_imageByApplyingShadowForDragging;
 @end
 

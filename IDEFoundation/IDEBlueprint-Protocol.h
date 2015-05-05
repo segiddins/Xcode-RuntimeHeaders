@@ -29,6 +29,7 @@
 @property(readonly, getter=isUnitTest) BOOL unitTest;
 @property(retain) IDETestBlueprintHostSettings *testBlueprintHostSettings;
 - (DVTFilePath *)bundleBaselineRecordFilePathWithError:(id *)arg1;
+- (NSString *)pathToLargestAssetCatalogAppIconPassingTest:(BOOL (^)(NSDictionary *))arg1;
 - (NSArray<DVTMacroExpansion> *)additionalOverridingCompilerArgumentsForSourceCodeBuildFileReference:(IDEFileReference *)arg1;
 - (void)setOverridingAdditionalCompilerArguments:(NSArray<DVTMacroExpansion> *)arg1 forSourceCodeBuildFileReference:(IDEFileReference *)arg2;
 - (NSArray<DVTMacroExpansion> *)additionalCompilerArgumentsForSourceCodeBuildFileReference:(IDEFileReference *)arg1;

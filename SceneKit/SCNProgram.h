@@ -42,12 +42,9 @@
 - (id)semanticForSymbol:(id)arg1;
 - (void)setSemantic:(id)arg1 forSymbol:(id)arg2 options:(id)arg3;
 @property(copy, nonatomic) NSString *fragmentShader;
-- (id)geometryShader;
-- (void)setGeometryShader:(id)arg1;
-- (id)tessellationEvaluationShader;
-- (void)setTessellationEvaluationShader:(id)arg1;
-- (id)tessellationControlShader;
-- (void)setTessellationControlShader:(id)arg1;
+@property(copy, nonatomic) NSString *geometryShader;
+@property(copy, nonatomic) NSString *tessellationEvaluationShader;
+@property(copy, nonatomic) NSString *tessellationControlShader;
 @property(copy, nonatomic) NSString *vertexShader;
 @property(nonatomic, getter=isOpaque) BOOL opaque;
 - (id)name;

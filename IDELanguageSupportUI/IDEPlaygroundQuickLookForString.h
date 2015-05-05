@@ -12,6 +12,7 @@
 {
     NSView *_quickLookForNaturalSize;
     BOOL _haveSetupQuickLookForResultsView;
+    id _text;
     NSString *_escapedPlainText;
     NSTextView *_textView;
     NSLayoutConstraint *_heightConstraint;
@@ -26,12 +27,12 @@
 @property __weak NSLayoutConstraint *heightConstraint; // @synthesize heightConstraint=_heightConstraint;
 @property NSTextView *textView; // @synthesize textView=_textView;
 @property(readonly) NSString *escapedPlainText; // @synthesize escapedPlainText=_escapedPlainText;
+@property(readonly) id text; // @synthesize text=_text;
 - (void).cxx_destruct;
 - (void)_constrainHeightOfTextView:(id)arg1 minHeight:(double)arg2 maxHeight:(double)arg3 heightConstraint:(id)arg4;
 - (void)_installTextInTextView:(id)arg1;
 - (id)quickLookViewForResultsView;
 - (id)quickLookViewForNaturalSize;
-@property(readonly) id text;
 - (void)loadView;
 - (id)initWithObjectReflection:(id)arg1;
 

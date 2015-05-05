@@ -8,28 +8,72 @@
 
 #import "IBScopedSingleton.h"
 
-@class NSString;
+@class IBInspectorSearchDataManager, NSSet, NSString;
 
 @interface IBIdiom : NSObject <IBScopedSingleton>
 {
+    IBInspectorSearchDataManager *_searchDataManager;
+    NSSet *_embeddingPolicyExtensions;
 }
 
-+ (id)idiomForCompilerTargetDeviceIdentifier:(id)arg1;
++ (id)idiomForCompiledDocumentVariantIdentifier:(id)arg1;
 + (id)instanceWithIdentifier:(id)arg1;
 + (id)allInstances;
 + (id)sharedInstance;
-- (id)backwardsDeploymentConfiguration;
-- (id)designatedIdiomForConfigurations;
-- (id)stringByAppendingIdiomSuffixToPath:(id)arg1;
-- (id)resourceFileNameSuffix;
-- (id)compilerTargetDeviceIdentifier;
-- (id)unsupportedSegueClasses;
-- (double)defaultOverviewZoomFactor;
-- (Class)xibAssetProviderClass;
+- (void).cxx_destruct;
+- (void)populateVariantForResolvingMediaResources:(id)arg1 forDocument:(id)arg2;
+- (id)variantForResolvingMediaResourcesForDocument:(id)arg1;
+- (BOOL)allowsEditingConfigurations;
+- (BOOL)usesAutolayoutActionArea;
+- (BOOL)requiresConfigurations;
+- (BOOL)requiresAutolayout;
+- (void)unarchiveIdiomDependentDataForDocument:(id)arg1 withDocumentUnarchiver:(id)arg2;
+- (void)archiveIdiomDependentDataForDocument:(id)arg1 withDocumentArchiver:(id)arg2;
+- (id)archivingDefaultSceneMemberID;
+- (id)embeddingPolicyExtensions;
+- (id)memberConfigurationVariables;
+- (id)extensionsForExtensionPoint:(id)arg1;
+- (BOOL)matchesExtension:(id)arg1;
+- (BOOL)wantsDefaultMatchesForExtension:(id)arg1;
+- (Class)storyboardMainEntryPointIndicatorClass;
+- (Class)storyboardVerifierClass;
+- (Class)xibVerifierClass;
+- (Class)storyboardCompilerClass;
+- (Class)xibCompilerClass;
+- (BOOL)usesSceneExitPlaceholder;
+- (BOOL)usesFirstResponder;
+- (id)xibArchivingSchema;
+- (id)storyboardArchivingSchema;
+- (id)storyboardScenePasteboardType;
+- (id)storyboardPrimarySceneObjectPasteboardType;
+- (id)viewPasteboardType;
+- (id)objectPasteboardType;
 - (Class)storyboardAssetProviderClass;
+- (Class)xibAssetProviderClass;
+- (Class)canvasConfigurationChooserControllerClass;
+- (id)designatedIdiomForConfigurations;
+- (id)pluralUserLabelForConfigurations;
+- (id)singularUserLabelForConfigurations;
+- (id)perConfigurationInspectorHeaderMenuItemTitle;
+- (id)backwardsDeploymentConfiguration;
+- (BOOL)isInspectorCategoryExtensionApplicable:(id)arg1;
+- (BOOL)isApplicableForObjectLibraryAssetProviderExtension:(id)arg1;
+- (id)compiledFilePathForVariant:(id)arg1 originalOutputPath:(id)arg2;
+- (BOOL)shouldCopySeparateStringsFilesForDocument:(id)arg1 withTargetVariants:(id)arg2;
+- (BOOL)shouldCompileSeparateTopLevelPackagesForDocument:(id)arg1 withTargetVariants:(id)arg2;
+- (id)compiledDocumentVariantSuffixSeparator;
+- (id)explicitCompiledDocumentVariantIdentifierForOutputPath:(id)arg1;
+- (id)implicitCompiledVariantIdentifiersForDocument:(id)arg1;
+- (id)allCompiledDocumentVariantIdentifiers;
+- (id)unsupportedSegueClasses;
+- (id)inspectorSearchDataManager;
+- (BOOL)supportsConnectionClass:(Class)arg1;
+- (double)defaultOverviewZoomFactor;
+- (id)pluginName;
 - (id)icon;
 - (id)idiomName;
 - (id)identifier;
+- (id)platform;
 - (void)didRegisterSharedInstance;
 
 // Remaining properties

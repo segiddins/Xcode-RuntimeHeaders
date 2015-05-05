@@ -18,6 +18,7 @@
 @property(readonly, copy) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
+@property(readonly, copy) NSString *summary;
 - (id)initWithName:(id)arg1;
 
 // Remaining properties

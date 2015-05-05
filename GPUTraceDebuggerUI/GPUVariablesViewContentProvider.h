@@ -38,6 +38,7 @@
 @property(nonatomic) __weak GPUSharedTabUIState *sharedUIStateObj; // @synthesize sharedUIStateObj=_sharedUIStateObj;
 @property(retain, nonatomic) GPUDebuggerController *debuggerController; // @synthesize debuggerController=_debuggerController;
 - (void).cxx_destruct;
+- (void)_addIssues:(id)arg1;
 - (id)_createOptionsDictionaryFromOptionsElement:(id)arg1;
 - (void)quickLookProviderForDataValue:(id)arg1 quickLookProviderHandler:(CDUnknownBlockType)arg2;
 - (void)provideHelpMenuItem:(id)arg1;

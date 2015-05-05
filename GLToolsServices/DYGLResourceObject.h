@@ -23,11 +23,11 @@
 }
 
 + (id)keyForResourceWithID:(unsigned long long)arg1 type:(unsigned int)arg2 containerID:(unsigned long long)arg3;
+@property(readonly, nonatomic) unsigned int target; // @synthesize target=_target;
+@property(readonly, nonatomic) int internalID; // @synthesize internalID=_internalID;
 @property(readonly, nonatomic) BOOL isStatic; // @synthesize isStatic=_isStatic;
 @property(readonly, nonatomic) NSMutableDictionary *properties; // @synthesize properties=_properties;
 @property(readonly, copy, nonatomic) NSString *label; // @synthesize label=_label;
-@property(readonly, nonatomic) unsigned int target; // @synthesize target=_target;
-@property(readonly, nonatomic) int internalID; // @synthesize internalID=_internalID;
 @property(readonly, nonatomic) unsigned long long objectID; // @synthesize objectID=_objectID;
 @property(readonly, nonatomic) unsigned long long containerID; // @synthesize containerID=_containerID;
 @property(readonly, nonatomic) unsigned int resourceType; // @synthesize resourceType=_resourceType;

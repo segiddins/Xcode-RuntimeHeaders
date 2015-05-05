@@ -36,7 +36,8 @@
     BOOL _readyToCapture;
     BOOL _archiveFinalized;
     BOOL _finalizedOverview;
-    unsigned int _deviceInterposeVersion;
+    unsigned int _deviceInterposeVersionGL;
+    unsigned int _deviceInterposeVersionMetal;
     unsigned int _updatedResourcesChangeCount;
     NSString *_captureUnavailabilityReason;
 }
@@ -47,7 +48,8 @@
 + (id)keyPathsForValuesAffectingTraceSession;
 @property unsigned int updatedResourcesChangeCount; // @synthesize updatedResourcesChangeCount=_updatedResourcesChangeCount;
 @property(readonly) NSString *captureUnavailabilityReason; // @synthesize captureUnavailabilityReason=_captureUnavailabilityReason;
-@property(readonly) unsigned int deviceInterposeVersion; // @synthesize deviceInterposeVersion=_deviceInterposeVersion;
+@property(readonly) unsigned int deviceInterposeVersionMetal; // @synthesize deviceInterposeVersionMetal=_deviceInterposeVersionMetal;
+@property(readonly) unsigned int deviceInterposeVersionGL; // @synthesize deviceInterposeVersionGL=_deviceInterposeVersionGL;
 @property(readonly) DYGuestAppSession *guestAppSession; // @synthesize guestAppSession=_guestAppSession;
 @property(readonly) NSMutableDictionary *programInfoDict; // @synthesize programInfoDict=_programInfoDict;
 @property(readonly) NSMutableDictionary *originalResourcesDict; // @synthesize originalResourcesDict=_originalResourcesDict;
@@ -62,16 +64,15 @@
 @property BOOL archiveFinalized; // @synthesize archiveFinalized=_archiveFinalized;
 @property(readonly) IDELaunchSession *launchSession; // @synthesize launchSession=_launchSession;
 - (void).cxx_destruct;
-- (id)infoDictForProgram:(unsigned long long)arg1 sharegroup:(unsigned long long)arg2;
-- (void)setInfoDictForProgram:(unsigned long long)arg1 dict:(id)arg2 sharegroup:(unsigned long long)arg3;
-- (id)findOriginalResource:(id)arg1 sharegroup:(unsigned long long)arg2 remove:(BOOL)arg3;
-- (void)addOriginalResource:(id)arg1 sharegroup:(unsigned long long)arg2;
+- (id)infoDictForProgram:(unsigned long long)arg1 container:(unsigned long long)arg2;
+- (void)setInfoDictForProgram:(unsigned long long)arg1 dict:(id)arg2 container:(unsigned long long)arg3;
+- (void)addOriginalResource:(id)arg1 container:(unsigned long long)arg2;
 - (id)updatedResources;
-- (void)removeResourceOverride:(id)arg1 sharegroup:(unsigned long long)arg2;
-- (void)addResourceOverride:(id)arg1 sharegroup:(unsigned long long)arg2;
-- (void)addUpdatedResource:(id)arg1 sharegroup:(unsigned long long)arg2;
-- (void)_removeModifiedResourceFromDict:(id)arg1 resource:(id)arg2 sharegroup:(unsigned long long)arg3;
-- (void)_addModifiedResourceToDict:(id)arg1 resource:(id)arg2 sharegroup:(unsigned long long)arg3;
+- (void)removeResourceOverride:(id)arg1 container:(unsigned long long)arg2;
+- (void)addResourceOverride:(id)arg1 container:(unsigned long long)arg2;
+- (void)addUpdatedResource:(id)arg1 container:(unsigned long long)arg2;
+- (void)_removeModifiedResourceFromDict:(id)arg1 resource:(id)arg2 container:(unsigned long long)arg3;
+- (void)_addModifiedResourceToDict:(id)arg1 resource:(id)arg2 container:(unsigned long long)arg3;
 - (id)generateTraceSessionForCaptureArchive:(id)arg1;
 - (id)errorForFailedPlayback;
 - (void)queueTraceSessionEstablishedJobWithId:(id)arg1 queue:(id)arg2 handler:(CDUnknownBlockType)arg3;
@@ -88,7 +89,7 @@
 - (void)_handleGraphicsAPIUsageUpdate:(BOOL)arg1;
 - (void)_recursivePollForGraphicsAPIUsage;
 - (id)prepareForLaunch:(id)arg1 error:(id *)arg2;
-@property(readonly) id <IDEDebugProcess> process;
+@property(readonly) id <IDEDebugTopNavigableModel> process;
 - (void)primitiveInvalidate;
 - (void)releaseCurrentGPUTrace;
 @property(readonly) DYCaptureSessionInfo *captureSessionInfo; // @dynamic captureSessionInfo;

@@ -24,7 +24,7 @@
 @property(retain) DVTSigningCertificateSource *certificateSource; // @synthesize certificateSource=_certificateSource;
 - (void).cxx_destruct;
 - (void)_delayedPostCertificatesChangedNotification;
-- (void)_forceFullSync;
+- (void)forceFullSync;
 - (void)signingCertificateSourceShouldDoFullResetFromSigningCertificates:(id)arg1;
 - (void)signingCertificateSourcePrivateKeyStatusForCertificatesMayHaveChanged:(id)arg1;
 - (void)signingCertificateSource:(id)arg1 didRemoveCertificate:(id)arg2;

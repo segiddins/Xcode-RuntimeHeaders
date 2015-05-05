@@ -38,6 +38,7 @@ __attribute__((visibility("hidden")))
 - (void)_readMemoryAtAddress:(unsigned long long)arg1 numberOfBytes:(unsigned long long)arg2 dataToReadInto:(id)arg3 shouldCancel:(id)arg4 progressHandler:(CDUnknownBlockType)arg5 resultHandler:(CDUnknownBlockType)arg6;
 - (id)readMemoryAtAddress:(unsigned long long)arg1 numberOfBytes:(unsigned long long)arg2 progressHandler:(CDUnknownBlockType)arg3 resultHandler:(CDUnknownBlockType)arg4;
 - (id)readMemoryAtAddress:(unsigned long long)arg1 numberOfBytes:(unsigned long long)arg2 resultHandler:(CDUnknownBlockType)arg3;
+- (void)_rawMemoryDataForAddressExpression:(id)arg1 numberOfBytes:(unsigned long long)arg2 resultHandler:(CDUnknownBlockType)arg3;
 - (void)rawMemoryDataForAddressExpression:(id)arg1 numberOfBytes:(unsigned long long)arg2 resultHandler:(CDUnknownBlockType)arg3;
 - (BOOL)getQueues:(id *)arg1 threads:(id *)arg2 currentThread:(id *)arg3;
 - (void)_updateQueues:(id *)arg1 fromLLDBProcess:(struct SBProcess *)arg2 withComputedThreads:(id)arg3;

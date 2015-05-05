@@ -6,18 +6,21 @@
 
 #import "NSView.h"
 
-@class IBImageButton, NSArray, NSImageView, NSLayoutConstraint, NSTextField, NSTrackingArea;
+@class IBImageButton, NSArray, NSImage, NSImageView, NSLayoutConstraint, NSTextField, NSTrackingArea;
 
 @interface IBPreviewResultView : NSView
 {
+    NSView *_contentView;
+    NSImageView *_imageView;
     NSTrackingArea *_trackingArea;
     BOOL _mouseInside;
     NSArray *_visibleActionButtonConstraints;
     NSLayoutConstraint *_actionButtonToTitleFieldHorizontalSpacingConstraint;
+    NSLayoutConstraint *_scrollViewWidthConstraint;
+    NSLayoutConstraint *_scrollViewHeightConstraint;
     BOOL _selected;
     BOOL _showsFirstResponder;
     IBImageButton *_actionButton;
-    NSImageView *_contentView;
     NSTextField *_titleField;
     id _representedObject;
     id <IBPreviewResultViewDelegate> _delegate;
@@ -31,7 +34,6 @@
 @property(nonatomic, getter=isSelected) BOOL selected; // @synthesize selected=_selected;
 @property(retain) id representedObject; // @synthesize representedObject=_representedObject;
 @property(retain) NSTextField *titleField; // @synthesize titleField=_titleField;
-@property(retain) NSImageView *contentView; // @synthesize contentView=_contentView;
 @property(retain) IBImageButton *actionButton; // @synthesize actionButton=_actionButton;
 - (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
@@ -44,7 +46,10 @@
 - (void)mouseDown:(id)arg1;
 - (void)setMouseInside:(BOOL)arg1;
 @property double spacingBetweenActionButtonAndTitleField;
-- (id)initWithContentView:(id)arg1;
+@property(retain) NSImage *contentImage;
+- (void)disableContentScrolling;
+- (void)enableContentScrollingWithClippingSize:(struct CGSize)arg1;
+- (id)initWithFrame:(struct CGRect)arg1;
 
 @end
 

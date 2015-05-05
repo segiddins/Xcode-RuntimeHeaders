@@ -6,18 +6,25 @@
 
 #import "NSView.h"
 
-@class DVTColorSwatchView, NSNumberFormatter;
+@class DVTColorSwatchView, NSArray, NSNumberFormatter;
 
 @interface DVTColorSwatchWithComponentsView : NSView
 {
     DVTColorSwatchView *_colorSwatch;
     NSView *_colorComponentsView;
     NSNumberFormatter *_numberFormatter;
+    NSArray *_componentTitleLabels;
+    NSArray *_componentValueLabels;
+    BOOL _adaptToTheme;
 }
 
 + (id)colorComponentNamesForColor:(struct CGColor *)arg1;
+@property(nonatomic, getter=shouldAdaptToTheme) BOOL adaptToTheme; // @synthesize adaptToTheme=_adaptToTheme;
 - (void).cxx_destruct;
 - (id)_createLabel:(id)arg1 bold:(BOOL)arg2 selectable:(BOOL)arg3;
+- (void)_updateForCurrentTheme;
+@property(nonatomic) BOOL drawsSwatchBackground; // @dynamic drawsSwatchBackground;
+@property(nonatomic) BOOL circularStyle; // @dynamic circularStyle;
 - (void)updateToRepresentColor:(struct CGColor *)arg1;
 - (void)updateToRepresentPatternColor;
 - (void)_dvtColorSwatchWithComponentsView_commonInit;

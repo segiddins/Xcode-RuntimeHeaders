@@ -6,25 +6,25 @@
 
 #import "DVTAccessoryViewAnnotation.h"
 
-@class IDESourceCodePlaygroundSectionAnnotationProvider, IDESourceCodePlaygroundSectionAnnotationViewController, NSArray, NSMutableArray;
+@class IDESourceCodePlaygroundSectionAnnotationProvider, IDESourceCodePlaygroundSectionAnnotationViewController, NSMutableOrderedSet;
 
 @interface IDESourceCodePlaygroundSectionAccessoryViewAnnotation : DVTAccessoryViewAnnotation
 {
-    NSMutableArray *_loggerResults;
     IDESourceCodePlaygroundSectionAnnotationProvider *_annotationProvider;
+    NSMutableOrderedSet *_loggerResults;
 }
 
-+ (void)initialize;
+@property(copy) NSMutableOrderedSet *loggerResults; // @synthesize loggerResults=_loggerResults;
 @property IDESourceCodePlaygroundSectionAnnotationProvider *annotationProvider; // @synthesize annotationProvider=_annotationProvider;
 - (void).cxx_destruct;
 - (id)currentStateInTextView:(id)arg1;
 - (void)drawLineHighlightInRect:(struct CGRect)arg1 textView:(id)arg2;
+- (void)setNeedsInvalidateWithoutLayout;
+- (void)setNeedsInvalidate;
 - (BOOL)wantsMergeAnnotations;
 - (id)initWithViewControllerClass:(Class)arg1;
 
 // Remaining properties
-@property(copy) NSArray *loggerResults; // @dynamic loggerResults;
-@property(readonly, copy) NSMutableArray *mutableLoggerResults; // @dynamic mutableLoggerResults;
 @property(readonly) IDESourceCodePlaygroundSectionAnnotationViewController *viewController; // @dynamic viewController;
 
 @end

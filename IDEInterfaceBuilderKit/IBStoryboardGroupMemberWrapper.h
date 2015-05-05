@@ -16,8 +16,10 @@
 - (id)childWrappers;
 - (id)image;
 - (id)name;
+- (void)didChangeEntryPointIndicator;
 - (void)didReorderDescendantConnection:(id)arg1;
 - (void)didAddOrRemoveDescendantConnection:(id)arg1;
+- (id)entryPointIndicatorMemberWrappers;
 - (id)originatedSegueMemberWrappers;
 @property(readonly) IBStoryboardDocument *document;
 

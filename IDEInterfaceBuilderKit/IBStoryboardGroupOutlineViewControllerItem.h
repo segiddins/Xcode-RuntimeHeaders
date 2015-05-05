@@ -19,6 +19,7 @@
 - (long long)lastLegalInsertionIndex;
 - (long long)firstLegalInsertionIndex;
 - (id)storyboardDocument;
+- (id)representedPrimarySceneObject;
 - (id)representedDocumentObjectForAutolayoutStatus;
 
 @end

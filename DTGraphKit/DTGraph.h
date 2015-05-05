@@ -17,7 +17,7 @@
     NSFont *_subTitleTextFont;
     NSColor *_textColor;
     NSColor *_alternateTextColor;
-    int _textPathStyle;
+    long long _textPathStyle;
     NSColor *_lineColor;
     NSColor *_backgroundColor;
     NSString *_subTitle;
@@ -77,6 +77,7 @@
 + (id)sampleAttributes;
 + (void)initialize;
 @property unsigned long long verboseLevel; // @synthesize verboseLevel;
+- (void).cxx_destruct;
 - (BOOL)validateModel:(id)arg1;
 - (void)_sizeToFit:(id)arg1;
 - (void)drawPlaceholder:(struct CGRect)arg1;
@@ -88,7 +89,7 @@
 - (BOOL)isModelEmpty;
 - (void)drawSubTitle:(struct CGRect)arg1;
 - (void)drawTitle:(struct CGRect)arg1;
-- (struct CGRect)contentFrame;
+@property(readonly, nonatomic) struct CGRect contentFrame;
 - (struct CGRect)calculateSubTitleBoundsWithinBounds:(struct CGRect)arg1;
 - (struct CGRect)calculateTitleBoundsWithinBounds:(struct CGRect)arg1;
 - (BOOL)requiresTitle;
@@ -102,7 +103,7 @@
 - (id)shapeKeyPath;
 - (id)iconKeyPath;
 - (id)lineFilledKeyPath;
-- (id)backgroundColorKeyPath;
+@property(readonly, copy, nonatomic) NSString *backgroundColorKeyPath;
 - (id)colorKeyPath;
 - (id)labelKeyPath;
 - (id)yAxisKeyPath;
@@ -128,7 +129,7 @@
 - (void)setTextColor:(id)arg1;
 - (id)font;
 - (void)setFont:(id)arg1;
-- (int)shapeForEntry:(id)arg1;
+- (long long)shapeForEntry:(id)arg1;
 - (id)iconForEntry:(id)arg1;
 - (BOOL)lineFilledForEntry:(id)arg1;
 - (id)labelForEntry:(id)arg1;
@@ -137,17 +138,15 @@
 - (id)_drawingAttributesForSubTitle;
 - (id)_drawingAttributesForTitle;
 - (id)_sharedFontAttributes;
-- (int)textPathStyle;
+- (long long)textPathStyle;
 - (id)lineSelectionShadow;
 - (id)emptyShadow;
 - (id)alternateShadow;
 - (id)lineShadow;
 - (id)labelGraphShadow;
-- (id)attributes;
-- (void)setAttributes:(id)arg1;
+@property(copy, nonatomic) NSDictionary *attributes;
 - (void)clearCache;
-- (id)delegate;
-- (void)setDelegate:(id)arg1;
+@property(nonatomic) id <DTGraphDelegate> delegate;
 @property(retain) id model;
 - (void)clearAttributes;
 - (void)viewWillMoveToSuperview:(id)arg1;

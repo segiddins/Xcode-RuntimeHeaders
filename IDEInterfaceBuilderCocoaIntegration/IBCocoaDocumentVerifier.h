@@ -10,5 +10,8 @@
 {
 }
 
+- (void)verifyTextViewFrames;
+- (id)verify;
+
 @end
 

@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class NSBezierPath, NSImage, NSValue;
+@class NSBezierPath, NSImage, NSString, NSValue;
 
 @interface IBStoryboardCanvasLinkPath : NSObject
 {
@@ -24,22 +24,25 @@
     NSBezierPath *_cachedPathForBandSelecting;
     NSValue *_cachedBadgeRectValue;
     double _opacity;
+    NSString *_title;
     id <IBStoryboardCanvasLinkPathDelegate> _delegate;
 }
 
 + (struct CGPoint)pointDirectionForEdge:(unsigned long long)arg1;
 @property __weak id <IBStoryboardCanvasLinkPathDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic, getter=isSelected) BOOL selected; // @synthesize selected=_selected;
+@property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(retain, nonatomic) NSImage *badge; // @synthesize badge=_badge;
 @property(nonatomic) double opacity; // @synthesize opacity=_opacity;
 @property(readonly) struct CGPoint endingPoint; // @synthesize endingPoint=_endingPoint;
 @property(readonly) struct CGPoint startingPoint; // @synthesize startingPoint=_startingPoint;
 - (void).cxx_destruct;
 - (void)drawInRect:(struct CGRect)arg1;
+- (void)drawPathAndTitleWithContext:(struct CGContext *)arg1 dirtyRect:(struct CGRect)arg2;
 - (void)drawPathWithContext:(struct CGContext *)arg1 dirtyRect:(struct CGRect)arg2;
 - (struct CGRect)conservativeDrawingBounds;
 - (id)effectiveBadgeFillColor;
-- (id)effectivePathStrokColor;
+- (id)effectivePathStrokeColor;
 - (BOOL)intersectsRect:(struct CGRect)arg1;
 - (BOOL)isHitByPoint:(struct CGPoint)arg1;
 - (id)pathForBandSelecting;

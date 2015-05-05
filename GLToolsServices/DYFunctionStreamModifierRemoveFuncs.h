@@ -9,11 +9,15 @@
 @interface DYFunctionStreamModifierRemoveFuncs : DYFunctionStreamModifier
 {
     int _currentFileType;
+    vector_7dcb3552 _removedContexts;
     unsigned int _removedFunctionCount;
 }
 
 + (BOOL)isAppleInternalContextFunction:(struct Function *)arg1 contextSet:(unordered_set_febeaddf *)arg2;
 @property(readonly, nonatomic) unsigned int removedFunctionCount; // @synthesize removedFunctionCount=_removedFunctionCount;
+- (id).cxx_construct;
+- (void).cxx_destruct;
+@property(readonly, nonatomic) const vector_7dcb3552 *removedContexts; // @dynamic removedContexts;
 - (void)onBeginFileInArchiveModifier:(id)arg1;
 - (id)initWithDeltaFilesTextureAndBufferLoadFilter;
 - (id)initWithAppleInternalContextFilter;

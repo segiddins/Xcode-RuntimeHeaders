@@ -12,32 +12,32 @@
 
 @interface IDESaveDestinationController : DVTViewController <IDECompletionDestinationDelegate>
 {
-    NSPopUpButton *_destinationPopUp;
-    NSPopUpButton *_formatPopUp;
-    NSView *_formatView;
-    IDESaveDestinationContext *_context;
-    CDUnknownBlockType _completionBlock;
     IDECompletionDestinationManager *_destinationManager;
     IDEGroup *_initialDestinationGroup;
     DVTNotificationToken *_panelDidOrderOutNotificationToken;
     BOOL _didFinish;
     BOOL _didOrderOut;
+    NSPopUpButton *_destinationPopUp;
+    NSPopUpButton *_formatPopUp;
+    NSView *_formatView;
+    IDESaveDestinationContext *_context;
+    CDUnknownBlockType _completionBlock;
 }
 
 + (id)assistantForContext:(id)arg1;
 + (Class)assistantClassForContext:(id)arg1;
 @property(copy) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
+@property(retain, nonatomic) IDESaveDestinationContext *context; // @synthesize context=_context;
 @property(retain) NSView *formatView; // @synthesize formatView=_formatView;
 @property(retain) NSPopUpButton *formatPopUp; // @synthesize formatPopUp=_formatPopUp;
 @property(retain) NSPopUpButton *destinationPopUp; // @synthesize destinationPopUp=_destinationPopUp;
-@property(retain, nonatomic) IDESaveDestinationContext *context; // @synthesize context=_context;
 - (void).cxx_destruct;
 - (id)targetWorkspacesForDestinationManager:(id)arg1;
 - (void)destinationManagerWorkspaceDidChange:(id)arg1;
 - (void)destinationManagerGroupDidChange:(id)arg1;
 - (BOOL)destinationManager:(id)arg1 shouldAddItemToMenu:(id)arg2;
 - (void)changeDestinationFormat:(id)arg1;
-- (void)didFinishSaveSuccessfully:(BOOL)arg1;
+- (void)didFinishSaveSuccessfully:(BOOL)arg1 shouldEdit:(BOOL)arg2;
 - (void)begin;
 - (id)configuredSavePanel;
 - (void)primitiveInvalidate;

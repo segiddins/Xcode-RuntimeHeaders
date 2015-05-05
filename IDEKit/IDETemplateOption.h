@@ -18,6 +18,7 @@
     NSMutableDictionary *_subclassCache;
     BOOL _enabled;
     BOOL _disabledByConstraints;
+    NSString *_displayValue;
     id <IDETemplateOptionParent> _parent;
     NSString *_identifier;
     NSString *_name;
@@ -39,6 +40,7 @@
 + (id)keyPathsForValuesAffectingBooleanValue;
 + (id)keyPathsForValuesAffectingDisplayValues;
 + (id)keyPathsForValuesAffectingHasValidValue;
++ (id)keyPathsForValuesAffectingDisplayValue;
 + (id)allowedTemplateOptionTypes;
 @property(copy) NSDictionary *requiredOptions; // @synthesize requiredOptions=_requiredOptions;
 @property(nonatomic) BOOL disabledByConstraints; // @synthesize disabledByConstraints=_disabledByConstraints;
@@ -76,6 +78,8 @@
 - (void)updateValueWithOptions:(id)arg1;
 - (void)updateEnabledWithOptions:(id)arg1;
 - (id)staticValueWithOptions:(id)arg1;
+- (void)setConstrainedDisplayValue:(id)arg1;
+@property(copy, nonatomic) NSString *displayValue; // @synthesize displayValue=_displayValue;
 - (BOOL)validateValue:(id *)arg1 forKey:(id)arg2 error:(id *)arg3;
 - (BOOL)isUsableWithOptions:(id)arg1;
 - (id)init;

@@ -6,47 +6,43 @@
 
 #import <IDEiOSSupportCore/DVTAbstractiOSDevice.h>
 
-#import "DTiPhoneSimulatorSessionDelegate.h"
 #import "DVTDeviceApplicationProvider.h"
 #import "IDERunDestinationFallbackSelectorDeviceInfo.h"
 #import "NSFileManagerDelegate.h"
 #import "XCDTMobileIS_XPCDebuggingProcotol.h"
 
-@class DTXChannel, DTiPhoneSimulatorSession, DTiPhoneSimulatorSystemRoot, IDELaunchiPhoneSimulatorLauncher, IDEPseudoTerminal, NSArray, NSError, NSMutableDictionary, NSNumber, NSSet, NSString, SimDevice, SimDeviceType;
+@class DTXChannel, NSArray, NSDictionary, NSError, NSMutableDictionary, NSNumber, NSSet, NSString, SimDevice, SimDeviceType;
 
-@interface DVTiPhoneSimulator : DVTAbstractiOSDevice <NSFileManagerDelegate, IDERunDestinationFallbackSelectorDeviceInfo, DTiPhoneSimulatorSessionDelegate, DVTDeviceApplicationProvider, XCDTMobileIS_XPCDebuggingProcotol>
+@interface DVTiPhoneSimulator : DVTAbstractiOSDevice <NSFileManagerDelegate, IDERunDestinationFallbackSelectorDeviceInfo, DVTDeviceApplicationProvider, XCDTMobileIS_XPCDebuggingProcotol>
 {
     id <DVTCancellable> _notificationToken;
     _Bool _launchSucceeded;
     NSError *_launchFailureError;
     _Bool _didExitRecursionGuard;
-    IDEPseudoTerminal *_pty;
     NSMutableDictionary *_xpcStdoutFDForPid;
     NSString *_displayOrder;
     NSString *_recordedFramesBacktraceRecordingDylibPath;
-    NSMutableDictionary *_waiters;
-    _Bool _correspondingDeviceSDKExists;
-    IDELaunchiPhoneSimulatorLauncher *_launchService;
+    NSSet *_applications;
+    NSDictionary *_applicationsDict;
+    int _simulatorPID;
     SimDevice *_device;
-    DTiPhoneSimulatorSession *_currentSimulatorSession;
     DTXChannel *_xpcAttachServiceChannel;
 }
 
-+ (BOOL)_hasExistingSession:(id)arg1;
 + (id)keyPathsForValuesAffectingState;
 + (id)simulatorWithDevice:(id)arg1;
 + (void)initialize;
++ (void)_trackPid:(int)arg1 forDevice:(id)arg2;
++ (void)cleanUpSessionMap;
 @property(retain) DTXChannel *xpcAttachServiceChannel; // @synthesize xpcAttachServiceChannel=_xpcAttachServiceChannel;
-@property(readonly) DTiPhoneSimulatorSession *currentSimulatorSession; // @synthesize currentSimulatorSession=_currentSimulatorSession;
+@property int simulatorPID; // @synthesize simulatorPID=_simulatorPID;
 @property(retain) SimDevice *device; // @synthesize device=_device;
-@property _Bool correspondingDeviceSDKExists; // @synthesize correspondingDeviceSDKExists=_correspondingDeviceSDKExists;
-@property(retain) IDELaunchiPhoneSimulatorLauncher *launchService; // @synthesize launchService=_launchService;
 - (void).cxx_destruct;
 - (id)launchApplicationWithBundleIdentifier:(id)arg1 withArguments:(id)arg2 environment:(id)arg3 options:(id)arg4;
 - (BOOL)canInstallApplication;
 - (id)runExecutableAtPath:(id)arg1 withArguments:(id)arg2 environment:(id)arg3 options:(id)arg4 terminationHandler:(CDUnknownBlockType)arg5;
 - (BOOL)canRunExecutables;
-- (void)stopDebuggingXPCServicesForPID:(int)arg1;
+- (void)stopDebuggingXPCServices:(id)arg1;
 - (void)xpcServiceObserved:(id)arg1 withProcessIdentifier:(int)arg2 requestedByProcess:(int)arg3 options:(id)arg4;
 - (void)outputReceived:(id)arg1 fromProcess:(int)arg2 atTime:(unsigned long long)arg3;
 - (void)debugXPCServices:(id)arg1;
@@ -74,42 +70,29 @@
 - (void)stopLocationSimulation;
 - (void)simulateLocationWithLatitude:(id)arg1 longitude:(id)arg2;
 @property(readonly, copy) NSString *description;
-- (void)_cleanupSession;
-- (void)session:(id)arg1 didEndWithError:(id)arg2;
-- (void)session:(id)arg1 didStart:(BOOL)arg2 withError:(id)arg3;
-- (void)_waitForReplyWithKey:(id)arg1;
-- (BOOL)attachedToTarget:(id)arg1 error:(id *)arg2;
-- (BOOL)launchTool:(id)arg1 environment:(id)arg2 pty:(id)arg3 pid:(int *)arg4 error:(id *)arg5;
-- (BOOL)launchSimulatedExecutable:(id)arg1 error:(id *)arg2;
-- (_Bool)_createAndStartSessionWithConfig:(id)arg1 error:(id *)arg2;
-- (id)_createNewSessionConfig:(id)arg1 validBundledAppPath:(id *)arg2 error:(id *)arg3;
-- (void)transferDirectionsFileToBundlePath:(id)arg1;
-- (void)uploadApplicationDataToBundlePath:(id)arg1;
+- (BOOL)attachedToTarget:(id)arg1 launchService:(id)arg2 error:(id *)arg3;
+- (BOOL)launchSimulatedExecutable:(id)arg1 launchService:(id)arg2 error:(id *)arg3;
+- (_Bool)_launchSimulatorAppWithExternalDisplayType:(long long)arg1 andError:(id *)arg2;
+- (_Bool)_launchSimulatorAppWithError:(id *)arg1;
+- (void)transferDirectionsFileToBundlePath:(id)arg1 launchService:(id)arg2;
+- (void)uploadApplicationDataToBundlePath:(id)arg1 launchService:(id)arg2;
 - (void)presentErrorWithMessageText:(id)arg1 informativeText:(id)arg2;
 - (id)simulatorDirectoriesForAppName:(id)arg1;
 - (id)effectiveSDKVersion;
 - (BOOL)fileManager:(id)arg1 shouldCopyItemAtPath:(id)arg2 toPath:(id)arg3;
 - (BOOL)shouldProcessPath:(id)arg1;
-- (BOOL)prepareToLaunchWithService:(id)arg1 error:(id *)arg2;
-- (unsigned long long)_sessionStartTimeout;
-- (id)_newSessionConfig;
-- (id)additionalApplicationsForDebuggingAppExtensions;
 @property(readonly) NSSet *systemApplications;
 @property(readonly) NSSet *applications;
-- (id)preferredSDKForDeviceOptions:(id)arg1 error:(id *)arg2;
-- (id)preferredArchitectureForDeviceOptions:(id)arg1 error:(id *)arg2;
+- (void)_updateApplications;
+- (void)_launchSimulatorAndUpdateApplicationsWhenReady;
 - (id)deviceSpecificOverridingPropertiesForBuildable:(id)arg1 withBaselineParameters:(id)arg2;
 - (id)executionDisplayName;
 - (id)supportedSDKsForBuildable:(id)arg1 buildParameters:(id)arg2 error:(id *)arg3;
 - (BOOL)shouldPresentDeviceForBuildable:(id)arg1 buildParameters:(id)arg2 error:(id *)arg3;
-- (id)supportedArchitecturesForBuildable:(id)arg1 buildParameters:(id)arg2 error:(id *)arg3;
 - (BOOL)canBeDefaultDeviceForBuildable:(id)arg1 buildParameters:(id)arg2;
 - (id)softwareVersion;
 - (void)setDisplayOrder:(id)arg1;
 - (id)displayOrder;
-- (void)hasBeenDetached;
-- (void)terminate;
-- (void)willTerminate;
 @property(readonly, copy) NSArray *supportedDeviceFamilies;
 - (id)deviceType;
 - (id)platform;
@@ -124,6 +107,9 @@
 - (id)name;
 - (BOOL)canIgnore;
 - (BOOL)canRename;
+- (BOOL)showCompanionUI;
+- (id)proxiedDevices;
+- (BOOL)canBeWatchCompanion;
 - (id)modelCode;
 @property(readonly, nonatomic) BOOL ide_fallbackSelectorDeviceIsResizable;
 @property(readonly, nonatomic) NSString *ide_fallbackSelectorDeviceGroupingFamily;
@@ -139,8 +125,8 @@
 - (id)recordedFramesLibdispatchIntrospectionDylibPath;
 - (unsigned long long)supportsFetchEvents;
 - (BOOL)supportsLocationSimulation;
+- (unsigned long long)supportedLaunchOptions;
 - (BOOL)supportsApplicationDataUploading;
-@property(readonly) DTiPhoneSimulatorSystemRoot *simulatedSystemRoot;
 - (id)launchApplicationWithBundleIdentifier:(id)arg1 andOptions:(id)arg2;
 - (id)launchApplicationWithBundleIdentifier:(id)arg1;
 - (id)spawnExecutableAtPath:(id)arg1 withOptions:(id)arg2 andTerminationHandler:(CDUnknownBlockType)arg3;
@@ -163,6 +149,7 @@
 - (BOOL)canStartUpAndShutDown;
 - (void)dealloc;
 @property(readonly) NSNumber *simulatedDeviceFamily;
+- (_Bool)_canStartSession:(id *)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

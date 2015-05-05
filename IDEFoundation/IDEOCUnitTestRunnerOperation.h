@@ -10,9 +10,11 @@
 
 @interface IDEOCUnitTestRunnerOperation : IDERunOperation
 {
+    BOOL _shouldDeleteScopeFile;
     DVTFilePath *_testScopeFilePath;
 }
 
+@property BOOL shouldDeleteScopeFile; // @synthesize shouldDeleteScopeFile=_shouldDeleteScopeFile;
 @property(retain) DVTFilePath *testScopeFilePath; // @synthesize testScopeFilePath=_testScopeFilePath;
 - (void).cxx_destruct;
 - (void)runningDidFinish;

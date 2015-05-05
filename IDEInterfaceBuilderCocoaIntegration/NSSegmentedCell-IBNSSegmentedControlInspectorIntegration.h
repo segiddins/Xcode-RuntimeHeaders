@@ -15,6 +15,8 @@
 + (id)keyPathsForValuesAffectingIbInspectedImageForInspectedSegment;
 + (id)keyPathsForValuesAffectingIbInspectedLabelForInspectedSegment;
 + (id)keyPathsForValuesAffectingIbInspectedToolTipForInspectedSegment;
+- (void)setIbInspectedSpringLoaded:(BOOL)arg1;
+- (BOOL)ibInspectedSpringLoaded;
 - (void)setIbInspectedWidthForInspectedSegment:(id)arg1;
 - (id)ibInspectedWidthForInspectedSegment;
 - (BOOL)ibInspectedAutosizeValueForInspectedSegment;

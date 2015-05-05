@@ -18,6 +18,7 @@
 + (id)_baseIconForFileType:(id)arg1;
 + (id)overriderImageProviderClassByUTI;
 + (id)_xcodeBundleIconForFileType:(id)arg1;
++ (id)missingIconWithBaseIcon:(id)arg1;
 + (id)iconWithBaseIcon:(id)arg1 badgeIcon:(id)arg2 isDirty:(BOOL)arg3;
 + (id)iconWithBaseIcon:(id)arg1 badgeIcon:(id)arg2;
 + (id)_iconWithBaseIcon:(id)arg1 badgeIcon:(id)arg2 isDirty:(BOOL)arg3 isMissing:(BOOL)arg4;

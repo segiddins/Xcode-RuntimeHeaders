@@ -10,24 +10,24 @@
 
 @interface DVTDetachedTabDraggingImageToWindowTransitionController : NSObject
 {
-    DVTTabbedWindowTabViewItem *_movingTabViewItem;
-    id <DVTTabbedWindowControlling> _sourceWindowController;
-    id <DVTTabbedWindowControlling> _destinationWindowController;
+    DVTTabbedWindowTabViewItem *_movingBrowserTabViewItem;
+    id <DVTTabbedWindowControlling> _sourceBrowserWindowControllerMac;
+    id <DVTTabbedWindowControlling> _destinationBrowserWindowControllerMac;
     NSWindow *_sourceMiniWindow;
-    NSWindow *_destinationWindow;
-    struct CGRect _windowAnimationStartFrame;
-    struct CGRect _windowAnimationEndFrame;
-    struct CGAffineTransform _windowAnimationEndTransform;
+    NSWindow *_destinationBrowserWindow;
+    struct CGRect _browserWindowAnimationStartFrame;
+    struct CGRect _browserWindowAnimationEndFrame;
+    struct CGAffineTransform _browserWindowAnimationEndTransform;
 }
 
-+ (void)detachTabViewItem:(id)arg1 fromWindowController:(id)arg2 withDraggedMiniWindow:(id)arg3 ofWidth:(double)arg4;
++ (void)detachBrowserTabViewItem:(id)arg1 fromBrowserWindowControllerMac:(id)arg2 withDraggedMiniWindow:(id)arg3 ofWidth:(double)arg4;
 - (void).cxx_destruct;
 - (void)_updateAnimationWithProgress:(float)arg1;
 - (void)_startAnimation;
 - (void)_setUpBrowserWindow;
 - (void)_setUpBrowserWindowAnimationEndFrame;
 - (void)_setUpBrowserWindowAnimationStartFrameWithMiniWindowWidth:(double)arg1;
-- (id)_initWithTabViewItem:(id)arg1 sourceWindowController:(id)arg2 miniWindow:(id)arg3 ofWidth:(double)arg4;
+- (id)_initWithBrowserTabViewItem:(id)arg1 sourceBrowserWindowControllerMac:(id)arg2 miniWindow:(id)arg3 ofWidth:(double)arg4;
 - (id)init;
 
 @end

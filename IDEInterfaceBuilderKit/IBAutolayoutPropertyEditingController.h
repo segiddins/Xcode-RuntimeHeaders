@@ -8,10 +8,11 @@
 
 #import "DVTInvalidation.h"
 #import "NSMenuDelegate.h"
+#import "NSTextFieldDelegate.h"
 
 @class DVTButtonTextField, DVTStackBacktrace, IBDocument, NSMenu, NSNumberFormatter, NSSet, NSStepper, NSString;
 
-@interface IBAutolayoutPropertyEditingController : NSObject <DVTInvalidation, NSMenuDelegate>
+@interface IBAutolayoutPropertyEditingController : NSObject <DVTInvalidation, NSMenuDelegate, NSTextFieldDelegate>
 {
     id <IBCollection> _objectObservingTokens;
     long long _lastStepperValue;
@@ -49,6 +50,7 @@
 - (void)populateObservingTokens:(id)arg1;
 - (void)startObservingObjects;
 - (void)stopObservingObjects;
+- (BOOL)control:(id)arg1 didFailToFormatString:(id)arg2 errorDescription:(id)arg3;
 - (id)documentForEditedObject:(id)arg1;
 - (id)modelObjectInCanvasConfigurationForEditedObject:(id)arg1;
 - (void)setValue:(id)arg1 forModelKeyPath:(id)arg2 ofEditedObject:(id)arg3;

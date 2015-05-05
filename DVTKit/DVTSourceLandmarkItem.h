@@ -52,6 +52,8 @@
 @property(readonly, copy, nonatomic) NSString *typeName; // @synthesize typeName=_typeName;
 - (void)_evaluateTypeName;
 - (void)_evaluateNameAndRange;
+- (void)dealloc;
+- (id)initWithItem:(id)arg1 type:(int)arg2 delegate:(id)arg3;
 - (id)initWithItemReference:(void *)arg1 type:(int)arg2 delegate:(id)arg3;
 - (id)initWithName:(id)arg1 type:(int)arg2;
 

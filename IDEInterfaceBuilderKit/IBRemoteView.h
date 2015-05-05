@@ -65,6 +65,7 @@
 - (void)liveViewsBundleNeedsToBeRebuilt:(id)arg1;
 - (void)waitForCachedImage;
 - (void)requestCachedImageIfNeeded;
+- (void)processRequestedImage:(id)arg1;
 - (id)marshalledRepresentationForRendering;
 - (void)viewDidChangeBackingProperties;
 - (void)cancelImageRequest;
@@ -76,7 +77,7 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 - (void)ibPreparePreviewInstance:(id)arg1 context:(id)arg2;
 - (void)ibAwakeInDocument:(id)arg1;
-- (void)ibWillRemoveFromDocument:(id)arg1 previouslyMemberOfGroup:(id)arg2;
+- (void)ibWillRemoveFromDocument:(id)arg1 previouslyMemberOfGroup:(id)arg2 identifierInGroup:(id)arg3;
 - (void)ibDidAddToDocument:(id)arg1 phase:(unsigned long long)arg2;
 - (void)ibWarnings:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
 - (void)ibUpdateDesignablesStatus;

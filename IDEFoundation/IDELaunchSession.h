@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class DVTFileDataType, DVTFuture, DVTMapTable, DVTObservingToken, DVTPerformanceMetric, IDEExecutionEnvironment, IDEExecutionTracker, IDELaunchParametersSnapshot, IDELocationSimulator, IDERunDestination, IDESchemeActionRecord, IDESchemeCommand, NSArray, NSError, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString;
+@class DVTFileDataType, DVTFuture, DVTMapTable, DVTObservingToken, DVTPerformanceMetric, IDEDebugSession, IDEExecutionEnvironment, IDEExecutionTracker, IDELaunchParametersSnapshot, IDELocationSimulator, IDERunDestination, IDESchemeActionRecord, IDESchemeCommand, NSArray, NSError, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString;
 
 @interface IDELaunchSession : NSObject
 {
@@ -32,7 +32,7 @@
     IDEExecutionEnvironment *_executionEnvironment;
     IDESchemeActionRecord *_schemeActionRecord;
     IDEExecutionTracker *_executionTracker;
-    id <IDEDebugSession> _currentDebugSession;
+    IDEDebugSession *_currentDebugSession;
     id <IDETraceInferiorSession> _currentTraceInferiorSession;
     NSArray *_gaugeLocations;
     IDELaunchParametersSnapshot *_launchParameters;
@@ -49,8 +49,13 @@
     DVTObservingToken *_codeModulesObserver;
 }
 
++ (id)watchLaunchOptionsForLaunchParameters:(id)arg1;
++ (BOOL)_unregisterLaunchSession:(id)arg1 asSoleRecipientForAppExt:(id)arg2 inDevice:(id)arg3;
++ (BOOL)_registerLaunchSession:(id)arg1 asSoleRecipientForAppExt:(id)arg2 error:(id *)arg3;
 + (BOOL)automaticallyNotifiesObserversOfTargetOutputState;
 + (void)terminateLaunchSession:(id)arg1 inWorkspace:(id)arg2;
++ (void)terminateLaunchSession:(id)arg1;
++ (id)createLaunchSessionForCrashPoint:(id)arg1 inWorkspace:(id)arg2;
 + (id)createLaunchSessionForDebuggingAddition:(id)arg1 inWorkspace:(id)arg2 launchParameters:(id)arg3 runnableDisplayName:(id)arg4 runDestination:(id)arg5;
 + (id)launchSessionForReference:(id)arg1;
 + (void)_setLaunchSession:(id)arg1 forReference:(id)arg2;
@@ -76,7 +81,7 @@
 @property(copy) NSArray *gaugeLocations; // @synthesize gaugeLocations=_gaugeLocations;
 @property(readonly, copy) NSArray *debuggingAdditions; // @synthesize debuggingAdditions=_debuggingAdditions;
 @property(retain) id <IDETraceInferiorSession> currentTraceInferiorSession; // @synthesize currentTraceInferiorSession=_currentTraceInferiorSession;
-@property(retain, nonatomic) id <IDEDebugSession> currentDebugSession; // @synthesize currentDebugSession=_currentDebugSession;
+@property(retain, nonatomic) IDEDebugSession *currentDebugSession; // @synthesize currentDebugSession=_currentDebugSession;
 @property(nonatomic) int state; // @synthesize state=_state;
 @property(retain) IDEExecutionTracker *executionTracker; // @synthesize executionTracker=_executionTracker;
 @property(retain) IDESchemeActionRecord *schemeActionRecord; // @synthesize schemeActionRecord=_schemeActionRecord;
@@ -87,13 +92,16 @@
 - (void)performanceMetric_xpcDebuggingStarted;
 - (id)performanceMetric_xpcIdentifierForLaunchSession;
 - (void)_handleXPCServiceObservation:(id)arg1;
+- (void)_fillUpXPCServiceWithPid:(int)arg1 forServiceName:(id)arg2;
 - (id)_findShellXPCLaunchSessionForServiceName:(id)arg1;
 - (id)xpcLaunchSessions;
+- (void)_cancelXPCPostLaunchActions;
+- (void)_startXPCPostLaunchActions;
 - (void)_startObservingXPCServicesAndAppExtensionsStage2;
 - (void)_startObservingXPCServicesAndAppExtensions;
 - (id)_environmentVariablesWithTestingFilteredOut:(id)arg1;
 - (id)_createLaunchSessionForXPCServiceName:(id)arg1 withLaunchParameters:(id)arg2;
-- (void)_cancelXPCLaunchSessions;
+- (void)_cancelAllXPCRelatedWork;
 @property(readonly) NSArray *frameworkNamesIncludingExtensionsLinkedByExecutableForAllSlices;
 @property(readonly) NSArray *frameworkNamesIncludingExtensionsLinkedByExecutable;
 - (id)_frameworkNamesIncludingExtensionsLinkedByExecutableForCpuType:(int)arg1;

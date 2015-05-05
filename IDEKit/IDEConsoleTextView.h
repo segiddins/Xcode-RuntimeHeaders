@@ -58,6 +58,7 @@
 - (BOOL)_isValidForHistoryTracking;
 - (BOOL)readSelectionFromPasteboard:(id)arg1;
 - (id)writablePasteboardTypes;
+- (void)_undoManagerDidUndoChangeNotification:(id)arg1;
 - (BOOL)shouldChangeTextInRanges:(id)arg1 replacementStrings:(id)arg2;
 - (void)keyDown:(id)arg1;
 - (void)_sendKeyImmediatelyIfNecessary:(id)arg1;

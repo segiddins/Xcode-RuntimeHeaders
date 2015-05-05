@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)primitiveInvalidate;
+- (void)invalidateOldPendingBlocksThreads:(id)arg1;
 - (unsigned long long)numberOfPendingBlocks;
 - (id)pendingBlocksThreads;
 - (id)lldbSession;

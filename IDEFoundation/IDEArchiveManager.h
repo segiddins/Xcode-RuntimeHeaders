@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class DVTDispatchLock, DVTObservingToken, NSArray, NSFileManager, NSMutableArray;
+@class DVTDispatchLock, DVTObservingToken, NSArray, NSFileManager, NSMutableArray, NSSet;
 
 @interface IDEArchiveManager : NSObject
 {
@@ -20,6 +20,8 @@
 + (void)initialize;
 + (id)sharedArchiveManager;
 - (void).cxx_destruct;
+@property(readonly) NSSet *supportedFileDataTypeIdentifiers;
+- (BOOL)installArchiveAtPath:(id)arg1 revealInstalledArchive:(BOOL)arg2 error:(id *)arg3;
 - (BOOL)installArchiveAtPath:(id)arg1 revealInstalledArchive:(BOOL)arg2;
 - (id)_installedArchiveAtPath:(id)arg1;
 - (void)deleteArchives:(id)arg1;
@@ -31,7 +33,7 @@
 - (void)_checkPathForArchive:(id)arg1 andAddToArray:(id)arg2;
 - (BOOL)_couldBeArchivePath:(id)arg1;
 - (void)_revealArchiveAtPath:(id)arg1;
-- (void)archiveInstalledProductsDirectoryWithPath:(id)arg1 auxiliaryFilesDirectoryPath:(id)arg2 schemeName:(id)arg3 archiveName:(id)arg4 platform:(id)arg5 revealNewArchive:(BOOL)arg6 completionBlock:(CDUnknownBlockType)arg7;
+- (void)archiveInstalledProductsDirectoryWithPath:(id)arg1 auxiliaryFilesDirectoryPath:(id)arg2 schemeName:(id)arg3 archiveName:(id)arg4 platform:(id)arg5 revealNewArchive:(BOOL)arg6 workspace:(id)arg7 completionBlock:(CDUnknownBlockType)arg8;
 - (id)init;
 
 // Remaining properties

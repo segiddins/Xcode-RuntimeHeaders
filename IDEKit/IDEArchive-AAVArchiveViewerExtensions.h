@@ -15,7 +15,6 @@
 @property(readonly) _Bool aav_canExport;
 @property(readonly) _Bool aav_canSubmit;
 @property(readonly) _Bool aav_canValidate;
-- (_Bool)_aav_canPerformTask:(int)arg1;
 @property(readonly) NSImage *aav_displayIcon;
 @property(readonly) NSArray *aav_displayIcons;
 - (id)aav_version;

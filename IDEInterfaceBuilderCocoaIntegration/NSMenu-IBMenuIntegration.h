@@ -14,20 +14,23 @@
 - (BOOL)ibCanAcceptContentsOfPasteboard:(id)arg1 inDocument:(id)arg2 targetChildRelation:(id *)arg3;
 - (void)ibWarnings:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
 - (id)ibQualifyingInfoForDefaultLabel;
-- (id)ibTypeNameForDefaultLabel;
+- (id)ibDefaultLabel;
 - (void)setIbInspectedTitle:(id)arg1;
 - (id)ibInspectedTitle;
 - (void)setIbShadowedItemArray:(id)arg1;
 - (id)ibShadowedItemArray;
 - (id)ibPasteboardTypes;
 - (BOOL)ibMustBeBaseObjectOfEditorFrame;
+- (Class)ibEditorClass;
 - (id)ibEditorCanvasFrameControllerForDocument:(id)arg1;
+- (id)ibDefaultImage;
 - (BOOL)ibRepresentsMainMenuOrDescendantOfMainMenu;
 - (BOOL)ibRepresentsMainMenu;
 - (BOOL)ibSupportsMultipleSimultaneousEditors;
 - (void)ibRemoveChildren:(id)arg1;
 - (void)ibPopulateEditorSelectionOrderRelationLists:(id)arg1;
 - (void)ibPopulateChildRelationOrder:(id)arg1;
+- (id)ibLocalAttributeKeyPaths;
 - (BOOL)ibCanBeBoundToFromObject:(id)arg1;
 - (struct CGRect)ibRectForChild:(id)arg1 inFrameController:(id)arg2;
 @end

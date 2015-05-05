@@ -19,9 +19,11 @@
     NSString *_developerProgramUserDescription;
     NSString *_correspondingDevicePlatformIdentifier;
     NSString *_correspondingSimulatorPlatformIdentifier;
+    NSString *_minimumVersionForAnalytics;
 }
 
 + (id)extendedPlatformInfoForPlatformIdentifier:(id)arg1;
+@property(readonly) NSString *minimumVersionForAnalytics; // @synthesize minimumVersionForAnalytics=_minimumVersionForAnalytics;
 @property(readonly) NSString *correspondingSimulatorPlatformIdentifier; // @synthesize correspondingSimulatorPlatformIdentifier=_correspondingSimulatorPlatformIdentifier;
 @property(readonly) NSString *correspondingDevicePlatformIdentifier; // @synthesize correspondingDevicePlatformIdentifier=_correspondingDevicePlatformIdentifier;
 @property(readonly) BOOL requiresPortalAppGroups; // @synthesize requiresPortalAppGroups=_requiresPortalAppGroups;

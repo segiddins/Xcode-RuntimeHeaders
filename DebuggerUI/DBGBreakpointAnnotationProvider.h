@@ -29,6 +29,7 @@
 - (id)_createToggleBreakpointMenuItem:(id)arg1;
 - (id)_createEditBreakpointMenuItem:(id)arg1 inTextSidebarView:(id)arg2;
 - (id)contextMenuItemsForAnnotation:(id)arg1 inTextSidebarView:(id)arg2;
+- (void)didRecognizeGestureInAnnotation:(id)arg1 inTextSidebarView:(id)arg2 recognizer:(id)arg3;
 - (void)didClickAnnotation:(id)arg1 inTextSidebarView:(id)arg2 event:(id)arg3;
 - (void)didDeleteOrReplaceParagraphForAnnotation:(id)arg1;
 - (void)didMoveAnnotation:(id)arg1;

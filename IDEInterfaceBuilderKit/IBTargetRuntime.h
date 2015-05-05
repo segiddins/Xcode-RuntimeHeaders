@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class IBIdiom, IBPlatform, NSMutableDictionary, NSObject<OS_dispatch_queue>;
+@class IBIdiom, IBPlatform, NSDictionary, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSSet;
 
 @interface IBTargetRuntime : NSObject
 {
@@ -14,6 +14,9 @@
     BOOL _installedColorList;
     NSObject<OS_dispatch_queue> *_asynchronousRequestQueue;
     NSMutableDictionary *_requestProxiesByScaleFactor;
+    NSSet *_connectionClasses;
+    NSSet *_segueClasses;
+    NSDictionary *_segueClassesByClassID;
 }
 
 + (id)targetRuntimeWithIdentifier:(id)arg1;
@@ -27,6 +30,7 @@
 - (id)displayNameForUserInterfaceStyle;
 - (id)nextPreviewableTargetRuntime;
 - (id)alternatePreviewableTargetRuntimes;
+- (Class)segueClassForClassIdentifier:(id)arg1;
 - (id)connectionClasses;
 - (id)segueClasses;
 @property(readonly) id <DVTFontTextFieldDataSource> fontDataSource;

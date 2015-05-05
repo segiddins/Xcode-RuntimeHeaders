@@ -16,11 +16,19 @@ __attribute__((visibility("hidden")))
 {
     GPUDebuggingAddition *_debuggingAddition;
     DVTObservingToken *_debuggingAdditionsObservation;
+    NSString *_testImageDirectory;
 }
 
 + (id)handlerForAction:(SEL)arg1 withSelectionSource:(id)arg2;
 + (id)currentWorkspaceTabController;
 - (void).cxx_destruct;
+- (void)_ensureTestImageDirectoryExists;
+- (void)_dumpImagesAssistantEditors:(BOOL)arg1;
+- (void)dumpRawImagesAssistantEditors:(id)arg1;
+- (void)dumpImagesAssistantEditors:(id)arg1;
+- (void)_dumpImagesMainEditor:(BOOL)arg1;
+- (void)dumpRawImagesMainEditor:(id)arg1;
+- (void)dumpImagesMainEditor:(id)arg1;
 - (void)displayGPUPerformance:(id)arg1;
 - (void)_openLocation:(id)arg1 withEventType:(unsigned long long)arg2;
 - (BOOL)validateUserInterfaceItem:(id)arg1;

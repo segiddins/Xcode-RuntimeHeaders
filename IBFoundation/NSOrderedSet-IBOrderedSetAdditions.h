@@ -27,6 +27,8 @@
 - (void)ib_enumerateCopyOfObjectsUsingBlock:(CDUnknownBlockType)arg1;
 - (void)ib_enumerateObjectsUsingMutatingBlock:(CDUnknownBlockType)arg1;
 - (void)ib_enumerateObjectsUsingBlock:(CDUnknownBlockType)arg1;
+- (BOOL)ib_binarySearchForObject:(id)arg1 usingComparator:(CDUnknownBlockType)arg2;
+- (unsigned long long)ib_indexOfFirstObjectPassingTest:(CDUnknownBlockType)arg1;
 - (id)ib_collectionByKeepingObjectsInSet:(id)arg1;
 - (id)ib_collectionByRemovingObjectsInSet:(id)arg1;
 - (id)ib_collectionByRemovingObjectsFromCollection:(id)arg1;
@@ -56,6 +58,7 @@
 - (id)ib_objectsOfClass:(Class)arg1;
 - (id)ib_orderedSetByFilteringUsingBlock:(CDUnknownBlockType)arg1;
 - (id)ib_orderedSetByAddingObject:(id)arg1;
+- (id)ib_orderedSetByRemovingObjects:(id)arg1;
 - (id)ib_orderedSetByRemovingObject:(id)arg1;
 - (id)ib_onlyObject;
 - (id)anyObject;

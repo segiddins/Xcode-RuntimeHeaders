@@ -27,6 +27,7 @@
     DVTScrollView *_scrollView;
     DVTPreferenceSetManager *_preferenceSetManager;
     DVTMapTable *_observerTokensForPreferenceSetsMapTable;
+    DVTObservingToken *_availablePreferenceSetsObserver;
     DVTObservingToken *_currentPreferenceSetObserver;
     BOOL _hasBeenSetup;
 }

@@ -24,7 +24,7 @@
 - (NSView *)filterView;
 - (void)debugNavigatorViewWillUninstall;
 - (void)debugNavigatorViewDidInstall;
-- (id)initWithProcess:(id <IDEDebugProcess>)arg1 debugNavigator:(IDEDebugNavigator *)arg2;
+- (id)initWithTopNavigableModel:(id <IDEDebugTopNavigableModel>)arg1 debugNavigator:(IDEDebugNavigator *)arg2;
 
 @optional
 - (IDENavigableItem *)outputSelectionNavItemForSelectedNavItem:(IDENavigableItem *)arg1;

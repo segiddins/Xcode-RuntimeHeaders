@@ -9,6 +9,6 @@
 @protocol IDETraceInferiorSession <NSObject>
 @property int state;
 @property(readonly) id currentTraceSession;
-@property(readonly) id <IDEDebugProcess> process;
+@property(readonly) id <IDEDebugTopNavigableModel> process;
 @end
 

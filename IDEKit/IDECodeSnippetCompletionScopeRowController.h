@@ -17,7 +17,7 @@
     NSString *_completionScope;
 }
 
-@property(readonly) IDECodeSnippetLibraryDetailEditorController *detailController; // @synthesize detailController=_detailController;
+@property(retain) IDECodeSnippetLibraryDetailEditorController *detailController; // @synthesize detailController=_detailController;
 @property(copy, nonatomic) NSString *completionScope; // @synthesize completionScope=_completionScope;
 - (void).cxx_destruct;
 - (void)removeScope:(id)arg1;
@@ -26,6 +26,7 @@
 @property(readonly) NSView *lastKeyView;
 @property(readonly) NSView *firstKeyView;
 - (void)primitiveInvalidate;
+- (void)_setupButton:(id)arg1 usingImage:(id)arg2;
 - (void)awakeFromNib;
 - (id)initWithCompletionScope:(id)arg1 detailController:(id)arg2;
 

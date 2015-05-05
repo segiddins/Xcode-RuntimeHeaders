@@ -9,6 +9,7 @@
 @interface NSMutableDictionary (IBMutableDictionaryAdditions)
 + (Class)ib_mutableClass;
 - (void)ib_mapValues:(CDUnknownBlockType)arg1;
+- (void)ib_overrideObject:(id)arg1 forKey:(id)arg2 during:(CDUnknownBlockType)arg3;
 - (void)ib_setObject:(id)arg1 forClassKey:(Class)arg2;
 - (void)ib_setObject:(id)arg1 forKeys:(id)arg2;
 - (void)ib_setObjectIfNonNil:(id)arg1 forKey:(id)arg2;

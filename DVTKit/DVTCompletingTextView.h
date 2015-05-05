@@ -85,7 +85,9 @@
 - (void)deleteBackward:(id)arg1;
 - (void)insertText:(id)arg1 replacementRange:(struct _NSRange)arg2;
 - (void)doCommandBySelector:(SEL)arg1;
-- (void)foldingLayoutManagerFoldsChanged:(id)arg1;
+- (void)layoutManager:(id)arg1 didUnfoldRange:(struct _NSRange)arg2;
+- (void)layoutManager:(id)arg1 didFoldRange:(struct _NSRange)arg2;
+- (void)_foldingLayoutManagerFoldsChanged:(id)arg1;
 - (id)layoutManager:(id)arg1 shouldUseTextBackgroundColor:(id)arg2 rectArray:(struct CGRect *)arg3 count:(unsigned long long)arg4 forCharacterRange:(struct _NSRange)arg5;
 - (id)layoutManager:(id)arg1 shouldUseTemporaryAttributes:(id)arg2 forDrawingToScreen:(BOOL)arg3 atCharacterIndex:(unsigned long long)arg4 effectiveRange:(struct _NSRange *)arg5;
 - (void)showMatchingBraceAtLocation:(id)arg1;
@@ -124,7 +126,7 @@
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(retain) id <DVTCompletingTextViewDelegate> delegate; // @dynamic delegate;
+@property id <DVTCompletingTextViewDelegate> delegate; // @dynamic delegate;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;

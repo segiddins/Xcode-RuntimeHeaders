@@ -12,7 +12,6 @@
 }
 
 @property BOOL firstResponderLocked; // @synthesize firstResponderLocked=_firstResponderLocked;
-- (BOOL)validateMenuItem:(id)arg1;
 - (BOOL)makeFirstResponder:(id)arg1;
 
 @end

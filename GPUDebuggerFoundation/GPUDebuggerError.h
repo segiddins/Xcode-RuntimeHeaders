@@ -10,7 +10,9 @@
 {
 }
 
+- (id)dy_errorSignature;
 - (id)localizedDescription;
+- (id)initWithDomain:(id)arg1 code:(long long)arg2 userInfo:(id)arg3;
 
 @end
 

@@ -6,12 +6,14 @@
 
 #import "NSObject.h"
 
-@class NSString;
+@class NSSet, NSString;
 
 @protocol DVTCodesignableDevice <NSObject>
-@property(readonly, copy, nonatomic) NSString *name;
-@property(readonly, copy, nonatomic) NSString *deviceIdentifier;
-@property(readonly, copy, nonatomic) NSString *platformIdentifier;
-@property(readonly, nonatomic) BOOL supportsProvisioning;
+@property(readonly, copy) NSSet *proxiedDevices;
+@property(readonly) BOOL supportsProvisioning;
+@property(readonly, copy) NSString *platformIdentifier;
+@property(readonly, copy) NSString *identifier;
+@property(readonly, copy) NSString *nameForDeveloperPortal;
+@property(readonly, copy) NSString *name;
 @end
 

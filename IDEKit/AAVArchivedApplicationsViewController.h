@@ -6,7 +6,6 @@
 
 #import <IDEKit/IDEViewController.h>
 
-#import "IDEInitialization.h"
 #import "IDEOrganizerSource.h"
 #import "NSSplitViewDelegate.h"
 #import "NSTableViewDataSource.h"
@@ -14,7 +13,7 @@
 
 @class DVTBorderedView, DVTObservingToken, DVTScopeBarView, DVTTableView, IDENavigatorDataCell, NSArray, NSArrayController, NSMutableDictionary, NSScrollView, NSSplitView, NSString, NSTextField, NSView;
 
-@interface AAVArchivedApplicationsViewController : IDEViewController <NSTableViewDelegate, NSTableViewDataSource, NSSplitViewDelegate, IDEOrganizerSource, IDEInitialization>
+@interface AAVArchivedApplicationsViewController : IDEViewController <NSTableViewDelegate, NSTableViewDataSource, NSSplitViewDelegate, IDEOrganizerSource>
 {
     NSSplitView *_mainSplitView;
     NSView *_leftView;
@@ -37,9 +36,6 @@
     DVTObservingToken *_archivesArrayObserver;
 }
 
-+ (void)revealArchive:(id)arg1;
-+ (void)revealArchiveNotification:(id)arg1;
-+ (BOOL)ide_initializeWithOptions:(int)arg1 error:(id *)arg2;
 @property _Bool hasSelectedArchive; // @synthesize hasSelectedArchive=_hasSelectedArchive;
 @property(copy) NSString *filterString; // @synthesize filterString=_filterString;
 - (void).cxx_destruct;
@@ -48,7 +44,6 @@
 - (void)exportArchive:(id)arg1;
 - (void)submitArchive:(id)arg1;
 - (void)validateArchive:(id)arg1;
-- (void)revealArchive:(id)arg1;
 - (BOOL)tableView:(id)arg1 doCommandBySelector:(SEL)arg2;
 - (void)deleteArchive:(id)arg1;
 - (void)contextMenu_deleteArchive:(id)arg1;
@@ -74,7 +69,6 @@
 - (void)_layout;
 - (void)loadView;
 - (_Bool)areProfilesLoaded;
-- (void)openFileURL:(id)arg1 withFileType:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

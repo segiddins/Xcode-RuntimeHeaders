@@ -13,25 +13,17 @@
     NSString *_identifier;
     NSDictionary *_properties;
     IDEActivityLogSection *_activityLogSection;
-    CDUnknownBlockType _didStartExecutingBlock;
-    CDUnknownBlockType _activityLogSectionDidChangeBlock;
-    CDUnknownBlockType _exitCodeWasSetBlock;
-    CDUnknownBlockType _updateBuildStatusForBuildTaskBlock;
     BOOL _restorePersistedBuildResults;
     BOOL _dontActuallyRun;
     int _exitCode;
-    CDUnknownBlockType _addPostprocessingBlocks;
+    id <IDEBuildTaskCallbacks> _callbackDelegate;
 }
 
 + (id)defaultProperties;
 + (id)buildTaskWithIdentifier:(id)arg1 restorePersistedBuildResults:(BOOL)arg2 properties:(id)arg3;
 + (void)initialize;
-@property(copy) CDUnknownBlockType addPostprocessingBlocks; // @synthesize addPostprocessingBlocks=_addPostprocessingBlocks;
+@property __weak id <IDEBuildTaskCallbacks> callbackDelegate; // @synthesize callbackDelegate=_callbackDelegate;
 @property BOOL dontActuallyRun; // @synthesize dontActuallyRun=_dontActuallyRun;
-@property(copy) CDUnknownBlockType updateBuildStatusForBuildTask; // @synthesize updateBuildStatusForBuildTask=_updateBuildStatusForBuildTaskBlock;
-@property(copy) CDUnknownBlockType exitCodeWasSet; // @synthesize exitCodeWasSet=_exitCodeWasSetBlock;
-@property(copy) CDUnknownBlockType activityLogSectionDidChange; // @synthesize activityLogSectionDidChange=_activityLogSectionDidChangeBlock;
-@property(copy) CDUnknownBlockType didStartExecuting; // @synthesize didStartExecuting=_didStartExecutingBlock;
 @property(nonatomic) int exitCode; // @synthesize exitCode=_exitCode;
 @property(retain, nonatomic) IDEActivityLogSection *activityLogSection; // @synthesize activityLogSection=_activityLogSection;
 @property(readonly) BOOL restorePersistedBuildResults; // @synthesize restorePersistedBuildResults=_restorePersistedBuildResults;

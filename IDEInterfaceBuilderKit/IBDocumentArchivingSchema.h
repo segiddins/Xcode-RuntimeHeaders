@@ -12,6 +12,7 @@
 {
     IBMutableIdentityDictionary *_classesToElementNames;
     NSMutableDictionary *_elementNamesToClasses;
+    NSMutableDictionary *_elementNamesToHostOSRequirementStrings;
     NSMutableDictionary *_enumerationsByTypeNames;
     NSMutableDictionary *_bitmasksByTypeNames;
     NSMutableDictionary *_bitmasksByElementNames;
@@ -33,6 +34,8 @@
 - (id)bitmaskWithTypeName:(id)arg1;
 - (id)enumerationWithTypeName:(id)arg1;
 - (id)elementNameForClass:(Class)arg1;
+- (void)setHostOSRequirementString:(id)arg1 forElementName:(id)arg2;
+- (id)hostOSRequirementStringForElementName:(id)arg1;
 - (Class)classForElementName:(id)arg1;
 - (BOOL)isDefinedGroup:(id)arg1;
 - (BOOL)isDefinedArray:(id)arg1;

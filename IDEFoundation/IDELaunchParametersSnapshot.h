@@ -21,12 +21,12 @@
     BOOL _viewDebuggingEnabled;
     BOOL _shouldGenerateOptimizationProfile;
     int _launchStyle;
-    int _launchAutomaticallySubstyle;
     int _runnableType;
     unsigned int _debugProcessAsUID;
     int _enableGPUFrameCaptureMode;
     int _enableGPUValidationMode;
     int _debugServiceFD;
+    int _runnableDebuggingMode;
     int _internalIOSLaunchStyle;
     NSMutableDictionary *_testingEnvironmentVariables;
     NSDictionary *_environmentVariables;
@@ -36,6 +36,7 @@
     IDEEntityIdentifier *_schemeIdentifier;
     NSString *_selectedLauncherIdentifier;
     NSString *_selectedDebuggerIdentifier;
+    unsigned long long _launchAutomaticallySubstyle;
     NSString *_runnableBundleIdentifier;
     NSDictionary *_appExtensionBuiltPaths;
     DVTFilePath *_replacementRunnableLocation;
@@ -52,7 +53,6 @@
     NSString *_platformIdentifier;
     NSString *_buildConfiguration;
     id <IDEBuildableProduct> _buildableProduct;
-    NSSet *_additionalInstallations;
     NSSet *_buildProductDirectories;
     NSArray *_testingCommandLineArgs;
     NSArray *_testingAdditionalBuiltDependenciesProductPaths;
@@ -68,15 +68,16 @@
 }
 
 + (id)environmentVariablesToMergeFromTestingEnvironmentVariables;
-+ (id)launchParametersWithSchemeIdentifier:(id)arg1 launcherIdentifier:(id)arg2 debuggerIdentifier:(id)arg3 launchStyle:(int)arg4 runnableLocation:(id)arg5 debugProcessAsUID:(unsigned int)arg6 workingDirectory:(id)arg7 commandLineArgs:(id)arg8 environmentVariables:(id)arg9 architecture:(id)arg10 platformIdentifier:(id)arg11 buildConfiguration:(id)arg12 buildableProduct:(id)arg13 deviceAppDataPackage:(id)arg14 allowLocationSimulation:(BOOL)arg15 locationScenarioReference:(id)arg16 showNonLocalizedStrings:(BOOL)arg17 language:(id)arg18 region:(id)arg19 routingCoverageFileReference:(id)arg20 enableGPUFrameCaptureMode:(int)arg21 enableGPUValidationMode:(int)arg22 debugXPCServices:(BOOL)arg23 debugAppExtensions:(BOOL)arg24 internalIOSLaunchStyle:(int)arg25 internalIOSSubstitutionApp:(id)arg26 launchAutomaticallySubstyle:(int)arg27;
-+ (id)launchParametersWithSchemeIdentifier:(id)arg1 launcherIdentifier:(id)arg2 debuggerIdentifier:(id)arg3 launchStyle:(int)arg4 runnableLocation:(id)arg5 debugProcessAsUID:(unsigned int)arg6 workingDirectory:(id)arg7 commandLineArgs:(id)arg8 environmentVariables:(id)arg9 architecture:(id)arg10 platformIdentifier:(id)arg11 buildConfiguration:(id)arg12 buildableProduct:(id)arg13 deviceAppDataPackage:(id)arg14 allowLocationSimulation:(BOOL)arg15 locationScenarioReference:(id)arg16 showNonLocalizedStrings:(BOOL)arg17 language:(id)arg18 region:(id)arg19 routingCoverageFileReference:(id)arg20 enableGPUFrameCaptureMode:(int)arg21 enableGPUValidationMode:(int)arg22 simulatorIPhoneDisplay:(id)arg23 simulatorIPadDisplay:(id)arg24 debugXPCServices:(BOOL)arg25 additionalXPCServicesToDebug:(id)arg26 internalIOSLaunchStyle:(int)arg27 internalIOSSubstitutionApp:(id)arg28 launchAutomaticallySubstyle:(int)arg29;
-+ (id)launchParametersWithSchemeIdentifier:(id)arg1 launcherIdentifier:(id)arg2 debuggerIdentifier:(id)arg3 launchStyle:(int)arg4 runnableLocation:(id)arg5 debugProcessAsUID:(unsigned int)arg6 workingDirectory:(id)arg7 commandLineArgs:(id)arg8 environmentVariables:(id)arg9 architecture:(id)arg10 platformIdentifier:(id)arg11 buildConfiguration:(id)arg12 buildableProduct:(id)arg13 deviceAppDataPackage:(id)arg14 allowLocationSimulation:(BOOL)arg15 locationScenarioReference:(id)arg16 showNonLocalizedStrings:(BOOL)arg17 language:(id)arg18 region:(id)arg19 routingCoverageFileReference:(id)arg20 enableOpenGLFrameCaptureMode:(int)arg21 enableOpenGLPerformanceAnalysisMode:(int)arg22 simulatorIPhoneDisplay:(id)arg23 simulatorIPadDisplay:(id)arg24 debugXPCServices:(BOOL)arg25 additionalXPCServicesToDebug:(id)arg26 internalIOSLaunchStyle:(int)arg27 internalIOSSubstitutionApp:(id)arg28 launchAutomaticallySubstyle:(int)arg29;
++ (id)launchParametersWithSchemeIdentifier:(id)arg1 launcherIdentifier:(id)arg2 debuggerIdentifier:(id)arg3 launchStyle:(int)arg4 runnableLocation:(id)arg5 debugProcessAsUID:(unsigned int)arg6 workingDirectory:(id)arg7 commandLineArgs:(id)arg8 environmentVariables:(id)arg9 architecture:(id)arg10 platformIdentifier:(id)arg11 buildConfiguration:(id)arg12 buildableProduct:(id)arg13 deviceAppDataPackage:(id)arg14 allowLocationSimulation:(BOOL)arg15 locationScenarioReference:(id)arg16 showNonLocalizedStrings:(BOOL)arg17 language:(id)arg18 region:(id)arg19 routingCoverageFileReference:(id)arg20 enableGPUFrameCaptureMode:(int)arg21 enableGPUValidationMode:(int)arg22 debugXPCServices:(BOOL)arg23 debugAppExtensions:(BOOL)arg24 internalIOSLaunchStyle:(int)arg25 internalIOSSubstitutionApp:(id)arg26 launchAutomaticallySubstyle:(unsigned long long)arg27;
++ (id)launchParametersWithSchemeIdentifier:(id)arg1 launcherIdentifier:(id)arg2 debuggerIdentifier:(id)arg3 launchStyle:(int)arg4 runnableLocation:(id)arg5 debugProcessAsUID:(unsigned int)arg6 workingDirectory:(id)arg7 commandLineArgs:(id)arg8 environmentVariables:(id)arg9 architecture:(id)arg10 platformIdentifier:(id)arg11 buildConfiguration:(id)arg12 buildableProduct:(id)arg13 deviceAppDataPackage:(id)arg14 allowLocationSimulation:(BOOL)arg15 locationScenarioReference:(id)arg16 showNonLocalizedStrings:(BOOL)arg17 language:(id)arg18 region:(id)arg19 routingCoverageFileReference:(id)arg20 enableGPUFrameCaptureMode:(int)arg21 enableGPUValidationMode:(int)arg22 simulatorIPhoneDisplay:(id)arg23 simulatorIPadDisplay:(id)arg24 debugXPCServices:(BOOL)arg25 additionalXPCServicesToDebug:(id)arg26 internalIOSLaunchStyle:(int)arg27 internalIOSSubstitutionApp:(id)arg28 launchAutomaticallySubstyle:(unsigned long long)arg29;
++ (id)launchParametersWithSchemeIdentifier:(id)arg1 launcherIdentifier:(id)arg2 debuggerIdentifier:(id)arg3 launchStyle:(int)arg4 runnableLocation:(id)arg5 debugProcessAsUID:(unsigned int)arg6 workingDirectory:(id)arg7 commandLineArgs:(id)arg8 environmentVariables:(id)arg9 architecture:(id)arg10 platformIdentifier:(id)arg11 buildConfiguration:(id)arg12 buildableProduct:(id)arg13 deviceAppDataPackage:(id)arg14 allowLocationSimulation:(BOOL)arg15 locationScenarioReference:(id)arg16 showNonLocalizedStrings:(BOOL)arg17 language:(id)arg18 region:(id)arg19 routingCoverageFileReference:(id)arg20 enableOpenGLFrameCaptureMode:(int)arg21 enableOpenGLPerformanceAnalysisMode:(int)arg22 simulatorIPhoneDisplay:(id)arg23 simulatorIPadDisplay:(id)arg24 debugXPCServices:(BOOL)arg25 additionalXPCServicesToDebug:(id)arg26 internalIOSLaunchStyle:(int)arg27 internalIOSSubstitutionApp:(id)arg28 launchAutomaticallySubstyle:(unsigned long long)arg29;
 @property(copy) NSString *customLaunchCommand; // @synthesize customLaunchCommand=_customLaunchCommand;
 @property(copy) NSString *internalIOSSubstitutionApp; // @synthesize internalIOSSubstitutionApp=_internalIOSSubstitutionApp;
 @property(copy, nonatomic) NSString *optimizationProfilePathString; // @synthesize optimizationProfilePathString=_optimizationProfilePathString;
 @property BOOL shouldGenerateOptimizationProfile; // @synthesize shouldGenerateOptimizationProfile=_shouldGenerateOptimizationProfile;
 @property BOOL viewDebuggingEnabled; // @synthesize viewDebuggingEnabled=_viewDebuggingEnabled;
 @property int internalIOSLaunchStyle; // @synthesize internalIOSLaunchStyle=_internalIOSLaunchStyle;
+@property int runnableDebuggingMode; // @synthesize runnableDebuggingMode=_runnableDebuggingMode;
 @property(readonly) BOOL debugAppExtensions; // @synthesize debugAppExtensions=_debugAppExtensions;
 @property(readonly) BOOL debugXPCServices; // @synthesize debugXPCServices=_debugXPCServices;
 @property(readonly) NSString *deviceAppDataPackage; // @synthesize deviceAppDataPackage=_deviceAppDataPackage;
@@ -90,7 +91,6 @@
 @property(copy) NSArray *testingAdditionalBuiltDependenciesProductPaths; // @synthesize testingAdditionalBuiltDependenciesProductPaths=_testingAdditionalBuiltDependenciesProductPaths;
 @property(copy) NSArray *testingCommandLineArgs; // @synthesize testingCommandLineArgs=_testingCommandLineArgs;
 @property(copy) NSSet *buildProductDirectories; // @synthesize buildProductDirectories=_buildProductDirectories;
-@property(copy) NSSet *additionalInstallations; // @synthesize additionalInstallations=_additionalInstallations;
 @property(readonly) id <IDEBuildableProduct> buildableProduct; // @synthesize buildableProduct=_buildableProduct;
 @property(readonly) NSString *buildConfiguration; // @synthesize buildConfiguration=_buildConfiguration;
 @property(readonly) NSString *platformIdentifier; // @synthesize platformIdentifier=_platformIdentifier;
@@ -116,7 +116,7 @@
 @property(copy) NSDictionary *appExtensionBuiltPaths; // @synthesize appExtensionBuiltPaths=_appExtensionBuiltPaths;
 @property int runnableType; // @synthesize runnableType=_runnableType;
 @property(copy) NSString *runnableBundleIdentifier; // @synthesize runnableBundleIdentifier=_runnableBundleIdentifier;
-@property(readonly) int launchAutomaticallySubstyle; // @synthesize launchAutomaticallySubstyle=_launchAutomaticallySubstyle;
+@property(readonly) unsigned long long launchAutomaticallySubstyle; // @synthesize launchAutomaticallySubstyle=_launchAutomaticallySubstyle;
 @property(readonly) int launchStyle; // @synthesize launchStyle=_launchStyle;
 @property(readonly) NSString *selectedDebuggerIdentifier; // @synthesize selectedDebuggerIdentifier=_selectedDebuggerIdentifier;
 @property(readonly) NSString *selectedLauncherIdentifier; // @synthesize selectedLauncherIdentifier=_selectedLauncherIdentifier;

@@ -12,9 +12,11 @@
 
 @interface DVTSourceLanguageService : NSObject <DVTInvalidation>
 {
+    BOOL _semanticsDisabled;
     DVTSourceCodeLanguage *_language;
     id <DVTSourceLanguageServiceDelegate> _delegate;
     CDUnknownBlockType _contentGenerationCompletionBlock;
+    long long _status;
 }
 
 + (id)methodOrFunctionSourceLandmarkItemForSourceLandmarkItem:(id)arg1;
@@ -25,6 +27,8 @@
 + (void)initialize;
 + (Class)sourceLanguageServiceClassForLanguage:(id)arg1;
 + (id)sourceLanguageServiceForLanguage:(id)arg1 withDelegate:(id)arg2;
+@property(getter=isSemanticsDisabled) BOOL semanticsDisabled; // @synthesize semanticsDisabled=_semanticsDisabled;
+@property long long status; // @synthesize status=_status;
 @property(copy) CDUnknownBlockType contentGenerationCompletionBlock; // @synthesize contentGenerationCompletionBlock=_contentGenerationCompletionBlock;
 @property(nonatomic) id <DVTSourceLanguageServiceDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly) DVTSourceCodeLanguage *language; // @synthesize language=_language;

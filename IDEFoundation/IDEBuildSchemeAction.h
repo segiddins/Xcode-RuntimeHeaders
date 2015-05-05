@@ -52,6 +52,7 @@
 - (id)buildablesByConfiguration;
 - (id)buildableReferencesForSchemeCommand:(id)arg1;
 - (id)buildableReferences;
+- (id)extensionTypesOfBuildablesForSchemeCommand:(id)arg1 includingDependencies:(BOOL)arg2;
 - (id)buildablesForSchemeCommand:(id)arg1 includingDependencies:(BOOL)arg2;
 - (id)buildablesForSchemeCommand:(id)arg1 testingSpecifiers:(id)arg2 includingDependencies:(BOOL)arg3;
 - (id)buildablesForAllSchemeCommandsIncludingDependencies:(BOOL)arg1;
@@ -67,7 +68,7 @@
 - (id)subtitle;
 - (id)name;
 - (id)cleanOperationForExecutionEnvironment:(id)arg1 orderedBuildables:(id)arg2 buildConfiguration:(id)arg3 buildLog:(id)arg4 overridingProperties:(id)arg5 activeRunDestination:(id)arg6 activeArchitecture:(id)arg7 schemeActionRecord:(id)arg8 error:(id *)arg9;
-- (id)buildOperationForExecutionEnvironment:(id)arg1 buildPurpose:(int)arg2 buildCommand:(int)arg3 schemeCommand:(id)arg4 filePath:(id)arg5 buildConfiguration:(id)arg6 buildLog:(id)arg7 overridingProperties:(id)arg8 activeRunDestination:(id)arg9 activeArchitecture:(id)arg10 restorePersistedBuildResults:(BOOL)arg11 schemeActionRecord:(id)arg12 overridingBuildables:(id)arg13 error:(id *)arg14;
+- (id)buildOperationForExecutionEnvironment:(id)arg1 buildPurpose:(int)arg2 buildCommand:(int)arg3 schemeCommand:(id)arg4 filePath:(id)arg5 buildConfiguration:(id)arg6 buildLog:(id)arg7 overridingProperties:(id)arg8 activeRunDestination:(id)arg9 activeArchitecture:(id)arg10 dontActuallyRunCommands:(BOOL)arg11 restorePersistedBuildResults:(BOOL)arg12 schemeActionRecord:(id)arg13 overridingBuildables:(id)arg14 error:(id *)arg15;
 - (id)overridingBuildSettingsForSchemeCommand:(id)arg1;
 - (id)buildFolderPathForPGO;
 - (void)setRunContext:(id)arg1;

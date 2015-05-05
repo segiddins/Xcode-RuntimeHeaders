@@ -17,14 +17,17 @@
     NSString *_buildNumber;
 }
 
++ (id)userRepresentationOfVersion:(id)arg1 build:(id)arg2;
 + (id)currentSystemVersion;
 + (id)versionWithStringValue:(id)arg1;
 + (id)versionWithStringValue:(id)arg1 buildNumber:(id)arg2;
 + (id)versionWithMajorComponent:(unsigned long long)arg1 minorComponent:(unsigned long long)arg2 updateComponent:(unsigned long long)arg3;
++ (id)versionWithAvailabilityForm:(unsigned long long)arg1;
 + (void)initialize;
 @property(copy) NSString *buildNumber; // @synthesize buildNumber=_buildNumber;
 - (void).cxx_destruct;
 - (unsigned long long)availabilityFormIncludingUpdate:(BOOL)arg1 shortForm:(BOOL)arg2;
+- (unsigned long long)availabilityFormIncludingUpdate:(BOOL)arg1;
 - (id)initWithString:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (BOOL)isEqualToOrNewerThanVersion:(id)arg1;

@@ -14,7 +14,6 @@
 - (void)createHostedRepositoryWithName:(NSString *)arg1 onService:(id)arg2 completionHandler:(void (^)(BOOL, NSError *, DVTSourceControlRemoteRepository *))arg3;
 - (NSURL *)webURLForIntegration:(id)arg1;
 - (NSURL *)webURLForBot:(id)arg1;
-- (void)refreshWhichServicesUserCanCreateAndDeleteBots;
 - (BOOL)canUserCreateAndDeleteBotsOnServiceForBotOrIntegration:(id)arg1;
 - (BOOL)canUserCreateBotsOnAnyService;
 - (NSString *)projectNameInBlueprintForBot:(id)arg1;

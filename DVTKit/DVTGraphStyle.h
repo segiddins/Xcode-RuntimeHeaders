@@ -12,6 +12,8 @@
 {
     NSDictionary *_axisLabelAttributes;
     BOOL _showsAxis;
+    BOOL _showsXAxisLabels;
+    BOOL _showsYAxisLabels;
     BOOL _showsXAxisMajorGridlines;
     BOOL _showsYAxisMajorGridlines;
     int _graphBorderStyle;
@@ -35,6 +37,8 @@
 @property(copy, nonatomic) NSColor *majorGridlinesColor; // @synthesize majorGridlinesColor=_majorGridlinesColor;
 @property(nonatomic) BOOL showsYAxisMajorGridlines; // @synthesize showsYAxisMajorGridlines=_showsYAxisMajorGridlines;
 @property(nonatomic) BOOL showsXAxisMajorGridlines; // @synthesize showsXAxisMajorGridlines=_showsXAxisMajorGridlines;
+@property(nonatomic) BOOL showsYAxisLabels; // @synthesize showsYAxisLabels=_showsYAxisLabels;
+@property(nonatomic) BOOL showsXAxisLabels; // @synthesize showsXAxisLabels=_showsXAxisLabels;
 @property(copy, nonatomic) NSNumberFormatter *yAxisNumberFormatter; // @synthesize yAxisNumberFormatter=_yAxisNumberFormatter;
 @property(copy, nonatomic) NSNumberFormatter *xAxisNumberFormatter; // @synthesize xAxisNumberFormatter=_xAxisNumberFormatter;
 @property(nonatomic) double yAxisTitleOffset; // @synthesize yAxisTitleOffset=_yAxisTitleOffset;

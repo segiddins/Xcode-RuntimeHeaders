@@ -8,13 +8,19 @@
 
 @interface DVTNewTabButton : DVTRolloverTrackingButton
 {
-    int _rolloverStyle;
+    BOOL _usesRolloverAppearanceInInactiveWindow;
+    BOOL _usesRolloverAppearanceOnMouseDown;
 }
 
-- (void)setRolloverStyle:(int)arg1;
-- (int)rolloverStyle;
-- (id)initWithFrame:(struct CGRect)arg1;
++ (double)width;
++ (id)installNewTabButtonInView:(id)arg1;
+@property(nonatomic) BOOL usesRolloverAppearanceOnMouseDown; // @synthesize usesRolloverAppearanceOnMouseDown=_usesRolloverAppearanceOnMouseDown;
+@property(nonatomic) BOOL usesRolloverAppearanceInInactiveWindow; // @synthesize usesRolloverAppearanceInInactiveWindow=_usesRolloverAppearanceInInactiveWindow;
+- (void)_windowChangedKeyState;
+- (void)awakeFromNib;
+- (id)imageForCurrentButtonState;
 - (void)drawRect:(struct CGRect)arg1;
+- (id)initWithFrame:(struct CGRect)arg1;
 
 @end
 

@@ -73,6 +73,8 @@
 - (id)_authoringEnvironment;
 - (void)set_showsAuthoringEnvironment:(BOOL)arg1;
 - (BOOL)_showsAuthoringEnvironment;
+- (unsigned long long)debugSettings;
+- (void)setDebugSettings:(unsigned long long)arg1;
 - (id)initOffscreenRendererWithSize:(struct CGSize)arg1 options:(id)arg2;
 - (struct CGImage *)copySnapshotWithSize:(struct CGSize)arg1;
 - (void)_jitterAtStep:(unsigned long long)arg1 updateMainFramebuffer:(BOOL)arg2 redisplay:(BOOL)arg3 jitterer:(id)arg4;

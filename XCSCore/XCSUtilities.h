@@ -10,9 +10,14 @@
 {
 }
 
++ (void)removeValueForKeyPath:(id)arg1 rootObject:(id)arg2;
++ (unsigned long long)sanitizeOperationFromObject:(id)arg1;
++ (void)sanitizeRootObject:(id)arg1 traversingObject:(id)arg2 usingKey:(id)arg3 index:(unsigned long long)arg4;
++ (id)sanitizeDictionary:(id)arg1;
 + (id)object:(id)arg1 JSONParseWithError:(id *)arg2;
 + (id)object:(id)arg1 toJSONDataWithError:(id *)arg2;
 + (id)object:(id)arg1 toJSONWithError:(id *)arg2;
++ (id)errorFromException:(id)arg1 domain:(id)arg2 code:(long long)arg3;
 + (id)userInfoWithDescription:(id)arg1 method:(SEL)arg2;
 + (id)timestampUSLocale;
 + (id)urlEncode:(id)arg1;

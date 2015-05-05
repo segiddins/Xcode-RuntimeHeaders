@@ -10,7 +10,6 @@
 
 @protocol IBPrimarySceneObject <NSObject>
 @property(copy, nonatomic) IBSimulatedMetricsContainer *inheritedSimulatedMetrics;
-- (BOOL)ibCanBecomeDesignatedEntryPoint;
 - (NSString *)ibShortDisplayName;
 - (BOOL)ibIsPrimarySceneObject:(NSObject<IBPrimarySceneObject> *)arg1 validSplitViewDetailWithSegue:(IBStoryboardRelationshipSegue *)arg2;
 - (BOOL)ibIsPrimarySceneObject:(NSObject<IBPrimarySceneObject> *)arg1 validSplitViewMasterWithSegue:(IBStoryboardRelationshipSegue *)arg2;

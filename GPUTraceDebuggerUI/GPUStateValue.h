@@ -43,6 +43,7 @@
 - (id)_contentDescription;
 - (id)_contentDescriptionWithChildValuesAtLevel:(unsigned long long)arg1;
 @property(readonly, copy) NSString *description;
+- (BOOL)isMemoryFault;
 @property(readonly) BOOL childValuesCountValid;
 @property(readonly) BOOL hasChildValues;
 @property(readonly) BOOL inScope;

@@ -25,7 +25,6 @@
 - (id)effectiveStoryboardIdentifierPrefix;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)ibCanBecomeDesignatedEntryPoint;
 - (id)ibShortDisplayName;
 - (BOOL)ibIsPrimarySceneObject:(id)arg1 validSplitViewDetailWithSegue:(id)arg2;
 - (BOOL)ibIsPrimarySceneObject:(id)arg1 validSplitViewMasterWithSegue:(id)arg2;
@@ -48,7 +47,6 @@
 - (id)ibEditorCanvasFrameControllerForDocument:(id)arg1;
 - (struct CGSize)effectiveSimulatedContentSize;
 - (id)ibEditorViewWithSuggestedSize:(struct CGSize)arg1 forDocument:(id)arg2;
-- (void)ibWillRemoveFromDocument:(id)arg1 previouslyMemberOfGroup:(id)arg2;
 - (void)ibDidExtractObjects:(id)arg1 fromPasteboard:(id)arg2 intoDocument:(id)arg3 context:(id)arg4;
 - (void)ibDidBecomeControllerForCompilationGroup;
 - (void)ibAddStoryboardSegueTemplate:(id)arg1;

@@ -42,6 +42,9 @@
 @property int position; // @synthesize position=_position;
 @property(nonatomic, getter=isExpanded) BOOL expanded; // @synthesize expanded=_expanded;
 - (void).cxx_destruct;
+- (id)accessibilityAttributeValue:(id)arg1;
+- (id)accessibilityAttributeNames;
+- (BOOL)accessibilityIsIgnored;
 - (id)_collapseButtonTrianglePathInRect:(struct CGRect)arg1;
 - (id)_backgroundBezierPathInRect:(struct CGRect)arg1;
 - (void)noticeFontAndColorsChanged;

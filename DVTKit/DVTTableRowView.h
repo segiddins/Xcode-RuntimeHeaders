@@ -6,15 +6,32 @@
 
 #import "NSTableRowView.h"
 
+@class DVTTableCellViewVibrantView, NSColor;
+
 @interface DVTTableRowView : NSTableRowView
 {
+    DVTTableCellViewVibrantView *_secondaryHighlightView;
+    BOOL _drawsSecondaryHighlight;
+    NSColor *_rowGridLineColor;
+    CDStruct_2b6e6e30 _rowGridLineInset;
 }
 
+@property(retain) NSColor *rowGridLineColor; // @synthesize rowGridLineColor=_rowGridLineColor;
+@property CDStruct_2b6e6e30 rowGridLineInset; // @synthesize rowGridLineInset=_rowGridLineInset;
+@property(nonatomic) BOOL drawsSecondaryHighlight; // @synthesize drawsSecondaryHighlight=_drawsSecondaryHighlight;
+- (void).cxx_destruct;
 - (BOOL)isOpaque;
+- (void)didAddSubview:(id)arg1;
+- (void)_updateSecondaryHighlightViewFrame;
+- (void)setSelected:(BOOL)arg1;
 - (void)drawBackgroundInRect:(struct CGRect)arg1;
 - (long long)groupRowStyle2;
 - (void)drawSeparatorInRect:(struct CGRect)arg1;
 - (struct CGRect)separatorRectForTable:(id)arg1;
+- (CDStruct_2b6e6e30)rowGridLineInsetForTableView:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithFrame:(struct CGRect)arg1;
+- (void)dvt_commonInit;
 
 @end
 

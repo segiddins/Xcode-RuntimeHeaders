@@ -35,6 +35,7 @@
     NSArray *_savedItemsToExpand;
     DVTDispatchLock *_accessLock;
     unsigned long long _currentGeneration;
+    long long _savedClickedRowIndex;
     DVTPerformanceMetric *_loadingMetric;
     long long _loadingProgress;
     BOOL _restoringState;

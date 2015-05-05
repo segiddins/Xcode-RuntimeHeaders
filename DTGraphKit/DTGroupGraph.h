@@ -13,6 +13,7 @@
     NSArray *_graphTypes;
 }
 
+- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)setFrameSize:(struct CGSize)arg1;
 - (void)setGraphTypes:(id)arg1;
@@ -20,7 +21,6 @@
 - (void)setModel:(id)arg1;
 - (void)clearCache;
 - (void)_createViewsInSize:(struct CGSize)arg1;
-- (void)dealloc;
 
 @end
 

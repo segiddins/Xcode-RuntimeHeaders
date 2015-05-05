@@ -24,10 +24,12 @@
     CDUnknownBlockType _loadURLBlock;
     BOOL _singleFrameMode;
     BOOL _abort;
+    BOOL _usePreSortHeuristics;
 }
 
 + (id)getLocalizedString:(id)arg1 table:(id)arg2 forGraphicsAPI:(unsigned int)arg3;
 + (id)getLocalizedString:(id)arg1 forGraphicsAPI:(unsigned int)arg2;
+@property(nonatomic) BOOL usePreSortHeuristics; // @synthesize usePreSortHeuristics=_usePreSortHeuristics;
 @property(readonly, nonatomic) BOOL singleFrameMode; // @synthesize singleFrameMode=_singleFrameMode;
 @property(nonatomic) int drawCallNum; // @synthesize drawCallNum=_drawCallNum;
 @property(nonatomic) int frameNum; // @synthesize frameNum=_frameNum;

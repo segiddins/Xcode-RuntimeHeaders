@@ -6,11 +6,10 @@
 
 #import <IDELanguageSupportUI/IDEBasicPlaygroundQuickLookForObjectReflection.h>
 
-@class DVTColorSwatchWithComponentsView, IDEPlaygroundLoggerObjectReflectionForColor, NSLayoutConstraint, NSView;
+@class DVTColorSwatchWithComponentsView, NSLayoutConstraint, NSView;
 
 @interface IDEPlaygroundQuickLookForColor : IDEBasicPlaygroundQuickLookForObjectReflection
 {
-    IDEPlaygroundLoggerObjectReflectionForColor *_objectReflectionForColor;
     NSView *_naturalView;
     DVTColorSwatchWithComponentsView *_naturalColorSwatchWithComponentsView;
     NSLayoutConstraint *_leadingConstraint;
@@ -21,8 +20,8 @@
 @property __weak NSLayoutConstraint *leadingConstraint; // @synthesize leadingConstraint=_leadingConstraint;
 @property __weak DVTColorSwatchWithComponentsView *naturalColorSwatchWithComponentsView; // @synthesize naturalColorSwatchWithComponentsView=_naturalColorSwatchWithComponentsView;
 @property __weak NSView *naturalView; // @synthesize naturalView=_naturalView;
-@property(readonly) IDEPlaygroundLoggerObjectReflectionForColor *objectReflectionForColor; // @synthesize objectReflectionForColor=_objectReflectionForColor;
 - (void).cxx_destruct;
+- (id)iconOnlyViewForCollectionView;
 - (id)quickLookViewForResultsView;
 - (id)quickLookViewForNaturalSize;
 - (void)loadView;

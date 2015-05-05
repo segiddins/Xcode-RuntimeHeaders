@@ -13,7 +13,6 @@
 @interface IDEGroup : IDEContainerItem <IDEStructureEditing>
 {
     IDEContainer *_container;
-    NSString *_name;
     DVTFilePath *_resolvedFilePath;
     DVTCopyOnWriteMutableArray *_subitems;
     BOOL _subitemsAreValid;
@@ -21,6 +20,7 @@
     int _sourceControlLocalStatus;
     int _sourceControlServerStatus;
     unsigned long long _conflictStateForUpdateOrMerge;
+    NSString *_name;
 }
 
 + (Class)_groupClassForGroup:(id)arg1;

@@ -66,7 +66,6 @@
     NSOrderedSet *_autolayoutStatusArbitrationUnitsScope;
 }
 
-+ (id)debugCompiledDocumentFileExtension;
 + (void)configureStateSavingObjectPersistenceByName:(id)arg1;
 + (id)visibleDocumentEditorControllersFromBackToFrontInDocument:(id)arg1;
 + (void)revealDocumentMemberAtLocation:(id)arg1 withEditor:(id)arg2 openSpecifierCustomizationBlock:(CDUnknownBlockType)arg3;

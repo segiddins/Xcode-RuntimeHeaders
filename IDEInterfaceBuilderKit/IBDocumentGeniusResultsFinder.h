@@ -6,12 +6,13 @@
 
 #import "IDEIndexGeniusResultsFinder.h"
 
-@class IBDocument, NSSet;
+@class DVTDelayedInvocation, IBDocument, NSSet;
 
 @interface IBDocumentGeniusResultsFinder : IDEIndexGeniusResultsFinder
 {
     NSSet *interfaceBuilderObjectKVOObservations;
     NSSet *documentNotificationTokens;
+    DVTDelayedInvocation *delayedUpdateInvocation;
 }
 
 + (Class)editorDocumentClass;

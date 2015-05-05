@@ -107,6 +107,7 @@
 - (id)miniWindowDragImage;
 - (int)leftSeparatorMode;
 - (unsigned long long)lastMouseDownModifierFlagsForCloseButton;
+- (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1 tabViewItem:(id)arg2;
 - (void)destroy;
 - (void)closeTab:(id)arg1;

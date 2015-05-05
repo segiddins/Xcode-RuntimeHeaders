@@ -41,7 +41,11 @@
 - (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)dictionaryRepresentationWithOptions:(unsigned long long)arg1;
+- (id)saveBlueprintInFolder:(id)arg1 options:(unsigned long long)arg2;
+- (id)jsonDataRepresentationWithOptions:(unsigned long long)arg1;
 - (id)initWithDictionary:(id)arg1 sshKeyDirectory:(id)arg2;
+- (id)initWithBlueprintFile:(id)arg1 sshKeyDirectory:(id)arg2;
+- (id)initWithJSONData:(id)arg1 sshKeyDirectory:(id)arg2;
 - (id)_dataFromString:(id)arg1;
 - (id)_stringFromData:(id)arg1;
 - (id)initWithDictionary:(id)arg1;

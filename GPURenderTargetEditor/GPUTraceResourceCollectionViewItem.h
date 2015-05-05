@@ -4,28 +4,27 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSCollectionViewItem.h"
+#import "UXCollectionViewCell.h"
 
-@class GPUResourceThumbnailBox, NSImageView, NSTextField;
+@class CALayer, GPUTraceResourceItem, NSTextField;
 
 __attribute__((visibility("hidden")))
-@interface GPUTraceResourceCollectionViewItem : NSCollectionViewItem
+@interface GPUTraceResourceCollectionViewItem : UXCollectionViewCell
 {
-    GPUResourceThumbnailBox *_boxView;
+    GPUTraceResourceItem *_resourceItem;
+    CALayer *_imageLayer;
+    NSTextField *_label;
 }
 
-@property GPUResourceThumbnailBox *boxView; // @synthesize boxView=_boxView;
-- (void)invalidateThumbnail;
-- (void)doubleClick:(id)arg1;
+@property(retain, nonatomic) NSTextField *label; // @synthesize label=_label;
+@property(retain, nonatomic) CALayer *imageLayer; // @synthesize imageLayer=_imageLayer;
+@property(retain, nonatomic) GPUTraceResourceItem *resourceItem; // @synthesize resourceItem=_resourceItem;
+- (void).cxx_destruct;
+- (void)recalculateThumbnailWithScale:(double)arg1;
 - (void)updateViewUsingRepresentedObject;
-- (void)setView:(id)arg1;
-- (void)setRepresentedObject:(id)arg1;
-- (id)representedObjectAsResourceItem;
 - (void)setSelected:(BOOL)arg1;
-
-// Remaining properties
-@property NSImageView *imageView;
-@property NSTextField *textField;
+- (void)prepareForReuse;
+- (id)initWithFrame:(struct CGRect)arg1;
 
 @end
 

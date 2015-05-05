@@ -6,12 +6,15 @@
 
 #import <IDEFoundation/IDESourceControlTree.h>
 
-@class DVTDispatchLock, DVTFilePath, IDESourceControlBranch, IDESourceControlRepository, IDESourceControlWorkingCopyConfiguration, NSArray, NSDate, NSMutableArray, NSMutableDictionary, NSMutableSet, NSOperationQueue, NSString;
+@class DVTDispatchLock, DVTFilePath, IDESourceControlBranch, IDESourceControlRepository, IDESourceControlWorkingCopyConfiguration, NSArray, NSDate, NSMutableArray, NSMutableDictionary, NSMutableSet, NSMutableString, NSOperationQueue, NSString;
 
 @interface IDESourceControlWorkingTree : IDESourceControlTree
 {
     IDESourceControlWorkingCopyConfiguration *_wcc;
     IDESourceControlBranch *_currentBranch;
+    long long _fileReferenceStatusProcessingQueueLockCount;
+    NSMutableString *_fileReferenceStatusProcessingBacktraces;
+    NSOperationQueue *_fileReferenceStatusProcessingQueue;
     NSMutableArray *_itemsWithStatus;
     NSOperationQueue *_status_processing_queue;
     DVTFilePath *_filePath;
@@ -27,7 +30,6 @@
     BOOL _checkedForUpgrade;
 }
 
-+ (id)_fileReferenceStatusProcessingQueue;
 @property BOOL checkedForUpgrade; // @synthesize checkedForUpgrade=_checkedForUpgrade;
 @property BOOL needsUpgrade; // @synthesize needsUpgrade=_needsUpgrade;
 @property BOOL representsGitSVNBridge; // @synthesize representsGitSVNBridge=_representsGitSVNBridge;
@@ -56,6 +58,7 @@
 - (void)addUpdateFileReferenceStatueseBlock:(CDUnknownBlockType)arg1;
 - (void)updateFileReferenceStatusesAndWaitForFinish:(BOOL)arg1;
 - (void)blockUpdatingFileReferenceStatuses;
+- (id)fileReferenceStatusProcessingQueue;
 - (id)trackRemoteBranch:(id)arg1 withLocalBranchName:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (void)invalidateCurrentBranch;
 - (id)switchToBranch:(id)arg1 inWorkspace:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;

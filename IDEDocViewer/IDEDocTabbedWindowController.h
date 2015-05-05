@@ -16,7 +16,7 @@
 #import "NSToolbarDelegate.h"
 #import "NSWindowDelegate.h"
 
-@class DVTBarBackground, DVTDelayedInvocation, DVTObservingToken, DVTSegmentedControl, DVTStateRepository, DVTStateToken, DVTTabBarEnclosureView, IDEDocDocumentationTabViewController, IDEDocSearchController, IDEDocSearchResultsController, IDEDocToolbar, IDEDocToolbarItem, IDEDocWebHistoryMenu, NSArray, NSMapTable, NSMenu, NSMutableArray, NSSegmentedControl, NSString, NSTabView, NSTextField, NSToolbarItem, NSURL, NSView;
+@class DVTBarBackground, DVTDelayedInvocation, DVTObservingToken, DVTSegmentedControl, DVTStateRepository, DVTStateToken, DVTTabBarEnclosureView, IDECustomToolbar, IDEDocDocumentationTabViewController, IDEDocSearchController, IDEDocSearchResultsController, IDEDocToolbarItem, IDEDocWebHistoryMenu, NSArray, NSMapTable, NSMenu, NSMutableArray, NSSegmentedControl, NSString, NSTabView, NSTextField, NSToolbarItem, NSURL, NSView;
 
 @interface IDEDocTabbedWindowController : NSWindowController <DVTTabbedWindowControlling, NSTextFieldDelegate, NSWindowDelegate, IDEDocSearchField_FieldEditorProtocol, DVTStatefulObject, DVTStateRepositoryDelegate, NSToolbarDelegate, IDEDocTabbedWindowControllerProtocol, IDEEditorMenuContentProvider>
 {
@@ -56,7 +56,7 @@
     DVTBarBackground *_tabBarView;
     NSTabView *_tabView;
     DVTTabBarEnclosureView *_tabBarEnclosureView;
-    IDEDocToolbar *_toolbar;
+    IDECustomToolbar *_toolbar;
     NSTextField *_toolbarSearchTextField;
     NSView *_toolbar_searchFieldContainerView;
     NSSegmentedControl *_toolbar_backForward;
@@ -97,7 +97,7 @@
 @property NSSegmentedControl *toolbar_backForward; // @synthesize toolbar_backForward=_toolbar_backForward;
 @property NSView *toolbar_searchFieldContainerView; // @synthesize toolbar_searchFieldContainerView=_toolbar_searchFieldContainerView;
 @property NSTextField *toolbarSearchTextField; // @synthesize toolbarSearchTextField=_toolbarSearchTextField;
-@property IDEDocToolbar *toolbar; // @synthesize toolbar=_toolbar;
+@property IDECustomToolbar *toolbar; // @synthesize toolbar=_toolbar;
 @property DVTTabBarEnclosureView *tabBarEnclosureView; // @synthesize tabBarEnclosureView=_tabBarEnclosureView;
 @property NSTabView *tabView; // @synthesize tabView=_tabView;
 @property(retain, nonatomic) DVTBarBackground *tabBarView; // @synthesize tabBarView=_tabBarView;
@@ -210,8 +210,8 @@
 - (void)close;
 - (void)windowDidLoad;
 - (void)_updateToolbarIsVisible;
-- (BOOL)_canToggleToolbar;
 - (void)toggleToolbarShown:(id)arg1;
+- (BOOL)isEnteringOrInFullScreenMode;
 - (BOOL)isInFullScreenMode;
 @property(readonly) BOOL moreThanOneTabShowing;
 - (BOOL)closeKeyEquivalentClosesTab;
@@ -273,8 +273,9 @@
 - (id)_newTabWithName:(id)arg1 andShow:(BOOL)arg2 withInstalledTabControllerBlock:(CDUnknownBlockType)arg3;
 - (id)newTabWithName:(id)arg1;
 - (id)_uniqueNameForNewWorkspaceTabController;
+- (void)newTabWithinWindow:(id)arg1;
 - (void)newTab:(id)arg1;
-- (void)_updateFullScreenAuxiliaryToolbarViewSizes;
+- (void)_updateAuxiliaryToolbarViewSizes;
 @property(readonly) BOOL _shouldShowTabBar;
 - (void)_setTabBarVisible:(BOOL)arg1;
 - (BOOL)_alwaysShowTabBar;

@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-@class IDEPlaygroundExecutionParameters, IDEPlaygroundPreparationParameters, NSDictionary;
+@class DVTFilePath, IDEPlaygroundExecutionParameters, IDEPlaygroundPreparationParameters, NSDictionary;
 
 @protocol IDEPlaygroundRunnerProtocol
 - (void)checkForCancellationWithReply:(void (^)(BOOL))arg1;
@@ -13,6 +13,7 @@
 - (void)designateSessionForExecutionParameters:(IDEPlaygroundExecutionParameters *)arg1;
 - (void)executePlayground:(void (^)(void))arg1;
 - (void)configureWithPreparationParameters:(IDEPlaygroundPreparationParameters *)arg1;
+- (void)initializeFrameworksIfNecessaryWithDeveloperDirectory:(DVTFilePath *)arg1;
 - (void)registerExtraUserDefaultsIfNecessary:(NSDictionary *)arg1;
 @end
 

@@ -12,6 +12,7 @@
 {
     NSMutableArray *_initializationBlocks;
     NSMutableArray *_notificationDocumentUpdateBlocks;
+    NSMutableArray *_notificationSemanticsDisabledBlocks;
     int _serviceStatus;
 }
 
@@ -22,6 +23,8 @@
 - (void).cxx_destruct;
 - (void)handleNotification:(void *)arg1;
 - (void)handleConnectionRestored;
+- (void)removeSemanticsDisabledNotificationBlock:(id)arg1;
+- (id)addSemanticsDisabledNotificationBlock:(CDUnknownBlockType)arg1;
 - (void)removeDocumentUpdateNotificationBlock:(id)arg1;
 - (id)addDocumentUpdateNotificationBlock:(CDUnknownBlockType)arg1;
 - (void)removeInitializationBlock:(id)arg1;

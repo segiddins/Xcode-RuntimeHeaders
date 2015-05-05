@@ -8,7 +8,7 @@
 
 #import "IDEPlaygroundSectionViewController.h"
 
-@class DVTNotificationToken, IDEDocumentationPlaygroundSection, IDEPlaygroundEditor, NSArray, NSString, WebView;
+@class DVTNotificationToken, DVTObservingToken, IDEDocumentationPlaygroundSection, IDEPlaygroundEditor, NSArray, NSString, WebView;
 
 @interface IDEDocumentationPlaygroundSectionViewController : IDEViewController <IDEPlaygroundSectionViewController>
 {
@@ -20,10 +20,14 @@
     DVTNotificationToken *_webHTMLViewFrameChangeNotificationToken;
     DVTNotificationToken *_webViewFrameChangeNotificationToken;
     DVTNotificationToken *_fontAndColorSettingsChangedNotificationToken;
+    DVTObservingToken *_accessoryAnnotationWidthObservingToken;
+    DVTObservingToken *_quarantinedDocumentObservingToken;
 }
 
 + (void)initialize;
 @property BOOL sizingToContent; // @synthesize sizingToContent=_sizingToContent;
+@property(retain) DVTObservingToken *quarantinedDocumentObservingToken; // @synthesize quarantinedDocumentObservingToken=_quarantinedDocumentObservingToken;
+@property(retain) DVTObservingToken *accessoryAnnotationWidthObservingToken; // @synthesize accessoryAnnotationWidthObservingToken=_accessoryAnnotationWidthObservingToken;
 @property(retain) DVTNotificationToken *fontAndColorSettingsChangedNotificationToken; // @synthesize fontAndColorSettingsChangedNotificationToken=_fontAndColorSettingsChangedNotificationToken;
 @property(retain) DVTNotificationToken *webViewFrameChangeNotificationToken; // @synthesize webViewFrameChangeNotificationToken=_webViewFrameChangeNotificationToken;
 @property(retain) DVTNotificationToken *webHTMLViewFrameChangeNotificationToken; // @synthesize webHTMLViewFrameChangeNotificationToken=_webHTMLViewFrameChangeNotificationToken;
@@ -38,6 +42,8 @@
 - (id)webView:(id)arg1 contextMenuItemsForElement:(id)arg2 defaultMenuItems:(id)arg3;
 - (void)webView:(id)arg1 didFinishLoadForFrame:(id)arg2;
 - (void)loadView;
+- (id)_htmlPostamble;
+- (id)_htmlPreamble;
 - (void)_sizeToDoc;
 - (id)initWithDocumentationPlaygroundSection:(id)arg1 editor:(id)arg2;
 

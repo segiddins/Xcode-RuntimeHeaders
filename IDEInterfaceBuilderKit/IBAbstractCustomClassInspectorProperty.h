@@ -67,6 +67,7 @@
 - (id)inspectorController;
 - (id)activeWorkspaceTabController;
 - (id)workspaceWindowController;
+- (void)primitiveInvalidate;
 - (id)initWithPropertyDefinition:(id)arg1 andController:(id)arg2;
 
 @end

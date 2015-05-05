@@ -14,10 +14,12 @@
 {
     NSDictionary *_infoPlist;
     NSDictionary *_versionPlist;
-    unsigned int _interposeVersion;
+    unsigned int _interposeVersionGL;
+    unsigned int _interposeVersionMetal;
 }
 
-@property(nonatomic) unsigned int interposeVersion; // @synthesize interposeVersion=_interposeVersion;
+@property(nonatomic) unsigned int interposeVersionMetal; // @synthesize interposeVersionMetal=_interposeVersionMetal;
+@property(nonatomic) unsigned int interposeVersionGL; // @synthesize interposeVersionGL=_interposeVersionGL;
 @property(copy, nonatomic) NSDictionary *versionPlist; // @synthesize versionPlist=_versionPlist;
 @property(copy, nonatomic) NSDictionary *infoPlist; // @synthesize infoPlist=_infoPlist;
 - (id)objectForVersionPlistKey:(id)arg1;

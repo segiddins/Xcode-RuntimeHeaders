@@ -6,14 +6,16 @@
 
 #import "IDESourceCodeEditor.h"
 
-@class DVTMapTable, DVTObservingToken, IDEPlaygroundDocument, IDEPlaygroundEditorStackView_ML, IDEPlaygroundSourceTextScrollView, NSArray, NSCountedSet, NSMutableArray, NSMutableSet, NSSet;
+@class DVTBorderedView, DVTMapTable, DVTObservingToken, DVTPerformanceMetric, DVTStepperTextField, IDEPlaygroundDocument, IDEPlaygroundEditorStackView_ML, IDEPlaygroundSourceTextScrollView, NSArray, NSCountedSet, NSDate, NSMutableArray, NSMutableSet, NSProgressIndicator, NSSet, NSSlider;
 
 @interface IDEPlaygroundEditor : IDESourceCodeEditor
 {
     NSMutableArray *_sectionViewControllers;
     IDEPlaygroundEditorStackView_ML *_editorStackView;
-    IDEPlaygroundSourceTextScrollView *_globalScrollView;
+    IDEPlaygroundSourceTextScrollView *_topLevelPlaygroundScrollView;
+    DVTBorderedView *_scrollAndTimelineContainer;
     id <DVTCancellable> _clipViewFillToken;
+    NSProgressIndicator *_progressIndicator;
     NSCountedSet *_countedToysSelectedInRegisteredToyboxes;
     NSMutableSet *_toysSelectedInRegisteredToyboxes;
     struct _NSRange _lastEditedCharRangeForExecution;
@@ -28,16 +30,25 @@
     BOOL _playgroundExecutionWasEverScheduled;
     DVTMapTable *_toyboxEditorToSelectedToyObserverTokensMap;
     BOOL _alreadySetUp;
+    DVTPerformanceMetric *_loadPerformanceMetric;
+    DVTPerformanceMetric *_closePerformanceMetric;
+    NSSlider *_globalTimeSlider;
+    DVTStepperTextField *_timeTextField;
+    DVTBorderedView *_sliderContainerView;
+    DVTObservingToken *_toyboxExecutionInProgressObservingToken;
+    NSDate *_selectedResultDisplayDate;
 }
 
 + (void)configureStateSavingObjectPersistenceByName:(id)arg1;
 + (double)defaultPlaygroundSidebarWidth;
 + (void)setDefaultPlaygroundSidebarWidth:(double)arg1;
 + (void)initialize;
-@property(retain) IDEPlaygroundSourceTextScrollView *globalScrollView; // @synthesize globalScrollView=_globalScrollView;
+@property(retain, nonatomic) NSDate *selectedResultDisplayDate; // @synthesize selectedResultDisplayDate=_selectedResultDisplayDate;
 - (void).cxx_destruct;
+@property(readonly) BOOL documentSectionDrawsOverAccessory;
 - (void)presentError:(id)arg1 delegate:(id)arg2 didPresentSelector:(SEL)arg3 contextInfo:(void *)arg4;
 - (void)executePlaygroundFromSerializedData;
+- (void)toggleQuickLookInline:(id)arg1;
 - (void)execute:(id)arg1;
 - (void)cancelExecution;
 - (void)executePlayground;
@@ -53,8 +64,6 @@
 - (BOOL)textView:(id)arg1 shouldChangeTextInRange:(struct _NSRange)arg2 replacementString:(id)arg3;
 - (struct _NSRange)textView:(id)arg1 willChangeSelectionFromCharacterRange:(struct _NSRange)arg2 toCharacterRange:(struct _NSRange)arg3;
 - (id)annotationContextForTextView:(id)arg1;
-- (id)completingTextView:(id)arg1 documentLocationForWordStartLocation:(unsigned long long)arg2;
-- (void)completingTextView:(id)arg1 willPassContextToStrategies:(id)arg2 atWordStartLocation:(unsigned long long)arg3;
 - (id)sdk;
 - (id)languageService;
 - (void)navigateToAnnotationWithRepresentedObject:(id)arg1 wantsIndicatorAnimation:(BOOL)arg2 exploreAnnotationRepresentedObject:(id)arg3;
@@ -62,12 +71,20 @@
 @property(readonly, copy) NSArray *playgroundSectionViewControllers;
 - (void)unregisterToyboxEditor:(id)arg1;
 - (void)registerToyboxEditor:(id)arg1;
+- (BOOL)toyboxStackView:(id)arg1 shouldChangeResultDisplayDate:(id)arg2;
+- (void)_updateSelectedResultDisplayDate:(id)arg1;
+- (void)globalTimeSliderAction:(id)arg1;
+- (void)_disableGlobalTimeSlider;
+- (void)_updateGlobalTimeSlider;
 - (void)revertStateWithDictionary:(id)arg1;
 - (void)commitStateToDictionary:(id)arg1;
 - (void)viewWillUninstall;
 - (void)viewDidInstall;
 - (void)primitiveInvalidate;
 - (void)didSetupEditor;
+- (BOOL)validateMenuItem:(id)arg1;
+- (id)_createProgressIndicator;
+- (id)_buildTimelineScrubber;
 - (void)loadView;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2 document:(id)arg3;
 

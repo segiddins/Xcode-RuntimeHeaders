@@ -22,6 +22,7 @@
 @property(nonatomic) double end; // @synthesize end;
 @property(nonatomic) double start; // @synthesize start;
 @property(retain, nonatomic) NSString *name; // @synthesize name;
+- (void).cxx_destruct;
 - (id)init;
 
 @end

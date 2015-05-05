@@ -78,8 +78,6 @@
 - (BOOL)isShowingAutolayoutActionArea;
 - (BOOL)shouldShowResolveIllegalStatesButton;
 - (BOOL)shouldShowAutolayoutActionArea;
-- (void)toggleLiveAutoresizingBehaviorApplyConstraintsToSiblingsAndAncestors:(id)arg1;
-- (void)toggleLiveAutoresizingBehaviorApplyConstraintsToDescendants:(id)arg1;
 - (void)commitStateToDictionary:(id)arg1;
 - (void)revertStateWithDictionary:(id)arg1;
 - (void)canvasViewDidCompleteLayout:(id)arg1;
@@ -103,7 +101,6 @@
 - (void)canvasView:(id)arg1 canvasFrameDidBecomeKey:(id)arg2;
 - (void)canvasView:(id)arg1 canvasFrameDidResignKey:(id)arg2;
 - (void)promoteToActiveSelectionProvider;
-- (void)performPasteExcludingConnections:(id)arg1;
 - (void)selectAll:(id)arg1;
 - (id)membersForSelectAll;
 - (void)deleteBackward:(id)arg1;
@@ -183,7 +180,9 @@
 - (void)editorCanvasFrame:(id)arg1 wasClickedWithEvent:(id)arg2;
 - (void)editorDidChangeSelection:(id)arg1;
 - (void)editedTopLevelObjectsDidChange;
+- (void)primitiveUpdateSelectedMembers:(id)arg1;
 - (void)didUpdateSelectedMembers:(id)arg1;
+- (void)refreshSelectedMembers;
 - (void)captureCanvasAsImage:(id)arg1;
 - (BOOL)validateUserInterfaceItem:(id)arg1;
 - (BOOL)canZoomOut;
@@ -224,6 +223,7 @@
 - (BOOL)canSelectMembers:(id)arg1;
 - (void)documentEditor:(id)arg1 deselectMembers:(id)arg2;
 - (void)setSelectedCanvasFramesFromSelectedObjects:(id)arg1;
+- (id)canvasFrameToSelectForObject:(id)arg1;
 - (void)setSelectedConnectionsFromSelectedMembers:(id)arg1;
 - (void)documentEditor:(id)arg1 pullSelection:(id)arg2;
 - (void)documentEditor:(id)arg1 selectMembers:(id)arg2 takeFocus:(BOOL)arg3 zoomIfNeeded:(BOOL)arg4;

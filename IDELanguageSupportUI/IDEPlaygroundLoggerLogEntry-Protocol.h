@@ -9,6 +9,7 @@
 @class NSString;
 
 @protocol IDEPlaygroundLoggerLogEntry <NSObject>
+@property(readonly, copy) NSString *summary;
 @property(readonly, copy) NSString *name;
 @end
 

@@ -4,16 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
-
-#import "DVTInvalidation.h"
 #import "IDEDebugProcess.h"
 
-@class DBGDebugSession, DBGStackFrame, DBGThread, DVTObservingToken, DVTStackBacktrace, IDELaunchSession, NSArray, NSMutableArray, NSMutableSet, NSString;
+@class DBGStackFrame, DBGThread, DVTObservingToken, DVTStackBacktrace, NSArray, NSMutableArray, NSMutableSet, NSString;
 
-@interface DBGProcess : NSObject <IDEDebugProcess, DVTInvalidation>
+@interface DBGProcess : IDEDebugProcess
 {
-    NSString *_associatedProcessUUID;
     NSMutableSet *_threadsAutoRefreshStackFrames;
     DBGThread *_currentThread;
     DBGStackFrame *_currentStackFrame;
@@ -23,10 +19,9 @@
     BOOL _threadsAutoRefreshStackFramesDone;
     int _controlState;
     int _PID;
-    DBGDebugSession *_parentDebugSession;
+    NSString *_name;
     NSArray *_threads;
     NSArray *_queues;
-    NSString *_name;
 }
 
 + (id)keyPathsForValuesAffectingName;
@@ -34,12 +29,10 @@
 + (void)initialize;
 @property(nonatomic) BOOL threadsAutoRefreshStackFramesDone; // @synthesize threadsAutoRefreshStackFramesDone=_threadsAutoRefreshStackFramesDone;
 @property(nonatomic) int PID; // @synthesize PID=_PID;
-@property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-@property(copy, nonatomic) NSArray *queues; // @synthesize queues=_queues;
-@property(copy, nonatomic) NSArray *threads; // @synthesize threads=_threads;
 @property(nonatomic) int controlState; // @synthesize controlState=_controlState;
-@property(readonly) DBGDebugSession *parentDebugSession; // @synthesize parentDebugSession=_parentDebugSession;
-@property(readonly, copy) NSString *associatedProcessUUID; // @synthesize associatedProcessUUID=_associatedProcessUUID;
+- (id)queues;
+@property(copy, nonatomic) NSArray *threads; // @synthesize threads=_threads;
+- (void)setName:(id)arg1;
 - (void).cxx_destruct;
 - (void)primitiveInvalidate;
 @property(readonly, nonatomic) unsigned long long addressByteSize;
@@ -50,30 +43,25 @@
 - (void)rawMemoryDataForAddressExpression:(id)arg1 numberOfBytes:(unsigned long long)arg2 resultHandler:(CDUnknownBlockType)arg3;
 - (id)memoryDataForUUID:(id)arg1;
 - (id)memoryDataForAddressOfExpression:(id)arg1 numberOfBytes:(unsigned long long)arg2;
-@property(retain, nonatomic) DBGStackFrame *currentStackFrame; // @synthesize currentStackFrame=_currentStackFrame;
-@property(retain, nonatomic) DBGThread *currentThread; // @synthesize currentThread=_currentThread;
+- (void)setCurrentStackFrame:(id)arg1;
+- (id)currentStackFrame;
+- (void)setCurrentThread:(id)arg1;
+- (id)currentThread;
 - (void)deregisterThreadAutoRefreshesStackFrames:(id)arg1;
 - (void)registerThreadAutoRefreshesStackFrames:(id)arg1;
 - (BOOL)_shouldSelectFirstSymbolFrame;
 - (BOOL)_shouldLookForStackFrameWithDebugSymbols;
 - (void)setInitialCurrentStackFrame;
 - (BOOL)isPaused;
+- (void)setQueues:(id)arg1;
+- (id)name;
 @property(readonly) NSString *displayStatus;
-@property(readonly) IDELaunchSession *launchSession;
 - (id)initWithDebugSession:(id)arg1;
 - (id)contentDelegateUIExtensionIdentifier;
 
 // Remaining properties
-@property(retain) DVTStackBacktrace *creationBacktrace;
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) DVTStackBacktrace *invalidationBacktrace;
-@property(readonly, nonatomic) NSArray *loadedCodeModules;
 @property(readonly, nonatomic) NSArray *memoryDatas; // @dynamic memoryDatas;
 @property(retain) NSMutableArray *mutableMemoryDatas; // @dynamic mutableMemoryDatas;
-@property(readonly) Class superclass;
-@property(readonly, nonatomic, getter=isValid) BOOL valid;
 
 @end
 

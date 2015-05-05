@@ -16,6 +16,7 @@
 - (struct CGSize)ibMinimumSize;
 - (struct CGSize)ibNearestLegalBoundsSize;
 - (double)ibPreferedWidth;
+- (id)ibLocalAttributeKeyPaths;
 - (Class)ibTrackerClass;
 @end
 

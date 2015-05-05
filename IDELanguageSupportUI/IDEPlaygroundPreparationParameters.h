@@ -19,6 +19,7 @@
     DVTFilePath *_sdkPath;
     NSString *_playgroundName;
     DVTFilePath *_frameworkSearchPath;
+    DVTFilePath *_auxiliarySourceDylibPath;
     DVTFilePath *_resourcesDirectoryPath;
     DVTFilePath *_containerPath;
     IDEPlaygroundDebuggerLaunchParameters *_debuggerLaunchParameters;
@@ -28,6 +29,7 @@
 @property(retain) IDEPlaygroundDebuggerLaunchParameters *debuggerLaunchParameters; // @synthesize debuggerLaunchParameters=_debuggerLaunchParameters;
 @property(readonly) DVTFilePath *containerPath; // @synthesize containerPath=_containerPath;
 @property(readonly) DVTFilePath *resourcesDirectoryPath; // @synthesize resourcesDirectoryPath=_resourcesDirectoryPath;
+@property(readonly) DVTFilePath *auxiliarySourceDylibPath; // @synthesize auxiliarySourceDylibPath=_auxiliarySourceDylibPath;
 @property(readonly) DVTFilePath *frameworkSearchPath; // @synthesize frameworkSearchPath=_frameworkSearchPath;
 @property(readonly, copy) NSString *playgroundName; // @synthesize playgroundName=_playgroundName;
 @property(readonly) BOOL runInFullSimulator; // @synthesize runInFullSimulator=_runInFullSimulator;
@@ -39,7 +41,7 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithExecutablePath:(id)arg1 sdk:(id)arg2 runInFullSimulator:(BOOL)arg3 deviceService:(id)arg4 playgroundName:(id)arg5 frameworkSearchPath:(id)arg6 resourcesDirectoryPath:(id)arg7 containerPath:(id)arg8;
+- (id)initWithExecutablePath:(id)arg1 sdk:(id)arg2 runInFullSimulator:(BOOL)arg3 deviceService:(id)arg4 playgroundName:(id)arg5 frameworkSearchPath:(id)arg6 auxiliarySourceDylibPath:(id)arg7 resourcesDirectoryPath:(id)arg8 containerPath:(id)arg9;
 
 @end
 

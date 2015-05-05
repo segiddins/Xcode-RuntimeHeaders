@@ -21,6 +21,7 @@
 - (void)addNewItemInContainerOrDocument:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)ibUserHostableDocumentClasses;
 - (void)ibPopulateChildRelationOrder:(id)arg1;
 - (id)ibPasteboardTypes;
 - (id)_orderedOutboundSeguesFromParent:(id)arg1;

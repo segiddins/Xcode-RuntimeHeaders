@@ -16,8 +16,8 @@
 
 @property(readonly, copy) NSString *subjectIdentifier; // @synthesize subjectIdentifier=_subjectIdentifier;
 - (void).cxx_destruct;
-- (void)processPlaygroundResult:(id)arg1;
 - (void)setToybox:(id)arg1;
+- (BOOL)shouldDisplayInTimeline;
 - (id)initWithSubjectIdentifier:(id)arg1;
 - (id)init;
 

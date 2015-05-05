@@ -8,7 +8,7 @@
 
 #import "DVTInvalidation.h"
 
-@class DVTBarBackground, DVTObservingToken, DVTStackBacktrace, DVTViewController<DVTTabbedWindowTabContentControlling>, NSButton, NSString;
+@class DVTBarBackground, DVTObservingToken, DVTScrollableTabButton, DVTStackBacktrace, DVTViewController<DVTTabbedWindowTabContentControlling>, NSButton, NSString;
 
 @interface DVTTabbedWindowTabViewItem : NSTabViewItem <DVTInvalidation>
 {
@@ -19,9 +19,11 @@
     DVTBarBackground *_tabBarView;
     NSButton *_tabButton;
     NSString *_searchFieldText;
+    DVTScrollableTabButton *_scrollableTabButton;
 }
 
 + (void)initialize;
+@property(nonatomic) __weak DVTScrollableTabButton *scrollableTabButton; // @synthesize scrollableTabButton=_scrollableTabButton;
 @property(copy, nonatomic) NSString *searchFieldText; // @synthesize searchFieldText=_searchFieldText;
 @property(getter=isTabNameEditable) BOOL tabNameEditable; // @synthesize tabNameEditable=_tabNameEditable;
 @property(nonatomic) BOOL isEditingTabName; // @synthesize isEditingTabName=_isEditingTabName;

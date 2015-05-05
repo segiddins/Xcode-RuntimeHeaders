@@ -8,22 +8,24 @@
 
 #import "DVTCodesignableDevice.h"
 
-@class NSString;
+@class NSSet, NSString;
 
 @interface _IDEDistirubtionSigningAssetsStepCodesignableDevice : NSObject <DVTCodesignableDevice>
 {
     NSString *_name;
-    NSString *_deviceIdentifier;
+    NSString *_identifier;
     NSString *_platformIdentifier;
 }
 
 + (id)codesignableDeviceWithDeviceRecord:(id)arg1;
 + (id)codesignableDeviceWithName:(id)arg1 identifier:(id)arg2 andPlatformIdentifier:(id)arg3;
-@property(readonly, copy, nonatomic) NSString *platformIdentifier; // @synthesize platformIdentifier=_platformIdentifier;
-@property(readonly, copy, nonatomic) NSString *deviceIdentifier; // @synthesize deviceIdentifier=_deviceIdentifier;
-@property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
+@property(readonly, copy) NSString *platformIdentifier; // @synthesize platformIdentifier=_platformIdentifier;
+@property(readonly, copy) NSString *identifier; // @synthesize identifier=_identifier;
+@property(readonly, copy) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) BOOL supportsProvisioning;
+@property(readonly, copy) NSSet *proxiedDevices;
+@property(readonly, copy) NSString *nameForDeveloperPortal;
+@property(readonly) BOOL supportsProvisioning;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

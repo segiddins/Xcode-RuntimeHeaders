@@ -9,7 +9,7 @@
 @class NSImage;
 
 @interface NSButtonCell (IBNSButtonCellIntegration)
-+ (id)keyPathsForValuesAffectingIbInspectedType;
++ (id)keyPathsForValuesAffectingIbInspectedStyle;
 + (id)keyPathsForValuesAffectingIbInspectedBehavior;
 + (id)keyPathsForValuesAffectingIbInspectedKeyEquivalent;
 + (id)keyPathsForValuesAffectingIbInspectedTitle;
@@ -18,10 +18,11 @@
 + (id)keyPathsForValuesAffectingIbInspectedImage;
 + (id)keyPathsForValuesAffectingIbShadowedImage;
 + (id)keyPathsForValuesAffectingIbInspectedImagePosition;
-+ (id)keyPathsForValuesAffectingIbShadowedButtonBehavior;
-+ (id)keyPathsForValuesAffectingIbShadowedButtonCellType;
-- (void)setIbInspectedType:(long long)arg1;
-- (long long)ibInspectedType;
++ (id)keyPathsForValuesAffectingIbInspectedMaxAcceleratorLevelIsVisible;
++ (id)keyPathsForValuesAffectingIbShadowedBehavior;
++ (id)keyPathsForValuesAffectingIbShadowedStyle;
+- (void)setIbInspectedStyle:(long long)arg1;
+- (long long)ibInspectedStyle;
 - (void)setIbInspectedBehavior:(long long)arg1;
 - (long long)ibInspectedBehavior;
 - (id)ibSuggestedKeyEquivalentForUpdatingTitleTo:(id)arg1;
@@ -57,10 +58,13 @@
 - (void)setIbInspectedImagePosition:(unsigned long long)arg1;
 - (unsigned long long)ibInspectedImagePosition;
 @property unsigned long long ibShadowedImagePosition;
-@property long long ibShadowedButtonBehavior;
+- (unsigned long long)ibInspectedMaxAcceleratorLevelMinimumValue;
+- (unsigned long long)ibInspectedMaxAcceleratorLevelMaximumValue;
+- (BOOL)ibInspectedMaxAcceleratorLevelIsVisible;
+@property long long ibShadowedBehavior;
 - (id)ibDefaultFontForCurrentConfiguration;
 - (BOOL)ibSwizzledIsAnimatingDefaultCell;
-@property long long ibShadowedButtonCellType;
+@property long long ibShadowedStyle;
 - (id)ibDocumentationPropertyInfosForKeyPath:(id)arg1;
 - (void)ibAwakeInDocument:(id)arg1;
 - (id)ibLocalConstraintInvalidatingAttributeKeyPaths;

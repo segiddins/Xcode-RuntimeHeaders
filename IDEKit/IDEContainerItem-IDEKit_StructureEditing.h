@@ -8,10 +8,18 @@
 
 #import "IDEStructureEditingTarget.h"
 
+@class NSString;
+
 @interface IDEContainerItem (IDEKit_StructureEditing) <IDEStructureEditingTarget>
 - (id)structureEditingRemoveSubitemsTargetForParentNavigableItem:(id)arg1;
 - (id)structureEditingGroupingTargetForProposedNavigableItem:(id)arg1 proposedChildIndex:(long long)arg2;
 - (id)structureEditingTargetForProposedNavigableItem:(id)arg1 proposedChildIndex:(long long)arg2;
 - (id)structureEditingDraggingSource;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @end
 

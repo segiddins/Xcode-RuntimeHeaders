@@ -17,7 +17,7 @@
 
 + (id)writeWorkForContext:(id)arg1 langauge:(id)arg2;
 + (id)readWorkForContext:(id)arg1;
-+ (id)adaptedResourcesForLocalizedContainer:(id)arg1;
++ (id)adaptedResourcesForPopulationContext:(id)arg1;
 @property(retain) NSDictionary *commentsByKey; // @synthesize commentsByKey=_commentsByKey;
 @property(retain) NSDictionary *baseStrings; // @synthesize baseStrings=_baseStrings;
 - (void).cxx_destruct;

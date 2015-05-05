@@ -10,17 +10,17 @@
 
 @interface IDEStructureEditingAssistantContext : IDEAssistantContext
 {
+    DVTObservingToken *_targetContainerValidObservationToken;
+    BOOL _skipAssistant;
+    BOOL _useMakefileProject;
     NSString *_assistantIdentifier;
     CDUnknownBlockType _acceptBlock;
     IDEContainer *_targetContainer;
-    DVTObservingToken *_targetContainerValidObservationToken;
     unsigned long long _inputDragOperation;
     NSArray *_fileURLs;
     NSArray *_makefileURLs;
     NSArray *_templates;
     unsigned long long _dragOperation;
-    BOOL _useMakefileProject;
-    BOOL _skipAssistant;
 }
 
 @property unsigned long long dragOperation; // @synthesize dragOperation=_dragOperation;

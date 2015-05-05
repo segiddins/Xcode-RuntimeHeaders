@@ -6,50 +6,31 @@
 
 #import "NSViewController.h"
 
+#import "DVTOutlineViewDelegate.h"
 #import "IDEPlaygroundQuickLookProvider.h"
-#import "NSOutlineViewDelegate.h"
 #import "NSPopoverDelegate.h"
 
-@class DVTBorderedView, IDELogEntryQuickLookNode, IDEPlaygroundQuickLookPopover, NSAttributedString, NSButtonCell, NSLayoutConstraint, NSOutlineView, NSScrollView, NSString, NSView;
+@class IDELogEntryQuickLookNode, IDEPlaygroundQuickLookPopover, NSAttributedString, NSButtonCell, NSOutlineView, NSString, NSView;
 
-@interface IDEPlaygroundQuickLookForStructure : NSViewController <NSOutlineViewDelegate, NSPopoverDelegate, IDEPlaygroundQuickLookProvider>
+@interface IDEPlaygroundQuickLookForStructure : NSViewController <DVTOutlineViewDelegate, NSPopoverDelegate, IDEPlaygroundQuickLookProvider>
 {
     NSButtonCell *_quickLookCell;
     IDEPlaygroundQuickLookPopover *_quickLookPopover;
-    NSLayoutConstraint *_topSpace;
-    NSLayoutConstraint *_bottomSpace;
-    NSLayoutConstraint *_widthConstraint;
-    NSLayoutConstraint *_heightConstraint;
-    DVTBorderedView *_borderedView;
-    NSScrollView *_scrollView;
     NSOutlineView *_outlineView;
     IDELogEntryQuickLookNode *_rootNode;
 }
 
 @property(readonly) IDELogEntryQuickLookNode *rootNode; // @synthesize rootNode=_rootNode;
 @property __weak NSOutlineView *outlineView; // @synthesize outlineView=_outlineView;
-@property __weak NSScrollView *scrollView; // @synthesize scrollView=_scrollView;
-@property(retain) DVTBorderedView *borderedView; // @synthesize borderedView=_borderedView;
-@property __weak NSLayoutConstraint *heightConstraint; // @synthesize heightConstraint=_heightConstraint;
-@property __weak NSLayoutConstraint *widthConstraint; // @synthesize widthConstraint=_widthConstraint;
-@property __weak NSLayoutConstraint *bottomSpace; // @synthesize bottomSpace=_bottomSpace;
-@property __weak NSLayoutConstraint *topSpace; // @synthesize topSpace=_topSpace;
 - (void).cxx_destruct;
-- (BOOL)_wasStatusCellItemClickedAtCurrentPoint;
-- (BOOL)outlineView:(id)arg1 shouldTrackCell:(id)arg2 forTableColumn:(id)arg3 item:(id)arg4;
-- (BOOL)selectionShouldChangeInOutlineView:(id)arg1;
-- (void)outlineView:(id)arg1 willDisplayCell:(id)arg2 forTableColumn:(id)arg3 item:(id)arg4;
+- (void)outlineView:(id)arg1 rowPreviouslyUnderMouse:(long long)arg2 rowCurrentlyUnderMouse:(long long)arg3;
 - (BOOL)outlineView:(id)arg1 shouldMouseHoverForTableColumn:(id)arg2 row:(long long)arg3;
-- (double)outlineView:(id)arg1 heightOfRowByItem:(id)arg2;
-- (id)outlineView:(id)arg1 dataCellForTableColumn:(id)arg2 item:(id)arg3;
+- (id)outlineView:(id)arg1 viewForTableColumn:(id)arg2 item:(id)arg3;
 - (BOOL)popoverShouldClose:(id)arg1;
 - (void)popoverDidShow:(id)arg1;
 - (void)_showQuickLookForNode:(id)arg1 atRow:(long long)arg2;
 - (void)_toggleQuickLookForClickedRow:(id)arg1;
-- (id)_quickLookButtonCell;
-- (double)_preferredHeight;
-- (double)_preferredWidth;
-- (void)_updatePreferredSize;
+- (double)outlineView:(id)arg1 heightOfRowByItem:(id)arg2;
 - (id)quickLookViewForResultsView;
 - (id)quickLookViewForNaturalSize;
 @property(readonly, copy) NSAttributedString *attributedTitle;

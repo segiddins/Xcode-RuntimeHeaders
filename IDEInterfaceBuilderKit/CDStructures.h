@@ -164,6 +164,11 @@ typedef struct {
 } CDStruct_92d5623e;
 
 typedef struct {
+    char _field1;
+    char _field2;
+} CDStruct_7ddbbeae;
+
+typedef struct {
     double minX;
     double minY;
     double maxX;

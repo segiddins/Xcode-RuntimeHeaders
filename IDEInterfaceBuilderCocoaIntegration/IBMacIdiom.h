@@ -10,7 +10,23 @@
 {
 }
 
+- (void)populateVariantForResolvingMediaResources:(id)arg1 forDocument:(id)arg2;
+- (Class)storyboardCompilerClass;
+- (Class)xibCompilerClass;
+- (BOOL)usesSceneExitPlaceholder;
+- (id)xibArchivingSchema;
+- (id)storyboardArchivingSchema;
+- (id)storyboardScenePasteboardType;
+- (id)storyboardPrimarySceneObjectPasteboardType;
+- (id)viewPasteboardType;
+- (id)objectPasteboardType;
+- (Class)storyboardMainEntryPointIndicatorClass;
+- (Class)storyboardAssetProviderClass;
+- (Class)xibAssetProviderClass;
+- (Class)storyboardVerifierClass;
+- (Class)xibVerifierClass;
 - (double)defaultOverviewZoomFactor;
+- (id)pluginName;
 - (id)icon;
 - (id)identifier;
 

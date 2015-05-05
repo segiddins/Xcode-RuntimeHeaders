@@ -55,15 +55,15 @@
 - (id)toolTipAttributedStringForTitle:(id)arg1;
 - (id)toolTipFontBold;
 - (id)toolTipFont;
-- (id)toolTipTextFromDocumentationTokens:(id)arg1 keyPath:(id)arg2 titleText:(id)arg3;
+- (id)toolTipTextFromDocumentationTokens:(id)arg1 titleText:(id)arg2;
 - (id)toolTipContentFromKeyPath:(id)arg1 titleAttribute:(id)arg2 placeholderAttribute:(id)arg3;
 - (id)platformForToolTipDocumentationLookup;
 - (id)tokenForMethod:(id)arg1 className:(id)arg2 metaQueries:(id)arg3;
-- (id)documentationTokensFromKeyPath:(id)arg1;
+- (id)documentationTokensFromKeyPath:(id)arg1 configurable:(BOOL)arg2;
 - (id)documentationTokenFromPropertyInfo:(id)arg1 objectForDocumentation:(id)arg2 metaQueries:(id)arg3;
 - (id)docTokenKeyVariationsFromDocumentationPropertyInfo:(id)arg1;
 - (id)lastObjectInKeyPath:(id)arg1;
-- (id)toolTipTitleFromKeyPath:(id)arg1 titleAttribute:(id)arg2 placeholderAttribute:(id)arg3;
+- (id)toolTipTitleFromKeyPath:(id)arg1 configurable:(BOOL)arg2 titleAttribute:(id)arg3 placeholderAttribute:(id)arg4;
 - (id)searchableAttributesForProperty:(id)arg1;
 - (void)didSetInspectedObjects:(id)arg1;
 - (id)willSetInspectedObjects:(id)arg1;

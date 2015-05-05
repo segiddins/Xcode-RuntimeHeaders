@@ -7,6 +7,7 @@
 #import "NSColor.h"
 
 @interface NSColor (DVTNSColorAdditions)
++ (id)dvt_colorFromHexRGB:(id)arg1;
 + (id)dvt_colorFromRGBAString:(id)arg1;
 - (id)dvt_colorByMultiplyingSaturation:(double)arg1 andBrightness:(double)arg2;
 - (id)dvt_colorByMultiplyingSaturation:(double)arg1;
@@ -14,5 +15,6 @@
 - (id)dvt_colorByShiftingHue:(double)arg1;
 - (id)dvt_complementaryColor;
 - (id)dvt_RGBAStringRepresentation;
+- (id)dvt_hexRGBRepresentation;
 @end
 

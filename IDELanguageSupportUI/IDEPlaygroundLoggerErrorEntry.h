@@ -13,13 +13,13 @@
 @interface IDEPlaygroundLoggerErrorEntry : NSObject <IDEPlaygroundLoggerLogEntry>
 {
     NSString *_name;
-    NSString *_errorString;
+    NSString *_summary;
 }
 
-@property(readonly, copy) NSString *errorString; // @synthesize errorString=_errorString;
+@property(readonly, copy) NSString *summary; // @synthesize summary=_summary;
 @property(readonly, copy) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
-- (id)initWithName:(id)arg1 errorString:(id)arg2;
+- (id)initWithName:(id)arg1 summary:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -21,6 +21,7 @@
 - (BOOL)_loadTextFindable;
 - (void)performFind;
 - (void)main;
+- (BOOL)requiresMainThreadAccess;
 - (id)initWithFindDescriptor:(id)arg1 onFile:(id)arg2 inWorkspace:(id)arg3;
 
 @end

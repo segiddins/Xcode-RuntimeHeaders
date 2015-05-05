@@ -96,6 +96,8 @@
 - (void)_beginMouseMovedTracking;
 - (void)set_showsAuthoringEnvironment:(BOOL)arg1;
 - (BOOL)_showsAuthoringEnvironment;
+- (unsigned long long)debugSettings;
+- (void)setDebugSettings:(unsigned long long)arg1;
 - (void)switchToNextCamera;
 - (void)switchToCameraNamed:(id)arg1;
 @property(readonly, copy) NSString *description;
@@ -138,7 +140,7 @@
 - (void)setPointOfView:(id)arg1 animate:(BOOL)arg2;
 - (void)_drawAtTime:(double)arg1 WithContext:(struct _CGLContextObject *)arg2;
 - (BOOL)_canJitter;
-- (BOOL)_supportsJiterringSyncRedraw;
+- (BOOL)_supportsJitteringSyncRedraw;
 - (void)_jitterRedisplayWithContext:(struct _CGLContextObject *)arg1;
 @property(nonatomic, getter=isJitteringEnabled) BOOL jitteringEnabled;
 - (id)renderer;

@@ -13,6 +13,7 @@
 @interface IDEPlaygroundExecutionSessionMonitor : DVTOperation <IDEPlaygroundExecutionSessionMonitorProtocol>
 {
     BOOL _executesOutOfProcess;
+    NSError *_error;
     IDEPlaygroundPreparationParameters *_preparationParameters;
     IDEPlaygroundExecutionSession *_session;
     NSXPCConnection *_connection;
@@ -25,6 +26,7 @@
 }
 
 + (id)keyPathsForValuesAffectingSerializedPlaygroundDataPath;
++ (id)keyPathsForValuesAffectingError;
 + (id)keyPathsForValuesAffectingSerializationError;
 + (id)keyPathsForValuesAffectingState;
 @property(retain) NSObject<OS_dispatch_queue> *monitorQueue; // @synthesize monitorQueue=_monitorQueue;
@@ -54,6 +56,8 @@
 - (void)undesignateSessionWithCallbackQueue:(id)arg1 callback:(CDUnknownBlockType)arg2;
 - (void)designateSessionForExecutionParameters:(id)arg1;
 @property(readonly) DVTFilePath *serializedPlaygroundDataPath;
+- (id)error;
+- (void)setError:(id)arg1;
 @property(readonly) NSError *serializationError;
 @property(readonly) unsigned long long state;
 - (void)prepareExecutionSession;

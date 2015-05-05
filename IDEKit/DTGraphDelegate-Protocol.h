@@ -18,7 +18,7 @@
 - (void)setPathStyleForGraph:(DTGraph *)arg1 entry:(id)arg2 path:(NSBezierPath *)arg3;
 - (BOOL)lineFilledForGraph:(DTGraph *)arg1 entry:(id)arg2;
 - (NSString *)translateValue:(NSNumber *)arg1 keypath:(NSString *)arg2;
-- (int)shapeForGraph:(DTGraph *)arg1 entry:(id)arg2;
+- (long long)shapeForGraph:(DTGraph *)arg1 entry:(id)arg2;
 - (NSString *)labelForGraph:(DTGraph *)arg1 entry:(id)arg2;
 - (NSColor *)backgroundColorForGraph:(DTGraph *)arg1 entry:(id)arg2;
 - (NSColor *)colorForGraph:(DTGraph *)arg1 entry:(id)arg2;

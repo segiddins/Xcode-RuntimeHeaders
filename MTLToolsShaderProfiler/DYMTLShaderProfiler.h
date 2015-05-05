@@ -18,8 +18,5 @@
 - (id)profileShader:(id)arg1;
 - (void)initializeShaderAnalyzer;
 
-// Remaining properties
-@property(readonly, nonatomic) __weak id <DYShaderProfilerDelegate> delegate;
-
 @end
 

@@ -9,7 +9,7 @@
 #import "NSCoding.h"
 #import "NSCopying.h"
 
-@class NSDictionary, NSSet, NSString;
+@class IBMemberConfigurationVariableValueSpecification, NSDictionary, NSSet, NSString;
 
 @interface IBMemberConfigurationVariable : NSObject <NSCopying, NSCoding>
 {
@@ -21,10 +21,12 @@
     NSString *_unspecifiedValueTitle;
     double _precedence;
     NSSet *_legalValues;
+    IBMemberConfigurationVariableValueSpecification *_unspecifiedValueSpecification;
 }
 
 + (id)variableWithIdentifier:(id)arg1;
-+ (id)registerVariableWithIdentifier:(id)arg1 precedence:(double)arg2 verboseTitle:(id)arg3 succinctTitle:(id)arg4 abbreviation:(id)arg5 valueSpecifications:(id)arg6;
++ (id)registerVariableWithIdentifier:(id)arg1 precedence:(double)arg2 verboseTitle:(id)arg3 succinctTitle:(id)arg4 abbreviation:(id)arg5 valueSpecifications:(id)arg6 unspecifiedValueSpecification:(id)arg7;
+@property(readonly) IBMemberConfigurationVariableValueSpecification *unspecifiedValueSpecification; // @synthesize unspecifiedValueSpecification=_unspecifiedValueSpecification;
 @property(readonly) NSSet *legalValues; // @synthesize legalValues=_legalValues;
 @property(readonly) double precedence; // @synthesize precedence=_precedence;
 @property(readonly) NSString *unspecifiedValueTitle; // @synthesize unspecifiedValueTitle=_unspecifiedValueTitle;
@@ -40,7 +42,7 @@
 - (long long)comparePrecedence:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithIdentifier:(id)arg1 precedence:(double)arg2 verboseTitle:(id)arg3 succinctTitle:(id)arg4 abbreviation:(id)arg5 valueSpecifications:(id)arg6;
+- (id)initWithIdentifier:(id)arg1 precedence:(double)arg2 verboseTitle:(id)arg3 succinctTitle:(id)arg4 abbreviation:(id)arg5 valueSpecifications:(id)arg6 unspecifiedValueSpecification:(id)arg7;
 
 @end
 

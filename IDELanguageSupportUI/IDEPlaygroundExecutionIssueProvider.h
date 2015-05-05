@@ -6,15 +6,25 @@
 
 #import "IDEIssueProvider.h"
 
-@class DVTNotificationToken;
+@class DVTDelayedInvocation, DVTNotificationToken, DVTObservingToken, NSMapTable, NSMutableSet, NSSet;
 
 @interface IDEPlaygroundExecutionIssueProvider : IDEIssueProvider
 {
+    DVTDelayedInvocation *_batchedUpdateInvocation;
     DVTNotificationToken *_playgroundIssuesChangedToken;
+    DVTObservingToken *_openDocumentsChangedToken;
+    BOOL _openDocumentsChanged;
+    NSSet *_observedDocumentFilePaths;
+    NSMutableSet *_changedDocumentFilePaths;
+    id <DVTInvalidation> _fileReferenceObserverToken;
+    NSMutableSet *_workspaceFilePaths;
+    BOOL _workspaceContentChanged;
+    NSMapTable *_filePathToIssueProviderContext;
 }
 
 - (void).cxx_destruct;
 - (void)primitiveInvalidate;
+- (id)issueProviderContextForFilePath:(id)arg1;
 - (id)displayNameForIssueTypeIdentifier:(id)arg1;
 - (void)playgroundIssuesChanged:(id)arg1;
 - (id)initWithIssueManager:(id)arg1 extension:(id)arg2;

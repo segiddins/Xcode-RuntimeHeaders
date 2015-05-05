@@ -6,9 +6,10 @@
 
 #import "NSDraggingInfo.h"
 
-@class DVTDraggedImageState, NSDictionary;
+@class DVTDraggedImageState, NSDictionary, NSSet;
 
 @protocol DVTDraggingInfo <NSDraggingInfo>
+@property(retain, nonatomic) NSSet *draggingSnapGuides;
 - (void)invalidateObjectAtEndOfDragLoop:(id <DVTInvalidation>)arg1;
 - (struct CGPoint)draggingLocationOnScreen;
 - (NSDictionary *)draggingSourceContext;

@@ -6,7 +6,7 @@
 
 #import "IDELogProvider.h"
 
-@class DVTMapTable, DVTObservingToken, GPUDebuggerLog, GPUSharedTabUIState, IDELogStore, IDEWorkspace, NSDictionary;
+@class DVTObservingToken, GPUDebuggerLog, GPUSharedTabUIState, IDELogStore, IDEWorkspace, NSDictionary, NSMapTable;
 
 __attribute__((visibility("hidden")))
 @interface GPUDebuggerLogProvider : IDELogProvider
@@ -14,7 +14,7 @@ __attribute__((visibility("hidden")))
     IDEWorkspace *_workspace;
     GPUSharedTabUIState *_sharedUIStateObj;
     DVTObservingToken *_launchSessionStateObserverToken;
-    DVTMapTable *_observerKeyForLaunchSessionTable;
+    NSMapTable *_observerKeyForLaunchSessionTable;
     IDELogStore *_logStore;
     NSDictionary *_programInfoDict;
     GPUDebuggerLog *_debuggerLog;

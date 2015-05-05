@@ -13,7 +13,9 @@
 - (BOOL)objectContainer:(IBObjectContainer *)arg1 shouldPersistMetadataForKey:(NSString *)arg2 ofMember:(NSObject *)arg3;
 - (void)objectContainer:(IBObjectContainer *)arg1 didReorderObject:(NSObject *)arg2 inGroup:(IBGroup *)arg3;
 - (void)objectContainer:(IBObjectContainer *)arg1 willReorderObject:(NSObject *)arg2 inGroup:(IBGroup *)arg3;
+- (void)objectContainer:(IBObjectContainer *)arg1 didRemoveIdentifier:(NSString *)arg2 forObject:(NSObject *)arg3 inGroup:(IBGroup *)arg4;
 - (void)objectContainer:(IBObjectContainer *)arg1 willRemoveIdentifier:(NSString *)arg2 forObject:(NSObject *)arg3 inGroup:(IBGroup *)arg4;
+- (void)objectContainer:(IBObjectContainer *)arg1 didAddIdentifier:(NSString *)arg2 forObject:(NSObject *)arg3 inGroup:(IBGroup *)arg4;
 - (void)objectContainer:(IBObjectContainer *)arg1 willAddIdentifier:(NSString *)arg2 forObject:(NSObject *)arg3 inGroup:(IBGroup *)arg4;
 - (void)objectContainer:(IBObjectContainer *)arg1 didRemoveObject:(NSObject *)arg2 fromGroup:(IBGroup *)arg3;
 - (void)objectContainer:(IBObjectContainer *)arg1 willRemoveObject:(NSObject *)arg2 fromGroup:(IBGroup *)arg3;
@@ -30,7 +32,7 @@
 - (void)objectContainer:(IBObjectContainer *)arg1 didAddObject:(NSObject *)arg2 phase:(unsigned long long)arg3;
 - (void)objectContainer:(IBObjectContainer *)arg1 willAddObject:(NSObject *)arg2 toParent:(NSObject *)arg3;
 - (void)objectContainer:(IBObjectContainer *)arg1 didRemoveObject:(NSObject *)arg2 fromParent:(NSObject *)arg3;
-- (void)objectContainer:(IBObjectContainer *)arg1 willRemoveObject:(NSObject *)arg2 previouslyMemberOfGroup:(IBGroup *)arg3;
+- (void)objectContainer:(IBObjectContainer *)arg1 willRemoveObject:(NSObject *)arg2 previouslyMemberOfGroup:(IBGroup *)arg3 identifierInGroup:(NSString *)arg4;
 - (void)objectContainer:(IBObjectContainer *)arg1 didReorderConnection:(IBConnection *)arg2 toIndex:(long long)arg3;
 - (void)objectContainer:(IBObjectContainer *)arg1 willReorderConnection:(IBConnection *)arg2 toIndex:(long long)arg3;
 - (void)objectContainer:(IBObjectContainer *)arg1 didAddConnection:(IBConnection *)arg2;

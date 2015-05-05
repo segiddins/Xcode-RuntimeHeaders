@@ -6,7 +6,7 @@
 
 #import <IDEInterfaceBuilderKit/IBAbstractDocumentEditor.h>
 
-@class DVTDelayedInvocation, DVTNotificationToken, DVTObservingToken, IBCancellationToken, IBStoryboardCanvasViewController;
+@class DVTDelayedInvocation, DVTNotificationToken, IBCancellationToken, IBStoryboardCanvasViewController;
 
 @interface IBStoryboardDocumentEditor : IBAbstractDocumentEditor
 {
@@ -16,12 +16,10 @@
     DVTNotificationToken *_didReorderConnectionObserver;
     DVTNotificationToken *_didBecomeKeyObservingToken;
     DVTNotificationToken *_didBecomeMainObservingToken;
-    DVTObservingToken *_didChangeDesignatedEntryPoint;
     IBCancellationToken *_segueSourceTargetIndicatorCancellationToken;
     DVTDelayedInvocation *_segueSourceHighlightInvocation;
 }
 
-+ (id)debugCompiledDocumentFileExtension;
 - (void).cxx_destruct;
 - (id)typeForTopLevelPastingWithPasteboard:(id)arg1;
 - (void)selectionProviderWasClicked:(id)arg1;

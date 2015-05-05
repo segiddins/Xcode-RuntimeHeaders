@@ -58,9 +58,13 @@
 - (id)getIndexFromURL:(id)arg1;
 - (id)nextArrayVariable;
 - (id)rewriteArgument:(const struct Argument *)arg1;
+- (id)getCastForArgument:(const struct Argument *)arg1 inFunction:(const struct Function *)arg2;
+- (id)createArgument:(const struct Argument *)arg1 forFunction:(const struct Function *)arg2 withValue:(id)arg3;
 - (id)rewriteReceiver:(unsigned long long)arg1;
 - (id)rewriteURL:(const char *)arg1;
 - (id)rewriteVariable:(const char *)arg1;
+- (id)unloadStringForURL:(id)arg1;
+- (id)loadStringForURL:(id)arg1 variableName:(id)arg2 bufferType:(id)arg3;
 - (id)traceFunctionAsLines:(const struct Function *)arg1 returnVariable:(id)arg2 error:(id *)arg3;
 - (id)traceFunction:(const struct Function *)arg1 returnVariable:(id)arg2 error:(id *)arg3;
 - (id)traceFunction:(const struct Function *)arg1 error:(id *)arg2;

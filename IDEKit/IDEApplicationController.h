@@ -88,7 +88,6 @@
 - (void)menuWillOpen:(id)arg1;
 - (void)_updateGlobalHotKeyToEnableFloatingDebugger:(id)arg1;
 - (void)_currentPreferenceSetChanged;
-- (void)_adjustApplicationIconForEnvironment;
 - (void)applicationDidFinishLaunching:(id)arg1;
 - (void)applicationIsTerminating:(id)arg1;
 - (void)_incrementCountForKey:(id)arg1 in:(id)arg2;

@@ -19,6 +19,8 @@
 + (void)initialize;
 @property(retain) IDESourceCodePlaygroundSectionAnnotationViewController *viewController; // @synthesize viewController=_viewController;
 - (void).cxx_destruct;
+- (id)accessibilityAttributeValue:(id)arg1;
+- (BOOL)accessibilityIsIgnored;
 - (void)primitiveInvalidate;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)updateTrackingAreas;

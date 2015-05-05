@@ -6,16 +6,14 @@
 
 #import <IDELanguageSupportUI/IDEBasicPlaygroundQuickLookForObjectReflection.h>
 
-@class DVTPathView, IDEPlaygroundLoggerObjectReflectionForBezierPath;
+@class DVTPathView;
 
 @interface IDEPlaygroundQuickLookForBezierPath : IDEBasicPlaygroundQuickLookForObjectReflection
 {
-    IDEPlaygroundLoggerObjectReflectionForBezierPath *_objectReflectionForBezierPath;
     DVTPathView *_pathView;
 }
 
 @property __weak DVTPathView *pathView; // @synthesize pathView=_pathView;
-@property(readonly) IDEPlaygroundLoggerObjectReflectionForBezierPath *objectReflectionForBezierPath; // @synthesize objectReflectionForBezierPath=_objectReflectionForBezierPath;
 - (void).cxx_destruct;
 - (id)quickLookViewForNaturalSize;
 - (id)initWithObjectReflection:(id)arg1;

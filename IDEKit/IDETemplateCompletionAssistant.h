@@ -30,6 +30,7 @@
 - (BOOL)panel:(id)arg1 shouldEnableURL:(id)arg2;
 - (BOOL)panel:(id)arg1 validateURL:(id)arg2 error:(id *)arg3;
 - (id)finalURLForSelectedURL:(id)arg1;
+- (id)finalURLForSelectedURL:(id)arg1 fallbackCompletionName:(id)arg2;
 - (void)attemptRecoveryFromError:(id)arg1 optionIndex:(unsigned long long)arg2 delegate:(id)arg3 didRecoverSelector:(SEL)arg4 contextInfo:(void *)arg5;
 - (void)destinationManagerWorkspaceDidChange:(id)arg1;
 - (void)destinationManagerGroupDidChange:(id)arg1;

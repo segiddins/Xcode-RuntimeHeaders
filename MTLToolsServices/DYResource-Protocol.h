@@ -14,16 +14,14 @@
 @property(readonly, nonatomic) BOOL isStatic;
 @property(readonly, nonatomic) NSMutableDictionary *properties;
 @property(readonly, copy, nonatomic) NSString *label;
-@property(readonly, nonatomic) unsigned int target;
-@property(readonly, nonatomic) int internalID;
 @property(readonly, nonatomic) unsigned long long objectID;
 @property(readonly, nonatomic) unsigned long long containerID;
 @property(readonly, nonatomic) unsigned int resourceType;
-- (NSString *)keyWithSharegroupID:(unsigned long long)arg1;
 - (id)initUpdateWithType:(unsigned int)arg1 objectID:(unsigned long long)arg2 containerID:(unsigned long long)arg3 changes:(NSDictionary *)arg4;
 
 @optional
 - (id)createFullObjectWithFunctionStream:(DYFunctionStream *)arg1 dataResolver:(NSData * (^)(char *))arg2;
 - (NSDictionary *)streamDictAtFunctionIndex:(unsigned int)arg1;
+- (NSString *)keyWithSharegroupID:(unsigned long long)arg1;
 @end
 

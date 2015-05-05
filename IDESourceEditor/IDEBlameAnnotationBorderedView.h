@@ -10,6 +10,8 @@
 {
 }
 
+- (id)accessibilityAttributeValue:(id)arg1;
+- (BOOL)accessibilityIsIgnored;
 - (BOOL)isOpaque;
 - (void)resetCursorRects;
 

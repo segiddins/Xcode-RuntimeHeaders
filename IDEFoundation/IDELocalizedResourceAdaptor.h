@@ -19,8 +19,8 @@
 + (id)writeWorkForContext:(id)arg1 langauge:(id)arg2;
 + (id)readWorkForContext:(id)arg1;
 + (id)populatedAdaptorsForContext:(id)arg1;
-+ (id)adaptedResourcesForLocalizedContainer:(id)arg1 plugInManager:(id)arg2;
-+ (id)adaptedResourcesForLocalizedContainer:(id)arg1;
++ (id)adaptedResourcesForPopulationContext:(id)arg1 plugInManager:(id)arg2;
++ (id)adaptedResourcesForPopulationContext:(id)arg1;
 + (void)initialize;
 @property(readonly) IDEContainer<IDELocalizedContainer> *container; // @synthesize container=_container;
 @property(readonly) IDENotifyingLocalizedGroup *localizedGroup; // @synthesize localizedGroup=_localizedGroup;

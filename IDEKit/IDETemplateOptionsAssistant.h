@@ -43,6 +43,7 @@
 - (void)viewWillUninstall;
 - (void)viewDidInstall;
 - (void)loadView;
+- (void)primitiveInvalidate;
 - (id)nextAssistantIdentifier;
 - (void)updateOptions:(id)arg1;
 - (void)setAssistantContext:(id)arg1;

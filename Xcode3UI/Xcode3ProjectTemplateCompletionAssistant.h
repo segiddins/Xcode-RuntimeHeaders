@@ -25,6 +25,7 @@
 - (BOOL)_isProjectSafeToReplaceAtURL:(id)arg1 busyProjectName:(id *)arg2;
 - (void)panel:(id)arg1 didChangeToDirectoryURL:(id)arg2;
 - (BOOL)panel:(id)arg1 validateURL:(id)arg2 error:(id *)arg3;
+- (id)finalURLForSelectedURL:(id)arg1;
 - (id)configuredSavePanel;
 - (void)viewDidInstall;
 - (void)primitiveInvalidate;

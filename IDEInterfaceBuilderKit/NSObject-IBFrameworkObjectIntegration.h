@@ -17,12 +17,12 @@
 + (BOOL)ibShouldBeIncludedInLibraryForTargetRuntime:(id)arg1 andDocumentClass:(Class)arg2;
 + (void)ibDidInstantiateForObject:(id)arg1 forAsset:(id)arg2 role:(long long)arg3;
 + (id)ibInstantiateForRole:(long long)arg1 withTargetRuntime:(id)arg2 documentClass:(Class)arg3 assetIdentifier:(id)arg4;
-+ (id)ibInspectorPropertySearchDescriptionsForKeyPath:(id)arg1 platform:(id)arg2;
-+ (id)ibSearchableAttributeKeyPathsForInspectorCategory:(id)arg1 platform:(id)arg2;
-+ (id)ibSearchableInspectorsForCategory:(id)arg1 platform:(id)arg2;
-+ (id)ibSearchableAttributeKeyPathsForPlatform:(id)arg1;
-+ (id)ibCachedResultForPlatform:(id)arg1 andInspectorCategory:(id)arg2 withCache:(id)arg3 computationBlock:(CDUnknownBlockType)arg4;
-+ (id)ibCachedResultForPlatform:(id)arg1 withCache:(id)arg2 creatingIfNecessaryWithBlock:(CDUnknownBlockType)arg3;
++ (id)ibInspectorPropertySearchDescriptionsForKeyPath:(id)arg1 idiom:(id)arg2;
++ (id)ibSearchableAttributeKeyPathsForInspectorCategory:(id)arg1 idiom:(id)arg2;
++ (id)ibSearchableInspectorsForCategory:(id)arg1 idiom:(id)arg2;
++ (id)ibSearchableAttributeKeyPathsForIdiom:(id)arg1;
++ (id)ibCachedResultForIdiom:(id)arg1 andInspectorCategory:(id)arg2 withCache:(id)arg3 computationBlock:(CDUnknownBlockType)arg4;
++ (id)ibCachedResultForIdiom:(id)arg1 withCache:(id)arg2 creatingIfNecessaryWithBlock:(CDUnknownBlockType)arg3;
 + (void)ibPopulateAdditionalSearchableAttributeKeyPaths:(id)arg1 forInspectorCategory:(id)arg2;
 + (id)ibTypeIdentifier;
 - (BOOL)ibInspectedShouldShowDesignablesStatus;
@@ -43,6 +43,9 @@
 - (BOOL)ibSupportsMultipleSeguesFromTrigger:(id)arg1;
 - (void)ibWillResignDestinationOfSegue:(id)arg1;
 - (void)ibDidBecomeDestinationOfSegue:(id)arg1;
+- (BOOL)ibCanBeValidRelationshipDestination;
+- (BOOL)ibCanBeValidSegueDestination;
+- (BOOL)ibSupportsSiblingTopLevelSceneObjects;
 - (BOOL)ibRequiresOutletToStoryboard;
 - (BOOL)ibRequiresOutletToFilesOwner;
 - (void)ibUpstreamController:(id)arg1 willResignDestinationOfSegue:(id)arg2;
@@ -51,6 +54,9 @@
 - (id)ibOutgoingSeguesInDocument:(id)arg1;
 - (id)ibIncomingSeguesIncludingSelfOriginated:(BOOL)arg1;
 - (BOOL)ibCanBePrimarySceneObject;
+- (id)ibStoryboardEntryPointIndicatorInvalidatingKeyPaths;
+- (id)ibEntryPointIndicatorsInStoryboard:(id)arg1;
+- (BOOL)ibCanBecomeEntryPointForIndicator:(id)arg1;
 - (void)ibWillResignSourceOfSegue:(id)arg1;
 - (void)ibDidBecomeSourceOfSegue:(id)arg1;
 - (BOOL)ibInspectedDocumentIsStoryboard;
@@ -132,7 +138,10 @@
 - (void)ibPropertyStorage:(id)arg1 didTurnOnForRelationship:(id)arg2 ofObject:(id)arg3 inConfiguration:(id)arg4;
 - (void)ibPropertyStorage:(id)arg1 didChangeCandidatesForRelationship:(id)arg2 fromValue:(id)arg3 toValue:(id)arg4 context:(id)arg5;
 - (void)ibPropertyStorage:(id)arg1 willChangeCandidatesForRelationship:(id)arg2 fromValue:(id)arg3 toValue:(id)arg4 context:(id)arg5;
+- (void)ibMergeAdditionsAndOrderingHints:(id)arg1 intoToManyRelationship:(id)arg2 document:(id)arg3 turnOnInEmptyConfiguration:(BOOL)arg4 insertionContext:(id)arg5;
 - (void)ibMergeAdditionsAndOrderingHints:(id)arg1 intoToManyRelationship:(id)arg2 document:(id)arg3 insertionContext:(id)arg4;
+- (void)ibDidUnarchiveValuesForConfiguration:(id)arg1 withPropertyStorage:(id)arg2 unarchiver:(id)arg3;
+- (void)ibDidArchiveValuesForConfiguration:(id)arg1 withPropertyStorage:(id)arg2 archiver:(id)arg3;
 - (id)ibUnarchiveValueForAttribute:(id)arg1 inConfiguration:(id)arg2 withDocumentUnarchiver:(id)arg3;
 - (void)ibArchiveEvaluatedValue:(id)arg1 forAttribute:(id)arg2 inConfiguration:(id)arg3 withDocumentArchiver:(id)arg4;
 - (BOOL)ibShouldArchiveConfigurableProperty:(id)arg1 inConfiguration:(id)arg2 withStorage:(id)arg3;
@@ -169,6 +178,7 @@
 - (void)ibRegisterUndoActionInDocument:(id)arg1 forChangeToStorage:(id)arg2 property:(id)arg3 fromValue:(id)arg4 inConfiguration:(id)arg5;
 - (void)ibUndoValue:(id)arg1 forKeyPath:(id)arg2;
 - (BOOL)ibIsTopLevelObject;
+- (BOOL)ibIsValidOutletDestination;
 - (BOOL)ibAcceptsBindingsValidation;
 - (id)ibFontDataSource;
 - (void)ibInvalidateWarningsAfterDescendant:(id)arg1 changedProperty:(id)arg2 inDocument:(id)arg3 fromValue:(id)arg4;
@@ -180,7 +190,7 @@
 - (id)ibCompiledNibFileIdentifier;
 - (id)ibExposedElusiveDescendantsKeyPaths;
 - (void)ibDidRemoveFromDocument:(id)arg1;
-- (void)ibWillRemoveFromDocument:(id)arg1 previouslyMemberOfGroup:(id)arg2;
+- (void)ibWillRemoveFromDocument:(id)arg1 previouslyMemberOfGroup:(id)arg2 identifierInGroup:(id)arg3;
 - (void)ibDidAddToDocument:(id)arg1 phase:(unsigned long long)arg2;
 - (void)ibWasAddedToAutolayoutDocument:(id)arg1;
 - (void)ibDocumentDidChangeDevelopmentTarget:(id)arg1;
@@ -190,11 +200,12 @@
 - (void)ibAwakeInDocument:(id)arg1;
 - (id)ibBeginDesigningInDocument:(id)arg1;
 - (BOOL)ibIsInDesignMode;
-- (void)ibTakePastedAttributes:(id)arg1;
-- (void)ibTakeSnapshotValues:(id)arg1;
+- (void)ibTakePastedAttributes:(id)arg1 inConfiguration:(id)arg2;
+- (void)ibTakeSnapshotValues:(id)arg1 inConfiguration:(id)arg2;
 - (id)ibAttributeSnapshot;
 - (id)ibAttributeSnapshotPasteboardType;
 - (id)ibOrderedSnapshotAttributesKeyPaths;
+- (BOOL)ibShouldUseInspectorPropertyTitleInTooltipForKeyPath:(id)arg1;
 - (BOOL)ibShouldIncludeKeyPathInIbtoolPrintingOutput:(id)arg1;
 - (id)ibDocumentationPropertyInfosForKeyPath:(id)arg1;
 - (id)ibDocumentationClassName;
@@ -239,6 +250,7 @@
 - (id)ibEffectiveLabel;
 - (void)setIbExternalLabelIdentifier:(id)arg1;
 - (id)ibExternalLabelIdentifier;
+- (BOOL)ibWantsPrototypeForToOneOutletConnection:(id)arg1 inDocument:(id)arg2;
 - (float)ibConnectionCompilationOrderPriority;
 - (void)ibDocument:(id)arg1 didAddConnection:(id)arg2;
 - (id)ibEquivalentSourceForToOneOutlet:(id)arg1;
@@ -325,6 +337,7 @@
 - (void)ibRemoveChildren:(id)arg1;
 - (BOOL)ibCanRemoveChildren:(id)arg1;
 - (id)ibEditorSelectionOrderRelationLists;
+- (BOOL)ibWantsChildWrapperForChild:(id)arg1 inDocument:(id)arg2;
 - (void)ibPopulateEditorSelectionOrderRelationLists:(id)arg1;
 - (id)ibChildBackToFrontRelationOrder;
 - (void)ibPopulateChildBackToFrontRelationOrder:(id)arg1;
@@ -378,6 +391,7 @@
 - (id)ibDefaultFontDescriptionKeyPath;
 - (void)ibPopulateObjectsForFloatingPanels:(id)arg1;
 - (id)ibDefaultFontKeyPath;
+- (BOOL)ibAllowConfigurationPropertyMemberStorageUpdateForNonResizableFramesOfChildView:(id)arg1 inDocument:(id)arg2;
 - (void)setIbExternalLastKnownCanvasAnchor:(id)arg1;
 - (id)ibExternalLastKnownCanvasAnchor;
 - (BOOL)ibWantsCanvasLayoutInformationArchivedInDocument;
@@ -402,6 +416,8 @@
 - (struct CGRect)ibRectForChild:(id)arg1 inFrameController:(id)arg2;
 - (id)ibSecondaryHitTestingRectsForChild:(id)arg1 inFrameController:(id)arg2;
 - (BOOL)ibClipsChild:(id)arg1;
+- (void)ibSizeToFit;
+- (BOOL)ibCanSizeToFit;
 - (id)ibEditorCanvasFrameControllerForDocument:(id)arg1;
 - (Class)ibDropTargetResolverClass;
 - (Class)ibEditorClass;
@@ -410,6 +426,7 @@
 - (id)ibLocalAdditionalIbtoolDescriptionKeyPaths;
 - (id)ibLoggingDescription;
 - (id)ibDefaultLabel;
+- (id)ibWarningLabelInDocument:(id)arg1;
 - (id)ibQualifyingInfoForDefaultLabel;
 - (BOOL)ibWantsVerboseDefaultLabel;
 - (id)ibTypeNameForDefaultLabel;

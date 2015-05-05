@@ -21,6 +21,8 @@
 @property(readonly, copy) DVTTextDocumentLocation *documentLocation; // @synthesize documentLocation=_documentLocation;
 @property(retain) NSError *unarchivingError; // @synthesize unarchivingError=_unarchivingError;
 - (void).cxx_destruct;
+- (void)setShouldTrackSuperviewWidthFromUTF8String:(char *)arg1 fromXMLUnarchiver:(id)arg2;
+- (void)setLockedSizeFromUTF8String:(char *)arg1 fromXMLUnarchiver:(id)arg2;
 - (void)setDocumentLocationFromUTF8String:(char *)arg1 fromXMLUnarchiver:(id)arg2;
 - (void)dvt_encodeAttributesWithXMLArchiver:(id)arg1 version:(id)arg2;
 - (void)dvt_awakeFromXMLUnarchiver:(id)arg1;

@@ -18,7 +18,7 @@
 #import "NSMenuDelegate.h"
 #import "NSPathControlDelegate.h"
 
-@class CALayer, DVTBindingToken, DVTBorderedView, DVTFileDataType, DVTFindBar, DVTGradientImagePopUpButton, DVTNotificationToken, DVTObservingToken, DVTScopeBarsManager, DVTStackBacktrace, DVTStateRepository, IDEEditor, IDEEditorArea, IDEEditorGeniusResults, IDEEditorHistoryController, IDEEditorHistoryItem, IDEEditorIssueMenuController, IDEEditorMultipleContext, IDEEditorReadOnlyIndicatorController, IDEEditorSplittingController, IDEEditorStepperView, IDENavBar, IDENavigableItem, IDENavigableItemCoordinator, NSArray, NSArrayController, NSDictionary, NSIndexSet, NSMutableArray, NSScrollView, NSString, NSURL, NSView, _IDEEditorObjectGraphCoalescingState, _IDEGeniusResultsContext;
+@class CALayer, DVTBindingToken, DVTBorderedView, DVTFileDataType, DVTFindBar, DVTGradientImagePopUpButton, DVTNotificationToken, DVTObservingToken, DVTScopeBarsManager, DVTStackBacktrace, DVTStateRepository, IDEEditor, IDEEditorArea, IDEEditorGeniusResults, IDEEditorHistoryController, IDEEditorHistoryItem, IDEEditorIssueMenuController, IDEEditorMultipleContext, IDEEditorReadOnlyIndicatorController, IDEEditorSplittingController, IDEEditorStepperView, IDENavBar, IDENavigableItem, IDENavigableItemCoordinator, NSArray, NSArrayController, NSDictionary, NSIndexSet, NSMutableArray, NSScrollView, NSString, NSURL, NSView, _IDEGeniusResultsContext;
 
 @interface IDEEditorContext : IDEViewController <NSMenuDelegate, IDEEditorContextProtocol, IDEEditorSplittingControllerDelegate, DVTFindBarHostable, NSPathControlDelegate, IDEPathCellDelegate, DVTScopeBarHost, IDENavigableItemCoordinatorDelegate, IDEEditorDelegate, DVTStateRepositoryDelegate, NSAnimationDelegate>
 {
@@ -46,7 +46,7 @@
     DVTNotificationToken *_editorDocumentWillCloseNotificationToken;
     DVTNotificationToken *_findStringChangedNotificationToken;
     DVTNotificationToken *_navigableItemPropertyObserver;
-    DVTNotificationToken *_navigableItemCoordinatorDidForgetItemsNotificationToken;
+    DVTNotificationToken *_navigableItemCoordinatorWillForgetItemsNotificationToken;
     DVTNotificationToken *_workspaceWillWriteNotificationToken;
     DVTObservingToken *_editorDocumentForNavBarStructureChangedObservingToken;
     DVTObservingToken *_windowMainViewControllerChangedObservingToken;
@@ -56,9 +56,6 @@
     id <DVTCancellable> _deferredUpdateSubDocumentNavigableItemsCancellableToken;
     DVTBindingToken *_navBarNavigableItemRootChildItemsBindingToken;
     DVTBindingToken *_navBarNavigableItemBindingToken;
-    DVTNotificationToken *_modelObjectGraphWillCoalesceChangesNotification;
-    DVTNotificationToken *_modelObjectGraphDidCoalesceChangesNotification;
-    _IDEEditorObjectGraphCoalescingState *_coalescingState;
     IDEEditorGeniusResults *_editorGeniusResults;
     IDENavigableItem *_geniusResultsRootNavigableItem;
     DVTObservingToken *_counterpartsObservingToken;
@@ -318,6 +315,7 @@
 - (BOOL)_canChangeNavigableItem;
 - (void)setupNewEditor:(id)arg1;
 - (void)_mainViewControllerChanged;
+- (void)_removeFromLastActiveEditorContexts;
 - (void)_syncGradientStyleForJumpBarControls;
 @property(readonly, getter=isPrimaryEditorContext) BOOL primaryEditorContext;
 - (BOOL)isLastActiveEditorContext;

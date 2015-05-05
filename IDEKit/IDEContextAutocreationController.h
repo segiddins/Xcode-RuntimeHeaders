@@ -12,14 +12,17 @@
 
 @interface IDEContextAutocreationController : NSObject <DVTInvalidation>
 {
-    IDEWorkspace *_workspace;
+    NSString *_contextAutocreationMetricIdentifier;
     BOOL _batchAddingBlueprints;
     BOOL _needsBatchSchemeAutocreation;
+    BOOL _allowAutocreateSchemesUI;
+    IDEWorkspace *_workspace;
 }
 
 + (id)contextAutocreationControllerForWorkspace:(id)arg1;
 + (id)logAspect;
 + (void)initialize;
+@property BOOL allowAutocreateSchemesUI; // @synthesize allowAutocreateSchemesUI=_allowAutocreateSchemesUI;
 @property(readonly) IDEWorkspace *workspace; // @synthesize workspace=_workspace;
 - (void).cxx_destruct;
 - (id)createSchemeForBuildable:(id)arg1 withName:(id)arg2;
@@ -28,7 +31,12 @@
 - (void)_setDefaultBuildActionForScheme:(id)arg1 forBuildable:(id)arg2;
 - (id)_applicationsInWorkspaceThatDependOnBuildable:(id)arg1;
 - (id)_applicationBuildablesInWorkspace:(id)arg1;
+- (BOOL)_shouldAutocreateSchemesForBuildableProduct:(id)arg1;
+- (BOOL)_isWatchAppExtension:(id)arg1;
+- (BOOL)_isWatchApp:(id)arg1;
 - (BOOL)_isAppExtension:(id)arg1;
+- (id)_platformProductTypeOfBuildable:(id)arg1;
+- (id)_expandedPlatformForBuildableProduct:(id)arg1;
 - (void)_setDefaultConfigurationsInScheme:(id)arg1 forBuildable:(id)arg2;
 - (id)_configFromArray:(id)arg1 matchingPrefix:(id)arg2 preferringConfig:(id)arg3;
 - (void)addBuildable:(id)arg1 toScheme:(id)arg2;
@@ -39,7 +47,9 @@
 - (BOOL)isAutocreationSuppressedForBuildable:(id)arg1;
 - (id)candidateBuildablesForcedAutocreate:(BOOL)arg1;
 - (id)orderBuildables:(id)arg1;
-- (void)_autocreateSchemesForcingAutocreate:(BOOL)arg1 fromAddingBlueprint:(BOOL)arg2;
+- (void)_finishAutocreateSchemesForcingAutocreate:(BOOL)arg1 fromAddingBlueprint:(BOOL)arg2 withBuildablesToCreateContextsFor:(id)arg3;
+- (void)_autocreateSchemesWithUI:(BOOL)arg1 forcingAutocreate:(BOOL)arg2 fromAddingBlueprint:(BOOL)arg3;
+- (id)_watchKitStoryboardFiles;
 - (void)autocreateSchemesForcingAutocreate:(BOOL)arg1;
 - (id)buildablesToAutocreateSchemesForcedAutocreate:(BOOL)arg1;
 - (id)parentBuildableForBuildable:(id)arg1;
@@ -47,6 +57,7 @@
 - (void)willBatchAddMultipleBlueprints:(id)arg1;
 - (void)primitiveInvalidate;
 - (id)initForWorkspace:(id)arg1;
+- (id)contextAutocreationMetricIdentifier;
 
 // Remaining properties
 @property(retain) DVTStackBacktrace *creationBacktrace;

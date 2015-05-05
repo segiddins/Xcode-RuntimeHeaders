@@ -9,11 +9,10 @@
 #import "DVTInvalidation.h"
 #import "IDEDebugNavigableContentDelegate.h"
 
-@class DBGDebugSession, DBGGaugeCPUTrayCell, DBGGaugeDocumentLocation, DBGGaugeMemoryTrayCell, DBGNavigatorCompressedDataCell, DBGProcessNavigableItem, DBGStackFrame, DBGStackFrameCell, DBGThread, DBGViewDebuggerAdditionUIController, DVTNotificationToken, DVTObservingToken, DVTStackBacktrace, IDEDebugNavigator, IDENavigableItem, IDENavigatorDataCell, IDENavigatorFilterControlBar, IDENavigatorOutlineView, IDEWorkspaceTabController, NSArray, NSLayoutConstraint, NSMenuItem, NSMutableSet, NSSet, NSString, NSView;
+@class DBGDebugSession, DBGGaugeCPUTrayCell, DBGGaugeDocumentLocation, DBGGaugeMemoryTrayCell, DBGNavigatorCompressedDataCell, DBGProcessNavigableItem, DBGStackFrameCell, DBGViewDebuggerAdditionUIController, DVTNotificationToken, DVTObservingToken, DVTStackBacktrace, IDEDebugNavigator, IDENavigableItem, IDENavigatorDataCell, IDENavigatorFilterControlBar, IDENavigatorOutlineView, IDEStackFrame, IDEThread, IDEWorkspaceTabController, NSArray, NSLayoutConstraint, NSMenuItem, NSMutableSet, NSSet, NSString, NSView;
 
 @interface DBGThreadsStacksContentDelegate : NSObject <IDEDebugNavigableContentDelegate, DVTInvalidation>
 {
-    DBGDebugSession *_debugSession;
     NSString *_associatedProcessUUID;
     IDEDebugNavigator *_debugNavigator;
     IDENavigatorOutlineView *_outlineView;
@@ -30,8 +29,8 @@
     NSArray *_trayCells;
     int _navigatorContentMode;
     NSMenuItem *_threadMenuItem;
-    DBGThread *_currentThreadForFutureSelection;
-    DBGStackFrame *_currentStackFrameForFutureSelection;
+    IDEThread *_currentThreadForFutureSelection;
+    IDEStackFrame *_currentStackFrameForFutureSelection;
     unsigned long long _compressionValue;
     BOOL _isInShouldInvalidateProcessItem;
     BOOL _ignoreStateForDebugNavigator;
@@ -64,6 +63,7 @@
     NSView *_viewDebugFilterView;
     IDENavigatorFilterControlBar *_viewDebugFilterControl;
     NSLayoutConstraint *_viewDebugFilterViewHeight;
+    DBGDebugSession *_debugSession;
 }
 
 + (id)keyPathsForValuesAffectingProcessNavigableItem;
@@ -71,6 +71,7 @@
 @property(nonatomic) BOOL showsOnlyRunningBlocks; // @synthesize showsOnlyRunningBlocks=_showsOnlyRunningBlocks;
 @property(nonatomic) BOOL showsOnlyInterestingContent; // @synthesize showsOnlyInterestingContent=_showsOnlyInterestingContent;
 @property(nonatomic) BOOL showsCompressedStackFrames; // @synthesize showsCompressedStackFrames=_showsCompressedStackFrames;
+@property(retain) DBGDebugSession *debugSession; // @synthesize debugSession=_debugSession;
 @property __weak NSLayoutConstraint *viewDebugFilterViewHeight; // @synthesize viewDebugFilterViewHeight=_viewDebugFilterViewHeight;
 @property __weak IDENavigatorFilterControlBar *viewDebugFilterControl; // @synthesize viewDebugFilterControl=_viewDebugFilterControl;
 @property(retain) NSView *viewDebugFilterView; // @synthesize viewDebugFilterView=_viewDebugFilterView;
@@ -80,7 +81,6 @@
 @property(retain) NSView *filterViewContainer; // @synthesize filterViewContainer=_filterViewContainer;
 @property(readonly) IDEDebugNavigator *debugNavigator; // @synthesize debugNavigator=_debugNavigator;
 @property(readonly) NSString *associatedProcessUUID; // @synthesize associatedProcessUUID=_associatedProcessUUID;
-@property(retain) DBGDebugSession *debugSession; // @synthesize debugSession=_debugSession;
 - (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (void)setStoredNavigatorContentMode:(id)arg1;
@@ -160,7 +160,7 @@
 @property(readonly) DBGProcessNavigableItem *processNavigableItem;
 - (id)_allThreadItemsForProcessItem:(id)arg1;
 @property(readonly) IDENavigableItem *rootNavigableItem;
-- (id)initWithProcess:(id)arg1 debugNavigator:(id)arg2;
+- (id)initWithTopNavigableModel:(id)arg1 debugNavigator:(id)arg2;
 
 // Remaining properties
 @property(retain) DVTStackBacktrace *creationBacktrace;

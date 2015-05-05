@@ -6,12 +6,11 @@
 
 #import "DVTLayerHostingView.h"
 
-#import "DVTInvalidation.h"
 #import "DYOpenGLLayerContentProvider.h"
 
-@class CALayer, CAScrollLayer, CATextLayer, DVTStackBacktrace, DYOpenGLLayer, GPURenderJob, NSObject<OS_dispatch_source>, NSString;
+@class CALayer, CAScrollLayer, CATextLayer, DYOpenGLLayer, GPURenderJob, NSObject<OS_dispatch_source>, NSString;
 
-@interface GPURenderBufferView : DVTLayerHostingView <DYOpenGLLayerContentProvider, DVTInvalidation>
+@interface GPURenderBufferView : DVTLayerHostingView <DYOpenGLLayerContentProvider>
 {
     CAScrollLayer *_scrollLayer;
     DYOpenGLLayer *_imageLayer;
@@ -47,7 +46,6 @@
     struct CGSize _titleSize;
 }
 
-+ (void)initialize;
 @property(nonatomic) double relativeScale; // @synthesize relativeScale=_relativeScale;
 @property(copy, nonatomic) CDUnknownBlockType swipeHandler; // @synthesize swipeHandler=_swipeHandler;
 @property(nonatomic) __weak id <GPURenderBufferViewStateCoordinationProtocol> coordinator; // @synthesize coordinator=_coordinator;
@@ -55,6 +53,7 @@
 @property(retain, nonatomic) GPURenderJob *renderJob; // @synthesize renderJob=_renderJob;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (void)dumpImage:(id)arg1 asRaw:(BOOL)arg2;
 - (void)layout;
 - (BOOL)layer:(id)arg1 shouldInheritContentsScale:(double)arg2 fromWindow:(id)arg3;
 - (void)layoutSublayersOfLayer:(id)arg1;
@@ -84,7 +83,6 @@
 - (id)renderingAttributes;
 - (BOOL)flipped;
 - (BOOL)isColor;
-- (void)primitiveInvalidate;
 - (void)viewDidMoveToSuperview;
 - (void)viewDidMoveToWindow;
 - (void)setupOrTearDown;
@@ -132,13 +130,10 @@
 - (void)_commonInit;
 
 // Remaining properties
-@property(retain) DVTStackBacktrace *creationBacktrace;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
-@property(readonly) DVTStackBacktrace *invalidationBacktrace;
 @property(readonly) Class superclass;
-@property(readonly, nonatomic, getter=isValid) BOOL valid;
 
 @end
 

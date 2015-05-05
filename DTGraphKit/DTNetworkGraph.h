@@ -11,17 +11,18 @@
 @interface DTNetworkGraph : DTBarGraph
 {
     struct CGRect _contentBox;
-    NSArray *nodes;
-    NSArray *edges;
-    DTNetworkGraphObject *selectedObject;
     id <DTNetworkGraphLayout> layout;
+    NSArray *_nodes;
+    NSArray *_edges;
+    DTNetworkGraphObject *_selectedObject;
 }
 
-@property(retain) DTNetworkGraphObject *selectedObject; // @synthesize selectedObject;
-@property(retain) NSArray *edges; // @synthesize edges;
-@property(retain) NSArray *nodes; // @synthesize nodes;
+@property(retain) DTNetworkGraphObject *selectedObject; // @synthesize selectedObject=_selectedObject;
+@property(retain) NSArray *edges; // @synthesize edges=_edges;
+@property(retain) NSArray *nodes; // @synthesize nodes=_nodes;
+- (void).cxx_destruct;
 - (void)mouseDown:(id)arg1;
-@property(retain) id <DTNetworkGraphLayout> layout; // @synthesize layout;
+@property(retain, getter=_layoutDelegate, setter=_setLayoutDelegate:) id <DTNetworkGraphLayout> layout;
 - (void)observeModel:(BOOL)arg1;
 - (void)setFrameSize:(struct CGSize)arg1;
 - (void)resetPaths;
@@ -32,7 +33,6 @@
 - (void)drawBorder:(struct CGRect)arg1;
 - (double)calculateVerticalBorderBuffer;
 - (double)calculateHorizontalBorderBuffer;
-- (void)dealloc;
 - (id)init;
 
 @end

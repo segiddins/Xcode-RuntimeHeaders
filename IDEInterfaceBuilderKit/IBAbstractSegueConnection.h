@@ -9,7 +9,7 @@
 #import "IBDocumentArchiving.h"
 #import "IBStoryboardCanvasLink.h"
 
-@class NSObject, NSSet, NSString;
+@class NSObject<IBPrimarySceneObject>, NSSet, NSString;
 
 @interface IBAbstractSegueConnection : IBConnection <IBDocumentArchiving, IBStoryboardCanvasLink>
 {
@@ -32,8 +32,8 @@
 - (BOOL)isSelectable;
 @property(readonly) BOOL canvasLinkWantsExclusiveHook;
 @property(readonly) BOOL canvasLinkRequiresSourceCanvasFrame;
-@property(readonly) NSObject *canvasLinkDestination;
-@property(readonly) NSObject *canvasLinkSource;
+@property(readonly) NSObject<IBPrimarySceneObject> *canvasLinkDestination;
+@property(readonly) NSObject<IBPrimarySceneObject> *canvasLinkSource;
 - (id)instantiateSegueTemplate;
 - (id)badgeImage;
 - (BOOL)ibIsInspectorApplicable:(id)arg1 forCategory:(id)arg2;
@@ -42,6 +42,7 @@
 - (void)archiveWithDocumentArchiver:(id)arg1;
 - (Class)classForDocumentArchiver:(id)arg1;
 - (id)archiveKeyForLabel;
+- (id)ibUserHostableDocumentClasses;
 - (id)ibDocumentationClassName;
 - (id)displayGroupIdentifierFromReferenceEndPoint:(id)arg1;
 - (id)explicitDisplayNameWithRespectToPredecessors:(id)arg1;

@@ -23,7 +23,7 @@
 }
 
 + (void)_setOpenAsContextMenu:(id)arg1 withViewController:(id)arg2;
-+ (BOOL)_isProjectDocumentURL:(id)arg1;
++ (BOOL)_isWorkspaceWrappingDocumentURL:(id)arg1;
 + (BOOL)_isWorkspaceDocumentURL:(id)arg1;
 + (Class)_THREAD_editorDocumentClassForType:(id)arg1 extension:(id *)arg2;
 + (void)_THREAD_cacheDocumentClass:(Class)arg1 forExtension:(id)arg2;
@@ -134,18 +134,18 @@
 - (id)openDocumentLocation:(id)arg1 error:(id *)arg2;
 - (void)_openDocumentsForDocumentLocations:(id)arg1 display:(BOOL)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)_openDocumentsForDocumentLocations:(id)arg1 display:(BOOL)arg2 error:(id *)arg3;
-- (void)_openProjectsAndWorkspaces:(id)arg1 display:(BOOL)arg2 openedDocuments:(id)arg3 simpleFileDocumentLocations:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
-- (void)_openProjectsAndWorkspaces:(id)arg1 display:(BOOL)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (BOOL)_openProjectsAndWorkspaces:(id)arg1 documents:(id *)arg2 simpleFileURLs:(id *)arg3 display:(BOOL)arg4 error:(id *)arg5;
-- (id)_workspaceOrProjectDocumentLocationsInFolderURL:(id)arg1;
+- (void)_openProjectsPlaygroundsAndWorkspaces:(id)arg1 display:(BOOL)arg2 openedDocuments:(id)arg3 simpleFileDocumentLocations:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
+- (void)_openProjectsPlaygroundsAndWorkspaces:(id)arg1 display:(BOOL)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (BOOL)_openProjectsPlaygroundsAndWorkspaces:(id)arg1 documents:(id *)arg2 simpleFileURLs:(id *)arg3 display:(BOOL)arg4 error:(id *)arg5;
+- (id)_workspacePlaygroundOrProjectDocumentLocationsInFolderURL:(id)arg1;
 - (BOOL)_openSimpleFileDocumentLocations:(id)arg1 documents:(id *)arg2 display:(BOOL)arg3 error:(id *)arg4;
 - (id)_frontmostSimpleFilesFocusedWorkspaceWindowForTopLevelFilePaths:(id)arg1;
 - (BOOL)_workspace:(id)arg1 topLevelChildrenMatches:(id)arg2;
 - (void)_promptToOpenWorkspaceWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)_chooseWorkspaceWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)_openPatch:(id)arg1 displayDocument:(BOOL)arg2;
-- (void)_openProjectDocument:(id)arg1 displayDocument:(BOOL)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (id)_openProjectDocument:(id)arg1 displayDocument:(BOOL)arg2 error:(id *)arg3;
+- (void)_openWrappingContainerDocument:(id)arg1 displayDocument:(BOOL)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (id)_openWrappingContainerDocument:(id)arg1 displayDocument:(BOOL)arg2 error:(id *)arg3;
 - (id)makeDocumentWithContentsOfURL:(id)arg1 ofType:(id)arg2 error:(id *)arg3;
 - (void)_openWorkspaceDocumentForWorkspace:(id)arg1 display:(BOOL)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)_openWorkspaceDocumentForWorkspace:(id)arg1 display:(BOOL)arg2 error:(id *)arg3;

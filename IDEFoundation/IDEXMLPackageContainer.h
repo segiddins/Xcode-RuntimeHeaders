@@ -45,11 +45,12 @@
 - (BOOL)writeToFilePath:(id)arg1 forceWrite:(BOOL)arg2 error:(id *)arg3;
 - (id)_xmlData;
 - (BOOL)didReadFromFilePath:(id)arg1 error:(id *)arg2;
+- (id)_subitemsForUnarchivedSubitems:(id)arg1;
 - (BOOL)willReadFromFilePath:(id)arg1 error:(id *)arg2;
 - (BOOL)readFromFilePath:(id)arg1 error:(id *)arg2;
 - (id)initFromXMLUnarchiver:(id)arg1 archiveVersion:(float)arg2;
 - (void)customDataStoreClosing:(id)arg1;
-- (id)initWithFilePath:(id)arg1 extension:(id)arg2 workspace:(id)arg3 error:(id *)arg4;
+- (id)initWithFilePath:(id)arg1 extension:(id)arg2 workspace:(id)arg3 options:(id)arg4 error:(id *)arg5;
 - (void)_createCustomDataStore:(id)arg1;
 - (id)_archiveFilePathForFilePath:(id)arg1;
 - (void)dvt_encodeRelationshipsWithXMLArchiver:(id)arg1 version:(id)arg2;

@@ -79,9 +79,11 @@
 - (void)userDidPressSpaceBarInTileView:(id)arg1;
 - (CDUnknownBlockType)tileView:(id)arg1 willProcessClick:(id)arg2;
 - (void)tileView:(id)arg1 didProcessKeyEvent:(id)arg2;
+- (double)popUpDelayForEvent:(id)arg1;
 - (void)stopTimerForShowingDetailPopUpController;
-- (void)startTimerForShowingDetailPopUpControllerForAssetAndGroupPair:(id)arg1;
+- (void)startTimerForDelay:(double)arg1 showingDetailPopUpControllerForAssetAndGroupPair:(id)arg2;
 - (void)_openPopUpWithPair:(id)arg1;
+- (BOOL)_shouldImmediatelyOpenForEvent:(id)arg1;
 - (void)updatePositionOfDetailPopUp;
 - (BOOL)detailPopUpController:(id)arg1 canEditAsset:(id)arg2;
 - (id)detailPopUpController:(id)arg1 viewControllerForEditingAsset:(id)arg2;

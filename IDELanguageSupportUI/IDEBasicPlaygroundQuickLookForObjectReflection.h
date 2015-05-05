@@ -8,16 +8,16 @@
 
 #import "IDEPlaygroundQuickLookProvider.h"
 
-@class IDEAbstractPlaygroundLoggerObjectReflection, IDEPlaygroundQuickLookSingleLineView, NSAttributedString, NSString, NSView;
+@class IDEPlaygroundLoggerObjectReflection, IDEPlaygroundQuickLookSingleLineView, NSAttributedString, NSString, NSView;
 
 @interface IDEBasicPlaygroundQuickLookForObjectReflection : NSViewController <IDEPlaygroundQuickLookProvider>
 {
     NSView *_iconView;
     IDEPlaygroundQuickLookSingleLineView *_naturalSizeView;
-    IDEAbstractPlaygroundLoggerObjectReflection *_objectReflection;
+    IDEPlaygroundLoggerObjectReflection *_objectReflection;
 }
 
-@property(readonly) IDEAbstractPlaygroundLoggerObjectReflection *objectReflection; // @synthesize objectReflection=_objectReflection;
+@property(readonly) IDEPlaygroundLoggerObjectReflection *objectReflection; // @synthesize objectReflection=_objectReflection;
 @property(readonly) NSView *iconView; // @synthesize iconView=_iconView;
 - (void).cxx_destruct;
 - (id)quickLookViewForResultsView;

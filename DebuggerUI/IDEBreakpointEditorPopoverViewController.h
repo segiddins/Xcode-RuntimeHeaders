@@ -19,11 +19,12 @@
     DVTExtension *_breakpointEditorExtension;
     NSViewController<IDEBreakpointEditor> *_breakpointSpecificViewController;
     NSTextField *_conditionTextField;
-    NSView *_conditionAndIgnoreCountView;
     DVTStackView_AppKitAutolayout *_stackView;
     DVTStackView_AppKitAutolayout *_actionsStackView;
     NSView *_addActionButtonView;
     NSPopover *_popover;
+    NSView *_conditionView;
+    NSView *_ignoreCountView;
     NSView *_actionsView;
     NSView *_automaticallyContinueView;
 }
@@ -36,6 +37,8 @@
 + (void)showEditorForBreakpoint:(id)arg1 relativeToRect:(struct CGRect)arg2 ofView:(id)arg3;
 @property(retain) NSView *automaticallyContinueView; // @synthesize automaticallyContinueView=_automaticallyContinueView;
 @property(retain) NSView *actionsView; // @synthesize actionsView=_actionsView;
+@property(retain) NSView *ignoreCountView; // @synthesize ignoreCountView=_ignoreCountView;
+@property(retain) NSView *conditionView; // @synthesize conditionView=_conditionView;
 @property(readonly) IDEBreakpoint *breakpoint; // @synthesize breakpoint=_breakpoint;
 @property(retain) NSPopover *popover; // @synthesize popover=_popover;
 - (void).cxx_destruct;

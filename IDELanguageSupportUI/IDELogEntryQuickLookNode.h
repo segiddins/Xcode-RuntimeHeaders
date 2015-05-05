@@ -13,7 +13,6 @@
 @interface IDELogEntryQuickLookNode : NSObject <NSPasteboardWriting>
 {
     NSArray *_children;
-    NSAttributedString *_compoundAttributedSummaryForOutlineView;
     IDEPlaygroundQuickLookController *_quickLookController;
     BOOL _hasLookedUpQuickLook;
     id <IDEPlaygroundLoggerLogEntry> _logEntry;
@@ -25,17 +24,16 @@
 - (id)writableTypesForPasteboard:(id)arg1;
 - (id)_presentationOptionsForStructure:(id)arg1;
 - (id)_presentationOptionsForTupleChildOfKeyedContainer;
-- (id)_compoundAttributedSummaryForStructure:(id)arg1 forUseInOutlineView:(BOOL)arg2 presentationOptions:(id)arg3;
-- (id)_compoundAttributedSummaryForObjectReflection:(id)arg1 includeName:(BOOL)arg2 forUseInOutlineView:(BOOL)arg3;
-- (id)_compoundAttributedSummaryForLogEntry:(id)arg1 includeName:(BOOL)arg2 forUseInOutlineView:(BOOL)arg3;
-- (id)_compoundAttributedSummaryForLogEntry:(id)arg1 forUseInOutlineView:(BOOL)arg2;
+- (id)_compoundAttributedSummaryForStructure:(id)arg1 presentationOptions:(id)arg2;
+- (id)_compoundAttributedSummaryForObjectReflection:(id)arg1 includeName:(BOOL)arg2;
+- (id)_compoundAttributedSummaryForLogEntry:(id)arg1 includeName:(BOOL)arg2;
+- (id)_compoundAttributedSummaryForLogEntry:(id)arg1;
 @property(readonly) IDEPlaygroundQuickLookController *quickLookController;
-@property(readonly) NSAttributedString *compoundAttributedSummaryForOutlineView;
 @property(readonly) NSAttributedString *compoundAttributedSummary;
 @property(readonly) NSString *compoundSummary;
 @property(readonly) NSArray *children;
 @property(readonly) BOOL isLeaf;
-- (id)initWithLogEntry:(id)arg1;
+- (id)_initWithLogEntry:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -40,15 +40,26 @@ struct _VMUDirectedGraphEdge {
     unsigned int _field3;
 };
 
-struct _VMUDirectedGraphNode {
-    unsigned int _field1;
-    unsigned int _field2;
+struct _VMUObjectGraphEdge {
+    union {
+        struct {
+            unsigned int :24;
+            unsigned int :2;
+            unsigned int :5;
+            unsigned int :1;
+        } _field1;
+        struct {
+            unsigned int :31;
+            unsigned int :1;
+        } _field2;
+    } _field1;
 };
 
-struct _VMUObjectGraphEdge {
-    unsigned int :64;
-    unsigned int :4;
-    unsigned int :60;
+struct _VMUObjectGraphEdgeLarge {
+    unsigned int :56;
+    unsigned int :8;
+    unsigned int :56;
+    unsigned int :8;
 };
 
 struct _VMURange {

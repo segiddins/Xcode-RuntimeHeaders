@@ -6,11 +6,12 @@
 
 #import <IDEKit/IDENavigator.h>
 
+#import "IDENavigatorCrashPointCellDelegate.h"
 #import "NSMenuDelegate.h"
 
 @class DVTGradientImageButton, DVTMapTable, DVTNotificationToken, DVTObservingToken, IDENavigatorDataCell, IDENavigatorFilterControlBar, IDENavigatorOutlineView, NSArray, NSLayoutConstraint, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, NSView;
 
-@interface IDEDebugNavigator : IDENavigator <NSMenuDelegate>
+@interface IDEDebugNavigator : IDENavigator <IDENavigatorCrashPointCellDelegate, NSMenuDelegate>
 {
     IDENavigatorOutlineView *_outlineView;
     DVTGradientImageButton *_autoCompressMinButton;
@@ -91,6 +92,8 @@
 - (void)_updateCompressionControls;
 - (void)_primitiveSetShowsCompressedStackFramesWithKVO:(BOOL)arg1;
 - (id)storedCompressionValue;
+- (void)forwardWithCrashPoint:(id)arg1;
+- (void)backwardWithCrashPoint:(id)arg1;
 - (id)_contentDelegateForRightClickedItems;
 - (void)menuNeedsUpdate:(id)arg1;
 - (BOOL)outlineView:(id)arg1 shouldCollapseTrayForItem:(id)arg2;
@@ -107,12 +110,14 @@
 - (id)outlineView:(id)arg1 toolTipForCell:(id)arg2 rect:(struct CGRect *)arg3 tableColumn:(id)arg4 item:(id)arg5 mouseLocation:(struct CGPoint)arg6;
 - (BOOL)outlineView:(id)arg1 writeItems:(id)arg2 toPasteboard:(id)arg3;
 - (id)outlineView:(id)arg1 selectionIndexesForProposedSelection:(id)arg2;
-- (BOOL)_wasGaugeCellClickedAtCurrentPoint;
-- (BOOL)_wasActionPopUpCellClickedAtCurrentPoint;
+- (BOOL)_clickedOnNonActionCellAtCurrentPoint;
 - (BOOL)outlineView:(id)arg1 shouldTrackCell:(id)arg2 forTableColumn:(id)arg3 item:(id)arg4;
+- (BOOL)_clickedOnActionCellForCell:(id)arg1 item:(id)arg2;
+- (BOOL)_wereCrashPointCellsClickedForCell:(id)arg1 item:(id)arg2;
 - (BOOL)_wasGaugeCellClickedForCell:(id)arg1 item:(id)arg2;
 - (BOOL)_wasActionPopUpCellClickedForCell:(id)arg1 item:(id)arg2;
-- (BOOL)_isPoint:(struct CGPoint)arg1 inGaugeButtonCellForCell:(id)arg2 forItem:(id)arg3;
+- (BOOL)_isEvent:(id)arg1 inGaugeButtonCellForCell:(id)arg2 forItem:(id)arg3;
+- (BOOL)_isEvent:(id)arg1 inTrackableAreaInCell:(id)arg2;
 - (BOOL)_isPoint:(struct CGPoint)arg1 inActionPopUpCellForCell:(id)arg2 forItem:(id)arg3;
 - (id)trayCellsForProcess:(id)arg1;
 - (BOOL)debuggingAdditionUIControllerWantsTrayItems:(id)arg1;
@@ -122,8 +127,9 @@
 - (double)outlineView:(id)arg1 heightOfRowByItem:(id)arg2;
 - (id)outlineView:(id)arg1 dataCellForTableColumn:(id)arg2 item:(id)arg3;
 - (void)outlineView:(id)arg1 willDisplayCell:(id)arg2 forTableColumn:(id)arg3 item:(id)arg4;
-- (id)_processHeaderCellWithDebugNavigableModelObject:(id)arg1 contentDelegate:(id)arg2;
+- (id)_processHeaderCellWithTopNavigableModelObject:(id)arg1 contentDelegate:(id)arg2;
 - (void)_configureProcessHeaderCell:(id)arg1;
+- (id)_crashPointCellWithCrashPoint:(id)arg1;
 - (id)_regularCell;
 - (void)outlineViewItemDidCollapseTray:(id)arg1;
 - (void)outlineViewItemDidExpandTray:(id)arg1;

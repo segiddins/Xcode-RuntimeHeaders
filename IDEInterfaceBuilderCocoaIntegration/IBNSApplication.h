@@ -31,14 +31,13 @@
 - (id)ibSegueTemplateSceneControllerOutletDestination;
 - (struct CGRect)ibRectForChild:(id)arg1 inFrameController:(id)arg2;
 - (id)ibEditorCanvasFrameControllerForDocument:(id)arg1;
-- (BOOL)ibCanBecomeDesignatedEntryPoint;
+- (BOOL)ibCanBecomeEntryPointForIndicator:(id)arg1;
 - (id)ibShortDisplayName;
 - (BOOL)ibIsPrimarySceneObject:(id)arg1 validSplitViewDetailWithSegue:(id)arg2;
 - (BOOL)ibIsPrimarySceneObject:(id)arg1 validSplitViewMasterWithSegue:(id)arg2;
 - (BOOL)ibIsValidPushReceiver;
 - (BOOL)ibCanBeValidRelationshipDestination;
 - (BOOL)ibCanBeValidTriggerSegueDestination;
-- (void)ibWillRemoveFromDocument:(id)arg1 previouslyMemberOfGroup:(id)arg2;
 - (void)ibPrepareCocoaDocumentForCompiling:(id)arg1 withContext:(id)arg2;
 - (void)ibDidExtractObjects:(id)arg1 fromPasteboard:(id)arg2 intoDocument:(id)arg3 context:(id)arg4;
 - (void)ibDidBecomeControllerForCompilationGroup;

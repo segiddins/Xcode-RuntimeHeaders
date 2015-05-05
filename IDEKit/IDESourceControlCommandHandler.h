@@ -34,7 +34,6 @@
 - (void)createPatchCommand:(id)arg1;
 - (void)viewSourceControl:(id)arg1;
 - (void)quickCheckoutCommand:(id)arg1;
-- (void)repositoriesCommand:(id)arg1;
 - (void)forceRefreshLocalAndRemoteStatusChecking;
 - (void)refreshFileStatusCommand:(id)arg1;
 - (void)resolvedCommand:(id)arg1;

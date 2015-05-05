@@ -8,14 +8,12 @@
 
 #import "DVTInvalidation.h"
 
-@class DVTDispatchLock, DVTMacroDefinitionTable, DVTMacroExpansionScope, DVTStackBacktrace, NSDate, NSMutableDictionary, NSMutableSet, NSOperationQueue, NSSet, NSString, NSURL;
+@class DVTDelayedInvocation, DVTDispatchLock, DVTMacroDefinitionTable, DVTMacroExpansionScope, DVTStackBacktrace, NSDate, NSMutableDictionary, NSMutableSet, NSOperationQueue, NSSet, NSString, NSURL;
 
 @interface DVTDownloadableManager : NSObject <DVTInvalidation>
 {
     DVTDispatchLock *_lock;
-    DVTDispatchLock *_asyncQueue;
-    NSMutableSet *_indexes;
-    NSOperationQueue *_indexRefreshQueue;
+    DVTDelayedInvocation *_updateDownloadables;
     NSMutableSet *_downloadables;
     NSMutableSet *_downloadedDownloadables;
     NSMutableDictionary *_downloadablesByIdentifier;
@@ -24,7 +22,6 @@
     DVTMacroDefinitionTable *_macroDefinitionTable;
     DVTMacroExpansionScope *_macroExpansionScope;
     NSMutableDictionary *_predicateSubstitutionVariables;
-    BOOL _automaticRefresh;
     BOOL _automaticUpdate;
     NSURL *_cacheURL;
     NSDate *_doNotPromptAboutUpdatesUntilDate;
@@ -35,13 +32,8 @@
 + (id)defaultDownloadableManager;
 @property(retain) NSDate *doNotPromptAboutUpdatesUntilDate; // @synthesize doNotPromptAboutUpdatesUntilDate=_doNotPromptAboutUpdatesUntilDate;
 @property BOOL automaticUpdate; // @synthesize automaticUpdate=_automaticUpdate;
-@property BOOL automaticRefresh; // @synthesize automaticRefresh=_automaticRefresh;
 @property(copy) NSURL *cacheURL; // @synthesize cacheURL=_cacheURL;
 - (void).cxx_destruct;
-- (BOOL)evalutePredicate:(id)arg1;
-- (BOOL)_evalutePredicate:(id)arg1;
-- (id)expandMacrosInValue:(id)arg1;
-- (id)_expandMacrosInValue:(id)arg1;
 - (void)setValue:(id)arg1 forMacroName:(id)arg2;
 - (void)updateOutdatedDownloadables:(id)arg1 errorHandler:(CDUnknownBlockType)arg2;
 - (id)download:(id)arg1 authorization:(struct AuthorizationOpaqueRef *)arg2 error:(id *)arg3;
@@ -65,13 +57,8 @@
 - (void)_willInstallDownloadable:(id)arg1;
 @property(readonly) NSSet *downloadedDownloadables;
 @property(readonly) NSSet *downloadables;
-- (void)addIndexAtURL:(id)arg1;
-- (void)addIndex:(id)arg1;
-- (id)_cacheURLForIndexURL:(id)arg1;
-- (void)_retryingRefreshIndexFromURL:(id)arg1;
-- (id)refreshIndexes;
-- (id)_refreshIndexFromURL:(id)arg1;
-@property(readonly) NSSet *indexes;
+- (void)rebuildDownloadables;
+- (BOOL)refreshWithError:(id *)arg1;
 @property(readonly) id <DVTDownloadableInstallationHelper> installationHelper;
 - (void)_lockedSetMutation:(id)arg1 key:(id)arg2 kind:(unsigned long long)arg3 change:(id)arg4;
 - (void)_withWillDidChangeSetMutationNotifications:(id)arg1 kind:(unsigned long long)arg2 change:(id)arg3 withBlock:(CDUnknownBlockType)arg4;

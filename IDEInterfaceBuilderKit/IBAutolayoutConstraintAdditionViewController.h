@@ -7,10 +7,11 @@
 #import "IDEViewController.h"
 
 #import "NSMenuDelegate.h"
+#import "NSTextFieldDelegate.h"
 
 @class DVTButtonTextField, IBAutolayoutConstraintAdditionTypeConfig, IBAutolayoutConstraintAdditionValidationState, IBMutableIdentityDictionary, NSButton, NSImageView, NSMenu, NSMutableDictionary, NSPopUpButton, NSSet, NSString, NSView;
 
-@interface IBAutolayoutConstraintAdditionViewController : IDEViewController <NSMenuDelegate>
+@interface IBAutolayoutConstraintAdditionViewController : IDEViewController <NSMenuDelegate, NSTextFieldDelegate>
 {
     IBAutolayoutConstraintAdditionTypeConfig *_lastConfigRequestingMenu;
     IBMutableIdentityDictionary *_typeConfigurationByTextField;
@@ -169,6 +170,7 @@
 - (void)menuNeedsUpdate:(id)arg1;
 - (void)_populateConstantMenu:(id)arg1;
 - (BOOL)validateMenuItem:(id)arg1;
+- (BOOL)control:(id)arg1 didFailToFormatString:(id)arg2 errorDescription:(id)arg3;
 - (void)_openConstantMenu:(id)arg1;
 - (void)_openMenu:(id)arg1 underControl:(id)arg2;
 - (void)loadView;

@@ -30,8 +30,5 @@
 - (id)initWithDictionaryRepresentation:(id)arg1;
 - (id)initWithName:(id)arg1 identifier:(id)arg2 status:(unsigned long long)arg3 failureSummaries:(id)arg4 performanceMetrics:(id)arg5;
 
-// Remaining properties
-@property(copy) NSString *name;
-
 @end
 

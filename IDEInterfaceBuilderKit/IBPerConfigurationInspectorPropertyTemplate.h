@@ -10,7 +10,7 @@
 #import "IBImageButtonDelegate.h"
 #import "NSMenuDelegate.h"
 
-@class DVTStackBacktrace, IBInspectorViewController, IBPlatform, NSArray, NSSet, NSString, NSXMLElement;
+@class DVTStackBacktrace, IBIdiom, IBInspectorViewController, NSArray, NSSet, NSString, NSXMLElement;
 
 @interface IBPerConfigurationInspectorPropertyTemplate : NSObject <NSMenuDelegate, DVTInvalidation, IBImageButtonDelegate>
 {
@@ -22,12 +22,12 @@
     NSXMLElement *_originalProperty;
     NSXMLElement *_originalSliver;
     NSString *_identifier;
-    IBPlatform *_platform;
+    IBIdiom *_idiom;
 }
 
 + (id)templateWithElement:(id)arg1 inspector:(id)arg2;
 + (void)initialize;
-@property(retain) IBPlatform *platform; // @synthesize platform=_platform;
+@property(retain) IBIdiom *idiom; // @synthesize idiom=_idiom;
 @property(retain) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
 - (void)turnOnValueForConfiguration:(id)arg1;
@@ -37,6 +37,7 @@
 - (BOOL)validateMenuItem:(id)arg1;
 - (id)accessoryViewForConfiguration:(id)arg1;
 - (void)imageButton:(id)arg1 willShowMenu:(id)arg2;
+- (id)headerMenuItemForConfigurationMenu;
 - (BOOL)replaceCurrentElementsIfNeededForObjects:(id)arg1;
 - (id)configurationsCoveredByObjects:(id)arg1;
 - (void)primitiveInvalidate;

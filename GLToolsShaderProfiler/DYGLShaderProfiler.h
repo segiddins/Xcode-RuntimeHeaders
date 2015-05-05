@@ -26,8 +26,5 @@
 - (id)initWithDelegate:(id)arg1;
 - (id)init;
 
-// Remaining properties
-@property(readonly, nonatomic) __weak id <DYShaderProfilerDelegate> delegate;
-
 @end
 

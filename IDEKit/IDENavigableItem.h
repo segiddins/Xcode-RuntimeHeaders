@@ -30,10 +30,10 @@
 }
 
 + (Class)navigableItemClassForModelObject:(id)arg1;
-+ (Class)registerInfoForClass:(Class)arg1 withExtension:(id)arg2;
++ (Class)_registerInfoForClass:(Class)arg1 withExtension:(id)arg2;
 + (void)_customizeNewNavigableItemClass:(Class)arg1 forModelObjectClass:(Class)arg2 extension:(id)arg3;
 + (id)_createExtraInfoObject;
-+ (id)classInfoByModelObjectClass;
++ (id)_classInfoByModelObjectClass;
 + (id)allNavigableItemExtensions;
 + (BOOL)automaticallyNotifiesObserversOfArrangedChildItems;
 + (BOOL)automaticallyNotifiesObserversOfParentItem;

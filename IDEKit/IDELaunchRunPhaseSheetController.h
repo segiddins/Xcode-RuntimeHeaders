@@ -8,7 +8,7 @@
 
 #import "IDECapsuleListViewDataSource.h"
 
-@class DVTBorderedView, DVTChoice, DVTFilePathFieldCell, DVTNotificationToken, DVTObservingToken, DVTStackView_ML, DVTTabChooserView, IDEArgumentsCapsuleSheetController, IDECapsuleListView, IDEDebuggerSpecifier, IDEEnvironmentVariablesCapsuleSheetController, IDELaunchSchemeAction, IDEScheme, NSButton, NSButtonCell, NSColor, NSMatrix, NSMutableArray, NSPopUpButton, NSString, NSTabView, NSTextField, NSTextView, NSView;
+@class DVTBorderedView, DVTChoice, DVTFilePathFieldCell, DVTNotificationToken, DVTObservingToken, DVTStackView_AppKitAutolayout, DVTStackView_ML, DVTTabChooserView, IDEArgumentsCapsuleSheetController, IDECapsuleListView, IDEDebuggerSpecifier, IDEEnvironmentVariablesCapsuleSheetController, IDELaunchSchemeAction, IDEScheme, NSButton, NSButtonCell, NSColor, NSMatrix, NSMutableArray, NSPopUpButton, NSString, NSTabView, NSTextField, NSTextView, NSView;
 
 @interface IDELaunchRunPhaseSheetController : IDEViewController <IDECapsuleListViewDataSource>
 {
@@ -29,6 +29,14 @@
     NSTextView *_customLaunchCommandsTextView;
     NSButton *_debugExecutableCheckbox;
     NSTabView *_tabView;
+    DVTStackView_AppKitAutolayout *_infoStackView;
+    NSView *_executable_buildConfiguration;
+    NSView *_executable_runnable;
+    NSView *_executable_user;
+    NSView *_executable_launchStyle;
+    NSView *_watchLaunchSettingsView;
+    NSPopUpButton *_watchInterfacePopup;
+    NSPopUpButton *_notificationPayloadPopup;
     DVTChoice *_infoChoice;
     DVTChoice *_conditionsChoice;
     DVTChoice *_optionsChoice;
@@ -85,7 +93,15 @@
 - (void)_updateMacroExpansionRunnablePopUp;
 - (void)_updateRunnablePopUp;
 - (void)_runnableBuildableProductsDidChange;
+- (void)_updateInfoTab;
+- (void)_updateWatchSettings;
+- (BOOL)_runnableIsWatchApp;
+- (void)_addMenuItemForBuildableProduct:(id)arg1 menu:(id)arg2;
+- (void)_addMenuItemForWatchInterfaceMenu:(id)arg1 tag:(long long)arg2;
 - (void)_updateDebuggerSpecifierAndOtherOptions;
+- (void)_notificationPayloadSelected:(id)arg1;
+- (void)watchInterfaceSelected:(id)arg1;
+- (void)_validateNotificationPopupForTag:(long long)arg1;
 - (void)runnablePopUpAction:(id)arg1;
 - (id)customLaunchCommandsFont;
 - (BOOL)launchStyleIsCustomLaunchCommands;

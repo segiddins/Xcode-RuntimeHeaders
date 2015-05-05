@@ -19,6 +19,7 @@
     NSMutableDictionary *_infoRemoved;
 }
 
++ (id)objectsFromDictionaries:(id)arg1 service:(id)arg2 validationErrors:(id *)arg3;
 + (void)_setupObservablePropertiesForClass:(Class)arg1;
 + (void)_setupAccessorsForClass:(Class)arg1;
 + (void)initialize;

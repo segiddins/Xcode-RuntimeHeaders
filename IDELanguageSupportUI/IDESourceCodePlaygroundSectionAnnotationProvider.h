@@ -8,13 +8,13 @@
 
 #import "DVTTextAnnotationDelegate.h"
 
-@class DVTMapTable, DVTObservingToken, IDEPlaygroundEditor, IDESourceCodePlaygroundSection, IDEWorkspaceTabController, NSMutableSet, NSString;
+@class DVTObservingToken, IDEPlaygroundEditor, IDESourceCodePlaygroundSection, IDEWorkspaceTabController, NSMapTable, NSMutableOrderedSet, NSString;
 
 @interface IDESourceCodePlaygroundSectionAnnotationProvider : DVTAnnotationProvider <DVTTextAnnotationDelegate>
 {
     IDESourceCodePlaygroundSection *_playgroundSection;
-    DVTMapTable *_accessoryViewAnnotationByLoggerResult;
-    NSMutableSet *_oldLoggerResults;
+    NSMapTable *_accessoryViewAnnotationByLoggerResult;
+    NSMutableOrderedSet *_oldLoggerResults;
     DVTObservingToken *_loggerResultsObservingToken;
     DVTObservingToken *_playgroundExpressionIsCompleteObservingToken;
     DVTObservingToken *_toysSelectedInRegisteredToyboxesObservingToken;
@@ -31,7 +31,7 @@
 @property IDESourceCodePlaygroundSection *playgroundSection;
 - (void)mergeAccessoryViewAnnotations:(id)arg1;
 - (void)_updateQuickLookForAnnotation:(id)arg1;
-- (void)_removeAccessoryViewAnnotationForLoggerResult:(id)arg1;
+- (void)_removeAccessoryViewAnnotationsForLoggerResults:(id)arg1;
 - (void)resetEditor:(id)arg1;
 - (void)_insertAccessoryViewAnnotationForExecutionResult:(id)arg1;
 

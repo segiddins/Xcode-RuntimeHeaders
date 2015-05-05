@@ -26,6 +26,7 @@
 - (id)decodeArchivedObjectWithAllowedBaseClasses:(id)arg1;
 - (id)decodeArchivedObjectWithAllowedBaseClass:(Class)arg1;
 - (id)decodeArchivedObject;
+- (void)updateName:(id)arg1;
 - (id)openFunctionStream:(id *)arg1;
 - (id)copyMutableData:(id *)arg1;
 - (BOOL)acceptCaptureVisitor:(id)arg1;

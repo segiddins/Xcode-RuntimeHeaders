@@ -6,9 +6,11 @@
 
 #import "NSObject.h"
 
-@class DBGViewChildMemberList, NSArray, NSSet, NSString;
+#import "DVTInvalidation.h"
 
-@interface DBGViewObject : NSObject
+@class DBGViewChildMemberList, DVTStackBacktrace, NSArray, NSSet, NSString;
+
+@interface DBGViewObject : NSObject <DVTInvalidation>
 {
     DBGViewChildMemberList *_memberList;
     NSArray *_childViewObjects;
@@ -27,6 +29,7 @@
 + (struct CATransform3D)transformFromArray:(id)arg1;
 + (struct CGPoint)pointFromArray:(id)arg1;
 + (struct CGRect)rectFromArray:(id)arg1;
++ (void)initialize;
 @property(readonly) NSSet *constraintAddressesAffectingViewObject; // @synthesize constraintAddressesAffectingViewObject=_constraintAddressesAffectingViewObject;
 @property BOOL hidden; // @synthesize hidden=_hidden;
 @property __weak DBGViewObject *parentViewObject; // @synthesize parentViewObject=_parentViewObject;
@@ -44,11 +47,20 @@
 - (BOOL)_isInflated;
 - (id)recursiveDescription;
 - (id)_collectSubViewDescriptions:(id)arg1 level:(long long)arg2;
-- (id)description;
+@property(readonly, copy) NSString *description;
 @property(readonly, nonatomic) id object;
 @property NSArray *childViewObjects;
 @property(readonly) NSString *identifier;
+- (void)primitiveInvalidate;
 - (id)initWithViewDescriber:(id)arg1 dictionary:(id)arg2;
+
+// Remaining properties
+@property(retain) DVTStackBacktrace *creationBacktrace;
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned long long hash;
+@property(readonly) DVTStackBacktrace *invalidationBacktrace;
+@property(readonly) Class superclass;
+@property(readonly, nonatomic, getter=isValid) BOOL valid;
 
 @end
 

@@ -14,8 +14,6 @@
 {
     BOOL _isStatic;
     unsigned int _resourceType;
-    int _internalID;
-    unsigned int _target;
     unsigned long long _containerID;
     unsigned long long _objectID;
     NSString *_label;
@@ -23,8 +21,6 @@
 }
 
 + (id)keyForResourceWithID:(unsigned long long)arg1 type:(unsigned int)arg2 containerID:(unsigned long long)arg3;
-@property(readonly, nonatomic) unsigned int target; // @synthesize target=_target;
-@property(readonly, nonatomic) int internalID; // @synthesize internalID=_internalID;
 @property(readonly, nonatomic) BOOL isStatic; // @synthesize isStatic=_isStatic;
 @property(readonly, nonatomic) NSMutableDictionary *properties; // @synthesize properties=_properties;
 @property(readonly, copy, nonatomic) NSString *label; // @synthesize label=_label;
@@ -34,7 +30,6 @@
 - (void).cxx_destruct;
 - (id)streamDictAtFunctionIndex:(unsigned int)arg1;
 - (id)createFullObjectWithFunctionStream:(id)arg1 dataResolver:(CDUnknownBlockType)arg2;
-- (id)keyWithSharegroupID:(unsigned long long)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initUpdateWithType:(unsigned int)arg1 objectID:(unsigned long long)arg2 containerID:(unsigned long long)arg3 changes:(id)arg4;

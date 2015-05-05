@@ -50,7 +50,6 @@
 - (BOOL)ibCanRemoveChildren:(id)arg1;
 - (void)ibWarnings:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
 - (void)ibPrepareCocoaDocumentForCompiling:(id)arg1 withContext:(id)arg2;
-- (BOOL)ibCanBecomeDesignatedEntryPoint;
 - (id)ibShortDisplayName;
 - (BOOL)ibIsPrimarySceneObject:(id)arg1 validSplitViewDetailWithSegue:(id)arg2;
 - (BOOL)ibIsPrimarySceneObject:(id)arg1 validSplitViewMasterWithSegue:(id)arg2;
@@ -61,7 +60,6 @@
 - (BOOL)ibCanBeValidPopoverSegueDestination;
 - (BOOL)ibCanBeValidSheetSegueDestination;
 - (BOOL)ibSegueTemplatesAreTopLevel;
-- (void)ibWillRemoveFromDocument:(id)arg1 previouslyMemberOfGroup:(id)arg2;
 - (void)ibBecameLocalUnitLeaderForDocument:(id)arg1;
 - (id)ibParentForFoldingDownstreamControllerFromRelationshipSegue:(id)arg1;
 - (void)ibCaptureDownstreamStoryboardPlaceholderTable:(id)arg1;

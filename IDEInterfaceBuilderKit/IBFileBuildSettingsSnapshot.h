@@ -26,6 +26,7 @@
 @property(readonly) NSString *minimumMacOSXDeploymentTarget;
 - (id)minimumDeploymentTargetOfTargets:(id)arg1;
 - (id)deploymentTargetsForPlatform:(id)arg1;
+- (id)pathsToAssetCatalogAppIconsPassingTest:(CDUnknownBlockType)arg1;
 @property(readonly) NSSet *iOSDeploymentTargets;
 @property(readonly) NSSet *macOSXDeploymentTargets;
 @property(readonly) BOOL anyBuildablesRequireManualSynthesis;

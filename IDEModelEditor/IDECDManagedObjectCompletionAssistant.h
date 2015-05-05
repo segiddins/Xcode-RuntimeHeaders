@@ -12,7 +12,6 @@
 
 @interface IDECDManagedObjectCompletionAssistant : Xcode3FileTemplateCompletionAssistant <NSOpenSavePanelDelegate>
 {
-    BOOL replaceFiles;
     BOOL _usePrimitiveDataTypes;
     long long _selectedLanguageTag;
 }

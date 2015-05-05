@@ -10,6 +10,7 @@
 
 @interface IDEDocumentationPlaygroundSection : IDEPlaygroundSection
 {
+    NSString *_documentationContents;
     NSURL *_documentationURL;
     NSString *_documentationRelativePath;
 }
@@ -19,9 +20,13 @@
 @property(copy, nonatomic) NSString *documentationRelativePath; // @synthesize documentationRelativePath=_documentationRelativePath;
 @property(copy) NSURL *documentationURL; // @synthesize documentationURL=_documentationURL;
 - (void).cxx_destruct;
+@property(readonly, copy) NSString *documentationContentsWithoutComments;
+@property(readonly, copy) NSString *documentationContents;
+- (id)stringConstructingFileWrapper:(id)arg1;
 - (id)xmlElementConstructingFileWrapper:(id)arg1;
 - (id)viewControllerForDisplayingPlaygroundSectionInEditor:(id)arg1;
 - (void)_updateDocumentationURL;
+- (id)initWithDocumentationContents:(id)arg1 identifier:(id)arg2 inPlaygroundDocument:(id)arg3;
 - (id)initWithXMLElement:(id)arg1 enclosingFileWrapper:(id)arg2 inPlaygroundDocument:(id)arg3;
 - (id)initWithRelativePathToDocumentation:(id)arg1 identifier:(id)arg2 inPlaygroundDocument:(id)arg3;
 

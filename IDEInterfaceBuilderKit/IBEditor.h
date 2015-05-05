@@ -39,6 +39,7 @@
     BOOL closed;
     DVTNotificationToken *frameChangeToken;
     DVTNotificationToken *showingSelectionHighlightsNotification;
+    NSSet *_entryPointObservations;
     BOOL active;
     BOOL frameControllerDragAndDropInProgress;
     BOOL hasAnyObjectsSelected;
@@ -46,6 +47,7 @@
 
 + (void)resetCursorRectsForObject:(id)arg1 inFrameController:(id)arg2;
 + (Class)ibDropTargetResolverClass;
++ (Class)ibDragAndDropInsertionIndicatorClass;
 @property(nonatomic) BOOL hasAnyObjectsSelected; // @synthesize hasAnyObjectsSelected;
 @property(nonatomic, getter=isFrameControllerDragAndDropInProgress) BOOL frameControllerDragAndDropInProgress; // @synthesize frameControllerDragAndDropInProgress;
 @property(nonatomic, getter=isActive) BOOL active; // @synthesize active;
@@ -108,13 +110,11 @@
 - (BOOL)isItemMisplaced:(id)arg1;
 - (id)viewsForPerformingAutolayoutMenuCommand:(BOOL)arg1;
 - (id)objectsForPerformingMenuCommand;
-- (BOOL)canSizeObjectToFit:(id)arg1;
 - (void)positionChildEditorFrame;
 - (void)pasteAttributes:(id)arg1;
 - (void)performDuplicate:(id)arg1;
 - (void)performClear:(id)arg1;
 - (void)performDelete:(id)arg1;
-- (void)performPasteExcludingConnections:(id)arg1;
 - (void)performPaste:(id)arg1;
 - (void)performCopy:(id)arg1;
 - (void)performCut:(id)arg1;
@@ -128,7 +128,7 @@
 - (id)acceptDragInfo:(id)arg1 context:(id)arg2;
 - (void)prepareToAcceptDragInfo:(id)arg1;
 @property(readonly) IBDropTargetResolver *dropTargetResolver;
-- (id)tellObjectToAcceptContentsOfPasteboard:(id)arg1 excludeConnections:(BOOL)arg2 selectNewObjects:(BOOL)arg3;
+- (id)tellObjectToAcceptContentsOfPasteboard:(id)arg1 selectNewObjects:(BOOL)arg2;
 - (void)customizePasteboardInsertionContext:(id)arg1 fromPasteboard:(id)arg2 andDraggingInfo:(id)arg3;
 - (void)populatePasteboardInsertionContext:(id)arg1 fromPasteboard:(id)arg2 isGeneratingDragPreview:(BOOL)arg3;
 - (void)populatePasteboardInsertionContext:(id)arg1 fromDraggingInfo:(id)arg2 isGeneratingDragPreview:(BOOL)arg3;

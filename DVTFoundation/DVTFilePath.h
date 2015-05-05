@@ -72,6 +72,7 @@
 @property(readonly) NSString *fileTypeAttribute;
 @property(readonly) BOOL isDirectory;
 @property(readonly) NSArray *sortedDirectoryContents;
+- (id)directoryContentsWithError:(id *)arg1;
 @property(readonly) NSArray *directoryContents;
 @property(readonly) NSDate *modificationDate;
 @property(readonly) BOOL isExcludedFromBackup;

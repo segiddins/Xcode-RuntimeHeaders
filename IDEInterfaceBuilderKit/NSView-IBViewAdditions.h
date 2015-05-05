@@ -10,6 +10,7 @@
 + (id)ib_viewWithSize:(struct CGSize)arg1;
 - (void)ib_removeFromSuperviewMakingAncestorFirstResponderIfNeeded;
 - (void)ib_setSubviewsMakingAncestorFirstResponderIfNeeded:(id)arg1;
+- (void)ib_layoutSubtreeIfNeededIfContainedInAutolayoutEnabledHierarchy;
 - (id)ib_layoutDescription;
 - (void)ib_centerWithIntegralOriginInRect:(struct CGRect)arg1;
 - (id)ib_constraintsForMakingFlushWithSuperview;

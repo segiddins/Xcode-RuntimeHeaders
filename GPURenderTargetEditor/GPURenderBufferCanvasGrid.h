@@ -26,7 +26,6 @@ __attribute__((visibility("hidden")))
 - (void)_configurationForRenderbuffers:(id)arg1;
 - (void)drawSeperatorLines:(struct CGRect)arg1;
 - (void)viewDidEndLiveResize;
-- (void)dealloc;
 - (void)setup;
 
 @end

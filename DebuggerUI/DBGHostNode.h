@@ -34,8 +34,12 @@
 - (void)updateContraintsOnHostedNodes:(BOOL)arg1;
 - (void)removeContraintsOnHostedNodes:(BOOL)arg1;
 - (void)updateNodesByZPosition;
+- (unsigned long long)zOrderIndexOfNode:(id)arg1;
+- (id)zOrderKeysSortedByZPosition;
 - (id)nodeInZMaxPlane;
 - (void)updateVisibleViewsWithRangeFromIndex:(int)arg1 toIndex:(int)arg2 animated:(BOOL)arg3;
+- (unsigned long long)hideViewsBehindNode:(id)arg1;
+- (unsigned long long)hideViewsAboveNode:(id)arg1;
 - (void)resetVisibleRangeAnimated:(BOOL)arg1;
 - (void)updateSpacing:(double)arg1 forNodesInfluencedBy:(id)arg2;
 - (void)updateSpacing:(double)arg1;

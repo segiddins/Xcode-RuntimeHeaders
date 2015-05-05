@@ -47,6 +47,7 @@
 - (void)_addPointerDataSizeMapToPlayer;
 - (void)_allocateAndFillDataCache;
 @property(readonly, retain, nonatomic) DYFunctionPlayer *player; // @dynamic player;
+- (void)setWireframeLineWidth:(float)arg1;
 - (id)newFunctionPlayer;
 - (void)dealloc;
 - (id)initWithCaptureStore:(id)arg1;

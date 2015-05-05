@@ -11,6 +11,7 @@
 }
 
 + (id)verifiedDanglingSubviewParentClassWhitelist;
+- (void)verifyTableViewBackgroundColors;
 - (void)verifySegmentedControlBorders;
 - (id)verifyTextFieldPreferredMaxLayoutWidth;
 - (void)verifyScrollViewsUseManualLayerBacking;

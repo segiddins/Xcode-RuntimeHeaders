@@ -8,23 +8,25 @@
 
 #import "NSTextFieldDelegate.h"
 
-@class DVTRolloverImageButton, DVTTabBarClippedItemsIndicator, NSArray, NSImage, NSImageView, NSLayoutConstraint, NSString, NSText, NSTextField, NSView, NSWindow;
+@class DVTRolloverImageButton, DVTTabbedWindowTabViewItem, NSImage, NSImageView, NSLayoutConstraint, NSString, NSText, NSTextField, NSView, NSWindow;
 
 @interface DVTScrollableTabButton : DVTScrollableTabBarViewButton <NSTextFieldDelegate>
 {
     NSString *_title;
+    NSImage *_image;
+    NSView *_titleContainerView;
     NSTextField *_titleTextField;
     NSImageView *_errorIndicator;
     NSView *_focusRingView;
     NSTextField *_userRenameTabField;
-    NSView *_mainContentContainer;
     NSText *_editor;
+    NSView *_mainContentContainer;
+    NSView *_mainContentClippingContainer;
     NSLayoutConstraint *_mainContentContainerWidthConstraint;
-    NSLayoutConstraint *_mainContentContainerLeadingConstraint;
-    NSLayoutConstraint *_mainContentContainerTrailingConstraint;
+    NSLayoutConstraint *_mainContentContainerLeftConstraint;
+    NSLayoutConstraint *_mainContentContainerRightConstraint;
     NSLayoutConstraint *_mainContentContainerHorizontalCenteringConstraint;
-    DVTTabBarClippedItemsIndicator *_clippedItemsIndicator;
-    NSArray *_clippedItemsIndicatorConstraints;
+    NSLayoutConstraint *_titleContainerViewHorizontalCenteringConstraint;
     NSImage *_tabDragImage;
     NSImage *_miniWindowDragImage;
     struct CGRect _miniWindowStartFrame;
@@ -35,24 +37,28 @@
     BOOL _isRenamingTab;
     BOOL _showingAlertSymbol;
     BOOL _showingCloseButton;
-    BOOL _showingClippedItemsIndicator;
+    DVTTabbedWindowTabViewItem *_tabViewItem;
     DVTRolloverImageButton *_closeButton;
     SEL _closeAction;
     SEL _becomeFirstResponderAction;
     double _buttonWidthForTitleLayout;
-    double _titleCenterOffset;
+    double _mainContentContainerCenterOffset;
+    double _titleTextFieldCenterOffset;
 }
 
 + (id)titleFont;
 + (double)titleWidthForButtonWidth:(double)arg1;
-@property(nonatomic) double titleCenterOffset; // @synthesize titleCenterOffset=_titleCenterOffset;
++ (BOOL)isMiniWindowDrag:(id)arg1;
++ (BOOL)isTabDrag:(id)arg1;
+@property(nonatomic) double titleTextFieldCenterOffset; // @synthesize titleTextFieldCenterOffset=_titleTextFieldCenterOffset;
+@property(nonatomic) double mainContentContainerCenterOffset; // @synthesize mainContentContainerCenterOffset=_mainContentContainerCenterOffset;
 @property(nonatomic) double buttonWidthForTitleLayout; // @synthesize buttonWidthForTitleLayout=_buttonWidthForTitleLayout;
-@property(nonatomic, getter=isShowingClippedItemsIndicator) BOOL showingClippedItemsIndicator; // @synthesize showingClippedItemsIndicator=_showingClippedItemsIndicator;
 @property(nonatomic, getter=isShowingCloseButton) BOOL showingCloseButton; // @synthesize showingCloseButton=_showingCloseButton;
 @property(nonatomic, getter=isShowingAlertSymbol) BOOL showingAlertSymbol; // @synthesize showingAlertSymbol=_showingAlertSymbol;
 @property(nonatomic) SEL becomeFirstResponderAction; // @synthesize becomeFirstResponderAction=_becomeFirstResponderAction;
 @property(nonatomic) SEL closeAction; // @synthesize closeAction=_closeAction;
 @property(readonly) DVTRolloverImageButton *closeButton; // @synthesize closeButton=_closeButton;
+@property(retain, nonatomic) DVTTabbedWindowTabViewItem *tabViewItem; // @synthesize tabViewItem=_tabViewItem;
 - (void).cxx_destruct;
 - (void)stopEditingTabName;
 - (BOOL)control:(id)arg1 textView:(id)arg2 doCommandBySelector:(SEL)arg3;
@@ -61,7 +67,6 @@
 - (void)startEditingTabName;
 - (BOOL)resignFirstResponder;
 - (BOOL)becomeFirstResponder;
-- (void)updateConstraints;
 - (void)updateLayer;
 - (void)setState:(long long)arg1;
 - (void)setTitle:(id)arg1;
@@ -77,18 +82,23 @@
 - (id)tabDragImage;
 - (struct CGSize)maximumDragImageSize;
 - (id)_titleStringAttributesForMainWindow:(BOOL)arg1 activeTab:(BOOL)arg2;
+- (void)_updateActiveTabColor;
 - (void)_updateTitleTextField;
 - (void)_updateErrorIndicatorImage;
 - (void)_updateCloseButtonImages;
-- (void)setShowingCloseButton:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)_createClippedItemsIndicatorConstraintsIfNecessary;
-- (void)_createdClippedItemsIndicatorIfNecessary;
+- (void)setHasPressedHighlight:(BOOL)arg1;
+- (void)setHasMouseOverHighlight:(BOOL)arg1 shouldAnimateCloseButton:(BOOL)arg2;
 - (void)_closeButtonClicked:(id)arg1;
 - (void)destroy;
 - (void)_updateAccessibilityAttributes;
+- (void)_updateConstraints;
 - (void)_setUpConstraints;
 - (void)_updateTitleContainerConstraints;
+- (void)setActive:(BOOL)arg1;
+- (void)setTitleTextFieldCenterOffset:(double)arg1 animated:(BOOL)arg2;
+- (void)setMainContentContainerCenterOffset:(double)arg1 animated:(BOOL)arg2;
 - (void)setAlignment:(unsigned long long)arg1;
+- (void)setButtonWidthForTitleLayout:(double)arg1 animated:(BOOL)arg2;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1 tabViewItem:(id)arg2;
 - (id)initWithFrame:(struct CGRect)arg1;

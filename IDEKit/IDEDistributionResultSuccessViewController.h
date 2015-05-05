@@ -20,8 +20,5 @@
 - (void)loadView;
 - (id)nibName;
 
-// Remaining properties
-@property(copy) NSString *title;
-
 @end
 

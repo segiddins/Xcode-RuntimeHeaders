@@ -15,7 +15,6 @@
 - (void)instantiateTemplateForContext:(id)arg1 options:(id)arg2 whenDone:(CDUnknownBlockType)arg3;
 - (id)additionalMacrosForContext:(id)arg1;
 - (BOOL)shouldProcessPath:(id)arg1 inTemplate:(id)arg2;
-- (void)setClassName:(id)arg1 forEntity:(id)arg2;
 
 @end
 

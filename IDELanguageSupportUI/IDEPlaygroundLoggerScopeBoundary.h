@@ -17,6 +17,7 @@
 
 @property unsigned long long scopeBoundaryType; // @synthesize scopeBoundaryType=_scopeBoundaryType;
 @property(readonly, copy) NSString *description;
+@property(readonly, copy) NSString *summary;
 @property(readonly, copy) NSString *name;
 - (id)initWithScopeBoundaryType:(unsigned long long)arg1;
 

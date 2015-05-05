@@ -39,7 +39,6 @@
 - (id)intrinsicPackageContentForNewlyGeneratedPackageWithFileType:(id)arg1;
 - (struct CGSize)canvasViewFramePaddingSizeForOverlayScrollers;
 - (id)documentCIImageNamed:(id)arg1 usingSizeValueForPlaceholderImageIfNeeded:(id)arg2;
-- (id)variantForResolvingMediaResources;
 - (void)frameDecider:(id)arg1 didPropagateFrameSize:(struct CGSize)arg2 toView:(id)arg3;
 - (void)frameDecider:(id)arg1 didPropagateFrame:(struct CGRect)arg2 toView:(id)arg3;
 - (void)internalFrameDecider:(id)arg1 didPropagateFrameSize:(struct CGSize)arg2 toView:(id)arg3;

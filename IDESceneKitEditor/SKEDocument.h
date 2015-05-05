@@ -36,6 +36,8 @@
 @property(retain) id inspectionDocumentController; // @synthesize inspectionDocumentController=_inspectionDocumentController;
 - (void).cxx_destruct;
 - (id)ideModelObjectTypeIdentifier;
+- (void)removeMaterialAtIndex:(unsigned long long)arg1 geometry:(id)arg2;
+- (void)addMaterial:(id)arg1 atIndex:(unsigned long long)arg2 geometry:(id)arg3;
 - (void)removeParticleSystemFromNode:(id)arg1;
 - (void)addParticleSystemToNode:(id)arg1;
 - (void)removeCameraFromNode:(id)arg1;

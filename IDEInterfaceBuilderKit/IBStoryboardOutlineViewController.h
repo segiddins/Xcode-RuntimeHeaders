@@ -21,7 +21,7 @@
 - (BOOL)outlineView:(id)arg1 isGroupHeaderItem:(id)arg2;
 - (BOOL)outlineView:(id)arg1 shouldSelectItem:(id)arg2;
 - (BOOL)canMoveAllObjects:(id)arg1;
-- (id)tellObject:(id)arg1 toAcceptPasteboard:(id)arg2 withContext:(id)arg3 excludingConnections:(BOOL)arg4 selectNewChildren:(BOOL)arg5;
+- (id)tellObject:(id)arg1 toAcceptPasteboard:(id)arg2 withContext:(id)arg3 selectNewChildren:(BOOL)arg4;
 - (BOOL)validateUserInterfaceItem:(id)arg1;
 - (id)document;
 

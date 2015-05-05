@@ -8,12 +8,13 @@
 
 #import "DVTFindBarFindable.h"
 #import "IDEGPUAssistantEditorAdditions.h"
-#import "NSCollectionViewDelegate.h"
+#import "UXCollectionViewDataSource.h"
+#import "UXCollectionViewDelegate.h"
 
-@class DVTObservingToken, GPUResourceEditor, GPUSharedTabUIState, GPUTraceDocumentLocation, GPUTraceModelFactory, NSArrayController, NSCollectionView, NSDictionary, NSMutableArray, NSScrollView, NSString;
+@class DVTObservingToken, GPUResourceEditor, GPUSharedTabUIState, GPUTraceDocumentLocation, GPUTraceModelFactory, NSDictionary, NSMutableArray, NSScrollView, NSString, UXCollectionView;
 
 __attribute__((visibility("hidden")))
-@interface GPUTraceResourcesEditor : GPUMainEditor <NSCollectionViewDelegate, IDEGPUAssistantEditorAdditions, DVTFindBarFindable>
+@interface GPUTraceResourcesEditor : GPUMainEditor <UXCollectionViewDelegate, UXCollectionViewDataSource, IDEGPUAssistantEditorAdditions, DVTFindBarFindable>
 {
     GPUTraceModelFactory *_modelFactory;
     GPUTraceDocumentLocation *_currentLocation;
@@ -24,8 +25,7 @@ __attribute__((visibility("hidden")))
     GPUSharedTabUIState *_sharedTabState;
     NSString *_identifier;
     NSMutableArray *_resources;
-    NSArrayController *_resourceArrayController;
-    NSCollectionView *_resourceCollectionView;
+    UXCollectionView *_resourceCollectionView;
     GPUResourceEditor *_currentSubViewController;
     NSScrollView *_resourceCollectionViewEnclosure;
 }
@@ -37,10 +37,13 @@ __attribute__((visibility("hidden")))
 + (id)defaultViewNibName;
 @property(retain, nonatomic) NSScrollView *resourceCollectionViewEnclosure; // @synthesize resourceCollectionViewEnclosure=_resourceCollectionViewEnclosure;
 @property(nonatomic) __weak GPUResourceEditor *currentSubViewController; // @synthesize currentSubViewController=_currentSubViewController;
-@property(nonatomic) __weak NSCollectionView *resourceCollectionView; // @synthesize resourceCollectionView=_resourceCollectionView;
-@property(nonatomic) __weak NSArrayController *resourceArrayController; // @synthesize resourceArrayController=_resourceArrayController;
+@property(nonatomic) __weak UXCollectionView *resourceCollectionView; // @synthesize resourceCollectionView=_resourceCollectionView;
 @property(retain, nonatomic) NSMutableArray *resources; // @synthesize resources=_resources;
 - (void).cxx_destruct;
+- (void)dumpImages:(id)arg1 asRaw:(BOOL)arg2;
+- (void)collectionView:(id)arg1 itemWasDoubleClickedAtIndexPath:(id)arg2 withEvent:(id)arg3;
+- (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
+- (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
 - (struct _NSRange)selectedRangeForFindBar:(id)arg1;
 - (id)startingLocationForFindBar:(id)arg1 findingBackwards:(BOOL)arg2;
 - (void)dvtFindBar:(id)arg1 didUpdateCurrentResult:(id)arg2;
@@ -53,7 +56,7 @@ __attribute__((visibility("hidden")))
 - (id)_findOutlineItemForHistoryAction;
 - (id)_currentAssistantDocumentLocations;
 - (id)_getSubEditorItemFromPreviousEditorState;
-- (void)doubleClick:(id)arg1;
+- (void)showResourceItem:(id)arg1;
 - (void)_openResourceLocation:(id)arg1;
 - (void)handleOpenScrubberTriggeredNewLocation:(id)arg1;
 - (void)handleDebugBarNavigationWithDocumentLocation:(id)arg1;
@@ -66,7 +69,7 @@ __attribute__((visibility("hidden")))
 - (id)_findNavigableForShaderItem:(id)arg1;
 - (BOOL)_isValidSourceURLPathForShaderItem:(id)arg1;
 - (id)_editorForResourceItem:(id)arg1;
-- (void)handleResourceItemThumbnailsInvalidation:(id)arg1;
+- (void)handleResourceItemThumbnailsRecalculation:(id)arg1;
 - (void)handleReloadResourceItem:(id)arg1;
 - (void)resetResourcesInTree:(id)arg1;
 - (void)_resetResource:(id)arg1;
@@ -76,6 +79,7 @@ __attribute__((visibility("hidden")))
 - (void)viewDidInstall;
 - (void)primitiveInvalidate;
 - (void)loadView;
+- (void)_initCollectionView;
 - (void)takeFocus;
 
 // Remaining properties

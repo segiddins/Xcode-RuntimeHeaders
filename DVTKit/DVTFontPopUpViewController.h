@@ -6,10 +6,11 @@
 
 #import <DVTKit/DVTPopoverContentViewController.h>
 
-@class DVTFontTextField, NSButton, NSPopUpButton, NSStepper, NSTextField;
+@class DVTFontTextField, NSButton, NSMenuItem, NSPopUpButton, NSStepper, NSTextField;
 
 @interface DVTFontPopUpViewController : DVTPopoverContentViewController
 {
+    NSMenuItem *_customFontMenuItem;
     DVTFontTextField *_fontTextField;
     NSPopUpButton *_fontPopUp;
     NSPopUpButton *_familyPopUp;
@@ -50,6 +51,7 @@
 - (void)_populateFontsFromDataSource;
 - (id)_predefinedValueForValue:(id)arg1;
 - (void)_updateEnabledStates;
+- (BOOL)validateMenuItem:(id)arg1;
 - (void)showValueItem:(id)arg1 withTitle:(id)arg2 inPopUp:(id)arg3;
 - (void)showMarkerItemWithTitle:(id)arg1 representedObject:(id)arg2 inPopUp:(id)arg3 enabled:(BOOL)arg4;
 - (void)_updateFontsInFontPanel;

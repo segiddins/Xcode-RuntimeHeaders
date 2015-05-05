@@ -10,16 +10,17 @@
 {
 }
 
-+ (id)_secondarySidebarTextColor;
-+ (id)_primarySidebarTextColor;
++ (id)secondarySidebarTextColor;
++ (id)primarySidebarTextColor;
 + (id)stringByEscapingSpecialCharacters:(id)arg1;
-+ (id)attrributedStringWithLabels:(id)arg1 values:(id)arg2;
++ (id)attributedStringWithLabels:(id)arg1 values:(id)arg2;
 + (short)_nodeTypeForTextType:(int)arg1;
 + (id)colorTextType:(int)arg1;
 + (id)fontForTextType:(int)arg1;
-+ (id)attrributedStringForText:(id)arg1 textType:(int)arg2 lineBreakMode:(unsigned long long)arg3;
-+ (id)attrributedStringForText:(id)arg1 textType:(int)arg2;
-+ (id)attrributedStringForText:(id)arg1;
++ (id)attributedStringForText:(id)arg1 textType:(int)arg2 paragraphStyle:(id)arg3;
++ (id)attributedStringForText:(id)arg1 textType:(int)arg2 lineBreakMode:(unsigned long long)arg3;
++ (id)attributedStringForText:(id)arg1 textType:(int)arg2;
++ (id)attributedStringForText:(id)arg1;
 
 @end
 

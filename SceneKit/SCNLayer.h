@@ -29,12 +29,14 @@
 - (id)_authoringEnvironment;
 - (void)set_showsAuthoringEnvironment:(BOOL)arg1;
 - (BOOL)_showsAuthoringEnvironment;
+- (unsigned long long)debugSettings;
+- (void)setDebugSettings:(unsigned long long)arg1;
 - (void)drawInContext:(struct CGContext *)arg1;
 - (void)pause;
 - (void)stop;
 - (void)play;
 @property(nonatomic, getter=isJitteringEnabled) BOOL jitteringEnabled;
-- (BOOL)_supportsJiterringSyncRedraw;
+- (BOOL)_supportsJitteringSyncRedraw;
 - (BOOL)_canJitter;
 - (void)_cancelJitterRedisplay;
 - (void)_jitterRedisplayWithContext:(struct _CGLContextObject *)arg1;

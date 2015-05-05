@@ -23,7 +23,7 @@
 #import "IDENavigableItemArchivableRepresentationSupport.h"
 #import "NSKeyedUnarchiverDelegate.h"
 
-@class DVTDelayedInvocation, DVTNotificationToken, DVTObservingToken, DVTPerformanceMetric, IBAbstractClassProvider, IBClassDescriber, IBDocumentAutolayoutManager, IBDocumentIssueGenerator, IBDocumentLiveViewsDispatcher, IBDocumentPlatformAdapter, IBFileBuildSettingsSnapshot, IBIndexClassDescriber, IBLiveViewsManager, IBMemberConfiguration, IBMutableIdentityDictionary, IBObjectContainer, IBPlatform, IBResourceManager, IBSimulatedMetricsContainer, IBSimulatedMetricsInferrer, IBSourceCodeClassProvider, IBSystemClassProvider, IBTargetRuntime, IBTemporaryPasteboardClassProvider, IBUserDefinedActionClassProvider, IDEContainer, IDEMediaResourceVariantContext, IDEWorkspaceDocument, NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSMutableOrderedSet, NSMutableSet, NSNumber, NSObject, NSString, NSURL;
+@class DVTDelayedInvocation, DVTNotificationToken, DVTObservingToken, DVTPerformanceMetric, IBAbstractClassProvider, IBClassDescriber, IBDocumentAutolayoutManager, IBDocumentIssueGenerator, IBDocumentLiveViewsDispatcher, IBDocumentPlatformAdapter, IBFileBuildSettingsSnapshot, IBIdiom, IBIndexClassDescriber, IBLiveViewsManager, IBMemberConfiguration, IBMutableIdentityDictionary, IBObjectContainer, IBPlatform, IBResourceManager, IBSimulatedMetricsContainer, IBSimulatedMetricsInferrer, IBSourceCodeClassProvider, IBSystemClassProvider, IBTargetRuntime, IBTemporaryPasteboardClassProvider, IBUserDefinedActionClassProvider, IDEContainer, IDEMediaResourceVariantContext, IDEWorkspaceDocument, NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSMutableOrderedSet, NSMutableSet, NSNumber, NSObject, NSString, NSURL;
 
 @interface IBDocument : IDEEditorDocument <IBXMLCoderDelegate, IBXMLDecoderDelegate, IDEDocumentStructureProviding, IDENavigableItemArchivableRepresentationSupport, IDEMediaLibraryDelegate, IBAttributeSearchLocationIteratorDelegate, IBArchivableDocument, IBUnarchivableDocument, IBObjectContainerDelegate, IBObjectContainerArchivingDelegate, IBAutolayoutInfoProvider, IBAutolayoutFrameDeciderDelegate, DVTTextFindable, DVTTextReplacable, NSKeyedUnarchiverDelegate, IBLiveViewsBundleObserverEnvironment>
 {
@@ -129,7 +129,6 @@
 + (id)documentForMember:(id)arg1;
 + (id)documentForObject:(id)arg1;
 + (id)documentForConnection:(id)arg1;
-+ (BOOL)wantsSeparateCompiledPackagesForTargetDevices;
 + (Class)stripperClassForPlatform:(id)arg1;
 + (id)connectToSourceLastUserSelectedStorageTypeForConnectingAncestorToDescendant;
 + (id)keyPathsForValuesAffectingVariantForResolvingMediaResources;
@@ -144,7 +143,7 @@
 + (BOOL)wantsContainerViewInLibrary;
 + (BOOL)wantsViewControllersAtTopOfLibrary;
 + (BOOL)supportsPrototypeObjects;
-+ (Class)libraryAssetProviderClassForPlatform:(id)arg1;
++ (Class)libraryAssetProviderClassForIdiom:(id)arg1;
 + (void)setApplicationPresentsInterface:(BOOL)arg1;
 + (BOOL)applicationPresentsInterface;
 + (void)setHonorsPropertyLocking:(BOOL)arg1;
@@ -253,6 +252,8 @@
 - (void)allowForwardingPropertiesFromObjectsToConfigurationStoragesDuringBlock:(CDUnknownBlockType)arg1;
 - (void)blockForwardingChangesToProperty:(id)arg1 ofMember:(id)arg2 during:(CDUnknownBlockType)arg3;
 - (BOOL)isBlockingChangeForwardingForProperty:(id)arg1 ofMember:(id)arg2;
+- (void)flattenAllDataWithEffectiveValuesFromConfiguration:(id)arg1;
+- (BOOL)wantsConfigurationUI;
 - (void)disableConfigurations;
 - (void)enableConfigurations;
 - (void)maintainCanvasCentersWhileTransformingCanvasPositions:(CDUnknownBlockType)arg1;
@@ -426,7 +427,7 @@
 - (BOOL)isUndoObservationOfMemberEnabled:(id)arg1;
 - (void)enableUndoObservationsOfMember:(id)arg1;
 - (void)disableUndoObservationsOfMember:(id)arg1;
-- (void)setNonUndoableValue:(id)arg1 forKeyPath:(id)arg2 ofMember:(id)arg3;
+- (void)setNonUndoableValue:(id)arg1 forKeyPath:(id)arg2 ofMember:(id)arg3 inConfiguration:(id)arg4;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)observeDidAutomaticallyUndoChangeGroup:(id)arg1;
 - (void)registerChangeFromValue:(id)arg1 forKeyPath:(id)arg2 onObject:(id)arg3;
@@ -465,6 +466,7 @@
 - (id)insertOrMoveChildrenFromPasteboard:(id)arg1 ofType:(id)arg2 asChildrenOfObject:(id)arg3 atIndex:(long long)arg4 context:(id)arg5;
 - (long long)insertionIndexForMovingChildrenFromPasteboard:(id)arg1 ofType:(id)arg2 toParent:(id)arg3 desiredIndex:(long long)arg4 context:(id)arg5;
 - (id)insertObjectsFromPasteboard:(id)arg1 ofType:(id)arg2 asChildrenOfObject:(id)arg3 atIndex:(long long)arg4 context:(id)arg5 finishExtractingObjectsBlock:(CDUnknownBlockType)arg6;
+- (BOOL)allowUserInitiatedAdditionOfObjectsFromPasteboard:(id)arg1;
 - (void)performBlockNotingUnarchivingFromPasteBoard:(CDUnknownBlockType)arg1;
 - (id)insertObjectsFromPasteboard:(id)arg1 ofType:(id)arg2 asChildrenOfObject:(id)arg3 atIndex:(long long)arg4 context:(id)arg5;
 - (void)ibDidExtractObjects:(id)arg1 fromPasteboard:(id)arg2 context:(id)arg3;
@@ -473,9 +475,9 @@
 - (id)makeObject:(id)arg1 acceptContentsOfPasteboardFromDragInfo:(id)arg2 insertionContext:(id)arg3;
 - (id)attributesConfigurationFromPasteboard:(id)arg1 forObject:(id)arg2;
 - (void)refactorConnectionsOnPasteboard:(id)arg1 fromDocument:(id)arg2 fromObject:(id)arg3 toObject:(id)arg4 exportingToGenericType:(BOOL)arg5;
-- (void)addObjects:(id)arg1 withTypes:(id)arg2 onPasteboard:(id)arg3 forOwner:(id)arg4 context:(id)arg5;
-- (void)putObjects:(id)arg1 onPasteboard:(id)arg2 forOwner:(id)arg3;
-- (void)putObjects:(id)arg1 onPasteboard:(id)arg2 forOwner:(id)arg3 context:(id)arg4;
+- (void)addObjects:(id)arg1 withTypes:(id)arg2 toPasteboard:(id)arg3 context:(id)arg4;
+- (void)putObjects:(id)arg1 onPasteboard:(id)arg2;
+- (void)putObjects:(id)arg1 onPasteboard:(id)arg2 context:(id)arg3;
 - (BOOL)shouldAllowConnectionInsertion:(BOOL)arg1;
 - (BOOL)shouldAllowConnectionRemoval:(BOOL)arg1;
 - (BOOL)shouldAllowObjectInsertion:(BOOL)arg1;
@@ -508,6 +510,8 @@
 @property(readonly, nonatomic) long long userInterfaceLayoutDirection;
 - (BOOL)supportsInternationalizationReturningError:(id *)arg1;
 - (void)noteMember:(id)arg1 didChangeProperty:(id)arg2 fromValue:(id)arg3;
+- (void)_noteConfigurationPropertyMember:(id)arg1 didChangeProperty:(id)arg2 fromValue:(id)arg3;
+- (void)invalidateWarningsAfterObject:(id)arg1 changedProperty:(id)arg2 fromValue:(id)arg3;
 - (void)notifyMemberWrapperForObject:(id)arg1 ofChangeToRelationship:(id)arg2;
 - (id)beginObservingUndoableChangesToMember:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
 - (BOOL)isPropertyLocked:(id)arg1 forAnyMember:(id)arg2;
@@ -647,7 +651,9 @@
 - (id)archivingSchema;
 - (id)compiledPackageWithOptions:(id)arg1 error:(id *)arg2;
 - (Class)compilerClass;
+- (void)objectContainer:(id)arg1 didRemoveIdentifier:(id)arg2 forObject:(id)arg3 inGroup:(id)arg4;
 - (void)objectContainer:(id)arg1 willRemoveIdentifier:(id)arg2 forObject:(id)arg3 inGroup:(id)arg4;
+- (void)objectContainer:(id)arg1 didAddIdentifier:(id)arg2 forObject:(id)arg3 inGroup:(id)arg4;
 - (void)objectContainer:(id)arg1 willAddIdentifier:(id)arg2 forObject:(id)arg3 inGroup:(id)arg4;
 - (void)objectContainer:(id)arg1 didReorderObject:(id)arg2 inGroup:(id)arg3;
 - (void)objectContainer:(id)arg1 willReorderObject:(id)arg2 inGroup:(id)arg3;
@@ -664,7 +670,7 @@
 - (void)objectContainer:(id)arg1 didAddObject:(id)arg2 phase:(unsigned long long)arg3;
 - (void)objectContainer:(id)arg1 willAddObject:(id)arg2 toParent:(id)arg3;
 - (void)objectContainer:(id)arg1 didRemoveObject:(id)arg2 fromParent:(id)arg3;
-- (void)objectContainer:(id)arg1 willRemoveObject:(id)arg2 previouslyMemberOfGroup:(id)arg3;
+- (void)objectContainer:(id)arg1 willRemoveObject:(id)arg2 previouslyMemberOfGroup:(id)arg3 identifierInGroup:(id)arg4;
 - (void)objectContainer:(id)arg1 didReparentObject:(id)arg2 toParent:(id)arg3 atIndex:(long long)arg4 context:(id)arg5;
 - (void)objectContainer:(id)arg1 willReparentObject:(id)arg2 toParent:(id)arg3 context:(id)arg4;
 - (void)objectContainer:(id)arg1 didReorderConnection:(id)arg2 toIndex:(long long)arg3;
@@ -679,6 +685,8 @@
 - (BOOL)objectContainer:(id)arg1 shouldPersistMemberConfigurationsForCoder:(id)arg2;
 - (BOOL)objectContainer:(id)arg1 shouldPersistMetadataForKey:(id)arg2 ofMember:(id)arg3;
 - (void)cacheBuildSettingsSnapshotDuring:(CDUnknownBlockType)arg1;
+- (id)buildSettingsAssetCatalogAppIconPassingTest:(CDUnknownBlockType)arg1;
+- (id)buildSettingsProductName;
 - (id)buildSettingsSnapshot;
 - (id)connectToSourceTargetCandidatesForContainingClassNamed:(id)arg1 toObject:(id)arg2 preferredTarget:(id *)arg3;
 - (id)connectToSourceCandidatesForConnectingToObject:(id)arg1 preferredCandidates:(id *)arg2;
@@ -878,6 +886,7 @@
 - (void)setEditingTargetRuntime:(id)arg1;
 - (BOOL)supportedInferredMetricsPriorToXcode6;
 @property(retain, nonatomic) IBSimulatedMetricsContainer *defaultSimulatedMetricsContainer;
+@property(readonly, nonatomic) IBIdiom *idiom;
 - (void)setPlatform:(id)arg1;
 - (void)decideAndSetFramesOfAllViewHierarchiesWithCurrentAutolayoutStatusAfterPerformingBlock:(CDUnknownBlockType)arg1;
 - (void)changeDocumentTargetRuntimeTo:(id)arg1 andPerformFrameDecision:(BOOL)arg2 withContext:(id)arg3 andContextForUndo:(id)arg4;

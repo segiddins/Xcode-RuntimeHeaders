@@ -6,9 +6,11 @@
 
 #import "NSObject.h"
 
+#import "IDEExecutionTrackerReporting.h"
+
 @class DVTFilePath, IDELaunchSession, NSArray, NSError, NSMutableArray, NSString;
 
-@interface IDEExecutionTracker : NSObject
+@interface IDEExecutionTracker : NSObject <IDEExecutionTrackerReporting>
 {
     NSString *_statusDisplayName;
     DVTFilePath *_statusImageFilePath;
@@ -31,9 +33,10 @@
 @property(retain) NSString *statusDisplayName; // @synthesize statusDisplayName=_statusDisplayName;
 @property BOOL isFinished; // @synthesize isFinished=_isFinished;
 - (void).cxx_destruct;
-- (id)description;
+@property(readonly, copy) NSString *description;
 - (void)setStatusDisplayName:(id)arg1 statusImageFilePath:(id)arg2;
 - (void)addSubtracker:(id)arg1;
+- (id)notFinishedReasonWithDepth:(unsigned long long)arg1;
 - (void)_updateIsFinished;
 - (void)cancel;
 - (void)cancelWithReason:(int)arg1;
@@ -41,8 +44,11 @@
 - (id)init;
 
 // Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned long long hash;
 @property(readonly) NSMutableArray *mutableSubtrackers; // @dynamic mutableSubtrackers;
 @property(readonly) NSArray *subtrackers; // @dynamic subtrackers;
+@property(readonly) Class superclass;
 
 @end
 

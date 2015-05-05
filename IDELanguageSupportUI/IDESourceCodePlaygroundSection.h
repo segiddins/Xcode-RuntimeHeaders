@@ -25,7 +25,9 @@
 - (void).cxx_destruct;
 - (void)resetPlaygroundSection;
 - (void)enableAllowsReset;
+- (id)stringConstructingFileWrapper:(id)arg1;
 - (id)xmlElementConstructingFileWrapper:(id)arg1;
+@property(readonly) NSString *sectionString;
 - (void)_setUpTextStorageWithContents:(id)arg1;
 - (id)initWithXMLElement:(id)arg1 enclosingFileWrapper:(id)arg2 inPlaygroundDocument:(id)arg3;
 @property(readonly) struct _NSRange sectionCharacterRange;

@@ -33,6 +33,7 @@
 - (void)archiveInteger:(long long)arg1 forKey:(id)arg2 defaultValue:(long long)arg3;
 - (void)archiveInt64:(long long)arg1 forKey:(id)arg2 defaultValue:(long long)arg3;
 - (void)archiveString:(id)arg1 forKey:(id)arg2 defaultValue:(id)arg3;
+- (void)archiveWrappedEdgeInsets:(id)arg1 forKey:(id)arg2;
 - (void)archiveWrappedInset:(id)arg1 forKey:(id)arg2;
 - (void)archiveWrappedSize:(id)arg1 forKey:(id)arg2;
 - (void)archiveWrappedBitmask:(id)arg1 fromBitmask:(id)arg2 forKey:(id)arg3;

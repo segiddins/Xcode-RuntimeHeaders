@@ -15,18 +15,18 @@
 {
     NSString *_identifier;
     DVTDotSeparatedVersion *_version;
+    NSString *_name;
+    NSSet *_dependencies;
     NSURL *_source;
     unsigned long long _fileSize;
-    NSString *_name;
     NSDictionary *_userInfo;
-    NSSet *_dependencies;
 }
 
-@property(readonly) NSSet *dependencies; // @synthesize dependencies=_dependencies;
 @property(readonly) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
-@property(readonly) NSString *name; // @synthesize name=_name;
 @property(readonly) unsigned long long fileSize; // @synthesize fileSize=_fileSize;
 @property(readonly) NSURL *source; // @synthesize source=_source;
+@property(readonly) NSSet *dependencies; // @synthesize dependencies=_dependencies;
+@property(readonly) NSString *name; // @synthesize name=_name;
 @property(readonly) DVTDotSeparatedVersion *version; // @synthesize version=_version;
 @property(readonly) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;

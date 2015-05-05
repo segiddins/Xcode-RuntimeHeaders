@@ -19,6 +19,7 @@
 + (id)menuLabelForConnection:(id)arg1;
 + (id)relationshipSegueWithKeyPath:(id)arg1 from:(id)arg2 to:(id)arg3;
 + (double)displayOrderPriority;
++ (BOOL)isObjectValidDestination:(id)arg1;
 + (BOOL)isObjectValidSource:(id)arg1;
 - (id)displayGroupIdentifierForDragFromObject:(id)arg1 toObject:(id)arg2;
 - (id)missingComponents;

@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
     NSArray *_fileStatics;
     NSArray *_registers;
     NSMutableSet *_expressionDataValuesToInvalidate;
+    struct _opaque_pthread_t *_sessionThreadIdentifier;
     BOOL _markedForInvalidationFromTheSessionThread;
     BOOL _hasInitializedDisassembly;
 }

@@ -6,12 +6,12 @@
 
 #import "NSObject.h"
 
-@class DVTMapTable, NSObject<OS_dispatch_queue>;
+@class NSMapTable, NSObject<OS_dispatch_queue>;
 
 @interface GPUSharedUIStateManager : NSObject
 {
     NSObject<OS_dispatch_queue> *_queue;
-    DVTMapTable *_sharedStateMapTable;
+    NSMapTable *_sharedStateMapTable;
 }
 
 + (id)sharedUIStateManager;

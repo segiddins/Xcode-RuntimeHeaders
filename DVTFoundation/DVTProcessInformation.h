@@ -19,7 +19,7 @@
 @property(readonly) NSString *preferredArchitecture; // @synthesize preferredArchitecture=_preferredArchitecture;
 @property(readonly) NSURL *processURL; // @synthesize processURL=_processURL;
 @property(readonly) NSString *displayName; // @synthesize displayName=_displayName;
-@property(readonly) int pid; // @synthesize pid=_pid;
+@property int pid; // @synthesize pid=_pid;
 - (void).cxx_destruct;
 - (long long)displayNameCompare:(id)arg1;
 - (void)setPreferredArchitecture:(id)arg1;

@@ -25,24 +25,30 @@
 @property BOOL replayerReady; // @synthesize replayerReady=_replayerReady;
 @property(readonly) GPUDebuggerController *controller; // @synthesize controller=_controller;
 - (void).cxx_destruct;
+- (id)connectedDevices;
+- (id)prepareCaptureArchive:(id)arg1 withDestinationName:(id)arg2;
+- (id)replayerGuestApp;
 - (void)removeCaptureArchivesFromReplayDevice:(CDUnknownBlockType)arg1;
 - (void)replayWithExperiment:(id)arg1 baseCaptureArchivePath:(id)arg2 playbackMessageHandler:(CDUnknownBlockType)arg3;
 - (void)setReplayDeviceBackgroundImage:(id)arg1;
 - (id)initiateDebuggerReplaySession:(BOOL)arg1;
 - (id)_deleteArchivesFromDeviceIfNeeded:(BOOL)arg1;
 - (id)initiateReplaySession:(id)arg1;
-- (id)prepareCaptureArchive:(id)arg1 withDestinationName:(id)arg2;
-- (id)launchReplayerWithMessageHandler:(CDUnknownBlockType)arg1;
+- (id)_launchReplayer;
 - (id)endDebuggerReplaySession;
 - (id)endReplaySession;
 - (void)sendDebugBeginMessage:(id)arg1;
 - (void)toggleDeviceSideDrawPresenting:(BOOL)arg1 withFuture:(id)arg2;
 - (void)setWireframeLineWidth:(float)arg1 withFuture:(id)arg2;
 - (void)toggleDeviceSideWireframePresenting:(BOOL)arg1 withFuture:(id)arg2;
+- (void)_postDeviceSettingChanged:(id)arg1;
+- (void)_replayToFunctionIndex:(unsigned int)arg1 replyQueue:(id)arg2 withFutureResult:(id)arg3;
+- (BOOL)_loopPlaybackFrom:(unsigned int)arg1 to:(unsigned int)arg2;
 - (void)replayToFunctionIndex:(unsigned int)arg1 withFutureResult:(id)arg2;
 - (void)invalidate;
 - (id)setupDevice;
 @property(readonly) DYDeviceInfo *playbackDeviceInfo; // @dynamic playbackDeviceInfo;
+- (void)_handleGuestAppStatusChangeNotification:(id)arg1;
 - (id)initWithController:(id)arg1 lastFunctionIndex:(unsigned int)arg2;
 
 @end

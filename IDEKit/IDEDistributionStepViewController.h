@@ -28,7 +28,7 @@
 @property(readonly) NSSet *requiredInputContextPropertyNames;
 - (void)takeNextAction;
 @property(readonly) NSString *nextButtonTitle;
-@property(readonly) NSString *title;
+- (id)title;
 @property(readonly) BOOL canGoPrevious;
 @property(readonly) BOOL canGoNext;
 - (void)primitiveInvalidate;

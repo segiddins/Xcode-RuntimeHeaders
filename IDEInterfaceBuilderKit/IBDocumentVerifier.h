@@ -19,6 +19,7 @@
 - (void).cxx_destruct;
 - (void)verifyViewsHaveCorrectFrames;
 - (id)verifyRootObjectRootsAllObjects;
+- (void)verifyFramesInSyncForViewsForAutoresizingMasks;
 - (void)verifyXcode5ContentViews;
 - (void)verifyIDGenerationStrategy;
 - (void)verifyTranslatesAutoresizingMaskIntoConstraints;

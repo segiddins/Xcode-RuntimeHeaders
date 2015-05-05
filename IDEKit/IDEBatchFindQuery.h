@@ -16,7 +16,6 @@
     IDEWorkspace *_workspace;
     DVTDispatchLock *_queueLock;
     DVTDispatchLock *_stateLock;
-    NSOperationQueue *_mainThreadQueue;
     NSOperationQueue *_backgroundQueue;
     NSOperationQueue *_findQueue;
     NSDate *_startDate;

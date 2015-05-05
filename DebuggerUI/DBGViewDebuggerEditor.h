@@ -20,6 +20,7 @@
     DVTObservingToken *_showOnlyVisibleViewObjectsObservingToken;
     DVTObservingToken *_navigatorOutputSelectionObserver;
     id <DVTCancellable> _viewDebuggerAdditionUIControllerObservingToken;
+    BOOL _reachedStage2;
     NSSet *_selectedConstraintSet;
     DBGSceneViewController *_sceneViewController;
     DVTBorderedView *_backgroundView;
@@ -34,10 +35,13 @@
     DVTGradientImageButton *_showClippedContentButton;
     NSView *_percentLoadedView;
     NSProgressIndicator *_percentLoadedIndicator;
+    long long _selectedZoom;
 }
 
 + (id)defaultViewNibBundle;
 + (id)defaultViewNibName;
+@property BOOL reachedStage2; // @synthesize reachedStage2=_reachedStage2;
+@property long long selectedZoom; // @synthesize selectedZoom=_selectedZoom;
 @property __weak NSProgressIndicator *percentLoadedIndicator; // @synthesize percentLoadedIndicator=_percentLoadedIndicator;
 @property(retain) NSView *percentLoadedView; // @synthesize percentLoadedView=_percentLoadedView;
 @property __weak DVTGradientImageButton *showClippedContentButton; // @synthesize showClippedContentButton=_showClippedContentButton;
@@ -64,7 +68,9 @@
 - (void)toggleClippingOfContent:(id)arg1;
 - (void)toggleShowConstraints:(id)arg1;
 - (void)resetViewButtonPressed:(id)arg1;
+- (void)gestureRecognizerAction:(id)arg1;
 - (void)zoomButtonPressed:(id)arg1;
+- (void)zoomButtonPressedForTag:(unsigned long long)arg1;
 - (void)zDistanceSliderChanged:(id)arg1;
 - (void)_reloadSceneViewController;
 @property DBGViewWindow *selectedWindow;

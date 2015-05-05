@@ -4,9 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
+#import "NSObject.h"
+
 @class IDENavigableItem;
 
-@protocol IDEStructureEditingTarget
+@protocol IDEStructureEditingTarget <NSObject>
 - (id <IDEStructureEditingRemoveSubitemsTarget>)structureEditingRemoveSubitemsTargetForParentNavigableItem:(IDENavigableItem *)arg1;
 - (id <IDEStructureEditingGroupingTarget>)structureEditingGroupingTargetForProposedNavigableItem:(IDENavigableItem *)arg1 proposedChildIndex:(long long)arg2;
 - (id <IDEStructureEditingDropTarget>)structureEditingTargetForProposedNavigableItem:(IDENavigableItem *)arg1 proposedChildIndex:(long long)arg2;

@@ -11,7 +11,6 @@
 }
 
 - (void)drawRect:(struct CGRect)arg1;
-- (void)awakeFromNib;
 
 @end
 

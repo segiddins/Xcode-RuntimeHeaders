@@ -25,7 +25,6 @@
 + (id)dvt_instructionPointerPathWithSize:(struct CGSize)arg1;
 + (id)_dvt_instructionPointerImageForSize:(struct CGSize)arg1 fillColor:(id)arg2;
 + (id)_createAnnotationTheme;
-@property(retain) DBGDebugSession *debugSession; // @synthesize debugSession=_debugSession;
 - (void).cxx_destruct;
 - (id)annotationDisplayDescription;
 - (id)annotationDisplayName;

@@ -10,6 +10,7 @@
 {
 }
 
+- (id)targetWorkspaces;
 - (BOOL)alwaysShowProjectNavigator;
 
 @end

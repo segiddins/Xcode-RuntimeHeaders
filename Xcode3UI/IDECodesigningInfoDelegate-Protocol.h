@@ -9,6 +9,8 @@
 @class DVTDeveloperAccount, DVTTeamRecord, NSString;
 
 @protocol IDECodesigningInfoDelegate <NSObject>
+@property(retain, nonatomic) DVTDeveloperAccount *selectedAccount;
+@property(retain, nonatomic) DVTTeamRecord *selectedTeamRecord;
 @property(readonly) NSString *provisioningProfileUUID;
 @property(readonly) NSString *codesignIdentity;
 @property(readonly) BOOL isUsingTeamBasedSigning;

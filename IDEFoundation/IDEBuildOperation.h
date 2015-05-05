@@ -6,11 +6,12 @@
 
 #import "DVTOperation.h"
 
+#import "IDEBuilderCallbacks.h"
 #import "IDEExecutingOperationTrackable.h"
 
-@class DVTDispatchLock, DVTDynamicLogController, DVTMapTable, IDEActivityLogSection, IDEBuildOperationDescription, IDEBuildOperationQueueSet, IDEBuildOperationStatus, IDEBuildParameters, IDEBuildStatisticsSection, IDEEntityIdentifier, IDEExecutionEnvironment, IDEExecutionOperationTracker, IDEOverridingBuildProperties, IDERunDestination, IDESchemeActionResult, NSArray, NSDate, NSMutableArray, NSMutableDictionary, NSMutableSet, NSOperationQueue, NSString;
+@class DVTDispatchLock, DVTDynamicLogController, DVTFilePath, DVTMapTable, IDEActivityLogSection, IDEBuildOperationDescription, IDEBuildOperationQueueSet, IDEBuildOperationStatus, IDEBuildParameters, IDEBuildStatisticsSection, IDEEntityIdentifier, IDEExecutionEnvironment, IDEExecutionOperationTracker, IDEOverridingBuildProperties, IDERunDestination, IDESchemeActionResult, NSArray, NSDate, NSMutableArray, NSMutableDictionary, NSMutableSet, NSOperationQueue, NSString;
 
-@interface IDEBuildOperation : DVTOperation <IDEExecutingOperationTrackable>
+@interface IDEBuildOperation : DVTOperation <IDEExecutingOperationTrackable, IDEBuilderCallbacks>
 {
     IDEBuildOperationDescription *_buildOperationDescription;
     int _purpose;
@@ -22,7 +23,7 @@
     BOOL _buildImplicitDependencies;
     BOOL _restorePersistedBuildResults;
     BOOL _dontActuallyRunCommands;
-    unsigned long long _clangSessionTimestamp;
+    DVTFilePath *_moduleBuildSessionFilePath;
     int _state;
     int _result;
     IDEActivityLogSection *_buildLog;
@@ -42,6 +43,7 @@
     NSMutableArray *_buildSetupWarningStrings;
     NSMutableArray *_buildSetupNoticeStrings;
     IDEExecutionOperationTracker *_mainExecutionTracker;
+    IDEBuildStatisticsSection *_topLevelStatisticsSection;
     IDEExecutionEnvironment *_executionEnvironment;
     IDEEntityIdentifier *_schemeIdentifier;
     IDESchemeActionResult *_schemeActionResult;
@@ -85,12 +87,18 @@
 - (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (void)registerTracker:(id)arg1;
+@property(retain) IDEBuildStatisticsSection *topLevelStatisticsSection;
 - (void)_postDistributedProgressNotification;
 - (void)stopWithResultCode:(int)arg1;
 - (void)lastBuilderDidFinish;
 - (void)_cancelAllBuilders;
 - (void)cancel;
 - (void)start;
+- (void)builder:(id)arg1 didUpdateBuildStatusWithStateDescription:(id)arg2 fileProgressString:(id)arg3 builderProgress:(double)arg4;
+- (void)builderDidFinishExecuting:(id)arg1;
+- (void)builderDidStartExecuting:(id)arg1;
+- (void)builder:(id)arg1 resultDidChange:(int)arg2;
+- (void)builder:(id)arg1 activityLogSectionDidChange:(id)arg2;
 - (void)addOperationsForBuildables;
 - (id)_addOperationForBuildableIfNeeded:(id)arg1;
 - (id)_addOperationForBuildableIfNeeded:(id)arg1 recursionDetectionArray:(id)arg2;

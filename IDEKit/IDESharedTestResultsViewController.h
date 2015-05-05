@@ -19,6 +19,7 @@
     IDESharedTestBaselineUpdateController *_baselineUpdatesController;
     unsigned long long _countOfTestablesToUpdate;
     unsigned long long _countOfTestManagerTestables;
+    NSMapTable *_filteredTestsAndGroupItems;
     DVTObservingToken *_controllerContentViewLayoutObservingToken;
     BOOL _readyToReloadView;
     NSMutableArray *_testPlaceholderObservingTokens;

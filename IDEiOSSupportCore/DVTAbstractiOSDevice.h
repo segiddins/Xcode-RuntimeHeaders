@@ -54,7 +54,10 @@
 - (id)activeInstallsPath;
 - (BOOL)canInstallBuildablesError:(id *)arg1;
 - (id)actualRunnablePathForRunnableLocation:(id)arg1;
-- (BOOL)shouldPresentDeviceForBuildable:(id)arg1 buildParameters:(id)arg2 workspaceArena:(id)arg3 error:(id *)arg4;
+- (id)preferredSDKForDeviceOptions:(id)arg1 error:(id *)arg2;
+- (id)preferredArchitectureForDeviceOptions:(id)arg1 error:(id *)arg2;
+- (id)supportedArchitecturesForBuildable:(id)arg1 buildParameters:(id)arg2 error:(id *)arg3;
+- (BOOL)deviceSupportsBuildable:(id)arg1 buildParameters:(id)arg2 error:(id *)arg3;
 - (long long)hostAuthenticatedOneLineCommand:(id)arg1 withArg:(id)arg2 result:(id *)arg3;
 - (id)taskForHostCommand:(id)arg1 withArguments:(id)arg2 error:(id *)arg3;
 - (long long)multiLineCommand:(id)arg1 onDevice:(_Bool)arg2 result:(id *)arg3;
@@ -63,9 +66,12 @@
 - (id)oneLineCommand:(id)arg1 onDevice:(_Bool)arg2 withArguments:(id)arg3 andEnvironment:(id)arg4;
 - (id)_runTask:(id)arg1;
 - (id)_runTask:(id)arg1 withOutputHandler:(CDUnknownBlockType)arg2;
+- (id)supportedDeviceFamilies;
 - (void)renameDevice:(id)arg1;
 - (void)setName:(id)arg1;
 - (_Bool)canRenameDevice;
+- (BOOL)shouldPresentDeviceForBuildable:(id)arg1 buildParameters:(id)arg2 error:(id *)arg3;
+- (BOOL)canBeWatchCompanion;
 - (_Bool)isWireless;
 @property(readonly) _Bool isPasscodeLocked;
 - (BOOL)isConcreteDevice;

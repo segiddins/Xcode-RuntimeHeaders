@@ -26,9 +26,9 @@
 @property BOOL pointerToNodeA; // @synthesize pointerToNodeA;
 @property struct CGPoint controlPoint2; // @synthesize controlPoint2;
 @property struct CGPoint controlPoint1; // @synthesize controlPoint1;
+- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
 
 @end
 

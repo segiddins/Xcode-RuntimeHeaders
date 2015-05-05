@@ -30,6 +30,7 @@
     NSMutableDictionary *_issueProvidersPerMultipartImageClass;
     NSMutableSet *_appIconSlotsRequiringIdiomSuffixesInFileName;
     NSMutableSet *_launchImageSlotsRequiringIdiomSuffixesInFileName;
+    NSMutableDictionary *_launchImageSlotsExpressInfoPlistSizeInTermsOfPixels;
     NSMutableDictionary *_validationRecordsBySlotClass;
     NSMutableDictionary *_slotValidationRecordsBySlot;
     NSMutableDictionary *_fileTypesBySlot;
@@ -110,6 +111,9 @@
 - (BOOL)isValidFileExtension:(id)arg1;
 - (id)validFileExtensions;
 - (id)fileTypes;
+- (BOOL)launchImagesSupportedForPlatform:(id)arg1 andIdiom:(id)arg2;
+- (BOOL)infoPlistSizeIsInTermsOfPixelsForLaunchImageRepSlot:(id)arg1;
+- (void)setInfoPlistSizeIsInTermsOfPixels:(BOOL)arg1 forLaunchImageRepSlot:(id)arg2;
 - (id)launchImageSlotsRequiringPlaceholders;
 - (void)addLaunchImageSlotsRequiringPlaceholder:(id)arg1;
 - (void)addLaunchImageSlotsRequiringIdiomSuffixInFileName:(id)arg1;

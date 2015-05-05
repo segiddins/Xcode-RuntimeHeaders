@@ -17,14 +17,15 @@
     BOOL _binsAreNamed;
 }
 
+- (void).cxx_destruct;
 - (void)clearSelection;
 - (void)mouseDown:(id)arg1;
 - (void)observeModel:(BOOL)arg1;
 - (void)_layoutBins;
 - (void)setFrameSize:(struct CGSize)arg1;
 - (void)_createBins;
-- (double)calculateVerticalBorderBuffer;
-- (double)calculateHorizontalBorderBuffer;
+@property(readonly, nonatomic) double calculateVerticalBorderBuffer;
+@property(readonly, nonatomic) double calculateHorizontalBorderBuffer;
 - (long long)_bestNumberOfDivsGuessing:(long long)arg1;
 - (struct CGRect)calculateXAxisBoundsWithinBounds:(struct CGRect)arg1;
 - (struct CGRect)calculateYAxisBoundsWithinBounds:(struct CGRect)arg1;

@@ -43,7 +43,6 @@
 - (BOOL)readFromURL:(id)arg1 ofType:(id)arg2 error:(id *)arg3;
 - (void)updateChangeCount:(unsigned long long)arg1;
 - (id)dataOfType:(id)arg1 error:(id *)arg2;
-- (BOOL)prepareSavePanel:(id)arg1;
 - (BOOL)writeToURL:(id)arg1 ofType:(id)arg2 error:(id *)arg3;
 - (id)writableTypesForSaveOperation:(unsigned long long)arg1;
 - (BOOL)canSaveAs;

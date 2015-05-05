@@ -6,20 +6,36 @@
 
 #import "IDEViewController.h"
 
-@class DVTDisclosureView, DVTInfoPlistValueCell, NSString;
+#import "IDECapsuleListViewDataSource.h"
 
-@interface Xcode3InAppPurchaseTargetEditor : IDEViewController
+@class DVTControllerContentView, DVTInfoPlistValueCell, DVTStackView_ML, IDECapsuleListView, NSString, NSView, Xcode3TargetEditorCapsuleViewController;
+
+@interface Xcode3InAppPurchaseTargetEditor : IDEViewController <IDECapsuleListViewDataSource>
 {
     id _targetViewController;
     DVTInfoPlistValueCell *_productIdentifierCell;
-    DVTDisclosureView *_disclosureView;
+    Xcode3TargetEditorCapsuleViewController *_inAppPurchaseTargetCapsuleViewController;
+    IDECapsuleListView *_capsuleListView;
+    DVTControllerContentView *_inAppPurchaseControllerContentView;
+    DVTStackView_ML *_inAppPurchaseTargetCapsuleStackView;
+    NSView *_inAppPurchaseTargetCapsuleBottomPadding;
+    NSView *_inAppPurchaseTargetEditorView;
 }
 
 + (id)keyPathsForValuesAffectingContentVersion;
 + (id)keyPathsForValuesAffectingProductIdentifier;
 + (id)keyPathsForValuesAffectingProductName;
+@property __weak NSView *inAppPurchaseTargetEditorView; // @synthesize inAppPurchaseTargetEditorView=_inAppPurchaseTargetEditorView;
+@property __weak NSView *inAppPurchaseTargetCapsuleBottomPadding; // @synthesize inAppPurchaseTargetCapsuleBottomPadding=_inAppPurchaseTargetCapsuleBottomPadding;
+@property(retain) DVTStackView_ML *inAppPurchaseTargetCapsuleStackView; // @synthesize inAppPurchaseTargetCapsuleStackView=_inAppPurchaseTargetCapsuleStackView;
+@property(retain) DVTControllerContentView *inAppPurchaseControllerContentView; // @synthesize inAppPurchaseControllerContentView=_inAppPurchaseControllerContentView;
+@property(retain) IDECapsuleListView *capsuleListView; // @synthesize capsuleListView=_capsuleListView;
+@property(retain) Xcode3TargetEditorCapsuleViewController *inAppPurchaseTargetCapsuleViewController; // @synthesize inAppPurchaseTargetCapsuleViewController=_inAppPurchaseTargetCapsuleViewController;
 @property(retain, nonatomic) id targetViewController; // @synthesize targetViewController=_targetViewController;
 - (void).cxx_destruct;
+- (void)primitiveInvalidate;
+- (id)capsuleListView:(id)arg1 viewControllerForRow:(long long)arg2;
+- (long long)numberOfObjectsInCapsuleListView:(id)arg1;
 - (id)infoPlistValueCell:(id)arg1 expandedValueForString:(id)arg2;
 @property(retain) NSString *contentVersion;
 @property(retain) NSString *productIdentifier;
@@ -27,6 +43,12 @@
 - (void)refreshProductIdentifier;
 @property(retain) NSString *productName;
 - (void)loadView;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

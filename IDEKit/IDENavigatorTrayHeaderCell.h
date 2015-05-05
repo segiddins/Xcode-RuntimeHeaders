@@ -4,13 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import <IDEKit/IDENavigatorDataCell.h>
+#import <IDEKit/IDENavigatorProcessCell.h>
 
 #import "IDENavigatorTrayHeaderCellProtocol.h"
 
 @class NSButtonCell, NSImage, NSString;
 
-@interface IDENavigatorTrayHeaderCell : IDENavigatorDataCell <IDENavigatorTrayHeaderCellProtocol>
+@interface IDENavigatorTrayHeaderCell : IDENavigatorProcessCell <IDENavigatorTrayHeaderCellProtocol>
 {
     NSButtonCell *_gaugeCell;
     NSImage *_gaugeIcon;
@@ -31,7 +31,6 @@
 - (void)setTrayState:(int)arg1;
 - (id)representedObjectFollowingProxyLink;
 - (struct CGRect)visualHeaderRectInBounds:(struct CGRect)arg1;
-- (double)heightOfHeader;
 - (struct CGRect)dvt_frameOfOutlineCellForBounds:(struct CGRect)arg1 proposedFrame:(struct CGRect)arg2;
 - (void)drawInteriorWithFrame:(struct CGRect)arg1 inView:(id)arg2;
 - (id)statusCellsRectsForBounds:(struct CGRect)arg1;

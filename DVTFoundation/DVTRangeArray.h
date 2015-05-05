@@ -13,6 +13,7 @@
 }
 
 + (void)initialize;
+- (id)sortedRangeArray;
 - (id)normalizedRangeArray;
 - (unsigned long long)indexOfRangeContainingOrFollowing:(unsigned long long)arg1;
 - (unsigned long long)indexOfRangeContainingOrPreceding:(unsigned long long)arg1;

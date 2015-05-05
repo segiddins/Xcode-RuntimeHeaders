@@ -57,12 +57,15 @@
 - (id)ib_arrayBySortingUsingSelector:(SEL)arg1;
 - (id)ib_keepIf:(SEL)arg1 withObject:(id)arg2;
 - (id)ib_keepIf:(SEL)arg1;
+- (id)ib_arrayByRemovingDuplicates;
 - (id)ib_arrayByReversingObjects;
 - (id)ib_setByMappingBlock:(CDUnknownBlockType)arg1;
 - (id)ib_arrayByApplyingBlock:(CDUnknownBlockType)arg1;
 - (id)ib_arrayByMappingBlockAndAssertingOnNilMappedValue:(CDUnknownBlockType)arg1;
 - (id)ib_arrayByMappingBlock:(CDUnknownBlockType)arg1;
 - (id)ib_arrayByMappingWithBehavior:(long long)arg1 andBlock:(CDUnknownBlockType)arg2;
+- (BOOL)ib_binarySearchForObject:(id)arg1 usingComparator:(CDUnknownBlockType)arg2;
+- (unsigned long long)ib_indexOfFirstObjectPassingTest:(CDUnknownBlockType)arg1;
 - (id)ib_collectionByRemovingObject:(id)arg1;
 - (id)ib_collectionByAddingObject:(id)arg1;
 - (id)ib_collectionByReversingObjects;
@@ -82,6 +85,7 @@
 - (id)ib_arrayByRemovingNulls;
 - (id)ib_arrayByUniquifyingOnKey:(id)arg1;
 - (id)ib_arrayByAppendingObjectsFromArrays:(id)arg1;
+- (id)ib_arrayByRemovingObjectAtIndex:(unsigned long long)arg1;
 - (id)ib_arrayByRemovingObject:(id)arg1;
 - (id)ib_arrayByReplacingObjectAtIndex:(unsigned long long)arg1 withObject:(id)arg2;
 - (id)ib_arrayByAppendingObjects:(id)arg1;

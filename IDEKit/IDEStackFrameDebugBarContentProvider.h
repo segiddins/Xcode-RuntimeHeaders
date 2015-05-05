@@ -14,6 +14,7 @@
     IDENavigableItemCoordinator *_navigableItemCoordinator;
     IDENavigableItem *_rootNavigableItem;
     IDENavigableItem *_selectedItem;
+    DVTObservingToken *_rootNavigableChildItemsObservingToken;
     DVTObservingToken *_currentStackFrameObserverToken;
     DVTObservingToken *_selectedNavigableItemFrameObserverToken;
     DVTObservingToken *_debugSessionStateObserverToken;

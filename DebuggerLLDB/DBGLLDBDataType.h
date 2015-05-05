@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)isUnknownType;
 - (BOOL)isPointer;
 - (id)displayTypeName;
+- (id)_createNSStringForCString:(const char *)arg1;
 - (id)initWithTypename:(id)arg1 withType:(struct SBType)arg2;
 
 @end

@@ -8,7 +8,7 @@
 
 #import "IBStoryboardCanvasBackgroundOverlayViewDelegate.h"
 
-@class DVTDelayedInvocation, DVTMutableOrderedSet, IBMutableIdentityDictionary, IBStoryboardCanvasBackgroundOverlayView, IBStoryboardCanvasFrame, NSString;
+@class DVTDelayedInvocation, DVTMutableOrderedSet, IBMutableIdentityDictionary, IBStoryboardCanvasBackgroundOverlayView, IBStoryboardCanvasFrame, NSArray, NSObject<IBStoryboardEntryPointIndicator>, NSString;
 
 @interface IBStoryboardCanvasViewController : IBCanvasViewController <IBStoryboardCanvasBackgroundOverlayViewDelegate>
 {
@@ -19,20 +19,24 @@
     DVTDelayedInvocation *_openTopLevelStoryboardableObjectsInvocation;
     DVTDelayedInvocation *_showingDockInFramesInvocation;
     IBStoryboardCanvasFrame *_canvasFrameShowingDock;
-    BOOL _draggingInitialViewControllerCanvasLinkPath;
+    NSObject<IBStoryboardEntryPointIndicator> *_draggedEntryPointIndicator;
+    NSArray *_selectedEntryPointIndicators;
     IBStoryboardCanvasBackgroundOverlayView *_backgroundOverlayView;
 }
 
 @property(retain, nonatomic) IBStoryboardCanvasBackgroundOverlayView *backgroundOverlayView; // @synthesize backgroundOverlayView=_backgroundOverlayView;
-@property(nonatomic) BOOL draggingInitialViewControllerCanvasLinkPath; // @synthesize draggingInitialViewControllerCanvasLinkPath=_draggingInitialViewControllerCanvasLinkPath;
+@property(copy, nonatomic) NSArray *selectedEntryPointIndicators; // @synthesize selectedEntryPointIndicators=_selectedEntryPointIndicators;
+@property(retain, nonatomic) NSObject<IBStoryboardEntryPointIndicator> *draggedEntryPointIndicator; // @synthesize draggedEntryPointIndicator=_draggedEntryPointIndicator;
 @property(retain, nonatomic) IBStoryboardCanvasFrame *canvasFrameShowingDock; // @synthesize canvasFrameShowingDock=_canvasFrameShowingDock;
 - (void).cxx_destruct;
 - (void)canvasViewRunResizeTest:(id)arg1;
+- (id)canvasFrameToSelectForObject:(id)arg1;
 - (BOOL)editorCanvasFrameController:(id)arg1 interceptDoubleClickedEvent:(id)arg2;
 - (void)editorCanvasFrame:(id)arg1 wasClickedWithEvent:(id)arg2;
 - (BOOL)shouldAddSelectableObjectCursorRectsForFrameController:(id)arg1;
 - (BOOL)frameController:(id)arg1 shouldDragFrameWithMouseDownInContentRect:(id)arg2 suggestedShouldDrag:(BOOL)arg3;
 - (void)canvasBackgroundOverlayView:(id)arg1 userDidBandSelectCanvasLinkPaths:(id)arg2;
+- (void)selectEntryPointIndicator:(id)arg1;
 - (void)canvasBackgroundOverlayView:(id)arg1 canvasLinkPathWasClicked:(id)arg2 withMouseDownEvent:(id)arg3;
 - (void)beginDraggingInitialSceneCanvasLink:(id)arg1 withEvent:(id)arg2 canvasLinkPath:(id)arg3;
 - (id)nearestSceneFrameControllerToPoint:(struct CGPoint)arg1;
@@ -70,18 +74,20 @@
 - (id)membersForSelectAll;
 - (void)performDelete;
 - (BOOL)canAcceptTopLevelInsertionOfPasteboard:(id)arg1;
-- (BOOL)canPaste;
 - (BOOL)canDelete;
 - (BOOL)canDeleteSegues:(id)arg1;
 - (id)selectedSegues;
 - (void)blowAwayInnerSelectionInOpenCanvasFrames;
 - (void)openEditorsForTopLevelStoryboardableObjects;
 - (void)editorDidGainDeFactoFocus;
+- (id)selectedTopLevelMembersInCanvas;
+- (id)selectedGlobalEntryPointIndicators;
+- (void)primitiveUpdateSelectedMembers:(id)arg1;
 - (void)documentEditor:(id)arg1 didUpdateSelection:(id)arg2;
 - (void)documentDidReorderSegue:(id)arg1;
 - (void)documentDidRemoveSegue:(id)arg1;
 - (void)documentDidAddSegue:(id)arg1;
-- (void)documentDidChangeDesignatedEntryPoint;
+- (void)documentDidChangeEntryPoint;
 - (void)noteMember:(id)arg1 didChangeProperty:(id)arg2 fromValue:(id)arg3;
 - (void)topLevelEditedObjectDidChangeLastKnownAnchor:(id)arg1;
 - (void)editedTopLevelObjectsDidChange;

@@ -10,7 +10,7 @@
 #import "NSSplitViewDelegate.h"
 #import "NSTabViewDelegate.h"
 
-@class DVTDelayedMenuButton, DVTMapTable, IDEDMDocumentLocation, IDEDataModelConfigurationEditor, IDEDataModelEntityContentsEditor, IDEDataModelFetchRequestEditor, NSSegmentedControl, NSString, NSTabView;
+@class DVTDelayedMenuButton, DVTMapTable, IDEDMDocumentLocation, IDEDataModelConfigurationEditor, IDEDataModelEntityContentsEditor, IDEDataModelFetchRequestEditor, NSMenu, NSSegmentedControl, NSString, NSTabView;
 
 @interface IDEDataModelEditor : IDEDMEditor <NSTabViewDelegate, NSSplitViewDelegate, DVTFindBarFindable>
 {
@@ -30,6 +30,8 @@
     NSSegmentedControl *browserDiagramSegmentControl;
     DVTDelayedMenuButton *addEntityButton;
     DVTDelayedMenuButton *addPropertyButton;
+    NSMenu *addEntityButtonMenu;
+    NSMenu *addPropertyButtonMenu;
 }
 
 + (long long)version;
@@ -57,12 +59,9 @@
 - (BOOL)enableAddPropertyButton;
 - (BOOL)enableAddEntityButton;
 - (BOOL)validateMenuItem:(id)arg1;
+- (void)_startAssistantForContext:(id)arg1 assistantIdentifier:(id)arg2;
 - (void)createNSManagedObjectSubclass:(id)arg1;
 - (void)addModelVersion:(id)arg1;
-- (void)showAssistantForAssistantIdentifier:(id)arg1 inWorkspaceTabController:(id)arg2;
-- (void)showTemplateChooserForTemplateKind:(id)arg1 inWorkspaceTabController:(id)arg2;
-- (void)beginSessionWithAssistantIdentifier:(id)arg1 andContext:(id)arg2;
-- (void)setDestinationGroupAndIndexForContext:(id)arg1 andAssistantIdentifier:(id)arg2;
 - (void)importMOMFile:(id)arg1;
 - (BOOL)importMOMFileAtPath:(id)arg1;
 - (void)_showFlatSourceListMode;

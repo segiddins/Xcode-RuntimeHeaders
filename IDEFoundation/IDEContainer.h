@@ -79,6 +79,7 @@
 + (id)retainedWrappedWorkspaceForContainerAtFilePath:(id)arg1 fileDataType:(id)arg2 error:(id *)arg3;
 + (id)containersForFilePath:(id)arg1;
 + (id)retainedContainerForFilePath:(id)arg1 workspace:(id)arg2;
++ (id)_retainedContainerAtFilePath:(id)arg1 fileDataType:(id)arg2 workspace:(id)arg3 options:(id)arg4 error:(id *)arg5;
 + (id)retainedContainerAtFilePath:(id)arg1 fileDataType:(id)arg2 workspace:(id)arg3 error:(id *)arg4;
 + (id)_containerOpenInAnotherWorkspaceErrorForPath:(id)arg1;
 + (id)_noContainerClassForFileTypeError:(id)arg1;
@@ -126,6 +127,7 @@
 - (BOOL)_setContainerFilePath:(id)arg1 strict:(BOOL)arg2 error:(id *)arg3;
 - (void)_setFilePath:(id)arg1;
 - (void)_setFilePath:(id)arg1 strict:(BOOL)arg2 createContainerDataFilePathsToModDateMap:(BOOL)arg3;
+- (BOOL)_shouldRespondToFileChangeOnDisk;
 - (void)_respondToFileChangeOnDiskWithFilePath:(id)arg1;
 - (void)_makeAbsoluteFileReferencesInGroup:(id)arg1 relativeToFolderFilePath:(id)arg2 withPathString:(id)arg3;
 @property(readonly) NSString *displayName;
@@ -171,7 +173,7 @@
 - (void)retainContainer;
 - (void)_saveContainerIfNeeded;
 - (id)init;
-- (id)initWithFilePath:(id)arg1 extension:(id)arg2 workspace:(id)arg3 error:(id *)arg4;
+- (id)initWithFilePath:(id)arg1 extension:(id)arg2 workspace:(id)arg3 options:(id)arg4 error:(id *)arg5;
 - (void)_removeSubcontainer:(id)arg1;
 - (void)_addSubcontainer:(id)arg1;
 - (void)_setContainerLoadingTokenForContainer:(id)arg1;

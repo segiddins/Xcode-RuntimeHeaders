@@ -47,6 +47,7 @@
 - (void).cxx_destruct;
 - (id)_affectingConstraintAddresses:(id)arg1;
 - (id)description;
+- (void)primitiveInvalidate;
 @property(readonly) DBGLayoutConstraintSet *constraintsReferencingViewObject;
 @property(readonly) DBGLayoutConstraintSet *constraintsAffectingViewObject;
 - (BOOL)shouldConsiderInteresting;

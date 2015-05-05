@@ -6,12 +6,13 @@
 
 #import <IDEInterfaceBuilderKit/IBAbstractFileDataTypeDescription.h>
 
-@class IBPlatform, NSSet, NSString;
+@class IBPlatform, IBTargetRuntime, NSSet, NSString;
 
 @interface IBDocumentDataTypeDescription : IBAbstractFileDataTypeDescription
 {
     BOOL _writable;
     NSString *_platformID;
+    NSString *_targetRuntimeID;
     NSString *_archiveContentFileName;
     Class _documentClass;
     NSSet *_archiveTypes;
@@ -31,6 +32,7 @@
 - (long long)matchingScoreForMetadataAtPath:(id)arg1 bundleContents:(id)arg2;
 - (id)description;
 - (BOOL)isWritable;
+@property(readonly) IBTargetRuntime *bestGuessTargetRuntime;
 @property(readonly) IBPlatform *platform;
 - (id)initWithExtension:(id)arg1;
 

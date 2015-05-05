@@ -115,8 +115,14 @@
 @property(readonly) NSImage *canvasZoomInImage;
 @property(readonly) NSImage *canvasZoomActualImage;
 @property(readonly) NSImage *canvasZoomOutImage;
+@property(readonly) NSImage *alternateFilterFieldMenuImage;
+@property(readonly) NSImage *filterFieldMenuImage;
 @property(readonly) NSImage *alternateFilterFieldImage;
 @property(readonly) NSImage *filterFieldImage;
+@property(readonly) NSImage *crashPointUnresolvedImage;
+@property(readonly) NSImage *crashPointResolvedImage;
+@property(readonly) NSImage *crashLogCompressionImageOn;
+@property(readonly) NSImage *crashLogCompressionImage;
 @property(readonly) NSImage *consoleButtonClearImage;
 @property(readonly) NSImage *toolbarButtonViewRevisionImage;
 @property(readonly) NSImage *toolbarButtonSwitchBranchImage;
@@ -157,8 +163,6 @@
 @property(readonly) NSImage *inFieldChooseButtonRegular;
 @property(readonly) NSImage *scopeBarConfigurationShadowImage;
 - (id)insetTabPressedImage;
-@property(readonly) NSImage *roundDeleteButton;
-@property(readonly) NSImage *roundAddButton;
 @property(readonly) NSImage *smallPullDownArrow;
 @property(readonly) NSImage *offlineIndicatorSelected;
 @property(readonly) NSImage *offlineIndicator;
@@ -285,6 +289,11 @@
 @property(readonly) NSFont *imageCatalogIdiomTitleFont;
 @property(readonly) NSGradient *imageCatalogImageSetIdiomTitleBackground;
 @property(readonly) NSFont *imageCatalogTitleFont;
+@property(readonly) NSColor *crashLogs_nonConsecutiveThreadLineSeparatorColor;
+@property(readonly) NSColor *crashLogs_consecutiveThreadLineSeparatorColor;
+@property(readonly) NSColor *crashLogs_crashingFrameIconColor;
+@property(readonly) NSColor *crashLogs_crashingThreadTextColor;
+@property(readonly) NSColor *crashLogs_crashingThreadHighlightColor;
 @property(readonly) NSColor *bluePunchOutInactiveColor;
 @property(readonly) NSColor *bluePunchOutColor;
 @property(readonly) NSColor *blueOnStateTextColor;

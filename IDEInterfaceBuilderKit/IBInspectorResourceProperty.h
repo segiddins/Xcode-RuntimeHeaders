@@ -20,12 +20,14 @@
 - (void).cxx_destruct;
 - (id)findIndicatorContentViewWithContext:(id)arg1;
 - (void)loadView;
+- (void)primitiveInvalidate;
 - (void)configureComboBoxButton;
 - (void)userDidChangeValue:(id)arg1;
 - (void)setupRefreshTriggersAndConfigure;
 - (void)refresh;
 - (id)mediaType;
 - (Class)resourceClass;
+- (BOOL)useNameAsValue;
 - (id)resourceType;
 - (double)baseline;
 - (id)inspectorController;

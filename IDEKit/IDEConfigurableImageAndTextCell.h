@@ -48,7 +48,7 @@
 - (struct CGRect)titleRectForBounds:(struct CGRect)arg1;
 - (struct CGRect)imageRectForBounds:(struct CGRect)arg1;
 - (double)_preTextAreaWidth;
-@property(retain, nonatomic) NSImage *image; // @synthesize image=_image;
+@property(retain) NSImage *image; // @synthesize image=_image;
 - (void)setFont:(id)arg1;
 - (void)_internalEndEditing;
 - (void)_internalBeginEditing;

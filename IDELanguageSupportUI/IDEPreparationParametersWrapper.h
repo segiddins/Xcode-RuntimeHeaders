@@ -21,6 +21,7 @@
     DVTObservingToken *_buildableReferenceToUseForMacroExpansionObservingToken;
     id <NSObject> _activeRunContextBuildablesDidChangeObservingToken;
     DVTObservingToken *_frameworkSearchPathObservingToken;
+    DVTObservingToken *_auxiliarySourceSearchPathObservingToken;
     DVTObservingToken *_runsInFullSimulatorObservingToken;
     DVTObservingToken *_sdkObservingToken;
     DVTObservingToken *_nameObservingToken;
@@ -33,6 +34,7 @@
 @property(retain) DVTObservingToken *nameObservingToken; // @synthesize nameObservingToken=_nameObservingToken;
 @property(retain) DVTObservingToken *sdkObservingToken; // @synthesize sdkObservingToken=_sdkObservingToken;
 @property(retain) DVTObservingToken *runsInFullSimulatorObservingToken; // @synthesize runsInFullSimulatorObservingToken=_runsInFullSimulatorObservingToken;
+@property(retain) DVTObservingToken *auxiliarySourceSearchPathObservingToken; // @synthesize auxiliarySourceSearchPathObservingToken=_auxiliarySourceSearchPathObservingToken;
 @property(retain) DVTObservingToken *frameworkSearchPathObservingToken; // @synthesize frameworkSearchPathObservingToken=_frameworkSearchPathObservingToken;
 @property(retain) id <NSObject> activeRunContextBuildablesDidChangeObservingToken; // @synthesize activeRunContextBuildablesDidChangeObservingToken=_activeRunContextBuildablesDidChangeObservingToken;
 @property(retain) DVTObservingToken *buildableReferenceToUseForMacroExpansionObservingToken; // @synthesize buildableReferenceToUseForMacroExpansionObservingToken=_buildableReferenceToUseForMacroExpansionObservingToken;

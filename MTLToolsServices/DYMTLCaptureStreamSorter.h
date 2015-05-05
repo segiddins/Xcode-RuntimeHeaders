@@ -38,13 +38,14 @@ __attribute__((visibility("hidden")))
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (BOOL)_shouldExecuteFunctionLast:(unsigned int)arg1;
+- (BOOL)_shouldRunPostCommandBufferCommit:(unsigned int)arg1;
 - (BOOL)_shouldIgnoreFunction:(unsigned int)arg1;
 - (void)_postProcessParallelRenderCommandEncoder;
 - (unsigned int)_flattenParallelRenderCommandEncodingAtIndex:(unsigned int)arg1;
 - (void)_sortFunctionStreamCommands:(unsigned int)arg1;
 - (unsigned int)_traverseHeirarchyAndDetermineOrder;
 - (void)_buildFunctionNodeHierarchy;
-- (void)_handleNonCommandBufferDescendentsForFunction:(unsigned int)arg1 withActiveCommandBufferIndex:(unsigned int)arg2 andLastCommandBufferCommitted:(_Bool)arg3;
+- (void)_handleNonCommandBufferDescendentsForFunction:(unsigned int)arg1 withActiveCommandBufferIndex:(unsigned int)arg2 andLastCommandBufferCommitted:(_Bool)arg3 andLastestCommandBufferUsedOrder:(unsigned int)arg4;
 - (BOOL)_handleCommandBufferDescendentsForFunction:(unsigned int)arg1;
 - (void)_createCommandBufferNodes;
 - (void)_createFamilyList;
@@ -54,6 +55,7 @@ __attribute__((visibility("hidden")))
 - (void)_findCommandBufferResourceContainerRelatives;
 - (void)_determineCommandBufferSubmissionReorder;
 - (void)_writeModifiedFunctionStream;
+- (void)_writeUnmodifiedFunctionStream;
 - (void)_readOriginalFunctionStream;
 - (void)_dumpDebugData;
 - (BOOL)processCaptureStream;

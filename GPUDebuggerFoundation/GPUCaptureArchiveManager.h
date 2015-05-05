@@ -8,14 +8,14 @@
 
 #import "NSFileManagerDelegate.h"
 
-@class DVTMapTable, NSFileManager, NSMutableSet, NSObject<OS_dispatch_queue>, NSString;
+@class NSFileManager, NSMapTable, NSMutableSet, NSObject<OS_dispatch_queue>, NSString;
 
 @interface GPUCaptureArchiveManager : NSObject <NSFileManagerDelegate>
 {
     NSObject<OS_dispatch_queue> *_queue;
     NSFileManager *_fileManager;
-    DVTMapTable *_urlToCaptureArchiveTable;
-    DVTMapTable *_hashToURLTable;
+    NSMapTable *_urlToCaptureArchiveTable;
+    NSMapTable *_hashToURLTable;
     NSMutableSet *_reportURLSet;
 }
 

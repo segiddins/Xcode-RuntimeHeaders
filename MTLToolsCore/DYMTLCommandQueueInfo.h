@@ -13,11 +13,13 @@
 
 @interface DYMTLCommandQueueInfo : NSObject <NSCoding, NSCopying>
 {
+    BOOL _canBeCaptured;
     unsigned long long _deviceAddress;
     unsigned long long _queueAddress;
     NSString *_label;
 }
 
+@property(nonatomic) BOOL canBeCaptured; // @synthesize canBeCaptured=_canBeCaptured;
 @property(readonly, nonatomic) NSString *label; // @synthesize label=_label;
 @property(readonly, nonatomic) unsigned long long queueAddress; // @synthesize queueAddress=_queueAddress;
 @property(readonly, nonatomic) unsigned long long deviceAddress; // @synthesize deviceAddress=_deviceAddress;

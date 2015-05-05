@@ -18,9 +18,9 @@
 @property(readonly) NSTextStorage *textStorage; // @synthesize textStorage=_textStorage;
 - (void).cxx_destruct;
 - (void)processPlaygroundResult:(id)arg1;
-- (id)viewControllerForDisplayingToy;
 - (void)beginExecutionGeneration:(unsigned long long)arg1;
 - (void)setToybox:(id)arg1;
+- (BOOL)shouldDisplayInTimeline;
 - (id)init;
 
 @end

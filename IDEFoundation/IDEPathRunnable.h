@@ -12,13 +12,11 @@
 
 @interface IDEPathRunnable : IDERunnable <DVTXMLUnarchiving>
 {
-    NSString *_bundleIdentifier;
     DVTFilePath *_filePath;
 }
 
 + (id)keyPathsForValuesAffectingHasRunnablePath;
 @property(readonly, copy) DVTFilePath *filePath; // @synthesize filePath=_filePath;
-- (void)setBundleIdentifier:(id)arg1;
 - (void).cxx_destruct;
 - (void)dvt_encodeRelationshipsWithXMLArchiver:(id)arg1 version:(id)arg2;
 - (void)dvt_encodeAttributesWithXMLArchiver:(id)arg1 version:(id)arg2;

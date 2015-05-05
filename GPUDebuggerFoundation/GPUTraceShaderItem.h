@@ -27,6 +27,7 @@
 - (id)initFunctionWithParent:(id)arg1 shaderType:(unsigned long long)arg2 functionInfo:(id)arg3 label:(id)arg4 sharegroupID:(unsigned long long)arg5;
 - (id)initShaderWithParent:(id)arg1 shaderType:(unsigned long long)arg2 infoLog:(const char *)arg3 label:(id)arg4 sharegroupID:(unsigned long long)arg5;
 - (id)_initWithParent:(id)arg1 shaderType:(unsigned long long)arg2 infoLog:(const char *)arg3 functionInfo:(id)arg4 label:(id)arg5 type:(unsigned int)arg6 sharegroupID:(unsigned long long)arg7;
+- (id)navigableItem_subtitle;
 
 @end
 

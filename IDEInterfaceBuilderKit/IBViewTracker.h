@@ -30,6 +30,8 @@
 
 + (void)setAutolayoutLiveResizingStrategyMask:(unsigned long long)arg1;
 + (unsigned long long)autolayoutLiveResizingStrategyMask;
++ (void)setAutolayoutLiveResizingEnableStrategyMask:(BOOL)arg1;
++ (BOOL)autolayoutLiveResizingEnableStrategyMask;
 + (void)setAppliesAutoResizingRulesWhileResizing:(BOOL)arg1;
 + (BOOL)appliesAutoResizingRulesWhileResizing;
 + (void)initialize;
@@ -47,6 +49,9 @@
 @property(copy) NSArray *layoutManagers; // @synthesize layoutManagers;
 - (void).cxx_destruct;
 - (void)trackWithEvent:(id)arg1;
+- (BOOL)needsFrameDeciderForView:(id)arg1 withStrategy:(CDStruct_7ddbbeae)arg2;
+- (BOOL)doesConstraint:(id)arg1 affectSiblingOrAncestorOfView:(id)arg2;
+- (BOOL)doesConstraint:(id)arg1 affectDescendantsOfView:(id)arg2;
 - (void)propagateLayoutGuideMatchesToTrackedView:(id)arg1 layoutManager:(id)arg2;
 - (void)clearGuides;
 - (void)displayGuides;
@@ -64,7 +69,8 @@
 - (BOOL)shouldAutoResizeSubviewsGivenEvent:(id)arg1;
 - (BOOL)shouldApplyAutoResizingRulesWhileResizing;
 - (BOOL)shouldSizeUsingFrameDeciderForEvent:(id)arg1;
-- (id)generateFrameDeciderForPlacingSubviewInFrameWithInitialEvent:(id)arg1;
+- (id)generateFrameDeciderForPlacingSubviewInFrameWithStrategy:(CDStruct_7ddbbeae)arg1;
+- (CDStruct_7ddbbeae)frameDeciderStrategyFromEvent:(id)arg1;
 - (void)pushTrackingIndicators;
 - (long long)effectiveKnobInSpaceOfView:(id)arg1;
 - (long long)initialKnobInSpaceOfView:(id)arg1;

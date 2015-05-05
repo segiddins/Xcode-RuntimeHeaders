@@ -6,28 +6,35 @@
 
 #import "NSObject.h"
 
-#import "IDEDebugProcess.h"
+#import "IDEDebugTopNavigableModel.h"
 
-@class IDELaunchSession, NSArray, NSString;
+@class DVTStackBacktrace, IDEDebugSession, IDELaunchSession, NSArray, NSString;
 
-@interface IDEShellXPCProcess : NSObject <IDEDebugProcess>
+@interface IDEShellXPCProcess : NSObject <IDEDebugTopNavigableModel>
 {
+    NSString *_associatedProcessUUID;
+    IDELaunchSession *launchSession;
     NSString *_name;
 }
 
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
+@property(readonly) IDELaunchSession *launchSession; // @synthesize launchSession;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) NSArray *loadedCodeModules;
+- (void)primitiveInvalidate;
 - (id)contentDelegateUIExtensionIdentifier;
-@property(readonly) IDELaunchSession *launchSession;
-@property(readonly, copy) NSString *associatedProcessUUID;
-- (id)initWithName:(id)arg1;
+@property(readonly, copy) NSString *associatedProcessUUID; // @synthesize associatedProcessUUID=_associatedProcessUUID;
+- (id)initWithDebugSession:(id)arg1 name:(id)arg2;
 
 // Remaining properties
+@property(retain) DVTStackBacktrace *creationBacktrace;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
+@property(readonly) DVTStackBacktrace *invalidationBacktrace;
+@property(readonly, nonatomic) NSArray *loadedCodeModules;
+@property(readonly, nonatomic) IDEDebugSession *parentDebugSession;
 @property(readonly) Class superclass;
+@property(readonly, nonatomic, getter=isValid) BOOL valid;
 
 @end
 

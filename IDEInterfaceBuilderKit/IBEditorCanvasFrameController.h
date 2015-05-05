@@ -102,7 +102,6 @@
 - (BOOL)validateUserInterfaceItem:(id)arg1;
 - (BOOL)delegatePasteboardActionValidationToCanvasView:(SEL)arg1;
 - (void)duplicate:(id)arg1;
-- (void)pasteExcludingConnections:(id)arg1;
 - (void)paste:(id)arg1;
 - (void)copy:(id)arg1;
 - (void)cut:(id)arg1;
@@ -182,6 +181,7 @@
 - (void)noteDescendant:(id)arg1 didChangeProperty:(id)arg2 fromValue:(id)arg3;
 - (void)noteAncestor:(id)arg1 didChangeProperty:(id)arg2 fromValue:(id)arg3;
 - (void)editStringWithContext:(id)arg1 forEditor:(id)arg2;
+- (BOOL)isFieldEditorOpen;
 - (void)closeFieldEditorWithConclusion:(long long)arg1;
 - (void)trackMeasurementLinesFromObjects:(id)arg1 toObject:(id)arg2 withEvent:(id)arg3;
 - (unsigned long long)dragObjects:(id)arg1 withImage:(id)arg2 inMouseDownEvent:(id)arg3 mouseDraggedEvent:(id)arg4 imageLocation:(struct CGPoint)arg5 allowedOperations:(unsigned long long)arg6 editor:(id)arg7 draggingSourceContext:(id)arg8;

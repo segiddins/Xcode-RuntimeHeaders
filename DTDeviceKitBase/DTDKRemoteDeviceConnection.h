@@ -25,6 +25,7 @@
     DTDKRemoteDeviceToken *_owner;
     NSString *_identifier;
     NSString *_bonjourServiceName;
+    NSString *_companionIdentifier;
     DTXConnection *_instrumentsConnection;
     struct _AMDevice *_deviceRef;
     void *_wakeupToken;
@@ -50,6 +51,7 @@
 @property(readonly) void *wakeupToken; // @synthesize wakeupToken=_wakeupToken;
 @property(readonly) struct _AMDevice *deviceRef; // @synthesize deviceRef=_deviceRef;
 @property(retain, nonatomic) DTXConnection *instrumentsConnection; // @synthesize instrumentsConnection=_instrumentsConnection;
+@property(readonly, copy) NSString *companionIdentifier; // @synthesize companionIdentifier=_companionIdentifier;
 @property(readonly) unsigned int location; // @synthesize location=_location;
 @property(readonly, copy) NSString *bonjourServiceName; // @synthesize bonjourServiceName=_bonjourServiceName;
 @property(getter=isPaired) _Bool paired; // @synthesize paired=_paired;
@@ -75,6 +77,7 @@
 - (_Bool)unpair;
 - (id)wakeup;
 - (long long)compare:(id)arg1;
+@property(readonly, getter=isGizmo) _Bool gizmo;
 @property(readonly, getter=isConnected) _Bool connected;
 - (BOOL)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;
@@ -83,7 +86,6 @@
 @property(readonly, copy) NSString *hostname;
 - (void)updatePairingStatus;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)disconnected;
 - (void)primitiveInvalidate;
 
 // Remaining properties

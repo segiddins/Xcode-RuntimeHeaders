@@ -10,7 +10,7 @@
 #import "IDERunDestinationFallbackSelectorDeviceInfo.h"
 #import "XCDTMobileIS_XPCDebuggingProcotol.h"
 
-@class DTDKRemoteDeviceToken, DTXChannel, DVTFuture, DVTNotificationToken, DVTObservingToken, IDELaunchParametersSnapshot, NSError, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSSet, NSString;
+@class DTDKRemoteDeviceToken, DTXChannel, DVTFuture, DVTNotificationToken, DVTObservingToken, IDELaunchParametersSnapshot, NSError, NSMutableDictionary, NSMutableSet, NSObject<OS_dispatch_queue>, NSSet, NSString;
 
 @interface DVTiOSDevice : DVTAbstractiOSDevice <DVTDeviceApplicationInstaller, IDERunDestinationFallbackSelectorDeviceInfo, XCDTMobileIS_XPCDebuggingProcotol>
 {
@@ -18,10 +18,12 @@
     DVTObservingToken *_developmentStateToken1;
     DVTObservingToken *_developmentStateToken2;
     DVTObservingToken *_developmentStateToken3;
+    DVTObservingToken *_proxiedTokensObservingToken;
     DVTNotificationToken *_deviceProgressToken;
     DVTFuture *_wakeupInFlight;
     BOOL _supportsXPCControlV2;
     NSMutableDictionary *_xpcStdoutFDForPid;
+    NSMutableSet *_proxiedDevices;
     BOOL _deviceIsBusy;
     BOOL _ignored;
     _Bool _deviceReady;
@@ -75,6 +77,7 @@
 + (Class)deviceClassForDeviceType:(id)arg1;
 + (Class)deviceClassForCodename:(id)arg1;
 + (id)alliOSDevices;
++ (void)initialize;
 + (id)keyPathsForValuesAffectingCanExecute;
 + (id)allDeveloperDiskImagePathsForPlatform:(id)arg1;
 + (id)pathForInternalExecutable:(id)arg1 searchInPlatform:(id)arg2;
@@ -132,7 +135,7 @@
 @property(readonly) NSSet *systemApplications;
 @property(readonly) NSSet *applications;
 - (BOOL)canChangeDeviceSoftwareVersion;
-@property(readonly) _Bool deviceIsPaired;
+- (_Bool)deviceIsPaired;
 - (BOOL)isAvailable;
 - (void)renameDevice:(id)arg1;
 - (void)setName:(id)arg1;
@@ -148,16 +151,14 @@
 - (id)deviceSpecificOverridingPropertiesForBuildable:(id)arg1 withBaselineParameters:(id)arg2;
 - (id)executionDisplayName;
 - (id)supportedSDKsForBuildable:(id)arg1 buildParameters:(id)arg2 error:(id *)arg3;
-- (id)supportedArchitecturesForBuildable:(id)arg1 buildParameters:(id)arg2 error:(id *)arg3;
 - (BOOL)canBeDefaultDeviceForBuildable:(id)arg1 buildParameters:(id)arg2;
 - (id)displayNameAdditionsWhenUsingArchitecture:(id)arg1 withSDK:(id)arg2;
-- (id)preferredSDKForDeviceOptions:(id)arg1 error:(id *)arg2;
-- (id)preferredArchitectureForDeviceOptions:(id)arg1 error:(id *)arg2;
 - (id)supportedArchitectures;
 - (id)nativeArchitecture;
 - (BOOL)shouldPresentDeviceForBuildable:(id)arg1 buildParameters:(id)arg2 error:(id *)arg3;
 - (id)errorMessageForBuildable:(id)arg1 buildParameters:(id)arg2;
 - (BOOL)deviceSupportsBuildable:(id)arg1 buildParameters:(id)arg2 error:(id *)arg3;
+- (id)supportedDeviceFamilies;
 - (id)unavailabilityError;
 - (id)_deviceIsUnpairedError;
 @property(readonly, copy) NSString *mountOptions;
@@ -201,14 +202,14 @@
 - (id)initWithDeviceLocation:(id)arg1 extension:(id)arg2;
 - (void)_respondToDeviceProgressNotification:(id)arg1;
 @property(retain) DTDKRemoteDeviceToken *token; // @synthesize token=_token;
-- (void)stopDebuggingXPCServicesForPID:(int)arg1;
+- (void)stopDebuggingXPCServices:(id)arg1;
 - (void)xpcServiceObserved:(id)arg1 withProcessIdentifier:(int)arg2 requestedByProcess:(int)arg3 options:(id)arg4;
 - (void)outputReceived:(id)arg1 fromProcess:(int)arg2 atTime:(unsigned long long)arg3;
 - (void)debugXPCServices:(id)arg1;
 - (BOOL)supportsUnhostedXPCServiceDebugging;
 - (BOOL)supportsXPCServiceDebugging;
+- (unsigned long long)supportedLaunchOptions;
 - (void)didFinishRunning;
-- (id)additionalApplicationsForDebuggingAppExtensions;
 - (id)startDebugServerService;
 - (id)deviceArbitrationForcedCheckIn;
 - (id)deviceArbitrationCheckIn;
@@ -275,6 +276,7 @@
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly) unsigned long long hash;
+@property(readonly, copy) NSMutableSet *mutableProxiedDevices; // @dynamic mutableProxiedDevices;
 @property(readonly) Class superclass;
 
 @end

@@ -10,25 +10,25 @@
 
 @interface IDEAddContainerItemsAssistantContext : IDEStructureEditingAssistantContext
 {
-    IDEGroup *_targetGroup;
     DVTObservingToken *_targetGroupObservingToken;
-    NSArray *_containerItems;
-    BOOL _stripOutBuildProductContainerItems;
     BOOL _createGroupsForFolders;
     BOOL _copyFilesToTargetGroup;
-    CDUnknownBlockType _prepareBlock;
+    BOOL _stripOutBuildProductContainerItems;
+    BOOL _shouldHideCopyFilesToTargetGroupSwitchButton;
+    IDEGroup *_targetGroup;
+    NSArray *_containerItems;
     NSString *_buildToolPath;
     NSString *_buildArgumentsString;
-    BOOL _shouldHideCopyFilesToTargetGroupSwitchButton;
+    CDUnknownBlockType _prepareBlock;
 }
 
 + (id)contextWithTargetGroup:(id)arg1;
 + (id)_containerAddingItemsAssistantExtensionForContainer:(id)arg1;
 + (void)initialize;
-@property BOOL shouldHideCopyFilesToTargetGroupSwitchButton; // @synthesize shouldHideCopyFilesToTargetGroupSwitchButton=_shouldHideCopyFilesToTargetGroupSwitchButton;
 @property(copy) CDUnknownBlockType prepareBlock; // @synthesize prepareBlock=_prepareBlock;
 @property(copy) NSString *buildArgumentsString; // @synthesize buildArgumentsString=_buildArgumentsString;
 @property(copy) NSString *buildToolPath; // @synthesize buildToolPath=_buildToolPath;
+@property BOOL shouldHideCopyFilesToTargetGroupSwitchButton; // @synthesize shouldHideCopyFilesToTargetGroupSwitchButton=_shouldHideCopyFilesToTargetGroupSwitchButton;
 @property BOOL stripOutBuildProductContainerItems; // @synthesize stripOutBuildProductContainerItems=_stripOutBuildProductContainerItems;
 @property(copy) NSArray *containerItems; // @synthesize containerItems=_containerItems;
 @property(retain, nonatomic) IDEGroup *targetGroup; // @synthesize targetGroup=_targetGroup;
@@ -39,6 +39,8 @@
 @property(readonly) NSString *actualAssistantIdentifier;
 @property BOOL copyFilesToTargetGroup;
 @property BOOL createGroupsForFolders;
+@property(readonly) BOOL isTargetingFolder;
+- (id)description;
 - (void)dealloc;
 - (id)init;
 

@@ -8,7 +8,7 @@
 
 #import "DVTDraggingInfo.h"
 
-@class DVTDraggedImageState, NSDictionary, NSImage, NSMutableArray, NSPasteboard, NSString, NSWindow;
+@class DVTDraggedImageState, NSDictionary, NSImage, NSMutableArray, NSPasteboard, NSSet, NSString, NSWindow;
 
 @interface DVTDraggingContext : NSObject <DVTDraggingInfo>
 {
@@ -29,12 +29,14 @@
     long long _draggingFormation;
     long long _numberOfValidItemsForDrop;
     BOOL _animatesToDestination;
+    NSSet *_draggingSnapGuides;
 }
 
 @property long long draggingFormation; // @synthesize draggingFormation=_draggingFormation;
 @property long long numberOfValidItemsForDrop; // @synthesize numberOfValidItemsForDrop=_numberOfValidItemsForDrop;
 @property BOOL animatesToDestination; // @synthesize animatesToDestination=_animatesToDestination;
 @property struct CGSize draggingStickiness; // @synthesize draggingStickiness=_draggingStickiness;
+@property(retain, nonatomic) NSSet *draggingSnapGuides; // @synthesize draggingSnapGuides=_draggingSnapGuides;
 @property BOOL draggedImageStateNeedsUpdate; // @synthesize draggedImageStateNeedsUpdate=_draggedImageStateNeedsUpdate;
 @property unsigned long long lastDragDestinationOperationMask; // @synthesize lastDragDestinationOperationMask=_lastDragDestinationOperationMask;
 @property(retain) NSDictionary *draggingSourceContext; // @synthesize draggingSourceContext=_draggingSourceContext;

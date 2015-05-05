@@ -42,7 +42,6 @@
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(copy) NSMutableArray *mutableTests; // @dynamic mutableTests;
-@property(copy) NSString *name;
 @property(readonly) Class superclass;
 @property(copy) NSArray *tests; // @dynamic tests;
 

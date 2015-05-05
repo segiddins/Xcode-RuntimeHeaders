@@ -38,6 +38,8 @@
 @property(retain, nonatomic) id <IDEBlueprint> inspectedBlueprint; // @synthesize inspectedBlueprint=_inspectedBlueprint;
 @property(retain) Xcode3ProjectEditor *projectEditor; // @synthesize projectEditor=_projectEditor;
 - (void).cxx_destruct;
+- (void)showAlertForIncorrectTargetedDeviceFamilyForWatch;
+- (BOOL)correctTargetedDeviceFamilyForWatch;
 - (void)showLaunchImageAlertForImageName:(id)arg1;
 - (void)pickInfoPlistFile:(id)arg1;
 - (void)_infoPlistPickerPanel:(id)arg1 completedWithResult:(unsigned long long)arg2;
@@ -89,6 +91,9 @@
 - (id)valueForPlistSetting:(id)arg1 ofType:(Class)arg2;
 - (BOOL)plistFileExists;
 - (BOOL)plistSettingsAreValid;
+- (id)inspectedProductTypeIdentifier;
+- (BOOL)isAWatchAppExtensionEditor;
+- (BOOL)isAWatchAppEditor;
 - (BOOL)isAFrameworkEditor;
 - (BOOL)isAnAppExtensionEditor;
 - (BOOL)isAnAppEditor;

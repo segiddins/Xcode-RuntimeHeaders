@@ -66,7 +66,12 @@
 - (void)adjustCameraPanWithXValue:(double)arg1 YValue:(double)arg2;
 - (void)adjustCameraPositionWithXValue:(double)arg1 YValue:(double)arg2;
 - (void)updateNodesWithUpdatedCameraZoomFactorBelowRootNode:(id)arg1;
-- (void)adjustCameraZoomLeveWithValue:(double)arg1;
+@property(readonly) double zoomFactor;
+- (void)adjustCameraZoomLevelWithValue:(double)arg1;
+- (void)hideViewsBelow:(id)arg1;
+- (void)hideViewsAbove:(id)arg1;
+- (void)hideViewsForNode:(id)arg1 withEvent:(id)arg2;
+- (id)menuForNode:(id)arg1 withEvent:(id)arg2;
 - (void)mouseUpAfterDrag;
 - (void)removeCurrentHighlight;
 - (void)mousedOverNode:(id)arg1;
@@ -82,6 +87,7 @@
 - (BOOL)_selectedObjectsAreSameOrContainChildConstraints:(id)arg1;
 - (void)updateWithSelectedViewObjects:(id)arg1;
 - (void)updateViewWithIdentifier:(id)arg1 withSnapshot:(id)arg2;
+- (void)_finishInitializationByUpdatingUIWithRootView:(id)arg1;
 - (void)initializeSceneWithRootView:(id)arg1;
 - (void)loadDataWithRootObject:(id)arg1 constraintSet:(id)arg2 viewInstanceCreationOptions:(id)arg3;
 - (void)dealloc;

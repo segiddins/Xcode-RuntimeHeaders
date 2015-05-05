@@ -6,10 +6,11 @@
 
 #import "IDEIndexGeniusResultsFinder.h"
 
-@class NSArray;
+@class DVTDelayedInvocation, NSArray;
 
 @interface IBAutomaticGeniusResultsFinder : IDEIndexGeniusResultsFinder
 {
+    DVTDelayedInvocation *_delayedUpdateInvocation;
     NSArray *_observationTokens;
 }
 
