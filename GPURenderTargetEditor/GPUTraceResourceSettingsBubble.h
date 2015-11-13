@@ -4,12 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "DVTPopoverContentViewController.h"
+#import <DVTKit/DVTPopoverContentViewController.h>
 
-#import "NSTextFieldDelegate.h"
-#import "NSWindowDelegate.h"
+#import <GPURenderTargetEditor/NSTextFieldDelegate-Protocol.h>
+#import <GPURenderTargetEditor/NSWindowDelegate-Protocol.h>
 
 @class DYRangeSlider, DYRenderingAttributes, NSBox, NSButton, NSSlider, NSString, NSTextField, NSView;
+@protocol DYResource, GPUTraceBubbleOwner;
 
 @interface GPUTraceResourceSettingsBubble : DVTPopoverContentViewController <NSWindowDelegate, NSTextFieldDelegate>
 {

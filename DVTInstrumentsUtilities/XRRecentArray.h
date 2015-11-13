@@ -4,9 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-@class NSMutableArray, NSObject<OS_dispatch_semaphore>;
+@class NSMutableArray;
+@protocol OS_dispatch_semaphore;
 
 @interface XRRecentArray : NSObject
 {
@@ -24,6 +25,7 @@
 - (void)addEntry:(id)arg1;
 @property(nonatomic) unsigned long long maximumRecentCount;
 - (id)initWithMaximumRecentCount:(unsigned long long)arg1;
+- (id)init;
 
 @end
 

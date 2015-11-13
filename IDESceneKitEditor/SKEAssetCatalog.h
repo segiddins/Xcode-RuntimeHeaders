@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
 @class NSMutableDictionary;
 
@@ -19,6 +19,7 @@
 @property BOOL forceYUp;
 - (BOOL)writeToFile:(id)arg1 atomically:(BOOL)arg2;
 - (id)initWithContentsOfFile:(id)arg1 error:(id *)arg2;
+- (id)init;
 
 @end
 

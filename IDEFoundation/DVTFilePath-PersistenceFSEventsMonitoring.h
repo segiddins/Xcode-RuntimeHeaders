@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "DVTFilePath.h"
+#import <DVTFoundation/DVTFilePath.h>
 
 @interface DVTFilePath (PersistenceFSEventsMonitoring)
 - (BOOL)subpathsChangedSinceDate:(id)arg1 withBlock:(CDUnknownBlockType)arg2;

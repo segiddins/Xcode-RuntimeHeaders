@@ -6,9 +6,10 @@
 
 #import <IDEModelFoundation/XDUMLNamedElementImp.h>
 
-#import "XDUMLGeneralization.h"
+#import <IDEModelFoundation/XDUMLGeneralization-Protocol.h>
 
 @class NSString;
+@protocol XDUMLClassifier;
 
 @interface XDUMLGeneralizationImp : XDUMLNamedElementImp <XDUMLGeneralization>
 {

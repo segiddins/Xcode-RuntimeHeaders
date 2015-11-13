@@ -6,9 +6,9 @@
 
 #import <IDEKit/IDEViewController.h>
 
-#import "DVTTableViewDelegate.h"
-#import "IDECapsuleViewController.h"
-#import "IDECapsuleViewDelegate.h"
+#import <IDEKit/DVTTableViewDelegate-Protocol.h>
+#import <IDEKit/IDECapsuleViewController-Protocol.h>
+#import <IDEKit/IDECapsuleViewDelegate-Protocol.h>
 
 @class DVTBorderedView, DVTTableView, NSArrayController, NSImage, NSMutableArray, NSString;
 

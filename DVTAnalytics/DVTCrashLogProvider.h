@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "DVTServicesFileSystemSerialization.h"
+#import <DVTAnalytics/DVTServicesFileSystemSerialization-Protocol.h>
 
 @class DVTFilePath, NSMutableDictionary, NSOrderedSet, NSString;
 
@@ -30,6 +30,7 @@
 - (void)addCrashLogs:(id)arg1;
 - (void)_flushInMemoryCache;
 - (id)crashLogSavingQueue;
+- (id)init;
 - (id)initWithCacheDirectory:(id)arg1;
 
 // Remaining properties

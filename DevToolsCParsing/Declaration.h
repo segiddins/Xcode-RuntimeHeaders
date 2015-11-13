@@ -6,9 +6,10 @@
 
 #import <DevToolsCParsing/ASTNode.h>
 
-#import "ScopeLookup.h"
+#import <DevToolsCParsing/ScopeLookup-Protocol.h>
 
-@class ASTNode<ScopeLookup>, FunctionBodyExpression, NSMutableArray, NSMutableDictionary, NSString, Type;
+@class FunctionBodyExpression, NSMutableArray, NSMutableDictionary, NSString, Type;
+@protocol ScopeLookup;
 
 @interface Declaration : ASTNode <ScopeLookup>
 {

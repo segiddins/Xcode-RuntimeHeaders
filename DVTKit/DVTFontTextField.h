@@ -6,10 +6,11 @@
 
 #import <DVTKit/DVTButtonTextField.h>
 
-#import "NSTextViewDelegate.h"
-#import "NSWindowDelegate.h"
+#import <DVTKit/NSTextViewDelegate-Protocol.h>
+#import <DVTKit/NSWindowDelegate-Protocol.h>
 
 @class NSFont, NSString;
+@protocol DVTFontTextFieldDataSource;
 
 @interface DVTFontTextField : DVTButtonTextField <NSTextViewDelegate, NSWindowDelegate>
 {

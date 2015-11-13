@@ -6,13 +6,14 @@
 
 #import <IDEKit/IDEViewController.h>
 
-#import "IDECapsuleViewController.h"
-#import "IDECapsuleViewDelegate.h"
-#import "IDEFlightCheckListViewDelegate.h"
-#import "IDEProjectItemStatusViewDelegate.h"
-#import "IDEProjectItemViewDelegate.h"
+#import <IDEKit/IDECapsuleViewController-Protocol.h>
+#import <IDEKit/IDECapsuleViewDelegate-Protocol.h>
+#import <IDEKit/IDEFlightCheckListViewDelegate-Protocol.h>
+#import <IDEKit/IDEProjectItemStatusViewDelegate-Protocol.h>
+#import <IDEKit/IDEProjectItemViewDelegate-Protocol.h>
 
 @class IDEProjectItemHeaderView, IDEProjectItemModel, NSDictionary, NSImage, NSMutableArray, NSString, NSView;
+@protocol IDEPortalInfoDelegate, IDEProjectItem;
 
 @interface IDEProjectItemViewController : IDEViewController <IDEProjectItemViewDelegate, IDEFlightCheckListViewDelegate, IDEProjectItemStatusViewDelegate, IDECapsuleViewController, IDECapsuleViewDelegate>
 {

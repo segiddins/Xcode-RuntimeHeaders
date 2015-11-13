@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "DVTDeveloperPortalDatabase.h"
+#import <DVTFoundation/DVTDeveloperPortalDatabase.h>
 
 @interface DVTDeveloperPortalDatabase (UIExtensions)
 + (id)chooseTeamOperationForToken:(id)arg1 andPlatform:(id)arg2 allowMultiple:(_Bool)arg3;

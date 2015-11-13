@@ -4,11 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSView.h"
+#import <AppKit/NSView.h>
 
-#import "IBMouseMovedObservingView.h"
+#import <IDEInterfaceBuilderKit/IBMouseMovedObservingView-Protocol.h>
 
 @class NSArray, NSColor, NSCursor, NSEvent, NSMutableDictionary, NSString;
+@protocol IBImageButtonDelegate;
 
 @interface IBImageButton : NSView <IBMouseMovedObservingView>
 {

@@ -6,9 +6,10 @@
 
 #import <DVTKit/DVTSearchField.h>
 
-#import "DVTFindPatternField.h"
+#import <DVTKit/DVTFindPatternField-Protocol.h>
 
 @class DVTFindPatternAttachmentCell, NSString;
+@protocol DVTFindPatternManager;
 
 @interface DVTFindPatternSearchField : DVTSearchField <DVTFindPatternField>
 {

@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSManagedObject.h"
+#import <CoreData/NSManagedObject.h>
 
 @class DVTDeveloperAccount, NSNumber, NSSet, NSString;
 
@@ -13,6 +13,7 @@
 }
 
 - (_Bool)hasRoleOnTeam:(id)arg1 forPlatform:(id)arg2;
+- (_Bool)isAdminOrAgentOfTeam:(id)arg1;
 - (_Bool)isMemberOfTeam:(id)arg1;
 @property(readonly, nonatomic) _Bool isAgent;
 @property(readonly, nonatomic) _Bool isMacTeamMember;

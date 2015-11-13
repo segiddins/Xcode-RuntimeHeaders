@@ -7,6 +7,7 @@
 #import <DVTKit/DVTRolloverTrackingButton.h>
 
 @class NSMenuItem;
+@protocol DVTDelayedMenuButtonDelegate;
 
 @interface DVTDelayedMenuButton : DVTRolloverTrackingButton
 {

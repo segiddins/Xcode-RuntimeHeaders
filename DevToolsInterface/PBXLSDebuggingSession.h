@@ -6,7 +6,8 @@
 
 #import <DevToolsInterface/PBXLSLaunchSession.h>
 
-@class NSMutableArray, PBXLSDebuggerAdaptor<PBXLSRestartExecutableRequest>, PBXLSProcess;
+@class NSMutableArray, PBXLSDebuggerAdaptor, PBXLSProcess;
+@protocol PBXLSRestartExecutableRequest;
 
 @interface PBXLSDebuggingSession : PBXLSLaunchSession
 {

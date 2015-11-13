@@ -6,7 +6,8 @@
 
 #import <IDEInterfaceBuilderKit/IBAbstractClassDescriptionBackedWorkspaceDocumentClassProvider.h>
 
-@class DVTDelayedInvocation, DVTNotificationToken, DVTObservingToken, IBSourceCodeParserRegistry, NSDictionary, NSMutableArray, NSMutableDictionary, NSMutableOrderedSet, NSObject<OS_dispatch_queue>, NSSet, NSString;
+@class DVTDelayedInvocation, DVTNotificationToken, DVTObservingToken, IBSourceCodeParserRegistry, NSDictionary, NSMutableArray, NSMutableDictionary, NSMutableOrderedSet, NSObject, NSSet, NSString;
+@protocol DVTInvalidation, OS_dispatch_queue;
 
 @interface IBSourceCodeClassProvider : IBAbstractClassDescriptionBackedWorkspaceDocumentClassProvider
 {

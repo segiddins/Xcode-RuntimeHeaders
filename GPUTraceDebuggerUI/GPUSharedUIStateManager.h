@@ -4,9 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <Foundation/NSObject.h>
 
-@class NSMapTable, NSObject<OS_dispatch_queue>;
+@class NSMapTable;
+@protocol OS_dispatch_queue;
 
 @interface GPUSharedUIStateManager : NSObject
 {
@@ -18,7 +19,7 @@
 - (void).cxx_destruct;
 - (void)invalidateSharedStateForObject:(id)arg1;
 - (id)sharedStateForWorkspace:(id)arg1;
-- (id)sharedStateForWorkspaceTabController:(id)arg1;
+- (id)sharedStateForWorkspaceTabController:(id)arg1 allowCreate:(BOOL)arg2;
 - (id)sharedStateForInferiorSession:(id)arg1;
 - (id)sharedStateForObject:(id)arg1;
 - (id)transferSharedStateForObject:(id)arg1 toObj:(id)arg2;

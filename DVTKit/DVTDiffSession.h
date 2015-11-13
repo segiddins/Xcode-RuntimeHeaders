@@ -4,11 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "DVTInvalidation.h"
+#import <DVTKit/DVTInvalidation-Protocol.h>
 
-@class DVTDiffContext, DVTDiffDataSource, DVTDiffDescriptor, DVTMapTable, DVTObservingToken, DVTStackBacktrace, DVTTextStorage, NSArray, NSData, NSDictionary, NSIndexSet, NSMutableArray, NSMutableIndexSet, NSString, NSUndoManager;
+@class DVTDiffContext, DVTDiffDataSource, DVTDiffDescriptor, DVTObservingToken, DVTStackBacktrace, DVTTextStorage, NSArray, NSData, NSDictionary, NSIndexSet, NSMapTable, NSMutableArray, NSMutableIndexSet, NSString, NSUndoManager;
+@protocol DVTDiffSessionDelegate;
 
 @interface DVTDiffSession : NSObject <DVTInvalidation>
 {
@@ -30,7 +31,7 @@
     NSData *_mergeTextDigest;
     NSArray *_mergeDescriptors;
     NSMutableArray *_mergeDescriptorObservers;
-    DVTMapTable *_descriptorMap;
+    NSMapTable *_descriptorMap;
     unsigned long long _conflictCount;
     DVTDiffDataSource *_ancestorDataSource;
     DVTDiffDataSource *_modifiedDataSource;
@@ -95,6 +96,7 @@
 - (long long)compareDiffDescriptors:(id)arg1 rightDescriptor:(id)arg2;
 - (void)removeToggledDiffDescriptorIndex:(unsigned long long)arg1;
 - (void)addToggledDiffDescriptorIndex:(unsigned long long)arg1;
+- (void)revertDiffDescriptor:(id)arg1 withPrimaryTextStorage:(id)arg2 undoManager:(id)arg3;
 - (void)revertDiffDescriptorIndex:(unsigned long long)arg1 withPrimaryTextStorage:(id)arg2 undoManager:(id)arg3;
 - (void)_updateMergeDocumentForChangedDescriptor:(id)arg1;
 - (id)_buildMergeStringAndDescriptors:(id *)arg1 withMergeTextDigest:(id *)arg2;

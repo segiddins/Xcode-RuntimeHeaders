@@ -4,19 +4,18 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "IDEKeyDrivenNavigableItemRepresentedObject.h"
+#import <IDEKit/IDEKeyDrivenNavigableItemRepresentedObject-Protocol.h>
 
-@class DVTDocumentLocation, DVTFileDataType, IDEFileReference, IDESymbolNavigator, IDEWorkspace, NSArray, NSImage, NSOperationQueue, NSString;
+@class DVTDocumentLocation, DVTFileDataType, IDEFileReference, IDEWorkspace, NSArray, NSImage, NSOperationQueue, NSString;
 
 @interface IDESymbolNavigatorRootGroup : NSObject <IDEKeyDrivenNavigableItemRepresentedObject>
 {
-    NSOperationQueue *_queue;
     NSArray *_groups;
     IDEWorkspace *_workspace;
-    IDESymbolNavigator *_navigator;
     unsigned long long _generation;
+    NSOperationQueue *_queue;
 }
 
 @property(readonly) NSOperationQueue *queue; // @synthesize queue=_queue;

@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "DVTDocumentLocation.h"
+#import <DVTFoundation/DVTDocumentLocation.h>
 
-#import "NSCoding.h"
+#import <IDEQuickLookEditor/NSCoding-Protocol.h>
 
 @class IDEQuickLookPage;
 

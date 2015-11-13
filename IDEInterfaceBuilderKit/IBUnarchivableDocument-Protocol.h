@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <IDEInterfaceBuilderKit/NSObject-Protocol.h>
 
 @class IBDocumentUnarchiver, NSSet, NSString;
 
@@ -15,6 +15,6 @@
 - (void)documentUnarchiver:(IBDocumentUnarchiver *)arg1 didUnarchiveObject:(id)arg2;
 - (void)documentUnarchiver:(IBDocumentUnarchiver *)arg1 willUnarchiveObject:(id)arg2;
 - (id)documentUnarchiver:(IBDocumentUnarchiver *)arg1 objectForReferenceID:(NSString *)arg2 referenceType:(NSString *)arg3;
-- (void)unarchiveDocument:(IBDocumentUnarchiver *)arg1;
+- (BOOL)unarchiveDocumentWithUnarchiver:(IBDocumentUnarchiver *)arg1 error:(id *)arg2;
 @end
 

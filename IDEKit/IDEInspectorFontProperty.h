@@ -6,7 +6,7 @@
 
 #import <IDEKit/IDEInspectorProperty.h>
 
-#import "DVTFontTextFieldCellDelegate.h"
+#import <IDEKit/DVTFontTextFieldCellDelegate-Protocol.h>
 
 @class DVTFontTextField, IDEInspectorKeyPath, NSStepper, NSString;
 

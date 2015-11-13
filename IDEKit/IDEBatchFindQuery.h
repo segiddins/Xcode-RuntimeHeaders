@@ -4,12 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "DVTInvalidation.h"
-#import "DVTProgressReporting.h"
+#import <IDEKit/DVTInvalidation-Protocol.h>
+#import <IDEKit/DVTProgressReporting-Protocol.h>
 
 @class DVTDispatchLock, DVTPerformanceMetric, DVTStackBacktrace, IDEBatchFindCriteria, IDEBatchFindResultSet, IDEWorkspace, NSDate, NSOperationQueue, NSString;
+@protocol IDEClientTrackingToken;
 
 @interface IDEBatchFindQuery : NSObject <DVTProgressReporting, DVTInvalidation>
 {

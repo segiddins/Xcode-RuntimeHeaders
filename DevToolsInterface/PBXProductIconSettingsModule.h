@@ -6,7 +6,7 @@
 
 #import <DevToolsInterface/PBXAbstractProductSettingsModule.h>
 
-#import "NSTextFieldDelegate.h"
+#import <DevToolsInterface/NSTextFieldDelegate-Protocol.h>
 
 @class NSImageView, NSString, PBXExtendedTextField;
 

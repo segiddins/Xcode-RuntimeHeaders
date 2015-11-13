@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSView.h"
+#import <AppKit/NSView.h>
 
-#import "IBLiveViewsBundleObserver.h"
+#import <IDEInterfaceBuilderKit/IBLiveViewsBundleObserver-Protocol.h>
 
 @class IBLiveViewsBundle, IBPlatformToolRequester, NSArray, NSDate, NSError, NSImage, NSNumber, NSString;
 
@@ -51,6 +51,7 @@
 - (void)viewWillDraw;
 - (void)willRemoveSubview:(id)arg1;
 - (void)didAddSubview:(id)arg1;
+@property(readonly) BOOL prefersCachedImageBasedDrawing;
 @property(readonly) BOOL usesCachedImageBasedDrawing;
 - (void)optimisticallyDropBitmapCache;
 - (BOOL)cachedImageIsInvalid;
@@ -75,11 +76,14 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
+- (BOOL)compositesViewHierarchyInRemoteTool;
 - (void)ibPreparePreviewInstance:(id)arg1 context:(id)arg2;
 - (void)ibAwakeInDocument:(id)arg1;
 - (void)ibWillRemoveFromDocument:(id)arg1 previouslyMemberOfGroup:(id)arg2 identifierInGroup:(id)arg3;
 - (void)ibDidAddToDocument:(id)arg1 phase:(unsigned long long)arg2;
 - (void)ibWarnings:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
+- (void)ibInvalidateDesignablesStatusInDocument:(id)arg1;
+- (id)ibLiveViewsBundleForUpdatingScene:(id)arg1 inDocument:(id)arg2;
 - (void)ibUpdateDesignablesStatus;
 - (id)_ibDesignablesStatusForOutOfDateCachedImage;
 - (id)_ibDesignablesStatusForOutOfDateBundle;

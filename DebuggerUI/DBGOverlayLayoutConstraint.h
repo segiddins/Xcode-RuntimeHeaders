@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IBLayoutConstraint.h"
+#import <IBAutolayoutFoundation/IBLayoutConstraint.h>
 
 @class DBGLayoutConstraint;
 
@@ -15,6 +15,7 @@
 
 @property(retain, nonatomic) DBGLayoutConstraint *constraintModel; // @synthesize constraintModel=_constraintModel;
 - (void).cxx_destruct;
+- (id)multiplier;
 
 @end
 

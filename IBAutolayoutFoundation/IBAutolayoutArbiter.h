@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
 @class IBAutolayoutEngine, NSMutableSet, NSSet;
 
@@ -36,7 +36,7 @@
 - (void).cxx_destruct;
 - (id)arbitrateWithOptions:(id)arg1;
 - (void)resolveMutuallyExclusiveConstraintsRemovedDuringEngineBootstrapping;
-- (id)constraintsToUpgradeAfterRemovingRedundantConstraintsWithOptions:(id)arg1;
+- (void)removingRedundantConstraintsWithOptions:(id)arg1;
 - (BOOL)addApplicableCandidateConstraints:(id *)arg1;
 - (void)_updateUnsatisfiedConstraintConstantsIfNeeded;
 - (id)logArbitrationFailureAndReturnMessageForReason:(id)arg1;

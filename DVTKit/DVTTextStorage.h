@@ -4,12 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSTextStorage.h"
+#import <AppKit/NSTextStorage.h>
 
-#import "DVTSourceBufferProvider.h"
-#import "DVTSourceLanguageServiceDelegate.h"
+#import <DVTKit/DVTSourceBufferProvider-Protocol.h>
+#import <DVTKit/DVTSourceLanguageServiceDelegate-Protocol.h>
 
-@class DVTFontAndColorTheme, DVTObservingToken, DVTSourceCodeLanguage, DVTSourceLandmarkItem, DVTSourceLanguageService<DVTSourceLanguageSourceModelService>, DVTSourceLanguageService<DVTSourceLanguageSyntaxTypeService>, DVTSourceModel, NSDictionary, NSMutableAttributedString, NSString, NSTimer, _LazyInvalidationHelper;
+@class DVTFontAndColorTheme, DVTObservingToken, DVTSourceCodeLanguage, DVTSourceLandmarkItem, DVTSourceLanguageService, DVTSourceModel, NSDictionary, NSMutableAttributedString, NSString, NSTimer, _LazyInvalidationHelper;
+@protocol DVTSourceLanguageSourceModelService, DVTSourceLanguageSyntaxTypeService, DVTTextStorageDelegate;
 
 @interface DVTTextStorage : NSTextStorage <DVTSourceBufferProvider, DVTSourceLanguageServiceDelegate>
 {
@@ -162,6 +163,7 @@
 - (void)addAttribute:(id)arg1 value:(id)arg2 range:(struct _NSRange)arg3;
 - (void)setAttributes:(id)arg1 range:(struct _NSRange)arg2;
 - (void)replaceCharactersInRange:(struct _NSRange)arg1 withString:(id)arg2;
+- (void)replaceCharactersInRange:(struct _NSRange)arg1 withString:(id)arg2 evenIfNotEditable:(BOOL)arg3;
 - (BOOL)isDoingBatchEdit;
 - (void)doingBatchEdit:(BOOL)arg1;
 - (void)doingBatchEdit:(BOOL)arg1 notifyModel:(BOOL)arg2;

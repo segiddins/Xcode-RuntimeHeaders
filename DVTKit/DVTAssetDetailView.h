@@ -6,11 +6,12 @@
 
 #import <DVTKit/DVTLayoutView_ML.h>
 
-#import "DVTInvalidation.h"
-#import "DVTReplacementViewDelegate.h"
-#import "DVTTabChooserViewDelegate.h"
+#import <DVTKit/DVTInvalidation-Protocol.h>
+#import <DVTKit/DVTReplacementViewDelegate-Protocol.h>
+#import <DVTKit/DVTTabChooserViewDelegate-Protocol.h>
 
 @class DVTNotificationToken, DVTReplacementView, DVTStackBacktrace, DVTTabChooserView, NSAttributedString, NSEvent, NSImage, NSString, NSView;
+@protocol DVTAssetDetailViewDelegate;
 
 @interface DVTAssetDetailView : DVTLayoutView_ML <DVTTabChooserViewDelegate, DVTReplacementViewDelegate, DVTInvalidation>
 {

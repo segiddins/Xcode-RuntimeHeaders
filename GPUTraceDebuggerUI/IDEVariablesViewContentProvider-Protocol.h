@@ -4,10 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "DVTInvalidation.h"
-#import "NSObject.h"
+#import <GPUTraceDebuggerUI/DVTInvalidation-Protocol.h>
+#import <GPUTraceDebuggerUI/NSObject-Protocol.h>
 
 @class IDEVariablesView, IDEVariablesViewNode, NSDictionary, NSImage, NSString;
+@protocol IDEDataValue, IDEScopeableView, IDEVariablesViewContextMenuDelegate;
 
 @protocol IDEVariablesViewContentProvider <NSObject, DVTInvalidation>
 @property(readonly) BOOL supportsShowingRawValues;
@@ -22,7 +23,6 @@
 @optional
 @property(readonly) BOOL loadingNewVariablesInBackground;
 - (int)formatterSizeStyle;
-- (BOOL)showCellExpansion;
 - (int)compoundNodeFormatterModeForItem:(IDEVariablesViewNode *)arg1 atRow:(long long)arg2;
 - (NSDictionary *)statusCellsDictionary;
 - (NSImage *)imageToUseInDefaultQuickLookForNode:(IDEVariablesViewNode *)arg1;

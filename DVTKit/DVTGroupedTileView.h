@@ -7,6 +7,7 @@
 #import <DVTKit/DVTTileView.h>
 
 @class DVTGroupedAssetHighlightView, DVTMutableOrderedDictionary, NSArray;
+@protocol DVTGroupedTileViewDelegate;
 
 @interface DVTGroupedTileView : DVTTileView
 {

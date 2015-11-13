@@ -4,11 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "NSKeyedUnarchiverDelegate.h"
+#import <DVTFoundation/NSKeyedUnarchiverDelegate-Protocol.h>
 
-@class DVTMapTable, DVTStateToken, NSMutableDictionary, NSString;
+@class DVTStateToken, NSMapTable, NSMutableDictionary, NSString;
+@protocol DVTStateRepositoryDelegate;
 
 @interface DVTStateRepository : NSObject <NSKeyedUnarchiverDelegate>
 {
@@ -16,7 +17,7 @@
     DVTStateRepository *_parentRepository;
     DVTStateToken *_parentToken;
     NSMutableDictionary *_currentState;
-    DVTMapTable *_tokenByIdentifierMapping;
+    NSMapTable *_tokenByIdentifierMapping;
     id <DVTStateRepositoryDelegate> _delegate;
 }
 

@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "DVTTextCompletionItem.h"
+#import <IDEKit/DVTTextCompletionItem-Protocol.h>
 
 @class NSArray, NSAttributedString, NSImage, NSString;
 
@@ -19,9 +19,11 @@
     double _priority;
     NSString *_name;
     NSImage *_icon;
+    double _fuzzyMatchingScore;
 }
 
 + (id)infoViewControllerFont;
+@property double fuzzyMatchingScore; // @synthesize fuzzyMatchingScore=_fuzzyMatchingScore;
 @property(readonly) NSImage *icon; // @synthesize icon=_icon;
 @property(readonly, copy) NSAttributedString *descriptionText; // @synthesize descriptionText=_descriptionText;
 @property(readonly, copy) NSString *completionText; // @synthesize completionText=_completionText;

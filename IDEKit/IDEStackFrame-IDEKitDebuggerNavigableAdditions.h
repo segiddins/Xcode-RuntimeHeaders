@@ -4,15 +4,16 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDEStackFrame.h"
+#import <IDEFoundation/IDEStackFrame.h>
 
-#import "IDEKeyDrivenNavigableItemRepresentedObject.h"
+#import <IDEKit/IDEKeyDrivenNavigableItemRepresentedObject-Protocol.h>
 
 @class DVTDocumentLocation, DVTFileDataType, IDEFileReference, NSImage, NSString;
 
 @interface IDEStackFrame (IDEKitDebuggerNavigableAdditions) <IDEKeyDrivenNavigableItemRepresentedObject>
 + (id)navigableItemImageForStackFrame:(id)arg1 hasCausedCrash:(BOOL)arg2;
-+ (id)_genericFrameImageHasCausedCrash:(BOOL)arg1;
++ (BOOL)_stackFrameModuleConsideredInBuiltProductDirectories:(id)arg1;
++ (id)_genericFrameImageIsRecorded:(BOOL)arg1 hasCausedCrash:(BOOL)arg2;
 + (id)_createImageFromFilePath:(id)arg1 withRed:(float)arg2 green:(float)arg3 blue:(float)arg4 alpha:(float)arg5 isRecorded:(BOOL)arg6 hasCausedCrash:(BOOL)arg7;
 + (id)keyPathsForValuesAffectingNavigableItem_name;
 @property(readonly) NSImage *navigableItem_image;

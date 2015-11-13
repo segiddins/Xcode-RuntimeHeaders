@@ -6,7 +6,7 @@
 
 #import <DevToolsInterface/PBXBuildPhaseModule.h>
 
-#import "NSTextViewDelegate.h"
+#import <DevToolsInterface/NSTextViewDelegate-Protocol.h>
 
 @class NSButton, NSMatrix, NSString, NSTextField, NSTextView, NSUndoManager, PBXCompletionManager;
 

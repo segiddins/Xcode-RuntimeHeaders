@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
 @class DVTSDK, NSString, NSURL;
 
@@ -13,7 +13,6 @@
     BOOL _targetDeviceIsConcrete;
     BOOL _targetDeviceIsWireless;
     BOOL _isEligible;
-    BOOL _isResizable;
     NSURL *_targetDeviceLocation;
     NSString *_targetDeviceModelCode;
     NSString *_targetDeviceFamily;
@@ -21,7 +20,6 @@
     NSString *_targetArchitecture;
 }
 
-@property(readonly, nonatomic) BOOL isResizable; // @synthesize isResizable=_isResizable;
 @property(readonly, nonatomic) BOOL isEligible; // @synthesize isEligible=_isEligible;
 @property(readonly, nonatomic) NSString *targetArchitecture; // @synthesize targetArchitecture=_targetArchitecture;
 @property(readonly, nonatomic) DVTSDK *targetSDK; // @synthesize targetSDK=_targetSDK;
@@ -37,7 +35,7 @@
 - (id)plistRepresentation;
 - (id)initWithPlistRepresentation:(id)arg1;
 - (id)initWithRunDestination:(id)arg1;
-- (id)initWithTargetDeviceLocation:(id)arg1 targetDeviceFamily:(id)arg2 targetDeviceModelCode:(id)arg3 targetDeviceIsConcrete:(BOOL)arg4 targetDeviceIsWireless:(BOOL)arg5 targetSDK:(id)arg6 targetArchitecture:(id)arg7 isEligible:(BOOL)arg8 isResizable:(BOOL)arg9;
+- (id)initWithTargetDeviceLocation:(id)arg1 targetDeviceFamily:(id)arg2 targetDeviceModelCode:(id)arg3 targetDeviceIsConcrete:(BOOL)arg4 targetDeviceIsWireless:(BOOL)arg5 targetSDK:(id)arg6 targetArchitecture:(id)arg7 isEligible:(BOOL)arg8;
 
 @end
 

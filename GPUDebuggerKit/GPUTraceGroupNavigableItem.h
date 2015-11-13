@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDEKeyDrivenNavigableItem.h"
+#import <IDEKit/IDEKeyDrivenNavigableItem.h>
 
 @class NSMutableArray;
 
@@ -26,7 +26,6 @@
 - (id)childRepresentedObjects;
 - (void)_filterGroup:(id)arg1;
 - (BOOL)_isNotHiddenStateItem:(id)arg1;
-- (id)subtitle;
 - (void)primitiveInvalidate;
 - (void)_clearCachedItems;
 - (id)initWithRepresentedObject:(id)arg1;

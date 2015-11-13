@@ -6,7 +6,8 @@
 
 #import <IDEInterfaceBuilderKit/IBAutolayoutIssueOutlineItem.h>
 
-@class NSObject<IBAutolayoutItem>;
+@class NSObject;
+@protocol IBAutolayoutItem;
 
 @interface IBAutolayoutViewOutlineItem : IBAutolayoutIssueOutlineItem
 {

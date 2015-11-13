@@ -4,10 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSTextStorage.h"
+#import <AppKit/NSTextStorage.h>
 
-#import "PBXSourceLexerDelegate.h"
-#import "XCTextStorageAdditions.h"
+#import <DevToolsInterface/PBXSourceLexerDelegate-Protocol.h>
+#import <DevToolsInterface/XCTextStorageAdditions-Protocol.h>
 
 @class NSMutableArray, NSMutableAttributedString, NSString, NSTimer, PBXMethodsList, PBXSourceLexer, PBXTextFileDocument, XCAttributeRun;
 

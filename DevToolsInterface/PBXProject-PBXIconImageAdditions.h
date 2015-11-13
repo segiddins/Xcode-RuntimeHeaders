@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "PBXProject.h"
+#import <DevToolsCore/PBXProject.h>
 
 @interface PBXProject (PBXIconImageAdditions)
 - (id)iconImage;

@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "NSSecureCoding.h"
+#import <DVTKit/NSSecureCoding-Protocol.h>
 
 @class NSString;
 
@@ -19,6 +19,7 @@
 + (BOOL)supportsSecureCoding;
 @property(readonly, copy) NSString *string; // @synthesize string=_string;
 - (void).cxx_destruct;
+- (id)debugDescription;
 - (void)dealloc;
 - (struct _NSRange)characterRangeFromDocumentLocation:(id)arg1;
 - (id)convertLocationToUTF8EncodedLocation:(id)arg1;

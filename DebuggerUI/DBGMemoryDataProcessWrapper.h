@@ -4,10 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "IDEDebugNavigableModel.h"
-#import "IDEKeyDrivenNavigableItemRepresentedObject.h"
+#import <DebuggerUI/IDEDebugNavigableModel-Protocol.h>
+#import <DebuggerUI/IDEKeyDrivenNavigableItemRepresentedObject-Protocol.h>
 
 @class DBGProcess, DVTDocumentLocation, DVTFileDataType, IDEFileReference, IDELaunchSession, NSArray, NSImage, NSString;
 
@@ -22,8 +22,6 @@
 - (void).cxx_destruct;
 - (unsigned long long)navigableItem_indexOfRepresentedObjectForIdentifier:(id)arg1 inRelationshipKeyPath:(id)arg2;
 - (id)navigableItem_identifierForRepresentedObjectAtIndex:(unsigned long long)arg1 inRelationshipKeyPath:(id)arg2;
-- (double)heightOfRow;
-- (BOOL)isGroupHeader:(id)arg1;
 @property(readonly) NSImage *navigableItem_image;
 @property(readonly) NSString *navigableItem_name;
 - (void)useProcessIconAndName;

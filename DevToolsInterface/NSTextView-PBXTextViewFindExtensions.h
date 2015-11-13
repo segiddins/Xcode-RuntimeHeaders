@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSTextView.h"
+#import <AppKit/NSTextView.h>
 
-#import "PBXFindableText.h"
+#import <DevToolsInterface/PBXFindableText-Protocol.h>
 
 @interface NSTextView (PBXTextViewFindExtensions) <PBXFindableText>
 - (unsigned long long)replaceAllStringsMatchingRegularExpression:(id)arg1 withString:(id)arg2 inSelection:(BOOL)arg3 ignoreCase:(BOOL)arg4;

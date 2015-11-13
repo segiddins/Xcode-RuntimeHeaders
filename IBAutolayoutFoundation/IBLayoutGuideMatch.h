@@ -4,22 +4,23 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-@class IBLayoutConstant, NSObject<IBAutolayoutItem>;
+@class IBLayoutConstant;
+@protocol IBAutolayoutItem;
 
 @interface IBLayoutGuideMatch : NSObject
 {
-    unsigned long long _relativeAttribute;
-    NSObject<IBAutolayoutItem> *_relativeTo;
     unsigned long long _attribute;
+    NSObject<IBAutolayoutItem> *_relativeTo;
+    unsigned long long _relativeAttribute;
     IBLayoutConstant *_constant;
 }
 
 @property(readonly) IBLayoutConstant *constant; // @synthesize constant=_constant;
-@property(readonly) unsigned long long attribute; // @synthesize attribute=_attribute;
-@property(readonly) NSObject<IBAutolayoutItem> *relativeTo; // @synthesize relativeTo=_relativeTo;
 @property(readonly) unsigned long long relativeAttribute; // @synthesize relativeAttribute=_relativeAttribute;
+@property(readonly) NSObject<IBAutolayoutItem> *relativeTo; // @synthesize relativeTo=_relativeTo;
+@property(readonly) unsigned long long attribute; // @synthesize attribute=_attribute;
 - (void).cxx_destruct;
 - (id)layoutGuideMatchByConvertingToCoordinateSpaceOfView:(id)arg1 fromCoordinateSpaceOfView:(id)arg2;
 - (BOOL)exactlyMatchesView:(id)arg1 withConstantInCoordinateSpaceOfView:(id)arg2 userInterfaceLayoutDirection:(long long)arg3;

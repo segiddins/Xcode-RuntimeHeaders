@@ -6,10 +6,11 @@
 
 #import <GPURenderTargetEditor/GPUResourceEditor.h>
 
-#import "GPURenderBufferViewStateCoordinationProtocol.h"
-#import "GPUTraceBubbleOwner.h"
+#import <GPURenderTargetEditor/GPURenderBufferViewStateCoordinationProtocol-Protocol.h>
+#import <GPURenderTargetEditor/GPUTraceBubbleOwner-Protocol.h>
 
-@class DVTBorderedView, DYRenderingAttributes, GPUPathControl, GPURenderBufferBezeledLabel, GPURenderBufferButton, GPURenderBufferView, GPUTraceResourceInfoBubble, GPUTraceResourceSettingsBubble, NSButton, NSImage, NSLayoutConstraint, NSObject<OS_dispatch_queue>, NSPopUpButton, NSSegmentedControl, NSString, NSTextField;
+@class DVTBorderedView, DYRenderingAttributes, GPUPathControl, GPURenderBufferBezeledLabel, GPURenderBufferButton, GPURenderBufferView, GPUTraceResourceInfoBubble, GPUTraceResourceSettingsBubble, NSButton, NSImage, NSLayoutConstraint, NSObject, NSPopUpButton, NSSegmentedControl, NSString, NSTextField;
+@protocol OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
 @interface GPUImageEditor : GPUResourceEditor <GPUTraceBubbleOwner, GPURenderBufferViewStateCoordinationProtocol>
@@ -50,7 +51,6 @@ __attribute__((visibility("hidden")))
 
 + (id)assetBundle;
 @property __weak NSTextField *imageLabel; // @synthesize imageLabel=_imageLabel;
-- (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)dumpImage:(id)arg1 asRaw:(BOOL)arg2;
 - (void)settingsUpdate;

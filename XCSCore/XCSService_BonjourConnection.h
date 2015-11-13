@@ -6,9 +6,10 @@
 
 #import <XCSCore/XCSService.h>
 
-#import "NSNetServiceDelegate.h"
+#import <XCSCore/NSNetServiceDelegate-Protocol.h>
 
-@class NSError, NSMutableArray, NSNetService, NSObject<OS_dispatch_queue>, NSString;
+@class NSError, NSMutableArray, NSNetService, NSObject, NSString;
+@protocol OS_dispatch_queue;
 
 @interface XCSService_BonjourConnection : XCSService <NSNetServiceDelegate>
 {

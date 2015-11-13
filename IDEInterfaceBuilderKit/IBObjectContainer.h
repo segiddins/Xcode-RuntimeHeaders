@@ -4,12 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "IBGroupDelegate.h"
-#import "NSCoding.h"
+#import <IDEInterfaceBuilderKit/IBGroupDelegate-Protocol.h>
+#import <IDEInterfaceBuilderKit/NSCoding-Protocol.h>
 
 @class IBMutableIdentityDictionary, IBObjectRecord, NSArray, NSMutableDictionary, NSMutableOrderedSet, NSString;
+@protocol IBObjectContainerDelegate;
 
 @interface IBObjectContainer : NSObject <IBGroupDelegate, NSCoding>
 {
@@ -83,6 +84,7 @@
 - (id)attributePlaceholderForObject:(id)arg1 withName:(id)arg2;
 - (void)removeAttributePlaceholder:(id)arg1;
 - (void)addAttributePlaceholder:(id)arg1;
+- (void)replaceConnection:(id)arg1 withConnectionOfSameOrigin:(id)arg2 context:(id)arg3;
 - (void)replaceConnection:(id)arg1 withConnectionOfSameOrigin:(id)arg2;
 - (void)removeConnection:(id)arg1;
 - (void)removeConnections:(id)arg1;
@@ -91,6 +93,7 @@
 - (void)removeConnectionFromTables:(id)arg1;
 - (id)connectionForConnectionID:(id)arg1;
 - (id)connectionIDForConnection:(id)arg1;
+- (void)replaceConnection:(id)arg1 withConnection:(id)arg2 context:(id)arg3;
 - (void)replaceConnection:(id)arg1 withConnection:(id)arg2;
 - (id)connectionsBeforeConnection:(id)arg1;
 - (long long)indexOfConnection:(id)arg1;
@@ -118,6 +121,7 @@
 - (id)objectForObjectID:(id)arg1;
 - (id)objectIDForObject:(id)arg1;
 - (BOOL)areObjectsSiblings:(id)arg1;
+- (id)childrenOfParentOfObject:(id)arg1;
 - (id)childrenOfObject:(id)arg1;
 - (long long)numberOfChildrenOfObject:(id)arg1;
 - (id)parentOfObject:(id)arg1;

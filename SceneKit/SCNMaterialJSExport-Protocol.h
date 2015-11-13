@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "JSExport.h"
+#import <SceneKit/JSExport-Protocol.h>
 
 @class CAAnimation, NSArray, NSString, SCNMaterial, SCNMaterialProperty, SCNProgram;
 
@@ -26,6 +26,8 @@
 @property(copy, nonatomic) NSString *lightingModelName;
 @property(nonatomic) double transparency;
 @property(nonatomic) double shininess;
+@property(readonly, nonatomic) SCNMaterialProperty *selfIllumination;
+@property(readonly, nonatomic) SCNMaterialProperty *ambientOcclusion;
 @property(readonly, nonatomic) SCNMaterialProperty *normal;
 @property(readonly, nonatomic) SCNMaterialProperty *multiply;
 @property(readonly, nonatomic) SCNMaterialProperty *reflective;
@@ -35,6 +37,10 @@
 @property(readonly, nonatomic) SCNMaterialProperty *ambient;
 @property(readonly, nonatomic) SCNMaterialProperty *diffuse;
 @property(copy, nonatomic) NSString *name;
+- (id)valueForKeyPath:(NSString *)arg1;
+- (id)valueForKey:(NSString *)arg1;
+- (void)setValue:(id)arg1 forKey:(NSString *)arg2;
+- (void)setValue:(id)arg1 forKeyPath:(NSString *)arg2;
 - (id)copy;
 - (void)resumeAnimationForKey:(NSString *)arg1;
 - (void)pauseAnimationForKey:(NSString *)arg1;

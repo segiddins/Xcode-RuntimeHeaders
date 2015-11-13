@@ -4,14 +4,15 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "IDEDebuggingAdditionUIController.h"
+#import <IDEKit/IDEDebuggingAdditionUIController-Protocol.h>
 
-@class DVTExtension, DVTStackBacktrace, IDEDebugGaugeTrayCell, IDEEnergyAddition, IDEWorkspaceTabController, NSString;
+@class DVTExtension, DVTStackBacktrace, IDEDebugGaugeTrayCell, IDEEnergyAddition, IDEGaugeDocumentLocation, IDEWorkspaceTabController, NSString;
 
 @interface IDEEnergyAdditionUIController : NSObject <IDEDebuggingAdditionUIController>
 {
+    IDEGaugeDocumentLocation *_gaugeDocumentLocation;
     DVTExtension *_extension;
     IDEWorkspaceTabController *_workspaceTabController;
     IDEDebugGaugeTrayCell *_trayCell;
@@ -28,10 +29,7 @@
 - (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (void)_handleMetricsUpdate:(id)arg1;
-- (void)openSelectedNavigableItem:(id)arg1 withEventType:(unsigned long long)arg2;
-- (id)launchSessionForSelectedRepresentedObject:(id)arg1;
 - (id)trayCellForNavigationProcessHeader;
-- (BOOL)wantsTrayAreaForNavigationProcessHeader;
 - (id)initWithWorkspaceTabController:(id)arg1 withDebuggingAddition:(id)arg2 forExtension:(id)arg3;
 
 // Remaining properties

@@ -4,13 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "DVTDeveloperAccount.h"
+#import <DVTFoundation/DVTDeveloperAccount.h>
 
-#import "IDEAccountPrefsPaneAccount.h"
+#import <IDEKit/IDEAccountPrefsPaneAccount-Protocol.h>
 
 @class NSImage, NSString;
 
 @interface DVTDeveloperAccount (IDEAccountPrefsAdditions) <IDEAccountPrefsPaneAccount>
++ (id)keyPathsForValuesAffectingAccountReachability;
 + (id)keyPathsForValuesAffectingAccountTitle;
 @property(readonly, nonatomic) long long accountReachability;
 @property(readonly, nonatomic) BOOL accountEnabled;

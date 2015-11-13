@@ -4,9 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "JSExport.h"
+#import <SceneKit/JSExport-Protocol.h>
 
 @class CAAnimation, NSArray, NSDictionary, NSString, SCNAction, SCNCamera, SCNGeometry, SCNLight, SCNMorpher, SCNNode, SCNParticleSystem, SCNPhysicsBody, SCNPhysicsField, SCNSkinner;
+@protocol SCNNodeRendererDelegate;
 
 @protocol SCNNodeJSExport <JSExport>
 + (SCNNode *)nodeWithGeometry:(SCNGeometry *)arg1;
@@ -15,6 +16,7 @@
 @property(nonatomic) unsigned long long categoryBitMask;
 @property(nonatomic) id <SCNNodeRendererDelegate> rendererDelegate;
 @property(nonatomic, getter=isPaused) BOOL paused;
+@property(readonly, nonatomic) SCNNode *presentationNode;
 @property(copy, nonatomic) NSArray *filters;
 @property(copy) NSArray *constraints;
 @property(retain, nonatomic) SCNPhysicsField *physicsField;
@@ -48,6 +50,10 @@
 - (void)runAction:(SCNAction *)arg1 completionHandler:(void (^)(void))arg2;
 - (void)runAction:(SCNAction *)arg1;
 - (SCNNode *)childNodeWithName:(NSString *)arg1;
+- (id)valueForKeyPath:(NSString *)arg1;
+- (id)valueForKey:(NSString *)arg1;
+- (void)setValue:(id)arg1 forKey:(NSString *)arg2;
+- (void)setValue:(id)arg1 forKeyPath:(NSString *)arg2;
 - (id)getBoundingSphere;
 - (id)getBoundingBox;
 - (id)copy;
@@ -62,7 +68,6 @@
 - (void)removeAllParticleSystems;
 - (void)addParticleSystem:(SCNParticleSystem *)arg1;
 - (NSArray *)hitTestWithSegmentFromPoint:(struct SCNVector3)arg1 toPoint:(struct SCNVector3)arg2 options:(NSDictionary *)arg3;
-- (SCNNode *)presentationNode;
 - (struct CATransform3D)convertTransform:(struct CATransform3D)arg1 fromNode:(SCNNode *)arg2;
 - (struct CATransform3D)convertTransform:(struct CATransform3D)arg1 toNode:(SCNNode *)arg2;
 - (struct SCNVector3)convertPosition:(struct SCNVector3)arg1 fromNode:(SCNNode *)arg2;

@@ -4,18 +4,18 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "NSURLConnectionDelegate.h"
+#import <DVTFoundation/NSURLConnectionDelegate-Protocol.h>
 
-@class NSMutableData, NSString, NSURLResponse;
+@class DVTPromise, NSMutableData, NSString, NSURLResponse;
 
 @interface DataGatheringNSURLConnectionDelegate : NSObject <NSURLConnectionDelegate>
 {
     NSURLResponse *_lastResponse;
     NSMutableData *_gatheringData;
     unsigned long long _maxLength;
-    id <DVTPromise> _promise;
+    DVTPromise *_promise;
 }
 
 - (void).cxx_destruct;

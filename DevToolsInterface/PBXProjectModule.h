@@ -6,7 +6,7 @@
 
 #import <DevToolsInterface/PBXModule.h>
 
-#import "PBXFindableText.h"
+#import <DevToolsInterface/PBXFindableText-Protocol.h>
 
 @class NSString, PBXAttributedStatusView, PBXProjectDocument;
 

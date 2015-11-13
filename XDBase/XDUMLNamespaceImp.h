@@ -6,7 +6,7 @@
 
 #import <XDBase/XDUMLNamedElementImp.h>
 
-#import "XDUMLNamespace.h"
+#import <XDBase/XDUMLNamespace-Protocol.h>
 
 @class NSString;
 

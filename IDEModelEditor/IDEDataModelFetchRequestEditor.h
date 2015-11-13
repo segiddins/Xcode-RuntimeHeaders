@@ -6,8 +6,8 @@
 
 #import <IDEModelEditor/IDEDMEditorController.h>
 
-#import "IDECapsuleListViewDataSource.h"
-#import "IDEDataModelEditorController.h"
+#import <IDEModelEditor/IDECapsuleListViewDataSource-Protocol.h>
+#import <IDEModelEditor/IDEDataModelEditorController-Protocol.h>
 
 @class IDECapsuleListView, IDEDataModelEditor, NSArrayController, NSMutableArray, NSString;
 

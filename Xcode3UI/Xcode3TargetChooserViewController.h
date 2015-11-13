@@ -4,11 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDEViewController.h"
+#import <IDEKit/IDEViewController.h>
 
-#import "NSPathControlDelegate.h"
+#import <Xcode3UI/NSPathControlDelegate-Protocol.h>
 
 @class IDENavigableItem, IDENavigableItemCoordinator, IDEPathControl, IDEWorkspace, NSArray, NSString;
+@protocol IDEBlueprint;
 
 @interface Xcode3TargetChooserViewController : IDEViewController <NSPathControlDelegate>
 {

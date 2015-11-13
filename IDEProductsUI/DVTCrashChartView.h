@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSView.h"
+#import <AppKit/NSView.h>
 
 @class DVTCrashChartBarChartView, DVTCrashChartCircleCountView, DVTCrashChartDistributionTable, DVTCrashChartOccurrenceCircleView, DVTCrashChartScaffoldView, DVTCrashChartSwitcherView, DVTCrashChartTimestampView, DVTCrashPoint, NSArray, NSString;
 
@@ -35,6 +35,7 @@
 + (id)yellowColor;
 + (id)_barDateInputFormatter;
 + (id)_barDateFormatter;
++ (id)keyPathsForValuesAffectingShouldShowDeviceData;
 + (void)initialize;
 @property(nonatomic) unsigned long long totalOSCrashCount; // @synthesize totalOSCrashCount=_totalOSCrashCount;
 @property(nonatomic) unsigned long long totalDeviceCrashCount; // @synthesize totalDeviceCrashCount=_totalDeviceCrashCount;
@@ -54,6 +55,7 @@
 - (id)timeSeriesColors;
 - (void)drawRect:(struct CGRect)arg1;
 - (BOOL)isFlipped;
+@property(nonatomic) BOOL shouldShowDeviceData;
 - (void)_commonInit;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

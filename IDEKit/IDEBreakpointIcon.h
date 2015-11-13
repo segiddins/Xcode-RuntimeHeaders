@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
 @class NSImage;
 
@@ -28,7 +28,7 @@
 - (id)_deactivatedEnabledImage;
 - (id)_disabledImage;
 - (id)_enabledImage;
-- (id)_cachedImageForBreakpointsActivated:(BOOL)arg1 breakpointEnabled:(BOOL)arg2 pressed:(BOOL)arg3;
+- (id)cachedImageForBreakpointsActivated:(BOOL)arg1 breakpointEnabled:(BOOL)arg2 pressed:(BOOL)arg3;
 - (void)drawBreakpointAtPoint:(struct CGPoint)arg1 inView:(id)arg2 breakpointsActivated:(BOOL)arg3 breakpointEnabled:(BOOL)arg4 pressed:(BOOL)arg5;
 - (struct CGSize)visualPlacementSize;
 - (id)initWithSize:(struct CGSize)arg1 includeBottomHighlight:(BOOL)arg2 useDarkerBorderColor:(BOOL)arg3;

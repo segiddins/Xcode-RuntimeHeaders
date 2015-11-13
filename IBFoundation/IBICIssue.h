@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "IBBinaryArchiving.h"
+#import <IBFoundation/IBBinaryArchiving-Protocol.h>
 
 @class NSArray, NSSet, NSString;
 
@@ -19,6 +19,7 @@
     long long _classification;
 }
 
++ (id)conflictIssueForItem:(id)arg1 onName:(id)arg2;
 + (id)descriptionForSeverity:(long long)arg1;
 + (id)descriptionForClassification:(long long)arg1;
 + (id)noticeWithCatalogItem:(id)arg1 classification:(long long)arg2 message:(id)arg3;

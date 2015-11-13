@@ -6,7 +6,7 @@
 
 #import <DevToolsCore/PBXObject.h>
 
-#import "NSCopying.h"
+#import <DevToolsCore/NSCopying-Protocol.h>
 
 @class NSCalendarDate, NSString;
 

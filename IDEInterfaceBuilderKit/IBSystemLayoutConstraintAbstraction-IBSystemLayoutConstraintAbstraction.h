@@ -4,10 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IBSystemLayoutConstraintAbstraction.h"
+#import <IBAutolayoutFoundation/IBSystemLayoutConstraintAbstraction.h>
 
 @interface IBSystemLayoutConstraintAbstraction (IBSystemLayoutConstraintAbstraction)
-+ (id)ibDefaultImageForInstance:(id)arg1;
++ (id)ibDefaultImageForInstance:(id)arg1 targetRuntime:(id)arg2;
 - (id)ibDefaultLabel;
 @end
 

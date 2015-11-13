@@ -4,10 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDEViewController.h"
+#import <IDEKit/IDEViewController.h>
 
-#import "DVTFindBarFindable.h"
-#import "DVTTextFindable.h"
+#import <HexEditor/DVTFindBarFindable-Protocol.h>
+#import <HexEditor/DVTTextFindable-Protocol.h>
 
 @class DVTObservingToken, HFController, HFHexTextRepresenter, HFLayoutRepresenter, HFLineCountingRepresenter, HFStringEncodingTextRepresenter, HFTextView, NSString;
 

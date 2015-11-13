@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSOpenGLLayer.h"
+#import <AppKit/NSOpenGLLayer.h>
 
 @class SCNView;
 
@@ -19,6 +19,7 @@ __attribute__((visibility("hidden")))
 - (void)drawInContext:(struct CGContext *)arg1;
 - (void)drawInOpenGLContext:(id)arg1 pixelFormat:(id)arg2 forLayerTime:(double)arg3 displayTime:(const CDStruct_e50ab651 *)arg4;
 - (BOOL)canDrawInOpenGLContext:(id)arg1 pixelFormat:(id)arg2 forLayerTime:(double)arg3 displayTime:(const CDStruct_e50ab651 *)arg4;
+- (BOOL)_isRenderingForJittering;
 - (void)_cancelJitterRedisplay;
 - (void)_jitterRedisplayWithContext:(struct _CGLContextObject *)arg1;
 - (id)openGLContextForPixelFormat:(id)arg1;

@@ -6,7 +6,7 @@
 
 #import <DevToolsInterface/PBXSourceFileDocument.h>
 
-#import "XCTextSidebarViewBreakpointRangeDelegates.h"
+#import <DevToolsInterface/XCTextSidebarViewBreakpointRangeDelegates-Protocol.h>
 
 @class NSString, NSURL, PBXProject, PBXTarget, XCFileLineRangeHolder;
 

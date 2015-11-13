@@ -4,16 +4,16 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "DVTAccessoryViewAnnotation.h"
+#import <DVTKit/DVTAccessoryViewAnnotation.h>
 
-@class IDESourceCodeBlameItem;
+@class DVTSourceControlBlameItem;
 
 @interface IDESourceCodeBlameAccessoryViewAnnotation : DVTAccessoryViewAnnotation
 {
-    IDESourceCodeBlameItem *_blameItem;
+    DVTSourceControlBlameItem *_blameItem;
 }
 
-@property(retain) IDESourceCodeBlameItem *blameItem; // @synthesize blameItem=_blameItem;
+@property(retain) DVTSourceControlBlameItem *blameItem; // @synthesize blameItem=_blameItem;
 - (void).cxx_destruct;
 
 @end

@@ -5,6 +5,7 @@
 //
 
 @class NSString;
+@protocol PBXExternalEditorClientProtocol;
 
 @protocol PBXExternalEditorServerProtocol
 - (void)externalEditor:(byref id <PBXExternalEditorClientProtocol>)arg1 setEdited:(BOOL)arg2 forFile:(bycopy NSString *)arg3;

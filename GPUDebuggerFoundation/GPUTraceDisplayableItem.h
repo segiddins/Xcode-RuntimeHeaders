@@ -6,6 +6,8 @@
 
 #import <GPUDebuggerFoundation/GPUTraceAPIItem.h>
 
+@protocol GPUTraceDisplaySet;
+
 @interface GPUTraceDisplayableItem : GPUTraceAPIItem
 {
     id <GPUTraceDisplaySet> _displaySet;

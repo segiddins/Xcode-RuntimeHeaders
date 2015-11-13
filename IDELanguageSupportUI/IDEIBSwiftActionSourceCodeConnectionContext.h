@@ -4,14 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IBObjCCocoaActionSourceCodeConnectionContext.h"
+#import <IDEInterfaceBuilderKit/IBObjCCocoaActionSourceCodeConnectionContext.h>
 
 @interface IDEIBSwiftActionSourceCodeConnectionContext : IBObjCCocoaActionSourceCodeConnectionContext
 {
 }
 
 + (id)defaultType;
-+ (Class)sourceCodeGeneratorClass;
 - (id)sourceCodeInsertionOptions;
 - (id)representativeCounterpart;
 - (BOOL)parseSourceLandmarkItem:(id)arg1;

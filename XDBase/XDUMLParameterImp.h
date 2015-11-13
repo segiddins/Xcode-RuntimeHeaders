@@ -6,9 +6,10 @@
 
 #import <XDBase/XDUMLNamedElementImp.h>
 
-#import "XDUMLParameter.h"
+#import <XDBase/XDUMLParameter-Protocol.h>
 
 @class NSString;
+@protocol XDUMLType;
 
 @interface XDUMLParameterImp : XDUMLNamedElementImp <XDUMLParameter>
 {

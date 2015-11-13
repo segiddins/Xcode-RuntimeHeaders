@@ -4,12 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDEInspectorProperty.h"
+#import <IDEKit/IDEInspectorProperty.h>
 
-#import "IBNSViewPriorityCellDelegate.h"
-#import "IBNSViewPrioritySliderDelegate.h"
-#import "NSTableViewDataSource.h"
-#import "NSTableViewDelegate.h"
+#import <IDEInterfaceBuilderCocoaIntegration/IBNSViewPriorityCellDelegate-Protocol.h>
+#import <IDEInterfaceBuilderCocoaIntegration/IBNSViewPrioritySliderDelegate-Protocol.h>
+#import <IDEInterfaceBuilderCocoaIntegration/NSTableViewDataSource-Protocol.h>
+#import <IDEInterfaceBuilderCocoaIntegration/NSTableViewDelegate-Protocol.h>
 
 @class IBCancellationToken, IBInspectorViewController, IBNSViewLongListInspectorLayoutView, IBNSViewPriorityPopoverViewController, IDEInspectorKeyPath, NSPopover, NSString, NSTableView, NSTextField;
 

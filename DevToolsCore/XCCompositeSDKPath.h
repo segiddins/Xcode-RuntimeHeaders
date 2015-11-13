@@ -6,7 +6,7 @@
 
 #import <DevToolsCore/XCSDKPath.h>
 
-#import "XCPosixTaskBackgroundParsing.h"
+#import <DevToolsCore/XCPosixTaskBackgroundParsing-Protocol.h>
 
 @class NSMutableArray, NSMutableString, NSString, XCPosixTask;
 

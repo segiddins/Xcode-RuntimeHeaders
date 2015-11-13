@@ -5,6 +5,7 @@
 //
 
 @class IDEiOSImageSection, NSDictionary, NSString;
+@protocol IDEInfoPlistCoordination;
 
 @protocol IDEiOSImageSectionDelegate
 - (NSString *)deploymentOS;

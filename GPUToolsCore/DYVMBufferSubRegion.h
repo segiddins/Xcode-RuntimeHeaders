@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSData.h"
+#import <Foundation/NSData.h>
 
 @class DYVMBuffer;
 
@@ -15,7 +15,6 @@ __attribute__((visibility("hidden")))
     struct _NSRange _range;
 }
 
-- (id).cxx_construct;
 - (id)subdataWithRange:(struct _NSRange)arg1;
 - (const void *)bytes;
 - (unsigned long long)length;

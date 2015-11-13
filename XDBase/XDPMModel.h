@@ -7,6 +7,7 @@
 #import <XDBase/XDModel.h>
 
 @class NSMutableDictionary, NSString, NSUndoManager;
+@protocol XDPMModelDelegate;
 
 @interface XDPMModel : XDModel
 {

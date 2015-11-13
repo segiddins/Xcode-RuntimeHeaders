@@ -6,7 +6,7 @@
 
 #import <DevToolsCore/PBXProjectItem.h>
 
-#import "PBXMarkerDelegateProtocol.h"
+#import <DevToolsCore/PBXMarkerDelegateProtocol-Protocol.h>
 
 @class NSArray, NSMutableArray, NSString, PBXProject, PBXTextBookmark, XCBreakpointCondition;
 

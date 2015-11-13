@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
 @class NSDictionary;
 
@@ -21,6 +21,7 @@
 - (void).cxx_destruct;
 - (CDStruct_c519178c)shadowForWidget:(id)arg1;
 - (struct CGSize)maximumLayoutSizeForWidget:(id)arg1;
+- (id)minimumLayoutSizeValueForWidget:(id)arg1;
 - (struct CGSize)minimumLayoutSizeForWidget:(id)arg1;
 - (id)initWithConstraints:(id)arg1 andShadowInsets:(id)arg2;
 

@@ -4,13 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <DebuggerFoundation/NSObject-Protocol.h>
 
 @class NSArray, NSString;
 
 @protocol IDEDataValue <NSObject>
+@property(readonly) BOOL isMemoryFault;
 @property(readonly) BOOL childValuesCountValid;
-@property(readonly) NSArray *childValues;
+@property(readonly, copy) NSArray *childValues;
 @property(readonly) BOOL hasChildValues;
 @property(readonly) BOOL inScope;
 @property(readonly) BOOL itemDescriptionHasChanged;

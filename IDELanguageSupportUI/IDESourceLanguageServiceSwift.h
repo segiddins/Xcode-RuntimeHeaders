@@ -4,17 +4,18 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "DVTSourceLanguageService.h"
+#import <DVTKit/DVTSourceLanguageService.h>
 
-#import "DVTSourceLandmarkItemDelegate.h"
-#import "DVTSourceLanguageRelatedIdentifierScannerService.h"
-#import "DVTSourceLanguageServiceSymbolLookup.h"
-#import "DVTSourceLanguageSyntaxTypeService.h"
-#import "IDEEditorDocumentDerivedContentOwner.h"
-#import "IDEEditorDocumentDerivedContentProviding.h"
-#import "IDEQuickHelpDataContextService.h"
+#import <IDELanguageSupportUI/DVTSourceLandmarkItemDelegate-Protocol.h>
+#import <IDELanguageSupportUI/DVTSourceLanguageRelatedIdentifierScannerService-Protocol.h>
+#import <IDELanguageSupportUI/DVTSourceLanguageServiceSymbolLookup-Protocol.h>
+#import <IDELanguageSupportUI/DVTSourceLanguageSyntaxTypeService-Protocol.h>
+#import <IDELanguageSupportUI/IDEEditorDocumentDerivedContentOwner-Protocol.h>
+#import <IDELanguageSupportUI/IDEEditorDocumentDerivedContentProviding-Protocol.h>
+#import <IDELanguageSupportUI/IDEQuickHelpDataContextService-Protocol.h>
 
-@class IDEEditorDocumentDerivedContentProvider, IDEWorkspace, NSArray, NSDictionary, NSString, NSURL;
+@class DVTFilePath, IDEEditorDocumentDerivedContentProvider, IDEWorkspace, NSArray, NSDictionary, NSObject, NSString, NSURL;
+@protocol DVTCancellable, IDESourceLanguageServiceSwiftDiagnosticItems, OS_dispatch_queue;
 
 @interface IDESourceLanguageServiceSwift : DVTSourceLanguageService <DVTSourceLandmarkItemDelegate, IDEQuickHelpDataContextService, IDEEditorDocumentDerivedContentOwner, DVTSourceLanguageSyntaxTypeService, DVTSourceLanguageRelatedIdentifierScannerService, DVTSourceLanguageServiceSymbolLookup, IDEEditorDocumentDerivedContentProviding>
 {
@@ -31,7 +32,10 @@
     id _semanticsDisabledNotificationToken;
     id <DVTCancellable> _semanticsDisabledTimerToken;
     id <DVTCancellable> _serviceStatusObservingToken;
+    DVTFilePath *_associatedFilePath;
     IDEEditorDocumentDerivedContentProvider *_derivedContentProvider;
+    NSObject<OS_dispatch_queue> *_symbolLookupQueue;
+    BOOL _sourceKitCompilerArgsAreFallback;
     id <IDESourceLanguageServiceSwiftDiagnosticItems> _diagnosticItems;
     NSString *_sourceKitBufferName;
     id <DVTCancellable> _interfaceGenerationToken;
@@ -40,11 +44,12 @@
 
 + (id)targetTripleFromSDK:(id)arg1;
 + (void)enumerateSupportedContextScopesForLanguage:(id)arg1 block:(CDUnknownBlockType)arg2;
-+ (id)originalURLForGeneratedURL:(id)arg1;
-+ (id)generatedURLForOriginalURL:(id)arg1;
-+ (BOOL)canGenerateContentsForURL:(id)arg1;
++ (id)originalURLForGeneratedURL:(id)arg1 inWorkspace:(id)arg2;
++ (id)generatedURLForOriginalURL:(id)arg1 inWorkspace:(id)arg2;
++ (BOOL)canGenerateContentsForURL:(id)arg1 inWorkspace:(id)arg2;
 + (void)initialize;
 + (id)compilerArgumentsByDistillingCompilerArguments:(id)arg1;
++ (id)clangCompilerArgumentsFromDocumentParameters:(id)arg1;
 + (id)swiftCompilerArgumentsFromDocumentParameters:(id)arg1;
 + (id)documentParametersFromSwiftCompilerArguments:(id)arg1;
 @property(copy) NSArray *sourceKitCompilerArgs; // @synthesize sourceKitCompilerArgs=_sourceKitCompilerArgs;
@@ -55,7 +60,7 @@
 - (void).cxx_destruct;
 - (BOOL)shouldAutoCompleteAtLocation:(unsigned long long)arg1 autoCompleteCharacterSet:(id)arg2 proposedAutoComplete:(BOOL)arg3;
 - (id)autoCompleteChars;
-- (void)findIndexSymbolAtLocation:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
+- (void)findIndexSymbolAtExpression:(id)arg1 withIndexCompatibleLocation:(id)arg2 withCurrentFileContentDictionary:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;
 - (void)quickHelpDataContextForLocation:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (id)expandPlaceholderInRange:(struct _NSRange)arg1 suggestedText:(id)arg2 effectiveRange:(struct _NSRange *)arg3;
 - (long long)commentCoverageInLineRange:(struct _NSRange)arg1;
@@ -107,10 +112,10 @@
 - (void)_mergeSyntaxAndSemaMap:(CDStruct_3b0d17db)arg1 affectedRange:(struct _NSRange *)arg2;
 - (void)_closeDocument;
 - (void)_openDocument;
+- (BOOL)_shouldObserveFileForChanges;
 - (BOOL)hasSourceKitBuffer;
 - (void)derivedContentProvider:(id)arg1 didUnregisterClient:(id)arg2;
 - (void)derivedContentProvider:(id)arg1 willRegisterClient:(id)arg2;
-- (void)propagateInterfaceSummaryToDerivedContentProviderIfNeeded;
 - (void)_buildSubStructure:(CDStruct_3b0d17db)arg1 branch:(vector_c3e2d001 *)arg2;
 - (void)replaceCharactersInRange:(struct _NSRange)arg1 withString:(id)arg2 replacedString:(id)arg3 affectedRange:(struct _NSRange *)arg4;
 - (void)updateLineRange:(struct _NSRange)arg1 changeInLength:(long long)arg2;

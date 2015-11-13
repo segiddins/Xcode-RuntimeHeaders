@@ -4,11 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "CDMFetchedProperty.h"
+#import <IDEModelFoundation/CDMFetchedProperty.h>
 
-#import "IDEDataModelObject.h"
+#import <IDEModelEditor/IDEDataModelObject-Protocol.h>
 
 @class IDETypeIdentifier, NSArray, NSImage, NSString;
+@protocol IDEDMModelObject, IDEDMSourceObject;
 
 @interface CDMFetchedProperty (CDMNavigableIdentification) <IDEDataModelObject>
 @property(readonly) NSImage *representativeIcon;

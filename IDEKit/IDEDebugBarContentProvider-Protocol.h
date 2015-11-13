@@ -4,14 +4,16 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <IDEKit/NSObject-Protocol.h>
 
 @class IDEDebugBar, NSArray, NSView;
 
 @protocol IDEDebugBarContentProvider <NSObject>
-- (NSArray *)debugBarControlViews;
+@property(copy) NSArray *debugBarControlViews;
 
 @optional
+@property(readonly) BOOL prefersDebugBarToAlwaysBeShown;
+@property(readonly) BOOL wantsRightSideSeparatorBorder;
 - (double)xOffsetForSharedLibrariesPopUpAnchoredOnDebugBar:(IDEDebugBar *)arg1;
 - (struct CGRect)additionalGrabRectOfDebugBar:(IDEDebugBar *)arg1 inTermsOfView:(NSView *)arg2;
 - (void)willBeDetachedFromDebugBar:(IDEDebugBar *)arg1;

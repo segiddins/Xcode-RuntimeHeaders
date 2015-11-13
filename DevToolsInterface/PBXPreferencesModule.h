@@ -6,7 +6,7 @@
 
 #import <DevToolsInterface/PBXModule.h>
 
-#import "NSWindowDelegate.h"
+#import <DevToolsInterface/NSWindowDelegate-Protocol.h>
 
 @class NSBox, NSButtonCell, NSMatrix, NSMutableArray, NSMutableDictionary, NSString;
 

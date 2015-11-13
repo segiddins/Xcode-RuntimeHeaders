@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-@class NSString;
+@class NSArray, NSString;
 
 @interface IDESchemeActionAbstractTestSummaryObject : NSObject
 {
@@ -15,10 +15,13 @@
 
 @property(copy) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
+- (id)_testActivitySummariesForSummaryObject:(id)arg1;
+@property(readonly) NSArray *testActivitySummaries;
 - (id)description;
 - (BOOL)updateWithDictionaryRepresentation:(id)arg1;
 - (id)dictionaryRepresentation;
 @property(readonly) unsigned long long status;
+- (void)loadAttachmentsFromDirectory:(id)arg1;
 - (id)initWithDictionaryRepresentation:(id)arg1;
 - (id)initWithName:(id)arg1;
 

@@ -4,11 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "NSCoding.h"
+#import <HexFiend/NSCoding-Protocol.h>
 
 @class HFByteArray, HFControllerCoalescedUndo, NSData, NSFont, NSMutableArray, NSTimer, NSUndoManager;
+@protocol HFTextColoringDelegate;
 
 @interface HFController : NSObject <NSCoding>
 {
@@ -45,9 +46,11 @@
         unsigned int reserved1:25;
         unsigned int reserved2:32;
     } _hfflags;
+    id <HFTextColoringDelegate> _coloringDelegate;
 }
 
 + (BOOL)prepareForChangeInFile:(id)arg1 fromWritingByteArray:(id)arg2;
+@property(retain) id <HFTextColoringDelegate> coloringDelegate; // @synthesize coloringDelegate=_coloringDelegate;
 - (BOOL)requiresOverwriteMode;
 - (void)setInOverwriteMode:(BOOL)arg1;
 - (BOOL)inOverwriteMode;

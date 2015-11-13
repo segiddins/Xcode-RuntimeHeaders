@@ -4,12 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSViewController.h"
+#import <AppKit/NSViewController.h>
 
-#import "DVTInvalidation.h"
-#import "IDEPathCellDelegate.h"
-#import "NSMenuDelegate.h"
-#import "NSPathControlDelegate.h"
+#import <IDEKit/DVTInvalidation-Protocol.h>
+#import <IDEKit/IDEPathCellDelegate-Protocol.h>
+#import <IDEKit/NSMenuDelegate-Protocol.h>
+#import <IDEKit/NSPathControlDelegate-Protocol.h>
 
 @class DVTStackBacktrace, IDENavigableItem, IDENavigableItemCoordinator, IDEPathControl, IDEWorkspace, NSString;
 

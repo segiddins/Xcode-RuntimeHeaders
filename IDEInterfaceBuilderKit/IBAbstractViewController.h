@@ -4,10 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "IBPrimarySceneObject.h"
-#import "NSCoding.h"
+#import <IDEInterfaceBuilderKit/IBPrimarySceneObject-Protocol.h>
+#import <IDEInterfaceBuilderKit/NSCoding-Protocol.h>
 
 @class IBSimulatedMetricsContainer, NSArray, NSString, NSView;
 
@@ -22,7 +22,6 @@
 - (id)nibName;
 @property(retain, nonatomic) NSView *view;
 - (struct CGSize)effectiveSimulatedViewSize;
-- (id)effectiveStoryboardIdentifierPrefix;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)ibShortDisplayName;
@@ -53,9 +52,8 @@
 - (void)ibWillResignSourceControllerForSegue:(id)arg1;
 - (void)ibDidBecomeSourceControllerForSegue:(id)arg1;
 - (id)ibInheritableMetricsForDownstreamController:(id)arg1 viaSegue:(id)arg2;
-- (void)ibEffectiveSimulatedMetricsDidChange;
 - (id)ibImageForOwnedScene;
-- (id)ibEffectiveStoryboardIdentifier;
+@property(copy, nonatomic) NSString *ibExplicitStoryboardIdentifier;
 - (void)ibVerifySimulatedMetricsWithDocument:(id)arg1;
 - (id)ibExplanatoryTextForEditor;
 - (id)ibSubtitleForEditor;

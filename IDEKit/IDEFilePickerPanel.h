@@ -4,11 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSPanel.h"
+#import <AppKit/NSPanel.h>
 
-#import "DVTInvalidation.h"
+#import <IDEKit/DVTInvalidation-Protocol.h>
 
 @class DVTStackBacktrace, IDEFilePickerView, NSArray, NSPredicate, NSString, NSURL, NSWindow;
+@protocol IDEFilePickerViewDelegate;
 
 @interface IDEFilePickerPanel : NSPanel <DVTInvalidation>
 {
@@ -27,7 +28,7 @@
 - (void).cxx_destruct;
 - (void)hideProgressIndicator;
 - (void)showProgressIndicator;
-@property(retain) id <IDEFilePickerViewDelegate> delegate;
+@property(retain) id <IDEFilePickerViewDelegate> filePickerDelegate;
 @property(nonatomic) unsigned long long pickingStyle;
 @property(copy) NSPredicate *selectableNavigableItemFilter;
 @property(copy) NSPredicate *allowedNavigableItemFilter;
@@ -46,7 +47,6 @@
 - (void)cancel:(id)arg1;
 - (void)add:(id)arg1;
 - (void)_pickingEndedWithReturnCode:(long long)arg1;
-- (void)filePickerSheetDidEnd:(id)arg1 returnCode:(long long)arg2 contextInfo:(void *)arg3;
 - (void)beginSheetModalForWindow:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)primitiveInvalidate;
 - (id)initWithContentRect:(struct CGRect)arg1 styleMask:(unsigned long long)arg2 backing:(unsigned long long)arg3 defer:(BOOL)arg4;

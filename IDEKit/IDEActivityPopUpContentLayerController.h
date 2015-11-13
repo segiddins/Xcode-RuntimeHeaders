@@ -4,13 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "DVTLayerController.h"
+#import <DVTKit/DVTLayerController.h>
 
-#import "DVTInvalidation.h"
-#import "IDEActivityPopUpContentLayerDelegate.h"
-#import "IDEActivityViewDataConsumer.h"
+#import <IDEKit/DVTInvalidation-Protocol.h>
+#import <IDEKit/IDEActivityPopUpContentLayerDelegate-Protocol.h>
+#import <IDEKit/IDEActivityViewDataConsumer-Protocol.h>
 
 @class DVTStackBacktrace, IDEActivityViewDataSource, IDEWorkspaceDocument, NSMapTable, NSMutableArray, NSMutableSet, NSString;
+@protocol DVTCancellable, IDEActivityPopUpContentLayerControllerDelegate;
 
 @interface IDEActivityPopUpContentLayerController : DVTLayerController <IDEActivityViewDataConsumer, IDEActivityPopUpContentLayerDelegate, DVTInvalidation>
 {
@@ -44,6 +45,7 @@
 - (void)showCompletionStatusForCompletedReport:(id)arg1;
 - (void)makeSureIssuesLayerIsVisible;
 - (void)stopObservingActivityReports;
+- (unsigned long long)visiblePopupReportCount;
 - (void)updateDisplayedReports;
 - (void)addReportToPopUp:(id)arg1;
 - (void)removeReportFromPopUp:(id)arg1;

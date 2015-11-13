@@ -4,20 +4,18 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "DVTViewController.h"
+#import <DVTKit/DVTViewController.h>
 
-#import "IBInspectorReferencingConstraintViewDelegate.h"
+#import <IDEInterfaceBuilderKit/IBInspectorReferencingConstraintViewDelegate-Protocol.h>
 
-@class DVTObservingToken, IBDocument, IBDocumentMemberWrapper, IBLayoutConstraint, NSArray, NSMenuItem, NSString, NSView<IBAutolayoutItem>;
+@class IBDocument, IBDocumentMemberWrapper, IBLayoutConstraint, NSArray, NSString, NSView;
+@protocol IBAutolayoutItem, IBInspectorReferencingConstraintViewControllerDelegate;
 
 @interface IBInspectorReferencingConstraintViewController : DVTViewController <IBInspectorReferencingConstraintViewDelegate>
 {
-    DVTObservingToken *_documentUpdateToken;
     NSArray *_observationTokens;
     IBLayoutConstraint *_constraint;
     id <IBInspectorReferencingConstraintViewControllerDelegate> _delegate;
-    NSMenuItem *_deleteMenuItem;
-    NSMenuItem *_promoteMenuItem;
     NSView<IBAutolayoutItem> *_referencedView;
     IBDocumentMemberWrapper *_memberWrapper;
     IBDocument *_document;
@@ -27,8 +25,6 @@
 @property(retain, nonatomic) IBDocument *document; // @synthesize document=_document;
 @property(retain, nonatomic) IBDocumentMemberWrapper *memberWrapper; // @synthesize memberWrapper=_memberWrapper;
 @property(retain, nonatomic) NSView<IBAutolayoutItem> *referencedView; // @synthesize referencedView=_referencedView;
-@property(retain, nonatomic) NSMenuItem *promoteMenuItem; // @synthesize promoteMenuItem=_promoteMenuItem;
-@property(retain, nonatomic) NSMenuItem *deleteMenuItem; // @synthesize deleteMenuItem=_deleteMenuItem;
 @property(nonatomic) __weak id <IBInspectorReferencingConstraintViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) IBLayoutConstraint *constraint; // @synthesize constraint=_constraint;
 - (void).cxx_destruct;
@@ -39,7 +35,6 @@
 - (unsigned long long)referencedViewAttribute;
 - (id)relatedViewInConstraintRelationship;
 - (BOOL)isFirstViewInConstraintRelationship;
-- (void)updateMenuItems;
 - (void)updateLayoutType;
 - (void)updateBorder;
 - (void)updateImageView;

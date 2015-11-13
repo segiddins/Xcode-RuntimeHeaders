@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
 @interface NSObject (IBAutolayoutObjectIntegration)
 - (id)ibDocumentSubtreeDescriptionWithLayoutInfo:(id)arg1 startingIndentation:(id)arg2 withAdditionalDescriptionsBlock:(CDUnknownBlockType)arg3;
@@ -19,12 +19,6 @@
 - (void)ibDidMapCopyOfReceiver:(id)arg1 intoLayoutEngine:(id)arg2;
 - (void)ibMapCopyOfReceiver:(id)arg1 intoLayoutEngine:(id)arg2;
 - (id)ibTopLevelViewForLayoutEngine:(id)arg1;
-- (void)ibDidCreateRuntimeConstraint:(id)arg1 referencingItem:(id)arg2 context:(id)arg3;
-- (id)ibEffectiveItemForRuntimeConstraintAdjustingConstant:(double *)arg1 attribute:(unsigned long long *)arg2 orConstraintClassIfNeeded:(Class *)arg3 context:(id)arg4;
-- (unsigned long long)ibAmbiguityStatusForRepresentationOfItem:(id)arg1 inEngine:(id)arg2;
-- (struct CGRect)ibBoundsForLayoutBounds:(struct CGRect)arg1;
-- (id)ibChildItemsEligibleForNearestNeighborConstraints;
-- (id)ibParentItem;
 - (BOOL)ibIsValidConstraintItem;
 @end
 

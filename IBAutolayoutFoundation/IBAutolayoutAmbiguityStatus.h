@@ -4,11 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-@class NSObject<IBAutolayoutItem>;
+#import <IBAutolayoutFoundation/IBBinaryArchiving-Protocol.h>
 
-@interface IBAutolayoutAmbiguityStatus : NSObject
+@class NSString;
+@protocol IBAutolayoutItem;
+
+@interface IBAutolayoutAmbiguityStatus : NSObject <IBBinaryArchiving>
 {
     NSObject<IBAutolayoutItem> *_view;
     unsigned long long _ambiguityStatusMask;
@@ -39,14 +42,18 @@
 @property(readonly, nonatomic, getter=isUninitialized) BOOL uninitialized;
 @property(readonly, nonatomic, getter=isAmbiguousExcludingUninitialized) BOOL ambiguousExcludingUninitialized;
 @property(readonly, nonatomic, getter=isAmbiguous) BOOL ambiguous;
-- (id)description;
+@property(readonly, copy) NSString *description;
 - (BOOL)isEqualToAmbiguityStatus:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
-- (unsigned long long)hash;
+@property(readonly) unsigned long long hash;
 - (id)ambiguityStatusBySettingUninitialized:(BOOL)arg1;
-- (id)representationWithObjectRepresentationForObjectBlock:(CDUnknownBlockType)arg1;
-- (id)initWithRepresentation:(id)arg1 objectForObjectRepresentationBlock:(CDUnknownBlockType)arg2;
+- (void)encodeWithBinaryArchiver:(id)arg1;
+- (id)initWithBinaryUnarchiver:(id)arg1;
 - (id)initWithView:(id)arg1 ambiguityStatusMask:(unsigned long long)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) Class superclass;
 
 @end
 

@@ -4,9 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "XDUMLClassInterfaceCommons.h"
+#import <IDEModelFoundation/XDUMLClassInterfaceCommons-Protocol.h>
 
 @class NSArray;
+@protocol XDUMLImplementation;
 
 @protocol XDUMLInterface <XDUMLClassInterfaceCommons>
 - (void)implementorRemoved:(id <XDUMLImplementation>)arg1;

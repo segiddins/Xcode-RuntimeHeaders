@@ -4,14 +4,15 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "NSDraggingDestination.h"
-#import "NSDraggingSource.h"
-#import "NSGestureRecognizerDelegate.h"
-#import "UXCollectionViewLayoutProxyDelegate.h"
+#import <GPUToolsInterface/NSDraggingDestination-Protocol.h>
+#import <GPUToolsInterface/NSDraggingSource-Protocol.h>
+#import <GPUToolsInterface/NSGestureRecognizerDelegate-Protocol.h>
+#import <GPUToolsInterface/UXCollectionViewLayoutProxyDelegate-Protocol.h>
 
 @class NSArray, NSEvent, NSGestureRecognizer, NSString, UXCollectionView, UXCollectionViewLayout, _UXCollectionViewLayoutProxy;
+@protocol UXCollectionViewDataSource_Rearranging, UXCollectionViewDelegate_Rearranging;
 
 __attribute__((visibility("hidden")))
 @interface _UXCollectionViewRearrangingCoordinator : NSObject <UXCollectionViewLayoutProxyDelegate, NSGestureRecognizerDelegate, NSDraggingSource, NSDraggingDestination>

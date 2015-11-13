@@ -4,10 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IBSourceCodeConnectionPopUpOptionsViewController.h"
+#import <IDEInterfaceBuilderKit/IBSourceCodeConnectionPopUpOptionsViewController.h>
 
-#import "IBBindingAutocompletingTextFieldDelegate.h"
-#import "NSMenuDelegate.h"
+#import <IDEInterfaceBuilderCocoaIntegration/IBBindingAutocompletingTextFieldDelegate-Protocol.h>
+#import <IDEInterfaceBuilderCocoaIntegration/NSMenuDelegate-Protocol.h>
 
 @class DVTStackView_ML, IBBindingAutocompletingResizingTextFieldView, IBBindingAutocompletingTextField, IBBindingSuggestedKeyPathProvider, NSArray, NSDictionary, NSObject, NSOperationQueue, NSPopUpButton, NSString, NSTextField, NSView;
 

@@ -4,11 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "DVTInvalidation.h"
+#import <DVTProducts/DVTInvalidation-Protocol.h>
 
 @class DVTAppStoreProductSource, DVTArchiveProductSource, DVTProductCoordinator, DVTStackBacktrace, NSArray, NSMapTable, NSMutableArray, NSString;
+@protocol DVTProductManagerDelegate;
 
 @interface DVTProductManager : NSObject <DVTInvalidation>
 {
@@ -39,10 +40,9 @@
 - (void)_handleLocationErrors:(id)arg1;
 - (void)_handleLocationErrors:(id)arg1 fromSource:(id)arg2;
 - (void)_ensureProductHasCrashPointSources:(id)arg1;
-- (void)_ensureProductsHasCrashPointSources:(id)arg1;
+- (void)_ensureProductVersionHasCrashPointSources:(id)arg1 forProduct:(id)arg2;
 - (void)_setProductOwnershipAndLocationResult:(id)arg1 forSource:(id)arg2;
 - (void)_startLocating;
-- (id)_cacheLock;
 - (void)refreshProducts;
 - (id)sources;
 - (void)primitiveInvalidate;

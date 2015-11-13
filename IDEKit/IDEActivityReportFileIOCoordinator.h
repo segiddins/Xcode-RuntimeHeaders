@@ -4,20 +4,21 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-@class DVTMapTable, NSArray, NSMutableArray, NSMutableSet, NSSet;
+@class NSArray, NSMapTable, NSMutableArray, NSMutableSet, NSSet;
 
 @interface IDEActivityReportFileIOCoordinator : NSObject
 {
     NSMutableArray *_activityReports;
     NSMutableSet *_runningThrottleableActivityReports;
     NSMutableSet *_runningUnthrottleableActivityReports;
-    DVTMapTable *_activityReportObservations;
+    NSMapTable *_activityReportObservations;
 }
 
 + (id)sharedActivityReportFileIOCoordinator;
 + (void)initialize;
++ (unsigned long long)assertionBehaviorForKeyValueObservationsAtEndOfEvent;
 @property(readonly) NSSet *runningUnthrottleableActivityReports; // @synthesize runningUnthrottleableActivityReports=_runningUnthrottleableActivityReports;
 @property(readonly) NSSet *runningThrottleableActivityReports; // @synthesize runningThrottleableActivityReports=_runningThrottleableActivityReports;
 @property(readonly) NSArray *activityReports; // @synthesize activityReports=_activityReports;

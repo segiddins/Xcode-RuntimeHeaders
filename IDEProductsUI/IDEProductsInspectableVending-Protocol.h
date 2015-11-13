@@ -4,13 +4,17 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import "NSObject-Protocol.h"
 
 @class NSString;
+@protocol IDEProductsInspectable;
 
 @protocol IDEProductsInspectableVending <NSObject>
 @property(readonly) id <IDEProductsInspectable> currentInspectable;
 @property(readonly) BOOL shouldShowNoSelection;
 - (void)handleAction:(NSString *)arg1 fromInspectable:(id <IDEProductsInspectable>)arg2;
+
+@optional
+@property(readonly, nonatomic) BOOL vendorIsBusy;
 @end
 

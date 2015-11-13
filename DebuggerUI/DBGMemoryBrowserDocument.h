@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDEEditorDocument.h"
+#import <IDEKit/IDEEditorDocument.h>
 
 @class DBGMemoryData, DBGProcess, DVTObservingToken, NSString;
 
@@ -19,8 +19,8 @@
 
 + (BOOL)shouldUnlockFileURLBeforeMakingChanges;
 + (id)keyPathsForValuesAffectingNavigableItem_name;
-@property(copy) NSString *customDisplayName; // @synthesize customDisplayName=_customDisplayName;
 @property(retain) DBGMemoryData *memoryData; // @synthesize memoryData=_memoryData;
+@property(copy) NSString *customDisplayName; // @synthesize customDisplayName=_customDisplayName;
 - (void).cxx_destruct;
 - (id)_memoryDataForURLParts:(id)arg1 inLaunchSession:(id)arg2;
 - (id)_memoryDataForURLParts:(id)arg1 inWorkspace:(id)arg2;

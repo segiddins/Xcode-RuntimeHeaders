@@ -6,7 +6,7 @@
 
 #import <IDEKit/IDEDebugArea.h>
 
-#import "DVTSplitViewDelegate.h"
+#import <IDEKit/DVTSplitViewDelegate-Protocol.h>
 
 @class DVTReplacementView, DVTScopeBarView, DVTSplitView, DVTSplitViewItem, NSButton, NSString, NSView;
 

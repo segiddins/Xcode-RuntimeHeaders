@@ -4,11 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <IDEInterfaceBuilderKit/NSObject-Protocol.h>
 
-@class NSDictionary;
+@class NSArray;
 
 @protocol IBAbstractPlatformTool <NSObject>
-- (NSDictionary *)protocolCapabilities;
+- (void)loadExtensions:(NSArray *)arg1;
 @end
 

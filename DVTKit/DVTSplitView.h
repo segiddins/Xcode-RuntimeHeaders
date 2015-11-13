@@ -4,12 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSSplitView.h"
+#import <AppKit/NSSplitView.h>
 
-#import "DVTInvalidation.h"
-#import "DVTStatefulObject.h"
-#import "NSAnimationDelegate.h"
-#import "NSSplitViewDelegate.h"
+#import <DVTKit/DVTInvalidation-Protocol.h>
+#import <DVTKit/DVTStatefulObject-Protocol.h>
+#import <DVTKit/NSAnimationDelegate-Protocol.h>
+#import <DVTKit/NSSplitViewDelegate-Protocol.h>
 
 @class DVTStackBacktrace, DVTStateToken, NSColor, NSImage, NSMutableDictionary, NSString;
 
@@ -54,6 +54,7 @@
 
 + (long long)version;
 + (void)configureStateSavingObjectPersistenceByName:(id)arg1;
++ (unsigned long long)assertionBehaviorAfterEndOfEventForSelector:(SEL)arg1;
 + (void)initialize;
 @property BOOL suppressFrameWarnings; // @synthesize suppressFrameWarnings=_suppressFrameWarnings;
 @property(retain, nonatomic) DVTStateToken *stateToken; // @synthesize stateToken=_stateToken;
@@ -96,6 +97,7 @@
 - (void)revertStateWithDictionary:(id)arg1;
 - (void)_setSplitViewItemInfo:(id)arg1;
 - (id)_splitViewItemInfo;
+- (BOOL)_skipDividerIndexDuringAnimation:(long long)arg1;
 - (void)toggleVisibilityOfItemUsingAnimation:(id)arg1;
 @property(copy) NSColor *dividerColor;
 @property double dividerThickness;

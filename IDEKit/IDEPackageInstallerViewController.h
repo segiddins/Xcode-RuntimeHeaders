@@ -4,10 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSViewController.h"
+#import <AppKit/NSViewController.h>
 
-#import "DVTPackageInstallerHelperDelegate.h"
-#import "NSTextViewDelegate.h"
+#import <IDEKit/DVTPackageInstallerHelperDelegate-Protocol.h>
+#import <IDEKit/NSTextViewDelegate-Protocol.h>
 
 @class IDEPackageInstallerHelper, NSArray, NSArrayController, NSButton, NSImageView, NSProgressIndicator, NSScrollView, NSString, NSTextField, NSTextView, NSTimer, NSView, NSWindow;
 
@@ -21,6 +21,7 @@
     NSTextView *_errorTextView;
     NSScrollView *_errorTextScrollView;
     NSTextField *_needToRestartXcodeLabel;
+    NSButton *_cancelQuitAppsButton;
     NSWindow *_appsToQuitSheet;
     NSButton *_quitAllButton;
     NSTextField *_descriptionLabel;
@@ -33,13 +34,11 @@
     CDUnknownBlockType _installationCompleteButtonHandler;
     NSArray *_appsThatNeedToBeQuitBeforeInstallCanProceed;
     CDUnknownBlockType installationCompleteHandler;
-    NSArray *_packagesToInstall;
     NSImageView *_imageView;
 }
 
 + (void)initialize;
 @property __weak NSImageView *imageView; // @synthesize imageView=_imageView;
-@property(readonly) NSArray *packagesToInstall; // @synthesize packagesToInstall=_packagesToInstall;
 @property(copy) NSArray *appsThatNeedToBeQuitBeforeInstallCanProceed; // @synthesize appsThatNeedToBeQuitBeforeInstallCanProceed=_appsThatNeedToBeQuitBeforeInstallCanProceed;
 @property(copy) CDUnknownBlockType installationCompleteButtonHandler; // @synthesize installationCompleteButtonHandler=_installationCompleteButtonHandler;
 @property(copy) CDUnknownBlockType installationCompleteHandler; // @synthesize installationCompleteHandler;
@@ -61,6 +60,7 @@
 - (void)showRestartDescriptionLabel;
 - (void)setInstallationCompleteButtonTitle:(id)arg1;
 - (id)packagesToDisplay;
+@property(readonly) NSArray *packagesToInstall;
 - (BOOL)backgroundDownloadInProgress;
 - (BOOL)needToInstallPackages;
 - (void)_checkForAlertAllApp;

@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "DYTextureImage.h"
+#import <GLToolsServices/DYTextureImage-Protocol.h>
 
 @class DYGLTextureImageBackingStore, NSData, NSString;
 
@@ -55,6 +55,7 @@
 @property(readonly, nonatomic) unsigned long long width; // @synthesize width=_width;
 @property(readonly, nonatomic) unsigned int genericFormat; // @synthesize genericFormat=_genericFormat;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) unsigned long long cachingCost;
 - (void)_processTextureImageUploadInfo:(const struct Function *)arg1;
 - (id)uncompressedData;
 @property(readonly, nonatomic) NSData *palette; // @dynamic palette;

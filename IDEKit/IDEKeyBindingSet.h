@@ -4,11 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "DVTInvalidation.h"
+#import <IDEKit/DVTInvalidation-Protocol.h>
 
-@class DVTMapTable, DVTStackBacktrace, IDEKeyBindingPreferenceSet, NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSString, NSUndoManager;
+@class DVTStackBacktrace, IDEKeyBindingPreferenceSet, NSArray, NSDictionary, NSMapTable, NSMutableArray, NSMutableDictionary, NSString, NSUndoManager;
 
 @interface IDEKeyBindingSet : NSObject <DVTInvalidation>
 {
@@ -16,7 +16,7 @@
     IDEKeyBindingPreferenceSet *_keyBindingPreferenceSet;
     NSMutableArray *_keyBindings;
     NSMutableDictionary *_keyBindingForCommandIdentifier;
-    DVTMapTable *_keyBindingOrArrayForRawKeyboardShortcut;
+    NSMapTable *_keyBindingOrArrayForRawKeyboardShortcut;
     NSMutableDictionary *_keyBindingOrCountedSetForKeyEquivalent;
     NSUndoManager *_undoManager;
     struct _IDEKeyBindingSetFlags _kbsFlags;

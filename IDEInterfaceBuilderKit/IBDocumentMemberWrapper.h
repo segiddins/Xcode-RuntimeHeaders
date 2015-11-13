@@ -4,12 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "DVTInvalidation.h"
-#import "IBDocumentMemberMutationDelegate.h"
-#import "IDEInspectorMatching.h"
-#import "IDEKeyDrivenNavigableItemRepresentedObject.h"
+#import <IDEInterfaceBuilderKit/DVTInvalidation-Protocol.h>
+#import <IDEInterfaceBuilderKit/IBDocumentMemberMutationDelegate-Protocol.h>
+#import <IDEInterfaceBuilderKit/IDEInspectorMatching-Protocol.h>
+#import <IDEInterfaceBuilderKit/IDEKeyDrivenNavigableItemRepresentedObject-Protocol.h>
 
 @class DVTDocumentLocation, DVTFileDataType, DVTStackBacktrace, IBDocument, IBDocumentMemberLocation, IBMemberID, IDEFileReference, NSArray, NSImage, NSMutableSet, NSString;
 
@@ -35,6 +35,7 @@
 - (void)document:(id)arg1 willRemoveChildObject:(id)arg2 fromMember:(id)arg3;
 - (void)document:(id)arg1 willAddChildObject:(id)arg2 toMember:(id)arg3;
 - (void)document:(id)arg1 willRemoveMember:(id)arg2;
+- (void)refreshDisplayValues;
 - (void)didFinishChangingChildWrappersToConsistentState;
 - (id)registerChildWrappersDidChangeBlock:(CDUnknownBlockType)arg1;
 - (void)unregisterDidChangeBlock:(CDUnknownBlockType)arg1;

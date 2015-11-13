@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
 @class DVTBuildVersion, DVTToolsVersion, DVTVersion, NSNumber;
 
@@ -25,6 +25,8 @@
 @property(readonly) DVTVersion *buildOSVersion;
 @property(readonly) unsigned long long buildOSActualVersion;
 @property(readonly) unsigned long long buildOSMajorVersion;
+@property(readonly) unsigned long long toolsBetaVersion;
+@property(readonly) BOOL isBeta;
 @property(readonly) DVTBuildVersion *toolsBuildVersion;
 @property(readonly) DVTToolsVersion *toolsVersion;
 @property(readonly) BOOL isAppleInternal;

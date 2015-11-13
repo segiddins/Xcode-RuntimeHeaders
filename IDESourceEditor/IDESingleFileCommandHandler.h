@@ -4,12 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "IDECommandHandler.h"
-#import "IDECommandHandlerVendor.h"
+#import <IDESourceEditor/IDECommandHandler-Protocol.h>
+#import <IDESourceEditor/IDECommandHandlerVendor-Protocol.h>
 
 @class NSString;
+@protocol IDESelectionSource;
 
 @interface IDESingleFileCommandHandler : NSObject <IDECommandHandlerVendor, IDECommandHandler>
 {

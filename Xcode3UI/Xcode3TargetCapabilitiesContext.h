@@ -4,14 +4,15 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "DVTInvalidation.h"
-#import "IDECapabilitiesContextProviding.h"
-#import "IDECodesigningInfoDelegate.h"
-#import "IDEPortalInfoDelegate.h"
+#import <Xcode3UI/DVTInvalidation-Protocol.h>
+#import <Xcode3UI/IDECapabilitiesContextProviding-Protocol.h>
+#import <Xcode3UI/IDECodesigningInfoDelegate-Protocol.h>
+#import <Xcode3UI/IDEPortalInfoDelegate-Protocol.h>
 
 @class DVTDeveloperAccount, DVTStackBacktrace, DVTTeamRecord, NSArray, NSMutableArray, NSMutableDictionary, NSString, Xcode3Target, Xcode3TargetBuildSettingsCoordinator, Xcode3TargetEntitlementsCoordinator, Xcode3TargetInfoPlistCoordinator, Xcode3TargetLinkedFrameworksCoordinator, Xcode3TargetPortalEntitlementsCoordinator;
+@protocol IDEBlueprint;
 
 @interface Xcode3TargetCapabilitiesContext : NSObject <DVTInvalidation, IDECapabilitiesContextProviding, IDEPortalInfoDelegate, IDECodesigningInfoDelegate>
 {

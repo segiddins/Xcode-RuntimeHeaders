@@ -4,9 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-@class DVTDispatchLock, DVTMapTable, NSMutableArray, NSObject<OS_dispatch_queue>, _IDEPlaygroundDataSerializationRead;
+@class DVTDispatchLock, NSMapTable, NSMutableArray, _IDEPlaygroundDataSerializationRead;
+@protocol OS_dispatch_queue;
 
 @interface IDEPlaygroundDataSerializationCoordinator : NSObject
 {
@@ -15,7 +16,7 @@
     NSMutableArray *_pendingReads;
     _IDEPlaygroundDataSerializationRead *_currentRead;
     NSObject<OS_dispatch_queue> *_readEventQueue;
-    DVTMapTable *_playgroundPathsToSerializationOperations;
+    NSMapTable *_playgroundPathsToSerializationOperations;
     BOOL ioOperationInProgress;
 }
 

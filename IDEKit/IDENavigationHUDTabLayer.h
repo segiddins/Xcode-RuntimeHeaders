@@ -4,11 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "CALayer.h"
+#import <QuartzCore/CALayer.h>
 
-#import "IDENavigationHUDDisposableLayer.h"
-#import "IDENavigationHUDNavigableLayer.h"
-#import "IDENavigationHUDSelectionDrivenLayer.h"
+#import <IDEKit/IDENavigationHUDDisposableLayer-Protocol.h>
+#import <IDEKit/IDENavigationHUDNavigableLayer-Protocol.h>
+#import <IDEKit/IDENavigationHUDSelectionDrivenLayer-Protocol.h>
 
 @class IDENavigationHUDNewSplitTabLayoutTreeLayer, IDENavigationHUDSelection, IDENavigationHUDTabLayout, IDENavigationHUDWorkspaceWindowLayer, IDEWorkspaceTabController, NSMapTable, NSString;
 

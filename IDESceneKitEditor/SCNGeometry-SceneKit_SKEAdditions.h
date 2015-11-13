@@ -4,19 +4,18 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "SCNGeometry.h"
+#import <SceneKit/SCNGeometry.h>
 
-@class NSImage, NSString;
+@class NSArray, NSString;
 
 @interface SCNGeometry (SceneKit_SKEAdditions)
-+ (id)ske_displayNameForUndoKVOKeypath:(id)arg1;
-+ (id)keyPathsForValuesAffectingIde_displayName;
-- (id)ide_sources;
-- (id)ide_elements;
-- (id)ide_polygon_count;
-- (id)ide_vertex_count;
-@property(readonly) NSImage *ide_icon;
-- (id)ske_undoKVOKeypaths;
-@property(readonly) NSString *ide_displayName;
+@property(nonatomic) struct CGSize ske_primitiveSegmentCount2;
+@property(nonatomic) struct SCNVector3 ske_primitiveSegmentCount3;
+@property(nonatomic) struct CGSize ske_primitiveSize2;
+@property(nonatomic) struct SCNVector3 ske_primitiveSize3;
+@property(readonly) NSArray *ske_allSources;
+@property(readonly) NSArray *ske_allElements;
+@property(readonly) NSString *ske_polygonCount;
+@property(readonly) NSString *ske_vertexCount;
 @end
 

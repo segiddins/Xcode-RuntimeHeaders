@@ -6,7 +6,7 @@
 
 #import <DevToolsCore/PBXTarget.h>
 
-#import "XCProductPartOwners.h"
+#import <DevToolsCore/XCProductPartOwners-Protocol.h>
 
 @class NSMutableArray, NSMutableDictionary, PBXReference;
 

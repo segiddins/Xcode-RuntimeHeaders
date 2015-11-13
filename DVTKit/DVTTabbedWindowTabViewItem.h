@@ -4,11 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSTabViewItem.h"
+#import <AppKit/NSTabViewItem.h>
 
-#import "DVTInvalidation.h"
+#import <DVTKit/DVTInvalidation-Protocol.h>
 
-@class DVTBarBackground, DVTObservingToken, DVTScrollableTabButton, DVTStackBacktrace, DVTViewController<DVTTabbedWindowTabContentControlling>, NSButton, NSString;
+@class DVTBarBackground, DVTObservingToken, DVTScrollableTabButton, DVTStackBacktrace, DVTViewController, NSButton, NSString;
+@protocol DVTTabbedWindowTabContentControlling;
 
 @interface DVTTabbedWindowTabViewItem : NSTabViewItem <DVTInvalidation>
 {
@@ -22,6 +23,7 @@
     DVTScrollableTabButton *_scrollableTabButton;
 }
 
++ (unsigned long long)assertionBehaviorAfterEndOfEventForSelector:(SEL)arg1;
 + (void)initialize;
 @property(nonatomic) __weak DVTScrollableTabButton *scrollableTabButton; // @synthesize scrollableTabButton=_scrollableTabButton;
 @property(copy, nonatomic) NSString *searchFieldText; // @synthesize searchFieldText=_searchFieldText;

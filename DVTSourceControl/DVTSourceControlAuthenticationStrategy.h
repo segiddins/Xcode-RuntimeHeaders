@@ -4,10 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "NSCopying.h"
-#import "NSSecureCoding.h"
+#import <DVTSourceControl/NSCopying-Protocol.h>
+#import <DVTSourceControl/NSSecureCoding-Protocol.h>
 
 @interface DVTSourceControlAuthenticationStrategy : NSObject <NSSecureCoding, NSCopying>
 {
@@ -15,9 +15,9 @@
 
 + (id)sharedAnonymousStrategy;
 + (BOOL)supportsSecureCoding;
-+ (Class)viewControllerClass;
 + (BOOL)strategyIsValidForURL:(id)arg1;
 + (id)name;
+- (unsigned long long)type;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)_init;

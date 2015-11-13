@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "DVTOutlineView.h"
+#import <DVTKit/DVTOutlineView.h>
 
 @class NSIndexSet;
 
@@ -17,6 +17,7 @@
 @property(nonatomic) BOOL drawsWithActiveAppearance; // @synthesize drawsWithActiveAppearance=_drawsWithActiveAppearance;
 - (void).cxx_destruct;
 - (id)preparedCellAtColumn:(long long)arg1 row:(long long)arg2;
+- (BOOL)shouldDrawRowFocusedActiveAndSelected:(long long)arg1;
 - (void)viewWillDraw;
 - (void)highlightSelectionInClipRect:(struct CGRect)arg1;
 - (struct CGRect)highlightRectForRow:(long long)arg1;

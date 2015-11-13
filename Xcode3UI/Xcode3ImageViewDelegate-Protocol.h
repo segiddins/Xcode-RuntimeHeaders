@@ -4,9 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <Xcode3UI/NSObject-Protocol.h>
 
 @class NSString, NSURL, Xcode3ImageView;
+@protocol NSDraggingInfo;
 
 @protocol Xcode3ImageViewDelegate <NSObject>
 - (BOOL)imageView:(Xcode3ImageView *)arg1 acceptDrop:(id <NSDraggingInfo>)arg2;

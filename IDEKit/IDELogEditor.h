@@ -6,10 +6,10 @@
 
 #import <IDEKit/IDEViewController.h>
 
-#import "DVTFindBarFindable.h"
-#import "DVTScopeBarHost.h"
-#import "IDEBuildResultsOutlineDelegate.h"
-#import "IDELogEditorScopeBarDelegate.h"
+#import <IDEKit/DVTFindBarFindable-Protocol.h>
+#import <IDEKit/DVTScopeBarHost-Protocol.h>
+#import <IDEKit/IDEBuildResultsOutlineDelegate-Protocol.h>
+#import <IDEKit/IDELogEditorScopeBarDelegate-Protocol.h>
 
 @class DVTScopeBarsManager, IDEActivityLogSection, IDEBuildResultsOutlineLogic, IDEEditorDocument, IDELogAndTestsEditor, IDELogEditorScopeBar, NSArray, NSBox, NSIndexPath, NSPopUpButton, NSScrollView, NSString, NSView, XCBuildResultsOutlineView;
 

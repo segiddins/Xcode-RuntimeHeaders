@@ -4,11 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDEViewController.h"
+#import <IDEKit/IDEViewController.h>
 
-#import "NSMenuDelegate.h"
+#import <IDEInterfaceBuilderCocoaIntegration/NSMenuDelegate-Protocol.h>
 
 @class DVTDisclosureView, DVTObservingToken, IBBindingAutocompletingTextField, IBBindingInfo, IBBindingsInspector, IBButtonComboBox, IBDocument, NSArray, NSBox, NSMutableArray, NSObjectController, NSOperationQueue, NSString, NSTextField;
+@protocol DVTCancellable, IBBindingSliceDelegate;
 
 @interface IBBindingSlice : IDEViewController <NSMenuDelegate>
 {

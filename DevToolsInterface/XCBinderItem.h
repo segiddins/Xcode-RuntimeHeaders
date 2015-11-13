@@ -4,10 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "PBXObject.h"
+#import <DevToolsCore/PBXObject.h>
 
-#import "DTFileSystemEventStreamDelegate.h"
-#import "NSCoding.h"
+#import <DevToolsInterface/DTFileSystemEventStreamDelegate-Protocol.h>
+#import <DevToolsInterface/NSCoding-Protocol.h>
 
 @class DTFileSystemEventStream, NSMutableDictionary, NSString, XCOrganizerFileSystemNodeInfo;
 

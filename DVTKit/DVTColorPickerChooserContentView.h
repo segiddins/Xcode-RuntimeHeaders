@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSView.h"
+#import <AppKit/NSView.h>
 
 @class NSArray, NSColor;
 
@@ -22,7 +22,7 @@
 - (void)setAction:(SEL)arg1;
 - (void)setTarget:(id)arg1;
 - (void)userChooseSwatch:(id)arg1;
-- (id)initWithColors:(id)arg1 andFrame:(struct CGRect)arg2;
+- (id)initWithColors:(id)arg1 suggestedColors:(id)arg2 andFrame:(struct CGRect)arg3;
 
 @end
 

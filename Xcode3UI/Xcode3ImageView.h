@@ -4,9 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSImageView.h"
+#import <AppKit/NSImageView.h>
 
 @class NSImage, NSString, NSTextField;
+@protocol Xcode3ImageViewDelegate;
 
 @interface Xcode3ImageView : NSImageView
 {

@@ -4,9 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
 @class IBDocumentArchiverRecursionState, IBDocumentArchivingSchema, NSMutableDictionary, NSNumber;
+@protocol IBArchivableDocument;
 
 @interface IBDocumentArchiver : NSObject
 {
@@ -45,6 +46,7 @@
 - (void)archiveEnumeratedValue:(long long)arg1 fromEnumeration:(id)arg2 forKey:(id)arg3 defaultValue:(long long)arg4;
 - (void)archiveBitmask:(unsigned long long)arg1 fromBitmask:(id)arg2 forKey:(id)arg3 defaultValue:(unsigned long long)arg4;
 - (void)archiveRange:(struct _NSRange)arg1 forKey:(id)arg2 defaultValue:(struct _NSRange)arg3;
+- (void)archiveIBEdgeInsets:(struct _IBEdgeInsets)arg1 forKey:(id)arg2 defaultValue:(struct _IBEdgeInsets)arg3;
 - (void)archiveEdgeInsets:(struct NSEdgeInsets)arg1 forKey:(id)arg2 defaultValue:(struct NSEdgeInsets)arg3;
 - (void)archiveInset:(CDStruct_c519178c)arg1 forKey:(id)arg2 defaultValue:(CDStruct_c519178c)arg3;
 - (void)archiveRect:(struct CGRect)arg1 forKey:(id)arg2 defaultValue:(struct CGRect)arg3;
@@ -67,6 +69,7 @@
 - (void)addNonKeyAttributeWithName:(id)arg1 andStringValue:(id)arg2;
 - (void)archiveRange:(struct _NSRange)arg1 forKey:(id)arg2;
 - (void)archiveOffset:(CDStruct_c3b9c2ee)arg1 forKey:(id)arg2;
+- (void)archiveIBEdgeInsets:(struct _IBEdgeInsets)arg1 forKey:(id)arg2;
 - (void)archiveEdgeInsets:(struct NSEdgeInsets)arg1 forKey:(id)arg2;
 - (void)archiveInset:(CDStruct_c519178c)arg1 forKey:(id)arg2;
 - (void)archiveRect:(struct CGRect)arg1 forKey:(id)arg2;

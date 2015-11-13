@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "DVTInvalidation.h"
+#import <IDEKit/DVTInvalidation-Protocol.h>
 
 @class DVTExtension, DVTFileDataType, DVTStackBacktrace, IDEEditorDocument, IDENavigableItemCoordinator, IDEWorkspaceTabController, NSArray, NSDictionary, NSString;
 
@@ -18,15 +18,15 @@
     NSArray *_documentLocations;
     BOOL _didChangeDocument;
     DVTExtension *_editorDocumentExtension;
-    NSString *_editorDocumentIdentifier;
     DVTFileDataType *_fileDataType;
     NSArray *_finders;
     NSArray *_geniusCategories;
-    NSDictionary *_geniusResults;
-    unsigned long long _numberOfGeniusResults;
     NSArray *_geniusResultsObservingTokens;
     BOOL _ignoreGeniusResultsUpdates;
     BOOL _idle;
+    NSDictionary *_geniusResults;
+    unsigned long long _numberOfGeniusResults;
+    NSString *_editorDocumentIdentifier;
 }
 
 + (BOOL)automaticallyNotifiesObserversOfGeniusResults;

@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "DVTDisclosureHeaderView.h"
+#import <DVTKit/DVTDisclosureHeaderView.h>
 
 @class IDECapsuleView, NSView;
 
@@ -25,6 +25,7 @@
 - (void)layoutTopDown;
 - (void)_endEditingTitleField;
 - (void)_startEditingTitleFieldWithTitle:(id)arg1;
+- (void)_updateTitleFrame;
 - (double)preferredHeight;
 - (void)mouseUp:(id)arg1;
 - (void)mouseDown:(id)arg1;

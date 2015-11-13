@@ -6,7 +6,7 @@
 
 #import <XDBase/XDPMProperty.h>
 
-#import "XCDiffHashing.h"
+#import <XDBase/XCDiffHashing-Protocol.h>
 
 @class NSDictionary;
 

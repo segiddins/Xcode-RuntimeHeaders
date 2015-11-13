@@ -6,7 +6,8 @@
 
 #import <IBAutolayoutFoundation/IBAbstractLayoutConstraintAbstraction.h>
 
-@class NSObject<IBAutolayoutItem>;
+@class NSObject;
+@protocol IBAutolayoutItem;
 
 @interface IBContentSizeLayoutConstraintAbstraction : IBAbstractLayoutConstraintAbstraction
 {
@@ -22,8 +23,9 @@
 - (id)constraintInDocument;
 - (unsigned long long)hash;
 - (BOOL)isEqualToAbstraction:(id)arg1;
-- (id)representationWithObjectRepresentationForObjectBlock:(CDUnknownBlockType)arg1;
 - (id)description;
+- (void)encodeWithBinaryArchiver:(id)arg1;
+- (id)initWithBinaryUnarchiver:(id)arg1;
 - (id)initWithView:(id)arg1 contentSize:(double)arg2 attribute:(unsigned long long)arg3;
 
 @end

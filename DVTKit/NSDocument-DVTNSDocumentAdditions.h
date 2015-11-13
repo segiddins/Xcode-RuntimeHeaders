@@ -4,9 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSDocument.h"
+#import <AppKit/NSDocument.h>
 
 @interface NSDocument (DVTNSDocumentAdditions)
+- (BOOL)dvt_shouldShowDocumentDirtyState;
 - (BOOL)dvt_hasBeenEditedSinceLastUserInitiatedSave;
 @end
 

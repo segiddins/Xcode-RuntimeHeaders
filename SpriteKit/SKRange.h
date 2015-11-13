@@ -4,10 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "NSCoding.h"
-#import "NSCopying.h"
+#import <SpriteKit/NSCoding-Protocol.h>
+#import <SpriteKit/NSCopying-Protocol.h>
 
 @interface SKRange : NSObject <NSCoding, NSCopying>
 {
@@ -28,6 +28,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithLowerLimit:(double)arg1 upperLimit:(double)arg2;
+- (id)init;
 
 @end
 

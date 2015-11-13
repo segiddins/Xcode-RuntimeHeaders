@@ -4,9 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "SimDeviceType.h"
+#import <CoreSimulator/SimDeviceType.h>
 
 @interface SimDeviceType (DVTAdditions)
+- (id)dvt_platform;
+- (id)dvt_deviceClass;
 - (id)dvt_latestRuntime;
 - (id)dvt_supportedArchs;
 - (id)dvt_supportedArchStrings;

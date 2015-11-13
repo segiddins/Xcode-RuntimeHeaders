@@ -4,11 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-@class DVTDispatchLock, NSHashTable, NSMutableData, NSURL;
+#import <IDEFoundation/DVTInvalidation-Protocol.h>
 
-@interface IDEIndexDBStringStorage : NSObject
+@class DVTDispatchLock, DVTStackBacktrace, NSHashTable, NSMutableData, NSString, NSURL;
+
+@interface IDEIndexDBStringStorage : NSObject <DVTInvalidation>
 {
     NSURL *_fileURL;
     DVTDispatchLock *_lock;
@@ -17,6 +19,8 @@
     long long _fileSize;
 }
 
++ (unsigned long long)assertionBehaviorForKeyValueObservationsAtEndOfEvent;
++ (unsigned long long)assertionBehaviorAfterEndOfEventForSelector:(SEL)arg1;
 + (void)initialize;
 @property(readonly, nonatomic) NSURL *fileURL; // @synthesize fileURL=_fileURL;
 - (void).cxx_destruct;
@@ -24,9 +28,19 @@
 - (id)findStringAtOffset:(long long)arg1 callback:(CDUnknownBlockType)arg2;
 - (id)writeChangesToDisk;
 - (long long)offsetOfString:(const char *)arg1 addIfMissing:(BOOL)arg2;
+- (void)primitiveInvalidate;
 - (void)close;
 - (id)open;
 - (id)initWithFileURL:(id)arg1;
+
+// Remaining properties
+@property(retain) DVTStackBacktrace *creationBacktrace;
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) DVTStackBacktrace *invalidationBacktrace;
+@property(readonly) Class superclass;
+@property(readonly, nonatomic, getter=isValid) BOOL valid;
 
 @end
 

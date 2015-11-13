@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "DVTProcessInformation.h"
+#import <DVTFoundation/DVTProcessInformation.h>
 
 @interface DVTiPhoneProcessInformation : DVTProcessInformation
 {
@@ -12,7 +12,7 @@
 
 + (id)_activeWorkspace;
 + (id)_existingExecutableURLForAppName:(id)arg1;
-+ (void)requestCurrentProcessInformationsForDevice:(id)arg1 resultHandler:(CDUnknownBlockType)arg2;
++ (void)requestCurrentProcessInformationsForDevice:(id)arg1 usePairedDevice:(BOOL)arg2 resultHandler:(CDUnknownBlockType)arg3;
 - (id)_initFromDictionary:(id)arg1 fileURL:(id)arg2 architecture:(id)arg3;
 
 @end

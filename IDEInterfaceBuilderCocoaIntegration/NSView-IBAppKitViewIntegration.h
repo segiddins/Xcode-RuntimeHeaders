@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSView.h"
+#import <AppKit/NSView.h>
 
 @interface NSView (IBAppKitViewIntegration)
 + (id)keyPathsForValuesAffectingIbInspectedCompositingFilter;
@@ -63,11 +63,6 @@
 - (BOOL)ibInspectedIsTreeRenderingWithLayers;
 - (void)ibEnableWantsLayerForBestViewInHierarchy;
 - (id)ibInspectedAllViewsForRenderTree;
-- (void)ibCustomizeForInsertionIntoNSView:(id)arg1 withObjects:(id)arg2 fromLibraryOrDifferentTargetRuntime:(BOOL)arg3 andInsertionContext:(id)arg4;
-- (struct CGSize)ibFrameSizeForShrinkingToFitParent:(id)arg1;
-- (void)ibApplySize:(struct CGSize)arg1 toFillContainerView:(id)arg2 withTranslucencyInset:(CDStruct_d2b197d1)arg3 andInsertionContext:(id)arg4;
-- (BOOL)ibWantsToBeFiledByDraggedViews;
-- (BOOL)ibSizesToFillContainerViews;
 - (void)ibCellDidChangeInspectedLineBreakMode:(id)arg1;
 - (void)ibTextFieldCellDidChangeInspectorLayout:(id)arg1;
 - (BOOL)ibCanSupportIdentifierProperty;
@@ -88,5 +83,6 @@
 - (void)ibSwizzledNSViewIssueOverlappingViewWarning:(id)arg1 forSibling:(id)arg2 withParentView:(id)arg3 inDocument:(id)arg4 withComputationContext:(id)arg5;
 - (id)ibLocalAttributeKeyPaths;
 - (BOOL)ibIsInspectorApplicable:(id)arg1 forCategory:(id)arg2;
+- (id)ibSwizzledNSViewDocumentationPropertyInfosForKeyPath:(id)arg1;
 @end
 

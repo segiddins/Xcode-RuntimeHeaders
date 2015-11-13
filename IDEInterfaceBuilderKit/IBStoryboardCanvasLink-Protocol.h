@@ -4,15 +4,18 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <IDEInterfaceBuilderKit/NSObject-Protocol.h>
 
-@class NSObject<IBPrimarySceneObject>;
+@class NSObject;
+@protocol IBPrimarySceneObject;
 
 @protocol IBStoryboardCanvasLink <NSObject>
+@property(readonly) BOOL canvasLinkShouldDrawPath;
 @property(readonly) BOOL canvasLinkWantsExclusiveHook;
 @property(readonly) BOOL canvasLinkRequiresSourceCanvasFrame;
 @property(readonly) NSObject<IBPrimarySceneObject> *canvasLinkDestination;
 @property(readonly) NSObject<IBPrimarySceneObject> *canvasLinkSource;
+@property(readonly) NSObject<IBPrimarySceneObject> *source;
 - (BOOL)isSelectable;
 @end
 

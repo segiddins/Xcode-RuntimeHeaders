@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSArray.h"
+#import <Foundation/NSArray.h>
 
 @interface NSArray (IBUnicodeTR354TokenizerAdditions)
 - (void)repeat:(unsigned long long)arg1 character:(id)arg2 atIndex:(unsigned long long)arg3;

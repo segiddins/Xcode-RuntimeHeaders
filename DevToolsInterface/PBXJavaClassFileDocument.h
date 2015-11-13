@@ -6,7 +6,7 @@
 
 #import <DevToolsInterface/XCEditDocument.h>
 
-#import "NSTextStorageDelegate.h"
+#import <DevToolsInterface/NSTextStorageDelegate-Protocol.h>
 
 @class NSString;
 

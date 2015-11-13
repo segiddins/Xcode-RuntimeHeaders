@@ -6,7 +6,7 @@
 
 #import <DevToolsInterface/PBXModule.h>
 
-#import "NSTextFieldDelegate.h"
+#import <DevToolsInterface/NSTextFieldDelegate-Protocol.h>
 
 @class NSButton, NSString, NSTextField;
 

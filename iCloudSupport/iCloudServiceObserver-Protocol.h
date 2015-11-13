@@ -5,6 +5,7 @@
 //
 
 @class DVTDevice, NSArray, NSDictionary, NSURL, iCloudServiceCenter;
+@protocol iCloudItem;
 
 @protocol iCloudServiceObserver
 - (void)iCloudServiceCenter:(iCloudServiceCenter *)arg1 didDisconnectDevice:(DVTDevice *)arg2;

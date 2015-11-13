@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
 @class DVTDispatchLock, NSMutableDictionary;
 
@@ -18,7 +18,6 @@
 }
 
 + (id)sharedManager;
-+ (void)initialize;
 - (void).cxx_destruct;
 - (void)informSourceKit:(struct sourcekitd_uid_s *)arg1 productInfo:(id)arg2 productBlock:(CDUnknownBlockType)arg3;
 - (void)reregisterProductInfo:(id)arg1 settings:(id)arg2;

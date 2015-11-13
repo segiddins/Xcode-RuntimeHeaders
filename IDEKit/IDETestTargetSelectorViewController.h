@@ -7,6 +7,7 @@
 #import <IDEKit/IDEViewController.h>
 
 @class NSButton, NSPopUpButton, NSString;
+@protocol IDEBlueprint;
 
 @interface IDETestTargetSelectorViewController : IDEViewController
 {

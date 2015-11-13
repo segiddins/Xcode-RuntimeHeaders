@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
 @class DVTDevice, NSArray, NSNumber, NSString;
 
@@ -46,7 +46,6 @@
 @property(readonly) double relativeStandardDeviationOfMeasurements;
 @property(readonly) double meanAverageOfMeasurements;
 - (id)initWithPerformanceMetricName:(id)arg1 filePath:(id)arg2 lineNumber:(id)arg3 unitOfMeasurement:(id)arg4 measurements:(id)arg5 identifier:(id)arg6 baselineName:(id)arg7 baselineAverage:(id)arg8 maxPercentRegression:(id)arg9 maxPercentRelativeStandardDeviation:(id)arg10 maxRegression:(id)arg11 maxStandardDeviation:(id)arg12;
-- (id)initWithPerformanceMetricName:(id)arg1 filePath:(id)arg2 lineNumber:(id)arg3 unitOfMeasurement:(id)arg4 measurements:(id)arg5 identifier:(id)arg6 baselineName:(id)arg7 baselineAverage:(id)arg8 maxPercentRegression:(id)arg9 maxPercentRelativeStandardDeviation:(id)arg10;
 
 @end
 

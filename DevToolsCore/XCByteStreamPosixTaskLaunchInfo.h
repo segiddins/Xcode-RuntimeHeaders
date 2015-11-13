@@ -6,6 +6,8 @@
 
 #import <DevToolsCore/XCPosixTaskLaunchInfo.h>
 
+@protocol PBXTSByteStreamConsuming;
+
 @interface XCByteStreamPosixTaskLaunchInfo : XCPosixTaskLaunchInfo
 {
     id <PBXTSByteStreamConsuming> _streamConsumer;

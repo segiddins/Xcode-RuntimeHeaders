@@ -6,8 +6,8 @@
 
 #import <DevToolsSupport/PBXTSLineStream.h>
 
-#import "PBXTSCharacterStreamConsuming.h"
-#import "PBXTSStreamConsumerRetaining.h"
+#import <DevToolsSupport/PBXTSCharacterStreamConsuming-Protocol.h>
+#import <DevToolsSupport/PBXTSStreamConsumerRetaining-Protocol.h>
 
 @class NSMutableString, NSString;
 

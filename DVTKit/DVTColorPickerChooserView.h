@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSView.h"
+#import <AppKit/NSView.h>
 
 @class DVTColorPickerChooserContentView, NSColor, NSMutableArray;
 
@@ -24,7 +24,7 @@
 - (void)userChooseSwatch:(id)arg1;
 - (id)clickedColor;
 - (BOOL)isFlipped;
-- (id)initWithTitle:(id)arg1 andColors:(id)arg2;
+- (id)initWithTitle:(id)arg1 andColors:(id)arg2 suggestedColors:(id)arg3;
 - (id)attributedTitleForTitle:(id)arg1;
 - (id)titleAttributes;
 - (id)titleFont;

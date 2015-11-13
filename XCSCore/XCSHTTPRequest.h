@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "NSURLSessionDelegate.h"
+#import <XCSCore/NSURLSessionDelegate-Protocol.h>
 
 @class NSDictionary, NSMutableURLRequest, NSString, XCSHTTPCredential, XCSService, XCSUser;
 
@@ -44,6 +44,7 @@
 @property(retain, nonatomic) NSMutableURLRequest *request; // @synthesize request=_request;
 @property(retain, nonatomic) NSString *UUID; // @synthesize UUID=_UUID;
 - (void).cxx_destruct;
+- (id)identityRefUsingKeychainPath:(id)arg1 password:(id)arg2 error:(id *)arg3;
 - (id)httpCredentialWithError:(id *)arg1;
 - (void)URLSession:(id)arg1 task:(id)arg2 didReceiveChallenge:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)performRequestWithCompletionHandler:(CDUnknownBlockType)arg1;

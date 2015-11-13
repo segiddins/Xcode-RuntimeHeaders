@@ -4,18 +4,18 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDEViewController.h"
+#import <IDEKit/IDEViewController.h>
 
-#import "DVTInfoPlistValueCellDelegate.h"
-#import "IDECapsuleListViewDataSource.h"
-#import "Xcode3ImageViewDelegate.h"
+#import <Xcode3UI/DVTInfoPlistValueCellDelegate-Protocol.h>
+#import <Xcode3UI/IDECapsuleListViewDataSource-Protocol.h>
+#import <Xcode3UI/Xcode3ImageViewDelegate-Protocol.h>
 
-@class DVTGradientImageButton, DVTInfoPlistValueCell, DVTStackView_ML, IDECapsuleListView, IDECodesigningSettingsMacViewController, IDEViewController<IDECapsuleViewController>, NSButton, NSComboBox, NSDictionaryController, NSMutableArray, NSPopUpButton, NSString, NSTextField, NSView, Xcode3CodesignTroubleshootingViewController, Xcode3ImageView;
+@class DVTGradientImageButton, DVTStackView_ML, IDECapsuleListView, IDECodesigningSettingsMacViewController, NSButton, NSComboBox, NSDictionaryController, NSMutableArray, NSPopUpButton, NSString, NSTextField, NSView, Xcode3CodesignTroubleshootingViewController, Xcode3ImageView;
+@protocol IDECapsuleViewController;
 
 @interface Xcode3MacOSTargetEditor : IDEViewController <DVTInfoPlistValueCellDelegate, Xcode3ImageViewDelegate, IDECapsuleListViewDataSource>
 {
     id _targetViewController;
-    id _appIdentifierFieldNotificationObserver;
     IDEViewController<IDECapsuleViewController> *_frameworksViewController;
     IDEViewController<IDECapsuleViewController> *_embeddedBinariesViewController;
     IDEViewController<IDECapsuleViewController> *_identityViewController;
@@ -25,8 +25,7 @@
     NSDictionaryController *_appCategoriesController;
     NSView *_codesigningSettingsView;
     IDECodesigningSettingsMacViewController *_codesigningSettingsViewController;
-    DVTInfoPlistValueCell *_appIdentifierCell;
-    NSTextField *_appIdentifierField;
+    NSTextField *_targetIdentifierField;
     NSComboBox *_deploymentOSCombo;
     Xcode3ImageView *_appImageView;
     DVTStackView_ML *_identityStack;
@@ -47,6 +46,7 @@
     NSView *_appExtensionAPISlice;
 }
 
++ (id)keyPathsForValuesAffectingTargetIdentifier;
 + (id)defaultViewNibBundle;
 + (id)defaultViewNibName;
 @property(retain) NSView *appExtensionAPISlice; // @synthesize appExtensionAPISlice=_appExtensionAPISlice;
@@ -97,8 +97,6 @@
 - (void)primitiveInvalidate;
 - (void)loadView;
 - (void)loadAppCategories;
-- (void)appIdentifierChanged:(id)arg1;
-- (void)refreshAppIdentifier;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

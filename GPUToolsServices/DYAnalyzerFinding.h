@@ -4,13 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "NSCoding.h"
-#import "NSCopying.h"
-#import "NSObject.h"
+#import <GPUToolsServices/NSCoding-Protocol.h>
+#import <GPUToolsServices/NSCopying-Protocol.h>
+#import <GPUToolsServices/NSObject-Protocol.h>
 
-@class NSIndexSet, NSMutableDictionary, NSMutableIndexSet, NSMutableString, NSString;
+@class NSArray, NSIndexSet, NSMutableDictionary, NSMutableIndexSet, NSMutableString, NSString;
+@protocol NSCoding><NSCopying><NSObject;
 
 @interface DYAnalyzerFinding : NSObject <NSCopying, NSCoding, NSObject>
 {
@@ -30,9 +31,11 @@
     int _granularity;
     unsigned long long _graphicsEngineID;
     unsigned long long _resourceGroupID;
+    NSArray *_subfindings;
 }
 
 + (id)_findingLevelString:(int)arg1;
+@property(retain, nonatomic) NSArray *subfindings; // @synthesize subfindings=_subfindings;
 @property(retain, nonatomic) id <NSCoding><NSCopying><NSObject> additionalData; // @synthesize additionalData=_additionalData;
 @property(readonly, copy, nonatomic) NSMutableDictionary *statistics; // @synthesize statistics=_statistics;
 @property(nonatomic) unsigned int drawCallNum; // @synthesize drawCallNum=_drawCallNum;

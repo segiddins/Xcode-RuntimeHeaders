@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "DVTInvalidation.h"
+#import <IDEFoundation/DVTInvalidation-Protocol.h>
 
 @class DVTStackBacktrace, NSArray, NSMutableArray, NSString;
 
@@ -18,6 +18,7 @@
 + (id)onDiskOrInMemoryLogStoreInWorkspaceArena:(id)arg1 prefix:(id)arg2;
 + (void)initialize;
 - (void).cxx_destruct;
+- (id)coverageReportFilePathForActivityLogSection:(id)arg1;
 - (id)testableSummariesPlistFilePathForActivityLogSection:(id)arg1;
 - (id)logRecordWithURL:(id)arg1;
 - (id)addLog:(id)arg1 entityIdentifier:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;

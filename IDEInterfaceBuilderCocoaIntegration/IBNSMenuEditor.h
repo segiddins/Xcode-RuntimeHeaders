@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IBEditor.h"
+#import <IDEInterfaceBuilderKit/IBEditor.h>
 
 @interface IBNSMenuEditor : IBEditor
 {
@@ -18,7 +18,7 @@
 - (id)draggedImageState:(id)arg1;
 - (id)draggedImageStateForMenuItems:(id)arg1;
 - (id)draggedImageStateForIdentifiedItems:(id)arg1;
-- (void)resizeFrameViewWithEvent:(id)arg1 fromEditorCanvasFrameKnob:(long long)arg2;
+- (void)resizeFrameViewWithEvent:(id)arg1 fromEditorCanvasFrameKnob:(CDUnion_42e99c75)arg2;
 - (void)selectionOwner:(id)arg1 didSelect:(id)arg2 andDeselect:(id)arg3;
 - (BOOL)interceptEvent:(id)arg1;
 - (BOOL)interceptKeyEvent:(id)arg1;

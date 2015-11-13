@@ -6,7 +6,7 @@
 
 #import <IDEModelFoundation/CDMProperty.h>
 
-#import "IDEInspectorMatching.h"
+#import <IDEModelFoundation/IDEInspectorMatching-Protocol.h>
 
 @class CDMFetchRequest, NSString;
 

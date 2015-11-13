@@ -4,40 +4,37 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSTableView.h"
+#import <AppKit/NSTableView.h>
 
-#import "DVTProgressIndicatorProvidingView.h"
+#import <DVTKit/DVTProgressIndicatorProvidingView-Protocol.h>
 
-@class NSEvent, NSIndexSet, NSString, NSTextField;
+@class NSEvent, NSIndexSet, NSMapTable, NSString, NSTextField;
 
 @interface DVTTableView : NSTableView <DVTProgressIndicatorProvidingView>
 {
-    int _emptyContentStringStyle;
-    NSString *_emptyContentString;
     NSTextField *_emptyContentTextField;
-    unsigned long long _dvt_groupRowStyle;
-    NSIndexSet *_draggedRows;
-    NSEvent *_event;
-    id _progressIndicatorsByItem;
+    NSMapTable *_progressIndicatorsByItem;
     struct {
         unsigned int allowsSizingShorterThanClipView:1;
         unsigned int reserved:7;
     } _dvtTVFlags;
-    BOOL _showAlternatingRowBackgroundColorsWithContents;
     unsigned long long _gridLineStyleBeforeEmptyContentStringShown;
     BOOL _skipGridLinesOnLastRow;
     BOOL _drawsGridLinesForEmptyContent;
+    int _emptyContentStringStyle;
+    NSString *_emptyContentString;
+    NSIndexSet *_draggedRows;
+    NSEvent *_event;
     CDStruct_2b6e6e30 _gridLineInset;
 }
 
+@property(retain) NSEvent *event; // @synthesize event=_event;
 @property CDStruct_2b6e6e30 gridLineInset; // @synthesize gridLineInset=_gridLineInset;
 @property BOOL drawsGridLinesForEmptyContent; // @synthesize drawsGridLinesForEmptyContent=_drawsGridLinesForEmptyContent;
 @property BOOL skipGridLinesOnLastRow; // @synthesize skipGridLinesOnLastRow=_skipGridLinesOnLastRow;
+@property(copy) NSIndexSet *draggedRows; // @synthesize draggedRows=_draggedRows;
 @property int emptyContentStringStyle; // @synthesize emptyContentStringStyle=_emptyContentStringStyle;
 @property(copy, nonatomic) NSString *emptyContentString; // @synthesize emptyContentString=_emptyContentString;
-@property(retain) NSEvent *event; // @synthesize event=_event;
-@property(copy) NSIndexSet *draggedRows; // @synthesize draggedRows=_draggedRows;
-@property unsigned long long dvt_groupRowStyle; // @synthesize dvt_groupRowStyle=_dvt_groupRowStyle;
 - (void).cxx_destruct;
 - (void)drawGridInClipRect:(struct CGRect)arg1;
 - (void)_drawBackgroundForGroupRow:(long long)arg1 clipRect:(struct CGRect)arg2 isButtedUpRow:(BOOL)arg3;

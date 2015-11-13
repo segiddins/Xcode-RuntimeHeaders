@@ -4,14 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "DVTAnnotationProvider.h"
+#import <DVTKit/DVTAnnotationProvider.h>
 
-@class DVTMapTable, DVTObservingToken, IDEAnnotationContext, NSMutableSet;
+@class DVTObservingToken, IDEAnnotationContext, NSMapTable, NSMutableSet;
 
 @interface DBGInstructionPointerAnnotationProvider : DVTAnnotationProvider
 {
     IDEAnnotationContext *_context;
-    DVTMapTable *_annotationForLocation;
+    NSMapTable *_annotationForLocation;
     NSMutableSet *_nonSelectedPCAnnotations;
     DVTObservingToken *_ipLocationObserver;
     DVTObservingToken *_ipLocationForDisasObserver;

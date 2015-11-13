@@ -4,12 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "DVTLayoutView_ML.h"
+#import <DVTKit/DVTLayoutView_ML.h>
 
-#import "IBSelectionOwnerDelegate.h"
-#import "IBStructureAreaDockItemViewDelegate.h"
+#import <IDEInterfaceBuilderKit/IBSelectionOwnerDelegate-Protocol.h>
+#import <IDEInterfaceBuilderKit/IBStructureAreaDockItemViewDelegate-Protocol.h>
 
 @class IBDockObjectAndGroupPair, IBSelectionOwner, IBStructureAreaDockLabelContainer, NSArray, NSBezierPath, NSDictionary, NSImage, NSMutableDictionary, NSString, NSValue;
+@protocol IBStructureAreaDockViewDelegate;
 
 @interface IBStructureAreaDockView : DVTLayoutView_ML <IBSelectionOwnerDelegate, IBStructureAreaDockItemViewDelegate>
 {
@@ -103,6 +104,7 @@
 - (id)representedObjectAndGroupAtPoint:(struct CGPoint)arg1;
 - (id)unvalidatedDockItemViewAtPoint:(struct CGPoint)arg1 includeOverflowItem:(BOOL)arg2;
 - (id)insertionIndicatorPathForIndicatorPair:(id)arg1;
+- (BOOL)isFlipped;
 - (BOOL)shouldShowLabelPopUpForObject:(id)arg1 inGroup:(id)arg2;
 - (id)representedObjectsForGroup:(id)arg1 inRange:(struct _NSRange)arg2;
 - (void)invalidateData;

@@ -4,11 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "GPUMainEditor.h"
+#import <GPUTraceDebuggerUI/GPUMainEditor.h>
 
-#import "GPURenderBufferViewStateCoordinationProtocol.h"
+#import <GPURenderTargetEditor/GPURenderBufferViewStateCoordinationProtocol-Protocol.h>
 
 @class DVTBorderedView, DVTObservingToken, GPUDebuggingAdditionUIController, GPURenderBufferBezeledLabel, GPURenderBufferCanvas, GPURenderBufferCanvasGrid, GPURenderBufferPool, GPUTraceSubEditor, NSImage, NSLayoutConstraint, NSMenuItem, NSSegmentedControl, NSString, NSTextField, NSView;
+@protocol DVTCancellable;
 
 __attribute__((visibility("hidden")))
 @interface GPUTraceEditor : GPUMainEditor <GPURenderBufferViewStateCoordinationProtocol>
@@ -34,7 +35,7 @@ __attribute__((visibility("hidden")))
     NSMenuItem *_toggleWireframeMenuItem;
     NSMenuItem *_toggleDeviceWireframeMenuItem;
     GPUDebuggingAdditionUIController *_debuggingAdditionUIController;
-    DVTObservingToken *_debugerControllerDebugStateObserverToken;
+    DVTObservingToken *_debuggerControllerDebugStateObserverToken;
     BOOL _haveRequestedUIController;
     id <DVTCancellable> _uiControllerObserver;
     id _controlKeyEventTap;

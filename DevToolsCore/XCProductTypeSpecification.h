@@ -6,7 +6,7 @@
 
 #import <DevToolsCore/XCSpecification.h>
 
-#import "XCProductPartOwners.h"
+#import <DevToolsCore/XCProductPartOwners-Protocol.h>
 
 @class NSArray, NSSet, PBXBuildSettingsDictionary, XCPropertyDictionary;
 

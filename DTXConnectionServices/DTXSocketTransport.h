@@ -6,7 +6,8 @@
 
 #import <DTXConnectionServices/DTXFileDescriptorTransport.h>
 
-@class NSArray, NSObject<OS_dispatch_semaphore>, NSObject<OS_dispatch_source>;
+@class NSArray, NSObject;
+@protocol OS_dispatch_semaphore, OS_dispatch_source;
 
 @interface DTXSocketTransport : DTXFileDescriptorTransport
 {
@@ -19,6 +20,7 @@
 + (id)addressForHost:(const char *)arg1 port:(int)arg2;
 + (id)schemes;
 @property(readonly) int port; // @synthesize port=_port;
+- (int)supportedDirections;
 - (id)localAddresses;
 - (void)disconnect;
 - (unsigned long long)transmit:(const void *)arg1 ofLength:(unsigned long long)arg2;

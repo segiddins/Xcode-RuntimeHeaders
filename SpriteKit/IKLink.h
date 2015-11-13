@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
 @class SKNode;
 
@@ -25,7 +25,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) float angleInitial; // @synthesize angleInitial=_angleInitial;
 @property(nonatomic) union _GLKVector2 position; // @synthesize position=_position;
 @property(retain, nonatomic) SKNode *node; // @synthesize node=_node;
-- (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)rotateByAngle:(float)arg1;
 - (double)normalizeAngle:(double)arg1;

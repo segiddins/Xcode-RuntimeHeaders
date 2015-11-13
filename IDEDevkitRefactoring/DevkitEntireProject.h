@@ -6,7 +6,7 @@
 
 #import <IDEDevkitRefactoring/DevkitGlobalProjectData.h>
 
-#import "DevkitRefactoringParserCallbacks.h"
+#import <IDEDevkitRefactoring/DevkitRefactoringParserCallbacks-Protocol.h>
 
 @class DevkitParseErrorStream, IDEIndex, NSMutableDictionary, NSString;
 

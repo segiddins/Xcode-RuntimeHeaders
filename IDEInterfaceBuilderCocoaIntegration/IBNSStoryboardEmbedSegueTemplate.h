@@ -6,8 +6,8 @@
 
 #import <IDEInterfaceBuilderCocoaIntegration/IBNSStoryboardSegueTemplate.h>
 
-#import "IBDocumentArchiving.h"
-#import "NSCoding.h"
+#import <IDEInterfaceBuilderCocoaIntegration/IBDocumentArchiving-Protocol.h>
+#import <IDEInterfaceBuilderCocoaIntegration/NSCoding-Protocol.h>
 
 @class NSString, NSView;
 

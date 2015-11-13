@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
 @interface DVTMTReport : NSObject
 {
@@ -12,17 +12,13 @@
 }
 
 @property struct __asl_object_s *message; // @synthesize message=_message;
-- (void)recordRawLog:(id)arg1;
 - (void)recordSuccess:(BOOL)arg1 reason:(id)arg2;
 - (void)recordID:(id)arg1 forKey:(char *)arg2;
-- (void)recordNumber:(long long)arg1 forKey:(char *)arg2;
 - (void)recordNumber:(long long)arg1 forKey:(char *)arg2 deresolver:(CDUnknownBlockType)arg3;
-- (void)recordTimeResult:(double)arg1 forKey:(char *)arg2;
 - (void)recordTimeResult:(double)arg1 forKey:(char *)arg2 deresolver:(CDUnknownBlockType)arg3;
-- (void)logReport;
+- (void)_logReport;
 - (void)dealloc;
-- (void)_freeMsg;
-- (id)initWithDomain:(char *)arg1 summarize:(BOOL)arg2;
+- (id)_initWithDomain:(char *)arg1 summarize:(BOOL)arg2;
 
 @end
 

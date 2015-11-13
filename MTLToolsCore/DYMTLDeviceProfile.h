@@ -4,11 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "DYGraphicsAPIInfo.h"
-#import "NSCoding.h"
-#import "NSCopying.h"
+#import <MTLToolsCore/DYGraphicsAPIInfo-Protocol.h>
+#import <MTLToolsCore/NSCoding-Protocol.h>
+#import <MTLToolsCore/NSCopying-Protocol.h>
 
 @class NSArray, NSString;
 
@@ -23,6 +23,7 @@
 @property(readonly, nonatomic) NSArray *supportedFeatureSets; // @synthesize supportedFeatureSets=_supportedFeatureSets;
 - (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
+- (id)initWithDevice:(id)arg1;
 - (BOOL)supportsCapabilitiesOfGraphicsAPI:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;

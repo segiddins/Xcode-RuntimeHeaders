@@ -4,12 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "DVTInvalidation.h"
-#import "IDEFlightChecking.h"
+#import <IDEKit/DVTInvalidation-Protocol.h>
+#import <IDEKit/IDEFlightChecking-Protocol.h>
 
-@class DVTStackBacktrace, NSError, NSObject<OS_dispatch_queue>, NSString;
+@class DVTStackBacktrace, NSError, NSString;
+@protocol OS_dispatch_queue;
 
 @interface IDEProjectItemModelFlightCheck : NSObject <IDEFlightChecking, DVTInvalidation>
 {

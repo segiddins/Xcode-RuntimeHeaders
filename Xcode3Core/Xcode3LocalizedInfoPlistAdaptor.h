@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDELocalizedPlistAdaptor.h"
+#import <IDEFoundation/IDELocalizedPlistAdaptor.h>
 
 @class Xcode3Target;
 
@@ -19,7 +19,7 @@
 - (id)expectedSuperitem;
 - (id)expectedDirectoryPath;
 - (id)expectedFileName;
-- (id)filteredBaseStringsByKey:(id)arg1;
+- (id)filteredBaseStrings:(id)arg1;
 - (void)primitiveInvalidate;
 - (id)initWithLocalizedContainer:(id)arg1 localizedGroup:(id)arg2 plistFileReference:(id)arg3 target:(id)arg4;
 

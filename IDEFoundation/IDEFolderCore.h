@@ -6,7 +6,7 @@
 
 #import <IDEFoundation/IDEContainerCore.h>
 
-#import "IDEFolderCore.h"
+#import <IDEFoundation/IDEFolderCore-Protocol.h>
 
 @class DVTStackBacktrace, NSString;
 

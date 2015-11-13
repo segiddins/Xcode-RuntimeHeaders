@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDELibraryController.h"
+#import <IDEKit/IDELibraryController.h>
 
-#import "IBObjectContainerArchivingDelegate.h"
+#import <IDEInterfaceBuilderKit/IBObjectContainerArchivingDelegate-Protocol.h>
 
 @class DVTNotificationToken, DVTPerformanceMetric, IBMutableIdentityDictionary, IBTargetRuntime, NSString;
 
@@ -53,8 +53,7 @@
 - (id)loadAssetsFromAssetProvider:(id)arg1;
 - (void)prepareObjectLibraryAssetForAssetCreation:(id)arg1 fromProvider:(id)arg2;
 - (id)createLibraryAssetForObjectAsset:(id)arg1 inNamespace:(id)arg2;
-- (id)createDetailedDescriptionFromAsset:(id)arg1;
-- (id)createImageFromObjectAsset:(id)arg1;
+- (id)_createImageFromObjectAsset:(id)arg1;
 - (id)objectLibraryAssetsFromNibContent:(id)arg1 fromProvider:(id)arg2;
 - (BOOL)shouldIncludeObjectLibraryAsset:(id)arg1 fromProvider:(id)arg2;
 - (id)objectPasteboardType;

@@ -6,8 +6,8 @@
 
 #import <IDEKit/IDETemplateInstantiationAssistant.h>
 
-#import "IDECompletionDestinationDelegate.h"
-#import "NSOpenSavePanelDelegate.h"
+#import <IDEKit/IDECompletionDestinationDelegate-Protocol.h>
+#import <IDEKit/NSOpenSavePanelDelegate-Protocol.h>
 
 @class IDECompletionDestinationManager, IDEGroup, IDEWorkspace, NSPopUpButton, NSSavePanel, NSString, NSURL;
 

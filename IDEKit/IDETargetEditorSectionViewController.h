@@ -6,7 +6,7 @@
 
 #import <IDEKit/IDEViewController.h>
 
-#import "IDECapsuleViewController.h"
+#import <IDEKit/IDECapsuleViewController-Protocol.h>
 
 @class NSImage, NSString;
 

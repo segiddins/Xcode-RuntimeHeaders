@@ -4,9 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
 @class DVTMacroDefinitionConditionSet, NSString;
+@protocol DVTMacroExpansion;
 
 @interface DVTMacroAssignmentInfo : NSObject
 {
@@ -20,6 +21,7 @@
 @property(readonly) id <DVTMacroExpansion> value; // @synthesize value=_value;
 @property(readonly) NSString *macroName; // @synthesize macroName=_macroName;
 - (void).cxx_destruct;
+- (id)description;
 - (id)initWithMacroName:(id)arg1 value:(id)arg2 conditionSet:(id)arg3;
 
 @end

@@ -4,17 +4,16 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "NSCopying.h"
-#import "NSSecureCoding.h"
-#import "SCNAnimatable.h"
+#import <SceneKit/NSCopying-Protocol.h>
+#import <SceneKit/NSSecureCoding-Protocol.h>
+#import <SceneKit/SCNAnimatable-Protocol.h>
 
 @class NSArray, NSColor, NSDictionary, NSString, SCNGeometry, SCNOrderedDictionary;
 
 @interface SCNParticleSystem : NSObject <NSCopying, NSSecureCoding, SCNAnimatable>
 {
-    id _reserved;
     struct __C3DParticleSystem *_particleSystem;
     unsigned int _isPresentationInstance:1;
     SCNOrderedDictionary *_animations;
@@ -85,10 +84,10 @@
     double _imageSequenceInitialFrameVariation;
     double _imageSequenceFrameRate;
     double _imageSequenceFrameRateVariation;
+    NSString *_referenceName;
 }
 
 + (BOOL)supportsSecureCoding;
-+ (id)SCNJSExportProtocol;
 + (id)particleSystemWithParticleSystemRef:(struct __C3DParticleSystem *)arg1;
 + (id)particleSystemNamed:(id)arg1 inDirectory:(id)arg2;
 + (id)particleSystem;
@@ -96,6 +95,9 @@
 - (void)encodeWithCoder:(id)arg1;
 - (void)_customDecodingOfSCNParticleSystem:(id)arg1;
 - (void)_customEncodingOfSCNParticleSystem:(id)arg1;
+- (BOOL)_isAReference;
+- (id)referenceName;
+- (void)setReferenceName:(id)arg1;
 - (void)removeAllModifiers;
 - (void)removeModifiersOfStage:(long long)arg1;
 - (void)addModifierForProperties:(id)arg1 atStage:(long long)arg2 withBlock:(CDUnknownBlockType)arg3;
@@ -178,7 +180,6 @@
 - (void)setParticleGeometries:(id)arg1;
 - (short)typeOfProperty:(id)arg1;
 - (id)particleGeometries;
-- (void)setConstraintRef:(struct __C3DParticleSystem *)arg1;
 - (struct __C3DParticleSystem *)particleSystemRef;
 - (BOOL)isPausedOrPausedByInheritance;
 - (id)presentationInstance;
@@ -196,7 +197,7 @@
 - (void)_pauseAnimation:(BOOL)arg1 forKey:(id)arg2;
 - (id)animationForKey:(id)arg1;
 - (void)_syncObjCAnimations;
-- (id)animationKeys;
+@property(readonly) NSArray *animationKeys;
 - (void)removeAnimationForKey:(id)arg1;
 - (void)removeAllAnimations;
 - (void)addAnimation:(id)arg1;

@@ -4,15 +4,15 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "DVTAnnotationProvider.h"
+#import <DVTKit/DVTAnnotationProvider.h>
 
-#import "DVTInvalidation.h"
-#import "DVTTextAnnotationDelegate.h"
-#import "NSMenuDelegate.h"
+#import <IDEInterfaceBuilderKit/DVTTextAnnotationDelegate-Protocol.h>
+#import <IDEInterfaceBuilderKit/NSMenuDelegate-Protocol.h>
 
-@class DVTObservingToken, DVTStackBacktrace, DVTTextStorage, IBAnnotationDataCache, IBCancellationToken, IBIndexClassDescriber, IDEAnnotationContext, NSObject<OS_dispatch_queue>, NSPopUpButtonCell, NSString;
+@class DVTObservingToken, DVTTextStorage, IBAnnotationDataCache, IBCancellationToken, IBIndexClassDescriber, IDEAnnotationContext, NSObject, NSPopUpButtonCell, NSString;
+@protocol OS_dispatch_queue;
 
-@interface IBAnnotationProvider : DVTAnnotationProvider <DVTTextAnnotationDelegate, DVTInvalidation, NSMenuDelegate>
+@interface IBAnnotationProvider : DVTAnnotationProvider <DVTTextAnnotationDelegate, NSMenuDelegate>
 {
     IDEAnnotationContext *_annotationContext;
     NSPopUpButtonCell *_annotationPopUpCell;
@@ -33,7 +33,6 @@
 }
 
 + (id)annotationProviderForContext:(id)arg1 error:(id *)arg2;
-+ (void)initialize;
 @property(retain) DVTTextStorage *textStorage; // @synthesize textStorage=_textStorage;
 - (void).cxx_destruct;
 - (void)annotation:(id)arg1 willDrawInTextSidebarView:(id)arg2 withAnnotationsInSameLine:(id)arg3;
@@ -79,18 +78,14 @@
 - (void)stopObservingIndex;
 - (id)index;
 - (void)cacheAnnotations;
-- (void)providerWillUninstall;
 - (void)primitiveInvalidate;
 - (id)initWithContext:(id)arg1;
 
 // Remaining properties
-@property(retain) DVTStackBacktrace *creationBacktrace;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
-@property(readonly) DVTStackBacktrace *invalidationBacktrace;
 @property(readonly) Class superclass;
-@property(readonly, nonatomic, getter=isValid) BOOL valid;
 
 @end
 

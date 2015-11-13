@@ -6,7 +6,7 @@
 
 #import <IDEKit/IDEViewController.h>
 
-#import "IDEFilePickerViewDelegate.h"
+#import <IDEKit/IDEFilePickerViewDelegate-Protocol.h>
 
 @class DVTBorderedView, DVTGradientImageButton, DVTOutlineView, DVTScrollView, DVTSearchField, IDEBuildSchemeAction, IDEScheme, IDEWorkspace, NSArray, NSString, NSView;
 

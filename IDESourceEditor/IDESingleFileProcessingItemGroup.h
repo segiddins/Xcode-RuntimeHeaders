@@ -4,17 +4,17 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "IDEKeyDrivenNavigableItemRepresentedObject.h"
+#import <IDESourceEditor/IDEKeyDrivenNavigableItemRepresentedObject-Protocol.h>
 
-@class DVTDocumentLocation, DVTFileDataType, DVTMapTable, IDEFileReference, NSArray, NSImage, NSMutableArray, NSString;
+@class DVTDocumentLocation, DVTFileDataType, IDEFileReference, NSArray, NSImage, NSMapTable, NSMutableArray, NSString;
 
 @interface IDESingleFileProcessingItemGroup : NSObject <IDEKeyDrivenNavigableItemRepresentedObject>
 {
     NSMutableArray *_singleFileProcessingItems;
-    DVTMapTable *_workspaceToItemMapTable;
-    DVTMapTable *_workspaceToInvalidationObserverTable;
+    NSMapTable *_workspaceToItemMapTable;
+    NSMapTable *_workspaceToInvalidationObserverTable;
     DVTFileDataType *_type;
     NSString *_name;
     Class _contentProviderClass;

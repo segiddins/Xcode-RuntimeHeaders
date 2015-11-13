@@ -6,6 +6,8 @@
 
 #import <GPUDebuggerMTLSupport/GPUMTLTraceDisplayableItem.h>
 
+@protocol GPUMTLDisplayableStrategy;
+
 __attribute__((visibility("hidden")))
 @interface GPUMTLTraceTextureDisplayableItem : GPUMTLTraceDisplayableItem
 {

@@ -6,9 +6,9 @@
 
 #import <IDEKit/IDEViewController.h>
 
-#import "DVTOutlineViewDelegate.h"
-#import "IDEFilterControlBarTarget.h"
-#import "IDEKeyBindingFieldCellDelegate.h"
+#import <IDEKit/DVTOutlineViewDelegate-Protocol.h>
+#import <IDEKit/IDEFilterControlBarTarget-Protocol.h>
+#import <IDEKit/IDEKeyBindingFieldCellDelegate-Protocol.h>
 
 @class DVTBorderedView, DVTImageAndTextCell, DVTObservingToken, DVTOutlineView, DVTPreferenceSetManager, DVTReplacementView, IDEFilterControlBar, NSArray, NSButton, NSMenu, NSScrollView, NSString, NSTextField, NSTreeController;
 

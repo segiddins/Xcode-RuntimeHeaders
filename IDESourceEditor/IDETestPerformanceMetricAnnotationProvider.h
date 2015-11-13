@@ -4,10 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "DVTAnnotationProvider.h"
+#import <DVTKit/DVTAnnotationProvider.h>
 
-#import "DVTMessageBubbleAnnotationDelegate.h"
-#import "IDETestsInFileObserver.h"
+#import <IDESourceEditor/DVTMessageBubbleAnnotationDelegate-Protocol.h>
+#import <IDESourceEditor/IDETestsInFileObserver-Protocol.h>
 
 @class IDEAnnotationContext, NSPopover, NSString, NSURL;
 
@@ -29,19 +29,19 @@
 - (void)didClickMessageBubbleForAnnotation:(id)arg1 onIcon:(BOOL)arg2 inTextView:(id)arg3 event:(id)arg4;
 - (void)_didClickAnnotation:(id)arg1 inView:(id)arg2 event:(id)arg3;
 - (id)menuForPerformanceMetricAnnotation:(id)arg1;
-- (void)workspaceReferencedTestablesChanged;
+- (void)allTestablesChanged;
 - (void)testsChanged:(id)arg1;
 - (void)testsInFileUpdated:(id)arg1;
 - (id)_annotationsForTest:(id)arg1 sourceDocument:(id)arg2;
 - (id)_summaryAnnotationDescriptionForTimeAverage:(id)arg1 totalMemoryAverage:(id)arg2 persistentMemoryAverage:(id)arg3;
 - (void)providerWillUninstall;
+@property(readonly, copy) NSString *description;
 - (id)initWithContext:(id)arg1;
 - (id)_createAnnotationForMessageBubbleText:(id)arg1 test:(id)arg2 targetArchitecture:(id)arg3 targetDevice:(id)arg4 location:(id)arg5;
 - (id)_messageBubbleTextForSourceDocument:(id)arg1 test:(id)arg2 previousPerformanceMetricOutput:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

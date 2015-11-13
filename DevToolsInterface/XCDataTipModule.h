@@ -6,9 +6,10 @@
 
 #import <DevToolsInterface/PBXDebugExpressionsViewModule.h>
 
-#import "XCUnretainedReferent.h"
+#import <DevToolsInterface/XCUnretainedReferent-Protocol.h>
 
-@class NSString, NSTextView<XCTextViewAdditions>, PBXLSDebuggerAdaptor, XCFloatingControlWindow, XCUnretainedReference;
+@class NSString, NSTextView, PBXLSDebuggerAdaptor, XCFloatingControlWindow, XCUnretainedReference;
+@protocol XCTextViewAdditions;
 
 @interface XCDataTipModule : PBXDebugExpressionsViewModule <XCUnretainedReferent>
 {

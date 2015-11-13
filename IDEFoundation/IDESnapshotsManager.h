@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
 @class DVTPerformanceMetric;
 
@@ -18,9 +18,6 @@
 + (id)snapshotsLogAspect;
 + (id)sharedManager;
 - (void).cxx_destruct;
-- (id)restoreSnapshot:(id)arg1 fromRepositoryAtPath:(id)arg2 toLocation:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;
-- (id)tmpFileForFileAtOriginalLocation:(id)arg1 fromSnapshot:(id)arg2 fromRepositoryAtPath:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;
-- (id)modifiedFilesBetweenSnapshot:(id)arg1 andPreviousSnapshot:(id)arg2 fromRepositoryAtPath:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;
 - (id)snapshotsForRepositoryAtPath:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 @property BOOL areSnapshotsEnabled; // @synthesize areSnapshotsEnabled=_areSnapshotsEnabled;
 - (id)snapshotsFolderPath;

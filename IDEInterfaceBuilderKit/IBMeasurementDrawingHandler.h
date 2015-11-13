@@ -4,11 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "DVTInvalidation.h"
+#import <IDEInterfaceBuilderKit/DVTInvalidation-Protocol.h>
 
 @class DVTStackBacktrace, IBCancellationToken, IBDelegatedCanvasOverlay, IBMutableIdentityDictionary, IBRelativeMeasurement, IBRelativeMeasurementDescriptor, IBTrackingIndicatorLayoutInfo, IBViewEditorCanvasFrameController, NSSet, NSString;
+@protocol DVTCancellable, DVTInvalidation;
 
 @interface IBMeasurementDrawingHandler : NSObject <DVTInvalidation>
 {
@@ -65,7 +66,7 @@
 - (struct CGRect)layoutRectForView:(id)arg1;
 - (struct CGRect)clippingRectForClippingToView:(id)arg1;
 - (void)clearTrackingIndicators;
-- (void)setTrackedSize:(struct CGSize)arg1 forViewRectangle:(struct CGRect)arg2 fromKnob:(long long)arg3 showingBoundsIndicator:(BOOL)arg4 showsTrackingKnob:(BOOL)arg5;
+- (void)setTrackedSize:(struct CGSize)arg1 forViewRectangle:(struct CGRect)arg2 fromKnob:(CDUnion_31865a80)arg3 showingBoundsIndicator:(BOOL)arg4 showsTrackingKnob:(BOOL)arg5;
 - (void)setTrackedKnobRect:(struct CGRect)arg1;
 - (void)setTrackingIndicatorLayoutInfo:(id)arg1;
 - (void)setHintedTrackedViewRectangle:(struct CGRect)arg1;

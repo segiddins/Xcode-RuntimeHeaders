@@ -4,13 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <Foundation/NSObject.h>
 
-#import "NSBrowserDelegate.h"
-#import "NSOutlineViewDataSource.h"
-#import "NSOutlineViewDelegate.h"
-#import "NSSplitViewDelegate.h"
-#import "NSTextViewDelegate.h"
+#import <DevToolsInterface/NSBrowserDelegate-Protocol.h>
+#import <DevToolsInterface/NSOutlineViewDataSource-Protocol.h>
+#import <DevToolsInterface/NSOutlineViewDelegate-Protocol.h>
+#import <DevToolsInterface/NSSplitViewDelegate-Protocol.h>
+#import <DevToolsInterface/NSTextViewDelegate-Protocol.h>
 
 @class NSArray, NSArrayController, NSBrowser, NSButton, NSColor, NSPanel, NSProgressIndicator, NSSplitView, NSString, NSTableView, NSTextField, NSTextView, NSTreeController, NSView, PBXControlScrollView, PBXExtendedOutlineView;
 

@@ -4,22 +4,23 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "DVTInvalidation.h"
-#import "DVTXMLUnarchiving.h"
+#import <IDEFoundation/DVTInvalidation-Protocol.h>
+#import <IDEFoundation/DVTXMLUnarchiving-Protocol.h>
 
-@class DVTCustomDataSpecifier, DVTStackBacktrace, IDEContainer<DVTCustomDataStoring>, NSArray, NSMutableArray, NSString;
+@class DVTCustomDataSpecifier, DVTStackBacktrace, IDEContainer, NSArray, NSMutableArray, NSString;
+@protocol DVTCustomDataStoring;
 
 @interface IDEBreakpointBucket : NSObject <DVTXMLUnarchiving, DVTInvalidation>
 {
-    int _type;
-    IDEContainer<DVTCustomDataStoring> *_archivingContainer;
     DVTCustomDataSpecifier *_archivingDataSpecifier;
     NSString *_archivingContainerItemBaseStandardizedPathString;
-    NSString *_displayName;
     NSMutableArray *_breakpoints;
     BOOL _currentlyDecoding;
+    int _type;
+    IDEContainer<DVTCustomDataStoring> *_archivingContainer;
+    NSString *_displayName;
 }
 
 + (id)keyPathsForValuesAffectingDisplayName;
@@ -27,7 +28,7 @@
 + (id)userGlobalBucket:(id *)arg1;
 + (void)initialize;
 @property(copy, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
-@property(readonly) IDEContainer<DVTCustomDataStoring> *archivingContainer; // @synthesize archivingContainer=_archivingContainer;
+@property(retain) IDEContainer<DVTCustomDataStoring> *archivingContainer; // @synthesize archivingContainer=_archivingContainer;
 @property(readonly) int type; // @synthesize type=_type;
 - (void).cxx_destruct;
 - (void)primitiveInvalidate;

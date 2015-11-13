@@ -4,27 +4,26 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-@class NSDictionary;
+@class NSArray, NSDictionary;
 
 @interface IBCLIOptionIndex : NSObject
 {
     struct option *_longOptions;
     char *_shortOptions;
-    NSDictionary *_optionIndexesByCodes;
-    CDStruct_96d6799e *_descriptions;
-    long long _descriptionCount;
-    CDStruct_ac8ae556 *_alternates;
+    NSDictionary *_optionDescriptionsByCode;
+    NSArray *_descriptions;
+    NSArray *_alternateNames;
     long long _alternatesCount;
 }
 
 - (void).cxx_destruct;
-- (BOOL)getOptionDescription:(CDStruct_96d6799e *)arg1 forCode:(long long)arg2;
+- (id)optionDescriptionForCode:(long long)arg1;
 - (const char *)shortOptions;
 - (struct option *)longOptions;
 - (void)dealloc;
-- (id)initWithDescriptions:(CDStruct_96d6799e *)arg1 count:(long long)arg2 alternateNames:(CDStruct_ac8ae556 *)arg3 count:(long long)arg4;
+- (id)initWithDescriptions:(id)arg1 alternateNames:(id)arg2;
 
 @end
 

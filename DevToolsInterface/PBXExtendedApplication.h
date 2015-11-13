@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSApplication.h"
+#import <AppKit/NSApplication.h>
 
-#import "NSMenuDelegate.h"
+#import <DevToolsInterface/NSMenuDelegate-Protocol.h>
 
 @class NSString, NSWindow;
 

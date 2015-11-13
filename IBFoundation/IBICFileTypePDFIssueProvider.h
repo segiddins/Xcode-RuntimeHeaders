@@ -4,20 +4,17 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "IBICMultipartImageIssueProvider.h"
-#import "NSCoding.h"
+#import <IBFoundation/IBICSlottedAssetIssueProvider-Protocol.h>
 
 @class NSString;
 
-@interface IBICFileTypePDFIssueProvider : NSObject <NSCoding, IBICMultipartImageIssueProvider>
+@interface IBICFileTypePDFIssueProvider : NSObject <IBICSlottedAssetIssueProvider>
 {
 }
 
-- (id)initWithCoder:(id)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (void)populateIssues:(id)arg1 forMultipartImage:(id)arg2 withContext:(id)arg3;
+- (void)populateIssues:(id)arg1 forSlottedAsset:(id)arg2 withContext:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

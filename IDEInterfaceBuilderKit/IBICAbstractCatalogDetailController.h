@@ -4,14 +4,15 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDEViewController.h"
+#import <IDEKit/IDEViewController.h>
 
-#import "DVTMainViewControllerDrawingStrategyDelegate.h"
-#import "IBICCatalogItemObserver.h"
-#import "IBICDetailDocumentViewDelegate.h"
-#import "IBSelectionChannelApplicator.h"
+#import <IDEInterfaceBuilderKit/DVTMainViewControllerDrawingStrategyDelegate-Protocol.h>
+#import <IDEInterfaceBuilderKit/IBICCatalogItemObserver-Protocol.h>
+#import <IDEInterfaceBuilderKit/IBICDetailDocumentViewDelegate-Protocol.h>
+#import <IDEInterfaceBuilderKit/IBSelectionChannelApplicator-Protocol.h>
 
 @class DVTDelayedInvocation, DVTMainViewControllerDrawingStrategy, IBICCatalogDocument, IBICCatalogDocumentEditor, IBICDetailDocumentView, IBICDetailOverlay, IBICDetailPlaceholderView, IBICDetailScrollView, IBSelectionChannel, NSArray, NSSegmentedControl, NSString;
+@protocol DVTInvalidation, IBInvalidation;
 
 @interface IBICAbstractCatalogDetailController : IDEViewController <DVTMainViewControllerDrawingStrategyDelegate, IBICDetailDocumentViewDelegate, IBICCatalogItemObserver, IBSelectionChannelApplicator>
 {
@@ -41,6 +42,7 @@
 @property(readonly) IBICCatalogDocumentEditor *documentEditor; // @synthesize documentEditor=_documentEditor;
 @property(readonly) IBSelectionChannel *selectionChannel; // @synthesize selectionChannel=_selectionChannel;
 - (void).cxx_destruct;
+- (BOOL)isSubEditorExistanceInSyncForItem:(id)arg1;
 - (void)drawsWithKeyAppearanceDidChange;
 - (void)detailDocumentViewLayoutDidComplete:(id)arg1;
 - (void)detailDocumentViewWillLayoutTopDown:(id)arg1;
@@ -60,9 +62,10 @@
 - (void)detailDocumentView:(id)arg1 didTrackContextMenuFromEvent:(id)arg2;
 - (void)detailDocumentView:(id)arg1 willTrackContextMenuFromEvent:(id)arg2;
 - (id)detailDocumentView:(id)arg1 menuForEvent:(id)arg2;
-- (void)documentEditorDidChangeDisplayedMultipartImages;
-@property(readonly) NSArray *displayedMultipartImages;
+- (void)documentEditorDidChangeDisplayedCatalogItems;
+@property(readonly) NSArray *displayedCatalogItems;
 - (void)selectAll:(id)arg1;
+- (void)importImageCatalogContentFromProjectBasedOnSelectionContext:(id)arg1;
 - (id)objectsForSelectAll;
 - (BOOL)validateUserInterfaceItem:(id)arg1;
 - (void)pushSelectionToViews;

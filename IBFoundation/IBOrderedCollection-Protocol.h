@@ -4,9 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IBCollection.h"
+#import <IBFoundation/IBCollection-Protocol.h>
 
 @class NSSet, Protocol;
+@protocol IBCollection, IBOrderedCollection;
 
 @protocol IBOrderedCollection <IBCollection>
 + (id)ib_orderedCollectionWithOrderedCollection:(id <IBOrderedCollection>)arg1;
@@ -24,6 +25,7 @@
 - (id <IBOrderedCollection>)ib_collectionByAddingObject:(id)arg1;
 - (id <IBOrderedCollection>)ib_collectionByAddingObjectsFromCollection:(id <IBCollection>)arg1;
 - (id)ib_collectionByKeepingObjectsInSet:(NSSet *)arg1;
+- (id <IBOrderedCollection>)ib_collectionByMappingAndFilteringWithBlock:(id (^)(id))arg1;
 - (id <IBOrderedCollection>)ib_collectionByRemovingObjectsInSet:(NSSet *)arg1;
 - (id <IBOrderedCollection>)ib_collectionByRemovingObjectsFromCollection:(id <IBCollection>)arg1;
 - (id <IBOrderedCollection>)ib_collectionByMappingBlock:(id (^)(id))arg1;

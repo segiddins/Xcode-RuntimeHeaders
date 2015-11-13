@@ -4,11 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSView.h"
+#import <AppKit/NSView.h>
 
-@class NSArray, NSMutableArray, XCSUIStatusBadge;
+#import <XCSUI/NSAccessibilityStaticText-Protocol.h>
 
-@interface XCSUIStatusBadgesView : NSView
+@class NSArray, NSMutableArray, NSString, XCSUIStatusBadge;
+
+@interface XCSUIStatusBadgesView : NSView <NSAccessibilityStaticText>
 {
     NSMutableArray *_badgeViews;
     XCSUIStatusBadge *_errorsBadge;
@@ -22,11 +24,19 @@
 @property(nonatomic) BOOL insetFirstBadge; // @synthesize insetFirstBadge=_insetFirstBadge;
 @property(copy, nonatomic) NSArray *badges; // @synthesize badges=_badges;
 - (void).cxx_destruct;
+- (id)accessibilityValue;
+- (double)renderedWidth;
 - (void)refreshBadges;
 - (void)resizeSubviewsWithOldSize:(struct CGSize)arg1;
 - (void)placeBadges;
 - (void)removeBadgeSubviews;
 - (void)resetBadgeSelection:(id)arg1 ressetAll:(BOOL)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

@@ -4,19 +4,18 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "DVTTextVisualization.h"
+#import <DVTKit/DVTTextVisualization.h>
 
-@class DVTMapTable, IDEAnalyzerResultsExplorer, NSArray;
+@class IDEAnalyzerResultsExplorer, NSArray, NSMapTable;
 
 @interface IDEAnalyzerResultsVisualization : DVTTextVisualization
 {
-    DVTMapTable *_controlFlowPathsByStep;
+    NSMapTable *_controlFlowPathsByStep;
     struct CGRect _cachedBounds;
     IDEAnalyzerResultsExplorer *_explorer;
 }
 
 @property(readonly) __weak IDEAnalyzerResultsExplorer *explorer; // @synthesize explorer=_explorer;
-- (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)drawOverTextInRect:(struct CGRect)arg1;
 - (void)refresh;

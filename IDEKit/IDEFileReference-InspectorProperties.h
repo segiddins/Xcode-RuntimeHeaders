@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDEFileReference.h"
+#import <IDEFoundation/IDEFileReference.h>
 
 @interface IDEFileReference (InspectorProperties)
 + (id)keyPathsForValuesAffectingIdeInspectedNilResolutionStrategyPlaceholder;
@@ -24,6 +24,8 @@
 - (id)ideInspectedMessageForChoosingRelativeLocation;
 - (BOOL)ideInspectedRelativeLocationShouldChooseDirectory;
 - (BOOL)ideInspectedRelativeLocationShouldChooseFile;
+- (id)ideInspectedAssetTagPlaceholder;
+- (id)ideInspectedPossibleAssetTags;
 - (void)setIdeInspectedAssignedDataType:(id)arg1;
 - (id)ideInspectedAssignedDataType;
 - (BOOL)ideInspectedShowsFileTypePopUp;

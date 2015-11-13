@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSAnimation.h"
+#import <AppKit/NSAnimation.h>
 
-#import "NSAnimationDelegate.h"
+#import <DVTKit/NSAnimationDelegate-Protocol.h>
 
 @class DVTSplitViewItem, NSMutableArray, NSString, NSView;
 

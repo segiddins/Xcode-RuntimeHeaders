@@ -6,9 +6,9 @@
 
 #import <DevToolsInterface/PBXProjectModule.h>
 
-#import "NSComboBoxDelegate.h"
-#import "NSOutlineViewDataSource.h"
-#import "XCSelectionSource.h"
+#import <DevToolsInterface/NSComboBoxDelegate-Protocol.h>
+#import <DevToolsInterface/NSOutlineViewDataSource-Protocol.h>
+#import <DevToolsInterface/XCSelectionSource-Protocol.h>
 
 @class NSButton, NSComboBox, NSMenu, NSPopUpButton, NSScrollView, NSString, NSTextField, NSTimer, NSView, PBXExtendedOutlineView, XCBinderModule, XCBorderView;
 

@@ -4,13 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "DVTInvalidation.h"
-#import "IBDragAndDropInsertionIndicatorDelegate.h"
-#import "IBDragAndDropPolicyDelegate.h"
+#import <IDEInterfaceBuilderKit/DVTInvalidation-Protocol.h>
+#import <IDEInterfaceBuilderKit/IBDragAndDropInsertionIndicatorDelegate-Protocol.h>
+#import <IDEInterfaceBuilderKit/IBDragAndDropPolicyDelegate-Protocol.h>
 
 @class DVTStackBacktrace, IBDocument, IBEditorCanvasFrameController, IBOrderedRelationshipDragAndDropPolicy, NSArray, NSString, NSView;
+@protocol IBDropTargetResolverDelegate;
 
 @interface IBDropTargetResolver : NSObject <IBDragAndDropPolicyDelegate, IBDragAndDropInsertionIndicatorDelegate, DVTInvalidation>
 {

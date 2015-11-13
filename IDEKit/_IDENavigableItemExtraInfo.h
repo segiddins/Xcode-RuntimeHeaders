@@ -4,19 +4,19 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
 @class DVTExtension, NSMapTable, NSString;
 
 @interface _IDENavigableItemExtraInfo : NSObject
 {
     DVTExtension *_representedExtension;
-    NSMapTable *_navigableItemsByRepresentedObject;
     NSString *_childItemsKeyPath;
+    NSMapTable *_navigableItemsByRepresentedObject;
 }
 
-@property(copy) NSString *childItemsKeyPath; // @synthesize childItemsKeyPath=_childItemsKeyPath;
 @property(readonly) NSMapTable *navigableItemsByRepresentedObject; // @synthesize navigableItemsByRepresentedObject=_navigableItemsByRepresentedObject;
+@property(copy) NSString *childItemsKeyPath; // @synthesize childItemsKeyPath=_childItemsKeyPath;
 @property(retain) DVTExtension *representedExtension; // @synthesize representedExtension=_representedExtension;
 - (void).cxx_destruct;
 - (id)init;

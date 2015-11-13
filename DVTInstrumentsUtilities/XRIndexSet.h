@@ -4,11 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "NSCopying.h"
+#import <DVTInstrumentsUtilities/NSCopying-Protocol.h>
+#import <DVTInstrumentsUtilities/NSMutableCopying-Protocol.h>
 
-@interface XRIndexSet : NSObject <NSCopying>
+@interface XRIndexSet : NSObject <NSCopying, NSMutableCopying>
 {
     struct _XRIndexRange _range;
     struct _XRIndexRange *_rangeArray;
@@ -26,6 +27,7 @@
 - (unsigned long long)firstIndex;
 - (unsigned long long)count;
 - (unsigned long long)_queryRange:(struct _XRIndexRange)arg1;
+- (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)dealloc;
 - (id)initWithIndexes:(struct _XRIndexRange)arg1;

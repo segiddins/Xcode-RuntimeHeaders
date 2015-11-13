@@ -4,11 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <IDEKit/NSObject-Protocol.h>
 
 @class IDERunDestination;
 
 @protocol IDERunDestinationRepresentedObject <NSObject>
+@property(readonly) BOOL isWatchDestination;
 @property(readonly) IDERunDestination *runDestination;
 @end
 

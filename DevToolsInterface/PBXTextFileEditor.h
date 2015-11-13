@@ -6,12 +6,13 @@
 
 #import <DevToolsInterface/PBXFileEditor.h>
 
-#import "NSTextViewDelegate.h"
-#import "PBXEditorSelectedSymbol.h"
-#import "PBXIncrementalFindable.h"
-#import "PBXTrackableTaskObserver.h"
+#import <DevToolsInterface/NSTextViewDelegate-Protocol.h>
+#import <DevToolsInterface/PBXEditorSelectedSymbol-Protocol.h>
+#import <DevToolsInterface/PBXIncrementalFindable-Protocol.h>
+#import <DevToolsInterface/PBXTrackableTaskObserver-Protocol.h>
 
-@class NSLayoutManager, NSString, NSTextView<XCTextViewAdditions>, PBXCodeAssistant, PBXControlScrollView, XCTextMacroSpecification;
+@class NSLayoutManager, NSString, NSTextView, PBXCodeAssistant, PBXControlScrollView, XCTextMacroSpecification;
+@protocol XCTextViewAdditions;
 
 @interface PBXTextFileEditor : PBXFileEditor <NSTextViewDelegate, PBXIncrementalFindable, PBXEditorSelectedSymbol, PBXTrackableTaskObserver>
 {

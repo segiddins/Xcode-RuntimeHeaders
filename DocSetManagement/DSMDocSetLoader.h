@@ -4,11 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "DTFileSystemEventStreamDelegate.h"
+#import <DocSetManagement/DTFileSystemEventStreamDelegate-Protocol.h>
 
 @class DTFileSystemEventStream, NSArray, NSMutableArray, NSMutableDictionary, NSString;
+@protocol DSMSubscriptionUpdateProtocol;
 
 @interface DSMDocSetLoader : NSObject <DTFileSystemEventStreamDelegate>
 {

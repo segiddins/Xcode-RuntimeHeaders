@@ -6,9 +6,12 @@
 
 #import <IDEFoundation/IDELocalizationWorkContext.h>
 
-@class IDEContainer<IDELocalizedContainer>, IDELocalizedResourcePopulationContext, NSString, NSURL, NSXMLDocument;
+#import <IDEFoundation/IDELocalizationWorkProvider-Protocol.h>
 
-@interface IDELocalizationLanguageExportContext : IDELocalizationWorkContext
+@class IDEContainer, IDELocalizedResourcePopulationContext, NSString, NSURL, NSXMLDocument;
+@protocol IDELocalizedContainer;
+
+@interface IDELocalizationLanguageExportContext : IDELocalizationWorkContext <IDELocalizationWorkProvider>
 {
     IDELocalizedResourcePopulationContext *_populationContext;
     NSURL *_destinationUrl;
@@ -18,6 +21,7 @@
     NSXMLDocument *_exportXLIFF;
 }
 
++ (id)contextWithParent:(id)arg1 populationContext:(id)arg2 destinationUrl:(id)arg3 container:(id)arg4 sourceLanguage:(id)arg5 targetLanguage:(id)arg6;
 @property(retain) NSXMLDocument *exportXLIFF; // @synthesize exportXLIFF=_exportXLIFF;
 @property(retain) NSString *targetLanguage; // @synthesize targetLanguage=_targetLanguage;
 @property(retain) NSString *sourceLanguage; // @synthesize sourceLanguage=_sourceLanguage;
@@ -25,6 +29,7 @@
 @property(retain) NSURL *destinationUrl; // @synthesize destinationUrl=_destinationUrl;
 @property(retain) IDELocalizedResourcePopulationContext *populationContext; // @synthesize populationContext=_populationContext;
 - (void).cxx_destruct;
+- (id)work;
 - (void)primitiveInvalidate;
 
 @end

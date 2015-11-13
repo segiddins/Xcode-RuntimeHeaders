@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
 @class DVTExtension, DVTSourceLandmarkItem, IBConnection, IBDocument, IDEWorkspaceDocument, NSArray, NSError, NSString, NSURL;
 
@@ -44,7 +44,6 @@
     struct _NSRange _range;
 }
 
-+ (Class)sourceCodeGeneratorClass;
 + (id)targetCandidatesForContainingClassNamed:(id)arg1 toObject:(id)arg2 document:(id)arg3 preferredTarget:(id *)arg4;
 + (id)defaultType;
 @property(retain) NSError *insertionError; // @synthesize insertionError=_insertionError;

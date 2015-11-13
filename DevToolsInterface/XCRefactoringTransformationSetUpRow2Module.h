@@ -6,7 +6,7 @@
 
 #import <DevToolsInterface/PBXProjectModule.h>
 
-#import "XCRefactoringTransformationSetUpModule.h"
+#import <DevToolsInterface/XCRefactoringTransformationSetUpModule-Protocol.h>
 
 @class XCRefactoringTransformationSetUpModule;
 

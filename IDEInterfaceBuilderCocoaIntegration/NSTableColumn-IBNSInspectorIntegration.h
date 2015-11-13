@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSTableColumn.h"
+#import <AppKit/NSTableColumn.h>
 
 @interface NSTableColumn (IBNSInspectorIntegration)
 + (id)keyPathsForValuesAffectingIbInspectedToolTip;
@@ -47,6 +47,7 @@
 - (id)ibOrderedSnapshotAttributesKeyPaths;
 - (id)ibPasteboardTypes;
 - (Class)ibEditorClass;
+- (id)ibDocumentationPropertyInfosForKeyPath:(id)arg1;
 - (BOOL)ibCanRemoveChildren:(id)arg1;
 - (BOOL)ibCanBeBoundToFromObject:(id)arg1;
 - (void)ibPopulateChildRelationOrder:(id)arg1;

@@ -6,7 +6,7 @@
 
 #import <DevToolsInterface/PBXInspectorPaneModule.h>
 
-#import "NSTableViewDataSource.h"
+#import <DevToolsInterface/NSTableViewDataSource-Protocol.h>
 
 @class NSButton, NSMutableArray, NSString, PBXExtendedTableView, PBXProject;
 

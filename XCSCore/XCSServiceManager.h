@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
 @class NSArray;
 
@@ -22,7 +22,7 @@
 - (id)_localCachePath:(id *)arg1;
 - (id)serviceMatchingClientUUID:(id)arg1;
 - (void)removeService:(id)arg1 withCompletionBlock:(CDUnknownBlockType)arg2;
-- (void)addService:(id)arg1 withCompletionBlock:(CDUnknownBlockType)arg2;
+- (void)addNewService:(id)arg1 withCompletionBlock:(CDUnknownBlockType)arg2;
 
 @end
 

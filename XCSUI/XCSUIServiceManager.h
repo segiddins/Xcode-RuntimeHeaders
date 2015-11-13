@@ -4,17 +4,19 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "XCSServiceManager.h"
+#import <XCSCore/XCSServiceManager.h>
 
-#import "IDEContinuousIntegrationServiceManager.h"
-#import "NSURLConnectionDataDelegate.h"
+#import <XCSUI/IDEContinuousIntegrationServiceManager-Protocol.h>
+#import <XCSUI/NSURLConnectionDataDelegate-Protocol.h>
 
-@class NSArray, NSMutableArray, NSString;
+@class NSArray, NSMutableArray, NSString, NSTimer;
 
 @interface XCSUIServiceManager : XCSServiceManager <NSURLConnectionDataDelegate, IDEContinuousIntegrationServiceManager>
 {
-    NSMutableArray *_hostNameFetchers;
     NSArray *_services;
+    NSMutableArray *_pendingServices;
+    NSTimer *_delayedUpdateServicesTimer;
+    BOOL _didRead;
     NSArray *services;
     NSArray *_enabledAndDisabledServices;
     NSString *_localCachePath;
@@ -25,13 +27,17 @@
 @property(copy, nonatomic) NSArray *enabledAndDisabledServices; // @synthesize enabledAndDisabledServices=_enabledAndDisabledServices;
 @property(copy, nonatomic) NSArray *services; // @synthesize services;
 - (void).cxx_destruct;
-- (void)writeServicesToLocalCacheWithCompletionBlock:(CDUnknownBlockType)arg1;
-- (void)readServicesFromLocalCacheWithCompletionBlock:(CDUnknownBlockType)arg1;
-- (void)removeAllServicesWithCompletionBlock:(CDUnknownBlockType)arg1;
-- (id)_localCachePath:(id *)arg1;
+- (id)existingServiceMatchingConnectionAddress:(id)arg1;
+- (id)existingServiceMatchingNetServiceName:(id)arg1;
 - (id)serviceMatchingClientUUID:(id)arg1;
+- (id)serviceMatchingURLString:(id)arg1;
+- (void)disableService:(id)arg1;
+- (void)enableService:(id)arg1;
+- (void)readServicesFromLocalCacheWithCompletionBlock:(CDUnknownBlockType)arg1;
+- (id)_localCachePath:(id *)arg1;
+- (void)writeServicesToLocalCacheWithCompletionBlock:(CDUnknownBlockType)arg1;
+- (void)addNewService:(id)arg1 withCompletionBlock:(CDUnknownBlockType)arg2;
 - (void)removeService:(id)arg1 withCompletionBlock:(CDUnknownBlockType)arg2;
-- (void)addService:(id)arg1 withCompletionBlock:(CDUnknownBlockType)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

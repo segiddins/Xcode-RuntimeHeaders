@@ -4,12 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "GPUTraceDisplaySet.h"
-#import "GPUTraceFramebuffer.h"
+#import <GPUDebuggerMTLSupport/GPUTraceDisplaySet-Protocol.h>
+#import <GPUDebuggerMTLSupport/GPUTraceFramebuffer-Protocol.h>
 
 @class NSArray, NSMutableDictionary, NSString;
+@protocol DYFrameBuffer, DYResource;
 
 __attribute__((visibility("hidden")))
 @interface GPUMTLTraceFramebuffer : NSObject <GPUTraceFramebuffer, GPUTraceDisplaySet>

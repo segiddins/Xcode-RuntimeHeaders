@@ -6,12 +6,13 @@
 
 #import <DVTKit/DVTViewController.h>
 
-#import "DVTPlistOutlineViewDelegate.h"
-#import "DVTPlistViewControllerProtocol.h"
-#import "NSOutlineViewDataSource.h"
-#import "NSUserInterfaceValidations.h"
+#import <DVTKit/DVTPlistOutlineViewDelegate-Protocol.h>
+#import <DVTKit/DVTPlistViewControllerProtocol-Protocol.h>
+#import <DVTKit/NSOutlineViewDataSource-Protocol.h>
+#import <DVTKit/NSUserInterfaceValidations-Protocol.h>
 
-@class DVTNonLossyASCIIFormatter, DVTNotificationToken, DVTPlistComboBoxCell, DVTPlistDataFormatter, DVTPlistNode, DVTPlistOutlineView, DVTPlistSelection, DVTPlistTextFieldCell, DVTPlistTitledPopupCell, NSArray, NSButtonCell, NSDateFormatter, NSDictionary, NSDocument<DVTPlistDocumentProtocol>, NSMutableSet, NSPopUpButtonCell, NSScrollView, NSString, NSTableHeaderView;
+@class DVTNonLossyASCIIFormatter, DVTNotificationToken, DVTPlistComboBoxCell, DVTPlistDataFormatter, DVTPlistNode, DVTPlistOutlineView, DVTPlistSelection, DVTPlistTextFieldCell, DVTPlistTitledPopupCell, NSArray, NSButtonCell, NSDateFormatter, NSDictionary, NSDocument, NSMutableSet, NSPopUpButtonCell, NSScrollView, NSString, NSTableHeaderView;
+@protocol DVTPlistDocumentProtocol, DVTPlistViewControllerDelegate;
 
 @interface DVTPlistViewController : DVTViewController <DVTPlistViewControllerProtocol, DVTPlistOutlineViewDelegate, NSOutlineViewDataSource, NSUserInterfaceValidations>
 {
@@ -80,7 +81,6 @@
 - (void)outlineViewColumnDidResize:(id)arg1;
 - (void)_outlineViewFrameChanged:(id)arg1;
 - (BOOL)control:(id)arg1 textShouldEndEditing:(id)arg2;
-- (void)invalidEntryAlertDidEnd:(id)arg1 returnCode:(long long)arg2 contextInfo:(void *)arg3;
 - (BOOL)control:(id)arg1 didFailToFormatString:(id)arg2 errorDescription:(id)arg3;
 - (id)outlineView:(id)arg1 dataCellForTableColumn:(id)arg2 item:(id)arg3;
 - (void)outlineView:(id)arg1 willDisplayCell:(id)arg2 forTableColumn:(id)arg3 item:(id)arg4;

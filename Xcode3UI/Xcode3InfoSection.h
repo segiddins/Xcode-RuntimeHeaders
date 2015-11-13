@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "Xcode3ImageViewDelegate.h"
+#import <Xcode3UI/Xcode3ImageViewDelegate-Protocol.h>
 
 @class NSArray, NSDictionary, NSMutableArray, NSString, Xcode3ImageView, Xcode3InfoDictionaryColumnViewController, Xcode3InfoDictionarySliceController;
 

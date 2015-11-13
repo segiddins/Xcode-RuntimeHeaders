@@ -4,14 +4,15 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDEInspectorProperty.h"
+#import <IDEKit/IDEInspectorProperty.h>
 
-#import "IBInspectorReferencingConstraintViewControllerDelegate.h"
-#import "IBSelectionOwnerDelegate.h"
-#import "NSMenuDelegate.h"
-#import "NSPopoverDelegate.h"
+#import <IDEInterfaceBuilderKit/IBInspectorReferencingConstraintViewControllerDelegate-Protocol.h>
+#import <IDEInterfaceBuilderKit/IBSelectionOwnerDelegate-Protocol.h>
+#import <IDEInterfaceBuilderKit/NSMenuDelegate-Protocol.h>
+#import <IDEInterfaceBuilderKit/NSPopoverDelegate-Protocol.h>
 
 @class DVTStackView_ML, IBCancellationToken, IBInspectorReferencingConstraintViewController, IBMutableIdentityDictionary, IBReferencingConstraintsFilter, IBSelectionOwner, IDEInspectorKeyPath, NSArray, NSButton, NSLayoutConstraint, NSMutableSet, NSPopover, NSString, NSTextField, NSView;
+@protocol DVTCancellable, DVTInvalidation;
 
 @interface IBReferencingConstraintsInspectorProperty : IDEInspectorProperty <IBInspectorReferencingConstraintViewControllerDelegate, NSPopoverDelegate, NSMenuDelegate, IBSelectionOwnerDelegate>
 {

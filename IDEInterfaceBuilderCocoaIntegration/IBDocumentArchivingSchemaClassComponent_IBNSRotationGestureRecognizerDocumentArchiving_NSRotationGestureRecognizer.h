@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IBDocumentArchivingSchemaClassComponent.h"
+#import <IDEInterfaceBuilderKit/IBDocumentArchivingSchemaClassComponent.h>
 
 @interface IBDocumentArchivingSchemaClassComponent_IBNSRotationGestureRecognizerDocumentArchiving_NSRotationGestureRecognizer : IBDocumentArchivingSchemaClassComponent
 {
@@ -14,7 +14,6 @@
 - (id)schemaIdentifier;
 - (id)elementName;
 - (Class)archivableClass;
-- (id)minimumRequiredRuntimeOSVersion;
 
 @end
 

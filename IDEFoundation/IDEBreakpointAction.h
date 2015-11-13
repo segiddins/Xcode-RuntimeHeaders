@@ -4,18 +4,17 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "DVTXMLUnarchiving.h"
+#import <IDEFoundation/DVTXMLUnarchiving-Protocol.h>
 
 @class NSArray, NSMutableArray, NSString;
 
 @interface IDEBreakpointAction : NSObject <DVTXMLUnarchiving>
 {
-    NSString *_displayName;
     NSArray *_expressions;
     BOOL _displayable;
-    BOOL _displyable;
+    NSString *_displayName;
 }
 
 + (id)_expressionsInString:(id)arg1;
@@ -23,8 +22,8 @@
 + (id)_replace:(id)arg1 with:(id)arg2 inString:(id)arg3;
 + (id)_expandMacrosInString:(id)arg1 usingBreakpoint:(id)arg2;
 + (void)initialize;
+@property(getter=isDisplayable) BOOL displayable; // @synthesize displayable=_displayable;
 @property(copy) NSString *displayName; // @synthesize displayName=_displayName;
-@property(getter=isDisplayable) BOOL displayable; // @synthesize displayable=_displyable;
 - (void).cxx_destruct;
 - (id)initFromXMLUnarchiver:(id)arg1 archiveVersion:(float)arg2;
 - (id)_expandExpressionsInString:(id)arg1;

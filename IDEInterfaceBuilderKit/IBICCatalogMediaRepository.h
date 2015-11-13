@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDEContainerContentsMediaRepository.h"
+#import <IDEKit/IDEContainerContentsMediaRepository.h>
 
-#import "IBICCatalogItemObserver.h"
+#import <IDEInterfaceBuilderKit/IBICCatalogItemObserver-Protocol.h>
 
 @class DVTDelayedInvocation, IBMutableIdentityDictionary, NSMutableDictionary, NSMutableSet, NSString;
 
@@ -17,7 +17,7 @@
     NSMutableSet *_resources;
     NSMutableDictionary *_catalogsByPath;
     IBMutableIdentityDictionary *_observationTokensByCatalogs;
-    IBMutableIdentityDictionary *_imageCatalogsToRepsToMediaResources;
+    IBMutableIdentityDictionary *_imageCatalogsToProvidersToMediaResources;
     IBMutableIdentityDictionary *_imageCatalogsToRepsWithChanges;
     DVTDelayedInvocation *_catalogChangeValidator;
 }
@@ -39,10 +39,9 @@
 - (void)expungResourcesFromCatalog:(id)arg1;
 - (void)importInitialResourcesFromCatalog:(id)arg1;
 - (BOOL)hasResourceForImageRep:(id)arg1 fromCatalog:(id)arg2;
-- (id)mediaResourceForImageRep:(id)arg1 fromCatalog:(id)arg2;
-- (void)removeImageRep:(id)arg1 fromCatalog:(id)arg2;
-- (void)addImageRep:(id)arg1 fromCatalog:(id)arg2;
-- (BOOL)shouldIncludeRep:(id)arg1;
+- (id)mediaResourceForMediaResourceProvider:(id)arg1 fromCatalog:(id)arg2;
+- (void)removeMediaResourceProvider:(id)arg1 fromCatalog:(id)arg2;
+- (void)addMediaResourceProvider:(id)arg1 fromCatalog:(id)arg2;
 - (void)imageCatalogItem:(id)arg1 didChangeKey:(id)arg2 fromValue:(id)arg3 toValue:(id)arg4;
 - (id)resources;
 - (void)primitiveInvalidate;

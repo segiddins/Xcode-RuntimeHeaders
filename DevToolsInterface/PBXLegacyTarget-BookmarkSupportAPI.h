@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "PBXLegacyTarget.h"
+#import <DevToolsCore/PBXLegacyTarget.h>
 
-#import "PBXBookmarkSupport.h"
+#import <DevToolsInterface/PBXBookmarkSupport-Protocol.h>
 
 @interface PBXLegacyTarget (BookmarkSupportAPI) <PBXBookmarkSupport>
 - (id)bookmark;

@@ -6,6 +6,8 @@
 
 #import <DevToolsCore/XCBuildLogSection.h>
 
+@protocol XCBuildables;
+
 @interface XCBuildLogTargetSection : XCBuildLogSection
 {
     id <XCBuildables> _buildable;

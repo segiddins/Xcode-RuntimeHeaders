@@ -6,7 +6,7 @@
 
 #import <DVTKit/DVTGradientImageButton.h>
 
-#import "DVTInvalidation.h"
+#import <DVTKit/DVTInvalidation-Protocol.h>
 
 @class DVTStackBacktrace, NSString;
 

@@ -4,12 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "IDEVariablesViewContentProvider.h"
-#import "IDEVariablesViewContextMenuDelegate.h"
+#import <DebuggerUI/IDEVariablesViewContentProvider-Protocol.h>
+#import <DebuggerUI/IDEVariablesViewContextMenuDelegate-Protocol.h>
 
-@class DBGDebugSession, DBGStackFrame, DVTNotificationToken, DVTObservingToken, DVTStackBacktrace, IDEVariablesView, NSButton, NSMutableArray, NSMutableDictionary, NSMutableSet, NSOrderedSet, NSString;
+@class DBGDebugSession, DBGStackFrame, DVTNotificationToken, DVTObservingToken, DVTStackBacktrace, IDEVariablesView, NSButton, NSMutableDictionary, NSMutableSet, NSOrderedSet, NSString;
+@protocol IDEVariablesViewContextMenuDelegate;
 
 @interface DBGVariablesViewContentProvider : NSObject <IDEVariablesViewContextMenuDelegate, IDEVariablesViewContentProvider>
 {
@@ -18,16 +19,19 @@
     BOOL _requestedAutos;
     BOOL _autosIndexQueryFailed;
     unsigned long long _generation;
-    NSMutableArray *_expressions;
     NSMutableDictionary *_variablesAskedForByNameToDataValue;
     NSMutableSet *_varialbesBeingAskedForByName;
     NSOrderedSet *_autosSymbols;
+    DVTObservingToken *_debugSessionObserverToken;
+    DVTObservingToken *_coalecesedStateObserverToken;
+    DVTObservingToken *_debugSessionValidityObserverToken;
     DVTObservingToken *_framePointerObserverToken;
     DVTObservingToken *_returnValueObserverToken;
     DVTObservingToken *_returnValueIsValidObserverToken;
     DVTObservingToken *_argumentsObserverToken;
     DVTObservingToken *_localsObserverToken;
     DVTObservingToken *_fileStaticsObserverToken;
+    DVTObservingToken *_globalsObserverToken;
     DVTObservingToken *_registersObserverToken;
     DVTNotificationToken *_outlineViewSelectionObserver;
     DVTNotificationToken *_outlineViewDidHideObserver;
@@ -55,6 +59,9 @@
 - (BOOL)deleteNode:(id)arg1;
 - (id)_createPrintDescriptionButton;
 - (void)provideScopeChoices:(id)arg1;
+- (void)_uninstallObserversForUIVisibleWork;
+- (void)_installObserversForNewDebugSession:(id)arg1;
+- (void)_installObserversForUIVisibleWork;
 - (void)providerWasInstalledForVariablesView:(id)arg1;
 @property(readonly) BOOL supportsShowingRawValues;
 @property(readonly) CDUnknownBlockType nodeSortComparator;
@@ -80,8 +87,8 @@
 - (void)_persistExpressionString:(id)arg1 forAllStackFrames:(BOOL)arg2;
 - (void)_deleteExpressionNode:(id)arg1;
 - (id)_addExpressionNode:(id)arg1 forAllStackFrames:(BOOL)arg2;
-- (id)_addExpressionNodeToBackingArray:(id)arg1;
 - (id)_customExpressions;
+- (BOOL)_canCreateExpressionsArray;
 - (unsigned long long)_convertCurrentStackFramesLineNumberToEditorDocumentLineNumber:(id)arg1;
 - (id)_locationToUseForAutoSymbolsRequestInEditorDocument:(id)arg1;
 - (void)_handleAutosIndexQuerySucceeded:(id)arg1;
@@ -96,6 +103,7 @@
 - (id)_createNodeFromIndexSymbol:(id)arg1;
 - (id)_manualVariablesList;
 - (id)_autoVariablesList;
+- (BOOL)_autoVariablesListReady;
 - (void)_filteredListNeedsUpdatingImmediately;
 - (void)_filteredListNeedsUpdating;
 @property(readonly) NSString *contextNameForCurrentStackFrame;
@@ -114,6 +122,7 @@
 - (void)printDescriptionFromButton:(id)arg1;
 - (void)printDescription:(id)arg1;
 @property(readonly) BOOL showsRegisters;
+@property(readonly) BOOL showsGlobals;
 @property(readonly) BOOL showsFileStatics;
 @property(readonly) BOOL showsArguments;
 @property(readonly) BOOL showsLocals;

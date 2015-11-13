@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
 @class NSNumber, NSString;
 
@@ -37,6 +37,7 @@
 - (id)initWithDeviceRecord:(id)arg1;
 - (id)initWithDevice:(id)arg1;
 - (id)initWithPlatformIdentifier:(id)arg1 modelCode:(id)arg2 cpuKind:(id)arg3 cpuCount:(id)arg4 cpuSpeedInMHz:(id)arg5 busSpeedInMHz:(id)arg6 physicalCPUCoresPerPackage:(id)arg7 logicalCPUCoresPerPackage:(id)arg8;
+- (id)init;
 
 @end
 

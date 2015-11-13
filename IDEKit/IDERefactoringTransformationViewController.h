@@ -6,9 +6,10 @@
 
 #import <IDEKit/IDERefactoringViewController.h>
 
-#import "NSTextFieldDelegate.h"
+#import <IDEKit/NSTextFieldDelegate-Protocol.h>
 
 @class IDEIndexSymbol, IDERefactoringInputValidator, NSDictionary, NSString;
+@protocol IDERefactoringReservedWordChecking;
 
 @interface IDERefactoringTransformationViewController : IDERefactoringViewController <NSTextFieldDelegate>
 {

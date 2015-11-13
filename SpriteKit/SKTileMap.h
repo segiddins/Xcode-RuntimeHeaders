@@ -6,7 +6,7 @@
 
 #import <SpriteKit/SKNode.h>
 
-#import "NSXMLParserDelegate.h"
+#import <SpriteKit/NSXMLParserDelegate-Protocol.h>
 
 @class NSMutableArray, NSString, NSXMLParser;
 

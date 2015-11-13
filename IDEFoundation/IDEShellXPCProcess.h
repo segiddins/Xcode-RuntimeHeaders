@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "IDEDebugTopNavigableModel.h"
+#import <IDEFoundation/IDEDebugTopNavigableModel-Protocol.h>
 
 @class DVTStackBacktrace, IDEDebugSession, IDELaunchSession, NSArray, NSString;
 
@@ -17,6 +17,7 @@
     NSString *_name;
 }
 
++ (void)initialize;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly) IDELaunchSession *launchSession; // @synthesize launchSession;
 - (void).cxx_destruct;
@@ -24,6 +25,7 @@
 - (id)contentDelegateUIExtensionIdentifier;
 @property(readonly, copy) NSString *associatedProcessUUID; // @synthesize associatedProcessUUID=_associatedProcessUUID;
 - (id)initWithDebugSession:(id)arg1 name:(id)arg2;
+- (id)init;
 
 // Remaining properties
 @property(retain) DVTStackBacktrace *creationBacktrace;
@@ -33,6 +35,7 @@
 @property(readonly) DVTStackBacktrace *invalidationBacktrace;
 @property(readonly, nonatomic) NSArray *loadedCodeModules;
 @property(readonly, nonatomic) IDEDebugSession *parentDebugSession;
+@property(readonly) NSString *subtitle;
 @property(readonly) Class superclass;
 @property(readonly, nonatomic, getter=isValid) BOOL valid;
 

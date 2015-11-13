@@ -4,9 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <Foundation/NSObject.h>
 
 @class DYRenderingAttributes, GPUTraceModelFactory, NSString;
+@protocol DYResource;
 
 @interface GPURenderJob : NSObject
 {
@@ -27,6 +28,7 @@
 - (BOOL)isColor;
 - (BOOL)flipped;
 - (struct CGSize)imageSize;
+- (void)resolveWithTraceResourceItem:(id)arg1;
 - (id)initWithResource:(id)arg1 modelFactory:(id)arg2 renderingAttributes:(id)arg3 overlayResource:(id)arg4;
 
 // Remaining properties

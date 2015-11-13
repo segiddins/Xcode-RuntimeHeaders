@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSFileWrapper.h"
+#import <Foundation/NSFileWrapper.h>
 
 @interface NSFileWrapper (IBFileWrapperAdditions)
 + (id)ib_unnamedFileWrapperWithContentsOfPath:(id)arg1 error:(id *)arg2;

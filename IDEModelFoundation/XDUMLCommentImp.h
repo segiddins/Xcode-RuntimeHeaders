@@ -6,7 +6,7 @@
 
 #import <IDEModelFoundation/XDUMLElementImp.h>
 
-#import "XDUMLComment.h"
+#import <IDEModelFoundation/XDUMLComment-Protocol.h>
 
 @class NSString;
 

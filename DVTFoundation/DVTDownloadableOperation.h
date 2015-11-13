@@ -6,7 +6,7 @@
 
 #import <DVTFoundation/DVTOperation.h>
 
-#import "DVTProgressReporting.h"
+#import <DVTFoundation/DVTProgressReporting-Protocol.h>
 
 @class NSString;
 

@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <IDEKit/NSObject-Protocol.h>
 
 @class DVTDocumentLocation, IDENavigableItem, IDENavigatorDataCell, IDENavigatorOutlineView, IDEReviewFilesNavigator, NSArray;
 
@@ -17,6 +17,7 @@
 - (NSArray *)workspaceNavigableItems;
 
 @optional
+- (BOOL)reviewFilesNavigator:(IDEReviewFilesNavigator *)arg1 outlineView:(IDENavigatorOutlineView *)arg2 showCheckboxForNavigableItem:(IDENavigableItem *)arg3;
 - (double)reviewFilesNavigator:(IDEReviewFilesNavigator *)arg1 outlineView:(IDENavigatorOutlineView *)arg2 rowHeightForNavigableItem:(IDENavigableItem *)arg3;
 - (void)reviewFilesNavigator:(IDEReviewFilesNavigator *)arg1 outlineView:(IDENavigatorOutlineView *)arg2 willDisplayCell:(id)arg3 forNavigableItem:(IDENavigableItem *)arg4;
 - (NSArray *)reviewFilesNavigator:(IDEReviewFilesNavigator *)arg1 importantFilePathsForNavigableItem:(IDENavigableItem *)arg2 excludingDisabledItems:(NSArray *)arg3;

@@ -4,10 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "DVTInvalidation.h"
-#import "IDEKeyDrivenNavigableItemRepresentedObject.h"
+#import <DebuggerUI/DVTInvalidation-Protocol.h>
+#import <DebuggerUI/IDEKeyDrivenNavigableItemRepresentedObject-Protocol.h>
 
 @class DBGThread, DVTDocumentLocation, DVTFileDataType, DVTObservingToken, DVTStackBacktrace, IDEFileReference, NSArray, NSImage, NSString;
 
@@ -23,7 +23,7 @@
 + (id)keyPathsForValuesAffectingNavigableItem_name;
 @property(nonatomic) BOOL temporarilyCreatedForGeniusFinder; // @synthesize temporarilyCreatedForGeniusFinder=_temporarilyCreatedForGeniusFinder;
 @property(copy, nonatomic) NSArray *disassemblyItems; // @synthesize disassemblyItems=_disassemblyItems;
-@property(readonly) DBGThread *thread; // @synthesize thread=_thread;
+@property(retain) DBGThread *thread; // @synthesize thread=_thread;
 - (void).cxx_destruct;
 - (void)primitiveInvalidate;
 @property(readonly) NSImage *navigableItem_image;

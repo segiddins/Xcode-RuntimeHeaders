@@ -6,10 +6,11 @@
 
 #import <DVTKit/DVTLayoutView_ML.h>
 
-#import "DVTEditor.h"
-#import "DVTInvalidation.h"
+#import <DVTKit/DVTEditor-Protocol.h>
+#import <DVTKit/DVTInvalidation-Protocol.h>
 
 @class DVTExtension, DVTStackBacktrace, DVTViewController, NSMapTable, NSString;
+@protocol DVTReplacementViewDelegate;
 
 @interface DVTReplacementView : DVTLayoutView_ML <DVTEditor, DVTInvalidation>
 {
@@ -37,9 +38,9 @@
 
 + (void)initialize;
 @property BOOL isGrouped; // @synthesize isGrouped=_isGrouped;
-@property(nonatomic) Class controllerClass; // @synthesize controllerClass=_controllerClass;
 @property(nonatomic) int verticalContentViewResizingMode; // @synthesize verticalContentViewResizingMode=_verticalContentViewResizingMode;
 @property(nonatomic) int horizontalContentViewResizingMode; // @synthesize horizontalContentViewResizingMode=_horizontalContentViewResizingMode;
+@property(nonatomic) Class controllerClass; // @synthesize controllerClass=_controllerClass;
 - (void).cxx_destruct;
 - (void)discardEditing;
 - (BOOL)commitEditingForAction:(int)arg1 errors:(id)arg2;

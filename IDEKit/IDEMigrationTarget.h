@@ -4,9 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
 @class NSArray, NSImage, NSMutableArray, NSString;
+@protocol IDEBlueprint;
 
 @interface IDEMigrationTarget : NSObject
 {
@@ -20,6 +21,7 @@
 @property(readonly) id <IDEBlueprint> blueprint; // @synthesize blueprint=_blueprint;
 - (void).cxx_destruct;
 @property(readonly) BOOL buildsWithXCTest;
+- (BOOL)_buildsAgainstFrameworkWithName:(id)arg1;
 @property(readonly) BOOL buildsWithClang;
 @property(readonly) BOOL buildsValidArchtectures;
 @property(readonly, copy) NSString *warningMessage;

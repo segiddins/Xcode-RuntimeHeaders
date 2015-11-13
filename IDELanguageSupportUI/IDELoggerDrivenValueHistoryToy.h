@@ -7,6 +7,7 @@
 #import <IDELanguageSupportUI/IDEValueHistoryToy.h>
 
 @class DVTTextDocumentLocation, IDEValueHistoryToyResultAssociationMonitor, NSError;
+@protocol IDEToyRegistrationToken;
 
 @interface IDELoggerDrivenValueHistoryToy : IDEValueHistoryToy
 {

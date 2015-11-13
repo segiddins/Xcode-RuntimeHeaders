@@ -4,10 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IBAbstractStoryboardSegueTemplate.h"
+#import <IDEInterfaceBuilderKit/IBAbstractStoryboardSegueTemplate.h>
 
-#import "IBDocumentArchiving.h"
-#import "NSCoding.h"
+#import <IDEInterfaceBuilderCocoaIntegration/IBDocumentArchiving-Protocol.h>
+#import <IDEInterfaceBuilderCocoaIntegration/NSCoding-Protocol.h>
 
 @class NSStoryboard, NSString;
 

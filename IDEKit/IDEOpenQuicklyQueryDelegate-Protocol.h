@@ -4,11 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <IDEKit/NSObject-Protocol.h>
 
 @class IDEOpenQuicklyQuery;
 
 @protocol IDEOpenQuicklyQueryDelegate <NSObject>
 - (void)openQuicklyQueryDidUpdate:(IDEOpenQuicklyQuery *)arg1;
+- (void)openQuicklyQueryWillUpdate:(IDEOpenQuicklyQuery *)arg1;
 @end
 

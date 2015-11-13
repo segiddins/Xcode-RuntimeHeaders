@@ -4,12 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSTableView.h"
+#import <AppKit/NSTableView.h>
 
-#import "NSTableViewDataSource.h"
-#import "NSTableViewDelegate.h"
+#import <GPURenderTargetEditor/NSTableViewDataSource-Protocol.h>
+#import <GPURenderTargetEditor/NSTableViewDelegate-Protocol.h>
 
 @class NSColor, NSFont, NSMenu, NSMenuItem, NSMutableDictionary, NSString, NSTextField;
+@protocol GPUDataTableViewDataProvider, GPUDataTableViewDelegate;
 
 __attribute__((visibility("hidden")))
 @interface GPUDataTableView : NSTableView <NSTableViewDataSource, NSTableViewDelegate>

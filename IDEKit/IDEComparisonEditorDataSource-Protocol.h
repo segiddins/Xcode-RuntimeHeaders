@@ -4,9 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <IDEKit/NSObject-Protocol.h>
 
 @class DVTDocumentLocation, IDENavigableItem, IDENavigableItemCoordinator, NSString;
+@protocol DVTInvalidation;
 
 @protocol IDEComparisonEditorDataSource <NSObject>
 - (id <DVTInvalidation>)documentForSecondaryDocumentLocation:(DVTDocumentLocation *)arg1 completionBlock:(void (^)(IDEEditorDocument *, int, NSError *))arg2;

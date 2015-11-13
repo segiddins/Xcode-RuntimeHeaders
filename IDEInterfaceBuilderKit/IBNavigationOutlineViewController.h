@@ -6,10 +6,10 @@
 
 #import <IDEInterfaceBuilderKit/IBNavigationController.h>
 
-#import "IBAutolayoutSidebarViewControllerDelegate.h"
-#import "IBHighlightProvider.h"
-#import "IBHybridStructureSelectionProvider.h"
-#import "IBOutlineViewControllerDelegate.h"
+#import <IDEInterfaceBuilderKit/IBAutolayoutSidebarViewControllerDelegate-Protocol.h>
+#import <IDEInterfaceBuilderKit/IBHighlightProvider-Protocol.h>
+#import <IDEInterfaceBuilderKit/IBHybridStructureSelectionProvider-Protocol.h>
+#import <IDEInterfaceBuilderKit/IBOutlineViewControllerDelegate-Protocol.h>
 
 @class IBAbstractDocumentEditor, IBNavigationControllerItem, IBOutlineViewController, NSString;
 

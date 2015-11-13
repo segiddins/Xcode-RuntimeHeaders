@@ -4,14 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDEActivityReporter.h"
+#import <IDEKit/IDEActivityReporter.h>
 
-@class DVTMapTable;
+@class NSMapTable;
 
 @interface DBGViewDebuggingActivityReporter : IDEActivityReporter
 {
-    DVTMapTable *_launchSessionsToTokens;
-    DVTMapTable *_reportForViewDebuggingAdditionTable;
+    NSMapTable *_launchSessionsToTokens;
+    NSMapTable *_reportForViewDebuggingAdditionTable;
 }
 
 + (id)_titleForViewDebuggingAddition:(id)arg1;

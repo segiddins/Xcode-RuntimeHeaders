@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSView.h"
+#import <AppKit/NSView.h>
 
 @interface NSView (DVTNSViewAdditions)
 - (BOOL)dvt_viewShouldDrawActive;
@@ -22,6 +22,7 @@
 - (struct CGPoint)dvt_convertPointFromScreen:(struct CGPoint)arg1;
 - (struct CGPoint)dvt_integralPointInBase:(struct CGPoint)arg1;
 - (struct CGRect)dvt_integralRectInBase:(struct CGRect)arg1;
+- (void)dvt_performAdditionalInvalidation;
 
 // Remaining properties
 @property(nonatomic, getter=isHidden) BOOL hidden;

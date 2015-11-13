@@ -4,19 +4,20 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDEKeyDrivenNavigableItem.h"
+#import <IDEKit/IDEKeyDrivenNavigableItem.h>
 
-@class DVTObservingToken, SKEDocumentMemberWrapper;
+@class DVTObservingToken;
+@protocol SKEDocumentMember, SKEDocumentProtocol;
 
 @interface SKEDocumentNavigableItem : IDEKeyDrivenNavigableItem
 {
-    DVTObservingToken *_childWrappersToken;
+    DVTObservingToken *_childMembersToken;
 }
 
 + (id)keyPathsForValuesAffectingImage;
 + (id)keyPathsForValuesAffectingName;
 + (id)keyPathsForValuesAffectingRepresentedDocument;
-+ (id)keyPathsForValuesAffectingRepresentedWrapper;
++ (id)keyPathsForValuesAffectingRepresentedDocumentObject;
 - (void).cxx_destruct;
 - (id)contentDocumentLocation;
 - (id)childRepresentedObjects;
@@ -26,7 +27,7 @@
 - (id)image;
 - (id)name;
 @property(readonly) __weak id <SKEDocumentProtocol> representedDocument;
-@property(readonly) __weak SKEDocumentMemberWrapper *representedWrapper;
+@property(readonly) __weak id <SKEDocumentMember> representedDocumentObject;
 - (void)primitiveInvalidate;
 - (id)initWithRepresentedObject:(id)arg1;
 

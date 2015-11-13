@@ -4,12 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "SKScene.h"
+#import <SpriteKit/SKScene.h>
 
 @interface SKEditorScene : SKScene
 {
-    float _oldXScale;
-    float _oldYScale;
 }
 
 - (void)didChangeSize:(struct CGSize)arg1;

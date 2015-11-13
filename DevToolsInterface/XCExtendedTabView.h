@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSTabView.h"
+#import <AppKit/NSTabView.h>
 
-#import "XCDockViewHeader.h"
+#import <DevToolsInterface/XCDockViewHeader-Protocol.h>
 
 @class NSArray, NSImage, XCDockableTabModule;
 

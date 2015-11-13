@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "DVTViewController.h"
+#import <DVTKit/DVTViewController.h>
 
 @class DBGLayoutConstraint, NSButton, NSImageView, NSTextField, NSTrackingArea;
 
@@ -28,6 +28,7 @@
 @property(retain, nonatomic) NSTextField *constraintCategoryField; // @synthesize constraintCategoryField=_constraintCategoryField;
 @property(retain, nonatomic) NSTextField *constraintFormulaField; // @synthesize constraintFormulaField=_constraintFormulaField;
 - (void).cxx_destruct;
+- (void)primitiveInvalidate;
 @property BOOL constraintIsAffecting;
 - (id)constraintIcon;
 - (void)updateTextAndImageFields;

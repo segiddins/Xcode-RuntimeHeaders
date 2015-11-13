@@ -4,10 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "DVTInvalidation.h"
-#import "IDEDebugNavigableModel.h"
+#import <IDEFoundation/DVTInvalidation-Protocol.h>
+#import <IDEFoundation/IDEDebugNavigableModel-Protocol.h>
 
 @class DVTStackBacktrace, IDEDebugProcess, IDELaunchSession, NSArray, NSNumber, NSString;
 
@@ -15,6 +15,7 @@
 {
     BOOL _hasLatestStackFrames;
     BOOL _recorded;
+    BOOL _recordedForMemoryAddress;
     int _state;
     NSString *_associatedProcessUUID;
     IDEDebugProcess *_parentProcess;
@@ -30,6 +31,7 @@
 + (id)displayNameForThreadName:(id)arg1 threadID:(id)arg2;
 + (void)initialize;
 @property(copy, nonatomic) NSString *lastReasonStopped; // @synthesize lastReasonStopped=_lastReasonStopped;
+@property(nonatomic, getter=isRecordedForMemoryAddress) BOOL recordedForMemoryAddress; // @synthesize recordedForMemoryAddress=_recordedForMemoryAddress;
 @property(nonatomic, getter=isRecorded) BOOL recorded; // @synthesize recorded=_recorded;
 @property(retain, nonatomic) IDEThread *recordedThread; // @synthesize recordedThread=_recordedThread;
 @property(copy, nonatomic) NSArray *stackFrames; // @synthesize stackFrames=_stackFrames;
@@ -47,6 +49,7 @@
 - (id)compressedStackFrames:(long long)arg1;
 @property(readonly) IDELaunchSession *launchSession;
 @property(readonly, copy) NSString *description;
+- (id)init;
 - (id)initWithParentProcess:(id)arg1 uniqueID:(id)arg2;
 
 // Remaining properties

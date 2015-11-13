@@ -6,7 +6,7 @@
 
 #import <DevToolsInterface/PBXProjectModule.h>
 
-#import "NSOutlineViewDelegate.h"
+#import <DevToolsInterface/NSOutlineViewDelegate-Protocol.h>
 
 @class NSArray, NSArrayController, NSOutlineView, NSSplitView, NSString, NSTableView, NSTreeController, NSView, XCDiffScrollView, XCDiffTextComparatorView, XCMultiDirectoryChangeSet;
 

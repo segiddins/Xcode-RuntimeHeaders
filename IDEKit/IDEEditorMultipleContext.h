@@ -6,9 +6,10 @@
 
 #import <IDEKit/IDEViewController.h>
 
-#import "NSSplitViewDelegate.h"
+#import <IDEKit/NSSplitViewDelegate-Protocol.h>
 
 @class IDEEditorContext, NSArray, NSMutableArray, NSString;
+@protocol IDEEditorContextDelegate, IDEEditorMultipleContextDelegate;
 
 @interface IDEEditorMultipleContext : IDEViewController <NSSplitViewDelegate>
 {

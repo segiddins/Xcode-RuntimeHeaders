@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "DVTInvalidation.h"
+#import <DVTProducts/DVTInvalidation-Protocol.h>
 
 @class DVTStackBacktrace, NSHashTable, NSString;
 
@@ -25,7 +25,7 @@
 - (void)registerProduct:(id)arg1;
 - (id)malformedProductWithArchives:(id)arg1;
 - (id)productWithProductIdentifier:(id)arg1 productVersions:(id)arg2;
-- (id)productWithBundleIdentifier:(id)arg1 productType:(unsigned long long)arg2 productVersions:(id)arg3;
+- (id)productWithBundleIdentifier:(id)arg1 productCategory:(id)arg2 productVersions:(id)arg3;
 - (void)primitiveInvalidate;
 - (id)init;
 

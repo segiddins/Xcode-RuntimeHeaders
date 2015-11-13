@@ -4,18 +4,19 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSDraggingInfo.h"
+#import <IDEInterfaceBuilderCocoaIntegration/NSDraggingInfo-Protocol.h>
 
 @class DVTDraggedImageState, NSDictionary, NSSet;
+@protocol DVTInvalidation;
 
 @protocol DVTDraggingInfo <NSDraggingInfo>
+@property(nonatomic) unsigned long long draggingModifierFlags;
+@property(nonatomic) struct CGSize draggingSnapOffset;
 @property(retain, nonatomic) NSSet *draggingSnapGuides;
+@property(nonatomic) BOOL draggedImageStateNeedsUpdate;
 - (void)invalidateObjectAtEndOfDragLoop:(id <DVTInvalidation>)arg1;
 - (struct CGPoint)draggingLocationOnScreen;
 - (NSDictionary *)draggingSourceContext;
-- (void)setDraggedImageStateNeedsUpdate:(BOOL)arg1;
-- (struct CGSize)draggingStickiness;
-- (void)setDraggingStickiness:(struct CGSize)arg1;
 - (DVTDraggedImageState *)draggedImageState;
 @end
 

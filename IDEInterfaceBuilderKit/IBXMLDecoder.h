@@ -4,9 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSCoder.h"
+#import <Foundation/NSCoder.h>
 
 @class IBSelfCompressingDataWrapper, IBXMLDecoderArchiveElement, IBXMLDecoderElement, NSDictionary, NSMapTable, NSMutableArray, NSMutableDictionary, NSMutableSet, NSSet;
+@protocol IBXMLDecoderDelegate;
 
 @interface IBXMLDecoder : NSCoder
 {

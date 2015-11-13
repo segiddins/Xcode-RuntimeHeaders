@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDEAssistant.h"
+#import <IDEKit/IDEAssistant.h>
 
 @class DVTColoredSpinner, NSImage, NSString, NSTimer, XCSUICreateBotAssistantContext;
 
@@ -36,8 +36,6 @@
 @property(readonly, nonatomic) BOOL completedAndWaitedMinimumDuration;
 - (void)_clearMinimumProgressIndicatorDurationTimer;
 - (void)_handleCommitAndIntegrateOptionsWithCreateBotAssistantContext:(id)arg1;
-- (void)_createBotWithBotExtendedAttributes:(id)arg1;
-- (id)_scmInfo;
 @property(readonly, nonatomic) NSString *statusText;
 @property(readonly, nonatomic) NSImage *statusImage;
 - (void)finishWithCompletionBlock:(CDUnknownBlockType)arg1;

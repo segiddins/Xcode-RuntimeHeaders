@@ -4,17 +4,16 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "NSCopying.h"
-#import "NSSecureCoding.h"
-#import "SCNAnimatable.h"
+#import <SceneKit/NSCopying-Protocol.h>
+#import <SceneKit/NSSecureCoding-Protocol.h>
+#import <SceneKit/SCNAnimatable-Protocol.h>
 
-@class NSString, SCNOrderedDictionary;
+@class NSArray, NSString, SCNOrderedDictionary;
 
 @interface SCNConstraint : NSObject <NSCopying, NSSecureCoding, SCNAnimatable>
 {
-    id _constraintReserved;
     struct __C3DConstraint *_constraintRef;
     SCNOrderedDictionary *_animations;
     BOOL _enabled;
@@ -22,7 +21,6 @@
 }
 
 + (BOOL)supportsSecureCoding;
-+ (id)SCNJSExportProtocol;
 - (id)copy;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)scene;
@@ -34,7 +32,7 @@
 - (void)_pauseAnimation:(BOOL)arg1 forKey:(id)arg2;
 - (id)animationForKey:(id)arg1;
 - (void)_syncObjCAnimations;
-- (id)animationKeys;
+@property(readonly) NSArray *animationKeys;
 - (void)removeAnimationForKey:(id)arg1;
 - (void)removeAllAnimations;
 - (void)addAnimation:(id)arg1;
@@ -42,6 +40,8 @@
 - (void)__removeAnimation:(id)arg1 forKey:(id)arg2;
 - (struct __C3DAnimationManager *)animationManager;
 - (void *)__CFObject;
+- (BOOL)isPausedOrPausedByInheritance;
+- (struct __C3DAnimationChannel *)copyAnimationChannelForKeyPath:(id)arg1 animation:(id)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)finalizeDecodeConstraint:(id)arg1;

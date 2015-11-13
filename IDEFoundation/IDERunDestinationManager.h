@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
 @class DVTObservingToken, IDERunDestination, NSMapTable, NSMutableSet, NSSet;
 
@@ -33,7 +33,6 @@
 - (id)defaultRunDestinationForScheme:(id)arg1 fromRunDestinations:(id)arg2 preferGenericDestination:(BOOL)arg3;
 - (id)runDestinationWithIneligibleTargetDevice:(id)arg1 architecture:(id)arg2 SDK:(id)arg3 deviceIneligibilityError:(id)arg4;
 - (id)runDestinationWithTargetDevice:(id)arg1 architecture:(id)arg2 SDK:(id)arg3;
-- (id)runDestinationForDeviceType:(id)arg1 options:(id)arg2 timeout:(double)arg3 error:(id *)arg4;
 - (void)_uncacheRunDestinationsForDevice:(id)arg1;
 - (id)_cachedRunDestinationForDevice:(id)arg1 architecture:(id)arg2 SDK:(id)arg3;
 - (void)_cacheRunDestination:(id)arg1;

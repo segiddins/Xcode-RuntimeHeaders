@@ -6,7 +6,7 @@
 
 #import <DevToolsInterface/XCElementImp.h>
 
-#import "XCElementJustifierP.h"
+#import <DevToolsInterface/XCElementJustifierP-Protocol.h>
 
 @class NSString;
 

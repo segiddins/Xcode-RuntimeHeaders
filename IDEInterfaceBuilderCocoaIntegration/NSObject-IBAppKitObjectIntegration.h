@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
 @class NSArray, NSString;
 
@@ -21,6 +21,7 @@
 - (id)ibFallbackClassNameForClassSwapper;
 - (BOOL)ibShouldUseClassSwapper;
 - (id)ibParentForFoldingDownstreamControllerFromRelationshipSegue:(id)arg1;
+- (BOOL)ibIsValidCocoaEmbedSegueDestination;
 - (BOOL)ibCanBeValidRelationshipDestination;
 - (BOOL)ibCanBeValidPopoverSegueDestination;
 - (BOOL)ibCanBeValidPopoverSegueSource;
@@ -29,10 +30,9 @@
 - (BOOL)ibCanBeValidTriggerSegueDestination;
 - (BOOL)ibCanBeValidTriggerSegueSource;
 - (void)ibCaptureDownstreamStoryboardPlaceholderTable:(id)arg1;
-@property(copy) NSString *ibExternalAccessibilityDescription;
-- (id)ibAccessibilityDescriptionAttribute;
+@property(copy) NSString *ibExternalAccessibilityIdentifier;
 @property(copy) NSString *ibExternalAccessibilityHelp;
-- (id)ibAccessibilityHelpAttribute;
+@property(copy) NSString *ibExternalAccessibilityDescription;
 - (BOOL)ibSupportsAccessibility;
 - (id)ibSuggestedAutomaticUserInterfaceItemIdentifier;
 - (id)ibSuggestUserInterfaceItemIdentifierForObject:(id)arg1;

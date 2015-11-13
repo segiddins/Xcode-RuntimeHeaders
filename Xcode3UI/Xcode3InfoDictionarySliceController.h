@@ -6,7 +6,7 @@
 
 #import <Xcode3UI/Xcode3InfoSliceController.h>
 
-#import "DVTPlistViewControllerDelegate.h"
+#import <Xcode3UI/DVTPlistViewControllerDelegate-Protocol.h>
 
 @class DVTObservingToken, DVTPlistViewController, DVTStackView_ML, NSColor, NSDictionary, NSImage, NSMutableArray, NSString, Xcode3ImageView, Xcode3InfoArraySliceController, Xcode3InfoEditorPlistDocument, Xcode3InfoPlistSliceView;
 

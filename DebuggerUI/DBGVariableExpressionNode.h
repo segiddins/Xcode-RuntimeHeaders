@@ -4,30 +4,31 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDEVariablesViewNode.h"
+#import <IDEKit/IDEVariablesViewNode.h>
 
-@class DBGStackFrame, NSString;
+@class DBGStackFrame, DVTObservingToken, NSString;
 
 @interface DBGVariableExpressionNode : IDEVariablesViewNode
 {
     NSString *_expression;
     DBGStackFrame *_stackFrame;
-    BOOL _loading;
     BOOL _requestedLoad;
     BOOL _filteredChildrenWereRequestedWhileDataValueWasNil;
+    DVTObservingToken *_stackFrameValidityObserver;
+    BOOL _loading;
 }
 
 + (id)keyPathsForValuesAffectingExpressionIsEmpty;
 @property BOOL loading; // @synthesize loading=_loading;
 @property(retain, nonatomic) NSString *expression; // @synthesize expression=_expression;
 - (void).cxx_destruct;
+- (void)primitiveInvalidate;
 - (long long)compare:(id)arg1;
 - (void)_evaluateExpression;
 - (id)dataValue;
 @property(readonly) BOOL expressionIsEmpty;
 - (id)filteredChildren;
 - (id)name;
-- (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)_dbgVariablesExpressionNodeCommonInit;
 - (id)_initWithExpression:(id)arg1 stackFrame:(id)arg2 dataValue:(id)arg3;
 - (id)initWithExpression:(id)arg1 stackFrame:(id)arg2;

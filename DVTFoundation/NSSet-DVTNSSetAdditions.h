@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSSet.h"
+#import <Foundation/NSSet.h>
 
 @interface NSSet (DVTNSSetAdditions)
 - (id)dvt_objectByFoldingWithBlock:(CDUnknownBlockType)arg1;
@@ -18,6 +18,7 @@
 - (id)dvt_setByApplyingBlockStrictly:(CDUnknownBlockType)arg1;
 - (id)dvt_setByApplyingBlock:(CDUnknownBlockType)arg1;
 - (id)dvt_setByApplyingSelector:(SEL)arg1;
+- (id)dvt_setByRemovingObject:(id)arg1;
 - (id)dvt_setBySubtractingSet:(id)arg1;
 - (id)dvt_setByIntersectingSet:(id)arg1;
 - (Class)dvt_mutableClass;

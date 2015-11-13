@@ -4,12 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "IDECommandHandler.h"
-#import "IDECommandHandlerVendor.h"
+#import <IDEKit/IDECommandHandler-Protocol.h>
+#import <IDEKit/IDECommandHandlerVendor-Protocol.h>
 
 @class NSString;
+@protocol IDESelectionSource;
 
 @interface IDEApplicationCommands : NSObject <IDECommandHandler, IDECommandHandlerVendor>
 {
@@ -27,6 +28,8 @@
 + (id)_fileURLsInSelectionSource:(id)arg1 useContextualMenuSelection:(BOOL)arg2;
 @property(readonly) id <IDESelectionSource> selectionSource; // @synthesize selectionSource=_selectionSource;
 - (void).cxx_destruct;
+- (void)showTutorialWindow:(id)arg1;
+- (void)showAllBezels:(id)arg1;
 - (void)showSuddenTerminationCount:(id)arg1;
 - (void)updateSuddenTerminationCount:(id)arg1;
 - (void)triggerCollectionChecking:(id)arg1;
@@ -44,7 +47,7 @@
 - (void)showInFinder:(id)arg1;
 - (void)showInFinderUsingContextualMenuSelection:(BOOL)arg1;
 - (void)openQuickly:(id)arg1;
-- (void)newCheckout:(id)arg1;
+- (void)scmDownload:(id)arg1;
 - (void)newProject:(id)arg1;
 - (void)addTarget:(id)arg1;
 - (void)newTarget:(id)arg1;
@@ -52,6 +55,7 @@
 - (void)newDocument:(id)arg1;
 - (void)showTemplateChooserForTemplateKind:(id)arg1 inWorkspaceTabController:(id)arg2 createdDocument:(id)arg3;
 - (void)showTemplateChooserForTemplateKind:(id)arg1;
+- (void)newWindow:(id)arg1;
 - (void)newWorkspace:(id)arg1;
 - (void)closeOtherWindows:(id)arg1;
 - (void)showOrganizer:(id)arg1;

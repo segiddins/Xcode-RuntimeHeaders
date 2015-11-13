@@ -5,6 +5,7 @@
 //
 
 @class NSAttributedString, NSImage, NSString;
+@protocol XCRefactoringModuleItem;
 
 @protocol XCRefactoringModuleItem
 - (BOOL)shouldHaveCheckbox;

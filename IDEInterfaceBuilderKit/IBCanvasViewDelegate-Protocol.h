@@ -4,9 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <IDEInterfaceBuilderKit/NSObject-Protocol.h>
 
 @class DVTDraggedImageState, IBCanvasFrame, IBCanvasView, NSArray, NSEvent, NSSet, NSValue;
+@protocol DVTDraggingInfo, NSDraggingInfo;
 
 @protocol IBCanvasViewDelegate <NSObject>
 - (NSArray *)draggedTypesForCanvasView:(IBCanvasView *)arg1;
@@ -31,8 +32,6 @@
 - (void)canvasView:(IBCanvasView *)arg1 willRemoveCanvasFrame:(IBCanvasFrame *)arg2;
 - (NSValue *)canvasView:(IBCanvasView *)arg1 lastKnownAnchorForCanvasFrame:(IBCanvasFrame *)arg2;
 - (void)canvasView:(IBCanvasView *)arg1 selectionDidChange:(NSSet *)arg2;
-- (void)canvasView:(IBCanvasView *)arg1 gestureDidEndWithEvent:(NSEvent *)arg2;
-- (void)canvasView:(IBCanvasView *)arg1 gestureDidBeginWithEvent:(NSEvent *)arg2;
 - (void)canvasView:(IBCanvasView *)arg1 userDidMagnifyWithEvent:(NSEvent *)arg2;
 - (void)canvasView:(IBCanvasView *)arg1 userDidDoubleClickInEmptyArea:(NSEvent *)arg2;
 - (void)canvasView:(IBCanvasView *)arg1 userDidClickInEmptyArea:(NSEvent *)arg2;

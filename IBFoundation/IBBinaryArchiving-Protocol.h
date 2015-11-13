@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <IBFoundation/NSObject-Protocol.h>
 
 @class IBBinaryArchiver, IBBinaryUnarchiver;
 
@@ -13,6 +13,8 @@
 @optional
 + (id)decodeWithBinaryUnarchiver:(IBBinaryUnarchiver *)arg1;
 - (const char *)cStringClassNameForBinaryArchiver:(IBBinaryArchiver *)arg1;
+- (void)didFinishDecodingWithBinaryUnarchiver:(IBBinaryUnarchiver *)arg1;
+- (void)didFinishEncodingWithBinaryArchiver:(IBBinaryArchiver *)arg1;
 - (void)encodeWithBinaryArchiver:(IBBinaryArchiver *)arg1;
 - (id)initWithBinaryUnarchiver:(IBBinaryUnarchiver *)arg1;
 @end

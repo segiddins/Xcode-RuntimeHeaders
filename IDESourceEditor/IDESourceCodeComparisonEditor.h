@@ -4,10 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDEComparisonEditor.h"
+#import <IDEKit/IDEComparisonEditor.h>
 
-#import "DVTFindBarFindable.h"
-#import "IDEOpenQuicklyJumpToSupport.h"
+#import <IDESourceEditor/DVTFindBarFindable-Protocol.h>
+#import <IDESourceEditor/IDEOpenQuicklyJumpToSupport-Protocol.h>
 
 @class DVTSourceTextView, NSDictionary, NSString;
 
@@ -19,6 +19,7 @@
 + (long long)version;
 + (void)configureStateSavingObjectPersistenceByName:(id)arg1;
 + (id)keyPathsForValuesAffectingKeyTextView;
++ (unsigned long long)assertionBehaviorAfterEndOfEventForSelector:(SEL)arg1;
 - (void).cxx_destruct;
 - (void)find:(id)arg1;
 - (id)currentEditorContext;

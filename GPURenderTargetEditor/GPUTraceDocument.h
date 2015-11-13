@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDEEditorDocument.h"
+#import <IDEKit/IDEEditorDocument.h>
 
-#import "IDEDocumentStructureProviding.h"
+#import <GPURenderTargetEditor/IDEDocumentStructureProviding-Protocol.h>
 
 @class DYCaptureSessionInfo, GPUDebuggingAdditionUIController, GPUTraceSession, NSArray, NSString;
 
@@ -40,6 +40,7 @@
 - (id)captureArchive;
 - (void)dealloc;
 - (BOOL)readFromURL:(id)arg1 ofType:(id)arg2 error:(id *)arg3;
+- (id)initForURL:(id)arg1 withContentsOfURL:(id)arg2 ofType:(id)arg3 error:(id *)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

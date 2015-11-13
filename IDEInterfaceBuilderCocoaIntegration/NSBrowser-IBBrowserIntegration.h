@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSBrowser.h"
+#import <AppKit/NSBrowser.h>
 
 @interface NSBrowser (IBBrowserIntegration)
 - (BOOL)ibOverridablePrefersToVerticallyResizeWithContainer;
@@ -12,7 +12,6 @@
 - (void)adjustMinimumBrowserSizeForInspectedProperty:(id)arg1;
 - (void)setIbShadowedDefaultNewColumnWidth:(long long)arg1;
 - (long long)ibShadowedDefaultNewColumnWidth;
-- (void)ibWarnings:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
 - (id)ibWidgetType;
 - (BOOL)ibHasSingleCell;
 @end

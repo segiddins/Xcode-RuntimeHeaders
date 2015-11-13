@@ -4,23 +4,31 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSView.h"
+#import <AppKit/NSView.h>
 
-@class CAKeyframeAnimation;
+@class CAKeyframeAnimation, NSBezierPath, NSString;
+@protocol SKEAnimationEditorViewDelegate;
 
 @interface SKEAnimationEditorView : NSView
 {
     CAKeyframeAnimation *_animation;
-    struct CGColor *_fillColor;
-    struct CGColor *_strokeColor;
+    NSBezierPath *_bezierPath;
+    unsigned long long _mode;
+    struct CGColor *_primaryColor;
+    struct CGColor *_primaryColorHighlighted;
+    struct CGColor *_secondaryColor;
+    struct CGColor *_secondaryColorHighlighted;
     struct CGPath *_cachedPath;
     double _scale;
     struct CGPoint _origin;
     struct CGSize _canvasSize;
     long long _selectedPointIndex;
+    long long _selectedPointSubSelectionIndex;
     id <SKEAnimationEditorViewDelegate> _delegate;
+    NSString *_placeholderString;
 }
 
+@property(copy) NSString *placeholderString; // @synthesize placeholderString=_placeholderString;
 @property __weak id <SKEAnimationEditorViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)dealloc;
@@ -28,14 +36,15 @@
 - (BOOL)isOpaque;
 - (void)clearDrawInfo;
 - (void)computeDrawInfoIfNeeded;
-- (unsigned long long)calculationMode;
 - (void)mouseDragged:(id)arg1;
 - (void)mouseMoved:(id)arg1;
 - (void)mouseDown:(id)arg1;
 - (BOOL)acceptsFirstMouse:(id)arg1;
 - (BOOL)acceptsFirstResponder;
 - (void)setFrame:(struct CGRect)arg1;
+@property(copy) NSBezierPath *bezierPath;
 @property(copy) CAKeyframeAnimation *animation;
+- (BOOL)hasContents;
 - (void)awakeFromNib;
 
 @end

@@ -6,7 +6,7 @@
 
 #import <DVTKit/DVTMainStatusAwareButton.h>
 
-#import "NSMenuDelegate.h"
+#import <DVTKit/NSMenuDelegate-Protocol.h>
 
 @class NSString;
 

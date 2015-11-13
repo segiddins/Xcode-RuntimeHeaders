@@ -4,12 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "DVTDevice.h"
+#import <DVTFoundation/DVTDevice.h>
 
 @class NSImage, NSString;
 
 @interface DVTDevice (IDEDeviceActivityReporterAdditions)
 @property(readonly) NSImage *activityImage;
+@property(readonly) BOOL activityIsUserInitiated;
 @property(readonly, copy) NSString *activityTitle;
 @property(readonly) long long activityProgress;
 @end

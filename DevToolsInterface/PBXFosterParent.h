@@ -4,11 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "PBXGroup.h"
+#import <DevToolsCore/PBXGroup.h>
 
-#import "PBXBookmarkSupport.h"
-#import "PBXNodeEditingProtocol.h"
-#import "XCProxyObjectProtocol.h"
+#import <DevToolsInterface/PBXBookmarkSupport-Protocol.h>
+#import <DevToolsInterface/PBXNodeEditingProtocol-Protocol.h>
+#import <DevToolsInterface/XCProxyObjectProtocol-Protocol.h>
 
 @class NSImage;
 

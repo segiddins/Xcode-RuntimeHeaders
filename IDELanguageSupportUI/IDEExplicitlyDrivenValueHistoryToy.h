@@ -7,6 +7,7 @@
 #import <IDELanguageSupportUI/IDEValueHistoryToy.h>
 
 @class NSString;
+@protocol IDEToyRegistrationToken;
 
 @interface IDEExplicitlyDrivenValueHistoryToy : IDEValueHistoryToy
 {

@@ -4,15 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDEDebugGaugeReportEditor.h"
+#import <IDEKit/IDEDebugGaugeReportEditor.h>
 
-#import "DVTInvalidation.h"
-#import "IDEDebugGaugeReportContentDelegate.h"
-#import "IDEDebugGaugeReportTopSectionContentDelegate.h"
+#import <iCloudSupport/IDEDebugGaugeReportContentDelegate-Protocol.h>
+#import <iCloudSupport/IDEDebugGaugeReportTopSectionContentDelegate-Protocol.h>
 
-@class DVTDevice, DVTStackBacktrace, IDEDebugGaugeReportSection, NSMutableSet, NSString, iCloudDocumentsViewController, iCloudHeaderViewController, iCloudPerformanceViewController;
+@class DVTDevice, IDEDebugGaugeReportSection, NSMutableSet, NSString, iCloudDocumentsViewController, iCloudHeaderViewController, iCloudPerformanceViewController;
 
-@interface iCloudActivityEditor : IDEDebugGaugeReportEditor <IDEDebugGaugeReportContentDelegate, IDEDebugGaugeReportTopSectionContentDelegate, DVTInvalidation>
+@interface iCloudActivityEditor : IDEDebugGaugeReportEditor <IDEDebugGaugeReportContentDelegate, IDEDebugGaugeReportTopSectionContentDelegate>
 {
     iCloudHeaderViewController *_headerViewController;
     iCloudPerformanceViewController *_transferActivityViewController;
@@ -44,13 +43,10 @@
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2 document:(id)arg3;
 
 // Remaining properties
-@property(retain) DVTStackBacktrace *creationBacktrace;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
-@property(readonly) DVTStackBacktrace *invalidationBacktrace;
 @property(readonly) Class superclass;
-@property(readonly, nonatomic, getter=isValid) BOOL valid;
 
 @end
 

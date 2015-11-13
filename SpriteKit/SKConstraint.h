@@ -4,10 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "NSCoding.h"
-#import "NSCopying.h"
+#import <SpriteKit/NSCoding-Protocol.h>
+#import <SpriteKit/NSCopying-Protocol.h>
 
 @class SKNode;
 
@@ -34,7 +34,7 @@
 + (id)positionX:(id)arg1 Y:(id)arg2;
 + (id)positionY:(id)arg1;
 + (id)positionX:(id)arg1;
-@property(retain) SKNode *referenceNode; // @synthesize referenceNode=_referenceNode;
+@property(retain, nonatomic) SKNode *referenceNode; // @synthesize referenceNode=_referenceNode;
 @property BOOL enabled; // @synthesize enabled=_enabled;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;

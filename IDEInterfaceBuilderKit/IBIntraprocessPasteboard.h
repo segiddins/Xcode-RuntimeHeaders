@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSPasteboard.h"
+#import <AppKit/NSPasteboard.h>
 
 @class DVTMutableOrderedDictionary, DVTMutableOrderedSet, NSMutableDictionary, NSString;
 
@@ -24,6 +24,7 @@
 + (id)generalPasteboard;
 + (id)pasteboardWithUniqueName;
 + (id)pasteboardWithName:(id)arg1;
++ (id)_cachedPasteboardWithName:(id)arg1;
 + (id)allocWithZone:(struct _NSZone *)arg1;
 + (id)alloc;
 + (void)initialize;

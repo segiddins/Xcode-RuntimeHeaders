@@ -4,11 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "DVTOutlineViewDelegate.h"
+#import <IDESceneKitEditor/DVTOutlineViewDelegate-Protocol.h>
 
-@class NSOutlineView;
+@class NSArray, SKEOutlineView;
+@protocol SKEDocumentMember;
 
 @protocol SKEOutlineViewDelegate <DVTOutlineViewDelegate>
-- (BOOL)outlineView:(NSOutlineView *)arg1 isHeaderItem:(id)arg2;
+- (NSArray *)outlineView:(SKEOutlineView *)arg1 attributeIconsForItem:(id <SKEDocumentMember>)arg2;
+- (BOOL)outlineView:(SKEOutlineView *)arg1 isItemEditable:(id <SKEDocumentMember>)arg2;
+- (BOOL)outlineView:(SKEOutlineView *)arg1 isHeaderItem:(id)arg2;
 @end
 

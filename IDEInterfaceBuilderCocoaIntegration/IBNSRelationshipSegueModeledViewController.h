@@ -6,7 +6,7 @@
 
 #import <IDEInterfaceBuilderCocoaIntegration/IBNSViewController.h>
 
-#import "IBDocumentArchiving.h"
+#import <IDEInterfaceBuilderCocoaIntegration/IBDocumentArchiving-Protocol.h>
 
 @class NSArray, NSString;
 

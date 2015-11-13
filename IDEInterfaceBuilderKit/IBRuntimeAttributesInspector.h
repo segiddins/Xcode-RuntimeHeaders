@@ -6,7 +6,7 @@
 
 #import <IDEInterfaceBuilderKit/IBInspectorViewController.h>
 
-#import "NSTableViewDelegate.h"
+#import <IDEInterfaceBuilderKit/NSTableViewDelegate-Protocol.h>
 
 @class DVTBorderedView, DVTObservingToken, IBPasteboardAwareTableView, IDEControlGroup, NSArray, NSButton, NSDictionary, NSIndexSet, NSMenu, NSSet, NSString;
 

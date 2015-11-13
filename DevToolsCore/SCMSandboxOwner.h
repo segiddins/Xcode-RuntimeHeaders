@@ -6,9 +6,10 @@
 
 #import <DevToolsCore/SCMModel.h>
 
-#import "SCMSandboxProtocol.h"
+#import <DevToolsCore/SCMSandboxProtocol-Protocol.h>
 
 @class NSMutableArray;
+@protocol SCMSandboxOwnerDelegateProtocol;
 
 @interface SCMSandboxOwner : SCMModel <SCMSandboxProtocol>
 {

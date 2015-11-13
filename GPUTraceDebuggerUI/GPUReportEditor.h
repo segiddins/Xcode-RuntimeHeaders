@@ -4,12 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDEDebugGaugeReportEditor.h"
+#import <IDEKit/IDEDebugGaugeReportEditor.h>
 
-#import "IDEDebugGaugeReportContentDelegate.h"
-#import "IDEDebugGaugeReportTopSectionContentDelegate.h"
+#import <GPUTraceDebuggerUI/IDEDebugGaugeReportContentDelegate-Protocol.h>
+#import <GPUTraceDebuggerUI/IDEDebugGaugeReportTopSectionContentDelegate-Protocol.h>
 
 @class DVTGauge, DVTMeterValue, DVTMeterView, DVTObservingToken, DVTStackView_AppKitAutolayout, GPUDebuggerController, GPUNumericBubbleView, GPUReportBarChartView, GPUReportBuilder, GPUReportResults, GPUSharedTabUIState, IDEDebugGaugeReportSection, NSArray, NSButton, NSMutableArray, NSString, NSView;
+@protocol GPUInvestigatorReportProvider, GPUProgramPerformanceReportProvider;
 
 @interface GPUReportEditor : IDEDebugGaugeReportEditor <IDEDebugGaugeReportContentDelegate, IDEDebugGaugeReportTopSectionContentDelegate>
 {
@@ -124,7 +125,6 @@
 - (void)setupObservers;
 - (void)viewWillUninstall;
 - (void)viewDidInstall;
-- (void)_teardown;
 - (void)_setup;
 - (void)primitiveInvalidate;
 - (void)loadView;

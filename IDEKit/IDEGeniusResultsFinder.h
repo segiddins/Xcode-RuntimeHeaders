@@ -4,33 +4,33 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "DVTInvalidation.h"
+#import <IDEKit/DVTInvalidation-Protocol.h>
 
 @class DVTExtension, DVTPerformanceMetric, DVTStackBacktrace, IDEEditorDocument, IDENavigableItemCoordinator, IDEWorkspace, IDEWorkspaceTabController, NSArray, NSSet, NSString;
 
 @interface IDEGeniusResultsFinder : NSObject <DVTInvalidation>
 {
-    DVTExtension *_extension;
-    IDEWorkspaceTabController *_workspaceTabController;
     IDENavigableItemCoordinator *_navItemCoordinator;
-    NSArray *_documentLocations;
-    NSSet *_geniusResults;
     IDEEditorDocument *_editorDocument;
     BOOL _idle;
+    IDEWorkspaceTabController *_workspaceTabController;
+    NSArray *_documentLocations;
+    NSSet *_geniusResults;
+    DVTExtension *_extension;
     DVTPerformanceMetric *_nonIdlePerformanceMetric;
 }
 
 + (void)initialize;
 + (Class)editorDocumentClass;
 @property(retain) DVTPerformanceMetric *nonIdlePerformanceMetric; // @synthesize nonIdlePerformanceMetric=_nonIdlePerformanceMetric;
-@property(nonatomic) BOOL idle; // @synthesize idle=_idle;
+@property(retain) DVTExtension *extension; // @synthesize extension=_extension;
 @property(copy) NSSet *geniusResults; // @synthesize geniusResults=_geniusResults;
 @property(readonly, copy) NSArray *documentLocations; // @synthesize documentLocations=_documentLocations;
-@property(retain) IDEEditorDocument *editorDocument; // @synthesize editorDocument=_editorDocument;
 @property(retain) IDEWorkspaceTabController *workspaceTabController; // @synthesize workspaceTabController=_workspaceTabController;
-@property(retain) DVTExtension *extension; // @synthesize extension=_extension;
+@property(nonatomic) BOOL idle; // @synthesize idle=_idle;
+@property(retain) IDEEditorDocument *editorDocument; // @synthesize editorDocument=_editorDocument;
 - (void).cxx_destruct;
 - (void)primitiveInvalidate;
 @property(readonly) IDEWorkspace *workspace;

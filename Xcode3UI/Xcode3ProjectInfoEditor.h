@@ -4,16 +4,17 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDEViewController.h"
+#import <IDEKit/IDEViewController.h>
 
-#import "IDECapsuleListViewDataSource.h"
-#import "NSOutlineViewDataSource.h"
-#import "NSOutlineViewDelegate.h"
-#import "NSTableViewDataSource.h"
-#import "NSTableViewDelegate.h"
-#import "Xcode3SourceListItemEditor.h"
+#import <Xcode3UI/IDECapsuleListViewDataSource-Protocol.h>
+#import <Xcode3UI/NSOutlineViewDataSource-Protocol.h>
+#import <Xcode3UI/NSOutlineViewDelegate-Protocol.h>
+#import <Xcode3UI/NSTableViewDataSource-Protocol.h>
+#import <Xcode3UI/NSTableViewDelegate-Protocol.h>
+#import <Xcode3UI/Xcode3SourceListItemEditor-Protocol.h>
 
-@class DVTBorderedView, DVTGradientImageButton, DVTGradientImagePopUpButton, DVTImageAndTextCell, DVTLocale, DVTLozengeTextField, DVTOutlineView, DVTPerformanceMetric, DVTSourceExpression, DVTStackView_ML, DVTTableView, IDECapsuleListView, IDEViewController<IDECapsuleViewController>, NSArray, NSButton, NSComboBox, NSMenu, NSMutableArray, NSMutableDictionary, NSPopUpButton, NSString, NSTextField, NSTextFieldCell, NSTimer, NSView, PBXProject, Xcode3ProjectEditor;
+@class DVTBorderedView, DVTGradientImageButton, DVTGradientImagePopUpButton, DVTImageAndTextCell, DVTLocale, DVTLozengeTextField, DVTOutlineView, DVTPerformanceMetric, DVTSourceExpression, DVTStackView_ML, DVTTableView, IDECapsuleListView, NSArray, NSButton, NSComboBox, NSMenu, NSMutableArray, NSMutableDictionary, NSPopUpButton, NSString, NSTextField, NSTextFieldCell, NSTimer, NSView, PBXProject, Xcode3ProjectEditor;
+@protocol IDEBlueprint, IDECapsuleViewController;
 
 @interface Xcode3ProjectInfoEditor : IDEViewController <Xcode3SourceListItemEditor, NSTableViewDelegate, NSTableViewDataSource, NSOutlineViewDelegate, NSOutlineViewDataSource, IDECapsuleListViewDataSource>
 {
@@ -81,6 +82,9 @@
 @property(readonly) NSArray *iOSProjectDeploymentOSVersions;
 @property(copy) id macOSProjectDeploymentOS;
 @property(readonly) NSArray *macOSProjectDeploymentOSVersions;
+- (void)setProjectDeploymentOS:(id)arg1 forPlatform:(id)arg2;
+- (id)projectDeploymentOSForPlatform:(id)arg1;
+- (id)projectDeploymentOSVersionsForPlatform:(id)arg1;
 - (void)changeIPhoneBaseSDK:(id)arg1;
 - (void)changeMacOSXBaseSDK:(id)arg1;
 - (void)internationalize:(id)arg1;
@@ -92,7 +96,6 @@
 - (void)addConfiguration:(id)arg1;
 - (void)addConfigurationFromEditorMenu:(id)arg1;
 - (void)beginSheetModalUsingAlert:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)alertWithCompletionBlockDidEnd:(id)arg1 returnCode:(long long)arg2 contextInfo:(void *)arg3;
 - (void)buildSettingDidChange:(id)arg1;
 - (void)projectNameDidChange:(id)arg1;
 - (void)referenceWillBeRemovedFromProject:(id)arg1;
@@ -112,6 +115,7 @@
 - (id)_targetForAction:(SEL)arg1;
 - (BOOL)validateMenuItem:(id)arg1;
 - (void)tableViewSelectionDidChange:(id)arg1;
+- (void)updateForTableViewSelectionChange;
 - (id)tableView:(id)arg1 objectValueForTableColumn:(id)arg2 row:(long long)arg3;
 - (long long)numberOfRowsInTableView:(id)arg1;
 - (void)_removeBaseLocalization;

@@ -4,10 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "IDECommandHandler.h"
-#import "IDECommandHandlerVendor.h"
+#import <DebuggerUI/IDECommandHandler-Protocol.h>
+#import <DebuggerUI/IDECommandHandlerVendor-Protocol.h>
 
 @class DBGTimerGroup, NSString;
 
@@ -20,6 +20,7 @@
 
 + (id)handlerForAction:(SEL)arg1 withSelectionSource:(id)arg2;
 - (void).cxx_destruct;
+- (void)viewDebugXcodeWindow:(id)arg1;
 - (void)toggleVariablesViewAutoModeIndexFailure:(id)arg1;
 - (void)debugSessionStressTest:(id)arg1;
 - (void)scheduleRunCommandsInTabController:(id)arg1 sender:(id)arg2;

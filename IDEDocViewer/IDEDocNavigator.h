@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDENavigator.h"
+#import <IDEKit/IDENavigator.h>
 
 @interface IDEDocNavigator : IDENavigator
 {
@@ -21,9 +21,6 @@
 - (void)updateWithURL:(id)arg1 node:(id)arg2 webView:(id)arg3;
 - (id)idedocnavigator_identifier;
 - (id)contextMenuSelectedNavItems;
-- (void)primitiveInvalidate;
-- (void)viewDidInstall;
-- (void)loadView;
 - (id)domainIdentifier;
 
 @end

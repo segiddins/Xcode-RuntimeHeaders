@@ -6,7 +6,7 @@
 
 #import <GPUDebuggerFoundation/GPUTraceGroupItem.h>
 
-#import "IDEDebugTopNavigableModel.h"
+#import <GPUDebuggerFoundation/IDEDebugTopNavigableModel-Protocol.h>
 
 @class DVTStackBacktrace, IDEDebugSession, IDELaunchSession, NSArray, NSString;
 
@@ -29,6 +29,7 @@
 @property(readonly) IDELaunchSession *launchSession;
 @property(readonly, nonatomic) NSArray *loadedCodeModules;
 @property(readonly, nonatomic) IDEDebugSession *parentDebugSession;
+@property(readonly) NSString *subtitle;
 @property(readonly) Class superclass;
 @property(readonly, nonatomic, getter=isValid) BOOL valid;
 

@@ -6,7 +6,7 @@
 
 #import <IDEModelFoundation/XDUMLClassifierImp.h>
 
-#import "XDUMLAssociation.h"
+#import <IDEModelFoundation/XDUMLAssociation-Protocol.h>
 
 @class NSMutableArray, NSString;
 

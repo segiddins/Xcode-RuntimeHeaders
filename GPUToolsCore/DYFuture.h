@@ -4,9 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
 @class NSError, NSMutableArray;
+@protocol NSObject;
 
 @interface DYFuture : NSObject
 {
@@ -25,6 +26,7 @@
 - (void)resolveWithFuture:(id)arg1;
 - (void)timeoutAfter:(double)arg1 label:(id)arg2;
 @property(retain, nonatomic) NSError *error; // @dynamic error;
+- (void)_setError:(id)arg1;
 @property(retain, nonatomic) id result; // @dynamic result;
 - (void)_setResult:(id)arg1;
 - (int)intResult;

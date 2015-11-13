@@ -6,7 +6,7 @@
 
 #import <DevToolsInterface/XCDiffObjectDataSource.h>
 
-#import "PBXTableColumnProvider.h"
+#import <DevToolsInterface/PBXTableColumnProvider-Protocol.h>
 
 @interface XCDiffOutlineDataSource : XCDiffObjectDataSource <PBXTableColumnProvider>
 {

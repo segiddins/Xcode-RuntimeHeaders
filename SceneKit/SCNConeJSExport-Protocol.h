@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "JSExport.h"
+#import <SceneKit/JSExport-Protocol.h>
 
 @protocol SCNConeJSExport <JSExport>
 + (id)coneWithTopRadius:(double)arg1 bottomRadius:(double)arg2 height:(double)arg3;

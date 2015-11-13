@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IBIDEAutolayoutArbitrationUnit.h"
+#import <IDEInterfaceBuilderKit/IBIDEAutolayoutArbitrationUnit.h>
 
 @interface IBCocoaAutolayoutArbitrationUnit : IBIDEAutolayoutArbitrationUnit
 {
@@ -13,6 +13,7 @@
 - (BOOL)doesChangingPriorityOfConstraint:(id)arg1 to:(double)arg2 preventClippingContentOfView:(id)arg3 inEngine:(id)arg4;
 - (id)constraintsAffectingLayoutOfView:(id)arg1 forOrientations:(unsigned long long)arg2 inEngine:(id)arg3;
 - (id)computeStatusFromEngine:(id)arg1;
+- (id)computeViewToLayoutFramesFromEngine:(id)arg1;
 - (id)runArbitrationWithOptions:(id)arg1;
 - (void)_ensureRootObjectIsInWindowDuring:(CDUnknownBlockType)arg1;
 - (id)document;

@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDEGaugeDataProviderService.h"
+#import <IDEFoundation/IDEGaugeDataProviderService.h>
 
 @class DTXChannel;
 
@@ -17,8 +17,10 @@
 + (id)observableAttributes;
 @property(retain) DTXChannel *channel; // @synthesize channel=_channel;
 - (void).cxx_destruct;
-- (id)sampleAttributes:(id)arg1 forPIDs:(id)arg2;
 - (void)didStopSampling;
+- (id)stopSamplingForPIDs:(id)arg1;
+- (id)sampleAttributes:(id)arg1 forPIDs:(id)arg2;
+- (id)startSamplingForPIDs:(id)arg1;
 - (void)willStartSamplingAtTime:(double)arg1 withInterval:(double)arg2;
 
 @end

@@ -4,12 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "CAAnimation.h"
+#import <QuartzCore/CAAnimation.h>
 
 @class NSArray;
 
 @interface CAAnimation (SceneKitAdditions)
-@property(retain, nonatomic) NSArray *animationEvents;
++ (id)scnAnimationNamed:(id)arg1;
+@property(copy, nonatomic) NSArray *animationEvents;
 - (void)setCommitsOnCompletion:(BOOL)arg1;
 - (BOOL)commitsOnCompletion;
 @property double fadeOutDuration;

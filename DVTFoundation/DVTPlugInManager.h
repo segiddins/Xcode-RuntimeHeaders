@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
 @class DVTDispatchLock, DVTPlugInLocator, NSArray, NSDictionary, NSFileManager, NSMutableArray, NSMutableDictionary, NSMutableSet, NSSet, NSString, NSUUID;
 
@@ -30,17 +30,22 @@
     NSMutableDictionary *_invalidExtensionsByIdentifier;
     NSMutableSet *_warnedExtensionPointFailures;
     NSMutableSet *_nonApplePlugInSanitizedStatuses;
+    NSMutableDictionary *_nonApplePlugInDescriptors;
+    NSMutableDictionary *_nonApplePlugInDescriptorActivateCallbacks;
     struct {
         unsigned int _reserved:62;
         unsigned int _isSecondaryScan:1;
         unsigned int _hasScannedForPlugIns:1;
     } _flags;
+    CDUnknownBlockType _shouldAllowNonApplePlugInsCallback;
 }
 
-+ (void)_setDefaultPlugInManager:(id)arg1;
 + (BOOL)enumerateExtensionDataForPluginAtPath:(id)arg1 error:(id *)arg2 withBlock:(CDUnknownBlockType)arg3;
++ (BOOL)ib_enumerateExtensionDataForPluginAtPath:(id)arg1 error:(id *)arg2 withBlock:(CDUnknownBlockType)arg3;
++ (void)_setDefaultPlugInManager:(id)arg1;
 + (id)defaultPlugInManager;
 + (void)initialize;
+@property(copy) CDUnknownBlockType shouldAllowNonApplePlugInsCallback; // @synthesize shouldAllowNonApplePlugInsCallback=_shouldAllowNonApplePlugInsCallback;
 @property(retain) DVTPlugInLocator *plugInLocator; // @synthesize plugInLocator=_plugInLocator;
 @property BOOL shouldClearPlugInCaches; // @synthesize shouldClearPlugInCaches=_shouldClearPlugInCaches;
 - (void).cxx_destruct;
@@ -69,6 +74,19 @@
 - (void)_createPlugInObjectsFromScanRecords:(id)arg1;
 - (void)_applyActivationRulesToScanRecords:(id)arg1;
 - (id)_scanForPlugInsInDirectories:(id)arg1 skippingDuplicatesOfPlugIns:(id)arg2;
+- (BOOL)initializePlugIns:(id *)arg1;
+- (void)_checkNonApplePlugIns;
+- (BOOL)_allowNonApplePlugInsFromDescriptors:(id)arg1 error:(id *)arg2;
+- (void)_saveNonApplePlugInListBasedOnAllowedDescriptors:(id)arg1;
+- (void)_registerDescriptorType:(id)arg1 activationCallback:(CDUnknownBlockType)arg2;
+- (void)_recordNonApplePlugInDescriptor:(id)arg1;
+- (BOOL)_checkValidityForBundle:(id)arg1 error:(id *)arg2;
+- (BOOL)_checkCodeSignatureForBundle:(id)arg1 error:(id *)arg2;
+- (id)nonApplePlugInDescriptorsNotPreviouslyAllowedOrSkipped;
+- (id)nonApplePlugInDescriptorsPreviouslyAllowed;
+- (id)_nonApplePlugInListDefault;
+@property(readonly, copy) NSArray *nonApplePlugInDescriptors;
+- (id)_extractErrorFromPlugInLoadingException:(id)arg1;
 - (BOOL)_scanForPlugIns:(id *)arg1;
 @property(readonly, copy) NSUUID *plugInHostUUID;
 @property BOOL hasScannedForPlugIns; // @dynamic hasScannedForPlugIns;
@@ -79,8 +97,7 @@
 - (id)_defaultApplicationSupportSubdirectory;
 @property(readonly, copy) NSArray *extraSearchPaths;
 - (id)_extensionsForExtensionPoint:(id)arg1 matchingPredicate:(id)arg2;
-- (id)sharedExtensionsForExtensionPoint:(id)arg1 matchingPredicate:(id)arg2;
-- (id)sharedExtensionWithIdentifier:(id)arg1;
+- (id)classesImplementingProtocol:(id)arg1;
 - (id)extensionWithIdentifier:(id)arg1;
 - (id)extensionPointWithIdentifier:(id)arg1;
 - (id)plugInWithIdentifier:(id)arg1;

@@ -7,6 +7,7 @@
 #import <DTGraphKit/DTBarGraph.h>
 
 @class DTNetworkGraphObject, NSArray;
+@protocol DTNetworkGraphLayout;
 
 @interface DTNetworkGraph : DTBarGraph
 {

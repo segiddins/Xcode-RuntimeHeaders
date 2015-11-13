@@ -4,16 +4,16 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDESchemeActionTestFailureSummary.h"
+#import <IDEFoundation/IDESchemeActionTestFailureSummary.h>
 
-#import "IDESharedTests_FailureSummary.h"
+#import <IDEKit/IDETestReport_FailureSummary-Protocol.h>
 
 @class NSString;
 
-@interface IDESchemeActionTestFailureSummary (IDELogTestsViewController) <IDESharedTests_FailureSummary>
-@property(readonly, nonatomic) long long ide_sharedTests_lineNumber;
-@property(readonly, copy, nonatomic) NSString *ide_sharedTests_fileName;
-@property(readonly, copy, nonatomic) NSString *ide_sharedTests_message;
+@interface IDESchemeActionTestFailureSummary (IDELogTestsViewController) <IDETestReport_FailureSummary>
+@property(readonly, nonatomic) long long ide_testReport_failureSummary_lineNumber;
+@property(readonly, copy, nonatomic) NSString *ide_testReport_failureSummary_fileName;
+@property(readonly, copy, nonatomic) NSString *ide_testReport_failureSummary_message;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

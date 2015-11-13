@@ -4,9 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-@class NSArray, NSObject<XCSUIBotSummaryStackedBarGraphDelegate>, XCSUIBotSummaryStackedBarGraph, XCSUIBotSummaryStackedBarGraphColumn;
+@class NSArray, XCSUIBotSummaryStackedBarGraph, XCSUIBotSummaryStackedBarGraphColumn;
+@protocol XCSUIBotSummaryStackedBarGraphDelegate;
 
 @interface XCSUIBotSummaryStackedBarGraphController : NSObject
 {
@@ -36,6 +37,7 @@
 @property double barSpacing; // @synthesize barSpacing=_barSpacing;
 - (void).cxx_destruct;
 - (void)layoutGraph;
+- (unsigned long long)columnsThatFit;
 - (id)emptyColumnColor;
 - (id)barGraphLogAspect;
 - (id)initWithGraphView:(id)arg1;

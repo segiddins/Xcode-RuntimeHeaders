@@ -6,7 +6,7 @@
 
 #import <GLToolsServices/DYGLResourceObject.h>
 
-#import "DYRenderBuffer.h"
+#import <GLToolsServices/DYRenderBuffer-Protocol.h>
 
 @class NSData, NSMutableDictionary, NSString;
 
@@ -27,6 +27,7 @@
 @property(readonly, nonatomic) int width; // @synthesize width=_width;
 @property(readonly, nonatomic) unsigned int format; // @synthesize format=_format;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) unsigned long long cachingCost;
 @property(readonly, copy) NSString *description;
 - (id)initWithResourceObject:(id)arg1 functionStream:(id)arg2 dataResolver:(CDUnknownBlockType)arg3;
 

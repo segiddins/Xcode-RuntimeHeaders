@@ -4,12 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <IDELanguageSupportUI/NSObject-Protocol.h>
 
 @class DVTFilePath, NSString;
 
 @protocol IDEPlaygroundAppBundle <NSObject>
-@property(readonly, getter=isValid) BOOL valid;
 @property(readonly) DVTFilePath *containerPath;
 @property(readonly, copy) NSString *bundleIdentifier;
 @property(readonly, copy) NSString *executableSubpath;

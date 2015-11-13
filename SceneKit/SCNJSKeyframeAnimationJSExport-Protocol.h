@@ -4,18 +4,26 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "JSExport.h"
+#import <SceneKit/JSExport-Protocol.h>
 
 @class CAMediaTimingFunction, NSArray, NSString;
 
 @protocol SCNJSKeyframeAnimationJSExport <JSExport>
-+ (id)keyframeAnimationWithKeyPath:(NSString *)arg1;
++ (id)animationWithKeyPath:(NSString *)arg1;
+@property(copy) NSString *fillMode;
+@property BOOL autoreverses;
+@property double repeatDuration;
+@property float repeatCount;
+@property double timeOffset;
+@property float speed;
+@property double beginTime;
 @property(copy) NSArray *biasValues;
 @property(copy) NSArray *continuityValues;
 @property(copy) NSArray *tensionValues;
 @property(copy) NSString *calculationMode;
 @property(copy) NSArray *timingFunctions;
 @property(copy) NSArray *keyTimes;
+@property double duration;
 @property struct CGPath *path;
 @property(copy) NSArray *values;
 @property(getter=isRemovedOnCompletion) BOOL removedOnCompletion;

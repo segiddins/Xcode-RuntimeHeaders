@@ -7,6 +7,7 @@
 #import <IDEFoundation/IDEActivityLogMessage.h>
 
 @class DVTDispatchLock, DVTWeakInterposer, NSArray, NSMutableArray, NSString;
+@protocol IDEDiagnosticItemDelegate;
 
 @interface IDEDiagnosticActivityLogMessage : IDEActivityLogMessage
 {

@@ -4,16 +4,18 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "DVTInvalidation.h"
-#import "IDEEditorMenuStepperViewDelegate.h"
-#import "NSMenuDelegate.h"
+#import <IDEKit/DVTInvalidation-Protocol.h>
+#import <IDEKit/IDEEditorMenuStepperViewDelegate-Protocol.h>
+#import <IDEKit/NSMenuDelegate-Protocol.h>
 
 @class DVTObservingToken, DVTStackBacktrace, IDEEditorContext, IDEEditorMenuStepperView, IDEIssue, IDEIssueManager, NSArray, NSMenu, NSString, NSURL;
+@protocol DVTCancellable;
 
 @interface IDEEditorIssueMenuController : NSObject <IDEEditorMenuStepperViewDelegate, NSMenuDelegate, DVTInvalidation>
 {
+    BOOL _menuIsShowing;
     IDEIssueManager *_issueManager;
     IDEEditorContext *_editorContext;
     IDEEditorMenuStepperView *_issueMenuView;
@@ -50,6 +52,8 @@
 - (void)_issueMenuAction:(id)arg1;
 - (void)_navigateToIssue:(id)arg1 fixIt:(BOOL)arg2;
 - (void)menuNeedsUpdate:(id)arg1;
+- (void)menuDidClose:(id)arg1;
+- (void)menuWillOpen:(id)arg1;
 - (void)_updateIssueMenuViewVisibility;
 - (id)issueMenuView;
 - (void)_updateIssues;

@@ -4,9 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "NSCoding.h"
+#import <SpriteKit/NSCoding-Protocol.h>
+
+@protocol SKPhysicsContactDelegate;
 
 @interface SKPhysicsWorld : NSObject <NSCoding>
 {
@@ -20,7 +22,6 @@
 @property(nonatomic) id <SKPhysicsContactDelegate> contactDelegate; // @synthesize contactDelegate=_contactDelegate;
 @property(nonatomic) struct CGVector gravity; // @synthesize gravity=_gravity;
 @property(nonatomic) double speed; // @synthesize speed;
-- (id).cxx_construct;
 -     // Error parsing type: 32@0:816, name: sampleFieldsAt:
 -     // Error parsing type: 32@0:816, name: sampleFields:
 - (id)bodyAlongRayStart:(struct CGPoint)arg1 end:(struct CGPoint)arg2;

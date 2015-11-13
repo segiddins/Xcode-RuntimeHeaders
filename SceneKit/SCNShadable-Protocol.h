@@ -4,15 +4,15 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <SceneKit/NSObject-Protocol.h>
 
 @class NSDictionary, NSString, SCNProgram;
 
 @protocol SCNShadable <NSObject>
 
 @optional
-@property(retain, nonatomic) SCNProgram *program;
 @property(copy, nonatomic) NSDictionary *shaderModifiers;
+@property(retain, nonatomic) SCNProgram *program;
 - (void)handleUnbindingOfSymbol:(NSString *)arg1 usingBlock:(void (^)(unsigned int, unsigned int, SCNNode *, SCNRenderer *))arg2;
 - (void)handleBindingOfSymbol:(NSString *)arg1 usingBlock:(void (^)(unsigned int, unsigned int, SCNNode *, SCNRenderer *))arg2;
 @end

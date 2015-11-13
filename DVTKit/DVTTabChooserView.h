@@ -7,6 +7,7 @@
 #import <DVTKit/DVTBorderedView.h>
 
 @class DVTChoice, NSArray, NSMapTable, NSMutableArray, NSSearchField;
+@protocol DVTTabChooserViewDelegate;
 
 @interface DVTTabChooserView : DVTBorderedView
 {

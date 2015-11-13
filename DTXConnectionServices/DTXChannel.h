@@ -4,11 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "DTXMessenger.h"
+#import <DTXConnectionServices/DTXMessenger-Protocol.h>
 
-@class DTXConnection, NSObject<OS_dispatch_queue>, NSString;
+@class DTXConnection, NSString;
+@protocol DTXAllowedRPC, OS_dispatch_queue;
 
 @interface DTXChannel : NSObject <DTXMessenger>
 {
@@ -20,8 +21,11 @@
     CDUnknownBlockType _dispatchValidator;
     BOOL _canceled;
     unsigned int _channelCode;
+    int _compressionTypeHint;
 }
 
+@property(nonatomic) int compressionTypeHint; // @synthesize compressionTypeHint=_compressionTypeHint;
+@property(readonly, retain, nonatomic) DTXConnection *connection; // @synthesize connection=_connection;
 @property(readonly, nonatomic) unsigned int channelCode; // @synthesize channelCode=_channelCode;
 @property BOOL isCanceled; // @synthesize isCanceled=_canceled;
 - (void)sendMessageSync:(id)arg1 replyHandler:(CDUnknownBlockType)arg2;

@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <IDEInterfaceBuilderKit/NSObject-Protocol.h>
 
 @class IBICAbstractCatalogItem, NSString;
 
@@ -14,6 +14,7 @@
 - (void)imageCatalogItemDiskContentsDidChange:(IBICAbstractCatalogItem *)arg1;
 - (void)imageCatalogItemDidChangeDisplayOrderedChildren:(IBICAbstractCatalogItem *)arg1;
 - (void)imageCatalogItemWillChangeDisplayOrderedChildren:(IBICAbstractCatalogItem *)arg1;
+- (void)imageCatalogItemDidChangeDisplayProperties:(IBICAbstractCatalogItem *)arg1;
 - (void)imageCatalogItem:(IBICAbstractCatalogItem *)arg1 didChangeKey:(NSString *)arg2 fromValue:(id)arg3 toValue:(id)arg4;
 - (void)imageCatalogItem:(IBICAbstractCatalogItem *)arg1 willChangeKey:(NSString *)arg2 fromValue:(id)arg3 toValue:(id)arg4;
 @end

@@ -4,13 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSWindowController.h"
+#import <AppKit/NSWindowController.h>
 
-#import "IDEOpenQuicklyQueryDelegate.h"
-#import "NSTableViewDelegate.h"
-#import "NSWindowDelegate.h"
+#import <IDEKit/IDEOpenQuicklyQueryDelegate-Protocol.h>
+#import <IDEKit/NSTableViewDelegate-Protocol.h>
+#import <IDEKit/NSWindowDelegate-Protocol.h>
 
-@class DVTSearchField, IDEOpenQuicklyQuery, IDEOpenQuicklyTableView, IDEWorkspaceTabController, NSArrayController, NSImageView, NSMutableArray, NSString;
+@class DVTSearchField, IDEOpenQuicklyQuery, IDEOpenQuicklyTableView, IDEWorkspaceTabController, NSArray, NSArrayController, NSImageView, NSMutableArray, NSString;
+@protocol DVTCancellable;
 
 @interface IDEOpenQuicklyWindowController : NSWindowController <IDEOpenQuicklyQueryDelegate, NSTableViewDelegate, NSWindowDelegate>
 {
@@ -21,6 +22,7 @@
     NSMutableArray *_bindingTokens;
     IDEWorkspaceTabController *_workspaceTabController;
     IDEOpenQuicklyQuery *_query;
+    NSArray *_oldSelection;
     id <DVTCancellable> _appActionsMonitor;
     id _eventMonitor;
     id _notificationTokenWillResignActive;
@@ -29,6 +31,7 @@
     BOOL _scoped;
     BOOL _windowClosed;
     BOOL _waitingForBetterResults;
+    BOOL _disableSelectionSave;
 }
 
 + (id)openQuicklyWindowController;
@@ -53,6 +56,7 @@
 - (BOOL)control:(id)arg1 textView:(id)arg2 doCommandBySelector:(SEL)arg3;
 - (void)_updateQueryString:(id)arg1 updateInterface:(BOOL)arg2;
 - (void)openQuicklyQueryDidUpdate:(id)arg1;
+- (void)openQuicklyQueryWillUpdate:(id)arg1;
 - (void)_resizeView;
 - (void)_captureQueryString;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forTableColumn:(id)arg3 row:(long long)arg4;

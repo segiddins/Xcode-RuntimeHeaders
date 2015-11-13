@@ -6,9 +6,9 @@
 
 #import <IDEKit/IDEViewController.h>
 
-#import "IDEActionSliceViewControllerDelegate.h"
-#import "IDECapsuleListViewDataSource.h"
-#import "NSTableViewDataSource.h"
+#import <IDEKit/IDEActionSliceViewControllerDelegate-Protocol.h>
+#import <IDEKit/IDECapsuleListViewDataSource-Protocol.h>
+#import <IDEKit/NSTableViewDataSource-Protocol.h>
 
 @class DVTGradientImageButton, DVTGradientImagePopUpButton, DVTObservingToken, IDEActionStackView, IDEControlGroup, IDESchemeAction, NSArray, NSMutableArray, NSString;
 

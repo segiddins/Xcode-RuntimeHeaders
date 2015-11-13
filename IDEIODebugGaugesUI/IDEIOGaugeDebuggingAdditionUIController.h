@@ -4,16 +4,17 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "IDEDebuggingAdditionUIController.h"
-#import "IDEIOGaugeCollectedDataListeners.h"
+#import <IDEIODebugGaugesUI/IDEDebuggingAdditionUIController-Protocol.h>
+#import <IDEIODebugGaugesUI/IDEGaugeCollectedDataListeners-Protocol.h>
 
-@class DVTExtension, DVTStackBacktrace, IDEDebugGaugeTrayCell, IDEIOGaugeDebuggingAddition, IDEWorkspaceTabController, NSString;
+@class DVTExtension, DVTStackBacktrace, IDEDebugGaugeTrayCell, IDEGaugeDebuggingAddition, IDEGaugeDocumentLocation, IDEWorkspaceTabController, NSString;
 
-@interface IDEIOGaugeDebuggingAdditionUIController : NSObject <IDEDebuggingAdditionUIController, IDEIOGaugeCollectedDataListeners>
+@interface IDEIOGaugeDebuggingAdditionUIController : NSObject <IDEDebuggingAdditionUIController, IDEGaugeCollectedDataListeners>
 {
-    IDEIOGaugeDebuggingAddition *_debuggingAddition;
+    IDEGaugeDocumentLocation *_gaugeDocumentLocation;
+    IDEGaugeDebuggingAddition *_debuggingAddition;
     DVTExtension *_extension;
     IDEWorkspaceTabController *_workspaceTabController;
     IDEDebugGaugeTrayCell *_trayCell;
@@ -23,14 +24,11 @@
 @property(retain, nonatomic) IDEDebugGaugeTrayCell *trayCell; // @synthesize trayCell=_trayCell;
 @property(retain, nonatomic) IDEWorkspaceTabController *workspaceTabController; // @synthesize workspaceTabController=_workspaceTabController;
 @property(retain, nonatomic) DVTExtension *extension; // @synthesize extension=_extension;
-@property(retain) IDEIOGaugeDebuggingAddition *debuggingAddition; // @synthesize debuggingAddition=_debuggingAddition;
+@property(retain) IDEGaugeDebuggingAddition *debuggingAddition; // @synthesize debuggingAddition=_debuggingAddition;
 - (void).cxx_destruct;
 - (void)primitiveInvalidate;
-- (void)openSelectedNavigableItem:(id)arg1 withEventType:(unsigned long long)arg2;
-- (id)launchSessionForSelectedRepresentedObject:(id)arg1;
 - (void)debuggingAdditionDidUpdateCollectedQueryResults:(id)arg1;
 - (id)trayCellForNavigationProcessHeader;
-- (BOOL)wantsTrayAreaForNavigationProcessHeader;
 - (id)initWithWorkspaceTabController:(id)arg1 withDebuggingAddition:(id)arg2 forExtension:(id)arg3;
 
 // Remaining properties

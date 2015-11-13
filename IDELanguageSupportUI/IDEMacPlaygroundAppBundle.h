@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "IDEPlaygroundAppBundle.h"
+#import <IDELanguageSupportUI/IDEPlaygroundAppBundle-Protocol.h>
 
 @class DVTFilePath, NSString;
 
@@ -16,8 +16,10 @@
     DVTFilePath *_appBundlePath;
     NSString *_executableSubpath;
     NSString *_bundleIdentifier;
+    DVTFilePath *_resourcesDirectoryPath;
 }
 
+@property(readonly) DVTFilePath *resourcesDirectoryPath; // @synthesize resourcesDirectoryPath=_resourcesDirectoryPath;
 @property(readonly, copy) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(readonly, copy) NSString *executableSubpath; // @synthesize executableSubpath=_executableSubpath;
 @property(readonly) DVTFilePath *appBundlePath; // @synthesize appBundlePath=_appBundlePath;
@@ -25,8 +27,7 @@
 - (BOOL)cleanUpAppBundle:(id *)arg1;
 - (id)containerIdentifier;
 @property(readonly) DVTFilePath *containerPath;
-@property(readonly, getter=isValid) BOOL valid;
-- (id)initWithAppBundlePath:(id)arg1 executableSubpath:(id)arg2 bundleIdentifier:(id)arg3;
+- (id)initWithAppBundlePath:(id)arg1 executableSubpath:(id)arg2 bundleIdentifier:(id)arg3 resourcesDirectoryPaths:(id)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

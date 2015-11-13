@@ -6,8 +6,8 @@
 
 #import <DevToolsCore/PBXProjectItem.h>
 
-#import "PBXContainerScriptingExtensions.h"
-#import "XCCompatibilityChecking.h"
+#import <DevToolsCore/PBXContainerScriptingExtensions-Protocol.h>
+#import <DevToolsCore/XCCompatibilityChecking-Protocol.h>
 
 @class NSMutableArray, NSString, PBXTarget;
 

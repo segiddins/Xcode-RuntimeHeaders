@@ -4,12 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "CDMModel.h"
+#import <IDEModelFoundation/CDMModel.h>
 
-#import "IDEDMModelRootObject.h"
-#import "IDEDataModelSourceObject.h"
+#import <IDEModelEditor/IDEDMModelRootObject-Protocol.h>
+#import <IDEModelEditor/IDEDataModelSourceObject-Protocol.h>
 
 @class IDETypeIdentifier, NSArray, NSImage, NSString;
+@protocol IDEDMModelObject, IDEDMSourceObject;
 
 @interface CDMModel (CDMNavigableIdentification) <IDEDataModelSourceObject, IDEDMModelRootObject>
 + (id)orderedLocationKeys;

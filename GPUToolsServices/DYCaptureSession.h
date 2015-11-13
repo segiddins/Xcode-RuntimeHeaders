@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
 @class DYCaptureArchive, DYContinuation, DYFuture, DYGuestAppSession, DYTransportSource, NSError, NSMapTable, NSMutableDictionary;
 
@@ -49,6 +49,7 @@
 @property(nonatomic) BOOL automaticallyDeleteArchiveOnFailure; // @synthesize automaticallyDeleteArchiveOnFailure=_automaticallyDeleteArchiveOnFailure;
 @property(readonly, retain, nonatomic) DYCaptureArchive *archive; // @synthesize archive=_archive;
 - (void).cxx_destruct;
+- (void)_replaceArchive:(id)arg1;
 - (void)_postProcessArchive;
 - (void)_saveAPISpecificData:(id)arg1;
 - (void)_setupFinalConfigurationDictionary:(id)arg1;

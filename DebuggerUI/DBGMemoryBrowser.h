@@ -4,16 +4,22 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDEHexEditor.h"
+#import <HexEditor/IDEHexEditor.h>
 
-@class DBGMemoryBrowserDocument, DVTBorderedView, NSButton, NSPopUpButton, NSTextField;
+#import <DebuggerUI/HFTextColoringDelegate-Protocol.h>
 
-@interface DBGMemoryBrowser : IDEHexEditor
+@class DBGMemoryBrowserDocument, DVTBorderedView, DVTObservingToken, NSButton, NSPopUpButton, NSString, NSTextField;
+
+@interface DBGMemoryBrowser : IDEHexEditor <HFTextColoringDelegate>
 {
     DVTBorderedView *_bottomToolBar;
     NSTextField *_addressTextField;
     NSButton *_freezeButton;
     NSPopUpButton *_numberOfBytes;
+    struct CGColor *_validBytesColor;
+    struct CGColor *_invalidBytesColor;
+    DVTObservingToken *memoryDataValidityObservingToken;
+    DVTObservingToken *rawMemoryDataObservingToken;
 }
 
 + (unsigned long long)defaultLineNumberFormat;
@@ -22,13 +28,22 @@
 + (id)displayStringForAddress:(unsigned long long)arg1;
 + (id)keyPathsForValuesAffectingMemoryBrowserDocument;
 - (void).cxx_destruct;
+- (void)_themeColorsUpdated;
+- (void)colorForBytesStartingAtIndex:(unsigned long long)arg1 resultingColor:(struct CGColor **)arg2 chunkLength:(unsigned long long *)arg3;
 - (void)_updateMemoryDataWithRelativeOffset:(long long)arg1;
 - (void)nextOrPreviousPage:(id)arg1;
 - (void)numberOfBytesChanged:(id)arg1;
 - (void)addressEntered:(id)arg1;
 - (void)_handleMemoryDataUpdated;
 @property(readonly) DBGMemoryBrowserDocument *memoryBrowserDocument;
+- (void)primitiveInvalidate;
 - (void)loadView;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

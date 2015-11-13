@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "SKView.h"
+#import <SpriteKit/SKView.h>
 
 @class EditOverlayView, NSEvent;
 
@@ -16,22 +16,28 @@
     id _eventMonitor;
     struct CGPoint _lastTouchPoint;
     unsigned long long _lastTouchId;
+    BOOL _shouldRestoreZoom;
     EditOverlayView *_overlayView;
     NSEvent *_lastMouseDownEvent;
     NSEvent *_lastMouseDragEvent;
 }
 
+@property(nonatomic) BOOL shouldRestoreZoom; // @synthesize shouldRestoreZoom=_shouldRestoreZoom;
 @property(readonly) NSEvent *lastMouseDragEvent; // @synthesize lastMouseDragEvent=_lastMouseDragEvent;
 @property(readonly) NSEvent *lastMouseDownEvent; // @synthesize lastMouseDownEvent=_lastMouseDownEvent;
 @property unsigned long long lastMouseEventModFlags; // @synthesize lastMouseEventModFlags=_lastMouseEventModFlags;
 @property(nonatomic) __weak EditOverlayView *overlayView; // @synthesize overlayView=_overlayView;
-- (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)draggingEnded:(id)arg1;
 - (void)draggingExited:(id)arg1;
+- (BOOL)_tryAcceptFilenameListDrop:(id)arg1 sender:(id)arg2;
+- (BOOL)_tryAcceptMediaResourceDrop:(id)arg1 sender:(id)arg2;
+- (BOOL)_tryAcceptSKObjectLibraryDrop:(id)arg1 sender:(id)arg2;
 - (BOOL)performDragOperation:(id)arg1;
+- (void)_update:(double)arg1;
 - (unsigned long long)draggingEntered:(id)arg1;
 - (void)sendSelectedNodeToPasteboard:(struct CGPoint)arg1;
+- (void)willRenderContent;
 - (void)touchCancelled:(unsigned long long)arg1 location:(struct CGPoint)arg2 clickCount:(int)arg3;
 - (void)touchEnded:(unsigned long long)arg1 location:(struct CGPoint)arg2 clickCount:(int)arg3;
 - (void)touchMoved:(unsigned long long)arg1 location:(struct CGPoint)arg2 clickCount:(int)arg3;

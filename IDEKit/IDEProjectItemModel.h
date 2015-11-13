@@ -4,21 +4,24 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "DVTInvalidation.h"
+#import <IDEKit/DVTInvalidation-Protocol.h>
 
-@class DVTDelayedInvocation, DVTStackBacktrace, NSArray, NSString, Xcode3TargetBuildSettingsCoordinator, Xcode3TargetEntitlementsCoordinator, Xcode3TargetInfoPlistCoordinator, Xcode3TargetLinkedFrameworksCoordinator, Xcode3TargetPortalEntitlementsCoordinator<IDEAppIDFeatureDelegate>;
+@class DVTDelayedInvocation, DVTStackBacktrace, NSArray, NSString, Xcode3TargetBuildSettingsCoordinator, Xcode3TargetEntitlementsCoordinator, Xcode3TargetInfoPlistCoordinator, Xcode3TargetLinkedFrameworksCoordinator, Xcode3TargetPortalEntitlementsCoordinator;
+@protocol IDEAppIDFeatureDelegate, IDECapabilitiesContextProviding, IDEProjectItem;
 
 @interface IDEProjectItemModel : NSObject <DVTInvalidation>
 {
     NSArray *_flightChecks;
+    BOOL _needToPublish;
     id <IDECapabilitiesContextProviding> _targetCapabilitiesContext;
     id <IDEProjectItem> _item;
     DVTDelayedInvocation *_delayedUpdateInvocation;
 }
 
 + (void)initialize;
+@property BOOL needToPublish; // @synthesize needToPublish=_needToPublish;
 @property(readonly) DVTDelayedInvocation *delayedUpdateInvocation; // @synthesize delayedUpdateInvocation=_delayedUpdateInvocation;
 @property(readonly) id <IDEProjectItem> item; // @synthesize item=_item;
 @property(readonly) id <IDECapabilitiesContextProviding> targetCapabilitiesContext; // @synthesize targetCapabilitiesContext=_targetCapabilitiesContext;

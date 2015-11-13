@@ -4,24 +4,22 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "DVTInvalidation.h"
-#import "IDEReviewFilesDataSource.h"
+#import <IDEKit/DVTInvalidation-Protocol.h>
+#import <IDEKit/IDEReviewFilesDataSource-Protocol.h>
 
-@class DVTStackBacktrace, IDENavigatorDataCell, IDESourceControlRepository, NSArray, NSMutableSet, NSString;
+@class DVTStackBacktrace, IDENavigatorDataCell, NSArray, NSMutableSet, NSString;
 
 @interface IDESourceControlCommitViewerNavigatorDataSource : NSObject <IDEReviewFilesDataSource, DVTInvalidation>
 {
     IDENavigatorDataCell *_cachedSourceTreeItemCell;
     IDENavigatorDataCell *_cachedRepositoryContainerCell;
     NSArray *_navigableItems;
-    IDESourceControlRepository *_repository;
     NSMutableSet *_bindingTokens;
 }
 
 + (void)initialize;
-@property(retain) IDESourceControlRepository *repository; // @synthesize repository=_repository;
 @property(retain) NSArray *navigableItems; // @synthesize navigableItems=_navigableItems;
 - (void).cxx_destruct;
 - (void)primitiveInvalidate;

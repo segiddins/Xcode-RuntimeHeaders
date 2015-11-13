@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "DVTModelTree.h"
+#import <DVTFoundation/DVTModelTree.h>
 
 @class IDESourceControlExtension, IDESourceControlManager, IDESourceControlTreeGroup, NSString;
 
@@ -20,6 +20,7 @@
     NSString *_cachedFirstRevision;
 }
 
++ (unsigned long long)assertionBehaviorAfterEndOfEventForSelector:(SEL)arg1;
 + (void)initialize;
 + (id)treeLoadingModelObjectGraph;
 @property(copy) NSString *cachedFirstRevision; // @synthesize cachedFirstRevision=_cachedFirstRevision;
@@ -34,7 +35,6 @@
 - (id)copyRepository;
 - (id)description;
 - (BOOL)containsItemAtLocation:(id)arg1;
-- (id)firstRevisionWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (id)subclass_createRootNode;
 - (void)primitiveInvalidate;
 - (id)dictionaryRepresentation;

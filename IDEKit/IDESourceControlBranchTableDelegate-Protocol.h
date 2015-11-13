@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <IDEKit/NSObject-Protocol.h>
 
-@class IDESourceControlBranch, IDEWorkspace, NSError;
+@class DVTSourceControlBranch, IDEWorkspace, NSError;
 
 @protocol IDESourceControlBranchTableDelegate <NSObject>
 
@@ -15,6 +15,6 @@
 - (IDEWorkspace *)workspace;
 - (void)didRemoveBranch;
 - (void)willRemoveBranch;
-- (void)setSelectedBranch:(IDESourceControlBranch *)arg1;
+- (void)setSelectedBranch:(DVTSourceControlBranch *)arg1;
 @end
 

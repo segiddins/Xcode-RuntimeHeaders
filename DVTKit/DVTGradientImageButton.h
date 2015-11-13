@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSButton.h"
+#import <AppKit/NSButton.h>
 
-#import "DVTGradientStyleButton.h"
+#import <DVTKit/DVTGradientStyleButton-Protocol.h>
 
 @class NSString;
 
@@ -15,10 +15,8 @@
 }
 
 + (Class)cellClass;
-@property int highlightSides;
 @property int borderSides;
 @property int gradientStyle;
-@property BOOL showsState;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

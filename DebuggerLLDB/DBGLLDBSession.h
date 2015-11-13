@@ -4,12 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "DBGDebugSession.h"
+#import <DebuggerFoundation/DBGDebugSession.h>
 
-#import "DBGDebugSessionBreakpointLifeCycleDelegate.h"
-#import "IDEConsoleAdaptorDelegateProtocol.h"
+#import <DebuggerLLDB/DBGDebugSessionBreakpointLifeCycleDelegate-Protocol.h>
+#import <DebuggerLLDB/IDEConsoleAdaptorDelegateProtocol-Protocol.h>
 
-@class DBGLLDBLauncher, DVTDispatchLock, NSMutableArray, NSMutableString, NSObject<OS_dispatch_queue>, NSString;
+@class DBGLLDBLauncher, DVTDispatchLock, NSMutableArray, NSMutableString, NSObject, NSString;
+@protocol OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
 @interface DBGLLDBSession : DBGDebugSession <IDEConsoleAdaptorDelegateProtocol, DBGDebugSessionBreakpointLifeCycleDelegate>
@@ -49,6 +50,7 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_expressionsWhenPaused;
 }
 
++ (unsigned long long)assertionBehaviorAfterEndOfEventForSelector:(SEL)arg1;
 @property(retain) NSMutableArray *expressionsWhenPaused; // @synthesize expressionsWhenPaused=_expressionsWhenPaused;
 @property BOOL shouldIssueKillAfterPause; // @synthesize shouldIssueKillAfterPause=_shouldIssueKillAfterPause;
 @property BOOL readyForActionsWhenPaused; // @synthesize readyForActionsWhenPaused=_readyForActionsWhenPaused;
@@ -65,9 +67,13 @@ __attribute__((visibility("hidden")))
 @property BOOL isTracingOnDeviceAndTargetGotJetsam; // @synthesize isTracingOnDeviceAndTargetGotJetsam=_isTracingOnDeviceAndTargetGotJetsam;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (void)_delayedTurnOnMemoryDebugging;
+- (void)_handleSessionThreadEndOfLifeWithExitCode:(long long)arg1 exitDescription:(id)arg2;
 - (void)_setUpRecordingStackFramesForAttach;
 - (id)_lldbProcessPlugnPacketSend:(const char *)arg1;
 - (void)primitiveInvalidate;
+- (void)stopMemoryDebugging;
+- (void)startMemoryDebuggingIfNeeded;
 - (BOOL)shouldIgnoreSigTermKill;
 - (void)_runPendingExpressionsAndPurgeList;
 - (void)_refreshThreadListAndUpdateCurrentThread:(int)arg1;
@@ -82,23 +88,15 @@ __attribute__((visibility("hidden")))
 - (void)terminateCurrentDebuggerCommandIfNeeded;
 - (id)supportedDataValueFormatsForDataValue:(id)arg1;
 - (BOOL)consoleShouldTrackInputHistory;
-- (struct SBBreakpointLocation)_sbBreakpointLocationForIDEBreakpointLocation:(id)arg1;
-- (void)_handleBreakpointLocationEnablementChangedFromSessionThread:(id)arg1;
+- (struct SBBreakpointLocation)_sbBreakpointLocationForIDEBreakpointLocationID:(unsigned long long)arg1 parentBreakpointID:(unsigned long long)arg2;
 - (void)breakpointLocationEnablementChanged:(id)arg1;
-- (void)_handleBreakpointLocationIgnoreCountChangedFromSessionThread:(id)arg1;
 - (void)breakpointLocationIgnoreCount:(id)arg1;
-- (void)_handleBreakpointLocationConditionChangedFromSessionThread:(id)arg1;
 - (void)breakpointLocationConditionChanged:(id)arg1;
-- (void)_handleBreakpointEnablementChangedFromLLDBSessionThread:(id)arg1;
 - (void)breakpointEnablementChanged:(id)arg1;
-- (void)_handleBreakpointIgnoreCountChangedFromLLDBSessionThread:(id)arg1;
 - (void)breakpointIgnoreCountChanged:(id)arg1;
-- (void)_handleBreakpointConditionChangedFromLLDBSessionThread:(id)arg1;
 - (void)breakpointConditionChanged:(id)arg1;
 - (void)_logBreakpointState:(struct SBBreakpoint)arg1 usingPrefix:(id)arg2;
-- (void)_handleWatchpointEnablementChangedFromLLDBSessionThread:(id)arg1;
 - (void)watchpointEnablementChanged:(id)arg1;
-- (void)_handleActivationStateChangedFromSessionThread:(BOOL)arg1 forBreakpoints:(id)arg2;
 - (void)activationStateChanged:(BOOL)arg1 forBreakpoints:(id)arg2;
 - (void)_deleteBreakpointFromLLDBSessionThread:(id)arg1 breakpointLocations:(id)arg2;
 - (void)deleteBreakpoint:(id)arg1;
@@ -111,23 +109,18 @@ __attribute__((visibility("hidden")))
 - (void)deleteWatchpoint:(id)arg1;
 - (struct SBBreakpoint)_createBreakpointFromAddressBreakpoint:(id)arg1;
 - (struct SBBreakpoint)_createBreakpointFromExceptionBreakpoint:(id)arg1;
+- (struct SBBreakpoint)_createBreakpointFromSwiftErrorBreakpoint:(id)arg1;
 - (struct SBBreakpoint)_createBreakpointFromTestFailureBreakpoint:(id)arg1;
 - (struct SBBreakpoint)_sbBreakpointForSymbolsNames:(id)arg1;
 - (struct SBBreakpoint)_createBreakpointFromSymbolicBreakpoint:(id)arg1;
 - (struct SBBreakpoint)_createBreakpointFromFileBreakpoint:(id)arg1;
-- (void)_createBreakpointIfNecessaryFromLLDBSessionThread:(id)arg1;
 - (void)createBreakpointIfNecessary:(id)arg1;
-- (void)_evaluateExpressionFromSessionThread:(id)arg1 threadID:(unsigned long long)arg2 stackFrameID:(unsigned long long)arg3 queue:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
+- (void)_evaluateExpressionFromSessionThread:(id)arg1 threadID:(unsigned long long)arg2 stackFrameID:(unsigned long long)arg3 queue:(id)arg4 options:(id)arg5 completionHandler:(CDUnknownBlockType)arg6;
+- (void)evaluateExpression:(id)arg1 threadID:(unsigned long long)arg2 stackFrameID:(unsigned long long)arg3 queue:(id)arg4 options:(id)arg5 completionHandler:(CDUnknownBlockType)arg6;
 - (void)evaluateExpression:(id)arg1 threadID:(unsigned long long)arg2 stackFrameID:(unsigned long long)arg3 queue:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
-- (void)deregisterProfileDataObserver:(id)arg1;
-- (void)registerProfileDataObserver:(id)arg1;
 - (void)_setProfilingEnabled:(BOOL)arg1;
-- (void)_setProfilingEnabled:(BOOL)arg1 updateLLDB:(BOOL)arg2;
 - (id)commandsExpectingExpressions;
 - (void)_delayedSetRunningState;
-- (void)_invalidateObjectsFromMainThread:(id)arg1;
-- (void)_markObjectsForInvalidationFromSessionThread:(id)arg1;
-- (void)safelyInvalidateLLDBInvalidatableObjects:(id)arg1;
 - (void)_quitWatchdogOnProcessState:(int *)arg1 forceQuit:(BOOL)arg2;
 - (void)_cancelAndClearAllSessionThreadActionsByFirstTakingActionsLock;
 - (void)_cancelAndClearAllSessionThreadActionsWithActionsLockAlreadyTaken;
@@ -172,6 +165,7 @@ __attribute__((visibility("hidden")))
 - (void)_setAndAppendPrompt:(id)arg1;
 - (id)prompt;
 - (void)trackProcess;
+- (void)_checkShouldUseAnonymousForDevice:(id)arg1 osString:(id)arg2;
 - (struct SBBroadcaster *)lldbBroadcaster;
 - (struct SBTarget *)lldbTarget;
 - (void)setTarget:(struct SBTarget)arg1;

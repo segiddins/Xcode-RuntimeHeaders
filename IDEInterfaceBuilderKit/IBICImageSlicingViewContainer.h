@@ -4,12 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "DVTLayoutView_ML.h"
+#import <DVTKit/DVTLayoutView_ML.h>
 
-#import "IBICImageSlicingViewDelegate.h"
-#import "IBICStartSlicingButtonDelegate.h"
+#import <IDEInterfaceBuilderKit/IBICImageSlicingViewDelegate-Protocol.h>
+#import <IDEInterfaceBuilderKit/IBICStartSlicingButtonDelegate-Protocol.h>
 
 @class IBICImageResizingBehavior, IBICImageSlicingView, IBICStartSlicingButton, NSBitmapImageRep, NSString, NSTextField;
+@protocol IBICImageSlicingViewContainerDelegate;
 
 @interface IBICImageSlicingViewContainer : DVTLayoutView_ML <IBICImageSlicingViewDelegate, IBICStartSlicingButtonDelegate>
 {

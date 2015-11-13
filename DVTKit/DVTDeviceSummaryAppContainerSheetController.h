@@ -6,10 +6,11 @@
 
 #import <DVTKit/DVTPagingSheetWindowController.h>
 
-#import "NSOutlineViewDataSource.h"
-#import "NSOutlineViewDelegate.h"
+#import <DVTKit/NSOutlineViewDataSource-Protocol.h>
+#import <DVTKit/NSOutlineViewDelegate-Protocol.h>
 
 @class DVTOutlineView, NSArray, NSString;
+@protocol DVTDeviceApplication_KitSupport;
 
 @interface DVTDeviceSummaryAppContainerSheetController : DVTPagingSheetWindowController <NSOutlineViewDataSource, NSOutlineViewDelegate>
 {
@@ -18,6 +19,7 @@
     DVTOutlineView *_containerOutline;
 }
 
++ (unsigned long long)assertionBehaviorForKeyValueObservationsAtEndOfEvent;
 @property(retain) DVTOutlineView *containerOutline; // @synthesize containerOutline=_containerOutline;
 @property(readonly) id <DVTDeviceApplication_KitSupport> application; // @synthesize application=_application;
 - (void).cxx_destruct;

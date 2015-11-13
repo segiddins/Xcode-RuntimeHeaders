@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "DYShaderProfilerShaderInfo.h"
+#import <GPUToolsShaderProfiler/DYShaderProfilerShaderInfo.h>
 
 @interface DYMTLShaderProfilerShaderInfo : DYShaderProfilerShaderInfo
 {
@@ -12,6 +12,8 @@
 }
 
 @property(nonatomic) unsigned long long libraryId; // @synthesize libraryId=_libraryId;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithLibraryId:(unsigned long long)arg1;
 
 @end

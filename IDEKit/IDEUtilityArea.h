@@ -6,9 +6,10 @@
 
 #import <IDEKit/IDEViewController.h>
 
-#import "IDENavigableItemCoordinatorDelegate.h"
+#import <IDEKit/IDENavigableItemCoordinatorDelegate-Protocol.h>
 
 @class DVTBorderedView, DVTChoice, DVTChooserView, DVTDelayedInvocation, DVTDisclosureView, DVTExtension, DVTMutableOrderedSet, DVTNotificationToken, DVTStackView_ML, IDEEditorDocument, IDENavigableItemCoordinator, IDESelection, IDEUtilityPlaceholderView, NSArray, NSMapTable, NSMutableArray, NSScrollView, NSSet, NSString;
+@protocol DVTCancellable;
 
 @interface IDEUtilityArea : IDEViewController <IDENavigableItemCoordinatorDelegate>
 {

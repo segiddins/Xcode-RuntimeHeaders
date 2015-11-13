@@ -4,20 +4,21 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "IDEProductsInspectable.h"
+#import "IDEProductsInspectable-Protocol.h"
 
-@class DVTCrashLog, DVTCrashPoint, NSString;
+@class DVTCrashLog, DVTCrashPoint, DVTProductCategory, NSString;
 
 @interface IDECrashPointInspectable : NSObject <IDEProductsInspectable>
 {
-    unsigned long long _productType;
     DVTCrashPoint *_crashPoint;
     DVTCrashLog *_crashLog;
+    DVTProductCategory *_productCategory;
 }
 
 + (id)keyPathsForValuesAffectingMarkAsResolvedButtonTitle;
+@property(readonly) DVTProductCategory *productCategory; // @synthesize productCategory=_productCategory;
 @property(readonly) DVTCrashLog *crashLog; // @synthesize crashLog=_crashLog;
 @property(readonly) DVTCrashPoint *crashPoint; // @synthesize crashPoint=_crashPoint;
 - (void).cxx_destruct;
@@ -27,7 +28,7 @@
 - (id)inspectableIcon;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
-- (id)initWithCrashPoint:(id)arg1 crashLog:(id)arg2 productType:(unsigned long long)arg3;
+- (id)initWithCrashPoint:(id)arg1 crashLog:(id)arg2 productCategory:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "IDEKeyDrivenNavigableItemRepresentedObject.h"
+#import <IDEKit/IDEKeyDrivenNavigableItemRepresentedObject-Protocol.h>
 
 @class DVTDocumentLocation, DVTFileDataType, IDEFileReference, NSArray, NSImage, NSString;
 
@@ -16,7 +16,7 @@
     NSArray *_runDestinations;
 }
 
-+ (id)groupsFromRunDestinations:(id)arg1;
++ (id)groupsFromRunDestinations:(id)arg1 scheme:(id)arg2;
 @property(readonly) NSArray *runDestinations; // @synthesize runDestinations=_runDestinations;
 @property(readonly) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;

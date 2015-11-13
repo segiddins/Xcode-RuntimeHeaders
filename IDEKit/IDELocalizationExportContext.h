@@ -4,9 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDELocalizationManagerContext.h"
+#import <IDEFoundation/IDELocalizationManagerContext.h>
 
-@class DVTFilePath, IDEContainer<IDELocalizedContainer>, IDEWorkspaceTabController;
+@class DVTFilePath, IDEContainer, IDEWorkspaceTabController;
+@protocol IDELocalizedContainer;
 
 @interface IDELocalizationExportContext : IDELocalizationManagerContext
 {

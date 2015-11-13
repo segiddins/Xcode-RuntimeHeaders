@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "NSCopying.h"
+#import <DVTFoundation/NSCopying-Protocol.h>
 
 @class NSDictionary, NSSet, NSString;
 
@@ -18,8 +18,8 @@
     NSSet *_omcIdentifiers;
 }
 
-+ (id)entitlementS;
-+ (id)entitlementO;
++ (id)paymentPassAccessEntitlement;
++ (id)inAppPaymentsEntitlement;
 + (id)userNameForFlag:(id)arg1;
 @property(readonly) NSSet *omcIdentifiers; // @synthesize omcIdentifiers=_omcIdentifiers;
 @property(readonly) NSSet *applicationGroups; // @synthesize applicationGroups=_applicationGroups;

@@ -6,9 +6,12 @@
 
 #import <IDEFoundation/IDEIndexDBSQLStream.h>
 
-@class IDEIndexDatabase, NSMutableSet, NSObject<OS_dispatch_queue>;
+#import <IDEFoundation/DVTInvalidation-Protocol.h>
 
-@interface IDEIndexDBConnection : IDEIndexDBSQLStream
+@class DVTStackBacktrace, IDEIndexDatabase, NSMutableSet, NSObject, NSString;
+@protocol OS_dispatch_queue;
+
+@interface IDEIndexDBConnection : IDEIndexDBSQLStream <DVTInvalidation>
 {
     IDEIndexDatabase *_database;
     NSObject<OS_dispatch_queue> *_runQueue;
@@ -22,10 +25,13 @@
     int _collectionCount;
 }
 
++ (unsigned long long)assertionBehaviorForKeyValueObservationsAtEndOfEvent;
++ (unsigned long long)assertionBehaviorAfterEndOfEventForSelector:(SEL)arg1;
 + (void)initialize;
 - (id)database;
 - (void).cxx_destruct;
 - (void)dealloc;
+- (void)primitiveInvalidate;
 - (void)close;
 - (void)wait;
 - (void)reportSQLiteError:(int)arg1 function:(id)arg2 message:(const char *)arg3 info:(id)arg4;
@@ -48,6 +54,15 @@
 - (id)dbConnection;
 - (void)setAutoCheckpointThreshold:(int)arg1;
 - (id)initWithDatabase:(id)arg1 create:(BOOL)arg2 backgroundPriority:(BOOL)arg3;
+
+// Remaining properties
+@property(retain) DVTStackBacktrace *creationBacktrace;
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) DVTStackBacktrace *invalidationBacktrace;
+@property(readonly) Class superclass;
+@property(readonly, nonatomic, getter=isValid) BOOL valid;
 
 @end
 

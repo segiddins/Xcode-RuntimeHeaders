@@ -4,16 +4,18 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "DVTLayoutView_ML.h"
+#import <DVTKit/DVTLayoutView_ML.h>
 
-#import "DVTInvalidation.h"
-#import "IDEAttributedStringControlTextViewDelegate.h"
-#import "IDEGroupedSegmentedControlDelegate.h"
-#import "IDEParagraphStylePopoverControllerDelegate.h"
+#import <IDEKit/DVTFontTextFieldCellDelegate-Protocol.h>
+#import <IDEKit/DVTInvalidation-Protocol.h>
+#import <IDEKit/IDEAttributedStringControlTextViewDelegate-Protocol.h>
+#import <IDEKit/IDEGroupedSegmentedControlDelegate-Protocol.h>
+#import <IDEKit/IDEParagraphStylePopoverControllerDelegate-Protocol.h>
 
-@class DVTFontTextField, DVTSegmentColorWell, DVTStackBacktrace, IDEAttributedStringControlParagraphStylePopoverController, IDEAttributedStringControlTextView, IDEGroupedSegmentedControl, IDEGroupedSegmentedControlGroup, IDEGroupedSegmentedControlItem, NSAttributedString, NSPopover, NSScrollView, NSStepper, NSString, NSTextView;
+@class DVTFontTextField, DVTSegmentColorWell, DVTStackBacktrace, IDEAttributedStringControlParagraphStylePopoverController, IDEAttributedStringControlTextView, IDEGroupedSegmentedControl, IDEGroupedSegmentedControlGroup, IDEGroupedSegmentedControlItem, NSAttributedString, NSFont, NSPopover, NSScrollView, NSStepper, NSString, NSTextView;
+@protocol DVTFontTextFieldDataSource;
 
-@interface IDEAttributedStringControl : DVTLayoutView_ML <IDEGroupedSegmentedControlDelegate, IDEParagraphStylePopoverControllerDelegate, IDEAttributedStringControlTextViewDelegate, DVTInvalidation>
+@interface IDEAttributedStringControl : DVTLayoutView_ML <IDEGroupedSegmentedControlDelegate, IDEParagraphStylePopoverControllerDelegate, IDEAttributedStringControlTextViewDelegate, DVTInvalidation, DVTFontTextFieldCellDelegate>
 {
     NSScrollView *_scrollView;
     IDEAttributedStringControlTextView *_textView;
@@ -36,6 +38,7 @@
     NSPopover *_paragraphStylePopover;
     IDEAttributedStringControlParagraphStylePopoverController *_paragraphStylePopoverController;
     long long numberOfEdits;
+    NSFont *_currentFontForSelection;
     id _target;
     SEL _action;
 }
@@ -44,6 +47,7 @@
 @property SEL action; // @synthesize action=_action;
 @property __weak id target; // @synthesize target=_target;
 - (void).cxx_destruct;
+@property(retain) id <DVTFontTextFieldDataSource> fontTextFieldDataSource;
 - (void)layoutBottomUp;
 - (void)layoutTopDown;
 - (struct CGRect)frameToPlaceView:(id)arg1 afterView:(id)arg2 withGap:(double)arg3;
@@ -73,12 +77,14 @@
 - (void)textViewDidChangeTypingAttributes:(id)arg1;
 - (void)textViewDidChangeSelection:(id)arg1;
 - (void)refreshAttributeControls;
+- (void)fontTextFieldCell:(id)arg1 enumerateMultipleValues:(CDUnknownBlockType)arg2;
 - (id)paragraphEditingProxiesForSelection;
 - (id)attributeValuesInSelectionForAttribute:(id)arg1;
 - (void)enumerateSelectedRangesForAttribute:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
 - (void)enumerateSelectedParagraphsWithBlock:(CDUnknownBlockType)arg1;
 - (void)enumeratePargraphsInRange:(struct _NSRange)arg1 withBlock:(CDUnknownBlockType)arg2;
 - (id)rangesToScanForAttributes;
+@property(retain) NSFont *currentFontForSelection;
 @property(copy) NSAttributedString *attributedStringValue;
 - (id)defaultTypingAttributes;
 @property(copy) NSString *placeholder;

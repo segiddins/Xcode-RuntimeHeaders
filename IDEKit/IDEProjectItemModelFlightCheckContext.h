@@ -4,11 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "IDEFlightCheckingContext.h"
+#import <IDEKit/IDEFlightCheckingContext-Protocol.h>
 
 @class NSString, NSWindow;
+@protocol IDEPortalInfoDelegate, IDEProjectItem;
 
 @interface IDEProjectItemModelFlightCheckContext : NSObject <IDEFlightCheckingContext>
 {
@@ -23,6 +24,7 @@
 @property(readonly, nonatomic) id <IDEPortalInfoDelegate> portalInfoDelegate; // @synthesize portalInfoDelegate=_portalInfoDelegate;
 @property BOOL shouldResolveLongRunningFlightChecks; // @synthesize shouldResolveLongRunningFlightChecks=_shouldResolveLongRunningFlightChecks;
 - (void).cxx_destruct;
+- (BOOL)ensureValidAccount:(id)arg1 error:(id *)arg2;
 - (void)handleError:(id)arg1;
 - (void)performBlockRequiringAccountAndTeamSelection:(CDUnknownBlockType)arg1;
 - (id)initWithPortalInfoDelegate:(id)arg1 item:(id)arg2;

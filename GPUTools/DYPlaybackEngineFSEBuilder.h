@@ -6,6 +6,8 @@
 
 #import <GPUTools/DYInOrderInstructionFilesVisitor.h>
 
+@protocol DYCaptureStore;
+
 __attribute__((visibility("hidden")))
 @interface DYPlaybackEngineFSEBuilder : DYInOrderInstructionFilesVisitor
 {

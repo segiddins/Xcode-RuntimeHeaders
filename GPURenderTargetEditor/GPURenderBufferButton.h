@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSControl.h"
+#import <AppKit/NSControl.h>
 
 @class NSImage, NSTimer, NSTrackingArea;
 
@@ -27,7 +27,6 @@
 + (Class)cellClass;
 @property(retain, nonatomic) NSImage *overImage; // @synthesize overImage=_overImage;
 @property(retain, nonatomic) NSImage *image; // @synthesize image=_image;
-- (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)accessibilityAttributeValue:(id)arg1;
 - (id)accessibilityAttributeNames;

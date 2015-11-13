@@ -4,16 +4,20 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "DVTViewController.h"
+#import <DVTKit/DVTViewController.h>
 
-#import "DOMEventListener.h"
-#import "IDEDocContentView.h"
-#import "NSPopoverDelegate.h"
-#import "NSSplitViewDelegate.h"
+#import <IDEDocViewer/DOMEventListener-Protocol.h>
+#import <IDEDocViewer/IDEDocContentView-Protocol.h>
+#import <IDEDocViewer/NSPopoverDelegate-Protocol.h>
+#import <IDEDocViewer/NSSplitViewDelegate-Protocol.h>
+#import <IDEDocViewer/WebFrameLoadDelegate-Protocol.h>
+#import <IDEDocViewer/WebPolicyDelegate-Protocol.h>
+#import <IDEDocViewer/WebResourceLoadDelegate-Protocol.h>
+#import <IDEDocViewer/WebUIDelegate-Protocol.h>
 
 @class DVTBorderedView, DVTObservingToken, DVTReplacementView, DVTSplitView, DVTSplitViewItem, DVTStackBacktrace, IDEDocContentAreaViewController, NSString, NSView, WebView;
 
-@interface IDEDocWebViewContentViewController : DVTViewController <NSPopoverDelegate, DOMEventListener, NSSplitViewDelegate, IDEDocContentView>
+@interface IDEDocWebViewContentViewController : DVTViewController <NSPopoverDelegate, DOMEventListener, NSSplitViewDelegate, WebFrameLoadDelegate, WebPolicyDelegate, WebUIDelegate, WebResourceLoadDelegate, IDEDocContentView>
 {
     double _cumulativeMagnifyDelta;
     short _stickyTextMagnifyGestureDirection;

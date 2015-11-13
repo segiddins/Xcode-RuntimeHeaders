@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSView.h"
+#import <AppKit/NSView.h>
 
-#import "NSTableViewDataSource.h"
+#import <IDEKit/NSTableViewDataSource-Protocol.h>
 
 @class NSMutableOrderedSet, NSString, NSTableView;
 
@@ -16,10 +16,6 @@
     NSMutableOrderedSet *_orderedGuidanceSet;
 }
 
-+ (id)barGraphAnnotationTitleAtIndex:(unsigned char)arg1;
-+ (id)guidanceTitles;
-+ (id)legendGlyphAtIndex:(unsigned char)arg1;
-+ (id)barGraphAnnotationGlyphAtIndex:(unsigned char)arg1;
 - (void).cxx_destruct;
 - (void)_investigateButtonClick:(id)arg1;
 - (void)hideGuidance:(id)arg1;

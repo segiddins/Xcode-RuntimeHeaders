@@ -4,11 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "DBGAbstractQuickLookProvider.h"
+#import <DebuggerKit/DBGAbstractQuickLookProvider.h>
 
-#import "IDEVariablesViewQuickLookProvider.h"
+#import <DebuggerUI/IDEVariablesViewQuickLookProvider-Protocol.h>
 
 @class MKMapView, NSString, NSURL, NSView;
+@protocol DBGMapDataAndAnnotationProvider;
 
 @interface DBGMapBasedQuickLookProvider : DBGAbstractQuickLookProvider <IDEVariablesViewQuickLookProvider>
 {

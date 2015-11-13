@@ -6,10 +6,10 @@
 
 #import <DevToolsInterface/PBXAbstractProductSettingsModule.h>
 
-#import "NSTableViewDataSource.h"
-#import "NSTableViewDelegate.h"
-#import "NSTextFieldDelegate.h"
-#import "NSTextViewDelegate.h"
+#import <DevToolsInterface/NSTableViewDataSource-Protocol.h>
+#import <DevToolsInterface/NSTableViewDelegate-Protocol.h>
+#import <DevToolsInterface/NSTextFieldDelegate-Protocol.h>
+#import <DevToolsInterface/NSTextViewDelegate-Protocol.h>
 
 @class NSArray, NSButton, NSImageView, NSMutableArray, NSString, NSTextField, PBXExtendedTableView;
 

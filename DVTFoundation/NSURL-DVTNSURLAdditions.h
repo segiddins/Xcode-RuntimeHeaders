@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSURL.h"
+#import <Foundation/NSURL.h>
 
-#import "DVTSimpleSerialization.h"
+#import <DVTFoundation/DVTSimpleSerialization-Protocol.h>
 
 @interface NSURL (DVTNSURLAdditions) <DVTSimpleSerialization>
 + (id)dvt_URLWithScheme:(id)arg1 path:(id)arg2 documentParameters:(id)arg3 locationParameters:(id)arg4;

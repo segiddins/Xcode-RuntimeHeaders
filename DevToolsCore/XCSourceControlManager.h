@@ -6,7 +6,7 @@
 
 #import <DevToolsCore/PBXObject.h>
 
-#import "SCMSandboxOwnerDelegateProtocol.h"
+#import <DevToolsCore/SCMSandboxOwnerDelegateProtocol-Protocol.h>
 
 @class NSArray, NSMutableArray, NSMutableDictionary, NSString, PBXProject, SCMRootToRepositoryMap, SCMSandboxOwner;
 

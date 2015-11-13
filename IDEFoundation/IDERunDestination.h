@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "NSCopying.h"
+#import <IDEFoundation/NSCopying-Protocol.h>
 
 @class DVTDevice, DVTObservingToken, DVTSDK, NSError, NSString;
 
@@ -36,15 +36,16 @@
 - (void)didBecomeActiveRunDestinationForRunContext:(id)arg1;
 - (id)runOperationForLaunchSession:(id)arg1 error:(id *)arg2;
 - (id)runWorkerForLaunchSession:(id)arg1 error:(id *)arg2;
-- (id)targetArchitectureForSorting;
-- (id)targetSDKForSorting;
-- (id)targetDeviceForSorting;
-- (id)displayOrder;
+@property(readonly) NSString *targetArchitectureForSorting;
+@property(readonly) NSString *targetSDKForSorting;
+@property(readonly) NSString *targetDeviceForSorting;
+@property(readonly) NSString *displayOrder;
 - (BOOL)shouldPresentRunDestinationForScheme:(id)arg1 schemeTask:(int)arg2 schemeCommand:(id)arg3 executionEnvironment:(id)arg4 overridingTestingSpecifiers:(id)arg5 error:(id *)arg6;
 - (BOOL)isValidRunDestinationForScheme:(id)arg1 schemeTask:(int)arg2 schemeCommand:(id)arg3 executionEnvironment:(id)arg4 overridingTestingSpecifiers:(id)arg5 error:(id *)arg6;
 - (BOOL)_isValidRunDestinationForScheme:(id)arg1 schemeTask:(int)arg2 schemeCommand:(id)arg3 executionEnvironment:(id)arg4 overridingTestingSpecifiers:(id)arg5 forPresentation:(BOOL)arg6 error:(id *)arg7;
 - (id)description;
 @property(readonly, copy) NSString *fullDisplayName;
+@property(readonly) NSString *displayableIneligibilityMessage;
 @property(readonly, copy) NSString *displayNameAdditions;
 @property(readonly, copy) NSString *displayName;
 - (id)copyWithZone:(struct _NSZone *)arg1;

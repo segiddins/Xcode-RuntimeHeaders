@@ -4,9 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDEViewController.h"
+#import <IDEKit/IDEViewController.h>
 
 @class IDEToy, NSDate, NSString;
+@protocol IDEToyViewControllerDelegate;
 
 @interface IDEToyViewController : IDEViewController
 {
@@ -29,6 +30,7 @@
 - (double)preferredVerticalInset;
 - (double)preferredHorizontalInset;
 - (struct CGSize)preferredContentSizeConstrainedToSize:(struct CGSize)arg1;
+- (unsigned long long)representationType;
 - (void)playgroundExecutionEndedAndCompleted:(BOOL)arg1;
 - (void)playgroundExecutionStarted;
 - (void)renderResultsForceRedraw:(BOOL)arg1;

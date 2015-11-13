@@ -4,12 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "DVTViewController.h"
+#import <DVTKit/DVTViewController.h>
 
-#import "DVTFindBarHostable.h"
-#import "DVTReplacementViewDelegate.h"
-#import "DVTScopeBarHost.h"
-#import "NSSplitViewDelegate.h"
+#import <IDEDocViewer/DVTFindBarHostable-Protocol.h>
+#import <IDEDocViewer/DVTReplacementViewDelegate-Protocol.h>
+#import <IDEDocViewer/DVTScopeBarHost-Protocol.h>
+#import <IDEDocViewer/NSSplitViewDelegate-Protocol.h>
 
 @class DSANode, DVTBasicFindBar, DVTChoice, DVTObservingToken, DVTReplacementView, DVTScopeBarController, DVTScopeBarsManager, DVTSplitView, DVTSplitViewItem, DVTStateToken, IDEDocContentOutlineViewController, IDEDocNavigatorArea, IDEDocWebViewContentViewController, NSDictionary, NSScrollView, NSString, NSView, WebView;
 

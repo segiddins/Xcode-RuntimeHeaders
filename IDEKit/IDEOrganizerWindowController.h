@@ -4,14 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSWindowController.h"
+#import <AppKit/NSWindowController.h>
 
-#import "DVTReplacementViewDelegate.h"
-#import "DVTStateRepositoryDelegate.h"
-#import "DVTStatefulObject.h"
-#import "IDEEditorAreaContainer.h"
-#import "NSWindowDelegate.h"
-#import "NSWindowRestoration.h"
+#import <IDEKit/DVTReplacementViewDelegate-Protocol.h>
+#import <IDEKit/DVTStateRepositoryDelegate-Protocol.h>
+#import <IDEKit/DVTStatefulObject-Protocol.h>
+#import <IDEKit/IDEEditorAreaContainer-Protocol.h>
+#import <IDEKit/NSWindowDelegate-Protocol.h>
+#import <IDEKit/NSWindowRestoration-Protocol.h>
 
 @class DVTDelayedInvocation, DVTExtension, DVTReplacementView, DVTStateRepository, DVTStateToken, IDEEditorArea, NSArray, NSDictionary, NSString;
 

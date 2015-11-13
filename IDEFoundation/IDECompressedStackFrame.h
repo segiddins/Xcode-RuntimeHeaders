@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "IDEDebugNavigableModel.h"
+#import <IDEFoundation/IDEDebugNavigableModel-Protocol.h>
 
 @class IDELaunchSession, NSArray, NSNumber, NSString;
 
@@ -27,6 +27,7 @@
 @property(readonly, copy) NSString *displayName;
 @property(readonly, copy) NSNumber *frameNumber;
 @property(readonly, copy) NSString *name;
+- (id)init;
 - (id)initWithStackFrames:(id)arg1;
 
 // Remaining properties

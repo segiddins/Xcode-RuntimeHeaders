@@ -6,7 +6,7 @@
 
 #import <IDEModelEditor/IDEDMEditorController.h>
 
-#import "IDEDataModelEditorController.h"
+#import <IDEModelEditor/IDEDataModelEditorController-Protocol.h>
 
 @class DVTNotificationToken, DVTObservingToken, IDEDataModelEntityContentsEditor, NSString, XDDiagramView, XDLineGraphic;
 

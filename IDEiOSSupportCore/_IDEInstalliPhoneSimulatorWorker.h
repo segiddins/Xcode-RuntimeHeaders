@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDERunOperationWorker.h"
+#import <IDEFoundation/IDERunOperationWorker.h>
 
 @class DVTiPhoneSimulator;
 
@@ -17,7 +17,6 @@
 - (void).cxx_destruct;
 - (void)terminate;
 - (void)start;
-- (void)_setFinishedRunningWithError:(id)arg1;
 
 @end
 

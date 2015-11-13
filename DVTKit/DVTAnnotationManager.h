@@ -4,24 +4,37 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-@class DVTAnnotationContext, NSMutableArray;
+#import <DVTKit/DVTInvalidation-Protocol.h>
 
-@interface DVTAnnotationManager : NSObject
+@class DVTStackBacktrace, NSMutableArray, NSString;
+@protocol DVTAnnotationManagerDelegate;
+
+@interface DVTAnnotationManager : NSObject <DVTInvalidation>
 {
     id <DVTAnnotationManagerDelegate> _delegate;
     NSMutableArray *_annotationProviders;
-    DVTAnnotationContext *_context;
 }
 
++ (unsigned long long)assertionBehaviorForKeyValueObservationsAtEndOfEvent;
++ (unsigned long long)assertionBehaviorAfterEndOfEventForSelector:(SEL)arg1;
++ (void)initialize;
 @property(retain) id <DVTAnnotationManagerDelegate> delegate; // @synthesize delegate=_delegate;
-@property(retain) DVTAnnotationContext *context; // @synthesize context=_context;
-@property(retain) NSMutableArray *annotationProviders; // @synthesize annotationProviders=_annotationProviders;
 - (void).cxx_destruct;
 - (void)removeAllAnnotationProviders;
 - (void)setupAnnotationProvidersWithContext:(id)arg1;
 - (id)_installObservationBlockForAnnotationProvider:(id)arg1;
+- (void)primitiveInvalidate;
+
+// Remaining properties
+@property(retain) DVTStackBacktrace *creationBacktrace;
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) DVTStackBacktrace *invalidationBacktrace;
+@property(readonly) Class superclass;
+@property(readonly, nonatomic, getter=isValid) BOOL valid;
 
 @end
 

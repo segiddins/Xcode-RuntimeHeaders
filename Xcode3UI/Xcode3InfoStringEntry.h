@@ -6,6 +6,8 @@
 
 #import <Xcode3UI/Xcode3InfoEntry.h>
 
+@protocol Xcode3InfoEditorListContentProvider;
+
 @interface Xcode3InfoStringEntry : Xcode3InfoEntry
 {
     id <Xcode3InfoEditorListContentProvider> _contentProvider;

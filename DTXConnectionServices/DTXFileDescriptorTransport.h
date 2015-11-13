@@ -6,7 +6,8 @@
 
 #import <DTXConnectionServices/DTXTransport.h>
 
-@class NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>;
+@class NSObject;
+@protocol OS_dispatch_queue, OS_dispatch_source;
 
 @interface DTXFileDescriptorTransport : DTXTransport
 {
@@ -19,6 +20,7 @@
     CDUnknownBlockType _disconnectBlock;
 }
 
+- (int)supportedDirections;
 - (void)disconnect;
 - (unsigned long long)transmit:(const void *)arg1 ofLength:(unsigned long long)arg2;
 - (void)setupWithIncomingDescriptor:(int)arg1 outgoingDescriptor:(int)arg2 disconnectBlock:(CDUnknownBlockType)arg3;

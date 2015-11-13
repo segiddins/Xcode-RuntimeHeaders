@@ -6,8 +6,8 @@
 
 #import <DevToolsInterface/PBXInspectorPaneModule.h>
 
-#import "NSTextViewDelegate.h"
-#import "PBXSourceLexerDelegate.h"
+#import <DevToolsInterface/NSTextViewDelegate-Protocol.h>
+#import <DevToolsInterface/PBXSourceLexerDelegate-Protocol.h>
 
 @class NSButton, NSString, NSTextField, NSTextView;
 

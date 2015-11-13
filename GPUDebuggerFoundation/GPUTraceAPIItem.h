@@ -6,7 +6,8 @@
 
 #import <GPUDebuggerFoundation/GPUTraceOutlineItem.h>
 
-@class GPUTraceDisplayableItem, GPUTraceResources, NSArray, NSMutableArray, NSObject<OS_dispatch_queue>;
+@class GPUTraceDisplayableItem, GPUTraceResources, NSArray, NSMutableArray, NSObject;
+@protocol OS_dispatch_queue;
 
 @interface GPUTraceAPIItem : GPUTraceOutlineItem
 {

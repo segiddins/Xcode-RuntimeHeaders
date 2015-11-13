@@ -6,7 +6,7 @@
 
 #import <IDEKit/IDEViewController.h>
 
-#import "DVTTableViewDelegate.h"
+#import <IDEKit/DVTTableViewDelegate-Protocol.h>
 
 @class DVTTableView, NSArray, NSString;
 

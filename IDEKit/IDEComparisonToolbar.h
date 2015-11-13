@@ -6,7 +6,7 @@
 
 #import <IDEKit/IDEViewController.h>
 
-#import "NSSplitViewDelegate.h"
+#import <IDEKit/NSSplitViewDelegate-Protocol.h>
 
 @class DVTBorderedView, DVTSegmentedControl, IDEComparisonEditor, NSString;
 

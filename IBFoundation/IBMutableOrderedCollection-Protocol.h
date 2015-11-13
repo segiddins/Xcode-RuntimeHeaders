@@ -4,8 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IBMutableCollection.h"
-#import "IBOrderedCollection.h"
+#import <IBFoundation/IBMutableCollection-Protocol.h>
+#import <IBFoundation/IBOrderedCollection-Protocol.h>
+
+@protocol IBCollection;
 
 @protocol IBMutableOrderedCollection <IBOrderedCollection, IBMutableCollection>
 - (void)sortUsingComparator:(long long (^)(id, id))arg1;

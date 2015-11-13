@@ -6,7 +6,7 @@
 
 #import <IDEFoundation/IDESchemeCommand.h>
 
-#import "IDEPrimitiveSchemeCommand.h"
+#import <IDEFoundation/IDEPrimitiveSchemeCommand-Protocol.h>
 
 @class NSString;
 

@@ -6,7 +6,7 @@
 
 #import <DevToolsInterface/PBXProjectModule.h>
 
-#import "NSTableViewDelegate.h"
+#import <DevToolsInterface/NSTableViewDelegate-Protocol.h>
 
 @class NSArray, NSMapTable, NSMutableArray, NSMutableDictionary, NSProgressIndicator, NSSearchField, NSString, NSTableColumn, NSTableView, NSTextField, PBXLSDynamicLinkerImageController, XCLibraryArrayController, XCUnretainedReference;
 

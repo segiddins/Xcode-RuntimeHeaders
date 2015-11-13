@@ -4,17 +4,18 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "DVTInvalidation.h"
+#import <IDEInterfaceBuilderKit/DVTInvalidation-Protocol.h>
 
-@class DVTDelayedInvocation, DVTNotificationToken, DVTStackBacktrace, IBDocument, IBMutableIdentityDictionary, NSDictionary, NSMutableSet, NSString;
+@class DVTDelayedInvocation, DVTNotificationToken, DVTStackBacktrace, IBDocument, IBMutableIdentityDictionary, NSArray, NSDictionary, NSMutableSet, NSString;
 
 @interface IBDocumentIssueGenerator : NSObject <DVTInvalidation>
 {
     IBDocument *_document;
     BOOL _allIssuesAreInvalid;
     IBMutableIdentityDictionary *_membersToIssues;
+    NSArray *_globalIssues;
     NSMutableSet *_parentsWithPendingChildIssueCalculations;
     NSMutableSet *_membersWithPendingIssueCalculations;
     NSMutableSet *_classNamesWithPendingIssueCalculations;
@@ -30,11 +31,15 @@
 @property(nonatomic, getter=isShuttingDown) BOOL shuttingDown; // @synthesize shuttingDown=_shuttingDown;
 @property(nonatomic, getter=isEnabled) BOOL enabled; // @synthesize enabled=_enabled;
 - (void).cxx_destruct;
-@property(readonly) NSDictionary *warnings;
+@property(readonly) NSArray *allWarnings;
+@property(readonly) NSArray *globalWarnings;
+@property(readonly) NSDictionary *warningsByMember;
+- (void)ensureIssuesAreValid;
 - (void)validateIssues:(id)arg1;
 - (id)aggregateMembersNeedingRefreshedIssues;
 - (void)clearPendingIssueCalculationsTables;
 - (void)updateIssuesForMembers:(id)arg1;
+- (BOOL)updateGlobalIssues;
 - (BOOL)effectiveIssuesAreEnabled;
 - (void)notifyObservers;
 - (void)invalidateIssuesForConnection:(id)arg1;

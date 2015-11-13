@@ -6,7 +6,7 @@
 
 #import <DevToolsInterface/PBXDebugViewModule.h>
 
-#import "PBXLSViewControllerProtocol.h"
+#import <DevToolsInterface/PBXLSViewControllerProtocol-Protocol.h>
 
 @class NSString, PBXLSModel;
 

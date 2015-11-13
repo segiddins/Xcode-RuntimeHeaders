@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
 @class DVTFirstLaunchPackageInstallationHelper, NSArray;
 
@@ -19,6 +19,7 @@
 @property(readonly) BOOL backgroundDownloadInProgress; // @synthesize backgroundDownloadInProgress=_backgroundDownloadInProgress;
 - (void).cxx_destruct;
 - (id)_genericErrorMessage;
+- (id)_badPackageErrorMessage;
 - (id)_notEnoughSpaceErrorMessage;
 - (id)errorMessageForError:(id)arg1;
 - (id)_errorAttributes;

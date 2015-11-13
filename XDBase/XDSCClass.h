@@ -6,7 +6,7 @@
 
 #import <XDBase/XDUMLClassImp.h>
 
-#import "XDSCClassifier.h"
+#import <XDBase/XDSCClassifier-Protocol.h>
 
 @class NSString, XDElementReference;
 

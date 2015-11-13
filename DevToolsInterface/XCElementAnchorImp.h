@@ -6,9 +6,10 @@
 
 #import <DevToolsInterface/XCElementImp.h>
 
-#import "XCElementAnchorP.h"
+#import <DevToolsInterface/XCElementAnchorP-Protocol.h>
 
-@class NSMutableArray, NSMutableDictionary, NSObject, NSObject<XCElementAnchorDelegateP>, NSObject<XCElementP>, NSString;
+@class NSMutableArray, NSMutableDictionary, NSObject, NSString;
+@protocol XCElementAnchorDelegateP, XCElementP;
 
 @interface XCElementAnchorImp : XCElementImp <XCElementAnchorP>
 {

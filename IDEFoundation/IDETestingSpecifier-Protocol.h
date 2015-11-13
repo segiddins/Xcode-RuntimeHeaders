@@ -4,16 +4,19 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <IDEFoundation/NSObject-Protocol.h>
 
-@class IDEDeviceAppDataReference, IDELocationScenarioReference, NSArray, NSMutableArray;
+@class IDEDeviceAppDataReference, IDELocationScenarioReference, IDETest, NSArray, NSSet;
+@protocol IDETestable;
 
 @protocol IDETestingSpecifier <NSObject>
-@property(readonly) NSMutableArray *mutableSkippedTests;
-@property(copy) NSArray *skippedTests;
+@property(readonly, copy) NSSet *adHocTests;
+@property(readonly, copy) NSArray *skippedTests;
 @property BOOL skipped;
 @property(retain) IDELocationScenarioReference *locationScenarioReference;
 @property(retain) IDEDeviceAppDataReference *deviceAppDataReference;
+- (void)disableTest:(IDETest *)arg1;
+- (void)enableTest:(IDETest *)arg1;
 - (id <IDETestable>)testable;
 @end
 

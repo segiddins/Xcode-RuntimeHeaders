@@ -6,8 +6,8 @@
 
 #import <IDEModelEditor/IDEDMEditorController.h>
 
-#import "IDECapsuleViewController.h"
-#import "IDECapsuleViewDelegate.h"
+#import <IDEModelEditor/IDECapsuleViewController-Protocol.h>
+#import <IDEModelEditor/IDECapsuleViewDelegate-Protocol.h>
 
 @class DVTObservingToken, IDEMappingModelEditor, NSArray, NSArrayController, NSImage, NSIndexSet, NSString, XDTableView;
 

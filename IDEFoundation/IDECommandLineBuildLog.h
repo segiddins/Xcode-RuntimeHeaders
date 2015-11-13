@@ -22,7 +22,6 @@
 @property(retain) NSFileHandle *standardError; // @synthesize standardError=_standardError;
 @property(retain) NSFileHandle *standardOutput; // @synthesize standardOutput=_standardOutput;
 - (void).cxx_destruct;
-- (void)addFailedSection:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initLogWithTitle:(id)arg1 standardOutput:(id)arg2 standardError:(id)arg3;
 - (id)initLogWithTitle:(id)arg1;

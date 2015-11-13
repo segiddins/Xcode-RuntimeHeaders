@@ -4,9 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-@class NSFileHandle, NSMutableArray, NSMutableData, NSObject<OS_dispatch_queue>, NSString, NSTimer;
+@class NSFileHandle, NSMutableArray, NSMutableData, NSString, NSTimer;
+@protocol IDEConsoleAdaptorDelegateProtocol, OS_dispatch_queue;
 
 @interface IDEConsoleAdaptor : NSObject
 {

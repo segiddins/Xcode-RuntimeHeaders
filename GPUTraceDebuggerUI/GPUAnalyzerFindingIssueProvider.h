@@ -4,9 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDEIssueProvider.h"
+#import <IDEFoundation/IDEIssueProvider.h>
 
-@class GPUDebuggerController, GPUSharedWorkspaceUIState, NSObject<OS_dispatch_queue>;
+@class GPUDebuggerController, GPUSharedWorkspaceUIState, NSObject;
+@protocol OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
 @interface GPUAnalyzerFindingIssueProvider : IDEIssueProvider
@@ -21,6 +22,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (id)displayNameForIssueTypeIdentifier:(id)arg1;
 - (void)_clearIssues;
+- (id)_createIssueAndSubissuesFromAnalyzerFinding:(id)arg1;
 - (id)_createIssueFromAnalyzerFinding:(id)arg1;
 - (void)_recordNumIssues:(unsigned int)arg1;
 - (unsigned int)_createAnalyzerIssues;

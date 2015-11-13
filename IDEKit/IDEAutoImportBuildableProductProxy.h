@@ -4,9 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-@class DVTFilePath, DVTHashTable, NSSet, NSString;
+@class DVTFilePath, NSHashTable, NSSet, NSString;
+@protocol IDEBlueprint, IDEBuildableProduct;
 
 @interface IDEAutoImportBuildableProductProxy : NSObject
 {
@@ -16,8 +17,8 @@
     DVTFilePath *_filePath;
     NSSet *_namesOfLinkedBinaries;
     NSString *_productName;
-    DVTHashTable *_supportedPlatforms;
-    DVTHashTable *_SDKs;
+    NSHashTable *_supportedPlatforms;
+    NSHashTable *_SDKs;
     NSSet *_sourceCodeFilePaths;
     NSSet *_publicHeaders;
     NSSet *_privateHeaders;
@@ -28,8 +29,8 @@
 @property(copy, nonatomic) NSSet *privateHeaders; // @synthesize privateHeaders=_privateHeaders;
 @property(copy, nonatomic) NSSet *publicHeaders; // @synthesize publicHeaders=_publicHeaders;
 @property(copy, nonatomic) NSSet *sourceCodeFilePaths; // @synthesize sourceCodeFilePaths=_sourceCodeFilePaths;
-@property(retain, nonatomic) DVTHashTable *SDKs; // @synthesize SDKs=_SDKs;
-@property(retain, nonatomic) DVTHashTable *supportedPlatforms; // @synthesize supportedPlatforms=_supportedPlatforms;
+@property(retain, nonatomic) NSHashTable *SDKs; // @synthesize SDKs=_SDKs;
+@property(retain, nonatomic) NSHashTable *supportedPlatforms; // @synthesize supportedPlatforms=_supportedPlatforms;
 @property(copy, nonatomic) NSString *productName; // @synthesize productName=_productName;
 @property(retain, nonatomic) NSSet *namesOfLinkedBinaries; // @synthesize namesOfLinkedBinaries=_namesOfLinkedBinaries;
 @property(retain, nonatomic) DVTFilePath *filePath; // @synthesize filePath=_filePath;

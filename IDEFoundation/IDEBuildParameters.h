@@ -4,12 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "NSCopying.h"
-#import "NSMutableCopying.h"
+#import <IDEFoundation/NSCopying-Protocol.h>
+#import <IDEFoundation/NSMutableCopying-Protocol.h>
 
-@class IDEOverridingBuildProperties, IDERunDestination, IDESchemeCommand<IDEPrimitiveSchemeCommand>, IDEWorkspaceArenaSnapshot, NSString;
+@class IDEOverridingBuildProperties, IDERunDestination, IDESchemeCommand, IDEWorkspaceArenaSnapshot, NSString;
+@protocol IDEPrimitiveSchemeCommand;
 
 @interface IDEBuildParameters : NSObject <NSCopying, NSMutableCopying>
 {
@@ -24,6 +25,7 @@
     unsigned long long _hash;
 }
 
++ (void)registerDefaultXcconfigCommandLineOverridingProperties:(id)arg1;
 @property(readonly, copy) IDEOverridingBuildProperties *overridingProperties; // @synthesize overridingProperties=_overridingProperties;
 @property(readonly, copy) NSString *activeArchitecture; // @synthesize activeArchitecture=_activeArchitecture;
 @property(readonly) IDERunDestination *activeRunDestination; // @synthesize activeRunDestination=_activeRunDestination;
@@ -36,7 +38,6 @@
 - (id)description;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
-- (id)_componentPropertyNames;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)_copyWithMutability:(BOOL)arg1;

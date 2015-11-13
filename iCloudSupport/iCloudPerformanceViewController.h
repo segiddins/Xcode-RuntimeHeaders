@@ -6,7 +6,7 @@
 
 #import <iCloudSupport/iCloudViewController.h>
 
-#import "IDEGraphDelegate.h"
+#import <iCloudSupport/IDEGraphDelegate-Protocol.h>
 
 @class DVTNotificationToken, IDEBarGraph, NSByteCountFormatter, NSMutableDictionary, NSString;
 

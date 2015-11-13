@@ -4,17 +4,15 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
 @class SCNNode;
 
 @interface SCNHitTestResult : NSObject
 {
-    id _reserved;
     struct __C3DHitTestResult *_result;
 }
 
-+ (id)SCNJSExportProtocol;
 + (id)hitTestResultsFromHitTestResultRef:(struct __CFArray *)arg1;
 - (id)description;
 @property(readonly, nonatomic) struct CATransform3D modelTransform;

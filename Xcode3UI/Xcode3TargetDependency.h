@@ -4,11 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "DVTModelTreeNode.h"
+#import <DVTFoundation/DVTModelTreeNode.h>
 
-#import "IDEKeyDrivenNavigableItemRepresentedObject.h"
+#import <Xcode3UI/IDEKeyDrivenNavigableItemRepresentedObject-Protocol.h>
 
 @class DVTDocumentLocation, DVTFileDataType, IDEFileReference, NSImage, NSString, Xcode3BuildFileGroup, Xcode3BuildPhase;
+@protocol IDEBlueprint;
 
 @interface Xcode3TargetDependency : DVTModelTreeNode <IDEKeyDrivenNavigableItemRepresentedObject>
 {

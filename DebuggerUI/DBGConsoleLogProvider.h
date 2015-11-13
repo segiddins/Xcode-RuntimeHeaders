@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDELogProvider.h"
+#import <IDEFoundation/IDELogProvider.h>
 
-@class DVTMapTable, DVTObservingToken, IDELogStore, IDEWorkspace;
+@class DVTObservingToken, IDELogStore, IDEWorkspace, NSMapTable;
 
 @interface DBGConsoleLogProvider : IDELogProvider
 {
@@ -14,10 +14,10 @@
     DVTObservingToken *_launchSessionsObserverToken;
     DVTObservingToken *_launchSessionsStateObserverToken;
     DVTObservingToken *_launchSessionsConsoleAdaptorsObserverToken;
-    DVTMapTable *_terminationTokenForConsoleAdaptorTable;
-    DVTMapTable *_logSectionForLaunchSessionTable;
-    DVTMapTable *_consoleAdaptorsForLaunchSessionTable;
-    DVTMapTable *_notificationCenterObserverArrayForConsoleAdaptors;
+    NSMapTable *_terminationTokenForConsoleAdaptorTable;
+    NSMapTable *_logSectionForLaunchSessionTable;
+    NSMapTable *_consoleAdaptorsForLaunchSessionTable;
+    NSMapTable *_notificationCenterObserverArrayForConsoleAdaptors;
     IDELogStore *_logStore;
 }
 

@@ -6,10 +6,11 @@
 
 #import <IDEKit/IDEViewController.h>
 
-#import "IDEEditorContextDelegate.h"
-#import "IDESourceControlMergeControllerContainer.h"
+#import <IDEKit/IDEEditorContextDelegate-Protocol.h>
+#import <IDEKit/IDESourceControlMergeControllerContainer-Protocol.h>
 
 @class DVTBorderedView, DVTObservingToken, DVTSplitView, IDEComparisonEditor, IDEEditorVersionsMode, IDEReviewFilesNavigator, IDESourceControlConflictResolutionController, IDESourceControlInteractiveCommitController, NSString;
+@protocol IDEReviewFilesViewControllerDelegate;
 
 @interface IDEReviewFilesViewController : IDEViewController <IDEEditorContextDelegate, IDESourceControlMergeControllerContainer>
 {

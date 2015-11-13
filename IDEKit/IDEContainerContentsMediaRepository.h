@@ -6,9 +6,10 @@
 
 #import <IDEKit/IDEMediaRepository.h>
 
-#import "IDEDefaultMediaLibrary.h"
+#import <IDEKit/IDEDefaultMediaLibrary-Protocol.h>
 
 @class IDEFileReferenceContainerObserver, IDETimedInvalidatableObjectCache, NSSet, NSString;
+@protocol DVTInvalidation;
 
 @interface IDEContainerContentsMediaRepository : IDEMediaRepository <IDEDefaultMediaLibrary>
 {

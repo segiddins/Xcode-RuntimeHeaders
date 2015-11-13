@@ -6,7 +6,7 @@
 
 #import <IDEKit/IDEBatchFindCriteria.h>
 
-#import "NSCoding.h"
+#import <IDEKit/NSCoding-Protocol.h>
 
 @class IDEBatchFindStrategiesController, IDEWorkspace, NSArray, NSMutableArray, NSPredicate;
 
@@ -40,7 +40,6 @@
 - (id)initWithFindDescriptor:(id)arg1 frameworks:(BOOL)arg2 filterPredicate:(id)arg3 containerScope:(id)arg4 workspace:(id)arg5 strategiesController:(id)arg6;
 - (id)initWithFindDescriptor:(id)arg1 frameworks:(BOOL)arg2 filterPredicate:(id)arg3 containerScopes:(id)arg4 workspace:(id)arg5 strategiesController:(id)arg6;
 - (void)_reportInvalidLocationPaths;
-- (void)_batchFindInvalidScopeSheetDidEnd:(id)arg1 returnCode:(long long)arg2 contextInfo:(void *)arg3;
 - (void)_showScopeEditor;
 - (Class)findQueryClass;
 - (id)initWithCoder:(id)arg1;

@@ -4,9 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-@class DVTModelGraphTransactionScope, NSMutableSet, NSObject<OS_dispatch_queue>, NSOperationQueue, NSString;
+@class DVTModelGraphTransactionScope, NSMutableSet, NSOperationQueue, NSString;
+@protocol OS_dispatch_queue;
 
 @interface DVTModelObjectGraph : NSObject
 {

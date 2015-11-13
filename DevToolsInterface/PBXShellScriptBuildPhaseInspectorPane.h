@@ -6,9 +6,9 @@
 
 #import <DevToolsInterface/PBXInspectorPaneModule.h>
 
-#import "NSTableViewDataSource.h"
-#import "NSTableViewDelegate.h"
-#import "NSTextViewDelegate.h"
+#import <DevToolsInterface/NSTableViewDataSource-Protocol.h>
+#import <DevToolsInterface/NSTableViewDelegate-Protocol.h>
+#import <DevToolsInterface/NSTextViewDelegate-Protocol.h>
 
 @class NSButton, NSString, NSTextField, NSTextView, NSUndoManager, PBXCompletionManager, PBXExtendedTableView, PBXShellScriptBuildPhase;
 

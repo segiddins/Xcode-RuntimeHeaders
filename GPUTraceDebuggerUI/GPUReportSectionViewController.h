@@ -4,10 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSViewController.h"
+#import <AppKit/NSViewController.h>
 
-#import "GPUReportOutlineViewDelegate.h"
-#import "NSTableViewDelegate.h"
+#import <GPUTraceDebuggerUI/GPUReportOutlineViewDelegate-Protocol.h>
+#import <GPUTraceDebuggerUI/NSTableViewDelegate-Protocol.h>
 
 @class DVTObservingToken, GPUBulletedViewBulletPainter, GPUReportOutlineView, GPUSharedTabUIState, NSArray, NSImageView, NSLayoutConstraint, NSMutableArray, NSScrollView, NSString, NSTableView, NSTextField, NSTreeController, NSView;
 
@@ -62,7 +62,6 @@ __attribute__((visibility("hidden")))
 - (void)outlineViewItemDidExpand:(id)arg1;
 - (void)outlineViewItemWillExpand:(id)arg1;
 - (void)_updateConstraints:(BOOL)arg1;
-- (void)_loadedOutlineViewClipBoundsChanged:(id)arg1;
 - (BOOL)outlineView:(id)arg1 shouldEditTableColumn:(id)arg2 item:(id)arg3;
 - (id)outlineView:(id)arg1 viewForTableColumn:(id)arg2 item:(id)arg3;
 - (id)outlineView:(id)arg1 rowViewForItem:(id)arg2;

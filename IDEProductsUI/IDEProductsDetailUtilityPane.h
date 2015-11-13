@@ -6,8 +6,8 @@
 
 #import "IDEProductsUtilityPane.h"
 
-#import "NSTableViewDataSource.h"
-#import "NSTableViewDelegate.h"
+#import "NSTableViewDataSource-Protocol.h"
+#import "NSTableViewDelegate-Protocol.h"
 
 @class DVTObservingToken, NSLayoutConstraint, NSString, NSTableView, NSTextField;
 

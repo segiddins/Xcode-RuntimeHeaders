@@ -6,7 +6,7 @@
 
 #import <DevToolsInterface/XCSelection.h>
 
-#import "XCSelectionSource.h"
+#import <DevToolsInterface/XCSelectionSource-Protocol.h>
 
 @class NSString, XCWindow;
 

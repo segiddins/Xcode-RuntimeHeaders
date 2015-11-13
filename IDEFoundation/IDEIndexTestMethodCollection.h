@@ -6,7 +6,8 @@
 
 #import <IDEFoundation/IDEIndexSymbolWithDefiningOccurrenceCollection.h>
 
-@class NSDictionary, NSObject<NSFastEnumeration>;
+@class NSDictionary, NSObject;
+@protocol NSFastEnumeration;
 
 @interface IDEIndexTestMethodCollection : IDEIndexSymbolWithDefiningOccurrenceCollection
 {

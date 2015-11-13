@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "PBXContainerItem.h"
+#import <DevToolsCore/PBXContainerItem.h>
 
 @interface PBXContainerItem (PBXDropReceiverAdditions)
 - (BOOL)outlineView:(id)arg1 acceptDropOfDraggedFiles:(id)arg2 withDraggingInfo:(id)arg3 item:(id)arg4 childIndex:(long long)arg5 forModule:(id)arg6;

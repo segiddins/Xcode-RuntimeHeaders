@@ -6,7 +6,7 @@
 
 #import <IDEKit/IDENavigableItemDomainProvider.h>
 
-#import "IDEKeyDrivenNavigableItemRepresentedObject.h"
+#import <IDEKit/IDEKeyDrivenNavigableItemRepresentedObject-Protocol.h>
 
 @class DVTDocumentLocation, DVTFileDataType, DVTObservingToken, IDEFileReference, IDEWorkspace, NSImage, NSString;
 

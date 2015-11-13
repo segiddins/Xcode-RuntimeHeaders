@@ -4,11 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "CDMIdentification.h"
-#import "DVTInvalidation.h"
-#import "IDEKeyDrivenNavigableItemRepresentedObject.h"
+#import <IDEModelFoundation/CDMIdentification-Protocol.h>
+#import <IDEModelFoundation/DVTInvalidation-Protocol.h>
+#import <IDEModelFoundation/IDEKeyDrivenNavigableItemRepresentedObject-Protocol.h>
 
 @class CDMInheritanceRelationship, CDMModel, DVTDocumentLocation, DVTFileDataType, DVTStackBacktrace, IDEFileReference, NSArray, NSDictionary, NSImage, NSMutableArray, NSMutableDictionary, NSNumber, NSString;
 
@@ -30,22 +30,25 @@
     CDMInheritanceRelationship *inheritanceRelationship;
     CDMInheritanceRelationship *oldInheritanceRelationship;
     NSMutableArray *compoundIndexes;
+    NSMutableArray *uniquenessConstraints;
 }
 
 + (id)dictionaryOfPropertyPLists:(id)arg1;
++ (id)keyPathsForValuesAffectingInspectedUniquenessConstraints;
 + (id)keyPathsForValuesAffectingInspectedCompoundIndexes;
 + (id)keyPathsForValuesAffectingRelationshipsIncludingInheritance;
++ (id)keyPathsForValuesAffectingInspectedClassName;
++ (id)keyPathsForValuesAffectingInspectedModuleName;
 + (id)keyPathsForValuesAffectingAllProperties;
 + (void)initialize;
 + (id)keyPathsForValuesAffectingSortedFetchedProperties;
 + (id)keyPathsForValuesAffectingSortedRelationships;
 + (id)keyPathsForValuesAffectingSortedAttributes;
-+ (id)_stripModulePrefixFromClassName:(id)arg1;
-+ (id)_addModulePrefix:(id)arg1 toClassName:(id)arg2;
 + (id)keyPathsForValuesAffectingAllRelationshipsIncludingInheritance;
 + (id)keyPathsForValuesAffectingAllAttributesIncludingInheritance;
 + (id)keyPathsForValuesAffectingAllPropertiesIncludingInheritance;
 @property(copy) NSArray *descendants; // @synthesize descendants;
+@property(copy) NSArray *uniquenessConstraints; // @synthesize uniquenessConstraints;
 @property(copy) NSArray *compoundIndexes; // @synthesize compoundIndexes;
 @property(retain) CDMInheritanceRelationship *oldInheritanceRelationship; // @synthesize oldInheritanceRelationship;
 @property(retain) CDMInheritanceRelationship *inheritanceRelationship; // @synthesize inheritanceRelationship;
@@ -63,6 +66,7 @@
 - (void).cxx_destruct;
 - (id)stringRepresentation;
 - (id)xmlElementDescription;
+- (id)uniquenessConstraintsXMLElementTree;
 - (id)compoundIndexesXMLElementTree;
 - (id)userInfoXMLElementTree;
 - (id)syncKeys;
@@ -99,6 +103,8 @@
 - (void)setInspectedParentEntity:(id)arg1;
 - (id)inspectedParentEntity;
 @property(retain) CDMEntity *parentEntity;
+- (void)setInspectedUniquenessConstraints:(id)arg1;
+- (id)inspectedUniquenessConstraints;
 - (void)setInspectedCompoundIndexes:(id)arg1;
 - (id)inspectedCompoundIndexes;
 - (BOOL)mapsDirectlyTo:(id)arg1;
@@ -106,6 +112,12 @@
 @property(readonly) unsigned long long hash;
 - (id)relationshipsIncludingInheritance;
 @property(readonly) BOOL hasRepresentedClassName;
+- (void)setInspectedClassName:(id)arg1;
+- (id)inspectedClassName;
+- (void)setInspectedModuleName:(id)arg1;
+- (id)inspectedModuleName;
+- (id)possibleModuleDisplayValues;
+- (id)possibleModuleNameObjects;
 @property(readonly) NSArray *allProperties;
 - (void)updateAllProperties;
 - (id)targetedConfigurations;
@@ -118,6 +130,8 @@
 - (id)entityPropertyForName:(id)arg1;
 - (id)possibleParentEntities;
 - (id)owningConfigurations;
+- (id)_commaSeparatedStringFromPropertyNames:(id)arg1;
+- (id)_propertyNamesFromCommaSeparatedString:(id)arg1;
 - (void)_registerUndoBlockForFoundEntity:(CDUnknownBlockType)arg1;
 - (id)humanReadableNameForInspectorKeyPath:(id)arg1;
 - (id)sortedFetchedProperties;
@@ -127,7 +141,6 @@
 - (id)code_superclassInclude;
 - (id)code_effectiveSuperclassName;
 - (id)code_effectiveClassName;
-- (id)code_suggestedClassNameWithModulePrefix:(id)arg1;
 - (id)allRelationshipsIncludingInheritance;
 - (id)allAttributesIncludingInheritance;
 - (id)allPropertiesIncludingInheritance;

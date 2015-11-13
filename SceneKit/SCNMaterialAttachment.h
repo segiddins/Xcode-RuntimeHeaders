@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
 @class NSDictionary;
 
@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
     NSDictionary *options;
 }
 
++ (id)materialAttachmentWithGLKTextureInfo:(id)arg1;
 @property(copy, nonatomic) NSDictionary *options; // @synthesize options;
 @property(nonatomic) struct CGSize size; // @synthesize size;
 @property(nonatomic) void *context; // @synthesize context;

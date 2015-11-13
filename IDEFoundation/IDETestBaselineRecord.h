@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
 @class NSMutableDictionary;
 
@@ -16,9 +16,12 @@
 
 + (void)initialize;
 - (void).cxx_destruct;
-- (void)unionWithBaselineRecord:(id)arg1;
-- (void)unionWithTestClassName:(id)arg1 testMethodName:(id)arg2 inBaselineRecord:(id)arg3;
+- (void)applyBaselineRecord:(id)arg1 usingBehavior:(unsigned long long)arg2;
+- (void)applyBaselineRecord:(id)arg1 usingBehavior:(unsigned long long)arg2 testClassName:(id)arg3 testMethodName:(id)arg4;
 - (void)unionWithDefaultsInBaselineRecord:(id)arg1;
+- (void)removeBaselinesForTestClassName:(id)arg1 testMethodName:(id)arg2 performanceMetricIdentifier:(id)arg3;
+- (void)removeBaselinesForTestClassName:(id)arg1 testMethodName:(id)arg2;
+- (void)removeBaselinesForTestClassName:(id)arg1;
 - (void)setBaselineForTestClassName:(id)arg1 testMethodName:(id)arg2 performanceMetricIdentifier:(id)arg3 maxPercentRegression:(id)arg4 maxPercentImprovement:(id)arg5 maxPercentRelativeStandardDeviation:(id)arg6 maxRegression:(id)arg7 maxStandardDeviation:(id)arg8;
 - (void)setBaselineForTestClassName:(id)arg1 testMethodName:(id)arg2 performanceMetricIdentifier:(id)arg3 baselineDisplayName:(id)arg4 average:(id)arg5 maxPercentRegression:(id)arg6 maxPercentImprovement:(id)arg7 maxPercentRelativeStandardDeviation:(id)arg8 maxRegression:(id)arg9 maxStandardDeviation:(id)arg10;
 - (void)_setBaselineForTestClassName:(id)arg1 testMethodName:(id)arg2 performanceMetricIdentifier:(id)arg3 baselineDisplayName:(id)arg4 average:(id)arg5 maxPercentRegression:(id)arg6 maxPercentImprovement:(id)arg7 maxPercentRelativeStandardDeviation:(id)arg8 maxRegression:(id)arg9 maxStandardDeviation:(id)arg10;

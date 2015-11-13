@@ -6,9 +6,10 @@
 
 #import <IDEFoundation/IDEContainerItemCore.h>
 
-#import "IDEFileReferenceCore.h"
+#import <IDEFoundation/IDEFileReferenceCore-Protocol.h>
 
 @class DVTFileDataType, NSString;
+@protocol IDEContainerCore, IDEGroupCore;
 
 @interface IDEFileReferenceCore : IDEContainerItemCore <IDEFileReferenceCore>
 {

@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IBAutolayoutEngine.h"
+#import <IBAutolayoutFoundation/IBAutolayoutEngine.h>
 
 @class IBDocument, NSWindow, NSWindowTemplate;
 
@@ -20,13 +20,12 @@
 - (id)candidateRedundantRepresentedConstraints;
 - (id)viewForApplyingSystemRequiredConstraints;
 - (BOOL)tryToAddConstraint:(id)arg1 toRepresentedView:(id)arg2 roundingAdjustment:(double)arg3 mutuallyExclusiveConstraints:(id *)arg4;
-- (void)invalidateConstraintsForRepresentedViews:(id)arg1;
+- (void)invalidateConstraintsForRepresentedItems:(id)arg1;
 - (void)updateConstraintsIfNeeded;
 - (void)layoutIfNeeded;
 - (Class)spacerItemClass;
 @property(readonly) IBDocument *document;
 - (id)internalEngine;
-- (struct CGSize)attemptToSetWindowContentViewSize:(struct CGSize)arg1;
 @property(readonly) NSWindowTemplate *windowTemplate;
 - (id)prepareViewHierarchyAndReturnAddedRepresentedConstraintsForRepresentedViews;
 - (id)initWithArbitrationUnit:(id)arg1 options:(unsigned long long)arg2;

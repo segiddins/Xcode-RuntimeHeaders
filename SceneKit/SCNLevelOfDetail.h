@@ -4,23 +4,21 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "NSCopying.h"
-#import "NSSecureCoding.h"
+#import <SceneKit/NSCopying-Protocol.h>
+#import <SceneKit/NSSecureCoding-Protocol.h>
 
 @class SCNGeometry;
 
 @interface SCNLevelOfDetail : NSObject <NSCopying, NSSecureCoding>
 {
-    id _reserved;
     struct __C3DLOD *_lod;
     long long _mode;
     SCNGeometry *_geometry;
 }
 
 + (BOOL)supportsSecureCoding;
-+ (id)SCNJSExportProtocol;
 + (id)levelOfDetailWithGeometry:(id)arg1 worldSpaceDistance:(double)arg2;
 + (id)levelOfDetailWithGeometry:(id)arg1 screenSpaceRadius:(double)arg2;
 - (id)initWithCoder:(id)arg1;
@@ -38,7 +36,6 @@
 - (void *)__CFObject;
 - (id)initWithGeometry:(id)arg1 thresholdMode:(long long)arg2 thresholdValue:(id)arg3;
 - (id)initWithGeometry:(id)arg1 thresholdMode:(long long)arg2 lod:(struct __C3DLOD *)arg3;
-- (id)init;
 - (void)_setupWithGeometry:(id)arg1 thresholdMode:(long long)arg2 value:(double)arg3;
 - (void)dealloc;
 

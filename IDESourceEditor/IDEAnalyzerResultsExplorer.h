@@ -4,10 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "DVTViewController.h"
+#import <DVTKit/DVTViewController.h>
 
-#import "DVTMessageBubbleAnnotationDelegate.h"
-#import "DVTScopeBarContentController.h"
+#import <IDESourceEditor/DVTMessageBubbleAnnotationDelegate-Protocol.h>
+#import <IDESourceEditor/DVTScopeBarContentController-Protocol.h>
 
 @class DVTNotificationToken, IDEActivityLogAnalyzerResultMessage, IDEAnalyzerResultsVisualization, IDESourceCodeEditor, NSArray, NSArrayController, NSImageView, NSLayoutConstraint, NSMutableArray, NSPopUpButton, NSSegmentedControl, NSString, NSView;
 

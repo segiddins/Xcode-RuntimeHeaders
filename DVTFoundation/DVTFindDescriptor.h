@@ -4,10 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "NSCoding.h"
-#import "NSCopying.h"
+#import <DVTFoundation/NSCoding-Protocol.h>
+#import <DVTFoundation/NSCopying-Protocol.h>
 
 @class NSAttributedString, NSString;
 
@@ -16,7 +16,7 @@
 }
 
 + (id)keyPathsForValuesAffectingDisplayAttributedString;
-- (id)firstMatchingResultInString:(id)arg1 backwards:(BOOL)arg2 inRange:(struct _NSRange)arg3 withWordFindingBlock:(CDUnknownBlockType)arg4 docLocationCreationBlock:(CDUnknownBlockType)arg5;
+- (id)firstMatchingResultInString:(id)arg1 backwards:(BOOL)arg2 inRange:(struct _NSRange)arg3 withWordFindingBlock:(CDUnknownBlockType)arg4 passingTest:(CDUnknownBlockType)arg5 docLocationCreationBlock:(CDUnknownBlockType)arg6;
 - (id)firstMatchingResultInString:(id)arg1 backwards:(BOOL)arg2 inRange:(struct _NSRange)arg3 docLocationCreationBlock:(CDUnknownBlockType)arg4;
 @property(readonly) BOOL caseSensitive;
 @property(readonly) NSString *displayString;

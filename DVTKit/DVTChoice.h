@@ -4,25 +4,25 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
 @class NSImage, NSString;
 
 @interface DVTChoice : NSObject
 {
+    BOOL _enabled;
     NSString *_title;
     NSString *_toolTip;
     NSImage *_image;
+    NSImage *_alternateImage;
     NSString *_identifier;
     id _representedObject;
-    BOOL _enabled;
-    NSImage *_alternateImage;
 }
 
-@property(retain) NSImage *alternateImage; // @synthesize alternateImage=_alternateImage;
 @property(getter=isEnabled) BOOL enabled; // @synthesize enabled=_enabled;
 @property(readonly) id representedObject; // @synthesize representedObject=_representedObject;
 @property(copy) NSString *identifier; // @synthesize identifier=_identifier;
+@property(retain) NSImage *alternateImage; // @synthesize alternateImage=_alternateImage;
 @property(readonly) NSImage *image; // @synthesize image=_image;
 @property(readonly, copy) NSString *toolTip; // @synthesize toolTip=_toolTip;
 @property(readonly, copy) NSString *title; // @synthesize title=_title;

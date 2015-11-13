@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
 @class NSArray, NSString;
 
@@ -58,6 +58,8 @@
 @property BOOL convertExistingFilesLineEndings;
 @property unsigned long long defaultLineEndings;
 @property BOOL centersOnScroll;
+@property BOOL showCodeCoverageCounts;
+@property BOOL showCodeCoverage;
 @property BOOL showInvisibleCharacters;
 @property int annotationDisplayPolicy;
 @property BOOL showMessageBubbleAnnotations;

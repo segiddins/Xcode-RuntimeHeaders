@@ -6,7 +6,8 @@
 
 #import <IDEFoundation/IDEBuildParameters.h>
 
-@class IDEOverridingBuildProperties, IDERunDestination, IDESchemeCommand<IDEPrimitiveSchemeCommand>, IDEWorkspaceArenaSnapshot, NSString;
+@class IDEOverridingBuildProperties, IDERunDestination, IDESchemeCommand, IDEWorkspaceArenaSnapshot, NSString;
+@protocol IDEPrimitiveSchemeCommand;
 
 @interface IDEMutableBuildParameters : IDEBuildParameters
 {

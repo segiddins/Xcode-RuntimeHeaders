@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSError.h"
+#import <Foundation/NSError.h>
 
 @interface NSError (IBErrorAdditions)
 + (id)ib_errorWithUnderlyingError:(id)arg1 recoverySuggestion:(id)arg2 localizedDescriptionFormat:(id)arg3;
@@ -16,8 +16,9 @@
 + (id)ib_errorWithLocalizedDescription:(id)arg1 failureReason:(id)arg2 andRecoverySuggestion:(id)arg3;
 + (id)ib_errorWithLocalizedDescription:(id)arg1 failureReason:(id)arg2 recoverySuggestion:(id)arg3 domain:(id)arg4 andCode:(long long)arg5;
 + (id)ib_errorWithLocalizedDescription:(id)arg1 failureReason:(id)arg2 recoverySuggestion:(id)arg3 domain:(id)arg4 code:(long long)arg5 andRecoveryAttempter:(id)arg6;
+- (id)ib_firstObjectInSelfAndUnderlyingErrorsForUserInfoKey:(id)arg1;
 - (id)ib_errorForPresentingToUserAfterLoggingToConsole;
-- (id)ib_descriptionForPrintingToConsole;
+- (id)ib_aggregatedDescriptionAndFailureReasons;
 - (void)ib_enumerateSelfAndUnderlyingErrors:(CDUnknownBlockType)arg1;
 - (id)ib_underlyingErrors;
 - (id)ib_errorByInjectingUnderlyingError:(id)arg1;

@@ -4,11 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "CAGradientLayer.h"
+#import <QuartzCore/CAGradientLayer.h>
 
-#import "IDENavigationHUDDisposableLayer.h"
-#import "IDENavigationHUDSelectableLayer.h"
-#import "IDENavigationHUDWindowLevelNavigableLayer.h"
+#import <IDEKit/IDENavigationHUDDisposableLayer-Protocol.h>
+#import <IDEKit/IDENavigationHUDSelectableLayer-Protocol.h>
+#import <IDEKit/IDENavigationHUDWindowLevelNavigableLayer-Protocol.h>
 
 @class IDENavigationHUDController, IDENavigationHUDSelection, NSString;
 

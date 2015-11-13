@@ -4,11 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSViewController.h"
+#import <AppKit/NSViewController.h>
 
-#import "QLPreviewViewDelegate.h"
+#import <DVTKit/QLPreviewViewDelegate-Protocol.h>
 
 @class NSLayoutConstraint, NSString, NSURL, QLPreviewView;
+@protocol QLPreviewViewDelegate;
 
 @interface DVTURLPreviewViewController : NSViewController <QLPreviewViewDelegate>
 {

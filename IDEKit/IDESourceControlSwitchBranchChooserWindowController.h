@@ -4,11 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSWindowController.h"
+#import <AppKit/NSWindowController.h>
 
-#import "IDESourceControlWindowController.h"
+#import <IDEKit/IDESourceControlWindowController-Protocol.h>
 
-@class DVTBindingToken, DVTReplacementView, DVTSearchField, IDESourceControlSwitchOperationInfo, IDESourceControlWorkspaceUIHandler, IDEWorkspace, NSButton, NSString, NSTextField, NSWindow;
+@class DVTBindingToken, DVTBorderedView, DVTReplacementView, DVTSearchField, IDESourceControlSwitchOperationInfo, IDESourceControlWorkspaceUIHandler, IDEWorkspace, NSButton, NSString, NSTextField, NSWindow;
+@protocol DVTInvalidation;
 
 @interface IDESourceControlSwitchBranchChooserWindowController : NSWindowController <IDESourceControlWindowController>
 {
@@ -23,11 +24,13 @@
     BOOL _inProgress;
     DVTBindingToken *_filterBindingToken;
     IDESourceControlWorkspaceUIHandler *_workspaceUIHandler;
+    DVTBorderedView *_borderedView;
     DVTReplacementView *_replacementView;
 }
 
 + (id)keyPathsForValuesAffectingCanContinue;
 @property __weak DVTReplacementView *replacementView; // @synthesize replacementView=_replacementView;
+@property __weak DVTBorderedView *borderedView; // @synthesize borderedView=_borderedView;
 @property __weak IDESourceControlWorkspaceUIHandler *workspaceUIHandler; // @synthesize workspaceUIHandler=_workspaceUIHandler;
 @property BOOL inProgress; // @synthesize inProgress=_inProgress;
 @property(retain) IDESourceControlSwitchOperationInfo *operationInfo; // @synthesize operationInfo=_operationInfo;

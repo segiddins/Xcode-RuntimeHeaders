@@ -6,8 +6,8 @@
 
 #import <DevToolsInterface/PBXProjectModule.h>
 
-#import "PBXSelectionTarget.h"
-#import "XCSelectionSource.h"
+#import <DevToolsInterface/PBXSelectionTarget-Protocol.h>
+#import <DevToolsInterface/XCSelectionSource-Protocol.h>
 
 @class NSString, PBXSmartGroupDataSource, XCBorderView;
 

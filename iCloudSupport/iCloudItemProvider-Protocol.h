@@ -4,9 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <iCloudSupport/NSObject-Protocol.h>
 
 @class NSURL;
+@protocol iCloudItem;
 
 @protocol iCloudItemProvider <NSObject>
 - (void)childrenOfParent:(id <iCloudItem>)arg1 includeDeleted:(BOOL)arg2 completionBlock:(void (^)(NSArray *, NSError *))arg3;

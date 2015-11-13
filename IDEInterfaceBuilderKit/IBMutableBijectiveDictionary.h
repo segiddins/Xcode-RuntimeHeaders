@@ -4,16 +4,16 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSMutableDictionary.h"
+#import <Foundation/NSMutableDictionary.h>
 
-#import "NSCoding.h"
+#import <IDEInterfaceBuilderKit/NSCoding-Protocol.h>
 
-@class DVTMapTable;
+@class NSMapTable;
 
 @interface IBMutableBijectiveDictionary : NSMutableDictionary <NSCoding>
 {
-    DVTMapTable *keyToObjectMap;
-    DVTMapTable *objectToKeyMap;
+    NSMapTable *keyToObjectMap;
+    NSMapTable *objectToKeyMap;
 }
 
 - (void).cxx_destruct;

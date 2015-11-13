@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-@class IDERunContextManager, NSAlert, NSError, NSString, NSWindow;
+@class DVTDevice, IDERunContextManager, NSAlert, NSError, NSString, NSWindow;
 
 @interface IDEDeviceUnavailableAlertHelper : NSObject
 {
@@ -17,8 +17,10 @@
     CDUnknownBlockType _availabilityHandler;
     NSAlert *_alert;
     IDERunContextManager *_runContextManager;
+    DVTDevice *_device;
 }
 
+@property(retain) DVTDevice *device; // @synthesize device=_device;
 @property(retain) IDERunContextManager *runContextManager; // @synthesize runContextManager=_runContextManager;
 @property(retain) NSAlert *alert; // @synthesize alert=_alert;
 @property(copy) CDUnknownBlockType availabilityHandler; // @synthesize availabilityHandler=_availabilityHandler;

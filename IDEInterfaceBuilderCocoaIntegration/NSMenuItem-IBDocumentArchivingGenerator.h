@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSMenuItem.h"
+#import <AppKit/NSMenuItem.h>
 
-#import "IBDocumentArchiving.h"
+#import <IDEInterfaceBuilderCocoaIntegration/IBDocumentArchiving-Protocol.h>
 
 @class NSString;
 

@@ -4,12 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSViewController.h"
+#import <AppKit/NSViewController.h>
 
-#import "DVTInvalidation.h"
-#import "IDEBindableDeclarativeInspectorController.h"
+#import <IDEKit/DVTInvalidation-Protocol.h>
+#import <IDEKit/IDEBindableDeclarativeInspectorController-Protocol.h>
 
 @class DVTStackBacktrace, IDEInspectorContentView, NSArray, NSArrayController, NSBundle, NSString;
+@protocol IDEParagraphStylePopoverControllerDelegate;
 
 @interface IDEAttributedStringControlParagraphStylePopoverController : NSViewController <IDEBindableDeclarativeInspectorController, DVTInvalidation>
 {

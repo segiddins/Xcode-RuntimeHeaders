@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "DYTextureImageBackingStore.h"
+#import <MTLToolsServices/DYTextureImageBackingStore-Protocol.h>
 
 @class NSData, NSString;
 
@@ -20,6 +20,7 @@
 @property(retain, nonatomic) NSData *uncompressedData; // @synthesize uncompressedData=_uncompressedData;
 @property(retain, nonatomic) NSData *data; // @synthesize data=_data;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) unsigned long long cachingCost;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

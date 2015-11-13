@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSView.h"
+#import <AppKit/NSView.h>
 
 @class CALayer, CATextLayer, NSString;
 
@@ -21,7 +21,6 @@ __attribute__((visibility("hidden")))
 
 @property(nonatomic) struct CGPoint normalizedPosition; // @synthesize normalizedPosition=_normalizedPosition;
 @property(retain, nonatomic) NSString *displayedText; // @synthesize displayedText=_displayedText;
-- (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)fadeToOpacity:(double)arg1 overTime:(double)arg2;
 - (void)layout;

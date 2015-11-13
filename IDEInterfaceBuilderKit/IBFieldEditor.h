@@ -6,8 +6,8 @@
 
 #import <IDEInterfaceBuilderKit/IBCanvasOverlay.h>
 
-#import "IBFieldEditorTextViewDelegate.h"
-#import "NSTextViewDelegate.h"
+#import <IDEInterfaceBuilderKit/IBFieldEditorTextViewDelegate-Protocol.h>
+#import <IDEInterfaceBuilderKit/NSTextViewDelegate-Protocol.h>
 
 @class DVTNotificationToken, IBFieldEditorConfiguration, IBFieldEditorTextView, IBStringEditorCell, NSAttributedString, NSFont, NSNumber, NSString;
 

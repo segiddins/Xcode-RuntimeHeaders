@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "DVTLayoutView_ML.h"
+#import <DVTKit/DVTLayoutView_ML.h>
 
 @class IBCanvasView, NSMutableSet, NSNumber, NSSet;
 
@@ -15,12 +15,12 @@
     NSMutableSet *childFrames;
     NSNumber *dockedEdge;
     BOOL autopositionOnNextLayout;
-    BOOL _showSelectionRing;
+    BOOL _frameIsSelected;
     struct CGPoint _anchor;
 }
 
 @property(nonatomic) struct CGPoint anchor; // @synthesize anchor=_anchor;
-@property BOOL showSelectionRing; // @synthesize showSelectionRing=_showSelectionRing;
+@property BOOL frameIsSelected; // @synthesize frameIsSelected=_frameIsSelected;
 @property BOOL autopositionOnNextLayout; // @synthesize autopositionOnNextLayout;
 @property(copy, nonatomic) NSNumber *dockedEdge; // @synthesize dockedEdge;
 @property(readonly) IBCanvasFrame *parentFrame; // @synthesize parentFrame;
@@ -43,6 +43,8 @@
 - (struct CGPoint)convertAnchorSpacePointToFrameSpacePoint:(struct CGPoint)arg1;
 - (CDStruct_c519178c)dockingInset;
 - (id)hitTest:(struct CGPoint)arg1;
+- (BOOL)isEligibleForBandSelection;
+- (BOOL)shouldIncludeParentWhenScrollingToVisible;
 - (id)boundingRectsForBandSelectionHitTesting;
 - (struct CGRect)boundsForHitTesting;
 - (struct CGRect)frameForCenteringInRect:(struct CGRect)arg1;

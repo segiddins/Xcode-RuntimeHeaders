@@ -6,9 +6,9 @@
 
 #import <DevToolsInterface/PBXProjectModule.h>
 
-#import "NSToolbarDelegate.h"
-#import "NSWindowDelegate.h"
-#import "PBXSelectionTarget.h"
+#import <DevToolsInterface/NSToolbarDelegate-Protocol.h>
+#import <DevToolsInterface/NSWindowDelegate-Protocol.h>
+#import <DevToolsInterface/PBXSelectionTarget-Protocol.h>
 
 @class NSBox, NSMutableArray, NSMutableDictionary, NSString, NSView, PBXModule, PBXProjectDocument, XCBarModule, XCControlView, XCExtendedSegmentedControl, XCExtendedTabView, XCPerspectivesSpecification;
 

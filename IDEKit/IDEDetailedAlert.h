@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
 @class NSButton, NSImageView, NSMapTable, NSPanel, NSScrollView, NSTextField, NSTextView;
 
@@ -33,9 +33,6 @@
 - (void).cxx_destruct;
 - (long long)runModal;
 - (void)beginSheetModalForWindow:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)_handlerSheetDidEnd:(id)arg1 returnCode:(long long)arg2 contextInfo:(void *)arg3;
-- (void)beginSheetModalForWindow:(id)arg1 modalDelegate:(id)arg2 didEndSelector:(SEL)arg3 contextInfo:(void *)arg4;
-- (void)didEndAlert:(id)arg1 returnCode:(long long)arg2 contextInfo:(void *)arg3;
 - (void)defaultButtonAction:(id)arg1;
 - (void)alternateButtonAction:(id)arg1;
 - (void)finishWithCode:(long long)arg1;

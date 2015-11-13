@@ -4,12 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <IDEInterfaceBuilderKit/NSObject-Protocol.h>
 
-@class IBAbstractSegueConnection, IBAbstractStoryboardSegueTemplate, IBSimulatedMetricsContainer, IBStoryboardDocument, IBStoryboardRelationshipSegue, NSImage, NSObject<IBPrimarySceneObject>, NSSet, NSString;
+@class IBAbstractSegueConnection, IBAbstractStoryboardSegueTemplate, IBSimulatedMetricsContainer, IBStoryboardDocument, IBStoryboardRelationshipSegue, NSImage, NSObject, NSSet, NSString;
+@protocol IBPrimarySceneObject;
 
 @protocol IBPrimarySceneObject <NSObject>
-@property(copy, nonatomic) IBSimulatedMetricsContainer *inheritedSimulatedMetrics;
+@property(copy, nonatomic) NSString *ibExplicitStoryboardIdentifier;
 - (NSString *)ibShortDisplayName;
 - (BOOL)ibIsPrimarySceneObject:(NSObject<IBPrimarySceneObject> *)arg1 validSplitViewDetailWithSegue:(IBStoryboardRelationshipSegue *)arg2;
 - (BOOL)ibIsPrimarySceneObject:(NSObject<IBPrimarySceneObject> *)arg1 validSplitViewMasterWithSegue:(IBStoryboardRelationshipSegue *)arg2;
@@ -21,15 +22,13 @@
 - (void)ibWillResignSourceControllerForSegue:(IBAbstractSegueConnection *)arg1;
 - (void)ibDidBecomeSourceControllerForSegue:(IBAbstractSegueConnection *)arg1;
 - (IBSimulatedMetricsContainer *)ibInheritableMetricsForDownstreamController:(id <IBPrimarySceneObject>)arg1 viaSegue:(IBAbstractSegueConnection *)arg2;
-- (void)ibEffectiveSimulatedMetricsDidChange;
 - (NSSet *)ibOutgoingSeguesInDocument:(IBStoryboardDocument *)arg1;
 - (NSSet *)ibIncomingSeguesIncludingSelfOriginated:(BOOL)arg1;
-- (NSString *)ibEffectiveStoryboardIdentifier;
 - (NSImage *)ibImageForOwnedScene;
 
 @optional
 @property(nonatomic) BOOL ibInspectedIsDesignatedEntryPoint;
-- (NSString *)uniqueIdentifierForStoryboardCompilation;
+- (NSString *)ibUniqueIdentifierForStoryboardCompilation;
 - (void)ibPrepareTopLevelControllerForStoryboardCompilation;
 @end
 

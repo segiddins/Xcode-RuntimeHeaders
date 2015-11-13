@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
 @class DVTMutableOrderedDictionary, IDEDistributionItemSigningInfo;
 
@@ -14,10 +14,12 @@
     IDEDistributionItemSigningInfo *_installerSigningInfo;
 }
 
-@property(retain) IDEDistributionItemSigningInfo *installerSigningInfo; // @synthesize installerSigningInfo=_installerSigningInfo;
-@property(retain) DVTMutableOrderedDictionary *itemToSigningInfoMap; // @synthesize itemToSigningInfoMap=_itemToSigningInfoMap;
+@property(readonly) IDEDistributionItemSigningInfo *installerSigningInfo; // @synthesize installerSigningInfo=_installerSigningInfo;
+@property(readonly) DVTMutableOrderedDictionary *itemToSigningInfoMap; // @synthesize itemToSigningInfoMap=_itemToSigningInfoMap;
 - (void).cxx_destruct;
 - (id)description;
+- (id)initWithItemToSigningInfoMap:(id)arg1 installerSigningInfo:(id)arg2;
+- (id)init;
 
 @end
 

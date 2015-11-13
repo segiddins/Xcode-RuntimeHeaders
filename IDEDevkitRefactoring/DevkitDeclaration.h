@@ -6,9 +6,10 @@
 
 #import <IDEDevkitRefactoring/DevkitASTNode.h>
 
-#import "DevkitScopeLookup.h"
+#import <IDEDevkitRefactoring/DevkitScopeLookup-Protocol.h>
 
-@class DevkitASTNode<DevkitScopeLookup>, DevkitFunctionBodyExpression, DevkitType, NSMutableArray, NSMutableDictionary, NSString;
+@class DevkitFunctionBodyExpression, DevkitType, NSMutableArray, NSMutableDictionary, NSString;
+@protocol DevkitScopeLookup;
 
 @interface DevkitDeclaration : DevkitASTNode <DevkitScopeLookup>
 {

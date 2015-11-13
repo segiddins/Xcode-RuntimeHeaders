@@ -4,13 +4,15 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <IDEFoundation/NSObject-Protocol.h>
 
 @class NSArray, NSString;
+@protocol IDEBlueprint, IDETestable;
 
 @protocol IDETestableProvider <NSObject>
 @property(readonly) NSString *name;
 @property(readonly, copy) NSArray *testables;
+@property(readonly, copy) NSArray *allTestables;
 - (id <IDETestable>)testableForBlueprint:(id <IDEBlueprint>)arg1;
 @end
 

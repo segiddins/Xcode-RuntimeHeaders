@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
 @class IBDocument;
 
@@ -20,7 +20,8 @@
 - (void)verifyViewsHaveCorrectFrames;
 - (id)verifyRootObjectRootsAllObjects;
 - (void)verifyFramesInSyncForViewsForAutoresizingMasks;
-- (void)verifyXcode5ContentViews;
+- (void)verifyXcodeContentViews;
+- (void)verifyIfXcodeRequiresAnUpgradePromptToXcode7;
 - (void)verifyIDGenerationStrategy;
 - (void)verifyTranslatesAutoresizingMaskIntoConstraints;
 - (void)verifyConstraints;
@@ -28,7 +29,7 @@
 - (id)verifyNoDanglingSubviews;
 - (id)verifyViewCCRHPriorities;
 - (id)verificationMessageForResolvingConflictBetweenConnections:(id)arg1 byKeepingConnection:(id)arg2;
-- (id)connectionsGroupedByExclusitivityHints;
+- (id)connectionsGroupedByExclusivityHints;
 - (id)verifyExclusiveConnections;
 - (id)verifyIllegalEditorSizes;
 - (id)verify;

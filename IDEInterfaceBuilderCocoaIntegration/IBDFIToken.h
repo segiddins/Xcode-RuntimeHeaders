@@ -6,7 +6,7 @@
 
 #import <IDEInterfaceBuilderCocoaIntegration/IBToken.h>
 
-#import "NSCoding.h"
+#import <IDEInterfaceBuilderCocoaIntegration/NSCoding-Protocol.h>
 
 @class NSArray;
 

@@ -4,10 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IBAbstractLayoutConstraintAbstraction.h"
+#import <IBAutolayoutFoundation/IBAbstractLayoutConstraintAbstraction.h>
 
 @interface IBAbstractLayoutConstraintAbstraction (IBAbstractLayoutConstraintAbstractionIntegration)
-+ (id)ibDefaultImageForInstance:(id)arg1;
++ (id)ibDefaultImageForInstance:(id)arg1 targetRuntime:(id)arg2;
 - (long long)ibCompareForSortingForUserInterface:(id)arg1;
 @property(readonly, nonatomic) id ibMemberToHighlightInUI;
 - (BOOL)ibIsLikelyContributingToAmbiguityOfGroup:(id)arg1;

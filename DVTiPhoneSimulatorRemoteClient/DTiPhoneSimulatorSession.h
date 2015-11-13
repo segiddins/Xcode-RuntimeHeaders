@@ -4,11 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "DVTInvalidation.h"
+#import <DVTiPhoneSimulatorRemoteClient/DVTInvalidation-Protocol.h>
 
 @class DTiPhoneSimulatorSessionConfig, DVTStackBacktrace, NSString;
+@protocol DTiPhoneSimulatorSessionDelegate;
 
 @interface DTiPhoneSimulatorSession : NSObject <DVTInvalidation>
 {
@@ -30,7 +31,6 @@
 @property int simulatedApplicationPID; // @synthesize simulatedApplicationPID=_simulatedApplicationPID;
 @property(retain, nonatomic) id <DTiPhoneSimulatorSessionDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (int)connectToServiceWithError:(id *)arg1;
 - (void)doUbiquityFetchEvent;
 - (void)doFetchEventForPID:(int)arg1;
 - (void)backgroundAllApps:(int)arg1;

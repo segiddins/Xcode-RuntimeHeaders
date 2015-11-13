@@ -4,13 +4,15 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <IDEInterfaceBuilderKit/NSObject-Protocol.h>
 
-@class IBAutolayoutFrameDecider, NSObject<IBAutolayoutItem>;
+@class IBAutolayoutFrameDecider, NSObject;
+@protocol IBAutolayoutItem;
 
 @protocol IBAutolayoutFrameDeciderDelegate <NSObject>
 
 @optional
+- (BOOL)shouldConsiderAutolayoutStatusWhenPropagatingFramesForFrameDecider:(IBAutolayoutFrameDecider *)arg1;
 - (void)frameDecider:(IBAutolayoutFrameDecider *)arg1 didPropagateFrameSize:(struct CGSize)arg2 toView:(NSObject<IBAutolayoutItem> *)arg3;
 - (void)frameDecider:(IBAutolayoutFrameDecider *)arg1 didPropagateFrame:(struct CGRect)arg2 toView:(NSObject<IBAutolayoutItem> *)arg3;
 @end

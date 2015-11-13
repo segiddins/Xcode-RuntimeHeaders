@@ -7,6 +7,7 @@
 #import <IDEKit/IDEEditorStepperView.h>
 
 @class IDEActionButton, NSImage;
+@protocol IDEEditorMenuStepperViewDelegate;
 
 @interface IDEEditorMenuStepperView : IDEEditorStepperView
 {

@@ -4,11 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "IBCocoaCustomObject.h"
-#import "IBDocumentArchiving.h"
-#import "NSCoding.h"
+#import <IDEInterfaceBuilderCocoaIntegration/IBCocoaCustomObject-Protocol.h>
+#import <IDEInterfaceBuilderCocoaIntegration/IBDocumentArchiving-Protocol.h>
+#import <IDEInterfaceBuilderCocoaIntegration/NSCoding-Protocol.h>
 
 @class NSNumber, NSString;
 
@@ -21,7 +21,7 @@
 
 + (void)ibPopulateAdditionalInspectors:(id)arg1 forCategory:(id)arg2;
 + (id)keyPathsForValuesAffectingIbExternalCustomClassName;
-+ (id)ibDefaultImageForInstance:(id)arg1;
++ (id)ibDefaultImageForInstance:(id)arg1 targetRuntime:(id)arg2;
 + (id)instantiateWithDocumentUnarchiver:(id)arg1;
 @property(copy) NSString *className; // @synthesize className=_className;
 - (void).cxx_destruct;

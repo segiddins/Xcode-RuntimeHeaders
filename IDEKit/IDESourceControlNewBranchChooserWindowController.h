@@ -6,16 +6,17 @@
 
 #import <IDEKit/IDESourceControlNewBranchWindowController.h>
 
-#import "IDESourceControlWindowController.h"
+#import <IDEKit/IDESourceControlWindowController-Protocol.h>
 
-@class IDESourceControlBranch, IDESourceControlSwitchOperationInfo, IDESourceControlWorkspaceUIHandler, IDEWorkspace, NSString, NSWindow;
+@class DVTSourceControlRevisionLocation, IDESourceControlSwitchOperationInfo, IDESourceControlWorkspaceUIHandler, IDEWorkspace, NSString, NSWindow;
+@protocol DVTInvalidation;
 
 @interface IDESourceControlNewBranchChooserWindowController : IDESourceControlNewBranchWindowController <IDESourceControlWindowController>
 {
     IDEWorkspace *_workspace;
     IDESourceControlSwitchOperationInfo *_operationInfo;
     NSWindow *_parentWindow;
-    IDESourceControlBranch *_currentBranch;
+    DVTSourceControlRevisionLocation *_currentBranch;
     id <DVTInvalidation> _token;
     BOOL _inProgress;
     IDESourceControlWorkspaceUIHandler *_workspaceUIHandler;

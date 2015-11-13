@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
 @class DVTCrashPoint, IDEWorkspace, NSMutableDictionary, NSSet;
 
@@ -12,22 +12,22 @@
 {
     DVTCrashPoint *_crashPoint;
     IDEWorkspace *_workspace;
-    NSSet *_binaryUUIDsWithSymbols;
+    NSSet *_binaryUUIDs;
     NSMutableDictionary *_fileNameToFilePathMap;
     NSMutableDictionary *_codeModulesByName;
 }
 
 @property(retain) NSMutableDictionary *codeModulesByName; // @synthesize codeModulesByName=_codeModulesByName;
 @property(retain) NSMutableDictionary *fileNameToFilePathMap; // @synthesize fileNameToFilePathMap=_fileNameToFilePathMap;
-@property(retain) NSSet *binaryUUIDsWithSymbols; // @synthesize binaryUUIDsWithSymbols=_binaryUUIDsWithSymbols;
+@property(retain) NSSet *binaryUUIDs; // @synthesize binaryUUIDs=_binaryUUIDs;
 @property __weak IDEWorkspace *workspace; // @synthesize workspace=_workspace;
 @property(retain) DVTCrashPoint *crashPoint; // @synthesize crashPoint=_crashPoint;
 - (void).cxx_destruct;
 - (id)codeModuleForName:(id)arg1;
 - (void)setCodeModule:(id)arg1 forName:(id)arg2 passesBuildProductDirFallback:(BOOL)arg3;
-- (BOOL)hasSymbolsForBinaryWithUUID:(id)arg1;
+- (BOOL)containsBinaryUUID:(id)arg1;
 - (id)filePathForFileName:(id)arg1;
-- (id)initWithCrashPoint:(id)arg1 workspace:(id)arg2 binaryUUIDsWithSymbols:(id)arg3;
+- (id)initWithCrashPoint:(id)arg1 workspace:(id)arg2 binaryUUIDs:(id)arg3;
 
 @end
 

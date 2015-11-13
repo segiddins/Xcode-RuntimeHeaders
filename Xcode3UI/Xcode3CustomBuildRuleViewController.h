@@ -6,12 +6,13 @@
 
 #import <Xcode3UI/Xcode3BuildRuleViewController.h>
 
-#import "DVTSourceTextViewDelegate.h"
-#import "DVTTextStorageDelegate.h"
-#import "NSTableViewDataSource.h"
-#import "NSTableViewDelegate.h"
+#import <Xcode3UI/DVTSourceTextViewDelegate-Protocol.h>
+#import <Xcode3UI/DVTTextStorageDelegate-Protocol.h>
+#import <Xcode3UI/NSTableViewDataSource-Protocol.h>
+#import <Xcode3UI/NSTableViewDelegate-Protocol.h>
 
 @class DVTBorderedView, DVTDelayedInvocation, DVTGradientImageButton, DVTNotificationToken, DVTScriptSourceTextView, DVTStackView_ML, DVTTableView, NSDictionary, NSPopUpButton, NSScrollView, NSString, NSTextField, NSView;
+@protocol DVTCancellable;
 
 @interface Xcode3CustomBuildRuleViewController : Xcode3BuildRuleViewController <DVTSourceTextViewDelegate, DVTTextStorageDelegate, NSTableViewDelegate, NSTableViewDataSource>
 {
@@ -36,6 +37,7 @@
     BOOL _willRebuild;
     DVTDelayedInvocation *_scriptChangeDelayedInvocation;
     DVTNotificationToken *_frameChangeToken;
+    id <DVTCancellable> _rebuildToken;
 }
 
 - (void).cxx_destruct;

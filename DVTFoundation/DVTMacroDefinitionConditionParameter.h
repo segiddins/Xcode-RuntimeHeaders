@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
 @class NSAttributedString, NSString;
 
@@ -22,6 +22,7 @@
 + (void)registerConditionParameterNamed:(id)arg1 precedence:(unsigned long long)arg2 displayName:(id)arg3 displayDescription:(id)arg4;
 + (void)initialize;
 - (void).cxx_destruct;
+- (id)description;
 - (long long)compare:(id)arg1;
 @property(readonly) NSAttributedString *displayDescription;
 @property(readonly) NSString *displayName;

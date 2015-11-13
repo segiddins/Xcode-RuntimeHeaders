@@ -4,10 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "NSCoding.h"
-#import "NSCopying.h"
+#import <SymbolicationDT/NSCoding-Protocol.h>
+#import <SymbolicationDT/NSCopying-Protocol.h>
 
 @interface DVT_VMUArchitecture : NSObject <NSCoding, NSCopying>
 {

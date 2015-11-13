@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "DVTModelTreeNode.h"
+#import <DVTFoundation/DVTModelTreeNode.h>
 
 @class IDESourceControlRevision, IDESourceControlTree, IDESourceControlTreeGroup, NSArray, NSMutableDictionary, NSString;
 
@@ -23,6 +23,8 @@
 }
 
 + (BOOL)automaticallyNotifiesObserversOfCurrentRevision;
++ (unsigned long long)assertionBehaviorForKeyValueObservationsAtEndOfEvent;
++ (unsigned long long)assertionBehaviorAfterEndOfEventForSelector:(SEL)arg1;
 + (id)_revisionLock;
 + (void)initialize;
 @property unsigned long long conflictStateForUpdateOrMerge; // @synthesize conflictStateForUpdateOrMerge=_conflictStateForUpdateOrMerge;

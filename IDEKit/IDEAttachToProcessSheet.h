@@ -4,9 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "DVTViewController.h"
+#import <DVTKit/DVTViewController.h>
 
 @class DVTStackView_AppKitAutolayout, IDEDebuggerSpecifier, IDEWorkspaceTabController, NSArray, NSButton, NSButtonCell, NSImageView, NSMatrix, NSTextField, NSView, NSWindow;
+@protocol IDEAttachToProcessSheetDelegate;
 
 @interface IDEAttachToProcessSheet : DVTViewController
 {
@@ -36,7 +37,6 @@
 - (void).cxx_destruct;
 - (void)_rememberEnteredProcessNameIfNecessary;
 - (void)_rememberDebugProcessAsSelection;
-- (void)_sheetDidEnd;
 - (void)_attachToProcessUsingProcessInformations:(id)arg1;
 - (void)attachToProcess:(id)arg1;
 - (void)cancel:(id)arg1;
@@ -44,6 +44,7 @@
 - (void)_updateUIBasedOnPIDTextFieldAfterDelay;
 - (void)_updateUIBasedOnPIDTextFieldUsingProcessInformations:(id)arg1;
 - (void)_updateUIBasedOnPIDTextField;
+- (BOOL)_runOnPairedDevice;
 - (id)_processInformationForProcessName:(id)arg1 processInformations:(id)arg2;
 - (id)_processInformationForUserEnteredText:(id)arg1;
 - (id)_processInformationForPID:(int)arg1 processInformations:(id)arg2;

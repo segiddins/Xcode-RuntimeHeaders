@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "IBBinaryArchiving.h"
+#import <IBFoundation/IBBinaryArchiving-Protocol.h>
 
 @class NSArray, NSError, NSString;
 
@@ -25,7 +25,6 @@
 @property(readonly, nonatomic) id value; // @synthesize value=_value;
 - (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
-- (id)resultBySettingValue:(id)arg1;
 - (void)encodeWithBinaryArchiver:(id)arg1;
 - (id)initWithBinaryUnarchiver:(id)arg1;
 - (id)initWithValue:(id)arg1 orError:(id)arg2 warningMessages:(id)arg3;

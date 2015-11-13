@@ -4,12 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "DTDKDetailViewController.h"
+#import <DTDeviceKit/DTDKDetailViewController.h>
 
-#import "DTDKTableViewDelegate.h"
-#import "DVTWindowActivationStateObserver.h"
+#import <IDEiPhoneSupport/DTDKTableViewDelegate-Protocol.h>
+#import <IDEiPhoneSupport/DVTWindowActivationStateObserver-Protocol.h>
 
 @class DVTDevice, DVTObservingToken, NSArray, NSArrayController, NSButton, NSSearchField, NSSplitView, NSString, NSTextView, NSView;
+@protocol DVTCancellable;
 
 @interface IDEiPhoneOrganizerCrashLogViewController : DTDKDetailViewController <DTDKTableViewDelegate, DVTWindowActivationStateObserver>
 {

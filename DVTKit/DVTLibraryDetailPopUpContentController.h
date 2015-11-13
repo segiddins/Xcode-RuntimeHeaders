@@ -6,9 +6,10 @@
 
 #import <DVTKit/DVTHUDPopUpContentViewController.h>
 
-#import "DVTAssetDetailViewDelegate.h"
+#import <DVTKit/DVTAssetDetailViewDelegate-Protocol.h>
 
 @class DVTAssetDetailView, DVTChoice, DVTDelayedInvocation, DVTLibraryAsset, DVTLibraryController, DVTLibraryDetailController, DVTLibraryDetailEditorController, DVTLibraryDetailPopUpController, NSArray, NSString;
+@protocol DVTInvalidation, DVTLibraryDetailPopUpContentControllerDelegate;
 
 @interface DVTLibraryDetailPopUpContentController : DVTHUDPopUpContentViewController <DVTAssetDetailViewDelegate>
 {

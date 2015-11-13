@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "IDEDebuggingAddition.h"
+#import <DebuggerFoundation/IDEDebuggingAddition-Protocol.h>
 
 @class DBGViewDebugger, DVTStackBacktrace, IDELaunchSession, NSString;
 
@@ -30,6 +30,7 @@
 - (id)adjustedLaunchParametersForLaunchParameters:(id)arg1;
 - (id)_viewDebuggingDylibPath:(id)arg1;
 - (void)_loadViewDebuggingDylibIfNecessary;
+@property(readonly) NSString *targetPlatform;
 - (void)initiateViewDebugging;
 - (id)initInLaunchSession:(id)arg1 withAppDisplayName:(id)arg2 runDestination:(id)arg3 fromExtension:(id)arg4;
 

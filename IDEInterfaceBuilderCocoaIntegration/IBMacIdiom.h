@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IBIdiom.h"
+#import <IDEInterfaceBuilderKit/IBIdiom.h>
 
 @interface IBMacIdiom : IBIdiom
 {
@@ -20,14 +20,15 @@
 - (id)storyboardPrimarySceneObjectPasteboardType;
 - (id)viewPasteboardType;
 - (id)objectPasteboardType;
-- (Class)storyboardMainEntryPointIndicatorClass;
 - (Class)storyboardAssetProviderClass;
 - (Class)xibAssetProviderClass;
 - (Class)storyboardVerifierClass;
 - (Class)xibVerifierClass;
 - (double)defaultOverviewZoomFactor;
 - (id)pluginName;
+- (id)platform;
 - (id)icon;
+- (id)idiomName;
 - (id)identifier;
 
 @end

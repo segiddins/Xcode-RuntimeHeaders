@@ -6,7 +6,7 @@
 
 #import <IDEKit/IDEViewController.h>
 
-#import "DVTPagingSheetViewController.h"
+#import <IDEKit/DVTPagingSheetViewController-Protocol.h>
 
 @class IDEAccountTeamPickerWindowController, NSArray, NSButton, NSProgressIndicator, NSString, NSTextField;
 

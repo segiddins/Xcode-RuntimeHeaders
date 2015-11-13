@@ -6,10 +6,10 @@
 
 #import <DevToolsInterface/PBXFosterParent.h>
 
-#import "PBXUIDeletionAssistant.h"
-#import "XCBreakpointActionsProtocol.h"
-#import "XCGroupingProtocol.h"
-#import "XCOutlineViewCheckBoxProtocol.h"
+#import <DevToolsInterface/PBXUIDeletionAssistant-Protocol.h>
+#import <DevToolsInterface/XCBreakpointActionsProtocol-Protocol.h>
+#import <DevToolsInterface/XCGroupingProtocol-Protocol.h>
+#import <DevToolsInterface/XCOutlineViewCheckBoxProtocol-Protocol.h>
 
 @interface XCBreakpointsBucketProxy : PBXFosterParent <PBXUIDeletionAssistant, XCGroupingProtocol, XCBreakpointActionsProtocol, XCOutlineViewCheckBoxProtocol>
 {

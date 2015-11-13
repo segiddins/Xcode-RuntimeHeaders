@@ -18,8 +18,8 @@
 }
 
 + (id)closeButtonImage;
-@property(nonatomic) NSImage *alternateRolloverImage; // @synthesize alternateRolloverImage=_alternateRolloverImage;
-@property(nonatomic) NSImage *rolloverImage; // @synthesize rolloverImage=_rolloverImage;
+@property(retain, nonatomic) NSImage *alternateRolloverImage; // @synthesize alternateRolloverImage=_alternateRolloverImage;
+@property(retain, nonatomic) NSImage *rolloverImage; // @synthesize rolloverImage=_rolloverImage;
 - (void).cxx_destruct;
 - (void)configureAsCloseButton;
 - (void)_updateImages;

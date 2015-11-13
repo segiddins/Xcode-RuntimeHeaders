@@ -6,10 +6,11 @@
 
 #import <IDEKit/IDEEditor.h>
 
-#import "IDEPathCellDelegate.h"
-#import "NSSplitViewDelegate.h"
+#import <IDEKit/IDEPathCellDelegate-Protocol.h>
+#import <IDEKit/NSSplitViewDelegate-Protocol.h>
 
 @class DVTBindingToken, DVTComparisonDocumentLocation, DVTDispatchLock, DVTObservingToken, DVTPerformanceMetric, DVTReplacementView, IDEComparisonEditorAutoLayoutView, IDEComparisonEditorSubmode, IDEComparisonNavTimelineBar, IDEComparisonToolbar, IDEEditorDocument, IDENavigableItem, IDENavigableItemCoordinator, IDESourceControlConflictResolutionController, IDESourceControlInteractiveCommitController, NSArray, NSDictionary, NSMutableArray, NSMutableSet, NSSet, NSSplitView, NSString;
+@protocol DVTInvalidation, IDEComparisonEditorDataSource, IDEComparisonEditorDelegate;
 
 @interface IDEComparisonEditor : IDEEditor <NSSplitViewDelegate, IDEPathCellDelegate>
 {
@@ -170,6 +171,8 @@
 - (void)showRevision:(id)arg1;
 - (void)compareCurrentRevisionToRevision:(id)arg1;
 - (void)compareRevisionChange:(id)arg1;
+- (void)setupFrameResizeObservation;
+- (void)cancelFrameResizeToken;
 - (void)_setupSupportViews;
 - (void)_cleanupSupportViews;
 - (void)_editorDocumentDirtyStatusDidChange:(id)arg1;

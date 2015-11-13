@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "DVTXMLUnarchiving.h"
+#import <IDEFoundation/DVTXMLUnarchiving-Protocol.h>
 
 @class IDEBuildSchemeAction, IDESchemeBuildableReference, NSString;
 
@@ -26,11 +26,8 @@
 }
 
 + (id)keyPathsForValuesAffectingCanRemoveEntry;
-+ (id)keyPathsForValuesAffectingCanEditBuildForProfiling;
 + (id)keyPathsForValuesAffectingShouldBuildForProfiling;
-+ (id)keyPathsForValuesAffectingCanEditBuildForRunning;
 + (id)keyPathsForValuesAffectingShouldBuildForRunning;
-+ (id)keyPathsForValuesAffectingCanEditBuildForTesting;
 + (id)keyPathsForValuesAffectingShouldBuildForTesting;
 @property(retain) IDEBuildSchemeAction *buildAction; // @synthesize buildAction=_buildAction;
 @property(readonly) IDESchemeBuildableReference *buildableReference; // @synthesize buildableReference=_buildableReference;
@@ -50,15 +47,10 @@
 - (void)enableBuildEntry;
 - (void)disableBuildEntry;
 @property(readonly) BOOL canRemoveEntry;
-@property(readonly) BOOL canEditBuildForAnalyzing;
 @property BOOL shouldBuildForAnalyzing;
-@property(readonly) BOOL canEditBuildForArchiving;
 @property BOOL shouldBuildForArchiving;
-@property(readonly) BOOL canEditBuildForProfiling;
 @property BOOL shouldBuildForProfiling;
-@property(readonly) BOOL canEditBuildForRunning;
 @property BOOL shouldBuildForRunning;
-@property(readonly) BOOL canEditBuildForTesting;
 @property BOOL shouldBuildForTesting;
 - (void)_makeExplicit;
 - (void)dvt_awakeFromXMLUnarchiver:(id)arg1;

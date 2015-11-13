@@ -6,7 +6,7 @@
 
 #import <DevToolsInterface/XCElementImp.h>
 
-#import "XCElementSpacerP.h"
+#import <DevToolsInterface/XCElementSpacerP-Protocol.h>
 
 @class NSString;
 

@@ -4,10 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDEEditor.h"
+#import <IDEKit/IDEEditor.h>
 
-#import "DVTFindBarFindable.h"
-#import "DVTTextFindable.h"
+#import <HexEditor/DVTFindBarFindable-Protocol.h>
+#import <HexEditor/DVTTextFindable-Protocol.h>
 
 @class DVTReplacementView, IDEHexEditorViewController, NSString;
 

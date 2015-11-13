@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSPathCellDelegate.h"
+#import "NSPathCellDelegate-Protocol.h"
 
 @class IDENavigableItem, IDEPathCell, IDEPathComponentCell, NSArray, NSMenu, NSMenuItem, NSString;
 
@@ -21,6 +21,7 @@
 - (struct CGPoint)pathCell:(IDEPathCell *)arg1 adjustPopupMenuLocation:(struct CGPoint)arg2;
 - (NSMenuItem *)pathCell:(IDEPathCell *)arg1 menuItemForNavigableItem:(IDENavigableItem *)arg2 defaultMenuItem:(NSMenuItem *)arg3;
 - (void)pathCell:(IDEPathCell *)arg1 didUpdateMenu:(NSMenu *)arg2;
+- (BOOL)pathCell:(IDEPathCell *)arg1 performAlternateReveal:(IDENavigableItem *)arg2 fromFrame:(struct CGRect)arg3;
 - (BOOL)pathCell:(IDEPathCell *)arg1 shouldEnableSelection:(IDENavigableItem *)arg2;
 - (BOOL)pathCell:(IDEPathCell *)arg1 shouldInitiallyShowMenuSearch:(IDENavigableItem *)arg2;
 - (NSArray *)pathCell:(IDEPathCell *)arg1 childItemsForItem:(IDENavigableItem *)arg2;

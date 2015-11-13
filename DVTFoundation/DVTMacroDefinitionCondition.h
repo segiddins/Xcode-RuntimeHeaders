@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "NSCopying.h"
+#import <DVTFoundation/NSCopying-Protocol.h>
 
 @class DVTMacroDefinitionConditionParameter, NSString;
 
@@ -22,6 +22,7 @@
 - (id)subscriptRepresentation;
 - (long long)compare:(id)arg1;
 - (BOOL)evaluateInScope:(id)arg1;
+- (BOOL)evaluateForParameterValues:(id)arg1;
 @property(readonly) NSString *valuePattern;
 @property(readonly) DVTMacroDefinitionConditionParameter *parameter;
 - (BOOL)isEqual:(id)arg1;

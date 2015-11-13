@@ -4,13 +4,15 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "DVTDeviceService.h"
+#import <DVTFoundation/DVTDeviceService.h>
 
-@class DVTMutableOrderedDictionary, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>;
+@class DVTMutableOrderedDictionary, NSObject, NSSet;
+@protocol OS_dispatch_queue, OS_dispatch_source;
 
 @interface IDEGaugeDataProviderService : DVTDeviceService
 {
     DVTMutableOrderedDictionary *_coordinatorsByPID;
+    NSSet *_startedPids;
     NSObject<OS_dispatch_queue> *_serialQueue;
     NSObject<OS_dispatch_source> *_timer;
     _Bool _suspended;
@@ -19,7 +21,9 @@
 + (id)observableAttributes;
 + (id)capability;
 - (void).cxx_destruct;
+- (id)stopSamplingForPIDs:(id)arg1;
 - (id)sampleAttributes:(id)arg1 forPIDs:(id)arg2;
+- (id)startSamplingForPIDs:(id)arg1;
 - (void)stopSampling;
 - (void)resumeSampling;
 - (void)pauseSampling;

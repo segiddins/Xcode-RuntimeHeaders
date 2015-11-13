@@ -6,16 +6,17 @@
 
 #import <IDEKit/IDEAssistant.h>
 
-#import "IDEComparisonEditorDataSource.h"
-#import "IDEReviewFilesDataSource.h"
+#import <IDEKit/IDEComparisonEditorDataSource-Protocol.h>
+#import <IDEKit/IDEReviewFilesDataSource-Protocol.h>
 
-@class DVTBorderedView, DVTMapTable, DVTObservingToken, IDENavigableItemCoordinator, IDENavigatorDataCell, IDEReviewFilesViewController, NSArray, NSMutableSet, NSObject<OS_dispatch_semaphore>, NSOperationQueue, NSString;
+@class DVTBorderedView, DVTObservingToken, IDENavigableItemAsyncFilteringCoordinator, IDENavigatorDataCell, IDEReviewFilesViewController, NSArray, NSMapTable, NSMutableSet, NSObject, NSOperationQueue, NSString;
+@protocol OS_dispatch_semaphore;
 
 @interface IDEARCConversionReviewChangesAssistant : IDEAssistant <IDEReviewFilesDataSource, IDEComparisonEditorDataSource>
 {
-    DVTMapTable *_editorDocumentByFilePath;
+    NSMapTable *_editorDocumentByFilePath;
     NSArray *_flatNavigableItems;
-    IDENavigableItemCoordinator *_flatFileNavItemCoordinator;
+    IDENavigableItemAsyncFilteringCoordinator *_flatFileNavItemCoordinator;
     IDENavigatorDataCell *_containerFileReferenceDataCell;
     IDENavigatorDataCell *_groupDataCell;
     IDENavigatorDataCell *_fileReferenceDataCell;
@@ -53,9 +54,7 @@
 - (id)_snapshotContainerItem:(id)arg1 customizationBlock:(CDUnknownBlockType)arg2;
 - (void)_setInitialSelectionForNavigatorOutlineView:(id)arg1;
 - (BOOL)_selectedTargetsContainFilePath:(id)arg1;
-- (void)_snapshotAlertDidEnd:(id)arg1 returnCode:(long long)arg2 contextInfo:(void *)arg3;
 - (void)finishWithCompletionBlock:(CDUnknownBlockType)arg1;
-- (void)_editorDocument:(id)arg1 didSave:(BOOL)arg2 contextInfo:(void *)arg3;
 - (void)_convertedEditorDocument:(id)arg1 didSave:(BOOL)arg2 contextInfo:(void *)arg3;
 - (void)_applyChanges;
 - (void)_updateBuildSettingsAndFinish;

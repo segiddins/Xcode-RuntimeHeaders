@@ -4,14 +4,16 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDEDebugBarContentProvider.h"
+#import <IDEKit/IDEDebugBarContentProvider.h>
 
 @class DBGViewDebuggerAdditionUIController, NSButton;
+@protocol DVTCancellable;
 
 @interface DBGViewDebuggerDebugBarContentProvider : IDEDebugBarContentProvider
 {
     DBGViewDebuggerAdditionUIController *_currentUIController;
     id <DVTCancellable> _currentUIControllerObserver;
+    id <DVTCancellable> _currentUIControllerIsValidObserver;
     NSButton *_viewDebuggingButton;
 }
 

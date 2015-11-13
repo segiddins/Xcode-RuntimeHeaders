@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDEInspectorProperty.h"
+#import <IDEKit/IDEInspectorProperty.h>
 
-#import "NSMenuDelegate.h"
+#import <IDEInterfaceBuilderKit/NSMenuDelegate-Protocol.h>
 
 @class IBCancellationToken, IDEInspectorKeyPath, NSPopUpButton, NSString;
 
@@ -37,6 +37,7 @@
 - (void)didFinishRollingOverItemInspectorBackgroundView:(id)arg1;
 - (void)didStartRollingOverItemInspectorBackgroundView:(id)arg1;
 - (void)setupRefreshTriggersAndConfigure;
+- (BOOL)isInspectingFirstItemAndAttribute;
 - (void)menuNeedsUpdate:(id)arg1;
 - (void)_addActionsMenuItemGroupToMutableGroups:(id)arg1;
 - (void)_addOptionsMenuItemGroupToMutableGroups:(id)arg1;
@@ -47,7 +48,6 @@
 - (void)_addSizeAttributeMenuItemsToMutableAttributesGroup:(id)arg1 selectedAttributes:(id)arg2;
 - (BOOL)_allSelectedItemsSupportLayoutMargins;
 - (BOOL)_allSelectedItemsSupportFirstBaseline;
-- (id)_baselineMenuItemForAttribute:(unsigned long long)arg1 selectedAttributes:(id)arg2;
 - (void)refresh;
 - (void)primitiveInvalidate;
 - (double)baseline;

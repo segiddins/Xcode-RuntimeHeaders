@@ -6,7 +6,7 @@
 
 #import <IDEModelEditor/XDGraphic.h>
 
-#import "XDGraphEdge.h"
+#import <IDEModelEditor/XDGraphEdge-Protocol.h>
 
 @class XDConnection, XDLineEnd;
 

@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "DVTTextCompletionItem.h"
+#import <IDELanguageSupportUI/DVTTextCompletionItem-Protocol.h>
 
 @class NSArray, NSAttributedString, NSImage, NSString;
 
@@ -14,10 +14,11 @@
 {
     CDStruct_3b0d17db _obj;
     double _priority;
+    double _fuzzyMatchingScore;
 }
 
+@property double fuzzyMatchingScore; // @synthesize fuzzyMatchingScore=_fuzzyMatchingScore;
 @property double priority; // @synthesize priority=_priority;
-- (id).cxx_construct;
 - (unsigned long long)leadingCharactersToReplaceFromString:(id)arg1 location:(unsigned long long)arg2;
 - (void)infoViewControllerWithWidth:(double)arg1 context:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 @property(readonly) NSArray *associatedUSRs;

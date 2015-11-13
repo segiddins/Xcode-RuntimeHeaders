@@ -4,12 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "NSCoding.h"
-#import "NSCopying.h"
+#import <PhysicsKit/NSCoding-Protocol.h>
+#import <PhysicsKit/NSCopying-Protocol.h>
 
 @class NSArray, NSMutableArray, PKPhysicsWorld;
+@protocol NSObject;
 
 @interface PKPhysicsBody : NSObject <NSCopying, NSCoding>
 {
@@ -112,6 +113,7 @@
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)clearBox2DData;
+@property(readonly, nonatomic) struct PKPath *volume;
 @property(nonatomic) shared_ptr_2aaf3a07 outline;
 @property(nonatomic) struct b2Body *_body;
 @property(nonatomic) struct b2BodyDef _bodyDef;

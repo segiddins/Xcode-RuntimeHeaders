@@ -4,13 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "DVTCompletingTextView.h"
+#import <DVTKit/DVTCompletingTextView.h>
 
-#import "DVTFindBarFindable.h"
-#import "DVTInvalidation.h"
-#import "DVTTextFindable.h"
+#import <IDEKit/DVTFindBarFindable-Protocol.h>
+#import <IDEKit/DVTInvalidation-Protocol.h>
+#import <IDEKit/DVTTextFindable-Protocol.h>
 
 @class DVTObservingToken, DVTStackBacktrace, DVTTextCompletionDataSource, NSDictionary, NSMutableArray, NSString;
+@protocol IDEConsoleTextViewObjectiveCExpressionRangeDelegate, IDEConsoleTextViewStandardIODelegate;
 
 @interface IDEConsoleTextView : DVTCompletingTextView <DVTTextFindable, DVTFindBarFindable, DVTInvalidation>
 {
@@ -61,7 +62,7 @@
 - (void)_undoManagerDidUndoChangeNotification:(id)arg1;
 - (BOOL)shouldChangeTextInRanges:(id)arg1 replacementStrings:(id)arg2;
 - (void)keyDown:(id)arg1;
-- (void)_sendKeyImmediatelyIfNecessary:(id)arg1;
+- (void)_sendKeyImmediatelyIfNecessary:(id)arg1 event:(id)arg2;
 - (void)_moveInsertionPointToEnd;
 - (id)userEnteredTextAfterPromptUpToLocation:(unsigned long long)arg1;
 - (id)userEnteredTextAfterPrompt;

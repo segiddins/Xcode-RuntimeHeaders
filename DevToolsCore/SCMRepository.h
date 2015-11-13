@@ -6,7 +6,7 @@
 
 #import <DevToolsCore/SCMModel.h>
 
-#import "XCNetworkHostObserver.h"
+#import <DevToolsCore/XCNetworkHostObserver-Protocol.h>
 
 @class NSString, SCMRequest;
 

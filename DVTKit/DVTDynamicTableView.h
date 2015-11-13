@@ -6,14 +6,15 @@
 
 #import <DVTKit/DVTTableView.h>
 
-#import "NSTableViewDataSource.h"
-#import "NSTableViewDelegate.h"
+#import <DVTKit/NSTableViewDataSource-Protocol.h>
+#import <DVTKit/NSTableViewDelegate-Protocol.h>
 
-@class DVTMapTable, NSString;
+@class NSMapTable, NSString;
+@protocol DVTDynamicTableViewDataSource, DVTDynamicTableViewDelegate;
 
 @interface DVTDynamicTableView : DVTTableView <NSTableViewDelegate, NSTableViewDataSource>
 {
-    DVTMapTable *_viewsInVisibleRows;
+    NSMapTable *_viewsInVisibleRows;
     long long _dynEditingRow;
     long long _editingCount;
     long long _lastNumSections;

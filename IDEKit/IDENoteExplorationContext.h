@@ -6,6 +6,8 @@
 
 #import <IDEKit/IDEExplorationContext.h>
 
+@protocol IDENoteAnnotationExplorableItem;
+
 @interface IDENoteExplorationContext : IDEExplorationContext
 {
     id <IDENoteAnnotationExplorableItem> _note;

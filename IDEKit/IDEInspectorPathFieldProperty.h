@@ -6,7 +6,7 @@
 
 #import <IDEKit/IDEInspectorProperty.h>
 
-#import "DVTFilePathFieldCellDelegate.h"
+#import <IDEKit/DVTFilePathFieldCellDelegate-Protocol.h>
 
 @class DVTFilePathField, IDEInspectorKeyPath, NSString;
 

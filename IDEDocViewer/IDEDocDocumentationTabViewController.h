@@ -4,13 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "DVTViewController.h"
+#import <DVTKit/DVTViewController.h>
 
-#import "DOMEventListener.h"
-#import "DVTReplacementViewDelegate.h"
-#import "DVTTabbedWindowTabContentControlling.h"
+#import <IDEDocViewer/DOMEventListener-Protocol.h>
+#import <IDEDocViewer/DVTReplacementViewDelegate-Protocol.h>
+#import <IDEDocViewer/DVTTabbedWindowTabContentControlling-Protocol.h>
 
-@class DVTObservingToken, DVTStateToken, IDEDocContentAreaReplacementView, IDEDocContentAreaViewController, NSDictionary, NSDocument<DVTTabbedWindowCreation>, NSString, NSURL, NSView;
+@class DVTObservingToken, DVTStateToken, IDEDocContentAreaReplacementView, IDEDocContentAreaViewController, NSDictionary, NSDocument, NSString, NSURL, NSView;
+@protocol DVTTabbedWindowCreation;
 
 @interface IDEDocDocumentationTabViewController : DVTViewController <DVTReplacementViewDelegate, DOMEventListener, DVTTabbedWindowTabContentControlling>
 {

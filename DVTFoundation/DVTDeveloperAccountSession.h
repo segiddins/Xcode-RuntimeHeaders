@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "DVTDirectoryServicesSessionDescription.h"
+#import <DVTFoundation/DVTDirectoryServicesSessionDescription-Protocol.h>
 
 @class DVTDeveloperAccount, NSData, NSString;
 
@@ -19,8 +19,8 @@
     NSData *_sessionData;
 }
 
-@property(copy) NSData *sessionData; // @synthesize sessionData=_sessionData;
-@property(copy) NSString *sessionID; // @synthesize sessionID=_sessionID;
+@property(copy, nonatomic) NSData *sessionData; // @synthesize sessionData=_sessionData;
+@property(copy, nonatomic) NSString *sessionID; // @synthesize sessionID=_sessionID;
 @property(copy) NSString *prsID; // @synthesize prsID=_prsID;
 @property(nonatomic) __weak DVTDeveloperAccount *account; // @synthesize account=_account;
 - (void).cxx_destruct;

@@ -6,8 +6,8 @@
 
 #import <IDEKit/IDEBatchFindable.h>
 
-#import "DVTTextFindable.h"
-#import "DVTTextReplacable.h"
+#import <IDEKit/DVTTextFindable-Protocol.h>
+#import <IDEKit/DVTTextReplacable-Protocol.h>
 
 @class IDEBatchFindRawTextLineLocationFinder, NSString;
 

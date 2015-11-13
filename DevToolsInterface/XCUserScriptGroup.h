@@ -6,7 +6,7 @@
 
 #import <DevToolsInterface/XCUserScriptNode.h>
 
-#import "NSMenuDelegate.h"
+#import <DevToolsInterface/NSMenuDelegate-Protocol.h>
 
 @class NSMenu, NSMutableArray, NSString;
 

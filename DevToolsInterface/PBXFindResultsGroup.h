@@ -6,8 +6,8 @@
 
 #import <DevToolsInterface/PBXFosterParent.h>
 
-#import "PBXTrackableTaskObserver.h"
-#import "XCMenuTableDataSource.h"
+#import <DevToolsInterface/PBXTrackableTaskObserver-Protocol.h>
+#import <DevToolsInterface/XCMenuTableDataSource-Protocol.h>
 
 @class PBXBatchFinder, PBXTrackableTaskManager;
 

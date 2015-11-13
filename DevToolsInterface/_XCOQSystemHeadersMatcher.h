@@ -6,7 +6,7 @@
 
 #import <DevToolsInterface/_XCOQMatcher.h>
 
-#import "_XCOQOperationDelegate.h"
+#import <DevToolsInterface/_XCOQOperationDelegate-Protocol.h>
 
 @class NSArray, NSOperationQueue;
 

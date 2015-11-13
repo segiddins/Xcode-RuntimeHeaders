@@ -7,6 +7,7 @@
 #import <GPUTraceDebuggerUI/GPUDebugBarContentProvider.h>
 
 @class DVTGradientImageButton, DVTObservingToken, GPUSharedTabUIState, GPUTraceFramePlayheadSlider, GPUTraceFrameStepperButton;
+@protocol DVTCancellable;
 
 __attribute__((visibility("hidden")))
 @interface GPUFrameScrubberDebugBarContentProvider : GPUDebugBarContentProvider

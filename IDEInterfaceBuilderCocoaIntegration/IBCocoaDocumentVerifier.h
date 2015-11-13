@@ -4,13 +4,15 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IBDocumentVerifier.h"
+#import <IDEInterfaceBuilderKit/IBDocumentVerifier.h>
 
 @interface IBCocoaDocumentVerifier : IBDocumentVerifier
 {
 }
 
+- (void)verifyTextFieldPreferredMaxLayoutWidthUsingAutomaticMode;
 - (void)verifyTextViewFrames;
+- (void)restoreMenuDefaultLayoutDirection;
 - (id)verify;
 
 @end

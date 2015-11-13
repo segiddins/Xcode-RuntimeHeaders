@@ -4,11 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-@class NSObject<OS_dispatch_queue>, NSString;
+#import <DVTFoundation/DVTLocking-Protocol.h>
 
-@interface DVTDispatchLock : NSObject
+@class NSString;
+@protocol OS_dispatch_queue;
+
+@interface DVTDispatchLock : NSObject <DVTLocking>
 {
     NSObject<OS_dispatch_queue> *_queue;
 }
@@ -27,11 +30,12 @@
 - (void)performLockedReaderBlock:(CDUnknownBlockType)arg1;
 - (void)asyncPerformLockedBlock:(CDUnknownBlockType)arg1;
 - (void)performLockedBlock:(CDUnknownBlockType)arg1;
-@property(readonly) BOOL isRecursive;
 @property(readonly) NSString *debugName;
 - (void)dealloc;
 - (id)initWithDebugName:(id)arg1;
 - (id)initWithDebugName:(id)arg1 isRecursive:(BOOL)arg2;
+- (void)dvt_asyncPerformLockedBlock:(CDUnknownBlockType)arg1;
+- (void)dvt_performLockedBlock:(CDUnknownBlockType)arg1;
 
 @end
 

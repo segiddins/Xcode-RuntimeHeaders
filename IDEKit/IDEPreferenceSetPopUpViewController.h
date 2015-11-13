@@ -7,6 +7,7 @@
 #import <IDEKit/IDEViewController.h>
 
 @class DVTObservingToken, DVTPreferenceSetManager, DVTReplacementView, NSMenuItem, NSPanel, NSPopUpButton;
+@protocol DVTPreferenceSet;
 
 @interface IDEPreferenceSetPopUpViewController : IDEViewController
 {

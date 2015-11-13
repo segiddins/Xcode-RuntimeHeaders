@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSView.h"
+#import <AppKit/NSView.h>
 
-#import "IBDocumentArchiving.h"
+#import <IDEInterfaceBuilderKit/IBDocumentArchiving-Protocol.h>
 
 @class NSAttributedString, NSColor, NSFont, NSImage, NSString, NSValue;
 
@@ -39,7 +39,7 @@
 @property(getter=isFlipped) BOOL flipped; // @synthesize flipped;
 - (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
-- (struct CGRect)destinationRectForContentWithSize:(struct CGSize)arg1 knob:(long long)arg2 offset:(struct CGPoint)arg3;
+- (struct CGRect)destinationRectForContentWithSize:(struct CGSize)arg1 knob:(CDUnion_31865a80)arg2 offset:(struct CGPoint)arg3;
 - (void)awakeAfterUsingDocumentUnarchiver:(id)arg1;
 - (void)recacheOpaque;
 - (struct CGSize)effectiveTextAttributedStringSize;

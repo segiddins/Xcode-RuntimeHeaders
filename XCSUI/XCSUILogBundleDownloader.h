@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
 @class NSMutableDictionary;
 
@@ -16,6 +16,8 @@
 + (id)sharedDownloader;
 - (void).cxx_destruct;
 - (void)cancelDownloadForToken:(id)arg1;
+- (id)downloadAllLogsForIntegration:(id)arg1 toDirectory:(id)arg2 progressBlock:(CDUnknownBlockType)arg3;
+- (id)fileNameForIntegration:(id)arg1;
 - (id)downloadAllLogsForIntegration:(id)arg1 windowForSheets:(id)arg2 progressBlock:(CDUnknownBlockType)arg3;
 - (id)init;
 

@@ -6,7 +6,7 @@
 
 #import <DevToolsInterface/PBXProjectModule.h>
 
-#import "PBXTrackableTaskObserver.h"
+#import <DevToolsInterface/PBXTrackableTaskObserver-Protocol.h>
 
 @class NSArray, NSString, NSTimer, PBXControlScrollView, PBXTrackableTaskManager, XCControlView;
 

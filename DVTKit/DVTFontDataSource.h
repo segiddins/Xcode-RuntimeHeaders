@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "DVTFontTextFieldDataSource.h"
+#import <DVTKit/DVTFontTextFieldDataSource-Protocol.h>
 
 @class NSArray, NSNumberFormatter, NSString;
 
@@ -36,6 +36,7 @@
 - (id)fontTextField:(id)arg1 descriptionForFamily:(id)arg2;
 - (id)fontTextField:(id)arg1 descriptionForValue:(id)arg2 type:(int *)arg3;
 - (id)fontTextField:(id)arg1 fontNamesForFontFamily:(id)arg2;
+- (id)fontTextField:(id)arg1 fontNamesForFont:(id)arg2;
 - (id)fontFamiliesForFontTextField:(id)arg1;
 - (id)fontValuesForFontTextField:(id)arg1;
 - (id)init;

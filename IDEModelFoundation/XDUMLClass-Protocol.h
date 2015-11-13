@@ -4,9 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "XDUMLBehavioredClassifier.h"
+#import <IDEModelFoundation/XDUMLBehavioredClassifier-Protocol.h>
 
 @class NSArray;
+@protocol XDUMLClass;
 
 @protocol XDUMLClass <XDUMLBehavioredClassifier>
 - (void)setParentClass:(id <XDUMLClass>)arg1;

@@ -6,7 +6,8 @@
 
 #import <DVTFoundation/DVTMacroExpansionOperator.h>
 
-@class NSString<DVTMacroExpansion>;
+@class NSString;
+@protocol DVTMacroExpansion;
 
 @interface DVTMacroExpansionReplacementOperator : DVTMacroExpansionOperator
 {

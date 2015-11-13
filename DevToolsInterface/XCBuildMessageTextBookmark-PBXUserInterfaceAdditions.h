@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "XCBuildMessageTextBookmark.h"
+#import <DevToolsCore/XCBuildMessageTextBookmark.h>
 
 @interface XCBuildMessageTextBookmark (PBXUserInterfaceAdditions)
 - (struct _NSRange)characterRangeAtTimestamp:(unsigned long long)arg1 forStorage:(id)arg2;

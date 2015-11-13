@@ -4,11 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-@class DVTExtendedPlatformInfo, DVTFilePath, DVTHashTable, DVTPlatformFamily, DVTVersion, NSArray, NSDictionary, NSSet, NSString;
+#import <DVTFoundation/NSCopying-Protocol.h>
 
-@interface DVTPlatform : NSObject
+@class DVTExtendedPlatformInfo, DVTFilePath, DVTPlatformFamily, DVTVersion, NSArray, NSDictionary, NSHashTable, NSSet, NSString;
+
+@interface DVTPlatform : NSObject <NSCopying>
 {
     NSString *_identifier;
     NSArray *_alternateNames;
@@ -22,7 +24,7 @@
     DVTFilePath *_iconPath;
     NSDictionary *_propertyListDictionary;
     NSDictionary *_internalPropertyListDictionary;
-    DVTHashTable *_SDKs;
+    NSHashTable *_SDKs;
     NSDictionary *_deviceProperties;
     NSString *_platformVersion;
 }
@@ -57,6 +59,7 @@
 @property(readonly, copy) NSArray *alternateNames; // @synthesize alternateNames=_alternateNames;
 @property(readonly, copy) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)description;

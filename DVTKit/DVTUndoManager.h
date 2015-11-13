@@ -4,11 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSUndoManager.h"
+#import <Foundation/NSUndoManager.h>
 
-#import "DVTInvalidation.h"
+#import <DVTKit/DVTInvalidation-Protocol.h>
 
 @class DVTStackBacktrace, NSMutableArray, NSString;
+@protocol DVTUndoManagerDelegate;
 
 @interface DVTUndoManager : NSUndoManager <DVTInvalidation>
 {

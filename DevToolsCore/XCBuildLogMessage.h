@@ -6,7 +6,7 @@
 
 #import <DevToolsCore/XCActivityLogMessage.h>
 
-#import "NSCopying.h"
+#import <DevToolsCore/NSCopying-Protocol.h>
 
 @class NSArray, NSString, XCTextFileLocation;
 

@@ -4,13 +4,15 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSValue.h"
+#import <Foundation/NSValue.h>
 
 @interface NSValue (IBGeometryAdditions)
-+ (id)ib_valueWithIBEdgeInsets:(CDStruct_c519178c)arg1;
++ (id)ib_valueWithKnobPosition:(CDUnion_42e99c75)arg1;
++ (id)ib_valueWithIBEdgeInsets:(struct _IBEdgeInsets)arg1;
 + (id)ib_valueWithOffset:(CDStruct_c3b9c2ee)arg1;
 + (id)ib_valueWithInset:(CDStruct_c519178c)arg1;
-- (CDStruct_c519178c)ib_ibEdgeInsetsValue;
+- (CDUnion_42e99c75)ib_knobPosition;
+- (struct _IBEdgeInsets)ib_ibEdgeInsetsValue;
 - (CDStruct_d0b1bdbd)ib_lineValue;
 - (struct CGRect)ib_rectValue;
 - (BOOL)ib_isOffset;

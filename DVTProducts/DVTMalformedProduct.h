@@ -6,7 +6,7 @@
 
 #import <DVTProducts/DVTProduct.h>
 
-#import "NSCopying.h"
+#import <DVTProducts/NSCopying-Protocol.h>
 
 @class NSArray;
 
@@ -15,6 +15,7 @@
     NSArray *_archives;
 }
 
++ (unsigned long long)assertionBehaviorForKeyValueObservationsAtEndOfEvent;
 + (id)productByMergingProducts:(id)arg1 coordinator:(id)arg2;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;

@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "DVTPagingSheetWindowController.h"
+#import <DVTKit/DVTPagingSheetWindowController.h>
 
-#import "IDEContinuousIntegrationNewServiceAccountController.h"
+#import <XCSUI/IDEContinuousIntegrationNewServiceAccountController-Protocol.h>
 
 @class NSString, XCSService;
 

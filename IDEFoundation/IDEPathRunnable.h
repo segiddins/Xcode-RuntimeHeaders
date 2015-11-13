@@ -6,7 +6,7 @@
 
 #import <IDEFoundation/IDERunnable.h>
 
-#import "DVTXMLUnarchiving.h"
+#import <IDEFoundation/DVTXMLUnarchiving-Protocol.h>
 
 @class DVTFilePath, NSString;
 
@@ -16,6 +16,7 @@
 }
 
 + (id)keyPathsForValuesAffectingHasRunnablePath;
++ (id)askOnLaunchPlaceHolderFilePath;
 @property(readonly, copy) DVTFilePath *filePath; // @synthesize filePath=_filePath;
 - (void).cxx_destruct;
 - (void)dvt_encodeRelationshipsWithXMLArchiver:(id)arg1 version:(id)arg2;

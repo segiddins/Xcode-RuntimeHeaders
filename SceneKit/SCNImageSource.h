@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
 @interface SCNImageSource : NSObject
 {
@@ -13,7 +13,7 @@
 - (void)connectToProxy:(struct __C3DImageProxy *)arg1;
 - (BOOL)isPremultiplied;
 - (BOOL)isOpaque;
-- (id)textureSourceForContext:(void *)arg1;
+- (id)textureSource;
 
 @end
 

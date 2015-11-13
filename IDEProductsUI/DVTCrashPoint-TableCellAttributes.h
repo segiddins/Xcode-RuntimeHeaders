@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "DVTCrashPoint.h"
+#import <DVTAnalytics/DVTCrashPoint.h>
 
 @interface DVTCrashPoint (TableCellAttributes)
 + (id)keyPathsForValuesAffectingCrashPointSubtitle;
@@ -17,5 +17,7 @@
 - (id)crashPointSubtitle;
 - (id)crashPointTitle;
 - (id)resolvedImage;
+- (id)appExtensionImage;
+- (id)productExtensionCategory;
 @end
 

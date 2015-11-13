@@ -4,9 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDEIndexDataSource.h"
+#import <IDEFoundation/IDEIndexDataSource.h>
 
-@class IDEIndexNewMainFile, IDEIndexingJob, NSMutableArray, NSMutableIndexSet, NSMutableSet, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_semaphore>;
+@class IDEIndexNewMainFile, IDEIndexingJob, NSMutableArray, NSMutableIndexSet, NSMutableSet, NSObject;
+@protocol OS_dispatch_queue, OS_dispatch_semaphore;
 
 @interface IDEIndexSwiftDataSource : IDEIndexDataSource
 {

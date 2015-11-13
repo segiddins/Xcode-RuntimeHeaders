@@ -6,10 +6,11 @@
 
 #import <IDEKit/IDEViewController.h>
 
-#import "DVTFindBarFindable.h"
-#import "IDEBuildResultsOutlineDelegate.h"
+#import <IDEKit/DVTFindBarFindable-Protocol.h>
+#import <IDEKit/IDEBuildResultsOutlineDelegate-Protocol.h>
 
 @class DVTObservingToken, IDEActivityLogSection, IDEBuildResultsOutlineLogic, IDEEditor, NSArray, NSBox, NSPopUpButton, NSString, XCBuildResultsOutlineView;
+@protocol IDELogViewControllerDelegate;
 
 @interface IDELogViewController : IDEViewController <DVTFindBarFindable, IDEBuildResultsOutlineDelegate>
 {

@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "PBXSourcesBuildPhase.h"
+#import <DevToolsCore/PBXSourcesBuildPhase.h>
 
 @interface PBXSourcesBuildPhase (Xcode3BuildPhaseAdditions)
 - (id)_xcode3_fileTypeForDisplay;

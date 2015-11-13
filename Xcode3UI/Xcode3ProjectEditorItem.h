@@ -4,14 +4,15 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "IDEProjectItem.h"
+#import <Xcode3UI/IDEProjectItem-Protocol.h>
 
 @class DVTExtension, NSImage, NSSet, NSString, Xcode3Target;
 
 @interface Xcode3ProjectEditorItem : NSObject <IDEProjectItem>
 {
+    BOOL _availableWithFreeProvisioning;
     Xcode3Target *_target;
     Class _viewControllerClass;
     Class _modelClass;
@@ -21,6 +22,7 @@
 }
 
 @property(readonly) DVTExtension *itemExtension; // @synthesize itemExtension=_itemExtension;
+@property(readonly, nonatomic, getter=isAvailableWithFreeProvisioning) BOOL availableWithFreeProvisioning; // @synthesize availableWithFreeProvisioning=_availableWithFreeProvisioning;
 @property(readonly, nonatomic) NSString *capabilityDescription; // @synthesize capabilityDescription=_capabilityDescription;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) Class modelClass; // @synthesize modelClass=_modelClass;
@@ -31,7 +33,7 @@
 @property(readonly, nonatomic) NSString *appIDFeatureName;
 @property(readonly, nonatomic) NSImage *image;
 @property(readonly, nonatomic) NSString *identifier;
-- (id)initWithExtension:(id)arg1;
+- (id)initWithExtension:(id)arg1 platformIdentifier:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

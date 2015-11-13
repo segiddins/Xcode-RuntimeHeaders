@@ -4,17 +4,16 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDEViewController.h"
+#import <IDEKit/IDEViewController.h>
 
-#import "DVTReplacementViewDelegate.h"
-#import "DVTStatefulObject.h"
+#import <IDEDocViewer/DVTReplacementViewDelegate-Protocol.h>
+#import <IDEDocViewer/DVTStatefulObject-Protocol.h>
 
 @class DVTBorderedView, DVTChooserView, DVTExtension, DVTObservingToken, DVTReplacementView, IDEDocContentAreaViewController, NSArrayController, NSIndexSet, NSString;
 
 @interface IDEDocNavigatorArea : IDEViewController <DVTReplacementViewDelegate, DVTStatefulObject>
 {
     DVTChooserView *_chooserView;
-    DVTBorderedView *_borderedView;
     DVTReplacementView *_replacementView;
     NSArrayController *_choicesController;
     DVTExtension *_currentExtension;
@@ -23,16 +22,17 @@
     NSString *_UUID;
     id _selectedItem;
     IDEDocContentAreaViewController *_contentAreaViewController;
+    DVTBorderedView *_containerBorderedView;
 }
 
 + (long long)version;
 + (void)configureStateSavingObjectPersistenceByName:(id)arg1;
 + (id)keyPathsForValuesAffectingCurrentNavigator;
+@property __weak DVTBorderedView *containerBorderedView; // @synthesize containerBorderedView=_containerBorderedView;
 @property __weak IDEDocContentAreaViewController *contentAreaViewController; // @synthesize contentAreaViewController=_contentAreaViewController;
 @property(retain) id selectedItem; // @synthesize selectedItem=_selectedItem;
 @property(retain, nonatomic) NSString *UUID; // @synthesize UUID=_UUID;
 @property(copy) NSIndexSet *chooserViewSelectionIndexes; // @synthesize chooserViewSelectionIndexes=_chooserViewSelectionIndexes;
-@property(retain) DVTBorderedView *borderedView; // @synthesize borderedView=_borderedView;
 @property(retain) DVTReplacementView *replacementView; // @synthesize replacementView=_replacementView;
 @property(retain) DVTChooserView *chooserView; // @synthesize chooserView=_chooserView;
 @property(retain, nonatomic) DVTExtension *currentExtension; // @synthesize currentExtension=_currentExtension;

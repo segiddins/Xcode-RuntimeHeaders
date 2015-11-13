@@ -6,8 +6,8 @@
 
 #import <DevToolsCore/PBXBuildStyle.h>
 
-#import "XCCompatibilityChecking.h"
-#import "XCFileSystemWatcherRegisteredObject.h"
+#import <DevToolsCore/XCCompatibilityChecking-Protocol.h>
+#import <DevToolsCore/XCFileSystemWatcherRegisteredObject-Protocol.h>
 
 @class NSDate, NSMutableArray, NSSet, NSString, PBXBuildSettingsDictionary, PBXFileReference, XCFileSystemNode;
 

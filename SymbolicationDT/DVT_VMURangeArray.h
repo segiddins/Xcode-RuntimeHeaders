@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "NSCopying.h"
+#import <SymbolicationDT/NSCopying-Protocol.h>
 
 @interface DVT_VMURangeArray : NSObject <NSCopying>
 {
@@ -22,7 +22,6 @@
 - (unsigned long long)sumLengths;
 - (struct _VMURange)largestRange;
 - (struct _VMURange)range;
-- (struct _VMURange)largestSubrangeNotExcludedBySelfForRange:(struct _VMURange)arg1 andLargerThan:(unsigned long long)arg2 startIndex:(unsigned int *)arg3;
 - (struct _VMURange)subrangeNotExcludedBySelfForRange:(struct _VMURange)arg1;
 - (BOOL)intersectsRange:(struct _VMURange)arg1;
 - (BOOL)intersectsLocation:(unsigned long long)arg1;

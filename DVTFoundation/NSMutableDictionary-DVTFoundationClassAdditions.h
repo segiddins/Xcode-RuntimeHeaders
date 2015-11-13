@@ -4,9 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSMutableDictionary.h"
+#import <Foundation/NSMutableDictionary.h>
 
 @interface NSMutableDictionary (DVTFoundationClassAdditions)
+- (id)dvt_objectForKey:(id)arg1 creatingIfNecessaryWithBlock:(CDUnknownBlockType)arg2;
 - (void)dvt_recursivelyRemoveAllObjects;
 - (void)dvt_setRect:(struct CGRect)arg1 forKey:(id)arg2;
 - (void)dvt_setSize:(struct CGSize)arg1 forKey:(id)arg2;

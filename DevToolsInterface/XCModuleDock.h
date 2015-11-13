@@ -6,8 +6,8 @@
 
 #import <DevToolsInterface/PBXProjectModule.h>
 
-#import "PBXSelectionTarget.h"
-#import "XCDockableDragSource.h"
+#import <DevToolsInterface/PBXSelectionTarget-Protocol.h>
+#import <DevToolsInterface/XCDockableDragSource-Protocol.h>
 
 @class XCDockView;
 

@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDEEditor.h"
+#import <IDEKit/IDEEditor.h>
 
-#import "DVTBasicFindBarFindable.h"
+#import <IDEPDFViewer/DVTBasicFindBarFindable-Protocol.h>
 
 @class NSString, PDFView;
 
@@ -34,7 +34,7 @@
 - (void)pdf_twoPages:(id)arg1;
 - (void)pdf_singlePageContinuous:(id)arg1;
 - (void)pdf_singlePage:(id)arg1;
-- (void)pdf_actualSize:(id)arg1;
+- (void)pdf_zoomActualSize:(id)arg1;
 - (void)pdf_automaticallyResize:(id)arg1;
 - (void)basicFindBarLostFocus:(id)arg1;
 - (BOOL)basicFindBar:(id)arg1 findPreviousByWrapping:(BOOL)arg2;

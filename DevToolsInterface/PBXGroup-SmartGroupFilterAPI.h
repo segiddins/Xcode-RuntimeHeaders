@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "PBXGroup.h"
+#import <DevToolsCore/PBXGroup.h>
 
 @interface PBXGroup (SmartGroupFilterAPI)
 - (id)findGroupWithGlobalID:(id)arg1 recursiveSearch:(BOOL)arg2 compareSelf:(BOOL)arg3;

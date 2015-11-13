@@ -4,12 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDEViewController.h"
+#import <IDEKit/IDEViewController.h>
 
-#import "IDECapsuleViewController.h"
-#import "IDECapsuleViewDelegate.h"
+#import <XCSUI/IDECapsuleViewController-Protocol.h>
+#import <XCSUI/IDECapsuleViewDelegate-Protocol.h>
 
-@class NSImage, NSString, NSViewController<XCSUICreateBotTriggerChildViewController>, XCSTrigger, XCSUICreateBotTriggerConditionsViewController;
+@class NSImage, NSString, NSViewController, XCSTrigger, XCSUICreateBotTriggerConditionsViewController;
+@protocol XCSUICreateBotTriggerChildViewController, XCSUICreateBotTriggerViewControllerDelegate;
 
 @interface XCSUICreateBotTriggerViewController : IDEViewController <IDECapsuleViewController, IDECapsuleViewDelegate>
 {
@@ -35,7 +36,7 @@
 @property(readonly) BOOL canRemove;
 @property(readonly, copy) NSString *titleForDisplay;
 - (void)configureViewHierarchy;
-- (id)initWithTrigger:(id)arg1;
+- (id)initWithTrigger:(id)arg1 blueprint:(id)arg2;
 
 // Remaining properties
 @property BOOL canAddItems;

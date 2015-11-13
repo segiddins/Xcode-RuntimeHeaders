@@ -6,6 +6,8 @@
 
 #import <IDEFoundation/IDEDebugSession.h>
 
+@protocol IDEDebugTopNavigableModel;
+
 @interface IDEShellXPCDebugSession : IDEDebugSession
 {
     id <IDEDebugTopNavigableModel> _topNavigableModel;

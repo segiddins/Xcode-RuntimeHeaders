@@ -4,13 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDEViewController.h"
+#import <IDEKit/IDEViewController.h>
 
-#import "IDECapsuleListViewDataSource.h"
-#import "NSMenuDelegate.h"
-#import "Xcode3SourceListItemEditor.h"
+#import <Xcode3UI/IDECapsuleListViewDataSource-Protocol.h>
+#import <Xcode3UI/NSMenuDelegate-Protocol.h>
+#import <Xcode3UI/Xcode3SourceListItemEditor-Protocol.h>
 
-@class DVTBorderedView, DVTGradientImagePopUpButton, DVTObservingToken, DVTPerformanceMetric, DVTSourceExpression, DVTStateToken, IDECapsuleListView, IDEContainerQuery, NSArray, NSMutableArray, NSMutableSet, NSString, NSView, Xcode3BuildPhaseViewController, Xcode3ProjectEditor;
+@class DVTBorderedView, DVTGradientImagePopUpButton, DVTObservingToken, DVTPerformanceMetric, DVTSearchField, DVTSourceExpression, DVTStateToken, IDECapsuleListView, IDEContainerQuery, NSArray, NSMutableArray, NSMutableSet, NSScrollView, NSString, NSView, Xcode3BuildPhaseViewController, Xcode3ProjectEditor;
+@protocol IDEBlueprint;
 
 @interface Xcode3BuildPhasesEditor : IDEViewController <Xcode3SourceListItemEditor, IDECapsuleListViewDataSource, NSMenuDelegate>
 {
@@ -40,6 +41,8 @@
     BOOL _restoringState;
     BOOL _buildingPhases;
     DVTPerformanceMetric *_metric;
+    NSScrollView *_buildPhasesScrollView;
+    DVTSearchField *_searchField;
 }
 
 + (void)configureStateSavingObjectPersistenceByName:(id)arg1;
@@ -47,6 +50,8 @@
 + (BOOL)canInspectBlueprint:(id)arg1;
 + (id)viewControllerForBuildPhase:(id)arg1;
 + (id)localizedSourceListItemEditorName;
+@property __weak DVTSearchField *searchField; // @synthesize searchField=_searchField;
+@property __weak NSScrollView *buildPhasesScrollView; // @synthesize buildPhasesScrollView=_buildPhasesScrollView;
 @property(copy) NSArray *arrangedPhaseViewControllers; // @synthesize arrangedPhaseViewControllers=_arrangedPhaseViewControllers;
 @property(retain) IDEContainerQuery *rezFileQuery; // @synthesize rezFileQuery=_rezFileQuery;
 @property(copy, nonatomic) NSString *searchString; // @synthesize searchString=_searchString;

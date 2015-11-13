@@ -6,8 +6,8 @@
 
 #import <DevToolsInterface/PBXProjectModule.h>
 
-#import "NSTableViewDataSource.h"
-#import "PBXLSViewControllerProtocol.h"
+#import <DevToolsInterface/NSTableViewDataSource-Protocol.h>
+#import <DevToolsInterface/PBXLSViewControllerProtocol-Protocol.h>
 
 @class NSButton, NSPopUpButton, NSSearchField, NSString, NSTextField, PBXExecutable, PBXExtendedTableView, PBXLSDynamicLinkerImageController, XCExtendedArrayController;
 

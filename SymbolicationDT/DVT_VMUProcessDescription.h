@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "DVT_VMULibraryLoadDelegate.h"
+#import <SymbolicationDT/DVT_VMULibraryLoadDelegate-Protocol.h>
 
 @class DVT__VMULibraryLoadObserver, NSArray, NSDate, NSDictionary, NSMutableArray, NSString;
 
@@ -14,6 +14,7 @@
 {
     unsigned int _task;
     int _pid;
+    NSString *_hardwareModel;
     NSString *_processName;
     BOOL _processNameNeedsCorrection;
     NSString *_executablePath;
@@ -22,7 +23,7 @@
     unsigned long long _executableLoadAddress;
     int _cpuType;
     BOOL _is64Bit;
-    struct LSItemInfoRecord *_itemInfoRecord;
+    struct timeval _proc_starttime;
     NSDictionary *_lsApplicationInformation;
     NSMutableArray *_binaryImages;
     NSArray *_sortedBinaryImages;

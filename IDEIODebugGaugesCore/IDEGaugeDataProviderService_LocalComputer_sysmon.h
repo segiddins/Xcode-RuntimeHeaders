@@ -6,7 +6,8 @@
 
 #import <IDEIODebugGaugesCore/IDEGaugeDataProviderService_LocalComputer.h>
 
-@class NSObject<OS_sysmon_request>;
+@class NSObject;
+@protocol OS_sysmon_request;
 
 @interface IDEGaugeDataProviderService_LocalComputer_sysmon : IDEGaugeDataProviderService_LocalComputer
 {

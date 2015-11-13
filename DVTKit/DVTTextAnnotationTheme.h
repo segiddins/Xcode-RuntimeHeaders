@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
 @class NSColor, NSGradient;
 
@@ -32,7 +32,9 @@
 + (id)yellowGlassTextAnnotationThemeForVariant:(int)arg1;
 + (id)defaultTheme;
 + (id)_caretColor;
-+ (BOOL)_hasDarkBackround;
++ (id)greenTextAnnotationBaseHighlightColor;
++ (id)redTextAnnotationBaseHighlightColor;
++ (BOOL)hasDarkBackground;
 + (double)diffTextAnnotationAlphaAdjustmentForDarkTheme:(BOOL)arg1;
 + (void)initialize;
 @property(readonly) NSColor *textColor; // @synthesize textColor=_textColor;

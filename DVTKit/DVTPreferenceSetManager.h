@@ -4,9 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-@class DVTDelayedInvocation, DVTMapTable, NSArray, NSMutableArray, NSMutableSet;
+@class DVTDelayedInvocation, NSArray, NSMapTable, NSMutableArray, NSMutableSet;
+@protocol DVTCustomDataStoring, DVTPreferenceSet;
 
 @interface DVTPreferenceSetManager : NSObject
 {
@@ -16,7 +17,7 @@
     NSMutableArray *_userPreferenceSets;
     NSMutableArray *_availablePreferenceSets;
     id <DVTPreferenceSet> _currentPreferenceSet;
-    DVTMapTable *_preferenceSetObserverTokens;
+    NSMapTable *_preferenceSetObserverTokens;
     DVTDelayedInvocation *_autosavePreferenceSetsInvocation;
 }
 

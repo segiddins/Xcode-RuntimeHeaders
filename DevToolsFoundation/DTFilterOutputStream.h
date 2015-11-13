@@ -6,6 +6,8 @@
 
 #import <DevToolsFoundation/DTOutputStream.h>
 
+@protocol DTOutputStreams;
+
 @interface DTFilterOutputStream : DTOutputStream
 {
     id <DTOutputStreams> _nextOutputStream;

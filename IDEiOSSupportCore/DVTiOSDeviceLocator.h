@@ -4,20 +4,21 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "DVTDeviceLocator.h"
+#import <DVTFoundation/DVTDeviceLocator.h>
 
-@class DVTMapTable, DVTNotificationToken, NSMutableSet, NSSet;
+@class DVTNotificationToken, NSMapTable, NSMutableSet, NSSet;
 
 @interface DVTiOSDeviceLocator : DVTDeviceLocator
 {
     DVTNotificationToken *_deviceAttachedToken;
     DVTNotificationToken *_deviceDetachedToken;
-    DVTMapTable *_deviceObservingTokens;
+    NSMapTable *_deviceObservingTokens;
     NSMutableSet *_savedDevices;
     NSSet *_placeholderDevices;
     NSSet *_platforms;
 }
 
++ (BOOL)_ignoreMobileDevice;
 + (id)deviceLocator;
 - (void).cxx_destruct;
 - (BOOL)matchDevice:(id)arg1 againstOptions:(id)arg2 genericOnly:(BOOL)arg3 allowAliases:(BOOL)arg4;

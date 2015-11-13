@@ -6,22 +6,22 @@
 
 #import <IDEDocViewer/IDEDocNavigator.h>
 
-#import "NSTableViewDataSource.h"
-#import "NSTableViewDelegate.h"
+#import <IDEDocViewer/NSTableViewDataSource-Protocol.h>
+#import <IDEDocViewer/NSTableViewDelegate-Protocol.h>
 
-@class DVTBorderedView, NSArray, NSString, NSTableView;
+@class DVTBorderedView, DVTTableView, NSArray, NSString;
 
 @interface IDEDocBookmarksListViewController : IDEDocNavigator <NSTableViewDataSource, NSTableViewDelegate>
 {
     NSArray *_bookmarks;
     id _bookmarksChangedWatcher;
     NSArray *_draggedBookmarks;
-    NSTableView *_tableView;
+    DVTTableView *_tableView;
     DVTBorderedView *_borderedView;
 }
 
 @property __weak DVTBorderedView *borderedView; // @synthesize borderedView=_borderedView;
-@property NSTableView *tableView; // @synthesize tableView=_tableView;
+@property DVTTableView *tableView; // @synthesize tableView=_tableView;
 - (void).cxx_destruct;
 - (BOOL)validateMenuItem:(id)arg1;
 - (void)contextMenu_delete:(id)arg1;

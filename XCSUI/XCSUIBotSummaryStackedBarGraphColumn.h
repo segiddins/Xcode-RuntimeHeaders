@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
 @class NSArray, NSString, XCSBuildResultSummary;
 
@@ -17,12 +17,16 @@
     XCSBuildResultSummary *_buildResultSummary;
     unsigned long long _columnViewType;
     unsigned long long _integrationResultsOverview;
+    unsigned long long _graphType;
+    NSString *_integrationId;
     struct CGRect _layoutRect;
     struct CGRect _hitTestRect;
 }
 
-+ (id)columnDataWithColumnNumber:(id)arg1 bars:(id)arg2 columnViewType:(unsigned long long)arg3 integrationResultsOverview:(unsigned long long)arg4 buildResultSummary:(id)arg5;
++ (id)columnDataWithColumnNumber:(id)arg1 bars:(id)arg2 columnViewType:(unsigned long long)arg3 integrationResultsOverview:(unsigned long long)arg4 buildResultSummary:(id)arg5 graphType:(unsigned long long)arg6 integrationId:(id)arg7;
 @property struct CGRect hitTestRect; // @synthesize hitTestRect=_hitTestRect;
+@property(retain) NSString *integrationId; // @synthesize integrationId=_integrationId;
+@property unsigned long long graphType; // @synthesize graphType=_graphType;
 @property unsigned long long integrationResultsOverview; // @synthesize integrationResultsOverview=_integrationResultsOverview;
 @property unsigned long long columnViewType; // @synthesize columnViewType=_columnViewType;
 @property BOOL isCurrentPopoverTarget; // @synthesize isCurrentPopoverTarget=_isCurrentPopoverTarget;

@@ -7,6 +7,7 @@
 #import <IDEInterfaceBuilderKit/IBAutolayoutIssueResolvingViewController.h>
 
 @class IBDocument, NSString;
+@protocol IBCollection;
 
 @interface IBAutolayoutMissingConstraintsResolvingViewController : IBAutolayoutIssueResolvingViewController
 {

@@ -4,12 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDEEditor.h"
+#import <IDEKit/IDEEditor.h>
 
-#import "DVTFindBarFindable.h"
-#import "DVTPlistViewControllerProtocol.h"
-#import "DVTSourceExpressionSource.h"
-#import "NSUserInterfaceValidations.h"
+#import <PlistEditor/DVTFindBarFindable-Protocol.h>
+#import <PlistEditor/DVTPlistViewControllerProtocol-Protocol.h>
+#import <PlistEditor/DVTSourceExpressionSource-Protocol.h>
+#import <PlistEditor/NSUserInterfaceValidations-Protocol.h>
 
 @class DVTNotificationToken, DVTObservingToken, DVTPlistViewController, DVTSDK, DVTSourceExpression, DVTSourceLanguageService, DVTStackBacktrace, NSString;
 

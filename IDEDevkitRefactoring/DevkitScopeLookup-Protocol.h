@@ -4,7 +4,8 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-@class DevkitASTNode<DevkitScopeLookup>, DevkitDeclaration, DevkitGlobalProjectData, NSArray, NSString;
+@class DevkitASTNode, DevkitDeclaration, DevkitGlobalProjectData, NSArray, NSString;
+@protocol DevkitScopeLookup;
 
 @protocol DevkitScopeLookup
 - (void)addDeclaration:(DevkitDeclaration *)arg1 project:(DevkitGlobalProjectData *)arg2;

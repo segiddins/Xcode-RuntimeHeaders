@@ -4,11 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDEComparisonEditorSubmode.h"
+#import <IDEKit/IDEComparisonEditorSubmode.h>
 
-#import "DVTSourceTextViewDelegate.h"
-#import "IDEComparisonEditorDelegate.h"
-#import "IDESourceEditorViewControllerHost.h"
+#import <IDESourceEditor/DVTSourceTextViewDelegate-Protocol.h>
+#import <IDESourceEditor/IDEComparisonEditorDelegate-Protocol.h>
+#import <IDESourceEditor/IDESourceEditorViewControllerHost-Protocol.h>
 
 @class DVTBorderedView, DVTSourceTextView, IDEEditor, NSDictionary, NSString;
 

@@ -4,11 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSSplitView.h"
+#import <AppKit/NSSplitView.h>
 
-#import "NSTextViewDelegate.h"
+#import <DevToolsInterface/NSTextViewDelegate-Protocol.h>
 
 @class NSColor, NSIndexSet, NSMutableArray, NSMutableIndexSet, NSScrollView, NSString, NSView, NSWindow, XCDiffComparatorCell, XCDiffComparatorCustomizer, XCDiffContext;
+@protocol XCDiffComparatorViewDelegate;
 
 @interface XCDiffComparatorView : NSSplitView <NSTextViewDelegate>
 {

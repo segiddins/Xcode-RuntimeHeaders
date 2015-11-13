@@ -6,7 +6,7 @@
 
 #import <DVTKit/DVTViewController.h>
 
-#import "NSPopoverDelegate.h"
+#import <DVTKit/NSPopoverDelegate-Protocol.h>
 
 @class DVTStackView_AppKitAutolayout, NSPopover, NSString, NSView;
 

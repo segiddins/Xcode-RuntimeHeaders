@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSImage.h"
+#import <AppKit/NSImage.h>
 
 @interface NSImage (IDENSImageAdditions)
 + (id)ide_contextPhaseBuildImage;
@@ -20,7 +20,7 @@
 + (id)ide_sourceControlRevision;
 + (id)ide_sourceControlBranch;
 + (id)ide_sourceControlWorkingCopy;
++ (id)ide_sourceControlRepository16;
 + (id)ide_sourceControlRepository;
-+ (id)ide_assistantBackgroundImage;
 @end
 

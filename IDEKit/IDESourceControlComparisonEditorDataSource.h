@@ -4,21 +4,24 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "DVTInvalidation.h"
-#import "IDEComparisonEditorDataSource.h"
+#import <IDEKit/DVTInvalidation-Protocol.h>
+#import <IDEKit/IDEWorkspaceComparisonEditorDataSource-Protocol.h>
 
-@class DVTStackBacktrace, IDEEditorDocument, NSOperationQueue, NSString;
+@class DVTStackBacktrace, IDEEditorDocument, IDEWorkspace, NSOperationQueue, NSString;
 
-@interface IDESourceControlComparisonEditorDataSource : NSObject <IDEComparisonEditorDataSource, DVTInvalidation>
+@interface IDESourceControlComparisonEditorDataSource : NSObject <IDEWorkspaceComparisonEditorDataSource, DVTInvalidation>
 {
     IDEEditorDocument *_originalDocument;
     NSOperationQueue *_navItemQueue;
+    IDEWorkspace *_workspace;
 }
 
++ (unsigned long long)assertionBehaviorAfterEndOfEventForSelector:(SEL)arg1;
 + (void)initialize;
 + (id)dataSourceLogAspect;
+@property(retain) IDEWorkspace *workspace; // @synthesize workspace=_workspace;
 @property(retain) IDEEditorDocument *originalDocument; // @synthesize originalDocument=_originalDocument;
 - (void).cxx_destruct;
 - (id)documentForAncestorDocumentLocation:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;

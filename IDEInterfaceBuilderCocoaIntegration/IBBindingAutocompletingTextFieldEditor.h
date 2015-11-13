@@ -4,10 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSTextView.h"
+#import <AppKit/NSTextView.h>
 
-#import "NSTableViewDataSource.h"
-#import "NSTableViewDelegate.h"
+#import <IDEInterfaceBuilderCocoaIntegration/NSTableViewDataSource-Protocol.h>
+#import <IDEInterfaceBuilderCocoaIntegration/NSTableViewDelegate-Protocol.h>
 
 @class NSArray, NSCharacterSet, NSScrollView, NSString, NSTableView, NSTextField, NSView, NSWindow;
 

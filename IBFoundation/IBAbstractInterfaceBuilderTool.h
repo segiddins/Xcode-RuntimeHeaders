@@ -6,7 +6,7 @@
 
 #import <IBFoundation/IBAbstractPlatformTool.h>
 
-#import "IBAbstractInterfaceBuilderTool.h"
+#import <IBFoundation/IBAbstractInterfaceBuilderTool-Protocol.h>
 
 @class NSMutableSet, NSString;
 

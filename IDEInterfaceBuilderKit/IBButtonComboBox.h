@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSComboBox.h"
+#import <AppKit/NSComboBox.h>
 
-#import "DVTColoredSpinnerDelegate.h"
+#import <IDEInterfaceBuilderKit/DVTColoredSpinnerDelegate-Protocol.h>
 
 @class DVTColoredSpinner, DVTDelayedInvocation, IBImageButton, NSString;
 

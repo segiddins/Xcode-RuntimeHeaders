@@ -4,15 +4,16 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDEIssueGroup.h"
+#import <IDEFoundation/IDEIssueGroup.h>
 
-#import "IDEKeyDrivenNavigableItemRepresentedObject.h"
+#import <IDEKit/IDEKeyDrivenNavigableItemRepresentedObject-Protocol.h>
 
 @class DVTDocumentLocation, DVTFileDataType, IDEFileReference, NSImage, NSString;
 
 @interface IDEIssueGroup (IDEKitAdditions) <IDEKeyDrivenNavigableItemRepresentedObject>
 + (id)keyPathsForValuesAffectingNavigableItem_image;
 + (id)keyPathsForValuesAffectingNavigableItem_name;
++ (id)keyPathsForValuesAffectingImage;
 + (void)handleProductSettingsDidChangeNotification:(id)arg1;
 + (id)issueGroupForBlueprint:(id)arg1;
 + (void)_rememberBlueprint:(id)arg1 forIssueGroup:(id)arg2;

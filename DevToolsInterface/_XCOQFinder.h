@@ -4,11 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <Foundation/NSObject.h>
 
-#import "_XCOQOperationDelegate.h"
+#import <DevToolsInterface/_XCOQOperationDelegate-Protocol.h>
 
 @class NSMutableDictionary, NSOperationQueue, _XCOQFinderOperationGroup;
+@protocol _XCOQFinderDelegate;
 
 @interface _XCOQFinder : NSObject <_XCOQOperationDelegate>
 {

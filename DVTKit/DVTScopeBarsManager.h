@@ -4,18 +4,19 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "DVTInvalidation.h"
-#import "NSAnimationDelegate.h"
+#import <DVTKit/DVTInvalidation-Protocol.h>
+#import <DVTKit/NSAnimationDelegate-Protocol.h>
 
-@class DVTMapTable, DVTStackBacktrace, NSArray, NSMutableArray, NSString, NSViewAnimation;
+@class DVTStackBacktrace, NSArray, NSMapTable, NSMutableArray, NSString, NSViewAnimation;
+@protocol DVTScopeBarHost;
 
 @interface DVTScopeBarsManager : NSObject <DVTInvalidation, NSAnimationDelegate>
 {
     id <DVTScopeBarHost> _host;
     NSMutableArray *_scopeBarControllers;
-    DVTMapTable *_contentHeightObservers;
+    NSMapTable *_contentHeightObservers;
     NSViewAnimation *_currentAnimation;
     CDUnknownBlockType _currentCompletionBlock;
     int _borderSides;

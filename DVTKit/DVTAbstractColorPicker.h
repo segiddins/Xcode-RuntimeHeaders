@@ -4,13 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSView.h"
+#import <AppKit/NSView.h>
 
-#import "DVTWindowActivationStateObserver.h"
-#import "NSDraggingSource.h"
-#import "NSMenuDelegate.h"
+#import <DVTKit/DVTWindowActivationStateObserver-Protocol.h>
+#import <DVTKit/NSDraggingSource-Protocol.h>
+#import <DVTKit/NSMenuDelegate-Protocol.h>
 
 @class DVTMutableOrderedDictionary, DVTObservingToken, NSColor, NSMenu, NSString;
+@protocol DVTCancellable;
 
 @interface DVTAbstractColorPicker : NSView <DVTWindowActivationStateObserver, NSMenuDelegate, NSDraggingSource>
 {

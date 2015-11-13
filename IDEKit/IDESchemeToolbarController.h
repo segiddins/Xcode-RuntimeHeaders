@@ -4,13 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "DVTToolbarViewController.h"
+#import <DVTKit/DVTToolbarViewController.h>
 
-#import "IDEPathCellDelegate.h"
-#import "NSMenuDelegate.h"
-#import "NSPathControlDelegate.h"
+#import <IDEKit/IDEPathCellDelegate-Protocol.h>
+#import <IDEKit/NSMenuDelegate-Protocol.h>
+#import <IDEKit/NSPathControlDelegate-Protocol.h>
 
-@class IDENavigableItem, IDENavigableItemCoordinator, IDEPathControl, NSString, NSToolbarItem;
+@class IDENavigableItem, IDENavigableItemCoordinator, IDEPathControl, IDEWorkspace, IDEWorkspaceTabController, NSString, NSToolbarItem;
 
 @interface IDESchemeToolbarController : DVTToolbarViewController <NSPathControlDelegate, IDEPathCellDelegate, NSMenuDelegate>
 {
@@ -23,6 +23,8 @@
 
 + (id)keyPathsForValuesAffectingSelectedNavigable;
 + (id)keyPathsForValuesAffectingPathControlIsEnabled;
++ (id)keyPathsForValuesAffectingActiveWorkspaceTabController;
++ (id)keyPathsForValuesAffectingWorkspace;
 @property(nonatomic) __weak NSToolbarItem *toolbarItem; // @synthesize toolbarItem=_toolbarItem;
 @property(retain) IDENavigableItem *rootNavigable; // @synthesize rootNavigable=_rootNavigable;
 - (void).cxx_destruct;
@@ -48,8 +50,8 @@
 - (void)primitiveInvalidate;
 - (void)loadView;
 - (id)initWithToolbarItemIdentifier:(id)arg1 window:(id)arg2;
-- (id)_workspaceTabController;
-- (id)_workspace;
+@property(readonly) IDEWorkspaceTabController *activeWorkspaceTabController;
+@property(readonly) IDEWorkspace *workspace;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

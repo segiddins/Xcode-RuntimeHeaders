@@ -4,9 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "DVTStackView_ML.h"
+#import <DVTKit/DVTStackView_ML.h>
 
 @class DVTTypeCompletionHandler, IBConnectionPopUpMenuItemView, IBImageButton, IBMutableIdentityDictionary, IBScrollingStackView, NSArray, NSColor, NSMutableArray;
+@protocol IBConnectionPopUpMenuDelegate;
 
 @interface IBConnectionPopUpMenuView : DVTStackView_ML
 {
@@ -20,6 +21,7 @@
     DVTTypeCompletionHandler *typeCompletionHandler;
     IBConnectionPopUpMenuItemView *explanationItemsSeparator;
     IBConnectionPopUpMenuItemView *multipleSelectionExplanationItem;
+    IBConnectionPopUpMenuItemView *multipleSelectionAcceptItem;
     IBConnectionPopUpMenuItemView *alternateItemsExplanationItem;
     IBMutableIdentityDictionary *itemViewsByItem;
     IBMutableIdentityDictionary *itemsByItemView;
@@ -54,7 +56,7 @@
 - (id)backgroundColor;
 - (void)setTextColor:(id)arg1;
 - (void)configureScrollButtonImages:(id)arg1 upButton:(BOOL)arg2;
-- (id)initWithMenuItems:(id)arg1 showsStateImagesForItems:(id)arg2 allowsMultipleSelection:(BOOL)arg3 andMaxWidth:(double)arg4;
+- (id)initWithMenuItems:(id)arg1 showsStateImagesForItems:(id)arg2 allowsMultipleSelection:(BOOL)arg3 withMultipleSelectionAcceptsTitle:(id)arg4 andMaxWidth:(double)arg5;
 
 @end
 

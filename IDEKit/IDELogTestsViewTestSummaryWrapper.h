@@ -4,13 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "IDESharedTests_Test.h"
+#import <IDEKit/IDETestReport_Test-Protocol.h>
 
 @class IDELogTestsViewTestSummaryTestRun, IDESchemeActionRunDestinationRecord, IDESchemeActionTestSummary, NSArray, NSImage, NSString;
 
-@interface IDELogTestsViewTestSummaryWrapper : NSObject <IDESharedTests_Test>
+@interface IDELogTestsViewTestSummaryWrapper : NSObject <IDETestReport_Test>
 {
     IDESchemeActionTestSummary *_testSummary;
     IDESchemeActionRunDestinationRecord *_runDestinationRecord;
@@ -23,15 +23,18 @@
 @property(retain) IDESchemeActionRunDestinationRecord *runDestinationRecord; // @synthesize runDestinationRecord=_runDestinationRecord;
 @property(retain) IDESchemeActionTestSummary *testSummary; // @synthesize testSummary=_testSummary;
 - (void).cxx_destruct;
-@property(readonly, copy, nonatomic) NSString *ide_sharedTests_missingBaselineInfo;
-@property(readonly, nonatomic) BOOL ide_sharedTests_fetchesTestRunsLazily;
-@property(readonly, copy, nonatomic) NSString *ide_sharedTests_UUID;
-@property(readonly, nonatomic) NSImage *ide_sharedTests_statusImage;
-@property(readonly, nonatomic) BOOL ide_sharedTests_passed;
-@property(readonly, copy, nonatomic) NSArray *ide_sharedTests_perfMetrics;
-@property(readonly, copy, nonatomic) NSString *ide_sharedTests_testClassName;
-@property(readonly, copy, nonatomic) NSString *ide_sharedTests_testName;
-@property(readonly, copy, nonatomic) NSArray *ide_sharedTests_testRuns;
+@property(readonly, copy, nonatomic) NSString *ide_testReport_base_identifier;
+@property(readonly, copy, nonatomic) NSString *ide_testReport_test_missingBaselineInfo;
+@property(readonly, nonatomic) BOOL ide_testReport_test_fetchesTestRunsLazily;
+@property(readonly, copy, nonatomic) NSString *ide_testReport_test_UUID;
+@property(readonly, nonatomic) NSImage *ide_testReport_test_statusImage;
+@property(readonly, nonatomic) BOOL ide_testReport_test_passed;
+@property(readonly, copy, nonatomic) NSArray *ide_testReport_test_perfMetrics;
+@property(readonly, copy, nonatomic) NSString *ide_testReport_test_testClassName;
+@property(readonly, copy, nonatomic) NSString *ide_testReport_test_testName;
+@property(readonly, copy, nonatomic) NSArray *ide_testReport_test_testRuns;
+@property(readonly, copy, nonatomic) NSString *ide_testReport_test_keyPath;
+@property(readonly, nonatomic) BOOL ide_testReport_test_hasActivities;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

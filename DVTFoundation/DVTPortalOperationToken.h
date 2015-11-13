@@ -4,29 +4,29 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "NSCopying.h"
+#import <DVTFoundation/NSCopying-Protocol.h>
 
-@class DVTDeveloperAccount, NSArray, NSDictionary, NSError, NSString, NSWindow;
+@class DVTDeveloperAccount, NSArray, NSDictionary, NSError, NSString;
 
 @interface DVTPortalOperationToken : NSObject <NSCopying>
 {
+    _Bool _useServerContext;
     _Bool _userHasPicked;
     NSArray *_teams;
     DVTDeveloperAccount *_account;
     NSError *_error;
-    NSWindow *_parentWindow;
 }
 
-+ (id)tokenWithDeveloperAccount:(id)arg1 andTeamDictionaries:(id)arg2;
++ (id)tokenWithDeveloperAccount:(id)arg1 useServerContext:(_Bool)arg2;
 + (id)tokenWithDeveloperAccount:(id)arg1;
-+ (id)defaultToken;
 @property _Bool userHasPicked; // @synthesize userHasPicked=_userHasPicked;
-@property(retain) NSWindow *parentWindow; // @synthesize parentWindow=_parentWindow;
 @property(copy) NSError *error; // @synthesize error=_error;
+@property _Bool useServerContext; // @synthesize useServerContext=_useServerContext;
 @property(retain) DVTDeveloperAccount *account; // @synthesize account=_account;
 - (void).cxx_destruct;
+- (void)executeWithSession:(CDUnknownBlockType)arg1;
 - (id)individualTeamTokens;
 @property(readonly, copy) NSString *teamId;
 - (void)setTeam:(id)arg1;

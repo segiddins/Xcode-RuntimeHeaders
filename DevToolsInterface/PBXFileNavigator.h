@@ -6,11 +6,12 @@
 
 #import <DevToolsInterface/PBXProjectModule.h>
 
-#import "PBXImageGestureObserver.h"
-#import "PBXSelectionTarget.h"
-#import "XCSelectionSource.h"
+#import <DevToolsInterface/PBXImageGestureObserver-Protocol.h>
+#import <DevToolsInterface/PBXSelectionTarget-Protocol.h>
+#import <DevToolsInterface/XCSelectionSource-Protocol.h>
 
-@class NSArray, NSBox, NSButton, NSImage, NSMutableArray, NSObject<PBXFileNavigatorHistoryDelegateProtocol>, NSPopUpButtonCell, NSString, PBXBookmark, PBXFileEditor, PBXHeaderBox, PBXImageGestureView, PBXLineBrowser, PBXNavigatorGroup, PBXTitleBannerView, XCBorderView, XCBuildAnalyzerResultsNavigator, XCClassNavigator, XCDebuggerControlView, XCIncrementalFinder, _PBXFileNavigatorProgressView;
+@class NSArray, NSBox, NSButton, NSImage, NSMutableArray, NSObject, NSPopUpButtonCell, NSString, PBXBookmark, PBXFileEditor, PBXHeaderBox, PBXImageGestureView, PBXLineBrowser, PBXNavigatorGroup, PBXTitleBannerView, XCBorderView, XCBuildAnalyzerResultsNavigator, XCClassNavigator, XCDebuggerControlView, XCIncrementalFinder, _PBXFileNavigatorProgressView;
+@protocol PBXFileNavigatorHistoryDelegateProtocol;
 
 @interface PBXFileNavigator : PBXProjectModule <PBXImageGestureObserver, PBXSelectionTarget, XCSelectionSource>
 {

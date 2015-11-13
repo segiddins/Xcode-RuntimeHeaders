@@ -4,17 +4,17 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "NSCopying.h"
+#import <IDEInterfaceBuilderKit/NSCopying-Protocol.h>
 
-@class NSAttributedString, NSFont, NSNumber, NSString, NSValue;
+@class NSAttributedString, NSFont, NSString, NSValue;
 
 @interface IBFieldEditorConfiguration : NSObject <NSCopying>
 {
     NSAttributedString *initialAttributedValue;
     NSString *initialValue;
-    NSNumber *anchor;
+    NSValue *anchor;
     NSValue *minimumSize;
     NSValue *maximumSize;
     NSFont *font;
@@ -43,11 +43,11 @@
 @property unsigned long long alignment; // @synthesize alignment;
 @property(copy) NSAttributedString *initialAttributedValue; // @synthesize initialAttributedValue;
 @property(copy) NSString *initialValue; // @synthesize initialValue;
-@property(copy) NSNumber *anchor; // @synthesize anchor;
+@property(copy) NSValue *anchor; // @synthesize anchor;
 @property(copy) NSFont *font; // @synthesize font;
 - (void).cxx_destruct;
 - (id)effectiveInitalAttributedValue;
-- (long long)effectiveAnchor;
+- (CDUnion_31865a80)effectiveAnchor;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)init;
 

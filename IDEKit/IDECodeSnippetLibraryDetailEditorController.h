@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "DVTLibraryDetailEditorController.h"
+#import <DVTKit/DVTLibraryDetailEditorController.h>
 
-#import "DVTSourceTextViewDelegate.h"
+#import <IDEKit/DVTSourceTextViewDelegate-Protocol.h>
 
 @class DVTStackView_ML, IDECodeSnippet, NSArray, NSMutableArray, NSString;
 
@@ -21,7 +21,6 @@
 + (id)keyPathsForValuesAffectingCanRemoveCompletionScope;
 + (id)keyPathsForValuesAffectingCanAddCompletionScope;
 + (id)keyPathsForValuesAffectingCompletionScopeRowValues;
-+ (id)keyPathsForValuesAffectingEditedCodeSnippet;
 + (void)initialize;
 - (void).cxx_destruct;
 - (void)didChangeCurrentDetailController;

@@ -6,7 +6,7 @@
 
 #import <DevToolsCore/PBXSymbol.h>
 
-#import "PBXSignatureSymbol.h"
+#import <DevToolsCore/PBXSignatureSymbol-Protocol.h>
 
 @class NSArray, NSString;
 

@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "NSMenuDelegate.h"
+#import <IDEKit/NSMenuDelegate-Protocol.h>
 
 @class IDEWorkspaceTabController, NSArray, NSMenu, NSString;
 
@@ -28,8 +28,10 @@
     NSString *_doNothingItemTitle;
     id _doNothingItemRepresentedObject;
     NSString *_uti;
+    NSString *_fileExtension;
 }
 
+@property(readonly) NSString *fileExtension; // @synthesize fileExtension=_fileExtension;
 @property(readonly) NSString *uti; // @synthesize uti=_uti;
 @property(readonly) id doNothingItemRepresentedObject; // @synthesize doNothingItemRepresentedObject=_doNothingItemRepresentedObject;
 @property(readonly) NSString *doNothingItemTitle; // @synthesize doNothingItemTitle=_doNothingItemTitle;

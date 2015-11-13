@@ -4,10 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSUserDefaultsController.h"
+#import <AppKit/NSUserDefaultsController.h>
 
 @interface NSUserDefaultsController (IBNSUserDefaultsControllerIntegration)
-+ (id)ibDefaultImageForInstance:(id)arg1;
++ (id)ibDefaultImageForInstance:(id)arg1 targetRuntime:(id)arg2;
 + (id)ibSharedUserDefaultsControllerProxy;
 + (id)ibSynthesizeControllerKeyPaths;
 - (void)ibDidAddToDocument:(id)arg1 phase:(unsigned long long)arg2;

@@ -6,7 +6,7 @@
 
 #import <DevToolsInterface/XCReferenceBasedFindable.h>
 
-#import "FuzzyActions.h"
+#import <DevToolsInterface/FuzzyActions-Protocol.h>
 
 @class NSString, PBXTextFileDocument;
 

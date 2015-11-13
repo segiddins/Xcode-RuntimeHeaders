@@ -6,7 +6,7 @@
 
 #import <DevToolsCore/PBXProjectItem.h>
 
-#import "XCCompatibilityChecking.h"
+#import <DevToolsCore/XCCompatibilityChecking-Protocol.h>
 
 @class NSMutableArray, NSString;
 

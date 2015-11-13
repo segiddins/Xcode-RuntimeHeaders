@@ -4,15 +4,16 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-@class DVTFilePath, DVTMountedFileSystem, DVTPointerArray, NSMutableDictionary;
+@class DVTFilePath, DVTMountedFileSystem, NSMutableDictionary, NSPointerArray;
 
 @interface DVTFileSystemVNode : NSObject
 {
     NSMutableDictionary *_derivedInfoDict;
-    DVTPointerArray *_filePaths;
+    NSPointerArray *_filePaths;
     DVTFilePath *_filePath;
+    int _derivedInfoDictLock;
     unsigned long long _inodeNumber;
     long long _fileSize;
     unsigned long long _statFlags;
@@ -24,7 +25,6 @@
 }
 
 + (id)lookupVNodeForDeviceNumber:(int)arg1 inodeNumber:(unsigned long long)arg2;
-+ (void)initialize;
 @property(readonly) long long posixModificationTime; // @synthesize posixModificationTime=_posixModificationTime;
 @property(readonly) long long fileSize; // @synthesize fileSize=_fileSize;
 @property(readonly) unsigned long long statFlags; // @synthesize statFlags=_statFlags;

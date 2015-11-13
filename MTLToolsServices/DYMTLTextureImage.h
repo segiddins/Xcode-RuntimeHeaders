@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "DYTextureImage.h"
+#import <MTLToolsServices/DYTextureImage-Protocol.h>
 
 @class DYMTLTextureImageBackingStore, NSData, NSString;
 
@@ -41,6 +41,7 @@
 @property(readonly, nonatomic) unsigned long long width; // @synthesize width=_width;
 @property(readonly, nonatomic) unsigned int genericFormat; // @synthesize genericFormat=_genericFormat;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) unsigned long long cachingCost;
 - (id)uncompressedData;
 @property(readonly, nonatomic) NSData *data; // @dynamic data;
 - (id)_initWithProperties:(id)arg1;

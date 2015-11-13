@@ -4,11 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSView.h"
+#import <AppKit/NSView.h>
 
-#import "XCLayoutContraints.h"
+#import <DevToolsInterface/XCLayoutContraints-Protocol.h>
 
 @class NSColor;
+@protocol XCLayout;
 
 @interface XCControlView : NSView <XCLayoutContraints>
 {

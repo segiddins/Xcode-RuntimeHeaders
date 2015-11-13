@@ -4,9 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-@class DVTDispatchLock, NSMutableDictionary, NSObject<OS_dispatch_source>;
+@class DVTDispatchLock, NSMutableDictionary;
+@protocol OS_dispatch_source;
 
 @interface DVTPinger : NSObject
 {
@@ -27,7 +28,6 @@
 @property(retain) NSMutableDictionary *futures; // @synthesize futures=_futures;
 @property struct sockaddr_storage addr; // @synthesize addr=_addr;
 @property double timeout; // @synthesize timeout=_timeout;
-- (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)ping;
 - (void)_promiseWithSequenceNumber:(unsigned long long)arg1 endedAt:(double)arg2;

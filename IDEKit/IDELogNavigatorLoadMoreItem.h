@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "IDEKeyDrivenNavigableItemRepresentedObject.h"
+#import <IDEKit/IDEKeyDrivenNavigableItemRepresentedObject-Protocol.h>
 
 @class DVTDocumentLocation, DVTFileDataType, IDEFileReference, IDELogNavigatorItem, NSDate, NSImage, NSString;
 
@@ -33,19 +33,20 @@
 @property(retain, nonatomic) NSString *navigableItem_name; // @synthesize navigableItem_name=_navigableItem_name;
 - (void).cxx_destruct;
 - (void)loadMore;
+@property(readonly) DVTFileDataType *navigableItem_documentType;
+@property(readonly) DVTDocumentLocation *navigableItem_contentDocumentLocation;
 - (unsigned long long)result;
 - (long long)currentStep;
 - (void)update;
 - (long long)progress;
 @property(readonly, nonatomic) NSImage *navigableItem_image;
+- (id)identifier;
 - (id)initWithLogNavigatorItem:(id)arg1 additionalCount:(unsigned long long)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
-@property(readonly) DVTDocumentLocation *navigableItem_contentDocumentLocation;
-@property(readonly) DVTFileDataType *navigableItem_documentType;
 @property(readonly) IDEFileReference *navigableItem_fileReference;
 @property(readonly) NSString *navigableItem_groupIdentifier;
 @property(readonly) BOOL navigableItem_isLeaf;

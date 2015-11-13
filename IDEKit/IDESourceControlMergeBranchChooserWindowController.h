@@ -4,14 +4,15 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSWindowController.h"
+#import <AppKit/NSWindowController.h>
 
-#import "IDESourceControlBranchTableDelegate.h"
-#import "IDESourceControlWindowController.h"
+#import <IDEKit/IDESourceControlBranchTableDelegate_Legacy-Protocol.h>
+#import <IDEKit/IDESourceControlWindowController-Protocol.h>
 
 @class DVTBindingToken, DVTReplacementView, DVTSearchField, IDESourceControlBranch, IDESourceControlMergeOperationInfo, IDESourceControlWorkspaceUIHandler, IDEWorkspace, NSButton, NSString, NSTextField, NSWindow;
+@protocol DVTInvalidation;
 
-@interface IDESourceControlMergeBranchChooserWindowController : NSWindowController <IDESourceControlWindowController, IDESourceControlBranchTableDelegate>
+@interface IDESourceControlMergeBranchChooserWindowController : NSWindowController <IDESourceControlWindowController, IDESourceControlBranchTableDelegate_Legacy>
 {
     NSButton *_chooseButton;
     NSTextField *_messageTextField;

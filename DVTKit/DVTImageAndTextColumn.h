@@ -4,13 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSTableColumn.h"
+#import <AppKit/NSTableColumn.h>
 
-@class DVTMapTable;
+@class NSMapTable;
 
 @interface DVTImageAndTextColumn : NSTableColumn
 {
-    DVTMapTable *_progressIndicators;
+    NSMapTable *_progressIndicators;
     id _outlineViewCollapseObservation;
     id _outlineViewExpandObservation;
     struct {

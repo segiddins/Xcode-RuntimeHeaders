@@ -4,9 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <Xcode3Core/NSObject-Protocol.h>
 
-@class DVTFileDataType, DVTFilePath, DVTLocale, IDEContainer<IDELocalizedContainer>, IDEFileReference, NSArray;
+@class DVTFileDataType, DVTFilePath, DVTLocale, IDEContainer, IDEFileReference, NSArray;
+@protocol IDELocalizedContainer;
 
 @protocol IDELocalizedGroup <NSObject>
 - (void)addNewReferenceForLocale:(DVTLocale *)arg1 filePath:(DVTFilePath *)arg2 completionBlock:(void (^)(BOOL, NSError *))arg3;

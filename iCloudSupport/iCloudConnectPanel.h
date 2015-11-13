@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
 @class NSButton, NSPanel, NSSecureTextField, NSTextField;
 
@@ -31,7 +31,6 @@
 - (void)cancel:(id)arg1;
 - (void)ok:(id)arg1;
 - (void)beginModalForWindow:(id)arg1 username:(id)arg2 password:(id)arg3 withCompletionHandler:(CDUnknownBlockType)arg4;
-- (void)sheetDidEnd:(id)arg1 returnCode:(long long)arg2 contextInfo:(void *)arg3;
 
 @end
 

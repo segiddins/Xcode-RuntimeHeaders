@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
 @class NSSet;
 
@@ -18,9 +18,7 @@
 + (id)keyPathsForValuesAffectingAreProfilesLoaded;
 + (id)defaultManager;
 - (void).cxx_destruct;
-- (BOOL)installHostProfiles:(id)arg1 error:(id *)arg2;
-- (id)profileWithData:(id)arg1;
-- (id)profileWithURL:(id)arg1;
+- (void)installHostProfiles:(id)arg1 callback:(CDUnknownBlockType)arg2;
 - (id)profileWithData:(id)arg1 error:(id *)arg2;
 - (id)profileWithURL:(id)arg1 error:(id *)arg2;
 @property(readonly) id provider; // @synthesize provider=_provider;
@@ -33,6 +31,7 @@
 @property(readonly) NSSet *expiringProfiles;
 @property(readonly) NSSet *allProfiles;
 @property(readonly) BOOL areProfilesLoaded;
+- (id)allProfiles_sync;
 - (void)forceProfileLoading;
 
 @end

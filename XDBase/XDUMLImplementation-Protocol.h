@@ -4,7 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "XDUMLClassifier.h"
+#import <XDBase/XDUMLClassifier-Protocol.h>
+
+@protocol XDUMLBehavioredClassifier, XDUMLInterface;
 
 @protocol XDUMLImplementation <XDUMLClassifier>
 - (void)setContract:(id <XDUMLInterface>)arg1;

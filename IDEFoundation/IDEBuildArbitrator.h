@@ -4,16 +4,16 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-@class DVTMapTable, NSOperationQueue;
+@class NSMapTable, NSOperationQueue;
 
 @interface IDEBuildArbitrator : NSObject
 {
     NSOperationQueue *_serializationQueue;
-    DVTMapTable *_fileProducingBuildTasksByFilePath;
-    DVTMapTable *_registeringBuildersByFilePath;
-    DVTMapTable *_registeredFilePathsByBuilder;
+    NSMapTable *_fileProducingBuildTasksByFilePath;
+    NSMapTable *_registeringBuildersByFilePath;
+    NSMapTable *_registeredFilePathsByBuilder;
 }
 
 + (id)sharedBuildArbitrator;

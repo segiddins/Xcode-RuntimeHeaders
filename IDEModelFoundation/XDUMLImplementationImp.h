@@ -6,9 +6,10 @@
 
 #import <IDEModelFoundation/XDUMLClassifierImp.h>
 
-#import "XDUMLImplementation.h"
+#import <IDEModelFoundation/XDUMLImplementation-Protocol.h>
 
 @class NSString;
+@protocol XDUMLInterface;
 
 @interface XDUMLImplementationImp : XDUMLClassifierImp <XDUMLImplementation>
 {

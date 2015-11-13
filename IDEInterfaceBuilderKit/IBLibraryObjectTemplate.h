@@ -6,7 +6,7 @@
 
 #import <IDEInterfaceBuilderKit/IBObjectLibraryAsset.h>
 
-#import "IBDocumentArchiving.h"
+#import <IDEInterfaceBuilderKit/IBDocumentArchiving-Protocol.h>
 
 @class NSString;
 

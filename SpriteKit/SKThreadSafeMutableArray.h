@@ -4,12 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "NSCopying.h"
-#import "NSFastEnumeration.h"
-#import "NSMutableCopying.h"
-#import "NSSecureCoding.h"
+#import <SpriteKit/NSCopying-Protocol.h>
+#import <SpriteKit/NSFastEnumeration-Protocol.h>
+#import <SpriteKit/NSMutableCopying-Protocol.h>
+#import <SpriteKit/NSSecureCoding-Protocol.h>
 
 @class NSArray, NSMutableArray;
 

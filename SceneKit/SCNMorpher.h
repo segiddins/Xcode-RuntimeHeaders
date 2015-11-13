@@ -4,16 +4,15 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "NSSecureCoding.h"
-#import "SCNAnimatable.h"
+#import <SceneKit/NSSecureCoding-Protocol.h>
+#import <SceneKit/SCNAnimatable-Protocol.h>
 
 @class NSArray, NSMutableArray, NSString, SCNOrderedDictionary;
 
 @interface SCNMorpher : NSObject <SCNAnimatable, NSSecureCoding>
 {
-    id _reserved;
     struct __C3DMorph *_morpher;
     unsigned int _isPresentationInstance:1;
     long long _calculationMode;
@@ -25,7 +24,6 @@
 }
 
 + (BOOL)supportsSecureCoding;
-+ (id)SCNJSExportProtocol;
 + (id)morpher;
 + (id)morpherWithMorphRef:(struct __C3DMorph *)arg1;
 - (id)initWithCoder:(id)arg1;
@@ -43,7 +41,7 @@
 - (void)setWeight:(double)arg1 forTargetAtIndex:(unsigned long long)arg2;
 - (void)setShouldMorphNormals:(BOOL)arg1;
 - (BOOL)shouldMorphNormals;
-- (struct __C3DAnimationChannel *)copyAnimationChannelForKeyPath:(id)arg1;
+- (struct __C3DAnimationChannel *)copyAnimationChannelForKeyPath:(id)arg1 animation:(id)arg2;
 - (id)presentationInstance;
 - (id)presentationMorpher;
 - (BOOL)isPausedOrPausedByInheritance;
@@ -55,7 +53,7 @@
 - (void)_pauseAnimation:(BOOL)arg1 forKey:(id)arg2;
 - (id)animationForKey:(id)arg1;
 - (void)_syncObjCAnimations;
-- (id)animationKeys;
+@property(readonly) NSArray *animationKeys;
 - (void)removeAnimationForKey:(id)arg1;
 - (void)removeAllAnimations;
 - (void)addAnimation:(id)arg1;

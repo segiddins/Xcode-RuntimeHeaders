@@ -4,10 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "NSCoding.h"
-#import "NSCopying.h"
+#import <IDEInterfaceBuilderKit/NSCoding-Protocol.h>
+#import <IDEInterfaceBuilderKit/NSCopying-Protocol.h>
 
 @class IBDocument, NSMutableDictionary, NSSet;
 
@@ -58,6 +58,7 @@
 - (void)turnOffObjects:(id)arg1 forToManyRelationship:(id)arg2 inConfiguration:(id)arg3;
 - (void)turnOnObjects:(id)arg1 forToManyRelationship:(id)arg2 inConfiguration:(id)arg3;
 - (void)turnObjects:(id)arg1 inToManyRelationship:(id)arg2 offInEmptyConfigurationAndOnInConfiguration:(id)arg3;
+- (void)clearAllMasksForToManyRelationship:(id)arg1;
 - (void)setCandidates:(id)arg1 forToManyRelationship:(id)arg2;
 - (void)didChangeCandidatesForRelationship:(id)arg1 fromValue:(id)arg2 toValue:(id)arg3 context:(id)arg4;
 - (void)willChangeCandidatesForRelationship:(id)arg1 fromValue:(id)arg2 toValue:(id)arg3 context:(id)arg4;

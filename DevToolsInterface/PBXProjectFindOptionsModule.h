@@ -6,8 +6,8 @@
 
 #import <DevToolsInterface/PBXModule.h>
 
-#import "NSTableViewDataSource.h"
-#import "NSTableViewDelegate.h"
+#import <DevToolsInterface/NSTableViewDataSource-Protocol.h>
+#import <DevToolsInterface/NSTableViewDelegate-Protocol.h>
 
 @class NSButton, NSMatrix, NSPopUpButton, NSString, NSTableColumn, PBXExtendedTableView, PBXFindOptionsSet;
 

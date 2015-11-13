@@ -4,12 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <Foundation/NSObject.h>
 
-#import "DVTInvalidation.h"
-#import "IDEDebugNavigableContentDelegate.h"
+#import <GPUTraceDebuggerUI/DVTInvalidation-Protocol.h>
+#import <GPUTraceDebuggerUI/IDEDebugNavigableContentDelegate-Protocol.h>
 
-@class DVTGradientImageButton, DVTStackBacktrace, GPUDebuggingAdditionUIController, GPUNavigatorCompressedDataCell, GPUNavigatorStatusCell, GPUSharedTabUIState, IDEDebugNavigator, IDENavigableItem, IDENavigatorDataCell, IDENavigatorOutlineView, IDENavigatorStatusCell, NSMenuItem, NSSlider, NSString, NSView;
+@class DVTGradientImageButton, DVTStackBacktrace, GPUDebuggingAdditionUIController, GPUNavigatorStatusCell, GPUSharedTabUIState, IDEDebugNavigator, IDENavigableItem, IDENavigatorDataCell, IDENavigatorOutlineView, NSMenuItem, NSSlider, NSString, NSView;
+@protocol DVTCancellable;
 
 __attribute__((visibility("hidden")))
 @interface GPUTraceContentDelegate : NSObject <IDEDebugNavigableContentDelegate, DVTInvalidation>
@@ -20,19 +21,9 @@ __attribute__((visibility("hidden")))
     GPUDebuggingAdditionUIController *_debuggingAdditionUIController;
     GPUSharedTabUIState *_sharedUIStateObj;
     IDENavigatorOutlineView *_outlineView;
-    IDENavigatorDataCell *_markerGroupCell;
-    IDENavigatorStatusCell *_markerGroupStatusCell;
-    IDENavigatorDataCell *_displayableHeaderCell;
-    IDENavigatorStatusCell *_displayableStatusCell;
     IDENavigatorDataCell *_subtitleCell;
     GPUNavigatorStatusCell *_subtitleStatusCell;
-    IDENavigatorDataCell *_contextHeaderCell;
-    IDENavigatorDataCell *_commandBufferHeaderCell;
-    IDENavigatorDataCell *_commandEncoderHeaderCell;
-    IDENavigatorStatusCell *_commandEncoderStatusCell;
-    IDENavigatorDataCell *_relatedDisplayablesCell;
     NSMenuItem *_traceItemMenuItem;
-    GPUNavigatorCompressedDataCell *_compressedCell;
     unsigned long long _compressionValue;
     unsigned long long _maxCompressionValue;
     BOOL _ignoreStateForDebugNavigator;
@@ -67,7 +58,8 @@ __attribute__((visibility("hidden")))
 - (void)revertStateWithDictionary:(id)arg1;
 - (void)_updateForNewCompressionValue;
 - (void)_updateForNewProgramSortMode:(int)arg1;
-- (void)_recordPersistenceStateChangesIfNecesasry;
+- (void)_recordPersistenceStateChangesIfNecessary;
+- (void)_updateForNewNavigatorContentMode;
 - (void)_updateForNewNavigatorMode:(id)arg1;
 - (void)configureMenuForProcessHeaderActionPopUpCell:(id)arg1;
 - (void)_threadContextuallyClicked;
@@ -106,15 +98,19 @@ __attribute__((visibility("hidden")))
 - (BOOL)shouldSelectItemForRepresentedObject:(id)arg1 withPrevious:(id)arg2 next:(id)arg3;
 - (double)heightOfRowForRepresentedObject:(id)arg1;
 - (id)filterView;
-- (id)dataCellForRepresentedObject:(id)arg1;
-- (id)_compressedCell;
-- (id)relatedDisplayablesCell;
-- (id)commandEncoderHeaderCell;
-- (id)commandBufferHeaderCell;
-- (id)contextHeaderCell;
-- (id)displayableProgramOrShaderCell;
-- (id)displayableItemCell;
-- (id)markerGroupCell;
+- (void)registerTableCellViewsWithOutlineView:(id)arg1;
+- (id)tableCellViewForRepresentedObject:(id)arg1 withOutlineView:(id)arg2;
+- (id)compressedTableCellViewWithOutlineView:(id)arg1;
+- (id)relatedDisplayablesTableCellViewWithOutlineView:(id)arg1;
+- (id)commandEncoderHeaderTableCellViewWithOutlineView:(id)arg1;
+- (id)commandBufferHeaderTableCellViewWithOutlineView:(id)arg1;
+- (id)contextHeaderTableCellViewWithOutlineView:(id)arg1;
+- (id)standardOneLineTableCellViewForIdentifier:(id)arg1 withOutlineView:(id)arg2;
+- (id)displayableProgramOrShaderTableCellViewWithOutlineView:(id)arg1;
+- (id)displayableItemTableCellViewWithOutlineView:(id)arg1;
+- (void)addSubtitleStatusViewToTableCellView:(id)arg1;
+- (void)addSeverityStatusViewToTableCellView:(id)arg1;
+- (id)markerGroupTableCellViewWithOutlineView:(id)arg1;
 - (void)willDisplayCell:(id)arg1 forRepresentedObject:(id)arg2 item:(id)arg3;
 - (void)updateForNewFilterString:(id)arg1;
 - (void)_navigatorFirstShownWithNoSelectedItems:(id)arg1;
@@ -126,7 +122,6 @@ __attribute__((visibility("hidden")))
 - (void)autoCompressStackFrames:(id)arg1;
 - (id)workspaceTabController;
 @property(readonly) IDENavigableItem *rootNavigableItem;
-- (id)initWithProcess:(id)arg1 debugNavigator:(id)arg2;
 - (id)initWithTopNavigableModel:(id)arg1 debugNavigator:(id)arg2;
 
 // Remaining properties

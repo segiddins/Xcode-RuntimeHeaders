@@ -4,11 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDEInspectorViewController.h"
+#import <IDEKit/IDEInspectorViewController.h>
 
-#import "NSTableViewDelegate.h"
+#import <IDESpriteKitParticleEditor/NSTableViewDelegate-Protocol.h>
 
-@class DVTBorderedView, DVTObservingToken, IDEControlGroup, NSArray, NSButton, NSDictionary, NSIndexSet, NSMenu, NSSet, NSString, NSTableView, SKNode<SKNodeWithShader>;
+@class DVTBorderedView, DVTObservingToken, IDEControlGroup, NSArray, NSButton, NSDictionary, NSIndexSet, NSMenu, NSSet, NSString, NSTableView, SKNode;
+@protocol SKNodeWithShader;
 
 @interface SKShaderAttributesInspector : IDEInspectorViewController <NSTableViewDelegate>
 {

@@ -4,19 +4,23 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "SKScene.h"
+#import <SpriteKit/SKScene.h>
 
-#import "IDEKeyDrivenNavigableItemRepresentedObject.h"
-#import "SKNodeWithShader.h"
+#import <IDESpriteKitParticleEditor/IDEKeyDrivenNavigableItemRepresentedObject-Protocol.h>
+#import <IDESpriteKitParticleEditor/SKNodeWithShader-Protocol.h>
 
-@class DVTDocumentLocation, DVTFileDataType, IDEFileReference, NSImage, NSString, NSURL, SKShader;
+@class DVTDocumentLocation, DVTFileDataType, GTFActionLibrary, IDEFileReference, NSImage, NSString, NSURL, SKCameraNode, SKShader;
 
 @interface SKScene (InspectorAdditions) <IDEKeyDrivenNavigableItemRepresentedObject, SKNodeWithShader>
+@property(retain, nonatomic) GTFActionLibrary *nav_actionLibrary;
+- (id)childFromIndexPath:(id)arg1;
 @property(retain, nonatomic) NSURL *customSpriteShader;
 @property(nonatomic) struct CGPoint spriteKitEditorGravity;
 @property(nonatomic) BOOL nodeNameDrawEnabled;
 @property(nonatomic) BOOL physicsDrawEnabled;
 @property(nonatomic) struct CGSize skEditorSize;
+@property(nonatomic) BOOL useCameraNode;
+@property(retain, nonatomic) SKCameraNode *cameraRef;
 - (id)ide_undoKVOKeypaths;
 - (void)setNilValueForKey:(id)arg1;
 - (id)inspectorAttributes;

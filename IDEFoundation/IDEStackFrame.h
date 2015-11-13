@@ -4,10 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "DVTInvalidation.h"
-#import "IDEDebugNavigableModel.h"
+#import <IDEFoundation/DVTInvalidation-Protocol.h>
+#import <IDEFoundation/IDEDebugNavigableModel-Protocol.h>
 
 @class DVTStackBacktrace, IDECodeModule, IDELaunchSession, IDEThread, NSNumber, NSString, NSURL;
 
@@ -28,6 +28,8 @@
     IDECodeModule *_module;
 }
 
++ (unsigned long long)assertionBehaviorForKeyValueObservationsAtEndOfEvent;
++ (unsigned long long)assertionBehaviorAfterEndOfEventForSelector:(SEL)arg1;
 + (id)keyPathsForValuesAffectingDisplayName;
 + (id)compressedStackFrames:(id)arg1 usingCompressionValue:(long long)arg2;
 + (void)initialize;
@@ -50,6 +52,7 @@
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
+- (id)init;
 - (id)initWithParentThread:(id)arg1 frameNumber:(id)arg2 framePointer:(id)arg3 name:(id)arg4;
 
 // Remaining properties

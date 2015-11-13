@@ -4,15 +4,16 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "DVTAnalyticsSnapshotFileSystemSerialization.h"
+#import <DVTAnalytics/DVTAnalyticsSnapshotFileSystemSerialization-Protocol.h>
 
 @class DVTAnalyticsCrashPointIdentifier, DVTCrashLogProvider, DVTCrashPointDistributionInfo, DVTCrashPointUserData, DVTFilePath, NSString;
 
 @interface DVTCrashPoint : NSObject <DVTAnalyticsSnapshotFileSystemSerialization>
 {
     BOOL _topCrash;
+    BOOL _placeholder;
     DVTAnalyticsCrashPointIdentifier *_crashPointIdentifier;
     DVTCrashPointUserData *_userData;
     DVTCrashLogProvider *_crashLogProvider;
@@ -25,9 +26,12 @@
     NSString *_sourceFileName;
     unsigned long long _sourceFileLine;
     DVTFilePath *_cachePath;
+    NSString *_appExtensionPointIdentifier;
 }
 
 + (id)objectFromFilePath:(id)arg1 error:(id *)arg2;
+@property(retain) NSString *appExtensionPointIdentifier; // @synthesize appExtensionPointIdentifier=_appExtensionPointIdentifier;
+@property BOOL placeholder; // @synthesize placeholder=_placeholder;
 @property(retain) DVTFilePath *cachePath; // @synthesize cachePath=_cachePath;
 @property unsigned long long sourceFileLine; // @synthesize sourceFileLine=_sourceFileLine;
 @property(retain) NSString *sourceFileName; // @synthesize sourceFileName=_sourceFileName;
@@ -51,6 +55,8 @@
 - (BOOL)isEqual:(id)arg1;
 - (id)description;
 - (id)initWithIdentifier:(id)arg1 userData:(id)arg2 crashPointString:(id)arg3 sourceFileName:(id)arg4 sourceFileLine:(unsigned long long)arg5 cachePath:(id)arg6;
+- (id)initWithCachePath:(id)arg1;
+- (id)init;
 
 @end
 

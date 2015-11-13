@@ -6,8 +6,8 @@
 
 #import <GPURenderTargetEditor/GPUResourceEditor.h>
 
-#import "DVTFindBarFindable.h"
-#import "DVTSourceTextViewDelegate.h"
+#import <GPURenderTargetEditor/DVTFindBarFindable-Protocol.h>
+#import <GPURenderTargetEditor/DVTSourceTextViewDelegate-Protocol.h>
 
 @class DVTBorderedView, DVTObservingToken, GPUProgramEditorAnnotationContext, GPUShaderSource, GPUSimpleGLSLSourceView, NSButton, NSDictionary, NSImageView, NSString, NSTabView, NSTextField, NSView;
 
@@ -52,7 +52,6 @@ __attribute__((visibility("hidden")))
 - (void)makeAnnotationsWithInfoLog:(id)arg1 applyHeaderOffset:(BOOL)arg2;
 - (void)beginEditor;
 - (void)_onShaderEdited:(id)arg1;
-- (void)_alertDidEnd:(id)arg1 returnCode:(long long)arg2 contextInfo:(void *)arg3;
 - (void)_onProgramInfoDictUpdated;
 - (void)_appendProfilerResultToInfoLog:(id)arg1 programItem:(id)arg2;
 - (void)_showToolbar;

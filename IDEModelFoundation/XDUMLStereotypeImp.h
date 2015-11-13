@@ -6,7 +6,7 @@
 
 #import <IDEModelFoundation/XDUMLClassImp.h>
 
-#import "XDUMLStereotype.h"
+#import <IDEModelFoundation/XDUMLStereotype-Protocol.h>
 
 @class NSString;
 

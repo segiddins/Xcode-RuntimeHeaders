@@ -4,11 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSClipView.h"
+#import <AppKit/NSClipView.h>
 
 @interface NSClipView (IBNSClipViewIntegration)
-- (BOOL)ibAllowConfigurationPropertyMemberStorageUpdateForNonResizableFramesOfChildView:(id)arg1 inDocument:(id)arg2;
-- (BOOL)ibAllowConfigurationPropertyMemberStorageUpdateForNonResizableFramesInDocument:(id)arg1;
 - (void)ibSwizzledNSClipViewWorkaround12332156UpdateConstraints;
 - (BOOL)ibChildView:(id)arg1 shouldUseConstraintsInsteadOfAutoresizingWhenAddedToDocument:(id)arg2;
 - (BOOL)ibChildPrefersToVerticallyResizeWithContainer:(id)arg1;
@@ -18,6 +16,8 @@
 - (id)ibArchivedSubviewsWithConfigurationPropertyStorage:(id)arg1;
 - (void)setIbShadowedSubviews:(id)arg1;
 - (id)ibShadowedSubviews;
+- (BOOL)ibShouldIgnoreSizeMisplacement;
+- (BOOL)ibShouldIgnorePositionMisplacement;
 - (BOOL)ibHasResolved14284306;
 - (BOOL)ibIsChildInitiallySelectable:(id)arg1;
 - (BOOL)ibIsChildViewUserSizable:(id)arg1;

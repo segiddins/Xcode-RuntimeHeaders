@@ -4,25 +4,25 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "DVTInvalidation.h"
-#import "NSToolbarDelegate.h"
+#import <IDEKit/DVTInvalidation-Protocol.h>
+#import <IDEKit/NSToolbarDelegate-Protocol.h>
 
 @class DVTStackBacktrace, NSArray, NSDictionary, NSMutableArray, NSSet, NSString, NSWindow;
 
 @interface IDEToolbarDelegate : NSObject <NSToolbarDelegate, DVTInvalidation>
 {
+    NSMutableArray *_allToolbarControllers;
+    BOOL _allowsUserCustomization;
+    BOOL _autosavesConfiguration;
     NSString *_toolbarDefinitionIdentifier;
     NSWindow *_window;
     NSArray *_defaultItemIdentifiers;
     NSArray *_allowedItemIdentifiers;
     NSDictionary *_toolbarItemProviders;
-    BOOL _allowsUserCustomization;
-    BOOL _autosavesConfiguration;
     NSSet *_displayModes;
     NSSet *_sizeModes;
-    NSMutableArray *_allToolbarControllers;
 }
 
 + (unsigned long long)_sizeModeForString:(id)arg1 toolbarIdentifier:(id)arg2;

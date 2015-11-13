@@ -4,14 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-@class DVTMapTable, DVTSimpleXMLWriter, NSArray;
+@class DVTSimpleXMLWriter, NSArray, NSMapTable;
 
 @interface DVTXMLArchiver : NSObject
 {
     DVTSimpleXMLWriter *_writer;
-    DVTMapTable *_classesToElementNames;
+    NSMapTable *_classesToElementNames;
     id _delegate;
     id _context;
     NSArray *_extraAttributes;

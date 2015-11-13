@@ -4,12 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSView.h"
+#import <AppKit/NSView.h>
 
-#import "DTGraphDelegate.h"
-#import "IDEGraphModelChartsModificationDelegate.h"
+#import <IDEKit/DTGraphDelegate-Protocol.h>
+#import <IDEKit/IDEGraphModelChartsModificationDelegate-Protocol.h>
 
 @class DTBarGraph, NSCache, NSMutableDictionary, NSString;
+@protocol IDEGraphDelegate;
 
 @interface IDEGraph : NSView <DTGraphDelegate, IDEGraphModelChartsModificationDelegate>
 {

@@ -4,10 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDESourceControlDocumentLocation.h"
+#import <IDEFoundation/IDESourceControlDocumentLocation.h>
 
 @interface IDESourceControlDocumentLocation (IDESourceControlDocumentLocationAdditions)
 - (id)exportDocumentUsingTemplateDocument:(id)arg1 completionBlock:(CDUnknownBlockType)arg2 primaryBehavior:(BOOL)arg3;
+- (id)exportDocumentUsingTemplateDocument:(id)arg1 fromWorkspace:(id)arg2 completionBlock:(CDUnknownBlockType)arg3 primaryBehavior:(BOOL)arg4;
 - (id)_exportTmpVersionFromOriginalDocument:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 @end
 

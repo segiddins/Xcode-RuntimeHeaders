@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <Foundation/NSObject.h>
 
-#import "XCEDataRootAdapterP.h"
+#import <DevToolsInterface/XCEDataRootAdapterP-Protocol.h>
 
 @class NSArray, NSOutlineView, NSSearchField, NSString, NSViewController, NSWindow, XCEConfigurableDataSource;
 

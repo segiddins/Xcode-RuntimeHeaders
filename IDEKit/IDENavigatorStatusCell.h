@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSActionCell.h"
+#import <AppKit/NSActionCell.h>
 
 @class NSAttributedString, NSImage, NSString;
 
@@ -23,6 +23,7 @@
 @property struct CGSize baseImageSize; // @synthesize baseImageSize=_baseImageSize;
 @property unsigned long long imageScaling; // @synthesize imageScaling=_imageScaling;
 - (void).cxx_destruct;
+- (struct CGRect)scaledRectForDrawingImageWithSize:(struct CGSize)arg1 inFrame:(struct CGRect)arg2;
 - (struct CGSize)cellSize;
 - (struct CGSize)_cellTextSize;
 - (id)attributedStringValue;

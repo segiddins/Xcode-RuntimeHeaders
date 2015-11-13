@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSMutableDictionary.h"
+#import <Foundation/NSMutableDictionary.h>
 
 @interface NSMutableDictionary (IBMutableDictionaryAdditions)
 + (Class)ib_mutableClass;
@@ -21,6 +21,7 @@
 - (void)ib_setObject:(id)arg1 forKey:(id)arg2 inDictionaryForKey:(id)arg3 inDictionaryForKey:(id)arg4;
 - (void)ib_setObject:(id)arg1 forKey:(id)arg2 inDictionaryForKey:(id)arg3 subDictionaryClass:(Class)arg4;
 - (void)ib_setObject:(id)arg1 forKey:(id)arg2 inDictionaryForKey:(id)arg3;
+- (void)ib_setObjectIfNonNil:(id)arg1 forKey:(id)arg2 inDictionaryForKey:(id)arg3;
 - (void)ib_removeLastObjectFromArrayForKey:(id)arg1;
 - (void)ib_setObject:(id)arg1 forKey:(id)arg2 inDictionaryForKey:(id)arg3 inDictionaryForKey:(id)arg4 outerDictionaryClass:(Class)arg5;
 - (void)ib_removeObjectsForKeys:(id)arg1;

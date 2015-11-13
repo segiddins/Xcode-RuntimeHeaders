@@ -4,12 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSTextFieldCell.h"
+#import <AppKit/NSTextFieldCell.h>
 
-@class NSTextStorage;
+@class NSLayoutManager, NSTextContainer, NSTextStorage;
 
 @interface DVTTableCellViewMultiLineTextFieldCell : NSTextFieldCell
 {
+    NSTextContainer *_textContainer;
+    NSLayoutManager *_layoutManager;
     BOOL _replaceNewlinesWithVisibleCharacter;
     NSTextStorage *_textStorage;
     struct _NSRange _rangeToEnsureIsVisible;
@@ -29,6 +31,9 @@
 - (void)setObjectValue:(id)arg1;
 - (void)update;
 - (void)_provideTextComponentsGivenTextStorage:(id)arg1 containerSize:(struct CGSize)arg2 handler:(CDUnknownBlockType)arg3;
+- (void)_dvtTableCellViewMultiLineTextFieldCell_commonInit;
+- (id)initWithCoder:(id)arg1;
+- (id)init;
 
 @end
 

@@ -4,10 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "DVTDeviceSummarySliceViewController.h"
+#import <DVTKit/DVTDeviceSummarySliceViewController.h>
 
-#import "DVTTableViewDelegate.h"
-#import "NSTableViewDataSource.h"
+#import <IDEiPhoneSupport/DVTTableViewDelegate-Protocol.h>
+#import <IDEiPhoneSupport/NSTableViewDataSource-Protocol.h>
 
 @class DVTBorderedView, DVTObservingToken, DVTTableView, NSArray, NSBox, NSString;
 

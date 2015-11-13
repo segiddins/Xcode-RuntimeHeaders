@@ -4,14 +4,15 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-@class SCNView;
+@class NSMutableArray, SCNView;
 
 @interface SCNEventHandler : NSObject
 {
-    id _reserved;
     SCNView *_view;
+    struct __IOHIDManager *_hidManager;
+    NSMutableArray *_controllers;
 }
 
 - (BOOL)wantsRedraw;

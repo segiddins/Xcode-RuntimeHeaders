@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
 @class DYAnalyzerEngine, DYAnalyzerFindingPool, DYAnalyzerHeuristicPool;
 
@@ -48,6 +48,7 @@
 - (void)endBlock:(int)arg1;
 - (void)startBlock:(int)arg1;
 - (void)processFunction:(const struct Function *)arg1 stateMirrorRetCode:(unsigned int)arg2;
+- (BOOL)shouldBeRunOnPlatform:(int)arg1;
 - (id)description;
 - (id)initWithIsPostMirrorHeuristic:(BOOL)arg1 isPreSortHeuristic:(BOOL)arg2;
 - (id)initWithIsPostMirrorHeuristic:(BOOL)arg1;

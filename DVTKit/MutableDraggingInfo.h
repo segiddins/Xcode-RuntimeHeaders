@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "NSDraggingInfo.h"
+#import <DVTKit/NSDraggingInfo-Protocol.h>
 
 @class NSImage, NSPasteboard, NSString, NSWindow;
 
@@ -18,8 +18,10 @@
     NSImage *draggedImage;
     NSPasteboard *draggingPasteboard;
     id draggingSource;
+    long long _springLoadingHighlight;
 }
 
+@property long long springLoadingHighlight; // @synthesize springLoadingHighlight=_springLoadingHighlight;
 - (void).cxx_destruct;
 - (void)enumerateDraggingItemsWithOptions:(unsigned long long)arg1 forView:(id)arg2 classes:(id)arg3 searchOptions:(id)arg4 usingBlock:(CDUnknownBlockType)arg5;
 @property long long numberOfValidItemsForDrop;
@@ -41,6 +43,7 @@
 - (unsigned long long)draggingSourceOperationMask;
 - (void)setDraggingDestinationWindow:(id)arg1;
 - (id)draggingDestinationWindow;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

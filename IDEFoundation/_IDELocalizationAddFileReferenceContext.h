@@ -6,7 +6,8 @@
 
 #import <IDEFoundation/IDELocalizationWorkContext.h>
 
-@class DVTFilePath, DVTLocale, IDEContainer<IDELocalizedContainer>, IDEGroup<IDELocalizedGroup>;
+@class DVTFilePath, DVTLocale, IDEContainer, IDEGroup;
+@protocol IDELocalizedContainer, IDELocalizedGroup;
 
 @interface _IDELocalizationAddFileReferenceContext : IDELocalizationWorkContext
 {

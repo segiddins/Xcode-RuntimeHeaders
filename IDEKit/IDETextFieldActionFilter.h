@@ -4,14 +4,16 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "DVTInvalidation.h"
-#import "NSComboBoxDelegate.h"
+#import <IDEKit/DVTInvalidation-Protocol.h>
+#import <IDEKit/NSComboBoxDelegate-Protocol.h>
+#import <IDEKit/NSTokenFieldDelegate-Protocol.h>
 
 @class DVTStackBacktrace, NSString, NSTextField;
+@protocol IDETextFieldActionFilterDelegate;
 
-@interface IDETextFieldActionFilter : NSObject <NSComboBoxDelegate, DVTInvalidation>
+@interface IDETextFieldActionFilter : NSObject <NSComboBoxDelegate, NSTokenFieldDelegate, DVTInvalidation>
 {
     BOOL _ignoringInput;
     long long _refreshingCounter;
@@ -27,6 +29,17 @@
 @property(retain, nonatomic) id <IDETextFieldActionFilterDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) NSTextField *textField; // @synthesize textField=_textField;
 - (void).cxx_destruct;
+- (id)tokenField:(id)arg1 setUpTokenAttachmentCell:(id)arg2 forRepresentedObject:(id)arg3;
+- (unsigned long long)tokenField:(id)arg1 styleForRepresentedObject:(id)arg2;
+- (BOOL)tokenField:(id)arg1 hasMenuForRepresentedObject:(id)arg2;
+- (id)tokenField:(id)arg1 menuForRepresentedObject:(id)arg2;
+- (id)tokenField:(id)arg1 readFromPasteboard:(id)arg2;
+- (BOOL)tokenField:(id)arg1 writeRepresentedObjects:(id)arg2 toPasteboard:(id)arg3;
+- (id)tokenField:(id)arg1 representedObjectForEditingString:(id)arg2;
+- (id)tokenField:(id)arg1 editingStringForRepresentedObject:(id)arg2;
+- (id)tokenField:(id)arg1 displayStringForRepresentedObject:(id)arg2;
+- (id)tokenField:(id)arg1 shouldAddObjects:(id)arg2 atIndex:(unsigned long long)arg3;
+- (id)tokenField:(id)arg1 completionsForSubstring:(id)arg2 indexOfToken:(long long)arg3 indexOfSelectedItem:(long long *)arg4;
 - (void)comboBoxSelectionIsChanging:(id)arg1;
 - (void)comboBoxSelectionDidChange:(id)arg1;
 - (void)comboBoxWillDismiss:(id)arg1;

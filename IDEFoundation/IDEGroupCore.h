@@ -6,9 +6,10 @@
 
 #import <IDEFoundation/IDEContainerItemCore.h>
 
-#import "IDEGroupCore.h"
+#import <IDEFoundation/IDEGroupCore-Protocol.h>
 
 @class NSArray, NSString;
+@protocol IDEContainerCore, IDEGroupCore;
 
 @interface IDEGroupCore : IDEContainerItemCore <IDEGroupCore>
 {

@@ -4,14 +4,18 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "JSExport.h"
+#import <SceneKit/JSExport-Protocol.h>
 
 @class NSDictionary, NSString;
+@protocol SCNProgramDelegate;
 
 @protocol SCNProgramJSExport <JSExport>
 + (id)program;
 @property(nonatomic) id <SCNProgramDelegate> delegate;
 @property(nonatomic, getter=isOpaque) BOOL opaque;
+@property(copy, nonatomic) NSString *geometryShader;
+@property(copy, nonatomic) NSString *tessellationEvaluationShader;
+@property(copy, nonatomic) NSString *tessellationControlShader;
 @property(copy, nonatomic) NSString *fragmentShader;
 @property(copy, nonatomic) NSString *vertexShader;
 - (id)copy;

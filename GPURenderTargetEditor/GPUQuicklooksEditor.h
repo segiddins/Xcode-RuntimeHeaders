@@ -6,7 +6,8 @@
 
 #import <GPURenderTargetEditor/GPUTraceSubEditor.h>
 
-@class DVTDeviceManager, DVTObservingToken, IDEWorkspaceTabController, NSArray, NSBox, NSButton, NSImageView, NSObject<OS_dispatch_queue>, NSPopUpButton, NSProgressIndicator, NSString, NSTextField, NSWindow;
+@class DVTDeviceManager, DVTObservingToken, IDEWorkspaceTabController, NSArray, NSBox, NSButton, NSImageView, NSObject, NSPopUpButton, NSProgressIndicator, NSString, NSTextField, NSWindow;
+@protocol OS_dispatch_queue;
 
 @interface GPUQuicklooksEditor : GPUTraceSubEditor
 {

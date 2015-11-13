@@ -5,6 +5,7 @@
 //
 
 @class NSArray, NSString;
+@protocol XCReplaceDelegate;
 
 @protocol XCReplaceableDocument
 - (unsigned long long)replaceAllResults:(NSArray *)arg1 withString:(NSString *)arg2 ignoreCase:(BOOL)arg3 replaceDelegate:(id <XCReplaceDelegate>)arg4;

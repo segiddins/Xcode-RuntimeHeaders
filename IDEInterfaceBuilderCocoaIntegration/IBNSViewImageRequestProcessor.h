@@ -4,15 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IBRemoteViewImageRequestProcessor.h"
+#import <IDEInterfaceBuilderKit/IBRemoteViewImageRequestProcessor.h>
 
 @interface IBNSViewImageRequestProcessor : IBRemoteViewImageRequestProcessor
 {
 }
 
-- (void)assertRenderingFailureWithShortMessage:(id)arg1 exceptionMessage:(id)arg2 exception:(id)arg3;
-- (id)classNamesFoFailedRequests:(id)arg1;
-- (id)issueRuests:(id)arg1 toTool:(id)arg2;
+- (id)classNamesForFailedRequestsSeparatedByComma:(id)arg1;
+- (id)issueRequests:(id)arg1 toTool:(id)arg2;
 - (struct CGColorSpace *)colorSpace;
 
 @end

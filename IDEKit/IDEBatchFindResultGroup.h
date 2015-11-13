@@ -4,35 +4,44 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "IDEKeyDrivenNavigableItemRepresentedObject.h"
-#import "NSCopying.h"
+#import <IDEKit/IDEKeyDrivenNavigableItemRepresentedObject-Protocol.h>
+#import <IDEKit/NSCopying-Protocol.h>
 
 @class DVTDocumentLocation, DVTFileDataType, DVTFilePath, IDEBatchFindCandidateFile, IDEFileReference, IDEIndex, NSArray, NSImage, NSMutableArray, NSString;
+@protocol IDEBatchFindResultGroupDelegate;
 
 @interface IDEBatchFindResultGroup : NSObject <IDEKeyDrivenNavigableItemRepresentedObject, NSCopying>
 {
     NSArray *_results;
     NSMutableArray *_filteredResults;
-    IDEBatchFindCandidateFile *_fileCandidate;
     unsigned long long _replaceableCount;
     unsigned long long _filteredReplaceableCount;
-    IDEIndex *_index;
+    id _representingNavItem;
+    BOOL _isPropogatingReplacementInclusionToChildren;
     BOOL _symbolLookUpEnabled;
+    int _shouldIncludeInReplacement;
+    IDEBatchFindCandidateFile *_fileCandidate;
     DVTFilePath *_filePath;
+    IDEIndex *_index;
     NSString *_groupTitle;
     id <IDEBatchFindResultGroupDelegate> _delegate;
-    id _representingNavItem;
 }
 
++ (id)keyPathsForValuesAffectingDisplayImage;
 @property(retain) id <IDEBatchFindResultGroupDelegate> delegate; // @synthesize delegate=_delegate;
-@property(readonly) DVTFilePath *filePath; // @synthesize filePath=_filePath;
 @property(copy) NSString *groupTitle; // @synthesize groupTitle=_groupTitle;
+@property(nonatomic) int shouldIncludeInReplacement; // @synthesize shouldIncludeInReplacement=_shouldIncludeInReplacement;
 @property(getter=isSymbolLookUpEnabled) BOOL symbolLookUpEnabled; // @synthesize symbolLookUpEnabled=_symbolLookUpEnabled;
 @property __weak IDEIndex *index; // @synthesize index=_index;
+@property(readonly) DVTFilePath *filePath; // @synthesize filePath=_filePath;
 @property(readonly) IDEBatchFindCandidateFile *fileCandidate; // @synthesize fileCandidate=_fileCandidate;
 - (void).cxx_destruct;
+- (void)stopObservingFilePath;
+- (void)startObservingFilePath;
+@property(readonly) BOOL doesBackingFileExist;
+- (void)childReplacementInclusionStateChanged:(id)arg1;
 - (void)_beginSymbolLookupForResults;
 - (void)resetHiddenResults;
 - (void)hideResultsWithIndexes:(id)arg1;
@@ -48,6 +57,7 @@
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)dealloc;
 - (id)initWithResults:(id)arg1 fromFilePath:(id)arg2;
 - (id)initWithResults:(id)arg1 fromFileCandidate:(id)arg2;
 - (BOOL)isEditable;

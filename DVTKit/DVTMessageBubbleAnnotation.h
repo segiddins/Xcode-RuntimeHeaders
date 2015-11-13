@@ -7,6 +7,7 @@
 #import <DVTKit/DVTTextAnnotation.h>
 
 @class NSImage, NSString;
+@protocol DVTMessageBubbleAnnotationDelegate;
 
 @interface DVTMessageBubbleAnnotation : DVTTextAnnotation
 {

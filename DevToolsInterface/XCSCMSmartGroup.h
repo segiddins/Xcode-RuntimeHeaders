@@ -6,7 +6,7 @@
 
 #import <DevToolsInterface/PBXSmartGroup.h>
 
-#import "XCMenuTableDataSource.h"
+#import <DevToolsInterface/XCMenuTableDataSource-Protocol.h>
 
 @class NSMutableDictionary, NSTimer;
 

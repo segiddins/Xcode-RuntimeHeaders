@@ -6,7 +6,7 @@
 
 #import <iCloudSupport/iCloudMonitor.h>
 
-#import "iCloudClientConnectionDelegate.h"
+#import <iCloudSupport/iCloudClientConnectionDelegate-Protocol.h>
 
 @class NSNetService, NSString, iCloudClientConnection;
 

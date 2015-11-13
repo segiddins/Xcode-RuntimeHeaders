@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDEGeniusResultsFinder.h"
+#import <IDEKit/IDEGeniusResultsFinder.h>
 
 __attribute__((visibility("hidden")))
 @interface GPUMTLTraceGeniusResultsFinder : IDEGeniusResultsFinder
@@ -12,9 +12,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (Class)editorDocumentClass;
-- (void)_updateGeniusResults:(id)arg1 withDevice:(const Device_4a5f6283 *)arg2 withFunction:(const Function_130258c1 *)arg3;
-- (void)_addComputeFunctionGeniusResults:(id)arg1 withDevice:(const Device_4a5f6283 *)arg2 objectID:(unsigned long long)arg3;
-- (void)_addRenderFunctionGeniusResults:(id)arg1 withDevice:(const Device_4a5f6283 *)arg2 objectID:(unsigned long long)arg3;
+- (void)_updateGeniusResults:(id)arg1 withDevice:(const Device_5cef99fc *)arg2 withFunction:(const Function_130258c1 *)arg3;
+- (void)_addComputeFunctionGeniusResults:(id)arg1 withDevice:(const Device_5cef99fc *)arg2 objectID:(unsigned long long)arg3;
+- (void)_addRenderFunctionGeniusResults:(id)arg1 withDevice:(const Device_5cef99fc *)arg2 objectID:(unsigned long long)arg3;
 - (void)_addFunctionGeniusResults:(id)arg1 forAPIItem:(id)arg2;
 - (void)_addLibraryGeniusResults:(id)arg1 forAPIItem:(id)arg2;
 - (void)_updateGeniusResults;

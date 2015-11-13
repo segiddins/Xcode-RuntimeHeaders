@@ -4,15 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IBICFolder.h"
+#import <IBFoundation/IBICFolder.h>
 
 @interface IBICFolder (DisplayAdditions)
-+ (id)keyPathsForValuesAffectingIbInspectedFileName;
-- (void)setIbInspectedFileName:(id)arg1;
-- (id)ibInspectedFileName;
-- (id)validatedFileNameForSettingProposedDisplayName:(id)arg1;
-- (BOOL)isDisplayNameEditable;
-- (BOOL)displaysInOutlineView;
++ (id)keyPathsForValuesAffectingIbInspectedProvidesNamespace;
+- (void)setIbInspectedProvidesNamespace:(BOOL)arg1;
+- (BOOL)ibInspectedProvidesNamespace;
+- (void)populatePlistWithDescriptionForIctool:(id)arg1;
 - (BOOL)displaysChildrenInOutlineView;
 - (id)icon;
 @end

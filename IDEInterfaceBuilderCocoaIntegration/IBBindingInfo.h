@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "NSCopying.h"
+#import <IDEInterfaceBuilderCocoaIntegration/NSCopying-Protocol.h>
 
 @class NSDictionary, NSMutableArray, NSString;
 
@@ -35,6 +35,7 @@
 - (id)binding;
 - (id)category;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)description;
 - (BOOL)isEqual:(id)arg1;
 - (id)initWithDictionary:(id)arg1 category:(id)arg2;
 

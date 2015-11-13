@@ -6,7 +6,7 @@
 
 #import <XDBase/XDUMLNamespaceImp.h>
 
-#import "XDUMLOperation.h"
+#import <XDBase/XDUMLOperation-Protocol.h>
 
 @class NSMutableArray, NSString;
 

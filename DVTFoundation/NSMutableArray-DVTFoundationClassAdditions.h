@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSMutableArray.h"
+#import <Foundation/NSMutableArray.h>
 
 @interface NSMutableArray (DVTFoundationClassAdditions)
 - (void)dvt_recursivelyRemoveAllObjects;
@@ -13,6 +13,7 @@
 - (void)dvt_sortedMerge:(id)arg1 withComparator:(CDUnknownBlockType)arg2;
 - (void)dvt_sortedMerge:(id)arg1;
 - (void)dvt_sortedInsert:(id)arg1 withComparator:(CDUnknownBlockType)arg2;
+- (void)dvt_sortedInsert:(id)arg1 withComparisonSelector:(SEL)arg2;
 - (void)dvt_sortedInsert:(id)arg1;
 - (void)dvt_removeObjectsIdenticalToObjectsInArray:(id)arg1;
 - (void)dvt_addObjectsFromCollection:(id)arg1;

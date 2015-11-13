@@ -4,10 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSViewController.h"
+#import <AppKit/NSViewController.h>
 
-#import "NSTextDelegate.h"
-#import "XCSUICreateBotTriggerChildViewController.h"
+#import <XCSUI/NSTextDelegate-Protocol.h>
+#import <XCSUI/XCSUICreateBotTriggerChildViewController-Protocol.h>
 
 @class DVTScriptSourceTextView, NSString, XCSTrigger;
 

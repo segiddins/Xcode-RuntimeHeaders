@@ -6,9 +6,9 @@
 
 #import <DevToolsInterface/PBXProjectModule.h>
 
-#import "PBXIncrementalFindable.h"
-#import "PBXTSCharacterStreamConsuming.h"
-#import "XCDebuggerConsoleCompletion.h"
+#import <DevToolsInterface/PBXIncrementalFindable-Protocol.h>
+#import <DevToolsInterface/PBXTSCharacterStreamConsuming-Protocol.h>
+#import <DevToolsInterface/XCDebuggerConsoleCompletion-Protocol.h>
 
 @class NSMutableArray, NSString, PBXTSCharacterStream, PBXTSUTF8BufferFilter, PBXTSUTF8EncoderFilter, PBXTtyText, XCIncrementalFinder;
 

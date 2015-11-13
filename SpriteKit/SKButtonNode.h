@@ -6,7 +6,8 @@
 
 #import <SpriteKit/SKLabelNode.h>
 
-@class NSObject<SKButtonNodeDelegate>, SKAction;
+@class NSObject, SKAction;
+@protocol SKButtonNodeDelegate;
 
 @interface SKButtonNode : SKLabelNode
 {

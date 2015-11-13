@@ -6,8 +6,8 @@
 
 #import <IDEDocViewer/IDEDocNavigator.h>
 
-#import "NSOutlineViewDataSource.h"
-#import "NSOutlineViewDelegate.h"
+#import <IDEDocViewer/NSOutlineViewDataSource-Protocol.h>
+#import <IDEDocViewer/NSOutlineViewDelegate-Protocol.h>
 
 @class DSANode, IDEDocContentOutlineView, NSString, _IDEDocContentOutlineViewRootNode;
 

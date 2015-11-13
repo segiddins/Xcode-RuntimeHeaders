@@ -6,9 +6,9 @@
 
 #import <IDEKit/IDEViewController.h>
 
-#import "IDECapsuleViewController.h"
-#import "NSTableViewDataSource.h"
-#import "NSTableViewDelegate.h"
+#import <IDEKit/IDECapsuleViewController-Protocol.h>
+#import <IDEKit/NSTableViewDataSource-Protocol.h>
+#import <IDEKit/NSTableViewDelegate-Protocol.h>
 
 @class IDECombinedDownloadsPrefPaneController, IDEDownloadableContentTypeGroup, NSImage, NSString, NSTableView;
 

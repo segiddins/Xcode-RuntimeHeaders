@@ -6,7 +6,7 @@
 
 #import <DVTKit/DVTTextLayer.h>
 
-#import "DVTClickableLayer.h"
+#import <DVTKit/DVTClickableLayer-Protocol.h>
 
 @class NSString;
 

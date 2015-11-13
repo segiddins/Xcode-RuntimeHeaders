@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "DVTInvalidation.h"
+#import <DVTFoundation/DVTInvalidation-Protocol.h>
 
 @class DVTDiffDataSource, DVTObservingToken, DVTStackBacktrace, NSArray, NSIndexSet, NSMutableArray, NSOperationQueue, NSString;
 
@@ -28,6 +28,7 @@
     BOOL _updatingChangedDescriptor;
 }
 
++ (unsigned long long)assertionBehaviorAfterEndOfEventForSelector:(SEL)arg1;
 + (void)initialize;
 + (id)performanceLogAspect;
 @property BOOL isRestoringState; // @synthesize isRestoringState=_isRestoringState;

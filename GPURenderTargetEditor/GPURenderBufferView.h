@@ -4,11 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "DVTLayerHostingView.h"
+#import <DVTKit/DVTLayerHostingView.h>
 
-#import "DYOpenGLLayerContentProvider.h"
+#import <GPURenderTargetEditor/DYOpenGLLayerContentProvider-Protocol.h>
 
-@class CALayer, CAScrollLayer, CATextLayer, DYOpenGLLayer, GPURenderJob, NSObject<OS_dispatch_source>, NSString;
+@class CALayer, CAScrollLayer, CATextLayer, DYOpenGLLayer, GPURenderJob, NSObject, NSString;
+@protocol DYResource, GPURenderBufferViewStateCoordinationProtocol, OS_dispatch_source;
 
 @interface GPURenderBufferView : DVTLayerHostingView <DYOpenGLLayerContentProvider>
 {
@@ -40,6 +41,8 @@
     struct CGRect _scrollLayerBounds;
     struct CGColor *_titleLayerForegroundColor;
     struct CGColor *_titleLayerForegroundColorDark;
+    struct CGColor *_titleHighlightLayerColor;
+    struct CGColor *_titleHighlightLayerColorDark;
     id <GPURenderBufferViewStateCoordinationProtocol> _coordinator;
     unsigned int _stateFlags;
     GPURenderJob *_renderJob;
@@ -51,7 +54,6 @@
 @property(nonatomic) __weak id <GPURenderBufferViewStateCoordinationProtocol> coordinator; // @synthesize coordinator=_coordinator;
 @property(nonatomic) struct CGSize titleSize; // @synthesize titleSize=_titleSize;
 @property(retain, nonatomic) GPURenderJob *renderJob; // @synthesize renderJob=_renderJob;
-- (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)dumpImage:(id)arg1 asRaw:(BOOL)arg2;
 - (void)layout;

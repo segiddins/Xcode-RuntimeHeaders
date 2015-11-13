@@ -4,9 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-@class DVTDispatchLock, IDEIndexDBStringStorage, IDEIndexDatabaseQueryProvider, IDEIndexImporter, NSArray, NSDictionary, NSMapTable, NSMutableArray, NSMutableDictionary, NSObject<IDEIndexDatabaseDelegate>, NSObject<IDEIndexQueryProvider>, NSURL;
+@class DVTDispatchLock, IDEIndexDBStringStorage, IDEIndexDatabaseQueryProvider, IDEIndexImporter, NSArray, NSDictionary, NSMapTable, NSMutableArray, NSMutableDictionary, NSURL;
+@protocol IDEIndexDatabaseDelegate, IDEIndexQueryProvider;
 
 @interface IDEIndexDatabase : NSObject
 {

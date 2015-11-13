@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-@class NSObject<OS_dispatch_source>;
+@protocol OS_dispatch_source, SCNJittererDelegate;
 
 __attribute__((visibility("hidden")))
 @interface SCNJitterer : NSObject
@@ -14,7 +14,6 @@ __attribute__((visibility("hidden")))
     BOOL _enabled;
     unsigned long long _state;
     unsigned long long _iteration;
-    BOOL _jitteringSupported;
     BOOL _restartSourceIsSuspended;
     id <SCNJittererDelegate> _delegate;
     NSObject<OS_dispatch_source> *_restartSource;

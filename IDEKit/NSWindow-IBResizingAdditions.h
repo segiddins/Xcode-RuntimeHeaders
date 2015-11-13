@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSWindow.h"
+#import <AppKit/NSWindow.h>
 
 @interface NSWindow (IBResizingAdditions)
 - (void)IDE_IB_setContentViewSizePinningTopLeft:(struct CGSize)arg1 display:(BOOL)arg2 animate:(BOOL)arg3;

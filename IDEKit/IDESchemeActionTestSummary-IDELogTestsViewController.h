@@ -4,12 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDESchemeActionTestSummary.h"
+#import <IDEFoundation/IDESchemeActionTestSummary.h>
 
 @interface IDESchemeActionTestSummary (IDELogTestsViewController)
-- (id)ide_sharedTests_UUID;
-- (id)ide_sharedTests_statusImage;
-- (id)ide_sharedTests_testName;
-- (id)ide_sharedTests_perfMetrics;
+- (id)ide_testReport_test_UUID;
+- (id)ide_testReport_test_statusImage;
+- (id)ide_testReport_test_testName;
+- (id)ide_testReport_test_perfMetrics;
 @end
 

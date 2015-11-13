@@ -7,6 +7,7 @@
 #import <IDEKit/IDEInspectorProperty.h>
 
 @class IDEInspectorKeyPath, NSMenuItem, NSPopUpButton;
+@protocol DVTCancellable;
 
 @interface IDEFileIdentityAndTypePopupController : IDEInspectorProperty
 {

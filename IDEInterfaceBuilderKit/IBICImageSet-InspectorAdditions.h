@@ -4,14 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IBICImageSet.h"
+#import <IBFoundation/IBICImageSet.h>
 
 @interface IBICImageSet (InspectorAdditions)
 + (id)keyPathsForValuesAffectingIbInspectedTemplateRenderingIntent;
-+ (id)keyPathsForValuesAffectingIbInspectedDeviceSpecificImageSets;
 - (void)setIbInspectedTemplateRenderingIntent:(long long)arg1;
 - (long long)ibInspectedTemplateRenderingIntent;
-- (void)setIbInspectedDeviceSpecificImageSets:(BOOL)arg1;
-- (BOOL)ibInspectedDeviceSpecificImageSets;
 @end
 

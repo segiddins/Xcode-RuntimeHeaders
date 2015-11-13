@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDEViewController.h"
+#import <IDEKit/IDEViewController.h>
 
-#import "IDEPlaygroundSectionViewController.h"
+#import <IDELanguageSupportUI/IDEPlaygroundSectionViewController-Protocol.h>
 
 @class DVTNotificationToken, DVTObservingToken, IDEPlaygroundEditor, IDEPlaygroundLayoutManager, IDEPlaygroundSourceTextScrollView, IDEPlaygroundTextView, IDESourceCodePlaygroundSection, IDESourceCodePlaygroundSectionContainerView, IDESourceCodePlaygroundSectionExecutionResultVisualization, NSArray, NSString;
 
@@ -16,8 +16,8 @@
     IDESourceCodePlaygroundSectionContainerView *_containerView;
     DVTNotificationToken *_textViewFrameChangeNotificationToken;
     DVTObservingToken *_boxContentIsDisclosedObserveingToken;
+    BOOL _initialSetupDone;
     BOOL _resizingContainerView;
-    BOOL _finishedLoading;
     IDESourceCodePlaygroundSection *_playgroundSection;
     IDEPlaygroundEditor *_playgroundEditor;
     IDEPlaygroundSourceTextScrollView *_scrollView;
@@ -28,7 +28,6 @@
 @property(readonly) IDESourceCodePlaygroundSectionExecutionResultVisualization *executionResultVisualization; // @synthesize executionResultVisualization=_executionResultVisualization;
 @property(readonly) IDEPlaygroundTextView *textView; // @synthesize textView=_textView;
 @property(readonly) IDEPlaygroundSourceTextScrollView *scrollView; // @synthesize scrollView=_scrollView;
-@property BOOL finishedLoading; // @synthesize finishedLoading=_finishedLoading;
 @property(readonly) IDEPlaygroundEditor *playgroundEditor; // @synthesize playgroundEditor=_playgroundEditor;
 @property(readonly) IDESourceCodePlaygroundSection *playgroundSection; // @synthesize playgroundSection=_playgroundSection;
 - (void).cxx_destruct;

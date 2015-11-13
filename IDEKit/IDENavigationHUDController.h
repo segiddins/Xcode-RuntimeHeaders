@@ -6,7 +6,8 @@
 
 #import <IDEKit/IDEViewController.h>
 
-@class CALayer<IDENavigationHUDSelectableLayer>, IDENavigationHUDAbstractWorkspaceWindowLayer, IDENavigationHUDNewWorkspaceWindowLayer, IDENavigationHUDSelection, IDENavigationHUDSelectionView, IDEWorkspaceDocument, NSArray, NSDictionary, NSMapTable, NSSet, NSURL;
+@class CALayer, IDENavigationHUDAbstractWorkspaceWindowLayer, IDENavigationHUDNewWorkspaceWindowLayer, IDENavigationHUDSelection, IDENavigationHUDSelectionView, IDEWorkspaceDocument, NSArray, NSDictionary, NSMapTable, NSSet, NSURL;
+@protocol IDENavigationHUDSelectableLayer;
 
 @interface IDENavigationHUDController : IDEViewController
 {

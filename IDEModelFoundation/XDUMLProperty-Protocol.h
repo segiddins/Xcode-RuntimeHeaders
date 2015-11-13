@@ -4,10 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "XDUMLStructuralFeature.h"
-#import "XDUMLTypedElement.h"
+#import <IDEModelFoundation/XDUMLStructuralFeature-Protocol.h>
+#import <IDEModelFoundation/XDUMLTypedElement-Protocol.h>
 
 @class NSArray, NSString;
+@protocol XDUMLAssociation, XDUMLClass, XDUMLDataType, XDUMLProperty;
 
 @protocol XDUMLProperty <XDUMLStructuralFeature, XDUMLTypedElement>
 - (void)setIsReadOnly:(BOOL)arg1;

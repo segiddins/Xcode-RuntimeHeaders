@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
 @interface XCSUIIssueGroupsDistributor : NSObject
 {
@@ -18,7 +18,7 @@
 @property double doubleRowIssueHeight; // @synthesize doubleRowIssueHeight=_doubleRowIssueHeight;
 @property double singleRowIssueHeight; // @synthesize singleRowIssueHeight=_singleRowIssueHeight;
 @property int maxIssuesPerCollapsedSection; // @synthesize maxIssuesPerCollapsedSection=_maxIssuesPerCollapsedSection;
-- (void)distributeNewIssues:(id)arg1 unresolvedIssues:(id)arg2 resolvedIssues:(id)arg3 buildServiceIssues:(id)arg4 completionBlock:(CDUnknownBlockType)arg5;
+- (void)distributeNewIssues:(id)arg1 unresolvedIssues:(id)arg2 resolvedIssues:(id)arg3 triggerIssues:(id)arg4 buildServiceIssues:(id)arg5 silencedIssues:(id)arg6 completionBlock:(CDUnknownBlockType)arg7;
 - (double)heightRequiredToShowIssues:(id)arg1;
 
 @end

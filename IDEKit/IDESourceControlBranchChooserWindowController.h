@@ -4,12 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSWindowController.h"
+#import <AppKit/NSWindowController.h>
 
-#import "IDESourceControlBranchChooserItemDelegate.h"
-#import "IDESourceControlWindowController.h"
+#import <IDEKit/IDESourceControlBranchChooserItemDelegate-Protocol.h>
+#import <IDEKit/IDESourceControlWindowController-Protocol.h>
 
-@class IDESourceControlBranchChooserItem, IDESourceControlOperationInfo<IDESourceControlBranchingOperationInfoProtocol>, IDESourceControlWorkspaceUIHandler, IDEWorkspace, NSButton, NSPopUpButton, NSString, NSTextField, NSView, NSWindow;
+@class IDESourceControlBranchChooserItem, IDESourceControlOperationInfo, IDESourceControlWorkspaceUIHandler, IDEWorkspace, NSButton, NSPopUpButton, NSString, NSTextField, NSView, NSWindow;
+@protocol DVTInvalidation, IDESourceControlBranchingOperationInfoProtocol;
 
 @interface IDESourceControlBranchChooserWindowController : NSWindowController <IDESourceControlWindowController, IDESourceControlBranchChooserItemDelegate>
 {

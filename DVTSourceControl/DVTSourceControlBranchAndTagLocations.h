@@ -4,11 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "DVTSourceControlSerializable.h"
-#import "NSCopying.h"
-#import "NSSecureCoding.h"
+#import <DVTSourceControl/DVTSourceControlSerializable-Protocol.h>
+#import <DVTSourceControl/NSCopying-Protocol.h>
+#import <DVTSourceControl/NSSecureCoding-Protocol.h>
 
 @class DVTSourceControlPathLocation, NSString;
 
@@ -28,6 +28,8 @@
 - (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+@property(readonly, getter=isCompleteForTags) BOOL completeForTags;
+@property(readonly, getter=isCompleteForBranches) BOOL completeForBranches;
 - (id)dictionaryRepresentationWithOptions:(unsigned long long)arg1;
 - (id)initWithDictionary:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

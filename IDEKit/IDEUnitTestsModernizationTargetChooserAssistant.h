@@ -6,9 +6,9 @@
 
 #import <IDEKit/IDEAssistant.h>
 
-#import "IDEFilterControlBarTarget.h"
-#import "NSOutlineViewDataSource.h"
-#import "NSOutlineViewDelegate.h"
+#import <IDEKit/IDEFilterControlBarTarget-Protocol.h>
+#import <IDEKit/NSOutlineViewDataSource-Protocol.h>
+#import <IDEKit/NSOutlineViewDelegate-Protocol.h>
 
 @class DVTBorderedView, DVTOutlineView, IDEFilterControlBar, IDEMigrationTargetChooserStatePersistence, NSArray, NSImageView, NSMutableIndexSet, NSString, NSTextField, NSTreeController;
 

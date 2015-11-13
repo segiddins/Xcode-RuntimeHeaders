@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSView.h"
+#import <AppKit/NSView.h>
 
-#import "IBDocumentArchiving.h"
+#import <IDEInterfaceBuilderCocoaIntegration/IBDocumentArchiving-Protocol.h>
 
 @class NSColor, NSString;
 
@@ -19,11 +19,13 @@
     BOOL _allowsCameraControl;
     BOOL _ibWantsMultisampling;
     BOOL _encodeAsRuntimeInstance;
+    int _ibPreferredRenderingAPI;
     NSColor *_backgroundColor;
     NSString *_ibSceneName;
 }
 
 @property BOOL encodeAsRuntimeInstance; // @synthesize encodeAsRuntimeInstance=_encodeAsRuntimeInstance;
+@property(nonatomic) int ibPreferredRenderingAPI; // @synthesize ibPreferredRenderingAPI=_ibPreferredRenderingAPI;
 @property(nonatomic) BOOL ibWantsMultisampling; // @synthesize ibWantsMultisampling=_ibWantsMultisampling;
 @property(nonatomic) BOOL allowsCameraControl; // @synthesize allowsCameraControl=_allowsCameraControl;
 @property(copy, nonatomic) NSString *ibSceneName; // @synthesize ibSceneName=_ibSceneName;
@@ -41,6 +43,7 @@
 - (id)ibTypeNameForDefaultLabel;
 - (id)ibRuntimeClassName;
 - (void)drawRect:(struct CGRect)arg1;
+- (void)ibWarnings:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
 - (void)unarchiveWithDocumentUnarchiver:(id)arg1;
 - (void)archiveWithDocumentArchiver:(id)arg1;
 

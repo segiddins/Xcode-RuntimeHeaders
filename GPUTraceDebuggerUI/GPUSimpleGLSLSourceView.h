@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "DVTSourceTextView.h"
+#import <DVTKit/DVTSourceTextView.h>
 
-@class DVTTextSidebarView, NSString;
+@class DVTTextSidebarView;
 
 @interface GPUSimpleGLSLSourceView : DVTSourceTextView
 {
@@ -19,9 +19,6 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1 textContainer:(id)arg2;
 - (void)_commonInit;
-
-// Remaining properties
-@property(retain) NSString *identifier;
 
 @end
 

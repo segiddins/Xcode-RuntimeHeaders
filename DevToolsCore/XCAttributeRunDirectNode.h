@@ -6,7 +6,7 @@
 
 #import <DevToolsCore/XCAttributeRunBase.h>
 
-#import "NSCopying.h"
+#import <DevToolsCore/NSCopying-Protocol.h>
 
 @interface XCAttributeRunDirectNode : XCAttributeRunBase <NSCopying>
 {

@@ -4,9 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "DVTPopoverContentViewController.h"
+#import <DVTKit/DVTPopoverContentViewController.h>
 
-@class DVTBorderedView, DVTSourceTextView, IDEDiagnosticActivityLogMessage, IDEDiagnosticAnnotation, IDEEditorDocument<IDEDiagnosticControllerDataSource>, NSArray, NSArrayController, NSImageView, NSObjectController, NSString, NSTableView, NSTextField;
+@class DVTBorderedView, DVTSourceTextView, IDEDiagnosticActivityLogMessage, IDEDiagnosticAnnotation, IDEEditorDocument, NSArray, NSArrayController, NSImageView, NSObjectController, NSString, NSTableView, NSTextField;
+@protocol IDEDiagnosticControllerDataSource;
 
 @interface IDEDiagnosticFixItController : DVTPopoverContentViewController
 {
@@ -18,7 +19,6 @@
     IDEDiagnosticActivityLogMessage *_diagnosticItem;
     BOOL _userAcceptedSession;
     BOOL _changingSelection;
-    NSTextField *_typeTextField;
     NSImageView *_titleIconImageView;
     NSTextField *_titleTextField;
     DVTBorderedView *_titleBorderedView;

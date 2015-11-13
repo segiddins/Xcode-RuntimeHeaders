@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "DYCaptureStore.h"
+#import <GPUTools/DYCaptureStore-Protocol.h>
 
 @class NSMutableData, NSMutableDictionary, NSString, NSURL;
 
@@ -57,7 +57,6 @@
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 @property(nonatomic) BOOL deleteOnClose; // @synthesize deleteOnClose=_deleteOnClose;
 @property(readonly, nonatomic) struct __CFUUID *uuid; // @synthesize uuid=_uuid;
-- (id).cxx_construct;
 - (BOOL)acceptCaptureVisitor:(id)arg1;
 - (BOOL)adjunctFileExistsForFilename:(id)arg1 error:(id *)arg2;
 - (id)copyAdjunctDataForFilename:(id)arg1 error:(id *)arg2;

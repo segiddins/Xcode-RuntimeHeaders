@@ -4,12 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "DVTInvalidation.h"
-#import "IDELocalizationWorkProgress.h"
+#import <IDEFoundation/DVTInvalidation-Protocol.h>
+#import <IDEFoundation/IDELocalizationWorkProgress-Protocol.h>
 
 @class DVTNotificationToken, DVTStackBacktrace, IDELocalizationImporterContext, IDELocalizationStream, NSString;
+@protocol DVTCancellable;
 
 @interface IDELocalizationImporter : NSObject <IDELocalizationWorkProgress, DVTInvalidation>
 {
@@ -30,8 +31,7 @@
 }
 
 + (void)initialize;
-+ (id)importerFromURL:(id)arg1 container:(id)arg2 sourceLanguage:(id)arg3 onNeedsResolutions:(CDUnknownBlockType)arg4;
-+ (id)importWorkForContext:(id)arg1;
++ (id)importerFromURL:(id)arg1 container:(id)arg2 sourceLanguage:(id)arg3 allowProjectChanges:(BOOL)arg4 onNeedsReview:(CDUnknownBlockType)arg5;
 @property(copy) CDUnknownBlockType onCompletedBlock; // @synthesize onCompletedBlock=_onCompletedBlock;
 @property(copy) CDUnknownBlockType onErrorBlock; // @synthesize onErrorBlock=_onErrorBlock;
 @property(readonly) NSString *workTitle; // @synthesize workTitle=_workTitle;
@@ -42,7 +42,7 @@
 - (void)cancel;
 - (void)start;
 - (void)primitiveInvalidate;
-- (id)initWithImportWork:(id)arg1 withContext:(id)arg2;
+- (id)initWithImportContext:(id)arg1;
 
 // Remaining properties
 @property(retain) DVTStackBacktrace *creationBacktrace;

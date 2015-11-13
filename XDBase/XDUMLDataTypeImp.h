@@ -6,7 +6,7 @@
 
 #import <XDBase/XDUMLClassifierImp.h>
 
-#import "XDUMLDataType.h"
+#import <XDBase/XDUMLDataType-Protocol.h>
 
 @class NSString;
 

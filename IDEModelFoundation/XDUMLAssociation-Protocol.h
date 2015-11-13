@@ -4,10 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "XDUMLClassifier.h"
-#import "XDUMLRelationship.h"
+#import <IDEModelFoundation/XDUMLClassifier-Protocol.h>
+#import <IDEModelFoundation/XDUMLRelationship-Protocol.h>
 
 @class NSArray;
+@protocol XDUMLProperty;
 
 @protocol XDUMLAssociation <XDUMLClassifier, XDUMLRelationship>
 - (void)addMemberEnd:(id <XDUMLProperty>)arg1;

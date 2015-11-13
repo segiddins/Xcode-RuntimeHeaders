@@ -4,15 +4,16 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDEViewController.h"
+#import <IDEKit/IDEViewController.h>
 
-#import "IBDockViewHighlightProviderDelegate.h"
-#import "IBEndPointProvider.h"
-#import "IBHybridStructureSelectionProvider.h"
-#import "IBStructureAreaDockViewDelegate.h"
-#import "NSSplitViewDelegate.h"
+#import <IDEInterfaceBuilderKit/IBDockViewHighlightProviderDelegate-Protocol.h>
+#import <IDEInterfaceBuilderKit/IBEndPointProvider-Protocol.h>
+#import <IDEInterfaceBuilderKit/IBHybridStructureSelectionProvider-Protocol.h>
+#import <IDEInterfaceBuilderKit/IBStructureAreaDockViewDelegate-Protocol.h>
+#import <IDEInterfaceBuilderKit/NSSplitViewDelegate-Protocol.h>
 
 @class DVTObservingToken, IBAbstractDocumentEditor, IBDecodedPasteboardContent, IBDockViewHighlightProvider, IBDocument, IBStructureAreaDockLabelContainer, IBStructureAreaDockView, NSString;
+@protocol IBHighlightProvider;
 
 @interface IBDockViewController : IDEViewController <IBEndPointProvider, IBStructureAreaDockViewDelegate, NSSplitViewDelegate, IBDockViewHighlightProviderDelegate, IBHybridStructureSelectionProvider>
 {
@@ -82,7 +83,6 @@
 - (id)objectIDsForGroup:(id)arg1;
 - (id)objectsForGroup:(id)arg1;
 - (long long)dockView:(id)arg1 minimumNumberOfItemsInGroup:(id)arg2;
-- (id)dockView:(id)arg1 titleOfRepresentedGroup:(id)arg2;
 - (id)dockViewRepresentedGroups:(id)arg1;
 - (void)dockViewWillValidateData:(id)arg1;
 - (void)loadView;

@@ -4,10 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "IDECommandHandler.h"
-#import "IDECommandHandlerVendor.h"
+#import <IDESourceEditor/IDECommandHandler-Protocol.h>
+#import <IDESourceEditor/IDECommandHandlerVendor-Protocol.h>
 
 @class NSString;
 
@@ -16,6 +16,8 @@
 }
 
 + (id)handlerForAction:(SEL)arg1 withSelectionSource:(id)arg2;
+- (void)selectFuzzyCodeCompletion:(id)arg1;
+- (void)selectStandardCodeCompletion:(id)arg1;
 - (void)switchDiffingAlgorithm:(id)arg1;
 - (BOOL)validateUserInterfaceItem:(id)arg1;
 

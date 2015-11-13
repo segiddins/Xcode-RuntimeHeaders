@@ -4,10 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDEProjectItemViewController.h"
+#import <IDEKit/IDEProjectItemViewController.h>
 
-#import "NSTableViewDataSource.h"
-#import "NSTableViewDelegate.h"
+#import <Xcode3UI/NSTableViewDataSource-Protocol.h>
+#import <Xcode3UI/NSTableViewDelegate-Protocol.h>
 
 @class DVTBorderedView, DVTTableView, NSString, Xcode3SandboxItemModel;
 
@@ -30,7 +30,7 @@
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
-@property(readonly, nonatomic) Xcode3SandboxItemModel *model;
+@property(readonly, nonatomic) Xcode3SandboxItemModel *model; // @dynamic model;
 @property(readonly) Class superclass;
 
 @end

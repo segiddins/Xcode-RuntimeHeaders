@@ -5,6 +5,7 @@
 //
 
 @class NSArray, NSPredicateView, NSString;
+@protocol NSPredicateTypeController;
 
 @protocol NSPredicateViewDataSource
 - (void)dataChangedForPredicateView:(NSPredicateView *)arg1;

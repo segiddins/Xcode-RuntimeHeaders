@@ -4,11 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "DYResource.h"
+#import <GPUDebuggerMTLSupport/DYCacheableResource-Protocol.h>
+#import <GPUDebuggerMTLSupport/DYResource-Protocol.h>
 
 @class NSString;
+@protocol DYTextureImage;
 
-@protocol DYTexture <DYResource>
+@protocol DYTexture <DYResource, DYCacheableResource>
 @property(readonly, nonatomic) BOOL isFlipped;
 @property(readonly, nonatomic) BOOL isCubemap;
 @property(readonly, nonatomic) id <DYTextureImage> firstValidTextureImage;

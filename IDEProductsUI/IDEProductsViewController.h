@@ -4,14 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDEViewController.h"
+#import <IDEKit/IDEViewController.h>
 
-#import "DVTProductManagerDelegate.h"
-#import "DVTReplacementViewDelegate.h"
-#import "DVTSplitViewDelegate.h"
-#import "NSTableViewDelegate.h"
+#import "DVTProductManagerDelegate-Protocol.h"
+#import "DVTReplacementViewDelegate-Protocol.h"
+#import "DVTSplitViewDelegate-Protocol.h"
+#import "NSTableViewDelegate-Protocol.h"
 
-@class DVTBorderedView, DVTDelayedInvocation, DVTGradientImageButton, DVTNotificationToken, DVTObservingToken, DVTProduct, DVTProductManager, DVTReplacementView, DVTScrollView, DVTSplitView, DVTTableView, IDEProductSectionViewController, IDEProductsUtilityViewController, NSArray, NSArrayController, NSIndexSet, NSMutableDictionary, NSString, NSView;
+@class DVTBorderedView, DVTGradientImageButton, DVTNotificationToken, DVTObservingToken, DVTProduct, DVTProductManager, DVTReplacementView, DVTScrollView, DVTSplitView, DVTTableView, IDEProductSectionViewController, IDEProductsUtilityViewController, NSArray, NSArrayController, NSIndexSet, NSMutableDictionary, NSString, NSView;
 
 @interface IDEProductsViewController : IDEViewController <NSTableViewDelegate, DVTSplitViewDelegate, DVTProductManagerDelegate, DVTReplacementViewDelegate>
 {
@@ -19,7 +19,6 @@
     BOOL _restoringSelectedSegmentIndex;
     BOOL _displayedLogInErrors;
     NSArray *_productSectionSegments;
-    DVTDelayedInvocation *_updateProductsDisplayInvocation;
     long long _selectedSegmentIndex;
     DVTSplitView *_splitView;
     DVTScrollView *_scrollView;
@@ -119,8 +118,7 @@
 - (id)selectedProductFromSelectedIndex:(id)arg1;
 @property(readonly) DVTProductManager *productManager;
 - (void)_updateDetailView;
-- (void)updateProductsDisplayDelayed:(BOOL)arg1;
-@property(readonly, nonatomic) DVTDelayedInvocation *updateProductsDisplayInvocation; // @synthesize updateProductsDisplayInvocation=_updateProductsDisplayInvocation;
+- (void)updateProductsDisplay;
 - (void)updateProducts;
 - (void)_startObservations;
 - (void)viewWillAppear;

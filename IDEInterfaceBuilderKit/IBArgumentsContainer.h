@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
 @class IBCLIOptionIndex, NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSString;
 
@@ -13,12 +13,14 @@
     NSMutableArray *_inputDocumentPaths;
     NSArray *_rawBuildEnvironment;
     NSMutableDictionary *_buildEnvironment;
+    NSMutableDictionary *_extendedParameters;
     BOOL _shouldPrintUsage;
     BOOL _buildEnvironmentFromClient;
     long long _outputFormat;
 }
 
 + (id)containerFromArguments:(id)arg1 collectingErrors:(id)arg2;
+@property(readonly, nonatomic) NSDictionary *extendedParameters; // @synthesize extendedParameters=_extendedParameters;
 @property(copy, nonatomic) NSDictionary *buildEnvironment; // @synthesize buildEnvironment=_buildEnvironment;
 @property(nonatomic) BOOL buildEnvironmentFromClient; // @synthesize buildEnvironmentFromClient=_buildEnvironmentFromClient;
 @property(copy, nonatomic) NSArray *inputDocumentPaths; // @synthesize inputDocumentPaths=_inputDocumentPaths;
@@ -28,8 +30,10 @@
 - (BOOL)longArgumentIsPresentOnCommandLine:(id)arg1;
 - (void)validateAfterInterpretingOptionsCollectingErrors:(id)arg1;
 @property(readonly) IBCLIOptionIndex *optionIndex;
-- (long long)outputFormatArgumentCode;
-- (void)interpretOption:(CDStruct_96d6799e)arg1 optionalParameter:(id)arg2 collectingErrors:(id)arg3;
+- (void)interpretOption:(id)arg1 optionalParameter:(id)arg2 collectingErrors:(id)arg3;
+- (id)mutableArrayValueForOption:(id)arg1;
+- (void)applyValue:(id)arg1 forOption:(id)arg2;
+- (id)parsePlistArgument:(id)arg1 ofType:(Class)arg2 error:(id *)arg3;
 - (BOOL)isMissingRequiredInputDocument;
 - (BOOL)supportsMultipleInputDocuments;
 - (void)setRawEnvironment:(id)arg1;

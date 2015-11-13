@@ -4,9 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
 @class NSString;
+@protocol DYResource;
 
 @interface DYRenderingAttributes : NSObject
 {
@@ -37,7 +38,8 @@
     struct CGRect _documentRect;
 }
 
-+ (id)renderedImageWithImageInfo:(struct ImageInfo)arg1 size:(struct CGSize)arg2 imageData:(id)arg3 showDepth:(BOOL)arg4 flipped:(BOOL)arg5 showAlpha:(BOOL)arg6;
++ (id)renderedImageWithImageInfo:(struct ImageInfo)arg1 size:(struct CGSize)arg2 imageData:(id)arg3 dataOffset:(unsigned long long)arg4 showDepth:(BOOL)arg5 flipped:(BOOL)arg6 showAlpha:(BOOL)arg7;
++ (unsigned int)getRenderableFormatFromImage:(id)arg1 showDepth:(BOOL)arg2 dataOffsetOut:(unsigned long long *)arg3;
 @property(copy, nonatomic) NSString *displayFormat; // @synthesize displayFormat=_displayFormat;
 @property(nonatomic) long long numberOfColumns; // @synthesize numberOfColumns=_numberOfColumns;
 @property(nonatomic) struct CGRect documentRect; // @synthesize documentRect=_documentRect;
@@ -59,7 +61,7 @@
 @property(nonatomic) BOOL toneMapEnable; // @synthesize toneMapEnable=_toneMapEnable;
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (id)renderedImageUsingRenderer:(struct ImageRenderer *)arg1 imageInfo:(struct ImageInfo)arg2 size:(struct CGSize)arg3 imageData:(id)arg4 showDepth:(BOOL)arg5 flipped:(BOOL)arg6;
+- (id)renderedImageUsingRenderer:(struct ImageRenderer *)arg1 imageInfo:(struct ImageInfo)arg2 size:(struct CGSize)arg3 imageData:(id)arg4 dataOffset:(unsigned long long)arg5 showDepth:(BOOL)arg6 flipped:(BOOL)arg7;
 - (void)calculateToneMapMinMaxForResource:(id)arg1 showDepth:(BOOL)arg2 usingRenderer:(struct ImageRenderer *)arg3;
 - (unsigned int)toneMapType;
 - (void)dealloc;

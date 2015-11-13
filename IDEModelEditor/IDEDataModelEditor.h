@@ -6,15 +6,15 @@
 
 #import <IDEModelEditor/IDEDMEditor.h>
 
-#import "DVTFindBarFindable.h"
-#import "NSSplitViewDelegate.h"
-#import "NSTabViewDelegate.h"
+#import <IDEModelEditor/DVTFindBarFindable-Protocol.h>
+#import <IDEModelEditor/NSSplitViewDelegate-Protocol.h>
+#import <IDEModelEditor/NSTabViewDelegate-Protocol.h>
 
-@class DVTDelayedMenuButton, DVTMapTable, IDEDMDocumentLocation, IDEDataModelConfigurationEditor, IDEDataModelEntityContentsEditor, IDEDataModelFetchRequestEditor, NSMenu, NSSegmentedControl, NSString, NSTabView;
+@class DVTDelayedMenuButton, IDEDMDocumentLocation, IDEDataModelConfigurationEditor, IDEDataModelEntityContentsEditor, IDEDataModelFetchRequestEditor, NSMapTable, NSMenu, NSSegmentedControl, NSString, NSTabView;
 
 @interface IDEDataModelEditor : IDEDMEditor <NSTabViewDelegate, NSSplitViewDelegate, DVTFindBarFindable>
 {
-    DVTMapTable *_findHighlightsByModelObject;
+    NSMapTable *_findHighlightsByModelObject;
     int _selectedHierarchyViewTypeIndex;
     int _selectedViewTypeIndex;
     unsigned long long _selectedTabViewIndex;
@@ -48,7 +48,7 @@
 @property int selectedViewTypeIndex; // @synthesize selectedViewTypeIndex=_selectedViewTypeIndex;
 @property unsigned long long selectedTabViewIndex; // @synthesize selectedTabViewIndex=_selectedTabViewIndex;
 @property(retain) IDEDMDocumentLocation *selectedSearchLocation; // @synthesize selectedSearchLocation=_selectedSearchLocation;
-@property(retain) DVTMapTable *findHighlightsByModelObject; // @synthesize findHighlightsByModelObject=_findHighlightsByModelObject;
+@property(retain) NSMapTable *findHighlightsByModelObject; // @synthesize findHighlightsByModelObject=_findHighlightsByModelObject;
 - (void).cxx_destruct;
 - (void)discardEditing;
 - (BOOL)commitEditingForAction:(int)arg1 errors:(id)arg2;

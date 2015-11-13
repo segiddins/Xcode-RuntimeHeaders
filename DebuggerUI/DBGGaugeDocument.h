@@ -4,16 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDEDebugGaugeReportDocument.h"
-
-@class DBGDebugSession;
+#import <IDEKit/IDEDebugGaugeReportDocument.h>
 
 @interface DBGGaugeDocument : IDEDebugGaugeReportDocument
 {
-    DBGDebugSession *_debugSession;
 }
 
-- (void).cxx_destruct;
 - (void)editorDocumentWillClose;
 - (BOOL)readFromURL:(id)arg1 ofType:(id)arg2 error:(id *)arg3;
 

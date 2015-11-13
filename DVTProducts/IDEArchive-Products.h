@@ -4,14 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDEArchive.h"
+#import <IDEFoundation/IDEArchive.h>
 
-@class NSNumber, NSString, NSURL;
+@class DVTProductCategory, NSNumber, NSString, NSURL;
 
 @interface IDEArchive (Products)
 + (id)largestImageInFilePaths:(id)arg1;
 @property(readonly) NSNumber *products_onDiskSizeBytes;
-@property(readonly) unsigned long long products_productType;
+@property(readonly) DVTProductCategory *products_productCategory;
 @property(readonly) NSURL *products_imageURL;
 - (id)products_platformName;
 - (id)products_appInfoPlist;

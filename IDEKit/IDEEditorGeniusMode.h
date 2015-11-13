@@ -6,9 +6,9 @@
 
 #import <IDEKit/IDEEditorModeViewController.h>
 
-#import "IDEEditorContextDelegate.h"
-#import "IDEEditorMultipleContextDelegate.h"
-#import "NSSplitViewDelegate.h"
+#import <IDEKit/IDEEditorContextDelegate-Protocol.h>
+#import <IDEKit/IDEEditorMultipleContextDelegate-Protocol.h>
+#import <IDEKit/NSSplitViewDelegate-Protocol.h>
 
 @class DVTObservingToken, IDEEditorMultipleContext, NSString;
 
@@ -86,6 +86,7 @@
 - (void)editorMultipleContext:(id)arg1 didSplitEditorContext:(id)arg2 creatingEditorContext:(id)arg3;
 - (void)_setDefaultGeniusCategoryForEditorContext:(id)arg1;
 - (void)_updateRootNavigableItemForEditorContext:(id)arg1;
+- (id)_rootForNavigableItem:(id)arg1;
 - (void)_primitiveSetGeniusCategory:(id)arg1 forEditorContext:(id)arg2;
 - (id)_geniusCategoryForEditorContext:(id)arg1;
 - (void)_setGeniusRootNavigableItem:(id)arg1 forEditorContext:(id)arg2;

@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "IBDocumentForiengContentReader.h"
+#import <IDEInterfaceBuilderCocoaIntegration/IBDocumentForiengContentReader-Protocol.h>
 
 @class IBDocument, NSString;
 
@@ -21,8 +21,8 @@
 - (BOOL)rejectAppleScriptContentReturningError:(id *)arg1;
 - (BOOL)readFromIB2InfoWrapper:(id)arg1 error:(id *)arg2;
 - (BOOL)prepareForReadingWithIB2DependencyNibWrapper:(id)arg1 error:(id *)arg2;
-- (BOOL)readObjectesFromTypeStreamedIB2Archive:(id)arg1 error:(id *)arg2;
-- (BOOL)readObjectesFromKeyedIB2Archive:(id)arg1 error:(id *)arg2;
+- (BOOL)readObjectsFromTypeStreamedIB2Archive:(id)arg1 error:(id *)arg2;
+- (BOOL)readObjectsFromKeyedIB2Archive:(id)arg1 error:(id *)arg2;
 - (id)initWithDocument:(id)arg1;
 
 // Remaining properties

@@ -4,11 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "NSCopying.h"
+#import <IDEFoundation/NSCopying-Protocol.h>
 
-@class DVTDocumentLocation, IDEActivityLogSectionRecorder, IDETypeIdentifier, NSArray, NSMutableArray, NSMutableString, NSString, NSURL;
+@class DVTDocumentLocation, IDEActivityLogSectionRecorder, IDESchemeActionCodeCoverage, IDETypeIdentifier, NSArray, NSMutableArray, NSMutableString, NSString, NSURL;
 
 @interface IDEActivityLogSection : NSObject <NSCopying>
 {
@@ -40,6 +40,7 @@
     NSString *_uniqueIdentifier;
     NSString *_localizedResultString;
     int _lock;
+    IDESchemeActionCodeCoverage *_coverageReport;
 }
 
 + (id)sectionWithContentsOfFile:(id)arg1 error:(id *)arg2;
@@ -51,6 +52,7 @@
 + (id)defaultLogSectionDomainType;
 + (Class)logRecorderClass;
 + (void)initialize;
+@property(retain) IDESchemeActionCodeCoverage *coverageReport; // @synthesize coverageReport=_coverageReport;
 @property(readonly) NSString *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
 @property(copy) NSString *localizedResultString; // @synthesize localizedResultString=_localizedResultString;
 @property BOOL hasAddedIssueMessage; // @synthesize hasAddedIssueMessage=_hasAddedIssueMessage;
@@ -105,7 +107,6 @@
 @property(copy) NSString *signature;
 @property(readonly) NSString *title;
 @property(readonly) id representedObject;
-- (void)setRepresentedObject:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)dealloc;
 @property(readonly) unsigned long long sectionType;

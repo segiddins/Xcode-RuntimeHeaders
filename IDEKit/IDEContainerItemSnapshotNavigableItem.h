@@ -6,7 +6,7 @@
 
 #import <IDEKit/IDEKeyDrivenNavigableItem.h>
 
-#import "IDENavigableItemFileReferenceProxy.h"
+#import <IDEKit/IDENavigableItemFileReferenceProxy-Protocol.h>
 
 @class IDENavigableItem, NSString;
 

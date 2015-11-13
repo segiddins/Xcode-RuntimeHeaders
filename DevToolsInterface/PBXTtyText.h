@@ -7,6 +7,7 @@
 #import <DevToolsInterface/PBXTextView.h>
 
 @class NSString, PBXTextAttributes;
+@protocol XCDebuggerConsoleCompletion;
 
 @interface PBXTtyText : PBXTextView
 {

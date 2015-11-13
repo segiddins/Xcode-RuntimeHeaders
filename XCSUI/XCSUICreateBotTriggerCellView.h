@@ -4,9 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSTableCellView.h"
+#import <AppKit/NSTableCellView.h>
 
-@class IDECapsuleView, IDEViewController<IDECapsuleViewController>;
+@class IDECapsuleView, IDEViewController;
+@protocol IDECapsuleViewController;
 
 @interface XCSUICreateBotTriggerCellView : NSTableCellView
 {
@@ -17,6 +18,7 @@
 @property(readonly) IDEViewController<IDECapsuleViewController> *viewController; // @synthesize viewController=_viewController;
 @property(readonly) __weak IDECapsuleView *capsuleView; // @synthesize capsuleView=_capsuleView;
 - (void).cxx_destruct;
+- (void)seekAndDestroy;
 - (void)configureForViewController:(id)arg1 disclosed:(BOOL)arg2;
 
 @end

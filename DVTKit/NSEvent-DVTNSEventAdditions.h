@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSEvent.h"
+#import <AppKit/NSEvent.h>
 
 @interface NSEvent (DVTNSEventAdditions)
 - (struct CGPoint)dvt_locationInWindowRelativeToView:(id)arg1;
@@ -13,6 +13,7 @@
 - (struct CGPoint)dvt_flooredLocationInWindow;
 - (struct CGPoint)dvt_flooredLocationInView:(id)arg1;
 - (BOOL)dvt_isDragEventAnIntentialLeftDragWithRespectToMouseDown:(id)arg1;
+- (BOOL)dvt_isOptionalRevealGesture;
 - (BOOL)dvt_isRevealGesture;
 - (BOOL)dvt_isControlKeyDown;
 - (BOOL)dvt_isCommandKeyDown;

@@ -6,6 +6,8 @@
 
 #import <DevToolsSupport/TSOutputStream.h>
 
+@protocol TSOutputStreams;
+
 @interface TSFilterOutputStream : TSOutputStream
 {
     id <TSOutputStreams> _outputStream;

@@ -4,20 +4,20 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "DVTLayoutView_ML.h"
+#import <DVTKit/DVTLayoutView_ML.h>
 
-#import "DVTInvalidation.h"
+#import <IDEKit/DVTInvalidation-Protocol.h>
 
 @class DVTBorderedView, DVTStackBacktrace, IDEControlGroup, IDEPathControl, NSString;
 
 @interface IDENavBar : DVTLayoutView_ML <DVTInvalidation>
 {
     DVTBorderedView *_pathBorderedView;
+    BOOL _isGrouped;
+    int _borderSides;
     IDEPathControl *_pathControl;
     IDEControlGroup *_leftControlGroup;
     IDEControlGroup *_rightControlGroup;
-    int _borderSides;
-    BOOL _isGrouped;
 }
 
 + (id)inactiveTextColorForGradientStyle:(int)arg1;
@@ -31,10 +31,10 @@
 + (id)borderColorForGradientStyle:(int)arg1;
 + (void)initialize;
 @property BOOL isGrouped; // @synthesize isGrouped=_isGrouped;
-@property(retain) IDEControlGroup *rightControlGroup; // @synthesize rightControlGroup=_rightControlGroup;
-@property(retain) IDEPathControl *pathControl; // @synthesize pathControl=_pathControl;
-@property(retain) IDEControlGroup *leftControlGroup; // @synthesize leftControlGroup=_leftControlGroup;
 @property(nonatomic) int borderSides; // @synthesize borderSides=_borderSides;
+@property(retain) IDEControlGroup *rightControlGroup; // @synthesize rightControlGroup=_rightControlGroup;
+@property(retain) IDEControlGroup *leftControlGroup; // @synthesize leftControlGroup=_leftControlGroup;
+@property(retain) IDEPathControl *pathControl; // @synthesize pathControl=_pathControl;
 - (void).cxx_destruct;
 - (void)refreshColorsForXcode5UI:(BOOL)arg1;
 - (void)_updateFocusStyleForGradientStyle:(int)arg1;

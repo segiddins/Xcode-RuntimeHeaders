@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "GPUTraceOutlineItem.h"
+#import <GPUDebuggerFoundation/GPUTraceOutlineItem.h>
 
-#import "IDEKeyDrivenNavigableItemRepresentedObject.h"
+#import <GPUDebuggerKit/IDEKeyDrivenNavigableItemRepresentedObject-Protocol.h>
 
 @class DVTDocumentLocation, DVTFileDataType, IDEFileReference, NSImage, NSString;
 

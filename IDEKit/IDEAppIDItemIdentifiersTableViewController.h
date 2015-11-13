@@ -6,10 +6,11 @@
 
 #import <IDEKit/IDEViewController.h>
 
-#import "DVTTableViewDelegate.h"
-#import "NSTableViewDataSource.h"
+#import <IDEKit/DVTTableViewDelegate-Protocol.h>
+#import <IDEKit/NSTableViewDataSource-Protocol.h>
 
 @class DVTBorderedView, DVTGradientImageButton, DVTStackView_ML, DVTTableView, IDEAppIDItemIdentifiersItemModelSet, NSArray, NSMutableArray, NSScrollView, NSString;
+@protocol IDEPortalInfoDelegate;
 
 @interface IDEAppIDItemIdentifiersTableViewController : IDEViewController <DVTTableViewDelegate, NSTableViewDataSource>
 {

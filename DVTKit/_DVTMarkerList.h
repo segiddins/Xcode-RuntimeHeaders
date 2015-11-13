@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
 @class NSMutableArray;
 
@@ -17,7 +17,7 @@
 
 - (void).cxx_destruct;
 - (id)markRectList;
-- (long long)numMarkRects;
+- (unsigned long long)numMarkRects;
 - (struct CGRect)addMark:(double)arg1;
 - (void)clearMarks;
 - (struct CGRect)markRect;

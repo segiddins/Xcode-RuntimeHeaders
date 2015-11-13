@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDEProjectItemViewController.h"
+#import <IDEKit/IDEProjectItemViewController.h>
 
 @class DVTBorderedView, DVTGradientImageButton, DVTObservingToken, DVTTableView, NSArrayController, Xcode3SafariKeychainItemModel;
 
@@ -34,7 +34,7 @@
 - (id)initWithEditorItemModel:(id)arg1 portalInfoDelegate:(id)arg2;
 
 // Remaining properties
-@property(readonly, nonatomic) Xcode3SafariKeychainItemModel *model;
+@property(readonly, nonatomic) Xcode3SafariKeychainItemModel *model; // @dynamic model;
 
 @end
 

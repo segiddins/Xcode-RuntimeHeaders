@@ -6,6 +6,8 @@
 
 #import <DevToolsInterface/PBXFileDocument.h>
 
+@protocol PBXExternalEditorClientProtocol;
+
 @interface PBXExternalFileDocument : PBXFileDocument
 {
     id <PBXExternalEditorClientProtocol> _externalEditorProxy;

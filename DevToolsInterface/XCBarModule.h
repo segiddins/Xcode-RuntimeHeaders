@@ -6,7 +6,7 @@
 
 #import <DevToolsInterface/PBXProjectModule.h>
 
-#import "XCFosterParentHostProtocol.h"
+#import <DevToolsInterface/XCFosterParentHostProtocol-Protocol.h>
 
 @class NSMutableArray, NSMutableDictionary, XCBarView, XCFlowLayout;
 

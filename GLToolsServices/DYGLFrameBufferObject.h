@@ -6,7 +6,7 @@
 
 #import <GLToolsServices/DYGLResourceObject.h>
 
-#import "DYFrameBuffer.h"
+#import <GLToolsServices/DYFrameBuffer-Protocol.h>
 
 @class NSArray, NSDictionary, NSMutableDictionary, NSString;
 

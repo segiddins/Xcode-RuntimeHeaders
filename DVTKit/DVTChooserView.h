@@ -7,18 +7,19 @@
 #import <DVTKit/DVTBorderedView.h>
 
 @class DVTChoice, NSArray, NSIndexSet, NSMatrix, NSMutableArray, NSNumber;
+@protocol DVTChooserViewDelegate;
 
 @interface DVTChooserView : DVTBorderedView
 {
-    NSMatrix *_buttonMatrix;
-    NSIndexSet *_selectionIndexes;
     NSMutableArray *_choices;
-    id <DVTChooserViewDelegate> _delegate;
-    int _justification;
-    int _gradientStyle;
     BOOL _allowsMultipleSelection;
     BOOL _allowsEmptySelection;
     BOOL _choicesFillWidth;
+    int _gradientStyle;
+    int _justification;
+    NSMatrix *_buttonMatrix;
+    NSIndexSet *_selectionIndexes;
+    id <DVTChooserViewDelegate> _delegate;
     NSNumber *_explicitImageScaling;
 }
 
@@ -30,11 +31,11 @@
 + (void)initialize;
 @property(copy, nonatomic) NSNumber *explicitImageScaling; // @synthesize explicitImageScaling=_explicitImageScaling;
 @property(retain) id <DVTChooserViewDelegate> delegate; // @synthesize delegate=_delegate;
-@property(nonatomic) int gradientStyle; // @synthesize gradientStyle=_gradientStyle;
 @property(nonatomic) BOOL choicesFillWidth; // @synthesize choicesFillWidth=_choicesFillWidth;
 @property(nonatomic) BOOL allowsEmptySelection; // @synthesize allowsEmptySelection=_allowsEmptySelection;
 @property(nonatomic) BOOL allowsMultipleSelection; // @synthesize allowsMultipleSelection=_allowsMultipleSelection;
 @property(nonatomic) int justification; // @synthesize justification=_justification;
+@property(nonatomic) int gradientStyle; // @synthesize gradientStyle=_gradientStyle;
 @property(retain) NSMatrix *_buttonMatrix; // @synthesize _buttonMatrix;
 - (void).cxx_destruct;
 @property(readonly) NSArray *grabRects;
@@ -51,6 +52,7 @@
 - (void)setBackgroundColor:(id)arg1;
 - (void)setBorderSides:(int)arg1;
 - (void)layoutTopDown;
+- (void)_chooserButtonDoubleClicked:(id)arg1;
 - (void)_chooserButtonClicked:(id)arg1;
 - (void)drawBorderInRect:(struct CGRect)arg1;
 - (struct CGRect)_exposedRectLeft;

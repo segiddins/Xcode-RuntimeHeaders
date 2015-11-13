@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSBezierPath.h"
+#import <AppKit/NSBezierPath.h>
 
 @interface NSBezierPath (IBBezierPathAdditions)
 + (id)pathAroundRect:(struct CGRect)arg1 withRoundedCorners:(unsigned long long)arg2 andRadius:(double)arg3;
@@ -50,8 +50,6 @@
 - (BOOL)isFlat;
 - (void)enumerateElements:(CDUnknownBlockType)arg1;
 - (struct CGRect)drawingBounds;
-- (void)fillWithLinearGradientFromPoint:(struct CGPoint)arg1 withColor:(id)arg2 toPoint:(struct CGPoint)arg3 withColor:(id)arg4;
-- (void)fillWithLinearGradientFromPoint:(struct CGPoint)arg1 toPoint:(struct CGPoint)arg2 withColors:(id)arg3 atStops:(id)arg4;
 - (void)strokeOutside;
 - (void)strokeInside;
 - (void)appendBezierPathWithRoundedVertexApproachingPoint:(struct CGPoint)arg1 withRadius:(double)arg2 endingAtPoint:(struct CGPoint)arg3;

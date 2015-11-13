@@ -6,12 +6,13 @@
 
 #import <DevToolsCore/PBXContainer.h>
 
-#import "PBXChangeNotification.h"
-#import "PBXContainerItemChangeNotification.h"
-#import "XCCompatibilityChecking.h"
-#import "XCConfigurationInspectables.h"
+#import <DevToolsCore/PBXChangeNotification-Protocol.h>
+#import <DevToolsCore/PBXContainerItemChangeNotification-Protocol.h>
+#import <DevToolsCore/XCCompatibilityChecking-Protocol.h>
+#import <DevToolsCore/XCConfigurationInspectables-Protocol.h>
 
 @class NSArray, NSDate, NSHashTable, NSMapTable, NSMutableArray, NSMutableDictionary, NSSet, NSString, NSTimer, PBXBookmarkGroup, PBXBuildSettingsDictionary, PBXBuildStyle, PBXCodeSenseManager, PBXExecutable, PBXFileReference, PBXGroup, PBXLogOutputString, PBXProjectIndex, PBXTarget, XCArchiveFormat, XCBreakpointsBucket, XCBuildOperation, XCConfigurationList, XCFileSystemWatcher, XCRoots, XCSourceControlManager;
+@protocol XCRemoteComputer;
 
 @interface PBXProject : PBXContainer <PBXChangeNotification, PBXContainerItemChangeNotification, XCCompatibilityChecking, XCConfigurationInspectables>
 {

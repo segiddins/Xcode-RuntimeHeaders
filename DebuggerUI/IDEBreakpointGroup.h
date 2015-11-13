@@ -4,20 +4,20 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "DVTInvalidation.h"
-#import "IDEKeyDrivenNavigableItemRepresentedObject.h"
+#import <DebuggerUI/DVTInvalidation-Protocol.h>
+#import <DebuggerUI/IDEKeyDrivenNavigableItemRepresentedObject-Protocol.h>
 
-@class DVTDocumentLocation, DVTFileDataType, DVTMapTable, DVTStackBacktrace, IDEBreakpointBucket, IDEFileReference, NSArray, NSImage, NSMutableArray, NSString;
+@class DVTDocumentLocation, DVTFileDataType, DVTStackBacktrace, IDEBreakpointBucket, IDEFileReference, NSArray, NSImage, NSMapTable, NSMutableArray, NSString;
 
 @interface IDEBreakpointGroup : NSObject <IDEKeyDrivenNavigableItemRepresentedObject, DVTInvalidation>
 {
-    IDEBreakpointBucket *_bucket;
     NSMutableArray *_subGroups;
+    NSMapTable *_breakpointToObserverTokenMap;
+    IDEBreakpointBucket *_bucket;
     unsigned long long _breakpointCount;
     unsigned long long _disabledBreakpointCount;
-    DVTMapTable *_breakpointToObserverTokenMap;
 }
 
 + (void)initialize;

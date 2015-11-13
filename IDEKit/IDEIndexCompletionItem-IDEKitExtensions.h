@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDEIndexCompletionItem.h"
+#import <IDEFoundation/IDEIndexCompletionItem.h>
 
-#import "DVTTextCompletionItem.h"
+#import <IDEKit/DVTTextCompletionItem-Protocol.h>
 
 @class NSArray, NSAttributedString, NSImage, NSString;
 
@@ -25,6 +25,7 @@
 @property(readonly, copy) NSAttributedString *descriptionText;
 @property(readonly, copy) NSString *displayText;
 @property(readonly, copy) NSString *displayType;
+@property double fuzzyMatchingScore;
 @property(readonly) unsigned long long hash;
 @property(readonly) NSImage *highlightedStatusIcon;
 @property(readonly, copy) NSString *name;

@@ -6,8 +6,8 @@
 
 #import <GPUTools/DYExperiment.h>
 
-#import "NSCoding.h"
-#import "NSCopying.h"
+#import <GPUTools/NSCoding-Protocol.h>
+#import <GPUTools/NSCopying-Protocol.h>
 
 @class NSArray, NSMutableDictionary, NSSet;
 

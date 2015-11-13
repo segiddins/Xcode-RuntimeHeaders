@@ -6,9 +6,9 @@
 
 #import <DevToolsCore/XCSCMOperation.h>
 
-#import "NSCopying.h"
-#import "PBXTSLineStreamConsuming.h"
-#import "PBXTSStreamConsumerRetaining.h"
+#import <DevToolsCore/NSCopying-Protocol.h>
+#import <DevToolsCore/PBXTSLineStreamConsuming-Protocol.h>
+#import <DevToolsCore/PBXTSStreamConsumerRetaining-Protocol.h>
 
 @class NSArray, NSMutableDictionary, NSMutableString, NSString, XCByteStreamPosixTask;
 

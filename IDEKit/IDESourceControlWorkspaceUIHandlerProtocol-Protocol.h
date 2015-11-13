@@ -4,11 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <IDEKit/NSObject-Protocol.h>
 
-@class IDESourceControlWorkspaceMonitor, NSArray, NSError;
+@class IDESourceControlWorkspaceMonitor, NSArray, NSError, NSString;
 
 @protocol IDESourceControlWorkspaceUIHandlerProtocol <NSObject>
+- (void)requestOperationConfirmationForOperationName:(NSString *)arg1 workingCopyName:(NSArray *)arg2 completionBlock:(void (^)(BOOL))arg3;
 - (void)workspaceMonitorDidFinishScanning:(IDESourceControlWorkspaceMonitor *)arg1;
 - (void)offerAdditionalWorkingCopies;
 - (void)warnAboutNewerRepositoryVersionWithError:(NSError *)arg1;

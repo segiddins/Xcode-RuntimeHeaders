@@ -6,7 +6,7 @@
 
 #import <IDEModelEditor/IDEDMEditorController.h>
 
-#import "DVTOutlineViewDelegate.h"
+#import <IDEModelEditor/DVTOutlineViewDelegate-Protocol.h>
 
 @class DVTBorderedView, DVTImageAndTextColumn, IDEDMEditor, IDEDMIndentationAdjustingOutlineView, NSArray, NSString, NSTextFieldCell, NSTreeController;
 

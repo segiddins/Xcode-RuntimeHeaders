@@ -4,18 +4,18 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-@class IDELocalizationXLIFFComparisonIssueLocation, NSString;
+@class DVTComparisonDocumentLocation, NSString;
 
 @interface IDELocalizationXLIFFComparisonIssue : NSObject
 {
     int _category;
     NSString *_message;
-    IDELocalizationXLIFFComparisonIssueLocation *_location;
+    DVTComparisonDocumentLocation *_location;
 }
 
-@property(readonly) IDELocalizationXLIFFComparisonIssueLocation *location; // @synthesize location=_location;
+@property(readonly) DVTComparisonDocumentLocation *location; // @synthesize location=_location;
 @property(readonly) int category; // @synthesize category=_category;
 @property(readonly) NSString *message; // @synthesize message=_message;
 - (void).cxx_destruct;

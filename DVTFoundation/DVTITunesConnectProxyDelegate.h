@@ -4,26 +4,26 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "ITunesSoftwareServiceUploadDelegate.h"
+#import <DVTFoundation/ITunesSoftwareServiceUploadDelegate-Protocol.h>
 
 @class NSString;
 
 @interface DVTITunesConnectProxyDelegate : NSObject <ITunesSoftwareServiceUploadDelegate>
 {
-    CDUnknownBlockType willBeginCallback;
-    CDUnknownBlockType updatePercentageCallback;
-    CDUnknownBlockType updateMessageCallback;
-    CDUnknownBlockType shouldContinueCallback;
-    CDUnknownBlockType didCompleteCallback;
+    CDUnknownBlockType _willBeginCallback;
+    CDUnknownBlockType _updatePercentageCallback;
+    CDUnknownBlockType _updateMessageCallback;
+    CDUnknownBlockType _shouldContinueCallback;
+    CDUnknownBlockType _didCompleteCallback;
 }
 
-@property(copy) CDUnknownBlockType didCompleteCallback; // @synthesize didCompleteCallback;
-@property(copy) CDUnknownBlockType shouldContinueCallback; // @synthesize shouldContinueCallback;
-@property(copy) CDUnknownBlockType updateMessageCallback; // @synthesize updateMessageCallback;
-@property(copy) CDUnknownBlockType updatePercentageCallback; // @synthesize updatePercentageCallback;
-@property(copy) CDUnknownBlockType willBeginCallback; // @synthesize willBeginCallback;
+@property(copy) CDUnknownBlockType didCompleteCallback; // @synthesize didCompleteCallback=_didCompleteCallback;
+@property(copy) CDUnknownBlockType shouldContinueCallback; // @synthesize shouldContinueCallback=_shouldContinueCallback;
+@property(copy) CDUnknownBlockType updateMessageCallback; // @synthesize updateMessageCallback=_updateMessageCallback;
+@property(copy) CDUnknownBlockType updatePercentageCallback; // @synthesize updatePercentageCallback=_updatePercentageCallback;
+@property(copy) CDUnknownBlockType willBeginCallback; // @synthesize willBeginCallback=_willBeginCallback;
 - (void).cxx_destruct;
 - (void)softwareService:(id)arg1 didCompleteUploadForApplication:(id)arg2;
 - (BOOL)softwareService:(id)arg1 shouldContinueUploadForApplication:(id)arg2;

@@ -4,9 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDEProjectItemModel.h"
+#import <IDEKit/IDEProjectItemModel.h>
 
 @class IDEAppIDItemIdentifiersItemModelSet, NSArray, NSString;
+@protocol IDEFlightChecking;
 
 @interface Xcode3iCloudItemModel : IDEProjectItemModel
 {
@@ -33,6 +34,7 @@
 @property(readonly, nonatomic) NSString *defaultContainerID;
 - (void)_setKeyValueStoreID:(id)arg1 postAssignmentBlock:(CDUnknownBlockType)arg2;
 - (id)ubiquityContainerIDs;
+@property(readonly) BOOL supportsCloudDocs;
 @property(readonly) BOOL allowsCloudKit;
 - (void)_setServiceIDs:(id)arg1 postAssignmentBlock:(CDUnknownBlockType)arg2;
 - (void)_setProperty:(id)arg1 instanceVariable:(id *)arg2 value:(id)arg3 postAssignmentBlock:(CDUnknownBlockType)arg4;

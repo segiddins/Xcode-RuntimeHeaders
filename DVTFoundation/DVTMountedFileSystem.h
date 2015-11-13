@@ -4,15 +4,15 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-@class DVTMapTable, NSString;
+@class NSMapTable, NSString;
 
 @interface DVTMountedFileSystem : NSObject
 {
     int _deviceNumber;
     NSString *_mountPath;
-    DVTMapTable *_inodesToVNodes;
+    NSMapTable *_inodesToVNodes;
 }
 
 + (id)mountedFileSystemWithDeviceNumber:(int)arg1;

@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "DVTInvalidation.h"
+#import <IDESourceEditor/DVTInvalidation-Protocol.h>
 
 @class DVTObservingToken, DVTStackBacktrace, IDESourceCodeBlameController, NSArray, NSString;
 
@@ -27,7 +27,7 @@
 - (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (void)blameItemsForLine:(long long)arg1 withCompletionBlock:(CDUnknownBlockType)arg2;
-- (void)_findlameItemsForLine:(long long)arg1 withCompletionBlock:(CDUnknownBlockType)arg2;
+- (void)_findBlameItemsForLine:(long long)arg1 withCompletionBlock:(CDUnknownBlockType)arg2;
 - (id)initWithSourceCodeEditor:(id)arg1;
 
 // Remaining properties

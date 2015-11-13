@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
 @class DTXChannel, Protocol;
 
@@ -15,7 +15,7 @@
     DTXChannel *_channel;
 }
 
-@property(nonatomic) DTXChannel *channel; // @synthesize channel=_channel;
+@property(retain, nonatomic) DTXChannel *channel; // @synthesize channel=_channel;
 @property Protocol *remoteInterface; // @synthesize remoteInterface=_remoteInterface;
 - (void)_sendInvocationMessage:(id)arg1;
 - (void)setExportedObject:(id)arg1 queue:(id)arg2;

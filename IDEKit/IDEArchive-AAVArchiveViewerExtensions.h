@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDEArchive.h"
+#import <IDEFoundation/IDEArchive.h>
 
 @class IDEArchivePackager, NSArray, NSImage, NSString;
 
@@ -12,9 +12,6 @@
 - (id)aav_validateForDirectDistribution;
 @property(readonly) NSString *aav_identifierLabel;
 @property(readonly) IDEArchivePackager *aav_packager;
-@property(readonly) _Bool aav_canExport;
-@property(readonly) _Bool aav_canSubmit;
-@property(readonly) _Bool aav_canValidate;
 @property(readonly) NSImage *aav_displayIcon;
 @property(readonly) NSArray *aav_displayIcons;
 - (id)aav_version;

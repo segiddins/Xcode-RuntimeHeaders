@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDEDiagnosticActivityLogMessage.h"
+#import <IDEFoundation/IDEDiagnosticActivityLogMessage.h>
 
 @class NSImage, NSString;
 
@@ -14,7 +14,6 @@
 - (BOOL)updateFixItInfoWithTextStorage:(id)arg1;
 - (void)setLocationHasBeenUpdated:(BOOL)arg1;
 - (BOOL)locationHasBeenUpdated;
-@property(readonly) unsigned long long activityLogSeverity;
 @property(readonly) struct _NSRange fixItReplacementRange;
 - (void)setFixItReplacementRange:(struct _NSRange)arg1;
 @property(readonly) NSString *fixItString;

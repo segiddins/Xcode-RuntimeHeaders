@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "DYCaptureSessionInfo.h"
+#import <GPUTools/DYCaptureSessionInfo.h>
 
 @class NSArray;
 
@@ -20,7 +20,7 @@
 @property(readonly, retain, nonatomic) NSArray *requiredExtensions; // @synthesize requiredExtensions=_requiredExtensions;
 @property(readonly, retain, nonatomic) NSArray *contextsInfo; // @synthesize contextsInfo=_contextsInfo;
 - (void)deleteContexts:(const vector_cfeb9b06 *)arg1;
-- (BOOL)canPlaybackOnDeviceWithInfo:(id)arg1 limitBackwardsCompatibility:(BOOL)arg2;
+- (BOOL)canPlaybackOnDeviceWithInfo:(id)arg1 limitBackwardsCompatibility:(BOOL)arg2 isInternal:(BOOL)arg3;
 - (id)contextInfoForContext:(unsigned long long)arg1;
 - (void)dealloc;
 - (id)initWithCaptureStore:(id)arg1;

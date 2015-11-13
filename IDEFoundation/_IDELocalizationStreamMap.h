@@ -6,6 +6,8 @@
 
 #import <IDEFoundation/IDELocalizationStream.h>
 
+@protocol IDELocalizationStreamPublisher;
+
 @interface _IDELocalizationStreamMap : IDELocalizationStream
 {
     BOOL _shouldComplete;

@@ -4,11 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "IDEStructureEditingDropTarget.h"
-#import "IDEStructureEditingGroupingTarget.h"
-#import "IDEStructureEditingRemoveSubitemsTarget.h"
+#import <IDEKit/IDEStructureEditingDropTarget-Protocol.h>
+#import <IDEKit/IDEStructureEditingGroupingTarget-Protocol.h>
+#import <IDEKit/IDEStructureEditingRemoveSubitemsTarget-Protocol.h>
 
 @class DVTObservingToken, IDEGroup, IDENavigableItem, NSString;
 
@@ -25,13 +25,7 @@
 + (id)_containerAddingItemsAssistantExtensionForContainer:(id)arg1;
 + (BOOL)_acceptDropIntoGroupAtIndex:(long long)arg1 withContext:(id)arg2;
 + (void)_performHoldingLock:(id)arg1 errors:(id)arg2 operation:(CDUnknownBlockType)arg3;
-+ (void)_computeLocationsForSourceURLs:(id)arg1 intoDstFolderPath:(id)arg2 srcPaths:(id)arg3 dstPaths:(id)arg4 addPaths:(id)arg5 allURLs:(id)arg6 shouldCheckAncestry:(BOOL)arg7;
 + (BOOL)_acceptDropAtIndex:(long long)arg1 withContext:(id)arg2;
-+ (id)_urlsFromContainerItems:(id)arg1;
-+ (BOOL)_acceptDropIntoFolder:(id)arg1 withContext:(id)arg2;
-+ (void)_ensureDestinationFolderPathExists:(id)arg1;
-+ (BOOL)_divideUpURLs:(id)arg1 inWorkspace:(id)arg2 toCopy:(id)arg3 orMove:(id)arg4;
-+ (id)_distinctFolderRootPathsInWorkspace:(id)arg1;
 + (BOOL)_acceptFileURLs:(id)arg1 dropAtIndex:(long long)arg2 withContext:(id)arg3;
 + (BOOL)_acceptContainerItems:(id)arg1 dropAtIndex:(long long)arg2 withContext:(id)arg3;
 + (id)_targetForStructureEditingOperation:(unsigned long long)arg1 proposedNavigableItem:(id)arg2 proposedChildIndex:(long long)arg3;

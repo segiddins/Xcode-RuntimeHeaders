@@ -4,15 +4,16 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "NSCopying.h"
+#import <DVTFoundation/NSCopying-Protocol.h>
 
 @class DVTAppIDFeatures, NSArray, NSDictionary, NSString;
 
 @interface DVTCodesignResolutionInputs : NSObject <NSCopying>
 {
     BOOL _requiresProvisioningProfile;
+    BOOL _usingTeamBasedSigning;
     DVTAppIDFeatures *_requiredFeatures;
     NSArray *_requiredCodesignableDevices;
     NSDictionary *_requiredEntitlements;
@@ -20,10 +21,17 @@
     NSString *_provisioningProfilePlatform;
     unsigned long long _provisioningProfileType;
     NSString *_bundleIdentifier;
+    NSString *_targetName;
     NSString *_portalTeamID;
+    NSString *_codesignIdentity;
+    NSString *_provisioningProfileUUID;
 }
 
+@property(retain) NSString *provisioningProfileUUID; // @synthesize provisioningProfileUUID=_provisioningProfileUUID;
+@property(retain) NSString *codesignIdentity; // @synthesize codesignIdentity=_codesignIdentity;
 @property(retain) NSString *portalTeamID; // @synthesize portalTeamID=_portalTeamID;
+@property BOOL usingTeamBasedSigning; // @synthesize usingTeamBasedSigning=_usingTeamBasedSigning;
+@property(retain) NSString *targetName; // @synthesize targetName=_targetName;
 @property(retain) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property unsigned long long provisioningProfileType; // @synthesize provisioningProfileType=_provisioningProfileType;
 @property BOOL requiresProvisioningProfile; // @synthesize requiresProvisioningProfile=_requiresProvisioningProfile;

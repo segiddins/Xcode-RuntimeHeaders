@@ -6,6 +6,8 @@
 
 #import <DevToolsCore/XCOutputStream.h>
 
+@protocol XCOutputStreams;
+
 @interface XCFilterOutputStream : XCOutputStream
 {
     id <XCOutputStreams> _nextOutputStream;

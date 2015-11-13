@@ -4,12 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <XCSUI/NSObject-Protocol.h>
 
 @class IDEWorkspaceTabController, NSWindow;
 
 @protocol IDEContinuousIntegrationCreateEditBotWindowController <NSObject>
-- (void)beginSessionModalForWorkspaceTabController:(IDEWorkspaceTabController *)arg1 hostWindow:(NSWindow *)arg2 editingBot:(id)arg3 editingMode:(long long)arg4 withCompletionBlock:(void (^)(int, id, NSError *))arg5;
-- (void)beginSessionModalForWorkspaceTabController:(IDEWorkspaceTabController *)arg1 hostWindow:(NSWindow *)arg2 editingBot:(id)arg3 withCompletionBlock:(void (^)(int, id, NSError *))arg4;
+- (void)beginSessionModalForWorkspaceTabController:(IDEWorkspaceTabController *)arg1 redefineBot:(id)arg2 hostWindow:(NSWindow *)arg3 withCompletionBlock:(void (^)(int, id, NSError *))arg4;
+- (void)beginSessionModalForWorkspaceTabController:(IDEWorkspaceTabController *)arg1 hostWindow:(NSWindow *)arg2 withCompletionBlock:(void (^)(int, id, NSError *))arg3;
 @end
 

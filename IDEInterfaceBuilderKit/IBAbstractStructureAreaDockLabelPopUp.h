@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSView.h"
+#import <AppKit/NSView.h>
 
 @class NSString;
 
@@ -23,7 +23,7 @@
 - (struct CGRect)rectToPopUpFromPoint:(struct CGPoint)arg1 inView:(id)arg2;
 - (struct CGSize)sizeThatFits;
 - (struct CGRect)contentRect;
-- (unsigned long long)titleDrawingOptions;
+- (long long)titleDrawingOptions;
 - (id)attributedTitle;
 - (id)attributedTitleForTitle:(id)arg1;
 - (id)titleAttributes;

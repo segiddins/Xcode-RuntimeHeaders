@@ -6,8 +6,8 @@
 
 #import <DevToolsInterface/PBXProjectModule.h>
 
-#import "NSTabViewDelegate.h"
-#import "XCDockableDragSource.h"
+#import <DevToolsInterface/NSTabViewDelegate-Protocol.h>
+#import <DevToolsInterface/XCDockableDragSource-Protocol.h>
 
 @class NSString, XCBorderView, XCExtendedTabView;
 

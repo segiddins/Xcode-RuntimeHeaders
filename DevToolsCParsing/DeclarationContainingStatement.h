@@ -6,9 +6,10 @@
 
 #import <DevToolsCParsing/Expression.h>
 
-#import "ScopeLookup.h"
+#import <DevToolsCParsing/ScopeLookup-Protocol.h>
 
-@class ASTNode<ScopeLookup>, NSMutableArray;
+@class ASTNode, NSMutableArray;
+@protocol ScopeLookup;
 
 @interface DeclarationContainingStatement : Expression <ScopeLookup>
 {

@@ -6,9 +6,9 @@
 
 #import <DevToolsInterface/PBXInspectorPaneModule.h>
 
-#import "NSTableViewDataSource.h"
-#import "NSTableViewDelegate.h"
-#import "XCEDataRootAdapterP.h"
+#import <DevToolsInterface/NSTableViewDataSource-Protocol.h>
+#import <DevToolsInterface/NSTableViewDelegate-Protocol.h>
+#import <DevToolsInterface/XCEDataRootAdapterP-Protocol.h>
 
 @class NSArray, NSArrayController, NSMutableArray, NSMutableDictionary, NSPopUpButton, NSSearchField, NSSet, NSSplitView, NSString, NSTextView, PBXExtendedOutlineView, XCPropertyConditionSet, XCPropertyDefinition, XCPropertyInfoContext;
 

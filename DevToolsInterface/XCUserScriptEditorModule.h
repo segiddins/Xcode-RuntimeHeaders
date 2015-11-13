@@ -6,8 +6,8 @@
 
 #import <DevToolsInterface/PBXModule.h>
 
-#import "NSMenuDelegate.h"
-#import "NSOpenSavePanelDelegate.h"
+#import <DevToolsInterface/NSMenuDelegate-Protocol.h>
+#import <DevToolsInterface/NSOpenSavePanelDelegate-Protocol.h>
 
 @class NSButton, NSIndexSet, NSMenu, NSMenuItem, NSMutableDictionary, NSPathControl, NSPopUpButton, NSScrollView, NSSplitView, NSString, NSTabView, NSTextField, NSTreeController, NSView, PBXExtendedOutlineView, XCBinderItem, XCOrganizerFileSystemNodeInfo, XCUserScriptGroup, XCUserScriptNode;
 

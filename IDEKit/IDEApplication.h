@@ -4,11 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "DVTApplication.h"
+#import <DVTKit/DVTApplication.h>
 
-#import "NSMenuDelegate.h"
+#import <IDEKit/NSMenuDelegate-Protocol.h>
 
 @class NSString;
+@protocol IDEApplicationEventDelegate;
 
 @interface IDEApplication : DVTApplication <NSMenuDelegate>
 {
@@ -30,8 +31,6 @@
 - (void)setWindowsMenu:(id)arg1;
 - (void)menuNeedsUpdate:(id)arg1;
 - (void)reportException:(id)arg1;
-- (void)_enableFloatingDebugger;
-- (id)_findDebuggingWorkspaceWindowOrFrontmostWorkspaceWindow;
 - (BOOL)restoreWindowWithIdentifier:(id)arg1 state:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)setSdefSupport_activeWorkspaceDocument:(id)arg1;
 - (id)sdefSupport_activeWorkspaceDocument;

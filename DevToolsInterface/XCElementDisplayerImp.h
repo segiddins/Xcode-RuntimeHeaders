@@ -6,7 +6,7 @@
 
 #import <DevToolsInterface/XCElementImp.h>
 
-#import "XCElementDisplayerP.h"
+#import <DevToolsInterface/XCElementDisplayerP-Protocol.h>
 
 @class NSInvocation, NSObject, NSString, XCElementDataDelegate;
 

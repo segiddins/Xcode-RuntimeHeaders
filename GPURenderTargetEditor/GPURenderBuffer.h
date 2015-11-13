@@ -4,12 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSViewController.h"
+#import <AppKit/NSViewController.h>
 
-#import "DVTInvalidation.h"
-#import "GPUTraceBubbleOwner.h"
+#import <GPURenderTargetEditor/DVTInvalidation-Protocol.h>
+#import <GPURenderTargetEditor/GPUTraceBubbleOwner-Protocol.h>
 
 @class DVTStackBacktrace, DYRenderingAttributes, GPURenderBufferButton, GPURenderBufferView, GPURenderJob, GPUTraceEditor, GPUTraceResourceInfoBubble, GPUTraceResourceSettingsBubble, NSLayoutConstraint, NSMenu, NSString, NSTextField;
+@protocol DYResource;
 
 @interface GPURenderBuffer : NSViewController <GPUTraceBubbleOwner, DVTInvalidation>
 {

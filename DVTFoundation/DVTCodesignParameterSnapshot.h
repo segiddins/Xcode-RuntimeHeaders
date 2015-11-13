@@ -4,9 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
 @class DVTSigningCertificate, NSString;
+@protocol DVTProvisioningProfile;
 
 @interface DVTCodesignParameterSnapshot : NSObject
 {
@@ -15,17 +16,15 @@
     NSString *_identityHash;
 }
 
-+ (id)snapshotForAdHocSigning;
-+ (id)snapshotForNullSigning;
-+ (id)snapshotWithProvisioningProfile:(id)arg1;
-+ (id)snapshotWithProvisioningProfile:(id)arg1 andSigningCertificate:(id)arg2;
-+ (id)snapshotWithSigningCertificate:(id)arg1;
-+ (id)snapshotWithIdentityHash:(id)arg1;
++ (id)_snapshotForAdHocSigning;
++ (id)_snapshotForNullSigning;
++ (id)_snapshotWithProvisioningProfile:(id)arg1 andSigningCertificate:(id)arg2;
++ (id)_snapshotWithSigningCertificate:(id)arg1;
++ (id)_snapshotWithIdentityHash:(id)arg1;
 @property(copy) NSString *identityHash; // @synthesize identityHash=_identityHash;
 @property(retain) DVTSigningCertificate *signingCertificate; // @synthesize signingCertificate=_signingCertificate;
 @property(retain) id <DVTProvisioningProfile> provisioningProfile; // @synthesize provisioningProfile=_provisioningProfile;
 - (void).cxx_destruct;
-@property(readonly) struct OpaqueSecCertificateRef *identityCertificate;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
 @property(readonly) _Bool willSign;

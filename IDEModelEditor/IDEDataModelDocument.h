@@ -4,27 +4,23 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDEEditorDocument.h"
+#import <IDEKit/IDEEditorDocument.h>
 
-#import "DVTTextFindable.h"
-#import "DVTTextReplacable.h"
-#import "IDEDocumentStructureProviding.h"
-#import "NSKeyedUnarchiverDelegate.h"
-#import "XDPMModelDelegate.h"
+#import <IDEModelEditor/DVTTextFindable-Protocol.h>
+#import <IDEModelEditor/DVTTextReplacable-Protocol.h>
+#import <IDEModelEditor/IDEDocumentStructureProviding-Protocol.h>
+#import <IDEModelEditor/NSKeyedUnarchiverDelegate-Protocol.h>
+#import <IDEModelEditor/XDPMModelDelegate-Protocol.h>
 
-@class CDMModel, DVTNotificationToken, DVTToolsVersion, DVTVersion, NSArray, NSSet, NSString, XDDiagramStorage;
+@class CDMModel, DVTNotificationToken, DVTToolsVersion, DVTVersion, NSArray, NSString, XDDiagramStorage;
 
 @interface IDEDataModelDocument : IDEEditorDocument <NSKeyedUnarchiverDelegate, IDEDocumentStructureProviding, XDPMModelDelegate, DVTTextFindable, DVTTextReplacable>
 {
     CDMModel *_model;
     XDDiagramStorage *_diagramStorage;
-    DVTVersion *_iOSDeploymentVersion;
-    DVTVersion *_macOSDeploymentVersion;
     DVTToolsVersion *_documentToolsVersion;
     DVTVersion *_documentVersion;
     DVTNotificationToken *_documentDidSaveToken;
-    BOOL _supportsMacOSDeployment;
-    BOOL _supportsIOSDeployment;
 }
 
 + (id)keyPathsForValuesAffectingValueForKey:(id)arg1;
@@ -37,10 +33,6 @@
 + (id)currentDocumentVersion;
 + (id)currentToolsVersion;
 + (id)currentSystemVersion;
-@property BOOL supportsMacOSDeployment; // @synthesize supportsMacOSDeployment=_supportsMacOSDeployment;
-@property BOOL supportsIOSDeployment; // @synthesize supportsIOSDeployment=_supportsIOSDeployment;
-@property(copy, nonatomic) DVTVersion *macOSDeploymentVersion; // @synthesize macOSDeploymentVersion=_macOSDeploymentVersion;
-@property(copy, nonatomic) DVTVersion *iOSDeploymentVersion; // @synthesize iOSDeploymentVersion=_iOSDeploymentVersion;
 @property(copy, nonatomic) DVTVersion *documentVersion; // @synthesize documentVersion=_documentVersion;
 @property(retain, nonatomic) DVTToolsVersion *documentToolsVersion; // @synthesize documentToolsVersion=_documentToolsVersion;
 @property(retain) CDMModel *model; // @synthesize model=_model;
@@ -63,10 +55,6 @@
 - (BOOL)canSave;
 - (void)setDiagramStorage:(id)arg1;
 - (id)diagramStorage;
-- (void)setSupportsDeployment:(BOOL)arg1 forPlatformFamily:(id)arg2;
-- (void)setOSDeploymentVersion:(id)arg1 forPlatformFamily:(id)arg2;
-- (id)osDeploymentVersionForPlatformFamily:(id)arg1;
-@property(readonly) NSSet *supportedPlatformFamilies;
 - (void)setDocumentToolsVersionWithPackageTypeCheck:(id)arg1;
 - (BOOL)isPackageDifferentForDocumentToolsVersion:(id)arg1;
 - (void)editorDocumentWillClose;

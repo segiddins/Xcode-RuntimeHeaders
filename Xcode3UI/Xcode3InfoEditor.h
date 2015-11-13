@@ -4,12 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDEViewController.h"
+#import <IDEKit/IDEViewController.h>
 
-#import "IDECapsuleListViewDataSource.h"
-#import "Xcode3SourceListItemEditor.h"
+#import <Xcode3UI/IDECapsuleListViewDataSource-Protocol.h>
+#import <Xcode3UI/Xcode3SourceListItemEditor-Protocol.h>
 
 @class DVTDelayedInvocation, DVTObservingToken, DVTPerformanceMetric, DVTSourceExpression, DVTStackView_ML, IDECapsuleListView, NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSScrollView, NSString, NSView, Xcode3InfoController, Xcode3ProjectEditor;
+@protocol IDEBlueprint;
 
 @interface Xcode3InfoEditor : IDEViewController <Xcode3SourceListItemEditor, IDECapsuleListViewDataSource>
 {
@@ -34,6 +35,7 @@
 }
 
 + (BOOL)canInspectBlueprint:(id)arg1;
++ (unsigned long long)assertionBehaviorForKeyValueObservationsAtEndOfEvent;
 + (id)localizedSourceListItemEditorName;
 + (void)initialize;
 @property struct CGRect currentSelectionFrame; // @synthesize currentSelectionFrame=_currentSelectionFrame;

@@ -6,7 +6,7 @@
 
 #import <XDBase/XDUMLNamespaceImp.h>
 
-#import "XDUMLPackage.h"
+#import <XDBase/XDUMLPackage-Protocol.h>
 
 @class NSString, XDModel;
 

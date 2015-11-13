@@ -4,22 +4,21 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "SCNNode.h"
+#import <SceneKit/SCNNode.h>
 
-@class DBGSceneNode, SCNView;
+@class SCNView;
+@protocol DBGSceneCameraDelegate;
 
 @interface DBGSceneCamera : SCNNode
 {
     SCNView *_sceneView;
     double _zoomFactor;
-    DBGSceneNode *_pivotNode;
     id <DBGSceneCameraDelegate> _cameraDelegate;
-    struct SCNVector3 _pivotNodeOffset;
+    struct SCNVector3 _pivotPoint;
 }
 
 @property __weak id <DBGSceneCameraDelegate> cameraDelegate; // @synthesize cameraDelegate=_cameraDelegate;
-@property struct SCNVector3 pivotNodeOffset; // @synthesize pivotNodeOffset=_pivotNodeOffset;
-@property(retain) DBGSceneNode *pivotNode; // @synthesize pivotNode=_pivotNode;
+@property struct SCNVector3 pivotPoint; // @synthesize pivotPoint=_pivotPoint;
 - (void).cxx_destruct;
 - (void)cameraDidZoom;
 - (void)sceneViewDidChangeFrameSize;
@@ -28,6 +27,7 @@
 - (void)zoomOut;
 - (void)zoomIn;
 - (void)zoomWithValue:(double)arg1;
+- (double)zoomDeltaForZoomValue:(double)arg1;
 @property double zoomFactor; // @synthesize zoomFactor=_zoomFactor;
 - (id)initInsideSceneView:(id)arg1;
 

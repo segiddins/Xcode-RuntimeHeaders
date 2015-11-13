@@ -7,6 +7,7 @@
 #import <DevToolsCore/XCOperation.h>
 
 @class NSMutableArray, NSMutableSet, NSNumber, NSOperationQueue;
+@protocol XCWorkQueueOperationDelegates;
 
 @interface XCWorkQueueOperation : XCOperation
 {

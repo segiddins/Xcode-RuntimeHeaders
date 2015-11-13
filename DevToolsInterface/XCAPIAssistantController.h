@@ -4,13 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <Foundation/NSObject.h>
 
-#import "NSTextViewDelegate.h"
-#import "NSWindowDelegate.h"
-#import "XCAPIQueryCallbackProtocol.h"
+#import <DevToolsInterface/NSTextViewDelegate-Protocol.h>
+#import <DevToolsInterface/NSWindowDelegate-Protocol.h>
+#import <DevToolsInterface/XCAPIQueryCallbackProtocol-Protocol.h>
 
-@class NSArray, NSScrollView, NSString, NSTextView<XCTextViewAdditions>, NSWindow, PBXSymbol, XCAPIAssistant, XCAPIAssistantConfigurationTableController, XCAPIQueries, XCRAAttributedStringGenerator, XCRAQuery, XCRASliceController;
+@class NSArray, NSScrollView, NSString, NSTextView, NSWindow, PBXSymbol, XCAPIAssistant, XCAPIAssistantConfigurationTableController, XCAPIQueries, XCRAAttributedStringGenerator, XCRAQuery, XCRASliceController;
+@protocol XCTextViewAdditions;
 
 @interface XCAPIAssistantController : NSObject <XCAPIQueryCallbackProtocol, NSWindowDelegate, NSTextViewDelegate>
 {

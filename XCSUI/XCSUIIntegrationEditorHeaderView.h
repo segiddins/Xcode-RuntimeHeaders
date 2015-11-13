@@ -4,28 +4,27 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSView.h"
+#import <AppKit/NSView.h>
 
-@class DVTTabChooserView, NSButton, NSTextField;
+@class DVTTabChooserView, NSButton, NSTextField, XCSUIInsetHorizontalDividerLine;
 
 @interface XCSUIIntegrationEditorHeaderView : NSView
 {
+    NSButton *_integrationLabelButton;
     NSTextField *_integrationLabelField;
-    NSTextField *_integrationSecondaryLabelField;
     DVTTabChooserView *_tabChooserView;
     NSButton *_editBotButton;
-    NSButton *_integrateNowButton;
+    NSButton *_integrateButton;
+    XCSUIInsetHorizontalDividerLine *_dividerLine;
 }
 
-@property __weak NSButton *integrateNowButton; // @synthesize integrateNowButton=_integrateNowButton;
+@property __weak XCSUIInsetHorizontalDividerLine *dividerLine; // @synthesize dividerLine=_dividerLine;
+@property __weak NSButton *integrateButton; // @synthesize integrateButton=_integrateButton;
 @property __weak NSButton *editBotButton; // @synthesize editBotButton=_editBotButton;
 @property __weak DVTTabChooserView *tabChooserView; // @synthesize tabChooserView=_tabChooserView;
-@property __weak NSTextField *integrationSecondaryLabelField; // @synthesize integrationSecondaryLabelField=_integrationSecondaryLabelField;
 @property __weak NSTextField *integrationLabelField; // @synthesize integrationLabelField=_integrationLabelField;
+@property __weak NSButton *integrationLabelButton; // @synthesize integrationLabelButton=_integrationLabelButton;
 - (void).cxx_destruct;
-- (void)resizeWithOldSuperviewSize:(struct CGSize)arg1;
-- (void)viewDidMoveToSuperview;
-- (void)centerTabChooserView;
 
 @end
 

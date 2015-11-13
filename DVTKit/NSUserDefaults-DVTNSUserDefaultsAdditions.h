@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSUserDefaults.h"
+#import <Foundation/NSUserDefaults.h>
 
 @interface NSUserDefaults (DVTNSUserDefaultsAdditions)
 - (void)dvt_setInteger:(long long)arg1 forKey:(id)arg2 defaultValue:(long long)arg3;

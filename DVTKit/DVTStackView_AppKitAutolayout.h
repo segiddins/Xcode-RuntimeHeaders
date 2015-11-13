@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSView.h"
+#import <AppKit/NSView.h>
 
 @class NSArray;
 
@@ -24,7 +24,7 @@
 + (BOOL)requiresConstraintBasedLayout;
 @property(nonatomic) BOOL stacksHorizontally; // @synthesize stacksHorizontally=_stacksHorizontally;
 @property double padding; // @synthesize padding=_padding;
-@property double paddingBetweenViews; // @synthesize paddingBetweenViews=_paddingBetweenViews;
+@property(nonatomic) double paddingBetweenViews; // @synthesize paddingBetweenViews=_paddingBetweenViews;
 @property double leftPadding; // @synthesize leftPadding=_leftPadding;
 @property double bottomPadding; // @synthesize bottomPadding=_bottomPadding;
 @property double rightPadding; // @synthesize rightPadding=_rightPadding;
@@ -40,7 +40,7 @@
 - (void)addViewToEnd:(id)arg1;
 - (BOOL)isFlipped;
 - (void)_autolayoutStackViewCommonInit;
-- (void)awakeFromNib;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

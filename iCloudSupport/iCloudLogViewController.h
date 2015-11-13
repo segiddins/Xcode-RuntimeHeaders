@@ -7,6 +7,7 @@
 #import <iCloudSupport/iCloudViewController.h>
 
 @class DVTBorderedView, NSTextView;
+@protocol DVTCancellable;
 
 @interface iCloudLogViewController : iCloudViewController
 {

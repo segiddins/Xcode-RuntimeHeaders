@@ -6,9 +6,10 @@
 
 #import <Xcode3UI/Xcode3TargetCoordinator.h>
 
-#import "IDEAppIDFeatureDelegate.h"
+#import <Xcode3UI/IDEAppIDFeatureDelegate-Protocol.h>
 
-@class DVTAppIDFeatures, DVTDelayedInvocation, DVTNotificationToken, DVTObservingToken, NSError, NSMapTable, NSObject<OS_dispatch_queue>, Xcode3TargetBuildSettingsCoordinator, Xcode3TargetInfoPlistCoordinator;
+@class DVTAppIDFeatures, DVTDelayedInvocation, DVTNotificationToken, DVTObservingToken, NSError, NSMapTable, NSObject, Xcode3TargetBuildSettingsCoordinator, Xcode3TargetInfoPlistCoordinator;
+@protocol DVTProvisioningProfile, IDEPortalEntitlementsCoordinatorPlatform, IDEPortalInfoDelegate, OS_dispatch_queue;
 
 @interface Xcode3TargetPortalEntitlementsCoordinator : Xcode3TargetCoordinator <IDEAppIDFeatureDelegate>
 {
@@ -19,9 +20,12 @@
     NSMapTable *_clientCallbackToEnqueueGenerationMap;
     DVTNotificationToken *_certificateNotificationToken;
     DVTNotificationToken *_profilesToken;
+    DVTNotificationToken *_projectChangeToken;
     DVTObservingToken *_teamObserver;
     DVTObservingToken *_runDestinationObserver;
     id <IDEPortalEntitlementsCoordinatorPlatform> _coordinatorPlatform;
+    DVTDelayedInvocation *_resolutionInovcation;
+    BOOL _enableChangeNotifications;
     Xcode3TargetBuildSettingsCoordinator *_buildSettingsCoordinator;
     id <IDEPortalInfoDelegate> _portalInfoDelegate;
     NSError *_currentCodesigningError;
@@ -36,8 +40,10 @@
 - (id)instantiatePortalFlightCheckWithCapabilitiesContext:(id)arg1 key:(id)arg2 value:(id)arg3 valueForReset:(id)arg4 validValues:(id)arg5 humanReadableKey:(id)arg6;
 - (void)_writeFeatures:(id)arg1 snapshot:(id)arg2 callback:(CDUnknownBlockType)arg3;
 - (id)capabilitiesContext;
-- (void)_readValues;
-- (id)codesignParameterSnapshot:(id *)arg1;
+- (void)_readValuesWithCallback:(CDUnknownBlockType)arg1;
+- (id)codesignParameterSnapshotWithInputs:(id)arg1 error:(id *)arg2;
+- (id)codesignResolutionInputs;
+- (id)platformAdjustedFeaturesForCombinedFeatures:(id)arg1 teamID:(id)arg2;
 - (void)_enqueueReplacementOfEntitlementsWithSnapshot:(id)arg1;
 - (id)combinedAppIDFeatures;
 - (id)coordinatorPlatform;

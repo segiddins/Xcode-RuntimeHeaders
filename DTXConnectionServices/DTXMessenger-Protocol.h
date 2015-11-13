@@ -4,9 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <DTXConnectionServices/NSObject-Protocol.h>
 
 @class DTXMessage;
+@protocol DTXAllowedRPC;
 
 @protocol DTXMessenger <NSObject>
 - (void)sendMessageSync:(DTXMessage *)arg1 replyHandler:(void (^)(DTXMessage *))arg2;

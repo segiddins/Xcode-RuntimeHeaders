@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IBConnection.h"
+#import <IDEInterfaceBuilderKit/IBConnection.h>
 
 @class IBBindingInfo, NSNibBindingConnector, NSObject, NSString;
 
@@ -70,7 +70,9 @@
 - (id)initWithNibBinder:(id)arg1;
 - (id)ibLocalAdditionalLocalizableAttributeKeyPaths;
 - (id)ibLocalLocalizableStringsAttributeKeyPaths;
-- (id)description;
+- (id)_descriptionSubstringForDestination;
+- (id)_descriptionSubstringForLabel;
+- (id)_descriptionSubstringForSource;
 - (id)attributeDescriptionForOption:(id)arg1;
 - (void)setIbShadowedMultipleValuesPlaceholder:(id)arg1;
 - (id)ibShadowedMultipleValuesPlaceholder;

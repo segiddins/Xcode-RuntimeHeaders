@@ -4,23 +4,25 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "IDEPlaygroundQuickLookProvider.h"
+#import <IDELanguageSupportUI/IDEPlaygroundQuickLookProvider-Protocol.h>
 
 @class NSAttributedString, NSString, NSView;
 
 @interface IDEMultipleValuesOnRowQuickLookProvider : NSObject <IDEPlaygroundQuickLookProvider>
 {
-    NSString *_plainTitle;
+    NSAttributedString *_cachedAttributedTitle;
+    unsigned long long _iterations;
 }
 
-@property(copy) NSString *plainTitle; // @synthesize plainTitle=_plainTitle;
+@property(nonatomic) unsigned long long iterations; // @synthesize iterations=_iterations;
 - (void).cxx_destruct;
 - (id)quickLookViewForResultsView;
 - (id)quickLookViewForNaturalSize;
 @property(readonly, copy) NSAttributedString *attributedTitle;
 @property(readonly) NSView *iconView;
+- (id)plainTitle;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

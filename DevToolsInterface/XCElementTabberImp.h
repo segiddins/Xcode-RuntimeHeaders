@@ -6,7 +6,7 @@
 
 #import <DevToolsInterface/XCElementImp.h>
 
-#import "XCElementTabberP.h"
+#import <DevToolsInterface/XCElementTabberP-Protocol.h>
 
 @class NSString;
 

@@ -4,9 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "JSExport.h"
+#import <SceneKit/JSExport-Protocol.h>
 
-@class NSArray, NSObject<OS_dispatch_queue>, NSString, SCNAction;
+@class NSArray, NSObject, NSString, SCNAction;
+@protocol OS_dispatch_queue;
 
 @protocol SCNActionJSExport <JSExport>
 + (SCNAction *)customActionWithDuration:(double)arg1 actionBlock:(void (^)(SCNNode *, double))arg2;
@@ -35,6 +36,7 @@
 + (SCNAction *)moveBy:(struct SCNVector3)arg1 duration:(double)arg2;
 + (SCNAction *)moveByX:(double)arg1 y:(double)arg2 z:(double)arg3 duration:(double)arg4;
 @property(nonatomic) double speed;
+@property(nonatomic) CDUnknownBlockType timingFunction;
 @property(nonatomic) long long timingMode;
 @property(nonatomic) double duration;
 - (id)copy;

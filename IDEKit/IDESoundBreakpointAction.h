@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDEBreakpointAction.h"
+#import <IDEFoundation/IDEBreakpointAction.h>
 
-#import "NSSoundDelegate.h"
+#import <IDEKit/NSSoundDelegate-Protocol.h>
 
 @class NSSound, NSString;
 

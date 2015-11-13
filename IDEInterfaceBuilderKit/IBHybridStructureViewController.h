@@ -6,7 +6,8 @@
 
 #import <IDEInterfaceBuilderKit/IBStructureViewController.h>
 
-@class DVTBorderedView, DVTSearchField, IBDockViewController, IBNavigationOutlineViewController, IDEViewController<IBHybridStructureSelectionProvider>, NSLayoutConstraint, NSNumber, NSView;
+@class DVTBorderedView, DVTSearchField, IBDockViewController, IBNavigationOutlineViewController, IDEViewController, NSLayoutConstraint, NSNumber, NSView;
+@protocol IBHybridStructureSelectionProvider;
 
 @interface IBHybridStructureViewController : IBStructureViewController
 {
@@ -50,7 +51,7 @@
 - (id)structureAreaExpansionPreferencesKey;
 - (id)highlightProviders;
 - (void)setDrawsWithActiveLook:(BOOL)arg1;
-@property(retain, nonatomic) IDEViewController<IBHybridStructureSelectionProvider> *currentStructureProvider;
+@property(retain, nonatomic) IDEViewController<IBHybridStructureSelectionProvider> *currentStructureProvider; // @dynamic currentStructureProvider;
 @property(readonly, nonatomic) IDEViewController<IBHybridStructureSelectionProvider> *lastStructureSelectionProvider;
 - (id)currentFilterFieldWantingStructureProvider;
 - (id)stateSavingIdentifier;

@@ -6,8 +6,8 @@
 
 #import <IDEInterfaceBuilderKit/IBICAbstractCatalogDetailController.h>
 
-#import "IBICCatalogItemObserver.h"
-#import "IBICImageSlicingViewContainerDelegate.h"
+#import <IDEInterfaceBuilderKit/IBICCatalogItemObserver-Protocol.h>
+#import <IDEInterfaceBuilderKit/IBICImageSlicingViewContainerDelegate-Protocol.h>
 
 @class DVTDelayedInvocation, IBMutableIdentityDictionary, NSMutableSet, NSString;
 
@@ -39,6 +39,7 @@
 - (id)displayedImageSets;
 - (void)commitStateToDictionary:(id)arg1;
 - (void)revertStateWithDictionary:(id)arg1;
+- (BOOL)isSubEditorExistanceInSyncForItem:(id)arg1;
 - (void)loadView;
 - (id)showAlternateDetailControllerTitle;
 - (BOOL)canZoomCanvas;

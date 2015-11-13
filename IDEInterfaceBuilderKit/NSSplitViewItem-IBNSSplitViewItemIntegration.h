@@ -4,8 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSSplitViewItem.h"
+#import <AppKit/NSSplitViewItem.h>
 
 @interface NSSplitViewItem (IBNSSplitViewItemIntegration)
++ (id)keyPathsForValuesAffectingCanCollapse;
+- (id)ibDocumentationPropertyInfosForKeyPath:(id)arg1;
+@property long long ibShadowedBehavior;
 @end
 

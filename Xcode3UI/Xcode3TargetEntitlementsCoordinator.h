@@ -6,7 +6,7 @@
 
 #import <Xcode3UI/Xcode3TargetCoordinator.h>
 
-#import "IDEEntitlementsCoordination.h"
+#import <Xcode3UI/IDEEntitlementsCoordination-Protocol.h>
 
 @class DVTFilePath, IDEEntitlementsFile, NSString, PBXNativeTarget;
 

@@ -6,7 +6,7 @@
 
 #import <DevToolsInterface/PBXProjectModule.h>
 
-#import "XCSelectionSource.h"
+#import <DevToolsInterface/XCSelectionSource-Protocol.h>
 
 @class DVMainController, NSString;
 

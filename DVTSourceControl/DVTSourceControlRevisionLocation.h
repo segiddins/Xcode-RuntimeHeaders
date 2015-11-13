@@ -4,12 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "DVTSourceControlDisplayable.h"
-#import "DVTSourceControlSerializable.h"
-#import "NSCopying.h"
-#import "NSSecureCoding.h"
+#import <DVTSourceControl/DVTSourceControlDisplayable-Protocol.h>
+#import <DVTSourceControl/DVTSourceControlSerializable-Protocol.h>
+#import <DVTSourceControl/NSCopying-Protocol.h>
+#import <DVTSourceControl/NSSecureCoding-Protocol.h>
 
 @class DVTSourceControlRevision, NSString;
 
@@ -24,6 +24,7 @@
 - (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 @property(readonly) NSString *displayName;
+- (BOOL)isSimilar:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;
 - (id)dictionaryRepresentationWithOptions:(unsigned long long)arg1;

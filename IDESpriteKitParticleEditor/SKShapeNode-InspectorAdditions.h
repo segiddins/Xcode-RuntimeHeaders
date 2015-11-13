@@ -4,16 +4,18 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "SKShapeNode.h"
+#import <SpriteKit/SKShapeNode.h>
 
-#import "IDEKeyDrivenNavigableItemRepresentedObject.h"
+#import <IDESpriteKitParticleEditor/IDEKeyDrivenNavigableItemRepresentedObject-Protocol.h>
 
 @class DVTDocumentLocation, DVTFileDataType, IDEFileReference, NSImage, NSString;
 
 @interface SKShapeNode (InspectorAdditions) <IDEKeyDrivenNavigableItemRepresentedObject>
++ (id)keyPathsForValuesAffectingFillTextureImageName;
++ (id)keyPathsForValuesAffectingStrokeTextureImageName;
 + (id)keyPathsForValuesAffectingZRotationDeg;
-@property(retain, nonatomic) NSImage *fillTextureImage;
-@property(retain, nonatomic) NSImage *strokeTextureImage;
+@property(retain, nonatomic) NSString *fillTextureImageName;
+@property(retain, nonatomic) NSString *strokeTextureImageName;
 - (id)ide_undoKVOKeypaths;
 - (void)setNilValueForKey:(id)arg1;
 - (id)inspectorAttributes;

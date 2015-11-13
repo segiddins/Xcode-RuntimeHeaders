@@ -6,7 +6,7 @@
 
 #import <IDEInterfaceBuilderCocoaIntegration/IBNSViewEditor.h>
 
-#import "NSTabViewDelegate.h"
+#import <IDEInterfaceBuilderCocoaIntegration/NSTabViewDelegate-Protocol.h>
 
 @class NSString;
 

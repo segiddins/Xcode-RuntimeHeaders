@@ -5,6 +5,7 @@
 //
 
 @class NSArray, NSIndexSet, NSString;
+@protocol IDEStructureEditingContext;
 
 @protocol IDEStructureEditing
 - (BOOL)allowRemovingContainerGroup;

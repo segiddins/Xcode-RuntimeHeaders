@@ -6,9 +6,10 @@
 
 #import <IDEKit/IDEInspectorLayoutStack.h>
 
-#import "IDEInspectorValueElement.h"
+#import <IDEKit/IDEInspectorValueElement-Protocol.h>
 
-@class DVTDelayedInvocation, IDEInspectorChooserChoice, IDEInspectorKeyPath, IDEInspectorLayoutGroup, NSArray, NSDictionary, NSMenuItem, NSObject<IDEBindableDeclarativeInspectorController>, NSPopUpButton, NSString;
+@class DVTDelayedInvocation, IDEInspectorChooserChoice, IDEInspectorKeyPath, IDEInspectorLayoutGroup, NSArray, NSDictionary, NSMenuItem, NSObject, NSPopUpButton, NSString;
+@protocol DVTCancellable, IDEBindableDeclarativeInspectorController;
 
 @interface IDEInspectorChooser : IDEInspectorLayoutStack <IDEInspectorValueElement>
 {

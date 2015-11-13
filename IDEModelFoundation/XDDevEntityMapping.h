@@ -4,10 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSManagedObject.h"
+#import <CoreData/NSManagedObject.h>
 
-#import "CDMIdentification.h"
-#import "IDEKeyDrivenNavigableItemRepresentedObject.h"
+#import <IDEModelFoundation/CDMIdentification-Protocol.h>
+#import <IDEModelFoundation/IDEKeyDrivenNavigableItemRepresentedObject-Protocol.h>
 
 @class DVTDocumentLocation, DVTFileDataType, IDEFileReference, IDEMappingModelDocument, NSDictionary, NSImage, NSNumber, NSString;
 

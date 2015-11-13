@@ -6,7 +6,7 @@
 
 #import <DevToolsCore/PBXObject.h>
 
-#import "PBXChangeNotification.h"
+#import <DevToolsCore/PBXChangeNotification-Protocol.h>
 
 @class NSMutableDictionary, NSString;
 

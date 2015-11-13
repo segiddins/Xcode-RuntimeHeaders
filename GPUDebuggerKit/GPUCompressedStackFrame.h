@@ -4,10 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <Foundation/NSObject.h>
 
-#import "IDEDebugNavigableModel.h"
-#import "IDEKeyDrivenNavigableItemRepresentedObject.h"
+#import <GPUDebuggerKit/IDEDebugNavigableModel-Protocol.h>
+#import <GPUDebuggerKit/IDEKeyDrivenNavigableItemRepresentedObject-Protocol.h>
 
 @class DVTDocumentLocation, DVTFileDataType, IDEFileReference, IDELaunchSession, NSArray, NSImage, NSNumber, NSString;
 

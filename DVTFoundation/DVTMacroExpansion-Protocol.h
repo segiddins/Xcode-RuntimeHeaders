@@ -4,10 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSCopying.h"
-#import "NSObject.h"
+#import <DVTFoundation/NSCopying-Protocol.h>
+#import <DVTFoundation/NSObject-Protocol.h>
 
-@class DVTMacroExpansionScope, NSArray, NSString, NSString<DVTMacroExpansion>;
+@class DVTMacroExpansionScope, NSArray, NSString;
+@protocol DVTMacroExpansion;
 
 @protocol DVTMacroExpansion <NSObject, NSCopying>
 - (NSString *)dvt_debugDescription;

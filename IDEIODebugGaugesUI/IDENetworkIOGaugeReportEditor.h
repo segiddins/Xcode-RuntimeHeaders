@@ -4,18 +4,18 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDEDebugGaugeReportEditor.h"
+#import <IDEKit/IDEDebugGaugeReportEditor.h>
 
-#import "IDEDebugGaugeReportContentDelegate.h"
-#import "IDEDebugGaugeReportTopSectionContentDelegate.h"
-#import "IDEGraphDelegate.h"
-#import "IDEIOGaugeCollectedDataListeners.h"
-#import "NSTableViewDataSource.h"
-#import "NSTableViewDelegate.h"
+#import <IDEIODebugGaugesUI/IDEDebugGaugeReportContentDelegate-Protocol.h>
+#import <IDEIODebugGaugesUI/IDEDebugGaugeReportTopSectionContentDelegate-Protocol.h>
+#import <IDEIODebugGaugesUI/IDEGaugeCollectedDataListeners-Protocol.h>
+#import <IDEIODebugGaugesUI/IDEGraphDelegate-Protocol.h>
+#import <IDEIODebugGaugesUI/NSTableViewDataSource-Protocol.h>
+#import <IDEIODebugGaugesUI/NSTableViewDelegate-Protocol.h>
 
 @class IDEDebugGaugeReportByteStatisticsViewController, IDEDebugGaugeReportEntityListViewController, IDEDebugGaugeReportThroughputGaugeViewController, IDEDebugGaugeStatisticsByteRateFormatter, IDEGraphChart, IDENetworkIOGaugeDebuggingAddition, NSArray, NSButton, NSNumberFormatter, NSSegmentedControl, NSString;
 
-@interface IDENetworkIOGaugeReportEditor : IDEDebugGaugeReportEditor <NSTableViewDataSource, NSTableViewDelegate, IDEDebugGaugeReportContentDelegate, IDEDebugGaugeReportTopSectionContentDelegate, IDEGraphDelegate, IDEIOGaugeCollectedDataListeners>
+@interface IDENetworkIOGaugeReportEditor : IDEDebugGaugeReportEditor <NSTableViewDataSource, NSTableViewDelegate, IDEDebugGaugeReportContentDelegate, IDEDebugGaugeReportTopSectionContentDelegate, IDEGraphDelegate, IDEGaugeCollectedDataListeners>
 {
     BOOL _showPackets;
     IDENetworkIOGaugeDebuggingAddition *_debuggingAddition;

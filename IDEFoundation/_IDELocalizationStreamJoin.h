@@ -6,6 +6,8 @@
 
 #import <IDEFoundation/IDELocalizationStream.h>
 
+@protocol IDELocalizationStreamPublisher;
+
 @interface _IDELocalizationStreamJoin : IDELocalizationStream
 {
     id <IDELocalizationStreamPublisher> _publisher;

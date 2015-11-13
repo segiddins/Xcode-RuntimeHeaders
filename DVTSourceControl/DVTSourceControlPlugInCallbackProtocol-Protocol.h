@@ -4,11 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <DVTSourceControl/NSObject-Protocol.h>
 
-@class NSDictionary;
+@class NSArray, NSDictionary, NSString;
 
 @protocol DVTSourceControlPlugInCallbackProtocol <NSObject>
-- (void)progressStatus:(int)arg1 withDictionary:(NSDictionary *)arg2;
+- (void)incrementalLogStatus:(NSArray *)arg1 info:(NSDictionary *)arg2 progressIdentifier:(NSString *)arg3;
+- (void)progressStatus:(long long)arg1 withDictionary:(NSDictionary *)arg2 progressIdentifier:(NSString *)arg3;
 @end
 

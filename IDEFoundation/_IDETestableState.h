@@ -4,11 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "DVTInvalidation.h"
+#import <IDEFoundation/DVTInvalidation-Protocol.h>
 
 @class DVTStackBacktrace, IDETestableIssueProvider, NSMutableDictionary, NSMutableSet, NSString;
+@protocol IDETestable;
 
 @interface _IDETestableState : NSObject <DVTInvalidation>
 {
@@ -30,19 +31,20 @@
 - (void)_clearAllResults;
 - (void)_addAllTestsForTestable:(id)arg1 intoSet:(id)arg2;
 - (void)_processNewTestResults:(id)arg1;
+- (void)_notifyObserversTestsChanged:(id)arg1;
 - (void)_clearCachedResultsForTest:(id)arg1 andNoteParentIn:(id)arg2;
-- (void)_notifyWorkspaceReferencedTestableChanged;
-- (void)_notifyTestableChanged:(id)arg1;
+- (void)_notifyAllTestablesChanged;
+- (void)_notifyTestableChanged;
 - (BOOL)_hasObservers;
 - (void)_removeObserver:(id)arg1;
 - (void)_addObserver:(id)arg1;
+@property(readonly, copy) NSString *description;
 - (void)primitiveInvalidate;
 - (id)_initWithTestable:(id)arg1 andWorkspace:(id)arg2;
 
 // Remaining properties
 @property(retain) DVTStackBacktrace *creationBacktrace;
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) DVTStackBacktrace *invalidationBacktrace;
 @property(readonly) Class superclass;

@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
 @class DVTDevice, NSCountedSet, NSMutableOrderedSet, NSNumber;
 
@@ -28,7 +28,7 @@
 - (void)query:(id)arg1 didAddObservedAttributes:(id)arg2 andRemoveObservedAttributes:(id)arg3;
 - (void)removeQuery:(id)arg1;
 - (void)addQuery:(id)arg1;
-- (void)noteAttributesDidChange;
+- (id)_noteAttributesDidChange;
 - (id)initForProcessWithPID:(id)arg1 onDevice:(id)arg2;
 
 @end

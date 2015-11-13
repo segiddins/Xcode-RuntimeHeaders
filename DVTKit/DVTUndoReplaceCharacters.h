@@ -4,20 +4,18 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSUndoReplaceCharacters.h"
+#import <AppKit/NSUndoReplaceCharacters.h>
 
-@class DVTTokenizedEditingUndoHelper;
+@class DVTTextStorageCommonUndoHelper;
 
 @interface DVTUndoReplaceCharacters : NSUndoReplaceCharacters
 {
-    DVTTokenizedEditingUndoHelper *_tokenizedEditingUndoHelper;
+    DVTTextStorageCommonUndoHelper *_undoHelper;
 }
 
 - (void).cxx_destruct;
 - (void)undoRedo:(id)arg1;
 - (id)description;
-- (id)replacementRanges;
-- (id)affectedRanges;
 - (id)initWithAffectedRange:(struct _NSRange)arg1 layoutManager:(id)arg2 undoManager:(id)arg3 replacementRange:(struct _NSRange)arg4;
 
 @end

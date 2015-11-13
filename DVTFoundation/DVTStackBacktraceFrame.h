@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
 @class NSString;
 
@@ -23,6 +23,7 @@
 @property unsigned long long lineNumber; // @synthesize lineNumber=_lineNumber;
 @property unsigned long long stackAddress; // @synthesize stackAddress=_stackAddress;
 - (void).cxx_destruct;
+- (id)frameStringRepresentationWithAddress:(BOOL)arg1;
 - (id)frameStringRepresentation;
 
 @end

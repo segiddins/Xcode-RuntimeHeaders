@@ -4,9 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <Foundation/NSObject.h>
 
-@class NSException, NSMapTable, NSMutableArray, NSMutableDictionary, NSMutableSet, NSObject<OS_dispatch_queue>, PBXCStringStorage, PBXIndexingEngine, PBXProject, PBXProjectIndexBTree, PBXProjectIndexBTreeEnumerator, PBXRecordVector;
+@class NSException, NSMapTable, NSMutableArray, NSMutableDictionary, NSMutableSet, PBXCStringStorage, PBXIndexingEngine, PBXProject, PBXProjectIndexBTree, PBXProjectIndexBTreeEnumerator, PBXRecordVector;
+@protocol OS_dispatch_queue, PBXProjectIndexStatusObserving;
 
 @interface PBXProjectIndex : NSObject
 {

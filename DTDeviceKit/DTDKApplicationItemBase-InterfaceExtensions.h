@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "DTDKApplicationItemBase.h"
+#import <DTDeviceKitBase/DTDKApplicationItemBase.h>
 
-#import "DVTDeviceApplicationItem_KitSupport.h"
+#import <DTDeviceKit/DVTDeviceApplicationItem_KitSupport-Protocol.h>
 
 @class NSImage, NSSet, NSString;
 

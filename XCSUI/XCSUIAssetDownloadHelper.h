@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "NSURLConnectionDataDelegate.h"
+#import <XCSUI/NSURLConnectionDataDelegate-Protocol.h>
 
 @class NSMutableData, NSString, NSURLConnection, NSURLRequest, NSURLResponse;
 
@@ -35,6 +35,8 @@
 - (void).cxx_destruct;
 - (void)cancel;
 - (void)beginDownload;
+- (void)connection:(id)arg1 didReceiveAuthenticationChallenge:(id)arg2;
+- (BOOL)connection:(id)arg1 canAuthenticateAgainstProtectionSpace:(id)arg2;
 - (void)connectionDidFinishLoading:(id)arg1;
 - (void)connection:(id)arg1 didFailWithError:(id)arg2;
 - (void)connection:(id)arg1 didReceiveData:(id)arg2;

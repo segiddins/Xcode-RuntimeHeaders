@@ -6,10 +6,11 @@
 
 #import <DVTKit/DVTSlidingViewsBar.h>
 
-#import "DVTMorphingDragImageDropTarget.h"
-#import "NSTabViewDelegate.h"
+#import <DVTKit/DVTMorphingDragImageDropTarget-Protocol.h>
+#import <DVTKit/NSTabViewDelegate-Protocol.h>
 
-@class DVTNewTabButtonOldStyle, DVTTabButton, DVTTabbedWindowTabViewItem, NSImage, NSLock, NSString, NSTabViewItem, NSWindowController<DVTTabbedWindowControlling>;
+@class DVTNewTabButtonOldStyle, DVTTabButton, DVTTabbedWindowTabViewItem, NSImage, NSLock, NSString, NSTabViewItem, NSWindowController;
+@protocol DVTTabbedWindowControlling;
 
 @interface DVTTabBarView : DVTSlidingViewsBar <DVTMorphingDragImageDropTarget, NSTabViewDelegate>
 {

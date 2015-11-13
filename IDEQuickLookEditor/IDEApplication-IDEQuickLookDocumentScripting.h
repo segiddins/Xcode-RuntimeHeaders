@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDEApplication.h"
+#import <IDEKit/IDEApplication.h>
 
 @interface IDEApplication (IDEQuickLookDocumentScripting)
 - (void)setSdefSupport_activeBlueprintDocument:(id)arg1;

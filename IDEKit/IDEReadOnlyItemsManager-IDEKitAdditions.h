@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDEReadOnlyItemsManager.h"
+#import <IDEFoundation/IDEReadOnlyItemsManager.h>
 
 @interface IDEReadOnlyItemsManager (IDEKitAdditions)
 - (void)_warnAboutEditingAlertDidEnd:(id)arg1 returnCode:(long long)arg2 managerContext:(id)arg3;

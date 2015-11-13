@@ -4,15 +4,16 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDETest.h"
+#import <IDEFoundation/IDETest.h>
 
-#import "IDEKeyDrivenNavigableItemRepresentedObject.h"
+#import <IDEKit/IDEKeyDrivenNavigableItemRepresentedObject-Protocol.h>
 
 @class DVTDocumentLocation, DVTFileDataType, IDEFileReference, NSImage, NSString;
 
 @interface IDETest (IDETestNavigatorAdditions) <IDEKeyDrivenNavigableItemRepresentedObject>
 + (id)keyPathsForValuesAffectingNavigableItem_image;
 + (id)keyPathsForValuesAffectingNavigableItem_name;
++ (id)keyPathsForValuesAffectingNavigableItem_isLeaf;
 @property(readonly) DVTDocumentLocation *navigableItem_contentDocumentLocation;
 @property(readonly) NSImage *navigableItem_image;
 @property(readonly) NSString *navigableItem_name;

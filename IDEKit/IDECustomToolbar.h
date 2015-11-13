@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSToolbar.h"
+#import <AppKit/NSToolbar.h>
 
 @class NSSet;
 
@@ -21,7 +21,6 @@
 - (BOOL)_allowsSizeMode:(unsigned long long)arg1;
 - (BOOL)_allowsDisplayMode:(unsigned long long)arg1;
 - (BOOL)isFullScreen;
-- (id)_customMetrics;
 
 @end
 

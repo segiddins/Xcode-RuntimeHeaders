@@ -4,16 +4,21 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDEDistributionMethodExport.h"
+#import <IDEFoundation/IDEDistributionMethodExport.h>
+
+@class DVTPlatform;
 
 @interface IDEDistributionMethodEnterprise : IDEDistributionMethodExport
 {
 }
 
+- (id)summaryPaneNextButtonTitleOverride;
+- (BOOL)supportsManifestDistribution;
 - (id)requiredTeamTypes;
 - (id)packagingStepIdentifier;
 - (id)exportStepName;
 - (unsigned long long)provisioningProfileType;
+- (id)provisioningProfilePlatform;
 - (BOOL)wantsProvisioningProfiles;
 - (id)installerCertificateKind;
 - (id)certificateKind;
@@ -21,7 +26,11 @@
 - (id)subtitle;
 - (id)shortTitle;
 - (id)title;
+- (id)commandLineName;
+@property(readonly) DVTPlatform *supportedPlatform;
+- (id)appStoreName;
 - (_Bool)supportsDistributionOfArchive:(id)arg1;
+- (double)sortOrder;
 
 @end
 

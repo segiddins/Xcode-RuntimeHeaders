@@ -4,10 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "IBDocumentArchiving.h"
-#import "NSCoding.h"
+#import <IDEInterfaceBuilderKit/IBDocumentArchiving-Protocol.h>
+#import <IDEInterfaceBuilderKit/NSCoding-Protocol.h>
 
 @class NSString;
 
@@ -28,13 +28,13 @@
 @property(copy) NSString *segueClassName; // @synthesize segueClassName=_segueClassName;
 @property(copy) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
+@property(readonly, copy) NSString *debugDescription;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)unarchiveWithDocumentUnarchiver:(id)arg1;
 - (void)archiveWithDocumentArchiver:(id)arg1;
 
 // Remaining properties
-@property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;

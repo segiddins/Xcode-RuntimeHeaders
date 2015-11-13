@@ -4,12 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "DVTInvalidation.h"
-#import "NSCoding.h"
+#import <IDEModelEditor/DVTInvalidation-Protocol.h>
+#import <IDEModelEditor/NSCoding-Protocol.h>
 
-@class DVTMapTable, DVTStackBacktrace, IDEDataModelDiagramEditor, NSDictionary, NSMutableArray, NSString;
+@class DVTStackBacktrace, IDEDataModelDiagramEditor, NSDictionary, NSMutableArray, NSString;
 
 @interface XDDiagramStorage : NSObject <NSCoding, DVTInvalidation>
 {
@@ -17,7 +17,6 @@
     BOOL _needsSetup;
     NSMutableArray *_graphicsLayers;
     NSMutableArray *_graphics;
-    DVTMapTable *_objectValueToGraphicsPerfHash;
     id _dataSource;
     id _delegate;
     NSDictionary *_userInfo;
@@ -37,8 +36,6 @@
 - (BOOL)isMarkAsDirtyGraphicDisabled;
 - (void)enableMarkAsDirtyGraphic;
 - (void)disableMarkAsDirtyGraphic;
-- (id)graphicWithObjectValue:(id)arg1;
-- (id)graphicsWithObjectValue:(id)arg1;
 - (void)removeGraphic:(id)arg1;
 - (void)moveGraphic:(id)arg1 toIndex:(long long)arg2;
 - (void)moveGraphicAtIndex:(long long)arg1 toIndex:(long long)arg2;
@@ -56,8 +53,6 @@
 @property(retain) IDEDataModelDiagramEditor *diagramController; // @synthesize diagramController=_diagramController;
 - (void)primitiveInvalidate;
 - (id)initWithCoder:(id)arg1;
-- (void)_removeGraphicFromCache:(id)arg1;
-- (void)_addGraphicToCache:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)defaultOperationColor;

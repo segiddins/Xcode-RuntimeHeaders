@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "DVTInvalidation.h"
+#import <IDEKit/DVTInvalidation-Protocol.h>
 
 @class DVTExtension, DVTStackBacktrace, IDEWorkspace, NSArray, NSImage, NSMutableArray, NSString;
 
@@ -25,9 +25,10 @@
 - (void).cxx_destruct;
 - (void)primitiveInvalidate;
 @property(readonly) NSImage *image;
+- (id)newActivityReportWithTitle:(id)arg1 options:(int)arg2;
 - (id)newActivityReportWithTitle:(id)arg1 options:(int)arg2 image:(id)arg3;
+- (id)newActivityReportWithTitle:(id)arg1 options:(int)arg2 isUserVisible:(BOOL)arg3 fileIOPriority:(unsigned long long)arg4 fileIOCoordinatorBlock:(CDUnknownBlockType)arg5;
 - (id)newActivityReportWithTitle:(id)arg1 options:(int)arg2 isUserVisible:(BOOL)arg3 image:(id)arg4 fileIOPriority:(unsigned long long)arg5 fileIOCoordinatorBlock:(CDUnknownBlockType)arg6;
-- (id)newActivityReportWithTitle:(id)arg1 options:(int)arg2 image:(id)arg3 fileIOPriority:(unsigned long long)arg4 fileIOCoordinatorBlock:(CDUnknownBlockType)arg5;
 - (id)initWithWorkspace:(id)arg1;
 
 // Remaining properties

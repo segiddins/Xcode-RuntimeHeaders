@@ -4,8 +4,8 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "DVTInvalidation.h"
-#import "NSObject.h"
+#import <IDEDevkitRefactoring/DVTInvalidation-Protocol.h>
+#import <IDEDevkitRefactoring/NSObject-Protocol.h>
 
 @class DVTSDK, DVTSourceExpression, DVTSourceLanguageService, NSString;
 

@@ -4,14 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "DSMQueryControllerBookTitleCallbacks.h"
-#import "NSAlertDelegate.h"
-#import "NSMenuDelegate.h"
-#import "NSSplitViewDelegate.h"
-#import "NSUserInterfaceItemSearching.h"
-#import "NSWindowDelegate.h"
+#import <DocSetViewing/DSMQueryControllerBookTitleCallbacks-Protocol.h>
+#import <DocSetViewing/NSAlertDelegate-Protocol.h>
+#import <DocSetViewing/NSMenuDelegate-Protocol.h>
+#import <DocSetViewing/NSSplitViewDelegate-Protocol.h>
+#import <DocSetViewing/NSUserInterfaceItemSearching-Protocol.h>
+#import <DocSetViewing/NSWindowDelegate-Protocol.h>
 
 @class DVBookmarksOutlineViewController, DVManPageController, DVQueryOptionsController, DVResultsOutlineViewController, DVScopeBarController, DVScopeBarView, DVSearchFieldController, DVStatusBarController, DVWebViewDelegates, DVWindow, NSMutableArray, NSOutlineView, NSSearchField, NSSegmentedControl, NSSplitView, NSString, NSTimer, NSToolbarItem, NSView, NSWindowController, WVPageFindContainerView, WVPageFindWebView, WebView;
 

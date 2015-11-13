@@ -6,7 +6,8 @@
 
 #import <DVTFoundation/DVTMacroExpansionStringList.h>
 
-@class NSString<DVTMacroExpansion>;
+@class NSString;
+@protocol DVTMacroExpansion;
 
 @interface DVTMacroExpansionStringList_NonLiteral : DVTMacroExpansionStringList
 {

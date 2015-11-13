@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDEKeyDrivenNavigableItem.h"
+#import <IDEKit/IDEKeyDrivenNavigableItem.h>
 
-#import "IDENavigableItemFileReferenceProxy.h"
+#import <Xcode3UI/IDENavigableItemFileReferenceProxy-Protocol.h>
 
 @class DVTDocumentLocation, DVTFileDataType, IDENavigableItem, NSString;
 
@@ -18,18 +18,19 @@
 
 + (id)keyPathsForValuesAffectingPrimaryChildItem;
 + (id)keyPathsForValuesAffectingToolTip;
-+ (id)keyPathsForValuesAffectingFileReference;
 + (id)keyPathsForValuesAffectingDefaultReference;
++ (id)keyPathsForValuesAffectingVariantGroup;
 - (void).cxx_destruct;
 - (BOOL)showSubitems;
+- (id)_navigableItemForExternalDrag;
 @property(readonly) IDENavigableItem *primaryChildItem;
 - (id)toolTip;
-- (id)textColor;
 - (id)contentDocumentLocation;
 - (id)documentType;
-- (id)fileReference;
+- (id)textColor;
 - (id)image;
 - (id)defaultReference;
+- (id)variantGroup;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

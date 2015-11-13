@@ -6,7 +6,7 @@
 
 #import <DevToolsInterface/XCControlView.h>
 
-#import "XCLayoutContraints.h"
+#import <DevToolsInterface/XCLayoutContraints-Protocol.h>
 
 @class NSArray, NSEvent, NSFont, NSMutableArray, NSMutableDictionary, NSShadow, NSView, XCModuleDock;
 

@@ -4,18 +4,22 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-@class IDEEditorDocument<SKEDocumentProtocol>;
+@protocol SKEDocumentProtocol;
 
 @interface SKEDocumentEdition : NSObject
 {
-    IDEEditorDocument<SKEDocumentProtocol> *_document;
+    id <SKEDocumentProtocol> _document;
+    SKEDocumentEdition *_revertingEdition;
 }
 
 - (void).cxx_destruct;
+- (id)reverseEdition;
+- (void)revertWithObject:(id)arg1;
 - (BOOL)revert;
 - (BOOL)apply;
+@property(readonly) id <SKEDocumentProtocol> document;
 - (id)initWithDocument:(id)arg1;
 
 @end

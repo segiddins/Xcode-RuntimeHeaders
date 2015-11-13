@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
 @class DVTFileDataType, IDEEntityIdentifier, IDETypeIdentifier, NSString, NSURL;
 
@@ -13,6 +13,7 @@
     IDEEntityIdentifier *_entityIdentifier;
 }
 
++ (unsigned long long)assertionBehaviorAfterEndOfEventForSelector:(SEL)arg1;
 + (id)cacheLog:(id)arg1;
 + (void)uncacheLogRecord:(id)arg1;
 + (void)cacheLogRecord:(id)arg1;
@@ -20,6 +21,8 @@
 @property(readonly) IDEEntityIdentifier *entityIdentifier; // @synthesize entityIdentifier=_entityIdentifier;
 - (void).cxx_destruct;
 - (id)testableSummariesForFilePath:(id)arg1 runDestinationRecord:(id *)arg2 error:(id *)arg3;
+- (id)coverageReport;
+- (id)coverageReportFilePath;
 - (id)testableSummariesPlistFilePath;
 - (id)initWithEntityIdentifier:(id)arg1;
 - (long long)compareUsingTimeStartedRecording:(id)arg1;

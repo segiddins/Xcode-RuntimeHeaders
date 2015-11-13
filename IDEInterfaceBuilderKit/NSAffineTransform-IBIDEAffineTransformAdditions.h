@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSAffineTransform.h"
+#import <Foundation/NSAffineTransform.h>
 
 @interface NSAffineTransform (IBIDEAffineTransformAdditions)
 + (id)ib_transformForFlippingRect:(double)arg1 aroundPoint:(struct CGPoint)arg2;

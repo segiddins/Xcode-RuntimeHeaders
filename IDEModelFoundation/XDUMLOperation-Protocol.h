@@ -4,10 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "XDUMLBehavioralFeature.h"
-#import "XDUMLNamespace.h"
+#import <IDEModelFoundation/XDUMLBehavioralFeature-Protocol.h>
+#import <IDEModelFoundation/XDUMLNamespace-Protocol.h>
 
 @class NSArray, NSString;
+@protocol XDUMLClass, XDUMLParameter, XDUMLType;
 
 @protocol XDUMLOperation <XDUMLBehavioralFeature, XDUMLNamespace>
 - (void)setOwnedParameters:(NSArray *)arg1;

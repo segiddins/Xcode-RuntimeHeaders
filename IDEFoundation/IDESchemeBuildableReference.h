@@ -4,12 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "DVTXMLUnarchiving.h"
-#import "NSCopying.h"
+#import <IDEFoundation/DVTXMLUnarchiving-Protocol.h>
+#import <IDEFoundation/NSCopying-Protocol.h>
 
-@class DVTObservingToken, IDEContainer<IDEBlueprintProvider>, IDEScheme, NSString;
+@class DVTObservingToken, IDEContainer, IDEScheme, NSString;
+@protocol IDEBlueprint, IDEBlueprintProvider, IDEBuildable;
 
 @interface IDESchemeBuildableReference : NSObject <DVTXMLUnarchiving, NSCopying>
 {
@@ -72,6 +73,7 @@
 @property(copy) NSString *cachedBlueprintName;
 @property(copy) NSString *buildableIdentifier;
 @property(readonly, copy) NSString *description;
+- (void)dealloc;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initFromXMLUnarchiver:(id)arg1 archiveVersion:(float)arg2;
 - (id)initWithBuildable:(id)arg1 scheme:(id)arg2 willBeArchived:(BOOL)arg3;

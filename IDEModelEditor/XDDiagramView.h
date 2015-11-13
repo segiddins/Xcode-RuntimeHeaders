@@ -4,11 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSView.h"
+#import <AppKit/NSView.h>
 
-#import "DVTInvalidation.h"
+#import <IDEModelEditor/DVTInvalidation-Protocol.h>
 
-@class DVTMapTable, DVTNotificationToken, DVTStackBacktrace, IDEDataModelDiagramEditor, NSArray, NSColor, NSImage, NSMutableArray, NSShadow, NSString, NSTimer, NSWindow, XDDiagramStorage, XDDiagramToolManager, XDGraphic;
+@class DVTNotificationToken, DVTStackBacktrace, IDEDataModelDiagramEditor, NSArray, NSColor, NSImage, NSMapTable, NSMutableArray, NSShadow, NSString, NSTimer, NSWindow, XDDiagramStorage, XDDiagramToolManager, XDGraphic;
 
 @interface XDDiagramView : NSView <DVTInvalidation>
 {
@@ -25,8 +25,8 @@
     XDGraphic *_editingGraphic;
     NSView *_editorView;
     XDGraphic *_clickedGraphic;
-    DVTMapTable *_auxiliaryStorageCache;
-    DVTMapTable *_drawingCache;
+    NSMapTable *_auxiliaryStorageCache;
+    NSMapTable *_drawingCache;
     id _delegate;
     id _target;
     SEL _action;

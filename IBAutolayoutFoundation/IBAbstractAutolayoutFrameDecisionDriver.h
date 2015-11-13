@@ -4,13 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
 @class IBAutolayoutArbitrationUnit, IBAutolayoutStatus, NSDictionary;
+@protocol IBAutolayoutInfoProvider;
 
 @interface IBAbstractAutolayoutFrameDecisionDriver : NSObject
 {
-    long long _frameDecisionRequestSessionNestingCount;
     IBAutolayoutArbitrationUnit *_arbitrationUnit;
     NSDictionary *_options;
     IBAutolayoutStatus *_autolayoutStatus;
@@ -20,12 +20,6 @@
 @property(readonly) NSDictionary *options; // @synthesize options=_options;
 @property(readonly) IBAutolayoutArbitrationUnit *arbitrationUnit; // @synthesize arbitrationUnit=_arbitrationUnit;
 - (void).cxx_destruct;
-- (void)stopFrameDecisionRequestSession;
-- (void)startFrameDecisionRequestSession;
-- (void)didStopFrameDecisionRequestSession;
-- (void)didStartFrameDecisionRequestSession;
-@property(readonly, getter=isRunningFrameDecisionRequestSession) BOOL runningFrameDecisionRequestSession;
-- (CDStruct_961d3510)viewMovementResultForView:(id)arg1 forSizingView:(id)arg2 alongEdge:(unsigned int)arg3 inCoordinateSpaceOfView:(id)arg4;
 - (void)addConstraints:(id)arg1 replacingConstraints:(id)arg2 enforcingCurrentSizeOfViews:(id)arg3 mutuallyExclusiveConstraintBreakageStrategy:(unsigned long long)arg4 returningConstraintsAdded:(id *)arg5 returningConstraintsRemoved:(id *)arg6 framePropagationBlock:(CDUnknownBlockType)arg7;
 - (CDUnknownBlockType)sizeView:(id)arg1 toLayoutSize:(struct CGSize)arg2 suggestedLayoutOrigin:(struct CGPoint)arg3 mutuallyExclusiveConstraintBreakageStrategy:(unsigned long long)arg4 framePropagationBlock:(CDUnknownBlockType)arg5;
 - (void)enumerateLayoutFramesForViews:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;

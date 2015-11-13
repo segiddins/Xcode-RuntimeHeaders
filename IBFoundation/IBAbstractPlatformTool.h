@@ -4,10 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "IBAbstractPlatformTool.h"
-#import "IBMessageReceiveChannelTarget.h"
+#import <IBFoundation/IBAbstractPlatformTool-Protocol.h>
+#import <IBFoundation/IBMessageReceiveChannelTarget-Protocol.h>
 
 @class NSMutableArray, NSString;
 
@@ -24,15 +24,19 @@
 - (void)messageReceiveChannel:(id)arg1 didDeliverMesssage:(SEL)arg2;
 - (void)messageReceiveChannel:(id)arg1 willDeliverMesssage:(SEL)arg2;
 - (void)keepPersistentObjectInContext:(id)arg1;
-- (id)protocolCapabilities;
+- (void)loadExtensions:(id)arg1;
+- (void)startServingWriteDescriptor:(int)arg1 readDescriptor:(int)arg2;
 - (void)startServingSocket:(int)arg1;
 - (void)startServingReceiveChannel:(id)arg1;
+- (BOOL)shouldExitWhenStandardInputCloses;
+- (BOOL)shouldStartEventProcessingRunloop;
 - (id)messageReceiveChannel:(id)arg1 preprocessException:(id)arg2;
 - (void)messageReceiveChannel:(id)arg1 shutdownWithError:(id)arg2;
 - (void)messageReceiveChannelShutdown:(id)arg1;
 - (id)messageReceiveChannel:(id)arg1 queueForReceivingMessage:(SEL)arg2;
 - (id)messageReceiveChannelQueueForShutdownNotification:(id)arg1;
 - (void)runMessageChannel:(id)arg1;
+- (id)context;
 - (void)standardInputClosed;
 - (void)initializeWithArguments:(id)arg1;
 

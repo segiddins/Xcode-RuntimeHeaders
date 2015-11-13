@@ -4,11 +4,16 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <DebuggerUI/NSObject-Protocol.h>
 
-@class DBGRangeSliderNode;
+@class DBGRangeSliderNode, DBGSimpleNode;
 
 @protocol DBGRangeSliderDelegate <NSObject>
+- (void)highlight3DPlaneWithIndex:(long long)arg1;
+- (void)rangeSliderDidUpdateSpacing:(DBGRangeSliderNode *)arg1 from3DPlaneIndex:(long long)arg2;
 - (void)rangeSliderDidChange:(DBGRangeSliderNode *)arg1;
+
+@optional
+- (void)manageCameraFacingNode:(DBGSimpleNode *)arg1;
 @end
 

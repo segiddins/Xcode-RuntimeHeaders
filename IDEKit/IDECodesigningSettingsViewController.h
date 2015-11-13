@@ -6,9 +6,10 @@
 
 #import <IDEKit/IDEViewController.h>
 
-#import "NSMenuDelegate.h"
+#import <IDEKit/NSMenuDelegate-Protocol.h>
 
 @class NSPopUpButton, NSProgressIndicator, NSString, NSTextField;
+@protocol IDECodesigningSettings;
 
 @interface IDECodesigningSettingsViewController : IDEViewController <NSMenuDelegate>
 {

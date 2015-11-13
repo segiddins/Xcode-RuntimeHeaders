@@ -4,13 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "DVTLayerHostingView.h"
+#import <DVTKit/DVTLayerHostingView.h>
 
-#import "DVTInvalidation.h"
-#import "DVTWindowActivationStateObserver.h"
-#import "IDEActivityViewDataConsumer.h"
+#import <IDEKit/DVTInvalidation-Protocol.h>
+#import <IDEKit/DVTWindowActivationStateObserver-Protocol.h>
+#import <IDEKit/IDEActivityViewDataConsumer-Protocol.h>
 
 @class CALayer, DVTObservingToken, DVTStackBacktrace, IDEActivityMultiActionIndicatorLayer, IDEActivityPopUpWindowController, IDEActivityReport, IDEActivityReportLayer, IDEActivityStatusContainerLayer, IDEActivityViewDataSource, IDEWorkspaceWindowController, NSMapTable, NSString, NSView;
+@protocol DVTCancellable;
 
 @interface IDEActivityView : DVTLayerHostingView <IDEActivityViewDataConsumer, DVTWindowActivationStateObserver, DVTInvalidation>
 {
@@ -20,7 +21,6 @@
     IDEActivityReportLayer *_currentActivityReportLayer;
     CALayer *_reportLayerContainerLayer;
     CALayer *_backgroundLayer;
-    CALayer *_backgroundColorLayer;
     CALayer *_reportLayerTree;
     IDEActivityPopUpWindowController *_popUpController;
     DVTObservingToken *_popUpControllerIsValidToken;
@@ -71,10 +71,6 @@
 - (id)_buildReportLayerTree;
 - (id)_backgroundLayer;
 - (void)_updateCurrentActivityReportForWindowActivationState;
-- (void)_updateHighlightColorForWindowActivationState;
-- (void)_updateBackgroundColorForWindowActivationState;
-- (id)_highlightColor;
-- (id)_backgroundColor;
 - (id)clickableLayerAtPoint:(struct CGPoint)arg1;
 - (struct CGRect)insetReportLayerBounds;
 - (struct CGRect)insetRootLayerBounds;

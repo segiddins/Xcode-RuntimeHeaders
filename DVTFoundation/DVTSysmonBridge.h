@@ -4,15 +4,16 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-@class NSDate, NSObject<OS_sysmon_request>, NSObject<OS_sysmon_row>;
+@class NSDate;
+@protocol DVTSysmonBridgeDelegate><DVTInvalidation, OS_sysmon_request, OS_sysmon_row;
 
 @interface DVTSysmonBridge : NSObject
 {
     BOOL _hasStarted;
     BOOL _isDisconnected;
-    id <DVTSysmonBridgeDelegate> _delegate;
+    id <DVTSysmonBridgeDelegate><DVTInvalidation> _delegate;
     NSDate *_currentSampleTimestamp;
     NSObject<OS_sysmon_request> *_sysmonRequest;
     NSObject<OS_sysmon_row> *_currentRow;
@@ -23,7 +24,7 @@
 @property(nonatomic) NSObject<OS_sysmon_row> *currentRow; // @synthesize currentRow=_currentRow;
 @property(retain, nonatomic) NSObject<OS_sysmon_request> *sysmonRequest; // @synthesize sysmonRequest=_sysmonRequest;
 @property(retain, nonatomic) NSDate *currentSampleTimestamp; // @synthesize currentSampleTimestamp=_currentSampleTimestamp;
-@property(nonatomic) __weak id <DVTSysmonBridgeDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) __weak id <DVTSysmonBridgeDelegate><DVTInvalidation> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)dealloc;
 - (void)disconnect;

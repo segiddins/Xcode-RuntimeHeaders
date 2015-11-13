@@ -4,12 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "NSApplicationDelegate.h"
-#import "NSMenuDelegate.h"
+#import <IDEKit/NSApplicationDelegate-Protocol.h>
+#import <IDEKit/NSMenuDelegate-Protocol.h>
 
 @class DVTDelayedInvocation, DVTNotificationToken, DVTObservingToken, IDESourceControlUIHandler, NSArray, NSDictionary, NSMenuItem, NSMutableDictionary, NSString;
+@protocol NSMenuDelegate;
 
 @interface IDEApplicationController : NSObject <NSApplicationDelegate, NSMenuDelegate>
 {
@@ -27,9 +28,6 @@
     IDESourceControlUIHandler *_sourceControlUIHandler;
     DVTDelayedInvocation *_tabStateContextDelayedSaveInvocation;
     NSMutableDictionary *_tabStateContextForTabNameMap;
-    NSString *_licenseAgreementPath;
-    DVTObservingToken *_hotKeyToEnableFloatingDebuggerToken;
-    DVTObservingToken *_currentPreferenceSetObservationToken;
     DVTObservingToken *_lastActiveEditorToken;
     DVTNotificationToken *_lastActiveEditorContextNotificationToken;
     id _keyBindingSetWillActivateObserver;
@@ -52,7 +50,7 @@
 - (id)_tabStateContextForTabNameMapByInstantiatingIfNeeded;
 - (id)_tabStateContextForTabNameMapFromFilePath:(id)arg1;
 - (BOOL)_saveTabStateContextForTabNameMapToFilePath:(id)arg1;
-@property(readonly) NSString *licenseAgreementPath;
+- (id)licenseAgreementPathOfType:(id)arg1;
 @property(readonly) NSString *formattedApplicationVersion;
 - (void)updateDebugMenuIfNeeded;
 - (void)editorMenuWillOpen:(id)arg1;
@@ -86,8 +84,6 @@
 - (unsigned long long)_shouldTerminateClosingDocuments;
 - (void)menuNeedsUpdate:(id)arg1;
 - (void)menuWillOpen:(id)arg1;
-- (void)_updateGlobalHotKeyToEnableFloatingDebugger:(id)arg1;
-- (void)_currentPreferenceSetChanged;
 - (void)applicationDidFinishLaunching:(id)arg1;
 - (void)applicationIsTerminating:(id)arg1;
 - (void)_incrementCountForKey:(id)arg1 in:(id)arg2;

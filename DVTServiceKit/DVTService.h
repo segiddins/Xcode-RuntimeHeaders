@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
 @class DVTRequestHandler, NSArray, NSMutableArray, NSMutableDictionary, NSRunLoop;
 
@@ -35,6 +35,7 @@
 - (id)requestHandlerForKey:(id)arg1;
 - (void)registerRequestHandler:(id)arg1 forKey:(id)arg2;
 - (void)registerAdaptor:(id)arg1;
+@property(readonly, copy) NSArray *socketNames;
 @property(readonly, copy) NSArray *adaptors;
 - (id)init;
 

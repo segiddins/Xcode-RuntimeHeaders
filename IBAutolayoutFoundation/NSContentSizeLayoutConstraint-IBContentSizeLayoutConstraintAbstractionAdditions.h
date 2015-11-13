@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSContentSizeLayoutConstraint.h"
+#import <Foundation/NSContentSizeLayoutConstraint.h>
 
 @interface NSContentSizeLayoutConstraint (IBContentSizeLayoutConstraintAbstractionAdditions)
 - (void)ib_populateLayoutConstraintAbstractions:(id)arg1 fromConstraintBetweenViewsInDocument:(id)arg2;

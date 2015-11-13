@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSSegmentedCell.h"
+#import <AppKit/NSSegmentedCell.h>
 
-@class DVTPointerArray, NSImageCell;
+@class NSImageCell, NSPointerArray;
 
 @interface _DVTSegmentedCell : NSSegmentedCell
 {
@@ -14,7 +14,7 @@
     BOOL _useMenuDelay;
     BOOL _useMenuDelayForSelectedSegment;
     BOOL _useRadioDrawingStyle;
-    DVTPointerArray *_segmentImages;
+    NSPointerArray *_segmentImages;
     BOOL _useAnyDrawingStyle;
 }
 

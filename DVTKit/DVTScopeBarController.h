@@ -6,7 +6,8 @@
 
 #import <DVTKit/DVTViewController.h>
 
-@class DVTControllerContentView, DVTScopeBarView, DVTViewController<DVTScopeBarContentController>, NSSegmentedControl;
+@class DVTControllerContentView, DVTScopeBarView, NSSegmentedControl;
+@protocol DVTScopeBarContentController;
 
 @interface DVTScopeBarController : DVTViewController
 {

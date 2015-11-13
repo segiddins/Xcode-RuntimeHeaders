@@ -4,10 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSPopUpButton.h"
+#import <AppKit/NSPopUpButton.h>
 
 @interface NSPopUpButton (IBNSPopupButtonIntegration)
-- (void)ibWarnings:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
 - (id)ibEquivalentSourceForToOneOutlet:(id)arg1;
 - (void)ibCustomizeForInsertionIntoNSToolbar:(id)arg1 withObjects:(id)arg2 fromLibraryOrDifferentTargetRuntime:(BOOL)arg3 andInsertionContext:(id)arg4;
 @end

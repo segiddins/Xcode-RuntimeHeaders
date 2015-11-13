@@ -4,13 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "NSCoding.h"
-#import "NSMutableCopying.h"
-#import "XRIntKeyedDictionaryImmutable.h"
+#import <DVTInstrumentsUtilities/NSCoding-Protocol.h>
+#import <DVTInstrumentsUtilities/NSMutableCopying-Protocol.h>
+#import <DVTInstrumentsUtilities/XRIntKeyedDictionaryImmutable-Protocol.h>
 
 @class NSString;
+@protocol NSObject><NSMutableCopying;
 
 @interface XRIntKeyedDictionary : NSObject <XRIntKeyedDictionaryImmutable, NSCoding, NSMutableCopying>
 {
@@ -24,6 +25,7 @@
 - (unsigned long long)count;
 - (void)enumerateObjectsAndIntegerKeys:(CDUnknownBlockType)arg1;
 - (id)allObjects;
+- (void)removeAllObjects;
 - (void)removeObjectForIntegerKey:(unsigned long long)arg1;
 - (void)setObject:(id)arg1 forIntegerKey:(unsigned long long)arg2;
 - (void)setObject:(id)arg1 forIntergerKey:(unsigned long long)arg2;

@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "IDEContinuousIntegrationLogNavigatorHelper.h"
+#import <XCSUI/IDEContinuousIntegrationLogNavigatorHelper-Protocol.h>
 
 @class NSString;
 
@@ -14,16 +14,23 @@
 {
 }
 
+- (id)integrationObservableStatusChangedPropertyName;
+- (id)botObservableStatusChangedPropertyName;
 - (int)statusOfIntegration:(id)arg1;
+- (void)compoundStatusForIntegrationOrBot:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (BOOL)isIntegrationFinished:(id)arg1;
 - (void)performAction:(SEL)arg1 forNavigableItemSelection:(id)arg2 withNavigator:(id)arg3;
 - (id)titleForNavigableItemSelection:(id)arg1 action:(SEL)arg2;
 - (BOOL)navigableItemSelection:(id)arg1 allowsAction:(SEL)arg2;
+- (id)documentLocationForLoadMoreItemWithNavigable:(id)arg1;
 - (void)additionalIntegrationsOnServerForBotNavigable:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)loadMoreBotsInBotNavigable:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (id)legacyBotNavigablesForLegacyBots:(id)arg1;
 - (id)navigableItemForIntegration:(id)arg1;
+- (id)navigableItemForBotForGroupByTime:(id)arg1;
 - (id)navigableItemForBot:(id)arg1;
+- (id)navigableItemForService:(id)arg1;
+- (id)botIdentifierForIntegrationNavigableItem:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

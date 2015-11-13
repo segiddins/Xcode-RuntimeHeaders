@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSArray.h"
+#import <Foundation/NSArray.h>
 
 @interface IDESwiftCompletionsArray : NSArray
 {
@@ -14,7 +14,6 @@
     unsigned long long _itemCount;
 }
 
-- (id).cxx_construct;
 - (void).cxx_destruct;
 - (unsigned long long)indexOfFirstObjectWithCaseInsensitivePrefix:(const char *)arg1 length:(unsigned long long)arg2;
 - (void)enumerateSourceKitObjectsInRange:(struct _NSRange)arg1 usingBlock:(CDUnknownBlockType)arg2;

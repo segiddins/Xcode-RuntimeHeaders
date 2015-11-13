@@ -6,9 +6,10 @@
 
 #import <IDEKit/IDESourceControlReviewFilesWindowController.h>
 
-#import "IDENavigableItemCoordinatorDelegate.h"
+#import <IDEKit/IDENavigableItemCoordinatorDelegate-Protocol.h>
 
-@class DVTBorderedView, DVTObservingToken, DVTTextViewWithPlaceholder, IDESourceControlPushOperationInfo, IDESourceControlRepositoryChooserItem, IDESourceControlReviewFilesDataSource, IDESourceControlWorkspaceUIHandler, NSArray, NSButton, NSImageView, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_semaphore>, NSOperationQueue, NSPopUpButton, NSSplitView, NSString, NSTextField;
+@class DVTBorderedView, DVTObservingToken, DVTTextViewWithPlaceholder, IDESourceControlPushOperationInfo, IDESourceControlRepositoryChooserItem, IDESourceControlReviewFilesDataSource, IDESourceControlWorkspaceUIHandler, NSArray, NSButton, NSImageView, NSMutableArray, NSMutableDictionary, NSObject, NSOperationQueue, NSPopUpButton, NSSplitView, NSString, NSTextField;
+@protocol OS_dispatch_semaphore;
 
 @interface IDESourceControlCommitWindowController : IDESourceControlReviewFilesWindowController <IDENavigableItemCoordinatorDelegate>
 {
@@ -34,6 +35,7 @@
     NSMutableDictionary *_pushTokenDictionary;
     BOOL _shouldEnablePushButtons;
     DVTObservingToken *_checkedFilePathsToken2;
+    id _didUpdateLocalStatusNotificationToken;
     IDESourceControlRepositoryChooserItem *_repositoryChooserItem;
     IDESourceControlPushOperationInfo *_singlePushOperationInfo;
     IDESourceControlWorkspaceUIHandler *_workspaceUIHandler;
@@ -57,8 +59,9 @@
 - (void)sheetDidEnd:(id)arg1 returnCode:(long long)arg2;
 - (void)teardown;
 - (void)teardownTemporaryPushOperationInfos;
+- (void)displayErrorMessages:(id)arg1;
 - (void)commit:(id)arg1;
-- (void)_pushOperationInfos:(id)arg1 forWorkingTreesCommittedSuccessfully:(id)arg2;
+- (void)_pushOperationInfos:(id)arg1 forWorkingCopiesCommittedSuccessfully:(id)arg2;
 - (void)setupPushWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (id)_performPreCommitOperation:(int)arg1 onFiles:(id)arg2;
 - (void)_commit;
@@ -66,7 +69,6 @@
 - (void)startInteractiveCommitForFiles:(id)arg1;
 - (void)handleErrors:(id)arg1 forRequestsOfType:(int)arg2;
 - (BOOL)shouldEnableCommitButton;
-- (BOOL)commitMessageRequiredForSourceTrees:(id)arg1;
 - (void)saveFilesAtFilePaths:(id)arg1;
 - (unsigned long long)countOfCheckedItems;
 - (unsigned long long)countOfItemsThatCanBeCommitted;
@@ -90,7 +92,7 @@
 - (void)reviewFilesViewController:(id)arg1 didInstallComparisonEditor:(id)arg2;
 - (void)selectRepository:(id)arg1;
 - (BOOL)validateMenuItem:(id)arg1;
-- (void)toggleAllowCommit;
+- (void)toggleAllowCommit:(id)arg1;
 - (void)windowDidLoad;
 - (id)windowNibName;
 - (id)initWithWindow:(id)arg1;

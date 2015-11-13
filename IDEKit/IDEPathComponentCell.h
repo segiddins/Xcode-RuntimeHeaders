@@ -4,16 +4,16 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSPathComponentCell.h"
+#import <AppKit/NSPathComponentCell.h>
 
 @class NSImage;
 
 @interface IDEPathComponentCell : NSPathComponentCell
 {
-    int _gradientStyle;
+    NSImage *_realImage;
     BOOL _isLastItem;
     BOOL _isFirstItem;
-    NSImage *_realImage;
+    int _gradientStyle;
     unsigned long long _textAlignment;
 }
 
@@ -23,6 +23,7 @@
 @property BOOL isLastItem; // @synthesize isLastItem=_isLastItem;
 @property int gradientStyle; // @synthesize gradientStyle=_gradientStyle;
 - (void).cxx_destruct;
+- (BOOL)_delegateRespondsToAndIsDeemphasizedInView:(id)arg1;
 - (void)drawInteriorWithFrame:(struct CGRect)arg1 inView:(id)arg2;
 - (void)drawWithFrame:(struct CGRect)arg1 inView:(id)arg2;
 - (BOOL)iconHitTest:(struct CGPoint)arg1 inFrame:(struct CGRect)arg2;

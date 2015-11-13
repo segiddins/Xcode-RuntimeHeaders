@@ -6,9 +6,9 @@
 
 #import <DevToolsInterface/PBXModule.h>
 
-#import "NSWindowDelegate.h"
-#import "XCEDataRootAdapterP.h"
-#import "XCSelectionSource.h"
+#import <DevToolsInterface/NSWindowDelegate-Protocol.h>
+#import <DevToolsInterface/XCEDataRootAdapterP-Protocol.h>
+#import <DevToolsInterface/XCSelectionSource-Protocol.h>
 
 @class NSButton, NSSplitView, NSString, NSView, PBXNavigatorGroup, PBXProject, PBXProjectDocument, PBXProjectFindModule, XCBinder, XCBinderOutlineView, XCEConfigurableDataNode, XCEConfigurableDataSource, XCElementActionButton, XCOrganizerFileNodeAdapter;
 

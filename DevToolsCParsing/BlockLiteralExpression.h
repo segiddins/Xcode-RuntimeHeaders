@@ -6,9 +6,10 @@
 
 #import <DevToolsCParsing/Expression.h>
 
-#import "ScopeLookup.h"
+#import <DevToolsCParsing/ScopeLookup-Protocol.h>
 
-@class ASTNode<ScopeLookup>, Declaration, Type;
+@class ASTNode, Declaration, Type;
+@protocol ScopeLookup;
 
 @interface BlockLiteralExpression : Expression <ScopeLookup>
 {

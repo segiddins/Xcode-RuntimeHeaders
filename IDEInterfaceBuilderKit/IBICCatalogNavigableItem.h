@@ -4,11 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDENavigableItem.h"
+#import <IDEKit/IDENavigableItem.h>
 
-#import "IBICCatalogItemObserver.h"
+#import <IDEInterfaceBuilderKit/IBICCatalogItemObserver-Protocol.h>
 
 @class NSArray, NSImage, NSString;
+@protocol IBInvalidation;
 
 @interface IBICCatalogNavigableItem : IDENavigableItem <IBICCatalogItemObserver>
 {
@@ -32,7 +33,7 @@
 - (id)name;
 - (id)representedObject;
 - (void)imageCatalogItemDidChangeDisplayOrderedChildren:(id)arg1;
-- (void)imageCatalogItem:(id)arg1 didChangeDisplayProperty:(id)arg2;
+- (void)imageCatalogItemDidChangeDisplayProperties:(id)arg1;
 - (void)imageCatalogItem:(id)arg1 didChangeKey:(id)arg2 fromValue:(id)arg3 toValue:(id)arg4;
 - (void)imageCatalogItemDiskContentsDidChange:(id)arg1;
 - (void)refreshContentIfNeededWithChangeToItem:(id)arg1;

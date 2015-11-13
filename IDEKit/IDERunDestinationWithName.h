@@ -4,28 +4,33 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "IDEKeyDrivenNavigableItemRepresentedObject.h"
-#import "IDERunDestinationRepresentedObject.h"
+#import <IDEKit/IDEKeyDrivenNavigableItemRepresentedObject-Protocol.h>
+#import <IDEKit/IDERunDestinationRepresentedObject-Protocol.h>
 
 @class DVTDocumentLocation, DVTFileDataType, IDEFileReference, IDERunDestination, NSImage, NSString;
 
 @interface IDERunDestinationWithName : NSObject <IDEKeyDrivenNavigableItemRepresentedObject, IDERunDestinationRepresentedObject>
 {
+    BOOL _isWatchDestination;
     IDERunDestination *_runDestination;
     NSString *_name;
+    NSString *_navigableName;
 }
 
 + (id)keyPathsForValuesAffectingNavigableItem_toolTip;
 + (id)keyPathsForValuesAffectingNavigableItem_image;
+@property(copy) NSString *navigableName; // @synthesize navigableName=_navigableName;
 @property(readonly) NSString *name; // @synthesize name=_name;
+@property(readonly) BOOL isWatchDestination; // @synthesize isWatchDestination=_isWatchDestination;
 @property(readonly) IDERunDestination *runDestination; // @synthesize runDestination=_runDestination;
 - (void).cxx_destruct;
 @property(readonly) NSString *navigableItem_toolTip;
 @property(readonly) NSImage *navigableItem_image;
 @property(readonly) NSString *navigableItem_name;
 @property(readonly, copy) NSString *description;
+- (id)initWithRunDestination:(id)arg1 name:(id)arg2 isWatchDestination:(BOOL)arg3;
 - (id)initWithRunDestination:(id)arg1 name:(id)arg2;
 
 // Remaining properties

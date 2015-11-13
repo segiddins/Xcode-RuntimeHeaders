@@ -6,7 +6,8 @@
 
 #import <DTXConnectionServices/DTXTransport.h>
 
-@class NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSURL;
+@class NSObject, NSURL;
+@protocol OS_dispatch_queue, OS_dispatch_source;
 
 @interface DTXMachTransport : DTXTransport
 {

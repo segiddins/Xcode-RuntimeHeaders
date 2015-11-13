@@ -7,6 +7,7 @@
 #import <IDEKit/IDEViewController.h>
 
 @class NSArray, NSPopUpButton;
+@protocol ITunesSoftwareApplicationDescription;
 
 @interface IDEDistributionAppRecordSelectionViewController : IDEViewController
 {

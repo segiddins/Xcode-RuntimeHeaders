@@ -6,7 +6,7 @@
 
 #import <DevToolsInterface/PBXModule.h>
 
-#import "NSComboBoxDataSource.h"
+#import <DevToolsInterface/NSComboBoxDataSource-Protocol.h>
 
 @class NSButton, NSMutableDictionary, NSPopUpButton, NSString, PBXExtendedTableView, PBXProject, SCMRootToRepositoryMap;
 

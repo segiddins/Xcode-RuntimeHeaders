@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDEWorkspace.h"
+#import <IDEFoundation/IDEWorkspace.h>
 
 @interface IDEWorkspace (Xcode3ProjectScripting)
 - (void)insertInSdefSupport_projects:(id)arg1 atIndex:(unsigned long long)arg2;

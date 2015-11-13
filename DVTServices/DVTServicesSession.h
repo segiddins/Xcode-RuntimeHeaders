@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "DVTDirectoryServicesSessionDescription.h"
+#import <DVTServices/DVTDirectoryServicesSessionDescription-Protocol.h>
 
 @class DVTDeveloperAccount, DVTDeveloperAccountSession, DVTLogAspect, NSData, NSString;
 
@@ -18,13 +18,14 @@
 }
 
 + (id)_servicesSessionErrorFromAccountError:(id)arg1 account:(id)arg2;
++ (id)servicesSessionWithDeveloperAccountSession:(id)arg1 executionContext:(long long)arg2;
 + (id)servicesSessionByLoggingInWithAccount:(id)arg1 executionContext:(long long)arg2 error:(id *)arg3;
 @property(retain, nonatomic) DVTDeveloperAccountSession *accountSession; // @synthesize accountSession=_accountSession;
 @property(readonly, nonatomic) long long executionContext; // @synthesize executionContext=_executionContext;
 @property(readonly, nonatomic) DVTDeveloperAccount *account; // @synthesize account=_account;
 - (void).cxx_destruct;
-@property(readonly, copy) NSData *sessionData;
-@property(readonly, copy) NSString *sessionID;
+@property(readonly, copy, nonatomic) NSData *sessionData;
+@property(readonly, copy, nonatomic) NSString *sessionID;
 @property(readonly, nonatomic) DVTLogAspect *logAspect;
 - (id)initWithAccount:(id)arg1 accountSession:(id)arg2 executionContext:(long long)arg3;
 

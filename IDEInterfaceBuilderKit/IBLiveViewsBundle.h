@@ -4,15 +4,15 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "DVTInvalidation.h"
+#import <IDEInterfaceBuilderKit/DVTInvalidation-Protocol.h>
 
-@class DVTDispatchLock, DVTFilePath, DVTHashTable, DVTStackBacktrace, IBLiveViewsManager, IBPlatform, NSDictionary, NSString;
+@class DVTDispatchLock, DVTFilePath, DVTStackBacktrace, IBLiveViewsManager, IBPlatform, NSDictionary, NSHashTable, NSString;
 
 @interface IBLiveViewsBundle : NSObject <DVTInvalidation>
 {
-    DVTHashTable *_weakObserversHashTable;
+    NSHashTable *_weakObserversHashTable;
     DVTDispatchLock *_accessLock;
     long long _lockCount;
     DVTFilePath *_builtFilePath;

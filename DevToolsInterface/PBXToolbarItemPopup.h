@@ -6,7 +6,7 @@
 
 #import <DevToolsInterface/PBXToolbarButtonItem.h>
 
-#import "PBXImageGestureObserver.h"
+#import <DevToolsInterface/PBXImageGestureObserver-Protocol.h>
 
 @class NSImage, NSMenu, NSMutableArray, NSToolbarItem, PBXImageGestureView;
 

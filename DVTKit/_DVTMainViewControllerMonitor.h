@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "DVTInvalidation.h"
+#import <DVTKit/DVTInvalidation-Protocol.h>
 
 @class DVTObservingToken, DVTStackBacktrace, DVTViewController, DVTWeakInterposer, NSString, NSWindow;
 
@@ -14,13 +14,14 @@
 {
     DVTWeakInterposer *_window_dvtWeakInterposer;
     DVTObservingToken *_firstResponderObservingToken;
+    DVTObservingToken *_mainViewControllerIsValidObservingToken;
     DVTViewController *_mainViewController;
 }
 
 + (void)initialize;
-@property(retain) DVTViewController *mainViewController; // @synthesize mainViewController=_mainViewController;
 - (void).cxx_destruct;
 - (void)primitiveInvalidate;
+@property(retain) DVTViewController *mainViewController;
 - (id)initWithWindow:(id)arg1;
 @property __weak NSWindow *window;
 

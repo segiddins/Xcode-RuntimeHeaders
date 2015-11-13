@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "JSValue.h"
+#import <JavaScriptCore/JSValue.h>
 
 @interface JSValue (SCNStructSupport)
 + (id)valueWithTransform3D:(struct CATransform3D)arg1 inContext:(id)arg2;

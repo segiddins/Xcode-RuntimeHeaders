@@ -6,6 +6,8 @@
 
 #import <IDEInterfaceBuilderCocoaIntegration/IBNSViewEditor.h>
 
+@protocol DVTCancellable;
+
 @interface IBNSTableHeaderViewEditor : IBNSViewEditor
 {
     id <DVTCancellable> columnObserverToken;

@@ -6,7 +6,7 @@
 
 #import <XDInterface/XDGraphicContentsEditor.h>
 
-#import "NSTextViewDelegate.h"
+#import <XDInterface/NSTextViewDelegate-Protocol.h>
 
 @class NSLayoutManager, NSString, NSTextContainer, NSTextView;
 

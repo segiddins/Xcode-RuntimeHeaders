@@ -7,6 +7,7 @@
 #import <IDEKit/IDESourceControlMultiChooserItem.h>
 
 @class IDESourceControlBranch;
+@protocol IDESourceControlBranchChooserItemDelegate;
 
 @interface IDESourceControlBranchChooserItem : IDESourceControlMultiChooserItem
 {

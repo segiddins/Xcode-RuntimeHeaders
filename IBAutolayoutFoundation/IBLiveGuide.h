@@ -6,7 +6,8 @@
 
 #import <IBAutolayoutFoundation/IBLayoutGuide.h>
 
-@class NSObject<IBAutolayoutItem>;
+@class NSObject;
+@protocol IBAutolayoutItem;
 
 @interface IBLiveGuide : IBLayoutGuide
 {

@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "DVTAccessoryViewAnnotation.h"
+#import <DVTKit/DVTAccessoryViewAnnotation.h>
 
 @class IDESourceCodePlaygroundSectionAnnotationProvider, IDESourceCodePlaygroundSectionAnnotationViewController, NSMutableOrderedSet;
 
@@ -19,9 +19,6 @@
 - (void).cxx_destruct;
 - (id)currentStateInTextView:(id)arg1;
 - (void)drawLineHighlightInRect:(struct CGRect)arg1 textView:(id)arg2;
-- (void)setNeedsInvalidateWithoutLayout;
-- (void)setNeedsInvalidate;
-- (BOOL)wantsMergeAnnotations;
 - (id)initWithViewControllerClass:(Class)arg1;
 
 // Remaining properties

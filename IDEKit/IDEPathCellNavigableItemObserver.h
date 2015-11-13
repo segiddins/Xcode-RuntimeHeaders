@@ -4,23 +4,23 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "DVTInvalidation.h"
+#import <IDEKit/DVTInvalidation-Protocol.h>
 
-@class DVTHashTable, DVTStackBacktrace, IDEPathCell, NSSet, NSString;
+@class DVTStackBacktrace, IDEPathCell, NSHashTable, NSSet, NSString;
 
 @interface IDEPathCellNavigableItemObserver : NSObject <DVTInvalidation>
 {
     IDEPathCell *_owner;
-    DVTHashTable *_observedItems;
+    NSHashTable *_observedItems;
 }
 
 + (void)initialize;
 - (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
-- (void)tearDownObservingForItems:(id)arg1;
-- (void)setupObservingForItems:(id)arg1;
+- (void)_tearDownObservingForItems:(id)arg1;
+- (void)_setupObservingForItems:(id)arg1;
 @property(readonly) NSSet *observedItems;
 - (void)primitiveInvalidate;
 - (id)initWithOwner:(id)arg1;

@@ -4,17 +4,17 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "DVTAnnotationProvider.h"
+#import <DVTKit/DVTAnnotationProvider.h>
 
-#import "DVTTextAnnotationDelegate.h"
+#import <DebuggerUI/DVTTextAnnotationDelegate-Protocol.h>
 
-@class DVTObservingToken, IDEAnnotationContext, IDEWorkspaceWindowController, NSString;
+@class DVTObservingToken, IDEAnnotationContext, IDEWorkspaceDocument, NSString;
 
 @interface DBGBreakpointAnnotationProvider : DVTAnnotationProvider <DVTTextAnnotationDelegate>
 {
-    IDEAnnotationContext *_context;
-    IDEWorkspaceWindowController *_workspaceWindowController;
+    IDEWorkspaceDocument *_workspaceDocument;
     DVTObservingToken *_breakpointsObservingToken;
+    IDEAnnotationContext *_context;
 }
 
 + (id)annotationProviderForContext:(id)arg1 error:(id *)arg2;

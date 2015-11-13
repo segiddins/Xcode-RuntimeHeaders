@@ -4,18 +4,19 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDEViewController.h"
+#import <IDEKit/IDEViewController.h>
 
-#import "IBAutolayoutIssueResolvingViewControllerDelegate.h"
-#import "IBAutolayoutIssueTableCellViewDelegate.h"
-#import "IBHybridStructureSelectionProvider.h"
-#import "IBOutlineViewDelegate.h"
-#import "IBSelectionProvider.h"
-#import "NSOutlineViewDataSource.h"
-#import "NSOutlineViewDelegate.h"
-#import "NSPopoverDelegate.h"
+#import <IDEInterfaceBuilderKit/IBAutolayoutIssueResolvingViewControllerDelegate-Protocol.h>
+#import <IDEInterfaceBuilderKit/IBAutolayoutIssueTableCellViewDelegate-Protocol.h>
+#import <IDEInterfaceBuilderKit/IBHybridStructureSelectionProvider-Protocol.h>
+#import <IDEInterfaceBuilderKit/IBOutlineViewDelegate-Protocol.h>
+#import <IDEInterfaceBuilderKit/IBSelectionProvider-Protocol.h>
+#import <IDEInterfaceBuilderKit/NSOutlineViewDataSource-Protocol.h>
+#import <IDEInterfaceBuilderKit/NSOutlineViewDelegate-Protocol.h>
+#import <IDEInterfaceBuilderKit/NSPopoverDelegate-Protocol.h>
 
 @class DVTDelayedInvocation, DVTNotificationToken, DVTObservingToken, IBAbstractDocumentEditor, IBAutolayoutStatus, IBCancellationToken, IBOutlineView, NSObject, NSOrderedSet, NSPopover, NSSet, NSString, NSTextField;
+@protocol IBAutolayoutSidebarViewControllerDelegate;
 
 @interface IBAutolayoutSidebarViewController : IDEViewController <NSOutlineViewDelegate, IBOutlineViewDelegate, NSOutlineViewDataSource, IBAutolayoutIssueTableCellViewDelegate, IBAutolayoutIssueResolvingViewControllerDelegate, NSPopoverDelegate, IBHybridStructureSelectionProvider, IBSelectionProvider>
 {

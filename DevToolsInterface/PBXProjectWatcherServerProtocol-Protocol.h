@@ -5,6 +5,7 @@
 //
 
 @class NSArray, NSDictionary, NSString;
+@protocol PBXProjectWatcherClientProtocol;
 
 @protocol PBXProjectWatcherServerProtocol
 - (void)removeProductSettingForKey:(bycopy NSString *)arg1 inTarget:(bycopy id)arg2 ofProject:(bycopy id)arg3;

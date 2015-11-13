@@ -6,7 +6,7 @@
 
 #import <DevToolsInterface/PBXProjectModule.h>
 
-#import "PBXTrackableTask.h"
+#import <DevToolsInterface/PBXTrackableTask-Protocol.h>
 
 @class NSDate, NSString, NSView, PBXGestureSplitView, PBXLSLaunchSession, XCConsole;
 

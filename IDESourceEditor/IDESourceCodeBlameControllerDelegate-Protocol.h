@@ -4,15 +4,15 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <IDESourceEditor/NSObject-Protocol.h>
 
-@class IDESourceCodeBlameController, NSError, NSString;
+@class DVTSourceControlRevision, IDESourceCodeBlameController, NSError;
 
 @protocol IDESourceCodeBlameControllerDelegate <NSObject>
-- (void)blameController:(IDESourceCodeBlameController *)arg1 showRevision:(NSString *)arg2;
-- (void)blameController:(IDESourceCodeBlameController *)arg1 diffAgainstRevision:(NSString *)arg2;
-- (void)blameController:(IDESourceCodeBlameController *)arg1 compareToRevision:(NSString *)arg2;
-- (void)blameController:(IDESourceCodeBlameController *)arg1 compareRevisionToPreviousRevision:(NSString *)arg2;
+- (void)blameController:(IDESourceCodeBlameController *)arg1 showRevision:(DVTSourceControlRevision *)arg2;
+- (void)blameController:(IDESourceCodeBlameController *)arg1 diffAgainstRevision:(DVTSourceControlRevision *)arg2;
+- (void)blameController:(IDESourceCodeBlameController *)arg1 compareToRevision:(DVTSourceControlRevision *)arg2;
+- (void)blameController:(IDESourceCodeBlameController *)arg1 compareRevisionToPreviousRevision:(DVTSourceControlRevision *)arg2;
 
 @optional
 - (void)blameController:(IDESourceCodeBlameController *)arg1 didEncounterError:(NSError *)arg2;

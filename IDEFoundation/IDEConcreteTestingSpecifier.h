@@ -4,24 +4,29 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "IDETestingSpecifier.h"
+#import <IDEFoundation/IDETestingSpecifier-Protocol.h>
 
-@class DVTObservingToken, IDEDeviceAppDataReference, IDELocationScenarioReference, NSArray, NSMutableArray, NSString;
+@class DVTObservingToken, IDEDeviceAppDataReference, IDELocationScenarioReference, NSArray, NSMutableArray, NSSet, NSString;
+@protocol IDETestable;
 
 @interface IDEConcreteTestingSpecifier : NSObject <IDETestingSpecifier>
 {
     id <IDETestable> _testable;
-    NSMutableArray *_skippedTests;
+    NSMutableArray *_mutableSkippedTests;
     IDEDeviceAppDataReference *_deviceAppDataReference;
     IDELocationScenarioReference *_locationScenarioReference;
     DVTObservingToken *_buildableValidityObservingToken;
+    NSSet *_adHocTests;
     BOOL _skipped;
 }
 
-+ (void)initialize;
 - (void).cxx_destruct;
+@property(copy) NSSet *adHocTests;
+- (void)disableTest:(id)arg1;
+- (void)enableTest:(id)arg1;
+@property(copy) NSArray *skippedTests;
 @property BOOL skipped;
 @property(retain) IDELocationScenarioReference *locationScenarioReference;
 @property(retain) IDEDeviceAppDataReference *deviceAppDataReference;
@@ -32,8 +37,6 @@
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
-@property(readonly) NSMutableArray *mutableSkippedTests; // @dynamic mutableSkippedTests;
-@property(copy) NSArray *skippedTests; // @dynamic skippedTests;
 @property(readonly) Class superclass;
 
 @end

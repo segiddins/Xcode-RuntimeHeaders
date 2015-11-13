@@ -6,7 +6,7 @@
 
 #import <IDEKit/IDEViewController.h>
 
-#import "DVTTableViewDelegate.h"
+#import <IDEKit/DVTTableViewDelegate-Protocol.h>
 
 @class DVTFuture, DVTTableView, IDEDistributionLogging, NSArray, NSButton, NSString, NSTextField;
 

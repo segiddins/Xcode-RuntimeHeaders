@@ -4,17 +4,16 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "DVTInvalidation.h"
-#import "IDECodesigningSettings.h"
+#import <Xcode3UI/DVTInvalidation-Protocol.h>
+#import <Xcode3UI/IDECodesigningSettings-Protocol.h>
 
 @class DVTStackBacktrace, DVTTeamRecord, NSString, Xcode3Target, Xcode3TargetBuildSettingsCoordinator, Xcode3TargetCapabilitiesContext;
 
 @interface Xcode3CodesigningSelectorModel : NSObject <IDECodesigningSettings, DVTInvalidation>
 {
     Xcode3TargetBuildSettingsCoordinator *_buildSettings;
-    BOOL _currentlyRefreshing;
     Xcode3Target *_target;
     BOOL automaticallySyncsWithPortal;
     int _intent;
@@ -29,7 +28,7 @@
 @property(nonatomic) int intent; // @synthesize intent=_intent;
 @property BOOL automaticallySyncsWithPortal; // @synthesize automaticallySyncsWithPortal;
 - (void).cxx_destruct;
-- (void)_refreshPortal:(BOOL)arg1;
+- (void)_refreshPortal;
 - (void)_writeCodeSigningBuildSetting:(int)arg1;
 - (void)buildSettingsChangedNotification:(id)arg1;
 @property(readonly, nonatomic) NSString *profile;

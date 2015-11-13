@@ -6,10 +6,11 @@
 
 #import <Xcode3UI/Xcode3BuildPhaseViewController.h>
 
-#import "DVTSourceTextViewDelegate.h"
-#import "DVTTextStorageDelegate.h"
+#import <Xcode3UI/DVTSourceTextViewDelegate-Protocol.h>
+#import <Xcode3UI/DVTTextStorageDelegate-Protocol.h>
 
 @class DVTBorderedView, DVTDelayedInvocation, DVTGradientImageButton, DVTNotificationToken, DVTScriptSourceTextView, DVTTableView, NSArray, NSButton, NSDictionary, NSScrollView, NSString;
+@protocol DVTCancellable;
 
 @interface Xcode3ShellScriptBuildPhaseViewController : Xcode3BuildPhaseViewController <DVTSourceTextViewDelegate, DVTTextStorageDelegate>
 {
@@ -34,6 +35,7 @@
     unsigned long long _storedNumberOfLines;
     DVTDelayedInvocation *_scriptChangeDelayedInvocation;
     DVTNotificationToken *_frameChangeToken;
+    id <DVTCancellable> _rebuildToken;
 }
 
 @property unsigned long long _storedNumberOfLines; // @synthesize _storedNumberOfLines;

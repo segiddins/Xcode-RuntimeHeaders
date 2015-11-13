@@ -4,11 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "DVTInvalidation.h"
-#import "DVTProgressReporting.h"
-#import "IDETestsInTestableObserver.h"
+#import <IDEFoundation/DVTInvalidation-Protocol.h>
+#import <IDEFoundation/DVTProgressReporting-Protocol.h>
+#import <IDEFoundation/IDETestsInTestableObserver-Protocol.h>
 
 @class DVTStackBacktrace, IDETest, IDETestManager, NSDictionary, NSString;
 
@@ -31,7 +31,7 @@
 @property(retain) NSDictionary *sessionStateByTestableName; // @synthesize sessionStateByTestableName=_sessionStateByTestableName;
 @property(retain) IDETest *currentTest; // @synthesize currentTest=_currentTest;
 - (void).cxx_destruct;
-- (void)workspaceReferencedTestablesChanged;
+- (void)allTestablesChanged;
 - (void)testsChanged:(id)arg1;
 - (void)testablesChanged:(id)arg1;
 - (unsigned long long)_calculateTestsReported;

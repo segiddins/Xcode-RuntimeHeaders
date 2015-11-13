@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "DVTTextCompletionStrategy.h"
+#import <DVTKit/DVTTextCompletionStrategy.h>
 
-@class DVTDispatchLock, DVTMapTable, IDEIndexCodeCompletionContext, NSArray;
+@class DVTDispatchLock, IDEIndexCodeCompletionContext, NSArray, NSMapTable;
 
 @interface IDEIndexCompletionStrategy : DVTTextCompletionStrategy
 {
@@ -14,7 +14,7 @@
     BOOL _shouldInsertIncludeStatements;
     IDEIndexCodeCompletionContext *_codeCompletionContext;
     NSArray *_knownSDKs;
-    DVTMapTable *_optimalBuildableProductForFileCache;
+    NSMapTable *_optimalBuildableProductForFileCache;
     DVTDispatchLock *_buildableProductCachesLock;
     NSArray *_sourceBuildableProductProxiesCache;
 }

@@ -6,6 +6,8 @@
 
 #import <XDInterface/XDPluginController.h>
 
+@protocol XDModelCreationStatusObserving;
+
 @interface XDDocumentController : XDPluginController
 {
     id <XDModelCreationStatusObserving> _statusObserver;

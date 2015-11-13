@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSTabView.h"
+#import <AppKit/NSTabView.h>
 
 @interface NSTabView (IBNSTabViewSizeInspectorAdditions)
 - (void)setIbInspectedControlSize:(unsigned long long)arg1;

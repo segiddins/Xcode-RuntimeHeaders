@@ -4,12 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDECompressedStackFrame.h"
+#import <IDEFoundation/IDECompressedStackFrame.h>
 
-#import "DBGNavigableItemPerformance.h"
+#import <DebuggerUI/DBGNavigableItemPerformance-Protocol.h>
 
 @interface IDECompressedStackFrame (DBGNavigableItemPropertySupport) <DBGNavigableItemPerformance>
 - (double)heightOfRow;
-- (BOOL)isGroupHeader:(id)arg1;
 @end
 

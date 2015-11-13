@@ -4,10 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <IBAutolayoutFoundation/NSObject-Protocol.h>
 
 @protocol IBAutolayoutConcreteConstraintProvider <NSObject>
 @property(readonly, nonatomic) Class layoutConstantClass;
-@property(readonly, nonatomic) Class layoutConstraintClass;
 @end
 

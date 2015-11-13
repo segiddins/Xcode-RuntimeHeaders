@@ -4,11 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "DYResource.h"
+#import <GLToolsServices/DYCacheableResource-Protocol.h>
+#import <GLToolsServices/DYResource-Protocol.h>
 
 @class NSData;
 
-@protocol DYRenderBuffer <DYResource>
+@protocol DYRenderBuffer <DYResource, DYCacheableResource>
 @property(readonly, nonatomic) NSData *data;
 @property(readonly, nonatomic) BOOL flipped;
 @property(readonly, nonatomic) int numSamples;

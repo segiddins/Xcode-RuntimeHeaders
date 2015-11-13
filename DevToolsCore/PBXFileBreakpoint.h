@@ -6,7 +6,7 @@
 
 #import <DevToolsCore/PBXBreakpoint.h>
 
-#import "NSCopying.h"
+#import <DevToolsCore/NSCopying-Protocol.h>
 
 @class NSString;
 

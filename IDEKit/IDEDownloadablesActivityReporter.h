@@ -6,7 +6,7 @@
 
 #import <IDEKit/IDEActivityReporter.h>
 
-#import "IDEInitialization.h"
+#import <IDEKit/IDEInitialization-Protocol.h>
 
 @interface IDEDownloadablesActivityReporter : IDEActivityReporter <IDEInitialization>
 {

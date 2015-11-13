@@ -4,9 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <IDEModelFoundation/NSObject-Protocol.h>
 
 @class NSArray, NSString;
+@protocol XDUMLComment, XDUMLElement, XDUMLNamedElement, XDUMLStereotype;
 
 @protocol XDUMLElement <NSObject>
 - (id <XDUMLNamedElement>)elementForName:(NSString *)arg1 inBucketNamed:(NSString *)arg2;

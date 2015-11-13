@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDEUpgradeBlueprintContext.h"
+#import <IDEFoundation/IDEUpgradeBlueprintContext.h>
 
-#import "Xcode3UpgradeContext.h"
+#import <Xcode3UI/Xcode3UpgradeContext-Protocol.h>
 
 @class NSString, Xcode3BuildSettingsContext, Xcode3Target;
 

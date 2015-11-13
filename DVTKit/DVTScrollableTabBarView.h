@@ -6,10 +6,10 @@
 
 #import <DVTKit/DVTBarBackground.h>
 
-#import "DVTMorphingDragImageDropTarget.h"
-#import "NSAnimationDelegate.h"
-#import "NSDraggingDestination.h"
-#import "NSTabViewDelegate.h"
+#import <DVTKit/DVTMorphingDragImageDropTarget-Protocol.h>
+#import <DVTKit/NSAnimationDelegate-Protocol.h>
+#import <DVTKit/NSDraggingDestination-Protocol.h>
+#import <DVTKit/NSTabViewDelegate-Protocol.h>
 
 @class CALayer, DVTScrollableTabBarViewAccessoryButton, DVTScrollableTabButton, NSMutableArray, NSScrollView, NSString, NSTrackingArea, NSView, ScrollableTabBarMaskingContainerView;
 

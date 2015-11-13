@@ -6,7 +6,7 @@
 
 #import <DevToolsInterface/PBXDebugDSModelViewModule.h>
 
-#import "NSOutlineViewDataSource.h"
+#import <DevToolsInterface/NSOutlineViewDataSource-Protocol.h>
 
 @class NSImage, NSMutableArray, NSMutableDictionary, NSMutableSet, NSPanel, NSScrollView, NSString, NSTableColumn, NSTextField, NSTimer, PBXExtendedOutlineView, PBXLSDataValue;
 

@@ -6,7 +6,7 @@
 
 #import <DevToolsInterface/PBXFileEditor.h>
 
-#import "XCDiffComparatorViewDelegate.h"
+#import <DevToolsInterface/XCDiffComparatorViewDelegate-Protocol.h>
 
 @class NSString, XCDiffComparator;
 

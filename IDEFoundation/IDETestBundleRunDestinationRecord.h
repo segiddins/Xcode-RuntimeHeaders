@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
 @class IDETestBundleDeviceRecord, NSString;
 
@@ -26,6 +26,7 @@
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithRunDestinationRecord:(id)arg1;
 - (id)initWithTargetArchitecture:(id)arg1 targetDeviceRecord:(id)arg2 localComputerRecord:(id)arg3;
+- (id)init;
 
 @end
 

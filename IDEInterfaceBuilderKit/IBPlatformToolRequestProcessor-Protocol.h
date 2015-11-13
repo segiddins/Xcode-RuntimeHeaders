@@ -4,13 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <IDEInterfaceBuilderKit/NSObject-Protocol.h>
 
-@class IBMarshallingResult, NSArray, NSString;
+@class IBAbstractInterfaceBuilderPlatformToolProxy, IBMarshallingResult, IBPlatformToolDescription, IBTargetRuntime, NSArray;
 
 @protocol IBPlatformToolRequestProcessor <NSObject>
-- (NSString *)backgroundOperationIdentifier;
-- (NSArray *)resultsAfterFailingToLoadLiveViewBundlesWithResult:(IBMarshallingResult *)arg1 forRequests:(NSArray *)arg2;
-- (NSArray *)performRequestOnBackgroundThreadWithData:(NSArray *)arg1 platformTool:(id <IBAbstractInterfaceBuilderTool>)arg2;
+- (NSArray *)resultsAfterFailingToLaunchPlatformToolWithResult:(IBMarshallingResult *)arg1 forRequests:(NSArray *)arg2;
+- (IBPlatformToolDescription *)toolDescriptionForProcessingRequestsWithTargetRuntime:(IBTargetRuntime *)arg1 role:(long long)arg2 scaleFactor:(double)arg3;
+- (NSArray *)performRequestOnBackgroundThreadWithData:(NSArray *)arg1 diagnosticsBlock:(void (^)(IBDiagnosticsHandler *))arg2 platformTool:(IBAbstractInterfaceBuilderPlatformToolProxy *)arg3;
 @end
 

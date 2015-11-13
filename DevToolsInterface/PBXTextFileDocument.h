@@ -6,9 +6,10 @@
 
 #import <DevToolsInterface/PBXFileDocument.h>
 
-#import "NSTextStorageDelegate.h"
+#import <DevToolsInterface/NSTextStorageDelegate-Protocol.h>
 
-@class NSString, NSTextStorage<XCTextStorageAdditions>;
+@class NSString, NSTextStorage;
+@protocol XCTextStorageAdditions;
 
 @interface PBXTextFileDocument : PBXFileDocument <NSTextStorageDelegate>
 {

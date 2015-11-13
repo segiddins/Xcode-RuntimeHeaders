@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
 @class NSImage, NSString, Xcode3BuildSettingsGroupRowCell;
 
@@ -24,7 +24,7 @@
 @property(nonatomic) double width; // @synthesize width=_width;
 - (void).cxx_destruct;
 - (struct CGRect)draggableRectForSubtitleBounds:(struct CGRect)arg1;
-- (struct CGRect)boundingRectWithSize:(struct CGSize)arg1 options:(unsigned long long)arg2;
+- (struct CGRect)boundingRectWithSize:(struct CGSize)arg1 options:(long long)arg2;
 - (void)drawInRect:(struct CGRect)arg1;
 - (id)attributedText;
 

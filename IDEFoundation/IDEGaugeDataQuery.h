@@ -4,14 +4,15 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "DVTInvalidation.h"
+#import <IDEFoundation/DVTInvalidation-Protocol.h>
 
 @class DVTStackBacktrace, IDEGaugeDataQueryCoordinator, NSSet, NSString;
 
 @interface IDEGaugeDataQuery : NSObject <DVTInvalidation>
 {
+    NSString *_requiredAttribute;
     BOOL _isSuspended;
     IDEGaugeDataQueryCoordinator *_queryCoordinator;
     NSSet *_observedAttributes;
@@ -25,6 +26,7 @@
 @property(retain) IDEGaugeDataQueryCoordinator *queryCoordinator; // @synthesize queryCoordinator=_queryCoordinator;
 - (void).cxx_destruct;
 - (void)handleResultDict:(id)arg1;
+- (void)setObservedAttributes:(id)arg1 requiredAttribute:(id)arg2;
 - (void)primitiveInvalidate;
 - (id)initForProcessWithPID:(id)arg1 onDevice:(id)arg2;
 

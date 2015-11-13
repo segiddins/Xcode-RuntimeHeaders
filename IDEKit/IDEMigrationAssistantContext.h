@@ -6,7 +6,7 @@
 
 #import <IDEKit/IDEAssistantContext.h>
 
-#import "DVTInvalidation.h"
+#import <IDEKit/DVTInvalidation-Protocol.h>
 
 @class DVTStackBacktrace, NSString;
 

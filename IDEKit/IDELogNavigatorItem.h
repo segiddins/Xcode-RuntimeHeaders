@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "IDEKeyDrivenNavigableItemRepresentedObject.h"
+#import <IDEKit/IDEKeyDrivenNavigableItemRepresentedObject-Protocol.h>
 
 @class DVTDocumentLocation, DVTFileDataType, IDEEntityIdentifier, IDEFileReference, IDEWorkspace, NSArray, NSImage, NSString;
 
@@ -26,7 +26,6 @@
 + (id)keyPathsForValuesAffectingSubtitle;
 + (id)keyPathsForValuesAffectingNavigableItem_contentDocumentLocation;
 + (id)keyPathsForValuesAffectingNavigableItem_documentType;
-+ (id)keyPathsForValuesAffectingNavigableItem_image;
 + (id)keyPathsForValuesAffectingNavigableItem_name;
 + (void)initialize;
 @property(retain, nonatomic) NSArray *observationTokens; // @synthesize observationTokens=_observationTokens;

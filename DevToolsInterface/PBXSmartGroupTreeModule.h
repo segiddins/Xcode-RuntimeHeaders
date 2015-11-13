@@ -6,11 +6,11 @@
 
 #import <DevToolsInterface/PBXGroupTreeModule.h>
 
-#import "NSOutlineViewDataSource.h"
-#import "NSOutlineViewDelegate.h"
-#import "PBXTableColumnProvider.h"
-#import "XCFosterParentHostProtocol.h"
-#import "XCSelectionSource.h"
+#import <DevToolsInterface/NSOutlineViewDataSource-Protocol.h>
+#import <DevToolsInterface/NSOutlineViewDelegate-Protocol.h>
+#import <DevToolsInterface/PBXTableColumnProvider-Protocol.h>
+#import <DevToolsInterface/XCFosterParentHostProtocol-Protocol.h>
+#import <DevToolsInterface/XCSelectionSource-Protocol.h>
 
 @class NSDictionary, NSMutableArray, NSString, PBXFosterParent, PBXGroup, PBXTableColumnManager;
 

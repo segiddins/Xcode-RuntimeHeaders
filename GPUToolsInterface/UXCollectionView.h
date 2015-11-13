@@ -4,9 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSScrollView.h"
+#import <AppKit/NSScrollView.h>
 
-@class CALayer, NSArray, NSIndexPath, NSMutableArray, NSMutableDictionary, NSMutableSet, NSObject<UXCollectionViewAccessibilityDelegate>, NSObject<UXCollectionViewDataSource>, NSObject<UXCollectionViewDelegate>, UXCollectionDocumentView, UXCollectionViewData, UXCollectionViewIndexPathsSet, UXCollectionViewLayout, UXCollectionViewMutableIndexPathsSet, UXCollectionViewUpdate, _UXCollectionViewRearrangingCoordinator;
+@class CALayer, NSArray, NSIndexPath, NSMutableArray, NSMutableDictionary, NSMutableSet, NSObject, UXCollectionDocumentView, UXCollectionViewData, UXCollectionViewIndexPathsSet, UXCollectionViewLayout, UXCollectionViewMutableIndexPathsSet, UXCollectionViewUpdate, _UXCollectionViewRearrangingCoordinator;
+@protocol UXCollectionViewAccessibilityDelegate, UXCollectionViewDataSource, UXCollectionViewDelegate;
 
 @interface UXCollectionView : NSScrollView
 {

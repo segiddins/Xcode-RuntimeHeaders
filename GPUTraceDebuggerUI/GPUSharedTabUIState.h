@@ -6,13 +6,15 @@
 
 #import <GPUTraceDebuggerUI/GPUSharedUIState.h>
 
-@class GPUDebuggingAdditionUIController, GPUInferiorSession, GPUInvestigatorReportItem, GPUTraceDocumentLocation, GPUTraceSession, IDEWorkspaceTabController, NSMutableDictionary, NSMutableSet, NSSet;
+@class DVTObservingToken, GPUDebuggingAdditionUIController, GPUInferiorSession, GPUInvestigatorReportItem, GPUTraceDocumentLocation, GPUTraceSession, IDEWorkspaceTabController, NSMutableDictionary, NSMutableSet, NSSet;
+@protocol DVTCancellable;
 
 @interface GPUSharedTabUIState : GPUSharedUIState
 {
     IDEWorkspaceTabController *_workspaceTabController;
     NSMutableDictionary *_displayedResourceForEditorIdentifierDict;
     id <DVTCancellable> _uiControllerToken;
+    DVTObservingToken *_workspaceControllerToken;
     BOOL _loadingNewResources;
     BOOL _displayWireframe;
     int _tabUIMode;

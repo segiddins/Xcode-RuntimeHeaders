@@ -6,9 +6,10 @@
 
 #import <DVTKit/DVTViewController.h>
 
-#import "DVTLibraryGroupObserver.h"
+#import <DVTKit/DVTLibraryGroupObserver-Protocol.h>
 
 @class DVTBorderedView, DVTDelayedInvocation, DVTGroupedTileView, DVTLibrary, DVTLibraryDetailController, DVTLibraryDetailPopUpController, DVTNotificationToken, DVTObservingToken, DVTScrollView, DVTSearchField, NSArray, NSButton, NSDate, NSIndexSet, NSMutableSet, NSSearchField, NSSet, NSString, NSTreeController;
+@protocol DVTCancellable, DVTInvalidation;
 
 @interface DVTLibraryController : DVTViewController <DVTLibraryGroupObserver>
 {
@@ -99,7 +100,6 @@
 - (BOOL)tileViewIsFirstResponder;
 @property(readonly) DVTLibraryDetailController *currentDetailController;
 - (id)detailPopUpContentController;
-- (struct CGSize)draggingStickiness:(id)arg1;
 - (id)draggedImageState:(id)arg1;
 - (void)draggingEnded:(id)arg1;
 - (void)concludeDragOperation:(id)arg1;

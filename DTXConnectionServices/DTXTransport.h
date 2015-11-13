@@ -4,9 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-@class DTXResourceTracker, NSArray, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_semaphore>;
+@class DTXResourceTracker, NSArray;
+@protocol OS_dispatch_queue, OS_dispatch_semaphore;
 
 @interface DTXTransport : NSObject
 {
@@ -23,10 +24,13 @@
 + (id)schemes;
 @property(readonly, nonatomic) DTXResourceTracker *resourceTracker; // @synthesize resourceTracker=_tracker;
 @property int status; // @synthesize status=_status;
+- (int)supportedDirections;
+- (id)permittedBlockCompressionTypes;
 @property(readonly) NSArray *localAddresses;
 @property(copy, nonatomic) CDUnknownBlockType dataReceivedHandler;
 - (void)disconnect;
 - (void)received:(const char *)arg1 ofLength:(unsigned long long)arg2 destructor:(CDUnknownBlockType)arg3;
+- (unsigned long long)transmit:(const void *)arg1 ofLength:(unsigned long long)arg2 withRateLimiter:(id)arg3;
 - (unsigned long long)transmit:(const void *)arg1 ofLength:(unsigned long long)arg2;
 - (id)initWithRemoteAddress:(id)arg1;
 - (id)initWithLocalAddress:(id)arg1;

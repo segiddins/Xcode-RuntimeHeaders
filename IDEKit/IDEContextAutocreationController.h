@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "DVTInvalidation.h"
+#import <IDEKit/DVTInvalidation-Protocol.h>
 
 @class DVTStackBacktrace, IDEWorkspace, NSString;
 
@@ -32,6 +32,7 @@
 - (id)_applicationsInWorkspaceThatDependOnBuildable:(id)arg1;
 - (id)_applicationBuildablesInWorkspace:(id)arg1;
 - (BOOL)_shouldAutocreateSchemesForBuildableProduct:(id)arg1;
+- (BOOL)_hasComplication:(id)arg1;
 - (BOOL)_isWatchAppExtension:(id)arg1;
 - (BOOL)_isWatchApp:(id)arg1;
 - (BOOL)_isAppExtension:(id)arg1;

@@ -4,11 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "DVTInvalidation.h"
+#import <IDEFoundation/DVTInvalidation-Protocol.h>
 
-@class DVTStackBacktrace, IDEContainer<IDELocalizedContainer>, IDENotifyingLocalizedGroup, NSString;
+@class DVTStackBacktrace, IDEContainer, IDENotifyingLocalizedGroup, NSString;
+@protocol IDELocalizedContainer;
 
 @interface IDELocalizedResourceAdaptor : NSObject <DVTInvalidation>
 {
@@ -18,17 +19,16 @@
 
 + (id)writeWorkForContext:(id)arg1 langauge:(id)arg2;
 + (id)readWorkForContext:(id)arg1;
-+ (id)populatedAdaptorsForContext:(id)arg1;
 + (id)adaptedResourcesForPopulationContext:(id)arg1 plugInManager:(id)arg2;
 + (id)adaptedResourcesForPopulationContext:(id)arg1;
 + (void)initialize;
 @property(readonly) IDEContainer<IDELocalizedContainer> *container; // @synthesize container=_container;
 @property(readonly) IDENotifyingLocalizedGroup *localizedGroup; // @synthesize localizedGroup=_localizedGroup;
 - (void).cxx_destruct;
-- (void)setCommentsByKey:(id)arg1;
-- (id)commentsByKey;
-- (void)setStringsByKey:(id)arg1 forLanguage:(id)arg2;
-- (id)stringsByKeyForLanguage:(id)arg1;
+- (void)setComments:(id)arg1;
+- (id)comments;
+- (void)setStrings:(id)arg1 forLanguage:(id)arg2;
+- (id)stringsForLanguage:(id)arg1;
 - (id)localizedGroupIdentifier;
 - (id)initWithContainer:(id)arg1 localizedGroup:(id)arg2;
 - (void)primitiveInvalidate;

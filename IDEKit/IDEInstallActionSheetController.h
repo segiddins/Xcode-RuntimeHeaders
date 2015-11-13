@@ -6,7 +6,7 @@
 
 #import <IDEKit/IDEViewController.h>
 
-#import "IDEFilePickerViewDelegate.h"
+#import <IDEKit/IDEFilePickerViewDelegate-Protocol.h>
 
 @class DVTObservingToken, IDEInstallSchemeAction, IDEScheme, IDEWorkspace, NSString, NSTextField;
 

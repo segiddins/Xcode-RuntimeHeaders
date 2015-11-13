@@ -6,7 +6,8 @@
 
 #import <DevToolsInterface/XCElementRootFace.h>
 
-@class NSDictionary, NSFont, NSMutableArray, NSObject<XCElementDisplayDelegateP>, NSString;
+@class NSDictionary, NSFont, NSMutableArray, NSObject, NSString;
+@protocol XCElementDisplayDelegateP;
 
 @interface XCElementFace : XCElementRootFace
 {

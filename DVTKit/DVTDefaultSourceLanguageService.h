@@ -6,9 +6,9 @@
 
 #import <DVTKit/DVTSourceLanguageService.h>
 
-#import "DVTSourceLandmarkItemDelegate.h"
-#import "DVTSourceLanguageSourceModelService.h"
-#import "DVTSourceLanguageSyntaxTypeService.h"
+#import <DVTKit/DVTSourceLandmarkItemDelegate-Protocol.h>
+#import <DVTKit/DVTSourceLanguageSourceModelService-Protocol.h>
+#import <DVTKit/DVTSourceLanguageSyntaxTypeService-Protocol.h>
 
 @class DVTSourceModel, NSString, _DVTDefaultSourceLanguageServiceFormatOptions;
 

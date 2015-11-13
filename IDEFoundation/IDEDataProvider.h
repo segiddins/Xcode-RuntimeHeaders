@@ -4,14 +4,21 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
+
+@class NSMutableDictionary;
 
 @interface IDEDataProvider : NSObject
 {
+    NSMutableDictionary *_initialQueryTimeForPidDictionary;
 }
 
 + (id)sharedDataProvider;
+- (void).cxx_destruct;
+- (id)initialQueryTimeForPidDictionary;
+- (id)stopSamplingForPIDs:(id)arg1;
 - (id)captureAttributes:(id)arg1 forPIDs:(id)arg2;
+- (id)startSamplingForPIDs:(id)arg1;
 - (id)supportedAttributes;
 
 @end

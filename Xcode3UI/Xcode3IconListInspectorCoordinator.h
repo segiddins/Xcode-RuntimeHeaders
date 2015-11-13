@@ -4,14 +4,15 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "NSTableViewDataSource.h"
-#import "NSTableViewDelegate.h"
+#import <Xcode3UI/DVTInvalidation-Protocol.h>
+#import <Xcode3UI/NSTableViewDataSource-Protocol.h>
+#import <Xcode3UI/NSTableViewDelegate-Protocol.h>
 
-@class DVTBorderedView, DVTGradientImageButton, DVTTableView, IDENavigatorDataCell, NSArrayController, NSMutableDictionary, NSString, NSViewController;
+@class DVTBorderedView, DVTGradientImageButton, DVTStackBacktrace, DVTTableView, IDENavigatorDataCell, NSArrayController, NSMutableDictionary, NSString, NSViewController;
 
-@interface Xcode3IconListInspectorCoordinator : NSObject <NSTableViewDelegate, NSTableViewDataSource>
+@interface Xcode3IconListInspectorCoordinator : NSObject <DVTInvalidation, NSTableViewDelegate, NSTableViewDataSource>
 {
     DVTTableView *_table;
     NSArrayController *_arrayController;
@@ -24,6 +25,7 @@
     NSMutableDictionary *_contentsDictionary;
 }
 
++ (void)initialize;
 - (void).cxx_destruct;
 - (BOOL)tableView:(id)arg1 acceptDrop:(id)arg2 row:(long long)arg3 dropOperation:(unsigned long long)arg4;
 - (unsigned long long)tableView:(id)arg1 validateDrop:(id)arg2 proposedRow:(long long)arg3 proposedDropOperation:(unsigned long long)arg4;
@@ -31,14 +33,18 @@
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forTableColumn:(id)arg3 row:(long long)arg4;
 - (id)tableView:(id)arg1 dataCellForTableColumn:(id)arg2 row:(long long)arg3;
 - (void)rowCountChanged;
+- (void)primitiveInvalidate;
 - (void)awakeFromNib;
 - (void)_syncViewSizes;
 
 // Remaining properties
+@property(retain) DVTStackBacktrace *creationBacktrace;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
+@property(readonly) DVTStackBacktrace *invalidationBacktrace;
 @property(readonly) Class superclass;
+@property(readonly, nonatomic, getter=isValid) BOOL valid;
 
 @end
 

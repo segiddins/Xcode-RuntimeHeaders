@@ -4,9 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDEViewController.h"
+#import <IDEKit/IDEViewController.h>
 
-@class DVTStackView_AppKitAutolayout, IBAbstractDocumentEditor, IBStructureAreaBackgroundView, IBStructureAreaDockLabelContainer, IDEViewController<IBSelectionProvider>, NSLayoutConstraint, NSMutableDictionary, NSOrderedSet, NSSegmentedControl, NSSet, NSString, NSView;
+@class DVTStackView_AppKitAutolayout, IBAbstractDocumentEditor, IBStructureAreaBackgroundView, IBStructureAreaDockLabelContainer, NSLayoutConstraint, NSMutableDictionary, NSOrderedSet, NSSegmentedControl, NSSet, NSString, NSView;
+@protocol IBSelectionProvider, IBStructureViewControllerDelegate;
 
 @interface IBStructureViewController : IDEViewController
 {

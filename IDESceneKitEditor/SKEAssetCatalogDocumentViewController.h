@@ -4,10 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDEEditor.h"
+#import <IDEKit/IDEEditor.h>
 
-#import "DVTReplacementViewDelegate.h"
-#import "IDECapsuleListViewDataSource.h"
+#import <IDESceneKitEditor/DVTReplacementViewDelegate-Protocol.h>
+#import <IDESceneKitEditor/IDECapsuleListViewDataSource-Protocol.h>
 
 @class DVTControllerContentView, IDECapsuleListView, NSArray, NSButton, NSString, SKEAssetCatalogCapsuleViewController, SKEAssetCatalogDocument;
 
@@ -38,7 +38,7 @@
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
-@property(readonly) SKEAssetCatalogDocument *document;
+@property(readonly) SKEAssetCatalogDocument *document; // @dynamic document;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

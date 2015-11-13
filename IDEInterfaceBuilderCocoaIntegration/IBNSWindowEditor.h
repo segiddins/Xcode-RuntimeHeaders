@@ -4,24 +4,21 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IBEditor.h"
+#import <IDEInterfaceBuilderKit/IBEditor.h>
 
-#import "NSAnimationDelegate.h"
+#import <IDEInterfaceBuilderCocoaIntegration/NSAnimationDelegate-Protocol.h>
 
-@class NSString, NSView, NSViewAnimation;
+@class NSString;
+@protocol DVTInvalidation;
 
 @interface IBNSWindowEditor : IBEditor <NSAnimationDelegate>
 {
     id <DVTInvalidation> resourcesDidUpdateToken;
-    BOOL shouldAnimateInToolbarConfigurationSheet;
-    BOOL isAnimatingInToolbarConfigurationSheet;
-    NSViewAnimation *showToolbarSheetAnimation;
-    NSView *showToolbarClippingViewContainer;
     BOOL toolbarSheetIsUp;
 }
 
 - (void).cxx_destruct;
-- (void)resizeFrameViewWithEvent:(id)arg1 fromEditorCanvasFrameKnob:(long long)arg2;
+- (void)resizeFrameViewWithEvent:(id)arg1 fromEditorCanvasFrameKnob:(CDUnion_42e99c75)arg2;
 - (CDStruct_d2b197d1)canvasAlignmentInsetForEditorFrame;
 - (BOOL)childEditorShouldDrawActivationDarkening:(id)arg1;
 - (BOOL)isChildToolbarEditor:(id)arg1;
@@ -31,7 +28,6 @@
 - (void)selectionOwner:(id)arg1 didSelect:(id)arg2 andDeselect:(id)arg3;
 - (void)didActivate;
 - (void)willEditChild:(id)arg1 inFrameController:(id)arg2;
-- (void)animationDidEnd:(id)arg1;
 - (void)positionChildEditorFrame;
 - (BOOL)shouldCloseWithEvent:(id)arg1;
 - (BOOL)shouldDragFrameWithMouseDownInEditedRect:(id)arg1;

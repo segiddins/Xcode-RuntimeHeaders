@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDENavigatorOutlineView.h"
+#import <IDEKit/IDENavigatorOutlineView.h>
 
 @class IDEBreakpointNavigator, IDENavigableItem;
 
@@ -20,7 +20,6 @@
 - (void)mouseDown:(id)arg1;
 - (BOOL)_didUserRequestItemBeCollapsed:(id)arg1;
 - (void)collapseItem:(id)arg1 collapseChildren:(BOOL)arg2;
-- (void)selectRowIndexes:(id)arg1 byExtendingSelection:(BOOL)arg2;
 - (BOOL)_wantsUserCancelledOperation;
 - (BOOL)_mouseOverNavigator;
 - (void)draggedImage:(id)arg1 endedAt:(struct CGPoint)arg2 operation:(unsigned long long)arg3;

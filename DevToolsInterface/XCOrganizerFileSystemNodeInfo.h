@@ -7,6 +7,7 @@
 #import <DevToolsInterface/XCOrganizerNodeInfo.h>
 
 @class NSImage, NSMutableArray, NSMutableDictionary, NSString;
+@protocol XCFSNodeInfoCallback;
 
 @interface XCOrganizerFileSystemNodeInfo : XCOrganizerNodeInfo
 {

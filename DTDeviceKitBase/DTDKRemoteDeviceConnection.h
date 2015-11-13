@@ -4,14 +4,18 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "DVTInvalidation.h"
+#import <DTDeviceKitBase/DVTInvalidation-Protocol.h>
 
-@class DTDKRemoteDeviceToken, DTXConnection, DVTPinger, DVTStackBacktrace, NSArray, NSMutableSet, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString;
+@class DTDKRemoteDeviceToken, DTXConnection, DVTDispatchLock, DVTPinger, DVTStackBacktrace, NSArray, NSMutableArray, NSMutableSet, NSString;
+@protocol OS_dispatch_queue, OS_dispatch_source;
 
 @interface DTDKRemoteDeviceConnection : NSObject <DVTInvalidation>
 {
+    NSMutableArray *_pendingRequests;
+    DVTDispatchLock *_pendingRequestsLock;
+    DVTDispatchLock *_instrumentsLock;
     struct deque<double, std::__1::allocator<double>> _recentPings;
     DVTPinger *_pinger;
     NSObject<OS_dispatch_source> *_pingTimer;
@@ -65,7 +69,7 @@
 - (id)monitorConnection;
 - (void)_createPingTimerIfNecessary;
 - (id)fetchValueForDomain:(id)arg1 andKey:(id)arg2;
-- (id)_fetchValueForDomain:(id)arg1 andKey:(id)arg2;
+- (void)_drainPendingRequests;
 - (id)setValue:(id)arg1 forDomain:(id)arg2 andKey:(id)arg3;
 - (id)startHouseArrestServiceForAppIdentifier:(id)arg1;
 - (id)startFirstServiceOf:(id)arg1 unlockKeybag:(_Bool)arg2;

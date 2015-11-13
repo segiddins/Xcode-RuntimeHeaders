@@ -6,7 +6,7 @@
 
 #import <IDEInterfaceBuilderKit/IBMemberRecord.h>
 
-#import "NSCoding.h"
+#import <IDEInterfaceBuilderKit/NSCoding-Protocol.h>
 
 @class IBGroup, IBMemberPropertyStorage, NSMutableArray, NSObject, NSString;
 

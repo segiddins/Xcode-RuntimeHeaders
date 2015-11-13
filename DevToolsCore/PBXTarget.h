@@ -6,9 +6,9 @@
 
 #import <DevToolsCore/PBXProjectItem.h>
 
-#import "PBXContainerScriptingExtensions.h"
-#import "XCCompatibilityChecking.h"
-#import "XCConfigurationInspectables.h"
+#import <DevToolsCore/PBXContainerScriptingExtensions-Protocol.h>
+#import <DevToolsCore/XCCompatibilityChecking-Protocol.h>
+#import <DevToolsCore/XCConfigurationInspectables-Protocol.h>
 
 @class NSArray, NSDictionary, NSMapTable, NSMutableArray, NSMutableDictionary, NSString, PBXBuildSettingsDictionary, PBXFileReference, PBXProject, PBXTargetBuildContext, XCBuildOperation, XCConfigurationList, XCTargetHeadermapCreationInfo;
 

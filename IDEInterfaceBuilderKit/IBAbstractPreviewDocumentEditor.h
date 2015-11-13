@@ -4,15 +4,16 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDEEditor.h"
+#import <IDEKit/IDEEditor.h>
 
-#import "IBPreviewDocumentBackgroundViewDelegate.h"
-#import "IBPreviewResultViewDelegate.h"
-#import "IBSelectionOwnerDelegate.h"
-#import "NSMenuDelegate.h"
-#import "NSUserInterfaceValidations.h"
+#import <IDEInterfaceBuilderKit/IBPreviewDocumentBackgroundViewDelegate-Protocol.h>
+#import <IDEInterfaceBuilderKit/IBPreviewResultViewDelegate-Protocol.h>
+#import <IDEInterfaceBuilderKit/IBSelectionOwnerDelegate-Protocol.h>
+#import <IDEInterfaceBuilderKit/NSMenuDelegate-Protocol.h>
+#import <IDEInterfaceBuilderKit/NSUserInterfaceValidations-Protocol.h>
 
 @class DVTDelayedInvocation, IBAbstractDocumentEditor, IBAccessorizedScrollView, IBDocument, IBPreviewDocumentBackgroundView, IBSelectionOwner, NSArray, NSMutableArray, NSSet, NSString, NSView;
+@protocol DVTCancellable, DVTInvalidation;
 
 @interface IBAbstractPreviewDocumentEditor : IDEEditor <IBSelectionOwnerDelegate, IBPreviewDocumentBackgroundViewDelegate, NSUserInterfaceValidations, NSMenuDelegate, IBPreviewResultViewDelegate>
 {

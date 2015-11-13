@@ -4,20 +4,20 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSWindowController.h"
+#import <AppKit/NSWindowController.h>
 
-#import "DVTInvalidation.h"
-#import "IDEComparisonEditorDataSource.h"
-#import "IDELocalizationController.h"
-#import "IDEReviewFilesDataSource.h"
+#import <IDEKit/DVTInvalidation-Protocol.h>
+#import <IDEKit/IDEComparisonEditorDataSource-Protocol.h>
+#import <IDEKit/IDELocalizationController-Protocol.h>
+#import <IDEKit/IDEReviewFilesDataSource-Protocol.h>
 
-@class DVTBorderedView, DVTObservingToken, DVTStackBacktrace, IDELocalizationImportContext, IDELocalizationImporter, IDENavigableItemCoordinator, IDENavigatorDataCell, IDEReviewFilesViewController, NSArray, NSMutableDictionary, NSMutableSet, NSString;
+@class DVTBorderedView, DVTObservingToken, DVTStackBacktrace, IDELocalizationImportContext, IDELocalizationImporter, IDENavigableItemAsyncFilteringCoordinator, IDENavigatorDataCell, IDEReviewFilesViewController, NSArray, NSMutableDictionary, NSMutableSet, NSString;
 
 @interface IDELocalizationImportController : NSWindowController <IDEComparisonEditorDataSource, IDEReviewFilesDataSource, IDELocalizationController, DVTInvalidation>
 {
     DVTBorderedView *layoutView;
-    IDENavigableItemCoordinator *_issueNavItemCoordinator;
-    IDENavigableItemCoordinator *_fileNavItemCoordinator;
+    IDENavigableItemAsyncFilteringCoordinator *_issueNavItemCoordinator;
+    IDENavigableItemAsyncFilteringCoordinator *_fileNavItemCoordinator;
     IDEReviewFilesViewController *_reviewFilesViewController;
     DVTObservingToken *_comparisonEditorObservingToken;
     IDENavigatorDataCell *_fileReferenceDataCell;
@@ -49,13 +49,14 @@
 - (id)_issueCell;
 - (id)_fileCell;
 - (id)_groupCell;
+- (id)workspace;
 - (BOOL)shouldSelectFirstDiff;
 - (id)documentForSecondaryDocumentLocation:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (id)documentForPrimaryDocumentLocation:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (id)_documentForLocation:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)import:(id)arg1;
 - (void)cancel:(id)arg1;
-- (void)_beginReviewFiles:(id)arg1 resolveBlock:(CDUnknownBlockType)arg2;
+- (void)_beginReviewFiles:(id)arg1 continueBlock:(CDUnknownBlockType)arg2;
 @property(readonly, copy) NSString *description;
 - (void)cancel;
 - (void)start;

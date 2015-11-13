@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "XCTextStorage.h"
+#import <XcodeEdit/XCTextStorage.h>
 
 @interface XCTextStorage (XcodePlugin)
 + (void)forString:(id)arg1 beyondRange:(struct _NSRange)arg2 forLeftChar:(id)arg3 leftResult:(char *)arg4 forRightChar:(id)arg5 rightResult:(char *)arg6;

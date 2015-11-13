@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDEProjectItemViewController.h"
+#import <IDEKit/IDEProjectItemViewController.h>
 
 @class IDEAppIDItemIdentifiersTableViewController, NSView, Xcode3ApplicationGroupsItemModel;
 
@@ -21,7 +21,7 @@
 - (void)loadView;
 
 // Remaining properties
-@property(readonly, nonatomic) Xcode3ApplicationGroupsItemModel *model;
+@property(readonly, nonatomic) Xcode3ApplicationGroupsItemModel *model; // @dynamic model;
 
 @end
 

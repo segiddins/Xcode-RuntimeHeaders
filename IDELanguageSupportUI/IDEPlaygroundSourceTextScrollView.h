@@ -4,9 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "DVTSourceTextScrollView.h"
+#import <DVTKit/DVTSourceTextScrollView.h>
 
 @class DVTObservingToken, IDEPlaygroundEditor, NSButton, NSString;
+@protocol NSObject;
 
 @interface IDEPlaygroundSourceTextScrollView : DVTSourceTextScrollView
 {
@@ -25,7 +26,7 @@
 }
 
 + (BOOL)isCompatibleWithResponsiveScrolling;
-@property(nonatomic) __weak IDEPlaygroundEditor *playgroundEditor; // @synthesize playgroundEditor=_playgroundEditor;
+@property(retain, nonatomic) IDEPlaygroundEditor *playgroundEditor; // @synthesize playgroundEditor=_playgroundEditor;
 @property(copy) NSString *boxTitle; // @synthesize boxTitle=_boxTitle;
 @property double contentViewBottomMargin; // @synthesize contentViewBottomMargin=_contentViewBottomMargin;
 @property double contentViewTopMargin; // @synthesize contentViewTopMargin=_contentViewTopMargin;
@@ -40,7 +41,6 @@
 - (void)scrollWheel:(id)arg1;
 - (void)tile;
 - (void)tileBoxContentView;
-- (void)dealloc;
 - (struct CGRect)_disclosureTriangleRectForBounds:(struct CGRect)arg1;
 - (struct CGRect)titleRectForBounds:(struct CGRect)arg1;
 @property(getter=isDisclosed) BOOL disclosed; // @synthesize disclosed=_disclosed;

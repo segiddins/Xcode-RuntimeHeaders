@@ -4,13 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <DVTServices/NSObject-Protocol.h>
 
 @class DVTDeveloperAccount, NSData, NSString;
 
 @protocol DVTDirectoryServicesSessionDescription <NSObject>
-@property(readonly, copy) NSData *sessionData;
-@property(readonly, copy) NSString *sessionID;
+@property(readonly, copy, nonatomic) NSData *sessionData;
+@property(readonly, copy, nonatomic) NSString *sessionID;
 @property(readonly, nonatomic) DVTDeveloperAccount *account;
 @end
 

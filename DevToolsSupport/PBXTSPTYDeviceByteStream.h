@@ -6,8 +6,8 @@
 
 #import <DevToolsSupport/PBXTSByteStream.h>
 
-#import "PBXTSByteStreamConsuming.h"
-#import "PBXTSTaskSynchronizedFileHandle.h"
+#import <DevToolsSupport/PBXTSByteStreamConsuming-Protocol.h>
+#import <DevToolsSupport/PBXTSTaskSynchronizedFileHandle-Protocol.h>
 
 @class NSConditionLock, NSFileHandle, NSMutableArray, NSMutableData, NSString, PBXTSTask;
 

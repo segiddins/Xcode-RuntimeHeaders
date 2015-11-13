@@ -6,7 +6,7 @@
 
 #import <IDEInterfaceBuilderKit/IBAbstractEditorMenuDelegate.h>
 
-#import "NSMenuDelegate.h"
+#import <IDEInterfaceBuilderKit/NSMenuDelegate-Protocol.h>
 
 @class NSString;
 

@@ -6,7 +6,7 @@
 
 #import <IDEKit/IDESourceCodeGenerator.h>
 
-#import "IDEMethodSourceCodeGenerator.h"
+#import <IDEKit/IDEMethodSourceCodeGenerator-Protocol.h>
 
 @interface IDEObjectiveCSourceCodeGenerator : IDESourceCodeGenerator <IDEMethodSourceCodeGenerator>
 {

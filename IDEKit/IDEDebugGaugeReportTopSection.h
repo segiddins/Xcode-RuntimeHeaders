@@ -7,6 +7,7 @@
 #import <IDEKit/IDEViewController.h>
 
 @class NSImageView, NSLayoutConstraint, NSTextField, NSView;
+@protocol IDEDebugGaugeReportTopSectionContentDelegate;
 
 @interface IDEDebugGaugeReportTopSection : IDEViewController
 {

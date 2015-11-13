@@ -4,16 +4,19 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "DVTInvalidation.h"
+#import <DebuggerFoundation/DBGViewDebuggerDataSourceManager-Protocol.h>
+#import <DebuggerFoundation/DVTInvalidation-Protocol.h>
 
-@class DBGDebugSession, DBGViewWindow, DVTStackBacktrace, NSArray, NSString;
+@class DBGDebugSession, DBGViewWindow, DVTStackBacktrace, NSArray, NSMapTable, NSString;
+@protocol DBGViewDescriber;
 
-@interface DBGViewDebugger : NSObject <DVTInvalidation>
+@interface DBGViewDebugger : NSObject <DVTInvalidation, DBGViewDebuggerDataSourceManager>
 {
     DBGDebugSession *_debugSession;
     NSArray *_windows;
+    NSMapTable *_dataSourcesForViewObjectsMap;
     int _loadedState;
     id <DBGViewDescriber> _viewDescriber;
     DBGViewWindow *_primaryWindow;
@@ -30,9 +33,9 @@
 @property(retain) DBGDebugSession *debugSession; // @synthesize debugSession=_debugSession;
 - (void).cxx_destruct;
 - (void)primitiveInvalidate;
+- (void)setDataSource:(id)arg1 forViewObject:(id)arg2;
+- (id)dataSourceForViewObject:(id)arg1;
 - (id)_viewDescriberForPlatform:(id)arg1 debugSession:(id)arg2;
-- (void)_initializeStructuresIfNecessary;
-- (void)willFetchViewInfo;
 - (void)fetchWindowsIfNecessary;
 - (void)_updateViewDebuggingHierarchy:(id)arg1 primaryWindow:(id)arg2 andLoadedState:(int)arg3;
 - (id)initWithPlatform:(id)arg1 debugSession:(id)arg2 viewDescriber:(id)arg3;

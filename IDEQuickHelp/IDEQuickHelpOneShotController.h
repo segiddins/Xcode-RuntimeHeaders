@@ -6,7 +6,7 @@
 
 #import <IDEQuickHelp/IDEQuickHelpController.h>
 
-#import "NSPopoverDelegate.h"
+#import <IDEQuickHelp/NSPopoverDelegate-Protocol.h>
 
 @class DVTObservingToken, IDEQuickHelpOneShotWindowContentViewController, NSPopover, NSString;
 

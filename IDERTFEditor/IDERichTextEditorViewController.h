@@ -4,12 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDEEditor.h"
+#import <IDEKit/IDEEditor.h>
 
-#import "DVTFindBarFindable.h"
-#import "NSLayoutManagerDelegate.h"
-#import "NSTextDelegate.h"
-#import "NSTextViewDelegate.h"
+#import <IDERTFEditor/DVTFindBarFindable-Protocol.h>
+#import <IDERTFEditor/NSLayoutManagerDelegate-Protocol.h>
+#import <IDERTFEditor/NSTextDelegate-Protocol.h>
+#import <IDERTFEditor/NSTextViewDelegate-Protocol.h>
 
 @class IDERichTextEditorScalingScrollView, NSLayoutManager, NSString;
 
@@ -31,7 +31,6 @@
 - (void)revertStateWithDictionary:(id)arg1;
 - (void)selectDocumentLocations:(id)arg1;
 - (id)currentSelectedDocumentLocations;
-- (void)didEndToggleRichSheet:(id)arg1 returnCode:(long long)arg2 contextInfo:(void *)arg3;
 - (void)toggleRich:(id)arg1;
 - (void)doToggleRichWithNewURL:(id)arg1;
 - (void)doForegroundLayoutToCharacterIndex:(unsigned long long)arg1;

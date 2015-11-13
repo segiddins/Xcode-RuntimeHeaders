@@ -4,13 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <XCSUI/NSObject-Protocol.h>
 
-@class NSArray;
+@class XCSUICreateBotRepositoryIssue;
 
 @protocol XCSUICreateBotRepositoryTableCellViewDelegate <NSObject>
-- (BOOL)resolvingCertificateIssues;
-- (void)updateCredentialsToResolveIssues:(NSArray *)arg1;
-- (void)ignoreIssues:(NSArray *)arg1;
+- (void)updateCredentialsToResolveIssue:(XCSUICreateBotRepositoryIssue *)arg1;
 @end
 

@@ -7,6 +7,7 @@
 #import "IDEProductsUtilityPane.h"
 
 @class NSButton, NSString;
+@protocol IDEProductsInspectableVending;
 
 @interface IDEProductsSingleButtonUtilityPane : IDEProductsUtilityPane
 {

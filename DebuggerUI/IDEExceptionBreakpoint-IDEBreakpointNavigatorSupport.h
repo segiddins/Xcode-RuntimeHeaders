@@ -4,14 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDEExceptionBreakpoint.h"
+#import <IDEFoundation/IDEExceptionBreakpoint.h>
 
-#import "IDEKeyDrivenNavigableItemRepresentedObject.h"
+#import <DebuggerUI/IDEKeyDrivenNavigableItemRepresentedObject-Protocol.h>
 
 @class DVTDocumentLocation, DVTFileDataType, IDEFileReference, NSImage, NSString;
 
 @interface IDEExceptionBreakpoint (IDEBreakpointNavigatorSupport) <IDEKeyDrivenNavigableItemRepresentedObject>
-- (BOOL)shouldEditNewBreakpoints;
 - (id)popUpEditorDisplayName;
 @property(readonly) NSImage *navigableItem_image;
 

@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "DVTViewController.h"
+#import <DVTKit/DVTViewController.h>
 
-#import "NSTextViewDelegate.h"
+#import <IDEQuickHelp/NSTextViewDelegate-Protocol.h>
 
 @class IDEQuickHelpController, NSString, NSTextField;
 

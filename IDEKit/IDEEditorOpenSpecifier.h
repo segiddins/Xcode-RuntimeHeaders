@@ -4,12 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-@class DVTDocumentLocation, DVTFileDataType, IDENavigableItemArchivableRepresentation, NSString, NSURL;
+@class DVTDocumentLocation, DVTFileDataType, DVTStackBacktrace, IDENavigableItemArchivableRepresentation, NSString, NSURL;
 
 @interface IDEEditorOpenSpecifier : NSObject
 {
+    DVTStackBacktrace *_creationBacktrace;
     IDENavigableItemArchivableRepresentation *_archivableRepresentation;
     DVTDocumentLocation *_locationToSelect;
     NSURL *_documentURL;

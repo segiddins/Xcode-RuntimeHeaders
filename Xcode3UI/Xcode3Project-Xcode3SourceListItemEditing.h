@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "Xcode3Project.h"
+#import <DevToolsCore/Xcode3Project.h>
 
 @interface Xcode3Project (Xcode3SourceListItemEditing)
 - (id)supportedSourceListItemEditorClasses;

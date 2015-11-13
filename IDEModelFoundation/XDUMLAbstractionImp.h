@@ -6,7 +6,7 @@
 
 #import <IDEModelFoundation/XDUMLNamedElementImp.h>
 
-#import "XDUMLAbstraction.h"
+#import <IDEModelFoundation/XDUMLAbstraction-Protocol.h>
 
 @class NSMutableArray, NSString;
 

@@ -6,7 +6,7 @@
 
 #import <IDEKit/IDEAnnotationContext.h>
 
-#import "DVTSourceCodeComparisonAnnotationContext.h"
+#import <IDEKit/DVTSourceCodeComparisonAnnotationContext-Protocol.h>
 
 @class DVTDiffDescriptor, DVTDiffSession, NSString, NSURL;
 

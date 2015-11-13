@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSNibBindingConnector.h"
+#import <AppKit/NSNibBindingConnector.h>
 
-#import "NSCopying.h"
+#import <IDEInterfaceBuilderCocoaIntegration/NSCopying-Protocol.h>
 
 @interface NSNibBindingConnector (IBBindingConnectionCopying) <NSCopying>
 - (id)copyWithZone:(struct _NSZone *)arg1;

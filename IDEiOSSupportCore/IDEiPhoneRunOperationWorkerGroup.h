@@ -4,16 +4,16 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDERunOperationWorkerGroup.h"
+#import <IDEFoundation/IDERunOperationWorkerGroup.h>
 
 @class DVTiOSDevice;
 
 @interface IDEiPhoneRunOperationWorkerGroup : IDERunOperationWorkerGroup
 {
-    DVTiOSDevice *device;
+    DVTiOSDevice *_device;
 }
 
-@property(retain) DVTiOSDevice *device; // @synthesize device;
+@property(retain) DVTiOSDevice *device; // @synthesize device=_device;
 - (void).cxx_destruct;
 - (void)allSubworkersDidFinishWithError:(id)arg1;
 

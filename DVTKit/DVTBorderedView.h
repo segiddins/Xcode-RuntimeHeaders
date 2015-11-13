@@ -6,10 +6,11 @@
 
 #import <DVTKit/DVTLayoutView_ML.h>
 
-#import "DVTShadowDrawing.h"
-#import "DVTWindowActivationStateObserver.h"
+#import <DVTKit/DVTShadowDrawing-Protocol.h>
+#import <DVTKit/DVTWindowActivationStateObserver-Protocol.h>
 
 @class NSColor, NSGradient, NSString, NSView;
+@protocol DVTCancellable;
 
 @interface DVTBorderedView : DVTLayoutView_ML <DVTWindowActivationStateObserver, DVTShadowDrawing>
 {
@@ -33,10 +34,8 @@
     int _shadowSides;
     id <DVTCancellable> _windowActivationObservation;
     int _highlightSides;
-    id <DVTPainter> _backgroundPainter;
 }
 
-@property(retain) id <DVTPainter> backgroundPainter; // @synthesize backgroundPainter=_backgroundPainter;
 @property(nonatomic) int highlightSides; // @synthesize highlightSides=_highlightSides;
 @property(nonatomic) int verticalContentViewResizingMode; // @synthesize verticalContentViewResizingMode=_verticalContentViewResizingMode;
 @property(copy, nonatomic) NSColor *topInactiveBorderColor; // @synthesize topInactiveBorderColor=_topInactiveBorderColor;

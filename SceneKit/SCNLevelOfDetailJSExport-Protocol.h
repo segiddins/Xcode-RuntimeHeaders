@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "JSExport.h"
+#import <SceneKit/JSExport-Protocol.h>
 
-@class SCNGeometry;
+@class NSString, SCNGeometry;
 
 @protocol SCNLevelOfDetailJSExport <JSExport>
 + (id)levelOfDetailWithGeometry:(SCNGeometry *)arg1 worldSpaceDistance:(double)arg2;
@@ -15,5 +15,9 @@
 @property(readonly) double screenSpaceRadius;
 @property(readonly) SCNGeometry *geometry;
 - (id)copy;
+- (id)valueForKeyPath:(NSString *)arg1;
+- (id)valueForKey:(NSString *)arg1;
+- (void)setValue:(id)arg1 forKey:(NSString *)arg2;
+- (void)setValue:(id)arg1 forKeyPath:(NSString *)arg2;
 @end
 

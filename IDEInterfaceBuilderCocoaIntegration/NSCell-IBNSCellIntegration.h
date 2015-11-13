@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSCell.h"
+#import <AppKit/NSCell.h>
 
 @interface NSCell (IBNSCellIntegration)
 + (id)keyPathsForValuesAffectingIbInspectedEnabled;
@@ -53,7 +53,7 @@
 - (void)ibTakeSnapshotValues:(id)arg1 inConfiguration:(id)arg2;
 - (id)ibDefaultFontForCurrentConfiguration;
 - (BOOL)ibTitleEditsSelf;
-- (BOOL)ibIsBaselineAtIndex:(long long)arg1 inMotionWithKnob:(long long)arg2;
+- (BOOL)ibIsBaselineAtIndex:(long long)arg1 inMotionWithKnob:(CDUnion_42e99c75)arg2;
 - (id)ibBaselineForFrame:(struct CGRect)arg1 atIndex:(long long)arg2;
 - (id)ibBaselineCount;
 - (id)ibWidgetType;

@@ -6,9 +6,10 @@
 
 #import <XDBase/XDUMLClassImp.h>
 
-#import "XCDiffHashing.h"
+#import <XDBase/XCDiffHashing-Protocol.h>
 
 @class NSData;
+@protocol XDUMLGeneralization;
 
 @interface XDPMEntity : XDUMLClassImp <XCDiffHashing>
 {

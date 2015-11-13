@@ -6,7 +6,7 @@
 
 #import <DevToolsCParsing/GlobalProjectData.h>
 
-#import "RefactoringParserCallbacks.h"
+#import <DevToolsCParsing/RefactoringParserCallbacks-Protocol.h>
 
 @class NSMapTable, NSMutableDictionary, NSString, ParseErrorStream;
 

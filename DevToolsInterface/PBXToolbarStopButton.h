@@ -6,7 +6,7 @@
 
 #import <DevToolsInterface/PBXToolbarItemPopup.h>
 
-#import "PBXTrackableTaskObserver.h"
+#import <DevToolsInterface/PBXTrackableTaskObserver-Protocol.h>
 
 @class NSImage, PBXTrackableTaskManager;
 

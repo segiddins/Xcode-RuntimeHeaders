@@ -4,12 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSView.h"
+#import <AppKit/NSView.h>
 
-#import "DVTFirstResponderShowingView.h"
-#import "NSAnimationDelegate.h"
+#import <DVTKit/DVTFirstResponderShowingView-Protocol.h>
+#import <DVTKit/NSAnimationDelegate-Protocol.h>
 
 @class DVTFirstResponderDrawingStrategy, DVTNotificationToken, DVTTileViewItem, DVTTypeCompletionHandler, NSArray, NSIndexSet, NSMutableArray, NSMutableSet, NSString, NSTextField, NSViewAnimation;
+@protocol DVTTileViewDelegate;
 
 @interface DVTTileView : NSView <DVTFirstResponderShowingView, NSAnimationDelegate>
 {

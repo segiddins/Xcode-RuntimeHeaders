@@ -6,7 +6,8 @@
 
 #import <IDEKit/IDEActivityReporter.h>
 
-@class DVTObservingToken, IDEActivityReport, NSObject<IDELocalizationWorkProgress>;
+@class DVTObservingToken, IDEActivityReport, NSObject;
+@protocol IDELocalizationWorkProgress;
 
 @interface IDELocalizationActivityReporter : IDEActivityReporter
 {

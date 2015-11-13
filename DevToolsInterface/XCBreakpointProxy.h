@@ -6,8 +6,8 @@
 
 #import <DevToolsInterface/PBXFosterParent.h>
 
-#import "XCBreakpointActionsProtocol.h"
-#import "XCGroupingProtocol.h"
+#import <DevToolsInterface/XCBreakpointActionsProtocol-Protocol.h>
+#import <DevToolsInterface/XCGroupingProtocol-Protocol.h>
 
 @interface XCBreakpointProxy : PBXFosterParent <XCGroupingProtocol, XCBreakpointActionsProtocol>
 {

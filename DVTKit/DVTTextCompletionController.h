@@ -4,9 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
 @class DVTCompletingTextView, DVTTextCompletionSession, NSString;
+@protocol DVTCancellable;
 
 @interface DVTTextCompletionController : NSObject
 {
@@ -40,6 +41,7 @@
 - (BOOL)textViewShouldSetMarkedText:(id)arg1 selectedRange:(struct _NSRange)arg2;
 - (BOOL)textViewShouldChangeTextInRange:(struct _NSRange)arg1 replacementString:(id)arg2;
 - (BOOL)textViewShouldPerformAction:(SEL)arg1;
+- (BOOL)_dvtTextCompletionDebugContinueAfterLosingFocus;
 - (void)_textViewDidScroll:(id)arg1;
 - (void)_textViewWillUndoRedo:(id)arg1;
 - (void)textViewDidInsertText;

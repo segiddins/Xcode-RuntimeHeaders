@@ -4,10 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "NSCoding.h"
-#import "NSCopying.h"
+#import <GPUToolsShaderProfiler/NSCoding-Protocol.h>
+#import <GPUToolsShaderProfiler/NSCopying-Protocol.h>
 
 @class NSMutableArray, NSMutableDictionary;
 
@@ -56,6 +56,7 @@
 - (id)shaderSourceForProgramInfo:(id)arg1 atFunctionIndex:(unsigned int)arg2;
 - (id)_drawCallInfoWithProgramInfo:(id)arg1 atFunctionIndex:(unsigned int)arg2;
 - (void)calculateRealTimeInfoWithGPUTime:(double)arg1;
+- (void)calculateRealDrawCallTimeInfo;
 - (id)programPipelineInfoWithId:(unsigned long long)arg1;
 - (id)programInfoWithId:(unsigned long long)arg1;
 - (id)drawCallInfoWithFunctionIndex:(unsigned int)arg1;

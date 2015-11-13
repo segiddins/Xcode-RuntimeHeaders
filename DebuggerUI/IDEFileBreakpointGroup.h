@@ -4,10 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "DVTInvalidation.h"
-#import "IDEKeyDrivenNavigableItemRepresentedObject.h"
+#import <DebuggerUI/DVTInvalidation-Protocol.h>
+#import <DebuggerUI/IDEKeyDrivenNavigableItemRepresentedObject-Protocol.h>
 
 @class DVTDocumentLocation, DVTFileDataType, DVTFilePath, DVTObservingToken, DVTStackBacktrace, IDEBreakpointBucket, IDEFileBreakpoint, IDEFileReference, NSArray, NSImage, NSMutableArray, NSString;
 
@@ -16,15 +16,19 @@
     IDEBreakpointBucket *_bucket;
     NSArray *_breakpoints;
     NSMutableArray *_mutableBreakpoints;
-    IDEFileBreakpoint *_breakpointObservingTheNameOf;
     DVTObservingToken *_breakpointFileNameObserver;
     NSString *_displayName;
     NSImage *_displayImage;
     DVTFilePath *_filePath;
+    IDEFileReference *_fileReference;
+    IDEFileBreakpoint *_breakpointObservingTheNameOf;
 }
 
++ (id)keyPathsForValuesAffectingAssociatedFileExists;
 + (void)initialize;
 + (id)keyPathsForValuesAffectingNavigableItem_name;
+@property(retain) IDEFileBreakpoint *breakpointObservingTheNameOf; // @synthesize breakpointObservingTheNameOf=_breakpointObservingTheNameOf;
+@property(retain) IDEFileReference *fileReference; // @synthesize fileReference=_fileReference;
 @property(retain) DVTFilePath *filePath; // @synthesize filePath=_filePath;
 @property(copy, nonatomic) NSImage *displayImage; // @synthesize displayImage=_displayImage;
 @property(copy) NSString *displayName; // @synthesize displayName=_displayName;
@@ -34,13 +38,13 @@
 - (id)ideModelObjectTypeIdentifier;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
+@property(readonly) BOOL associatedFileExists;
 - (BOOL)containsBreakpoint:(id)arg1;
 - (void)_assertBreakpointsFileIsSameAsGroup:(id)arg1;
 - (void)_observeFileBreakpointsNameToUseAsOurOwn:(id)arg1;
 - (void)removeFileBreakpoint:(id)arg1;
 - (void)addFileBreakpointInSortedOrder:(id)arg1;
 - (id)initWithBucket:(id)arg1;
-- (id)textColor;
 @property(readonly) DVTDocumentLocation *navigableItem_contentDocumentLocation;
 @property(readonly) NSImage *navigableItem_image;
 @property(readonly) NSString *navigableItem_name;

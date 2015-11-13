@@ -6,7 +6,7 @@
 
 #import <GLToolsServices/DYGLResourceObject.h>
 
-#import "DYBuffer.h"
+#import <GLToolsServices/DYBuffer-Protocol.h>
 
 @class NSData, NSMutableDictionary, NSString;
 
@@ -25,6 +25,7 @@
 @property(readonly, nonatomic) long long offset; // @synthesize offset=_offset;
 @property(readonly, nonatomic) NSData *data; // @synthesize data=_data;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) unsigned long long cachingCost;
 - (id)initWithProperties:(id)arg1;
 - (id)initWithResourceObject:(id)arg1 functionStream:(id)arg2 dataResolver:(CDUnknownBlockType)arg3;
 

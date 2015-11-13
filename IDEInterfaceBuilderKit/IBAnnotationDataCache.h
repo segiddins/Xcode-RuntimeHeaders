@@ -4,14 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-@class DVTDispatchLock, DVTMapTable, DVTObservingToken, IDEWorkspace;
+@class DVTDispatchLock, DVTObservingToken, IDEWorkspace, NSMapTable;
 
 @interface IBAnnotationDataCache : NSObject
 {
     IDEWorkspace *workspace;
-    DVTMapTable *documentToAnnotationData;
+    NSMapTable *documentToAnnotationData;
     DVTDispatchLock *documentToAnnotationDataLock;
     id indexDidChangeNotificationToken;
     id documentWillCloseNotificationToken;

@@ -6,7 +6,7 @@
 
 #import <IDEFoundation/IDEContainerReadOnlyItem.h>
 
-#import "DVTInvalidation.h"
+#import <IDEFoundation/DVTInvalidation-Protocol.h>
 
 @class DVTStackBacktrace, NSString;
 

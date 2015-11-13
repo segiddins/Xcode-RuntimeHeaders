@@ -6,8 +6,8 @@
 
 #import <IDEKit/IDENavigationHUDBorderedGradientLayer.h>
 
-#import "IDENavigationHUDDisposableLayer.h"
-#import "IDENavigationHUDSelectableLayer.h"
+#import <IDEKit/IDENavigationHUDDisposableLayer-Protocol.h>
+#import <IDEKit/IDENavigationHUDSelectableLayer-Protocol.h>
 
 @class CALayer, IDENavigationHUDSelection, IDENavigationHUDTabBarLayer, IDEWorkspaceTabController, NSString;
 

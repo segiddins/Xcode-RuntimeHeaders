@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IBStoryboardDocument.h"
+#import <IDEInterfaceBuilderKit/IBStoryboardDocument.h>
 
 @interface IBStoryboardDocument (IBStoryboardDocumentCocoaIntegration)
 + (BOOL)supportsWindowControllersDraggedFromLibrary;

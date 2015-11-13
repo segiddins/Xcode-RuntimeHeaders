@@ -4,19 +4,20 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
 @class IBEditorCanvasFrameController, NSMutableArray;
+@protocol IBEditorStackDelegate;
 
 @interface IBEditorStack : NSObject
 {
-    NSMutableArray *editorStack;
-    IBEditorCanvasFrameController *baseFrameController;
+    NSMutableArray *_editorStack;
     id <IBEditorStackDelegate> _delegate;
+    IBEditorCanvasFrameController *_baseFrameController;
 }
 
+@property(readonly) IBEditorCanvasFrameController *baseFrameController; // @synthesize baseFrameController=_baseFrameController;
 @property id <IBEditorStackDelegate> delegate; // @synthesize delegate=_delegate;
-@property(readonly) IBEditorCanvasFrameController *baseFrameController; // @synthesize baseFrameController;
 - (void).cxx_destruct;
 - (void)closeAllEditors;
 - (void)closeTopmostEditor;

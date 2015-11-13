@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSTreeController.h"
+#import <AppKit/NSTreeController.h>
 
 @class NSString;
 
@@ -13,7 +13,6 @@
 - (BOOL)validateIbShadowedCountKeyPath:(id *)arg1 error:(id)arg2;
 - (BOOL)validateIbShadowedLeafKeyPath:(id *)arg1 error:(id)arg2;
 - (BOOL)validateIbShadowedChildrenKeyPath:(id *)arg1 error:(id)arg2;
-- (void)ibWarnings:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
 - (id)ibResolvedTypeNameForControllerKey:(id)arg1;
 
 // Remaining properties

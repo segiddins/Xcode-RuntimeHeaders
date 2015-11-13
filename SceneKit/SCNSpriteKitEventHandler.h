@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
 @class NSMutableDictionary, SKScene;
 
@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) SKScene *scene; // @synthesize scene=_scene;
 - (void)keyUp:(id)arg1;
 - (void)keyDown:(id)arg1;
-- (void)mouseUp:(id)arg1;
-- (void)mouseDragged:(id)arg1;
-- (void)mouseMoved:(id)arg1;
-- (void)mouseDown:(id)arg1;
+- (BOOL)mouseUp:(id)arg1;
+- (BOOL)mouseDragged:(id)arg1;
+- (BOOL)mouseMoved:(id)arg1;
+- (BOOL)mouseDown:(id)arg1;
 - (void)dealloc;
 - (id)init;
 

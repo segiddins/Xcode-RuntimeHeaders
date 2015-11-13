@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "DVTTextCompletionItem.h"
+#import <DVTKit/DVTTextCompletionItem-Protocol.h>
 
 @class NSArray, NSAttributedString, NSImage, NSString;
 
@@ -16,6 +16,7 @@
     NSString *_localizedName;
     NSImage *_icon;
     double _priority;
+    double _fuzzyMatchingScore;
     long long _priorityBucket;
     unsigned long long _priorityComparatorKind;
 }
@@ -23,6 +24,7 @@
 @property unsigned long long priorityComparatorKind; // @synthesize priorityComparatorKind=_priorityComparatorKind;
 @property long long priorityBucket; // @synthesize priorityBucket=_priorityBucket;
 @property(retain) NSImage *icon; // @synthesize icon=_icon;
+@property double fuzzyMatchingScore; // @synthesize fuzzyMatchingScore=_fuzzyMatchingScore;
 @property double priority; // @synthesize priority=_priority;
 @property(copy) NSString *localizedName; // @synthesize localizedName=_localizedName;
 @property(copy) NSString *name; // @synthesize name=_name;

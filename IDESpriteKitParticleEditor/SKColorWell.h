@@ -4,14 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSColorWell.h"
+#import <AppKit/NSColorWell.h>
 
 @interface SKColorWell : NSColorWell
 {
     id _delegate;
 }
 
-@property(retain) id delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) __weak id delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)deactivate;
 

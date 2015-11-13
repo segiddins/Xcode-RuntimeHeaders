@@ -6,7 +6,7 @@
 
 #import <DevToolsInterface/XCElementImp.h>
 
-#import "XCElementDropperP.h"
+#import <DevToolsInterface/XCElementDropperP-Protocol.h>
 
 @class NSString;
 

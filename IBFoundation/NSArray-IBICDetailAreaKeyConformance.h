@@ -4,11 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSArray.h"
+#import <Foundation/NSArray.h>
 
-#import "IBICDetailAreaKeyGroup.h"
-#import "IBICDetailAreaKeySection.h"
-#import "IBICDetailAreaKeySubgroup.h"
+#import <IBFoundation/IBICDetailAreaKeyGroup-Protocol.h>
+#import <IBFoundation/IBICDetailAreaKeySection-Protocol.h>
+#import <IBFoundation/IBICDetailAreaKeySubgroup-Protocol.h>
 
 @class NSString;
 

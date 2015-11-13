@@ -6,8 +6,8 @@
 
 #import <IDEKit/IDEDistributionStepViewController.h>
 
-#import "DVTTableViewDelegate.h"
-#import "NSTableViewDataSource.h"
+#import <IDEKit/DVTTableViewDelegate-Protocol.h>
+#import <IDEKit/NSTableViewDataSource-Protocol.h>
 
 @class DVTTableView, NSArray, NSLayoutConstraint, NSString;
 
@@ -31,8 +31,6 @@
 - (void)selectDistributionMethod:(id)arg1;
 - (void)selectDistributionMethodWrapper:(id)arg1;
 - (void)loadView;
-- (id)providedOutputContextPropertyNames;
-- (id)requiredInputContextPropertyNames;
 - (id)distributionSelectionDescription;
 - (BOOL)canGoNext;
 - (BOOL)canGoPrevious;

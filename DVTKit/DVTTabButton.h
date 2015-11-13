@@ -6,8 +6,8 @@
 
 #import <DVTKit/DVTRolloverTrackingButton.h>
 
-#import "NSAnimationDelegate.h"
-#import "NSTextFieldDelegate.h"
+#import <DVTKit/NSAnimationDelegate-Protocol.h>
+#import <DVTKit/NSTextFieldDelegate-Protocol.h>
 
 @class DVTRolloverImageButton, DVTTabbedWindowTabViewItem, NSImage, NSImageView, NSMutableArray, NSString, NSText, NSTextField, NSWindow;
 
@@ -52,7 +52,6 @@
 + (id)leftInactiveTabSeparatorImageForMainWindow;
 + (id)leftActiveTabSeparatorImageForNonMainWindow;
 + (id)leftActiveTabSeparatorImageForMainWindow;
-- (id).cxx_construct;
 - (void).cxx_destruct;
 - (BOOL)_useRolloverAppearance;
 - (void)_updateToolTip;

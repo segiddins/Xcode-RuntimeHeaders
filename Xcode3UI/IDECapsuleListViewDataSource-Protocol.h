@@ -4,9 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <Xcode3UI/NSObject-Protocol.h>
 
-@class IDECapsuleListView, IDEViewController<IDECapsuleViewController>, NSArray;
+@class IDECapsuleListView, IDEViewController, NSArray;
+@protocol IDECapsuleViewController, NSDraggingInfo;
 
 @protocol IDECapsuleListViewDataSource <NSObject>
 - (IDEViewController<IDECapsuleViewController> *)capsuleListView:(IDECapsuleListView *)arg1 viewControllerForRow:(long long)arg2;

@@ -4,9 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSTableCellView.h"
+#import <AppKit/NSTableCellView.h>
 
 @class NSButton, NSTextField, NSView, XCSUICreateBotRepositoryIssue;
+@protocol XCSUICreateBotRepositoryTableCellViewDelegate;
 
 @interface XCSUICreateBotRepositoryTableCellView : NSTableCellView
 {
@@ -17,10 +18,8 @@
     NSView *_actionsView;
     NSTextField *_resolutionStatusView;
     NSButton *_changeButton;
-    NSButton *_ignoreOrViewButton;
 }
 
-@property __weak NSButton *ignoreOrViewButton; // @synthesize ignoreOrViewButton=_ignoreOrViewButton;
 @property __weak NSButton *changeButton; // @synthesize changeButton=_changeButton;
 @property __weak NSTextField *resolutionStatusView; // @synthesize resolutionStatusView=_resolutionStatusView;
 @property __weak NSView *actionsView; // @synthesize actionsView=_actionsView;
@@ -32,9 +31,6 @@
 - (void)updateResolutionField;
 @property(retain) XCSUICreateBotRepositoryIssue *issue;
 - (void)updateCredentials:(id)arg1;
-- (void)ignoreIssues:(id)arg1;
-- (void)connection:(id)arg1 willSendRequestForAuthenticationChallenge:(id)arg2;
-- (void)certificateSheetDidEnd:(id)arg1 returnCode:(long long)arg2 contextInfo:(void *)arg3;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)dealloc;
 

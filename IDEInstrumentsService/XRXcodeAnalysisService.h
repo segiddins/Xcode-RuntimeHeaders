@@ -4,17 +4,15 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "IDEAnalysisToolService.h"
+#import <IDEInstrumentsService/IDEAnalysisToolService-Protocol.h>
 
-@class DVTFileDataType, DVTFilePath, IDEAnalysisTool, IDELaunchParametersSnapshot, IDERunDestination, NSMutableDictionary, NSString;
+@class DVTFileDataType, IDEAnalysisTool, IDELaunchParametersSnapshot, IDERunDestination, NSMutableDictionary, NSString;
 
 @interface XRXcodeAnalysisService : NSObject <IDEAnalysisToolService>
 {
     DVTFileDataType *_runnableUTIType;
-    id _runnableLocation;
-    DVTFilePath *_runnableBuildProductPath;
     IDERunDestination *_runDestination;
     int _pidForAttaching;
     NSString *_appNameForAttaching;
@@ -40,8 +38,6 @@
 + (id)analysisToolWithIdentifier:(id)arg1 platformIdentifier:(id)arg2;
 + (id)analysisToolsForPlatformIdentifier:(id)arg1;
 + (void)addUniqueTools:(id)arg1 toArray:(id)arg2;
-@property(copy) DVTFilePath *runnableLocation; // @synthesize runnableLocation=_runnableLocation;
-@property(copy) DVTFilePath *runnableBuildProductPath; // @synthesize runnableBuildProductPath=_runnableBuildProductPath;
 @property(copy) IDERunDestination *runDestination; // @synthesize runDestination=_runDestination;
 @property(retain) IDELaunchParametersSnapshot *launchParameters; // @synthesize launchParameters=_launchParameters;
 - (void).cxx_destruct;

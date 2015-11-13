@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
 @class NSString;
 
@@ -18,6 +18,13 @@
 }
 
 + (id)versionWithMajor:(unsigned long long)arg1 minor:(unsigned long long)arg2 update:(unsigned long long)arg3;
++ (id)version7_2_0;
++ (id)version7_1_1;
++ (id)version7_1_0;
++ (id)version7_0_1;
++ (id)version7_0_0;
++ (id)version6_4_0;
++ (id)version6_3_2;
 + (id)version6_3_1;
 + (id)version6_3_0;
 + (id)version6_2_0;

@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "DVTAnalyticsSnapshotFileSystemSerialization.h"
+#import <DVTAnalytics/DVTAnalyticsSnapshotFileSystemSerialization-Protocol.h>
 
 @class DVTAnalyticsCrashPointIdentifier, DVTCrashPointUserData, DVTFilePath, NSMutableDictionary, NSString;
 
@@ -37,6 +37,7 @@
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)initWithIdentifier:(id)arg1 userData:(id)arg2 crashPointString:(id)arg3 sourceFileName:(id)arg4 sourceFileLine:(unsigned long long)arg5 cachePath:(id)arg6;
+- (id)init;
 
 @end
 

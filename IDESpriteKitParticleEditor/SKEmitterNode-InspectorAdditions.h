@@ -4,27 +4,28 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "SKEmitterNode.h"
+#import <SpriteKit/SKEmitterNode.h>
 
-#import "SKNodeWithShader.h"
+#import <IDESpriteKitParticleEditor/SKNodeWithShader-Protocol.h>
 
-@class NSColor, NSImage, NSString, NSURL, SKShader;
+@class NSColor, NSString, NSURL, SKNode, SKShader;
 
 @interface SKEmitterNode (InspectorAdditions) <SKNodeWithShader>
++ (id)keyPathsForValuesAffectingParticleTextureImageName;
 @property(retain, nonatomic) NSURL *customSpriteShader;
 - (id)ide_undoKVOKeypaths;
 - (void)setNilValueForKey:(id)arg1;
 - (id)inspectorAttributes;
+@property(retain, nonatomic) SKNode *inspectorTargetNode;
 @property BOOL shouldShowParentInInspector;
 @property(nonatomic) struct CGPoint previewParticlePosition;
-@property(nonatomic) unsigned long long numParticlesToEmitWithAction;
 @property(nonatomic) double particleRotationSpeedDeg;
 @property(nonatomic) double particleRotationRangeDeg;
 @property(nonatomic) double particleRotationDeg;
 @property(nonatomic) double emissionAngleRangeDeg;
 @property(nonatomic) double emissionAngleDeg;
 @property(retain, nonatomic) NSColor *backgroundColor;
-@property(retain, nonatomic) NSImage *particleTextureImage;
+@property(retain, nonatomic) NSString *particleTextureImageName;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

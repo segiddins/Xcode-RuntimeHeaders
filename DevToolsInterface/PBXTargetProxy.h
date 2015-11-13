@@ -6,7 +6,7 @@
 
 #import <DevToolsInterface/PBXFosterParent.h>
 
-#import "PBXUIDeletionAssistant.h"
+#import <DevToolsInterface/PBXUIDeletionAssistant-Protocol.h>
 
 @interface PBXTargetProxy : PBXFosterParent <PBXUIDeletionAssistant>
 {

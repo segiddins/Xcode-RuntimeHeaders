@@ -4,15 +4,17 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "DVTInvalidation.h"
-#import "IDEKeyDrivenNavigableItemRepresentedObject.h"
+#import <DebuggerUI/DVTInvalidation-Protocol.h>
+#import <DebuggerUI/IDEKeyDrivenNavigableItemRepresentedObject-Protocol.h>
 
-@class DBGProcess, DVTDocumentLocation, DVTFileDataType, DVTStackBacktrace, IDEFileReference, NSArray, NSImage, NSString;
+@class DBGProcess, DVTDocumentLocation, DVTFileDataType, DVTObservingToken, DVTStackBacktrace, IDEFileReference, NSArray, NSImage, NSString;
 
 @interface DBGDisassemblyItemProcessWrapper : NSObject <DVTInvalidation, IDEKeyDrivenNavigableItemRepresentedObject>
 {
+    DVTObservingToken *_settingDisassemblyObserver;
+    DVTObservingToken *_coalescedStateObserver;
     DBGProcess *_process;
     NSArray *_threadWrappers;
 }
@@ -21,7 +23,7 @@
 + (id)keyPathsForValuesAffectingNavigableItem_image;
 + (id)keyPathsForValuesAffectingNavigableItem_name;
 @property(retain) NSArray *threadWrappers; // @synthesize threadWrappers=_threadWrappers;
-@property(readonly) DBGProcess *process; // @synthesize process=_process;
+@property(retain) DBGProcess *process; // @synthesize process=_process;
 - (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (void)_invalidatePreviousThreadWrappers;

@@ -4,50 +4,50 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "DVTViewController.h"
+#import <DVTKit/DVTViewController.h>
 
-#import "NSPopoverDelegate.h"
+#import <IDEKit/NSPopoverDelegate-Protocol.h>
 
-@class DVTReplacementView, IDEBatchFindScopeEditor, IDEWorkspace, NSArray, NSImageView, NSPanel, NSPopUpButton, NSPopover, NSString;
+@class DVTReplacementView, IDEBatchFindScopeEditor, IDEWorkspace, NSArray, NSImageView, NSPopover, NSString;
 
 @interface IDEBatchFindStrategiesController : DVTViewController <NSPopoverDelegate>
 {
-    NSPanel *_locationEditorPanel;
-    NSPopUpButton *_locationPopupButton;
     NSImageView *_topShadow;
     DVTReplacementView *_locationEditorContentView;
-    NSArray *_customFindScopes;
     IDEWorkspace *_workspace;
     NSString *_findScopeUUID;
     NSString *_findWorkspacePath;
+    CDUnknownBlockType _scopeEditorCompletionBlock;
+    BOOL _ignoresCase;
+    BOOL _isEditingScope;
     int _findType;
     int _matchStyle;
-    BOOL _ignoresCase;
-    CDUnknownBlockType _scopeEditorCompletionBlock;
-    BOOL _isEditingScope;
     NSPopover *_popover;
     IDEBatchFindScopeEditor *_scopeEditor;
     NSString *_findWorkspacePathDescription;
+    NSArray *_customScopePredicates;
 }
 
 + (void)configureStateSavingObjectPersistenceByName:(id)arg1;
++ (id)keyPathsForValuesAffectingCustomScopes;
 + (id)newScopeImage;
 + (id)scopeImage;
 + (void)initialize;
 + (id)sharedStrategiesController;
+@property(retain) NSArray *customScopePredicates; // @synthesize customScopePredicates=_customScopePredicates;
 @property(retain) NSString *findWorkspacePathDescription; // @synthesize findWorkspacePathDescription=_findWorkspacePathDescription;
 @property(retain, nonatomic) IDEBatchFindScopeEditor *scopeEditor; // @synthesize scopeEditor=_scopeEditor;
-@property(retain) NSPopover *popover; // @synthesize popover=_popover;
-@property(nonatomic) BOOL isEditingScope; // @synthesize isEditingScope=_isEditingScope;
 @property(copy, nonatomic) NSString *findWorkspacePath; // @synthesize findWorkspacePath=_findWorkspacePath;
 @property(copy, nonatomic) NSString *findScopeUUID; // @synthesize findScopeUUID=_findScopeUUID;
+@property(retain) NSPopover *popover; // @synthesize popover=_popover;
+@property(nonatomic) BOOL isEditingScope; // @synthesize isEditingScope=_isEditingScope;
 @property(nonatomic) BOOL ignoresCase; // @synthesize ignoresCase=_ignoresCase;
 @property(nonatomic) int matchStyle; // @synthesize matchStyle=_matchStyle;
 @property(nonatomic) int findType; // @synthesize findType=_findType;
 - (void).cxx_destruct;
 - (BOOL)popoverShouldClose:(id)arg1;
 - (void)_validateCustomScopeSelection;
-- (id)getCustomScopes;
+@property(readonly) NSArray *customScopes;
 - (id)descriptionForCriteriaForAttributedString:(id)arg1;
 @property(readonly) NSString *customScopeDescription;
 - (void)setParametersFromCriteria:(id)arg1;

@@ -4,13 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-@class DVTMapTable;
+@class NSMapTable;
 
 @interface DevkitFileCache : NSObject
 {
-    DVTMapTable *_fileEditorMap;
+    NSMapTable *_fileEditorMap;
 }
 
 - (void).cxx_destruct;

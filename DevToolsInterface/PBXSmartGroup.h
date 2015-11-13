@@ -6,8 +6,8 @@
 
 #import <DevToolsInterface/PBXFosterParent.h>
 
-#import "PBXNodeEditingProtocol.h"
-#import "PBXUIDeletionAssistant.h"
+#import <DevToolsInterface/PBXNodeEditingProtocol-Protocol.h>
+#import <DevToolsInterface/PBXUIDeletionAssistant-Protocol.h>
 
 @class NSArray, PBXProjectModule, PBXSmartGroupBinding, PBXSmartGroupDataSource;
 

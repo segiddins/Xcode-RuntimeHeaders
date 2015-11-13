@@ -7,6 +7,7 @@
 #import <IDELanguageSupportUI/IDETimestampedPlaygroundResult.h>
 
 @class DVTTextDocumentLocation, NSString;
+@protocol IDEPlaygroundLoggerLogEntry;
 
 @interface IDEPlaygroundLoggerResult : IDETimestampedPlaygroundResult
 {

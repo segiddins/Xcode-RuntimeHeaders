@@ -6,7 +6,7 @@
 
 #import <XDInterface/XDGraphic.h>
 
-#import "XDGraphEdge.h"
+#import <XDInterface/XDGraphEdge-Protocol.h>
 
 @class XDConnection, XDLineEnd;
 

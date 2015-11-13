@@ -4,10 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDEActivityLogRecord.h"
+#import <IDEFoundation/IDEActivityLogRecord.h>
+
+@class NSImage;
 
 @interface IDEActivityLogRecord (IDEActivityLogAdditions)
++ (id)keyPathsForValuesAffectingStatusImage;
 + (id)keyPathsForValuesAffectingNavigableItem_progressValue;
+@property(readonly) NSImage *statusImage;
 @property(readonly) long long navigableItem_progressValue;
 @end
 

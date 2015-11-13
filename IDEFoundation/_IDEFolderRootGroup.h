@@ -6,12 +6,13 @@
 
 #import <IDEFoundation/IDEGroup.h>
 
-#import "IDEStructureEditing.h"
+#import <IDEFoundation/IDEStructureEditing-Protocol.h>
 
 @interface _IDEFolderRootGroup : IDEGroup <IDEStructureEditing>
 {
 }
 
+- (BOOL)_structureEditRemoveSubitemsShouldCloseDocumentsUnderPathWithoutSaving;
 - (BOOL)allowRemovingContainerGroup;
 - (BOOL)structureEditSetName:(id)arg1 inContext:(id)arg2;
 - (BOOL)canStructureEditName;

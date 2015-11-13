@@ -6,8 +6,8 @@
 
 #import <DevToolsInterface/PBXPreferencesPaneModule.h>
 
-#import "NSControlTextEditingDelegate.h"
-#import "NSTableViewDataSource.h"
+#import <DevToolsInterface/NSControlTextEditingDelegate-Protocol.h>
+#import <DevToolsInterface/NSTableViewDataSource-Protocol.h>
 
 @class NSArray, NSButton, NSDictionary, NSMenu, NSMutableArray, NSMutableDictionary, NSSearchField, NSSplitView, NSString, NSTableColumn, NSTextField, NSView, SFAuthorizationView, XCDistributedBuildsSet, XCDistributedBuildsTableView;
 

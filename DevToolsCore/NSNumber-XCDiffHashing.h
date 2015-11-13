@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSNumber.h"
+#import <Foundation/NSNumber.h>
 
-#import "XCDiffHashing.h"
+#import <DevToolsCore/XCDiffHashing-Protocol.h>
 
 @interface NSNumber (XCDiffHashing) <XCDiffHashing>
 - (unsigned long long)diffHashForDataSource:(id)arg1;

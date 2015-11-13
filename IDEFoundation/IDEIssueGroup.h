@@ -4,9 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-@class DVTMapTable, IDEContainer, IDEIssueProvider, NSArray, NSMutableArray, NSSet;
+@class IDEContainer, IDEIssueProvider, NSArray, NSMapTable, NSMutableArray, NSSet;
+@protocol IDEBlueprint;
 
 @interface IDEIssueGroup : NSObject
 {
@@ -14,10 +15,10 @@
     IDEContainer *_container;
     id <IDEBlueprint> _blueprint;
     NSMutableArray *_issueFileGroups;
-    DVTMapTable *_issueFileGroupsIndex;
+    NSMapTable *_issueFileGroupsIndex;
     NSMutableArray *_issuesWithNoFile;
     NSMutableArray *_issueTypeGroups;
-    DVTMapTable *_issueTypeGroupsIndex;
+    NSMapTable *_issueTypeGroupsIndex;
     unsigned long long _testFailureCount;
     unsigned long long _errorCount;
     unsigned long long _warningCount;

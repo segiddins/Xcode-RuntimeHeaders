@@ -4,12 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "DVTLayoutView_ML.h"
+#import <DVTKit/DVTLayoutView_ML.h>
 
-#import "DVTInvalidation.h"
-#import "IDEFlightCheckListViewDelegate.h"
+#import <IDEKit/DVTInvalidation-Protocol.h>
+#import <IDEKit/IDEFlightCheckListViewDelegate-Protocol.h>
 
 @class DVTStackBacktrace, IDEFlightCheckListView, NSArray, NSButton, NSImageView, NSProgressIndicator, NSString, NSTextField;
+@protocol IDEProjectItemStatusViewDelegate;
 
 @interface IDEProjectItemStatusView : DVTLayoutView_ML <IDEFlightCheckListViewDelegate, DVTInvalidation>
 {
@@ -22,6 +23,7 @@
     id <IDEProjectItemStatusViewDelegate> _delegate;
 }
 
++ (unsigned long long)assertionBehaviorAfterEndOfEventForSelector:(SEL)arg1;
 + (void)initialize;
 @property __weak id <IDEProjectItemStatusViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) int status; // @synthesize status=_status;

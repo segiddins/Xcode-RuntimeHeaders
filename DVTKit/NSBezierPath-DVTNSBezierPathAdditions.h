@@ -4,9 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSBezierPath.h"
+#import <AppKit/NSBezierPath.h>
 
 @interface NSBezierPath (DVTNSBezierPathAdditions)
++ (id)dvt_bezierPathWithCrossedRect:(struct CGRect)arg1;
 + (id)dvt_bezierPathWithRoundRectInRect:(struct CGRect)arg1 topLeftRadius:(double)arg2 topRightRadius:(double)arg3 bottomRightRadius:(double)arg4 bottomLeftRadius:(double)arg5;
 + (id)dvt_bezierPathWithRoundRectInRect:(struct CGRect)arg1 radius:(double)arg2;
 + (id)dvt_bezierPathWithLineFrom:(struct CGPoint)arg1 to:(struct CGPoint)arg2;

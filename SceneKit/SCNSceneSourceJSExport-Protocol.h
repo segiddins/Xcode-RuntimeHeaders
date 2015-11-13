@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "JSExport.h"
+#import <SceneKit/JSExport-Protocol.h>
 
 @class NSArray, NSData, NSDictionary, NSString, NSURL, SCNScene;
 
@@ -19,7 +19,5 @@
 - (id)propertyForKey:(NSString *)arg1;
 - (SCNScene *)sceneWithOptions:(NSDictionary *)arg1 error:(id *)arg2;
 - (SCNScene *)sceneWithOptions:(NSDictionary *)arg1 statusHandler:(void (^)(float, long long, NSError *, char *))arg2;
-- (id)initWithData:(NSData *)arg1 options:(NSDictionary *)arg2;
-- (id)initWithURL:(NSURL *)arg1 options:(NSDictionary *)arg2;
 @end
 

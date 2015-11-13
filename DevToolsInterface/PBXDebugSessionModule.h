@@ -6,8 +6,8 @@
 
 #import <DevToolsInterface/PBXLaunchSessionModule.h>
 
-#import "NSSplitViewDelegate.h"
-#import "XCDebugTask.h"
+#import <DevToolsInterface/NSSplitViewDelegate-Protocol.h>
+#import <DevToolsInterface/XCDebugTask-Protocol.h>
 
 @class NSInputStream, NSMapTable, NSMenu, NSMutableArray, NSMutableDictionary, NSMutableSet, NSOutputStream, NSString, PBXDebugCLIModule, PBXDebugExpressionsViewModule, PBXDebugInstructionPointer, PBXDebugProcessAndThreadModule, PBXDebugProcessViewModule, PBXDebugStackFrameViewModule, PBXDebugThreadViewModule, PBXDisassemblyFileDocument, PBXFileReference, PBXLSDynamicLinkerImageModule, PBXNavigatorGroup, PBXSourceFileDocument, PBXSplitviewModule, XCDataTipModule, XCGlobalVariableBrowserModule, XCHUDModule;
 

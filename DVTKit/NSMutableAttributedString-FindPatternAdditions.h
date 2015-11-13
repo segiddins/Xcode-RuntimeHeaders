@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSMutableAttributedString.h"
+#import <Foundation/NSMutableAttributedString.h>
 
 @interface NSMutableAttributedString (FindPatternAdditions)
 + (id)dvt_mutableAttributedStringFromPatternArray:(id)arg1 inField:(id)arg2 excludingPatterns:(BOOL)arg3;

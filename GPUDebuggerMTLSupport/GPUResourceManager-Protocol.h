@@ -4,9 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <GPUDebuggerMTLSupport/NSObject-Protocol.h>
 
 @class DYFuture, DYResourceStreamer, GPUTraceResourceItem, NSString;
+@protocol DYCaptureStore, DYResource;
 
 @protocol GPUResourceManager <NSObject>
 - (DYFuture *)loadClientDataBufferFromArchive:(NSString *)arg1 offset:(long long)arg2 functionIndex:(unsigned int)arg3;

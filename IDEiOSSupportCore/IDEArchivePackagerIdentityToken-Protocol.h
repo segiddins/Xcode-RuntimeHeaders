@@ -4,11 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <IDEiOSSupportCore/NSObject-Protocol.h>
 
-@class NSString;
+@class DVTCodesignParameterSnapshot, NSString;
+@protocol IDEArchivePackagerIdentityToken;
 
 @protocol IDEArchivePackagerIdentityToken <NSObject>
+- (DVTCodesignParameterSnapshot *)codesignParameterSnapshotIncludingProfile:(BOOL)arg1;
 - (id <IDEArchivePackagerIdentityToken>)relatedTokenForKey:(NSString *)arg1;
 - (int)status;
 - (NSString *)displayName;

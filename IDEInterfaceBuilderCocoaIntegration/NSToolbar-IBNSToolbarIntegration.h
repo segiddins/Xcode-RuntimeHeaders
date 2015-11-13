@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSToolbar.h"
+#import <AppKit/NSToolbar.h>
 
-#import "IBDocumentArchiving.h"
+#import <IDEInterfaceBuilderCocoaIntegration/IBDocumentArchiving-Protocol.h>
 
 @class NSArray, NSString;
 

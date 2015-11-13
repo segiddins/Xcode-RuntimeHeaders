@@ -4,11 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSEvent.h"
+#import <AppKit/NSEvent.h>
 
 @interface NSEvent (SKEAdditions)
-- (BOOL)ske_isSingleRightMouseDown;
-- (BOOL)ske_isSingleLeftMouseDown;
+@property(readonly) BOOL ske_isSingleRightMouseDown;
+@property(readonly) BOOL ske_isSingleLeftMouseDown;
+@property(readonly) BOOL ske_isDoubleLeftMouseDown;
 - (BOOL)ske_isIntentionalRightDragWithRespectTo:(id)arg1;
 - (BOOL)ske_isIntentionalLeftDragWithRespectTo:(id)arg1;
 @end

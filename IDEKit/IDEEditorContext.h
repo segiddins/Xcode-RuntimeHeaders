@@ -6,19 +6,20 @@
 
 #import <IDEKit/IDEViewController.h>
 
-#import "DVTFindBarHostable.h"
-#import "DVTScopeBarHost.h"
-#import "DVTStateRepositoryDelegate.h"
-#import "IDEEditorContextProtocol.h"
-#import "IDEEditorDelegate.h"
-#import "IDEEditorSplittingControllerDelegate.h"
-#import "IDENavigableItemCoordinatorDelegate.h"
-#import "IDEPathCellDelegate.h"
-#import "NSAnimationDelegate.h"
-#import "NSMenuDelegate.h"
-#import "NSPathControlDelegate.h"
+#import <IDEKit/DVTFindBarHostable-Protocol.h>
+#import <IDEKit/DVTScopeBarHost-Protocol.h>
+#import <IDEKit/DVTStateRepositoryDelegate-Protocol.h>
+#import <IDEKit/IDEEditorContextProtocol-Protocol.h>
+#import <IDEKit/IDEEditorDelegate-Protocol.h>
+#import <IDEKit/IDEEditorSplittingControllerDelegate-Protocol.h>
+#import <IDEKit/IDENavigableItemCoordinatorDelegate-Protocol.h>
+#import <IDEKit/IDEPathCellDelegate-Protocol.h>
+#import <IDEKit/NSAnimationDelegate-Protocol.h>
+#import <IDEKit/NSMenuDelegate-Protocol.h>
+#import <IDEKit/NSPathControlDelegate-Protocol.h>
 
 @class CALayer, DVTBindingToken, DVTBorderedView, DVTFileDataType, DVTFindBar, DVTGradientImagePopUpButton, DVTNotificationToken, DVTObservingToken, DVTScopeBarsManager, DVTStackBacktrace, DVTStateRepository, IDEEditor, IDEEditorArea, IDEEditorGeniusResults, IDEEditorHistoryController, IDEEditorHistoryItem, IDEEditorIssueMenuController, IDEEditorMultipleContext, IDEEditorReadOnlyIndicatorController, IDEEditorSplittingController, IDEEditorStepperView, IDENavBar, IDENavigableItem, IDENavigableItemCoordinator, NSArray, NSArrayController, NSDictionary, NSIndexSet, NSMutableArray, NSScrollView, NSString, NSURL, NSView, _IDEGeniusResultsContext;
+@protocol DVTCancellable, IDEEditorContextDelegate;
 
 @interface IDEEditorContext : IDEViewController <NSMenuDelegate, IDEEditorContextProtocol, IDEEditorSplittingControllerDelegate, DVTFindBarHostable, NSPathControlDelegate, IDEPathCellDelegate, DVTScopeBarHost, IDENavigableItemCoordinatorDelegate, IDEEditorDelegate, DVTStateRepositoryDelegate, NSAnimationDelegate>
 {
@@ -27,17 +28,9 @@
     DVTBorderedView *_editorBorderedView;
     DVTGradientImagePopUpButton *_relatedItemsPopUpButton;
     IDEEditorStepperView *_stepperView;
-    id <IDEEditorContextDelegate> _delegate;
     DVTStateRepository *_stateRepository;
-    IDENavigableItemCoordinator *_navigableItemCoordinator;
-    IDENavigableItem *_navigableItem;
     IDENavigableItem *_greatestDocumentAncestor;
     DVTFileDataType *_cacheFromNavigation_greatestDocumentAncestorFileDataType;
-    IDENavigableItem *_navBarNavigableItemRoot;
-    IDENavigableItem *_navBarNavigableItem;
-    IDEEditorArea *_editorArea;
-    IDEEditor *_editor;
-    NSString *_documentExtensionIdentifier;
     NSArray *_documentSelectedItems;
     DVTNotificationToken *_editorContextWillOpenNavigableItemNotificationToken;
     DVTNotificationToken *_editorDocumentForNavBarStructureDidChangeNotificationToken;
@@ -56,46 +49,28 @@
     id <DVTCancellable> _deferredUpdateSubDocumentNavigableItemsCancellableToken;
     DVTBindingToken *_navBarNavigableItemRootChildItemsBindingToken;
     DVTBindingToken *_navBarNavigableItemBindingToken;
-    IDEEditorGeniusResults *_editorGeniusResults;
     IDENavigableItem *_geniusResultsRootNavigableItem;
     DVTObservingToken *_counterpartsObservingToken;
     IDEEditorHistoryController *_historyController;
     NSArrayController *_navigableItemSiblingsController;
-    NSArray *_navigableItemSiblings;
-    NSIndexSet *_navigableItemSiblingsSelectionIndexes;
-    DVTScopeBarsManager *_scopeBarsManager;
     IDEEditorReadOnlyIndicatorController *_readOnlyIndicatorController;
     DVTObservingToken *_showReadOnlyIndicatorObserver;
     DVTFindBar *_findBar;
     NSDictionary *_editorStateDictionaryPreviousToFind;
     IDEEditorIssueMenuController *_issueMenuController;
     DVTObservingToken *_showIssueMenuControllerObserver;
-    IDEEditorMultipleContext *_multipleContext;
     IDEEditorSplittingController *_splittingController;
-    CDUnknownBlockType _retryOpenOperationBlock;
     DVTObservingToken *_workspaceLoadingObservingToken;
     IDEEditorHistoryItem *_beforeUninstallHistoryItem;
     NSString *_emptyContentString;
     NSMutableArray *_commandExtensions;
-    NSArray *_defaultEditorCategories;
-    NSArray *_validEditorCategories;
     DVTStackBacktrace *_beganChangingNavigableItemBacktrace;
-    int _borderSides;
-    BOOL _showRelatedItemsControl;
-    BOOL _showNavBarHistoryStepperControls;
-    BOOL _showSiblingStepperControl;
-    BOOL _showMiniIssueNavigator;
-    BOOL _showSplittingControls;
     BOOL _changingNavBarNavigableItem;
-    BOOL _isComparisonContext;
     BOOL _isPrimaryEditorContext;
     BOOL _viewIsInstalled;
     BOOL _shouldObserveDocumentChanges;
     BOOL _editorProvidesPathCellMenuItems;
     BOOL _isPerformingStateRestoration;
-    BOOL _hideWorkspaceLoadingProgressIndicator;
-    BOOL _canAddSplit;
-    BOOL _canRemoveSplit;
     BOOL _isReplacingClosedDocument;
     BOOL _isDraggingPathCell;
     BOOL _isFetchingCurrentSelectedItems;
@@ -108,12 +83,36 @@
     CALayer *_swipeForegroundLayer;
     CDUnknownBlockType _swipeCompletionBlock;
     NSDictionary *_editorStateDictionaryPreviousToSwipe;
+    BOOL _showRelatedItemsControl;
+    BOOL _showNavBarHistoryStepperControls;
+    BOOL _showSiblingStepperControl;
+    BOOL _showMiniIssueNavigator;
+    BOOL _showSplittingControls;
+    BOOL _canAddSplit;
+    BOOL _canRemoveSplit;
+    BOOL _hideWorkspaceLoadingProgressIndicator;
+    int _borderSides;
+    IDEEditorArea *_editorArea;
+    IDEEditor *_editor;
+    id <IDEEditorContextDelegate> _delegate;
+    IDENavigableItemCoordinator *_navigableItemCoordinator;
+    IDENavigableItem *_navigableItem;
+    NSArray *_defaultEditorCategories;
+    NSArray *_validEditorCategories;
+    DVTScopeBarsManager *_scopeBarsManager;
     NSURL *_originalRequestedDocumentURL;
+    IDEEditorGeniusResults *_editorGeniusResults;
+    NSString *_documentExtensionIdentifier;
+    IDEEditorMultipleContext *_multipleContext;
     _IDEGeniusResultsContext *_geniusResultsContext;
+    IDENavigableItem *_navBarNavigableItem;
+    IDENavigableItem *_navBarNavigableItemRoot;
+    NSArray *_navigableItemSiblings;
+    NSIndexSet *_navigableItemSiblingsSelectionIndexes;
+    CDUnknownBlockType _retryOpenOperationBlock;
 }
 
 + (id)_titleForNavigationUserInterfaceItem:(id)arg1 forEventBehavior:(int)arg2 fromPrimaryEditorContext:(BOOL)arg3;
-+ (struct CGColor *)linenColor;
 + (BOOL)_canEditEditorHistoryItem:(id)arg1 withEditorCategories:(id)arg2;
 + (BOOL)_canEditDocumentURL:(id)arg1 fileDataType:(id)arg2 documentExtensionIdentifier:(id)arg3 withEditorCategories:(id)arg4;
 + (id)_defaultDocumentExtensionForDocumentURL:(id)arg1 fileDataType:(id)arg2 withEditorCategories:(id)arg3;
@@ -124,34 +123,34 @@
 + (BOOL)automaticallyNotifiesObserversOfGreatestDocumentAncestor;
 + (id)keyPathsForValuesAffectingIsLastActiveEditorContext;
 + (id)keyPathsForValuesAffectingValueForNavBarNavigableItemRootChildItems;
-@property(retain) _IDEGeniusResultsContext *geniusResultsContext; // @synthesize geniusResultsContext=_geniusResultsContext;
-@property(retain) NSURL *originalRequestedDocumentURL; // @synthesize originalRequestedDocumentURL=_originalRequestedDocumentURL;
++ (id)keyPathsForValuesAffectingValueForOutputSelection;
 @property(copy) CDUnknownBlockType retryOpenOperationBlock; // @synthesize retryOpenOperationBlock=_retryOpenOperationBlock;
+@property(readonly) NSIndexSet *navigableItemSiblingsSelectionIndexes; // @synthesize navigableItemSiblingsSelectionIndexes=_navigableItemSiblingsSelectionIndexes;
+@property(readonly) NSArray *navigableItemSiblings; // @synthesize navigableItemSiblings=_navigableItemSiblings;
+@property(readonly) IDENavigableItem *navBarNavigableItemRoot; // @synthesize navBarNavigableItemRoot=_navBarNavigableItemRoot;
+@property(readonly) IDENavigableItem *navBarNavigableItem; // @synthesize navBarNavigableItem=_navBarNavigableItem;
+@property(retain) _IDEGeniusResultsContext *geniusResultsContext; // @synthesize geniusResultsContext=_geniusResultsContext;
+@property(retain) IDEEditorMultipleContext *multipleContext; // @synthesize multipleContext=_multipleContext;
+@property(readonly) NSString *documentExtensionIdentifier; // @synthesize documentExtensionIdentifier=_documentExtensionIdentifier;
+@property(readonly) IDEEditorGeniusResults *editorGeniusResults; // @synthesize editorGeniusResults=_editorGeniusResults;
+@property(retain) NSURL *originalRequestedDocumentURL; // @synthesize originalRequestedDocumentURL=_originalRequestedDocumentURL;
+@property(readonly) DVTScopeBarsManager *scopeBarsManager; // @synthesize scopeBarsManager=_scopeBarsManager;
 @property BOOL hideWorkspaceLoadingProgressIndicator; // @synthesize hideWorkspaceLoadingProgressIndicator=_hideWorkspaceLoadingProgressIndicator;
 @property(nonatomic) BOOL canRemoveSplit; // @synthesize canRemoveSplit=_canRemoveSplit;
 @property(nonatomic) BOOL canAddSplit; // @synthesize canAddSplit=_canAddSplit;
-@property(retain) IDEEditorMultipleContext *multipleContext; // @synthesize multipleContext=_multipleContext;
-@property(copy) NSArray *validEditorCategories; // @synthesize validEditorCategories=_validEditorCategories;
-@property(nonatomic) BOOL showSiblingStepperControl; // @synthesize showSiblingStepperControl=_showSiblingStepperControl;
-@property(nonatomic) BOOL showRelatedItemsControl; // @synthesize showRelatedItemsControl=_showRelatedItemsControl;
-@property(nonatomic) BOOL showNavBarHistoryStepperControls; // @synthesize showNavBarHistoryStepperControls=_showNavBarHistoryStepperControls;
 @property(nonatomic) BOOL showSplittingControls; // @synthesize showSplittingControls=_showSplittingControls;
 @property(nonatomic) BOOL showMiniIssueNavigator; // @synthesize showMiniIssueNavigator=_showMiniIssueNavigator;
-@property(readonly) DVTScopeBarsManager *scopeBarsManager; // @synthesize scopeBarsManager=_scopeBarsManager;
-@property(readonly) NSIndexSet *navigableItemSiblingsSelectionIndexes; // @synthesize navigableItemSiblingsSelectionIndexes=_navigableItemSiblingsSelectionIndexes;
-@property(readonly) NSArray *navigableItemSiblings; // @synthesize navigableItemSiblings=_navigableItemSiblings;
-@property(readonly) IDENavigableItemCoordinator *navigableItemCoordinator; // @synthesize navigableItemCoordinator=_navigableItemCoordinator;
+@property(nonatomic) BOOL showSiblingStepperControl; // @synthesize showSiblingStepperControl=_showSiblingStepperControl;
+@property(nonatomic) BOOL showNavBarHistoryStepperControls; // @synthesize showNavBarHistoryStepperControls=_showNavBarHistoryStepperControls;
+@property(nonatomic) BOOL showRelatedItemsControl; // @synthesize showRelatedItemsControl=_showRelatedItemsControl;
+@property(nonatomic) int borderSides; // @synthesize borderSides=_borderSides;
+@property(copy) NSArray *validEditorCategories; // @synthesize validEditorCategories=_validEditorCategories;
+@property(copy) NSArray *defaultEditorCategories; // @synthesize defaultEditorCategories=_defaultEditorCategories;
 @property(retain, nonatomic) IDENavigableItem *navigableItem; // @synthesize navigableItem=_navigableItem;
-@property(readonly) IDENavigableItem *navBarNavigableItemRoot; // @synthesize navBarNavigableItemRoot=_navBarNavigableItemRoot;
-@property(readonly) IDENavigableItem *navBarNavigableItem; // @synthesize navBarNavigableItem=_navBarNavigableItem;
-@property(readonly) IDEEditorGeniusResults *editorGeniusResults; // @synthesize editorGeniusResults=_editorGeniusResults;
+@property(readonly) IDENavigableItemCoordinator *navigableItemCoordinator; // @synthesize navigableItemCoordinator=_navigableItemCoordinator;
+@property(retain) id <IDEEditorContextDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) IDEEditor *editor; // @synthesize editor=_editor;
 @property(retain, nonatomic) IDEEditorArea *editorArea; // @synthesize editorArea=_editorArea;
-@property(readonly) NSString *documentExtensionIdentifier; // @synthesize documentExtensionIdentifier=_documentExtensionIdentifier;
-@property(retain) id <IDEEditorContextDelegate> delegate; // @synthesize delegate=_delegate;
-@property(copy) NSArray *defaultEditorCategories; // @synthesize defaultEditorCategories=_defaultEditorCategories;
-@property(getter=isComparisonContext) BOOL comparisonContext; // @synthesize comparisonContext=_isComparisonContext;
-@property(nonatomic) int borderSides; // @synthesize borderSides=_borderSides;
 - (void).cxx_destruct;
 - (void)stateRepositoryDidChange:(id)arg1;
 - (id)_navigableItemForEditingFromArchivedRepresentation:(id)arg1 error:(id *)arg2;
@@ -278,10 +277,10 @@
 - (void)_navigateToRelatedNavigableItem:(id)arg1;
 - (void)setNavigableItemSiblingsSelectionIndexes:(id)arg1;
 - (void)_importNavigableItem:(id)arg1;
-- (BOOL)_notifyDelegateAndOpenEditorHistoryItem:(id)arg1 previousHistoryItemOrNil:(id)arg2 skipSubDocumentNavigationUnlessEditorIsReplaced:(BOOL)arg3;
+- (BOOL)_notifyDelegateAndOpenEditorHistoryItem:(id)arg1 previousHistoryItemOrNil:(id)arg2 alwaysReplaceExistingNavigableItem:(BOOL)arg3 skipSubDocumentNavigationUnlessEditorIsReplaced:(BOOL)arg4;
 - (BOOL)_notifyDelegateAndOpenEditorHistoryItem:(id)arg1 updateHistory:(BOOL)arg2 skipSubDocumentNavigationUnlessEditorIsReplaced:(BOOL)arg3;
 - (BOOL)_notifyDelegateAndOpenEditorOpenSpecifier:(id)arg1 updateHistory:(BOOL)arg2;
-- (BOOL)_notifyDelegateAndOpenNavigableItem:(id)arg1 withContentsURL:(id)arg2 documentExtensionIdentifier:(id)arg3 locationToSelect:(id)arg4 annotationRepresentedObject:(id)arg5 stateDictionary:(id)arg6 annotationWantsIndicatorAnimation:(BOOL)arg7 exploreAnnotationRepresentedObject:(id)arg8 highlightSelection:(BOOL)arg9 skipSubDocumentNavigationUnlessEditorIsReplaced:(BOOL)arg10;
+- (BOOL)_notifyDelegateAndOpenNavigableItem:(id)arg1 withContentsURL:(id)arg2 documentExtensionIdentifier:(id)arg3 locationToSelect:(id)arg4 annotationRepresentedObject:(id)arg5 stateDictionary:(id)arg6 annotationWantsIndicatorAnimation:(BOOL)arg7 exploreAnnotationRepresentedObject:(id)arg8 highlightSelection:(BOOL)arg9 alwaysReplaceExistingNavigableItem:(BOOL)arg10 skipSubDocumentNavigationUnlessEditorIsReplaced:(BOOL)arg11;
 - (BOOL)_canEditEditorHistoryItem:(id)arg1;
 - (BOOL)_canEditEditorOpenSpecifier:(id)arg1;
 - (BOOL)_canEditEditorOpenSpecifier:(id)arg1 withEditorCategories:(id)arg2;
@@ -295,7 +294,7 @@
 - (BOOL)openEditorHistoryItem:(id)arg1;
 - (BOOL)openEditorOpenSpecifier:(id)arg1;
 - (BOOL)_openEditorOpenSpecifier:(id)arg1 updateHistory:(BOOL)arg2;
-- (BOOL)_openEditorHistoryItem:(id)arg1 previousHistoryItemOrNil:(id)arg2 skipSubDocumentNavigationUnlessEditorIsReplaced:(BOOL)arg3;
+- (BOOL)_openEditorHistoryItem:(id)arg1 previousHistoryItemOrNil:(id)arg2 alwaysReplaceExistingNavigableItem:(BOOL)arg3 skipSubDocumentNavigationUnlessEditorIsReplaced:(BOOL)arg4;
 - (void)_navigableItemChanged;
 - (BOOL)_openEditorHistoryItem:(id)arg1 updateHistory:(BOOL)arg2;
 - (BOOL)_openEmptyEditor;
@@ -328,7 +327,7 @@
 - (void)_writeCurrentStateToLastUsedDictionaryIfNeeded;
 - (id)_defaultEditorStateDictionaryForDocumentExtensionIdentifier:(id)arg1 forDocumentURL:(id)arg2;
 - (id)navigableItemCoordinator:(id)arg1 editorDocumentForNavigableItem:(id)arg2;
-- (void)_greatestDocumentAncestorWasForgotten;
+- (void)_greatestDocumentAncestorWillBeForgotten;
 - (id)willPresentError:(id)arg1;
 - (BOOL)presentError:(id)arg1;
 - (void)presentError:(id)arg1 modalForWindow:(id)arg2 delegate:(id)arg3 didPresentSelector:(SEL)arg4 contextInfo:(void *)arg5;
@@ -338,8 +337,10 @@
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)_adjustSubviewBorders;
 - (void)setGreatestDocumentAncestor:(id)arg1;
-- (id)greatestDocumentAncestor;
+@property(readonly) IDENavigableItem *greatestDocumentAncestor;
 - (id)navBarNavigableItemRootChildItems;
+- (void)setOutputSelection:(id)arg1;
+- (id)outputSelection;
 - (id)_generateNodeAndAddMappingToWorkspaceTabControllerLayoutTree:(id)arg1;
 
 // Remaining properties

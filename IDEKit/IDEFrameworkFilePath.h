@@ -4,19 +4,19 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "IDEKeyDrivenNavigableItemRepresentedObject.h"
+#import <IDEKit/IDEKeyDrivenNavigableItemRepresentedObject-Protocol.h>
 
 @class DVTDocumentLocation, DVTFileDataType, DVTFilePath, DVTSDK, IDEFileReference, IDETypeIdentifier, NSArray, NSImage, NSMutableArray, NSString;
 
 @interface IDEFrameworkFilePath : NSObject <IDEKeyDrivenNavigableItemRepresentedObject>
 {
+    NSMutableArray *_childPathComponents;
     DVTFilePath *_filePath;
     NSString *_name;
-    NSMutableArray *_childPathComponents;
-    DVTSDK *_SDK;
     unsigned long long _frameworkFilePathType;
+    DVTSDK *_SDK;
 }
 
 + (id)structureNavigableItemForFrameworkURL:(id)arg1 inCoordinator:(id)arg2 inWorkspace:(id)arg3 error:(id *)arg4;
@@ -26,11 +26,11 @@
 + (void)_setAllSDKFrameworksFilePaths:(id)arg1;
 + (BOOL)isFrameworkURL:(id)arg1;
 + (id)keyPathsForValuesAffectingNavigableItem_documentType;
-@property(readonly) unsigned long long frameworkFilePathType; // @synthesize frameworkFilePathType=_frameworkFilePathType;
 @property(retain) DVTSDK *SDK; // @synthesize SDK=_SDK;
-@property(copy, nonatomic) NSArray *childPathComponents; // @synthesize childPathComponents=_childPathComponents;
+@property(readonly) unsigned long long frameworkFilePathType; // @synthesize frameworkFilePathType=_frameworkFilePathType;
 @property(readonly, copy) NSString *name; // @synthesize name=_name;
 @property(readonly, copy) DVTFilePath *filePath; // @synthesize filePath=_filePath;
+@property(copy, nonatomic) NSArray *childPathComponents; // @synthesize childPathComponents=_childPathComponents;
 - (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;

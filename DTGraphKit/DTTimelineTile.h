@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
 @class CALayer, DTTimelineDecorator, _DTTimelineTileDecorationOperation;
 
@@ -28,7 +28,8 @@
 - (const struct TileMetrics *)tileMetrics;
 - (void)_containerMissedETA:(id)arg1;
 - (void)_containerReadyForRedraw:(id)arg1;
-- (void)_redecorate;
+- (void)decorate;
+- (void)purgeDecorations;
 - (struct DynamicRange)dynamicRangeForTimeRange:(struct XRTimeRange)arg1;
 - (void)setTileMetrics:(struct TileMetrics *)arg1;
 @property(nonatomic) double displayScale;
@@ -38,6 +39,7 @@
 - (BOOL)isContentDiscarded;
 - (id)actionForLayer:(id)arg1 forKey:(id)arg2;
 - (void)drawLayer:(id)arg1 inContext:(struct CGContext *)arg2;
+- (void)invalidate;
 - (void)removeFromSuperlayer;
 - (void)attachToSuperlayer:(id)arg1;
 - (BOOL)backedByLayer:(id)arg1;

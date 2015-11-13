@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "DVTCancellable.h"
+#import <IDEFoundation/DVTCancellable-Protocol.h>
 
 @class IDEIssueManager, NSString, NSURL;
 
@@ -18,8 +18,8 @@
     CDUnknownBlockType _observerBlock;
 }
 
-@property(readonly) unsigned long long observingOptions; // @synthesize observingOptions=_observingOptions;
 @property(readonly, copy) CDUnknownBlockType observerBlock; // @synthesize observerBlock=_observerBlock;
+@property(readonly) unsigned long long observingOptions; // @synthesize observingOptions=_observingOptions;
 @property(readonly) NSURL *documentURL; // @synthesize documentURL=_documentURL;
 - (void).cxx_destruct;
 - (void)cancel;

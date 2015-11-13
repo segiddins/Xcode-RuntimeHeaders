@@ -4,11 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSButton.h"
+#import <AppKit/NSButton.h>
 
-#import "DVTWindowActivationStateObserver.h"
+#import <IDEKit/DVTWindowActivationStateObserver-Protocol.h>
 
 @class NSColor, NSString;
+@protocol DVTCancellable;
 
 @interface IDEButtonWithBackgroundColor : NSButton <DVTWindowActivationStateObserver>
 {

@@ -4,14 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
 @class DVTExtension, NSImage, NSString;
 
 @interface IDEToolbarItemProxy : NSObject
 {
-    NSString *_toolbarItemIdentifier;
     BOOL _providesItems;
+    NSString *_toolbarItemIdentifier;
     NSString *_toolbarItemLabel;
     NSString *_toolbarItemPaletteLabel;
     NSString *_toolbarItemTooltip;
@@ -22,7 +22,7 @@
 }
 
 + (id)proxyForToolbarItemElement:(id)arg1 errorMessage:(id *)arg2;
-@property Class providerClass; // @synthesize providerClass=_providerClass;
+@property(retain) Class providerClass; // @synthesize providerClass=_providerClass;
 @property(retain) DVTExtension *commandDefinitionExtension; // @synthesize commandDefinitionExtension=_commandDefinitionExtension;
 @property(retain) NSImage *toolbarItemImage; // @synthesize toolbarItemImage=_toolbarItemImage;
 @property SEL toolbarItemAction; // @synthesize toolbarItemAction=_toolbarItemAction;

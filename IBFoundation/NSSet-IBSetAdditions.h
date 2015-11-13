@@ -4,17 +4,19 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSSet.h"
+#import <Foundation/NSSet.h>
 
-#import "IBCollection.h"
+#import <IBFoundation/IBCollection-Protocol.h>
 
 @class NSString;
 
 @interface NSSet (IBSetAdditions) <IBCollection>
++ (id)ib_setByUnioningCollections:(id)arg1;
 + (id)ib_setByUnioningCollection:(id)arg1 withCollection:(id)arg2;
 + (id)ib_collectionWithObject:(id)arg1;
 + (id)ib_emptyCollection;
 + (Class)ib_mutableClass;
+- (void)ib_getObjects:(id *)arg1;
 - (void)ib_removeObjectsInReceiverFromArray:(id)arg1;
 - (void)ib_removeObjectsInReceiverFromOrderedSet:(id)arg1;
 - (void)ib_removeObjectsInReceiverFromSet:(id)arg1;
@@ -51,6 +53,8 @@
 - (id)ib_setByRemovingObjects:(id)arg1;
 - (id)ib_setByAddingObjects:(id)arg1;
 - (id)ib_setByApplyingBlock:(CDUnknownBlockType)arg1;
+- (id)ib_collectionByMappingAndFilteringWithBlock:(CDUnknownBlockType)arg1;
+- (id)ib_setByMappingAndFilteringWithBlock:(CDUnknownBlockType)arg1;
 - (id)ib_setByMappingBlockAndAssertingOnNilMappedValue:(CDUnknownBlockType)arg1;
 - (id)ib_setByMappingBlock:(CDUnknownBlockType)arg1;
 - (id)ib_arrayByMappingBlock:(CDUnknownBlockType)arg1;

@@ -6,7 +6,7 @@
 
 #import <DevToolsInterface/XCElementBaseTogglerImp.h>
 
-#import "XCElementTogglerP.h"
+#import <DevToolsInterface/XCElementTogglerP-Protocol.h>
 
 @class NSString;
 

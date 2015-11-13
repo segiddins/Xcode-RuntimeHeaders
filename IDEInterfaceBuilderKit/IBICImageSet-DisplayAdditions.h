@@ -4,10 +4,27 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IBICImageSet.h"
+#import <IBFoundation/IBICImageSet.h>
 
 @interface IBICImageSet (DisplayAdditions)
++ (id)variantSlotComponentClassesExcludingIdiom;
++ (id)keysThatImpactItemName;
+- (BOOL)ibInspectorShowsResourceName;
+- (id)detachedSlottedAssetRepByAcceptingPasteboardObject:(id)arg1 forRepIdentifier:(id)arg2;
+- (void)setIbHeightCombination:(id)arg1;
+- (id)ibHeightCombination;
+- (void)setIbWidthCombination:(id)arg1;
+- (id)ibWidthCombination;
+- (id)ibSlotMaskForCombinationIdentifier:(id)arg1 sizeClass:(Class)arg2 idiom:(id)arg3;
+- (void)ibSetCombination:(id)arg1 forPrimarySizeClass:(Class)arg2 secondarySizeClass:(Class)arg3;
+- (id)ibCombinationForSizeClass:(Class)arg1;
+- (BOOL)hasConflictFreeRepWithIdentifier:(id)arg1 forSlotComponent:(Class)arg2;
+- (BOOL)ibShowsSizeClassSection;
+- (void)setIbScaleSlots:(long long)arg1;
+- (long long)ibScaleSlots;
 - (id)ibDefaultSuggestionSetsToPopulateEmptyChildren;
 - (void)populatePlistWithDescriptionForIctool:(id)arg1;
+- (id)includedAttributeUtilitySlicesForChild:(id)arg1;
+- (id)typeIcon;
 @end
 

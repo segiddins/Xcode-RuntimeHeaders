@@ -4,12 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "IBBinaryArchiving.h"
-#import "IBLayoutConstraintRepresentation.h"
-#import "NSCoding.h"
-#import "NSCopying.h"
+#import <IBAutolayoutFoundation/IBBinaryArchiving-Protocol.h>
+#import <IBAutolayoutFoundation/IBLayoutConstraintRepresentation-Protocol.h>
+#import <IBAutolayoutFoundation/NSCoding-Protocol.h>
+#import <IBAutolayoutFoundation/NSCopying-Protocol.h>
 
 @class IBLayoutConstant, IBLayoutConstraintMultiplier, NSString;
 
@@ -28,8 +28,10 @@
     double _scoringType;
     long long _scoringClass;
     long long _contentType;
+    NSString *_identifier;
 }
 
+@property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly, nonatomic) long long contentType; // @synthesize contentType=_contentType;
 @property(readonly, nonatomic) long long scoringClass; // @synthesize scoringClass=_scoringClass;
 @property(readonly, nonatomic) double scoringType; // @synthesize scoringType=_scoringType;

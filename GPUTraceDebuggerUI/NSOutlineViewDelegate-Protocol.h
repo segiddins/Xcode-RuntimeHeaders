@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSControlTextEditingDelegate.h"
+#import <GPUTraceDebuggerUI/NSControlTextEditingDelegate-Protocol.h>
 
 @class NSCell, NSEvent, NSIndexSet, NSNotification, NSOutlineView, NSString, NSTableColumn, NSTableRowView, NSView;
 

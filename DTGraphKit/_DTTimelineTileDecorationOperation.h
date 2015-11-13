@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
 @class DTTimelineDecorator, DTTimelineInspectionDecorationContainer, DTTimelineTile, NSDate, NSOperation, NSTimer;
 
@@ -34,6 +34,7 @@
 @property(readonly, nonatomic, getter=isStringSummarizationFinished) BOOL stringSummarizationFinished;
 @property(readonly, nonatomic, getter=isDrawingFinished) BOOL drawingFinished;
 @property(readonly, nonatomic) struct DTTimelineDecorationContainer *container;
+- (void)dealloc;
 - (id)initWithTile:(id)arg1 container:(struct DTTimelineDecorationContainer *)arg2 decorator:(id)arg3 eta:(id)arg4;
 - (void)_timerFired:(id)arg1;
 

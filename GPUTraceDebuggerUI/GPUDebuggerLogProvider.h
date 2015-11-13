@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDELogProvider.h"
+#import <IDEFoundation/IDELogProvider.h>
 
 @class DVTObservingToken, GPUDebuggerLog, GPUSharedTabUIState, IDELogStore, IDEWorkspace, NSDictionary, NSMapTable;
 
@@ -30,6 +30,7 @@ __attribute__((visibility("hidden")))
 - (void)_removeDebugAdditionObserversForLaunchSession:(id)arg1;
 - (id)logRecords;
 - (void)primitiveInvalidate;
+- (void)_cancelAllDebugAdditionObservers;
 - (id)initWithDomainItem:(id)arg1;
 
 @end

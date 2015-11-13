@@ -4,21 +4,20 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDEActivityReporter.h"
+#import <IDEKit/IDEActivityReporter.h>
 
-@class DVTMapTable;
+@class NSMapTable;
 
 @interface DBGAttachToProcessActivityReporter : IDEActivityReporter
 {
-    DVTMapTable *_launchSessionsToTokens;
-    DVTMapTable *_reportForLaunchSessionTable;
+    NSMapTable *_launchSessionsToTokens;
+    NSMapTable *_reportForLaunchSessionTable;
 }
 
 + (id)_titleForDebugSession:(id)arg1;
 + (void)initialize;
 - (void).cxx_destruct;
 - (void)primitiveInvalidate;
-- (void)_processControlStateChanged:(id)arg1;
 - (void)_handleLaunchSessionsDebugSessionIsGoingToAttach:(id)arg1;
 - (void)_cancelActivityReportForLaunchSession:(id)arg1;
 - (void)_handleCurrentDebugSessionForLaunchSessionChanged:(id)arg1;

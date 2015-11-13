@@ -4,10 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "DVTInvalidation.h"
-#import "IDEKeyDrivenNavigableItemRepresentedObject.h"
+#import <IDEKit/DVTInvalidation-Protocol.h>
+#import <IDEKit/IDEKeyDrivenNavigableItemRepresentedObject-Protocol.h>
 
 @class DVTDocumentLocation, DVTFileDataType, DVTStackBacktrace, IDEFileReference, IDERunSheetController, IDESchemeAction, NSArray, NSImage, NSString;
 
@@ -19,8 +19,9 @@
 
 + (void)initialize;
 + (id)keyPathsForValuesAffectingNavigableItem_subtitle;
++ (id)keyPathsForValuesAffectingNavigableItem_name;
 + (id)keyPathsForValuesAffectingRunPhase;
-@property(readonly) NSArray *subphases; // @synthesize subphases=_subphases;
+@property(retain) NSArray *subphases; // @synthesize subphases=_subphases;
 @property(retain) IDERunSheetController *controller; // @synthesize controller=_controller;
 - (void).cxx_destruct;
 - (void)primitiveInvalidate;

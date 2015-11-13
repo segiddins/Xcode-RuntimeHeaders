@@ -4,12 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "XDDevMappingModel.h"
+#import <IDEModelFoundation/XDDevMappingModel.h>
 
-#import "IDEDMModelRootObject.h"
-#import "IDEMappingModelObject.h"
+#import <IDEModelEditor/IDEDMModelRootObject-Protocol.h>
+#import <IDEModelEditor/IDEMappingModelObject-Protocol.h>
 
 @class IDETypeIdentifier, NSArray, NSImage, NSString;
+@protocol IDEDMModelObject, IDEDMSourceObject;
 
 @interface XDDevMappingModel (XDDevMappingModelNavigableIdentification) <IDEMappingModelObject, IDEDMModelRootObject>
 + (id)orderedLocationKeys;

@@ -6,7 +6,7 @@
 
 #import <DevToolsInterface/PBXLSAdaptor.h>
 
-#import "XCUnretainedReferent.h"
+#import <DevToolsInterface/XCUnretainedReferent-Protocol.h>
 
 @class NSMutableArray, NSMutableSet, PBXLSTypeController, XCUnretainedReference;
 

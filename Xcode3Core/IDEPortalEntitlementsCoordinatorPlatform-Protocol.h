@@ -4,9 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <Xcode3Core/NSObject-Protocol.h>
 
 @class NSDictionary;
+@protocol IDECapabilitiesContextProviding;
 
 @protocol IDEPortalEntitlementsCoordinatorPlatform <NSObject>
 - (NSDictionary *)willRequestProfileWithFeatures:(NSDictionary *)arg1 usingWildcardAppID:(BOOL)arg2;

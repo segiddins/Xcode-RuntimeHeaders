@@ -7,6 +7,7 @@
 #import <GPUDebuggerFoundation/GPUTraceOutlineItem.h>
 
 @class NSMutableDictionary, NSString;
+@protocol DYResource;
 
 @interface GPUTraceResourceItem : GPUTraceOutlineItem
 {

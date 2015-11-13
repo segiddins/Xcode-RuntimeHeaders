@@ -6,8 +6,8 @@
 
 #import <DevToolsInterface/PBXProjectModule.h>
 
-#import "NSTextFieldDelegate.h"
-#import "XCRefactoringTransformationSetUpModule.h"
+#import <DevToolsInterface/NSTextFieldDelegate-Protocol.h>
+#import <DevToolsInterface/XCRefactoringTransformationSetUpModule-Protocol.h>
 
 @class NSDictionary, NSMapTable, NSMutableSet, NSString, XCRefactoringSetUpModule, XCRefactoringTransformationSetUpRow2Module;
 

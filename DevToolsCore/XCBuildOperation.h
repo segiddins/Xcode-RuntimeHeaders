@@ -6,9 +6,10 @@
 
 #import <DevToolsCore/XCThreadedOperation.h>
 
-#import "XCWorkQueueOperationDelegates.h"
+#import <DevToolsCore/XCWorkQueueOperationDelegates-Protocol.h>
 
 @class NSArray, NSMapTable, NSMutableArray, NSMutableSet, NSString, NSTimer, PBXBuildSettingsDictionary, PBXProject, XCBuildLog, XCBuildLogRecorder, XCBuildOperationPumpTaskLaunchInfo, XCWorkQueueOperation;
+@protocol XCBuildables;
 
 @interface XCBuildOperation : XCThreadedOperation <XCWorkQueueOperationDelegates>
 {

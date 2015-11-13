@@ -4,16 +4,18 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "DVTOutlineView.h"
+#import <DVTKit/DVTOutlineView.h>
+
+@protocol SKEOutlineViewDelegate;
 
 @interface SKEOutlineView : DVTOutlineView
 {
     CDUnknownBlockType _rightOrCtrlLeftClickHandler;
     CDUnknownBlockType _rightOrCtrlLeftDragHandler;
-    CDUnknownBlockType _mouseDownHandler;
+    CDUnknownBlockType _leftClickHandler;
 }
 
-@property(copy) CDUnknownBlockType mouseDownHandler; // @synthesize mouseDownHandler=_mouseDownHandler;
+@property(copy) CDUnknownBlockType leftClickHandler; // @synthesize leftClickHandler=_leftClickHandler;
 @property(copy) CDUnknownBlockType rightOrCtrlLeftDragHandler; // @synthesize rightOrCtrlLeftDragHandler=_rightOrCtrlLeftDragHandler;
 @property(copy) CDUnknownBlockType rightOrCtrlLeftClickHandler; // @synthesize rightOrCtrlLeftClickHandler=_rightOrCtrlLeftClickHandler;
 - (void).cxx_destruct;

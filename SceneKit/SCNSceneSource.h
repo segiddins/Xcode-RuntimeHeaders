@@ -4,13 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
 @class NSData, NSDictionary, NSOperationQueue, NSURL;
 
 @interface SCNSceneSource : NSObject
 {
-    id _reserved;
     struct __C3DSceneSource *_sceneSource;
     struct __C3DScene *_lastLoadedScene;
     NSDictionary *_lastOptions;
@@ -21,7 +20,6 @@
 
 + (id)sceneFileTypes;
 + (id)sceneTypes;
-+ (id)SCNJSExportProtocol;
 + (id)sceneSourceWithData:(id)arg1 options:(id)arg2;
 + (id)sceneSourceWithURL:(id)arg1 options:(id)arg2;
 + (void)_removeCachedSceneSourceIfNeededForURL:(id)arg1;
@@ -58,6 +56,8 @@
 - (id)initWithURL:(id)arg1 options:(id)arg2;
 - (id)sceneSourceOptions;
 - (id)initWithData:(id)arg1 options:(id)arg2;
+- (id)debugQuickLookData;
+- (id)debugQuickLookObject;
 
 @end
 

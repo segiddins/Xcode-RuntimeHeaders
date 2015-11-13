@@ -4,9 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-@class IBBinaryArchiverObjectIDTable, NSData, NSDictionary;
+@class IBBinaryArchiverObjectIDTable, NSData, NSDictionary, NSMutableArray;
+@protocol IBObjectRepresentationTranslator;
 
 @interface IBBinaryArchiver : NSObject
 {
@@ -20,6 +21,7 @@
     BOOL finished;
     NSData *archiveData;
     long long archiveVersion;
+    NSMutableArray *_objectTranslationDelegateStack;
     NSDictionary *_context;
 }
 
@@ -29,7 +31,11 @@
 @property(readonly, nonatomic) long long archiveVersion; // @synthesize archiveVersion;
 @property(readonly) NSData *archiveData; // @synthesize archiveData;
 - (void).cxx_destruct;
+- (void)encodeObjectReferenceIfPossible:(id)arg1;
 - (void)encodeObject:(id)arg1;
+- (void)encodeClass:(Class)arg1;
+- (void)encodeCStringClassName:(const char *)arg1;
+- (void)encodeObjectReference:(id)arg1;
 - (void)encodeUTF8RepresentationOfString:(id)arg1;
 - (void)encodeRange:(struct _NSRange)arg1;
 - (void)encodeInset:(CDStruct_c519178c)arg1;
@@ -46,6 +52,9 @@
 - (void)encodeBytes:(const char *)arg1 length:(unsigned long long)arg2;
 - (void)encodeHeader;
 - (void)finishEncoding;
+- (void)popObjectTranslationDelegate:(id)arg1;
+- (void)pushObjectTranslationDelegate:(id)arg1;
+@property(readonly, nonatomic) __weak NSObject<IBObjectRepresentationTranslator> *currentObjectTranslationDelegate;
 - (void)dealloc;
 - (id)initWithVersion:(long long)arg1 context:(id)arg2;
 

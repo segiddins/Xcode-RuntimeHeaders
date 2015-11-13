@@ -4,9 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
 @class DVTFileDataType, DVTFilePath, IDEScheme, IDESchemeBuildableReference, NSError, NSString;
+@protocol IDEBuildableProduct;
 
 @interface IDERunnable : NSObject
 {
@@ -18,6 +19,7 @@
     DVTFilePath *_remotePath;
 }
 
++ (id)_productTypeForBuildableProduct:(id)arg1 scheme:(id)arg2;
 + (id)runnableForBuildProduct:(id)arg1 inScheme:(id)arg2;
 @property int runnableDebuggingMode; // @synthesize runnableDebuggingMode=_runnableDebuggingMode;
 @property(readonly, copy) DVTFilePath *remotePath; // @synthesize remotePath=_remotePath;
@@ -28,6 +30,7 @@
 - (void)setBundleIdentifierFromUTF8String:(char *)arg1 fromXMLUnarchiver:(id)arg2;
 - (int)runnableType;
 - (void)resolveBuildableFromImport;
+@property(readonly) BOOL runsDirectlyOnPairedProxyDevice;
 @property(readonly) BOOL requiresPairedProxyDevice;
 @property(readonly) BOOL hasRunnablePath;
 @property(readonly) IDESchemeBuildableReference *buildableReference;

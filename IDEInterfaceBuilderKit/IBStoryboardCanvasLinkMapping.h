@@ -4,9 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
 @class DVTMutableOrderedDictionary;
+@protocol NSFastEnumeration;
 
 @interface IBStoryboardCanvasLinkMapping : NSObject
 {
@@ -19,7 +20,7 @@
 - (id)outgoingCanvasLinkPacksForSource:(id)arg1;
 @property(readonly, nonatomic) id <NSFastEnumeration> destinations;
 @property(readonly, nonatomic) id <NSFastEnumeration> sources;
-- (void)addCanvasLink:(id)arg1 fromSource:(id)arg2 toDestination:(id)arg3;
+- (id)addCanvasLink:(id)arg1 fromSource:(id)arg2 toDestination:(id)arg3;
 - (id)canvasLinkPackFromSource:(id)arg1 toDestination:(id)arg2;
 
 @end

@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "GPUTraceGroupItem.h"
+#import <GPUDebuggerFoundation/GPUTraceGroupItem.h>
 
-#import "IDEKeyDrivenNavigableItemRepresentedObject.h"
+#import <GPUDebuggerKit/IDEKeyDrivenNavigableItemRepresentedObject-Protocol.h>
 
 @class DVTDocumentLocation, DVTFileDataType, IDEFileReference, NSImage, NSString;
 
@@ -26,9 +26,7 @@
 @property(readonly) NSString *navigableItem_groupIdentifier;
 @property(readonly) BOOL navigableItem_isLeaf;
 @property(readonly) BOOL navigableItem_isMajorGroup;
-@property(readonly) NSString *navigableItem_subtitle;
 @property(readonly) NSString *navigableItem_toolTip;
-@property(readonly) struct DYShaderProfilerTiming shaderTime;
 @property(readonly) Class superclass;
 @end
 

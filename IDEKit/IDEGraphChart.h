@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
 @class NSArray, NSColor, NSString;
 
@@ -17,7 +17,7 @@
 
 @property(copy) NSArray *entries; // @synthesize entries=_entries;
 @property(retain) NSColor *color; // @synthesize color=_color;
-@property(retain) NSString *label; // @synthesize label=_label;
+@property(copy) NSString *label; // @synthesize label=_label;
 - (void).cxx_destruct;
 - (void)clearValues;
 - (void)flushEntriesToCount:(unsigned long long)arg1;

@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSView.h"
+#import <AppKit/NSView.h>
 
 @class NSColor, NSDictionary, NSImage, NSString;
 
@@ -25,6 +25,7 @@
 - (void)drawRect:(struct CGRect)arg1;
 - (BOOL)isFlipped;
 - (void)tile;
+- (BOOL)allowsVibrancy;
 - (id)initWithIcon:(id)arg1 message:(id)arg2;
 
 @end

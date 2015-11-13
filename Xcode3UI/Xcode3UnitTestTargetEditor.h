@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDEViewController.h"
+#import <IDEKit/IDEViewController.h>
 
-#import "IDECapsuleListViewDataSource.h"
+#import <Xcode3UI/IDECapsuleListViewDataSource-Protocol.h>
 
 @class DVTStackView_ML, IDECapsuleListView, IDETestTargetSelectorViewController, NSString, NSView, Xcode3TargetEditor, Xcode3TargetEditorCapsuleViewController;
 

@@ -4,19 +4,24 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "DVTDocumentLocation.h"
+#import <DVTFoundation/DVTDocumentLocation.h>
 
-@class SKNode;
+@class GTFActionModel, SKActionEditorNavigableRepresentedNode, SKNode;
 
 @interface SKDocumentLocation : DVTDocumentLocation
 {
-    SKNode *_node;
+    id _skobject;
 }
 
-@property(readonly) __weak SKNode *node; // @synthesize node=_node;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) BOOL isSKActionEditorNavigableRepresentedNode;
+@property(readonly, nonatomic) SKActionEditorNavigableRepresentedNode *asSKActionEditorNavigableRepresentedNode;
+@property(readonly, nonatomic) BOOL isGTFAction;
+@property(readonly, nonatomic) GTFActionModel *asGTFAction;
+@property(readonly, nonatomic) BOOL isSKNode;
+@property(readonly, nonatomic) SKNode *asSKNode;
 - (id)description;
-- (id)initWithDocumentURL:(id)arg1 withNode:(id)arg2;
+- (id)initWithDocumentURL:(id)arg1 withSKObject:(id)arg2;
 
 @end
 

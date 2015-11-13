@@ -4,15 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
 @interface DVTToolTip : NSObject
 {
 }
 
-+ (id)boldToolTipFont;
++ (id)toolTipFontBold;
 + (id)toolTipFont;
-+ (id)attributedToolTipStringForString:(id)arg1;
 + (struct CGPoint)toolTipPositionForMouseLocation:(struct CGPoint)arg1;
 + (void)orderOutToolTip;
 + (void)fadeOut:(id)arg1;

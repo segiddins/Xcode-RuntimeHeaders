@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IBInspectorViewController.h"
+#import <IDEInterfaceBuilderKit/IBInspectorViewController.h>
 
-#import "IBBindingSliceDelegate.h"
+#import <IDEInterfaceBuilderCocoaIntegration/IBBindingSliceDelegate-Protocol.h>
 
 @class DVTDelayedInvocation, DVTNotificationToken, DVTStackView_ML, IBBindingSuggestedKeyPathProvider, NSArray, NSMutableArray, NSMutableSet, NSScrollView, NSString;
 

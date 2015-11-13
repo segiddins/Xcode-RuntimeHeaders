@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-@class NSObject<OS_dispatch_queue>;
+@protocol DVT_VMULibraryLoadDelegate, OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
 @interface DVT__VMULibraryLoadObserver : NSObject

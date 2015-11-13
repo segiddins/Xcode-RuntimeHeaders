@@ -6,9 +6,10 @@
 
 #import <IDEFoundation/IDERunnable.h>
 
-#import "DVTXMLUnarchiving.h"
+#import <IDEFoundation/DVTXMLUnarchiving-Protocol.h>
 
 @class IDESchemeBuildableReference, NSString;
+@protocol IDEBuildableProduct;
 
 @interface IDEBuildableProductRunnable : IDERunnable <DVTXMLUnarchiving>
 {

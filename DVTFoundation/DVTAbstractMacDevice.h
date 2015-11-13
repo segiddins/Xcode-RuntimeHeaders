@@ -6,8 +6,8 @@
 
 #import <DVTFoundation/DVTDevice.h>
 
-#import "DVTDeviceApplicationProvider.h"
-#import "DVTSpecificApplicationProvider.h"
+#import <DVTFoundation/DVTDeviceApplicationProvider-Protocol.h>
+#import <DVTFoundation/DVTSpecificApplicationProvider-Protocol.h>
 
 @class NSSet, NSString;
 
@@ -19,10 +19,6 @@
 - (void).cxx_destruct;
 - (id)recordedFramesBacktraceRecordingDylibPath;
 - (id)recordedFramesLibdispatchIntrospectionDylibPath;
-- (id)recordedFramesMinimumVersionString;
-- (BOOL)supportsTestManagerDaemon;
-- (id)preferredSDKForDeviceOptions:(id)arg1 error:(id *)arg2;
-- (id)preferredArchitectureForDeviceOptions:(id)arg1 error:(id *)arg2;
 - (BOOL)isConcreteDevice;
 - (BOOL)isGenericDevice;
 - (id)_applicationFromURL:(id)arg1;

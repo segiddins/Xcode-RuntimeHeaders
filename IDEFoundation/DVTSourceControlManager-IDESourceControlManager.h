@@ -4,9 +4,8 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "DVTSourceControlManager.h"
+#import <DVTSourceControl/DVTSourceControlManager.h>
 
 @interface DVTSourceControlManager (IDESourceControlManager)
-- (void)updateRemoteRepositories:(id)arg1;
 @end
 

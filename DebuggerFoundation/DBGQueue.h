@@ -4,10 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "DVTInvalidation.h"
-#import "IDEDebugNavigableModel.h"
+#import <DebuggerFoundation/DVTInvalidation-Protocol.h>
+#import <DebuggerFoundation/IDEDebugNavigableModel-Protocol.h>
 
 @class DBGProcess, DBGThread, DVTStackBacktrace, IDELaunchSession, NSArray, NSString;
 
@@ -35,7 +35,6 @@
 - (void).cxx_destruct;
 - (void)primitiveInvalidate;
 @property(readonly, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
-- (void)invalidateOldPendingBlocksThreads:(id)arg1;
 - (unsigned long long)numberOfPendingBlocks;
 - (void)setPrimitiveThreads:(id)arg1;
 @property(readonly, nonatomic, getter=isRecorded) BOOL recorded;

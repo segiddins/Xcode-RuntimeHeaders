@@ -6,8 +6,8 @@
 
 #import <DevToolsInterface/PBXProjectModule.h>
 
-#import "NSOutlineViewDelegate.h"
-#import "XCSelectionSource.h"
+#import <DevToolsInterface/NSOutlineViewDelegate-Protocol.h>
+#import <DevToolsInterface/XCSelectionSource-Protocol.h>
 
 @class NSButton, NSMutableArray, NSMutableSet, NSString, NSTableColumn, PBXBreakpointGroupList, PBXExtendedOutlineView;
 

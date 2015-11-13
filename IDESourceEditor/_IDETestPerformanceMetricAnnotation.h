@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "DVTMessageBubbleAnnotation.h"
+#import <DVTKit/DVTMessageBubbleAnnotation.h>
 
 @class DVTDevice, IDETest, NSArray, NSString;
 
@@ -31,7 +31,8 @@
 - (void)contextMenu_acceptPreviousAverageForAllMetrics:(id)arg1;
 - (void)contextMenu_performSelector:(SEL)arg1 sender:(id)arg2;
 - (void)updateBaselineForPerformanceMetricWithIdentifier:(id)arg1 average:(id)arg2 maxStandardDeviation:(id)arg3;
-- (id)baselineRecordAndFilePath:(id *)arg1 error:(id *)arg2;
+- (void)asyncApplyBaselineRecord:(id)arg1;
+- (id)runDestinationRecord;
 - (id)initWithTest:(id)arg1;
 
 @end

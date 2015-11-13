@@ -4,10 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSDocument.h"
+#import <AppKit/NSDocument.h>
 
-#import "DVTInvalidation.h"
-#import "DVTPlistDocumentProtocol.h"
+#import <Xcode3UI/DVTInvalidation-Protocol.h>
+#import <Xcode3UI/DVTPlistDocumentProtocol-Protocol.h>
 
 @class DVTPlistModel, DVTPlistStructureDefinition, DVTStackBacktrace, NSString;
 

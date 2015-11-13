@@ -4,11 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDESplitViewDebugArea.h"
+#import <IDEKit/IDESplitViewDebugArea.h>
 
-#import "DVTReplacementViewDelegate.h"
+#import <GPUTraceDebuggerUI/DVTReplacementViewDelegate-Protocol.h>
 
 @class GPUVariablesViewContentProvider, NSSegmentedControl, NSString;
+@protocol DVTCancellable;
 
 __attribute__((visibility("hidden")))
 @interface GPUDebugArea : IDESplitViewDebugArea <DVTReplacementViewDelegate>

@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "DBGAbstractQuickLookProvider.h"
+#import <DebuggerKit/DBGAbstractQuickLookProvider.h>
 
 @class DBGNSDataForDataValueProvider, DVTObservingToken, NSLayoutConstraint, NSTextView;
 
@@ -25,8 +25,8 @@
 - (void)writeAtomicallyToTemporaryFile:(id)arg1;
 - (id)extensionForTemporaryFile;
 - (void)cancelLoading;
-- (void)_updateTextViewFromData;
-- (void)loadView;
+- (void)_updateTextViewUsingStringOrAttributedString:(id)arg1;
+- (void)_didFinshLoadingWithStringOrAttributedString:(id)arg1;
 - (id)initWithDataValue:(id)arg1 options:(id)arg2;
 
 @end

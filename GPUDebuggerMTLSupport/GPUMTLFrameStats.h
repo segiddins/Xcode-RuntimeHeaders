@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
 __attribute__((visibility("hidden")))
 @interface GPUMTLFrameStats : NSObject
@@ -14,10 +14,12 @@ __attribute__((visibility("hidden")))
     unsigned int _renderEncoders;
     unsigned int _computeEncoders;
     unsigned int _blitEncoders;
+    unsigned int _commandBuffers;
     unsigned long long _loadBandwidth;
     unsigned long long _storeBandwidth;
 }
 
+@property(nonatomic) unsigned int commandBuffers; // @synthesize commandBuffers=_commandBuffers;
 @property(nonatomic) unsigned long long storeBandwidth; // @synthesize storeBandwidth=_storeBandwidth;
 @property(nonatomic) unsigned long long loadBandwidth; // @synthesize loadBandwidth=_loadBandwidth;
 @property(nonatomic) unsigned int blitEncoders; // @synthesize blitEncoders=_blitEncoders;

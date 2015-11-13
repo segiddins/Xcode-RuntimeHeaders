@@ -4,11 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "DVTLayoutView_ML.h"
+#import <DVTKit/DVTLayoutView_ML.h>
 
-#import "IBObjectPickerElementViewDelegate.h"
+#import <IDEInterfaceBuilderKit/IBObjectPickerElementViewDelegate-Protocol.h>
 
 @class DVTStackView_ML, IBImageButton, IBObjectPickerElementView, NSArray, NSString, NSTextFieldCell;
+@protocol IBObjectPickerViewDelegate;
 
 @interface IBObjectPickerView : DVTLayoutView_ML <IBObjectPickerElementViewDelegate>
 {

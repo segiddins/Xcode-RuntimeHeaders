@@ -4,14 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
 @class IBDocumentDependencyVersion, NSArray, NSMutableArray, NSString;
 
 @interface IBDocumentDependency : NSObject
 {
     NSMutableArray *_versions;
-    NSMutableArray *_platforms;
     IBDocumentDependencyVersion *_defaultVersion;
     NSString *_identifier;
     NSString *_dependencyLabel;
@@ -27,7 +26,6 @@
 + (id)documentDependencyWithExtension:(id)arg1;
 + (id)documentDependencyWithIdentifier:(id)arg1;
 + (void)initialize;
-@property(readonly, nonatomic) NSArray *platforms; // @synthesize platforms=_platforms;
 @property(readonly, nonatomic) NSArray *versions; // @synthesize versions=_versions;
 @property(readonly, nonatomic) NSString *dependencyType; // @synthesize dependencyType=_dependencyType;
 @property(readonly, nonatomic) double positionPriority; // @synthesize positionPriority=_positionPriority;
@@ -39,7 +37,7 @@
 @property(readonly, nonatomic) NSString *dependencyLabel; // @synthesize dependencyLabel=_dependencyLabel;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
-- (id)closestVersionEqualToOrLessThanMarketingVersion:(id)arg1;
+- (id)closestVersionLessThanOrEqualToMarketingVersion:(id)arg1;
 - (id)defaultVersion;
 - (id)initWithExtension:(id)arg1;
 - (id)init;

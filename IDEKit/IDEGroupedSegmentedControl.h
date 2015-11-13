@@ -4,9 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSSegmentedControl.h"
+#import <AppKit/NSSegmentedControl.h>
 
 @class DVTWeakInterposer, NSArray;
+@protocol IDEGroupedSegmentedControlDelegate;
 
 @interface IDEGroupedSegmentedControl : NSSegmentedControl
 {

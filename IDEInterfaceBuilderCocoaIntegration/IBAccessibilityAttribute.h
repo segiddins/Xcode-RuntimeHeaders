@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IBAttributePlaceholder.h"
+#import <IDEInterfaceBuilderKit/IBAttributePlaceholder.h>
 
 @class NSString;
 
@@ -15,11 +15,11 @@
 
 @property(retain) NSString *accessibilityValue; // @synthesize accessibilityValue=_accessibilityValue;
 - (void).cxx_destruct;
-- (void)ibWarnings:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
+- (id)description;
 - (id)archiveConnection;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithObject:(id)arg1 name:(id)arg2 andValue:(id)arg3;
+- (id)initWithObject:(id)arg1 name:(id)arg2 value:(id)arg3;
 
 @end
 

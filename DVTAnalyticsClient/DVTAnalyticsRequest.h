@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "DVTServicesRequest.h"
+#import <DVTServices/DVTServicesRequest.h>
 
-#import "NSURLSessionDelegate.h"
+#import <DVTAnalyticsClient/NSURLSessionDelegate-Protocol.h>
 
 @class NSString;
 
@@ -25,6 +25,7 @@
 - (id)responseBySendingRequestWithError:(id *)arg1;
 - (id)_urlSessionConfiguration;
 - (id)_additionalHTTPHeaders;
+- (id)_credentials;
 - (id)requestURL;
 - (id)_analyticsAPIVersion;
 - (id)_analyticsServiceHostname;

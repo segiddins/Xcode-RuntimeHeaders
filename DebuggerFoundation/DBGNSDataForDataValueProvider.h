@@ -4,9 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
 @class DBGDataValue, DBGNSDataForDataValueProviderOptions, DBGStackFrame, NSData, NSString;
+@protocol DVTCancellable;
 
 @interface DBGNSDataForDataValueProvider : NSObject
 {
@@ -20,8 +21,12 @@
     BOOL _autoHandleExceptions;
     DBGNSDataForDataValueProviderOptions *_options;
     DBGDataValue *_dataDataValue;
+    double _timeToEvaluateExpression;
+    double _timeToReadData;
 }
 
+@property double timeToReadData; // @synthesize timeToReadData=_timeToReadData;
+@property double timeToEvaluateExpression; // @synthesize timeToEvaluateExpression=_timeToEvaluateExpression;
 @property(readonly) BOOL autoHandleExceptions; // @synthesize autoHandleExceptions=_autoHandleExceptions;
 @property(retain) DBGDataValue *dataDataValue; // @synthesize dataDataValue=_dataDataValue;
 @property(retain) DBGNSDataForDataValueProviderOptions *options; // @synthesize options=_options;

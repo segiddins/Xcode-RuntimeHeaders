@@ -4,9 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <Foundation/NSObject.h>
 
-@class NSBundle, NSCache, NSObject<OS_dispatch_semaphore>;
+@class NSBundle, NSCache;
+@protocol OS_dispatch_semaphore;
 
 __attribute__((visibility("hidden")))
 @interface GPUResourceThumbnailFactory : NSObject
@@ -22,13 +23,13 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedThumbnailFactory;
-- (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)invalidateThumbnailForResource:(id)arg1;
 - (id)thumbnailWithResourceItem:(id)arg1 withContentsScale:(double)arg2 nocache:(BOOL)arg3;
 - (id)thumbnailWithResourceItem:(id)arg1 withContentsScale:(double)arg2;
 - (id)defaultImageForResourceItem:(id)arg1;
 - (id)_generateThumbnailForImage:(id)arg1 withContentsScale:(double)arg2 nocache:(BOOL)arg3;
+- (id)_generateDefaultThumbnailForImage:(id)arg1;
 - (id)_imageFromThumbnailCacheForResourceItem:(id)arg1;
 - (void)_addImageToThumbnailCache:(id)arg1 forResourceItem:(id)arg2 withCost:(unsigned long long)arg3;
 - (void)dealloc;

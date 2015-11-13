@@ -4,22 +4,22 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-@class DVTHashTable, NSArray, NSMutableArray, NSMutableDictionary;
+@class NSArray, NSHashTable, NSMutableArray, NSMutableDictionary;
 
 @interface IDEDocumentIssueSummary : NSObject
 {
     NSMutableArray *_vendedIssuesBySeqNum;
+    unsigned long long _maxSeverity;
     NSMutableDictionary *_issuesIndexedByLineNumber;
-    DVTHashTable *_observers;
+    NSHashTable *_observers;
     unsigned long long _testFailureCount;
     unsigned long long _errorCount;
     unsigned long long _warningCount;
     unsigned long long _noticeCount;
     unsigned long long _analyzerResultCount;
     unsigned long long _fixItCount;
-    unsigned long long _maxSeverity;
 }
 
 + (id)keyPathsForValuesAffectingMaxSeverity;
@@ -29,7 +29,7 @@
 @property(readonly) unsigned long long warningCount; // @synthesize warningCount=_warningCount;
 @property(readonly) unsigned long long errorCount; // @synthesize errorCount=_errorCount;
 @property(readonly) unsigned long long testFailureCount; // @synthesize testFailureCount=_testFailureCount;
-@property(retain) DVTHashTable *observers; // @synthesize observers=_observers;
+@property(retain) NSHashTable *observers; // @synthesize observers=_observers;
 @property(retain) NSMutableDictionary *issuesIndexedByLineNumber; // @synthesize issuesIndexedByLineNumber=_issuesIndexedByLineNumber;
 @property(copy, nonatomic) NSArray *vendedIssuesBySeqNum; // @synthesize vendedIssuesBySeqNum=_vendedIssuesBySeqNum;
 - (void).cxx_destruct;

@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "IDECommandHandler.h"
+#import <IDEInterfaceBuilderKit/IDECommandHandler-Protocol.h>
 
 @class NSString;
 
@@ -15,19 +15,13 @@
 }
 
 + (id)handlerForAction:(SEL)arg1 withSelectionSource:(id)arg2;
-- (void)debugMenuItemToggleBreakInequalityAbsoluteConstraints:(id)arg1;
-- (void)debugMenuItemToggleBreakEqualityAbsoluteConstraints:(id)arg1;
-- (void)debugMenuItemToggleBreakAbsoluteConstraintsToAncestorsAndSiblings:(id)arg1;
-- (void)debugMenuItemToggleBreakAbsoluteConstraintsToDescendants:(id)arg1;
-- (void)toggleValueOfAutolayoutLiveResizingAbsoluteConstraintBreakageStrategy:(unsigned long long)arg1;
-- (void)debugMenuItemToggleApplyConstraintsToDescendants:(id)arg1;
-- (void)debugMenuItemToggleApplyConstraintsToSiblingsAndAncestors:(id)arg1;
-- (void)toggleValueOfAutolayoutEnableLiveResizing;
-- (void)debugMenuItemToggleEnableResizeWithConstraintsBehavior:(id)arg1;
-- (void)toggleValueOfAutolayoutLiveResizingStrategy:(unsigned long long)arg1;
-- (void)debugMenuItemToggleUpgradeRedundantConstraintsForFrameDecideThenConstraintAddition:(id)arg1;
-- (void)debugMenuItemToggleUpgradeRedundantConstraintsForPureConstraintAddition:(id)arg1;
-- (void)debugMenuItemToggleEnforceCurrentViewSizesWhenAligning:(id)arg1;
+- (void)debugMenuItemIncludeCenteringConstraintsForCurrentConstant:(id)arg1;
+- (void)debugMenuItemSetCurrentConstantDistance100:(id)arg1;
+- (void)debugMenuItemSetCurrentConstantDistance50:(id)arg1;
+- (void)debugMenuItemSetCurrentConstantDistance20:(id)arg1;
+- (void)debugMenuItemSetCurrentConstantDistance10:(id)arg1;
+- (void)debugMenuItemSetCurrentConstantDistance5:(id)arg1;
+- (void)debugMenuItemSetCurrentConstantDistanceOff:(id)arg1;
 - (void)debugMenuItemUseQuadrantContainingBoundsExplicitConstraints:(id)arg1;
 - (void)debugMenuItemUseQuadrantContainingCenterPointExplicitConstraints:(id)arg1;
 - (void)debugMenuItemUseUpperLeadingExplicitConstraints:(id)arg1;

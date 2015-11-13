@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSMutableArray.h"
+#import <Foundation/NSMutableArray.h>
 
 @interface NSMutableArray (TSFoundationExtra)
 - (void)moveObjectsFromIndexes:(id)arg1 toIndex:(unsigned long long)arg2;

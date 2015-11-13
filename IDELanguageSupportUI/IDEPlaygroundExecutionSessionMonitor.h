@@ -4,15 +4,18 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "DVTOperation.h"
+#import <DVTFoundation/DVTOperation.h>
 
-#import "IDEPlaygroundExecutionSessionMonitorProtocol.h"
+#import <IDELanguageSupportUI/IDEPlaygroundExecutionSessionMonitorProtocol-Protocol.h>
 
-@class DVTFilePath, IDEPlaygroundExecutionParameters, IDEPlaygroundExecutionSession, IDEPlaygroundPreparationParameters, NSError, NSObject<OS_dispatch_queue>, NSXPCConnection;
+@class DVTFilePath, IDEPlaygroundExecutionParameters, IDEPlaygroundExecutionSession, IDEPlaygroundPreparationParameters, NSError, NSObject, NSXPCConnection;
+@protocol OS_dispatch_queue;
 
 @interface IDEPlaygroundExecutionSessionMonitor : DVTOperation <IDEPlaygroundExecutionSessionMonitorProtocol>
 {
     BOOL _executesOutOfProcess;
+    BOOL __executionFinished;
+    BOOL __autoTerminationActive;
     NSError *_error;
     IDEPlaygroundPreparationParameters *_preparationParameters;
     IDEPlaygroundExecutionSession *_session;
@@ -29,6 +32,8 @@
 + (id)keyPathsForValuesAffectingError;
 + (id)keyPathsForValuesAffectingSerializationError;
 + (id)keyPathsForValuesAffectingState;
+@property BOOL _autoTerminationActive; // @synthesize _autoTerminationActive=__autoTerminationActive;
+@property BOOL _executionFinished; // @synthesize _executionFinished=__executionFinished;
 @property(retain) NSObject<OS_dispatch_queue> *monitorQueue; // @synthesize monitorQueue=_monitorQueue;
 @property(retain) DVTFilePath *remoteSerializedPlaygroundDataPath; // @synthesize remoteSerializedPlaygroundDataPath=_remoteSerializedPlaygroundDataPath;
 @property(retain) NSError *remoteSerializationError; // @synthesize remoteSerializationError=_remoteSerializationError;
@@ -45,6 +50,7 @@
 - (void)reportError:(id)arg1;
 - (void)reportConsoleItem:(id)arg1;
 - (void)reportData:(id)arg1 withMetadata:(id)arg2 identifier:(id)arg3 date:(id)arg4 version:(unsigned long long)arg5;
+- (void)terminateSessionProcess;
 - (void)runExecutableLauncherBlockWithSlaveFilename:(id)arg1 socket:(id)arg2 executablePath:(id)arg3 callback:(CDUnknownBlockType)arg4;
 - (void)updateSerializedPlaygroundDataPath:(id)arg1;
 - (void)updateSerializationError:(id)arg1;

@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "SKFieldNode.h"
+#import <SpriteKit/SKFieldNode.h>
 
 @interface SKFieldNode (InspectorAdditions)
 @property(nonatomic) struct CGPoint skEditorDirection;

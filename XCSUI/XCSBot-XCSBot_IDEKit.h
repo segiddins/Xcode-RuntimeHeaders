@@ -4,37 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "XCSBot.h"
+#import <XCSCore/XCSBot.h>
 
-#import "IDEKeyDrivenNavigableItemRepresentedObject.h"
-
-@class DVTDocumentLocation, DVTFileDataType, IDEFileReference, NSImage, NSString;
-
-@interface XCSBot (XCSBot_IDEKit) <IDEKeyDrivenNavigableItemRepresentedObject>
-+ (id)keyPathsForValuesAffectingSubtitle;
-+ (id)keyPathsForValuesAffectingNavigableItem_progressValue;
-+ (id)keyPathsForValuesAffectingNavigableItem_name;
+@interface XCSBot (XCSBot_IDEKit)
 + (void)componentsFromBotURL:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 + (id)botURLForBotWithID:(id)arg1 server:(id)arg2;
-- (id)subtitle;
-- (long long)navigableItem_progressValue;
-@property(readonly) DVTDocumentLocation *navigableItem_contentDocumentLocation;
-@property(readonly) DVTFileDataType *navigableItem_documentType;
-@property(readonly) NSImage *navigableItem_image;
-- (id)navigableItem_ID;
-@property(retain) NSString *navigableItem_name; // @dynamic navigableItem_name;
 - (long long)compare:(id)arg1;
 - (id)botURL;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) IDEFileReference *navigableItem_fileReference;
-@property(readonly) NSString *navigableItem_groupIdentifier;
-@property(readonly) BOOL navigableItem_isLeaf;
-@property(readonly) BOOL navigableItem_isMajorGroup;
-@property(readonly) NSString *navigableItem_toolTip;
-@property(readonly) Class superclass;
 @end
 

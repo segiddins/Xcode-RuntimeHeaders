@@ -4,11 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-@class IDEIndexDBConnection, IDEIndexDBFactory, IDEIndexDBTransaction, IDEIndexDatabase, IDEIndexUniqueStringMap, NSDictionary, NSMutableDictionary, NSMutableSet, NSObject<OS_dispatch_queue>, NSSet;
+#import <IDEFoundation/DVTInvalidation-Protocol.h>
 
-@interface IDEIndexImporter : NSObject
+@class DVTStackBacktrace, IDEIndexDBConnection, IDEIndexDBFactory, IDEIndexDBTransaction, IDEIndexDatabase, IDEIndexUniqueStringMap, NSDictionary, NSMutableDictionary, NSMutableSet, NSSet, NSString;
+@protocol OS_dispatch_queue;
+
+@interface IDEIndexImporter : NSObject <DVTInvalidation>
 {
     IDEIndexDatabase *_database;
     NSObject<OS_dispatch_queue> *_project_queue;
@@ -45,6 +48,8 @@
     BOOL _didIndexHotFile;
 }
 
++ (unsigned long long)assertionBehaviorForKeyValueObservationsAtEndOfEvent;
++ (unsigned long long)assertionBehaviorAfterEndOfEventForSelector:(SEL)arg1;
 + (void)initialize;
 @property(readonly, nonatomic) BOOL isReady; // @synthesize isReady=_isReady;
 @property(readonly, nonatomic) IDEIndexDatabase *database; // @synthesize database=_database;
@@ -67,6 +72,7 @@
 - (long long)realUnitIdForId:(long long)arg1;
 - (long long)realFileIdForId:(long long)arg1;
 - (void)dealloc;
+- (void)primitiveInvalidate;
 - (void)close;
 - (void)logStatistics;
 - (void)forgetOutOfDateMainFile:(id)arg1 forTarget:(id)arg2;
@@ -87,6 +93,15 @@
 - (BOOL)isProjectFile:(id)arg1;
 - (void)finishLoading;
 - (id)initWithDatabase:(id)arg1;
+
+// Remaining properties
+@property(retain) DVTStackBacktrace *creationBacktrace;
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) DVTStackBacktrace *invalidationBacktrace;
+@property(readonly) Class superclass;
+@property(readonly, nonatomic, getter=isValid) BOOL valid;
 
 @end
 

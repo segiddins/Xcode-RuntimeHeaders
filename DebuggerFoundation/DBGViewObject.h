@@ -4,11 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "DVTInvalidation.h"
+#import <DebuggerFoundation/DVTInvalidation-Protocol.h>
 
 @class DBGViewChildMemberList, DVTStackBacktrace, NSArray, NSSet, NSString;
+@protocol DBGViewDescriber;
 
 @interface DBGViewObject : NSObject <DVTInvalidation>
 {
@@ -42,17 +43,17 @@
 @property(retain) id <DBGViewDescriber> viewDescriber; // @synthesize viewDescriber=_viewDescriber;
 - (void).cxx_destruct;
 - (id)ideModelObjectTypeIdentifier;
-- (void)willInflateChildMemberList:(id)arg1;
+- (void)_willInflateChildMemberList:(id)arg1;
 - (void)_inflateObjectIfNecessary;
 - (BOOL)_isInflated;
 - (id)recursiveDescription;
 - (id)_collectSubViewDescriptions:(id)arg1 level:(long long)arg2;
 @property(readonly, copy) NSString *description;
-@property(readonly, nonatomic) id object;
+@property(retain, nonatomic) id object;
 @property NSArray *childViewObjects;
 @property(readonly) NSString *identifier;
 - (void)primitiveInvalidate;
-- (id)initWithViewDescriber:(id)arg1 dictionary:(id)arg2;
+- (id)initWithViewDescriber:(id)arg1 parent:(id)arg2 dictionary:(id)arg3;
 
 // Remaining properties
 @property(retain) DVTStackBacktrace *creationBacktrace;

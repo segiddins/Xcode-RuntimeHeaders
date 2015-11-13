@@ -6,7 +6,7 @@
 
 #import <DevToolsInterface/PBXInspectorPaneModule.h>
 
-#import "NSTableViewDelegate.h"
+#import <DevToolsInterface/NSTableViewDelegate-Protocol.h>
 
 @class NSButton, NSMutableArray, NSProgressIndicator, NSSearchField, NSString, NSTextField, NSTextView, PBXExtendedTableView, PBXFileReference, XCExtendedArrayController;
 

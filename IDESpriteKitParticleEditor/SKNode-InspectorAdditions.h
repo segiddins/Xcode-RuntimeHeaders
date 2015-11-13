@@ -4,20 +4,45 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "SKNode.h"
+#import <SpriteKit/SKNode.h>
 
-#import "IDEKeyDrivenNavigableItemRepresentedObject.h"
+#import <IDESpriteKitParticleEditor/GTFActionLibraryTarget-Protocol.h>
+#import <IDESpriteKitParticleEditor/IDEKeyDrivenNavigableItemRepresentedObject-Protocol.h>
 
-@class DVTDocumentLocation, DVTFileDataType, IDEFileReference, NSImage, NSString;
+@class DVTDocumentLocation, DVTFileDataType, GTFActionLibraryTargetThumbnail, GTFActionTimelineModel, IDEFileReference, NSArray, NSImage, NSIndexPath, NSString, NSValue;
+@protocol NSCopying;
 
-@interface SKNode (InspectorAdditions) <IDEKeyDrivenNavigableItemRepresentedObject>
+@interface SKNode (InspectorAdditions) <IDEKeyDrivenNavigableItemRepresentedObject, GTFActionLibraryTarget>
++ (id)keyPathsForValuesAffectingNav_children;
 + (id)keyPathsForValuesAffectingNavigableItem_name;
++ (id)keyPathsForValuesAffectingGtf_name;
++ (id)keyPathsForValuesAffectingGtf_thumbnailImage;
++ (id)keyPathsForValuesAffectingInspectorName;
+@property(readonly, nonatomic) GTFActionTimelineModel *nav_action;
+@property(readonly, nonatomic) NSArray *nav_children;
+@property(readonly, nonatomic) struct CGSize sk_representedSize;
+@property(readonly, nonatomic) struct CGRect sk_representedFrame;
+@property(readonly, nonatomic) BOOL sk_isIconRepresented;
+@property(retain, nonatomic) NSString *skCustomModuleName;
+- (BOOL)_isValidCustomSublcass:(id)arg1 inModule:(id)arg2;
+- (Class)_swiftClassFromString:(id)arg1 moduleName:(id)arg2;
+@property(retain, nonatomic) NSString *skCustomClassName;
 - (id)ideModelObjectTypeIdentifier;
 @property(readonly) NSString *navigableItem_name;
-@property BOOL isLocked;
+@property(readonly, nonatomic) NSIndexPath *indexPath;
+@property(readonly, nonatomic) NSString *gtf_name;
+@property(readonly, nonatomic) GTFActionLibraryTargetThumbnail *gtf_thumbnailImage;
+- (void)setGtf_uid:(id)arg1;
+@property(readonly, nonatomic) id <NSCopying> gtf_uid;
+- (void)removeUID;
+@property(retain, nonatomic) NSValue *uid;
+@property(readonly, nonatomic) SKNode *greatestReferenceNodeAncestor;
+@property(readonly, nonatomic) BOOL isReferenced;
+@property(nonatomic) BOOL isLocked;
 @property(nonatomic) double zRotationDeg;
 @property(retain, nonatomic) SKNode *parentRef;
 @property(readonly, nonatomic) __weak SKNode *selfRef;
+@property(retain, nonatomic) NSString *inspectorName;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

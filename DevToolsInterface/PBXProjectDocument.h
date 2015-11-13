@@ -4,10 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSDocument.h"
+#import <AppKit/NSDocument.h>
 
-#import "NSOpenSavePanelDelegate.h"
-#import "PBXSelectionTarget.h"
+#import <DevToolsInterface/NSOpenSavePanelDelegate-Protocol.h>
+#import <DevToolsInterface/PBXSelectionTarget-Protocol.h>
 
 @class NSArray, NSMutableArray, NSMutableDictionary, NSString, PBXProject, PBXReference, PBXTrackableTaskManager, XCBreakpointsBucket, XCBuildOperation, XCIndexerProxy, XCLibraryChooser, XCProjectFindController, XCProjectSelection, XCRefactoring, XCSCMController, XCTaskListModule;
 

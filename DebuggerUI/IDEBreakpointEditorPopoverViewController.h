@@ -4,18 +4,19 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSViewController.h"
+#import <AppKit/NSViewController.h>
 
-#import "IDEBreakpointActionRowDelegate.h"
-#import "NSPopoverDelegate.h"
+#import <DebuggerUI/IDEBreakpointActionRowDelegate-Protocol.h>
+#import <DebuggerUI/NSPopoverDelegate-Protocol.h>
 
-@class DVTExtension, DVTMapTable, DVTStackView_AppKitAutolayout, IDEBreakpoint, NSPopover, NSString, NSTextField, NSView, NSViewController<IDEBreakpointEditor>;
+@class DVTExtension, DVTStackView_AppKitAutolayout, IDEBreakpoint, NSMapTable, NSPopover, NSString, NSTextField, NSView;
+@protocol IDEBreakpointEditor;
 
 @interface IDEBreakpointEditorPopoverViewController : NSViewController <NSPopoverDelegate, IDEBreakpointActionRowDelegate>
 {
     IDEBreakpoint *_breakpoint;
     NSView *_initialFirstResponder;
-    DVTMapTable *_actionRowViewsToObservationTokens;
+    NSMapTable *_actionRowViewsToObservationTokens;
     DVTExtension *_breakpointEditorExtension;
     NSViewController<IDEBreakpointEditor> *_breakpointSpecificViewController;
     NSTextField *_conditionTextField;

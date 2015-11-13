@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSRulerView.h"
+#import <AppKit/NSRulerView.h>
 
 @class DVTTextAnnotation, NSColor, NSCursor, NSFont, NSTimer, NSTrackingArea;
 
@@ -79,6 +79,8 @@
 - (void)_drawSidebarMarkersForAnnotations:(id)arg1 atIndexes:(id)arg2 textView:(id)arg3 getParaRectBlock:(CDUnknownBlockType)arg4;
 - (unsigned long long)_drawFoldingRibbonForLine:(unsigned long long)arg1 foldbarRect:(struct CGRect)arg2 paraRect:(struct CGRect)arg3 lineNumberFontSize:(double)arg4 textView:(id)arg5;
 - (struct CGRect)foldbarRect;
+- (struct CGRect)lineNumbersRect;
+- (struct CGRect)executionCountsRect;
 - (struct CGRect)sidebarRect;
 @property(readonly) NSCursor *sidebarCursor;
 - (void)setLineNumberFont:(id)arg1 size:(double)arg2;

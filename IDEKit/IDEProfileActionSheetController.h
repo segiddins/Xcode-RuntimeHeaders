@@ -6,7 +6,7 @@
 
 #import <IDEKit/IDEViewController.h>
 
-#import "IDECapsuleListViewDataSource.h"
+#import <IDEKit/IDECapsuleListViewDataSource-Protocol.h>
 
 @class DVTBorderedView, DVTChoice, DVTFilePathFieldCell, DVTNotificationToken, DVTObservingToken, DVTStackView_AppKitAutolayout, DVTStackView_ML, DVTTabChooserView, IDEArgumentsCapsuleSheetController, IDECapsuleListView, IDEEnvironmentVariablesCapsuleSheetController, IDEProfileSchemeAction, IDEScheme, IDEWorkspace, NSMutableArray, NSPopUpButton, NSString, NSTabView, NSTextField, NSView;
 
@@ -27,6 +27,7 @@
     NSView *_resumeOptionView;
     NSView *_debugDocumentVersioningOptionView;
     NSView *_workingDirectoryOptionView;
+    NSView *_testabilityOptionView;
     DVTStackView_AppKitAutolayout *_infoStackView;
     NSView *_executable_buildConfiguration;
     NSView *_executable_runnable;

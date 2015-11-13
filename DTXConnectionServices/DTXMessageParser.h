@@ -4,9 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-@class NSMutableDictionary, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_semaphore>;
+@class NSMutableDictionary;
+@protocol DTXBlockCompressor, OS_dispatch_queue, OS_dispatch_semaphore;
 
 @interface DTXMessageParser : NSObject
 {
@@ -19,14 +20,16 @@
     NSObject<OS_dispatch_semaphore> *_wantsMoreDataSem;
     unsigned long long _desiredSize;
     BOOL _eof;
+    id <DTXBlockCompressor> _compressor;
 }
 
+- (void)replaceCompressor:(id)arg1;
 - (void)parsingComplete;
 - (void)parseIncomingBytes:(const char *)arg1 length:(unsigned long long)arg2;
 - (const void *)waitForMoreData:(unsigned long long)arg1 incrementalBuffer:(const void **)arg2;
-- (id)parseMessage;
+- (id)parseMessageWithExceptionHandler:(CDUnknownBlockType)arg1;
 - (void)dealloc;
-- (id)initWithMessageHandler:(CDUnknownBlockType)arg1;
+- (id)initWithMessageHandler:(CDUnknownBlockType)arg1 andParseExceptionHandler:(CDUnknownBlockType)arg2;
 
 @end
 

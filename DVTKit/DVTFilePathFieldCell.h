@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSTextFieldCell.h"
+#import <AppKit/NSTextFieldCell.h>
 
 @class NSArray, NSButtonCell, NSString;
 
@@ -24,6 +24,7 @@
     unsigned long long _linkButtonBehavior;
 }
 
++ (id)linkButtonImage;
 @property unsigned long long linkButtonBehavior; // @synthesize linkButtonBehavior=_linkButtonBehavior;
 @property BOOL showChooserButton; // @synthesize showChooserButton=_showChooserButton;
 @property BOOL chooseDir; // @synthesize chooseDir=_chooseDir;

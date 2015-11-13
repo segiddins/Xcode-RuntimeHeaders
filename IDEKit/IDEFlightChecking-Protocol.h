@@ -4,9 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "DVTInvalidation.h"
+#import <IDEKit/DVTInvalidation-Protocol.h>
 
 @class NSError, NSString;
+@protocol IDEFlightCheckingContext;
 
 @protocol IDEFlightChecking <DVTInvalidation>
 @property(readonly, nonatomic) BOOL failed;

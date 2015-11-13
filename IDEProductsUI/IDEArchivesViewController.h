@@ -4,15 +4,16 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDEViewController.h"
+#import <IDEKit/IDEViewController.h>
 
-#import "DVTTableCellViewTitleEditingDelegate.h"
-#import "IDEFilterControlBarTarget.h"
-#import "IDEInitialization.h"
-#import "IDEProductsInspectableVending.h"
-#import "NSTableViewDelegate.h"
+#import "DVTTableCellViewTitleEditingDelegate-Protocol.h"
+#import "IDEFilterControlBarTarget-Protocol.h"
+#import "IDEInitialization-Protocol.h"
+#import "IDEProductsInspectableVending-Protocol.h"
+#import "NSTableViewDelegate-Protocol.h"
 
 @class DVTBorderedView, DVTObservingToken, DVTTableView, IDEFilterControlBar, NSAlert, NSArray, NSArrayController, NSImage, NSString, NSTableHeaderView, NSTextField;
+@protocol IDEProductsInspectable;
 
 @interface IDEArchivesViewController : IDEViewController <IDEFilterControlBarTarget, NSTableViewDelegate, DVTTableCellViewTitleEditingDelegate, IDEInitialization, IDEProductsInspectableVending>
 {
@@ -59,16 +60,15 @@
 - (void)primitiveInvalidate;
 @property(readonly) BOOL shouldShowNoSelection;
 - (void)handleAction:(id)arg1 fromInspectable:(id)arg2;
+- (void)downloadDSYMForArchive:(id)arg1;
 - (void)productsContextMenu_showArchiveInFinder:(id)arg1;
 - (void)productsContextMenu_deleteArchive:(id)arg1;
 - (void)deleteArchive:(id)arg1;
 - (void)deleteArchives:(id)arg1;
-- (void)deleteArchiveSheetDidEnd:(id)arg1 returnCode:(long long)arg2 contextInfo:(void *)arg3;
 - (void)updateStatusBar;
 - (id)archivesFilterPredicate;
 @property(retain, nonatomic) NSArray *archives;
-- (void)viewWillUninstall;
-- (void)viewDidInstall;
+- (void)viewDidLoad;
 - (void)loadView;
 - (void)revealArchive:(id)arg1;
 
@@ -77,6 +77,7 @@
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
+@property(readonly, nonatomic) BOOL vendorIsBusy;
 
 @end
 

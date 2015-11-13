@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSRunLoop.h"
+#import <Foundation/NSRunLoop.h>
 
 @interface NSRunLoop (IBIDEFoundationRunLoopAdditions)
 - (void)ib_spinRunLoopInMode:(id)arg1 waitingForSemaphore:(id)arg2;

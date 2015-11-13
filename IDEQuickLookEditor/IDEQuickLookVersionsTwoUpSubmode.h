@@ -4,11 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDEComparisonEditorSubmode.h"
+#import <IDEKit/IDEComparisonEditorSubmode.h>
 
-#import "IDEComparisonEditorDelegate.h"
-#import "IDEComparisonEditorSavableMergeState.h"
-#import "NSSplitViewDelegate.h"
+#import <IDEQuickLookEditor/IDEComparisonEditorDelegate-Protocol.h>
+#import <IDEQuickLookEditor/IDEComparisonEditorSavableMergeState-Protocol.h>
+#import <IDEQuickLookEditor/NSSplitViewDelegate-Protocol.h>
 
 @class DVTBorderedView, DVTComparisonSplitView, DVTDiffSession, DVTObservingToken, IDEEditor, IDESourceControlMergeData, NSDictionary, NSString, QLPreviewView;
 

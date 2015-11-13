@@ -6,10 +6,11 @@
 
 #import <DVTKit/DVTViewController.h>
 
-#import "DVTFindPatternManager.h"
-#import "DVTScopeBarContentController.h"
+#import <DVTKit/DVTFindPatternManager-Protocol.h>
+#import <DVTKit/DVTScopeBarContentController-Protocol.h>
 
-@class DVTBorderedView, DVTFindBarOptionsCtrl, DVTFindPatternTextField<DVTFindPatternField>, DVTLogAspect, DVTObservingToken, DVTSearchField<DVTFindPatternField>, DVTSharedFindState, DVTStackView_AppKitAutolayout, NSAttributedString, NSLayoutConstraint, NSMutableArray, NSObject<DVTFindBarHostable>, NSPopUpButton, NSSegmentedControl, NSString, NSTextField, NSTimer, NSView;
+@class DVTBorderedView, DVTFindBarOptionsCtrl, DVTFindPatternTextField, DVTLogAspect, DVTObservingToken, DVTSearchField, DVTSharedFindState, DVTStackView_AppKitAutolayout, NSAttributedString, NSLayoutConstraint, NSMutableArray, NSObject, NSPopUpButton, NSSegmentedControl, NSString, NSTextField, NSTimer, NSView;
+@protocol DVTFindBarHostable, DVTFindPatternField;
 
 @interface DVTFindBar : DVTViewController <DVTFindPatternManager, DVTScopeBarContentController>
 {

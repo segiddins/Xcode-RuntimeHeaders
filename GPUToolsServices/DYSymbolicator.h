@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
 @class NSArray;
 
@@ -22,7 +22,6 @@
 @property(copy, nonatomic) CDUnknownBlockType ownerFilter; // @synthesize ownerFilter=_ownerFilter;
 @property(nonatomic) BOOL removeTopGPUTools; // @synthesize removeTopGPUTools=_removeTopGPUTools;
 @property(readonly, nonatomic) struct _CSTypeRef coreSymbolicator; // @synthesize coreSymbolicator=_coreSymbolicator;
-- (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)enumerateStackFrames:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (void)enumerateStackFrames:(unsigned long long *)arg1 count:(unsigned long long)arg2 usingBlock:(CDUnknownBlockType)arg3;

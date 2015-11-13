@@ -6,7 +6,7 @@
 
 #import <IDEKit/IDEBatchFindScopeRuleRow.h>
 
-#import "NSWindowDelegate.h"
+#import <IDEKit/NSWindowDelegate-Protocol.h>
 
 @class NSPathControl, NSString;
 

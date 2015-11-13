@@ -4,11 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSView.h"
+#import <AppKit/NSView.h>
 
-#import "NSMenuDelegate.h"
+#import <IDEKit/NSMenuDelegate-Protocol.h>
 
-@class NSMutableDictionary, NSObject<IDESourceControlNameTokenViewDelegate>, NSString;
+@class NSMutableDictionary, NSObject, NSString;
+@protocol IDESourceControlNameTokenViewDelegate;
 
 @interface IDESourceControlNameTokenView : NSView <NSMenuDelegate>
 {
@@ -24,10 +25,8 @@
     double _fontSize;
     BOOL _isBold;
     unsigned long long _alignment;
-    CDUnknownBlockType _clickCallbackBlock;
 }
 
-@property(copy) CDUnknownBlockType clickCallbackBlock; // @synthesize clickCallbackBlock=_clickCallbackBlock;
 @property __weak NSObject<IDESourceControlNameTokenViewDelegate> *delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;

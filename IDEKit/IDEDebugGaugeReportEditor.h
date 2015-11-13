@@ -7,6 +7,7 @@
 #import <IDEKit/IDEEditor.h>
 
 @class DVTStackView_AppKitAutolayout, IDEDebugGaugeReportTopSection, IDELaunchSession, NSLayoutConstraint, NSScrollView;
+@protocol IDEDebugGaugeReportContentDelegate, IDEDebugGaugeReportTopSectionContentDelegate;
 
 @interface IDEDebugGaugeReportEditor : IDEEditor
 {

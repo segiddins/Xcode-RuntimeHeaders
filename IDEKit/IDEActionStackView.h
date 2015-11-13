@@ -6,6 +6,8 @@
 
 #import <IDEKit/IDECapsuleListView.h>
 
+@protocol IDEActionStackViewDelegate;
+
 @interface IDEActionStackView : IDECapsuleListView
 {
     id <IDEActionStackViewDelegate> _delegate;

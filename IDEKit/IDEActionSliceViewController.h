@@ -6,10 +6,11 @@
 
 #import <IDEKit/IDEViewController.h>
 
-#import "IDECapsuleViewController.h"
-#import "IDECapsuleViewDelegate.h"
+#import <IDEKit/IDECapsuleViewController-Protocol.h>
+#import <IDEKit/IDECapsuleViewDelegate-Protocol.h>
 
 @class IDEExecutionAction, NSImage, NSString;
+@protocol IDEActionSliceViewControllerDelegate;
 
 @interface IDEActionSliceViewController : IDEViewController <IDECapsuleViewController, IDECapsuleViewDelegate>
 {

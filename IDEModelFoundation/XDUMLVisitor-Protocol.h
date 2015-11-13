@@ -5,6 +5,7 @@
 //
 
 @class NSArray;
+@protocol XDUMLClass, XDUMLDataType, XDUMLGeneralization, XDUMLImplementation, XDUMLInterface, XDUMLOperation, XDUMLPackage, XDUMLProperty;
 
 @protocol XDUMLVisitor
 - (void)visitImplementation:(id <XDUMLImplementation>)arg1;

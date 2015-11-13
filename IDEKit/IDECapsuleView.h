@@ -4,12 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "DVTDisclosureView.h"
+#import <DVTKit/DVTDisclosureView.h>
 
-#import "DVTInvalidation.h"
-#import "NSTextFieldDelegate.h"
+#import <IDEKit/DVTInvalidation-Protocol.h>
+#import <IDEKit/NSTextFieldDelegate-Protocol.h>
 
-@class DVTNotificationToken, DVTObservingToken, DVTStackBacktrace, IDECapsuleFooterView, IDECapsuleListView, IDEViewController<IDECapsuleViewController>, NSButton, NSString, NSTrackingArea;
+@class DVTNotificationToken, DVTObservingToken, DVTStackBacktrace, IDECapsuleFooterView, IDECapsuleHeaderView, IDECapsuleListView, IDEViewController, NSButton, NSString, NSTrackingArea;
+@protocol IDECapsuleViewController, IDECapsuleViewDelegate;
 
 @interface IDECapsuleView : DVTDisclosureView <NSTextFieldDelegate, DVTInvalidation>
 {
@@ -50,6 +51,7 @@
 }
 
 + (void)initialize;
++ (Class)headerViewClass;
 @property(retain) IDEViewController<IDECapsuleViewController> *capsuleViewController; // @synthesize capsuleViewController=_capsuleViewController;
 @property(retain, nonatomic) id <IDECapsuleViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) IDECapsuleListView *listView; // @synthesize listView=_listView;
@@ -60,6 +62,7 @@
 @property(retain, nonatomic) IDECapsuleFooterView *footerView; // @synthesize footerView=_footerView;
 - (void).cxx_destruct;
 - (void)controlTextDidEndEditing:(id)arg1;
+- (void)controlTextDidChange:(id)arg1;
 - (BOOL)performDragOperation:(id)arg1;
 - (unsigned long long)draggingEntered:(id)arg1;
 - (void)drawRect:(struct CGRect)arg1;
@@ -85,6 +88,7 @@
 - (double)_delegatePreferredContentWidthWithCapsuleWidth:(double)arg1;
 - (void)setDisclosed:(BOOL)arg1;
 - (void)setContentView:(id)arg1;
+@property(retain) IDECapsuleHeaderView *headerView;
 - (void)cursorUpdate:(id)arg1;
 - (void)updateTrackingAreas;
 - (void)_addTrackingArea;

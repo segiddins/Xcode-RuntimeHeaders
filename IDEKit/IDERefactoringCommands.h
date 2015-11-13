@@ -4,12 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "IDECommandHandler.h"
-#import "IDECommandHandlerVendor.h"
+#import <IDEKit/IDECommandHandler-Protocol.h>
+#import <IDEKit/IDECommandHandlerVendor-Protocol.h>
 
 @class IDERefactoringSession, IDERefactoringWindowController, NSMutableDictionary, NSString;
+@protocol IDESelectionSource;
 
 @interface IDERefactoringCommands : NSObject <IDECommandHandlerVendor, IDECommandHandler>
 {
@@ -45,7 +46,6 @@
 - (void)refactorRename:(id)arg1;
 - (void)refactor:(id)arg1 contextMenu:(BOOL)arg2;
 - (BOOL)_validateTransformation:(id)arg1 contextMenu:(BOOL)arg2 error:(id *)arg3;
-- (void)genericAlertDidEnd:(id)arg1 returnCode:(long long)arg2 contextInfo:(void *)arg3;
 - (id)init;
 
 // Remaining properties

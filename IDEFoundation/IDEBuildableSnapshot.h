@@ -4,9 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-@class DVTDispatchLock, IDEActivityLogSection, IDEBuildParameters, NSArray, NSMutableArray, NSString;
+@class DVTDispatchLock, IDEActivityLogSection, IDEBuildParameters, NSMutableArray, NSString;
+@protocol IDEBuildable;
 
 @interface IDEBuildableSnapshot : NSObject
 {
@@ -18,7 +19,6 @@
     int _buildResult;
     DVTDispatchLock *_syncLock;
     NSMutableArray *_postprocessingBlocks;
-    NSArray *_currentBuildTasks;
     NSMutableArray *_readyBuildCommands;
     NSMutableArray *_startedBuildTasks;
 }
@@ -28,7 +28,6 @@
 @property int buildResult; // @synthesize buildResult=_buildResult;
 @property(retain) NSMutableArray *startedBuildTasks; // @synthesize startedBuildTasks=_startedBuildTasks;
 @property(retain) NSMutableArray *readyBuildCommands; // @synthesize readyBuildCommands=_readyBuildCommands;
-@property(retain) NSArray *currentBuildTasks; // @synthesize currentBuildTasks=_currentBuildTasks;
 @property(retain) NSMutableArray *postprocessingBlocks; // @synthesize postprocessingBlocks=_postprocessingBlocks;
 @property(retain) DVTDispatchLock *syncLock; // @synthesize syncLock=_syncLock;
 @property(retain) IDEActivityLogSection *activityLogSection; // @synthesize activityLogSection=_activityLogSection;
@@ -43,18 +42,14 @@
 - (void)buildTask:(id)arg1 activityLogSectionDidChange:(id)arg2 forBuilder:(id)arg3;
 - (void)buildTask:(id)arg1 didStartExecutingForBuilder:(id)arg2;
 - (void)cleanupForBuilder:(id)arg1;
-- (void)_cleanupOnlyOnceForBuilder:(id)arg1;
 - (void)builderWasCancelled:(id)arg1;
-- (void)buildForBuilderDidFinish:(id)arg1;
 - (void)buildDidFinishForBuilder:(id)arg1 buildPlan:(id)arg2;
 - (id)buildTaskForBuildCommand:(id)arg1 builder:(id)arg2;
 - (BOOL)prepareForBuildingWithBuildPlan:(id)arg1;
 - (id)buildPlanForBuilder:(id)arg1 buildCommand:(int)arg2 buildOnlyTheseFiles:(id)arg3;
-- (id)nextBuildCommandsToRunForBuilder:(id)arg1 buildCommand:(int)arg2 buildOnlyTheseFiles:(id)arg3;
-- (id)nextBuildTasksToRunForBuilder:(id)arg1 buildCommand:(int)arg2 buildOnlyTheseFiles:(id)arg3;
 - (BOOL)buildForBuilderWillStart:(id)arg1;
 - (int)performBuildForBuilder:(id)arg1 buildCommand:(int)arg2 buildOnlyTheseFiles:(id)arg3;
-- (BOOL)prepareForBuildingForBuilder:(id)arg1;
+- (void)prepareForBuildingForBuilder:(id)arg1;
 - (void)_buildCommandDidRestoreCachedOutputs:(id)arg1;
 - (void)_updateBuildOperationStatusForBuilder:(id)arg1 buildTask:(id)arg2;
 - (void)_buildTaskDidStartForBuilder:(id)arg1 buildTask:(id)arg2;

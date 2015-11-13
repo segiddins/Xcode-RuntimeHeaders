@@ -4,13 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <Foundation/NSObject.h>
 
-#import "DVTInvalidation.h"
-#import "IDEVariablesViewContentProvider.h"
-#import "IDEVariablesViewContextMenuDelegate.h"
+#import <GPUTraceDebuggerUI/DVTInvalidation-Protocol.h>
+#import <GPUTraceDebuggerUI/IDEVariablesViewContentProvider-Protocol.h>
+#import <GPUTraceDebuggerUI/IDEVariablesViewContextMenuDelegate-Protocol.h>
 
 @class DVTObservingToken, DVTStackBacktrace, GPUDebuggerController, GPUSharedTabUIState, IDEVariablesView, NSString;
+@protocol IDEVariablesViewContextMenuDelegate;
 
 @interface GPUVariablesViewContentProvider : NSObject <IDEVariablesViewContextMenuDelegate, IDEVariablesViewContentProvider, DVTInvalidation>
 {
@@ -22,6 +23,11 @@
     DVTObservingToken *_gpuTraceCurrentResourcesObserverToken;
     DVTObservingToken *_uiModeObservation;
     DVTObservingToken *_shaderProfilerResultsObserverToken;
+    DVTObservingToken *_selectedScopeTagObserverToken;
+    DVTObservingToken *_comparisonModeObserverToken;
+    DVTObservingToken *_textModeObserverToken;
+    DVTObservingToken *_debugStateObserverToken;
+    DVTObservingToken *_showRedundantCallIssuesToken;
     int _comparisonMode;
     int _objectFilterMode;
     int _textMode;
@@ -30,6 +36,9 @@
     IDEVariablesView *_variablesView;
 }
 
++ (void)addMinAvgMaxPerItemToList:(id)arg1 withTitle:(id)arg2 forTiming:(const struct DYShaderProfilerTiming *)arg3 andCount:(double)arg4;
++ (void)addMinAvgMaxToList:(id)arg1 withTitle:(id)arg2 forTiming:(const struct DYShaderProfilerTiming *)arg3;
++ (id)formatPerfDescription:(const struct DYShaderProfilerTiming *)arg1 withBase:(const struct DYShaderProfilerTiming *)arg2 resultsUpdated:(BOOL)arg3;
 + (void)initialize;
 @property(nonatomic) int textMode; // @synthesize textMode=_textMode;
 @property(nonatomic) int objectFilterMode; // @synthesize objectFilterMode=_objectFilterMode;
@@ -61,6 +70,7 @@
 - (void)_setTextModeVerbose:(id)arg1;
 - (void)_setCompareStateWithLastDraw:(id)arg1;
 - (void)_setCompareStateWithDefault:(id)arg1;
+- (void)addAnalyzerFindingContent:(id)arg1 toArray:(id)arg2;
 - (void)updateCurrentLocation:(id)arg1;
 - (void)updateFilteredList;
 - (void)primitiveInvalidate;

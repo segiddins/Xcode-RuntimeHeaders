@@ -6,8 +6,8 @@
 
 #import <DevToolsInterface/PBXFileCopyingWizard.h>
 
-#import "NSComboBoxDelegate.h"
-#import "NSTextViewDelegate.h"
+#import <DevToolsInterface/NSComboBoxDelegate-Protocol.h>
+#import <DevToolsInterface/NSTextViewDelegate-Protocol.h>
 
 @class NSButton, NSString, NSTextField, PBXCompletionManager, PBXExtendedComboBox;
 

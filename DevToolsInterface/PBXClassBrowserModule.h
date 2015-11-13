@@ -6,7 +6,7 @@
 
 #import <DevToolsInterface/PBXProjectModule.h>
 
-#import "PBXTableColumnProvider.h"
+#import <DevToolsInterface/PBXTableColumnProvider-Protocol.h>
 
 @class NSDate, NSMapTable, NSMenu, NSMutableArray, NSMutableDictionary, NSSplitView, NSString, NSView, PBXClassBrowserOptionsModule, PBXExtendedOutlineView, PBXExtendedTableView, PBXNavigatorGroup, PBXTableColumnManager;
 

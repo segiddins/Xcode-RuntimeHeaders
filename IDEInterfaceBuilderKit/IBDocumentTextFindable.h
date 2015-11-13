@@ -4,11 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "DVTTextReplacable.h"
-#import "IBAttributeSearchLocationIteratorDelegate.h"
-#import "IDETextIndexFindable.h"
+#import <IDEInterfaceBuilderKit/DVTTextReplacable-Protocol.h>
+#import <IDEInterfaceBuilderKit/IBAttributeSearchLocationIteratorDelegate-Protocol.h>
+#import <IDEInterfaceBuilderKit/IDETextIndexFindable-Protocol.h>
 
 @class IBDocumentSearchDescription, NSString;
 

@@ -4,15 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
 @class NSImage;
 
 @interface IBNinePartImage : NSObject
 {
-    NSImage *edgeImages[8];
-    NSImage *centerImage;
-    struct CGRect imageCenterPartRect;
+    NSImage *images[3][3];
 }
 
 + (id)ninePartImageWithCenterPixelOfImage:(id)arg1;
@@ -21,6 +19,7 @@
 - (struct CGSize)minimumSize;
 - (void)writeOutDebugImages;
 - (void)drawInRect:(struct CGRect)arg1 unflip:(BOOL)arg2 drawCenterComponent:(BOOL)arg3;
+- (id)imageAtPosition:(CDUnion_31865a80)arg1;
 - (id)initWithImage:(id)arg1 center:(struct CGRect)arg2;
 
 @end

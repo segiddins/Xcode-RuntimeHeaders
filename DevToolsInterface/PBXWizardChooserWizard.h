@@ -6,10 +6,10 @@
 
 #import <DevToolsInterface/PBXWizard.h>
 
-#import "NSMatrixDelegate.h"
-#import "NSOutlineViewDataSource.h"
-#import "NSOutlineViewDelegate.h"
-#import "NSSplitViewDelegate.h"
+#import <DevToolsInterface/NSMatrixDelegate-Protocol.h>
+#import <DevToolsInterface/NSOutlineViewDataSource-Protocol.h>
+#import <DevToolsInterface/NSOutlineViewDelegate-Protocol.h>
+#import <DevToolsInterface/NSSplitViewDelegate-Protocol.h>
 
 @class NSButton, NSImageView, NSMatrix, NSMutableArray, NSPopUpButton, NSScrollView, NSString, NSTextField, PBXExtendedOutlineView, PBXGestureSplitView, PBXStringTree, PBXWizardChooserWizardBackgroundView, PBXWizardChooserWizardDescriptionView, XCMultiWizardProxy;
 

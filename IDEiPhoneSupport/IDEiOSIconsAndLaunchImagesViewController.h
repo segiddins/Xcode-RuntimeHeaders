@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDEViewController.h"
+#import <IDEKit/IDEViewController.h>
 
-#import "IDEiOSImageSectionDelegate.h"
+#import <IDEiPhoneSupport/IDEiOSImageSectionDelegate-Protocol.h>
 
 @class DVTGradientImageButton, DVTStackView_ML, IDEiOSTargetEditor, NSArray, NSPopUpButton, NSString, NSView;
 

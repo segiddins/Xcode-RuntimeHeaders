@@ -6,9 +6,9 @@
 
 #import <DVTKit/DVTLayoutView_ML.h>
 
-#import "DVTDisclosureHeaderViewDelegate.h"
-#import "DVTDraggableView.h"
-#import "DVTIssueDisplayingView.h"
+#import <DVTKit/DVTDisclosureHeaderViewDelegate-Protocol.h>
+#import <DVTKit/DVTDraggableView-Protocol.h>
+#import <DVTKit/DVTIssueDisplayingView-Protocol.h>
 
 @class DVTDisclosureHeaderView, NSColor, NSDictionary, NSString, NSView;
 
@@ -23,6 +23,7 @@
     BOOL _shouldAlwaysDrawBottomBorder;
 }
 
++ (Class)headerViewClass;
 + (id)keyPathsForValuesAffectingDisclosed;
 + (void)initialize;
 @property BOOL shouldAlwaysDrawBottomBorder; // @synthesize shouldAlwaysDrawBottomBorder=_shouldAlwaysDrawBottomBorder;

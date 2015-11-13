@@ -4,12 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDEEditorDocument.h"
+#import <IDEKit/IDEEditorDocument.h>
 
-#import "DVTPlistDocumentProtocol.h"
-#import "DVTTextFindable.h"
-#import "DVTTextReplacable.h"
-#import "IDEDocumentStructureProviding.h"
+#import <PlistEditor/DVTPlistDocumentProtocol-Protocol.h>
+#import <PlistEditor/DVTTextFindable-Protocol.h>
+#import <PlistEditor/DVTTextReplacable-Protocol.h>
+#import <PlistEditor/IDEDocumentStructureProviding-Protocol.h>
 
 @class DVTPlistModel, DVTPlistStructureDefinition, NSArray, NSMutableSet, NSString;
 

@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "DVTAnnotationProvider.h"
+#import <DVTKit/DVTAnnotationProvider.h>
 
-#import "DVTTextAnnotationDelegate.h"
+#import <IDELanguageSupportUI/DVTTextAnnotationDelegate-Protocol.h>
 
 @class DVTObservingToken, IDEPlaygroundEditor, IDESourceCodePlaygroundSection, IDEWorkspaceTabController, NSMapTable, NSMutableOrderedSet, NSString;
 
@@ -29,9 +29,9 @@
 - (void)didDeleteOrReplaceParagraphForAnnotation:(id)arg1;
 - (void)providerWillUninstall;
 @property IDESourceCodePlaygroundSection *playgroundSection;
-- (void)mergeAccessoryViewAnnotations:(id)arg1;
 - (void)_updateQuickLookForAnnotation:(id)arg1;
 - (void)_removeAccessoryViewAnnotationsForLoggerResults:(id)arg1;
+- (void)_removeAllAccessoryViewAnnotations;
 - (void)resetEditor:(id)arg1;
 - (void)_insertAccessoryViewAnnotationForExecutionResult:(id)arg1;
 

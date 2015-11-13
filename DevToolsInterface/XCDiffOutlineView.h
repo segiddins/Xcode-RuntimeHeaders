@@ -6,7 +6,7 @@
 
 #import <DevToolsInterface/PBXExtendedOutlineView.h>
 
-#import "XCDiffHunkMarking.h"
+#import <DevToolsInterface/XCDiffHunkMarking-Protocol.h>
 
 @class XCDiffComparatorView;
 

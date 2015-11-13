@@ -6,6 +6,8 @@
 
 #import <IDEFoundation/IDEUpgradeContext.h>
 
+@protocol IDEBlueprint;
+
 @interface IDEUpgradeBlueprintContext : IDEUpgradeContext
 {
     id <IDEBlueprint> _blueprint;

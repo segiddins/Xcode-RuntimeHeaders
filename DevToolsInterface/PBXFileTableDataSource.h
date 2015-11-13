@@ -6,12 +6,12 @@
 
 #import <DevToolsInterface/PBXSmartGroupDataSource.h>
 
-#import "NSMenuDelegate.h"
-#import "NSTableViewDataSource.h"
-#import "NSTableViewDelegate.h"
-#import "PBXSearchFieldDelegate.h"
-#import "PBXSelectionSource.h"
-#import "PBXTableColumnProvider.h"
+#import <DevToolsInterface/NSMenuDelegate-Protocol.h>
+#import <DevToolsInterface/NSTableViewDataSource-Protocol.h>
+#import <DevToolsInterface/NSTableViewDelegate-Protocol.h>
+#import <DevToolsInterface/PBXSearchFieldDelegate-Protocol.h>
+#import <DevToolsInterface/PBXSelectionSource-Protocol.h>
+#import <DevToolsInterface/PBXTableColumnProvider-Protocol.h>
 
 @class NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSString, PBXControlScrollView, PBXExtendedTableView, PBXPixelAlignmentView, PBXTableColumnManager, PBXTarget, TSRegularExpression;
 

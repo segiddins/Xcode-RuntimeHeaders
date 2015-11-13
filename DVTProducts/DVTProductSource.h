@@ -4,10 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "DVTInvalidation.h"
-#import "NSCopying.h"
+#import <DVTProducts/DVTInvalidation-Protocol.h>
+#import <DVTProducts/NSCopying-Protocol.h>
 
 @class DVTProductManager, DVTStackBacktrace, NSArray, NSString;
 
@@ -28,6 +28,7 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)primitiveInvalidate;
 - (id)initWithProductManager:(id)arg1;
+- (id)init;
 
 // Remaining properties
 @property(retain) DVTStackBacktrace *creationBacktrace;

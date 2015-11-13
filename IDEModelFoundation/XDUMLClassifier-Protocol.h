@@ -4,10 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "XDUMLNamespace.h"
-#import "XDUMLType.h"
+#import <IDEModelFoundation/XDUMLNamespace-Protocol.h>
+#import <IDEModelFoundation/XDUMLType-Protocol.h>
 
 @class NSArray, NSString;
+@protocol XDUMLClassifier, XDUMLGeneralization, XDUMLOperation, XDUMLProperty;
 
 @protocol XDUMLClassifier <XDUMLNamespace, XDUMLType>
 - (void)specializationRemoved:(id <XDUMLGeneralization>)arg1;

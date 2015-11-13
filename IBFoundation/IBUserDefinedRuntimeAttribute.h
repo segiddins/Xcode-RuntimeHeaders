@@ -4,11 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "IBBinaryArchiving.h"
-#import "NSCoding.h"
-#import "NSCopying.h"
+#import <IBFoundation/IBBinaryArchiving-Protocol.h>
+#import <IBFoundation/NSCoding-Protocol.h>
+#import <IBFoundation/NSCopying-Protocol.h>
 
 @class NSString;
 
@@ -32,13 +32,13 @@
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithBinaryArchiver:(id)arg1;
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithKeyPath:(id)arg1 value:(id)arg2 isLocalized:(BOOL)arg3 andTypeIdentifier:(id)arg4;
 
 // Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) Class superclass;
 
 @end

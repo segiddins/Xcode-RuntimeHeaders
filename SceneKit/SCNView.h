@@ -4,21 +4,23 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSView.h"
+#import <AppKit/NSView.h>
 
-#import "SCNSceneRenderer.h"
-#import "SCNTechniqueSupport.h"
+#import <SceneKit/SCNSceneRenderer-Protocol.h>
+#import <SceneKit/SCNTechniqueSupport-Protocol.h>
 
-@class NSColor, NSOpenGLContext, NSOpenGLPixelFormat, NSRecursiveLock, NSString, SCNDisplayLink, SCNEventHandler, SCNJitterer, SCNNode, SCNRenderer, SCNScene, SCNSpriteKitEventHandler, SCNTechnique, SKScene;
+@class AVAudioEngine, AVAudioEnvironmentNode, NSColor, NSOpenGLContext, NSOpenGLPixelFormat, NSRecursiveLock, NSString, SCNDisplayLink, SCNEventHandler, SCNJitterer, SCNNode, SCNRenderer, SCNScene, SCNSpriteKitEventHandler, SCNTechnique, SKScene;
+@protocol MTLCommandQueue, MTLDevice, MTLRenderCommandEncoder, SCNSceneRendererDelegate;
 
 @interface SCNView : NSView <SCNSceneRenderer, SCNTechniqueSupport>
 {
-    id _reserved;
     double _currentSystemTime;
     NSOpenGLPixelFormat *_userDefinedPixelFormat;
     unsigned int _updatingSurface:1;
     NSString *__ibSceneName;
+    unsigned long long __ibPreferredRenderingAPI;
     unsigned int _ibNoMultisampling:1;
+    unsigned long long _renderingAPI;
     unsigned int _allowsBrowsing:1;
     unsigned int _isOpaque:1;
     unsigned int _firstDrawDone:1;
@@ -36,12 +38,12 @@
 }
 
 + (id)_defaultPixelFormat;
-+ (id)_defaultPixelFormatWithSampleCount:(unsigned long long)arg1 stencil:(BOOL)arg2;
++ (id)_defaultPixelFormatWithAPI:(unsigned long long)arg1 sampleCount:(unsigned long long)arg2 stencil:(BOOL)arg3;
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 + (id)keyPathsForValuesAffectingValueForKey:(id)arg1;
 + (id)_kvoKeysForwardedToRenderer;
-+ (id)SCNJSExportProtocol;
-- (void)_jitterRedisplayInBackingLayerWithCGLContext:(struct _CGLContextObject *)arg1;
++ (BOOL)_isMetalSupported;
++ (unsigned long long)renderingAPIForOptions:(id)arg1;
 - (void)_cancelJitterRedisplay;
 - (id)contentLayer;
 - (void)rotateOf:(double)arg1;
@@ -68,6 +70,7 @@
 - (BOOL)acceptsFirstResponder;
 - (int)_displayLinkCallback:(double)arg1;
 - (void)drawRect:(struct CGRect)arg1;
+- (void)drawForMetalBackingLayer;
 - (void)_drawInBackingLayerWithCGLContext:(struct _CGLContextObject *)arg1 atTime:(double)arg2;
 - (id)makeBackingLayer;
 - (void)setWantsLayer:(BOOL)arg1;
@@ -83,9 +86,19 @@
 - (void)update;
 - (void)reshape;
 - (BOOL)lockFocusIfCanDraw;
+- (BOOL)_isGLLayerBacked;
 - (id)_scnlayerBackedOpenGLContext;
 - (void)setAsynchronousLoading:(BOOL)arg1;
 - (void)setAllowsBrowsing:(BOOL)arg1;
+@property(readonly, nonatomic) unsigned long long renderingAPI;
+- (void)setIbPreferredRenderingAPI:(int)arg1;
+- (int)ibPreferredRenderingAPI;
+- (void)setIbWantsMultisampling:(BOOL)arg1;
+- (BOOL)ibWantsMultisampling;
+- (void)setIbSceneName:(id)arg1;
+- (id)ibSceneName;
+- (void)set_ibPreferredRenderingAPI:(int)arg1;
+- (int)_ibPreferredRenderingAPI;
 - (void)set_ibWantsMultisampling:(BOOL)arg1;
 - (BOOL)_ibWantsMultisampling;
 - (void)set_ibSceneName:(id)arg1;
@@ -96,15 +109,15 @@
 - (void)_beginMouseMovedTracking;
 - (void)set_showsAuthoringEnvironment:(BOOL)arg1;
 - (BOOL)_showsAuthoringEnvironment;
-- (unsigned long long)debugSettings;
-- (void)setDebugSettings:(unsigned long long)arg1;
+@property(nonatomic) unsigned long long debugOptions;
 - (void)switchToNextCamera;
 - (void)switchToCameraNamed:(id)arg1;
+- (BOOL)_isEditor;
 @property(readonly, copy) NSString *description;
 - (void *)__CFObject;
 - (void)unlock;
 - (void)lock;
-- (struct NSImage *)snapshot;
+- (id)snapshot;
 @property(nonatomic) BOOL showsStatistics;
 - (void)_sceneDidUpdate:(id)arg1;
 - (void)_systemTimeAnimationStarted:(id)arg1;
@@ -115,6 +128,13 @@
 - (void)prepareObjects:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (BOOL)prepareObject:(id)arg1 shouldAbortBlock:(CDUnknownBlockType)arg2;
 @property(readonly, nonatomic) void *context;
+@property(readonly, nonatomic) unsigned long long stencilPixelFormat;
+@property(readonly, nonatomic) unsigned long long depthPixelFormat;
+@property(readonly, nonatomic) unsigned long long colorPixelFormat;
+@property(readonly, nonatomic) id <MTLCommandQueue> commandQueue;
+@property(readonly, nonatomic) id <MTLDevice> device;
+@property(readonly, nonatomic) id <MTLRenderCommandEncoder> currentRenderCommandEncoder;
+- (id)currentRenderPassDescriptor;
 @property(nonatomic) BOOL autoenablesDefaultLighting;
 @property(nonatomic) double sceneTime;
 @property(nonatomic) double currentTime;
@@ -126,6 +146,7 @@
 @property(nonatomic) id <SCNSceneRendererDelegate> delegate;
 - (struct SCNVector3)unprojectPoint:(struct SCNVector3)arg1;
 - (struct SCNVector3)projectPoint:(struct SCNVector3)arg1;
+- (id)nodesInsideFrustumWithPointOfView:(id)arg1;
 - (BOOL)isNodeInsideFrustum:(id)arg1 withPointOfView:(id)arg2;
 - (id)hitTestWithSegmentFromPoint:(struct SCNVector3)arg1 toPoint:(struct SCNVector3)arg2 options:(id)arg3;
 - (id)hitTest:(struct CGPoint)arg1 options:(id)arg2;
@@ -136,6 +157,9 @@
 @property(nonatomic) BOOL loops;
 @property(nonatomic) BOOL allowsCameraControl;
 @property(copy, nonatomic) SCNTechnique *technique;
+@property(retain, nonatomic) SCNNode *audioListener;
+@property(readonly, nonatomic) AVAudioEnvironmentNode *audioEnvironmentNode;
+@property(readonly, nonatomic) AVAudioEngine *audioEngine;
 @property(retain, nonatomic) SCNNode *pointOfView;
 - (void)setPointOfView:(id)arg1 animate:(BOOL)arg2;
 - (void)_drawAtTime:(double)arg1 WithContext:(struct _CGLContextObject *)arg2;
@@ -145,9 +169,11 @@
 @property(nonatomic, getter=isJitteringEnabled) BOOL jitteringEnabled;
 - (id)renderer;
 @property(retain, nonatomic) SCNScene *scene;
+- (void)presentScene:(id)arg1 withTransition:(id)arg2 incomingPointOfView:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (void)_selectRenderingAPIWithOptions:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1 options:(id)arg2;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (void)_commonInit:(id)arg1;

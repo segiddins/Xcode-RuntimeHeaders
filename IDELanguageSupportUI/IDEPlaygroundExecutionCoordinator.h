@@ -4,22 +4,23 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-@class DVTHashTable, DVTMapTable, DVTObservingToken, DVTOperation, NSObject<OS_dispatch_queue>, NSOperationQueue;
+@class DVTObservingToken, DVTOperation, NSHashTable, NSMapTable, NSOperationQueue;
+@protocol OS_dispatch_queue;
 
 @interface IDEPlaygroundExecutionCoordinator : NSObject
 {
     NSObject<OS_dispatch_queue> *_sessionLifecycleQueue;
-    DVTMapTable *_playgroundsToOutstandingSessionsMap;
-    DVTMapTable *_preparationTokensToPreparationParameters;
-    DVTMapTable *_preparationParametersToTokenCount;
-    DVTMapTable *_preparationParametersToUndesignatedSessions;
-    DVTMapTable *_preparationParametersToUndesignatedSessionCleanupTimers;
-    DVTMapTable *_sessionsToCompletionInfo;
-    DVTMapTable *_sessionsToUseCount;
-    DVTHashTable *_sessionsThatFinishedPrematurely;
-    DVTMapTable *_preparationParametersToPrelaunchFailureCounts;
+    NSMapTable *_playgroundsToOutstandingSessionsMap;
+    NSMapTable *_preparationTokensToPreparationParameters;
+    NSMapTable *_preparationParametersToTokenCount;
+    NSMapTable *_preparationParametersToUndesignatedSessions;
+    NSMapTable *_preparationParametersToUndesignatedSessionCleanupTimers;
+    NSMapTable *_sessionsToCompletionInfo;
+    NSMapTable *_sessionsToUseCount;
+    NSHashTable *_sessionsThatFinishedPrematurely;
+    NSMapTable *_preparationParametersToPrelaunchFailureCounts;
     DVTOperation *_lastFullSimulatorSession;
     DVTObservingToken *_lastFullSimulatorSessionObservingToken;
     BOOL _safeToEnablePrelaunching;
@@ -37,6 +38,7 @@
 - (id)_sessionToExecuteForExecutionParameters:(id)arg1;
 - (void)_completeWithCompletionInfo:(id)arg1 session:(id)arg2;
 - (void)_handleCompletionForSession:(id)arg1 preparationParameters:(id)arg2;
+- (BOOL)_playgroundRestartFailedPrelaunches;
 - (void)_shutDownOperationsForPreparationParameters:(id)arg1;
 - (void)_spinUpOperationForPreparationParameters:(id)arg1;
 - (void)_unregisterPreperationToken:(id)arg1;

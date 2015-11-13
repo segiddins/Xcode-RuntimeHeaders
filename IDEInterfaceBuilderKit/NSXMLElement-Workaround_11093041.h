@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSXMLElement.h"
+#import <Foundation/NSXMLElement.h>
 
 @interface NSXMLElement (Workaround_11093041)
 - (void)ibSwizzledRemoveAttributeForNameAndWorkaround11093041:(id)arg1;

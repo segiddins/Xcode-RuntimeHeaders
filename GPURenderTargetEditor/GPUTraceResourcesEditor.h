@@ -4,12 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "GPUMainEditor.h"
+#import <GPUTraceDebuggerUI/GPUMainEditor.h>
 
-#import "DVTFindBarFindable.h"
-#import "IDEGPUAssistantEditorAdditions.h"
-#import "UXCollectionViewDataSource.h"
-#import "UXCollectionViewDelegate.h"
+#import <GPURenderTargetEditor/DVTFindBarFindable-Protocol.h>
+#import <GPURenderTargetEditor/IDEGPUAssistantEditorAdditions-Protocol.h>
+#import <GPURenderTargetEditor/UXCollectionViewDataSource-Protocol.h>
+#import <GPURenderTargetEditor/UXCollectionViewDelegate-Protocol.h>
 
 @class DVTObservingToken, GPUResourceEditor, GPUSharedTabUIState, GPUTraceDocumentLocation, GPUTraceModelFactory, NSDictionary, NSMutableArray, NSScrollView, NSString, UXCollectionView;
 

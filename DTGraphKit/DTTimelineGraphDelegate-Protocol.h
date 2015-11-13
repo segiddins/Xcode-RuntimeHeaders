@@ -4,14 +4,16 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <DTGraphKit/NSObject-Protocol.h>
 
-@class DTTimelineGraph, DTTimelinePlane;
+@class DTTimelineGraph, DTTimelineGroupPlane, DTTimelinePlane, NSSet;
 
 @protocol DTTimelineGraphDelegate <NSObject>
+- (void)inputHandlerForGraph:(DTTimelineGraph *)arg1 requestsHeight:(double)arg2 forPlane:(DTTimelinePlane *)arg3;
+- (void)inputHandlerForGraph:(DTTimelineGraph *)arg1 requestsCollapsingGroupPlane:(DTTimelineGroupPlane *)arg2;
+- (void)inputHandlerForGraph:(DTTimelineGraph *)arg1 requestsExpandingGroupPlane:(DTTimelineGroupPlane *)arg2;
 - (void)inputHandlerRequestsToClearInspectionInfoForGraph:(DTTimelineGraph *)arg1;
 - (void)inputHandlerForGraph:(DTTimelineGraph *)arg1 requestsDisplayInspectionInfoForNanosecond:(unsigned long long)arg2 atX:(double)arg3;
-- (void)inputHandlerForGraph:(DTTimelineGraph *)arg1 requestsSelectedPlane:(DTTimelinePlane *)arg2;
 - (void)inputHandlerForGraph:(DTTimelineGraph *)arg1 requestsNanosecondsPerPoint:(unsigned long long)arg2;
 - (void)inputHandlerRequestsToClearCurrentInspectionTimeForGraph:(DTTimelineGraph *)arg1;
 - (void)inputHandlerForGraph:(DTTimelineGraph *)arg1 requestsCurrentInspectionTime:(unsigned long long)arg2;
@@ -20,5 +22,11 @@
 - (void)inputHandlerForGraph:(DTTimelineGraph *)arg1 requestsSelectedTimeRange:(struct XRTimeRange)arg2;
 - (void)inputHandlerForGraph:(DTTimelineGraph *)arg1 requestYOffset:(double)arg2;
 - (void)inputHandlerForGraph:(DTTimelineGraph *)arg1 requestsNanosecondOffset:(long long)arg2;
+
+@optional
+- (void)inputHandlerForGraph:(DTTimelineGraph *)arg1 requestsEndLongPressDragAtTime:(unsigned long long)arg2;
+- (void)inputHandlerForGraph:(DTTimelineGraph *)arg1 requestsLongPressDragToTime:(unsigned long long)arg2;
+- (BOOL)inputHandlerForGraph:(DTTimelineGraph *)arg1 requestsLongPressDragBeginAtTime:(unsigned long long)arg2 onPlanes:(NSSet *)arg3;
+- (void)inputHandlerForGraph:(DTTimelineGraph *)arg1 unhandledClickAtTime:(unsigned long long)arg2 onPlanes:(NSSet *)arg3;
 @end
 

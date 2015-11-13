@@ -4,19 +4,22 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSScrollView.h"
+#import <AppKit/NSScrollView.h>
 
-@class NSView;
+@class NSValue, NSView;
 
 @interface NSScrollView (IBScrollViewIntegration)
-+ (id)ibKeyPathsForXcode5ContentViewSubviews;
-+ (id)ibKeyPathForXcode5ContentView;
++ (id)ibKeyPathsForContentViewSubviews;
++ (long long)ibDevelopmentTargetForDocumentContentView;
++ (id)ibKeyPathForDocumentContentView;
++ (id)keyPathsForValuesAffectingContentInsets;
++ (id)keyPathsForValuesAffectingIbInspectedUseFixedContentInsets;
 + (id)keyPathsForValuesAffectingIbInspectedMaxMagnification;
 + (id)keyPathsForValuesAffectingIbInspectedMinMagnification;
 - (void)ibDidAddToDocument:(id)arg1 phase:(unsigned long long)arg2;
 @property(nonatomic) BOOL ibShadowedUsesManualLayerBacking;
-- (id)ibObjectsToReparentWhenAddingOrRemovingXcode5ContentView;
-- (id)ibXcode5ContentView;
+- (id)ibObjectsToReparentWhenAddingOrRemovingActiveContentView;
+- (id)ibVerifyContentViewCurrentContentView;
 - (BOOL)ibCanEmbedDirectlyInSplitView;
 - (void)ibMapCopyOfReceiver:(id)arg1 intoLayoutEngine:(id)arg2;
 - (unsigned long long)ibCustomSubviewLayoutStrategy;
@@ -26,6 +29,8 @@
 - (void)setIbArchivedDesignableContentView:(id)arg1 unarchiver:(id)arg2;
 - (void)awakeAfterUsingDocumentUnarchiver:(id)arg1;
 - (id)ibArchivedDesignableContentView;
+- (BOOL)ibInspectedUseFixedContentInsets;
+@property(retain) NSValue *ibWrappedContentInsets;
 - (void)setIbShadowedSubviews:(id)arg1;
 - (id)ibShadowedSubviews;
 @property(retain) NSView *ibArchivedHeaderView;

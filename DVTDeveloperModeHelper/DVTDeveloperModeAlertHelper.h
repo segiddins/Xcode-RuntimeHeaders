@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
 @class NSString, NSWindow;
 
@@ -22,6 +22,9 @@
 - (void).cxx_destruct;
 @property(readonly) NSString *informativeText;
 - (void)setDeveloperModeWithReturnCode:(long long)arg1;
+- (void)_performAskToEnableDeveloperModeIfNecessaryWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)_synchronizedPerformDeveloperModeAlertCompletionCallbacks;
+- (void)_synchronizedAskToEnableDeveloperModeIfNecessaryWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)askToEnableDeveloperModeIfNecessaryWithCompletionHandler:(CDUnknownBlockType)arg1;
 
 @end

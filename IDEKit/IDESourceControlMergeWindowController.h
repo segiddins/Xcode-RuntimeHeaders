@@ -6,7 +6,7 @@
 
 #import <IDEKit/IDESourceControlReviewFilesWindowController.h>
 
-#import "IDEWorkspaceDocumentProvider.h"
+#import <IDEKit/IDEWorkspaceDocumentProvider-Protocol.h>
 
 @class DVTBorderedView, DVTDiffDescriptor, DVTObservingToken, IDESourceControlMergeDataSource, IDEWorkspaceDocument, NSArray, NSButton, NSPopUpButton, NSSegmentedControl, NSString;
 

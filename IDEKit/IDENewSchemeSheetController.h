@@ -7,6 +7,7 @@
 #import <IDEKit/IDEViewController.h>
 
 @class IDEWorkspace, NSButton, NSPopUpButton, NSString, NSTextField, NSWindow;
+@protocol IDEClientTrackingToken;
 
 @interface IDENewSchemeSheetController : IDEViewController
 {
@@ -34,7 +35,7 @@
 - (void)_setName:(id)arg1;
 @property(retain) IDEWorkspace *workspace;
 - (void)primitiveInvalidate;
-- (void)_sheetDidEnd:(id)arg1 returnCode:(long long)arg2 contextInfo:(void *)arg3;
+- (void)_newSchemeSheetDidEndWithReturnCode:(long long)arg1;
 - (void)_beginSheetForWindow:(id)arg1 workspaceWindow:(id)arg2;
 - (void)_updateOKButtonEnabledState;
 - (void)_populateBlueprintPopUp;

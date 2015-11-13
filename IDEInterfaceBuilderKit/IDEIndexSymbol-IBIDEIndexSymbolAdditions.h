@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDEIndexSymbol.h"
+#import <IDEFoundation/IDEIndexSymbol.h>
 
 @interface IDEIndexSymbol (IBIDEIndexSymbolAdditions)
 - (id)ib_definitionDocumentURLs;

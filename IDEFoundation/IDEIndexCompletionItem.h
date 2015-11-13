@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
 @class DVTSourceCodeSymbolKind, NSAttributedString, NSString;
 
@@ -20,8 +20,10 @@
     double _priority;
     NSString *_name;
     BOOL _notRecommended;
+    double _fuzzyMatchingScore;
 }
 
+@property double fuzzyMatchingScore; // @synthesize fuzzyMatchingScore=_fuzzyMatchingScore;
 @property double priority; // @synthesize priority=_priority;
 @property(readonly) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;

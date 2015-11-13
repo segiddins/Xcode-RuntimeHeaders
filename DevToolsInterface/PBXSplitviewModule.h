@@ -6,8 +6,8 @@
 
 #import <DevToolsInterface/PBXModule.h>
 
-#import "NSSplitViewDelegate.h"
-#import "NSToolbarDelegate.h"
+#import <DevToolsInterface/NSSplitViewDelegate-Protocol.h>
+#import <DevToolsInterface/NSToolbarDelegate-Protocol.h>
 
 @class NSMutableArray, NSString;
 

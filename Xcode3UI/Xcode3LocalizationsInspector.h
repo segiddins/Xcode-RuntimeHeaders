@@ -4,10 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDEInspectorViewController.h"
+#import <IDEKit/IDEInspectorViewController.h>
 
-#import "NSTableViewDataSource.h"
-#import "NSTableViewDelegate.h"
+#import <Xcode3UI/NSTableViewDataSource-Protocol.h>
+#import <Xcode3UI/NSTableViewDelegate-Protocol.h>
 
 @class DVTObservingToken, IDENavigatorDataCell, NSArray, NSArrayController, NSString, NSView, Xcode3LocalizationCommands, Xcode3LocalizationInspectorContentView;
 
@@ -45,25 +45,24 @@
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forTableColumn:(id)arg3 row:(long long)arg4;
 - (BOOL)tableView:(id)arg1 shouldTrackCell:(id)arg2 forTableColumn:(id)arg3 row:(long long)arg4;
 - (BOOL)tableView:(id)arg1 shouldSelectRow:(long long)arg2;
-- (BOOL)allowsConversion;
 - (id)conversionFileDataType;
 - (id)fileDataType;
-- (id)fileDataTypeForValue:(long long)arg1;
+- (id)fileDataTypeAtIndex:(long long)arg1;
 @property(readonly) NSArray *fileDataTypes;
 - (id)defaultFileDataType;
 - (id)variantGroup;
 - (id)project;
 - (void)makeLocalized:(id)arg1;
 - (id)_makeLocalizedChoice;
-- (void)refreshLocalesPreservingFileTypes:(BOOL)arg1;
+- (void)_refreshLocalesPreservingFileTypes;
 @property(readonly) BOOL fileExists;
-- (id)imageForLocale:(id)arg1 fileDataType:(id)arg2;
 - (BOOL)isVariant;
 - (id)modelObject;
 - (id)nibBundle;
 - (id)nibName;
 - (void)primitiveInvalidate;
 - (void)loadView;
+- (BOOL)_allowsConversion;
 - (id)_projectLocalizations;
 - (id)_projectLocalizationsIncludingBaseIfNeeded;
 - (BOOL)_projectIsBaseEnabled;

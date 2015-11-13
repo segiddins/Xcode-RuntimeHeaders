@@ -4,17 +4,17 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDENavigableItemDomainProvider.h"
+#import <IDEKit/IDENavigableItemDomainProvider.h>
 
-#import "IDEKeyDrivenNavigableItemRepresentedObject.h"
+#import <DebuggerUI/IDEKeyDrivenNavigableItemRepresentedObject-Protocol.h>
 
-@class DVTDocumentLocation, DVTFileDataType, DVTMapTable, DVTObservingToken, IDEFileReference, IDEWorkspace, NSArray, NSImage, NSMutableArray, NSString;
+@class DVTDocumentLocation, DVTFileDataType, DVTObservingToken, IDEFileReference, IDEWorkspace, NSArray, NSImage, NSMapTable, NSMutableArray, NSString;
 
 @interface DBGDisassemblyItemExecutionEnvironmentWrapper : IDENavigableItemDomainProvider <IDEKeyDrivenNavigableItemRepresentedObject>
 {
     IDEWorkspace *_workspace;
     NSMutableArray *_processWrappers;
-    DVTMapTable *_launchSessionsProcessToObserverTokens;
+    NSMapTable *_launchSessionsProcessToObserverTokens;
     DVTObservingToken *_launchSessionObserver;
     DVTObservingToken *_workspacesLaunchSessionsObserver;
     DVTObservingToken *_workspaceValidObserver;

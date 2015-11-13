@@ -6,11 +6,11 @@
 
 #import <IDEModelEditor/IDEDMEditor.h>
 
-#import "DVTOutlineViewDelegate.h"
-#import "IDECapsuleListViewDataSource.h"
-#import "NSOpenSavePanelDelegate.h"
-#import "NSPathControlDelegate.h"
-#import "NSSplitViewDelegate.h"
+#import <IDEModelEditor/DVTOutlineViewDelegate-Protocol.h>
+#import <IDEModelEditor/IDECapsuleListViewDataSource-Protocol.h>
+#import <IDEModelEditor/NSOpenSavePanelDelegate-Protocol.h>
+#import <IDEModelEditor/NSPathControlDelegate-Protocol.h>
+#import <IDEModelEditor/NSSplitViewDelegate-Protocol.h>
 
 @class DVTControllerContentView, DVTDelayedMenuButton, DVTStackView_ML, IDECapsuleListView, IDEMappingModelAttributeMappingsController, IDEMappingModelRelationshipMappingsController, NSArray, NSMenu, NSPathControl, NSString, NSView;
 

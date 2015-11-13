@@ -4,11 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDEViewController.h"
+#import <IDEKit/IDEViewController.h>
 
-#import "IDEProductsInspectableVending.h"
+#import "IDEProductsInspectableVending-Protocol.h"
 
 @class DVTProduct, IDEProductsViewController, NSString;
+@protocol IDEProductsInspectable;
 
 @interface IDEProductSectionViewController : IDEViewController <IDEProductsInspectableVending>
 {
@@ -38,6 +39,7 @@
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
+@property(readonly, nonatomic) BOOL vendorIsBusy;
 
 @end
 

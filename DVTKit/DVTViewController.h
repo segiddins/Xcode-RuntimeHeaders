@@ -4,11 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSViewController.h"
+#import <AppKit/NSViewController.h>
 
-#import "DVTControllerContentViewViewControllerAdditions.h"
-#import "DVTEditor.h"
-#import "DVTInvalidation.h"
+#import <DVTKit/DVTControllerContentViewViewControllerAdditions-Protocol.h>
+#import <DVTKit/DVTEditor-Protocol.h>
+#import <DVTKit/DVTInvalidation-Protocol.h>
 
 @class DVTControllerContentView, DVTExtension, DVTStackBacktrace, NSString;
 

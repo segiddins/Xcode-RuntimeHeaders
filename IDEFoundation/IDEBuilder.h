@@ -4,11 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "DVTOperation.h"
+#import <DVTFoundation/DVTOperation.h>
 
-#import "IDEBuildTaskCallbacks.h"
+#import <IDEFoundation/IDEBuildTaskCallbacks-Protocol.h>
 
 @class DVTDynamicLogController, DVTSystemStatisticsMeasurement, IDEActivityLogSection, IDEBuildOperationQueueSet, IDEBuildStatisticsSection, IDEBuildableSnapshot, IDEBuilderHarvestedInfo, IDESchemeActionResult, NSArray, NSDictionary, NSMutableArray, NSMutableSet, NSSet, NSString;
+@protocol DVTCancellationBlockCompletion, IDEBuilderCallbacks;
 
 @interface IDEBuilder : DVTOperation <IDEBuildTaskCallbacks>
 {
@@ -65,6 +66,7 @@
 - (void)buildTask:(id)arg1 didSetExitCode:(int)arg2;
 - (void)buildTask:(id)arg1 activityLogSectionDidChange:(id)arg2;
 - (void)buildTaskDidStartExecuting:(id)arg1;
+- (void)cleanupAfterBuilding;
 - (void)main;
 - (void)prepareForBuilding;
 - (id)init;

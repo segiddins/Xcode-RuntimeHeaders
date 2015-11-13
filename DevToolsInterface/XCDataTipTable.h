@@ -6,7 +6,7 @@
 
 #import <DevToolsInterface/PBXDebugDSModelViewModule.h>
 
-#import "XCDataTipSource.h"
+#import <DevToolsInterface/XCDataTipSource-Protocol.h>
 
 @class NSImage, NSMenu, NSMutableArray, NSMutableDictionary, NSMutableSet, NSPanel, NSScrollView, NSTableColumn, NSTextField, PBXLSDataValue, XCOutlineHoverView;
 

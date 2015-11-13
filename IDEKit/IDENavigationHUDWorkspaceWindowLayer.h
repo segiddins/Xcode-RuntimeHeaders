@@ -6,7 +6,7 @@
 
 #import <IDEKit/IDENavigationHUDAbstractWorkspaceWindowLayer.h>
 
-#import "IDENavigationHUDSelectionDrivenLayer.h"
+#import <IDEKit/IDENavigationHUDSelectionDrivenLayer-Protocol.h>
 
 @class CAScrollLayer, IDENavigationHUDSelection, IDENavigationHUDTabBarLayer, IDEWorkspaceWindowController, NSArray, NSDictionary, NSMapTable, NSString;
 

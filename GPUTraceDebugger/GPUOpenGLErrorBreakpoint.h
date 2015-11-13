@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDESymbolicBreakpoint.h"
+#import <IDEFoundation/IDESymbolicBreakpoint.h>
 
 __attribute__((visibility("hidden")))
 @interface GPUOpenGLErrorBreakpoint : IDESymbolicBreakpoint
@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
 + (id)assetBundle;
 - (id)popUpEditorDisplayName;
 - (BOOL)shouldEditNewBreakpoints;
+- (id)navigableItem_image;
 - (id)customStopReasonString;
 - (id)displayName;
 - (id)init;

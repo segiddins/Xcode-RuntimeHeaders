@@ -4,9 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <IDEInterfaceBuilderKit/NSObject-Protocol.h>
 
 @class DVTDraggedImageState, IBStructureAreaDockView, NSArray, NSDictionary, NSEvent, NSImage, NSString;
+@protocol NSDraggingInfo;
 
 @protocol IBStructureAreaDockViewDelegate <NSObject>
 - (void)dockViewPerformPaste:(IBStructureAreaDockView *)arg1;
@@ -40,7 +41,6 @@
 - (BOOL)dockView:(IBStructureAreaDockView *)arg1 isShowingOpenIndicatorForRepresentedObject:(id)arg2 inGroup:(id)arg3;
 - (NSString *)dockView:(IBStructureAreaDockView *)arg1 titleForRepresentedObject:(id)arg2 inGroup:(id)arg3;
 - (NSArray *)dockView:(IBStructureAreaDockView *)arg1 representedObjectsForGroup:(id)arg2;
-- (NSString *)dockView:(IBStructureAreaDockView *)arg1 titleOfRepresentedGroup:(id)arg2;
 - (NSArray *)dockViewRepresentedGroups:(IBStructureAreaDockView *)arg1;
 - (void)dockViewWillValidateData:(IBStructureAreaDockView *)arg1;
 

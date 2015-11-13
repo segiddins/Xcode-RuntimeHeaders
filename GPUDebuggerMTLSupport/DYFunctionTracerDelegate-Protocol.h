@@ -4,13 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <GPUDebuggerMTLSupport/NSObject-Protocol.h>
 
 @class NSArray, NSMutableArray, NSMutableString, NSString;
 
 @protocol DYFunctionTracerDelegate <NSObject>
 
 @optional
+- (NSString *)generateArrayVariable:(NSString *)arg1 ForArgument:(const struct Argument *)arg2;
 - (NSString *)unloadStringForURL:(NSString *)arg1;
 - (NSString *)loadStringForURL:(NSString *)arg1 variableName:(NSString *)arg2 bufferType:(NSString *)arg3;
 - (NSMutableArray *)constructTraceLinesWithFunction:(const struct Function *)arg1 arguments:(NSArray *)arg2;

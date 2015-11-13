@@ -6,8 +6,8 @@
 
 #import <DevToolsInterface/XCDiffObjectDataSource.h>
 
-#import "NSTableViewDelegate.h"
-#import "PBXTableColumnProvider.h"
+#import <DevToolsInterface/NSTableViewDelegate-Protocol.h>
+#import <DevToolsInterface/PBXTableColumnProvider-Protocol.h>
 
 @class NSString;
 

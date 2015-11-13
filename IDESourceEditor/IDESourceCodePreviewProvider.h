@@ -4,17 +4,18 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDEEditorDocumentPreviewProvider.h"
+#import <IDEKit/IDEEditorDocumentPreviewProvider.h>
 
-@class DVTLayoutManager, DVTPointerArray;
+@class DVTLayoutManager, NSPointerArray;
 
 @interface IDESourceCodePreviewProvider : IDEEditorDocumentPreviewProvider
 {
-    DVTPointerArray *_rowHeights;
+    NSPointerArray *_rowHeights;
     DVTLayoutManager *_documentLayoutManager;
     DVTLayoutManager *_previewLayoutManager;
 }
 
++ (unsigned long long)assertionBehaviorAfterEndOfEventForSelector:(SEL)arg1;
 - (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (id)generateViewWithRect:(struct CGRect)arg1;

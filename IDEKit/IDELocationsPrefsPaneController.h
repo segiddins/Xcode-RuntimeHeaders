@@ -6,8 +6,8 @@
 
 #import <IDEKit/IDEViewController.h>
 
-#import "DVTFilePathFieldCellDelegate.h"
-#import "IDEBuildFolderLocationSheetControllerDelegate.h"
+#import <IDEKit/DVTFilePathFieldCellDelegate-Protocol.h>
+#import <IDEKit/IDEBuildFolderLocationSheetControllerDelegate-Protocol.h>
 
 @class DVTFilePathField, IDEXcodeSelectHelper, NSArrayController, NSAttributedString, NSPopUpButton, NSString, NSTextField;
 

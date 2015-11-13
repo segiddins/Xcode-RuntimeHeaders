@@ -6,7 +6,7 @@
 
 #import <Xcode3UI/Xcode3BuildPhaseViewController.h>
 
-#import "Xcode3BuildPhaseFiltering.h"
+#import <Xcode3UI/Xcode3BuildPhaseFiltering-Protocol.h>
 
 @class DVTStackView_ML, NSIndexSet, NSMutableArray, NSString;
 

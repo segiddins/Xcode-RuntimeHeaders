@@ -4,15 +4,18 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "DYAnalyzerEngine.h"
+#import <GPUToolsServices/DYAnalyzerEngine.h>
 
 @interface DYMTLAnalyzerEngine : DYAnalyzerEngine
 {
     StateMirrorManager_4613010e _mng;
+    BOOL _presort;
 }
 
+@property(nonatomic) BOOL presort; // @synthesize presort=_presort;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (void)setUsePreSortHeuristics:(BOOL)arg1;
 - (id)_newHeuristicPoolWithGraphicsEngineID:(unsigned long long)arg1;
 - (id)newFrameStatisticsFinding;
 - (unsigned int)_stateMirrorProcessFunctionAndAnnotate:(const struct Function *)arg1 functionIndex:(int)arg2;

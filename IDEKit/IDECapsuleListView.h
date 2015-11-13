@@ -4,13 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "DVTStackView_ML.h"
+#import <DVTKit/DVTStackView_ML.h>
 
-#import "DVTInvalidation.h"
-#import "DVTStatefulObject.h"
-#import "NSDraggingSource.h"
+#import <IDEKit/DVTInvalidation-Protocol.h>
+#import <IDEKit/DVTStatefulObject-Protocol.h>
+#import <IDEKit/NSDraggingSource-Protocol.h>
 
 @class DVTStackBacktrace, DVTStateToken, IDECapsuleView, NSColor, NSMutableSet, NSString, NSTimer;
+@protocol IDECapsuleListViewDataSource;
 
 @interface IDECapsuleListView : DVTStackView_ML <NSDraggingSource, DVTStatefulObject, DVTInvalidation>
 {
@@ -82,6 +83,7 @@
 - (long long)numberOfRows;
 - (void)hightlightCapsuleView:(id)arg1;
 - (id)capsuleViewForCapsuleViewController:(id)arg1;
+- (void)startEditingCapsuleTitleAtRow:(long long)arg1;
 - (long long)rowForCapsuleView:(id)arg1;
 - (id)capsuleViewAtRow:(long long)arg1;
 - (void)didCompleteLayout;
@@ -111,6 +113,8 @@
 - (void)keyDown:(id)arg1;
 - (void)primitiveInvalidate;
 - (void)_invalidateSubviewsSavingStateWithMap:(id)arg1;
+- (void)commonInit;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 // Remaining properties

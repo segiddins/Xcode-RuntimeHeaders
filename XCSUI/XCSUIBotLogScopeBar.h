@@ -4,11 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "DVTViewController.h"
+#import <DVTKit/DVTViewController.h>
 
-#import "DVTScopeBarContentController.h"
+#import <XCSUI/DVTScopeBarContentController-Protocol.h>
 
-@class DVTScopeBarButton, DVTSearchField, NSButton, NSProgressIndicator, NSString, NSView;
+@class DVTScopeBarButton, DVTSearchField, NSButton, NSPopUpButton, NSProgressIndicator, NSString, NSView;
+@protocol XCSUIBotLogEditorScopeBarDelegate;
 
 @interface XCSUIBotLogScopeBar : DVTViewController <DVTScopeBarContentController>
 {
@@ -23,9 +24,17 @@
     NSProgressIndicator *_downloadAllLogsProgressIndicator;
     id <XCSUIBotLogEditorScopeBarDelegate> _delegate;
     NSString *_currentLogDownloadToken;
+    NSPopUpButton *_logSelectorPopUp;
+    DVTScopeBarButton *_allMessagesScopeButton;
+    DVTScopeBarButton *_allIssuesScopeButton;
+    DVTScopeBarButton *_errorsOnlyScopeButton;
 }
 
 + (id)defaultViewNibName;
+@property __weak DVTScopeBarButton *errorsOnlyScopeButton; // @synthesize errorsOnlyScopeButton=_errorsOnlyScopeButton;
+@property __weak DVTScopeBarButton *allIssuesScopeButton; // @synthesize allIssuesScopeButton=_allIssuesScopeButton;
+@property __weak DVTScopeBarButton *allMessagesScopeButton; // @synthesize allMessagesScopeButton=_allMessagesScopeButton;
+@property __weak NSPopUpButton *logSelectorPopUp; // @synthesize logSelectorPopUp=_logSelectorPopUp;
 @property(retain) id <XCSUIBotLogEditorScopeBarDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)searchFieldAction:(id)arg1;
@@ -39,6 +48,7 @@
 - (void)setScopeBarState:(int)arg1 showAllResults:(BOOL)arg2;
 @property(readonly) double preferredViewHeight;
 - (void)loadView;
+- (void)showBuildLogScopeButtons:(BOOL)arg1;
 - (void)_updateShowSteps:(BOOL)arg1 showWarnings:(BOOL)arg2 showErrors:(BOOL)arg3 showAnalyzerResults:(BOOL)arg4;
 
 // Remaining properties

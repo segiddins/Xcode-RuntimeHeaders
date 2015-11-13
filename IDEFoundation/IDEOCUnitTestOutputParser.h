@@ -4,9 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-@class DVTRegularExpression, NSArray, NSObject<OS_dispatch_queue>;
+@class DVTRegularExpression;
+@protocol IDEOCUnitTestOutputParserDelegate, OS_dispatch_queue;
 
 @interface IDEOCUnitTestOutputParser : NSObject
 {
@@ -18,13 +19,11 @@
     DVTRegularExpression *_testCaseMeasuredPerformanceMetricRegex;
     DVTRegularExpression *_testCaseFinishedRegex;
     DVTRegularExpression *_testCaseFailedRegex;
-    NSArray *_performanceTestParsers;
     NSObject<OS_dispatch_queue> *_processingQueue;
     NSObject<OS_dispatch_queue> *_delegateQueue;
     BOOL _outputsToConsole;
 }
 
-+ (BOOL)_initializedForUserInteraction;
 + (void)_initializeRegularExpressionsIfNeeded;
 @property BOOL outputsToConsole; // @synthesize outputsToConsole=_outputsToConsole;
 @property __weak id <IDEOCUnitTestOutputParserDelegate> delegate; // @synthesize delegate=_delegate;

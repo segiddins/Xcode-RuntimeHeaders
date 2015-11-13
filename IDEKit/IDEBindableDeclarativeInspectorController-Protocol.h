@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <IDEKit/NSObject-Protocol.h>
 
 @class IDEInspectorContentView, IDEInspectorProperty, NSArray, NSAttributedString, NSBundle, NSSet, NSString, NSView, NSXMLElement;
 
@@ -16,6 +16,7 @@
 @property(readonly) NSBundle *bundle;
 
 @optional
+- (NSString *)filePathForExternalInspectorContentWithIdentifier:(NSString *)arg1;
 - (NSAttributedString *)attributedTitleForSliverElement:(NSXMLElement *)arg1;
 - (NSView *)accessoryViewForInspectorProperty:(IDEInspectorProperty *)arg1;
 - (id)aggregateReplacementBySettingValue:(id)arg1 forKeyPath:(NSString *)arg2 onObject:(id)arg3 fromKeyPath:(NSString *)arg4 ofObject:(id)arg5;

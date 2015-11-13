@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "DVTDeviceApplication.h"
+#import <DVTFoundation/DVTDeviceApplication-Protocol.h>
 
 @class NSSet, NSString;
 
@@ -28,7 +28,7 @@
 @property(copy) NSString *installedPath; // @synthesize installedPath=_installedPath;
 @property BOOL isHidden; // @synthesize isHidden=_isHidden;
 @property BOOL isLeaf; // @synthesize isLeaf=_isLeaf;
-@property(retain) NSSet *rootContainerApplicationItems; // @synthesize rootContainerApplicationItems=_rootContainerApplicationItems;
+@property(copy) NSSet *rootContainerApplicationItems; // @synthesize rootContainerApplicationItems=_rootContainerApplicationItems;
 @property(retain) NSSet *children; // @synthesize children=_children;
 @property BOOL isFairPlayEncrypted; // @synthesize isFairPlayEncrypted=_isFairPlayEncrypted;
 @property(retain) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;

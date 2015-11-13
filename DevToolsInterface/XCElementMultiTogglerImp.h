@@ -6,7 +6,7 @@
 
 #import <DevToolsInterface/XCElementBaseTogglerImp.h>
 
-#import "XCElementMultiTogglerP.h"
+#import <DevToolsInterface/XCElementMultiTogglerP-Protocol.h>
 
 @class NSMutableArray, NSObject, NSString;
 

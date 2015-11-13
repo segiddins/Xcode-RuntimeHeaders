@@ -6,6 +6,8 @@
 
 #import <IDEModelFoundation/XDUMLClassImp.h>
 
+@protocol XDUMLGeneralization;
+
 @interface XDPMEntity : XDUMLClassImp
 {
     id <XDUMLGeneralization> _deletedInheritanceGeneralization;
@@ -92,6 +94,8 @@
 - (void)setParentEntity:(id)arg1;
 - (id)parentEntityName;
 - (id)parentEntity;
+- (id)uniquenessConstraints;
+- (void)setUniquenessConstraints:(id)arg1;
 - (id)compoundIndexes;
 - (void)setCompoundIndexes:(id)arg1;
 - (void)setIsAbstract:(BOOL)arg1;

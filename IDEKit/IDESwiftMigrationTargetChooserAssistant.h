@@ -6,9 +6,9 @@
 
 #import <IDEKit/IDEAssistant.h>
 
-#import "IDEFilterControlBarTarget.h"
-#import "NSOutlineViewDataSource.h"
-#import "NSOutlineViewDelegate.h"
+#import <IDEKit/IDEFilterControlBarTarget-Protocol.h>
+#import <IDEKit/NSOutlineViewDataSource-Protocol.h>
+#import <IDEKit/NSOutlineViewDelegate-Protocol.h>
 
 @class DVTBorderedView, DVTOutlineView, IDEFilterControlBar, IDEMigrationTargetChooserStatePersistence, NSArray, NSImageView, NSMutableIndexSet, NSString, NSTextField, NSTreeController;
 
@@ -16,6 +16,7 @@
 {
     NSArray *_targetItems;
     NSString *_searchString;
+    NSString *_assistantTitle;
     NSMutableIndexSet *_expandedRowIndexes;
     NSArray *_selectedTargetChooserItems;
     IDEMigrationTargetChooserStatePersistence *_statePersistence;
@@ -31,6 +32,7 @@
 + (BOOL)automaticallyNotifiesObserversOfSearchString;
 + (id)keyPathsForValuesAffectingArrangedTargetItems;
 + (id)keyPathsForValuesAffectingCanFinish;
+- (id)assistantTitle;
 @property(copy, nonatomic) NSString *searchString; // @synthesize searchString=_searchString;
 @property(copy) NSArray *targetItems; // @synthesize targetItems=_targetItems;
 - (void).cxx_destruct;

@@ -7,6 +7,7 @@
 #import <IDEKit/IDEBatchFindable.h>
 
 @class IDEEditorDocument;
+@protocol DVTTextFindable;
 
 @interface IDEBatchDocumentFindable : IDEBatchFindable
 {

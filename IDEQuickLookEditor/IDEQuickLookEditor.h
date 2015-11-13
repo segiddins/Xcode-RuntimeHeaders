@@ -4,11 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDEEditor.h"
+#import <IDEKit/IDEEditor.h>
 
-#import "IDEComparisonEditorHostContext.h"
-#import "NSUserInterfaceValidations.h"
-#import "QLPreviewViewDelegate.h"
+#import <IDEQuickLookEditor/IDEComparisonEditorHostContext-Protocol.h>
+#import <IDEQuickLookEditor/NSUserInterfaceValidations-Protocol.h>
+#import <IDEQuickLookEditor/QLPreviewViewDelegate-Protocol.h>
 
 @class IDEViewController, NSString, QLPreviewView;
 

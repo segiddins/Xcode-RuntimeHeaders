@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDEDistributionMethodAppStore.h"
+#import <IDEFoundation/IDEDistributionMethodAppStore.h>
 
 @interface IDEDistributionMethodiOSAppStore : IDEDistributionMethodAppStore
 {
@@ -12,10 +12,13 @@
 
 - (id)packagingStepIdentifier;
 - (id)requiredProfileEntitlements;
+- (id)provisioningProfilePlatform;
 - (BOOL)wantsProvisioningProfiles;
 - (id)installerCertificateKind;
 - (id)certificateKind;
 - (id)shortTitle;
+- (id)supportedPlatform;
+- (id)appStoreName;
 - (_Bool)supportsDistributionOfArchive:(id)arg1;
 
 @end

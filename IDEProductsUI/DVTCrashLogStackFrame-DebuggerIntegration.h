@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "DVTCrashLogStackFrame.h"
+#import <DVTAnalytics/DVTCrashLogStackFrame.h>
 
 @interface DVTCrashLogStackFrame (DebuggerIntegration)
 - (id)ideStackFrameWithThread:(id)arg1 usingContext:(id)arg2;

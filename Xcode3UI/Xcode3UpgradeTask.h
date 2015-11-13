@@ -4,11 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDEUpgradeTask.h"
+#import <IDEFoundation/IDEUpgradeTask.h>
 
-#import "IDEKeyDrivenNavigableItemRepresentedObject.h"
+#import <Xcode3UI/IDEKeyDrivenNavigableItemRepresentedObject-Protocol.h>
 
-@class DVTDocumentLocation, DVTFileDataType, IDEFileReference, IDEUpgradeContext<Xcode3UpgradeContext>, NSImage, NSString;
+@class DVTDocumentLocation, DVTFileDataType, IDEFileReference, IDEUpgradeContext, NSImage, NSString;
+@protocol Xcode3UpgradeContext;
 
 @interface Xcode3UpgradeTask : IDEUpgradeTask <IDEKeyDrivenNavigableItemRepresentedObject>
 {

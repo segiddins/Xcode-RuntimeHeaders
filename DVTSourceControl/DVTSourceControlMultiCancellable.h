@@ -4,20 +4,25 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSBlockOperation.h"
+#import <Foundation/NSBlockOperation.h>
 
-#import "DVTSourceControlCancellable.h"
+#import <DVTSourceControl/DVTSourceControlCancellable-Protocol.h>
 
 @class NSString;
+@protocol DVTSourceControlCancellable;
 
 @interface DVTSourceControlMultiCancellable : NSBlockOperation <DVTSourceControlCancellable>
 {
-    id <DVTSourceControlCancellable> _currentCancelable;
+    id <DVTSourceControlCancellable> _currentCancellable;
+    BOOL suppressAuthenticationFailure;
+    id context;
 }
 
-@property(retain) id <DVTSourceControlCancellable> currentCancelable; // @synthesize currentCancelable=_currentCancelable;
+@property __weak id context; // @synthesize context;
+@property BOOL suppressAuthenticationFailure; // @synthesize suppressAuthenticationFailure;
 - (void).cxx_destruct;
 - (void)cancel;
+@property(retain) id <DVTSourceControlCancellable> currentCancellable;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -4,14 +4,15 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
 @class IBNinePartImage;
+@protocol IBGlassCanvasFrameBackgroundDelegate;
 
 @interface IBGlassCanvasFrameBackground : NSObject
 {
     struct {
-        char showSelectionRing;
+        char frameIsSelected;
         char hasKeyLook;
         CDStruct_c519178c insetToGlass;
         CDStruct_c519178c glassToContentInset;
@@ -30,7 +31,7 @@
 @property(nonatomic) unsigned long long contentBorderStyle;
 @property(nonatomic) double glassCornerRadius;
 @property(nonatomic) BOOL hasKeyLook;
-@property(nonatomic) BOOL showSelectionRing;
+@property(nonatomic) BOOL frameIsSelected;
 
 @end
 

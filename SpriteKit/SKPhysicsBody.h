@@ -4,10 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "NSCoding.h"
-#import "NSCopying.h"
+#import <SpriteKit/NSCoding-Protocol.h>
+#import <SpriteKit/NSCopying-Protocol.h>
 
 @class NSArray, SKNode;
 
@@ -38,6 +38,7 @@
 }
 
 + (id)bodyWithBodies:(id)arg1;
++ (id)bodyWithTexture:(id)arg1 alphaThreshold:(float)arg2 size:(struct CGSize)arg3 accuracy:(float)arg4;
 + (id)bodyWithTexture:(id)arg1 alphaThreshold:(float)arg2 size:(struct CGSize)arg3;
 + (id)bodyWithTexture:(id)arg1 size:(struct CGSize)arg2;
 + (id)bodyWithEdgeLoopFromRect:(struct CGRect)arg1;
@@ -73,7 +74,6 @@
 @property(nonatomic) BOOL allowsRotation; // @synthesize allowsRotation=_allowsRotation;
 @property(nonatomic) BOOL usesPreciseCollisionDetection; // @synthesize usesPreciseCollisionDetection=_usesPreciseCollisionDetection;
 @property(nonatomic, getter=isDynamic) BOOL dynamic; // @synthesize dynamic=_dynamic;
-- (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)allContactedBodies;
 - (void)applyAngularImpulse:(double)arg1;

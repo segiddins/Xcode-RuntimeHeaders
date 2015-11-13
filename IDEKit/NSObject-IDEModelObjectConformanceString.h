@@ -4,11 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
 @class NSString;
 
 @interface NSObject (IDEModelObjectConformanceString)
-@property(readonly) NSString *navigableItem_conformanceString;
+@property(readonly, nonatomic) NSString *navigableItem_conformanceString;
 @end
 

@@ -6,8 +6,8 @@
 
 #import <DVTKit/DVTLibraryDetailController.h>
 
-#import "DVTSourceTextViewDelegate.h"
-#import "DVTTextStorageDelegate.h"
+#import <DVTKit/DVTSourceTextViewDelegate-Protocol.h>
+#import <DVTKit/DVTTextStorageDelegate-Protocol.h>
 
 @class DVTSourceTextView, DVTTextStorage, NSDictionary, NSString;
 

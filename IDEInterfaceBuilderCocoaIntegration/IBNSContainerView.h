@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSView.h"
+#import <AppKit/NSView.h>
 
-#import "IBDocumentArchiving.h"
+#import <IDEInterfaceBuilderCocoaIntegration/IBDocumentArchiving-Protocol.h>
 
 @class NSString;
 
@@ -15,7 +15,7 @@
     BOOL _encodeAsRuntimeInstance;
 }
 
-+ (BOOL)ibShouldBeIncludedInLibraryForTargetRuntime:(id)arg1 andDocumentClass:(Class)arg2;
++ (int)ibLibraryInclusionStatusForTargetRuntime:(id)arg1 andDocumentClass:(Class)arg2 assetIdentifier:(id)arg3;
 @property BOOL encodeAsRuntimeInstance; // @synthesize encodeAsRuntimeInstance=_encodeAsRuntimeInstance;
 - (void)drawRect:(struct CGRect)arg1;
 - (Class)classForDocumentArchiver:(id)arg1;
@@ -32,7 +32,6 @@
 - (id)ibDefaultSegueTrigger;
 - (BOOL)ibCanAcceptContentsOfPasteboard:(id)arg1 inDocument:(id)arg2 targetChildRelation:(id *)arg3;
 - (id)ibSupportsMultipleSeguesFromTrigger;
-- (BOOL)ibSizesToFillContainerViews;
 - (id)ibQualifyingInfoForDefaultLabel;
 - (void)ibPrepareCocoaDocumentForCompiling:(id)arg1 withContext:(id)arg2;
 - (id)ibTypeNameForDefaultLabel;

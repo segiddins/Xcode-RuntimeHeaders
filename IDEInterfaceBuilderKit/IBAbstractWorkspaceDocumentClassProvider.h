@@ -6,7 +6,7 @@
 
 #import <IDEInterfaceBuilderKit/IBAbstractClassProvider.h>
 
-#import "DVTInvalidation.h"
+#import <IDEInterfaceBuilderKit/DVTInvalidation-Protocol.h>
 
 @class DVTObservingToken, DVTStackBacktrace, IDEWorkspace, IDEWorkspaceDocument, NSString, NSTimer;
 

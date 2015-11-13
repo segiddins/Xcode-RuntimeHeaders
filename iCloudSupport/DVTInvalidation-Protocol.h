@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <iCloudSupport/NSObject-Protocol.h>
 
 @class DVTStackBacktrace;
 
@@ -12,6 +12,9 @@
 - (void)primitiveInvalidate;
 
 @optional
++ (BOOL)supportsInvalidationPrevention;
++ (unsigned long long)assertionBehaviorForKeyValueObservationsAtEndOfEvent;
++ (unsigned long long)assertionBehaviorAfterEndOfEventForSelector:(SEL)arg1;
 @property(retain) DVTStackBacktrace *creationBacktrace;
 @property(readonly) DVTStackBacktrace *invalidationBacktrace;
 @property(readonly, nonatomic, getter=isValid) BOOL valid;

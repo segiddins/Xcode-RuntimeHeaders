@@ -4,10 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "DVTLayerHostingView.h"
+#import <DVTKit/DVTLayerHostingView.h>
 
-#import "DVTInvalidation.h"
-#import "IDEActivityPopUpContentLayerControllerDelegate.h"
+#import <IDEKit/DVTInvalidation-Protocol.h>
+#import <IDEKit/IDEActivityPopUpContentLayerControllerDelegate-Protocol.h>
 
 @class DVTDelayedInvocation, DVTStackBacktrace, IDEActivityPopUpContentLayerController, IDEActivityPopUpWindowController, NSString;
 

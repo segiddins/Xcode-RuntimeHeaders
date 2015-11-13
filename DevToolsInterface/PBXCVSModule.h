@@ -6,11 +6,11 @@
 
 #import <DevToolsInterface/PBXProjectModule.h>
 
-#import "NSOutlineViewDataSource.h"
-#import "NSOutlineViewDelegate.h"
-#import "NSSplitViewDelegate.h"
-#import "XCFosterParentHostProtocol.h"
-#import "XCSelectionSource.h"
+#import <DevToolsInterface/NSOutlineViewDataSource-Protocol.h>
+#import <DevToolsInterface/NSOutlineViewDelegate-Protocol.h>
+#import <DevToolsInterface/NSSplitViewDelegate-Protocol.h>
+#import <DevToolsInterface/XCFosterParentHostProtocol-Protocol.h>
+#import <DevToolsInterface/XCSelectionSource-Protocol.h>
 
 @class NSArray, NSButton, NSColor, NSMenu, NSPopUpButton, NSScrollView, NSSplitView, NSString, NSTreeController, PBXControlScrollView, PBXExtendedOutlineView, SCMSandboxOwner, XCSCMDataSource, XCSCMSmartGroup;
 

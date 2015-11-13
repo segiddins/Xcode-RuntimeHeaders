@@ -4,14 +4,16 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <DVTKit/NSObject-Protocol.h>
 
 @class NSArray, NSDictionary, NSImage, NSPasteboard, NSURL, NSView, NSWindow;
 
 @protocol NSDraggingInfo <NSObject>
+@property(readonly) long long springLoadingHighlight;
 @property long long numberOfValidItemsForDrop;
 @property BOOL animatesToDestination;
 @property long long draggingFormation;
+- (void)resetSpringLoading;
 - (void)enumerateDraggingItemsWithOptions:(unsigned long long)arg1 forView:(NSView *)arg2 classes:(NSArray *)arg3 searchOptions:(NSDictionary *)arg4 usingBlock:(void (^)(NSDraggingItem *, long long, char *))arg5;
 - (NSArray *)namesOfPromisedFilesDroppedAtDestination:(NSURL *)arg1;
 - (void)slideDraggedImageTo:(struct CGPoint)arg1;

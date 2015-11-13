@@ -6,7 +6,7 @@
 
 #import <DevToolsInterface/PBXLSExecutableLauncher.h>
 
-#import "PBXTSTaskDelegate.h"
+#import <DevToolsInterface/PBXTSTaskDelegate-Protocol.h>
 
 @class NSArray, NSString, PBXTSPTYDeviceByteStream, PBXTSTask;
 

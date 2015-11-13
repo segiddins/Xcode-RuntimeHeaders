@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSViewController.h"
+#import <AppKit/NSViewController.h>
 
-#import "IDEVariablesViewQuickLookProvider.h"
+#import <DebuggerUI/IDEVariablesViewQuickLookProvider-Protocol.h>
 
 @class DBGDataValue, DBGNSColorProviderCGColorRefExpression, DVTColorSwatchWithComponentsView, DVTObservingToken, NSString, NSURL, NSView;
 

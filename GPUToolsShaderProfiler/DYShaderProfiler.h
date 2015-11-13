@@ -4,9 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
 @class DYShaderAnalyzer;
+@protocol DYShaderProfilerDelegate;
 
 @interface DYShaderProfiler : NSObject
 {
@@ -24,12 +25,14 @@
 + (BOOL)isRenderBeginWithEvents:(void *)arg1 type:(unsigned int)arg2;
 + (BOOL)isRenderEndWithEvents:(void *)arg1 type:(unsigned int)arg2;
 + (id)newShaderProfilerWithDelegate:(id)arg1;
++ (void)_initLLDB;
 @property(readonly, nonatomic) __weak id <DYShaderProfilerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)calculateUtilizations:(id)arg1 result:(id)arg2;
 - (void)calculateFrameTime:(id)arg1 result:(id)arg2;
 - (BOOL)isDeviceSupported;
 - (BOOL)_isAlwaysEnabled;
+- (id)profileFrame;
 - (id)profileShader:(id)arg1;
 - (void)initializeShaderAnalyzer;
 - (void)dealloc;

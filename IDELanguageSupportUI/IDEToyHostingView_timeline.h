@@ -4,10 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "DVTStackView_ML.h"
+#import <DVTKit/DVTStackView_ML.h>
 
-#import "IDEToyHostingView.h"
-#import "IDEToyViewControllerDelegate.h"
+#import <IDELanguageSupportUI/IDEToyHostingView-Protocol.h>
+#import <IDELanguageSupportUI/IDEToyViewControllerDelegate-Protocol.h>
 
 @class NSColor, NSString, NSTrackingArea;
 
@@ -18,6 +18,7 @@
     BOOL _toyIsHighlighted;
     CDUnknownBlockType _mouseTrackingHandler;
     CDUnknownBlockType _mouseDownHandler;
+    CDUnknownBlockType _rightMouseDownHandler;
     NSColor *_backgroundColor;
     NSColor *_selectedBorderColor;
     NSColor *_customLeftBorderColor;
@@ -28,6 +29,7 @@
 @property(retain) NSColor *customLeftBorderColor; // @synthesize customLeftBorderColor=_customLeftBorderColor;
 @property(retain, nonatomic) NSColor *selectedBorderColor; // @synthesize selectedBorderColor=_selectedBorderColor;
 @property(retain, nonatomic) NSColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
+@property(copy) CDUnknownBlockType rightMouseDownHandler; // @synthesize rightMouseDownHandler=_rightMouseDownHandler;
 @property(copy) CDUnknownBlockType mouseDownHandler; // @synthesize mouseDownHandler=_mouseDownHandler;
 @property(copy) CDUnknownBlockType mouseTrackingHandler; // @synthesize mouseTrackingHandler=_mouseTrackingHandler;
 @property(nonatomic) BOOL toyIsHighlighted; // @synthesize toyIsHighlighted=_toyIsHighlighted;
@@ -35,6 +37,7 @@
 - (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)updateTrackingAreas;
+- (void)rightMouseDown:(id)arg1;
 - (void)mouseExited:(id)arg1;
 - (void)mouseEntered:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

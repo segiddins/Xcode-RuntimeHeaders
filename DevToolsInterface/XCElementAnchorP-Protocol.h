@@ -4,9 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "XCElementP.h"
+#import <DevToolsInterface/XCElementP-Protocol.h>
 
-@class NSMutableArray, NSMutableDictionary, NSObject, NSObject<XCElementAnchorDelegateP>, NSObject<XCElementP>, NSString, XCEActivity, XCESignal;
+@class NSMutableArray, NSMutableDictionary, NSObject, NSString, XCEActivity, XCESignal;
+@protocol XCElementAnchorDelegateP, XCElementP;
 
 @protocol XCElementAnchorP <XCElementP>
 @property(nonatomic) BOOL contentGroupDisplayed;

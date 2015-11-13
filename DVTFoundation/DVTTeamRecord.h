@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSManagedObject.h"
+#import <CoreData/NSManagedObject.h>
 
 @class NSSet, NSString;
 
@@ -12,9 +12,10 @@
 {
 }
 
++ (id)keyPathsForValuesAffectingDisplayName;
 - (id)rolesForDeveloper:(id)arg1;
 - (void)pruneInstalledProvisioningProfiles;
-- (void)installProvisioningProfiles;
+@property(readonly, nonatomic) NSString *displayName;
 
 // Remaining properties
 @property(retain, nonatomic) NSSet *appIDs; // @dynamic appIDs;
@@ -25,6 +26,7 @@
 @property(retain, nonatomic) NSSet *devices; // @dynamic devices;
 @property(nonatomic) BOOL enhancedDevelopmentForMembers; // @dynamic enhancedDevelopmentForMembers;
 @property(retain, nonatomic) NSSet *iosDevelopers; // @dynamic iosDevelopers;
+@property(nonatomic) BOOL isFreeProvisioningTeam; // @dynamic isFreeProvisioningTeam;
 @property(retain, nonatomic) NSSet *macDevelopers; // @dynamic macDevelopers;
 @property(retain, nonatomic) NSString *name; // @dynamic name;
 @property(retain, nonatomic) NSSet *omcIdentifiers; // @dynamic omcIdentifiers;

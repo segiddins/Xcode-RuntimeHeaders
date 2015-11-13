@@ -4,15 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSView.h"
+#import <AppKit/NSView.h>
 
-#import "DVTInvalidation.h"
+#import <IDELanguageSupportUI/DVTInvalidation-Protocol.h>
 
-@class DVTStackBacktrace, IDESourceCodePlaygroundSectionAnnotationViewController, NSString, NSTrackingArea;
+@class DVTStackBacktrace, IDESourceCodePlaygroundSectionAnnotationViewController, NSString;
 
 @interface _IDESourceCodePlaygroundSectionAnnotationView : NSView <DVTInvalidation>
 {
-    NSTrackingArea *_trackingArea;
     IDESourceCodePlaygroundSectionAnnotationViewController *_viewController;
 }
 
@@ -22,10 +21,7 @@
 - (id)accessibilityAttributeValue:(id)arg1;
 - (BOOL)accessibilityIsIgnored;
 - (void)primitiveInvalidate;
-- (void)drawRect:(struct CGRect)arg1;
-- (void)updateTrackingAreas;
 - (void)resetCursorRects;
-- (void)dealloc;
 
 // Remaining properties
 @property(retain) DVTStackBacktrace *creationBacktrace;

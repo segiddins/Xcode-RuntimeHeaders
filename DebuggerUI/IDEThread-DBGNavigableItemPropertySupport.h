@@ -4,15 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDEThread.h"
+#import <IDEFoundation/IDEThread.h>
 
-#import "DBGNavigableItemPerformance.h"
+#import <DebuggerUI/DBGNavigableItemPerformance-Protocol.h>
 
 @class NSImage;
 
 @interface IDEThread (DBGNavigableItemPropertySupport) <DBGNavigableItemPerformance>
-- (double)heightOfRow;
-- (BOOL)isGroupHeader:(id)arg1;
 @property(readonly) NSImage *statusIcon;
 @end
 

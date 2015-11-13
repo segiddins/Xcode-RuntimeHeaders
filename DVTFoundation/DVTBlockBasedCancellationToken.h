@@ -4,19 +4,21 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "DVTCancellable.h"
+#import <DVTFoundation/DVTCancellable-Protocol.h>
 
-@class NSString;
+@class DVTStackBacktrace, NSString;
 
 @interface DVTBlockBasedCancellationToken : NSObject <DVTCancellable>
 {
-    unsigned char _cancelled;
     CDUnknownBlockType _block;
+    DVTStackBacktrace *_creationBacktrace;
+    unsigned char _cancelled;
 }
 
 - (void).cxx_destruct;
+- (void)dealloc;
 @property(readonly, getter=isCancelled) BOOL cancelled;
 - (void)cancel;
 - (id)initWithBlock:(CDUnknownBlockType)arg1;

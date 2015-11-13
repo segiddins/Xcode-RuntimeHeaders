@@ -6,7 +6,7 @@
 
 #import <DevToolsCore/PBXBuildContext.h>
 
-#import "XCBuildInfoManagers.h"
+#import <DevToolsCore/XCBuildInfoManagers-Protocol.h>
 
 @class NSArray, NSCountedSet, NSDictionary, NSMutableArray, NSMutableDictionary, NSMutableSet, NSRecursiveLock, NSString, NSThread, PBXBuildSettingsDictionary, PBXTarget, XCBuildStateStore, XCDependencyInfoCache, XCHierarchicalOutputLog, XCPlatformSpecification, XCSDKPackage, XCTargetDGSnapshot;
 

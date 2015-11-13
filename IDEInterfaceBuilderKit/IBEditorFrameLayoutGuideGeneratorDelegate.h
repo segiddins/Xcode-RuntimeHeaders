@@ -6,7 +6,7 @@
 
 #import <IDEInterfaceBuilderKit/IBIDELayoutGuideGeneratorDelegate.h>
 
-#import "DVTInvalidation.h"
+#import <IDEInterfaceBuilderKit/DVTInvalidation-Protocol.h>
 
 @class DVTStackBacktrace, IBViewEditorCanvasFrameController, NSString;
 
@@ -17,10 +17,7 @@
 
 + (void)initialize;
 - (void).cxx_destruct;
-- (BOOL)layoutGuideGenerator:(id)arg1 shouldConsiderSelectionEdge:(unsigned int)arg2 toSiblingEdge:(unsigned int)arg3 guideFromSelection:(id)arg4 toView:(id)arg5;
-- (BOOL)layoutGuideGenerator:(id)arg1 isEdge:(unsigned int)arg2 ofAncestor:(id)arg3 fixedDuringResizingOfSubviews:(id)arg4 fromKnob:(long long)arg5;
-- (BOOL)layoutGuideGenerator:(id)arg1 isEdge:(unsigned int)arg2 ofSubview:(id)arg3 fixedInPositionOnWindowDuringResizeFromKnob:(long long)arg4;
-- (BOOL)layoutGuideGenerator:(id)arg1 isDistanceFromSubviewEdge:(unsigned int)arg2 ofSubview:(id)arg3 toSameEdgeOfSuperviewChangingOneToOneWithKnob:(long long)arg4;
+- (id)systemLayoutGuides;
 - (id)userLayoutGuides;
 - (void)primitiveInvalidate;
 - (id)initWithViewEditorFrameController:(id)arg1;

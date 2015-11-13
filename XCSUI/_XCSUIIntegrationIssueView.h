@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSView.h"
+#import <AppKit/NSView.h>
 
 @class NSButton, NSImageView, NSTextField, XCSIntegration, XCSUIIntegrationIssue, _XCSUIIssueSelectionManager;
 
@@ -39,8 +39,14 @@
 - (void).cxx_destruct;
 - (void)resizeSubviewsWithOldSize:(struct CGSize)arg1;
 - (void)drawRect:(struct CGRect)arg1;
+- (void)rightMouseDown:(id)arg1;
 - (void)mouseDown:(id)arg1;
+- (void)copy:(id)arg1;
+- (BOOL)canBecomeKeyView;
+- (BOOL)becomeFirstResponder;
+- (BOOL)acceptsFirstResponder;
 - (BOOL)wantsLayer;
+- (id)issue;
 
 @end
 

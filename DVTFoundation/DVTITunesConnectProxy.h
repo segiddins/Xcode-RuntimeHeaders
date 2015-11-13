@@ -4,19 +4,30 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
 @interface DVTITunesConnectProxy : NSObject
 {
 }
 
++ (id)SDKIdentifierForSoftwareBundleDescription:(id)arg1;
++ (id)dSYMURLsForApplicationVersion:(id)arg1 usingSession:(id)arg2 error:(id *)arg3;
++ (id)iTunesPlatformForApplicationType:(int)arg1 usingSession:(id)arg2 error:(id *)arg3;
++ (id)iTunesPlatformForSDKIdentifier:(id)arg1 usingSession:(id)arg2 error:(id *)arg3;
++ (id)allowedPlatformsUsingSession:(id)arg1 error:(id *)arg2;
++ (id)storeConfigurationUsingSession:(id)arg1 forBundleID:(id)arg2 error:(id *)arg3;
++ (id)storeConfigurationUsingSession:(id)arg1 error:(id *)arg2;
 + (id)symbolURLsByUUIDForApplicationVersion:(id)arg1 usingSession:(id)arg2 error:(id *)arg3;
++ (id)applicationVersionWithBundleIdentifier:(id)arg1 shortVersion:(id)arg2 version:(id)arg3 platform:(id)arg4 usingSession:(id)arg5 logAspect:(id)arg6 error:(id *)arg7;
 + (id)applicationVersionsForApplicationDecription:(id)arg1 usingSession:(id)arg2 error:(id *)arg3;
++ (id)applicationDescriptionWithBundleIdentifier:(id)arg1 platformSDKIdentifier:(id)arg2 usingSession:(id)arg3 logAspect:(id)arg4 error:(id *)arg5;
 + (id)applicationDescriptionsUsingSession:(id)arg1 error:(id *)arg2;
-+ (id)applicationsWithContentHostedInAppPurchasesUsingSession:(id)arg1;
-+ (id)uploadApplicationArchiveAtPath:(id)arg1 application:(id)arg2 username:(id)arg3 password:(id)arg4 willBeginCallback:(CDUnknownBlockType)arg5 updatePercentageCallback:(CDUnknownBlockType)arg6 updateMessageCallback:(CDUnknownBlockType)arg7 shouldContinueCallback:(CDUnknownBlockType)arg8 didCompleteCallback:(CDUnknownBlockType)arg9;
-+ (id)uploadApplicationArchiveAtPath:(id)arg1 username:(id)arg2 password:(id)arg3 willBeginCallback:(CDUnknownBlockType)arg4 updatePercentageCallback:(CDUnknownBlockType)arg5 updateMessageCallback:(CDUnknownBlockType)arg6 shouldContinueCallback:(CDUnknownBlockType)arg7 didCompleteCallback:(CDUnknownBlockType)arg8;
-+ (id)validateApplicationArchiveAtPath:(id)arg1 usingSession:(id)arg2;
++ (id)applicationsWithContentHostedInAppPurchasesUsingSession:(id)arg1 error:(id *)arg2;
++ (id)uploadApplicationArchiveAtPath:(id)arg1 applicationType:(int)arg2 session:(id)arg3 willBeginCallback:(CDUnknownBlockType)arg4 updatePercentageCallback:(CDUnknownBlockType)arg5 updateMessageCallback:(CDUnknownBlockType)arg6 shouldContinueCallback:(CDUnknownBlockType)arg7 didCompleteCallback:(CDUnknownBlockType)arg8 error:(id *)arg9;
++ (id)validateApplicationArchiveAtPath:(id)arg1 applicationType:(int)arg2 usingSession:(id)arg3 error:(id *)arg4;
++ (id)authenticationContextForSession:(id)arg1 error:(id *)arg2;
++ (Class)ITunesAuthenticationContextClass;
++ (Class)ITunesSoftwareServiceClass;
 + (id)service;
 + (id)applicationLoaderPathOverride;
 

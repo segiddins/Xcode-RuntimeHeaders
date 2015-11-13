@@ -4,14 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDEComparisonEditorSubmode.h"
+#import <IDEKit/IDEComparisonEditorSubmode.h>
 
-#import "DVTComparisonSplitViewDelegate.h"
-#import "DVTDiffSessionDelegate.h"
-#import "IDEComparisonEditorDelegate.h"
-#import "IDEComparisonEditorSavableMergeState.h"
-#import "IDESourceEditorViewControllerHost.h"
-#import "NSSplitViewDelegate.h"
+#import <IDESourceEditor/DVTComparisonSplitViewDelegate-Protocol.h>
+#import <IDESourceEditor/DVTDiffSessionDelegate-Protocol.h>
+#import <IDESourceEditor/IDEComparisonEditorDelegate-Protocol.h>
+#import <IDESourceEditor/IDEComparisonEditorSavableMergeState-Protocol.h>
+#import <IDESourceEditor/IDESourceEditorViewControllerHost-Protocol.h>
+#import <IDESourceEditor/NSSplitViewDelegate-Protocol.h>
 
 @class DVTBorderedView, DVTComparisonScrollCoordinator, DVTComparisonSplitView, DVTDiffSession, DVTObservingToken, DVTSourceTextView, IDEEditor, IDESourceCodeDocument, IDESourceCodeVersionsLayoutView, IDESourceControlMergeData, NSDictionary, NSString;
 
@@ -89,8 +89,8 @@
 - (void)setCanSelectPrevious:(BOOL)arg1;
 - (BOOL)canSelectPrevious;
 - (void)setDifferenceMenu:(id)arg1;
-- (void)explainRevertSelectedDifferenceAlertDidEnd:(id)arg1 returnCode:(long long)arg2 contextInfo:(void *)arg3;
 - (void)revertSelectedDifference;
+- (BOOL)canRevertMenuItemDifference:(id)arg1;
 - (BOOL)canRevertSelectedDifference;
 - (void)copyDiff;
 - (BOOL)canCopyDiff;
@@ -122,7 +122,9 @@
 - (id)keyEditor;
 - (void)keyDown:(id)arg1;
 - (BOOL)validateMenuItem:(id)arg1;
+- (void)comparisonContextMenu_revertDiffDescriptor:(id)arg1;
 - (void)comparisonContextMenu_revertSelectedDiffDescriptor:(id)arg1;
+- (void)_comparisonContextMenu_revertDiffDescriptor:(id)arg1 selected:(BOOL)arg2;
 - (void)comparisonContextMenu_toggleIgnoreWhitespace:(id)arg1;
 - (void)comparisonContextMenu_copyDiff:(id)arg1;
 

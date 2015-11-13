@@ -4,16 +4,21 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSKeyedUnarchiver.h"
+#import <Foundation/NSKeyedUnarchiver.h>
 
-@class NSDictionary;
+@class NSDictionary, NSString, SCNAssetCatalog;
 
-__attribute__((visibility("hidden")))
 @interface SCNKeyedUnarchiver : NSKeyedUnarchiver
 {
     NSDictionary *_context;
+    SCNAssetCatalog *_assetCatalog;
+    NSString *lookUpKey;
+    id lookUpFoundInstance;
 }
 
+@property(retain, nonatomic) id lookUpFoundInstance; // @synthesize lookUpFoundInstance;
+@property(retain, nonatomic) NSString *lookUpKey; // @synthesize lookUpKey;
+@property(retain, nonatomic) SCNAssetCatalog *assetCatalog; // @synthesize assetCatalog=_assetCatalog;
 @property(retain, nonatomic) NSDictionary *context; // @synthesize context=_context;
 - (void)dealloc;
 

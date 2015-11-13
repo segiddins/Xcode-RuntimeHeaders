@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDEInspectorProperty.h"
+#import <IDEKit/IDEInspectorProperty.h>
 
-#import "IBImagePickerInspectorPopoverContentViewDelegate.h"
+#import <IDEInterfaceBuilderKit/IBImagePickerInspectorPopoverContentViewDelegate-Protocol.h>
 
 @class IBImagePickerInspectorPopoverContentView, IDEInspectorKeyPath, NSButton, NSPopover, NSString;
 
@@ -15,6 +15,7 @@
     IBImagePickerInspectorPopoverContentView *_popoverContentView;
     IDEInspectorKeyPath *_valueKeyPath;
     IDEInspectorKeyPath *_imagesKeyPath;
+    IDEInspectorKeyPath *_representedObjectsKeyPath;
     IDEInspectorKeyPath *_toolTipsKeyPath;
     NSPopover *_popover;
     NSButton *_popoverButton;

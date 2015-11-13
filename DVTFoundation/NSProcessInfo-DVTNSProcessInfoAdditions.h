@@ -4,13 +4,19 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSProcessInfo.h"
+#import <Foundation/NSProcessInfo.h>
 
 @interface NSProcessInfo (DVTNSProcessInfoAdditions)
 - (id)dvt_activeSystemActivityTokensMatchingOptions:(unsigned long long)arg1;
 - (id)dvt_beginActivityWithOptions:(unsigned long long)arg1 reason:(id)arg2;
+- (void)dvt_setUseCommandLineMessageTracerReportingOverride:(BOOL)arg1;
+- (BOOL)dvt_shouldUseCommandLineMessageTracerReporting;
+- (void)dvt_setDisableSCMOverride:(BOOL)arg1;
+- (BOOL)dvt_shouldDisableSCM;
+- (void)dvt_setDisallowSavingOverride:(BOOL)arg1;
 - (BOOL)dvt_shouldDisallowSaving;
-- (void)dvt_setShouldDisallowSaving:(BOOL)arg1;
+- (BOOL)dvt_isNonGraphicalProcess;
+- (void)dvt_setIsNonGraphicalProcess:(BOOL)arg1;
 - (void)dvt_disableSuddenTerminationForReason:(id)arg1;
 - (void)dvt_enableSuddenTerminationForReason:(id)arg1;
 - (void)dvt_enableAutomaticTerminationForReason:(id)arg1;

@@ -4,10 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "GPUResourceEditor.h"
+#import <GPURenderTargetEditor/GPUResourceEditor.h>
 
-#import "GPUDataTableViewDataProvider.h"
-#import "GPUDataTableViewDelegate.h"
+#import <GPUDebuggerMTLSupport/GPUDataTableViewDataProvider-Protocol.h>
+#import <GPUDebuggerMTLSupport/GPUDataTableViewDelegate-Protocol.h>
 
 @class DVTBorderedView, DYRenderingAttributes, GPUDataTableView, GPUMTLBufferData, NSLayoutConstraint, NSPopUpButton, NSString;
 
@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
     DYRenderingAttributes *_renderingAttributes;
     double _minColumnWidth;
     BOOL _isPopulated;
+    BOOL _isIndexBuffer;
     BOOL _showOffset;
     GPUDataTableView *_vboView;
     NSPopUpButton *_displayFormatPopup;

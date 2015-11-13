@@ -4,7 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <IDESceneKitEditor/NSObject-Protocol.h>
+
+@protocol SKEDocumentProtocol;
 
 @protocol SKEDocumentMemberMutationDelegate <NSObject>
 - (void)document:(id <SKEDocumentProtocol>)arg1 didReplaceChildMember:(id)arg2 ofMember:(id)arg3 byChildMember:(id)arg4;

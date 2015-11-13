@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "DYShaderProfiler.h"
+#import <GPUToolsShaderProfiler/DYShaderProfiler.h>
 
 @interface DYMTLShaderProfiler : DYShaderProfiler
 {
@@ -15,7 +15,9 @@
 - (void)_preProcessUSCSampleData:(id)arg1 result:(id)arg2;
 - (id)_gatherStaticInformation;
 - (id)_constructPayload;
+- (BOOL)_isFragmentDrawCall:(unsigned long long)arg1;
 - (id)profileShader:(id)arg1;
+- (id)profileFrame;
 - (void)initializeShaderAnalyzer;
 
 @end

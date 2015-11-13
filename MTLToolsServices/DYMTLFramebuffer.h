@@ -6,7 +6,7 @@
 
 #import <MTLToolsServices/DYMTLResourceObject.h>
 
-#import "DYFrameBuffer.h"
+#import <MTLToolsServices/DYFrameBuffer-Protocol.h>
 
 @class NSDictionary, NSMutableDictionary, NSString;
 

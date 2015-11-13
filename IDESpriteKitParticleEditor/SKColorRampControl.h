@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSControl.h"
+#import <AppKit/NSControl.h>
 
 @class NSMutableArray, SKColorRampStop, SKColorWell;
 
@@ -18,8 +18,6 @@
     struct CGColor *_bgColor;
     BOOL _didDragSelected;
     BOOL _shouldDeleteSelected;
-    id _target;
-    SEL _action;
     SKColorRampStop *_selectedColorStop;
 }
 
@@ -35,17 +33,14 @@
 - (void)_sortColorStops;
 - (id)colorStops;
 - (void)mouseUp:(id)arg1;
+- (void)activateColorPanel;
 - (void)mouseDown:(id)arg1;
 - (void)mouseDragged:(id)arg1;
 - (void)changeColor:(id)arg1;
 - (double)_rampLocationOfPoint:(struct CGPoint)arg1;
 - (struct CGRect)_colorRampRect;
+- (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1;
-- (void)ensurePanelExclusive;
-- (SEL)action;
-- (id)target;
-- (void)setAction:(SEL)arg1;
-- (void)setTarget:(id)arg1;
 - (void)deactivate;
 
 @end

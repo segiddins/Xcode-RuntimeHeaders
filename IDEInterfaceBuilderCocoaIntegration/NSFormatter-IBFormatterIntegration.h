@@ -4,9 +4,16 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSFormatter.h"
+#import <Foundation/NSFormatter.h>
 
 @interface NSFormatter (IBFormatterIntegration)
++ (id)keyPathsForValuesAffectingIbExternalSampleValueFormatted;
+- (id)ibDocumentationPropertyInfosForKeyPath:(id)arg1;
+- (id)ibExternalSampleValueTooltipRelatedMethods;
+- (id)ibExternalSampleValueMetadataKey;
+- (id)ibExternalSampleValueFormatted;
+- (id)ibExternalSampleValueDefault;
+@property(retain, nonatomic) id ibExternalSampleValue;
 - (id)ibDefaultDataValueForTableView:(id)arg1;
 - (id)ibPasteboardTypes;
 @end

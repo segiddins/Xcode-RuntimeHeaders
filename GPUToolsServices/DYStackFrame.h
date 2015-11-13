@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "NSCopying.h"
+#import <GPUToolsServices/NSCopying-Protocol.h>
 
 @class DYSymbolicator, NSString;
 
@@ -27,7 +27,6 @@
 @property(nonatomic) unsigned long long index; // @synthesize index=_index;
 @property(nonatomic) unsigned long long address; // @synthesize address=_address;
 @property(retain, nonatomic) DYSymbolicator *symbolicator; // @synthesize symbolicator=_symbolicator;
-- (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)shortFormat;
 - (id)fullFormat;

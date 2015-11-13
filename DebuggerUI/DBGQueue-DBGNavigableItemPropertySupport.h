@@ -4,15 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "DBGQueue.h"
+#import <DebuggerFoundation/DBGQueue.h>
 
-#import "IDEKeyDrivenNavigableItemRepresentedObject.h"
+#import <DebuggerUI/IDEKeyDrivenNavigableItemRepresentedObject-Protocol.h>
 
 @class DVTDocumentLocation, DVTFileDataType, IDEFileReference, NSImage, NSString;
 
 @interface DBGQueue (DBGNavigableItemPropertySupport) <IDEKeyDrivenNavigableItemRepresentedObject>
-- (double)heightOfRow;
-- (BOOL)isGroupHeader:(id)arg1;
 @property(readonly) NSString *navigableItem_name;
 
 // Remaining properties

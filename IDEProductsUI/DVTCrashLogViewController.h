@@ -4,12 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "DVTViewController.h"
+#import <DVTKit/DVTViewController.h>
 
-#import "DVTFindBarHostable.h"
-#import "DVTScopeBarHost.h"
-#import "NSOutlineViewDataSource.h"
-#import "NSOutlineViewDelegate.h"
+#import "DVTFindBarHostable-Protocol.h"
+#import "DVTScopeBarHost-Protocol.h"
+#import "NSOutlineViewDataSource-Protocol.h"
+#import "NSOutlineViewDelegate-Protocol.h"
 
 @class DVTBasicFindBar, DVTCrashLog, DVTCrashLogOutlineView, DVTCrashPoint, DVTDelayedInvocation, DVTNotificationToken, DVTScopeBarController, DVTScopeBarsManager, DVTUserDefaultsLeastRecentlyUsedCache, NSArray, NSDictionary, NSScrollView, NSString, NSValue, NSView;
 
@@ -90,6 +90,7 @@
 - (BOOL)stackFrameHasSymbols:(id)arg1;
 - (BOOL)stackFrameIsCrashedFrame:(id)arg1;
 - (BOOL)isCrashingThread:(id)arg1;
+- (id)_presumedBundleIdentifier;
 - (id)_presumedAppName;
 - (unsigned long long)compressionPadding;
 - (void)scrollViewBoundsDidChange:(id)arg1;

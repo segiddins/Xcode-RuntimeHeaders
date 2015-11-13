@@ -6,7 +6,7 @@
 
 #import <IDEModelEditor/IDEDMEditorSourceListController.h>
 
-#import "IDEDataModelEditorController.h"
+#import <IDEModelEditor/IDEDataModelEditorController-Protocol.h>
 
 @class DVTNotificationToken, DVTObservingToken, IDEDMSourceListSection, IDENavigatorStatusCell, NSString;
 

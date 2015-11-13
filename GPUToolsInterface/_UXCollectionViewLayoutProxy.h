@@ -4,9 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSProxy.h"
+#import <Foundation/NSProxy.h>
 
 @class NSMapTable, UXCollectionViewLayout;
+@protocol UXCollectionViewLayoutProxyDelegate;
 
 __attribute__((visibility("hidden")))
 @interface _UXCollectionViewLayoutProxy : NSProxy

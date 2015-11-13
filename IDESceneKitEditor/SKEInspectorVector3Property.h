@@ -4,15 +4,18 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDEInspectorProperty.h"
+#import <IDEKit/IDEInspectorProperty.h>
 
-@class DVTStepperTextField, IDEInspectorKeyPath, NSString;
+@class DVTStepperTextField, IDEInspectorKeyPath, NSString, NSTextField;
 
 @interface SKEInspectorVector3Property : IDEInspectorProperty
 {
-    DVTStepperTextField *_xLabel;
-    DVTStepperTextField *_yLabel;
-    DVTStepperTextField *_zLabel;
+    DVTStepperTextField *_xScrubber;
+    DVTStepperTextField *_yScrubber;
+    DVTStepperTextField *_zScrubber;
+    NSTextField *_xLabel;
+    NSTextField *_yLabel;
+    NSTextField *_zLabel;
     IDEInspectorKeyPath *_valueKeyPath;
     NSString *_nilPlaceholder;
 }

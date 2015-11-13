@@ -4,12 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDEViewController.h"
+#import <IDEKit/IDEViewController.h>
 
-#import "IDECapsuleListViewDataSource.h"
-#import "Xcode3SourceListItemEditor.h"
+#import <Xcode3UI/IDECapsuleListViewDataSource-Protocol.h>
+#import <Xcode3UI/Xcode3SourceListItemEditor-Protocol.h>
 
 @class DVTBorderedView, DVTGradientImageButton, DVTPerformanceMetric, DVTSourceExpression, IDECapsuleListView, NSArray, NSButton, NSMutableArray, NSPredicate, NSSearchField, NSString, Xcode3ProjectEditor;
+@protocol IDEBlueprint;
 
 @interface Xcode3BuildRulesEditor : IDEViewController <Xcode3SourceListItemEditor, IDECapsuleListViewDataSource>
 {

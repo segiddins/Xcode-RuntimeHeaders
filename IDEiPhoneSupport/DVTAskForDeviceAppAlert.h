@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSAlert.h"
+#import <AppKit/NSAlert.h>
 
 @class DVTiOSDevice, NSPopUpButton, NSString, NSView;
 

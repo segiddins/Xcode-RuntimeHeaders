@@ -6,7 +6,7 @@
 
 #import <IDEKit/IDEAlertViewController.h>
 
-#import "NSOpenSavePanelDelegate.h"
+#import <IDEKit/NSOpenSavePanelDelegate-Protocol.h>
 
 @class NSMutableArray, NSPopUpButton, NSString;
 

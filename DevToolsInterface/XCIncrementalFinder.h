@@ -6,7 +6,8 @@
 
 #import <DevToolsInterface/PBXModule.h>
 
-@class DTRangeArray, NSArray, NSButton, NSDictionary, NSMenu, NSObjectController, NSPopUpButton, NSSearchField, NSSegmentedControl, NSString, NSTextField, NSTextView, NSView, PBXModule<PBXIncrementalFindable>;
+@class DTRangeArray, NSArray, NSButton, NSDictionary, NSMenu, NSObjectController, NSPopUpButton, NSSearchField, NSSegmentedControl, NSString, NSTextField, NSTextView, NSView;
+@protocol PBXIncrementalFindable;
 
 @interface XCIncrementalFinder : PBXModule
 {

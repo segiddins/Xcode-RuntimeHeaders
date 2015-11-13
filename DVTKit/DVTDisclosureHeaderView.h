@@ -6,9 +6,10 @@
 
 #import <DVTKit/DVTBorderedView.h>
 
-#import "DVTIssueDisplayingView.h"
+#import <DVTKit/DVTIssueDisplayingView-Protocol.h>
 
 @class NSButton, NSDictionary, NSImage, NSImageView, NSMenu, NSPopUpButton, NSString, NSTextField;
+@protocol DVTDisclosureHeaderViewDelegate;
 
 @interface DVTDisclosureHeaderView : DVTBorderedView <DVTIssueDisplayingView>
 {

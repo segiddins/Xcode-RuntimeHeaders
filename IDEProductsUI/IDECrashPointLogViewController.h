@@ -4,11 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDEViewController.h"
+#import <IDEKit/IDEViewController.h>
 
-#import "DVTReplacementViewDelegate.h"
-#import "NSOutlineViewDataSource.h"
-#import "NSOutlineViewDelegate.h"
+#import "DVTReplacementViewDelegate-Protocol.h"
+#import "NSOutlineViewDataSource-Protocol.h"
+#import "NSOutlineViewDelegate-Protocol.h"
 
 @class DVTCrashLogRecord, DVTCrashLogViewController, DVTCrashPoint, DVTReplacementView, IDECrashPointDetailViewController, NSOutlineView, NSString;
 

@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSFont.h"
+#import <AppKit/NSFont.h>
 
-#import "IBDocumentArchiving.h"
+#import <IDEInterfaceBuilderKit/IBDocumentArchiving-Protocol.h>
 
 @class NSString;
 

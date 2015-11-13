@@ -7,6 +7,7 @@
 #import <IDEInterfaceBuilderKit/IBCanvasOverlay.h>
 
 @class NSMutableOrderedSet;
+@protocol IBDelegatedCanvasOverlayDelegate;
 
 @interface IBDelegatedCanvasOverlay : IBCanvasOverlay
 {

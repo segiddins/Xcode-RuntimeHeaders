@@ -6,16 +6,17 @@
 
 #import <IDEKit/IDEViewController.h>
 
-#import "IDEBindableDeclarativeInspectorController.h"
-#import "NSUserInterfaceValidations.h"
+#import <IDEKit/IDEBindableDeclarativeInspectorController-Protocol.h>
+#import <IDEKit/NSUserInterfaceValidations-Protocol.h>
 
-@class DVTDelayedInvocation, DVTMapTable, IDEInspectorCategoryController, IDEInspectorContentView, IDEUtilityArea, IDEUtilitySlice, NSArray, NSArrayController, NSBundle, NSDictionary, NSMutableDictionary, NSString, NSView<DVTIssueDisplayingView>;
+@class DVTDelayedInvocation, IDEInspectorCategoryController, IDEInspectorContentView, IDEUtilityArea, IDEUtilitySlice, NSArray, NSArrayController, NSBundle, NSDictionary, NSMapTable, NSMutableDictionary, NSString, NSView;
+@protocol DVTIssueDisplayingView, IDEInspectorContentController;
 
 @interface IDEInspectorViewController : IDEViewController <NSUserInterfaceValidations, IDEBindableDeclarativeInspectorController>
 {
     NSArrayController *_inspectedDocumentsController;
     NSArrayController *_inspectedObjectsController;
-    DVTMapTable *_documentObservations;
+    NSMapTable *_documentObservations;
     NSArray *_content;
     IDEUtilityArea *_utilityArea;
     IDEUtilitySlice *_utilitySlice;

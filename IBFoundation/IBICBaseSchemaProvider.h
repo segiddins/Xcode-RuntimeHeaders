@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "IBICSchemaProvider.h"
+#import <IBFoundation/IBICSchemaProvider-Protocol.h>
 
 @class IBICFileType, IBICHeightClass, IBICIdiom, IBICPlatform, IBICScale, IBICSlotComponentClassCombinationAxis, IBICWidthClass, NSString;
 
@@ -16,6 +16,7 @@
     IBICIdiom *_universalIdiom;
     IBICScale *_oneXScale;
     IBICScale *_twoXScale;
+    IBICScale *_threeXScale;
     IBICFileType *_pngFileType;
     IBICFileType *_jpegFileType;
     IBICFileType *_pdfFileType;
@@ -32,6 +33,7 @@
 }
 
 - (void).cxx_destruct;
+- (void)registerBaseDataSetSlots:(id)arg1;
 - (void)registerBaseImageSetSlots:(id)arg1;
 - (void)registerBaseSlotComponents:(id)arg1;
 - (void)registerSchemaComponents:(id)arg1;

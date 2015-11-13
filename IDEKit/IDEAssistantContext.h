@@ -4,11 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "NSCopying.h"
+#import <IDEKit/NSCopying-Protocol.h>
 
-@class IDEAssistantWindowController, IDEWorkspace, IDEWorkspaceTabController, NSWindow;
+@class IDEAssistantWindowController, IDEWorkspace, IDEWorkspaceTabController, NSString, NSWindow;
 
 @interface IDEAssistantContext : NSObject <NSCopying>
 {
@@ -21,6 +21,8 @@
 @property(retain) IDEWorkspaceTabController *workspaceTabController; // @synthesize workspaceTabController=_workspaceTabController;
 @property(retain, nonatomic) NSWindow *workspaceWindow; // @synthesize workspaceWindow=_workspaceWindow;
 - (void).cxx_destruct;
+@property(readonly) struct CGSize windowSize;
+@property(readonly) NSString *windowTitle;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly) IDEWorkspace *workspace;
 

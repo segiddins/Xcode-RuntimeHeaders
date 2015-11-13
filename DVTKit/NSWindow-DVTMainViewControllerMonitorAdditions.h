@@ -4,13 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSWindow.h"
+#import <AppKit/NSWindow.h>
 
 @class DVTViewController;
 
 @interface NSWindow (DVTMainViewControllerMonitorAdditions)
 + (BOOL)automaticallyNotifiesObserversOfDvt_mainViewControllerMonitor;
 + (BOOL)automaticallyNotifiesObserversOfDvt_mainViewController;
++ (unsigned long long)assertionBehaviorForKeyValueObservationsAtEndOfEvent;
 - (void)setDvt_mainViewControllerMonitor:(id)arg1;
 - (id)dvt_mainViewControllerMonitor;
 - (void)dvt_viewControllerWillUninstall:(id)arg1;

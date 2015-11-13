@@ -6,8 +6,8 @@
 
 #import <DevToolsInterface/PBXProjectModule.h>
 
-#import "NSOutlineViewDataSource.h"
-#import "NSOutlineViewDelegate.h"
+#import <DevToolsInterface/NSOutlineViewDataSource-Protocol.h>
+#import <DevToolsInterface/NSOutlineViewDelegate-Protocol.h>
 
 @class NSArray, NSMenu, NSNumber, NSString, NSTableColumn, PBXExtendedOutlineView, PBXOutlineDataSourceSplitter;
 

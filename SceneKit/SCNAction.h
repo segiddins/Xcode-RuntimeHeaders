@@ -4,19 +4,17 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "NSCopying.h"
-#import "NSSecureCoding.h"
+#import <SceneKit/NSCopying-Protocol.h>
+#import <SceneKit/NSSecureCoding-Protocol.h>
 
 @interface SCNAction : NSObject <NSCopying, NSSecureCoding>
 {
-    id _reserved;
     struct SCNCAction *_caction;
 }
 
-+ (BOOL)supportsSecureCoding;
-+ (id)SCNJSExportProtocol;
++ (id)actionNamed:(id)arg1;
 + (id)customActionWithDuration:(double)arg1 actionBlock:(CDUnknownBlockType)arg2;
 + (id)javaScriptActionWithScript:(id)arg1 duration:(double)arg2;
 + (id)runAction:(id)arg1 onChildNodeWithName:(id)arg2;
@@ -26,6 +24,9 @@
 + (id)removeFromParentNode;
 + (id)waitForDuration:(double)arg1 withRange:(double)arg2;
 + (id)waitForDuration:(double)arg1;
++ (id)playAudioSource:(id)arg1 waitForCompletion:(BOOL)arg2;
++ (id)unhide;
++ (id)hide;
 + (id)fadeOpacityTo:(double)arg1 duration:(double)arg2;
 + (id)fadeOpacityBy:(double)arg1 duration:(double)arg2;
 + (id)fadeOutWithDuration:(double)arg1;
@@ -44,6 +45,9 @@
 + (id)moveTo:(struct SCNVector3)arg1 duration:(double)arg2;
 + (id)moveBy:(struct SCNVector3)arg1 duration:(double)arg2;
 + (id)moveByX:(double)arg1 y:(double)arg2 z:(double)arg3 duration:(double)arg4;
++ (BOOL)supportsSecureCoding;
++ (void)setEditingModeEnabled:(BOOL)arg1;
++ (BOOL)editingModeEnabled;
 - (void)dealloc;
 - (id)reversedAction;
 - (id)copyWithZone:(struct _NSZone *)arg1;
@@ -52,6 +56,8 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)init;
+- (id)parameters;
+- (BOOL)isRelative;
 - (BOOL)isCustom;
 @property(nonatomic) long long timingMode;
 - (void)setDurationRange:(double)arg1;

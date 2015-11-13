@@ -4,14 +4,15 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSWindowController.h"
+#import <AppKit/NSWindowController.h>
 
-#import "NSSharingServicePickerDelegate.h"
-#import "NSTableViewDataSource.h"
-#import "NSTableViewDelegate.h"
-#import "NSTextFieldDelegate.h"
+#import <IDEKit/NSSharingServicePickerDelegate-Protocol.h>
+#import <IDEKit/NSTableViewDataSource-Protocol.h>
+#import <IDEKit/NSTableViewDelegate-Protocol.h>
+#import <IDEKit/NSTextFieldDelegate-Protocol.h>
 
 @class DVTBorderedView, DVTGradientImageButton, DVTTableView, IDEControlGroup, IDEWorkspace, NSArray, NSArrayController, NSProgressIndicator, NSSearchField, NSString, NSTextField, NSWindow;
+@protocol DVTInvalidation;
 
 @interface IDESourceControlPatchChooserWindowController : NSWindowController <NSTableViewDataSource, NSTableViewDelegate, NSSharingServicePickerDelegate, NSTextFieldDelegate>
 {

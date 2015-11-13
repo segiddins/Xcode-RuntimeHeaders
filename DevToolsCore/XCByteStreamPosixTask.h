@@ -6,11 +6,12 @@
 
 #import <DevToolsCore/XCPosixTask.h>
 
-#import "PBXTSByteStreamConsuming.h"
-#import "PBXTSCharacterStreamConsuming.h"
-#import "PBXTSLineStreamConsuming.h"
+#import <DevToolsCore/PBXTSByteStreamConsuming-Protocol.h>
+#import <DevToolsCore/PBXTSCharacterStreamConsuming-Protocol.h>
+#import <DevToolsCore/PBXTSLineStreamConsuming-Protocol.h>
 
 @class NSLock, NSString, PBXTSByteStream, PBXTSStream;
+@protocol PBXTSStreamConsuming;
 
 @interface XCByteStreamPosixTask : XCPosixTask <PBXTSByteStreamConsuming, PBXTSCharacterStreamConsuming, PBXTSLineStreamConsuming>
 {

@@ -4,14 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "DVTCancellable.h"
-#import "DVTPromise.h"
+#import <DVTFoundation/DVTCancellable-Protocol.h>
 
-@class DVTDispatchLock, DVTStackBacktrace, NSError, NSObject<OS_dispatch_group>, NSString;
+@class DVTDispatchLock, DVTStackBacktrace, NSError, NSString;
+@protocol OS_dispatch_group;
 
-@interface DVTFuture : NSObject <DVTPromise, DVTCancellable>
+@interface DVTFuture : NSObject <DVTCancellable>
 {
     DVTDispatchLock *_lock;
     NSObject<OS_dispatch_group> *_cond_group;

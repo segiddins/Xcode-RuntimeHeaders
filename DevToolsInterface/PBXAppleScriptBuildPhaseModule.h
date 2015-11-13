@@ -6,8 +6,8 @@
 
 #import <DevToolsInterface/PBXFileBuildPhaseModule.h>
 
-#import "NSTextFieldDelegate.h"
-#import "NSTextViewDelegate.h"
+#import <DevToolsInterface/NSTextFieldDelegate-Protocol.h>
+#import <DevToolsInterface/NSTextViewDelegate-Protocol.h>
 
 @class NSPopUpButton, NSString, NSTextField;
 

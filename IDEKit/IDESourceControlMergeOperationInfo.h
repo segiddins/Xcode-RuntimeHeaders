@@ -6,7 +6,7 @@
 
 #import <IDEKit/IDESourceControlOperationInfo.h>
 
-#import "IDESourceControlBranchingOperationInfoProtocol.h"
+#import <IDEKit/IDESourceControlBranchingOperationInfoProtocol-Protocol.h>
 
 @class IDESourceControlBranch, NSMutableDictionary, NSString;
 

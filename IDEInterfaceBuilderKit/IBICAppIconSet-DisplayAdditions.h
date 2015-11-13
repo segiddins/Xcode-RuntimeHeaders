@@ -4,11 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IBICAppIconSet.h"
+#import <IBFoundation/IBICAppIconSet.h>
 
 @interface IBICAppIconSet (DisplayAdditions)
 + (id)keyPathsForValuesAffectingIbInspectedPreRendered;
+- (id)detachedSlottedAssetRepByAcceptingPasteboardObject:(id)arg1 forRepIdentifier:(id)arg2;
 - (void)setIbInspectedPreRendered:(BOOL)arg1;
 - (BOOL)ibInspectedPreRendered;
+- (id)includedAttributeUtilitySlicesForChild:(id)arg1;
+- (id)typeIcon;
 @end
 

@@ -4,11 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "DVTBasicDevice.h"
+#import <IDEiPhoneSupport/DVTBasicDevice-Protocol.h>
 
 @class NSArray, NSImage;
 
 @protocol DVTBasicDeviceUI <DVTBasicDevice>
+@property(readonly) int deviceWindowCategory;
 @property(readonly) BOOL showCompanionUI;
 @property(readonly) NSImage *image;
 @property(readonly) NSArray *deviceSummaryPropertyDictionaries;

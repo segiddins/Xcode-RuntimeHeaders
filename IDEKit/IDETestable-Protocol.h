@@ -4,23 +4,28 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "DVTInvalidation.h"
-#import "IDETestContainer.h"
-#import "NSObject.h"
+#import <IDEKit/DVTInvalidation-Protocol.h>
+#import <IDEKit/IDETestContainer-Protocol.h>
+#import <IDEKit/NSObject-Protocol.h>
 
-@class IDETest, IDETestRunner, IDEWorkspace, NSSet, NSString, NSURL;
+@class DVTDocumentLocation, IDEBuildOperation, IDEBuildParameters, IDEExecutionEnvironment, IDERunDestination, IDETest, IDETestRunner, IDEWorkspace, NSSet, NSString, NSURL;
+@protocol IDEBuildable, IDEBuildableProduct, IDETestableProvider, IDETestingSpecifier;
 
 @protocol IDETestable <IDETestContainer, DVTInvalidation, NSObject>
 @property(readonly) BOOL isSearchingForTests;
+@property(readonly) BOOL isUITest;
 @property(readonly) BOOL usesXCTest;
 @property(readonly) NSSet *testFiles;
 @property(readonly) NSString *name;
 @property(readonly) id <IDETestableProvider> testableProvider;
+- (id <IDEBuildable>)targetApplicationBuildableForWorkspace:(IDEWorkspace *)arg1;
+- (NSString *)identifierForTestClass:(NSString *)arg1 method:(NSString *)arg2;
 - (void)removeSubtest:(IDETest *)arg1;
 - (BOOL)canHaveSubtestsForTestWithIdentifier:(NSString *)arg1;
 - (IDETest *)supertestForTestWithIdentifier:(NSString *)arg1;
 - (NSString *)nameForTestWithIdentifier:(NSString *)arg1;
 - (NSSet *)testsInFile:(NSURL *)arg1;
+- (IDETest *)testForIdentifier:(NSString *)arg1 location:(DVTDocumentLocation *)arg2 createIfNeeded:(BOOL)arg3;
 - (IDETest *)testForIdentifier:(NSString *)arg1 createIfNeeded:(BOOL)arg2;
 - (IDETest *)testForIdentifier:(NSString *)arg1;
 - (id <IDEBuildable>)parentBuildableInWorkspace:(IDEWorkspace *)arg1;
@@ -28,6 +33,6 @@
 - (id <IDEBuildable>)primaryBuildable;
 - (void)waitUntilTestSearchIsFinished;
 - (void)searchForTestsInWorkspace:(IDEWorkspace *)arg1;
-- (IDETestRunner *)newTestRunner;
+- (IDETestRunner *)newTestRunnerWithTestingSpecifier:(id <IDETestingSpecifier>)arg1 executionEnvironment:(IDEExecutionEnvironment *)arg2 buildOperation:(IDEBuildOperation *)arg3 withBuildParameters:(IDEBuildParameters *)arg4 runDestination:(IDERunDestination *)arg5 error:(id *)arg6;
 @end
 

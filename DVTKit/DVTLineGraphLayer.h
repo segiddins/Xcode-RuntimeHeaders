@@ -7,6 +7,7 @@
 #import <DVTKit/DVTAbstractGraphLayer.h>
 
 @class DVTLineGraphLayerStyle, DVTNotificationToken;
+@protocol DVTLineGraphLayerDataSource;
 
 @interface DVTLineGraphLayer : DVTAbstractGraphLayer
 {

@@ -4,16 +4,17 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "IDEViewController.h"
+#import <IDEKit/IDEViewController.h>
 
-#import "DVTOutlineViewDelegate.h"
-#import "IBEndPointProvider.h"
-#import "IBOutlineViewDelegate.h"
-#import "NSOutlineViewDataSource.h"
-#import "NSOutlineViewDelegate.h"
-#import "NSUserInterfaceValidations.h"
+#import <IDEInterfaceBuilderKit/DVTOutlineViewDelegate-Protocol.h>
+#import <IDEInterfaceBuilderKit/IBEndPointProvider-Protocol.h>
+#import <IDEInterfaceBuilderKit/IBOutlineViewDelegate-Protocol.h>
+#import <IDEInterfaceBuilderKit/NSOutlineViewDataSource-Protocol.h>
+#import <IDEInterfaceBuilderKit/NSOutlineViewDelegate-Protocol.h>
+#import <IDEInterfaceBuilderKit/NSUserInterfaceValidations-Protocol.h>
 
 @class DVTBorderedView, DVTDelayedInvocation, DVTObservingToken, IBAbstractDocumentEditor, IBCancellationToken, IBDocument, IBMutableIdentityDictionary, IBOutlineView, IBOutlineViewControllerItem, IBOutlineViewImageAndTextCell, IDEUtilityPlaceholderView, NSArray, NSMutableSet, NSPredicate, NSSet, NSString;
+@protocol IBOutlineViewControllerDelegate;
 
 @interface IBOutlineViewController : IDEViewController <DVTOutlineViewDelegate, IBEndPointProvider, NSOutlineViewDataSource, NSOutlineViewDelegate, NSUserInterfaceValidations, IBOutlineViewDelegate>
 {
@@ -27,7 +28,7 @@
     NSArray *_topLevelGroupsOtherThanPlaceholders;
     NSSet *_observedMemberWrappers;
     DVTObservingToken *_kvoFirstResponderToken;
-    DVTObservingToken *_kvoDocumentAllowsIllegalStatesToken;
+    DVTObservingToken *_kvoDocumentUsesAutolayoutToken;
     IBCancellationToken *_documentStatusObservingToken;
     DVTDelayedInvocation *_syncDelayedInvocation;
     IBOutlineViewImageAndTextCell *_prototypeCell;
@@ -35,6 +36,7 @@
     IBOutlineViewImageAndTextCell *_prototypeUninstalledObjectCell;
     NSMutableSet *_pendingObjectsToRefreshAutolayoutStatus;
     DVTDelayedInvocation *_autolayoutStatusDelayedInvocation;
+    BOOL _allowPushSelectionToOutlineViewNextInvocation;
     BOOL _allowDirectDropInOutlineView;
     long long _ignoreOutlineViewSelectionUpdates;
     IDEUtilityPlaceholderView *_placeholderView;
@@ -96,6 +98,7 @@
 - (id)springLoadedObjectInfoAtPoint:(struct CGPoint)arg1 inView:(id)arg2 withContext:(id)arg3 forDocument:(id)arg4;
 - (id)highlightObjects:(id)arg1 showLabels:(BOOL)arg2 successfulObjects:(id *)arg3;
 - (void)synchronizeOutlineViewSelection;
+- (void)selectMembers:(id)arg1 withOutlineExpansion:(BOOL)arg2;
 - (void)selectMembers:(id)arg1;
 - (void)pushRootGroupState;
 - (BOOL)shouldShowEmptyOutlinePlaceholder;
@@ -104,6 +107,8 @@
 - (void)recursivelyExpandItem:(id)arg1;
 - (void)outlineViewWasDoubleClicked:(id)arg1;
 - (void)outlineViewSelectionDidChange:(id)arg1;
+- (BOOL)centerTopLevelObjectInEditorSelection;
+- (id)childrenSelectionForGroupMember:(id)arg1;
 - (void)didSelectSingleSelectionSelectableVirtualItem:(id)arg1;
 - (id)singleSelectedSelectableVirtualOutlineViewControllerItem;
 - (id)readSelectedMembersFromOutlineView;

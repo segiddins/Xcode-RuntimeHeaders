@@ -6,7 +6,7 @@
 
 #import <DevToolsCore/SCMModel.h>
 
-#import "SCMSandboxProtocol.h"
+#import <DevToolsCore/SCMSandboxProtocol-Protocol.h>
 
 @class NSString, SCMRepository;
 

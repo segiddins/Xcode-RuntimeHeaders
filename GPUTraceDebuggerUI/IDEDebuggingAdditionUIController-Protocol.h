@@ -4,20 +4,18 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "DVTInvalidation.h"
-#import "NSObject.h"
+#import <GPUTraceDebuggerUI/DVTInvalidation-Protocol.h>
+#import <GPUTraceDebuggerUI/NSObject-Protocol.h>
 
-@class DVTExtension, IDELaunchSession, IDEWorkspaceTabController, NSCell, NSMenu;
+@class DVTExtension, IDEWorkspaceTabController, NSCell, NSMenu;
+@protocol IDEDebuggingAddition;
 
 @protocol IDEDebuggingAdditionUIController <NSObject, DVTInvalidation>
 - (DVTExtension *)extension;
 - (id)initWithWorkspaceTabController:(IDEWorkspaceTabController *)arg1 withDebuggingAddition:(id <IDEDebuggingAddition>)arg2 forExtension:(DVTExtension *)arg3;
 
 @optional
-- (void)openSelectedNavigableItem:(id)arg1 withEventType:(unsigned long long)arg2;
-- (IDELaunchSession *)launchSessionForSelectedRepresentedObject:(id)arg1;
 - (NSCell *)trayCellForNavigationProcessHeader;
-- (BOOL)wantsTrayAreaForNavigationProcessHeader;
 - (NSMenu *)debugSubmenu;
 - (BOOL)shouldReplaceDebugSubmenu;
 @end

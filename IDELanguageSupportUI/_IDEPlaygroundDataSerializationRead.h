@@ -4,11 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "_IDEPlaygroundDataSerializationOperation.h"
+#import <IDELanguageSupportUI/_IDEPlaygroundDataSerializationOperation-Protocol.h>
 
-@class DVTFilePath, DVTPlaygroundCommunicationListener, IDEPlaygroundDocument, NSObject<OS_dispatch_queue>, NSString;
+@class DVTFilePath, DVTPlaygroundCommunicationListener, IDEPlaygroundDocument, NSString;
+@protocol OS_dispatch_queue;
 
 @interface _IDEPlaygroundDataSerializationRead : NSObject <_IDEPlaygroundDataSerializationOperation>
 {

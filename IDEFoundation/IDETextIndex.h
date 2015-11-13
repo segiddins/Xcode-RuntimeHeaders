@@ -4,12 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <objc/NSObject.h>
 
-#import "DVTEncodableIndexDelegate.h"
-#import "DVTInvalidation.h"
+#import <IDEFoundation/DVTEncodableIndexDelegate-Protocol.h>
+#import <IDEFoundation/DVTInvalidation-Protocol.h>
 
-@class DVTEncodableIndex, DVTLibraryFragmentFilter, DVTStackBacktrace, IDEWorkspace, NSArray, NSMutableSet, NSObject<OS_dispatch_queue>, NSString;
+@class DVTEncodableIndex, DVTLibraryFragmentFilter, DVTStackBacktrace, IDEWorkspace, NSArray, NSMutableSet, NSString;
+@protocol OS_dispatch_queue;
 
 @interface IDETextIndex : NSObject <DVTEncodableIndexDelegate, DVTInvalidation>
 {
@@ -33,6 +34,7 @@
 }
 
 + (void)_logMissingProviderForFileDataType:(id)arg1;
++ (unsigned long long)assertionBehaviorAfterEndOfEventForSelector:(SEL)arg1;
 + (long long)defaultMaxConcurrentOperationCount;
 + (id)logAspect;
 + (void)initialize;
@@ -67,6 +69,7 @@
 - (void)_scheduleSaveForTypes:(unsigned long long)arg1;
 - (void)_saveTextIndexForTypes:(unsigned long long)arg1;
 - (void)_loadTextIndex;
+- (CDUnknownBlockType)_validationBlock;
 - (void)primitiveInvalidate;
 - (void)dealloc;
 - (id)initWithWorkspace:(id)arg1;
