@@ -4,11 +4,11 @@
 xcode = ARGV[0] || "/Applications/Xcode.app/"
 
 def xcode_folder(xcode_path, relative)
-  "#{xcode_path}/Contents/#{relative}"
+  File.join(xcode_path, 'Contents', relative)
 end
 
 def framework_name(path)
-  path.split("/")[-1].split(".")[0]
+  File.basename(path, '.*')
 end
 
 folders = [
@@ -19,13 +19,11 @@ folders = [
 ]
 
 folders.each do |path|
-  Dir.foreach(path) do |item|
-    next if item == '.' or item == '..'
-
+  Dir.each_child(path) do |item|
     name = framework_name(item)
-    dir_name = Dir::pwd + "/" + name
-    Dir::mkdir(dir_name) unless FileTest::directory?(dir_name)
+    dir_name = File.expand_path(name, 'Headers')
+    Dir.mkdir_p(dir_name)
 
-    `class-dump -H -o #{dir_name} #{path}/#{item}`
+    system('class-dump', '-H', '-o', dir_name, File.join(path, item))
   end
 end
