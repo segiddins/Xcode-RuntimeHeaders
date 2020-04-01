@@ -9,10 +9,13 @@
 @class IBICCatalogMutator, IBICCatalogSynchronizer, IBICSyncResult, NSError;
 
 @protocol IBICCatalogSynchronizerDelegate <NSObject>
+- (void)catalogSynchronizer:(IBICCatalogSynchronizer *)arg1 dispatchFileAccessBlockToMainThread:(void (^)(void))arg2;
 - (void)catalogSynchronizer:(IBICCatalogSynchronizer *)arg1 didApplyMutationToModel:(IBICCatalogMutator *)arg2;
 - (void)catalogDidRecoverFromFailureByReplaceContentWithContentFromDisk:(IBICCatalogSynchronizer *)arg1 result:(IBICSyncResult *)arg2;
 - (void)catalogWillRecoverFromFailureByReplaceContentWithContentFromDisk:(IBICCatalogSynchronizer *)arg1;
 - (void)catalogSynchronizerDidDetectExternalChangesOnDisk:(IBICCatalogSynchronizer *)arg1;
 - (void)catalogSynchronizer:(IBICCatalogSynchronizer *)arg1 didCompleteSynchronizingWithStatus:(long long)arg2 error:(NSError *)arg3;
+- (void)catalogSynchronizerWillSynchronizeToDisk:(IBICCatalogSynchronizer *)arg1;
+- (void)catalogSynchronizer:(IBICCatalogSynchronizer *)arg1 requestsAsynchronousFileAccessUsingBlock:(void (^)(void (^)(void)))arg2;
 @end
 

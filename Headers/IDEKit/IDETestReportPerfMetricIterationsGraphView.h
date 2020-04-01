@@ -13,12 +13,12 @@
 {
     NSPopover *_iterationPopover;
     NSTrackingArea *_mouseEnteredTrackingArea;
-    double _firstBarOrigin;
     double _averageYOrigin;
     NSAttributedString *_detailViewValueAttributedString;
     struct CGRect _detailView_valueLabelFrame;
     IDETestReportPopoverGraphDetailDividerView *_dividerView;
     struct CGRect _graphViewBounds;
+    NSView *_scrollingContentView;
     id <IDETestReport_PerfMetric> _testPerfMetric;
 }
 
@@ -34,10 +34,13 @@
 - (void)showPopoverForBarView:(id)arg1;
 - (void)layoutViews;
 - (void)updateDetailViewWithIterationNumber:(unsigned long long)arg1;
+- (id)precisionFormatter;
 - (id)detailViewBackgroundColor;
 - (void)pointDividerViewTo:(id)arg1;
 - (void)addDividerView;
 - (void)addBars;
+- (void)addHorizontalScrollView;
+- (double)scrollingContentWidth;
 - (void)addIterationNumbersView;
 - (void)resizeSubviewsWithOldSize:(struct CGSize)arg1;
 

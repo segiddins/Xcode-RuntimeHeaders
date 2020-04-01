@@ -17,6 +17,7 @@
 - (void).cxx_destruct;
 - (id)description;
 - (id)addedChild;
+- (void)writeToLogEventStream:(id)arg1;
 - (id)initWithSection:(id)arg1 subsection:(id)arg2;
 
 @end

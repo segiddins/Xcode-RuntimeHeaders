@@ -4,12 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <DVTKit/DVTImageAndTextCell.h>
+#import <DVTUserInterfaceKit/DVTImageAndTextCell.h>
 
 @interface IDENavigatorDataCell : DVTImageAndTextCell
 {
     BOOL _usesGroupHeaderStyle;
-    struct CGRect _cellFrameForTracking;
 }
 
 + (void)initialize;

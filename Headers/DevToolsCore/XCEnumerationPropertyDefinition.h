@@ -14,11 +14,15 @@
 }
 
 + (BOOL)isListType;
++ (id)localizedName;
 + (id)identifier;
+- (void).cxx_destruct;
 - (id)argumentGenerationInfoProvidersForValue:(id)arg1;
+- (id)_filteredValueDefinitionsForTarget:(id)arg1;
+- (id)localizedAllowedValuesInTarget:(id)arg1;
+- (id)allowedValuesInTarget:(id)arg1;
 - (id)localizedAllowedValues;
 - (id)allowedValues;
-- (void)dealloc;
 - (id)initFromPListDictionary:(id)arg1;
 
 @end

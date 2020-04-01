@@ -7,7 +7,6 @@
 #import <AppKit/NSEvent.h>
 
 @interface NSEvent (IBEventAdditions)
-+ (double)doubleClickTimeInterval;
 - (struct CGPoint)subPixelLocationOnScreen;
 - (struct CGPoint)locationOnScreen;
 - (struct CGPoint)subPixelLocationInView:(id)arg1;
@@ -25,7 +24,14 @@
 - (BOOL)isDoubleLeftMouseDown;
 - (BOOL)isDoubleLeftMouseUp;
 - (BOOL)isArrowKeyDown;
+- (BOOL)isPageDownKeyDown;
+- (BOOL)isPageUpKeyDown;
+- (BOOL)isPagingKeyDown;
+- (BOOL)isEndKeyDown;
+- (BOOL)isHomeKeyDown;
+- (BOOL)isHomeOrEndKeyDown;
 - (BOOL)isBackTabKeyDown;
+- (BOOL)isOptionFlagged;
 - (BOOL)isTabKeyDown;
 - (id)facingRectEdgeForArrowKey;
 - (BOOL)isLeftArrowKeyUp;

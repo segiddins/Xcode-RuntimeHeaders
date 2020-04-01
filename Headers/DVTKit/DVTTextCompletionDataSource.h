@@ -24,7 +24,7 @@
 + (void)initialize;
 @property(retain, nonatomic) DVTSourceCodeLanguage *language; // @synthesize language=_language;
 - (void).cxx_destruct;
-@property(readonly) NSArray *strategies;
+@property(copy) NSArray *strategies;
 - (void)generateCompletionsForDocumentLocation:(id)arg1 context:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (void)primitiveInvalidate;
 - (id)initWithLanguage:(id)arg1;

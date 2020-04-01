@@ -14,8 +14,10 @@
     _IDETestReportPerfMetricIterationNumberView *_selectedView;
     NSView *_firstView;
     IDETestReportPerfMetricIterationsGraphView *_graphView;
+    long long _iterationsCount;
 }
 
+@property long long iterationsCount; // @synthesize iterationsCount=_iterationsCount;
 @property __weak IDETestReportPerfMetricIterationsGraphView *graphView; // @synthesize graphView=_graphView;
 @property(retain) NSView *firstView; // @synthesize firstView=_firstView;
 @property(retain) _IDETestReportPerfMetricIterationNumberView *selectedView; // @synthesize selectedView=_selectedView;

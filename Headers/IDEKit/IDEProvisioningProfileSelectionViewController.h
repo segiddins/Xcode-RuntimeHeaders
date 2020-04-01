@@ -9,43 +9,60 @@
 #import <IDEKit/NSMenuDelegate-Protocol.h>
 #import <IDEKit/NSPopoverDelegate-Protocol.h>
 
-@class DVTObservingToken, IDEProvisioningProfileDisplayGroup, NSButton, NSLayoutConstraint, NSOrderedSet, NSPopUpButton, NSPopover, NSString, NSTextField;
-@protocol IDEProvisioningSigningSelectionDataSource;
+@class DVTObservingToken, IDEProvisioningProfileDisplayGroup, IDEProvisioningProfileDownloaderWindowViewController, IDEProvisioningSliceConfiguration, NSButton, NSLayoutConstraint, NSOperationQueue, NSOrderedSet, NSPopUpButton, NSPopover, NSString, NSTextField;
+@protocol IDESigningEditorProfileDataSource;
 
 @interface IDEProvisioningProfileSelectionViewController : IDEViewController <NSPopoverDelegate, NSMenuDelegate>
 {
-    id <IDEProvisioningSigningSelectionDataSource> _dataSource;
+    id <IDESigningEditorProfileDataSource> _dataSource;
     NSPopUpButton *_profilePopUpButton;
-    NSButton *_importProfileButton;
     NSTextField *_profileLabel;
+    NSTextField *_profileLabelLabel;
     NSButton *_profileInfoButton;
     NSLayoutConstraint *_infoButtonProfilePopUpButtonHorizontalSpaceConstraint;
     NSLayoutConstraint *_infoButtonProfileLabelHorizontalSpaceConstraint;
+    NSLayoutConstraint *_profilePopUpLeadingConstraint;
+    NSLayoutConstraint *_profilePopUpWidthConstraint;
+    NSLayoutConstraint *_profileLabelLeadingConstraint;
+    NSLayoutConstraint *_viewTopConstraint;
+    NSLayoutConstraint *_sliceHeightConstraint;
     NSPopover *_infoPopover;
+    NSOperationQueue *_locateProfilesQueue;
     NSOrderedSet *_provisioningProfiles;
     NSOrderedSet *_ineligibleProvisioningProfiles;
     IDEProvisioningProfileDisplayGroup *_displayGroup;
     DVTObservingToken *_repairBusyObserver;
+    IDEProvisioningSliceConfiguration *_configuration;
+    IDEProvisioningProfileDownloaderWindowViewController *_downloaderWindowViewController;
 }
 
+@property(retain, nonatomic) IDEProvisioningProfileDownloaderWindowViewController *downloaderWindowViewController; // @synthesize downloaderWindowViewController=_downloaderWindowViewController;
+@property(retain, nonatomic) IDEProvisioningSliceConfiguration *configuration; // @synthesize configuration=_configuration;
 @property(retain, nonatomic) DVTObservingToken *repairBusyObserver; // @synthesize repairBusyObserver=_repairBusyObserver;
 @property(retain, nonatomic) IDEProvisioningProfileDisplayGroup *displayGroup; // @synthesize displayGroup=_displayGroup;
 @property(retain, nonatomic) NSOrderedSet *ineligibleProvisioningProfiles; // @synthesize ineligibleProvisioningProfiles=_ineligibleProvisioningProfiles;
 @property(retain, nonatomic) NSOrderedSet *provisioningProfiles; // @synthesize provisioningProfiles=_provisioningProfiles;
+@property(retain, nonatomic) NSOperationQueue *locateProfilesQueue; // @synthesize locateProfilesQueue=_locateProfilesQueue;
 @property(retain, nonatomic) NSPopover *infoPopover; // @synthesize infoPopover=_infoPopover;
+@property(retain) NSLayoutConstraint *sliceHeightConstraint; // @synthesize sliceHeightConstraint=_sliceHeightConstraint;
+@property(retain) NSLayoutConstraint *viewTopConstraint; // @synthesize viewTopConstraint=_viewTopConstraint;
+@property(retain) NSLayoutConstraint *profileLabelLeadingConstraint; // @synthesize profileLabelLeadingConstraint=_profileLabelLeadingConstraint;
+@property(retain) NSLayoutConstraint *profilePopUpWidthConstraint; // @synthesize profilePopUpWidthConstraint=_profilePopUpWidthConstraint;
+@property(retain) NSLayoutConstraint *profilePopUpLeadingConstraint; // @synthesize profilePopUpLeadingConstraint=_profilePopUpLeadingConstraint;
 @property(retain) NSLayoutConstraint *infoButtonProfileLabelHorizontalSpaceConstraint; // @synthesize infoButtonProfileLabelHorizontalSpaceConstraint=_infoButtonProfileLabelHorizontalSpaceConstraint;
 @property(retain) NSLayoutConstraint *infoButtonProfilePopUpButtonHorizontalSpaceConstraint; // @synthesize infoButtonProfilePopUpButtonHorizontalSpaceConstraint=_infoButtonProfilePopUpButtonHorizontalSpaceConstraint;
-@property __weak NSButton *profileInfoButton; // @synthesize profileInfoButton=_profileInfoButton;
-@property __weak NSTextField *profileLabel; // @synthesize profileLabel=_profileLabel;
-@property __weak NSButton *importProfileButton; // @synthesize importProfileButton=_importProfileButton;
-@property __weak NSPopUpButton *profilePopUpButton; // @synthesize profilePopUpButton=_profilePopUpButton;
-@property(readonly, nonatomic) id <IDEProvisioningSigningSelectionDataSource> dataSource; // @synthesize dataSource=_dataSource;
+@property(retain) NSButton *profileInfoButton; // @synthesize profileInfoButton=_profileInfoButton;
+@property(retain) NSTextField *profileLabelLabel; // @synthesize profileLabelLabel=_profileLabelLabel;
+@property(retain) NSTextField *profileLabel; // @synthesize profileLabel=_profileLabel;
+@property(retain) NSPopUpButton *profilePopUpButton; // @synthesize profilePopUpButton=_profilePopUpButton;
+@property(retain, nonatomic) id <IDESigningEditorProfileDataSource> dataSource; // @synthesize dataSource=_dataSource;
 - (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (void)menuNeedsUpdate:(id)arg1;
 - (void)clickedImportProfileButton:(id)arg1;
 - (void)clickedProfileInfoButton:(id)arg1;
 - (void)profileSelectionDidChangeOnPopUpButton:(id)arg1;
+- (void)downloadProfile;
 - (void)importProfile;
 - (void)displayImportProfileAlertForError:(id)arg1;
 - (void)updateProvisioningProfileSelection;
@@ -54,7 +71,7 @@
 - (void)updateElementVisibility;
 - (void)startObservations;
 - (void)viewDidLoad;
-- (id)initWithDataSource:(id)arg1;
+- (id)initWithDataSource:(id)arg1 configuration:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

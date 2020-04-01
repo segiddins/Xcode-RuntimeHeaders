@@ -10,42 +10,44 @@
 #import <IDEInterfaceBuilderKit/IBLayoutConstraintStatusProvider-Protocol.h>
 #import <IDEInterfaceBuilderKit/NSPopoverDelegate-Protocol.h>
 
-@class DVTDelayedInvocation, DVTObservingToken, IBCancellationToken, IBLayoutConstraint, IBMutableIdentityDictionary, IBViewTracker, NSArray, NSDictionary, NSMutableDictionary, NSPopover, NSSet, NSString, NSValue;
+@class DVTDelayedInvocation, IBCancellationToken, IBLayoutConstraint, IBMutableIdentityDictionary, IBPerformanceFrameRateMetric, IBViewTracker, NSArray, NSDictionary, NSMutableDictionary, NSPopover, NSSet, NSString, NSValue;
 @protocol DVTInvalidation;
 
 @interface IBViewEditor : IBEditor <IBLayoutConstraintDrawingDestination, IBLayoutConstraintStatusProvider, NSPopoverDelegate>
 {
     DVTDelayedInvocation *_constraintUpdatingInvocation;
+    DVTDelayedInvocation *_constraintSelectionUpdatingInvocation;
     long long _constraintHidingCount;
-    unsigned long long bandSelectionFramesDrawn;
-    id <DVTInvalidation> constraintDrawingToken;
-    DVTDelayedInvocation *mouseRestValidator;
-    id mouseMovedObservationToken;
-    IBLayoutConstraint *lastMousedOverConstraint;
-    IBLayoutConstraint *nextSelectableConstraint;
-    struct CGPoint lastMouseMovedPoint;
-    struct CGRect bandSelectionRect;
-    BOOL reguardSiblingsIngoredForDragGuides;
-    BOOL drawBordersOnDraggedViews;
-    NSSet *siblingsIngoredForDragGuides;
-    long long pasteOffsetType;
-    NSValue *nextPasteTarget;
-    unsigned long long dragAndDropGuideDisplayToken;
+    unsigned long long _bandSelectionFramesDrawn;
+    id <DVTInvalidation> _constraintDrawingToken;
+    DVTDelayedInvocation *_mouseRestValidator;
+    id _mouseMovedObservationToken;
+    IBLayoutConstraint *_lastMousedOverConstraint;
+    IBLayoutConstraint *_nextSelectableConstraint;
+    struct CGPoint _lastMouseMovedPoint;
+    BOOL _reguardSiblingsIgnoredForDragGuides;
+    BOOL _drawBordersOnDraggedViews;
+    NSSet *_siblingsIgnoredForDragGuides;
+    long long _pasteOffsetType;
+    unsigned long long _dragAndDropGuideDisplayToken;
     NSMutableDictionary *_constraintBadgeImageCachesByTintColor;
     NSMutableDictionary *_selectedConstraintBadgeImageCachesByTintColor;
     IBCancellationToken *_documentStatusObservingToken;
     NSSet *_drawingOptionNotificationTokens;
     NSPopover *_currentConstraintEditingPopover;
+    IBMutableIdentityDictionary *_observingTokensByView;
+    IBPerformanceFrameRateMetric *_bandSelectionFrameRateMetric;
+    NSValue *_nextPasteTarget;
     NSSet *_viewsInvolvedWithSelectedConstraints;
     NSArray *_currentConstraintDrawableGuideLines;
     NSDictionary *_constraintToConstraintDrawablesMap;
-    DVTObservingToken *_kvoObservingTokenForDocument;
+    NSArray *_kvoObservingTokensForDocument;
     NSArray *_currentConstraintDrawables;
-    NSArray *_orderedConstraintsToDraw;
     NSSet *_viewsToDrawConstraintsFor;
+    NSArray *_orderedConstraintsToDraw;
     NSSet *_selectedConstraints;
-    IBMutableIdentityDictionary *_observingTokensByView;
-    IBViewTracker *activeTracker;
+    IBViewTracker *_activeTracker;
+    struct CGRect _bandSelectionRect;
 }
 
 + (void)resetCursorRectsForObject:(id)arg1 inFrameController:(id)arg2;
@@ -56,16 +58,18 @@
 + (id)inactiveKnobImage;
 + (id)knobImage;
 + (Class)ibDropTargetResolverClass;
-@property(retain, nonatomic) IBViewTracker *activeTracker; // @synthesize activeTracker;
-@property(copy) NSValue *nextPasteTarget; // @synthesize nextPasteTarget;
+@property(nonatomic) struct CGRect bandSelectionRect; // @synthesize bandSelectionRect=_bandSelectionRect;
+@property(retain, nonatomic) IBViewTracker *activeTracker; // @synthesize activeTracker=_activeTracker;
 @property(copy) NSSet *selectedConstraints; // @synthesize selectedConstraints=_selectedConstraints;
-@property(copy, nonatomic) NSSet *viewsToDrawConstraintsFor; // @synthesize viewsToDrawConstraintsFor=_viewsToDrawConstraintsFor;
 @property(copy) NSArray *orderedConstraintsToDraw; // @synthesize orderedConstraintsToDraw=_orderedConstraintsToDraw;
+@property(copy, nonatomic) NSSet *viewsToDrawConstraintsFor; // @synthesize viewsToDrawConstraintsFor=_viewsToDrawConstraintsFor;
 @property(copy, nonatomic) NSArray *currentConstraintDrawables; // @synthesize currentConstraintDrawables=_currentConstraintDrawables;
-@property(retain) DVTObservingToken *kvoObservingTokenForDocument; // @synthesize kvoObservingTokenForDocument=_kvoObservingTokenForDocument;
+@property(retain) NSArray *kvoObservingTokensForDocument; // @synthesize kvoObservingTokensForDocument=_kvoObservingTokensForDocument;
 @property(copy) NSDictionary *constraintToConstraintDrawablesMap; // @synthesize constraintToConstraintDrawablesMap=_constraintToConstraintDrawablesMap;
 @property(copy) NSArray *currentConstraintDrawableGuideLines; // @synthesize currentConstraintDrawableGuideLines=_currentConstraintDrawableGuideLines;
 @property(copy) NSSet *viewsInvolvedWithSelectedConstraints; // @synthesize viewsInvolvedWithSelectedConstraints=_viewsInvolvedWithSelectedConstraints;
+@property(copy) NSValue *nextPasteTarget; // @synthesize nextPasteTarget=_nextPasteTarget;
+@property(retain, nonatomic) IBPerformanceFrameRateMetric *bandSelectionFrameRateMetric; // @synthesize bandSelectionFrameRateMetric=_bandSelectionFrameRateMetric;
 - (void).cxx_destruct;
 - (id)objectsForSelectingAll;
 - (void)didClose;
@@ -86,17 +90,21 @@
 - (void)willResizeEditedObjectOrAncestorEditedObject:(id)arg1 withEvent:(id)arg2 fromKnob:(CDUnion_31865a80)arg3;
 - (void)noteAncestor:(id)arg1 didChangeProperty:(id)arg2 fromValue:(id)arg3;
 - (void)updateConstraintVisibilityBasedUponSelection;
+- (id)effectiveViewsToDrawConstraintsForFromCollection:(id)arg1;
 - (void)addEffectiveViewsInvolvedInConstraintToDraw:(id)arg1 toCollection:(id)arg2;
 - (void)clearAllConstraintDrawing;
 - (void)updateConstraintsForViews;
+- (void)addConstraintAbstractions:(id)arg1 forItem:(id)arg2;
 - (void)willDrawConstraints;
+- (void)invokeConstraintSelectionAndUpdatingIfNeeded;
 - (void)pushOrderedConstraintAbstractionsToDraw:(id)arg1;
 - (void)didChangeShowingInvolvedViewsForSelectedConstraints:(id)arg1;
 - (void)didChangeShowingIntrinsicSizeConstraints:(id)arg1;
 - (void)didChangeShowingConstraints:(id)arg1;
 - (void)invalidateConstraintsForViews;
+- (void)invalidateConstraintSelectionForViews;
 - (void)invalidateMisplacedViewRectsBasedDidSelect:(id)arg1 andDeselect:(id)arg2;
-- (id)constraintsToDrawForView:(id)arg1;
+- (id)constraintsToDrawForItem:(id)arg1;
 - (BOOL)constraintItemIsLegitimateItemForDrawing:(id)arg1 relativeToItem:(id)arg2;
 - (void)invalidateDrawingAreaForCurrentDrawablesAndGuideLines;
 - (struct CGRect)drawingAreaForDrawableBadge:(id)arg1;
@@ -118,9 +126,8 @@
 - (id)dashedBezierPathLineForLine:(CDStruct_f6143a38)arg1 withThickness:(double)arg2 onDashLength:(double)arg3 offDashLength:(double)arg4 phase:(double)arg5 edgeBias:(id)arg6;
 - (void)drawConstraints;
 - (void)drawResizeKnobs;
-- (id)viewForClippingToWhenDrawingSelectionKnobsForObject:(id)arg1;
 - (void)drawMisplacedViewIndicator;
-- (struct CGRect)misplacedViewIndicatorRectForView:(id)arg1 returningIsMisplacedOnly:(char *)arg2;
+- (struct CGRect)misplacedViewIndicatorRectForView:(id)arg1;
 - (void)drawBandSelection;
 - (id)descendantsDrawingOverlayContent;
 - (struct CGRect)rectForDecorationsOverlayWithScale:(double)arg1;
@@ -128,6 +135,7 @@
 - (void)drawKnobsForView:(id)arg1;
 - (id)effectiveKnobImageForObject:(id)arg1;
 - (id)installSelectionDrawingHandlers;
+- (void)drawUsingEditorViewAppearanceWithBlock:(CDUnknownBlockType)arg1;
 - (BOOL)interceptEvent:(id)arg1;
 - (BOOL)isDocumentObjectCurrentlySelectable:(id)arg1;
 - (void)resizeFrameViewWithEvent:(id)arg1 fromEditorCanvasFrameKnob:(CDUnion_31865a80)arg2;
@@ -142,9 +150,11 @@
 - (id)frameToWindowTransformForPasteboardViews:(id)arg1;
 - (void)bandSelect;
 - (void)resizeChild:(id)arg1 fromKnob:(CDUnion_31865a80)arg2 withEvent:(id)arg3;
+- (id)documentObjectForTrackingObject:(id)arg1;
 - (id)viewForTrackingObject:(id)arg1;
 - (BOOL)shouldResizeChild:(id *)arg1 fromKnob:(CDUnion_31865a80 *)arg2 inEvent:(id)arg3;
 - (BOOL)shouldChildHaveResizeKnobs:(id)arg1;
+- (BOOL)objectShouldShowSelectionHighlight:(id)arg1;
 - (BOOL)areKnobsLockedForObject:(id)arg1;
 - (BOOL)wasChildSelectedBeforeClick:(id)arg1;
 - (void)validateMouseRested:(id)arg1;
@@ -155,16 +165,19 @@
 - (CDStruct_b58c4854)activeKnobRectsForObject:(id)arg1;
 - (id)installedChildViewsInRect:(struct CGRect)arg1;
 - (void)editorCanvasFrameDidCompleteLayout;
+- (void)noteAncestorEditorDidChangeViewGeometry:(id)arg1;
 - (void)noteDescendant:(id)arg1 didChangeProperty:(id)arg2 fromValue:(id)arg3;
-- (BOOL)isUndoingOrRedoing;
 - (void)updatePasteInsertionPointFromMouseDown:(id)arg1;
 - (void)updatePasteInsertionPointFromSelection;
 - (id)acceptDragInfo:(id)arg1 context:(id)arg2;
 - (void)prepareToAcceptDragInfo:(id)arg1;
 - (void)failToAcceptDragInfo:(id)arg1;
 - (id)guideContextForDraggingInfo:(id)arg1;
+- (BOOL)supportsGuidesForDragging;
 - (id)calculateFramesForViews:(id)arg1 withDraggingInfo:(id)arg2;
 - (id)draggedObjectStateToUseForGuidingFromDragInfo:(id)arg1;
+- (BOOL)handleDragForChild:(id)arg1 forDragEvent:(id)arg2;
+- (void)dragChildViews:(id)arg1 withMouseDown:(id)arg2 andMouseDragged:(id)arg3;
 - (void)dragSelectedViewsWithMouseDown:(id)arg1 andMouseDragged:(id)arg2;
 - (void)drawBordersOnDraggedViewsWhilePerformingBlock:(CDUnknownBlockType)arg1;
 - (unsigned long long)dragOperationForDraggingViews:(id)arg1 withMouseDown:(id)arg2 andMouseDragged:(id)arg3;
@@ -174,7 +187,8 @@
 - (id)draggedImageState:(id)arg1;
 - (BOOL)draggedSourceAllowsDrag:(id)arg1 toDestination:(id)arg2;
 - (unsigned long long)draggedOperationAllowedModifierFlags;
-- (id)draggedImageStateForDraggingInfo:(id)arg1 forOrderedIdentifiedViews:(id)arg2 withName:(id)arg3;
+- (id)draggedImageStateForDraggingInfo:(id)arg1 insertionContext:(id)arg2 forOrderedIdentifiedViews:(id)arg3 withName:(id)arg4;
+- (BOOL)shouldOffsetDraggedImagesByIndexForInsertionContext:(id)arg1;
 - (id)draggedImageWithDrawnBordersForView:(id)arg1;
 - (id)draggedImageForView:(id)arg1;
 - (void)customizePasteboardInsertionContext:(id)arg1 fromPasteboard:(id)arg2 andDraggingInfo:(id)arg3;
@@ -226,6 +240,7 @@
 - (BOOL)constraintIsSelectable:(id)arg1;
 - (BOOL)constraintIsVisible:(id)arg1;
 - (id)constraintUpdatingInvocation;
+- (id)constraintSelectionUpdatingInvocation;
 - (void)withConstraintDrawingHidden:(CDUnknownBlockType)arg1;
 - (void)finishHidingConstraintDrawing;
 - (void)beginHidingConstraintDrawing;
@@ -236,7 +251,7 @@
 - (void)startObservingDocument;
 - (void)stopObservingView:(id)arg1 forKeyPaths:(id)arg2 andNotifications:(id)arg3;
 - (void)startObservingView:(id)arg1 forKeyPaths:(id)arg2 andNotifications:(id)arg3;
-@property(readonly) IBMutableIdentityDictionary *observingTokensByView; // @synthesize observingTokensByView=_observingTokensByView;
+- (id)observingTokensByView;
 - (id)involvedViewOverlayChiselColor;
 - (id)involvedViewOverlayInnerPathGradient;
 - (id)involvedViewOverlayOuterStrokeColor;
@@ -245,8 +260,6 @@
 - (id)measurementDrawingHandler;
 - (BOOL)isFrameLockedForView:(id)arg1;
 - (id)trackerForChild:(id)arg1 withView:(id)arg2 fromKnob:(CDUnion_31865a80)arg3;
-- (void)setBandSelectionRect:(struct CGRect)arg1;
-- (struct CGRect)bandSelectionRect;
 - (id)selectedViewsInDesignableContainer;
 - (BOOL)isViewInDesignableContainer:(id)arg1;
 - (id)orderedSelectedViews;

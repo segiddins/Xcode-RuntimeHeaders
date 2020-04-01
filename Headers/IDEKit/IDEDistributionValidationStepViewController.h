@@ -8,14 +8,10 @@
 
 @interface IDEDistributionValidationStepViewController : IDEDistributionStepViewController
 {
-    BOOL _validateForDirectDistribution;
 }
 
 + (BOOL)skipStepForContext:(id)arg1 assistantDirection:(int)arg2;
-@property(readonly) BOOL validateForDirectDistribution; // @synthesize validateForDirectDistribution=_validateForDirectDistribution;
 - (void)viewDidInstall;
-- (id)providedOutputContextPropertyNames;
-- (id)requiredInputContextPropertyNames;
 - (BOOL)canGoPrevious;
 - (BOOL)canGoNext;
 - (id)title;

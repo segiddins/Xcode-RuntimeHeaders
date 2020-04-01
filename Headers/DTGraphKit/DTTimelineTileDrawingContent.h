@@ -12,6 +12,7 @@
 __attribute__((visibility("hidden")))
 @interface DTTimelineTileDrawingContent : NSObject
 {
+    struct CGImage *_renderedImage;
     DTTimelineInspectionDecorationContainer *_summary;
     NSObject<OS_dispatch_group> *_summaryGenerationGroup;
     shared_ptr_1f7ca383 _containerPtr;
@@ -22,6 +23,8 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) shared_ptr_1f7ca383 containerPtr; // @synthesize containerPtr=_containerPtr;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (void)dealloc;
+@property(nonatomic) struct CGImage *renderedImage;
 
 @end
 

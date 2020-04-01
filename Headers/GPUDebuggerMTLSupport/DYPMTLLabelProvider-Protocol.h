@@ -11,6 +11,6 @@
 @protocol DYPMTLLabelProvider <NSObject>
 - (NSString *)labelForArgument:(const struct Argument *)arg1 functionIndex:(unsigned int)arg2;
 - (NSString *)labelForReceiver:(const struct Function *)arg1 functionIndex:(unsigned int)arg2 hideCommandBuffersAndEncoders:(BOOL)arg3;
-- (NSString *)labelForObjectID:(unsigned long long)arg1;
+- (NSString *)labelForObjectID:(unsigned long long)arg1 functionIndex:(unsigned int)arg2;
 @end
 

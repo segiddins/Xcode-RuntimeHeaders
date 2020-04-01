@@ -16,14 +16,14 @@
     IDEAttributedStringControlTextViewFocusRingOverlay *_focusRingOverlay;
     DVTFirstResponderDrawingStrategy *_firstResponderDrawingStrategy;
     DVTNotificationToken *_scrollViewFrameChangedToken;
+    BOOL _didDrawPlaceholder;
     NSString *_placeholder;
 }
 
 @property(copy, nonatomic) NSString *placeholder; // @synthesize placeholder=_placeholder;
 - (void).cxx_destruct;
-- (void)drawRect:(struct CGRect)arg1;
-- (id)effectiveAttributedPlaceholder;
-- (id)attributedPlaceholderAttributes;
+- (void)didChangeText;
+- (void)drawViewBackgroundInRect:(struct CGRect)arg1;
 - (void)changeColor:(id)arg1;
 - (void)setShowsFirstResponder:(BOOL)arg1;
 - (BOOL)acceptsFirstMouse:(id)arg1;

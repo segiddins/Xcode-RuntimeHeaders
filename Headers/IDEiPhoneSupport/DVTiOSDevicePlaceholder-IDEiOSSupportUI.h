@@ -24,6 +24,7 @@
 @property(readonly, copy, nonatomic) NSString *identifier;
 @property(readonly) BOOL isProxiedDevice;
 @property(readonly, copy, nonatomic) NSString *modelCode;
+@property(readonly, copy, nonatomic) NSString *modelCodename;
 @property(readonly, copy, nonatomic) NSString *modelName;
 @property(readonly, copy, nonatomic) NSString *modelUTI;
 @property(readonly, copy, nonatomic) NSString *name;
@@ -36,6 +37,7 @@
 @property(readonly, copy) NSString *platformIdentifier;
 @property(readonly, copy) NSString *processorDescription;
 @property(readonly, copy) NSSet *proxiedDevices;
+@property(readonly) NSImage *proxyDeviceImage;
 @property(readonly) BOOL showCompanionUI;
 @property(readonly) Class superclass;
 @property(readonly) BOOL supportsProvisioning;

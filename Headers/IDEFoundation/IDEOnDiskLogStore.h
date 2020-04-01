@@ -6,19 +6,59 @@
 
 #import <IDEFoundation/IDELogStore.h>
 
-@class DVTObservingToken, NSString;
+#import <IDEFoundation/IDEOnDiskActivityLogRecordManaging-Protocol.h>
 
-@interface IDEOnDiskLogStore : IDELogStore
+@class DVTObservingToken, NSCache, NSMutableDictionary, NSOperationQueue, NSString;
+@protocol IDEOnDiskLogStoreFoundationServicesProviding;
+
+@interface IDEOnDiskLogStore : IDELogStore <IDEOnDiskActivityLogRecordManaging>
 {
+    BOOL _preserveOldLogs;
+    NSString *_rootDirectoryPath;
     DVTObservingToken *_logFolderPathObservingToken;
+    NSCache *_logStoreManageableCache;
+    NSMutableDictionary *_logStoreDictionary;
+    NSMutableDictionary *_logRecordDictionary;
+    NSOperationQueue *_asyncOperations;
+    id <IDEOnDiskLogStoreFoundationServicesProviding> _foundationServicesProvider;
 }
 
 + (id)onDiskStoreInWorkspaceArena:(id)arg1 atSubPath:(id)arg2 error:(id *)arg3;
 + (id)onDiskStoreWithRootDirectoryAtPath:(id)arg1 error:(id *)arg2;
++ (unsigned long long)assertionBehaviorAfterEndOfEventForSelector:(SEL)arg1;
++ (id)logStoreDictionaryWithContentsOfFile:(id)arg1 foundationServicesProvider:(id)arg2 error:(id *)arg3;
++ (void)initialize;
+@property(readonly) id <IDEOnDiskLogStoreFoundationServicesProviding> foundationServicesProvider; // @synthesize foundationServicesProvider=_foundationServicesProvider;
+@property(readonly) NSOperationQueue *asyncOperations; // @synthesize asyncOperations=_asyncOperations;
+@property(readonly) NSMutableDictionary *logRecordDictionary; // @synthesize logRecordDictionary=_logRecordDictionary;
+@property(readonly) NSMutableDictionary *logStoreDictionary; // @synthesize logStoreDictionary=_logStoreDictionary;
+@property(readonly) NSCache *logStoreManageableCache; // @synthesize logStoreManageableCache=_logStoreManageableCache;
 @property(retain) DVTObservingToken *logFolderPathObservingToken; // @synthesize logFolderPathObservingToken=_logFolderPathObservingToken;
+@property(readonly, copy) NSString *rootDirectoryPath; // @synthesize rootDirectoryPath=_rootDirectoryPath;
+- (BOOL)preserveOldLogs;
 - (void).cxx_destruct;
-@property(readonly, copy) NSString *rootDirectoryPath;
+@property(readonly, copy) NSString *description;
+- (void)cacheLogStoreManageable:(id)arg1 forLogRecord:(id)arg2;
+- (id)cachedLogStoreManageableForLogRecord:(id)arg1;
+- (void)setPreserveOldLogs:(BOOL)arg1;
+- (id)pathForFileName:(id)arg1;
+- (void)purgeUntrackedItems;
+- (void)_removeAllButTheLatestLog;
+- (void)_pruneLogsToLogStoreSizeLimit;
+- (void)removeLogRecord:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
+- (void)_moveToRootDirectoryAtPath:(id)arg1 errorBlock:(CDUnknownBlockType)arg2;
+- (id)addLog:(id)arg1 parameters:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
+- (void)_saveLog:(id)arg1 logRecord:(id)arg2 toPath:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;
+- (BOOL)_saveLogStoreDictionary:(id *)arg1;
+- (id)_logStoreDictionaryPath;
 - (void)primitiveInvalidate;
+- (id)initWithRootDirectoryAtPath:(id)arg1 foundationServicesProvider:(id)arg2 error:(id *)arg3;
+- (id)initWithRootDirectoryAtPath:(id)arg1 error:(id *)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

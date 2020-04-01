@@ -13,7 +13,7 @@
 @interface DVTAnalyticsCrashPointSummary : NSObject <DVTServicesJSONSerialization>
 {
     NSString *_crashPointId;
-    NSString *_crashPointString;
+    NSString *_crashPointName;
     NSString *_sourceFileName;
     NSNumber *_sourceFileLineNumber;
     NSNumber *_rollingOccurenceCount;
@@ -24,7 +24,7 @@
 @property(readonly) NSNumber *rollingOccurenceCount; // @synthesize rollingOccurenceCount=_rollingOccurenceCount;
 @property(readonly) NSNumber *sourceFileLineNumber; // @synthesize sourceFileLineNumber=_sourceFileLineNumber;
 @property(readonly) NSString *sourceFileName; // @synthesize sourceFileName=_sourceFileName;
-@property(readonly) NSString *crashPointString; // @synthesize crashPointString=_crashPointString;
+@property(readonly) NSString *crashPointName; // @synthesize crashPointName=_crashPointName;
 @property(readonly) NSString *crashPointId; // @synthesize crashPointId=_crashPointId;
 - (void).cxx_destruct;
 - (id)JSONRepresentation;

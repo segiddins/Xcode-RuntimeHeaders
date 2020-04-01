@@ -6,21 +6,19 @@
 
 #import <IDEKit/IDERefactoringFileChangeSet.h>
 
-@class IDEDataModelDocument;
+@class IDEDataModelDocument, IDEWorkspaceDocument;
 
 @interface IDEDataModelRefactoringFileChangeSet : IDERefactoringFileChangeSet
 {
     IDEDataModelDocument *_document;
+    IDEWorkspaceDocument *_workspaceDocument;
 }
 
 + (id)changeSetForFileAtPath:(id)arg1 transformation:(id)arg2 error:(id *)arg3;
+@property __weak IDEWorkspaceDocument *workspaceDocument; // @synthesize workspaceDocument=_workspaceDocument;
 @property(retain) IDEDataModelDocument *document; // @synthesize document=_document;
 - (void).cxx_destruct;
-- (void)writeTempResults;
-- (BOOL)writesOwnTempResults;
-- (BOOL)resultIsEditable;
-- (BOOL)applyChangesWithError:(id *)arg1;
-- (id)initWithFilePath:(id)arg1;
+- (BOOL)commitChangesWithError:(id *)arg1;
 
 @end
 

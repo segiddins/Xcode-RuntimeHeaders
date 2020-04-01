@@ -11,7 +11,8 @@
 }
 
 + (Class)catalogSetClass;
-- (id)sliceElement;
+- (void)addPostSuggestionSetContent:(id)arg1;
+- (void)addPostItemNameContent:(id)arg1;
 
 @end
 

@@ -21,7 +21,6 @@
     unsigned long long _backtraceBufferSize;
     unsigned long long _backtraceBufferUsedSize;
     unsigned int _task;
-    BOOL _targetIs64Bit;
 }
 
 + (void)registerCapabilities:(id)arg1;

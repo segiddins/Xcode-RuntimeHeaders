@@ -6,9 +6,11 @@
 
 #import <DebuggerLLDB/NSObject-Protocol.h>
 
-@protocol DBGSBAddress, DBGSBAttachInfo, DBGSBBreakpoint, DBGSBBroadcaster, DBGSBError, DBGSBFileSpecList, DBGSBLaunchInfo, DBGSBListener, DBGSBModule, DBGSBProcess, DBGSBStringList, DBGSBValue, DBGSBWatchpoint;
+@protocol DBGSBAddress, DBGSBAttachInfo, DBGSBBreakpoint, DBGSBBroadcaster, DBGSBError, DBGSBFileSpecList, DBGSBLaunchInfo, DBGSBListener, DBGSBModule, DBGSBProcess, DBGSBStringList, DBGSBStructuredData, DBGSBSymbolContextList, DBGSBValue, DBGSBWatchpoint;
 
 @protocol DBGSBTarget <NSObject>
+- (id <DBGSBStructuredData>)GetStatistics;
+- (id <DBGSBSymbolContextList>)FindGlobalFunctions:(const char *)arg1 max_matches:(unsigned int)arg2 match_type:(int)arg3;
 - (id <DBGSBAddress>)ResolveLoadAddress:(unsigned long long)arg1;
 - (id <DBGSBBroadcaster>)GetBroadcaster;
 - (id <DBGSBModule>)GetModuleAtIndex:(unsigned int)arg1;

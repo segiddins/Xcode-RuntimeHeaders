@@ -4,31 +4,42 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <AppKit/NSView.h>
+#import <DVTStructuredLayoutKit/DVTStructuredLayoutView.h>
 
-@class NSButton, NSImage, NSImageView, NSProgressIndicator;
+#import <IDEKit/DVTTableCellViewStatusView-Protocol.h>
 
-@interface _IDETestNavigatorStatusView : NSView
+@class NSButton, NSImage, NSImageView, NSNumber, NSProgressIndicator;
+
+@interface _IDETestNavigatorStatusView : DVTStructuredLayoutView <DVTTableCellViewStatusView>
 {
     NSImageView *_statusImageView;
     NSButton *_button;
     NSProgressIndicator *_progressIndicator;
     NSImage *_statusImage;
+    NSNumber *_backgroundStyle;
     BOOL _showProgressIndicator;
-    BOOL _showRunIcon;
+    BOOL _testEnabled;
+    BOOL _mouseOverEnclosingRow;
     BOOL _showStatusView;
 }
 
++ (id)keyPathsForValuesAffectingHasDisplayableStatus;
 @property(nonatomic) BOOL showStatusView; // @synthesize showStatusView=_showStatusView;
-@property(nonatomic) BOOL showRunIcon; // @synthesize showRunIcon=_showRunIcon;
+@property(nonatomic) BOOL mouseOverEnclosingRow; // @synthesize mouseOverEnclosingRow=_mouseOverEnclosingRow;
+@property(nonatomic) BOOL testEnabled; // @synthesize testEnabled=_testEnabled;
 @property(nonatomic) BOOL showProgressIndicator; // @synthesize showProgressIndicator=_showProgressIndicator;
 - (void).cxx_destruct;
-- (void)_updateSubviewsVisibility;
+@property(readonly) BOOL hasDisplayableStatus;
+- (void)dvt_positionSubviewsAndSizeSelfAfterSubviewLayout;
+- (void)dvt_configureSubviewsBeforeSubviewLayout;
 - (void)setState:(unsigned long long)arg1 pendingRun:(BOOL)arg2;
 @property(nonatomic) BOOL enableRunIcon;
 - (void)setTarget:(id)arg1 andAction:(SEL)arg2;
 - (void)setBackgroundStyle:(long long)arg1;
 - (id)init;
+
+// Remaining properties
+@property(nonatomic) long long tableViewRowSizeStyle;
 
 @end
 

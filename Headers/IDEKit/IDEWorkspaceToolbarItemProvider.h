@@ -16,8 +16,6 @@
 
 + (id)_createRunPauseContinueButton:(id)arg1;
 + (id)itemForItemIdentifier:(id)arg1 forToolbarInWindow:(id)arg2;
-+ (double)borderedSegmentedControlSegmentWidthOn1010;
-+ (double)runAndStopButtonMinWidthOn10_10;
 + (double)runAndStopButtonWidthOn10_10;
 
 // Remaining properties

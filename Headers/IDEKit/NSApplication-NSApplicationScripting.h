@@ -7,7 +7,7 @@
 #import <AppKit/NSApplication.h>
 
 @interface NSApplication (NSApplicationScripting)
-+ (Class)sourceDocumentClass;
++ (Class)sourceDocumentClassForIdentifier:(id)arg1;
 - (id)sdefSupport_fileDocuments;
 - (id)sdefSupport_sourceDocuments;
 - (id)orderedDocumentsOfClass:(Class)arg1;

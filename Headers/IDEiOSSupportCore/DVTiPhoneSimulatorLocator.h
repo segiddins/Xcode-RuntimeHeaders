@@ -6,21 +6,20 @@
 
 #import <DVTFoundation/DVTDeviceLocator.h>
 
-@class SimDeviceSet;
-@protocol DVTCancellable;
+@class NSMutableArray, SimDeviceSet;
 
 @interface DVTiPhoneSimulatorLocator : DVTDeviceLocator
 {
     _Bool _locating;
-    SimDeviceSet *_deviceSet;
-    id <DVTCancellable> _notificationToken;
+    NSMutableArray *_deviceSets;
+    NSMutableArray *_notificationTokens;
 }
 
 + (id)coreSimulatorQueue;
 + (id)deviceLocator;
 + (id)logAspect;
-@property(readonly) SimDeviceSet *deviceSet; // @synthesize deviceSet=_deviceSet;
 - (void).cxx_destruct;
+- (void)_startLocatingDevicesInDeviceSet:(id)arg1;
 - (void)unpairDevice:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)pairCompanionDevice:(id)arg1 withGizmoDevice:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)deleteDevice:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
@@ -31,8 +30,12 @@
 - (id)platforms;
 - (id)deviceLocationScheme;
 - (void)stopLocating;
+- (id)deviceSetForDevice:(id)arg1;
+- (id)deviceSetForSimDevice:(id)arg1;
 - (id)deviceForSimDevice:(id)arg1;
 - (void)startLocating;
+@property(readonly) SimDeviceSet *defaultDeviceSet;
+- (id)init;
 
 @end
 

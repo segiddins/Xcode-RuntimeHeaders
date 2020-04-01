@@ -10,8 +10,5 @@
 {
 }
 
-- (id)getter;
-- (id)setter;
-
 @end
 

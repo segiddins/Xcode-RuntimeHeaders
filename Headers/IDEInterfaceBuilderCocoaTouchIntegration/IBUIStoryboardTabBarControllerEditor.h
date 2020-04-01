@@ -6,38 +6,37 @@
 
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBUITabBarControllerEditor.h>
 
-#import <IDEInterfaceBuilderCocoaTouchIntegration/IBUIStoryboardTabBarControllerArrangementViewDelegate-Protocol.h>
+@class DVTDelayedInvocation, IBMutableIdentityDictionary, IBUITabBarItem;
+@protocol DVTCancellable, DVTInvalidation;
 
-@class DVTDelayedInvocation, IBMutableIdentityDictionary, IBUIStoryboardTabBarControllerArrangementView, NSString;
-@protocol DVTCancellable;
-
-@interface IBUIStoryboardTabBarControllerEditor : IBUITabBarControllerEditor <IBUIStoryboardTabBarControllerArrangementViewDelegate>
+@interface IBUIStoryboardTabBarControllerEditor : IBUITabBarControllerEditor
 {
-    IBUIStoryboardTabBarControllerArrangementView *arrangementView;
+    IBUITabBarItem *_draggedTabBarItem;
     IBMutableIdentityDictionary *tabBarItemToSegueMap;
     DVTDelayedInvocation *contentInvocation;
-    id <DVTCancellable> tabBarItemsObservationToken;
+    id <DVTCancellable> _tabBarItemsObservationToken;
+    id <DVTInvalidation> _keyFrameObserver;
 }
 
++ (Class)ibDropTargetResolverClass;
 - (void).cxx_destruct;
-- (id)hitTestEditorView:(struct CGPoint)arg1;
-- (id)bottomBarViewForEditorView:(id)arg1 withSimulatedBarMetrics:(id)arg2;
-- (id)topBarViewForEditorView:(id)arg1 withSimulatedBarMetrics:(id)arg2;
-- (id)barViewForSimulatedBarMetrics:(id)arg1;
+- (void)reattachDraggedObjects:(id)arg1 dragContext:(id)arg2;
+- (void)detachDraggedObjects:(id)arg1 dragContext:(id)arg2;
+- (id)acceptDragInfo:(id)arg1 context:(id)arg2;
+- (unsigned long long)dragOperationForDraggingInfo:(id)arg1 initialOperation:(unsigned long long)arg2;
+- (void)customizeDraggingPasteboard:(id)arg1 draggingContext:(id)arg2;
+- (id)uniquePasteboardType;
+- (BOOL)interceptEvent:(id)arg1;
 - (void)noteDescendant:(id)arg1 didChangeProperty:(id)arg2 fromValue:(id)arg3;
-- (void)arrangementView:(id)arg1 didReorderItems:(id)arg2;
 - (void)pullOrderOfSeguesFromArrangedTabBarItems:(id)arg1;
+- (void)_setSimulatedTabBarItems:(id)arg1;
+- (id)effectiveDisplayedTabBarItems;
 - (void)synchronizeArrangementView;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (id)editedTabBarControllerSeguesToRelatedDownstreamControllers;
+- (void)_updateDisplaysAllTabsForReordering;
 - (void)willClose;
+- (void)didOpen;
 - (id)initWithEditedObject:(id)arg1 parentEditor:(id)arg2 frameController:(id)arg3;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

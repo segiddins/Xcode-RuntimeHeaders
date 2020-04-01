@@ -4,25 +4,31 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <AppKit/NSView.h>
+#import <DVTStructuredLayoutKit/DVTStructuredLayoutView.h>
 
-@class NSImage, NSImageView, NSProgressIndicator;
+#import <IDEKit/DVTTableCellViewStatusView-Protocol.h>
 
-@interface IDELogNavigatorStatusView : NSView
+@class IDEIssueStatusImageView, NSArray, NSImage, NSProgressIndicator;
+
+@interface IDELogNavigatorStatusView : DVTStructuredLayoutView <DVTTableCellViewStatusView>
 {
-    NSImageView *_statusImageView;
+    IDEIssueStatusImageView *_statusImageView;
     NSProgressIndicator *_progressIndicator;
-    BOOL _showStatusView;
-    BOOL _showProgressIndicator;
     long long _progressValue;
+    id _representedObject;
 }
 
-@property(nonatomic) BOOL showProgressIndicator; // @synthesize showProgressIndicator=_showProgressIndicator;
-@property(nonatomic) BOOL showStatusView; // @synthesize showStatusView=_showStatusView;
++ (id)keyPathsForValuesAffectingHasDisplayableStatus;
+@property(readonly) IDEIssueStatusImageView *statusImageView; // @synthesize statusImageView=_statusImageView;
+@property(nonatomic) __weak id representedObject; // @synthesize representedObject=_representedObject;
 @property(nonatomic) long long progressValue; // @synthesize progressValue=_progressValue;
 - (void).cxx_destruct;
-- (void)_updateSubviewsVisibility;
+@property(nonatomic) long long tableViewRowSizeStyle;
+- (void)dvt_positionSubviewsAndSizeSelfAfterSubviewLayout;
+- (void)dvt_configureSubviewsBeforeSubviewLayout;
+@property(readonly) BOOL hasDisplayableStatus;
 - (void)setBackgroundStyle:(long long)arg1;
+@property(retain, nonatomic) NSArray *statusImages;
 @property(retain, nonatomic) NSImage *statusImage;
 - (id)init;
 

@@ -6,19 +6,21 @@
 
 #import <AppKit/NSWindow.h>
 
-@class DVTTextCompletionSession;
+@protocol DVTTextCompletionListDataSource;
 
 @interface DVTTextCompletionWindow : NSWindow
 {
-    DVTTextCompletionSession *_session;
+    id <DVTTextCompletionListDataSource> _dataSource;
 }
 
-@property(retain) DVTTextCompletionSession *session; // @synthesize session=_session;
+@property(retain) id <DVTTextCompletionListDataSource> dataSource; // @synthesize dataSource=_dataSource;
 - (void).cxx_destruct;
+- (id)accessibilityParent;
+- (id)accessibilityTitle;
+- (BOOL)isAccessibilityElement;
+- (BOOL)_shouldShowCursorRects;
 - (BOOL)canBecomeMainWindow;
 - (BOOL)canBecomeKeyWindow;
-- (id)accessibilityAttributeValue:(id)arg1;
-- (BOOL)accessibilityIsIgnored;
 
 @end
 

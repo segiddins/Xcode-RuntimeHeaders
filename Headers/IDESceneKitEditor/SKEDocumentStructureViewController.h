@@ -9,7 +9,7 @@
 #import <IDESceneKitEditor/NSOutlineViewDataSource-Protocol.h>
 #import <IDESceneKitEditor/SKEOutlineViewDelegate-Protocol.h>
 
-@class DVTBorderedView, DVTGradientImageButton, DVTGradientImagePopUpButton, DVTNotificationToken, DVTObservingToken, DVTSearchField, IDEControlGroup, NSString, SKEOutlineView, SKESceneEditor;
+@class DVTBorderedView, DVTGradientImageButton, DVTGradientImagePopUpButton, DVTNotificationToken, DVTObservingToken, DVTSearchField, IDEControlGroup, NSArray, NSButton, NSString, SKEOutlineView, SKESceneEditor;
 
 @interface SKEDocumentStructureViewController : IDEViewController <SKEOutlineViewDelegate, NSOutlineViewDataSource>
 {
@@ -23,24 +23,25 @@
     DVTBorderedView *_borderedView;
     DVTSearchField *_searchField;
     IDEControlGroup *_controlGroup;
+    NSButton *_lightSearchFilter;
+    NSButton *_cameraSearchFilter;
+    NSButton *_particlesSearchFilter;
+    NSButton *_geometrySearchFilter;
+    unsigned char _filterMask;
     BOOL _isObservingDocument;
+    BOOL _documentIsLoaded;
+    NSArray *_rowsToOpen;
     SKESceneEditor *_sceneEditor;
 }
 
-+ (id)keyPathsForValuesAffectingShouldEnableActionPopUpButton;
-+ (id)keyPathsForValuesAffectingShouldEnableDeleteButton;
-+ (id)keyPathsForValuesAffectingShouldEnableAddButton;
 @property(copy, nonatomic) NSString *filterString; // @synthesize filterString=_filterString;
 @property(retain, nonatomic) SKESceneEditor *sceneEditor; // @synthesize sceneEditor=_sceneEditor;
 - (void).cxx_destruct;
+- (id)openRows;
+- (void)setOpenRows:(id)arg1;
 - (BOOL)shouldEnableActionPopUpButton;
 - (BOOL)shouldEnableDeleteButton;
-- (BOOL)shouldEnableAddButton;
 - (id)targetNodesForActionButton;
-- (void)removeNodePropertyAction:(id)arg1;
-- (void)addNodePropertyAction:(id)arg1;
-- (void)flattenNode:(id)arg1;
-- (void)duplicateNode:(id)arg1;
 - (void)deleteNode:(id)arg1;
 - (id)targetNodesForDeleteButton;
 - (void)addNewChildNode:(id)arg1;
@@ -48,7 +49,6 @@
 - (void)showNodeContextualMenuForInitialEvent:(id)arg1;
 - (id)contextualMenuForReceiver:(id)arg1 isInGearMenu:(BOOL)arg2;
 - (BOOL)validateMenuItem:(id)arg1;
-- (id)targetNodesForActionSender:(id)arg1 withFallbackIfNoSelection:(id)arg2;
 - (id)memberForEventInOutlineView:(id)arg1;
 - (id)outlineView:(id)arg1 attributeIconsForItem:(id)arg2;
 - (BOOL)outlineView:(id)arg1 isItemEditable:(id)arg2;
@@ -70,24 +70,34 @@
 - (unsigned long long)outlineView:(id)arg1 validateDrop:(id)arg2 proposedItem:(id)arg3 proposedChildIndex:(long long)arg4;
 - (BOOL)outlineView:(id)arg1 writeItems:(id)arg2 toPasteboard:(id)arg3;
 - (void)expandAllAncestorsOfItem:(id)arg1;
+- (void)documentDidLoad:(id)arg1;
 - (void)groupWasInvalidated:(id)arg1;
 - (void)unregisterForForSceneGraphInvalidationNotifications;
 - (void)registerForSceneGraphInvalidationNotifications;
 - (id)groupInvalidationNotificationNames;
 - (void)outlineViewSelectionDidChange;
+- (void)updateButtonStates;
 - (void)updateOutlineViewSelection;
 - (id)libraryNavigableItemForLocation:(id)arg1;
 - (id)sceneGraphNavigableItemForLocation:(id)arg1;
 - (id)navigableItemForLocation:(id)arg1 inNavigables:(id)arg2;
+- (void)reloadForFilter;
+- (BOOL)isUsingFiltering;
+- (void)toggleFilter:(id)arg1;
+- (void)outlineViewFinishedLoading;
 - (id)document;
 - (void)primitiveInvalidate;
 - (void)viewWillUninstall;
 - (void)viewDidInstall;
 - (void)configureSearchField;
+- (id)_alternateImage:(id)arg1;
+- (id)_mainImage:(id)arg1;
+- (id)_image:(id)arg1 withColor:(id)arg2;
+- (id)_inactiveImage:(id)arg1;
 - (void)configureBorderedView;
-- (void)configureActionMenuForReceiver:(id)arg1;
 - (void)configureActionMenu;
-- (void)configureControlGroup;
+- (void)actionPopupWillPopup:(id)arg1;
+- (void)configureControlGroupWithTheme:(id)arg1;
 - (void)configureOutlineView;
 - (void)loadView;
 

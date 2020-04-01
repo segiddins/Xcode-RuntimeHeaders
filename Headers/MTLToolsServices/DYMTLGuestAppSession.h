@@ -15,6 +15,7 @@
 @property(nonatomic) unsigned int validationMode; // @synthesize validationMode=_validationMode;
 @property(nonatomic) unsigned int deviceWrapper; // @synthesize deviceWrapper=_deviceWrapper;
 - (id)newCaptureSessionWithArchive:(id)arg1;
+- (void)setFinalLaunchDictionary:(id)arg1;
 - (id)queryForGraphicsAPIUsage;
 - (id)launch;
 - (void)_handleTransportMessage:(id)arg1;

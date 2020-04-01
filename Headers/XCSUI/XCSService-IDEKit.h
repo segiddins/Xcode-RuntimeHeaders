@@ -7,6 +7,7 @@
 #import <XCSCore/XCSService.h>
 
 @interface XCSService (IDEKit)
+- (id)computerImage;
 - (void)showWebUI:(id)arg1;
 @end
 

@@ -11,16 +11,8 @@
 @protocol IDEBlueprint, IDEBuildableOperationManager;
 
 @protocol IDEBuildable <DVTInvalidation, NSObject>
-@property(readonly, copy) NSString *legacyIdentifier;
-@property(readonly) NSString *productModuleName;
-@property(readonly) NSSet *namesOfLinkedBinaries;
-@property(readonly) NSString *toolTip;
-@property(readonly) NSString *displayName;
-@property(readonly) id <IDEBlueprint> blueprint;
-@property(readonly, copy) IDEEntityIdentifier *entityIdentifier;
-@property(readonly, copy) NSString *buildableIdentifier;
-@property(readonly, copy) NSString *productTypeIdentifier;
-- (IDEBuilder *)createBuilderForBuildCommand:(int)arg1 withBuildTaskQueueSet:(IDEBuildOperationQueueSet *)arg2 parameters:(IDEBuildParameters *)arg3 buildOnlyTheseFiles:(NSArray *)arg4 restorePersistedBuildResults:(BOOL)arg5 withManager:(id <IDEBuildableOperationManager>)arg6;
+@property(nonatomic, readonly) NSString *legacyIdentifier;
+- (IDEBuilder *)createBuilderForBuildCommand:(long long)arg1 withBuildTaskQueueSet:(IDEBuildOperationQueueSet *)arg2 parameters:(IDEBuildParameters *)arg3 buildOnlyTheseFiles:(NSArray *)arg4 restorePersistedBuildResults:(BOOL)arg5 withManager:(id <IDEBuildableOperationManager>)arg6;
 - (NSArray *)implicitDependenciesForBuildParameters:(IDEBuildParameters *)arg1 executionEnvironment:(IDEExecutionEnvironment *)arg2 returningMessages:(id *)arg3;
 - (NSArray *)directDependencies;
 - (NSArray *)orderedRecursiveDependenciesIncludingSelf:(BOOL)arg1;
@@ -31,6 +23,14 @@
 - (NSString *)evaluatedStringValueForBuildSetting:(NSString *)arg1 withBuildParameters:(IDEBuildParameters *)arg2;
 - (NSArray *)allBuildSettingNamesWithBuildParameters:(IDEBuildParameters *)arg1;
 - (IDEProductType *)productTypeWithBuildParameters:(IDEBuildParameters *)arg1;
+@property(nonatomic, readonly) NSString *productModuleName;
+@property(nonatomic, readonly) NSSet *namesOfLinkedBinaries;
+@property(nonatomic, readonly) NSString *toolTip;
+@property(nonatomic, readonly) NSString *displayName;
+@property(nonatomic, readonly) id <IDEBlueprint> blueprint;
+@property(nonatomic, readonly) IDEEntityIdentifier *entityIdentifier;
+@property(nonatomic, readonly) NSString *buildableIdentifier;
+@property(nonatomic, readonly) NSString *productTypeIdentifier;
 
 @optional
 - (Class)buildOperationManagerClass;

@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Foundation/NSObject.h>
+#import <objc/NSObject.h>
 
 @class NSKeyBinding, NSString;
 
@@ -17,11 +17,11 @@
 }
 
 + (id)bindingWithClass:(Class)arg1 key:(id)arg2 archiveMask:(int)arg3;
+- (void).cxx_destruct;
 - (Class)targetClass;
 - (id)key;
 - (int)archiveMask;
 - (id)keyBinding;
-- (void)dealloc;
 - (id)initWithKeyBinding:(id)arg1 archiveMask:(int)arg2;
 
 @end

@@ -8,5 +8,6 @@
 
 @interface NSArray (SKUtilities)
 - (id)sk_uniqueMapping:(CDUnknownBlockType)arg1;
+- (id)sk_arrayFilteredByManipulationSupport:(unsigned long long)arg1 ignoreLockedNodes:(BOOL)arg2;
 @end
 

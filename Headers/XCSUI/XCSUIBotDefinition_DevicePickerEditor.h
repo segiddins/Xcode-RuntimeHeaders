@@ -6,11 +6,12 @@
 
 #import <IDEKit/IDEViewController.h>
 
-@class DVTBorderedView, DVTTableView, NSArray, NSMutableArray, NSPopUpButton, NSTextField, XCSDeviceSpecification, XCSUIBotDefinitionContext;
+@class DVTBorderedView, DVTTableView, NSArray, NSButton, NSMutableArray, NSPopUpButton, NSTextField, NSView, XCSDeviceSpecification, XCSUIBotDefinitionContext;
 
 @interface XCSUIBotDefinition_DevicePickerEditor : IDEViewController
 {
     XCSUIBotDefinitionContext *_botDefinitionContext;
+    XCSDeviceSpecification *_deviceSpecification;
     NSMutableArray *_groupedDevices;
     NSTextField *_testWithLabel;
     NSPopUpButton *_platformsButton;
@@ -19,8 +20,18 @@
     DVTBorderedView *_borderedView;
     DVTTableView *_tableView;
     NSTextField *_platformsErrorLabel;
+    NSButton *_useParallelDeviceTestingButton;
+    NSView *_architectureViewContainer;
+    NSView *_errorStringViewContainer;
+    NSView *_devicesTableViewContainer;
+    NSView *_parallelDeviceTestingViewContainer;
 }
 
+@property __weak NSView *parallelDeviceTestingViewContainer; // @synthesize parallelDeviceTestingViewContainer=_parallelDeviceTestingViewContainer;
+@property __weak NSView *devicesTableViewContainer; // @synthesize devicesTableViewContainer=_devicesTableViewContainer;
+@property __weak NSView *errorStringViewContainer; // @synthesize errorStringViewContainer=_errorStringViewContainer;
+@property __weak NSView *architectureViewContainer; // @synthesize architectureViewContainer=_architectureViewContainer;
+@property __weak NSButton *useParallelDeviceTestingButton; // @synthesize useParallelDeviceTestingButton=_useParallelDeviceTestingButton;
 @property __weak NSTextField *platformsErrorLabel; // @synthesize platformsErrorLabel=_platformsErrorLabel;
 @property __weak DVTTableView *tableView; // @synthesize tableView=_tableView;
 @property __weak DVTBorderedView *borderedView; // @synthesize borderedView=_borderedView;
@@ -29,13 +40,14 @@
 @property __weak NSPopUpButton *platformsButton; // @synthesize platformsButton=_platformsButton;
 @property __weak NSTextField *testWithLabel; // @synthesize testWithLabel=_testWithLabel;
 @property(retain, nonatomic) NSMutableArray *groupedDevices; // @synthesize groupedDevices=_groupedDevices;
+@property(retain, nonatomic) XCSDeviceSpecification *deviceSpecification; // @synthesize deviceSpecification=_deviceSpecification;
 @property(retain, nonatomic) XCSUIBotDefinitionContext *botDefinitionContext; // @synthesize botDefinitionContext=_botDefinitionContext;
 - (void).cxx_destruct;
 - (BOOL)tableView:(id)arg1 isGroupRow:(long long)arg2;
 - (id)tableView:(id)arg1 viewForTableColumn:(id)arg2 row:(long long)arg3;
 - (long long)numberOfRowsInTableView:(id)arg1;
 - (void)groupDevices;
-- (id)platformForIdentifier:(id)arg1;
+- (void)useParallelDeviceTestingAction:(id)arg1;
 - (void)selectOrDeselectDevice:(id)arg1;
 - (void)chooseArchitectureType:(id)arg1;
 - (void)chooseFilterType:(id)arg1;
@@ -46,14 +58,11 @@
 - (void)updateAvailableDevices;
 - (void)updatePlatformsMenu;
 - (void)listenForDeviceChanges;
-@property(readonly) NSArray *selectedDevices;
 @property(readonly) NSArray *compatibleDevices;
 @property(readonly) NSArray *selectablePlatforms;
-@property(readonly) NSArray *availableDevices;
-@property(readonly) NSArray *availablePlatforms;
 - (id)filter;
-@property(retain, nonatomic) XCSDeviceSpecification *deviceSpecification;
 - (id)service;
+- (id)devicesContext;
 - (void)commitChanges;
 - (void)viewWillUninstall;
 - (void)viewDidInstall;

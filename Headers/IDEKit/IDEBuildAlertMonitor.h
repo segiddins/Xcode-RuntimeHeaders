@@ -39,7 +39,6 @@
 - (BOOL)isIssueAnExistingIssue:(id)arg1;
 - (id)sharedPlaceholderURLForIssuesWithNoDocument;
 - (void)buildDidFinishForExecutionEnvironment:(id)arg1;
-@property(readonly) DVTStackBacktrace *invalidationBacktrace;
 - (void)_cleanup;
 - (void)buildIsRunningForExecutionEnvironment:(id)arg1;
 - (void)buildDidStartForExecutionEnvironment:(id)arg1;
@@ -52,6 +51,7 @@
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
+@property(readonly) DVTStackBacktrace *invalidationBacktrace;
 @property(readonly) Class superclass;
 @property(readonly, nonatomic, getter=isValid) BOOL valid;
 

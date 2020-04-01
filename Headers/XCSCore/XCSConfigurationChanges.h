@@ -17,14 +17,16 @@
 - (id)textForScheduleType:(unsigned long long)arg1 interval:(unsigned long long)arg2;
 - (id)textForBuildConfiguration:(id)arg1;
 - (id)initWithContents:(id)arg1 service:(id)arg2 validationErrors:(id *)arg3;
-- (id)initWithBuildConfiguration:(id)arg1 buildEnvironmentVariables:(id)arg2 builtFromClean:(id)arg3 codeCoveragePreference:(id)arg4 deviceSpecification:(id)arg5 exportsProductFromArchive:(id)arg6 overrideToolchain:(id)arg7 performsAnalyzeAction:(id)arg8 performsArchiveAction:(id)arg9 performsTestAction:(id)arg10 periodicScheduleInterval:(id)arg11 scheduleType:(id)arg12 schemeName:(id)arg13 sourceControlBlueprint:(id)arg14 triggers:(id)arg15 validationErrors:(id *)arg16;
+- (id)initWithBuildConfiguration:(id)arg1 buildEnvironmentVariables:(id)arg2 additionalBuildArguments:(id)arg3 builtFromClean:(id)arg4 codeCoveragePreference:(id)arg5 deviceSpecification:(id)arg6 exportsProductFromArchive:(id)arg7 disableAppThinning:(id)arg8 overrideToolchain:(id)arg9 performsAnalyzeAction:(id)arg10 performsArchiveAction:(id)arg11 performsTestAction:(id)arg12 periodicScheduleInterval:(id)arg13 scheduleType:(id)arg14 schemeName:(id)arg15 sourceControlBlueprint:(id)arg16 triggers:(id)arg17 validationErrors:(id *)arg18;
 
 // Remaining properties
+@property(retain, nonatomic) XCSChangedObject *additionalBuildArguments; // @dynamic additionalBuildArguments;
 @property(retain, nonatomic) XCSChangedString *buildConfiguration; // @dynamic buildConfiguration;
 @property(retain, nonatomic) XCSChangedObject *buildEnvironmentVariables; // @dynamic buildEnvironmentVariables;
 @property(retain, nonatomic) XCSChangedNumber *builtFromClean; // @dynamic builtFromClean;
 @property(retain, nonatomic) XCSChangedNumber *codeCoveragePreference; // @dynamic codeCoveragePreference;
 @property(retain, nonatomic) XCSChangedObject *deviceSpecification; // @dynamic deviceSpecification;
+@property(retain, nonatomic) XCSChangedNumber *disableAppThinning; // @dynamic disableAppThinning;
 @property(retain, nonatomic) XCSChangedNumber *exportsProductFromArchive; // @dynamic exportsProductFromArchive;
 @property(retain, nonatomic) XCSChangedObject *overrideToolchain; // @dynamic overrideToolchain;
 @property(retain, nonatomic) XCSChangedNumber *performsAnalyzeAction; // @dynamic performsAnalyzeAction;

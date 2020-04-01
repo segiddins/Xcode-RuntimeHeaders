@@ -7,22 +7,22 @@
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBUIGestureRecognizer.h>
 
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBDocumentArchiving-Protocol.h>
-#import <IDEInterfaceBuilderCocoaTouchIntegration/NSCoding-Protocol.h>
 
 @class NSString;
 
-@interface IBUIPinchGestureRecognizer : IBUIGestureRecognizer <IBDocumentArchiving, NSCoding>
+@interface IBUIPinchGestureRecognizer : IBUIGestureRecognizer <IBDocumentArchiving>
 {
     double _scale;
 }
 
 + (id)ibInstantiateForRole:(long long)arg1 withTargetRuntime:(id)arg2 documentClass:(Class)arg3 assetIdentifier:(id)arg4;
 @property double scale; // @synthesize scale=_scale;
-- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
-- (void)archiveWithDocumentArchiver:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)ibSegueTriggers;
+- (id)ibLocalAttributeKeyPaths;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

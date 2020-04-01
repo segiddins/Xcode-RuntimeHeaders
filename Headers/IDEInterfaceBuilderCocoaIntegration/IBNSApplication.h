@@ -11,7 +11,7 @@
 
 @class NSMenu, NSString;
 
-@interface IBNSApplication : IBNSCustomObject <IBDocumentArchiving, IBPrimarySceneObject>
+@interface IBNSApplication : IBNSCustomObject <IBPrimarySceneObject, IBDocumentArchiving>
 {
     NSMenu *_mainMenu;
 }
@@ -24,14 +24,15 @@
 - (BOOL)ibMustCompileWithCustomObjectSemanticsInDocument:(id)arg1;
 - (Class)classForCoderWhenNotCompiling;
 - (id)init;
-- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
-- (void)archiveWithDocumentArchiver:(id)arg1;
 - (id)ibPasteboardTypes;
 - (id)ibSegueTemplateSceneControllerOutletDestination;
 - (struct CGRect)ibRectForChild:(id)arg1 inFrameController:(id)arg2;
+- (BOOL)ibCanRemoveChildren:(id)arg1;
 - (id)ibEditorCanvasFrameControllerForDocument:(id)arg1;
 - (BOOL)ibCanBecomeEntryPointForIndicator:(id)arg1 inStoryboard:(id)arg2;
+@property(readonly, nonatomic) BOOL ibWantsSceneExitPlaceholder;
 - (id)ibShortDisplayName;
+- (void)ibPropagatePropertiesToCompiledSceneObject:(id)arg1;
 - (BOOL)ibIsPrimarySceneObject:(id)arg1 validSplitViewDetailWithSegue:(id)arg2;
 - (BOOL)ibIsPrimarySceneObject:(id)arg1 validSplitViewMasterWithSegue:(id)arg2;
 - (BOOL)ibIsValidPushReceiver;
@@ -52,12 +53,16 @@
 - (id)ibDefaultImage;
 - (id)ibImageForOwnedScene;
 - (id)ibRuntimeClassName;
+- (id)ibLocalChildToOneRelationshipsKeyPaths;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(nonatomic) BOOL ibInspectedIsDesignatedEntryPoint;
+@property(nonatomic) BOOL ibInspectedIsDesignatedMenu;
 @property(readonly) Class superclass;
 
 @end

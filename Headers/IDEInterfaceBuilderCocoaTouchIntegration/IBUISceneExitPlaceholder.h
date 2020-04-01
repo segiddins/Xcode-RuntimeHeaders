@@ -7,16 +7,13 @@
 #import <IDEInterfaceBuilderKit/IBSceneExitPlaceholder.h>
 
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBDocumentArchiving-Protocol.h>
-#import <IDEInterfaceBuilderCocoaTouchIntegration/NSCoding-Protocol.h>
 
 @class NSString;
 
-@interface IBUISceneExitPlaceholder : IBSceneExitPlaceholder <NSCoding, IBDocumentArchiving>
+@interface IBUISceneExitPlaceholder : IBSceneExitPlaceholder <IBDocumentArchiving>
 {
 }
 
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 - (void)unarchiveWithDocumentUnarchiver:(id)arg1;
 - (void)archiveWithDocumentArchiver:(id)arg1;
 

@@ -20,12 +20,11 @@
 }
 
 + (void)initialize;
+@property(readonly) id <NSCopying> derivedContent; // @synthesize derivedContent=_derivedContent;
+@property(readonly) DVTFileDataType *derivedContentType; // @synthesize derivedContentType=_derivedContentType;
 - (void).cxx_destruct;
 - (void)primitiveInvalidate;
-@property(readonly, nonatomic, getter=isValid) BOOL valid;
 - (void)setDerivedContent:(id)arg1 ofType:(id)arg2;
-- (id)derivedContent;
-- (id)derivedContentType;
 - (BOOL)hasClients;
 - (void)unregisterClient:(id)arg1;
 - (void)registerClient:(id)arg1;
@@ -40,6 +39,7 @@
 @property(readonly) unsigned long long hash;
 @property(readonly) DVTStackBacktrace *invalidationBacktrace;
 @property(readonly) Class superclass;
+@property(readonly, nonatomic, getter=isValid) BOOL valid;
 
 @end
 

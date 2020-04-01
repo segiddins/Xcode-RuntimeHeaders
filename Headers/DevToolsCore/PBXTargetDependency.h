@@ -6,47 +6,53 @@
 
 #import <DevToolsCore/PBXProjectItem.h>
 
-@class NSString, PBXContainerItemProxy, PBXTarget;
+#import <DevToolsCore/PBXPlatformFilterable-Protocol.h>
 
-@interface PBXTargetDependency : PBXProjectItem
+@class NSSet, NSString, PBXContainerItemProxy, PBXProductDependency, PBXTarget;
+
+@interface PBXTargetDependency : PBXProjectItem <PBXPlatformFilterable>
 {
     PBXContainerItemProxy *_targetProxy;
+    PBXProductDependency *_productReference;
     PBXTarget *_owner;
     BOOL _needsSync;
     NSString *_name;
+    NSSet *_platformFilters;
 }
 
++ (id)archiveNameForKey:(id)arg1;
 + (id)archivableWeakRelationshipsForPListArchiver:(id)arg1;
 + (id)archivableRelationships;
 + (id)archivableAttributes;
-+ (id)dependencyWithProjectReference:(id)arg1 targetGlobalID:(id)arg2;
-+ (id)dependencyWithProjectReference:(id)arg1 targetName:(id)arg2;
-+ (id)dependencyWithTarget:(id)arg1;
+@property(readonly) PBXProductDependency *productReference; // @synthesize productReference=_productReference;
+- (void).cxx_destruct;
 - (id)description;
-- (long long)compareName:(id)arg1;
+- (BOOL)shouldArchivePlatformFilter;
+- (void)setPlatformFilter:(id)arg1;
+- (id)_platformFilter;
+- (BOOL)shouldArchiveFilter;
+- (void)setFilter:(id)arg1;
+- (id)_filter;
+@property(copy) NSSet *platformFilters;
+- (void)writeToPListArchiver:(id)arg1;
 - (void)_setTargetProxy:(id)arg1;
 - (void)_setTarget:(id)arg1;
 - (id)_target;
-- (void)writeToPListArchiver:(id)arg1;
 - (void)_syncCachedValuesWithRemoteTargetIfNeeded;
 - (BOOL)needsSync;
 - (void)setNeedsSync:(BOOL)arg1;
 - (id)orderedRecursiveDependencies;
 - (void)setContainer:(id)arg1;
 - (id)container;
-- (void)setOwner:(id)arg1;
-- (id)owner;
-- (id)name;
+@property(retain) PBXTarget *owner;
+@property(readonly) NSString *name;
 - (void)setTarget:(id)arg1;
-- (id)target;
-- (id)targetProxy;
-- (void)dealloc;
-- (id)initWithProjectReference:(id)arg1 targetName:(id)arg2;
-- (id)initWithProjectReference:(id)arg1 targetGlobalID:(id)arg2;
-- (id)initWithTarget:(id)arg1;
+@property(readonly) PBXTarget *target;
+@property(readonly) PBXContainerItemProxy *targetProxy;
 - (id)init;
-- (void)addNameToArray:(id)arg1;
-- (id)objectSpecifier;
+- (id)initWithProductReference:(id)arg1;
+- (id)initWithProjectReference:(id)arg1 remoteTarget:(id)arg2;
+- (id)initWithLocalTarget:(id)arg1;
 
 @end
 

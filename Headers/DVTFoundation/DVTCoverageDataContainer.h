@@ -6,21 +6,25 @@
 
 #import <objc/NSObject.h>
 
-#import <DVTFoundation/NSCoding-Protocol.h>
+#import <DVTFoundation/NSSecureCoding-Protocol.h>
 
 @class NSNumber, NSString;
 
-@interface DVTCoverageDataContainer : NSObject <NSCoding>
+@interface DVTCoverageDataContainer : NSObject <NSSecureCoding>
 {
-    NSString *_name;
-    NSString *_uniqueIdentifier;
+    unsigned int _executableLines;
+    unsigned int _coveredLines;
     NSNumber *_lineCoverage;
+    NSString *_identifier;
+    NSString *_name;
 }
 
-@property(retain, nonatomic) NSNumber *lineCoverage; // @synthesize lineCoverage=_lineCoverage;
-@property(readonly, nonatomic) NSString *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
++ (BOOL)supportsSecureCoding;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
+@property(readonly, nonatomic) unsigned int coveredLines; // @synthesize coveredLines=_coveredLines;
+@property(readonly, nonatomic) unsigned int executableLines; // @synthesize executableLines=_executableLines;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSNumber *lineCoverage;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithName:(id)arg1;

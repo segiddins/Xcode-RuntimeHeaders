@@ -17,11 +17,14 @@
     BOOL _loadedExistingSettings;
 }
 
++ (BOOL)automaticallyNotifiesObserversForBuildSystemType;
++ (int)defaultBuildSystemType;
 + (void)initialize;
 @property(readonly) BOOL loadedExistingSettings; // @synthesize loadedExistingSettings=_loadedExistingSettings;
 @property(readonly) IDEWorkspace *workspace; // @synthesize workspace=_workspace;
 - (void).cxx_destruct;
 - (void)primitiveInvalidate;
+@property int buildSystemType;
 - (void)loadSettings;
 - (void)saveSettings;
 - (id)customDataSpecifier;

@@ -6,12 +6,11 @@
 
 #import <AppKit/NSUndoTextOperation.h>
 
-@class NSAttributedString, NSLayoutManager, NSUndoManager;
+@class NSAttributedString, NSUndoManager;
 
 @interface NSUndoTextOperation (DVTUndoTextOperation)
 + (id)_uniquedAttributedStringWithAttributedString:(id)arg1;
 @property(copy) NSAttributedString *attributedString;
-@property(readonly) NSLayoutManager *layoutManager;
 @property(readonly) NSUndoManager *undoManager;
 @property struct _NSRange replacementRange;
 @property struct _NSRange affectedRange;

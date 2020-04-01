@@ -9,8 +9,8 @@
 @class IDESelection, IDEWorkspaceTabController;
 
 @protocol IDESelectionSource <NSObject>
-@property(readonly, nonatomic) IDEWorkspaceTabController *workspaceTabController;
-@property(readonly, copy) IDESelection *contextMenuSelection;
-@property(readonly, copy) IDESelection *outputSelection;
+@property(nonatomic, readonly) IDEWorkspaceTabController *workspaceTabController;
+@property(nonatomic, readonly) IDESelection *contextMenuSelection;
+@property(nonatomic, readonly) IDESelection *outputSelection;
 @end
 

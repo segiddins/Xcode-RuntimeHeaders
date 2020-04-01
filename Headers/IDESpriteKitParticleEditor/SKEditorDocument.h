@@ -20,6 +20,7 @@
 + (void)initialize;
 - (void).cxx_destruct;
 - (void)commitChangeOfObject:(id)arg1 onKeyPath:(id)arg2 oldValue:(id)arg3 withActionName:(id)arg4 dependentKeyPaths:(id)arg5;
+- (id)namedAssets;
 - (void)ensureDocumentBundle;
 - (void)_setNaiveBundle;
 @property(readonly, nonatomic) SKWorkspace *effectiveSKWorkspace;
@@ -28,6 +29,7 @@
 - (void)unregisterWorkspaceDocumentForEditorController:(id)arg1;
 - (void)registerWorkspaceDocument:(id)arg1 forEditorController:(id)arg2;
 - (id)_lastActiveWorkspaceDocument;
+- (id)fileNameExtensionForType:(id)arg1 saveOperation:(unsigned long long)arg2;
 - (BOOL)canSave;
 - (BOOL)readFromURL:(id)arg1 ofType:(id)arg2 error:(id *)arg3;
 @property(readonly) NSArray *ideTopLevelStructureObjects;

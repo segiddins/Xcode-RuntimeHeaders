@@ -12,30 +12,29 @@
 
 @interface IDEInstallSchemeAction : IDESchemeAction <DVTXMLUnarchiving>
 {
-    BOOL _includeDebugSupportFiles;
     NSString *_customInstallName;
     NSArray *_killProcessList;
+    NSString *_killProcessListString;
 }
 
 + (id)keyPathsForValuesAffectingKillProcessListString;
 + (id)keyPathsForValuesAffectingDefaultInstallName;
 + (id)keyPathsForValuesAffectingSubtitle;
 + (BOOL)allowInstallSchemeAction;
-@property BOOL includeDebugSupportFiles; // @synthesize includeDebugSupportFiles=_includeDebugSupportFiles;
 @property(copy) NSArray *killProcessList; // @synthesize killProcessList=_killProcessList;
 @property(copy) NSString *customInstallName; // @synthesize customInstallName=_customInstallName;
 - (void).cxx_destruct;
-- (void)setIncludeDebugSupportFilesFromUTF8String:(char *)arg1 fromXMLUnarchiver:(id)arg2;
 - (void)setKillProcessesFromUTF8String:(char *)arg1 fromXMLUnarchiver:(id)arg2;
 - (void)setCustomInstallNameFromUTF8String:(char *)arg1 fromXMLUnarchiver:(id)arg2;
 - (void)setBuildConfigurationFromUTF8String:(char *)arg1 fromXMLUnarchiver:(id)arg2;
 - (void)dvt_encodeAttributesWithXMLArchiver:(id)arg1 version:(id)arg2;
 - (void)dvt_awakeFromXMLUnarchiver:(id)arg1;
 - (BOOL)hasDefaultValues;
+- (id)resolvedInstallBuildables;
 - (id)installProductDirectoriesForRunDestination:(id)arg1;
 - (id)overridingMacrosForInstallBuildForWorkspaceArena:(id)arg1 destination:(id)arg2;
-- (id)installOperationWithSchemeOperationParameters:(id)arg1 withBuildOperation:(id)arg2 buildParameters:(id)arg3 schemeActionRecord:(id)arg4 outError:(id *)arg5 actionCallbackBlock:(CDUnknownBlockType)arg6;
-@property(copy) NSString *killProcessListString;
+- (id)installOperationWithSchemeOperationParameters:(id)arg1 buildOperation:(id)arg2 buildParameters:(id)arg3 schemeActionRecord:(id)arg4 outError:(id *)arg5 actionCallbackBlock:(CDUnknownBlockType)arg6;
+@property(copy) NSString *killProcessListString; // @synthesize killProcessListString=_killProcessListString;
 @property(readonly) NSString *defaultInstallName;
 - (BOOL)doesNonActionWork;
 - (id)subtitle;

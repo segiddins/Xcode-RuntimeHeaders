@@ -16,15 +16,23 @@
     unsigned long long _hash;
 }
 
++ (void)allowFetchingSymbolsViaXPC;
++ (id)compileTimeClassNameByRemovingSwiftModuleNameFromRuntimeClassName:(id)arg1;
++ (id)classNameFromSymbolName:(id)arg1;
++ (id)compileTimeClassNameFromRuntimeClassName:(id)arg1;
++ (id)symbolNameByRemovingDynamicBlockCountersFromRawSymbolName:(id)arg1;
++ (void)disableMainThreadSoftAssertionsDuringBlock:(CDUnknownBlockType)arg1;
 + (unsigned long long *)_callStackReturnAddressesExcludingTopFrames:(unsigned long long)arg1 returningCount:(unsigned long long *)arg2;
 + (unsigned long long *)_callStackReturnAddressesFromNumbers:(id)arg1 excludingTopFrames:(unsigned long long)arg2 returningCount:(unsigned long long *)arg3;
 + (id)currentStackBacktraceStartingFromFrame:(long long)arg1;
 + (id)currentStackBacktrace;
 + (id)stackBacktraceWithCallStackReturnAddresses:(id)arg1;
-+ (id)symbolNameFromRawSymbolName:(id)arg1;
 - (void).cxx_destruct;
+- (id)symbolicatedFramesFromXPCServiceForReturnAddresses:(unsigned long long *)arg1 returnAddressesCount:(unsigned long long)arg2 dyldImageSuffix:(id)arg3 allowDsymData:(BOOL)arg4;
 - (id)callStackReturnAddresses;
-- (id)_cachedFrameForAddress:(unsigned long long)arg1 symbolicatorPtr:(struct _CSTypeRef *)arg2;
+- (id)_primitiveSymbolicatedStackBacktraceFrames;
+- (id)_symbolicatedStackBacktraceFrames;
+- (id)_stringRepresentationWithAddresses:(BOOL)arg1;
 - (id)symbolicatedStackBacktraceFrames;
 - (id)stringRepresentationWithAddresses:(BOOL)arg1;
 - (id)stringRepresentation;

@@ -16,6 +16,7 @@
 {
     IDEVariablesView *_variablesView;
     NSButton *_printDescriptionButton;
+    NSButton *_loadSymbolsButton;
     BOOL _requestedAutos;
     BOOL _autosIndexQueryFailed;
     unsigned long long _generation;
@@ -27,6 +28,7 @@
     DVTObservingToken *_framePointerObserverToken;
     DVTObservingToken *_returnValueObserverToken;
     DVTObservingToken *_returnValueIsValidObserverToken;
+    DVTObservingToken *_selectedStackFrameObserverToken;
     DVTObservingToken *_argumentsObserverToken;
     DVTObservingToken *_localsObserverToken;
     DVTObservingToken *_fileStaticsObserverToken;
@@ -36,11 +38,13 @@
     DVTNotificationToken *_outlineViewDidHideObserver;
     DVTNotificationToken *_outlineViewDidUnhideObserver;
     BOOL _loadingNewVariablesInBackground;
+    BOOL _recordedStackFrameSelected;
     IDEDebugSession *_debugSession;
 }
 
 + (id)_createOptionsDictionaryFromOptionsElement:(id)arg1;
 + (void)initialize;
+@property BOOL recordedStackFrameSelected; // @synthesize recordedStackFrameSelected=_recordedStackFrameSelected;
 @property BOOL loadingNewVariablesInBackground; // @synthesize loadingNewVariablesInBackground=_loadingNewVariablesInBackground;
 @property(retain, nonatomic) IDEDebugSession *debugSession; // @synthesize debugSession=_debugSession;
 - (void).cxx_destruct;
@@ -56,6 +60,8 @@
 - (id)imageToUseInDefaultQuickLookForNode:(id)arg1;
 - (id)imageForNode:(id)arg1;
 - (BOOL)deleteNode:(id)arg1;
+- (void)_loadSymbols;
+- (id)_createLoadSymbolsButton;
 - (id)_createPrintDescriptionButton;
 - (void)provideScopeChoices:(id)arg1;
 - (void)_uninstallObserversForUIVisibleWork;
@@ -92,7 +98,7 @@
 - (id)_locationToUseForAutoSymbolsRequestInEditorDocument:(id)arg1;
 - (void)_handleAutosIndexQuerySucceeded:(id)arg1;
 - (void)_handleAutosIndexQueryFailed;
-- (void)_asyncronouslyQueryIndexForSymbolsStartingOnMainThread:(id)arg1 currentGeneration:(unsigned long long)arg2;
+- (void)_asynchronouslyQueryIndexForSymbolsStartingOnMainThread:(id)arg1 currentGeneration:(unsigned long long)arg2;
 - (BOOL)_updateAutoValues;
 - (void)_addReturnValueNodeIfNecessary:(id)arg1;
 - (void)_updateFilteredList;

@@ -10,13 +10,14 @@
 #import <IDEInterfaceBuilderKit/NSCoding-Protocol.h>
 #import <IDEInterfaceBuilderKit/NSCopying-Protocol.h>
 
-@class NSString;
+@class DVTFilePath, NSString;
 
 @interface IBClassDescriptionSource : NSObject <NSCoding, NSCopying, IBDocumentArchiving>
 {
-    int _retainCountMinusOne;
+    unsigned long long _cachedHash;
     long long _sourceType;
     NSString *_qualifier;
+    DVTFilePath *_frameworkPath;
 }
 
 + (id)instantiateWithDocumentUnarchiver:(id)arg1;
@@ -26,6 +27,7 @@
 + (id)systemSourceIdentifierForPluginWithBundleIdentifier:(id)arg1;
 + (id)workspaceDocumentSourceIdentifierForInterfaceFile:(id)arg1 inWorkspaceDocumentInFolderAtPath:(id)arg2;
 + (id)workspaceDocumentSourceIdentifierForWorkspaceDocumentRelativeInterfaceFile:(id)arg1;
+@property(retain) DVTFilePath *frameworkPath; // @synthesize frameworkPath=_frameworkPath;
 @property(readonly) NSString *qualifier; // @synthesize qualifier=_qualifier;
 @property(readonly) long long sourceType; // @synthesize sourceType=_sourceType;
 - (void).cxx_destruct;
@@ -57,11 +59,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithSourceType:(long long)arg1 andQualifier:(id)arg2;
-- (BOOL)_isDeallocating;
-- (BOOL)_tryRetain;
-- (unsigned long long)retainCount;
-- (oneway void)release;
-- (id)retain;
+- (unsigned long long)computeHash;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -19,7 +19,7 @@
 @property(nonatomic) struct CGRect bandSelectionFrame; // @synthesize bandSelectionFrame=_bandSelectionFrame;
 - (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
-- (id)makeBackingLayer;
+- (void)updateLayer;
 - (id)hitTest:(struct CGPoint)arg1;
 
 @end

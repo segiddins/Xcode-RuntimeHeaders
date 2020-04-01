@@ -21,7 +21,6 @@
 - (void)pickNode:(id)arg1;
 - (id)sliceElement;
 - (BOOL)noSelection;
-- (BOOL)hasSelection;
 - (id)constraint;
 - (void)setContent:(id)arg1;
 - (void)loadView;

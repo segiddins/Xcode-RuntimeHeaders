@@ -6,18 +6,24 @@
 
 #import <objc/NSObject.h>
 
-@class IDEEditorHistoryItem, NSNotification;
+@class DVTStackBacktrace, IDEEditorHistoryItem, NSHashTable, NSNotification;
 
 @interface IDEEditorNavigableItemCoalescingState : NSObject
 {
     BOOL _isRespondingToDidForget;
+    BOOL _didBeginTransactionBeforeWillForgetItems;
+    DVTStackBacktrace *_creationBacktrace;
     NSNotification *_willCloseDocumentNotification;
     IDEEditorHistoryItem *_preCoalescingHistoryItem;
+    NSHashTable *_didForgetItemsHashTable;
 }
 
+@property BOOL didBeginTransactionBeforeWillForgetItems; // @synthesize didBeginTransactionBeforeWillForgetItems=_didBeginTransactionBeforeWillForgetItems;
 @property BOOL isRespondingToDidForget; // @synthesize isRespondingToDidForget=_isRespondingToDidForget;
+@property(retain) NSHashTable *didForgetItemsHashTable; // @synthesize didForgetItemsHashTable=_didForgetItemsHashTable;
 @property(retain) IDEEditorHistoryItem *preCoalescingHistoryItem; // @synthesize preCoalescingHistoryItem=_preCoalescingHistoryItem;
 @property(retain) NSNotification *willCloseDocumentNotification; // @synthesize willCloseDocumentNotification=_willCloseDocumentNotification;
+@property(retain) DVTStackBacktrace *creationBacktrace; // @synthesize creationBacktrace=_creationBacktrace;
 - (void).cxx_destruct;
 
 @end

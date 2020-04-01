@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <DVTKit/DVTViewController.h>
+#import <DVTViewControllerKit/DVTViewController.h>
 
-@class IDEAssistantContext, IDEFilterControlBar, NSString, NSView;
+@class DVTFilterControlBar, IDEAssistantContext, NSString, NSView;
 
 @interface IDEAssistant : DVTViewController
 {
@@ -14,12 +14,14 @@
     NSString *_nextAssistantIdentifier;
     BOOL _expandsAssistantView;
     BOOL _widthResizable;
+    BOOL _preventGoNextOrFinish;
     NSString *_previousAssistantIdentifier;
     NSString *_helpButtonDestination;
 }
 
 + (BOOL)wantsOverlayEffect;
 + (BOOL)wantsTransparentBackground;
+@property(nonatomic) BOOL preventGoNextOrFinish; // @synthesize preventGoNextOrFinish=_preventGoNextOrFinish;
 @property(nonatomic) BOOL widthResizable; // @synthesize widthResizable=_widthResizable;
 @property(nonatomic) BOOL expandsAssistantView; // @synthesize expandsAssistantView=_expandsAssistantView;
 @property(readonly) NSString *helpButtonDestination; // @synthesize helpButtonDestination=_helpButtonDestination;
@@ -32,12 +34,13 @@
 - (void)willGoNextOrFinish;
 - (void)willResignCurrentAssistantInAssistantWindowController:(id)arg1;
 @property(readonly) BOOL showHelpButton;
-@property(readonly) IDEFilterControlBar *filterControlBar;
+@property(readonly) DVTFilterControlBar *filterControlBar;
 @property(readonly) NSView *sourceListView;
 - (id)finishButtonTitle;
 @property(readonly, copy) NSString *assistantTitle;
 - (void)finishWithCompletionBlock:(CDUnknownBlockType)arg1;
 @property(readonly) BOOL alwaysShowFinish;
+@property(readonly) BOOL askAreYouSureBeforeCancel;
 @property(readonly) BOOL canCancel;
 @property(readonly) BOOL canFinish;
 @property(readonly) BOOL canGoBack;

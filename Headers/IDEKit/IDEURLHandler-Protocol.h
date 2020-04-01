@@ -9,9 +9,9 @@
 @class NSURL;
 
 @protocol IDEURLHandler <NSObject>
++ (void)handleURL:(NSURL *)arg1 completionHandler:(void (^)(BOOL, NSError *))arg2;
 
 @optional
-+ (void)handleURL:(NSURL *)arg1 completionHandler:(void (^)(BOOL, NSError *))arg2;
-+ (BOOL)handleURL:(NSURL *)arg1 error:(id *)arg2;
++ (BOOL)shouldHandleURL:(NSURL *)arg1;
 @end
 

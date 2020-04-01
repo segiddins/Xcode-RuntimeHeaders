@@ -6,15 +6,18 @@
 
 #import <objc/NSObject.h>
 
+#import <IDEKit/IDECIDataSourceSnapshotsChangedObserver-Protocol.h>
 #import <IDEKit/IDEKeyDrivenNavigableItemRepresentedObject-Protocol.h>
 
-@class DVTDocumentLocation, DVTFileDataType, IDEFileReference, IDELogManager, IDELogNavigatorItem, IDENavigableItemCoordinator, IDEWorkspace, NSArray, NSImage, NSMutableArray, NSString;
+@class DVTDelayedInvocation, DVTDocumentLocation, DVTFileDataType, DVTSymbol, IDEFileReference, IDELogManager, IDELogNavigatorItem, IDENavigableItemCoordinator, IDEWorkspace, NSArray, NSImage, NSMutableArray, NSNull, NSString, NSURL;
 
-@interface IDELogNavigatorRootItem : NSObject <IDEKeyDrivenNavigableItemRepresentedObject>
+@interface IDELogNavigatorRootItem : NSObject <IDEKeyDrivenNavigableItemRepresentedObject, IDECIDataSourceSnapshotsChangedObserver>
 {
     IDEWorkspace *_workspace;
     BOOL _groupByTime;
     NSString *_identifier;
+    DVTDelayedInvocation *_delayedInvocation;
+    NSArray *_reportProviders;
     BOOL _filterBotsToWorkspace;
     IDELogManager *_localGroup;
     NSArray *_logGroups;
@@ -24,6 +27,7 @@
     IDENavigableItemCoordinator *_navigableItemCoordinator;
 }
 
++ (id)keyPathsForValuesAffectingNavigableItem_childRepresentedObjects;
 + (id)logRootItemForWorkspace:(id)arg1;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(retain, nonatomic) IDENavigableItemCoordinator *navigableItemCoordinator; // @synthesize navigableItemCoordinator=_navigableItemCoordinator;
@@ -34,11 +38,23 @@
 @property(copy, nonatomic) NSArray *logGroups; // @synthesize logGroups=_logGroups;
 @property(retain, nonatomic) IDELogManager *localGroup; // @synthesize localGroup=_localGroup;
 - (void).cxx_destruct;
-@property(readonly) NSString *navigableItem_name;
+@property(readonly, nonatomic) NSArray *navigableItem_childRepresentedObjects;
+- (void)unregisterDataSourceObservers;
+- (void)registerDataSourceObservers;
+@property(readonly, nonatomic) NSString *navigableItem_name;
 - (void)updateLogGroups;
+- (void)_updateLogGroups;
+- (id)reportProviders;
 - (id)_groupByGroupArray;
 - (id)_groupByTimeArray;
 - (id)_getDateForObject:(id)arg1;
+- (void)_highlightNewlyCreatedBotInService:(id)arg1;
+- (void)dataSource:(id)arg1 accountWasDisabledForService:(id)arg2;
+- (void)dataSource:(id)arg1 accountWasEnabledForService:(id)arg2;
+- (void)dataSource:(id)arg1 accountWasRemovedForService:(id)arg2;
+- (void)dataSource:(id)arg1 accountWasAddedForService:(id)arg2;
+- (void)dataSource:(id)arg1 didFinishInitialLoadForService:(id)arg2;
+- (void)mainThread_updateLogGroups;
 - (void)dealloc;
 - (id)initWithLogManager:(id)arg1 groupedByTime:(BOOL)arg2;
 - (id)initWithLogManager:(id)arg1;
@@ -47,18 +63,26 @@
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
-@property(readonly) NSString *navigableItem_accessibleImageDescription;
-@property(readonly) DVTDocumentLocation *navigableItem_contentDocumentLocation;
-@property(readonly) DVTFileDataType *navigableItem_documentType;
-@property(readonly) IDEFileReference *navigableItem_fileReference;
-@property(readonly) NSString *navigableItem_groupIdentifier;
-@property(readonly) NSImage *navigableItem_image;
-@property(readonly) BOOL navigableItem_isLeaf;
-@property(readonly) BOOL navigableItem_isMajorGroup;
-@property(readonly) BOOL navigableItem_missingReferencedContentIsImportant;
-@property(readonly) BOOL navigableItem_referencedContentExists;
-@property(readonly) NSString *navigableItem_subtitle;
-@property(readonly) NSString *navigableItem_toolTip;
+@property(readonly, nonatomic) NSString *navigableItem_accessibilityIdentifier;
+@property(readonly, nonatomic) NSString *navigableItem_accessibleImageDescription;
+@property(readonly, nonatomic) NSArray *navigableItem_additionalFilterMatchingText;
+@property(readonly, nonatomic) DVTDocumentLocation *navigableItem_contentDocumentLocation;
+@property(readonly, nonatomic) DVTFileDataType *navigableItem_documentType;
+@property(readonly, nonatomic) IDEFileReference *navigableItem_fileReference;
+@property(readonly, nonatomic) NSNull *navigableItem_filtered;
+@property(readonly, nonatomic) NSString *navigableItem_groupIdentifier;
+@property(readonly, nonatomic) NSImage *navigableItem_image;
+@property(readonly, nonatomic) BOOL navigableItem_isEnabled;
+@property(readonly, nonatomic) BOOL navigableItem_isLeaf;
+@property(readonly, nonatomic) BOOL navigableItem_isMajorGroup;
+@property(readonly, nonatomic) BOOL navigableItem_isVisible;
+@property(readonly, nonatomic) BOOL navigableItem_missingReferencedContentIsImportant;
+@property(readonly, nonatomic) id navigableItem_parentRepresentedObject;
+@property(readonly, nonatomic) BOOL navigableItem_referencedContentExists;
+@property(readonly, nonatomic) DVTSymbol *navigableItem_representedSymbol;
+@property(readonly, nonatomic) NSURL *navigableItem_representedURL;
+@property(readonly, nonatomic) NSString *navigableItem_subtitle;
+@property(readonly, nonatomic) NSString *navigableItem_toolTip;
 @property(readonly) Class superclass;
 
 @end

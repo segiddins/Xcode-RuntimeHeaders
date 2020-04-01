@@ -11,21 +11,23 @@
 #import <IDEKit/NSPasteboardReading-Protocol.h>
 #import <IDEKit/NSPasteboardWriting-Protocol.h>
 
-@class DVTDocumentLocation, DVTFileDataType, NSArray, NSString;
+@class DVTDocumentLocation, DVTFileDataType, DVTStackBacktrace, NSArray, NSString;
 
 @interface IDENavigableItemArchivableRepresentation : NSObject <NSCopying, NSCoding, NSPasteboardWriting, NSPasteboardReading>
 {
-    NSString *_domainIdentifier;
+    id _domainIdentifier;
     NSArray *_identifierPath;
     unsigned long long _indexOfDocumentIdentifier;
-    DVTDocumentLocation *_documentLocation;
     DVTFileDataType *_contextualDocumentType;
+    DVTDocumentLocation *_documentLocation;
     NSString *_geniusCategoryIdentifier;
+    DVTStackBacktrace *_creationBacktrace;
 }
 
 + (unsigned long long)readingOptionsForType:(id)arg1 pasteboard:(id)arg2;
 + (id)readableTypesForPasteboard:(id)arg1;
 + (void)initialize;
+@property(retain) DVTStackBacktrace *creationBacktrace; // @synthesize creationBacktrace=_creationBacktrace;
 @property(copy) NSString *geniusCategoryIdentifier; // @synthesize geniusCategoryIdentifier=_geniusCategoryIdentifier;
 @property(readonly) DVTDocumentLocation *documentLocation; // @synthesize documentLocation=_documentLocation;
 @property(readonly) DVTFileDataType *contextualDocumentType; // @synthesize contextualDocumentType=_contextualDocumentType;

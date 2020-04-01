@@ -25,6 +25,7 @@
 @property unsigned long long tabWidth; // @synthesize tabWidth=_tabWidth;
 @property(copy) NSString *contentUTI; // @synthesize contentUTI=_contentUTI;
 - (void).cxx_destruct;
+- (id)init;
 
 @end
 

@@ -13,7 +13,7 @@
 @interface DBGSceneViewControllerDataSource : NSObject <DBGSceneViewControllerDataSourceProtocol>
 {
     NSDictionary *_plistDict;
-    NSMutableDictionary *_viewInstacesDict;
+    NSMutableDictionary *_viewInstancesDict;
     NSString *_rootIdentifier;
     unsigned long long globalRenderingOrderCounter;
     DBGViewDebuggerAdditionUIController *_debuggerUIController;

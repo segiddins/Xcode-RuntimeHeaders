@@ -9,6 +9,8 @@
 @protocol SKSceneManipulating <SKSceneManipulating_Impl>
 
 @optional
+@property(nonatomic) double sk_yScale_commit;
+@property(nonatomic) double sk_xScale_commit;
 @property(nonatomic) struct CGPoint anchorPoint_commit;
 @property(nonatomic) double zRotation_commit;
 @property(nonatomic) double yScale_commit;

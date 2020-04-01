@@ -4,18 +4,22 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Foundation/NSObject.h>
+#import <objc/NSObject.h>
 
-@class NSAttributedString, NSError, NSImage, NSMutableArray, NSString, PBXProject, PBXTarget;
+@class DVTFileDataType, DVTRangeArray, IDERenameableXcode3ProjectItem, NSAttributedString, NSError, NSImage, NSMutableArray, NSString, PBXProject, PBXTarget;
+@protocol IDEXcode3ProjectItemRenaming;
 
 @interface XCProjectRenameItem : NSObject
 {
     XCProjectRenameItem *_parent;
     id _representedObject;
+    id <IDEXcode3ProjectItemRenaming> _renamer;
+    IDERenameableXcode3ProjectItem *_renameableItem;
     PBXProject *_project;
     PBXTarget *_target;
     NSMutableArray *_buildConfigurations;
     NSString *_type;
+    DVTFileDataType *_fileDataType;
     NSString *_currentName;
     NSString *_proposedName;
     NSAttributedString *_attributedCurrentName;
@@ -26,11 +30,15 @@
     BOOL _enabled;
     BOOL _shouldRename;
     BOOL _requiresUniqueChildNames;
+    BOOL _renameChildren;
+    DVTRangeArray *_currentNameMatchRange;
+    DVTRangeArray *_proposedNameMatchRange;
 }
 
+@property(retain) DVTRangeArray *proposedNameMatchRange; // @synthesize proposedNameMatchRange=_proposedNameMatchRange;
+@property(retain) DVTRangeArray *currentNameMatchRange; // @synthesize currentNameMatchRange=_currentNameMatchRange;
+@property(retain) IDERenameableXcode3ProjectItem *renameableItem; // @synthesize renameableItem=_renameableItem;
 @property(retain) NSMutableArray *buildConfigurations; // @synthesize buildConfigurations=_buildConfigurations;
-@property PBXTarget *target; // @synthesize target=_target;
-@property id representedObject; // @synthesize representedObject=_representedObject;
 @property BOOL shouldRename; // @synthesize shouldRename=_shouldRename;
 @property BOOL enabled; // @synthesize enabled=_enabled;
 @property(retain) NSError *error; // @synthesize error=_error;
@@ -38,19 +46,25 @@
 @property(retain) NSImage *image; // @synthesize image=_image;
 @property(retain) NSAttributedString *attributedProposedName; // @synthesize attributedProposedName=_attributedProposedName;
 @property(retain) NSAttributedString *attributedCurrentName; // @synthesize attributedCurrentName=_attributedCurrentName;
-@property(copy) NSString *proposedName; // @synthesize proposedName=_proposedName;
+@property(readonly) NSString *proposedName; // @synthesize proposedName=_proposedName;
 @property(copy) NSString *currentName; // @synthesize currentName=_currentName;
+@property(retain) DVTFileDataType *fileDataType; // @synthesize fileDataType=_fileDataType;
 @property(copy) NSString *type; // @synthesize type=_type;
-@property PBXProject *project; // @synthesize project=_project;
-@property XCProjectRenameItem *parent; // @synthesize parent=_parent;
+@property(retain) PBXTarget *target; // @synthesize target=_target;
+@property(retain) PBXProject *project; // @synthesize project=_project;
+@property(retain) id <IDEXcode3ProjectItemRenaming> renamer; // @synthesize renamer=_renamer;
+@property(retain) id representedObject; // @synthesize representedObject=_representedObject;
+@property(retain) XCProjectRenameItem *parent; // @synthesize parent=_parent;
+- (void).cxx_destruct;
 - (void)validate;
 - (void)rename;
+- (void)cancel;
+- (void)updateProposedNameWith:(id)arg1 fromName:(id)arg2;
 - (void)removeBuildConfiguration:(id)arg1;
 - (void)addBuildConfigurations:(id)arg1;
 - (void)addBuildConfiguration:(id)arg1;
 - (void)removeChild:(id)arg1;
 - (void)addChild:(id)arg1;
-- (void)dealloc;
 - (id)init;
 
 @end

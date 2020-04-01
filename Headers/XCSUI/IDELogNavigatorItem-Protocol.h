@@ -6,10 +6,19 @@
 
 #import <XCSUI/NSObject-Protocol.h>
 
-@class NSImage, NSString;
+@class IDENavigableItem, NSImage, NSString;
 
 @protocol IDELogNavigatorItem <NSObject>
+@property(readonly, nonatomic) NSString *toolTip;
+@property(readonly, nonatomic) long long progressValue;
+@property(readonly, nonatomic) NSString *identifier;
 @property(readonly, nonatomic) NSImage *image;
 @property(readonly, nonatomic) NSString *subtitle;
+@property(readonly, nonatomic) NSString *title;
+
+@optional
+@property(readonly, nonatomic) NSString *textStatus;
+@property(copy, nonatomic) CDUnknownBlockType statusViewUpdateBlock;
+@property(nonatomic) __weak IDENavigableItem *navigableItem;
 @end
 

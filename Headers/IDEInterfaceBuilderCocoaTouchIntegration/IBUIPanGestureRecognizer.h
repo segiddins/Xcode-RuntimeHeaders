@@ -7,11 +7,10 @@
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBUIGestureRecognizer.h>
 
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBDocumentArchiving-Protocol.h>
-#import <IDEInterfaceBuilderCocoaTouchIntegration/NSCoding-Protocol.h>
 
 @class NSNumber, NSString;
 
-@interface IBUIPanGestureRecognizer : IBUIGestureRecognizer <IBDocumentArchiving, NSCoding>
+@interface IBUIPanGestureRecognizer : IBUIGestureRecognizer <IBDocumentArchiving>
 {
     NSNumber *_minimumNumberOfTouches;
     NSNumber *_maximumNumberOfTouches;
@@ -23,12 +22,14 @@
 @property(copy) NSNumber *maximumNumberOfTouches; // @synthesize maximumNumberOfTouches=_maximumNumberOfTouches;
 @property(copy) NSNumber *minimumNumberOfTouches; // @synthesize minimumNumberOfTouches=_minimumNumberOfTouches;
 - (void).cxx_destruct;
-- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
-- (void)archiveWithDocumentArchiver:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (void)ibPopulateIssues:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
 - (id)ibSegueTriggers;
 @property(readonly) NSNumber *ibInspectedNumberOfTouchesDefault;
+- (id)ibLocalAttributeKeyPaths;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

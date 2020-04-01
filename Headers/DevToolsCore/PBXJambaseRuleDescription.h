@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Foundation/NSObject.h>
+#import <objc/NSObject.h>
 
 @class NSArray, NSString, XCCommandLineToolSpecification;
 
@@ -29,21 +29,19 @@
 
 + (id)jambaseRuleDescriptionForRuleNamed:(id)arg1;
 + (id)_loadJambaseRuleDescriptionsFromPListFileAtPath:(id)arg1;
-- (id)instantiatedCommandOutputParserWithLogSectionRecorder:(id)arg1;
+- (void).cxx_destruct;
+- (id)instantiatedCommandOutputParserForCommand:(id)arg1 withLogSectionRecorder:(id)arg2;
 - (id)commandOutputParserClassesOrParseRules;
 - (id)description;
 - (BOOL)multipleInputFiles;
 - (BOOL)useMessageFilenameAsTopLevel;
 - (BOOL)isQuiet;
 - (id)outputParseRules;
-- (id)distributedMessageStatusFormat;
 - (id)messageStatusFormat;
-- (id)distributedProgressStatusFormat;
 - (id)progressStatusFormat;
 - (unsigned long long)compiledCodeFileRuleParamIndex;
 - (unsigned long long)outputFileRuleParamIndex;
 - (unsigned long long)inputFileRuleParamIndex;
-- (void)dealloc;
 - (id)init;
 - (id)initWithJambaseRuleName:(id)arg1 propertyListDictionary:(id)arg2;
 

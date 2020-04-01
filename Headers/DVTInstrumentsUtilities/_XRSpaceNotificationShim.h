@@ -9,6 +9,7 @@
 @class XRSpace;
 @protocol NSObject;
 
+__attribute__((visibility("hidden")))
 @interface _XRSpaceNotificationShim : NSObject
 {
     BOOL _targetIsSet;

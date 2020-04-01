@@ -16,6 +16,10 @@
     BOOL _validOption;
     BOOL _validRoleValues;
     NSImage *_image;
+    id _cachedRoleValueOrNull;
+    id _cachedCapitalizedRoleValueOrNull;
+    id _cachedRoleValuesOrNull;
+    id _cachedCapitalizedRoleValuesOrNull;
 }
 
 @property BOOL validRoleValues; // @synthesize validRoleValues=_validRoleValues;
@@ -23,10 +27,14 @@
 - (void).cxx_destruct;
 - (void)_removeObservers;
 - (void)setRoleValue:(id)arg1;
+- (id)recomputeRoleValue;
 - (id)roleValue;
 - (void)setCapitalizedRoleValue:(id)arg1;
+- (id)recomputeCapitalizedRoleValue;
 - (id)capitalizedRoleValue;
+- (id)recomputeCapitalizedRoleValues;
 - (id)capitalizedRoleValues;
+- (id)recomputeRoleValues;
 - (id)roleValues;
 - (id)target;
 - (long long)chosen;

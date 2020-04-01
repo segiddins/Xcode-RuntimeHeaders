@@ -7,21 +7,17 @@
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBUIView.h>
 
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBDocumentArchiving-Protocol.h>
-#import <IDEInterfaceBuilderCocoaTouchIntegration/NSCoding-Protocol.h>
 
 @class IBUITableViewCell, NSString;
 
-@interface IBUITableViewCellContentView : IBUIView <IBDocumentArchiving, NSCoding>
+@interface IBUITableViewCellContentView : IBUIView <IBDocumentArchiving>
 {
-    IBUITableViewCell *tableViewCell;
+    IBUITableViewCell *_tableViewCell;
 }
 
-@property(nonatomic) __weak IBUITableViewCell *tableViewCell; // @synthesize tableViewCell;
+@property(nonatomic) __weak IBUITableViewCell *tableViewCell; // @synthesize tableViewCell=_tableViewCell;
 - (void).cxx_destruct;
-- (BOOL)canHaveLayoutInsetOrIntrinsicContentSizeOrBasline;
 - (BOOL)prefersCachedImageBasedDrawing;
-- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
-- (void)archiveWithDocumentArchiver:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (unsigned long long)ibCustomSubviewLayoutStrategy;
@@ -35,10 +31,14 @@
 - (BOOL)ibIsChildInitiallySelectable:(id)arg1;
 - (BOOL)ibIsChildBuiltInCellComponent:(id)arg1;
 - (BOOL)ibCanAcceptContentsOfPasteboard:(id)arg1 inDocument:(id)arg2 targetChildRelation:(id *)arg3;
+- (id)ibEffectivePreservesSuperviewLayoutMarginsForDesignTime;
 - (id)ibDesignableContentView;
 - (id)ibPasteboardTypes;
 - (id)ibTypeNameForDefaultLabel;
 - (id)ibRuntimeClassName;
+- (Class)ibEditorClass;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

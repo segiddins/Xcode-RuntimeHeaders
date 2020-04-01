@@ -26,7 +26,6 @@
     IDEEnergyAdditionGuidance *_wasteIssue;
     IDEEnergyAdditionGuidance *_throttlesApplied;
     DVTMeterView *_energyMeterView;
-    NSView *_throttleStatusArea;
     NSView *_highCPUGuidance;
     NSView *_throttledGuidance;
     NSView *_wakeStatArea;
@@ -53,7 +52,6 @@
 @property(retain, nonatomic) NSView *wakeStatArea; // @synthesize wakeStatArea=_wakeStatArea;
 @property(retain, nonatomic) NSView *throttledGuidance; // @synthesize throttledGuidance=_throttledGuidance;
 @property(retain, nonatomic) NSView *highCPUGuidance; // @synthesize highCPUGuidance=_highCPUGuidance;
-@property(retain) NSView *throttleStatusArea; // @synthesize throttleStatusArea=_throttleStatusArea;
 @property __weak DVTMeterView *energyMeterView; // @synthesize energyMeterView=_energyMeterView;
 @property(retain, nonatomic) IDEEnergyAdditionGuidance *throttlesApplied; // @synthesize throttlesApplied=_throttlesApplied;
 @property(retain, nonatomic) IDEEnergyAdditionGuidance *wasteIssue; // @synthesize wasteIssue=_wasteIssue;

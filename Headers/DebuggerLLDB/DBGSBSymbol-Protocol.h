@@ -10,6 +10,7 @@
 
 @protocol DBGSBSymbol <NSObject>
 - (id <DBGSBAddress>)GetStartAddress;
+- (const char *)GetDisplayName;
 - (const char *)GetName;
 - (_Bool)IsValid;
 @end

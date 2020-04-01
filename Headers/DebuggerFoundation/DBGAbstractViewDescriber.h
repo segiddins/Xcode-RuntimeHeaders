@@ -7,13 +7,15 @@
 #import <objc/NSObject.h>
 
 #import <DebuggerFoundation/DBGViewDescriber-Protocol.h>
+#import <DebuggerFoundation/NSKeyedUnarchiverDelegate-Protocol.h>
 
-@class DVTStackBacktrace, IDEDebugSession, NSDictionary, NSMutableDictionary, NSString, NSURL;
+@class DVTStackBacktrace, IDEDebugSession, NSDictionary, NSMapTable, NSMutableDictionary, NSString, NSURL;
 
-@interface DBGAbstractViewDescriber : NSObject <DBGViewDescriber>
+@interface DBGAbstractViewDescriber : NSObject <NSKeyedUnarchiverDelegate, DBGViewDescriber>
 {
     NSMutableDictionary *_classNameToPropertyEntryArrayMap;
     NSMutableDictionary *_layerTreesByIdentifier;
+    NSMapTable *_identifierToViewObjectMapping;
     BOOL _persistLayerTree;
     IDEDebugSession *_debugSession;
     NSDictionary *_inferiorClassMap;
@@ -22,7 +24,6 @@
 
 + (void)initialize;
 + (BOOL)shouldInstantiateInLaunchSession:(id)arg1;
-+ (id)viewDebuggingDylibPathForLaunchSession:(id)arg1;
 @property BOOL persistLayerTree; // @synthesize persistLayerTree=_persistLayerTree;
 @property(retain) NSURL *url; // @synthesize url=_url;
 @property(retain) NSDictionary *inferiorClassMap; // @synthesize inferiorClassMap=_inferiorClassMap;
@@ -30,10 +31,14 @@
 - (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (void)primitiveInvalidate;
+- (id)uniqueViewObjectForIdentifier:(id)arg1 withCreateViewObjectCallback:(CDUnknownBlockType)arg2;
+- (void)resetUniqueViewObjects;
+- (id)initialRequestPropertyActions;
 - (id)_createPropertyEntriesForClassName:(id)arg1;
 - (id)_propertyEntriesForClassName:(id)arg1;
 - (id)structuresForInspectableExpressions;
 - (id)propertyEntriesForViewObject:(id)arg1;
+- (Class)unarchiver:(id)arg1 cannotDecodeObjectOfClassName:(id)arg2 originalClasses:(id)arg3;
 - (id)unarchiveLayerForView:(id)arg1 fromData:(id)arg2;
 - (void)writeCAARToDiskIfNecessary:(id)arg1;
 - (id)layerForView:(id)arg1;
@@ -42,12 +47,13 @@
 - (id)associatedProcessUUID;
 - (void)getDataValueForExpression:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)printDescriptionOfViewObjectToConsole:(id)arg1;
-- (void)_asyncAttributedStringFromDataValueSummary:(id)arg1 handler:(CDUnknownBlockType)arg2;
+- (void)_asyncValueFromKeyedArchivableDataValueSummary:(id)arg1 withValidArchivedClasses:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (void)asyncStringFromDataValueSummary:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (id)stringFromSummary:(id)arg1;
 - (void)_asyncAskForInspectableArrayFromDataValue:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (BOOL)inspectableValueForDataValue:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (id)classHierarchyForClass:(id)arg1;
+- (id)effectViewClassNames;
 - (id)targetKitFamilyIdentifier;
 - (id)targetPlatformFamilyIdentifier;
 - (id)targetPlatform;
@@ -57,13 +63,14 @@
 - (id)_parentWindowForViewObject:(id)arg1;
 - (id)constraintsReferencingViewObject:(id)arg1;
 - (id)constraintsAffectingViewObject:(id)arg1;
-- (unsigned long long)shouldChild:(id)arg1 flattenIntoParent:(id)arg2;
-- (BOOL)isViewObjectInteresting:(id)arg1;
+- (id)customNavigableIconForObject:(id)arg1 withClassHierarchy:(id)arg2;
 @property(readonly) NSString *classNameForDefaultViewIcon;
 - (id)_primaryWindowFromWindows:(id)arg1 keyWindowPointer:(id)arg2;
 - (id)_platformFamilyIdentifier;
+- (id)_includeNSObjectWhereNecessaryInClassMap:(id)arg1;
+- (id)enableSceneDebuggingOptionValue;
 - (void)writePlistDataIfNecessary:(id)arg1;
-- (void)handleFetchedViewInfo:(id)arg1 resultHandler:(CDUnknownBlockType)arg2;
+- (void)handleFetchedViewInfo:(id)arg1 fetchError:(id)arg2 resultHandler:(CDUnknownBlockType)arg3;
 - (void)fetchViewInfo:(CDUnknownBlockType)arg1 resultHandler:(CDUnknownBlockType)arg2;
 - (id)viewWindowObjectsFromDictionary:(id)arg1;
 - (id)initWithDebugSession:(id)arg1;

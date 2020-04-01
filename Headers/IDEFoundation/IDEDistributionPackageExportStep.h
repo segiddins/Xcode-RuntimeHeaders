@@ -11,6 +11,7 @@
 }
 
 - (BOOL)_exportToDirectory:(id)arg1 withContext:(id)arg2 error:(id *)arg3;
+- (BOOL)writeSummaryForContext:(id)arg1 toURL:(id)arg2 error:(id *)arg3;
 
 @end
 

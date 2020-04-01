@@ -15,6 +15,7 @@
 + (BOOL)_compareReferenceArchive:(id)arg1 refArchiveName:(id)arg2 withFunctionTracer:(id)arg3;
 + (BOOL)_generateReferenceArchive:(id)arg1 refArchiveName:(id)arg2 withFunctionTracer:(id)arg3;
 + (BOOL)testArchive:(id)arg1 refArchiveName:(id)arg2 withFunctionTracer:(id)arg3;
++ (id)openArchive:(id)arg1;
 + (id)openArchive:(id)arg1 suffix:(id)arg2 bundle:(id)arg3;
 + (id)openArchive:(id)arg1 bundle:(id)arg2;
 

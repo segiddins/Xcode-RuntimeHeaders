@@ -18,7 +18,9 @@
 @property(readonly, copy, nonatomic) NSString *ide_coverage_title;
 @property(readonly, nonatomic) unsigned long long ide_coverage_methodsCount;
 @property(readonly, copy, nonatomic) NSArray *ide_coverage_methods;
-@property(readonly, copy, nonatomic) NSString *ide_coverage_identifier;
+- (void)setSortedMethods:(id)arg1;
+- (id)sortedMethods;
+- (id)ide_coverage_identifier;
 @property(readonly, copy, nonatomic) NSArray *ide_coverage_devices;
 
 // Remaining properties

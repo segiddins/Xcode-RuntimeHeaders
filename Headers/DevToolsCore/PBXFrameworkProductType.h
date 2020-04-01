@@ -10,8 +10,14 @@
 {
 }
 
-- (void)addBaseLinkerFlagsInTargetBuildContext:(id)arg1;
-- (void)computeSymlinkDependenciesInTargetBuildContext:(id)arg1;
+- (void)generateStubAPIForLinkedProductWithMacroExpansionScope:(id)arg1;
+- (void)generateInstallAPIForLinkedProductWithMacroExpansionScope:(id)arg1;
+- (void)createTBDSymlinksForLinkedProductWithMacroExpansionScope:(id)arg1 forFileName:(id)arg2;
+- (void)registerSwiftmoduleProductStructureCreatorsWithMacroExpansionScope:(id)arg1;
+- (id)wrapperSubpathForSwiftmodule;
+- (void)registerCoreProductStructureCreatorsWithMacroExpansionScope:(id)arg1;
+- (void)addBaseLinkerFlagsWithMacroExpansionScope:(id)arg1;
+- (void)computeProductDependenciesWithMacroExpansionScope:(id)arg1;
 
 @end
 

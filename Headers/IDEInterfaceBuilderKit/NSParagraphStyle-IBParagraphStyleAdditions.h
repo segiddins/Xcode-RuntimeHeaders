@@ -6,10 +6,24 @@
 
 #import <AppKit/NSParagraphStyle.h>
 
-@interface NSParagraphStyle (IBParagraphStyleAdditions)
-+ (id)paragraphStyleWithAlignment:(unsigned long long)arg1 andLineBreakMode:(unsigned long long)arg2;
-+ (id)paragraphStyleWithAlignment:(unsigned long long)arg1;
-+ (id)paragraphStyleWithAlignment:(unsigned long long)arg1 paragraphSpacing:(double)arg2;
+#import <IDEInterfaceBuilderKit/IBDocumentArchiving-Protocol.h>
+
+@class NSString;
+
+@interface NSParagraphStyle (IBParagraphStyleAdditions) <IBDocumentArchiving>
++ (id)paragraphStyleWithAlignment:(long long)arg1 andLineBreakMode:(unsigned long long)arg2;
++ (id)paragraphStyleWithAlignment:(long long)arg1;
++ (id)paragraphStyleWithAlignment:(long long)arg1 paragraphSpacing:(double)arg2;
 + (id)paragraphStyleWithLineBreakMode:(unsigned long long)arg1;
++ (id)instantiateWithDocumentUnarchiver:(id)arg1;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
+- (Class)classForDocumentArchiver:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @end
 

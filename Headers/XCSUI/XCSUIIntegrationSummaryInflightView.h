@@ -6,9 +6,11 @@
 
 #import <AppKit/NSView.h>
 
+#import <XCSUI/XCSUIDataSourceSnapshotsObserver-Protocol.h>
+
 @class XCSUIIntegrationSummaryInflightViewController;
 
-@interface XCSUIIntegrationSummaryInflightView : NSView
+@interface XCSUIIntegrationSummaryInflightView : NSView <XCSUIDataSourceSnapshotsObserver>
 {
     XCSUIIntegrationSummaryInflightViewController *_viewController;
 }

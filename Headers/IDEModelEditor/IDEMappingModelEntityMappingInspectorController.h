@@ -12,7 +12,7 @@
 {
 }
 
-+ (id)keyPathsForValuesDestinationEntityNames;
++ (id)keyPathsForValuesAffectingDestinationEntityNames;
 + (id)keyPathsForValuesAffectingSourceEntityNames;
 + (id)keyPathsForValuesAffectingDestinationEntities;
 + (id)keyPathsForValuesAffectingSourceEntities;

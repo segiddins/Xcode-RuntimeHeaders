@@ -10,12 +10,7 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 
 #pragma mark Named Structures
 
-struct SwiftReflectionContext;
-
-struct VMULabelUniquingDataForStringType {
-    id _field1;
-    id _field2;
-};
+struct SwiftReflectionInteropContext;
 
 struct _CSTypeRef {
     unsigned long long _opaque_1;
@@ -117,7 +112,8 @@ struct _VMUVMRegionData {
     unsigned int :1;
     unsigned int :1;
     unsigned int :1;
-    unsigned int :28;
+    unsigned int :1;
+    unsigned int :27;
     unsigned long long _field18;
     unsigned long long _field19;
     unsigned long long _field20;
@@ -127,28 +123,48 @@ struct _VMUVMRegionData {
     unsigned long long _field24;
 };
 
+struct _VMUVMRegionDataExtra {
+    unsigned long long _field1;
+    unsigned long long _field2;
+};
+
 struct _VMUZoneNode {
     unsigned long long _field1;
     id _field2;
     struct malloc_introspection_t *_field3;
 };
 
-struct libSwiftRemoteMirrorWrapper {
-    struct SwiftReflectionContext *_field1;
-    CDUnknownFunctionPointerType _field2;
-    CDUnknownFunctionPointerType _field3;
-    CDUnknownFunctionPointerType _field4;
-    CDUnknownFunctionPointerType _field5;
-    CDUnknownFunctionPointerType _field6;
-    CDUnknownFunctionPointerType _field7;
-    CDUnknownFunctionPointerType _field8;
+struct __sFILE {
+    char *_field1;
+    int _field2;
+    int _field3;
+    short _field4;
+    short _field5;
+    struct __sbuf _field6;
+    int _field7;
+    void *_field8;
     CDUnknownFunctionPointerType _field9;
     CDUnknownFunctionPointerType _field10;
     CDUnknownFunctionPointerType _field11;
     CDUnknownFunctionPointerType _field12;
-    CDUnknownFunctionPointerType _field13;
-    CDUnknownFunctionPointerType _field14;
-    CDUnknownFunctionPointerType _field15;
+    struct __sbuf _field13;
+    struct __sFILEX *_field14;
+    int _field15;
+    unsigned char _field16[3];
+    unsigned char _field17[1];
+    struct __sbuf _field18;
+    int _field19;
+    long long _field20;
+};
+
+struct __sbuf {
+    char *_field1;
+    int _field2;
+};
+
+struct libSwiftRemoteMirrorWrapper {
+    struct SwiftReflectionInteropContext *_field1;
+    unsigned long long _field2;
 };
 
 struct malloc_introspection_t;
@@ -161,19 +177,34 @@ struct swift_typeinfo {
     unsigned int _field5;
 };
 
+struct swift_typeref_interop {
+    unsigned long long _field1;
+    int _field2;
+};
+
 struct timeval {
     long long tv_sec;
     int tv_usec;
 };
 
-#pragma mark Typedef'd Structures
-
-typedef struct {
-    unsigned int _field1;
+struct vmu_backtrace_uniquing_table_t {
+    void *_field1;
     unsigned long long _field2;
     unsigned long long _field3;
     unsigned long long _field4;
-} CDStruct_89df7c02;
+    unsigned long long _field5;
+    unsigned int _field6;
+    int _field7;
+    unsigned int _field8;
+    unsigned int _field9;
+    unsigned int _field10;
+    struct _opaque_pthread_rwlock_t {
+        long long _field1;
+        char _field2[192];
+    } _field11;
+};
+
+#pragma mark Typedef'd Structures
 
 typedef struct {
     unsigned long long _field1;
@@ -198,4 +229,8 @@ typedef struct {
     unsigned int :4;
     id _field2;
 } CDStruct_599faf0f;
+
+typedef struct {
+    unsigned long long _field1;
+} CDStruct_69d7cc99;
 

@@ -10,7 +10,5 @@
 {
 }
 
-- (void)computeSymlinkDependenciesInTargetBuildContext:(id)arg1;
-
 @end
 

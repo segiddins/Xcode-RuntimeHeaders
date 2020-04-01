@@ -10,9 +10,6 @@
 {
 }
 
-+ (id)navigableItemImageForDocumentURL:(id)arg1;
-+ (id)navigableItemNameForDocumentURL:(id)arg1;
-+ (BOOL)_requiresEqualityComparisonForChildRepresentedObjects;
 + (id)domainObjectsForURL:(id)arg1 forWorkspace:(id)arg2;
 + (id)domainObjectForURL:(id)arg1 forWorkspace:(id)arg2;
 + (id)domainObjectForWorkspace:(id)arg1;

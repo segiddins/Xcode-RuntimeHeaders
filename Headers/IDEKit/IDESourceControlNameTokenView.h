@@ -9,7 +9,7 @@
 #import <IDEKit/NSAccessibilityButton-Protocol.h>
 #import <IDEKit/NSMenuDelegate-Protocol.h>
 
-@class NSMutableDictionary, NSObject, NSString;
+@class NSColor, NSDictionary, NSObject, NSString;
 @protocol IDESourceControlNameTokenViewDelegate;
 
 @interface IDESourceControlNameTokenView : NSView <NSMenuDelegate, NSAccessibilityButton>
@@ -18,16 +18,16 @@
     struct CGRect _tokenRect;
     struct CGRect _stringRect;
     BOOL _showToken;
-    BOOL _forceHideToken;
-    BOOL _hideMenuButton;
     BOOL _selected;
     NSObject<IDESourceControlNameTokenViewDelegate> *_delegate;
-    NSMutableDictionary *_textAttributes;
+    NSDictionary *_textAttributes;
     double _fontSize;
-    BOOL _isBold;
-    unsigned long long _alignment;
+    BOOL _miniStyle;
+    NSColor *_textColor;
 }
 
+@property(copy) NSColor *textColor; // @synthesize textColor=_textColor;
+@property(nonatomic, getter=isMiniStyle) BOOL miniStyle; // @synthesize miniStyle=_miniStyle;
 @property __weak NSObject<IDESourceControlNameTokenViewDelegate> *delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
@@ -35,14 +35,11 @@
 - (void)_drawInteriorWithTextFrame:(struct CGRect)arg1 tokenFrame:(struct CGRect)arg2;
 - (void)_drawTextWithFrame:(struct CGRect)arg1;
 - (void)_drawTokenWithFrame:(struct CGRect)arg1;
-- (id)tokenForegroundGradient;
-- (id)tokenBackgroundColor;
-- (void)_drawTokenWithContext:(id)arg1 frame:(struct CGRect)arg2 clip:(BOOL)arg3;
+- (id)tokenSelectedColor;
+- (id)tokenColor;
 - (id)_pullDownImage;
 - (struct CGRect)_pullDownRectForTokenFrame:(struct CGRect)arg1;
 - (struct CGRect)_tokenRectForStringRect:(struct CGRect)arg1;
-@property BOOL hideMenuButton; // @synthesize hideMenuButton=_hideMenuButton;
-@property BOOL forceHideToken; // @synthesize forceHideToken=_forceHideToken;
 @property(copy) NSString *value;
 @property(readonly) struct CGRect textFrame;
 - (void)_resetTokenRect;
@@ -54,13 +51,13 @@
 - (void)mouseExited:(id)arg1;
 - (void)mouseEntered:(id)arg1;
 - (void)_setTrackingRectWithRect:(struct CGRect)arg1;
-@property unsigned long long alignment; // @synthesize alignment=_alignment;
-@property double fontSize; // @synthesize fontSize=_fontSize;
+- (void)_setFontSize:(double)arg1;
+- (double)fontSize;
 - (BOOL)accessibilityPerformPress;
 - (id)accessibilityLabel;
-- (void)_setFontSize:(double)arg1 bold:(BOOL)arg2;
-@property BOOL isBold; // @synthesize isBold=_isBold;
-- (id)initWithFrame:(struct CGRect)arg1;
+- (double)cornerRadius;
+- (struct NSEdgeInsets)textPadding;
+- (void)awakeFromNib;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

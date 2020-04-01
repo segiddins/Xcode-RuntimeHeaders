@@ -8,47 +8,65 @@
 
 #import <DVTKit/CALayerDelegate-Protocol.h>
 
-@class CALayer, DVTObservingToken, NSString, _DVTMarkerList;
+@class CALayer, DVTNotificationToken, DVTObservingToken, NSMutableArray, NSString, NSTrackingArea, _DVTMark;
+@protocol DVTMarkedScrollerDelegate;
 
 @interface DVTMarkedScroller : NSScroller <CALayerDelegate>
 {
-    _DVTMarkerList *_errorMarks;
-    _DVTMarkerList *_warningMarks;
-    _DVTMarkerList *_analyzerMarks;
-    _DVTMarkerList *_runtimeIssueMarks;
-    _DVTMarkerList *_breakpointMarks;
-    _DVTMarkerList *_diffMarks;
-    _DVTMarkerList *_diffConflictMarks;
+    NSMutableArray *_marksSortedByLocationThenType;
     CALayer *_marksLayer;
+    NSTrackingArea *_trackingArea;
+    _DVTMark *_mousedOverMark;
+    CALayer *_mouseOverLayer;
+    DVTNotificationToken *_themeObservingToken;
     DVTObservingToken *_expansionTransitionProgressObservingToken;
     DVTObservingToken *_knobAlphaObservingToken;
+    id <DVTMarkedScrollerDelegate> _delegate;
 }
 
 + (BOOL)isCompatibleWithOverlayScrollers;
+@property __weak id <DVTMarkedScrollerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (void)setFloatValue:(float)arg1;
-- (void)setFrameSize:(struct CGSize)arg1;
-- (void)addMark:(double)arg1 ofType:(unsigned long long)arg2;
-- (void)_updateMarksForGeometryChange;
-- (void)_updateMarksForOpacityChange;
-- (void)_updateMarkRectsIfNeeded:(id)arg1 newMarkRect:(struct CGRect)arg2;
-- (struct CGRect)_markRect;
-- (void)_setMarksNeedUpdate:(id)arg1;
-- (void)clearDiffMarks;
-- (void)clearNormalMarks;
+- (void)_animateMouseOverLayer:(id)arg1 widthDelta:(double)arg2 heightDelta:(double)arg3;
+- (void)_animateAlphaOfAllMarkLayers:(double)arg1;
+- (void)_animateInAndAddMouseOverLayer:(id)arg1;
+- (void)_animateOutAndRemoveMouseOverLayer:(id)arg1;
+- (id)_createMouseOverLayerForMark:(id)arg1;
+- (void)_updateMouseOverMarkVisuals:(id)arg1;
+- (void)_drawMarks;
 - (void)drawKnobSlotInRect:(struct CGRect)arg1 highlight:(BOOL)arg2;
 - (void)drawKnob;
-- (void)_drawMarks;
-- (void)_fillMarkRects:(id)arg1 usingGradient:(id)arg2;
-- (BOOL)_drawsMarks;
-- (void)drawLayer:(id)arg1 inContext:(struct CGContext *)arg2;
-- (void)setNeedsDisplayInRect:(struct CGRect)arg1;
-- (void)setNeedsDisplay:(BOOL)arg1;
+- (void)layoutSublayersOfLayer:(id)arg1;
+- (void)displayLayer:(id)arg1;
+- (id)_closestMarkTo:(double)arg1;
+- (id)_closestMarkToEventsLocationInWindow:(id)arg1;
+- (void)_insertMarksLayerIfNecessary;
 - (void)setScrollerStyle:(long long)arg1;
 - (void)setControlSize:(unsigned long long)arg1;
 - (void)setLayer:(id)arg1;
-- (void)_invalidateMarksLayer;
+- (void)setFloatValue:(float)arg1;
+- (void)setFrameSize:(struct CGSize)arg1;
+- (void)viewWillMoveToWindow:(id)arg1;
+- (void)resetCursorRects;
+- (void)mouseDown:(id)arg1;
+- (void)mouseExited:(id)arg1;
+- (void)mouseMoved:(id)arg1;
+- (id)_colorForType:(unsigned long long)arg1;
+- (void)_addLayerForMark:(id)arg1;
+- (void)addMark:(double)arg1 onLine:(long long)arg2 ofType:(unsigned long long)arg3;
+- (void)addMark:(double)arg1 ofType:(unsigned long long)arg2;
+- (struct CGRect)_outsetRectForMark:(id)arg1 inBoundingRect:(struct CGRect)arg2;
+- (struct CGRect)_rectForMark:(id)arg1 inBoundingRect:(struct CGRect)arg2;
+- (void)_updateMarksLayerFrame;
+- (struct CGRect)_marksContainerRect;
+- (void)clearDiffMarks;
+- (void)clearNormalMarks;
+- (void)_setNeedsDisplayIfNotLayerBacked;
+- (void)_themeChanged;
 - (void)dealloc;
+- (void)_dvtMarkedScrollerCommintInit;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithFrame:(struct CGRect)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

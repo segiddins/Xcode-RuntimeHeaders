@@ -15,13 +15,12 @@
 + (unsigned long long)readingOptionsForType:(id)arg1 pasteboard:(id)arg2;
 + (id)readableTypesForPasteboard:(id)arg1;
 + (id)cachedBasicPasteboardTypeAsArray;
-+ (id)_templateIconCache;
 - (id)initWithPasteboardPropertyList:(id)arg1 ofType:(id)arg2;
 - (id)pasteboardPropertyListForType:(id)arg1;
 - (id)writableTypesForPasteboard:(id)arg1;
+- (BOOL)_iconRequiresInversion;
 @property(readonly, copy) NSImage *templateIcon;
-- (id)fallbackTemplateIcon;
-- (id)imageAtTemplateSize:(id)arg1;
+@property(readonly) NSImage *fallbackTemplateIcon;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

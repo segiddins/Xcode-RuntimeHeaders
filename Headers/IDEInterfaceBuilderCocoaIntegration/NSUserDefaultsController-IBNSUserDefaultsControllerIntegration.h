@@ -6,18 +6,29 @@
 
 #import <AppKit/NSUserDefaultsController.h>
 
-@interface NSUserDefaultsController (IBNSUserDefaultsControllerIntegration)
+#import <IDEInterfaceBuilderCocoaIntegration/IBDocumentArchiving-Protocol.h>
+
+@class NSString;
+
+@interface NSUserDefaultsController (IBNSUserDefaultsControllerIntegration) <IBDocumentArchiving>
 + (id)ibDefaultImageForInstance:(id)arg1 targetRuntime:(id)arg2;
 + (id)ibSharedUserDefaultsControllerProxy;
-+ (id)ibSynthesizeControllerKeyPaths;
++ (id)ibDynamicShadowedKeyPathsToTypes;
 - (void)ibDidAddToDocument:(id)arg1 phase:(unsigned long long)arg2;
 - (id)ibTypeNameForDefaultLabel;
-- (BOOL)ibIsInspectorApplicable:(id)arg1 forCategory:(id)arg2;
+- (BOOL)ibIsInspectorSliceApplicable:(id)arg1 forCategory:(id)arg2;
 - (id)ibSwizzledAwakeAfterUsingCoder:(id)arg1;
 - (BOOL)ibIsPlaceholder;
 - (id)ibResolvedTypeNameForControllerKey:(id)arg1;
+- (id)ibLocalAttributeKeyPaths;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
 
 // Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
 @property BOOL ibShadowedAppliesImmediately; // @dynamic ibShadowedAppliesImmediately;
+@property(readonly) Class superclass;
 @end
 

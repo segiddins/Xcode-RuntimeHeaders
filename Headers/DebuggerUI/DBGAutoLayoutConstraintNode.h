@@ -6,9 +6,11 @@
 
 #import <DebuggerUI/DBGNode.h>
 
+#import <DebuggerUI/DBGSceneViewRevealing-Protocol.h>
+
 @class DBGInteractiveSceneView, DBGLayoutConstraint, DBGSceneCamera, DBGSceneNode, DBGSimpleNode, DBGViewInstance, IBAutolayoutConstraintDrawable, NSMutableArray;
 
-@interface DBGAutoLayoutConstraintNode : DBGNode
+@interface DBGAutoLayoutConstraintNode : DBGNode <DBGSceneViewRevealing>
 {
     DBGInteractiveSceneView *_sceneView;
     DBGNode *_projectionLinesHostNode;
@@ -22,14 +24,17 @@
     BOOL _pointingUpOrRight;
     BOOL _selected;
     BOOL _highlighted;
+    BOOL _revealed;
     DBGSceneNode *_firstItemNode;
     DBGSceneNode *_secondItemNode;
     DBGLayoutConstraint *_modelObject;
     DBGSimpleNode *_constraintStartNode;
     DBGSimpleNode *_constraintEndNode;
     DBGSceneCamera *_sceneCamera;
+    DBGSimpleNode *_revealDecoration;
 }
 
+@property(retain) DBGSimpleNode *revealDecoration; // @synthesize revealDecoration=_revealDecoration;
 @property __weak DBGSceneCamera *sceneCamera; // @synthesize sceneCamera=_sceneCamera;
 @property(retain, nonatomic) DBGSimpleNode *constraintEndNode; // @synthesize constraintEndNode=_constraintEndNode;
 @property(retain, nonatomic) DBGSimpleNode *constraintStartNode; // @synthesize constraintStartNode=_constraintStartNode;
@@ -37,6 +42,8 @@
 @property __weak DBGSceneNode *secondItemNode; // @synthesize secondItemNode=_secondItemNode;
 @property __weak DBGSceneNode *firstItemNode; // @synthesize firstItemNode=_firstItemNode;
 - (void).cxx_destruct;
+- (id)_finderDecorationNodeSize:(struct CGSize)arg1;
+@property(getter=isRevealed) BOOL revealed; // @synthesize revealed=_revealed;
 - (void)setHighlighted:(BOOL)arg1;
 - (void)setSelected:(BOOL)arg1;
 - (void)removeFromParentNode;
@@ -51,8 +58,6 @@
 - (id)iBeamGeometryFromDrawable:(id)arg1;
 - (id)alignmentLineGeometryFromDrawable:(id)arg1;
 - (id)connectionLineGeometryFromDrawable:(id)arg1;
-- (id)lineGeometryWithStart:(struct SCNVector3)arg1 end:(struct SCNVector3)arg2;
-- (id)lineGeometryFromIBLine:(CDStruct_e3b9714e)arg1 isConstraintLine:(BOOL)arg2;
 - (id)geometryFromDrawable:(id)arg1;
 - (void)addGuideLine:(CDStruct_e3b9714e)arg1 guidelineIsLeftOrBottom:(BOOL)arg2 color:(id)arg3 rootViewRect:(struct CGRect)arg4 firstItem:(id)arg5 secondItem:(id)arg6;
 - (void)markBaselineViewsAsInterestingForAutoLayout;

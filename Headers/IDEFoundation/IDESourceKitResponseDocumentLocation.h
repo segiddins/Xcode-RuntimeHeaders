@@ -6,7 +6,7 @@
 
 #import <IDEFoundation/IDESourceKitVariantDictionaryWrapper.h>
 
-@class NSNumber, NSString;
+@class DVTTextDocumentLocation, NSNumber, NSString;
 
 @interface IDESourceKitResponseDocumentLocation : IDESourceKitVariantDictionaryWrapper
 {
@@ -21,7 +21,8 @@
 @property(readonly) long long startCol;
 @property(readonly) long long startLine;
 @property(readonly) NSString *url;
-- (id)dvtDocumentLocation;
+@property(readonly) DVTTextDocumentLocation *ide_documentLocationWithDocumentURLAndLineRange;
+@property(readonly) DVTTextDocumentLocation *ide_documentLocation;
 
 @end
 

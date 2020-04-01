@@ -6,10 +6,11 @@
 
 #import <IBFoundation/IBObjectBasedMarshallingRequest.h>
 
-@class IBAutolayoutArbitrationUnit;
+@class IBAutolayoutArbitrationUnit, IBAutolayoutArbitrationUnitSparseRepresentation;
 
 @interface IBAutolayoutOperationMarshallingRequest : IBObjectBasedMarshallingRequest
 {
+    IBAutolayoutArbitrationUnitSparseRepresentation *_sparseRepresentation;
     IBAutolayoutArbitrationUnit *_arbitrationUnit;
 }
 

@@ -4,26 +4,27 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <IDEFoundation/IDEProjectItemModel.h>
+#import <IDEFoundation/IDESandboxItemModel.h>
 
-@class NSMutableDictionary;
+@class NSDictionary;
 @protocol IDEFlightChecking;
 
-@interface Xcode3SandboxItemModel : IDEProjectItemModel
+@interface Xcode3SandboxItemModel : IDESandboxItemModel
 {
     id <IDEFlightChecking> _entitlementsFlightCheck;
-    NSMutableDictionary *_entitlements;
-    NSMutableDictionary *_filesystemPermissions;
+    NSDictionary *_entitlements;
+    NSDictionary *_filesystemPermissions;
 }
 
++ (id)coalescableReadOnlyKeyPaths;
 + (id)keyPathsForValuesAffectingValueForKey:(id)arg1;
 + (id)filesystemPermissionsIndexedByName;
 + (id)filesystemPermissionNames;
 + (id)filesystemKeys;
-+ (id)sandboxKeys;
-@property(retain) NSMutableDictionary *filesystemPermissions; // @synthesize filesystemPermissions=_filesystemPermissions;
-@property(retain) NSMutableDictionary *entitlements; // @synthesize entitlements=_entitlements;
+@property(retain) NSDictionary *filesystemPermissions; // @synthesize filesystemPermissions=_filesystemPermissions;
+@property(retain) NSDictionary *entitlements; // @synthesize entitlements=_entitlements;
 - (void).cxx_destruct;
+- (id)coalescableWriteableKeyPathToDataSource;
 - (BOOL)isEnabledUsingEducatedGuess;
 - (id)flightChecks;
 - (id)entitlementsFlightCheck;
@@ -32,7 +33,6 @@
 - (void)gameCenterStateChanged:(id)arg1;
 - (void)targetCoordinatorsChanged:(id)arg1;
 - (void)readCurrentState;
-- (void)publishStateWithContext:(id)arg1;
 - (void)primitiveInvalidate;
 - (id)initWithCapabilitiesContext:(id)arg1 item:(id)arg2;
 

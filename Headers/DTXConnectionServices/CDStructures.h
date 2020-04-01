@@ -4,6 +4,8 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
+@class NSObject;
+
 #pragma mark Blocks
 
 typedef void (^CDUnknownBlockType)(void); // return type and parameters are unknown
@@ -26,6 +28,15 @@ struct DTXMachMessage {
     char _field3[68];
 };
 
+struct DTXMessageHeader {
+    unsigned int _field1;
+    unsigned int _field2;
+    unsigned short _field3;
+    unsigned short _field4;
+    unsigned int _field5;
+    struct DTXMessageRoutingInfo _field6;
+};
+
 struct DTXMessageRoutingInfo {
     unsigned int _field1;
     unsigned int _field2;
@@ -45,4 +56,17 @@ struct mach_timebase_info {
     unsigned int numer;
     unsigned int denom;
 };
+
+struct os_unfair_lock_s {
+    unsigned int _os_unfair_lock_opaque;
+};
+
+#pragma mark Typedef'd Structures
+
+typedef struct {
+    NSObject *userDispatchQueue;
+    id dispatchTarget;
+    CDUnknownBlockType messageHandler;
+    CDUnknownBlockType dispatchValidator;
+} CDStruct_f5f3468d;
 

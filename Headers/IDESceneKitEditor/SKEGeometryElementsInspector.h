@@ -6,21 +6,39 @@
 
 #import <IDESceneKitEditor/SKEStaticTableViewInspector.h>
 
-@class DVTGradientImageButton;
+#import <IDESceneKitEditor/NSTableViewDataSource-Protocol.h>
 
-@interface SKEGeometryElementsInspector : SKEStaticTableViewInspector
+@class DVTGradientImageButton, NSString;
+
+@interface SKEGeometryElementsInspector : SKEStaticTableViewInspector <NSTableViewDataSource>
 {
     DVTGradientImageButton *_quickLookButton;
+    DVTGradientImageButton *_toolsButton;
 }
 
 + (BOOL)wantsEditionBar;
 + (id)tableColumnTitles;
 - (void).cxx_destruct;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forTableColumn:(id)arg3 row:(long long)arg4;
+- (void)discardOriginalTopology:(id)arg1;
+- (void)convertAllToPointCloud:(id)arg1;
+- (void)convertOneToPointCloud:(id)arg1;
+- (void)forceUpdateInspectors;
+- (void)triangulate:(id)arg1;
+- (void)toolsAction:(id)arg1;
 - (void)quickLookAction:(id)arg1;
 - (void)configureEditionBar;
+- (void)viewDidInstall;
 - (void)loadView;
 - (void)primitiveInvalidate;
+- (void)didSetInspectedObjects:(id)arg1;
+- (void)initViewData;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

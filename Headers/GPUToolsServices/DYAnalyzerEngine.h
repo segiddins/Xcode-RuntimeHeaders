@@ -7,6 +7,7 @@
 #import <objc/NSObject.h>
 
 @class DYAnalyzerFindingPool, DYDeviceInfo, NSMutableDictionary, NSMutableSet;
+@protocol DYPDependencyGraph, DYPResourceMemoryDataSource;
 
 @interface DYAnalyzerEngine : NSObject
 {
@@ -15,6 +16,7 @@
     int _drawCallNum;
     DYAnalyzerFindingPool *_findingPool;
     int _funcCounter;
+    int _fileFunctionIndex;
     unsigned long long _lastTimestamp;
     NSMutableDictionary *_heuristicPoolDict;
     CDUnknownBlockType _graphicsEngineInfoProvider;
@@ -25,16 +27,20 @@
     BOOL _abort;
     BOOL _usePreSortHeuristics;
     CDUnknownBlockType _telemetryReportErrorBlock;
+    id <DYPDependencyGraph> _dependencyGraph;
+    id <DYPResourceMemoryDataSource> _resourceMemoryDataSource;
     NSMutableSet *_enabledHeuristicNameSet;
 }
 
 + (id)getLocalizedString:(id)arg1 table:(id)arg2;
 + (id)getLocalizedString:(id)arg1;
 @property(retain, nonatomic) NSMutableSet *enabledHeuristicNameSet; // @synthesize enabledHeuristicNameSet=_enabledHeuristicNameSet;
-@property(nonatomic) CDUnknownBlockType telemetryReportErrorBlock; // @synthesize telemetryReportErrorBlock=_telemetryReportErrorBlock;
+@property(nonatomic) __weak id <DYPResourceMemoryDataSource> resourceMemoryDataSource; // @synthesize resourceMemoryDataSource=_resourceMemoryDataSource;
+@property(nonatomic) __weak id <DYPDependencyGraph> dependencyGraph; // @synthesize dependencyGraph=_dependencyGraph;
+@property(copy, nonatomic) CDUnknownBlockType telemetryReportErrorBlock; // @synthesize telemetryReportErrorBlock=_telemetryReportErrorBlock;
 @property(nonatomic) BOOL usePreSortHeuristics; // @synthesize usePreSortHeuristics=_usePreSortHeuristics;
-@property(readonly, nonatomic) BOOL singleFrameMode; // @synthesize singleFrameMode=_singleFrameMode;
 @property(nonatomic) int drawCallNum; // @synthesize drawCallNum=_drawCallNum;
+@property(readonly, nonatomic) BOOL singleFrameMode; // @synthesize singleFrameMode=_singleFrameMode;
 @property(nonatomic) int frameNum; // @synthesize frameNum=_frameNum;
 @property(retain, nonatomic) NSMutableDictionary *heuristicPoolDict; // @synthesize heuristicPoolDict=_heuristicPoolDict;
 @property(nonatomic) int captureBlockMode; // @synthesize captureBlockMode=_captureBlockMode;
@@ -45,6 +51,7 @@
 @property(copy, nonatomic) CDUnknownBlockType graphicsEngineInfoProvider; // @synthesize graphicsEngineInfoProvider=_graphicsEngineInfoProvider;
 @property(retain, nonatomic) DYDeviceInfo *deviceInfo; // @synthesize deviceInfo=_deviceInfo;
 - (void).cxx_destruct;
+- (id)runPostShaderProfilerHeuristics:(id)arg1;
 - (id)_newHeuristicPoolWithGraphicsEngineID:(unsigned long long)arg1;
 - (id)newFrameStatisticsFinding;
 - (unsigned int)_stateMirrorProcessFunctionAndAnnotate:(const struct Function *)arg1 functionIndex:(int)arg2;
@@ -77,6 +84,8 @@
 - (void)processFunction:(const struct Function *)arg1 blockMode:(int)arg2 analyzeInserted:(BOOL)arg3 findingsHandler:(CDUnknownBlockType)arg4;
 - (void)processFunction:(const struct Function *)arg1 blockMode:(int)arg2 streamMode:(BOOL)arg3 analyzeInserted:(BOOL)arg4 findingsHandler:(CDUnknownBlockType)arg5;
 - (int)functionIndexForBlockMode:(int)arg1;
+- (int)fileFunctionIndex;
+- (void)initializeDependencyGraph:(id)arg1;
 - (id)init;
 - (id)getHeuristicPool:(unsigned long long)arg1;
 - (void)_populateHeuristicPool:(id)arg1;

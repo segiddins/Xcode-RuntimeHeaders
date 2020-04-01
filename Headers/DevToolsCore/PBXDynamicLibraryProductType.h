@@ -10,8 +10,10 @@
 {
 }
 
-- (void)addBaseLinkerFlagsInTargetBuildContext:(id)arg1;
-- (id)linkerSpecificationForObjectFilesInTargetBuildContext:(id)arg1;
+- (void)generateStubAPIForLinkedProductWithMacroExpansionScope:(id)arg1;
+- (void)generateInstallAPIForLinkedProductWithMacroExpansionScope:(id)arg1;
+- (void)addBaseLinkerFlagsWithMacroExpansionScope:(id)arg1;
+- (id)linkerSpecificationForObjectFilesWithMacroExpansionScope:(id)arg1;
 
 @end
 

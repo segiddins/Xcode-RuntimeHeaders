@@ -6,23 +6,40 @@
 
 #import <objc/NSObject.h>
 
-@class NSAlert, NSError, NSWindow;
+@class IDEWorkspaceWindow, NSAlert, NSButton, NSError, NSImageView, NSProgressIndicator, NSTextField, NSWindow;
 
 @interface IDEExecutionHoldAlertHelper : NSObject
 {
-    BOOL _alertShowing;
-    NSWindow *_window;
+    IDEWorkspaceWindow *_window;
     NSError *_error;
+    BOOL _alertShowing;
+    NSWindow *_sheet;
+    NSImageView *_appIconImageWell;
+    NSTextField *_errMessageTextField;
+    NSTextField *_errInformativeTextField;
+    NSButton *_firstButton;
+    NSProgressIndicator *_firstButtonSpinner;
+    NSButton *_secondButton;
+    NSProgressIndicator *_secondButtonSpinner;
+    NSButton *_thirdButton;
     NSAlert *_alert;
 }
 
 @property(retain) NSAlert *alert; // @synthesize alert=_alert;
-@property(retain) NSError *error; // @synthesize error=_error;
-@property(retain) NSWindow *window; // @synthesize window=_window;
+@property __weak NSButton *thirdButton; // @synthesize thirdButton=_thirdButton;
+@property __weak NSProgressIndicator *secondButtonSpinner; // @synthesize secondButtonSpinner=_secondButtonSpinner;
+@property __weak NSButton *secondButton; // @synthesize secondButton=_secondButton;
+@property __weak NSProgressIndicator *firstButtonSpinner; // @synthesize firstButtonSpinner=_firstButtonSpinner;
+@property __weak NSButton *firstButton; // @synthesize firstButton=_firstButton;
+@property __weak NSTextField *errInformativeTextField; // @synthesize errInformativeTextField=_errInformativeTextField;
+@property __weak NSTextField *errMessageTextField; // @synthesize errMessageTextField=_errMessageTextField;
+@property __weak NSImageView *appIconImageWell; // @synthesize appIconImageWell=_appIconImageWell;
+@property(retain) NSWindow *sheet; // @synthesize sheet=_sheet;
 @property BOOL alertShowing; // @synthesize alertShowing=_alertShowing;
 - (void).cxx_destruct;
-- (void)dismissAlert;
+- (void)dismissAlert:(id)arg1;
 - (void)showAlert;
+- (void)_showOnlyFirstButton;
 - (id)initWithWindow:(id)arg1 error:(id)arg2;
 
 @end

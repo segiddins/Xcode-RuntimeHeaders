@@ -6,7 +6,7 @@
 
 #import <IDEInterfaceBuilderKit/IBDocumentMemberWrapper.h>
 
-@class IBMutableIdentityDictionary, NSArray, NSImage, NSObject, NSString;
+@class IBMutableIdentityDictionary, NSArray, NSImage, NSObject, NSSet, NSString;
 
 @interface IBDocumentObjectMemberWrapper : IBDocumentMemberWrapper
 {
@@ -15,6 +15,7 @@
     NSString *_name;
     NSImage *_image;
     BOOL _installed;
+    NSSet *_attributeKeyPathsAffectingChildWrappers;
 }
 
 + (id)keyPathsForValuesAffectingObject;
@@ -40,7 +41,7 @@
 - (void)primitiveInvalidate;
 - (id)initWithMember:(id)arg1 document:(id)arg2;
 - (id)humanReadableNameForInspectorKeyPath:(id)arg1;
-- (id)applicableInspectorsForCategory:(id)arg1 suggestion:(id)arg2;
+- (id)applicableInspectorSlicesForCategory:(id)arg1 suggestedSlices:(id)arg2;
 - (id)ideModelObjectTypeIdentifier;
 
 @end

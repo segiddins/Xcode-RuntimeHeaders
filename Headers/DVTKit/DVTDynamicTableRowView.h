@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <DVTKit/DVTBorderedView.h>
+#import "DVTBorderedView.h"
 
 #import <DVTKit/DVTDynamicTableRowViewSupport-Protocol.h>
 #import <DVTKit/DVTInvalidation-Protocol.h>
@@ -24,8 +24,9 @@
 }
 
 + (unsigned long long)assertionBehaviorAfterEndOfEventForSelector:(SEL)arg1;
++ (BOOL)supportsInvalidationPrevention;
 + (void)initialize;
-+ (id)dynamicTableRowViewUsingSplitViewStyle:(int)arg1;
++ (id)dynamicTableRowView;
 + (id)keyPathsForValuesAffectingSelected;
 @property(retain) NSObject<OS_dispatch_queue> *popQ; // @synthesize popQ=_popQ;
 @property(copy) CDUnknownBlockType populationBlock; // @synthesize populationBlock=_populationBlock;

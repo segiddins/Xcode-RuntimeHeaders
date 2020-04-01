@@ -6,7 +6,19 @@
 
 #import <AppKit/NSView.h>
 
-@interface NSView (IDEViewControllerAutomaticInvalidation)
+#import <IDEKit/_TtP6IDEKit26IDENavigationOverlayTarget_-Protocol.h>
+
+@class NSString;
+
+@interface NSView (IDEViewControllerAutomaticInvalidation) <_TtP6IDEKit26IDENavigationOverlayTarget_>
 - (id)ide_viewsToSearchForAutomaticControllerInvalidation;
+- (struct CGRect)IDE_IB_convertRectToScreen:(struct CGRect)arg1;
+- (BOOL)ide_openQuicklyIsDark;
+@property(nonatomic, readonly) NSString *navigationOverlayTargetAccessibilityTitle;
+@property(nonatomic, readonly) BOOL wantsHighlightEdgeAdornments;
+@property(nonatomic, readonly) double highlightFrameBorderWidth;
+@property(nonatomic, readonly) double highlightFrameCornerRadius;
+- (struct CGRect)hitTestFrameInWindow:(id)arg1;
+- (struct CGRect)highlightFrameInWindow:(id)arg1;
 @end
 

@@ -36,6 +36,7 @@
 - (void)mouseDown:(id)arg1;
 - (void)mouseUp:(id)arg1;
 - (BOOL)acceptsFirstMouse:(id)arg1;
+- (BOOL)resignFirstResponder;
 - (BOOL)acceptsFirstResponder;
 - (void)changeColor:(id)arg1;
 - (id)gradientByReplacingLocation:(double)arg1 atIndex:(unsigned long long)arg2;
@@ -43,8 +44,7 @@
 - (id)gradientByRemovingColorAtIndex:(unsigned long long)arg1;
 - (id)gradientByAddingColor:(id)arg1 atLocation:(double)arg2 index:(unsigned long long *)arg3;
 @property(retain) NSGradient *gradient;
-- (void)setEnabled:(BOOL)arg1;
-- (BOOL)isEnabled;
+@property(nonatomic, getter=isEnabled) BOOL enabled;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)commonInit;

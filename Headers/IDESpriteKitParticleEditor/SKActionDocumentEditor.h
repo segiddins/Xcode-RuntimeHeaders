@@ -12,7 +12,7 @@
 #import <IDESpriteKitParticleEditor/SKActionAssignControllerDelegate-Protocol.h>
 #import <IDESpriteKitParticleEditor/SKActionPreviewViewControllerDelegate-Protocol.h>
 
-@class DVTGradientImageButton, DVTObservingToken, DVTReplacementView, DVTStepperTextField, GTFActionEditor, GTFActionLibrary, NSArray, NSArrayController, NSMutableDictionary, NSPopUpButton, NSString, NSView, SKActionDocument, SKActionPreviewViewController, SKDocumentBorderedView, SKDocumentScopeBarView, SKDocumentSplitView, SKSceneDocument;
+@class DVTGradientImageButton, DVTObservingToken, DVTReplacementView, DVTStepperTextField, GTFActionEditor, GTFActionLibrary, NSArray, NSArrayController, NSMutableDictionary, NSPopUpButton, NSString, NSURL, NSView, NSVisualEffectView, SKActionDocument, SKActionPreviewViewController, SKDocumentBorderedView, SKDocumentScopeBarView, SKDocumentSplitView;
 @protocol SKActionPreviewViewControllerDelegate;
 
 @interface SKActionDocumentEditor : IDEEditor <DVTReplacementViewDelegate, NSSplitViewDelegate, SKActionPreviewViewControllerDelegate, SKActionAssignControllerDelegate, GTFActionEditorDelegate>
@@ -21,16 +21,17 @@
     DVTObservingToken *_workspaceDocumentKVOToken;
     DVTObservingToken *_actionEditorSelectedActionsKVOToken;
     DVTObservingToken *_actionEditorFilterStringKVOToken;
-    DVTObservingToken *_previewSceneTargetKVOToken;
     DVTObservingToken *_previewSceneNavigableObjectKVOToken;
     DVTObservingToken *_previewSceneSelectedObjectsKVOToken;
     DVTReplacementView *_actionEditorReplacementView;
     GTFActionEditor *_actionEditorViewController;
     DVTReplacementView *_previewSceneReplacementView;
     SKActionPreviewViewController *_previewSceneViewController;
+    DVTObservingToken *_previewDocumentsKVOToken;
     SKDocumentSplitView *_splitView;
     SKDocumentBorderedView *_sceneEditorGroupView;
     SKDocumentScopeBarView *_toolbarView;
+    NSVisualEffectView *_toolbarVisual;
     NSPopUpButton *_sceneSelector;
     NSView *_sceneSelectorView;
     DVTGradientImageButton *_actionEditorToggleButton;
@@ -39,11 +40,11 @@
     DVTGradientImageButton *_previewPauseResumeButton;
     DVTGradientImageButton *_previewPlayStopButton;
     NSMutableDictionary *_actionFilter;
-    SKSceneDocument *_previewDocument;
     NSArrayController *_sceneURLs;
     BOOL _isInitialLayout;
     BOOL _ignoreSelectionChanges;
     long long _previewState;
+    NSURL *_previewURL;
     id <SKActionPreviewViewControllerDelegate> _previewDelegate;
     NSArray *_currentSelectedItems;
 }
@@ -57,7 +58,6 @@
 - (void)previewPlayStopButtonPressed:(id)arg1;
 - (void)updateActionPreview;
 - (id)_loadAndRetainSKDocumentAtURL:(id)arg1;
-- (void)_setPreviewDocumentOnPreviewSceneViewController;
 - (void)_loadPreviewFromURL:(id)arg1;
 - (void)_registerScenePreviewObservers;
 - (id)actionDocumentURLForPreviewController:(id)arg1;
@@ -87,8 +87,7 @@
 - (void)_updateLayoutAfterButtonPress:(id)arg1;
 - (void)_updateSceneSelectorToURL:(id)arg1;
 - (void)_refreshPreviewButtonsForState;
-- (void)_populateSceneSelectorIgnoringURL:(id)arg1;
-- (void)_populateSceneSelector;
+- (void)_populatePreviewSceneSelectorWithFilePaths:(id)arg1;
 - (void)_setupToolbarViewLayout;
 - (void)takeFocus;
 - (id)currentSelectedDocumentLocations;
@@ -98,6 +97,7 @@
 - (void)primitiveInvalidate;
 - (void)viewWillUninstall;
 - (void)viewDidLayout;
+- (void)_registerPreviewSceneUpdates;
 - (void)_registerForActionLibraryNotifications;
 - (void)viewDidInstall;
 - (void)viewDidLoad;

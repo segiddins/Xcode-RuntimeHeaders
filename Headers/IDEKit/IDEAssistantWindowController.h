@@ -6,9 +6,12 @@
 
 #import <AppKit/NSWindowController.h>
 
-@class DVTBorderedView, IDEAssistant, IDEAssistantContext, IDEFilterControlBar, NSBox, NSButton, NSMutableArray, NSString, NSTextField, NSView;
+#import <IDEKit/NSTouchBarDelegate-Protocol.h>
+#import <IDEKit/NSTouchBarProvider-Protocol.h>
 
-@interface IDEAssistantWindowController : NSWindowController
+@class DVTBorderedView, DVTFilterControlBar, IDEAssistant, IDEAssistantContext, NSBox, NSButton, NSMutableArray, NSString, NSTextField, NSTouchBar, NSView;
+
+@interface IDEAssistantWindowController : NSWindowController <NSTouchBarProvider, NSTouchBarDelegate>
 {
     NSBox *_box;
     DVTBorderedView *_outerBorderedView;
@@ -18,8 +21,9 @@
     NSButton *_backButton;
     NSButton *_cancelButton;
     NSTextField *_titleField;
-    IDEFilterControlBar *_filterControlBar;
+    DVTFilterControlBar *_filterControlBar;
     NSButton *_helpButton;
+    NSButton *_checkboxButton;
     IDEAssistant *_installedAssistant;
     CDUnknownBlockType _currentCompletionBlock;
     NSMutableArray *_assistantHistory;
@@ -28,7 +32,6 @@
     double _lastAnimationDirection;
     _Bool _backtrackingFromOverlayAssistant;
     _Bool _closing;
-    BOOL _preventGoNextOrFinish;
     IDEAssistant *_currentAssistant;
     IDEAssistantContext *_assistantContext;
     NSString *_nextButtonTitle;
@@ -48,11 +51,9 @@
 @property(retain, nonatomic) NSString *nextButtonTitle; // @synthesize nextButtonTitle=_nextButtonTitle;
 @property(readonly, nonatomic) IDEAssistantContext *assistantContext; // @synthesize assistantContext=_assistantContext;
 @property(readonly, nonatomic) IDEAssistant *currentAssistant; // @synthesize currentAssistant=_currentAssistant;
-@property(nonatomic) BOOL preventGoNextOrFinish; // @synthesize preventGoNextOrFinish=_preventGoNextOrFinish;
 - (void).cxx_destruct;
 - (void)configureAnimationImageViewWithDirection:(double)arg1 actionBlock:(CDUnknownBlockType)arg2;
 - (void)setupAccessoriesForAssistant:(id)arg1 animated:(BOOL)arg2;
-- (void)setAnimationDuration;
 - (void)helpAction:(id)arg1;
 - (void)windowWillClose:(id)arg1;
 - (void)cancelSession;
@@ -84,6 +85,22 @@
 - (id)init;
 - (void)setCurrentAssistant:(id)arg1 andInstallView:(BOOL)arg2;
 - (void)setCurrentAssistant:(id)arg1;
+@property(readonly) NSButton *checkboxButton;
+@property(readonly) NSButton *cancelButton;
+- (id)_nextItem;
+- (id)_previousItem;
+- (id)_cancelItem;
+- (id)_constraintForAlertTypeButton:(id)arg1;
+- (id)_nextPreviousGroupItem;
+- (id)touchBar:(id)arg1 makeItemForIdentifier:(id)arg2;
+- (id)makeTouchBar;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(readonly) NSTouchBar *touchBar;
 
 @end
 

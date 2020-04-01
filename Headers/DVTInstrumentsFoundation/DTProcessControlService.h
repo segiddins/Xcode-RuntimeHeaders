@@ -20,6 +20,7 @@
     NSObject<OS_dispatch_queue> *_synchronousRedirectionQueue;
 }
 
++ (void)registerCapabilities:(id)arg1;
 - (void).cxx_destruct;
 - (void)watchOutputFileName:(id)arg1 directory:(id)arg2 forPid:(int)arg3;
 - (void)watchOutputFileDescriptor:(int)arg1 forPid:(int)arg2;
@@ -28,6 +29,7 @@
 - (int)cleanupPid:(int)arg1;
 - (void)sendProcessControlEvent:(id)arg1 toPid:(id)arg2;
 - (void)_performMemoryWarningForPid:(int)arg1;
+- (void)sendSignal:(id)arg1 toPid:(id)arg2;
 - (void)killPid:(id)arg1;
 - (id)launchSuspendedProcessWithDevicePath:(id)arg1 bundleIdentifier:(id)arg2 environment:(id)arg3 arguments:(id)arg4 options:(id)arg5;
 - (id)launchSuspendedProcessWithDevicePath:(id)arg1 bundleIdentifier:(id)arg2 environment:(id)arg3 arguments:(id)arg4;

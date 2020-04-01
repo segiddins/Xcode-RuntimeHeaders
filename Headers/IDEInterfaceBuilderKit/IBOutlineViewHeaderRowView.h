@@ -17,6 +17,8 @@
 @property(nonatomic) BOOL showTopLine; // @synthesize showTopLine=_showTopLine;
 - (void).cxx_destruct;
 - (id)makeBackingLayer;
+- (void)updateLayer;
+- (BOOL)wantsUpdateLayer;
 - (void)_updateTopLineLayerVisibility;
 
 @end

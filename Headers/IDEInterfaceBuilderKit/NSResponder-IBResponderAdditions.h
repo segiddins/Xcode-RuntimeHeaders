@@ -7,6 +7,7 @@
 #import <AppKit/NSResponder.h>
 
 @interface NSResponder (IBResponderAdditions)
+- (id)firstAncestorResponderOfClass:(Class)arg1;
 - (BOOL)isDescendantOfResponder:(id)arg1;
 @end
 

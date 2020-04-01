@@ -6,9 +6,11 @@
 
 #import <IDEKit/IDEViewController.h>
 
+#import <XCSUI/XCSUIDataSourceSnapshotsObserver-Protocol.h>
+
 @class DVTBorderedView, DVTObservingToken, DVTToggleSwitch, NSButton, NSButtonCell, NSError, NSImage, NSImageView, NSMatrix, NSSecureTextField, NSString, NSTextField;
 
-@interface XCSUIAccountPrefsServerDetailViewController : IDEViewController
+@interface XCSUIAccountPrefsServerDetailViewController : IDEViewController <XCSUIDataSourceSnapshotsObserver>
 {
     DVTObservingToken *_serverEnabledWatcher;
     unsigned long long _resolutionOperationCount;
@@ -77,6 +79,7 @@
 - (void)retryConnection;
 - (void)refreshConnectionAddress;
 - (void)updateControlEnabledStateForService:(id)arg1;
+- (void)dataSource:(id)arg1 versionInfoSnapshotsChanged:(id)arg2;
 - (void)setRepresentedObject:(id)arg1;
 - (id)contextMenu;
 - (void)primitiveInvalidate;

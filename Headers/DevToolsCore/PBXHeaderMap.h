@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Foundation/NSObject.h>
+#import <objc/NSObject.h>
 
 @class PBXCStringPool;
 
@@ -17,20 +17,22 @@
     unsigned long long _maxValueLength;
 }
 
+- (void).cxx_destruct;
+- (void)setValuePrefixCStr:(const char *)arg1 suffixCStr:(const char *)arg2 forKeyCStr:(const char *)arg3 replaceExisting:(BOOL)arg4;
 - (void)printStatistics;
-- (BOOL)writeSymbolicLinksToDirectoryAtPath:(id)arg1;
 - (id)asciiData;
 - (id)data;
 - (unsigned long long)numEntries;
 - (id)pathForHeaderNamed:(id)arg1;
 - (void)markKeyAsDuplicate:(id)arg1;
+- (id)allValues;
 - (void)addEntriesFromHeaderMap:(id)arg1 replaceExisting:(BOOL)arg2;
 - (void)addEntriesToHeaderMap:(id)arg1 replaceExisting:(BOOL)arg2;
 - (void)setValuePrefix:(id)arg1 suffix:(id)arg2 forKey:(id)arg3;
 - (void)setValuePrefix:(id)arg1 suffix:(id)arg2 forKey:(id)arg3 replaceExisting:(BOOL)arg4;
 - (void)_growIfNeeded;
-- (void)finalize;
 - (void)dealloc;
+- (id)initWithData:(id)arg1;
 - (id)init;
 - (id)initWithCapacity:(unsigned long long)arg1;
 

@@ -6,36 +6,45 @@
 
 #import <objc/NSObject.h>
 
-@class DVTAppIDFeatures, IDEProvisionableOverrides, NSDictionary, NSOrderedSet, NSString;
+@class IDEProvisionableOverrides, NSDictionary, NSOrderedSet, NSString;
 
 @interface IDEProvisionableSnapshot : NSObject
 {
     NSString *_name;
-    long long _provisioningStyle;
-    DVTAppIDFeatures *_appIDFeatures;
     NSOrderedSet *_configurations;
     NSDictionary *_configurationSnapshots;
     IDEProvisionableOverrides *_overrides;
 }
 
++ (id)snapshotFromProvisionable:(id)arg1 buildParameters:(id)arg2 overrides:(id)arg3;
 + (id)snapshotFromProvisionable:(id)arg1 overrides:(id)arg2;
 @property(readonly, nonatomic) IDEProvisionableOverrides *overrides; // @synthesize overrides=_overrides;
 @property(readonly, copy, nonatomic) NSDictionary *configurationSnapshots; // @synthesize configurationSnapshots=_configurationSnapshots;
 @property(readonly, nonatomic) NSOrderedSet *configurations; // @synthesize configurations=_configurations;
-@property(readonly, nonatomic) DVTAppIDFeatures *appIDFeatures; // @synthesize appIDFeatures=_appIDFeatures;
-@property(readonly, nonatomic) long long provisioningStyle; // @synthesize provisioningStyle=_provisioningStyle;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
+- (BOOL)supportsIOSMacForConfigurationNamed:(id)arg1;
+- (BOOL)signingRequiresTeamForConfigurationNamed:(id)arg1;
 - (BOOL)allowSigningWithoutTeamSelectionForConfigurationNamed:(id)arg1;
+- (unsigned long long)entitlementsDestinationForConfigurationNamed:(id)arg1;
 - (id)entitlementsExpansionForConfigurationNamed:(id)arg1;
 - (id)baseEntitlementsForConfigurationNamed:(id)arg1;
+- (id)entitlementsForConfigurationNamed:(id)arg1;
 - (id)entitlementsFilePathForConfigurationNamed:(id)arg1;
+- (id)appIDFeaturesForConfigurationNamed:(id)arg1;
 - (id)signingCertificateIdentifierForConfigurationNamed:(id)arg1;
 - (id)provisioningProfileSpecifierForConfigurationNamed:(id)arg1;
+- (id)provisioningProfileSpecifierSpecifierForConfigurationNamed:(id)arg1;
 - (id)bundleIdentifierForConfigurationNamed:(id)arg1;
+- (id)sdkVariantForConfigurationNamed:(id)arg1;
+- (id)sdkForConfigurationNamed:(id)arg1;
 - (id)platformForConfigurationNamed:(id)arg1;
 - (long long)profileSupportForConfigurationNamed:(id)arg1;
 - (id)teamForConfigurationNamed:(id)arg1;
+- (long long)provisioningStyleForConfigurationNamed:(id)arg1;
+- (id)provisioningPurposeForConfigurationNamed:(id)arg1;
+- (BOOL)_isConfigurationOverriden:(id)arg1;
+- (id)description;
 
 @end
 

@@ -10,6 +10,11 @@
 
 @protocol IBStoryboardCanvasBackgroundOverlayViewDelegate <NSObject>
 - (void)canvasBackgroundOverlayView:(IBStoryboardCanvasBackgroundOverlayView *)arg1 smartMagnifyCanvasLinkPath:(IBStoryboardCanvasLinkPath *)arg2 withEvent:(NSEvent *)arg3;
+- (BOOL)canvasBackgroundOverlayView:(IBStoryboardCanvasBackgroundOverlayView *)arg1 canvasLinkPathWasClicked:(IBStoryboardCanvasLinkPath *)arg2 withRightMouseDragEvent:(NSEvent *)arg3;
+- (void)canvasBackgroundOverlayView:(IBStoryboardCanvasBackgroundOverlayView *)arg1 canvasLinkPathWasClicked:(IBStoryboardCanvasLinkPath *)arg2 withMouseDragEvent:(NSEvent *)arg3;
+- (BOOL)canvasBackgroundOverlayView:(IBStoryboardCanvasBackgroundOverlayView *)arg1 canvasLinkPathWasClicked:(IBStoryboardCanvasLinkPath *)arg2 withRightMouseUpEvent:(NSEvent *)arg3;
+- (void)canvasBackgroundOverlayView:(IBStoryboardCanvasBackgroundOverlayView *)arg1 canvasLinkPathWasClicked:(IBStoryboardCanvasLinkPath *)arg2 withMouseUpEvent:(NSEvent *)arg3;
+- (BOOL)canvasBackgroundOverlayView:(IBStoryboardCanvasBackgroundOverlayView *)arg1 canvasLinkPathWasClicked:(IBStoryboardCanvasLinkPath *)arg2 withRightMouseDownEvent:(NSEvent *)arg3;
 - (void)canvasBackgroundOverlayView:(IBStoryboardCanvasBackgroundOverlayView *)arg1 canvasLinkPathWasClicked:(IBStoryboardCanvasLinkPath *)arg2 withMouseDownEvent:(NSEvent *)arg3;
 - (void)canvasBackgroundOverlayView:(IBStoryboardCanvasBackgroundOverlayView *)arg1 canvasLinkPathWasDoubleClicked:(IBStoryboardCanvasLinkPath *)arg2 withMouseDownEvent:(NSEvent *)arg3;
 @end

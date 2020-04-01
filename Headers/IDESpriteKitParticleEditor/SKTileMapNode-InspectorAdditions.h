@@ -6,13 +6,25 @@
 
 #import <SpriteKit/SKTileMapNode.h>
 
-@class NSString;
+@class NSNumber;
 
 @interface SKTileMapNode (InspectorAdditions)
-+ (id)keyPathsForValuesAffectingSelectedTileSet;
-@property(retain, nonatomic) NSString *selectedTileSet;
++ (id)keyPathsForValuesAffectingtileSize_commit;
++ (id)keyPathsForValuesAffectingsk_lightingMask_commit;
++ (id)keyPathsForValuesAffectingsk_columns_commit;
++ (id)keyPathsForValuesAffectingsk_rows_commit;
 - (BOOL)_isEmpty;
+@property(retain, nonatomic) NSNumber *sk_lightingMask;
 @property(nonatomic) unsigned long long sk_columns;
 @property(nonatomic) unsigned long long sk_rows;
+- (void)settileSize_commit:(struct CGSize)arg1;
+- (struct CGSize)tileSize_commit;
+- (void)setsk_lightingMask_commit:(id)arg1;
+- (id)sk_lightingMask_commit;
+- (void)setsk_columns_commit:(unsigned long long)arg1;
+- (unsigned long long)sk_columns_commit;
+- (void)setsk_rows_commit:(unsigned long long)arg1;
+- (unsigned long long)sk_rows_commit;
+- (unsigned long long)manipulationSupport;
 @end
 

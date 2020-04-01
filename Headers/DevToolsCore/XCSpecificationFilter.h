@@ -4,18 +4,19 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Foundation/NSObject.h>
+#import <objc/NSObject.h>
 
 @class NSMutableArray;
 
 @interface XCSpecificationFilter : NSObject
 {
     Class _specClass;
-    BOOL _emptyFilterIncludesAll;
+    BOOL _includeAllSpecs;
     NSMutableArray *_includedSpecs;
     NSMutableArray *_excludedSpecs;
 }
 
+- (void).cxx_destruct;
 - (id)description;
 - (BOOL)includesSpecification:(id)arg1;
 - (BOOL)includesAnySpecifications;
@@ -31,10 +32,9 @@
 - (void)addIncludedSpecifications:(id)arg1;
 - (id)includedSpecifications;
 - (void)_addSpecification:(id)arg1 toList:(id)arg2;
-- (void)dealloc;
 - (id)init;
 - (id)initWithSpecificationClass:(Class)arg1;
-- (id)initWithSpecificationClass:(Class)arg1 emptyFilterIncludesAll:(BOOL)arg2;
+- (id)initWithSpecificationClass:(Class)arg1 includeAllByDefault:(BOOL)arg2;
 
 @end
 

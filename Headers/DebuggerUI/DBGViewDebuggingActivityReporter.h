@@ -11,16 +11,24 @@
 @interface DBGViewDebuggingActivityReporter : IDEActivityReporter
 {
     NSMapTable *_launchSessionsToTokens;
+    NSMapTable *_requestToToken;
     NSMapTable *_reportForViewDebuggingAdditionTable;
+    NSMapTable *_reportForHierarchyRequestTable;
 }
 
++ (id)_titleForHierarchyRequest:(id)arg1 inViewDebuggingAddition:(id)arg2;
 + (id)_titleForViewDebuggingAddition:(id)arg1;
-+ (void)initialize;
+@property(retain) NSMapTable *reportForHierarchyRequestTable; // @synthesize reportForHierarchyRequestTable=_reportForHierarchyRequestTable;
+@property(retain) NSMapTable *reportForViewDebuggingAdditionTable; // @synthesize reportForViewDebuggingAdditionTable=_reportForViewDebuggingAdditionTable;
+@property(retain) NSMapTable *requestToToken; // @synthesize requestToToken=_requestToToken;
+@property(retain) NSMapTable *launchSessionsToTokens; // @synthesize launchSessionsToTokens=_launchSessionsToTokens;
 - (void).cxx_destruct;
 - (void)primitiveInvalidate;
+- (void)_removeAndInvalidateReportForHierarchyRequest:(id)arg1 inViewDebuggingAddition:(id)arg2;
 - (void)_removeAndInvalidateReportForDebuggingAddition:(id)arg1;
 - (void)_doneWatchingLaunchSession:(id)arg1;
 - (void)_addToken:(id)arg1 forLaunchSession:(id)arg2;
+- (id)_activityReportForHierarchyRequest:(id)arg1 inViewDebuggingAddition:(id)arg2;
 - (id)_activityReportForViewDebuggingAddition:(id)arg1;
 - (void)_watchViewDebuggingAddition:(id)arg1;
 - (void)_handleLaunchSessionAdded:(id)arg1;

@@ -64,6 +64,8 @@
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
+@property(nonatomic) double sk_xScale_commit;
+@property(nonatomic) double sk_yScale_commit;
 @property(readonly) Class superclass;
 @property(nonatomic) double xScale;
 @property(nonatomic) double xScale_commit;

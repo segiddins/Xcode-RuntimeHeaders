@@ -10,16 +10,16 @@
 @class DVTSDK, DVTSourceExpression, DVTSourceLanguageService, NSString;
 
 @protocol DVTSourceExpressionSource <NSObject, DVTInvalidation>
-@property(readonly, nonatomic) DVTSourceExpression *mouseOverExpression;
-@property(readonly, nonatomic) struct CGRect currentSelectionFrame;
-@property(readonly) DVTSourceExpression *contextMenuExpression;
-@property(readonly, nonatomic) DVTSourceExpression *selectedExpression;
 - (struct CGRect)expressionFrameForExpression:(DVTSourceExpression *)arg1;
+@property(nonatomic, readonly) DVTSourceExpression *mouseOverExpression;
+@property(nonatomic, readonly) struct CGRect currentSelectionFrame;
+@property(nonatomic, readonly) DVTSourceExpression *contextMenuExpression;
+@property(nonatomic, readonly) DVTSourceExpression *selectedExpression;
 
 @optional
-@property(readonly) DVTSDK *sdk;
-@property(readonly, nonatomic) DVTSourceLanguageService *languageService;
-@property(readonly, nonatomic) NSString *selectedText;
-@property(readonly) DVTSourceExpression *quickHelpExpression;
+@property(nonatomic, readonly) DVTSDK *sdk;
+@property(nonatomic, readonly) DVTSourceLanguageService *languageService;
+@property(nonatomic, readonly) NSString *selectedText;
+@property(nonatomic, readonly) DVTSourceExpression *quickHelpExpression;
 @end
 

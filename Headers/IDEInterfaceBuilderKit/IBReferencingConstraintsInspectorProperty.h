@@ -7,6 +7,7 @@
 #import <IDEKit/IDEInspectorProperty.h>
 
 #import <IDEInterfaceBuilderKit/IBInspectorReferencingConstraintViewControllerDelegate-Protocol.h>
+#import <IDEInterfaceBuilderKit/IBReferencingConstraintsFilterDelegate-Protocol.h>
 #import <IDEInterfaceBuilderKit/IBSelectionOwnerDelegate-Protocol.h>
 #import <IDEInterfaceBuilderKit/NSMenuDelegate-Protocol.h>
 #import <IDEInterfaceBuilderKit/NSPopoverDelegate-Protocol.h>
@@ -14,7 +15,7 @@
 @class DVTStackView_ML, IBCancellationToken, IBInspectorReferencingConstraintViewController, IBMutableIdentityDictionary, IBReferencingConstraintsFilter, IBSelectionOwner, IDEInspectorKeyPath, NSArray, NSButton, NSLayoutConstraint, NSMutableSet, NSPopover, NSString, NSTextField, NSView;
 @protocol DVTCancellable, DVTInvalidation;
 
-@interface IBReferencingConstraintsInspectorProperty : IDEInspectorProperty <IBInspectorReferencingConstraintViewControllerDelegate, NSPopoverDelegate, NSMenuDelegate, IBSelectionOwnerDelegate>
+@interface IBReferencingConstraintsInspectorProperty : IDEInspectorProperty <IBInspectorReferencingConstraintViewControllerDelegate, IBReferencingConstraintsFilterDelegate, NSPopoverDelegate, NSMenuDelegate, IBSelectionOwnerDelegate>
 {
     IBMutableIdentityDictionary *_referencingConstraintControllersByConstraint;
     IBInspectorReferencingConstraintViewController *_highlightedController;
@@ -49,16 +50,21 @@
 @property(retain) NSView *filterContainerView; // @synthesize filterContainerView=_filterContainerView;
 @property(retain) DVTStackView_ML *stackView; // @synthesize stackView=_stackView;
 - (void).cxx_destruct;
-- (BOOL)_constraintIsReferencingSiblingsOrAncestors:(id)arg1 relativeToItem:(id)arg2;
-- (void)userDidUpdateFilter:(id)arg1;
+- (BOOL)_constraintAffectsHorizontalAndVerticalAxis:(id)arg1;
+- (BOOL)_constraintAffectsOnlyVerticalAxis:(id)arg1;
+- (BOOL)_constraintAffectsOnlyHorizontalAxis:(id)arg1;
+- (void)constraintFilterViewWillChangeConstraintAttributeSelection:(id)arg1;
 - (void)userDidChangeInstalledFilter:(id)arg1;
+- (void)constraintFilterViewWillDeleteSelectedConstraints:(id)arg1;
 - (void)updateReferencingConstraintSubviews;
 - (id)diclosableStackOfControllers:(id)arg1 withTitle:(id)arg2 andDefaultsKey:(id)arg3 populatingTokens:(id)arg4;
 - (void)_updateFilterLabel;
 - (void)referencingConstraintViewControllerStopHighlightingConstraint:(id)arg1;
 - (void)stopHighlightingConstraintForController:(id)arg1;
 - (void)referencingConstraintViewControllerStartHighlightingConstraint:(id)arg1;
+- (void)constraintFilterViewWillChangeHighlighted:(id)arg1 shouldHighlight:(BOOL)arg2;
 - (id)document;
+- (void)doRemoveConstraints:(id)arg1;
 - (void)referencingConstraintViewControllerInitiatedDelete:(id)arg1;
 - (void)referencingConstraintViewControllerInitiatedRevealInEditor:(id)arg1;
 - (void)selectionOwner:(id)arg1 didSelect:(id)arg2 andDeselect:(id)arg3;
@@ -77,7 +83,7 @@
 - (id)filteredReferencingConstraints;
 - (id)possibleConstraints;
 - (BOOL)constraintPassesInstalledFilter:(id)arg1 withDocumentConfiguration:(id)arg2;
-- (id)referencedView;
+- (id)referencedItem;
 - (id)inspectorController;
 - (void)primitiveInvalidate;
 - (void)invalidatePreviousConstraintControllers:(id)arg1;

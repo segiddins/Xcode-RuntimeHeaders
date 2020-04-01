@@ -18,7 +18,6 @@
 - (void)drawRect:(struct CGRect)arg1;
 - (void)invalidateLayout;
 - (id)initWithFrame:(struct CGRect)arg1 stackView:(id)arg2;
-- (BOOL)isOpaque;
 
 @end
 

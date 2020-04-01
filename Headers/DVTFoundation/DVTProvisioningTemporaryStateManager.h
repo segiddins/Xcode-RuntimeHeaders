@@ -10,16 +10,16 @@
 
 @interface DVTProvisioningTemporaryStateManager : NSObject
 {
-    struct OpaqueSecKeychainRef *_keychain;
+    struct __SecKeychain *_keychain;
     DVTFilePath *_provisioningProfileSearchPath;
 }
 
 + (id)provisioningProfileSearchPath;
 + (id)defaultTemporaryStateManager;
 @property(retain) DVTFilePath *provisioningProfileSearchPath; // @synthesize provisioningProfileSearchPath=_provisioningProfileSearchPath;
-@property struct OpaqueSecKeychainRef *keychain; // @synthesize keychain=_keychain;
+@property struct __SecKeychain *keychain; // @synthesize keychain=_keychain;
 - (void).cxx_destruct;
-- (id)initWithKeychain:(struct OpaqueSecKeychainRef *)arg1 provisioningProfileSearchPath:(id)arg2;
+- (id)initWithKeychain:(struct __SecKeychain *)arg1 provisioningProfileSearchPath:(id)arg2;
 
 @end
 

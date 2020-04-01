@@ -10,7 +10,7 @@
 #import <Xcode3UI/NSTableViewDataSource-Protocol.h>
 #import <Xcode3UI/NSTableViewDelegate-Protocol.h>
 
-@class DVTBorderedView, DVTGradientImageButton, DVTStackBacktrace, DVTTableView, IDENavigatorDataCell, NSArrayController, NSMutableDictionary, NSString, NSViewController;
+@class DVTBorderedView, DVTGradientImageButton, DVTObservingToken, DVTStackBacktrace, DVTTableView, IDENavigatorDataCell, NSArrayController, NSMutableDictionary, NSString, NSViewController;
 
 @interface Xcode3IconListInspectorCoordinator : NSObject <DVTInvalidation, NSTableViewDelegate, NSTableViewDataSource>
 {
@@ -23,6 +23,7 @@
     DVTGradientImageButton *_removeButton;
     IDENavigatorDataCell *_iconCell;
     NSMutableDictionary *_contentsDictionary;
+    DVTObservingToken *_inspectorControllerToken;
 }
 
 + (void)initialize;
@@ -34,6 +35,7 @@
 - (id)tableView:(id)arg1 dataCellForTableColumn:(id)arg2 row:(long long)arg3;
 - (void)rowCountChanged;
 - (void)primitiveInvalidate;
+- (void)setup;
 - (void)awakeFromNib;
 - (void)_syncViewSizes;
 

@@ -6,10 +6,52 @@
 
 #import <DevToolsCore/Xcode3Project.h>
 
-@interface Xcode3Project (Xcode3ProjectScripting)
+#import <Xcode3UI/IDEKeyDrivenNavigableItemRepresentedObject-Protocol.h>
+
+@class DVTDocumentLocation, DVTFileDataType, IDEFileReference, NSArray, NSImage, NSNull, NSString, NSURL, _TtC13DVTFoundation9DVTSymbol;
+
+@interface Xcode3Project (Xcode3ProjectScripting) <IDEKeyDrivenNavigableItemRepresentedObject>
++ (id)keyPathsForValuesAffectingNavigableItem_name;
 - (id)sdefSupport_targets;
 - (id)sdefSupport_buildConfigurations;
 - (void)setSdefSupport_scriptingID:(id)arg1;
 - (id)sdefSupport_scriptingID;
+@property(readonly, nonatomic) DVTFileDataType *navigableItem_documentType;
+@property(readonly, nonatomic) NSImage *navigableItem_image;
+@property(readonly, nonatomic) NSString *navigableItem_name;
+- (id)displayImage;
+- (id)supportedSourceListItemEditorClasses;
+- (void)_changeContainerFilePath:(id)arg1 inContext:(id)arg2;
+- (void)_renameProjectOldName:(id)arg1 newName:(id)arg2 inContext:(id)arg3;
+- (id)ideInspectedReferencedRelativeLocationContainingFolderPlaceholder;
+- (id)ideInspectedReferencedRelativeLocationPlaceholder;
+- (id)ideInspectedReferenceMessageForChoosingRelativeLocation;
+- (BOOL)ideInspectedReferenceRelativeLocationShouldChooseFile;
+- (BOOL)ideInspectedIsReferenceNameEditable;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly, nonatomic) NSString *navigableItem_accessibilityIdentifier;
+@property(readonly, nonatomic) NSString *navigableItem_accessibleImageDescription;
+@property(readonly, nonatomic) NSArray *navigableItem_additionalFilterMatchingText;
+@property(readonly, nonatomic) NSArray *navigableItem_childRepresentedObjects;
+@property(readonly, nonatomic) DVTDocumentLocation *navigableItem_contentDocumentLocation;
+@property(readonly, nonatomic) IDEFileReference *navigableItem_fileReference;
+@property(readonly, nonatomic) NSNull *navigableItem_filtered;
+@property(readonly, nonatomic) NSString *navigableItem_groupIdentifier;
+@property(readonly, nonatomic) BOOL navigableItem_isEnabled;
+@property(readonly, nonatomic) BOOL navigableItem_isLeaf;
+@property(readonly, nonatomic) BOOL navigableItem_isMajorGroup;
+@property(readonly, nonatomic) BOOL navigableItem_isVisible;
+@property(readonly, nonatomic) BOOL navigableItem_missingReferencedContentIsImportant;
+@property(readonly, nonatomic) id navigableItem_parentRepresentedObject;
+@property(readonly, nonatomic) BOOL navigableItem_referencedContentExists;
+@property(readonly, nonatomic) _TtC13DVTFoundation9DVTSymbol *navigableItem_representedSymbol;
+@property(readonly, nonatomic) NSURL *navigableItem_representedURL;
+@property(readonly, nonatomic) NSString *navigableItem_subtitle;
+@property(readonly, nonatomic) NSString *navigableItem_toolTip;
+@property(readonly) Class superclass;
 @end
 

@@ -16,6 +16,7 @@
 + (id)ib_collectionWithObject:(id)arg1;
 + (id)ib_emptyCollection;
 + (Class)ib_mutableClass;
+- (NSSet *)ib_setByMappingBlock:(id (^)(id))arg1;
 - (void)ib_getObjects:(id *)arg1;
 - (void)ib_removeObjectsInReceiverFromArray:(NSMutableArray *)arg1;
 - (void)ib_removeObjectsInReceiverFromOrderedSet:(NSMutableOrderedSet *)arg1;
@@ -29,7 +30,6 @@
 - (NSArray *)ib_arrayBySortingUsingSelector:(SEL)arg1;
 - (void)ib_enumerateObjectsUsingMutatingBlock:(void (^)(id))arg1;
 - (void)ib_enumerateCopyOfObjectsUsingBlock:(void (^)(id))arg1;
-- (void)ib_enumerateObjectsUsingBlock:(void (^)(id))arg1;
 - (id <IBCollection>)ib_collectionByMappingAndFilteringWithBlock:(id (^)(id))arg1;
 - (id <IBCollection>)ib_collectionByRemovingObject:(id)arg1;
 - (id <IBCollection>)ib_collectionByAddingObject:(id)arg1;

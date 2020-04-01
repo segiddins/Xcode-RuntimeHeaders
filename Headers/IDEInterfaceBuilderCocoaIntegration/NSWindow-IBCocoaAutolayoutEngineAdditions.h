@@ -8,5 +8,11 @@
 
 @interface NSWindow (IBCocoaAutolayoutEngineAdditions)
 - (id)ib_layoutEngine;
+- (void)ibSwizzledSetToolbar:(id)arg1;
+- (BOOL)ibNeedsMaskForRoundedBottomCorners;
+- (id)ibMakeMatchingWindowTemplate;
+- (Class)ibWindowTemplateClass;
+- (void)ibSwizzledSetDefaultButtonCell:(id)arg1;
+- (void)ibSwizzledAddHeartBeatClientView:(id)arg1;
 @end
 

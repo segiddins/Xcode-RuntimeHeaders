@@ -23,13 +23,13 @@
     NSImage *_selectionImage;
     long long _indent;
     unsigned long long _lineBreakMode;
-    unsigned long long _textAlignment;
+    long long _textAlignment;
     struct CGSize _imageSize;
 }
 
 + (id)separatorItem;
 @property(nonatomic) BOOL drawsRoundedBackground; // @synthesize drawsRoundedBackground=_drawsRoundedBackground;
-@property(nonatomic) unsigned long long textAlignment; // @synthesize textAlignment=_textAlignment;
+@property(nonatomic) long long textAlignment; // @synthesize textAlignment=_textAlignment;
 @property(nonatomic) unsigned long long lineBreakMode; // @synthesize lineBreakMode=_lineBreakMode;
 @property(nonatomic, getter=isSelected) BOOL selected; // @synthesize selected=_selected;
 @property(nonatomic, getter=isHighlighted) BOOL highlighted; // @synthesize highlighted=_highlighted;

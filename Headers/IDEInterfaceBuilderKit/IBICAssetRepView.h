@@ -4,11 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <DVTKit/DVTLayoutView_ML.h>
+#import <DVTStructuredLayoutKit/DVTLayoutView_ML.h>
 
 #import <IDEInterfaceBuilderKit/NSAccessibilityGroup-Protocol.h>
 
-@class IBImageButton, NSButton, NSColor, NSImage, NSNumber, NSString, NSTrackingArea;
+@class IBImageButton, IBTextWithTrailingItem, NSButton, NSColor, NSImage, NSNumber, NSString, NSTextField, NSTrackingArea;
 @protocol IBICAssetRepViewDelegate;
 
 @interface IBICAssetRepView : DVTLayoutView_ML <NSAccessibilityGroup>
@@ -17,11 +17,14 @@
     NSImage *_image;
     double _previousScale;
     unsigned long long _titleHighlightCornerMask;
+    NSTextField *_placeholderText;
+    IBTextWithTrailingItem *_titleText;
     NSButton *_playPauseButton;
     long long _frameIndex;
     NSTrackingArea *_primaryTrackingArea;
     BOOL _playing;
     IBImageButton *_revealContentButton;
+    NSButton *_statusButton;
     BOOL _showsDropIndicator;
     BOOL _showsSelection;
     BOOL _showsContextFocus;
@@ -30,6 +33,7 @@
     BOOL _drawDebugBorder;
     BOOL _showsRevealContentButton;
     NSString *_title;
+    NSImage *_statusImage;
     NSColor *_backgroundColor;
     NSColor *_borderColor;
     double _maximumTitleWidth;
@@ -39,11 +43,13 @@
     id _representedObject;
     id <IBICAssetRepViewDelegate> _delegate;
     struct CGSize _imageSize;
+    CDStruct_c519178c _highlightInset;
     CDStruct_c519178c _imagePadding;
     CDStruct_c519178c _textPadding;
 }
 
 + (double)scaleForDrawingImageForSize:(struct CGSize)arg1 intoViewSize:(struct CGSize)arg2;
++ (id)placeholderTextField;
 + (CDStruct_c519178c)defaultTextPadding;
 + (CDStruct_c519178c)defaultImagePadding;
 @property(nonatomic) __weak id <IBICAssetRepViewDelegate> delegate; // @synthesize delegate=_delegate;
@@ -63,7 +69,9 @@
 @property(nonatomic) BOOL showsDropIndicator; // @synthesize showsDropIndicator=_showsDropIndicator;
 @property(retain, nonatomic) NSColor *borderColor; // @synthesize borderColor=_borderColor;
 @property(retain, nonatomic) NSColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
+@property(nonatomic) CDStruct_c519178c highlightInset; // @synthesize highlightInset=_highlightInset;
 @property(nonatomic) struct CGSize imageSize; // @synthesize imageSize=_imageSize;
+@property(retain, nonatomic) NSImage *statusImage; // @synthesize statusImage=_statusImage;
 @property(retain, nonatomic) NSImage *image; // @synthesize image=_image;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 - (void).cxx_destruct;
@@ -92,11 +100,12 @@
 - (id)effectiveTitleColor;
 - (id)effectiveHighlightColor;
 - (double)scaleForImage;
+- (void)layoutBottomUp;
 - (void)layoutTopDown;
 - (struct CGSize)fittingImageSize;
 - (double)fittingFullTextHeight;
 - (double)ibAssetGroupViewVerticalAlignmentAnchor;
-- (CDStruct_b9fac97c)computeLayout;
+- (CDStruct_a5efb618)computeLayout;
 - (struct CGSize)rawTitleSize;
 - (id)titleText;
 - (id)titleAttributes;
@@ -104,9 +113,12 @@
 - (id)font;
 - (BOOL)isFlipped;
 @property(readonly) struct CGRect imageFrame;
+- (void)clickedStatusImage:(id)arg1;
+@property(readonly, nonatomic) struct CGRect statusImageRect;
 - (id)playPauseButtonCreatingIfNeeded:(BOOL)arg1;
 - (void)setMaximumTitleWidthToCurrentImageWidth;
 - (void)setTitleHighlightCornerMask:(BOOL)arg1;
+- (void)setTitleTextNeedsDisplayAndLayout;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 // Remaining properties

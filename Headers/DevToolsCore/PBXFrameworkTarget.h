@@ -17,7 +17,6 @@
 - (id)fullProductNameForConfigurationNamed:(id)arg1;
 - (id)wrapperPathExtensionForConfigurationNamed:(id)arg1;
 - (BOOL)wantsProductSettings;
-- (id)defaultProductTypeIdentifierByAnalyzingConfiguration;
 
 @end
 

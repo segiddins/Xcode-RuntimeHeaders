@@ -13,6 +13,7 @@
 - (void)validate;
 - (void)renamedFileAtPath:(id)arg1 to:(id)arg2 error:(id)arg3;
 - (void)rename;
+- (void)updateProposedNameWith:(id)arg1 fromName:(id)arg2;
 
 @end
 

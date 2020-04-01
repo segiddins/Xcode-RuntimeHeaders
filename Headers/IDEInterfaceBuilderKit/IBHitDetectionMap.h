@@ -6,30 +6,24 @@
 
 #import <objc/NSObject.h>
 
-@class IBMutableOrderedSet, IBNBitIntegerArray, NSArray, NSMutableDictionary;
+@class IBQuadtree, NSArray, NSDictionary, NSMutableArray;
 
 @interface IBHitDetectionMap : NSObject
 {
-    NSMutableDictionary *layeredRepresentedObjectRects;
-    IBMutableOrderedSet *representedObjects;
-    NSArray *indexedRepresentedObjects;
-    long long width;
-    long long height;
-    IBNBitIntegerArray *map;
-    NSArray *indexedRepresentedObjectRects;
-    long long count;
+    struct CGRect _boundingRect;
+    NSMutableArray *_representedObjectRects;
+    IBQuadtree *_quadtree;
+    NSArray *_orderedKeys;
+    NSDictionary *_keyToOrder;
 }
 
 + (id)alwaysOnTopKey;
 + (id)alwaysOnBottomKey;
-+ (id)notARepresentedObjectKey;
 - (void).cxx_destruct;
+- (long long)orderForKey:(id)arg1;
 - (id)representedObjectAtPoint:(struct CGPoint)arg1;
-- (void)indexObjects:(id)arg1 inRect:(struct CGRect)arg2;
-- (void)overlayRepresentedObjectIndex:(long long)arg1 inRect:(struct CGRect)arg2;
+- (void)buildIndexForOrderedObjects:(id)arg1;
 - (void)addRepresentedObjectRect:(struct CGRect)arg1 representedObject:(id)arg2 forOrderingKey:(id)arg3 onLayer:(unsigned long long)arg4;
-- (id)representedObjectRectsForLayer:(unsigned long long)arg1;
-- (id)init;
 
 @end
 

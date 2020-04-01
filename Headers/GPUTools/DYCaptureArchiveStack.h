@@ -25,6 +25,9 @@
 - (BOOL)getInfo:(CDStruct_61ea625d *)arg1 forFilePosition:(unsigned long long)arg2 error:(id *)arg3;
 - (id)copyDataForFilePosition:(unsigned long long)arg1 error:(id *)arg2;
 - (long long)readDataForFilePosition:(unsigned long long)arg1 buffer:(void *)arg2 size:(unsigned long long)arg3 error:(id *)arg4;
+- (_Bool)requestDataForFilePosition:(unsigned long long)arg1 buffer:(void **)arg2 size:(unsigned long long *)arg3 error:(id *)arg4;
+- (void)releaseBytesForFilePosition:(unsigned long long)arg1;
+- (void)cacheAllResources;
 - (BOOL)fileExistsForFilename:(id)arg1 error:(id *)arg2;
 - (BOOL)fileExistsForFilenameBuffer:(const char *)arg1 error:(id *)arg2;
 - (BOOL)getInfo:(CDStruct_61ea625d *)arg1 forFilename:(id)arg2 error:(id *)arg3;
@@ -35,7 +38,7 @@
 - (long long)readDataForFilename:(id)arg1 buffer:(void *)arg2 size:(unsigned long long)arg3 error:(id *)arg4;
 - (long long)readDataForFilenameBuffer:(const char *)arg1 buffer:(void *)arg2 size:(unsigned long long)arg3 error:(id *)arg4;
 - (id)openFileWithFilename:(id)arg1 error:(id *)arg2;
-- (vector_cfeb9b06)getSortedFilePositionsForDataCaching;
+- (vector_7984f87c)getSortedFilePositionsForDataCaching;
 - (id)resolveFilename:(id)arg1 error:(id *)arg2;
 - (id)filenamesWithPredicate:(id)arg1 error:(id *)arg2;
 - (id)filenamesWithPrefix:(id)arg1 error:(id *)arg2;

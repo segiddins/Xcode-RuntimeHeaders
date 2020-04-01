@@ -17,13 +17,10 @@ __attribute__((visibility("hidden")))
 }
 
 - (void).cxx_destruct;
-- (void)populatePlaneLayoutMap:(unordered_map_c1fbcd3c *)arg1 offsetFromTop:(double)arg2;
+- (int)updateSubplaneLayoutAndMap:(unordered_map_b8b4eb21 *)arg1 offsetFromTop:(double)arg2;
 - (struct CGRect)_frameForZOrderedPlane:(id)arg1 yOffet:(double)arg2;
 - (id)planesUnderPoint:(struct CGPoint)arg1;
 - (void)layoutSublayersOfLayer:(id)arg1;
-- (void)_positionPlane:(id)arg1 yPosition:(double)arg2 includeBottomBorder:(BOOL)arg3;
-- (void)_positionPlane:(id)arg1;
-- (void)_positionBottomBorderForPlane:(id)arg1 yPosition:(double)arg2;
 - (id)initWithGroupPlane:(id)arg1;
 
 // Remaining properties

@@ -6,8 +6,7 @@
 
 #import <IDESourceEditor/DVTSourceExpressionSource-Protocol.h>
 
-@class DVTSourceExpression, DVTTextDocumentLocation, NSObject, NSString;
-@protocol OS_dispatch_queue;
+@class DVTSourceExpression, DVTTextDocumentLocation, NSString, OS_dispatch_queue;
 
 @protocol IDESourceExpressionSource <DVTSourceExpressionSource>
 - (BOOL)isExpressionModuleImport:(DVTSourceExpression *)arg1;
@@ -17,7 +16,7 @@
 - (BOOL)isExpressionInFunctionOrMethodBody:(DVTSourceExpression *)arg1;
 - (BOOL)isExpressionFunctionOrMethodDefinition:(DVTSourceExpression *)arg1;
 - (BOOL)isExpressionInPlainCode:(DVTSourceExpression *)arg1;
-- (void)symbolsForExpression:(DVTSourceExpression *)arg1 inQueue:(NSObject<OS_dispatch_queue> *)arg2 completionBlock:(void (^)(IDEIndexCollection *, NSDictionary *))arg3;
+- (void)symbolsForExpression:(DVTSourceExpression *)arg1 queue:(OS_dispatch_queue *)arg2 completionBlock:(void (^)(IDEIndexCollection *, NSDictionary *))arg3;
 
 @optional
 - (BOOL)isLocationInFunctionOrMethodBody:(DVTTextDocumentLocation *)arg1;

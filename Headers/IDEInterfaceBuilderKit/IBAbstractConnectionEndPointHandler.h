@@ -34,6 +34,8 @@
 - (id)targetToSendToEndPointProviderForConnectionSuccess;
 - (id)connectionForConnectingFromAnnotation:(id)arg1;
 - (id)presentDisambiguatingPopupForAnnotationConnections:(id)arg1;
+- (void)connectionMenu:(id)arg1 willDeselectItems:(id)arg2;
+- (void)connectionMenu:(id)arg1 willSelectItems:(id)arg2;
 - (void)connectionMenu:(id)arg1 willHighlightItem:(id)arg2;
 - (id)connectionForPrototype:(id)arg1 interfaceStyle:(id)arg2;
 - (id)connectionForConnectingFromObject:(id)arg1;

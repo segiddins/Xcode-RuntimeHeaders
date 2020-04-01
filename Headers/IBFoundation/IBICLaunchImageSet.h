@@ -6,6 +6,8 @@
 
 #import <IBFoundation/IBICSlottedAsset.h>
 
+@class NSOrderedSet, NSSet;
+
 @interface IBICLaunchImageSet : IBICSlottedAsset
 {
 }
@@ -16,19 +18,20 @@
 + (id)catalogItemFileExtension;
 + (id)defaultInstanceForIdioms:(id)arg1 enforceStrictIdioms:(BOOL)arg2;
 + (id)defaultName;
-+ (Class)assetRepClass;
 + (id)createInstanceNamed:(id)arg1 forIdioms:(id)arg2 usingRenderer:(CDUnknownBlockType)arg3;
 + (id)createDefaultInstancesForUnitTesting;
++ (Class)assetRepClass;
 - (BOOL)requiresRootNamespace;
-- (id)intrinsicallyOrderedChildren;
-- (id)children;
+- (id)initializeManifestArchivist;
+- (void)createChildrenForSlots:(id)arg1 usingRenderer:(CDUnknownBlockType)arg2;
+@property(readonly, nonatomic) NSOrderedSet *intrinsicallyOrderedChildren;
+@property(readonly, nonatomic) NSSet *children;
 - (id)assetRepForStructuredIdentifier:(id)arg1;
 - (id)childForIdentifier:(id)arg1;
 - (id)assetRepForIdentifier:(id)arg1;
 - (id)conflictFreeChildForSlot:(id)arg1;
+- (id)assetRepMatchingVariant:(id)arg1 forPlatform:(id)arg2;
 - (id)assetRepForSlot:(id)arg1;
-- (id)initializeManifestArchivist;
-- (void)createChildrenForSlots:(id)arg1 usingRenderer:(CDUnknownBlockType)arg2;
 
 @end
 

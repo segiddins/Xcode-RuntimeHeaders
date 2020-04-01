@@ -19,19 +19,26 @@
     NSMapTable *_logProviderToRecordsIndex;
     NSSet *_cachedRecentLogRecords;
     NSMutableDictionary *_navigatorRootItems;
+    NSMutableDictionary *_auxiliaryRecordsByIdentifier;
 }
 
++ (id)keyPathsForValuesAffectingImportedRecords;
 + (void)initialize;
+@property(readonly) NSMutableDictionary *auxiliaryRecordsByIdentifier; // @synthesize auxiliaryRecordsByIdentifier=_auxiliaryRecordsByIdentifier;
 @property(readonly) NSMutableDictionary *navigatorRootItems; // @synthesize navigatorRootItems=_navigatorRootItems;
 @property(copy) NSString *domainName; // @synthesize domainName=_domainName;
 @property(retain) id domainItem; // @synthesize domainItem=_domainItem;
 @property(readonly) NSArray *logProviders; // @synthesize logProviders=_logProviders;
 - (void).cxx_destruct;
+@property(readonly, copy) NSArray *importedRecords;
 - (id)mostRecentLogRecordForType:(id)arg1;
 @property(readonly) NSSet *mostRecentLogRecordForEachType;
+- (id)auxiliaryRecordWithIdentifier:(id)arg1;
 - (void)_handleLogRecordChangesForProvider:(id)arg1;
+- (id)_subRecordsFromCandidateRecords:(id)arg1;
 - (id)_findLogProviders;
 - (id)extensionsFromExtensionPointIdentifier:(id)arg1;
+- (id)importResultBundleRecord:(id)arg1 disablesSourceIntegration:(BOOL)arg2;
 - (void)primitiveInvalidate;
 - (id)initWithDomainItem:(id)arg1 domain:(id)arg2;
 

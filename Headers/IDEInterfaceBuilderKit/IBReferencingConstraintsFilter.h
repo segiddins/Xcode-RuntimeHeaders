@@ -10,6 +10,7 @@
 #import <IDEInterfaceBuilderKit/IBSelectionOwnerDelegate-Protocol.h>
 
 @class IBSelectionOwner, NSDictionary, NSNumber, NSSet, NSString;
+@protocol IBReferencingConstraintsFilterDelegate;
 
 @interface IBReferencingConstraintsFilter : NSView <IBMouseMovedObservingView, IBSelectionOwnerDelegate>
 {
@@ -19,13 +20,14 @@
     NSDictionary *_numberOfConstraintsPerAttribute;
     unsigned long long _allowedAttributesMask;
     NSSet *_unsupportedAttributes;
-    id _target;
-    SEL _action;
+    id <IBReferencingConstraintsFilterDelegate> _delegate;
 }
 
-@property(nonatomic) SEL action; // @synthesize action=_action;
-@property(nonatomic) __weak id target; // @synthesize target=_target;
+@property(nonatomic) __weak id <IBReferencingConstraintsFilterDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (id)generateAccessibleFilterButtons;
+- (void)deleteBackward:(id)arg1;
+- (void)keyDown:(id)arg1;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)drawButtonWithFrame:(struct CGRect)arg1;
 - (void)drawAttribute:(unsigned long long)arg1 forFrame:(struct CGRect)arg2;
@@ -36,6 +38,7 @@
 - (void)fireAction;
 - (void)mouseUp:(id)arg1;
 - (void)mouseDown:(id)arg1;
+- (BOOL)acceptsFirstResponder;
 - (void)viewWillMoveToWindow:(id)arg1;
 - (void)observeMouseMoved:(struct CGPoint)arg1 buttonState:(unsigned long long)arg2;
 - (id)toolTipManager:(id)arg1 toolTipForView:(id)arg2 location:(struct CGPoint)arg3 tipSourceRect:(struct CGRect *)arg4;
@@ -44,6 +47,7 @@
 - (struct CGSize)intrinsicContentSize;
 - (void)enumerateApplicableAttributesForConstraint:(id)arg1 includeEquivalentAttributes:(BOOL)arg2 referenceLayoutItem:(id)arg3 usingBlock:(CDUnknownBlockType)arg4;
 - (BOOL)constraint:(id)arg1 passesFilterForReferencedLayoutItem:(id)arg2;
+- (BOOL)constraint:(id)arg1 passesHoveringFilterForReferencedLayoutItem:(id)arg2;
 - (void)clearFilter;
 - (void)updateFilterableAttributesFromConstraints:(id)arg1 referencedLayoutItem:(id)arg2;
 - (BOOL)shouldShowLayoutAttribute:(unsigned long long)arg1;

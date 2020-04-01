@@ -32,7 +32,6 @@
 - (id)firstApplicableSystemTarget;
 - (id)compiledStoryboardInfoPlistFileName;
 - (id)hybridNIBPackageRuntimeFileName;
-- (id)displayName;
 - (id)explicitArchiveIdentifier;
 - (id)archiveIdentifier;
 - (id)targetRuntimeIdentifierSuffix;

@@ -8,39 +8,40 @@
 
 #import <DVTKit/DVTFindPatternField-Protocol.h>
 
-@class DVTFindPatternAttachmentCell, NSString;
+@class DVTFindPatternComponents, NSString;
 @protocol DVTFindPatternManager;
 
 @interface DVTFindPatternComboBox : NSComboBox <DVTFindPatternField>
 {
     id <DVTFindPatternManager> findPatternManager;
-    DVTFindPatternAttachmentCell *selectedAttachment;
 }
 
 @property id <DVTFindPatternManager> findPatternManager; // @synthesize findPatternManager;
-- (void).cxx_destruct;
 - (void)_selectedFindPattern:(id)arg1;
 - (id)menuForFindPatternAttachment:(id)arg1;
 - (id)_uniquePatterns;
 - (id)replacementExpression;
 - (id)regularExpression;
-- (id)findPatternArray;
+- (id)findPatternTokenArray;
 - (BOOL)hasFindPattern;
 - (id)textView:(id)arg1 shouldChangeTypingAttributes:(id)arg2 toAttributes:(id)arg3;
 - (void)textDidChange:(id)arg1;
+- (BOOL)hasActiveFilter;
 - (void)textView:(id)arg1 doubleClickedOnCell:(id)arg2 inRect:(struct CGRect)arg3 atIndex:(unsigned long long)arg4;
 - (void)textView:(id)arg1 clickedOnCell:(id)arg2 inRect:(struct CGRect)arg3 atIndex:(unsigned long long)arg4;
 - (BOOL)removeFindPattern:(id)arg1;
+- (id)_rangesOfFindPattern:(id)arg1 attachments:(id *)arg2;
 - (id)_rangesOfFindPattern:(id)arg1;
 - (void)setFindPatternPropertyList:(id)arg1;
 - (id)findPatternPropertyList;
+@property(copy) DVTFindPatternComponents *findPatternComponents;
 - (id)plainTextValue;
 - (void)setFindPatternArray:(id)arg1;
 - (void)setAttributedStringValue:(id)arg1;
 - (void)_uniqueFindPatternsInAttributedStringAttachments:(id)arg1;
 - (void)setStringValue:(id)arg1;
 - (void)_updateFindPatternsWithNewPatterns:(id)arg1;
-- (void)_updateReplacePatternsWithNewPatterns:(id)arg1;
+- (void)_updateReplacePatternsWithNewPatternTokens:(id)arg1;
 - (void)_invalidateLayout;
 - (void)_insertFindPattern:(id)arg1;
 - (void)insertNewFindPattern:(id)arg1;

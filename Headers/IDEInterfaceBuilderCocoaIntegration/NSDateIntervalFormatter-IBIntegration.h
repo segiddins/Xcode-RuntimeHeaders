@@ -6,9 +6,13 @@
 
 #import <Foundation/NSDateIntervalFormatter.h>
 
-@interface NSDateIntervalFormatter (IBIntegration)
+#import <IDEInterfaceBuilderCocoaIntegration/IBDocumentArchiving-Protocol.h>
+
+@class NSString;
+
+@interface NSDateIntervalFormatter (IBIntegration) <IBDocumentArchiving>
 + (id)keyPathsForValuesAffectingIbExternalSampleValue;
-- (void)ibWarnings:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
+- (void)ibPopulateIssues:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
 - (unsigned long long)ibMinOSVersionForUseInCell;
 - (void)setIbExternalSampleValueToDate:(id)arg1;
 - (id)ibExternalSampleValueToDate;
@@ -16,9 +20,17 @@
 - (void)setIbExternalSampleValueFromDate:(id)arg1;
 - (id)ibExternalSampleValueFromDate;
 - (id)ibExternalSampleValueFromDateDefault;
-- (id)ibExternalSampleValueTooltipRelatedMethods;
+- (SEL)ibExternalSampleValueTooltipRelatedSelector;
 - (id)ibExternalSampleValueFormatted;
 - (id)ibExternalSampleValueDefault;
-- (id)ibSwizzledInitWithCoder:(id)arg1;
+- (id)ibLocalAttributeKeyPaths;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @end
 

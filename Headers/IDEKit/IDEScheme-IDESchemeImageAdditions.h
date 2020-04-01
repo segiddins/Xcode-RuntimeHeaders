@@ -9,7 +9,6 @@
 @interface IDEScheme (IDESchemeImageAdditions)
 - (id)_iconForSchemeBasedOnRunnable;
 - (id)_iconForSchemeBasedOnTargets;
-- (id)_errorIcon;
 - (id)iconImage;
 @end
 

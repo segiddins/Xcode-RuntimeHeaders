@@ -15,11 +15,11 @@
     NSString *_filterMatchString;
     int _fontSizeStyle;
     unsigned long long _compoundModeOptions;
-    unsigned long long _textAlignment;
+    long long _textAlignment;
 }
 
 + (struct _NSRange)valuePartRangeForAttributedString:(id)arg1;
-@property unsigned long long textAlignment; // @synthesize textAlignment=_textAlignment;
+@property long long textAlignment; // @synthesize textAlignment=_textAlignment;
 @property unsigned long long compoundModeOptions; // @synthesize compoundModeOptions=_compoundModeOptions;
 @property int fontSizeStyle; // @synthesize fontSizeStyle=_fontSizeStyle;
 @property(copy) NSString *filterMatchString; // @synthesize filterMatchString=_filterMatchString;
@@ -29,7 +29,6 @@
 - (id)_summaryTextColor:(BOOL)arg1;
 - (id)_summaryTextColor;
 - (id)_textColor;
-- (id)_filterMatchedAttributes;
 - (id)_changedAttributesWithFont:(id)arg1;
 - (id)_changedAttributes;
 - (void)_highlightMatchOfString:(id)arg1 onAttributedString:(id)arg2;

@@ -10,13 +10,12 @@
 {
 }
 
++ (id)propertyListForContext:(id)arg1;
 + (id)availableOptionsForPropertyList;
-- (id)itemToProcessingResultsMapFromPipeline:(id)arg1;
 - (id)pipeline;
-@property(readonly) BOOL wantsDryRun;
 - (id)providedOutputContextPropertyNames;
 - (id)requiredInputContextPropertyNames;
-- (BOOL)loadFromPropertyList:(id)arg1 error:(id *)arg2;
+- (BOOL)loadFromExportOptions:(id)arg1 error:(id *)arg2;
 
 @end
 

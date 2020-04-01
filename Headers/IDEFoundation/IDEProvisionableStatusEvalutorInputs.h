@@ -6,23 +6,29 @@
 
 #import <objc/NSObject.h>
 
-@class DVTPortalProfilePurpose, IDEProvisionableSnapshot, NSSet;
+@class IDEProvisionableSnapshot, NSSet, _TtC13IDEFoundation32IDEProvisioningDeviceRequirement;
+@protocol IDEProvisioningErrorProvider;
 
 @interface IDEProvisionableStatusEvalutorInputs : NSObject
 {
     IDEProvisionableSnapshot *_provisionableSnapshot;
     NSSet *_provisioningProfiles;
     NSSet *_signingCertificates;
-    NSSet *_deviceSnapshots;
-    DVTPortalProfilePurpose *_provisioningPurpose;
+    _TtC13IDEFoundation32IDEProvisioningDeviceRequirement *_deviceRequirement;
+    long long _automaticLocationStyle;
+    id <IDEProvisioningErrorProvider> _errorProvider;
 }
 
-@property(retain, nonatomic) DVTPortalProfilePurpose *provisioningPurpose; // @synthesize provisioningPurpose=_provisioningPurpose;
-@property(retain, nonatomic) NSSet *deviceSnapshots; // @synthesize deviceSnapshots=_deviceSnapshots;
-@property(retain, nonatomic) NSSet *signingCertificates; // @synthesize signingCertificates=_signingCertificates;
-@property(retain, nonatomic) NSSet *provisioningProfiles; // @synthesize provisioningProfiles=_provisioningProfiles;
++ (id)_processedDeviceRequirement:(id)arg1 usingProvisionableSnapshot:(id)arg2;
++ (id)evaluatorInputsWithProvisionableSnapshot:(id)arg1 provisioningProfiles:(id)arg2 signingCertificates:(id)arg3 deviceRequirement:(id)arg4 automaticLocationStyle:(long long)arg5 errorProvider:(id)arg6;
+@property(readonly, nonatomic) id <IDEProvisioningErrorProvider> errorProvider; // @synthesize errorProvider=_errorProvider;
+@property(readonly, nonatomic) long long automaticLocationStyle; // @synthesize automaticLocationStyle=_automaticLocationStyle;
+@property(readonly, nonatomic) _TtC13IDEFoundation32IDEProvisioningDeviceRequirement *deviceRequirement; // @synthesize deviceRequirement=_deviceRequirement;
+@property(readonly, nonatomic) NSSet *signingCertificates; // @synthesize signingCertificates=_signingCertificates;
+@property(readonly, nonatomic) NSSet *provisioningProfiles; // @synthesize provisioningProfiles=_provisioningProfiles;
 @property(retain, nonatomic) IDEProvisionableSnapshot *provisionableSnapshot; // @synthesize provisionableSnapshot=_provisionableSnapshot;
 - (void).cxx_destruct;
+- (id)description;
 
 @end
 

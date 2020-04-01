@@ -7,11 +7,10 @@
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBUIView.h>
 
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBDocumentArchiving-Protocol.h>
-#import <IDEInterfaceBuilderCocoaTouchIntegration/NSCoding-Protocol.h>
 
 @class NSString;
 
-@interface IBUIContainerView : IBUIView <IBDocumentArchiving, NSCoding>
+@interface IBUIContainerView : IBUIView <IBDocumentArchiving>
 {
 }
 
@@ -20,13 +19,10 @@
 - (void)drawRect:(struct CGRect)arg1;
 - (BOOL)shouldDrawAsPlaceholder;
 - (id)runtimeClassNameForContext:(id)arg1 returningOptionalFallbackClassName:(id *)arg2;
-- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
-- (void)archiveWithDocumentArchiver:(id)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
+- (Class)ibEditorClass;
 - (BOOL)ibOverridablePrefersToVerticallyResizeWithContainer;
 - (BOOL)ibOverridablePrefersToHorizontallyResizeWithContainer;
-- (void)ibWarnings:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
+- (void)ibPopulateIssues:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
 - (void)ibSetupTriggerForSegueTemplate:(id)arg1 inCompilationUnit:(id)arg2;
 - (id)ibSupportedOutgoingSegueClasses;
 - (id)ibSegueTriggers;
@@ -35,6 +31,8 @@
 - (id)ibQualifyingInfoForDefaultLabel;
 - (id)ibRuntimeClassName;
 - (id)ibTypeNameForDefaultLabel;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

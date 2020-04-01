@@ -6,25 +6,16 @@
 
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBUIStoryboardAbstractTriggeredSegue.h>
 
-@class NSString;
-
 @interface IBCocoaTouchStoryboardAbstractShowSegue : IBUIStoryboardAbstractTriggeredSegue
 {
-    NSString *_action;
 }
 
 + (id)ibDefaultImageForInstance:(id)arg1 targetRuntime:(id)arg2;
 + (id)classIdentifier;
 + (id)defaultAction;
-@property(copy, nonatomic) NSString *action; // @synthesize action=_action;
-- (void).cxx_destruct;
 - (id)convertToPushSegueWithDocument:(id)arg1;
 - (id)badgeImage;
-- (void)copyCommonInstanceStateToTriggeredSegue:(id)arg1;
 - (id)instantiateSegueTemplate;
-- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
-- (void)archiveWithDocumentArchiver:(id)arg1;
-- (id)initWithSource:(id)arg1 label:(id)arg2 destination:(id)arg3;
 
 @end
 

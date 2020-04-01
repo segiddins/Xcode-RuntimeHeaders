@@ -40,6 +40,7 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (long long)compareIdentifier:(id)arg1;
 - (long long)comparePrecedence:(id)arg1;
+- (void)addValueSpecification:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithIdentifier:(id)arg1 precedence:(double)arg2 verboseTitle:(id)arg3 succinctTitle:(id)arg4 abbreviation:(id)arg5 valueSpecifications:(id)arg6 unspecifiedValueSpecification:(id)arg7;

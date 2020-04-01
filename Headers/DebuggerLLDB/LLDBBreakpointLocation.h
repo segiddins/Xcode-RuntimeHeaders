@@ -10,11 +10,10 @@
 
 @class NSString;
 
-__attribute__((visibility("hidden")))
 @interface LLDBBreakpointLocation : NSObject <DBGSBBreakpointLocation>
 {
     struct SBBreakpointLocation {
-        struct shared_ptr<lldb_private::BreakpointLocation> m_opaque_sp;
+        struct weak_ptr<lldb_private::BreakpointLocation> m_opaque_wp;
     } _breakpointLocation;
 }
 

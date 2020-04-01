@@ -11,10 +11,10 @@
 @protocol IDEMediaLibraryDelegate <NSObject>
 
 @optional
+@property(readonly) NSDictionary *variantForResolvingMediaResources;
+@property(readonly) IDEMediaResourceVariantContext *variantContextForMediaLibrary;
 - (NSDictionary *)mediaLibraryController:(IDEMediaLibraryController *)arg1 dragImagesByStateIdentifierForMediaResourceVariantSet:(IDEMediaResourceVariantSet *)arg2;
 - (void)mediaLibraryController:(IDEMediaLibraryController *)arg1 populatePasteboard:(NSPasteboard *)arg2 withMediaResourceVariantSets:(NSArray *)arg3;
 - (BOOL)mediaLibraryController:(IDEMediaLibraryController *)arg1 variantSetIsSystemProvided:(IDEMediaResourceVariantSet *)arg2;
-- (NSDictionary *)variantForResolvingMediaResources;
-- (IDEMediaResourceVariantContext *)variantContextForMediaLibrary;
 @end
 

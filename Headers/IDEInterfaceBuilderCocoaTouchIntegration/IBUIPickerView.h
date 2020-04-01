@@ -7,13 +7,11 @@
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBUIView.h>
 
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBDocumentArchiving-Protocol.h>
-#import <IDEInterfaceBuilderCocoaTouchIntegration/NSCoding-Protocol.h>
 
 @class NSString;
 
-@interface IBUIPickerView : IBUIView <IBDocumentArchiving, NSCoding>
+@interface IBUIPickerView : IBUIView <IBDocumentArchiving>
 {
-    BOOL showsSelectionIndicator;
 }
 
 + (void)registerMarshallingRecordHandlers;
@@ -22,18 +20,15 @@
 + (id)ibInstantiateViewForRole:(long long)arg1 withTargetRuntime:(id)arg2 documentClass:(Class)arg3 assetIdentifier:(id)arg4;
 - (id)localExtraMarshalledAttributesKeyPaths;
 - (id)defaultBackgroundColor;
-- (void)setShowsSelectionIndicator:(BOOL)arg1;
-- (BOOL)showsSelectionIndicator;
 - (unsigned long long)ibDefaultAccessibilityTraits;
 - (BOOL)ibIsAccessibilityElementByDefault;
-- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
-- (void)archiveWithDocumentArchiver:(id)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 - (void)ibCustomizeForInsertionIntoIBUIViewController:(id)arg1 withObjects:(id)arg2 fromLibraryOrDifferentTargetRuntime:(BOOL)arg3 andInsertionContext:(id)arg4;
+- (struct CGRect)ibSquashedXcode7InitialFrameFromAddingToNonAnyAny;
 - (void)ibCustomizeForInsertionIntoIBUIView:(id)arg1 withObjects:(id)arg2 fromLibraryOrDifferentTargetRuntime:(BOOL)arg3 andInsertionContext:(id)arg4;
 - (struct CGSize)ibMinimumSizeForCustomizationForTargetRuntime:(id)arg1;
 - (id)ibWidgetType;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

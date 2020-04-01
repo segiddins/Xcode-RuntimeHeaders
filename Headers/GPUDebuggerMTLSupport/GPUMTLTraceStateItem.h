@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <GPUDebuggerFoundation/GPUTraceStateItem.h>
+#import <GPUDebugger/GPUTraceStateItem.h>
 
 #import <GPUDebuggerMTLSupport/DYFunctionTracerDelegate-Protocol.h>
 #import <GPUDebuggerMTLSupport/GPUMTLStateMirrorInterface-Protocol.h>
@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
 @interface GPUMTLTraceStateItem : GPUTraceStateItem <DYFunctionTracerDelegate, GPUMTLStateMirrorInterface, GPUMTLTraceItemInterface>
 {
     id <DYPMTLStateMirror> _stateMirror;
+    int _stateMirrorLock;
     BOOL _isHidden;
     unsigned long long _owningDeviceID;
 }
@@ -27,12 +28,13 @@ __attribute__((visibility("hidden")))
 - (id)rewriteArgument:(const struct Argument *)arg1;
 - (id)rewriteReceiver:(unsigned long long)arg1;
 - (id)rewriteURL:(const char *)arg1;
+- (id)generateFenumInfo;
 - (id)generateLabel;
+- (BOOL)isInterestingAPICall;
 - (BOOL)isGroupMarkerCall;
 @property(readonly, nonatomic) unsigned long long receiverID;
 @property(readonly, nonatomic) BOOL hasStateMirror;
 @property(readonly, nonatomic) id <DYPMTLStateMirror> stateMirror;
-- (void)primitiveInvalidate;
 - (id)initWithController:(id)arg1 parent:(id)arg2 identifier:(id)arg3;
 - (id)initWithController:(id)arg1 parent:(id)arg2 deviceID:(unsigned long long)arg3 functionIndex:(int)arg4 displayIndex:(int)arg5 markedHidden:(BOOL)arg6;
 

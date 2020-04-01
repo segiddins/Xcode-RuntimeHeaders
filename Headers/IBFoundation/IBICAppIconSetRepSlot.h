@@ -6,9 +6,30 @@
 
 #import <IBFoundation/IBICBundleIconSetRepSlot.h>
 
+@class IBICColorSpace, IBICLanguageDirection;
+
 @interface IBICAppIconSetRepSlot : IBICBundleIconSetRepSlot
 {
+    IBICColorSpace *_colorSpace;
+    IBICLanguageDirection *_languageDirection;
 }
+
++ (BOOL)idiomSupportsColorSpace:(id)arg1;
++ (id)genesisSlotsForSlots:(id)arg1;
++ (id)orderedComponentClasses;
++ (id)slotWithIdiom:(id)arg1 size:(id)arg2 role:(id)arg3 subtype:(id)arg4 scale:(id)arg5 colorSpace:(id)arg6;
++ (Class)assetRepClass;
++ (Class)assetSetClass;
++ (id)slotFilterWithPlatformFilter:(id)arg1 idiomFilter:(id)arg2 sizeFilter:(id)arg3 scaleFilter:(id)arg4 roleFilter:(id)arg5 subtypeFilter:(id)arg6 colorSpaceFilter:(id)arg7 languageDirectionFilter:(id)arg8;
+@property(retain, nonatomic) IBICLanguageDirection *languageDirection; // @synthesize languageDirection=_languageDirection;
+@property(retain, nonatomic) IBICColorSpace *colorSpace; // @synthesize colorSpace=_colorSpace;
+- (void).cxx_destruct;
+- (id)baseSlotWithoutSecondaryVariations;
+@property(readonly, nonatomic) BOOL hasLanguageDirection;
+@property(readonly, nonatomic) BOOL hasColorSpace;
+- (id)shortDisplayNameConsideringCounterparts:(id)arg1;
+- (long long)compareDisplayOrder:(id)arg1;
+- (void)captureComponents;
 
 @end
 

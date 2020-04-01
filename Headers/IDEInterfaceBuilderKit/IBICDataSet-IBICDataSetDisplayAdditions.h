@@ -8,7 +8,7 @@
 
 @interface IBICDataSet (IBICDataSetDisplayAdditions)
 + (CDStruct_7ddbbeae)capsuleGroupingAttributesForGroupWithPath:(id)arg1;
-- (id)typeIcon;
+- (id)verifyExistenceInCompiledBundle:(id)arg1 forPlatform:(id)arg2;
 - (id)icon;
 @end
 

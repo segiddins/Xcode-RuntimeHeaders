@@ -12,7 +12,7 @@
 {
     NSMutableArray *_vendedIssuesBySeqNum;
     unsigned long long _maxSeverity;
-    NSMutableDictionary *_issuesIndexedByLineNumber;
+    NSMutableDictionary *_issuesIndexedByCoalescingIdentifier;
     NSHashTable *_observers;
     unsigned long long _testFailureCount;
     unsigned long long _errorCount;
@@ -32,7 +32,7 @@
 @property(readonly) unsigned long long errorCount; // @synthesize errorCount=_errorCount;
 @property(readonly) unsigned long long testFailureCount; // @synthesize testFailureCount=_testFailureCount;
 @property(retain) NSHashTable *observers; // @synthesize observers=_observers;
-@property(retain) NSMutableDictionary *issuesIndexedByLineNumber; // @synthesize issuesIndexedByLineNumber=_issuesIndexedByLineNumber;
+@property(retain) NSMutableDictionary *issuesIndexedByCoalescingIdentifier; // @synthesize issuesIndexedByCoalescingIdentifier=_issuesIndexedByCoalescingIdentifier;
 @property(copy, nonatomic) NSArray *vendedIssuesBySeqNum; // @synthesize vendedIssuesBySeqNum=_vendedIssuesBySeqNum;
 - (void).cxx_destruct;
 @property(readonly) unsigned long long maxSeverity;

@@ -7,6 +7,7 @@
 #import <IBFoundation/IBICAbstractStickerItem.h>
 
 @interface IBICAbstractStickerItem (DisplayAdditions)
-- (id)synthesizeAncestorsIfNeededToAllowHostingInContainer:(id)arg1;
+- (BOOL)isDisplayNameFindable;
+- (id)catalogItemForHostingInContainer:(id)arg1;
 @end
 

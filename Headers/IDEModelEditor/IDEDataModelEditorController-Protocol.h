@@ -4,12 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
+#import <IDEModelEditor/DVTInvalidation-Protocol.h>
 #import <IDEModelEditor/NSObject-Protocol.h>
 
 @class IDEDataModelEditor, NSArray, NSView;
 @protocol IDEDMModelObject;
 
-@protocol IDEDataModelEditorController <NSObject>
+@protocol IDEDataModelEditorController <NSObject, DVTInvalidation>
 - (void)takeFocus;
 - (void)paste:(id)arg1;
 - (void)copy:(id)arg1;
@@ -17,11 +18,10 @@
 - (void)selectModelObjects:(NSArray *)arg1;
 
 @optional
-- (IDEDataModelEditor *)rootEditor;
+@property(readonly) IDEDataModelEditor *rootEditor;
 - (NSView *)view;
 - (NSArray *)selection;
-- (void)invalidate;
-- (void)setViewType:(int)arg1;
-- (BOOL)allowsViewType:(int)arg1;
+- (void)setViewType:(unsigned long long)arg1;
+- (BOOL)allowsViewType:(unsigned long long)arg1;
 @end
 

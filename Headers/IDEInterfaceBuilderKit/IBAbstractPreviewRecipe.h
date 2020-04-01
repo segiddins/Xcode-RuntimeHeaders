@@ -6,17 +6,22 @@
 
 #import <objc/NSObject.h>
 
-@class IBDeviceConfiguration, IBMemberConfiguration, IBTargetRuntime;
+@class IBDeviceConfiguration, IBIdiom, IBMemberConfiguration, IBTargetRuntime;
 
 @interface IBAbstractPreviewRecipe : NSObject
 {
+    IBDeviceConfiguration *_deviceConfiguration;
 }
 
-@property(readonly) IBDeviceConfiguration *deviceConfiguration;
++ (id)recipeWithPropertyList:(id)arg1;
+@property(retain) IBDeviceConfiguration *deviceConfiguration; // @synthesize deviceConfiguration=_deviceConfiguration;
+- (void).cxx_destruct;
+@property(readonly) IBIdiom *idiom;
 @property(readonly) IBMemberConfiguration *memberConfiguration;
 @property(readonly) IBTargetRuntime *targetRuntime;
 - (id)propertyListRepresentation;
 - (id)initWithPropertyList:(id)arg1;
+- (id)initWithDeviceConfiguration:(id)arg1;
 
 @end
 

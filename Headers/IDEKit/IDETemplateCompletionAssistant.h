@@ -29,6 +29,7 @@
 @property(retain) NSPopUpButton *destinationGroupPopUp; // @synthesize destinationGroupPopUp=_destinationGroupPopUp;
 - (void).cxx_destruct;
 - (BOOL)panel:(id)arg1 shouldEnableURL:(id)arg2;
+- (BOOL)mainThread_panel:(id)arg1 validateURL:(id)arg2 error:(id *)arg3;
 - (BOOL)panel:(id)arg1 validateURL:(id)arg2 error:(id *)arg3;
 - (id)finalURLForSelectedURL:(id)arg1;
 - (id)finalURLForSelectedURL:(id)arg1 fallbackCompletionName:(id)arg2;
@@ -37,9 +38,9 @@
 - (void)destinationManagerGroupDidChange:(id)arg1;
 - (id)targetWorkspacesForDestinationManager:(id)arg1;
 - (BOOL)destinationManager:(id)arg1 shouldAddItemToMenu:(id)arg2;
-- (BOOL)shouldShowDestinationGroupPopUp;
-- (BOOL)shouldShowDestinationWorkspacePopUp;
-- (BOOL)shouldShowAccessoryView;
+@property(readonly) BOOL shouldShowDestinationGroupPopUp;
+@property(readonly) BOOL shouldShowDestinationWorkspacePopUp;
+@property(readonly) BOOL shouldShowAccessoryView;
 - (BOOL)canGoBack;
 - (void)finishWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)willResignCurrentAssistantInAssistantWindowController:(id)arg1;

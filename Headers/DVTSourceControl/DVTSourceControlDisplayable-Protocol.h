@@ -6,10 +6,9 @@
 
 #import <DVTSourceControl/NSObject-Protocol.h>
 
-@class NSImage, NSString;
+@class NSString;
 
 @protocol DVTSourceControlDisplayable <NSObject>
-+ (NSImage *)defaultImage;
 @property(readonly) NSString *displayName;
 @end
 

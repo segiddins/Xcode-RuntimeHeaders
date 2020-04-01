@@ -6,9 +6,11 @@
 
 #import <QuartzCore/CALayer.h>
 
+#import <IDEKit/IDEActivityThemeableLayer-Protocol.h>
+
 @class DVTWeakInterposer, NSArray, NSAttributedString, NSDictionary, NSMutableArray, NSString;
 
-@interface IDEActivityScrollingTextLayer : CALayer
+@interface IDEActivityScrollingTextLayer : CALayer <IDEActivityThemeableLayer>
 {
     DVTWeakInterposer *_lastUpdateContext_dvtWeakInterposer;
     unsigned long long _activeTransactions;
@@ -17,22 +19,29 @@
     NSDictionary *_textAttributes;
     NSString *_textAlignmentMode;
     NSArray *_segments;
+    BOOL _isLightBackground;
+    BOOL _needsUpdateTextLayer;
+    NSDictionary *_defaultAttributes;
 }
 
+@property BOOL needsUpdateTextLayer; // @synthesize needsUpdateTextLayer=_needsUpdateTextLayer;
+@property(retain) NSDictionary *defaultAttributes; // @synthesize defaultAttributes=_defaultAttributes;
+@property(nonatomic) BOOL isLightBackground; // @synthesize isLightBackground=_isLightBackground;
 @property(copy, nonatomic) NSString *textAlignmentMode; // @synthesize textAlignmentMode=_textAlignmentMode;
 @property(copy, nonatomic) NSDictionary *textAttributes; // @synthesize textAttributes=_textAttributes;
 - (void).cxx_destruct;
 - (id)accessibilityAttributeValue:(id)arg1;
 - (id)accessibilityAttributeNames;
 - (BOOL)accessibilityIsIgnored;
+- (void)updateTheme;
 - (void)setStringSegments:(id)arg1 context:(id)arg2 animateUpdate:(BOOL)arg3;
 - (id)_overrideColorTextAttributesOnString:(id)arg1;
 @property(readonly) NSString *stringValue;
 - (id)attributedStringValueTruncatedToWidth:(double)arg1;
 @property(readonly) NSAttributedString *attributedStringValue;
 - (void)setHidden:(BOOL)arg1;
-- (void)layoutSublayers;
 - (void)setBounds:(struct CGRect)arg1;
+- (void)layoutSublayers;
 - (void)setupLayers;
 - (void)updateTextLayer;
 - (void)updateTextLayerWithContext:(id)arg1 animateUpdate:(BOOL)arg2;
@@ -44,6 +53,12 @@
 @property(readonly) NSDictionary *currentTextAttributes;
 - (id)effectiveAttributes;
 @property __weak id lastUpdateContext;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

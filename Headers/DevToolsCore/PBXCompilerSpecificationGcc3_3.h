@@ -10,19 +10,15 @@
 {
 }
 
-- (id)precompileHeaderFileAtPath:(id)arg1 forSourceFileOfType:(id)arg2 withExtraFlags:(id)arg3 toPrecompPath:(id)arg4 inTargetBuildContext:(id)arg5;
-- (BOOL)dwarfSymbolRepositoryIsEnabledInTargetBuildContext:(id)arg1;
-- (BOOL)symbolSeparationIsEnabledInTargetBuildContext:(id)arg1;
-- (id)dwarfRepositoryNameForPCHPath:(id)arg1 inTargetBuildContext:(id)arg2;
-- (id)symrepFileNameForHeaderPath:(id)arg1 inTargetBuildContext:(id)arg2;
-- (id)flagsForIncludingPrecompiledPrefixHeaderAtPath:(id)arg1 inTargetBuildContext:(id)arg2;
-- (id)precompFileNameForHeaderPath:(id)arg1 inTargetBuildContext:(id)arg2;
+- (id)precompileHeaderFileAtPath:(id)arg1 forSourceFileOfType:(id)arg2 withExtraFlags:(id)arg3 toPrecompPath:(id)arg4 withMacroExpansionScope:(id)arg5;
+- (id)symrepFileNameForHeaderPath:(id)arg1 withMacroExpansionScope:(id)arg2;
+- (id)flagsForIncludingPrecompiledPrefixHeaderAtPath:(id)arg1 withMacroExpansionScope:(id)arg2;
+- (id)precompFileNameForHeaderPath:(id)arg1 withMacroExpansionScope:(id)arg2;
 - (id)precompFileExtension;
 - (id)subprocessCommandLineForPreprocessingBehaviorWithCommand:(id)arg1 commandLine:(id)arg2;
 - (BOOL)areOutputFilesAffectedByEnvironmentVariable:(id)arg1;
-- (BOOL)areOutputFilesAffectedByCommandLineArgument:(id)arg1;
-- (id)distributedBuildFlagsInTargetBuildContext:(id)arg1;
-- (id)standardFlagsInTargetBuildContext:(id)arg1;
+- (BOOL)areOutputFilesAffectedByCommandLineArgument:(id)arg1 previousArgument:(id)arg2;
+- (id)standardFlagsWithMacroExpansionScope:(id)arg1;
 
 @end
 

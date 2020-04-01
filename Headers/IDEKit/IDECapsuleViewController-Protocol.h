@@ -6,25 +6,27 @@
 
 #import <IDEKit/NSObject-Protocol.h>
 
-@class NSImage, NSString;
+@class NSColor, NSImage, NSString;
 
 @protocol IDECapsuleViewController <NSObject>
-@property(readonly, copy) NSString *titleForDisplay;
+@property(nonatomic, readonly) NSString *titleForDisplay;
 
 @optional
-@property(readonly) BOOL disclosedByDefault;
-@property(readonly, copy) NSString *footerLabel;
-@property(readonly) BOOL canDrag;
-@property(readonly) BOOL canUndisclose;
-@property BOOL canRemoveItems;
-@property BOOL canAddItems;
-@property(readonly) BOOL canRename;
-@property(readonly) BOOL canRemove;
-@property(readonly) BOOL canSelect;
-@property(readonly) NSImage *icon;
 - (void)removeItems:(id)arg1;
 - (void)addItems:(id)arg1;
 - (void)setTitle:(NSString *)arg1;
 - (void)remove:(id)arg1;
+@property(nonatomic, retain) NSColor *backgroundColor;
+@property(nonatomic, readonly) BOOL disclosedByDefault;
+@property(nonatomic, readonly) NSString *footerLabel;
+@property(nonatomic, readonly) BOOL canDrag;
+@property(nonatomic, readonly) BOOL wantsDisclosureButtonHidden;
+@property(nonatomic, readonly) BOOL canUndisclose;
+@property(nonatomic) BOOL canRemoveItems;
+@property(nonatomic) BOOL canAddItems;
+@property(nonatomic, readonly) BOOL canRename;
+@property(nonatomic, readonly) BOOL canRemove;
+@property(nonatomic, readonly) BOOL canSelect;
+@property(nonatomic, readonly) NSImage *icon;
 @end
 

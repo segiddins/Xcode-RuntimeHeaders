@@ -8,7 +8,7 @@
 
 #import <XCSUI/DVTRadarSupport_Issue-Protocol.h>
 
-@class NSString, XCSIntegration, XCSIntegrationIssue;
+@class NSAttributedString, NSString, XCSIntegration, XCSIntegrationIssue;
 
 @interface XCSUIIntegrationIssue : NSObject <DVTRadarSupport_Issue>
 {
@@ -28,6 +28,9 @@
 - (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long associatedRadarID;
 @property(readonly, copy, nonatomic) NSString *stringRepresentation;
+@property(readonly, copy, nonatomic) NSAttributedString *attributedStringRepresentation;
+- (void)appendString:(id)arg1 withAttributes:(id)arg2 toAttributedString:(id)arg3;
+- (id)issueLabelFromIntegrationIssueType:(unsigned long long)arg1;
 @property(readonly, copy, nonatomic) NSString *briefStringRepresentation;
 - (id)tinyStringRepresentation;
 - (id)sourceFilename;

@@ -6,12 +6,12 @@
 
 #import <objc/NSObject.h>
 
-#import <GPUToolsServices/NSCoding-Protocol.h>
 #import <GPUToolsServices/NSCopying-Protocol.h>
+#import <GPUToolsServices/NSSecureCoding-Protocol.h>
 
 @class DYDeviceInfo;
 
-@interface DYInvestigatorConfig : NSObject <NSCopying, NSCoding>
+@interface DYInvestigatorConfig : NSObject <NSCopying, NSSecureCoding>
 {
     DYDeviceInfo *_deviceInfo;
     unsigned long long _overviewSamplePeriod;
@@ -19,6 +19,7 @@
     unsigned long long _overviewDuration;
 }
 
++ (BOOL)supportsSecureCoding;
 @property(readonly, nonatomic) unsigned long long overviewDuration; // @synthesize overviewDuration=_overviewDuration;
 @property(readonly, nonatomic) unsigned long long overviewSampleCount; // @synthesize overviewSampleCount=_overviewSampleCount;
 @property(readonly, nonatomic) unsigned long long overviewSamplePeriod; // @synthesize overviewSamplePeriod=_overviewSamplePeriod;

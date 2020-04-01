@@ -6,16 +6,30 @@
 
 #import <DVTFoundation/DVTFilePath.h>
 
+@class NSArray;
+
 @interface DVTFilePath (IDESourceControlDVTFilePathAdditions)
-@property unsigned long long conflictStateForUpdateOrMerge;
-- (void)setSourceControlStatus:(unsigned long long)arg1 forKey:(id)arg2;
-- (unsigned long long)sourceControlStatusForKey:(id)arg1;
++ (id)containerTypeIdentifiersKeyedByImportantSubpaths;
++ (id)importantSubpathsKeyedByContainerTypeIdentifier;
+- (BOOL)containsGitDirectory;
 - (unsigned long long)cachedAggregateSourceControlRemoteStatus;
 - (unsigned long long)cachedSourceControlRemoteStatus;
 - (unsigned long long)cachedAggregateSourceControlLocalStatus;
 - (unsigned long long)cachedSourceControlLocalStatus;
+- (id)relativePathStringFromWorkingCopy:(id)arg1;
 - (void)workingCopyAndRelativePath:(CDUnknownBlockType)arg1;
 - (void)_workingCopy:(id *)arg1 relativePath:(id *)arg2;
 - (id)workingCopy;
+- (id)IDESourceControl_importantFileReferences;
+@property(readonly) NSArray *IDESourceControl_importantSubpaths;
+- (id)IDESourceControl_importantSubpathsWithFileType:(id)arg1;
+- (id)IDESourceControl_containerFilePathIncludingAssetCatalogs:(BOOL)arg1;
+@property(readonly) DVTFilePath *IDESourceControl_containerFilePath;
+- (void)removeAssociatedWorkingTreeItem:(id)arg1;
+- (void)associateWorkingTreeItem:(id)arg1;
+- (id)workingTreeItem_createIfNecessary:(BOOL)arg1;
+- (id)workingTreeItem;
+- (void)workingTreeItemWithCompletionBlock:(CDUnknownBlockType)arg1;
+- (BOOL)idescm_isSameFileAsFilePathCaseSensitive:(id)arg1;
 @end
 

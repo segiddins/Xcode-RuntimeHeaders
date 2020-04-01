@@ -7,7 +7,6 @@
 #import <Foundation/NSDictionary.h>
 
 @interface NSDictionary (TSFoundationExtra)
-- (id)inverseDictionary;
 - (id)stringByConcatenatingEntriesAsLinesOfSimpleAssignments;
 - (id)dictionaryByRecursivelyElidingEmptyStringValuesForKeysInSet:(id)arg1;
 - (id)dictionaryByAddingEntriesFromDictionary:(id)arg1;

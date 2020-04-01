@@ -8,7 +8,8 @@
 
 #import <DVTFoundation/DVTInvalidation-Protocol.h>
 
-@class DVTStackBacktrace, DVTStateRepository, DVTWeakInterposer, NSDictionary, NSString;
+@class DVTStackBacktrace, DVTStateRepository, DVTWeakInterposer, NSArray, NSDictionary, NSString;
+@protocol DVTStatefulObject;
 
 @interface DVTStateToken : NSObject <DVTInvalidation>
 {
@@ -28,6 +29,7 @@
 - (void)deleteStateFromRepository;
 - (void)pullStateFromRepository;
 - (void)_pullStateFromDictionary:(id)arg1;
+- (BOOL)isRestoringState;
 - (id)_stateDictionary;
 - (BOOL)pushStateToRepositoryAndReturnError:(id *)arg1;
 - (id)_copyStatefulObjectState;
@@ -36,16 +38,15 @@
 - (void)cloneStateForIdentifier:(id)arg1 toIdentifier:(id)arg2;
 - (void)unregisterObjectWithIdentifier:(id)arg1;
 - (BOOL)registerObject:(id)arg1 withIdentifier:(id)arg2 error:(id *)arg3;
-- (id)statefulObjectStateIdentifiers;
+@property(readonly) NSArray *statefulObjectStateIdentifiers;
 - (id)_stateSavingObjectPersistenceByName;
-- (id)identifier;
+@property(readonly) NSString *identifier;
 - (id)repository;
 - (id)_childRepository;
 - (void)_updateCanPullFromRepositoryAndCheckAgain:(BOOL)arg1;
 - (void)primitiveInvalidate;
 - (id)initWithStatefulObject:(id)arg1 identifier:(id)arg2 inRepository:(id)arg3;
-- (void)setStatefulObject:(id)arg1;
-- (id)statefulObject;
+@property __weak id <DVTStatefulObject> statefulObject;
 
 // Remaining properties
 @property(retain) DVTStackBacktrace *creationBacktrace;

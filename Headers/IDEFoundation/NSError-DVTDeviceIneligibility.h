@@ -9,7 +9,15 @@
 @class NSString;
 
 @interface NSError (DVTDeviceIneligibility)
++ (id)_dvt_textForError:(id)arg1;
++ (long long)_dvt_developerPrepErrorCodeForError:(id)arg1;
++ (id)_dvt_developerPrepErrorDetailsForDevice:(id)arg1 errorCode:(long long)arg2;
 + (id)dvt_errorWithDeviceIneligibilityErrorCode:(long long)arg1 device:(id)arg2 buildable:(id)arg3 buildParameters:(id)arg4;
++ (id)sourcekit_connectionInterruptedError;
 @property(readonly, nonatomic) NSString *dvt_deviceIneligibilityTokenDescription;
+- (BOOL)sourcekit_isRequestCancelledError;
+- (BOOL)sourcekit_isRequestFailedError;
+- (BOOL)sourcekit_isInvalidRequestError;
+- (BOOL)sourcekit_isConnectionInterruptedError;
 @end
 

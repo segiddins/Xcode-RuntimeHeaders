@@ -9,7 +9,7 @@
 @interface IDEAlert (IDEAlertUI)
 + (id)keyPathsForValuesAffectingTextColor;
 - (id)textColor;
-- (id)targettedWorkspaceTabControllerForWorkspace:(id)arg1 withContext:(id)arg2;
-- (id)targettedWorkspaceTabControllerForWorkspace:(id)arg1;
+- (id)targetedWorkspaceWindowControllerForWorkspace:(id)arg1 withContext:(id)arg2;
+- (id)targetedWorkspaceWindowControllerForWorkspace:(id)arg1;
 @end
 

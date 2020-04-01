@@ -10,7 +10,6 @@
 
 @class NSString;
 
-__attribute__((visibility("hidden")))
 @interface LLDBFrame : NSObject <DBGSBFrame>
 {
     struct SBFrame {
@@ -20,6 +19,7 @@ __attribute__((visibility("hidden")))
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (_Bool)IsSwiftThunk;
 - (_Bool)IsInlined;
 - (const char *)GetDisplayFunctionName;
 - (const char *)Disassemble;

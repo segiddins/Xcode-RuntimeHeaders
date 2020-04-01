@@ -12,7 +12,6 @@
 {
     DVTFilePath *_dvtFilePath;
     NSString *_filePath;
-    NSString *_timestampString;
     long long _startingColumnNumber;
     long long _endingColumnNumber;
     long long _startingLineNumber;
@@ -37,6 +36,7 @@
 @property(readonly) NSString *filePathStringForArchiving;
 - (id)initFromXMLUnarchiver:(id)arg1 archiveVersion:(float)arg2;
 - (void)dvt_awakeFromXMLUnarchiver:(id)arg1;
+- (id)accessibilityDescription;
 - (id)description;
 - (void)setLocationFromZeroBasedLocation:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

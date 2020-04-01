@@ -9,6 +9,7 @@
 
 @protocol IDEAppIDContainerFlightCheckDelegate
 - (void)flightCheckIsValidating:(id <IDEFlightChecking>)arg1;
+- (void)flightCheckWillUnresolve:(id <IDEFlightChecking>)arg1;
 - (NSOrderedSet *)containerIdentifiersForFlightCheck:(id <IDEFlightChecking>)arg1 error:(id *)arg2;
 @end
 

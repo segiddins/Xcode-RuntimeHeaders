@@ -6,15 +6,16 @@
 
 #import <objc/NSObject.h>
 
-#import <DVTInstrumentsFoundation/NSCoding-Protocol.h>
+#import <DVTInstrumentsFoundation/NSSecureCoding-Protocol.h>
 
-@interface XRVMRegionAnnotation : NSObject <NSCoding>
+@interface XRVMRegionAnnotation : NSObject <NSSecureCoding>
 {
     unsigned long long _baseAddress;
     int *_pageMap;
     unsigned int _vpages;
 }
 
++ (BOOL)supportsSecureCoding;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)dealloc;

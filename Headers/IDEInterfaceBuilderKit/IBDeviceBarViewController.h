@@ -4,23 +4,26 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <DVTKit/DVTViewController.h>
+#import <DVTViewControllerKit/DVTViewController.h>
 
 #import <IDEInterfaceBuilderKit/IBDeviceBarGroupViewControllerDelegate-Protocol.h>
+#import <IDEInterfaceBuilderKit/IBDeviceTraitPickerPopoverViewControllerDelegate-Protocol.h>
 #import <IDEInterfaceBuilderKit/NSPopoverDelegate-Protocol.h>
 
-@class DVTObservingToken, IBDeviceBarBranchModeButton, IBDeviceBarGroupViewController, IBDeviceConfiguration, IBDeviceOrientation, IBDocument, IBMemberConfiguration, NSArray, NSMutableDictionary, NSPopover, NSSet, NSStackView, NSString, _IBDeviceBarStackDividerView;
+@class DVTObservingToken, IBDeviceAppearance, IBDeviceBarBranchModeButton, IBDeviceBarGroupViewController, IBDeviceConfiguration, IBDeviceLayout, IBDeviceOrientation, IBDocument, NSArray, NSMutableArray, NSMutableDictionary, NSPopover, NSStackView, NSString, _IBDeviceBarStackDividerView;
 
-@interface IBDeviceBarViewController : DVTViewController <NSPopoverDelegate, IBDeviceBarGroupViewControllerDelegate>
+@interface IBDeviceBarViewController : DVTViewController <NSPopoverDelegate, IBDeviceBarGroupViewControllerDelegate, IBDeviceTraitPickerPopoverViewControllerDelegate>
 {
     IBDocument *_document;
     NSStackView *_configurationsStackView;
+    NSMutableArray *_visibleGroups;
     NSArray *_outerStackViewPinningConstraints;
-    _IBDeviceBarStackDividerView *_devicesOrientationsStackDivider;
-    _IBDeviceBarStackDividerView *_orientationsAdaptationsStackDivider;
+    _IBDeviceBarStackDividerView *_stackDividerBeforeAppearancesGroup;
+    _IBDeviceBarStackDividerView *_stackDividerBeforeOrientationsGroup;
+    _IBDeviceBarStackDividerView *_stackDividerBeforeLayoutsGroup;
+    IBDeviceAppearance *_downstreamSelectedAppearance;
     IBDeviceOrientation *_downstreamSelectedOrientation;
-    NSString *_downstreamSelectedAdaptationIdentifier;
-    IBMemberConfiguration *_derivedMemberConfiguration;
+    IBDeviceLayout *_downstreamSelectedLayout;
     IBDeviceConfiguration *_deviceConfigurationBeforeCustomizing;
     IBDeviceBarBranchModeButton *_customizeButton;
     NSPopover *_customizePopover;
@@ -33,20 +36,22 @@
     CDUnknownBlockType _deviceConfigurationChangedCallback;
     CDUnknownBlockType _customizationModeChangedStateCallback;
     IBDeviceConfiguration *_selectedDeviceConfiguration;
-    NSSet *_deviceSubtypes;
+    NSArray *_deviceSubtypes;
     IBDeviceConfiguration *_deviceConfiguration;
     IBDeviceBarGroupViewController *_devicesGroup;
+    IBDeviceBarGroupViewController *_appearancesGroup;
     IBDeviceBarGroupViewController *_orientationsGroup;
-    IBDeviceBarGroupViewController *_adaptationsGroup;
+    IBDeviceBarGroupViewController *_layoutsGroup;
     IBDeviceBarGroupViewController *_devicesGroupForBranchMode;
 }
 
 @property(retain, nonatomic) IBDeviceBarGroupViewController *devicesGroupForBranchMode; // @synthesize devicesGroupForBranchMode=_devicesGroupForBranchMode;
-@property(retain, nonatomic) IBDeviceBarGroupViewController *adaptationsGroup; // @synthesize adaptationsGroup=_adaptationsGroup;
+@property(retain, nonatomic) IBDeviceBarGroupViewController *layoutsGroup; // @synthesize layoutsGroup=_layoutsGroup;
 @property(retain, nonatomic) IBDeviceBarGroupViewController *orientationsGroup; // @synthesize orientationsGroup=_orientationsGroup;
+@property(retain, nonatomic) IBDeviceBarGroupViewController *appearancesGroup; // @synthesize appearancesGroup=_appearancesGroup;
 @property(retain, nonatomic) IBDeviceBarGroupViewController *devicesGroup; // @synthesize devicesGroup=_devicesGroup;
 @property(retain, nonatomic) IBDeviceConfiguration *deviceConfiguration; // @synthesize deviceConfiguration=_deviceConfiguration;
-@property(readonly, nonatomic) NSSet *deviceSubtypes; // @synthesize deviceSubtypes=_deviceSubtypes;
+@property(readonly, nonatomic) NSArray *deviceSubtypes; // @synthesize deviceSubtypes=_deviceSubtypes;
 @property(nonatomic, getter=isCustomizing) BOOL customizing; // @synthesize customizing=_customizing;
 @property(retain, nonatomic) IBDeviceConfiguration *selectedDeviceConfiguration; // @synthesize selectedDeviceConfiguration=_selectedDeviceConfiguration;
 @property(copy, nonatomic) CDUnknownBlockType customizationModeChangedStateCallback; // @synthesize customizationModeChangedStateCallback=_customizationModeChangedStateCallback;
@@ -57,44 +62,48 @@
 - (void)_customizationStateChanged;
 - (void)_fireCustomizationModeCallback:(id)arg1;
 - (void)popoverDidClose:(id)arg1;
+- (void)popoverWillShow:(id)arg1;
 - (void)_changeCustomizeButtonToDoneButton;
 - (void)customize:(id)arg1;
+- (void)deviceTraitPickerPopoverViewController:(id)arg1 didSelectTraits:(id)arg2;
+- (void)_userDidSelectTraitsForBranching:(id)arg1;
 - (id)_deviceConfigurationsMatchingMemberConfiguration:(id)arg1;
 - (void)finishCustomizing:(id)arg1;
 - (void)_resetAndReconfigure;
 - (void)_addCustomizationsButton;
 - (void)_updateCustomizeButtonTitle;
-- (void)_updateDerivedMemberConfiguration;
+- (id)_selectedMemberConfiguration;
 - (id)_sortedSelectionButtonsForButtons:(id)arg1;
-- (id)buttonForDevice:(id)arg1 adaptation:(id)arg2 accessibilityHint:(id)arg3 action:(SEL)arg4 tooltip:(id)arg5 forBranchMode:(BOOL)arg6;
-- (id)buttonForConfiguration:(id)arg1 accessibilityHint:(id)arg2 action:(SEL)arg3 tooltip:(id)arg4 forBranchMode:(BOOL)arg5;
-- (BOOL)_hidePressedButtonState;
-- (id)_addStackDividerToStackView:(id)arg1;
+- (id)buttonForConfiguration:(id)arg1 accessibilityIdentifier:(id)arg2 displayName:(id)arg3 forBranchMode:(BOOL)arg4;
+- (id)_addGroupDividerView;
 - (void)_makeConfigurationsStackView;
 - (void)restoreConfiguration:(id)arg1 resetAll:(BOOL)arg2;
 - (id)defaultDevice;
 - (id)selectedConfigurationDevice;
 - (id)selectedConfigurationOrientation;
+- (id)selectedConfigurationAppearance;
 - (id)sizeClassFieldsFont;
 - (id)labelFont;
 - (id)labelColor;
 - (id)customizationModeBackgroundColor;
 - (id)defaultBackgroundColor;
-- (id)_adaptationGroupButtons;
+- (id)_layoutGroupButtons;
 - (id)_orientationGroupButtons;
+- (id)_appearanceGroupButtons;
 - (id)_deviceGroupButtonsForBranchMode:(BOOL)arg1;
 - (void)_selectButtonsMatchingSelectedConfiguration;
 - (id)applyDownstreamSelectionsToConfiguration:(id)arg1;
 - (void)_configureGroupViewControllers;
-- (void)_addAdpatationsGroupIfSupported;
-- (void)_removeAdaptationsGroup;
-- (void)_addOrientationsGroupIfSupported;
-- (void)_removeOrientationsGroup;
-- (void)_makeDevicesStackForCustomizingMode:(BOOL)arg1;
-- (BOOL)isShowingAdaptationsGroup;
+- (void)_updateGroupsStartingFromLayouts;
+- (void)_updateGroupsStartingFromOrientations;
+- (void)_updateGroupsStartingFromAppearances;
+- (void)_updateGroupsStartingFromDevicesInCustomizationMode:(BOOL)arg1;
+- (BOOL)isShowingLayoutsGroup;
 - (BOOL)isShowingOrientationsGroup;
+- (BOOL)isShowingAppearancesGroup;
 - (BOOL)isShowingDevicesGroup;
-- (void)addGroupViewController:(id)arg1 toStack:(id)arg2 heightContraintValue:(double)arg3;
+- (void)_removeGroupViewController:(id)arg1;
+- (void)_addGroupViewController:(id)arg1;
 - (void)_configureBar;
 - (void)_relayoutStacksAsNeeded;
 - (void)primitiveInvalidate;

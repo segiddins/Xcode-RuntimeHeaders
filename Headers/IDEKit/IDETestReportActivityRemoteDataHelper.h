@@ -8,7 +8,7 @@
 
 #import <IDEKit/NSURLSessionDownloadDelegate-Protocol.h>
 
-@class NSString;
+@class NSString, NSURL, NSURLSessionDownloadTask;
 @protocol IDETestReport_RemoteAsset, IDETestReport_Test, IDETestReport_TestActivity;
 
 @interface IDETestReportActivityRemoteDataHelper : NSObject <NSURLSessionDownloadDelegate>
@@ -17,13 +17,18 @@
     CDUnknownBlockType _progressBlock;
     id <IDETestReport_TestActivity> _activity;
     id <IDETestReport_Test> _test;
+    NSURLSessionDownloadTask *_downloadTask;
+    NSURL *_destinationDirectory;
 }
 
+@property(copy, nonatomic) NSURL *destinationDirectory; // @synthesize destinationDirectory=_destinationDirectory;
 - (void).cxx_destruct;
+- (void)URLSession:(id)arg1 task:(id)arg2 didCompleteWithError:(id)arg3;
 - (void)URLSession:(id)arg1 downloadTask:(id)arg2 didWriteData:(long long)arg3 totalBytesWritten:(long long)arg4 totalBytesExpectedToWrite:(long long)arg5;
 - (void)URLSession:(id)arg1 downloadTask:(id)arg2 didFinishDownloadingToURL:(id)arg3;
 - (void)URLSession:(id)arg1 task:(id)arg2 didReceiveChallenge:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
-- (void)downloadRemoteAsset:(id)arg1 forActivity:(id)arg2 test:(id)arg3 progressBlock:(CDUnknownBlockType)arg4;
+- (void)cancel;
+- (void)downloadRemoteAsset:(id)arg1 forActivity:(id)arg2 inTest:(id)arg3 progressBlock:(CDUnknownBlockType)arg4;
 - (void)copyDownloadedRemoteAssetFromTmpLocation:(id)arg1;
 
 // Remaining properties

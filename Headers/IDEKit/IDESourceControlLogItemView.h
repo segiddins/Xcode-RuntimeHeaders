@@ -9,26 +9,27 @@
 #import <IDEKit/IDESourceControlLogFilesChangedViewDelegate-Protocol.h>
 #import <IDEKit/IDESourceControlNameTokenViewDelegate-Protocol.h>
 #import <IDEKit/NSPopoverDelegate-Protocol.h>
-#import <IDEKit/RVPeoplePickerDelegate-Protocol.h>
 
-@class DVTBindingToken, DVTSourceControlAuthor, DVTSourceControlLogItem, DVTSourceControlWorkingCopy, DVTStackView_ML, IDESourceControlLogFilesChangedView, IDESourceControlLogViewController, IDESourceControlNameTokenView, IDESourceControlPersonPopover, NSString, NSTextField;
+@class DVTBindingToken, DVTNotificationToken, DVTObservingToken, DVTSourceControlAuthor, DVTSourceControlLogItem, DVTSourceControlWorkingCopy, DVTStackView_ML, IDESourceControlLogFilesChangedView, IDESourceControlLogViewController, IDESourceControlNameTokenView, NSDictionary, NSString, NSTextField;
 
-@interface IDESourceControlLogItemView : NSTableCellView <NSPopoverDelegate, RVPeoplePickerDelegate, IDESourceControlNameTokenViewDelegate, IDESourceControlLogFilesChangedViewDelegate>
+@interface IDESourceControlLogItemView : NSTableCellView <NSPopoverDelegate, IDESourceControlNameTokenViewDelegate, IDESourceControlLogFilesChangedViewDelegate>
 {
     DVTSourceControlAuthor *_author;
     DVTSourceControlLogItem *_logItem;
-    IDESourceControlPersonPopover *_peoplePickerPopover;
     DVTBindingToken *_imageBindingToken;
     DVTBindingToken *_nameBindingToken;
     DVTStackView_ML *_filesChangedStackView;
     long long _trackingTag;
-    BOOL _isChangedFilesExpanded;
+    NSDictionary *_messageTextAttrs;
+    DVTObservingToken *_themeObserver;
+    DVTNotificationToken *_fontThemeObserver;
+    IDESourceControlLogViewController *_owningController;
     NSTextField *_dateField;
     NSTextField *_revisionField;
     IDESourceControlLogFilesChangedView *_filesChangedButton;
     NSTextField *_messageField;
     IDESourceControlNameTokenView *_nameTokenView;
-    IDESourceControlLogViewController *_owningController;
+    NSTextField *_mergeField;
     DVTSourceControlWorkingCopy *_workingCopy;
 }
 
@@ -37,9 +38,8 @@
 + (id)messageTextAttributes;
 + (id)showChatButtonTransformer;
 + (id)nibName;
-@property BOOL isChangedFilesExpanded; // @synthesize isChangedFilesExpanded=_isChangedFilesExpanded;
 @property __weak DVTSourceControlWorkingCopy *workingCopy; // @synthesize workingCopy=_workingCopy;
-@property __weak IDESourceControlLogViewController *owningController; // @synthesize owningController=_owningController;
+@property __weak NSTextField *mergeField; // @synthesize mergeField=_mergeField;
 @property(retain) IDESourceControlNameTokenView *nameTokenView; // @synthesize nameTokenView=_nameTokenView;
 @property(retain) NSTextField *messageField; // @synthesize messageField=_messageField;
 @property(retain) IDESourceControlLogFilesChangedView *filesChangedButton; // @synthesize filesChangedButton=_filesChangedButton;
@@ -50,17 +50,20 @@
 - (void)teardown;
 - (void)viewWillMoveToSuperview:(id)arg1;
 - (void)viewChanges:(id)arg1;
-- (void)clearAuthor;
-- (void)personSelected:(id)arg1;
-- (void)pair:(id)arg1;
+- (void)email:(id)arg1;
+- (BOOL)shouldShowToken;
 - (id)menuForNameToken:(id)arg1;
 - (void)setDate:(id)arg1;
 - (void)setDescriptionWithDate:(id)arg1 revision:(id)arg2 workingCopyName:(id)arg3;
 - (void)setMessage:(id)arg1;
+- (void)_updateMessageAttributes;
 @property __weak DVTSourceControlLogItem *logItem;
+- (void)_updateFrames;
 @property(retain) DVTSourceControlAuthor *author;
+@property(nonatomic) __weak IDESourceControlLogViewController *owningController; // @synthesize owningController=_owningController;
+- (void)updateTheme;
+- (void)observeTheme;
 - (void)awakeFromNib;
-- (id)initWithFrame:(struct CGRect)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -6,9 +6,17 @@
 
 #import <IDEInterfaceBuilderKit/IBViewDragDelegate-Protocol.h>
 
-@class IBICAssetCapsule, NSEvent, NSString;
+@class IBICAssetCapsule, NSEvent, NSMenu, NSSet, NSString;
 
 @protocol IBICAssetCapsuleDelegate <IBViewDragDelegate>
+- (void)assetCapsuleDidFinishBandSelecting:(IBICAssetCapsule *)arg1;
+- (void)assetCapsule:(IBICAssetCapsule *)arg1 didUpdateBandSelectionRect:(struct CGRect)arg2 withEvent:(NSEvent *)arg3 andInitialSelection:(NSSet *)arg4;
+- (NSSet *)assetCapsuleInitialSelectionForBandSelection:(IBICAssetCapsule *)arg1;
+- (void)assetCapsule:(IBICAssetCapsule *)arg1 didTrackContextMenuFromEvent:(NSEvent *)arg2;
+- (void)assetCapsule:(IBICAssetCapsule *)arg1 willTrackContextMenuFromEvent:(NSEvent *)arg2;
+- (NSMenu *)assetCapsule:(IBICAssetCapsule *)arg1 menuForEvent:(NSEvent *)arg2;
+- (void)assetCapsule:(IBICAssetCapsule *)arg1 cancelPreview:(id)arg2;
+- (void)assetCapsule:(IBICAssetCapsule *)arg1 togglePreview:(id)arg2;
 - (BOOL)assetCapsule:(IBICAssetCapsule *)arg1 interceptMouseUp:(NSEvent *)arg2;
 - (BOOL)assetCapsule:(IBICAssetCapsule *)arg1 interceptMouseDragged:(NSEvent *)arg2 withOriginalMouseDown:(NSEvent *)arg3;
 - (BOOL)assetCapsule:(IBICAssetCapsule *)arg1 interceptMouseDown:(NSEvent *)arg2;

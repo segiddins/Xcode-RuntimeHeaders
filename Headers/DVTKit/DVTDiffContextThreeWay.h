@@ -6,40 +6,35 @@
 
 #import <DVTFoundation/DVTDiffContext.h>
 
-@class DVTDiffDataSource, DVTObservingToken, NSMutableArray, NSNumber, NSOperationQueue;
+@class DVTDiffDataSource, DVTObservingToken;
 
 @interface DVTDiffContextThreeWay : DVTDiffContext
 {
     DVTDiffDataSource *_ancestorDataSource;
     DVTObservingToken *_ancestorDataSourceObserver;
+    DVTDiffDataSource *_intermediateDataSource;
+    DVTObservingToken *_intermediateDataSourceObserver;
 }
 
++ (id)modifiedDescriptorIndexesForDiffDescriptors:(id)arg1;
++ (id)commonDescriptorIndexesForDiffDescriptors:(id)arg1;
++ (Class)_sharedStateClass;
++ (Class)_diffOperationClass;
 - (void).cxx_destruct;
-- (id)tmpModifiedDescriptorIndexes;
-- (id)modifiedDescriptorIndexes;
-- (id)commonDescriptorIndexes;
 - (id)description;
-- (void)_buildDiffDescriptors;
-- (id)_diffDescriptorsByAddingUnmodified:(id)arg1;
-- (id)_diffContextForComparing:(id)arg1 with:(id)arg2;
-- (void)setIgnoresCommon:(BOOL)arg1;
 - (void)setIgnoresLineEnds:(BOOL)arg1;
-- (void)setIgnoresTrailingSpaces:(BOOL)arg1;
-- (void)setIgnoresSpacesInRuns:(BOOL)arg1;
-- (void)setIgnoresLeadingSpaces:(BOOL)arg1;
+- (void)setIgnoresWhitespace:(BOOL)arg1;
 - (void)setIgnoresCase:(BOOL)arg1;
+- (id)intermediateDataSource;
+- (void)setIntermediateDataSource:(id)arg1;
+- (BOOL)_setIntermediateDataSource:(id)arg1;
 - (id)ancestorDataSource;
 - (void)setAncestorDataSource:(id)arg1;
 - (BOOL)_setAncestorDataSource:(id)arg1;
 - (void)primitiveInvalidate;
 - (id)init;
-- (id)initWithOriginalDataSource:(id)arg1 modifiedDataSource:(id)arg2 ancestorDataSource:(id)arg3;
-
-// Remaining properties
-@property(retain) NSOperationQueue *diffQueue; // @dynamic diffQueue;
-@property(readonly, copy) NSMutableArray *mutableDiffDescriptors; // @dynamic mutableDiffDescriptors;
-@property(retain) NSNumber *timestamp; // @dynamic timestamp;
-@property(retain) NSMutableArray *tmpDiffDescriptors; // @dynamic tmpDiffDescriptors;
+- (id)initWithOriginalDataSource:(id)arg1 intermediateModifiedDataSource:(id)arg2 modifiedDataSource:(id)arg3 ancestorDataSource:(id)arg4 cachingMode:(unsigned long long)arg5;
+- (id)initWithOriginalDataSource:(id)arg1 modifiedDataSource:(id)arg2 ancestorDataSource:(id)arg3 cachingMode:(unsigned long long)arg4;
 
 @end
 

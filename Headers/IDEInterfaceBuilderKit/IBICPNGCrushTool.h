@@ -6,12 +6,22 @@
 
 #import <IDEInterfaceBuilderKit/IBICExternalBuildTool.h>
 
-@interface IBICPNGCrushTool : IBICExternalBuildTool
+#import <IDEInterfaceBuilderKit/IBICPNGCrushToolProtocol-Protocol.h>
+
+@class NSString;
+
+@interface IBICPNGCrushTool : IBICExternalBuildTool <IBICPNGCrushToolProtocol>
 {
 }
 
 - (id)taskForProcessingContentAtPath:(id)arg1 withOutputPath:(id)arg2 error:(id *)arg3;
 - (id)toolName;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

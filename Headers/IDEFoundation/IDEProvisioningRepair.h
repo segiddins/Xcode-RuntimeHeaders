@@ -37,10 +37,10 @@
 - (void)userActionDidBegin:(id)arg1;
 - (void)userActionWasAuthorized:(id)arg1;
 - (void)_closeLedgerEntriesWithError:(id)arg1;
-- (void)_clearUserAction;
 - (void)_waitOnUserAction:(id)arg1;
 @property(retain, nonatomic) IDEProvisioningUserAction *userAction; // @synthesize userAction=_userAction;
 @property(readonly, nonatomic, getter=isWaitingForUserAction) BOOL waitingForUserAction;
+- (void)_repairDidFinishWithUserAction:(id)arg1 error:(id)arg2;
 - (id)_executionDiagnosticLedgerEntry;
 - (void)_executeSteps:(id)arg1;
 - (void)execute;

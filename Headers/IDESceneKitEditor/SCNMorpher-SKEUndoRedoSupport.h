@@ -6,12 +6,18 @@
 
 #import <SceneKit/SCNMorpher.h>
 
+@class NSArray;
+
 @interface SCNMorpher (SKEUndoRedoSupport)
++ (id)keyPathsForValuesAffectingunifiesNormals_edit;
 + (id)keyPathsForValuesAffectingcalculationMode_edit;
 + (id)keyPathsForValuesAffectingske_morpherTargets_edit;
+- (void)setunifiesNormals_edit:(BOOL)arg1;
+- (BOOL)unifiesNormals_edit;
 - (void)setcalculationMode_edit:(long long)arg1;
 - (long long)calculationMode_edit;
 - (void)setske_morpherTargets_edit:(id)arg1;
 - (id)ske_morpherTargets_edit;
+@property(copy) NSArray *ske_morpherTargets;
 @end
 

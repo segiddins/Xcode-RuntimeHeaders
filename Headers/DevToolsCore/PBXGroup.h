@@ -14,17 +14,15 @@
 {
     NSMutableArray *_children;
     BOOL _didScmStatus;
+    BOOL _blockChildItemKVONotifications;
 }
 
 + (id)archivableRelationships;
 + (id)groupWithName:(id)arg1;
 + (id)groupWithName:(id)arg1 path:(id)arg2;
+- (void).cxx_destruct;
 - (void)findFeaturesInUseAndAddToSet:(id)arg1 usingPathPrefix:(id)arg2;
 - (id)buildConfigurationList;
-- (id)relevantToolSpecifications;
-- (id)relevantToolSpecificationsForConfigurationsNamed:(id)arg1;
-- (id)relevantToolSpecificationsForConfigurationNamed:(id)arg1;
-- (int)propertyDefinitionLevel;
 - (id)cachedPropertyInfoContextForConfigurationNamed:(id)arg1;
 - (void)pruneReferencesBySendingBooleanSelector:(SEL)arg1 toObject:(id)arg2 withContext:(void *)arg3;
 - (unsigned long long)assignFileEncoding:(unsigned long long)arg1 onlyIfUnspecified:(BOOL)arg2;
@@ -37,6 +35,7 @@
 - (id)_items;
 - (id)innerLongDescriptionWithIndentLevel:(unsigned long long)arg1;
 - (id)innerDescription;
+- (BOOL)enumerateDescendantReferencesUsingBlock:(CDUnknownBlockType)arg1;
 - (id)groupEnumerator;
 - (void)invalidateAbsolutePathCache;
 - (unsigned long long)itemCount;
@@ -44,7 +43,8 @@
 - (id)itemAtIndex:(unsigned long long)arg1;
 - (unsigned long long)indexOfItem:(id)arg1;
 - (void)removeItem:(id)arg1;
-- (BOOL)deleteFromProjectAndDisk:(BOOL)arg1;
+- (void)removeItemsAtIndexes:(id)arg1;
+- (BOOL)deleteFromProject;
 - (id)addItems:(id)arg1 copy:(BOOL)arg2 createGroupsRecursively:(BOOL)arg3;
 - (id)addItems:(id)arg1 atIndex:(long long)arg2 copy:(BOOL)arg3 createGroupsRecursively:(BOOL)arg4;
 - (id)insertItems:(id)arg1 atIndex:(long long)arg2 copy:(BOOL)arg3 createGroupsRecursively:(BOOL)arg4;
@@ -68,9 +68,10 @@
 - (id)destinationGroupForInsertion;
 - (BOOL)isAncestorOfItem:(id)arg1;
 - (BOOL)containsItem:(id)arg1;
-- (int)changeMask;
-- (id)createNewGroupAtIndex:(unsigned long long)arg1;
-- (id)_availableNameBasedOn:(id)arg1;
+- (id)createNewGroupAtIndex:(unsigned long long)arg1 withName:(id)arg2;
+- (id)availableGroupNameForNewGroupCreatingFolderAtPath:(id)arg1;
+- (id)availableGroupNameForNewGroup;
+- (id)_availableNameBasedOn:(id)arg1 canCreateFolderAtPath:(id)arg2;
 - (id)children;
 - (void)setContainer:(id)arg1;
 - (BOOL)allowsSubgroups;
@@ -79,24 +80,8 @@
 - (BOOL)allowsEditingOfChildren;
 - (id)name;
 - (void)dealloc;
-- (id)copyWithZone:(struct _NSZone *)arg1 getUnretainedObjectMappings:(id *)arg2;
 - (id)initWithName:(id)arg1 path:(id)arg2 sourceTree:(id)arg3;
 - (void)flattenItemsIntoArray:(id)arg1;
-- (void)removeFromFileReferencesAtIndex:(unsigned long long)arg1;
-- (void)replaceInFileReferences:(id)arg1 atIndex:(unsigned long long)arg2;
-- (void)insertInFileReferences:(id)arg1;
-- (void)insertInFileReferences:(id)arg1 atIndex:(unsigned long long)arg2;
-- (void)removeFromGroupsAtIndex:(unsigned long long)arg1;
-- (void)replaceInGroups:(id)arg1 atIndex:(unsigned long long)arg2;
-- (void)insertInGroups:(id)arg1;
-- (void)insertInGroups:(id)arg1 atIndex:(unsigned long long)arg2;
-- (void)removeFromChildrenAtIndex:(unsigned long long)arg1;
-- (void)replaceInChildren:(id)arg1 atIndex:(unsigned long long)arg2;
-- (void)insertInChildren:(id)arg1;
-- (void)insertInChildren:(id)arg1 atIndex:(unsigned long long)arg2;
-- (id)valueInChildrenAtIndex:(unsigned long long)arg1;
-- (void)moveObject:(id)arg1 toIndex:(unsigned long long)arg2;
-- (id)objectSpecifier;
 - (void)flattenItemsIntoHeaderFileEnumeratorArray:(id)arg1;
 - (void)flattenItemsIntoRezSearchPathFileEnumeratorArray:(id)arg1;
 

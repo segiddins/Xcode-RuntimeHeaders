@@ -6,18 +6,22 @@
 
 #import <objc/NSObject.h>
 
-@class DVTDeveloperAccount, DVTPortalTeam;
+@class DVTPortalTeam, NSArray;
+@protocol DVTServicesSessionProvider;
 
 @interface IDEProvisioningTeamAccountPair : NSObject
 {
     DVTPortalTeam *_team;
-    DVTDeveloperAccount *_account;
+    id <DVTServicesSessionProvider> _sessionProvider;
+    NSArray *_otherSessionProviders;
 }
 
-@property(readonly, nonatomic) DVTDeveloperAccount *account; // @synthesize account=_account;
+@property(copy, nonatomic) NSArray *otherSessionProviders; // @synthesize otherSessionProviders=_otherSessionProviders;
+@property(readonly, nonatomic) id <DVTServicesSessionProvider> sessionProvider; // @synthesize sessionProvider=_sessionProvider;
 @property(readonly, nonatomic) DVTPortalTeam *team; // @synthesize team=_team;
 - (void).cxx_destruct;
-- (id)initWithTeam:(id)arg1 account:(id)arg2;
+- (id)description;
+- (id)initWithTeam:(id)arg1 sessionProvider:(id)arg2;
 
 @end
 

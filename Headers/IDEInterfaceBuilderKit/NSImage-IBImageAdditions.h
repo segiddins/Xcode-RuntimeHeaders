@@ -6,22 +6,36 @@
 
 #import <AppKit/NSImage.h>
 
+@class IBICImageResizingBehavior, NSData, NSDictionary, NSNumber, NSString, NSURL;
+
 @interface NSImage (IBImageAdditions)
 + (BOOL)isTemplateName:(id)arg1;
 + (id)ibImageWithScaledDesktopPicture;
 + (id)imageWithRep:(id)arg1;
-- (id)ib_cachedUninstalledVariantForSize:(struct CGSize)arg1;
++ (id)ib_defaultLayoutConstraintIcon;
++ (id)ibCachedIconInGroup:(id)arg1 named:(id)arg2 ofSize:(double)arg3 forClass:(Class)arg4;
+- (id)ibUninstalledVariantForSize:(struct CGSize)arg1;
 - (id)imageFromRect:(struct CGRect)arg1;
 - (struct CGRect)convertCanonicalRectToLocalSpace:(struct CGRect)arg1;
-- (id)bitmapImageRep;
 - (id)imageWithOpacity:(double)arg1;
 - (id)representationOfSize:(struct CGSize)arg1;
-- (struct CGImage *)cgImageRepresentation;
 - (id)imageByScalingToSize:(struct CGSize)arg1;
 - (void)drawInRect:(struct CGRect)arg1 operation:(unsigned long long)arg2 fraction:(double)arg3;
 - (void)drawAtPoint:(struct CGPoint)arg1 operation:(unsigned long long)arg2 fraction:(double)arg3 unflip:(BOOL)arg4;
 - (void)drawInRect:(struct CGRect)arg1 operation:(unsigned long long)arg2 fraction:(double)arg3 unflip:(BOOL)arg4;
 - (void)lockFocusFlipped:(BOOL)arg1 during:(CDUnknownBlockType)arg2;
 - (void)drawWithCommands:(CDUnknownBlockType)arg1;
+@property(copy) NSString *ibEquivalentBitmapFileExtension;
+@property(copy) NSData *ibEquivalentBitmapData;
+@property(copy) NSURL *ibEquivalentImageURL;
+@property(readonly) BOOL ibHasSystemNamespace;
+@property(copy) NSString *ibSystemNamespace;
+@property(copy) NSString *ibSymbolName;
+@property long long ibTemplateRenderingIntent;
+@property(copy) NSNumber *ibOriginalScale;
+@property(copy) IBICImageResizingBehavior *ibResizingBehavior;
+@property(retain, nonatomic) NSDictionary *ibImagesByAppearanceName;
+- (id)ibTransformValueBeforePushingOntoUndoStackWithDocument:(id)arg1;
+- (id)replacementObjectForCoder:(id)arg1;
 @end
 

@@ -6,17 +6,18 @@
 
 #import <AppKit/NSTableCellView.h>
 
-@class CAShapeLayer, CATextLayer, NSImage, NSString, XCSUIIntegrationCommitterBadgeButton;
+@class CALayer, CAShapeLayer, CATextLayer, NSImage, NSString, XCSUIIntegrationCommitterBadgeButton;
 
 @interface XCSUIIntegrationCommitterBadgeView : NSTableCellView
 {
-    BOOL _setupOnce;
+    CALayer *_imageLayer;
     CATextLayer *_committerTextLayer;
     CATextLayer *_initialsTextLayer;
     CAShapeLayer *_badgeLayer;
     CAShapeLayer *_boundingTrack;
     CAShapeLayer *_contributionTrack;
     BOOL _isAllCommittersBadge;
+    BOOL _isActive;
     NSString *_committerName;
     NSImage *_committerImage;
     unsigned long long _commiterCount;
@@ -25,26 +26,19 @@
     CDUnknownBlockType _selectedBadgeCallback;
 }
 
+@property(nonatomic) BOOL isActive; // @synthesize isActive=_isActive;
 @property(nonatomic) BOOL isAllCommittersBadge; // @synthesize isAllCommittersBadge=_isAllCommittersBadge;
 @property(copy) CDUnknownBlockType selectedBadgeCallback; // @synthesize selectedBadgeCallback=_selectedBadgeCallback;
 @property __weak XCSUIIntegrationCommitterBadgeButton *button; // @synthesize button=_button;
 @property double commiterContribution; // @synthesize commiterContribution=_commiterContribution;
 @property(nonatomic) unsigned long long commiterCount; // @synthesize commiterCount=_commiterCount;
-@property(copy) NSImage *committerImage; // @synthesize committerImage=_committerImage;
+@property(copy, nonatomic) NSImage *committerImage; // @synthesize committerImage=_committerImage;
 @property(copy) NSString *committerName; // @synthesize committerName=_committerName;
 - (void).cxx_destruct;
 - (void)updateLayer;
 - (void)viewDidChangeBackingProperties;
 - (id)polishedCommitterName;
 - (BOOL)wantsUpdateLayer;
-- (struct CGColor *)allCommittersBadgeStrokeColor;
-- (struct CGColor *)contributorTrackMouseDownStrokeColor;
-- (struct CGColor *)contributorTrackRolloverStrokeColor;
-- (struct CGColor *)contributorTrackDefaultStrokeColor;
-- (struct CGColor *)boundingTrackMouseDownStrokeColor;
-- (struct CGColor *)boundingTrackRolloverStrokeColor;
-- (struct CGColor *)boundingTrackDefaultStrokeColor;
-- (void)clickBadge:(id)arg1;
 - (void)awakeFromNib;
 
 @end

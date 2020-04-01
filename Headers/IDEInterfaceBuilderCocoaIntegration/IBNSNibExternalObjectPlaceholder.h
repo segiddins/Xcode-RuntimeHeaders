@@ -14,8 +14,8 @@
 @interface IBNSNibExternalObjectPlaceholder : NSObject <IBDocumentArchiving, IBExternalReferencePlaceholder>
 {
     NSString *_externalReferenceIdentifier;
-    IBTargetRuntime *_targetRuntime;
     BOOL _encodeAsRuntimeInstance;
+    IBTargetRuntime *_targetRuntime;
 }
 
 + (id)externalReferenceWithIdentifier:(id)arg1 targetRuntime:(id)arg2;
@@ -30,10 +30,11 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithTargetRuntime:(id)arg1;
-- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
-- (void)archiveWithDocumentArchiver:(id)arg1;
 - (BOOL)ibShouldUseClassSwapper;
 - (id)ibRuntimeClassName;
+- (id)ibLocalAttributeKeyPaths;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -15,10 +15,13 @@
     BOOL _hidden;
 }
 
++ (id)keyPathsForValuesAffectingHasDisplayableStatus;
 + (void)initialize;
 @property BOOL hidden; // @synthesize hidden=_hidden;
 - (void).cxx_destruct;
+- (struct CGSize)cellSizeForBounds:(struct CGRect)arg1;
 - (struct CGSize)cellSize;
+@property(readonly) BOOL hasDisplayableStatus;
 - (void)drawInteriorWithFrame:(struct CGRect)arg1 inView:(id)arg2;
 - (id)_bezelPathInRect:(struct CGRect)arg1;
 - (void)_drawStatusString:(id)arg1 inPathRect:(struct CGRect)arg2 view:(id)arg3;

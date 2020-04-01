@@ -40,7 +40,6 @@
 - (void)setShouldUpdateConstraintsAction:(id)arg1;
 @property(nonatomic) BOOL shouldUpdateFrames;
 - (void)setShouldUpdateFramesAction:(id)arg1;
-- (void)viewDidInstall;
 - (id)initWithStatus:(id)arg1 document:(id)arg2;
 
 @end

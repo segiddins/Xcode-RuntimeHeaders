@@ -9,5 +9,8 @@
 @interface NSString (PlistNumberExtensions)
 - (id)stringValue;
 - (id)numberValue;
+- (BOOL)isPlistCommentNode;
+- (id)plistStringWithIndent:(id)arg1;
+- (id)plistString;
 @end
 

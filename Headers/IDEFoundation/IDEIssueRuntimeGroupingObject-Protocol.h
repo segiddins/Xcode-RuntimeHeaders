@@ -6,10 +6,14 @@
 
 #import <IDEFoundation/NSObject-Protocol.h>
 
-@class IDEDebugSession, NSString;
+@class NSArray, NSMutableDictionary, NSString;
 
 @protocol IDEIssueRuntimeGroupingObject <NSObject>
-@property(readonly) IDEDebugSession *debugSession;
 @property(copy) NSString *name;
+
+@optional
+@property(copy) NSMutableDictionary *typeIdentifierToSubgroupTypeIdenfiers;
+@property(copy) NSArray *subgroupTypeIdentifiers;
+@property(copy) id issueTypeIdentifier;
 @end
 

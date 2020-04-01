@@ -37,14 +37,13 @@
 + (id)plusPathInRect:(struct CGRect)arg1 withWeightRatio:(double)arg2;
 + (id)plusPath;
 + (id)plusPathWithWeightRatio:(double)arg1;
-+ (id)roundedEquilateralTriangleInscribedInCircleWithRadius:(double)arg1 andCornerRadius:(double)arg2;
 + (id)trianglePathInRect:(struct CGRect)arg1;
 + (id)trianglePath;
-+ (id)exclamationPointPathInRect:(struct CGRect)arg1;
-+ (id)exclamationPointPath;
 + (id)unlockedPathInRect:(struct CGRect)arg1;
 + (id)lockedPathInRect:(struct CGRect)arg1;
 + (id)padLockPath:(BOOL)arg1;
+- (void)flipAlongAxes:(unsigned long long)arg1 withAxisLocality:(long long)arg2;
+- (void)normalize;
 - (double)closestDistanceFromFlattenedStrokeToPoint:(struct CGPoint)arg1;
 - (BOOL)strokeIntersectsRect:(struct CGRect)arg1;
 - (void)enumerateFlattenedLineSegments:(CDUnknownBlockType)arg1;

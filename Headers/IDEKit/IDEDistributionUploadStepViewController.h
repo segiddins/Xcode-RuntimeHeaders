@@ -6,22 +6,30 @@
 
 #import <IDEKit/IDEDistributionStepViewController.h>
 
-@class NSString;
+@class NSProgressIndicator, NSString;
 
 @interface IDEDistributionUploadStepViewController : IDEDistributionStepViewController
 {
+    BOOL _wantsCancel;
+    BOOL _cancelable;
+    NSProgressIndicator *_progressIndicator;
     double _progress;
     NSString *_message;
 }
 
++ (id)keyPathsForValuesAffectingCanCancel;
++ (id)keyPathsForValuesAffectingWantsCancelAction;
 + (BOOL)skipStepForContext:(id)arg1 assistantDirection:(int)arg2;
+@property BOOL cancelable; // @synthesize cancelable=_cancelable;
+@property BOOL wantsCancel; // @synthesize wantsCancel=_wantsCancel;
 @property(copy) NSString *message; // @synthesize message=_message;
-@property double progress; // @synthesize progress=_progress;
+@property(nonatomic) double progress; // @synthesize progress=_progress;
+@property(retain, nonatomic) NSProgressIndicator *progressIndicator; // @synthesize progressIndicator=_progressIndicator;
 - (void).cxx_destruct;
+- (void)takeCancelAction;
+- (BOOL)canCancel;
+- (BOOL)wantsCancelAction;
 - (void)viewDidInstall;
-- (id)iTunesPlatformForArchive:(id)arg1 session:(id)arg2 error:(id *)arg3;
-- (id)providedOutputContextPropertyNames;
-- (id)requiredInputContextPropertyNames;
 - (BOOL)canGoPrevious;
 - (BOOL)canGoNext;
 - (id)title;

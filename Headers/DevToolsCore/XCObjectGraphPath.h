@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Foundation/NSObject.h>
+#import <objc/NSObject.h>
 
 @class NSArray;
 
@@ -14,6 +14,7 @@
     NSArray *_pathSegmentNames;
 }
 
+- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)copy;
 - (id)stringRepresentation;
@@ -23,7 +24,6 @@
 - (id)pathSegmentGIDs;
 - (id)pathSegmentNames;
 - (id)pathByAddingSegmentWithGID:(id)arg1 name:(id)arg2;
-- (void)dealloc;
 - (id)initWithSegmentGIDs:(id)arg1 names:(id)arg2;
 - (id)init;
 

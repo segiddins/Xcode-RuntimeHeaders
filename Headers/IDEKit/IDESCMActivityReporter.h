@@ -11,15 +11,12 @@
 @interface IDESCMActivityReporter : IDEActivityReporter
 {
     NSImage *_scmImage;
-    CDUnknownBlockType _fileIOCoordinatorBlock;
     IDEActivityReport *_workspaceScanActivityReport;
-    IDEActivityReport *_scmUpdateStatusReport;
     IDEActivityReport *_exportFilesActivityReport;
     IDEActivityReport *_blameActivityReport;
     IDEActivityReport *_logActivityReport;
     IDEActivityReport *_commitPushPullUpdateMergeActivityReport;
     IDEActivityReport *_switchBranchActivityReport;
-    IDEActivityReport *_upgradeActivityReport;
     IDEActivityReport *_createGitRepoReport;
     IDEActivityReport *_scmPrepareToUpdatePushPullMergeReport;
     DVTNotificationToken *_willScanToken;
@@ -32,16 +29,12 @@
     DVTNotificationToken *_didMergeToken;
     DVTNotificationToken *_willSwitchToken;
     DVTNotificationToken *_didSwitchToken;
-    DVTNotificationToken *_willUpdateServerStatusToken;
-    DVTNotificationToken *_didUpdateServerStatusToken;
     DVTNotificationToken *_willExportVersionsToken;
     DVTNotificationToken *_didExportVersionsToken;
     DVTNotificationToken *_willBlameToken;
     DVTNotificationToken *_didBlameToken;
     DVTNotificationToken *_willLogToken;
     DVTNotificationToken *_didLogToken;
-    DVTNotificationToken *_willUpgradeToken;
-    DVTNotificationToken *_didUpgradeToken;
     DVTNotificationToken *_willPrepareToMergeToken;
     DVTNotificationToken *_didPrepareToMergeToken;
     DVTNotificationToken *_willPrepareToUpdateToken;
@@ -56,10 +49,10 @@
     DVTObservingToken *_scmMonitorObservingToken;
 }
 
-+ (void)initialize;
 @property(retain) DVTObservingToken *scmMonitorObservingToken; // @synthesize scmMonitorObservingToken=_scmMonitorObservingToken;
 - (void).cxx_destruct;
 - (void)primitiveInvalidate;
+- (void)_postWorkspaceScanningCompletedActivity;
 - (void)publishActivityReport:(id)arg1;
 - (void)setUpSCMObserving;
 - (void)createWorkspaceScanningActivityReport;

@@ -6,11 +6,14 @@
 
 #import <QTKit/QTMovieView.h>
 
+#import <IDEInterfaceBuilderCocoaIntegration/IBDocumentArchiving-Protocol.h>
+
 @class NSString;
 
-@interface QTMovieView (IBQTMovieViewIntegration)
+@interface QTMovieView (IBQTMovieViewIntegration) <IBDocumentArchiving>
 + (id)keyPathsForValuesAffectingIbInspectedMoviePath;
 + (id)keyPathsForValuesAffectingDesignableMovieURLString;
+- (void)ibPopulateIssues:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
 - (void)setIbInspectedMoviePath:(id)arg1;
 - (id)ibInspectedMoviePath;
 @property(retain) NSString *designableMovieURLString;
@@ -18,5 +21,14 @@
 - (void)setDesignableStepButtonsVisible:(BOOL)arg1;
 - (BOOL)designableZoomButtonsVisible;
 - (BOOL)designableStepButtonsVisible;
+- (id)ibLocalAttributeKeyPaths;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @end
 

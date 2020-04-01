@@ -12,9 +12,12 @@
 {
     PBXContainer *_loadedContainer;
     PBXFileType *_lastKnownFileType;
+    PBXFileType *_archiveLastKnownFileType;
     NSDictionary *_lastKnownFileProperties;
     PBXFileType *_explicitFileType;
+    PBXFileType *_archiveExplicitFileType;
     NSDictionary *_explicitFileProperties;
+    BOOL _isAwakeningFromPlistUnarchiver;
 }
 
 + (id)archivableAttributes;
@@ -23,6 +26,7 @@
 + (BOOL)canRepresentFileAtPath:(id)arg1;
 + (BOOL)canRepresentFileAtPath:(id)arg1 ofType:(id)arg2;
 + (id)knownWrapperExtensions;
+- (void).cxx_destruct;
 - (unsigned long long)assignFileEncoding:(unsigned long long)arg1 onlyIfUnspecified:(BOOL)arg2;
 - (BOOL)hasUnspecifiedFileEncodings;
 - (void)_setExpectedFileType:(id)arg1;
@@ -33,27 +37,21 @@
 - (id)_lastKnownFileType;
 - (BOOL)archiveInPlistOnSingleLine;
 - (void)awakeFromPListUnarchiver:(id)arg1;
-- (BOOL)allowsRemovalFromDisk;
 - (BOOL)_isContainedInDeveloperDirectory;
 - (BOOL)_isContainedInLibraryDirectory;
 - (BOOL)allowsEditing;
 - (BOOL)isLeaf;
-- (void)validateChildren;
 - (id)children;
 - (void)setLoadedContainer:(id)arg1;
 - (void)_setLoadedContainer:(id)arg1 andNotify:(BOOL)arg2;
+- (void)_projectDidClose:(id)arg1;
 - (id)loadedContainer;
-- (void)scmInfoChanged;
-- (id)scmInfo;
-- (void)discardSCMInfo;
-- (id)createSCMInfoWithSandboxEntry:(id)arg1;
-- (id)sandboxEntry;
 - (BOOL)_doFileSystemCopyTo:(id)arg1 deleteOriginal:(BOOL)arg2;
 - (void)invalidateAbsolutePathCache;
 - (id)resolvedAbsolutePath;
 - (void)setPath:(id)arg1 andSourceTree:(id)arg2;
 - (void)_pathForSourceTreeDidChange:(id)arg1;
-- (BOOL)deleteFromProjectAndDisk:(BOOL)arg1;
+- (BOOL)deleteFromProject;
 - (void)setContainer:(id)arg1;
 - (BOOL)hasGUI;
 - (id)absolutePathToLaunchable;
@@ -71,11 +69,12 @@
 - (BOOL)includeInIndex;
 - (BOOL)usesTabs;
 - (long long)indentWidth;
+@property(readonly) BOOL isXCFramework;
 - (BOOL)isProductReference;
-- (id)unexpandedAbsolutePathForWrapperPart:(int)arg1;
-- (id)absolutePathForWrapperPart:(int)arg1;
-- (id)resolvedAbsolutePathForWrapperPart:(int)arg1;
-- (id)subpathForWrapperPart:(int)arg1;
+- (id)absolutePathForWrapperPart:(long long)arg1;
+- (id)resolvedAbsolutePathForWrapperPart:(long long)arg1;
+- (id)subpathForWrapperPart:(long long)arg1;
+- (id)explicitFileType;
 - (void)setExplicitFileTypeIfNil:(id)arg1;
 - (void)setExplicitFileType:(id)arg1;
 - (void)setExplicitFileType:(id)arg1 explicitFileProperties:(id)arg2;
@@ -86,33 +85,10 @@
 - (void)_invalidateLastKnownFileType;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
-- (id)copyWithZone:(struct _NSZone *)arg1 getUnretainedObjectMappings:(id *)arg2;
 - (void)dealloc;
 - (id)initWithName:(id)arg1 path:(id)arg2 sourceTree:(id)arg3 fileType:(id)arg4 extraFileProperties:(id)arg5;
 - (id)initWithName:(id)arg1 path:(id)arg2 sourceTree:(id)arg3;
 - (BOOL)shouldOpenProjectOfMismatchingVersion:(unsigned long long)arg1 atPath:(id)arg2;
-- (id)topLevelSymbols;
-- (id)allDependentFiles;
-- (id)allImportedFiles;
-- (id)dependentFiles;
-- (id)importedFiles;
-- (id)handleDiffScriptCommand:(id)arg1;
-- (id)handleCompareScriptCommand:(id)arg1;
-- (id)handleCommitScriptCommand:(id)arg1;
-- (id)handleClearStickyTagsScriptCommand:(id)arg1;
-- (id)handleUpdateScriptCommand:(id)arg1;
-- (id)handleRefreshScriptCommand:(id)arg1;
-- (id)appleScriptSCMRevisions;
-- (id)asScmLocalRevision;
-- (id)asScmRepositoryRevision;
-- (id)asScmTag;
-- (unsigned int)asScmStatus;
-- (id)asFileTypeIdentifier;
-- (id)objectSpecifier;
-- (BOOL)isNotObjCCompilationUnitOrHeader;
-- (BOOL)isObjCCompilationUnit_alsoCheckForC:(BOOL)arg1;
-- (BOOL)isObjCCompilationUnitOrHeader_alsoCheckForC:(BOOL)arg1;
-- (BOOL)hasSimpleFileType:(id)arg1;
 
 @end
 

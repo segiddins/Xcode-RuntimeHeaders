@@ -8,12 +8,12 @@
 
 #import <DebuggerUI/NSPopoverDelegate-Protocol.h>
 
-@class DBGDataValue, DVTReplacementView, IDEVariablesView, NSPopover, NSString;
+@class DBGDataTipVariablesViewContentProvider, DVTReplacementView, IDEVariablesView, NSPopover, NSString;
 
 @interface DBGDataTipPopoverViewController : IDEViewController <NSPopoverDelegate>
 {
-    DBGDataValue *_dataValue;
     IDEVariablesView *_variablesView;
+    DBGDataTipVariablesViewContentProvider *_contentProvider;
     BOOL _isInMiddleOfShowingPopover;
     BOOL _pendingDelayedCallToUpdatePopoverSize;
     id _outlineViewItemDidCollapseObserver;
@@ -21,12 +21,16 @@
     id _outlineViewWasReloadedObserver;
     id _outlineViewItemWasReloadedObserver;
     id _outlineViewEndedUpdatesObserver;
+    unsigned long long _datatipEdge;
     NSPopover *_popover;
     DVTReplacementView *_replacementView;
+    struct CGRect _screenAnchorRect;
 }
 
 @property(retain) DVTReplacementView *replacementView; // @synthesize replacementView=_replacementView;
 @property(retain) NSPopover *popover; // @synthesize popover=_popover;
+@property unsigned long long datatipEdge; // @synthesize datatipEdge=_datatipEdge;
+@property struct CGRect screenAnchorRect; // @synthesize screenAnchorRect=_screenAnchorRect;
 @property(retain) IDEVariablesView *variablesView; // @synthesize variablesView=_variablesView;
 - (void).cxx_destruct;
 - (void)primitiveInvalidate;
@@ -36,10 +40,11 @@
 - (void)_removeFromSuperviewAndInvalidate;
 - (void)closePopoverAndInvalidate;
 - (double)_widthToFit;
+- (double)_clipHeightToScreen:(double)arg1;
 - (void)_updatePopoverSize;
 - (void)_updatePopoverSizeAfterDelay;
 - (void)loadView;
-- (id)init;
+- (id)initWithDataValue:(id)arg1 imageToUseInDefaultQuickLook:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

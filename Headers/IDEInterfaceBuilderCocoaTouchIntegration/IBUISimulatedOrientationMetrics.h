@@ -13,20 +13,20 @@
 
 @class NSString;
 
-@interface IBUISimulatedOrientationMetrics : NSObject <NSCoding, IBDocumentArchiving, IBUISimulatedMetrics, NSCopying>
+@interface IBUISimulatedOrientationMetrics : NSObject <IBDocumentArchiving, IBUISimulatedMetrics, NSCoding, NSCopying>
 {
-    int _interfaceOrientation;
+    long long _interfaceOrientation;
 }
 
 + (id)instantiateWithDocumentUnarchiver:(id)arg1;
-+ (id)simulatedOrientationMetricsWithOrientation:(int)arg1;
++ (id)simulatedOrientationMetricsWithOrientation:(long long)arg1;
 + (id)landscapeMetrics;
 + (id)portraitMetrics;
-@property(readonly) int interfaceOrientation; // @synthesize interfaceOrientation=_interfaceOrientation;
+@property(readonly) long long interfaceOrientation; // @synthesize interfaceOrientation=_interfaceOrientation;
 - (id)nextOrientation;
 - (BOOL)isPortrait;
 @property(readonly, copy) NSString *description;
-- (id)debugNameForInterfaceOrientation:(int)arg1;
+- (id)debugNameForInterfaceOrientation:(long long)arg1;
 @property(readonly, copy) NSString *displayName;
 @property(readonly) unsigned long long hash;
 - (void)normalizeUnarchivedOrientationValue:(id)arg1;
@@ -36,9 +36,9 @@
 - (void)archiveWithDocumentArchiver:(id)arg1;
 - (void)unarchiveWithDocumentUnarchiver:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)initWithOrientation:(int)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithOrientation:(long long)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

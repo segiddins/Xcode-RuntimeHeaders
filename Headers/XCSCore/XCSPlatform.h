@@ -13,6 +13,7 @@
 }
 
 + (id)platformWithIdentifier:(id)arg1 displayName:(id)arg2 version:(id)arg3 buildNumber:(id)arg4 simulatorIdentifier:(id)arg5 validationErrors:(id *)arg6;
+@property(readonly) BOOL supportsParallelDeviceTesting;
 @property(readonly) BOOL supportsArchitectureTypes;
 @property(readonly) BOOL supportsFilterTypes;
 - (BOOL)_validateIdentifier:(id)arg1 displayName:(id)arg2 version:(id)arg3 buildNumber:(id)arg4 simulatorIdentifier:(id)arg5 validationErrors:(id *)arg6;

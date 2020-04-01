@@ -10,6 +10,7 @@
 
 @protocol DBGSBFrame <NSObject>
 - (BOOL)isEqual:(id <DBGSBFrame>)arg1;
+- (_Bool)IsSwiftThunk;
 - (id <DBGSBCompileUnit>)GetCompileUnit;
 - (id <DBGSBLineEntry>)GetLineEntry;
 - (id <DBGSBSymbolContext>)GetSymbolContext:(unsigned int)arg1;

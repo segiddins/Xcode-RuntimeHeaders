@@ -10,9 +10,13 @@
 {
 }
 
+- (void)_verifyWindowControllerConnections;
+- (void)_verifyTabViewControllerTransitionOptionsAndPopulateMessages:(id)arg1;
+- (void)_verifyTabViewControllerConnections;
+- (void)_verifySplitViewControllerConnections;
 - (void)_migrateTabViewViewControllerViewsToTabViews;
 - (void)_migrateSplitViewControllerViewsToSplitViews;
-- (void)_migrateRelationsShipSeguesForObject:(id)arg1 withLabel:(id)arg2 toLabel:(id)arg3;
+- (void)_migrateRelationshipSeguesForObject:(id)arg1 withLabel:(id)arg2 toLabel:(id)arg3;
 - (void)verifyAndPopulateMessages:(id)arg1;
 
 @end

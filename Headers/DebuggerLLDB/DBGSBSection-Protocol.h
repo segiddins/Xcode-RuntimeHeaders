@@ -9,6 +9,8 @@
 @protocol DBGSBTarget;
 
 @protocol DBGSBSection <NSObject>
+- (unsigned long long)GetFileAddress;
 - (unsigned long long)GetLoadAddress:(id <DBGSBTarget>)arg1;
+- (_Bool)IsValid;
 @end
 

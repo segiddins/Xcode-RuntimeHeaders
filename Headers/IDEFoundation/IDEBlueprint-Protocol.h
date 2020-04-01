@@ -4,50 +4,65 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <IDEFoundation/IDEIntegrityLogDataSource-Protocol.h>
-#import <IDEFoundation/IDEProvisionable-Protocol.h>
+#import <IDEFoundation/IDEIssueLogDataSource-Protocol.h>
+#import <IDEFoundation/IDESigningEditorConfigurationManagerProviderProtocol-Protocol.h>
 #import <IDEFoundation/NSObject-Protocol.h>
 
-@class DVTFilePath, DVTSDK, DVTSourceCodeLanguage, DVTToolsVersion, IDEBuildParameters, IDEContainer, IDEFileReference, IDEGroup, IDESourceFileBuildInfo, IDETestBlueprintHostSettings, IDEWorkspaceArenaSnapshot, NSArray, NSDictionary, NSSet, NSString;
-@protocol DVTMacroExpansion, IDEBlueprintProvider, IDEBuildable, IDECustomDataStoring;
+@class DVTFilePath, DVTSDK, DVTSourceCodeLanguage, DVTToolsVersion, IDEBuildParameters, IDEContainer, IDEFileReference, IDEGroup, IDEPIFGUID, IDESourceFileBuildInfo, IDETestBlueprintHostSettings, IDETypeIdentifier, IDEWorkspace, IDEWorkspaceArenaSnapshot, NSArray, NSDictionary, NSSet, NSString;
+@protocol IDEBlueprintProvider, IDEBuildable, IDECustomDataStoring, IDEProvisionable;
 
-@protocol IDEBlueprint <NSObject, IDEIntegrityLogDataSource, IDEProvisionable>
-@property(readonly, copy) NSString *blueprintIdentifier;
-@property(readonly) NSString *name;
+@protocol IDEBlueprint <NSObject, IDEIssueLogDataSource, IDESigningEditorConfigurationManagerProviderProtocol>
 - (DVTFilePath *)entitlementsFilePathForBuildConfiguration:(NSString *)arg1;
 - (void)addFileReference:(IDEFileReference *)arg1 toBuildablesContainingFileReference:(IDEFileReference *)arg2;
 - (BOOL)containsFilePath:(DVTFilePath *)arg1;
 - (BOOL)containsFileReference:(IDEFileReference *)arg1;
-- (NSArray *)buildableProducts;
-- (NSArray *)buildables;
-- (id <IDEBuildable>)primaryBuildable;
+- (NSSet *)moduleNamesInWorkspace:(IDEWorkspace *)arg1;
+@property(nonatomic, readonly) NSArray *buildableProducts;
+@property(nonatomic, readonly) NSArray *buildables;
+@property(nonatomic, readonly) id <IDEBuildable> primaryBuildable;
 - (id <IDEBuildable>)buildableForIdentifier:(NSString *)arg1;
-- (NSString *)localizedDescription;
+@property(nonatomic, readonly) NSString *blueprintIdentifier;
+@property(nonatomic, readonly) NSString *localizedDescription;
+@property(nonatomic, readonly) NSString *name;
 - (IDEContainer<IDECustomDataStoring> *)customDataStore;
 - (IDEContainer<IDEBlueprintProvider> *)blueprintProvider;
 
 @optional
-@property(readonly) NSSet *knownAssetTags;
-@property(readonly) DVTToolsVersion *createdOnToolsVersion;
-@property(readonly, getter=isUnitTest) BOOL unitTest;
-@property(retain) IDETestBlueprintHostSettings *testBlueprintUITestingTargetAppSettings;
-@property(retain) IDETestBlueprintHostSettings *testBlueprintHostSettings;
+@property(nonatomic, readonly) BOOL isTransparentForRunDestinations;
+- (BOOL)setEnabledForMacCatalyst:(BOOL)arg1 error:(id *)arg2;
+- (void)removeFileReferenceFromBuildables:(IDEFileReference *)arg1;
+@property(nonatomic, readonly) BOOL shouldHideInUI;
+@property(nonatomic, readonly) BOOL participatesInSchemeAutocreation;
+@property(nonatomic, readonly) IDETypeIdentifier *activityLogDomainType;
+@property(nonatomic, readonly) IDEPIFGUID *PIFGUID;
+@property(nonatomic, readonly) id <IDEProvisionable> provisionable;
 - (IDESourceFileBuildInfo *)sourceFileBuildInfoForFileAtPath:(DVTFilePath *)arg1;
 - (void)removeTagsFromKnownAssetTags:(NSSet *)arg1;
 - (void)addTagsToKnownAssetTags:(NSSet *)arg1;
+@property(nonatomic, readonly) NSSet *knownAssetTags;
+@property(nonatomic, readonly) DVTToolsVersion *createdOnToolsVersion;
+- (DVTFilePath *)infoDictionaryFilePathForConfiguration:(NSString *)arg1;
+- (NSDictionary *)resolvedInfoDictionaryForBuildParameters:(IDEBuildParameters *)arg1;
 - (NSDictionary *)infoDictionaryForConfiguration:(NSString *)arg1;
-- (DVTFilePath *)bundleBaselineRecordFilePath;
+@property(nonatomic, readonly) DVTFilePath *bundleBaselineRecordFilePath;
 - (NSString *)pathToLargestAssetCatalogAppIconPassingTest:(BOOL (^)(NSDictionary *))arg1;
-- (NSArray<DVTMacroExpansion> *)additionalOverridingCompilerArgumentsForSourceCodeBuildFileReference:(IDEFileReference *)arg1;
-- (void)setOverridingAdditionalCompilerArguments:(NSArray<DVTMacroExpansion> *)arg1 forSourceCodeBuildFileReference:(IDEFileReference *)arg2;
-- (NSArray<DVTMacroExpansion> *)additionalCompilerArgumentsForSourceCodeBuildFileReference:(IDEFileReference *)arg1;
-- (void)setAdditionalCompilerArguments:(NSArray<DVTMacroExpansion> *)arg1 forSourceCodeBuildFileReference:(IDEFileReference *)arg2;
+- (BOOL)isUnitTest;
+@property(nonatomic, retain) IDETestBlueprintHostSettings *testBlueprintUITestingTargetAppSettings;
+@property(nonatomic, retain) IDETestBlueprintHostSettings *testBlueprintHostSettings;
+- (NSArray *)additionalOverridingCompilerArgumentsForSourceCodeBuildFileReference:(IDEFileReference *)arg1;
+- (void)setOverridingAdditionalCompilerArguments:(NSArray *)arg1 forSourceCodeBuildFileReference:(IDEFileReference *)arg2;
+- (NSArray *)additionalCompilerArgumentsForSourceCodeBuildFileReference:(IDEFileReference *)arg1;
+- (void)setAdditionalCompilerArguments:(NSArray *)arg1 forSourceCodeBuildFileReference:(IDEFileReference *)arg2;
 - (NSSet *)linkedBinaries;
 - (NSSet *)allProjectHeaderFiles;
 - (NSSet *)allPrivateHeaderFiles;
 - (NSSet *)allPublicHeaderFiles;
+- (NSArray *)allResourceFilesBreakingOutLocalizableVariants:(BOOL)arg1;
 - (NSArray *)allBuildFileReferences;
-- (BOOL)containsSwift;
+@property(nonatomic, readonly) BOOL usesPackageProducts;
+@property(nonatomic, readonly) BOOL containsOnlySwift;
+@property(nonatomic, readonly) BOOL containsSwift;
+- (NSArray *)localizableSourceBuildFileReferences;
 - (NSArray *)sourceCodeBuildFileReferences;
 - (DVTSourceCodeLanguage *)predominantSourceCodeLanguage;
 - (BOOL)configureToBuildMixedTargetWithDestinationGroup:(IDEGroup *)arg1 configureBridgingHeader:(BOOL)arg2 returningErrorString:(id *)arg3;
@@ -58,11 +73,14 @@
 - (BOOL)isMixedTarget;
 - (BOOL)configureToBuildWithOptimizationProfileReturningErrorString:(id *)arg1;
 - (BOOL)isConfiguredToBuildWithOptimizationProfile;
+- (void)setEnablePreviews;
 - (void)updateSwiftCompilerTo:(NSString *)arg1;
+- (void)resetLastSwiftMigration;
 - (void)updateLastSwiftMigrationToCurrent;
 - (BOOL)lastSwiftMigrationIsCurrent;
-- (void)convertToUseModernUnitTests;
 - (void)convertToUseModernObjCSyntax;
+- (void)convertToEnableCodeGenerationForIBAndAssetCatalogs;
+- (BOOL)canConvertToEnableCodeGenerationForIBAndAssetCatalogs;
 - (void)convertToUseARC;
 - (BOOL)canConvertToUseARC;
 - (void)convertToBuild64bitOnly;
@@ -73,10 +91,13 @@
 - (DVTSDK *)baseSDKForBuildConfigurationName:(NSString *)arg1;
 - (NSSet *)supportedPlatformsForConfiguration:(NSString *)arg1 workspaceArenaSnapshot:(IDEWorkspaceArenaSnapshot *)arg2;
 - (NSSet *)supportedPlatformsForBuildParameters:(IDEBuildParameters *)arg1;
-- (id)compilerSpecificationIdentifier;
+@property(nonatomic, readonly) NSString *compilerSpecificationIdentifier;
 - (NSArray *)availableArchitecturesForConfiguration:(NSString *)arg1 workspaceArenaSnapshot:(IDEWorkspaceArenaSnapshot *)arg2;
 - (NSArray *)availableArchitecturesForBuildParameters:(IDEBuildParameters *)arg1;
-- (NSString *)defaultConfigurationName;
-- (NSArray *)availableConfigurationNames;
+@property(nonatomic, readonly) NSString *defaultConfigurationName;
+@property(nonatomic, readonly) NSArray *availableConfigurationNames;
+
+// Remaining properties
+@property(nonatomic, readonly) BOOL unitTest;
 @end
 

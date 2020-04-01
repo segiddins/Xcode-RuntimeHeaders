@@ -6,16 +6,22 @@
 
 #import <DTGraphKit/NSObject-Protocol.h>
 
+@class NSArray, NSColor;
 @protocol DTObjectGridGraphDataSource, DTObjectGridGraphDelegate, DTObjectGridNode, DTObjectGridReference;
 
 @protocol DTObjectGridGraph <NSObject>
 @property(readonly, nonatomic) id <DTObjectGridReference> selectedReference;
 @property(readonly, nonatomic) id <DTObjectGridNode> selectedNode;
+@property(retain) NSColor *canvasBackgroundColor;
+@property(copy, nonatomic) NSArray *onScreenNodeIdentifiers;
+@property(nonatomic) struct CGPoint cameraPosition;
 @property(readonly, nonatomic) unsigned int pivotNodeIdentifier;
 @property(nonatomic) struct CGSize gridCellSize;
 @property(nonatomic) __weak id <DTObjectGridGraphDelegate> delegate;
 @property(nonatomic) __weak id <DTObjectGridGraphDataSource> dataSource;
 - (struct CGRect)frameForNode:(id <DTObjectGridNode>)arg1;
+- (void)resetZoomLevel;
+- (void)adjustCameraZoomLevelWithValue:(double)arg1;
 - (void)deselectAll;
 - (void)selectReferenceWithIdentifier:(unsigned int)arg1;
 - (void)selectNodeWithIdentifier:(unsigned int)arg1;

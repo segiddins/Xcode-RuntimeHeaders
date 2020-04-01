@@ -6,15 +6,15 @@
 
 #import <IBFoundation/IBICStickerFrameSet.h>
 
-#import <IDEInterfaceBuilderKit/IBICStickerPackChild-Protocol.h>
-#import <IDEInterfaceBuilderKit/IBICStickerPackParent-Protocol.h>
+#import <IDEInterfaceBuilderKit/IBICAbstractCollectionChild-Protocol.h>
+#import <IDEInterfaceBuilderKit/IBICAbstractCollectionParent-Protocol.h>
 
 @class NSString;
 
-@interface IBICStickerFrameSet (DisplayAdditions) <IBICStickerPackChild, IBICStickerPackParent>
+@interface IBICStickerFrameSet (DisplayAdditions) <IBICAbstractCollectionChild, IBICAbstractCollectionParent>
 - (id)createChildContentFromDropIndicator:(id)arg1;
 - (BOOL)applyContentFromDropIndicator:(id)arg1;
-- (id)defaultFileTypes;
+- (id)firstEmptyTrailingChild;
 - (void)setIbInspectedAccessibilityLabel:(id)arg1;
 - (id)ibInspectedAccessibilityLabel;
 - (id)quickLookPreviewItem;
@@ -28,12 +28,10 @@
 - (void)setIbInspectedRepetitions:(long long)arg1;
 - (long long)ibInspectedRepetitionType;
 - (void)setIbInspectedRepetitionType:(long long)arg1;
-- (id)includedAttributeUtilitySlicesForChild:(id)arg1;
+- (id)includedAttributesInspectorSlicesForChild:(id)arg1;
 - (BOOL)displaysChildrenInOutlineView;
-- (id)typeIcon;
 - (id)icon;
 - (id)dragImage;
-- (BOOL)isPredominantlyWhite;
 - (id)bitmap;
 - (id)image;
 - (id)imageRep;

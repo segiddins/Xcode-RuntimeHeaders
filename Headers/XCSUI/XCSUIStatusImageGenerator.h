@@ -10,8 +10,8 @@
 {
 }
 
-+ (id)_compositedImageForIntegrationStatus:(unsigned long long)arg1;
-+ (id)statusImageForBotOrIntegration:(id)arg1;
++ (id)_compositedImagesForIntegrationStatus:(unsigned long long)arg1;
++ (id)statusImagesForXCSItem:(id)arg1 status:(id)arg2;
 
 @end
 

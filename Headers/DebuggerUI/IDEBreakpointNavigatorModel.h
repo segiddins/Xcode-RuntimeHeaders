@@ -9,7 +9,7 @@
 #import <DebuggerUI/DVTInvalidation-Protocol.h>
 #import <DebuggerUI/IDEKeyDrivenNavigableItemRepresentedObject-Protocol.h>
 
-@class DVTDocumentLocation, DVTFileDataType, DVTObservingToken, DVTStackBacktrace, IDEFileReference, IDEWorkspace, NSArray, NSImage, NSMutableArray, NSMutableSet, NSString;
+@class DVTDocumentLocation, DVTFileDataType, DVTObservingToken, DVTStackBacktrace, DVTSymbol, IDEFileReference, IDEWorkspace, NSArray, NSImage, NSMutableArray, NSMutableSet, NSNull, NSString, NSURL;
 
 @interface IDEBreakpointNavigatorModel : NSObject <IDEKeyDrivenNavigableItemRepresentedObject, DVTInvalidation>
 {
@@ -19,17 +19,20 @@
     NSMutableSet *_observers;
 }
 
++ (id)keyPathsForValuesAffectingNavigableItem_childRepresentedObjects;
 + (id)modelForWorkspace:(id)arg1;
 + (void)initialize;
 - (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (id)ideModelObjectTypeIdentifier;
-@property(readonly) NSString *navigableItem_name;
+@property(readonly, nonatomic) NSArray *navigableItem_childRepresentedObjects;
+@property(readonly, nonatomic) NSString *navigableItem_name;
 - (id)_findGroupForBreakpoint:(id)arg1;
 - (void)_notifyObserversOfBreakpointAdded:(id)arg1;
 - (void)_addBreakpoint:(id)arg1;
 - (void)_handleBreakpointsAdded:(id)arg1;
 - (void)_notifyObserversOfBreakpointRemoved:(id)arg1;
+- (void)_notifyObserversBreakpointsWillBeRemoved:(id)arg1;
 - (void)_removeBreakpoint:(id)arg1;
 - (void)_handleBreakpointsRemoved:(id)arg1;
 - (void)_handleBreakpointChanges:(id)arg1;
@@ -45,18 +48,26 @@
 @property(readonly) unsigned long long hash;
 @property(readonly) DVTStackBacktrace *invalidationBacktrace;
 @property(readonly, copy) NSMutableArray *mutableGroups; // @dynamic mutableGroups;
-@property(readonly) NSString *navigableItem_accessibleImageDescription;
-@property(readonly) DVTDocumentLocation *navigableItem_contentDocumentLocation;
-@property(readonly) DVTFileDataType *navigableItem_documentType;
-@property(readonly) IDEFileReference *navigableItem_fileReference;
-@property(readonly) NSString *navigableItem_groupIdentifier;
-@property(readonly) NSImage *navigableItem_image;
-@property(readonly) BOOL navigableItem_isLeaf;
-@property(readonly) BOOL navigableItem_isMajorGroup;
-@property(readonly) BOOL navigableItem_missingReferencedContentIsImportant;
-@property(readonly) BOOL navigableItem_referencedContentExists;
-@property(readonly) NSString *navigableItem_subtitle;
-@property(readonly) NSString *navigableItem_toolTip;
+@property(readonly, nonatomic) NSString *navigableItem_accessibilityIdentifier;
+@property(readonly, nonatomic) NSString *navigableItem_accessibleImageDescription;
+@property(readonly, nonatomic) NSArray *navigableItem_additionalFilterMatchingText;
+@property(readonly, nonatomic) DVTDocumentLocation *navigableItem_contentDocumentLocation;
+@property(readonly, nonatomic) DVTFileDataType *navigableItem_documentType;
+@property(readonly, nonatomic) IDEFileReference *navigableItem_fileReference;
+@property(readonly, nonatomic) NSNull *navigableItem_filtered;
+@property(readonly, nonatomic) NSString *navigableItem_groupIdentifier;
+@property(readonly, nonatomic) NSImage *navigableItem_image;
+@property(readonly, nonatomic) BOOL navigableItem_isEnabled;
+@property(readonly, nonatomic) BOOL navigableItem_isLeaf;
+@property(readonly, nonatomic) BOOL navigableItem_isMajorGroup;
+@property(readonly, nonatomic) BOOL navigableItem_isVisible;
+@property(readonly, nonatomic) BOOL navigableItem_missingReferencedContentIsImportant;
+@property(readonly, nonatomic) id navigableItem_parentRepresentedObject;
+@property(readonly, nonatomic) BOOL navigableItem_referencedContentExists;
+@property(readonly, nonatomic) DVTSymbol *navigableItem_representedSymbol;
+@property(readonly, nonatomic) NSURL *navigableItem_representedURL;
+@property(readonly, nonatomic) NSString *navigableItem_subtitle;
+@property(readonly, nonatomic) NSString *navigableItem_toolTip;
 @property(readonly) Class superclass;
 @property(readonly, nonatomic, getter=isValid) BOOL valid;
 

@@ -10,11 +10,11 @@
 
 @interface IBCocoaBindingsConnection : IBConnection
 {
-    NSNibBindingConnector *connector;
-    IBCocoaBindingsBindingInfo *bindingInfo;
-    NSString *binding;
-    NSString *keyPath;
-    NSObject *controller;
+    NSNibBindingConnector *_connector;
+    IBCocoaBindingsBindingInfo *_bindingInfo;
+    NSString *_binding;
+    NSString *_keyPath;
+    NSObject *_controller;
 }
 
 + (BOOL)prototypeMatchConnectionContextIsValid:(id)arg1 forConnectingFromObject:(id)arg2 toObject:(id)arg3 document:(id)arg4;
@@ -27,9 +27,9 @@
 + (id)outboundPrototypeConnectionsForObject:(id)arg1 inDocument:(id)arg2;
 + (id)inboundPrototypeConnectionsForObject:(id)arg1 inDocument:(id)arg2;
 + (id)prototypeConnectionsFromObject:(id)arg1 toObject:(id)arg2;
-@property(copy) NSString *keyPath; // @synthesize keyPath;
-@property(retain) NSObject *controller; // @synthesize controller;
-@property(copy) NSString *binding; // @synthesize binding;
+@property(retain) NSObject *controller; // @synthesize controller=_controller;
+@property(copy) NSString *keyPath; // @synthesize keyPath=_keyPath;
+@property(copy) NSString *binding; // @synthesize binding=_binding;
 - (void).cxx_destruct;
 - (BOOL)canHaveSourceSeparatedWithSeparationType:(int)arg1;
 - (BOOL)canHaveDestinationSeparatedWithSeparationType:(int)arg1;
@@ -52,17 +52,19 @@
 - (id)bindingDisplayName;
 - (id)prototypeWithRespectTo:(id)arg1;
 - (BOOL)isPrototypeFor:(id)arg1;
-- (id)displayGroupIdentifierFromReferenceEndPoint:(id)arg1;
+- (id)displayGroupFromReferenceEndPoint:(id)arg1;
 - (id)errorMessageForExistenceWithoutPrototypeInDocument:(id)arg1;
-- (id)archiveKeyForLabel;
+- (id)archivingKeyForLabel;
 - (void)unarchiveWithDocumentUnarchiver:(id)arg1;
 - (void)archiveWithDocumentArchiver:(id)arg1;
 - (id)connectorsToConnectionsWithDocument:(id)arg1 context:(id)arg2;
 - (id)printablePListForIBToolInDocument:(id)arg1;
-- (void)ibWarnings:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
+- (void)ibPopulateIssues:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
 - (id)archiveConnection;
 - (id)connector;
 - (void)encodeWithCoder:(id)arg1;
+- (void)setDestination:(id)arg1;
+- (void)setSource:(id)arg1;
 - (void)copyInstanceStateToClone:(id)arg1 withContext:(id)arg2;
 - (id)_copyOfConnector:(id)arg1 context:(id)arg2;
 - (id)copyWithZone:(struct _NSZone *)arg1;

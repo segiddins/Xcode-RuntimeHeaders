@@ -20,6 +20,7 @@
 @property(nonatomic) double arrowPoint; // @synthesize arrowPoint=_arrowPoint;
 @property(nonatomic) unsigned long long arrowEdge; // @synthesize arrowEdge=_arrowEdge;
 - (void)drawRect:(struct CGRect)arg1;
+- (void)setFrameSize:(struct CGSize)arg1;
 - (id)backgroundPathInRect:(struct CGRect)arg1;
 - (struct CGRect)highlightRect;
 @property(readonly) struct CGRect contentRect;
@@ -30,7 +31,6 @@
 - (double)adjustedArrowPointForArrowPoint:(double)arg1;
 - (void)setArrowPointWithTargetPoint:(struct CGPoint)arg1;
 - (BOOL)isValidTargetPoint:(struct CGPoint)arg1;
-- (double)adjustedEdgeDistance;
 - (double)edgeDistance;
 - (BOOL)arrowOnTopOrBottomEdge;
 - (BOOL)arrowOnLeftOrRightEdge;

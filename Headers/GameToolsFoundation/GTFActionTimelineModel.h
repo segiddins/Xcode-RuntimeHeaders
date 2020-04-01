@@ -7,13 +7,13 @@
 #import <objc/NSObject.h>
 
 #import <GameToolsFoundation/IDEKeyDrivenNavigableItemRepresentedObject-Protocol.h>
-#import <GameToolsFoundation/NSCoding-Protocol.h>
 #import <GameToolsFoundation/NSCopying-Protocol.h>
+#import <GameToolsFoundation/NSSecureCoding-Protocol.h>
 
-@class DVTDocumentLocation, DVTFileDataType, GTFActionLibrary, GTFActionLibraryTargetThumbnail, IDEFileReference, NSArray, NSImage, NSMutableArray, NSString;
+@class DVTDocumentLocation, DVTFileDataType, GTFActionLibrary, GTFActionLibraryTargetThumbnail, IDEFileReference, NSArray, NSImage, NSMutableArray, NSNull, NSString, NSURL, _TtC13DVTFoundation9DVTSymbol;
 @protocol GTFActionTimelineModelDelegate, NSCopying;
 
-@interface GTFActionTimelineModel : NSObject <NSCoding, NSCopying, IDEKeyDrivenNavigableItemRepresentedObject>
+@interface GTFActionTimelineModel : NSObject <NSSecureCoding, NSCopying, IDEKeyDrivenNavigableItemRepresentedObject>
 {
     NSMutableArray *_actions;
     NSMutableArray *_tracks;
@@ -35,6 +35,7 @@
     NSString *_targetName;
 }
 
++ (BOOL)supportsSecureCoding;
 + (id)keyPathsForValuesAffectingNav_children;
 @property(readonly, nonatomic) NSString *targetName; // @synthesize targetName=_targetName;
 @property(retain, nonatomic) NSString *keyName; // @synthesize keyName=_keyName;
@@ -50,12 +51,12 @@
 - (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-@property(readonly) BOOL navigableItem_isLeaf;
-@property(readonly) DVTDocumentLocation *navigableItem_contentDocumentLocation;
-@property(readonly) BOOL navigableItem_isMajorGroup;
+@property(readonly, nonatomic) BOOL navigableItem_isLeaf;
+@property(readonly, nonatomic) DVTDocumentLocation *navigableItem_contentDocumentLocation;
+@property(readonly, nonatomic) BOOL navigableItem_isMajorGroup;
 @property(readonly, nonatomic) NSArray *nav_children;
 - (id)ideModelObjectTypeIdentifier;
-@property(readonly) NSString *navigableItem_name;
+@property(readonly, nonatomic) NSString *navigableItem_name;
 - (id)lookupImageAssetPathForAssetName:(id)arg1;
 - (BOOL)isInfiniteLoopInTrack:(int)arg1;
 - (void)removeGroup:(id)arg1;
@@ -98,6 +99,7 @@
 - (BOOL)adjustNumberOfTracks;
 - (BOOL)canMoveAction:(id)arg1 toTrack:(int)arg2 atTime:(double)arg3;
 - (void)addActionToClosestOpenSlot:(id)arg1 inTrack:(int)arg2 atTime:(double)arg3 enableAlignment:(BOOL)arg4 canMoveBeforeStartTime:(BOOL)arg5;
+- (void)addAction:(id)arg1 inLoop:(id)arg2 toClosestOpenSlotInTrack:(int)arg3 atTime:(double)arg4 enableAlignment:(BOOL)arg5 canMoveBeforeStartTime:(BOOL)arg6;
 - (void)setActionStartTime:(id)arg1 inTrack:(int)arg2 atTime:(double)arg3 enableSnap:(BOOL)arg4;
 - (void)forceMoveAction:(id)arg1 toTrack:(int)arg2;
 - (BOOL)moveAction:(id)arg1 toTrack:(int)arg2 atTime:(double)arg3 enableAlignment:(BOOL)arg4;
@@ -125,15 +127,24 @@
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
-@property(readonly) NSString *navigableItem_accessibleImageDescription;
-@property(readonly) DVTFileDataType *navigableItem_documentType;
-@property(readonly) IDEFileReference *navigableItem_fileReference;
-@property(readonly) NSString *navigableItem_groupIdentifier;
-@property(readonly) NSImage *navigableItem_image;
-@property(readonly) BOOL navigableItem_missingReferencedContentIsImportant;
-@property(readonly) BOOL navigableItem_referencedContentExists;
-@property(readonly) NSString *navigableItem_subtitle;
-@property(readonly) NSString *navigableItem_toolTip;
+@property(readonly, nonatomic) NSString *navigableItem_accessibilityIdentifier;
+@property(readonly, nonatomic) NSString *navigableItem_accessibleImageDescription;
+@property(readonly, nonatomic) NSArray *navigableItem_additionalFilterMatchingText;
+@property(readonly, nonatomic) NSArray *navigableItem_childRepresentedObjects;
+@property(readonly, nonatomic) DVTFileDataType *navigableItem_documentType;
+@property(readonly, nonatomic) IDEFileReference *navigableItem_fileReference;
+@property(readonly, nonatomic) NSNull *navigableItem_filtered;
+@property(readonly, nonatomic) NSString *navigableItem_groupIdentifier;
+@property(readonly, nonatomic) NSImage *navigableItem_image;
+@property(readonly, nonatomic) BOOL navigableItem_isEnabled;
+@property(readonly, nonatomic) BOOL navigableItem_isVisible;
+@property(readonly, nonatomic) BOOL navigableItem_missingReferencedContentIsImportant;
+@property(readonly, nonatomic) id navigableItem_parentRepresentedObject;
+@property(readonly, nonatomic) BOOL navigableItem_referencedContentExists;
+@property(readonly, nonatomic) _TtC13DVTFoundation9DVTSymbol *navigableItem_representedSymbol;
+@property(readonly, nonatomic) NSURL *navigableItem_representedURL;
+@property(readonly, nonatomic) NSString *navigableItem_subtitle;
+@property(readonly, nonatomic) NSString *navigableItem_toolTip;
 @property(readonly) Class superclass;
 
 @end

@@ -6,34 +6,10 @@
 
 #import <IDEFoundation/IDESourceKitCompletionItem.h>
 
-#import <IDEKit/DVTTextCompletionItem-Protocol.h>
-
-@class NSArray, NSAttributedString, NSImage, NSString;
-
-@interface IDESourceKitCompletionItem (IDEKitExtensions) <DVTTextCompletionItem>
-@property(readonly) unsigned long long priorityComparatorKind;
-@property(readonly) long long priorityBucket;
+@interface IDESourceKitCompletionItem (IDEKitExtensions)
+- (unsigned long long)priorityComparatorKind;
+- (long long)priorityBucket;
 - (void)infoViewControllerWithWidth:(double)arg1 context:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
-@property(readonly) NSImage *icon;
-
-// Remaining properties
-@property(readonly, copy) NSString *action;
-@property(readonly, copy) NSArray *additionalCompletions;
-@property(readonly) int completionItemStyle;
-@property(readonly, copy) NSString *completionText;
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly, copy) NSAttributedString *descriptionText;
-@property(readonly, copy) NSString *displayText;
-@property(readonly, copy) NSString *displayType;
-@property double fuzzyMatchingScore;
-@property(readonly) unsigned long long hash;
-@property(readonly) NSImage *highlightedStatusIcon;
-@property(readonly, copy) NSString *name;
-@property(readonly) BOOL notRecommended;
-@property(readonly, copy) NSString *parentText;
-@property double priority;
-@property(readonly) NSImage *statusIcon;
-@property(readonly) Class superclass;
+- (id)icon;
 @end
 

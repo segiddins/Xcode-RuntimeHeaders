@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Foundation/NSObject.h>
+#import <objc/NSObject.h>
 
 @class NSArray, NSMutableArray, NSString;
 
@@ -21,6 +21,7 @@
 + (id)buildWarningMessageWithFormat:(id)arg1;
 + (id)buildNoticeMessageWithFormat:(id)arg1;
 @property(nonatomic) unsigned long long buildLogItemIdentifier; // @synthesize buildLogItemIdentifier=_buildLogItemIdentifier;
+- (void).cxx_destruct;
 - (id)description;
 - (BOOL)isError;
 - (BOOL)isAnalyzerResult;
@@ -35,7 +36,6 @@
 - (void)setMessageString:(id)arg1;
 - (id)messageString;
 - (int)type;
-- (void)dealloc;
 - (id)initWithType:(int)arg1 messageString:(id)arg2;
 - (id)initWithType:(int)arg1 messageString:(id)arg2 fileLocations:(id)arg3;
 

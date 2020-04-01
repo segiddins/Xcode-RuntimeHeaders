@@ -6,24 +6,27 @@
 
 #import <IDEKit/IDEInspectorProperty.h>
 
-@class DVTStepperTextField, IDEInspectorKeyPath, NSString, NSTextField;
+@class IDEInspectorKeyPath, NSString, NSTextField, SKEStepperTextField;
 
 @interface SKEInspectorVector4Property : IDEInspectorProperty
 {
-    DVTStepperTextField *_xScrubber;
-    DVTStepperTextField *_yScrubber;
-    DVTStepperTextField *_zScrubber;
-    DVTStepperTextField *_wScrubber;
+    SKEStepperTextField *_xScrubber;
+    SKEStepperTextField *_yScrubber;
+    SKEStepperTextField *_zScrubber;
+    SKEStepperTextField *_wScrubber;
     NSTextField *_xLabel;
     NSTextField *_yLabel;
     NSTextField *_zLabel;
     NSTextField *_wLabel;
     IDEInspectorKeyPath *_valueKeyPath;
     NSString *_nilPlaceholder;
+    CDUnknownBlockType _userChangedValueBlock;
 }
 
+@property(copy, nonatomic) CDUnknownBlockType userChangedValueBlock; // @synthesize userChangedValueBlock=_userChangedValueBlock;
 - (void).cxx_destruct;
 - (void)setupRefreshTriggersAndConfigure;
+- (void)setValue:(id)arg1;
 - (void)refresh;
 - (void)userDidChangeValue:(id)arg1;
 - (CDUnknownBlockType)vectorComponentSetter:(long long)arg1 componentValue:(double)arg2;

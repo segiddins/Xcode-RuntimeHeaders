@@ -4,32 +4,37 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Foundation/NSObject.h>
+#import <objc/NSObject.h>
 
 #import <DevToolsCore/XCOutputStreams-Protocol.h>
 
-@class NSString, XCBuildLogCommandInvocationSectionRecorder, XCSystemStatisticsMeasurement, XCWorkQueueOperation;
+@class DVTSystemStatisticsMeasurement, IDEActivityLogSection, NSString, XCWorkQueueCommandInvocationParameters;
 @protocol XCOutputStreams, XCWorkQueueCommands;
 
 @interface XCWorkQueueCommandInvocation : NSObject <XCOutputStreams>
 {
-    XCWorkQueueOperation *_workQueueOperation;
     id <XCWorkQueueCommands> _command;
-    unsigned long long _slotNumber;
-    XCBuildLogCommandInvocationSectionRecorder *_buildLogRecorder;
+    IDEActivityLogSection *_activityLogSection;
+    NSString *_fileProgressDescriptionFormat;
+    XCWorkQueueCommandInvocationParameters *_invocationParameters;
     id <XCOutputStreams> _outputStream;
     unsigned long long _numberOfMessages;
-    XCSystemStatisticsMeasurement *_systemStatsAtStart;
-    XCSystemStatisticsMeasurement *_systemStatsAtFinish;
+    DVTSystemStatisticsMeasurement *_systemStatsAtStart;
+    DVTSystemStatisticsMeasurement *_systemStatsAtFinish;
 }
 
-+ (unsigned long long)messageLimit;
+@property(copy) XCWorkQueueCommandInvocationParameters *invocationParameters; // @synthesize invocationParameters=_invocationParameters;
+@property(retain) IDEActivityLogSection *activityLogSection; // @synthesize activityLogSection=_activityLogSection;
+- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (double)elapsedSystemTime;
 - (double)elapsedUserTime;
 - (id)systemStatisticsDelta;
-- (void)parser:(id)arg1 foundMessageOfType:(int)arg2 title:(const char *)arg3 forFileAtPath:(const char *)arg4 lineNumber:(unsigned long long)arg5;
-- (BOOL)hasReachedMessageLimit;
+- (id)systemStatisticsAtFinish;
+- (id)systemStatisticsAtStart;
+- (void)_warnAboutUseOfPBXJambaseRuleDescriptionForProgressDescription;
+- (void)_warnAboutUseOfPBXJambaseRuleDescriptionForExecutionDescription;
+- (unsigned long long)messageLimit;
 - (void)emitBuildMessageOfType:(int)arg1 withFormat:(id)arg2;
 - (void)emitBuildMessageOfType:(int)arg1 toTranscript:(BOOL)arg2 withFormat:(id)arg3;
 - (void)emitBuildMessageOfType:(int)arg1 message:(id)arg2 forFileAtPath:(id)arg3 lineNumber:(unsigned long long)arg4;
@@ -38,24 +43,22 @@
 - (void)close;
 - (void)flush;
 - (void)writeBytes:(const char *)arg1 length:(unsigned long long)arg2;
-- (void)cancel;
+- (void)cancelAndWaitUntilFinished;
 - (void)handleInputFileDescriptorActivity;
 - (void)handleOutputFileDescriptorActivity;
 - (void)handleEndOfOutput;
 - (void)handleOutputBytes:(const char *)arg1 length:(unsigned long long)arg2;
 - (BOOL)startRunning;
-- (int)realExitCode;
 - (int)exitCode;
+@property(readonly) BOOL isCancelled;
 - (BOOL)isRunning;
 - (int)inputFileDescriptor;
 - (int)outputFileDescriptor;
 - (void)stopRecordingBuildOutput;
-- (id)buildLogRecorder;
-- (unsigned long long)slotNumber;
+@property(readonly) NSString *fileProgressDescriptionFormat;
+- (id)_toolSpecification;
 - (id)command;
-- (id)workQueueOperation;
-- (void)dealloc;
-- (id)initWithSlotNumber:(unsigned long long)arg1 workQueueOperation:(id)arg2 workQueueCommand:(id)arg3;
+- (id)initWithWorkQueueCommand:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

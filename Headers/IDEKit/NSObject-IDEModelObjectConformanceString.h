@@ -6,9 +6,30 @@
 
 #import <objc/NSObject.h>
 
-@class NSString;
+#import <IDEKit/IDETestReport_Base-Protocol.h>
 
-@interface NSObject (IDEModelObjectConformanceString)
+@class NSNumber, NSString;
+@protocol IDETestReport_Base;
+
+@interface NSObject (IDEModelObjectConformanceString) <IDETestReport_Base>
 @property(readonly, nonatomic) NSString *navigableItem_conformanceString;
+@property(nonatomic) __weak id <IDETestReport_Base> ide_testReport_base_parent;
+@property(readonly, copy, nonatomic) NSString *ide_testReport_base_identifier;
+- (id)ide_testReport_device_combined_platformName_and_osVersion;
+@property(readonly, nonatomic) BOOL ide_testReport_deviceTestRuns_mixedStatus;
+@property(readonly, nonatomic) BOOL ide_testReport_test_mixedStatus;
+@property(readonly, copy, nonatomic) NSString *ide_testReport_device_modelKind;
+@property(readonly, copy, nonatomic) NSNumber *ide_testReport_device_isSimulator_asNumber;
+- (id)ide_replaceAggregatedValue;
+- (id)aggregateReplacementBySettingValue:(id)arg1 forKeyPath:(id)arg2;
+- (id)ide_generateOutlineItemGivenParent:(id)arg1 root:(long long)arg2;
+- (void)ide_enumerateChildrenPopulatingVisitedContainers:(id)arg1 block:(CDUnknownBlockType)arg2;
+- (BOOL)ide_shouldIncludeInExploration;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @end
 

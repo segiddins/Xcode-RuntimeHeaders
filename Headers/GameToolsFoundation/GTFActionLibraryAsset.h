@@ -4,14 +4,15 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <DVTKit/DVTLibraryAsset.h>
+#import <DVTLibraryKit/DVTLibraryAsset.h>
 
-#import <GameToolsFoundation/NSCoding-Protocol.h>
+#import <GameToolsFoundation/NSSecureCoding-Protocol.h>
 
-@interface GTFActionLibraryAsset : DVTLibraryAsset <NSCoding>
+@interface GTFActionLibraryAsset : DVTLibraryAsset <NSSecureCoding>
 {
 }
 
++ (BOOL)supportsSecureCoding;
 + (id)assetWithAction:(id)arg1 title:(id)arg2 subtitle:(id)arg3 summary:(id)arg4 imageName:(id)arg5 bundleClass:(Class)arg6;
 + (id)assetWithAction:(id)arg1 title:(id)arg2 subTitle:(id)arg3 summary:(id)arg4 image:(id)arg5;
 + (id)assetWithAction:(id)arg1 title:(id)arg2 subTitle:(id)arg3 summary:(id)arg4 image:(id)arg5 withUDID:(id)arg6;

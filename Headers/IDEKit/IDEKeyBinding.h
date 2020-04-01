@@ -39,7 +39,7 @@
 @property(readonly) SEL action;
 @property(setter=setControlModifierMaskLocked:) BOOL isControlModifierMaskLocked;
 @property(setter=setCommandModifierMaskLocked:) BOOL isCommandModifierMaskLocked;
-@property(setter=setAlternateModifierMaskLocked:) BOOL isAlternateModifierMaskLocked;
+@property(setter=setOptionModifierMaskLocked:) BOOL isOptionModifierMaskLocked;
 @property(setter=setShiftModifierMaskLocked:) BOOL isShiftModifierMaskLocked;
 @property(setter=setConflictedWithHotKey:) BOOL isConflictedWithHotKey;
 @property(setter=setConflicted:) BOOL isConflicted;

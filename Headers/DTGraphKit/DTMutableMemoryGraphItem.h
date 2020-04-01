@@ -16,12 +16,13 @@
     CDUnknownBlockType _filterBlock;
     NSString *_filterString;
     unsigned long long _instanceFilter;
+    BOOL _leaksOnly;
     unsigned long long _intrinsic;
 }
 
 + (id)itemForNode:(unsigned int)arg1 inGraph:(id)arg2;
 - (void).cxx_destruct;
-- (void)_setFilter:(CDUnknownBlockType)arg1 string:(id)arg2 instanceFilter:(unsigned long long)arg3;
+- (void)_setFilter:(CDUnknownBlockType)arg1 string:(id)arg2 instanceFilter:(unsigned long long)arg3 leaksOnly:(BOOL)arg4;
 - (void)_refilterItems;
 - (id)subitemAtIndex:(unsigned long long)arg1;
 - (id)subitems;

@@ -6,20 +6,15 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray;
-
 @interface IBDeviceSubtypeManager : NSObject
 {
-    NSArray *_subtypes;
 }
 
-+ (id)sharedInstance;
-@property(readonly, nonatomic) NSArray *subtypes; // @synthesize subtypes=_subtypes;
-- (void).cxx_destruct;
-- (id)deviceSubtypeWithIdentifier:(id)arg1;
-- (id)deviceConfigurationsMatchingMemberConfiguration:(id)arg1;
-- (id)devicesMatchingIdiom:(id)arg1;
-- (id)init;
++ (id)deviceSubtypeForIdentifier:(id)arg1;
++ (id)deviceSubtypeForArchivingName:(id)arg1;
++ (id)deviceConfigurationsMatchingMemberConfiguration:(id)arg1;
++ (id)devicesMatchingIdiom:(id)arg1;
++ (id)subtypes;
 
 @end
 

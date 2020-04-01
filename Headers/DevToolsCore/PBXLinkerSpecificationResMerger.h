@@ -10,7 +10,7 @@
 {
 }
 
-- (id)createCommandsforInputs:(id)arg1 inBuildContext:(id)arg2;
+- (id)createCommandsforInputs:(id)arg1 withMacroExpansionScope:(id)arg2;
 
 @end
 

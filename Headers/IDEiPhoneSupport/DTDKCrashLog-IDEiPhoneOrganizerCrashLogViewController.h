@@ -8,5 +8,6 @@
 
 @interface DTDKCrashLog (IDEiPhoneOrganizerCrashLogViewController)
 - (BOOL)canExport;
+- (id)crashLogFont;
 @end
 

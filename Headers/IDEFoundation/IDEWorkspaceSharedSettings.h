@@ -6,10 +6,21 @@
 
 #import <IDEFoundation/IDEWorkspaceSettings.h>
 
+@class DVTObservingToken;
+
 @interface IDEWorkspaceSharedSettings : IDEWorkspaceSettings
 {
+    DVTObservingToken *_workspaceLoadingObservingToken;
 }
 
++ (BOOL)automaticallyNotifiesObserversForPreviewsEnabled;
+- (void).cxx_destruct;
+@property BOOL previewsEnabled;
+- (void)setBuildSystemType:(int)arg1;
+- (void)primitiveInvalidate;
+- (void)_propagateBuildSystemSelectionForWorkspace:(id)arg1;
+- (id)initWithWorkspace:(id)arg1;
+- (void)saveSettings;
 @property BOOL autocreateContextsIfNeeded;
 - (id)settingsOwnership;
 

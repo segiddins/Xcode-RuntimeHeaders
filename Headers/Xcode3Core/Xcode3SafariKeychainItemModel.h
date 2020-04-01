@@ -6,23 +6,22 @@
 
 #import <IDEFoundation/IDEProjectItemModel.h>
 
-@class NSArray;
+@class NSArray, NSString;
 
 @interface Xcode3SafariKeychainItemModel : IDEProjectItemModel
 {
     NSArray *_domains;
 }
 
++ (id)coalescableReadOnlyKeyPaths;
 @property(copy, nonatomic) NSArray *domains; // @synthesize domains=_domains;
 - (void).cxx_destruct;
+- (id)coalescableWriteableKeyPathToDataSource;
 - (BOOL)isEnabledUsingEducatedGuess;
 - (id)flightChecks;
 - (id)instantiateEntitlementsFlightCheck;
 - (id)defaultDomains;
-- (id)defaultDomain;
-- (void)_setDomains:(id)arg1 postAssignmentBlock:(CDUnknownBlockType)arg2;
-- (void)modelWasDisabled;
-- (void)modelWasEnabledWithContext:(id)arg1;
+@property(readonly) NSString *defaultDomain;
 - (void)targetCoordinatorsChanged:(id)arg1;
 - (void)readValuesFromEntitlements;
 - (id)initWithCapabilitiesContext:(id)arg1 item:(id)arg2;

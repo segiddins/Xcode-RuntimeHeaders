@@ -11,13 +11,13 @@
 @interface _IDEDeferredInitializationInvocation : NSObject
 {
     Class _initializerClass;
-    int _options;
+    unsigned long long _options;
     DVTExtension *_extension;
 }
 
 - (void).cxx_destruct;
 - (void)invokeWithFailureHandler:(CDUnknownBlockType)arg1;
-- (id)initWithInitalizerClass:(Class)arg1 options:(int)arg2 extension:(id)arg3;
+- (id)initWithInitalizerClass:(Class)arg1 options:(unsigned long long)arg2 extension:(id)arg3;
 
 @end
 

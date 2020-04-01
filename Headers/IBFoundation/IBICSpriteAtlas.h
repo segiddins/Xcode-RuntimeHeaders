@@ -22,7 +22,6 @@
 - (id)displayName;
 - (id)defaultUnqualifiedRuntimeName;
 - (BOOL)populateNamedAssetImportInfo:(id)arg1 allCompiledItems:(id)arg2 withOptions:(id)arg3 error:(id *)arg4;
-- (void)createSampleSpritesWithBaseName:(id)arg1 baseSize:(struct CGSize)arg2 count:(long long)arg3 idioms:(id)arg4 usingRenderer:(CDUnknownBlockType)arg5;
 
 @end
 

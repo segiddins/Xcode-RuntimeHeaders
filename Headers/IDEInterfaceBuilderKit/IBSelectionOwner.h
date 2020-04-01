@@ -11,8 +11,8 @@
 
 @interface IBSelectionOwner : NSObject
 {
-    DVTMutableOrderedSet *selection;
-    DVTMutableOrderedSet *cachedSelectionCopy;
+    DVTMutableOrderedSet *_selection;
+    DVTMutableOrderedSet *_cachedSelectionCopy;
     id <IBSelectionOwnerDelegate> _delegate;
 }
 
@@ -32,7 +32,7 @@
 - (void)selectObjects:(id)arg1 withEvent:(id)arg2;
 - (void)setSelectedObjects:(id)arg1;
 - (void)setSelectedObject:(id)arg1;
-- (void)updateSelectionWithArrowMovement:(id)arg1 canidateLists:(id)arg2 andAnchor:(id *)arg3;
+- (void)updateSelectionWithArrowMovement:(id)arg1 candidateLists:(id)arg2 anchor:(id *)arg3;
 - (void)updateSelectionWithBandIntersectingObjects:(id)arg1 withEvent:(id)arg2 initialSelection:(id)arg3;
 - (void)selectObjects:(id)arg1 byExtending:(BOOL)arg2 andToggling:(BOOL)arg3;
 - (void)primitiveUpdateSelection:(id)arg1;

@@ -6,10 +6,24 @@
 
 #import <ImageKit/IKScannerDeviceView.h>
 
-@interface IKScannerDeviceView (IKScannerDeviceViewIntegration)
+#import <IDEInterfaceBuilderCocoaIntegration/IBDocumentArchiving-Protocol.h>
+
+@class NSString;
+
+@interface IKScannerDeviceView (IKScannerDeviceViewIntegration) <IBDocumentArchiving>
 + (void)ibSwizzle;
 - (void)ibOverrideSetup;
 - (void)ibSwizzledCommonInit;
 - (id)ibSwizzledInitWithCoder:(id)arg1;
+- (id)ibLocalLocalizableStringsAttributeKeyPaths;
+- (id)ibLocalAttributeKeyPaths;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @end
 

@@ -10,12 +10,12 @@
 {
 }
 
-- (id)createCommandsforInputs:(id)arg1 inBuildContext:(id)arg2;
-- (id)traditionalHeadermapWithBuildContext:(id)arg1;
-- (id)headermapForAllProjectsHeadersInBuildContext:(id)arg1;
-- (id)headermapForAllProductHeadersInBuildContext:(id)arg1;
-- (id)headermapForProductHeadersInBuildContext:(id)arg1;
-- (id)headermapForGeneratedFilesInBuildContext:(id)arg1;
+- (id)createCommandsforInputs:(id)arg1 withMacroExpansionScope:(id)arg2;
+- (id)traditionalHeadermapWithMacroExpansionScope:(id)arg1;
+- (id)headermapForAllProjectsHeadersWithMacroExpansionScope:(id)arg1;
+- (id)headermapForAllProductHeadersWithMacroExpansionScope:(id)arg1;
+- (id)headermapForProductHeadersWithMacroExpansionScope:(id)arg1;
+- (id)headermapForGeneratedFilesWithMacroExpansionScope:(id)arg1;
 
 @end
 

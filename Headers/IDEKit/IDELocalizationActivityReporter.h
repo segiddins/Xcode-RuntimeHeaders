@@ -20,7 +20,6 @@
 }
 
 + (id)_titleSegmentsForWorker:(id)arg1;
-+ (void)initialize;
 - (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (void)setWorker:(id)arg1;

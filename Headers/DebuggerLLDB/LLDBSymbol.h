@@ -10,7 +10,6 @@
 
 @class NSString;
 
-__attribute__((visibility("hidden")))
 @interface LLDBSymbol : NSObject <DBGSBSymbol>
 {
     struct SBSymbol {
@@ -20,6 +19,7 @@ __attribute__((visibility("hidden")))
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (const char *)GetDisplayName;
 - (const char *)GetName;
 - (_Bool)IsValid;
 - (id)initWithSBSymbol:(const struct SBSymbol *)arg1;

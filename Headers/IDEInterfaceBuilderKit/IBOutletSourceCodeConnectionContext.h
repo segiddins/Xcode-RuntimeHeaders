@@ -10,12 +10,12 @@
 
 @interface IBOutletSourceCodeConnectionContext : IBSourceCodeConnectionContext
 {
-    long long preferredDefaultStorageType;
-    long long storageType;
+    long long _storageType;
+    long long _preferredDefaultStorageType;
 }
 
-@property(nonatomic) long long preferredDefaultStorageType; // @synthesize preferredDefaultStorageType;
-@property long long storageType; // @synthesize storageType;
+@property(nonatomic) long long preferredDefaultStorageType; // @synthesize preferredDefaultStorageType=_preferredDefaultStorageType;
+@property long long storageType; // @synthesize storageType=_storageType;
 - (void)saveStorageTypeSelectionToDocument;
 - (id)outletTeardownCounterparts;
 - (long long)effectivePropertyObjCStorageType;
@@ -27,7 +27,7 @@
 - (void)setDocument:(id)arg1;
 - (id)validatedSourceCodeConnectionNameForName:(id)arg1 error:(id *)arg2;
 - (id)insertionConnectionTypeString;
-- (double)positionPriority;
+- (id)init;
 
 @end
 

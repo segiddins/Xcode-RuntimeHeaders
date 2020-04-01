@@ -4,20 +4,16 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <IDEKit/IDENavigableItem.h>
+#import <IDEKit/IDEKeyDrivenNavigableItem.h>
 
-@class NSArray, NSString;
+@class NSString;
 
-@interface IDEGroupNavigableItem : IDENavigableItem
+@interface IDEGroupNavigableItem : IDEKeyDrivenNavigableItem
 {
-    NSString *_name;
-    NSArray *_subitems;
     NSString *_scmLocalStatus;
     NSString *_scmServerStatus;
 }
 
-+ (id)keyPathsForValuesAffectingReferencedContentExists;
-+ (id)keyPathsForValuesAffectingToolTip;
 + (id)keyPathsForValuesAffecting_group;
 + (id)_createExtraInfoObject;
 - (void).cxx_destruct;
@@ -25,25 +21,13 @@
 - (id)identifierForChildItem:(id)arg1;
 - (unsigned long long)conflictStateForUpdateOrMerge;
 - (id)sourceControlServerStatus;
-- (int)sourceControlServerStatusFlag;
+- (unsigned long long)sourceControlServerStatusFlag;
 - (id)sourceControlLocalStatus;
-- (int)sourceControlLocalStatusFlag;
-- (id)documentType;
-- (BOOL)isMajorGroup;
-- (id)fileReference;
-- (id)contentDocumentLocation;
-- (BOOL)referencedContentExists;
-- (id)toolTip;
-- (id)image;
-- (id)name;
+- (unsigned long long)sourceControlLocalStatusFlag;
 - (void)updateAttributes;
 - (void)updateChildRepresentedObjects;
 - (id)textColor;
-- (id)childRepresentedObjects;
-- (BOOL)isLeaf;
-- (id)accessibleImageDescription;
 - (id)_group;
-- (void)primitiveInvalidate;
 - (id)initWithRepresentedObject:(id)arg1;
 
 @end

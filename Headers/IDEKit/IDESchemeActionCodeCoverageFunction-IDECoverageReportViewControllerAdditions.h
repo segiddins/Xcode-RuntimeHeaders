@@ -17,7 +17,6 @@
 @property(readonly, copy, nonatomic) NSNumber *ide_coverage_lineCoveragePctDelta;
 @property(readonly, copy, nonatomic) NSNumber *ide_coverage_lineCoveragePct;
 @property(readonly, copy, nonatomic) NSString *ide_coverage_title;
-@property(readonly, copy, nonatomic) NSString *ide_coverage_identifier;
 @property(readonly, copy, nonatomic) NSImage *ide_coverage_image;
 
 // Remaining properties

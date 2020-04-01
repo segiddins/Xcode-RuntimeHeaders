@@ -6,11 +6,11 @@
 
 #import <objc/NSObject.h>
 
-#import <GPUTools/NSCoding-Protocol.h>
+#import <GPUTools/NSSecureCoding-Protocol.h>
 
 @class DYGPUToolsVersionInfo, NSArray, NSString;
 
-@interface DYDeviceInfo : NSObject <NSCoding>
+@interface DYDeviceInfo : NSObject <NSSecureCoding>
 {
     int _platform;
     unsigned int _nativePointerSize;
@@ -26,6 +26,7 @@
     CDStruct_e4c1f684 _mainScreenDescriptor;
 }
 
++ (BOOL)supportsSecureCoding;
 + (unsigned int)defaultNativePointerSize;
 @property(retain, nonatomic) NSArray *supportedGraphicsAPIInfos; // @synthesize supportedGraphicsAPIInfos=_supportedGraphicsAPIInfos;
 @property(nonatomic) CDStruct_e4c1f684 mainScreenDescriptor; // @synthesize mainScreenDescriptor=_mainScreenDescriptor;
@@ -42,11 +43,9 @@
 - (BOOL)supportsCapabilitiesOfGraphicsAPI:(id)arg1 allowedClass:(Class)arg2;
 - (BOOL)versionIsOlderThan:(id)arg1;
 @property(readonly, nonatomic) BOOL isEmbeddedPlatform;
-@property(readonly, nonatomic) BOOL sharedPermanentIdentifier;
 - (void)encodeWithCoder:(id)arg1;
 - (id)debugDescription;
 - (id)description;
-- (id)_platformName;
 - (void)dealloc;
 - (id)initWithCoder:(id)arg1;
 

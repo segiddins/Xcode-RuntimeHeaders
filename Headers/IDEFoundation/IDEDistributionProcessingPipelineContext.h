@@ -6,56 +6,59 @@
 
 #import <IDEFoundation/IDEDistributionContext.h>
 
-@class DVTFilePath, IDEDistributionItem, IDEDistributionThinningVariant, NSDictionary, NSNumber;
+@class DVTFilePath, IDEDistributionCoalescedThinningVariantAbstractClass, IDEDistributionItem, NSDictionary, NSNumber;
 
 @interface IDEDistributionProcessingPipelineContext : IDEDistributionContext
 {
     DVTFilePath *_temporaryDirectory;
+    DVTFilePath *_destinationRoot;
     Class _packagingStep;
     NSDictionary *_onDemandResourcesAssetPacksOwningBundleForCopy;
     NSDictionary *_onDemandResourcesAssetPacksZippedPaths;
     DVTFilePath *_symbolsPath;
-    NSDictionary *_finalResultsMap;
+    NSDictionary *_thinningDestinationPathMap;
+    NSDictionary *_destinationPathMap;
     NSNumber *_dryRun;
     NSDictionary *_pipelineOutputs;
     IDEDistributionItem *_activeDistributionItem;
-    IDEDistributionThinningVariant *_activeThinningVariant;
-    DVTFilePath *_destinationRoot;
+    IDEDistributionCoalescedThinningVariantAbstractClass *_activeCoalescedThinningVariant;
+    NSNumber *_thinningVariantIndex;
     DVTFilePath *_appStorePackageOutputPath;
+    DVTFilePath *_developerIDPackageOutputPath;
+    DVTFilePath *_developerIDAppOutputPath;
 }
 
 + (id)modifiedName:(id)arg1 forVariant:(id)arg2;
+@property(retain, nonatomic) DVTFilePath *developerIDAppOutputPath; // @synthesize developerIDAppOutputPath=_developerIDAppOutputPath;
+@property(retain, nonatomic) DVTFilePath *developerIDPackageOutputPath; // @synthesize developerIDPackageOutputPath=_developerIDPackageOutputPath;
 @property(retain, nonatomic) DVTFilePath *appStorePackageOutputPath; // @synthesize appStorePackageOutputPath=_appStorePackageOutputPath;
+@property(retain, nonatomic) NSNumber *thinningVariantIndex; // @synthesize thinningVariantIndex=_thinningVariantIndex;
+@property(retain, nonatomic) IDEDistributionCoalescedThinningVariantAbstractClass *activeCoalescedThinningVariant; // @synthesize activeCoalescedThinningVariant=_activeCoalescedThinningVariant;
+@property(retain, nonatomic) IDEDistributionItem *activeDistributionItem; // @synthesize activeDistributionItem=_activeDistributionItem;
+@property(retain, nonatomic) NSDictionary *pipelineOutputs; // @synthesize pipelineOutputs=_pipelineOutputs;
+@property(retain, nonatomic) NSNumber *dryRun; // @synthesize dryRun=_dryRun;
+@property(retain, nonatomic) NSDictionary *destinationPathMap; // @synthesize destinationPathMap=_destinationPathMap;
+@property(retain, nonatomic) NSDictionary *thinningDestinationPathMap; // @synthesize thinningDestinationPathMap=_thinningDestinationPathMap;
+@property(retain, nonatomic) DVTFilePath *symbolsPath; // @synthesize symbolsPath=_symbolsPath;
+@property(retain, nonatomic) NSDictionary *onDemandResourcesAssetPacksZippedPaths; // @synthesize onDemandResourcesAssetPacksZippedPaths=_onDemandResourcesAssetPacksZippedPaths;
+@property(retain, nonatomic) NSDictionary *onDemandResourcesAssetPacksOwningBundleForCopy; // @synthesize onDemandResourcesAssetPacksOwningBundleForCopy=_onDemandResourcesAssetPacksOwningBundleForCopy;
+@property(retain, nonatomic) Class packagingStep; // @synthesize packagingStep=_packagingStep;
 @property(retain, nonatomic) DVTFilePath *destinationRoot; // @synthesize destinationRoot=_destinationRoot;
+@property(retain, nonatomic) DVTFilePath *temporaryDirectory; // @synthesize temporaryDirectory=_temporaryDirectory;
 - (void).cxx_destruct;
+@property(readonly) DVTFilePath *swinfoOutputPath;
 - (id)assetPackManifestFileName:(id)arg1 forVariant:(id)arg2;
 - (id)assetPackFileName:(id)arg1 forVariant:(id)arg2;
 - (id)packagePathForVariant:(id)arg1;
 - (id)destinationPathForItem:(id)arg1 forVariant:(id)arg2;
+- (id)thinningDestinationPathForItem:(id)arg1 forVariant:(id)arg2;
+- (id)thinningSourcePathForItem:(id)arg1;
 - (id)destinationPathForItem:(id)arg1;
 - (id)destinationRootForVariant:(id)arg1;
+- (id)thinningSourceRoot;
 - (id)relativeDestinationPathForPipelineOutputAtSourcePath:(id)arg1;
 - (void)addPipelineOutputAtRelativePath:(id)arg1 fromSourcePath:(id)arg2;
-@property(retain, nonatomic) IDEDistributionThinningVariant *activeThinningVariant; // @synthesize activeThinningVariant=_activeThinningVariant;
-- (id)_distributionContext_get_activeThinningVariant;
-@property(retain, nonatomic) IDEDistributionItem *activeDistributionItem; // @synthesize activeDistributionItem=_activeDistributionItem;
-- (id)_distributionContext_get_activeDistributionItem;
-@property(retain, nonatomic) NSDictionary *pipelineOutputs; // @synthesize pipelineOutputs=_pipelineOutputs;
-- (id)_distributionContext_get_pipelineOutputs;
-@property(retain, nonatomic) NSNumber *dryRun; // @synthesize dryRun=_dryRun;
-- (id)_distributionContext_get_dryRun;
-@property(retain, nonatomic) NSDictionary *finalResultsMap; // @synthesize finalResultsMap=_finalResultsMap;
-- (id)_distributionContext_get_finalResultsMap;
-@property(retain, nonatomic) DVTFilePath *symbolsPath; // @synthesize symbolsPath=_symbolsPath;
-- (id)_distributionContext_get_symbolsPath;
-@property(retain, nonatomic) NSDictionary *onDemandResourcesAssetPacksZippedPaths; // @synthesize onDemandResourcesAssetPacksZippedPaths=_onDemandResourcesAssetPacksZippedPaths;
-- (id)_distributionContext_get_onDemandResourcesAssetPacksZippedPaths;
-@property(retain, nonatomic) NSDictionary *onDemandResourcesAssetPacksOwningBundleForCopy; // @synthesize onDemandResourcesAssetPacksOwningBundleForCopy=_onDemandResourcesAssetPacksOwningBundleForCopy;
-- (id)_distributionContext_get_onDemandResourcesAssetPacksOwningBundleForCopy;
-@property(retain, nonatomic) Class packagingStep; // @synthesize packagingStep=_packagingStep;
-- (id)_distributionContext_get_packagingStep;
-@property(retain, nonatomic) DVTFilePath *temporaryDirectory; // @synthesize temporaryDirectory=_temporaryDirectory;
-- (id)_distributionContext_get_temporaryDirectory;
+- (id)initWithParent:(id)arg1 stepClass:(Class)arg2 allowedInputs:(id)arg3 allowedOutputs:(id)arg4;
 
 @end
 

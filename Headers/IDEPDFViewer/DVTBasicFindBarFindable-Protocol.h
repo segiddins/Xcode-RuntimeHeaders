@@ -11,8 +11,8 @@
 @protocol DVTBasicFindBarFindable <DVTFindBarFindable>
 - (BOOL)basicFindBar:(DVTBasicFindBar *)arg1 findPreviousByWrapping:(BOOL)arg2;
 - (BOOL)basicFindBar:(DVTBasicFindBar *)arg1 findNextByWrapping:(BOOL)arg2;
-- (long long)basicFindBar:(DVTBasicFindBar *)arg1 findString:(NSString *)arg2 caseSensitive:(BOOL)arg3 withFindType:(unsigned long long)arg4 andMatchStyle:(int)arg5;
-- (BOOL)basicFindBar:(DVTBasicFindBar *)arg1 supportsMatchStyle:(int)arg2;
+- (long long)basicFindBar:(DVTBasicFindBar *)arg1 findString:(NSString *)arg2 caseSensitive:(BOOL)arg3 withFindType:(unsigned long long)arg4 andMatchStyle:(unsigned long long)arg5;
+- (BOOL)basicFindBar:(DVTBasicFindBar *)arg1 supportsMatchStyle:(unsigned long long)arg2;
 - (BOOL)basicFindBar:(DVTBasicFindBar *)arg1 supportsFindType:(unsigned long long)arg2;
 
 @optional

@@ -6,13 +6,13 @@
 
 #import <objc/NSObject.h>
 
-#import <GameToolsFoundation/NSCoding-Protocol.h>
 #import <GameToolsFoundation/NSPasteboardReading-Protocol.h>
 #import <GameToolsFoundation/NSPasteboardWriting-Protocol.h>
+#import <GameToolsFoundation/NSSecureCoding-Protocol.h>
 
 @class NSArray, NSMutableArray, NSString;
 
-@interface GTFActionCopyData : NSObject <NSCoding, NSPasteboardWriting, NSPasteboardReading>
+@interface GTFActionCopyData : NSObject <NSSecureCoding, NSPasteboardWriting, NSPasteboardReading>
 {
     NSMutableArray *_allActions;
     NSMutableArray *_independentActions;
@@ -21,6 +21,7 @@
 
 + (unsigned long long)readingOptionsForType:(id)arg1 pasteboard:(id)arg2;
 + (id)readableTypesForPasteboard:(id)arg1;
++ (BOOL)supportsSecureCoding;
 + (id)actionCopyDataForTimeline:(id)arg1 withActionsSubset:(id)arg2;
 @property(readonly, nonatomic) NSArray *groups; // @synthesize groups=_groups;
 @property(readonly, nonatomic) NSArray *allActions; // @synthesize allActions=_allActions;

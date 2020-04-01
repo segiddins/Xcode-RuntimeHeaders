@@ -6,26 +6,24 @@
 
 #import <objc/NSObject.h>
 
-#import <DVTFoundation/NSCoding-Protocol.h>
-
 @class NSArray;
 
-@interface DVTSourceFileLineCoverageData : NSObject <NSCoding>
+@interface DVTSourceFileLineCoverageData : NSObject
 {
     BOOL _executable;
-    int _executionCount;
+    unsigned int _lineNumber;
+    unsigned long long _executionCount;
     NSArray *_subRanges;
 }
 
+@property(readonly, nonatomic) unsigned int lineNumber; // @synthesize lineNumber=_lineNumber;
 @property(readonly, nonatomic) NSArray *subRanges; // @synthesize subRanges=_subRanges;
 @property(readonly, nonatomic, getter=isExecutable) BOOL executable; // @synthesize executable=_executable;
-@property(readonly, nonatomic) int executionCount; // @synthesize executionCount=_executionCount;
+@property(readonly, nonatomic) unsigned long long executionCount; // @synthesize executionCount=_executionCount;
 - (void).cxx_destruct;
+- (BOOL)isEqual:(id)arg1;
 - (id)description;
-- (void)updateWithExecutionCount:(int)arg1 executable:(BOOL)arg2 subRanges:(id)arg3;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (id)initWithExecutionCount:(int)arg1 executable:(BOOL)arg2 subRanges:(id)arg3;
+- (id)initWithLineNumber:(unsigned int)arg1 executionCount:(unsigned long long)arg2 executable:(BOOL)arg3 subRanges:(id)arg4;
 
 @end
 

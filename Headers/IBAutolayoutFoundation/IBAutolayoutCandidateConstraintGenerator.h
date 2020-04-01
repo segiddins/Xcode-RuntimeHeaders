@@ -10,6 +10,7 @@
 {
 }
 
++ (id)candidateVerticalBaselineSpacingConstraintBetweenDescendant:(id)arg1 andDescendant:(id)arg2 ofView:(id)arg3 layoutInfo:(id)arg4;
 + (id)candidateVerticalSpacingConstraintBetweenDescendant:(id)arg1 andDescendant:(id)arg2 ofView:(id)arg3 layoutInfo:(id)arg4;
 + (void)determineComponentsForVerticalSpacingConstraintBetweenDescendant:(id)arg1 andDescendant:(id)arg2 ofView:(id)arg3 layoutInfo:(id)arg4 returningTopItem:(id *)arg5 bottomItem:(id *)arg6 constant:(id *)arg7;
 + (id)candidateHorizontalSpacingConstraintBetweenDescendant:(id)arg1 andDescendant:(id)arg2 ofView:(id)arg3 layoutInfo:(id)arg4;
@@ -26,6 +27,7 @@
 + (id)candidateExplicitConstraintsForDescendants:(id)arg1 ofView:(id)arg2 layoutInfo:(id)arg3 withOptions:(unsigned long long)arg4;
 + (id)candidateExplicitConstraintForDescendant:(id)arg1 ofView:(id)arg2 attribute:(unsigned long long)arg3 layoutInfo:(id)arg4;
 + (id)candidateConstraintForDescendant:(id)arg1 withLayoutBounds:(struct CGRect)arg2 andLayoutFrameInCoordinateSpaceOfAncestor:(struct CGRect)arg3 ancestorView:(id)arg4 ancestorLayoutBounds:(struct CGRect)arg5 attribute:(unsigned long long)arg6 layoutInfo:(id)arg7 scoringClass:(id)arg8;
++ (id)candidateConstraintForDescendant:(id)arg1 andSiblingLikeDescendant:(id)arg2 containingView:(id)arg3 attribute:(unsigned long long)arg4 layoutInfo:(id)arg5 scoringClass:(id)arg6;
 + (id)candidateConstraintForDescendant:(id)arg1 ofView:(id)arg2 attribute:(unsigned long long)arg3 layoutInfo:(id)arg4 scoringClass:(id)arg5;
 + (id)candidateExplicitSizeConstraintForDescendant:(id)arg1 withBounds:(struct CGRect)arg2 attribute:(unsigned long long)arg3 layoutInfo:(id)arg4;
 + (id)_candidateLayoutConstraintsForExactMatchesForDescendants:(id)arg1 ofView:(id)arg2 layoutGuideMatches:(id)arg3 returningMatchedGuideMatches:(id *)arg4 returningMatchedViews:(id *)arg5 layoutInfo:(id)arg6 layoutEngine:(id)arg7 withOptions:(unsigned long long)arg8;

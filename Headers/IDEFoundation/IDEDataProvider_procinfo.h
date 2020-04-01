@@ -12,7 +12,7 @@
 @interface IDEDataProvider_procinfo : IDEDataProvider
 {
     NSObject<OS_dispatch_queue> *_capture_lock;
-    struct unordered_map<int, ProcessInfo, std::__1::hash<int>, std::__1::equal_to<int>, std::__1::allocator<std::__1::pair<const int, ProcessInfo>>> _processInfoByPID;
+    struct unordered_map<int, (anonymous namespace)::ProcessInfo, std::__1::hash<int>, std::__1::equal_to<int>, std::__1::allocator<std::__1::pair<const int, (anonymous namespace)::ProcessInfo>>> _processInfoByPID;
 }
 
 + (id)sharedDataProvider;

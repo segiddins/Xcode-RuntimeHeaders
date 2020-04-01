@@ -6,12 +6,14 @@
 
 #import <Foundation/NSProcessInfo.h>
 
+@class NSString;
+
 @interface NSProcessInfo (PBXFoundationExtra)
-- (id)shortGroupName;
-- (id)shortUserName;
-- (void)disableSuddenTerminationForClient:(id)arg1;
-- (void)enableSuddenTerminationForClient:(id)arg1;
-- (void)_setSuddenTerminationDisablingCount:(long long)arg1 forClient:(id)arg2;
-- (long long)_suddenTerminationDisablingCountForClient:(id)arg1;
+- (id)darwinUserCacheDirectoryPath;
+- (id)darwinUserTemporaryDirectoryPath;
+- (id)darwinUserDirectoryPath;
+@property(readonly) NSString *shortGroupName;
+@property(readonly) NSString *shortUserName;
+- (id)xc_cachedEnvironmentAsMacroDefinitionTable;
 @end
 

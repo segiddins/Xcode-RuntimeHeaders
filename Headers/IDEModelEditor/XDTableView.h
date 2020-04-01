@@ -9,10 +9,11 @@
 #import <IDEModelEditor/DVTInvalidation-Protocol.h>
 
 @class DVTStackBacktrace, NSMenu, NSString;
+@protocol XDTableViewTableColumnProvider;
 
 @interface XDTableView : NSTableView <DVTInvalidation>
 {
-    id _tableColumnProvider;
+    id <XDTableViewTableColumnProvider> _tableColumnProvider;
     NSMenu *_tableHeaderContextMenu;
     BOOL _forwardsScrollWheelToDelegate;
     struct _XDTableViewFlags _xdTVFlags;
@@ -33,16 +34,13 @@
 - (void)showAllTableColumns:(id)arg1;
 - (void)scrollWheel:(id)arg1;
 - (void)mouseDown:(id)arg1;
-- (BOOL)optionClickEditsAnyCell;
-- (void)setOpetionClickEditsAnyCell:(BOOL)arg1;
-- (BOOL)optionClickCausesEditing;
-- (void)setOptionClickCausesEditing:(BOOL)arg1;
+@property BOOL optionClickEditsAnyCell;
+@property BOOL optionClickCausesEditing;
 - (void)reloadTableColumns;
 - (void)_synchronizeTableHeaderContextMenu;
 - (id)_tableColumnWithIdentifier:(id)arg1;
 - (id)tableColumnWithIdentifier:(id)arg1;
-- (id)tableColumnProvider;
-- (void)setTableColumnProvider:(id)arg1;
+@property id <XDTableViewTableColumnProvider> tableColumnProvider;
 - (void)_tableColumnProviderRemoveTableColumn:(id)arg1;
 - (void)_tableColumnProviderAddTableColumn:(id)arg1;
 - (id)_tableColumnProviderAllowedTableColumnIdentifers;

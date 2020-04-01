@@ -6,29 +6,35 @@
 
 #import <objc/NSObject.h>
 
+#import <DVTAnalytics/DVTAnalyticsLogBinaryImageProtocol-Protocol.h>
+
 @class NSString;
 
-@interface DVTCrashLogParsedBinaryImage : NSObject
+@interface DVTCrashLogParsedBinaryImage : NSObject <DVTAnalyticsLogBinaryImageProtocol>
 {
     NSString *_name;
     NSString *_startAddress;
     NSString *_endAddress;
-    NSString *_uuid;
+    NSString *_uuidString;
     NSString *_path;
     NSString *_parserIdentifier;
 }
 
 @property(readonly) NSString *parserIdentifier; // @synthesize parserIdentifier=_parserIdentifier;
 @property(retain) NSString *path; // @synthesize path=_path;
-@property(retain) NSString *uuid; // @synthesize uuid=_uuid;
+@property(retain) NSString *uuidString; // @synthesize uuidString=_uuidString;
 @property(retain) NSString *endAddress; // @synthesize endAddress=_endAddress;
 @property(retain) NSString *startAddress; // @synthesize startAddress=_startAddress;
 @property(retain) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
-- (id)description;
-- (unsigned long long)hash;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)initWithParserIdentifier:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) Class superclass;
 
 @end
 

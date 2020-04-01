@@ -6,9 +6,8 @@
 
 #import <AppKit/NSNibBindingConnector.h>
 
-#import <IDEInterfaceBuilderCocoaIntegration/NSCopying-Protocol.h>
-
-@interface NSNibBindingConnector (IBCocoaBindingsConnectionCopying) <NSCopying>
-- (id)copyWithZone:(struct _NSZone *)arg1;
+@interface NSNibBindingConnector (IBCocoaBindingsConnectionCopying)
+- (id)_copyWithoutCopyingPreviousConnector;
+- (id)ibDesignTimeConnection;
 @end
 

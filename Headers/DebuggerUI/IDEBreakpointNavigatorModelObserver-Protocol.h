@@ -6,10 +6,13 @@
 
 #import <DebuggerUI/NSObject-Protocol.h>
 
-@class IDEBreakpoint;
+@class IDEBreakpoint, NSArray;
 
 @protocol IDEBreakpointNavigatorModelObserver <NSObject>
 - (void)breakpointWasRemoved:(IDEBreakpoint *)arg1;
 - (void)breakpointWasAdded:(IDEBreakpoint *)arg1;
+
+@optional
+- (void)willRemoveBreakpoints:(NSArray *)arg1;
 @end
 

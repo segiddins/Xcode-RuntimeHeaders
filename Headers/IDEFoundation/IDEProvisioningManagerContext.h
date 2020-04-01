@@ -8,25 +8,28 @@
 
 #import <IDEFoundation/DVTInvalidation-Protocol.h>
 
-@class DVTProvisioningProfileManager, DVTSigningCertificateManager, DVTStackBacktrace, IDEProvisioningMechanic, IDEProvisioningTeamManager, NSString;
+@class DVTProvisioningProfileManager, DVTSigningCertificateManager, DVTStackBacktrace, IDEProvisioningContext, IDEProvisioningMechanic, IDEProvisioningTeamManager, NSString;
+@protocol IDEProvisioningErrorProvider;
 
 @interface IDEProvisioningManagerContext : NSObject <DVTInvalidation>
 {
-    IDEProvisioningTeamManager *_teamManager;
-    DVTProvisioningProfileManager *_profileManager;
-    DVTSigningCertificateManager *_certificateManager;
+    IDEProvisioningContext *_provisioningContext;
     IDEProvisioningMechanic *_mechanic;
 }
 
-+ (id)contextWithTeamManager:(id)arg1 profileManager:(id)arg2 certificateManager:(id)arg3 mechanic:(id)arg4;
 + (void)initialize;
 @property(retain, nonatomic) IDEProvisioningMechanic *mechanic; // @synthesize mechanic=_mechanic;
-@property(retain, nonatomic) DVTSigningCertificateManager *certificateManager; // @synthesize certificateManager=_certificateManager;
-@property(retain, nonatomic) DVTProvisioningProfileManager *profileManager; // @synthesize profileManager=_profileManager;
-@property(retain, nonatomic) IDEProvisioningTeamManager *teamManager; // @synthesize teamManager=_teamManager;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <IDEProvisioningErrorProvider> errorProvider;
+@property(readonly, nonatomic) long long automaticLocationStyle;
+@property(readonly, nonatomic) long long repairMode;
+@property(readonly, nonatomic) long long evaluationMode;
+@property(readonly, nonatomic) DVTProvisioningProfileManager *profileManager;
+@property(readonly, nonatomic) DVTSigningCertificateManager *certificateManager;
+@property(readonly, nonatomic) IDEProvisioningTeamManager *teamManager;
 - (id)newProvisionableManagerForProvisionable:(id)arg1 provisioningManager:(id)arg2;
 - (void)primitiveInvalidate;
+- (id)initWithProvisioningContext:(id)arg1 mechanic:(id)arg2;
 
 // Remaining properties
 @property(retain) DVTStackBacktrace *creationBacktrace;

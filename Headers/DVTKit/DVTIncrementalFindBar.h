@@ -28,7 +28,7 @@
 - (void)_resetFindAnchor;
 - (void)invalidateResultsAndUpdate:(BOOL)arg1;
 - (BOOL)supportsCaseInsensitiveMatch;
-- (BOOL)supportsTextMatchStyle:(int)arg1;
+- (BOOL)supportsTextMatchStyle:(unsigned long long)arg1;
 - (BOOL)supportsFindBarMode:(unsigned long long)arg1;
 - (BOOL)supportsFindBarType:(unsigned long long)arg1;
 @property(retain, nonatomic) id findObject;

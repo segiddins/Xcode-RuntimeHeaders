@@ -6,12 +6,15 @@
 
 #import <DVTInstrumentsFoundation/DTTapMessage.h>
 
+#import <DVTInstrumentsFoundation/NSSecureCoding-Protocol.h>
+
 @class NSDictionary, NSString;
 
-@interface DTTapStatusMessage : DTTapMessage
+@interface DTTapStatusMessage : DTTapMessage <NSSecureCoding>
 {
 }
 
++ (BOOL)supportsSecureCoding;
 - (void)setInfo:(id)arg1;
 @property(readonly, copy, nonatomic) NSDictionary *info;
 - (void)setNotice:(id)arg1;

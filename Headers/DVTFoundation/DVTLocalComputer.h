@@ -6,12 +6,16 @@
 
 #import <DVTFoundation/DVTAbstractMacDevice.h>
 
-@class NSMutableDictionary, NSSet, NSString;
+@class DTXConnection, DVTDispatchLock, DVTObservingToken, NSMutableDictionary, NSSet, NSString;
 
 @interface DVTLocalComputer : DVTAbstractMacDevice
 {
     NSSet *_provisioningProfiles;
     NSMutableDictionary *_pidToXPCServiceConnectionDict;
+    NSString *_nameForDeveloperPortal;
+    DVTObservingToken *_nameObservingToken;
+    DVTDispatchLock *_instrumentsServerLock;
+    DTXConnection *_instrumentsConnection;
     NSString *_cpuKind;
     unsigned long long _cpuCount;
     unsigned long long _cpuSpeedInMHz;
@@ -31,7 +35,7 @@
 @property unsigned long long cpuCount; // @synthesize cpuCount=_cpuCount;
 @property(copy) NSString *cpuKind; // @synthesize cpuKind=_cpuKind;
 - (void).cxx_destruct;
-- (id)connectionServicesFrameworkPath;
+- (void)cancelPrimaryInstrumentsServer;
 - (id)primaryInstrumentsServer;
 - (id)listenForInstallOfAppExtensionIdentifiers:(id)arg1 onPairedDevice:(BOOL)arg2;
 - (void)stopDebuggingXPCServices:(id)arg1 forPairedDevice:(BOOL)arg2;
@@ -40,11 +44,10 @@
 - (void)attachToServiceName:(id)arg1 pid:(int)arg2 parentPID:(int)arg3 stdoutFH:(id)arg4 stderrFH:(id)arg5;
 - (id)_xpcDebugConnectionForPid:(id)arg1 create:(BOOL)arg2;
 - (id)_keyForPid:(int)arg1;
-- (void)downloadOptimizationProfilesFromBundleIdentifier:(id)arg1 orPaths:(id)arg2 toFilePath:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (BOOL)supportsLocationSimulation;
 - (void)uninstallProvisioningProfile:(id)arg1;
 - (BOOL)installProvisioningProfileAtURL:(id)arg1 error:(id *)arg2;
-- (void)installProvisioningProfile:(id)arg1;
+- (BOOL)installProvisioningProfile:(id)arg1 error:(id *)arg2;
 - (void)profilesDidChange:(id)arg1;
 - (id)provisioningProfiles;
 - (id)nameForDeveloperPortal;
@@ -65,6 +68,8 @@
 - (void)setIgnored:(BOOL)arg1;
 - (BOOL)isAvailable;
 - (void)setAvailable:(BOOL)arg1;
+- (BOOL)canRunExecutables;
+- (void)dealloc;
 - (id)init;
 
 @end

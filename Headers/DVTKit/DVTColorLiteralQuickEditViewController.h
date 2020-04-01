@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <DVTKit/DVTPopoverContentViewController.h>
+#import "DVTPopoverContentViewController.h"
 
 #import <DVTKit/DVTColorLiteralQuickEditCollectionViewDelegate-Protocol.h>
 #import <DVTKit/DVTObjectLiteralQuickEditor-Protocol.h>
@@ -33,7 +33,7 @@
 @property(readonly, nonatomic) NSArray *recentlyUsedColors; // @synthesize recentlyUsedColors=_recentlyUsedColors;
 @property(copy, nonatomic) NSColor *selectedColor; // @synthesize selectedColor=_selectedColor;
 @property(nonatomic) id <DVTColorLiteralQuickEditViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-@property(nonatomic) __weak NSPopover *presentingPopover; // @synthesize presentingPopover;
+@property(retain) NSPopover *presentingPopover; // @synthesize presentingPopover;
 - (void).cxx_destruct;
 - (void)colorCollectionView:(id)arg1 didSelectionMoreColorOptionsOnIndexPath:(id)arg2;
 - (void)colorCollectionView:(id)arg1 didKeyboardSelectItemAtIndexPath:(id)arg2;

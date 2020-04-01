@@ -4,9 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Foundation/NSObject.h>
+#import <objc/NSObject.h>
 
-@class NSArray, NSString, PBXGlobalID;
+@class NSArray, NSString, PBXObjectID;
+@protocol DVTMacroExpansion;
 
 @interface XCTargetHeadermapCreationInfo : NSObject
 {
@@ -14,11 +15,14 @@
     NSString *_effectiveConfigName;
     BOOL _ignoresProductType;
     BOOL _includesNonPublicNonPrivateHeaders;
-    PBXGlobalID *_targetGlobalID;
-    NSString *_productName;
-    NSArray *_headerPaths;
+    PBXObjectID *_targetGlobalID;
+    NSString *_targetName;
+    NSString<DVTMacroExpansion> *_productName;
+    NSArray<DVTMacroExpansion> *_headerPaths;
 }
 
+- (void).cxx_destruct;
+- (id)description;
 - (id)headerPaths;
 - (id)productName;
 - (id)targetGlobalID;
@@ -26,7 +30,6 @@
 - (BOOL)ignoresProductType;
 - (id)effectiveConfigurationName;
 - (id)requestedConfigurationName;
-- (void)dealloc;
 - (id)initForTarget:(id)arg1 configurationName:(id)arg2 ignoreProductType:(BOOL)arg3 includeNonPublicNonPrivateHeaders:(BOOL)arg4;
 
 @end

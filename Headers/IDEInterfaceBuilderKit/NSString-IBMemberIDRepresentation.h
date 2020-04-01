@@ -6,7 +6,20 @@
 
 #import <Foundation/NSString.h>
 
-@interface NSString (IBMemberIDRepresentation)
+#import <IDEInterfaceBuilderKit/IBDocumentArchiving-Protocol.h>
+
+@interface NSString (IBMemberIDRepresentation) <IBDocumentArchiving>
++ (id)instantiateWithDocumentUnarchiver:(id)arg1;
 - (id)ibMemberIDRepresentation;
+- (Class)classForDocumentArchiver:(id)arg1;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
+- (id)ibCoerceToDescriptivePListWithStrictness:(long long)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @end
 

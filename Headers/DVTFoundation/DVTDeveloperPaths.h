@@ -26,6 +26,7 @@
 - (id)embeddedApplicationsDirectory;
 - (id)xcodeApplicationFilePath;
 - (id)sharedFrameworksDirectory;
+- (id)developerAppleInternalApplicationsDirectory;
 - (id)developerAppleInternalXcodeDirectory;
 - (id)developerApplicationsDirectory;
 - (id)userDataDirectoryForCurrentApplication;
@@ -44,6 +45,7 @@
 - (id)developerPrivateFrameworksDirectoryPlatform:(id)arg1;
 - (id)developerFrameworksDirectoryPlatform:(id)arg1;
 - (id)developerLibraryDirectoryPlatform:(id)arg1;
+- (id)developerDirectoryForPlatform:(id)arg1;
 - (id)developerDirectory;
 - (id)searchPathForDirectory:(unsigned long long)arg1 inDomains:(unsigned long long)arg2 forPlatforms:(id)arg3 withNonPlatformPaths:(BOOL)arg4 appendingPathComponents:(id)arg5;
 - (id)_pathForDirectory:(unsigned long long)arg1 inDomain:(unsigned long long)arg2 forPlatform:(id)arg3;

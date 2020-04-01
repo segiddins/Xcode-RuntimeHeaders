@@ -15,6 +15,7 @@
     struct _NSRange _contentRange;
 }
 
++ (BOOL)isThreadSection:(id)arg1 outThreadNumber:(long long *)arg2 outAuxiliaryString:(id *)arg3;
 + (id)sectionsFromData:(id)arg1 error:(id *)arg2;
 @property(readonly) NSData *rawData; // @synthesize rawData=_rawData;
 - (void).cxx_destruct;

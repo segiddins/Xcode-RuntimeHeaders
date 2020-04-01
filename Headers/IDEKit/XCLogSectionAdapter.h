@@ -23,6 +23,7 @@
 - (unsigned long long)warningsForDataNode:(id)arg1;
 - (unsigned long long)testFailuresForDataNode:(id)arg1;
 - (unsigned long long)errorsForDataNode:(id)arg1;
+- (id)badgeImageForDataNode:(id)arg1;
 - (id)imageForDataNode:(id)arg1;
 - (id)titleForDataNode:(id)arg1;
 

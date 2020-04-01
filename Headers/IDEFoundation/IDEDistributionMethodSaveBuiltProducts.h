@@ -11,10 +11,10 @@
 }
 
 - (id)exportStepName;
-- (BOOL)wantsProvisioningProfiles;
+- (long long)wantsProvisioningProfiles;
 - (id)installerCertificateKind;
 - (id)certificateKind;
-- (id)orderedDistributionStepClassNames;
+- (id)orderedDistributionStepClassNamesForDestination:(long long)arg1;
 - (id)subtitle;
 - (id)shortTitle;
 - (id)title;

@@ -17,20 +17,31 @@ __attribute__((visibility("hidden")))
     unsigned long long _drawCallIndex;
     id <DYPEnumUtils> _enumUtils;
     id <DYPFenumUtils> _fenumUtils;
+    int _subCommandIndex;
+    shared_ptr_2d3f6817 _parentFunction;
 }
 
+- (id).cxx_construct;
 - (void).cxx_destruct;
 - (BOOL)showAsAPIItem;
-- (id)createRenderJobsForDisplaySet:(BOOL)arg1;
+- (id)createRenderJobsForDisplaySetWithRenderTargetArrayIndex:(unsigned long long)arg1;
 - (id)imageToExportToFile;
-- (void)_connectWireframeImageToDisplaySet:(id)arg1;
+- (void)_connectSolidTextureToDisplaySet:(id)arg1;
+- (void)_connectOutlineTextureToDisplaySet:(id)arg1;
+- (void)_connectWireframeTextureToDisplaySet:(id)arg1;
 - (void)_connectElementResourceToDisplaySet:(unsigned long long)arg1 resourceObject:(id)arg2;
-- (id)_startLoadingWireframeImage;
+- (id)_startLoadingSolidTexture;
+- (id)_startLoadingOutlineTexture;
+- (id)_startLoadingWireframeTexture;
 - (id)_startLoadingDisplaySetElement:(unsigned long long)arg1;
 - (void)_displaySetLoadIsComplete:(id)arg1;
 - (id)_startLoadingDisplaySet;
-- (void)setDecodedFunctionPointer:(shared_ptr_e8134367)arg1;
+- (void)setDecodedFunctionPointer:(shared_ptr_2d3f6817)arg1;
+- (id)generateFenumInfo;
 - (id)generateLabel;
+- (struct Function *)parentFunction;
+- (int)subCommandIndex;
+- (id)initWithController:(id)arg1 parent:(id)arg2 deviceID:(unsigned long long)arg3 functionIndex:(int)arg4 displayIndex:(int)arg5 commandBufferIndex:(unsigned long long)arg6 commandEncoderIndex:(unsigned long long)arg7 drawCallIndex:(unsigned long long)arg8 subCommandIndex:(int)arg9 parentFunction:(const shared_ptr_2d3f6817 *)arg10;
 - (id)initWithController:(id)arg1 parent:(id)arg2 deviceID:(unsigned long long)arg3 functionIndex:(int)arg4 displayIndex:(int)arg5 commandBufferIndex:(unsigned long long)arg6 commandEncoderIndex:(unsigned long long)arg7 drawCallIndex:(unsigned long long)arg8;
 
 @end

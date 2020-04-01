@@ -9,7 +9,7 @@
 #import <Xcode3UI/DVTTableViewDelegate-Protocol.h>
 #import <Xcode3UI/NSTableViewDataSource-Protocol.h>
 
-@class IDEAppIDItemIdentifiersTableViewController, NSButton, NSMatrix, NSMutableArray, NSString, NSView, Xcode3iCloudItemModel;
+@class IDEAppIDItemIdentifiersTableViewController, NSButton, NSMutableArray, NSString, NSView, Xcode3iCloudItemModel;
 
 @interface Xcode3iCloudItemViewController : IDEProjectItemViewController <DVTTableViewDelegate, NSTableViewDataSource>
 {
@@ -17,16 +17,11 @@
     NSView *_servicesSlice;
     NSButton *_cloudKitServiceCheckBox;
     NSView *_cloudDocsSlice;
-    NSView *_defaultOrCustomContainerIdentifiersSlice;
-    NSMatrix *_defaultOrCustomContainerIdentifiersRadioGroup;
-    long long _containerIDsTypeTag;
     NSView *_identifiersSlice;
     IDEAppIDItemIdentifiersTableViewController *_identifiersTableViewController;
     NSButton *_iCloudDashboardButton;
 }
 
-+ (id)keyPathsForValuesAffectingUsingCustomContainers;
-+ (id)keyPathsForValuesAffectingContainerIdentifiersRadioGroupEnabled;
 + (id)keyPathsForValuesAffectingCloudKitEnabled;
 + (id)keyPathsForValuesAffectingCloudDocumentsEnabled;
 + (id)keyPathsForValuesAffectingKeyValueStoreEnabled;
@@ -34,17 +29,11 @@
 @property(retain) NSButton *iCloudDashboardButton; // @synthesize iCloudDashboardButton=_iCloudDashboardButton;
 @property(retain) IDEAppIDItemIdentifiersTableViewController *identifiersTableViewController; // @synthesize identifiersTableViewController=_identifiersTableViewController;
 @property(retain) NSView *identifiersSlice; // @synthesize identifiersSlice=_identifiersSlice;
-@property(nonatomic) long long containerIDsTypeTag; // @synthesize containerIDsTypeTag=_containerIDsTypeTag;
-@property(retain) NSMatrix *defaultOrCustomContainerIdentifiersRadioGroup; // @synthesize defaultOrCustomContainerIdentifiersRadioGroup=_defaultOrCustomContainerIdentifiersRadioGroup;
-@property(retain) NSView *defaultOrCustomContainerIdentifiersSlice; // @synthesize defaultOrCustomContainerIdentifiersSlice=_defaultOrCustomContainerIdentifiersSlice;
 @property(retain) NSView *cloudDocsSlice; // @synthesize cloudDocsSlice=_cloudDocsSlice;
 @property(retain) NSButton *cloudKitServiceCheckBox; // @synthesize cloudKitServiceCheckBox=_cloudKitServiceCheckBox;
 @property(retain) NSView *servicesSlice; // @synthesize servicesSlice=_servicesSlice;
 - (void).cxx_destruct;
 - (void)iCloudDashboardAction:(id)arg1;
-@property(readonly, nonatomic, getter=isUsingCustomContainers) BOOL usingCustomContainers;
-- (long long)initialValueForDefaultOrCustomContainersRadioGroupSelectedTag;
-- (BOOL)isContainerIdentifiersRadioGroupEnabled;
 - (void)setCloudKitEnabled:(BOOL)arg1;
 - (BOOL)isCloudKitEnabled;
 - (void)setCloudDocumentsEnabled:(BOOL)arg1;

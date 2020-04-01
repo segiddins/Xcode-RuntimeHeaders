@@ -16,6 +16,8 @@
 @property(copy) NSString *typeName; // @synthesize typeName=_typeName;
 - (void).cxx_destruct;
 - (void)dvt_encodeAttributesWithXMLArchiver:(id)arg1 version:(id)arg2;
+- (id)accessibilityDescription;
+- (BOOL)shouldBeModifiedAfterCreation;
 - (id)displayName;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 

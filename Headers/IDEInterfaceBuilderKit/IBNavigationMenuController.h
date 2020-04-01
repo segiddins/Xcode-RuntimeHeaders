@@ -9,16 +9,19 @@
 #import <IDEInterfaceBuilderKit/DVTInvalidation-Protocol.h>
 #import <IDEInterfaceBuilderKit/NSMenuDelegate-Protocol.h>
 
-@class DVTStackBacktrace, IBAbstractDocumentEditor, NSString;
+@class DVTStackBacktrace, IBAbstractDocumentEditor, IBCancellationToken, NSString;
 
 @interface IBNavigationMenuController : NSObject <NSMenuDelegate, DVTInvalidation>
 {
-    IBAbstractDocumentEditor *documentEditor;
+    IBAbstractDocumentEditor *_documentEditor;
+    IBCancellationToken *_rolloverToken;
 }
 
 + (void)initialize;
 - (void).cxx_destruct;
 - (void)navigationMenuItemWasClicked:(id)arg1;
+- (void)menuDidClose:(id)arg1;
+- (void)menu:(id)arg1 willHighlightItem:(id)arg2;
 - (id)menuForObjects:(id)arg1;
 - (id)menuItemForObject:(id)arg1;
 - (id)menuItemAttributedTitleForObject:(id)arg1 highlighted:(BOOL)arg2;

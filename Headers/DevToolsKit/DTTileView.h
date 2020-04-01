@@ -8,7 +8,7 @@
 
 #import <DevToolsKit/NSAnimationDelegate-Protocol.h>
 
-@class DTFirstResponderDrawingStrategy, DTTileViewItem, DTTypeCompletionHandler, NSArray, NSIndexSet, NSMutableArray, NSMutableSet, NSString, NSViewAnimation;
+@class DTFirstResponderDrawingStrategy, DTTypeCompletionHandler, NSArray, NSIndexSet, NSMutableArray, NSMutableSet, NSString, NSViewAnimation;
 
 @interface DTTileView : NSView <NSAnimationDelegate>
 {
@@ -22,7 +22,6 @@
     id _clickedContentObject;
     NSArray *_content;
     NSIndexSet *selectionIndexes;
-    DTTileViewItem *_layoutItemPrototype;
     struct CGSize _minGridSize;
     struct CGSize _maxGridSize;
     unsigned long long _minGridRows;
@@ -128,11 +127,8 @@
 - (void)computeTargetGridGeometry;
 - (BOOL)_allowsResizingHorizontally;
 - (BOOL)_allowsResizingVertically;
-- (void)_determineGridParametersFromItemPrototype;
 - (void)_scrollSelectionToVisible;
 - (void)_scrollToVisibleItemAtIndex:(unsigned long long)arg1;
-- (id)layoutItemPrototype;
-- (void)setLayoutItemPrototype:(id)arg1;
 - (id)newLayoutItemForRepresentedObject:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
@@ -183,8 +179,6 @@
 - (void)_updateContainerReferenceCounterForArraysOfItems:(id)arg1 direction:(BOOL)arg2;
 - (void)_updateContainerReferenceCounterForItems:(id)arg1 direction:(BOOL)arg2;
 - (void)finalize;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (void)_init;
 

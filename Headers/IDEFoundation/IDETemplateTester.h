@@ -6,14 +6,16 @@
 
 #import <objc/NSObject.h>
 
-@class DVTFuture, DVTPlatform, DVTPromise, IDEProvisioningTeamManager, NSMutableDictionary, NSString;
+@class DVTFuture, DVTPlatform, DVTPromise, IDEProvisioningTeamManager, NSArray, NSDictionary, NSMutableDictionary, NSString;
 @protocol IDEProvisioningBasicTeam;
 
 @interface IDETemplateTester : NSObject
 {
-    BOOL _permuteTestOptions;
+    BOOL _crossPlatformOnly;
     NSString *_outputPath;
     DVTPlatform *_platform;
+    NSArray *_requiredOptions;
+    NSDictionary *_nonPermutedOptionValues;
     NSMutableDictionary *_usedTemplateNamesByPlatform;
     unsigned long long _testProjectCounter;
     IDEProvisioningTeamManager *_teamManager;
@@ -22,19 +24,28 @@
     id <IDEProvisioningBasicTeam> _team;
 }
 
++ (id)platformForString:(id)arg1;
 @property(retain) id <IDEProvisioningBasicTeam> team; // @synthesize team=_team;
 @property(retain) DVTPromise *teamsLoadingPromise; // @synthesize teamsLoadingPromise=_teamsLoadingPromise;
 @property(retain) DVTFuture *teamsLoadingFuture; // @synthesize teamsLoadingFuture=_teamsLoadingFuture;
 @property(retain) IDEProvisioningTeamManager *teamManager; // @synthesize teamManager=_teamManager;
 @property unsigned long long testProjectCounter; // @synthesize testProjectCounter=_testProjectCounter;
 @property(retain) NSMutableDictionary *usedTemplateNamesByPlatform; // @synthesize usedTemplateNamesByPlatform=_usedTemplateNamesByPlatform;
-@property BOOL permuteTestOptions; // @synthesize permuteTestOptions=_permuteTestOptions;
+@property(copy) NSDictionary *nonPermutedOptionValues; // @synthesize nonPermutedOptionValues=_nonPermutedOptionValues;
+@property(copy) NSArray *requiredOptions; // @synthesize requiredOptions=_requiredOptions;
+@property BOOL crossPlatformOnly; // @synthesize crossPlatformOnly=_crossPlatformOnly;
 @property(retain) DVTPlatform *platform; // @synthesize platform=_platform;
 @property(copy) NSString *outputPath; // @synthesize outputPath=_outputPath;
 - (void).cxx_destruct;
+- (id)_templateNamed:(id)arg1 forPlatform:(id)arg2;
 - (void)runTemplateTests;
+- (BOOL)runCreateNewProjectWithTemplateNamed:(id)arg1 platform:(id)arg2 options:(id)arg3 error:(id *)arg4;
+- (void)runCreateNewProjectWithTemplateNamed:(id)arg1 platform:(id)arg2 options:(id)arg3;
 - (void)doProjectTemplate:(id)arg1;
-- (void)permuteOptions:(id)arg1 inProjectTemplate:(id)arg2 withPlatformName:(id)arg3 withFolderName:(id)arg4;
+- (id)platformFolderName;
+- (id)platformFolderNameForPlatform:(id)arg1;
+- (void)instantiateProjectsForIterableOptions:(id)arg1 unboundOptions:(id)arg2 inProjectTemplate:(id)arg3 withPlatformName:(id)arg4 withFolderName:(id)arg5 indentationPrefix:(id)arg6;
+- (void)createSingleProjectFromTemplate:(id)arg1 withOptionValues:(id)arg2 atPath:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (id)uniqueTemplateNameForName:(id)arg1 platformName:(id)arg2;
 - (id)init;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;

@@ -6,41 +6,24 @@
 
 #import <objc/NSObject.h>
 
-#import <DVTInstrumentsUtilities/XRFrameCommutator-Protocol.h>
-
-@class NSString, NSThread, XRFrameRing;
-
-@interface XRFrameCommutator : NSObject <XRFrameCommutator>
+@interface XRFrameCommutator : NSObject
 {
-    unsigned char _state;
-    XRFrameRing *_ring;
-    NSThread *_thread;
-    struct _opaque_pthread_cond_t {
-        long long __sig;
-        char __opaque[40];
-    } _cond;
-    struct _opaque_pthread_mutex_t {
-        long long __sig;
-        char __opaque[56];
-    } _mutex;
+    struct unique_ptr<xray::scheduler::Commutator, std::__1::default_delete<xray::scheduler::Commutator>> _commutatorImpl;
 }
 
++ (id)sharedCommutator;
+- (id).cxx_construct;
 - (void).cxx_destruct;
-- (void)_thread:(id)arg1;
-- (void)wakeUp;
-- (void)_transitionToStopped;
+- (void)setPeriod:(unsigned long long)arg1;
+- (void)observedTopOfMajorFrame;
 - (void)stop;
 - (void)start;
-- (void)setRing:(id)arg1;
-@property(nonatomic) long long qualityOfServiceClass;
+- (id)newRing;
+- (void)removeRing:(id)arg1;
+- (void)addRing:(id)arg1;
 - (void)dealloc;
 - (id)init;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
+- (id)initWithMinorFrameCount:(unsigned char)arg1;
 
 @end
 

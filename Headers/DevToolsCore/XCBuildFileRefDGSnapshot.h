@@ -4,50 +4,60 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Foundation/NSObject.h>
+#import <objc/NSObject.h>
 
-@class NSDictionary, NSString, PBXFileType, PBXGlobalID, XCBuildInfo, XCBuildPhaseDGSnapshot;
+@class NSArray, NSDictionary, NSSet, NSString, PBXFileType, PBXObjectID, XCBuildInfo;
+@protocol DVTMacroExpansion;
 
 @interface XCBuildFileRefDGSnapshot : NSObject
 {
-    XCBuildPhaseDGSnapshot *_buildPhaseSnapshot;
-    PBXGlobalID *_referenceGlobalID;
+    PBXObjectID *_referenceGlobalID;
+    PBXObjectID *_groupGlobalID;
     NSString *_path;
     PBXFileType *_fileType;
     NSDictionary *_fileProperties;
-    NSDictionary *_buildSettings;
     XCBuildInfo *_buildInfo;
     NSString *_buildFilePrimaryAttrString;
+    NSArray<DVTMacroExpansion> *_addlCompilerArgs;
     BOOL _isInVariantGroup;
     BOOL _linkUsingSearchPath;
     NSString *_regionVariantName;
-    NSString *_sourceTree;
+    NSSet *_attributes;
+    NSSet *_assetTags;
+    NSSet *_internalAssetTagSets;
+    NSSet *_platformFilters;
+    NSString *_fileTextEncodingName;
 }
 
-- (BOOL)linkUsingSearchPath;
+@property(readonly) NSString *fileTextEncodingName; // @synthesize fileTextEncodingName=_fileTextEncodingName;
+- (void).cxx_destruct;
+- (id)platformFilters;
 - (id)description;
+- (BOOL)linkUsingSearchPath;
+- (id)additionalCompilerArguments;
+- (id)internalAssetTagSets;
+- (id)assetTags;
+- (BOOL)hasAssetTags;
+- (id)attributes;
 - (BOOL)boolValueOfAttributeNamed:(id)arg1;
-- (BOOL)hasValue:(id)arg1 inPropertiesArrayForKey:(id)arg2;
-- (id)propertiesArrayForKey:(id)arg1;
-- (id)valueForPropertyKey:(id)arg1;
-- (id)pathForWrapperPart:(int)arg1;
-- (id)subpathForWrapperPart:(int)arg1;
-- (id)sourceTree;
+- (id)pathForWrapperPart:(long long)arg1;
+- (id)subpathForWrapperPart:(long long)arg1;
 - (id)regionVariantName;
+- (BOOL)isLocalizable;
 - (BOOL)isInVariantGroup;
-- (id)buildSettings;
 - (id)fileProperties;
 - (id)fileType;
 - (id)path;
+- (id)groupGlobalID;
 - (id)referenceGlobalID;
 - (id)stringValueForPrimaryAttribute;
 - (id)buildInfo;
-- (id)buildPhaseSnapshot;
 - (void)printForDebugging;
-- (void)dealloc;
 - (id)init;
-- (id)initWithPath:(id)arg1 fileType:(id)arg2 buildSettings:(id)arg3 forBuildPhaseSnapshot:(id)arg4;
-- (id)initWithInformationFromBuildFile:(id)arg1 fileReference:(id)arg2 forBuildPhaseSnapshot:(id)arg3;
+- (id)initWithPath:(id)arg1 fileType:(id)arg2 regionVariantName:(id)arg3;
+- (id)initWithDependencyNode:(id)arg1 fileType:(id)arg2 buildSettings:(id)arg3;
+- (id)initWithInformationFromBuildFile:(id)arg1 fileReference:(id)arg2 groupReference:(id)arg3 forTargetSnapshot:(id)arg4 withResolver:(id)arg5;
+- (void)enumerateUsingBlock:(CDUnknownBlockType)arg1 macroExpansionScope:(id)arg2;
 
 @end
 

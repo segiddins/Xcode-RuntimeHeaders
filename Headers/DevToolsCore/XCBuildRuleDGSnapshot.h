@@ -4,41 +4,49 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Foundation/NSObject.h>
+#import <objc/NSObject.h>
 
-@class NSArray, NSString, PBXFileType, XCCompilerSpecification;
+@class NSArray, NSString, PBXFileType;
+@protocol DVTMacroExpansion;
 
 @interface XCBuildRuleDGSnapshot : NSObject
 {
     NSString *_name;
     PBXFileType *_fileType;
-    NSString *_filePatterns;
-    XCCompilerSpecification *_compilerSpec;
+    NSString<DVTMacroExpansion> *_filePatterns;
+    NSString *_compilerSpecIdent;
     NSString *_script;
-    NSArray *_outputFilePaths;
+    NSArray<DVTMacroExpansion> *_outputFilePaths;
+    NSArray *_outputFilesCompilerFlags;
+    BOOL _hasInputs;
+    BOOL _hasDependencyFile;
+    BOOL _runOncePerArchitecture;
 }
 
 + (id)compilerSpecIsScriptProxy;
 + (id)fileTypeIsPatternProxy;
++ (id)systemBuildRulesForPlatform:(id)arg1;
++ (id)systemBuildRulesForToolchains:(id)arg1 platform:(id)arg2;
 + (void)initialize;
+- (void).cxx_destruct;
 - (id)outputFiles;
 - (id)script;
-- (id)compilerSpecForIdentifier:(id)arg1;
-- (id)fileTypeForIdentifier:(id)arg1;
-- (id)compilerSpec;
+- (id)compilerSpecificationIdentifier;
 - (id)filePatterns;
 - (id)fileType;
 - (id)name;
 - (void)printForDebugging;
-- (void)dealloc;
 - (id)init;
-- (id)initWithInformationFromBuildRule:(id)arg1 platform:(id)arg2;
+- (id)initWithInformationFromBuildRule:(id)arg1;
 - (id)description;
-- (id)computeDependenciesForBuildFileReference:(id)arg1 inTargetBuildContext:(id)arg2;
-- (id)computeDependenciesForFilePath:(id)arg1 ofType:(id)arg2 forBuildFileReference:(id)arg3 withOutputDirectory:(id)arg4 inTargetBuildContext:(id)arg5;
-- (id)computeDependenciesForFilePath:(id)arg1 ofType:(id)arg2 forBuildFileReference:(id)arg3 withOutputDirectory:(id)arg4 additionalProperties:(id)arg5 inTargetBuildContext:(id)arg6;
-- (BOOL)appliesToReference:(id)arg1 architecture:(id)arg2;
-- (BOOL)_appliesToFileType:(id)arg1 architecture:(id)arg2;
+- (id)compilerSpecificationWithMacroExpansionScope:(id)arg1;
+- (id)computeDependenciesForBuildFileReference:(id)arg1 withMacroExpansionScope:(id)arg2;
+- (id)computeDependenciesForBuildFileReference:(id)arg1 withOutputDirectory:(id)arg2 parameterMacros:(id)arg3 withMacroExpansionScope:(id)arg4;
+- (id)computeDependenciesForFilePath:(id)arg1 ofType:(id)arg2 forBuildFileReference:(id)arg3 withOutputDirectory:(id)arg4 withMacroExpansionScope:(id)arg5;
+- (id)computeDependenciesForFilePath:(id)arg1 ofType:(id)arg2 forBuildFileReference:(id)arg3 withOutputDirectory:(id)arg4 parameterMacros:(id)arg5 withMacroExpansionScope:(id)arg6;
+- (BOOL)appliesToReference:(id)arg1 architecture:(id)arg2 allArchitectures:(id)arg3 withMacroExpansionScope:(id)arg4;
+- (BOOL)appliesToReference:(id)arg1 architecture:(id)arg2 withMacroExpansionScope:(id)arg3;
+- (BOOL)_appliesToFileType:(id)arg1 architecture:(id)arg2 allArchitectures:(id)arg3 withMacroExpansionScope:(id)arg4;
 - (BOOL)_filePath:(const char *)arg1 matchesPatternInPatternString:(id)arg2;
 
 @end

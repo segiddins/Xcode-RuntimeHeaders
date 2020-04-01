@@ -29,6 +29,7 @@
 - (id)createSourceListSections;
 - (void)setupSourceListSections;
 - (void)setupSourceListAndCells;
+- (void)setupContextualMenu;
 - (id)mappingModel;
 - (id)parentEditor;
 - (id)identifier;

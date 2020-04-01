@@ -7,6 +7,8 @@
 #import <Foundation/NSError.h>
 
 @interface NSError (IDEDistributionErrorAdditions)
++ (id)ide_distributionAccountErrorWithInjectedRecoveryOptions:(id)arg1;
++ (void)showAccountsPreferences;
 - (id)attributedStringWithFailureReasonAndDescription;
 - (id)attributedStringWithDescriptionAndRecoverySuggestion;
 - (id)attributedStringForDisplayUsingTitle:(id)arg1 subtitle:(id)arg2;

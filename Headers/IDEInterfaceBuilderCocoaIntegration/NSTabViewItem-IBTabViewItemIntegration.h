@@ -6,7 +6,12 @@
 
 #import <AppKit/NSTabViewItem.h>
 
-@interface NSTabViewItem (IBTabViewItemIntegration)
+#import <IDEInterfaceBuilderCocoaIntegration/IBDocumentArchiving-Protocol.h>
+
+@class NSString;
+
+@interface NSTabViewItem (IBTabViewItemIntegration) <IBDocumentArchiving>
++ (id)instantiateWithDocumentUnarchiver:(id)arg1;
 @property(readonly) BOOL ibShouldEncodeImage;
 - (id)ibSuperviewOfView:(id)arg1 inDocument:(id)arg2;
 - (void)ibWillArbitrateChild:(id)arg1 inArbitrationUnit:(id)arg2;
@@ -30,8 +35,15 @@
 - (BOOL)ibCanRemoveChildren:(id)arg1;
 - (void)ibPopulateChildRelationOrder:(id)arg1;
 - (id)ibLocalChildToOneRelationshipsKeyPaths;
-- (id)ibLocalToOneRelationshipsKeyPaths;
-- (id)ibToOneRelationshipKeyPaths;
+- (id)ibLocalLocalizableStringsAttributeKeyPaths;
 - (id)ibLocalAttributeKeyPaths;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @end
 

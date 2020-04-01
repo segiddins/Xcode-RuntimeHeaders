@@ -24,6 +24,7 @@
 - (BOOL)validateMenuItem:(id)arg1;
 - (void)comparisonContextMenu_revertDiffDescriptor:(id)arg1;
 - (void)comparisonContextMenu_revertSelectedDiffDescriptor:(id)arg1;
+- (void)comparisonMenu_revertSelectedDiffDescriptor:(id)arg1;
 - (BOOL)canRevertMenuItemDifference:(id)arg1;
 - (BOOL)canRevertSelectedDifference;
 - (void)copyDiff;
@@ -43,7 +44,7 @@
 @property(readonly) IDEEditor *secondaryEditor;
 @property(readonly) IDEEditor *primaryEditor;
 @property(readonly) IDEEditor *keyEditor;
-@property(readonly) IDEComparisonEditor *comparisonEditor;
+@property(readonly) __weak IDEComparisonEditor *comparisonEditor;
 @property(readonly) DVTDiffSession *diffSession;
 
 @end

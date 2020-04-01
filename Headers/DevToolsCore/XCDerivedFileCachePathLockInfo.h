@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Foundation/NSObject.h>
+#import <objc/NSObject.h>
 
 @class NSMutableSet, NSNumber, NSString;
 
@@ -17,12 +17,12 @@
     NSMutableSet *_clientIdsWhichUnlockedForWriting;
 }
 
+- (void).cxx_destruct;
 - (BOOL)wasUnlockedForWritingByClientId:(id)arg1;
 - (unsigned long long)lockCount;
 - (int)lockType;
 - (void)unlockByClientId:(id)arg1;
 - (BOOL)lockForType:(int)arg1 byClientId:(id)arg2;
-- (void)dealloc;
 - (id)initWithPath:(id)arg1;
 
 @end

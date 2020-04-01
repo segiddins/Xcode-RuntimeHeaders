@@ -7,8 +7,8 @@
 @class NSString, XCSTrigger;
 
 @protocol XCSUICreateBotTriggerChildViewController
-@property(retain) XCSTrigger *trigger;
 - (void)saveTrigger;
 - (NSString *)titleForDisplay;
+@property(nonatomic, retain) XCSTrigger *trigger;
 @end
 

@@ -5,6 +5,6 @@
 //
 
 @protocol IDEInitialization
-+ (BOOL)ide_initializeWithOptions:(int)arg1 error:(id *)arg2;
++ (BOOL)ide_initializeWithOptions:(unsigned long long)arg1 error:(id *)arg2;
 @end
 

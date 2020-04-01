@@ -6,13 +6,16 @@
 
 #import <AppKit/NSView.h>
 
-@class GTFGraph, NSArray, NSDictionary, NSMutableArray, NSMutableDictionary;
+@class GTFGraph, NSArray, NSDictionary, NSLayoutConstraint, NSMutableArray, NSMutableDictionary;
 
 @interface SKGKStateMachineQuickLookView : NSView
 {
     NSMutableDictionary *_stateViews;
     NSMutableArray *_transitionViews;
     GTFGraph *_graph;
+    NSLayoutConstraint *_widthConstraint;
+    NSLayoutConstraint *_heightConstraint;
+    struct CGPoint viewOffset;
     NSDictionary *_machineInfo;
 }
 
@@ -20,7 +23,6 @@
 @property(readonly, nonatomic) NSArray *transitionViews; // @synthesize transitionViews=_transitionViews;
 - (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
-- (struct CGSize)intrinsicContentSize;
 - (void)_generateStateAndTransitionViews;
 @property(readonly, nonatomic) NSArray *stateViews;
 - (void)setupMyGraph;

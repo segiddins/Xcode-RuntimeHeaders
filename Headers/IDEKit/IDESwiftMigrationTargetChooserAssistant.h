@@ -6,20 +6,20 @@
 
 #import <IDEKit/IDEAssistant.h>
 
-#import <IDEKit/IDEFilterControlBarTarget-Protocol.h>
+#import <IDEKit/DVTFilterControlBarTarget-Protocol.h>
 #import <IDEKit/NSOutlineViewDataSource-Protocol.h>
 #import <IDEKit/NSOutlineViewDelegate-Protocol.h>
 
-@class DVTBorderedView, DVTOutlineViewWithCustomGridDrawing, IDEFilterControlBar, NSArray, NSImageView, NSMutableIndexSet, NSString, NSTextField, NSTreeController;
+@class DVTBorderedView, DVTOutlineViewWithCustomGridDrawing, IDESearchFilterControlBar, NSArray, NSImageView, NSMenu, NSMutableIndexSet, NSString, NSTextField, NSTreeController, NSView;
 
-@interface IDESwiftMigrationTargetChooserAssistant : IDEAssistant <NSOutlineViewDataSource, NSOutlineViewDelegate, IDEFilterControlBarTarget>
+@interface IDESwiftMigrationTargetChooserAssistant : IDEAssistant <NSOutlineViewDataSource, NSOutlineViewDelegate, DVTFilterControlBarTarget>
 {
     NSArray *_targetItems;
     NSString *_searchString;
     NSString *_assistantTitle;
     NSMutableIndexSet *_expandedRowIndexes;
     NSArray *_selectedTargetChooserItems;
-    IDEFilterControlBar *_filterControlBar;
+    IDESearchFilterControlBar *_filterControlBar;
     DVTBorderedView *_scopeBarBorderedView;
     DVTOutlineViewWithCustomGridDrawing *_outlineView;
     DVTBorderedView *_borderedView;
@@ -37,6 +37,7 @@
 - (void).cxx_destruct;
 - (void)loadUIState;
 - (id)stateRepositoryFilePath;
+- (void)_toggleCheckboxButton:(id)arg1;
 - (double)outlineView:(id)arg1 heightOfRowByItem:(id)arg2;
 - (void)outlineView:(id)arg1 willDisplayCell:(id)arg2 forTableColumn:(id)arg3 item:(id)arg4;
 - (void)outlineView:(id)arg1 setObjectValue:(id)arg2 forTableColumn:(id)arg3 byItem:(id)arg4;
@@ -50,11 +51,14 @@
 - (unsigned long long)_numberOfCheckedItemsAtIndexes:(id)arg1;
 - (void)_setChecked:(BOOL)arg1 forTargetChooserItemAtIndexes:(id)arg2;
 - (id)_effectiveSelectedRowIndexes;
-- (id)filterButtonMenu;
-- (id)filterDefinitionIdentifier;
+@property(readonly, nonatomic) NSString *filterButtonAccessibilityDescription;
+@property(readonly, nonatomic) NSString *filterButtonToolTip;
+@property(readonly, nonatomic) NSMenu *filterButtonMenu;
+@property(readonly, nonatomic) NSString *filterDefinitionIdentifier;
 - (void)_restoreSelectedTargetChooserItemsAndExpandedRows;
 - (void)_saveSelectedTargetChooserItemsAndExpandedRows;
 @property(readonly, copy) NSArray *arrangedTargetItems;
+- (void)willGoNextOrFinish;
 - (void)viewWillUninstall;
 - (void)viewDidInstall;
 - (void)loadView;
@@ -69,6 +73,7 @@
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
+@property(readonly, nonatomic) NSView *view;
 
 @end
 

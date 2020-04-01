@@ -7,6 +7,7 @@
 #import <Foundation/NSData.h>
 
 @interface NSData (SimpleCrypto)
+- (id)_dnt_SHA512;
 - (id)_dnt_SHA1;
 @end
 

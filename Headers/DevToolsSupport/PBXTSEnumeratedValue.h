@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Foundation/NSObject.h>
+#import <objc/NSObject.h>
 
 @class NSString;
 
@@ -19,6 +19,7 @@
 + (void)initializeEnumeration:(id)arg1;
 + (id)enumeratedValueForIntValue:(int)arg1;
 + (id)enumeration;
+- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (long long)compare:(id)arg1;
@@ -29,7 +30,6 @@
 - (long long)intValue;
 - (id)enumeration;
 - (id)description;
-- (void)dealloc;
 - (id)initWithIntValue:(int)arg1 shortDescription:(id)arg2 fullDescription:(id)arg3;
 
 @end

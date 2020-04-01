@@ -6,13 +6,15 @@
 
 #import <DVTFoundation/DVTLogger.h>
 
-@class NSFileHandle, NSURL;
+@class NSFileHandle, NSObject, NSURL;
+@protocol OS_dispatch_queue;
 
 @interface DVTFileLogger : DVTLogger
 {
     unsigned long long _indentLevel;
     NSURL *_fileURL;
     NSFileHandle *_fileHandle;
+    NSObject<OS_dispatch_queue> *_queue;
 }
 
 + (void)initialize;
@@ -21,7 +23,7 @@
 - (void).cxx_destruct;
 - (void)decreaseIndentLevelForAspect:(id)arg1;
 - (void)increaseIndentLevelForAspect:(id)arg1;
-- (void)logMessage:(id)arg1 forAspect:(id)arg2 logLevel:(int)arg3;
+- (void)logMessage:(id)arg1 forAspect:(id)arg2 logLevel:(unsigned long long)arg3;
 - (id)init;
 - (id)initWithURL:(id)arg1;
 - (id)initWithURL:(id)arg1 append:(BOOL)arg2;

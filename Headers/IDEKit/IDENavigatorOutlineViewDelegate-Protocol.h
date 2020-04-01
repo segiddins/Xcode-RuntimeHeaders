@@ -11,9 +11,11 @@
 @protocol IDENavigatorOutlineViewDelegate <DVTOutlineViewDelegate>
 
 @optional
+@property(readonly) BOOL usesSystemGroupHeaderStyle;
 - (double)outlineView:(NSOutlineView *)arg1 estimatedHeightOfRowByItem:(id)arg2;
 - (struct _NSRange)outlineView:(NSOutlineView *)arg1 initialSelectionRangeForCell:(NSCell *)arg2 proposedRange:(struct _NSRange)arg3;
 - (NSArray *)outlineView:(NSOutlineView *)arg1 childItemsForItem:(id)arg2;
+- (BOOL)outlineView:(NSOutlineView *)arg1 shouldInitiallyExpandItem:(id)arg2;
 - (BOOL)outlineView:(NSOutlineView *)arg1 isGroupHeaderItem:(id)arg2;
 @end
 

@@ -4,135 +4,115 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Foundation/NSObject.h>
+#import <objc/NSObject.h>
 
-@class NSMutableArray, NSString, PBXTargetBuildContext, XCBuildInfo, XCDerivedFileCache;
+#import <DevToolsCore/DVTFileSystemRepresentationProviding-Protocol.h>
+#import <DevToolsCore/DVTMacroExpansion-Protocol.h>
 
-@interface XCDependencyNode : NSObject
+@class NSMutableArray, NSMutableSet, NSString, XCBuildInfo, XCDepGraphNodeState, XCDependencyGraph;
+
+@interface XCDependencyNode : NSObject <DVTMacroExpansion, DVTFileSystemRepresentationProviding>
 {
-    unsigned long long _nodeNumber;
     NSString *_name;
     NSString *_path;
-    PBXTargetBuildContext *_buildContext;
     NSMutableArray *_producerCommands;
     NSMutableArray *_includedNodes;
-    NSMutableArray *_consumerCommands;
+    NSMutableSet *_consumerCommands;
     NSMutableArray *_includingNodes;
-    struct {
-        unsigned int alwaysOutOfDate:1;
-        unsigned int dontCareIfExists:1;
-        unsigned int dontCareAboutTimestamp:1;
-        unsigned int shouldScanForIncludes:1;
-        unsigned int beingEnqueued:1;
-        unsigned int beingReset:1;
-        unsigned int synchronizeCommands:1;
-    } _dnFlags;
-    unsigned int _traversalGenCount;
-    XCDerivedFileCache *_derivedFileCache;
     XCBuildInfo *_buildInfo;
-    int _state;
-    int _highestInclState;
-    long long _time;
-    long long _newestInclTime;
-    CDStruct_7eef4560 _signature;
-    CDStruct_7eef4560 _combinedInclSignature;
-    long long _fileSize;
-    struct {
-        long long modTime;
-    } _node2009;
+    XCDependencyGraph *_depGraph;
+    XCDependencyNode *_supernode;
+    NSMutableArray *_subnodes;
+    XCDepGraphNodeState *_currentState;
+    struct os_unfair_lock_s _subnodeLock;
+    unsigned int _nodeNumber;
+    unsigned int _alwaysOutOfDate:1;
+    unsigned int _isAuxiliaryOutput:1;
+    unsigned int _dontCareIfExists:1;
+    unsigned int _shouldBeProcessed:1;
+    unsigned int _anyDescendantHasProducerCommands:1;
+    unsigned int _isVirtual:1;
+    unsigned char _suffixLen;
+    unsigned short _pathLen;
+    unsigned short _nameLen;
+    char _nameCStr[0];
+    BOOL _performDeepScanForModificationTimes;
 }
 
-- (void)_2009_enqueueCommandsOntoWorkQueue:(id)arg1 whenceDebugDesc:(id)arg2;
-- (long long)_2009_modTime;
-- (void)writeInclusionEdgesToGraphVizFile:(struct __sFILE *)arg1;
-- (void)writeDependencyEdgesToGraphVizFile:(struct __sFILE *)arg1;
-- (void)writeDefinitionToGraphVizFile:(struct __sFILE *)arg1;
-- (id)nameForGraphViz;
-- (id)description;
++ (id)newNodeWithNumber:(unsigned int)arg1 nameCStr:(const char *)arg2 length:(unsigned long long)arg3 supernode:(id)arg4 isVirtual:(BOOL)arg5 inDependencyGraph:(id)arg6;
+@property BOOL performDeepScanForModificationTimes; // @synthesize performDeepScanForModificationTimes=_performDeepScanForModificationTimes;
+- (void).cxx_destruct;
+- (void)dvt_provideFileSystemRepresentationToBlock:(CDUnknownBlockType)arg1;
+- (_Bool)removeRecursively;
+- (_Bool)createDirectoryRecursively;
+- (BOOL)isValid;
+- (void)invalidate;
+- (id)dependencyGraph;
+- (id)dvt_debugDescription;
+- (void)dvt_assertInternalConsistency;
+- (id)dvt_evaluateAsStringListInScope:(id)arg1 withState:(const struct DVTNestedMacroExpansionState *)arg2;
+- (id)dvt_evaluateAsStringInScope:(id)arg1 withState:(const struct DVTNestedMacroExpansionState *)arg2;
+- (id)dvt_stringForm;
+- (BOOL)dvt_isLiteral;
+- (id)copyWithZone:(struct _NSZone *)arg1;
+@property(readonly, copy) NSString *description;
 - (id)shortNameForDebugging;
-- (id)signatureDescription;
-- (id)timeDescription;
-- (id)stateDescription;
-- (void)removeDiscoveredInfo;
-- (void)updateDiscoveredBuildInfo;
-- (void)untouch;
-- (void)touch;
-- (void)fileMayHaveChanged;
-- (void)removePredictiveProcessingOutputRecursivelyBecauseOfChangedNode:(id)arg1;
-- (void)resetStateRecursively;
-- (void)resetState;
-- (BOOL)isUpToDate;
-- (void)enqueueOutOfDateCommandsOntoWorkQueue:(id)arg1;
-- (void)computeStateIfNeeded;
-- (void)statFileIfNeeded;
-- (void)setCommandInputSignature:(CDStruct_7eef4560)arg1 commandConfigurationSignature:(CDStruct_7eef4560)arg2;
-- (CDStruct_7eef4560)combinedSignatureOfIncludedNodes;
-- (CDStruct_7eef4560)signature;
-- (long long)fileSize;
-- (long long)newestTimestampOfIncludedNodes;
-- (long long)timestamp;
-- (int)highestStateOfIncludedNodes;
-- (int)state;
-- (BOOL)hasBeenUpdatedByClientId:(id)arg1;
-- (void)unlockByClientId:(id)arg1;
-- (BOOL)lockForWriting:(BOOL)arg1 byClientId:(id)arg2;
-- (int)lockState;
-- (id)derivedFileCache;
-- (void)setSynchronizeCommandsOnDerivedFileCache:(id)arg1;
-- (BOOL)synchronizeCommands;
-- (void)setRecordsUpdatedFileListInEnvironment:(BOOL)arg1;
-- (BOOL)recordsUpdatedFileListInEnvironment;
-- (void)setDontCareAboutTimestamp:(BOOL)arg1;
-- (BOOL)dontCareAboutTimestamp;
+- (void)prepareForUpdatingDependencyGraph;
+- (BOOL)hasProducerCommandsConsideringDescendants:(BOOL)arg1;
+@property(nonatomic) BOOL isAuxiliaryOutput;
+@property BOOL shouldBeProcessed;
 - (void)setDontCareIfExists:(BOOL)arg1;
 - (BOOL)dontCareIfExists;
 - (void)setAlwaysOutOfDate:(BOOL)arg1;
 - (BOOL)isAlwaysOutOfDate;
 - (void)_addConsumerCommand:(id)arg1;
 - (void)_addProducerCommand:(id)arg1;
-- (void)setScansFileContentsForIncludes:(BOOL)arg1;
-- (void)removeAllIncludedNodes;
-- (void)addIncludedNode:(id)arg1;
-- (void)addDependedNode:(id)arg1;
-- (void)_removeIncludingNode:(id)arg1;
-- (void)_removeDependingNode:(id)arg1;
-- (void)_addIncludingNode:(id)arg1;
-- (void)_addDependingNode:(id)arg1;
-- (void)invalidateCombinedIncludesSignature;
-- (void)invalidateSignature;
 - (void)visitDownstreamCommandsUsingPreorderBlock:(CDUnknownBlockType)arg1 postorderBlock:(CDUnknownBlockType)arg2;
-- (void)_visitDownstreamCommandsUsingPreorderBlock:(CDUnknownBlockType)arg1 postorderBlock:(CDUnknownBlockType)arg2 recursionAvoidanceBitmap:(char *)arg3 whenceDebugDesc:(id)arg4;
 - (void)visitUpstreamCommandsUsingPreorderBlock:(CDUnknownBlockType)arg1 postorderBlock:(CDUnknownBlockType)arg2;
-- (void)_visitUpstreamCommandsUsingPreorderBlock:(CDUnknownBlockType)arg1 postorderBlock:(CDUnknownBlockType)arg2 recursionAvoidanceBitmap:(char *)arg3 whenceDebugDesc:(id)arg4;
-- (void)makeConsumerCommandsPerformSelector:(SEL)arg1 withObject:(id)arg2;
-- (void)makeConsumerCommandsPerformSelector:(SEL)arg1 withObject:(id)arg2 recursionAvoidanceBitmap:(char *)arg3;
-- (void)decrementWaitCount;
-- (void)incrementWaitCount;
 - (void)setBuildInfo:(id)arg1;
 - (id)buildInfo;
-- (void)setAutomaticFileContents:(id)arg1;
-- (id)automaticFileContents;
-- (id)command;
 - (id)producerCommand;
 - (id)includingNodes;
 - (id)consumerCommands;
 - (id)includedNodes;
 - (id)producerCommands;
-- (id)dependencyInfoCacheEntry;
-- (id)paths;
+- (id)displayPath;
+- (id)displayName;
 - (id)path;
-- (BOOL)isVirtual;
-- (id)name;
-- (unsigned long long)nodeNumber;
-- (id)buildNodeState;
-- (void)setBuildContext:(id)arg1;
+- (id)identifier;
+- (unsigned int)nodeNumber;
+- (void)discardCurrentNodeState;
+- (id)currentNodeState;
+- (id)currentNodeStateWithOptions:(unsigned long long)arg1 ignoringCache:(BOOL)arg2;
+- (id)currentNodeStateWithOptions:(unsigned long long)arg1 ignoringCache:(BOOL)arg2 withPreviousNodeState:(id)arg3;
 - (id)buildContext;
-- (void)detachFromOtherGraphObjects;
-- (void)dealloc;
+- (const char *)suffixCStr;
+- (unsigned long long)suffixLength;
+- (const char *)nameCStr;
+- (unsigned long long)nameLength;
+- (id)subpathFromNode:(id)arg1;
+- (id)subpathFromAncestorNode:(id)arg1;
+- (id)ancestorSharedWithNode:(id)arg1;
+- (BOOL)isDescendantOfNode:(id)arg1;
+- (id)objectForKeyedSubscript:(id)arg1;
+- (id)subnodeWithSubpath:(id)arg1;
+- (id)subnodeWithSubpath:(id)arg1 createIfNeeded:(BOOL)arg2;
+- (id)subnodeWithSubpathCStr:(const char *)arg1 createIfNeeded:(BOOL)arg2;
+- (long long)getPathCStr:(char *)arg1 bufferSize:(unsigned long long)arg2;
+- (long long)getPathCStr:(char *)arg1 bufferSize:(unsigned long long)arg2 fromAncestorNode:(id)arg3;
+- (unsigned long long)pathLength;
+- (void)enumerateNodeTreeRecursivelyUsingBlock:(CDUnknownBlockType)arg1;
+- (void)_enumerateNodeTreeRecursivelyWithStop:(char *)arg1 usingBlock:(CDUnknownBlockType)arg2;
+- (id)subnodes;
+- (BOOL)isVirtual;
+- (id)supernode;
 - (id)init;
-- (id)initWithNodeNumber:(unsigned long long)arg1 name:(id)arg2;
-- (id)initWithNodeNumber:(unsigned long long)arg1 name:(id)arg2 path:(id)arg3;
-- (const char *)unretainedFileSystemRepresentation;
+- (id)initWithNumber:(unsigned int)arg1 nameCStr:(const char *)arg2 length:(unsigned long long)arg3 supernode:(id)arg4 isVirtual:(BOOL)arg5 inDependencyGraph:(id)arg6;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

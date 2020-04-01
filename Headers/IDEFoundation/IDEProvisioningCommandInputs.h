@@ -6,33 +6,38 @@
 
 #import <objc/NSObject.h>
 
-@class DVTFilePath, NSArray, NSDictionary, NSString;
+@class DVTFilePath, IDEProvisionableEntitlements, NSArray, NSString;
 
 @interface IDEProvisioningCommandInputs : NSObject
 {
     NSString *_identityHash;
     NSString *_identityName;
+    NSString *_identityCertificateSerialNumber;
     NSString *_profileName;
     NSString *_profileUUID;
     DVTFilePath *_profilePath;
-    NSDictionary *_mergedEntitlements;
-    NSDictionary *_provisionableExpandedEntitlements;
+    IDEProvisionableEntitlements *_mergedEntitlements;
     NSString *_designatedRequirements;
+    NSString *_appIdentifierPrefix;
+    NSString *_teamIdentifierPrefix;
     NSArray *_errors;
     NSArray *_warnings;
 }
 
++ (id)_identityCertificateSerialNumberFromSnapshot:(id)arg1;
 + (id)_identityNameFromSnapshot:(id)arg1;
 + (id)_identityHashFromSnapshot:(id)arg1;
 + (id)inputsFromEvaluation:(id)arg1;
 @property(readonly) NSArray *warnings; // @synthesize warnings=_warnings;
 @property(readonly) NSArray *errors; // @synthesize errors=_errors;
+@property(readonly) NSString *teamIdentifierPrefix; // @synthesize teamIdentifierPrefix=_teamIdentifierPrefix;
+@property(readonly) NSString *appIdentifierPrefix; // @synthesize appIdentifierPrefix=_appIdentifierPrefix;
 @property(readonly) NSString *designatedRequirements; // @synthesize designatedRequirements=_designatedRequirements;
-@property(readonly) NSDictionary *provisionableExpandedEntitlements; // @synthesize provisionableExpandedEntitlements=_provisionableExpandedEntitlements;
-@property(readonly) NSDictionary *mergedEntitlements; // @synthesize mergedEntitlements=_mergedEntitlements;
+@property(readonly) IDEProvisionableEntitlements *mergedEntitlements; // @synthesize mergedEntitlements=_mergedEntitlements;
 @property(readonly) DVTFilePath *profilePath; // @synthesize profilePath=_profilePath;
 @property(readonly) NSString *profileUUID; // @synthesize profileUUID=_profileUUID;
 @property(readonly) NSString *profileName; // @synthesize profileName=_profileName;
+@property(readonly) NSString *identityCertificateSerialNumber; // @synthesize identityCertificateSerialNumber=_identityCertificateSerialNumber;
 @property(readonly) NSString *identityName; // @synthesize identityName=_identityName;
 @property(readonly) NSString *identityHash; // @synthesize identityHash=_identityHash;
 - (void).cxx_destruct;

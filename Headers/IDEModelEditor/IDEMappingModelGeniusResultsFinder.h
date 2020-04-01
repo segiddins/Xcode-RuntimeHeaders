@@ -11,7 +11,7 @@
 }
 
 + (Class)editorDocumentClass;
-- (BOOL)_getUpdateGeniusResultsPhaseOneBlock:(CDUnknownBlockType *)arg1 phaseTwoBlock:(CDUnknownBlockType *)arg2 phaseThreeBlock:(CDUnknownBlockType *)arg3;
+- (BOOL)_getUpdateGeniusResultsPhase1Block:(CDUnknownBlockType *)arg1 phase2Block:(CDUnknownBlockType *)arg2 phase3Block:(CDUnknownBlockType *)arg3;
 - (id)_geniusLocationsForMappingModelDocument:(id)arg1 withWorkspaceContainerQueryMatches:(id)arg2;
 - (id)geniusQueryMatches;
 - (id)_locationForURL:(id)arg1 inQueryResults:(id)arg2 matchOnlyLastComponent:(BOOL)arg3;

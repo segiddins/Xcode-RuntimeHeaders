@@ -17,6 +17,7 @@
     DVTFilePath *_parentPath;
     struct fastsimplearray *_childfsaPaths;
     DVTFileSystemVNode *_vnode;
+    DVTFileDataType *_presumedType;
     unsigned long long _numAssociates;
     unsigned long long _numObservers;
     id _associates;
@@ -24,10 +25,10 @@
     NSURL *_fileURL;
     BOOL _hasResolvedVnode;
     BOOL _cleanRemoveFromParent;
-    unsigned char _validationState;
+    // Error parsing type: AC, name: _validationState
     unsigned short _fsrepLength;
-    // Error parsing type: AB, name: _childPathsLock
-    // Error parsing type: AB, name: _associatesLock
+    struct os_unfair_lock_s _childPathsLock;
+    struct os_unfair_lock_s _associatesLock;
     char _fsrep[0];
 }
 
@@ -48,6 +49,8 @@
 - (id)_descriptionOfAssociates;
 - (id)description;
 - (void)dvt_provideFileSystemRepresentationToBlock:(CDUnknownBlockType)arg1;
+- (long long)comparePathString:(id)arg1;
+- (void)simulateFileSystemNotificationAndNotifyAssociatesForUnitTests;
 - (void)removeAllAssociates;
 - (void)removeAssociate:(id)arg1;
 - (void)removeAssociatesWithRole:(id)arg1;
@@ -84,6 +87,7 @@
 @property(readonly) BOOL isWritable;
 @property(readonly) BOOL isReadable;
 @property(readonly) BOOL existsInFileSystem;
+- (void)performCoordinatedReadRecursively:(BOOL)arg1;
 - (void)excludeFromBackup;
 - (BOOL)_hasResolvedVnode;
 - (id)_locked_vnode;
@@ -99,8 +103,13 @@
 - (BOOL)isEqual:(id)arg1;
 - (id)relativePathStringFromFilePath:(id)arg1;
 - (id)relativePathStringFromAncestorFilePath:(id)arg1;
+- (void)invokeWithAccessToFileSystemRepresentation:(CDUnknownBlockType)arg1;
+- (void)invokeWithAccessToFileSystemRepresentationAndLength:(CDUnknownBlockType)arg1;
+- (void)invokeWithAccessToHeapAllocatedFileSystemRepresentationAndLength:(CDUnknownBlockType)arg1;
+- (const char *)fileNameFSRepReturningLength:(long long *)arg1;
+- (BOOL)_fileNameHasSuffix:(const char *)arg1 suffixLength:(long long)arg2;
 - (BOOL)getFullFileSystemRepresentationIntoBuffer:(char **)arg1 ofLength:(unsigned long long)arg2 allowAllocation:(BOOL)arg3;
-- (BOOL)_getFSRepIntoBuffer:(char **)arg1 ofLength:(unsigned long long)arg2 requiredLength:(unsigned long long)arg3 endPtr:(char **)arg4 allowAllocation:(BOOL)arg5;
+@property(readonly) NSString *pathExtension;
 @property(readonly) NSString *fileName;
 @property(readonly) NSURL *fileURL;
 @property(readonly) NSArray *pathComponents;

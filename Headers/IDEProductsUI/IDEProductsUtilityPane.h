@@ -22,8 +22,10 @@
 @property(readonly) id <IDEProductsInspectable> inspectable; // @synthesize inspectable=_inspectable;
 @property __weak DVTBorderedView *borderedView; // @synthesize borderedView=_borderedView;
 - (void).cxx_destruct;
-- (void)loadView;
+- (void)viewDidLoad;
 - (id)initWithInspectable:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)initUsingDefaultNib;
 
 @end

@@ -43,6 +43,7 @@
     BOOL _showsAddButton;
     BOOL _showsAddOtherButton;
     BOOL _showsSearchField;
+    BOOL _showsAddOtherAsPullDown;
     BOOL _canChooseGroups;
     BOOL _delegateImplementsWillDisplayCell;
     BOOL _delegateImplementsItemIsExpandable;
@@ -50,6 +51,9 @@
     BOOL _delegateImplementsDataCellForTableColumn;
     NSArray *_bindingTokens;
     DVTBindingToken *_selectionBindingToken;
+    NSString *_firstPullDownButtonTitle;
+    NSString *_secondPullDownButtonTitle;
+    SEL _secondPullDownButtonAction;
     unsigned long long _pickingStyle;
     NSString *__fileNameFilterString;
     NSArray *__realExpandedItems;
@@ -64,12 +68,15 @@
 @property(copy) NSString *_fileNameFilterString; // @synthesize _fileNameFilterString=__fileNameFilterString;
 @property(retain, nonatomic) id <IDEFilePickerViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) unsigned long long pickingStyle; // @synthesize pickingStyle=_pickingStyle;
+@property SEL secondPullDownButtonAction; // @synthesize secondPullDownButtonAction=_secondPullDownButtonAction;
 @property SEL cancelAction; // @synthesize cancelAction=_cancelAction;
 @property SEL alternateAddAction; // @synthesize alternateAddAction=_alternateAddAction;
 @property SEL addAction; // @synthesize addAction=_addAction;
 @property(retain) id target; // @synthesize target=_target;
 @property(nonatomic) BOOL canChooseGroups; // @synthesize canChooseGroups=_canChooseGroups;
 @property(copy) NSString *message; // @synthesize message=_message;
+@property(copy) NSString *secondPullDownButtonTitle; // @synthesize secondPullDownButtonTitle=_secondPullDownButtonTitle;
+@property(copy) NSString *firstPullDownButtonTitle; // @synthesize firstPullDownButtonTitle=_firstPullDownButtonTitle;
 @property(copy) NSString *cancelButtonTitle; // @synthesize cancelButtonTitle=_cancelButtonTitle;
 @property(copy) NSString *addOtherButtonTitle; // @synthesize addOtherButtonTitle=_addOtherButtonTitle;
 @property(copy) NSString *addButtonTitle; // @synthesize addButtonTitle=_addButtonTitle;
@@ -107,16 +114,18 @@
 - (void)add:(id)arg1;
 @property(readonly) BOOL allButtonsHidden;
 - (void)primitiveInvalidate;
+- (id)initWithFrame:(struct CGRect)arg1 showsAddOtherAsPullDown:(BOOL)arg2;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (void)_doLayoutAndAddSubviews;
 
 // Remaining properties
-@property(copy) NSMutableArray *_realSelectedItems; // @dynamic _realSelectedItems;
 @property(retain) DVTStackBacktrace *creationBacktrace;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) DVTStackBacktrace *invalidationBacktrace;
+@property(readonly, copy) NSMutableArray *mutableRealSelectedItems; // @dynamic mutableRealSelectedItems;
+@property(copy) NSArray *realSelectedItems; // @dynamic realSelectedItems;
 @property(readonly) Class superclass;
 @property(readonly, nonatomic, getter=isValid) BOOL valid;
 

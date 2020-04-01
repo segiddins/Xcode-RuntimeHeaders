@@ -6,12 +6,13 @@
 
 #import <IDEKit/IDEViewController.h>
 
+#import <Xcode3UI/IDEProvisioningSettingsSigningEditorViewControllersManagerSource-Protocol.h>
 #import <Xcode3UI/Xcode3SourceListItemEditor-Protocol.h>
 
-@class DVTPlatform, DVTSourceExpression, DVTStackView_ML, IDEContainerQuery, NSArray, NSMutableDictionary, NSString, PBXNativeTarget, Xcode3CodesignTroubleshootingViewController, Xcode3ProjectEditor;
-@protocol IDEBlueprint;
+@class DVTObservingToken, DVTPlatform, DVTSourceExpression, DVTStackView_ML, IDEContainerQuery, NSArray, NSMutableDictionary, NSObject, NSString, PBXNativeTarget, Xcode3ProjectEditor, _TtC13IDEFoundation34TargetCapabilitiesCoordinatorStore;
+@protocol DVTInvalidation, IDEBlueprint, IDEBuildSettingsCoordination, IDEInfoPlistCoordination, IDEProvisionable, IDESigningEditorProvisionableManagerProvider, IDETargetEditorBundleIdentifierSource;
 
-@interface Xcode3TargetEditor : IDEViewController <Xcode3SourceListItemEditor>
+@interface Xcode3TargetEditor : IDEViewController <Xcode3SourceListItemEditor, IDEProvisioningSettingsSigningEditorViewControllersManagerSource>
 {
     Xcode3ProjectEditor *_projectEditor;
     id <IDEBlueprint> _inspectedBlueprint;
@@ -19,12 +20,19 @@
     IDEViewController *_innerViewController;
     DVTStackView_ML *_stackView;
     IDEContainerQuery *_interfaceFileNameQuery;
+    DVTObservingToken *_interfaceFileNameQueryObserver;
+    id <DVTInvalidation> _targetInfoCoordinatorDidChangeToken;
     NSArray *_targetMainInterfaceFiles;
     NSMutableDictionary *_assetCatalogWrappersByImageType;
-    Xcode3CodesignTroubleshootingViewController *_codesignTroubleViewController;
 }
 
++ (id)keyPathsForValuesAffectingProvisionableManagerProvider;
++ (id)keyPathsForValuesAffectingProvisionable;
 + (id)keyPathsForValuesAffectingTargetNibFiles;
++ (id)keyPathsForValuesAffectingBuildSettingsCoordinator;
++ (id)keyPathsForValuesAffectingInfoPlistCoordinator;
++ (double)preferredCapsuleContentOriginXOffset;
++ (double)preferredCapsuleContentWidth;
 + (id)platformForTarget:(id)arg1;
 + (id)validValuesForBuildSetting:(id)arg1 inTarget:(id)arg2;
 + (void)setValue:(id)arg1 forBuildSetting:(id)arg2 inTarget:(id)arg3;
@@ -38,13 +46,12 @@
 + (id)defaultViewNibBundle;
 + (id)defaultViewNibName;
 + (id)localizedSourceListItemEditorName;
-@property(readonly) Xcode3CodesignTroubleshootingViewController *codesignTroubleViewController; // @synthesize codesignTroubleViewController=_codesignTroubleViewController;
 @property(retain, nonatomic) id <IDEBlueprint> inspectedBlueprint; // @synthesize inspectedBlueprint=_inspectedBlueprint;
 @property(retain) Xcode3ProjectEditor *projectEditor; // @synthesize projectEditor=_projectEditor;
 - (void).cxx_destruct;
+@property(readonly) id <IDESigningEditorProvisionableManagerProvider> provisionableManagerProvider;
+@property(readonly) id <IDEProvisionable> provisionable;
 - (id)protocolConformingProviderForProtocolName:(id)arg1;
-- (void)showAlertForIncorrectTargetedDeviceFamilyForWatch;
-- (BOOL)correctTargetedDeviceFamilyForWatch;
 - (void)showLaunchImageAlertForImageName:(id)arg1;
 - (void)pickInfoPlistFile:(id)arg1;
 - (void)_infoPlistPickerPanel:(id)arg1 completedWithResult:(unsigned long long)arg2;
@@ -62,6 +69,7 @@
 - (void)convertToImageTable:(id)arg1;
 - (void)populateAssetCatalogPopUpButton:(id)arg1 forImageType:(int)arg2 includeAssetCatalogOptionMenuItem:(BOOL)arg3 selectedImageSet:(id)arg4;
 - (void)setAssetCatalogValueInPopUpButton:(id)arg1 forImageType:(int)arg2;
+- (void)navigateToInfoPlistEditor;
 - (void)navigateToSelectedAssetCatalogForImageType:(int)arg1;
 - (void)convertToAssetCatalogForImageType:(int)arg1 imageModelsToMigrate:(id)arg2 optionalImageType:(int)arg3 optionalImageModelsToMigrate:(id)arg4 completionBlock:(CDUnknownBlockType)arg5;
 - (void)_convertImageType:(int)arg1 imageModels:(id)arg2 toAssetCatalogAtPath:(id)arg3;
@@ -107,13 +115,27 @@
 - (BOOL)isAWatchKit1AppEditor;
 - (BOOL)isAWatchAppEditor;
 - (BOOL)isAFrameworkEditor;
+- (BOOL)isAnIntentsUIExtensionEditor;
+- (BOOL)isAnIntentsExtensionEditor;
+- (BOOL)isAShareExtensionEditor;
 - (BOOL)isAnAppExtensionEditor;
+- (id)productType;
 - (BOOL)isAnAppEditor;
 - (BOOL)isMessagingAppExtensionEditor;
+- (BOOL)isMessagingStickersOnlyAppEditor;
+- (BOOL)isiOSShimForWatchAppEditor;
 - (BOOL)isMessagingOnlyAppEditor;
-- (id)infoPlistCoordinator;
+@property(readonly) _TtC13IDEFoundation34TargetCapabilitiesCoordinatorStore *coordinatorStore;
+@property(readonly) NSObject<IDEBuildSettingsCoordination> *buildSettingsCoordinator;
+@property(readonly) NSObject<IDEInfoPlistCoordination> *infoPlistCoordinator;
+- (BOOL)shouldHideDevelopmentAssetsViewController;
+- (id)developmentAssetsViewController;
+- (id)packagesViewController;
+- (BOOL)shouldIncludePackageProductDependencies;
 - (id)frameworksViewController;
+- (void)selectLocations:(id)arg1;
 - (id)embeddedBinariesViewController;
+@property(readonly, nonatomic) id <IDETargetEditorBundleIdentifierSource> targetEditorBundleIdentifierSource;
 - (void)loadView;
 - (void)_refreshEditor:(id)arg1;
 - (Class)targetSummaryEditorClass;

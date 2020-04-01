@@ -12,30 +12,30 @@
 
 @interface IDEDMSourceListSection : NSObject <DVTInvalidation>
 {
-    NSString *_name;
-    id _modelRoot;
-    NSString *_keyPath;
-    NSString *_identifier;
-    NSArray *_sectionItemsToHide;
     DVTObservingToken *_observationToken;
     DVTObservingToken *_hiddenItemsObservationToken;
-    NSString *_treeControllerChildrenKeyPath;
     IDEDMArrayController *_arrayController;
+    NSArray *_sectionItemsToHide;
+    NSString *_treeControllerChildrenKeyPath;
+    id _modelRoot;
+    NSString *_name;
+    NSString *_identifier;
+    NSString *_keyPath;
 }
 
 + (void)initialize;
-@property(retain, nonatomic) NSArray *sectionItemsToHide; // @synthesize sectionItemsToHide=_sectionItemsToHide;
-@property(retain, nonatomic) NSString *treeControllerChildrenKeyPath; // @synthesize treeControllerChildrenKeyPath=_treeControllerChildrenKeyPath;
-@property(readonly) NSString *identifier; // @synthesize identifier=_identifier;
-@property(retain) NSString *keyPath; // @synthesize keyPath=_keyPath;
+@property(copy) NSString *keyPath; // @synthesize keyPath=_keyPath;
+@property(readonly, copy) NSString *identifier; // @synthesize identifier=_identifier;
+@property(readonly, copy) NSString *name; // @synthesize name=_name;
 @property(retain) id modelRoot; // @synthesize modelRoot=_modelRoot;
-@property(readonly) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
+@property(copy) NSString *treeControllerChildrenKeyPath; // @synthesize treeControllerChildrenKeyPath=_treeControllerChildrenKeyPath;
 - (id)valueForUndefinedKey:(id)arg1;
 - (id)representativeIcon;
-@property(readonly) NSArray *sectionItems;
+@property(readonly, copy) NSArray *sectionItems;
+@property(copy) NSArray *sectionItemsToHide; // @synthesize sectionItemsToHide=_sectionItemsToHide;
 @property(readonly, copy) NSString *description;
-@property(retain) NSArray *sortDescriptors;
+@property(copy) NSArray *sortDescriptors;
 - (void)primitiveInvalidate;
 - (id)initWithName:(id)arg1 modelRoot:(id)arg2 keyPath:(id)arg3 identifier:(id)arg4;
 - (void)_notifyChangeWithDictionary:(id)arg1;

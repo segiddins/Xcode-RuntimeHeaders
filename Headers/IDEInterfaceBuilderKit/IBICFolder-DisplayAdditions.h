@@ -7,6 +7,7 @@
 #import <IBFoundation/IBICFolder.h>
 
 @interface IBICFolder (DisplayAdditions)
+- (BOOL)isDisplayNameFindable;
 - (void)setIbInspectedProvidesNamespace:(BOOL)arg1;
 - (BOOL)ibInspectedProvidesNamespace;
 - (void)populatePlistWithDescriptionForIctool:(id)arg1;

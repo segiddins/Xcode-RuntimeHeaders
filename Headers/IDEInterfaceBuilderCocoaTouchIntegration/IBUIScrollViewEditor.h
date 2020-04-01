@@ -11,7 +11,11 @@
 }
 
 + (Class)ibDropTargetResolverClass;
+- (void)updateScrollView:(id)arg1 contentOffset:(struct CGPoint)arg2;
 - (BOOL)interceptEvent:(id)arg1;
+- (void)performScrollingUsingDelayedAutolayoutStatusUpdates:(BOOL)arg1 scrollView:(id)arg2 during:(CDUnknownBlockType)arg3;
+- (void)scrollDescendantsToVisible:(id)arg1;
+- (CDStruct_c519178c)effectiveContentInsetForEditing;
 - (id)editedScrollView;
 
 @end

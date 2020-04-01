@@ -9,9 +9,12 @@
 @class NSArray, NSEvent, SCNNode, SKEPasteboardItem, SKESceneView;
 
 @protocol SKESceneViewDelegate <NSObject>
+- (void)sceneViewDidRequestFocusOnSelectedNodes:(SKESceneView *)arg1;
 - (void)sceneView:(SKESceneView *)arg1 didRequestDeletionOfNodes:(NSArray *)arg2;
 - (void)sceneViewDidRequestDeselectionOfAllNodes:(SKESceneView *)arg1;
 - (void)sceneViewDidBeginFreeBrowsing:(SKESceneView *)arg1;
+- (void)sceneViewDidStopInteraction:(SKESceneView *)arg1;
+- (void)sceneViewWillStartInteraction:(SKESceneView *)arg1 atPoint:(struct CGPoint)arg2;
 - (BOOL)sceneView:(SKESceneView *)arg1 shouldAcceptDroppedExternalDocumentURLs:(NSArray *)arg2;
 - (BOOL)sceneView:(SKESceneView *)arg1 shouldAcceptContentsOfDroppedPasteboardItem:(SKEPasteboardItem *)arg2;
 - (BOOL)sceneView:(SKESceneView *)arg1 didDropPasteboardItem:(SKEPasteboardItem *)arg2 onNode:(SCNNode *)arg3 dropLocation:(struct SCNVector3)arg4;

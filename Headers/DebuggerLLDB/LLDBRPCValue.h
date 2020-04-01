@@ -10,7 +10,6 @@
 
 @class NSString;
 
-__attribute__((visibility("hidden")))
 @interface LLDBRPCValue : NSObject <DBGSBValue>
 {
     struct SBValue {
@@ -36,6 +35,8 @@ __attribute__((visibility("hidden")))
 - (void)Clear;
 - (_Bool)IsValid;
 - (id)initWithSBValue:(const struct SBValue *)arg1;
+- (unsigned long long)GetValueAsUnsigned:(unsigned long long)arg1;
+- (id)AddressOf;
 - (id)GetData;
 - (_Bool)GetDescription:(id)arg1;
 - (id)GetChildAtIndex:(unsigned int)arg1 use_dynamic:(int)arg2 can_create_synthetic:(_Bool)arg3;

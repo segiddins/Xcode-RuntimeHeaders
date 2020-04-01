@@ -4,45 +4,46 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Foundation/NSObject.h>
+#import <objc/NSObject.h>
 
-@class NSArray, NSMutableArray, NSSet, NSString;
+@class DVTCopyOnWriteMutableArray, NSArray, NSMutableDictionary, NSOrderedSet, NSSet, NSString, NSUUID;
 
 @interface XCPluginManager : NSObject
 {
     unsigned long long _directory;
     unsigned long long _domainMask;
-    NSMutableArray *_searchPaths;
+    NSOrderedSet *_searchPaths;
+    NSOrderedSet *_extraSearchPaths;
     NSArray *_subpaths;
     NSSet *_extensions;
     NSSet *_pluginStopList;
-    NSMutableArray *_plugins;
+    DVTCopyOnWriteMutableArray *_plugins;
     NSString *_extraPlugInPathsDefaultName;
+    NSString *_assumedDomain;
     BOOL _includeUIPlugins;
+    NSMutableDictionary *_loadedCodelessPlugins;
 }
 
 + (id)sharedPluginManager;
+- (void).cxx_destruct;
+- (BOOL)pluginIsLoaded:(id)arg1;
 - (BOOL)loadPluginBundle:(id)arg1;
+- (BOOL)loadPluginBundle:(id)arg1 forDomain:(id)arg2;
 - (void)findAndLoadPlugins;
 - (void)findAndLoadPluginsInDomain:(id)arg1;
-- (id)searchPaths;
-- (void)setSearchPaths:(id)arg1;
-- (id)loadedPlugins;
-- (id)extrasPlugInPathsDefaultName;
-- (void)setExtrasPlugInPathsDefaultName:(id)arg1;
-- (id)pluginStopList;
-- (void)setPluginStopList:(id)arg1;
-- (id)pluginExtensions;
-- (void)setPluginExtensions:(id)arg1;
-- (id)searchPathSubpaths;
-- (void)setSearchPathSubpaths:(id)arg1;
-- (unsigned long long)searchPathDomainMask;
-- (void)setSearchPathDomainMask:(unsigned long long)arg1;
-- (unsigned long long)searchPathDirectory;
-- (void)setSearchPathDirectory:(unsigned long long)arg1;
-- (BOOL)includeUIPlugins;
-- (void)setIncludeUIPlugins:(BOOL)arg1;
-- (void)dealloc;
+- (void)_record3rdPartyPlugin:(id)arg1 state:(id)arg2;
+@property(readonly, copy) NSUUID *plugInHostUUID;
+- (id)extraSearchPaths;
+@property(copy) NSArray *searchPaths;
+@property(readonly, copy) NSArray *loadedPlugins;
+@property(copy) NSString *assumedDomain;
+@property(copy) NSString *extrasPlugInPathsDefaultName;
+@property(copy) NSSet *pluginStopList;
+@property(copy) NSSet *pluginExtensions;
+@property(copy) NSArray *searchPathSubpaths;
+@property unsigned long long searchPathDomainMask;
+@property unsigned long long searchPathDirectory;
+@property BOOL includeUIPlugins;
 - (id)init;
 
 @end

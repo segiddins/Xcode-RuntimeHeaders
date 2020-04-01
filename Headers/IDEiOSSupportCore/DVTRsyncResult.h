@@ -21,6 +21,7 @@
 @property(readonly, nonatomic) NSString *stdoutText; // @synthesize stdoutText=_stdoutText;
 @property(readonly, nonatomic) long long returnCode; // @synthesize returnCode=_returnCode;
 - (void).cxx_destruct;
+- (id)description;
 - (id)initWithReturnCode:(long long)arg1 stdoutText:(id)arg2 stderrText:(id)arg3 changedFiles:(id)arg4;
 
 @end

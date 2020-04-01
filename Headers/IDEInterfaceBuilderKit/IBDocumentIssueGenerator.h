@@ -8,7 +8,7 @@
 
 #import <IDEInterfaceBuilderKit/DVTInvalidation-Protocol.h>
 
-@class DVTDelayedInvocation, DVTNotificationToken, DVTStackBacktrace, IBDocument, IBMutableIdentityDictionary, NSArray, NSDictionary, NSMutableSet, NSString;
+@class DVTDelayedInvocation, DVTStackBacktrace, IBDocument, IBMutableIdentityDictionary, NSArray, NSDictionary, NSMutableSet, NSString;
 
 @interface IBDocumentIssueGenerator : NSObject <DVTInvalidation>
 {
@@ -16,11 +16,11 @@
     BOOL _allIssuesAreInvalid;
     IBMutableIdentityDictionary *_membersToIssues;
     NSArray *_globalIssues;
+    NSMutableSet *_parentsWithPendingDescendantIssueCalculations;
     NSMutableSet *_parentsWithPendingChildIssueCalculations;
     NSMutableSet *_membersWithPendingIssueCalculations;
     NSMutableSet *_classNamesWithPendingIssueCalculations;
     DVTDelayedInvocation *_issuesInvocation;
-    DVTNotificationToken *_issueSeverityToken;
     BOOL _enabled;
     BOOL _shuttingDown;
 }
@@ -31,24 +31,25 @@
 @property(nonatomic, getter=isShuttingDown) BOOL shuttingDown; // @synthesize shuttingDown=_shuttingDown;
 @property(nonatomic, getter=isEnabled) BOOL enabled; // @synthesize enabled=_enabled;
 - (void).cxx_destruct;
-@property(readonly) NSArray *allWarnings;
-@property(readonly) NSArray *globalWarnings;
-@property(readonly) NSDictionary *warningsByMember;
+@property(readonly) NSArray *allIssues;
+@property(readonly) NSArray *globalIssues;
+@property(readonly) NSDictionary *issuesByMember;
 - (void)ensureIssuesAreValid;
 - (void)validateIssues:(id)arg1;
 - (id)aggregateMembersNeedingRefreshedIssues;
 - (void)clearPendingIssueCalculationsTables;
-- (void)updateIssuesForMembers:(id)arg1;
+- (void)_updateIssuesForMembers:(id)arg1 allIssuesWereInvalidated:(BOOL)arg2;
 - (BOOL)updateGlobalIssues;
 - (BOOL)effectiveIssuesAreEnabled;
 - (void)notifyObservers;
+- (void)scheduleIssuesValidationIfNeeded;
 - (void)invalidateIssuesForConnection:(id)arg1;
 - (void)invalidateIssuesForClassNamed:(id)arg1;
+- (void)invalidateIssuesForDescendantsOfObject:(id)arg1;
 - (void)invalidateIssuesForChildrenOfObject:(id)arg1;
 - (void)invalidateIssuesForObjects:(id)arg1;
 - (void)invalidateIssuesForObject:(id)arg1;
 - (void)invalidateAllIssues;
-- (void)warningSeveritiesDidChange:(id)arg1;
 - (void)primitiveInvalidate;
 - (id)initWithDocument:(id)arg1;
 

@@ -8,7 +8,7 @@
 
 #import <IDEKit/DVTInvalidation-Protocol.h>
 
-@class DVTExtension, DVTPerformanceMetric, DVTStackBacktrace, IDEEditorDocument, IDENavigableItemCoordinator, IDEWorkspace, IDEWorkspaceTabController, NSArray, NSSet, NSString;
+@class DVTExtension, DVTPerformanceMetric, DVTStackBacktrace, IDEEditorDocument, IDEEditorModeViewController, IDENavigableItemCoordinator, IDEWorkspace, IDEWorkspaceTabController, NSArray, NSSet, NSString;
 
 @interface IDEGeniusResultsFinder : NSObject <DVTInvalidation>
 {
@@ -16,6 +16,7 @@
     IDEEditorDocument *_editorDocument;
     BOOL _idle;
     IDEWorkspaceTabController *_workspaceTabController;
+    IDEEditorModeViewController *_editorModeViewController;
     NSArray *_documentLocations;
     NSSet *_geniusResults;
     DVTPerformanceMetric *_nonIdlePerformanceMetric;
@@ -28,6 +29,7 @@
 @property(retain) DVTPerformanceMetric *nonIdlePerformanceMetric; // @synthesize nonIdlePerformanceMetric=_nonIdlePerformanceMetric;
 @property(copy) NSSet *geniusResults; // @synthesize geniusResults=_geniusResults;
 @property(readonly, copy) NSArray *documentLocations; // @synthesize documentLocations=_documentLocations;
+@property(retain) IDEEditorModeViewController *editorModeViewController; // @synthesize editorModeViewController=_editorModeViewController;
 @property(retain) IDEWorkspaceTabController *workspaceTabController; // @synthesize workspaceTabController=_workspaceTabController;
 @property(nonatomic) BOOL idle; // @synthesize idle=_idle;
 @property(retain) IDEEditorDocument *editorDocument; // @synthesize editorDocument=_editorDocument;
@@ -37,7 +39,7 @@
 - (void)_updateGeniusResults;
 - (void)_primitiveSetGeniusResults:(id)arg1;
 - (void)findGeniusResultsForEditorDocument:(id)arg1 selectedDocumentLocations:(id)arg2;
-- (id)_initWithWorkspaceTabController:(id)arg1 navigableItemCoordinator:(id)arg2;
+- (id)_initWithEditorModeViewController:(id)arg1 navigableItemCoordinator:(id)arg2;
 - (id)init;
 
 // Remaining properties

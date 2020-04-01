@@ -7,11 +7,10 @@
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBUIStoryboardAbstractTriggeredSegue.h>
 
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBCocoaTouchStoryboardAbstractModalSegue-Protocol.h>
-#import <IDEInterfaceBuilderCocoaTouchIntegration/NSCoding-Protocol.h>
 
 @class NSNumber, NSString;
 
-@interface IBCocoaTouchStoryboardPresentationSegue : IBUIStoryboardAbstractTriggeredSegue <NSCoding, IBCocoaTouchStoryboardAbstractModalSegue>
+@interface IBCocoaTouchStoryboardPresentationSegue : IBUIStoryboardAbstractTriggeredSegue <IBCocoaTouchStoryboardAbstractModalSegue>
 {
     NSNumber *_modalPresentationStyle;
     NSNumber *_modalTransitionStyle;
@@ -26,10 +25,12 @@
 @property(copy, nonatomic) NSNumber *modalTransitionStyle; // @synthesize modalTransitionStyle=_modalTransitionStyle;
 @property(copy, nonatomic) NSNumber *modalPresentationStyle; // @synthesize modalPresentationStyle=_modalPresentationStyle;
 - (void).cxx_destruct;
+- (void)ibPrepareToBackwardsDeployToOSVersion:(id)arg1 inDocument:(id)arg2;
+- (void)ibPopulateAdditionalTargetOSVersions:(id)arg1 forCompilingDocument:(id)arg2;
 - (BOOL)isFlowTerminatingSegue;
 - (id)effectiveConnectionForDisablingConfigurationsInDocument:(id)arg1 segueReachabilityContext:(id)arg2;
 - (id)badgeImage;
-- (void)ibWarnings:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
+- (id)metricChainSucceedingMetric:(id)arg1;
 - (void)copyCommonInstanceStateToTriggeredSegue:(id)arg1;
 - (id)instantiateSegueTemplate;
 - (void)unarchiveWithDocumentUnarchiver:(id)arg1;

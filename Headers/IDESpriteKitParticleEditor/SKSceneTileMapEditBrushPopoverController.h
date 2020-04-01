@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <DVTKit/DVTViewController.h>
+#import <DVTViewControllerKit/DVTViewController.h>
 
 #import <IDESpriteKitParticleEditor/NSPopoverDelegate-Protocol.h>
 
@@ -22,6 +22,7 @@
     unsigned long long _currentBrushIndex;
 }
 
++ (BOOL)supportsSecureCoding;
 @property(nonatomic) unsigned long long currentBrushIndex; // @synthesize currentBrushIndex=_currentBrushIndex;
 @property(nonatomic) BOOL notifyOnClose; // @synthesize notifyOnClose=_notifyOnClose;
 @property __weak NSPopover *popover; // @synthesize popover=_popover;

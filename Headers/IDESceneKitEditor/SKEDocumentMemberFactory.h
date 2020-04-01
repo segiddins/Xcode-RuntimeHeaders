@@ -11,6 +11,7 @@
 }
 
 + (id)material;
++ (id)defaultMaterial;
 + (id)dynamicBody;
 + (id)magneticField;
 + (id)electricField;
@@ -34,7 +35,9 @@
 + (id)sphere;
 + (id)box;
 + (id)plane;
++ (id)areaLight;
 + (id)lightIES;
++ (id)lightReflectionProbe;
 + (id)lightProbe;
 + (id)ambientLight;
 + (id)spotLight;

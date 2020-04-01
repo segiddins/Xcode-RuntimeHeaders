@@ -15,7 +15,9 @@
 {
     CDUnknownBlockType _handler;
     id <DVTCancellable> _spritekitToken;
+    id <DVTCancellable> _spritekitActiveToken;
     id <DVTCancellable> _scenekitToken;
+    id <DVTCancellable> _scenekitActiveToken;
 }
 
 + (void)initialize;

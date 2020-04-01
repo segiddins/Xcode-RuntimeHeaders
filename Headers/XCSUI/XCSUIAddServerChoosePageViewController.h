@@ -4,16 +4,17 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <DVTKit/DVTViewController.h>
+#import <DVTViewControllerKit/DVTViewController.h>
 
 #import <XCSUI/NSControlTextEditingDelegate-Protocol.h>
 #import <XCSUI/NSNetServiceBrowserDelegate-Protocol.h>
 #import <XCSUI/NSNetServiceDelegate-Protocol.h>
 
-@class DVTObservingToken, DVTTableView, NSArrayController, NSButton, NSMutableSet, NSNetServiceBrowser, NSString, XCSUIAddServerWindowController;
+@class DVTObservingToken, DVTTableView, NSArrayController, NSButton, NSMutableSet, NSNetServiceBrowser, NSSet, NSString, XCSUIAddServerWindowController;
 
 @interface XCSUIAddServerChoosePageViewController : DVTViewController <NSNetServiceBrowserDelegate, NSNetServiceDelegate, NSControlTextEditingDelegate>
 {
+    NSMutableSet *_discoveredServers;
     BOOL _serviceBrowserSelectionIsChanging;
     BOOL _resolvingService;
     XCSUIAddServerWindowController *_pagingSheetWindowController;
@@ -22,7 +23,6 @@
     NSButton *_okButton;
     DVTTableView *_tableView;
     NSNetServiceBrowser *_netServiceBrowser;
-    NSMutableSet *_discoveredServers;
     DVTObservingToken *_arrayControllerSelectionObservingToken;
 }
 
@@ -30,7 +30,7 @@
 + (void)initialize;
 @property BOOL resolvingService; // @synthesize resolvingService=_resolvingService;
 @property(retain) DVTObservingToken *arrayControllerSelectionObservingToken; // @synthesize arrayControllerSelectionObservingToken=_arrayControllerSelectionObservingToken;
-@property(copy, nonatomic) NSMutableSet *discoveredServers; // @synthesize discoveredServers=_discoveredServers;
+@property(copy, nonatomic) NSSet *discoveredServers; // @synthesize discoveredServers=_discoveredServers;
 @property(retain, nonatomic) NSNetServiceBrowser *netServiceBrowser; // @synthesize netServiceBrowser=_netServiceBrowser;
 @property BOOL serviceBrowserSelectionIsChanging; // @synthesize serviceBrowserSelectionIsChanging=_serviceBrowserSelectionIsChanging;
 @property(retain, nonatomic) DVTTableView *tableView; // @synthesize tableView=_tableView;

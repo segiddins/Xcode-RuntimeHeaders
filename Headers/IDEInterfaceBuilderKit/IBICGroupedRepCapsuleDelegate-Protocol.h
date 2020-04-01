@@ -4,12 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
+#import <IDEInterfaceBuilderKit/IBICAssetCapsuleDelegate-Protocol.h>
 #import <IDEInterfaceBuilderKit/IBViewDragDelegate-Protocol.h>
 
 @class IBICAssetGroupView, IBICAssetRepView, IBICDetailAreaGroupPath, IBICGroupedRepCapsule, NSObject;
 @protocol IBICAssetComponentID;
 
-@protocol IBICGroupedRepCapsuleDelegate <IBViewDragDelegate>
+@protocol IBICGroupedRepCapsuleDelegate <IBViewDragDelegate, IBICAssetCapsuleDelegate>
 - (void)groupedRepCapsule:(IBICGroupedRepCapsule *)arg1 configureGroupView:(IBICAssetGroupView *)arg2 forGroupWithPath:(IBICDetailAreaGroupPath *)arg3;
 - (void)groupedRepCapsule:(IBICGroupedRepCapsule *)arg1 configureAssetView:(IBICAssetRepView *)arg2 forAssetRepIdentifier:(NSObject<IBICAssetComponentID> *)arg3;
 - (IBICDetailAreaGroupPath *)groupedRepCapsule:(IBICGroupedRepCapsule *)arg1 detailAreaPathForIdentifier:(NSObject<IBICAssetComponentID> *)arg2;

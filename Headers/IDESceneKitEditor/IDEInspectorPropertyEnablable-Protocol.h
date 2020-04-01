@@ -7,7 +7,6 @@
 #import <IDESceneKitEditor/NSObject-Protocol.h>
 
 @protocol IDEInspectorPropertyEnablable <NSObject>
-- (void)setEnabled:(BOOL)arg1;
-- (BOOL)isEnabled;
+@property(nonatomic, getter=isEnabled) BOOL enabled;
 @end
 

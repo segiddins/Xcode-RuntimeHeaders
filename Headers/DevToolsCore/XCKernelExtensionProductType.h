@@ -10,9 +10,9 @@
 {
 }
 
-- (void)addBaseLinkerFlagsInTargetBuildContext:(id)arg1;
-- (void)compileAuxiliaryFilesForVariant:(id)arg1 architecture:(id)arg2 inTargetBuildContext:(id)arg3;
-- (void)defineAuxiliaryFilesInTargetBuildContext:(id)arg1;
+- (void)addBaseLinkerFlagsWithMacroExpansionScope:(id)arg1;
+- (void)compileAuxiliaryFilesForVariant:(id)arg1 architecture:(id)arg2 withMacroExpansionScope:(id)arg3;
+- (void)defineAuxiliaryFilesWithMacroExpansionScope:(id)arg1;
 
 @end
 

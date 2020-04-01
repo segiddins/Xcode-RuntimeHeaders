@@ -11,11 +11,9 @@
 @interface IDESwiftMigrationContext : IDEMigrationContext
 {
     NSMapTable *_convertedFilePathForOriginalFilePathMapTable;
-    BOOL _convertToAlmostLatestSwift;
 }
 
 + (Class)migrationTargetSublass;
-@property(nonatomic) BOOL convertToAlmostLatestSwift; // @synthesize convertToAlmostLatestSwift=_convertToAlmostLatestSwift;
 - (void).cxx_destruct;
 - (id)migrateFolderForMigrationTarget:(id)arg1 andScheme:(id)arg2;
 - (id)migrationBuildFolderForScheme:(id)arg1;
@@ -24,8 +22,7 @@
 - (id)_convertedFilePathForOriginalFilePathMapTable;
 - (void)_collectRemapFilesFromDir:(id)arg1 remapFiles:(id)arg2;
 - (void)_convertRemapFiles:(id)arg1;
-- (CDUnknownBlockType)setupBuild:(char *)arg1 forScheme:(id)arg2 withCompletionBlock:(CDUnknownBlockType)arg3;
-@property(readonly) BOOL canConvertToAlmostLatestSwift;
+- (CDUnknownBlockType)setupBuild:(char *)arg1 forScheme:(id)arg2 migrationBuildOptions:(id)arg3 withCompletionBlock:(CDUnknownBlockType)arg4;
 - (void)selectDefaultTargets;
 
 @end

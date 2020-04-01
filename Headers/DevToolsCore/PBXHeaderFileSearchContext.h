@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Foundation/NSObject.h>
+#import <objc/NSObject.h>
 
 @class NSArray, NSMutableDictionary, PBXHeaderMap;
 
@@ -13,6 +13,7 @@
     BOOL _lookInIncludersDirectory;
     NSArray *_userHeaderSearchPaths;
     PBXHeaderMap *_headermap;
+    NSMutableDictionary *_headermapFiles;
     NSArray *_systemHeaderSearchPaths;
     NSArray *_frameworkSearchPaths;
     NSMutableDictionary *_directoryEntriesCache;
@@ -21,16 +22,18 @@
 }
 
 + (id)headerFileSearchContextWithUserHeaderSearchPaths:(id)arg1 headermap:(id)arg2 systemHeaderSearchPaths:(id)arg3 frameworkSearchPaths:(id)arg4;
+- (void).cxx_destruct;
 - (id)headerPathForHeaderInclusionString:(id)arg1 includedFromFilesAtPaths:(id)arg2 usingQuoteNotation:(BOOL)arg3;
 - (id)headerPathForHeaderInclusionString:(id)arg1 includedFromFilesAtPaths:(id)arg2 usingQuoteNotation:(BOOL)arg3 ensureFileExists:(BOOL)arg4;
 - (id)frameworkSearchPaths;
 - (id)systemHeaderSearchPaths;
+- (id)headermapFiles;
 - (id)headermap;
 - (id)userHeaderSearchPaths;
 - (void)_fillFrameworkPathCache;
 - (id)_fullPathOfFileNamed:(id)arg1 inPath:(id)arg2;
+- (void)addHeadermapFile:(id)arg1 path:(id)arg2;
 - (void)setHeadermap:(id)arg1;
-- (void)dealloc;
 - (id)init;
 - (id)initWithUserHeaderSearchPaths:(id)arg1 headermap:(id)arg2 systemHeaderSearchPaths:(id)arg3 frameworkSearchPaths:(id)arg4;
 

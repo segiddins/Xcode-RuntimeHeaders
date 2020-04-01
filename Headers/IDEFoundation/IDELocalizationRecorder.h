@@ -10,20 +10,16 @@
 
 @interface IDELocalizationRecorder : NSObject
 {
-    NSMutableArray *_mutableRecords;
-    NSMutableArray *_classNames;
+    NSMutableArray *_records;
 }
 
-+ (id)sharedInstance;
-@property(retain) NSMutableArray *classNames; // @synthesize classNames=_classNames;
-@property(retain) NSMutableArray *mutableRecords; // @synthesize mutableRecords=_mutableRecords;
++ (id)sharedLocalizationRecorder;
++ (void)initialize;
+@property(readonly, copy) NSArray *records; // @synthesize records=_records;
 - (void).cxx_destruct;
 - (void)removeAllRecords;
-- (void)addRecordForMessage:(id)arg1;
-- (id)recordForClassNames:(id)arg1 message:(id)arg2;
-- (void)popTopClassName;
-- (void)pushClassName:(id)arg1;
-@property(readonly) NSArray *records;
+- (void)willAddGroupWithName:(id)arg1 inDirectory:(id)arg2 toItem:(id)arg3 forLanguage:(id)arg4;
+- (void)willAddReferenceWithPath:(id)arg1 toGroup:(id)arg2 forLanguage:(id)arg3;
 - (id)init;
 
 @end

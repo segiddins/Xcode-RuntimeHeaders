@@ -6,7 +6,7 @@
 
 #import <IDESceneKitEditor/NSObject-Protocol.h>
 
-@class GTFActionEditor, GTFActionLibrary, NSArray;
+@class GTFActionEditor, GTFActionLibrary, IDEEditorDocument, NSArray, NSURL;
 @protocol NSCopying;
 
 @protocol GTFActionEditorDelegate <NSObject>
@@ -15,6 +15,7 @@
 - (void)refreshObjectLibrary;
 
 @optional
+- (IDEEditorDocument *)getActionDocumentFromAssetManager:(GTFActionEditor *)arg1 url:(NSURL *)arg2;
 - (void)actionEditorDidEndScrubbing:(GTFActionEditor *)arg1;
 - (void)actionEditorDidBeginScrubbing:(GTFActionEditor *)arg1;
 - (BOOL)actionEditor:(GTFActionEditor *)arg1 shouldSupportPastedActions:(NSArray *)arg2;

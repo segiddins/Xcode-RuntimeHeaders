@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <DVTKit/DVTViewController.h>
+#import <DVTViewControllerKit/DVTViewController.h>
 
 #import <IDEKit/IDECompletionDestinationDelegate-Protocol.h>
 
@@ -15,8 +15,6 @@
     IDECompletionDestinationManager *_destinationManager;
     IDEGroup *_initialDestinationGroup;
     DVTNotificationToken *_panelDidOrderOutNotificationToken;
-    BOOL _didFinish;
-    BOOL _didOrderOut;
     NSPopUpButton *_destinationPopUp;
     NSPopUpButton *_formatPopUp;
     NSView *_formatView;
@@ -38,6 +36,7 @@
 - (BOOL)destinationManager:(id)arg1 shouldAddItemToMenu:(id)arg2;
 - (void)changeDestinationFormat:(id)arg1;
 - (void)didFinishSaveSuccessfully:(BOOL)arg1 shouldEdit:(BOOL)arg2;
+- (void)beginSheetModalForWindow:(id)arg1;
 - (void)begin;
 - (id)configuredSavePanel;
 - (void)primitiveInvalidate;

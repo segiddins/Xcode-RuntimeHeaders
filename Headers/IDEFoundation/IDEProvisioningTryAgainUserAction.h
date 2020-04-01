@@ -11,7 +11,9 @@
 }
 
 + (id)tryAgainUserActionWithContext:(id)arg1;
-- (BOOL)wantsResetOfRetryCountOnFinish;
+- (id)executionMessage;
+- (BOOL)representsRepairFailure;
+- (BOOL)wantsRepairRetriedOnFinish;
 - (id)userActionMessage;
 - (id)userActionTitle;
 - (id)userActionName;

@@ -8,7 +8,7 @@
 
 #import <IDEInterfaceBuilderCocoaIntegration/IBDocumentArchiving-Protocol.h>
 
-@class NSArray, NSString;
+@class NSArray, NSString, NSToolbarItem;
 
 @interface NSToolbar (IBNSToolbarIntegration) <IBDocumentArchiving>
 + (BOOL)_ibSwizzledShouldIgnoreItemIdentifier:(id)arg1;
@@ -21,14 +21,15 @@
 - (BOOL)ibShouldAddItemWithIdentifier:(id)arg1;
 - (BOOL)ibContainsItemWithIdentifier:(id)arg1;
 - (void)ibPrepareCocoaDocumentForCompiling:(id)arg1 withContext:(id)arg2;
-- (void)ibWarnings:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
-- (void)ibInvalidateWarningsAfterDescendant:(id)arg1 changedProperty:(id)arg2 inDocument:(id)arg3 fromValue:(id)arg4;
+- (void)ibPopulateIssues:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
+- (void)ibInvalidateIssuesAfterDescendant:(id)arg1 changedProperty:(id)arg2 inDocument:(id)arg3 fromValue:(id)arg4;
 - (struct CGRect)ibRectForChild:(id)arg1 inFrameController:(id)arg2;
 - (BOOL)frameControllerIsToolbarSheet:(id)arg1;
 - (void)ibResynchronizeToolbarItemsAfterIdentifierChanges;
 @property(copy) NSArray *ibShadowedDefaultToolbarItems;
 @property(copy) NSArray *ibShadowedAllowedToolbarItems;
 @property(copy) NSString *ibShadowedToolbarIdentifier;
+@property(retain) NSToolbarItem *ibCenteredItem;
 - (BOOL)ibCanBeBoundToFromObject:(id)arg1;
 - (BOOL)ibMustBeBaseObjectOfEditorFrame;
 - (BOOL)ibAllowsClickPassthroughToParentEditorFrames;
@@ -40,11 +41,14 @@
 - (void)ibRemoveChildren:(id)arg1;
 - (void)ibPopulateEditorSelectionOrderRelationLists:(id)arg1;
 - (void)ibPopulateChildRelationOrder:(id)arg1;
-- (id)ibDocumentationPropertyInfosForKeyPath:(id)arg1;
+- (id)ibDocumentationSymbolInfosForKeyPath:(id)arg1;
 - (id)ibEditorCanvasFrameControllerForDocument:(id)arg1;
 - (void)unarchiveWithDocumentUnarchiver:(id)arg1;
 - (void)archiveWithDocumentArchiver:(id)arg1;
 - (id)ibSwizzledInitWithCoder:(id)arg1;
+- (id)ibLocalAttributeKeyPaths;
+- (id)ibLocalNonChildToOneRelationshipsKeyPaths;
+- (id)ibLocalChildToManyRelationshipsKeyPaths;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

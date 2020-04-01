@@ -7,7 +7,7 @@
 #import <objc/NSObject.h>
 
 @class DTXResourceTracker, NSArray;
-@protocol OS_dispatch_queue, OS_dispatch_semaphore;
+@protocol OS_dispatch_queue;
 
 @interface DTXTransport : NSObject
 {
@@ -16,28 +16,28 @@
     DTXResourceTracker *_tracker;
     CDUnknownBlockType _dataReceivedHandler;
     unsigned int _status;
-    NSObject<OS_dispatch_semaphore> *_waitForResume;
-    BOOL _resumed;
+    _Bool _resumed;
 }
 
 + (BOOL)recognizesURL:(id)arg1;
 + (id)schemes;
 @property(readonly, nonatomic) DTXResourceTracker *resourceTracker; // @synthesize resourceTracker=_tracker;
 @property unsigned int status; // @synthesize status=_status;
+- (void).cxx_destruct;
 - (unsigned int)supportedDirections;
 - (id)permittedBlockCompressionTypes;
 @property(readonly) NSArray *localAddresses;
 @property(copy, nonatomic) CDUnknownBlockType dataReceivedHandler;
+- (void)serializedDisconnect:(CDUnknownBlockType)arg1;
 - (void)disconnect;
 - (void)received:(const char *)arg1 ofLength:(unsigned long long)arg2 destructor:(CDUnknownBlockType)arg3;
 - (unsigned long long)transmit:(const void *)arg1 ofLength:(unsigned long long)arg2 withRateLimiter:(id)arg3;
 - (unsigned long long)transmit:(const void *)arg1 ofLength:(unsigned long long)arg2;
 - (id)initWithRemoteAddress:(id)arg1;
-- (id)initWithLocalAddress:(id)arg1;
 - (void)dealloc;
+- (id)serializedXPCRepresentation;
+- (id)initWithXPCRepresentation:(id)arg1;
 - (id)init;
-- (BOOL)canTransmit;
-- (BOOL)canReceive;
 
 @end
 

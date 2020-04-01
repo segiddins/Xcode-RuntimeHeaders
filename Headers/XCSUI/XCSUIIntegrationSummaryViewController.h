@@ -4,82 +4,44 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <DVTKit/DVTViewController.h>
+#import <DVTViewControllerKit/DVTViewController.h>
 
-#import <XCSUI/XCSBotSupportingEditorHostedViewController-Protocol.h>
+#import <XCSUI/XCSUIDataSourceSnapshotsObserver-Protocol.h>
 
-@class DVTLozengeTextField, DVTReplacementView, DVTStackView_ML, NSArray, NSString, XCSBot, XCSBotSupportingEditor, XCSIntegration, XCSUIProgressReplacementView, _XCSUIIntegrationSummaryScrollView;
+@class DVTReplacementView, NSArray, NSScrollView, NSURL, XCSIntegration, XCSUIIntegrationSummaryChangesViewController, XCSUIIntegrationSummaryDevicesViewController, XCSUIIntegrationSummaryIssuesOutlineViewController, XCSUIIntegrationSummaryProductsViewController, XCSUIIntegrationSummaryStatusViewController, XCSUIIntegrationSummaryView_Stack;
 
-@interface XCSUIIntegrationSummaryViewController : DVTViewController <XCSBotSupportingEditorHostedViewController>
+@interface XCSUIIntegrationSummaryViewController : DVTViewController <XCSUIDataSourceSnapshotsObserver>
 {
-    NSArray *_currentSelectedDocumentLocations;
+    XCSUIIntegrationSummaryView_Stack *_containerView;
+    XCSUIIntegrationSummaryStatusViewController *_statusViewController;
+    XCSUIIntegrationSummaryChangesViewController *_changesViewController;
+    XCSUIIntegrationSummaryProductsViewController *_productsViewController;
+    XCSUIIntegrationSummaryDevicesViewController *_devicesViewController;
+    XCSUIIntegrationSummaryIssuesOutlineViewController *_issuesViewController;
     XCSIntegration *_integration;
-    XCSBot *_bot;
-    XCSBotSupportingEditor *_botSupportingEditor;
-    NSString *_integrationTitle;
-    NSString *_dateFinished;
-    NSString *_statusString;
-    NSString *_errorCount;
-    NSString *_warningCount;
-    NSString *_issueCount;
-    DVTReplacementView *_statusBadgesReplacementView;
-    DVTReplacementView *_productsReplacementView;
-    DVTReplacementView *_devicesReplacementView;
-    DVTReplacementView *_changesReplacementView;
-    DVTStackView_ML *_stackView;
-    long long _currentIntegrationStep;
-    _XCSUIIntegrationSummaryScrollView *_scrollView;
-    DVTReplacementView *_reflightOrProgressReplacementView;
-    XCSUIProgressReplacementView *_issuesReplacementView;
-    DVTReplacementView *_errorView;
-    DVTLozengeTextField *_errorTextField;
+    NSURL *_documentURL;
+    NSArray *_selectedDocumentLocations;
+    NSScrollView *_scrollView;
+    DVTReplacementView *_progressReplacementView;
 }
 
-+ (BOOL)instancesCanContainDocumentLocation:(id)arg1;
-+ (id)keyPathsForValuesAffectingCurrentSelectedItems;
-@property __weak DVTLozengeTextField *errorTextField; // @synthesize errorTextField=_errorTextField;
-@property __weak DVTReplacementView *errorView; // @synthesize errorView=_errorView;
-@property(retain) XCSUIProgressReplacementView *issuesReplacementView; // @synthesize issuesReplacementView=_issuesReplacementView;
-@property __weak DVTReplacementView *reflightOrProgressReplacementView; // @synthesize reflightOrProgressReplacementView=_reflightOrProgressReplacementView;
-@property __weak _XCSUIIntegrationSummaryScrollView *scrollView; // @synthesize scrollView=_scrollView;
-@property long long currentIntegrationStep; // @synthesize currentIntegrationStep=_currentIntegrationStep;
-@property __weak DVTStackView_ML *stackView; // @synthesize stackView=_stackView;
-@property __weak DVTReplacementView *changesReplacementView; // @synthesize changesReplacementView=_changesReplacementView;
-@property __weak DVTReplacementView *devicesReplacementView; // @synthesize devicesReplacementView=_devicesReplacementView;
-@property __weak DVTReplacementView *productsReplacementView; // @synthesize productsReplacementView=_productsReplacementView;
-@property __weak DVTReplacementView *statusBadgesReplacementView; // @synthesize statusBadgesReplacementView=_statusBadgesReplacementView;
-@property(copy) NSString *issueCount; // @synthesize issueCount=_issueCount;
-@property(copy) NSString *warningCount; // @synthesize warningCount=_warningCount;
-@property(copy) NSString *errorCount; // @synthesize errorCount=_errorCount;
-@property(copy) NSString *statusString; // @synthesize statusString=_statusString;
-@property(copy) NSString *dateFinished; // @synthesize dateFinished=_dateFinished;
-@property(copy) NSString *integrationTitle; // @synthesize integrationTitle=_integrationTitle;
-@property(retain, nonatomic) XCSBotSupportingEditor *botSupportingEditor; // @synthesize botSupportingEditor=_botSupportingEditor;
-@property(retain, nonatomic) XCSBot *bot; // @synthesize bot=_bot;
+@property __weak DVTReplacementView *progressReplacementView; // @synthesize progressReplacementView=_progressReplacementView;
+@property __weak NSScrollView *scrollView; // @synthesize scrollView=_scrollView;
+@property(retain, nonatomic) NSArray *selectedDocumentLocations; // @synthesize selectedDocumentLocations=_selectedDocumentLocations;
+@property(retain, nonatomic) NSURL *documentURL; // @synthesize documentURL=_documentURL;
 @property(retain, nonatomic) XCSIntegration *integration; // @synthesize integration=_integration;
-@property(readonly, copy) NSArray *currentSelectedDocumentLocations; // @synthesize currentSelectedDocumentLocations=_currentSelectedDocumentLocations;
 - (void).cxx_destruct;
-- (void)selectDocumentLocations:(id)arg1;
-- (void)refreshUI;
-- (void)updateReplacementViews;
-- (void)configureIssuesInstalledReplacementView;
-- (void)sizeChangesViewToFit;
-- (void)sizeStatusIsssueViewFit;
-- (id)changesViewController;
-- (id)statusViewController;
+- (void)dataSource:(id)arg1 integrationStepChanged:(id)arg2 serviceSnapshot:(id)arg3 botSnapshot:(id)arg4 integrationSnapshot:(id)arg5;
+- (void)sendReportDidLoadNotification;
+- (void)configureIssuesControllerCallbacks;
+- (void)configureIssuesController:(id)arg1;
+- (void)_updateIssues;
 - (id)inflightViewController;
-- (id)devicesViewController;
-- (id)productsViewController;
-- (id)issuesViewController;
-@property(readonly, copy) NSArray *currentSelectedItems;
+- (void)addViewControllers;
+- (void)resizeStackHeight;
+- (void)addViewToStack:(id)arg1 underneathView:(id)arg2;
 - (void)primitiveInvalidate;
 - (void)loadView;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

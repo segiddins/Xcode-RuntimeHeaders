@@ -8,15 +8,18 @@
 
 #import <IDEKit/NSMenuDelegate-Protocol.h>
 
-@class DVTGradientImageButton, DVTNotificationToken, DVTObservingToken, IDENavigatorFilterControlBar, IDENavigatorOutlineView, NSArray, NSLayoutConstraint, NSMapTable, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, NSView;
+@class DVTGradientImageButton, DVTNotificationToken, DVTObservingToken, IDENavigableItem, IDENavigatorOutlineView, IDENavigatorSearchFilterControlBar, NSArray, NSLayoutConstraint, NSMapTable, NSMenuItem, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, NSView;
 
 @interface IDEDebugNavigator : IDENavigator <NSMenuDelegate>
 {
     IDENavigatorOutlineView *_outlineView;
     DVTGradientImageButton *_autoCompressMinButton;
     NSLayoutConstraint *_filterContainerViewHeight;
-    IDENavigatorFilterControlBar *_filterControl;
+    NSMenuItem *_helpMenuItem;
+    NSMenuItem *_copyMenuItem;
+    IDENavigatorSearchFilterControlBar *_filterControl;
     NSMapTable *_processHeaderCellViewsForContentDelegateTable;
+    IDENavigableItem *_itemToSelectBasedOnItemBeingEdited;
     NSMutableArray *_cachedNavigableDebugItems;
     NSMapTable *_contentDelegateForIdentifierTable;
     DVTNotificationToken *_coordinatorWillForgetObservingToken;
@@ -45,6 +48,7 @@
 + (id)createProcessActionPopUpMenuItemWithPopUpImage:(id)arg1 action:(SEL)arg2;
 + (id)createProcessActionPopUpMenuItemWithPopUpImage:(id)arg1 menuItemImage:(id)arg2 action:(SEL)arg3;
 + (void)initialize;
++ (id)keyPathsForValuesAffectingNavigatorFilterContextsForFunctionBar;
 @property __weak NSView *filterContainerView; // @synthesize filterContainerView=_filterContainerView;
 @property(nonatomic) BOOL showsOnlyRunningBlocks; // @synthesize showsOnlyRunningBlocks=_showsOnlyRunningBlocks;
 @property(nonatomic) BOOL showsOnlyInterestingContent; // @synthesize showsOnlyInterestingContent=_showsOnlyInterestingContent;
@@ -90,7 +94,6 @@
 - (void)_scrollToIndexes:(id)arg1;
 - (id)_navigableItemArchivableRepresentationsForNavigableItems:(id)arg1;
 - (void)selectNavigableItems:(id)arg1;
-- (id)_addressStringForExecutionEnvironment;
 - (void)commitStateToDictionary:(id)arg1;
 - (void)revertStateWithDictionary:(id)arg1;
 - (void)setStoredCompressionValue:(id)arg1;
@@ -109,11 +112,14 @@
 - (BOOL)_handleUserDirectShiftKeyMoveUpOrDown:(BOOL)arg1;
 - (id)_contentDelegateForRepresentedObject:(id)arg1;
 - (id)_contentDelegateFromProcessIfConforming:(id)arg1;
+- (id)contentDelegateForDebugNavigable:(id)arg1;
 - (BOOL)outlineView:(id)arg1 writeItems:(id)arg2 toPasteboard:(id)arg3;
 - (id)outlineView:(id)arg1 selectionIndexesForProposedSelection:(id)arg2;
-- (id)_tableCellViewToHostCell:(id)arg1 withOutlineView:(id)arg2 tableColumn:(id)arg3 item:(id)arg4;
+- (id)_tableCellViewToHostGaugeTrayItem:(id)arg1 withOutlineView:(id)arg2 tableColumn:(id)arg3 item:(id)arg4;
 - (double)outlineView:(id)arg1 heightOfRowByItem:(id)arg2;
 - (void)outlineView:(id)arg1 didRemoveRowView:(id)arg2 forRow:(long long)arg3;
+- (void)outlineView:(id)arg1 didAddRowView:(id)arg2 forRow:(long long)arg3;
+- (BOOL)_representedObjectIsWaitingToAttach:(id)arg1;
 - (id)outlineView:(id)arg1 viewForTableColumn:(id)arg2 item:(id)arg3;
 - (void)outlineView:(id)arg1 willDisplayCell:(id)arg2 forTableColumn:(id)arg3 item:(id)arg4;
 - (void)_configureSeparatorLineDrawingForTableRowView:(id)arg1 withItem:(id)arg2;
@@ -127,14 +133,15 @@
 - (id)_expandedItemTokens;
 - (id)_tokenForPersistingRepresentedObject:(id)arg1;
 - (id)_tokenForExpandedRepresentedObject:(id)arg1;
-- (id)_allGaugeCellsForForProcess:(id)arg1;
-- (id)_gagueCellForGaugeDocumentLocationNavItem:(id)arg1;
+- (id)_allGaugeDataSourcesForForProcess:(id)arg1;
+- (id)_dataSourceForGaugeDocumentLocationNavItem:(id)arg1;
 - (void)_makeNavItemReflectShowGaugesStoredState:(id)arg1;
 @property(readonly, copy) NSArray *navigableDebugItems;
 - (BOOL)delegateFirstResponder;
 - (id)domainIdentifier;
 - (id)_selectedRepresentedObjects;
 - (BOOL)validateUserInterfaceItem:(id)arg1;
+- (BOOL)_canCopyOrDeleteSelectedObjects:(SEL)arg1;
 - (void)delete:(id)arg1;
 - (void)copy:(id)arg1;
 - (void)viewWillUninstall;
@@ -148,9 +155,18 @@
 - (void)openDoubleClickedNavigableItemsAction:(id)arg1;
 - (void)openClickedNavigableItemAction:(id)arg1;
 - (void)openSelectedNavigableItemsKeyAction:(id)arg1;
-- (void)focusedEditorDidSelectItem:(id)arg1;
+- (id)itemToSelectBasedOnItemBeingEdited;
+- (BOOL)prefersStrongSelection;
+- (void)_updateSelectionToReflectActivelyEditedItem;
+- (void)focusedEditorDidSelectItem;
 - (void)revealArchivedNavigableItems:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (id)_toggleButtonsFromContainer:(id)arg1;
+- (id)_navigatorFilterControlBarFromContainer:(id)arg1;
+- (id)_visitSubviewsOfView:(id)arg1 lookingForViewClass:(Class)arg2;
+- (id)_dfrImageForImageName:(id)arg1;
+- (id)_filterToggleContextsForControlBar:(id)arg1;
+- (id)navigatorFilterContextsForFunctionBar;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

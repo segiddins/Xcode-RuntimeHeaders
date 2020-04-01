@@ -22,9 +22,9 @@
     IBCocoaTouchTargetRuntime *_targetRuntime;
 }
 
-+ (id)instantiateWithDocumentUnarchiver:(id)arg1;
 + (BOOL)ibExistsAtRuntime;
 + (id)keyPathsForValuesAffectingIbInspectedNumberOfRows;
++ (id)instantiateWithDocumentUnarchiver:(id)arg1;
 @property(retain) IBCocoaTouchTargetRuntime *targetRuntime; // @synthesize targetRuntime=_targetRuntime;
 @property(copy, nonatomic) NSArray *cells; // @synthesize cells=_cells;
 @property(copy, nonatomic) NSString *footerTitle; // @synthesize footerTitle=_footerTitle;
@@ -38,11 +38,9 @@
 - (void)tableViewCellDidChangeBackgroundColor:(id)arg1;
 - (void)tableViewCellDidChangeRowHeight:(id)arg1;
 - (BOOL)isContainedCell:(id)arg1;
-- (id)initWithTargetRuntime:(id)arg1;
-- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
-- (void)archiveWithDocumentArchiver:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithTargetRuntime:(id)arg1;
 - (BOOL)ibChildView:(id)arg1 shouldUseConstraintsInsteadOfAutoresizingWhenAddedToDocument:(id)arg2;
 - (BOOL)ibIsChildArbitrationUnitRoot:(id)arg1;
 - (id)ibAcceptContentsOfPasteboard:(id)arg1 inDocument:(id)arg2 insertionContext:(id)arg3;
@@ -55,6 +53,13 @@
 - (id)ibQualifyingInfoForDefaultLabel;
 - (void)setIbInspectedNumberOfRows:(long long)arg1;
 - (long long)ibInspectedNumberOfRows;
+- (Class)ibEditorClass;
+- (id)ibLocalLocalizableStringsAttributeKeyPaths;
+- (id)ibLocalAttributeKeyPaths;
+- (id)ibLocalChildToManyRelationshipsKeyPaths;
+- (id)ibLocalChildToOneRelationshipsKeyPaths;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

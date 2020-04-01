@@ -7,6 +7,7 @@
 #import <IBFoundation/IBICSlottedAbstractImageRep.h>
 
 @interface IBICSlottedAbstractImageRep (DisplayAdditions)
+- (id)unsetImageForSize:(struct CGSize)arg1;
 - (id)ibInspectedRequiredPixelSize;
 @end
 

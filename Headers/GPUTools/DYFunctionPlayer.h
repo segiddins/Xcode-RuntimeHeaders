@@ -31,12 +31,14 @@
     BOOL _mainExecutionMode;
     unsigned int _currentExecutionModeFunctionIndex;
     unsigned int _currentFileFunctionIndex;
-    unordered_map_82d59a1a _dataSizeMap;
+    unordered_map_8e11cf9d _dataSizeMap;
     NSMapTable *_variables;
     unsigned long long _ctxID;
     struct CoreFunction *_function;
     void *_argumentPointers[16];
+    struct vector<std::__1::pair<std::__1::basic_string<char>, bool>, std::__1::allocator<std::__1::pair<std::__1::basic_string<char>, bool>>> _argumentURLs[16];
     void *_retval_buffer;
+    vector_7984f87c _argumentStorePositions[16];
 }
 
 + (struct CGSize)shrinkSourceSize:(struct CGSize)arg1 toDestSize:(struct CGSize)arg2;
@@ -56,9 +58,14 @@
 - (void)executePlatformFunction;
 - (BOOL)shouldExecuteGraphicsFunction;
 - (void)processArguments;
-- (void)addPointerDataSizeMap:(unordered_map_82d59a1a *)arg1;
-- (void *)copyDataForPosition:(unsigned long long)arg1 dataSize:(unsigned long long *)arg2;
+- (void)releaseArguments;
+- (void)releaseDataForArgument:(int)arg1;
+- (void)addPointerDataSizeMap:(unordered_map_8e11cf9d *)arg1;
+- (void *)requestDataForFilename:(const char *)arg1 dataSize:(unsigned long long *)arg2 position:(unsigned long long *)arg3;
+- (void *)requestDataForPosition:(unsigned long long)arg1 dataSize:(unsigned long long *)arg2;
+- (void)releaseDataForPosition:(unsigned long long)arg1;
 - (void *)copyDataForFilename:(const char *)arg1 dataSize:(unsigned long long *)arg2;
+- (void)executeFunctions:(struct CoreFunction *)arg1 count:(unsigned long long)arg2 subCommandIndex:(unsigned int)arg3;
 - (void)executeFunctions:(struct CoreFunction *)arg1 count:(unsigned long long)arg2;
 - (BOOL)isFrameBoundary;
 - (void)performPostDispatchFrameBoundaryActions;

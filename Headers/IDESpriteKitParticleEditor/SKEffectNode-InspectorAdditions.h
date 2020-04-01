@@ -9,6 +9,24 @@
 @class NSArray;
 
 @interface SKEffectNode (InspectorAdditions)
++ (id)keyPathsForValuesAffectingshouldRasterize_commit;
++ (id)keyPathsForValuesAffectingshader_commit;
++ (id)keyPathsForValuesAffectingblendMode_commit;
++ (id)keyPathsForValuesAffectingshouldCenterFilter_commit;
++ (id)keyPathsForValuesAffectingfilter_commit;
++ (id)keyPathsForValuesAffectingshouldEnableEffects_commit;
 @property(readonly, nonatomic) NSArray *sk_availableFilters;
+- (void)setshouldRasterize_commit:(BOOL)arg1;
+- (BOOL)shouldRasterize_commit;
+- (void)setshader_commit:(id)arg1;
+- (id)shader_commit;
+- (void)setblendMode_commit:(long long)arg1;
+- (long long)blendMode_commit;
+- (void)setshouldCenterFilter_commit:(BOOL)arg1;
+- (BOOL)shouldCenterFilter_commit;
+- (void)setfilter_commit:(id)arg1;
+- (id)filter_commit;
+- (void)setshouldEnableEffects_commit:(BOOL)arg1;
+- (BOOL)shouldEnableEffects_commit;
 @end
 

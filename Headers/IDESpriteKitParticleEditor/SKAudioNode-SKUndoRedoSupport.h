@@ -22,5 +22,6 @@
 - (BOOL)positional_commit;
 - (void)setavAudioNode_commit:(id)arg1;
 - (id)avAudioNode_commit;
+- (unsigned long long)manipulationSupport;
 @end
 

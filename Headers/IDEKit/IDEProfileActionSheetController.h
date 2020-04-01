@@ -35,6 +35,7 @@
     NSView *_watchLaunchSettingsView;
     NSPopUpButton *_watchInterfacePopup;
     NSPopUpButton *_notificationPayloadPopup;
+    NSView *_notificationPayloadSettingsView;
     DVTChoice *_infoChoice;
     DVTChoice *_conditionsChoice;
     DVTChoice *_optionsChoice;
@@ -94,7 +95,7 @@
 - (void)loadView;
 - (void)updateBoundContent;
 - (void)updateBoundIDERunContextBinding;
-- (id)dvtExtraBindings;
+- (id)dvt_extraBindings;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

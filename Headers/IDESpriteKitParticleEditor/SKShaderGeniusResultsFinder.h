@@ -12,7 +12,7 @@
 
 + (Class)editorDocumentClass;
 - (id)_packagedGeniusResultsFromLocations:(id)arg1;
-- (BOOL)_getUpdateGeniusResultsPhaseOneBlock:(CDUnknownBlockType *)arg1 phaseTwoBlock:(CDUnknownBlockType *)arg2 phaseThreeBlock:(CDUnknownBlockType *)arg3;
+- (BOOL)_getUpdateGeniusResultsPhase1Block:(CDUnknownBlockType *)arg1 phase2Block:(CDUnknownBlockType *)arg2 phase3Block:(CDUnknownBlockType *)arg3;
 - (id)geniusCategoryIdentifier;
 
 @end

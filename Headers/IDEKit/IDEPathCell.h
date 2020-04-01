@@ -25,6 +25,8 @@
     DVTDelayedInvocation *_dirtyCellInvocation;
     struct {
         unsigned int _lastComponentFillsWidth:1;
+        unsigned int _delegateRespondsToWillDisplayChildrenWithMostProximateChildItem:1;
+        unsigned int _delegateRespondsToWillDismissMenuDisplayingItems:1;
         unsigned int _delegateRespondsToShouldSeparateDisplayOfChildItemsForItem:1;
         unsigned int _delegateRespondsToChildItemsForItem:1;
         unsigned int _delegateRespondsToShouldPopUpMenuForPathComponentCell:1;
@@ -35,15 +37,14 @@
         unsigned int _delegateProvidesAccessibilityDescriptions:1;
         unsigned int _delegateProvidesToolTips:1;
         unsigned int _delegateResponseToTextAlignmentForTitleOfPathComponentCellAtIndex:1;
+        unsigned int _delegateRespondsToShouldDisplayChildrenForItem:1;
     } _idePathCellFlags;
     BOOL _needsToUpdateComponentCells;
     int _gradientStyle;
-    int _borderSides;
 }
 
 + (void)initialize;
 + (unsigned long long)defaultFocusRingType;
-@property int borderSides; // @synthesize borderSides=_borderSides;
 @property(nonatomic) int gradientStyle; // @synthesize gradientStyle=_gradientStyle;
 - (void).cxx_destruct;
 - (id)ide_accessibilityPopUpMenuParent:(id)arg1;
@@ -61,31 +62,33 @@
 - (void)menuDidClose:(id)arg1;
 - (void)menuWillOpen:(id)arg1;
 - (BOOL)trackMouse:(id)arg1 inRect:(struct CGRect)arg2 ofView:(id)arg3 untilMouseUp:(BOOL)arg4;
-- (void)_handleClickInComponentCell:(id)arg1 atPoint:(struct CGPoint)arg2 inRect:(struct CGRect)arg3 ofView:(id)arg4 event:(id)arg5;
+- (BOOL)_handleClickInComponentCell:(id)arg1 atPoint:(struct CGPoint)arg2 inRect:(struct CGRect)arg3 ofView:(id)arg4 event:(id)arg5;
 - (BOOL)_trackMouseInComponentCell:(id)arg1 atPoint:(struct CGPoint)arg2 inRect:(struct CGRect)arg3 ofView:(id)arg4 event:(id)arg5;
 - (BOOL)acceptsFirstResponder;
 - (unsigned long long)draggingSession:(id)arg1 sourceOperationMaskForDraggingContext:(long long)arg2;
 - (void)_performDragInComponentCell:(id)arg1 inRect:(struct CGRect)arg2 ofView:(id)arg3 event:(id)arg4;
 - (void)filterItems:(id)arg1 inMenu:(id)arg2 forSearchString:(id)arg3;
 - (void)_openURLInFinder:(id)arg1;
-- (void)popUpMenuForComponentCell:(id)arg1 inRect:(struct CGRect)arg2 ofView:(id)arg3;
+- (BOOL)popUpMenuForComponentCell:(id)arg1 inRect:(struct CGRect)arg2 ofView:(id)arg3;
 - (void)_handlePressureClickForCell:(id)arg1;
 - (BOOL)_revealInPopover:(id)arg1 ofCell:(id)arg2 fromFrame:(struct CGRect)arg3 ofView:(id)arg4;
-- (id)_urlForItem:(id)arg1;
-- (void)_populatePopUpMenuWithPath:(id)arg1 withURL:(id)arg2;
+- (BOOL)_representsDocumentInteriorContent:(id)arg1;
+- (id)_fileURLForItem:(id)arg1;
+- (void)_populatePopUpMenuWithPath:(id)arg1 withFileURL:(id)arg2;
 - (void)_populatePopUpMenu:(id)arg1 withItems:(id)arg2;
 - (void)menuNeedsUpdate:(id)arg1;
 - (void)cancelMenuTracking;
-- (id)_menuItemWithNavigableItem:(id)arg1 additionalItems:(id *)arg2 currentGroupIdentifier:(id *)arg3;
-- (id)_menuItemWithNavigableItem:(id)arg1 additionalItems:(id *)arg2 currentGroupIdentifier:(id *)arg3 indentationLevel:(long long)arg4;
+- (id)_menuItemWithItem:(id)arg1 additionalItems:(id *)arg2 currentGroupIdentifier:(id *)arg3;
+- (id)_menuItemWithItem:(id)arg1 additionalItems:(id *)arg2 currentGroupIdentifier:(id *)arg3 indentationLevel:(long long)arg4;
 - (void)_setupSubmenuForMenuItem:(id)arg1;
 - (void)_selectItem:(id)arg1;
+- (BOOL)_delegate_shouldDisplayChildrenForItem:(id)arg1;
 - (BOOL)_delegate_shouldSeparateDisplayOfChildItemsForItem:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)stopObservingChildItemsOfItems:(id)arg1;
 - (void)stopObservingChildItemsOfAllItems;
 - (void)startObservingChildItemsOfMenuItems:(id)arg1;
-- (id)peerNavigableItemsForComponentCell:(id)arg1;
+- (id)_peerItemsForComponentCell:(id)arg1;
 - (id)childItemsForItem:(id)arg1;
 - (void)invalidateNameForPathComponentCell:(id)arg1;
 - (void)invalidateImageForPathComponentCell:(id)arg1;
@@ -95,9 +98,9 @@
 - (struct CGSize)sizeWantedForFrame:(struct CGRect)arg1 inView:(id)arg2;
 - (id)_componentCellsForCurrentlyObservedItems;
 - (void)_updateDirtyCells:(id)arg1;
-- (id)lineageForNavigableItem:(id)arg1 rootItems:(id)arg2;
+- (id)lineageForItem:(id)arg1 rootItems:(id)arg2;
 - (id)_componentCellsFromItems:(id)arg1;
-- (unsigned long long)_delegate_textAlignmentForTitleOfPathComponentCell:(id)arg1 atIndex:(unsigned long long)arg2;
+- (long long)_delegate_textAlignmentForTitleOfPathComponentCell:(id)arg1 atIndex:(unsigned long long)arg2;
 - (id)_delegate_titleForPathComponentCell:(id)arg1 atIndex:(unsigned long long)arg2;
 - (id)_noSelectionComponentCell;
 - (id)_componentCellWithRepresentedObject:(id)arg1;

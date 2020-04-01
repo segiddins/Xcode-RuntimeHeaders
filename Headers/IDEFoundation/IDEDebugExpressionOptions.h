@@ -11,6 +11,7 @@
 
 @interface IDEDebugExpressionOptions : NSObject
 {
+    BOOL _unwindOnError;
     BOOL _autoHandleExceptions;
     NSObject<OS_dispatch_queue> *_callbackQueue;
     unsigned long long _timeoutInMicroSeconds;
@@ -21,6 +22,7 @@
 @property(copy) NSString *dataValueName; // @synthesize dataValueName=_dataValueName;
 @property long long language; // @synthesize language=_language;
 @property BOOL autoHandleExceptions; // @synthesize autoHandleExceptions=_autoHandleExceptions;
+@property BOOL unwindOnError; // @synthesize unwindOnError=_unwindOnError;
 @property unsigned long long timeoutInMicroSeconds; // @synthesize timeoutInMicroSeconds=_timeoutInMicroSeconds;
 @property(retain) NSObject<OS_dispatch_queue> *callbackQueue; // @synthesize callbackQueue=_callbackQueue;
 - (void).cxx_destruct;

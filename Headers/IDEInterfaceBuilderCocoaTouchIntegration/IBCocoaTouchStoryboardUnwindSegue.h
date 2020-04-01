@@ -6,11 +6,9 @@
 
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBUIStoryboardAbstractTriggeredSegue.h>
 
-#import <IDEInterfaceBuilderCocoaTouchIntegration/NSCoding-Protocol.h>
-
 @class NSString;
 
-@interface IBCocoaTouchStoryboardUnwindSegue : IBUIStoryboardAbstractTriggeredSegue <NSCoding>
+@interface IBCocoaTouchStoryboardUnwindSegue : IBUIStoryboardAbstractTriggeredSegue
 {
     NSString *_unwindAction;
 }
@@ -26,22 +24,22 @@
 @property(copy, nonatomic) NSString *unwindAction; // @synthesize unwindAction=_unwindAction;
 - (void).cxx_destruct;
 - (id)missingComponents;
-- (id)segueAttributeInspectorExtensionIdentifier;
+- (id)attributesInspectorSliceIdentifier;
 - (void)unarchiveWithDocumentUnarchiver:(id)arg1;
 - (void)archiveWithDocumentArchiver:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)explicitDisplayNameWithRespectToPredecessors:(id)arg1;
 - (id)displayValuesWithRespectToPrototype:(id)arg1 inDocument:(id)arg2;
+- (id)destinationDisplayName;
 - (id)prototypeWithRespectTo:(id)arg1;
 - (Class)classForPrototypeWithRespectTo:(id)arg1;
 - (id)errorMessageForExistenceWithoutPrototypeInDocument:(id)arg1;
-- (void)ibWarnings:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
 - (void)copyCommonInstanceStateToTriggeredSegue:(id)arg1;
 - (id)instantiateSegueTemplate;
 - (id)sourceMembersForIllustrativePurposes;
 - (BOOL)isPrototypeFor:(id)arg1;
 - (BOOL)isEqualToPrototype:(id)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 
 @end
 

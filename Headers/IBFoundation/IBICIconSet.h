@@ -6,6 +6,8 @@
 
 #import <IBFoundation/IBICSlottedAsset.h>
 
+@class NSOrderedSet, NSSet;
+
 @interface IBICIconSet : IBICSlottedAsset
 {
 }
@@ -22,12 +24,13 @@
 - (void)replaceChildrenFromFileSystemSnapshot:(id)arg1 results:(id)arg2;
 - (id)readIconRepIDsFromSnapshot:(id)arg1 results:(id)arg2;
 - (id)outputFileName;
-- (id)intrinsicallyOrderedChildren;
-- (id)children;
+@property(readonly, nonatomic) NSOrderedSet *intrinsicallyOrderedChildren;
+@property(readonly, nonatomic) NSSet *children;
 - (id)assetRepForStructuredIdentifier:(id)arg1;
 - (id)childForIdentifier:(id)arg1;
 - (id)assetRepForIdentifier:(id)arg1;
 - (id)conflictFreeChildForSlot:(id)arg1;
+- (id)assetRepMatchingVariant:(id)arg1 forPlatform:(id)arg2;
 - (id)assetRepForSlot:(id)arg1;
 - (void)createChildrenForSlots:(id)arg1 usingRenderer:(CDUnknownBlockType)arg2;
 

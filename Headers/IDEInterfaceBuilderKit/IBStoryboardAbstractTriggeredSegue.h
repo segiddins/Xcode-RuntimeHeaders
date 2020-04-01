@@ -10,6 +10,7 @@
 
 @interface IBStoryboardAbstractTriggeredSegue : IBAbstractSegueConnection
 {
+    NSString *_destinationControllerCreationSelectorName;
 }
 
 + (id)keyPathsForValuesAffectingIbInspectedSegueClassName;
@@ -22,25 +23,31 @@
 + (BOOL)isValidForLaunchScreen;
 + (BOOL)isObjectValidSource:(id)arg1;
 + (BOOL)isAbstractType;
+@property(copy, nonatomic) NSString *destinationControllerCreationSelectorName; // @synthesize destinationControllerCreationSelectorName=_destinationControllerCreationSelectorName;
+- (void).cxx_destruct;
 - (void)copyInstanceStateToClone:(id)arg1 withContext:(id)arg2;
 - (void)copyCommonInstanceStateToTriggeredSegue:(id)arg1;
-@property(retain, nonatomic) NSString *ibInspectedSegueClassName;
+@property(copy, nonatomic) NSString *ibInspectedSegueClassName;
+- (void)setDestinationCreationSelectorName:(id)arg1;
+- (id)destinationCreationSelectorName;
 - (id)completeWithMissingComponent:(id)arg1;
 - (id)missingComponents;
 - (BOOL)validateDestination:(id)arg1;
-- (id)segueAttributeInspectorExtensionIdentifier;
+- (id)attributesInspectorSliceIdentifier;
 - (BOOL)isExclusiveTo:(id)arg1 inObjectContainer:(id)arg2;
 - (BOOL)isValidForDocument:(id)arg1 message:(id *)arg2;
 - (void)unarchiveWithDocumentUnarchiver:(id)arg1;
 - (void)archiveWithDocumentArchiver:(id)arg1;
-- (void)ibWarnings:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
-- (id)displayGroupIdentifierForDragFromObject:(id)arg1 toObject:(id)arg2;
+- (void)ibPopulateIssues:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
+- (id)displayGroupForDragFromObject:(id)arg1 toObject:(id)arg2;
 - (BOOL)validateSource:(id)arg1;
 - (id)userPresentableLabel;
 - (id)_descriptionSubstringForLabel;
 - (id)trigger;
 - (Class)classForPrototypeWithRespectTo:(id)arg1;
-- (id)initWithSource:(id)arg1 andTrigger:(id)arg2;
+- (id)initWithSource:(id)arg1 trigger:(id)arg2;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 
 @end
 

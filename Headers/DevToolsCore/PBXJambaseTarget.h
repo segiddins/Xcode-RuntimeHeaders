@@ -12,9 +12,7 @@
 
 + (id)jambasePlatformFilePath;
 + (id)jambasePath;
-+ (id)buildSystemDefaultBuildSettings_asPropertyValues;
-+ (id)buildSystemDefaultBuildSettings;
-- (BOOL)buildSettingsDictionaryShouldExtractQuotedBuildSettingsWhenSplitting:(id)arg1;
++ (id)buildSystemDefaultMacros;
 - (id)commandsForCleaningInBuildContext:(id)arg1;
 - (BOOL)shouldWriteAuxiliaryFilesForBuildAction:(id)arg1;
 - (Class)dependencyGraphSnapshotClass;

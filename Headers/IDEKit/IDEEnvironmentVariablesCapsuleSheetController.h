@@ -11,7 +11,7 @@
 }
 
 - (id)titleForDisplay;
-- (id)pasteBoardType;
+- (id)pasteboardType;
 - (void)loadView;
 
 @end

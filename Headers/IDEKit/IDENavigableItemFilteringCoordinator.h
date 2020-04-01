@@ -12,6 +12,7 @@
 {
     DVTNotificationToken *_itemPropertyChangeObserver;
     DVTNotificationToken *_objectGraphChangeObserver;
+    BOOL _delegateRespondsToShouldFilterDecendentsOfItem;
     BOOL _isSuspended;
     BOOL _performingFiltering;
     IDENavigableItemFilter *_filter;
@@ -31,6 +32,7 @@
 - (void)_filterDidChange;
 - (void)resumeFiltering;
 - (void)suspendFiltering;
+- (void)setDelegate:(id)arg1;
 - (void)primitiveInvalidate;
 - (id)init;
 

@@ -6,9 +6,15 @@
 
 #import <AppKit/NSComboBoxCell.h>
 
-@interface NSComboBoxCell (IBNSComboBoxCellIntegration)
+#import <IDEInterfaceBuilderCocoaIntegration/IBDocumentArchiving-Protocol.h>
+
+@class NSString;
+
+@interface NSComboBoxCell (IBNSComboBoxCellIntegration) <IBDocumentArchiving>
++ (id)keyPathsForValuesAffectingIbInspectedUsesDataSource;
 + (id)keyPathsForValuesAffectingIbInspectedEnableAddingObjectValues;
 + (id)keyPathsForValuesAffectingIbShadowedObjectValues;
++ (id)keyPathsForValuesAffectingIbInspectedObjectValues;
 - (Class)ibPreferredControlClass;
 - (BOOL)ibWouldClipContentWithCellSize:(struct CGSize)arg1;
 - (struct CGSize)ibPreferredSizeForSize:(struct CGSize)arg1;
@@ -21,8 +27,18 @@
 - (id)ibInspectedObjectValues;
 - (id)ibOrderedSnapshotAttributesKeyPaths;
 - (id)ibWidgetType;
-- (id)ibDocumentationPropertyInfosForKeyPath:(id)arg1;
+- (id)ibDocumentationSymbolInfosForKeyPath:(id)arg1;
 - (id)ibDisplayNameForKeyPath:(id)arg1;
 - (id)ibDefaultDataValueForTableView:(id)arg1;
+- (id)ibLocalLocalizableStringArrayAttributeKeyPaths;
+- (id)ibLocalAttributeKeyPaths;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @end
 

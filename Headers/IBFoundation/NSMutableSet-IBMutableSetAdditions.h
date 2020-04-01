@@ -16,7 +16,6 @@
 - (void)ib_addObjectIfNonNil:(id)arg1;
 - (void)ib_appendObjects:(id)arg1;
 - (id)ib_popAnyObject;
-- (id)ib_objectsOfClass:(Class)arg1;
 - (void)ib_addObjectsFromCollection:(id)arg1;
 - (void)ib_addObjectsFromFastEnumerable:(id)arg1;
 - (void)ib_removeObjectsPassingTest:(CDUnknownBlockType)arg1;

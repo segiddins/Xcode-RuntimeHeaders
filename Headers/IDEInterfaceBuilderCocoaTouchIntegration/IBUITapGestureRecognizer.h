@@ -7,11 +7,10 @@
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBUIGestureRecognizer.h>
 
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBDocumentArchiving-Protocol.h>
-#import <IDEInterfaceBuilderCocoaTouchIntegration/NSCoding-Protocol.h>
 
 @class NSString;
 
-@interface IBUITapGestureRecognizer : IBUIGestureRecognizer <IBDocumentArchiving, NSCoding>
+@interface IBUITapGestureRecognizer : IBUIGestureRecognizer <IBDocumentArchiving>
 {
     unsigned long long _numberOfTapsRequired;
     unsigned long long _numberOfTouchesRequired;
@@ -20,11 +19,12 @@
 + (id)ibInstantiateForRole:(long long)arg1 withTargetRuntime:(id)arg2 documentClass:(Class)arg3 assetIdentifier:(id)arg4;
 @property unsigned long long numberOfTouchesRequired; // @synthesize numberOfTouchesRequired=_numberOfTouchesRequired;
 @property unsigned long long numberOfTapsRequired; // @synthesize numberOfTapsRequired=_numberOfTapsRequired;
-- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
-- (void)archiveWithDocumentArchiver:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)showAllowedPressTypes;
+- (id)ibLocalAttributeKeyPaths;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

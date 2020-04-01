@@ -26,8 +26,8 @@
 @property(nonatomic) int valueSelectionBehavior; // @synthesize valueSelectionBehavior=_valueSelectionBehavior;
 @property(retain, nonatomic) NSString *autosaveName; // @synthesize autosaveName=_autosaveName;
 - (void).cxx_destruct;
-- (void)ibWarnings:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
-- (id)ibDocumentationPropertyInfosForKeyPath:(id)arg1;
+- (void)ibPopulateIssues:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
+- (id)ibDocumentationSymbolInfosForKeyPath:(id)arg1;
 - (void)removePropertyWithName:(id)arg1;
 - (BOOL)hasPropertyWithName:(id)arg1;
 - (void)addPropertyWithName:(id)arg1;
@@ -37,6 +37,7 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)ibRuntimeClassName;
 - (Class)classForArchiver;
+- (id)ibLocalAttributeKeyPaths;
 - (void)unarchiveWithDocumentUnarchiver:(id)arg1;
 - (void)archiveWithDocumentArchiver:(id)arg1;
 

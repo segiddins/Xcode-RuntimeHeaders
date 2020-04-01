@@ -6,11 +6,14 @@
 
 #import <IDEInterfaceBuilderKit/IBAbstractConnectionEndPointHandler.h>
 
-@class NSObject;
+@class IBMutableIdentityDictionary, NSObject;
 @protocol IBIDEAutolayoutItem;
 
 @interface IBConstraintEndPointHandler : IBAbstractConnectionEndPointHandler
 {
+    IBMutableIdentityDictionary *_menuItemToConstraint;
+    struct CGRect _toItemOriginalLayoutFrame;
+    struct CGRect _fromItemOriginalLayoutFrame;
     NSObject<IBIDEAutolayoutItem> *_fromItem;
     NSObject<IBIDEAutolayoutItem> *_toItem;
     struct CGPoint _startPoint;
@@ -26,7 +29,11 @@
 @property(readonly, nonatomic) NSObject<IBIDEAutolayoutItem> *toItem; // @synthesize toItem=_toItem;
 @property(readonly, nonatomic) NSObject<IBIDEAutolayoutItem> *fromItem; // @synthesize fromItem=_fromItem;
 - (void).cxx_destruct;
-- (id)constraintsForConnectingFromObject:(id)arg1;
+- (id)connectionForConnectingFromObject:(id)arg1;
+- (void)resetLayoutFrameIfNeededForHorizontal:(BOOL)arg1 vertical:(BOOL)arg2;
+- (void)connectionMenu:(id)arg1 willDeselectItems:(id)arg2;
+- (void)constraints:(id)arg1 areAnyHorizontal:(char *)arg2 vertical:(char *)arg3;
+- (void)connectionMenu:(id)arg1 willSelectItems:(id)arg2;
 - (void)_addAspectRatioConstraintsToContext:(id)arg1;
 - (void)_addEqualSizeConstraintsToContext:(id)arg1;
 - (void)_addSiblingAlignmentConstraintsToContext:(id)arg1;
@@ -36,7 +43,7 @@
 - (void)_addAncestorSpacingConstraintsToContext:(id)arg1;
 - (void)__addAncestorSpacingConstraintToContext:(id)arg1 forAttribute:(unsigned long long)arg2;
 - (void)___addAncestorSpacingConstraintToContext:(id)arg1 forAttribute:(unsigned long long)arg2 ofEffectiveAncestorTargetedItem:(id)arg3;
-- (void)___addAncestorSpacingConstraintToContext:(id)arg1 forAttribute:(unsigned long long)arg2 effectiveAncestor:(id)arg3 effectiveDescendant:(id)arg4 onlyAddSingleItemAndAddAsAlternateOnly:(BOOL)arg5;
+- (void)___addAncestorSpacingConstraintToContext:(id)arg1 forAttribute:(unsigned long long)arg2 effectiveContainerAncestor:(id)arg3 effectiveMarginsAncestor:(id)arg4 effectiveDescendant:(id)arg5 onlyAddSingleItemAndAddAsAlternateOnly:(BOOL)arg6 reverseFirstAndSecondItemForContainerConstraint:(BOOL)arg7;
 - (void)_addExplicitSizeConstraintsToContext:(id)arg1;
 - (void)_addSiblingSpacingConstraintsToContext:(id)arg1;
 - (id)_connectionContextForPossibleConstraints;

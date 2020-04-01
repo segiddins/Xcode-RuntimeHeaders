@@ -6,15 +6,17 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableArray, NSMutableDictionary;
+@class NSAppearance, NSMutableArray, NSMutableDictionary;
 
 __attribute__((visibility("hidden")))
 @interface DTTimelineTileDrawingContext : NSObject
 {
     struct CGContext *_cgContext;
+    NSAppearance *_savedAppearance;
     struct TileMetrics _tileMetrics;
     struct CGPath *_defaultColorPath;
-    struct unordered_map<unsigned long, std::__1::tuple<NSColor *, CGPath *>, std::__1::hash<unsigned long>, std::__1::equal_to<unsigned long>, std::__1::allocator<std::__1::pair<const unsigned long, std::__1::tuple<NSColor *, CGPath *>>>> _paths;
+    struct unordered_map<NSColor *, CGPath *, std::__1::hash<NSColor *>, std::__1::equal_to<NSColor *>, std::__1::allocator<std::__1::pair<NSColor *const, CGPath *>>> _paths;
+    struct unordered_map<NSColor *, CGColor *, std::__1::hash<NSColor *>, std::__1::equal_to<NSColor *>, std::__1::allocator<std::__1::pair<NSColor *const, CGColor *>>> _resolvedColors;
     NSMutableDictionary *_stringsDictionary;
     NSMutableArray *_clippableStringsArray;
     struct unordered_map<double, NSImage *, std::__1::hash<double>, std::__1::equal_to<double>, std::__1::allocator<std::__1::pair<const double, NSImage *>>> _imageDictionary;
@@ -34,6 +36,7 @@ __attribute__((visibility("hidden")))
 - (double)_yForBottomOfPlane:(int)arg1;
 - (double)_yForTopOfPlane:(int)arg1;
 - (double)_heightOfPlane:(int)arg1;
+- (void)unlockContextWithoutRender;
 - (void)unlockContext;
 - (void)_renderClippableStringsInContext:(struct CGContext *)arg1;
 - (void)_renderStringsInContext:(struct CGContext *)arg1;

@@ -7,11 +7,10 @@
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBUIGestureRecognizer.h>
 
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBDocumentArchiving-Protocol.h>
-#import <IDEInterfaceBuilderCocoaTouchIntegration/NSCoding-Protocol.h>
 
 @class NSString;
 
-@interface IBUILongPressGestureRecognizer : IBUIGestureRecognizer <IBDocumentArchiving, NSCoding>
+@interface IBUILongPressGestureRecognizer : IBUIGestureRecognizer <IBDocumentArchiving>
 {
     double _allowableMovement;
     double _minimumPressDuration;
@@ -24,12 +23,13 @@
 @property unsigned long long numberOfTapsRequired; // @synthesize numberOfTapsRequired=_numberOfTapsRequired;
 @property double minimumPressDuration; // @synthesize minimumPressDuration=_minimumPressDuration;
 @property double allowableMovement; // @synthesize allowableMovement=_allowableMovement;
-- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
-- (void)archiveWithDocumentArchiver:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)showAllowedPressTypes;
 - (id)ibSegueTriggers;
+- (id)ibLocalAttributeKeyPaths;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

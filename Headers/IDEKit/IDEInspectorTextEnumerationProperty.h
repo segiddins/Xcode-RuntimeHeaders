@@ -6,7 +6,7 @@
 
 #import <IDEKit/IDEInspectorEnumerationProperty.h>
 
-@class DVTNotificationToken, IDEInspectorKeyPath, NSArray, NSMenuItem, NSPopUpButton, NSString;
+@class DVTNotificationToken, IDEInspectorKeyPath, NSArray, NSMenuItem, NSPopUpButton, NSString, NSTextField;
 
 @interface IDEInspectorTextEnumerationProperty : IDEInspectorEnumerationProperty
 {
@@ -25,8 +25,10 @@
     NSArray *optionGroups;
     id controllerValue;
     NSPopUpButton *_popupButton;
+    NSTextField *_label;
 }
 
+@property(retain, nonatomic) NSTextField *label; // @synthesize label=_label;
 @property(retain, nonatomic) NSPopUpButton *popupButton; // @synthesize popupButton=_popupButton;
 - (void).cxx_destruct;
 - (void)rebuildMenuContent;
@@ -42,7 +44,10 @@
 - (id)separatorItem;
 - (id)placeholderOptionWithTitle:(id)arg1;
 - (id)menuItemForOption:(id)arg1;
+- (id)nibName;
+- (void)loadView;
 - (double)baseline;
+- (BOOL)hasTitle;
 
 @end
 

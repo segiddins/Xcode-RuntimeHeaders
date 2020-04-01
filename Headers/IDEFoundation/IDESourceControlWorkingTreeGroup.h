@@ -6,29 +6,26 @@
 
 #import <IDEFoundation/IDESourceControlTreeGroup.h>
 
-@class DVTFilePath, NSMutableDictionary;
+@class DVTFilePath;
 
 @interface IDESourceControlWorkingTreeGroup : IDESourceControlTreeGroup
 {
     DVTFilePath *_filePath;
-    NSMutableDictionary *_statusForKeyDictionary;
     BOOL _edited;
 }
 
 + (BOOL)automaticallyNotifiesObserversOfConflictStateForUpdateOrMerge;
 + (BOOL)automaticallyNotifiesObserversOfSourceControlServerStatus;
 + (BOOL)automaticallyNotifiesObserversOfSourceControlLocalStatus;
+@property BOOL edited; // @synthesize edited=_edited;
 @property(readonly) DVTFilePath *filePath; // @synthesize filePath=_filePath;
 - (void).cxx_destruct;
-- (int)aggregateSourceControlServerStatus;
-- (int)aggregateSourceControlLocalStatus;
-- (void)setSourceControlStatus:(int)arg1 forKey:(id)arg2;
-- (int)sourceControlStatusForKey:(id)arg1;
+- (unsigned long long)aggregateSourceControlServerStatus;
+- (unsigned long long)aggregateSourceControlLocalStatus;
 - (void)setConflictStateForUpdateOrMerge:(unsigned long long)arg1;
-- (void)setSourceControlServerStatus:(int)arg1;
-- (void)setSourceControlLocalStatus:(int)arg1;
+- (void)setSourceControlServerStatus:(unsigned long long)arg1;
+- (void)setSourceControlLocalStatus:(unsigned long long)arg1;
 - (id)currentRevisionWithCompletionBlock:(CDUnknownBlockType)arg1;
-@property BOOL edited; // @synthesize edited=_edited;
 - (id)ideModelObjectTypeIdentifier;
 - (void)repositoryURLStringAtBranch:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (id)repositoryURLString;

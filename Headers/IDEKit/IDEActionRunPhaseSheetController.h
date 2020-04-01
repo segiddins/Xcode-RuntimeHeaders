@@ -32,9 +32,8 @@
 @property(retain) IDESchemeAction *runPhase; // @synthesize runPhase=_runPhase;
 - (void).cxx_destruct;
 - (unsigned long long)capsuleListView:(id)arg1 validateDrop:(id)arg2 proposedRow:(long long)arg3;
-- (BOOL)capsuleListView:(id)arg1 acceptDrop:(id)arg2 row:(long long)arg3;
-- (id)capsuleListView:(id)arg1 pastboardTypesForRowWithIndex:(unsigned long long)arg2;
-- (BOOL)capsuleListView:(id)arg1 shouldAllowDragOfRow:(long long)arg2;
+- (BOOL)capsuleListView:(id)arg1 acceptDrop:(id)arg2 draggedRow:(unsigned long long)arg3 destinationRow:(unsigned long long)arg4;
+- (BOOL)capsuleListView:(id)arg1 allowDragOfRowAtIndex:(unsigned long long)arg2;
 - (id)capsuleListView:(id)arg1 viewControllerForRow:(long long)arg2;
 - (long long)numberOfObjectsInCapsuleListView:(id)arg1;
 - (void)_moveActionFromIndex:(unsigned long long)arg1 toIndex:(long long)arg2;
@@ -54,7 +53,7 @@
 - (void)updateBoundContent;
 - (void)updateBoundIDEWorkspaceBinding;
 - (void)updateBoundIDERunContextBinding;
-- (id)dvtExtraBindings;
+- (id)dvt_extraBindings;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

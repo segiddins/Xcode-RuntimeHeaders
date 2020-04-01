@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <GPUDebuggerFoundation/GPUTraceModelFactory.h>
+#import <GPUDebugger/GPUTraceModelFactory.h>
 
 #import <GPUDebuggerMTLSupport/DYPMTLResourceItemFactory-Protocol.h>
 
@@ -17,42 +17,41 @@ __attribute__((visibility("hidden")))
     GPUMTLTraceOutline *_outline;
 }
 
-+ (id)_keyForResourceItem:(id)arg1;
 + (Class)renderJobClass;
-+ (Class)imageResourceSettingBubbleClass;
-+ (Class)textureInfoBubbleClass;
-+ (Class)depthStencilInfoBubbleClass;
-+ (Class)colorInfoBubbleClass;
 + (Class)captureSessionInfoClassWithAPI:(unsigned int)arg1;
 @property(retain, nonatomic) GPUMTLTraceOutline *outline; // @synthesize outline=_outline;
 - (void).cxx_destruct;
+- (id)labelForObjectID:(unsigned long long)arg1 functionIndex:(int)arg2;
+- (id)_generateOutlineItemsForShaderDebuggerSession:(id)arg1 processItem:(id)arg2;
+- (void)populatePlaceholderItem:(id)arg1 objectID:(unsigned long long)arg2 stateMirrorObject:(const void *)arg3 containerID:(unsigned long long)arg4 identifier:(id)arg5;
+- (id)placeholderResourceItemWithGroup:(id)arg1 type:(unsigned int)arg2 identifier:(id)arg3;
 - (id)functionWithPipeline:(id)arg1 shaderType:(unsigned int)arg2 functionInfo:(id)arg3 identifier:(id)arg4;
 - (id)pipelineStateWithProgramGroup:(id)arg1 programType:(unsigned int)arg2 pipelineStateID:(unsigned long long)arg3 stateMirrorObject:(const void *)arg4 containerID:(unsigned long long)arg5 identifier:(id)arg6;
-- (id)functionInfoWithSourceURL:(id)arg1 lineNumber:(long long)arg2 onlineCompiled:(BOOL)arg3;
+- (id)functionInfoWithSourceFilePath:(id)arg1 onlineCompiled:(BOOL)arg2 functionID:(unsigned long long)arg3;
+- (id)functionInfoWithSourceURL:(id)arg1 lineNumber:(long long)arg2 onlineCompiled:(BOOL)arg3 functionID:(unsigned long long)arg4;
 - (id)rawBytesItemWithGroup:(id)arg1 bytesType:(unsigned long long)arg2 bindingIndex:(unsigned int)arg3 stateMirrorObject:(const void *)arg4 containerID:(unsigned long long)arg5 identifier:(id)arg6;
 - (id)shaderItemWithProgram:(id)arg1 shaderType:(unsigned int)arg2 functionInfo:(id)arg3 identifier:(id)arg4;
 - (id)programItemWithGroup:(id)arg1 programType:(unsigned int)arg2 programID:(unsigned long long)arg3 stateMirrorObject:(const void *)arg4 containerID:(unsigned long long)arg5 identifier:(id)arg6;
 - (id)resourceItemWithGroup:(id)arg1 type:(unsigned int)arg2 objectID:(unsigned long long)arg3 stateMirrorObject:(const void *)arg4 containerID:(unsigned long long)arg5 identifier:(id)arg6;
-- (id)createInfoBubbleForImageResource:(id)arg1 parentView:(id)arg2 owner:(id)arg3 renderingAttributes:(id)arg4;
-- (id)resourceItemOfType:(unsigned int)arg1 resourceID:(unsigned int)arg2 forFunctionIndex:(unsigned int)arg3;
-- (id)storedRenderingAttributesForResourceItem:(id)arg1;
-- (id)resolveCurrentResourceItemWithPreviousItem:(id)arg1 currentMainEditorItem:(id)arg2 topLevelObjects:(id)arg3;
-- (void)establishChildrenForProgramItem:(id)arg1;
+- (struct NSArray *)resourceInfoForResource:(id)arg1 level:(int)arg2 layer:(int)arg3;
+- (id)resourceItemOfType:(unsigned int)arg1 resourceID:(unsigned long long)arg2 forFunctionIndex:(unsigned int)arg3;
+- (id)newDataProviderForShaderDataItem:(id)arg1;
+- (void)establishResource:(id)arg1 forProgramChildren:(id)arg2 containerID:(unsigned long long)arg3;
 - (id)programObjectFromProgramItem:(id)arg1 shaderType:(unsigned int)arg2;
-- (void)generateResourcesForGroup:(id)arg1 apiItem:(id)arg2 boundOnly:(BOOL)arg3;
-- (void)createParentResourceGroupsForAPIItem:(id)arg1;
-- (id)_createResourceGroup:(id)arg1 parentItem:(id)arg2 boundOnly:(BOOL)arg3;
+- (void)populateUnusedResourcesMetadataForResourceItems:(id)arg1;
+- (id)generateResourceItemForObjectID:(unsigned long long)arg1 type:(unsigned int)arg2 options:(id)arg3 forAPIItem:(id)arg4 error:(id *)arg5;
+- (id)generateAllResourcesGroupForAPIItem:(id)arg1 boundOnly:(BOOL)arg2;
 - (void)primitiveInvalidate;
 - (id)apiItemFromDisplayIndex:(unsigned int)arg1;
-- (id)locateDisplayableItemToDraw:(id)arg1 isAssociatedWithStateItem:(char *)arg2;
+- (id)locateDisplayableItemToDraw:(id)arg1;
+- (id)apiItemForTrueFunctionIndex:(unsigned int)arg1 subCommandIndex:(int)arg2;
 - (id)apiItemForTrueFunctionIndex:(unsigned int)arg1;
 - (id)apiItemFromFunctionIndex:(unsigned int)arg1;
+- (void)notifyUnusedResourcesStreamAvailable;
 - (void)invalidateModel;
+- (void)generateOutlineItemsForShaderDebuggerSession:(id)arg1;
 - (void)generateModelWithTraceSession:(id)arg1;
 - (id)resourceTypeToViewClassMaptable;
-- (id)frames;
-- (id)domainProviderRootProgramGroup;
-- (id)domainProviderRootResourceGroup;
 - (id)allMarkerItems;
 - (id)allAPIItems;
 - (id)allDisplayableItems;

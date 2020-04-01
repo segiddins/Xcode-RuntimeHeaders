@@ -7,41 +7,39 @@
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBUIView.h>
 
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBDocumentArchiving-Protocol.h>
-#import <IDEInterfaceBuilderCocoaTouchIntegration/NSCoding-Protocol.h>
 
 @class NSString;
 
-@interface IBUIWindow : IBUIView <IBDocumentArchiving, NSCoding>
+@interface IBUIWindow : IBUIView <IBDocumentArchiving>
 {
-    BOOL visibleAtLaunch;
-    BOOL resizesToFullScreen;
+    BOOL _visibleAtLaunch;
+    BOOL _resizesToFullScreen;
 }
 
 + (void)registerMarshallingRecordHandlers;
 + (int)ibLibraryInclusionStatusForTargetRuntime:(id)arg1 andDocumentClass:(Class)arg2 assetIdentifier:(id)arg3;
-@property BOOL resizesToFullScreen; // @synthesize resizesToFullScreen;
-@property(getter=isVisibleAtLaunch) BOOL visibleAtLaunch; // @synthesize visibleAtLaunch;
-- (BOOL)shouldStatusBarMetricsAlwaysOverlayContentForLayoutPolicy:(id)arg1;
+@property BOOL resizesToFullScreen; // @synthesize resizesToFullScreen=_resizesToFullScreen;
+@property(getter=isVisibleAtLaunch) BOOL visibleAtLaunch; // @synthesize visibleAtLaunch=_visibleAtLaunch;
 - (id)effectiveSimulatedMetrics;
 - (BOOL)canPresentSimulatedMetrics;
 - (struct CGRect)internalStatusBarFrame;
 - (id)runtimeClassNameForContext:(id)arg1 returningOptionalFallbackClassName:(id *)arg2;
 - (BOOL)prefersCachedImageBasedDrawing;
-- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
-- (void)archiveWithDocumentArchiver:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)ibInspectedSupportsOrientationMetrics;
 - (BOOL)ibInspectedSupportsBottomBarMetrics;
 - (BOOL)ibInspectedSupportsTopBarMetrics;
 - (struct CGSize)ibPreferredSize;
-- (void)ibWarnings:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
 - (BOOL)doesSizeMatchLegacyIPhoneFullScreenSize:(struct CGSize)arg1;
 - (BOOL)ibIsUserSizable;
 - (BOOL)ibUsesWidgetTypeForTypeNameForDefaultLabel;
 - (id)ibWidgetType;
 - (id)ibPasteboardTypes;
 - (id)ibDesignableContentView;
+- (Class)ibEditorClass;
+- (id)ibLocalAttributeKeyPaths;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

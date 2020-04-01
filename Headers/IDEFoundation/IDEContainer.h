@@ -8,14 +8,14 @@
 
 #import <IDEFoundation/DVTDirectoryBasedCustomDataStoreDelegate-Protocol.h>
 #import <IDEFoundation/DVTInvalidation-Protocol.h>
-#import <IDEFoundation/IDEIntegrityLogDataSource-Protocol.h>
+#import <IDEFoundation/IDEIssueLogDataSource-Protocol.h>
 #import <IDEFoundation/IDEReadOnlyItem-Protocol.h>
 #import <IDEFoundation/IDEUpgradeableItem-Protocol.h>
 
 @class DVTExtension, DVTFilePath, DVTOperation, DVTStackBacktrace, DVTTimeSlicedMainThreadWorkQueue, IDEActivityLogSection, IDEGroup, IDEWorkspace, NSDictionary, NSMapTable, NSMutableDictionary, NSString, NSTimer, NSURL;
 @protocol IDEContainerCore, IDEContainerDelegate;
 
-@interface IDEContainer : DVTModelObject <DVTInvalidation, IDEIntegrityLogDataSource, IDEReadOnlyItem, DVTDirectoryBasedCustomDataStoreDelegate, IDEUpgradeableItem>
+@interface IDEContainer : DVTModelObject <DVTInvalidation, IDEIssueLogDataSource, IDEReadOnlyItem, DVTDirectoryBasedCustomDataStoreDelegate, IDEUpgradeableItem>
 {
     id <IDEContainerCore> _containerCore;
     IDEWorkspace *_workspace;
@@ -26,7 +26,7 @@
     DVTOperation *_willReadOperation;
     DVTOperation *_readOperation;
     DVTOperation *_didReadOperation;
-    DVTTimeSlicedMainThreadWorkQueue *_mainThreadTimeSlicedQueue;
+    DVTTimeSlicedMainThreadWorkQueue *_scmStatusUpdatingQueue;
     DVTTimeSlicedMainThreadWorkQueue *_pendingFileReferenceResolvingQueue;
     int _activity;
     int _transitionActivity;
@@ -44,8 +44,11 @@
     int _readOnlyStatus;
     BOOL _hasTransitionedToIdle;
     BOOL _containerEdited;
+    BOOL _isMajorGroup;
+    BOOL _isFolderLike;
     BOOL _validForSchemeBuildableReferences;
     BOOL _transitioningToNewFilePath;
+    IDEActivityLogSection *_issueLog;
 }
 
 + (BOOL)_shouldTrackReadOnlyStatus;
@@ -58,6 +61,7 @@
 + (BOOL)isOnlyUsedForUserInteraction;
 + (BOOL)supportsMultipleInstancesPerFilePath;
 + (BOOL)automaticallyNotifiesObserversOfFilePath;
++ (id)keyPathsForValuesAffectingWorkspaceParentRelativePath;
 + (BOOL)automaticallyNotifiesObserversOfActivity;
 + (id)containerDataFilePathsForFilePath:(id)arg1;
 + (BOOL)supportsFilePersistence;
@@ -66,6 +70,9 @@
 + (double)_defaltAutosaveDelay;
 + (BOOL)automaticallyNotifiesObserversOfContainerEdited;
 + (void)_addContainerWithPendingChanges:(id)arg1;
++ (BOOL)filePathChangeNotificationsAreSuspendedForWorkspace:(id)arg1;
++ (void)resumeFilePathChangeNotificationsForWorkspace:(id)arg1;
++ (void)suspendFilePathChangeNotificationsForWorkspace:(id)arg1;
 + (void)resumeFilePathChangeNotifications;
 + (void)suspendFilePathChangeNotifications;
 + (id)_containersWithPendingFilePathChanges;
@@ -76,10 +83,12 @@
 + (void)_releaseContainer:(id)arg1;
 + (void)_retainContainer:(id)arg1;
 + (BOOL)_closeContainerIfNeeded:(id)arg1;
-+ (void)_removeReferencesToContainer:(id)arg1;
++ (void)_removeOpenContainer:(id)arg1;
 + (void)_decreaseCountForContainer:(id)arg1;
 + (void)_increaseCountForContainer:(id)arg1;
 + (unsigned long long)_countForContainer:(id)arg1;
++ (id)_refcountTableForContainer:(id)arg1;
++ (id)_containersPendingRelease;
 + (id)_openContainers;
 + (BOOL)isContainerOpenForFilePath:(id)arg1;
 + (id)retainedWrappedWorkspaceForContainerAtFilePath:(id)arg1 fileDataType:(id)arg2 error:(id *)arg3;
@@ -95,6 +104,7 @@
 + (id)containerLoadingModelObjectGraph;
 + (void)initialize;
 @property(getter=isTransitioningToNewFilePath) BOOL transitioningToNewFilePath; // @synthesize transitioningToNewFilePath=_transitioningToNewFilePath;
+@property(retain) IDEActivityLogSection *issueLog; // @synthesize issueLog=_issueLog;
 @property int readOnlyStatus; // @synthesize readOnlyStatus=_readOnlyStatus;
 @property(readonly) IDEGroup *rootGroup; // @synthesize rootGroup=_rootGroup;
 @property(copy, nonatomic) DVTFilePath *itemBaseFilePath; // @synthesize itemBaseFilePath=_itemBaseFilePath;
@@ -102,7 +112,6 @@
 @property(readonly) DVTExtension *extension; // @synthesize extension=_extension;
 @property(readonly, nonatomic, getter=isValidForSchemeBuildableReferences) BOOL validForSchemeBuildableReferences; // @synthesize validForSchemeBuildableReferences=_validForSchemeBuildableReferences;
 @property(readonly) IDEWorkspace *workspace; // @synthesize workspace=_workspace;
-@property(readonly) id <IDEContainerCore> containerCore; // @synthesize containerCore=_containerCore;
 @property(retain) id <IDEContainerDelegate> containerDelegate; // @synthesize containerDelegate=_containerDelegate;
 - (void).cxx_destruct;
 - (void)customDataStore:(id)arg1 removeItemAtFilePath:(id)arg2 completionQueue:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;
@@ -119,10 +128,10 @@
 - (void)debugPrintStructure;
 - (void)debugPrintInnerStructure;
 @property(readonly, copy) NSString *description;
-- (void)_enqueueWorkItem:(CDUnknownBlockType)arg1;
+- (void)_enqueueSCMUpdateForItem:(id)arg1;
 - (void)collectMessageTracerStatisticsIntoDictionary:(id)arg1;
-@property(readonly) IDEActivityLogSection *integrityLog;
-- (void)analyzeModelIntegrity;
+- (void)holdOnDiskFilesForICloudDriveIfNecessary;
+- (void)analyzeModelForIssues;
 - (void)enumerateUpgradeTasksWithBlock:(CDUnknownBlockType)arg1;
 @property(readonly) BOOL supportsOnDemandResources;
 @property(readonly, getter=isFolderLike) BOOL folderLike;
@@ -141,6 +150,7 @@
 - (void)_respondToFileChangeOnDiskWithFilePath:(id)arg1;
 - (void)_makeAbsoluteFileReferencesInGroup:(id)arg1 relativeToFolderFilePath:(id)arg2 withPathString:(id)arg3;
 @property(readonly) NSString *displayName;
+@property(readonly) DVTFilePath *rootFilePath;
 @property(readonly, copy) NSString *workspaceParentRelativePath;
 - (void)_setTransitioningToNewFilePath:(BOOL)arg1;
 - (void)_setExtension:(id)arg1;
@@ -175,6 +185,7 @@
 - (void)_unregisterForChangesToContainerDataFilePath:(id)arg1;
 - (void)_registerForChangesToContainerDataFilePath:(id)arg1;
 - (void)_filePathDidChangeWithPendingChangeDictionary;
+@property(readonly) id <IDEContainerCore> containerCore; // @synthesize containerCore=_containerCore;
 - (void)primitiveInvalidate;
 - (void)invalidate;
 - (id)_sessionIdentifier;
@@ -198,6 +209,8 @@
 - (void)_removePendingFileReference:(id)arg1;
 - (void)_addPendingFileReference:(id)arg1;
 - (id)_containerInstanceDescription;
+- (BOOL)openQuickly_shouldIncludeAsResult;
+- (BOOL)openQuickly_shouldIncludeDescendants;
 
 // Remaining properties
 @property(retain) DVTStackBacktrace *creationBacktrace;

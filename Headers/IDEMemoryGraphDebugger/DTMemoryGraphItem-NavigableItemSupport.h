@@ -9,7 +9,7 @@
 #import <IDEMemoryGraphDebugger/IDEDebugNavigableModel-Protocol.h>
 #import <IDEMemoryGraphDebugger/IDEKeyDrivenNavigableItemRepresentedObject-Protocol.h>
 
-@class DVTDocumentLocation, DVTFileDataType, IDEFileReference, IDELaunchSession, NSArray, NSImage, NSString;
+@class DVTDocumentLocation, DVTFileDataType, DVTSymbol, IDEFileReference, IDELaunchSession, IDEThread, NSArray, NSImage, NSNull, NSString, NSURL;
 
 @interface DTMemoryGraphItem (NavigableItemSupport) <IDEDebugNavigableModel, IDEKeyDrivenNavigableItemRepresentedObject>
 + (id)iconForNode:(unsigned int)arg1 inGraph:(id)arg2;
@@ -18,27 +18,52 @@
 @property(readonly) IDELaunchSession *launchSession;
 @property(readonly, copy) NSString *associatedProcessUUID;
 - (id)_graphDebugger;
-@property(readonly) DVTDocumentLocation *navigableItem_contentDocumentLocation;
-@property(readonly) DVTFileDataType *navigableItem_documentType;
-@property(readonly) BOOL navigableItem_isLeaf;
-@property(readonly) NSImage *navigableItem_image;
-@property(readonly) NSString *navigableItem_subtitle;
-@property(readonly) NSString *navigableItem_name;
+@property(readonly, nonatomic) id navigableItem_parentRepresentedObject;
+@property(readonly, nonatomic) DVTDocumentLocation *navigableItem_contentDocumentLocation;
+@property(readonly, nonatomic) DVTFileDataType *navigableItem_documentType;
+@property(readonly, nonatomic) BOOL navigableItem_isLeaf;
+@property(readonly, nonatomic) NSImage *navigableItem_image;
+@property(readonly, nonatomic) NSString *navigableItem_subtitle;
+@property(readonly, nonatomic) NSString *navigableItem_name;
 @property(readonly, nonatomic) NSArray *children;
 @property(readonly, nonatomic) NSImage *statusIcon;
 - (void)setHideStatusIcon:(BOOL)arg1;
+- (void)_generateBacktraceWithHandler:(CDUnknownBlockType)arg1;
+@property(readonly, nonatomic) NSString *backtraceErrorMessage;
+@property(readonly, nonatomic) IDEThread *threadWithBacktrace;
+@property(readonly, nonatomic) NSArray *classHierarchy;
+@property(readonly, nonatomic) NSString *regionDescription;
+@property(readonly, nonatomic) NSString *classHierarchyDescription;
+- (id)addressRangeDescription;
+@property(readonly, nonatomic) NSString *instanceSizeDescription;
+@property(readonly, nonatomic) NSString *addressDescription;
+@property(readonly, nonatomic) NSString *mallocZoneNameDescription;
+@property(readonly, nonatomic) NSString *typeKindDescription;
+@property(readonly, nonatomic) NSString *typeNameDescription;
+@property(readonly, nonatomic) BOOL isMallocBlock;
+@property(readonly, nonatomic) BOOL isVMRegion;
+- (id)ideModelObjectTypeIdentifier;
+@property(readonly) NSString *pasteboardString;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
-@property(readonly) NSString *navigableItem_accessibleImageDescription;
-@property(readonly) IDEFileReference *navigableItem_fileReference;
-@property(readonly) NSString *navigableItem_groupIdentifier;
-@property(readonly) BOOL navigableItem_isMajorGroup;
-@property(readonly) BOOL navigableItem_missingReferencedContentIsImportant;
-@property(readonly) BOOL navigableItem_referencedContentExists;
-@property(readonly) NSString *navigableItem_toolTip;
+@property(readonly, nonatomic) NSString *navigableItem_accessibilityIdentifier;
+@property(readonly, nonatomic) NSString *navigableItem_accessibleImageDescription;
+@property(readonly, nonatomic) NSArray *navigableItem_additionalFilterMatchingText;
+@property(readonly, nonatomic) NSArray *navigableItem_childRepresentedObjects;
+@property(readonly, nonatomic) IDEFileReference *navigableItem_fileReference;
+@property(readonly, nonatomic) NSNull *navigableItem_filtered;
+@property(readonly, nonatomic) NSString *navigableItem_groupIdentifier;
+@property(readonly, nonatomic) BOOL navigableItem_isEnabled;
+@property(readonly, nonatomic) BOOL navigableItem_isMajorGroup;
+@property(readonly, nonatomic) BOOL navigableItem_isVisible;
+@property(readonly, nonatomic) BOOL navigableItem_missingReferencedContentIsImportant;
+@property(readonly, nonatomic) BOOL navigableItem_referencedContentExists;
+@property(readonly, nonatomic) DVTSymbol *navigableItem_representedSymbol;
+@property(readonly, nonatomic) NSURL *navigableItem_representedURL;
+@property(readonly, nonatomic) NSString *navigableItem_toolTip;
 @property(readonly) Class superclass;
 @end
 

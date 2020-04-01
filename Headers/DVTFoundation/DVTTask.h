@@ -26,8 +26,8 @@
     NSRunLoop *_waitLoop;
     NSString *_waitRunLoopMode;
     CDUnknownBlockType _runLoopSignaler;
-    int _runLoopSetupLock;
-    int _runLoopSignal;
+    struct os_unfair_lock_s _runLoopSetupLock;
+    // Error parsing type: Ai, name: _runLoopSignal
     NSMutableSet *_fileHandlesToCloseAfterLaunching;
     NSNumber *_argumentEncoding;
     long long _qos;
@@ -61,7 +61,9 @@
 - (void)hookStandardErrorToFileHandle:(id)arg1 closingParentEndOnLaunch:(BOOL)arg2;
 - (void)hookStandardOutputToFileHandle:(id)arg1 closingParentEndOnLaunch:(BOOL)arg2;
 - (void)addFileHandleToCloseAfterLaunch:(id)arg1;
+- (BOOL)runLoggingOutputWithLogAspect:(id)arg1 error:(id *)arg2;
 - (BOOL)runReturningStandardOutput:(id *)arg1 standardError:(id *)arg2 error:(id *)arg3;
+- (void)runReturningWithOptionalStandardInput:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (BOOL)runReturningStandardOutput:(id *)arg1 standardError:(id *)arg2 standardInput:(id)arg3 error:(id *)arg4;
 - (BOOL)sendSignal:(int)arg1 error:(id *)arg2;
 - (void)waitUntilExit;

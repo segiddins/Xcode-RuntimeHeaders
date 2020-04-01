@@ -19,12 +19,11 @@
 
 + (id)inferredRepIdentifiersGroupedByItemNameForPaths:(id)arg1;
 + (id)inferredRepIdentifiersForPaths:(id)arg1;
-+ (CDUnknownBlockType)slotComponentTransformerForPaths:(id)arg1;
 + (id)orderImageRepPathsForDeterministicConflictResolution:(id)arg1;
-+ (id)inferredRepIdentifierForPath:(id)arg1 slotComponentTransformer:(CDUnknownBlockType)arg2;
++ (id)inferredRepIdentifierForPath:(id)arg1;
 + (id)inferredRepIdentifiersForImageReps:(id)arg1;
 + (Class)slotClass;
-+ (id)defaultIdentifier;
++ (id)explicitlyUnassignedIdentifierForFileName:(id)arg1;
 + (id)identifierWithSlot:(id)arg1 fileName:(id)arg2 explicitlyUnassigned:(BOOL)arg3;
 + (id)allocWithZone:(struct _NSZone *)arg1;
 @property(readonly) unsigned long long conflictState; // @synthesize conflictState=_conflictState;

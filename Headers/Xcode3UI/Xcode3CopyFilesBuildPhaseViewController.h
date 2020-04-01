@@ -32,6 +32,7 @@
 - (id)supportedDragTypes;
 @property(readonly) BOOL hasSearchResults;
 @property(copy) NSString *searchString;
+- (void)setEditor:(id)arg1;
 - (BOOL)canRemoveItems;
 - (void)removeItems:(id)arg1;
 - (void)addItems:(id)arg1;
@@ -44,6 +45,7 @@
 - (id)nibName;
 - (void)loadView;
 - (id)_bestDestinationForUserData;
+- (void)selectLocations:(id)arg1;
 - (void)primitiveInvalidate;
 - (id)initWithBuildPhase:(id)arg1;
 

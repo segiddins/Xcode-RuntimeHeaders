@@ -17,6 +17,7 @@
 + (id)fileTypeUsingFileAttributesAtPath:(id)arg1;
 + (id)fileTypeForPath:(id)arg1 getExtraFileProperties:(id *)arg2;
 + (id)guessFileTypeForGenericFileAtPath:(id)arg1 withFileAttributes:(id)arg2 getExtraFileProperties:(id *)arg3;
++ (id)fileTypeForUTI:(id)arg1;
 + (id)fileTypeForFilenamePattern:(id)arg1 isFolder:(BOOL)arg2;
 + (id)fileTypeMatchingPatternsForFileName:(id)arg1;
 + (id)fileTypeForFileName:(id)arg1;
@@ -27,6 +28,7 @@
 + (id)textFileType;
 + (id)genericFileType;
 + (id)_fileTypeDetectorArray;
++ (id)_UTIToFileTypeDictionary;
 + (id)_fileNamePatternToFileTypeDictionary;
 + (id)_magicWordToFileTypeDictionary;
 + (id)_lowercasedExtensionToFileTypeDictionary;
@@ -37,11 +39,17 @@
 + (id)localizedSpecificationTypeName;
 + (id)specificationType;
 + (Class)specificationTypeBaseClass;
+- (void).cxx_destruct;
 - (id)description;
 - (id)_objectForKeyIgnoringInheritance:(id)arg1;
 - (id)fileTypePartForIdentifier:(id)arg1;
-- (id)subpathForWrapperPart:(int)arg1 ofPath:(id)arg2 withExtraFileProperties:(id)arg3;
+- (id)subpathForWrapperPart:(long long)arg1 ofPath:(id)arg2 withExtraFileProperties:(id)arg3;
+- (id)buildPhaseInjectionsWhenEmbedding;
+- (BOOL)isEmbeddable;
 - (id)extraPropertyNames;
+- (BOOL)validateOnCopy;
+- (BOOL)removeHeadersOnCopy;
+- (BOOL)codeSignOnCopy;
 - (BOOL)requiresHardTabs;
 - (BOOL)isScannedForIncludes;
 - (id)plistStructureDefinitionIdentifier;
@@ -54,6 +62,7 @@
 - (BOOL)isNonWrapperFolder;
 - (BOOL)isFolder;
 - (BOOL)isDocumentation;
+- (BOOL)isSwiftSourceCode;
 - (BOOL)isSourceCode;
 - (BOOL)isPreprocessed;
 - (BOOL)isTextFile;
@@ -69,6 +78,7 @@
 - (BOOL)isLibrary;
 - (BOOL)isApplication;
 - (BOOL)isBundle;
+- (id)UTI;
 - (id)hfsTypeCodes;
 - (id)extensions;
 - (void)dealloc;

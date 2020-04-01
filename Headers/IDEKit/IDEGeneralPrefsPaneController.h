@@ -6,17 +6,28 @@
 
 #import <IDEKit/IDEViewController.h>
 
-@class NSPopUpButton;
+@class DVTLabeledSlider, NSPopUpButton;
 
 @interface IDEGeneralPrefsPaneController : IDEViewController
 {
+    DVTLabeledSlider *_maxParallelTestingWorkersMacSlider;
+    DVTLabeledSlider *_maxParallelTestingSimulatorsSlider;
     NSPopUpButton *_issueNavigatorDetailPopUpButton;
     NSPopUpButton *_searchNavigatorDetailPopUpButton;
+    NSPopUpButton *_appearancePopUpButton;
 }
 
+@property(retain) NSPopUpButton *appearancePopUpButton; // @synthesize appearancePopUpButton=_appearancePopUpButton;
 @property(retain) NSPopUpButton *searchNavigatorDetailPopUpButton; // @synthesize searchNavigatorDetailPopUpButton=_searchNavigatorDetailPopUpButton;
 @property(retain) NSPopUpButton *issueNavigatorDetailPopUpButton; // @synthesize issueNavigatorDetailPopUpButton=_issueNavigatorDetailPopUpButton;
+@property(retain) DVTLabeledSlider *maxParallelTestingSimulatorsSlider; // @synthesize maxParallelTestingSimulatorsSlider=_maxParallelTestingSimulatorsSlider;
+@property(retain) DVTLabeledSlider *maxParallelTestingWorkersMacSlider; // @synthesize maxParallelTestingWorkersMacSlider=_maxParallelTestingWorkersMacSlider;
 - (void).cxx_destruct;
+- (void)maxParallelTestingSimulatorsSliderChanged:(id)arg1;
+- (void)maxParallelTestingWorkersMacSliderChanged:(id)arg1;
+- (long long)_clampToCoreCount:(long long)arg1;
+- (void)_configureParallelTestingSlider:(id)arg1 initialValue:(long long)arg2;
+- (void)configureParallelTestingUI;
 - (void)resetDialogWarnings:(id)arg1;
 - (id)dialogWarningsExtensionPoint;
 - (void)setShouldActivateNewTabsAndWindows:(BOOL)arg1;
@@ -25,6 +36,7 @@
 - (unsigned long long)issueNavigatorDetailPopUpLevel;
 - (void)setSearchNavigatorDetailPopUpLevel:(unsigned long long)arg1;
 - (unsigned long long)searchNavigatorDetailPopUpLevel;
+- (void)setAppearance:(id)arg1;
 - (void)loadView;
 - (id)_itemWithTitle:(id)arg1 tag:(long long)arg2;
 - (id)_menuForNavigatorDetailLevel;

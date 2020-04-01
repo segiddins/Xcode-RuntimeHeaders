@@ -13,11 +13,16 @@
 
 @interface DVTAbstractMacDevice : DVTDevice <DVTDeviceApplicationProvider, DVTSpecificApplicationProvider>
 {
-    NSString *_recordedFramesBacktraceRecordingDylibPath;
+    NSString *_extraDebuggingRuntimeDylibPath;
 }
 
 - (void).cxx_destruct;
-- (id)recordedFramesBacktraceRecordingDylibPath;
+- (id)_effectiveDylibNameForOptions:(id)arg1;
+- (id)_viewDebuggerDylibPathWithBasePath:(id)arg1 dylibName:(id)arg2;
+- (id)_viewDebuggerDylibPathFromPluginsWithDylibName:(id)arg1;
+- (id)_viewDebuggerDylibPathFromLaunchSessionWithEnvironmentVariables:(id)arg1 dylibName:(id)arg2;
+- (id)viewDebuggerDylibPathWithOptions:(id)arg1;
+- (id)extraDebuggingRuntimeDylibPath;
 - (id)recordedFramesLibdispatchIntrospectionDylibPath;
 - (BOOL)isConcreteDevice;
 - (BOOL)isGenericDevice;

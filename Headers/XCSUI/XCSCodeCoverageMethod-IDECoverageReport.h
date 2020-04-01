@@ -17,7 +17,7 @@
 @property(readonly, copy, nonatomic) NSString *ide_coverage_title;
 @property(readonly, nonatomic) unsigned long long ide_coverage_devicesCount;
 @property(readonly, copy, nonatomic) NSArray *ide_coverage_devices;
-@property(readonly, copy, nonatomic) NSString *ide_coverage_identifier;
+- (id)ide_coverage_identifier;
 @property(readonly, copy, nonatomic) NSImage *ide_coverage_image;
 
 // Remaining properties

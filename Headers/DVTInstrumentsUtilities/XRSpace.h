@@ -6,11 +6,12 @@
 
 #import <objc/NSObject.h>
 
+#import <DVTInstrumentsUtilities/XRMobileAgentStop-Protocol.h>
+
 @class NSMutableDictionary, NSMutableSet, NSMutableString, NSOperationQueue, NSString;
 
-@interface XRSpace : NSObject
+@interface XRSpace : NSObject <XRMobileAgentStop>
 {
-    BOOL _supportsOpNames;
     BOOL _overridesQoS;
     NSOperationQueue *_queue;
     NSMutableString *_tag;
@@ -18,11 +19,15 @@
     NSMutableDictionary *_userDataByToken;
     NSMutableSet *_notificationShims;
     NSString *_opName;
+    BOOL _supportsOpNames;
 }
 
-+ (void)runWhenAllOperationsFinish:(id)arg1 block:(CDUnknownBlockType)arg2;
 + (void)runWhenOperationFinishes:(id)arg1 block:(CDUnknownBlockType)arg2;
+@property(readonly, nonatomic) NSOperationQueue *queue; // @synthesize queue=_queue;
+@property(nonatomic) BOOL supportsOpNames; // @synthesize supportsOpNames=_supportsOpNames;
 - (void).cxx_destruct;
+- (void)setupVisitAfterOperation:(id)arg1 itinerary:(id)arg2 mode:(id)arg3;
+- (void)receiveMobileAgent:(id)arg1;
 - (void)_removeNotificationShim:(id)arg1;
 - (void)stopObservationsOfObject:(id)arg1 forObserver:(id)arg2;
 - (void)requestLocalNotification:(id)arg1 object:(id)arg2 observer:(id)arg3 block:(CDUnknownBlockType)arg4;

@@ -10,10 +10,7 @@
 {
 }
 
-- (id)contentDocumentLocation;
-- (id)documentType;
 - (id)fileURL;
-- (id)name;
 - (id)_frameworkFilePath;
 - (id)initWithRepresentedObject:(id)arg1;
 

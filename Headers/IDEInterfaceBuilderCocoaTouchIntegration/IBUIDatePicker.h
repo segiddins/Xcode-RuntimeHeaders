@@ -7,72 +7,81 @@
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBUIControl.h>
 
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBDocumentArchiving-Protocol.h>
-#import <IDEInterfaceBuilderCocoaTouchIntegration/NSCoding-Protocol.h>
 
 @class NSDate, NSLocale, NSString;
 
-@interface IBUIDatePicker : IBUIControl <IBDocumentArchiving, NSCoding>
+@interface IBUIDatePicker : IBUIControl <IBDocumentArchiving>
 {
-    int datePickerMode;
-    NSLocale *locale;
-    NSDate *date;
-    NSDate *minimumDate;
-    NSDate *maximumDate;
-    BOOL useCurrentDateDuringDecoding;
-    BOOL hasMinimumDate;
-    BOOL hasMaximumDate;
-    double countDownDuration;
-    unsigned long long minuteInterval;
+    BOOL _useCurrentDateDuringDecoding;
+    BOOL _hasMinimumDate;
+    BOOL _hasMaximumDate;
+    int _datePickerMode;
+    NSDate *_date;
+    NSDate *_minimumDate;
+    NSDate *_maximumDate;
+    NSLocale *_locale;
+    double _countDownDuration;
+    unsigned long long _minuteInterval;
+    NSDate *_ibArchivedDate;
 }
 
 + (void)registerMarshallingRecordHandlers;
 + (id)keyPathsForValuesAffectingIbInspectedUseCurrentDate;
-+ (id)keyPathsForValuesAffectingInspectedDatePickerMode;
 + (id)keyPathsForValuesAffectingIbInspectedMaximumDate;
 + (id)keyPathsForValuesAffectingIbInspectedMinimumDate;
 + (id)keyPathsForValuesAffectingIbInspectedDate;
-+ (id)keyPathsForValuesAffectingInspectedCountDownDuration;
++ (id)keyPathsForValuesAffectingIbInspectedCountDownDurationMinutes;
++ (id)keyPathsForValuesAffectingIbInspectedCountDownDurationHours;
++ (id)keyPathsForValuesAffectingIbInspectedModeIsNotDate;
++ (id)keyPathsForValuesAffectingIbInspectedModeIsNotCountDownTimer;
++ (id)keyPathsForValuesAffectingIbInspectedModeIsCountDownTimer;
 + (long long)ibInstantiationSizeBehavior;
 + (id)ibInstantiateViewForRole:(long long)arg1 withTargetRuntime:(id)arg2 documentClass:(Class)arg3 assetIdentifier:(id)arg4;
-@property(nonatomic) BOOL useCurrentDateDuringDecoding; // @synthesize useCurrentDateDuringDecoding;
-@property(nonatomic) unsigned long long minuteInterval; // @synthesize minuteInterval;
-@property(nonatomic) double countDownDuration; // @synthesize countDownDuration;
-@property(nonatomic) BOOL hasMaximumDate; // @synthesize hasMaximumDate;
-@property(nonatomic) BOOL hasMinimumDate; // @synthesize hasMinimumDate;
-@property(copy, nonatomic) NSLocale *locale; // @synthesize locale;
-@property(nonatomic) int datePickerMode; // @synthesize datePickerMode;
+@property(copy) NSDate *ibArchivedDate; // @synthesize ibArchivedDate=_ibArchivedDate;
+@property(nonatomic) unsigned long long minuteInterval; // @synthesize minuteInterval=_minuteInterval;
+@property(nonatomic) double countDownDuration; // @synthesize countDownDuration=_countDownDuration;
+@property(nonatomic) BOOL hasMaximumDate; // @synthesize hasMaximumDate=_hasMaximumDate;
+@property(nonatomic) BOOL hasMinimumDate; // @synthesize hasMinimumDate=_hasMinimumDate;
+@property(nonatomic) BOOL useCurrentDateDuringDecoding; // @synthesize useCurrentDateDuringDecoding=_useCurrentDateDuringDecoding;
+@property(copy, nonatomic) NSLocale *locale; // @synthesize locale=_locale;
+@property(nonatomic) int datePickerMode; // @synthesize datePickerMode=_datePickerMode;
 - (void).cxx_destruct;
+- (void)ibPopulateIssues:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
 @property(copy) NSDate *ibArchivedMaximumDate;
 @property(copy) NSDate *ibArchivedMinimumDate;
-@property(copy) NSDate *ibArchivedDate;
 - (id)localExtraMarshalledAttributesKeyPaths;
-@property(copy) NSDate *maximumDate; // @synthesize maximumDate;
-@property(copy) NSDate *minimumDate; // @synthesize minimumDate;
-@property(copy) NSDate *date; // @synthesize date;
+@property(copy) NSDate *maximumDate; // @synthesize maximumDate=_maximumDate;
+@property(copy) NSDate *minimumDate; // @synthesize minimumDate=_minimumDate;
+@property(copy) NSDate *date; // @synthesize date=_date;
 - (void)drawRect:(struct CGRect)arg1;
 - (BOOL)prefersCachedImageBasedDrawing;
-- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
-- (void)archiveWithDocumentArchiver:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)setIbInspectedUseCurrentDate:(unsigned long long)arg1;
 - (unsigned long long)ibInspectedUseCurrentDate;
-- (void)setInspectedDatePickerMode:(int)arg1;
-- (int)inspectedDatePickerMode;
 - (void)setIbInspectedMaximumDate:(id)arg1;
 - (id)ibInspectedMaximumDate;
 - (void)setIbInspectedMinimumDate:(id)arg1;
 - (id)ibInspectedMinimumDate;
 - (void)setIbInspectedDate:(id)arg1;
 - (id)ibInspectedDate;
-- (void)setInspectedCountDownDuration:(double)arg1;
-- (double)inspectedCountDownDuration;
+- (void)setIbInspectedCountDownDurationMinutes:(long long)arg1;
+- (long long)ibInspectedCountDownDurationMinutes;
+- (void)setIbInspectedCountDownDurationHours:(long long)arg1;
+- (long long)ibInspectedCountDownDurationHours;
+- (BOOL)ibInspectedModeIsNotDate;
+- (BOOL)ibInspectedModeIsNotCountDownTimer;
+- (BOOL)ibInspectedModeIsCountDownTimer;
 - (BOOL)ibSupportsInsertionIntoBarButtonItems;
 - (unsigned long long)ibPreferredActionEventType;
 - (void)ibCustomizeForInsertionIntoIBUIViewController:(id)arg1 withObjects:(id)arg2 fromLibraryOrDifferentTargetRuntime:(BOOL)arg3 andInsertionContext:(id)arg4;
 - (void)ibCustomizeForInsertionIntoIBUIView:(id)arg1 withObjects:(id)arg2 fromLibraryOrDifferentTargetRuntime:(BOOL)arg3 andInsertionContext:(id)arg4;
 - (struct CGSize)ibMinimumSizeForCustomizationForTargetRuntime:(id)arg1;
 - (id)ibWidgetType;
+- (id)ibLocalAdditionalLocalizableAttributeKeyPaths;
+- (id)ibLocalAttributeKeyPaths;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

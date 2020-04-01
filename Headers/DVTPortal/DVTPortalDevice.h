@@ -13,8 +13,8 @@
 @interface DVTPortalDevice : NSObject <DVTPortalDevice>
 {
     NSString *name;
-    DVTPlatform *platform;
     NSString *identifier;
+    DVTPlatform *_platform;
     NSString *_portalID;
     NSString *_portalDeviceClass;
 }
@@ -29,9 +29,9 @@
 @property(readonly, copy, nonatomic) NSString *portalDeviceClass; // @synthesize portalDeviceClass=_portalDeviceClass;
 @property(readonly, copy, nonatomic) NSString *portalID; // @synthesize portalID=_portalID;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier;
-@property(readonly, nonatomic) DVTPlatform *platform; // @synthesize platform;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) DVTPlatform *platform; // @synthesize platform=_platform;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
 @property(readonly, copy) NSString *description;

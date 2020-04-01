@@ -11,7 +11,7 @@
 }
 
 + (id)bestFileTypeForRepresentingFileAtPath:(id)arg1 withFileAttributes:(id)arg2 withLessSpecificFileType:(id)arg3 getExtraFileProperties:(id *)arg4;
-- (id)subpathForWrapperPart:(int)arg1 ofPath:(id)arg2 withExtraFileProperties:(id)arg3;
+- (id)subpathForWrapperPart:(long long)arg1 ofPath:(id)arg2 withExtraFileProperties:(id)arg3;
 
 @end
 

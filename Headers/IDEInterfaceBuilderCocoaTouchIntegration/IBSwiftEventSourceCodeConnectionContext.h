@@ -10,17 +10,19 @@
 {
 }
 
++ (BOOL)shouldBePrioritizedWhenInsertingBelowFirstMethod;
 + (id)eventType;
++ (id)stringType;
 + (id)floatType;
 + (id)integerType;
 + (id)boolType;
-+ (id)defaultType;
 - (id)sourceCodeInsertionOptions;
 - (id)representativeCounterpart;
 - (BOOL)parseSourceLandmarkItem:(id)arg1;
 - (id)containingClassName;
 - (id)qualifiedType;
 - (id)_effectiveNameForFirstArgument:(id)arg1;
+- (id)defaultType;
 
 @end
 

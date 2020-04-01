@@ -8,15 +8,15 @@
 
 #import <IDEModelEditor/IDECapsuleViewController-Protocol.h>
 
-@class DVTNotificationToken, IDEDataModelPredicateTextField, NSArrayController, NSImage, NSPredicateEditor, NSSegmentedControl, NSString, NSTabView;
+@class CDMFetchRequest, DVTNotificationToken, DVTPredicateTextField, NSArrayController, NSColor, NSImage, NSPredicateEditor, NSSegmentedControl, NSString, NSTabView;
 
 @interface IDEDataModelFetchRequestSlice : IDEViewController <IDECapsuleViewController>
 {
     NSSegmentedControl *tabSwitch;
     NSTabView *tabView;
-    IDEDataModelPredicateTextField *predicateField;
+    DVTPredicateTextField *predicateField;
     NSPredicateEditor *predicateEditor;
-    double fixedHeight;
+    double _fixedHeight;
     NSArrayController *_entityController;
     DVTNotificationToken *_ruleEditorRowsChangedToken;
 }
@@ -26,12 +26,14 @@
 - (void)primitiveInvalidate;
 - (void)loadView;
 - (void)ruleEditorRowsDidChange:(id)arg1;
-- (void)setRepresentedObject:(id)arg1;
+@property(retain) CDMFetchRequest *representedObject; // @dynamic representedObject;
 - (void)tabSwitched:(id)arg1;
 - (void)updateFrame;
 - (void)updatePredicateRowTemplates;
 - (void)updatePredicateRowTemplatesUsingFetchRequest:(id)arg1;
 - (double)heightForPredicateText;
+- (id)predicateRowTemplatesForEntity:(id)arg1;
+- (id)standardRowTemplates;
 - (void)setTitle:(id)arg1;
 @property(readonly) BOOL canUndisclose;
 @property(readonly) BOOL canRemove;
@@ -42,6 +44,7 @@
 - (id)init;
 
 // Remaining properties
+@property(retain) NSColor *backgroundColor;
 @property BOOL canAddItems;
 @property(readonly) BOOL canDrag;
 @property BOOL canRemoveItems;
@@ -53,6 +56,7 @@
 @property(readonly) unsigned long long hash;
 @property(readonly) NSImage *icon;
 @property(readonly) Class superclass;
+@property(readonly) BOOL wantsDisclosureButtonHidden;
 
 @end
 

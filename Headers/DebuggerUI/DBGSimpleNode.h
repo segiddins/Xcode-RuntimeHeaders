@@ -16,7 +16,6 @@
     BOOL _hiddenForClipping;
     BOOL _hiddenForRangeSlider;
     BOOL _hiddenForOptionalVisibility;
-    BOOL _hiddenForUninterestingFilter;
     BOOL _respondsToHitTests;
     double _shineThroughOpacity;
     NSString *_identifier;
@@ -43,7 +42,6 @@
 @property double shineThroughOpacity; // @synthesize shineThroughOpacity=_shineThroughOpacity;
 @property BOOL geometryShinesThrough; // @synthesize geometryShinesThrough=_geometryShinesThrough;
 - (void)_updateHiddenState;
-@property BOOL hiddenForUninterestingFilter; // @synthesize hiddenForUninterestingFilter=_hiddenForUninterestingFilter;
 @property BOOL hiddenForOptionalVisibility; // @synthesize hiddenForOptionalVisibility=_hiddenForOptionalVisibility;
 @property BOOL hiddenForRangeSlider; // @synthesize hiddenForRangeSlider=_hiddenForRangeSlider;
 @property BOOL hiddenForClipping; // @synthesize hiddenForClipping=_hiddenForClipping;

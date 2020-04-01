@@ -7,16 +7,15 @@
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBUIView.h>
 
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBDocumentArchiving-Protocol.h>
-#import <IDEInterfaceBuilderCocoaTouchIntegration/NSCoding-Protocol.h>
 
-@class NSColor, NSString;
+@class IBUIColor, NSString;
 
-@interface IBUIActivityIndicatorView : IBUIView <IBDocumentArchiving, NSCoding>
+@interface IBUIActivityIndicatorView : IBUIView <IBDocumentArchiving>
 {
-    int style;
-    BOOL hidesWhenStopped;
-    BOOL animating;
-    NSColor *color;
+    BOOL _hidesWhenStopped;
+    BOOL _animating;
+    int _style;
+    IBUIColor *_color;
 }
 
 + (void)registerMarshallingRecordHandlers;
@@ -24,27 +23,28 @@
 + (id)keyPathsForValuesAffectingInspectedHidesWhenStopped;
 + (long long)ibInstantiationSizeBehavior;
 + (id)ibInstantiateViewForRole:(long long)arg1 withTargetRuntime:(id)arg2 documentClass:(Class)arg3 assetIdentifier:(id)arg4;
-@property(copy, nonatomic) NSColor *color; // @synthesize color;
-@property(nonatomic) BOOL animating; // @synthesize animating;
-@property(nonatomic) BOOL hidesWhenStopped; // @synthesize hidesWhenStopped;
-@property(nonatomic) int style; // @synthesize style;
+@property(copy, nonatomic) IBUIColor *color; // @synthesize color=_color;
+@property(nonatomic) BOOL animating; // @synthesize animating=_animating;
+@property(nonatomic) BOOL hidesWhenStopped; // @synthesize hidesWhenStopped=_hidesWhenStopped;
+@property(nonatomic) int style; // @synthesize style=_style;
 - (void).cxx_destruct;
 - (void)verifyDecodedStyle:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)setInspectedAnimating:(BOOL)arg1;
 - (BOOL)inspectedAnimating;
 - (void)setInspectedHidesWhenStopped:(BOOL)arg1;
 - (BOOL)inspectedHidesWhenStopped;
-- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
-- (void)archiveWithDocumentArchiver:(id)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 - (id)ibUnarchiveValueForAttribute:(id)arg1 inConfiguration:(id)arg2 withDocumentUnarchiver:(id)arg3;
 - (void)ibArchiveEvaluatedValue:(id)arg1 forAttribute:(id)arg2 inConfiguration:(id)arg3 withDocumentArchiver:(id)arg4;
 - (id)ibLocalPerConfigurationAttributeKeyPaths;
-- (void)ibWarnings:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
+- (void)ibPopulateIssues:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
 - (void)ibCustomizeForInsertionIntoIBUIView:(id)arg1 withObjects:(id)arg2 fromLibraryOrDifferentTargetRuntime:(BOOL)arg3 andInsertionContext:(id)arg4;
 - (id)ibWidgetType;
-- (long long)ibPreferredResizeDirection;
+- (long long)ibPreferredResizeDirectionMask;
+- (id)ibLocalAttributeKeyPaths;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

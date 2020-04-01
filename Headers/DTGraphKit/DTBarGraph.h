@@ -21,13 +21,16 @@
 + (id)sortEntries:(id)arg1 keyPath:(id)arg2;
 @property long long lastMaximumYValue; // @synthesize lastMaximumYValue=_lastMaximumYValue;
 - (BOOL)validateModel:(id)arg1;
+- (id)automaticDivisionsForStart:(double)arg1 spacing:(double)arg2 keypath:(id)arg3 onlyStartAndEnd:(BOOL)arg4;
 - (id)_divisionsForContentMagnitude:(double)arg1 start:(double)arg2 min:(long long)arg3 max:(long long)arg4 spacing:(double)arg5 keypath:(id)arg6 onlyStartAndEnd:(BOOL)arg7;
 - (id)_entries:(id)arg1 fittingIntoRect:(struct CGRect)arg2;
 - (id)sortedEntries:(id)arg1 fittingIntoRect:(struct CGRect)arg2;
 - (id)visibleEntries:(id)arg1;
 @property(readonly, nonatomic) unsigned long long numberOfBars;
 - (unsigned long long)numberOfEntriesThatFitRect:(struct CGRect)arg1;
+@property(readonly, nonatomic) long long minimumYValue;
 @property(readonly, nonatomic) long long maximumYValue;
+- (long long)_minimumYValueOfModelWithSubEntries:(id)arg1;
 - (long long)_maximumYValueOfModelWithSubEntries:(id)arg1;
 @property(readonly, nonatomic) long long minimumXValue;
 @property(readonly, nonatomic) long long maximumXValue;

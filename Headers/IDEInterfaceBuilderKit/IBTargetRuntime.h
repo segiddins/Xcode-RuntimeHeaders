@@ -11,8 +11,8 @@
 
 @interface IBTargetRuntime : NSObject
 {
-    NSMutableDictionary *_imageRequestersByScaleFactor;
-    NSMutableDictionary *_sceneUpdateRequestersByScaleFactorThenRenderingFidelity;
+    NSMutableDictionary *_imageRequestersByDeviceTypeDescription;
+    NSMutableDictionary *_sceneUpdateRequesterQueueByDeviceTypeDescription;
     BOOL _installedColorList;
     NSSet *_connectionClasses;
     NSSet *_segueClasses;
@@ -24,15 +24,15 @@
 @property(readonly, nonatomic) IBOSVersion *osVersion; // @synthesize osVersion=_osVersion;
 - (void).cxx_destruct;
 - (BOOL)populateEnvironment:(id)arg1 forExecutionContext:(id)arg2 error:(id *)arg3;
-- (id)sceneUpdateRequesterWithScaleFactor:(double)arg1 renderingFidelity:(long long)arg2;
-- (id)imageRequesterWithScaleFactor:(double)arg1;
-- (id)registerSceneUpdateRenderingDelegate:(id)arg1 forScaleFactor:(double)arg2 returningSceneIdentifier:(long long *)arg3 error:(id *)arg4;
+- (id)sceneUpdateRequesterWithDeviceTypeDescription:(id)arg1 incrementalUpdateSessionIdentifier:(id)arg2;
+- (id)imageRequesterWithDeviceTypeDescription:(id)arg1;
 - (id)processingRequestForIncrementallyUpdatingAttribute:(id)arg1 ofObject:(id)arg2 withObjectID:(id)arg3 marshallingContext:(id)arg4;
 - (Class)sceneUpdateRequestProcessorClass;
 - (Class)imageRequestProcessorClass;
-- (id)defaultToolDescriptionWithRole:(long long)arg1 scaleFactor:(double)arg2;
-- (id)toolProxyManager;
-- (id)displayNameForUserInterfaceStyle;
+- (id)defaultToolDescriptionWithRole:(long long)arg1 deviceTypeDescription:(id)arg2;
+- (id)toolProxyManagerForDeviceTypeDescription:(id)arg1;
+- (id)defaultToolProxyManager;
+- (id)targetRuntimeAppropriateForPlatformFamily:(id)arg1 error:(id *)arg2;
 - (id)nextPreviewableTargetRuntime;
 - (id)alternatePreviewableTargetRuntimes;
 - (Class)segueClassForClassIdentifier:(id)arg1;
@@ -42,6 +42,7 @@
 - (void)installColorListIfNeeded;
 - (id)colorList;
 - (id)archiveVariantIdentifier;
+- (BOOL)isIOSMac;
 - (id)archiveIdentifier;
 - (id)identifier;
 @property(readonly, nonatomic) IBIdiom *idiom;

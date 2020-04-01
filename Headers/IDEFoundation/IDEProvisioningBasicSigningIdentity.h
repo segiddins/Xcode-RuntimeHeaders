@@ -19,10 +19,14 @@
 @property(readonly) NSString *userDescription; // @synthesize userDescription=_userDescription;
 @property(readonly) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
-- (id)description;
-- (unsigned long long)hash;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)initWithIdentifier:(id)arg1 userDescription:(id)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) Class superclass;
 
 @end
 

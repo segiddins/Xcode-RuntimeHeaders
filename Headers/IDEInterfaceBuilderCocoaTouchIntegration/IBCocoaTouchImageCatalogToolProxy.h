@@ -14,8 +14,11 @@
 {
 }
 
+- (id)renderRepresentativeVectorGlyphWithData:(id)arg1;
+- (id)renderVectorGlyphSheetWithData:(id)arg1;
+- (id)imageDataForImageAtPath:(id)arg1 destinationUTI:(id)arg2 preferredSize:(id)arg3 scale:(id)arg4 colorSpaceName:(id)arg5;
 - (void)registerSchemaProviders:(id)arg1 withSchemaProviderContextData:(id)arg2;
-- (id)compileItemsWithCatalogRelativeIdentifierPaths:(id)arg1 tagSolutionSpace:(id)arg2 options:(id)arg3;
+- (id)compileItemsWithCatalogRelativeIdentifierPaths:(id)arg1 tagSolutionSpace:(id)arg2 andStickerPacksWithCatalogRelativeIdentifierPaths:(id)arg3 options:(id)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

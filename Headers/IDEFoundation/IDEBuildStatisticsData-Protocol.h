@@ -16,7 +16,7 @@
 @property(readonly) double startWallClockTime;
 @property(readonly) unsigned long long ordinal;
 @property(readonly, copy) NSString *title;
-- (void)emitContentsForAspect:(DVTLogAspect *)arg1 logLevel:(int)arg2 indentLevel:(unsigned long long)arg3 withBlock:(void (^)(id <IDEBuildStatisticsData>, DVTLogAspect *, int, unsigned long long, char *, char *))arg4;
+- (void)emitContentsForAspect:(DVTLogAspect *)arg1 logLevel:(unsigned long long)arg2 indentLevel:(unsigned long long)arg3 withBlock:(void (^)(id <IDEBuildStatisticsData>, DVTLogAspect *, unsigned long long, unsigned long long, char *, char *))arg4;
 - (NSString *)defaultEmissionStringWithIndentLevel:(unsigned long long)arg1;
 @end
 

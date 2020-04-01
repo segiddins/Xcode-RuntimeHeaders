@@ -14,6 +14,7 @@
     XCPropertyMacroExpression *_rightExpr;
 }
 
+- (void).cxx_destruct;
 - (id)description;
 - (void)dealloc;
 - (id)init;

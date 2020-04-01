@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Foundation/NSObject.h>
+#import <objc/NSObject.h>
 
 @class NSMutableDictionary, NSMutableSet, NSString;
 
@@ -19,11 +19,11 @@
 
 + (id)hashStringFromCommandLine:(id)arg1 inputFilePaths:(id)arg2;
 + (id)sharedDerivedFileCache;
-+ (id)sharedDerivedFileCacheWithBasePath:(id)arg1;
-+ (int)emptyCaches;
++ (id)sharedDerivedFileCacheWithBasePath:(id)arg1 disableCachePruning:(BOOL)arg2;
 + (id)defaultBasePath;
 + (id)defaultSharedBasePath;
 + (void)initialize;
+- (void).cxx_destruct;
 - (BOOL)pathWasUnlockedForWriting:(id)arg1 byClientId:(id)arg2;
 - (int)lockStateOfPath:(id)arg1;
 - (void)unlockPath:(id)arg1 byClientId:(id)arg2;
@@ -34,13 +34,12 @@
 - (id)derivedFilePathForDomain:(id)arg1 inputFilePaths:(id)arg2 commandLine:(id)arg3;
 - (id)derivedFilePathForDomain:(id)arg1 inputFilePaths:(id)arg2 commandLineHashString:(id)arg3;
 - (id)basePath;
-- (void)dealloc;
 - (id)init;
-- (id)initWithBasePath:(id)arg1;
+- (id)initWithBasePath:(id)arg1 disableCachePruning:(BOOL)arg2;
 - (void)disableCachePruning;
 - (void)enableCachePruning;
 - (void)_pruneCache;
-- (void)pruneCacheToNumberOfBytes:(unsigned long long)arg1 minimumCacheEntryAgeForRemoval:(double)arg2;
+- (void)_pruneCacheToNumberOfBytes:(unsigned long long)arg1 minimumCacheEntryAgeForRemoval:(double)arg2;
 
 @end
 

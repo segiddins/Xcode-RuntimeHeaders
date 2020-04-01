@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class DVTFilePath, NSArray, NSData;
+@class DVTFilePath, NSArray, NSData, NSFileManager;
 
 @interface DVTAnalyticsSnapshot : NSObject
 {
@@ -14,10 +14,12 @@
     DVTFilePath *_filePath;
     NSData *_data;
     NSArray *_childSnapshots;
+    NSFileManager *_fileManager;
 }
 
 + (id)snapshotForDeletionWithFilePath:(id)arg1 childSnapshots:(id)arg2;
 + (id)snapshotWithFilePath:(id)arg1 data:(id)arg2 childSnapshots:(id)arg3;
+@property(retain, nonatomic) NSFileManager *fileManager; // @synthesize fileManager=_fileManager;
 @property(readonly, nonatomic) NSArray *childSnapshots; // @synthesize childSnapshots=_childSnapshots;
 @property(readonly, nonatomic) NSData *data; // @synthesize data=_data;
 @property(readonly, nonatomic) DVTFilePath *filePath; // @synthesize filePath=_filePath;

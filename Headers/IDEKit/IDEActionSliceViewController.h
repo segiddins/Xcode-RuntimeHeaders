@@ -9,7 +9,7 @@
 #import <IDEKit/IDECapsuleViewController-Protocol.h>
 #import <IDEKit/IDECapsuleViewDelegate-Protocol.h>
 
-@class IDEExecutionAction, NSImage, NSString;
+@class IDEExecutionAction, NSColor, NSImage, NSString;
 @protocol IDEActionSliceViewControllerDelegate;
 
 @interface IDEActionSliceViewController : IDEViewController <IDECapsuleViewController, IDECapsuleViewDelegate>
@@ -32,6 +32,7 @@
 - (id)initWithAction:(id)arg1;
 
 // Remaining properties
+@property(retain) NSColor *backgroundColor;
 @property BOOL canAddItems;
 @property(readonly) BOOL canDrag;
 @property(readonly) BOOL canRemove;
@@ -44,6 +45,7 @@
 @property(readonly) unsigned long long hash;
 @property(readonly) NSImage *icon;
 @property(readonly) Class superclass;
+@property(readonly) BOOL wantsDisclosureButtonHidden;
 
 @end
 

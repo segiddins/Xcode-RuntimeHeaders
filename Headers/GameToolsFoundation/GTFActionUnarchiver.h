@@ -38,6 +38,7 @@
 - (BOOL)decodeBoolForKey:(id)arg1;
 - (void)addPairToCurrentGroupWithKey:(id)arg1 value:(id)arg2;
 - (id)decodeObjectForKey:(id)arg1;
+- (id)decodeObjectOfClass:(Class)arg1 forKey:(id)arg2;
 - (Class)classForClassName:(id)arg1;
 - (id)initForReadingWithData:(id)arg1;
 

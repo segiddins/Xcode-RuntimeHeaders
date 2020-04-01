@@ -7,6 +7,6 @@
 #import <DVTFoundation/DVTPlatform.h>
 
 @interface DVTPlatform (IBIDEFoundationDVTPlatformAdditions)
-- (id)preferredRunDestinationGivenValidRunDestinations:(id)arg1;
+- (id)preferredRunDestinationGivenValidRunDestinations:(id)arg1 withHint:(id)arg2;
 @end
 

@@ -8,11 +8,10 @@
 
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBDocumentArchiving-Protocol.h>
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBExternalPrimarySceneObject-Protocol.h>
-#import <IDEInterfaceBuilderCocoaTouchIntegration/NSCoding-Protocol.h>
 
 @class NSString;
 
-@interface IBUIExternalViewController : IBUIViewController <IBDocumentArchiving, NSCoding, IBExternalPrimarySceneObject>
+@interface IBUIExternalViewController : IBUIViewController <IBExternalPrimarySceneObject, IBDocumentArchiving>
 {
     NSString *_storyboardName;
     NSString *_bundleIdentifier;
@@ -26,13 +25,13 @@
 @property(copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(copy, nonatomic) NSString *storyboardName; // @synthesize storyboardName=_storyboardName;
 - (void).cxx_destruct;
-- (id)runtimeClassNameForContext:(id)arg1 returningOptionalFallbackClassName:(id *)arg2;
-- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
-- (void)archiveWithDocumentArchiver:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)ibIsInspectorApplicable:(id)arg1 forCategory:(id)arg2;
-- (void)ibWarnings:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
+- (id)runtimeClassNameForContext:(id)arg1 returningOptionalFallbackClassName:(id *)arg2;
+- (BOOL)ibConnectionsRequireClassSwapper;
+- (BOOL)ibWantsSceneMaskOrBezel;
+- (BOOL)ibIsInspectorSliceApplicable:(id)arg1 forCategory:(id)arg2;
+- (void)ibPopulateIssues:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
 - (id)ibEditorViewWithSuggestedSize:(struct CGSize)arg1 forDocument:(id)arg2;
 - (id)ibEditorCanvasFrameControllerForDocument:(id)arg1;
 - (Class)ibEditorClass;
@@ -58,6 +57,9 @@
 - (BOOL)ibCanBeReplacedWithExternalStoryboardReference;
 - (id)ibQualifyingInfoForDefaultLabel;
 - (BOOL)ibWantsSceneUpdates;
+- (id)ibLocalAttributeKeyPaths;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
@@ -65,6 +67,8 @@
 @property(readonly) unsigned long long hash;
 @property(copy, nonatomic) NSString *ibExplicitStoryboardIdentifier;
 @property(nonatomic) BOOL ibInspectedIsDesignatedEntryPoint;
+@property(nonatomic) BOOL ibInspectedIsDesignatedMenu;
+@property(readonly, nonatomic) BOOL ibWantsSceneExitPlaceholder;
 @property(readonly) Class superclass;
 
 @end

@@ -17,6 +17,9 @@
 - (id)displayName;
 - (BOOL)isEditable;
 - (id)createRootGroup;
+- (BOOL)openQuickly_shouldIncludeAsResult;
+- (BOOL)openQuickly_shouldIncludeDescendants;
+- (BOOL)textIndex_shouldSkipDescendantsForBatchFind;
 
 @end
 

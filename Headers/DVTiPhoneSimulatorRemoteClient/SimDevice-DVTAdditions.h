@@ -16,13 +16,13 @@
 - (id)dvt_applicationIsInstalledWithBundleIdentifier:(id)arg1;
 - (id)dvt_uninstallApplicationWithBundleIdentifier:(id)arg1 andOptions:(id)arg2;
 - (id)dvt_uninstallApplicationWithBundleIdentifier:(id)arg1;
+- (id)dvt_propertiesOfApplicationWithBundleIdentifier:(id)arg1;
 - (id)dvt_installApplicationAtPath:(id)arg1 withOptions:(id)arg2;
 - (id)dvt_installApplicationAtPath:(id)arg1;
 - (id)dvt_restoreContentsAndSettingsFrom:(id)arg1;
 - (id)dvt_eraseContentsAndSettings;
 - (id)dvt_shutdown;
 - (id)dvt_bootWithOptions:(id)arg1;
-- (id)dvt_boot;
 - (id)dvt_notifyOfBootOnQueue:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (id)dvt_registerNotificationHandlerOnQueue:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (id)dvt_registerNotificationHandler:(CDUnknownBlockType)arg1;

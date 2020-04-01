@@ -7,56 +7,85 @@
 #import <objc/NSObject.h>
 
 #import <IDEFoundation/DVTInvalidation-Protocol.h>
+#import <IDEFoundation/IDECoalescableCapabilityEditingItem-Protocol.h>
+#import <IDEFoundation/IDESigningEditorCapsuleViewStateRestorationRecordProvider-Protocol.h>
 
-@class DVTDelayedInvocation, DVTStackBacktrace, IDEAppIDFeatureCoordinator, NSArray, NSString, Xcode3TargetBuildSettingsCoordinator, Xcode3TargetEntitlementsCoordinator, Xcode3TargetInfoPlistCoordinator, Xcode3TargetLinkedFrameworksCoordinator;
-@protocol IDECapabilitiesContextProviding, IDEFlightChecking, IDEProjectItem, IDEProjectItemModelEntitlementsCoordinator;
+@class DVTDelayedInvocation, DVTStackBacktrace, IDECapabilitiesContext, NSArray, NSDictionary, NSError, NSSet, NSString, _TtC13IDEFoundation46SigningEditorCapsuleViewStateRestorationRecord;
+@protocol IDEAppIDFeatureCoordination, IDEBuildSettingsCoordination, IDECoalescableCapabilityEditingItemDelegate, IDEEntitlementsCoordination, IDEFlightChecking, IDEFlightCheckingContext, IDEInfoPlistCoordination, IDELinkedFrameworksCoordination, IDEProjectItem, IDEProjectItemModelErrorDelegate, IDESigningEditorCapsuleViewStateRestorationRecordProviderDelegate, SigningEditorCapabilityEditingItemParent;
 
-@interface IDEProjectItemModel : NSObject <DVTInvalidation>
+@interface IDEProjectItemModel : NSObject <DVTInvalidation, IDECoalescableCapabilityEditingItem, IDESigningEditorCapsuleViewStateRestorationRecordProvider>
 {
     NSArray *_flightChecks;
-    BOOL _needToPublish;
+    NSDictionary *_coalescableWriteableKeyPathToDataSource;
+    NSSet *_dataSources;
+    NSSet *_coalescableWriteableKeyPaths;
+    BOOL _isEnabled;
+    BOOL _needsPublishState;
+    BOOL _willSetErrorShouldPreventPublish;
+    id <IDECoalescableCapabilityEditingItemDelegate> _delegate;
+    id <IDEProjectItemModelErrorDelegate> _errorDelegate;
     id <IDEFlightChecking> _appIDFeatureFlightCheck;
-    id <IDECapabilitiesContextProviding> _targetCapabilitiesContext;
+    IDECapabilitiesContext *_targetCapabilitiesContext;
     id <IDEProjectItem> _item;
+    id <SigningEditorCapabilityEditingItemParent> _parentCapabilityEditingItem;
+    id <IDEFlightCheckingContext> _flightCheckContext;
     DVTDelayedInvocation *_delayedUpdateInvocation;
+    NSError *_willSetReceivedError;
 }
 
++ (id)coalescableReadOnlyKeyPaths;
 + (void)initialize;
-+ (Class)projectItemModelFlightCheckContextProviderClass;
-@property BOOL needToPublish; // @synthesize needToPublish=_needToPublish;
-@property(readonly) DVTDelayedInvocation *delayedUpdateInvocation; // @synthesize delayedUpdateInvocation=_delayedUpdateInvocation;
+@property(retain, nonatomic) NSError *willSetReceivedError; // @synthesize willSetReceivedError=_willSetReceivedError;
+@property(nonatomic) BOOL willSetErrorShouldPreventPublish; // @synthesize willSetErrorShouldPreventPublish=_willSetErrorShouldPreventPublish;
+@property(nonatomic) BOOL needsPublishState; // @synthesize needsPublishState=_needsPublishState;
+@property(retain, nonatomic) DVTDelayedInvocation *delayedUpdateInvocation; // @synthesize delayedUpdateInvocation=_delayedUpdateInvocation;
+@property(retain, nonatomic) id <IDEFlightCheckingContext> flightCheckContext; // @synthesize flightCheckContext=_flightCheckContext;
+@property(nonatomic) BOOL isEnabled; // @synthesize isEnabled=_isEnabled;
+@property(nonatomic) __weak id <SigningEditorCapabilityEditingItemParent> parentCapabilityEditingItem; // @synthesize parentCapabilityEditingItem=_parentCapabilityEditingItem;
 @property(readonly) id <IDEProjectItem> item; // @synthesize item=_item;
-@property(readonly) id <IDECapabilitiesContextProviding> targetCapabilitiesContext; // @synthesize targetCapabilitiesContext=_targetCapabilitiesContext;
-@property(readonly, nonatomic) NSArray *flightChecks; // @synthesize flightChecks=_flightChecks;
+@property(readonly) IDECapabilitiesContext *targetCapabilitiesContext; // @synthesize targetCapabilitiesContext=_targetCapabilitiesContext;
+@property(retain, nonatomic) NSArray *flightChecks; // @synthesize flightChecks=_flightChecks;
+@property(nonatomic) __weak id <IDEProjectItemModelErrorDelegate> errorDelegate; // @synthesize errorDelegate=_errorDelegate;
+@property(nonatomic) __weak id <IDECoalescableCapabilityEditingItemDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(readonly) NSDictionary *coalescableWriteableKeyPathToDataSource;
+- (void)wantsUpdateKeyPath:(id)arg1 value:(id)arg2;
+- (void)primitiveInvalidate;
+@property(readonly, nonatomic) _TtC13IDEFoundation46SigningEditorCapsuleViewStateRestorationRecord *restorationRecord;
+- (id)coalescableWriteableKeyPaths;
+- (id)dataSources;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
+- (void)tearDownPublisherObservations;
+- (void)setUpPublisherObservations;
+- (BOOL)enableWithError:(id *)arg1;
+- (BOOL)hasDisclosableContent;
 - (BOOL)entitlementsContainsEntitlementKey;
-@property(readonly) Xcode3TargetInfoPlistCoordinator *infoPlistCoordinator;
-@property(readonly) Xcode3TargetLinkedFrameworksCoordinator *linkedFrameworksCoordinator;
-@property(readonly) IDEAppIDFeatureCoordinator *appIDFeatureCoordinator;
-@property(readonly) Xcode3TargetEntitlementsCoordinator<IDEProjectItemModelEntitlementsCoordinator> *entitlementsCoordinator;
-@property(readonly) Xcode3TargetBuildSettingsCoordinator *buildSettingsCoordinator;
+@property(readonly) NSObject<IDEInfoPlistCoordination> *infoPlistCoordinator;
+@property(readonly) NSObject<IDELinkedFrameworksCoordination> *linkedFrameworksCoordinator;
+@property(readonly) NSObject<IDEAppIDFeatureCoordination> *appIDFeatureCoordinator;
+@property(readonly) NSObject<IDEEntitlementsCoordination> *entitlementsCoordinator;
+@property(readonly) NSObject<IDEBuildSettingsCoordination> *buildSettingsCoordinator;
 - (void)runFlightChecks;
 @property(readonly) BOOL requiresAccountAndTeamSelection;
 @property(readonly) BOOL isEnabledUsingEducatedGuess;
-- (void)setEnabled:(BOOL)arg1 flightCheckContext:(id)arg2;
-- (BOOL)isEnabledWithoutEducatedGuess;
-@property(readonly, getter=isEnabled) BOOL enabled;
+- (void)invalidateCachedIsEnabled;
 - (void)publishStateWithContext:(id)arg1;
-- (void)modelWasDisabled;
-- (void)modelWasEnabledWithContext:(id)arg1;
 - (void)updateWithContext:(id)arg1;
+- (void)publishState;
+- (void)executeWithoutPublishingState:(CDUnknownBlockType)arg1;
 - (void)targetCoordinatorsChanged:(id)arg1;
 @property(readonly, nonatomic) id <IDEFlightChecking> appIDFeatureFlightCheck; // @synthesize appIDFeatureFlightCheck=_appIDFeatureFlightCheck;
-- (void)primitiveInvalidate;
-- (id)init;
+@property(readonly) NSString *title;
+@property(readonly, copy) NSString *description;
 - (id)initWithCapabilitiesContext:(id)arg1 item:(id)arg2;
+- (id)init;
 
 // Remaining properties
 @property(retain) DVTStackBacktrace *creationBacktrace;
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) DVTStackBacktrace *invalidationBacktrace;
+@property(nonatomic) __weak id <IDESigningEditorCapsuleViewStateRestorationRecordProviderDelegate> restorationRecordProviderDelegate;
 @property(readonly) Class superclass;
 @property(readonly, nonatomic, getter=isValid) BOOL valid;
 

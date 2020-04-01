@@ -4,41 +4,44 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <DVTKit/DVTViewController.h>
+#import <DVTViewControllerKit/DVTViewController.h>
 
-@class DVTStackView_AppKitAutolayout, DVTToolchain, IDEWorkspaceTabController, NSArray, NSButton, NSButtonCell, NSImageView, NSMatrix, NSTextField, NSView, NSWindow;
+@class DVTStackView_AppKitAutolayout, DVTToolchain, IDEAttachTokenFieldDelegate, IDEWorkspaceTabController, NSArray, NSButton, NSButtonCell, NSImageView, NSTokenField, NSView, NSWindow;
 @protocol IDEAttachToProcessSheetDelegate;
 
 @interface IDEAttachToProcessSheet : DVTViewController
 {
-    IDEWorkspaceTabController *_workspaceTabController;
-    id <IDEAttachToProcessSheetDelegate> _delegate;
-    NSArray *_toolchains;
-    DVTToolchain *_selectedToolchain;
-    unsigned int _debugProcessAsUID;
     NSButton *_attachButton;
     NSButton *_cancelButton;
     NSWindow *_sheetWindow;
-    NSTextField *_pidTextField;
+    NSTokenField *_pidTextField;
     NSImageView *_invalidPIDImage;
-    NSImageView *_applicationImage;
-    NSView *_debuggerSlice;
     NSView *_debugProcessAsSlice;
+    NSView *_toolchainSlice;
+    NSView *_mallocStackSlice;
     DVTStackView_AppKitAutolayout *_slicesStackView;
-    NSMatrix *_debugProcessAsMatrix;
     NSButtonCell *_debugProcessAsMeButtonCell;
-    NSTextField *_debugProcessAsRootText;
+    IDEWorkspaceTabController *_workspaceTabController;
+    id <IDEAttachToProcessSheetDelegate> _delegate;
+    BOOL _enableMallocStackLogging;
+    unsigned int _debugProcessAsUID;
+    DVTToolchain *_selectedToolchain;
+    NSArray *_toolchains;
+    IDEAttachTokenFieldDelegate *_tokenFieldDelegate;
 }
 
++ (id)lldbToolchainFromActiveLaunchSchemeInWorkspace:(id)arg1;
 + (void)showAttachToProcessSheetForWorkspaceTabController:(id)arg1 delegate:(id)arg2;
+@property(nonatomic) BOOL enableMallocStackLogging; // @synthesize enableMallocStackLogging=_enableMallocStackLogging;
+@property(retain) IDEAttachTokenFieldDelegate *tokenFieldDelegate; // @synthesize tokenFieldDelegate=_tokenFieldDelegate;
+@property(retain) NSArray *toolchains; // @synthesize toolchains=_toolchains;
 @property unsigned int debugProcessAsUID; // @synthesize debugProcessAsUID=_debugProcessAsUID;
-@property(readonly) DVTToolchain *selectedToolchain; // @synthesize selectedToolchain=_selectedToolchain;
-@property(readonly) NSArray *toolchainSpecifiers; // @synthesize toolchainSpecifiers=_toolchains;
+@property(retain, nonatomic) DVTToolchain *selectedToolchain; // @synthesize selectedToolchain=_selectedToolchain;
 - (void).cxx_destruct;
-- (void)_rememberToolchain;
-- (void)_rememberEnteredProcessNameIfNecessary;
 - (void)_rememberDebugProcessAsSelection;
 - (void)_attachToProcessUsingProcessInformations:(id)arg1;
+- (BOOL)deduplicateProcessNameOrPIDString:(id)arg1 withContext:(id)arg2;
+- (BOOL)deduplicateProcessInfo:(id)arg1 withContext:(id)arg2;
 - (void)attachToProcess:(id)arg1;
 - (void)cancel:(id)arg1;
 - (void)_showAttachToProcessSheet;
@@ -47,15 +50,17 @@
 - (void)_updateUIBasedOnPIDTextField;
 - (BOOL)_runOnPairedDevice;
 - (id)_processInformationForProcessName:(id)arg1 processInformations:(id)arg2;
-- (id)_processInformationForUserEnteredText:(id)arg1;
+- (id)_processInformationForUserEnteredText:(id)arg1 processInformations:(id)arg2;
 - (id)_processInformationForPID:(int)arg1 processInformations:(id)arg2;
-- (void)setSelectedToolchain:(id)arg1;
 - (void)primitiveInvalidate;
 - (void)loadView;
+- (void)_setupSlices;
+- (void)_setupMallocStackSlice;
+- (void)_setupSelectedToolchain;
 - (void)_setupDebugProcessAsSlice;
 - (BOOL)_supportsDebugAs;
 - (id)defaultDebuggerSpecifier;
-- (id)_initWithWorkspaceTabControler:(id)arg1 delegate:(id)arg2;
+- (id)_initWithWorkspaceTabController:(id)arg1 delegate:(id)arg2;
 
 @end
 

@@ -26,6 +26,11 @@
 - (void)viewDidInstall;
 - (void)loadView;
 - (void)addConstraintAction:(id)arg1;
+- (void)addAvoidOccluder:(id)arg1;
+- (void)addSlider:(id)arg1;
+- (void)addAcceleration:(id)arg1;
+- (void)addReplicator:(id)arg1;
+- (void)addDistance:(id)arg1;
 - (void)addBillboard:(id)arg1;
 - (void)addLookAt:(id)arg1;
 - (void)deleteConstraintAction:(id)arg1;

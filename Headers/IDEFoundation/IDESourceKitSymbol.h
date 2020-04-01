@@ -6,11 +6,11 @@
 
 #import <IDEFoundation/IDESourceKitSymbolOccurrence.h>
 
-#import <IDEFoundation/IDEAutoImportable-Protocol.h>
+#import <IDEFoundation/IDEIndexSymbol-Protocol.h>
 
-@class DVTFilePath, DVTSourceCodeLanguage, DVTSourceCodeSymbolKind, IDEIndexCollection, IDESourceKitContainerSymbol, NSString;
+@class DVTDocumentLocation, DVTFilePath, DVTSourceCodeLanguage, DVTSourceCodeSymbolKind, IDESourceKitContainerSymbol, NSString, NSURL, _TtC13DVTFoundation9DVTSymbol;
 
-@interface IDESourceKitSymbol : IDESourceKitSymbolOccurrence <IDEAutoImportable>
+@interface IDESourceKitSymbol : IDESourceKitSymbolOccurrence <IDEIndexSymbol>
 {
     NSString *_name;
     NSString *_displayName;
@@ -18,6 +18,7 @@
     DVTSourceCodeSymbolKind *_symbolKind;
     DVTSourceCodeLanguage *_symbolLanguage;
     NSString *_resolution;
+    _TtC13DVTFoundation9DVTSymbol *_identifier;
     BOOL _haveModelOccurrence;
     BOOL _isVirtual;
     BOOL _isInProject;
@@ -30,7 +31,7 @@
 
 + (id)newSymbolOfKind:(id)arg1 language:(id)arg2 name:(id)arg3 displayName:(id)arg4 qualifiedDisplayName:(id)arg5 moduleName:(id)arg6 resolution:(id)arg7 isVirtual:(BOOL)arg8 isInProject:(BOOL)arg9 isSystem:(BOOL)arg10 role:(long long)arg11 location:(id)arg12 line:(long long)arg13 column:(long long)arg14 file:(id)arg15 moduleUrl:(id)arg16 completion:(id)arg17 forSourceKitWorkspace:(id)arg18;
 + (Class)classForSymbolKind:(id)arg1;
-@property(copy, nonatomic) NSString *moduleName; // @synthesize moduleName=_moduleName;
+@property(retain, nonatomic) NSString *moduleName; // @synthesize moduleName=_moduleName;
 @property(nonatomic) BOOL isSystem; // @synthesize isSystem=_isSystem;
 @property(nonatomic) BOOL isInProject; // @synthesize isInProject=_isInProject;
 @property(nonatomic) BOOL isVirtual; // @synthesize isVirtual=_isVirtual;
@@ -53,9 +54,8 @@
 - (id)classVariables;
 - (id)instanceMethods;
 - (id)classMethods;
-@property(readonly, nonatomic, getter=isAutoImportable) BOOL autoImportable;
-@property(readonly, nonatomic) DVTFilePath *filePathToHeaderToImport;
-@property(readonly, nonatomic) NSString *completionString;
+- (id)filePathToHeaderToImport;
+- (id)completionString;
 - (id)qualifiedDisplayName;
 - (id)displayName;
 - (id)ibRelationClass;
@@ -63,21 +63,21 @@
 - (id)referencingFiles;
 - (id)containerSymbol;
 - (id)containerSymbols;
-@property(readonly, nonatomic) IDEIndexCollection *definitions;
+- (id)definitions;
 - (id)declarations;
 - (id)occurrences;
 - (id)correspondingSymbol;
-- (id)location;
-- (id)file;
+@property(readonly) DVTDocumentLocation *location;
+@property(readonly) DVTFilePath *file;
 - (long long)column;
 - (long long)lineNumber;
-- (long long)role;
+@property(readonly) long long role;
 - (id)occurrence;
 @property(readonly, nonatomic) BOOL hasOccurrence;
 - (void)setModelOccurrence:(id)arg1;
 - (id)modelOccurrence;
-@property(readonly, nonatomic, getter=isInProject) BOOL inProject;
 @property(readonly, nonatomic) BOOL navigationPrefersDefinition;
+@property(readonly, nonatomic) _TtC13DVTFoundation9DVTSymbol *identifier;
 - (BOOL)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;
 @property(readonly, copy) NSString *description;
@@ -86,6 +86,7 @@
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
+@property(readonly) NSURL *moduleURL;
 @property(readonly) Class superclass;
 
 @end

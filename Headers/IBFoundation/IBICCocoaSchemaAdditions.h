@@ -8,7 +8,7 @@
 
 #import <IBFoundation/IBICSchemaProvider-Protocol.h>
 
-@class IBICColorSpace, IBICFileType, IBICIdiom, IBICLanguageDirection, IBICPlatform, IBICScale, IBICSize, NSString;
+@class IBICColorSpace, IBICContrastAppearance, IBICFileType, IBICIdiom, IBICLanguageDirection, IBICLuminosityAppearance, IBICPlatform, IBICScale, IBICSize, IBICVibrancyAppearance, NSArray, NSString;
 
 @interface IBICCocoaSchemaAdditions : NSObject <IBICSchemaProvider>
 {
@@ -16,31 +16,52 @@
     IBICPlatform *_OSXPlatform;
     IBICIdiom *_universalIdiom;
     IBICIdiom *_macIdiom;
+    IBICScale *_anyScale;
     IBICScale *_oneXScale;
     IBICScale *_twoXScale;
+    IBICScale *_threeXScale;
     IBICSize *_size16;
     IBICSize *_size32;
     IBICSize *_size128;
     IBICSize *_size256;
     IBICSize *_size512;
+    NSArray *_fileProviderIconBadgeSizes;
+    NSArray *_fileProviderSidebarIconSizes;
+    IBICColorSpace *_anyColorSpace;
     IBICColorSpace *_sRGBColorSpace;
     IBICColorSpace *_P3ColorSpace;
+    IBICLanguageDirection *_anyLanguageDirection;
     IBICLanguageDirection *_leftToRightLanguageDirection;
     IBICLanguageDirection *_rightToLeftLanguageDirection;
     IBICFileType *_pngFileType;
     IBICFileType *_jpegFileType;
-    IBICFileType *_pdfFileType;
+    IBICLuminosityAppearance *_anyLightness;
+    IBICLuminosityAppearance *_darkAppearance;
+    IBICLuminosityAppearance *_lightAppearance;
+    IBICContrastAppearance *_anyContrast;
+    IBICContrastAppearance *_highContrast;
+    IBICVibrancyAppearance *_anyVibrancy;
+    IBICVibrancyAppearance *_vibrant;
 }
 
 - (void).cxx_destruct;
-- (void)registerDataAndTextureSetSlots:(id)arg1;
+- (void)registerSuggestionSets:(id)arg1;
+- (void)registerVectorGlyphSetSlots:(id)arg1;
+- (void)registerColorSetSlots:(id)arg1;
+- (void)registerTextureSetSlots:(id)arg1;
+- (void)registerModelSetSlots:(id)arg1;
+- (void)registerDataSetSlots:(id)arg1;
 - (void)registerAppIconSetSlots:(id)arg1;
 - (id)macAppIconDetailAreaGroupPathForSize:(id)arg1;
+- (void)registerSidebarIconSetSlots:(id)arg1;
+- (void)registerIconBadgeSetSlots:(id)arg1;
 - (void)registerIconSetSlots:(id)arg1;
 - (void)registerImageSetSlots:(id)arg1;
 - (void)registerSchemaComponents:(id)arg1;
 - (void)captureExistingSlotComponents:(id)arg1;
 - (void)registerSlotComponents:(id)arg1;
+- (id)platformID;
+- (void)registerClasses:(id)arg1;
 - (double)precedence;
 
 // Remaining properties

@@ -10,6 +10,7 @@
 
 @interface IDEDeviceUnavailableAlertHelper : NSObject
 {
+    BOOL _result;
     NSError *_unavailabilityError;
     NSString *_deviceIdentifier;
     NSString *_deviceName;
@@ -28,9 +29,10 @@
 @property(retain) NSString *deviceName; // @synthesize deviceName=_deviceName;
 @property(retain) NSString *deviceIdentifier; // @synthesize deviceIdentifier=_deviceIdentifier;
 @property(retain, nonatomic) NSError *unavailabilityError; // @synthesize unavailabilityError=_unavailabilityError;
+@property BOOL result; // @synthesize result=_result;
 - (void).cxx_destruct;
 - (id)_genericUnavailabilityError;
-- (void)showAlert;
+- (void)showAlert:(id)arg1;
 - (id)initWithDevice:(id)arg1 runContextManager:(id)arg2 window:(id)arg3 availabilityHandler:(CDUnknownBlockType)arg4;
 
 @end

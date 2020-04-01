@@ -6,34 +6,23 @@
 
 #import <objc/NSObject.h>
 
-@class DVTPortalTeam;
+@class DVTPortalPermissionsReason, NSNumber, NSString;
 
 @interface DVTPortalPermissions : NSObject
 {
-    DVTPortalTeam *_team;
-    long long _role;
+    NSString *_permission;
+    NSNumber *_accessAllowed;
+    NSNumber *_resultCode;
+    DVTPortalPermissionsReason *_reason;
 }
 
-+ (id)_errorNoRolesFoundInRoles:(id)arg1;
-+ (id)_permissionsWithRoles:(id)arg1 team:(id)arg2 error:(id *)arg3;
-@property(readonly, nonatomic) long long role; // @synthesize role=_role;
-@property(nonatomic) DVTPortalTeam *team; // @synthesize team=_team;
-- (id)_roleDescription;
-- (BOOL)_canUseServerPortalServices;
-- (BOOL)canAssociateContainersOfType:(id)arg1;
-- (BOOL)canViewContainersOfType:(id)arg1;
-- (BOOL)canModifyContainersOfType:(id)arg1;
-- (BOOL)canRevokeCertificatesOfType:(id)arg1;
-- (BOOL)canCreateCertificatesOfType:(id)arg1;
-- (BOOL)_canUseCertificatesOfType:(id)arg1;
-- (BOOL)_roleCanCreateProfilesOfType:(id)arg1;
-- (BOOL)canCreateProfilesOfType:(id)arg1;
-- (BOOL)canCreateWildcardAppIDsForProgram:(id)arg1;
-- (BOOL)canCreateOrModifyAppIDsForProgram:(id)arg1;
-- (BOOL)canRegisterDevicesOfPlatform:(id)arg1;
-- (id)initWithTeam:(id)arg1 role:(long long)arg2;
-- (unsigned long long)hash;
-- (BOOL)isEqual:(id)arg1;
+@property(retain, nonatomic) DVTPortalPermissionsReason *reason; // @synthesize reason=_reason;
+@property(retain, nonatomic) NSNumber *resultCode; // @synthesize resultCode=_resultCode;
+@property(retain, nonatomic) NSNumber *accessAllowed; // @synthesize accessAllowed=_accessAllowed;
+@property(retain, nonatomic) NSString *permission; // @synthesize permission=_permission;
+- (void).cxx_destruct;
+@property(readonly, nonatomic) unsigned long long plaStatus;
+@property(readonly, nonatomic) BOOL isRegisteredAppleDeveloper;
 
 @end
 

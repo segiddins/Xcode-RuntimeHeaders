@@ -6,9 +6,12 @@
 
 #import <objc/NSObject.h>
 
-@class DVTFileDataType, IDENavigableItemArchivableRepresentation, NSDictionary, NSImage, NSString, NSURL;
+#import <IDEKit/IDEEditorHistoryControllerItem-Protocol.h>
+#import <IDEKit/NSSecureCoding-Protocol.h>
 
-@interface IDEEditorHistoryItem : NSObject
+@class DVTDocumentLocation, DVTFileDataType, DVTStackBacktrace, IDENavigableItemArchivableRepresentation, NSDictionary, NSImage, NSString, NSURL;
+
+@interface IDEEditorHistoryItem : NSObject <NSSecureCoding, IDEEditorHistoryControllerItem>
 {
     NSString *_navigableItemName;
     NSString *_documentNavigableItemName;
@@ -18,10 +21,17 @@
     DVTFileDataType *_fileDataType;
     NSString *_documentExtensionIdentifier;
     NSDictionary *_stateDictionary;
+    BOOL _cachedImageIsDark;
+    DVTStackBacktrace *_creationBacktrace;
 }
 
++ (BOOL)supportsSecureCoding;
 + (id)_imageCache;
++ (id)_fixupDocumentExtensionIdentifier:(id)arg1;
 + (id)editorHistoryItemForStateSavingDictionary:(id)arg1 forNavigableItemCoordinator:(id)arg2 forWorkspace:(id)arg3 error:(id *)arg4;
++ (void)initialize;
+@property(readonly) DVTStackBacktrace *creationBacktrace; // @synthesize creationBacktrace=_creationBacktrace;
+@property BOOL cachedImageIsDark; // @synthesize cachedImageIsDark=_cachedImageIsDark;
 @property(copy) NSURL *documentContentsURL; // @synthesize documentContentsURL=_documentContentsURL;
 @property(readonly) NSString *documentNavigableItemName; // @synthesize documentNavigableItemName=_documentNavigableItemName;
 @property(readonly) NSString *navigableItemName; // @synthesize navigableItemName=_navigableItemName;
@@ -31,13 +41,19 @@
 @property(readonly) NSURL *documentURL; // @synthesize documentURL=_documentURL;
 @property(readonly) NSString *documentExtensionIdentifier; // @synthesize documentExtensionIdentifier=_documentExtensionIdentifier;
 - (void).cxx_destruct;
-@property(retain) NSImage *cachedImage;
-- (id)stateSavingStateDictionary;
+- (id)initWithCoder:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
+@property(readonly) NSImage *cachedImage;
+- (BOOL)isEqualToHistoryControllerItem:(id)arg1;
+- (void)setCachedImage:(id)arg1 isDark:(BOOL)arg2;
+@property(readonly) DVTDocumentLocation *documentLocation;
+@property(readonly) NSString *domainIdentifier;
+@property(readonly) NSDictionary *stateSavingStateDictionary;
 - (id)description;
 @property(readonly) NSString *historyMenuItemTitle;
 - (id)initWithNavigableItem:(id)arg1 archivableRepresentation:(id)arg2 documentExtensionIdentifier:(id)arg3 stateDictionary:(id)arg4 documentNavigableItemName:(id)arg5 navigableItemName:(id)arg6;
 - (id)initWithNavigableItem:(id)arg1;
-- (id)_initWithNavigableItem:(id)arg1 archivableRepresentation:(id)arg2 fileDataType:(id)arg3 documentExtensionIdentifier:(id)arg4 stateDictionary:(id)arg5 documentNavigableItemName:(id)arg6 navigableItemName:(id)arg7;
+- (id)initWithArchivableRepresentation:(id)arg1 documentURL:(id)arg2 fileDataType:(id)arg3 documentExtensionIdentifier:(id)arg4 stateDictionary:(id)arg5 documentNavigableItemName:(id)arg6 navigableItemName:(id)arg7;
 - (id)init;
 
 @end

@@ -10,7 +10,9 @@
 @protocol DYFramebuffer, DYResource;
 
 @protocol GPUTraceFramebuffer <NSObject>
-@property(retain) id <DYResource> wireframeImage;
+@property(readonly) id <DYResource> solidTexture;
+@property(readonly) id <DYResource> outlineTexture;
+@property(readonly) id <DYResource> wireframeTexture;
 @property(retain) id <DYResource> stencilResourceObject;
 @property(retain) id <DYResource> depthResourceObject;
 @property(readonly) NSMutableDictionary *colorResourceObjects;

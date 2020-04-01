@@ -9,7 +9,7 @@
 #import <DTXConnectionServices/DTXConnectionRemoteReceiveQueueCalls-Protocol.h>
 #import <DTXConnectionServices/DTXMessenger-Protocol.h>
 
-@class DTXChannel, DTXMessageParser, DTXMessageTransmitter, DTXResourceTracker, DTXTransport, NSArray, NSDictionary, NSMutableDictionary, NSString;
+@class DTXChannel, DTXMessageParser, DTXMessageTransmitter, DTXResourceTracker, DTXTransport, NSDictionary, NSMutableArray, NSMutableDictionary, NSSet, NSString;
 @protocol DTXBlockCompressor, DTXRateLimiter, OS_dispatch_queue, OS_dispatch_semaphore;
 
 @interface DTXConnection : NSObject <DTXConnectionRemoteReceiveQueueCalls, DTXMessenger>
@@ -18,18 +18,18 @@
     NSObject<OS_dispatch_queue> *_outgoing_message_queue;
     NSObject<OS_dispatch_queue> *_outgoing_control_queue;
     DTXTransport *_controlTransport;
-    NSArray *_permittedBlockCompressors;
+    NSSet *_permittedBlockCompressors;
     NSObject<OS_dispatch_queue> *_receive_queue;
     NSObject<OS_dispatch_queue> *_handler_queue;
     unsigned int _nextChannelCode;
     NSMutableDictionary *_channelsByCode;
     NSMutableDictionary *_unconfiguredChannelsByCode;
-    NSMutableDictionary *_capabilitiesByChannelCode;
     NSMutableDictionary *_handlersByIdentifier;
     NSMutableDictionary *_protocolHandlers;
     NSMutableDictionary *_localCapabilityVersions;
     NSMutableDictionary *_localCapabilityClasses;
     NSDictionary *_remoteCapabilityVersions;
+    NSMutableArray *_capabilityOverrideBlocks;
     DTXResourceTracker *_resourceTracker;
     DTXResourceTracker *_incomingResourceTracker;
     NSObject<OS_dispatch_semaphore> *_firstMessageSem;
@@ -42,14 +42,13 @@
     CDUnknownBlockType _channelHandler;
     id <DTXRateLimiter> _defaultRateLimiter;
     unsigned long long _logMessageCallstackSizeThreshold;
-    long long _remoteCompressionCapabilityVersion;
+    int _remoteCompressionCapabilityVersion;
     int _newChannelCompressionHint;
     int _compressionTypeForUnspecified;
     unsigned long long _compressionMinSizeThreshold;
     id <DTXBlockCompressor> _compressor;
 }
 
-+ (id)connectionPublishingAddress:(id)arg1;
 + (id)connectionToAddress:(id)arg1;
 + (void)registerTransport:(Class)arg1 forScheme:(id)arg2;
 + (void)initialize;
@@ -57,6 +56,8 @@
 @property(readonly, nonatomic) int atomicConnectionNumber; // @synthesize atomicConnectionNumber=_connectionIndex;
 @property(nonatomic) BOOL remoteTracer; // @synthesize remoteTracer=_remoteTracer;
 @property(nonatomic) BOOL tracer; // @synthesize tracer=_tracer;
+@property(copy, nonatomic) NSString *label; // @synthesize label=_label;
+- (void).cxx_destruct;
 - (void)_notifyCompressionHint:(unsigned int)arg1 forChannelCode:(unsigned int)arg2;
 - (void)_receiveQueueSetCompressionHint:(unsigned int)arg1 onChannel:(id)arg2;
 - (void)_setTracerState:(unsigned int)arg1;
@@ -74,21 +75,24 @@
 - (BOOL)sendMessageAsync:(id)arg1 replyHandler:(CDUnknownBlockType)arg2;
 - (void)sendControlSync:(id)arg1 replyHandler:(CDUnknownBlockType)arg2;
 - (void)sendControlAsync:(id)arg1 replyHandler:(CDUnknownBlockType)arg2;
+- (void)_cancelInternal:(CDUnknownBlockType)arg1;
+- (void)cancelWithSerializedTransport:(CDUnknownBlockType)arg1;
 - (void)cancel;
 - (void)registerDisconnectHandler:(CDUnknownBlockType)arg1;
 - (void)setChannelHandler:(CDUnknownBlockType)arg1;
 - (void)setDispatchTarget:(id)arg1;
 - (void)setMessageHandler:(CDUnknownBlockType)arg1;
-- (id)label;
-- (void)setLabel:(id)arg1;
 - (void)throttleBandwidthBytesPerSecond:(unsigned long long)arg1;
 - (void)resume;
 - (void)suspend;
-- (long long)remoteCapabilityVersion:(id)arg1;
+- (id)remoteCapabilityVersions;
+- (void)registerCapabilityOverrideBlock:(CDUnknownBlockType)arg1;
+- (int)remoteCapabilityVersion:(id)arg1;
+- (void)_handleMissingRemoteCapabilities;
 - (double)preflightSynchronouslyWithTimeout:(double)arg1;
 - (id)_sendHeartbeatAsyncWithTimeout:(double)arg1;
 - (id)localCapabilities;
-- (void)publishCapability:(id)arg1 withVersion:(long long)arg2 forClass:(Class)arg3;
+- (void)publishCapability:(id)arg1 withVersion:(int)arg2 forClass:(Class)arg3;
 @property(nonatomic) unsigned long long maximumEnqueueSize;
 @property(readonly, copy) NSString *description;
 - (id)publishedAddresses;

@@ -4,22 +4,24 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <XCSUI/XCSBotSupportingDocument.h>
+#import <IDEKit/IDEEditorDocument.h>
 
-@class NSString, XCSService;
+@class DVTObservingToken, NSString, XCSUIService;
 
-@interface XCSBotServiceDocument : XCSBotSupportingDocument
+@interface XCSBotServiceDocument : IDEEditorDocument
 {
     NSString *_theRealDisplayName;
-    XCSService *_service;
+    DVTObservingToken *_maintenanceTasksObserver;
+    XCSUIService *_service;
 }
 
 + (id)keyPathsForValuesAffectingDisplayName;
-@property(retain, nonatomic) XCSService *service; // @synthesize service=_service;
+@property(retain, nonatomic) XCSUIService *service; // @synthesize service=_service;
 - (void).cxx_destruct;
 - (id)botIntegration;
 - (id)bot;
 - (id)displayName;
+- (void)editorDocumentWillClose;
 - (void)setFileURL:(id)arg1;
 - (id)initForURL:(id)arg1 withContentsOfURL:(id)arg2 ofType:(id)arg3 error:(id *)arg4;
 

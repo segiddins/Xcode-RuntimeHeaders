@@ -26,13 +26,16 @@
     id <IDENavigableItemCoordinatorDelegate> _delegate;
     struct __nicFlags {
         unsigned int _delegateRespondsToDocumentForNavigableItem:1;
+        unsigned int _delegateRespondsToNavigableItemChildRepresentedObjectsForArray:1;
         unsigned int _hasWarnedAboutRootItemsCount:1;
+        unsigned int _isInvalidating:1;
     } _nicFlags;
 }
 
 + (BOOL)temporaryStructureItemForDocumentURL:(id)arg1 forWorkspace:(id)arg2 error:(id *)arg3 inScope:(CDUnknownBlockType)arg4;
 + (BOOL)temporaryItemForArchivableRepresentation:(id)arg1 forWorkspace:(id)arg2 error:(id *)arg3 inScope:(CDUnknownBlockType)arg4;
 + (void)temporaryItemInDomain:(id)arg1 forWorkspace:(id)arg2 inScope:(CDUnknownBlockType)arg3;
++ (void)temporaryItemsForRepresentedObjects:(id)arg1 inScope:(CDUnknownBlockType)arg2;
 + (void)temporaryItemForRepresentedObject:(id)arg1 inScope:(CDUnknownBlockType)arg2;
 + (void)_invalidateTemporaryCoordinator;
 + (void)initialize;
@@ -59,6 +62,7 @@
 - (void)_postNotificationNamed:(id)arg1 forChangedItems:(id)arg2;
 - (void)_postDidForgetNotificationAndPurgePendingForgottenItems;
 - (void)_postWillForgetNotification:(id)arg1;
+@property(readonly, nonatomic) id <IDENavigableItemCoordinatorDelegate> _childItemsRearrangingDelegate;
 @property(retain, nonatomic) id <IDENavigableItemCoordinatorDelegate> delegate;
 - (id)navigableItemFromArchivableRepresentation:(id)arg1 forWorkspace:(id)arg2 error:(id *)arg3;
 - (id)_navigableItemFromArchivableRepresentation:(id)arg1 rootItem:(id)arg2 error:(id *)arg3;
@@ -73,10 +77,11 @@
 - (id)_providersByDomain;
 - (id)_navigableItemForFilePath:(id)arg1 inWorkspace:(id)arg2 withSeenFileReferences:(id)arg3 allowLeaf:(BOOL)arg4;
 - (id)structureNavigableItemForDocumentURL:(id)arg1 inWorkspace:(id)arg2 error:(id *)arg3;
-- (id)_structureNavigableItemForNonFileDocumentURL:(id)arg1 inWorkspace:(id)arg2 error:(id *)arg3;
-- (id)_structureNavigableItemForNonFileDocumentURL:(id)arg1 domainExtension:(id)arg2 inWorkspace:(id)arg3 error:(id *)arg4;
-- (id)_structureNavigableItemForFileDocumentURL:(id)arg1 inWorkspace:(id)arg2 error:(id *)arg3;
+- (id)_structureNavigableItemForNonFileURL:(id)arg1 inWorkspace:(id)arg2 error:(id *)arg3;
+- (id)_structureNavigableItemForNonFileURL:(id)arg1 domainExtension:(id)arg2 inWorkspace:(id)arg3 error:(id *)arg4;
+- (id)_structureNavigableItemForFileURL:(id)arg1 inWorkspace:(id)arg2 error:(id *)arg3;
 - (id)rootNavigableItemWithRepresentedObject:(id)arg1;
+- (id)_rootNavigableItemsWithRepresentedObjects:(id)arg1;
 - (void)primitiveInvalidate;
 - (id)init;
 

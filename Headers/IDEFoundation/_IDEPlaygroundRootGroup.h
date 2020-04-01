@@ -17,6 +17,8 @@
 - (BOOL)canStructureEditRemoveSubitemsAtIndexes:(id)arg1;
 - (id)structureEditInsertSubitems:(id)arg1 atIndex:(unsigned long long)arg2;
 - (BOOL)canStructureEditInsertSubitems:(id)arg1 atIndex:(unsigned long long)arg2;
+- (id)allowedFileTypesOfChildItems;
+- (BOOL)handlesStructureEditing;
 - (BOOL)allowUserModificationOfSubitems;
 - (id)_insertSubitems:(id)arg1 orURLs:(id)arg2 atIndex:(unsigned long long)arg3;
 

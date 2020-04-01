@@ -8,22 +8,25 @@
 
 #import <XCSUI/DVTReplacementViewDelegate-Protocol.h>
 
-@class DVTBorderedView, DVTObservingToken, DVTReplacementView, NSString, XCSService;
+@class DVTBorderedView, DVTObservingToken, DVTReplacementView, NSString, XCSUIProgressViewController, XCSUIService;
 
 @interface XCSBotServiceEditor : IDEEditor <DVTReplacementViewDelegate>
 {
-    XCSService *_service;
+    XCSUIService *_service;
     DVTBorderedView *_borderedView;
     DVTReplacementView *_replacementView;
     DVTObservingToken *_currentMaintenanceTasksObserver;
+    XCSUIProgressViewController *_pvc;
 }
 
+@property(retain) XCSUIProgressViewController *pvc; // @synthesize pvc=_pvc;
 @property(retain) DVTObservingToken *currentMaintenanceTasksObserver; // @synthesize currentMaintenanceTasksObserver=_currentMaintenanceTasksObserver;
 @property __weak DVTReplacementView *replacementView; // @synthesize replacementView=_replacementView;
 @property __weak DVTBorderedView *borderedView; // @synthesize borderedView=_borderedView;
-@property(retain, nonatomic) XCSService *service; // @synthesize service=_service;
+@property(retain, nonatomic) XCSUIService *service; // @synthesize service=_service;
 - (void).cxx_destruct;
 - (void)observeMaintenanceTasks;
+- (void)configureMaintenanceUI;
 - (id)serviceDocument;
 - (void)primitiveInvalidate;
 - (void)viewDidInstall;

@@ -15,8 +15,8 @@
 }
 
 + (id)pathAndFileTypeWithFileReference:(id)arg1 fileReferencePath:(id)arg2;
-@property(readonly) DVTFileDataType *fileDataType; // @synthesize fileDataType=_fileDataType;
-@property(readonly) NSString *pathString; // @synthesize pathString=_pathString;
+@property(retain) DVTFileDataType *fileDataType; // @synthesize fileDataType=_fileDataType;
+@property(retain) NSString *pathString; // @synthesize pathString=_pathString;
 - (void).cxx_destruct;
 - (id)documentLocation;
 - (long long)caseInsensitiveCompare:(id)arg1;

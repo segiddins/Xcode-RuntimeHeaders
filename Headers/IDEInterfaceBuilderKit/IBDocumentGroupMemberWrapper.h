@@ -16,7 +16,7 @@
 + (id)keyPathsForValuesAffectingGroup;
 + (id)childWrapperInvalidationNotificationNames;
 - (void).cxx_destruct;
-- (id)applicableInspectorsForCategory:(id)arg1 suggestion:(id)arg2;
+- (id)applicableInspectorSlicesForCategory:(id)arg1 suggestedSlices:(id)arg2;
 - (void)didReorderDescendantConnection:(id)arg1;
 - (void)didAddOrRemoveDescendantConnection:(id)arg1;
 - (void)invalidateChildWrappersAfterDocumentMutationNotification:(id)arg1;

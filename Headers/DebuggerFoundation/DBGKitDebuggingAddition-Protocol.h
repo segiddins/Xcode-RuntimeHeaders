@@ -6,12 +6,20 @@
 
 #import <DebuggerFoundation/IDEDebuggingAddition-Protocol.h>
 
+@class NSArray;
+
 @protocol DBGKitDebuggingAddition <IDEDebuggingAddition>
 
 @optional
+@property(nonatomic) unsigned long long systemAppearanceTestingOverride;
+@property(readonly, nonatomic) BOOL supportsSystemAppearanceTestingOverrides;
+@property(readonly, nonatomic) BOOL supportsDebugOverrides;
+@property(readonly, nonatomic) unsigned long long numberOfEnabledDebugOverrides;
+@property(readonly, nonatomic) NSArray *debugOverrides;
 @property(nonatomic) BOOL showsResponsiveScrollingStatusOfAllViews;
 @property(nonatomic) BOOL flashesDrawingOfAllViews;
 @property(nonatomic) BOOL showsAlignmentRectanglesOfAllViews;
 @property(nonatomic) BOOL showsFramesOfAllViews;
+- (void)disableAllDebugOverrides;
 @end
 

@@ -6,18 +6,19 @@
 
 #import <objc/NSObject.h>
 
-#import <GPUToolsServices/NSCoding-Protocol.h>
 #import <GPUToolsServices/NSCopying-Protocol.h>
+#import <GPUToolsServices/NSSecureCoding-Protocol.h>
 
 @class NSAttributedString, NSMutableArray;
 
-@interface DYInvestigatorRecommendationSection : NSObject <NSCopying, NSCoding>
+@interface DYInvestigatorRecommendationSection : NSObject <NSCopying, NSSecureCoding>
 {
     BOOL _ordered;
     NSAttributedString *_preamble;
     NSMutableArray *_items;
 }
 
++ (BOOL)supportsSecureCoding;
 @property(retain, nonatomic) NSMutableArray *items; // @synthesize items=_items;
 @property(nonatomic) BOOL ordered; // @synthesize ordered=_ordered;
 @property(retain, nonatomic) NSAttributedString *preamble; // @synthesize preamble=_preamble;

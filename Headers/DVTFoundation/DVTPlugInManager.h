@@ -56,8 +56,6 @@
 - (void)_createPlugInObjectsFromCache;
 - (BOOL)_savePlugInCacheWithScanRecords:(id)arg1 error:(id *)arg2;
 - (BOOL)_removePlugInCacheAndReturnError:(id *)arg1;
-- (BOOL)_removePlugInCacheAtPath:(id)arg1 error:(id *)arg2;
-- (id)_plugInCacheSaveFailedErrorWithUnderlyingError:(id)arg1;
 - (BOOL)_loadPlugInCache:(id *)arg1;
 - (BOOL)_cacheCoversPlugInsWithScanRecords:(id)arg1;
 - (id)_modificationDateOfFileAtPath:(id)arg1;
@@ -66,12 +64,14 @@
 - (BOOL)_checkPresenceOfRequiredPlugIns:(id)arg1 error:(id *)arg2;
 - (BOOL)shouldPerformConsistencyCheck;
 - (void)_registerPlugInsFromScanRecords:(id)arg1;
-- (void)_pruneUnusablePlugInsAndScanRecords:(id)arg1;
-- (id)_plugInsToIgnore;
+- (void)_pruneUnusablePlugInsAndScanRecords:(id)arg1 linkedFrameworkPaths:(id)arg2;
+- (id)_oldPluginNamesToSupersedingPluginNames;
+- (id)_plugInIDsToIgnore;
 - (void)_recordSanitizedPluginStatus:(id)arg1 errorMessage:(id)arg2;
 - (void)_addSanitizedNonApplePlugInStatusForBundle:(id)arg1 reason:(id)arg2;
 @property(readonly) NSSet *sanitizedNonApplePlugInStatuses;
 - (void)_createPlugInObjectsFromScanRecords:(id)arg1;
+- (void)_instantiatePlugInsForScanRecords:(id)arg1;
 - (void)_applyActivationRulesToScanRecords:(id)arg1;
 - (id)_scanForPlugInsInDirectories:(id)arg1 skippingDuplicatesOfPlugIns:(id)arg2;
 - (BOOL)initializePlugIns:(id *)arg1;
@@ -87,6 +87,8 @@
 @property(readonly, copy) NSArray *nonApplePlugInDescriptors;
 - (id)_extractErrorFromPlugInLoadingException:(id)arg1;
 - (BOOL)_scanForPlugIns:(id *)arg1;
+- (id)_plugInScanRecordsForInitialScan:(BOOL)arg1 linkedFrameworksScanRecords:(id *)arg2;
+- (id)_allFrameworks;
 @property(readonly, copy) NSUUID *plugInHostUUID;
 @property BOOL hasScannedForPlugIns; // @dynamic hasScannedForPlugIns;
 - (id)_scanRecordForBundle:(id)arg1 atPath:(id)arg2;
@@ -96,7 +98,6 @@
 - (id)_defaultApplicationSupportSubdirectory;
 @property(readonly, copy) NSArray *extraSearchPaths;
 - (id)_extensionsForExtensionPoint:(id)arg1 matchingPredicate:(id)arg2;
-- (id)classesImplementingProtocol:(id)arg1;
 - (id)extensionWithIdentifier:(id)arg1;
 - (id)extensionPointWithIdentifier:(id)arg1;
 - (id)plugInWithIdentifier:(id)arg1;

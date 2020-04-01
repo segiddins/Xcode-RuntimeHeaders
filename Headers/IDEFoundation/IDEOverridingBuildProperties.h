@@ -21,7 +21,7 @@
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEmpty;
-- (id)macroDefinitionTables;
+@property(readonly) NSArray *macroDefinitionTables;
 @property(readonly, copy) DVTMacroDefinitionTable *macrosFromEnvironmentXcconfigFile;
 @property(readonly, copy) DVTMacroDefinitionTable *macrosFromCommandLineXcconfigFile;
 @property(readonly, copy) DVTMacroDefinitionTable *macrosFromCommandLine;
@@ -30,7 +30,8 @@
 - (id)macroDefinitionTableForLevel:(int)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)_copyUsingOverridingPropertiesClass:(Class)arg1;
+- (id)_copyUsingOverridingPropertiesClass:(Class)arg1 synthesizedMacros:(id)arg2;
+- (id)copyWithSynthesizedMacros:(id)arg1;
 - (id)initWithMacroDefinitionTable:(id)arg1;
 - (id)init;
 

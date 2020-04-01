@@ -6,24 +6,25 @@
 
 #import <IDEFoundation/IDEStackFrame.h>
 
-@class NSArray, NSMutableSet;
+@class NSArray, NSMutableArray, NSMutableSet;
 @protocol DBGSBFrame, DBGSBValueList;
 
-__attribute__((visibility("hidden")))
 @interface DBGLLDBStackFrame : IDEStackFrame
 {
     id <DBGSBFrame> _lldbFrame;
-    id <DBGSBValueList> _lldbVariables;
     id <DBGSBValueList> _lldbRegisters;
-    NSArray *_variables;
-    NSArray *_locals;
-    NSArray *_arguments;
-    NSArray *_fileStatics;
-    NSArray *_globals;
-    NSArray *_registers;
+    id <DBGSBValueList> _lldbStaticAndGlobalFrameVariables;
+    NSMutableArray *_allDataValuesCache;
     NSMutableSet *_expressionDataValuesToInvalidate;
     struct _opaque_pthread_t *_sessionThreadIdentifier;
     BOOL _hasInitializedDisassembly;
+    BOOL _hasRequestedGlobalsAndFileStaticsFromLLDB;
+    BOOL _swiftThunk;
+    NSArray *_locals;
+    NSArray *_arguments;
+    NSArray *_registers;
+    NSArray *_fileStatics;
+    NSArray *_globals;
 }
 
 + (BOOL)supportsInvalidationPrevention;
@@ -32,21 +33,25 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSArray *registers; // @synthesize registers=_registers;
 @property(copy, nonatomic) NSArray *arguments; // @synthesize arguments=_arguments;
 @property(copy, nonatomic) NSArray *locals; // @synthesize locals=_locals;
+- (BOOL)isSwiftThunk;
 - (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (id)disassemblyString;
+- (void)updateForLineEntry:(id)arg1;
 - (id)_lldbSession;
 - (void)_getRegistersFromLLDBOnSessionThread;
-- (void)_getGlobalsFromLLDBOnSessionThread;
-- (void)_getFileStaticsFromLLDBOnSessionThread;
+- (void)_getGlobalsAndFileStaticsFromLLDBOnSessionThread;
 - (void)_getLocalsFromLLDBOnSessionThread;
 - (void)_getArgumentsFromLLDBOnSessionThread;
-- (id)_evaluateExpressionOnSessionThread:(id)arg1 options:(id)arg2;
+- (void)_didAddDataValues:(id)arg1;
+- (id)_evaluateExpressionOnSessionThread:(id)arg1 options:(id)arg2 error:(id *)arg3;
 - (void)evaluateExpression:(id)arg1 options:(id)arg2 withResultBlock:(CDUnknownBlockType)arg3;
 - (void)requestDataValueForSymbol:(id)arg1 symbolKind:(id)arg2 atLocation:(id)arg3 onQueue:(id)arg4 withResultBlock:(CDUnknownBlockType)arg5;
 - (id)_findSymbolWithName:(id)arg1 symbolKind:(id)arg2 atLocation:(id)arg3;
-- (void)_getAllFrameVariablesOnLLDBSessionThread;
-- (id)_dataValuesFromValueList:(id)arg1 valueMask:(unsigned int)arg2 originalDataValues:(id)arg3;
+- (id)_getFrameVariablesOnLLDBSessionThreadAndOnlyIncludeArgs:(BOOL)arg1 includeLocals:(BOOL)arg2 includeStatics:(BOOL)arg3 inScopeOnly:(BOOL)arg4;
+- (id)_getStaticAndGlobalFrameVariablesOnLLDBSessionThread;
+- (void)_mapDataValuesFromValueList:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
+- (id)_dataValuesFromValueList:(id)arg1 valueMask:(unsigned int)arg2;
 - (void)_addSessionThreadAction:(CDUnknownBlockType)arg1;
 - (BOOL)_isSessionThread;
 - (void)_assertOnSessionThread;

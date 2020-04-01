@@ -10,14 +10,16 @@
 #import <IDEKit/IDEStructureEditingGroupingTarget-Protocol.h>
 #import <IDEKit/IDEStructureEditingRemoveSubitemsTarget-Protocol.h>
 
-@class DVTObservingToken, IDEGroup, IDENavigableItem, NSString;
+@class DVTObservingToken, IDEGroup, IDENavigableItem, IDEWorkspace, NSString;
 
 @interface IDEContainerItemStructureEditingTarget : NSObject <IDEStructureEditingDropTarget, IDEStructureEditingGroupingTarget, IDEStructureEditingRemoveSubitemsTarget>
 {
     IDEGroup *_targetGroup;
     DVTObservingToken *_targetGroupValidObservationToken;
     IDENavigableItem *_targetNavigableItem;
+    IDEWorkspace *_workspace;
     long long _targetIndex;
+    unsigned long long _op;
 }
 
 + (void)_addFileURLsForContainerItem:(id)arg1 to:(id)arg2;
@@ -28,19 +30,29 @@
 + (BOOL)_acceptDropAtIndex:(long long)arg1 withContext:(id)arg2;
 + (BOOL)_acceptFileURLs:(id)arg1 dropAtIndex:(long long)arg2 withContext:(id)arg3;
 + (BOOL)_acceptContainerItems:(id)arg1 dropAtIndex:(long long)arg2 withContext:(id)arg3;
-+ (id)_targetForStructureEditingOperation:(unsigned long long)arg1 proposedNavigableItem:(id)arg2 proposedChildIndex:(long long)arg3;
++ (id)_targetForStructureEditingOperation:(unsigned long long)arg1 proposedNavigableItem:(id)arg2 proposedChildIndex:(long long)arg3 inWorkspace:(id)arg4;
+@property(nonatomic) unsigned long long op; // @synthesize op=_op;
+@property(nonatomic) long long targetIndex; // @synthesize targetIndex=_targetIndex;
+@property(retain, nonatomic) IDEWorkspace *workspace; // @synthesize workspace=_workspace;
+@property(retain, nonatomic) IDENavigableItem *targetNavigableItem; // @synthesize targetNavigableItem=_targetNavigableItem;
+@property(retain, nonatomic) DVTObservingToken *targetGroupValidObservationToken; // @synthesize targetGroupValidObservationToken=_targetGroupValidObservationToken;
+@property(retain, nonatomic) IDEGroup *targetGroup; // @synthesize targetGroup=_targetGroup;
 - (void).cxx_destruct;
 - (BOOL)structureEditingRemoveSubitemsAtIndexes:(id)arg1 error:(id *)arg2;
+- (id)structureEditingFilePathsForGroupSubitemsFilteringOutNonProjectItemsAtIndexes:(id)arg1;
+- (void)_addGroupAndSubGroupDirectoryFilePathsForGroup:(id)arg1 toSet:(id)arg2;
 - (id)structureEditingFileURLsForSubitemsAtIndexes:(id)arg1;
 - (BOOL)structureEditingCanRemoveSubitemsAtIndexes:(id)arg1;
-- (BOOL)structureEditingGroupSubitemsAtIndexes:(id)arg1 groupIndex:(long long *)arg2;
+- (void)structureEditingGroupSubitemsAtIndexes:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (BOOL)structureEditingCanGroupSubitemsAtIndexes:(id)arg1;
-- (BOOL)_canGroupSubitemsAtIndexes:(id)arg1 groupIndex:(long long *)arg2 shouldGroup:(BOOL)arg3;
+- (BOOL)_canGroupSubitemsAtIndexes:(id)arg1 shouldGroup:(BOOL)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (BOOL)structureEditingAddNewSubgroup;
 - (BOOL)structureEditingCanAddNewSubgroup;
+- (id)allowedFileTypesForNewFile;
 - (BOOL)_testOrAddNewGroupAtChildIndex:(long long)arg1 shouldAdd:(BOOL)arg2;
 - (BOOL)_addNewSubgroupAtIndex:(unsigned long long)arg1 newGroupBlock:(CDUnknownBlockType)arg2;
 - (BOOL)structureEditingAcceptInsertionOfSubitemsForContext:(id)arg1;
+- (BOOL)initiateMoveCopyUsingMoveCoordinator:(id)arg1 atIndex:(unsigned long long)arg2 commandKeyDown:(BOOL)arg3 optionKeyDown:(BOOL)arg4;
 - (BOOL)structureEditingValidateInsertionOfSubitemsForContext:(id)arg1;
 - (unsigned long long)_targetIndexForInsertion;
 - (id)insertSubitemsAssistantContext;
@@ -52,12 +64,12 @@
 @property(readonly) unsigned long long hash;
 - (id)actualNavigableItem;
 - (long long)actualChildIndex;
+@property(readonly, copy) NSString *debugDescription;
 - (void)dealloc;
-- (id)_initWithTargetGroup:(id)arg1 targetNavigableItem:(id)arg2 targetIndex:(long long)arg3;
+- (id)_initWithOperation:(unsigned long long)arg1 targetGroup:(id)arg2 targetNavigableItem:(id)arg3 targetIndex:(long long)arg4 inWorkspace:(id)arg5;
 - (id)init;
 
 // Remaining properties
-@property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) Class superclass;
 

@@ -8,7 +8,6 @@
 
 @interface IBCocoaTouchInspectorViewController : IBInspectorViewController
 {
-    BOOL _anyInspectedDocumentsAreNotUsingConfigurations;
     BOOL _allInspectedDocumentsSupportAdaptiveSegues;
     BOOL _allInspectedDocumentsSupportLegacySegues;
 }
@@ -16,8 +15,7 @@
 + (id)keyPathsForValuesAffectingInspectingStoryboard;
 @property(nonatomic) BOOL allInspectedDocumentsSupportLegacySegues; // @synthesize allInspectedDocumentsSupportLegacySegues=_allInspectedDocumentsSupportLegacySegues;
 @property(nonatomic) BOOL allInspectedDocumentsSupportAdaptiveSegues; // @synthesize allInspectedDocumentsSupportAdaptiveSegues=_allInspectedDocumentsSupportAdaptiveSegues;
-@property(nonatomic) BOOL anyInspectedDocumentsAreNotUsingConfigurations; // @synthesize anyInspectedDocumentsAreNotUsingConfigurations=_anyInspectedDocumentsAreNotUsingConfigurations;
-- (void)updateVisibiltyFlags;
+- (void)updateVisibilityFlags;
 @property(readonly, nonatomic) BOOL showLegacySeguesHeading;
 @property(readonly) BOOL inspectingStoryboard;
 

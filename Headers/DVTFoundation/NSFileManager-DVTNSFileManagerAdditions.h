@@ -7,6 +7,7 @@
 #import <Foundation/NSFileManager.h>
 
 @interface NSFileManager (DVTNSFileManagerAdditions)
++ (BOOL)dvt_isEmptyFileAtPath:(id)arg1;
 + (BOOL)dvt_isPathValidForFileManagerOperations:(id)arg1;
 - (BOOL)dvt_unzipArchiveAtPath:(id)arg1 toPath:(id)arg2 withIntermediateDirectories:(BOOL)arg3;
 - (BOOL)dvt_zipArchiveAtPath:(id)arg1 toPath:(id)arg2 elideContainingDirectory:(BOOL)arg3 error:(id *)arg4;

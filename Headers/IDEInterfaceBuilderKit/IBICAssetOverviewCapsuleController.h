@@ -31,6 +31,15 @@
 @property(nonatomic) __weak id <IBICAssetOverviewCapsuleControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) IBICAbstractCatalogDocument *document; // @synthesize document=_document;
 - (void).cxx_destruct;
+- (void)assetRepViewDidClickStatusImage:(id)arg1;
+- (void)assetCapsuleDidFinishBandSelecting:(id)arg1;
+- (void)assetCapsule:(id)arg1 didUpdateBandSelectionRect:(struct CGRect)arg2 withEvent:(id)arg3 andInitialSelection:(id)arg4;
+- (id)assetCapsuleInitialSelectionForBandSelection:(id)arg1;
+- (void)assetCapsule:(id)arg1 didTrackContextMenuFromEvent:(id)arg2;
+- (void)assetCapsule:(id)arg1 willTrackContextMenuFromEvent:(id)arg2;
+- (id)assetCapsule:(id)arg1 menuForEvent:(id)arg2;
+- (void)assetCapsule:(id)arg1 cancelPreview:(id)arg2;
+- (void)assetCapsule:(id)arg1 togglePreview:(id)arg2;
 - (BOOL)assetCapsule:(id)arg1 interceptMouseUp:(id)arg2;
 - (BOOL)assetCapsule:(id)arg1 interceptMouseDragged:(id)arg2 withOriginalMouseDown:(id)arg3;
 - (BOOL)assetCapsule:(id)arg1 interceptMouseDown:(id)arg2;

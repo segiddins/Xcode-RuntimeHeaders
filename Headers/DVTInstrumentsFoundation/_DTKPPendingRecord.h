@@ -4,21 +4,19 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
-
-@class DTKPRecord;
+#import <DVTInstrumentsFoundation/DTKPRecord.h>
 
 __attribute__((visibility("hidden")))
-@interface _DTKPPendingRecord : NSObject
+@interface _DTKPPendingRecord : DTKPRecord
 {
-    BOOL _userCallstackSeen;
-    DTKPRecord *_record;
+    _DTKPPendingRecord *_nextRecord;
+    _DTKPPendingRecord *_latestRecord;
 }
 
-@property(retain, nonatomic) DTKPRecord *record; // @synthesize record=_record;
-@property(nonatomic) BOOL userCallstackSeen; // @synthesize userCallstackSeen=_userCallstackSeen;
+@property(nonatomic) _DTKPPendingRecord *latestRecord; // @synthesize latestRecord=_latestRecord;
+@property(retain, nonatomic) _DTKPPendingRecord *nextRecord; // @synthesize nextRecord=_nextRecord;
 - (void).cxx_destruct;
-- (id)init;
+- (void)_resetAndPopulateFieldsWithEvent:(struct kpdecode_record *)arg1;
 
 @end
 

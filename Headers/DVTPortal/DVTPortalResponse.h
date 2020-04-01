@@ -6,20 +6,22 @@
 
 #import <objc/NSObject.h>
 
-@class NSDictionary;
+@class NSData, NSDictionary, NSHTTPURLResponse;
 
 @interface DVTPortalResponse : NSObject
 {
-    NSDictionary *_payload;
+    NSHTTPURLResponse *_urlResponse;
+    NSData *_payloadData;
+    NSDictionary *_headers;
 }
 
-+ (id)portalResponseFromData:(id)arg1 URLResponse:(id)arg2 error:(id *)arg3;
-@property(readonly, nonatomic) NSDictionary *payload; // @synthesize payload=_payload;
+@property(readonly, nonatomic) NSDictionary *headers; // @synthesize headers=_headers;
+@property(readonly, nonatomic) NSData *payloadData; // @synthesize payloadData=_payloadData;
+@property(readonly, nonatomic) NSHTTPURLResponse *urlResponse; // @synthesize urlResponse=_urlResponse;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) long long resultCode;
-- (id)debugDescription;
-- (id)description;
-- (id)initWithPayload:(id)arg1;
+- (id)init;
+- (id)initFromURLResponse:(id)arg1 payload:(id)arg2 expectedHTTPStatusCode:(unsigned long long)arg3 error:(id *)arg4;
+- (id)initFromURLResponse:(id)arg1 payload:(id)arg2 expectedHTTPStatusCode:(unsigned long long)arg3 failOnUnexpectedStatusCode:(BOOL)arg4 error:(id *)arg5;
 
 @end
 

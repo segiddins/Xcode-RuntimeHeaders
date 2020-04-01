@@ -18,7 +18,7 @@
 + (id)keyPathsForValuesAffectingEntityMappingNavigableChildren;
 @property(readonly) id <IDEDMModelObject> parentObject;
 @property(readonly) NSArray *structuralChildren;
-- (id)model;
+@property(readonly) id <IDEDMModelObject> model;
 @property(readonly) id <IDEDMSourceObject> sourceObject;
 @property(readonly) NSArray *sortedPropertyMappings;
 @property(readonly) NSImage *representativeIcon;

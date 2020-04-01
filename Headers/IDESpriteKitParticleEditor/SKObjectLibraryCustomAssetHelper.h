@@ -4,13 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Foundation/NSObject.h>
+#import <objc/NSObject.h>
 
-#import <IDESpriteKitParticleEditor/NSCoding-Protocol.h>
+#import <IDESpriteKitParticleEditor/NSSecureCoding-Protocol.h>
 
 @class NSImage, NSString;
 
-@interface SKObjectLibraryCustomAssetHelper : NSObject <NSCoding>
+@interface SKObjectLibraryCustomAssetHelper : NSObject <NSSecureCoding>
 {
     id _skObject;
     NSString *_title;
@@ -20,6 +20,7 @@
     NSString *_typeIdentifier;
 }
 
++ (BOOL)supportsSecureCoding;
 - (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

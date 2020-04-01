@@ -20,8 +20,10 @@
     DVTDeveloperAccount *_account;
     CDUnknownBlockType _completionBlock;
     NSWindow *_hostWindow;
+    long long _accountType;
 }
 
+@property(nonatomic) long long accountType; // @synthesize accountType=_accountType;
 @property(nonatomic) __weak NSWindow *hostWindow; // @synthesize hostWindow=_hostWindow;
 @property(copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 @property(retain, nonatomic) DVTDeveloperAccount *account; // @synthesize account=_account;
@@ -36,11 +38,12 @@
 - (void)cancel:(id)arg1;
 - (void)closeWithCode:(long long)arg1;
 - (void)addAccount:(id)arg1;
+- (void)_addAccountToManager:(id)arg1;
 - (void)ide_sheetDidEnd:(id)arg1 returnCode:(long long)arg2 contextInfo:(void *)arg3;
 - (void)completeAuthKitResponse;
 - (void)addAccountFromAuthKitResponse:(id)arg1;
 - (void)handleAuthKitResponse:(id)arg1 error:(id)arg2;
-- (void)beginSheetModalForWindow:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
+- (void)beginSheetForAccountType:(long long)arg1 modalForWindow:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (id)windowNibName;
 
 @end

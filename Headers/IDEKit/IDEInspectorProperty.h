@@ -8,18 +8,19 @@
 
 #import <IDEKit/DVTInvalidation-Protocol.h>
 #import <IDEKit/IDEInspectorValueElement-Protocol.h>
+#import <IDEKit/NSTextFieldDelegate-Protocol.h>
 
 @class DVTDelayedInvocation, DVTStackBacktrace, NSBundle, NSMutableArray, NSMutableOrderedSet, NSObject, NSString, NSView, NSXMLElement;
 @protocol IDEBindableDeclarativeInspectorController;
 
-@interface IDEInspectorProperty : NSViewController <IDEInspectorValueElement, DVTInvalidation>
+@interface IDEInspectorProperty : NSViewController <IDEInspectorValueElement, NSTextFieldDelegate, DVTInvalidation>
 {
     DVTDelayedInvocation *_refreshInvocation;
     NSObject<IDEBindableDeclarativeInspectorController> *_inspectorController;
     NSObject<IDEBindableDeclarativeInspectorController> *_unvailableInspectorController;
     NSXMLElement *_propertyDefinition;
     NSMutableArray *_tearDownTokens;
-    NSMutableArray *_pendingAccessabilityConfigurations;
+    NSMutableArray *_pendingAccessibilityConfigurations;
     NSMutableArray *_textFieldActionFilters;
     NSMutableOrderedSet *_pendingRefreshHandlers;
     BOOL _settingUp;
@@ -43,8 +44,9 @@
 - (id)findIndicatorContentViewForInspectedKeyPath:(id)arg1 withContext:(id)arg2;
 - (id)findIndicatorContentViewWithContext:(id)arg1;
 - (id)toolTipManager:(id)arg1 toolTipForView:(id)arg2 location:(struct CGPoint)arg3 tipSourceRect:(struct CGRect *)arg4 maximumWidth:(double *)arg5;
+- (id)control:(id)arg1 textView:(id)arg2 completions:(id)arg3 forPartialWordRange:(struct _NSRange)arg4 indexOfSelectedItem:(long long *)arg5;
 - (void)configureAccessibilityForUIElement:(id)arg1 forAttribute:(id)arg2 withAppendedString:(id)arg3;
-- (BOOL)shouldAppplyPendingAccessabilityConfigurations;
+- (BOOL)shouldApplyPendingAccessibilityConfigurations;
 - (id)propertyRelativeKeyPathForAttributeNamed:(id)arg1;
 - (BOOL)hasAttributeValueNamed:(id)arg1;
 - (SEL)selectorAttributeValueNamed:(id)arg1 defaultValue:(SEL)arg2;

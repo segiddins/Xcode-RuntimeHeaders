@@ -59,7 +59,11 @@
 - (void)_processTextureImageUploadInfo:(const struct Function *)arg1;
 - (id)uncompressedData;
 @property(readonly, nonatomic) NSData *palette;
+- (id)planeAtIndex:(unsigned long long)arg1;
+@property(readonly, nonatomic) unsigned long long planeCount;
 @property(readonly, nonatomic) NSData *data;
+@property(readonly, nonatomic) unsigned long long imageBytes;
+@property(readonly, nonatomic) unsigned long long rowBytes;
 @property(readonly, copy) NSString *description;
 - (id)_initWithProperties:(id)arg1;
 - (id)_initWithFunction:(const struct Function *)arg1 resolver:(CDUnknownBlockType)arg2;
@@ -69,6 +73,7 @@
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly) unsigned long long hash;
+@property(readonly, nonatomic) unsigned long long planeIndex;
 @property(readonly) Class superclass;
 
 @end

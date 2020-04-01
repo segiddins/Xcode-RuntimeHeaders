@@ -23,6 +23,7 @@
 @property(copy) NSString *message; // @synthesize message=_message;
 @property(copy) NSString *issueType; // @synthesize issueType=_issueType;
 - (void).cxx_destruct;
+@property(readonly, copy) NSString *stringSignature;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)documentLocationInLocalWorkspace:(id)arg1;

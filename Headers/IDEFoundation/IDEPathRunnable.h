@@ -19,8 +19,10 @@
 }
 
 + (id)keyPathsForValuesAffectingHasRunnablePath;
++ (id)automaticPlaceHolderForBuildable:(id)arg1 scheme:(id)arg2;
++ (id)_automaticPlaceHolderFilePath;
 + (id)askOnLaunchPlaceHolderForBuildable:(id)arg1 scheme:(id)arg2;
-+ (id)askOnLaunchPlaceHolderFilePath;
++ (id)_askOnLaunchPlaceHolderFilePath;
 @property(readonly, copy) DVTFilePath *filePath; // @synthesize filePath=_filePath;
 @property(retain) id <IDEBuildable> buildableProduct; // @synthesize buildableProduct=_buildableProduct;
 @property(retain) IDESchemeBuildableReference *buildableReference; // @synthesize buildableReference=_buildableReference;
@@ -28,6 +30,7 @@
 - (void)dvt_encodeRelationshipsWithXMLArchiver:(id)arg1 version:(id)arg2;
 - (void)dvt_encodeAttributesWithXMLArchiver:(id)arg1 version:(id)arg2;
 - (void)setFilePathFromUTF8String:(char *)arg1 fromXMLUnarchiver:(id)arg2;
+- (BOOL)isPlaceholder;
 - (int)runnableType;
 - (id)runnableUTIType:(id *)arg1;
 - (BOOL)hasRunnablePath;

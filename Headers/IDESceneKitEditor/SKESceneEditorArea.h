@@ -16,6 +16,8 @@
     DVTSplitView *_splitView;
     DVTReplacementView *_primaryReplacementView;
     DVTReplacementView *_secondaryReplacementView;
+    BOOL _initWithLoadedDocument;
+    NSArray *_stateTokenSelectedItems;
     SKESceneEditor *_sceneEditor;
     SKESceneSubEditor *_subEditor;
     DVTGradientImageButton *_showSecondaryEditorButton;
@@ -23,6 +25,7 @@
 }
 
 + (void)configureStateSavingObjectPersistenceByName:(id)arg1;
++ (BOOL)canProvideCurrentSelectedItems;
 - (void).cxx_destruct;
 - (void)commitStateToDictionary:(id)arg1;
 - (void)revertStateWithDictionary:(id)arg1;
@@ -37,7 +40,6 @@
 - (void)setSceneEditor:(id)arg1;
 - (void)toggleShowsSubEditor;
 - (void)setShowsSubEditor:(BOOL)arg1;
-- (void)setShowsSubEditor:(BOOL)arg1 isRestoringState:(BOOL)arg2;
 - (BOOL)showsSubEditor;
 - (void)refreshViewSwitchingControlsStates;
 - (void)userDidPressSecondaryEditorViewSwitchingControl:(id)arg1;
@@ -60,6 +62,9 @@
 - (BOOL)canBecomeMainViewController;
 - (void)viewDidInstall;
 - (void)loadView;
+- (void)didFinishLoading:(id)arg1;
+- (void)restoreSelectionWithItems:(id)arg1;
+- (void)didSetupEditor;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2 document:(id)arg3;
 
 // Remaining properties

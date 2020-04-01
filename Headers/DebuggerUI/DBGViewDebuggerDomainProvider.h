@@ -8,7 +8,7 @@
 
 #import <DebuggerUI/IDEKeyDrivenNavigableItemRepresentedObject-Protocol.h>
 
-@class DVTDocumentLocation, DVTFileDataType, DVTObservingToken, IDEFileReference, IDEWorkspace, NSArray, NSImage, NSMapTable, NSMutableArray, NSString;
+@class DVTDocumentLocation, DVTFileDataType, DVTObservingToken, DVTSymbol, IDEFileReference, IDEWorkspace, NSArray, NSImage, NSMapTable, NSMutableArray, NSNull, NSString, NSURL;
 
 @interface DBGViewDebuggerDomainProvider : IDENavigableItemDomainProvider <IDEKeyDrivenNavigableItemRepresentedObject>
 {
@@ -25,7 +25,7 @@
 + (void)initialize;
 @property __weak IDEWorkspace *workspace; // @synthesize workspace=_workspace;
 - (void).cxx_destruct;
-@property(readonly) NSString *navigableItem_name;
+@property(readonly, nonatomic) NSString *navigableItem_name;
 - (void)_handleViewDebuggingAdditionAdded:(id)arg1;
 - (void)_handleDebuggingAdditionsChanged:(id)arg1;
 - (void)_handleLaunchSessionsAdded:(id)arg1;
@@ -39,18 +39,27 @@
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) NSMutableArray *mutableViewDebuggers; // @dynamic mutableViewDebuggers;
-@property(readonly) NSString *navigableItem_accessibleImageDescription;
-@property(readonly) DVTDocumentLocation *navigableItem_contentDocumentLocation;
-@property(readonly) DVTFileDataType *navigableItem_documentType;
-@property(readonly) IDEFileReference *navigableItem_fileReference;
-@property(readonly) NSString *navigableItem_groupIdentifier;
-@property(readonly) NSImage *navigableItem_image;
-@property(readonly) BOOL navigableItem_isLeaf;
-@property(readonly) BOOL navigableItem_isMajorGroup;
-@property(readonly) BOOL navigableItem_missingReferencedContentIsImportant;
-@property(readonly) BOOL navigableItem_referencedContentExists;
-@property(readonly) NSString *navigableItem_subtitle;
-@property(readonly) NSString *navigableItem_toolTip;
+@property(readonly, nonatomic) NSString *navigableItem_accessibilityIdentifier;
+@property(readonly, nonatomic) NSString *navigableItem_accessibleImageDescription;
+@property(readonly, nonatomic) NSArray *navigableItem_additionalFilterMatchingText;
+@property(readonly, nonatomic) NSArray *navigableItem_childRepresentedObjects;
+@property(readonly, nonatomic) DVTDocumentLocation *navigableItem_contentDocumentLocation;
+@property(readonly, nonatomic) DVTFileDataType *navigableItem_documentType;
+@property(readonly, nonatomic) IDEFileReference *navigableItem_fileReference;
+@property(readonly, nonatomic) NSNull *navigableItem_filtered;
+@property(readonly, nonatomic) NSString *navigableItem_groupIdentifier;
+@property(readonly, nonatomic) NSImage *navigableItem_image;
+@property(readonly, nonatomic) BOOL navigableItem_isEnabled;
+@property(readonly, nonatomic) BOOL navigableItem_isLeaf;
+@property(readonly, nonatomic) BOOL navigableItem_isMajorGroup;
+@property(readonly, nonatomic) BOOL navigableItem_isVisible;
+@property(readonly, nonatomic) BOOL navigableItem_missingReferencedContentIsImportant;
+@property(readonly, nonatomic) id navigableItem_parentRepresentedObject;
+@property(readonly, nonatomic) BOOL navigableItem_referencedContentExists;
+@property(readonly, nonatomic) DVTSymbol *navigableItem_representedSymbol;
+@property(readonly, nonatomic) NSURL *navigableItem_representedURL;
+@property(readonly, nonatomic) NSString *navigableItem_subtitle;
+@property(readonly, nonatomic) NSString *navigableItem_toolTip;
 @property(readonly) Class superclass;
 @property(readonly) NSArray *viewDebuggers; // @dynamic viewDebuggers;
 

@@ -16,6 +16,8 @@
 - (void).cxx_destruct;
 - (id)description;
 - (id)allObjects;
+- (void)enumerateCStringsUsingBlock:(CDUnknownBlockType)arg1;
+- (const char *)cStringAtIndex:(unsigned long long)arg1;
 - (id)objectAtIndexedSubscript:(unsigned long long)arg1;
 - (id)objectAtIndex:(unsigned long long)arg1;
 - (unsigned long long)count;

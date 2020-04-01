@@ -20,6 +20,11 @@
     DVTObservingToken *_activeBuildOperationStateObserverToken;
     IDEBuildOperation *_activeBuildOperation;
     NSMutableSet *_pendingLogSections;
+    DVTObservingToken *_referencedBlueprintsObserverToken;
+    DVTObservingToken *_currentBuildOpObserverToken;
+    DVTObservingToken *_latestBuildLogObserverToken;
+    DVTObservingToken *_cleaningBuildFolderObserverToken;
+    DVTObservingToken *_workspaceFinishedLoadingObserverToken;
     IDELogStore *_logStore;
     DVTTimeSlicedMainThreadWorkQueue *_buildIssueChangesToPost;
 }
@@ -29,6 +34,7 @@
 + (id)_backgroundLoadingQueue;
 - (void).cxx_destruct;
 - (id)ideModelObjectTypeIdentifier;
+- (BOOL)shouldAutoExpandIssueInNavigator:(id)arg1;
 - (id)displayNameForIssueTypeIdentifier:(id)arg1;
 - (void)_buildLogDidUpdateItems:(id)arg1 blueprint:(id)arg2;
 - (void)_scanIssuesInLog:(id)arg1 forBlueprint:(id)arg2 intoArray:(id)arg3 usingSeenMessages:(id)arg4 withFileToIssuesMap:(id)arg5 fileToAuxFilesMap:(id)arg6;

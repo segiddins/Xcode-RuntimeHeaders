@@ -7,18 +7,21 @@
 #import <objc/NSObject.h>
 
 #import <MTLTools/DYGraphicsAPIInfo-Protocol.h>
-#import <MTLTools/NSCoding-Protocol.h>
 #import <MTLTools/NSCopying-Protocol.h>
+#import <MTLTools/NSSecureCoding-Protocol.h>
 
 @class NSArray, NSString;
 
-@interface DYMTLDeviceProfile : NSObject <DYGraphicsAPIInfo, NSCoding, NSCopying>
+@interface DYMTLDeviceProfile : NSObject <DYGraphicsAPIInfo, NSSecureCoding, NSCopying>
 {
     NSArray *_supportedFeatureSets;
+    NSArray *_supportedGPUFamilies;
     NSString *_name;
 }
 
++ (BOOL)supportsSecureCoding;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
+@property(readonly, nonatomic) NSArray *supportedGPUFamilies; // @synthesize supportedGPUFamilies=_supportedGPUFamilies;
 @property(readonly, nonatomic) NSArray *supportedFeatureSets; // @synthesize supportedFeatureSets=_supportedFeatureSets;
 - (void).cxx_destruct;
 @property(readonly, copy) NSString *description;

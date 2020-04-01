@@ -11,6 +11,7 @@
 @protocol IBICCatalogItemObserver <NSObject>
 
 @optional
+- (void)imageCatalogItemDidUpdateIssues:(IBICAbstractCatalogItem *)arg1;
 - (void)imageCatalogItemDiskContentsDidChange:(IBICAbstractCatalogItem *)arg1;
 - (void)imageCatalogItemDidChangeDisplayOrderedChildren:(IBICAbstractCatalogItem *)arg1;
 - (void)imageCatalogItemWillChangeDisplayOrderedChildren:(IBICAbstractCatalogItem *)arg1;

@@ -14,13 +14,13 @@
 {
     IDEEditorContext *_editorContext;
     DVTGradientImageButton *_indicatorView;
-    BOOL _showReadOnlyIndicator;
     DVTObservingToken *_documentStatusObserver;
     int _indicatorStatus;
+    BOOL _showReadOnlyIndicator;
 }
 
 + (void)initialize;
-@property BOOL showReadOnlyIndicator; // @synthesize showReadOnlyIndicator=_showReadOnlyIndicator;
+@property(nonatomic) BOOL showReadOnlyIndicator; // @synthesize showReadOnlyIndicator=_showReadOnlyIndicator;
 - (void).cxx_destruct;
 - (void)_updateReadOnlyIndicator;
 - (void)primitiveInvalidate;

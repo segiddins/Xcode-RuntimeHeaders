@@ -6,9 +6,22 @@
 
 #import <AppKit/NSForm.h>
 
-@interface NSForm (IBNSFormIntegration)
+#import <IDEInterfaceBuilderCocoaIntegration/IBDocumentArchiving-Protocol.h>
+
+@class NSString;
+
+@interface NSForm (IBNSFormIntegration) <IBDocumentArchiving>
+- (void)ibPopulateIssues:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
 - (struct CGSize)ibPreferredCellSize;
 - (void)setIbInspectedControlSize:(unsigned long long)arg1;
 - (Class)ibEditorClass;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @end
 

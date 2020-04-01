@@ -4,20 +4,33 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <XCSUI/XCSBotSupportingDocument.h>
+#import <IDEKit/IDEEditorDocument.h>
 
-@class XCSBot;
+#import <XCSUI/XCSUIDataSourceSnapshotsObserver-Protocol.h>
 
-@interface XCSBotEditorDocument : XCSBotSupportingDocument
+@class DVTObservingToken, NSError, XCSBot;
+
+@interface XCSBotEditorDocument : IDEEditorDocument <XCSUIDataSourceSnapshotsObserver>
 {
     XCSBot *_fetchedBot;
+    DVTObservingToken *_maintenanceTasksObserver;
+    NSError *_error;
 }
 
++ (id)keyPathsForValuesAffectingDisplayName;
++ (id)keyPathsForValuesAffectingBot;
++ (BOOL)shouldUnlockFileURLBeforeMakingChanges;
+@property(retain, nonatomic) XCSBot *fetchedBot; // @synthesize fetchedBot=_fetchedBot;
+@property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 - (void).cxx_destruct;
 - (id)displayName;
 - (id)botIntegration;
 - (id)bot;
-- (void)setFileURL:(id)arg1;
+- (void)editorDocumentWillClose;
+- (void)dataSource:(id)arg1 accountWasRemovedForService:(id)arg2;
+- (void)dataSource:(id)arg1 botSnapshotsChanged:(id)arg2 wasRemoved:(BOOL)arg3;
+- (BOOL)readFromURL:(id)arg1 ofType:(id)arg2 error:(id *)arg3;
+- (int)readOnlyStatus;
 
 @end
 

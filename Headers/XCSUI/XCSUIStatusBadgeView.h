@@ -10,7 +10,6 @@
 
 @interface XCSUIStatusBadgeView : NSView
 {
-    BOOL _setupDone;
     CAShapeLayer *_badgeCircleLayer;
     CATextLayer *_badgeCountTextLayer;
     CATextLayer *_secondaryBadgeCountTextLayer;
@@ -24,10 +23,8 @@
 @property(retain) XCSUIStatusBadge *badge; // @synthesize badge=_badge;
 - (void).cxx_destruct;
 - (BOOL)wantsUpdateLayer;
-- (void)runOpacityAnimation:(id)arg1;
 - (void)updateLayer;
-- (struct CGColor *)defaultBadgeCountTextColor;
-- (void)reset;
+- (id)defaultBadgeCountTextColor;
 - (void)viewDidChangeBackingProperties;
 - (void)reconfigureBadge;
 - (id)initWithFrame:(struct CGRect)arg1;

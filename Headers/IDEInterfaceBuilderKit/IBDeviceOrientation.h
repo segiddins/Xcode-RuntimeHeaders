@@ -13,19 +13,19 @@
 @interface IBDeviceOrientation : NSObject <NSCopying>
 {
     NSString *_identifier;
+    NSString *_archivingName;
     NSString *_displayName;
 }
 
++ (id)_orientationWithExtension:(id)arg1;
 + (id)orientationForIdentifier:(id)arg1;
-+ (id)_orientationsByIdentifiers;
 @property(readonly, copy, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
+@property(readonly, nonatomic) NSString *archivingName; // @synthesize archivingName=_archivingName;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
 - (id)nextOrientationForPreview;
-- (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)initWithExtension:(id)arg1;
-- (id)initWithIdentifier:(id)arg1 displayName:(id)arg2;
+- (id)initWithIdentifier:(id)arg1 archivingName:(id)arg2 displayName:(id)arg3;
 
 @end
 

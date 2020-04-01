@@ -22,13 +22,20 @@
     IDEInspectorKeyPath *_constantKeyPath;
     IBCancellationToken *_rolloverToken;
     IDEInspectorKeyPath *_itemKeyPath;
+    NSString *_lastRefreshedItemTitle;
+    BOOL _hideRevealInEditorButton;
     NSPopUpButton *_pullDown;
 }
 
+@property BOOL hideRevealInEditorButton; // @synthesize hideRevealInEditorButton=_hideRevealInEditorButton;
 @property(retain) NSPopUpButton *pullDown; // @synthesize pullDown=_pullDown;
 - (void).cxx_destruct;
+- (void)revealLocationInEditor:(id)arg1;
+- (id)itemsToSelect;
 - (void)propertyViewWillUninstallFromContentView;
 - (void)_didToggleMarginRelative:(id)arg1;
+- (void)updateConstantsIfNeededForConstraints:(id)arg1;
+- (void)_didChooseToReplaceInspectedItem:(id)arg1;
 - (void)_didToggleAutomaticallyLayoutBasedOnLanguageFromMenu:(id)arg1;
 - (void)_didSelectReverseItemsFromMenu:(id)arg1;
 - (void)_didSelectItemFromMenu:(id)arg1;
@@ -41,6 +48,11 @@
 - (void)menuNeedsUpdate:(id)arg1;
 - (void)_addActionsMenuItemGroupToMutableGroups:(id)arg1;
 - (void)_addOptionsMenuItemGroupToMutableGroups:(id)arg1;
+- (void)_addPossibleNeighborsMenuItemGroupToMutableGroups:(id)arg1;
+- (id)_sameContainingItemOrNilForConstraints:(id)arg1;
+- (BOOL)_isCandidateItem:(id)arg1 aParentOrContainerLikeSiblingForContainingItem:(id)arg2;
+- (id)_setOfItemsFromConstraints:(id)arg1;
+- (void)_enumerateCandidateConstraintSiblingsForItem:(id)arg1 layoutInfo:(id)arg2 withBlock:(CDUnknownBlockType)arg3;
 - (void)_addAttributeMenuItemGroupToMutableGroups:(id)arg1;
 - (long long)_marginRelativeAttributeState;
 - (void)_addHorizontalAttributeMenuItemsToMutableAttributesGroup:(id)arg1 selectedAttributes:(id)arg2 shouldShowMarginRelativeAttributes:(BOOL)arg3 shouldShowEdgeRelativeAttributes:(BOOL)arg4;

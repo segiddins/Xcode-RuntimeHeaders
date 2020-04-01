@@ -6,27 +6,12 @@
 
 #import <DVTKit/DVTOutlineView.h>
 
-#import <IDEModelEditor/DVTInvalidation-Protocol.h>
-
-@class DVTStackBacktrace, NSString;
-
-@interface IDEDMIndentationAdjustingOutlineView : DVTOutlineView <DVTInvalidation>
+@interface IDEDMIndentationAdjustingOutlineView : DVTOutlineView
 {
 }
 
-+ (void)initialize;
 - (struct CGRect)frameOfOutlineCellAtRow:(long long)arg1;
 - (struct CGRect)frameOfCellAtColumn:(long long)arg1 row:(long long)arg2;
-- (void)primitiveInvalidate;
-
-// Remaining properties
-@property(retain) DVTStackBacktrace *creationBacktrace;
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) DVTStackBacktrace *invalidationBacktrace;
-@property(readonly) Class superclass;
-@property(readonly, nonatomic, getter=isValid) BOOL valid;
 
 @end
 

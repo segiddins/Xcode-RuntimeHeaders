@@ -18,6 +18,7 @@
 @property(copy, nonatomic) NSArray *foundLocations; // @synthesize foundLocations=_foundLocations;
 - (void).cxx_destruct;
 - (void)drawFoundLocationsInRange:(struct _NSRange)arg1;
+- (void)setBackgroundColor:(id)arg1;
 
 @end
 

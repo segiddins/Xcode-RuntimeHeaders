@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <DVTKit/DVTToolbarViewController.h>
+#import <DVTUserInterfaceKit/DVTToolbarViewController.h>
 
 @class DVTObservingToken;
 
@@ -12,7 +12,7 @@
 {
     DVTObservingToken *_navigatorVisibilityObservationToken;
     DVTObservingToken *_debuggerVisibilityObservationToken;
-    DVTObservingToken *_utilitiesVisibilityObservationToken;
+    DVTObservingToken *_inspectorsVisibilityObservationToken;
 }
 
 - (void).cxx_destruct;

@@ -8,29 +8,26 @@
 #import <IDEFoundation/IDETestContainer-Protocol.h>
 #import <IDEFoundation/NSObject-Protocol.h>
 
-@class DVTDocumentLocation, IDEBuildOperation, IDEBuildParameters, IDEExecutionEnvironment, IDERunDestination, IDETest, IDETestRunSpecification, IDEWorkspace, NSSet, NSString, NSURL;
-@protocol IDEBuildable, IDEBuildableProduct, IDETestableProvider, IDETestingSpecifier;
+@class IDEBuildParameters, IDEScheme, IDETest, IDETestRunSpecification, IDEWorkspace, NSArray, NSSet, NSString, NSURL;
+@protocol IDEBuildable, IDEBuildableProduct, IDETestableProvider, _TtP13IDEFoundation19IDETestingSpecifier_;
 
 @protocol IDETestable <IDETestContainer, DVTInvalidation, NSObject>
-@property(readonly) BOOL isSearchingForTests;
-@property(readonly) BOOL isUITest;
-@property(readonly) NSSet *testFiles;
-@property(readonly) NSString *name;
-@property(readonly) id <IDETestableProvider> testableProvider;
-- (id <IDEBuildableProduct>)targetApplicationBuildableForWorkspace:(IDEWorkspace *)arg1;
-- (id <IDEBuildableProduct>)targetApplicationBuildableForWorkspace:(IDEWorkspace *)arg1 withBuildParameters:(IDEBuildParameters *)arg2;
 - (void)removeSubtest:(IDETest *)arg1;
 - (BOOL)canHaveSubtestsForTestWithIdentifier:(NSString *)arg1;
 - (IDETest *)supertestForTestWithIdentifier:(NSString *)arg1;
 - (NSString *)nameForTestWithIdentifier:(NSString *)arg1;
 - (NSSet *)testsInFile:(NSURL *)arg1;
-- (IDETest *)testForIdentifier:(NSString *)arg1 location:(DVTDocumentLocation *)arg2 createIfNeeded:(BOOL)arg3;
 - (IDETest *)testForIdentifier:(NSString *)arg1 createIfNeeded:(BOOL)arg2;
-- (IDETest *)testForIdentifier:(NSString *)arg1;
 - (id <IDEBuildable>)parentBuildableInWorkspace:(IDEWorkspace *)arg1;
-- (id <IDEBuildableProduct>)testHostBuildableInWorkspace:(IDEWorkspace *)arg1;
-- (id <IDEBuildable>)primaryBuildable;
+- (id <IDEBuildableProduct>)targetApplicationBuildableForWorkspace:(IDEWorkspace *)arg1 withBuildParameters:(IDEBuildParameters *)arg2;
+- (id <IDEBuildableProduct>)testHostBuildableInWorkspace:(IDEWorkspace *)arg1 buildParameters:(IDEBuildParameters *)arg2;
+@property(nonatomic, readonly) id <IDEBuildable> primaryBuildable;
+@property(nonatomic, readonly) BOOL isSearchingForTests;
 - (void)searchForTestsInWorkspace:(IDEWorkspace *)arg1;
-- (IDETestRunSpecification *)testRunSpecificationWithTestingSpecifier:(id <IDETestingSpecifier>)arg1 executionEnvironment:(IDEExecutionEnvironment *)arg2 buildOperation:(IDEBuildOperation *)arg3 withBuildParameters:(IDEBuildParameters *)arg4 runDestination:(IDERunDestination *)arg5 error:(id *)arg6;
+- (IDETestRunSpecification *)testRunSpecificationWithTestingSpecifier:(id <_TtP13IDEFoundation19IDETestingSpecifier_>)arg1 forScheme:(IDEScheme *)arg2 buildParameters:(IDEBuildParameters *)arg3 buildables:(NSArray *)arg4 error:(id *)arg5;
+@property(nonatomic, readonly) NSSet *supportedPlatformsForParallelization;
+@property(nonatomic, readonly) BOOL isUITest;
+@property(nonatomic, readonly) NSSet *testFiles;
+@property(nonatomic, readonly) id <IDETestableProvider> testableProvider;
 @end
 

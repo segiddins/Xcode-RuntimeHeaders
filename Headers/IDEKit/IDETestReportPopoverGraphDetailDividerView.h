@@ -18,7 +18,6 @@
 @property(retain, nonatomic) NSView *drawPointToView; // @synthesize drawPointToView=_drawPointToView;
 - (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
-- (void)fillWithColor:(id)arg1;
 
 @end
 

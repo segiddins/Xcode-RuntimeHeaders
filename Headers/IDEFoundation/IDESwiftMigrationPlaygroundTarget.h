@@ -16,13 +16,12 @@
 @property(readonly, copy) IDEPlayground *playground; // @synthesize playground=_playground;
 - (void).cxx_destruct;
 - (id)warningMessage;
-- (BOOL)canConvertToAlmostLatestSwift;
 - (BOOL)shouldMigrate;
 - (BOOL)canMigrate;
-- (BOOL)migratorHasBeenRun;
 - (id)blueprint;
 - (id)subTitle;
 - (id)title;
+- (id)description;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)initWithPlayground:(id)arg1;

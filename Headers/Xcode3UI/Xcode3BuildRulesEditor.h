@@ -9,14 +9,14 @@
 #import <Xcode3UI/IDECapsuleListViewDataSource-Protocol.h>
 #import <Xcode3UI/Xcode3SourceListItemEditor-Protocol.h>
 
-@class DVTBorderedView, DVTGradientImageButton, DVTPerformanceMetric, DVTSourceExpression, IDECapsuleListView, NSArray, NSButton, NSMutableArray, NSPredicate, NSSearchField, NSString, Xcode3ProjectEditor;
+@class DVTBorderedView, DVTGradientImageButton, DVTPerformanceMetric, DVTSearchField, DVTSourceExpression, IDECapsuleListView, NSArray, NSButton, NSMutableArray, NSPredicate, NSString, Xcode3ProjectEditor;
 @protocol IDEBlueprint;
 
 @interface Xcode3BuildRulesEditor : IDEViewController <Xcode3SourceListItemEditor, IDECapsuleListViewDataSource>
 {
     NSButton *_displayModeButton_Custom;
     NSButton *_displayModeButton_All;
-    NSSearchField *_searchField;
+    DVTSearchField *_searchField;
     IDECapsuleListView *_stackView;
     DVTBorderedView *_topBorderView;
     DVTGradientImageButton *_addBuildRuleButton;
@@ -37,10 +37,9 @@
 @property(retain, nonatomic) id <IDEBlueprint> inspectedBlueprint; // @synthesize inspectedBlueprint=_inspectedBlueprint;
 @property(retain) Xcode3ProjectEditor *projectEditor; // @synthesize projectEditor=_projectEditor;
 - (void).cxx_destruct;
-- (BOOL)capsuleListView:(id)arg1 shouldAllowDragOfRow:(long long)arg2;
-- (id)capsuleListView:(id)arg1 pastboardTypesForRowWithIndex:(unsigned long long)arg2;
+- (BOOL)capsuleListView:(id)arg1 allowDragOfRowAtIndex:(unsigned long long)arg2;
 - (unsigned long long)capsuleListView:(id)arg1 validateDrop:(id)arg2 proposedRow:(long long)arg3;
-- (BOOL)capsuleListView:(id)arg1 acceptDrop:(id)arg2 row:(long long)arg3;
+- (BOOL)capsuleListView:(id)arg1 acceptDrop:(id)arg2 draggedRow:(unsigned long long)arg3 destinationRow:(unsigned long long)arg4;
 - (id)capsuleListView:(id)arg1 viewControllerForRow:(long long)arg2;
 - (long long)numberOfObjectsInCapsuleListView:(id)arg1;
 - (BOOL)validateMenuItem:(id)arg1;

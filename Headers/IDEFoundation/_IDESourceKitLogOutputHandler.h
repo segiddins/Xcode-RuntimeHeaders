@@ -16,7 +16,9 @@
 }
 
 - (void).cxx_destruct;
-- (void)onToolchainCompilerCrashed;
+- (void)onIndexCompileWillStart:(id)arg1;
+- (void)onIndexCompileDidFinish:(id)arg1;
+- (void)onToolchainCompilerCrashed:(id)arg1;
 - (void)onLogOutput:(id)arg1;
 - (id)initWithLogOutputHandler:(CDUnknownBlockType)arg1;
 

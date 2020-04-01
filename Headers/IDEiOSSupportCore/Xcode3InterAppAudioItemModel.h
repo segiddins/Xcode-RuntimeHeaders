@@ -15,12 +15,15 @@
     id <IDEFlightChecking> _linkedFrameworksFlightCheck;
 }
 
++ (id)coalescableReadOnlyKeyPaths;
 - (void).cxx_destruct;
+- (id)coalescableWriteableKeyPathToDataSource;
 - (BOOL)isEnabledUsingEducatedGuess;
 - (id)flightChecks;
 - (id)linkedFrameworksFlightCheck;
 - (id)entitlementsFlightCheck;
 - (id)portalFlightCheck;
+- (id)initWithCapabilitiesContext:(id)arg1 item:(id)arg2;
 
 @end
 

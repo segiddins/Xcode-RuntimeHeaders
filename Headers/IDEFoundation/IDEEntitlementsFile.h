@@ -6,21 +6,26 @@
 
 #import <objc/NSObject.h>
 
-@class DVTFilePath;
+@class DVTFilePath, DVTLogAspect;
 
 @interface IDEEntitlementsFile : NSObject
 {
     DVTFilePath *_filePath;
     id _keyValuePairProxy;
+    DVTLogAspect *_logAspect;
 }
 
+@property(retain, nonatomic) DVTLogAspect *logAspect; // @synthesize logAspect=_logAspect;
 @property(readonly) DVTFilePath *filePath; // @synthesize filePath=_filePath;
 - (void).cxx_destruct;
-- (void)noteValuesDidChange;
+- (void)writeValues;
 - (void)removeAllSandboxValues;
 - (BOOL)hasSandboxValues;
 - (id)allKeys;
+- (id)plistRepresentation;
 - (id)keyValuePairProxy;
+- (void)readValues;
+- (void)dealloc;
 - (id)initWithFilePath:(id)arg1;
 
 @end

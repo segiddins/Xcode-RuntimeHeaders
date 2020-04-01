@@ -4,13 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
+#import <DVTKit/DVTLineRangeCharacterRangeConverter-Protocol.h>
 #import <DVTKit/NSObject-Protocol.h>
 
 @class DVTSourceCodeLanguage, DVTSourceModelItem, NSString;
 
-@protocol DVTSourceBufferProvider <NSObject>
+@protocol DVTSourceBufferProvider <NSObject, DVTLineRangeCharacterRangeConverter>
 - (unsigned long long)leadingWhitespacePositionsForLine:(unsigned long long)arg1;
-- (struct _NSRange)lineRangeForCharacterRange:(struct _NSRange)arg1;
 - (unsigned long long)length;
 - (NSString *)string;
 

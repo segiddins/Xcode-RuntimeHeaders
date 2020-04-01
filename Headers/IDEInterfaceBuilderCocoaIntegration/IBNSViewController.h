@@ -12,13 +12,12 @@
 
 @interface IBNSViewController : IBAbstractViewController <IBDocumentArchiving>
 {
-    IBNSViewController *_parentViewController;
-    NSView *_view;
-    NSString *_explicitStoryboardIdentifier;
-    NSArray *_storyboardSegueTemplates;
-    IBSimulatedMetricsContainer *_inheritedSimulatedMetrics;
-    NSDictionary *_storyboardSegueDestinationOptions;
+    BOOL _connectionsRequireClassSwapperForStoryboardCompilation;
     BOOL _encodeAsRuntimeInstance;
+    NSString *_explicitStoryboardIdentifier;
+    IBSimulatedMetricsContainer *_inheritedSimulatedMetrics;
+    NSArray *_storyboardSegueTemplates;
+    NSView *_view;
     NSString *_title;
     NSString *_nibName;
     NSString *_nibBundleIdentifier;
@@ -28,11 +27,13 @@
     NSArray *_childViewControllers;
 }
 
-+ (id)instantiateWithDocumentUnarchiver:(id)arg1;
++ (id)keyPathsForValuesAffectingIbInspectedEffectiveAppearance;
 + (struct CGRect)ibDefaultFrameForView;
 + (Class)ibViewClass;
++ (id)instantiateWithDocumentUnarchiver:(id)arg1;
 @property(copy) NSArray *childViewControllers; // @synthesize childViewControllers=_childViewControllers;
 @property(nonatomic) BOOL encodeAsRuntimeInstance; // @synthesize encodeAsRuntimeInstance=_encodeAsRuntimeInstance;
+@property(nonatomic) BOOL connectionsRequireClassSwapperForStoryboardCompilation; // @synthesize connectionsRequireClassSwapperForStoryboardCompilation=_connectionsRequireClassSwapperForStoryboardCompilation;
 @property(copy) NSString *uniqueIdentifierForStoryboardCompilation; // @synthesize uniqueIdentifierForStoryboardCompilation=_uniqueIdentifierForStoryboardCompilation;
 @property unsigned long long showSeguePresentationStyle; // @synthesize showSeguePresentationStyle=_showSeguePresentationStyle;
 @property(copy) NSDictionary *externalObjectsTableForViewLoading; // @synthesize externalObjectsTableForViewLoading=_externalObjectsTableForViewLoading;
@@ -41,13 +42,13 @@
 @property(copy) NSString *title; // @synthesize title=_title;
 - (void)setView:(id)arg1;
 - (id)view;
-- (void).cxx_destruct;
 - (void)setStoryboardSegueTemplates:(id)arg1;
 - (id)storyboardSegueTemplates;
-- (id)explicitStoryboardIdentifier;
-- (void)setExplicitStoryboardIdentifier:(id)arg1;
 - (void)setInheritedSimulatedMetrics:(id)arg1;
 - (id)inheritedSimulatedMetrics;
+- (void)setExplicitStoryboardIdentifier:(id)arg1;
+- (id)explicitStoryboardIdentifier;
+- (void).cxx_destruct;
 - (struct CGSize)effectiveSimulatedViewSize;
 - (BOOL)ibUsesStandardIdentifierPropertySlice;
 - (BOOL)ibCanSupportIdentifierProperty;
@@ -55,18 +56,19 @@
 - (void)archivePlaceholderTable:(id)arg1;
 - (void)ibPrepareTopLevelControllerForStoryboardCompilation;
 - (id)ibUniqueIdentifierForStoryboardCompilation;
+- (long long)ibFrameDecisionStrategyDuringFrameDecisionForChild:(id)arg1 hasCleanStatus:(BOOL)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (Class)classForDocumentArchiver:(id)arg1;
 - (Class)classForCoder;
 - (id)ibTopLevelWindowTemplateForLayoutEngine:(id)arg1;
 - (id)ibWindowWithCopiedViewHierarchySnapshotForLayoutEngine:(id)arg1 returningAddedRepresentedConstraintsForRepresentedViews:(id *)arg2;
-- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
-- (void)archiveWithDocumentArchiver:(id)arg1;
 - (void)ibDecodePlatformItems:(id)arg1;
 - (void)ibEncodePlatformItems:(id)arg1;
 - (void)ibUnArchivePlatformItems:(id)arg1;
 - (void)ibArchivePlatformItems:(id)arg1;
+- (BOOL)ibCanRemoveChildren:(id)arg1;
+- (int)ibStoryboardSeparationTypeForChild:(id)arg1 storyboardEquivalent:(id)arg2;
 - (BOOL)ibChildViewHasCustomLayoutButAllowsExplicitSizeConstraints:(id)arg1;
 - (BOOL)ibChildAutolayoutItem:(id)arg1 hasOwnedSizeLayoutInDocument:(id)arg2;
 - (void)ibPrepareCocoaDocumentForCompiling:(id)arg1 withContext:(id)arg2;
@@ -75,24 +77,35 @@
 - (BOOL)ibCanAcceptContentsOfPasteboard:(id)arg1 inDocument:(id)arg2 targetChildRelation:(id *)arg3;
 - (void)ibCaptureDownstreamStoryboardPlaceholderTable:(id)arg1;
 - (void)ibPopulateChildRelationOrder:(id)arg1;
+- (id)ibImageForOwnedScene;
 - (CDUnknownBlockType)ibWindow:(id *)arg1 forUpdatingConstraintsInDocument:(id)arg2;
 - (id)ibTopLevelViewForLayoutEngine:(id)arg1;
 - (BOOL)ibIsLegalArbitrationUnitRoot;
-- (void)ibWarnings:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
+- (BOOL)ibShouldUseClassSwapper;
+- (void)ibPropagatePropertiesToCompiledSceneObject:(id)arg1;
+- (id)ibInspectedEffectiveAppearance;
+- (BOOL)ibChildView:(id)arg1 shouldUseConstraintsInsteadOfAutoresizingWhenAddedToDocument:(id)arg2;
+- (BOOL)ibIsChildViewUserMovable:(id)arg1;
+- (void)ibPopulateIssues:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
 - (id)ibInheritableMetricsForDownstreamController:(id)arg1 viaSegue:(id)arg2;
 - (id)ibEditorViewWithSuggestedSize:(struct CGSize)arg1 forDocument:(id)arg2;
 - (id)ibDefaultViewForNewInstances;
 - (struct CGSize)effectiveSimulatedContentSize;
 - (id)ibEditorCanvasFrameControllerForDocument:(id)arg1;
-- (BOOL)ibChildEditsWithSingleClick:(id)arg1;
 - (BOOL)ibIsValidCocoaEmbedSegueDestination;
 - (BOOL)ibAllowsEditingTitle;
 - (BOOL)ibRequiresOutletToStoryboard;
 - (Class)ibEditorClass;
 - (id)ibPasteboardTypes;
-- (id)ibDocumentationPropertyInfosForKeyPath:(id)arg1;
+- (id)ibDocumentationSymbolInfosForKeyPath:(id)arg1;
 - (id)ibQualifyingInfoForDefaultLabel;
 - (id)ibRuntimeClassName;
+- (id)ibLocalLocalizableStringsAttributeKeyPaths;
+- (id)ibLocalAttributeKeyPaths;
+- (id)ibLocalChildToManyRelationshipsKeyPaths;
+- (id)ibLocalChildToOneRelationshipsKeyPaths;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -6,40 +6,40 @@
 
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBUIEditorView.h>
 
-@class IBUIViewController, IBUIViewControllerEditorPlaceholderView, NSView;
+@class DVTObservingToken, IBUIViewController, IBUIViewControllerEditorPlaceholderView, NSView;
 @protocol IBUIViewControllerEditorViewDelegate;
 
 @interface IBUIViewControllerEditorView : IBUIEditorView
 {
-    IBUIViewControllerEditorPlaceholderView *placeholderView;
     NSView *_emptyPlaceholderView;
-    id <IBUIViewControllerEditorViewDelegate> delegate;
+    DVTObservingToken *_editorMetricsObservingToken;
+    IBUIViewControllerEditorPlaceholderView *_placeholderView;
+    id <IBUIViewControllerEditorViewDelegate> _delegate;
     IBUIViewController *_editedViewController;
 }
 
 @property(retain, nonatomic) IBUIViewController *editedViewController; // @synthesize editedViewController=_editedViewController;
-@property(nonatomic) __weak id <IBUIViewControllerEditorViewDelegate> delegate; // @synthesize delegate;
+@property(nonatomic) __weak id <IBUIViewControllerEditorViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (id)editedDocumentObject;
 - (void)layoutBottomUp;
 - (void)layoutTopDown;
-- (unsigned long long)innerShadowEdgeMask;
-- (struct CGSize)sizeForContentView;
-- (id)extendedEdgeProvider;
+- (struct CGRect)ibEditorSceneRect;
+- (double)defaultScreenScaleForContentView:(id)arg1;
+- (struct CGSize)defaultContentSizeForContentView:(id)arg1;
+- (struct CGSize)_fallbackDocumentSceneSize;
 - (id)contentView;
 - (id)effectivePlaceholderView;
-- (id)bottomBarForSimulatedBarMetrics:(id)arg1;
-- (id)topBarForSimulatedBarMetrics:(id)arg1;
-- (void)customizeBottomBarView:(id)arg1 forSimulatedBarMetrics:(id)arg2;
-- (void)customizeTopBarView:(id)arg1 forSimulatedBarMetrics:(id)arg2;
-@property(readonly) IBUIViewControllerEditorPlaceholderView *placeholderView; // @synthesize placeholderView;
-- (id)itemsForSimulatedToolbar:(id)arg1;
-- (id)itemsForSimulatedTabBar:(id)arg1;
-- (id)itemsForSimulatedNavigationBar:(id)arg1;
+@property(readonly) IBUIViewControllerEditorPlaceholderView *placeholderView; // @synthesize placeholderView=_placeholderView;
+- (id)itemsForSimulatedToolbar;
+- (id)itemsForSimulatedNavigationBar;
+- (void)synchronizeNewMetricBars;
 - (void)editedViewControllerDidChangeInvalidatingProperty;
 - (void)synchronizePlaceholderView;
-- (void)synchronizeSimulatedMetricsContainer;
+- (void)synchronizeEditorMetrics;
 - (void)synchronizeEditorView;
 - (void)setBackgroundColor:(id)arg1;
+- (void)dealloc;
 
 @end
 

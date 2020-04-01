@@ -4,37 +4,31 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <DVTKit/DVTBorderedView.h>
+#import <DVTUserInterfaceKit/DVTBorderedView.h>
 
-@class NSArray, NSColor;
+@class NSArray, NSColor, NSMapTable;
 
 @interface IDEControlGroup : DVTBorderedView
 {
-    BOOL _drawsInnerBorders;
-    NSColor *_innerBorderColor;
+    unsigned long long _solidBorderSides;
+    NSMapTable *_controlViewToBorderSidesTable;
     NSColor *_innerInactiveBorderColor;
-    int _solidBorderSides;
 }
 
-@property int solidBorderSides; // @synthesize solidBorderSides=_solidBorderSides;
 @property(copy) NSColor *innerInactiveBorderColor; // @synthesize innerInactiveBorderColor=_innerInactiveBorderColor;
-@property(copy) NSColor *innerBorderColor; // @synthesize innerBorderColor=_innerBorderColor;
-@property(nonatomic) BOOL drawsInnerBorders; // @synthesize drawsInnerBorders=_drawsInnerBorders;
+@property unsigned long long solidBorderSides; // @synthesize solidBorderSides=_solidBorderSides;
 - (void).cxx_destruct;
-- (BOOL)isShowingShadow;
-- (void)setShadowSides:(int)arg1;
-- (void)setShadowColor:(id)arg1;
 - (void)setInactiveBackgroundGradient:(id)arg1;
 - (void)setInactiveBackgroundColor:(id)arg1;
 - (void)setBackgroundGradient:(id)arg1;
 - (void)setBackgroundColor:(id)arg1;
-- (void)setBorderSides:(int)arg1;
+- (void)setBorderSides:(unsigned long long)arg1;
 - (void)setAllInactiveBordersToColor:(id)arg1;
-- (void)setAllBordersToColor:(id)arg1;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)controlViewDidResize:(id)arg1;
 - (unsigned long long)numberOfControlViews;
 @property(readonly) NSArray *controlViews;
+- (void)removeAllControlViews;
 - (void)removeControlView:(id)arg1;
 - (void)addControlViewLast:(id)arg1;
 - (void)addControlViewFirst:(id)arg1;
@@ -43,7 +37,8 @@
 - (void)layoutBottomUp;
 - (void)layoutTopDown;
 - (void)_propagateDrawingPropertiesToSubview:(id)arg1;
-- (id)initWithFrame:(struct CGRect)arg1;
+- (void)setBorderSides:(unsigned long long)arg1 forControlView:(id)arg2;
+- (unsigned long long)borderSidesForControlView:(id)arg1;
 
 @end
 

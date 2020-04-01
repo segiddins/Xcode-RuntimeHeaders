@@ -19,9 +19,6 @@
 - (BOOL)getObjectValue:(out id *)arg1 forString:(id)arg2 errorDescription:(out id *)arg3;
 - (id)stringForObjectValue:(id)arg1;
 - (id)attributedStringForObjectValue:(id)arg1 withDefaultAttributes:(id)arg2;
-- (id)greenColor;
-- (id)yellowColor;
-- (id)redColor;
 
 @end
 

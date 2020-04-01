@@ -13,12 +13,12 @@
 
 @interface IDEBuilder : DVTOperation <IDEBuildTaskCallbacks>
 {
-    int _buildCommand;
+    long long _buildCommand;
     IDEBuildableSnapshot *_snapshot;
     NSArray *_exclusiveSourceFiles;
     NSArray *_warningsToEmit;
     NSString *_uniqueIdentifier;
-    int _result;
+    long long _result;
     IDEActivityLogSection *_activityLogSection;
     NSString *_localizedDescription;
     IDEBuildOperationQueueSet *_buildTaskQueueSet;
@@ -53,10 +53,10 @@
 @property(readonly) IDEBuildOperationQueueSet *buildTaskQueueSet; // @synthesize buildTaskQueueSet=_buildTaskQueueSet;
 @property(copy) NSString *localizedDescription; // @synthesize localizedDescription=_localizedDescription;
 @property(retain, nonatomic) IDEActivityLogSection *activityLogSection; // @synthesize activityLogSection=_activityLogSection;
-@property(nonatomic) int result; // @synthesize result=_result;
+@property(nonatomic) long long result; // @synthesize result=_result;
 @property(copy) NSArray *warningsToEmit; // @synthesize warningsToEmit=_warningsToEmit;
 @property(readonly) IDEBuildableSnapshot *snapshot; // @synthesize snapshot=_snapshot;
-@property(readonly) int buildCommand; // @synthesize buildCommand=_buildCommand;
+@property(readonly) long long buildCommand; // @synthesize buildCommand=_buildCommand;
 - (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (void)_logBuilderTimingDataIfNecessary;
@@ -71,7 +71,7 @@
 - (void)main;
 - (void)prepareForBuilding;
 - (id)init;
-- (id)initForBuildCommand:(int)arg1 withBuildableSnapshot:(id)arg2 buildTaskQueueSet:(id)arg3 buildOnlyTheseFiles:(id)arg4 restorePersistedBuildResults:(BOOL)arg5;
+- (id)initForBuildCommand:(long long)arg1 withBuildableSnapshot:(id)arg2 buildTaskQueueSet:(id)arg3 buildOnlyTheseFiles:(id)arg4 restorePersistedBuildResults:(BOOL)arg5;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <DVTKit/DVTViewController.h>
+#import <DVTViewControllerKit/DVTViewController.h>
 
 #import <Xcode3UI/DVTTableViewDelegate-Protocol.h>
 
@@ -29,7 +29,6 @@
 - (void)addSourceTreeDescriptor:(id)arg1;
 - (BOOL)tableView:(id)arg1 doCommandBySelector:(SEL)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forTableColumn:(id)arg3 row:(long long)arg4;
-- (void)_resizeTableView;
 - (void)viewWillUninstall;
 - (void)viewDidInstall;
 - (void)loadView;

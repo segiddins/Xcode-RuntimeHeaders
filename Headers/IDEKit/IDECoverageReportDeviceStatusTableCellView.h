@@ -15,7 +15,6 @@
 
 @property __weak NSProgressIndicator *progressBar; // @synthesize progressBar=_progressBar;
 - (void).cxx_destruct;
-- (void)drawRect:(struct CGRect)arg1;
 
 @end
 

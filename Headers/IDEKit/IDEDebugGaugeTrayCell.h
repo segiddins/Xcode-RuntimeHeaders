@@ -6,9 +6,12 @@
 
 #import <AppKit/NSTextFieldCell.h>
 
-@class NSByteCountFormatter, NSImage, NSMutableArray, NSNumberFormatter, NSString;
+#import <IDEKit/IDEDebugGaugeDataSource-Protocol.h>
 
-@interface IDEDebugGaugeTrayCell : NSTextFieldCell
+@class NSImage, NSMutableArray, NSString;
+@protocol IDEDataSourceReloadable;
+
+@interface IDEDebugGaugeTrayCell : NSTextFieldCell <IDEDebugGaugeDataSource>
 {
     double _maximumValue;
     NSMutableArray *_barValues;
@@ -18,65 +21,61 @@
     double _lastDoubleValue;
     double _lastSuddenIncreaseInValue;
     BOOL _haveRegisterdForHeartBeat;
-    unsigned long long _lastCountOfDisplayableBars;
-    NSNumberFormatter *_noFloatFormatter;
-    NSByteCountFormatter *_byteCountFormatter;
-    NSByteCountFormatter *_rateCountFormatter;
+    BOOL _disabled;
     BOOL _largerValueIsBetter;
     BOOL _suppressSuddenIncreases;
     int _valueButtonFormat;
+    id <IDEDataSourceReloadable> visualDelegate;
+    double realMaxValue;
+    NSString *_label;
+    NSString *_toolTip;
+    unsigned long long _specificValue;
+    unsigned long long _labelValue;
     double _barWidth;
+    double _maximumValueFromValues;
+    unsigned long long _lastCountOfDisplayableBars;
     double _failingPoint;
     double _warningPoint;
     NSImage *_icon;
-    NSString *_label;
 }
 
 + (void)_notifyCellsWantingHeartBeatNotification;
 + (void)_unregisterForHeartBeatNotifications:(id)arg1;
 + (void)_registerForHeartBeatNotifications:(id)arg1;
 + (id)_cellsWantingHeartBeatNotification;
-@property(copy) NSString *label; // @synthesize label=_label;
 @property(nonatomic) BOOL suppressSuddenIncreases; // @synthesize suppressSuddenIncreases=_suppressSuddenIncreases;
 @property(copy, nonatomic) NSImage *icon; // @synthesize icon=_icon;
 @property(nonatomic) double warningPoint; // @synthesize warningPoint=_warningPoint;
 @property(nonatomic) double failingPoint; // @synthesize failingPoint=_failingPoint;
 @property(nonatomic) BOOL largerValueIsBetter; // @synthesize largerValueIsBetter=_largerValueIsBetter;
+@property(nonatomic) unsigned long long lastCountOfDisplayableBars; // @synthesize lastCountOfDisplayableBars=_lastCountOfDisplayableBars;
+@property(nonatomic) double maximumValueFromValues; // @synthesize maximumValueFromValues=_maximumValueFromValues;
 @property(nonatomic) double maximumValue; // @synthesize maximumValue=_maximumValue;
 @property(nonatomic) double barWidth; // @synthesize barWidth=_barWidth;
 @property(nonatomic) int valueButtonFormat; // @synthesize valueButtonFormat=_valueButtonFormat;
+@property(nonatomic) unsigned long long labelValue; // @synthesize labelValue=_labelValue;
+@property(nonatomic) unsigned long long specificValue; // @synthesize specificValue=_specificValue;
+@property(copy) NSString *toolTip; // @synthesize toolTip=_toolTip;
+@property(copy) NSString *label; // @synthesize label=_label;
+@property(nonatomic) double realMaxValue; // @synthesize realMaxValue;
+@property(nonatomic) double maxValueFromValues; // @synthesize maxValueFromValues=_maxValueFromValues;
+@property __weak id <IDEDataSourceReloadable> visualDelegate; // @synthesize visualDelegate;
 - (void).cxx_destruct;
-- (BOOL)_needRedrawOnWindowChangedKeyState;
-- (void)drawInteriorWithFrame:(struct CGRect)arg1 inView:(id)arg2;
-- (struct CGRect)_gaugeIconRectForCellFrame:(struct CGRect)arg1;
-- (double)_drawValueLabelAlignedRightInRect:(struct CGRect)arg1 inView:(id)arg2;
-- (void)_drawTitleAlignedLeftInRect:(struct CGRect)arg1;
-- (id)iconTintColor;
-- (void)_drawIconInRect:(struct CGRect)arg1;
-- (id)_byteRateFormatter;
-- (id)_byteCountFormatter;
-- (id)_noFloatFormatter;
-- (id)_stringForLabelFromNumber:(id)arg1;
-- (void)_drawChartProgressValueWithFrame:(struct CGRect)arg1 inactive:(BOOL)arg2;
-- (void)_drawChartBarValuesWithFrame:(struct CGRect)arg1 inactive:(BOOL)arg2;
-- (id)_barColorFromValue:(double)arg1 inactive:(BOOL)arg2;
-- (BOOL)_isWarning:(double)arg1;
-- (BOOL)_isFailing:(double)arg1;
-- (id)_valueLabel;
-- (double)_leadingSpaceToAlign:(unsigned long long)arg1 toRightOfFrame:(struct CGRect)arg2;
-- (unsigned long long)_numberOfBarsThatFitFrame:(struct CGRect)arg1;
-- (struct CGRect)_barChartRectInFrame:(struct CGRect)arg1;
-- (struct CGRect)_valueRectInFrame:(struct CGRect)arg1;
-- (BOOL)_showsValueLabel;
-- (double)_realMaxValue;
+@property(getter=isDisabled) BOOL disabled; // @synthesize disabled=_disabled;
 - (void)_resetMaxValue;
 - (void)_setControlViewNeedsDisplayInChartArea;
+- (id)barValueAtIndex:(unsigned long long)arg1;
+- (unsigned long long)countOfBarValues;
 - (void)enqueueBarValue:(id)arg1;
 - (void)_recordBarValue:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 - (id)initWithLabel:(id)arg1;
-- (id)initTextCell:(id)arg1;
 - (void)_dvt_commonInit;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

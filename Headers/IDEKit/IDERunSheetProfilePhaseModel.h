@@ -14,7 +14,6 @@
 - (id)schemeCommandTitle;
 - (int)schemePhaseModelCommand;
 - (id)navigableItem_image;
-- (id)navigableItem_name;
 - (Class)detailViewControllerClass;
 - (id)runPhase;
 

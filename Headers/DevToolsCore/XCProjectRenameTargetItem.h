@@ -6,12 +6,14 @@
 
 #import <DevToolsCore/XCProjectRenameItem.h>
 
+@class NSArray;
+
 @interface XCProjectRenameTargetItem : XCProjectRenameItem
 {
 }
 
-- (id)prefixFiles;
-- (id)products;
+@property(readonly) NSArray *prefixFiles;
+@property(readonly) NSArray *products;
 - (void)rename;
 
 @end

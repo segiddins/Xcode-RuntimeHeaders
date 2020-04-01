@@ -28,6 +28,7 @@
 + (id)playbackServiceName;
 + (void)initialize;
 - (void).cxx_destruct;
+- (void)sendHeartbeatTime:(unsigned long long)arg1;
 - (void)sendFrameMessage:(id)arg1;
 - (void)handleBulkData:(const void *)arg1 size:(unsigned long long)arg2 destructor:(CDUnknownBlockType)arg3;
 - (void)fetchDataNow;

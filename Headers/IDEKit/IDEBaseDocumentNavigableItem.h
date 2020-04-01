@@ -16,7 +16,7 @@
 - (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (void)invalidateImage;
-- (void)_updateEditorDocument:(id)arg1;
+- (void)updateEditorDocument:(id)arg1;
 
 @end
 

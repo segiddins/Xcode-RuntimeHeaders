@@ -20,6 +20,7 @@
     DVTDelayedInvocation *_openTopLevelStoryboardableObjectsInvocation;
     DVTDelayedInvocation *_showingDockInFramesInvocation;
     IBStoryboardSceneCanvasFrame *_canvasFrameShowingDock;
+    BOOL _scrollDefaultObjectToVisible;
     NSObject<IBStoryboardEntryPointIndicator> *_draggedEntryPointIndicator;
     NSArray *_selectedEntryPointIndicators;
     IBStoryboardCanvasBackgroundOverlayView *_backgroundOverlayView;
@@ -37,7 +38,15 @@
 - (BOOL)frameController:(id)arg1 shouldDragFrameWithMouseDownInContentRect:(id)arg2 suggestedShouldDrag:(BOOL)arg3;
 - (void)canvasBackgroundOverlayView:(id)arg1 userDidBandSelectCanvasLinkPaths:(id)arg2;
 - (void)updateSelectionAfterClickingInitialViewControllerCanvasLink:(id)arg1;
+- (BOOL)canvasBackgroundOverlayView:(id)arg1 canvasLinkPathWasClicked:(id)arg2 withRightMouseUpEvent:(id)arg3;
+- (void)canvasBackgroundOverlayView:(id)arg1 canvasLinkPathWasClicked:(id)arg2 withMouseUpEvent:(id)arg3;
+- (BOOL)canvasBackgroundOverlayView:(id)arg1 canvasLinkPathWasClicked:(id)arg2 withRightMouseDragEvent:(id)arg3;
+- (void)canvasBackgroundOverlayView:(id)arg1 canvasLinkPathWasClicked:(id)arg2 withMouseDragEvent:(id)arg3;
+- (BOOL)beginDragForSegueConnection:(id)arg1 withEvent:(id)arg2;
+- (BOOL)supportsDragConnectionsFromCanvasLinks;
+- (BOOL)canvasBackgroundOverlayView:(id)arg1 canvasLinkPathWasClicked:(id)arg2 withRightMouseDownEvent:(id)arg3;
 - (void)canvasBackgroundOverlayView:(id)arg1 canvasLinkPathWasClicked:(id)arg2 withMouseDownEvent:(id)arg3;
+- (BOOL)handleMouseDownForCanvasLinkPath:(id)arg1 withEvent:(id)arg2;
 - (void)beginDraggingInitialSceneCanvasLink:(id)arg1 withEvent:(id)arg2 canvasLinkPath:(id)arg3;
 - (id)nearestSceneFrameControllerToPoint:(struct CGPoint)arg1;
 - (id)sceneFrameControllersFromBackToFront;
@@ -51,7 +60,6 @@
 - (void)canvasView:(id)arg1 userDidBandSelectCanvasFrames:(id)arg2 bandSelectionRect:(struct CGRect)arg3;
 - (void)canvasView:(id)arg1 userDidDoubleClickInEmptyArea:(id)arg2;
 - (void)canvasView:(id)arg1 userDidClickInEmptyArea:(id)arg2;
-- (BOOL)shouldUpstreamViewController:(id)arg1 supplyInheritedMetricsToViewController:(id)arg2 viaSegue:(id)arg3;
 - (void)animateSceneViewControllersToPositions:(id)arg1 fadingInControllers:(id)arg2 fadingInSegues:(id)arg3;
 - (unsigned long long)dragOperationForDragInfo:(id)arg1;
 - (long long)insertionIndexForDragInfo:(id)arg1;
@@ -97,9 +105,11 @@
 - (void)topLevelObjectsChanged;
 - (id)editedSceneViewControllers;
 - (id)document;
+- (void)setSelectedConnectionsFromSelectedMembers:(id)arg1;
 - (void)setSelectedConnections:(id)arg1;
 - (id)canvasView;
 - (void)zoomToFactor:(double)arg1 anchor:(struct CGPoint)arg2 animated:(BOOL)arg3;
+- (void)revertStateWithDictionary:(id)arg1;
 - (void)registerWithDocumentEditor;
 - (id)storyboardDocumentEditor;
 - (void)takeFocus;

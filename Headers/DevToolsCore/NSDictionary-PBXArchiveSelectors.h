@@ -7,6 +7,11 @@
 #import <Foundation/NSDictionary.h>
 
 @interface NSDictionary (PBXArchiveSelectors)
++ (id)plistWithDescriptionData:(id)arg1 error:(id *)arg2;
 - (SEL)selectorForArchiveMask:(int)arg1;
+- (id)plistDescriptionUTF8Data;
+- (void)_appendPListDescriptionToUTF8Data:(id)arg1 withIndentLevel:(unsigned long long)arg2;
+- (void)_appendPListDescriptionToUTF8Data:(id)arg1 withIndentLevel:(unsigned long long)arg2 invokePreKeyMethodForDictionary:(id)arg3;
+- (void)_sortToplevelKeysArrayForArchive:(id)arg1;
 @end
 

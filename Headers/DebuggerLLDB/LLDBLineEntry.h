@@ -10,11 +10,10 @@
 
 @class NSString;
 
-__attribute__((visibility("hidden")))
 @interface LLDBLineEntry : NSObject <DBGSBLineEntry>
 {
     struct SBLineEntry {
-        struct unique_ptr<lldb_private::LineEntry, std::__1::default_delete<lldb_private::LineEntry>> m_opaque_ap;
+        struct unique_ptr<lldb_private::LineEntry, std::__1::default_delete<lldb_private::LineEntry>> m_opaque_up;
     } _lineEntry;
 }
 
@@ -23,6 +22,7 @@ __attribute__((visibility("hidden")))
 - (unsigned int)GetLine;
 - (_Bool)IsValid;
 - (id)initWithSBLineEntry:(struct SBLineEntry *)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (id)GetStartAddress;
 - (id)GetFileSpec;
 - (id)initWithConnection:(id)arg1;

@@ -6,20 +6,22 @@
 
 #import <objc/NSObject.h>
 
-@protocol OS_dispatch_queue;
-
 @interface DTXRemoteInvocationReceipt : NSObject
 {
-    NSObject<OS_dispatch_queue> *_guard;
-    CDUnknownBlockType _completionHandler;
     id _returnValue;
-    unsigned int _returnType;
+    CDUnknownBlockType _completionHandler;
+    CDUnknownBlockType _waiterChain;
+    struct os_unfair_lock_s _guard;
+    unsigned int _valueState:2;
+    unsigned int _invoked:1;
+    unsigned int _reserved:29;
 }
 
+- (void).cxx_destruct;
+- (void)waitForFulfillment;
 - (void)invokeCompletionWithReturnValue:(id)arg1 error:(id)arg2;
 - (void)handleCompletion:(CDUnknownBlockType)arg1;
 - (void)_checkedAssign:(CDUnknownBlockType)arg1;
-- (void)dealloc;
 - (id)init;
 
 @end

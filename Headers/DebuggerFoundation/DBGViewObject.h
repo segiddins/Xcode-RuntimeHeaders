@@ -8,25 +8,30 @@
 
 #import <DebuggerFoundation/DVTInvalidation-Protocol.h>
 
-@class DBGViewChildMemberList, DVTStackBacktrace, NSArray, NSSet, NSString;
-@protocol DBGViewDescriber;
+@class DBGSnapshotNode, DBGSnapshotNodePropertyProxy, DBGViewChildMemberList, DVTStackBacktrace, NSArray, NSMutableArray, NSSet, NSString;
+@protocol DBGObjectInstanceInspectorProvider><DBGClassHierarchyInspectorProvider><DBGBacktraceInspectorProvider, DBGViewDescriber;
 
 @interface DBGViewObject : NSObject <DVTInvalidation>
 {
     DBGViewChildMemberList *_memberList;
     NSArray *_childViewObjects;
     BOOL _memberListFinished;
-    BOOL _shouldConsiderInteresting;
+    BOOL _usesDebugHierarchyInfrastructure;
     BOOL _hidden;
     id <DBGViewDescriber> _viewDescriber;
     NSString *_inferiorPointer;
     NSString *_displayName;
+    NSString *_primaryDisplayName;
+    NSString *_secondaryDisplayName;
     NSString *_representedObjectClassName;
     NSString *_representedObjectClassNameForDisplay;
     DBGViewObject *_parentViewObject;
     NSSet *_constraintAddressesAffectingViewObject;
     unsigned long long _numberOfIssues;
     unsigned long long _numberOfChildObjectsWithIssues;
+    DBGSnapshotNode *_snapshotNode;
+    NSMutableArray *_elidedParentNodes;
+    DBGSnapshotNodePropertyProxy *_snapshotNodePropertyProxy;
     struct CGRect _frame;
 }
 
@@ -35,36 +40,60 @@
 + (struct CGPoint)pointFromArray:(id)arg1;
 + (struct CGRect)rectFromArray:(id)arg1;
 + (void)initialize;
+@property(retain) DBGSnapshotNodePropertyProxy *snapshotNodePropertyProxy; // @synthesize snapshotNodePropertyProxy=_snapshotNodePropertyProxy;
+@property(retain) NSMutableArray *elidedParentNodes; // @synthesize elidedParentNodes=_elidedParentNodes;
+@property __weak DBGSnapshotNode *snapshotNode; // @synthesize snapshotNode=_snapshotNode;
 @property unsigned long long numberOfChildObjectsWithIssues; // @synthesize numberOfChildObjectsWithIssues=_numberOfChildObjectsWithIssues;
 @property unsigned long long numberOfIssues; // @synthesize numberOfIssues=_numberOfIssues;
-@property(readonly) NSSet *constraintAddressesAffectingViewObject; // @synthesize constraintAddressesAffectingViewObject=_constraintAddressesAffectingViewObject;
+@property(retain) NSSet *constraintAddressesAffectingViewObject; // @synthesize constraintAddressesAffectingViewObject=_constraintAddressesAffectingViewObject;
 @property BOOL hidden; // @synthesize hidden=_hidden;
 @property __weak DBGViewObject *parentViewObject; // @synthesize parentViewObject=_parentViewObject;
-@property(readonly) BOOL shouldConsiderInteresting; // @synthesize shouldConsiderInteresting=_shouldConsiderInteresting;
-@property(readonly) NSString *representedObjectClassNameForDisplay; // @synthesize representedObjectClassNameForDisplay=_representedObjectClassNameForDisplay;
+@property(retain) NSString *representedObjectClassNameForDisplay; // @synthesize representedObjectClassNameForDisplay=_representedObjectClassNameForDisplay;
 @property(retain) NSString *representedObjectClassName; // @synthesize representedObjectClassName=_representedObjectClassName;
-@property(readonly) NSString *displayName; // @synthesize displayName=_displayName;
+@property(retain) NSString *secondaryDisplayName; // @synthesize secondaryDisplayName=_secondaryDisplayName;
+@property(retain) NSString *primaryDisplayName; // @synthesize primaryDisplayName=_primaryDisplayName;
+@property(retain) NSString *displayName; // @synthesize displayName=_displayName;
 @property(retain) NSString *inferiorPointer; // @synthesize inferiorPointer=_inferiorPointer;
 @property struct CGRect frame; // @synthesize frame=_frame;
+@property BOOL usesDebugHierarchyInfrastructure; // @synthesize usesDebugHierarchyInfrastructure=_usesDebugHierarchyInfrastructure;
 @property(retain) id <DBGViewDescriber> viewDescriber; // @synthesize viewDescriber=_viewDescriber;
 - (void).cxx_destruct;
+- (id)castedPointerExpressionString;
+- (id)threadWithBacktrace;
+- (id)classHierarchyForDisplay;
+- (BOOL)shouldDisplayMallocZone;
+- (BOOL)shouldDisplayInstanceSize;
+- (BOOL)shouldDisplayKind;
+- (BOOL)shouldDisplayInferiorPointer;
 - (id)ideModelObjectTypeIdentifier;
+- (BOOL)supportsCALayerInspectorProperties;
 - (void)_willInflateChildMemberList:(id)arg1;
 - (void)_inflateObjectIfNecessary;
 - (BOOL)_isInflated;
 - (id)recursiveDescription;
 - (id)_collectSubViewDescriptions:(id)arg1 level:(long long)arg2;
 @property(readonly, copy) NSString *description;
+- (id)childWithIdentifier:(id)arg1;
 - (unsigned long long)recursivelyUpdateNumberOfChildObjectsWithIssues;
 - (BOOL)childObjectsHaveIssues;
 - (BOOL)hasIssues;
 @property(readonly) NSArray *classHierarchy;
-@property(retain, nonatomic) id object;
+@property(retain, nonatomic) id <DBGObjectInstanceInspectorProvider><DBGClassHierarchyInspectorProvider><DBGBacktraceInspectorProvider> object;
 - (id)fetchedMemberList;
 @property(retain) NSArray *childViewObjects;
 @property(readonly) NSString *identifier;
+@property(readonly) struct CGSize size;
 - (void)primitiveInvalidate;
+- (id)customDisplayNameForObjectWithClassName:(id)arg1;
+- (void)updateDisplayNameWithTypeName:(id)arg1 primaryName:(id)arg2 secondaryName:(id)arg3;
 - (id)initWithViewDescriber:(id)arg1 parent:(id)arg2 dictionary:(id)arg3;
+- (id)computedSecondaryDisplayName;
+- (id)computedPrimaryDisplayName;
+- (void)_updatePropertiesWithSnapshotNode:(id)arg1 forRequest:(id)arg2;
+- (void)updateChildrenWithSnapshotGroup:(id)arg1 forRequest:(id)arg2;
+- (void)recursivelyUpdateWithSnapshotNode:(id)arg1 forRequest:(id)arg2;
+- (id)initWithViewDescriber:(id)arg1 parent:(id)arg2 snapshotNode:(id)arg3;
+- (id)correspondingViewSurface;
 
 // Remaining properties
 @property(retain) DVTStackBacktrace *creationBacktrace;

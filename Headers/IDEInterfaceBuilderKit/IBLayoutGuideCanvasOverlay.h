@@ -6,12 +6,10 @@
 
 #import <IDEInterfaceBuilderKit/IBCanvasOverlay.h>
 
-#import <IDEInterfaceBuilderKit/CALayoutManager-Protocol.h>
-
-@class DVTDelayedInvocation, IBViewEditorCanvasFrameController, NSArray, NSMutableDictionary, NSObject, NSString;
+@class DVTDelayedInvocation, IBViewEditorCanvasFrameController, NSArray, NSMutableDictionary, NSObject;
 @protocol IBAutolayoutItem;
 
-@interface IBLayoutGuideCanvasOverlay : IBCanvasOverlay <CALayoutManager>
+@interface IBLayoutGuideCanvasOverlay : IBCanvasOverlay
 {
     NSMutableDictionary *_userGuideSublayers;
     NSMutableDictionary *_systemGuideSublayers;
@@ -34,6 +32,9 @@
 @property(readonly, nonatomic) __weak IBViewEditorCanvasFrameController *frameController; // @synthesize frameController=_frameController;
 - (void).cxx_destruct;
 - (void)updateLiveLayoutGuides;
+- (id)_liveLayoutGuidePatternColorVertical:(BOOL)arg1;
+- (id)liveLayoutGuideVerticalPatternColor;
+- (id)liveLayoutGuideHorizontalPatternColor;
 - (void)layoutLabelGroupLayer:(id)arg1 forGuideLayer:(struct CAShapeLayer *)arg2;
 - (void)layoutGuideLayer:(struct CAShapeLayer *)arg1 forGuide:(id)arg2;
 - (void)layoutSublayersOfLayer:(id)arg1;
@@ -43,12 +44,6 @@
 - (BOOL)isFlipped;
 - (void)dealloc;
 - (id)initWithFrameController:(id)arg1;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

@@ -6,7 +6,7 @@
 
 #import <AppKit/NSTableCellView.h>
 
-@class DVTCrashLogStackFrame, NSButton, NSImageView, NSTextField;
+@class DVTCrashLogStackFrame, DVTCrashLogViewController, NSButton, NSImageView, NSTextField;
 
 @interface DVTCrashLogBacktraceTableCellView : NSTableCellView
 {
@@ -17,8 +17,10 @@
     NSTextField *_frameField;
     NSButton *_jumpButton;
     DVTCrashLogStackFrame *_stackFrame;
+    DVTCrashLogViewController *_crashLogViewController;
 }
 
+@property(nonatomic) __weak DVTCrashLogViewController *crashLogViewController; // @synthesize crashLogViewController=_crashLogViewController;
 @property(retain) DVTCrashLogStackFrame *stackFrame; // @synthesize stackFrame=_stackFrame;
 @property BOOL showJumpButton; // @synthesize showJumpButton=_showJumpButton;
 @property(retain) NSButton *jumpButton; // @synthesize jumpButton=_jumpButton;
@@ -28,7 +30,7 @@
 @property(retain) NSImageView *frameIconImageView; // @synthesize frameIconImageView=_frameIconImageView;
 - (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
-- (void)showSymbolInDebugNavigator:(id)arg1;
+- (void)clickedJumpButton:(id)arg1;
 
 @end
 

@@ -10,24 +10,25 @@
 
 @interface IDEDistributionMethodEnterprise : IDEDistributionMethodExport
 {
+    DVTPlatform *_supportedPlatform;
 }
 
-- (id)summaryPaneNextButtonTitleOverride;
+@property(readonly) DVTPlatform *supportedPlatform; // @synthesize supportedPlatform=_supportedPlatform;
+- (void).cxx_destruct;
+- (id)distributionOptionIdentifiers;
 - (BOOL)supportsManifestDistribution;
-- (id)requiredTeamTypes;
-- (id)packagingStepIdentifier;
+- (id)packagingStepIdentifierForDestination:(long long)arg1;
 - (id)exportStepName;
-- (unsigned long long)provisioningProfilePurpose;
+- (id)provisioningProfilePurpose;
 - (id)provisioningProfilePlatform;
-- (BOOL)wantsProvisioningProfiles;
+- (long long)wantsProvisioningProfiles;
 - (id)installerCertificateKind;
 - (id)certificateKind;
-- (id)orderedDistributionStepClassNames;
+- (id)orderedDistributionStepClassNamesForDestination:(long long)arg1;
 - (id)subtitle;
 - (id)shortTitle;
 - (id)title;
 - (id)commandLineName;
-@property(readonly) DVTPlatform *supportedPlatform;
 - (id)appStoreName;
 - (_Bool)supportsDistributionOfArchive:(id)arg1;
 - (double)sortOrder;

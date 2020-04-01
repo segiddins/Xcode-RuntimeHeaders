@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Foundation/NSObject.h>
+#import <objc/NSObject.h>
 
 @class NSMutableDictionary, TSSimpleXMLWriter;
 
@@ -15,6 +15,7 @@
     id _delegate;
 }
 
+- (void).cxx_destruct;
 - (void)finishEncoding;
 - (void)encodeIntAttribute:(id)arg1 withValue:(long long)arg2;
 - (void)encodeBoolAttribute:(id)arg1 withValue:(BOOL)arg2;
@@ -25,7 +26,6 @@
 - (void)setEntityName:(id)arg1 forClass:(Class)arg2;
 - (id)delegate;
 - (void)setDelegate:(id)arg1;
-- (void)dealloc;
 - (id)init;
 - (id)initForWritingWithMutableData:(id)arg1;
 

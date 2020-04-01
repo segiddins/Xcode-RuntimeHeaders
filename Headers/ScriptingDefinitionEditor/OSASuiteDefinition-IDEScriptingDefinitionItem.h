@@ -9,5 +9,7 @@
 @interface OSASuiteDefinition (IDEScriptingDefinitionItem)
 - (id)scriptingDefinition_childDefinitions;
 - (id)ideModelObjectTypeIdentifier;
+- (id)documentLocation_suiteCode;
+- (id)documentLocation_code;
 @end
 

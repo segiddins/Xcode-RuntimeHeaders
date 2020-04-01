@@ -6,14 +6,14 @@
 
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBUIFontedObject-Protocol.h>
 
-@class IBDocumentArchiver, IBDocumentUnarchiver, IBUIFontDescription, NSAttributedString, NSCoder, NSColor, NSString;
+@class IBDocumentArchiver, IBDocumentUnarchiver, IBUIColor, IBUIFontDescription, NSAttributedString, NSCoder, NSString;
 
 @protocol IBUIAttributedTextContainer <IBUIFontedObject>
 @property(readonly) IBUIFontDescription *defaultFontDescription;
 @property(nonatomic) BOOL usesAttributedText;
-@property(nonatomic) int textAlignment;
+@property(nonatomic) long long textAlignment;
 @property(copy, nonatomic) IBUIFontDescription *fontDescription;
-@property(copy, nonatomic) NSColor *textColor;
+@property(copy, nonatomic) IBUIColor *textColor;
 @property(copy, nonatomic) NSAttributedString *attributedText;
 @property(copy, nonatomic) NSString *text;
 - (void)unarchiveAttributedText:(IBDocumentUnarchiver *)arg1;

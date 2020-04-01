@@ -4,13 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Foundation/NSObject.h>
+#import <objc/NSObject.h>
 
-@class NSString;
+@class NSMutableData, NSString;
 
 @interface XCByteSequenceMatchPattern : NSObject
 {
     unsigned long long _numLiterals;
+    NSMutableData *_bytesStore;
     char *_bytes;
     struct {
         char *bytePtr;
@@ -25,6 +26,7 @@
 + (id)patternFromUTF8String:(const char *)arg1;
 + (id)patternFromUTF8String:(const char *)arg1 referenceNumber:(unsigned long long)arg2 actionCode:(unsigned int)arg3;
 + (id)patternFromBytes:(const char *)arg1 length:(unsigned long long)arg2 referenceNumber:(unsigned long long)arg3 actionCode:(unsigned int)arg4;
+- (void).cxx_destruct;
 - (id)description;
 - (id)patternString;
 - (BOOL)matchesBytes:(const char *)arg1 length:(unsigned long long)arg2 wildcardRanges:(struct _NSRange *)arg3;
@@ -33,7 +35,6 @@
 - (unsigned long long)referenceNumber;
 - (BOOL)lastCharacterIfLiteral;
 - (BOOL)firstCharacterIfLiteral;
-- (void)dealloc;
 - (id)initWithBytes:(const char *)arg1 length:(unsigned long long)arg2 referenceNumber:(unsigned long long)arg3 actionCode:(unsigned int)arg4;
 
 @end

@@ -13,7 +13,7 @@
 #import <IDEModelEditor/NSKeyedUnarchiverDelegate-Protocol.h>
 #import <IDEModelEditor/XDPMModelDelegate-Protocol.h>
 
-@class CDMModel, DVTNotificationToken, DVTToolsVersion, DVTVersion, NSArray, NSString, NSURL, XDDiagramStorage;
+@class CDMModel, DVTNotificationToken, DVTToolsVersion, DVTVersion, NSArray, NSString, NSURL, NSUndoManager, XDDiagramStorage;
 
 @interface IDEDataModelDocument : IDEEditorDocument <CDMModelOwner, NSKeyedUnarchiverDelegate, IDEDocumentStructureProviding, XDPMModelDelegate, DVTTextFindable, DVTTextReplacable>
 {
@@ -26,7 +26,7 @@
 + (id)keyPathsForValuesAffectingValueForKey:(id)arg1;
 + (id)wrapperByCopyingContentsAtPath:(id)arg1 error:(id *)arg2;
 + (BOOL)writeModel:(id)arg1 inDocument:(id)arg2 atPath:(id)arg3 error:(id *)arg4;
-+ (BOOL)_shouldShowUtilititesAreaAtLoadForSimpleFilesFocusedWorkspace;
++ (BOOL)shouldShowInspectorAreaAtLoadForSimpleFilesFocusedWorkspace;
 + (BOOL)isNativeType:(id)arg1;
 + (id)writableTypes;
 + (id)readableTypes;
@@ -38,9 +38,9 @@
 - (void)updateChangeCount:(unsigned long long)arg1;
 @property(readonly) NSArray *ideTopLevelStructureObjects;
 - (BOOL)writeToURL:(id)arg1 ofType:(id)arg2 forSaveOperation:(unsigned long long)arg3 originalContentsURL:(id)arg4 error:(id *)arg5;
+- (BOOL)documentSupportsInconsistentState;
 - (BOOL)writeToURL:(id)arg1 ofType:(id)arg2 error:(id *)arg3;
 - (BOOL)writeModel:(id)arg1 atPath:(id)arg2 error:(id *)arg3;
-- (BOOL)updateAutomaticCodeGenerationForModel:(id)arg1 atPath:(id)arg2 error:(id *)arg3;
 - (BOOL)writeLegacyModel:(id)arg1 atPath:(id)arg2 error:(id *)arg3;
 - (BOOL)writeElementsOfModel:(id)arg1 diagramStorage:(id)arg2 mappings:(id)arg3 atPath:(id)arg4 error:(id *)arg5;
 - (BOOL)writeLayoutOfModelDiagramStorage:(id)arg1 mappings:(id)arg2 atPath:(id)arg3 error:(id *)arg4;
@@ -66,6 +66,7 @@
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 @property unsigned long long supportedMatchingOptions;
+@property(readonly) NSUndoManager *undoManager;
 
 @end
 

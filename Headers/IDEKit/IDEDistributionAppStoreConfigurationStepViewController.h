@@ -16,6 +16,7 @@
 - (id)title;
 - (id)providedOutputContextPropertyNames;
 - (id)requiredInputContextPropertyNames;
+- (BOOL)shouldUseDefaultConfiguration;
 - (void)viewDidLoad;
 
 @end

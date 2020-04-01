@@ -6,6 +6,54 @@
 
 #import <SpriteKit/SKTileSet.h>
 
-@interface SKTileSet (InspectorAdditions)
+#import <IDESpriteKitParticleEditor/IDEKeyDrivenNavigableItemRepresentedObject-Protocol.h>
+#import <IDESpriteKitParticleEditor/SKDocumentMember-Protocol.h>
+
+@class DVTDocumentLocation, DVTFileDataType, IDEFileReference, NSArray, NSImage, NSNull, NSString, NSURL, SKEditorDocument, _TtC13DVTFoundation9DVTSymbol;
+
+@interface SKTileSet (InspectorAdditions) <SKDocumentMember, IDEKeyDrivenNavigableItemRepresentedObject>
++ (id)keyPathsForValuesAffectingNavigableItem_isLeaf;
++ (id)keyPathsForValuesAffectingNavigableItem_contentDocumentLocation;
++ (id)keyPathsForValuesAffectingNavigableItem_documentType;
++ (id)keyPathsForValuesAffectingNavigableItem_name;
++ (id)keyPathsForValuesAffectingdefaultTileSize_commit;
++ (id)keyPathsForValuesAffectingtype_commit;
++ (id)keyPathsForValuesAffectingname_commit;
+@property(nonatomic) __weak SKEditorDocument *document;
+@property(readonly, nonatomic) BOOL navigableItem_isLeaf;
+@property(readonly) DVTDocumentLocation *navigableItem_contentDocumentLocation;
+@property(readonly) DVTFileDataType *navigableItem_documentType;
+@property(readonly) NSString *navigableItem_name;
+- (id)ideModelObjectTypeIdentifier;
+- (void)setdefaultTileSize_commit:(struct CGSize)arg1;
+- (struct CGSize)defaultTileSize_commit;
+- (void)settype_commit:(unsigned long long)arg1;
+- (unsigned long long)type_commit;
+- (void)setname_commit:(id)arg1;
+- (id)name_commit;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly, nonatomic) NSString *navigableItem_accessibilityIdentifier;
+@property(readonly, nonatomic) NSString *navigableItem_accessibleImageDescription;
+@property(readonly, nonatomic) NSArray *navigableItem_additionalFilterMatchingText;
+@property(readonly, nonatomic) NSArray *navigableItem_childRepresentedObjects;
+@property(readonly, nonatomic) IDEFileReference *navigableItem_fileReference;
+@property(readonly, nonatomic) NSNull *navigableItem_filtered;
+@property(readonly, nonatomic) NSString *navigableItem_groupIdentifier;
+@property(readonly, nonatomic) NSImage *navigableItem_image;
+@property(readonly, nonatomic) BOOL navigableItem_isEnabled;
+@property(readonly, nonatomic) BOOL navigableItem_isMajorGroup;
+@property(readonly, nonatomic) BOOL navigableItem_isVisible;
+@property(readonly, nonatomic) BOOL navigableItem_missingReferencedContentIsImportant;
+@property(readonly, nonatomic) id navigableItem_parentRepresentedObject;
+@property(readonly, nonatomic) BOOL navigableItem_referencedContentExists;
+@property(readonly, nonatomic) _TtC13DVTFoundation9DVTSymbol *navigableItem_representedSymbol;
+@property(readonly, nonatomic) NSURL *navigableItem_representedURL;
+@property(readonly, nonatomic) NSString *navigableItem_subtitle;
+@property(readonly, nonatomic) NSString *navigableItem_toolTip;
+@property(readonly) Class superclass;
 @end
 

@@ -7,7 +7,16 @@
 #import <SceneKit/SCNConstraint.h>
 
 @interface SCNConstraint (SceneKit_SKEAdditions)
++ (id)keyPathsForValuesAffectinginfluenceFactor_edit;
+@property(readonly) BOOL ske_isAvoidOccluder;
+@property(readonly) BOOL ske_isSlider;
+@property(readonly) BOOL ske_isAcceleration;
+@property(readonly) BOOL ske_isReplicator;
+@property(readonly) BOOL ske_isDistance;
+@property(readonly) BOOL ske_isTransform;
 @property(readonly) BOOL ske_isBillBoard;
 @property(readonly) BOOL ske_isLookAt;
+- (void)setinfluenceFactor_edit:(double)arg1;
+- (double)influenceFactor_edit;
 @end
 

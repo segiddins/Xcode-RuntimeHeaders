@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <DVTKit/DVTLayoutView_ML.h>
+#import <DVTStructuredLayoutKit/DVTLayoutView_ML.h>
 
 #import <IDEInterfaceBuilderKit/DVTInvalidation-Protocol.h>
 #import <IDEInterfaceBuilderKit/IBSelectionOwnerDelegate-Protocol.h>
@@ -24,20 +24,25 @@
     IBSelectionOwner *_canvasFrameSelectionOwner;
     IBCanvasBandSelectionView *_bandSelectionView;
     NSValue *_centerToPoint;
-    BOOL _autoscrollEnabled;
     struct CGRect _trackedEventCanvasBounds;
     struct CGSize _lastClipViewBoundsSize;
     double _nextMagnification;
+    BOOL _inLiveMagnify;
+    struct CGPoint _liveMagnifyAnchorPoint;
+    double _lastMagnificationForHapticFeedback;
+    BOOL _autoscrollEnabled;
     BOOL _drawsWithActiveLook;
     BOOL _shrinksToFitFrames;
     IBCanvasBackgroundView *_backgroundView;
     IBCanvasScrollView *_scrollView;
     id <IBCanvasViewDelegate> _delegate;
     IBCanvasFrame *_keyCanvasFrame;
+    NSValue *_contextMenuFocusLocation;
     struct CGSize _layoutPositioningScale;
 }
 
 + (void)initialize;
+@property(retain, nonatomic) NSValue *contextMenuFocusLocation; // @synthesize contextMenuFocusLocation=_contextMenuFocusLocation;
 @property(nonatomic) struct CGSize layoutPositioningScale; // @synthesize layoutPositioningScale=_layoutPositioningScale;
 @property(nonatomic) BOOL shrinksToFitFrames; // @synthesize shrinksToFitFrames=_shrinksToFitFrames;
 @property(nonatomic) BOOL drawsWithActiveLook; // @synthesize drawsWithActiveLook=_drawsWithActiveLook;
@@ -49,7 +54,6 @@
 - (void).cxx_destruct;
 - (long long)accessibilityVerticalUnits;
 - (long long)accessibilityHorizontalUnits;
-@property(readonly) id accessibilityFocusedUIElement;
 - (id)accessibilitySelectedChildren;
 - (id)accessibilityChildren;
 - (id)accessibilityLabel;
@@ -58,6 +62,7 @@
 - (void)canvasZoomTest:(id)arg1;
 - (void)keyDown:(id)arg1;
 - (void)mouseDown:(id)arg1;
+- (void)willOpenMenu:(id)arg1 withEvent:(id)arg2;
 - (void)trackBandSelection:(id)arg1;
 - (BOOL)canvasFrame:(id)arg1 intersectsBandRect:(struct CGRect)arg2;
 - (id)trackMouse:(id)arg1 toMoveClickedFrame:(id)arg2 layoutManager:(id)arg3;
@@ -71,9 +76,8 @@
 - (unsigned long long)draggingUpdated:(id)arg1;
 - (unsigned long long)draggingEntered:(id)arg1;
 - (id)draggedImageState:(id)arg1;
-- (id)expandOnEdge:(unsigned long long)arg1 amount:(double)arg2 animatingSynchronously:(BOOL)arg3;
+- (id)expandOnEdge:(unsigned long long)arg1 amount:(double)arg2;
 - (id)addExpansionRect:(struct CGRect)arg1;
-- (BOOL)dvt_autoscrollWithExternalDragEvent:(id)arg1 animate:(BOOL)arg2;
 - (void)selectionOwner:(id)arg1 didSelect:(id)arg2 andDeselect:(id)arg3;
 - (struct CGRect)adjustScroll:(struct CGRect)arg1;
 - (void)adjustScrollersForCanvasContentSizingAndMovingWhileInvoking:(CDUnknownBlockType)arg1;
@@ -81,6 +85,7 @@
 - (void)setMagnification:(double)arg1 centeredAtPoint:(struct CGPoint)arg2 animated:(BOOL)arg3;
 - (struct CGPoint)convertFrameSpacePointToAnchorSpacePoint:(struct CGPoint)arg1;
 - (struct CGPoint)convertAnchorSpacePointToFrameSpacePoint:(struct CGPoint)arg1;
+- (void)_updateTrackingAreasWithInvalidCursorRects:(BOOL)arg1;
 - (void)_updateTrackingAreas;
 - (void)_invalidateCursorRects;
 - (BOOL)isUpdateTrackingAreasEnabled;
@@ -88,10 +93,9 @@
 - (void)suppressTrackingAreaUpdates;
 - (void)resetCursorRects;
 - (id)hitTest:(struct CGPoint)arg1;
-- (void)scrollCanvasFrameToVisible:(id)arg1 keepingRectVisible:(struct CGRect)arg2 zoomingToFactor:(double)arg3 shouldCenter:(BOOL)arg4 animate:(BOOL)arg5;
-- (BOOL)zoomRectToVisible:(struct CGRect)arg1 maxMagnification:(double)arg2;
+- (void)scrollCanvasFrameToVisible:(id)arg1 ensuringRectVisible:(struct CGRect)arg2 shouldCenter:(BOOL)arg3 animate:(BOOL)arg4;
+- (BOOL)zoomRectToVisible:(struct CGRect)arg1 maxMagnification:(double)arg2 shouldCenter:(BOOL)arg3 animate:(BOOL)arg4;
 - (void)smartMagnifyWithEvent:(id)arg1;
-- (struct CGRect)rectToScrollCanvasFrameToVisible:(id)arg1 keepingRectVisible:(struct CGRect)arg2;
 - (void)canvasFrame:(id)arg1 didChangeFrame:(struct CGRect)arg2;
 - (void)canvasFrame:(id)arg1 anchorDidChange:(struct CGPoint)arg2;
 - (void)didCompleteLayout;
@@ -106,8 +110,10 @@
 - (struct CGRect)rectForUserPositionedCanvasFramesInView:(id)arg1;
 - (struct CGRect)layoutRectForNonAutoPositionedFrame:(id)arg1;
 - (void)positionChildFrames;
-- (id)subviewsOrderedForLayout;
+- (id)dvt_subviewsOrderedForLayout;
 - (void)scrollViewDidEndLiveMagnify:(id)arg1;
+- (void)scrollViewDidMagnifyWithEvent:(id)arg1 fromMagnification:(double)arg2 toMagnification:(double)arg3;
+- (void)scrollViewWillStartLiveMagnify:(id)arg1;
 - (void)clipViewBoundsDidChange:(id)arg1;
 - (id)framesForViews:(id)arg1 inView:(id)arg2;
 - (struct CGRect)currentInteractableViewPort;
@@ -133,6 +139,7 @@
 - (void)insertDebugTreeWithColor:(id)arg1 point:(struct CGPoint *)arg2 parent:(id)arg3 branchFactor:(long long)arg4 depth:(long long)arg5 totalDepth:(long long)arg6;
 
 // Remaining properties
+@property(readonly) id accessibilityFocusedUIElement; // @dynamic accessibilityFocusedUIElement;
 @property(retain) DVTStackBacktrace *creationBacktrace;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;

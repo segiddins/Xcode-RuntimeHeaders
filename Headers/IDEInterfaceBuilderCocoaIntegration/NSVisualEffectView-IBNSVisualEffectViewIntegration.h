@@ -6,12 +6,36 @@
 
 #import <AppKit/NSVisualEffectView.h>
 
-@interface NSVisualEffectView (IBNSVisualEffectViewIntegration)
-- (void)ibWarnings:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
+#import <IDEInterfaceBuilderCocoaIntegration/IBDocumentArchiving-Protocol.h>
+
+@class NSString;
+
+@interface NSVisualEffectView (IBNSVisualEffectViewIntegration) <IBDocumentArchiving>
++ (id)ibInstantiateForRole:(long long)arg1 withTargetRuntime:(id)arg2 documentClass:(Class)arg3 assetIdentifier:(id)arg4;
+- (void)ibPopulateIssues:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
+- (id)ibEffectiveMaterialWhenDeployingPriorTo10_14;
+- (id)ibEffectiveAppearanceWhenDeployingPriorTo10_14;
+- (void)ibPrepareToBackwardsDeployToOSVersion:(id)arg1 inDocument:(id)arg2;
+- (void)ibPopulateAdditionalTargetOSVersions:(id)arg1 forCompilingDocument:(id)arg2;
 - (BOOL)ibIsNSAppearanceContainer;
-- (id)ibInspectedAppearancePopupValues;
-- (id)ibInspectedAppearancePopupTitles;
+@property long long ibExternalMaterial;
+- (BOOL)ibIsSupportingMaterial:(long long)arg1;
+- (id)ibInspectedAppearancePopupExtendedValues;
+- (id)ibInspectedAppearancePopupExtendedTitles;
+- (BOOL)ibAllowsVibrantDarkAndVibrantLightAppearance;
+- (id)ibInspectedAppearancePopupDefaultValues;
+- (id)ibInspectedAppearancePopupDefaultTitles;
 - (id)ibDesignableContentView;
-- (void)ibCustomizeForInsertionIntoDocument:(id)arg1 withObjects:(id)arg2 fromLibraryOrDifferentTargetRuntime:(BOOL)arg3 andInsertionContext:(id)arg4;
+- (id)ibLocalAttributeKeyPaths;
+- (void)ibSwizzledNSVisualEffectViewEncodeWithCoder:(id)arg1;
+- (id)ibSwizzledNSVisualEffectViewInitWithCoder:(id)arg1;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @end
 

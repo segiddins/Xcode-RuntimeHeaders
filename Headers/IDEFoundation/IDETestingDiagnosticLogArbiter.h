@@ -27,6 +27,7 @@
     unsigned long long _bufferedMessagesInCurrentBuffer;
 }
 
++ (void)initialize;
 @property BOOL preserveAllMessages; // @synthesize preserveAllMessages=_preserveAllMessages;
 @property unsigned long long bufferedMessagesInCurrentBuffer; // @synthesize bufferedMessagesInCurrentBuffer=_bufferedMessagesInCurrentBuffer;
 @property unsigned long long bufferedMessages; // @synthesize bufferedMessages=_bufferedMessages;
@@ -59,6 +60,7 @@
 - (id)_on_queue_dataForTruncatedMessage:(id)arg1 withLength:(unsigned long long)arg2;
 - (void)_on_queue_logMessage:(id)arg1;
 - (void)logMessage:(id)arg1;
+- (id)initWithWriter:(id)arg1 maxLoggedBytes:(unsigned long long)arg2 maxBufferedBytes:(unsigned long long)arg3 contextInterval:(double)arg4 preserveAllMessages:(BOOL)arg5;
 - (id)initWithWriter:(id)arg1 maxLoggedBytes:(unsigned long long)arg2 maxBufferedBytes:(unsigned long long)arg3 contextInterval:(double)arg4;
 - (void)dealloc;
 

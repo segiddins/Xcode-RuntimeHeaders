@@ -6,18 +6,19 @@
 
 #import <AppKit/NSScrollView.h>
 
+@class NSLayoutConstraint;
+
 @interface IDEGaugeReportTableScrollView : NSScrollView
 {
-    struct CGSize _fittingSize;
+    NSLayoutConstraint *_existingHeightConstraint;
     struct CGSize _intrinsicSize;
     BOOL _intrinsicSizeIsInvalid;
 }
 
 + (BOOL)isCompatibleWithResponsiveScrolling;
+- (void).cxx_destruct;
 - (void)scrollWheel:(id)arg1;
-- (void)tile;
 - (void)updateConstraints;
-- (struct CGSize)fittingSize;
 - (struct CGSize)intrinsicContentSize;
 - (void)invalidateIntrinsicContentSize;
 

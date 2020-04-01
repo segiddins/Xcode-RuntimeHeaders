@@ -12,8 +12,10 @@
 {
     NSArray *_subworkers;
     NSMutableSet *_completedWorkers;
+    NSMutableSet *_finishedWorkers;
     BOOL _shouldStartNextWorker;
     unsigned long long _currentWorkerIndex;
+    BOOL _lastSubworkerFinished;
     DVTDispatchLock *_subworkersLock;
 }
 
@@ -22,10 +24,10 @@
 - (id)description;
 - (void)allSubworkersDidFinishWithError:(id)arg1;
 - (void)finishedWithError:(id)arg1;
-- (void)finishFromCompletedWorker:(id)arg1 error:(id)arg2;
+- (void)finishFromFinishedWorker:(id)arg1 error:(id)arg2;
 - (void)startNextWorkerFromCompletedWorker:(id)arg1 error:(id)arg2;
 - (void)terminate;
-- (void)start;
+- (void)performWorkerAction;
 - (void)_startNextWorker;
 - (id)initWithWorkers:(id)arg1 launchSession:(id)arg2;
 - (id)initWithExtensionIdentifier:(id)arg1 launchSession:(id)arg2;

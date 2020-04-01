@@ -6,14 +6,20 @@
 
 #import <IDEKit/IDETemplateCompletionAssistant.h>
 
-@class DVTTableView, Xcode3TargetMembershipDataSource;
+@class DVTTableView, NSLayoutConstraint, NSStackView, Xcode3TargetMembershipDataSource;
 
 @interface Xcode3FileTemplateCompletionAssistant : IDETemplateCompletionAssistant
 {
+    NSStackView *_targetStackView;
     DVTTableView *_targetsTableView;
+    NSLayoutConstraint *_heightConstraint;
     Xcode3TargetMembershipDataSource *_dataSource;
 }
 
+@property(retain, nonatomic) Xcode3TargetMembershipDataSource *dataSource; // @synthesize dataSource=_dataSource;
+@property(retain) NSLayoutConstraint *heightConstraint; // @synthesize heightConstraint=_heightConstraint;
+@property(retain, nonatomic) DVTTableView *targetsTableView; // @synthesize targetsTableView=_targetsTableView;
+@property(retain, nonatomic) NSStackView *targetStackView; // @synthesize targetStackView=_targetStackView;
 - (void).cxx_destruct;
 - (id)selectedBuildables;
 - (void)didInstantiateItems:(id)arg1;

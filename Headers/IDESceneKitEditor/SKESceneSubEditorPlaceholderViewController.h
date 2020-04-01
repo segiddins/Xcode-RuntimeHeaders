@@ -6,12 +6,12 @@
 
 #import <IDEKit/IDEViewController.h>
 
-@class DVTBorderedView, IDEUtilityPlaceholderView;
+@class DVTBorderedView, DVTEmptyContentPlaceholder;
 
 @interface SKESceneSubEditorPlaceholderViewController : IDEViewController
 {
     DVTBorderedView *_borderView;
-    IDEUtilityPlaceholderView *_placeholderView;
+    DVTEmptyContentPlaceholder *_placeholderView;
 }
 
 @property(readonly, nonatomic) DVTBorderedView *borderView; // @synthesize borderView=_borderView;

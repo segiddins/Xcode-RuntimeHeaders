@@ -19,10 +19,10 @@
 }
 
 + (id)externalReferenceWithIdentifier:(id)arg1 targetRuntime:(id)arg2;
-+ (id)instantiateWithDocumentUnarchiver:(id)arg1;
-+ (void)ibPopulateAdditionalInspectors:(id)arg1 forCategory:(id)arg2;
++ (void)ibPopulateAdditionalInspectorSlices:(id)arg1 forCategory:(id)arg2;
 + (id)ibDefaultImageForInstance:(id)arg1 targetRuntime:(id)arg2;
 + (int)ibLibraryInclusionStatusForTargetRuntime:(id)arg1 andDocumentClass:(Class)arg2 assetIdentifier:(id)arg3;
++ (id)instantiateWithDocumentUnarchiver:(id)arg1;
 @property(retain, nonatomic) IBCocoaTouchTargetRuntime *targetRuntime; // @synthesize targetRuntime=_targetRuntime;
 @property(copy, nonatomic) NSString *proxiedObjectIdentifier; // @synthesize proxiedObjectIdentifier=_proxiedObjectIdentifier;
 - (void).cxx_destruct;
@@ -32,17 +32,18 @@
 - (BOOL)ibTopLevelSceneObjectWantsInclusionInCompiledStoryboard;
 - (BOOL)ibIsPlaceholder;
 - (Class)classToTakeInitialMarshalledKeysFrom:(id)arg1;
-- (id)initWithTargetRuntime:(id)arg1;
-- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
-- (void)archiveWithDocumentArchiver:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)ibWarnings:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
-- (BOOL)ibIsInspectorApplicable:(id)arg1 forCategory:(id)arg2;
+- (id)initWithTargetRuntime:(id)arg1;
+- (void)ibPopulateIssues:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
+- (BOOL)ibIsInspectorSliceApplicable:(id)arg1 forCategory:(id)arg2;
 - (id)ibRuntimeClassName;
 - (id)ibTypeNameForDefaultLabel;
 - (BOOL)isFirstResponder;
 - (BOOL)isFilesOwner;
+- (id)ibLocalAttributeKeyPaths;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

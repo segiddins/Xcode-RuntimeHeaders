@@ -4,20 +4,20 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <DVTKit/DVTViewController.h>
+#import <DVTViewControllerKit/DVTViewController.h>
 
 #import <IDESpriteKitParticleEditor/SKSceneSecondaryEditController-Protocol.h>
 #import <IDESpriteKitParticleEditor/SKSceneTileMapEditBrushPopoverDelegate-Protocol.h>
 #import <IDESpriteKitParticleEditor/SKSceneTileMapEditPopoverDelegate-Protocol.h>
 
-@class DVTBorderedView, DVTObservingToken, DVTStackBacktrace, GKRidgedNoiseSource, NSButton, NSImageView, NSMutableArray, NSSegmentedControl, NSString, NSVisualEffectView, SKSceneEditController, SKSceneTileMapEditBrushPopoverController, SKSceneTileMapEditPopoverController, SKSceneTileMapEditView, SKTileMapNode;
+@class DVTBorderedView, DVTObservingToken, DVTStackBacktrace, GKRidgedNoiseSource, NSButton, NSImageView, NSMutableArray, NSString, NSVisualEffectView, SKSceneEditController, SKSceneTileMapEditBrushPopoverController, SKSceneTileMapEditPopoverController, SKSceneTileMapEditView, SKTileMapNode;
 
 @interface SKSceneTileMapEditController : DVTViewController <SKSceneSecondaryEditController, SKSceneTileMapEditPopoverDelegate, SKSceneTileMapEditBrushPopoverDelegate>
 {
     SKSceneTileMapEditView *_view;
     NSVisualEffectView *_toolBarContainerView;
     DVTBorderedView *_toolBarView;
-    NSSegmentedControl *_doneButton;
+    NSButton *_doneButton;
     NSImageView *_tilePreview;
     SKSceneTileMapEditPopoverController *_selectTilePopoverController;
     SKSceneTileMapEditBrushPopoverController *_selectBrushPopoverController;
@@ -34,9 +34,19 @@
     unsigned long long _selectedTileDefinitionIndex;
     unsigned long long _selectedBrushIndex;
     unsigned long long _selectedStampIndex;
+    unsigned int *_preEditTileSnapshot;
+    unsigned int *_postEditTileSnapshot;
+    unsigned long long _snapshotWidth;
+    unsigned long long _snapshotHeight;
+    unsigned long long _snapshotStartColumn;
+    unsigned long long _snapshotStartRow;
+    unsigned long long _snapshotModifiedWidth;
+    unsigned long long _snapshotModifiedHeight;
     unsigned long long _currentTool;
     unsigned long long _previousTool;
     DVTObservingToken *_automappingEnabledKVOToken;
+    DVTObservingToken *_tileSetKVOToken;
+    BOOL _startedUndoRedoAction;
     SKTileMapNode *_node;
 }
 
@@ -96,6 +106,11 @@
 - (BOOL)wantsHoverMoveEventsInEditController:(id)arg1;
 - (BOOL)wantsClickedNodeInEditController:(id)arg1;
 - (void)updateButtonPositions;
+- (void)updatePostEditTileSnapshot;
+- (void)updatePreEditTileSnapshot;
+- (void)updateSnapshotSize;
+- (void)createSnapshots;
+- (void)deleteSnapshots;
 - (void)frameDidChange:(id)arg1;
 - (void)viewWillUninstall;
 - (void)viewDidInstall;

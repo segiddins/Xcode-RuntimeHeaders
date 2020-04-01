@@ -6,19 +6,17 @@
 
 #import <IDEKit/IDEFileReferenceNavigableItem.h>
 
-@class NSArray, NSString;
+@class NSString;
 
 @interface IDEContainerFileReferenceNavigableItem : IDEFileReferenceNavigableItem
 {
     NSString *_scmAggregateLocalStatus;
     NSString *_scmAggregateServerStatus;
-    NSArray *_subitems;
     BOOL _isRecursiveContainerReference;
 }
 
 + (id)keyPathsForValuesAffectingAggregateSourceControlServerStatus;
 + (id)keyPathsForValuesAffectingAggregateSourceControlLocalStatus;
-+ (id)keyPathsForValuesAffectingReferencedContentExists;
 - (void).cxx_destruct;
 @property(readonly) NSString *aggregateSourceControlServerStatus;
 @property(readonly) NSString *aggregateSourceControlLocalStatus;
@@ -27,12 +25,10 @@
 - (BOOL)_shouldResetChildItemsOnDocumentClose;
 - (void)updateChildRepresentedObjects;
 - (id)childRepresentedObjects;
-- (BOOL)referencedContentExists;
+- (id)childItemsKeyPath;
 - (BOOL)isLeaf;
 - (void)_setParentItem:(id)arg1;
-- (id)accessibleImageDescription;
 - (BOOL)isDocumentNavigableItem;
-- (void)primitiveInvalidate;
 
 @end
 

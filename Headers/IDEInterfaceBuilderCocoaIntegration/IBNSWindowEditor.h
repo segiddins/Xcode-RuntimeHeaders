@@ -27,14 +27,13 @@
 - (void)selectionOwner:(id)arg1 didSelect:(id)arg2 andDeselect:(id)arg3;
 - (void)didActivate;
 - (void)willEditChild:(id)arg1 inFrameController:(id)arg2;
-- (void)positionChildEditorFrame;
+- (void)positionChildEditorFrames;
 - (BOOL)shouldCloseWithEvent:(id)arg1;
 - (BOOL)shouldDragFrameWithMouseDownInEditedRect:(id)arg1;
 - (BOOL)isSimulatingSheet;
 - (BOOL)interceptEvent:(id)arg1;
 - (void)noteDescendant:(id)arg1 didChangeProperty:(id)arg2 fromValue:(id)arg3;
-- (id)deepestEditor;
-- (BOOL)isUndoingOrRedoing;
+- (id)activeEditor;
 - (void)rebuildToolbar;
 - (void)willClose;
 - (void)didOpen;

@@ -13,9 +13,15 @@
     IBICCubeFace *_cubeFace;
 }
 
-+ (id)variantSlotComponentClassesExcludingCoreVariants;
-+ (id)variantSlotComponentClassesExcludingIdiom;
++ (Class)assetSetClass;
++ (id)slotWithIdiom:(id)arg1 scale:(id)arg2;
++ (id)slotWithIdiom:(id)arg1;
++ (id)genesisSlotsForSlots:(id)arg1;
 + (id)orderedComponentClasses;
++ (id)slotFilterWithIdiomFilter:(id)arg1 scaleFilter:(id)arg2 faceFilter:(id)arg3 memoryFilter:(id)arg4 graphicsFeatureSetFilter:(id)arg5 colorSpaceFilter:(id)arg6;
++ (id)slotFilterWithIdiomFilter:(id)arg1 scaleFilter:(id)arg2 memoryFilter:(id)arg3 graphicsFeatureSetFilter:(id)arg4 colorSpaceFilter:(id)arg5;
++ (id)slotFilterWithNilMatching:(long long)arg1 idioms:(id)arg2 scales:(id)arg3 memoryClasses:(id)arg4 graphicsFeatureSets:(id)arg5 colorSpaces:(id)arg6;
++ (id)slotFilterUnionedWithStandardUniversalCounterpart:(BOOL)arg1 idioms:(id)arg2 scales:(id)arg3 memoryClasses:(id)arg4 graphicsFeatureSets:(id)arg5 colorSpaces:(id)arg6;
 @property(readonly) IBICCubeFace *cubeFace; // @synthesize cubeFace=_cubeFace;
 - (void).cxx_destruct;
 - (void)captureComponents;

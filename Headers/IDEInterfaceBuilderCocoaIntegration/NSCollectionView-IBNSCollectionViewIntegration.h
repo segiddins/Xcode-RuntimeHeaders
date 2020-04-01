@@ -6,9 +6,11 @@
 
 #import <AppKit/NSCollectionView.h>
 
-@class NSCollectionViewLayout, NSColor;
+#import <IDEInterfaceBuilderCocoaIntegration/IBDocumentArchiving-Protocol.h>
 
-@interface NSCollectionView (IBNSCollectionViewIntegration)
+@class NSColor, NSString;
+
+@interface NSCollectionView (IBNSCollectionViewIntegration) <IBDocumentArchiving>
 + (id)keyPathsForValuesAffectingIbInspectedGridLayout;
 + (id)keyPathsForValuesAffectingIbInspectedFlowLayout;
 + (id)keyPathsForValuesAffectingIbInspectedLayoutMode;
@@ -25,12 +27,18 @@
 - (void)setIbShadowedBackgroundColor:(id)arg1 atIndex:(unsigned long long)arg2;
 - (id)ibInspectedGridLayout;
 - (id)ibInspectedFlowLayout;
-@property(retain) NSCollectionViewLayout *ibShadowedCollectionViewLayout;
-@property BOOL ibShadowedAllowsEmptySelection;
-- (void)setIbInspectedLayoutMode:(long long)arg1;
-- (long long)ibInspectedLayoutMode;
-- (BOOL)ibInspectedRuntimeDoesNotSupportLayouts;
-- (id)ibDocumentationPropertyInfosForKeyPath:(id)arg1;
-- (void)ibWarnings:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
+@property(nonatomic) long long ibInspectedLayoutMode;
+- (id)ibDocumentationSymbolInfosForKeyPath:(id)arg1;
+- (void)ibPopulateIssues:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
+- (id)ibLocalAttributeKeyPaths;
+- (id)ibLocalChildToOneRelationshipsKeyPaths;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @end
 

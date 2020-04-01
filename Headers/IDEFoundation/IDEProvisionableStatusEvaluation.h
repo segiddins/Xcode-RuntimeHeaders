@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class DVTLogAspect, IDECodesignParameterSnapshot, IDEProfileQualification, IDEProvisionableSnapshot, IDEProvisionableStatusEvalutorInputs, IDEProvisioningCommandInputs, IDEProvisioningRepairInfo, NSArray, NSDictionary, NSString;
+@class DVTLogAspect, IDECodesignParameterSnapshot, IDEProfileQualification, IDEProvisionableEntitlements, IDEProvisionableSnapshot, IDEProvisionableStatusEvalutorInputs, IDEProvisioningCommandInputs, IDEProvisioningRepairInfo, NSArray, NSString;
 @protocol IDEProvisioningBasicProfile;
 
 @interface IDEProvisionableStatusEvaluation : NSObject
@@ -15,19 +15,21 @@
     NSArray *_errors;
     IDEProfileQualification *_profileQualification;
     id <IDEProvisioningBasicProfile> _profileForDisplay;
-    NSDictionary *_entitlements;
+    IDEProvisionableEntitlements *_entitlements;
     IDEProvisioningCommandInputs *_provisioningCommandInputs;
     NSString *_configuration;
     IDECodesignParameterSnapshot *_codesignParameterSnapshot;
     IDEProvisioningRepairInfo *_repairInfo;
     IDEProvisionableStatusEvalutorInputs *_evaluationInputs;
     DVTLogAspect *_logAspect;
-    NSDictionary *_rawEntitlements;
+    IDEProvisionableEntitlements *_rawEntitlements;
     NSArray *_rawErrors;
 }
 
++ (id)mostRecentManualProfilesFromProfiles:(id)arg1 bundleIdentifier:(id)arg2 team:(id)arg3 platform:(id)arg4 profileType:(id)arg5 logAspect:(id)arg6 errorProvider:(id)arg7;
++ (id)keyPathsForValuesAffectingNeedsRepair;
 @property(readonly) NSArray *rawErrors; // @synthesize rawErrors=_rawErrors;
-@property(readonly) NSDictionary *rawEntitlements; // @synthesize rawEntitlements=_rawEntitlements;
+@property(readonly) IDEProvisionableEntitlements *rawEntitlements; // @synthesize rawEntitlements=_rawEntitlements;
 @property(readonly) DVTLogAspect *logAspect; // @synthesize logAspect=_logAspect;
 @property(readonly) IDEProvisionableStatusEvalutorInputs *evaluationInputs; // @synthesize evaluationInputs=_evaluationInputs;
 @property(readonly, nonatomic) IDEProvisioningRepairInfo *repairInfo; // @synthesize repairInfo=_repairInfo;
@@ -36,15 +38,22 @@
 - (void).cxx_destruct;
 @property(readonly, nonatomic) IDEProvisioningCommandInputs *provisioningCommandInputs; // @synthesize provisioningCommandInputs=_provisioningCommandInputs;
 - (id)mergedEntitlementsWithWarnings:(id *)arg1 error:(id *)arg2;
-@property(readonly, nonatomic) NSDictionary *entitlements; // @synthesize entitlements=_entitlements;
+@property(readonly, nonatomic) NSString *appIdentifierPrefix;
+@property(readonly, nonatomic) NSString *teamIdentifierPrefix;
+@property(readonly, nonatomic) IDEProvisionableEntitlements *entitlements; // @synthesize entitlements=_entitlements;
 @property(readonly, nonatomic) id <IDEProvisioningBasicProfile> profileForDisplay; // @synthesize profileForDisplay=_profileForDisplay;
+- (void)locateEligibleProfiles:(id *)arg1 ineligibleProfiles:(id *)arg2 requiredTeam:(id)arg3 requiredProfileType:(id)arg4;
+- (long long)_provisioningStyle;
 - (void)locateEligibleProfiles:(id *)arg1 ineligibleProfiles:(id *)arg2;
+- (id)qualificationForProfile:(id)arg1 requiredTeam:(id)arg2 requireSuccessfulCertificateResolution:(BOOL)arg3 error:(id *)arg4;
 @property(readonly, nonatomic) IDEProfileQualification *profileQualification; // @synthesize profileQualification=_profileQualification;
 @property(readonly, nonatomic) NSArray *errors; // @synthesize errors=_errors;
 @property(readonly, nonatomic) long long signingStyle; // @synthesize signingStyle=_signingStyle;
 @property(readonly, nonatomic) IDEProvisionableSnapshot *provisionableSnapshot;
 - (id)evaluationByInjectingError:(id)arg1;
+- (id)description;
 - (id)initWithEvaluationInputs:(id)arg1 configuration:(id)arg2 codesignParameterSnapshot:(id)arg3 entitlements:(id)arg4 repairInfo:(id)arg5 logAspect:(id)arg6 errors:(id)arg7;
+@property(readonly, nonatomic) BOOL needsRepair;
 
 @end
 

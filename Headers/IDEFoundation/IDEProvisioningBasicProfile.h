@@ -8,28 +8,34 @@
 
 #import <IDEFoundation/IDEProvisioningBasicProfile-Protocol.h>
 
-@class IDEProfileSpecifier, NSString;
-@protocol DVTProvisioningProfile, IDEProvisioningBasicTeam;
+@class DVTProvisioningProfile, IDEProfileSpecifier, NSString;
+@protocol IDEProvisioningBasicTeam;
 
 @interface IDEProvisioningBasicProfile : NSObject <IDEProvisioningBasicProfile>
 {
     IDEProfileSpecifier *_specifier;
-    id <DVTProvisioningProfile> _provisioningProfile;
+    DVTProvisioningProfile *_provisioningProfile;
 }
 
++ (id)locateBasicProfileInProfiles:(id)arg1 matchingSpecifier:(id)arg2 bundleID:(id)arg3 platform:(id)arg4 provisioningStyle:(long long)arg5;
 + (id)basicMissingProfileWithSpecifier:(id)arg1;
++ (id)basicProfileWithDVTProvisioningProfile:(id)arg1 profileSpecifier:(id)arg2;
 + (id)basicProfileWithDVTProvisioningProfile:(id)arg1;
-@property(readonly) id <DVTProvisioningProfile> provisioningProfile; // @synthesize provisioningProfile=_provisioningProfile;
+@property(readonly) DVTProvisioningProfile *provisioningProfile; // @synthesize provisioningProfile=_provisioningProfile;
 @property(readonly) IDEProfileSpecifier *specifier; // @synthesize specifier=_specifier;
 - (void).cxx_destruct;
-- (id)description;
-- (unsigned long long)hash;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
 @property(readonly) NSString *automaticIdentitySelector;
 @property(readonly) id <IDEProvisioningBasicTeam> team;
 @property(readonly) BOOL existsOnDisk;
 @property(readonly) NSString *name;
 @property(readonly) NSString *UUID;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) Class superclass;
 
 @end
 

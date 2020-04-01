@@ -14,17 +14,21 @@
     NSString *_messageBubbleText;
     NSImage *_messageBubbleIcon;
     BOOL _miniaturized;
+    BOOL _drawsHelpButton;
     BOOL _wantsPreferredSizeAndPosition;
     BOOL _wantsFlatStyle;
-    unsigned long long _messageBubbleTextAlignment;
+    long long _messageBubbleTextAlignment;
+    id _helpIDOrURL;
     NSString *_messageBubbleToolTipText;
 }
 
 @property BOOL wantsFlatStyle; // @synthesize wantsFlatStyle=_wantsFlatStyle;
 @property BOOL wantsPreferredSizeAndPosition; // @synthesize wantsPreferredSizeAndPosition=_wantsPreferredSizeAndPosition;
 @property(copy, nonatomic) NSString *messageBubbleToolTipText; // @synthesize messageBubbleToolTipText=_messageBubbleToolTipText;
+@property(nonatomic) BOOL drawsHelpButton; // @synthesize drawsHelpButton=_drawsHelpButton;
+@property(copy, nonatomic) id helpIDOrURL; // @synthesize helpIDOrURL=_helpIDOrURL;
 @property(retain, nonatomic) NSImage *messageBubbleIcon; // @synthesize messageBubbleIcon=_messageBubbleIcon;
-@property unsigned long long messageBubbleTextAlignment; // @synthesize messageBubbleTextAlignment=_messageBubbleTextAlignment;
+@property long long messageBubbleTextAlignment; // @synthesize messageBubbleTextAlignment=_messageBubbleTextAlignment;
 @property(copy, nonatomic) NSString *messageBubbleText; // @synthesize messageBubbleText=_messageBubbleText;
 @property(nonatomic, getter=isMiniaturized) BOOL miniaturized; // @synthesize miniaturized=_miniaturized;
 - (void).cxx_destruct;

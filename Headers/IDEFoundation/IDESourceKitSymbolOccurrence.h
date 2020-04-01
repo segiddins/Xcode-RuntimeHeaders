@@ -6,9 +6,11 @@
 
 #import <objc/NSObject.h>
 
-@class DVTDocumentLocation, DVTFilePath, IDESourceKitSymbol, IDESourceKitWorkspace, NSURL;
+#import <IDEFoundation/IDEIndexSymbolOccurrence-Protocol.h>
 
-@interface IDESourceKitSymbolOccurrence : NSObject
+@class DVTDocumentLocation, DVTFilePath, IDESourceKitSymbol, IDESourceKitWorkspace, NSString, NSURL;
+
+@interface IDESourceKitSymbolOccurrence : NSObject <IDEIndexSymbolOccurrence>
 {
     long long _role;
     DVTDocumentLocation *_location;
@@ -23,22 +25,26 @@
 
 @property(readonly, nonatomic) long long column; // @synthesize column=_column;
 @property(readonly, nonatomic) long long lineNumber; // @synthesize lineNumber=_lineNumber;
-@property(readonly, nonatomic) long long role; // @synthesize role=_role;
 - (void).cxx_destruct;
 - (BOOL)isKindOfClass:(Class)arg1;
-- (id)callees;
-@property(readonly, nonatomic) DVTDocumentLocation *location;
-@property(readonly, nonatomic) NSURL *moduleURL;
-@property(readonly, nonatomic) DVTFilePath *file;
+@property(readonly) DVTDocumentLocation *location;
+@property(readonly) NSURL *moduleURL;
+@property(readonly) DVTFilePath *file;
 - (id)index;
 - (id)occurrence;
 - (void)setContainingSymbol:(id)arg1;
 - (id)containingSymbol;
-- (id)description;
+@property(readonly, copy) NSString *description;
 - (void)setOccurrence:(id)arg1;
 - (id)correspondingSymbol;
+@property(readonly) long long role;
 - (id)initWithCorrespondingSymbol:(id)arg1 role:(long long)arg2 lineNumber:(long long)arg3 column:(long long)arg4 file:(id)arg5 location:(id)arg6 moduleURL:(id)arg7 forSourceKitWorkspace:(id)arg8;
 - (void)describeFields:(CDUnknownBlockType)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

@@ -11,7 +11,7 @@
 #import <IDEKit/IDELocalizationController-Protocol.h>
 #import <IDEKit/IDEReviewFilesDataSource-Protocol.h>
 
-@class DVTBorderedView, DVTObservingToken, DVTStackBacktrace, IDELocalizationImportContext, IDELocalizationImporter, IDENavigableItemAsyncFilteringCoordinator, IDENavigatorDataCell, IDEReviewFilesViewController, NSArray, NSMutableDictionary, NSMutableSet, NSString;
+@class DVTBorderedView, DVTObservingToken, DVTStackBacktrace, IDELocalizationImportAction, IDELocalizationImporter, IDENavigableItem, IDENavigableItemAsyncFilteringCoordinator, IDEReviewFilesViewController, NSMutableDictionary, NSString;
 
 @interface IDELocalizationImportController : NSWindowController <IDEComparisonEditorDataSource, IDEReviewFilesDataSource, IDELocalizationController, DVTInvalidation>
 {
@@ -20,35 +20,27 @@
     IDENavigableItemAsyncFilteringCoordinator *_fileNavItemCoordinator;
     IDEReviewFilesViewController *_reviewFilesViewController;
     DVTObservingToken *_comparisonEditorObservingToken;
-    IDENavigatorDataCell *_fileReferenceDataCell;
-    IDENavigatorDataCell *_groupDataCell;
-    IDENavigatorDataCell *_issueDataCell;
-    NSMutableSet *_bindingTokens;
     NSMutableDictionary *_filesToTempDocuments;
     BOOL _complete;
-    IDELocalizationImportContext *_context;
+    IDELocalizationImportAction *_action;
     IDELocalizationImporter *_worker;
-    NSArray *_workspaceNavigableItems;
-    NSArray *_fileSystemNavigableItems;
-    NSArray *_flatNavigableItems;
-    NSArray *_issueNavigableItems;
+    IDENavigableItem *_workspaceNavigableItem;
+    IDENavigableItem *_fileSystemNavigableItem;
+    IDENavigableItem *_flatNavigableItem;
+    IDENavigableItem *_issueNavigableItem;
 }
 
 + (void)initialize;
-@property(retain) NSArray *issueNavigableItems; // @synthesize issueNavigableItems=_issueNavigableItems;
-@property(retain) NSArray *flatNavigableItems; // @synthesize flatNavigableItems=_flatNavigableItems;
-@property(retain) NSArray *fileSystemNavigableItems; // @synthesize fileSystemNavigableItems=_fileSystemNavigableItems;
-@property(retain) NSArray *workspaceNavigableItems; // @synthesize workspaceNavigableItems=_workspaceNavigableItems;
+@property(retain) IDENavigableItem *issueNavigableItem; // @synthesize issueNavigableItem=_issueNavigableItem;
+@property(retain) IDENavigableItem *flatNavigableItem; // @synthesize flatNavigableItem=_flatNavigableItem;
+@property(retain) IDENavigableItem *fileSystemNavigableItem; // @synthesize fileSystemNavigableItem=_fileSystemNavigableItem;
+@property(retain) IDENavigableItem *workspaceNavigableItem; // @synthesize workspaceNavigableItem=_workspaceNavigableItem;
 @property BOOL complete; // @synthesize complete=_complete;
 @property(retain) IDELocalizationImporter *worker; // @synthesize worker=_worker;
-@property(retain, nonatomic) IDELocalizationImportContext *context; // @synthesize context=_context;
+@property(retain, nonatomic) IDELocalizationImportAction *action; // @synthesize action=_action;
 - (void).cxx_destruct;
 - (double)reviewFilesNavigator:(id)arg1 outlineView:(id)arg2 rowHeightForNavigableItem:(id)arg3;
 - (id)reviewFilesNavigator:(id)arg1 documentLocationForNavigableItem:(id)arg2;
-- (id)reviewFilesNavigator:(id)arg1 outlineView:(id)arg2 dataCellForNavigableItem:(id)arg3;
-- (id)_issueCell;
-- (id)_fileCell;
-- (id)_groupCell;
 - (id)workspace;
 - (BOOL)shouldSelectFirstDiff;
 - (id)documentForSecondaryDocumentLocation:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
@@ -59,7 +51,7 @@
 - (void)_beginReviewFiles:(id)arg1 continueBlock:(CDUnknownBlockType)arg2;
 @property(readonly, copy) NSString *description;
 - (void)cancel;
-- (void)start;
+- (void)startLocalizationOperationForWorkspace:(id)arg1 buildParameters:(id)arg2;
 - (id)_configuredOpenPanel;
 - (void)primitiveInvalidate;
 - (id)initWithWindowNibName:(id)arg1;

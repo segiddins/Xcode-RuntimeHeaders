@@ -6,12 +6,11 @@
 
 #import <DevToolsCore/PBXProjectItem.h>
 
-#import <DevToolsCore/PBXContainerScriptingExtensions-Protocol.h>
 #import <DevToolsCore/XCCompatibilityChecking-Protocol.h>
 
-@class NSMutableArray, NSString, PBXTarget;
+@class NSArray, NSMutableArray, NSString, PBXTarget;
 
-@interface PBXBuildPhase : PBXProjectItem <PBXContainerScriptingExtensions, XCCompatibilityChecking>
+@interface PBXBuildPhase : PBXProjectItem <XCCompatibilityChecking>
 {
     NSString *_name;
     PBXTarget *_target;
@@ -29,10 +28,12 @@
 + (id)buildPhase;
 + (id)defaultName;
 + (id)identifier;
-- (id)createDependencyGraphSnapshotsForTargetSnapshot:(id)arg1;
-- (id)createDependencyGraphSnapshotForTargetSnapshot:(id)arg1;
+- (void).cxx_destruct;
+- (id)createDependencyGraphSnapshotsForTargetSnapshot:(id)arg1 withResolver:(id)arg2;
+- (id)createDependencyGraphSnapshotForTargetSnapshot:(id)arg1 withResolver:(id)arg2;
 - (Class)dependencyGraphSnapshotClass;
-- (void)addRelevantToolSpecificationsForContext:(id)arg1 toSet:(id)arg2;
+- (void)addRelevantBuildPropertySpecificationsForFileTypes:(id)arg1 withMacroExpansionScope:(id)arg2 toOrderedSet:(id)arg3;
+- (void)enumerateBuildRulesWithMacroExpansionScope:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (void)_upgradeAfterAwakingFromUnarchiver:(id)arg1;
 - (BOOL)phaseContainsNonJavaFiles;
 - (BOOL)phaseContainsJavaFiles;
@@ -43,13 +44,11 @@
 - (void)buildFileWasAdded:(id)arg1;
 - (void)referenceWillBeRemoved:(id)arg1;
 - (void)referenceWillChange:(id)arg1;
-- (int)changeMask;
 - (void)willChange;
 - (void)findFeaturesInUseAndAddToSet:(id)arg1 usingPathPrefix:(id)arg2;
 - (id)gidCommentForArchive;
 - (BOOL)allowsFileType:(id)arg1;
 - (id)allowedFileTypes;
-- (id)presumedBuildConfigurationName;
 - (id)outputFileNames;
 - (id)inputFileNames;
 - (unsigned long long)countBuildFilesWithExtensionInSet:(id)arg1;
@@ -60,7 +59,7 @@
 - (BOOL)_isReferenceReallyInProject:(id)arg1;
 - (BOOL)acceptsVariantGroups;
 - (void)_setBuildFiles:(id)arg1;
-- (BOOL)containsFileReferenceSimilarTo:(id)arg1;
+- (id)buildFileForProductReference:(id)arg1;
 - (BOOL)containsFileReferenceIdenticalTo:(id)arg1;
 - (id)buildFileForAbsolutePath:(id)arg1;
 - (id)buildFileForResolvedAbsolutePath:(id)arg1;
@@ -73,7 +72,7 @@
 - (BOOL)addBuildFile:(id)arg1;
 - (BOOL)insertBuildFile:(id)arg1 atIndex:(unsigned long long)arg2;
 - (BOOL)insertBuildFiles:(id)arg1 atIndex:(unsigned long long)arg2;
-- (id)buildFiles;
+@property(readonly) NSArray *buildFiles;
 - (void)replaceObjectInCustomBuildRulesAtIndex:(unsigned long long)arg1 withObject:(id)arg2;
 - (void)removeObjectFromCustomBuildRulesAtIndex:(unsigned long long)arg1;
 - (void)insertObject:(id)arg1 inCustomBuildRulesAtIndex:(unsigned long long)arg2;
@@ -98,16 +97,6 @@
 - (id)stringByExpandingString:(id)arg1 forBuildConfigurationNamed:(id)arg2;
 - (void)appendUserSettingsDictionariesTo:(id)arg1 defaultSettingsDictionariesTo:(id)arg2;
 - (void)appendUserSettingsDictionariesTo:(id)arg1 defaultSettingsDictionariesTo:(id)arg2 forBuildConfigurationNamed:(id)arg3;
-- (void)addBuildFilePathsToFileList:(id)arg1;
-- (void)removeFromBuildFilesAtIndex:(unsigned long long)arg1;
-- (void)replaceInBuildFiles:(id)arg1 atIndex:(unsigned long long)arg2;
-- (void)insertInBuildFiles:(id)arg1;
-- (void)insertInBuildFiles:(id)arg1 atIndex:(unsigned long long)arg2;
-- (id)valueInBuildFilesAtIndex:(unsigned long long)arg1;
-- (void)removeObject:(id)arg1;
-- (void)moveObject:(id)arg1 toIndex:(unsigned long long)arg2;
-- (void)addObject:(id)arg1;
-- (id)objectSpecifier;
 
 @end
 

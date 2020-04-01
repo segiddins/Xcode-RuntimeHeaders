@@ -10,12 +10,14 @@
 {
     double _ibStartTime;
     double _ibEndTime;
+    unsigned long long _signpostID;
 }
 
 - (double)totalDuration;
 - (double)durationSinceStart;
 - (void)setEndTime;
 - (void)setStartTime;
+@property(readonly) unsigned long long signpostID;
 
 @end
 

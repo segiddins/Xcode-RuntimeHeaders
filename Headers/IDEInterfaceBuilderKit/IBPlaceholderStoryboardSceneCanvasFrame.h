@@ -12,6 +12,7 @@
 {
 }
 
++ (BOOL)wantsContentEditorAppearanceUpdate;
 + (BOOL)wantsHeaderView;
 - (id)accessibilityRoleDescription;
 - (void)setTitle:(id)arg1;

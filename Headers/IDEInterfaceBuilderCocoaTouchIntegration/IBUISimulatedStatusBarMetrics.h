@@ -4,23 +4,22 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <IDEInterfaceBuilderCocoaTouchIntegration/IBUISimulatedBarMetrics.h>
+#import <IBCocoaTouchToolFoundation/IBUISimulatedBarMetrics.h>
 
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBDocumentArchiving-Protocol.h>
-#import <IDEInterfaceBuilderCocoaTouchIntegration/NSCoding-Protocol.h>
 
 @class NSString;
 
-@interface IBUISimulatedStatusBarMetrics : IBUISimulatedBarMetrics <NSCoding, IBDocumentArchiving>
+@interface IBUISimulatedStatusBarMetrics : IBUISimulatedBarMetrics <IBDocumentArchiving>
 {
-    int _statusBarStyle;
+    long long _statusBarStyle;
 }
 
 + (double)statusBarHeight;
-+ (id)simulatedStatusBarMetricsForStatusBarStyle:(int)arg1;
++ (id)simulatedStatusBarMetricsForStatusBarStyle:(long long)arg1;
 + (id)simulatedBarMetricsForBarView:(id)arg1;
 + (id)simulatedStatusBarMetricsForStatusBar:(id)arg1;
-@property(readonly, nonatomic) int statusBarStyle; // @synthesize statusBarStyle=_statusBarStyle;
+@property(readonly, nonatomic) long long statusBarStyle; // @synthesize statusBarStyle=_statusBarStyle;
 - (void)unarchiveWithDocumentUnarchiver:(id)arg1;
 - (void)archiveWithDocumentArchiver:(id)arg1;
 @property(readonly, copy) NSString *description;
@@ -32,9 +31,9 @@
 - (BOOL)isTranslucentForTargetRuntime:(id)arg1;
 - (id)ibWidgetType;
 - (Class)barClass;
-- (id)initWithStatusBarStyle:(int)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithStatusBarStyle:(long long)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -4,20 +4,21 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class DVTTestPerformanceMetricOutput, IDETestOperationCoordinator, NSError, NSString, XCActivityRecord;
+@class DVTTestPerformanceMetricOutput, IDETestIdentifier, IDETestOperationCoordinator, NSError, NSString, XCActivityRecord;
 
 @protocol IDETestOperationCoordinatorEvents
 - (void)willFinishWithError:(NSError *)arg1 didCancel:(BOOL)arg2 sessionState:(IDETestOperationCoordinator *)arg3;
-- (void)testSuiteDidFinish:(long long)arg1 withFailures:(long long)arg2 unexpected:(long long)arg3 testDuration:(double)arg4 totalDuration:(double)arg5 rawOutput:(NSString *)arg6 sessionState:(IDETestOperationCoordinator *)arg7;
-- (void)testSuite:(NSString *)arg1 willFinishAt:(NSString *)arg2 rawOutput:(NSString *)arg3 sessionState:(IDETestOperationCoordinator *)arg4;
-- (void)testCaseDidFinishForTestClass:(NSString *)arg1 method:(NSString *)arg2 withStatus:(NSString *)arg3 duration:(double)arg4 rawOutput:(NSString *)arg5 sessionState:(IDETestOperationCoordinator *)arg6;
-- (void)testCaseDidMeasurePerformanceMetricForTestClass:(NSString *)arg1 method:(NSString *)arg2 performanceMetric:(DVTTestPerformanceMetricOutput *)arg3 rawOutput:(NSString *)arg4 sessionState:(IDETestOperationCoordinator *)arg5;
-- (void)testCase:(NSString *)arg1 method:(NSString *)arg2 didFinishActivity:(XCActivityRecord *)arg3 sessionState:(IDETestOperationCoordinator *)arg4;
-- (void)testCase:(NSString *)arg1 method:(NSString *)arg2 willStartActivity:(XCActivityRecord *)arg3 sessionState:(IDETestOperationCoordinator *)arg4;
-- (void)testCaseDidFailForTestClass:(NSString *)arg1 method:(NSString *)arg2 withMessage:(NSString *)arg3 file:(NSString *)arg4 line:(long long)arg5 rawOutput:(NSString *)arg6 sessionState:(IDETestOperationCoordinator *)arg7;
-- (void)testCaseDidStartForTestClass:(NSString *)arg1 method:(NSString *)arg2 rawOutput:(NSString *)arg3 sessionState:(IDETestOperationCoordinator *)arg4;
-- (void)testSuite:(NSString *)arg1 didStartAt:(NSString *)arg2 rawOutput:(NSString *)arg3 sessionState:(IDETestOperationCoordinator *)arg4;
+- (void)testSuiteDidFinish:(unsigned long long)arg1 withFailures:(unsigned long long)arg2 unexpected:(unsigned long long)arg3 testDuration:(double)arg4 totalDuration:(double)arg5 rawOutput:(NSString *)arg6 sessionState:(IDETestOperationCoordinator *)arg7;
+- (void)testSuiteWithIdentifier:(IDETestIdentifier *)arg1 willFinishAt:(NSString *)arg2 rawOutput:(NSString *)arg3 sessionState:(IDETestOperationCoordinator *)arg4;
+- (void)testCaseWithIdentifier:(IDETestIdentifier *)arg1 didFinishWithStatus:(NSString *)arg2 duration:(double)arg3 rawOutput:(NSString *)arg4 sessionState:(IDETestOperationCoordinator *)arg5;
+- (void)testCaseWithIdentifier:(IDETestIdentifier *)arg1 didMeasurePerformanceMetric:(DVTTestPerformanceMetricOutput *)arg2 rawOutput:(NSString *)arg3 sessionState:(IDETestOperationCoordinator *)arg4;
+- (void)testCaseWithIdentifier:(IDETestIdentifier *)arg1 didFinishActivity:(XCActivityRecord *)arg2 sessionState:(IDETestOperationCoordinator *)arg3;
+- (void)testCaseWithIdentifier:(IDETestIdentifier *)arg1 willStartActivity:(XCActivityRecord *)arg2 sessionState:(IDETestOperationCoordinator *)arg3;
+- (void)testCaseWithIdentifier:(IDETestIdentifier *)arg1 didFailWithMessage:(NSString *)arg2 file:(NSString *)arg3 line:(long long)arg4 rawOutput:(NSString *)arg5 sessionState:(IDETestOperationCoordinator *)arg6;
+- (void)testCaseWithIdentifier:(IDETestIdentifier *)arg1 didStartWithRawOutput:(NSString *)arg2 sessionState:(IDETestOperationCoordinator *)arg3;
+- (void)testSuiteWithIdentifier:(IDETestIdentifier *)arg1 didStartAt:(NSString *)arg2 rawOutput:(NSString *)arg3 sessionState:(IDETestOperationCoordinator *)arg4;
 - (void)testDidOutput:(NSString *)arg1 sessionState:(IDETestOperationCoordinator *)arg2;
+- (void)testProcessDidBecomeReadyForWork:(IDETestOperationCoordinator *)arg1;
 - (void)launchSessionStarted:(IDETestOperationCoordinator *)arg1 diagnosticLogPath:(NSString *)arg2;
 @end
 

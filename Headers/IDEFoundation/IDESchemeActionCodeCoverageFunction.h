@@ -10,22 +10,24 @@
 
 @interface IDESchemeActionCodeCoverageFunction : DVTCoverageDataContainer
 {
-    int _executionCount;
-    int _lineNumber;
-    DVTSourceCodeSymbolKind *_symbolKind;
+    unsigned long long _executionCount;
     IDESchemeActionCodeCoverageFile *_sourceFile;
+    DVTSourceCodeSymbolKind *_symbolKind;
+    struct _NSRange _lineRange;
 }
 
+@property(retain, nonatomic) DVTSourceCodeSymbolKind *symbolKind; // @synthesize symbolKind=_symbolKind;
 @property(nonatomic) __weak IDESchemeActionCodeCoverageFile *sourceFile; // @synthesize sourceFile=_sourceFile;
-@property(readonly, nonatomic) DVTSourceCodeSymbolKind *symbolKind; // @synthesize symbolKind=_symbolKind;
-@property(readonly, nonatomic) int lineNumber; // @synthesize lineNumber=_lineNumber;
-@property(readonly, nonatomic) int executionCount; // @synthesize executionCount=_executionCount;
+@property(readonly, nonatomic) struct _NSRange lineRange; // @synthesize lineRange=_lineRange;
+@property(readonly, nonatomic) unsigned long long executionCount; // @synthesize executionCount=_executionCount;
 - (void).cxx_destruct;
 - (id)description;
 - (id)wrappedContainer;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (id)initWithName:(id)arg1 symbolKind:(id)arg2 lineNumber:(int)arg3 executionCount:(int)arg4 lineCoverage:(id)arg5;
+- (id)initWithName:(id)arg1 lineRange:(struct _NSRange)arg2 executionCount:(unsigned long long)arg3 executableLines:(unsigned int)arg4 coveredLines:(unsigned int)arg5;
+- (id)aggregateWith:(id)arg1 selfParent:(id)arg2 usingMergedLines:(id)arg3;
+- (id)diffableChildren;
+- (id)diffIdentifier;
+- (unsigned long long)diffType;
 
 @end
 

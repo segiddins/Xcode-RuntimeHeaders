@@ -10,8 +10,8 @@
 {
 }
 
-- (BOOL)evaluateAsBooleanInContext:(id)arg1;
-- (id)evaluateInContext:(id)arg1;
+- (BOOL)evaluateAsBooleanWithMacroExpansionScope:(id)arg1;
+- (id)evaluateWithMacroExpansionScope:(id)arg1;
 
 @end
 

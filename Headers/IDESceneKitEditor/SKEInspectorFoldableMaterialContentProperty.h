@@ -6,33 +6,58 @@
 
 #import <IDEKit/IDEInspectorProperty.h>
 
-@class DVTObservingToken, IDEInspectorKeyPath, NSButton, NSString, NSTextField, SKEContentsPickerPopUpButton;
+#import <IDESceneKitEditor/NSAccessibilityButton-Protocol.h>
+#import <IDESceneKitEditor/NSAccessibilityCheckBox-Protocol.h>
 
-@interface SKEInspectorFoldableMaterialContentProperty : IDEInspectorProperty
+@class DVTObservingToken, IDEInspectorKeyPath, NSButton, NSMutableDictionary, NSString, NSTextField, SKEContentsPickerPopUpButton;
+
+@interface SKEInspectorFoldableMaterialContentProperty : IDEInspectorProperty <NSAccessibilityButton, NSAccessibilityCheckBox>
 {
     SKEContentsPickerPopUpButton *_picker;
     NSButton *_disclosure;
     NSTextField *_title;
+    NSButton *_deleteButton;
     IDEInspectorKeyPath *_valueKeyPath;
     IDEInspectorKeyPath *_delegateKeyPath;
     NSString *_nilPlaceholder;
     NSString *_showKeyPath;
     NSString *_disclosableKeyPath;
     NSString *_disclosablePlainKeyPath;
+    NSMutableDictionary *_kvc;
+    IDEInspectorKeyPath *_editableKeyPath;
     DVTObservingToken *_contentsObserver;
+    BOOL _removable;
+    NSString *_slotName;
+    IDEInspectorKeyPath *_materialsKeyPath;
+    IDEInspectorKeyPath *_materialIndexKeyPath;
     BOOL _disclosed;
 }
 
 @property(readonly, nonatomic, getter=isDisclosed) BOOL disclosed; // @synthesize disclosed=_disclosed;
 - (void).cxx_destruct;
+- (id)accessibilityParent;
+- (struct CGRect)accessibilityFrame;
+- (id)accessibilityValue;
+- (BOOL)accessibilityPerformPress;
+- (id)accessibilityLabel;
 - (void)setupRefreshTriggersAndConfigure;
 - (void)refresh;
+- (void)deleteButton:(id)arg1;
 - (void)openClose:(id)arg1;
 - (void)userDidChangeValue:(id)arg1;
 @property(nonatomic, getter=isOpen) long long open;
+- (void)showRemoveButton;
+- (id)material;
 - (void)updateState;
 - (double)baseline;
 - (void)primitiveInvalidate;
+- (void)loadView;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

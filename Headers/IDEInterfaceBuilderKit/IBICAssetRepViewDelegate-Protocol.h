@@ -11,6 +11,7 @@
 @protocol IBICAssetRepViewDelegate <NSObject>
 
 @optional
+- (void)assetRepViewDidClickStatusImage:(IBICAssetRepView *)arg1;
 - (void)assetViewUserDidDoubleClickAssetRepView:(IBICAssetRepView *)arg1;
 - (void)assetViewUserDidClickLinkButton:(IBICAssetRepView *)arg1;
 - (NSImage *)assetView:(IBICAssetRepView *)arg1 imageForAnimationFrame:(long long)arg2;

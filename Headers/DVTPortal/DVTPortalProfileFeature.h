@@ -12,34 +12,52 @@
 
 @interface DVTPortalProfileFeature : NSObject <NSCopying>
 {
-    BOOL _requiresExplicitAppID;
+    BOOL _isAvailableWithFreeProvisioning;
+    BOOL _isAvailableWithEnterprise;
+    BOOL _isAvailableWithUniversity;
+    BOOL _isAvailableWithDirectDistribution;
+    BOOL _isAutomaticallyEnabledInExplicitAppIDs;
+    BOOL _requiresPortalInteraction;
     NSString *_identifier;
     NSSet *_supportedPlatforms;
     NSString *_userDescription;
-    NSString *_portalKey;
-    NSString *_legacyFeatureName;
+    NSString *_legacyPortalKey;
+    NSString *_portalIdentifier;
+    NSSet *_allowedValues;
+    NSString *_defaultValue;
+    NSSet *_profileFeatureEntitlements;
     long long _valueType;
 }
 
 + (long long)_valueTypeFromValueTypeName:(id)arg1;
 + (id)profileFeatureFromExtension:(id)arg1;
-+ (id)profileFeatureWithLegacyFeatureName:(id)arg1;
-+ (id)profileFeatureWithPortalKey:(id)arg1;
++ (id)profileFeaturesWithPortalIdentifier:(id)arg1;
++ (id)profileFeaturesWithLegacyPortalKey:(id)arg1;
 + (id)profileFeatureWithIdentifier:(id)arg1;
 + (id)profileFeatures;
 @property(readonly, nonatomic) long long valueType; // @synthesize valueType=_valueType;
-@property(readonly, nonatomic) BOOL requiresExplicitAppID; // @synthesize requiresExplicitAppID=_requiresExplicitAppID;
-@property(readonly, nonatomic) NSString *legacyFeatureName; // @synthesize legacyFeatureName=_legacyFeatureName;
-@property(readonly, nonatomic) NSString *portalKey; // @synthesize portalKey=_portalKey;
+@property(readonly, nonatomic) NSSet *profileFeatureEntitlements; // @synthesize profileFeatureEntitlements=_profileFeatureEntitlements;
+@property(readonly, nonatomic) BOOL requiresPortalInteraction; // @synthesize requiresPortalInteraction=_requiresPortalInteraction;
+@property(readonly, nonatomic) BOOL isAutomaticallyEnabledInExplicitAppIDs; // @synthesize isAutomaticallyEnabledInExplicitAppIDs=_isAutomaticallyEnabledInExplicitAppIDs;
+@property(readonly, nonatomic) BOOL isAvailableWithDirectDistribution; // @synthesize isAvailableWithDirectDistribution=_isAvailableWithDirectDistribution;
+@property(readonly, nonatomic) BOOL isAvailableWithUniversity; // @synthesize isAvailableWithUniversity=_isAvailableWithUniversity;
+@property(readonly, nonatomic) BOOL isAvailableWithEnterprise; // @synthesize isAvailableWithEnterprise=_isAvailableWithEnterprise;
+@property(readonly, nonatomic) BOOL isAvailableWithFreeProvisioning; // @synthesize isAvailableWithFreeProvisioning=_isAvailableWithFreeProvisioning;
+@property(readonly, nonatomic) NSString *defaultValue; // @synthesize defaultValue=_defaultValue;
+@property(readonly, nonatomic) NSSet *allowedValues; // @synthesize allowedValues=_allowedValues;
+@property(readonly, nonatomic) NSString *portalIdentifier; // @synthesize portalIdentifier=_portalIdentifier;
+@property(readonly, nonatomic) NSString *legacyPortalKey; // @synthesize legacyPortalKey=_legacyPortalKey;
 @property(readonly, nonatomic) NSString *userDescription; // @synthesize userDescription=_userDescription;
 @property(readonly, nonatomic) NSSet *supportedPlatforms; // @synthesize supportedPlatforms=_supportedPlatforms;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
+- (BOOL)isEnabledInProfile:(id)arg1 appIDValue:(id *)arg2;
 - (BOOL)isValidFeatureValue:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
 - (BOOL)isEqual:(id)arg1;
-- (id)initWithIdentifier:(id)arg1 portalKey:(id)arg2 supportedPlatforms:(id)arg3 valueType:(long long)arg4 requiresExplicitAppID:(BOOL)arg5 userDescription:(id)arg6 legacyFeatureName:(id)arg7;
+@property(readonly, nonatomic) NSSet *entitlements;
+- (id)initWithIdentifier:(id)arg1 legacyPortalKey:(id)arg2 portalIdentifier:(id)arg3 supportedPlatforms:(id)arg4 valueType:(long long)arg5 userDescription:(id)arg6 isAvailableWithFreeProvisioning:(BOOL)arg7 isAvailableWithEnterprise:(BOOL)arg8 isAvailableWithUniversity:(BOOL)arg9 isAvailableWithDirectDistribution:(BOOL)arg10 allowedValues:(id)arg11 defaultValue:(id)arg12 entitlements:(id)arg13 requiresPortalInteraction:(BOOL)arg14 isAutomaticallyEnabledInExplicitAppIDs:(BOOL)arg15;
 
 @end
 

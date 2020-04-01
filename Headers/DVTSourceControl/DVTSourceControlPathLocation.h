@@ -14,7 +14,6 @@
 }
 
 + (BOOL)supportsSecureCoding;
-+ (id)defaultImage;
 + (id)rootPathLocation;
 @property(retain) NSString *relativePath; // @synthesize relativePath=_relativePath;
 - (void).cxx_destruct;

@@ -15,6 +15,8 @@
 }
 
 + (id)sharedInstance;
+- (void)_showTargetsNeedUpgradeAlertForProjects:(id)arg1 targetNamesByProjectName:(id)arg2 workspace:(id)arg3;
+- (void)_showUnsupportedTargetsAlertForProjects:(id)arg1 targetNamesByProjectName:(id)arg2 workspace:(id)arg3;
 - (void)upgradeWorkspace:(id)arg1 withTasks:(id)arg2;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 

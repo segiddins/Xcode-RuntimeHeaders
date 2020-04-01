@@ -22,9 +22,6 @@
 - (void)debugMenuItemSetCurrentConstantDistance10:(id)arg1;
 - (void)debugMenuItemSetCurrentConstantDistance5:(id)arg1;
 - (void)debugMenuItemSetCurrentConstantDistanceOff:(id)arg1;
-- (void)debugMenuItemUseQuadrantContainingBoundsExplicitConstraints:(id)arg1;
-- (void)debugMenuItemUseQuadrantContainingCenterPointExplicitConstraints:(id)arg1;
-- (void)debugMenuItemUseUpperLeadingExplicitConstraints:(id)arg1;
 - (BOOL)validateUserInterfaceItem:(id)arg1;
 
 // Remaining properties

@@ -6,26 +6,19 @@
 
 #import <IDEInterfaceBuilderKit/IBStructureViewController.h>
 
-@class DVTSearchField, IBSearchFieldPositionBorderView, IBStoryboardNavigationOutlineViewController, NSLayoutConstraint, NSNumber;
+@class IBStoryboardNavigationOutlineViewController, NSNumber;
 
 @interface IBStoryboardStructureViewController : IBStructureViewController
 {
-    IBSearchFieldPositionBorderView *_borderedView;
-    DVTSearchField *_filterField;
+    id _currentFilterFieldWantingDocumentOutlineViewController;
     IBStoryboardNavigationOutlineViewController *_documentOutlineViewController;
-    NSLayoutConstraint *_barHeightConstraint;
-    NSLayoutConstraint *_filterFieldHeightConstraint;
     NSNumber *_lastKnownOutlineViewWidth;
 }
 
 + (void)configureStateSavingObjectPersistenceByName:(id)arg1;
-+ (id)keyPathsForValuesAffectingCurrentFilterFieldWantingDocumentOutlineViewController;
 @property(copy) NSNumber *lastKnownOutlineViewWidth; // @synthesize lastKnownOutlineViewWidth=_lastKnownOutlineViewWidth;
-@property __weak NSLayoutConstraint *filterFieldHeightConstraint; // @synthesize filterFieldHeightConstraint=_filterFieldHeightConstraint;
-@property __weak NSLayoutConstraint *barHeightConstraint; // @synthesize barHeightConstraint=_barHeightConstraint;
 @property(retain) IBStoryboardNavigationOutlineViewController *documentOutlineViewController; // @synthesize documentOutlineViewController=_documentOutlineViewController;
-@property(retain) DVTSearchField *filterField; // @synthesize filterField=_filterField;
-@property(retain) IBSearchFieldPositionBorderView *borderedView; // @synthesize borderedView=_borderedView;
+@property(readonly) id currentFilterFieldWantingDocumentOutlineViewController; // @synthesize currentFilterFieldWantingDocumentOutlineViewController=_currentFilterFieldWantingDocumentOutlineViewController;
 - (void).cxx_destruct;
 - (void)commitStateToDictionary:(id)arg1;
 - (void)revertStateWithDictionary:(id)arg1;
@@ -37,22 +30,20 @@
 - (double)constrainContentWidthAndChangeModesIfNeeded:(double)arg1;
 - (double)outlineViewWidth;
 - (id)storyboardCanvasViewController;
-- (double)maximumContentWidth;
 - (double)minimumContentWidth;
 - (double)contentWidth;
 - (id)highlightProviders;
 - (id)stateSavingIdentifier;
-@property(readonly) id currentFilterFieldWantingDocumentOutlineViewController;
 - (void)setDrawsWithActiveLook:(BOOL)arg1;
 - (void)setCurrentStructureProvider:(id)arg1;
-@property(nonatomic, getter=isShowingStructureArea) BOOL showingStructureArea; // @dynamic showingStructureArea;
+- (void)setShowingStructureArea:(BOOL)arg1;
 - (id)_lastStructureSelectionProvider;
+- (id)initialSelectionProvider;
 - (BOOL)supportsTogglingStructureArea;
 - (void)editorInstalled;
 - (void)primitiveInvalidate;
 - (BOOL)automaticallyInvalidatesChildViewControllers;
 - (void)loadView;
-- (void)populateStructureAreaStructureProviders:(id)arg1;
 - (void)makeAndPopulateSelectionProviders:(id)arg1;
 
 @end

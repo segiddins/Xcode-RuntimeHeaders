@@ -6,18 +6,19 @@
 
 #import <GPUTools/DYExperiment.h>
 
-#import <GPUTools/NSCoding-Protocol.h>
 #import <GPUTools/NSCopying-Protocol.h>
+#import <GPUTools/NSSecureCoding-Protocol.h>
 
 @class NSArray, NSMutableDictionary, NSSet;
 
-@interface DYExperimentOverrideEnable : DYExperiment <NSCoding, NSCopying>
+@interface DYExperimentOverrideEnable : DYExperiment <NSSecureCoding, NSCopying>
 {
     NSMutableDictionary *_properties;
     NSSet *_overrideTypeStrings;
     NSArray *_perFunctionProfilingData;
 }
 
++ (BOOL)supportsSecureCoding;
 @property(readonly, retain, nonatomic) NSSet *overrideTypeStrings; // @synthesize overrideTypeStrings=_overrideTypeStrings;
 @property(readonly, retain, nonatomic) NSMutableDictionary *properties; // @synthesize properties=_properties;
 - (BOOL)isPresentFrameEnabled;

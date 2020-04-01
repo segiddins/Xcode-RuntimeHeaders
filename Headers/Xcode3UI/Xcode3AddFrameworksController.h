@@ -14,29 +14,41 @@
 {
     Xcode3Target *_target;
     IDEWorkspace *_workspace;
-    NSArray *_libraries;
+    NSArray *_libraryGroups;
     NSArray *_selectedItems;
-    BOOL _showFrameworksInProject;
     IDEFilePickerPanel *_panel;
-    NSTimer *_libraryTimer;
-    BOOL _showingProgress;
+    NSTimer *_progressIndicatorTimer;
+    BOOL _showsProjectContent;
+    BOOL _showsWorkspaceContent;
+    BOOL _showsLocalPackageContent;
+    BOOL _showsRemotePackageContent;
+    BOOL _showsSDKContent;
+    BOOL _showsDeveloperFrameworks;
+    BOOL _showsLinkableContent;
+    BOOL _showsEmbeddableContent;
+    BOOL _showPlatformBadging;
 }
 
-+ (id)addFrameworksControllerForTarget:(id)arg1;
-@property(retain) IDEWorkspace *workspace; // @synthesize workspace=_workspace;
-@property(getter=isShowingFrameworksInProject) BOOL showFrameworksInProject; // @synthesize showFrameworksInProject=_showFrameworksInProject;
-@property(copy, nonatomic) NSArray *_libraries; // @synthesize _libraries;
 @property(readonly) NSArray *selectedItems; // @synthesize selectedItems=_selectedItems;
+@property BOOL showPlatformBadging; // @synthesize showPlatformBadging=_showPlatformBadging;
+@property BOOL showsEmbeddableContent; // @synthesize showsEmbeddableContent=_showsEmbeddableContent;
+@property BOOL showsLinkableContent; // @synthesize showsLinkableContent=_showsLinkableContent;
+@property BOOL showsDeveloperFrameworks; // @synthesize showsDeveloperFrameworks=_showsDeveloperFrameworks;
+@property BOOL showsSDKContent; // @synthesize showsSDKContent=_showsSDKContent;
+@property BOOL showsRemotePackageContent; // @synthesize showsRemotePackageContent=_showsRemotePackageContent;
+@property BOOL showsLocalPackageContent; // @synthesize showsLocalPackageContent=_showsLocalPackageContent;
+@property BOOL showsWorkspaceContent; // @synthesize showsWorkspaceContent=_showsWorkspaceContent;
+@property BOOL showsProjectContent; // @synthesize showsProjectContent=_showsProjectContent;
 - (void).cxx_destruct;
 - (id)filePickerView:(id)arg1 outlineView:(id)arg2 toolTipForCell:(id)arg3 rect:(struct CGRect *)arg4 tableColumn:(id)arg5 item:(id)arg6 mouseLocation:(struct CGPoint)arg7;
 - (void)filePickerView:(id)arg1 outlineView:(id)arg2 willDisplayCell:(id)arg3 forTableColumn:(id)arg4 item:(id)arg5;
-- (void)_loadLibrariesWithCompletionBlock:(CDUnknownBlockType)arg1;
-- (void)_firedLibraryTimer:(id)arg1;
-- (id)_developerLibraryGroup;
-- (id)_librariesInProject:(id)arg1;
+- (void)populateLibraryGroupsInBackground;
+- (id)findDeveloperLibraries;
+- (id)findLibraries:(BOOL)arg1 embeddables:(BOOL)arg2 producedBySourcePackage:(id)arg3 packageReference:(id)arg4;
+- (id)findLibraries:(BOOL)arg1 embeddables:(BOOL)arg2 producedByXcodeProject:(id)arg3;
 - (void)endSheetWithReturnCode:(long long)arg1;
 - (void)beginSheetModalForWindow:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (id)initWithTarget:(id)arg1;
+- (id)initWithTarget:(id)arg1 inWorkspace:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

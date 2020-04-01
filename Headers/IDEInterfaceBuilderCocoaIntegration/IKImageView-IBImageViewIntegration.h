@@ -6,11 +6,24 @@
 
 #import <ImageKit/IKImageView.h>
 
-@interface IKImageView (IBImageViewIntegration)
+#import <IDEInterfaceBuilderCocoaIntegration/IBDocumentArchiving-Protocol.h>
+
+@class NSString;
+
+@interface IKImageView (IBImageViewIntegration) <IBDocumentArchiving>
 - (id)ibSwizzledInitWithCoder:(id)arg1;
 - (void)_ibSwizzledDidInitWithCoder;
 - (double)rotationAngleDegrees;
 - (void)setRotationAngleDegrees:(double)arg1;
 - (id)allToolModes;
+- (id)ibLocalAttributeKeyPaths;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @end
 

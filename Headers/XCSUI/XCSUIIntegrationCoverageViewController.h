@@ -4,40 +4,36 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <DVTKit/DVTViewController.h>
+#import <DVTViewControllerKit/DVTViewController.h>
 
 #import <XCSUI/IDECoverageReportFunctionFetcher-Protocol.h>
-#import <XCSUI/XCSBotSupportingEditorHostedViewController-Protocol.h>
 #import <XCSUI/XCSCodeCoverageProtocol-Protocol.h>
 #import <XCSUI/XCSUIIntegrationCoverageViewController-Protocol.h>
 
-@class IDECoverageReportViewController, NSArray, NSString, XCSBot, XCSBotSupportingEditor, XCSCodeCoverageIntegration, XCSIntegration, XCSUIProgressReplacementView;
+@class IDECoverageReportViewController, NSArray, NSError, NSString, XCSCodeCoverageIntegration, XCSIntegration, XCSUIProgressReplacementView;
 
-@interface XCSUIIntegrationCoverageViewController : DVTViewController <IDECoverageReportFunctionFetcher, XCSBotSupportingEditorHostedViewController, XCSUIIntegrationCoverageViewController, XCSCodeCoverageProtocol>
+@interface XCSUIIntegrationCoverageViewController : DVTViewController <IDECoverageReportFunctionFetcher, XCSUIIntegrationCoverageViewController, XCSCodeCoverageProtocol>
 {
     XCSIntegration *_integration;
-    XCSBotSupportingEditor *_botSupportingEditor;
-    XCSBot *_bot;
+    NSError *_error;
     NSArray *_itemIdentifiersToExpand;
-    XCSUIProgressReplacementView *_replacementView;
     XCSCodeCoverageIntegration *_coverageIntegration;
+    XCSUIProgressReplacementView *_replacementView;
 }
 
 + (BOOL)instancesCanContainDocumentLocation:(id)arg1;
-@property(retain, nonatomic) XCSCodeCoverageIntegration *coverageIntegration; // @synthesize coverageIntegration=_coverageIntegration;
 @property __weak XCSUIProgressReplacementView *replacementView; // @synthesize replacementView=_replacementView;
+@property(retain, nonatomic) XCSCodeCoverageIntegration *coverageIntegration; // @synthesize coverageIntegration=_coverageIntegration;
 @property(retain, nonatomic) NSArray *itemIdentifiersToExpand; // @synthesize itemIdentifiersToExpand=_itemIdentifiersToExpand;
-@property(retain, nonatomic) XCSBot *bot; // @synthesize bot=_bot;
-@property(retain, nonatomic) XCSBotSupportingEditor *botSupportingEditor; // @synthesize botSupportingEditor=_botSupportingEditor;
+@property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(retain, nonatomic) XCSIntegration *integration; // @synthesize integration=_integration;
 - (void).cxx_destruct;
 - (void)selectDocumentLocations:(id)arg1;
-@property(readonly, copy) NSArray *currentSelectedItems;
-@property(readonly, copy) NSArray *currentSelectedDocumentLocations;
+- (id)currentSelectedItems;
+- (id)currentSelectedDocumentLocations;
 - (void)fetchCoverageIntegration:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)fetchFunctionsForFile:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)codeCoverageIntegration:(id)arg1 didChangeRetrievalStatus:(long long)arg2;
-- (id)currentlyExpandedCoverageItemIdentifiers;
 @property(readonly, nonatomic) IDECoverageReportViewController *installedReportViewController;
 - (void)primitiveInvalidate;
 - (void)loadView;

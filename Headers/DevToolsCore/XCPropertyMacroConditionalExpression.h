@@ -13,10 +13,10 @@
     XCPropertyMacroExpression *_elseExpr;
 }
 
+- (void).cxx_destruct;
 - (id)description;
-- (BOOL)evaluateAsBooleanInContext:(id)arg1;
-- (id)evaluateInContext:(id)arg1;
-- (void)dealloc;
+- (BOOL)evaluateAsBooleanWithMacroExpansionScope:(id)arg1;
+- (id)evaluateWithMacroExpansionScope:(id)arg1;
 - (id)init;
 - (id)initWithConditionExpression:(id)arg1 thenExpression:(id)arg2 elseExpression:(id)arg3;
 

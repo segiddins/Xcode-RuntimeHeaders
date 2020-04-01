@@ -14,7 +14,6 @@
     IDEWorkspaceDocument *_workspaceDocument;
 }
 
-+ (void)initialize;
 - (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (id)initWithWorkspace:(id)arg1;

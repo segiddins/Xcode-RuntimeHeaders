@@ -10,15 +10,13 @@
 {
 }
 
-- (id)packagingStepIdentifier;
-- (id)requiredProfileEntitlements;
+- (id)distributionOptionIdentifiers;
+- (id)packagingStepIdentifierForDestination:(long long)arg1;
 - (id)provisioningProfilePlatform;
-- (BOOL)wantsProvisioningProfiles;
+- (long long)wantsProvisioningProfiles;
 - (id)installerCertificateKind;
 - (id)certificateKind;
-- (id)shortTitle;
 - (id)supportedPlatform;
-- (id)appStoreName;
 - (_Bool)supportsDistributionOfArchive:(id)arg1;
 
 @end

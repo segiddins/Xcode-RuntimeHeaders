@@ -14,13 +14,17 @@
 @interface _IDETestableState : NSObject <DVTInvalidation>
 {
     NSMutableSet *_testableObservers;
-    NSMutableDictionary *_testResults;
-    NSMutableDictionary *_performanceMetricsByTestIdentifier;
     id <IDETestable> _testable;
     IDETestableIssueProvider *_issueProvider;
+    unsigned long long _sessionGeneration;
+    NSMutableDictionary *_aggregatedStateForLeafNodeTest;
+    NSMutableDictionary *_cachedCompositeStateForSuperTest;
 }
 
 + (void)initialize;
+@property(readonly) NSMutableDictionary *cachedCompositeStateForSuperTest; // @synthesize cachedCompositeStateForSuperTest=_cachedCompositeStateForSuperTest;
+@property(readonly) NSMutableDictionary *aggregatedStateForLeafNodeTest; // @synthesize aggregatedStateForLeafNodeTest=_aggregatedStateForLeafNodeTest;
+@property unsigned long long sessionGeneration; // @synthesize sessionGeneration=_sessionGeneration;
 @property(readonly) IDETestableIssueProvider *issueProvider; // @synthesize issueProvider=_issueProvider;
 @property(readonly) __weak id <IDETestable> testable; // @synthesize testable=_testable;
 - (void).cxx_destruct;
@@ -30,9 +34,10 @@
 - (unsigned long long)_compositeStateOfSubTests:(id)arg1;
 - (void)_clearAllResults;
 - (void)_addAllTestsForTestable:(id)arg1 intoSet:(id)arg2;
-- (void)_processNewTestResults:(id)arg1;
+- (void)_processNewTestResult:(id)arg1 forTest:(id)arg2;
+- (void)_beginNewGenerationPrefixingAnnotationsWithConfigurationName:(BOOL)arg1;
 - (void)_notifyObserversTestsChanged:(id)arg1;
-- (void)_clearCachedResultsForTest:(id)arg1 andNoteParentIn:(id)arg2;
+- (void)_clearCachedStateForTest:(id)arg1 andNoteParentIn:(id)arg2;
 - (void)_notifyAllTestablesChanged;
 - (void)_notifyTestableChanged;
 - (BOOL)_hasObservers;

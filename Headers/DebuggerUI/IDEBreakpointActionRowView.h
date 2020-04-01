@@ -6,7 +6,7 @@
 
 #import <AppKit/NSView.h>
 
-@class IDEBreakpointAction, NSArray, NSButton, NSMutableArray, NSPopUpButton, NSSet, NSViewController;
+@class IDEBreakpointAction, NSArray, NSButton, NSMutableArray, NSPopUpButton, NSViewController;
 @protocol IDEBreakpointActionRowDelegate;
 
 @interface IDEBreakpointActionRowView : NSView
@@ -16,21 +16,22 @@
     NSPopUpButton *_actionsPopup;
     NSButton *_addActionButton;
     NSButton *_deleteActionButton;
-    NSSet *_breakpointActionEditorExtensions;
     BOOL _selectedActionEditorWantsToBeOnRight;
     NSMutableArray *_actions;
+    NSViewController *_selectedActionEditorViewController;
+    BOOL _shouldSelectKeyView;
     IDEBreakpointAction *_selectedAction;
-    NSViewController *_seletedActionEditorViewController;
 }
 
 + (BOOL)requiresConstraintBasedLayout;
++ (id)extensionForBreakpointActionClass:(Class)arg1;
++ (id)_breakpointActionEditorExtensions;
+@property BOOL shouldSelectKeyView; // @synthesize shouldSelectKeyView=_shouldSelectKeyView;
 @property(retain) IDEBreakpointAction *selectedAction; // @synthesize selectedAction=_selectedAction;
 - (void).cxx_destruct;
 - (void)_removeClicked:(id)arg1;
 - (void)_addClicked:(id)arg1;
 - (void)_actionSelected:(id)arg1;
-- (id)_extensionForBreakpointAction:(id)arg1;
-- (id)_breakpointActionEditorExtensions;
 - (void)_createAndAddSelectedActionsEditor:(id)arg1;
 - (id)_titlesForActions;
 - (id)_createActions;

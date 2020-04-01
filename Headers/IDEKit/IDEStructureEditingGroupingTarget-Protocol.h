@@ -6,14 +6,15 @@
 
 #import <IDEKit/NSObject-Protocol.h>
 
-@class IDENavigableItem, NSIndexSet;
+@class IDENavigableItem, NSIndexSet, NSSet;
 
 @protocol IDEStructureEditingGroupingTarget <NSObject>
 - (IDENavigableItem *)actualNavigableItem;
 - (long long)actualChildIndex;
-- (BOOL)structureEditingGroupSubitemsAtIndexes:(NSIndexSet *)arg1 groupIndex:(long long *)arg2;
+- (void)structureEditingGroupSubitemsAtIndexes:(NSIndexSet *)arg1 completionBlock:(void (^)(BOOL, NSError *))arg2;
 - (BOOL)structureEditingCanGroupSubitemsAtIndexes:(NSIndexSet *)arg1;
 - (BOOL)structureEditingAddNewSubgroup;
 - (BOOL)structureEditingCanAddNewSubgroup;
+- (NSSet *)allowedFileTypesForNewFile;
 @end
 

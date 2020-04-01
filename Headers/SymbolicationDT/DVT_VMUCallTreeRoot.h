@@ -6,14 +6,16 @@
 
 #import <SymbolicationDT/DVT_VMUCallTreeNode.h>
 
-@class DVT_VMUSampler, NSArray, NSHashTable, NSMapTable, NSString;
+@class DVT_VMUSampler, NSArray, NSMapTable, NSMutableSet, NSString;
+@protocol VMUStackLogReader;
 
 @interface DVT_VMUCallTreeRoot : DVT_VMUCallTreeNode
 {
     struct _CSTypeRef _symbolicator;
+    id <VMUStackLogReader> _stackLogReader;
     DVT_VMUSampler *_sampler;
     unsigned long long _options;
-    NSHashTable *_uniqueNodeNames;
+    NSMutableSet *_uniqueNodeNames;
     NSMapTable *_addressToSymbolNameMap;
     NSMapTable *_addressToLeafSymbolNameMap;
     NSMapTable *_threadPortToNameMap;
@@ -21,14 +23,18 @@
     NSArray *_binaryImages;
 }
 
+@property(copy, nonatomic) NSString *binaryImagesDescription; // @synthesize binaryImagesDescription=_binaryImagesDescription;
+- (void).cxx_destruct;
 - (id)chargeSystemLibrariesToCallersAndKeepBoundaries:(BOOL)arg1;
 - (id)initWithCallGraphFile:(id)arg1 fileHeader:(id *)arg2 topFunctionsList:(id *)arg3 binaryImagesList:(id *)arg4;
-- (void)addChildWithName:(id)arg1 address:(unsigned long long)arg2 count:(unsigned int)arg3 numBytes:(unsigned long long)arg4 toNode:(id)arg5;
+- (id)addUniqueChildWithName:(id)arg1 address:(unsigned long long)arg2 count:(unsigned int)arg3 numBytes:(unsigned long long)arg4 toNode:(id)arg5;
+- (id)addChildWithName:(id)arg1 address:(unsigned long long)arg2 count:(unsigned int)arg3 numBytes:(unsigned long long)arg4 toNode:(id)arg5;
 - (id)addBacktrace:(id)arg1;
 - (id)addBacktrace:(id)arg1 count:(unsigned int)arg2 numBytes:(unsigned long long)arg3;
 - (id)descriptionStringForAddress:(unsigned long long)arg1 atTime:(unsigned long long)arg2 leafFrame:(BOOL)arg3 startOfRecursion:(BOOL)arg4;
 - (void)dealloc;
 - (void)allBacktracesHaveBeenAdded;
+- (void)setStackLogReader:(id)arg1;
 - (id)initWithSymbolicator:(struct _CSTypeRef)arg1 sampler:(id)arg2 options:(unsigned long long)arg3;
 
 @end

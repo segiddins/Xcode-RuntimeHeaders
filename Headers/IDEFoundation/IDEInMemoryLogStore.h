@@ -11,6 +11,10 @@
 }
 
 + (id)inMemoryStore;
+- (BOOL)preserveOldLogs;
+- (void)setPreserveOldLogs:(BOOL)arg1;
+- (void)removeLogRecord:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
+- (id)addLog:(id)arg1 parameters:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 
 @end
 

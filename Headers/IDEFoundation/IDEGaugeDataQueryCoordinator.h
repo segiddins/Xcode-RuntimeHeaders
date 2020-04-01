@@ -30,7 +30,7 @@
 - (void)query:(id)arg1 didAddObservedAttributes:(id)arg2 andRemoveObservedAttributes:(id)arg3;
 - (void)removeQuery:(id)arg1;
 - (void)addQuery:(id)arg1;
-- (id)_noteAttributesDidChange;
+- (id)_noteAttributesDidChange:(id)arg1;
 - (id)initForProcessWithPID:(id)arg1 onDevice:(id)arg2 useProxiedDevice:(BOOL)arg3;
 
 @end

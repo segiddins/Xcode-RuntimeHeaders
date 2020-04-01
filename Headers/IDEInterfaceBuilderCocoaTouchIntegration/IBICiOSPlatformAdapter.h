@@ -4,14 +4,21 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <IDEInterfaceBuilderCocoaTouchIntegration/IBAbstractCocoaTouchPlatformAdapter.h>
+#import <IDEInterfaceBuilderCocoaTouchIntegration/IBICAbstractCocoaTouchPlatformAdapter.h>
 
-@interface IBICiOSPlatformAdapter : IBAbstractCocoaTouchPlatformAdapter
+@interface IBICiOSPlatformAdapter : IBICAbstractCocoaTouchPlatformAdapter
 {
 }
 
++ (BOOL)supportsIconBadgeSets;
++ (id)platform;
+- (id)minimumDeploymentTargetSupportingARReferenceObjects;
+- (id)minimumDeploymentTargetSupportingARImageResources;
 - (id)imageCatalogCompilerOptionsFromToolArguments:(id)arg1 forCatalogCollection:(id)arg2 populatingResults:(id)arg3;
+- (id)impliedIdiomsForOptions:(id)arg1;
 - (id)defaultTargetDevices;
+- (id)firstVersionSupportingLaunchStoryboards;
+- (id)firstVersionSupportingOSVariantsForThinning;
 - (id)firstVersionSupportingThinning;
 - (struct CGSize)infoPlistPointSizeForLaunchScreenSlot:(id)arg1;
 - (id)platformForDeviceThinningDatabase;

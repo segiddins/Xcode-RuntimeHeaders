@@ -6,7 +6,7 @@
 
 #import <DVTFoundation/DVTModelTree.h>
 
-@class NSString, PBXBuildPhase, Xcode3BuildPhaseRootGroup, Xcode3Target;
+@class NSArray, NSString, PBXBuildPhase, Xcode3BuildPhaseRootGroup, Xcode3Target;
 
 @interface Xcode3BuildPhase : DVTModelTree
 {
@@ -32,6 +32,23 @@
 @property(readonly) BOOL canDelete; // @dynamic canDelete;
 @property(readonly) BOOL canRename; // @dynamic canRename;
 @property(readonly) NSString *gid;
+- (void)replaceObjectInOutputFileListPathsAtIndex:(unsigned long long)arg1 withObject:(id)arg2;
+- (void)removeOutputFileListPathsAtIndexes:(id)arg1;
+- (void)insertObject:(id)arg1 inOutputFileListPathsAtIndex:(unsigned long long)arg2;
+@property(readonly) NSArray *outputFileListPaths;
+- (void)replaceObjectInInputFileListPathsAtIndex:(unsigned long long)arg1 withObject:(id)arg2;
+- (void)removeInputFileListPathsAtIndexes:(id)arg1;
+- (void)insertObject:(id)arg1 inInputFileListPathsAtIndex:(unsigned long long)arg2;
+@property(readonly) NSArray *inputFileListPaths;
+- (void)replaceObjectInOutputPathsAtIndex:(unsigned long long)arg1 withObject:(id)arg2;
+- (void)removeOutputPathsAtIndexes:(id)arg1;
+- (void)insertObject:(id)arg1 inOutputPathsAtIndex:(unsigned long long)arg2;
+@property(readonly) NSArray *outputPaths;
+- (void)replaceObjectInInputPathsAtIndex:(unsigned long long)arg1 withObject:(id)arg2;
+- (void)removeInputPathsAtIndexes:(id)arg1;
+- (void)insertObject:(id)arg1 inInputPathsAtIndex:(unsigned long long)arg2;
+@property(readonly) NSArray *inputPaths;
+@property(copy) NSString *shellScript;
 @property(readonly) PBXBuildPhase *pbxBuildPhase; // @dynamic pbxBuildPhase;
 - (id)initWithRepresentedObject:(id)arg1 target:(id)arg2;
 

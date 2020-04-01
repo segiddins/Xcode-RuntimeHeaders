@@ -7,28 +7,34 @@
 #import <objc/NSObject.h>
 
 #import <IDEFoundation/DVTInvalidation-Protocol.h>
+#import <IDEFoundation/IDEProvisioningAssetSelectionDataSourceProvider-Protocol.h>
 #import <IDEFoundation/IDEProvisioningManagerRepairObserver-Protocol.h>
-#import <IDEFoundation/IDEProvisioningStyleDataSource-Protocol.h>
 
-@class DVTDelayedInvocation, DVTNotificationToken, DVTPerformanceMetric, DVTStackBacktrace, IDEProvisionableStatusEvaluator, IDEProvisioningManager, NSArray, NSOrderedSet, NSSet, NSString;
-@protocol IDEProvisionable;
+@class DVTDelayedInvocation, DVTObservingToken, DVTPerformanceMetric, DVTStackBacktrace, IDEProvisionableStatusEvaluator, IDEProvisioningManager, NSArray, NSMutableSet, NSOrderedSet, NSSet, NSString;
+@protocol DVTInvalidation, IDEMutableProvisionable, IDEProvisionable, IDEProvisioningTeamsDataSourceDelegate;
 
-@interface IDEProvisionableManager : NSObject <IDEProvisioningManagerRepairObserver, DVTInvalidation, IDEProvisioningStyleDataSource>
+@interface IDEProvisionableManager : NSObject <IDEProvisioningManagerRepairObserver, DVTInvalidation, IDEProvisioningAssetSelectionDataSourceProvider>
 {
     unsigned int _currentGeneration;
+    NSMutableSet *_repairStateObservers;
     BOOL _disableEvaluation;
     BOOL _configurationsFinishedLoading;
+    id <IDEProvisioningTeamsDataSourceDelegate> delegate;
     id <IDEProvisionable> _provisionable;
-    IDEProvisioningManager *_manager;
     IDEProvisionableStatusEvaluator *_statusEvaluator;
     NSArray *_statusErrors;
-    DVTDelayedInvocation *_delayedStatusEvaluation;
     NSArray *_configurations;
-    DVTNotificationToken *_profilesDidChangeToken;
-    DVTNotificationToken *_certificatesDidChangeToken;
-    DVTNotificationToken *_provisionableDidChangeToken;
+    id <DVTInvalidation> _profilesDidChangeToken;
+    id <DVTInvalidation> _certificatesDidChangeToken;
+    id <DVTInvalidation> _provisionableDidChangeToken;
+    id <DVTInvalidation> _repairActionToken;
+    DVTObservingToken *_teamsObservation;
+    id <DVTInvalidation> _accountsToken;
+    DVTObservingToken *_provisionableDevicesDidChangeToken;
     NSSet *_entitlementsFilePaths;
     DVTPerformanceMetric *_loadingMetric;
+    IDEProvisioningManager *_manager;
+    DVTDelayedInvocation *_delayedStatusEvaluation;
 }
 
 + (id)keyPathsForValuesAffectingProvisioningSelectionDataSources;
@@ -36,33 +42,45 @@
 + (id)keyPathsForValuesAffectingFinishedLoading;
 + (id)statusEvaluatorQueue;
 + (void)initialize;
+@property(retain) DVTDelayedInvocation *delayedStatusEvaluation; // @synthesize delayedStatusEvaluation=_delayedStatusEvaluation;
+@property(retain) IDEProvisioningManager *manager; // @synthesize manager=_manager;
 @property(retain, nonatomic) DVTPerformanceMetric *loadingMetric; // @synthesize loadingMetric=_loadingMetric;
 @property(retain, nonatomic) NSSet *entitlementsFilePaths; // @synthesize entitlementsFilePaths=_entitlementsFilePaths;
 @property(nonatomic) BOOL configurationsFinishedLoading; // @synthesize configurationsFinishedLoading=_configurationsFinishedLoading;
-@property(retain) DVTNotificationToken *provisionableDidChangeToken; // @synthesize provisionableDidChangeToken=_provisionableDidChangeToken;
-@property(retain) DVTNotificationToken *certificatesDidChangeToken; // @synthesize certificatesDidChangeToken=_certificatesDidChangeToken;
-@property(retain) DVTNotificationToken *profilesDidChangeToken; // @synthesize profilesDidChangeToken=_profilesDidChangeToken;
+@property(retain) DVTObservingToken *provisionableDevicesDidChangeToken; // @synthesize provisionableDevicesDidChangeToken=_provisionableDevicesDidChangeToken;
+@property(retain) id <DVTInvalidation> accountsToken; // @synthesize accountsToken=_accountsToken;
+@property(retain, nonatomic) DVTObservingToken *teamsObservation; // @synthesize teamsObservation=_teamsObservation;
+@property(retain) id <DVTInvalidation> repairActionToken; // @synthesize repairActionToken=_repairActionToken;
+@property(retain) id <DVTInvalidation> provisionableDidChangeToken; // @synthesize provisionableDidChangeToken=_provisionableDidChangeToken;
+@property(retain) id <DVTInvalidation> certificatesDidChangeToken; // @synthesize certificatesDidChangeToken=_certificatesDidChangeToken;
+@property(retain) id <DVTInvalidation> profilesDidChangeToken; // @synthesize profilesDidChangeToken=_profilesDidChangeToken;
 @property(retain) NSArray *configurations; // @synthesize configurations=_configurations;
 @property BOOL disableEvaluation; // @synthesize disableEvaluation=_disableEvaluation;
-@property(retain) DVTDelayedInvocation *delayedStatusEvaluation; // @synthesize delayedStatusEvaluation=_delayedStatusEvaluation;
 @property(copy, nonatomic) NSArray *statusErrors; // @synthesize statusErrors=_statusErrors;
 @property(retain, nonatomic) IDEProvisionableStatusEvaluator *statusEvaluator; // @synthesize statusEvaluator=_statusEvaluator;
-@property(retain) IDEProvisioningManager *manager; // @synthesize manager=_manager;
 @property(retain) id <IDEProvisionable> provisionable; // @synthesize provisionable=_provisionable;
+@property __weak id <IDEProvisioningTeamsDataSourceDelegate> delegate; // @synthesize delegate;
 - (void).cxx_destruct;
 @property(readonly) BOOL requiresImmediateUserActionResolution;
+- (void)_performRepairsForConfigurations:(id)arg1 retryExistingRepairs:(BOOL)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (void)_processEvaluationResults:(id)arg1;
-@property(readonly, nonatomic, getter=isProvisioningStyleSelectable) BOOL provisioningStyleSelectable;
 @property(readonly) NSArray *provisioningSelectionDataSources;
-@property(nonatomic) long long provisioningStyle;
+- (void)setProvisioningStyle:(long long)arg1 forConfigurationsNamed:(id)arg2 secondarySDK:(id)arg3;
+- (void)setSigningCertificateIdentifier:(id)arg1 forConfigurationsNamed:(id)arg2 sdk:(id)arg3;
+- (void)setProvisioningProfile:(id)arg1 forConfigurationsNamed:(id)arg2 sdk:(id)arg3;
+- (void)setTeam:(id)arg1 forConfigurationsNamed:(id)arg2;
 @property(readonly) NSOrderedSet *teams;
+- (void)setBundleIdentifier:(id)arg1 forConfigurationsNamed:(id)arg2;
 @property(readonly, getter=isFinishedLoading) BOOL finishedLoading;
+- (void)refreshFromPortal;
+- (id)iOSMacBuildParametersWithConfigurationName:(id)arg1;
+@property(readonly) id <IDEMutableProvisionable> mutableProvisionable;
 - (void)delayEvaluationUntilAfterPerformingBlock:(CDUnknownBlockType)arg1 evaluateImmediately:(BOOL)arg2;
 - (void)primitiveInvalidate;
-- (void)immediatelyEvaluateWithOverrides:(id)arg1 shouldRepairIfNecessary:(BOOL)arg2 callbackQueue:(id)arg3 callback:(CDUnknownBlockType)arg4;
+- (void)immediatelyEvaluateWithOverrides:(id)arg1 deviceRequirement:(id)arg2 shouldRepairIfNecessary:(BOOL)arg3 isXBS:(BOOL)arg4 callbackQueue:(id)arg5 callback:(CDUnknownBlockType)arg6;
 - (void)_updateEntitlementsFilePathsFromSnapshot:(id)arg1;
 - (void)_setUpObservations;
-- (void)_evaluateStatusWithStatusEvaluator:(id)arg1 overrides:(id)arg2;
+- (void)_evaluateStatusWithStatusEvaluator:(id)arg1;
 - (void)_commonInit;
 - (id)initWithProvisionable:(id)arg1 manager:(id)arg2;
 

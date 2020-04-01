@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-#import "IDECommandHandler-Protocol.h"
+#import <IDEProductsUI/IDECommandHandler-Protocol.h>
 
 @class NSString;
 

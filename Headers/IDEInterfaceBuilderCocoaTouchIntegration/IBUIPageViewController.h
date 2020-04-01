@@ -7,30 +7,29 @@
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBUIViewController.h>
 
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBDocumentArchiving-Protocol.h>
-#import <IDEInterfaceBuilderCocoaTouchIntegration/NSCoding-Protocol.h>
 
 @class NSString;
 
-@interface IBUIPageViewController : IBUIViewController <IBDocumentArchiving, NSCoding>
+@interface IBUIPageViewController : IBUIViewController <IBDocumentArchiving>
 {
-    long long transitionStyle;
-    long long pageSpacing;
-    long long navigationOrientation;
-    long long spineLocation;
-    BOOL doubleSided;
+    BOOL _doubleSided;
+    long long _transitionStyle;
+    long long _pageSpacing;
+    long long _navigationOrientation;
+    long long _spineLocation;
 }
 
++ (id)keyPathsForValuesAffectingIbInspectedTransitionStyle;
++ (id)keyPathsForValuesAffectingIbInspectedSpineLocation;
 + (id)ibInstantiateForRole:(long long)arg1 withTargetRuntime:(id)arg2 documentClass:(Class)arg3 assetIdentifier:(id)arg4;
-@property(getter=isDoubleSided) BOOL doubleSided; // @synthesize doubleSided;
-@property long long spineLocation; // @synthesize spineLocation;
-@property long long navigationOrientation; // @synthesize navigationOrientation;
-@property long long pageSpacing; // @synthesize pageSpacing;
-@property long long transitionStyle; // @synthesize transitionStyle;
-- (id)initWithTargetRuntime:(id)arg1;
-- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
-- (void)archiveWithDocumentArchiver:(id)arg1;
+@property(getter=isDoubleSided) BOOL doubleSided; // @synthesize doubleSided=_doubleSided;
+@property long long spineLocation; // @synthesize spineLocation=_spineLocation;
+@property long long navigationOrientation; // @synthesize navigationOrientation=_navigationOrientation;
+@property long long pageSpacing; // @synthesize pageSpacing=_pageSpacing;
+@property long long transitionStyle; // @synthesize transitionStyle=_transitionStyle;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithTargetRuntime:(id)arg1;
 - (void)setIbInspectedTransitionStyle:(long long)arg1;
 - (long long)ibInspectedTransitionStyle;
 - (void)setIbInspectedSpineLocation:(long long)arg1;
@@ -41,7 +40,11 @@
 - (BOOL)ibCanBeEmbeddedInTabBarController;
 - (id)ibExplanatoryTextForEditor;
 - (BOOL)ibCanAcceptContentsOfPasteboard:(id)arg1 inDocument:(id)arg2 targetChildRelation:(id *)arg3;
-- (void)ibWarnings:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
+- (void)ibPopulateIssues:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
+- (Class)ibEditorClass;
+- (id)ibLocalAttributeKeyPaths;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

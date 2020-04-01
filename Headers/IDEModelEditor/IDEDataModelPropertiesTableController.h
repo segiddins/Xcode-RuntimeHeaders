@@ -11,10 +11,11 @@
 #import <IDEModelEditor/IDEDMArrayControllerDelegate-Protocol.h>
 #import <IDEModelEditor/NSTableViewDelegate-Protocol.h>
 #import <IDEModelEditor/XDTableViewScrollDelegate-Protocol.h>
+#import <IDEModelEditor/XDTableViewTableColumnProvider-Protocol.h>
 
-@class DVTNotificationToken, DVTObservingToken, IDEDMArrayController, IDEDMHighlightImageAndTextCell, IDEDataModelBrowserEditor, NSArray, NSArrayController, NSDictionary, NSImage, NSIndexSet, NSMapTable, NSString, NSTableColumn, XDTableView;
+@class DVTNotificationToken, DVTObservingToken, IDEDMArrayController, IDEDMHighlightImageAndTextCell, IDEDataModelBrowserEditor, NSArray, NSArrayController, NSColor, NSDictionary, NSImage, NSIndexSet, NSMapTable, NSString, NSTableColumn, XDTableView;
 
-@interface IDEDataModelPropertiesTableController : IDEDMEditorController <NSTableViewDelegate, XDTableViewScrollDelegate, IDEDMArrayControllerDelegate, IDECapsuleViewController, IDECapsuleViewDelegate>
+@interface IDEDataModelPropertiesTableController : IDEDMEditorController <XDTableViewTableColumnProvider, NSTableViewDelegate, XDTableViewScrollDelegate, IDEDMArrayControllerDelegate, IDECapsuleViewController, IDECapsuleViewDelegate>
 {
     BOOL _showsEntityColumn;
     IDEDataModelBrowserEditor *parentEditor;
@@ -29,6 +30,8 @@
     DVTObservingToken *_modelObservationToken;
     DVTNotificationToken *_findObservationToken;
     NSArray *_previousSelectedProperties;
+    NSIndexSet *_selectedPropertyIndexes;
+    NSIndexSet *_selectedEntityIndexes;
 }
 
 + (long long)version;
@@ -36,6 +39,8 @@
 + (id)keyPathsForValuesAffectingCanRemoveItems;
 + (id)keyPathsForValuesAffectingSelectedEntities;
 + (id)keyPathsForValuesAffectingModel;
+@property(copy) NSIndexSet *selectedEntityIndexes; // @synthesize selectedEntityIndexes=_selectedEntityIndexes;
+@property(copy) NSIndexSet *selectedPropertyIndexes; // @synthesize selectedPropertyIndexes=_selectedPropertyIndexes;
 @property(retain) NSArray *selectedProperties; // @synthesize selectedProperties=_selectedProperties;
 @property(retain) NSArrayController *arrayController; // @synthesize arrayController;
 - (void).cxx_destruct;
@@ -90,6 +95,7 @@
 - (void)_setupCellsAndColumns;
 
 // Remaining properties
+@property(retain) NSColor *backgroundColor;
 @property BOOL canAddItems;
 @property(readonly) BOOL canDrag;
 @property(readonly) BOOL canRemove;
@@ -102,6 +108,7 @@
 @property(readonly) unsigned long long hash;
 @property(readonly) NSImage *icon;
 @property(readonly) Class superclass;
+@property(readonly) BOOL wantsDisclosureButtonHidden;
 
 @end
 

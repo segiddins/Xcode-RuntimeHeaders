@@ -6,48 +6,54 @@
 
 #import <objc/NSObject.h>
 
-#import <DVTFoundation/DVTProvisioningProfileSource-Protocol.h>
+#import <DVTFoundation/DVTInvalidation-Protocol.h>
+#import <DVTFoundation/DVTProvisioningProfileSourceDelegate-Protocol.h>
 
-@class DVTProvisioningProfileReaper, NSArray, NSSet, NSString;
+@class DVTDelayedInvocation, DVTDispatchLock, DVTProvisioningProfileReaper, DVTProvisioningProfileSource, DVTStackBacktrace, NSMutableDictionary, NSMutableSet, NSSet, NSString;
 
-@interface DVTProvisioningProfileManager : NSObject <DVTProvisioningProfileSource>
+@interface DVTProvisioningProfileManager : NSObject <DVTInvalidation, DVTProvisioningProfileSourceDelegate>
 {
-    id _provider;
-    NSArray *_provisioningProfileSearchPaths;
+    NSMutableSet *_allProfiles;
+    NSMutableDictionary *_uuidToProfileMap;
+    DVTDispatchLock *_profilesLock;
+    DVTDelayedInvocation *_profileReaperInvocation;
+    BOOL _areProfilesLoaded;
+    DVTProvisioningProfileSource *_source;
     DVTProvisioningProfileReaper *_provisioningProfileReaper;
 }
 
-+ (id)keyPathsForValuesAffectingExpiringProfiles;
-+ (id)keyPathsForValuesAffectingAllProfiles;
-+ (id)keyPathsForValuesAffectingAreProfilesLoaded;
-+ (id)managerWithProvisioningProfileSearchPaths:(id)arg1;
++ (id)managerWithProvisioningProfileSource:(id)arg1;
 + (id)defaultManager;
 + (id)logAspect;
++ (void)initialize;
 @property(readonly) DVTProvisioningProfileReaper *provisioningProfileReaper; // @synthesize provisioningProfileReaper=_provisioningProfileReaper;
-@property(readonly) NSArray *provisioningProfileSearchPaths; // @synthesize provisioningProfileSearchPaths=_provisioningProfileSearchPaths;
+@property(nonatomic) BOOL areProfilesLoaded; // @synthesize areProfilesLoaded=_areProfilesLoaded;
+@property(retain, nonatomic) DVTProvisioningProfileSource *source; // @synthesize source=_source;
 - (void).cxx_destruct;
-- (void)installHostProfiles:(id)arg1 callback:(CDUnknownBlockType)arg2;
-- (id)profileWithData:(id)arg1 error:(id *)arg2;
+- (void)provisioningProfileSource:(id)arg1 didRemoveProfiles:(id)arg2;
+- (void)provisioningProfileSource:(id)arg1 didAddProfiles:(id)arg2;
+- (void)_addProfiles:(id)arg1 invalidateCaches:(BOOL)arg2 callback:(CDUnknownBlockType)arg3;
+- (void)uninstallProfiles:(id)arg1 callback:(CDUnknownBlockType)arg2;
+- (void)installProfiles:(id)arg1 callback:(CDUnknownBlockType)arg2;
+- (id)profileWithData:(id)arg1 platform:(id)arg2 error:(id *)arg3;
 - (id)profileWithURL:(id)arg1 error:(id *)arg2;
-@property(readonly) id provider; // @synthesize provider=_provider;
-- (id)profilesMatchingApplicationID:(id)arg1;
 - (id)profileMatchingUUID:(id)arg1;
 - (id)profilesMatchingPredicate:(id)arg1;
-@property(readonly) NSSet *allUsableProfiles;
-- (BOOL)isProfileExpiringWithCodeSigningIdentity:(id)arg1 profileName:(id *)arg2;
-- (id)expiringProfilesInExpansionContext:(id)arg1;
-@property(readonly) NSSet *expiringProfiles;
-@property(readonly) NSSet *allProfiles;
-@property(readonly) BOOL areProfilesLoaded;
-- (id)allProfiles_sync;
-- (void)forceProfileLoading;
-- (id)init;
+@property(readonly) NSSet *provisioningProfiles;
+- (void)_delayedInvokeProfileReaper;
+- (void)_delayedPostProfilesChangedBroadcast;
+- (void)forceProfileLoadingWithCallback:(CDUnknownBlockType)arg1;
+- (id)initWithSource:(id)arg1;
+- (void)primitiveInvalidate;
 
 // Remaining properties
+@property(retain) DVTStackBacktrace *creationBacktrace;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
+@property(readonly) DVTStackBacktrace *invalidationBacktrace;
 @property(readonly) Class superclass;
+@property(readonly, nonatomic, getter=isValid) BOOL valid;
 
 @end
 

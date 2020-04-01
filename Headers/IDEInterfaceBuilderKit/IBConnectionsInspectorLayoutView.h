@@ -4,22 +4,25 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <DVTKit/DVTLayoutView_ML.h>
+#import <DVTStructuredLayoutKit/DVTLayoutView_ML.h>
 
 @class DVTBorderedView, DVTColoredSpinner, NSScrollView;
 
 @interface IBConnectionsInspectorLayoutView : DVTLayoutView_ML
 {
-    BOOL showingProgressArea;
-    NSScrollView *scrollView;
-    DVTBorderedView *statusAreaView;
-    DVTColoredSpinner *spinner;
+    BOOL _showingProgressArea;
+    NSScrollView *_scrollView;
+    DVTBorderedView *_statusAreaView;
+    DVTColoredSpinner *_spinner;
 }
 
+@property(retain) DVTColoredSpinner *spinner; // @synthesize spinner=_spinner;
+@property(retain) DVTBorderedView *statusAreaView; // @synthesize statusAreaView=_statusAreaView;
+@property(retain) NSScrollView *scrollView; // @synthesize scrollView=_scrollView;
+@property(nonatomic) BOOL showingProgressArea; // @synthesize showingProgressArea=_showingProgressArea;
 - (void).cxx_destruct;
 - (void)layoutBottomUp;
 - (void)layoutTopDown;
-@property BOOL showingProgressArea; // @synthesize showingProgressArea;
 - (void)awakeFromNib;
 
 @end

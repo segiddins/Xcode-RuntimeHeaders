@@ -6,19 +6,24 @@
 
 #import <objc/NSObject.h>
 
-@class DVTBuildVersion, DVTToolsVersion, DVTVersion, NSNumber;
+@class DVTBuildVersion, DVTFilePath, DVTToolsVersion, DVTVersion, NSNumber;
 
 @interface DVTToolsInfo : NSObject
 {
     NSNumber *_isAppleInternal;
     DVTBuildVersion *_toolsBuildVersion;
+    DVTFilePath *_xcodeFilePath;
 }
 
++ (id)toolsInfoWithXcodeFilePath:(id)arg1 error:(id *)arg2;
 + (id)toolsInfo;
 + (void)initialize;
 - (void).cxx_destruct;
+- (BOOL)_isAppleInternal;
+- (BOOL)_hasDVTFoundationFramework;
 @property(readonly) BOOL hasUnlimitedPower;
 @property(readonly) BOOL isRuntimeOSAppleInternal;
+@property(readonly) DVTVersion *runtimeDarwinVersion;
 @property(readonly) DVTVersion *runtimeOSVersion;
 @property(readonly) unsigned long long runtimeOSActualVersion;
 @property(readonly) unsigned long long runtimeOSMajorVersion;
@@ -29,7 +34,9 @@
 @property(readonly) BOOL isBeta;
 @property(readonly) DVTBuildVersion *toolsBuildVersion;
 @property(readonly) DVTToolsVersion *toolsVersion;
+@property(readonly) BOOL hasDVTFoundationFramework;
 @property(readonly) BOOL isAppleInternal;
+- (id)initWithXcodeFilePath:(id)arg1 error:(id *)arg2;
 
 @end
 

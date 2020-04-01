@@ -27,6 +27,7 @@
 - (id)initWithDocumentURL:(id)arg1 member:(id)arg2;
 @property(readonly, nonatomic, getter=isGroupLocation) BOOL groupLocation;
 - (id)locatedMemberWithScene:(id)arg1;
+- (id)locatedMemberWithSceneFromModelPath:(id)arg1;
 
 @end
 

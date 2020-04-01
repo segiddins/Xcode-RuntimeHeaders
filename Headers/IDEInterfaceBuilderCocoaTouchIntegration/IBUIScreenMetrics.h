@@ -40,8 +40,8 @@
 - (id)migratableSimulatedDestinationMetricsOrNil;
 - (id)fixedSizeMetricsForScreenMetrics:(id)arg1 orientationMetrics:(id)arg2 freeformSize:(struct CGSize)arg3;
 - (BOOL)supportsMultipleOrientations;
-- (BOOL)supportsOrientation:(int)arg1;
-- (struct CGSize)sizeForOrientation:(int)arg1;
+- (BOOL)supportsOrientation:(long long)arg1;
+- (struct CGSize)sizeForOrientation:(long long)arg1;
 - (id)inheritableSplitViewMasterSizeMetricsForPlatform:(id)arg1;
 - (id)inheritableSplitViewDetailSizeMetrics;
 - (id)inheritableModalPageSheetSizeMetrics;

@@ -9,15 +9,27 @@
 #import <IDESceneKitEditor/NSOutlineViewDataSource-Protocol.h>
 #import <IDESceneKitEditor/NSOutlineViewDelegate-Protocol.h>
 
-@class NSString;
+@class DVTObservingToken, NSMutableArray, NSString, SCNMaterial;
 
 @interface SKEMaterialPropertiesInspector : SKEInspectorViewController <NSOutlineViewDataSource, NSOutlineViewDelegate>
 {
+    SCNMaterial *_inspectedMaterial;
+    id observedArrayController;
+    DVTObservingToken *_materialPropertiesObservingToken;
+    DVTObservingToken *_lightingModelObservingToken;
+    NSMutableArray *_contentsObservingTokens;
 }
 
-+ (id)sliverElementsForSlotName:(id)arg1 extended:(BOOL)arg2;
+- (void).cxx_destruct;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
+- (void)didSetInspectedObjects:(id)arg1;
+- (id)sliverElementsForSlotName:(id)arg1 removable:(BOOL)arg2;
 - (id)sliceElement;
+- (void)updateInspectedMaterial;
 - (id)material;
+- (void)viewDidInstall;
+- (void)resetObserving;
+- (void)cancelObservingOfMaterialProperties;
 - (void)setContent:(id)arg1;
 - (void)loadView;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;

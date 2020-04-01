@@ -6,14 +6,15 @@
 
 #import <DVTInstrumentsFoundation/DTTapMessage.h>
 
-#import <DVTInstrumentsFoundation/NSCoding-Protocol.h>
+#import <DVTInstrumentsFoundation/NSSecureCoding-Protocol.h>
 
 @class NSDictionary;
 
-@interface DTKTraceTapMessage : DTTapMessage <NSCoding>
+@interface DTKTraceTapMessage : DTTapMessage <NSSecureCoding>
 {
 }
 
++ (BOOL)supportsSecureCoding;
 @property(copy, nonatomic) NSDictionary *triggerMetadata;
 @property(nonatomic) unsigned long long recordCount;
 @property(nonatomic) unsigned long long logicalProcessorCore;

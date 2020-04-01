@@ -6,9 +6,11 @@
 
 #import <DVTKit/DVTClickableLayer.h>
 
-@class DVTTextLayer;
+#import <IDEKit/IDEActivityThemeableLayer-Protocol.h>
 
-@interface IDEActivityMultiActionIndicatorLayer : DVTClickableLayer
+@class DVTTextLayer, NSString;
+
+@interface IDEActivityMultiActionIndicatorLayer : DVTClickableLayer <IDEActivityThemeableLayer>
 {
     DVTTextLayer *_textLayer;
     long long _count;
@@ -20,6 +22,7 @@
 - (void).cxx_destruct;
 - (id)accessibilityAttributeValue:(id)arg1;
 - (id)accessibilityAttributeNames;
+- (void)updateTheme;
 - (void)_setAnimatedHidden:(BOOL)arg1;
 - (void)layoutSublayers;
 - (void)sizeToFit;
@@ -30,6 +33,12 @@
 - (id)attributedStringValue;
 - (id)textAttributes;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

@@ -6,28 +6,33 @@
 
 #import <IDEKit/IDEDistributionStepViewController.h>
 
-@class DVTStackView_AppKitAutolayout, NSArray;
+@class DVTStackView_AppKitAutolayout, NSArray, NSLayoutConstraint;
 
 @interface IDEDistributionOptionsStepViewController : IDEDistributionStepViewController
 {
     BOOL canGoNext;
+    BOOL _loading;
     NSArray *_optionsViewControllers;
     DVTStackView_AppKitAutolayout *_optionsStackView;
+    NSLayoutConstraint *_heightConstraint;
 }
 
 + (BOOL)skipStepForContext:(id)arg1 assistantDirection:(int)arg2;
++ (id)keyPathsForValuesAffectingCanGoPrevious;
+@property(nonatomic) BOOL loading; // @synthesize loading=_loading;
+@property(retain, nonatomic) NSLayoutConstraint *heightConstraint; // @synthesize heightConstraint=_heightConstraint;
 @property(retain, nonatomic) DVTStackView_AppKitAutolayout *optionsStackView; // @synthesize optionsStackView=_optionsStackView;
 @property(retain, nonatomic) NSArray *optionsViewControllers; // @synthesize optionsViewControllers=_optionsViewControllers;
-@property BOOL canGoNext; // @synthesize canGoNext;
+@property(nonatomic) BOOL canGoNext; // @synthesize canGoNext;
 - (void).cxx_destruct;
+- (id)helpID;
 - (void)willGoNext;
-- (void)viewDidInstall;
-- (id)providedOutputContextPropertyNames;
-- (id)requiredInputContextPropertyNames;
 - (id)title;
 - (id)nibName;
 - (void)primitiveInvalidate;
+- (BOOL)canGoPrevious;
 - (void)_updateCanGoNext;
+- (void)viewDidLoad;
 - (id)initWithContext:(id)arg1 assistantWindowController:(id)arg2;
 
 @end

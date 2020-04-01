@@ -10,7 +10,6 @@
 
 @class NSString, NSValue;
 
-__attribute__((visibility("hidden")))
 @interface LLDBRPCDebugger : NSObject <DBGSBDebugger>
 {
     struct SBDebugger {
@@ -22,12 +21,15 @@ __attribute__((visibility("hidden")))
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (void)SetUseColor:(_Bool)arg1;
 - (const char *)GetPrompt;
 - (unsigned int)GetNumTargets;
 - (void)HandleCommand:(const char *)arg1;
 - (_Bool)SetCurrentPlatformSDKRoot:(const char *)arg1;
 - (void)RunCommandInterpreter:(_Bool)arg1 spawnThread:(_Bool)arg2;
 - (void)Destroy;
+- (void)SkipAppInitFiles:(BOOL)arg1;
+- (void)SkipLLDBInitFiles:(BOOL)arg1;
 - (_Bool)IsValid;
 - (int)SetIOFile:(const char *)arg1;
 - (id)GetCommandInterpreter;
@@ -51,6 +53,7 @@ __attribute__((visibility("hidden")))
 - (id)CreateAttachInfoWithPath:(const char *)arg1 wait_for:(_Bool)arg2 async:(_Bool)arg3;
 - (id)CreateLaunchInfoWithArgv:(const char **)arg1;
 - (id)CreateError;
+- (_Bool)HasCrashedWithStatus:(int *)arg1 signal:(int *)arg2;
 - (_Bool)IsSameConnection:(struct Connection)arg1;
 - (_Bool)RemoveServerExitedCallback:(CDUnknownFunctionPointerType)arg1 baton:(void *)arg2;
 - (_Bool)AddServerExitedCallback:(CDUnknownFunctionPointerType)arg1 baton:(void *)arg2;

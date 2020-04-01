@@ -6,16 +6,18 @@
 
 #import <IDEFoundation/IDESourceKitContainerSymbol.h>
 
-@interface IDESourceKitClassSymbol : IDESourceKitContainerSymbol
+#import <IDEFoundation/IDEIndexClassSymbol-Protocol.h>
+
+@class DVTDocumentLocation, DVTFilePath, DVTSourceCodeLanguage, DVTSourceCodeSymbolKind, DVTSymbol, NSString, NSURL;
+
+@interface IDESourceKitClassSymbol : IDESourceKitContainerSymbol <IDEIndexClassSymbol>
 {
 }
 
 - (BOOL)isKindOfClass:(Class)arg1;
-- (id)allInterfaces;
 - (id)interfaces;
 - (id)allProtocols;
 - (id)protocols;
-- (id)allOccurrencesOfMembers:(id)arg1;
 - (id)allSubclasses;
 - (id)subclasses;
 - (id)allSuperclasses;
@@ -34,6 +36,26 @@
 - (id)classVariables;
 - (id)instanceMethods;
 - (id)classMethods;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) DVTFilePath *file;
+@property(readonly) BOOL hasOccurrence;
+@property(readonly) unsigned long long hash;
+@property(readonly) DVTSymbol *identifier;
+@property(readonly) BOOL isSystem;
+@property(readonly) BOOL isVirtual;
+@property(readonly) DVTDocumentLocation *location;
+@property(readonly) NSString *moduleName;
+@property(readonly) NSURL *moduleURL;
+@property(readonly) NSString *name;
+@property(readonly) BOOL navigationPrefersDefinition;
+@property(readonly) NSString *resolution;
+@property(readonly) long long role;
+@property(readonly) Class superclass;
+@property(readonly) DVTSourceCodeSymbolKind *symbolKind;
+@property(readonly) DVTSourceCodeLanguage *symbolLanguage;
 
 @end
 

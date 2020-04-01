@@ -7,25 +7,27 @@
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBUIStoryboardSegueTemplate.h>
 
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBDocumentArchiving-Protocol.h>
-#import <IDEInterfaceBuilderCocoaTouchIntegration/NSCoding-Protocol.h>
 
 @class NSString;
 
-@interface IBUIStoryboardPresentationSegueTemplate : IBUIStoryboardSegueTemplate <NSCoding, IBDocumentArchiving>
+@interface IBUIStoryboardPresentationSegueTemplate : IBUIStoryboardSegueTemplate <IBDocumentArchiving>
 {
     BOOL _useDefaultModalPresentationStyle;
     BOOL _useDefaultModalTransitionStyle;
-    int _modalPresentationStyle;
-    int _modalTransitionStyle;
+    long long _modalPresentationStyle;
+    long long _modalTransitionStyle;
 }
 
-+ (id)segueTemplateWithIdentifier:(id)arg1 trigger:(id)arg2 segueClassName:(id)arg3 destinationControllerIdentifier:(id)arg4 modalPresentationStyleOrNilForDefault:(id)arg5 modalTransitionStyleOrNilForDefault:(id)arg6 animates:(BOOL)arg7;
-@property(nonatomic) int modalTransitionStyle; // @synthesize modalTransitionStyle=_modalTransitionStyle;
-@property(nonatomic) int modalPresentationStyle; // @synthesize modalPresentationStyle=_modalPresentationStyle;
++ (id)segueTemplateWithIdentifier:(id)arg1 trigger:(id)arg2 segueClassName:(id)arg3 destinationControllerIdentifier:(id)arg4 destinationControllerCreationSelectorName:(id)arg5 modalPresentationStyleOrNilForDefault:(id)arg6 modalTransitionStyleOrNilForDefault:(id)arg7 animates:(BOOL)arg8;
+@property(nonatomic) long long modalTransitionStyle; // @synthesize modalTransitionStyle=_modalTransitionStyle;
+@property(nonatomic) long long modalPresentationStyle; // @synthesize modalPresentationStyle=_modalPresentationStyle;
 @property(nonatomic) BOOL useDefaultModalTransitionStyle; // @synthesize useDefaultModalTransitionStyle=_useDefaultModalTransitionStyle;
 @property(nonatomic) BOOL useDefaultModalPresentationStyle; // @synthesize useDefaultModalPresentationStyle=_useDefaultModalPresentationStyle;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (void)ibPrepareToBackwardsDeployToOSVersion:(id)arg1 inDocument:(id)arg2;
+- (void)ibPopulateAdditionalTargetOSVersions:(id)arg1 forCompilingDocument:(id)arg2;
+- (id)ibLocalAttributeKeyPaths;
 - (void)unarchiveWithDocumentUnarchiver:(id)arg1;
 - (void)archiveWithDocumentArchiver:(id)arg1;
 

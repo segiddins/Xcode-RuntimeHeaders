@@ -19,6 +19,8 @@
     NSString *_filterString;
     BOOL _filterCallbackIsPending;
     BOOL _inFilterMethod;
+    BOOL _isScrollSyncing;
+    NSView *_clipView;
     id <GTFActionOverviewViewControllerDelegate> _delegate;
     GTFActionSplitView *_actionSplitView;
     GTFActionScrollView *_actionTimelineScrollView;
@@ -77,6 +79,8 @@
 - (void)viewWillDisappear;
 - (void)viewWillAppear;
 - (void)viewDidLoad;
+- (void)dealloc;
+- (void)scrollFrameDidChange:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -6,9 +6,6 @@
 
 #import <DevToolsCore/NSObject-Protocol.h>
 
-@class XCBuildInfo;
-
 @protocol XCBuildInfoManagers <NSObject>
-- (void)noteBuildInfoDidChange:(XCBuildInfo *)arg1;
 @end
 

@@ -11,6 +11,7 @@
 @protocol DVTBasicDeviceUI <DVTBasicDevice>
 @property(readonly) int deviceWindowCategory;
 @property(readonly) BOOL showCompanionUI;
+@property(readonly) NSImage *proxyDeviceImage;
 @property(readonly) NSImage *image;
 @property(readonly) NSArray *deviceSummaryPropertyDictionaries;
 @end

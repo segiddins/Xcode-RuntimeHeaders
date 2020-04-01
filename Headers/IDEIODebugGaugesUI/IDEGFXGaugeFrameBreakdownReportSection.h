@@ -8,7 +8,7 @@
 
 #import <IDEIODebugGaugesUI/DTTimelineGraphDelegate-Protocol.h>
 
-@class DTTimelineGraph, IDEGFXGaugeDetailsPopoverViewController, IDEGFXGaugeFrameBreakdownTimelineDecorator, IDEGFXGaugeGPUFrameTimelineDecorator, IDEGFXGaugeVerticalAxisLabel, NSArray, NSString, NSTextField, NSView;
+@class DTTimelineDecoratedPlane, DTTimelineGraph, IDEGFXGaugeGPUFrameTimelineDecorator, IDEGFXGaugeVerticalAxisLabel, IDEGaugeStackedBarDetailsLabelViewController, IDEGaugeStackedBarDetailsPopoverController, IDETimelineGraphStackedBarDecorator, NSArray, NSMutableArray, NSString, NSTextField, NSView;
 
 @interface IDEGFXGaugeFrameBreakdownReportSection : DVTViewController <DTTimelineGraphDelegate>
 {
@@ -18,10 +18,14 @@
     NSTextField *_gpuTitleView;
     NSArray *_titles;
     NSArray *_colors;
-    IDEGFXGaugeFrameBreakdownTimelineDecorator *_cpuDecorator;
+    IDETimelineGraphStackedBarDecorator *_cpuDecorator;
     IDEGFXGaugeGPUFrameTimelineDecorator *_gpuDecorator;
     unsigned long long _lastDuration;
-    IDEGFXGaugeDetailsPopoverViewController *_detailsPopoverController;
+    DTTimelineDecoratedPlane *_rulerPlane;
+    IDEGaugeStackedBarDetailsPopoverController *_detailsPopoverController;
+    IDEGaugeStackedBarDetailsLabelViewController *_cpuLabel;
+    IDEGaugeStackedBarDetailsLabelViewController *_gpuLabel;
+    NSMutableArray *_breakdownLabels;
     BOOL _isActive;
     unsigned long long _targetFrametime;
     BOOL _interactionEnabled;
@@ -41,7 +45,7 @@
 - (void)inputHandlerForGraph:(id)arg1 requestsCurrentInspectionTime:(unsigned long long)arg2;
 - (void)inputHandlerRequestsToClearSelectedTimeRangeForGraph:(id)arg1;
 - (void)inputHandlerDidFinishSelectionForGraph:(id)arg1;
-- (void)inputHandlerForGraph:(id)arg1 requestsSelectedTimeRange:(struct XRTimeRange)arg2;
+- (void)inputHandlerForGraph:(id)arg1 requestsSelectedTimeRange:(struct XRTimeRange)arg2 withEventNanosecondOffset:(long long)arg3;
 - (void)inputHandlerForGraph:(id)arg1 requestYOffset:(double)arg2;
 - (void)inputHandlerForGraph:(id)arg1 requestsNanosecondOffset:(long long)arg2;
 - (void)_scrollToEndOfTimeline;
@@ -49,7 +53,9 @@
 - (void)primitiveInvalidate;
 - (void)viewDidDisappear;
 - (void)viewDidAppear;
+- (void)viewDidInstall;
 - (void)viewDidLoad;
+- (void)_setupPopover;
 - (id)initWithFrameIntervalTitles:(id)arg1 andColors:(id)arg2 andTargetFramerate:(double)arg3;
 
 // Remaining properties

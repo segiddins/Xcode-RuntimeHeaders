@@ -33,6 +33,7 @@ __attribute__((visibility("hidden")))
 - (void)_allocateMessageBuffer;
 - (void)_unpackAndDispatchMessage;
 - (long long)_syncTmuToHeader:(struct dy_transport_message_unpack_s *)arg1 ioBlock:(CDUnknownBlockType)arg2;
+- (void)_waitEAGAIN;
 - (long long)_write:(const void *)arg1 size:(unsigned long long)arg2;
 - (long long)_read:(void *)arg1 size:(unsigned long long)arg2;
 - (void)_scheduleInvalidation:(id)arg1;

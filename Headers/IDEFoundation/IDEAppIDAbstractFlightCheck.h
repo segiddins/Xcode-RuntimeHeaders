@@ -8,12 +8,13 @@
 
 #import <IDEFoundation/IDEFlightChecking-Protocol.h>
 
-@class DVTStackBacktrace, IDEAppIDFeatureCoordinator, NSError, NSString;
+@class DVTStackBacktrace, NSError, NSString;
+@protocol IDEAppIDFeatureCoordination;
 
 @interface IDEAppIDAbstractFlightCheck : NSObject <IDEFlightChecking>
 {
     BOOL _failed;
-    IDEAppIDFeatureCoordinator *_coordinator;
+    NSObject<IDEAppIDFeatureCoordination> *_coordinator;
     NSError *_resolutionError;
 }
 
@@ -23,13 +24,13 @@
 + (void)initialize;
 @property(retain, nonatomic) NSError *resolutionError; // @synthesize resolutionError=_resolutionError;
 @property(nonatomic) BOOL failed; // @synthesize failed=_failed;
-@property(retain, nonatomic) IDEAppIDFeatureCoordinator *coordinator; // @synthesize coordinator=_coordinator;
+@property(retain, nonatomic) NSObject<IDEAppIDFeatureCoordination> *coordinator; // @synthesize coordinator=_coordinator;
 - (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *resolvingTitle;
 @property(readonly, copy, nonatomic) NSString *pastTitle;
 @property(readonly, copy, nonatomic) NSString *title;
 - (void)validate;
-- (void)unresolveWithContext:(id)arg1;
+- (void)unresolve;
 - (void)resolveWithContext:(id)arg1;
 - (void)revert;
 @property(readonly, nonatomic, getter=isAutomaticallyResolvable) BOOL automaticallyResolvable;

@@ -6,15 +6,17 @@
 
 #import <Xcode3UI/NSObject-Protocol.h>
 
-@class NSImage, NSString;
+@class NSColor, NSImage, NSString;
 
 @protocol IDECapsuleViewController <NSObject>
 @property(readonly, copy) NSString *titleForDisplay;
 
 @optional
+@property(retain) NSColor *backgroundColor;
 @property(readonly) BOOL disclosedByDefault;
 @property(readonly, copy) NSString *footerLabel;
 @property(readonly) BOOL canDrag;
+@property(readonly) BOOL wantsDisclosureButtonHidden;
 @property(readonly) BOOL canUndisclose;
 @property BOOL canRemoveItems;
 @property BOOL canAddItems;

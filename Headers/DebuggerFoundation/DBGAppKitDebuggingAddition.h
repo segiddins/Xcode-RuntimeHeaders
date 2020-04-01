@@ -7,29 +7,50 @@
 #import <objc/NSObject.h>
 
 #import <DebuggerFoundation/DBGKitDebuggingAddition-Protocol.h>
+#import <DebuggerFoundation/IDEDebugOverrideDelegate-Protocol.h>
 
-@class DVTStackBacktrace, IDELaunchSession, NSString;
+@class DVTStackBacktrace, IDELaunchSession, NSArray, NSMutableDictionary, NSString;
 
-@interface DBGAppKitDebuggingAddition : NSObject <DBGKitDebuggingAddition>
+@interface DBGAppKitDebuggingAddition : NSObject <IDEDebugOverrideDelegate, DBGKitDebuggingAddition>
 {
     BOOL _showsFramesOfAllViews;
     BOOL _showsAlignmentRectanglesOfAllViews;
     BOOL _flashesDrawingOfAllViews;
     BOOL _showsResponsiveScrollingStatusOfAllViews;
+    unsigned long long _systemAppearanceTestingOverride;
     IDELaunchSession *_launchSession;
+    unsigned long long _numberOfEnabledDebugOverrides;
+    BOOL _isEvaluatingExpressions;
+    NSArray *_debugOverrides;
     NSString *_identifier;
+    NSMutableDictionary *_scheduledExpressions;
 }
 
 + (BOOL)shouldInstantiateInLaunchSession:(id)arg1;
 + (void)initialize;
+@property(nonatomic) BOOL isEvaluatingExpressions; // @synthesize isEvaluatingExpressions=_isEvaluatingExpressions;
+@property(retain, nonatomic) NSMutableDictionary *scheduledExpressions; // @synthesize scheduledExpressions=_scheduledExpressions;
 @property(retain) NSString *identifier; // @synthesize identifier=_identifier;
 @property(retain, nonatomic) IDELaunchSession *launchSession; // @synthesize launchSession=_launchSession;
+@property(retain, nonatomic) NSArray *debugOverrides; // @synthesize debugOverrides=_debugOverrides;
+@property(nonatomic) unsigned long long systemAppearanceTestingOverride; // @synthesize systemAppearanceTestingOverride=_systemAppearanceTestingOverride;
 @property(nonatomic) BOOL showsResponsiveScrollingStatusOfAllViews; // @synthesize showsResponsiveScrollingStatusOfAllViews=_showsResponsiveScrollingStatusOfAllViews;
 @property(nonatomic) BOOL flashesDrawingOfAllViews; // @synthesize flashesDrawingOfAllViews=_flashesDrawingOfAllViews;
 @property(nonatomic) BOOL showsAlignmentRectanglesOfAllViews; // @synthesize showsAlignmentRectanglesOfAllViews=_showsAlignmentRectanglesOfAllViews;
 @property(nonatomic) BOOL showsFramesOfAllViews; // @synthesize showsFramesOfAllViews=_showsFramesOfAllViews;
 - (void).cxx_destruct;
 - (void)primitiveInvalidate;
+- (void)_evaluateExpression:(id)arg1 retriesLeft:(long long)arg2;
+- (void)_evaluateExpression:(id)arg1;
+- (void)_evaluateScheduledExpressions;
+- (void)_scheduleExpressionEvaluationForDebugOverride:(id)arg1;
+- (void)debugOverrideDidUpdate:(id)arg1;
+- (void)disableAllDebugOverrides;
+- (void)_recalculateNumberOfEnabledDebugOverrides;
+@property(readonly, nonatomic) unsigned long long numberOfEnabledDebugOverrides;
+- (void)_loadAvailableOverrides;
+@property(readonly, nonatomic) BOOL supportsDebugOverrides;
+@property(readonly, nonatomic) BOOL supportsSystemAppearanceTestingOverrides;
 - (id)initInLaunchSession:(id)arg1 withAppDisplayName:(id)arg2 runDestination:(id)arg3 fromExtension:(id)arg4;
 
 // Remaining properties

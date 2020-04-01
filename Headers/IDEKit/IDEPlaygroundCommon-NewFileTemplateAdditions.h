@@ -6,7 +6,20 @@
 
 #import <IDEFoundation/IDEPlaygroundCommon.h>
 
-@interface IDEPlaygroundCommon (NewFileTemplateAdditions)
+#import <IDEKit/IDEStructureNavigatorMenuItemWhitelistProvider-Protocol.h>
+
+@class NSString;
+
+@interface IDEPlaygroundCommon (NewFileTemplateAdditions) <IDEStructureNavigatorMenuItemWhitelistProvider>
 - (id)ide_defaultNewFileTemplateForPath:(id)arg1;
+- (id)filterMenuWhitelistIdentifiers;
+- (id)contextualMenuWhitelistIdentifiers;
+- (id)fileNewMenuWhitelistIdentifiers;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @end
 

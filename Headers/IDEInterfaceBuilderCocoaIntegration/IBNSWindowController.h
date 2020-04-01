@@ -12,7 +12,7 @@
 
 @class NSArray, NSDictionary, NSString, NSWindowTemplate;
 
-@interface IBNSWindowController : NSObject <IBDocumentArchiving, IBPrimarySceneObject, NSCoding>
+@interface IBNSWindowController : NSObject <IBPrimarySceneObject, IBDocumentArchiving, NSCoding>
 {
     NSString *_explicitStoryboardIdentifier;
     NSDictionary *_storyboardSegueDestinationOptions;
@@ -43,8 +43,6 @@
 - (id)initWithCoder:(id)arg1;
 - (Class)classForDocumentArchiver:(id)arg1;
 - (Class)classForCoder;
-- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
-- (void)archiveWithDocumentArchiver:(id)arg1;
 - (id)ibTopLevelWindowTemplateForLayoutEngine:(id)arg1;
 - (id)ibWindowWithCopiedViewHierarchySnapshotForLayoutEngine:(id)arg1 returningAddedRepresentedConstraintsForRepresentedViews:(id *)arg2;
 - (void)ibDecodePlatformItems:(id)arg1;
@@ -52,9 +50,11 @@
 - (void)ibUnArchivePlatformItems:(id)arg1;
 - (void)ibArchivePlatformItems:(id)arg1;
 - (BOOL)ibCanRemoveChildren:(id)arg1;
-- (void)ibWarnings:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
+- (void)ibPopulateIssues:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
 - (void)ibPrepareCocoaDocumentForCompiling:(id)arg1 withContext:(id)arg2;
+@property(readonly, nonatomic) BOOL ibWantsSceneExitPlaceholder;
 - (id)ibShortDisplayName;
+- (void)ibPropagatePropertiesToCompiledSceneObject:(id)arg1;
 - (BOOL)ibIsPrimarySceneObject:(id)arg1 validSplitViewDetailWithSegue:(id)arg2;
 - (BOOL)ibIsPrimarySceneObject:(id)arg1 validSplitViewMasterWithSegue:(id)arg2;
 - (BOOL)ibIsValidPushReceiver;
@@ -78,6 +78,7 @@
 - (void)ibResizeToEffectiveSimulatedSizeForSceneTreeDragImageNode;
 - (id)ibImageForOwnedScene;
 @property(nonatomic) BOOL ibInspectedIsDesignatedEntryPoint;
+- (BOOL)ibIsUnreachableInStoryboard;
 - (void)ibPopulateChildRelationOrder:(id)arg1;
 - (void)ibRemoveChildren:(id)arg1;
 - (struct CGRect)ibRectForChild:(id)arg1 inFrameController:(id)arg2;
@@ -90,11 +91,17 @@
 - (id)ibRuntimeClassName;
 - (id)ibRelationshipSegueDescriptionForKeyPath:(id)arg1;
 - (id)ibSegueSourceToOneRelationshipKeyPaths;
+- (id)ibLocalAttributeKeyPaths;
+- (id)ibLocalChildToManyRelationshipsKeyPaths;
+- (id)ibLocalChildToOneRelationshipsKeyPaths;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
+@property(nonatomic) BOOL ibInspectedIsDesignatedMenu;
 @property(readonly) Class superclass;
 
 @end

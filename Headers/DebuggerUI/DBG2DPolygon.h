@@ -25,6 +25,7 @@
 - (id)debugQuickLookObject;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)calculateMinMax;
+- (struct CGRect)boundingRect;
 - (struct CGPoint)max;
 - (struct CGPoint)min;
 - (id)pathRepresentation;

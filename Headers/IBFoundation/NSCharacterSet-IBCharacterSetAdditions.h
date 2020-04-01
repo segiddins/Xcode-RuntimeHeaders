@@ -7,7 +7,10 @@
 #import <Foundation/NSCharacterSet.h>
 
 @interface NSCharacterSet (IBCharacterSetAdditions)
++ (id)ib_iTunesIdentifierCharacterSet;
++ (id)ib_RFC1034BundleIdentifierCharacterSet;
 + (id)ib_cExtendedIdentifierInitialCharacterSet;
 + (id)ib_cExtendedIdentifierCharacterSet;
++ (id)ibic_hexadecimalCharacterSet;
 @end
 

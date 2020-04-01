@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class NSCache, NSColor, NSFont, NSImage, NSMutableDictionary;
+@class NSAppearance, NSCache, NSColor, NSColorSpace, NSFont, NSImage, NSMutableDictionary;
 
 #pragma mark Blocks
 
@@ -12,12 +12,7 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 
 #pragma mark Named Structures
 
-struct Adder {
-    struct DecorationContainer *_field1;
-    _Bool _field2;
-    _Bool _field3;
-    struct CursorState _field4;
-};
+struct CGColor;
 
 struct CGPoint {
     double x;
@@ -34,37 +29,12 @@ struct CGSize {
     double height;
 };
 
-struct CursorState {
-    struct XRTimeRange _field1;
-    int _field2;
-    int _field3;
-    _Bool _field4;
-    unsigned long long _field5;
-    long long _field6;
-    unsigned long long _field7;
-    unsigned char _field8;
-};
-
 struct DTRealRange {
     double _field1;
     double _field2;
 };
 
-struct DTTimelineDecorationContainer {
-    _Bool _field1;
-    _Bool _field2;
-    _Bool _field3;
-    unsigned long long _field4;
-    struct deque<XRTimeRange, std::__1::allocator<XRTimeRange>> _field5;
-    struct XRTimeRange _field6;
-    struct DecorationContainer _field7;
-    struct Adder _field8;
-    struct unique_ptr<DTTimelineDecorationEnumerator, std::__1::default_delete<DTTimelineDecorationEnumerator>> _field9;
-    id _field10;
-    int _field11;
-};
-
-struct DTTimelineDecorationEnumerator;
+struct DTTimelineDecorationContainer;
 
 struct DTTimelineGraphDynamicRange {
     long long low;
@@ -77,15 +47,6 @@ struct DTTimelineRepresentativeDecoration {
     struct XRTimeRange timeRange;
     unsigned int decorationCount;
     char heterogeneousLabel;
-};
-
-struct DecorationContainer {
-    _Bool _field1;
-    _Bool _field2;
-    struct TileMetrics _field3;
-    struct StringIslandSet _field4;
-    struct PointIslandSet _field5;
-    struct IntervalIslandSet _field6;
 };
 
 struct DrawablesSettings {
@@ -107,18 +68,13 @@ struct DrawablesSettings {
         double visualSpacing;
         unsigned long long barWidth;
         double roundedRectRadius;
+        double verticalPadding;
     } interval;
 };
 
 struct DynamicRange {
     long long _low;
     long long _high;
-};
-
-struct IntervalIslandSet {
-    struct map<DTTimelineInternal::Span, std::__1::shared_ptr<DTTimelineInternal::IntervalIsland>, std::__1::less<DTTimelineInternal::Span>, std::__1::allocator<std::__1::pair<const DTTimelineInternal::Span, std::__1::shared_ptr<DTTimelineInternal::IntervalIsland>>>> _field1;
-    struct TileMetrics *_field2;
-    struct WingMetrics _field3;
 };
 
 struct LayoutRect {
@@ -135,19 +91,14 @@ struct PlaneMetrics {
     struct DynamicRange _dynamicRange;
     struct ViewMetrics _currentViewMetrics;
     double _height;
+    double _inspectionLabelCenter;
     struct DrawablesSettings _drawablesSettings;
     char _decoratesMajorMinorTicks;
     char _optionalContent;
     char _ignoresTimeBoundsCheck;
-    NSColor *_opaqueBackgroundColor;
+    struct CGColor *_opaqueBackgroundColor;
     int _serialNumber;
     double _maxStringWidthInPts;
-};
-
-struct PointIslandSet {
-    struct map<DTTimelineInternal::Span, std::__1::shared_ptr<DTTimelineInternal::PointIsland>, std::__1::less<DTTimelineInternal::Span>, std::__1::allocator<std::__1::pair<const DTTimelineInternal::Span, std::__1::shared_ptr<DTTimelineInternal::PointIsland>>>> _field1;
-    struct TileMetrics *_field2;
-    struct WingMetrics _field3;
 };
 
 struct Span {
@@ -155,16 +106,10 @@ struct Span {
     double _field2;
 };
 
-struct StringIslandSet {
-    struct map<DTTimelineInternal::Span, std::__1::shared_ptr<DTTimelineInternal::PointStringIsland>, std::__1::less<DTTimelineInternal::Span>, std::__1::allocator<std::__1::pair<const DTTimelineInternal::Span, std::__1::shared_ptr<DTTimelineInternal::PointStringIsland>>>> _field1;
-    struct TileMetrics *_field2;
-    struct WingMetrics _field3;
-    double _field4;
-};
-
 struct TileMetrics {
     struct XRTimeRange _timeRange;
     struct PlaneMetrics _planeMetrics;
+    NSAppearance *_activeAppearance;
 };
 
 struct TimelineViewContext {
@@ -176,12 +121,14 @@ struct TimelineViewContext {
     NSCache *_tileContentByIdx;
     id _cbHandler;
     NSMutableDictionary *_visibleContentByIdx;
+    unsigned long long _changeCount;
 };
 
 struct ViewMetrics {
     unsigned long long _tileWidth;
     double _tileWidthInPoints;
     double _displayScale;
+    NSColorSpace *_colorSpace;
     unsigned long long _majorTickMarkDuration;
     unsigned long long _minorTickMarkDuration;
     unsigned long long _nanosecondsPerPoint;
@@ -190,12 +137,7 @@ struct ViewMetrics {
     double _visibleHeight;
     double _yOffset;
     double _planeHandleWidth;
-};
-
-struct WingMetrics {
-    double _field1;
-    double _field2;
-    double _field3;
+    char _hasDarkBackground;
 };
 
 struct XRTimeRange {
@@ -208,11 +150,31 @@ struct _NSRange {
     unsigned long long _field2;
 };
 
-struct __hash_node<std::__1::__hash_value_type<double, NSImage *>, void *>;
+struct __hash_node_base<std::__1::__hash_node<signed char *, void *>*> {
+    struct __hash_node_base<std::__1::__hash_node<signed char *, void *>*> *__next_;
+};
 
-struct __hash_node<std::__1::__hash_value_type<int, CGRect>, void *>;
+struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<NSColor *, CGColor *>, void *>*> {
+    struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<NSColor *, CGColor *>, void *>*> *__next_;
+};
 
-struct __hash_node<std::__1::__hash_value_type<unsigned long, std::__1::tuple<NSColor *, CGPath *>>, void *>;
+struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<NSColor *, CGPath *>, void *>*> {
+    struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<NSColor *, CGPath *>, void *>*> *__next_;
+};
+
+struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<double, NSImage *>, void *>*> {
+    struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<double, NSImage *>, void *>*> *__next_;
+};
+
+struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<int, CGRect>, void *>*> {
+    struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<int, CGRect>, void *>*> *_field1;
+};
+
+struct __map_iterator<std::__1::__tree_iterator<std::__1::__value_type<XRTimeRange, DTTimelineInspectionDecoration *>, std::__1::__tree_node<std::__1::__value_type<XRTimeRange, DTTimelineInspectionDecoration *>, void *>*, long>> {
+    struct __tree_iterator<std::__1::__value_type<XRTimeRange, DTTimelineInspectionDecoration *>, std::__1::__tree_node<std::__1::__value_type<XRTimeRange, DTTimelineInspectionDecoration *>, void *>*, long> {
+        struct __tree_end_node<std::__1::__tree_node_base<void *>*> *__ptr_;
+    } __i_;
+};
 
 struct __shared_weak_count;
 
@@ -220,65 +182,26 @@ struct __tree_end_node<std::__1::__tree_node_base<void *>*> {
     struct __tree_node_base<void *> *__left_;
 };
 
-struct deque<XRTimeRange, std::__1::allocator<XRTimeRange>> {
-    struct __split_buffer<XRTimeRange *, std::__1::allocator<XRTimeRange *>> {
-        struct XRTimeRange **_field1;
-        struct XRTimeRange **_field2;
-        struct XRTimeRange **_field3;
-        struct __compressed_pair<XRTimeRange **, std::__1::allocator<XRTimeRange *>> {
-            struct XRTimeRange **_field1;
-        } _field4;
-    } _field1;
-    unsigned long long _field2;
-    struct __compressed_pair<unsigned long, std::__1::allocator<XRTimeRange>> {
-        unsigned long long _field1;
-    } _field3;
-};
-
-struct map<DTTimelineInternal::Span, std::__1::shared_ptr<DTTimelineInternal::IntervalIsland>, std::__1::less<DTTimelineInternal::Span>, std::__1::allocator<std::__1::pair<const DTTimelineInternal::Span, std::__1::shared_ptr<DTTimelineInternal::IntervalIsland>>>> {
-    struct __tree<std::__1::__value_type<DTTimelineInternal::Span, std::__1::shared_ptr<DTTimelineInternal::IntervalIsland>>, std::__1::__map_value_compare<DTTimelineInternal::Span, std::__1::__value_type<DTTimelineInternal::Span, std::__1::shared_ptr<DTTimelineInternal::IntervalIsland>>, std::__1::less<DTTimelineInternal::Span>, true>, std::__1::allocator<std::__1::__value_type<DTTimelineInternal::Span, std::__1::shared_ptr<DTTimelineInternal::IntervalIsland>>>> {
-        struct __tree_node<std::__1::__value_type<DTTimelineInternal::Span, std::__1::shared_ptr<DTTimelineInternal::IntervalIsland>>, void *> *_field1;
-        struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<DTTimelineInternal::Span, std::__1::shared_ptr<DTTimelineInternal::IntervalIsland>>, void *>>> {
-            struct __tree_end_node<std::__1::__tree_node_base<void *>*> _field1;
-        } _field2;
-        struct __compressed_pair<unsigned long, std::__1::__map_value_compare<DTTimelineInternal::Span, std::__1::__value_type<DTTimelineInternal::Span, std::__1::shared_ptr<DTTimelineInternal::IntervalIsland>>, std::__1::less<DTTimelineInternal::Span>, true>> {
-            unsigned long long _field1;
-        } _field3;
-    } _field1;
-};
-
-struct map<DTTimelineInternal::Span, std::__1::shared_ptr<DTTimelineInternal::PointIsland>, std::__1::less<DTTimelineInternal::Span>, std::__1::allocator<std::__1::pair<const DTTimelineInternal::Span, std::__1::shared_ptr<DTTimelineInternal::PointIsland>>>> {
-    struct __tree<std::__1::__value_type<DTTimelineInternal::Span, std::__1::shared_ptr<DTTimelineInternal::PointIsland>>, std::__1::__map_value_compare<DTTimelineInternal::Span, std::__1::__value_type<DTTimelineInternal::Span, std::__1::shared_ptr<DTTimelineInternal::PointIsland>>, std::__1::less<DTTimelineInternal::Span>, true>, std::__1::allocator<std::__1::__value_type<DTTimelineInternal::Span, std::__1::shared_ptr<DTTimelineInternal::PointIsland>>>> {
-        struct __tree_node<std::__1::__value_type<DTTimelineInternal::Span, std::__1::shared_ptr<DTTimelineInternal::PointIsland>>, void *> *_field1;
-        struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<DTTimelineInternal::Span, std::__1::shared_ptr<DTTimelineInternal::PointIsland>>, void *>>> {
-            struct __tree_end_node<std::__1::__tree_node_base<void *>*> _field1;
-        } _field2;
-        struct __compressed_pair<unsigned long, std::__1::__map_value_compare<DTTimelineInternal::Span, std::__1::__value_type<DTTimelineInternal::Span, std::__1::shared_ptr<DTTimelineInternal::PointIsland>>, std::__1::less<DTTimelineInternal::Span>, true>> {
-            unsigned long long _field1;
-        } _field3;
-    } _field1;
-};
-
-struct map<DTTimelineInternal::Span, std::__1::shared_ptr<DTTimelineInternal::PointStringIsland>, std::__1::less<DTTimelineInternal::Span>, std::__1::allocator<std::__1::pair<const DTTimelineInternal::Span, std::__1::shared_ptr<DTTimelineInternal::PointStringIsland>>>> {
-    struct __tree<std::__1::__value_type<DTTimelineInternal::Span, std::__1::shared_ptr<DTTimelineInternal::PointStringIsland>>, std::__1::__map_value_compare<DTTimelineInternal::Span, std::__1::__value_type<DTTimelineInternal::Span, std::__1::shared_ptr<DTTimelineInternal::PointStringIsland>>, std::__1::less<DTTimelineInternal::Span>, true>, std::__1::allocator<std::__1::__value_type<DTTimelineInternal::Span, std::__1::shared_ptr<DTTimelineInternal::PointStringIsland>>>> {
-        struct __tree_node<std::__1::__value_type<DTTimelineInternal::Span, std::__1::shared_ptr<DTTimelineInternal::PointStringIsland>>, void *> *_field1;
-        struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<DTTimelineInternal::Span, std::__1::shared_ptr<DTTimelineInternal::PointStringIsland>>, void *>>> {
-            struct __tree_end_node<std::__1::__tree_node_base<void *>*> _field1;
-        } _field2;
-        struct __compressed_pair<unsigned long, std::__1::__map_value_compare<DTTimelineInternal::Span, std::__1::__value_type<DTTimelineInternal::Span, std::__1::shared_ptr<DTTimelineInternal::PointStringIsland>>, std::__1::less<DTTimelineInternal::Span>, true>> {
-            unsigned long long _field1;
-        } _field3;
-    } _field1;
-};
-
 struct map<XRTimeRange, DTTimelineInspectionDecoration *, std::__1::less<XRTimeRange>, std::__1::allocator<std::__1::pair<const XRTimeRange, DTTimelineInspectionDecoration *>>> {
     struct __tree<std::__1::__value_type<XRTimeRange, DTTimelineInspectionDecoration *>, std::__1::__map_value_compare<XRTimeRange, std::__1::__value_type<XRTimeRange, DTTimelineInspectionDecoration *>, std::__1::less<XRTimeRange>, true>, std::__1::allocator<std::__1::__value_type<XRTimeRange, DTTimelineInspectionDecoration *>>> {
-        struct __tree_node<std::__1::__value_type<XRTimeRange, DTTimelineInspectionDecoration *>, void *> *__begin_node_;
+        struct __tree_end_node<std::__1::__tree_node_base<void *>*> *__begin_node_;
         struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<XRTimeRange, DTTimelineInspectionDecoration *>, void *>>> {
-            struct __tree_end_node<std::__1::__tree_node_base<void *>*> __first_;
+            struct __tree_end_node<std::__1::__tree_node_base<void *>*> __value_;
         } __pair1_;
         struct __compressed_pair<unsigned long, std::__1::__map_value_compare<XRTimeRange, std::__1::__value_type<XRTimeRange, DTTimelineInspectionDecoration *>, std::__1::less<XRTimeRange>, true>> {
-            unsigned long long __first_;
+            unsigned long long __value_;
+        } __pair3_;
+    } __tree_;
+};
+
+struct map<double, DTTimelinePlaneBorderSubtree *, std::__1::less<double>, std::__1::allocator<std::__1::pair<const double, DTTimelinePlaneBorderSubtree *>>> {
+    struct __tree<std::__1::__value_type<double, DTTimelinePlaneBorderSubtree *>, std::__1::__map_value_compare<double, std::__1::__value_type<double, DTTimelinePlaneBorderSubtree *>, std::__1::less<double>, true>, std::__1::allocator<std::__1::__value_type<double, DTTimelinePlaneBorderSubtree *>>> {
+        struct __tree_end_node<std::__1::__tree_node_base<void *>*> *__begin_node_;
+        struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<double, DTTimelinePlaneBorderSubtree *>, void *>>> {
+            struct __tree_end_node<std::__1::__tree_node_base<void *>*> __value_;
+        } __pair1_;
+        struct __compressed_pair<unsigned long, std::__1::__map_value_compare<double, std::__1::__value_type<double, DTTimelinePlaneBorderSubtree *>, std::__1::less<double>, true>> {
+            unsigned long long __value_;
         } __pair3_;
     } __tree_;
 };
@@ -291,75 +214,117 @@ struct shared_ptr<DTTimelineDecorationContainer> {
 };
 
 struct shared_ptr<const std::__1::unordered_map<int, CGRect, std::__1::hash<int>, std::__1::equal_to<int>, std::__1::allocator<std::__1::pair<const int, CGRect>>>> {
-    unordered_map_c1fbcd3c *__ptr_;
+    unordered_map_b8b4eb21 *__ptr_;
     struct __shared_weak_count *__cntrl_;
 };
 
 struct tuple<unsigned int, DTItemIndexAndFlags, DTMemoryGraphItem *>;
 
-struct unique_ptr<DTTimelineDecorationEnumerator, std::__1::default_delete<DTTimelineDecorationEnumerator>> {
-    struct __compressed_pair<DTTimelineDecorationEnumerator *, std::__1::default_delete<DTTimelineDecorationEnumerator>> {
-        struct DTTimelineDecorationEnumerator *_field1;
-    } _field1;
-};
-
-struct unique_ptr<std::__1::__hash_node<std::__1::__hash_value_type<double, NSImage *>, void *>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<double, NSImage *>, void *>*>>> {
-    struct __compressed_pair<std::__1::__hash_node<std::__1::__hash_value_type<double, NSImage *>, void *>**, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<double, NSImage *>, void *>*>>> {
-        struct __hash_node<std::__1::__hash_value_type<double, NSImage *>, void *> **__first_;
-        struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<double, NSImage *>, void *>*>> {
-            struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<double, NSImage *>, void *>*>> {
-                unsigned long long __first_;
+struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<signed char *, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<signed char *, void *>*>*>>> {
+    struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<signed char *, void *>*>**, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<signed char *, void *>*>*>>> {
+        struct __hash_node_base<std::__1::__hash_node<signed char *, void *>*> **__value_;
+        struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<signed char *, void *>*>*>> {
+            struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<signed char *, void *>*>*>> {
+                unsigned long long __value_;
             } __data_;
-        } __second_;
+        } __value_;
     } __ptr_;
 };
 
-struct unique_ptr<std::__1::__hash_node<std::__1::__hash_value_type<int, CGRect>, void *>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<int, CGRect>, void *>*>>> {
-    struct __compressed_pair<std::__1::__hash_node<std::__1::__hash_value_type<int, CGRect>, void *>**, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<int, CGRect>, void *>*>>> {
-        struct __hash_node<std::__1::__hash_value_type<int, CGRect>, void *> **_field1;
-        struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<int, CGRect>, void *>*>> {
-            struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<int, CGRect>, void *>*>> {
+struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<NSColor *, CGColor *>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<NSColor *, CGColor *>, void *>*>*>>> {
+    struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<NSColor *, CGColor *>, void *>*>**, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<NSColor *, CGColor *>, void *>*>*>>> {
+        struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<NSColor *, CGColor *>, void *>*> **__value_;
+        struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<NSColor *, CGColor *>, void *>*>*>> {
+            struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<NSColor *, CGColor *>, void *>*>*>> {
+                unsigned long long __value_;
+            } __data_;
+        } __value_;
+    } __ptr_;
+};
+
+struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<NSColor *, CGPath *>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<NSColor *, CGPath *>, void *>*>*>>> {
+    struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<NSColor *, CGPath *>, void *>*>**, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<NSColor *, CGPath *>, void *>*>*>>> {
+        struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<NSColor *, CGPath *>, void *>*> **__value_;
+        struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<NSColor *, CGPath *>, void *>*>*>> {
+            struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<NSColor *, CGPath *>, void *>*>*>> {
+                unsigned long long __value_;
+            } __data_;
+        } __value_;
+    } __ptr_;
+};
+
+struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<double, NSImage *>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<double, NSImage *>, void *>*>*>>> {
+    struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<double, NSImage *>, void *>*>**, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<double, NSImage *>, void *>*>*>>> {
+        struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<double, NSImage *>, void *>*> **__value_;
+        struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<double, NSImage *>, void *>*>*>> {
+            struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<double, NSImage *>, void *>*>*>> {
+                unsigned long long __value_;
+            } __data_;
+        } __value_;
+    } __ptr_;
+};
+
+struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<int, CGRect>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<int, CGRect>, void *>*>*>>> {
+    struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<int, CGRect>, void *>*>**, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<int, CGRect>, void *>*>*>>> {
+        struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<int, CGRect>, void *>*> **_field1;
+        struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<int, CGRect>, void *>*>*>> {
+            struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<int, CGRect>, void *>*>*>> {
                 unsigned long long _field1;
             } _field1;
         } _field2;
     } _field1;
 };
 
-struct unique_ptr<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long, std::__1::tuple<NSColor *, CGPath *>>, void *>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long, std::__1::tuple<NSColor *, CGPath *>>, void *>*>>> {
-    struct __compressed_pair<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long, std::__1::tuple<NSColor *, CGPath *>>, void *>**, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long, std::__1::tuple<NSColor *, CGPath *>>, void *>*>>> {
-        struct __hash_node<std::__1::__hash_value_type<unsigned long, std::__1::tuple<NSColor *, CGPath *>>, void *> **__first_;
-        struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long, std::__1::tuple<NSColor *, CGPath *>>, void *>*>> {
-            struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long, std::__1::tuple<NSColor *, CGPath *>>, void *>*>> {
-                unsigned long long __first_;
-            } __data_;
-        } __second_;
-    } __ptr_;
+struct unordered_map<NSColor *, CGColor *, std::__1::hash<NSColor *>, std::__1::equal_to<NSColor *>, std::__1::allocator<std::__1::pair<NSColor *const, CGColor *>>> {
+    struct __hash_table<std::__1::__hash_value_type<NSColor *, CGColor *>, std::__1::__unordered_map_hasher<NSColor *, std::__1::__hash_value_type<NSColor *, CGColor *>, std::__1::hash<NSColor *>, true>, std::__1::__unordered_map_equal<NSColor *, std::__1::__hash_value_type<NSColor *, CGColor *>, std::__1::equal_to<NSColor *>, true>, std::__1::allocator<std::__1::__hash_value_type<NSColor *, CGColor *>>> {
+        struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<NSColor *, CGColor *>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<NSColor *, CGColor *>, void *>*>*>>> __bucket_list_;
+        struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<NSColor *, CGColor *>, void *>*>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<NSColor *, CGColor *>, void *>>> {
+            struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<NSColor *, CGColor *>, void *>*> __value_;
+        } __p1_;
+        struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<NSColor *, std::__1::__hash_value_type<NSColor *, CGColor *>, std::__1::hash<NSColor *>, true>> {
+            unsigned long long __value_;
+        } __p2_;
+        struct __compressed_pair<float, std::__1::__unordered_map_equal<NSColor *, std::__1::__hash_value_type<NSColor *, CGColor *>, std::__1::equal_to<NSColor *>, true>> {
+            float __value_;
+        } __p3_;
+    } __table_;
+};
+
+struct unordered_map<NSColor *, CGPath *, std::__1::hash<NSColor *>, std::__1::equal_to<NSColor *>, std::__1::allocator<std::__1::pair<NSColor *const, CGPath *>>> {
+    struct __hash_table<std::__1::__hash_value_type<NSColor *, CGPath *>, std::__1::__unordered_map_hasher<NSColor *, std::__1::__hash_value_type<NSColor *, CGPath *>, std::__1::hash<NSColor *>, true>, std::__1::__unordered_map_equal<NSColor *, std::__1::__hash_value_type<NSColor *, CGPath *>, std::__1::equal_to<NSColor *>, true>, std::__1::allocator<std::__1::__hash_value_type<NSColor *, CGPath *>>> {
+        struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<NSColor *, CGPath *>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<NSColor *, CGPath *>, void *>*>*>>> __bucket_list_;
+        struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<NSColor *, CGPath *>, void *>*>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<NSColor *, CGPath *>, void *>>> {
+            struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<NSColor *, CGPath *>, void *>*> __value_;
+        } __p1_;
+        struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<NSColor *, std::__1::__hash_value_type<NSColor *, CGPath *>, std::__1::hash<NSColor *>, true>> {
+            unsigned long long __value_;
+        } __p2_;
+        struct __compressed_pair<float, std::__1::__unordered_map_equal<NSColor *, std::__1::__hash_value_type<NSColor *, CGPath *>, std::__1::equal_to<NSColor *>, true>> {
+            float __value_;
+        } __p3_;
+    } __table_;
 };
 
 struct unordered_map<double, NSImage *, std::__1::hash<double>, std::__1::equal_to<double>, std::__1::allocator<std::__1::pair<const double, NSImage *>>> {
     struct __hash_table<std::__1::__hash_value_type<double, NSImage *>, std::__1::__unordered_map_hasher<double, std::__1::__hash_value_type<double, NSImage *>, std::__1::hash<double>, true>, std::__1::__unordered_map_equal<double, std::__1::__hash_value_type<double, NSImage *>, std::__1::equal_to<double>, true>, std::__1::allocator<std::__1::__hash_value_type<double, NSImage *>>> {
-        struct unique_ptr<std::__1::__hash_node<std::__1::__hash_value_type<double, NSImage *>, void *>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<double, NSImage *>, void *>*>>> __bucket_list_;
+        struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<double, NSImage *>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<double, NSImage *>, void *>*>*>>> __bucket_list_;
         struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<double, NSImage *>, void *>*>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<double, NSImage *>, void *>>> {
-            struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<double, NSImage *>, void *>*> {
-                struct __hash_node<std::__1::__hash_value_type<double, NSImage *>, void *> *__next_;
-            } __first_;
+            struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<double, NSImage *>, void *>*> __value_;
         } __p1_;
         struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<double, std::__1::__hash_value_type<double, NSImage *>, std::__1::hash<double>, true>> {
-            unsigned long long __first_;
+            unsigned long long __value_;
         } __p2_;
         struct __compressed_pair<float, std::__1::__unordered_map_equal<double, std::__1::__hash_value_type<double, NSImage *>, std::__1::equal_to<double>, true>> {
-            float __first_;
+            float __value_;
         } __p3_;
     } __table_;
 };
 
 struct unordered_map<int, CGRect, std::__1::hash<int>, std::__1::equal_to<int>, std::__1::allocator<std::__1::pair<const int, CGRect>>> {
     struct __hash_table<std::__1::__hash_value_type<int, CGRect>, std::__1::__unordered_map_hasher<int, std::__1::__hash_value_type<int, CGRect>, std::__1::hash<int>, true>, std::__1::__unordered_map_equal<int, std::__1::__hash_value_type<int, CGRect>, std::__1::equal_to<int>, true>, std::__1::allocator<std::__1::__hash_value_type<int, CGRect>>> {
-        struct unique_ptr<std::__1::__hash_node<std::__1::__hash_value_type<int, CGRect>, void *>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<int, CGRect>, void *>*>>> _field1;
+        struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<int, CGRect>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<int, CGRect>, void *>*>*>>> _field1;
         struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<int, CGRect>, void *>*>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<int, CGRect>, void *>>> {
-            struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<int, CGRect>, void *>*> {
-                struct __hash_node<std::__1::__hash_value_type<int, CGRect>, void *> *_field1;
-            } _field1;
+            struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<int, CGRect>, void *>*> _field1;
         } _field2;
         struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<int, std::__1::__hash_value_type<int, CGRect>, std::__1::hash<int>, true>> {
             unsigned long long _field1;
@@ -370,19 +335,17 @@ struct unordered_map<int, CGRect, std::__1::hash<int>, std::__1::equal_to<int>, 
     } _field1;
 };
 
-struct unordered_map<unsigned long, std::__1::tuple<NSColor *, CGPath *>, std::__1::hash<unsigned long>, std::__1::equal_to<unsigned long>, std::__1::allocator<std::__1::pair<const unsigned long, std::__1::tuple<NSColor *, CGPath *>>>> {
-    struct __hash_table<std::__1::__hash_value_type<unsigned long, std::__1::tuple<NSColor *, CGPath *>>, std::__1::__unordered_map_hasher<unsigned long, std::__1::__hash_value_type<unsigned long, std::__1::tuple<NSColor *, CGPath *>>, std::__1::hash<unsigned long>, true>, std::__1::__unordered_map_equal<unsigned long, std::__1::__hash_value_type<unsigned long, std::__1::tuple<NSColor *, CGPath *>>, std::__1::equal_to<unsigned long>, true>, std::__1::allocator<std::__1::__hash_value_type<unsigned long, std::__1::tuple<NSColor *, CGPath *>>>> {
-        struct unique_ptr<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long, std::__1::tuple<NSColor *, CGPath *>>, void *>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long, std::__1::tuple<NSColor *, CGPath *>>, void *>*>>> __bucket_list_;
-        struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long, std::__1::tuple<NSColor *, CGPath *>>, void *>*>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long, std::__1::tuple<NSColor *, CGPath *>>, void *>>> {
-            struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long, std::__1::tuple<NSColor *, CGPath *>>, void *>*> {
-                struct __hash_node<std::__1::__hash_value_type<unsigned long, std::__1::tuple<NSColor *, CGPath *>>, void *> *__next_;
-            } __first_;
+struct unordered_set<signed char *, std::__1::hash<signed char *>, std::__1::equal_to<signed char *>, std::__1::allocator<signed char *>> {
+    struct __hash_table<signed char *, std::__1::hash<signed char *>, std::__1::equal_to<signed char *>, std::__1::allocator<signed char *>> {
+        struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<signed char *, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<signed char *, void *>*>*>>> __bucket_list_;
+        struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<signed char *, void *>*>, std::__1::allocator<std::__1::__hash_node<signed char *, void *>>> {
+            struct __hash_node_base<std::__1::__hash_node<signed char *, void *>*> __value_;
         } __p1_;
-        struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<unsigned long, std::__1::__hash_value_type<unsigned long, std::__1::tuple<NSColor *, CGPath *>>, std::__1::hash<unsigned long>, true>> {
-            unsigned long long __first_;
+        struct __compressed_pair<unsigned long, std::__1::hash<signed char *>> {
+            unsigned long long __value_;
         } __p2_;
-        struct __compressed_pair<float, std::__1::__unordered_map_equal<unsigned long, std::__1::__hash_value_type<unsigned long, std::__1::tuple<NSColor *, CGPath *>>, std::__1::equal_to<unsigned long>, true>> {
-            float __first_;
+        struct __compressed_pair<float, std::__1::equal_to<signed char *>> {
+            float __value_;
         } __p3_;
     } __table_;
 };
@@ -391,7 +354,7 @@ struct vector<std::__1::pair<DTTimelineInternal::DynamicRange, NSArray *>, std::
     struct pair<DTTimelineInternal::DynamicRange, NSArray *> *__begin_;
     struct pair<DTTimelineInternal::DynamicRange, NSArray *> *__end_;
     struct __compressed_pair<std::__1::pair<DTTimelineInternal::DynamicRange, NSArray *>*, std::__1::allocator<std::__1::pair<DTTimelineInternal::DynamicRange, NSArray *>>> {
-        struct pair<DTTimelineInternal::DynamicRange, NSArray *> *__first_;
+        struct pair<DTTimelineInternal::DynamicRange, NSArray *> *__value_;
     } __end_cap_;
 };
 
@@ -433,11 +396,9 @@ typedef struct shared_ptr<DTTimelineDecorationContainer> {
 
 typedef struct unordered_map<int, CGRect, std::__1::hash<int>, std::__1::equal_to<int>, std::__1::allocator<std::__1::pair<const int, CGRect>>> {
     struct __hash_table<std::__1::__hash_value_type<int, CGRect>, std::__1::__unordered_map_hasher<int, std::__1::__hash_value_type<int, CGRect>, std::__1::hash<int>, true>, std::__1::__unordered_map_equal<int, std::__1::__hash_value_type<int, CGRect>, std::__1::equal_to<int>, true>, std::__1::allocator<std::__1::__hash_value_type<int, CGRect>>> {
-        struct unique_ptr<std::__1::__hash_node<std::__1::__hash_value_type<int, CGRect>, void *>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<int, CGRect>, void *>*>>> _field1;
+        struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<int, CGRect>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<int, CGRect>, void *>*>*>>> _field1;
         struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<int, CGRect>, void *>*>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<int, CGRect>, void *>>> {
-            struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<int, CGRect>, void *>*> {
-                struct __hash_node<std::__1::__hash_value_type<int, CGRect>, void *> *_field1;
-            } _field1;
+            struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<int, CGRect>, void *>*> _field1;
         } _field2;
         struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<int, std::__1::__hash_value_type<int, CGRect>, std::__1::hash<int>, true>> {
             unsigned long long _field1;
@@ -446,5 +407,5 @@ typedef struct unordered_map<int, CGRect, std::__1::hash<int>, std::__1::equal_t
             float _field1;
         } _field4;
     } _field1;
-} unordered_map_c1fbcd3c;
+} unordered_map_b8b4eb21;
 

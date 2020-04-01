@@ -6,36 +6,41 @@
 
 #import <IDEInterfaceBuilderKit/IBEditorCanvasFrameController.h>
 
-@class DVTDelayedInvocation, DVTNotificationToken, IBCanvasOverlay, IBEditorFrameLayoutGuideGeneratorDelegate, IBLayoutGuideCanvasOverlay, IBLayoutManager, IBMeasurementDrawingHandler, IBRelativeMeasurementDrawingHandler, IBViewTracker, NSArray, NSMutableArray;
+@class DVTDelayedInvocation, DVTNotificationToken, DVTObservingToken, IBCanvasOverlay, IBEditorFrameLayoutGuideGeneratorDelegate, IBLayoutGuideCanvasOverlay, IBLayoutManager, IBMeasurementDrawingHandler, IBRelativeMeasurementDrawingHandler, IBSceneDetailOverlay, IBViewTracker, NSArray, NSMutableArray;
 @protocol DVTInvalidation;
 
 @interface IBViewEditorCanvasFrameController : IBEditorCanvasFrameController
 {
-    IBMeasurementDrawingHandler *measurementDrawingHandler;
+    IBMeasurementDrawingHandler *_measurementDrawingHandler;
     IBRelativeMeasurementDrawingHandler *_relativeMeasurementDrawingHandler;
     IBLayoutGuideCanvasOverlay *_layoutGuideCanvasOverlay;
-    IBLayoutManager *layoutManager;
-    IBEditorFrameLayoutGuideGeneratorDelegate *layoutGuideGeneratorDelegate;
-    NSMutableArray *cachedUserGuides;
-    NSMutableArray *cachedSystemGuides;
+    IBLayoutManager *_layoutManager;
+    IBEditorFrameLayoutGuideGeneratorDelegate *_layoutGuideGeneratorDelegate;
+    NSMutableArray *_cachedUserGuides;
+    NSMutableArray *_cachedSystemGuides;
     DVTDelayedInvocation *_validateUserGuidesInvocation;
-    IBViewTracker *activeViewTracker;
-    id <DVTInvalidation> hiddenViewDrawingToken;
-    BOOL observingHiddenState;
-    DVTNotificationToken *showingLayoutRectsNotification;
-    DVTNotificationToken *showingBoundsRectsNotification;
-    DVTNotificationToken *showingPlaceholderBackgroundsNotification;
-    BOOL hasHiddenViewsInViewSubgraph;
+    id <DVTInvalidation> _hiddenViewDrawingToken;
+    BOOL _observingHiddenState;
+    DVTNotificationToken *_showingLayoutRectsNotification;
+    DVTNotificationToken *_showingBoundsRectsNotification;
+    DVTNotificationToken *_showingSceneMaskAndBezelsNotification;
+    DVTNotificationToken *_showingPlaceholderBackgroundsNotification;
+    DVTObservingToken *_deviceConfigurationObservingToken;
+    IBSceneDetailOverlay *_sceneDetailOverlay;
+    BOOL _shouldDrawHiddenViews;
+    BOOL _showSceneMask;
+    IBViewTracker *_activeViewTracker;
     IBCanvasOverlay *_constraintPositioningOverlayView;
 }
 
+@property(nonatomic) BOOL showSceneMask; // @synthesize showSceneMask=_showSceneMask;
+@property(nonatomic) BOOL shouldDrawHiddenViews; // @synthesize shouldDrawHiddenViews=_shouldDrawHiddenViews;
 @property(readonly, nonatomic) IBCanvasOverlay *constraintPositioningOverlayView; // @synthesize constraintPositioningOverlayView=_constraintPositioningOverlayView;
-@property(nonatomic) BOOL hasHiddenViewsInViewSubgraph; // @synthesize hasHiddenViewsInViewSubgraph;
-@property(retain) IBViewTracker *activeViewTracker; // @synthesize activeViewTracker;
+@property(retain) IBViewTracker *activeViewTracker; // @synthesize activeViewTracker=_activeViewTracker;
+@property(readonly) IBEditorFrameLayoutGuideGeneratorDelegate *layoutGuideGeneratorDelegate; // @synthesize layoutGuideGeneratorDelegate=_layoutGuideGeneratorDelegate;
 - (void).cxx_destruct;
 - (void)resetCursorRects;
 @property(readonly, nonatomic) IBLayoutManager *layoutManager;
-@property(readonly) IBEditorFrameLayoutGuideGeneratorDelegate *layoutGuideGeneratorDelegate;
 - (unsigned long long)dragObjects:(id)arg1 withImage:(id)arg2 inMouseDownEvent:(id)arg3 mouseDraggedEvent:(id)arg4 imageLocation:(struct CGPoint)arg5 allowedOperations:(unsigned long long)arg6 editor:(id)arg7 draggingSourceContext:(id)arg8;
 - (void)sendEvent:(id)arg1;
 - (void)trackMeasurementsWithEvent:(id)arg1 atPoint:(struct CGPoint)arg2;
@@ -43,10 +48,14 @@
 - (void)editorDidChangeSelection:(id)arg1;
 - (id)relativeMeasurementViewForObject:(id)arg1;
 - (void)takeShowingPlaceholderBackgroundsFromDocumentEditor:(id)arg1;
+- (void)takeShowingSceneMaskAndBezelsFromDocumentEditor:(id)arg1;
 - (void)takeShowingBoundsRectanglesFromDocumentEditor:(id)arg1;
 - (void)takeShowingLayoutRectanglesFromDocumentEditor:(id)arg1;
 - (void)noteDescendant:(id)arg1 didChangeProperty:(id)arg2 fromValue:(id)arg3;
+- (void)canvasFrameDidCompleteLayout;
 - (void)drawHiddenViews;
+- (void)refreshSceneMask;
+- (void)updateContentEditorAppearance:(id)arg1;
 - (struct CGRect)frameForOverlay:(id)arg1 inCanvasView:(id)arg2 scale:(double)arg3;
 - (BOOL)interceptDecoratorActionEvent:(id)arg1;
 @property(readonly) NSArray *systemLayoutGuides;

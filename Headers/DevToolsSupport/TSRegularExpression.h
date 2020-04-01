@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Foundation/NSObject.h>
+#import <objc/NSObject.h>
 
 #import <DevToolsSupport/NSCoding-Protocol.h>
 #import <DevToolsSupport/NSCopying-Protocol.h>
@@ -24,6 +24,7 @@
 + (id)regularExpressionWithString:(id)arg1 ignoreCase:(BOOL)arg2;
 + (BOOL)validExpressionString:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
@@ -35,7 +36,6 @@
 - (id)expressionString;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
-- (void)finalize;
 - (void)dealloc;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)init;

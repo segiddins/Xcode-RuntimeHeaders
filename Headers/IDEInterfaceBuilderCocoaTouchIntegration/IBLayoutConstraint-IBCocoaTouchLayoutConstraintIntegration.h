@@ -7,6 +7,10 @@
 #import <IBAutolayoutFoundation/IBLayoutConstraint.h>
 
 @interface IBLayoutConstraint (IBCocoaTouchLayoutConstraintIntegration)
-- (void)ibSwizzledCocoaTouchLayoutConstraintIntegration_ibWarnings:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
+- (void)ibSwizzledCocoaTouchIBLayoutConstraint_ibPopulateIssues:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
+- (void)ibPrepareToBackwardsDeployToOSVersion:(id)arg1 inDocument:(id)arg2;
+- (void)ibPopulateAdditionalTargetOSVersions:(id)arg1 forCompilingDocument:(id)arg2;
+- (id)targetRuntime;
+- (Class)classToTakeInitialMarshalledKeysFrom:(id)arg1;
 @end
 

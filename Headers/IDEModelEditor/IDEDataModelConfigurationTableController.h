@@ -10,7 +10,7 @@
 #import <IDEModelEditor/IDECapsuleViewDelegate-Protocol.h>
 #import <IDEModelEditor/NSTableViewDelegate-Protocol.h>
 
-@class DVTNotificationToken, IDEDataModelConfigurationEditor, NSArrayController, NSImage, NSIndexSet, NSMapTable, NSString, XDTableView;
+@class DVTNotificationToken, IDEDataModelConfigurationEditor, NSArrayController, NSColor, NSImage, NSIndexSet, NSMapTable, NSString, XDTableView;
 
 @interface IDEDataModelConfigurationTableController : IDEDMEditorController <NSTableViewDelegate, IDECapsuleViewController, IDECapsuleViewDelegate>
 {
@@ -30,7 +30,7 @@
 + (void)configureStateSavingObjectPersistenceByName:(id)arg1;
 + (id)keyPathsForValuesAffectingCanRemoveItems;
 @property(retain) IDEDataModelConfigurationEditor *parentEditor; // @synthesize parentEditor=_parentEditor;
-@property(retain) NSIndexSet *selectedInnerEntityIndexes; // @synthesize selectedInnerEntityIndexes=_selectedInnerEntityIndexes;
+@property(copy) NSIndexSet *selectedInnerEntityIndexes; // @synthesize selectedInnerEntityIndexes=_selectedInnerEntityIndexes;
 - (void).cxx_destruct;
 - (void)numberOfEntitiesShownChanged;
 - (void)_resize;
@@ -57,6 +57,7 @@
 - (id)tableViewState;
 - (void)primitiveInvalidate;
 - (void)loadView;
+- (void)_setUpCellsAndColumns;
 - (void)takeFocus;
 - (BOOL)shouldDrawBorderBelowHeaderForCapsuleView:(id)arg1;
 @property(readonly, copy) NSString *titleForDisplay;
@@ -70,6 +71,7 @@
 - (id)nibName;
 
 // Remaining properties
+@property(retain) NSColor *backgroundColor;
 @property(readonly) BOOL canDrag;
 @property(readonly) BOOL canRemove;
 @property(readonly) BOOL canSelect;
@@ -81,6 +83,7 @@
 @property(readonly) unsigned long long hash;
 @property(readonly) NSImage *icon;
 @property(readonly) Class superclass;
+@property(readonly) BOOL wantsDisclosureButtonHidden;
 
 @end
 

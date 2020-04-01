@@ -8,50 +8,74 @@
 
 #import <DVTSourceControl/NSSecureCoding-Protocol.h>
 
-@class NSSet, NSString;
+@class DVTSourceControlAuthor, NSArray, NSRegularExpression, NSString;
 
 @interface DVTSourceControlSystem : NSObject <NSSecureCoding>
 {
     BOOL _isLegacyPlugIn;
     NSString *_name;
     NSString *_version;
-    NSString *_workingCopyFolderIdentifier;
-    NSSet *_URLHintStrings;
-    unsigned long long _supportedAuthenticationTypes;
-    unsigned long long _features;
     NSString *_plugInIdentifier;
+    NSString *_workingCopyFolderIdentifier;
+    NSArray *_URLHintStrings;
+    unsigned long long _supportedAuthenticationTypes;
+    unsigned long long _supportedUpdateStrategies;
+    unsigned long long _revisionMatchingStyle;
+    NSRegularExpression *_revisionIdentifierRegularExpression;
+    unsigned long long _revisionIdentifierMinimumLength;
+    DVTSourceControlAuthor *_cachedGlobalAuthor;
+    unsigned long long _cachedGlobalRebaseState;
+    unsigned long long _features;
     NSString *_nonLegacyIdentifier;
 }
 
 + (BOOL)supportsSecureCoding;
-+ (id)sourceControlSystemsWithCompletionBlock:(CDUnknownBlockType)arg1;
-+ (id)bestGuessSystemForURL:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
++ (void)sourceControlSystemsWithCompletionBlock:(CDUnknownBlockType)arg1;
++ (void)bestGuessSystemForURL:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 + (id)cachedSourceControlSystems;
 + (id)systemWithIdentifier:(id)arg1;
 @property(copy) NSString *nonLegacyIdentifier; // @synthesize nonLegacyIdentifier=_nonLegacyIdentifier;
 @property(readonly) BOOL isLegacyPlugIn; // @synthesize isLegacyPlugIn=_isLegacyPlugIn;
-@property(copy) NSString *plugInIdentifier; // @synthesize plugInIdentifier=_plugInIdentifier;
 @property unsigned long long features; // @synthesize features=_features;
+@property unsigned long long cachedGlobalRebaseState; // @synthesize cachedGlobalRebaseState=_cachedGlobalRebaseState;
+@property(retain) DVTSourceControlAuthor *cachedGlobalAuthor; // @synthesize cachedGlobalAuthor=_cachedGlobalAuthor;
+@property unsigned long long revisionIdentifierMinimumLength; // @synthesize revisionIdentifierMinimumLength=_revisionIdentifierMinimumLength;
+@property(retain) NSRegularExpression *revisionIdentifierRegularExpression; // @synthesize revisionIdentifierRegularExpression=_revisionIdentifierRegularExpression;
+@property unsigned long long revisionMatchingStyle; // @synthesize revisionMatchingStyle=_revisionMatchingStyle;
+@property unsigned long long supportedUpdateStrategies; // @synthesize supportedUpdateStrategies=_supportedUpdateStrategies;
 @property unsigned long long supportedAuthenticationTypes; // @synthesize supportedAuthenticationTypes=_supportedAuthenticationTypes;
-@property(retain) NSSet *URLHintStrings; // @synthesize URLHintStrings=_URLHintStrings;
+@property(retain) NSArray *URLHintStrings; // @synthesize URLHintStrings=_URLHintStrings;
 @property(retain) NSString *workingCopyFolderIdentifier; // @synthesize workingCopyFolderIdentifier=_workingCopyFolderIdentifier;
+@property(copy) NSString *plugInIdentifier; // @synthesize plugInIdentifier=_plugInIdentifier;
 @property(retain) NSString *version; // @synthesize version=_version;
 @property(retain) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)description;
+- (BOOL)isValidRevisionString:(id)arg1;
 @property(readonly, getter=isUsable) BOOL usable;
 - (BOOL)isIsLegacyPlugIn;
-- (id)initWithName:(id)arg1 plugInIdentifier:(id)arg2 version:(id)arg3 legacyPlugInForIdentifier:(id)arg4 workingCopyFolderIdentifier:(id)arg5 URLHintStrings:(id)arg6 features:(unsigned long long)arg7 supportedAuthenticationTypes:(unsigned long long)arg8;
-- (id)initWithName:(id)arg1 plugInIdentifier:(id)arg2 version:(id)arg3 workingCopyFolderIdentifier:(id)arg4 URLHintStrings:(id)arg5 features:(unsigned long long)arg6 supportedAuthenticationTypes:(unsigned long long)arg7;
+- (id)initWithName:(id)arg1 plugInIdentifier:(id)arg2 version:(id)arg3 legacyPlugInForIdentifier:(id)arg4 workingCopyFolderIdentifier:(id)arg5 URLHintStrings:(id)arg6 features:(unsigned long long)arg7 supportedAuthenticationTypes:(unsigned long long)arg8 supportedUpdateStrategies:(unsigned long long)arg9 revisionMatchingStyle:(unsigned long long)arg10 revisionIdentifierMinimumLength:(unsigned long long)arg11 revisionIdentifierRegExString:(id)arg12;
+- (id)initWithName:(id)arg1 plugInIdentifier:(id)arg2 version:(id)arg3 workingCopyFolderIdentifier:(id)arg4 URLHintStrings:(id)arg5 features:(unsigned long long)arg6 supportedAuthenticationTypes:(unsigned long long)arg7 supportedUpdateStrategies:(unsigned long long)arg8 revisionMatchingStyle:(unsigned long long)arg9 revisionIdentifierMinimumLength:(unsigned long long)arg10 revisionIdentifierRegExString:(id)arg11;
 - (id)_init;
 - (id)init;
-@property(readonly) BOOL requiresLocationsForBranchesAndTags;
+@property(readonly) BOOL switchLocationCanCauseConflicts;
+@property(readonly) BOOL supportsRebase;
+@property(readonly) BOOL supportsCustomAuthor;
+@property(readonly) BOOL supportsVisualHistory;
+@property(readonly) BOOL supportsStashing;
 @property(readonly) BOOL repositoryURLIncludesSubpath;
 @property(readonly) BOOL supportsPathLocation;
 @property(readonly) BOOL supportsMultipleRemoteRepositories;
 @property(readonly) BOOL hasLocalRepository;
+- (id)setRebaseState:(unsigned long long)arg1 completionBlock:(CDUnknownBlockType)arg2;
+- (id)rebaseStateWithCompletionBlock:(CDUnknownBlockType)arg1;
+- (id)remoteNameIsValid:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
+- (id)setIgnoredFiles:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
+- (id)ignoredFilesWithCompletionBlock:(CDUnknownBlockType)arg1;
+- (id)setGlobalAuthor:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
+- (id)globalAuthorWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (id)keychainNameFromURL:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

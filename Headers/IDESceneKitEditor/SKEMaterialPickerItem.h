@@ -6,24 +6,39 @@
 
 #import <AppKit/NSCollectionViewItem.h>
 
-@class NSBox, NSImage, NSImageView, NSTextField;
+#import <IDESceneKitEditor/NSCollectionViewElement-Protocol.h>
 
-@interface SKEMaterialPickerItem : NSCollectionViewItem
+@class NSBox, NSImageView, NSString, NSTextField;
+
+@interface SKEMaterialPickerItem : NSCollectionViewItem <NSCollectionViewElement>
 {
-    NSImage *_cachedPreview;
     NSBox *_boxView;
     NSImageView *_imageView;
     NSTextField *_label;
+    BOOL _shouldPrefetch;
+    BOOL _prefetching;
+    BOOL _loaded;
+    int _dataSourceTimestamp;
 }
 
 - (void).cxx_destruct;
 - (void)viewWillAppear;
 - (void)setSelected:(BOOL)arg1;
 - (void)setRepresentedObject:(id)arg1;
-- (void)updateView;
+- (void)prefetch;
+- (void)cancelPrefetch;
+- (void)prepareForReuse;
+- (void)updateViewWithImage:(id)arg1;
 - (void)viewDidLoad;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(copy) NSString *identifier;
+@property(readonly) Class superclass;
 
 @end
 

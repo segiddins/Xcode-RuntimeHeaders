@@ -13,7 +13,6 @@
 {
     id <DVTSourceTextScrollViewDelegate> _delegate;
     DVTComparisonSplitView *_comparisonSplitView;
-    BOOL _scrollingHorizontally;
 }
 
 + (BOOL)isCompatibleWithResponsiveScrolling;

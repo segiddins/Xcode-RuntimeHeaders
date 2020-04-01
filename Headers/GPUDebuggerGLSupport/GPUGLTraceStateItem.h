@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <GPUDebuggerFoundation/GPUTraceStateItem.h>
+#import <GPUDebugger/GPUTraceStateItem.h>
 
 #import <GPUDebuggerGLSupport/DYFunctionTracerDelegate-Protocol.h>
 #import <GPUDebuggerGLSupport/GPUGLStateMirrorInterface-Protocol.h>
@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
 @interface GPUGLTraceStateItem : GPUTraceStateItem <DYFunctionTracerDelegate, GPUGLStateMirrorInterface>
 {
     GPUGLStateMirror *_stateMirror;
+    int _stateMirrorLock;
 }
 
 - (void).cxx_destruct;
@@ -25,8 +26,6 @@ __attribute__((visibility("hidden")))
 - (id)generateLabel;
 @property(readonly) BOOL hasStateMirror;
 @property(copy) GPUGLStateMirror *stateMirror;
-- (void)primitiveInvalidate;
-- (id)copyWithZone:(struct _NSZone *)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

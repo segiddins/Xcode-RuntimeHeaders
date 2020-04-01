@@ -10,5 +10,6 @@
 - (void)debugScheduleBlockOnEventQueue:(CDUnknownBlockType)arg1;
 - (void)postEvents:(id)arg1 atStart:(BOOL)arg2;
 - (BOOL)isUserDragging;
+- (void)ibNotifyAndOrderFrontColorPanel:(id)arg1;
 @end
 

@@ -7,10 +7,11 @@
 #import <Foundation/NSEnumerator.h>
 
 #import <DevToolsCore/NSCopying-Protocol.h>
+#import <DevToolsCore/NSFastEnumeration-Protocol.h>
 
 @class NSMutableArray;
 
-@interface PBXGroupEnumerator : NSEnumerator <NSCopying>
+@interface PBXGroupEnumerator : NSEnumerator <NSCopying, NSFastEnumeration>
 {
     NSMutableArray *_enumeratedObjects;
     unsigned long long _nextIndex;
@@ -20,6 +21,8 @@
 + (id)enumeratorForGroup:(id)arg1 startingAtItem:(id)arg2;
 + (id)enumeratorForGroup:(id)arg1;
 + (SEL)traversalSelector;
+- (void).cxx_destruct;
+- (unsigned long long)countByEnumeratingWithState:(CDStruct_70511ce9 *)arg1 objects:(id *)arg2 count:(unsigned long long)arg3;
 - (id)lastObject;
 - (id)firstObject;
 - (id)previousObject;
@@ -27,7 +30,6 @@
 - (unsigned long long)numberOfObjects;
 - (id)allObjects;
 - (id)nextObject;
-- (void)dealloc;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)rewind;
 - (id)initWithRootArray:(id)arg1 nextObject:(id)arg2;

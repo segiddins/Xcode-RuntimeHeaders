@@ -6,12 +6,15 @@
 
 #import <AppKit/NSDatePickerCell.h>
 
-@class NSDate;
+#import <IDEInterfaceBuilderCocoaIntegration/IBDocumentArchiving-Protocol.h>
 
-@interface NSDatePickerCell (IBNSDatePickerCellIntegration)
+@class NSDate, NSString;
+
+@interface NSDatePickerCell (IBNSDatePickerCellIntegration) <IBDocumentArchiving>
 + (id)keyPathsForValuesAffectingIbInspectedHasMaxDate;
 + (id)keyPathsForValuesAffectingIbInspectedHasMinDate;
-- (id)ibDocumentationPropertyInfosForKeyPath:(id)arg1;
++ (id)keyPathsForValuesAffectingIbInspectedMaxDate;
++ (id)keyPathsForValuesAffectingIbInspectedMinDate;
 - (Class)ibPreferredControlClass;
 - (id)ibPreferredSizeForSize:(struct CGSize)arg1 suggestedWidth:(char *)arg2 suggestedHeight:(char *)arg3 scaleAxesIndependently:(char *)arg4;
 - (BOOL)ibTitleEditsSelf;
@@ -21,16 +24,25 @@
 - (BOOL)ibHasClock;
 - (BOOL)ibIsGraphical;
 - (Class)ibEditorClass;
-- (void)ibWarnings:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
+- (void)ibPopulateIssues:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
 - (void)setIbInspectedHasMaxDate:(BOOL)arg1;
 - (void)setIbInspectedHasMinDate:(BOOL)arg1;
 - (BOOL)ibInspectedHasMaxDate;
 - (BOOL)ibInspectedHasMinDate;
 - (void)setIbInspectedMaxDate:(id)arg1;
-- (void)setIbInspectedMinDate:(id)arg1;
 - (id)ibInspectedMaxDate;
+- (void)setIbInspectedMinDate:(id)arg1;
 - (id)ibInspectedMinDate;
 @property(copy) NSDate *ibShadowedMaxDate;
 @property(copy) NSDate *ibShadowedMinDate;
+- (id)ibLocalAttributeKeyPaths;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @end
 

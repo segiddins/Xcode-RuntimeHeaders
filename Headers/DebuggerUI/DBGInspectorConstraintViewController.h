@@ -4,23 +4,28 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <DVTKit/DVTViewController.h>
+#import <DVTViewControllerKit/DVTViewController.h>
 
-@class DBGLayoutConstraint, NSButton, NSImageView, NSTextField, NSTrackingArea;
+@class DBGLayoutConstraint, DBGRoundedBox, DVTObservingToken, NSButton, NSImageView, NSTextField, NSTrackingArea;
 
 @interface DBGInspectorConstraintViewController : DVTViewController
 {
     DBGLayoutConstraint *_constraintModel;
     NSTrackingArea *_rolloverTrackingArea;
     BOOL _mouseIsOver;
+    BOOL _highlight;
     BOOL _constraintIsAffecting;
+    BOOL _constraintIsFilteredOut;
+    DVTObservingToken *_openRequestObservingToken;
     NSTextField *_constraintFormulaField;
     NSTextField *_constraintCategoryField;
     NSButton *_moreInfoButton;
     NSImageView *_constraintIconImageView;
     id _relativeToItem;
+    DBGRoundedBox *_borderView;
 }
 
+@property __weak DBGRoundedBox *borderView; // @synthesize borderView=_borderView;
 @property BOOL mouseIsOver; // @synthesize mouseIsOver=_mouseIsOver;
 @property(retain, nonatomic) id relativeToItem; // @synthesize relativeToItem=_relativeToItem;
 @property(retain) NSImageView *constraintIconImageView; // @synthesize constraintIconImageView=_constraintIconImageView;
@@ -29,12 +34,16 @@
 @property(retain, nonatomic) NSTextField *constraintFormulaField; // @synthesize constraintFormulaField=_constraintFormulaField;
 - (void).cxx_destruct;
 - (void)primitiveInvalidate;
+@property BOOL constraintIsFilteredOut;
 @property BOOL constraintIsAffecting;
 - (id)constraintIcon;
+- (void)updateHighlightStyle;
 - (void)updateTextAndImageFields;
 - (id)colorForTextField:(id)arg1;
+- (void)mouseUp:(id)arg1;
 - (void)mouseExited:(id)arg1;
 - (void)mouseEntered:(id)arg1;
+@property(getter=isHighlighted) BOOL highlight;
 - (void)loadView;
 @property(retain, nonatomic) DBGLayoutConstraint *constraintModel;
 

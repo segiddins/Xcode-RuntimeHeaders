@@ -12,13 +12,14 @@
 
 @interface IBEmbeddingMenuDelegate : IBAbstractEditorMenuDelegate <NSMenuDelegate>
 {
-    IBMutableIdentityDictionary *menuItemsByTargetRuntime;
+    IBMutableIdentityDictionary *_menuItemsByTargetRuntime;
 }
 
 - (void).cxx_destruct;
 - (void)menuNeedsUpdate:(id)arg1;
 - (id)currentTargetRuntime;
 - (id)menuItemsForTargetRuntime:(id)arg1;
+- (BOOL)displayTitles;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -11,6 +11,7 @@
 }
 
 - (BOOL)_shouldUseSecondaryHighlightColor;
+- (id)makeViewWithIdentifier:(id)arg1 owner:(id)arg2;
 
 @end
 

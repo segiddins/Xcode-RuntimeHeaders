@@ -10,6 +10,7 @@
 
 @interface DBGLineGeometry : SCNGeometry
 {
+    BOOL _useLegacyGLRenderer;
     BOOL _verticesSnapToPixelGridIn2D;
     DBGInteractiveSceneView *_view;
     SCNNode *_lineAnchorA;
@@ -23,12 +24,14 @@
     double _dashLength;
 }
 
-+ (id)_lineMaterial;
-+ (id)_sharedMaterial;
-+ (id)_sharedWMaterial;
-+ (id)_sharedRMaterial;
-+ (id)_sharedRWMaterial;
-+ (id)_sharedMaterialReadingFromDepthBuffer:(BOOL)arg1 writingToDepthBuffer:(BOOL)arg2;
++ (id)_lineMaterialForMetalRendererWithLibrary:(id)arg1;
++ (id)_lineMaterialForLegacyGLRenderer;
++ (id)_lineMaterialWithMetalLibrary:(id)arg1;
++ (id)_sharedMaterialWithMetalLibrary:(id)arg1;
++ (id)_sharedWMaterialWithMetalLibrary:(id)arg1;
++ (id)_sharedRMaterialWithMetalLibrary:(id)arg1;
++ (id)_sharedRWMaterialWithMetalLibrary:(id)arg1;
++ (id)_sharedMaterialReadingFromDepthBuffer:(BOOL)arg1 writingToDepthBuffer:(BOOL)arg2 metalLibrary:(id)arg3;
 + (id)lineGeometryWithStart:(id)arg1 end:(id)arg2 view:(id)arg3 readsFromDepthBuffer:(BOOL)arg4 writesToDepthBuffer:(BOOL)arg5;
 @property double dashLength; // @synthesize dashLength=_dashLength;
 @property double opacity; // @synthesize opacity=_opacity;
@@ -44,6 +47,7 @@
 - (void).cxx_destruct;
 - (id)init;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)_calculateBoundingBox;
 
 @end
 

@@ -25,7 +25,7 @@
 - (int)alertPropertyListVersion;
 - (void)runForEvent:(id)arg1 inWorkspace:(id)arg2 context:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;
 - (void)_runForRunGeneratesOutputEventInWorkspace:(id)arg1 context:(id)arg2 showIfOutput:(long long)arg3 hideIfNoOutput:(long long)arg4;
-- (void)_configureDebugAreaInWorkspaceTabControler:(id)arg1;
+- (void)_configureDebugAreaInWorkspaceTabController:(id)arg1;
 - (void)_resetActionToExternal;
 - (id)initWithPropertyList:(id)arg1;
 - (id)propertyList;

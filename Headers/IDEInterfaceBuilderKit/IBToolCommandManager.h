@@ -11,9 +11,10 @@
 }
 
 + (id)invokeSynchronouslyWithArguments:(id)arg1 error:(id *)arg2;
-+ (id)ibtoolOutputFromArguments:(id)arg1 launchError:(id *)arg2;
++ (void)invokeWithArguments:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
++ (id)prepareTaskForInvokingArguments:(id)arg1 error:(id *)arg2;
 + (id)ibtoolPath;
-+ (void)initialize;
++ (id)thottledQueue;
 
 @end
 

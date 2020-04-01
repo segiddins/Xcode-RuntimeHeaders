@@ -6,13 +6,17 @@
 
 #import <IDEKit/IDEEditor.h>
 
+#import <Xcode3UI/DVTFilterControlBarTarget-Protocol.h>
 #import <Xcode3UI/DVTSourceExpressionSource-Protocol.h>
-#import <Xcode3UI/IDEFilterControlBarTarget-Protocol.h>
+#import <Xcode3UI/IDELibraryContentDestination-Protocol.h>
+#import <Xcode3UI/IDESigningEditorCapabilityItemLibraryAssetManagerProvider-Protocol.h>
+#import <Xcode3UI/NSSplitViewDelegate-Protocol.h>
 #import <Xcode3UI/NSTextFieldDelegate-Protocol.h>
+#import <Xcode3UI/_TtP13IDEFoundation51SigningEditorConfigurationSelectionProtocolDelegate_-Protocol.h>
 
-@class DVTBorderedView, DVTChoice, DVTGradientImageButton, DVTImageAndTextCell, DVTObservingToken, DVTOutlineView, DVTReplacementView, DVTSDK, DVTScrollView, DVTSourceExpression, DVTSourceLanguageService, DVTSplitView, DVTStackBacktrace, DVTStateToken, DVTTabChooserView, IDEFilterControlBar, IDENavigableItemCoordinator, IDENavigableItemSyncFilteringCoordinator, IDEUpgradeTaskWindowController, NSArray, NSMutableArray, NSPopUpButton, NSString, NSTableColumn, NSTreeController, NSView, NSViewController, Xcode3ProjectEditorTopBarView, Xcode3TargetEditingGroup;
+@class DVTBorderedView, DVTChoice, DVTGradientImageButton, DVTImageAndTextCell, DVTObservingToken, DVTOutlineView, DVTReplacementView, DVTSDK, DVTScrollView, DVTSourceExpression, DVTSourceLanguageService, DVTSplitView, DVTStackBacktrace, DVTStateToken, DVTTabChooserView, IDENavigableItemCoordinator, IDENavigableItemSyncFilteringCoordinator, IDESearchFilterControlBar, IDEUpgradeTaskWindowController, NSArray, NSMenu, NSMutableArray, NSPopUpButton, NSString, NSTableColumn, NSTreeController, NSView, NSViewController, Xcode3ProjectEditorTopBarView, Xcode3TargetEditingGroup, _TtC13IDEFoundation46SigningEditorCapabilityItemLibraryAssetManager;
 
-@interface Xcode3ProjectEditor : IDEEditor <NSTextFieldDelegate, DVTSourceExpressionSource, IDEFilterControlBarTarget>
+@interface Xcode3ProjectEditor : IDEEditor <NSTextFieldDelegate, DVTSourceExpressionSource, DVTFilterControlBarTarget, NSSplitViewDelegate, IDESigningEditorCapabilityItemLibraryAssetManagerProvider, _TtP13IDEFoundation51SigningEditorConfigurationSelectionProtocolDelegate_, IDELibraryContentDestination>
 {
     DVTSplitView *_splitView;
     DVTTabChooserView *_tabChooserView;
@@ -22,12 +26,11 @@
     DVTOutlineView *_outlineView;
     NSTableColumn *_mainTableColumn;
     NSTreeController *_treeController;
-    IDEFilterControlBar *_filterBar;
+    IDESearchFilterControlBar *_filterBar;
     NSArray *_tabChoices;
     DVTChoice *_selectedChoice;
     Class _previousProjectEditorClass;
     Class _previousTargetEditorClass;
-    IDENavigableItemSyncFilteringCoordinator *_navigableItemCoordinator;
     NSMutableArray *_contents;
     DVTImageAndTextCell *titleCell;
     DVTImageAndTextCell *itemCell;
@@ -44,24 +47,32 @@
     NSArray *_previousSourceListSelection;
     long long _previousSourceListPopUpSelectedIndex;
     NSMutableArray *_contentsBeforeFiltering;
+    _TtC13IDEFoundation46SigningEditorCapabilityItemLibraryAssetManager *_signingEditorCapabilityItemLibraryAssetManager;
     BOOL _sourceListVisible;
     BOOL _filtered;
+    BOOL _isRefreshingTabChooserView;
+    IDENavigableItemSyncFilteringCoordinator *_outlineViewNavItemCoordinator;
+    IDENavigableItemCoordinator *_popUpNavItemCoordinator;
     DVTGradientImageButton *_sourceListVisiblityToggleButton;
     NSPopUpButton *_sourceListPopUp;
     Xcode3ProjectEditorTopBarView *_topBarView;
     DVTGradientImageButton *_addTargetButton;
     DVTGradientImageButton *_removeTargetButton;
     NSString *_filterString;
-    NSView *_filterBarContainerView;
+    DVTBorderedView *_filterBarContainerView;
     DVTScrollView *_sourceListScrollView;
 }
 
++ (BOOL)shouldShowCombinedLinkedAndEmbeddedBinariesSliceInTargetEditor;
++ (BOOL)shouldShowPackageProductsInLinkedBinariesSliceInTargetEditor;
 + (id)keyPathsForValuesAffectingSelectedExpression;
 + (long long)version;
 + (void)configureStateSavingObjectPersistenceByName:(id)arg1;
 + (id)metricLogAspect;
++ (void)initialize;
+@property(nonatomic) BOOL isRefreshingTabChooserView; // @synthesize isRefreshingTabChooserView=_isRefreshingTabChooserView;
 @property(retain) DVTScrollView *sourceListScrollView; // @synthesize sourceListScrollView=_sourceListScrollView;
-@property(retain) NSView *filterBarContainerView; // @synthesize filterBarContainerView=_filterBarContainerView;
+@property(retain) DVTBorderedView *filterBarContainerView; // @synthesize filterBarContainerView=_filterBarContainerView;
 @property(getter=isFiltered) BOOL filtered; // @synthesize filtered=_filtered;
 @property(copy, nonatomic) NSString *filterString; // @synthesize filterString=_filterString;
 @property(nonatomic, getter=isSourceListVisible) BOOL sourceListVisible; // @synthesize sourceListVisible=_sourceListVisible;
@@ -70,16 +81,26 @@
 @property(retain) Xcode3ProjectEditorTopBarView *topBarView; // @synthesize topBarView=_topBarView;
 @property(retain) NSPopUpButton *sourceListPopUp; // @synthesize sourceListPopUp=_sourceListPopUp;
 @property(retain) DVTGradientImageButton *sourceListVisiblityToggleButton; // @synthesize sourceListVisiblityToggleButton=_sourceListVisiblityToggleButton;
+@property(readonly) IDENavigableItemCoordinator *popUpNavItemCoordinator; // @synthesize popUpNavItemCoordinator=_popUpNavItemCoordinator;
+@property(readonly) IDENavigableItemSyncFilteringCoordinator *outlineViewNavItemCoordinator; // @synthesize outlineViewNavItemCoordinator=_outlineViewNavItemCoordinator;
 @property(copy) NSArray *currentSelectedItems; // @synthesize currentSelectedItems=_currentSelectedItems;
-@property(readonly) IDENavigableItemCoordinator *navigableItemCoordinator; // @synthesize navigableItemCoordinator=_navigableItemCoordinator;
 @property(copy) NSArray *draggingTreeNodes; // @synthesize draggingTreeNodes=_draggingTreeNodes;
 @property(retain, nonatomic) DVTChoice *selectedChoice; // @synthesize selectedChoice=_selectedChoice;
 @property(copy, nonatomic) NSMutableArray *contents; // @synthesize contents=_contents;
 - (void).cxx_destruct;
+- (void)didUpdateConfiguration:(id)arg1;
+- (void)updateConfiguration:(id)arg1;
+- (void)updateContextProvider;
+- (id)selectedTargets;
+@property(readonly, nonatomic) _TtC13IDEFoundation46SigningEditorCapabilityItemLibraryAssetManager *signingEditorCapabilityItemLibraryAssetManager;
+- (BOOL)depositAssetsFromPasteboard:(id)arg1;
 - (BOOL)validateMenuItem:(id)arg1;
 - (id)supplementalTargetForAction:(SEL)arg1 sender:(id)arg2;
+- (void)performDeferredCustomUpgradeForUUID:(id)arg1;
 - (void)localizationImport:(id)arg1;
 - (void)localizationExport:(id)arg1;
+- (void)performLocalizationAction:(id)arg1;
+- (void)addCapability:(id)arg1;
 - (void)addTargetToProject:(id)arg1;
 - (void)showUpgradeProjectSheet:(id)arg1;
 - (void)contextMenu_delete:(id)arg1;
@@ -88,9 +109,10 @@
 - (void)selectSourceListItem:(id)arg1;
 - (void)setSourceListPopUpSelectionIndex:(long long)arg1;
 - (void)toggleSourceList:(id)arg1;
+- (void)splitView:(id)arg1 resizeSubviewsWithOldSize:(struct CGSize)arg2;
 - (BOOL)splitView:(id)arg1 canCollapseSubview:(id)arg2;
-- (double)splitView:(id)arg1 constrainMaxCoordinate:(float)arg2 ofSubviewAt:(int)arg3;
-- (double)splitView:(id)arg1 constrainMinCoordinate:(float)arg2 ofSubviewAt:(int)arg3;
+- (double)splitView:(id)arg1 constrainMaxCoordinate:(double)arg2 ofSubviewAt:(long long)arg3;
+- (double)splitView:(id)arg1 constrainMinCoordinate:(double)arg2 ofSubviewAt:(long long)arg3;
 - (void)outlineView:(id)arg1 concludeDragOperation:(id)arg2;
 - (unsigned long long)outlineView:(id)arg1 validateDrop:(id)arg2 proposedItem:(id)arg3 proposedChildIndex:(long long)arg4;
 - (BOOL)outlineView:(id)arg1 acceptDrop:(id)arg2 item:(id)arg3 childIndex:(long long)arg4;
@@ -108,6 +130,7 @@
 - (id)outlineView:(id)arg1 toolTipForCell:(id)arg2 rect:(struct CGRect *)arg3 tableColumn:(id)arg4 item:(id)arg5 mouseLocation:(struct CGPoint)arg6;
 - (void)replacementView:(id)arg1 willCloseViewController:(id)arg2;
 - (void)replacementView:(id)arg1 didInstallViewController:(id)arg2;
+- (void)executeIgnoringChangesToSelectedChoice:(CDUnknownBlockType)arg1;
 - (void)primitiveInvalidate;
 - (void)loadView;
 - (void)viewWillUninstall;
@@ -126,7 +149,6 @@
 @property(readonly, nonatomic) DVTSourceExpression *selectedExpression;
 - (void)commitStateToDictionary:(id)arg1;
 - (void)revertStateWithDictionary:(id)arg1;
-@property(retain) DVTStateToken *stateToken; // @dynamic stateToken;
 - (void)navigateToAnnotationWithRepresentedObject:(id)arg1 wantsIndicatorAnimation:(BOOL)arg2 exploreAnnotationRepresentedObject:(id)arg3;
 - (void)takeFocus;
 - (void)_selectSourceListItems:(id)arg1 sourceListItemEditorOrNil:(id)arg2;
@@ -135,8 +157,10 @@
 - (id)currentSelectedDocumentLocations;
 - (BOOL)canBecomeMainViewController;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2 document:(id)arg3;
-- (id)filterButtonMenu;
-- (id)filterDefinitionIdentifier;
+@property(readonly, nonatomic) NSString *filterButtonAccessibilityDescription;
+@property(readonly, nonatomic) NSString *filterButtonToolTip;
+@property(readonly, nonatomic) NSMenu *filterButtonMenu;
+@property(readonly, nonatomic) NSString *filterDefinitionIdentifier;
 - (void)_populateSourceList;
 - (void)_populateSourceListPopUp;
 - (void)_showMultipleSelectionSourceListPopUpItem:(BOOL)arg1;
@@ -154,8 +178,10 @@
 @property(readonly) DVTSourceExpression *quickHelpExpression;
 @property(readonly) DVTSDK *sdk;
 @property(readonly, nonatomic) NSString *selectedText;
+@property(retain) DVTStateToken *stateToken; // @dynamic stateToken;
 @property(readonly) Class superclass;
 @property(readonly, nonatomic, getter=isValid) BOOL valid;
+@property(readonly, nonatomic) NSView *view;
 
 @end
 

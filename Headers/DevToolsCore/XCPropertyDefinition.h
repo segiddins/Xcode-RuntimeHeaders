@@ -4,10 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Foundation/NSObject.h>
+#import <objc/NSObject.h>
 
-@class NSArray, NSDictionary, NSSet, NSString, TSPropertyListDictionary, XCPropertyDomainSpecification, XCPropertyMacroExpression;
-@protocol XCPropertyTypes;
+@class NSArray, NSDictionary, NSMapTable, NSSet, NSString, TSPropertyListDictionary, XCCommandLineFragmentGenerator, XCPropertyDomainSpecification, XCPropertyMacroExpression;
+@protocol DVTMacroExpansion, XCPropertyTypes;
 
 @interface XCPropertyDefinition : NSObject
 {
@@ -16,11 +16,14 @@
     _Bool _hasResolvedFileTypes;
     _Bool _uiShouldRemoveIfEmpty;
     _Bool _isAppleInternalOnly;
+    _Bool _isBasic;
     id <XCPropertyTypes> _uiType;
     NSArray *_allowedValues;
-    id _defaultValue;
+    id <DVTMacroExpansion> _defaultValue;
     NSSet *_supportedArchs;
+    NSMapTable *_supportedArchsByDomain;
     NSSet *_supportedFileTypes;
+    NSSet *_supportedVersionRanges;
     XCPropertyDomainSpecification *_domain;
     NSSet *_conditionFlavors;
     id _commandLineArgs;
@@ -38,6 +41,8 @@
     NSArray *_localizedAllowedValues;
     NSString *_defLocDesc;
     TSPropertyListDictionary *_properties;
+    _Bool _uiShouldStripMacroDefinition;
+    XCCommandLineFragmentGenerator *_commandLineFragmentGenerator;
 }
 
 + (id)stringRepresentationFromPropertyValue:(id)arg1 error:(id *)arg2;
@@ -47,21 +52,30 @@
 + (BOOL)unregisterPropertyTypeForPropertyNamed:(id)arg1;
 + (BOOL)registerPropertyType:(id)arg1 forPropertyNamed:(id)arg2;
 + (id)typeOfPropertyNamed:(id)arg1;
++ (id)baseDefinitionsForAllPropertyDefinitionsInAllSpecificationDomains;
++ (id)allPropertyDefinitionsInSpecificationDomain:(id)arg1;
++ (id)allPropertyDefinitionsInAllSpecificationDomains;
++ (void)_addPropertyDefinitionsInSpecificationDomain:(id)arg1 toDictionary:(id)arg2;
++ (void)enumeratePropertyDefinitionsInSpecificationDomain:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
 + (id)enumerationPropertyDefinitionWithName:(id)arg1 allowedValues:(id)arg2 defaultValue:(id)arg3;
 + (id)booleanPropertyDefinitionWithName:(id)arg1 defaultValue:(id)arg2;
 + (id)stringListPropertyDefinitionWithName:(id)arg1 defaultValue:(id)arg2;
 + (id)pathListPropertyDefinitionWithName:(id)arg1 defaultValue:(id)arg2;
 + (id)stringPropertyDefinitionWithName:(id)arg1 defaultValue:(id)arg2;
 + (id)propertyDefinitionFromPListDictionary:(id)arg1;
-+ (void)initialize;
++ (id)_parsedDefaultValueForString:(id)arg1;
 + (id)dbgAllPropertyDefinitions;
+@property(readonly) XCCommandLineFragmentGenerator *commandLineFragmentGenerator; // @synthesize commandLineFragmentGenerator=_commandLineFragmentGenerator;
+@property(readonly) _Bool uiShouldStripMacroDefinition; // @synthesize uiShouldStripMacroDefinition=_uiShouldStripMacroDefinition;
+- (void).cxx_destruct;
 - (void)printToStdout;
 - (id)description;
-- (id)generateArgumentsForCommand:(id)arg1 inBuildContext:(id)arg2;
+- (id)generateArgumentsForCommand:(id)arg1 withMacroExpansionScope:(id)arg2;
 - (id)argumentGenerationInfoProvidersForValue:(id)arg1;
-- (id)generatedCommandLineArgumentsForValue:(id)arg1 inTargetBuildContext:(id)arg2;
-- (id)_generatedCommandLineArgumentsFromInstrux:(void *)arg1 forValue:(id)arg2 inContext:(id)arg3;
-- (BOOL)propertyIsEnabledInPropertyExpansionContext:(id)arg1;
+- (id)generatedCommandLineArgumentsForValue:(id)arg1 withMacroExpansionScope:(id)arg2;
+- (id)_generatedCommandLineArgumentsFromInstrux:(id)arg1 forValue:(id)arg2 withMacroExpansionScope:(id)arg3;
+- (BOOL)propertyIsEnabledWithMacroExpansionScope:(id)arg1;
+- (id)localizedAllowedValuesInTarget:(id)arg1;
 - (id)localizedAllowedValues;
 - (id)localizedDescription;
 - (id)localizedName;
@@ -79,6 +93,7 @@
 - (id)categoryNameForUserInterface;
 - (void)setCategory:(id)arg1;
 - (id)category;
+- (BOOL)isBasic;
 - (BOOL)isAppleInternalOnly;
 - (id)conditionExpression;
 - (id)commandArgumentGenerationInfo;
@@ -86,12 +101,17 @@
 - (id)conditionFlavors;
 - (void)setPropertyDomain:(id)arg1;
 - (id)propertyDomain;
+- (BOOL)supportsVersionString:(id)arg1;
+- (BOOL)supportsVersion:(id)arg1;
+- (BOOL)hasSupportedVersionRanges;
 - (BOOL)supportsFileType:(id)arg1;
 - (id)supportedFileTypes;
-- (BOOL)supportsArchitecture:(id)arg1;
+- (BOOL)supportsArchitecture:(id)arg1 inDomain:(id)arg2 withMacroExpansionScope:(id)arg3;
+- (id)supportedArchitecturesInDomain:(id)arg1 withMacroExpansionScope:(id)arg2;
 - (id)supportedArchitectures;
 - (id)additionalBuildSettings;
 - (id)defaultValue;
+- (id)allowedValuesInTarget:(id)arg1;
 - (id)allowedValues;
 - (id)uiTypeString;
 - (id)uiType;
@@ -99,12 +119,11 @@
 - (id)typeString;
 - (id)type;
 - (id)name;
-- (void)dealloc;
 - (id)init;
 - (id)initFromPListDictionary:(id)arg1;
 - (void)_loadLocalizationsFromPropertyListDictionary:(id)arg1 stringsDictionary:(id)arg2;
-- (id)initWithName:(id)arg1 allowedValues:(id)arg2 defaultValue:(id)arg3 isAppleInternalOnly:(BOOL)arg4 commandLineArguments:(void *)arg5;
-- (id)initWithName:(id)arg1 uiType:(id)arg2 allowedValues:(id)arg3 defaultValue:(id)arg4 isAppleInternalOnly:(BOOL)arg5 commandLineArguments:(void *)arg6;
+- (id)initWithName:(id)arg1 allowedValues:(id)arg2 defaultValue:(id)arg3 isAppleInternalOnly:(BOOL)arg4 isBasic:(BOOL)arg5 commandLineArguments:(id)arg6;
+- (id)initWithName:(id)arg1 uiType:(id)arg2 allowedValues:(id)arg3 defaultValue:(id)arg4 isAppleInternalOnly:(BOOL)arg5 isBasic:(BOOL)arg6 commandLineArguments:(id)arg7;
 
 @end
 

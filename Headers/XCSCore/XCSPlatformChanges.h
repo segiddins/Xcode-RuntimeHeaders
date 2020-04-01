@@ -6,12 +6,13 @@
 
 #import <XCSCore/XCSObject.h>
 
-@class XCSChangedString;
+@class NSString, XCSChangedString;
 
 @interface XCSPlatformChanges : XCSObject
 {
 }
 
+@property(readonly) NSString *upgradeString;
 - (id)dictionaryRepresentation;
 - (id)initWithContents:(id)arg1 service:(id)arg2 validationErrors:(id *)arg3;
 - (id)initWithVersion:(id)arg1 buildNumber:(id)arg2 validationErrors:(id *)arg3;

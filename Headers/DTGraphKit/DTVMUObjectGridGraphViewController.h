@@ -46,8 +46,11 @@
 @property(readonly, nonatomic) DTObjectGridGraph *gridGraphView;
 - (void)viewDidLoad;
 - (void)loadView;
+- (void)resetZoomLevel;
+- (void)adjustCameraZoomLevelWithValue:(double)arg1;
 - (void)displayImmediateReferencesForNode:(unsigned int)arg1 inGraph:(id)arg2;
 - (void)displayLeakHierarchyForNode:(unsigned int)arg1 inGraph:(id)arg2;
+- (void)displayRootPathsForNode:(unsigned int)arg1 inGraph:(id)arg2 rootPathsGraph:(id)arg3 initialGenerations:(BOOL)arg4;
 - (void)displayRootPathsForNode:(unsigned int)arg1 inGraph:(id)arg2 initialGenerations:(BOOL)arg3;
 - (void)displayRootPathsForNode:(unsigned int)arg1 inGraph:(id)arg2;
 - (void)setPivotNodeIdentifier:(unsigned int)arg1 maintainingCoordinates:(id)arg2 initialGenerations:(BOOL)arg3;

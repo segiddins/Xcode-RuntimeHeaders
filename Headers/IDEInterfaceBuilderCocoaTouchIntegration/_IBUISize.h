@@ -16,6 +16,7 @@
 + (id)sizeWithSize:(long long)arg1;
 @property double pointSize; // @synthesize pointSize=_pointSize;
 @property long long size; // @synthesize size=_size;
+- (id)debugDescription;
 
 @end
 

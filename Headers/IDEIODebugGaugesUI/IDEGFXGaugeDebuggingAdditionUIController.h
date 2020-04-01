@@ -51,6 +51,7 @@
 - (id)frameBreakdownController;
 - (void)_createFrameBreakdownReportSection;
 @property(readonly, nonatomic) IDEDebugGaugeReportSection *frameBreakdownReportSection;
+- (BOOL)frameBreakdownReportSectionReady;
 - (void)primitiveInvalidate;
 - (id)initWithWorkspaceTabController:(id)arg1 withDebuggingAddition:(id)arg2 forExtension:(id)arg3;
 

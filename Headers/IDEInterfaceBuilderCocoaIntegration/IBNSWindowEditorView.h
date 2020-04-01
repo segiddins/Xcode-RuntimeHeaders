@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <DVTKit/DVTLayoutView_ML.h>
+#import <DVTStructuredLayoutKit/DVTLayoutView_ML.h>
 
 #import <IDEInterfaceBuilderCocoaIntegration/IBWindowContentBorderThicknessTarget-Protocol.h>
 
@@ -12,20 +12,26 @@
 
 @interface IBNSWindowEditorView : DVTLayoutView_ML <IBWindowContentBorderThicknessTarget>
 {
-    NSWindow *windowToMimic;
-    int contentResizingMode;
-    NSShadow *windowShadow;
-    NSView *contentView;
-    NSView *contentViewContainer;
-    NSImage *cachedWindowImage;
-    IBNinePartImage *cachedShadowImage;
+    NSShadow *_windowShadow;
+    NSView *_contentViewContainer;
+    NSImage *_cachedWindowImage;
+    double _cachedWindowImageScale;
+    IBNinePartImage *_cachedShadowImage;
     BOOL _liveResizing;
+    int _contentResizingMode;
+    NSWindow *_windowToMimic;
+    NSView *_contentView;
 }
 
 + (id)windowViewForWindow:(id)arg1 andContentView:(id)arg2;
 @property BOOL liveResizing; // @synthesize liveResizing=_liveResizing;
+@property(nonatomic) int contentResizingMode; // @synthesize contentResizingMode=_contentResizingMode;
+@property(retain, nonatomic) NSView *contentView; // @synthesize contentView=_contentView;
+@property(retain, nonatomic) NSWindow *windowToMimic; // @synthesize windowToMimic=_windowToMimic;
 - (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
+- (void)applyAndInvalidateAppearance;
+- (void)effectiveAppearanceDidChange;
 - (void)drawEverything;
 - (void)renderWindowIntoCurrentContextAtLocation:(struct CGPoint)arg1;
 - (void)maskRoundedBottomCorners;
@@ -50,22 +56,18 @@
 - (CDStruct_d2b197d1)insetToContentView;
 - (CDStruct_d2b197d1)insetFromShadowToWindow;
 - (struct CGRect)mimickedToolbarFrame;
-- (struct CGRect)rectOfToolbarButton;
 @property(retain) NSToolbar *toolbar;
 - (BOOL)autorecalculatesContentBorderThicknessForEdge:(unsigned long long)arg1;
 - (void)setAutorecalculatesContentBorderThickness:(BOOL)arg1 forEdge:(unsigned long long)arg2;
 - (double)contentBorderThicknessForEdge:(unsigned long long)arg1;
 - (void)setContentBorderThickness:(double)arg1 forEdge:(unsigned long long)arg2;
 @property unsigned long long collectionBehavior;
-@property BOOL showsToolbarButton;
+@property long long titleVisibility;
+@property BOOL titlebarAppearsTransparent;
 @property(copy) NSString *title;
 @property BOOL hasShadow;
-@property int contentResizingMode;
-@property(retain) NSView *contentView;
 - (id)windowShadowImage;
 - (id)windowShadow;
-@property(retain) NSWindow *windowToMimic;
-- (void)viewWillMoveToWindow:(id)arg1;
 - (void)awakeFromNib;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)initWithCoder:(id)arg1;

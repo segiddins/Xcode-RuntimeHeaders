@@ -12,17 +12,18 @@
 {
     double _autoHighlightTokenAppearancesDelay;
     long long _wrappedLinesIndentWidth;
-    int _tabKeyIndentingBehavior;
+    long long _tabKeyIndentingBehavior;
     unsigned long long _defaultLineEndings;
     BOOL _codeFocusOnHover;
 }
 
++ (id)sharedPreferences;
 + (id)preferences;
 + (id)_userStatisticsValueForKey:(id)arg1;
 + (void)recordMessageTracerStatistics;
 + (id)_defaultDefaults;
 + (void)initialize;
-@property(nonatomic) int tabKeyIndentingBehavior; // @synthesize tabKeyIndentingBehavior=_tabKeyIndentingBehavior;
+@property(nonatomic) long long tabKeyIndentingBehavior; // @synthesize tabKeyIndentingBehavior=_tabKeyIndentingBehavior;
 @property BOOL beepOnNonMatchingBrace;
 @property BOOL showMatchingBrace;
 @property BOOL selectToInsideMatchingQuotes;
@@ -34,7 +35,9 @@
 @property double autoSuggestCompletionsDelay;
 @property BOOL autoSuggestCompletions;
 @property BOOL enableTypeOverCompletions;
+@property BOOL autoEncloseSelectionInDelimiters;
 @property BOOL autoInsertOpenBracket;
+@property BOOL autoCloseBlockComment;
 @property BOOL autoInsertClosingBrace;
 @property BOOL trimWhitespaceOnlyLines;
 @property BOOL trimTrailingWhitespace;
@@ -43,10 +46,15 @@
 - (BOOL)characterIsAutoIndent:(unsigned short)arg1;
 @property(copy) NSString *autoIndentCharacters;
 @property BOOL matchIndentWithLineAbove;
+@property BOOL indentBlocksInMethodCalls;
+@property BOOL indentNamespaceAndExtern;
+@property BOOL indentCaseInC;
+@property BOOL indentCase;
 @property BOOL alignConsecutiveSlashSlashComments;
 @property BOOL indentSlashSlashComments;
 @property long long soloBraceIndentWidth;
 @property BOOL indentSoloBraces;
+@property BOOL indentOnPaste;
 @property BOOL useSyntaxAwareIndenting;
 @property long long indentWidth;
 @property long long tabWidth;
@@ -68,6 +76,13 @@
 @property BOOL showPageGuide;
 @property BOOL codeFocusOnHover;
 @property BOOL codeFocusFollowsSelection;
+@property double overscrollAmount;
+@property BOOL fadeDocumentationMarkupDelimiters;
+@property BOOL fadeCommentDelimiters;
+@property BOOL showMarkSeparators;
+@property BOOL expandUncachedDiffBuffer;
+@property BOOL showAuthors;
+@property BOOL showMinimap;
 @property BOOL showCodeFoldingSidebar;
 @property BOOL showLineNumbers;
 - (id)init;

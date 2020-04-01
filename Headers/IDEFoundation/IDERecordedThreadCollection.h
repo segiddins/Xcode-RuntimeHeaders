@@ -9,10 +9,12 @@
 #import <IDEFoundation/DVTInvalidation-Protocol.h>
 #import <IDEFoundation/IDEDebugNavigableModel-Protocol.h>
 
-@class DVTStackBacktrace, IDEDebugProcess, IDELaunchSession, NSArray, NSString;
+@class DVTDispatchLock, DVTStackBacktrace, IDEDebugProcess, IDELaunchSession, NSArray, NSMutableArray, NSString;
 
 @interface IDERecordedThreadCollection : NSObject <IDEDebugNavigableModel, DVTInvalidation>
 {
+    NSMutableArray *_delayedInvalidationChildren;
+    DVTDispatchLock *_delayedInvalidationChildrenLock;
     BOOL _usedInRuntimeIssue;
     IDEDebugProcess *_parentProcess;
     NSArray *_recordedThreads;

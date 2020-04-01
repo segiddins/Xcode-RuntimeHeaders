@@ -22,7 +22,7 @@
 @property(retain) NSTextView *textView; // @synthesize textView=_textView;
 @property int loadedState; // @synthesize loadedState=_loadedState;
 - (void).cxx_destruct;
-- (void)writeAtomicallyToTemporaryFile:(id)arg1;
+- (id)dataRepresentation;
 - (id)extensionForTemporaryFile;
 - (void)cancelLoading;
 - (void)_updateTextViewUsingStringOrAttributedString:(id)arg1;

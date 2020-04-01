@@ -7,8 +7,6 @@
 #import <IBFoundation/IBICIconSetRep.h>
 
 @interface IBICIconSetRep (DisplayAdditions)
-+ (id)emptyThumbnailIcon;
 - (void)generateThumbnailWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (id)typeIcon;
 @end
 

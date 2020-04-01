@@ -14,12 +14,15 @@
 {
     NSImage *_skeImage;
     unsigned long long _skeAppearance;
+    BOOL _showIconOnly;
 }
 
 + (Class)cellClass;
+@property(nonatomic) BOOL showIconOnly; // @synthesize showIconOnly=_showIconOnly;
 - (void).cxx_destruct;
 - (struct CGSize)intrinsicContentSize;
 - (void)drawRect:(struct CGRect)arg1;
+- (void)_drawInRect:(struct CGRect)arg1;
 @property(retain, nonatomic) NSImage *icon;
 @property(nonatomic) unsigned long long ske_appearance;
 - (void)setImage:(id)arg1;

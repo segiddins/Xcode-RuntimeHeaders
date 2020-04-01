@@ -16,6 +16,7 @@
 - (BOOL)boolForIndex:(unsigned long long)arg1;
 - (double)doubleForIndex:(unsigned long long)arg1;
 - (long long)intForIndex:(unsigned long long)arg1;
+- (const char *)cStringForIndex:(unsigned long long)arg1;
 - (id)stringForIndex:(unsigned long long)arg1;
 - (unsigned long long)count;
 

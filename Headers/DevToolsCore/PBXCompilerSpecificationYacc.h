@@ -10,7 +10,7 @@
 {
 }
 
-- (id)computeDependenciesForFilePath:(id)arg1 ofType:(id)arg2 outputDirectory:(id)arg3 inTargetBuildContext:(id)arg4;
+- (id)computeDependenciesForFilePath:(id)arg1 ofType:(id)arg2 outputDirectory:(id)arg3 withMacroExpansionScope:(id)arg4;
 
 @end
 

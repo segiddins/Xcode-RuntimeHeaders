@@ -6,16 +6,22 @@
 
 #import <objc/NSObject.h>
 
+@protocol DYShaderAnalyzerDelegate;
+
 @interface DYShaderAnalyzer : NSObject
 {
+    id <DYShaderAnalyzerDelegate> _delegate;
 }
 
 + (BOOL)isDisassemblerAvailable;
 + (BOOL)supportRendererType:(int)arg1;
+- (void).cxx_destruct;
+- (id)platformShaderAnalyzer;
 - (id)disassembleBinary:(id)arg1;
-- (id)analyzeFragmentBinary:(id)arg1 uscSamples:(id)arg2;
-- (id)analyzeVertexBinary:(id)arg1 uscSamples:(id)arg2;
-- (id)analyzeBinary:(id)arg1 uscSamples:(id)arg2;
+- (id)analyzeFragmentBinary:(id)arg1 uscSamples:(id)arg2 targetIndex:(int)arg3;
+- (id)analyzeVertexBinary:(id)arg1 uscSamples:(id)arg2 targetIndex:(int)arg3;
+- (id)analyzeBinary:(id)arg1 uscSamples:(id)arg2 targetIndex:(int)arg3 withTextSegment:(id)arg4 withKey:(id)arg5 withShaderSourcePath:(id)arg6 forDataMaster:(unsigned int)arg7 withPerDrawLimiterData:(id)arg8;
+- (id)initWithDelegate:(id)arg1;
 
 @end
 

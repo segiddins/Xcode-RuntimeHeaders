@@ -15,7 +15,6 @@
     DVTCharStream *_inputStream;
     DVTSourceScanner *_scanner;
     struct _NSRange _dirtyRange;
-    long long _batchDelta;
     DVTSourceModelItem *_sourceItems;
     BOOL _isDoingBatchEdit;
     DVTSourceModelParser *_nativeParser;
@@ -23,7 +22,6 @@
 
 + (void)initialize;
 @property BOOL isDoingBatchEdit; // @synthesize isDoingBatchEdit=_isDoingBatchEdit;
-@property long long batchDelta; // @synthesize batchDelta=_batchDelta;
 @property struct _NSRange dirtyRange; // @synthesize dirtyRange=_dirtyRange;
 @property(retain) DVTSourceScanner *scanner; // @synthesize scanner=_scanner;
 @property(retain) DVTSourceModelItem *sourceItems; // @synthesize sourceItems=_sourceItems;
@@ -75,6 +73,7 @@
 - (id)interfaceDeclarationAtLocation:(unsigned long long)arg1;
 - (id)typeDeclarationAtLocation:(unsigned long long)arg1;
 - (id)classAtLocation:(unsigned long long)arg1;
+- (struct _NSRange)methodOrFunctionRangeAtRange:(struct _NSRange)arg1;
 - (id)itemNameAtLocation:(unsigned long long)arg1 inTypeList:(long long *)arg2 nameRanges:(id *)arg3 scopeRange:(struct _NSRange *)arg4;
 - (id)nameOfItem:(id)arg1 nameRanges:(id *)arg2 scopeRange:(struct _NSRange *)arg3;
 - (void)enumerateIdentifierItemsInRange:(struct _NSRange)arg1 usingBlock:(CDUnknownBlockType)arg2;

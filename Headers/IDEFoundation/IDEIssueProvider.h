@@ -15,16 +15,19 @@
     IDEIssueManager *_issueManager;
     DVTExtension *_extension;
     IDEIssueProviderSession *_session;
+    BOOL _canCreateBreakpoint;
     IDEIssueProviderSession *_currentProviderSession;
 }
 
 + (int)providerType;
 + (unsigned long long)assertionBehaviorAfterEndOfEventForSelector:(SEL)arg1;
 + (void)initialize;
+@property(readonly) BOOL canCreateBreakpoint; // @synthesize canCreateBreakpoint=_canCreateBreakpoint;
 @property(retain) IDEIssueProviderSession *currentProviderSession; // @synthesize currentProviderSession=_currentProviderSession;
 @property(readonly) DVTExtension *extension; // @synthesize extension=_extension;
 @property(retain) IDEIssueManager *issueManager; // @synthesize issueManager=_issueManager;
 - (void).cxx_destruct;
+- (id)createBreakpointIfNecessaryIgnoreExisting:(BOOL)arg1;
 - (BOOL)allowsExistingIssuesToBeCoalesced;
 - (BOOL)allowsNewIssuesToBeCoalesced;
 @property(readonly) BOOL _filterIssuesByActiveScheme;
@@ -38,6 +41,7 @@
 - (void)addIssues:(id)arg1 forProviderContext:(id)arg2 providerSession:(id)arg3 container:(id)arg4 blueprint:(id)arg5;
 - (void)setIssues:(id)arg1 forProviderContext:(id)arg2 providerSession:(id)arg3 container:(id)arg4 blueprint:(id)arg5 runtimeGroupingObject:(id)arg6;
 - (void)setIssues:(id)arg1 forProviderContext:(id)arg2 providerSession:(id)arg3 container:(id)arg4 blueprint:(id)arg5;
+- (void)setIssues:(id)arg1 forProviderContext:(id)arg2;
 @property(readonly, copy) NSString *description;
 - (void)primitiveInvalidate;
 - (id)initWithIssueManager:(id)arg1 extension:(id)arg2;

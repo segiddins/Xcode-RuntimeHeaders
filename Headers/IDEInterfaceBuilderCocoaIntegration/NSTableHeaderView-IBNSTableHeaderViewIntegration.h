@@ -6,12 +6,24 @@
 
 #import <AppKit/NSTableHeaderView.h>
 
-@interface NSTableHeaderView (IBNSTableHeaderViewIntegration)
+#import <IDEInterfaceBuilderCocoaIntegration/IBDocumentArchiving-Protocol.h>
+
+@class NSString;
+
+@interface NSTableHeaderView (IBNSTableHeaderViewIntegration) <IBDocumentArchiving>
 - (void)ibPrepareCocoaDocumentForCompiling:(id)arg1 withContext:(id)arg2;
 - (void)ibMapCopyOfReceiver:(id)arg1 intoLayoutEngine:(id)arg2;
 - (id)ibPasteboardTypes;
 - (struct CGSize)ibMaximumSize;
 - (struct CGSize)ibMinimumSize;
 - (Class)ibEditorClass;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @end
 

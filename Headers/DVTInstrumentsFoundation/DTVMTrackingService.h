@@ -24,6 +24,7 @@
 - (id)requestVMSnapshot;
 - (void)setTargetPid:(id)arg1 referenceDate:(id)arg2;
 - (id)configureLaunchEnvironment:(id)arg1;
+- (void)messageReceived:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

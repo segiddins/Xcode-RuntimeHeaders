@@ -4,11 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <AppKit/NSTextView.h>
+#import <DVTCocoaAdditionsKit/DVTDealloc2Main_TextView.h>
 
 @class IDEConfigurableDataNode, XCBuildResultsTextLayout;
 
-@interface XCTranscriptTextView : NSTextView
+@interface XCTranscriptTextView : DVTDealloc2Main_TextView
 {
     XCBuildResultsTextLayout *_textLayout;
     IDEConfigurableDataNode *_dataNode;

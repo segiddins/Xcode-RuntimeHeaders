@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <DVTKit/DVTViewController.h>
+#import <DVTViewControllerKit/DVTViewController.h>
 
 @class DVTObservingToken, DVTScrollView, DVTSearchField, NSArray, NSButton, NSString, SKEMaterialPickerCollectionView;
 @protocol SKEMaterialPickerDataSource;
@@ -18,6 +18,7 @@
     DVTScrollView *_scrollView;
     NSButton *_doneButton;
     NSArray *_cachedContents;
+    NSArray *_displayedContents;
     DVTObservingToken *_selectionObservingToken;
     NSString *_filterString;
 }
@@ -29,6 +30,10 @@
 - (void)refreshContentsUI;
 - (void)refreshDoneButtonState;
 - (void)refreshContents;
+- (void)collectionView:(id)arg1 cancelPrefetchingForItemsAtIndexPaths:(id)arg2;
+- (void)collectionView:(id)arg1 prefetchItemsAtIndexPaths:(id)arg2;
+- (id)collectionView:(id)arg1 itemForRepresentedObjectAtIndexPath:(id)arg2;
+- (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
 - (void)viewWillAppear;
 - (void)viewDidLoad;
 - (void)primitiveInvalidate;

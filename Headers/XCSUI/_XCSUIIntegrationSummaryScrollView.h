@@ -8,10 +8,8 @@
 
 @interface _XCSUIIntegrationSummaryScrollView : NSScrollView
 {
-    BOOL _allowScrolling;
 }
 
-@property BOOL allowScrolling; // @synthesize allowScrolling=_allowScrolling;
 - (void)scrollWheel:(id)arg1;
 
 @end

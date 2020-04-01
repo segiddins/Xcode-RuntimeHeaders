@@ -14,11 +14,14 @@
     NSDictionary *_libraryLinkTimeVersions;
     NSDictionary *_queueLabels;
     NSDictionary *_threadLabels;
+    NSString *_patchVersion;
+    struct DYInterposeVersion _version;
     BOOL _guestAppWasLinkedOnApexOrLater;
-    unsigned int _version;
     unsigned int _nativePointerSize;
+    unsigned int _isBoundaryLess;
     unsigned int _graphicsApi;
     DYDeviceInfo *_controlDeviceInfo;
+    struct DYInterposeVersion *_interposerVersion;
     unsigned long long _capturedFramesCount;
     NSDictionary *_guestAppInfoPlist;
     NSData *_guestAppIconData;
@@ -30,6 +33,7 @@
 + (id)symbolicatorSignatureFromCaptureStore:(id)arg1;
 + (unsigned int)graphicsAPIOfCaptureStore:(id)arg1;
 @property(readonly, nonatomic) unsigned int graphicsApi; // @synthesize graphicsApi=_graphicsApi;
+@property(readonly, nonatomic) unsigned int isBoundaryLess; // @synthesize isBoundaryLess=_isBoundaryLess;
 @property(readonly, retain, nonatomic) NSDictionary *configurationDictionary; // @synthesize configurationDictionary=_configurationDictionary;
 @property(readonly, retain, nonatomic) NSDictionary *launchDictionary; // @synthesize launchDictionary=_launchDictionary;
 @property(readonly, nonatomic) NSData *guestAppIconData; // @synthesize guestAppIconData=_guestAppIconData;
@@ -37,7 +41,7 @@
 @property(readonly, nonatomic) BOOL guestAppWasLinkedOnApexOrLater; // @synthesize guestAppWasLinkedOnApexOrLater=_guestAppWasLinkedOnApexOrLater;
 @property(readonly, nonatomic) unsigned long long capturedFramesCount; // @synthesize capturedFramesCount=_capturedFramesCount;
 @property(readonly, nonatomic) unsigned int nativePointerSize; // @synthesize nativePointerSize=_nativePointerSize;
-@property(readonly, nonatomic) unsigned int version; // @synthesize version=_version;
+@property(nonatomic) struct DYInterposeVersion *interposerVersion; // @synthesize interposerVersion=_interposerVersion;
 @property(readonly, retain, nonatomic) DYDeviceInfo *controlDeviceInfo; // @synthesize controlDeviceInfo=_controlDeviceInfo;
 @property(readonly, retain, nonatomic) DYDeviceInfo *deviceInfo; // @synthesize deviceInfo=_deviceInfo;
 - (BOOL)canPlaybackOnDeviceWithInfo:(id)arg1 limitBackwardsCompatibility:(BOOL)arg2 isInternal:(BOOL)arg3;

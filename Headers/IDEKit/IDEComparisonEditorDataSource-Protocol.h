@@ -10,8 +10,8 @@
 @protocol DVTInvalidation;
 
 @protocol IDEComparisonEditorDataSource <NSObject>
-- (id <DVTInvalidation>)documentForSecondaryDocumentLocation:(DVTDocumentLocation *)arg1 completionBlock:(void (^)(IDEEditorDocument *, int, NSError *))arg2;
-- (id <DVTInvalidation>)documentForPrimaryDocumentLocation:(DVTDocumentLocation *)arg1 completionBlock:(void (^)(IDEEditorDocument *, int, NSError *))arg2;
+- (id <DVTInvalidation>)documentForSecondaryDocumentLocation:(DVTDocumentLocation *)arg1 completionBlock:(void (^)(IDEEditorDocument *, long long, NSError *))arg2;
+- (id <DVTInvalidation>)documentForPrimaryDocumentLocation:(DVTDocumentLocation *)arg1 completionBlock:(void (^)(IDEEditorDocument *, long long, NSError *))arg2;
 
 @optional
 - (BOOL)secondaryEditorShowsDocumentPreview;
@@ -20,7 +20,7 @@
 - (NSString *)contentStringForPrimaryEmptyEditorWithDocumentLocation:(DVTDocumentLocation *)arg1;
 - (BOOL)shouldShowEmptyEditorForSecondaryDocumentLocation:(DVTDocumentLocation *)arg1 submodeType:(int)arg2;
 - (BOOL)shouldShowEmptyEditorForPrimaryDocumentLocation:(DVTDocumentLocation *)arg1 submodeType:(int)arg2;
-- (id <DVTInvalidation>)documentForAncestorDocumentLocation:(DVTDocumentLocation *)arg1 completionBlock:(void (^)(IDEEditorDocument *, int, NSError *))arg2;
+- (id <DVTInvalidation>)documentForAncestorDocumentLocation:(DVTDocumentLocation *)arg1 completionBlock:(void (^)(IDEEditorDocument *, long long, NSError *))arg2;
 - (id <DVTInvalidation>)navigableItemsForSecondaryDocumentLocation:(DVTDocumentLocation *)arg1 usingNavigableItemCoordinator:(IDENavigableItemCoordinator *)arg2 completionBlock:(void (^)(IDENavigableItem *, IDENavigableItem *, NSError *))arg3;
 - (id <DVTInvalidation>)navigableItemsForPrimaryDocumentLocation:(DVTDocumentLocation *)arg1 usingNavigableItemCoordinator:(IDENavigableItemCoordinator *)arg2 completionBlock:(void (^)(IDENavigableItem *, IDENavigableItem *, NSError *))arg3;
 - (id <DVTInvalidation>)navigableItemsForPrimaryDocumentLocation:(DVTDocumentLocation *)arg1 secondaryDocumentLocation:(DVTDocumentLocation *)arg2 usingNavigableItemCoordinator:(IDENavigableItemCoordinator *)arg3 forceReload:(BOOL)arg4 completionBlock:(void (^)(IDENavigableItem *, IDENavigableItem *, IDENavigableItem *, NSError *))arg5;

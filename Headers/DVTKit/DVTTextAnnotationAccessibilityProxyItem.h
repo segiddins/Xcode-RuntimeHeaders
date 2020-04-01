@@ -22,6 +22,11 @@
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)accessibilityIsAttributeSettable:(id)arg1;
 - (id)accessibilityHitTest:(struct CGPoint)arg1;
+- (void)accessibilityPerformAction:(id)arg1;
+- (id)accessibilityActionDescription:(id)arg1;
+- (id)accessibilityActionNames;
+- (struct _NSRange)_accessibilityLineRangeForAnnotationInTextView:(id)arg1;
+- (id)_accessibilityDVTSourceTextView;
 - (id)accessibilityAttributeValue:(id)arg1;
 - (id)accessibilityAttributeNames;
 - (struct CGRect)_getAnnotationBounds:(id)arg1;

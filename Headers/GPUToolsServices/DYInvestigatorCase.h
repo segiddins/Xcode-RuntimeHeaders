@@ -6,12 +6,12 @@
 
 #import <objc/NSObject.h>
 
-#import <GPUToolsServices/NSCoding-Protocol.h>
 #import <GPUToolsServices/NSCopying-Protocol.h>
+#import <GPUToolsServices/NSSecureCoding-Protocol.h>
 
 @class DYDeviceInfo, DYInvestigatorCaseConfigData, NSMapTable, NSMutableArray, NSString;
 
-@interface DYInvestigatorCase : NSObject <NSCoding, NSCopying>
+@interface DYInvestigatorCase : NSObject <NSSecureCoding, NSCopying>
 {
     struct dispatch_queue_s *_observersMapQueue;
     NSMapTable *_observersMap;
@@ -28,6 +28,7 @@
     NSString *_timestamp;
 }
 
++ (BOOL)supportsSecureCoding;
 @property(retain, nonatomic) NSString *timestamp; // @synthesize timestamp=_timestamp;
 @property(readonly, nonatomic) NSMutableArray *additionalFindings; // @synthesize additionalFindings=_additionalFindings;
 @property(readonly, nonatomic) NSMutableArray *investigatorFindings; // @synthesize investigatorFindings=_investigatorFindings;

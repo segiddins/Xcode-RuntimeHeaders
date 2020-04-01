@@ -11,6 +11,7 @@
 }
 
 - (void)verifyAndPopulateMessages:(id)arg1;
+- (void)_verifyAnchorPositionsForOlderDocuments;
 - (void)_verifyViewControllerViewPresenceAndPopulateMessages:(id)arg1;
 - (void)_verifyViewControllerAutoLayoutGuides;
 - (void)_verifyViewControllerViewClasses;

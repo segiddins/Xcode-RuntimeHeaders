@@ -11,7 +11,7 @@
 
 @class NSString;
 
-@interface IBNSExternalViewController : IBNSViewController <IBDocumentArchiving, IBExternalPrimarySceneObject>
+@interface IBNSExternalViewController : IBNSViewController <IBExternalPrimarySceneObject, IBDocumentArchiving>
 {
     NSString *_storyboardName;
     NSString *_bundleIdentifier;
@@ -36,10 +36,9 @@
 - (Class)classForCoder;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
-- (void)archiveWithDocumentArchiver:(id)arg1;
-- (BOOL)ibIsInspectorApplicable:(id)arg1 forCategory:(id)arg2;
-- (void)ibWarnings:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
+- (BOOL)ibConnectionsRequireClassSwapper;
+- (BOOL)ibIsInspectorSliceApplicable:(id)arg1 forCategory:(id)arg2;
+- (void)ibPopulateIssues:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
 - (BOOL)ibAllowsEditingTitle;
 - (id)ibRuntimeClassName;
 - (id)ibTypeNameForDefaultLabel;
@@ -62,6 +61,9 @@
 - (BOOL)ibCanBeReplacedWithExternalStoryboardReference;
 - (id)ibQualifyingInfoForDefaultLabel;
 - (BOOL)ibWantsSceneUpdates;
+- (id)ibLocalAttributeKeyPaths;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
@@ -69,6 +71,8 @@
 @property(readonly) unsigned long long hash;
 @property(copy, nonatomic) NSString *ibExplicitStoryboardIdentifier;
 @property(nonatomic) BOOL ibInspectedIsDesignatedEntryPoint;
+@property(nonatomic) BOOL ibInspectedIsDesignatedMenu;
+@property(readonly, nonatomic) BOOL ibWantsSceneExitPlaceholder;
 @property(readonly) Class superclass;
 
 @end

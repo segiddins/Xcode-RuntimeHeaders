@@ -20,22 +20,22 @@
 - (void)drawRect:(struct CGRect)arg1;
 - (Class)classForDocumentArchiver:(id)arg1;
 - (Class)classForCoder;
-- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
-- (void)archiveWithDocumentArchiver:(id)arg1;
 - (BOOL)ibOverridablePrefersToVerticallyResizeWithContainer;
 - (BOOL)ibOverridablePrefersToHorizontallyResizeWithContainer;
-- (void)ibWarnings:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
+- (void)ibPopulateIssues:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
 - (void)ibSetupTriggerForSegueTemplate:(id)arg1 inCompilationUnit:(id)arg2;
 - (id)ibSupportedOutgoingSegueClasses;
 - (BOOL)ibCanBeValidTriggerSegueSource;
 - (id)ibSegueTriggers;
 - (id)ibDefaultSegueTrigger;
 - (BOOL)ibCanAcceptContentsOfPasteboard:(id)arg1 inDocument:(id)arg2 targetChildRelation:(id *)arg3;
-- (id)ibSupportsMultipleSeguesFromTrigger;
+- (BOOL)ibSupportsMultipleSeguesFromTrigger;
 - (id)ibQualifyingInfoForDefaultLabel;
 - (void)ibPrepareCocoaDocumentForCompiling:(id)arg1 withContext:(id)arg2;
 - (id)ibTypeNameForDefaultLabel;
 - (id)ibRuntimeClassName;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

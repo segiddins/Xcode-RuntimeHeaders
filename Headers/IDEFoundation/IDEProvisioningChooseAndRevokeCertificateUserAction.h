@@ -18,6 +18,7 @@
 @property(readonly, nonatomic) DVTPortalCertificateType *type; // @synthesize type=_type;
 @property(readonly, nonatomic) NSArray *certificates; // @synthesize certificates=_certificates;
 - (void).cxx_destruct;
+- (id)executionMessage;
 - (id)userActionName;
 - (id)userActionMessage;
 - (id)userActionTitle;

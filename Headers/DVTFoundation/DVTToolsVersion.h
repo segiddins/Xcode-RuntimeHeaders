@@ -18,6 +18,31 @@
 }
 
 + (id)versionWithMajor:(unsigned long long)arg1 minor:(unsigned long long)arg2 update:(unsigned long long)arg3;
++ (id)version11_2_1;
++ (id)version11_2_0;
++ (id)version11_1_0;
++ (id)version11_0_0;
++ (id)version10_3_0;
++ (id)version10_2_1;
++ (id)version10_2_0;
++ (id)version10_1_1;
++ (id)version10_1_0;
++ (id)version10_0_0;
++ (id)version9_4_1;
++ (id)version9_4_0;
++ (id)version9_3_0;
++ (id)version9_2_1;
++ (id)version9_2_0;
++ (id)version9_1_0;
++ (id)version9_0_1;
++ (id)version9_0_0;
++ (id)version8_3_3;
++ (id)version8_3_2;
++ (id)version8_3_1;
++ (id)version8_3_0;
++ (id)version8_2_1;
++ (id)version8_2_0;
++ (id)version8_1_0;
 + (id)version8_0_0;
 + (id)version7_3_1;
 + (id)version7_3_0;
@@ -88,6 +113,7 @@
 - (unsigned long long)hash;
 - (long long)compare:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
+- (id)init;
 - (id)initWithVersionMajor:(unsigned long long)arg1 minor:(unsigned long long)arg2 update:(unsigned long long)arg3;
 
 @end

@@ -17,9 +17,10 @@
     IDEInspectorKeyPath *_editableKeyPath;
     Class _valueTransformerClass;
     NSString *_title;
-    BOOL _isExplanitoryText;
+    BOOL _isExplanatoryText;
     BOOL _allowsNilValues;
     BOOL _editable;
+    BOOL _allowsAttributedStrings;
     BOOL _textFieldIsConfiguredAsEditable;
     NSTextField *_textField;
     NSTextField *_titleField;
@@ -34,6 +35,7 @@
 - (id)nibName;
 - (void)userDidChangeValue:(id)arg1;
 - (double)baseline;
+- (void)awakeFromNib;
 - (id)view;
 
 @end

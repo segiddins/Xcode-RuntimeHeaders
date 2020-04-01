@@ -6,10 +6,12 @@
 
 #import <objc/NSObject.h>
 
+#import <XCSCore/GCDAsyncSocketDelegate-Protocol.h>
+
 @class GCDAsyncSocket, NSData, NSMutableArray, NSString;
 @protocol OS_dispatch_queue, XCSMessageChannelDelegate;
 
-@interface XCSMessageChannel : NSObject
+@interface XCSMessageChannel : NSObject <GCDAsyncSocketDelegate>
 {
     id <XCSMessageChannelDelegate> _delegate;
     NSObject<OS_dispatch_queue> *_delegateQueue;
@@ -17,7 +19,7 @@
     BOOL _socketIsReady;
     BOOL _disableAutomaticReconnection;
     BOOL _connectedWithCert;
-    struct OpaqueSecIdentityRef *_identity;
+    struct __SecIdentity *_identity;
     unsigned long long _connectionAttemptCount;
     double _nextAttemptBackoffValue;
     unsigned char _currentMessageTag;
@@ -46,6 +48,7 @@
 @property unsigned short port; // @synthesize port=_port;
 @property(retain) NSString *hostname; // @synthesize hostname=_hostname;
 - (void).cxx_destruct;
+- (void)socket:(id)arg1 didReceiveTrust:(struct __SecTrust *)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)socketDidSecure:(id)arg1;
 - (void)socketDidDisconnect:(id)arg1 withError:(id)arg2;
 - (void)socket:(id)arg1 didWriteDataWithTag:(long long)arg2;
@@ -68,12 +71,18 @@
 - (void)attemptToEstablishConnection:(BOOL)arg1;
 - (void)disconnect;
 - (void)reconnect;
-@property(nonatomic) struct OpaqueSecIdentityRef *identity;
+@property(nonatomic) struct __SecIdentity *identity;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *delegateQueue;
 @property __weak id <XCSMessageChannelDelegate> delegate;
 - (void)dealloc;
 - (id)initWithHostname:(id)arg1 port:(unsigned short)arg2;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

@@ -33,7 +33,6 @@
 - (id)ske_document;
 @property BOOL cumulative;
 @property BOOL additive;
-@property __weak NSString *fillMode;
 @property float fadeOutDuration;
 @property float fadeInDuration;
 @property BOOL autoreverses;
@@ -43,7 +42,7 @@
 @property BOOL repeatInfinite;
 @property float duration;
 @property BOOL usesSceneTimeBase;
-- (void)setAnimation:(id)arg1;
+- (id)animationPlayer;
 - (id)animation;
 @property long long fillModeIndex;
 @property(readonly) BOOL hasFillMode;

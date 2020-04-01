@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class DVTPlatform, DVTPortalCertificateType, DVTPortalPlatform, DVTPortalProfilePurpose, NSString;
+@class DVTPlatform, DVTPortalCertificateType, DVTPortalPlatform, DVTPortalProfilePurpose, NSArray, NSSet, NSString;
 
 @interface DVTPortalProfileType : NSObject
 {
@@ -19,14 +19,19 @@
     BOOL _canBeCreatedByUniversityTeams;
     BOOL _canBeCreatedByFreeTeams;
     NSString *_identifier;
-    DVTPortalCertificateType *_certificateType;
+    NSString *_portalIdentifier;
+    NSString *_sdkVariant;
+    NSSet *_certificateTypes;
+    DVTPortalCertificateType *_primaryCertificateType;
     DVTPortalProfilePurpose *_purpose;
     NSString *_userDescription;
+    NSArray *_supportedICloudEnvironments;
     NSString *_namePostfix;
     DVTPortalPlatform *_portalPlatform;
     long long _devicesStyle;
 }
 
++ (id)profileTypeWithPortalIdentifier:(id)arg1;
 + (id)profileTypeWithIdentifier:(id)arg1;
 + (id)profileTypesForPlatform:(id)arg1;
 + (id)profileTypes;
@@ -39,18 +44,23 @@
 @property(readonly, nonatomic, getter=isEnterpriseOnly) BOOL enterpriseOnly; // @synthesize enterpriseOnly=_enterpriseOnly;
 @property(readonly, nonatomic) DVTPortalPlatform *portalPlatform; // @synthesize portalPlatform=_portalPlatform;
 @property(readonly, nonatomic) NSString *namePostfix; // @synthesize namePostfix=_namePostfix;
+@property(readonly, nonatomic) NSArray *supportedICloudEnvironments; // @synthesize supportedICloudEnvironments=_supportedICloudEnvironments;
 @property(readonly, nonatomic) BOOL requiresExplicitAppID; // @synthesize requiresExplicitAppID=_requiresExplicitAppID;
 @property(readonly, nonatomic) NSString *userDescription; // @synthesize userDescription=_userDescription;
 @property(readonly, nonatomic) DVTPortalProfilePurpose *purpose; // @synthesize purpose=_purpose;
 @property(readonly, nonatomic, getter=isTeamProfile) BOOL teamProfile; // @synthesize teamProfile=_teamProfile;
-@property(readonly, nonatomic) DVTPortalCertificateType *certificateType; // @synthesize certificateType=_certificateType;
+@property(readonly, nonatomic) DVTPortalCertificateType *primaryCertificateType; // @synthesize primaryCertificateType=_primaryCertificateType;
+@property(readonly, nonatomic) NSSet *certificateTypes; // @synthesize certificateTypes=_certificateTypes;
+@property(readonly, nonatomic) NSString *sdkVariant; // @synthesize sdkVariant=_sdkVariant;
+@property(readonly, nonatomic) NSString *portalIdentifier; // @synthesize portalIdentifier=_portalIdentifier;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
+- (BOOL)supportsFeatures:(id)arg1 error:(id *)arg2;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 @property(readonly, nonatomic) DVTPlatform *platform;
 - (id)description;
-- (id)initWithIdentifier:(id)arg1 portalPlatform:(id)arg2 certificateType:(id)arg3 isTeamProfile:(BOOL)arg4 purpose:(id)arg5 enterpriseOnly:(BOOL)arg6 canBeCreatedByMembers:(BOOL)arg7 canBeCreatedByAdmins:(BOOL)arg8 canBeCreatedByEnterpriseTeams:(BOOL)arg9 canBeCreatedByUniversityTeams:(BOOL)arg10 canBeCreatedByFreeTeams:(BOOL)arg11 requiresExplicitAppID:(BOOL)arg12 devicesStyle:(long long)arg13 namePostfix:(id)arg14 userDescription:(id)arg15;
+- (id)initWithIdentifier:(id)arg1 portalIdentifier:(id)arg2 portalPlatform:(id)arg3 certificateTypes:(id)arg4 primaryCertificateType:(id)arg5 isTeamProfile:(BOOL)arg6 purpose:(id)arg7 enterpriseOnly:(BOOL)arg8 canBeCreatedByMembers:(BOOL)arg9 canBeCreatedByAdmins:(BOOL)arg10 canBeCreatedByEnterpriseTeams:(BOOL)arg11 canBeCreatedByUniversityTeams:(BOOL)arg12 canBeCreatedByFreeTeams:(BOOL)arg13 requiresExplicitAppID:(BOOL)arg14 devicesStyle:(long long)arg15 namePostfix:(id)arg16 userDescription:(id)arg17 iCloudEnvironments:(id)arg18 sdkVariant:(id)arg19;
 
 @end
 

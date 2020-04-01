@@ -10,8 +10,18 @@
 {
 }
 
+- (void)keyDown:(id)arg1;
+- (void)cancelOperation:(id)arg1;
+- (void)insertText:(id)arg1;
+- (void)deleteForward:(id)arg1;
+- (void)deleteBackward:(id)arg1;
+- (void)performDelete:(id)arg1;
+- (BOOL)resignFirstResponder;
+- (BOOL)becomeFirstResponder;
+- (BOOL)acceptsFirstResponder;
 - (void)setHighlightedDragDestinationAssetRepIdentifiers:(id)arg1;
 - (id)assetComponentIDAtPoint:(struct CGPoint)arg1;
+- (id)displayOrderedAssetRepIdentifiers;
 
 @end
 

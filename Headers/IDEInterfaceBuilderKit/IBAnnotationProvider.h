@@ -9,8 +9,7 @@
 #import <IDEInterfaceBuilderKit/DVTTextAnnotationDelegate-Protocol.h>
 #import <IDEInterfaceBuilderKit/NSMenuDelegate-Protocol.h>
 
-@class DVTObservingToken, DVTTextStorage, IBAnnotationDataCache, IBCancellationToken, IBIndexClassDescriber, IDEAnnotationContext, NSObject, NSPopUpButtonCell, NSString;
-@protocol OS_dispatch_queue;
+@class IBAnnotationDataCache, IBCancellationToken, IBIndexClassDescriber, IDEAnnotationContext, NSPopUpButtonCell, NSString;
 
 @interface IBAnnotationProvider : DVTAnnotationProvider <DVTTextAnnotationDelegate, NSMenuDelegate>
 {
@@ -20,30 +19,28 @@
     IBAnnotationDataCache *_annotationDataCache;
     BOOL _shouldUpdateFromParserImmediately;
     BOOL _annotationsShouldBeInteractive;
-    NSObject<OS_dispatch_queue> *_indexQueryQueue;
-    unsigned int _indexQueryBlockGeneration;
-    DVTObservingToken *_kvoAssociatedWorkspaceIndexToken;
+    unsigned int _parseAnnotationsBlockGeneration;
     id _sourceCodeDocumentDidChangeToken;
     id _sourceCodeDocumentDidAdjustNodeTypesToken;
-    id _indexDidChangeNotificationToken;
     id _ibDidAddConnectionToken;
     id _ibDidRemoveConnectionToken;
+    id _ibDidChangeConnectionPropertToken;
     IBCancellationToken *_targetIdentifierCancellationToken;
-    DVTTextStorage *_textStorage;
 }
 
 + (id)annotationProviderForContext:(id)arg1 error:(id *)arg2;
-@property(retain) DVTTextStorage *textStorage; // @synthesize textStorage=_textStorage;
 - (void).cxx_destruct;
 - (void)annotation:(id)arg1 willDrawInTextSidebarView:(id)arg2 withAnnotationsInSameLine:(id)arg3;
 - (BOOL)annotation:(id)arg1 shouldDrawInTextSidebarView:(id)arg2 withAnnotationsInSameLine:(id)arg3;
 - (void)didDeleteOrReplaceParagraphForAnnotation:(id)arg1;
 - (void)didEndRolloverOnAnnotation:(id)arg1 inTextSidebarView:(id)arg2 event:(id)arg3;
 - (void)didBeginRolloverOnAnnotation:(id)arg1 inTextSidebarView:(id)arg2 event:(id)arg3;
+- (void)didDragAnnotation:(id)arg1 inTextSidebar:(id)arg2 event:(id)arg3;
 - (void)didDragAnnotation:(id)arg1 inTextSidebarView:(id)arg2 event:(id)arg3;
+- (void)didClickAnnotation:(id)arg1 inTextSidebar:(id)arg2 event:(id)arg3;
 - (void)didClickAnnotation:(id)arg1 inTextSidebarView:(id)arg2 event:(id)arg3;
 - (BOOL)shouldPermitConnectingFromAnnotation;
-- (void)handleSingleClickOnAnnotation:(id)arg1 inTextSidebarView:(id)arg2;
+- (void)handleSingleClickOnAnnotation:(id)arg1 inTextSidebar:(id)arg2;
 - (id)referencingLocationsSortedForDisplayInPopUp:(id)arg1;
 - (id)menuItemAttributedStringForConnectionAtLocation:(id)arg1;
 - (void)annotationPopUpAction:(id)arg1;
@@ -55,7 +52,7 @@
 - (id)destinationObjectLocationForConnection:(id)arg1 fromDocument:(id)arg2;
 - (void)rebuildAnnotationsUsingDataCache;
 - (id)rebuiltAnnotationFromCachedAnnotation:(id)arg1;
-- (void)rebuildAnnotationsUsingIndex;
+- (void)rebuildAnnotationsUsingParserAfterDelay;
 - (void)updateExistingAnnotationsUsingOpenIBDocuments;
 - (id)existingAnnotationsForConnection:(id)arg1;
 - (id)existingAnnotationNamed:(id)arg1 inClassNamed:(id)arg2 matchingKind:(unsigned long long)arg3 inSet:(id)arg4;
@@ -69,14 +66,10 @@
 - (void)handleChangeInSourceCodeDocument:(id)arg1;
 - (void)updateAnnotations;
 - (id)updateAnnotationsByParsingDocument;
-- (void)hideAnnotationsIfInsufficientData;
 - (struct _NSRange)itemRangeForAnnotationInParsedDocument:(id)arg1;
 - (void)recordAnnotationNamed:(id)arg1 type:(id)arg2 at:(struct _NSRange)arg3 inClassNamed:(id)arg4 matchingKind:(unsigned long long)arg5;
 - (id)document;
 - (id)classNamesInParsedDocument;
-- (void)startObservingIndex;
-- (void)stopObservingIndex;
-- (id)index;
 - (void)cacheAnnotations;
 - (void)primitiveInvalidate;
 - (id)initWithContext:(id)arg1;

@@ -13,6 +13,7 @@
     NSMutableArray *_cancellationTokens;
     NSImage *_wifiImage;
     NSImage *_highlightedWifiImage;
+    BOOL _wantsResizeOnLayout;
     BOOL _isWatchDestination;
     IDERunDestination *_runDestination;
     NSMenuItem *_menuItem;

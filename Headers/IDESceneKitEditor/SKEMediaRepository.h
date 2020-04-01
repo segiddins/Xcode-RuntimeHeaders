@@ -13,14 +13,13 @@
     NSMutableDictionary *_resources;
 }
 
-+ (id)handleFileReferenceContainerObserverChange:(long long)arg1 forPath:(id)arg2 withDataType:(id)arg3;
-+ (id)containerObserverToRepositoryMap;
++ (id)containerContentProducer:(id)arg1 produceValueForFilePath:(id)arg2 fileDataType:(id)arg3;
 + (id)allSupportedMediaFileDataTypes;
 - (void).cxx_destruct;
 - (void)fileReferenceObserverDidReportUpdatedAndAddedResourcesByPath:(id)arg1 removedPaths:(id)arg2;
 - (id)resources;
 - (void)primitiveInvalidate;
-- (id)initWithContainerObserver:(id)arg1;
+- (id)initWithContentProductionSpecifier:(id)arg1;
 
 @end
 

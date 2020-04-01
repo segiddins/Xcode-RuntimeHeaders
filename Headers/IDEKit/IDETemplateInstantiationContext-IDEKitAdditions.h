@@ -7,6 +7,6 @@
 #import <IDEFoundation/IDETemplateInstantiationContext.h>
 
 @interface IDETemplateInstantiationContext (IDEKitAdditions)
-- (Class)templateAssistantContextClass;
+@property(readonly) Class templateAssistantContextClass;
 @end
 

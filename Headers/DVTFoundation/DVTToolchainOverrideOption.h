@@ -10,6 +10,7 @@
 
 @interface DVTToolchainOverrideOption : NSObject
 {
+    NSString *_origin;
     BOOL _isValid;
     BOOL _isBuiltIn;
     BOOL _isActive;
@@ -18,11 +19,8 @@
     DVTToolchain *_toolchainForXcodebuildCommandLine;
     NSString *_displayName;
     NSString *_shortDisplayName;
-    NSString *_origin;
     NSDate *_createdDate;
     NSString *_localizedCreatedDate;
-    unsigned long long _fileSize;
-    NSString *_localizedFileSize;
     NSError *_validationError;
     DVTToolchainRegistry *_registry;
 }
@@ -32,11 +30,8 @@
 @property(readonly) BOOL isBuiltIn; // @synthesize isBuiltIn=_isBuiltIn;
 @property(readonly) NSError *validationError; // @synthesize validationError=_validationError;
 @property(readonly) BOOL isValid; // @synthesize isValid=_isValid;
-@property(readonly) NSString *localizedFileSize; // @synthesize localizedFileSize=_localizedFileSize;
-@property(readonly) unsigned long long fileSize; // @synthesize fileSize=_fileSize;
 @property(readonly) NSString *localizedCreatedDate; // @synthesize localizedCreatedDate=_localizedCreatedDate;
 @property(readonly) NSDate *createdDate; // @synthesize createdDate=_createdDate;
-@property(readonly) NSString *origin; // @synthesize origin=_origin;
 @property(readonly) NSString *shortDisplayName; // @synthesize shortDisplayName=_shortDisplayName;
 @property(readonly) NSString *displayName; // @synthesize displayName=_displayName;
 @property(readonly) DVTToolchain *toolchainForXcodebuildCommandLine; // @synthesize toolchainForXcodebuildCommandLine=_toolchainForXcodebuildCommandLine;
@@ -45,6 +40,9 @@
 - (void).cxx_destruct;
 - (id)description;
 - (BOOL)activateWithError:(id *)arg1;
+@property(readonly) NSString *origin;
+@property(readonly) NSString *localizedFileSize;
+@property(readonly) unsigned long long fileSize;
 - (id)initWithRegistry:(id)arg1 toolchainForDisplay:(id)arg2 toolchainForToolchainRegistryDefaultOverride:(id)arg3 toolchainForXcodebuildCommandLine:(id)arg4 displayNameOverride:(id)arg5 shortDisplayNameOverride:(id)arg6;
 
 @end

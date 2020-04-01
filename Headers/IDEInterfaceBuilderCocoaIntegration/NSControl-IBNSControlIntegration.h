@@ -6,7 +6,11 @@
 
 #import <AppKit/NSControl.h>
 
-@interface NSControl (IBNSControlIntegration)
+#import <IDEInterfaceBuilderCocoaIntegration/IBDocumentArchiving-Protocol.h>
+
+@class NSString;
+
+@interface NSControl (IBNSControlIntegration) <IBDocumentArchiving>
 + (id)keyPathsForValuesAffectingIbInspectedCell;
 + (id)keyPathsForValuesAffectingIbInspectedLineBreakMode;
 + (id)keyPathsForValuesAffectingIbInspectedUserInterfaceLayoutDirection;
@@ -23,24 +27,19 @@
 - (id)ibLocalSearchableNumericAttributeKeyPaths;
 - (void)unarchiveCell:(id)arg1;
 - (void)archiveCell:(id)arg1;
-- (id)ibDocumentationPropertyInfosForKeyPath:(id)arg1;
+- (BOOL)ibShouldArchivePropertiesSharedWithNSCell;
+- (id)ibDocumentationSymbolInfosForKeyPath:(id)arg1;
 - (BOOL)ibPrefersToBeSizedToFitAfterEditingTitle;
 - (BOOL)ibIdentifierPropertyCanConflictsWithObject:(id)arg1;
+- (id)ibInspectedControl;
 - (id)ibInspectedCell;
-- (void)setIbInspectedLineBreakMode:(long long)arg1;
-- (long long)ibInspectedLineBreakMode;
-- (void)setIbInspectedUserInterfaceLayoutDirection:(long long)arg1;
-- (long long)ibInspectedUserInterfaceLayoutDirection;
-- (void)setIbInspectedTruncatesLastVisibleLine:(long long)arg1;
-- (long long)ibInspectedTruncatesLastVisibleLine;
-- (void)setIbInspectedContinuous:(long long)arg1;
-- (long long)ibInspectedContinuous;
-- (void)setIbInspectedBaseWritingDirection:(long long)arg1;
-- (long long)ibInspectedBaseWritingDirection;
-- (void)setIbInspectedRefusesFirstResponder:(long long)arg1;
-- (long long)ibInspectedRefusesFirstResponder;
-- (void)setIbInspectedEnabled:(long long)arg1;
-- (long long)ibInspectedEnabled;
+@property long long ibInspectedLineBreakMode;
+@property long long ibInspectedUserInterfaceLayoutDirection;
+@property BOOL ibInspectedTruncatesLastVisibleLine;
+@property BOOL ibInspectedContinuous;
+@property long long ibInspectedBaseWritingDirection;
+@property BOOL ibInspectedRefusesFirstResponder;
+@property BOOL ibInspectedEnabled;
 - (id)ibEquivalentSourceForToOneOutlet:(id)arg1;
 - (void)ibCustomizeForInsertionIntoNSView:(id)arg1 withObjects:(id)arg2 fromLibraryOrDifferentTargetRuntime:(BOOL)arg3 andInsertionContext:(id)arg4;
 - (BOOL)ibHasSingleCell;
@@ -48,15 +47,15 @@
 - (void)setIbInspectedControlSize:(unsigned long long)arg1;
 - (unsigned long long)ibInspectedControlSize;
 - (id)ibExposedElusiveDescendantsKeyPaths;
-- (long long)ibPreferredResizeDirection;
+- (long long)ibPreferredResizeDirectionMask;
 - (BOOL)ibIsClippingContent;
 - (struct CGSize)ibPreferredControlSize;
 - (struct CGSize)ibPreferredSizeForSize:(struct CGSize)arg1 suggestedWidth:(char *)arg2 suggestedHeight:(char *)arg3 scaleAxesIndependently:(char *)arg4;
 - (BOOL)ibIsChildInitiallySelectable:(id)arg1;
 - (BOOL)ibIsChildTypicalConnectionTarget:(id)arg1;
 - (struct CGRect)ibRectForChild:(id)arg1 inFrameController:(id)arg2;
-- (void)ibWarnings:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
-- (void)ibInvalidateWarningsAfterDescendant:(id)arg1 changedProperty:(id)arg2 inDocument:(id)arg3 fromValue:(id)arg4;
+- (void)ibPopulateIssues:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
+- (void)ibInvalidateIssuesAfterDescendant:(id)arg1 changedProperty:(id)arg2 inDocument:(id)arg3 fromValue:(id)arg4;
 - (BOOL)ibIsBaselineAtIndex:(long long)arg1 inMotionWithKnob:(CDUnion_42e99c75)arg2;
 - (double)ibBaselineAtIndex:(long long)arg1 inCoordinateSpaceOfItem:(id)arg2;
 - (double)ibTransformCellBaseline:(double)arg1;
@@ -66,13 +65,9 @@
 - (Class)ibEditorClass;
 - (void)ibPropagatePropertiesToCopyOfReceiver:(id)arg1 forLayoutEngine:(id)arg2;
 - (void)ibPrepareCocoaDocumentForCompiling:(id)arg1 withContext:(id)arg2;
-- (void)setIbMirrorLayoutDirectionWhenInternationalizing:(long long)arg1;
-- (long long)ibMirrorLayoutDirectionWhenInternationalizing;
-- (void)setIbExternalSetsMaxLayoutWidthAtFirstLayout:(BOOL)arg1;
-- (BOOL)ibExternalSetsMaxLayoutWidthAtFirstLayout;
+@property long long ibMirrorLayoutDirectionWhenInternationalizing;
+@property BOOL ibExternalSetsMaxLayoutWidthAtFirstLayout;
 - (void)ibSwizzledNSControlEncodeWithCoder:(id)arg1;
-- (void)setIbShadowedAllowsExpansionToolTips:(BOOL)arg1;
-- (BOOL)ibShadowedAllowsExpansionToolTips;
 - (void)ibTakePastedAttributes:(id)arg1;
 - (void)ibTakeSnapshotValues:(id)arg1 inConfiguration:(id)arg2;
 - (id)ibAttributeSnapshot;
@@ -80,6 +75,15 @@
 - (BOOL)ibCanBeBoundToFromObject:(id)arg1;
 - (void)ibPopulateChildRelationOrder:(id)arg1;
 - (id)ibLocalChildToOneRelationshipsKeyPaths;
-- (id)ibLocalToOneRelationshipsKeyPaths;
+- (id)ibLocalAdditionalLocalizableAttributeKeyPaths;
+- (id)ibLocalAttributeKeyPaths;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @end
 

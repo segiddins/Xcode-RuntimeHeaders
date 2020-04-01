@@ -6,8 +6,42 @@
 
 #import <IBFoundation/IBICMipmapSet.h>
 
-@interface IBICMipmapSet (TextureDisplayAdditions)
+#import <IDEInterfaceBuilderKit/IBICMediaResourceProvider-Protocol.h>
+
+@class NSString;
+
+@interface IBICMipmapSet (TextureDisplayAdditions) <IBICMediaResourceProvider>
 - (void)setIbInspectedTexturePixelFormat:(id)arg1;
 - (id)ibInspectedTexturePixelFormat;
+- (id)mediaResource;
+- (BOOL)shouldIncludeInMediaLibrary;
+- (void)populateChildrenForInclusionInMediaLibrary:(id)arg1;
+- (BOOL)isDisplayNameEditable;
+- (id)catalogItemForHostingInContainer:(id)arg1;
+- (void)prepareToReatatchForDragWithContext:(id)arg1;
+- (void)prepareToDetatchForDragWithContext:(id)arg1;
+- (BOOL)isDraggable;
+- (id)overviewCapsuleSpecification;
+- (id)detachedSlottedAssetRepByAcceptingPasteboardObject:(id)arg1 forRepIdentifier:(id)arg2;
+- (void)performDeleteInDocument:(id)arg1;
+- (BOOL)ibInspectedIsContainedInCubeTextureSet;
+- (BOOL)ibInspectedIsContainedInFlatTextureSet;
+- (void)setIbInspectedNumberOfLevels:(id)arg1;
+- (long long)ibInspectedNumberOfLevels;
+- (long long)maxConflictFreeLevel;
+- (void)fixNumberOfLevels:(long long)arg1;
+- (void)setIbInspectedLevelMode:(long long)arg1;
+- (long long)ibInspectedLevelMode;
+- (void)setLevelModeViaMutator:(long long)arg1;
+- (id)dragImage;
+- (id)image;
+- (id)includedAttributesInspectorSlicesForChild:(id)arg1;
+- (id)childForMediaResource;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @end
 

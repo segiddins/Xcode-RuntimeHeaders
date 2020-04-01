@@ -6,17 +6,19 @@
 
 #import <objc/NSObject.h>
 
-@class NSBundle, NSImage, NSString;
+@class NSBundle, NSDictionary, NSImage, NSString;
 
 @interface IDEIconEntry : NSObject
 {
     NSString *_iconName;
+    NSString *_iconGroupName;
     NSBundle *_bundle;
+    NSDictionary *_aspects;
 }
 
 - (void).cxx_destruct;
 @property(readonly) NSImage *image;
-- (id)_initWithIconName:(id)arg1 bundle:(id)arg2;
+- (id)_initWithIconName:(id)arg1 iconGroupName:(id)arg2 bundle:(id)arg3 aspects:(id)arg4;
 
 @end
 

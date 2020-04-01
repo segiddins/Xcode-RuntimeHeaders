@@ -10,11 +10,10 @@
 
 @class NSString;
 
-__attribute__((visibility("hidden")))
 @interface LLDBCommandReturnObject : NSObject <DBGSBCommandReturnObject>
 {
     struct SBCommandReturnObject {
-        struct unique_ptr<lldb_private::CommandReturnObject, std::__1::default_delete<lldb_private::CommandReturnObject>> m_opaque_ap;
+        struct unique_ptr<lldb_private::CommandReturnObject, std::__1::default_delete<lldb_private::CommandReturnObject>> m_opaque_up;
     } _commandReturnObject;
 }
 

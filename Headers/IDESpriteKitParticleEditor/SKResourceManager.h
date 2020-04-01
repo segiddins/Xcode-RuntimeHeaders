@@ -4,13 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Foundation/NSObject.h>
+#import <objc/NSObject.h>
 
 #import <IDESpriteKitParticleEditor/DVTInvalidation-Protocol.h>
 #import <IDESpriteKitParticleEditor/GTFFileSystemEventStreamDelegate-Protocol.h>
 #import <IDESpriteKitParticleEditor/IDEMediaLibraryDelegate-Protocol.h>
 
-@class DVTObservingToken, DVTStackBacktrace, GTFFileSystemEventStream, IDEMediaResourceVariantContext, IDEWorkspace, NSArray, NSMutableDictionary, NSString, NSURL, SKWorkspace, SKWorkspaceBundle;
+@class DVTObservingToken, DVTStackBacktrace, GTFFileSystemEventStream, IDEMediaResourceVariantContext, IDEWorkspace, NSArray, NSDictionary, NSMutableDictionary, NSString, NSURL, SKWorkspace, SKWorkspaceBundle;
 @protocol DVTInvalidation;
 
 @interface SKResourceManager : NSObject <DVTInvalidation, IDEMediaLibraryDelegate, GTFFileSystemEventStreamDelegate>
@@ -76,6 +76,8 @@
 @property(readonly) DVTStackBacktrace *invalidationBacktrace;
 @property(readonly) Class superclass;
 @property(readonly, nonatomic, getter=isValid) BOOL valid;
+@property(readonly) IDEMediaResourceVariantContext *variantContextForMediaLibrary;
+@property(readonly) NSDictionary *variantForResolvingMediaResources;
 
 @end
 

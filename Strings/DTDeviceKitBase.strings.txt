@@ -1,0 +1,2846 @@
+ unzip 1.01 Copyright 1998-2004 Gilles Vollant - http://www.winimage.com/zLibDll
+ zip 1.01 Copyright 1998-2004 Gilles Vollant - http://www.winimage.com/zLibDll
+333333
+com.apple.dt.Xcode.TCPRelayService
+>@@(#)PROGRAM:DTDeviceKitBase  PROJECT:DVTiOSFrameworks-15509
+com.apple.xcode.developerdomain
+DeveloperStatus
+WirelessHosts
+com.apple.dtdevicekit
+com.apple.dtdevicekit.stacktrace
+com.apple.platform.iphoneos.DeviceDeveloperStatusChanged
+com.apple.platform.iphoneos.DeviceSupportFilesProcessed
+Simulator
+iPhone
+iPod
+iPad
+AppleTV
+DTDKDeviceProgressNotification
+activityTitle
+activityProgress
+deviceIdentifier
+v8@?0
+DTDKEnforceDeviceThread
+void DTDKEnforceDeviceThread()
+/Library/Caches/com.apple.xbs/Sources/DVTiOSFrameworks/DVTiOSFrameworks-15509/DTDeviceKitBase/DTDeviceKitBase_Utilities.m
+!DVTIsMainThread()
+code should not be running on main thread
+DTDKDeveloperProfile
+DTDKScreenshot
+VALUE_NOT_FOUND
+DTDeviceKit
+DTDeviceKitBase
+487927
+%@ is no longer available.
+The device
+%@ failed to contact %@. Try reconnecting it to your computer.
+the device
+Xcode has encountered an unexpected error (0x%X)
+Please unlock your device and reattach. (0x%X).
+Passcode Required
+The device must have a passcode set in order to allow this operation (0x%X).
+An error was encountered while attempting to communicate with this device. (%@)
+Please try rebooting and reconnecting the device. (0x%X).
+Your device is running an incompatible debugger.
+Please reboot your device or re-install its software. (0x%X).
+Unable to communicate with your device.
+Development cannot be enabled while your device is locked.
+An error was encountered while enabling development on this device.
+Please try rebooting and reconnecting the device. (0x%X)
+Xcode encountered an error
+Unknown
+DTDKHumanReadableNameForDeviceType
+Device
+Unrecognized iPod (%@)
+Unrecognized iPad (%@)
+Unrecognized iPhone (%@)
+Unrecognized Apple TV (%@)
+Watch
+Unrecognized Watch (%@)
+NSString *DTDKUTIForDeviceType(NSString *__strong, NSString *__strong, NSString *__strong)
+expected deviceType to be NSString, but was %@ (%@)
+__objc_no
+Called DVTWarn
+DTDKUTIForDeviceType
+%@-%@-%@
+DTDKGetDeviceConnectionLock
+DTDKGetDeviceConnectionLock %@
+DTDKExecuteInSession master
+DTDKExecuteInSession %@
+((deviceRef)) != nil
+%@ should not be nil.
+(deviceRef)
+((block)) != nil
+(block)
+Failed to start connection with %@
+Started connection with %@
+Ending connection with %@
+i8@?0
+AMDError DTDKPrepareSession(AMDeviceRef)
+ExtendedPairingErrors
+Attempting to pair with %@
+Pairing record was invalid, re-pairing with %@
+Started session with %@
+Failed to start session with %@
+AMDError DTDKTeardownSession(AMDeviceRef)
+Ending session with %@
+DTDKExecuteInSession() entering session limit gate
+DTDKExecuteInSession() exiting session limit gate
+AMDError DTDKExtendedPair(AMDeviceRef)
+Attempting to extended pair with %@
+Extended pairing succeeded with %@
+Failed to extended pair with %@
+usr/local/bin/PurpleExec
+usr/local/bin/tcprelay
+InvalidateOnDetach
+CloseOnInvalidate
+IDEDisableWatchWifi
+PreferWifi
+AMDError DTDKStartService(AMDeviceRef, NSString *__strong, AMDServiceConnectionRef *)
+(serviceIdentifier) != nil
+%@ should be a string, but it is nil
+serviceIdentifier
+CFGetTypeID((CFStringRef)serviceIdentifier) == CFStringGetTypeID()
+%@ should be a string, but it is %@
+((service)) != nil
+(service)
+AMDError DTDKServiceConnectionSendMessage(AMDServiceConnectionRef, __strong id, CFPropertyListFormat, NSDictionary *__strong)
+((serv_conn)) != nil
+(serv_conn)
+((message)) != nil
+(message)
+AMDError DTDKServiceConnectionReceiveMessage(AMDServiceConnectionRef, __autoreleasing id *, CFPropertyListFormat *, NSDictionary *__strong)
+AMDServiceConnectionSend returned %zd
+AMDServiceConnectionReceive returned %zd
+dispatch_source_t DTDKGetServiceReadSource(AMDServiceConnectionRef, __strong dispatch_queue_t, __strong dispatch_block_t, __strong dispatch_block_t)
+((connectionRef)) != nil
+(connectionRef)
+((queue)) != nil
+(queue)
+NSError *DTDKCopyDDIFilesSync(NSURL *__strong, NSURL *__strong)
+((ddiURL)) != nil
+(ddiURL)
+((symbolsDir)) != nil
+(symbolsDir)
+sync_ddi
+ConcurrentQueue: %@
+DTDKCopyDDIFiles_block_invoke
+NSArray *DTDKListSharedCacheFilesSync_Legacy(__strong id<DTDKRemoteDeviceToken>, NSError *__autoreleasing *)
+((device)) != nil
+(device)
+((*resultError)) != nil
+(*resultError)
+Unable to list symbol files from this device: unable to write to device
+Unable to list symbol files from this device: unexpected response
+Unable to list symbol files from this device: unable to read data
+NSArray *DTDKListSharedCacheFilesSync(__strong id<DTDKRemoteDeviceToken>, NSError *__autoreleasing *)
+Unable to list symbol files from this device: unable to read from device
+Unable to list symbol files from this device: expected dictionary, got %@
+version
+files
+Unable to list symbol files from this device: unexpected "files" key
+Unable to list symbol files from this device: unexpected DTFetchSymbols service version %@
+Unable simulate location on device
+Xcode was unable to write the required commands to the device
+Unable to copy symbols from this device
+Xcode received an unexpected response from the device
+Xcode was unable to read the required data from the device
+DTDKGetSharedCacheFile_block_invoke
+DTDKDisableSymbolCopying
+Info.plist
+Version
+DSC Extractor Version
+DateCollected
+.finalized
+-fetchSharedCacheWithProgress:andCompletion: Not fetching symbols for: %@ (Symbols are already processed and finalized)
+-fetchSharedCacheWithProgress:andCompletion: Not fetching symbols for: %@ (Symbols already exist within the platform)
+@"DVTDispatchLock"8@?0
+DTDKCopySharedCacheFiles lock
+DTDeviceSharedCacheProcessingQualityOfService
+DVTFuture *DTDKCopySharedCacheFiles(DVTPlatform *__strong, __strong id<DTDKRemoteDeviceToken>)_block_invoke_4
+((error)) != nil
+(error)
+DTDKForceDeleteSymbolCache
+WARNING: DTDKForceDeleteSymbolCache dwrite is YES. Deleting device symbol cache at %@ and refetching symbols
+DTDKCopySharedCacheFiles: got error trying to list files from the device: %@ (%lu files returned) [attempt: %d/10]
+Received too few files from the device
+Xcode did not retrieve the proper number of shared cache files from the device
+.copied_%@
+DTDKCopySharedCacheFiles: Not copying %@; local file and sentinal exist:
+DTDKCopySharedCacheFiles: Copying %@ to %@
+v24@?0Q8Q16
+DVTFuture *DTDKCopySharedCacheFiles(DVTPlatform *__strong, __strong id<DTDKRemoteDeviceToken>)_block_invoke
+DTDKCopySharedCacheFiles: Creating "copied" sentinal file: %@
+open
+v16@?0@"DVTPromise"8
+Could not find dsc_extractor.bundle
+Could not load dsc_extractor.bundle
+dyld_shared_cache_extract_dylibs_progress
+Could not find symbol within dsc_extractor.bundle
+DTDKProcessSharedCacheFiles lock
+DVTFuture *DTDKProcessSharedCacheFiles(DVTPlatform *__strong, __strong id<DTDKRemoteDeviceToken>)_block_invoke_4
+System/Library/Caches/com.apple.dyld/
+dyld_shared_cache
+DTDKProcessSharedCacheFiles: Not processing %@ (not a dyld shared cache file)
+DTDKProcessSharedCacheFiles: Not processing %@ ("copied" sentinal doesn't exist: %@ )
+.processed_%@
+DTDKProcessSharedCacheFiles: Not processing %@ ("processed" sentinal already exists: %@ )
+@"DVTFilePath"16@?0@"NSString"8
+DTDKProcessSharedCacheFiles: Processing %@
+v16@?0I8I12
+DTDKProcessSharedCacheFiles: Creating "processed" sentinal file: %@
+DVTFuture *DTDKProcessSharedCacheFiles(DVTPlatform *__strong, __strong id<DTDKRemoteDeviceToken>)_block_invoke
+dyld_shared_cache_extract_dylibs failed
+SupportDirectory
+com.apple.mobile.wireless_lockdown
+EnableWifiDebugging
+com.apple.simulator
+iOSSimulator
+com.apple.ios-simulator
+iPhoneSimulator
+com.apple.iphone-simulator
+iPadSimulator
+com.apple.ipad-simulator
+c16@?0@"NSString"8
+/System/Library/CoreServices/CoreTypes.bundle
+Contents/Info.plist
+DTDKLastLSRegisterHashes
+c24@?0@8@16
+Registered "%@" with Launch Services.
+Failed to register "%@" with Launch Services, error code: %ld.
+q24@?0@8@16
+@8@?0
+B16@?0@"DVTFilePath"8
+mkdir
+.copying_lock
+DTDKObtainSymbolCopyingFLock: %@
+Could not load %@: %@
+x86_64
+Could not inspect version of %@: %@
+DTDKReleaseSymbolCopyingFLock: %@
+usr/lib/dsc_extractor.bundle
+.processing_lock
+DTDKObtainSymbolProcessingFLock: %@
+DTDKReleaseSymbolProcessingFLock: %@
+DTDKDeviceIdentifierWhitelist
+DTDKRemoteDeviceConnection
+Using device whitelist from %@ with %lu entries
+-[DTDKRemoteDeviceConnection removeAndInvalidate]
+/Library/Caches/com.apple.xbs/Sources/DVTiOSFrameworks/DVTiOSFrameworks-15509/DTDeviceKitBase/DTDKRemoteDeviceConnection.mm
+!_owner
+-invalidate called outside of the owner's -removeConnection method
+-[DTDKRemoteDeviceConnection primitiveInvalidate]
+_removingConnection
+-invalidate should not be called directly. Call -removeAndInvalidate, instead.
++[DTDKRemoteDeviceConnection existingConnectionForDeviceRef:]
+Returning existing connection for %@: %@
+No existing connection for %@ found
++[DTDKRemoteDeviceConnection existingConnectionForDeviceIdentifier:]
+((deviceIdentifier)) != nil
+(deviceIdentifier)
+c16@?0@"DTDKRemoteDeviceConnection"8
+Returning existing connection for device identifier %@: %@
+No existing connection for device identifier %@ found
++[DTDKRemoteDeviceConnection existingNonIDIDConnectionForIDID:]
+((idid)) != nil
+(idid)
+Returning existing non-IDID connection for IDID %@: %@
+No existing non-IDID connection for IDID %@ found
++[DTDKRemoteDeviceConnection connectionForDeviceRef:]
+Connecting to device
+Keeping device awake while Xcode establishes an initial connection
+ProductVersion
+BonjourFullServiceName
+Not establishing connection for device with identifier %@ because an AMDeviceRef connection could not be established. %@
+Register for CU notifications succeeded with %@
+Failed to register for CU notifications with %@. Error: %@
+Ignoring unpaired IDID connection for identifier %@ because we already have a non-IDID device: %@
+Not establishing connection for device with identifier %@ because it is a wireless device but wireless debugging is not enabled for the device on this host
+Not establishing connection for device with identifier %@ because its OS version (%@) is not recent enough
+Removing unpaired connection for paired device identifier %@
++[DTDKRemoteDeviceConnection connectionForDeviceRef:]_block_invoke
+Creating new connection for %@ (%@)
+com.apple.dt.Xcode.InstrumentsServer
+DTDKRemoteDeviceConnection Pending requests
+DTDKRemoteDeviceConnectionQueue
+Connection created for %@ (%@): %@
+Returning existing connection for %@ (%@): %@
+@"DTDKRemoteDeviceConnection"8@?0
+@"NSSet"8@?0
+i16@?0^{_AMDevice=}8
+Could not create wakeup token for device %@: %@
+Updating pairing status for real device %@ due to pairing status update for IDID connection %@
+paired
+bonjourServiceName
+Failed to update pairing status for: %@. Error: %@
+<%@: %p>: Proxied, %@
+<%@: %p>: Wireless, %@
+<%@: %p>: Wired, 0x%X
+-[DTDKRemoteDeviceConnection startServiceWithIdentifier:]
+-[DTDKRemoteDeviceConnection startServiceWithIdentifier:unlockKeybag:]
+-[DTDKRemoteDeviceConnection startFirstServiceOf:unlockKeybag:]
+(serviceIdentifiers) != nil
+%@ should be a array, but it is nil
+serviceIdentifiers
+CFGetTypeID((CFArrayRef)serviceIdentifiers) == CFArrayGetTypeID()
+%@ should be an array, but it is %@
+serviceIdentifiers.count > 0
+UnlockEscrowBag
+-[DTDKRemoteDeviceConnection startFirstServiceOf:unlockKeybag:]_block_invoke_2
+-[DTDKRemoteDeviceConnection startFirstServiceOf:unlockKeybag:]_block_invoke_4
+v24@?0@"DVTPromise"8^{_AMDevice=}16
+-[DTDKRemoteDeviceConnection startHouseArrestServiceForAppIdentifier:]
+(appIdentifier) != nil
+appIdentifier
+CFGetTypeID((CFStringRef)appIdentifier) == CFStringGetTypeID()
+-[DTDKRemoteDeviceConnection startHouseArrestServiceForAppIdentifier:]_block_invoke_2
+Could not start house arrest service for app identifier %@ [%@]
+-[DTDKRemoteDeviceConnection setValue:forDomain:andKey:]
+((domain)) == nil || CFGetTypeID((CFStringRef)(domain)) == CFStringGetTypeID()
+(domain)
+(key) != nil
+CFGetTypeID((CFStringRef)key) == CFStringGetTypeID()
+-[DTDKRemoteDeviceConnection setValue:forDomain:andKey:]_block_invoke_3
+-[DTDKRemoteDeviceConnection _primitiveDrainPendingRequests]_block_invoke_2
+v12@?0i8
+B8@?0
+Requesting %@: %@
+Failed (will try again with session) %@: %@
+Request succeeded %@: %@ (%@)
+Requesting (with session) %@: %@
+Request failed %@: %@ (0x%08X)
+-[DTDKRemoteDeviceConnection fetchValueForDomain:andKey:]
+((key)) == nil || CFGetTypeID((CFStringRef)(key)) == CFStringGetTypeID()
+(key)
+c32@?0@"DTDKCopyValueRequest"8Q16^c24
+-[DTDKRemoteDeviceConnection fetchValueForDomain:andKey:]_block_invoke
+_apple-mobdev2._tcp.
+v24@?0@"DTDKRemoteDeviceConnection"8^c16
+hostname
+addresses
+c16@?0@"NSData"8
+averageLatency
+packetRatio
+v32@?0q8@16@"NSError"24
+com.apple.instruments.remoteserver
+hash
+TQ,R
+superclass
+T#,R
+description
+T@"NSString",R,C
+debugDescription
+valid
+Tc,R,N,GisValid
+invalidationBacktrace
+T@"DVTStackBacktrace",R
+creationBacktrace
+T@"DVTStackBacktrace",&
+owner
+T@"<DTDKRemoteDeviceToken>",W,V_owner
+deviceRef
+T^{_AMDevice=},R,V_deviceRef
+TB,GisPaired,V_paired
+instrumentsConnection
+T@"DTXConnection",&,N,V_instrumentsConnection
+Td,R,V_averageLatency
+pings
+TQ,R,V_pings
+pongs
+TQ,R,V_pongs
+identifier
+T@"NSString",R,C,V_identifier
+interfaceSpeed
+TI,R,V_interfaceSpeed
+deviceReportsWirelessEnabled
+TB,V_deviceReportsWirelessEnabled
+wireless
+TB,R,GisWireless,V_wireless
+connected
+TB,R,GisConnected
+T@"NSString",R,C,V_bonjourServiceName
+location
+TI,R,V_location
+T@"NSArray",R,C
+gizmo
+TB,R,GisGizmo
+companionIdentifier
+T@"NSString",R,C,V_companionIdentifier
+connection.averageLatency
+connection.pings
+connection.pongs
+cancelled
+Tc,R,GisCancelled
+Td,R
+connection
+T@"DTDKRemoteDeviceConnection",&,V_connection
+<%@: %p> { domain: %@, key: %@}
+domain
+T@"NSString",R,C,V_domain
+T@"NSString",R,C,V_key
+Tc,R,D,GisCancelled
+AMDevicePowerAssertionCancelled: %@
+assertionRef
+T@,&,V_assertionRef
+DTDKRemoteDeviceConnection.connections
+connectionMonitors
+fff%@fff
+Device with identifier %@ will be %s based on %@ (%@)
+allowed
+ignored
+AMDeviceCopyPairedCompanion
+DTDKRemoteDeviceConnection.expectedDevices
+DTDKWirelessSupportMinimum
+11.0
+DTDKRemoteDeviceConnection.hostname
+AMDPowerAssertionTypeWirelessSync
+AMDevicePowerAssertionCreate returned (0x%X)
+allocator<T>::allocate(size_t n) 'n' exceeds maximum supported size
+No URL specified for DTDKZipFile instance
+URL specified for DTDKZipFile instance is not a file: URL
+Message for UNZ_BADZIPFILE encountered while dealing with zipfiles
+Message for UNZ_ERRNO encountered while dealing with zipfiles
+Message for UNZ_END_OF_LIST_OF_FILE encountered while dealing with zipfiles
+Message for UNZ_CRCERROR encountered while dealing with zipfiles
+Message for unknown error encountered while dealing with zipfiles
+Could not allocate buffer. (%s)
+Message for memory allocation error encountered while expanding zipfiles
+B32@?0@"NSString"8@"NSDictionary"16^@24
+B24@?0d8@"NSString"16
+Progress Message
+B40@?0@"NSString"8@"NSData"16@"NSDictionary"24^@32
+zipFileURL
+T@"NSURL",C,V_zipFileURL
+archive
+T^{unz_internal=},N
+attributes
+T@"NSMutableDictionary",&,V_attributes
+accounts.plist
+accounts.keychain
+@"SFCertificateData"16@?0@"DVTSigningCertificate"8
+-[DTDKDeveloperProfile provisioningProfiles]
+/Library/Caches/com.apple.xbs/Sources/DVTiOSFrameworks/DVTiOSFrameworks-15509/DTDeviceKitBase/DTDKDeveloperProfile.m
+Could not get the identity from the keychain.
+Message for failing to get an identity for a certificate in  the keychain
+Error, Could not get the identity from the keychain: %@
+Could not export signing certificate "%@" (%@) from the keychain.
+developer/identities/%@.p12
+Could not write p12 file in output file.
+Message for failing to write a p12 file in the export output file
+Error, could write file in zip file
+v32@?0@8@16^c24
+-[DTDKDeveloperProfile _exportIdentitiesToZipFile:withPassword:numberExported:error:]
+!___localError
+A method claimed to have succeeded but provided an error! (%@)
+___localError
+A method claimed to have failed but provided no error!
+developer/profiles/%@.%@
+Could not write provisioning file (%@) to output file.
+Message for failing to write provisioning profile to output file
+-[DTDKDeveloperProfile _exportProvisioningProfilesToZipFile:numberExported:error:]
+-[DTDKDeveloperProfile _accountsPlistWithProviders:keychain:numberOfAccounts:error:]
+(provider) != nil
+%@ should conform to protocol %@, but it is nil
+provider
+DVTDeveloperProfileAccountProvider
+typeIdentifier
+T@"NSString",R
+[(id)(provider) conformsToProtocol:@protocol(DVTDeveloperProfileAccountProvider)]
+%@ should conform to protocol %@, but %@ doesn't
+(provider.typeIdentifier) != nil
+%@ should be a non-empty string, but it is nil
+provider.typeIdentifier
+CFGetTypeID((CFStringRef)provider.typeIdentifier) == CFStringGetTypeID()
+%@ should be a non-empty string, but it is %@
+![(provider.typeIdentifier) isEqualToString:@""]
+%@ should be a non-empty string, but it's an empty string
+ToolsBuildVersion
+AccountsPlistVersion
+developer
+accountsKeychainExport
+Could not write accounts property list (%@) to output file.
+Message for failing to write accounts property list to output file
+-[DTDKDeveloperProfile _exportAccountProviders:toZipFile:withPassword:count:error:]
+Could not write keychain (%@) to output file.
+Message for failing to write accounts keychain to output file
+Failed to delete temporary keychain: %@
+exported-developer-profile
+Could not create output file for export. (%@)
+Message for failing to create or open export output file
+-[DTDKDeveloperProfile exportDeveloperProfileToFile:withPassword:accountProviders:error:]
+DTDKDeveloperProfile closing
+Could not close output file for export. (%@)
+Message for failing to close export output file
+Could not access the default keychain.
+Unable to copy default keychain: %@
+Could not import identity. %@.
+Message for failing to import identity.
+Error, could not import identity: %@
+accountsKeychainImport
+certificates
+identities
+provisioningProfiles
+v16@?0@"NSError"8
+Could not unlock exported keychain.
+%d: %@
+Keychain: %@
+-[DTDKDeveloperProfile importDeveloperProfileFromFile:withPassword:accountProviders:error:]
+Failed to lock temporary keychain: %@
+T@"NSSet",R
+ADCLogins
+T@"NSArray",R
+numberOfIdentities
+TQ,R,V_numberOfIdentities
+numberOfProfiles
+TQ,R,V_numberOfProfiles
+numberOfAccounts
+TQ,R,V_numberOfAccounts
+SecKeyRef _DTDKDataEncryptionDecryptionKeyCreate(NSString *__strong, NSData *__strong, NSError *__autoreleasing *)
+password
+salt
+Provided password does not match password used to export this Developer Profile.
+%@ %@
+NotificationOptionSearchForPairedDevices
+NotificationOptionSearchForWiFiPairableDevices
+AMDeviceNotificationSubscribeWithOptions
+-[DTDKRemoteDeviceDataListener _subscribe]
+/Library/Caches/com.apple.xbs/Sources/DVTiOSFrameworks/DVTiOSFrameworks-15509/DTDeviceKitBase/DTDKRemoteDeviceDataListener.m
+Running against an old version of MobileDevice; some interaction with proxied devices may be unavailable.
+iOSDeviceDiscovery
+Error: unable to initialize MobileDevice. Received NULL notification context.
+(%@:%u)
+Error: 0x%lX
+Error: unable to unsubscribe from MobileDevice notifications.
+(%@:%u)
+Error: 0x%lX
+DTDKRemoteDeviceDataListener thread started. Set iOSDeviceDiscoveryLogLevel to verbose (3) to log notification events
++[DTDKRemoteDeviceDataListener listenerThreadImplementation] caught exception: %@
+Error: %@
+MatchingMode
+MatchWildcard
+Error: unable to query MobileDevice for attached devices. 
+(%@:%u)
+Error: 0x%lX
+DVTPerEventObjectsDictionary
+listenerThread
+T@"NSThread",&,V_listenerThread
+listenerRunLoop
+T^{__CFRunLoop=},N,V_listenerRunLoop
+deviceNotificationRef
+T^{_AMDeviceNotificationContext=},N,V_deviceNotificationRef
+MobileDeviceNotification
+Handling kAMDeviceAttached
+Handling kAMDeviceDetached
+Handling kAMDevicePaired
+Adding connection to device data object
+Removing connection from device data object
+Updating pairing status
+Done
+c8@?0
+DTDKEnableCrashLogSupport
+symbolicationStatus
+_database.hasFinishedMigration
+Optimizing crash log database
+Library/Logs/CrashReporter/MobileDevice
+Library/Developer/Xcode/iOS Device Logs/
+-[DTDKCrashLogController copyExternalCrashLog:]_block_invoke
+com.apple.dtdevicekit.crashlogs.symbolication
+Status message presented when symbolicating crash logs
+Skipping symbolication of '%@' (already symbolicated)
+statusMessage
+T@"NSString",C,V_statusMessage
+T@"NSString",C,V_symbolicationStatus
+enableCrashLogSupport
+TB,R
+DTDKCrashLogDatabase scan queue
+v16@?0@"NSArray"8
+DTDKCrashLogLastScan
+CrashDatabaseModel
+momd
+CrashLog
+BinaryImage
+DSym
+Developer/Xcode/
+Developer/Xcode/iOS Device Logs
+DTDKCrashLogDatabaseInstance
+iOS Device Logs-%ld
+iOS Device Logs
+lock
+ %@.db
+Unable to create persistent store: %@
+Unable to save context: %@
+com.apple.dt.DTDKCrashLog.NotificationQueue
+v16@?0@"NSNotification"8
++[DTDKCrashLogDatabase startMigration]_block_invoke_2
+%K != NULL OR %K != NULL
+rawText
+text
+hasFinishedMigration
+incidentIdentifier ==[c] %@
+uuid LIKE %@
+path LIKE %@
+crash
+Incident Identifier: %[A-Z0-9-]
+fgets
+CrashReporter Key: %[A-Fa-f0-9]
+Process: %[^[]
+Path: %[^
+Date/Time: %[^
+Date: %[^
+UDID: %[A-Fa-f0-9]
+Report Version: %[0-9]
+Binary Images:
+%lli - %lli %s %s <%[^>]> %[^
+name
+arch
+path
+uuid
+com.apple.DTDeviceKit.crashlog.device_id
+CPU Usage
+Crash
+incidentIdentifier
+processName
+crashReporterKey
+udid
+dateTime
+type
+binaryImages
+CrashLogImporting
+Scanning %@
+Importing %@
+Found %@ in database; skipping
+Pushing database changes
+%@ %@.crash
+logText.data
+rawLogText.data
+LogText
+data
+RawLogText
+-[DTDKCrashLog symbolicate]_block_invoke_3
+/Library/Caches/com.apple.xbs/Sources/DVTiOSFrameworks/DVTiOSFrameworks-15509/DTDeviceKitBase/DTDKCrashLog.m
+Could not save a DTDKCrashLog because the managed object context went away
+Symbolication failed: %@
+v24@?0@"NSData"8@"NSError"16
+primitiveText
+T@"NSString",&,D
+primitiveRawText
+rawLogText
+T@"NSManagedObject",&,D
+logText
+T@"NSDate",&,D,N
+T@"NSString",&,D,N
+T@"NSString",&,N
+needsSymbolication
+Tc,D,N
+T@"NSMutableSet",&,D,N
+displayName
+T@"NSString",R,N
+filename
+dateString
+crashLogs
+B12@?0C8
+lstat(%s): %s
+readlink(%s): %s
+/Library/Caches/com.apple.xbs/Sources/DVTiOSFrameworks/DVTiOSFrameworks-15509/DTDeviceKitBase/DTDKFoundationAdditions.mm
+<Unknown File>
+Invalid parameter not satisfying: %@
+str != NULL
+DTDKCrashLogCopying
+Failed to start crash report mover service. %@
+/Library/Caches/com.apple.xbs/Sources/DVTiOSFrameworks/DVTiOSFrameworks-15509/DTDeviceKitBase/DTDKCrashLogCopying.m
+Failed to start crash report copy service. %@
+Unable to scan temp directory for crash logs: %@
+There were no crash logs from PopulatePaths.
+DTDKCrashLogCopying 
+DTDKCrashLogCopying master
+AFCDirectoryOpen on %@ failed with error %d
+metriclog
+synced
+plist
+Populating path: %@
+Couldn't AFC open the file at %@: %d
+st_ifmt
+S_IFREG
+S_IFDIR
+%s: Could not write the data to '%@'. Error = %@
+void ProcessPath(NSString *__strong, AFCConnectionRef, NSString *__strong)
+Could not deserialize the plist for '%@'. Error = %@
+Could not write the contents of the (plist) crash log for '%@'. Error = %@
+Error writing sans-header log to '%@' from '%@'
+No crash log contents found for log at path: %@. Header = %@
+No JSON header found for log at path: %@
+AFCFileRefOpen on %@ failed
+AFCFileRefRead on %@ failed
+DTDKCrashLogCopying processing queue
+Device console queue: %@
+Device console socket queue: %@
++[DTDKRemoteDeviceConsoleController consoleStringWithData:startingAtOffset:]
+/Library/Caches/com.apple.xbs/Sources/DVTiOSFrameworks/DVTiOSFrameworks-15509/DTDeviceKitBase/DTDKRemoteDeviceConsoleController.mm
+offset < [data length]
+offset (%lu) must be less than data length (%lu)
+Could not allocate circular buffer (%s)
+DTDKCircularBuffer Lock
+Unable to start remote system log service: %@ (%s)
+i24@?0^v8Q16
+Caught exception attempting to handle console data: %@
+@"NSData"8@?0
+token
+T@"<DTDKRemoteDeviceToken>",W,V_token
+delegate
+T@"<DTDKRemoteDeviceConsoleControllerDelegate>",&,V_delegate
+consoleString
+DTDKCircularBufferReadUsingCallback returned %zd
+1.2.11
+DTDKDeviceAddedNotification
+DTDKDeviceRemovedNotification
+DTDKDeviceConnectionAddedNotification
+DTDKDeviceConnectionRemovedNotification
+DTDKDeviceNotificationConnectionKey
+DTDKMountPersonalizedDDI
+DTDKStartSecureServicesRetryMinSeconds
+DTDKStartSecureServicesRetryMaxSeconds
+DTDKStartSecureServicesRetryFalloff
+Connections Lock
+Start Secure Services Lock
+com.apple.DTDeviceKit.DTDKRemoteDeviceData.DDIMountQueue
+wakeupToken
+DTDKRemoteDeviceToken device lock
+tokenClass
+@"NSObject<DTDKRemoteDeviceToken_Private>"8@?0
+@"<DTDKRemoteDeviceToken_Private>"8@?0
+deviceSoftwareVersion
+DVTExtension *DTDKFindiOSDeviceLocatorMappingExtension(NSString *__strong, NSString *__strong, NSString *__strong)
+/Library/Caches/com.apple.xbs/Sources/DVTiOSFrameworks/DVTiOSFrameworks-15509/DTDeviceKitBase/DTDKRemoteDeviceData.m
+((deviceCodename)) == nil || CFGetTypeID((CFStringRef)(deviceCodename)) == CFStringGetTypeID()
+(deviceCodename)
+((deviceType)) == nil || CFGetTypeID((CFStringRef)(deviceType)) == CFStringGetTypeID()
+(deviceType)
+((deviceClass)) == nil || CFGetTypeID((CFStringRef)(deviceClass)) == CFStringGetTypeID()
+(deviceClass)
+Xcode.DVTFoundation.DevicePlatformMapping
+priority
+deviceCodename.codenameString
+deviceModelCode.modelString
+deviceClasses.classString
+c16@?0@"DVTExtension"8
+foundExtensions.count == 1
+Expected 1 extension for %@/%@/%@, got: %@
+devicePlatform
+Couldn't find platform for %@: %@ for %@/%@/%@
+deviceType from %@ was NULL
+deviceType from %@ was not a string
+AudioAcc
+buildVersion from %@ was NULL
+-[DTDKMobileDeviceToken platform]_block_invoke
+(self.buildVersion) != nil
+self.buildVersion
+CFGetTypeID((CFStringRef)self.buildVersion) == CFStringGetTypeID()
+buildVersion %@ from %@ failed to parse
+HomePod running old version detected, forcing iphoneos platform.
+com.apple.platform.iphoneos
+Modern HomePod detected, using default platform.
+@"DVTPlatform"8@?0
+primaryConnection
+connections
+primaryWiredConnection.hostname
+primaryWirelessConnection.hostname
+primaryWiredConnection.addresses
+primaryWirelessConnection.addresses
+@16@?0@"DTDKRemoteDeviceConnection"8
+primaryWiredConnection
+primaryWirelessConnection
+primaryConnection.paired
+@"<DTDKRemoteDeviceToken>"16@?0@"DTDKRemoteDeviceConnection"8
+-[DTDKMobileDeviceToken activeProxiedDeviceToken]
+self.proxiedDeviceTokens.count < 2
+DVTTimeSlicedMainThreadWorkQueue:/Library/Caches/com.apple.xbs/Sources/DVTiOSFrameworks/DVTiOSFrameworks-15509/DTDeviceKitBase/DTDKRemoteDeviceData.m:479
+proxiedDeviceTokens
+DVTTimeSlicedMainThreadWorkQueue:/Library/Caches/com.apple.xbs/Sources/DVTiOSFrameworks/DVTiOSFrameworks-15509/DTDeviceKitBase/DTDKRemoteDeviceData.m:492
+-[DTDKMobileDeviceToken _updatePrimaryConnectionWithCompletion:]
+Updating device connection
+Device is being prepared for use with Xcode
+-[DTDKMobileDeviceToken deviceConsoleController]
+DVTIsMainThread()
+code should be running on main thread
+-[DTDKMobileDeviceToken addConnection:]
+((connection)) != nil
+(connection)
+-[DTDKMobileDeviceToken addConnection:]_block_invoke
+connection.owner == self || connection.owner == ((void *)0)
+DVTEqualObjects(connection.identifier, self.deviceIdentifier)
+-[DTDKMobileDeviceToken removeConnection:]
+amdWakeupOperation: no need to wake '%@' because it is already awake
+amdWakeupOperation: no token for '%@' is available
+amdWakeupOperation: '%@' is now awake
+amdWakeupOperation: '%@' is now awake but wakeup operation reported as failed with result 0x%x
+amdWakeupOperation: '%@' failed to wake with wakeup operation result 0x%x
+-[DTDKMobileDeviceToken wakeup]_block_invoke_3
+Unknown wakeup result %d
+i12@?0i8
+amdWakeupOperation: '%@' is now awake but we could not create a wakeup operation
+amdWakeupOperation: '%@' failed to wake because we could not create a wakeup operation
+amdWakeupOperation: '%@' is now awake but we could not schedule the wakeup operation on the runloop
+amdWakeupOperation: '%@' failed to wake because we could not schedule the wakeup operation on the runloop
+-[DTDKMobileDeviceToken enableWireless]_block_invoke_2
+v32@?0^{_AMDevice=}8I16i20^?24
+Could not negotiate CU pairing request for deviceref %p, the deviceIdentifier is missing
+Could not negotiate CU pairing request for deviceref %p (IDID %@), cannot find associated mobile device token
+Could not negotiate CU pairing request for deviceref %p (IDID %@), a callback was not provided
+Asking user for pairing pin for deviceref %p (IDID %@)
+User canceled pairing for deviceref %p (IDID %@), calling callback
+User provided pairing pin for deviceref %p (IDID %@), calling callback
+v20@?0@"NSString"8c16
+extendedPairWithError: failed for connection %@. There was no device
+The connection had no device available to pair.
+extendedPairWithError: failed for %@. There was no connection
+There was no connection available to pair.
+com.apple.debugserver
+com.apple.debugserver.internal
+com.apple.debugserver.secure
+com.apple.mobile.notification_proxy
+com.apple.springboardservices
+com.apple.mobile.installation_proxy
+com.apple.crashreportmover
+com.apple.crashreportcopymobile
+com.apple.dt.fetchsymbols
+com.apple.dt.simulatelocation
+com.apple.debugserver.applist.internal
+com.apple.debugserver.applist
+com.apple.syslog_relay
+com.apple.dt.xcodedevicemonitor
+-[DTDKMobileDeviceToken startXcodeDeviceArbitrationService]
+method %@ is inappropriate for instances of %@
+command
+result
+message
+protocol_version
+build_version
+version_string
+check-in
+success
+in-use
+force-check-in
+Unexpected Response
+Received an unexpected response from the arbitration service: %@
+v16@?0@8
+-[DTDKMobileDeviceToken startServiceWithIdentifier:andError:]
+-[DTDKMobileDeviceToken startDebugServerServiceWithError:]
+-[DTDKMobileDeviceToken startAppInstallationServiceWithError:]
+-[DTDKMobileDeviceToken startCrashReportMoverServiceWithError:]
+-[DTDKMobileDeviceToken startCrashReportCopyMobileServiceWithError:]
+-[DTDKMobileDeviceToken startSyslogServiceWithError:]
+-[DTDKMobileDeviceToken startXcodeDeviceMonitorServiceWithError:]
+-[DTDKMobileDeviceToken startSharedCacheCopyingServiceWithError:]
+-[DTDKMobileDeviceToken startLocationSimulationServiceWithError:]
+-[DTDKMobileDeviceToken _mountDeveloperDiskImage:withError:]
+((imagePath)) != nil
+(imagePath)
+signature
+ImageType
+Personalized
+Developer
+ImageSignature
+-[DTDKMobileDeviceToken _mountDeveloperDiskImage:withError:]_block_invoke
+self was unexpectedly nil in mountDeveloperDiskImage
+deviceRef was unexpectedly NULL in mountDeveloperDiskImage
+pathString was unexpectedly empty or nil in mountDeveloperDiskImage
+Failed to mount DDI from '%@', error=%d: %@
+Not mounting DDI because device already has %s tools.
+internal and standard
+internal
+standard
+Mounting DDI because device reports a tools type of %@.
+device
+Could not locate device support files.
+This %@ is running %@ %@ (%@), which may not be supported by this version of Xcode. An updated version of Xcode may be found on the App Store or at developer.apple.com.
+DeviceType
+Cannot collect symbols without a direct connection
+@"DVTFuture"16@?0@8
+DTDKMobileDeviceToken
+Copying shared cache files
+-[DTDKMobileDeviceToken checkDeviceCapabilities:withOptions:andError:]
+[capabilities isKindOfClass: [NSArray class]] || [capabilities isKindOfClass: [NSDictionary class]]
+-[DTDKMobileDeviceToken installApplicationBundleAtPath:withOptions:andError:withCallback:]
+(localPath) != nil
+%@ should be an instance inheriting from %@, but it is nil
+localPath
+[(id)(localPath) isKindOfClass:[DVTFilePath class]]
+%@ should be an instance inheriting from %@, but it is %@
+(options) == nil || CFGetTypeID((CFDictionaryRef)options) == CFDictionaryGetTypeID()
+%@ should be a dictionary, but it is %@
+options
+IDEDisable25327780
+IsUserInitiated
+The bundle identifier was not found for the bundle at path %@ (while attempting to install to a device). Installation will proceed anyway, but without the bundle identifier set in the install options.
+PackageType
+ShadowParentKey
+/private/tmp/
+App installation failed
+Unable to install "%@"
+The certificate used to sign "%@" has either expired or has been revoked. An updated certificate is required to sign and install the application.
+"%@" cannot be installed on this device because of a policy prohibiting the installation of new applications. You may have parental controls and/or certain Screen Time features enabled on this device. They will need to be disabled before installation can continue.
+Please see the Apple website for more information.
+[Internal Only]
+Verify that your device's boot-args are correct and that your application is ad-hoc or otherwise code-signed (see https://confluence.sd.apple.com/x/wZa2Sw for instructions).
+-[DTDKMobileDeviceToken transferPath:withOptions:andError:withCallback:]
+(((callback))) != nil
+((callback))
+-[DTDKMobileDeviceToken installApplicationAtPath:withOptions:andError:withCallback:]
+-[DTDKMobileDeviceToken upgradeApplicationAtPath:withOptions:andError:withCallback:]
+-[DTDKMobileDeviceToken uninstallApplicationWithIdentifier:options:andError:withCallback:]
+(bundleIdentifier) != nil
+bundleIdentifier
+CFGetTypeID((CFStringRef)bundleIdentifier) == CFStringGetTypeID()
+DeviceName
+Failed to fetch %s / %@ from device connection %@: %@
+deviceName
+Failed to fetch %s / %@ from device connection %@: property expected to be of type %s, but was of type %@ instead
+NSString
+UniqueChipID
+deviceECID
+NSNumber
+InternationalMobileEquipmentIdentity
+deviceIMEI
+DeviceClass
+deviceClass
+ActivationState
+deviceActivationState
+ProductType
+deviceType
+WiFiAddress
+deviceWiFiMAC
+BluetoothAddress
+deviceBluetoothMAC
+HardwareModel
+deviceCodename
+productVersion
+BuildVersion
+buildVersion
+SerialNumber
+deviceSerialNumber
+DeviceColor
+deviceColorString
+DeviceEnclosureColor
+deviceEnclosureColorString
+CPUArchitecture
+deviceArchitecture
+com.apple.disk_usage
+TotalDataCapacity
+deviceTotalCapacity
+AmountDataAvailable
+deviceAvailableCapacity
+com.apple.mobile.internal
+DevToolsAvailable
+deviceToolsType
+PasswordProtected
+isPasscodeLockedObj
+ProductionSOC
+deviceProductionSOC
+com.apple.mobile.ldwatch
+WatchCompanionCapability
+canBeWatchCompanionObj
+SupportedDeviceFamilies
+supportedDeviceFamilies
+NSArray
+deviceHasBattery
+com.apple.mobile.battery
+BatteryCurrentCapacity
+deviceBatteryCapacity
+R16279989
+Reload finished: old = %@, new = %@ [token=%p]
+Failed to fetch %@ / %@ from device connection %@: %@
+deviceDevelopmentStatus
+Development
+Reloaded value (old=%@, new=%@) [token=%p], error = %@
+Error mututating deviceDevelopmentStatus [token=%p], error = %@
+-[DTDKMobileDeviceToken syncSetDevelopmentFlag:error:]
+ChipID
+deviceChipID
+AppleTV2,1
+AppleTV3,1
+AppleTV3,2
+iPad1,1
+iPad2,1
+iPad2,2
+iPad2,3
+iPad2,4
+iPad3,1
+iPad3,2
+iPad3,3
+iPhone1,1
+iPhone1,2
+iPhone2,1
+iPhone3,1
+iPhone3,3
+iPhone4,1
+iPod1,1
+iPod2,1
+iPod3,1
+iPod4,1
+S5L8720
+S5L8900
+S5L8920
+S5L8922
+Apple A4
+Apple A5
+Apple A5X
+Apple A6
+Apple A6X
+Apple A7
+Apple A8
+Apple A8X
+Apple S1
+Apple A9
+Apple A9X
+Apple A10 Fusion
+Apple A11 Bionic
+%@ (%@)
+%@%@%@%@
+Internal
+Standard
+hasLoaded_isPasscodeLockedObj
+iPhone5,
+iPhone6,
+iPhone7,
+hasLoaded_canBeWatchCompanionObj
+hasLoaded_deviceProductionSOC
+Unactivated
+Expired
+iPod2,2
+armv6
+c16@?0@"DVTProvisioningProfile"8
+deviceIsActivated
+isSupportedOS
+-[DTDKMobileDeviceToken reload_applications]_block_invoke
+-[DTDKMobileDeviceToken reload_applications]_block_invoke_4
+-[DTDKMobileDeviceToken reload_systemApplications]_block_invoke
+-[DTDKMobileDeviceToken reload_systemApplications]_block_invoke_4
+Application fetch requires a primary connection.
+Application fetch requires an activated device.
+Application fetch requires a supported OS.
+Application fetch requires a direct connection.
+%@ Application fetch failure: %@
+-[DTDKMobileDeviceToken fetchApplications]_block_invoke_2
+-[DTDKMobileDeviceToken fetchApplications]_block_invoke_5
+-[DTDKMobileDeviceToken reload_provisioningProfiles]_block_invoke
+-[DTDKMobileDeviceToken reload_provisioningProfiles]_block_invoke_4
+@16@?0@8
+Xcode
+Uninstalling Provisioning Profiles
+Device %@ (%@) did not allow starting the secure notification service but we recently attempted to start another service (%@). Checking again.
+com.apple.mobile.lockdown.activation_state
+com.apple.mobile.lockdown.device_name_changed
+com.apple.itunesstored.application_installed
+com.apple.mobile.application_uninstalled
+com.apple.mobile.application_installed
+MISProvisioningProfileRemoved
+MISProvisioningProfileInstalled
+DTDKDeviceLockStatus
+Reloading (NULL, kAMDPasswordProtectedKey)
+Reload of (NULL, kAMDPasswordProtectedKey) was cancelled
+Reload of (NULL, kAMDPasswordProtectedKey) succeeded (value = %@)
+Reload of (NULL, kAMDPasswordProtectedKey) failed (error = %@)
+com.apple.mobile.keybagd.lock_status
+com.apple.mobile.lockdown.developer_status_changed
+com.apple.system.powersources.percent
+com.apple.mobile.lockdown.paired_device_name_changed
+-[DTDKMobileDeviceToken _secureNotificationServiceHandlerMap]_block_invoke_10
+com.apple.mobile.lockdown.BonjourServiceChanged
+Device %@ received darwin note: %@
+AMDNotificationFaceplant
+Got faceplant notification
+Got unexpected darwin notification: %@
+v16@?0@"NSString"8
+Device %@ (%@) did not allow starting the secure notification service: %@
+Device %@ (%@) will NOT retry starting the secure notification service
+Device %@ (%@) will retry starting the secure notification service in %d seconds
+-[DTDKMobileDeviceToken _scheduleNextRetryToStartSecureServices]_block_invoke
+deviceAllowsSecureServices
+Device %@ (%@) now allows starting secure services
+<%@:0x%08lX> {
+primaryConnection:          %@
+primaryWiredConnection:     %@
+primaryWirelessConnection:  %@
+deviceSerialNumber:         %@
+deviceClass:                %@
+deviceCodename:             %@
+deviceName:                 %@
+deviceIdentifier:           %@
+deviceECID:                 %@
+productVersion:             %@
+buildVersion:               %@
+deviceSoftwareVersion:      %@
+deviceTotalCapacity:        %@
+deviceAvailableCapacity:    %@
+deviceActivationState:      %@
+deviceType:                 %@
+isWirelessEnabled:          %@
+supportedDeviceFamilies:    %@
+tcpRelayServiceClient.sshPort
+iPhoneSupportXPCErrorDomain
+No internal support
+T@"NSNumber",C,N,V_isPasscodeLockedObj
+T@"NSNumber",C,N,V_canBeWatchCompanionObj
+T@"NSNumber",C,N,V_deviceProductionSOC
+inReloadApplications
+TB,V_inReloadApplications
+inReloadSystemApplications
+TB,V_inReloadSystemApplications
+inReloadProvisioningProfiles
+TB,V_inReloadProvisioningProfiles
+isWirelessEnabled
+TB,V_isWirelessEnabled
+tcpRelayServiceClient
+T@"DTDKTCPRelayServiceClient",&,N,V_tcpRelayServiceclient
+deviceSSHPort
+Tq,R
+extendedPairRequestHandler
+T@?,C,V_extendedPairRequestHandler
+startSecureServicesOp
+T@"DVTFuture",&,V_startSecureServicesOp
+developerDiskImageMountError
+T@"NSError",C,V_developerDiskImageMountError
+DTDKWatchesAreDVTDevices
+MountCallback (%@): %@
+PercentComplete
+Preparing %@ for development
+DeviceInstallLaunchLock
+AMDError LookupApplications(AMDeviceRef, NSDictionary *__autoreleasing *, NSDictionary *__autoreleasing *, NSDictionary *__autoreleasing *)
+AMDError LookupApplicationsWithOptions(AMDeviceRef, NSDictionary *__strong, NSDictionary *__autoreleasing *)
+ApplicationType
+User
+ShowLaunchProhibitedApps
+ReturnAttributes
+ApplicationDSID
+CFBundleDisplayName
+CFBundleExecutable
+CFBundleIdentifier
+CFBundleName
+CFBundleShortVersionString
+CFBundleVersion
+Container
+Entitlements
+EnvironmentVariables
+MinimumOSVersion
+Path
+ProfileValidated
+SBAppTags
+SignerIdentity
+UIDeviceFamily
+UIRequiredDeviceCapabilities
+System
+@"DTDKApplication"16@?0@"NSDictionary"8
+TCPRelayServiceClient: starting new connection for %@ (%@)
+IDEDeviceSSHPortFallback
+TCPRelayServiceClient: could not get a valid SSH port for %@ (%@); using IDEDeviceSSHPortFallback value (%ld)
+TCPRelayServiceClient: could not get a valid SSH port for %@ (%@) and no IDEDeviceSSHPortFallback value is present. Some internal workflows may not be available.
+TCPRelayServiceClient: tcprelay process exited (pid %d) for %@ (%@)
+tcprelayXPCConnection
+-[DTDKTCPRelayServiceClient _tcprelayXPCConnection]_block_invoke_3
+TCPRelayServiceClient: failed to obtain XPC connection for %@ (%@): connection interrupted
+TCPRelayServiceClient: failed to obtain XPC connection for %@ (%@): connection invalid
+/Library/Caches/com.apple.xbs/Sources/DVTiOSFrameworks/DVTiOSFrameworks-15509/DTDeviceKitBase/DTDKTCPRelayServiceClient.m
+Unexpected error from service %s: %s
+Received unexpected event (%@) in handler for %s service
+Calling %s
+@"NSString"8@?0
+v16@?0@"NSObject<OS_xpc_object>"8
+TCPRelayServiceClient: failure starting service for %@ (%@): %@
+v24@?0@"DVTPromise"8@"NSError"16
+TCPRelayServiceClient: starting service for %@ (%@)
+caller-bundle-id
+tcprelay-path
+-[DTDKTCPRelayServiceClient _connectToTCPRelayService]_block_invoke_2
+-[DTDKTCPRelayServiceClient _connectToTCPRelayService]_block_invoke_3
+ssh-port
+-[DTDKTCPRelayServiceClient _connectToTCPRelayService]_block_invoke_5
+result-code
+result-string
+tcprelay-pid
+TCPRelay (%d): successfully started service for %@ (%@)
+Failed to get pid for tcprelay process for %@
+Unknown XPC error
+XPC connection invalid
+XPC connection was interrupted
+XPC connection will terminate
+Unknown error
+-[DTDKTCPRelayServiceClient _connectToTCPRelayService]_block_invoke
+T@"NSString",&,N,V_deviceIdentifier
+T@"NSString",&,N,V_deviceName
+T@"DVTPlatform",&,N,V_devicePlatform
+sshPort
+Tq,N,V_sshPort
+DTDKTCPRelayServiceClient
+DTDKApplicationDataDidChangeNotification
+deviceIsDir
+TB,V_deviceIsDir
+deviceIsLnk
+TB,V_deviceIsLnk
+deviceFileSizeString
+T@"NSString",C,V_deviceFileSizeString
+deviceModificationTimeString
+T@"NSString",C,V_deviceModificationTimeString
+/Library/Caches/com.apple.xbs/Sources/DVTiOSFrameworks/DVTiOSFrameworks-15509/DTDeviceKitBase/DTDKApplication.m
+DTDKApplicationItemBase is an abstract class and cannot be instantiated.
+DTDKApplicationItemBase is an abstract class. %@ must be implemented by a subclass.
+parent
+parent.application
+application.isFairPlayEncrypted
+subPath
+containerPath
+children
+name == %@
+.svn
+.git
+.DS_Store
+@"NSError"16@?0^{__AFCConnection=}8
+T@"DTDKApplicationItemBase",W,V_parent
+mutableChildren
+T@"NSMutableSet",R
+T@"NSSet",C
+isLeaf
+application
+T@"DTDKApplication",R
+devicePath
+isFairPlayEncrypted
+<%@: %p>: %@ (%@)
+NSBundleResolvedPath
+hidden
+DVTAFCConnection
+%s:%d:
+connection <%p> not invalidated or non-zero refcount %lu for %@ on dealloc
+using existing connection <%p> with refcount %lu for %@
+Failed to create connection to data container for app with identifier %@
+error creating new connection <%p> with refcount %lu for %@: %@
+created new connection <%p> with refcount %lu for %@
+will call block with connection <%p> refcount %lu for %@
+did call block with connection <%p> refcount %lu for %@
+invalidated connection <%p> refcount %lu for %@
+decrementing refcount on existing connection <%p> with refcount %lu for %@
+over-releasing connection <NULL> refcount %lu for %@
+plist.CFBundleDisplayName
+plist.CFBundleName
+plist.CFBundleExecutable
+installedPath
+plist.CFBundleIdentifier
+plist.ApplicationDSID
+plist.Path
+Internal error
+Could not transfer %@ to the device
+Non-aggregate code path is not implemented
+DVTAFC
+AFCOperationCreateMakeDirectory(NULL, %@, NULL)
+-[DTDKApplication createDirectoryAtPath:error:]
+((createOp)) != nil
+(createOp)
+AFCOperationCreateMakeDirectory failed
+v32@?0@8Q16^c24
+T@"NSDictionary",C,V_plist
+T^{__AFCConnection=},R,V_connection
+propertyListRepresentation
+T@"NSDictionary",R,C
+executableName
+deviceData
+T@"<DTDKRemoteDeviceToken>",W,VdeviceData
+useAggregateItem
+isHidden
+Tc,R
+Application Data
+The name of the item in the Applications table representing the application data.
+Downloading Application Data
+yyyy-MM-dd HH:mm.ss.SSS
+XCApplicationName
+XCExecutableName
+XCExecutableVersion
+XCMinimumOSVersion
+XCDownloadDate
+%@ -- Application package info is missing one or more expected attributes:  name = %@;  executableName = %@;  bundleIdentifier = %@;  executableVersion = %@;  minimumOSVersion = %@;  date = %@
+AppDataInfo.plist
+AppData
+Uploading Application Data
+Uploading %@
+file
+.xcappdata
+%@ %@.
+Only directories may be uploaded
+_copyFile: file size was 0 for %@
+date_%@__size_%@
+S_IFLNK
+st_size
+st_mtime
+dFileSize
+dModificationTime
+localModificationInfo
+_processUploadOf: _afc_stat return some nil values for %@
+topLevel
+T@"NSString",C,V_name
+AFCFileRefOpen(%p, %@, kAFCOpenWriteTruncate, ...)
+AFCFileRefOpen failed: %@
++[DTDKApplicationDirectory itemWithParent:andName:error:]_block_invoke
+profraw
+IDESpecTokenLocation
+%@.plist
+devicePlatformIdentifier
+The operation is not supported
+canBeWatchCompanion
+isPasscodeLocked
+deviceIsProduction
+platformIdentifier
+DTDKDeviceTokenSavedRemoteAddresses
+T@"NSNumber",R,C
+T@"NSString",R,C,N
+presumedRemoteAddress
+hasLoaded_deviceName
+hasLoaded_deviceECID
+hasLoaded_deviceIMEI
+hasLoaded_deviceClass
+hasLoaded_deviceActivationState
+hasLoaded_deviceType
+hasLoaded_deviceWiFiMAC
+hasLoaded_deviceBluetoothMAC
+hasLoaded_deviceCodename
+hasLoaded_productVersion
+hasLoaded_buildVersion
+hasLoaded_deviceSerialNumber
+hasLoaded_deviceDevelopmentStatus
+hasLoaded_deviceColorString
+hasLoaded_deviceEnclosureColorString
+hasLoaded_deviceArchitecture
+hasLoaded_deviceTotalCapacity
+hasLoaded_deviceAvailableCapacity
+hasLoaded_deviceBatteryCapacity
+hasLoaded_deviceChipID
+hasLoaded_deviceToolsType
+hasLoaded_canBeWatchCompanion
+hasLoaded_isPasscodeLocked
+hasLoaded_deviceIsProduction
+T@"DTDKRemoteDeviceConnection",R
+hasDirectConnection
+TB,R,N
+T@"NSSet",R,C,N
+activeProxiedDeviceToken
+T@"<DTDKRemoteDeviceToken>",R,N
+isConnected
+hasWiredConnection
+hasWirelessConnection
+T^v,R,N
+platform
+T@"DVTPlatform",R
+deviceHostname
+deviceAddresses
+T@"NSArray",R,C,N
+T@"NSString",C,N
+deviceClassForDisplay
+deviceCrashReporterKey
+deviceHasInternalTools
+deviceHasStandardTools
+deviceIsSupported
+applications
+T@"NSSet",R,C
+systemApplications
+applicationDictionaries
+systemApplicationDictionaries
+deviceConsoleController
+T@"DTDKRemoteDeviceConsoleController",&,N
+localizedDeviceModel
+deviceModelUTI
+deviceProcessorDescription
+deviceIsPaired
+T@"DTDKRemoteDeviceConnection",&
+darwinNotificationService
+T@,&
+T@"NSString",C
+T@"NSNumber",C
+T@"NSArray",C,N
+T@"NSSet",C,N
+T@"NSNumber",R,C,VdeviceProductionSOC
+T@"NSArray",R,C,Vconnections
+TB,R,N,VhasDirectConnection
+T@"NSSet",R,C,N,VproxiedDeviceTokens
+T@"<DTDKRemoteDeviceToken>",R,N,VactiveProxiedDeviceToken
+TB,R,N,VisConnected
+TB,R,N,VhasWiredConnection
+TB,R,N,VhasWirelessConnection
+T@"DVTPlatform",R,Vplatform
+T@"NSString",R,C,N,VdeviceHostname
+T@"NSArray",R,C,N,VdeviceAddresses
+T@"NSString",R,C,N,VdeviceClassForDisplay
+T@"NSString",R,C,N,VdeviceCrashReporterKey
+TB,R,N,VdeviceHasInternalTools
+TB,R,N,VdeviceHasStandardTools
+TB,R,N,VdeviceIsSupported
+TB,R,N,VisSupportedOS
+T@"DTDKRemoteDeviceConsoleController",&,N,VdeviceConsoleController
+T@"NSString",R,N,VlocalizedDeviceModel
+T@"NSString",R,N,VdeviceModelUTI
+T@"NSString",R,C,N,VdeviceProcessorDescription
+TB,R,VdeviceAllowsSecureServices
+Tq,R,VdeviceSSHPort
+T@,&,VdarwinNotificationService
+standardUserDefaults
+boolForKey:
+bundleForClass:
+localizedStringForKey:value:table:
+isEqualToString:
+callStackSymbols
+dictionaryWithObjects:forKeys:count:
+errorWithDomain:code:userInfo:
+stringWithFormat:
+processInfo
+processName
+domain
+code
+logAspectWithName:
+stringWithUTF8String:
+_logAtLogLevel:withFormat:
+dvt_isNonEmpty
+dispatchLockWithDebugName:
+dictionary
+objectForKey:
+hasPrefix:
+setObject:forKey:
+performLockedBlock:
+class
+isKindOfClass:
+className
+recursiveDispatchLockWithDebugName:
+objectForKeyedSubscript:
+dvt_performLockedBlock:
+copy
+count
+numberWithInt:
+dvt_dictionaryBySettingObject:forKey:
+descriptionForAssertionMessage
+pathForResource:ofType:
+path
+arrayWithObjects:count:
+launchedTaskWithLaunchPath:arguments:
+waitUntilExit
+UTF8String
+startSharedCacheCopyingServiceWithError:
+arrayWithCapacity:
+addObject:
+dvt_numberOrNilForKey:
+integerValue
+dvt_arrayOrNilForKey:
+stringValue
+defaultManager
+URLByDeletingLastPathComponent
+createDirectoryAtURL:withIntermediateDirectories:attributes:error:
+userInfo
+mutableCopy
+setObject:forKeyedSubscript:
+URLForDirectory:inDomain:appropriateForURL:create:error:
+lastPathComponent
+URLByAppendingPathComponent:
+removeItemAtURL:error:
+replaceItemAtURL:withItemAtURL:backupItemName:options:resultingItemURL:error:
+futureWithResult:
+productVersion
+buildVersion
+deviceType
+deviceArchitecture
+exactSymbolsDirectoryForPlatform:preferringPlatformForModel:architecture:version:build:
+filePathForFileURL:
+parentFilePath
+existsInFileSystem
+filePathForRelativePathString:
+platformPath
+isEqual:
+setQualityOfService:
+pathString
+fileURL
+createDirectoryAtPath:withIntermediateDirectories:attributes:error:
+failWithError:
+setProgress:
+fileExistsAtPath:
+dictionaryWithContentsOfURL:
+length
+trackFuture:
+objectAtIndex:
+checkResourceIsReachableAndReturnError:
+currentVersion
+name
+date
+dataWithPropertyList:format:options:error:
+writeToURL:options:error:
+succeedWithResult:
+asyncPerformLockedBlock:
+futureWithBlock:
+futureWithError:
+directoryContents
+fileName
+rangeOfString:
+dvt_arrayByApplyingBlock:
+writeToFile:atomically:
+defaultCenter
+postNotificationName:object:userInfo:
+hasSuffix:
+containsString:
+boolValue
+containsObject:
+arrayWithObject:
+dvt_addObjectIfAbsent:
+removeObject:
+numberWithInteger:
+dvt_objectsPassingTest:
+characterSetWithCharactersInString:
+stringByTrimmingCharactersInSet:
+dvt_firstObjectPassingTest:
+dictionaryWithCapacity:
+countByEnumeratingWithState:objects:count:
+stringByAppendingPathComponent:
+dataWithContentsOfFile:options:error:
+dvt_dataWithSHA1Digest
+setValue:forKey:
+dictionaryForKey:
+dvt_areAnyEntriesPassingTest:
+fileURLWithPath:
+synchronize
+null
+init
+orderedSetWithArray:
+stringByStandardizingPath
+subpathsAtPath:
+stringsByAppendingPaths:
+addObjectsFromArray:
+compare:options:
+sortUsingComparator:
+array
+sortedArrayUsingComparator:
+rootFilePath
+searchPathWithSearchDirectoryFilePaths:
+isExecutable
+pathForFileWithRelativePathString:matchingPredicate:
+initWithBytesNoCopy:length:encoding:freeWhenDone:
+dataWithContentsOfURL:options:error:
+architectureWithCanonicalName:
+dvt_synthesizeInvalidation
+stringForKey:
+componentsSeparatedByString:
+numberWithUnsignedLong:
+removeObjectForKey:
+performLockedWriterBlock:
+cancel
+invalidate
+allValues
+identifier
+bonjourServiceName
+existingNonIDIDConnectionForIDID:
+performLockedReaderBlock:
+dvt_versionNumberComparison:
+existingConnectionForDeviceIdentifier:
+isValid
+currentThread
+qualityOfService
+owner
+removeConnection:
+alloc
+objectEnumerator
+allObjects
+setWithArray:
+executeInSession:
+updatePairingStatus
+isGizmo
+arrayWithObjects:
+dvt_changeValueForKeys:usingBlock:
+setWithObject:
+_netServiceKeyForServiceName:
+companionIdentifier
+isWireless
+interfaceSpeed
+startFirstServiceOf:unlockKeybag:
+futureWithSession:
+isPaired
+fetchValueForDomain:andKey:
+_primitiveDrainPendingRequests
+finishWithResult:andError:
+removeAllObjects
+indexOfObjectPassingTest:
+objectAtIndexedSubscript:
+requestWithDomain:key:
+addPromise:
+_drainPendingRequests
+deviceRef
+firstObject
+allConnections
+dvt_setByFilteringUsingBlock:
+currentRunLoop
+setDelegate:
+searchForServicesOfType:inDomain:
+distantFuture
+runMode:beforeDate:
+resolveWithTimeout:
+_connectionsForServiceKey:
+willChangeValueForKey:
+didChangeValueForKey:
+enumerateObjectsUsingBlock:
+hostName
+addresses
+bytes
+queue
+pingerWithAddress:
+ping
+doubleValue
+observeFinish:
+_createPingTimerIfNecessary
+monitorWithConnection:
+setConnection:
+asyncPerformLockedWriterBlock:
+startServiceWithIdentifier:
+result
+error
+initWithConnectedSocket:disconnectAction:
+initWithTransport:
+resume
+initialize
+supportsInvalidationPrevention
+existingConnectionForDeviceRef:
+connectionForDeviceRef:
+keyPathsForValuesAffectingHostname
+keyPathsForValuesAffectingAddresses
+startServiceBrowsers
+netServiceBrowser:didFindService:moreComing:
+netServiceBrowser:didRemoveService:moreComing:
+netServiceDidResolveAddress:
+netService:didNotResolve:
+self
+performSelector:
+performSelector:withObject:
+performSelector:withObject:withObject:
+isProxy
+isMemberOfClass:
+conformsToProtocol:
+respondsToSelector:
+retain
+release
+autorelease
+retainCount
+zone
+hash
+superclass
+description
+debugDescription
+primitiveInvalidate
+invalidationBacktrace
+creationBacktrace
+setCreationBacktrace:
+assertionBehaviorAfterEndOfEventForSelector:
+assertionBehaviorForKeyValueObservationsAtEndOfEvent
+removeAndInvalidate
+copyWithZone:
+createWakeupToken
+hostname
+isConnected
+compare:
+startServiceWithIdentifier:unlockKeybag:
+startFirstServiceOf:
+startHouseArrestServiceForAppIdentifier:
+setValue:forDomain:andKey:
+takeWirelessPowerAssertionWithName:deatils:andTimeout:
+takeWatchPowerAssertionWithName:details:andTimeout:
+monitorConnection
+removeConnectionMonitor:
+instrumentsConnection
+cancelInstrumentsConnection
+.cxx_destruct
+.cxx_construct
+setOwner:
+deviceReportsWirelessEnabled
+setDeviceReportsWirelessEnabled:
+setPaired:
+location
+setInstrumentsConnection:
+averageLatency
+pings
+pongs
+_pendingRequests
+_pendingRequestsLock
+_instrumentsLock
+_recentPings
+_pinger
+_pingTimer
+_pingQueue
+_connectionMonitors
+_sessionFutureQueue
+_hash
+_removingConnection
+_deviceReportsWirelessEnabled
+_wireless
+_paired
+_interfaceSpeed
+_location
+_owner
+_identifier
+_bonjourServiceName
+_companionIdentifier
+_deviceRef
+_instrumentsConnection
+_averageLatency
+_pings
+_pongs
+connection
+setWithObjects:
+keyPathsForValuesAffectingAverageLatency
+keyPathsForValuesAffectingPacketRatio
+isCancelled
+packetRatio
+_connection
+cancelled
+_promises
+_cancelled
+_domain
+_key
+setAssertionRef:
+dealloc
+assertionRef
+_assertionRef
+readWriteDispatchLockWithDebugName:
+registerDefaults:
+zipFileWithContentsOfURL:error:
+setZipFileURL:
+setAttributes:
+setArchive:
+archive
+zipFileURL
+isFileURL
+fileSystemRepresentation
+_openWithError:
+_attributesDictionaryFromInternalFields:withInternalName:
+attributes
+characterAtIndex:
+dataWithLength:
+mutableBytes
+_extractCurrentFileWithError:
+enumerateFilesWithError:andBlock:
+_attributesDictionaryForCurrentFileWithError:
+extractFileWithInternalPath:error:
+propertyListWithData:options:format:error:
+DTDK_safeUnsignedLongLongValue
+dvt_errorWithDomain:errorCode:message:recoverySuggestion:
+expandedSizeWithError:
+URLByStandardizingPath
+unsignedIntegerValue
+initWithData:encoding:
+enumerateFileDataWithError:andBlock:
+extractEntireArchiveTo:error:withProgressHandler:
+zipFileWithContentsOfURL:
+canOpen
+canOpenWithError:
+fileExistsAtInternalPath:
+attributesForAllFilesWithError:
+attributesForFileWithInternalPath:error:
+extractPropertyListWithInternalPath:error:
+countOfFilesWithError:
+extractEntireArchiveTo:error:
+_zipFileURL
+_archive
+_attributes
+defaultCertificateManager
+signingCertificates
+certificateKinds
+certificateData
+dvt_setByApplyingBlock:
+semaphoreWithCount:
+signal
+forceProfileLoadingWithCallback:
+wait
+provisioningProfiles
+certificates
+keychainSearchList
+isIdentity
+isExpired
+underlyingType
+commonName
+sha1Hash
+enumerateKeysAndObjectsUsingBlock:
+dataRepresentation
+UUID
+filePath
+pathExtension
+exportAccountsToKeychain:propertyList:numberOfAccounts:error:
+importAccountsFromKeychain:propertyList:numberOfAccounts:error:
+typeIdentifier
+toolsInfo
+toolsBuildVersion
+accountsPlistVersion
+initWithKeychainRef:password:error:
+_accountsPlistWithProviders:keychain:numberOfAccounts:error:
+dataUsingEncoding:
+dvt_dataEncryptedWithKey:error:
+removeItemAtPath:error:
+filePathForPathString:
+filePathForUniqueRelativeFileWithPrefix:error:
+_exportIdentitiesToZipFile:withPassword:numberExported:error:
+_exportProvisioningProfilesToZipFile:numberExported:error:
+_exportAccountProviders:toZipFile:withPassword:count:error:
+moveItemAtPath:toPath:error:
+resultWithNumberOfIdentities:numberOfProfiles:numberOfAccounts:
+defaultTemporaryStateManager
+keychain
+dvt_errorWithSecurityErrorCode:
+isAbsolutePath
+couldBeProvisioningProfile:
+profileWithURL:error:
+caseInsensitiveCompare:
+_importIdentityFromData:withPassword:error:
+dvt_dataDecryptedWithKey:error:
+writeToFile:options:error:
+installProfiles:callback:
+dvt_hasDomain:errorCode:
+currentProfile
+identities
+ADCLogins
+exportDeveloperProfileToFile:withPassword:accountProviders:error:
+importDeveloperProfileFromFile:withPassword:accountProviders:error:
+children
+numberOfIdentities
+numberOfProfiles
+numberOfAccounts
+_numberOfIdentities
+_numberOfProfiles
+_numberOfAccounts
+localizedDescription
+localizedRecoverySuggestion
+detachNewThreadSelector:toTarget:withObject:
+listenerThread
+listenerThreadImplementation
+initWithTarget:selector:object:
+setListenerThread:
+start
+_unsubscribe
+numberWithBool:
+_rescan
+_subscribe
+getCFRunLoop
+setListenerRunLoop:
+valueForKey:
+allDevices
+listenerRunLoop
+dvt_addObjectIfNonNil:
+dvt_setBySubtractingSet:
+threadDictionary
+weakObjectsPointerArray
+addConnection:
+sharedInstance
+netServiceBrowserWillSearch:
+netServiceBrowserDidStopSearch:
+netServiceBrowser:didNotSearch:
+netServiceBrowser:didFindDomain:moreComing:
+netServiceBrowser:didRemoveDomain:moreComing:
+netServiceWillPublish:
+netServiceDidPublish:
+netService:didNotPublish:
+netServiceWillResolve:
+netServiceDidStop:
+netService:didUpdateTXTRecordData:
+netService:didAcceptConnectionWithInputStream:outputStream:
+startListening
+stopListening
+notifyDeviceNotificationsStopped
+presentError:
+enumerateDevicesWithBlock:
+deviceNotificationRef
+setDeviceNotificationRef:
+_listenerRunLoop
+_listenerThread
+_deviceNotificationRef
+startedMetricForAspect:logLevel:label:
+checkpoint:
+setEndTime
+logPerformanceMetricData
+hasFinishedMigration
+symbolicationStatus
+stringByResolvingSymlinksInPath
+_incidentIdentifierForCrashLogAtURL:
+importCrashLogAtURL:
+managedObjectContext
+needsSymbolication
+displayName
+performBlockAndWait:
+setSymbolicationStatus:
+symbolicate
+controller
+keyPathsForValuesAffectingStatusMessage
+enableCrashLogSupport
+_database
+statusMessage
+setStatusMessage:
+legacyRootDirectory
+crashLogRootDirectory
+shouldAcceptDroppedCrashLogAtPath:
+copyExternalCrashLog:
+crashLogs
+enqueueLogForSymbolication:
+_statusMessage
+_symbolicationStatus
+lastScanEventId
+setLastScanEventId:
+importCrashLogs:
+persistentStoreCoordinator
+persistentStores
+metadata
+unsignedLongLongValue
+numberWithUnsignedLongLong:
+setMetadata:
+save:
+performBlock:
+URLForResource:withExtension:
+initWithContentsOfURL:
+persistentStoreOptions
+metadataForPersistentStoreOfType:URL:options:error:
+dictionaryWithValuesForKeys:
+setMetadata:forPersistentStoreOfType:URL:options:error:
+initWithConcurrencyType:
+setUndoManager:
+_managedObjectModel
+initWithManagedObjectModel:
+setPersistentStoreCoordinator:
+setMergePolicy:
+fileURLWithPath:isDirectory:
+integerForKey:
+stringByAppendingPathExtension:
+orderedSet
+stringByAppendingFormat:
+insertObject:atIndex:
+allKnownVersions
+addPersistentStoreWithType:configuration:URL:options:error:
+migratePersistentStore:toURL:options:withType:error:
+startMigration
+mergeChangesFromContextDidSaveNotification:
+addObserverForName:object:queue:usingBlock:
+mainThreadMoc
+temporaryMoc
+fetchRequestWithEntityName:
+predicateWithFormat:
+setPredicate:
+setFetchLimit:
+executeFetchRequest:error:
+updateModelLayout
+hasChanges
+reset
+setIncludesSubentities:
+setIncludesPropertyValues:
+objectsWithEntityName:MatchingPredicate:inContext:
+crashLogsMatchingPredicate:inContext:
+anyObject
+predicateWithValue:
+deleteObject:
+binaryImagesMatchingPredicate:inContext:
+binaryImageMatchingPredicate:inContext:
+dsymsMatchingPredicate:inContext:
+dsymMatchingPredicate:inContext:
+DTDK_stringWithLooseUTF8String:
+data
+appendBytes:length:
+contentsAtPath:
+dvt_hexString
+lowercaseString
+DTDK_stringWithLooseUTF8String:length:
+_loadCrashLogMetadata:
+crashLogForIncidentIdentifier:inContext:
+insertNewObjectForEntityForName:inManagedObjectContext:
+setIncidentIdentifier:
+setProcessName:
+setCrashReporterKey:
+setUdid:
+setDateTime:
+setType:
+setText:
+setRawText:
+binaryImageForUUID:inContext:
+setName:
+setArch:
+setPath:
+setUuid:
+setBinaryImages:
+rollback
+objectID
+existingObjectWithID:error:
+setNeedsSymbolication:
+rawText
+startFSEvents
+_fixVersionHashesAt:error:
+crashLogMatchingPredicate:inContext:
+crashLogsInContext:
+binaryImagesInContext:
+dsymsInContext:
+dsymsForPath:inContext:
+dsymForUUID:inContext:
+deleteCrashLogs:
+symbolicateCrashLogs:
+forceSymbolicateCrashLogs:
+unsymbolicateCrashLogs:
+dateTime
+localizedStringFromDate:dateStyle:timeStyle:
+willAccessValueForKey:
+primitiveText
+didAccessValueForKey:
+primitiveRawText
+valueForKeyPath:
+logText
+setLogText:
+setPrimitiveText:
+rawLogText
+setRawLogText:
+setPrimitiveRawText:
+replaceOccurrencesOfString:withString:options:range:
+symbolicator
+text
+symbolicateLogData:callback:
+entityName
+keyPathsForValuesAffectingDisplayName
+keyPathsForValuesAffectingText
+keyPathsForValuesAffectingRawText
+keyPathsForValuesAffectingFilename
+keyPathsForValuesAffectingDateString
+filename
+dateString
+resymbolicate
+DTDK_setValueOnMainThread:forKey:waitUntilDone:
+dataWithBytes:length:
+dataWithContentsOfURL:
+DTDK_dataWithContentsOfURL:followTerminalLink:
+DTDK_safeBoolValue
+longLongValue
+DTDK_initWithLooseUTF8String:
+DTDK_initWithLooseUTF8String:length:
+currentHandler
+handleFailureInMethod:object:file:lineNumber:description:
+DTDK_initWithLooseUTF8String:length:sanitize:
+initWithCharactersNoCopy:length:freeWhenDone:
+linkItemAtURL:toURL:error:
+copyItemAtURL:toURL:error:
+DTDK_linkOrCopyItemAtURL:toURL:error:
+deviceIdentifier
+startCrashReportMoverServiceWithError:
+startCrashReportCopyMobileServiceWithError:
+deviceName
+contentsOfDirectoryAtURL:includingPropertiesForKeys:options:error:
+checkDevice:
+stringByDeletingPathExtension
+writeToFile:atomically:encoding:error:
+substringFromIndex:
+substringToIndex:
+globallyUniqueString
+setToken:
+stop
+token
+startSyslogServiceWithError:
+delegate
+consoleStringWithData:startingAtOffset:
+consoleController:didReceiveConsoleText:
+consoleControllerDidClear:
+controllerForDevice:
+reload
+clear
+consoleString
+_serviceRef
+_queue
+_socketQueue
+_consoleSource
+_isInvalidating
+_circularBuffer
+_bufferLock
+_sourceCancelledSemaphore
+_delegate
+_token
+initWithCapacity:
+numberWithDouble:
+dictionaryWithObjectsAndKeys:
+_resetStartSecureServicesRetryState
+_startListeningForProxiedDeviceTokens
+floatForKey:
+setDeviceIdentifier:
+setBonjourServiceName:
+isWirelessEnabled
+setWirelessEnabled:
+awakeWithDictionaryRepresentation:
+dictionaryRepresentation
+dictionaryWithDictionary:
+wakeupToken
+deviceLock
+devices
+initWithParentToken:
+detachFromParent
+specTokenForDeviceIdentifier:
+uppercaseString
+defaultPlugInManager
+extensionPointWithIdentifier:
+extensions
+sortDescriptorWithKey:ascending:
+sortedArrayUsingDescriptors:
+dvt_areAnyObjectsPassingTest:
+platformForIdentifier:
+hasLoaded_deviceType
+hasLoaded_buildVersion
+scannerWithString:
+scanInteger:
+uppercaseLetterCharacterSet
+scanCharactersFromSet:intoString:
+deviceSoftwareVersion
+platform
+dvt_extendedInfo
+minimumOSForDeviceSupport
+primaryConnection
+deviceCodename
+deviceColorString
+deviceEnclosureColorString
+deviceClass
+connections
+dvt_flatMap:
+setDarwinNotificationService:
+setPrimaryConnection:
+primaryWiredConnection
+primaryWirelessConnection
+proxiedDeviceTokens
+dvt_onlyObject
+enqueueItem:
+dvt_addObserverForName:object:queue:usingBlock:
+setPrimaryWiredConnection:
+setPrimaryWirelessConnection:
+_setPrimaryConnection:
+reload_deviceArchitecture
+reload_productVersion
+reload_buildVersion
+reload_deviceType
+reload_deviceClass
+reload_deviceName
+reload_deviceToolsType
+_shouldFetchExtendedProperties
+reload_deviceECID
+reload_deviceActivationState
+reload_deviceWiFiMAC
+reload_deviceBluetoothMAC
+reload_deviceCodename
+reload_deviceSerialNumber
+reload_deviceDevelopmentStatus
+reload_deviceColorString
+reload_deviceEnclosureColorString
+reload_deviceTotalCapacity
+reload_deviceAvailableCapacity
+reload_deviceBatteryCapacity
+reload_canBeWatchCompanionObj
+reload_isPasscodeLockedObj
+reload_deviceProductionSOC
+reload_supportedDeviceFamilies
+startSecureServices
+hasDirectConnection
+_hasDirectConnection
+postNotificationName:object:
+setIsWirelessEnabled:
+dvt_uniqueSortedInsert:
+_updatePrimaryConnectionWithCompletion:
+disconnect
+setDeviceConsoleController:
+future
+performForDeviceToken:completionHandler:
+_updateWirelessEnabledStatus:
+extendedPairRequestHandler
+setExtendedPairRequestHandler:
+dvt_errorWithPOSIXErrorCode:messageFormat:
+_trackDidAttemptStartOfSecureServiceWithIdentifier:future:
+_debugServiceArrayWithExtension:services:
+startXcodeDeviceArbitrationService
+trackFuture:progress:cancel:result:error:
+dvt_integerForKey:defaultValue:
+dvt_stringOrNilForKey:
+observeSuccess:
+_deviceArbitrationCheckIn:
+startDebugServerServiceWithExtension:
+startAppInstallationService
+startCrashReportMoverService
+startCrashReportCopyMobileService
+startSyslogService
+startXcodeDeviceMonitorService
+startSharedCacheCopyingService
+startLocationSimulationService
+reloadIfNeeded_deviceType
+reloadIfNeeded_productVersion
+reloadIfNeeded_buildVersion
+reloadIfNeeded_deviceArchitecture
+exactSymbolsDirectoryForModel:architecture:version:build:
+idealDeveloperDiskImageForPlatform:model:version:build:
+setDeveloperDiskImageMountError:
+deviceHasInternalTools
+deviceHasStandardTools
+deviceToolsType
+developerDiskImageForDeviceType:productVersion:buildVersion:
+modelUTIFromModelCode:
+modelNameFromModelUTI:
+userDescription
+dvt_errorByInjectingUserInfoObject:forKey:
+_mountDeveloperDiskImage:withError:
+dvt_errorWithDomain:errorCode:messageFormat:
+then:
+startLocationSimulationServiceWithError:
+startAppInstallationServiceWithError:
+localizedFailureReason
+setDeviceName:
+observeFinishOnQueue:withBlock:
+setDeviceECID:
+setDeviceIMEI:
+setDeviceClass:
+setDeviceActivationState:
+setDeviceType:
+setDeviceWiFiMAC:
+setDeviceBluetoothMAC:
+setDeviceCodename:
+setProductVersion:
+setBuildVersion:
+setDeviceSerialNumber:
+setDeviceColorString:
+setDeviceEnclosureColorString:
+setDeviceArchitecture:
+setDeviceTotalCapacity:
+setDeviceAvailableCapacity:
+setDeviceToolsType:
+setIsPasscodeLockedObj:
+setDeviceProductionSOC:
+setCanBeWatchCompanionObj:
+setSupportedDeviceFamilies:
+deviceHasBattery
+setDeviceBatteryCapacity:
+setDeviceDevelopmentStatus:
+waitUntilFinished
+setDeviceChipID:
+deviceChipID
+deviceAllowsIMEIQuery
+reloadIfNeeded_deviceIMEI
+deviceBluetoothMAC
+deviceWiFiMAC
+deviceIMEI
+deviceSerialNumber
+deviceECID
+member:
+isPasscodeLockedObj
+hasLoaded_isPasscodeLockedObj
+canBeWatchCompanionObj
+hasLoaded_canBeWatchCompanionObj
+hasLoaded_deviceProductionSOC
+deviceProductionSOC
+deviceDevelopmentStatus
+deviceActivationState
+initWithObjects:
+dvt_anyObjectPassingTest:
+reload_applications
+deviceIsActivated
+isSupportedOS
+setApplications:
+inReloadApplications
+setInReloadApplications:
+reload_systemApplications
+setSystemApplications:
+inReloadSystemApplications
+setInReloadSystemApplications:
+setByAddingObjectsFromArray:
+applications
+systemApplications
+setByAddingObjectsFromSet:
+fetchApplications
+reload_provisioningProfiles
+inReloadProvisioningProfiles
+setInReloadProvisioningProfiles:
+profileWithData:platform:error:
+setProvisioningProfiles:
+installProvisioningProfiles:withError:
+misProfile
+uninstallProvisioningProfiles:withError:
+startSecureServicesOp
+darwinNotificationService
+_secureNotificationServiceHandlerMap
+_createSecureNotificationServiceOpWithHandlerMap:
+deviceAllowsSecureServices
+logLevel
+startDarwinNotificationService
+setStartSecureServicesOp:
+_markDeviceAllowsSecureServices
+_updateDeviceAllowsSecureServices:
+_shouldRetryStartingSecureServices
+_scheduleNextRetryToStartSecureServices
+observeFailure:
+connectToTCPRelayService
+string
+appendFormat:
+deviceTotalCapacity
+deviceAvailableCapacity
+supportedDeviceFamilies
+appendString:
+tcpRelayServiceClient
+sshPort
+hasWiredConnection
+initWithDeviceIdentifier:deviceName:devicePlatform:
+setTcpRelayServiceClient:
+connect
+keyPathsForValuesAffectingIsSupportedOS
+keyPathsForValuesAffectingIsConnected
+keyPathsForValuesAffectingLocalizedDeviceModel
+keyPathsForValuesAffectingDeviceClassForDisplay
+keyPathsForValuesAffectingWakeupToken
+keyPathsForValuesAffectingDeviceHostname
+keyPathsForValuesAffectingDeviceAddresses
+keyPathsForValuesAffectingHasWiredConnection
+keyPathsForValuesAffectingHasWirelessConnection
+keyPathsForValuesAffectingDeviceIsPaired
+keyPathsForValuesAffectingHasDirectConnection
+_wirelessHostID
+keyPathsForValuesAffectingHasLoaded_deviceName
+keyPathsForValuesAffectingHasLoaded_deviceECID
+keyPathsForValuesAffectingHasLoaded_deviceIMEI
+keyPathsForValuesAffectingHasLoaded_deviceClass
+keyPathsForValuesAffectingHasLoaded_deviceActivationState
+keyPathsForValuesAffectingHasLoaded_deviceType
+keyPathsForValuesAffectingHasLoaded_deviceWiFiMAC
+keyPathsForValuesAffectingHasLoaded_deviceBluetoothMAC
+keyPathsForValuesAffectingHasLoaded_deviceCodename
+keyPathsForValuesAffectingHasLoaded_productVersion
+keyPathsForValuesAffectingHasLoaded_buildVersion
+keyPathsForValuesAffectingHasLoaded_deviceSerialNumber
+keyPathsForValuesAffectingHasLoaded_deviceColorString
+keyPathsForValuesAffectingHasLoaded_deviceEnclosureColorString
+keyPathsForValuesAffectingHasLoaded_deviceArchitecture
+keyPathsForValuesAffectingHasLoaded_deviceTotalCapacity
+keyPathsForValuesAffectingHasLoaded_deviceAvailableCapacity
+keyPathsForValuesAffectingHasLoaded_deviceToolsType
+keyPathsForValuesAffectingHasLoaded_isPasscodeLockedObj
+keyPathsForValuesAffectingHasLoaded_deviceProductionSOC
+keyPathsForValuesAffectingHasLoaded_canBeWatchCompanionObj
+keyPathsForValuesAffectingHasLoaded_supportedDeviceFamilies
+keyPathsForValuesAffectingDeviceHasBattery
+keyPathsForValuesAffectingDeviceBatteryCapacity
+keyPathsForValuesAffectingHasLoaded_deviceBatteryCapacity
+keyPathsForValuesAffectingHasLoadedDeviceDevelopmentStatus
+keyPathsForValuesAffectingDeviceChipID
+keyPathsForValuesAffectingHasLoaded_deviceChipID
+keyPathsForValuesAffectingDeviceProcessorDescription
+keyPathsForValuesAffectingDeviceSoftwareVersion
+keyPathsForValuesAffectingDeviceCrashReporterKey
+keyPathsForValuesAffectingDeviceHasInternalTools
+keyPathsForValuesAffectingDeviceHasStandardTools
+keyPathsForValuesAffectingIsPasscodeLocked
+keyPathsForValuesAffectingHasLoaded_isPasscodeLocked
+keyPathsForValuesAffectingCanBeWatchCompanion
+keyPathsForValuesAffectingHasLoaded_canBeWatchCompanion
+keyPathsForValuesAffectingHasLoaded_deviceIsProduction
+keyPathsForValuesAffectingDeviceIsProduction
+keyPathsForValuesAffectingDevelopmentFlag
+keyPathsForValuesAffectingDeviceIsActivated
+keyPathsForValuesAffectingDeviceIsSupported
+keyPathsForValuesAffectingApplications
+keyPathsForValuesAffectingDeviceSSHPort
+willDetachFromChild:
+localizedDeviceModel
+deviceModelUTI
+deviceClassForDisplay
+deviceHostname
+deviceAddresses
+hasWirelessConnection
+deviceIsPaired
+activeProxiedDeviceToken
+deviceConsoleController
+wakeup
+enableWireless
+disableWirelessWithError:
+extendedPairWithError:extendedInformationHandler:
+unpair
+startSpringboardService
+startAppListService
+startInstrumentsServerService
+primaryInstrumentsServer
+cancelPrimaryInstrumentsServer
+wiredInstrumentsServer
+wirelessInstrumentsServer
+deviceArbitrationCheckIn
+deviceArbitrationForcedCheckIn
+startServiceWithIdentifier:andError:
+startDebugServerServiceWithError:
+startXcodeDeviceMonitorServiceWithError:
+idealExistingSymbolsDirectory:
+mountDeveloperDiskImageWithError:
+copyAndProcessSharedCache
+stopSimulatingLocationWithError:
+simulateLatitude:andLongitude:withError:
+checkDeviceCapabilities:withOptions:andError:
+installApplicationBundleAtPath:withOptions:andError:withCallback:
+transferPath:withOptions:andError:withCallback:
+installApplicationAtPath:withOptions:andError:withCallback:
+upgradeApplicationAtPath:withOptions:andError:withCallback:
+uninstallApplicationWithIdentifier:options:andError:withCallback:
+reloadIfNeeded_deviceName
+hasLoaded_deviceName
+reloadIfNeeded_deviceECID
+hasLoaded_deviceECID
+reload_deviceIMEI
+hasLoaded_deviceIMEI
+reloadIfNeeded_deviceClass
+hasLoaded_deviceClass
+reloadIfNeeded_deviceActivationState
+hasLoaded_deviceActivationState
+reloadIfNeeded_deviceWiFiMAC
+hasLoaded_deviceWiFiMAC
+reloadIfNeeded_deviceBluetoothMAC
+hasLoaded_deviceBluetoothMAC
+reloadIfNeeded_deviceCodename
+hasLoaded_deviceCodename
+hasLoaded_productVersion
+reloadIfNeeded_deviceSerialNumber
+hasLoaded_deviceSerialNumber
+reloadIfNeeded_deviceColorString
+hasLoaded_deviceColorString
+reloadIfNeeded_deviceEnclosureColorString
+hasLoaded_deviceEnclosureColorString
+hasLoaded_deviceArchitecture
+reloadIfNeeded_deviceTotalCapacity
+hasLoaded_deviceTotalCapacity
+reloadIfNeeded_deviceAvailableCapacity
+hasLoaded_deviceAvailableCapacity
+reloadIfNeeded_deviceToolsType
+hasLoaded_deviceToolsType
+reloadIfNeeded_isPasscodeLockedObj
+reloadIfNeeded_deviceProductionSOC
+reloadIfNeeded_canBeWatchCompanionObj
+reloadIfNeeded_supportedDeviceFamilies
+hasLoaded_supportedDeviceFamilies
+deviceBatteryCapacity
+hasLoaded_deviceBatteryCapacity
+hasLoaded_deviceDevelopmentStatus
+syncSetDevelopmentFlag:error:
+reload_deviceChipID
+hasLoaded_deviceChipID
+deviceProcessorDescription
+deviceCrashReporterKey
+isPasscodeLocked
+hasLoaded_isPasscodeLocked
+canBeWatchCompanion
+hasLoaded_canBeWatchCompanion
+hasLoaded_deviceIsProduction
+deviceIsProduction
+setDeviceIsProduction:
+developmentFlag
+setDevelopmentFlag:
+deviceIsSupported
+installedProvisioningProfileWithUUID:
+renameDevice:
+fetchApplications:
+installProvisioningProfile:withError:
+uninstallProvisioningProfile:withError:
+deviceSSHPort
+setDeviceSoftwareVersion:
+systemApplicationDictionaries
+setSystemApplicationDictionaries:
+applicationDictionaries
+setApplicationDictionaries:
+developerDiskImageMountError
+_platform
+_connections
+_connectionsLock
+_connectionRemovedToken
+_connectionAddedToken
+_developerDiskImageMountQueue
+_darwinNotificationServiceError
+_wakeupToken
+_startSecureServicesRetryNextSeconds
+_startSecureServicesRetryMinSeconds
+_startSecureServicesRetryMaxSeconds
+_startSecureServicesRetryFalloff
+_startSecureServicesLock
+_deviceAllowsSecureServices
+_inReloadApplications
+_inReloadSystemApplications
+_inReloadProvisioningProfiles
+_isWirelessEnabled
+_primaryWiredConnection
+_primaryWirelessConnection
+_tcpRelayServiceclient
+_startSecureServicesOp
+_deviceConsoleController
+_deviceName
+_deviceECID
+_deviceIMEI
+_deviceClass
+_deviceActivationState
+_deviceType
+_deviceWiFiMAC
+_deviceBluetoothMAC
+_deviceCodename
+_productVersion
+_buildVersion
+_deviceSerialNumber
+_deviceColorString
+_deviceEnclosureColorString
+_deviceArchitecture
+_deviceTotalCapacity
+_deviceAvailableCapacity
+_deviceToolsType
+_isPasscodeLockedObj
+_deviceProductionSOC
+_canBeWatchCompanionObj
+_supportedDeviceFamilies
+_deviceBatteryCapacity
+_deviceDevelopmentStatus
+_deviceChipID
+_applications
+_systemApplications
+_provisioningProfiles
+_extendedPairRequestHandler
+_developerDiskImageMountError
+intValue
+dvt_uncachedBundleIdentifierAtPath:
+applicationWithDeviceData:andPlist:
+setUseAggregateItem:
+lazyRefresh
+setDevicePlatform:
+_cancelTrackingTCPRelayPID
+_connectToTCPRelayService
+setSshPort:
+mainBundle
+bundleIdentifier
+devicePlatform
+_tcprelayXPCConnection
+_trackTCPRelayPID:
+_procDeathNotificationSource
+_deviceIdentifier
+_devicePlatform
+_sshPort
+transformedValueClass
+allowsReverseTransformation
+transformedValue:
+setYear:
+scanString:intoString:
+setMonth:
+setDay:
+setHour:
+setMinute:
+scanDouble:
+setSecond:
+initWithCalendarIdentifier:
+timeZoneForSecondsFromGMT:
+setTimeZone:
+dateFromComponents:
+timeIntervalSinceReferenceDate
+dateWithTimeIntervalSinceReferenceDate:
+deviceIsDir
+setDeviceIsDir:
+deviceIsLnk
+setDeviceIsLnk:
+deviceFileSizeString
+setDeviceFileSizeString:
+deviceModificationTimeString
+setDeviceModificationTimeString:
+_deviceIsDir
+_deviceIsLnk
+_deviceFileSizeString
+_deviceModificationTimeString
+makeObjectsPerformSelector:
+setChildren:
+setParent:
+isLeaf
+parent
+application
+_withConnection:
+plist
+subPath
+isFairPlayEncrypted
+containerPath
+refresh
+setSet:
+mutableSetValueForKey:
+devicePath
+filteredSetUsingPredicate:
+keyPathsForValuesAffectingApplication
+keyPathsForValuesAffectingIsFairPlayEncrypted
+keyPathsForValuesAffectingDevicePath
+keyPathsForValuesAffectingMutableChildren
+shouldProcessPath:
+downloadToFile:error:
+downloadOptimizationProfilesToFile:error:
+sandboxFileBases
+uploadFile:error:
+removeFromDeviceWithError:
+mutableChildren
+addChildrenObject:
+removeChildrenObject:
+childNamed:
+performBatchedOperations:
+_children
+_invalidated
+_parent
+installedPath
+setDeviceData:
+setPlist:
+deviceData
+useAggregateItem
+item
+uploadFile:syncRecords:resultingSyncRecords:error:
+processAFCOperation:error:
+pathWithComponents:
+attributesOfItemAtPath:error:
+dateWithTimeIntervalSince1970:
+keyPathsForValuesAffectingPropertyListRepresentation
+applicationWithPropertiesFromApplication:
+keyPathsForValuesAffectingName
+keyPathsForValuesAffectingIdentifier
+keyPathsForValuesAffectingInstalledPath
+propertyListRepresentation
+executableVersion
+minimumOSVersion
+bundlePath
+isHidden
+initWithPropertyListRepresentation:error:
+executableName
+_notifyApplicationDataDidChange
+createDirectoryAtPath:error:
+contentsOfDirectoryAtPath:error:
+_useAggregateItem
+_connection_rc
+_plist
+_notifyStartOfDownload
+dvt_descriptionWithDateFormat:
+_notifyFinishOfDownload
+_notifyStartOfUpload
+fileExistsAtPath:isDirectory:
+itemWithParent:fromLocalDirectory:error:
+itemWithParent:fromLocalFile:error:
+_notifyFinishOfUpload
+fileSize
+inputStreamWithFileAtPath:
+open
+_notifyUploadProgressOfFile:progress:
+read:maxLength:
+close
+_readDeviceDirectory:
+_removeFileOrDirAtDevicePath:
+_afc_stat:
+_createDirAtDevicePath:
+_processUploadOf:devicePath:syncRecords:resultingSyncRecords:error:
+modificationInfoStringForLocalPath:
+_copyFile:toDevicePath:error:
+itemWithName:
+_name
+inputStreamWithURL:
+itemWithName:andParent:fromStream:error:
+itemWithParent:andName:error:
+isRuntimeOSAppleInternal
+stringByExpandingTildeInPath
+dictionaryWithContentsOfFile:
+initWithDeviceIdentifier:tokenProperties:
+_objectForKeyInTokenProperties:
+_NSIntegerForKeyInTokenProperties:
+_tokenProperties
+_notSupportedError
+setCanBeWatchCompanion:
+setIsPasscodeLocked:
+_notSupportedFuture
+hostPairingToken
+presumedRemoteAddress
+setPresumedRemoteAddress:
+_canBeWatchCompanion
+_isPasscodeLocked
+_deviceIsProduction
+0 1B
+DTDKRemoteDeviceConnection
+DVTInvalidation
+NSObject
+DTDKDeviceConnectionMonitor
+DVTCancellable
+DTDKCopyValueRequest
+DTDKPowerAssertionToken
+DTDKZipFile
+DVTDeveloperProfileAccountProvider
+DTDKDeveloperProfile
+DTDKDeveloperProfileExtensions
+DTDKDeveloperProfileResult
+DTDKRemoteDeviceDataListener
+NSNetServiceBrowserDelegate
+NSNetServiceDelegate
+DTDKCrashLogController
+1 0A
+DTDKCrashLogDatabase
+DTDKCrashLog
+DTDKBinaryImage
+DTDKdSYM
+DTDKExtensions
+DTDKCrashLogCopying
+DTDKRemoteDeviceConsoleController
+DTDKMobileDeviceToken
+DTDKTCPRelayServiceClient
+DTDKFileSizeTransformer
+DTDKFileSizeTransformerWithDashedZero
+DTDKFileSizeTransformerWithNullZero
+DTDKApplicationFileStat
+DTDKApplicationItemBase
+DTDKApplication
+DTDKApplicationPackage
+DTDKApplicationFileBase
+DTDKApplicationFile
+DTDKApplicationDirectory
+DTDKRemoteDeviceSpecToken
+DTDKDeviceTokenBase
+DTDKRemoteDeviceToken_Private
+DTDKRemoteDeviceToken
+DVTDeviceToken
+v16@0:8
+c16@0:8
+@24@0:8^{_AMDevice=}16
+@24@0:8@16
+@16@0:8
+v36@0:8@16@24c32
+v24@0:8@16
+v32@0:8@16@24
+c24@0:8@16
+#16@0:8
+@24@0:8:16
+@32@0:8:16@24
+@40@0:8:16@24@32
+c24@0:8#16
+c24@0:8:16
+Vv16@0:8
+Q16@0:8
+^{_NSZone=}16@0:8
+c24@0:8@"Protocol"16
+@"NSString"16@0:8
+Q24@0:8:16
+@"DVTStackBacktrace"16@0:8
+v24@0:8@"DVTStackBacktrace"16
+@24@0:8^{_NSZone=}16
+^v16@0:8
+B16@0:8
+q24@0:8@16
+i24@0:8@?16
+@24@0:8@?16
+@28@0:8@16B24
+@40@0:8@16@24@32
+@32@0:8@16@24
+@40@0:8@16@24d32
+I16@0:8
+v20@0:8B16
+^{_AMDevice=}16@0:8
+d16@0:8
+@"NSMutableArray"
+@"DVTDispatchLock"
+{deque<double, std::__1::allocator<double> >="__map_"{__split_buffer<double *, std::__1::allocator<double *> >="__first_"^^d"__begin_"^^d"__end_"^^d"__end_cap_"{__compressed_pair<double **, std::__1::allocator<double *> >="__value_"^^d}}"__start_"Q"__size_"{__compressed_pair<unsigned long, std::__1::allocator<double> >="__value_"Q}}
+@"DVTPinger"
+@"NSObject<OS_dispatch_source>"
+@"NSObject<OS_dispatch_queue>"
+@"NSMutableSet"
+@"<DTDKRemoteDeviceToken>"
+@"NSString"
+^{_AMDevice=}
+@"DTXConnection"
+@"DTDKRemoteDeviceConnection"
+v28@0:8@16i24
+@32@0:8@16^@24
+^{unz_internal=}16@0:8
+v24@0:8^{unz_internal=}16
+B24@0:8^@16
+B24@0:8@16
+@32@0:8r^{unz_file_info_s=QQQQQQQQQQQQQQ{tm_unz_s=IIIIII}}16@24
+@24@0:8^@16
+Q24@0:8^@16
+B32@0:8^@16@?24
+B40@0:8@16^@24@?32
+B32@0:8@16^@24
+@"NSURL"
+^{unz_internal=}
+@"NSMutableDictionary"
+c48@0:8@16^@24^Q32^@40
+c48@0:8@16@24^Q32^@40
+c48@0:8@"DVTKeychain"16^@24^Q32^@40
+c48@0:8@"DVTKeychain"16@"NSDictionary"24^Q32^@40
+c48@0:8^{zip_internal=}16@24^Q32^@40
+c40@0:8^{zip_internal=}16^Q24^@32
+@48@0:8@16@24^Q32^@40
+c56@0:8@16^{zip_internal=}24@32^Q40^@48
+@48@0:8@16@24@32^@40
+c40@0:8@16@24^@32
+@40@0:8Q16Q24Q32
+v24@0:8@"NSNetServiceBrowser"16
+v32@0:8@"NSNetServiceBrowser"16@"NSDictionary"24
+v36@0:8@"NSNetServiceBrowser"16@"NSString"24c32
+v36@0:8@"NSNetServiceBrowser"16@"NSNetService"24c32
+v40@0:8@16@24@32
+v24@0:8@"NSNetService"16
+v32@0:8@"NSNetService"16@"NSDictionary"24
+v32@0:8@"NSNetService"16@"NSData"24
+v40@0:8@"NSNetService"16@"NSInputStream"24@"NSOutputStream"32
+^{__CFRunLoop=}16@0:8
+v24@0:8^{__CFRunLoop=}16
+v24@0:8@?16
+^{_AMDeviceNotificationContext=}16@0:8
+v24@0:8^{_AMDeviceNotificationContext=}16
+^{__CFRunLoop=}
+@"NSThread"
+^{_AMDeviceNotificationContext=}
+v24@0:8Q16
+@24@0:8r*16
+@32@0:8r*16Q24
+@36@0:8r*16Q24c32
+@32@0:8@16Q24
+^{_AMDServiceConnection=}
+^{DTDKCircularBuffer=}
+@"NSObject<OS_dispatch_semaphore>"
+@"<DTDKRemoteDeviceConsoleControllerDelegate>"
+c24@0:8^@16
+^{_AMDServiceConnection=}32@0:8@16^@24
+^{_AMDServiceConnection=}24@0:8^@16
+c32@0:8@16^@24
+B40@0:8@16@24^@32
+@40@0:8@16@24^@32
+B48@0:8@16@24^@32@?40
+B28@0:8c16^@20
+@20@0:8B16
+v20@0:8c16
+q16@0:8
+@?16@0:8
+@"DVTPlatform"
+@"DVTNotificationToken"
+@"NSError"
+@"NSArray"
+@"DTDKTCPRelayServiceClient"
+@"DVTFuture"
+@"DTDKRemoteDeviceConsoleController"
+@"NSNumber"
+@"NSSet"
+v20@0:8i16
+v24@0:8q16
+@"DTDKApplicationItemBase"
+B48@0:8@16@24@32^@40
+c32@0:8^{__AFCOperation=}16^@24
+^{__AFCConnection=}16@0:8
+^{__AFCConnection=}
+@"NSDictionary"
+v32@0:8@16q24
+B56@0:8@16@24@32@40^@48
+B32@0:8^@16@?<v@?@?<v@?@"NSString"c>>24
+@"NSNumber"16@0:8
+@"NSDictionary"16@0:8
+c32@0:8@"DVTProvisioningProfile"16^@24
+@"DVTProvisioningProfile"24@0:8@"NSString"16
+i24@0:8@?<i@?^{_AMDevice=}>16
+@"DVTFuture"16@0:8
+v24@0:8@?<v@?@"NSError">16
+@"DVTFuture"20@0:8B16
+v24@0:8@"NSString"16
+@"DVTFuture"24@0:8@"NSString"16
+@"DTXConnection"16@0:8
+^{_AMDServiceConnection=}32@0:8@"NSString"16^@24
+@"DVTFilePath"24@0:8^@16
+@"NSError"16@0:8
+B40@0:8@"NSNumber"16@"NSNumber"24^@32
+@"NSDictionary"40@0:8@16@"NSDictionary"24^@32
+B48@0:8@"DVTFilePath"16@"NSDictionary"24^@32@?<v@?@"NSDictionary">40
+B48@0:8@"NSString"16@"NSDictionary"24^@32@?<v@?@"NSDictionary">40
+@"<DVTCancellable>"40@0:8@"NSString"16@"NSString"24d32
+@"NSArray"16@0:8
+@"DTDKRemoteDeviceConnection"16@0:8
+@"NSSet"16@0:8
+@"<DTDKRemoteDeviceToken>"16@0:8
+@"DVTPlatform"16@0:8
+@"DTDKRemoteDeviceConsoleController"16@0:8
+v24@0:8@"DTDKRemoteDeviceConsoleController"16
+v24@0:8@"NSDictionary"16
+v24@0:8@"DTDKRemoteDeviceConnection"16
+@"NSURL"40@0:8@"NSString"16@"NSString"24@"NSString"32
+v24@0:8@"NSNumber"16
+v24@0:8@"NSArray"16
+v24@0:8@"NSSet"16

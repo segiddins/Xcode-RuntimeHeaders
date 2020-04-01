@@ -6,7 +6,7 @@
 
 #import <XCSUI/NSObject-Protocol.h>
 
-@class NSString;
+@class NSAttributedString, NSString;
 
 @protocol DVTRadarSupport_Issue <NSObject>
 @property(readonly, nonatomic) id underlyingIssue;
@@ -14,5 +14,8 @@
 @property(readonly, copy, nonatomic) NSString *attachLabelTitle;
 @property(readonly, copy, nonatomic) NSString *briefStringRepresentation;
 @property(readonly, copy, nonatomic) NSString *stringRepresentation;
+
+@optional
+@property(readonly, copy, nonatomic) NSAttributedString *attributedStringRepresentation;
 @end
 

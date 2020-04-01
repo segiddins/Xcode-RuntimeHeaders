@@ -8,35 +8,40 @@
 
 #import <IDEInterfaceBuilderKit/IBICCatalogItemObserver-Protocol.h>
 
-@class DVTDelayedInvocation, IBMutableIdentityDictionary, NSMutableDictionary, NSMutableSet, NSString;
+@class DVTDelayedInvocation, DVTObservingToken, IBMutableIdentityDictionary, NSMutableDictionary, NSMutableSet, NSString;
 
 @interface IBICCatalogMediaRepository : IDEContainerContentsMediaRepository <IBICCatalogItemObserver>
 {
     NSMutableSet *_observedCatalogs;
-    NSMutableSet *_imageCatalogsWithItemObservationChanges;
+    NSMutableSet *_observedCatalogPaths;
+    NSMutableSet *_catalogsWithItemObservationChanges;
     NSMutableSet *_resources;
-    NSMutableDictionary *_catalogsByPath;
+    NSMutableDictionary *_catalogsWithSynchronizersByPath;
+    NSMutableDictionary *_catalogsWithDocumentsByPath;
+    DVTObservingToken *_editorDocumentsToken;
     IBMutableIdentityDictionary *_observationTokensByCatalogs;
-    IBMutableIdentityDictionary *_imageCatalogsToProvidersToMediaResources;
-    IBMutableIdentityDictionary *_imageCatalogsToRepsWithChanges;
+    IBMutableIdentityDictionary *_catalogsToProvidersToMediaResources;
     DVTDelayedInvocation *_catalogChangeValidator;
 }
 
 + (id)allSupportedMediaFileDataTypes;
-+ (id)handleFileReferenceContainerObserverChange:(long long)arg1 forPath:(id)arg2 withDataType:(id)arg3;
-+ (void)cleanupFileReferenceContainerObserverResult:(id)arg1 forPath:(id)arg2;
++ (id)containerContentProducer:(id)arg1 produceValueForFilePath:(id)arg2 fileDataType:(id)arg3;
 + (id)existingCatalogSynchronizerForFilePath:(id)arg1;
 + (void)releaseCatalogSynchronizerForFilePath:(id)arg1;
 + (id)existingCatalogSynchronizerEntryForFilePath:(id)arg1;
 + (id)retainedCatalogSynchronizerForFilePath:(id)arg1;
 + (id)filePathsToCatalogSynchronizersMap;
-+ (id)containerObserverToRepositoryMap;
 - (void).cxx_destruct;
-- (void)batchValidatorImageCatalogChanges:(id)arg1;
+- (void)batchValidatorCatalogChanges:(id)arg1;
+- (void)_removeSynchronizerForCatalogAtPath:(id)arg1;
+- (void)_removeCatalog:(id)arg1;
+- (void)_incorporateAndObserveCatalog:(id)arg1;
+- (void)_addSynchronizerForCatalogAtPath:(id)arg1;
+- (BOOL)_synchronizeCatalogsWithOpenEditorDocuments;
 - (void)fileReferenceObserverDidReportUpdatedAndAddedResourcesByPath:(id)arg1 removedPaths:(id)arg2;
-- (void)notifyObserversAfterMutatingWithBlock:(CDUnknownBlockType)arg1;
+- (void)notifyObserversAfterPossiblyMutatingWithBlock:(CDUnknownBlockType)arg1;
 - (void)synchronizeResourcesFromCatalog:(id)arg1;
-- (void)expungResourcesFromCatalog:(id)arg1;
+- (void)expungeResourcesFromCatalog:(id)arg1;
 - (void)importInitialResourcesFromCatalog:(id)arg1;
 - (BOOL)hasResourceForImageRep:(id)arg1 fromCatalog:(id)arg2;
 - (id)mediaResourceForMediaResourceProvider:(id)arg1 fromCatalog:(id)arg2;
@@ -45,7 +50,7 @@
 - (void)imageCatalogItem:(id)arg1 didChangeKey:(id)arg2 fromValue:(id)arg3 toValue:(id)arg4;
 - (id)resources;
 - (void)primitiveInvalidate;
-- (id)initWithContainerObserver:(id)arg1;
+- (id)initWithContentProductionSpecifier:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

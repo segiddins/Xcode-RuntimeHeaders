@@ -52,6 +52,7 @@
 - (void)unfoldInlineFoldsInRange:(struct _NSRange)arg1;
 - (void)foldInlineText:(id)arg1 inRange:(struct _NSRange)arg2 tokenType:(id)arg3;
 - (void)foldRange:(struct _NSRange)arg1;
+@property BOOL usesAllObjectLiterals;
 - (void)_applyFoldsRecursively:(id)arg1;
 - (void)primitiveInvalidate;
 - (id)initWithRange:(struct _NSRange)arg1;

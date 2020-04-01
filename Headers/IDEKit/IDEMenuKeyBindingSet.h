@@ -21,6 +21,8 @@
 + (void)initialize;
 - (void).cxx_destruct;
 - (void)activate;
+- (void)activateWithMenuDefinitionExtensionIdentifiers:(id)arg1;
+- (void)activateWithMenu:(id)arg1 menuDefinitionExtensionIdentifier:(id)arg2 activatedMenuBindings:(id)arg3;
 - (id)prefixedKeyboardShortcuts;
 - (void)_keyBindingSetWillRemoveKeyBinding:(id)arg1;
 - (void)_keyBindingSetDidInsertKeyBinding:(id)arg1;

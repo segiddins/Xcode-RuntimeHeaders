@@ -6,7 +6,8 @@
 
 #import <DTDeviceKitBase/DTDKApplicationItemBase.h>
 
-@class DTDKRemoteDeviceToken, NSDictionary, NSString;
+@class NSDictionary, NSString;
+@protocol DTDKRemoteDeviceToken;
 
 @interface DTDKApplication : DTDKApplicationItemBase
 {
@@ -14,7 +15,7 @@
     unsigned int _useAggregateItem:1;
     unsigned long long _connection_rc;
     NSDictionary *_plist;
-    DTDKRemoteDeviceToken *deviceData;
+    id <DTDKRemoteDeviceToken> deviceData;
 }
 
 + (id)keyPathsForValuesAffectingInstalledPath;
@@ -26,7 +27,7 @@
 + (id)applicationWithDeviceData:(id)arg1 andPlist:(id)arg2;
 + (id)keyPathsForValuesAffectingPropertyListRepresentation;
 @property(readonly) struct __AFCConnection *connection; // @synthesize connection=_connection;
-@property __weak DTDKRemoteDeviceToken *deviceData; // @synthesize deviceData;
+@property __weak id <DTDKRemoteDeviceToken> deviceData; // @synthesize deviceData;
 @property(copy) NSDictionary *plist; // @synthesize plist=_plist;
 - (void).cxx_destruct;
 - (id)attributesOfItemAtPath:(id)arg1 error:(id *)arg2;
@@ -47,7 +48,7 @@
 - (id)name;
 - (id)deviceIdentifier;
 - (id)application;
-- (_Bool)_withConnection:(CDUnknownBlockType)arg1;
+- (id)_withConnection:(CDUnknownBlockType)arg1;
 - (void)invalidate;
 - (void)dealloc;
 - (id)initWithPropertyListRepresentation:(id)arg1 error:(id *)arg2;

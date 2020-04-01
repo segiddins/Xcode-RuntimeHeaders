@@ -7,27 +7,36 @@
 #import <DevToolsCore/XCBuildPhaseDGSnapshot.h>
 
 @class NSArray, NSString;
+@protocol DVTMacroExpansion;
 
 @interface XCShellScriptBuildPhaseDGSnapshot : XCBuildPhaseDGSnapshot
 {
     NSString *_globalIdString;
-    NSString *_shellPath;
+    NSString<DVTMacroExpansion> *_shellPath;
     NSString *_shellScript;
-    NSArray *_inputPaths;
-    NSArray *_outputPaths;
+    NSArray<DVTMacroExpansion> *_inputPaths;
+    NSArray<DVTMacroExpansion> *_inputFileListPaths;
+    NSArray<DVTMacroExpansion> *_outputPaths;
+    NSArray<DVTMacroExpansion> *_outputFileListPaths;
     BOOL _emitEnvVars;
+    BOOL _hasDependencyFile;
 }
 
 + (id)defaultName;
-+ (void)exportBuildSettingsToEnvironmentForNode:(id)arg1 inTargetBuildContext:(id)arg2;
++ (void)exportBuildSettingsToEnvironmentForNode:(id)arg1 withMacroExpansionScope:(id)arg2;
++ (id)environmentWithMacroExpansionScope:(id)arg1;
+- (void).cxx_destruct;
 - (id)globalIdString;
+- (id)outputFileListPaths;
 - (id)outputPaths;
+- (id)inputFileListPaths;
 - (id)inputPaths;
 - (id)shellScript;
 - (id)shellPath;
-- (void)dealloc;
-- (id)initWithInformationFromBuildPhase:(id)arg1 forTargetSnapshot:(id)arg2;
-- (void)computeDependenciesInTargetBuildContext:(id)arg1;
+- (id)initWithInformationFromBuildPhase:(id)arg1 forTargetSnapshot:(id)arg2 withResolver:(id)arg3;
+- (void)computeDependenciesWithMacroExpansionScope:(id)arg1;
+- (id)parseValuesFromFileList:(id)arg1 scope:(id)arg2;
+- (id)expandedPathsFor:(id)arg1 withMacroExpansionScope:(id)arg2;
 
 @end
 

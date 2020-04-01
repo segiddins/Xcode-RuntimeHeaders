@@ -12,7 +12,6 @@
 
 + (id)nameOfFormattedClassSymbol:(id)arg1;
 + (id)formattedClassSymbolWithName:(id)arg1 namespaceProvider:(id)arg2;
-+ (id)formattedClassSymbolWithName:(id)arg1;
 
 @end
 

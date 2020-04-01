@@ -21,7 +21,6 @@
 
 - (void).cxx_destruct;
 - (id)mapView:(id)arg1 viewForAnnotation:(id)arg2;
-- (id)blockStartAddress;
 - (void)cancel;
 - (double)_longitudeValue;
 - (double)_latitudeValue;

@@ -10,13 +10,12 @@
 {
 }
 
-- (id)fileExtension;
-- (id)uti;
++ (id)fileExtension;
++ (id)uti;
++ (id)defaultItems;
++ (id)_itemForFileReference:(id)arg1 inWorkspace:(id)arg2;
 - (id)doNothingItemRepresentedObject;
 - (id)doNothingItemTitle;
-- (id)defaultItems;
-- (id)itemsForFilesInWorkspace;
-- (id)_locationScenarioWithFilePath:(id)arg1;
 - (id)menuTitle;
 - (id)init;
 

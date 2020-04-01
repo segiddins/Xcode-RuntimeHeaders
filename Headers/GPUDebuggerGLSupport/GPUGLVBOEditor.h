@@ -4,12 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <GPURenderTargetEditor/GPUResourceEditor.h>
+#import <GPUDebugger/GPUTraceSubEditor.h>
 
 @class GPUBufferViewerViewController;
 
 __attribute__((visibility("hidden")))
-@interface GPUGLVBOEditor : GPUResourceEditor
+@interface GPUGLVBOEditor : GPUTraceSubEditor
 {
     GPUBufferViewerViewController *_bufferViewerViewController;
 }
@@ -18,13 +18,15 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) GPUBufferViewerViewController *bufferViewerViewController; // @synthesize bufferViewerViewController=_bufferViewerViewController;
 - (void).cxx_destruct;
 - (struct TypeOutputFormatTypeAlias)glTypeToStructTypeOutputFormatTypeAlias:(unsigned int)arg1;
-- (void)extractUniformBlockDataLayout:(const ProgramUniformBlock_2e5dc428 *)arg1 dataStructs:(vector_44d4fed2 *)arg2 bufferOffset:(unsigned long long)arg3;
-- (void)extractCandidateLayoutsForUniformBufferWithItem:(id)arg1 dataStructs:(vector_44d4fed2 *)arg2 dataBuffer:(struct Buffer *)arg3 preferredDataStruct:(int *)arg4;
-- (void)extractCandidateLayoutsForElementArrayBufferWithItem:(id)arg1 dataStructs:(vector_44d4fed2 *)arg2 dataBuffer:(struct Buffer *)arg3 preferredDataStruct:(int *)arg4;
-- (void)beginEditor;
-- (void)viewWillUninstall;
+- (void)extractUniformBlockDataLayout:(const ProgramUniformBlock_b2b71853 *)arg1 dataStructs:(vector_44d4fed2 *)arg2 bufferOffset:(unsigned long long)arg3;
+- (void)extractCandidateLayoutsForUniformBufferWithItem:(id)arg1 dataStructs:(vector_44d4fed2 *)arg2 dataBuffer:(struct Buffer *)arg3 preferredDataStruct:(int *)arg4 bufferType:(id *)arg5;
+- (void)extractCandidateLayoutsForElementArrayBufferWithItem:(id)arg1 dataStructs:(vector_44d4fed2 *)arg2 dataBuffer:(struct Buffer *)arg3 preferredDataStruct:(int *)arg4 bufferType:(id *)arg5;
+- (void)_beginEditor;
+- (void)handleNotification:(id)arg1;
+- (void)setRepresentedObject:(id)arg1;
+- (void)viewWillLayout;
+- (void)viewDidLoad;
 - (void)loadView;
-- (id)supportedResourceClasses;
 
 @end
 

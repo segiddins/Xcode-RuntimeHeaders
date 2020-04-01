@@ -6,9 +6,13 @@
 
 #import <IDEKit/IDESelectionSource-Protocol.h>
 
-@class NSSet;
+@class NSString;
+@protocol IDETestCollection;
 
 @protocol IDETestingSelection <IDESelectionSource>
-- (NSSet *)selectedTestsAndTestables;
+@property(readonly) id <IDETestCollection> selectedTests;
+
+@optional
+@property(readonly) NSString *selectionUIContext;
 @end
 

@@ -15,6 +15,7 @@
 + (id)identifier;
 - (Class)dependencyGraphSnapshotClass;
 - (id)primaryAttributeForBuildFile:(id)arg1;
+- (BOOL)acceptsVariantGroups;
 - (void)removeBuildFile:(id)arg1;
 - (BOOL)insertBuildFiles:(id)arg1 atIndex:(unsigned long long)arg2;
 - (BOOL)phaseContainsNonJavaFiles;

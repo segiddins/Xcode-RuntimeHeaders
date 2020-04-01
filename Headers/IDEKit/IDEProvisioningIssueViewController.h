@@ -8,26 +8,28 @@
 
 #import <IDEKit/IDEProvisioningIssueSliceViewDelegate-Protocol.h>
 
-@class DVTStackView_ML, IDEProvisioningIssue, IDEVerticalResizeToContentLayoutView, NSImageView;
+@class DVTStackView_AppKitAutolayout, DVTWrapperView, IDEProvisioningIssue, IDEProvisioningSliceConfiguration, NSImageView;
 
 @interface IDEProvisioningIssueViewController : IDEViewController <IDEProvisioningIssueSliceViewDelegate>
 {
     IDEProvisioningIssue *_issue;
     NSImageView *_statusImageView;
-    DVTStackView_ML *_issuesStackView;
-    IDEVerticalResizeToContentLayoutView *_verticalResizingView;
+    DVTStackView_AppKitAutolayout *_issuesStackView;
+    DVTWrapperView *_wrapperView;
+    IDEProvisioningSliceConfiguration *_configuration;
 }
 
-@property(retain) IDEVerticalResizeToContentLayoutView *verticalResizingView; // @synthesize verticalResizingView=_verticalResizingView;
-@property __weak DVTStackView_ML *issuesStackView; // @synthesize issuesStackView=_issuesStackView;
-@property __weak NSImageView *statusImageView; // @synthesize statusImageView=_statusImageView;
+@property(retain, nonatomic) IDEProvisioningSliceConfiguration *configuration; // @synthesize configuration=_configuration;
+@property(retain) DVTWrapperView *wrapperView; // @synthesize wrapperView=_wrapperView;
+@property(retain) DVTStackView_AppKitAutolayout *issuesStackView; // @synthesize issuesStackView=_issuesStackView;
+@property(retain) NSImageView *statusImageView; // @synthesize statusImageView=_statusImageView;
 @property(retain, nonatomic) IDEProvisioningIssue *issue; // @synthesize issue=_issue;
 - (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (void)didSelectIssueActionFromProvisioningIssuesSliceView:(id)arg1;
 - (void)didSelectSubtitleActionFromProvisioningIssueSliceView:(id)arg1;
 - (void)viewDidLoad;
-- (id)initWithIssue:(id)arg1;
+- (id)initWithIssue:(id)arg1 configuration:(id)arg2;
 
 @end
 

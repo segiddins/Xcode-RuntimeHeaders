@@ -6,16 +6,14 @@
 
 #import <AppKit/NSTableCellView.h>
 
-@class NSArrayController, NSPopUpButton;
+@class NSButton;
 
 @interface _IDEDistributionMethodTableCellView : NSTableCellView
 {
-    NSPopUpButton *_popUpButton;
-    NSArrayController *_methodsArrayController;
+    NSButton *_radioButton;
 }
 
-@property(retain) NSArrayController *methodsArrayController; // @synthesize methodsArrayController=_methodsArrayController;
-@property(retain) NSPopUpButton *popUpButton; // @synthesize popUpButton=_popUpButton;
+@property(retain) NSButton *radioButton; // @synthesize radioButton=_radioButton;
 - (void).cxx_destruct;
 
 @end

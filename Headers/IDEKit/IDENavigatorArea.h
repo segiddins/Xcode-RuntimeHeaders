@@ -8,39 +8,46 @@
 
 #import <IDEKit/DVTReplacementViewDelegate-Protocol.h>
 #import <IDEKit/DVTStatefulObject-Protocol.h>
+#import <IDEKit/NSTouchBarDelegate-Protocol.h>
+#import <IDEKit/NSTouchBarProvider-Protocol.h>
 
-@class DVTBorderedView, DVTChooserView, DVTExtension, DVTObservingToken, DVTReplacementView, DVTStateToken, IDENavigator, IDENavigatorFilterControlBar, NSArrayController, NSMutableDictionary, NSString;
-@protocol DVTCancellable;
+@class DVTBorderView, DVTBorderedView, DVTChooserView, DVTExtension, DVTObservingToken, DVTReplacementView, DVTStateToken, IDENavigator, IDENavigatorAreaDFRController, IDENavigatorSearchFilterControlBar, NSArrayController, NSMutableDictionary, NSString, NSTouchBar, NSVisualEffectView;
 
-@interface IDENavigatorArea : IDEViewController <DVTReplacementViewDelegate, DVTStatefulObject>
+@interface IDENavigatorArea : IDEViewController <NSTouchBarProvider, NSTouchBarDelegate, DVTReplacementViewDelegate, DVTStatefulObject>
 {
     DVTChooserView *_chooserView;
     DVTObservingToken *_workspaceActivityObservingToken;
-    DVTObservingToken *_editorSelectedItemObservingToken;
-    DVTObservingToken *_currentNavigatorObservingToken;
-    id <DVTCancellable> _updateFocusedEditorSelectedItemToken;
     NSMutableDictionary *_perNavigatorCache;
     BOOL _isInvalidating;
-    IDENavigatorFilterControlBar *_filterControlBar;
+    IDENavigatorSearchFilterControlBar *_filterControlBar;
     DVTReplacementView *_replacementView;
-    NSArrayController *_extensionsController;
+    NSArrayController *_choicesController;
     DVTExtension *_currentExtension;
+    NSVisualEffectView *_visualEffectView;
     DVTBorderedView *_borderedView;
+    DVTBorderView *_chooserNavigatorSeparatorView;
+    IDENavigatorAreaDFRController *_touchBarSupportController;
 }
 
 + (long long)version;
 + (void)configureStateSavingObjectPersistenceByName:(id)arg1;
 + (id)keyPathsForValuesAffectingCurrentNavigator;
++ (id)_explorableNavigatorAlternates;
 + (id)navigatorsForContext:(id)arg1;
++ (id)_explorableNavigatorIdsForKnownNavigators;
 + (id)keyPathsForValuesAffectingWorkspace;
+@property(retain) IDENavigatorAreaDFRController *touchBarSupportController; // @synthesize touchBarSupportController=_touchBarSupportController;
+@property __weak DVTBorderView *chooserNavigatorSeparatorView; // @synthesize chooserNavigatorSeparatorView=_chooserNavigatorSeparatorView;
 @property __weak DVTBorderedView *borderedView; // @synthesize borderedView=_borderedView;
+@property(retain) NSVisualEffectView *visualEffectView; // @synthesize visualEffectView=_visualEffectView;
 @property(retain, nonatomic) DVTExtension *currentExtension; // @synthesize currentExtension=_currentExtension;
-@property(retain) NSArrayController *extensionsController; // @synthesize extensionsController=_extensionsController;
+@property(retain) NSArrayController *choicesController; // @synthesize choicesController=_choicesController;
 @property(retain) DVTReplacementView *replacementView; // @synthesize replacementView=_replacementView;
-@property(readonly) IDENavigatorFilterControlBar *filterControlBar; // @synthesize filterControlBar=_filterControlBar;
+@property(retain) IDENavigatorSearchFilterControlBar *filterControlBar; // @synthesize filterControlBar=_filterControlBar;
 - (void).cxx_destruct;
 - (double)minimumContentWidth;
 - (void)commitStateToDictionary:(id)arg1;
+@property(readonly) BOOL canRevertWithEmptyStateDictionary;
 - (void)revertStateWithDictionary:(id)arg1;
 - (void)_setCurrentExtensionIdentifier:(id)arg1;
 - (id)_currentExtensionIdentifier;
@@ -50,7 +57,6 @@
 - (void)_clearPerNavigatorCache;
 - (void)showNavigatorWithIdentifier:(id)arg1;
 - (void)viewWillUninstall;
-- (void)_handleCurrentNavigatorChanged;
 - (void)viewDidInstall;
 - (void)replacementView:(id)arg1 didInstallViewController:(id)arg2;
 - (void)replacementView:(id)arg1 willInstallViewController:(id)arg2;
@@ -61,10 +67,27 @@
 - (void)installFilterControlBarForNavigator:(id)arg1;
 - (void)primitiveInvalidate;
 - (id)_imageForNavigator:(id)arg1 withName:(id)arg2;
+- (void)_setFilterControlBarVisible:(BOOL)arg1;
+- (void)_layoutViewSubviews;
 - (void)loadView;
 - (void)_rebuildNavigatorOptions;
 - (id)_playgroundExcludedNavigators;
 - (id)supportedContext;
+- (void)clearSearchFieldForControlBar:(id)arg1;
+- (void)activateSearchFieldForControlBar:(id)arg1;
+- (id)_dfrImageForImageName:(id)arg1;
+- (id)_filterContextsForStandardNavigator;
+- (id)_filterContextsForCurrentNavigator;
+- (void)filterToggled:(id)arg1;
+- (id)_filterBarGroupItemWithIdentifier:(id)arg1;
+- (id)_makeItemForIdentifier:(id)arg1;
+- (id)touchBar:(id)arg1 makeItemForIdentifier:(id)arg2;
+- (id)navigatorAreaDFRController;
+- (id)_touchBarForNavigators;
+- (id)_touchBarForCurrentNavigator;
+- (void)_registerForObserversAndNotifications;
+- (id)makeTouchBar;
+- (id)findNavigator_switchToNavigatorWithIdentifier:(id)arg1 andAssertClass:(Class)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
@@ -72,6 +95,7 @@
 @property(readonly) unsigned long long hash;
 @property(retain) DVTStateToken *stateToken; // @dynamic stateToken;
 @property(readonly) Class superclass;
+@property(readonly) NSTouchBar *touchBar;
 
 @end
 

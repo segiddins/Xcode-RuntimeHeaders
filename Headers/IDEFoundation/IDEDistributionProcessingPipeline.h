@@ -10,6 +10,7 @@
 
 @interface IDEDistributionProcessingPipeline : NSObject
 {
+    BOOL _cancelled;
     NSArray *_pipelineSteps;
     IDEDistributionProcessingStep *_currentStep;
     IDEDistributionProcessingPipelineContext *_context;
@@ -18,12 +19,14 @@
 + (id)pipelineWithInAppPurchaseContext:(id)arg1;
 + (id)pipelineWithAppContext:(id)arg1;
 + (id)pipelineWithContext:(id)arg1;
+@property BOOL cancelled; // @synthesize cancelled=_cancelled;
 @property(retain) IDEDistributionProcessingPipelineContext *context; // @synthesize context=_context;
 @property(retain) IDEDistributionProcessingStep *currentStep; // @synthesize currentStep=_currentStep;
 @property(readonly) NSArray *pipelineSteps; // @synthesize pipelineSteps=_pipelineSteps;
 - (void).cxx_destruct;
-- (id)resultsForDistributionItem:(id)arg1;
+- (void)_reportDistributionUsageWithElapsedTime:(double)arg1;
 - (_Bool)process:(id *)arg1;
+- (void)cancel;
 - (id)init;
 - (id)initWithPipelineSteps:(id)arg1 context:(id)arg2;
 

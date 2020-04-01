@@ -6,7 +6,33 @@
 
 #import <SpriteKit/SKTileGroupRule.h>
 
-@interface SKTileGroupRule (InspectorAdditions)
+#import <IDESpriteKitParticleEditor/IDEKeyDrivenNavigableItemRepresentedObject-Protocol.h>
+
+@class DVTDocumentLocation, DVTFileDataType, IDEFileReference, NSArray, NSImage, NSNull, NSString, NSURL, _TtC13DVTFoundation9DVTSymbol;
+
+@interface SKTileGroupRule (InspectorAdditions) <IDEKeyDrivenNavigableItemRepresentedObject>
++ (id)keyPathsForValuesAffectinginspectorHexFlatAdjacencyUpLeft_commit;
++ (id)keyPathsForValuesAffectinginspectorHexFlatAdjacencyDownLeft_commit;
++ (id)keyPathsForValuesAffectinginspectorHexFlatAdjacencyDown_commit;
++ (id)keyPathsForValuesAffectinginspectorHexFlatAdjacencyDownRight_commit;
++ (id)keyPathsForValuesAffectinginspectorHexFlatAdjacencyUpRight_commit;
++ (id)keyPathsForValuesAffectinginspectorHexFlatAdjacencyUp_commit;
++ (id)keyPathsForValuesAffectinginspectorHexPointyAdjacencyLeft_commit;
++ (id)keyPathsForValuesAffectinginspectorHexPointyAdjacencyDownLeft_commit;
++ (id)keyPathsForValuesAffectinginspectorHexPointyAdjacencyDownRight_commit;
++ (id)keyPathsForValuesAffectinginspectorHexPointyAdjacencyRight_commit;
++ (id)keyPathsForValuesAffectinginspectorHexPointyAdjacencyUpRight_commit;
++ (id)keyPathsForValuesAffectinginspectorHexPointyAdjacencyUpLeft_commit;
++ (id)keyPathsForValuesAffectinginspectorAdjacencyUpperLeft_commit;
++ (id)keyPathsForValuesAffectinginspectorAdjacencyLeft_commit;
++ (id)keyPathsForValuesAffectinginspectorAdjacencyLowerLeft_commit;
++ (id)keyPathsForValuesAffectinginspectorAdjacencyDown_commit;
++ (id)keyPathsForValuesAffectinginspectorAdjacencyLowerRight_commit;
++ (id)keyPathsForValuesAffectinginspectorAdjacencyRight_commit;
++ (id)keyPathsForValuesAffectinginspectorAdjacencyUpperRight_commit;
++ (id)keyPathsForValuesAffectinginspectorAdjacencyUp_commit;
++ (id)keyPathsForValuesAffectingname_commit;
++ (id)keyPathsForValuesAffectingNavigableItem_name;
 @property(nonatomic) BOOL inspectorHexPointyAdjacencyLeft;
 @property(nonatomic) BOOL inspectorHexPointyAdjacencyDownLeft;
 @property(nonatomic) BOOL inspectorHexPointyAdjacencyDownRight;
@@ -32,5 +58,77 @@
 @property(readonly, nonatomic) BOOL inspectorShowHexPointyAdjacency;
 @property(readonly, nonatomic) BOOL inspectorShowHexFlatAdjacency;
 @property(readonly, nonatomic) BOOL inspectorShowAdjacency;
+- (void)setinspectorHexFlatAdjacencyUpLeft_commit:(BOOL)arg1;
+- (BOOL)inspectorHexFlatAdjacencyUpLeft_commit;
+- (void)setinspectorHexFlatAdjacencyDownLeft_commit:(BOOL)arg1;
+- (BOOL)inspectorHexFlatAdjacencyDownLeft_commit;
+- (void)setinspectorHexFlatAdjacencyDown_commit:(BOOL)arg1;
+- (BOOL)inspectorHexFlatAdjacencyDown_commit;
+- (void)setinspectorHexFlatAdjacencyDownRight_commit:(BOOL)arg1;
+- (BOOL)inspectorHexFlatAdjacencyDownRight_commit;
+- (void)setinspectorHexFlatAdjacencyUpRight_commit:(BOOL)arg1;
+- (BOOL)inspectorHexFlatAdjacencyUpRight_commit;
+- (void)setinspectorHexFlatAdjacencyUp_commit:(BOOL)arg1;
+- (BOOL)inspectorHexFlatAdjacencyUp_commit;
+- (void)setinspectorHexPointyAdjacencyLeft_commit:(BOOL)arg1;
+- (BOOL)inspectorHexPointyAdjacencyLeft_commit;
+- (void)setinspectorHexPointyAdjacencyDownLeft_commit:(BOOL)arg1;
+- (BOOL)inspectorHexPointyAdjacencyDownLeft_commit;
+- (void)setinspectorHexPointyAdjacencyDownRight_commit:(BOOL)arg1;
+- (BOOL)inspectorHexPointyAdjacencyDownRight_commit;
+- (void)setinspectorHexPointyAdjacencyRight_commit:(BOOL)arg1;
+- (BOOL)inspectorHexPointyAdjacencyRight_commit;
+- (void)setinspectorHexPointyAdjacencyUpRight_commit:(BOOL)arg1;
+- (BOOL)inspectorHexPointyAdjacencyUpRight_commit;
+- (void)setinspectorHexPointyAdjacencyUpLeft_commit:(BOOL)arg1;
+- (BOOL)inspectorHexPointyAdjacencyUpLeft_commit;
+- (void)setinspectorAdjacencyUpperLeft_commit:(BOOL)arg1;
+- (BOOL)inspectorAdjacencyUpperLeft_commit;
+- (void)setinspectorAdjacencyLeft_commit:(BOOL)arg1;
+- (BOOL)inspectorAdjacencyLeft_commit;
+- (void)setinspectorAdjacencyLowerLeft_commit:(BOOL)arg1;
+- (BOOL)inspectorAdjacencyLowerLeft_commit;
+- (void)setinspectorAdjacencyDown_commit:(BOOL)arg1;
+- (BOOL)inspectorAdjacencyDown_commit;
+- (void)setinspectorAdjacencyLowerRight_commit:(BOOL)arg1;
+- (BOOL)inspectorAdjacencyLowerRight_commit;
+- (void)setinspectorAdjacencyRight_commit:(BOOL)arg1;
+- (BOOL)inspectorAdjacencyRight_commit;
+- (void)setinspectorAdjacencyUpperRight_commit:(BOOL)arg1;
+- (BOOL)inspectorAdjacencyUpperRight_commit;
+- (void)setinspectorAdjacencyUp_commit:(BOOL)arg1;
+- (BOOL)inspectorAdjacencyUp_commit;
+- (void)setname_commit:(id)arg1;
+- (id)name_commit;
+- (id)document;
+@property(readonly, nonatomic) BOOL navigableItem_isLeaf;
+@property(readonly) DVTDocumentLocation *navigableItem_contentDocumentLocation;
+@property(readonly) DVTFileDataType *navigableItem_documentType;
+@property(readonly) NSString *navigableItem_name;
+- (id)ideModelObjectTypeIdentifier;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly, nonatomic) NSString *navigableItem_accessibilityIdentifier;
+@property(readonly, nonatomic) NSString *navigableItem_accessibleImageDescription;
+@property(readonly, nonatomic) NSArray *navigableItem_additionalFilterMatchingText;
+@property(readonly, nonatomic) NSArray *navigableItem_childRepresentedObjects;
+@property(readonly, nonatomic) IDEFileReference *navigableItem_fileReference;
+@property(readonly, nonatomic) NSNull *navigableItem_filtered;
+@property(readonly, nonatomic) NSString *navigableItem_groupIdentifier;
+@property(readonly, nonatomic) NSImage *navigableItem_image;
+@property(readonly, nonatomic) BOOL navigableItem_isEnabled;
+@property(readonly, nonatomic) BOOL navigableItem_isMajorGroup;
+@property(readonly, nonatomic) BOOL navigableItem_isVisible;
+@property(readonly, nonatomic) BOOL navigableItem_missingReferencedContentIsImportant;
+@property(readonly, nonatomic) id navigableItem_parentRepresentedObject;
+@property(readonly, nonatomic) BOOL navigableItem_referencedContentExists;
+@property(readonly, nonatomic) _TtC13DVTFoundation9DVTSymbol *navigableItem_representedSymbol;
+@property(readonly, nonatomic) NSURL *navigableItem_representedURL;
+@property(readonly, nonatomic) NSString *navigableItem_subtitle;
+@property(readonly, nonatomic) NSString *navigableItem_toolTip;
+@property(readonly) Class superclass;
 @end
 

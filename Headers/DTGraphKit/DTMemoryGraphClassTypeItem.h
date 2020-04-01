@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
     unsigned int _leakCount;
     unsigned int _shownCount;
     BOOL _needsRefilter;
+    BOOL _leaksOnly;
     struct vector<std::__1::tuple<unsigned int, DTItemIndexAndFlags, DTMemoryGraphItem *>, std::__1::allocator<std::__1::tuple<unsigned int, DTItemIndexAndFlags, DTMemoryGraphItem *>>> *_children;
     unsigned int _displayedItemLimit;
     unsigned long long _mallocBlockSize;
@@ -26,13 +27,15 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) unsigned long long mallocBlockSize; // @synthesize mallocBlockSize=_mallocBlockSize;
 - (void).cxx_destruct;
 - (id)subitemAtIndex:(unsigned long long)arg1;
-- (void)_setFilter:(CDUnknownBlockType)arg1 string:(id)arg2 instanceFilter:(unsigned long long)arg3;
+- (void)_setFilter:(CDUnknownBlockType)arg1 string:(id)arg2 instanceFilter:(unsigned long long)arg3 leaksOnly:(BOOL)arg4;
 - (void)_refilterIfNecessary;
+- (void)mutateViewWithBlock:(CDUnknownBlockType)arg1;
 - (unsigned long long)subitemCount;
 - (unsigned long long)leakedCount;
 - (unsigned long long)count;
 - (id)name;
 - (void)addChildNode:(unsigned int)arg1;
+- (id)description;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (CDStruct_599faf0f)nodeDetails;

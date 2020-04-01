@@ -4,15 +4,16 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <DVTKit/DVTTextView.h>
+#import "DVTTextView.h"
 
 #import <DVTKit/DVTLayoutManagerDelegate-Protocol.h>
+#import <DVTKit/DVTTextCompletionSupportingTextView-Protocol.h>
 #import <DVTKit/NSTableViewDelegate-Protocol.h>
 
-@class DVTLayoutManager, DVTSourceCodeLanguage, DVTTextCompletionController, DVTTextCompletionDataSource, DVTTextStorage, NSCharacterSet, NSColor, NSDictionary, NSIndexSet, NSString;
+@class DVTLayoutManager, DVTSourceCodeLanguage, DVTTextCompletionController, DVTTextCompletionDataSource, DVTTextStorage, NSCharacterSet, NSColor, NSDictionary, NSIndexSet, NSScrollView, NSString, NSUndoManager, NSWindow;
 @protocol DVTCompletingTextViewDelegate;
 
-@interface DVTCompletingTextView : DVTTextView <DVTLayoutManagerDelegate, NSTableViewDelegate>
+@interface DVTCompletingTextView : DVTTextView <DVTLayoutManagerDelegate, DVTTextCompletionSupportingTextView, NSTableViewDelegate>
 {
     DVTTextCompletionController *_completionController;
     DVTTextCompletionDataSource *_completionsDataSource;
@@ -25,13 +26,16 @@
     BOOL _currentlyDoingNonUserEditing;
     BOOL _delegateRespondsToSyntaxColoringContext;
     BOOL _highlightsCurrentLine;
+    BOOL _shouldReplaceTextStorageAndLayoutManager;
     BOOL _hidesInsertionPoint;
 }
 
 + (long long)scrollerKnobStyleForBackgroundColor:(id)arg1;
 + (id)readableTextPasteboardTypes;
++ (void)initialize;
 + (id)_operatorChars;
 + (id)identifierChars;
++ (id)identifierCharacters;
 + (id)_identifierCharsForImportStatements;
 + (BOOL)appSupportsActionMonitoring;
 @property BOOL hidesInsertionPoint; // @synthesize hidesInsertionPoint=_hidesInsertionPoint;
@@ -43,6 +47,7 @@
 @property unsigned long long modifierFlagsAtLastSingleMouseDown; // @synthesize modifierFlagsAtLastSingleMouseDown=_modifierFlagsAtLastSingleMouseDown;
 @property double accessoryAnnotationWidth; // @synthesize accessoryAnnotationWidth=_accessoryAnnotationWidth;
 - (void).cxx_destruct;
+- (id)accessibilityChildren;
 - (BOOL)validateUserInterfaceItem:(id)arg1;
 - (void)setMarkedText:(id)arg1 selectedRange:(struct _NSRange)arg2 replacementRange:(struct _NSRange)arg3;
 - (void)becomeMainWindow;
@@ -84,7 +89,6 @@
 @property(readonly) DVTTextStorage *textStorage;
 @property(readonly) DVTLayoutManager *layoutManager;
 - (void)textCompletionSession:(id)arg1 didInsertCompletionItem:(id)arg2 range:(struct _NSRange)arg3;
-- (void)invalidateDisplayForRange:(struct _NSRange)arg1;
 - (unsigned long long)draggingEntered:(id)arg1;
 - (void)paste:(id)arg1;
 - (void)viewWillMoveToWindow:(id)arg1;
@@ -106,6 +110,7 @@
 - (void)deleteBackward:(id)arg1;
 - (void)insertText:(id)arg1 replacementRange:(struct _NSRange)arg2;
 - (void)deleteParagraph:(id)arg1;
+- (void)deleteLine:(id)arg1;
 - (void)deleteToEndOfText:(id)arg1;
 - (void)deleteToBeginningOfText:(id)arg1;
 - (void)moveToEndOfTextAndModifySelection:(id)arg1;
@@ -131,9 +136,16 @@
 - (BOOL)selectFirstPlaceholderInCharacterRange:(struct _NSRange)arg1;
 - (BOOL)handleSelectPreviousPlaceholder;
 - (BOOL)handleSelectNextPlaceholder;
+- (struct _NSRange)textCompletionSession:(id)arg1 replacementRangeForSuggestedRange:(struct _NSRange)arg2;
+- (id)documentLocationForWordStartLocation:(unsigned long long)arg1;
+- (struct _NSRange)performTextCompletionReplacementInRange:(struct _NSRange)arg1 withString:(id)arg2;
+- (struct CGRect)visibleTextRect;
+@property struct _NSRange selectedTextRange;
+- (struct CGRect)frameContainingTextRange:(struct _NSRange)arg1;
+@property(readonly) NSScrollView *textCanvasScrollView;
 - (id)ghostComplementTextColor;
 - (BOOL)shouldAutoCompleteAtLocation:(unsigned long long)arg1;
-- (BOOL)shouldSuppressTextCompletion;
+@property(readonly) BOOL shouldSuppressTextCompletion;
 @property(readonly, copy) NSCharacterSet *autoCompleteChars;
 @property(readonly) double autoCompletionDelay;
 - (id)contextForCompletionStrategiesAtWordStartLocation:(unsigned long long)arg1;
@@ -154,13 +166,15 @@
 - (BOOL)removeMenusNotInWhiteList:(id)arg1 fromMenu:(id)arg2 removeSeparators:(BOOL)arg3;
 - (id)cell;
 - (id)selectedCell;
-- (id)accessibilityAttributeValue:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
+@property(readonly, copy) NSString *string;
 @property(readonly) Class superclass;
+@property(readonly) NSUndoManager *undoManager; // @dynamic undoManager;
+@property(readonly) NSWindow *window;
 
 @end
 

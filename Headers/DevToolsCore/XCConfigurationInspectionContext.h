@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Foundation/NSObject.h>
+#import <objc/NSObject.h>
 
 @class NSString, XCPlatformSpecification, XCPropertyInfoContext, XCSDKPackage;
 @protocol XCConfigurationInspectables;
@@ -19,6 +19,7 @@
     XCPlatformSpecification *_platform;
 }
 
+- (void).cxx_destruct;
 - (id)description;
 - (void)willBeDiscarded;
 - (id)platform;
@@ -27,7 +28,6 @@
 - (id)baseDirectoryPath;
 - (id)configurationName;
 - (id)inspectable;
-- (void)dealloc;
 - (id)initWithInspectable:(id)arg1 forConfigurationNamed:(id)arg2 baseDirectoryPath:(id)arg3;
 
 @end

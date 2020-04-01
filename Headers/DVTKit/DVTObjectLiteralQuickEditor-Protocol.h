@@ -8,6 +8,6 @@
 
 @protocol DVTObjectLiteralQuickEditor
 + (struct CGSize)defaultContentSize;
-@property(nonatomic) __weak NSPopover *presentingPopover;
+@property(retain) NSPopover *presentingPopover;
 @end
 

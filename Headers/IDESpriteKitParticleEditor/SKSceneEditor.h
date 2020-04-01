@@ -8,18 +8,20 @@
 
 #import <IDESpriteKitParticleEditor/DVTReplacementViewDelegate-Protocol.h>
 #import <IDESpriteKitParticleEditor/GTFActionEditorDelegate-Protocol.h>
+#import <IDESpriteKitParticleEditor/GTFFileSystemEventStreamDelegate-Protocol.h>
 #import <IDESpriteKitParticleEditor/NSSplitViewDelegate-Protocol.h>
 #import <IDESpriteKitParticleEditor/SKSceneDelegate-Protocol.h>
 #import <IDESpriteKitParticleEditor/SKSceneDocumentObserver-Protocol.h>
 #import <IDESpriteKitParticleEditor/SKSceneEditControllerDelegate-Protocol.h>
 
-@class DVTBorderedView, DVTGradientImageButton, DVTNotificationToken, DVTObservingToken, DVTReplacementView, DVTStepperTextField, GTFActionEditor, GTFActionLibrary, NSArray, NSButton, NSImage, NSMutableArray, NSMutableDictionary, NSString, NSTextField, SKDocumentBorderedView, SKDocumentScopeBarView, SKDocumentSplitView, SKInputView, SKScene, SKSceneDocument, SKSceneEditController, SKSceneOutlineViewController, SKSceneOverlayView;
+@class DVTBorderedView, DVTDelayedInvocation, DVTGradientImageButton, DVTNotificationToken, DVTObservingToken, DVTReplacementView, DVTStepperTextField, GTFActionEditor, GTFActionLibrary, GTFFileSystemEventStream, NSArray, NSButton, NSImage, NSMutableArray, NSMutableDictionary, NSString, NSTextField, NSVisualEffectView, SKDocumentBorderedView, SKDocumentScopeBarView, SKDocumentSplitView, SKInputView, SKScene, SKSceneDocument, SKSceneEditController, SKSceneOutlineViewController, SKSceneOverlayView;
 @protocol NSObject;
 
-@interface SKSceneEditor : IDEEditor <SKSceneDocumentObserver, DVTReplacementViewDelegate, NSSplitViewDelegate, SKSceneDelegate, SKSceneEditControllerDelegate, GTFActionEditorDelegate>
+@interface SKSceneEditor : IDEEditor <SKSceneDocumentObserver, DVTReplacementViewDelegate, NSSplitViewDelegate, SKSceneDelegate, SKSceneEditControllerDelegate, GTFActionEditorDelegate, GTFFileSystemEventStreamDelegate>
 {
     SKSceneDocument *_sceneDocument;
     DVTObservingToken *_documentStateKVOToken;
+    DVTObservingToken *_documentAnimationPausedKVOToken;
     DVTObservingToken *_workspaceDocumentKVOToken;
     DVTNotificationToken *_itemRemoveNotificationToken;
     DVTNotificationToken *_windowOcclusionToken;
@@ -32,11 +34,13 @@
     DVTGradientImageButton *_outlineToggleButton;
     NSImage *_swappedOutlineToggleImage;
     NSImage *_swappedOutlineToggleAlternateImage;
+    GTFFileSystemEventStream *_eventStream;
     float _oldPlaybackSpeed;
     unsigned long long _numPastesSinceLastCopy;
     struct CGPoint _curCameraPanCache;
     double _curCameraZoomCache;
     BOOL _isInitialLayout;
+    DVTDelayedInvocation *_initialLayoutInvocation;
     BOOL _buttonImagesSwapped;
     BOOL _ignoreSelectionUpdates;
     DVTReplacementView *_actionEditorReplacementView;
@@ -50,6 +54,7 @@
     SKDocumentSplitView *_outlineSplitView;
     SKDocumentBorderedView *_editorBackgroundView;
     SKDocumentScopeBarView *_toolbarView;
+    NSVisualEffectView *_toolbarVisual;
     DVTReplacementView *_outlineReplacementView;
     SKSceneOutlineViewController *_outlineViewController;
     DVTObservingToken *_outlineSelectionKVOToken;
@@ -76,6 +81,10 @@
 @property(copy, nonatomic) NSArray *currentSelectedItems; // @synthesize currentSelectedItems=_currentSelectedItems;
 @property(retain, nonatomic) SKScene *scene; // @synthesize scene=_scene;
 - (void).cxx_destruct;
+- (void)rebuildShaderForPath:(id)arg1 skipIfNoChange:(BOOL)arg2;
+- (void)rebuildAllShaders_skipIfNoChange:(BOOL)arg1;
+- (void)fileSystemEventStream:(id)arg1 notedChangeAtPath:(id)arg2 scanRecursively:(BOOL)arg3;
+- (void)registerFSEvents;
 - (id)allNodes;
 - (id)nodesFilteredByString:(id)arg1;
 - (void)_updateActionEditorSelectedNodesFilter;
@@ -88,6 +97,7 @@
 - (void)updateActionPreview;
 @property(readonly, nonatomic) GTFActionLibrary *actionLibrary;
 - (void)_registerActionEditorObservers;
+- (id)getActionDocumentFromAssetManager:(id)arg1 url:(id)arg2;
 - (void)sceneEditController:(id)arg1 didPerformDragOperation:(id)arg2 atLocation:(struct CGPoint)arg3;
 - (void)sceneEditController:(id)arg1 draggingEntered:(id)arg2;
 - (id)sceneEditControllerAcceptedDraggedTypes:(id)arg1;
@@ -106,6 +116,7 @@
 - (void)_copySelectedNodes;
 - (void)replacementView:(id)arg1 willCloseViewController:(id)arg2;
 - (void)replacementView:(id)arg1 didInstallViewController:(id)arg2;
+- (BOOL)splitView:(id)arg1 canCollapseSubview:(id)arg2;
 - (double)splitView:(id)arg1 constrainSplitPosition:(double)arg2 ofSubviewAt:(long long)arg3;
 - (double)splitView:(id)arg1 constrainMinCoordinate:(double)arg2 ofSubviewAt:(long long)arg3;
 - (double)splitView:(id)arg1 constrainMaxCoordinate:(double)arg2 ofSubviewAt:(long long)arg3;
@@ -114,9 +125,17 @@
 - (void)editorMenuCreateNavigationGraphFromNodeBounds:(id)arg1;
 - (void)editorMenuEditNavigationGraph:(id)arg1;
 - (void)editorMenuEditTileMap:(id)arg1;
-- (void)editorMenuToggleSnapping:(id)arg1;
+- (void)editorMenuToggleRulers:(id)arg1;
+- (void)editorMenuToggleGrid:(id)arg1;
+- (void)editorMenuToggleRotationSnapping:(id)arg1;
+- (void)editorMenuToggleScaleSnapping:(id)arg1;
+- (void)editorMenuTogglePositionSnapping:(id)arg1;
+- (void)editorMenuToggleTileSnapping:(id)arg1;
+- (void)editorMenuToggleGridSnapping:(id)arg1;
+- (void)editorMenuToggleNodeSnapping:(id)arg1;
 - (void)editorMenuBringToFront:(id)arg1;
 - (void)editorMenuSendToBack:(id)arg1;
+- (void)editorMenuEnableScrollWheelPanning:(id)arg1;
 - (void)editorMenuZoomOut:(id)arg1;
 - (void)editorMenuRestoreZoom:(id)arg1;
 - (void)editorMenuZoomIn:(id)arg1;

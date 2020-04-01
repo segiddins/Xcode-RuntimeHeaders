@@ -6,7 +6,21 @@
 
 #import <Foundation/NSArray.h>
 
-@interface NSArray (IBIDEArrayAdditions)
+#import <IDEInterfaceBuilderKit/IBDocumentArchiving-Protocol.h>
+
+@class NSString;
+
+@interface NSArray (IBIDEArrayAdditions) <IBDocumentArchiving>
++ (id)instantiateWithDocumentUnarchiver:(id)arg1;
 - (id)ib_orderedUniqueObjects;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
+- (id)ibCoerceToDescriptivePListWithStrictness:(long long)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @end
 

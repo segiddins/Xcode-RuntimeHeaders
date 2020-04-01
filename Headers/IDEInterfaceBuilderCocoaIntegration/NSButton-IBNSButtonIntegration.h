@@ -6,14 +6,31 @@
 
 #import <AppKit/NSButton.h>
 
-@interface NSButton (IBNSButtonIntegration)
+#import <IDEInterfaceBuilderCocoaIntegration/IBDocumentArchiving-Protocol.h>
+
+@class NSColor, NSString;
+
+@interface NSButton (IBNSButtonIntegration) <IBDocumentArchiving>
++ (id)keyPathsForValuesAffectingIbDefaultImage;
++ (id)ibInstantiateForRole:(long long)arg1 withTargetRuntime:(id)arg2 documentClass:(Class)arg3 assetIdentifier:(id)arg4;
+- (id)ibPotentiallyProblematicWidthConstraints;
 - (unsigned long long)ibOrientationsForSizingToFitFromLibrary;
 - (void)ibVerifyFrameToControlSizeConsistency;
 - (id)ibQualifyingInfoForDefaultLabel;
+- (id)ibDefaultImage;
+- (double)ibHIRecommededMinimumWidth;
+- (BOOL)ibIgnoreFixedWidthConstraintsForLocalizationWarnings;
+- (BOOL)ibShouldBeProcessedForLocalizationWarnings;
+@property(copy, nonatomic) NSColor *ibExternalContentTintColor;
 - (id)ibLocalAttributeKeyPaths;
 - (id)ibInitialConnectionLabelSearchTerm;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
 
 // Remaining properties
-@property(getter=isSpringLoaded) BOOL springLoaded;
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @end
 

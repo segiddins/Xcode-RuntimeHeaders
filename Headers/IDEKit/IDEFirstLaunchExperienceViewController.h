@@ -6,28 +6,34 @@
 
 #import <AppKit/NSViewController.h>
 
-@class DVTObservingToken, IDEEnableUITestingAccessViewController, IDELicenseAgreementViewController, IDEPackageInstallerViewController, IDEWelcomeWindowTransitionHelper, NSImageView, NSView;
+@class DVTDeveloperModeAlertHelper, DVTObservingToken, IDEEnableUITestingAccessViewController, IDELicenseAgreementViewController, IDEPackageInstallerViewController, NSImageView, NSView;
 
 @interface IDEFirstLaunchExperienceViewController : NSViewController
 {
     IDELicenseAgreementViewController *_licenseViewController;
     IDEPackageInstallerViewController *_packageInstallerViewController;
+    DVTDeveloperModeAlertHelper *_developerModeHelper;
     IDEEnableUITestingAccessViewController *_enableUITestingAccessViewController;
-    IDEWelcomeWindowTransitionHelper *_transitionHelper;
     NSImageView *_appImageView;
     NSView *_currentView;
     DVTObservingToken *_agreementStatusObserver;
     BOOL _needToInstallPackages;
     BOOL _didShowLicense;
+    BOOL _didRequestUITestingAccess;
+    BOOL _waitingOnFirstLaunchExperience;
 }
 
 + (void)setTitle:(id)arg1 forRightAnchoredButton:(id)arg2;
 + (id)sharedFirstLaunchExperienceViewController;
 + (BOOL)needToQuitAfterFLE;
+@property(getter=isWaitingOnFirstLaunchExperience) BOOL waitingOnFirstLaunchExperience; // @synthesize waitingOnFirstLaunchExperience=_waitingOnFirstLaunchExperience;
 - (void).cxx_destruct;
 - (void)_restartXcode;
+- (BOOL)_isXcodeSystemResourcesAlreadyLoaded;
+- (BOOL)_isMobileDeviceAlreadyLoaded;
+- (BOOL)_isPackagePartOfInstall:(id)arg1;
 - (BOOL)_needToRestartXcode;
-- (void)_replaceView:(id)arg1 withView:(id)arg2;
+- (void)_nestView:(id)arg1 inView:(id)arg2;
 - (void)_doneWithFirstLaunchExperience;
 - (void)_setCurrentView:(id)arg1;
 - (void)_promptForUITestingAccessIfNecessary;
@@ -35,6 +41,7 @@
 - (void)_handlePackageInstallationComplete;
 - (void)_showPackagesToInstallIfNecessary;
 - (void)_showLicenseIfNecessary;
+- (void)enableDeveloperModeSilently;
 - (BOOL)_firstLaunchExperienceNeeded;
 - (BOOL)showFirstLaunchExperienceModallyIfNecessary;
 - (id)initWithDefaultNib;

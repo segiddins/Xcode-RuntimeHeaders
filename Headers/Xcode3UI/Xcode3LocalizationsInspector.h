@@ -62,9 +62,11 @@
 - (id)nibName;
 - (void)primitiveInvalidate;
 - (void)loadView;
+- (BOOL)_shouldHideFileTypeMenuForRow:(unsigned long long)arg1;
 - (BOOL)_allowsConversion;
 - (id)_projectLocalizations;
 - (id)_projectLocalizationsIncludingBaseIfNeeded;
+- (BOOL)_allowsBase;
 - (BOOL)_projectIsBaseEnabled;
 
 // Remaining properties

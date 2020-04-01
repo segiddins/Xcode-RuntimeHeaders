@@ -7,10 +7,11 @@
 #import <QuartzCore/CALayer.h>
 
 #import <IDEKit/DVTInvalidation-Protocol.h>
+#import <IDEKit/IDEActivityThemeableLayer-Protocol.h>
 
-@class DVTObservingToken, DVTStackBacktrace, IDEActivityActionButtonLayer, IDEActivityProgressIndicatorLayer, IDEActivityReport, IDEActivityScrollingTextLayer, NSMutableArray, NSString;
+@class DVTObservingToken, DVTStackBacktrace, IDEActivityActionButtonLayer, IDEActivityProgressIndicatorLayer, IDEActivityReport, IDEActivityScrollingTextLayer, IDEActivityView, NSMutableArray, NSString;
 
-@interface IDEActivityReportLayer : CALayer <DVTInvalidation>
+@interface IDEActivityReportLayer : CALayer <DVTInvalidation, IDEActivityThemeableLayer>
 {
     IDEActivityProgressIndicatorLayer *_progressIndicatorLayer;
     IDEActivityScrollingTextLayer *_scrollingTextLayer;
@@ -25,24 +26,33 @@
     DVTObservingToken *_kvoActivityReportTitleToken;
     DVTObservingToken *_kvoActivityReportThrottleFactorToken;
     BOOL _isActiveWindowStyle;
+    IDEActivityReport *_displayedReportValidCopy;
     double _spaceNeededForMultiActionIndicator;
     double _spaceNeededForStatusLayers;
+    IDEActivityView *_activityView;
+    DVTObservingToken *_validReportObserver;
 }
 
++ (id)keyPathsForValuesAffectingIndeterminateReportInProgress;
 + (id)activityReportLayerForDisplayStyle:(long long)arg1;
 + (struct CGSize)defaultSizeForPopUpStyle;
 + (void)initialize;
+@property(retain) DVTObservingToken *validReportObserver; // @synthesize validReportObserver=_validReportObserver;
+@property(retain) IDEActivityView *activityView; // @synthesize activityView=_activityView;
 @property(nonatomic) double spaceNeededForStatusLayers; // @synthesize spaceNeededForStatusLayers=_spaceNeededForStatusLayers;
 @property(nonatomic) double spaceNeededForMultiActionIndicator; // @synthesize spaceNeededForMultiActionIndicator=_spaceNeededForMultiActionIndicator;
 @property(nonatomic) BOOL isActiveWindowStyle; // @synthesize isActiveWindowStyle=_isActiveWindowStyle;
+@property(retain) IDEActivityReport *displayedReportValidCopy; // @synthesize displayedReportValidCopy=_displayedReportValidCopy;
 @property(nonatomic) long long displayStyle; // @synthesize displayStyle=_displayStyle;
 @property(retain, nonatomic) IDEActivityReport *activityReport; // @synthesize activityReport=_activityReport;
 - (void).cxx_destruct;
+- (void)updateTheme;
+- (id)accessibilityAttributeValue:(id)arg1;
+- (id)dvt_view;
 - (void)layoutSublayers;
 - (double)spaceNeededForCancelButtonLayer;
 - (BOOL)shouldShowCancelButtonLayer;
 @property(readonly) BOOL indeterminateReportInProgress;
-- (id)keyPathsForValuesAffectingIndeterminateReportInProgress;
 - (void)updateVisibilityForCancelButtonAndAdjustLayoutIfNeeded;
 - (void)updateVisibilityForTextFieldAndAdjustLayoutIfNeeded;
 - (BOOL)shouldHideProgress;

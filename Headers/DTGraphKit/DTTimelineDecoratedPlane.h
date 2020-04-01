@@ -6,15 +6,19 @@
 
 #import <DTGraphKit/DTTimelinePlane.h>
 
-@class DTTimelineDecorator, DTTimelineGraphInfoSummaryLabelLayer, NSAttributedString, NSColor, NSFont, NSImage, NSMapTable, NSString;
+@class DTTimelineDecorator, DTTimelineGraphInfoSummaryLabelLayer, NSAppearance, NSAttributedString, NSColor, NSFont, NSImage, NSMapTable, NSString;
 
 @interface DTTimelineDecoratedPlane : DTTimelinePlane
 {
     NSMapTable *_tilesByIdx;
+    NSAppearance *_appearance;
     double _oldTileWidth;
     DTTimelineGraphInfoSummaryLabelLayer *_infoSummaryLabelLayer;
-    BOOL _dynamicRangeValid;
+    NSColor *_opaqueBackgroundColor;
+    BOOL _dynamicRangeWasSet;
     BOOL _skipFaultingInTiles;
+    BOOL _missedDecorationOpportunity;
+    BOOL _disruptiveLayoutComing;
     DTTimelineDecorator *_decorator;
     NSString *_dynamicRangePeerGroup;
     NSAttributedString *_summary;
@@ -37,15 +41,16 @@
 - (id)_decorationSummaryLayer;
 - (void)_enumeratesPlanesHavingKey:(id)arg1 stopPtr:(char *)arg2 block:(CDUnknownBlockType)arg3;
 - (void)ignoreTimeBoundsCheck;
-- (id)_unselectedTextColor;
-- (id)_selectedTextColor;
+- (void)_updateSelectionColors;
 - (void)makeOpaqueWithBackgroundColor:(id)arg1;
 - (void)setContentIsOptional;
 - (id)visibleStringSummaries;
-- (BOOL)_setHeight:(double)arg1;
+- (BOOL)_setPreferredHeight:(double)arg1;
+- (BOOL)_setCalculatedHeight:(double)arg1;
 @property(nonatomic) BOOL decoratesMajorMinorTicks;
 @property(nonatomic) unsigned long long intervalBarWidth;
 @property(nonatomic) double intervalRoundedRectRadius;
+@property(nonatomic) double verticalPadding;
 @property(nonatomic) double intervalVisualSpacing;
 @property(nonatomic) unsigned long long intervalDisplayType;
 @property(nonatomic) unsigned long long intervalLabelConflictResolutionType;
@@ -58,26 +63,28 @@
 - (struct DynamicRange)currentDynamicRange;
 @property(readonly, nonatomic) struct DTTimelineGraphDynamicRange dynamicRange;
 - (struct DynamicRange)visibleDynamicRange;
+- (BOOL)computesDynamicRange;
 - (void)_enumerateVisibleTiles:(CDUnknownBlockType)arg1;
 - (id)_decoratedPlanes;
 - (void)_contextChanged;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
+- (void)_updatePlaneMetricsFromContext;
 @property(retain, nonatomic) NSFont *defaultDrawableFont;
 @property(nonatomic) struct CGSize defaultDrawableIconSize;
 @property(retain, nonatomic) NSImage *defaultDrawableIcon;
 @property(copy, nonatomic) NSColor *defaultDrawableTextColor;
 @property(copy, nonatomic) NSColor *defaultDrawableColor;
-- (void)dealloc;
+- (void)_removeFromContext;
+- (void)setTimelineGraph:(id)arg1;
 - (id)init;
 - (id)initWithHeight:(double)arg1;
 - (id)initWithHeight:(double)arg1 decorator:(id)arg2;
 - (id)initWithDecorator:(id)arg1;
+- (void)layoutSublayersOfLayer:(id)arg1;
 - (void)_invalidateTimeRange:(struct XRTimeRange)arg1;
+- (void)_setAppearance:(id)arg1;
 - (void)_redecorateTiles;
-- (void)_setPosition:(struct CGPoint)arg1 size:(struct CGSize)arg2;
+- (void)_addTilingLayerToSuperlayer:(id)arg1;
 - (void)_layoutTiles;
-- (void)_removeFromContext;
-- (void)_setContext:(struct TimelineViewContext *)arg1 layer:(id)arg2 anchorPoint:(struct CGPoint)arg3;
 
 @end
 

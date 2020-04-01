@@ -10,9 +10,8 @@
 {
 }
 
-- (id)subtitle;
-- (id)title;
-- (int)supportedTask;
+- (id)exportStepName;
+- (long long)supportedTask;
 - (double)sortOrder;
 
 @end

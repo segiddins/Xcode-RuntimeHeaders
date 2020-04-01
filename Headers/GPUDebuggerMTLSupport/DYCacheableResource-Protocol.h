@@ -7,6 +7,6 @@
 #import <GPUDebuggerMTLSupport/NSObject-Protocol.h>
 
 @protocol DYCacheableResource <NSObject>
-@property(readonly, nonatomic) unsigned long long cachingCost;
+@property(nonatomic, readonly) unsigned long long cachingCost;
 @end
 

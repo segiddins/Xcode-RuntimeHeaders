@@ -6,14 +6,28 @@
 
 #import <AppKit/NSController.h>
 
-@interface NSController (IBNSControllerIntegration)
+#import <IDEInterfaceBuilderCocoaIntegration/IBDocumentArchiving-Protocol.h>
+
+@class NSString;
+
+@interface NSController (IBNSControllerIntegration) <IBDocumentArchiving>
 + (void)ibSynthesizeShadowedProperties;
-+ (id)ibSynthesizeControllerKeyPaths;
-+ (void)ibInstallAccessorsForShadowedKeys:(id)arg1;
++ (id)ibDynamicShadowedKeyPathsToTypes;
++ (void)ibSynthesizeAccessorsForShadowedProperties:(id)arg1;
++ (id)instantiateWithDocumentUnarchiver:(id)arg1;
 - (BOOL)ibShadowedControllerBoolAttribute;
 - (void)setIbShadowedControllerBoolAttribute:(BOOL)arg1;
 - (id)ibShadowedControllerObjectAttribute;
 - (void)setIbShadowedControllerObjectAttribute:(id)arg1;
 - (id)ibControllerKeys;
+- (id)ibLocalAttributeKeyPaths;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @end
 

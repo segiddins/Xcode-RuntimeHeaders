@@ -6,13 +6,10 @@
 
 #import <IDEInterfaceBuilderCocoaTouchIntegration/NSObject-Protocol.h>
 
-@class IBUISimulatedBarMetrics, IBUITabBar, IBUITabBarItem, IBUIViewControllerEditorPlaceholderView, IBUIViewControllerEditorView, NSString, NSView;
+@class IBUIViewControllerEditorPlaceholderView, IBUIViewControllerEditorView, NSString;
 
 @protocol IBUIViewControllerEditorViewDelegate <NSObject>
-- (NSView *)bottomBarViewForEditorView:(IBUIViewControllerEditorView *)arg1 withSimulatedBarMetrics:(IBUISimulatedBarMetrics *)arg2;
-- (NSView *)topBarViewForEditorView:(IBUIViewControllerEditorView *)arg1 withSimulatedBarMetrics:(IBUISimulatedBarMetrics *)arg2;
-- (IBUITabBarItem *)editorView:(IBUIViewControllerEditorView *)arg1 selectedItemForSimulatedTabBar:(IBUITabBar *)arg2;
-- (NSString *)editorView:(IBUIViewControllerEditorView *)arg1 explanitoryTextForPlaceholderView:(IBUIViewControllerEditorPlaceholderView *)arg2;
+- (NSString *)editorView:(IBUIViewControllerEditorView *)arg1 explanatoryTextForPlaceholderView:(IBUIViewControllerEditorPlaceholderView *)arg2;
 - (NSString *)editorView:(IBUIViewControllerEditorView *)arg1 subtitleForPlaceholderView:(IBUIViewControllerEditorPlaceholderView *)arg2;
 - (NSString *)editorView:(IBUIViewControllerEditorView *)arg1 titleForPlaceholderView:(IBUIViewControllerEditorPlaceholderView *)arg2;
 @end

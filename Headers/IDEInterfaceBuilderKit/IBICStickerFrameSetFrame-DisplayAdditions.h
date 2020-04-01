@@ -6,16 +6,17 @@
 
 #import <IBFoundation/IBICStickerFrameSetFrame.h>
 
-#import <IDEInterfaceBuilderKit/IBICStickerPackChild-Protocol.h>
+#import <IDEInterfaceBuilderKit/IBICAbstractCollectionChild-Protocol.h>
 
 @class NSString;
 
-@interface IBICStickerFrameSetFrame (DisplayAdditions) <IBICStickerPackChild>
-+ (id)emptyThumbnailIcon;
-- (id)synthesizeAncestorsIfNeededToAllowHostingInContainer:(id)arg1;
+@interface IBICStickerFrameSetFrame (DisplayAdditions) <IBICAbstractCollectionChild>
+- (double)offsetForDropAfterOrnament;
+- (double)offsetForDropBeforeOrnament;
+- (id)catalogItemForHostingInContainer:(id)arg1;
 - (id)quickLookPreviewItem;
 - (BOOL)applyContentFromDropIndicator:(id)arg1;
-- (void)replaceSelfWithNewFrameUsingData:(id)arg1 andFilename:(id)arg2;
+- (id)replaceSelfWithNewFrameUsingData:(id)arg1 andFilename:(id)arg2;
 - (void)generateThumbnailWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)thumbnail;
 - (void)setLastRequestThumbnailGeneration:(long long)arg1;
@@ -24,14 +25,15 @@
 - (long long)thumbnailSourceChangeGeneration;
 - (id)ibInspectedFilePath;
 - (id)ibInspectedFrameNumber;
+- (BOOL)isDisplayNameFindable;
+- (BOOL)isDisplayNameEditable;
 - (id)displayName;
-- (id)typeIcon;
 - (id)icon;
 - (id)dragImage;
-- (BOOL)isPredominantlyWhite;
 - (id)bitmap;
 - (id)image;
 - (id)imageRep;
+- (id)positionsForStickerComponentID;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -27,6 +27,8 @@
 - (id)searchPathByAppendingSearchPath:(id)arg1;
 - (id)searchPathByAppendingSearchDirectoryFilePaths:(id)arg1;
 - (id)initWithSearchDirectoryFilePaths:(id)arg1;
+- (unsigned long long)hash;
+- (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end

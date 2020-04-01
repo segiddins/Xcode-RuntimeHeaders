@@ -4,17 +4,19 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Foundation/NSObject.h>
+#import <objc/NSObject.h>
 
-@class NSMutableData;
+@class DVTDispatchLock, NSMutableData;
 
 @interface XCHierarchicalOutputLog : NSObject
 {
     NSMutableData *_outputData;
     unsigned long long _indentationLevel;
     BOOL _needsIndentation;
+    DVTDispatchLock *_lock;
 }
 
+- (void).cxx_destruct;
 - (void)println;
 - (void)outdentln:(id)arg1;
 - (void)outdent:(id)arg1;
@@ -22,8 +24,8 @@
 - (void)print:(id)arg1;
 - (void)indentln:(id)arg1;
 - (void)indent:(id)arg1;
-- (void)decreaseNestingLevel;
-- (void)increaseNestingLevel;
+- (void)_decreaseNestingLevel;
+- (void)_increaseNestingLevel;
 - (id)data;
 - (void)dealloc;
 - (id)init;

@@ -15,7 +15,7 @@
 }
 
 + (id)ibStandInRuntimeClassName;
-- (void)ibWarnings:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
+- (void)ibPopulateIssues:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
 - (void)drawRect:(struct CGRect)arg1;
 - (id)ibRuntimeClassName;
 - (Class)classForArchiver;

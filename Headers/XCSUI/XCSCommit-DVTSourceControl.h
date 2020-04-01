@@ -6,10 +6,10 @@
 
 #import <XCSCore/XCSCommit.h>
 
-@class DVTSourceControlAuthor, DVTSourceControlRevision, NSDictionary;
+@class DVTSourceControlAuthor, DVTSourceControlRevision, NSArray;
 
 @interface XCSCommit (DVTSourceControl)
-@property(readonly, copy, nonatomic) NSDictionary *pathsWithStatus;
+@property(readonly, copy, nonatomic) NSArray *fileStatuses;
 @property(readonly, copy, nonatomic) DVTSourceControlRevision *revision;
 @property(readonly, copy, nonatomic) DVTSourceControlAuthor *author;
 - (id)logItemWithWorkspace:(id)arg1;

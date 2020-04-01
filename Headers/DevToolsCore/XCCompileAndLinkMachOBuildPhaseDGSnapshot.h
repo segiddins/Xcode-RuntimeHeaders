@@ -15,9 +15,10 @@
 }
 
 + (id)defaultName;
+- (void).cxx_destruct;
 - (id)initWithTargetSnapshot:(id)arg1;
-- (void)computeDependenciesInTargetBuildContext:(id)arg1;
-- (void)computeDependenciesForBuildFileReference:(id)arg1 inTargetBuildContext:(id)arg2;
+- (void)computeDependenciesWithMacroExpansionScope:(id)arg1;
+- (void)computeDependenciesForBuildFileReference:(id)arg1 withMacroExpansionScope:(id)arg2;
 
 @end
 

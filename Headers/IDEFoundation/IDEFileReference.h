@@ -8,7 +8,7 @@
 
 #import <IDEFoundation/IDEStructureEditing-Protocol.h>
 
-@class DVTExtension, DVTFileDataType, DVTFilePath, DVTObservingToken, IDEContainer, IDESourceControlExtension, IDESourceControlRepository, NSString;
+@class DVTExtension, DVTFileDataType, DVTFilePath, DVTObservingToken, IDEContainer, NSString;
 @protocol NSObject;
 
 @interface IDEFileReference : IDEContainerItem <IDEStructureEditing>
@@ -26,11 +26,11 @@
     DVTObservingToken *_workspaceIsValidObservingToken;
     BOOL _workaroundForProblem8727051;
     BOOL _stopResolvingReferencedContainers;
-    int _sourceControlLocalStatus;
-    int _sourceControlServerStatus;
+    unsigned long long _sourceControlLocalStatus;
+    unsigned long long _sourceControlServerStatus;
     unsigned long long _conflictStateForUpdateOrMerge;
-    int _aggregateSourceControlLocalStatus;
-    int _aggregateSourceControlServerStatus;
+    unsigned long long _aggregateSourceControlLocalStatus;
+    unsigned long long _aggregateSourceControlServerStatus;
     unsigned long long _aggregateSourceControlConflictStatus;
     BOOL _sourceControlLocalStatusNeedsUpdate;
     BOOL _sourceControlServerStatusNeedsUpdate;
@@ -46,6 +46,7 @@
 + (BOOL)automaticallyNotifiesObserversOfConflictStateForUpdateOrMerge;
 + (BOOL)automaticallyNotifiesObserversOfSourceControlServerStatus;
 + (BOOL)automaticallyNotifiesObserversOfSourceControlLocalStatus;
++ (id)keyPathsForValuesAffectingIssueLog;
 + (id)keyPathsForValuesAffectingExpectedFilePath;
 + (id)keyPathsForValuesAffectingName;
 + (id)fileReferenceAssociatesForPath:(id)arg1 forAllPathsToSameFile:(BOOL)arg2;
@@ -57,7 +58,7 @@
 + (id)keyPathsForValuesAffectingIdeModelObjectTypeIdentifier;
 @property(copy, nonatomic) DVTFileDataType *assignedFileDataType; // @synthesize assignedFileDataType=_assignedFileDataType;
 - (void).cxx_destruct;
-- (void)_performMove:(id)arg1 newFilePath:(id)arg2 newPath:(id)arg3 inContext:(id)arg4;
+- (BOOL)structureEditName:(id)arg1 inContext:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (BOOL)structureEditSetName:(id)arg1 inContext:(id)arg2;
 - (id)_structureEditNameForSuggestedName:(id)arg1;
 - (BOOL)canStructureEditName;
@@ -79,23 +80,25 @@
 - (void)_updateAggregateSourceControlServerStatus;
 - (void)_updateAggregateSourceControlLocalStatus;
 - (void)_setAggregateSourceControlConflictStatus:(unsigned long long)arg1;
-- (void)_setAggregateSourceControlServerStatus:(int)arg1;
-- (void)_setAggregateSourceControlLocalStatus:(int)arg1;
+- (void)_setAggregateSourceControlServerStatus:(unsigned long long)arg1;
+- (void)_setAggregateSourceControlLocalStatus:(unsigned long long)arg1;
 - (void)_updateConflictStateForUpdateOrMerge;
 @property unsigned long long conflictStateForUpdateOrMerge;
 - (void)_updateSourceControlServerStatus;
-@property int sourceControlServerStatus;
+@property unsigned long long sourceControlServerStatus;
 - (void)_updateSourceControlLocalStatus;
 - (void)_updateSourceControlStatus;
 - (void)_enqueueScmStatusUpdate;
-@property int sourceControlLocalStatus;
+@property unsigned long long sourceControlLocalStatus;
 - (unsigned long long)aggregateSourceControlConflictStatus;
-- (int)aggregateSourceControlServerStatus;
-- (int)aggregateSourceControlLocalStatus;
+- (unsigned long long)aggregateSourceControlServerStatus;
+- (unsigned long long)aggregateSourceControlLocalStatus;
+- (id)issueLog;
 - (BOOL)isReferencedContainerLoaded;
 - (void)_invalidateReferencedContainer;
 - (void)_addObserversForReferencedContainer;
 - (id)_referencedContainer;
+- (void)_resolvedFilePathWasRecalculated;
 - (void)_referencedContainerWasRecalculated;
 @property(readonly) IDEContainer *referencedContainer;
 - (void)_recalculateReferencedContainer;
@@ -111,26 +114,27 @@
 @property(readonly) DVTFilePath *expectedFilePath;
 - (BOOL)_resolvedFilePathIsValid;
 - (void)_resolvedFilePathDidChange:(id)arg1;
-- (BOOL)_filePathExists;
+@property(readonly) BOOL _filePathExists;
 - (void)_invalidateResolvedFilePathUsingPath:(id)arg1 resolutionStrategies:(id)arg2;
 - (void)_invalidateResolvedFilePath;
 - (void)_resolvedFilePathWasInvalidated;
 - (id)_absolutePath;
 - (id)_resolvedFilePathIfAvailable;
 @property(readonly) DVTFilePath *resolvedFilePath;
-@property(readonly) NSString *name;
+@property(readonly, copy, nonatomic) NSString *name;
 - (void)_invalidateStartingWith:(id)arg1 changeBlock:(CDUnknownBlockType)arg2;
 - (void)_invalidateStartingWith:(id)arg1;
 - (void)changePath:(id)arg1 resolutionStrategies:(id)arg2;
 - (void)_setContainer:(id)arg1;
 - (void)primitiveInvalidate;
 - (id)init;
-@property(readonly) NSString *sourceControlRepositoryURLString;
-@property(readonly) NSString *sourceControlCurrentRevision;
-@property(readonly) NSString *sourceControlCurrentBranchString;
-@property(readonly) IDESourceControlExtension *sourceControlExtension;
-@property(readonly) IDESourceControlRepository *sourceControlRepository;
+- (void)openQuickly_enumerateCandidateFilePathsNotingVisitedContainers:(id)arg1 enumerator:(CDUnknownBlockType)arg2;
+- (id)ideFindScope_itemAtPath:(id)arg1 position:(long long)arg2 preferContainerFileReferenceToRootGroup:(BOOL)arg3;
+- (id)ideFindScope_componentForGroupPath;
+- (id)ideFindScope_predicateRoot;
+- (void)ideFindScope_accumulateFilePaths:(id)arg1 andVisitedContainers:(id)arg2;
 - (id)ideModelObjectTypeIdentifier;
+- (void)ide_populateSnapshotGroups:(id)arg1 filePaths:(id)arg2 visitedContainers:(id)arg3;
 - (void)setAssignedFileDataTypeFromUTF8String:(char *)arg1 fromXMLUnarchiver:(id)arg2;
 - (void)dvt_encodeRelationshipsWithXMLArchiver:(id)arg1 version:(id)arg2;
 - (void)dvt_encodeAttributesWithXMLArchiver:(id)arg1 version:(id)arg2;

@@ -6,20 +6,25 @@
 
 #import <AppKit/NSCollectionViewItem.h>
 
-@class DVTImageLiteralQuickEditPreview, NSView;
+@class DVTImageLiteralQuickEditPreview, DVTImageLiteralQuickEditViewController, NSButton, NSView;
 
 @interface DVTImageLiteralQuickEditCollectionViewItem : NSCollectionViewItem
 {
+    DVTImageLiteralQuickEditViewController *_imageLiteralQuickEditViewController;
     DVTImageLiteralQuickEditPreview *_imagePreview;
+    NSButton *_imageButton;
     NSView *_backgroundView;
 }
 
 + (id)nibName;
-@property(retain) NSView *backgroundView; // @synthesize backgroundView=_backgroundView;
+@property __weak NSView *backgroundView; // @synthesize backgroundView=_backgroundView;
+@property __weak NSButton *imageButton; // @synthesize imageButton=_imageButton;
 @property(retain, nonatomic) DVTImageLiteralQuickEditPreview *imagePreview; // @synthesize imagePreview=_imagePreview;
+@property __weak DVTImageLiteralQuickEditViewController *imageLiteralQuickEditViewController; // @synthesize imageLiteralQuickEditViewController=_imageLiteralQuickEditViewController;
 - (void).cxx_destruct;
-- (void)viewDidLoad;
+- (void)_imageButtonAction:(id)arg1;
 - (void)setSelected:(BOOL)arg1;
+- (void)viewDidLoad;
 
 @end
 

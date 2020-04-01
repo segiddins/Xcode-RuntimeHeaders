@@ -6,19 +6,22 @@
 
 #import <objc/NSObject.h>
 
+#import <XCSCore/NSURLSessionDelegate-Protocol.h>
 #import <XCSCore/XCSEventStreamDelegate-Protocol.h>
 
-@class NSArray, NSData, NSDictionary, NSError, NSHTTPCookieStorage, NSString, NSURL, XCSEventStream;
+@class NSArray, NSData, NSDictionary, NSError, NSHTTPCookieStorage, NSString, NSURL, NSURLSession, XCSEventStream;
 @protocol OS_dispatch_queue, XCSCodeCoverageProtocol, XCSServiceBuildDelegate, XCSServiceConnectionDelegate, XCSServiceErrorDelegate;
 
-@interface XCSService : NSObject <XCSEventStreamDelegate>
+@interface XCSService : NSObject <XCSEventStreamDelegate, NSURLSessionDelegate>
 {
     BOOL _enabled;
     BOOL _enableMessageChannel;
-    struct OpaqueSecIdentityRef *_identity;
+    struct __SecIdentity *_identity;
     NSString *_identityKeychainPath;
     NSData *_identityKeychainPassword;
     BOOL _connected;
+    NSString *_lastCreatedBotID;
+    NSURLSession *_sharedSession;
     id <XCSServiceErrorDelegate> _errorDelegate;
     NSObject<OS_dispatch_queue> *_errorDelegateQueue;
     id <XCSServiceBuildDelegate> _buildDelegate;
@@ -43,6 +46,7 @@
     NSHTTPCookieStorage *_httpCookieStorage;
     double _requestTimeoutInterval;
     NSArray *_protocolClasses;
+    NSObject<OS_dispatch_queue> *_completionQueue;
 }
 
 + (id)resultsFromResponse:(id)arg1;
@@ -53,11 +57,13 @@
 + (id)serviceWithConnectionAddress:(id)arg1 portNumber:(unsigned long long)arg2;
 + (id)serviceWithNetServiceDomain:(id)arg1 type:(id)arg2 name:(id)arg3 enabled:(BOOL)arg4;
 + (id)serviceWithNetServiceDomain:(id)arg1 type:(id)arg2 name:(id)arg3;
++ (id)serviceWithDefaultClientSSL;
 + (id)testDestination;
 + (id)defaultCouchEndpoint;
 + (id)clientSSLEndpointWithHost:(id)arg1;
 + (id)defaultClientSSLEndpoint;
 + (id)defaultEndpoint;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *completionQueue; // @synthesize completionQueue=_completionQueue;
 @property(retain, nonatomic) NSArray *protocolClasses; // @synthesize protocolClasses=_protocolClasses;
 @property(nonatomic) double requestTimeoutInterval; // @synthesize requestTimeoutInterval=_requestTimeoutInterval;
 @property(retain, nonatomic) NSHTTPCookieStorage *httpCookieStorage; // @synthesize httpCookieStorage=_httpCookieStorage;
@@ -83,11 +89,21 @@
 @property(nonatomic) __weak id <XCSServiceBuildDelegate> buildDelegate; // @synthesize buildDelegate=_buildDelegate;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *errorDelegateQueue; // @synthesize errorDelegateQueue=_errorDelegateQueue;
 @property(nonatomic) __weak id <XCSServiceErrorDelegate> errorDelegate; // @synthesize errorDelegate=_errorDelegate;
+@property(readonly, nonatomic) NSURLSession *sharedSession; // @synthesize sharedSession=_sharedSession;
+@property(copy, nonatomic) NSString *lastCreatedBotID; // @synthesize lastCreatedBotID=_lastCreatedBotID;
 - (void).cxx_destruct;
 - (id)_customErrorIfServerIsBusyProcessing:(id)arg1 error:(id)arg2;
 - (void)_checkEndpointRedisCacheWithBase:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (long long)apiStatusForServiceVersionGreaterOrEqualTo:(unsigned long long)arg1;
+- (id)identityRefUsingKeychainPath:(id)arg1 password:(id)arg2 error:(id *)arg3;
+- (void)URLSession:(id)arg1 task:(id)arg2 didReceiveChallenge:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (void)URLSession:(id)arg1 didReceiveChallenge:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)_handleChallenge:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)reconfigureSharedSession;
+- (void)listenForPruningFinished:(CDUnknownBlockType)arg1;
+- (void)listenForPruningStarted:(CDUnknownBlockType)arg1;
 - (void)removeAllObjectsAtBase:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (id)sendSynchronousRequest:(id)arg1 returningResponse:(id *)arg2 error:(id *)arg3;
 - (void)_uploadFileAtPath:(id)arg1 base:(id)arg2 verb:(unsigned long long)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)_uploadFileAtPath:(id)arg1 base:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)_deleteObject:(id)arg1 base:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
@@ -109,6 +125,7 @@
 - (void)isDatabaseBeingCompactedWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)databaseFragmentationIndexWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)databaseCompactWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)pruneXcodeServerKeepingAtLeast:(unsigned long long)arg1 force:(BOOL)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)notifyAfterBonjourResolution:(CDUnknownBlockType)arg1;
 @property(readonly) BOOL isResolving;
 @property(readonly) BOOL isResolved;
@@ -120,13 +137,14 @@
 - (void)verifyConnectionWithCompletionHandler:(CDUnknownBlockType)arg1;
 @property(retain, nonatomic) NSData *identityKeychainPassword;
 @property(retain, nonatomic) NSString *identityKeychainPath;
-@property(nonatomic) struct OpaqueSecIdentityRef *identity;
+@property(nonatomic) struct __SecIdentity *identity;
 @property(readonly, nonatomic) NSURL *friendlyURL;
 @property(nonatomic) BOOL enabled;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToService:(id)arg1;
 - (void)dealloc;
+- (void)removeListeners:(id)arg1;
 - (void)stopMessageChannel;
 - (void)evaluateAndReestablishMessageChannel;
 - (void)configureWithURL:(id)arg1 enableMessageChannel:(BOOL)arg2;
@@ -141,13 +159,38 @@
 - (id)initWithURL:(id)arg1;
 - (id)initForClientSSL;
 - (id)init;
-- (void)requestPortalSyncWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (void)listenForRequestPortalSync:(CDUnknownBlockType)arg1;
+- (void)listenForProvisioningProfileRemoved:(CDUnknownBlockType)arg1;
+- (void)listenForSigningIdentityRemoved:(CDUnknownBlockType)arg1;
+- (void)listenForTeamRemoved:(CDUnknownBlockType)arg1;
+- (void)listenForProvisioningProfileCreated:(CDUnknownBlockType)arg1;
+- (void)listenForSigningIdentityCreated:(CDUnknownBlockType)arg1;
+- (void)listenForTeamIdentityUpdated:(CDUnknownBlockType)arg1;
+- (void)fetchHardwareInfoWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)removeProvisioningProfile:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)downloadProvisioningProfileWithID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)fetchProvisioningProfileWithID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)uploadProvisioningProfileAtPath:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)allProvisioningProfilesWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)removeSigningIdentity:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)downloadSigningIdentityWithID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)fetchSigningIdentityWithID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)uploadSigningIdentityAtPath:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)allSigningIdentitiesWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)removeTeam:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)updateTeam:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)uploadIdentityAtPath:(id)arg1 forTeam:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)createTeam:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)fetchIdentityOfTeam:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)fetchTeamWithID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)allTeamsWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (long long)isProvisioningConfigurationAvailable;
+@property(readonly) long long isTeamJoiningAvailable;
 - (void)listenForShutdown:(CDUnknownBlockType)arg1;
 - (void)requestGracefulShutdownWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)updateSettings:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)allSettingsWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)fetchSettingsWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (long long)isParallelDeviceTestingAvailable;
 - (void)listenForAllDeviceChanges:(CDUnknownBlockType)arg1 owner:(id)arg2;
 - (void)listenForDeviceDeletion:(CDUnknownBlockType)arg1;
 - (void)listenForDeviceUpdates:(CDUnknownBlockType)arg1;
@@ -169,12 +212,13 @@
 - (void)listenForPlatformUpdates:(CDUnknownBlockType)arg1 owner:(id)arg2;
 - (long long)isPlatformsAPIAvailable;
 - (void)allPlatformsWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (void)savePlatform:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)savePlatform:(id)arg1 forXcode:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)removeXcode:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)updateXcode:(id)arg1 withID:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)createXcode:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)allXcodesForCurrentBuildAgentWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)allXcodesWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)fetchServiceHealthWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (void)createHostedRepository:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)allHostedRepositoriesWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (void)listenForCreateRepositoryRequest:(CDUnknownBlockType)arg1;
-- (void)listenForListRepositoriesRequest:(CDUnknownBlockType)arg1;
 - (void)uploadContentsOfFile:(id)arg1 toAsset:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)createAsset:(id)arg1 forIntegration:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)fetchAssetsForIntegration:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
@@ -205,6 +249,7 @@
 - (long long)isBotDuplicationAPIAvailable;
 - (void)duplicateBot:(id)arg1 values:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)createBot:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (long long)isPerformsUpgradeIntegrationAvailable;
 - (void)fetchBlueprintForBot:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (long long)isFetchBlueprintAPIAvailable;
 - (void)_performBlueprintOperationRequest:(id)arg1 withResultClass:(Class)arg2 completionHandler:(CDUnknownBlockType)arg3;
@@ -213,28 +258,34 @@
 - (long long)isReflightBranchesForBotUpdatedBlueprintAPIAvailable;
 - (void)reflightCredentialsForBot:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)listBranchesInBlueprint:(id)arg1 skippingRepositoryIdentifiers:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (long long)isCustomExportOptionsAvailable;
+- (long long)isTestLocalizationAPIAvailable;
 - (long long)isSkipRepositoriesInBlueprintAPIAvailable;
 - (long long)isListBranchesInBlueprintAPIAvailable;
 - (void)preflightCredentialsInBlueprint:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (long long)isFingerprintEnforcementAvailable;
+- (long long)isDomainRepositorySupportAvailable;
 - (void)stopListeningForACLUpdateWithOwner:(id)arg1;
 - (void)listenForACLUpdate:(CDUnknownBlockType)arg1 withOwner:(id)arg2;
 - (void)updateACL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)allACLsWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)fetchExpandedACLWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)fetchACLWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (long long)isAdditionalBuildArgumentsAvailable;
 - (long long)isEnvironmentVariablesAvailable;
 - (void)isServiceLoggedIn:(CDUnknownBlockType)arg1;
 - (void)isBotCreatorWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)logoutWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)loginWithUserName:(id)arg1 password:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)obtainIdentityTokenWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (long long)isAllIssuesResolvedEmailNotificationAvailable;
 - (long long)isEmailNotificationEnhancementsAvailable;
 - (void)sendNotificationRequest:(id)arg1 forIntegrationID:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)allOrphanedIntegrationsWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)requestToBuildIntegration:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)allPendingIntegrationsWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)allBuildAgentsWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)listenOnceForAgentRegistration:(CDUnknownBlockType)arg1;
 - (void)registerIntegrationService;
 - (void)registerBuildListenerWithUsername:(id)arg1 fullName:(id)arg2;
 - (id)allAssetsURLForIntegration:(id)arg1;
@@ -265,7 +316,7 @@
 - (void)codeCoverageIntegrationWithIntegrationID:(id)arg1 skipValidation:(BOOL)arg2 skipBindHierarchy:(BOOL)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)codeCoverageIntegrationWithIntegrationID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (long long)isCodeCoverageAPIAvailable;
-@property(nonatomic) __weak id <XCSCodeCoverageProtocol> delegate;
+@property(nonatomic) __weak id <XCSCodeCoverageProtocol> codeCoverageDelegate;
 - (void)deviceDataForTestResultsTableUsingTimeseriesDataForIntegration:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)scmCommitsForIntegration:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)timeseriesDataForIntegration:(id)arg1 category:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
@@ -286,11 +337,15 @@
 - (void)listenForIntegrationCreation:(CDUnknownBlockType)arg1 withOwner:(id)arg2;
 - (void)listenForIntegrationCreation:(CDUnknownBlockType)arg1;
 - (void)stopListeningForIntegrationCreationWithOwner:(id)arg1;
+- (void)listenForActivityLogUpdatesForIntegration:(id)arg1 handler:(CDUnknownBlockType)arg2 owner:(id)arg3;
+- (void)emitActivityLogChunk:(id)arg1 forIntegration:(id)arg2;
 - (void)emitAdvisoryStatusForIntegration:(id)arg1 message:(id)arg2 percentage:(double)arg3;
 - (long long)isTestsWithKeyPathsForIntegrationDeviceAPIAvailable;
 - (void)testsWithKeyPaths:(id)arg1 forIntegration:(id)arg2 device:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)testWithKeyPath:(id)arg1 forIntegration:(id)arg2 device:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)testsForIntegration:(id)arg1 device:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)testsByArrayForIntegration:(id)arg1 device:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (long long)isTestDurationDataAvailable;
 - (void)removeTags:(id)arg1 integration:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)addTags:(id)arg1 integration:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)buildQueueWithCompletionHandler:(CDUnknownBlockType)arg1;
@@ -305,6 +360,7 @@
 - (void)lastNonFatalIntegrations:(unsigned long long)arg1 forBotIdentifier:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)lastNonFatalIntegrations:(unsigned long long)arg1 forBot:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)allNonFatalIntegrationsForBot:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)integrationsSinceDate:(id)arg1 forBot:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)integrationsBeforeIntegrationNumber:(unsigned long long)arg1 howMany:(unsigned long long)arg2 forBot:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)integrationsAfterIntegrationNumber:(unsigned long long)arg1 howMany:(unsigned long long)arg2 forBot:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)lastIntegrations:(unsigned long long)arg1 forBotIdentifier:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
@@ -334,7 +390,6 @@
 - (void)userPictureWithEmail:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)canUserCreateBots:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)canUserViewBots:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)canUserCreateRepositories:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)updateVersionInfo:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)fetchVersionInfoWithCompletionHandler:(CDUnknownBlockType)arg1;
 

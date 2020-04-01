@@ -11,7 +11,9 @@
 }
 
 - (BOOL)dataNode:(id)arg1 doubleClickInColumn:(id)arg2;
-- (id)targetHeadingBadgeForDataNode:(id)arg1;
+- (id)badgeImageForDataNode:(id)arg1;
+- (BOOL)displaysBadge;
+- (id)secondaryTextColorForDataNode:(id)arg1;
 - (id)secondRowStringForDataNode:(id)arg1;
 - (id)titleFontForDataNode:(id)arg1;
 - (id)titleForDataNode:(id)arg1;

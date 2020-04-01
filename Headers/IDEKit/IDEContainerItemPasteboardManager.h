@@ -6,25 +6,14 @@
 
 #import <objc/NSObject.h>
 
-#import <IDEKit/IDEStructureEditingDraggingSource-Protocol.h>
-
-@class NSString;
-
-@interface IDEContainerItemPasteboardManager : NSObject <IDEStructureEditingDraggingSource>
+@interface IDEContainerItemPasteboardManager : NSObject
 {
 }
 
 + (id)sharedPasteboardManager;
 - (id)fileURLsForDraggingInfo:(id)arg1;
 - (void)containerItems:(id *)arg1 orFileURLs:(id *)arg2 forDraggingInfo:(id)arg3;
-- (BOOL)structureEditingWriteItems:(id)arg1 toPasteboard:(id)arg2;
 - (BOOL)writeItems:(id)arg1 toPasteboard:(id)arg2;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

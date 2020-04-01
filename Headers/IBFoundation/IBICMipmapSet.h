@@ -6,7 +6,7 @@
 
 #import <IBFoundation/IBICSlottedAsset.h>
 
-@class IBICAbstractTextureSet;
+@class IBICAbstractTextureSet, NSOrderedSet, NSSet;
 
 @interface IBICMipmapSet : IBICSlottedAsset
 {
@@ -19,22 +19,17 @@
 + (id)catalogItemFileExtension;
 + (id)defaultInstanceForIdioms:(id)arg1 enforceStrictIdioms:(BOOL)arg2;
 + (id)defaultName;
-+ (Class)assetRepClass;
 + (Class)requiredParentClass;
++ (Class)assetRepClass;
 @property(retain, nonatomic) IBICAbstractTextureSet *enclosingTextureSet; // @synthesize enclosingTextureSet=_enclosingTextureSet;
 @property(nonatomic) long long levelMode; // @synthesize levelMode=_levelMode;
 - (void).cxx_destruct;
 - (BOOL)isEqualForUnitTests:(id)arg1;
+- (id)childrenOrderedByMipmapLevel;
+- (id)childWithMipmapLevel:(long long)arg1;
 - (id)fullyQualifiedRuntimeNameProvidingItemForCARCompiler;
 - (id)effectiveModificationDateForCARCompiler;
 - (CDStruct_550fdc95)taggingSupport;
-- (id)intrinsicallyOrderedChildren;
-- (id)children;
-- (id)assetRepForStructuredIdentifier:(id)arg1;
-- (id)childForIdentifier:(id)arg1;
-- (id)assetRepForIdentifier:(id)arg1;
-- (id)conflictFreeChildForSlot:(id)arg1;
-- (id)assetRepForSlot:(id)arg1;
 - (id)initializeManifestArchivist;
 - (void)manifestArchivist:(id)arg1 populateManifest:(id)arg2;
 - (void)manifestArchivist:(id)arg1 applyPropertiesFromManifest:(id)arg2;
@@ -48,6 +43,14 @@
 - (void)setFileURL:(id)arg1 forTextureAssetInfo:(id)arg2;
 - (id)makeTextureAssetInfoWithMipLevel:(unsigned long long)arg1 cubeFace:(long long)arg2 flipped:(BOOL)arg3;
 - (BOOL)populateNamedAssetImportInfo:(id)arg1 allCompiledItems:(id)arg2 withOptions:(id)arg3 error:(id *)arg4;
+@property(readonly, nonatomic) NSOrderedSet *intrinsicallyOrderedChildren;
+@property(readonly, nonatomic) NSSet *children;
+- (id)assetRepForStructuredIdentifier:(id)arg1;
+- (id)childForIdentifier:(id)arg1;
+- (id)assetRepForIdentifier:(id)arg1;
+- (id)conflictFreeChildForSlot:(id)arg1;
+- (id)assetRepMatchingVariant:(id)arg1 forPlatform:(id)arg2;
+- (id)assetRepForSlot:(id)arg1;
 
 @end
 

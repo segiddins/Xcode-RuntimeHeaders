@@ -15,7 +15,8 @@
 
 - (void).cxx_destruct;
 - (void)_forgetItems:(id)arg1;
-- (void)_performFilterEvaluationOf:(id)arg1;
+- (void)_performFilterEvaluationOfRepresentedObject:(id)arg1;
+- (void)_performFilterEvaluationOfItem:(id)arg1;
 - (void)primitiveInvalidate;
 - (id)init;
 

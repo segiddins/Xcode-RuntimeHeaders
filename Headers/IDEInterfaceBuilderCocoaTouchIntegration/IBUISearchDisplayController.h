@@ -13,23 +13,25 @@
 
 @interface IBUISearchDisplayController : NSObject <IBDocumentArchiving, NSCoding>
 {
-    IBCocoaTouchTargetRuntime *targetRuntime;
-    NSString *searchResultsTitle;
+    NSString *_searchResultsTitle;
+    IBCocoaTouchTargetRuntime *_targetRuntime;
 }
 
 + (id)instantiateWithDocumentUnarchiver:(id)arg1;
-@property(copy) NSString *searchResultsTitle; // @synthesize searchResultsTitle;
+@property(retain) IBCocoaTouchTargetRuntime *targetRuntime; // @synthesize targetRuntime=_targetRuntime;
+@property(copy) NSString *searchResultsTitle; // @synthesize searchResultsTitle=_searchResultsTitle;
 - (void).cxx_destruct;
 - (id)runtimeClassNameForContext:(id)arg1 returningOptionalFallbackClassName:(id *)arg2;
 - (Class)classToTakeInitialMarshalledKeysFrom:(id)arg1;
-- (void)setTargetRuntime:(id)arg1;
-- (id)targetRuntime;
-- (id)init;
-- (id)initWithTargetRuntime:(id)arg1;
-- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
-- (void)archiveWithDocumentArchiver:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)init;
+- (id)initWithTargetRuntime:(id)arg1;
+- (void)ibPopulateIssues:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
+- (id)ibLocalLocalizableStringsAttributeKeyPaths;
+- (id)ibLocalAttributeKeyPaths;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

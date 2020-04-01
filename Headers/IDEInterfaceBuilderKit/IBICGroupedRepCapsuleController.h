@@ -10,12 +10,14 @@
 #import <IDEInterfaceBuilderKit/IBICCatalogItemObserver-Protocol.h>
 #import <IDEInterfaceBuilderKit/IBICGroupedRepCapsuleDelegate-Protocol.h>
 
-@class NSString;
+@class DVTNotificationToken, NSString;
 
 @interface IBICGroupedRepCapsuleController : IBICAssetOverviewCapsuleController <IBICAssetRepViewDelegate, IBICGroupedRepCapsuleDelegate, IBICCatalogItemObserver>
 {
+    DVTNotificationToken *_warningsChangedToken;
 }
 
+- (void).cxx_destruct;
 - (BOOL)view:(id)arg1 performDragOperation:(id)arg2;
 - (void)chooseDropTarget:(id *)arg1 acceptedType:(long long *)arg2 andAllowedDragOperations:(unsigned long long *)arg3 forDraggingInfo:(id)arg4;
 - (void)removeExistingItemBeforeAcceptingPasteboardContentIntoComponentWithID:(id)arg1;
@@ -29,6 +31,7 @@
 - (id)prepareToDropItem:(id)arg1 ontoExistingItem:(id)arg2 context:(id)arg3;
 - (Class)secondaryItemClassForPasteboardOperationsTargetingDropLocation:(id)arg1;
 - (Class)primaryItemClassForPasteboardOperationsTargetingDropLocation:(id)arg1;
+- (BOOL)isValidToDropColorOnComponentWithID:(id)arg1;
 - (id)imagesForForDropLocation:(id)arg1 fromPasteboard:(id)arg2;
 - (id)suggestedAssetComponentIDForDraggedAssetComponent:(id)arg1 context:(id)arg2;
 - (BOOL)canProduceImageForPasteboard:(id)arg1 forFileTypesForDropLocation:(id)arg2;
@@ -51,6 +54,8 @@
 - (id)groupedRepCapsule:(id)arg1 detailAreaPathForIdentifier:(id)arg2;
 - (void)removeAssetComponentIDsFromUIImmediately:(id)arg1;
 - (id)assetCapsule;
+- (void)primitiveInvalidate;
+- (id)initWithDocument:(id)arg1 andAsset:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

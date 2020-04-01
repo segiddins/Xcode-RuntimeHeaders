@@ -12,6 +12,7 @@
     unsigned int _numReasons;
 }
 
++ (BOOL)supportsSecureCoding;
 @property(readonly, nonatomic) unsigned int numReasons; // @synthesize numReasons=_numReasons;
 @property(readonly, nonatomic) unsigned int punchThroughReasons; // @synthesize punchThroughReasons=_punchThroughReasons;
 - (BOOL)isTextureImageCompletelyUpdated;

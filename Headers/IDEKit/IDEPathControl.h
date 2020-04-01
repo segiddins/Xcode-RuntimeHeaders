@@ -15,30 +15,30 @@
     NSString *_menuDefinitionIdentifier;
 }
 
++ (double)iconTitleSpacing;
++ (struct CGSize)iconSize;
 + (Class)cellClass;
 + (unsigned long long)defaultFocusRingType;
 + (void)initialize;
 @property(copy) NSString *menuDefinitionIdentifier; // @synthesize menuDefinitionIdentifier=_menuDefinitionIdentifier;
 - (void).cxx_destruct;
 - (id)accessibilityPopUpMenuParent:(id)arg1;
-- (struct CGSize)sizeWanted;
+@property(readonly) struct CGSize sizeWanted;
 - (void)viewWillMoveToWindow:(id)arg1;
 - (void)popUpMenuForComponentCell:(id)arg1;
 - (void)_popUpMenuForComponentCell:(id)arg1;
 - (void)rightMouseDown:(id)arg1;
 - (id)menuForEvent:(id)arg1;
-- (struct CGRect)grabRect;
+@property(readonly) struct CGRect grabRect;
 - (void)setFont:(id)arg1;
 @property BOOL lastComponentFillsWidth;
-@property int borderSides;
-- (BOOL)isOpaque;
 @property int gradientStyle;
 - (void)primitiveInvalidate;
 - (id)outputSelection;
 - (void)updateBoundContent;
-- (void)updateBoundSelectedNavigableItem;
+- (void)updateBoundSelectedItem;
 - (void)setDelegate:(id)arg1;
-- (id)dvtExtraBindings;
+- (id)dvt_extraBindings;
 - (void)setCell:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 

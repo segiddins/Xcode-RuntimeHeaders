@@ -21,6 +21,9 @@
 @property(retain) id <IDETestReport_TestGroup> testGroup; // @synthesize testGroup=_testGroup;
 @property __weak NSButton *jumpButton; // @synthesize jumpButton=_jumpButton;
 - (void).cxx_destruct;
+- (void)resizeSubviewsWithOldSize:(struct CGSize)arg1;
+- (void)viewDidMoveToSuperview;
+- (void)fitViews;
 - (void)testsChanged:(id)arg1;
 - (void)allTestablesChanged;
 - (void)testablesChanged:(id)arg1;

@@ -15,6 +15,7 @@
 
 @property(copy) NSString *testCaseName; // @synthesize testCaseName=_testCaseName;
 - (void).cxx_destruct;
+- (id)stringSignature;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)updateWithDictionaryRepresentation:(id)arg1;

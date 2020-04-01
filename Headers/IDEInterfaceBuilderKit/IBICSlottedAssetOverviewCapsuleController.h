@@ -20,8 +20,10 @@
 - (id)inferredComponentIDsForPaths:(id)arg1;
 - (id)prepareConvertedCopyOfDroppedFallbackItem:(id)arg1 toReplaceExistingItem:(id)arg2 context:(id)arg3 targetDropLocation:(id *)arg4;
 - (id)prepareToDropItem:(id)arg1 ontoExistingItem:(id)arg2 context:(id)arg3;
+- (id)suggestedAssetComponentIDForDraggedAssetComponent:(id)arg1 context:(id)arg2;
 - (Class)secondaryItemClassForPasteboardOperationsTargetingDropLocation:(id)arg1;
 - (Class)primaryItemClassForPasteboardOperationsTargetingDropLocation:(id)arg1;
+- (BOOL)isValidToDropColorOnComponentWithID:(id)arg1;
 - (id)imagesForForDropLocation:(id)arg1 fromPasteboard:(id)arg2;
 - (BOOL)canProduceImageForPasteboard:(id)arg1 forFileTypesForDropLocation:(id)arg2;
 - (BOOL)isValidPath:(id)arg1 forDroppingOnComponentWithID:(id)arg2;

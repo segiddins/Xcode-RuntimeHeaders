@@ -17,12 +17,16 @@
 }
 
 + (id)itemWithIdentifier:(id)arg1 fileNameComponent:(id)arg2 title:(id)arg3 platform:(id)arg4 marketingVersion:(id)arg5 displayOrder:(double)arg6;
++ (id)displayName;
 + (id)contentsJSONKey;
++ (id)unspecifiedValuePlaceholder;
 + (void)setComponentID:(long long)arg1;
 + (long long)componentID;
 @property(readonly) NSString *marketingVersion; // @synthesize marketingVersion=_marketingVersion;
 @property(readonly) NSString *platform; // @synthesize platform=_platform;
 - (void).cxx_destruct;
+- (void)encodeWithBinaryArchiver:(id)arg1;
+- (id)initWithBinaryUnarchiver:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isEqualToSlotComponentCounterpartWithKnownEqualClass:(id)arg1;

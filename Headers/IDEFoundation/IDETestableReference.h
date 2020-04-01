@@ -7,48 +7,74 @@
 #import <objc/NSObject.h>
 
 #import <IDEFoundation/DVTXMLUnarchiving-Protocol.h>
-#import <IDEFoundation/IDETestingSpecifier-Protocol.h>
+#import <IDEFoundation/_TtP13IDEFoundation36IDETestPlanTestableReferenceProtocol_-Protocol.h>
 
-@class DVTObservingToken, IDEDeviceAppDataReference, IDELocationScenarioReference, IDEScheme, IDESchemeBuildableReference, NSArray, NSMutableArray, NSSet, NSString;
+@class DVTObservingToken, IDEScheme, IDESchemeBuildableReference, NSMutableSet, NSSet, NSString, _TtC13IDEFoundation25IDEDeviceAppDataReference, _TtC13IDEFoundation28IDELocationScenarioReference;
 @protocol IDETestable;
 
-@interface IDETestableReference : NSObject <IDETestingSpecifier, DVTXMLUnarchiving>
+@interface IDETestableReference : NSObject <_TtP13IDEFoundation36IDETestPlanTestableReferenceProtocol_, DVTXMLUnarchiving>
 {
-    id <IDETestable> _testable;
     DVTObservingToken *_testableObservingToken;
     IDESchemeBuildableReference *_buildableReference;
-    NSMutableArray *_mutableSkippedTests;
-    IDEDeviceAppDataReference *_deviceAppDataReference;
-    IDELocationScenarioReference *_locationScenarioReference;
+    NSMutableSet *_mutableSelectedTests;
+    NSMutableSet *_mutableSkippedTests;
+    _TtC13IDEFoundation25IDEDeviceAppDataReference *_deviceAppDataReference;
+    _TtC13IDEFoundation28IDELocationScenarioReference *_locationScenarioReference;
     BOOL _skipped;
+    BOOL _parallelizable;
+    BOOL _associatedWithSchemeAction;
+    id <IDETestable> _testable;
+    long long _testSelectionMode;
+    long long _testExecutionOrdering;
 }
 
++ (id)_sortedTestIdentifierWrappersForTestIdentifiers:(id)arg1;
 + (id)keyPathsForValuesAffectingScheme;
 + (id)_testableForBuildableReference:(id)arg1;
-@property(retain) IDELocationScenarioReference *locationScenarioReference; // @synthesize locationScenarioReference=_locationScenarioReference;
-@property(retain) IDEDeviceAppDataReference *deviceAppDataReference; // @synthesize deviceAppDataReference=_deviceAppDataReference;
+@property long long testExecutionOrdering; // @synthesize testExecutionOrdering=_testExecutionOrdering;
+@property(getter=isAssociatedWithSchemeAction) BOOL associatedWithSchemeAction; // @synthesize associatedWithSchemeAction=_associatedWithSchemeAction;
+@property BOOL parallelizable; // @synthesize parallelizable=_parallelizable;
+@property(retain) _TtC13IDEFoundation28IDELocationScenarioReference *locationScenarioReference; // @synthesize locationScenarioReference=_locationScenarioReference;
+@property(retain) _TtC13IDEFoundation25IDEDeviceAppDataReference *deviceAppDataReference; // @synthesize deviceAppDataReference=_deviceAppDataReference;
 @property BOOL skipped; // @synthesize skipped=_skipped;
 @property(readonly) IDESchemeBuildableReference *buildableReference; // @synthesize buildableReference=_buildableReference;
 - (void).cxx_destruct;
-@property(readonly, copy) NSSet *adHocTests;
+- (void)gatherEnabledTestsInTreeOfTest:(id)arg1 intoWhitelist:(id)arg2;
+- (void)convertBlacklistToWhitelist;
+- (BOOL)testContainer:(id)arg1 shouldBeInBlacklistCollectingBlacklistForSubtree:(id)arg2;
+- (void)convertWhitelistToBlacklist;
+- (BOOL)_isTestOrAnyDescendantEnabled:(id)arg1;
+- (BOOL)isTestEnabledInHierarchy:(id)arg1;
 - (void)disableTest:(id)arg1;
 - (void)enableTest:(id)arg1;
-@property(readonly, copy) NSArray *skippedTests;
+- (BOOL)isTestEnabled:(id)arg1;
+- (void)_disableIndividualTest:(id)arg1;
+- (void)_enableIndividualTest:(id)arg1;
+@property(readonly, copy) NSSet *selectedTests;
+@property(readonly, copy) NSSet *skippedTests;
+- (void)setUseTestSelectionWhitelistFromUTF8String:(char *)arg1 fromXMLUnarchiver:(id)arg2;
+- (void)setTestExecutionOrderingFromUTF8String:(char *)arg1 fromXMLUnarchiver:(id)arg2;
+- (void)setParallelizableFromUTF8String:(char *)arg1 fromXMLUnarchiver:(id)arg2;
 - (void)setSkippedFromUTF8String:(char *)arg1 fromXMLUnarchiver:(id)arg2;
 - (void)addLocationScenarioReference:(id)arg1 fromXMLUnarchiver:(id)arg2;
 - (void)addDeviceAppData:(id)arg1 fromXMLUnarchiver:(id)arg2;
 - (void)addBuildableReference:(id)arg1 fromXMLUnarchiver:(id)arg2;
+- (void)addSelectedTests:(id)arg1 fromXMLUnarchiver:(id)arg2;
 - (void)addSkippedTests:(id)arg1 fromXMLUnarchiver:(id)arg2;
 - (void)dvt_encodeRelationshipsWithXMLArchiver:(id)arg1 version:(id)arg2;
 - (void)dvt_encodeAttributesWithXMLArchiver:(id)arg1 version:(id)arg2;
 - (id)initFromXMLUnarchiver:(id)arg1 archiveVersion:(float)arg2;
+@property long long testSelectionMode; // @synthesize testSelectionMode=_testSelectionMode;
 @property(retain) IDEScheme *scheme;
 - (void)resolveBuildableFromImport;
 - (id)testableName;
-- (id)testable;
+@property(readonly) id <IDETestable> testable; // @synthesize testable=_testable;
 @property(readonly, copy) NSString *description;
-- (id)init;
+- (id)initForTestingWithTestable:(id)arg1;
+- (id)initWithBuildableReference:(id)arg1 skippedTests:(id)arg2 selectedTests:(id)arg3 testSelectionMode:(long long)arg4;
 - (id)initWithTestable:(id)arg1 scheme:(id)arg2;
+- (void)commonInit;
+@property(nonatomic, readonly) BOOL isEnabled;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

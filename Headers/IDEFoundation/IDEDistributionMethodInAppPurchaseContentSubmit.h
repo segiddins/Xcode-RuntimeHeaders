@@ -10,11 +10,12 @@
 {
 }
 
-- (id)orderedDistributionStepClassNames;
+- (id)orderedDistributionStepClassNamesForDestination:(long long)arg1;
 - (id)shortTitle;
 - (id)subtitle;
 - (id)title;
-- (int)supportedTask;
+- (id)supportedDestinations;
+- (long long)supportedTask;
 - (double)sortOrder;
 
 @end

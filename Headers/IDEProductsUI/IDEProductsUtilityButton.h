@@ -8,9 +8,11 @@
 
 @interface IDEProductsUtilityButton : NSButton
 {
+    BOOL _blueHighlight;
 }
 
 + (Class)cellClass;
+@property BOOL blueHighlight; // @synthesize blueHighlight=_blueHighlight;
 
 @end
 

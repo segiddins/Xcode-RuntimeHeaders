@@ -6,22 +6,57 @@
 
 #import <IDEKit/IDEInspectorProperty.h>
 
-@class DBGImageInspectorPropertyView, IDEInspectorKeyPath, NSTextField;
+@class IDEInspectorKeyPath, NSBox, NSImageView, NSLayoutConstraint, NSTextField, NSView;
 
 @interface DBGImageInspectorProperty : IDEInspectorProperty
 {
     IDEInspectorKeyPath *_valueKeyPath;
-    NSTextField *_textField;
-    DBGImageInspectorPropertyView *_imageView;
+    NSTextField *_nameTextField;
+    NSView *_imageViewContainer;
+    NSView *_imageLinesContainerView;
+    NSImageView *_imageView;
+    NSTextField *_baselineOffsetTextField;
+    NSTextField *_midlineOffsetTextField;
+    NSView *_tagContainerView;
+    NSTextField *_tagTextField;
+    NSTextField *_symbolConfigurationTextField;
+    NSBox *_imageMidlineView;
+    NSBox *_imageBaselineView;
+    NSLayoutConstraint *_imageBaselineConstraint;
+    NSLayoutConstraint *_imageMidlineConstraint;
+    NSLayoutConstraint *_imageViewRatioConstraint;
 }
 
-@property __weak DBGImageInspectorPropertyView *imageView; // @synthesize imageView=_imageView;
-@property __weak NSTextField *textField; // @synthesize textField=_textField;
+@property __weak NSLayoutConstraint *imageViewRatioConstraint; // @synthesize imageViewRatioConstraint=_imageViewRatioConstraint;
+@property __weak NSLayoutConstraint *imageMidlineConstraint; // @synthesize imageMidlineConstraint=_imageMidlineConstraint;
+@property __weak NSLayoutConstraint *imageBaselineConstraint; // @synthesize imageBaselineConstraint=_imageBaselineConstraint;
+@property __weak NSBox *imageBaselineView; // @synthesize imageBaselineView=_imageBaselineView;
+@property __weak NSBox *imageMidlineView; // @synthesize imageMidlineView=_imageMidlineView;
+@property __weak NSTextField *symbolConfigurationTextField; // @synthesize symbolConfigurationTextField=_symbolConfigurationTextField;
+@property __weak NSTextField *tagTextField; // @synthesize tagTextField=_tagTextField;
+@property __weak NSView *tagContainerView; // @synthesize tagContainerView=_tagContainerView;
+@property __weak NSTextField *midlineOffsetTextField; // @synthesize midlineOffsetTextField=_midlineOffsetTextField;
+@property __weak NSTextField *baselineOffsetTextField; // @synthesize baselineOffsetTextField=_baselineOffsetTextField;
+@property __weak NSImageView *imageView; // @synthesize imageView=_imageView;
+@property __weak NSView *imageLinesContainerView; // @synthesize imageLinesContainerView=_imageLinesContainerView;
+@property __weak NSView *imageViewContainer; // @synthesize imageViewContainer=_imageViewContainer;
+@property __weak NSTextField *nameTextField; // @synthesize nameTextField=_nameTextField;
 - (void).cxx_destruct;
+- (struct CGSize)_sizeWithExtendedImage:(id)arg1;
+- (id)_symbolConfigurationStringWithExtendedImage:(id)arg1;
+- (id)_imageMidlineOffsetWithExtendedImage:(id)arg1;
+- (id)_imageBaselineOffsetWithExtendedImage:(id)arg1;
+- (id)_tagStringForExtendedImage:(id)arg1;
+- (id)_imageNameForExtendedImage:(id)arg1;
+- (void)_copyImageToClipboard:(id)arg1;
 - (void)setupRefreshTriggersAndConfigure;
 - (double)baseline;
+- (double)heightWithExtendedImage:(id)arg1;
 - (void)_adjustHeightTo:(double)arg1;
+- (void)_setupTagTextField;
+- (void)_setupImageViewWithExtendedImage:(id)arg1;
 - (void)refresh;
+- (void)viewDidLoad;
 
 @end
 

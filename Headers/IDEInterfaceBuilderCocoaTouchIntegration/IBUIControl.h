@@ -7,31 +7,29 @@
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBUIView.h>
 
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBDocumentArchiving-Protocol.h>
-#import <IDEInterfaceBuilderCocoaTouchIntegration/NSCoding-Protocol.h>
 
 @class NSString;
 
-@interface IBUIControl : IBUIView <IBDocumentArchiving, NSCoding>
+@interface IBUIControl : IBUIView <IBDocumentArchiving>
 {
-    BOOL enabled;
-    BOOL highlighted;
-    BOOL selected;
-    int contentVerticalAlignment;
-    int contentHorizontalAlignment;
+    BOOL _enabled;
+    BOOL _highlighted;
+    BOOL _selected;
+    int _contentVerticalAlignment;
+    long long _contentHorizontalAlignment;
 }
 
 + (long long)ibInstantiationSizeBehavior;
-@property(nonatomic) int contentVerticalAlignment; // @synthesize contentVerticalAlignment;
-@property(nonatomic) int contentHorizontalAlignment; // @synthesize contentHorizontalAlignment;
-@property(nonatomic) BOOL selected; // @synthesize selected;
-@property(nonatomic) BOOL highlighted; // @synthesize highlighted;
-@property(nonatomic) BOOL enabled; // @synthesize enabled;
-- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
-- (void)archiveWithDocumentArchiver:(id)arg1;
+@property(nonatomic) int contentVerticalAlignment; // @synthesize contentVerticalAlignment=_contentVerticalAlignment;
+@property(nonatomic) long long contentHorizontalAlignment; // @synthesize contentHorizontalAlignment=_contentHorizontalAlignment;
+@property(nonatomic) BOOL selected; // @synthesize selected=_selected;
+@property(nonatomic) BOOL highlighted; // @synthesize highlighted=_highlighted;
+@property(nonatomic) BOOL enabled; // @synthesize enabled=_enabled;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (void)ibPopulateIssues:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
 - (void)ibSetupTriggerForSegueTemplate:(id)arg1 inCompilationUnit:(id)arg2;
-- (long long)ibPreferredResizeDirection;
+- (long long)ibPreferredResizeDirectionMask;
 - (BOOL)ibIsBaselineAtIndex:(long long)arg1 inMotionWithKnob:(CDUnion_42e99c75)arg2;
 - (id)ibSegueTriggers;
 - (id)ibDefaultSegueTrigger;
@@ -39,6 +37,10 @@
 - (BOOL)ibCanBeTableViewBracketingView;
 - (BOOL)ibSupportsInsertionIntoBarButtonItems;
 - (id)ibFieldEditorConfigurationForTextKeyPath:(id)arg1;
+- (id)ibLocalLocalizableGeometryAttributeKeyPaths;
+- (id)ibLocalAttributeKeyPaths;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -6,17 +6,24 @@
 
 #import <DVTFoundation/DVTDeveloperAccount.h>
 
+@class DVTSigningCertificate;
+
 @interface DVTCertBasedDeveloperAccount : DVTDeveloperAccount
 {
-    struct OpaqueSecIdentityRef *_identity;
+    struct __SecIdentity *_identity;
+    DVTSigningCertificate *_certificate;
 }
 
-+ (id)accountWithIdentity:(struct OpaqueSecIdentityRef *)arg1;
++ (id)accountWithIdentity:(struct __SecIdentity *)arg1;
+- (void).cxx_destruct;
 - (id)_sessionByLoggingIn:(id *)arg1;
-- (_Bool)isCertBased;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
-- (struct OpaqueSecIdentityRef *)identity;
+- (id)username;
+- (BOOL)isCertBased;
+- (struct __SecIdentity *)identity;
+- (id)certSerialNumber;
+- (id)certCommonName;
 - (void)dealloc;
 
 @end

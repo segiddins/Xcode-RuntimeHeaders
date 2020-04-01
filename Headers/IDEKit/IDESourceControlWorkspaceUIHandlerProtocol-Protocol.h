@@ -11,9 +11,6 @@
 @protocol IDESourceControlWorkspaceUIHandlerProtocol <NSObject>
 - (void)requestOperationConfirmationForOperationName:(NSString *)arg1 workingCopyName:(NSArray *)arg2 completionBlock:(void (^)(BOOL))arg3;
 - (void)workspaceMonitorDidFinishScanning:(IDESourceControlWorkspaceMonitor *)arg1;
-- (void)offerAdditionalWorkingCopies;
 - (void)warnAboutNewerRepositoryVersionWithError:(NSError *)arg1;
-- (void)askToShareNewWorkingCopies:(NSArray *)arg1;
-- (void)didFindUpgradableWorkingCopy;
 @end
 

@@ -6,11 +6,11 @@
 
 #import <objc/NSObject.h>
 
-#import <DVTInstrumentsFoundation/NSCoding-Protocol.h>
+#import <DVTInstrumentsFoundation/NSSecureCoding-Protocol.h>
 
 @class NSMutableArray;
 
-@interface XRVMState : NSObject <NSCoding>
+@interface XRVMState : NSObject <NSSecureCoding>
 {
     unsigned long long _machAbsolute;
     unsigned long long _traceRelative;
@@ -27,6 +27,7 @@
 
 + (id)currentStateForTask:(unsigned int)arg1 pid:(int)arg2 previousState:(id)arg3 dehydratedDiffVersion:(BOOL)arg4;
 + (void)initialize;
++ (BOOL)supportsSecureCoding;
 - (void).cxx_destruct;
 - (id)summaryRegionsWithOptions:(int)arg1;
 - (id)regionsWithOptions:(int)arg1;

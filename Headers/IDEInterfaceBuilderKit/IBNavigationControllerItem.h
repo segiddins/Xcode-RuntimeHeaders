@@ -14,7 +14,6 @@
 {
     BOOL _wantsNavigationBar;
     BOOL _automaticallyInvalidatesWhenPopping;
-    BOOL _invalidateViewControllerWhenInvalidating;
     IDEViewController *_viewController;
     NSString *_explicitCurrentTitle;
     NSString *_explicitBackTitle;
@@ -23,12 +22,11 @@
 + (id)keyPathsForValuesAffectingEffectiveBackTitle;
 + (id)keyPathsForValuesAffectingEffectiveCurrentTitle;
 + (void)initialize;
-@property(nonatomic) BOOL invalidateViewControllerWhenInvalidating; // @synthesize invalidateViewControllerWhenInvalidating=_invalidateViewControllerWhenInvalidating;
 @property(nonatomic) BOOL automaticallyInvalidatesWhenPopping; // @synthesize automaticallyInvalidatesWhenPopping=_automaticallyInvalidatesWhenPopping;
 @property(copy, nonatomic) NSString *explicitBackTitle; // @synthesize explicitBackTitle=_explicitBackTitle;
 @property(copy, nonatomic) NSString *explicitCurrentTitle; // @synthesize explicitCurrentTitle=_explicitCurrentTitle;
 @property(nonatomic) BOOL wantsNavigationBar; // @synthesize wantsNavigationBar=_wantsNavigationBar;
-@property(retain, nonatomic) IDEViewController *viewController; // @synthesize viewController=_viewController;
+@property(readonly, nonatomic) __weak IDEViewController *viewController; // @synthesize viewController=_viewController;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *effectiveBackTitle;
 @property(readonly, nonatomic) NSString *effectiveCurrentTitle;

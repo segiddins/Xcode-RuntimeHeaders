@@ -6,12 +6,14 @@
 
 #import <Xcode3UI/NSObject-Protocol.h>
 
-@class IDECapsuleView, NSArray, NSColor, NSString, NSView;
+@class IDECapsuleView, NSArray, NSString, NSView;
 @protocol NSDraggingInfo;
 
 @protocol IDECapsuleViewDelegate <NSObject>
 
 @optional
+- (NSString *)toolTipForRemoveButton;
+- (NSString *)toolTipForAddButton;
 - (void)capsuleView:(IDECapsuleView *)arg1 wasDisclosed:(BOOL)arg2;
 - (double)contentOriginXOffsetForCapsuleView:(IDECapsuleView *)arg1;
 - (double)capsuleView:(IDECapsuleView *)arg1 preferredContentViewWidthForCapsuleWidth:(double)arg2;
@@ -20,8 +22,6 @@
 - (BOOL)capsuleViewCanBeRemoved:(IDECapsuleView *)arg1;
 - (BOOL)allowCustomContentHeaderViewToDriveHeaderHeight:(IDECapsuleView *)arg1;
 - (double)capsuleViewSidePadding:(IDECapsuleView *)arg1;
-- (NSColor *)capsuleViewBorderColor:(IDECapsuleView *)arg1;
-- (NSColor *)capsuleViewBackgroundColor:(IDECapsuleView *)arg1;
 - (void)capsuleView:(IDECapsuleView *)arg1 setTitle:(NSString *)arg2;
 - (NSString *)capsuleViewTitleForEditing:(IDECapsuleView *)arg1;
 - (BOOL)capsuleViewCanBeRenamed:(IDECapsuleView *)arg1;

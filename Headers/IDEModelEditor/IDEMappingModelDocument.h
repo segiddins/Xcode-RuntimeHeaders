@@ -16,7 +16,7 @@
     NSString *_mappingModelPath;
 }
 
-+ (id)keyPathsForValuesAffectingValueForKey:(id)arg1;
++ (id)keyPathsForValuesAffectingIdeTopLevelStructureObjects;
 + (id)wrapperByCopyingContentsAtPath:(id)arg1 error:(id *)arg2;
 @property(retain) XDMappingModelManager *modelManager; // @synthesize modelManager=_modelManager;
 - (void).cxx_destruct;

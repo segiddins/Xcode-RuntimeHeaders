@@ -13,8 +13,8 @@
     NSString *_path;
 }
 
+- (void).cxx_destruct;
 - (id)path;
-- (void)dealloc;
 
 @end
 

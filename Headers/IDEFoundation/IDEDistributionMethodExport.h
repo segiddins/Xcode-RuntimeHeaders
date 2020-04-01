@@ -10,9 +10,9 @@
 {
 }
 
-- (BOOL)requiresDeveloperAccount;
 - (BOOL)isAppStoreBound;
-- (int)supportedTask;
+- (id)supportedDestinations;
+- (long long)supportedTask;
 
 @end
 

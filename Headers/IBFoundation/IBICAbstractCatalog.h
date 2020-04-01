@@ -6,8 +6,13 @@
 
 #import <IBFoundation/IBICFolder.h>
 
-@interface IBICAbstractCatalog : IBICFolder
+#import <IBFoundation/IBICActivityReportingDelegate-Protocol.h>
+
+@protocol IBICActivityReportingDelegate;
+
+@interface IBICAbstractCatalog : IBICFolder <IBICActivityReportingDelegate>
 {
+    id <IBICActivityReportingDelegate> _activityReportingDelegate;
 }
 
 + (id)contentReferenceTypeName;
@@ -15,10 +20,16 @@
 + (id)catalogItemFileExtension;
 + (id)classNameComponents;
 + (id)createDefaultInstancesForUnitTesting;
+@property __weak id <IBICActivityReportingDelegate> activityReportingDelegate; // @synthesize activityReportingDelegate=_activityReportingDelegate;
+- (void).cxx_destruct;
+- (void)activityDidEndForItem:(id)arg1;
+- (void)activityDidUpdateForItem:(id)arg1;
+- (void)activityDidStartForItem:(id)arg1;
 - (id)classesForImportingLooseFilesInImportOrder;
 - (BOOL)shouldShowSuggestionSetsForBundleIcons;
 - (CDStruct_550fdc95)taggingSupport;
 - (void)replaceChildrenWithDiskContent:(id)arg1;
+- (id)allColorSets;
 - (id)allIconSets;
 - (id)allImageSets;
 - (id)catalog;

@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <GPURenderTargetEditor/GPURenderJob.h>
+#import <GPUDebugger/GPURenderJob.h>
 
 @protocol DYPEnumUtils;
 
@@ -12,25 +12,16 @@ __attribute__((visibility("hidden")))
 @interface GPUMTLRenderJob : GPURenderJob
 {
     id <DYPEnumUtils> _enumUtils;
-    unsigned long long _selectedLevel;
-    unsigned long long _selectedSlice;
     unsigned long long _attachmentIndex;
 }
 
 @property(readonly, nonatomic) unsigned long long attachmentIndex; // @synthesize attachmentIndex=_attachmentIndex;
-@property(nonatomic) unsigned long long selectedSlice; // @synthesize selectedSlice=_selectedSlice;
-@property(nonatomic) unsigned long long selectedLevel; // @synthesize selectedLevel=_selectedLevel;
 - (void).cxx_destruct;
-- (BOOL)showOverlay;
-- (void)setRenderingAttributes:(id)arg1;
-- (struct CGSize)imageSize;
-- (BOOL)isColor;
-- (BOOL)flipped;
 - (id)displayElementName;
 - (BOOL)isStencilDisplayElement;
 - (BOOL)isDepthDisplayElement;
-- (void)resolveWithTraceResourceItem:(id)arg1;
-- (id)initWithResource:(id)arg1 modelFactory:(id)arg2 attachmentIndex:(unsigned long long)arg3 overlayResource:(id)arg4 framebuffer:(id)arg5;
+- (id)initWithItem:(id)arg1 resource:(id)arg2 overlayResources:(id)arg3 modelFactory:(id)arg4 textureImageGroupComponent:(unsigned long long)arg5;
+- (id)initWithResource:(id)arg1 overlayResources:(id)arg2 modelFactory:(id)arg3 attachmentIndex:(unsigned long long)arg4 renderTargetArrayIndex:(unsigned long long)arg5 framebuffer:(id)arg6;
 
 @end
 

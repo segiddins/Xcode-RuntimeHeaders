@@ -7,6 +7,7 @@
 #import <objc/NSObject.h>
 
 @class DVTFilePath, IDEActivityLogSection, IDEBuildParameters, IDEExecutionEnvironment, IDEScheme, NSArray;
+@protocol IDEBuildOperationClientInfo;
 
 @interface IDEBuildOperationConfiguration : NSObject
 {
@@ -14,15 +15,17 @@
     BOOL _dontActuallyRunCommands;
     BOOL _buildImplicitDependencies;
     BOOL _restorePersistedBuildResults;
-    int _buildCommand;
+    long long _buildCommand;
     IDEBuildParameters *_buildParameters;
     IDEExecutionEnvironment *_executionEnvironment;
     DVTFilePath *_singleFileToBuild;
     IDEActivityLogSection *_buildLog;
     NSArray *_buildables;
     IDEScheme *_scheme;
+    id <IDEBuildOperationClientInfo> _clientInfo;
 }
 
+@property(retain) id <IDEBuildOperationClientInfo> clientInfo; // @synthesize clientInfo=_clientInfo;
 @property(retain, nonatomic) IDEScheme *scheme; // @synthesize scheme=_scheme;
 @property(retain, nonatomic) NSArray *buildables; // @synthesize buildables=_buildables;
 @property(nonatomic) BOOL restorePersistedBuildResults; // @synthesize restorePersistedBuildResults=_restorePersistedBuildResults;
@@ -33,9 +36,9 @@
 @property(retain, nonatomic) DVTFilePath *singleFileToBuild; // @synthesize singleFileToBuild=_singleFileToBuild;
 @property(retain, nonatomic) IDEExecutionEnvironment *executionEnvironment; // @synthesize executionEnvironment=_executionEnvironment;
 @property(retain, nonatomic) IDEBuildParameters *buildParameters; // @synthesize buildParameters=_buildParameters;
-@property(nonatomic) int buildCommand; // @synthesize buildCommand=_buildCommand;
+@property(nonatomic) long long buildCommand; // @synthesize buildCommand=_buildCommand;
 - (void).cxx_destruct;
-- (id)initWithBuildCommand:(int)arg1 buildParameters:(id)arg2 executionEnvironment:(id)arg3 singleFileToBuild:(id)arg4 buildLog:(id)arg5 parallelizeBuildables:(BOOL)arg6 dontActuallyRunCommands:(BOOL)arg7 buildImplicitDependencies:(BOOL)arg8 restorePersistedBuildResults:(BOOL)arg9;
+- (id)initWithBuildCommand:(long long)arg1 buildParameters:(id)arg2 executionEnvironment:(id)arg3 singleFileToBuild:(id)arg4 buildLog:(id)arg5 parallelizeBuildables:(BOOL)arg6 dontActuallyRunCommands:(BOOL)arg7 buildImplicitDependencies:(BOOL)arg8 restorePersistedBuildResults:(BOOL)arg9;
 
 @end
 

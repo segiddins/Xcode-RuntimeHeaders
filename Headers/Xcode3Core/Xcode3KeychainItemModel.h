@@ -6,25 +6,22 @@
 
 #import <IDEFoundation/IDEProjectItemModel.h>
 
-@class NSArray;
+@class NSArray, NSString;
 
 @interface Xcode3KeychainItemModel : IDEProjectItemModel
 {
     NSArray *_keychainAccessGroups;
 }
 
++ (id)coalescableReadOnlyKeyPaths;
 @property(copy, nonatomic) NSArray *keychainAccessGroups; // @synthesize keychainAccessGroups=_keychainAccessGroups;
 - (void).cxx_destruct;
+- (id)coalescableWriteableKeyPathToDataSource;
 - (BOOL)isEnabledUsingEducatedGuess;
 - (id)flightChecks;
-- (void)modelWasDisabled;
-- (void)modelWasEnabledWithContext:(id)arg1;
-- (id)defaultKeychainAccessGroups;
-- (id)defaultKeychainAccessGroup;
-- (void)_setKeychainAccessGroups:(id)arg1 postAssignmentBlock:(CDUnknownBlockType)arg2;
+@property(readonly) NSString *defaultKeychainAccessGroup;
 - (void)targetCoordinatorsChanged:(id)arg1;
 - (void)readValuesFromEntitlements;
-- (void)primitiveInvalidate;
 - (id)initWithCapabilitiesContext:(id)arg1 item:(id)arg2;
 
 @end

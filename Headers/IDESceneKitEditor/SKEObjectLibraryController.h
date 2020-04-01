@@ -22,15 +22,13 @@
 - (id)createLibraryAssetWithRepresentedObject:(id)arg1 title:(id)arg2 subtitle:(id)arg3 summary:(id)arg4 imageName:(id)arg5 bundleClass:(Class)arg6;
 - (void)reloadObjectLibrary;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (void)activeEditorDocumentDidChange:(id)arg1;
-- (BOOL)createAsset:(id *)arg1 forLibrarySourceWithIdentifier:(id *)arg2 fromPasteboard:(id)arg3;
+- (void)activeEditorDidChange:(id)arg1;
+- (id)insertAssetFromPasteboard:(id)arg1;
 - (void)populatePasteboard:(id)arg1 withAssets:(id)arg2;
-- (BOOL)canCreateAssetsFromPasteboard:(id)arg1 targetingLibrarySourceIdentifier:(id *)arg2;
+- (BOOL)canCreateAssetsFromPasteboard:(id)arg1;
 - (id)readableAssetPasteboardTypes;
 - (BOOL)removeAssets:(id)arg1 error:(id *)arg2;
 - (BOOL)canRemoveAsset:(id)arg1;
-- (void)userDidEditAsset:(id)arg1;
-- (id)editorViewControllerForAsset:(id)arg1;
 - (BOOL)canEditAsset:(id)arg1;
 - (void)libraryDidLoad;
 

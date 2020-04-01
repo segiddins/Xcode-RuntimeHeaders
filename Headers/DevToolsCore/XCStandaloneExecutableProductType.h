@@ -10,10 +10,10 @@
 {
 }
 
-- (void)changePermissionsOnProductInTargetBuildContext:(id)arg1;
-- (void)copyAsideProductInTargetBuildContext:(id)arg1;
-- (void)computeProductDependenciesInTargetBuildContext:(id)arg1;
-- (BOOL)_willProduceExecutableProductInTargetBuildContext:(id)arg1;
+- (void)changePermissionsOnProductWithMacroExpansionScope:(id)arg1;
+- (void)copyAsideProductWithMacroExpansionScope:(id)arg1;
+- (void)computeProductDependenciesWithMacroExpansionScope:(id)arg1;
+- (BOOL)_willProduceExecutableProductWithMacroExpansionScope:(id)arg1;
 
 @end
 

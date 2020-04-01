@@ -13,7 +13,6 @@
 + (BOOL)allowsReverseTransformation;
 + (Class)transformedValueClass;
 - (id)transformedValue:(id)arg1;
-- (id)offlineImage;
 
 @end
 

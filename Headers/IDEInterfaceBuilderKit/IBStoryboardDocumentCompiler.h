@@ -35,6 +35,7 @@
 - (id)outletNameForPrimarySceneObject;
 - (id)storyboardCompilationGroupsReturningError:(id *)arg1;
 - (id)storyboardCompilationGroups;
+- (id)sourcePrimarySceneObjectForObject:(id)arg1;
 - (id)controllersThatRequireIndependentInstantiation;
 - (id)instantiateSegueTemplatesAndReturnObjectsToTriggeredSeguesTemplatesMap;
 - (id)compileCompilationUnit:(id)arg1 options:(id)arg2 forSceneCompilationGroup:(id)arg3 error:(id *)arg4;

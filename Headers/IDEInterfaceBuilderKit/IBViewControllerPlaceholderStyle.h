@@ -17,7 +17,7 @@
     NSDictionary *_explanationAttributes;
 }
 
-+ (id)defaultStyle;
++ (id)styleWithTheme:(id)arg1;
 @property(retain, nonatomic) NSDictionary *explanationAttributes; // @synthesize explanationAttributes=_explanationAttributes;
 @property(retain, nonatomic) NSDictionary *subtitleAttributes; // @synthesize subtitleAttributes=_subtitleAttributes;
 @property(retain, nonatomic) NSDictionary *titleAttributes; // @synthesize titleAttributes=_titleAttributes;

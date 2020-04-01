@@ -12,13 +12,13 @@
 
 @interface IBUISplitViewControllerEditor : IBUIViewControllerEditor <IBUISplitViewControllerEditorViewDelegate>
 {
-    NSString *targetRelation;
+    NSString *_targetRelation;
 }
 
 + (Class)ibDropTargetResolverClass;
-@property(copy, nonatomic) NSString *targetRelation; // @synthesize targetRelation;
+@property(copy, nonatomic) NSString *targetRelation; // @synthesize targetRelation=_targetRelation;
 - (void).cxx_destruct;
-- (id)editorView:(id)arg1 explanitoryTextForPlaceholderView:(id)arg2;
+- (id)editorView:(id)arg1 explanatoryTextForPlaceholderView:(id)arg2;
 - (id)editorView:(id)arg1 subtitleForPlaceholderView:(id)arg2;
 - (id)editorView:(id)arg1 titleForPlaceholderView:(id)arg2;
 - (void)configureFullSceneUpdateRequest:(id)arg1;
@@ -40,7 +40,6 @@
 - (void)prepareToAcceptDragInfo:(id)arg1;
 - (id)targetRelationForDragInfo:(id)arg1;
 - (id)targetRelationForPoint:(struct CGPoint)arg1 andPasteboard:(id)arg2;
-- (id)bottomBarViewForEditorView:(id)arg1 withSimulatedBarMetrics:(id)arg2;
 - (id)editorViewForViewController:(id)arg1;
 - (id)splitViewControllerEditorView;
 - (id)detailViewController;

@@ -13,9 +13,9 @@
     NSString *_string;
 }
 
+- (void).cxx_destruct;
 - (id)description;
-- (id)evaluateInContext:(id)arg1;
-- (void)dealloc;
+- (id)evaluateWithMacroExpansionScope:(id)arg1;
 - (id)init;
 - (id)initWithString:(id)arg1;
 

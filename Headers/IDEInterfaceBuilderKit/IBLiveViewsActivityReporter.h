@@ -15,7 +15,6 @@
     DVTNotificationToken *_didEndDebugSessionToken;
 }
 
-+ (void)initialize;
 - (void).cxx_destruct;
 - (void)_stopDebugActivityReportForNotification:(id)arg1;
 - (void)_startDebugActivityReportForNotification:(id)arg1;

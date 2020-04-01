@@ -11,23 +11,22 @@
 }
 
 + (id)referenceByUnwrappingVariantGroup:(id)arg1;
-+ (id)variantGroupByWrappingReference:(id)arg1 isLocalized:(BOOL)arg2;
-+ (void)_replaceBuildFilesForReference:(id)arg1 withBuildFilesForReference:(id)arg2;
++ (void)replaceBuildFilesForReference:(id)arg1 withBuildFilesForReference:(id)arg2;
 - (void)pruneReferencesBySendingBooleanSelector:(SEL)arg1 toObject:(id)arg2 withContext:(void *)arg3;
+- (BOOL)enumerateReferencesForBuildingUsingBlock:(CDUnknownBlockType)arg1;
 - (id)referencesForBuilding;
 - (BOOL)makeVariantForRegion:(id)arg1;
+- (BOOL)makeVariantForRegion:(id)arg1 fromRegion:(id)arg2;
 - (BOOL)makeGlobal;
 - (BOOL)makeLocalized;
 - (id)variantForRegion:(id)arg1;
 - (BOOL)ensureHasDefaultReference;
+- (id)buildReference;
 - (id)defaultReference;
 - (BOOL)setName:(id)arg1 syncDisk:(BOOL)arg2;
-- (BOOL)deleteFromProjectAndDisk:(BOOL)arg1;
-- (BOOL)allowsRemovalFromDisk;
 - (void)removeItem:(id)arg1;
 - (id)destinationGroupForInsertion;
 - (BOOL)isVariantGroup;
-- (id)copyWithZone:(struct _NSZone *)arg1 getUnretainedObjectMappings:(id *)arg2;
 
 @end
 

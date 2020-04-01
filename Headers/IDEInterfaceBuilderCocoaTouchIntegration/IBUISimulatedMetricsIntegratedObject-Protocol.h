@@ -9,9 +9,10 @@
 @class IBUISimulatedBarMetrics, IBUISimulatedSizeMetrics, IBUISimulatedStatusBarMetrics;
 
 @protocol IBUISimulatedMetricsIntegratedObject <IBUISimulatedMetricsObject>
-@property(copy) IBUISimulatedSizeMetrics *ibInspectedSimulatedDestinationMetrics;
-@property(copy) IBUISimulatedBarMetrics *ibInspectedSimulatedBottomBarMetrics;
-@property(copy) IBUISimulatedBarMetrics *ibInspectedSimulatedTopBarMetrics;
-@property(copy) IBUISimulatedStatusBarMetrics *ibInspectedSimulatedStatusBarMetrics;
+@property(nonatomic) long long ibInspectedSimulatedUserInterfaceStyle;
+@property(copy, nonatomic) IBUISimulatedSizeMetrics *ibInspectedSimulatedDestinationMetrics;
+@property(copy, nonatomic) IBUISimulatedBarMetrics *ibInspectedSimulatedBottomBarMetrics;
+@property(copy, nonatomic) IBUISimulatedBarMetrics *ibInspectedSimulatedTopBarMetrics;
+@property(copy, nonatomic) IBUISimulatedStatusBarMetrics *ibInspectedSimulatedStatusBarMetrics;
 @end
 

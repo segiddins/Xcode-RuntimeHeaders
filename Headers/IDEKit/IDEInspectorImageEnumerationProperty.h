@@ -25,6 +25,7 @@
 - (void)userDidChangeValue:(id)arg1;
 - (void)refresh;
 - (id)nibName;
+- (void)loadView;
 - (double)baseline;
 - (BOOL)hasTitle;
 

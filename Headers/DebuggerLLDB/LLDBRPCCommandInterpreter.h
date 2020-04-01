@@ -10,7 +10,6 @@
 
 @class NSString;
 
-__attribute__((visibility("hidden")))
 @interface LLDBRPCCommandInterpreter : NSObject <DBGSBCommandInterpreter>
 {
     struct SBCommandInterpreter {
@@ -22,6 +21,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (_Bool)IsActive;
 - (id)initWithSBCommandInterpreter:(const struct SBCommandInterpreter *)arg1;
+- (void)SourceInitFileInHomeDirectory:(id)arg1;
 - (int)HandleCommand:(const char *)arg1 result:(id)arg2 add_to_history:(_Bool)arg3;
 - (int)HandleCompletion:(const char *)arg1 cursor_pos:(unsigned int)arg2 match_start_point:(int)arg3 max_return_elements:(int)arg4 matches:(id)arg5;
 - (id)GetBroadcaster;

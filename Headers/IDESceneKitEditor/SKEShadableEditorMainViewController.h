@@ -6,26 +6,44 @@
 
 #import <IDEKit/IDEViewController.h>
 
-#import <IDESceneKitEditor/IDECapsuleListViewDataSource-Protocol.h>
+#import <IDESceneKitEditor/NSOutlineViewDataSource-Protocol.h>
+#import <IDESceneKitEditor/NSOutlineViewDelegate-Protocol.h>
+#import <IDESceneKitEditor/_TtP17IDESceneKitEditor23SKEShaderSourceDelegate_-Protocol.h>
 
-@class DVTGradientImagePopUpButton, DVTObservingToken, DVTScopeBarView, IDECapsuleListView, NSArray, NSString;
+@class DVTNotificationToken, DVTOneShotBlock, NSArray, NSOutlineView, NSString, NSView, SKESceneSubEditor, SKEShaderEntryItem, _TtC17IDESceneKitEditor21SKEShaderSourceEditor;
 
-@interface SKEShadableEditorMainViewController : IDEViewController <IDECapsuleListViewDataSource>
+@interface SKEShadableEditorMainViewController : IDEViewController <_TtP17IDESceneKitEditor23SKEShaderSourceDelegate_, NSOutlineViewDelegate, NSOutlineViewDataSource>
 {
     NSArray *_content;
-    DVTObservingToken *_shadableContentsObservingToken;
-    DVTGradientImagePopUpButton *_actionPopUpButton;
-    DVTScopeBarView *_scopeBarView;
-    IDECapsuleListView *_entryPointsCapsuleListView;
+    NSArray *_shadableContentsObservingTokens;
+    DVTOneShotBlock *_cancellationTokens;
+    NSOutlineView *_entryPointsOutline;
+    _TtC17IDESceneKitEditor21SKEShaderSourceEditor *_sourceEditor;
+    NSView *_customView;
+    NSArray *_shadableArray;
+    SKEShaderEntryItem *_outlineRoot;
+    DVTNotificationToken *_shadableCompilationDidFinishObservingToken;
+    NSArray *_allIssues;
+    SKESceneSubEditor *_sceneSubEditor;
 }
 
+@property(nonatomic) __weak SKESceneSubEditor *sceneSubEditor; // @synthesize sceneSubEditor=_sceneSubEditor;
 - (void).cxx_destruct;
-- (id)capsuleListView:(id)arg1 viewControllerForRow:(long long)arg2;
-- (long long)numberOfObjectsInCapsuleListView:(id)arg1;
+- (void)delete:(id)arg1;
+- (void)sourceChanged;
+- (void)shadableCompilationDidFinish:(id)arg1;
+- (void)updateIssues;
+- (BOOL)outlineView:(id)arg1 shouldSelectItem:(id)arg2;
+- (void)outlineViewSelectionDidChange:(id)arg1;
+- (id)outlineView:(id)arg1 objectValueForTableColumn:(id)arg2 byItem:(id)arg3;
+- (id)outlineView:(id)arg1 child:(long long)arg2 ofItem:(id)arg3;
+- (BOOL)outlineView:(id)arg1 isItemExpandable:(id)arg2;
+- (long long)outlineView:(id)arg1 numberOfChildrenOfItem:(id)arg2;
 - (void)shaderModifiersCountDidChange;
-- (void)addShaderModifierAction:(id)arg1;
-- (void)configureAddMenu;
 - (void)refreshEmptyContentString;
+- (void)userChangedShadable:(id)arg1;
+- (void)configureShadableList;
+- (void)selectRow:(long long)arg1;
 - (id)shadableMember;
 @property(copy, nonatomic) NSArray *content;
 - (void)viewDidLoad;

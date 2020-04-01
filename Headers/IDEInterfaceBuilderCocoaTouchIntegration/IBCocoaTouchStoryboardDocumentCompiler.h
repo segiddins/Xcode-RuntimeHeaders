@@ -13,7 +13,6 @@
 
 + (BOOL)finishCompilingDocument:(id)arg1 withOutputPath:(id)arg2 options:(id)arg3 error:(id *)arg4;
 + (BOOL)shouldCopyDeviceSpecificStringsFilesForDocument:(id)arg1;
-- (id)compiledPackageForWrapperContent:(id)arg1;
 - (id)stringByAppendingTargetDeviceSuffixToFilePath:(id)arg1 ifNeededForOptions:(id)arg2;
 - (id)localOptionsForTarget:(id)arg1 withCompilerOptions:(id)arg2;
 - (id)targetRuntimeCompilationTargetsForCompilerOptions:(id)arg1;

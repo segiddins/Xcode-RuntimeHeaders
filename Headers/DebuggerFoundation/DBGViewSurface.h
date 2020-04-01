@@ -6,83 +6,115 @@
 
 #import <DebuggerFoundation/DBGViewObject.h>
 
-@class DBGLayoutConstraintSet, DBGViewLayer, DBGViewWindow, NSImage, NSSet, NSString;
+#import <DebuggerFoundation/DBGFocusableViewObject-Protocol.h>
+#import <DebuggerFoundation/DBGViewSurfaceUpdateDelegate-Protocol.h>
 
-@interface DBGViewSurface : DBGViewObject
+@class DBGFetchedDocument, DBGLayoutConstraintSet, DBGViewControllerObject, DBGViewLayer, DBGViewWindow, NSMutableArray, NSString;
+@protocol DBGViewSurfaceUpdateDelegate;
+
+@interface DBGViewSurface : DBGViewObject <DBGViewSurfaceUpdateDelegate, DBGFocusableViewObject>
 {
     DBGViewWindow *_window;
-    BOOL _shouldConsiderInteresting;
-    BOOL _hasCalculatedShouldConsiderInteresting;
-    NSString *_viewForFirstBaselineLayoutPointer;
-    NSString *_viewForLastBaselineLayoutPointer;
-    NSSet *_constraintAddressesAffectingViewObject;
     DBGLayoutConstraintSet *_constraintsAffectingViewObject;
     DBGLayoutConstraintSet *_constraintsReferencingViewObject;
+    NSMutableArray *_referencingConstraints;
     BOOL _flipped;
     BOOL _masksToBounds;
+    BOOL _hasVisibleRect;
     BOOL _isDoubleSided;
     BOOL _hasAmbiguousLayout;
     BOOL _iOS;
     BOOL _legacyLayerFormat;
     DBGViewLayer *_layer;
     unsigned long long _layerIndex;
-    NSImage *_snapshot;
+    id _snapshot;
     double _firstBaselineOffsetFromTop;
     double _lastBaselineOffsetFromBottom;
+    DBGViewControllerObject *_owningViewController;
     double _contentsScale;
     double _zPosition;
     double _anchorPointZ;
     unsigned long long _ambiguityStatusMask;
+    id <DBGViewSurfaceUpdateDelegate> _updateDelegate;
+    NSString *_viewForFirstBaselineLayoutPointer;
+    NSString *_viewForLastBaselineLayoutPointer;
+    DBGFetchedDocument *_fetchedDocument;
     struct CGPoint _anchorPoint;
     struct CGPoint _position;
     struct NSEdgeInsets _layoutMargins;
     struct CGRect _alignmentFrame;
     struct CGRect _bounds;
+    struct CGRect _visibleRect;
     struct CATransform3D _transform;
     struct CATransform3D _sublayerTransform;
 }
 
 @property BOOL legacyLayerFormat; // @synthesize legacyLayerFormat=_legacyLayerFormat;
+@property(retain) DBGFetchedDocument *fetchedDocument; // @synthesize fetchedDocument=_fetchedDocument;
+@property(retain) NSString *viewForLastBaselineLayoutPointer; // @synthesize viewForLastBaselineLayoutPointer=_viewForLastBaselineLayoutPointer;
+@property(retain) NSString *viewForFirstBaselineLayoutPointer; // @synthesize viewForFirstBaselineLayoutPointer=_viewForFirstBaselineLayoutPointer;
+@property __weak id <DBGViewSurfaceUpdateDelegate> updateDelegate; // @synthesize updateDelegate=_updateDelegate;
 @property BOOL iOS; // @synthesize iOS=_iOS;
-@property(readonly, nonatomic) unsigned long long ambiguityStatusMask; // @synthesize ambiguityStatusMask=_ambiguityStatusMask;
+@property(nonatomic) unsigned long long ambiguityStatusMask; // @synthesize ambiguityStatusMask=_ambiguityStatusMask;
 @property BOOL hasAmbiguousLayout; // @synthesize hasAmbiguousLayout=_hasAmbiguousLayout;
 @property BOOL isDoubleSided; // @synthesize isDoubleSided=_isDoubleSided;
 @property double anchorPointZ; // @synthesize anchorPointZ=_anchorPointZ;
 @property double zPosition; // @synthesize zPosition=_zPosition;
 @property double contentsScale; // @synthesize contentsScale=_contentsScale;
+@property BOOL hasVisibleRect; // @synthesize hasVisibleRect=_hasVisibleRect;
+@property struct CGRect visibleRect; // @synthesize visibleRect=_visibleRect;
 @property struct CGRect bounds; // @synthesize bounds=_bounds;
 @property struct CGRect alignmentFrame; // @synthesize alignmentFrame=_alignmentFrame;
-- (id)constraintAddressesAffectingViewObject;
+@property(retain) DBGViewControllerObject *owningViewController; // @synthesize owningViewController=_owningViewController;
 @property double lastBaselineOffsetFromBottom; // @synthesize lastBaselineOffsetFromBottom=_lastBaselineOffsetFromBottom;
 @property double firstBaselineOffsetFromTop; // @synthesize firstBaselineOffsetFromTop=_firstBaselineOffsetFromTop;
 @property struct NSEdgeInsets layoutMargins; // @synthesize layoutMargins=_layoutMargins;
-@property(readonly) BOOL masksToBounds; // @synthesize masksToBounds=_masksToBounds;
+@property BOOL masksToBounds; // @synthesize masksToBounds=_masksToBounds;
 @property struct CGPoint position; // @synthesize position=_position;
 @property struct CGPoint anchorPoint; // @synthesize anchorPoint=_anchorPoint;
 @property struct CATransform3D sublayerTransform; // @synthesize sublayerTransform=_sublayerTransform;
 @property struct CATransform3D transform; // @synthesize transform=_transform;
 @property BOOL flipped; // @synthesize flipped=_flipped;
-@property(retain) NSImage *snapshot; // @synthesize snapshot=_snapshot;
 @property unsigned long long layerIndex; // @synthesize layerIndex=_layerIndex;
-@property(retain) DBGViewLayer *layer; // @synthesize layer=_layer;
 - (void).cxx_destruct;
 - (void)assignRepresentedLayerFromTree;
 - (void)_getSublayersFromTree;
 - (void)_extractLayerInfoFromDictionary:(id)arg1;
 - (id)_affectingConstraintAddresses:(id)arg1;
-- (id)description;
+@property(readonly, copy) NSString *description;
 - (id)_childViewSurfacesFromPlist:(id)arg1 forViewDescriber:(id)arg2;
 - (void)primitiveInvalidate;
+- (id)forwardFocusToViewObject;
+- (id)childWithIdentifier:(id)arg1;
+- (id)allFetchedDocuments;
 @property(readonly) DBGLayoutConstraintSet *constraintsReferencingViewObject;
 @property(readonly) DBGLayoutConstraintSet *constraintsAffectingViewObject;
-- (BOOL)shouldConsiderInteresting;
 - (void)_recursiveViewAddressesToViewSurfaces:(id)arg1;
 - (id)recursiveViewAddressesToViewSurfaces;
+- (void)viewSurfaceDidUpdateVisualRepresentation:(id)arg1;
+@property(readonly) NSMutableArray *referencingConstraints;
+@property(retain) id snapshot; // @synthesize snapshot=_snapshot;
+@property(retain) DBGViewLayer *layer; // @synthesize layer=_layer;
 - (id)viewForLastBaselineLayout;
 - (id)viewForFirstBaselineLayout;
 - (id)parentViewSurface;
 @property(readonly) DBGViewWindow *window;
+- (struct CGSize)size;
+- (id)_decodeDocumentInfoValuesIfNecessary:(id)arg1;
 - (id)initWithViewDescriber:(id)arg1 parent:(id)arg2 dictionary:(id)arg3;
+- (id)computedSecondaryDisplayName;
+- (id)computedPrimaryDisplayName;
+- (id)_decodedLayerForLayerProperty:(id)arg1;
+- (void)_updatePropertiesWithSnapshotNode:(id)arg1 forRequest:(id)arg2;
+- (void)recursivelyRemoveViewLayersFromLayerTree;
+- (void)updateChildrenWithSnapshotGroup:(id)arg1 forRequest:(id)arg2;
+@property(readonly) BOOL isViewHost;
+@property(readonly) BOOL isHostingView;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

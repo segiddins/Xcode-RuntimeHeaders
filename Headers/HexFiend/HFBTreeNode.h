@@ -8,7 +8,6 @@
 
 @interface HFBTreeNode : NSObject
 {
-    unsigned long long rc;
     unsigned long long subtreeLength;
     HFBTreeNode *left;
     HFBTreeNode *right;
@@ -17,9 +16,6 @@
 
 - (id)shortDescription;
 - (void)dealloc;
-- (unsigned long long)retainCount;
-- (oneway void)release;
-- (id)retain;
 
 @end
 

@@ -15,12 +15,14 @@
 + (id)iOS7XVersion;
 + (id)iOS8AndLaterVersion;
 + (id)iOS9_1AndLaterVersion;
++ (id)iOS11AndLaterVersion;
++ (id)iOS12_3AndLaterVersion;
++ (id)iOS13AndLaterVersion;
 + (Class)instanceScopingClass;
 + (id)designatedVersionForUserInterfaceEra:(long long)arg1;
 + (id)instanceWithIdentifier:(id)arg1;
 + (id)allInstances;
 + (id)sharedInstance;
-- (id)displayNameForUserInterfaceStyle;
 - (long long)userInterfaceEra;
 - (void)didRegisterSharedInstance;
 

@@ -6,25 +6,31 @@
 
 #import <IDEFoundation/IDEArchive.h>
 
-#import "IDEProductsInspectable-Protocol.h"
+#import <IDEProductsUI/IDEProductsInspectable-Protocol.h>
 
 @class NSString;
 
 @interface IDEArchive (ProductsUI) <IDEProductsInspectable>
++ (id)keyPathsForValuesAffectingArchiveDeveloperIDStatus;
 + (id)keyPathsForValuesAffectingArchiveDetails;
 + (id)grayAttributedString:(id)arg1;
+- (id)archiveDeveloperIDStatus;
 - (id)archiveDetails;
+- (id)archiveDeveloperIDStatusSectionTitle;
+- (id)archiveDetailsSectionTitle;
 @property(readonly) NSString *inspectableUtilityExtensionIdentifier;
 - (id)inspectableIcon;
-- (id)inspectableType;
+- (id)inspectableTypeUserDescription;
 - (id)inspectableSubtitle;
 - (id)productsUI_toolchainDisplayName;
 - (BOOL)wantsToolChainDisplayed;
+- (id)productsUI_displayableTeam;
 - (id)productsUI_creationDate;
 - (id)productsUI_archiveImage;
 - (id)productsUI_version;
 - (id)productsUI_userRepresentationOfVersion;
-- (id)productsUI_onDiskSize;
+- (BOOL)isKnownError:(id)arg1;
+@property(readonly) BOOL hasKnownDistributionTaskIssue;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

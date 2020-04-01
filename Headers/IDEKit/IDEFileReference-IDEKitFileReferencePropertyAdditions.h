@@ -7,34 +7,82 @@
 #import <IDEFoundation/IDEFileReference.h>
 
 #import <IDEKit/IDEKeyDrivenNavigableItemRepresentedObject-Protocol.h>
+#import <IDEKit/IDESchemeOptionMenuItem-Protocol.h>
 
-@class DVTDocumentLocation, DVTFileDataType, NSImage, NSString;
+@class DVTDocumentLocation, DVTFileDataType, DVTSymbol, NSArray, NSImage, NSNull, NSString, NSURL;
 
-@interface IDEFileReference (IDEKitFileReferencePropertyAdditions) <IDEKeyDrivenNavigableItemRepresentedObject>
+@interface IDEFileReference (IDEKitFileReferencePropertyAdditions) <IDEKeyDrivenNavigableItemRepresentedObject, IDESchemeOptionMenuItem>
++ (id)keyPathsForValuesAffectingNavigableItem_accessibleImageDescription;
 + (id)keyPathsForValuesAffectingNavigableItem_contentDocumentLocation;
 + (id)keyPathsForValuesAffectingNavigableItem_documentType;
-+ (id)keyPathsForValuesAffectingNavigableItem_image;
-+ (id)keyPathsForValuesAffectingNavigableItem_name;
++ (id)keyPathsForValuesAffectingNavigableItem_sourceControlServerStatusFlag;
++ (id)keyPathsForValuesAffectingNavigableItem_sourceControlServerStatus;
++ (id)keyPathsForValuesAffectingNavigableItem_sourceControlLocalStatusFlag;
++ (id)keyPathsForValuesAffectingNavigableItem_sourceControlLocalStatusString;
++ (id)keyPathsForValuesAffectingNavigableItem_sourceControlLocalStatus;
++ (id)keyPathsForValuesAffectingIdeInspectedNilResolutionStrategyPlaceholder;
++ (id)keyPathsForValuesAffectingIdeInspectedRelativeLocationIsEditable;
++ (id)keyPathsForValuesAffectingIdeInspectedRelativeLocationContainingFolderPlaceholder;
++ (id)keyPathsForValuesAffectingIdeInspectedRelativeLocationPlaceholder;
++ (id)keyPathsForValuesAffectingIdeInspectedMessageForChoosingRelativeLocation;
++ (id)keyPathsForValuesAffectingIdeInspectedRelativeLocationShouldChooseDirectory;
++ (id)keyPathsForValuesAffectingIdeInspectedRelativeLocationShouldChooseFile;
++ (id)keyPathsForValuesAffectingIdeInspectedAssignedDataType;
++ (id)keyPathsForValuesAffectingIdeInspectedShowsFileTypePopUp;
++ (id)keyPathsForValuesAffectingIdeInspectedIsNameEditable;
+@property(readonly, nonatomic) NSString *navigableItem_accessibleImageDescription;
 - (id)navigableItem_conformanceString;
-@property(readonly) DVTDocumentLocation *navigableItem_contentDocumentLocation;
-@property(readonly) DVTFileDataType *navigableItem_documentType;
+@property(readonly, nonatomic) DVTDocumentLocation *navigableItem_contentDocumentLocation;
+@property(readonly, nonatomic) DVTFileDataType *navigableItem_documentType;
 - (void)navigableItem_noteDocumentEditedStateChanged;
-@property(readonly) NSString *navigableItem_name;
+@property(readonly) unsigned long long navigableItem_conflictStateForUpdateOrMerge;
+- (unsigned long long)navigableItem_sourceControlServerStatusFlag;
+@property(readonly) NSString *navigableItem_sourceControlServerStatus;
+- (unsigned long long)navigableItem_sourceControlLocalStatusFlag;
+@property(readonly) NSString *navigableItem_sourceControlLocalStatusString;
+@property(readonly) NSString *navigableItem_sourceControlLocalStatus;
+- (id)ide_openQuicklySubpathImage;
+- (id)ide_generateOutlineItemGivenParent:(id)arg1 root:(long long)arg2;
+- (void)ide_enumerateChildrenPopulatingVisitedContainers:(id)arg1 block:(CDUnknownBlockType)arg2;
+- (BOOL)ide_shouldIncludeInExploration;
+- (id)ideInspectedNilResolutionStrategyPlaceholder;
+- (BOOL)ideInspectedRelativeLocationIsEditable;
+- (id)ideInspectedRelativeLocationContainingFolderPlaceholder;
+- (id)ideInspectedRelativeLocationPlaceholder;
+- (id)ideInspectedMessageForChoosingRelativeLocation;
+- (BOOL)ideInspectedRelativeLocationShouldChooseDirectory;
+- (BOOL)ideInspectedRelativeLocationShouldChooseFile;
+- (id)ideInspectedAssetTagPlaceholder;
+- (id)ideInspectedPossibleAssetTags;
+- (void)setIdeInspectedAssignedDataType:(id)arg1;
+- (id)ideInspectedAssignedDataType;
+- (BOOL)ideInspectedShowsFileTypePopUp;
+- (BOOL)ideInspectedIsNameEditable;
+- (id)applicableInspectorSlicesForCategory:(id)arg1 suggestedSlices:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
-@property(readonly) NSString *navigableItem_accessibleImageDescription;
-@property(readonly) IDEFileReference *navigableItem_fileReference;
-@property(readonly) NSString *navigableItem_groupIdentifier;
-@property(readonly) NSImage *navigableItem_image;
-@property(readonly) BOOL navigableItem_isLeaf;
-@property(readonly) BOOL navigableItem_isMajorGroup;
-@property(readonly) BOOL navigableItem_missingReferencedContentIsImportant;
-@property(readonly) BOOL navigableItem_referencedContentExists;
-@property(readonly) NSString *navigableItem_subtitle;
-@property(readonly) NSString *navigableItem_toolTip;
+@property(readonly, nonatomic) NSString *navigableItem_accessibilityIdentifier;
+@property(readonly, nonatomic) NSArray *navigableItem_additionalFilterMatchingText;
+@property(readonly, nonatomic) NSArray *navigableItem_childRepresentedObjects;
+@property(readonly, nonatomic) IDEFileReference *navigableItem_fileReference;
+@property(readonly, nonatomic) NSNull *navigableItem_filtered;
+@property(readonly, nonatomic) NSString *navigableItem_groupIdentifier;
+@property(readonly, nonatomic) NSImage *navigableItem_image;
+@property(readonly, nonatomic) BOOL navigableItem_isEnabled;
+@property(readonly, nonatomic) BOOL navigableItem_isLeaf;
+@property(readonly, nonatomic) BOOL navigableItem_isMajorGroup;
+@property(readonly, nonatomic) BOOL navigableItem_isVisible;
+@property(readonly, nonatomic) BOOL navigableItem_missingReferencedContentIsImportant;
+@property(readonly, nonatomic) NSString *navigableItem_name;
+@property(readonly, nonatomic) id navigableItem_parentRepresentedObject;
+@property(readonly, nonatomic) BOOL navigableItem_referencedContentExists;
+@property(readonly, nonatomic) DVTSymbol *navigableItem_representedSymbol;
+@property(readonly, nonatomic) NSURL *navigableItem_representedURL;
+@property(readonly, nonatomic) NSString *navigableItem_subtitle;
+@property(readonly, nonatomic) NSString *navigableItem_toolTip;
 @property(readonly) Class superclass;
 @end
 

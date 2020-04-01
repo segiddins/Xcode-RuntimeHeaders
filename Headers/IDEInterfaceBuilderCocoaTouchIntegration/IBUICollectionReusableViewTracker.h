@@ -10,7 +10,7 @@
 {
 }
 
-- (void)placeSubviewInFrame:(struct CGRect)arg1 event:(id)arg2;
+- (void)placeSubviewInFrame:(struct CGRect)arg1 event:(id)arg2 originalFrame:(struct CGRect)arg3 isFinalFrame:(BOOL)arg4;
 - (id)trackedCollectionReusableView;
 
 @end

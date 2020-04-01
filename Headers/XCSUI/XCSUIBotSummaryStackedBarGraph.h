@@ -6,7 +6,7 @@
 
 #import <AppKit/NSView.h>
 
-@class DVTLozengeTextField, NSArray, NSTrackingArea, XCSUIBotSummaryStackedBarGraphColumn, XCSUIBotSummaryStackedBarGraphController;
+@class DVTEmptyContentPlaceholder, NSArray, NSTrackingArea, XCSUIBotSummaryStackedBarGraphColumn, XCSUIBotSummaryStackedBarGraphController;
 
 @interface XCSUIBotSummaryStackedBarGraph : NSView
 {
@@ -18,17 +18,17 @@
     NSTrackingArea *_tracker;
     XCSUIBotSummaryStackedBarGraphColumn *_columnInMouseHoverEvent;
     XCSUIBotSummaryStackedBarGraphColumn *_columnInMouseDownEvent;
-    DVTLozengeTextField *_noIntegrationsLozenge;
+    DVTEmptyContentPlaceholder *_emptyContentPlaceholder;
 }
 
-@property(retain) DVTLozengeTextField *noIntegrationsLozenge; // @synthesize noIntegrationsLozenge=_noIntegrationsLozenge;
+@property(retain) DVTEmptyContentPlaceholder *emptyContentPlaceholder; // @synthesize emptyContentPlaceholder=_emptyContentPlaceholder;
 @property(retain) XCSUIBotSummaryStackedBarGraphColumn *columnInMouseDownEvent; // @synthesize columnInMouseDownEvent=_columnInMouseDownEvent;
 @property(retain) XCSUIBotSummaryStackedBarGraphColumn *columnInMouseHoverEvent; // @synthesize columnInMouseHoverEvent=_columnInMouseHoverEvent;
 @property(retain) NSTrackingArea *tracker; // @synthesize tracker=_tracker;
 @property unsigned long long largestBarValue; // @synthesize largestBarValue=_largestBarValue;
 @property __weak XCSUIBotSummaryStackedBarGraphController *controller; // @synthesize controller=_controller;
 @property(copy) NSArray *issuesSeriesData; // @synthesize issuesSeriesData=_issuesSeriesData;
-@property(copy) NSArray *graphData; // @synthesize graphData=_graphData;
+@property(copy, nonatomic) NSArray *graphData; // @synthesize graphData=_graphData;
 @property(copy) CDUnknownBlockType resizeHandler; // @synthesize resizeHandler=_resizeHandler;
 - (void).cxx_destruct;
 - (id)accessibilityLabel;
@@ -42,7 +42,6 @@
 - (void)drawXAxisLabels;
 - (void)drawYAxisLabels;
 - (void)drawRect:(struct CGRect)arg1;
-- (void)resizeWithOldSuperviewSize:(struct CGSize)arg1;
 - (void)mouseUp:(id)arg1;
 - (void)mouseDown:(id)arg1;
 - (void)mouseMoved:(id)arg1;
@@ -50,6 +49,7 @@
 - (void)mouseEntered:(id)arg1;
 - (id)_columnInEvent:(id)arg1;
 - (void)updateTrackingAreas;
+- (id)initWithFrame:(struct CGRect)arg1;
 
 @end
 

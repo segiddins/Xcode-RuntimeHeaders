@@ -6,13 +6,13 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableSet, NSString;
+@class NSMutableArray, NSString;
 
 @interface GTFGraphNode : NSObject
 {
     int _index;
-    NSMutableSet *_in;
-    NSMutableSet *_out;
+    NSMutableArray *_inEdges;
+    NSMutableArray *_outEdges;
     NSString *_name;
     struct CGPoint _pos;
     struct CGSize _size;
@@ -22,8 +22,8 @@
 @property(nonatomic) struct CGSize size; // @synthesize size=_size;
 @property(nonatomic) struct CGPoint pos; // @synthesize pos=_pos;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
-@property(retain, nonatomic) NSMutableSet *out; // @synthesize out=_out;
-@property(retain, nonatomic) NSMutableSet *in; // @synthesize in=_in;
+@property(retain, nonatomic) NSMutableArray *outEdges; // @synthesize outEdges=_outEdges;
+@property(retain, nonatomic) NSMutableArray *inEdges; // @synthesize inEdges=_inEdges;
 - (void).cxx_destruct;
 - (long long)compareNodeIndices:(id)arg1;
 - (long long)compareNodeDegrees:(id)arg1;

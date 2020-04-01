@@ -9,7 +9,7 @@
 #import <IDESceneKitEditor/IDEDocumentStructureProviding-Protocol.h>
 #import <IDESceneKitEditor/SKEDocumentProtocol-Protocol.h>
 
-@class DVTUndoManager, NSArray, NSString, NSURL, SCNAssetCatalog, SCNParticleSystem;
+@class DVTFilePath, DVTUndoManager, GKScene, NSArray, NSString, NSURL, NSUndoManager, SCNAssetCatalog, SCNParticleSystem;
 
 @interface SKEParticleSystemDocument : IDEEditorDocument <SKEDocumentProtocol, IDEDocumentStructureProviding>
 {
@@ -22,8 +22,10 @@
 + (void)initialize;
 @property(retain) id inspectedSceneEditor; // @synthesize inspectedSceneEditor=_inspectedSceneEditor;
 - (void).cxx_destruct;
+@property(readonly) unsigned long long featureAvailability;
 - (void)makeDocumentAssetCatalogCurrent;
 - (void)refreshAssetCatalogWithURL:(id)arg1;
+@property(readonly, nonatomic) GKScene *gkScene;
 - (void)didReplaceChildMember:(id)arg1 ofMember:(id)arg2 byChildMember:(id)arg3;
 - (void)willReplaceChildMember:(id)arg1 ofMember:(id)arg2 byChildMember:(id)arg3;
 - (void)didRemoveChildMember:(id)arg1 fromMember:(id)arg2;
@@ -41,11 +43,15 @@
 - (BOOL)readFromURL:(id)arg1 ofType:(id)arg2 error:(id *)arg3;
 - (BOOL)canSave;
 @property(readonly) NSArray *ideTopLevelStructureObjects;
+- (BOOL)isTextureName:(id)arg1;
+@property(readonly) NSUndoManager *documentUndoManager;
 - (id)init;
 
 // Remaining properties
+@property(readonly) BOOL alreadyProposedToUpgrade;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
+@property(readonly) DVTFilePath *filePath;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 @property(readonly) DVTUndoManager *undoManager;

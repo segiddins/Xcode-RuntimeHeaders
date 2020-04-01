@@ -6,19 +6,21 @@
 
 #import <AppKit/NSView.h>
 
+@class NSColor;
+
 @interface XCSUIInsetHorizontalDividerLine : NSView
 {
-    BOOL _drawPointer;
-    double _optionalInset;
-    NSView *_drawPointToView;
+    BOOL _shouldInset;
+    NSColor *_color;
 }
 
-@property(retain, nonatomic) NSView *drawPointToView; // @synthesize drawPointToView=_drawPointToView;
-@property double optionalInset; // @synthesize optionalInset=_optionalInset;
+@property BOOL shouldInset; // @synthesize shouldInset=_shouldInset;
+@property(retain, nonatomic) NSColor *color; // @synthesize color=_color;
 - (void).cxx_destruct;
-- (void)showPointer;
-- (void)hidePointer;
 - (void)drawRect:(struct CGRect)arg1;
+- (void)configureDefaults;
+- (void)awakeFromNib;
+- (id)initWithFrame:(struct CGRect)arg1;
 
 @end
 

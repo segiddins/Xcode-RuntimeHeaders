@@ -21,7 +21,6 @@
     IDEEditor *_editor;
     id <IDELogViewControllerDelegate> _delegate;
     DVTObservingToken *_activityLogSectionUpdateToken;
-    id _documentSizeUpdateToken;
     NSPopUpButton *_scopeBarMessagesPopup;
     IDEBuildResultsOutlineLogic *_outlineLogic;
     XCBuildResultsOutlineView *_buildResultsOutlineView;
@@ -45,7 +44,6 @@
 @property BOOL showBySteps; // @synthesize showBySteps=_showBySteps;
 @property(nonatomic) BOOL showAllResults; // @synthesize showAllResults=_showAllResults;
 @property(retain) NSPopUpButton *scopeBarMessagesPopup; // @synthesize scopeBarMessagesPopup=_scopeBarMessagesPopup;
-@property(retain) id documentSizeUpdateToken; // @synthesize documentSizeUpdateToken=_documentSizeUpdateToken;
 @property(retain) DVTObservingToken *activityLogSectionUpdateToken; // @synthesize activityLogSectionUpdateToken=_activityLogSectionUpdateToken;
 @property(retain) id <IDELogViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain) IDEEditor *editor; // @synthesize editor=_editor;
@@ -58,7 +56,6 @@
 - (id)attributesForScopeBarMenuItems;
 - (id)activeView;
 - (void)_updateShownView;
-- (void)_cancelObservationToken;
 - (id)configureOutlineView:(id)arg1;
 - (void)showAllMessages:(id)arg1;
 - (void)doubleClickDocumentLocation:(id)arg1;

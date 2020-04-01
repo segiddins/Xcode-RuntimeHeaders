@@ -6,58 +6,80 @@
 
 #import <objc/NSObject.h>
 
-@class DVTLogAspect, NSArray, NSDate, NSNumber, NSString, SFCertificateData;
+@class DVTLogAspect, DVTSigningCertificateValidity, NSArray, NSDate, NSDictionary, NSNumber, NSSet, NSString, SFCertificateData;
 
 @interface DVTSigningCertificate : NSObject
 {
-    NSNumber *_isTrusted;
     SFCertificateData *_certificateData;
+    NSNumber *_isSelfSigned;
+    NSNumber *_isExpired;
+    NSNumber *_isSubmissionCertificate;
+    NSNumber *_isManaged;
     DVTLogAspect *_logAspect;
-    NSString *_certificateKind;
+    NSSet *_certificateKinds;
     NSString *_trimmedName;
     NSString *_commonName;
     NSString *_portalTeamID;
     NSString *_portalTeamName;
     NSString *_portalMemberID;
+    NSString *_portalTeamMemberID;
     NSDate *_issueDate;
     NSDate *_expirationDate;
     NSString *_sha1Hash;
     NSString *_serialNumber;
+    NSDictionary *_certificateValues;
+    DVTSigningCertificateValidity *_validity;
     id _underlyingType;
     NSArray *_keychainSearchList;
 }
 
++ (id)createCSR:(id)arg1 email:(id)arg2 error:(id *)arg3;
++ (id)_dateFromCertificateValues:(id)arg1 forOID:(id)arg2;
++ (id)serialNumberFromCertificateValues:(id)arg1;
++ (id)serialNumberFromCertificate:(struct __SecCertificate *)arg1;
++ (id)issueDateForCertificateValues:(id)arg1;
++ (id)issueDateForCertificate:(struct __SecCertificate *)arg1;
++ (id)certificateKindsFromCertificateValues:(id)arg1;
++ (id)certificateKindsFromCertificate:(struct __SecCertificate *)arg1;
 @property(readonly) NSArray *keychainSearchList; // @synthesize keychainSearchList=_keychainSearchList;
 @property(readonly) id underlyingType; // @synthesize underlyingType=_underlyingType;
-@property(readonly) NSString *portalTeamName; // @synthesize portalTeamName=_portalTeamName;
 @property(readonly) DVTLogAspect *logAspect; // @synthesize logAspect=_logAspect;
 - (void).cxx_destruct;
+- (BOOL)writeToFile:(id)arg1 error:(id *)arg2;
+- (BOOL)repairTrustSettings:(id *)arg1;
+- (BOOL)deleteFromKeychain:(id *)arg1;
 - (id)p12DataWithPassword:(id)arg1 error:(id *)arg2;
-- (id)_valueInSubjectNameSectionFromCertificate:(struct OpaqueSecCertificateRef *)arg1 forOID:(id)arg2;
-- (id)_dateFromCertificate:(struct OpaqueSecCertificateRef *)arg1 forOID:(id)arg2;
+- (id)_valueInSubjectNameSectionForOID:(id)arg1;
 - (id)certificateData;
+@property(readonly) NSDictionary *certificateValues; // @synthesize certificateValues=_certificateValues;
+@property(readonly) BOOL isSelfSigned;
 - (id)defaultDesignatedRequirementsForIdentifier:(id)arg1;
 - (id)defaultDesignatedRequirements;
 @property(readonly) NSString *serialNumber; // @synthesize serialNumber=_serialNumber;
 @property(readonly) NSString *sha1Hash; // @synthesize sha1Hash=_sha1Hash;
 @property(readonly, getter=isForServer) BOOL forServer;
-@property(readonly, getter=isTrusted) BOOL trusted;
 @property(readonly, getter=isExpired) BOOL expired;
 @property(readonly) NSDate *expirationDate; // @synthesize expirationDate=_expirationDate;
 @property(readonly) NSDate *issueDate; // @synthesize issueDate=_issueDate;
+@property(readonly) DVTSigningCertificateValidity *validity; // @synthesize validity=_validity;
+- (void)_installIntermediateCertificates;
 - (BOOL)isIdentityOnKeychains:(id)arg1;
 @property(readonly, getter=isIdentity) BOOL identity;
 @property(readonly) NSString *portalMemberID; // @synthesize portalMemberID=_portalMemberID;
-- (id)portalTeamName:(struct OpaqueSecCertificateRef *)arg1;
+@property(readonly) NSString *portalTeamName; // @synthesize portalTeamName=_portalTeamName;
 @property(readonly) NSString *portalTeamID; // @synthesize portalTeamID=_portalTeamID;
 - (BOOL)isFromPortal;
+@property(readonly) NSString *portalTeamMemberID; // @synthesize portalTeamMemberID=_portalTeamMemberID;
 @property(readonly) NSString *commonName; // @synthesize commonName=_commonName;
 @property(readonly) NSString *trimmedName; // @synthesize trimmedName=_trimmedName;
-@property(readonly) NSString *certificateKind; // @synthesize certificateKind=_certificateKind;
+@property(readonly) BOOL isSubmissionCertificate;
+@property(readonly) BOOL isManaged;
+@property(readonly) NSSet *certificateKinds; // @synthesize certificateKinds=_certificateKinds;
+- (id)copyWithClearedCaches;
 - (long long)compare:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
-- (struct OpaqueSecCertificateRef *)certificateRef;
+- (struct __SecCertificate *)certificateRef;
 - (id)description;
 - (id)initWithUnderlyingType:(id)arg1 logAspect:(id)arg2;
 - (id)initWithUnderlyingType:(id)arg1 keychainSearchList:(id)arg2 logAspect:(id)arg3;

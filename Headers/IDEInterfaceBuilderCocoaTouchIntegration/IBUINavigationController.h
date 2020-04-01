@@ -7,59 +7,51 @@
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBUIViewController.h>
 
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBDocumentArchiving-Protocol.h>
-#import <IDEInterfaceBuilderCocoaTouchIntegration/NSCoding-Protocol.h>
 
 @class IBUINavigationBar, IBUIToolbar, NSArray, NSString;
 
-@interface IBUINavigationController : IBUIViewController <IBDocumentArchiving, NSCoding>
+@interface IBUINavigationController : IBUIViewController <IBDocumentArchiving>
 {
-    IBUINavigationBar *navigationBar;
-    IBUIToolbar *toolbar;
-    NSArray *viewControllers;
-    BOOL navigationBarHidden;
-    BOOL toolbarHidden;
+    NSArray *_viewControllers;
+    BOOL _navigationBarHidden;
+    BOOL _toolbarHidden;
     BOOL _hidesBarsWhenKeyboardAppears;
     BOOL _hidesBarsOnSwipe;
     BOOL _hidesBarsWhenVerticallyCompact;
     BOOL _hidesBarsOnTap;
+    IBUINavigationBar *_navigationBar;
+    IBUIToolbar *_toolbar;
 }
 
 + (void)registerMarshallingRecordHandlers;
 + (id)ibObservedPropertiesForEditorViewInvalidation;
-+ (id)ibObservedPropertiesForInheritableMetricsInvalidation;
 + (id)keyPathsForValuesAffectingSimulatedBottomBarMetrics;
 + (id)keyPathsForValuesAffectingSimulatedTopBarMetrics;
++ (id)keyPathsForValuesAffectingIbInspectedToolbarHidden;
++ (id)keyPathsForValuesAffectingIbInspectedNavigationBarHidden;
 + (id)ibInstantiateForRole:(long long)arg1 withTargetRuntime:(id)arg2 documentClass:(Class)arg3 assetIdentifier:(id)arg4;
 @property(nonatomic) BOOL hidesBarsOnTap; // @synthesize hidesBarsOnTap=_hidesBarsOnTap;
 @property(nonatomic) BOOL hidesBarsWhenVerticallyCompact; // @synthesize hidesBarsWhenVerticallyCompact=_hidesBarsWhenVerticallyCompact;
 @property(nonatomic) BOOL hidesBarsOnSwipe; // @synthesize hidesBarsOnSwipe=_hidesBarsOnSwipe;
 @property(nonatomic) BOOL hidesBarsWhenKeyboardAppears; // @synthesize hidesBarsWhenKeyboardAppears=_hidesBarsWhenKeyboardAppears;
+@property(getter=isToolbarHidden) BOOL toolbarHidden; // @synthesize toolbarHidden=_toolbarHidden;
+@property(retain) IBUIToolbar *toolbar; // @synthesize toolbar=_toolbar;
+@property(getter=isNavigationBarHidden) BOOL navigationBarHidden; // @synthesize navigationBarHidden=_navigationBarHidden;
+@property(retain) IBUINavigationBar *navigationBar; // @synthesize navigationBar=_navigationBar;
 - (void).cxx_destruct;
 - (id)innateSimulatedMetricsForPipeline;
 - (id)simulatedMetricsForPipeline;
 - (id)displayedChildViewController;
-- (id)rootViewController;
-- (void)setRootViewController:(id)arg1;
+@property(retain) IBUIViewController *rootViewController;
 - (BOOL)displaysContentView;
 - (void)setViewControllers:(id)arg1;
 - (id)viewControllers;
 - (BOOL)ownsBottomBar;
-- (void)setToolbar:(id)arg1;
-- (id)toolbar;
-- (void)setToolbarHidden:(BOOL)arg1;
-- (BOOL)isToolbarHidden;
 - (BOOL)ownsTopBar;
-- (void)setNavigationBar:(id)arg1;
-- (id)navigationBar;
-- (void)setNavigationBarHidden:(BOOL)arg1;
-- (BOOL)isNavigationBarHidden;
-- (id)initWithTargetRuntime:(id)arg1;
-- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
-- (void)archiveWithDocumentArchiver:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithTargetRuntime:(id)arg1;
 - (BOOL)ibIsValidPushReceiver;
-- (BOOL)ibIsChildArbitrationUnitRoot:(id)arg1;
 - (BOOL)ibCanBeEmbeddedInSplitViewControllerController;
 - (BOOL)ibCanBeEmbeddedInNavigationController;
 - (BOOL)ibCanBeEmbeddedInTabBarController;
@@ -70,10 +62,13 @@
 - (void)setIbInspectedSimulatedTopBarMetrics:(id)arg1;
 - (void)setIbSimulatedBottomBarMetricsWithSideEffects:(id)arg1;
 - (void)setIbSimulatedTopBarMetricsWithSideEffects:(id)arg1;
-- (void)ibWarnings:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
+- (BOOL)canHideBarsOnEvent;
+- (BOOL)canToggleToolbarVisibility;
+- (id)ibMetricChainForDownstreamController:(id)arg1 viaSegue:(id)arg2 succeedingMetric:(id)arg3;
+- (void)ibPopulateIssues:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
 - (id)ibImageForOwnedScene;
+- (id)ibLocalPropertiesForInheritableMetricsInvalidation;
 - (void)instantiateToolbarIfNecessary;
-- (BOOL)isUndoingOrRedoing;
 - (id)ibAcceptContentsOfPasteboard:(id)arg1 inDocument:(id)arg2 insertionContext:(id)arg3;
 - (BOOL)ibToManyRelationSupportsReplacement:(id)arg1;
 - (BOOL)ibToManyRelationSupportsInsertion:(id)arg1;
@@ -94,6 +89,15 @@
 - (BOOL)ibClipsChild:(id)arg1;
 - (void)ibPopulateChildBackToFrontRelationOrder:(id)arg1;
 - (void)ibPopulateChildRelationOrder:(id)arg1;
+- (id)ibLeafMetricForValidationWithPrecedingMetric:(id)arg1;
+- (id)ibEditorViewWithSuggestedSize:(struct CGSize)arg1 forDocument:(id)arg2;
+- (Class)ibEditorViewClass;
+- (Class)ibEditorClass;
+- (id)ibLocalAttributeKeyPaths;
+- (id)ibLocalChildToManyRelationshipsKeyPaths;
+- (id)ibLocalChildToOneRelationshipsKeyPaths;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

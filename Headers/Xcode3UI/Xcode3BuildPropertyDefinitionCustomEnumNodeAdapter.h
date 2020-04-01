@@ -16,6 +16,7 @@
 + (id)_maybePerformOneTimePreprocessingWithOutlineView:(id)arg1;
 + (void)performOneTimePreprocessing;
 + (BOOL)requiresPreprocessingBeforeAddingMenuItemsToPopUpCell;
++ (id)filteredDefinitionStrings;
 - (void).cxx_destruct;
 - (void)dataNode:(id)arg1 outlineView:(id)arg2 willDisplayCell:(id)arg3 forTableColumn:(id)arg4;
 - (BOOL)_isPopUpButtonCell:(id)arg1 inTableColumn:(id)arg2;

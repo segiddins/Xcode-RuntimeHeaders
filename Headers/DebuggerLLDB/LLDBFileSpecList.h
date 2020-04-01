@@ -10,11 +10,10 @@
 
 @class NSString;
 
-__attribute__((visibility("hidden")))
 @interface LLDBFileSpecList : NSObject <DBGSBFileSpecList>
 {
     struct SBFileSpecList {
-        struct unique_ptr<lldb_private::FileSpecList, std::__1::default_delete<lldb_private::FileSpecList>> m_opaque_ap;
+        struct unique_ptr<lldb_private::FileSpecList, std::__1::default_delete<lldb_private::FileSpecList>> m_opaque_up;
     } _fileSpecList;
 }
 

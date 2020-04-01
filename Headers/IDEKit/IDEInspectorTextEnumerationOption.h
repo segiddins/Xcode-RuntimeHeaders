@@ -32,7 +32,7 @@
 @property(readonly, getter=isHidden) BOOL hidden; // @synthesize hidden=_hidden;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)initWithXMLElement:(id)arg1 targettingInspectorProperty:(id)arg2;
+- (id)initWithXMLElement:(id)arg1 targetingInspectorProperty:(id)arg2;
 - (id)initWithValue:(id)arg1 title:(id)arg2 selectedTitle:(id)arg3 titleColor:(id)arg4 indent:(long long)arg5 image:(id)arg6 hidden:(BOOL)arg7 enabled:(BOOL)arg8;
 
 @end

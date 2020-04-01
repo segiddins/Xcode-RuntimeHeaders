@@ -13,7 +13,7 @@
 
 @interface IDEConsoleItem : NSObject <DVTSimpleSerialization, NSSecureCoding>
 {
-    NSString *_adaptorType;
+    unsigned long long _adaptorType;
     NSString *_content;
     double _timestamp;
     int _kind;
@@ -28,7 +28,7 @@
 @property int kind; // @synthesize kind=_kind;
 @property(readonly) double timestamp; // @synthesize timestamp=_timestamp;
 @property(readonly) NSString *content; // @synthesize content=_content;
-@property(readonly) NSString *adaptorType; // @synthesize adaptorType=_adaptorType;
+@property(readonly) unsigned long long adaptorType; // @synthesize adaptorType=_adaptorType;
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
@@ -46,7 +46,7 @@
 @property(readonly, getter=isInput) BOOL input;
 - (void)setInput:(BOOL)arg1;
 - (id)description;
-- (id)initWithAdaptorType:(id)arg1 content:(id)arg2 kind:(int)arg3;
+- (id)initWithAdaptorType:(unsigned long long)arg1 content:(id)arg2 kind:(int)arg3;
 
 @end
 

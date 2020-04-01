@@ -6,12 +6,10 @@
 
 #import <objc/NSObject.h>
 
-#import <DVTFoundation/NSKeyedUnarchiverDelegate-Protocol.h>
-
 @class DVTStateToken, NSMapTable, NSMutableDictionary, NSString;
 @protocol DVTStateRepositoryDelegate;
 
-@interface DVTStateRepository : NSObject <NSKeyedUnarchiverDelegate>
+@interface DVTStateRepository : NSObject
 {
     NSString *_identifier;
     DVTStateRepository *_parentRepository;
@@ -21,10 +19,11 @@
     id <DVTStateRepositoryDelegate> _delegate;
 }
 
++ (id)_primitiveReadStateFromData:(id)arg1;
++ (id)_primitiveStateDataForState:(id)arg1 identifier:(id)arg2 error:(id *)arg3;
 + (void)initialize;
 @property(retain) id <DVTStateRepositoryDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (Class)unarchiver:(id)arg1 cannotDecodeObjectOfClassName:(id)arg2 originalClasses:(id)arg3;
 - (id)readStateFromURL:(id)arg1 error:(id *)arg2;
 - (BOOL)writeStateToURL:(id)arg1 error:(id *)arg2;
 - (id)readStateFromData:(id)arg1 error:(id *)arg2;
@@ -35,7 +34,7 @@
 - (void)collectStateFromRegisteredObjects;
 - (void)cloneCurrentStateDataFromRepository:(id)arg1;
 - (id)currentState;
-- (void)_cloneStateForIdentifier:(id)arg1 toIdentifier:(id)arg2;
+- (void)cloneStateForIdentifier:(id)arg1 toIdentifier:(id)arg2;
 - (void)setStateIsClone:(BOOL)arg1 forIdentifier:(id)arg2;
 - (id)_stateForIdentifier:(id)arg1;
 - (void)_setState:(id)arg1 forIdentifier:(id)arg2;
@@ -56,12 +55,6 @@
 - (void)dealloc;
 - (id)initWithIdentifier:(id)arg1 inParentRepository:(id)arg2;
 - (id)initWithIdentifier:(id)arg1 inParentStateToken:(id)arg2;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

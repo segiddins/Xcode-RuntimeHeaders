@@ -7,30 +7,25 @@
 #import <IDEKit/IDEEditor.h>
 
 #import <IDESceneKitEditor/DVTReplacementViewDelegate-Protocol.h>
-#import <IDESceneKitEditor/IDECapsuleListViewDataSource-Protocol.h>
+#import <IDESceneKitEditor/DVTTabChooserViewDelegate-Protocol.h>
 
-@class DVTControllerContentView, IDECapsuleListView, NSArray, NSButton, NSString, SKEAssetCatalogCapsuleViewController, SKEAssetCatalogDocument;
+@class DVTChoice, DVTTabChooserView, NSString, NSView, SKEAssetCatalogDocument, SKEAssetCatalogDocumentSettingsViewController, SKEAssetCatalogMaterialsViewController;
 
-@interface SKEAssetCatalogDocumentViewController : IDEEditor <DVTReplacementViewDelegate, IDECapsuleListViewDataSource>
+@interface SKEAssetCatalogDocumentViewController : IDEEditor <DVTTabChooserViewDelegate, DVTReplacementViewDelegate>
 {
-    IDECapsuleListView *_capsuleListView;
-    DVTControllerContentView *_commonOptionsView;
-    DVTControllerContentView *_iosOptionsView;
-    NSButton *_forceYUpButton;
-    NSButton *_interleaveButton;
-    NSButton *_preferCompressedTexturesButton;
-    SKEAssetCatalogCapsuleViewController *_commonOptionsViewController;
-    SKEAssetCatalogCapsuleViewController *_iosOptionsViewController;
-    NSArray *_currentSelectedItems;
+    DVTTabChooserView *_tabChooser;
+    NSView *_mainView;
+    DVTChoice *_materialsChoice;
+    DVTChoice *_settingsChoice;
+    SKEAssetCatalogMaterialsViewController *_materialsViewController;
+    SKEAssetCatalogDocumentSettingsViewController *_settingViewController;
 }
 
 - (void).cxx_destruct;
+- (void)tabChooserView:(id)arg1 userDidChooseChoice:(id)arg2;
+- (unsigned long long)selectedSubEditor;
+- (void)setSelectedSubEditor:(unsigned long long)arg1;
 - (void)primitiveInvalidate;
-- (void)selectDocumentLocations:(id)arg1;
-- (void)setCurrentSelectedItems:(id)arg1;
-- (id)currentSelectedItems;
-- (id)capsuleListView:(id)arg1 viewControllerForRow:(long long)arg2;
-- (long long)numberOfObjectsInCapsuleListView:(id)arg1;
 - (BOOL)canBecomeMainViewController;
 - (void)loadView;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2 document:(id)arg3;

@@ -11,7 +11,9 @@
 }
 
 + (id)sharedInstance;
-- (void)selectNewWorkspaceTabControllerForPausedDebugSession:(id)arg1;
+- (id)_findAndActivateTabContainingDebugSession:(id)arg1 workspaceDocument:(id)arg2;
+- (id)_activateOrCreateTabWithLabel:(id)arg1 workspaceDocument:(id)arg2;
+- (void)selectNewWorkspaceTabController:(id)arg1 workspaceDocument:(id)arg2 forPausedDebugSession:(id)arg3;
 - (id)_init_dvt_internal;
 - (id)init;
 

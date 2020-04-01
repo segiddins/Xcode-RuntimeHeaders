@@ -4,15 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <IDEFoundation/NSObject-Protocol.h>
+#import <IDEFoundation/DVTInvalidation-Protocol.h>
 
-@class DVTPortalProfilePurpose, NSSet;
-@protocol IDEProvisionable;
+@class NSSet;
 
-@protocol IDEProvisionableProvider <NSObject>
-@property(readonly, nonatomic) DVTPortalProfilePurpose *automaticProvisioningPurpose;
+@protocol IDEProvisionableProvider <DVTInvalidation>
 @property(readonly, nonatomic) NSSet *provisionableDevices;
-@property(readonly, nonatomic) NSSet<IDEProvisionable> *provisionables;
+@property(readonly, nonatomic) NSSet *provisionables;
 @property(readonly, nonatomic) BOOL finishedLoading;
 @end
 

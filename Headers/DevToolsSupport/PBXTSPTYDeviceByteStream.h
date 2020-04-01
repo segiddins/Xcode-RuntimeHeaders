@@ -17,19 +17,20 @@
     int _slaveFD;
     NSString *_slaveDeviceName;
     NSFileHandle *_slaveFileHandle;
-    BOOL _receivedLastDataBuffer;
     PBXTSTask *_taskToSynchronizeWith;
     int _fromSignalPipeFD;
     int _toSignalPipeFD;
-    BOOL _watcherThreadRunning;
     NSConditionLock *_queueLock;
     NSMutableArray *_queue;
     NSMutableData *_accumulator;
     unsigned long long _bufferedDataLength;
     unsigned long long _stats_numBytesSent;
     unsigned long long _stats_numBytesRead;
+    BOOL _receivedLastDataBuffer;
+    BOOL _watcherThreadRunning;
 }
 
+- (void).cxx_destruct;
 - (int)masterDeviceFD;
 - (id)fileHandleForSlaveDevice;
 - (id)slaveDeviceName;
@@ -45,7 +46,6 @@
 - (void)_processPtyData;
 - (void)_watchPTY;
 - (void)_setupPTYWatcherThread;
-- (void)finalize;
 - (void)dealloc;
 - (id)init;
 

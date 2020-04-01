@@ -4,14 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Foundation/NSObject.h>
+#import <objc/NSObject.h>
 
 @class NSCountedSet, NSMutableArray;
 
 @interface XCMessageQueue : NSObject
 {
     NSMutableArray *_queue;
-    struct __CFRunLoopSource *_runloopSource;
+    id _runloopSource;
     NSCountedSet *_runloops;
     id _delegate;
     unsigned long long _firstSuspendedIndex;
@@ -20,6 +20,7 @@
 
 + (BOOL)backgroundThreadsShouldSynchronizeWithMainThread;
 + (void)initialize;
+- (void).cxx_destruct;
 - (void)resumeDispatch;
 - (void)suspendDispatchAfterCurrentQueueDrains;
 - (void)addObject:(id)arg1;
@@ -31,7 +32,6 @@
 - (void)invalidate;
 - (void)removeFromRunLoop:(id)arg1 forMode:(id)arg2;
 - (void)addToRunLoop:(id)arg1 forMode:(id)arg2;
-- (void)finalize;
 - (void)dealloc;
 - (id)init;
 

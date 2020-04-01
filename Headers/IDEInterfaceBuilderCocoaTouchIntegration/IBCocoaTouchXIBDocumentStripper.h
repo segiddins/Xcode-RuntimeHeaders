@@ -10,8 +10,7 @@
 {
 }
 
-- (id)strippedWrapperOfContentsAtPath:(id)arg1 error:(id *)arg2;
-- (id)regularFileWrappersForDataAtPaths:(id)arg1 error:(id *)arg2;
++ (id)allHybridNIBPackageRuntimeFileNames;
 
 @end
 

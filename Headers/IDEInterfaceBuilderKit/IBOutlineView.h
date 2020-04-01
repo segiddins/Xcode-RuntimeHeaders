@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <DVTKit/DVTOutlineView.h>
+#import <DVTUserInterfaceKit/DVTOutlineView.h>
 
 @class NSMutableDictionary, NSMutableIndexSet, NSMutableSet, NSNumber, NSSet, NSString;
 
@@ -27,8 +27,6 @@
 @property(retain, nonatomic) NSSet *highlightedRows; // @synthesize highlightedRows=_highlightedRows;
 @property(copy, nonatomic) NSNumber *rowIndicatingPotentialConnection; // @synthesize rowIndicatingPotentialConnection=_rowIndicatingPotentialConnection;
 - (void).cxx_destruct;
-- (void)drawBackgroundInClipRect:(struct CGRect)arg1;
-- (id)effectiveBackgroundColor;
 - (void)drawRow:(long long)arg1 clipRect:(struct CGRect)arg2;
 - (void)drawPotentialConnectionIndicatorInRect:(struct CGRect)arg1;
 - (struct CGRect)rectOfRow:(long long)arg1;

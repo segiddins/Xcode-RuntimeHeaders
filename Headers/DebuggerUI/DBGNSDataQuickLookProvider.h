@@ -8,7 +8,7 @@
 
 #import <DebuggerUI/IDEVariablesViewQuickLookProvider-Protocol.h>
 
-@class DBGDataValue, DVTBorderedView, DVTReplacementView, IDEHexEditorViewController, NSData, NSSegmentedControl, NSString, NSTextField, NSURL, NSView;
+@class DBGDataValue, DVTBorderedView, DVTReplacementView, IDEHexEditorViewController, NSButton, NSData, NSProgressIndicator, NSSegmentedControl, NSString, NSTextField, NSURL, NSView;
 @protocol DVTCancellable;
 
 @interface DBGNSDataQuickLookProvider : NSViewController <IDEVariablesViewQuickLookProvider>
@@ -19,6 +19,7 @@
     unsigned long long _numberOfPagesOfByteData;
     NSData *_currentPageOfNSData;
     id <DVTCancellable> _cancellableMemoryReadToken;
+    id <DVTCancellable> _cancellableMemoryReadForExportToken;
     int _loadedState;
     long long _currentPageIndexIntoByteData;
     DVTBorderedView *_borderedView;
@@ -26,8 +27,12 @@
     DVTReplacementView *_hexEditorReplacementView;
     NSSegmentedControl *_pageSegmentedControl;
     NSTextField *_statusLabel;
+    NSButton *_exportButton;
+    NSProgressIndicator *_spinner;
 }
 
+@property(retain) NSProgressIndicator *spinner; // @synthesize spinner=_spinner;
+@property(retain) NSButton *exportButton; // @synthesize exportButton=_exportButton;
 @property(retain) NSTextField *statusLabel; // @synthesize statusLabel=_statusLabel;
 @property(retain) NSSegmentedControl *pageSegmentedControl; // @synthesize pageSegmentedControl=_pageSegmentedControl;
 @property(retain) DVTReplacementView *hexEditorReplacementView; // @synthesize hexEditorReplacementView=_hexEditorReplacementView;
@@ -36,12 +41,18 @@
 @property(nonatomic) long long currentPageIndexIntoByteData; // @synthesize currentPageIndexIntoByteData=_currentPageIndexIntoByteData;
 @property int loadedState; // @synthesize loadedState=_loadedState;
 - (void).cxx_destruct;
+- (void)exportButtonPressed:(id)arg1;
 - (void)nextOrPreviousPage:(id)arg1;
+- (void)promptToSaveData:(id)arg1 withSuggestedFileName:(id)arg2;
+- (BOOL)_stringIsAlphaNumeric:(id)arg1;
+- (void)_retrieveDataForExport;
 - (void)_failedToGetData;
 - (void)_pageOfByteDataWasFetched:(id)arg1 startingAddressOfPage:(unsigned long long)arg2;
 - (void)_retrievePage:(unsigned long long)arg1;
 - (void)_startInitialRetrieval;
+- (void)_startSwiftDataToNSDataConversion;
 - (void)cancelLoading;
+- (void)dealloc;
 @property(readonly) NSView *quickLookView;
 - (void)_updatePageControlEnablement;
 - (void)loadView;

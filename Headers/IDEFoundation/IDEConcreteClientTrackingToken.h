@@ -18,14 +18,16 @@
     IDEConcreteClientTracker *_clientTracker;
     DVTSystemActivityToken *_systemActivityToken;
     DVTStackBacktrace *_creationBacktrace;
+    CDUnknownBlockType _terminationSignpost;
 }
 
+@property(copy) CDUnknownBlockType terminationSignpost; // @synthesize terminationSignpost=_terminationSignpost;
 @property(retain) DVTStackBacktrace *creationBacktrace; // @synthesize creationBacktrace=_creationBacktrace;
 @property(retain) DVTSystemActivityToken *systemActivityToken; // @synthesize systemActivityToken=_systemActivityToken;
 @property(readonly) NSString *clientName; // @synthesize clientName=_clientName;
 - (void).cxx_destruct;
 - (void)cancelClient;
-- (id)initWithClientName:(id)arg1 clientTracker:(id)arg2 cancellationBlock:(CDUnknownBlockType)arg3;
+- (id)initWithClientName:(id)arg1 clientTracker:(id)arg2 terminationSignpost:(CDUnknownBlockType)arg3 cancellationBlock:(CDUnknownBlockType)arg4;
 @property(readonly, copy) NSString *description;
 - (void)unregisterClient;
 

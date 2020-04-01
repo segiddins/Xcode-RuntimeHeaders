@@ -6,16 +6,17 @@
 
 #import <objc/NSObject.h>
 
-@class IDEIndexClassSymbol, NSArray, NSString;
+@class NSArray, NSString;
+@protocol IDEIndexClassSymbol;
 
 @interface IDEDataModelClassUMLRepresentation : NSObject
 {
-    IDEIndexClassSymbol *_classSymbol;
+    id <IDEIndexClassSymbol> _classSymbol;
     NSArray *_ownedAttributes;
     NSArray *_ownedOperations;
 }
 
-@property(readonly) IDEIndexClassSymbol *classSymbol; // @synthesize classSymbol=_classSymbol;
+@property(readonly) id <IDEIndexClassSymbol> classSymbol; // @synthesize classSymbol=_classSymbol;
 @property(readonly) NSArray *ownedOperations; // @synthesize ownedOperations=_ownedOperations;
 @property(readonly) NSArray *ownedAttributes; // @synthesize ownedAttributes=_ownedAttributes;
 - (void).cxx_destruct;

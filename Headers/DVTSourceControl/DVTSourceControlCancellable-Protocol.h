@@ -7,8 +7,7 @@
 #import <DVTSourceControl/NSObject-Protocol.h>
 
 @protocol DVTSourceControlCancellable <NSObject>
-@property __weak id context;
-@property BOOL suppressAuthenticationFailure;
+@property(readonly) unsigned long long authenticationOptions;
 - (void)cancel;
 @end
 

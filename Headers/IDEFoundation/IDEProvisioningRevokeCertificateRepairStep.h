@@ -6,15 +6,15 @@
 
 #import <IDEFoundation/IDEProvisioningRepairStep.h>
 
-@class DVTPortalCertificate;
+@protocol DVTPortalCertificateProtocol;
 
 @interface IDEProvisioningRevokeCertificateRepairStep : IDEProvisioningRepairStep
 {
-    DVTPortalCertificate *_certificate;
+    id <DVTPortalCertificateProtocol> _certificate;
 }
 
 + (id)revokeCertificateRepairStepWithCertificate:(id)arg1;
-@property(readonly, nonatomic) DVTPortalCertificate *certificate; // @synthesize certificate=_certificate;
+@property(readonly, nonatomic) id <DVTPortalCertificateProtocol> certificate; // @synthesize certificate=_certificate;
 - (void).cxx_destruct;
 - (BOOL)handleExecutionWithContext:(id)arg1 ledgerEntry:(id)arg2 error:(id *)arg3;
 - (BOOL)preflightWithContext:(id)arg1 error:(id *)arg2;

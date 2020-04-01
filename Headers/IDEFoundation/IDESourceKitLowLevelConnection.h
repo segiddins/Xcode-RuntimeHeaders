@@ -11,10 +11,11 @@
     struct _sourcekit_connection_s *_obj;
 }
 
+@property(readonly) int processId;
 - (void)sendCallbackReply:(id)arg1;
 - (void)setCallbackHandler:(id)arg1 receiver:(CDUnknownBlockType)arg2;
 - (void)setNotificationHandler:(id)arg1 receiver:(CDUnknownBlockType)arg2;
-- (void)sendRequest:(id)arg1 queue:(id)arg2 receiver:(CDUnknownBlockType)arg3;
+- (id)sendRequest:(id)arg1 queue:(id)arg2 receiver:(CDUnknownBlockType)arg3;
 - (id)sendRequestSync:(id)arg1 error:(id *)arg2;
 - (id)sendRequestSync:(id)arg1;
 - (struct _sourcekit_uid_s *)getUIDFromString:(const char *)arg1;

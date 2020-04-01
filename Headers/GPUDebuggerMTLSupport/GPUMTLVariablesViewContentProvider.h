@@ -4,17 +4,22 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <GPUTraceDebuggerUI/GPUVariablesViewContentProvider.h>
+#import <GPUDebugger/GPUVariablesViewContentProvider.h>
 
 #import <GPUDebuggerMTLSupport/DYPVariablesViewContentProviderDelegate-Protocol.h>
 
-@class NSString;
-@protocol DYPVariablesViewContentProvider;
+@class DVTObservingToken, NSObject, NSString;
+@protocol DYPOutlineItem, DYPVariablesViewContentProvider, OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
 @interface GPUMTLVariablesViewContentProvider : GPUVariablesViewContentProvider <DYPVariablesViewContentProviderDelegate>
 {
     id <DYPVariablesViewContentProvider> _platformVariablesView;
+    NSObject<OS_dispatch_queue> *_queue;
+    id _gpuDebuggingNotifyToken;
+    DVTObservingToken *_debugStateObserverToken;
+    DVTObservingToken *_validObserverToken;
+    id <DYPOutlineItem> _currentItem;
     NSString *_sessionID;
 }
 
@@ -23,7 +28,6 @@ __attribute__((visibility("hidden")))
 - (id)imageToUseInDefaultQuickLookForNode:(id)arg1;
 - (id)imageForNode:(id)arg1;
 - (void)provideScopeChoices:(id)arg1;
-- (id)currentlyDisplayedResourceItems;
 - (id)defaultImageWithIssueType:(int)arg1 ofSize:(unsigned long long)arg2;
 - (id)cachedImageWithName:(id)arg1 fromBundle:(id)arg2;
 - (BOOL)isRuntimeOSAppleInternal;
@@ -37,10 +41,15 @@ __attribute__((visibility("hidden")))
 - (void)_updateFilteredListForAllObjects;
 - (void)_updateFilteredListForBoundObjects;
 - (void)_updateFilteredListForCommandEncoder;
+- (void)_updateFilteredList;
 - (void)updateFilteredList;
+- (void)updateUnusedResourceFilteredList:(id)arg1;
 - (void)updateCurrentLocation:(id)arg1;
+- (void)_installNewVariableValuesOnMainThread:(id)arg1;
 - (void)primitiveInvalidate;
 - (void)setDebuggerController:(id)arg1;
+- (void)_setupObservers;
+- (id)initWithIdentifier:(id)arg1 andWorkspaceUIState:(id)arg2;
 
 // Remaining properties
 @property(readonly, nonatomic) int comparisonMode;

@@ -29,12 +29,11 @@
 + (void)initialize;
 - (void).cxx_destruct;
 - (const double *)lineDashPatternForLineWidth:(double)arg1;
-- (double)lineDashPhase;
-- (long long)lineDashPatternCount;
-- (const double *)lineDashPattern;
+@property(readonly) double lineDashPhase;
+@property(readonly) long long lineDashPatternCount;
+@property(readonly) const double *lineDashPattern;
 - (void)setLineDash:(const double *)arg1 count:(long long)arg2 phase:(double)arg3;
-- (id)lineDashPatternName;
-- (void)setLineDashPatternName:(id)arg1;
+@property(copy) NSString *lineDashPatternName;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToLineDashPattern:(id)arg1;

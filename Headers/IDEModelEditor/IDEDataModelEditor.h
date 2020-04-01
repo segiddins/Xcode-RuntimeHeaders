@@ -10,13 +10,13 @@
 #import <IDEModelEditor/NSSplitViewDelegate-Protocol.h>
 #import <IDEModelEditor/NSTabViewDelegate-Protocol.h>
 
-@class DVTDelayedMenuButton, IDEDMDocumentLocation, IDEDataModelConfigurationEditor, IDEDataModelEntityContentsEditor, IDEDataModelFetchRequestEditor, NSMapTable, NSMenu, NSSegmentedControl, NSString, NSTabView;
+@class CDMModel, DVTDelayedMenuButton, IDEDMDocumentLocation, IDEDataModelConfigurationEditor, IDEDataModelDocument, IDEDataModelEntityContentsEditor, IDEDataModelFetchIndexEditor, IDEDataModelFetchRequestEditor, NSMapTable, NSMenu, NSSegmentedControl, NSString, NSTabView;
 
 @interface IDEDataModelEditor : IDEDMEditor <NSTabViewDelegate, NSSplitViewDelegate, DVTFindBarFindable>
 {
     NSMapTable *_findHighlightsByModelObject;
-    int _selectedHierarchyViewTypeIndex;
-    int _selectedViewTypeIndex;
+    unsigned long long _selectedHierarchyViewTypeIndex;
+    unsigned long long _selectedViewTypeIndex;
     unsigned long long _selectedTabViewIndex;
     IDEDMDocumentLocation *_selectedSearchLocation;
     BOOL _isSelectingDocumentLocation;
@@ -26,6 +26,7 @@
     IDEDataModelEntityContentsEditor *entityContentsViewController;
     IDEDataModelFetchRequestEditor *fetchRequestViewController;
     IDEDataModelConfigurationEditor *configurationViewController;
+    IDEDataModelFetchIndexEditor *fetchIndexViewController;
     NSSegmentedControl *hierarchySegmentControl;
     NSSegmentedControl *browserDiagramSegmentControl;
     DVTDelayedMenuButton *addEntityButton;
@@ -44,8 +45,8 @@
 + (id)keyPathsForValuesAffectingEnableViewTypeSwitcher;
 + (id)keyPathsForValuesAffectingSelectedTopLevelObjects;
 + (id)keyPathsForValuesAffectingModelRoot;
-@property int selectedHierarchyViewTypeIndex; // @synthesize selectedHierarchyViewTypeIndex=_selectedHierarchyViewTypeIndex;
-@property int selectedViewTypeIndex; // @synthesize selectedViewTypeIndex=_selectedViewTypeIndex;
+@property unsigned long long selectedHierarchyViewTypeIndex; // @synthesize selectedHierarchyViewTypeIndex=_selectedHierarchyViewTypeIndex;
+@property unsigned long long selectedViewTypeIndex; // @synthesize selectedViewTypeIndex=_selectedViewTypeIndex;
 @property unsigned long long selectedTabViewIndex; // @synthesize selectedTabViewIndex=_selectedTabViewIndex;
 @property(retain) IDEDMDocumentLocation *selectedSearchLocation; // @synthesize selectedSearchLocation=_selectedSearchLocation;
 @property(retain) NSMapTable *findHighlightsByModelObject; // @synthesize findHighlightsByModelObject=_findHighlightsByModelObject;
@@ -65,6 +66,7 @@
 - (void)importMOMFile:(id)arg1;
 - (BOOL)importMOMFileAtPath:(id)arg1;
 - (void)_showFlatSourceListMode;
+- (void)addFetchIndex:(id)arg1;
 - (void)addConfiguration:(id)arg1;
 - (void)addFetchRequest:(id)arg1;
 - (void)addFetchedProperty:(id)arg1;
@@ -93,7 +95,7 @@
 - (BOOL)copyEntitiesToPasteBoard:(id)arg1;
 - (void)navigateToAnnotationWithRepresentedObject:(id)arg1 wantsIndicatorAnimation:(BOOL)arg2 exploreAnnotationRepresentedObject:(id)arg3;
 - (void)selectDocumentLocations:(id)arg1;
-- (id)model;
+@property(readonly) CDMModel *model;
 - (void)selectModelObjects:(id)arg1 focus:(BOOL)arg2;
 - (void)selectModelObjects:(id)arg1;
 - (id)viewSegmentControlTitle;
@@ -124,6 +126,7 @@
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
+@property(readonly) IDEDataModelDocument *document; // @dynamic document;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

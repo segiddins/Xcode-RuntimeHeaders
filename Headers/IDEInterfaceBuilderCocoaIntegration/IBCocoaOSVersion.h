@@ -11,13 +11,15 @@
 }
 
 + (Class)instanceScopingClass;
-+ (id)CocoaOSVersionWithArchiveIdentifier:(id)arg1;
 + (id)defaultHybridNIBPackageRuntimeFileName;
-+ (id)OSX1011AndEarlierVersion;
-+ (id)OSX1012AndLaterVersion;
++ (id)OSX1014AndLaterVersion;
++ (id)OSX1013AndLaterVersion;
++ (id)OSX1012AndEarlierVersion;
++ (id)OSX101201AndLaterVersion;
 + (id)instanceWithIdentifier:(id)arg1;
 + (id)allInstances;
 + (id)sharedInstance;
+@property(readonly, nonatomic) BOOL supportsNIBArchives;
 - (void)didRegisterSharedInstance;
 
 @end

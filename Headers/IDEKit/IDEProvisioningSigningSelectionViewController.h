@@ -8,23 +8,36 @@
 
 #import <IDEKit/NSMenuDelegate-Protocol.h>
 
-@class DVTObservingToken, NSPopUpButton, NSString, NSTextField;
-@protocol IDEProvisioningSigningSelectionDataSource;
+@class DVTObservingToken, IDEProvisioningSliceConfiguration, NSLayoutConstraint, NSPopUpButton, NSString, NSTextField;
+@protocol IDESigningEditorCertificateDataSource;
 
 @interface IDEProvisioningSigningSelectionViewController : IDEViewController <NSMenuDelegate>
 {
-    id <IDEProvisioningSigningSelectionDataSource> _dataSource;
+    id <IDESigningEditorCertificateDataSource> _dataSource;
     NSPopUpButton *_signingIdentityPopUpButton;
     NSTextField *_signingIdentityLabel;
+    NSTextField *_signingIdentityPopUpLabel;
+    NSLayoutConstraint *_popUpLeftPaddingConstraint;
+    NSLayoutConstraint *_popUpWidthConstraint;
+    NSLayoutConstraint *_labelLeftPaddingConstraint;
+    NSLayoutConstraint *_sliceHeightConstraint;
+    IDEProvisioningSliceConfiguration *_configuration;
     DVTObservingToken *_repairBusyObserver;
 }
 
-@property(retain) DVTObservingToken *repairBusyObserver; // @synthesize repairBusyObserver=_repairBusyObserver;
-@property __weak NSTextField *signingIdentityLabel; // @synthesize signingIdentityLabel=_signingIdentityLabel;
-@property __weak NSPopUpButton *signingIdentityPopUpButton; // @synthesize signingIdentityPopUpButton=_signingIdentityPopUpButton;
-@property(readonly, nonatomic) id <IDEProvisioningSigningSelectionDataSource> dataSource; // @synthesize dataSource=_dataSource;
+@property(retain, nonatomic) DVTObservingToken *repairBusyObserver; // @synthesize repairBusyObserver=_repairBusyObserver;
+@property(retain, nonatomic) IDEProvisioningSliceConfiguration *configuration; // @synthesize configuration=_configuration;
+@property(retain) NSLayoutConstraint *sliceHeightConstraint; // @synthesize sliceHeightConstraint=_sliceHeightConstraint;
+@property(retain) NSLayoutConstraint *labelLeftPaddingConstraint; // @synthesize labelLeftPaddingConstraint=_labelLeftPaddingConstraint;
+@property(retain) NSLayoutConstraint *popUpWidthConstraint; // @synthesize popUpWidthConstraint=_popUpWidthConstraint;
+@property(retain) NSLayoutConstraint *popUpLeftPaddingConstraint; // @synthesize popUpLeftPaddingConstraint=_popUpLeftPaddingConstraint;
+@property(retain) NSTextField *signingIdentityPopUpLabel; // @synthesize signingIdentityPopUpLabel=_signingIdentityPopUpLabel;
+@property(retain) NSTextField *signingIdentityLabel; // @synthesize signingIdentityLabel=_signingIdentityLabel;
+@property(retain) NSPopUpButton *signingIdentityPopUpButton; // @synthesize signingIdentityPopUpButton=_signingIdentityPopUpButton;
+@property(retain, nonatomic) id <IDESigningEditorCertificateDataSource> dataSource; // @synthesize dataSource=_dataSource;
 - (void).cxx_destruct;
 - (void)primitiveInvalidate;
+- (void)manageCertificates:(id)arg1;
 - (void)signingIdentityDidChangeOnPopUpButton:(id)arg1;
 - (void)updateSigningIdentitySelection;
 - (void)selectUnknownSigningIdentityForDisplayName:(id)arg1;
@@ -32,7 +45,7 @@
 - (void)updateElementVisibility;
 - (void)startObservations;
 - (void)viewDidLoad;
-- (id)initWithDataSource:(id)arg1;
+- (id)initWithDataSource:(id)arg1 configuration:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

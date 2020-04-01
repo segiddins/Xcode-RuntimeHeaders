@@ -26,16 +26,18 @@
 }
 
 + (id)ibtesting_collectDiagnosticsReportsDuring:(CDUnknownBlockType)arg1;
-+ (id)runSynchronousUpdateForRoot:(id)arg1 scaleFactor:(double)arg2 targetRuntime:(id)arg3 request:(id)arg4 requestConfigurationBlock:(CDUnknownBlockType)arg5;
++ (id)runSynchronousUpdateForRoot:(id)arg1 deviceTypeDescription:(id)arg2 targetRuntime:(id)arg3 request:(id)arg4 requestConfigurationBlock:(CDUnknownBlockType)arg5;
 + (void)initialize;
 @property(nonatomic) BOOL shouldUpdateScenesAsynchronously; // @synthesize shouldUpdateScenesAsynchronously=_shouldUpdateScenesAsynchronously;
 @property(nonatomic) __weak id <IBSceneUpdateManagerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)_updateScenesIteratively;
 - (void)_updateScenes;
-- (void)_updateScene:(id)arg1;
+- (void)_updateScene:(id)arg1 waitForRequests:(BOOL)arg2 populatingPendingRequestIDsByRequester:(id)arg3;
 - (id)_objectPackageForSceneUpdateRequest:(id)arg1;
 - (id)_sceneRootsForInvalidatedObjects;
 - (id)_remoteRequesterForSceneUpdate:(id)arg1;
+- (id)effectiveIncrementalUpdateSessionIDForSceneUpdate:(id)arg1;
 - (void)_cancelPendingUpdates;
 - (void)_clearSceneUpdate:(id)arg1;
 - (id)_sceneUpdateForEndingIncrementalSessionWithID:(id)arg1 withOriginalSceneUpdate:(id)arg2;

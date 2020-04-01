@@ -19,10 +19,11 @@
 @property long long transitionStyle; // @synthesize transitionStyle=_transitionStyle;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)ibLocalAttributeKeyPaths;
+- (id)ibImageForOwnedScene;
+- (void)ibPopulateIssues:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
 - (void)unarchiveWithDocumentUnarchiver:(id)arg1;
 - (void)archiveWithDocumentArchiver:(id)arg1;
-- (id)ibImageForOwnedScene;
-- (void)ibWarnings:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -18,6 +18,7 @@
     CDUnknownBlockType _postUpdateCallback;
 }
 
++ (BOOL)isProjectFileDataType:(id)arg1;
 + (void)initialize;
 @property(copy) CDUnknownBlockType postUpdateCallback; // @synthesize postUpdateCallback=_postUpdateCallback;
 @property(copy) CDUnknownBlockType preUpdateCallback; // @synthesize preUpdateCallback=_preUpdateCallback;

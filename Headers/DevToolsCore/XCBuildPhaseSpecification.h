@@ -20,10 +20,10 @@
 + (id)localizedSpecificationTypeName;
 + (id)specificationType;
 + (Class)specificationTypeBaseClass;
+- (void).cxx_destruct;
 - (id)buildSettings;
 - (id)buildRules;
 - (id)name;
-- (void)dealloc;
 - (id)initWithPropertyListDictionary:(id)arg1 inDomain:(id)arg2;
 
 @end

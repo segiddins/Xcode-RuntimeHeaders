@@ -6,16 +6,17 @@
 
 #import <objc/NSObject.h>
 
-@class IDEIndexClassSymbol, NSString;
+@class NSString;
+@protocol IDEIndexClassSymbol;
 
 @interface IDECDDataModelImportItem : NSObject
 {
-    IDEIndexClassSymbol *_classSymbol;
+    id <IDEIndexClassSymbol> _classSymbol;
     BOOL _shouldImport;
 }
 
 @property BOOL shouldImport; // @synthesize shouldImport=_shouldImport;
-@property(readonly) IDEIndexClassSymbol *classSymbol; // @synthesize classSymbol=_classSymbol;
+@property(readonly) id <IDEIndexClassSymbol> classSymbol; // @synthesize classSymbol=_classSymbol;
 - (void).cxx_destruct;
 @property(readonly) NSString *name;
 - (id)initWithClassSymbol:(id)arg1;

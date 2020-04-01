@@ -13,8 +13,6 @@
 + (id)defaultName;
 + (id)identifier;
 - (Class)dependencyGraphSnapshotClass;
-- (BOOL)insertBuildFiles:(id)arg1 atIndex:(unsigned long long)arg2;
-- (BOOL)acceptsVariantGroups;
 
 @end
 

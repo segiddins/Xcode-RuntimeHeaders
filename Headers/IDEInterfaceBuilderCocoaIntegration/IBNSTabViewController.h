@@ -19,6 +19,7 @@
     NSTabView *_tabView;
 }
 
++ (id)keyPathsForValuesAffectingIbInspectedTabViewItems;
 + (id)keyPathsForValuesAffectingIbInspectedTabStyle;
 + (id)keyPathsForValuesAffectingIbSelectedTabViewItem;
 + (Class)ibViewClass;
@@ -31,17 +32,23 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)init;
-- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
-- (void)archiveWithDocumentArchiver:(id)arg1;
+- (void)setIbInspectedTabViewItems:(id)arg1;
+- (void)reorderTab:(long long)arg1 toInsertionIndex:(long long)arg2;
+- (void)deleteTabItemAndPossiblyRemoveViewControllerAtIndex:(long long)arg1;
+- (void)appendNewTabItemAndViewControllerAtIndex:(long long)arg1;
+- (id)ibInspectedTabViewItems;
+- (id)ibInspectedTabPrototype;
 - (void)ibPopulateChildRelationOrder:(id)arg1;
 - (void)ibMakeDefaultView;
 - (id)ibTitleForItemAtIndex:(long long)arg1;
-- (id)ibTabViewDisplayItems;
+- (void)ibSetTitle:(id)arg1 forTabViewItem:(id)arg2;
+- (id)ibTitleForTabViewItem:(id)arg1;
+- (id)ibInspectedTabViewDisplayItems;
 @property(nonatomic) long long ibInspectedTabStyle;
 - (id)ibSelectedTabViewItem;
 - (void)setIbSelectedTabViewItem:(id)arg1;
 - (struct CGRect)ibRectForChild:(id)arg1 inFrameController:(id)arg2;
-- (void)ibWarnings:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
+- (void)ibPopulateIssues:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
 - (id)ibEditorViewWithSuggestedSize:(struct CGSize)arg1 forDocument:(id)arg2;
 - (Class)ibEditorClass;
 - (id)ibDefaultItemForNewInstances;
@@ -56,6 +63,10 @@
 - (id)ibRelationshipSegueTrackingItemProperty;
 - (id)ibRelationshipSegueTrackingItemsProperty;
 - (id)ibImageForOwnedScene;
+- (id)ibLocalAttributeKeyPaths;
+- (id)ibLocalChildToOneRelationshipsKeyPaths;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

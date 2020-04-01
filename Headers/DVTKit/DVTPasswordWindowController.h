@@ -4,13 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <AppKit/NSWindowController.h>
+#import "DVTDealloc2Main_WindowController.h"
 
 #import <DVTKit/NSOpenSavePanelDelegate-Protocol.h>
 
 @class DVTStackView_ML, NSString, NSView;
 
-@interface DVTPasswordWindowController : NSWindowController <NSOpenSavePanelDelegate>
+@interface DVTPasswordWindowController : DVTDealloc2Main_WindowController <NSOpenSavePanelDelegate>
 {
     BOOL _verify;
     BOOL _useInvalidIcons;

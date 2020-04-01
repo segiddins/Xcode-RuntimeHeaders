@@ -10,29 +10,24 @@
 {
 }
 
-+ (void)installGPUKVODependencyForSlotComponent:(id)arg1;
-+ (void)installGPUSetterForSlotComponent:(id)arg1;
-+ (void)installGPUGetterForSlotComponent:(id)arg1;
-+ (id)buildGPUSetterSelectorForSlotComponent:(id)arg1;
-+ (id)buildGPUKeyPathForSlotComponent:(id)arg1;
-+ (id)buildGPUGetterSelectorForSlotComponent:(id)arg1;
 + (void)installKVODependencyForSuggestionSet:(id)arg1;
 + (void)installGetterForSuggestionSet:(id)arg1;
 + (void)installSetterForSuggestionSet:(id)arg1;
 + (id)propertyNameForPresentingValueForSuggestionSet:(id)arg1;
++ (void)installKVODependencyForSuggestionSetGroup:(id)arg1;
++ (void)installGetterForSuggestionSetGroup:(id)arg1;
++ (void)installSetterForSuggestionSetGroup:(id)arg1;
++ (id)propertyNameForPresentingValueForSuggestionSetGroup:(id)arg1;
 + (Class)catalogItemSlotClass;
 + (Class)catalogSetClass;
-+ (id)slotSuggestionSets;
-- (void)buildLanguageDirectionInspectorSection:(id)arg1;
-- (void)buildGamutInspectorSection:(id)arg1;
-- (void)buildGPUInspectorSection:(id)arg1;
 - (void)generateCompressionOptionWithBuilder:(id)arg1;
 - (id)sliceElement;
 - (void)addPostItemNameContent:(id)arg1;
+- (void)addLocalizationSuggestionSetContent:(id)arg1;
 - (void)addPostSuggestionSetContent:(id)arg1;
-- (void)generateSuggestionGroups:(id)arg1 builder:(id)arg2;
-- (void)generateSuggestionSetSections:(id)arg1 builder:(id)arg2;
-- (void)generateSuggestionGroup:(id)arg1 suggestionSets:(id)arg2 builder:(id)arg3;
+- (void)generateSuggestionSetGroups:(id)arg1 builder:(id)arg2;
+- (void)generateSuggestionSetGroupSections:(id)arg1 builder:(id)arg2;
+- (void)generateSuggestionGroup:(id)arg1 builder:(id)arg2;
 
 @end
 

@@ -6,17 +6,27 @@
 
 #import <IDEFoundation/IDEDistributionStep.h>
 
+@class NSSet;
+
 @interface IDEDistributionSigningAssetsStep : IDEDistributionStep
 {
+    NSSet *_testDevices;
 }
 
++ (id)propertyListForContext:(id)arg1;
 + (id)availableOptionsForPropertyList;
-+ (id)archivedTeamIDForFlattenedDistributionItems:(id)arg1;
-- (BOOL)populateProvisioningSnapshotWithError:(id *)arg1;
-- (BOOL)populateTopLevelDistributionItemsIfNecessaryWithError:(id *)arg1;
+@property(retain) NSSet *testDevices; // @synthesize testDevices=_testDevices;
+- (void).cxx_destruct;
+- (id)_wrappedErrors;
+- (BOOL)populateProvisioningEvaluationtWithError:(id *)arg1;
+- (id)_devicesFromPortalForSessionProvider:(id)arg1 teamID:(id)arg2 portalPlatform:(id)arg3 error:(id *)arg4;
+- (id)requiredDevices;
+- (id)_portalPlatform;
+- (id)_platformForArchive;
 - (id)providedOutputContextPropertyNames;
 - (id)requiredInputContextPropertyNames;
-- (BOOL)loadFromPropertyList:(id)arg1 error:(id *)arg2;
+- (BOOL)loadFromExportOptions:(id)arg1 error:(id *)arg2;
+- (id)_loadSigningAssetMapFromExportOptions:(id)arg1 error:(id *)arg2;
 
 @end
 

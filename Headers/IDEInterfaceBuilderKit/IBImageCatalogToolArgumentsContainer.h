@@ -22,7 +22,9 @@
     BOOL _enableOnDemandResources;
     BOOL _dumpAssets;
     BOOL _enableIncrementalDistill;
+    BOOL _printSearchDescription;
     NSString *_platformName;
+    NSString *_userInterfaceFrameworkFamily;
     NSString *_compilationOutputPath;
     NSString *_partialInfoPlistOutputPath;
     NSString *_appIconName;
@@ -35,14 +37,18 @@
     NSString *_optimization;
     NSString *_targetName;
     NSString *_stickerPackIdentifierPrefix;
+    NSString *_developmentLanguage;
     NSMutableDictionary *_stringFilesByStickerPackAndLanguage;
     NSString *_productType;
+    NSMutableDictionary *_additionalEnvironment;
     NSDictionary *_assetPackOutputSpecifications;
 }
 
 @property(copy) NSDictionary *assetPackOutputSpecifications; // @synthesize assetPackOutputSpecifications=_assetPackOutputSpecifications;
+@property(retain, nonatomic) NSMutableDictionary *additionalEnvironment; // @synthesize additionalEnvironment=_additionalEnvironment;
 @property(copy) NSString *productType; // @synthesize productType=_productType;
 @property(retain, nonatomic) NSMutableDictionary *stringFilesByStickerPackAndLanguage; // @synthesize stringFilesByStickerPackAndLanguage=_stringFilesByStickerPackAndLanguage;
+@property(copy) NSString *developmentLanguage; // @synthesize developmentLanguage=_developmentLanguage;
 @property(copy) NSString *stickerPackIdentifierPrefix; // @synthesize stickerPackIdentifierPrefix=_stickerPackIdentifierPrefix;
 @property(copy) NSArray *targetDevices; // @synthesize targetDevices=_targetDevices;
 @property(copy) NSString *targetName; // @synthesize targetName=_targetName;
@@ -56,7 +62,9 @@
 @property(copy) NSString *appIconName; // @synthesize appIconName=_appIconName;
 @property(copy) NSString *partialInfoPlistOutputPath; // @synthesize partialInfoPlistOutputPath=_partialInfoPlistOutputPath;
 @property(copy) NSString *compilationOutputPath; // @synthesize compilationOutputPath=_compilationOutputPath;
+@property(copy) NSString *userInterfaceFrameworkFamily; // @synthesize userInterfaceFrameworkFamily=_userInterfaceFrameworkFamily;
 @property(copy) NSString *platformName; // @synthesize platformName=_platformName;
+@property BOOL printSearchDescription; // @synthesize printSearchDescription=_printSearchDescription;
 @property BOOL enableIncrementalDistill; // @synthesize enableIncrementalDistill=_enableIncrementalDistill;
 @property BOOL dumpAssets; // @synthesize dumpAssets=_dumpAssets;
 @property BOOL enableOnDemandResources; // @synthesize enableOnDemandResources=_enableOnDemandResources;

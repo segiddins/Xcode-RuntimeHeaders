@@ -6,8 +6,21 @@
 
 #import <AppKit/NSPopUpButton.h>
 
-@interface NSPopUpButton (IBNSPopupButtonIntegration)
+#import <IDEInterfaceBuilderCocoaIntegration/IBDocumentArchiving-Protocol.h>
+
+@class NSString;
+
+@interface NSPopUpButton (IBNSPopupButtonIntegration) <IBDocumentArchiving>
 - (id)ibEquivalentSourceForToOneOutlet:(id)arg1;
+- (id)ibDefaultImage;
 - (void)ibCustomizeForInsertionIntoNSToolbar:(id)arg1 withObjects:(id)arg2 fromLibraryOrDifferentTargetRuntime:(BOOL)arg3 andInsertionContext:(id)arg4;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @end
 

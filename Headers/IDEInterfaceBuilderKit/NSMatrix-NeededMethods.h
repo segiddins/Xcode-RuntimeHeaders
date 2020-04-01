@@ -7,7 +7,6 @@
 #import <AppKit/NSMatrix.h>
 
 @interface NSMatrix (NeededMethods)
-- (void)setPrototypeNoCopy:(id)arg1;
-- (id)prototypeNoCopy;
+- (void)_setPrototypeNoCopy:(id)arg1;
 @end
 

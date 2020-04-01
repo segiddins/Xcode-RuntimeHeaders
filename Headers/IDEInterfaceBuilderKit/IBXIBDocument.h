@@ -14,7 +14,6 @@
 + (Class)libraryAssetProviderClassForIdiom:(id)arg1;
 + (int)libraryInclusionStatusForExternalPrimarySceneObject;
 + (int)libraryInclusionStatusForContainerView;
-+ (BOOL)wantsViewControllersAtTopOfLibrary;
 + (BOOL)supportsPrototypeObjects;
 - (id)firstResponderForConnectingToObject:(id)arg1;
 - (BOOL)shouldPreserveWrapperContentsWhenWritingToURL:(id)arg1 ofType:(id)arg2 forSaveOperation:(unsigned long long)arg3 originalContentsURL:(id)arg4;

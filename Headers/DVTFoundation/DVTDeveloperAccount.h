@@ -6,30 +6,33 @@
 
 #import <objc/NSObject.h>
 
+#import <DVTFoundation/DVTServicesSessionProvider-Protocol.h>
+
 @class DVTDeveloperAccountCredentials, DVTDeveloperAccountSession, DVTDispatchLock, NSDictionary, NSString;
 
-@interface DVTDeveloperAccount : NSObject
+@interface DVTDeveloperAccount : NSObject <DVTServicesSessionProvider>
 {
     DVTDispatchLock *_lock;
     BOOL _enabled;
-    BOOL _alwaysLogInUsingQA;
     DVTDeveloperAccountSession *_session;
     DVTDeveloperAccountCredentials *_accountCredentials;
-    NSString *_userDescription;
     NSString *_credentialsErrorDescription;
+    long long _accountType;
+    NSString *_userDescription;
 }
 
++ (BOOL)isInvalidCredentialsError:(id)arg1;
 + (id)keyPathsForValuesAffectingUserDescriptionOrBestGuess;
 + (id)keyPathsForValuesAffectingHasPassword;
 + (id)keyPathsForValuesAffectingPassword;
 + (id)keyPathsForValuesAffectingSession;
-+ (id)_accountWithPropertyListRepresentation:(id)arg1 keychain:(struct OpaqueSecKeychainRef *)arg2 error:(id *)arg3;
-+ (id)accountWithIdentity:(struct OpaqueSecIdentityRef *)arg1;
++ (id)_accountWithPropertyListRepresentation:(id)arg1 keychain:(id)arg2 error:(id *)arg3;
++ (id)accountWithIdentity:(struct __SecIdentity *)arg1;
 + (id)accountWithCredentials:(id)arg1;
-@property BOOL alwaysLogInUsingQA; // @synthesize alwaysLogInUsingQA=_alwaysLogInUsingQA;
-@property BOOL enabled; // @synthesize enabled=_enabled;
-@property(retain) NSString *credentialsErrorDescription; // @synthesize credentialsErrorDescription=_credentialsErrorDescription;
 @property(copy, nonatomic) NSString *userDescription; // @synthesize userDescription=_userDescription;
+@property BOOL enabled; // @synthesize enabled=_enabled;
+@property long long accountType; // @synthesize accountType=_accountType;
+@property(retain) NSString *credentialsErrorDescription; // @synthesize credentialsErrorDescription=_credentialsErrorDescription;
 @property(copy) DVTDeveloperAccountCredentials *accountCredentials; // @synthesize accountCredentials=_accountCredentials;
 - (void).cxx_destruct;
 - (void)checkForValidCredentials:(CDUnknownBlockType)arg1;
@@ -38,8 +41,10 @@
 @property(readonly) NSString *userDescriptionOrBestGuess;
 @property(readonly) BOOL hasPassword;
 @property(copy) NSString *password;
-@property(readonly) struct OpaqueSecIdentityRef *identity;
-@property(readonly) _Bool isCertBased;
+@property(readonly) NSString *certSerialNumber;
+@property(readonly) NSString *certCommonName;
+@property(readonly) struct __SecIdentity *identity;
+@property(readonly) BOOL isCertBased;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
 @property(readonly, copy) NSString *username;
@@ -47,9 +52,12 @@
 - (id)sessionIfAvailable;
 @property(readonly) DVTDeveloperAccountSession *session; // @synthesize session=_session;
 - (void)executeWithSession:(CDUnknownBlockType)arg1;
+- (id)_sessionByLoggingInIfNeededWithinLock:(id *)arg1;
 - (id)sessionByLoggingInIfNeeded:(id *)arg1;
 - (id)_sessionByLoggingIn:(id *)arg1;
+- (id)servicesSessionWithError:(id *)arg1;
 - (id)init;
+- (id)description;
 
 @end
 

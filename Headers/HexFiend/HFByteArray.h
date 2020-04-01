@@ -11,8 +11,8 @@
 
 @interface HFByteArray : NSObject <NSCopying, NSMutableCopying>
 {
-    unsigned long long changeLockCounter;
-    unsigned long long changeGenerationCount;
+    // Error parsing type: AQ, name: changeLockCounter
+    // Error parsing type: AQ, name: changeGenerationCount
 }
 
 - (void)incrementGenerationOrRaiseIfLockedForSelector:(SEL)arg1;

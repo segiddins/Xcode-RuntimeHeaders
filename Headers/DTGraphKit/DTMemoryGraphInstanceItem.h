@@ -6,16 +6,19 @@
 
 #import <DTGraphKit/DTMemoryGraphItem.h>
 
-__attribute__((visibility("hidden")))
 @interface DTMemoryGraphInstanceItem : DTMemoryGraphItem
 {
     unsigned int _nodeName;
 }
 
+- (id)parentItem;
+- (BOOL)isRoot;
+- (BOOL)isGroup;
 - (unsigned long long)leakedCount;
 - (unsigned long long)count;
 - (id)name;
 - (CDStruct_599faf0f)nodeDetails;
+- (id)description;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)identifier;

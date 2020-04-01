@@ -6,12 +6,14 @@
 
 #import <IDEKit/IDENavigator.h>
 
-@class DVTBorderedView, DVTChooserView, DVTDocumentLocation, DVTScopeBarView, IDENavigatorFilterControlBar, IDENavigatorOutlineView, NSArray, NSIndexSet, NSMenu, NSMutableArray, NSMutableIndexSet, NSMutableSet, NSString, NSTabView, NSTableColumn;
+@class DVTBorderView, DVTBorderedView, DVTChoice, DVTChooserView, DVTDocumentLocation, DVTScopeBarView, IDENavigatorOutlineView, IDENavigatorSearchFilterControlBar, NSArray, NSMenu, NSMutableArray, NSMutableIndexSet, NSMutableSet, NSString, NSTabView, NSTableColumn;
 @protocol IDEReviewFilesDataSource;
 
 @interface IDEReviewFilesNavigator : IDENavigator
 {
     DVTChooserView *_chooserView;
+    DVTBorderView *_dividerLine;
+    DVTBorderView *_secondDividerLine;
     DVTScopeBarView *_scopeBarView;
     NSTabView *_tabView;
     NSTabView *_hierarchyTabView;
@@ -19,6 +21,7 @@
     IDENavigatorOutlineView *_flatOutlineView;
     IDENavigatorOutlineView *_workspaceOutlineView;
     IDENavigatorOutlineView *_issuesOutlineView;
+    NSArray *_initialSelectedFilePaths;
     NSTableColumn *_fileSystemOutlineCheckboxColumn;
     NSTableColumn *_flatOutlineCheckboxColumn;
     NSTableColumn *_workspaceOutlineCheckboxColumn;
@@ -28,7 +31,7 @@
     NSMutableSet *_mixedStateFilePaths;
     NSMutableArray *_disabledFilePaths;
     NSArray *_viewChoices;
-    NSIndexSet *_selectedViewIndexes;
+    DVTChoice *_selectedViewChoice;
     unsigned long long _selectedNavigator;
     NSString *_userDefaultKeyForSelectedState;
     NSArray *_selectedFilePaths;
@@ -39,15 +42,17 @@
     id <IDEReviewFilesDataSource> _issueDataSource;
     int _activity;
     NSMutableIndexSet *_lastSelectedIndexes;
-    IDENavigatorFilterControlBar *_filterControlBar;
+    IDENavigatorSearchFilterControlBar *_filterControlBar;
     NSString *_filterString;
     BOOL _showFilter;
     BOOL _showCheckboxes;
+    BOOL _showVibrancy;
     BOOL _showHierarchy;
     unsigned long long _supportedNavigators;
     unsigned long long _supportedStatusBadges;
 }
 
++ (id)keyPathsForValuesAffectingSelectedNavigator;
 + (void)initialize;
 + (id)keyPathsForValuesAffectingCheckedFilePaths;
 @property unsigned long long supportedStatusBadges; // @synthesize supportedStatusBadges=_supportedStatusBadges;
@@ -59,6 +64,7 @@
 @property(copy) NSString *userDefaultKeyForSelectedState; // @synthesize userDefaultKeyForSelectedState=_userDefaultKeyForSelectedState;
 @property BOOL showFilter; // @synthesize showFilter=_showFilter;
 @property(readonly) DVTDocumentLocation *selectedDocumentLocation; // @synthesize selectedDocumentLocation=_selectedDocumentLocation;
+@property(copy, nonatomic) DVTChoice *selectedViewChoice; // @synthesize selectedViewChoice=_selectedViewChoice;
 @property(readonly) NSArray *viewChoices; // @synthesize viewChoices=_viewChoices;
 @property(retain) NSMutableArray *disabledFilePaths; // @synthesize disabledFilePaths=_disabledFilePaths;
 @property(retain) NSMutableArray *completedFilePaths; // @synthesize completedFilePaths=_completedFilePaths;
@@ -70,6 +76,7 @@
 - (void)reloadData;
 - (void)reloadCheckboxesForFilePaths:(id)arg1;
 - (void)_reloadCheckboxes;
+- (BOOL)canBecomeMainViewController;
 - (id)outlineView:(id)arg1 rowIndexesForItems:(id)arg2;
 - (id)outlineView:(id)arg1 selectionIndexesForProposedSelection:(id)arg2;
 - (void)outlineViewSelectionDidChange:(id)arg1;
@@ -104,12 +111,13 @@
 @property(readonly) IDENavigatorOutlineView *currentOutlineView;
 - (void)setupViewChoices;
 - (void)reloadAvailableNavigators;
-@property(copy) NSIndexSet *selectedViewIndexes; // @synthesize selectedViewIndexes=_selectedViewIndexes;
+@property unsigned long long selectedNavigator;
 - (void)setSelectedNavigableItems:(id)arg1 forOutlineView:(id)arg2;
 - (id)selectedNavigableItemsOfOutlineView:(id)arg1;
 - (void)setSelectedFilePaths:(id)arg1 forOutlineView:(id)arg2;
+- (void)setInitialSelectedFilePaths:(id)arg1;
 - (id)selectedFilePathsOfOutlineView:(id)arg1;
-@property(retain) NSMutableArray *selectedFilePaths;
+@property(retain) NSArray *selectedFilePaths;
 - (id)domainIdentifier;
 @property(readonly) IDENavigatorOutlineView *issuesOutlineView;
 @property(readonly) IDENavigatorOutlineView *flatOutlineView;
@@ -120,6 +128,9 @@
 - (BOOL)supportsRepositoryNavigator;
 - (BOOL)supportsFlatNavigator;
 - (BOOL)supportsFileNavigator;
+@property BOOL showVibrancy; // @synthesize showVibrancy=_showVibrancy;
+- (void)vibrancyUpdate;
+- (void)_layoutViewSubviews;
 - (void)primitiveInvalidate;
 - (void)viewWillUninstall;
 - (void)viewDidInstall;

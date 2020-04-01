@@ -8,21 +8,19 @@
 
 @interface IBICImageSet (DisplayAdditions)
 + (CDStruct_7ddbbeae)capsuleGroupingAttributesForGroupWithPath:(id)arg1;
-+ (id)keysThatImpactItemName;
++ (id)keysThatResourceRendering;
++ (id)keyPathsForValuesAffectingIbInspectedAutoscalingType;
+- (id)verifyExistenceInCompiledBundle:(id)arg1 forPlatform:(id)arg2;
 - (id)detachedSlottedAssetRepByAcceptingPasteboardObject:(id)arg1 forRepIdentifier:(id)arg2;
-- (void)setIbInspectedHeightCombination:(id)arg1;
-- (id)ibInspectedHeightCombination;
-- (void)setIbInspectedWidthCombination:(id)arg1;
-- (id)ibInspectedWidthCombination;
-- (void)ibSetCombination:(id)arg1 forPrimarySizeClass:(Class)arg2 secondarySizeClass:(Class)arg3;
-- (id)ibCombinationForSizeClass:(Class)arg1;
-- (BOOL)hasConflictFreeRepWithIdentifier:(id)arg1 forSlotComponent:(Class)arg2;
-- (BOOL)ibInspectedShowsSizeClassSection;
-- (void)setIbInspectedScaleSlots:(long long)arg1;
-- (long long)ibInspectedScaleSlots;
-- (id)ibDefaultSuggestionSetsToPopulateEmptyChildren;
 - (void)populatePlistWithDescriptionForIctool:(id)arg1;
-- (id)includedAttributeUtilitySlicesForChild:(id)arg1;
-- (id)typeIcon;
+- (id)includedAttributesInspectorSlicesForChild:(id)arg1;
+- (void)setIbInspectedAutoscalingType:(short)arg1;
+- (short)ibInspectedAutoscalingType;
+- (void)setIbInspectedPreservesVectorRepresentation:(BOOL)arg1;
+- (BOOL)ibInspectedPreservesVectorRepresentation;
+- (void)setIbInspectedTemplateRenderingIntent:(long long)arg1;
+- (long long)ibInspectedTemplateRenderingIntent;
+- (void)setIbInspectedResizingBehaviorSharing:(long long)arg1;
+- (long long)ibInspectedResizingBehaviorSharing;
 @end
 

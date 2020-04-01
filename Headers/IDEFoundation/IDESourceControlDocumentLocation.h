@@ -14,14 +14,17 @@
     NSString *_revisionName;
     DVTSourceControlWorkingCopy *_workingCopy;
     NSURL *_currentDocumentURL;
+    unsigned long long _status;
 }
 
+@property(readonly) unsigned long long status; // @synthesize status=_status;
 @property(readonly) NSURL *currentDocumentURL; // @synthesize currentDocumentURL=_currentDocumentURL;
 @property(readonly) NSString *revisionName; // @synthesize revisionName=_revisionName;
 @property(readonly) IDESourceControlBranch *branch; // @synthesize branch=_branch;
 @property(readonly) DVTSourceControlWorkingCopy *workingCopy; // @synthesize workingCopy=_workingCopy;
 - (void).cxx_destruct;
 - (id)description;
+- (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualDisregardingTimestamp:(id)arg1;
 - (id)workingTreeItem;
 - (void)encodeWithCoder:(id)arg1;
@@ -31,10 +34,12 @@
 @property(readonly) NSString *relativeCurrentDocumentPath;
 @property(readonly) NSURL *relativeCurrentDocumentURL;
 - (id)initWithDocumentURL:(id)arg1 currentDocumentURL:(id)arg2 workingCopy:(id)arg3 branch:(id)arg4 revisionName:(id)arg5;
+- (id)initWithDocumentURL:(id)arg1 currentDocumentURL:(id)arg2 workingCopy:(id)arg3 branch:(id)arg4 revisionName:(id)arg5 status:(unsigned long long)arg6;
 - (id)initWithDocumentURL:(id)arg1 currentDocumentURL:(id)arg2 workingCopy:(id)arg3;
 - (id)initWithDocumentURL:(id)arg1 currentDocumentURL:(id)arg2 workingCopy:(id)arg3 timestamp:(id)arg4 lineRange:(struct _NSRange)arg5;
 - (id)initWithDocumentLocation:(id)arg1 workingCopy:(id)arg2 branch:(id)arg3 revisionName:(id)arg4;
 - (id)initWithDocumentURL:(id)arg1 workingCopy:(id)arg2 branch:(id)arg3 revisionName:(id)arg4;
+- (id)initWithDocumentURL:(id)arg1 workingCopy:(id)arg2 branch:(id)arg3 revisionName:(id)arg4 status:(unsigned long long)arg5;
 
 @end
 

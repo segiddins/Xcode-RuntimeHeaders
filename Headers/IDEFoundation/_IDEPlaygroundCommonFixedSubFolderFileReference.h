@@ -4,16 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <IDEFoundation/IDEFileReference.h>
+#import <IDEFoundation/IDEFolderFileReference.h>
 
-@interface _IDEPlaygroundCommonFixedSubFolderFileReference : IDEFileReference
+@interface _IDEPlaygroundCommonFixedSubFolderFileReference : IDEFolderFileReference
 {
-    BOOL _editable;
 }
 
 - (id)navigableItem_conformanceString;
-- (BOOL)_filePathExists;
-- (BOOL)isEditable;
 - (id)_initWithPath:(id)arg1;
 
 @end

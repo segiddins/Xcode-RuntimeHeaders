@@ -9,9 +9,10 @@
 @interface IBAutolayoutCandidateConstraintGenerator (IDEAdditions)
 + (id)candidateNearestNeighborConstraintsForItems:(id)arg1 attribute:(unsigned long long)arg2 marginRelativeToContainer:(BOOL)arg3 useExistingConstant:(BOOL)arg4 document:(id)arg5;
 + (id)candidateConstraintsForAligningAttribute:(unsigned long long)arg1 ofItems:(id)arg2 useExistingConstant:(BOOL)arg3 document:(id)arg4;
++ (id)candidateVerticalBaselineSpacingConstraintBetweenItem:(id)arg1 andItem:(id)arg2 useExistingConstant:(BOOL)arg3 document:(id)arg4;
 + (id)candidateSpacingConstraintBetweenItem:(id)arg1 andItem:(id)arg2 orientation:(unsigned long long)arg3 useExistingConstant:(BOOL)arg4 document:(id)arg5;
 + (id)candidateConstraintForAligningAttribute:(unsigned long long)arg1 ofItem:(id)arg2 toAttribute:(unsigned long long)arg3 ofItem:(id)arg4 useExistingConstant:(BOOL)arg5 document:(id)arg6;
-+ (id)candidateEqualSizeConstraintForItem:(id)arg1 andItem:(id)arg2 attribute:(unsigned long long)arg3 useExistingConstant:(BOOL)arg4 document:(id)arg5;
++ (id)candidateEqualSizeConstraintForItem:(id)arg1 andItem:(id)arg2 attribute:(unsigned long long)arg3 keepProportions:(BOOL)arg4 document:(id)arg5;
 + (id)candidateAspectRatioConstraintForWidthOfItem:(id)arg1 relativeToHeightOfItem:(id)arg2 useExplicitRatio:(id)arg3 document:(id)arg4;
 + (id)candidateExplicitSizeConstraintForItem:(id)arg1 attribute:(unsigned long long)arg2 useNextLogicalRelation:(BOOL)arg3 document:(id)arg4;
 + (long long)_nextLogicalLayoutRelationForAddingNewConstraintToItem:(id)arg1 forConstraintsMatchingBlock:(CDUnknownBlockType)arg2;

@@ -6,9 +6,20 @@
 
 #import <IDEInterfaceBuilderKit/IBDocument.h>
 
+@class NSNumber;
+
 @interface IBDocument (IBCocoaDocumentInspectorViewControllerAdditions)
 + (id)keyPathsForValuesAffectingInspectedCustomObjectInstantiationBehavior;
++ (BOOL)supportsWindowControllersDraggedFromLibrary;
++ (BOOL)wantsViewsInstalledInNSViewControllersDraggedFromLibrary;
 - (BOOL)inspectedCustomObjectInstantiationBehavior;
 - (void)setInspectedCustomObjectInstantiationBehavior:(BOOL)arg1;
+@property(retain, nonatomic) NSNumber *explicitCustomObjectInstantiationBehavior;
+- (long long)effectiveCustomObjectInstantiationBehavior;
+- (long long)defaultCustomObjectInstantiationBehavior;
+- (BOOL)isObjectFilesOwner:(id)arg1;
+- (BOOL)isObjectApplication:(id)arg1;
+- (id)bindingManager;
+- (id)cocoaPlatformAdapter;
 @end
 

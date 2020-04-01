@@ -31,6 +31,8 @@
 - (void)validateAfterInterpretingOptionsCollectingErrors:(id)arg1;
 @property(readonly) IBCLIOptionIndex *optionIndex;
 - (void)interpretOption:(id)arg1 optionalParameter:(id)arg2 collectingErrors:(id)arg3;
+- (BOOL)validateArgument:(id)arg1 forKeyPath:(id)arg2 collectingErrors:(id)arg3;
+- (BOOL)validateArgument:(id)arg1 forKeyPath:(id)arg2 error:(id *)arg3;
 - (id)mutableArrayValueForOption:(id)arg1;
 - (void)applyValue:(id)arg1 forOption:(id)arg2;
 - (id)parsePlistArgument:(id)arg1 ofType:(Class)arg2 error:(id *)arg3;

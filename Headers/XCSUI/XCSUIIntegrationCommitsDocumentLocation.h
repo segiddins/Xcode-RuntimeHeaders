@@ -6,18 +6,20 @@
 
 #import <DVTFoundation/DVTDocumentLocation.h>
 
-@class NSString;
+@class IDEWorkspace, NSString;
 
 @interface XCSUIIntegrationCommitsDocumentLocation : DVTDocumentLocation
 {
     NSString *_commitsFilePath;
+    IDEWorkspace *_workspace;
 }
 
+@property(readonly) IDEWorkspace *workspace; // @synthesize workspace=_workspace;
 @property(readonly, copy) NSString *commitsFilePath; // @synthesize commitsFilePath=_commitsFilePath;
 - (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
-- (id)initWithDocumentURL:(id)arg1 timestamp:(id)arg2 filePath:(id)arg3;
+- (id)initWithDocumentURL:(id)arg1 timestamp:(id)arg2 filePath:(id)arg3 workspace:(id)arg4;
 
 @end
 

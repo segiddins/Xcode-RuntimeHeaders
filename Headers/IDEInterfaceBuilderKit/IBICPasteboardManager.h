@@ -12,8 +12,8 @@
 
 @interface IBICPasteboardManager : NSObject <DVTInvalidation>
 {
-    NSString *_localPasteboarParentIDType;
-    NSString *_localPasteboarItemIDType;
+    NSString *_localPasteboardTypeParentID;
+    NSString *_localPasteboardTypeItemID;
     IBICAbstractCatalogDocument *_document;
 }
 
@@ -21,6 +21,7 @@
 + (void)initialize;
 @property(readonly) IBICAbstractCatalogDocument *document; // @synthesize document=_document;
 - (void).cxx_destruct;
+- (BOOL)canPasteFromPasteboard:(id)arg1;
 - (id)localDragMovedItems:(id)arg1;
 - (id)parentsOfDocumentLocalDragMovedItems:(id)arg1;
 - (id)documentLocalItemsForDragInfo:(id)arg1 typeName:(id)arg2;

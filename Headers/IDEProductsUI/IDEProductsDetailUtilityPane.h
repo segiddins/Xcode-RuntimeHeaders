@@ -4,38 +4,48 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import "IDEProductsUtilityPane.h"
+#import <IDEProductsUI/IDEProductsUtilityPane.h>
 
-#import "NSTableViewDataSource-Protocol.h"
-#import "NSTableViewDelegate-Protocol.h"
+#import <IDEProductsUI/NSTableViewDataSource-Protocol.h>
+#import <IDEProductsUI/NSTableViewDelegate-Protocol.h>
 
-@class DVTObservingToken, NSLayoutConstraint, NSString, NSTableView, NSTextField;
+@class DVTNotificationToken, DVTObservingToken, NSLayoutConstraint, NSString, NSTableView, NSTextField;
 
 @interface IDEProductsDetailUtilityPane : IDEProductsUtilityPane <NSTableViewDataSource, NSTableViewDelegate>
 {
-    NSString *_detailTitle;
+    BOOL _removeBottomMargin;
+    NSString *_detailsTitleKeyPath;
     NSString *_detailsKeyPath;
     NSTextField *_titleField;
     NSTableView *_tableView;
     NSLayoutConstraint *_scrollViewHeightConstraint;
+    NSLayoutConstraint *_topSpaceHeightConstraint;
+    NSLayoutConstraint *_bottomSpaceHeightConstraint;
+    DVTNotificationToken *_frameChangedObserver;
     DVTObservingToken *_detailsObservingToken;
 }
 
++ (double)heightForString:(id)arg1 font:(id)arg2 width:(double)arg3 lineBreakMode:(unsigned long long)arg4;
 @property(retain) DVTObservingToken *detailsObservingToken; // @synthesize detailsObservingToken=_detailsObservingToken;
+@property(retain) DVTNotificationToken *frameChangedObserver; // @synthesize frameChangedObserver=_frameChangedObserver;
+@property __weak NSLayoutConstraint *bottomSpaceHeightConstraint; // @synthesize bottomSpaceHeightConstraint=_bottomSpaceHeightConstraint;
+@property __weak NSLayoutConstraint *topSpaceHeightConstraint; // @synthesize topSpaceHeightConstraint=_topSpaceHeightConstraint;
 @property __weak NSLayoutConstraint *scrollViewHeightConstraint; // @synthesize scrollViewHeightConstraint=_scrollViewHeightConstraint;
 @property __weak NSTableView *tableView; // @synthesize tableView=_tableView;
 @property __weak NSTextField *titleField; // @synthesize titleField=_titleField;
+@property BOOL removeBottomMargin; // @synthesize removeBottomMargin=_removeBottomMargin;
 @property(readonly) NSString *detailsKeyPath; // @synthesize detailsKeyPath=_detailsKeyPath;
-@property(retain, nonatomic) NSString *detailTitle; // @synthesize detailTitle=_detailTitle;
+@property(readonly) NSString *detailsTitleKeyPath; // @synthesize detailsTitleKeyPath=_detailsTitleKeyPath;
 - (void).cxx_destruct;
 - (id)tableView:(id)arg1 viewForTableColumn:(id)arg2 row:(long long)arg3;
+- (double)tableView:(id)arg1 heightOfRow:(long long)arg2;
 - (id)tableView:(id)arg1 objectValueForTableColumn:(id)arg2 row:(long long)arg3;
 - (long long)numberOfRowsInTableView:(id)arg1;
-- (id)details;
-- (void)setDetailsKeyPath:(id)arg1;
 - (void)primitiveInvalidate;
+- (id)details;
+- (void)resizeTableView;
 - (void)viewDidLoad;
-- (id)initWithInspectable:(id)arg1 detailsKeyPath:(id)arg2;
+- (id)initWithInspectable:(id)arg1 detailsKeyPath:(id)arg2 detailsTitleKeyPath:(id)arg3;
 - (id)initWithInspectable:(id)arg1;
 
 // Remaining properties

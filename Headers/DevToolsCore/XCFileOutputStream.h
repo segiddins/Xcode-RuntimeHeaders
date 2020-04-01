@@ -18,7 +18,6 @@
 - (void)close;
 - (void)flush;
 - (void)writeBytes:(const char *)arg1 length:(unsigned long long)arg2;
-- (void)finalize;
 - (void)dealloc;
 - (void)_primitiveClose;
 - (id)init;

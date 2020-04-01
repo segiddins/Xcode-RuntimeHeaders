@@ -20,11 +20,14 @@
     unsigned long long _objectID;
     NSString *_label;
     NSMutableDictionary *_properties;
+    CDStruct_b00b4bef _resolution;
 }
 
++ (BOOL)supportsSecureCoding;
 + (id)keyForResourceWithID:(unsigned long long)arg1 type:(unsigned int)arg2 containerID:(unsigned long long)arg3;
 @property(readonly, nonatomic) unsigned int target; // @synthesize target=_target;
 @property(readonly, nonatomic) int internalID; // @synthesize internalID=_internalID;
+@property(readonly, nonatomic) CDStruct_b00b4bef resolution; // @synthesize resolution=_resolution;
 @property(readonly, nonatomic) BOOL isStatic; // @synthesize isStatic=_isStatic;
 @property(readonly, nonatomic) NSMutableDictionary *properties; // @synthesize properties=_properties;
 @property(readonly, copy, nonatomic) NSString *label; // @synthesize label=_label;
@@ -33,7 +36,7 @@
 @property(readonly, nonatomic) unsigned int resourceType; // @synthesize resourceType=_resourceType;
 - (void).cxx_destruct;
 - (id)keyWithSharegroupID:(unsigned long long)arg1;
-- (id)streamDictAtFunctionIndex:(unsigned int)arg1;
+- (id)streamDictAtFunctionIndex:(unsigned long long)arg1;
 - (void)processFunction:(const struct Function *)arg1;
 - (id)createFullObjectWithFunctionStream:(id)arg1 dataResolver:(CDUnknownBlockType)arg2;
 - (id)initWithType:(unsigned int)arg1 properties:(id)arg2;

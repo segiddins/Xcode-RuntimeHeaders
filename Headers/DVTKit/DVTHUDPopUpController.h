@@ -4,13 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <AppKit/NSWindowController.h>
+#import "DVTDealloc2Main_WindowController.h"
 
 #import <DVTKit/NSWindowDelegate-Protocol.h>
 
 @class DVTDelayedInvocation, DVTHUDPopUpContentViewController, DVTHUDPopUpView, DVTNotificationToken, NSButton, NSString;
 
-@interface DVTHUDPopUpController : NSWindowController <NSWindowDelegate>
+@interface DVTHUDPopUpController : DVTDealloc2Main_WindowController <NSWindowDelegate>
 {
     CDUnknownBlockType _doneButtonClickHandlerBlock;
     DVTHUDPopUpContentViewController *_viewController;
@@ -26,8 +26,10 @@
     BOOL _hostWindowCanBecomeKey;
     BOOL _hidesArrow;
     DVTNotificationToken *_frameChangeToken;
+    BOOL _animatesIn;
 }
 
+@property BOOL animatesIn; // @synthesize animatesIn=_animatesIn;
 @property(nonatomic) BOOL hidesArrow; // @synthesize hidesArrow=_hidesArrow;
 @property(copy) CDUnknownBlockType doneButtonClickHandlerBlock; // @synthesize doneButtonClickHandlerBlock=_doneButtonClickHandlerBlock;
 @property(nonatomic) BOOL hostWindowCanBecomeKey; // @synthesize hostWindowCanBecomeKey=_hostWindowCanBecomeKey;

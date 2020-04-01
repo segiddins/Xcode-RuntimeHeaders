@@ -9,7 +9,7 @@
 #import <IDEInterfaceBuilderKit/NSMenuDelegate-Protocol.h>
 #import <IDEInterfaceBuilderKit/NSTextFieldDelegate-Protocol.h>
 
-@class DVTButtonTextField, IBAutolayoutConstraintAdditionTypeConfig, IBDocument, IBMutableIdentityDictionary, NSButton, NSImageView, NSMenu, NSMutableDictionary, NSPopUpButton, NSSet, NSString, NSTextField, NSView;
+@class DVTButtonTextField, IBAutolayoutConstraintAdditionTypeConfig, IBDocument, IBMutableIdentityDictionary, NSButton, NSImageView, NSMenu, NSSet, NSString, NSTextField, NSView;
 @protocol IBCollection;
 
 @interface IBAutolayoutConstraintAdditionViewController : IDEViewController <NSMenuDelegate, NSTextFieldDelegate>
@@ -18,7 +18,6 @@
     IBMutableIdentityDictionary *_typeConfigurationByTextField;
     IBMutableIdentityDictionary *_typeConfigurationByCheckBox;
     IBMutableIdentityDictionary *_typeConfigurationByOverlayButton;
-    NSMutableDictionary *_typeConfigurationsByAlignmentType;
     NSSet *_typeConfigurations;
     NSMenu *_constantMenu;
     BOOL _prefersMarginRelativeNearestNeighbors;
@@ -27,7 +26,6 @@
     IBDocument *_document;
     CDUnknownBlockType _didAddConstraintsHandler;
     NSButton *_addConstraintsButton;
-    NSPopUpButton *_updateFramesPopUp;
     NSButton *_topNearestNeighborCheckBox;
     NSButton *_bottomNearestNeighborCheckBox;
     NSButton *_leadingNearestNeighborCheckBox;
@@ -58,8 +56,8 @@
     NSButton *_aspectRatioOverlayButton;
     NSButton *_topEdgesAlignmentCheckBox;
     NSButton *_bottomEdgesAlignmentCheckBox;
-    NSButton *_leftEdgesAlignmentCheckBox;
-    NSButton *_rightEdgesAlignmentCheckBox;
+    NSButton *_leadingEdgesAlignmentCheckBox;
+    NSButton *_trailingEdgesAlignmentCheckBox;
     NSButton *_centerXAlignmentCheckBox;
     NSButton *_centerYAlignmentCheckBox;
     NSButton *_baselineAlignmentCheckBox;
@@ -67,15 +65,15 @@
     NSButton *_centerYInContainerAlignmentCheckBox;
     DVTButtonTextField *_topEdgesAlignmentField;
     DVTButtonTextField *_bottomEdgesAlignmentField;
-    DVTButtonTextField *_leftEdgesAlignmentField;
-    DVTButtonTextField *_rightEdgesAlignmentField;
+    DVTButtonTextField *_leadingEdgesAlignmentField;
+    DVTButtonTextField *_trailingEdgesAlignmentField;
     DVTButtonTextField *_centerXAlignmentField;
     DVTButtonTextField *_centerYAlignmentField;
     DVTButtonTextField *_baselineAlignmentField;
     DVTButtonTextField *_centerXInContainerAlignmentField;
     DVTButtonTextField *_centerYInContainerAlignmentField;
-    NSTextField *_leftEdgesAlignmentLabel;
-    NSTextField *_rightEdgesAlignmentLabel;
+    NSTextField *_leadingEdgesAlignmentLabel;
+    NSTextField *_trailingEdgesAlignmentLabel;
     NSTextField *_topEdgesAlignmentLabel;
     NSTextField *_bottomEdgesAlignmentLabel;
     NSTextField *_centerXAlignmentLabel;
@@ -83,8 +81,8 @@
     NSTextField *_baselineAlignmentLabel;
     NSTextField *_centerXInContainerAlignmentLabel;
     NSTextField *_centerYInContainerAlignmentLabel;
-    NSButton *_leftEdgesAlignmentOverlayButton;
-    NSButton *_rightEdgesAlignmentOverlayButton;
+    NSButton *_leadingEdgesAlignmentOverlayButton;
+    NSButton *_trailingEdgesAlignmentOverlayButton;
     NSButton *_topEdgesAlignmentOverlayButton;
     NSButton *_bottomEdgesAlignmentOverlayButton;
     NSButton *_centerXAlignmentOverlayButton;
@@ -92,11 +90,6 @@
     NSButton *_baselineAlignmentOverlayButton;
     NSButton *_centerXInContainerAlignmentOverlayButton;
     NSButton *_centerYInContainerAlignmentOverlayButton;
-    NSButton *_alignCheckBox;
-    NSPopUpButton *_alignPopUp;
-    NSMenu *_alignPopUpMenu;
-    NSTextField *_alignLabel;
-    NSButton *_alignOverlayButton;
     NSImageView *_leadingEdgesImageView;
     NSImageView *_trailingEdgesImageView;
     NSImageView *_topEdgesImageView;
@@ -111,13 +104,9 @@
     NSImageView *_equalWidthsImageView;
     NSImageView *_equalHeightsImageView;
     NSImageView *_aspectRatioImageView;
-    NSImageView *_generalAlignImageView;
-    unsigned long long _alignmentType;
 }
 
 @property(nonatomic) BOOL prefersMarginRelativeNearestNeighbors; // @synthesize prefersMarginRelativeNearestNeighbors=_prefersMarginRelativeNearestNeighbors;
-@property(nonatomic) unsigned long long alignmentType; // @synthesize alignmentType=_alignmentType;
-@property __weak NSImageView *generalAlignImageView; // @synthesize generalAlignImageView=_generalAlignImageView;
 @property __weak NSImageView *aspectRatioImageView; // @synthesize aspectRatioImageView=_aspectRatioImageView;
 @property __weak NSImageView *equalHeightsImageView; // @synthesize equalHeightsImageView=_equalHeightsImageView;
 @property __weak NSImageView *equalWidthsImageView; // @synthesize equalWidthsImageView=_equalWidthsImageView;
@@ -132,11 +121,6 @@
 @property __weak NSImageView *topEdgesImageView; // @synthesize topEdgesImageView=_topEdgesImageView;
 @property __weak NSImageView *trailingEdgesImageView; // @synthesize trailingEdgesImageView=_trailingEdgesImageView;
 @property __weak NSImageView *leadingEdgesImageView; // @synthesize leadingEdgesImageView=_leadingEdgesImageView;
-@property(retain, nonatomic) NSButton *alignOverlayButton; // @synthesize alignOverlayButton=_alignOverlayButton;
-@property(retain, nonatomic) NSTextField *alignLabel; // @synthesize alignLabel=_alignLabel;
-@property(retain, nonatomic) NSMenu *alignPopUpMenu; // @synthesize alignPopUpMenu=_alignPopUpMenu;
-@property(retain, nonatomic) NSPopUpButton *alignPopUp; // @synthesize alignPopUp=_alignPopUp;
-@property(retain, nonatomic) NSButton *alignCheckBox; // @synthesize alignCheckBox=_alignCheckBox;
 @property(retain) NSButton *centerYInContainerAlignmentOverlayButton; // @synthesize centerYInContainerAlignmentOverlayButton=_centerYInContainerAlignmentOverlayButton;
 @property(retain) NSButton *centerXInContainerAlignmentOverlayButton; // @synthesize centerXInContainerAlignmentOverlayButton=_centerXInContainerAlignmentOverlayButton;
 @property(retain) NSButton *baselineAlignmentOverlayButton; // @synthesize baselineAlignmentOverlayButton=_baselineAlignmentOverlayButton;
@@ -144,8 +128,8 @@
 @property(retain) NSButton *centerXAlignmentOverlayButton; // @synthesize centerXAlignmentOverlayButton=_centerXAlignmentOverlayButton;
 @property(retain) NSButton *bottomEdgesAlignmentOverlayButton; // @synthesize bottomEdgesAlignmentOverlayButton=_bottomEdgesAlignmentOverlayButton;
 @property(retain) NSButton *topEdgesAlignmentOverlayButton; // @synthesize topEdgesAlignmentOverlayButton=_topEdgesAlignmentOverlayButton;
-@property(retain) NSButton *rightEdgesAlignmentOverlayButton; // @synthesize rightEdgesAlignmentOverlayButton=_rightEdgesAlignmentOverlayButton;
-@property(retain) NSButton *leftEdgesAlignmentOverlayButton; // @synthesize leftEdgesAlignmentOverlayButton=_leftEdgesAlignmentOverlayButton;
+@property(retain) NSButton *trailingEdgesAlignmentOverlayButton; // @synthesize trailingEdgesAlignmentOverlayButton=_trailingEdgesAlignmentOverlayButton;
+@property(retain) NSButton *leadingEdgesAlignmentOverlayButton; // @synthesize leadingEdgesAlignmentOverlayButton=_leadingEdgesAlignmentOverlayButton;
 @property(retain) NSTextField *centerYInContainerAlignmentLabel; // @synthesize centerYInContainerAlignmentLabel=_centerYInContainerAlignmentLabel;
 @property(retain) NSTextField *centerXInContainerAlignmentLabel; // @synthesize centerXInContainerAlignmentLabel=_centerXInContainerAlignmentLabel;
 @property(retain) NSTextField *baselineAlignmentLabel; // @synthesize baselineAlignmentLabel=_baselineAlignmentLabel;
@@ -153,15 +137,15 @@
 @property(retain) NSTextField *centerXAlignmentLabel; // @synthesize centerXAlignmentLabel=_centerXAlignmentLabel;
 @property(retain) NSTextField *bottomEdgesAlignmentLabel; // @synthesize bottomEdgesAlignmentLabel=_bottomEdgesAlignmentLabel;
 @property(retain) NSTextField *topEdgesAlignmentLabel; // @synthesize topEdgesAlignmentLabel=_topEdgesAlignmentLabel;
-@property(retain) NSTextField *rightEdgesAlignmentLabel; // @synthesize rightEdgesAlignmentLabel=_rightEdgesAlignmentLabel;
-@property(retain) NSTextField *leftEdgesAlignmentLabel; // @synthesize leftEdgesAlignmentLabel=_leftEdgesAlignmentLabel;
+@property(retain) NSTextField *trailingEdgesAlignmentLabel; // @synthesize trailingEdgesAlignmentLabel=_trailingEdgesAlignmentLabel;
+@property(retain) NSTextField *leadingEdgesAlignmentLabel; // @synthesize leadingEdgesAlignmentLabel=_leadingEdgesAlignmentLabel;
 @property(retain, nonatomic) DVTButtonTextField *centerYInContainerAlignmentField; // @synthesize centerYInContainerAlignmentField=_centerYInContainerAlignmentField;
 @property(retain, nonatomic) DVTButtonTextField *centerXInContainerAlignmentField; // @synthesize centerXInContainerAlignmentField=_centerXInContainerAlignmentField;
 @property(retain, nonatomic) DVTButtonTextField *baselineAlignmentField; // @synthesize baselineAlignmentField=_baselineAlignmentField;
 @property(retain, nonatomic) DVTButtonTextField *centerYAlignmentField; // @synthesize centerYAlignmentField=_centerYAlignmentField;
 @property(retain, nonatomic) DVTButtonTextField *centerXAlignmentField; // @synthesize centerXAlignmentField=_centerXAlignmentField;
-@property(retain, nonatomic) DVTButtonTextField *rightEdgesAlignmentField; // @synthesize rightEdgesAlignmentField=_rightEdgesAlignmentField;
-@property(retain, nonatomic) DVTButtonTextField *leftEdgesAlignmentField; // @synthesize leftEdgesAlignmentField=_leftEdgesAlignmentField;
+@property(retain, nonatomic) DVTButtonTextField *trailingEdgesAlignmentField; // @synthesize trailingEdgesAlignmentField=_trailingEdgesAlignmentField;
+@property(retain, nonatomic) DVTButtonTextField *leadingEdgesAlignmentField; // @synthesize leadingEdgesAlignmentField=_leadingEdgesAlignmentField;
 @property(retain, nonatomic) DVTButtonTextField *bottomEdgesAlignmentField; // @synthesize bottomEdgesAlignmentField=_bottomEdgesAlignmentField;
 @property(retain, nonatomic) DVTButtonTextField *topEdgesAlignmentField; // @synthesize topEdgesAlignmentField=_topEdgesAlignmentField;
 @property(retain, nonatomic) NSButton *centerYInContainerAlignmentCheckBox; // @synthesize centerYInContainerAlignmentCheckBox=_centerYInContainerAlignmentCheckBox;
@@ -169,8 +153,8 @@
 @property(retain, nonatomic) NSButton *baselineAlignmentCheckBox; // @synthesize baselineAlignmentCheckBox=_baselineAlignmentCheckBox;
 @property(retain, nonatomic) NSButton *centerYAlignmentCheckBox; // @synthesize centerYAlignmentCheckBox=_centerYAlignmentCheckBox;
 @property(retain, nonatomic) NSButton *centerXAlignmentCheckBox; // @synthesize centerXAlignmentCheckBox=_centerXAlignmentCheckBox;
-@property(retain, nonatomic) NSButton *rightEdgesAlignmentCheckBox; // @synthesize rightEdgesAlignmentCheckBox=_rightEdgesAlignmentCheckBox;
-@property(retain, nonatomic) NSButton *leftEdgesAlignmentCheckBox; // @synthesize leftEdgesAlignmentCheckBox=_leftEdgesAlignmentCheckBox;
+@property(retain, nonatomic) NSButton *trailingEdgesAlignmentCheckBox; // @synthesize trailingEdgesAlignmentCheckBox=_trailingEdgesAlignmentCheckBox;
+@property(retain, nonatomic) NSButton *leadingEdgesAlignmentCheckBox; // @synthesize leadingEdgesAlignmentCheckBox=_leadingEdgesAlignmentCheckBox;
 @property(retain, nonatomic) NSButton *bottomEdgesAlignmentCheckBox; // @synthesize bottomEdgesAlignmentCheckBox=_bottomEdgesAlignmentCheckBox;
 @property(retain, nonatomic) NSButton *topEdgesAlignmentCheckBox; // @synthesize topEdgesAlignmentCheckBox=_topEdgesAlignmentCheckBox;
 @property(retain, nonatomic) NSButton *aspectRatioOverlayButton; // @synthesize aspectRatioOverlayButton=_aspectRatioOverlayButton;
@@ -201,7 +185,6 @@
 @property(retain, nonatomic) NSButton *leadingNearestNeighborCheckBox; // @synthesize leadingNearestNeighborCheckBox=_leadingNearestNeighborCheckBox;
 @property(retain, nonatomic) NSButton *bottomNearestNeighborCheckBox; // @synthesize bottomNearestNeighborCheckBox=_bottomNearestNeighborCheckBox;
 @property(retain, nonatomic) NSButton *topNearestNeighborCheckBox; // @synthesize topNearestNeighborCheckBox=_topNearestNeighborCheckBox;
-@property(retain, nonatomic) NSPopUpButton *updateFramesPopUp; // @synthesize updateFramesPopUp=_updateFramesPopUp;
 @property(retain, nonatomic) NSButton *addConstraintsButton; // @synthesize addConstraintsButton=_addConstraintsButton;
 @property(copy, nonatomic) CDUnknownBlockType didAddConstraintsHandler; // @synthesize didAddConstraintsHandler=_didAddConstraintsHandler;
 @property(readonly, nonatomic) IBDocument *document; // @synthesize document=_document;
@@ -211,11 +194,11 @@
 - (void)addConstraints:(id)arg1;
 - (void)userDidChangePrefersMarginRelativeConstraints:(id)arg1;
 - (void)_updateNearestNeighborTypeConfigurationAfterUserChangedPrefersMarginRelativeConstraintsForAttribute:(unsigned long long)arg1;
-- (void)userDidChangeAlignPopUp:(id)arg1;
 - (void)userDidSelectCheckBox:(id)arg1;
 - (void)userDidChangeValue:(id)arg1;
+- (void)controlTextDidChange:(id)arg1;
+- (void)_syncConstraintsButtonFromModel;
 - (void)_syncUIFromModel;
-- (BOOL)_canAlignAnything;
 - (id)_objectValueForFieldForTypeConfiguration:(id)arg1 returningPlaceholderString:(id *)arg2;
 - (void)_syncModelFromUI;
 - (BOOL)_fieldIsShowingMultipleValues:(id)arg1;
@@ -243,11 +226,10 @@
 - (void)_addExplicitSizeTypeConfigurationsToSet:(id)arg1;
 - (void)_addNearestNeighborTypeConfigurationsToSet:(id)arg1;
 - (void)_updateNearestNeighborTypeConfiguration:(id)arg1 forAttribute:(unsigned long long)arg2 withField:(id)arg3 checkBox:(id)arg4;
-- (void)_updateTypeConfiguration:(id)arg1 withField:(id)arg2 checkBox:(id)arg3 overlayButton:(id)arg4 label:(id)arg5 startingConstant:(id)arg6 andConstraints:(id)arg7;
-- (id)_typeConfigurationWithField:(id)arg1 checkBox:(id)arg2 overlayButton:(id)arg3 label:(id)arg4 startingConstant:(id)arg5 andConstraints:(id)arg6;
+- (void)_updateTypeConfiguration:(id)arg1 withField:(id)arg2 checkBox:(id)arg3 overlayButton:(id)arg4 label:(id)arg5 imageView:(id)arg6 startingConstant:(id)arg7 andConstraints:(id)arg8;
+- (id)_typeConfigurationWithField:(id)arg1 checkBox:(id)arg2 overlayButton:(id)arg3 label:(id)arg4 imageView:(id)arg5 startingConstant:(id)arg6 andConstraints:(id)arg7;
 - (id)_nearestNeighborsToDistanceForItem:(id)arg1 attribute:(unsigned long long)arg2 orderFarthestFirst:(BOOL)arg3 marginRelativeToContainer:(BOOL)arg4;
 - (id)_typeConfigurationForNearestNeighborWithAttribute:(unsigned long long)arg1;
-- (id)_typeConfigurationForAlignmentType:(unsigned long long)arg1;
 - (id)_typeConfigurationForOverlayButton:(id)arg1;
 - (id)_typeConfigurationForCheckBox:(id)arg1;
 - (id)_typeConfigurationForField:(id)arg1;

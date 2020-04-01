@@ -6,9 +6,12 @@
 
 #import <objc/NSObject.h>
 
+#import <DVTKit/NSCoding-Protocol.h>
+#import <DVTKit/NSCopying-Protocol.h>
+
 @class NSArray;
 
-@interface DVTPlistSelection : NSObject
+@interface DVTPlistSelection : NSObject <NSCoding, NSCopying>
 {
     NSArray *_keyPath;
     struct _NSRange _selectedTextRange;
@@ -21,6 +24,7 @@
 - (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)hash;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

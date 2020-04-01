@@ -4,25 +4,26 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Foundation/NSObject.h>
+#import <objc/NSObject.h>
 
 #import <DevToolsCore/DTFileSystemEventStreamDelegate-Protocol.h>
 
-@class DTFileSystemEventStream, NSMapTable, NSMutableArray, NSMutableDictionary, NSString;
+@class DTFileSystemEventStream, NSArray, NSMapTable, NSMutableArray, NSMutableDictionary, NSString;
 
 @interface XCFileSystemWatcher : NSObject <DTFileSystemEventStreamDelegate>
 {
     DTFileSystemEventStream *_eventStream;
     unsigned long long _lastSeenEventId;
-    BOOL _isStarted;
     NSMutableDictionary *_registeredPathsToWatchers;
     NSMapTable *_watchersToRegisteredPaths;
     NSMutableArray *_watchersCache;
     NSMutableArray *_watchedPaths;
-    NSMutableArray *_sortedRegisteredPaths;
+    NSArray *_sortedRegisteredPaths;
+    BOOL _isStarted;
     BOOL _registeredPathsChanged;
 }
 
+- (void).cxx_destruct;
 - (void)unregisterWatcher:(id)arg1;
 - (void)unregisterWatcher:(id)arg1 forPath:(id)arg2;
 - (void)unregisterWatcher:(id)arg1 forPaths:(id)arg2;
@@ -38,7 +39,6 @@
 - (void)_recreateEventStream;
 - (BOOL)_rebuildEventStreamPathListIfNecessary;
 - (id)allWatchers;
-- (void)dealloc;
 - (void)close;
 - (id)init;
 

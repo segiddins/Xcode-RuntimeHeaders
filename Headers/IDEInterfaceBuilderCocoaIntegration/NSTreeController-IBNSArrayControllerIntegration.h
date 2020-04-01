@@ -6,16 +6,25 @@
 
 #import <AppKit/NSTreeController.h>
 
+#import <IDEInterfaceBuilderCocoaIntegration/IBDocumentArchiving-Protocol.h>
+
 @class NSString;
 
-@interface NSTreeController (IBNSArrayControllerIntegration)
-+ (id)ibSynthesizeControllerKeyPaths;
+@interface NSTreeController (IBNSArrayControllerIntegration) <IBDocumentArchiving>
++ (id)ibDynamicShadowedKeyPathsToTypes;
+- (CDUnknownBlockType)ibPatchObjectBeforeBindingRemovalReturningUnpatchBlock;
 - (BOOL)validateIbShadowedCountKeyPath:(id *)arg1 error:(id)arg2;
 - (BOOL)validateIbShadowedLeafKeyPath:(id *)arg1 error:(id)arg2;
 - (BOOL)validateIbShadowedChildrenKeyPath:(id *)arg1 error:(id)arg2;
 - (id)ibResolvedTypeNameForControllerKey:(id)arg1;
+- (id)ibLocalAttributeKeyPaths;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
 
 // Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
 @property BOOL ibShadowedAlwaysUsesMultipleValuesMarker; // @dynamic ibShadowedAlwaysUsesMultipleValuesMarker;
 @property BOOL ibShadowedAvoidsEmptySelection; // @dynamic ibShadowedAvoidsEmptySelection;
 @property(copy) NSString *ibShadowedChildrenKeyPath; // @dynamic ibShadowedChildrenKeyPath;
@@ -23,5 +32,6 @@
 @property(copy) NSString *ibShadowedLeafKeyPath; // @dynamic ibShadowedLeafKeyPath;
 @property BOOL ibShadowedPreservesSelection; // @dynamic ibShadowedPreservesSelection;
 @property BOOL ibShadowedSelectsInsertedObjects; // @dynamic ibShadowedSelectsInsertedObjects;
+@property(readonly) Class superclass;
 @end
 

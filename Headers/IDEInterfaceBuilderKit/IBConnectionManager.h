@@ -18,14 +18,13 @@
 + (id)onConnnectionStateImage;
 + (id)sharedInstance;
 - (void).cxx_destruct;
-- (void)beginConnectingFromPrototypeView:(id)arg1 withPrototype:(id)arg2 inDocument:(id)arg3 connectionInterfaceStyle:(id)arg4;
-- (void)beginConnectingFromAnnotation:(id)arg1 inTextSidebarView:(id)arg2 withEvent:(id)arg3;
+- (void)beginConnectingFromPrototypeView:(id)arg1 withPrototype:(id)arg2 inDocument:(id)arg3 connectionInterfaceStyle:(id)arg4 fadeDraggingWindow:(BOOL)arg5;
+- (void)beginConnectingFromAnnotation:(id)arg1 inTextSidebar:(id)arg2 withEvent:(id)arg3;
 - (void)beginOldSchoolConnectingFromEditorCanvasFrameController:(id)arg1 initialEndPoint:(id)arg2 withEvent:(id)arg3;
 - (void)beginOldSchoolConnectingFromObject:(id)arg1 withEvent:(id)arg2 inWindow:(id)arg3 usingSourceLocator:(CDUnknownBlockType)arg4;
 - (id)runCachingConnectionTrackingLoopWithEvent:(id)arg1 forDragContext:(id)arg2 inWindow:(id)arg3 fadeDraggingWindow:(BOOL)arg4 usingSourceLocator:(CDUnknownBlockType)arg5;
 - (id)runCachingConnectionTrackingLoopWithEvent:(id)arg1 forDragContext:(id)arg2 inWindow:(id)arg3 fadeDraggingWindow:(BOOL)arg4 usingSourceLocator:(CDUnknownBlockType)arg5 remainingDocumentsToCache:(id)arg6;
 - (id)runConnectionTrackingLoopWithEvent:(id)arg1 forDragContext:(id)arg2 inWindow:(id)arg3 fadeDraggingWindow:(BOOL)arg4 usingSourceLocator:(CDUnknownBlockType)arg5;
-- (void)addConstraintsAfterCompletingConnection:(id)arg1 document:(id)arg2;
 - (void)sendConnectionManagerDidFinishConnectingToProvider:(id)arg1;
 - (void)sendConnectionManagerWillStartConnectingToProvider:(id)arg1;
 - (void)unregisterProvidersRegisteredDuringDragSession;

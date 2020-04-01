@@ -15,10 +15,12 @@
 {
     id <DBGMapDataAndAnnotationProvider> _mapDataAndAnnotationProvider;
     MKMapView *_mapView;
+    NSView *_valuesContainerView;
     NSView *_valuesView;
 }
 
 @property(retain) NSView *valuesView; // @synthesize valuesView=_valuesView;
+@property(retain) NSView *valuesContainerView; // @synthesize valuesContainerView=_valuesContainerView;
 @property(retain) MKMapView *mapView; // @synthesize mapView=_mapView;
 - (void).cxx_destruct;
 - (id)_createLabel:(id)arg1 bold:(BOOL)arg2 selectable:(BOOL)arg3;

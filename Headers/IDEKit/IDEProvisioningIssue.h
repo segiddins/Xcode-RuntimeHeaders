@@ -8,36 +8,42 @@
 
 #import <IDEKit/DVTInvalidation-Protocol.h>
 
-@class DVTStackBacktrace, IDEProvisioningIssueResolutionWindowController, IDEProvisioningUserAction, NSError, NSString, NSWindow;
+@class DVTStackBacktrace, NSError, NSString;
 
 @interface IDEProvisioningIssue : NSObject <DVTInvalidation>
 {
     BOOL _hasSubTitleAction;
     NSString *_title;
     NSString *_subtitle;
-    NSString *_buttonTitle;
     NSError *_underlyingError;
-    IDEProvisioningUserAction *_userAction;
-    IDEProvisioningIssueResolutionWindowController *_issueResolutionWindowController;
-    NSWindow *_issueResolutionWindowControllerHostWindow;
 }
 
-+ (id)issuesWithErrors:(id)arg1;
++ (id)issueWithUserAction:(id)arg1 errorProvider:(id)arg2;
++ (id)issueWithError:(id)arg1;
 + (void)initialize;
-@property(retain, nonatomic) NSWindow *issueResolutionWindowControllerHostWindow; // @synthesize issueResolutionWindowControllerHostWindow=_issueResolutionWindowControllerHostWindow;
-@property(retain, nonatomic) IDEProvisioningIssueResolutionWindowController *issueResolutionWindowController; // @synthesize issueResolutionWindowController=_issueResolutionWindowController;
-@property(retain, nonatomic) IDEProvisioningUserAction *userAction; // @synthesize userAction=_userAction;
 @property(retain, nonatomic) NSError *underlyingError; // @synthesize underlyingError=_underlyingError;
-@property(retain, nonatomic) NSString *buttonTitle; // @synthesize buttonTitle=_buttonTitle;
 @property(nonatomic) BOOL hasSubTitleAction; // @synthesize hasSubTitleAction=_hasSubTitleAction;
 @property(retain, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 - (void).cxx_destruct;
 - (void)primitiveInvalidate;
+- (void)didSelectSubtitleAction:(id)arg1;
+- (void)_performEnableDevleopmentSigningAction;
+- (void)_performTrustSettingsRepair:(id)arg1;
+- (void)_performManageCertificatesAction:(id)arg1;
+- (void)_performSignInAction:(id)arg1;
+- (void)_performAddAccountAction;
+- (void)_performViewAccountsAction;
+- (void)_performTryAgainAction;
 - (void)didSelectIssueAction:(id)arg1;
 @property(readonly) BOOL requiresAdditionalUserInteraction;
-- (void)didSelectSubtitleAction:(id)arg1;
-- (id)initWithUserAction:(id)arg1;
+@property(readonly) NSString *buttonTitle;
+- (BOOL)_canManageCertificates;
+- (id)_errorPlatform;
+- (id)_errorCertificate;
+- (id)_errorTeam;
+- (id)_errorAccount;
+- (long long)_errorAction;
 - (id)initWithError:(id)arg1;
 
 // Remaining properties

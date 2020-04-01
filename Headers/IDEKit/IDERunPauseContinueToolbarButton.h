@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <DVTKit/DVTDelayedMenuButton.h>
+#import <DVTUserInterfaceKit/DVTDelayedMenuButton.h>
 
 #import <IDEKit/DVTInvalidation-Protocol.h>
 
@@ -26,17 +26,21 @@
 + (void)initialize;
 @property BOOL isValidToolbarItem; // @synthesize isValidToolbarItem=_isValidToolbarItem;
 - (void).cxx_destruct;
-- (void)performProfileAction:(id)arg1;
-- (void)performRunAction:(id)arg1;
-- (void)performTestAction:(id)arg1;
 - (void)performAnalyzeAction:(id)arg1;
+- (void)performPreviewAction:(id)arg1;
+- (void)performProfileAction:(id)arg1;
+- (void)performTestAction:(id)arg1;
+- (void)performRunAction:(id)arg1;
+- (void)_performAction:(SEL)arg1 actionWithoutBuild:(SEL)arg2 buildAction:(SEL)arg3 editAction:(SEL)arg4 buttonStyleAction:(SEL)arg5 actionOnlyType:(int)arg6 buildOnlyType:(int)arg7 sender:(id)arg8;
+- (void)buildActiveRunContextWithTimingSummary:(id)arg1;
 - (BOOL)menuItemRepresentsBuildOnly:(id)arg1;
 - (void)setToolbarItem:(id)arg1;
 - (id)_toolbarItem;
 - (void)_setButtonToBuildStyle:(id)arg1 menuItem:(id)arg2;
+- (void)_setButtonToAnalyzeStyle:(id)arg1 menuItem:(id)arg2;
+- (void)_setButtonToPreviewStyle:(id)arg1 menuItem:(id)arg2;
 - (void)_setButtonToProfileStyle:(id)arg1 menuItem:(id)arg2;
 - (void)_setButtonToTestStyle:(id)arg1 menuItem:(id)arg2;
-- (void)_setButtonToAnalyzeStyle:(id)arg1 menuItem:(id)arg2;
 - (void)_setButtonToRunStyle:(id)arg1 menuItem:(id)arg2;
 - (void)_updateEnablement;
 - (void)_updateToolbarItem;
@@ -44,10 +48,11 @@
 - (void)viewWillMoveToWindow:(id)arg1;
 - (void)primitiveInvalidate;
 - (id)initWithWindowController:(id)arg1;
-- (id)addProfileButtonToMenu:(id)arg1;
-- (id)addRunButtonToMenu:(id)arg1;
-- (id)addTestButtonToMenu:(id)arg1;
 - (id)addAnalyzeButtonToMenu:(id)arg1;
+- (id)addPreviewButtonToMenu:(id)arg1;
+- (id)addProfileButtonToMenu:(id)arg1;
+- (id)addTestButtonToMenu:(id)arg1;
+- (id)addRunButtonToMenu:(id)arg1;
 - (id)_newToolbarViewHitTest:(struct CGPoint)arg1;
 - (void)_swizzleToolbarViewHitTest;
 

@@ -10,9 +10,9 @@
 
 @interface IBDocumentGeniusResultsFinder : IDEIndexGeniusResultsFinder
 {
-    NSSet *interfaceBuilderObjectKVOObservations;
-    NSSet *documentNotificationTokens;
-    DVTDelayedInvocation *delayedUpdateInvocation;
+    DVTDelayedInvocation *_delayedUpdateInvocation;
+    NSSet *_interfaceBuilderObjectKVOObservations;
+    NSSet *_documentNotificationTokens;
 }
 
 + (Class)editorDocumentClass;
@@ -20,7 +20,7 @@
 - (void)findGeniusResultsForEditorDocument:(id)arg1 selectedDocumentLocations:(id)arg2;
 - (void)unregisterForNotifications;
 - (void)registerObservationsWithDocument:(id)arg1;
-- (BOOL)_getUpdateGeniusResultsPhaseOneBlock:(CDUnknownBlockType *)arg1 phaseTwoBlock:(CDUnknownBlockType *)arg2 phaseThreeBlock:(CDUnknownBlockType *)arg3;
+- (BOOL)_getUpdateGeniusResultsPhase1Block:(CDUnknownBlockType *)arg1 phase2Block:(CDUnknownBlockType *)arg2 phase3Block:(CDUnknownBlockType *)arg3;
 - (void)primitiveInvalidate;
 @property(readonly) IBDocument *editorDocument;
 

@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class DTTimelineGraph, DTTimelinePlane, NSMapTable, NSMutableArray;
+@class DTTimelineGraph, DTTimelinePlane, NSMutableArray, NSMutableSet;
 
 @interface DTTimelineGraphPlaneManager : NSObject
 {
@@ -16,16 +16,25 @@
     DTTimelinePlane *_bottomPinnedPlane;
     DTTimelinePlane *_backgroundPlane;
     DTTimelinePlane *_overlayPlane;
+    NSMutableSet *_selectedPlanes;
     BOOL _topPlaneChanged;
     BOOL _bottomPlaneChanged;
     BOOL _backgroundPlaneChanged;
     BOOL _overlayPlaneChanged;
     BOOL _planesArrayChanged;
-    NSMapTable *_groupPlaneChangesMap;
+    BOOL _selectedPlanesChanged;
+    BOOL _scrollToLastPlane;
+    BOOL _planeHeightChanged;
+    BOOL _somePlaneNeedsLabelWork;
+    NSMutableSet *_groupPlanesChanged;
+    unsigned long long _changeCount;
 }
 
 + (id)planeManagerWithTimelineGraph:(id)arg1;
 - (void).cxx_destruct;
+- (void)setScrollToLastPlane:(BOOL)arg1;
+- (void)addSelectedPlane:(id)arg1;
+- (void)setSelectedPlanes:(id)arg1;
 - (void)collapseGroupPlane:(id)arg1;
 - (void)expandGroupPlane:(id)arg1;
 - (void)setRepresentativePlane:(id)arg1 onGroupPlane:(id)arg2;
@@ -35,6 +44,8 @@
 - (void)insertSubplane:(id)arg1 afterSubplane:(id)arg2 inGroupPlane:(id)arg3;
 - (void)addSubplanes:(id)arg1 toGroupPlane:(id)arg2;
 - (void)addSubplane:(id)arg1 toGroupPlane:(id)arg2;
+- (void)_planeChangeInvalidatedLabel:(id)arg1;
+- (void)setInspectionLabelCenter:(double)arg1 onPlane:(id)arg2;
 - (BOOL)setHeight:(double)arg1 onPlane:(id)arg2;
 - (void)removeAllPlanes;
 - (void)removePlane:(id)arg1;
@@ -50,7 +61,7 @@
 - (void)setBottomPinnedPlane:(id)arg1;
 - (void)setTopPinnedPlane:(id)arg1;
 - (void)commitChangesAnimated:(BOOL)arg1;
-- (void)_removePlaneFromHeirarchy:(id)arg1;
+- (void)_removePlaneFromHierarchy:(id)arg1;
 - (void)_reset;
 - (id)initWithTimelineGraph:(id)arg1;
 

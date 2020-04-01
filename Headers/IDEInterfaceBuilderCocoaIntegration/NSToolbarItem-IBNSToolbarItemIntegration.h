@@ -7,38 +7,37 @@
 #import <AppKit/NSToolbarItem.h>
 
 @interface NSToolbarItem (IBNSToolbarItemIntegration)
-+ (id)keyPathsForValuesAffectingIbInspectedMaxSizeHeight;
-+ (id)keyPathsForValuesAffectingIbInspectedMaxSizeWidth;
-+ (id)keyPathsForValuesAffectingIbInspectedMinSizeHeight;
-+ (id)keyPathsForValuesAffectingIbInspectedMinSizeWidth;
 + (id)keyPathsForValuesAffectingIbInspectedItemIdentifier;
++ (id)keyPathsForValuesAffectingIbInspectedToolTip;
++ (id)keyPathsForValuesAffectingIbInspectedExternalSizingBehavior;
++ (id)keyPathsForValuesAffectingIbInspectedIsCenteredItem;
 + (id)instantiateWithDocumentUnarchiver:(id)arg1;
 - (void)ibSetupTriggerForSegueTemplate:(id)arg1 inCompilationUnit:(id)arg2;
 - (id)ibSegueTriggers;
 - (id)ibDefaultSegueTrigger;
 - (BOOL)ibCanHaveDescendantViewHierarchy;
 - (BOOL)ibIsChildArbitrationUnitRoot:(id)arg1;
-- (void)setIbInspectedMaxSizeHeight:(double)arg1;
-- (double)ibInspectedMaxSizeHeight;
-- (void)setIbInspectedMaxSizeWidth:(double)arg1;
-- (double)ibInspectedMaxSizeWidth;
-- (void)setIbInspectedMinSizeHeight:(double)arg1;
-- (double)ibInspectedMinSizeHeight;
-- (void)setIbInspectedMinSizeWidth:(double)arg1;
-- (double)ibInspectedMinSizeWidth;
 - (void)setIbInspectedItemIdentifier:(id)arg1;
 - (id)ibInspectedItemIdentifier;
 - (void)ibPrepareCocoaDocumentForCompiling:(id)arg1 withContext:(id)arg2;
-- (void)ibWarnings:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
+- (void)ibPopulateIssues:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
 - (id)ibInitialConnectionLabelSearchTerm;
-- (id)ibInspectedToolTip;
 - (void)setIbInspectedToolTip:(id)arg1;
+- (id)ibInspectedToolTip;
 - (id)ibEffectiveRuntimeToolbarItemIdentifier;
+- (void)setIbInspectedExternalSizingBehavior:(long long)arg1;
+- (long long)ibInspectedExternalSizingBehavior;
+- (void)setIbExternalSizingBehavior:(long long)arg1;
+- (long long)ibExternalSizingBehavior;
+- (BOOL)ibInspectedShowSizingBehavior;
 - (void)setIbExternalIsSelectable:(BOOL)arg1;
 - (BOOL)ibExternalIsSelectable;
 - (void)setIbShadowedToolbarItemIdentifier:(id)arg1;
 - (id)ibShadowedToolbarItemIdentifier;
 - (BOOL)ibIsChildInitiallySelectable:(id)arg1;
+- (void)setIbInspectedIsCenteredItem:(BOOL)arg1;
+- (BOOL)ibInspectedIsCenteredItem;
+- (id)parentToolbar;
 - (BOOL)ibIsChildViewUserMovable:(id)arg1;
 - (void)setToolbarItemIdentifier:(id)arg1;
 - (Class)ibEditorClass;
@@ -49,10 +48,16 @@
 - (id)ibQualifyingInfoForDefaultLabel;
 - (void)ibTakePastedAttributes:(id)arg1;
 - (void)ibPopulateChildRelationOrder:(id)arg1;
-- (id)ibDocumentationPropertyInfosForKeyPath:(id)arg1;
+- (id)ibDocumentationSymbolInfosForKeyPath:(id)arg1;
 - (id)ibLocalLocalizableStringsAttributeKeyPaths;
+- (void)awakeAfterUsingDocumentUnarchiver:(id)arg1;
+- (void)ibApplyFrameSizeToMinMaxSizes;
+- (BOOL)ibUsingAutomaticMinMaxSizing;
 - (void)unarchiveWithDocumentUnarchiver:(id)arg1;
 - (void)archiveWithDocumentArchiver:(id)arg1;
 - (Class)classForDocumentArchiver:(id)arg1;
+- (id)ibLocalLocalizableGeometryAttributeKeyPaths;
+- (id)ibLocalAttributeKeyPaths;
+- (id)ibLocalChildToOneRelationshipsKeyPaths;
 @end
 

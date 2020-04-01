@@ -8,7 +8,8 @@
 
 #import <DTGraphKit/NSCopying-Protocol.h>
 
-@class DTMemoryGraphItem, DTMutableMemoryGraphItem, DVT_VMUProcessObjectGraph, NSCountedSet, NSMapTable, NSMutableDictionary, NSMutableSet, NSString;
+@class DTMemoryGraphItem, DTMutableMemoryGraphItem, DVT_VMUClassInfo, DVT_VMUProcessObjectGraph, NSCountedSet, NSMapTable, NSMutableDictionary, NSMutableSet, NSString;
+@protocol DVTCancellable;
 
 @interface DTObjectGraphIndex : NSObject <NSCopying>
 {
@@ -19,14 +20,18 @@
     NSString *_mainExecutablePath;
     NSMutableDictionary *_classInfoForMallocBlockSize;
     NSMutableDictionary *_classInfoForVMRegionTag;
+    DVT_VMUClassInfo *_unknownClassInfo;
     BOOL _showLeaksOnly;
     NSString *_filterString;
     CDUnknownBlockType _userFilterBlock;
     DVT_VMUProcessObjectGraph *_graph;
     DVT_VMUProcessObjectGraph *_leakedGraph;
     unsigned long long _defaultHierarchicalLimit;
+    id <DVTCancellable> _creationToken;
 }
 
++ (id)indexWithGraph:(id)arg1 completion:(CDUnknownBlockType)arg2;
+@property(readonly) id <DVTCancellable> creationToken; // @synthesize creationToken=_creationToken;
 @property(nonatomic) BOOL showLeaksOnly; // @synthesize showLeaksOnly=_showLeaksOnly;
 @property(nonatomic) unsigned long long defaultHierarchicalLimit; // @synthesize defaultHierarchicalLimit=_defaultHierarchicalLimit;
 @property(retain, nonatomic) DVT_VMUProcessObjectGraph *leakedGraph; // @synthesize leakedGraph=_leakedGraph;
@@ -48,7 +53,7 @@
 - (id)_classInfoForVMRegion:(id)arg1;
 - (id)_classInfoForMallocBlockSize:(unsigned long long)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)initWithGraph:(id)arg1;
+- (id)initWithGraph:(id)arg1 creationToken:(id)arg2;
 
 @end
 

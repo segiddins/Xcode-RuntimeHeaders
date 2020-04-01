@@ -8,46 +8,51 @@
 
 #import <IDEFoundation/NSCopying-Protocol.h>
 
-@class DVTFilePath, NSArray, NSDictionary, NSString;
+@class DVTCodeSigningInformation, DVTFilePath, DVTPortalAppIDFeatures, DVTProvisioningProfile, IDEDistributionItemPlatform, NSArray, NSDictionary, NSNumber, NSString;
+@protocol IDEProvisioningBasicTeam;
 
 @interface IDEDistributionItem : NSObject <NSCopying>
 {
+    NSNumber *_isAssetPack;
     BOOL _canHaveProvisioningProfile;
+    DVTPortalAppIDFeatures *_appIDFeatures;
     DVTFilePath *_path;
     DVTFilePath *_machOPath;
     IDEDistributionItem *_parent;
     NSArray *_childItems;
-    NSString *_teamID;
-    NSString *_appID;
-    NSString *_appIDWithoutPrefix;
+    DVTCodeSigningInformation *_codeSigningInfo;
     NSDictionary *_infoDictionary;
-    NSDictionary *_entitlements;
-    NSDictionary *_archivedUserEntitlements;
+    DVTProvisioningProfile *_provisioningProfile;
+    IDEDistributionItemPlatform *_itemPlatform;
+    id <IDEProvisioningBasicTeam> _team;
 }
 
-+ (id)platformForItemAtPath:(id)arg1 error:(id *)arg2;
 + (id)topLevelDistributionItemsFromProductsRoot:(id)arg1 logAspect:(id)arg2 error:(id *)arg3;
 + (id)_distributionItemForPath:(id)arg1 pathsToItems:(id)arg2 pathsToChildPaths:(id)arg3 logAspect:(id)arg4 error:(id *)arg5;
 + (id)flattenDistributionItems:(id)arg1;
-+ (id)embeddedProvisioningProfileForItemAtPath:(id)arg1 error:(id *)arg2;
-+ (id)canHaveProvisioningProfileForItemAtPath:(id)arg1 logAspect:(id)arg2 error:(id *)arg3;
++ (id)embeddedProvisioningProfileForItemAtPath:(id)arg1 platform:(id)arg2 error:(id *)arg3;
++ (id)canHaveProvisioningProfileForItemAtPath:(id)arg1 platform:(id)arg2 logAspect:(id)arg3 error:(id *)arg4;
 + (id)machOFileTypesAtPath:(id)arg1 error:(id *)arg2;
-+ (id)archivedUserEntitlementsForItemAtPath:(id)arg1 error:(id *)arg2;
 + (id)itemWithPath:(id)arg1 childItems:(id)arg2 logAspect:(id)arg3 error:(id *)arg4;
++ (id)itemsSupportingProvisioning:(id)arg1 archive:(id)arg2 logAspect:(id)arg3;
+@property(retain, nonatomic) id <IDEProvisioningBasicTeam> team; // @synthesize team=_team;
+@property(readonly, nonatomic) IDEDistributionItemPlatform *itemPlatform; // @synthesize itemPlatform=_itemPlatform;
+@property(readonly, nonatomic) DVTProvisioningProfile *provisioningProfile; // @synthesize provisioningProfile=_provisioningProfile;
 @property(readonly, nonatomic) BOOL canHaveProvisioningProfile; // @synthesize canHaveProvisioningProfile=_canHaveProvisioningProfile;
-@property(readonly, nonatomic) NSDictionary *archivedUserEntitlements; // @synthesize archivedUserEntitlements=_archivedUserEntitlements;
-@property(readonly, nonatomic) NSDictionary *entitlements; // @synthesize entitlements=_entitlements;
 @property(readonly, nonatomic) NSDictionary *infoDictionary; // @synthesize infoDictionary=_infoDictionary;
-@property(readonly, nonatomic) NSString *appIDWithoutPrefix; // @synthesize appIDWithoutPrefix=_appIDWithoutPrefix;
-@property(readonly, nonatomic) NSString *appID; // @synthesize appID=_appID;
-@property(readonly, nonatomic) NSString *teamID; // @synthesize teamID=_teamID;
+@property(readonly, nonatomic) DVTCodeSigningInformation *codeSigningInfo; // @synthesize codeSigningInfo=_codeSigningInfo;
 @property(readonly, nonatomic) NSArray *childItems; // @synthesize childItems=_childItems;
 @property __weak IDEDistributionItem *parent; // @synthesize parent=_parent;
 @property(readonly, nonatomic) DVTFilePath *machOPath; // @synthesize machOPath=_machOPath;
 @property(readonly, nonatomic) DVTFilePath *path; // @synthesize path=_path;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) BOOL isAssetPack;
+@property(readonly, nonatomic) DVTPortalAppIDFeatures *appIDFeatures; // @synthesize appIDFeatures=_appIDFeatures;
+@property(readonly, nonatomic) NSString *appID;
+@property(readonly, nonatomic) NSDictionary *entitlements;
 - (id)platformWithError:(id *)arg1;
-@property(readonly) BOOL isAppleProvidedContent;
+- (id)isAppleProvidedContentFromArchive:(id)arg1 error:(id *)arg2;
+- (BOOL)isManuallyProvisionedFromArchive:(id)arg1 logAspect:(id)arg2;
 - (id)debugDescription;
 - (id)description;
 - (unsigned long long)hash;
@@ -55,8 +60,12 @@
 - (long long)compare:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, nonatomic) NSString *bundleID;
-- (id)initWithPath:(id)arg1 infoDictionary:(id)arg2 canHaveProvisioningProfile:(BOOL)arg3 teamID:(id)arg4 appID:(id)arg5 appIDWithoutPrefix:(id)arg6 entitlements:(id)arg7 archivedUserEntitlements:(id)arg8 childItems:(id)arg9;
+- (id)initWithPath:(id)arg1 platform:(id)arg2 infoDictionary:(id)arg3 canHaveProvisioningProfile:(BOOL)arg4 codeSigningInfo:(id)arg5 provisioningProfile:(id)arg6 childItems:(id)arg7;
 - (id)init;
+- (BOOL)supportsProvisioning:(char *)arg1 forArchive:(id)arg2 error:(id *)arg3;
+- (id)provisioningFilePath;
+- (long long)profileSupport;
+- (BOOL)conformsToHardenedRuntimePolicy:(char *)arg1 error:(id *)arg2;
 
 @end
 

@@ -6,7 +6,7 @@
 
 #import <IDEInterfaceBuilderKit/IBDocumentArchivingSchemaElementComponent.h>
 
-@class NSNumber;
+@class NSNumber, NSString;
 
 @interface IBDocumentArchivingSchemaClassComponent : IBDocumentArchivingSchemaElementComponent
 {
@@ -14,6 +14,7 @@
 
 - (void)insertIntoSchema:(id)arg1;
 @property(readonly) NSNumber *minimumRequiredRuntimeOSVersion;
+@property(readonly) NSString *archivableClassName;
 @property(readonly) Class archivableClass;
 - (id)elementName;
 

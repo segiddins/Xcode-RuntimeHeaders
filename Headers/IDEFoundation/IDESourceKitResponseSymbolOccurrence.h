@@ -16,7 +16,6 @@
 @property(readonly) BOOL isVirtual;
 @property(readonly) BOOL isInProject;
 @property(readonly) NSString *symbolModuleName;
-@property(readonly) NSString *qualifiedDisplayName;
 @property(readonly) NSString *displayName;
 @property(readonly) IDESourceKitResponseSymbol *symbol;
 @property(readonly) NSString *moduleUrlOpt;

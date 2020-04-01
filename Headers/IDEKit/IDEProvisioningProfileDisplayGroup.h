@@ -25,9 +25,10 @@
 - (id)initWithEligibleProfiles:(id)arg1 ineligibleProfiles:(id)arg2;
 - (BOOL)_wantsIneligibleMenuItemHeader;
 - (BOOL)_wantsEligibleMenuItemHeader;
-- (id)_profileMenuItemForProfile:(id)arg1 wantsIndentation:(BOOL)arg2;
+- (id)_profileMenuItemForProfile:(id)arg1 wantsIndentation:(BOOL)arg2 wantsIcon:(BOOL)arg3;
 - (id)_headerMenuItemForProfileSet:(id)arg1;
-- (id)_menuItemsForProfileSet:(id)arg1;
+- (id)_menuItemsForProfileSet:(id)arg1 withIcons:(BOOL)arg2;
+- (id)menuItemsForDisplayGroupWithIcons:(BOOL)arg1;
 - (id)menuItemsForDisplayGroup;
 
 @end

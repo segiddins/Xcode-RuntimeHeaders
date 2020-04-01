@@ -6,26 +6,40 @@
 
 #import <AppKit/NSButton.h>
 
-@class IDEBreakpoint, IDEBreakpointIcon, NSNumber;
+#import <DebuggerUI/DVTTableCellViewStatusView-Protocol.h>
 
-@interface DBGBreakpointButton : NSButton
+@class IDEBreakpoint, NSString;
+
+@interface DBGBreakpointButton : NSButton <DVTTableCellViewStatusView>
 {
-    IDEBreakpointIcon *_icon;
+    BOOL _breakpointsActivated;
+    BOOL _breakpointEnabled;
+    BOOL _breakpointModified;
     CDUnknownBlockType _commandOptionClickHander;
     IDEBreakpoint *_breakpoint;
-    NSNumber *_breakpointsActivated;
-    NSNumber *_breakpointEnabled;
+    NSString *_breakpointModifiedDescription;
+    struct CGSize _breakpointImageSize;
 }
 
-@property(retain, nonatomic) NSNumber *breakpointEnabled; // @synthesize breakpointEnabled=_breakpointEnabled;
-@property(retain, nonatomic) NSNumber *breakpointsActivated; // @synthesize breakpointsActivated=_breakpointsActivated;
+@property(retain, nonatomic) NSString *breakpointModifiedDescription; // @synthesize breakpointModifiedDescription=_breakpointModifiedDescription;
+@property(nonatomic) BOOL breakpointModified; // @synthesize breakpointModified=_breakpointModified;
+@property(nonatomic) BOOL breakpointEnabled; // @synthesize breakpointEnabled=_breakpointEnabled;
+@property(nonatomic) BOOL breakpointsActivated; // @synthesize breakpointsActivated=_breakpointsActivated;
+@property(nonatomic) struct CGSize breakpointImageSize; // @synthesize breakpointImageSize=_breakpointImageSize;
 @property __weak IDEBreakpoint *breakpoint; // @synthesize breakpoint=_breakpoint;
 @property(copy) CDUnknownBlockType commandOptionClickHander; // @synthesize commandOptionClickHander=_commandOptionClickHander;
 - (void).cxx_destruct;
+- (id)accessibilityLabel;
 - (void)mouseDown:(id)arg1;
 - (void)_updateImage;
+- (void)viewDidChangeEffectiveAppearance;
 - (struct CGSize)intrinsicContentSize;
-- (id)initWithBreakpointIcon:(id)arg1;
+- (id)_defaultToolTip;
+- (id)initWithBreakpointImageSize:(struct CGSize)arg1;
+
+// Remaining properties
+@property(readonly) BOOL hasDisplayableStatus;
+@property(nonatomic) long long tableViewRowSizeStyle;
 
 @end
 

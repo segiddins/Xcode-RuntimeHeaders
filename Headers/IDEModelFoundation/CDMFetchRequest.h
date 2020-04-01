@@ -7,13 +7,14 @@
 #import <objc/NSObject.h>
 
 #import <IDEModelFoundation/CDMIdentification-Protocol.h>
+#import <IDEModelFoundation/CDMXMLCoding-Protocol.h>
 #import <IDEModelFoundation/DVTInvalidation-Protocol.h>
 #import <IDEModelFoundation/IDEInspectorAccessibilitySupport-Protocol.h>
 #import <IDEModelFoundation/IDEKeyDrivenNavigableItemRepresentedObject-Protocol.h>
 
-@class CDMEntity, CDMModel, DVTDocumentLocation, DVTFileDataType, DVTStackBacktrace, IDEFileReference, NSImage, NSNumber, NSString;
+@class CDMEntity, CDMModel, DVTDocumentLocation, DVTFileDataType, DVTStackBacktrace, DVTSymbol, IDEFileReference, NSArray, NSImage, NSNull, NSNumber, NSPredicate, NSString, NSURL;
 
-@interface CDMFetchRequest : NSObject <IDEInspectorAccessibilitySupport, CDMIdentification, DVTInvalidation, IDEKeyDrivenNavigableItemRepresentedObject>
+@interface CDMFetchRequest : NSObject <IDEInspectorAccessibilitySupport, CDMIdentification, CDMXMLCoding, DVTInvalidation, IDEKeyDrivenNavigableItemRepresentedObject>
 {
     NSString *_name;
     CDMEntity *_entity;
@@ -32,6 +33,8 @@
 }
 
 + (id)fetchRequestFromPasteboardPlist:(id)arg1 model:(id)arg2;
++ (id)keyPathsForValuesAffectingPredicate;
++ (id)keyPathsForValuesAffectingPredicateString;
 + (void)initialize;
 @property(copy) NSNumber *uniqueID; // @synthesize uniqueID=_uniqueID;
 @property(nonatomic) long long resultType; // @synthesize resultType=_resultType;
@@ -49,13 +52,12 @@
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
 - (BOOL)validateName:(id *)arg1 error:(id *)arg2;
-- (id)stringRepresentationForTextIndex;
 - (id)stringRepresentation;
-- (id)xmlElementDescription;
+- (id)encodeXMLElement;
 - (id)xmlElementAttributes;
-- (void)stitchToRelatedModelElements;
-- (id)initWithXMLElementDescription:(id)arg1 belongingToModel:(id)arg2;
-@property(readonly) NSString *navigableItem_name;
+- (void)awakeAfterXMLDecoding;
+- (id)initWithXMLElement:(id)arg1 owner:(id)arg2 error:(id *)arg3;
+@property(readonly, nonatomic) NSString *navigableItem_name;
 - (id)addKeysToDictionary:(id)arg1;
 - (id)initWithDictionary:(id)arg1 inModel:(id)arg2;
 - (BOOL)isEqual:(id)arg1;
@@ -63,10 +65,11 @@
 - (id)undoManager;
 - (void)cascadeChangesToLegacyFetchRequest:(id)arg1 givenModernToLegacyEntityMapping:(id)arg2;
 - (id)initWithLegacyFetchRequest:(id)arg1 andEntityMapping:(id)arg2 belongingToModel:(id)arg3;
-- (id)initWithName:(id)arg1 belongingToModel:(id)arg2 targettingEntity:(id)arg3;
+- (id)initWithName:(id)arg1 belongingToModel:(id)arg2 targetingEntity:(id)arg3;
 - (id)init;
 - (id)initInModel:(id)arg1;
 - (void)primitiveInvalidate;
+@property(copy, nonatomic) NSPredicate *predicate;
 - (void)_registerUndoBlockForFetchRequest:(CDUnknownBlockType)arg1;
 - (id)humanReadableNameForInspectorKeyPath:(id)arg1;
 
@@ -75,18 +78,27 @@
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) DVTStackBacktrace *invalidationBacktrace;
-@property(readonly) NSString *navigableItem_accessibleImageDescription;
-@property(readonly) DVTDocumentLocation *navigableItem_contentDocumentLocation;
-@property(readonly) DVTFileDataType *navigableItem_documentType;
-@property(readonly) IDEFileReference *navigableItem_fileReference;
-@property(readonly) NSString *navigableItem_groupIdentifier;
-@property(readonly) NSImage *navigableItem_image;
-@property(readonly) BOOL navigableItem_isLeaf;
-@property(readonly) BOOL navigableItem_isMajorGroup;
-@property(readonly) BOOL navigableItem_missingReferencedContentIsImportant;
-@property(readonly) BOOL navigableItem_referencedContentExists;
-@property(readonly) NSString *navigableItem_subtitle;
-@property(readonly) NSString *navigableItem_toolTip;
+@property(readonly, nonatomic) NSString *navigableItem_accessibilityIdentifier;
+@property(readonly, nonatomic) NSString *navigableItem_accessibleImageDescription;
+@property(readonly, nonatomic) NSArray *navigableItem_additionalFilterMatchingText;
+@property(readonly, nonatomic) NSArray *navigableItem_childRepresentedObjects;
+@property(readonly, nonatomic) DVTDocumentLocation *navigableItem_contentDocumentLocation;
+@property(readonly, nonatomic) DVTFileDataType *navigableItem_documentType;
+@property(readonly, nonatomic) IDEFileReference *navigableItem_fileReference;
+@property(readonly, nonatomic) NSNull *navigableItem_filtered;
+@property(readonly, nonatomic) NSString *navigableItem_groupIdentifier;
+@property(readonly, nonatomic) NSImage *navigableItem_image;
+@property(readonly, nonatomic) BOOL navigableItem_isEnabled;
+@property(readonly, nonatomic) BOOL navigableItem_isLeaf;
+@property(readonly, nonatomic) BOOL navigableItem_isMajorGroup;
+@property(readonly, nonatomic) BOOL navigableItem_isVisible;
+@property(readonly, nonatomic) BOOL navigableItem_missingReferencedContentIsImportant;
+@property(readonly, nonatomic) id navigableItem_parentRepresentedObject;
+@property(readonly, nonatomic) BOOL navigableItem_referencedContentExists;
+@property(readonly, nonatomic) DVTSymbol *navigableItem_representedSymbol;
+@property(readonly, nonatomic) NSURL *navigableItem_representedURL;
+@property(readonly, nonatomic) NSString *navigableItem_subtitle;
+@property(readonly, nonatomic) NSString *navigableItem_toolTip;
 @property(readonly) Class superclass;
 @property(readonly, nonatomic, getter=isValid) BOOL valid;
 

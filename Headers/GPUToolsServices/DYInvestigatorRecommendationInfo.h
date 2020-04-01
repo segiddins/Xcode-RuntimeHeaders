@@ -6,16 +6,17 @@
 
 #import <objc/NSObject.h>
 
-#import <GPUToolsServices/NSCoding-Protocol.h>
 #import <GPUToolsServices/NSCopying-Protocol.h>
+#import <GPUToolsServices/NSSecureCoding-Protocol.h>
 
 @class NSAttributedString;
 
-@interface DYInvestigatorRecommendationInfo : NSObject <NSCopying, NSCoding>
+@interface DYInvestigatorRecommendationInfo : NSObject <NSCopying, NSSecureCoding>
 {
     NSAttributedString *_text;
 }
 
++ (BOOL)supportsSecureCoding;
 @property(readonly, nonatomic) NSAttributedString *text; // @synthesize text=_text;
 - (void).cxx_destruct;
 - (void)debugPrintFormatted;

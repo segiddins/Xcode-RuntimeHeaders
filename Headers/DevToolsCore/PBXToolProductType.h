@@ -10,8 +10,7 @@
 {
 }
 
-- (void)addWarningLinkerFlagsInTargetBuildContext:(id)arg1;
-- (void)addBaseLinkerFlagsInTargetBuildContext:(id)arg1;
+- (void)addBaseLinkerFlagsWithMacroExpansionScope:(id)arg1;
 
 @end
 

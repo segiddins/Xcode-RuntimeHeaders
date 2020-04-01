@@ -6,8 +6,10 @@
 
 #import <DVTFoundation/DVTPlatform.h>
 
+@class DVTPortalPlatform;
+
 @interface DVTPlatform (DVTPortalAdditions)
 - (id)portalProgramIdentifier;
-- (id)portalPlatform;
+@property(readonly) DVTPortalPlatform *portalPlatform;
 @end
 

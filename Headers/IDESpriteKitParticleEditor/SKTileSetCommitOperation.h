@@ -12,15 +12,16 @@
 {
     NSString *_keyPath;
     NSIndexPath *_targetPath;
+    id _targetObject;
     id _oldValue;
     id _newValue;
 }
 
 - (void).cxx_destruct;
-- (BOOL)revert;
-- (BOOL)apply;
-- (void)_setValueOnAllTileSets:(id)arg1;
-- (id)initWithDocument:(id)arg1 newValue:(id)arg2 oldValue:(id)arg3 keyPath:(id)arg4;
+- (BOOL)_performRevert;
+- (BOOL)_performApply;
+- (void)_setValueOnObject:(id)arg1;
+- (id)initWithDocument:(id)arg1 targetObject:(id)arg2 newValue:(id)arg3 oldValue:(id)arg4 keyPath:(id)arg5;
 
 @end
 

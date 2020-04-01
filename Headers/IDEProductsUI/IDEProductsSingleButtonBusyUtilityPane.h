@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import "IDEProductsSingleButtonUtilityPane.h"
+#import <IDEProductsUI/IDEProductsSingleButtonUtilityPane.h>
 
 @class NSLayoutConstraint, NSProgressIndicator, NSString;
 @protocol DVTCancellable;
@@ -14,6 +14,7 @@
     id <DVTCancellable> _progressIndicatorHiddenBindingToken;
     id <DVTCancellable> _progressIndicatorAnimateBindingToken;
     id <DVTCancellable> _updateConstraintsToken;
+    NSString *_progressIndicatorAccessibilityTitle;
     NSString *_progressIndicatorBusyKeyPath;
     NSProgressIndicator *_progressIndicator;
     NSLayoutConstraint *_buttonToProgressIndicatorConstraint;
@@ -24,6 +25,7 @@
 @property(retain, nonatomic) NSLayoutConstraint *buttonToProgressIndicatorConstraint; // @synthesize buttonToProgressIndicatorConstraint=_buttonToProgressIndicatorConstraint;
 @property(retain) NSProgressIndicator *progressIndicator; // @synthesize progressIndicator=_progressIndicator;
 @property(retain, nonatomic) NSString *progressIndicatorBusyKeyPath; // @synthesize progressIndicatorBusyKeyPath=_progressIndicatorBusyKeyPath;
+@property(retain, nonatomic) NSString *progressIndicatorAccessibilityTitle; // @synthesize progressIndicatorAccessibilityTitle=_progressIndicatorAccessibilityTitle;
 - (void).cxx_destruct;
 - (void)bindProgressIndicatorBusyKeyPath;
 - (void)buttonClicked:(id)arg1;

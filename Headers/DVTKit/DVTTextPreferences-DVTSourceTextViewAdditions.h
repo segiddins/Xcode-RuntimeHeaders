@@ -9,5 +9,6 @@
 @interface DVTTextPreferences (DVTSourceTextViewAdditions)
 - (void)unregisterObserversWithSourceTextView:(id)arg1 sidebarView:(id)arg2;
 - (void)registerObserversWithSourceTextView:(id)arg1 sidebarView:(id)arg2;
+- (id)observingTokens;
 @end
 

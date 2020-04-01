@@ -6,17 +6,15 @@
 
 #import <IDEKit/IDEViewController.h>
 
-#import <XCSUI/NSOutlineViewDataSource-Protocol.h>
-#import <XCSUI/NSOutlineViewDelegate-Protocol.h>
 #import <XCSUI/NSTabViewDelegate-Protocol.h>
 #import <XCSUI/NSTableViewDataSource-Protocol.h>
 #import <XCSUI/NSTableViewDelegate-Protocol.h>
 #import <XCSUI/XCSUICreateBotRepositoryTableCellViewDelegate-Protocol.h>
 
-@class DVTBorderedView, DVTColoredSpinner, DVTOutlineViewWithCustomGridDrawing, IDESourceControlCredentialWindowController, NSArray, NSButton, NSImageView, NSString, NSTextField, NSView, XCSListBranchesResult, XCSUIBotDefinitionContext;
+@class DVTBorderedView, DVTColoredSpinner, DVTTableView, IDESourceControlCredentialAbstractWindowController, NSArray, NSButton, NSImageView, NSString, NSTextField, NSView, XCSListBranchesResult, XCSUIBotDefinitionContext;
 @protocol XCSUIBotDefinition_SCMEditor_AssistantCallback;
 
-@interface XCSUIBotDefinition_SCMEditor : IDEViewController <NSTableViewDataSource, NSTableViewDelegate, NSTabViewDelegate, XCSUICreateBotRepositoryTableCellViewDelegate, NSOutlineViewDataSource, NSOutlineViewDelegate>
+@interface XCSUIBotDefinition_SCMEditor : IDEViewController <NSTableViewDataSource, NSTableViewDelegate, NSTabViewDelegate, XCSUICreateBotRepositoryTableCellViewDelegate>
 {
     BOOL _skippingPreflight;
     BOOL _viewIsInstalled;
@@ -28,6 +26,7 @@
     unsigned long long _viewState;
     NSView *_currentTopLevelView;
     NSArray *_repositoryIssues;
+    DVTBorderedView *_preflightBorderedView;
     NSView *_preflightProgressView;
     DVTColoredSpinner *_preflightProgressSpinner;
     NSImageView *_preflightStatusImageView;
@@ -38,18 +37,22 @@
     NSTextField *_workspaceNameField;
     NSTextField *_workspacePathField;
     NSButton *_replaceButton;
+    NSButton *_errorReplaceButton;
     NSView *_repositoriesHostView;
-    DVTOutlineViewWithCustomGridDrawing *_repositoriesOutlineView;
+    DVTTableView *_repositoriesTableView;
     NSArray *_repositories;
-    IDESourceControlCredentialWindowController *_credentialSheetController;
+    NSArray *_additionalValidationRepositories;
+    IDESourceControlCredentialAbstractWindowController *_credentialSheetController;
     XCSListBranchesResult *_listBranchesResult;
 }
 
 @property(retain) XCSListBranchesResult *listBranchesResult; // @synthesize listBranchesResult=_listBranchesResult;
-@property(retain) IDESourceControlCredentialWindowController *credentialSheetController; // @synthesize credentialSheetController=_credentialSheetController;
+@property(retain) IDESourceControlCredentialAbstractWindowController *credentialSheetController; // @synthesize credentialSheetController=_credentialSheetController;
+@property(copy, nonatomic) NSArray *additionalValidationRepositories; // @synthesize additionalValidationRepositories=_additionalValidationRepositories;
 @property(copy, nonatomic) NSArray *repositories; // @synthesize repositories=_repositories;
-@property __weak DVTOutlineViewWithCustomGridDrawing *repositoriesOutlineView; // @synthesize repositoriesOutlineView=_repositoriesOutlineView;
+@property __weak DVTTableView *repositoriesTableView; // @synthesize repositoriesTableView=_repositoriesTableView;
 @property(retain) NSView *repositoriesHostView; // @synthesize repositoriesHostView=_repositoriesHostView;
+@property __weak NSButton *errorReplaceButton; // @synthesize errorReplaceButton=_errorReplaceButton;
 @property __weak NSButton *replaceButton; // @synthesize replaceButton=_replaceButton;
 @property __weak NSTextField *workspacePathField; // @synthesize workspacePathField=_workspacePathField;
 @property __weak NSTextField *workspaceNameField; // @synthesize workspaceNameField=_workspaceNameField;
@@ -60,6 +63,7 @@
 @property __weak NSImageView *preflightStatusImageView; // @synthesize preflightStatusImageView=_preflightStatusImageView;
 @property __weak DVTColoredSpinner *preflightProgressSpinner; // @synthesize preflightProgressSpinner=_preflightProgressSpinner;
 @property(retain) NSView *preflightProgressView; // @synthesize preflightProgressView=_preflightProgressView;
+@property __weak DVTBorderedView *preflightBorderedView; // @synthesize preflightBorderedView=_preflightBorderedView;
 @property(retain) NSArray *repositoryIssues; // @synthesize repositoryIssues=_repositoryIssues;
 @property(retain) NSView *currentTopLevelView; // @synthesize currentTopLevelView=_currentTopLevelView;
 @property unsigned long long viewState; // @synthesize viewState=_viewState;
@@ -68,19 +72,20 @@
 @property BOOL reflightFailureAddressed; // @synthesize reflightFailureAddressed=_reflightFailureAddressed;
 @property BOOL viewIsInstalled; // @synthesize viewIsInstalled=_viewIsInstalled;
 @property(readonly) BOOL skippingPreflight; // @synthesize skippingPreflight=_skippingPreflight;
-@property(retain) id <XCSUIBotDefinition_SCMEditor_AssistantCallback> assistantCallback; // @synthesize assistantCallback=_assistantCallback;
+@property __weak id <XCSUIBotDefinition_SCMEditor_AssistantCallback> assistantCallback; // @synthesize assistantCallback=_assistantCallback;
 @property(retain) XCSUIBotDefinitionContext *botDefinitionContext; // @synthesize botDefinitionContext=_botDefinitionContext;
 - (void).cxx_destruct;
-- (id)outlineView:(id)arg1 rowViewForItem:(id)arg2;
-- (BOOL)outlineView:(id)arg1 shouldSelectItem:(id)arg2;
-- (BOOL)outlineView:(id)arg1 shouldShowOutlineCellForItem:(id)arg2;
-- (id)outlineView:(id)arg1 viewForTableColumn:(id)arg2 item:(id)arg3;
-- (BOOL)outlineView:(id)arg1 isItemExpandable:(id)arg2;
-- (id)outlineView:(id)arg1 child:(long long)arg2 ofItem:(id)arg3;
-- (long long)outlineView:(id)arg1 numberOfChildrenOfItem:(id)arg2;
-- (double)outlineView:(id)arg1 heightOfRowByItem:(id)arg2;
+- (id)tableView:(id)arg1 rowViewForRow:(long long)arg2;
+- (BOOL)tableView:(id)arg1 shouldSelectRow:(long long)arg2;
+- (id)tableView:(id)arg1 viewForTableColumn:(id)arg2 row:(long long)arg3;
+- (BOOL)tableView:(id)arg1 isGroupRow:(long long)arg2;
+- (id)tableView:(id)arg1 objectValueForTableColumn:(id)arg2 row:(long long)arg3;
+- (long long)numberOfRowsInTableView:(id)arg1;
+- (double)tableView:(id)arg1 heightOfRow:(long long)arg2;
+- (id)itemForRow:(long long)arg1;
+- (BOOL)isAdditionalRepositoryAtRow:(long long)arg1;
 - (id)repoIssueForRepo:(id)arg1;
-- (void)reloadRepositoriesOutlineView;
+- (void)reloadRepositoriesTableView;
 - (void)transitionToViewState:(unsigned long long)arg1;
 - (void)createRepositoryIssues:(id)arg1;
 - (void)displayFailureMessage:(id)arg1 withDetails:(id)arg2;
@@ -94,6 +99,7 @@
 - (void)resetRepositoryIssues;
 - (void)refreshStatus:(id)arg1;
 - (void)redefineBlueprint:(id)arg1;
+- (BOOL)isDomainRepositorySupportAvailable;
 - (BOOL)isFingerprintEnforcementAvailable;
 - (BOOL)isListBranchesXCSCoreEndpointAvailable;
 - (void)loadView;

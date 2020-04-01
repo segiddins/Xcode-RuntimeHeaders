@@ -20,7 +20,7 @@
 - (void).cxx_destruct;
 - (id)decorateContainer:(struct DTTimelineDecorationContainer *)arg1;
 - (float)dataAtTime:(unsigned long long)arg1;
-- (void)addGPUFrameTime:(float)arg1 atTick:(id)arg2;
+- (void)addGPUFrameTime:(float)arg1 atTime:(unsigned long long)arg2;
 - (void)setDefaultsForPlane:(id)arg1;
 @property(readonly, nonatomic) unsigned long long currentDataIndex;
 - (id)initWithDuration:(unsigned long long)arg1;

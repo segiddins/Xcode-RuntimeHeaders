@@ -4,18 +4,17 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <IDEFoundation/IDERunOperationWorker.h>
+#import <IDEiOSSupportCore/IDEDeviceRunOperationWorker.h>
 
 #import <IDEiOSSupportCore/DTMISProcessControlServiceAuthorizedAPI-Protocol.h>
 #import <IDEiOSSupportCore/XCDTMobileIS_AppPosixSpawnProcotol-Protocol.h>
 
-@class DTXChannel, DVTObservingToken, DVTiOSDevice, NSString;
+@class DTXChannel, DVTiOSDevice, NSString;
 
-@interface IDELaunchiPhoneLauncher : IDERunOperationWorker <XCDTMobileIS_AppPosixSpawnProcotol, DTMISProcessControlServiceAuthorizedAPI>
+@interface IDELaunchiPhoneLauncher : IDEDeviceRunOperationWorker <XCDTMobileIS_AppPosixSpawnProcotol, DTMISProcessControlServiceAuthorizedAPI>
 {
     DTXChannel *_serviceHubProcessControlChannel;
     DTXChannel *_assetServerChannel;
-    DVTObservingToken *_passcodeLockedToken;
     BOOL _shouldSkipAppTermination;
     int _posixSpawnSTDOUTFDForRedirection;
     BOOL _launchingToDebug;
@@ -29,20 +28,26 @@
 - (id)_assetServerChannel;
 - (id)_assetServerConnection;
 - (void)setupAssetServerWithCompletion:(CDUnknownBlockType)arg1;
-- (BOOL)setupOptimizationProfileGeneration;
 - (void)primitiveInvalidate;
+- (void)fetchPIDForBundleIdentifier:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)sigtermPID:(int)arg1;
+- (void)killPID:(int)arg1;
+- (void)observeProcessWithPID:(int)arg1;
+- (void)launchProcessWithPath:(id)arg1 bundleIdentifier:(id)arg2 environment:(id)arg3 arguments:(id)arg4 options:(id)arg5;
 - (void)terminate;
 - (void)_deviceWoke;
 - (void)pidDiedCallback:(id)arg1;
+- (id)bundleIDToLaunch;
 - (void)_cancelServiceHubProcessControlChannel;
 - (id)_serviceHubProcessControlChannel;
 - (id)_bestPrimaryInstrumentsServer;
+- (void)launchNewAppInstanceForBundleIdentifier:(id)arg1 path:(id)arg2 environment:(id)arg3 arguments:(id)arg4 options:(id)arg5;
+- (void)useExistingAppInstanceForBundleIdentifier:(id)arg1;
 - (void)_setupPlainLaunching;
 - (void)outputReceived:(id)arg1 fromProcess:(int)arg2 atTime:(unsigned long long)arg3;
 - (void)_setupDebugging;
-- (void)_continueStarting;
-- (void)start;
-- (void)_holdExecutionWithError:(id)arg1;
+- (void)performWorkerAction;
+- (BOOL)preflightWithError:(id *)arg1 recoverable:(char *)arg2 shouldRetry:(char *)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

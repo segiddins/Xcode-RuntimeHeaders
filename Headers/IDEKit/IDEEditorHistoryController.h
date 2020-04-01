@@ -8,26 +8,29 @@
 
 #import <IDEKit/DVTInvalidation-Protocol.h>
 
-@class DVTDelayedMenuGradientImageButton, DVTStackBacktrace, NSArray, NSMutableArray, NSString;
-@protocol IDEEditorContextProtocol;
+@class DVTDelayedMenuGradientImageButton, DVTStackBacktrace, NSArray, NSImage, NSMutableArray, NSString;
+@protocol IDEEditorHistoryControllerDelegate;
 
 @interface IDEEditorHistoryController : NSObject <DVTInvalidation>
 {
     NSMutableArray *_previousHistoryItems;
     NSMutableArray *_nextHistoryItems;
+    NSImage *_defaultBackButtonImage;
+    NSImage *_defaultForwardButtonImage;
     DVTDelayedMenuGradientImageButton *_forwardButton;
     DVTDelayedMenuGradientImageButton *_backButton;
-    id <IDEEditorContextProtocol> _editorContext;
+    id <IDEEditorHistoryControllerDelegate> _delegate;
 }
 
 + (id)keyPathsForValuesAffectingCanGoForwardByCommand;
 + (id)keyPathsForValuesAffectingCanGoBackByCommand;
 + (id)keyPathsForValuesAffectingCanSelectForwardButton;
 + (id)keyPathsForValuesAffectingCanSelectBackButton;
-+ (id)_historyButtonWithImageNamed:(id)arg1 width:(double)arg2 height:(double)arg3;
++ (BOOL)canEditorHistoryUseDocumentURL:(id)arg1 checkIsFileURLReachable:(BOOL)arg2;
++ (id)_historyButtonWithImage:(id)arg1 width:(double)arg2 height:(double)arg3;
 + (long long)historySizeLimit;
 + (void)initialize;
-@property(readonly, nonatomic) id <IDEEditorContextProtocol> editorContext; // @synthesize editorContext=_editorContext;
+@property(readonly, nonatomic) id <IDEEditorHistoryControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly) DVTDelayedMenuGradientImageButton *backButton; // @synthesize backButton=_backButton;
 @property(readonly) DVTDelayedMenuGradientImageButton *forwardButton; // @synthesize forwardButton=_forwardButton;
 - (void).cxx_destruct;
@@ -53,6 +56,9 @@
 @property(readonly) BOOL canSelectBackButton;
 - (BOOL)canSelectButtonGoingForward:(BOOL)arg1;
 - (void)primitiveInvalidate;
+- (void)updateButtonStatesWithEditorContext:(id)arg1;
+- (id)forwardControl;
+- (id)backControl;
 - (void)navigateAwayFromCurrentDocumentWithURL:(id)arg1;
 - (id)_lastHistoryItemNotMatchingDocumentURL:(id)arg1 goingForward:(BOOL)arg2;
 - (void)_removeHistoryItemsForDocumentURL:(id)arg1 goingForward:(BOOL)arg2;
@@ -61,7 +67,7 @@
 - (BOOL)goToHistoryItemInThisEditorContext:(id)arg1 forward:(BOOL)arg2 captureHistory:(BOOL)arg3;
 - (BOOL)openExternalEditorHistoryItem:(id)arg1;
 - (void)addHistoryEditorHistoryItem:(id)arg1 filterAdjacentEntriesWithIdenticalNavigableItems:(BOOL)arg2;
-- (id)initWithEditorContext:(id)arg1 navBarHeight:(double)arg2;
+- (id)initWithDelegate:(id)arg1 navBarHeight:(double)arg2;
 
 // Remaining properties
 @property(retain) DVTStackBacktrace *creationBacktrace;

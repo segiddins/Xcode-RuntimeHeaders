@@ -6,31 +6,36 @@
 
 #import <DVTSourceControl/DVTSourceControlRevisionLocation.h>
 
-@class NSString;
+@class DVTSourceControlAuthor, NSString;
 
 @interface DVTSourceControlTag : DVTSourceControlRevisionLocation
 {
+    BOOL _hasLoadedCompleteTag;
+    NSString *_name;
+    NSString *_message;
+    DVTSourceControlAuthor *_author;
     unsigned long long _options;
-    NSString *_identifier;
 }
 
 + (BOOL)supportsSecureCoding;
-+ (id)defaultImage;
-@property(retain) NSString *identifier; // @synthesize identifier=_identifier;
 @property unsigned long long options; // @synthesize options=_options;
+@property(retain) DVTSourceControlAuthor *author; // @synthesize author=_author;
+@property(retain) NSString *message; // @synthesize message=_message;
+@property(retain) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
 - (id)description;
 @property(readonly, getter=isNewTag) BOOL newTag;
-- (id)pathLocationForBranchAndTagLocations:(id)arg1;
-@property(readonly) NSString *name;
 - (id)displayName;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)dictionaryRepresentationWithOptions:(unsigned long long)arg1;
 - (id)initWithDictionary:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)initWithNewTagName:(id)arg1;
-- (id)initWithTagPathLocation:(id)arg1 branchAndTagLocations:(id)arg2;
+- (id)loadCompleteTag:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
+- (id)initWithNewTagName:(id)arg1 message:(id)arg2 revision:(id)arg3;
+- (id)initWithTagPathLocation:(id)arg1;
+- (id)initWithTagName:(id)arg1 message:(id)arg2 revision:(id)arg3 author:(id)arg4;
+- (id)initWithTagName:(id)arg1 revision:(id)arg2;
 - (id)initWithTagName:(id)arg1;
 - (id)_init;
 - (id)init;

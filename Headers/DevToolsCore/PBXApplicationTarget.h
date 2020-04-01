@@ -17,7 +17,6 @@
 - (BOOL)productReferenceIsExecutable;
 - (id)wrapperPathExtensionForConfigurationNamed:(id)arg1;
 - (BOOL)wantsProductSettings;
-- (id)defaultProductTypeIdentifierByAnalyzingConfiguration;
 
 @end
 

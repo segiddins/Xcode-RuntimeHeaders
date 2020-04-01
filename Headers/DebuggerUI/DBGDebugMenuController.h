@@ -20,8 +20,8 @@
 
 + (id)handlerForAction:(SEL)arg1 withSelectionSource:(id)arg2;
 - (void).cxx_destruct;
+- (id)_dylibPathFromPlugins;
 - (void)viewDebugXcodeWindow:(id)arg1;
-- (void)toggleVariablesViewAutoModeIndexFailure:(id)arg1;
 - (void)debugSessionStressTest:(id)arg1;
 - (void)scheduleRunCommandsInTabController:(id)arg1 sender:(id)arg2;
 - (void)cancelScheduledRunCommands;

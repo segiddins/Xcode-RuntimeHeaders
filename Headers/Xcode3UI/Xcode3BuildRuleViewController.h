@@ -9,7 +9,7 @@
 #import <Xcode3UI/IDECapsuleViewController-Protocol.h>
 #import <Xcode3UI/IDECapsuleViewDelegate-Protocol.h>
 
-@class NSImage, NSString;
+@class NSColor, NSImage, NSString;
 
 @interface Xcode3BuildRuleViewController : IDEViewController <IDECapsuleViewController, IDECapsuleViewDelegate>
 {
@@ -25,6 +25,7 @@
 @property(readonly, copy) NSString *titleForDisplay;
 
 // Remaining properties
+@property(retain) NSColor *backgroundColor;
 @property BOOL canAddItems;
 @property(readonly) BOOL canDrag;
 @property(readonly) BOOL canRemove;
@@ -39,6 +40,7 @@
 @property(readonly) unsigned long long hash;
 @property(readonly) NSImage *icon;
 @property(readonly) Class superclass;
+@property(readonly) BOOL wantsDisclosureButtonHidden;
 
 @end
 

@@ -6,23 +6,25 @@
 
 #import <objc/NSObject.h>
 
-@class IDERefactoringFileChangeLocation, IDERefactoringFileChangeSet;
+#import <IDEKit/IDERenameRefactoringChange-Protocol.h>
 
-@interface IDERefactoringFileChange : NSObject
+@class IDERefactoringFileChangeSet, NSString;
+
+@interface IDERefactoringFileChange : NSObject <IDERenameRefactoringChange>
 {
     IDERefactoringFileChangeSet *_fileChangeSet;
-    IDERefactoringFileChangeLocation *_fileLocation;
     BOOL _shouldBeApplied;
+    NSString *_valueName;
 }
 
+@property(retain) NSString *valueName; // @synthesize valueName=_valueName;
 @property BOOL shouldBeApplied; // @synthesize shouldBeApplied=_shouldBeApplied;
-@property(readonly) IDERefactoringFileChangeLocation *fileLocation; // @synthesize fileLocation=_fileLocation;
 @property(readonly) __weak IDERefactoringFileChangeSet *fileChangeSet; // @synthesize fileChangeSet=_fileChangeSet;
 - (void).cxx_destruct;
-- (BOOL)isEqualToFileChange:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)applyChange;
-- (id)initWithFileChangeSet:(id)arg1 fileLocation:(id)arg2;
+@property(readonly) NSString *categoryName;
+@property(readonly) NSString *originalValueName;
+@property(readonly) NSString *keyName;
+- (id)initWithFileChangeSet:(id)arg1;
 
 @end
 

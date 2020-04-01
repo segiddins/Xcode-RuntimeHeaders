@@ -6,9 +6,7 @@
 
 #import <IDEInterfaceBuilderKit/IBConnection.h>
 
-#import <IDEInterfaceBuilderCocoaTouchIntegration/NSCoding-Protocol.h>
-
-@interface IBCocoaTouchEventConnection : IBConnection <NSCoding>
+@interface IBCocoaTouchEventConnection : IBConnection
 {
     unsigned long long _eventType;
 }
@@ -17,6 +15,7 @@
 + (BOOL)prototypeMatchConnectionContextIsValid:(id)arg1 forConnectingFromObject:(id)arg2 toObject:(id)arg3 document:(id)arg4;
 + (BOOL)canMakeSourceCodeConnectionsFromObject:(id)arg1 toObject:(id)arg2 document:(id)arg3;
 + (Class)connectionContextClass;
++ (long long)connectionTypeOrderingPriorityForCompilation;
 + (id)insertConnectionsFromExternalConnectionRepresentation:(id)arg1 fromContainer:(id)arg2 forContainer:(id)arg3 context:(id)arg4;
 + (id)prototypeConnectionsFromObject:(id)arg1 toObject:(id)arg2;
 + (id)defaultActionConnectionFromSender:(id)arg1 toReceiver:(id)arg2 withSelector:(id)arg3;
@@ -35,7 +34,9 @@
 - (id)connectionByCompletingWithConnectionContext:(id)arg1;
 - (void)archiveWithDocumentArchiver:(id)arg1;
 - (void)unarchiveWithDocumentUnarchiver:(id)arg1;
-- (id)archiveKeyForLabel;
+- (id)archivingKeyForLabel;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)printablePListForIBToolInDocument:(id)arg1;
 - (id)displayDescriptionInDocument:(id)arg1;
 - (void)populateExternalConnectionRepresentation:(id)arg1 forContainer:(id)arg2 fromContainer:(id)arg3 otherExternalConnections:(id)arg4 context:(id)arg5;
@@ -55,19 +56,17 @@
 - (BOOL)validateDestination:(id)arg1;
 - (BOOL)validateSource:(id)arg1;
 - (BOOL)canCoexistWithOtherConnectionsHavingSameEndPoint;
-- (id)displayGroupIdentifierFromReferenceEndPoint:(id)arg1;
+- (id)displayGroupFromReferenceEndPoint:(id)arg1;
 - (BOOL)isEqualToPrototype:(id)arg1;
 - (BOOL)isEventful;
 - (long long)relationshipType;
 - (void)copyInstanceStateToClone:(id)arg1 withContext:(id)arg2;
 - (id)connectionDefinitionForObject:(id)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 - (id)localExtraMarshalledAttributesKeyPaths;
 - (id)runtimeClassNameForContext:(id)arg1 returningOptionalFallbackClassName:(id *)arg2;
-- (BOOL)refactorWithActionChangeTypeRefactoringOperation:(id)arg1 inDocument:(id)arg2 error:(id *)arg3;
-- (BOOL)refactorWithActionMoveRefactoringOperation:(id)arg1 inDocument:(id)arg2 error:(id *)arg3;
-- (BOOL)refactorWithActionRenameRefactoringOperation:(id)arg1 inDocument:(id)arg2 error:(id *)arg3;
+- (BOOL)shouldRefactorLabelForRenameRefactoringRequest:(id)arg1 inDocument:(id)arg2;
+- (id)categoryNameForRefactoringRequest:(id)arg1 inDocument:(id)arg2;
+- (id)typeNameForRefactoringRequest:(id)arg1 inDocument:(id)arg2;
 
 @end
 

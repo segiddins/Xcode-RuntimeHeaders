@@ -6,12 +6,12 @@
 
 #import <objc/NSObject.h>
 
-#import <GPUToolsShaderProfiler/NSCoding-Protocol.h>
 #import <GPUToolsShaderProfiler/NSCopying-Protocol.h>
+#import <GPUToolsShaderProfiler/NSSecureCoding-Protocol.h>
 
 @class DYShaderAnalyzerResult, NSData, NSMutableData, NSString;
 
-@interface ShaderBinaryInfo : NSObject <NSCoding, NSCopying>
+@interface ShaderBinaryInfo : NSObject <NSSecureCoding, NSCopying>
 {
     NSData *_binary;
     NSMutableData *_uscSamples;
@@ -19,6 +19,7 @@
     DYShaderAnalyzerResult *_analyzerResult;
 }
 
++ (BOOL)supportsSecureCoding;
 @property(retain, nonatomic) DYShaderAnalyzerResult *analyzerResult; // @synthesize analyzerResult=_analyzerResult;
 @property(retain, nonatomic) NSString *disassembly; // @synthesize disassembly=_disassembly;
 @property(retain, nonatomic) NSMutableData *uscSamples; // @synthesize uscSamples=_uscSamples;

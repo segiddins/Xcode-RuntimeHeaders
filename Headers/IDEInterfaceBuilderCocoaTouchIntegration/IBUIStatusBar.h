@@ -20,9 +20,9 @@
 @property(retain, nonatomic) IBUISimulatedStatusBarMetrics *statusBarMetrics; // @synthesize statusBarMetrics=_statusBarMetrics;
 - (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
-- (BOOL)_drawsNothing;
+- (BOOL)wantsUpdateLayer;
 - (id)navBarTintColorToMatch;
-- (int)style;
+- (long long)style;
 - (id)initWithFrame:(struct CGRect)arg1 targetRuntime:(id)arg2;
 
 @end

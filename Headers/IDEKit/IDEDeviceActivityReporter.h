@@ -6,20 +6,28 @@
 
 #import <IDEKit/IDEActivityReporter.h>
 
-@class DVTObservingToken, NSMutableDictionary;
+#import <IDEKit/DVTTestDeviceClonePoolObserving-Protocol.h>
 
-@interface IDEDeviceActivityReporter : IDEActivityReporter
+@class DVTObservingToken, DVTTestDeviceClonePool, NSMutableDictionary, NSObject;
+@protocol OS_dispatch_queue;
+
+@interface IDEDeviceActivityReporter : IDEActivityReporter <DVTTestDeviceClonePoolObserving>
 {
     NSMutableDictionary *_deviceToObservers;
-    NSMutableDictionary *_deviceToReport;
+    NSMutableDictionary *_deviceToOperationReports;
     DVTObservingToken *_deviceObserver;
+    NSObject<OS_dispatch_queue> *_observerQueue;
+    DVTTestDeviceClonePool *_clonePool;
 }
 
-+ (void)initialize;
+@property(readonly) DVTTestDeviceClonePool *clonePool; // @synthesize clonePool=_clonePool;
 - (void).cxx_destruct;
-- (void)_observerDevice:(id)arg1;
+- (void)clonePool:(id)arg1 didUpdate:(id)arg2;
+- (void)_stopObservingDevices:(id)arg1;
+- (void)_observeDevice:(id)arg1;
 - (void)primitiveInvalidate;
 - (id)initWithWorkspace:(id)arg1;
+- (id)initWithDeviceManager:(id)arg1 clonePool:(id)arg2 workspace:(id)arg3;
 
 @end
 

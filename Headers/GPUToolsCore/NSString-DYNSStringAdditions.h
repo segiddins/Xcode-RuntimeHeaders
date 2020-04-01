@@ -7,6 +7,7 @@
 #import <Foundation/NSString.h>
 
 @interface NSString (DYNSStringAdditions)
++ (id)dy_timeFormat:(double)arg1 unit:(BOOL)arg2;
 - (id)simplifiedTestFileName:(char *)arg1;
 - (id)dy_appendComponentsString:(id)arg1 usingSeparator:(id)arg2 unique:(BOOL)arg3;
 - (id)dy_appendComponents:(id)arg1 usingSeparator:(id)arg2 unique:(BOOL)arg3;

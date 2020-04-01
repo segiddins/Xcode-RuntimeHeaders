@@ -6,12 +6,12 @@
 
 #import <objc/NSObject.h>
 
-#import <GPUToolsServices/NSCoding-Protocol.h>
 #import <GPUToolsServices/NSCopying-Protocol.h>
+#import <GPUToolsServices/NSSecureCoding-Protocol.h>
 
 @class NSDictionary;
 
-@interface DYOverviewMeasurementsPerSample : NSObject <NSCoding, NSCopying>
+@interface DYOverviewMeasurementsPerSample : NSObject <NSSecureCoding, NSCopying>
 {
     unsigned long long _timestamp;
     unsigned long long _framesDuration;
@@ -34,6 +34,7 @@
     NSDictionary *_drawCommandStatistics;
 }
 
++ (BOOL)supportsSecureCoding;
 + (id)frameDurationStatistics:(id)arg1;
 + (double)averageFPS:(id)arg1;
 @property(readonly, nonatomic) NSDictionary *drawCommandStatistics; // @synthesize drawCommandStatistics=_drawCommandStatistics;

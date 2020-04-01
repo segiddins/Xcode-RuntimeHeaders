@@ -12,7 +12,7 @@
 #import <Xcode3UI/Xcode3SourceListItemEditor-Protocol.h>
 
 @class DVTBorderedView, DVTDelayedInvocation, DVTGradientImageButton, DVTMutableOrderedDictionary, DVTOutlineView, DVTPerformanceMetric, DVTSearchField, DVTSourceExpression, IDEBuildOperation, NSArray, NSButton, NSLayoutConstraint, NSMapTable, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, PBXProject, Xcode3ProjectEditor, Xcode3Target;
-@protocol DVTCancellable;
+@protocol DVTCancellable, IDEBlueprint;
 
 @interface Xcode3AssetTagsEditor : IDEViewController <Xcode3SourceListItemEditor, NSOutlineViewDataSource, NSOutlineViewDelegate, IDEAssetTagChangeListener>
 {
@@ -29,7 +29,7 @@
     id <DVTCancellable> _buildOperationToken;
     IDEBuildOperation *_currentBuildOperation;
     Xcode3ProjectEditor *_projectEditor;
-    id _inspectedBlueprint;
+    id <IDEBlueprint> _inspectedBlueprint;
     DVTGradientImageButton *_addButton;
     DVTBorderedView *_topBorderView;
     long long _displayMode;
@@ -57,7 +57,7 @@
 @property(nonatomic) long long displayMode; // @synthesize displayMode=_displayMode;
 @property(retain, nonatomic) DVTBorderedView *topBorderView; // @synthesize topBorderView=_topBorderView;
 @property(retain, nonatomic) DVTGradientImageButton *addButton; // @synthesize addButton=_addButton;
-@property(retain, nonatomic) id inspectedBlueprint; // @synthesize inspectedBlueprint=_inspectedBlueprint;
+@property(retain, nonatomic) id <IDEBlueprint> inspectedBlueprint; // @synthesize inspectedBlueprint=_inspectedBlueprint;
 @property(retain) Xcode3ProjectEditor *projectEditor; // @synthesize projectEditor=_projectEditor;
 - (void).cxx_destruct;
 - (void)taggedAssetItem:(id)arg1 didUpdateProperty:(id)arg2 inAssetInfoProvider:(id)arg3;

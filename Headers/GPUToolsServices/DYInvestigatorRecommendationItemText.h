@@ -13,6 +13,7 @@
     NSAttributedString *value;
 }
 
++ (BOOL)supportsSecureCoding;
 @property(retain, nonatomic) NSAttributedString *value; // @synthesize value;
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;

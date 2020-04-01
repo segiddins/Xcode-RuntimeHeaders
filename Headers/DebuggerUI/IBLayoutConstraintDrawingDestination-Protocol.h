@@ -6,8 +6,8 @@
 
 #import <DebuggerUI/NSObject-Protocol.h>
 
-@class IBAbstractLayoutConstraintAbstraction, IBAutolayoutConstraintDrawable, IBLayoutConstraint, NSColor, NSImage, NSObject, NSString;
-@protocol IBAutolayoutItem, IBLayoutConstraintColorSpecifier;
+@class IBAbstractLayoutConstraintAbstraction, IBAutolayoutConstraintDrawable, IBLayoutConstraint, IBLayoutConstraintColorSpecifier, NSColor, NSImage, NSObject, NSString;
+@protocol IBAutolayoutItem;
 
 @protocol IBLayoutConstraintDrawingDestination <NSObject>
 - (NSImage *)equalSizeBadge;
@@ -22,7 +22,7 @@
 - (BOOL)isShowingResizeKnobs;
 - (NSString *)badgeLabelForAbstraction:(IBAbstractLayoutConstraintAbstraction *)arg1 atIndex:(unsigned long long)arg2 isConflicting:(BOOL)arg3 isAmbiguous:(BOOL)arg4 isMisplaced:(BOOL)arg5;
 - (NSColor *)defaultDrawableTintColorForAbstraction:(IBAbstractLayoutConstraintAbstraction *)arg1 atIndex:(unsigned long long)arg2 isConflicting:(BOOL)arg3 isAmbiguous:(BOOL)arg4 isMisplaced:(BOOL)arg5;
-- (id <IBLayoutConstraintColorSpecifier>)colorSpecifier;
+- (IBLayoutConstraintColorSpecifier *)colorSpecifier;
 - (long long)userInterfaceLayoutDirection;
 - (NSObject<IBAutolayoutItem> *)constraintOverlayView;
 - (struct CGRect)layoutRectInOverlayCoordinatesForConstraintItem:(NSObject<IBAutolayoutItem> *)arg1;

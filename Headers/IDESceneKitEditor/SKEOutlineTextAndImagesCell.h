@@ -13,6 +13,7 @@
 + (id)cell;
 - (void)drawLockIconWithFrame:(struct CGRect)arg1;
 - (void)drawWithFrame:(struct CGRect)arg1 inView:(id)arg2;
+- (void)setRepresentedObject:(id)arg1;
 - (struct CGRect)titleRectForBounds:(struct CGRect)arg1;
 - (id)attributeIcons;
 - (void)setControlView:(id)arg1;

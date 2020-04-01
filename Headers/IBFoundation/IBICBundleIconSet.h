@@ -6,14 +6,16 @@
 
 #import <IBFoundation/IBICSlottedAsset.h>
 
+@class NSOrderedSet, NSSet;
+
 @interface IBICBundleIconSet : IBICSlottedAsset
 {
     BOOL _preRendered;
 }
 
 + (id)catalogItemFileExtension;
-+ (Class)assetRepClass;
 + (id)allocWithZone:(struct _NSZone *)arg1;
++ (Class)assetRepClass;
 @property(nonatomic, getter=isPreRendered) BOOL preRendered; // @synthesize preRendered=_preRendered;
 - (BOOL)isEqualForUnitTests:(id)arg1;
 - (BOOL)requiresRootNamespace;
@@ -26,12 +28,13 @@
 - (BOOL)manifestArchivist:(id)arg1 validateManifest:(id)arg2 results:(id)arg3;
 - (id)effectiveModificationDateForCARCompiler;
 - (id)initializeManifestArchivist;
-- (id)intrinsicallyOrderedChildren;
-- (id)children;
+@property(readonly, nonatomic) NSOrderedSet *intrinsicallyOrderedChildren;
+@property(readonly, nonatomic) NSSet *children;
 - (id)assetRepForStructuredIdentifier:(id)arg1;
 - (id)childForIdentifier:(id)arg1;
 - (id)assetRepForIdentifier:(id)arg1;
 - (id)conflictFreeChildForSlot:(id)arg1;
+- (id)assetRepMatchingVariant:(id)arg1 forPlatform:(id)arg2;
 - (id)assetRepForSlot:(id)arg1;
 
 @end

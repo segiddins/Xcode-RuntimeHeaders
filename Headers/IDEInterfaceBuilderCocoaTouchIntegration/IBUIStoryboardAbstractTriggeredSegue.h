@@ -6,13 +6,10 @@
 
 #import <IDEInterfaceBuilderKit/IBStoryboardAbstractTriggeredSegue.h>
 
-#import <IDEInterfaceBuilderCocoaTouchIntegration/NSCoding-Protocol.h>
-
 @class NSString;
 
-@interface IBUIStoryboardAbstractTriggeredSegue : IBStoryboardAbstractTriggeredSegue <NSCoding>
+@interface IBUIStoryboardAbstractTriggeredSegue : IBStoryboardAbstractTriggeredSegue
 {
-    NSString *_customSegueClassName;
     BOOL _animates;
     unsigned long long _triggerMode;
     IBUIStoryboardAbstractTriggeredSegue *_preview;
@@ -20,9 +17,12 @@
     IBUIStoryboardAbstractTriggeredSegue *_parent;
     IBUIStoryboardAbstractTriggeredSegue *_inheritsFrom;
     unsigned long long _phase;
+    NSString *_customSegueClassName;
     NSString *_customSegueClassModuleProvider;
 }
 
++ (id)modalPresentationOverStyleValuesForPlatform:(id)arg1;
++ (id)modalPresentationOverStyleTitlesForPlatform:(id)arg1;
 + (id)keyPathsForValuesAffectingIbInspectedTriggerMode;
 + (id)keyPathsForValuesAffectingIbInspectedDoesNotInherit;
 + (id)keyPathsForValuesAffectingIbInspectedPreviewInheritanceMode;
@@ -41,6 +41,8 @@
 + (BOOL)isDeprecatedInDocument:(id)arg1;
 + (BOOL)shouldBeUserVisibleInDocument:(id)arg1;
 + (BOOL)isLegacySegue;
++ (id)keyPathsForValuesAffectingCustomSegueClassModule;
++ (id)keyPathsForValuesAffectingCustomSegueFormattedClassSymbol;
 + (BOOL)wantsDefaultAnimatesCompatibilityWarning;
 + (BOOL)wantsDefaultCustomClassCompatibilityWarning;
 + (BOOL)isAbstractType;
@@ -54,6 +56,8 @@
 @property(nonatomic) unsigned long long triggerMode; // @synthesize triggerMode=_triggerMode;
 @property(nonatomic) BOOL animates; // @synthesize animates=_animates;
 - (void).cxx_destruct;
+- (id)ibInspectedModalPresentationOverStyleValues;
+- (id)ibInspectedModalPresentationOverStyleTitles;
 @property unsigned long long ibInspectedTriggerMode;
 - (void)setIbInspectedSegueClassName:(id)arg1;
 - (void)_updateDocument:(id)arg1 forOldSegue:(id)arg2 toNewSegue:(id)arg3;
@@ -75,7 +79,6 @@
 - (id)ibInspectedAction;
 - (void)populateSegueTemplates:(id)arg1 andOutletsForCompiledDocument:(id)arg2;
 - (void)ibPrepareToBackwardsDeployToOSVersion:(id)arg1 inDocument:(id)arg2;
-- (void)ibPopulateRequiredDocumentCapabilities:(id)arg1 document:(id)arg2;
 - (void)ibPopulateAdditionalTargetOSVersions:(id)arg1 forCompilingDocument:(id)arg2;
 - (id)identifier;
 - (id)destination;
@@ -93,6 +96,7 @@
 - (BOOL)ibInspectedCanChangeDestination;
 - (BOOL)ibInspectedCanChangeCustomSegueClassName;
 - (BOOL)ibInspectedCanChangeAnimates;
+- (id)metricChainSucceedingMetric:(id)arg1;
 - (id)segueForInheritableMetrics;
 - (BOOL)canvasLinkShouldDrawPath;
 - (BOOL)representsMultipleSegues;
@@ -109,7 +113,6 @@
 - (id)destinationCandidateObjectFilterPredicate;
 - (BOOL)isExclusiveTo:(id)arg1 inObjectContainer:(id)arg2;
 @property(copy) NSString *customSegueClassModule;
-- (id)keyPathsAffectingCustomSegueClassModule;
 - (void)setCustomSegueFormattedClassSymbol:(id)arg1;
 - (id)customSegueFormattedClassSymbol;
 - (void)copyCommonInstanceStateToTriggeredSegue:(id)arg1;
@@ -120,11 +123,11 @@
 - (void)archiveWithDocumentArchiver:(id)arg1;
 - (void)_setInheritsFromSourceString:(id)arg1;
 - (id)_inheritsFromSourceString;
-- (void)ibWarnings:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
-- (id)segueAttributeInspectorExtensionIdentifier;
-- (id)initWithSource:(id)arg1 label:(id)arg2 destination:(id)arg3;
+- (void)ibPopulateIssues:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
+- (id)attributesInspectorSliceIdentifier;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithSource:(id)arg1 label:(id)arg2 destination:(id)arg3;
 
 @end
 

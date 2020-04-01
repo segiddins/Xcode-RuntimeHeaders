@@ -10,6 +10,7 @@
 
 @protocol DTProcessControlServiceAuthorizedMethods <DTXAllowedRPC>
 - (void)sendProcessControlEvent:(NSData *)arg1 toPid:(NSNumber *)arg2;
+- (void)sendSignal:(NSNumber *)arg1 toPid:(NSNumber *)arg2;
 - (void)killPid:(NSNumber *)arg1;
 - (NSNumber *)launchSuspendedProcessWithDevicePath:(NSString *)arg1 bundleIdentifier:(NSString *)arg2 environment:(NSDictionary *)arg3 arguments:(NSArray *)arg4 options:(NSDictionary *)arg5;
 - (void)resumePid:(NSNumber *)arg1;

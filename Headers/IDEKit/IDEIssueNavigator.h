@@ -8,26 +8,34 @@
 
 #import <IDEKit/DVTOutlineViewDelegate-Protocol.h>
 
-@class DVTNotificationToken, DVTObservingToken, DVTScopeBarView, DVTScrollView, DVTTableCellViewMultiLineHeightEstimator, DVTTimeSlicedMainThreadWorkQueue, NSArray, NSButton, NSMenuItem, NSMutableArray, NSMutableSet, NSSet, NSString;
+@class DVTBorderView, DVTNotificationToken, DVTObservingToken, DVTScopeBarView, DVTScrollView, DVTTableCellViewMultiLineHeightEstimator, DVTTimeSlicedMainThreadWorkQueue, NSArray, NSButton, NSMenuItem, NSMutableArray, NSMutableSet, NSSet, NSString;
 
 @interface IDEIssueNavigator : IDEOutlineBasedNavigator <DVTOutlineViewDelegate>
 {
     DVTScopeBarView *_scopeBarView;
     NSButton *_scopeByBuildtimeButton;
     NSButton *_scopeByRuntimeButton;
+    DVTBorderView *_dividerView;
     NSMenuItem *_viewByFileMenuItem;
     NSMenuItem *_viewByTypeMenuItem;
+    NSMutableSet *_collapsedGroupsForStateSaving;
+    NSMutableSet *_collapsedFilesForStateSaving;
+    NSMutableSet *_collapsedTypesForStateSaving;
+    NSMutableSet *_collapsedModelObjectsForStateSaving;
+    NSMutableSet *_expandedModelObjectsForStateSaving;
     NSSet *_collapsedGroupsBeforeFiltering;
     NSSet *_collapsedFilesBeforeFiltering;
     NSSet *_collapsedTypesBeforeFiltering;
-    NSSet *_expandedIssuesBeforeFiltering;
+    NSSet *_collapsedModelObjectsBeforeFiltering;
+    NSSet *_expandedModelObjectsBeforeFiltering;
     DVTTimeSlicedMainThreadWorkQueue *_autoExpandingWorkQueue;
     DVTTableCellViewMultiLineHeightEstimator *_issueHeightEstimator;
     DVTTableCellViewMultiLineHeightEstimator *_subIssueHeightEstimator;
     NSMutableArray *_stateChangeObservingTokens;
     unsigned long long _issueDetailLevel;
     unsigned long long _compressionValue;
-    DVTObservingToken *_selectedNavigablesObservingToken;
+    DVTObservingToken *_numBuildtimeIssuesObservingToken;
+    DVTObservingToken *_numRuntimeIssuesObservingToken;
     DVTNotificationToken *_issueDetailLevelObservingToken;
     BOOL _restoringState;
     BOOL _clearingFilter;
@@ -41,7 +49,8 @@
     NSMutableSet *_collapsedGroups;
     NSMutableSet *_collapsedFiles;
     NSMutableSet *_collapsedTypes;
-    NSMutableSet *_expandedIssues;
+    NSMutableSet *_collapsedModelObjects;
+    NSMutableSet *_expandedModelObjects;
     DVTScrollView *_issueNavigatorScrollView;
     struct _NSRange _visibleRows;
 }
@@ -53,7 +62,8 @@
 + (void)initialize;
 @property __weak DVTScrollView *issueNavigatorScrollView; // @synthesize issueNavigatorScrollView=_issueNavigatorScrollView;
 @property struct _NSRange visibleRows; // @synthesize visibleRows=_visibleRows;
-@property(copy, nonatomic) NSMutableSet *expandedIssues; // @synthesize expandedIssues=_expandedIssues;
+@property(copy, nonatomic) NSMutableSet *expandedModelObjects; // @synthesize expandedModelObjects=_expandedModelObjects;
+@property(copy, nonatomic) NSMutableSet *collapsedModelObjects; // @synthesize collapsedModelObjects=_collapsedModelObjects;
 @property(copy, nonatomic) NSMutableSet *collapsedTypes; // @synthesize collapsedTypes=_collapsedTypes;
 @property(copy, nonatomic) NSMutableSet *collapsedFiles; // @synthesize collapsedFiles=_collapsedFiles;
 @property(copy, nonatomic) NSMutableSet *collapsedGroups; // @synthesize collapsedGroups=_collapsedGroups;
@@ -65,11 +75,11 @@
 @property(retain, nonatomic) NSArray *navigableIssueItems; // @synthesize navigableIssueItems=_navigableIssueItems;
 @property(nonatomic) BOOL showByRuntime; // @synthesize showByRuntime=_showByRuntime;
 - (void).cxx_destruct;
-- (void)_revealNavigableItems:(id)arg1;
+- (void)revealNavigableItems:(id)arg1;
 - (void)commitStateToDictionary:(id)arg1;
 - (void)configureStateSavingObservers;
 - (void)revertStateWithDictionary:(id)arg1;
-- (void)_clearFilter;
+- (void)clearFilterType:(unsigned long long)arg1;
 - (void)setFilter:(id)arg1;
 - (void)_synchronizeFilteringWithOutlineView;
 - (id)filterDefinitionIdentifier;
@@ -79,7 +89,7 @@
 - (void)_configureStandardTableViewCell:(id)arg1;
 - (id)_tableCellViewForCompressedStackFrameItem:(id)arg1;
 - (id)_genericTableCellViewForDebugNavItem:(id)arg1;
-- (id)_tableCellViewForSubIssueNavItem:(id)arg1;
+- (long long)_calculateMaxNumberOfSubtitleLines;
 - (id)_tableCellViewForIssueNavItem:(id)arg1;
 - (id)_tableCellViewForIssueTypeGroupNavItem:(id)arg1;
 - (id)_tableCellViewForFileGroupNavItem:(id)arg1;
@@ -89,7 +99,7 @@
 - (void)outlineViewItemDidCollapse:(id)arg1;
 - (void)outlineViewItemDidExpand:(id)arg1;
 - (void)outlineViewItemWillExpand:(id)arg1;
-- (void)_ensureNavigableItem:(id)arg1 expansionStateIsExpanded:(BOOL)arg2;
+- (void)_recordNavigableItem:(id)arg1 expanded:(BOOL)arg2;
 - (id)_itemsMatchingState:(id)arg1;
 - (id)_leafIssueNavigableInIssuePath:(id)arg1 parentNavigable:(id)arg2 idToNavigableDict:(id)arg3;
 - (id)_issueNavigableItemForIdentifierDictionary:(id)arg1 parentNavigable:(id)arg2 idToNavigableDict:(id)arg3;
@@ -99,14 +109,19 @@
 - (id)_fullIdentifierPathForNavigables:(id)arg1;
 - (id)_fullIdentifierPathForNavigable:(id)arg1;
 - (id)_stateIdentifierForNavigable:(id)arg1;
+- (id)_issueFromChildNavigableItem:(id)arg1;
 - (id)_stateIdentifierForIssue:(id)arg1;
 - (id)_stateIdentifierForIssueTypeGroup:(id)arg1 parentNavigable:(id)arg2;
 - (id)_stateIdentifierForIssueFileGroup:(id)arg1 parentNavigable:(id)arg2;
 - (id)_stateIdentifierForIssueGroup:(id)arg1;
 - (BOOL)validateUserInterfaceItem:(id)arg1;
+- (BOOL)_canCreateBreakpoint;
+- (void)contextMenu_showDocumentation:(id)arg1;
+- (void)contextMenu_revealInLog:(id)arg1;
+- (void)contextMenu_createBreakpoint:(id)arg1;
+- (id)_firstIssueForContextMenu;
 - (void)contextMenu_viewByType:(id)arg1;
 - (void)contextMenu_viewByFile:(id)arg1;
-- (void)contextMenu_revealInLog:(id)arg1;
 - (void)contextMenu_copy:(id)arg1;
 - (void)copy:(id)arg1;
 - (id)contextMenuSelection;
@@ -122,8 +137,6 @@
 - (BOOL)_canNavigateToNavigableItem:(id)arg1;
 - (id)structureEditorOpenSpecifierForIssuesNavigable:(id)arg1 error:(id *)arg2;
 - (id)structureEditorOpenSpecifierForLogDocumentForIssue:(id)arg1 error:(id *)arg2;
-- (id)structureNavigableItemForIssuesNavigable:(id)arg1 error:(id *)arg2;
-- (id)_urlOfRepresentedObject:(id)arg1;
 - (void)scopeByRuntime:(id)arg1;
 - (void)scopeByBuildtime:(id)arg1;
 - (id)domainIdentifier;
@@ -132,6 +145,7 @@
 - (void)primitiveInvalidate;
 - (void)_handleDetailLevelDefaultDidChange;
 - (void)viewDidInstall;
+- (void)_updateScopeButtons;
 - (void)loadView;
 
 // Remaining properties

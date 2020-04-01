@@ -12,16 +12,11 @@
 
 + (id)exactSymbolsDirectoryForPlatform:(id)arg1 version:(id)arg2 build:(id)arg3;
 + (id)exactSymbolsDirectoryForVersion:(id)arg1 andBuild:(id)arg2;
-+ (id)idealSymbolsDirectoryForPlatform:(id)arg1 version:(id)arg2 build:(id)arg3;
-+ (id)idealSymbolsDirectoryForVersion:(id)arg1 andBuild:(id)arg2;
-+ (id)idealDeveloperDiskImageForVersion:(id)arg1 andBuild:(id)arg2 allowFallback:(_Bool)arg3;
-+ (id)exactSymbolsDirectoryForModel:(id)arg1 version:(id)arg2 build:(id)arg3;
-+ (id)exactSymbolsDirectoryForPlatform:(id)arg1 preferringPlatformForModel:(id)arg2 version:(id)arg3 build:(id)arg4;
-+ (id)exactSymbolsDirectoryForPlatform:(id)arg1 model:(id)arg2 version:(id)arg3 build:(id)arg4;
-+ (id)_exactSymbolsDirectoryForPlatform:(id)arg1 model:(id)arg2 version:(id)arg3 build:(id)arg4;
++ (id)exactSymbolsDirectoryForModel:(id)arg1 architecture:(id)arg2 version:(id)arg3 build:(id)arg4;
++ (id)exactSymbolsDirectoryForPlatform:(id)arg1 preferringPlatformForModel:(id)arg2 architecture:(id)arg3 version:(id)arg4 build:(id)arg5;
++ (id)exactSymbolsDirectoryForPlatform:(id)arg1 model:(id)arg2 architecture:(id)arg3 version:(id)arg4 build:(id)arg5;
++ (id)_exactSymbolsDirectoryForPlatform:(id)arg1 model:(id)arg2 architecture:(id)arg3 version:(id)arg4 build:(id)arg5;
 + (id)idealExistingSymbolsDirectoryForModel:(id)arg1 version:(id)arg2 build:(id)arg3;
-+ (id)idealExistingSymbolsDirectoryForPlatform:(id)arg1 model:(id)arg2 version:(id)arg3 build:(id)arg4;
-+ (id)_idealExistingSymbolsDirectoryForPlatform:(id)arg1 model:(id)arg2 version:(id)arg3 build:(id)arg4;
 + (id)_exactDeveloperDiskImageForPlatform:(id)arg1 version:(id)arg2 build:(id)arg3;
 + (id)_idealDeveloperDiskImageForPlatform:(id)arg1 version:(id)arg2 build:(id)arg3;
 + (id)idealDeveloperDiskImageForModel:(id)arg1 version:(id)arg2 build:(id)arg3;

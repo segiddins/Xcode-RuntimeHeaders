@@ -7,6 +7,7 @@
 #import <IBFoundation/IBICAbstractCatalog.h>
 
 @interface IBICAbstractCatalog (DisplayAdditions)
+- (BOOL)isDisplayNameFindable;
 - (id)updateSelectionRelativeIDsForSelectionRestoration:(id)arg1;
 - (id)updatePreviousSourceItemIDsForSelectionRestoration:(id)arg1;
 - (BOOL)isDraggable;

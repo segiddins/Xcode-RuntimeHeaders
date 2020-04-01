@@ -6,9 +6,11 @@
 
 #import <IBFoundation/IBICAbstractStickerItem.h>
 
+#import <IBFoundation/IBICCompilableSticker-Protocol.h>
+
 @class IBICManifestArchivist, NSString;
 
-@interface IBICSticker : IBICAbstractStickerItem
+@interface IBICSticker : IBICAbstractStickerItem <IBICCompilableSticker>
 {
     IBICManifestArchivist *_manifestArchivist;
     NSString *_accessibilityLabel;
@@ -42,6 +44,13 @@
 - (id)children;
 - (id)defaultUnqualifiedRuntimeName;
 - (id)init;
+- (BOOL)compileToPath:(id)arg1 options:(id)arg2 results:(id)arg3;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

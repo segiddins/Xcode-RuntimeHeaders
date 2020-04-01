@@ -10,21 +10,25 @@
 #import <IDESceneKitEditor/GTFActionLibraryUndoDelegate-Protocol.h>
 #import <IDESceneKitEditor/IDEDocumentStructureProviding-Protocol.h>
 #import <IDESceneKitEditor/IDEMediaLibraryDelegate-Protocol.h>
+#import <IDESceneKitEditor/SCNExternalTextureSource-Protocol.h>
 #import <IDESceneKitEditor/SKEDocumentProtocol-Protocol.h>
 
-@class DVTNotificationToken, DVTUndoManager, GTFActionLibrary, IDEContainer, IDENavigableItemCoordinator, NSArray, NSMapTable, NSMutableArray, NSString, NSURL, SCNAssetCatalog, SCNNode, SCNScene, SCNSceneSource, SKEActionEditor, SKEAdjustSceneWindowController, SKEDocumentGroup, SKEDocumentNavigableItem, SKEMediaHelper, SKESceneEditor;
+@class DVTFilePath, DVTNotificationToken, DVTUndoManager, GKScene, GTFActionLibrary, IDEContainer, IDEMediaResourceFoldingStrategy, IDEMediaResourceVariantContext, IDENavigableItemCoordinator, NSArray, NSDictionary, NSIndexPath, NSMapTable, NSMutableArray, NSString, NSURL, NSUndoManager, SCNAssetCatalog, SCNNode, SCNScene, SCNSceneSource, SKEActionEditor, SKEAdjustSceneWindowController, SKEDocumentGroup, SKEDocumentNavigableItem, SKEMediaHelper, SKESceneDocumentAttributes, SKESceneEditor;
+@protocol DVTInvalidation, SKEDocumentMember;
 
-@interface SKESceneDocument : IDEEditorDocument <SKEDocumentProtocol, IDEDocumentStructureProviding, IDEMediaLibraryDelegate, GTFActionEditorClientDocument, GTFActionLibraryUndoDelegate>
+@interface SKESceneDocument : IDEEditorDocument <SKEDocumentProtocol, IDEDocumentStructureProviding, IDEMediaLibraryDelegate, GTFActionEditorClientDocument, GTFActionLibraryUndoDelegate, SCNExternalTextureSource>
 {
     SCNScene *_scene;
     SCNSceneSource *_sceneSource;
     SCNAssetCatalog *_assetCatalog;
     NSURL *_cachedDestinationURL;
+    BOOL _isLoaded;
+    SKESceneDocumentAttributes *_sceneDocumentAttributes;
     SKEMediaHelper *_mediaHelper;
     IDEContainer *_resourceProvidingContainer;
     GTFActionLibrary *_actionLibrary;
     NSArray *_animationCache;
-    SKEDocumentGroup *_sceneGraphGroup;
+    id <SKEDocumentMember> _sceneGraph;
     SKEDocumentGroup *_libraryGroup;
     NSMapTable *_librarySubGroups;
     IDENavigableItemCoordinator *_navigableItemCoordinator;
@@ -34,25 +38,56 @@
     DVTNotificationToken *_availablePointsOfViewListNeedsUpdateObservingToken;
     SKEAdjustSceneWindowController *_adjustSceneWindowController;
     BOOL _isUpgradingToDifferentFileType;
+    IDEMediaResourceVariantContext *_variantContext[5];
+    id <DVTInvalidation> _variantContextKVOToken[5];
+    IDEMediaResourceFoldingStrategy *_foldingStrategy[5];
+    int _assetCatalogClients;
+    BOOL _assetCatalogInited;
+    NSIndexPath *_initialPointOfViewPath;
+    BOOL _shouldPerformDaeAdjustment;
+    GKScene *_gkScene;
+    BOOL _isDocumentFromViewDebugger;
+    BOOL _alreadyProposedToUpgrade;
     SKESceneEditor *_inspectedSceneEditor;
     SKEActionEditor *_inspectedActionEditor;
+    NSUndoManager *_shaderModifierEditorUndoManager;
 }
 
 + (id)disjointNodeHierarchiesFromNodes:(id)arg1 strategy:(unsigned long long)arg2;
 + (BOOL)isMember:(id)arg1 aDescendantOfMember:(id)arg2 resultIfEqual:(BOOL)arg3;
 + (id)defaultSceneOptions;
 + (void)invertTransparencyOfMaterialsInSceneScource:(id)arg1 isEdit:(BOOL)arg2;
++ (id)keyPathsForValuesAffectingIdeTopLevelStructureObjects;
++ (id)imageMediaTypes;
++ (BOOL)shouldShowInspectorAreaAtLoadForSimpleFilesFocusedWorkspace;
++ (BOOL)autosavesInPlace;
 + (void)initialize;
+@property(retain) NSUndoManager *shaderModifierEditorUndoManager; // @synthesize shaderModifierEditorUndoManager=_shaderModifierEditorUndoManager;
 @property(retain) SKEActionEditor *inspectedActionEditor; // @synthesize inspectedActionEditor=_inspectedActionEditor;
 @property(retain) SKESceneEditor *inspectedSceneEditor; // @synthesize inspectedSceneEditor=_inspectedSceneEditor;
+@property BOOL alreadyProposedToUpgrade; // @synthesize alreadyProposedToUpgrade=_alreadyProposedToUpgrade;
 - (void).cxx_destruct;
+- (void)resetWithSourceDocument;
+- (void)synchronizeWithSourceDocument;
+- (void)intializeDocumentAttributesFromScene:(id)arg1;
+- (id)documentAttributes;
+- (id)serializeDocumentAttributes;
+- (void)reloadWithYUp;
+@property(readonly) GKScene *gkScene;
+- (BOOL)ske_isNode;
 - (id)undoManagerForActionLibrary:(id)arg1;
 @property(readonly) GTFActionLibrary *actionLibrary;
 @property(readonly, nonatomic) long long actionEditorClientDocumentType;
 - (id)resourceProviderSuggestedSceneNamesToURLs:(id *)arg1;
 - (id)resourceProviderSuggestedParticleSystemNamesToFilePaths:(id *)arg1;
+- (BOOL)isTextureName:(id)arg1;
+- (BOOL)isTextureKnown:(id)arg1;
+- (id)textureForName:(id)arg1;
 - (id)resourceProviderSuggestedImagePaths;
+- (BOOL)resourceProviderImageNameIsKnown:(id)arg1;
+- (id)resourceProviderImageForImageNamed:(id)arg1;
 - (void)setResourceProvidingContainer:(id)arg1;
+- (id)absolutePathForEnclosingCatalogOrEnclosingFolder;
 - (id)relativeURLFromURLOfAssetWithinAssetCatalog:(id)arg1;
 - (id)absoluteURLForReferenceNodeWithinAssetCatalog:(id)arg1;
 - (id)referenceNodeWithinAssetCatalogWithRelativeURL:(id)arg1;
@@ -61,7 +96,6 @@
 - (void)refreshAssetCatalogWithURL:(id)arg1;
 - (id)ideModelObjectTypeIdentifier;
 - (void)upgradeToArchivedSceneKitDocumentFileTypeAction:(id)arg1;
-- (BOOL)validateMenuItem:(id)arg1;
 - (void)bakeLightProbesForNodes:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)bakeGeometryForNodes:(id)arg1 settings:(CDStruct_862f26a3)arg2 resourceEnclosingFolderPath:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;
 - (void)addDocumentOperation:(id)arg1;
@@ -74,6 +108,7 @@
 - (void)moveMaterialAtIndex:(unsigned long long)arg1 toIndex:(unsigned long long)arg2 geometry:(id)arg3;
 - (void)addMaterial:(id)arg1 atIndex:(unsigned long long)arg2 geometry:(id)arg3;
 - (void)addMaterialToGeometry:(id)arg1;
+- (void)removeNodeOverrideOfClass:(Class)arg1 fromNode:(id)arg2;
 - (void)removeNodeAttributeOfClass:(Class)arg1 fromNode:(id)arg2;
 - (void)replaceNodeAttribute:(id)arg1 ofClass:(Class)arg2 node:(id)arg3;
 - (void)replaceSharedNodeAttribute:(id)arg1 withAttribute:(id)arg2;
@@ -98,6 +133,7 @@
 - (void)putMembers:(id)arg1 inPasteboard:(id)arg2;
 - (BOOL)isMemberRootNode:(id)arg1;
 - (id)_groupForMember:(id)arg1;
+- (void)_updateViewDebuggerDocumentIfNecessaryIsClosingSKEDocument:(BOOL)arg1;
 - (void)_buildGroupsAndRootNavigableItems;
 @property(readonly) SKEDocumentNavigableItem *sceneGraphNavigableItem;
 @property(readonly) NSArray *rootNavigableItems;
@@ -108,20 +144,37 @@
 @property(readonly) NSArray *availablePointsOfView;
 - (void)editorDocumentWillClose;
 - (void)attemptRecoveryFromError:(id)arg1 optionIndex:(unsigned long long)arg2 delegate:(id)arg3 didRecoverSelector:(SEL)arg4 contextInfo:(void *)arg5;
+- (void)duplicateToSCNWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (BOOL)writeToURL:(id)arg1 ofType:(id)arg2 error:(id *)arg3;
 - (BOOL)writeSafelyToURL:(id)arg1 ofType:(id)arg2 forSaveOperation:(unsigned long long)arg3 error:(id *)arg4;
 - (id)writableTypesForSaveOperation:(unsigned long long)arg1;
 - (id)fileNameExtensionForType:(id)arg1 saveOperation:(unsigned long long)arg2;
+- (void)_encodeSCNNodeComponentsInGKScene:(id)arg1;
+- (void)_decodeSCNNodeComponentsInGKScene:(id)arg1 forSKScene:(id)arg2;
+- (int)readOnlyStatus;
+- (id)loadSceneSource:(id *)arg1;
+- (void)sceneDidLoad;
 - (BOOL)readFromURL:(id)arg1 ofType:(id)arg2 error:(id *)arg3;
 - (void)updateChangeCount:(unsigned long long)arg1;
+- (void)clearRoll:(id)arg1;
+- (void)toggleIntertia:(id)arg1;
+- (void)useWireframeDidChange:(id)arg1;
+- (void)useJitteringDidChange:(id)arg1;
+- (BOOL)validateUserInterfaceItem:(id)arg1;
+- (BOOL)hasUnautosavedChanges;
+- (id)autosavingFileType;
+- (BOOL)canExportDocument;
 - (BOOL)canSave;
 @property(readonly) SKEMediaHelper *mediaHelper;
+@property(readonly) unsigned long long featureAvailability;
 - (void)upgradeToFileType:(id)arg1 upgradeForEdition:(BOOL)arg2;
 @property(readonly) BOOL supportsEditing;
 @property(readonly) BOOL isColladaDocument;
 - (BOOL)fileTypeIsColladaDocument:(id)arg1;
 @property(readonly) BOOL isArchivedSceneKitDocument;
+- (BOOL)isCompressedArchivedSceneKitDocument;
 - (BOOL)fileTypeIsArchivedSceneKitDocument:(id)arg1;
+- (BOOL)fileTypeIsCompressedArchivedSceneKitDocument:(id)arg1;
 - (id)errorForErrorCode:(long long)arg1 underlyingError:(id)arg2;
 - (void)adjustDAESceneAfterLoading;
 - (id)authoringToolName;
@@ -129,15 +182,27 @@
 - (void)cleanSceneGraphForExport:(id *)arg1;
 @property(readonly) NSArray *ideTopLevelStructureObjects;
 @property(readonly) SCNSceneSource *sceneSource;
+@property(readonly) BOOL isLoaded;
 @property(readonly) SCNScene *scene;
+- (void)_updateMediaCachesWithAdded:(id)arg1 andRemoved:(id)arg2;
+- (void)releaseAssetCatalogEditor;
+- (void)initAssetCatalogEditor;
+- (void)initAssetCatalogLink;
+- (id)resourceProvidingContainer;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
+- (void)delayedLightingEnvUpdate;
 - (id)init;
+@property(readonly) NSUndoManager *documentUndoManager;
+@property(readonly) DVTUndoManager *undoManager;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
+@property(readonly) DVTFilePath *filePath;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
-@property(readonly) DVTUndoManager *undoManager;
+@property(readonly) IDEMediaResourceVariantContext *variantContextForMediaLibrary;
+@property(readonly) NSDictionary *variantForResolvingMediaResources;
 
 @end
 

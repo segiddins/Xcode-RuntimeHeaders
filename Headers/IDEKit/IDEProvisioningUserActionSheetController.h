@@ -10,7 +10,7 @@
 {
 }
 
-+ (void)presentSheetForUserAction:(id)arg1 hostWindow:(id)arg2 callback:(CDUnknownBlockType)arg3;
++ (void)presentSheetForUserAction:(id)arg1 manager:(id)arg2 supportBatchActions:(BOOL)arg3 hostWindow:(id)arg4 callback:(CDUnknownBlockType)arg5;
 
 @end
 

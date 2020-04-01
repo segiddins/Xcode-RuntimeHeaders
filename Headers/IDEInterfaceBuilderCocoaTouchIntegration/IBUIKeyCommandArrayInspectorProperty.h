@@ -17,6 +17,7 @@
     IDEInspectorKeyPath *_enabledKeyPath;
     IDEInspectorKeyPath *_selectorNamesKeyPath;
     NSArray *_reflectedValues;
+    NSTextField *_keyEquivalentLabelField;
     IBKeyEquivalentEntryField *_keyEquivalentField;
     NSTextField *_selectorNameField;
     IDEControlGroup *_controlGroup;
@@ -26,6 +27,7 @@
     DVTGradientImageButton *_removeButton;
 }
 
++ (Class)inspectableClass;
 @property(retain, nonatomic) DVTGradientImageButton *removeButton; // @synthesize removeButton=_removeButton;
 @property(retain, nonatomic) DVTGradientImageButton *addButton; // @synthesize addButton=_addButton;
 @property(retain, nonatomic) DVTBorderedView *topBorderedView; // @synthesize topBorderedView=_topBorderedView;
@@ -33,10 +35,12 @@
 @property(retain, nonatomic) IDEControlGroup *controlGroup; // @synthesize controlGroup=_controlGroup;
 @property(retain, nonatomic) NSTextField *selectorNameField; // @synthesize selectorNameField=_selectorNameField;
 @property(retain, nonatomic) IBKeyEquivalentEntryField *keyEquivalentField; // @synthesize keyEquivalentField=_keyEquivalentField;
+@property(retain, nonatomic) NSTextField *keyEquivalentLabelField; // @synthesize keyEquivalentLabelField=_keyEquivalentLabelField;
 - (void).cxx_destruct;
 - (void)removeRow:(id)arg1;
 - (BOOL)canRemoveRow;
 - (void)addRow:(id)arg1;
+- (BOOL)shouldIgnoreKey;
 - (void)tableViewSelectionDidChange:(id)arg1;
 - (id)tableView:(id)arg1 viewForTableColumn:(id)arg2 row:(long long)arg3;
 - (long long)numberOfRowsInTableView:(id)arg1;

@@ -6,37 +6,37 @@
 
 #import <DevToolsCore/XCWorkQueueCommandInvocation.h>
 
-@class XCPath, XCStringList;
+@class DVTSearchPath, XCPath, XCStringList;
 
 @interface XCWorkQueueCommandSubprocessInvocation : XCWorkQueueCommandInvocation
 {
     XCStringList *_arguments;
     XCStringList *_environment;
     XCPath *_workingDirPath;
+    DVTSearchPath *_searchPath;
     int _exitCode;
-    int _realExitCode;
     unsigned long long _numOutputBytesRead;
     double _userTime;
     double _systemTime;
-    void *_xxxxx_sharedMemory;
 }
 
-- (void)cancel;
-- (void)killSubprocess;
+- (void).cxx_destruct;
+- (void)cancelAndWaitUntilFinished;
+- (BOOL)killSubprocess;
 - (void)handleEndOfOutput;
+- (id)_toolSpecification;
 - (void)reapExitedSubprocess;
 - (void)handleOutputBytes:(const char *)arg1 length:(unsigned long long)arg2;
 - (unsigned long long)maxNumberOfOutputBytesToAcceptFromSubprocessInvocations;
 - (BOOL)startRunning;
 - (BOOL)launchSubprocessWithArguments:(const char **)arg1 environment:(const char **)arg2 workingDirectory:(const char *)arg3;
-- (BOOL)harvestPredictivelyProcessedOutputFiles;
 - (void)createOutputStreamIfNeeded;
 - (double)elapsedSystemTime;
 - (double)elapsedUserTime;
-- (int)realExitCode;
+@property BOOL isCancelled;
 - (int)exitCode;
-- (void)dealloc;
-- (id)initWithSlotNumber:(unsigned long long)arg1 workQueueOperation:(id)arg2 workQueueCommand:(id)arg3 arguments:(id)arg4 environmentAssignments:(id)arg5 workingDirectoryPath:(id)arg6;
+- (id)initWithWorkQueueCommand:(id)arg1 arguments:(id)arg2 environmentAssignments:(id)arg3 workingDirectoryPath:(id)arg4;
+- (id)initWithWorkQueueCommand:(id)arg1 arguments:(id)arg2 environmentAssignments:(id)arg3 workingDirectoryPath:(id)arg4 searchPath:(id)arg5;
 
 @end
 

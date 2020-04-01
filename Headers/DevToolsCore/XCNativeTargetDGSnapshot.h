@@ -10,11 +10,11 @@
 {
 }
 
-- (BOOL)isJambased;
 - (BOOL)isNative;
-- (id)initWithInformationFromTarget:(id)arg1 withBuildState:(id)arg2;
-- (void)computeDependenciesInTargetBuildContext:(id)arg1;
-- (BOOL)checkConsistencyOfTargetBuildContext:(id)arg1;
+- (id)initWithInformationFromTarget:(id)arg1 withBuildParameters:(id)arg2;
+- (void)computeDependenciesWithMacroExpansionScope:(id)arg1;
+- (id)macroExpansionScopeByAddingSDKSettingsToMacroExpansionScope:(id)arg1;
+- (BOOL)validateBuildPreparationWithMacroExpansionScope:(id)arg1;
 
 @end
 

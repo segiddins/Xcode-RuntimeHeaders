@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSMapTable;
+@class NSArray, NSMapTable, _XRLazyKVOBlockToken;
 @protocol XRLazyKVOResponder;
 
 @interface XRLazyKVOAdapter : NSObject
@@ -19,8 +19,11 @@
     BOOL _implementsWillChangeHandler;
     BOOL _suspended;
     NSArray *_runLoopModes;
+    _XRLazyKVOBlockToken *_strongBlockAdapterToken;
 }
 
++ (id)observeKeyPath:(id)arg1 object:(id)arg2 observer:(id)arg3 lazyUpdateBlock:(CDUnknownBlockType)arg4;
+@property(retain, nonatomic) _XRLazyKVOBlockToken *strongBlockAdapterToken; // @synthesize strongBlockAdapterToken=_strongBlockAdapterToken;
 @property(nonatomic, getter=isSuspended) BOOL suspended; // @synthesize suspended=_suspended;
 @property(copy, nonatomic) NSArray *runLoopModes; // @synthesize runLoopModes=_runLoopModes;
 - (id).cxx_construct;

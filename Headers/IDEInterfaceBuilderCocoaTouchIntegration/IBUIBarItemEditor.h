@@ -10,7 +10,7 @@
 {
 }
 
-- (id)stringEditingContextForEvent:(id)arg1;
+- (id)editableStringAreas;
 - (BOOL)shouldEditTitle;
 - (id)editorBarView;
 - (id)editorView;

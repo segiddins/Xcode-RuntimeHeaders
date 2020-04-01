@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Foundation/NSObject.h>
+#import <objc/NSObject.h>
 
-@class NSArray, NSMutableArray, NSMutableSet, NSString;
+@class NSArray, NSMutableArray, NSMutableSet, NSSet, NSString;
 
 @interface XCSimpleFilePreprocessor : NSObject
 {
@@ -26,20 +26,20 @@
 }
 
 + (id)preprocessor;
-- (id)errors;
-- (id)filesProcessed;
-- (id)preprocessedFileContents;
-- (unsigned long long)fileEncoding;
-- (id)preprocessedFilePath;
+- (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSArray *errors;
+@property(readonly, copy, nonatomic) NSSet *filesProcessed;
+@property(readonly, copy, nonatomic) NSString *preprocessedFileContents;
+@property(readonly, nonatomic) unsigned long long fileEncoding;
+@property(readonly, copy, nonatomic) NSString *preprocessedFilePath;
 - (id)preprocessFileAtPath:(id)arg1 encoding:(unsigned long long)arg2;
 - (id)_preprocessFileAtPath:(id)arg1 seenFiles:(id)arg2;
 - (id)_pathToIncludedFileNamed:(id)arg1 usingSearchPath:(id)arg2;
-- (void)setIncludeSearchPath:(id)arg1;
-- (void)setSearchLocalDirForIncludes:(BOOL)arg1;
-- (void)setProcessIncludes:(BOOL)arg1;
-- (void)setForceIncludedFilesToEndWithNewline:(BOOL)arg1;
-- (void)setStripComments:(BOOL)arg1;
-- (void)dealloc;
+@property(copy, nonatomic) NSArray *includeSearchPath;
+@property(nonatomic) BOOL searchLocalDirForIncludes;
+@property(nonatomic) BOOL processIncludes;
+@property(nonatomic) BOOL forceIncludedFilesToEndWithNewline;
+@property(nonatomic) BOOL stripComments;
 - (id)init;
 
 @end

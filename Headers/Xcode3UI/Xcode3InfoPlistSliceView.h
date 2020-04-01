@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <DVTKit/DVTLayoutView_ML.h>
+#import <DVTStructuredLayoutKit/DVTLayoutView_ML.h>
 
 #import <Xcode3UI/DVTInvalidation-Protocol.h>
 
@@ -28,11 +28,13 @@
 - (void)layoutTopDown;
 - (double)_leftMargin;
 - (void)plistOutlineViewFrameChanged:(id)arg1;
+- (void)_updatePlistOutlineViewTheme;
 - (void)configureUsingPlistViewController:(id)arg1;
 - (void)primitiveInvalidate;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (void)mouseUp:(id)arg1;
 - (void)_syncPlistViews;
+- (void)_updateEmptyOutlineFieldTheme;
 - (id)_emptyOutlineField;
 - (BOOL)_showEmptyOutlineField;
 - (BOOL)isFlipped;

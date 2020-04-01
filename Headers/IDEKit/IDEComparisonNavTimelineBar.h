@@ -6,7 +6,7 @@
 
 #import <IDEKit/IDEViewController.h>
 
-@class IDEComparisonEditor, IDEComparisonEditorChangesStepperView, IDEComparisonEditorTimelineNavBar, IDEPathControl;
+@class DVTPathControl, IDEComparisonEditor, IDEComparisonEditorChangesStepperView, IDEComparisonEditorTimelineNavBar;
 
 @interface IDEComparisonNavTimelineBar : IDEViewController
 {
@@ -19,8 +19,8 @@
 - (void).cxx_destruct;
 - (void)layoutContainerView;
 @property(readonly) IDEComparisonEditorChangesStepperView *changesStepperControl;
-@property(readonly) IDEPathControl *secondaryPathControl;
-@property(readonly) IDEPathControl *primaryPathControl;
+@property(readonly) DVTPathControl *secondaryPathControl;
+@property(readonly) DVTPathControl *primaryPathControl;
 @property BOOL hideSecondaryPathControl;
 - (void)primitiveInvalidate;
 - (void)viewWillUninstall;

@@ -8,7 +8,6 @@
 
 @interface PBXFramework : PBXContainer
 {
-    BOOL _needsToValidateChildren;
 }
 
 + (id)frameworkForFileReference:(id)arg1;
@@ -18,7 +17,6 @@
 - (id)absolutePathsOfPublicHeaderFiles;
 - (id)_absolutePathsOfFilesInSubdirectoryNamed:(id)arg1;
 - (void)invalidateAbsolutePathCache;
-- (void)validateChildren;
 - (id)rootGroup;
 
 @end

@@ -23,6 +23,7 @@
 - (id)startLocation;
 - (unsigned long long)totalNumberOfWarnings;
 - (BOOL)isAnalyzerControlFlowStepMessage;
+- (id)initWithTitle:(id)arg1 startLocation:(id)arg2 endLocation:(id)arg3 edges:(id)arg4 parentIndex:(long long)arg5;
 - (id)initWithTitle:(id)arg1 startLocation:(id)arg2 endLocation:(id)arg3;
 
 @end

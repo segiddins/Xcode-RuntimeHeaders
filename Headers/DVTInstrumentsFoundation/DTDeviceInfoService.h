@@ -19,11 +19,15 @@
 + (BOOL)isApplication:(id)arg1;
 + (void)registerCapabilities:(id)arg1;
 - (id)networkInformation;
+- (id)netstatRouteAttributes;
+- (id)netstatUDPAttributes;
+- (id)netstatTCPAttributes;
+- (id)netstatCountsAttributes;
+- (id)sysmonCoalitionAttributes;
+- (id)sysmonSystemAttributes;
+- (id)sysmonProcessAttributes;
 - (id)kpepDatabase;
 - (id)traceCodesFile;
-- (id)cpDeviceName;
-- (id)cpDeviceInfoAsXML;
-- (id)cpKDebugEventsAsXML;
 - (id)systemInformation;
 - (id)productVersion;
 - (id)uniqueID;
@@ -42,7 +46,6 @@
 - (void)unregisterSignatureTrackingForPid:(id)arg1;
 - (id)symbolicatorSignatureForPid:(id)arg1 trackingSelector:(id)arg2;
 - (id)machKernelName;
-- (id)pidIs64Bit:(id)arg1;
 - (id)isRunningPid:(id)arg1;
 - (id)execnameForPid:(id)arg1;
 - (id)nameForGID:(id)arg1;

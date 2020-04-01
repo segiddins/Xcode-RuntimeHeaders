@@ -16,6 +16,9 @@
 + (void)adjustApplicationIconForEnvironment:(BOOL)arg1;
 + (void)initialize;
 - (void).cxx_destruct;
+- (long long)runModalSession:(struct _NSModalSession *)arg1;
+- (struct _NSModalSession *)beginModalSessionForWindow:(id)arg1;
+- (long long)runModalForWindow:(id)arg1;
 - (void)endSheet:(id)arg1 returnCode:(long long)arg2;
 - (void)endSheet:(id)arg1;
 - (BOOL)presentError:(id)arg1;

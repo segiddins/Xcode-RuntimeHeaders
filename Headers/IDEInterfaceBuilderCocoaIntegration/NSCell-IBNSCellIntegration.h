@@ -6,26 +6,41 @@
 
 #import <AppKit/NSCell.h>
 
-@interface NSCell (IBNSCellIntegration)
+#import <IDEInterfaceBuilderCocoaIntegration/IBDocumentArchiving-Protocol.h>
+
+@class NSString;
+
+@interface NSCell (IBNSCellIntegration) <IBDocumentArchiving>
++ (id)keyPathsForValuesAffectingIbInspectedEffectiveAppearance;
++ (id)keyPathsForValuesAffectingIbInspectedLineBreakMode;
++ (id)keyPathsForValuesAffectingIbInspectedContinuous;
++ (id)keyPathsForValuesAffectingIbInspectedBaseWritingDirection;
++ (id)keyPathsForValuesAffectingIbInspectedUserInterfaceLayoutDirection;
++ (id)keyPathsForValuesAffectingIbInspectedTruncatesLastVisibleLine;
++ (id)keyPathsForValuesAffectingIbInspectedRefusesFirstResponder;
 + (id)keyPathsForValuesAffectingIbInspectedEnabled;
 + (id)keyPathsForValuesAffectingIbInspectedControl;
 + (id)keyPathsForValuesAffectingIbInspectedCell;
 + (id)keyPathsForValuesAffectingIbInspectedBordered;
 + (id)keyPathsForValuesAffectingIbInspectedBezeled;
 + (id)keyPathsForValuesAffectingIbShadowedBorderStyle;
++ (id)keyPathsForValuesAffectingIbInspectedControlSize;
++ (id)instantiateWithDocumentUnarchiver:(id)arg1;
 - (id)ibLocalSearchableNumericAttributeKeyPaths;
+- (id)ibInspectedEffectiveAppearance;
 - (BOOL)ibCanSupportIdentifierProperty;
+- (void)ibSizeToFitIfNeeded:(BOOL)arg1 during:(CDUnknownBlockType)arg2;
 - (BOOL)ibIdentifierPropertyCanConflictsWithObject:(id)arg1;
 - (void)ibConstrainBoundsToNearestLegalSize;
 @property long long ibInspectedLineBreakMode;
-@property long long ibInspectedContinuous;
+@property BOOL ibInspectedContinuous;
 @property long long ibInspectedBaseWritingDirection;
 @property long long ibInspectedUserInterfaceLayoutDirection;
-@property long long ibInspectedTruncatesLastVisibleLine;
-@property long long ibInspectedRefusesFirstResponder;
+@property BOOL ibInspectedTruncatesLastVisibleLine;
+@property BOOL ibInspectedRefusesFirstResponder;
 - (BOOL)ibInspectedOverridesSetTag;
-@property long long ibInspectedEnabled;
-- (void)ibWarnings:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
+@property BOOL ibInspectedEnabled;
+- (void)ibPopulateIssues:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
 - (void)ibPopulateRequiredDocumentCapabilities:(id)arg1 document:(id)arg2;
 - (id)ibEquivalentSourceForToOneOutlet:(id)arg1;
 - (Class)ibEditorClass;
@@ -44,11 +59,11 @@
 @property unsigned long long ibInspectedControlSize;
 - (id)ibExposedElusiveDescendantsKeyPaths;
 - (id)ibDefaultDataValueForTableView:(id)arg1;
-- (long long)ibPreferredResizeDirection;
+- (long long)ibPreferredResizeDirectionMask;
 - (BOOL)ibWouldClipContentWithCellSize:(struct CGSize)arg1;
 - (struct CGSize)ibPreferredSizeForSize:(struct CGSize)arg1;
+- (void)ibRegisterUndoActionInDocument:(id)arg1 forChangeToKeyPath:(id)arg2 fromValue:(id)arg3;
 - (void)ibRemoveChildren:(id)arg1;
-- (id)ibDocumentationPropertyInfosForKeyPath:(id)arg1;
 - (void)ibTakeSnapshotValues:(id)arg1 inConfiguration:(id)arg2;
 - (id)ibDefaultFontForCurrentConfiguration;
 - (BOOL)ibTitleEditsSelf;
@@ -60,5 +75,18 @@
 - (BOOL)ibCanBeBoundToFromObject:(id)arg1;
 - (void)ibPopulateChildRelationOrder:(id)arg1;
 - (void)ibReallySetType:(unsigned long long)arg1;
+- (id)ibEffectiveLocalizationComment;
+- (id)ibLocalAdditionalLocalizableAttributeKeyPaths;
+- (id)ibLocalLocalizableStringsAttributeKeyPaths;
+- (id)ibLocalAttributeKeyPaths;
+- (id)ibLocalChildToOneRelationshipsKeyPaths;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @end
 

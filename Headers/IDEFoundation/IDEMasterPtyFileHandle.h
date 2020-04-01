@@ -16,6 +16,7 @@
 
 @property(readonly) NSFileHandle *slaveFileHandle; // @synthesize slaveFileHandle=_slaveFileHandle;
 - (void).cxx_destruct;
+- (void)setReadabilityHandler:(CDUnknownBlockType)arg1;
 - (int)fileDescriptor;
 - (void)waitForDataInBackgroundAndNotify;
 - (void)waitForDataInBackgroundAndNotifyForModes:(id)arg1;
@@ -36,6 +37,7 @@
 - (id)readDataOfLength:(unsigned long long)arg1;
 - (id)readDataToEndOfFile;
 - (id)availableData;
+- (id)description;
 - (void)dealloc;
 - (id)initWithFileDescriptor:(int)arg1 slaveFileDescriptor:(int)arg2 ownsSlaveFileDescriptor:(BOOL)arg3;
 

@@ -9,7 +9,7 @@
 #import <IDEModelEditor/IDECapsuleListViewDataSource-Protocol.h>
 #import <IDEModelEditor/IDEDataModelEditorController-Protocol.h>
 
-@class IDECapsuleListView, IDEDataModelConfigurationTableController, IDEDataModelEditor, NSString;
+@class CDMModel, DVTStackBacktrace, IDECapsuleListView, IDEDataModelConfigurationTableController, IDEDataModelEditor, NSArray, NSString;
 
 @interface IDEDataModelConfigurationEditor : IDEDMEditorController <IDEDataModelEditorController, IDECapsuleListViewDataSource>
 {
@@ -28,25 +28,28 @@
 - (id)capsuleViewControllers;
 - (void)paste:(id)arg1;
 - (void)copy:(id)arg1;
-- (id)model;
+@property(readonly) CDMModel *model;
 - (void)editNameForModelObject:(id)arg1;
-- (id)selectedConfigurations;
+@property(readonly, copy) NSArray *selectedConfigurations;
 - (void)selectModelObjects:(id)arg1;
 - (id)selection;
 - (id)nibBundle;
-- (BOOL)allowsViewType:(int)arg1;
+- (BOOL)allowsViewType:(unsigned long long)arg1;
 - (id)nibName;
 - (id)identifier;
 - (void)primitiveInvalidate;
 - (void)loadView;
 - (void)takeFocus;
-- (id)rootEditor;
+@property(readonly) IDEDataModelEditor *rootEditor;
 
 // Remaining properties
+@property(retain) DVTStackBacktrace *creationBacktrace;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
+@property(readonly) DVTStackBacktrace *invalidationBacktrace;
 @property(readonly) Class superclass;
+@property(readonly, nonatomic, getter=isValid) BOOL valid;
 
 @end
 

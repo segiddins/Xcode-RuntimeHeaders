@@ -12,26 +12,28 @@
 
 @interface IDEKeyboardShortcut : NSObject <NSCopying>
 {
-    NSString *_keyEquivalent;
-    unsigned long long _modifierMask;
     IDEKeyboardShortcut *_nextKeyboardShortcut;
     id _cachedRawKeyboardShortcutOrNull;
+    NSString *_keyEquivalent;
+    unsigned long long _modifierMask;
 }
 
-+ (id)commandKeyHumanRedableName;
-+ (id)shiftKeyHumanRedableName;
-+ (id)alternateKeyHumanRedableName;
-+ (id)controlKeyHumanRedableName;
++ (id)humanReadableNameForCommandKey;
++ (id)humanReadableNameForShiftKey;
++ (id)humanReadableNameForOptionKey;
++ (id)humanReadableNameForControlKey;
 + (id)humanReadableNameForKeyEquivalentCharacter:(unsigned short)arg1;
 + (id)translateKeyEquivalent:(id)arg1 modifierMask:(unsigned long long)arg2;
 + (id)emptyKeyboardShortcut;
 + (id)keyboardShortcutFromStringRepresentation:(id)arg1;
 + (id)_keyboardShortcutWithRawKeyEquivalent:(id)arg1 rawModifierMask:(unsigned long long)arg2;
 + (id)keyboardShortcutWithKeyEquivalent:(id)arg1 modifierMask:(unsigned long long)arg2;
+@property(readonly) unsigned long long modifierMask; // @synthesize modifierMask=_modifierMask;
+@property(readonly) NSString *keyEquivalent; // @synthesize keyEquivalent=_keyEquivalent;
 - (void).cxx_destruct;
 @property(copy) IDEKeyboardShortcut *nextKeyboardShortcut;
 @property(readonly) NSString *stringRepresentation;
-@property(readonly) NSString *humanRedableName;
+@property(readonly) NSString *humanReadableName;
 @property(readonly) NSString *localizedDisplayName;
 @property(readonly) NSString *displayName;
 @property(readonly) NSString *localizedModifierMaskDisplayName;
@@ -41,9 +43,7 @@
 @property(readonly, getter=isEmpty) BOOL empty;
 @property(readonly) IDEKeyboardShortcut *rawKeyboardShortcut;
 @property(readonly) unsigned long long rawModifierMask;
-@property(readonly) unsigned long long modifierMask;
 @property(readonly) NSString *rawKeyEquivalent;
-@property(readonly) NSString *keyEquivalent;
 - (long long)compare:(id)arg1;
 - (id)description;
 - (unsigned long long)hash;

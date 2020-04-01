@@ -6,16 +6,17 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableDictionary;
+@class NSMutableDictionary, NSString;
 
 @interface SKEAssetCatalog : NSObject
 {
     NSMutableDictionary *_settings;
+    NSString *_path;
 }
 
+@property(retain) NSString *path; // @synthesize path=_path;
 - (void).cxx_destruct;
 @property BOOL preferCompressedTextures;
-@property BOOL interleaveGeometrySources;
 @property BOOL forceYUp;
 - (BOOL)writeToFile:(id)arg1 atomically:(BOOL)arg2;
 - (id)initWithContentsOfFile:(id)arg1 error:(id *)arg2;

@@ -6,6 +6,8 @@
 
 #import <IDEModelEditor/IDEDataModelPropertiesTableController.h>
 
+@class NSArray;
+
 @interface IDEDataModelAttributesController : IDEDataModelPropertiesTableController
 {
 }
@@ -18,7 +20,7 @@
 - (Class)targetedEditorClass;
 - (id)titleForDisplay;
 - (void)primitiveInvalidate;
-- (id)typeNames;
+@property(readonly, copy) NSArray *typeNames;
 
 @end
 

@@ -14,37 +14,38 @@
 
 @interface IBEditorCanvasFrame : IBCanvasFrame <IBImageButtonDelegate, NSAccessibilityGroup, IBDocumentArbitrationResponder>
 {
-    IBEditorCanvasFrameContentView *contentView;
-    NSTrackingArea *mouseMovedArea;
-    long long dragAndDropFrameCount;
-    IBImageButton *resizingGrips[3][3];
-    NSSet *resizingKnobSet;
-    long long disableDrawingCachingCount;
-    BOOL horizontallyResizable;
-    BOOL verticallyResizable;
-    NSString *title;
-    IBImageButton *closeButton;
+    IBEditorCanvasFrameContentView *_contentView;
+    NSTrackingArea *_mouseMovedArea;
+    long long _dragAndDropFrameCount;
+    IBImageButton *_resizingGrips[3][3];
+    NSSet *_resizingKnobSet;
+    long long _disableDrawingCachingCount;
+    BOOL _horizontallyResizable;
+    BOOL _verticallyResizable;
     NSEvent *_lastMouseDown;
     IBEditorCanvasFrameController *_controller;
+    NSString *_title;
     NSView *_wrapperView;
+    IBImageButton *_closeButton;
     NSValue *_pinnedKnob;
     NSView *_pinnedDescendantView;
     NSGestureRecognizer *_navigationMenuGestureRecognizer;
     struct CGPoint _pinningPoint;
 }
 
++ (BOOL)wantsContentEditorAppearanceUpdate;
 @property(retain) NSGestureRecognizer *navigationMenuGestureRecognizer; // @synthesize navigationMenuGestureRecognizer=_navigationMenuGestureRecognizer;
+@property(nonatomic, getter=isVerticallyResizable) BOOL verticallyResizable; // @synthesize verticallyResizable=_verticallyResizable;
+@property(nonatomic, getter=isHorizontallyResizable) BOOL horizontallyResizable; // @synthesize horizontallyResizable=_horizontallyResizable;
 @property(nonatomic) struct CGPoint pinningPoint; // @synthesize pinningPoint=_pinningPoint;
 @property(retain, nonatomic) NSView *pinnedDescendantView; // @synthesize pinnedDescendantView=_pinnedDescendantView;
 @property(retain, nonatomic) NSValue *pinnedKnob; // @synthesize pinnedKnob=_pinnedKnob;
+@property(retain, nonatomic) IBImageButton *closeButton; // @synthesize closeButton=_closeButton;
 @property(retain, nonatomic) NSView *wrapperView; // @synthesize wrapperView=_wrapperView;
+@property(readonly) IBSceneUpdateContentView *contentView; // @synthesize contentView=_contentView;
+@property(copy) NSString *title; // @synthesize title=_title;
 @property(retain) IBEditorCanvasFrameController *controller; // @synthesize controller=_controller;
 @property(copy) NSEvent *lastMouseDown; // @synthesize lastMouseDown=_lastMouseDown;
-@property(retain, nonatomic) IBImageButton *closeButton; // @synthesize closeButton;
-@property(nonatomic, getter=isVerticallyResizable) BOOL verticallyResizable; // @synthesize verticallyResizable;
-@property(nonatomic, getter=isHorizontallyResizable) BOOL horizontallyResizable; // @synthesize horizontallyResizable;
-@property(readonly) IBSceneUpdateContentView *contentView; // @synthesize contentView;
-@property(copy) NSString *title; // @synthesize title;
 - (void).cxx_destruct;
 - (id)knobButtonImageForState:(unsigned long long)arg1 knob:(CDUnion_31865a80)arg2;
 - (BOOL)imageButton:(id)arg1 interceptMouseDown:(id)arg2;
@@ -128,12 +129,16 @@
 - (void)close;
 - (void)willRemoveFromCanvas;
 - (void)didAddToCanvas;
+- (BOOL)suportsIndependentPositioning;
 - (BOOL)shouldDragFrameWithMouseDown:(id)arg1;
 - (void)closeFrameButtonClicked:(id)arg1;
 - (id)deviceBezel;
 @property(retain, nonatomic) NSView *documentView;
+@property(readonly, nonatomic) NSView *sceneSpaceView;
 - (void)invokeWithPinnedKnob:(CDUnion_31865a80)arg1 block:(CDUnknownBlockType)arg2;
 - (void)setAnchor:(struct CGPoint)arg1;
+- (id)contentPathForActivationDarkeningInOverlayView:(id)arg1;
+@property(nonatomic) BOOL showSceneMask;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 // Remaining properties

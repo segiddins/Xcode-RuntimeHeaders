@@ -6,9 +6,10 @@
 
 #import <IDEInterfaceBuilderKit/NSObject-Protocol.h>
 
-@class IBConnection, IBGroup, IBObjectContainer, NSCoder, NSMutableDictionary, NSObject, NSString;
+@class IBConnection, IBGroup, IBMemberID, IBObjectContainer, NSCoder, NSMutableDictionary, NSObject, NSString;
 
 @protocol IBObjectContainerDelegate <NSObject>
+- (NSString *)debugVersionDescriptionWithObjectContainer:(IBObjectContainer *)arg1;
 - (BOOL)objectContainer:(IBObjectContainer *)arg1 shouldPersistMemberConfigurationsForCoder:(NSCoder *)arg2;
 - (BOOL)objectContainer:(IBObjectContainer *)arg1 shouldPersistMetadataForKey:(NSString *)arg2 ofMember:(NSObject *)arg3;
 - (void)objectContainer:(IBObjectContainer *)arg1 didReorderObject:(NSObject *)arg2 inGroup:(IBGroup *)arg3;
@@ -27,6 +28,7 @@
 - (void)objectContainer:(IBObjectContainer *)arg1 willAddGroup:(IBGroup *)arg2;
 - (void)objectContainer:(IBObjectContainer *)arg1 didReparentObject:(NSObject *)arg2 toParent:(NSObject *)arg3 atIndex:(long long)arg4 context:(NSMutableDictionary *)arg5;
 - (void)objectContainer:(IBObjectContainer *)arg1 willReparentObject:(NSObject *)arg2 toParent:(NSObject *)arg3 context:(NSMutableDictionary *)arg4;
+- (void)objectContainer:(IBObjectContainer *)arg1 didRenameObject:(NSObject *)arg2 fromMemberID:(IBMemberID *)arg3 toMemberID:(IBMemberID *)arg4;
 - (void)objectContainer:(IBObjectContainer *)arg1 didMoveObject:(NSObject *)arg2;
 - (void)objectContainer:(IBObjectContainer *)arg1 willMoveObject:(NSObject *)arg2;
 - (void)objectContainer:(IBObjectContainer *)arg1 didAddObject:(NSObject *)arg2 phase:(unsigned long long)arg3;

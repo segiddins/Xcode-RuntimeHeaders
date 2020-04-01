@@ -18,6 +18,7 @@
 + (BOOL)supportsInvalidationPrevention;
 + (unsigned long long)assertionBehaviorForKeyValueObservationsAtEndOfEvent;
 + (unsigned long long)assertionBehaviorAfterEndOfEventForSelector:(SEL)arg1;
++ (BOOL)__classIsDVTInvalidation;
 - (void)DVTInvalidationMixIn_SoftAssertDidInvalidateDealloc;
 - (void)DVTInvalidationMixIn_HardAssertDidInvalidateDealloc;
 - (void)DVTInvalidationMixIn_DeZombifyDealloc;
@@ -26,6 +27,7 @@
 @property(retain) DVTStackBacktrace *creationBacktrace;
 @property(readonly) DVTStackBacktrace *invalidationBacktrace;
 @property(readonly, nonatomic, getter=isValid) BOOL valid;
+- (BOOL)__isDVTInvalidation;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

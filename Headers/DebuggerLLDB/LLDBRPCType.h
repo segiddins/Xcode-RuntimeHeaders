@@ -10,7 +10,6 @@
 
 @class NSString;
 
-__attribute__((visibility("hidden")))
 @interface LLDBRPCType : NSObject <DBGSBType>
 {
     struct SBType {
@@ -20,6 +19,7 @@ __attribute__((visibility("hidden")))
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (BOOL)IsReferenceType;
 - (const char *)GetDisplayTypeName;
 - (unsigned int)GetNumberOfDirectBaseClasses;
 - (const char *)GetName;

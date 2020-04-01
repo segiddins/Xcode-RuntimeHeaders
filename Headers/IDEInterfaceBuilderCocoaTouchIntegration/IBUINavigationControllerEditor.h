@@ -20,7 +20,6 @@
 - (void)setShowingViewControllerInsertionIndicator:(BOOL)arg1;
 - (struct CGRect)viewControllerInsertionIndidicatorRect;
 - (void)noteDescendant:(id)arg1 didChangeProperty:(id)arg2 fromValue:(id)arg3;
-- (id)bottomBarViewForEditorView:(id)arg1 withSimulatedBarMetrics:(id)arg2;
 - (id)displayedChildViewController;
 - (id)editedNavigationController;
 - (void)didOpen;

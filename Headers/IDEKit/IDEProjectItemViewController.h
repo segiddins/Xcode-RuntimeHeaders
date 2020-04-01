@@ -8,62 +8,62 @@
 
 #import <IDEKit/IDECapsuleViewController-Protocol.h>
 #import <IDEKit/IDECapsuleViewDelegate-Protocol.h>
-#import <IDEKit/IDEFlightCheckListViewDelegate-Protocol.h>
-#import <IDEKit/IDEProjectItemStatusViewDelegate-Protocol.h>
+#import <IDEKit/IDEProjectItemModelErrorDelegate-Protocol.h>
 #import <IDEKit/IDEProjectItemViewDelegate-Protocol.h>
+#import <IDEKit/IDESigningEditorCapsuleViewStateRestorationRecordProvider-Protocol.h>
 
-@class IDEProjectItemHeaderView, IDEProjectItemModel, NSDictionary, NSImage, NSMutableArray, NSString, NSView;
-@protocol IDEPortalInfoDelegate, IDEProjectItem;
+@class DVTBorderedView, DVTDelayedInvocation, IDEProjectItemModel, IDEProjectItemView, NSColor, NSDictionary, NSImage, NSMutableArray, NSString, NSView, _TtC13IDEFoundation46SigningEditorCapsuleViewStateRestorationRecord;
+@protocol IDEPortalInfoDelegate, IDEProjectItem, IDESigningEditorCapsuleViewStateRestorationRecordProviderDelegate;
 
-@interface IDEProjectItemViewController : IDEViewController <IDEProjectItemViewDelegate, IDEFlightCheckListViewDelegate, IDEProjectItemStatusViewDelegate, IDECapsuleViewController, IDECapsuleViewDelegate>
+@interface IDEProjectItemViewController : IDEViewController <IDEProjectItemViewDelegate, IDECapsuleViewController, IDECapsuleViewDelegate, IDEProjectItemModelErrorDelegate, IDESigningEditorCapsuleViewStateRestorationRecordProvider>
 {
     IDEProjectItemModel *_model;
     BOOL _programmaticallyUpdatingEnabled;
     NSMutableArray *_observationTokens;
-    IDEProjectItemHeaderView *_headerView;
-    NSImage *_image;
+    DVTBorderedView *_separatorView;
+    DVTDelayedInvocation *_delayedEnabledToggle;
+    BOOL _disclosed;
+    IDEProjectItemView *_projectItemView;
+    id <IDESigningEditorCapsuleViewStateRestorationRecordProviderDelegate> _restorationRecordProviderDelegate;
     id <IDEPortalInfoDelegate> _portalInfoDelegate;
     NSView *_editorView;
     NSDictionary *_cachedUserEnteredInfo;
+    NSImage *_icon;
 }
 
-+ (id)keyPathsForValuesAffectingEnabled;
-+ (void)configureStateSavingObjectPersistenceByName:(id)arg1;
++ (id)keyPathsForValuesAffectingIsEnabled;
+@property(retain, nonatomic) NSImage *icon; // @synthesize icon=_icon;
+@property(nonatomic, getter=isDisclosed) BOOL disclosed; // @synthesize disclosed=_disclosed;
 @property(copy, nonatomic) NSDictionary *cachedUserEnteredInfo; // @synthesize cachedUserEnteredInfo=_cachedUserEnteredInfo;
 @property(retain, nonatomic) NSView *editorView; // @synthesize editorView=_editorView;
 @property(readonly, nonatomic) id <IDEPortalInfoDelegate> portalInfoDelegate; // @synthesize portalInfoDelegate=_portalInfoDelegate;
+@property(nonatomic) __weak id <IDESigningEditorCapsuleViewStateRestorationRecordProviderDelegate> restorationRecordProviderDelegate; // @synthesize restorationRecordProviderDelegate=_restorationRecordProviderDelegate;
 @property(retain, nonatomic) IDEProjectItemModel *model; // @synthesize model=_model;
 - (void).cxx_destruct;
-- (void)resolveIssuesForFlightCheckListView:(id)arg1;
-- (void)resolveIssuesForProjectItemStatusView:(id)arg1;
-- (void)capsuleView:(id)arg1 wasDisclosed:(BOOL)arg2;
+- (void)projectItemModel:(id)arg1 didReceiveError:(id)arg2;
 @property(readonly) BOOL canSelect;
 @property(readonly) BOOL disclosedByDefault;
-- (id)headerContentViewForCapsuleView:(id)arg1;
-- (id)capsuleViewBackgroundColor:(id)arg1;
 @property(readonly, copy) NSString *titleForDisplay;
-- (void)_presentTeamPickerIfNecessaryAndPerformBlock:(CDUnknownBlockType)arg1;
+@property(readonly) BOOL wantsDisclosureButtonHidden;
+- (void)capsuleViewDidClickRemoveButton:(id)arg1;
+- (BOOL)capsuleViewCanBeRemoved:(id)arg1;
+@property(readonly, nonatomic) _TtC13IDEFoundation46SigningEditorCapsuleViewStateRestorationRecord *restorationRecord;
+- (void)_presentTeamPickerIfNecessaryWithReason:(id)arg1 andPerformBlock:(CDUnknownBlockType)arg2;
 - (void)_resolveFlightChecks;
-- (id)_headerView;
-@property(nonatomic, getter=isDisclosed) BOOL disclosed;
-@property(nonatomic, getter=isEnabled) BOOL enabled;
-- (void)commitStateToDictionary:(id)arg1;
-- (void)revertStateWithDictionary:(id)arg1;
+@property(nonatomic) BOOL isEnabled;
 - (double)preferredWidthForProjectItemContentView:(id)arg1;
-@property(readonly, nonatomic) NSImage *image; // @synthesize image=_image;
 @property(readonly, nonatomic) id <IDEProjectItem> item;
-- (id)projectItemView;
+@property(readonly, nonatomic) IDEProjectItemView *projectItemView; // @synthesize projectItemView=_projectItemView;
 - (void)primitiveInvalidate;
 - (void)enabledChanged;
-- (void)onOffSwitchDidChange;
-- (void)updateEnabledAndContentView:(BOOL)arg1;
 - (void)updateContentView;
-- (id)projectItemStatusViewWithMessage:(id)arg1 failedFlightChecks:(id)arg2;
 - (void)loadView;
+@property(readonly, copy) NSString *description;
 - (id)initUsingDefaultNib;
 - (id)initWithEditorItemModel:(id)arg1 portalInfoDelegate:(id)arg2;
 
 // Remaining properties
+@property(retain) NSColor *backgroundColor;
 @property BOOL canAddItems;
 @property(readonly) BOOL canDrag;
 @property(readonly) BOOL canRemove;
@@ -71,10 +71,8 @@
 @property(readonly) BOOL canRename;
 @property(readonly) BOOL canUndisclose;
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly, copy) NSString *footerLabel;
 @property(readonly) unsigned long long hash;
-@property(readonly) NSImage *icon;
 @property(readonly) Class superclass;
 
 @end

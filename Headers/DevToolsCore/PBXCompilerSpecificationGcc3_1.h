@@ -6,18 +6,19 @@
 
 #import <DevToolsCore/PBXCompilerSpecificationGcc2_95_2.h>
 
-@class XCStringList;
+@class XCFnmatchPatternSet;
 
 @interface PBXCompilerSpecificationGcc3_1 : PBXCompilerSpecificationGcc2_95_2
 {
-    XCStringList *_flagsToElideFromPrecompHash;
+    XCFnmatchPatternSet *_flagsToElideFromPrecompHash;
 }
 
-- (id)precompileHeaderFileAtPath:(id)arg1 forSourceFileOfType:(id)arg2 withExtraFlags:(id)arg3 toPrecompPath:(id)arg4 inTargetBuildContext:(id)arg5;
+- (void).cxx_destruct;
+- (id)precompileHeaderFileAtPath:(id)arg1 forSourceFileOfType:(id)arg2 withExtraFlags:(id)arg3 toPrecompPath:(id)arg4 withMacroExpansionScope:(id)arg5;
 - (void)removeFlagsThatDoNotAffectPrecompValidityFromMutableArray:(id)arg1;
-- (id)flagsForIncludingPrecompiledPrefixHeaderAtPath:(id)arg1 inTargetBuildContext:(id)arg2;
-- (id)precompFileNameForHeaderPath:(id)arg1 inTargetBuildContext:(id)arg2;
-- (void)dealloc;
+- (id)flagsForIncludingPrecompiledPrefixHeaderAtPath:(id)arg1 withMacroExpansionScope:(id)arg2;
+- (id)precompFileNameForHeaderPath:(id)arg1 withMacroExpansionScope:(id)arg2;
+- (id)initWithPropertyListDictionary:(id)arg1 inDomain:(id)arg2;
 
 @end
 

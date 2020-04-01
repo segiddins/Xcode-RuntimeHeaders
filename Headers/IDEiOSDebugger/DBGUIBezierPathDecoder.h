@@ -6,9 +6,11 @@
 
 #import <objc/NSObject.h>
 
+#import <IDEiOSDebugger/NSSecureCoding-Protocol.h>
+
 @class NSArray, NSData;
 
-@interface DBGUIBezierPathDecoder : NSObject
+@interface DBGUIBezierPathDecoder : NSObject <NSSecureCoding>
 {
     BOOL _usesEvenOddFillRule;
     int _lineCapStyle;
@@ -21,6 +23,7 @@
     double _lineDashPhase;
 }
 
++ (BOOL)supportsSecureCoding;
 @property double lineDashPhase; // @synthesize lineDashPhase=_lineDashPhase;
 @property(retain) NSArray *lineDashPattern; // @synthesize lineDashPattern=_lineDashPattern;
 @property BOOL usesEvenOddFillRule; // @synthesize usesEvenOddFillRule=_usesEvenOddFillRule;
@@ -31,6 +34,7 @@
 @property double lineWidth; // @synthesize lineWidth=_lineWidth;
 @property(retain) NSData *cgPathData; // @synthesize cgPathData=_cgPathData;
 - (void).cxx_destruct;
+- (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 
 @end

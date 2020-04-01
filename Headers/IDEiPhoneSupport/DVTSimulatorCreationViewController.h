@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <DVTKit/DVTViewController.h>
+#import <DVTViewControllerKit/DVTViewController.h>
 
 @class NSArray, NSPopUpButton, NSString, NSTextField, SimDeviceType, SimRuntime;
 
@@ -12,7 +12,6 @@
 {
     NSString *_supportedProductFamily;
     NSArray *_deviceTypes;
-    NSArray *_supportedRuntimes;
     BOOL _wantsPairedSimulator;
     NSString *_simulatorName;
     SimDeviceType *_selectedDeviceType;
@@ -35,9 +34,10 @@
 @property(retain) SimDeviceType *selectedDeviceType; // @synthesize selectedDeviceType=_selectedDeviceType;
 @property(retain) NSString *simulatorName; // @synthesize simulatorName=_simulatorName;
 - (void).cxx_destruct;
-- (void)_determineSupportedSimRuntimes;
 - (void)_handleSelectedRuntime:(id)arg1;
 - (void)_loadRuntimesForDeviceType:(id)arg1;
+- (id)_firstDeviceTypeWithASupportedRuntime:(id)arg1;
+- (id)_runtimesForDeviceType:(id)arg1;
 - (void)_loadDeviceTypes;
 @property(readonly) NSString *pairedSimulatorCheckboxTitle;
 @property(readonly) BOOL configuredSimulatorRequiresPair;

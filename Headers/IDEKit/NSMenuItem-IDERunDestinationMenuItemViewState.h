@@ -17,5 +17,6 @@
 - (id)dvt_attributedTitle;
 - (id)dvt_stateStringAttributes;
 - (id)ide_currentStateTextColor;
+- (void)markAsMinimized;
 @end
 

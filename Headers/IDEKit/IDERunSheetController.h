@@ -6,12 +6,15 @@
 
 #import <IDEKit/IDEViewController.h>
 
+#import <IDEKit/IDEWorkspaceDocumentProvider-Protocol.h>
+#import <IDEKit/NSTouchBarDelegate-Protocol.h>
+#import <IDEKit/NSTouchBarProvider-Protocol.h>
 #import <IDEKit/NSWindowDelegate-Protocol.h>
 
-@class DVTBorderedView, DVTObservingToken, DVTReplacementView, IDEExecutionEnvironment, IDENavigableItemAsyncFilteringCoordinator, IDENavigatorDataCell, IDENavigatorOutlineView, IDEScheme, IDESchemeAction, IDESchemeCommand, IDESchemePathControlViewController, IDEWorkspace, NSArray, NSArrayController, NSButton, NSImageView, NSString, NSTextField, NSView, NSWindow;
+@class DVTBorderedView, DVTObservingToken, DVTReplacementView, IDEExecutionEnvironment, IDENavigableItemAsyncFilteringCoordinator, IDENavigatorDataCell, IDENavigatorOutlineView, IDEScheme, IDESchemeAction, IDESchemeCommand, IDESchemePathControlViewController, IDEWorkspaceDocument, NSArray, NSArrayController, NSButton, NSImageView, NSString, NSTextField, NSTouchBar, NSView, NSWindow;
 @protocol IDEClientTrackingToken;
 
-@interface IDERunSheetController : IDEViewController <NSWindowDelegate>
+@interface IDERunSheetController : IDEViewController <NSTouchBarProvider, NSTouchBarDelegate, IDEWorkspaceDocumentProvider, NSWindowDelegate>
 {
     NSWindow *_sheetWindow;
     DVTBorderedView *_masterBorderedView;
@@ -27,17 +30,17 @@
     IDENavigatorDataCell *_phaseCell;
     IDENavigatorDataCell *_subphaseCell;
     NSWindow *_workspaceWindow;
-    IDEWorkspace *_workspace;
+    IDEWorkspaceDocument *_workspaceDocument;
     IDENavigableItemAsyncFilteringCoordinator *_navigableItemCoordinator;
     IDESchemePathControlViewController *_pathControlViewController;
     DVTObservingToken *_runContextObservingToken;
     DVTObservingToken *_runContextClosingObservingToken;
     DVTObservingToken *_buildPhaseSubtitleObservingToken;
-    DVTObservingToken *_testPhaseSubtitleObservingToken;
     DVTObservingToken *_launchPhaseSubtitleObservingToken;
-    DVTObservingToken *_archivePhaseSubtitleObservingToken;
+    DVTObservingToken *_testPhaseSubtitleObservingToken;
     DVTObservingToken *_profilePhaseSubtitleObservingToken;
     DVTObservingToken *_analyzePhaseSubtitleObservingToken;
+    DVTObservingToken *_archivePhaseSubtitleObservingToken;
     DVTObservingToken *_installPhaseSubtitleObservingToken;
     id <IDEClientTrackingToken> _clientTrackingToken;
     BOOL _okButtonReflectsSchemeCommand;
@@ -49,6 +52,9 @@
     IDESchemeAction *_selectedRunPhase;
     BOOL _didSheetEnd;
     BOOL _runningOnManageSheet;
+    DVTObservingToken *_runSheetSelectionObserver;
+    DVTObservingToken *_runSheetContentObserver;
+    DVTObservingToken *_buttonTitleObserver;
     NSButton *_goButton;
     NSButton *_doneButton;
     DVTReplacementView *_detailReplacementView;
@@ -67,8 +73,12 @@
 @property BOOL isDetailViewContentBound; // @synthesize isDetailViewContentBound=_isDetailViewContentBound;
 @property Class viewControllerClassForSelectedRunPhase; // @synthesize viewControllerClassForSelectedRunPhase=_viewControllerClassForSelectedRunPhase;
 @property(retain) NSWindow *workspaceWindow; // @synthesize workspaceWindow=_workspaceWindow;
+@property(retain) DVTObservingToken *buttonTitleObserver; // @synthesize buttonTitleObserver=_buttonTitleObserver;
+@property(retain) DVTObservingToken *runSheetContentObserver; // @synthesize runSheetContentObserver=_runSheetContentObserver;
+@property(retain) DVTObservingToken *runSheetSelectionObserver; // @synthesize runSheetSelectionObserver=_runSheetSelectionObserver;
 @property(copy) NSString *selectedSchemeCommandTitle; // @synthesize selectedSchemeCommandTitle=_selectedSchemeCommandTitle;
 @property(retain) IDESchemeCommand *selectedSchemeCommand; // @synthesize selectedSchemeCommand=_selectedSchemeCommand;
+@property(retain) IDEWorkspaceDocument *workspaceDocument; // @synthesize workspaceDocument=_workspaceDocument;
 - (void).cxx_destruct;
 - (void)windowDidResize:(id)arg1;
 - (void)_updateSelectedSchemeCommand;
@@ -95,7 +105,6 @@
 - (void)cancelOperation:(id)arg1;
 @property(readonly) IDEScheme *runContext;
 @property(readonly) IDEExecutionEnvironment *executionEnvironment;
-@property(retain) IDEWorkspace *workspace;
 - (void)primitiveInvalidate;
 - (void)sheetDidEnd:(id)arg1 returnCode:(long long)arg2 contextInfo:(void *)arg3;
 - (void)_beginSheetForWindow:(id)arg1 workspaceWindow:(id)arg2 editingIdentity:(BOOL)arg3 forSchemeCommand:(id)arg4 okButtonReflectsSchemeCommand:(BOOL)arg5 showDoneButton:(BOOL)arg6 completionHandler:(CDUnknownBlockType)arg7;
@@ -104,12 +113,21 @@
 - (void)_setUpDetailView;
 - (void)_setUpMainUI;
 - (void)_updatePhaseNavigables;
+- (void)_chooserSelectedAction:(id)arg1;
+- (id)_chooserViewsForViewController:(id)arg1;
+- (id)_chooserButtonGroupItem;
+- (id)_goButtonItem;
+- (id)_doneButtonItem;
+- (id)_replicateButton:(id)arg1;
+- (id)touchBar:(id)arg1 makeItemForIdentifier:(id)arg2;
+- (id)makeTouchBar;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
+@property(readonly) NSTouchBar *touchBar;
 
 @end
 

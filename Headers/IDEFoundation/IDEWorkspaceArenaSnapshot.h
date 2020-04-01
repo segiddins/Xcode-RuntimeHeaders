@@ -14,6 +14,7 @@
     DVTFilePath *_buildProductsFolderPath;
     DVTFilePath *_buildIntermediatesFolderPath;
     DVTFilePath *_precompiledHeadersFolderPath;
+    DVTFilePath *_clonedSourcePackagesFolderPath;
     DVTFilePath *_indexFolderPath;
     DVTFilePath *_indexDataStoreFolderPath;
     DVTFilePath *_indexPrecompiledHeadersFolderPath;
@@ -30,6 +31,7 @@
 @property(readonly) BOOL indexEnableDataStore; // @synthesize indexEnableDataStore=_indexEnableDataStore;
 @property(readonly) DVTFilePath *indexDataStoreFolderPath; // @synthesize indexDataStoreFolderPath=_indexDataStoreFolderPath;
 @property(readonly) DVTFilePath *indexFolderPath; // @synthesize indexFolderPath=_indexFolderPath;
+@property(readonly) DVTFilePath *clonedSourcePackagesFolderPath; // @synthesize clonedSourcePackagesFolderPath=_clonedSourcePackagesFolderPath;
 @property(readonly) DVTFilePath *precompiledHeadersFolderPath; // @synthesize precompiledHeadersFolderPath=_precompiledHeadersFolderPath;
 @property(readonly) DVTFilePath *buildIntermediatesFolderPath; // @synthesize buildIntermediatesFolderPath=_buildIntermediatesFolderPath;
 @property(readonly) DVTFilePath *buildProductsFolderPath; // @synthesize buildProductsFolderPath=_buildProductsFolderPath;

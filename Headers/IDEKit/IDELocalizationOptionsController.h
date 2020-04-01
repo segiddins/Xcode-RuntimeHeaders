@@ -6,35 +6,30 @@
 
 #import <IDEKit/IDELaunchActionOptionViewController.h>
 
-@class NSMenu, NSPopUpButton;
+#import <IDEKit/_TtP6IDEKit40IDELocalizationApplicationRegionDelegate_-Protocol.h>
+#import <IDEKit/_TtP6IDEKit42IDELocalizationApplicationLanguageDelegate_-Protocol.h>
 
-@interface IDELocalizationOptionsController : IDELaunchActionOptionViewController
+@class NSView, _TtC6IDEKit42IDELocalizationApplicationRegionController, _TtC6IDEKit44IDELocalizationApplicationLanguageController;
+
+@interface IDELocalizationOptionsController : IDELaunchActionOptionViewController <_TtP6IDEKit42IDELocalizationApplicationLanguageDelegate_, _TtP6IDEKit40IDELocalizationApplicationRegionDelegate_>
 {
-    NSPopUpButton *_localePopup;
-    NSMenu *_localeMenu;
-    NSPopUpButton *_regionPopup;
-    NSMenu *_regionMenu;
+    _TtC6IDEKit44IDELocalizationApplicationLanguageController *_applicationLanguageController;
+    _TtC6IDEKit42IDELocalizationApplicationRegionController *_applicationRegionController;
+    NSView *_applicationLanguageContainer;
+    NSView *_applicationRegionContainer;
 }
 
-+ (id)qualifiedDisplayNameForComponents:(id)arg1;
-+ (BOOL)isInviolableLocaleIdentifier:(id)arg1;
-+ (id)regionDisplayNameForInviolableLocaleIdentifier:(id)arg1 custom:(BOOL)arg2;
-+ (id)countryNameForLocaleIdentifier:(id)arg1;
 + (BOOL)availableForScheme:(id)arg1;
+@property __weak NSView *applicationRegionContainer; // @synthesize applicationRegionContainer=_applicationRegionContainer;
+@property __weak NSView *applicationLanguageContainer; // @synthesize applicationLanguageContainer=_applicationLanguageContainer;
+@property(readonly) _TtC6IDEKit42IDELocalizationApplicationRegionController *applicationRegionController; // @synthesize applicationRegionController=_applicationRegionController;
+@property(readonly) _TtC6IDEKit44IDELocalizationApplicationLanguageController *applicationLanguageController; // @synthesize applicationLanguageController=_applicationLanguageController;
 - (void).cxx_destruct;
-- (void)menuNeedsUpdate:(id)arg1;
-- (void)_updateMenu:(id)arg1;
-- (void)_updateRecentsInRegionMenu;
-- (void)_addRecentRegion:(id)arg1;
-- (id)_recentRegions;
-- (void)_buildRegionMenu;
-- (void)_addBuiltInRegionsToRegionMenu;
-- (void)_buildLocaleMenu;
-- (BOOL)menuEnableState;
-- (id)_localesInWorkspace:(id)arg1;
-- (void)selectRegionItem:(id)arg1;
-- (void)selectLocaleItem:(id)arg1;
+- (void)primitiveInvalidate;
+- (void)regionPopUpHasChanged:(id)arg1;
+- (void)languagePopUpHasChanged:(id)arg1;
 - (void)viewDidInstall;
+- (void)loadView;
 
 @end
 

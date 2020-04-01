@@ -6,22 +6,37 @@
 
 #import <IBFoundation/IBICSlotComponent.h>
 
-@interface IBICLanguageDirection : IBICSlotComponent
+#import <IBFoundation/IBICCoreUISlotComponent-Protocol.h>
+
+@class NSString;
+
+@interface IBICLanguageDirection : IBICSlotComponent <IBICCoreUISlotComponent>
 {
     long long _coreUIValue;
 }
 
-+ (BOOL)slotsMayExistWithoutNullSlotComponent;
++ (id)rightToLeftLanguageDirection;
++ (id)leftToRightLanguageDirection;
 + (id)itemWithIdentifier:(id)arg1 title:(id)arg2 coreUIValue:(long long)arg3 displayOrder:(double)arg4;
++ (id)displayName;
 + (id)contentsJSONKey;
++ (id)unspecifiedValuePlaceholder;
 + (void)setComponentID:(long long)arg1;
 + (long long)componentID;
 @property(readonly, nonatomic) long long coreUIValue; // @synthesize coreUIValue=_coreUIValue;
+- (void)encodeWithBinaryArchiver:(id)arg1;
+- (id)initWithBinaryUnarchiver:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isEqualToSlotComponentCounterpartWithKnownEqualClass:(id)arg1;
 - (id)initWithIdentifier:(id)arg1 title:(id)arg2 coreUIValue:(long long)arg3 displayOrder:(double)arg4;
 - (long long)componentID;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

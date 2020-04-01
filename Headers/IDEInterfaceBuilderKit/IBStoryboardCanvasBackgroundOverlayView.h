@@ -31,6 +31,11 @@
 - (struct CGRect)frameForCanvasLinkPath:(id)arg1;
 - (id)canvasLinkPathsIntersectedByRect:(struct CGRect)arg1;
 - (void)smartMagnifyWithEvent:(id)arg1;
+- (void)rightMouseUp:(id)arg1;
+- (void)mouseUp:(id)arg1;
+- (void)rightMouseDragged:(id)arg1;
+- (void)mouseDragged:(id)arg1;
+- (void)rightMouseDown:(id)arg1;
 - (void)mouseDown:(id)arg1;
 - (id)hitTest:(struct CGPoint)arg1;
 - (id)canvasLinkPathAtPoint:(struct CGPoint)arg1;

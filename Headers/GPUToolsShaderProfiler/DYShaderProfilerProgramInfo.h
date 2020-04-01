@@ -6,12 +6,12 @@
 
 #import <objc/NSObject.h>
 
-#import <GPUToolsShaderProfiler/NSCoding-Protocol.h>
 #import <GPUToolsShaderProfiler/NSCopying-Protocol.h>
+#import <GPUToolsShaderProfiler/NSSecureCoding-Protocol.h>
 
 @class DYShaderProfilerShaderInfo, NSMutableArray;
 
-@interface DYShaderProfilerProgramInfo : NSObject <NSCoding, NSCopying>
+@interface DYShaderProfilerProgramInfo : NSObject <NSSecureCoding, NSCopying>
 {
     struct DYShaderProfilerTiming _timing;
     BOOL _valid;
@@ -33,6 +33,7 @@
     unsigned long long _computeProgramId;
 }
 
++ (BOOL)supportsSecureCoding;
 @property(nonatomic) unsigned long long computeProgramId; // @synthesize computeProgramId=_computeProgramId;
 @property(nonatomic) unsigned long long fragmentProgramId; // @synthesize fragmentProgramId=_fragmentProgramId;
 @property(nonatomic) unsigned long long vertexProgramId; // @synthesize vertexProgramId=_vertexProgramId;

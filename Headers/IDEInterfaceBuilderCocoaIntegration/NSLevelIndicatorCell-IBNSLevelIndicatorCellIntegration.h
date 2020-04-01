@@ -6,8 +6,16 @@
 
 #import <AppKit/NSLevelIndicatorCell.h>
 
-@interface NSLevelIndicatorCell (IBNSLevelIndicatorCellIntegration)
-- (long long)ibPreferredResizeDirection;
+#import <IDEInterfaceBuilderCocoaIntegration/IBDocumentArchiving-Protocol.h>
+
+@class NSString;
+
+@interface NSLevelIndicatorCell (IBNSLevelIndicatorCellIntegration) <IBDocumentArchiving>
++ (id)keyPathsForValuesAffectingIbInspectedImage;
++ (id)keyPathsForValuesAffectingIbStyleIsRating;
++ (id)keyPathsForValuesAffectingIbStyleIsCapacity;
++ (id)keyPathsForValuesAffectingIbInspectedLevelIndicatorStyle;
+- (long long)ibPreferredResizeDirectionMask;
 - (Class)ibPreferredControlClass;
 - (unsigned long long)ibPreferredMatrixMode;
 - (id)ibAcceptContentsOfPasteboard:(id)arg1 inDocument:(id)arg2 insertionContext:(id)arg3;
@@ -16,8 +24,21 @@
 - (id)ibOrderedSnapshotAttributesKeyPaths;
 - (void)setIbInspectedImage:(id)arg1;
 - (id)ibInspectedImage;
+- (BOOL)ibShouldArchiveImage;
+- (BOOL)ibStyleIsRating;
+- (BOOL)ibStyleIsCapacity;
 - (void)setIbInspectedLevelIndicatorStyle:(unsigned long long)arg1;
 - (unsigned long long)ibInspectedLevelIndicatorStyle;
 @property unsigned long long ibArchivedTickMarkPosition;
+- (id)ibLocalAttributeKeyPaths;
+- (id)ibInspectedControl;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @end
 

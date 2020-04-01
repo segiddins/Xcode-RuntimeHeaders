@@ -6,12 +6,26 @@
 
 #import <AppKit/NSOutlineView.h>
 
-@interface NSOutlineView (IBNSOutlineViewIntegration)
+#import <IDEInterfaceBuilderCocoaIntegration/IBDocumentArchiving-Protocol.h>
+
+@class NSString;
+
+@interface NSOutlineView (IBNSOutlineViewIntegration) <IBDocumentArchiving>
 + (id)keyPathsForValuesAffectingIbInspectedUserInterfaceLayoutDirection;
 - (void)setIbInspectedUserInterfaceLayoutDirection:(long long)arg1;
 - (long long)ibInspectedUserInterfaceLayoutDirection;
 - (void)setIbInspectedNumberOfTableColumns:(long long)arg1;
 - (void)ibRemoveChildren:(id)arg1;
 - (BOOL)ibCanRemoveChildren:(id)arg1;
+- (id)ibLocalAttributeKeyPaths;
+- (id)ibLocalChildToOneRelationshipsKeyPaths;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @end
 

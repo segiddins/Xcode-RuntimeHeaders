@@ -6,23 +6,23 @@
 
 #import <objc/NSObject.h>
 
-@class NSData, NSDictionary, NSMutableArray, NSMutableDictionary;
+@class NSArray, NSDictionary, NSMutableArray, NSMutableDictionary;
 @protocol IBObjectRepresentationTranslator;
 
 @interface IBBinaryUnarchiver : NSObject
 {
-    NSMutableDictionary *overrideClassesByClassName;
-    NSMutableArray *objectsIndexedByOID;
-    unsigned long long currentDataBufferIndex;
-    long long archiveVersion;
-    NSData *data;
+    NSMutableDictionary *_overrideClassesByClassName;
+    NSMutableArray *_objectsIndexedByOID;
+    unsigned long long _currentDataBufferIndex;
+    NSArray *_dataArray;
+    long long _nextDataIndex;
     struct {
         unsigned long long length;
         union {
             char *bytes;
             char *characters;
         } ;
-    } buffer;
+    } _buffer;
     NSMutableArray *_objectTranslationDelegateStack;
     NSDictionary *_context;
 }
@@ -30,10 +30,8 @@
 + (Class)classForClassName:(id)arg1;
 + (void)setClass:(Class)arg1 forClassName:(id)arg2;
 + (id)_globalClassByClassNameMap;
-+ (id)unarchiveObjectWithData:(id)arg1 context:(id)arg2 minArchiveVersion:(long long)arg3;
-+ (id)unarchiveObjectWithData:(id)arg1 context:(id)arg2;
++ (id)unarchiveObjectWithDataArray:(id)arg1 context:(id)arg2;
 @property(readonly, nonatomic) NSDictionary *context; // @synthesize context=_context;
-@property(readonly, nonatomic) long long archiveVersion; // @synthesize archiveVersion;
 - (void).cxx_destruct;
 - (Class)classForClassName:(id)arg1;
 - (void)setClass:(Class)arg1 forClassName:(id)arg2;
@@ -54,13 +52,14 @@
 - (BOOL)decodeBool;
 - (unsigned long long)decodeUInt64;
 - (long long)decodeInt64;
+- (id)decodeData;
 - (void)decodeBytes:(CDUnknownBlockType)arg1;
-- (const char *)internalOnlyDecodeBytesWithLength:(unsigned long long *)arg1;
+- (const char *)internalOnlyDecodeBytesReturningLength:(unsigned long long *)arg1;
 - (BOOL)nextStructureTypeIsObject;
 - (void)popObjectTranslationDelegate:(id)arg1;
 - (void)pushObjectTranslationDelegate:(id)arg1;
 @property(readonly, nonatomic) __weak NSObject<IBObjectRepresentationTranslator> *currentObjectTranslationDelegate;
-- (id)initForReadingWithData:(id)arg1 context:(id)arg2;
+- (id)initForReadingWithDataArray:(id)arg1 context:(id)arg2;
 
 @end
 

@@ -6,25 +6,29 @@
 
 #import <objc/NSObject.h>
 
+#import <DebuggerFoundation/IBCollection-Protocol.h>
 #import <DebuggerFoundation/NSCopying-Protocol.h>
 #import <DebuggerFoundation/NSFastEnumeration-Protocol.h>
 
-@class DBGViewWindow, NSArray;
+@class DBGViewWindow, NSArray, NSString;
 
-@interface DBGLayoutConstraintSet : NSObject <NSFastEnumeration, NSCopying>
+@interface DBGLayoutConstraintSet : NSObject <IBCollection, NSFastEnumeration, NSCopying>
 {
     DBGViewWindow *_parentWindow;
     NSArray *_constraints;
 }
 
 + (id)_createConstraintsFromPlistArray:(id)arg1 parentWindow:(id)arg2;
++ (Class)ib_mutableClass;
++ (id)ib_emptyCollection;
++ (id)ib_collectionWithObject:(id)arg1;
 @property(readonly) NSArray *constraints; // @synthesize constraints=_constraints;
 @property(readonly) __weak DBGViewWindow *parentWindow; // @synthesize parentWindow=_parentWindow;
 - (void).cxx_destruct;
-- (id)description;
+@property(readonly, copy) NSString *description;
 - (BOOL)isEqualToSet:(id)arg1;
 - (BOOL)containsConstraint:(id)arg1;
-- (id)constraintSetWithContraintSet:(id)arg1;
+- (id)constraintSetWithConstraintSet:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned long long)countByEnumeratingWithState:(CDStruct_70511ce9 *)arg1 objects:(id *)arg2 count:(unsigned long long)arg3;
 - (id)constraintModelWithAddress:(id)arg1;
@@ -32,7 +36,54 @@
 - (id)constraintsOrderedByComparator:(CDUnknownBlockType)arg1;
 - (id)constraintsPassingTest:(CDUnknownBlockType)arg1;
 - (id)initWithPlistArray:(id)arg1 parentWindow:(id)arg2;
-- (id)_initWithConstraintModels:(id)arg1 parentWindow:(id)arg2;
+- (id)initWithConstraintModels:(id)arg1 parentWindow:(id)arg2;
+- (id)objectEnumerator;
+- (id)mutableCopy;
+- (id)ib_uniqueObjects;
+- (id)ib_setByMappingBlock:(CDUnknownBlockType)arg1;
+- (void)ib_removeObjectsInReceiverFromSet:(id)arg1;
+- (void)ib_removeObjectsInReceiverFromOrderedSet:(id)arg1;
+- (void)ib_removeObjectsInReceiverFromArray:(id)arg1;
+- (id)ib_onlyObjectPassingTest:(CDUnknownBlockType)arg1;
+- (id)ib_onlyObject;
+- (id)ib_objectsOfClass:(Class)arg1;
+- (id)ib_objectsConformingToProtocol:(id)arg1;
+- (BOOL)ib_objectsAreStrictlyContainedBySet:(id)arg1;
+- (BOOL)ib_objectsAreContainedBySet:(id)arg1;
+- (long long)ib_numberOfObjectsPassingTest:(CDUnknownBlockType)arg1;
+- (Class)ib_mutableClass;
+- (id)ib_minimumObjectUsingComparator:(CDUnknownBlockType)arg1;
+- (id)ib_maximumObjectUsingComparator:(CDUnknownBlockType)arg1;
+- (void)ib_getObjects:(id *)arg1;
+- (id)ib_firstObjectPassingTest:(CDUnknownBlockType)arg1;
+- (void)ib_enumerateObjectsUsingMutatingBlock:(CDUnknownBlockType)arg1;
+- (void)ib_enumerateCopyOfObjectsUsingBlock:(CDUnknownBlockType)arg1;
+- (id)ib_collectionByRemovingObjectsInSet:(id)arg1;
+- (id)ib_collectionByRemovingObjectsFromCollection:(id)arg1;
+- (id)ib_collectionByRemovingObject:(id)arg1;
+- (id)ib_collectionByRemovingNulls;
+- (id)ib_collectionByMappingBlock:(CDUnknownBlockType)arg1;
+- (id)ib_collectionByMappingAndFilteringWithBlock:(CDUnknownBlockType)arg1;
+- (id)ib_collectionByFilteringUsingBlock:(CDUnknownBlockType)arg1;
+- (id)ib_collectionByAddingObjectsFromCollection:(id)arg1;
+- (id)ib_collectionByAddingObject:(id)arg1;
+- (id)ib_arrayBySortingUsingSelector:(SEL)arg1 onKeyPath:(id)arg2;
+- (id)ib_arrayBySortingUsingSelector:(SEL)arg1;
+- (id)ib_arrayBySortingUsingComparator:(CDUnknownBlockType)arg1;
+- (id)ib_arrayByMappingBlock:(CDUnknownBlockType)arg1;
+- (BOOL)ib_anyObjectsPassTest:(CDUnknownBlockType)arg1;
+- (BOOL)ib_allObjectsPassTest:(CDUnknownBlockType)arg1;
+- (unsigned long long)count;
+- (id)copy;
+- (BOOL)containsObject:(id)arg1;
+- (id)anyObject;
+- (id)allObjects;
+- (id)mutableCopyWithZone:(struct _NSZone *)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

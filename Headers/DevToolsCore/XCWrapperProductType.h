@@ -10,7 +10,7 @@
 {
 }
 
-- (void)computeDependenciesInTargetBuildContext:(id)arg1;
+- (void)computeDependenciesWithMacroExpansionScope:(id)arg1;
 
 @end
 

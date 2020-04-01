@@ -15,7 +15,7 @@
     CDUnknownBlockType __validatorBlock;
 }
 
-+ (id)fingerprintOfCertificate:(struct OpaqueSecCertificateRef *)arg1;
++ (id)fingerprintOfCertificate:(struct __SecCertificate *)arg1;
 + (id)fingerprintOfServer:(id)arg1;
 + (id)fingerprintOfTrust:(struct __SecTrust *)arg1;
 + (id)protectionSpaceOfServer:(id)arg1;

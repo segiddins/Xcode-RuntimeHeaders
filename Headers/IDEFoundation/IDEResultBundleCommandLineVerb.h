@@ -16,8 +16,8 @@
 + (id)arrayOfDictionaryRepresentationsForIssueSummaries:(id)arg1;
 + (id)simpleSummaryForSchemeActionsInvocationRecord:(id)arg1;
 + (void)emitJSONForPropertyList:(id)arg1 toFileHandle:(id)arg2;
-+ (id)stringForSimpleOperationStatus:(int)arg1;
-+ (id)stringForSchemeActionInvocationRecordStatus:(int)arg1;
++ (id)stringForSimpleOperationStatus:(long long)arg1;
++ (id)stringForSchemeActionInvocationRecordStatus:(long long)arg1;
 
 @end
 

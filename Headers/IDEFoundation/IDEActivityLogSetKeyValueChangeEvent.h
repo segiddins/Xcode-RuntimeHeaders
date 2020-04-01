@@ -18,6 +18,7 @@
 @property(readonly) NSString *key; // @synthesize key=_key;
 - (void).cxx_destruct;
 - (id)description;
+- (void)writeToLogEventStream:(id)arg1;
 - (id)initWithSection:(id)arg1 key:(id)arg2 value:(id)arg3;
 
 @end

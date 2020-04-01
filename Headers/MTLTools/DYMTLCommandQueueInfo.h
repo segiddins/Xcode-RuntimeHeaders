@@ -6,34 +6,39 @@
 
 #import <objc/NSObject.h>
 
-#import <MTLTools/NSCoding-Protocol.h>
 #import <MTLTools/NSCopying-Protocol.h>
+#import <MTLTools/NSSecureCoding-Protocol.h>
 
 @class NSString;
 
-@interface DYMTLCommandQueueInfo : NSObject <NSCoding, NSCopying>
+@interface DYMTLCommandQueueInfo : NSObject <NSSecureCoding, NSCopying>
 {
-    BOOL _isInternalQueue;
     BOOL _canBeCaptured;
     BOOL _isOpenGLQueue;
+    BOOL _isInternalQueue;
     NSString *_displayName;
     unsigned long long _deviceAddress;
     unsigned long long _queueAddress;
+    unsigned long long _toolsQueueAddress;
     NSString *_label;
 }
 
++ (BOOL)isLabelAppleInternal:(const char *)arg1;
++ (id)capturableObjectType;
++ (BOOL)supportsSecureCoding;
+@property(nonatomic) BOOL isInternalQueue; // @synthesize isInternalQueue=_isInternalQueue;
 @property(nonatomic) BOOL isOpenGLQueue; // @synthesize isOpenGLQueue=_isOpenGLQueue;
 @property(nonatomic) BOOL canBeCaptured; // @synthesize canBeCaptured=_canBeCaptured;
 @property(readonly, nonatomic) NSString *label; // @synthesize label=_label;
+@property(readonly, nonatomic) unsigned long long toolsQueueAddress; // @synthesize toolsQueueAddress=_toolsQueueAddress;
 @property(readonly, nonatomic) unsigned long long queueAddress; // @synthesize queueAddress=_queueAddress;
 @property(readonly, nonatomic) unsigned long long deviceAddress; // @synthesize deviceAddress=_deviceAddress;
 - (void).cxx_destruct;
-- (BOOL)isInternalQueue;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-@property(readonly, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
+@property(readonly, copy, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 - (id)initWithCommandQueue:(id)arg1;
 
 @end

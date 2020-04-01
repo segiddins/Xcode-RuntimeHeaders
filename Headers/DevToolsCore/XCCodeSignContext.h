@@ -4,49 +4,38 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Foundation/NSObject.h>
+#import <objc/NSObject.h>
 
 @interface XCCodeSignContext : NSObject
 {
 }
 
-+ (id)codeSignProductInTargetBuildContext:(id)arg1;
-+ (id)entitlementDependenciesInTargetBuildContext:(id)arg1 additionalEntitlements:(id)arg2;
-+ (id)codeSignArgumentsInTargetBuildContext:(id)arg1;
-+ (void)defineCodeSignAuxiliaryFilesInTargetBuildContext:(id)arg1;
-+ (void)defineAuxiliaryFilesInTargetBuildContext:(id)arg1;
-+ (id)codeSignContextClassFromContext:(id)arg1;
-+ (id)codeSignIdentityMenu:(id)arg1;
-+ (id)chooseOneIdentityString:(id)arg1;
-+ (id)certificateIdentitiesMatchingIdentityString:(id)arg1 inBuildContext:(id)arg2 withMessage:(id *)arg3;
-+ (id)codeSigningCertificatesHavingIdentity:(id)arg1;
-+ (id)codeSigningCertificates;
-+ (id)validateCodeSignIdentityInBuildContext:(id)arg1;
-+ (id)certificateIdentityMatchingIdentityString:(id)arg1 inBuildContext:(id)arg2 withMessage:(id *)arg3;
-+ (void)codeSigningNotAllowed:(id)arg1;
-+ (void)resourceRulesNotApplicable:(id)arg1;
-+ (void)entitlementsNotApplicable:(id)arg1;
-+ (id)stringProductTypeInSDK:(id)arg1;
-+ (BOOL)willCodeSignInContext:(id)arg1;
-+ (BOOL)isAdHocIdentity:(id)arg1;
-+ (BOOL)doesStringSpecifyIdentity:(id)arg1;
++ (id)codeSignNode:(id)arg1 withMacroExpansionScope:(id)arg2 reSignOnly:(BOOL)arg3;
++ (id)prepareForCodeSigningWithMacroExpansionScope:(id)arg1;
++ (BOOL)_canCodesignWithInputs:(id)arg1 macroExpansionScope:(id)arg2;
++ (id)provisioningDependenciesWithMacroExpansionScope:(id)arg1;
++ (id)simulatedEntitlementDependenciesForNode:(id)arg1 withMacroExpansionScope:(id)arg2;
++ (id)entitlementDependenciesForNode:(id)arg1 withMacroExpansionScope:(id)arg2;
++ (id)_entitlementDependenciesForNode:(id)arg1 withMacroExpansionScope:(id)arg2 simulated:(BOOL)arg3;
++ (id)provisioningCommandInputsFromMacroExpansionScope:(id)arg1;
++ (id)processedSimulatedEntitlementsPathForNode:(id)arg1 withMacroExpansionScope:(id)arg2;
++ (id)processedEntitlementsPathForNode:(id)arg1 withMacroExpansionScope:(id)arg2;
++ (id)_processedEntitlementsPathForNode:(id)arg1 withMacroExpansionScope:(id)arg2 simulated:(BOOL)arg3;
++ (id)codeSignArgumentsForNode:(id)arg1 withMacroExpansionScope:(id)arg2 reSignOnly:(BOOL)arg3;
++ (id)defaultDesignatedRequirementsForNode:(id)arg1 withMacroExpansionScope:(id)arg2 otherArguments:(id)arg3;
++ (void)defineAuxiliaryFilesWithMacroExpansionScope:(id)arg1;
++ (BOOL)useAdHocSigningIfSigningIsRequiredButNotSpecifiedInMacroExpansionScope:(id)arg1;
++ (BOOL)shouldPassEntitlementsFileContentToCodeSignWithMacroExpansionScope:(id)arg1;
++ (BOOL)isAdHocSigningAllowedWithMacroExpansionScope:(id)arg1;
++ (Class)codeSignContextClassWithMacroExpansionScope:(id)arg1;
++ (Class)codeSignContextClassWithClassName:(id)arg1;
++ (id)stringProductTypeInSDKWithMacroExpansionScope:(id)arg1;
++ (BOOL)requiresEntitlementsWithMacroExpansionScope:(id)arg1;
++ (BOOL)supportsIOSSigning;
++ (BOOL)supportsMacSigning;
++ (BOOL)supportsDeveloperIDSigning;
 + (id)defaultCodeSignIdentity;
-+ (void)registerForExternalNotifications;
-+ (void)deregisterForExternalNotifications;
-+ (void)_keychainEvent:(id)arg1;
-+ (void)noteProfilesDidChangeNotification:(id)arg1;
-+ (void)noteCodeSigningSettingsDidChange;
-+ (void)noteCodeSigningSettingsDidChangeNotification:(id)arg1;
-+ (void)noteCodeSigningSettingsDidChangeForProject:(id)arg1;
-+ (id)_cachedIdentifiers;
-+ (id)_cachedIdentifierIndex;
-+ (id)_cachedCertificates;
-+ (void)_rebuildCertificatesFromKeychain;
-+ (void)_rebuildCertificatesFromKeychainAsync;
-+ (void)_rebuildCacheFromKeychainCertificates:(id)arg1;
-+ (id)_certificateCache;
-+ (id)_getKeychainSigningCertificates;
-+ (void)initialize;
++ (id)codeSignContextLogAspect;
 
 @end
 

@@ -17,6 +17,7 @@
 - (void).cxx_destruct;
 - (void)dvt_writeToSerializer:(id)arg1;
 - (id)dvt_initFromDeserializer:(id)arg1;
+- (id)initWithTitle:(id)arg1 location:(id)arg2 description:(id)arg3 callDepth:(unsigned long long)arg4 parentIndex:(long long)arg5;
 - (id)locations;
 - (void)setCallDepth:(unsigned long long)arg1;
 - (unsigned long long)callDepth;

@@ -15,7 +15,7 @@
     IBICAbstractCatalogItem *_delegate;
 }
 
-+ (id)manifestArchivistForSlottedAsset:(id)arg1;
++ (id)manifestArchivistForSlottedAsset:(id)arg1 childrenManifestKey:(id)arg2;
 @property __weak IBICAbstractCatalogItem *delegate; // @synthesize delegate=_delegate;
 @property(copy) NSString *childrenManifestKey; // @synthesize childrenManifestKey=_childrenManifestKey;
 @property(readonly) NSString *manifestFileName; // @synthesize manifestFileName=_manifestFileName;

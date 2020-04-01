@@ -16,8 +16,8 @@
 + (double)displayOrderPriority;
 + (BOOL)isObjectValidSource:(id)arg1;
 - (id)badgeImage;
-- (id)segueAttributeInspectorExtensionIdentifier;
-- (void)ibWarnings:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
+- (id)attributesInspectorSliceIdentifier;
+- (id)metricChainSucceedingMetric:(id)arg1;
 - (id)instantiateSegueTemplate;
 
 @end

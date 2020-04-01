@@ -6,21 +6,47 @@
 
 #import <IDEFoundation/IDEActivityLogRecord.h>
 
-@class DVTFileDataType, IDEActivityLogSection, IDEInMemoryLogStore_Impl;
+@class DVTFileDataType, IDEActivityLogObservableRecord;
+@protocol IDELogStoreManageable;
 
 @interface IDEInMemoryActivityLogRecord : IDEActivityLogRecord
 {
-    IDEInMemoryLogStore_Impl *_logStore;
-    IDEActivityLogSection *_fullLog;
     DVTFileDataType *_documentType;
+    IDEActivityLogObservableRecord *_primaryObservable;
+    BOOL _hasPrimaryLog;
+    BOOL _hasAuxiliaryLog;
+    BOOL _hasTests;
+    BOOL _hasCoverageData;
+    BOOL _hasTimelineData;
+    BOOL _isImported;
+    BOOL _disablesSourceIntegration;
+    id <IDELogStoreManageable> _fullLog;
 }
 
 + (id)keyPathsForValuesAffectingTimeStoppedRecording;
 + (id)keyPathsForValuesAffectingIsRecording;
++ (id)keyPathsForValuesAffectingPrimaryObservable;
+@property(retain) id <IDELogStoreManageable> fullLog; // @synthesize fullLog=_fullLog;
+- (BOOL)disablesSourceIntegration;
+- (void)setIsImported:(BOOL)arg1;
+- (BOOL)isImported;
+- (BOOL)hasTimelineData;
+- (BOOL)hasCoverageData;
+- (BOOL)hasTests;
+- (BOOL)hasAuxiliaryLog;
+- (BOOL)hasPrimaryLog;
+- (id)primaryObservable;
 - (void).cxx_destruct;
 - (id)description;
+- (id)onDiskPath;
 - (double)timeStoppedRecording;
-- (id)highLevelStatus;
+- (id)buildMetricsReportFilePath;
+- (id)auxiliaryLogWithError:(id *)arg1;
+- (id)coverageArchiveFilePromise;
+- (id)coverageReportFilePromise;
+- (id)logSectionForItem:(id)arg1 error:(id *)arg2;
+- (id)auxiliaryLogItems;
+- (id)primaryLogItems;
 - (id)signature;
 - (id)documentType;
 - (double)timeStartedRecording;
@@ -29,10 +55,10 @@
 - (id)domainType;
 - (BOOL)isRecording;
 - (id)fullLogIfInMemory;
+- (id)fullLogStoreManageableWithError:(id *)arg1;
 - (id)fullLogWithError:(id *)arg1;
-- (void)removeSelfWithCompletionBlock:(CDUnknownBlockType)arg1;
-- (BOOL)isRemoved;
-- (id)initWithLog:(id)arg1 entityIdentifier:(id)arg2 store:(id)arg3;
+- (id)logStoreManageable;
+- (id)initWithLog:(id)arg1 parameters:(id)arg2;
 
 @end
 

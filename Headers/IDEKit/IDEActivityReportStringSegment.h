@@ -22,6 +22,9 @@
 @property(readonly) double priority; // @synthesize priority=_priority;
 @property(readonly) id stringValue; // @synthesize stringValue=_stringValue;
 - (void).cxx_destruct;
+- (unsigned long long)hash;
+- (BOOL)isEqualToActivityReportStringSegment:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 @property(readonly) NSDictionary *dictionaryRepresentation;
 @property(readonly) long long segmentType;
 - (id)description;

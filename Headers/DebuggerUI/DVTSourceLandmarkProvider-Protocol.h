@@ -6,11 +6,9 @@
 
 #import <DebuggerUI/NSObject-Protocol.h>
 
-@class DVTSourceLandmarkItem, DVTTextDocumentLocation;
+@class DVTSourceLandmarkItem;
 
 @protocol DVTSourceLandmarkProvider <NSObject>
-- (DVTTextDocumentLocation *)documentLocationFromCharacterRange:(struct _NSRange)arg1;
-- (struct _NSRange)characterRangeFromDocumentLocation:(DVTTextDocumentLocation *)arg1;
 - (struct _NSRange)lineRangeOfSourceLandmark:(DVTSourceLandmarkItem *)arg1;
 - (DVTSourceLandmarkItem *)sourceLandmarkItemAtLineNumber:(unsigned long long)arg1;
 - (DVTSourceLandmarkItem *)sourceLandmarkItemAtCharacterIndex:(unsigned long long)arg1;

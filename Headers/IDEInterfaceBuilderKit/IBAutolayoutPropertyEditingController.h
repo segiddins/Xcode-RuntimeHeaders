@@ -10,12 +10,11 @@
 #import <IDEInterfaceBuilderKit/NSMenuDelegate-Protocol.h>
 #import <IDEInterfaceBuilderKit/NSTextFieldDelegate-Protocol.h>
 
-@class DVTButtonTextField, DVTStackBacktrace, IBDocument, NSMenu, NSNumberFormatter, NSSet, NSStepper, NSString;
-@protocol IBCollection;
+@class DVTButtonTextField, DVTStackBacktrace, IBDocument, NSArray, NSMenu, NSNumberFormatter, NSSet, NSStepper, NSString;
 
 @interface IBAutolayoutPropertyEditingController : NSObject <DVTInvalidation, NSMenuDelegate, NSTextFieldDelegate>
 {
-    id <IBCollection> _objectObservingTokens;
+    NSArray *_objectObservingTokens;
     long long _lastStepperValue;
     NSSet *_objects;
     DVTButtonTextField *_textField;

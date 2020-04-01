@@ -9,15 +9,15 @@
 @interface SKESceneViewNestView : NSView
 {
     NSView *sceneView;
-    struct CGSize _aspectRatio;
+    double _aspectRatio;
 }
 
+@property(nonatomic) double aspectRatio; // @synthesize aspectRatio=_aspectRatio;
 - (void).cxx_destruct;
-- (void)setFrame:(struct CGRect)arg1;
-- (void)awakeFromNib;
+- (void)layout;
+- (void)commonInit;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
-- (void)commonInit;
 
 @end
 

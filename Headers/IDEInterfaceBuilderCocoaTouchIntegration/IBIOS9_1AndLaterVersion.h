@@ -10,8 +10,6 @@
 {
 }
 
-- (id)displayNameForUserInterfaceStyle;
-- (id)displayName;
 - (id)firstInapplicableSystemTarget;
 - (id)firstApplicableSystemTarget;
 - (id)compiledStoryboardInfoPlistFileName;

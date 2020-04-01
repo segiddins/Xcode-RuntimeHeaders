@@ -14,7 +14,6 @@
 - (id)fourthObject;
 - (id)thirdObject;
 - (id)secondObject;
-- (id)firstObject;
 - (id)subarrayFromIndex:(unsigned long long)arg1;
 - (id)subarrayToIndex:(unsigned long long)arg1;
 - (BOOL)areAllObjectsKindOfClass:(Class)arg1;

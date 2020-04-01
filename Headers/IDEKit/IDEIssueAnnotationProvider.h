@@ -14,10 +14,16 @@
 @interface IDEIssueAnnotationProvider : DVTAnnotationProvider <DVTMessageBubbleAnnotationDelegate>
 {
     id <DVTCancellable> _fileIssueObservingToken;
+    BOOL _shouldHandleLiveIssues;
+    BOOL _shouldHandleFixableIssues;
+    BOOL _shouldDeferAnnotationRebuilding;
     IDEAnnotationContext *_context;
 }
 
 + (id)annotationProviderForContext:(id)arg1 error:(id *)arg2;
+@property(nonatomic) BOOL shouldDeferAnnotationRebuilding; // @synthesize shouldDeferAnnotationRebuilding=_shouldDeferAnnotationRebuilding;
+@property(nonatomic) BOOL shouldHandleFixableIssues; // @synthesize shouldHandleFixableIssues=_shouldHandleFixableIssues;
+@property(nonatomic) BOOL shouldHandleLiveIssues; // @synthesize shouldHandleLiveIssues=_shouldHandleLiveIssues;
 @property(retain) IDEAnnotationContext *context; // @synthesize context=_context;
 - (void).cxx_destruct;
 - (void)providerWillUninstall;
@@ -30,7 +36,7 @@
 - (id)contextMenuItemsForAnnotation:(id)arg1 inTextSidebarView:(id)arg2;
 - (BOOL)shouldMoveCursorForAnnotation:(id)arg1;
 - (void)didClickAnnotation:(id)arg1 inTextSidebarView:(id)arg2 event:(id)arg3;
-- (void)didClickMessageBubbleForAnnotation:(id)arg1 onIcon:(BOOL)arg2 inTextView:(id)arg3 event:(id)arg4;
+- (void)didClickMessageBubbleForAnnotation:(id)arg1 onIcon:(BOOL)arg2 inView:(id)arg3 event:(id)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

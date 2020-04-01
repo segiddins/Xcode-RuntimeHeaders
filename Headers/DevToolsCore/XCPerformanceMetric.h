@@ -4,13 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Foundation/NSObject.h>
+#import <objc/NSObject.h>
 
-@class NSMutableArray, NSString, NSTimer;
+@class DVTLogAspect, NSMutableArray, NSString, NSTimer;
 
 @interface XCPerformanceMetric : NSObject
 {
-    NSString *_aspect;
+    DVTLogAspect *_aspect;
     unsigned long long _logLevel;
     NSString *_label;
     NSString *_context;
@@ -34,6 +34,7 @@
 + (id)startedMetricForAspect:(id)arg1 logLevel:(unsigned long long)arg2 label:(id)arg3 isQAMetric:(BOOL)arg4;
 + (id)metricWithIdentifier:(void *)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 - (void)runLoopBeforeSources;
 - (void)runLoopBeforeTimers;
 - (void)runLoopWaking;
@@ -51,7 +52,6 @@
 - (void)setResultString:(id)arg1;
 - (void)setEndTime;
 - (void)setStartTime;
-- (void)dealloc;
 - (id)initWithAspect:(id)arg1 logLevel:(unsigned long long)arg2 label:(id)arg3;
 
 @end

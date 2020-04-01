@@ -10,7 +10,6 @@
 
 @interface IDEComponentsPrefPaneController : IDEViewController
 {
-    NSArray *_documentationDownloadables;
     NSArray *_simulatorsDownloadables;
     NSProgressIndicator *_progressIndicator;
     NSButton *_checkAndInstallNowButton;
@@ -23,7 +22,6 @@
 
 + (id)showToolchainsAndSwitchToToolchain:(id)arg1;
 + (id)showToolchains;
-+ (id)showDocumentation;
 + (id)showDownloads;
 + (id)showSimulators;
 + (id)showTabWithTitle:(id)arg1;
@@ -37,7 +35,6 @@
 @property(retain) NSButton *checkAndInstallNowButton; // @synthesize checkAndInstallNowButton=_checkAndInstallNowButton;
 @property(retain) NSProgressIndicator *progressIndicator; // @synthesize progressIndicator=_progressIndicator;
 @property(retain) NSArray *simulatorsDownloadables; // @synthesize simulatorsDownloadables=_simulatorsDownloadables;
-@property(retain) NSArray *documentationDownloadables; // @synthesize documentationDownloadables=_documentationDownloadables;
 - (void).cxx_destruct;
 - (void)revertStateWithDictionary:(id)arg1;
 - (void)commitStateToDictionary:(id)arg1;
@@ -45,7 +42,7 @@
 - (void)_stopUpdateActivityUI;
 - (void)_showUpdateActivityUI;
 - (void)primitiveInvalidate;
-- (void)_initTabChooserView;
+- (void)_initTabChooserView:(id)arg1;
 - (void)loadView;
 
 @end

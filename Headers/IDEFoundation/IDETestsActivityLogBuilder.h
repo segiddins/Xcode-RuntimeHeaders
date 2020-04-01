@@ -8,41 +8,51 @@
 
 #import <IDEFoundation/IDETestRunSessionEvents-Protocol.h>
 
-@class IDEActivityLogSection, IDETestManager, NSMutableArray, NSString;
+@class IDEActivityLogSection, IDEActivityLogSectionRecorder, IDEActivityLogUnitTestSectionRecorder, NSMapTable, NSString, _TtC13IDEFoundation28IDETestRunSpecificationGroup;
+@protocol IDETestTargetRunner, IDETestsActivityLogBuilderDelegate;
 
 @interface IDETestsActivityLogBuilder : NSObject <IDETestRunSessionEvents>
 {
-    NSMutableArray *_subSectionRecorders;
     BOOL _aBundleDidNotFinishSuccessfully;
     BOOL _testsFinishedSuccessfully;
     IDEActivityLogSection *_activityLogSection;
-    IDETestManager *_testManager;
+    id <IDETestsActivityLogBuilderDelegate> _delegate;
+    NSMapTable *_stateForWorker;
+    IDEActivityLogUnitTestSectionRecorder *_currentTestableRecorder;
+    id <IDETestTargetRunner> _currentTargetRunner;
+    _TtC13IDEFoundation28IDETestRunSpecificationGroup *_currentTestRunSpecificationGroup;
+    IDEActivityLogSectionRecorder *_currentTestRunSpecificationGroupRecorder;
+    NSString *_testPlanName;
 }
 
++ (id)recursiveDescriptionForError:(id)arg1;
+@property(copy) NSString *testPlanName; // @synthesize testPlanName=_testPlanName;
+@property(retain) IDEActivityLogSectionRecorder *currentTestRunSpecificationGroupRecorder; // @synthesize currentTestRunSpecificationGroupRecorder=_currentTestRunSpecificationGroupRecorder;
+@property(retain) _TtC13IDEFoundation28IDETestRunSpecificationGroup *currentTestRunSpecificationGroup; // @synthesize currentTestRunSpecificationGroup=_currentTestRunSpecificationGroup;
+@property(retain) id <IDETestTargetRunner> currentTargetRunner; // @synthesize currentTargetRunner=_currentTargetRunner;
+@property(retain) IDEActivityLogUnitTestSectionRecorder *currentTestableRecorder; // @synthesize currentTestableRecorder=_currentTestableRecorder;
+@property(retain) NSMapTable *stateForWorker; // @synthesize stateForWorker=_stateForWorker;
+@property __weak id <IDETestsActivityLogBuilderDelegate> delegate; // @synthesize delegate=_delegate;
+@property(retain) IDEActivityLogSection *activityLogSection; // @synthesize activityLogSection=_activityLogSection;
 @property BOOL testsFinishedSuccessfully; // @synthesize testsFinishedSuccessfully=_testsFinishedSuccessfully;
-@property(retain, nonatomic) IDETestManager *testManager; // @synthesize testManager=_testManager;
-@property(retain, nonatomic) IDEActivityLogSection *activityLogSection; // @synthesize activityLogSection=_activityLogSection;
 - (void).cxx_destruct;
-- (void)didFinishTest:(id)arg1 withTestResult:(id)arg2 rawOutput:(id)arg3;
-- (void)didFailTest:(id)arg1 withTestResultMessage:(id)arg2 rawOutput:(id)arg3;
-- (void)test:(id)arg1 didFinishActivity:(id)arg2;
-- (void)test:(id)arg1 willStartActivity:(id)arg2;
-- (void)test:(id)arg1 didMeasurePerformanceMetric:(id)arg2 rawOutput:(id)arg3;
-- (void)testDidOutput:(id)arg1;
-- (void)didStartTest:(id)arg1 withRawOutput:(id)arg2;
-- (void)testSuiteDidFinish:(long long)arg1 withFailures:(long long)arg2 unexpected:(long long)arg3 testDuration:(double)arg4 totalDuration:(double)arg5 rawOutput:(id)arg6;
-- (void)testSuite:(id)arg1 willFinishAt:(id)arg2 rawOutput:(id)arg3;
-- (void)testSuite:(id)arg1 didStartAt:(id)arg2 rawOutput:(id)arg3;
-- (void)testOperationGroupDidFinish;
-- (void)testOperationWillFinishWithSuccess:(BOOL)arg1 withError:(id)arg2;
-- (void)_finishSubSectionRecorders:(id)arg1 error:(id)arg2;
-- (void)testRunner:(id)arg1 didLaunchTestSessionForScheme:(id)arg2 withDisplayName:(id)arg3 diagnosticLogPath:(id)arg4;
-- (void)_appendAndPropagateUpText:(id)arg1 startingWithRecorder:(id)arg2;
-- (void)_popRecorderWithMessageForReason:(id)arg1 error:(id)arg2;
-- (void)_popRecorder;
-- (void)_pushRecorder:(id)arg1;
-- (id)_currentSubSectionRecorder;
-- (id)init;
+- (void)worker:(id)arg1 testTargetRunner:(id)arg2 didFinishTestWithIdentifier:(id)arg3 withTestResult:(id)arg4 rawOutput:(id)arg5;
+- (void)worker:(id)arg1 testTargetRunner:(id)arg2 didFailTestWithIdentifier:(id)arg3 withTestResultMessage:(id)arg4 rawOutput:(id)arg5;
+- (void)worker:(id)arg1 testTargetRunner:(id)arg2 testWithIdentifier:(id)arg3 didFinishActivity:(id)arg4;
+- (void)worker:(id)arg1 testTargetRunner:(id)arg2 testWithIdentifier:(id)arg3 willStartActivity:(id)arg4;
+- (void)worker:(id)arg1 testTargetRunner:(id)arg2 testWithIdentifier:(id)arg3 didMeasurePerformanceMetric:(id)arg4 rawOutput:(id)arg5;
+- (void)worker:(id)arg1 testTargetRunner:(id)arg2 testDidOutput:(id)arg3;
+- (void)worker:(id)arg1 testTargetRunner:(id)arg2 didStartTestWithIdentifier:(id)arg3 withRawOutput:(id)arg4;
+- (void)worker:(id)arg1 testTargetRunner:(id)arg2 testSuiteDidFinish:(unsigned long long)arg3 withFailures:(unsigned long long)arg4 unexpected:(unsigned long long)arg5 testDuration:(double)arg6 totalDuration:(double)arg7 rawOutput:(id)arg8;
+- (void)worker:(id)arg1 testTargetRunner:(id)arg2 testSuite:(id)arg3 willFinishAt:(id)arg4 rawOutput:(id)arg5;
+- (void)worker:(id)arg1 testTargetRunner:(id)arg2 testSuite:(id)arg3 didStartAt:(id)arg4 rawOutput:(id)arg5;
+- (void)testRunSessionDidFinish:(id)arg1 withCancellation:(BOOL)arg2;
+- (void)worker:(id)arg1 testTargetRunner:(id)arg2 willFinishWithSuccess:(BOOL)arg3 withError:(id)arg4;
+- (void)worker:(id)arg1 testTargetRunner:(id)arg2 didLaunchWithDiagnosticLogPath:(id)arg3;
+- (void)addSectionIfNecessaryForWorker:(id)arg1 diagnosticLogPath:(id)arg2;
+- (void)testTargetRunner:(id)arg1 didEndWithCancellation:(BOOL)arg2;
+- (void)testTargetRunnerDidStart:(id)arg1;
+- (id)initWithActivityLogSection:(id)arg1 testPlanName:(id)arg2 delegate:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

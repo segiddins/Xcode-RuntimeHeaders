@@ -6,11 +6,6 @@
 
 #import "NSObject-Protocol.h"
 
-@class NSDictionary;
-@protocol XCExtensionHost;
-
 @protocol XCExtensionService <NSObject>
-@property(readonly) id <XCExtensionHost> hostContext;
-- (void)sendRequest:(NSDictionary *)arg1 reply:(void (^)(NSDictionary *))arg2;
 @end
 

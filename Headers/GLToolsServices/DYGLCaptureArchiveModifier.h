@@ -8,8 +8,8 @@
 
 @interface DYGLCaptureArchiveModifier : DYCaptureArchiveModifier
 {
-    StateMirrorManager_5097919b _stateMirrorManager;
-    StateMirrorManager_5097919b _origStateMirrorManager;
+    StateMirrorManager_ee526f39 _stateMirrorManager;
+    StateMirrorManager_ee526f39 _origStateMirrorManager;
 }
 
 - (id).cxx_construct;
@@ -17,7 +17,7 @@
 - (void)_processFunction:(const struct Function *)arg1 functionIndex:(int)arg2;
 - (void)_restoreAPIState;
 - (void)_saveAPIState;
-- (StateMirrorManager_5097919b *)stateMirrorManager;
+- (StateMirrorManager_ee526f39 *)stateMirrorManager;
 
 @end
 

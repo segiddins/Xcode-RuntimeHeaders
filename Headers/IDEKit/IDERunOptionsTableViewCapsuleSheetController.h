@@ -10,23 +10,27 @@
 #import <IDEKit/IDECapsuleViewController-Protocol.h>
 #import <IDEKit/IDECapsuleViewDelegate-Protocol.h>
 
-@class DVTBorderedView, DVTTableView, NSArrayController, NSImage, NSMutableArray, NSString;
+@class DVTBorderedView, DVTTableView, NSArrayController, NSColor, NSImage, NSMutableArray, NSString;
 
 @interface IDERunOptionsTableViewCapsuleSheetController : IDEViewController <IDECapsuleViewDelegate, IDECapsuleViewController, DVTTableViewDelegate>
 {
-    NSArrayController *_arrayController;
     DVTTableView *_tableView;
+    NSArrayController *_arrayController;
     DVTBorderedView *_tableBorder;
     NSMutableArray *_tableViewContent;
     BOOL _arrayControllerCanRemoveItems;
-    BOOL _canRemoveItems;
     BOOL _enabled;
+    BOOL _resizesHeightBasedOnContent;
+    BOOL _allowsScrolling;
+    unsigned long long _borderSides;
 }
 
 + (id)keyPathsForValuesAffectingCanRemoveItems;
 + (id)keyPathsForValuesAffectingCanAddItems;
+@property(nonatomic) unsigned long long borderSides; // @synthesize borderSides=_borderSides;
+@property(nonatomic) BOOL allowsScrolling; // @synthesize allowsScrolling=_allowsScrolling;
+@property(nonatomic) BOOL resizesHeightBasedOnContent; // @synthesize resizesHeightBasedOnContent=_resizesHeightBasedOnContent;
 @property(nonatomic) BOOL enabled; // @synthesize enabled=_enabled;
-@property BOOL canRemoveItems; // @synthesize canRemoveItems=_canRemoveItems;
 @property BOOL arrayControllerCanRemoveItems; // @synthesize arrayControllerCanRemoveItems=_arrayControllerCanRemoveItems;
 @property(retain, nonatomic) NSMutableArray *tableViewContent; // @synthesize tableViewContent=_tableViewContent;
 - (void).cxx_destruct;
@@ -39,6 +43,7 @@
 - (BOOL)validateUserInterfaceItem:(id)arg1;
 - (double)capsuleView:(id)arg1 preferredContentViewWidthForCapsuleWidth:(double)arg2;
 - (BOOL)shouldDrawBorderBelowHeaderForCapsuleView:(id)arg1;
+@property BOOL canRemoveItems;
 @property BOOL canAddItems;
 @property(readonly) BOOL canRename;
 @property(readonly) BOOL canRemove;
@@ -46,11 +51,15 @@
 - (void)addItems:(id)arg1;
 @property(readonly, copy) NSString *titleForDisplay;
 - (void)_resizeView;
-@property(readonly) NSString *pasteBoardType;
+- (void)applyTableBorderStyle;
+- (void)applyAutoresizingMasks;
+- (void)applyScrollingBehavior;
+@property(readonly) NSString *pasteboardType;
 - (void)loadView;
 - (id)init;
 
 // Remaining properties
+@property(retain) NSColor *backgroundColor;
 @property(readonly) BOOL canDrag;
 @property(readonly) BOOL canSelect;
 @property(readonly) BOOL canUndisclose;
@@ -61,6 +70,7 @@
 @property(readonly) unsigned long long hash;
 @property(readonly) NSImage *icon;
 @property(readonly) Class superclass;
+@property(readonly) BOOL wantsDisclosureButtonHidden;
 
 @end
 

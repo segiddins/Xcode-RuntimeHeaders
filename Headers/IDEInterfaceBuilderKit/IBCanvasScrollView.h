@@ -10,7 +10,7 @@
 
 @interface IBCanvasScrollView : IBAccessorizedScrollView
 {
-    IBCanvasView *canvasView;
+    IBCanvasView *_canvasView;
     BOOL _scrollWheelEventStartedWithZoomModifierKey;
     BOOL _canUpdateScrollers;
     struct CGSize _scrollerDimensions;
@@ -21,6 +21,7 @@
 @property(nonatomic) BOOL canUpdateScrollers; // @synthesize canUpdateScrollers=_canUpdateScrollers;
 - (void).cxx_destruct;
 - (void)scrollWheel:(id)arg1;
+- (void)magnifyWithEvent:(id)arg1;
 - (void)smartMagnifyWithEvent:(id)arg1;
 - (void)preferredScrollerStyleDidChange:(id)arg1;
 - (id)horizontalScroller;

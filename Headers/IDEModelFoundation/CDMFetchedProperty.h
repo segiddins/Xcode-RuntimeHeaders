@@ -17,9 +17,9 @@
 
 - (void).cxx_destruct;
 - (id)stringRepresentation;
-- (id)xmlElementDescription;
-- (void)stitchToRelatedModelElements;
-- (id)initWithXMLElementDescription:(id)arg1 belongingToModel:(id)arg2;
+- (id)encodeXMLElement;
+- (void)awakeAfterXMLDecoding;
+- (id)initWithXMLElement:(id)arg1 owner:(id)arg2 error:(id *)arg3;
 - (id)xmlElementFetchRequest;
 - (id)addKeysToDictionary:(id)arg1;
 - (id)initWithDictionary:(id)arg1 inModel:(id)arg2;
@@ -31,7 +31,7 @@
 - (id)initInModel:(id)arg1;
 - (void)primitiveInvalidate;
 @property(retain) CDMFetchRequest *fetchRequest; // @synthesize fetchRequest=_fetchRequest;
-- (id)applicableInspectorsForCategory:(id)arg1 suggestion:(id)arg2;
+- (id)applicableInspectorSlicesForCategory:(id)arg1 suggestedSlices:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

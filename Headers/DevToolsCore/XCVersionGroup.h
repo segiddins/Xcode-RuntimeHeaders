@@ -12,13 +12,16 @@
 {
     PBXFileReference *_currentVersion;
     PBXFileType *_versionedFileType;
+    BOOL _currentVersionSaveIsPending;
 }
 
 + (id)archivableRelationships;
 + (id)archivableAttributes;
 + (id)versionGroupByWrappingReference:(id)arg1 usingPathExtension:(id)arg2;
 + (void)_replaceBuildFilesForReference:(id)arg1 withBuildFilesForReference:(id)arg2;
+- (void).cxx_destruct;
 - (void)willMoveItem:(id)arg1 toGroup:(id)arg2;
+- (void)setGroup:(id)arg1;
 - (void)didRemoveItem:(id)arg1;
 - (void)didAddItem:(id)arg1;
 - (void)willAddItem:(id)arg1;
@@ -39,7 +42,6 @@
 - (id)currentVersion;
 - (BOOL)allowsSubgroups;
 - (void)configureFromOnDiskContents;
-- (void)dealloc;
 - (id)initWithName:(id)arg1 versionedFileType:(id)arg2 path:(id)arg3 sourceTree:(id)arg4;
 
 @end

@@ -10,11 +10,10 @@
 
 @class NSString;
 
-__attribute__((visibility("hidden")))
 @interface LLDBStringList : NSObject <DBGSBStringList>
 {
     struct SBStringList {
-        struct unique_ptr<lldb_private::StringList, std::__1::default_delete<lldb_private::StringList>> m_opaque_ap;
+        struct unique_ptr<lldb_private::StringList, std::__1::default_delete<lldb_private::StringList>> m_opaque_up;
     } _stringList;
 }
 

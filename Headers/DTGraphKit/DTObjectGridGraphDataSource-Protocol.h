@@ -7,8 +7,8 @@
 #import <DTGraphKit/NSObject-Protocol.h>
 
 @protocol DTObjectGridGraphDataSource <NSObject>
-- (void)enumerateOutgoingReferencesForNode:(unsigned int)arg1 withBlock:(void (^)(unsigned int, unsigned int, unsigned int, char *))arg2;
-- (void)enumerateIncomingReferencesForNode:(unsigned int)arg1 withBlock:(void (^)(unsigned int, unsigned int, unsigned int, char *))arg2;
+- (void)enumerateOutgoingReferencesForNode:(unsigned int)arg1 withBlock:(void (^)(unsigned int, unsigned int, unsigned int, double, char *))arg2;
+- (void)enumerateIncomingReferencesForNode:(unsigned int)arg1 withBlock:(void (^)(unsigned int, unsigned int, unsigned int, double, char *))arg2;
 
 @optional
 - (unsigned int)enclosingGroupNodeForNode:(unsigned int)arg1;

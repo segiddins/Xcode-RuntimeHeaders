@@ -18,9 +18,10 @@
 }
 
 - (void).cxx_destruct;
-- (BOOL)revert;
-- (BOOL)apply;
+- (BOOL)_performRevert;
+- (BOOL)_performApply;
 - (id)initWithDocument:(id)arg1 sourceNode:(id)arg2 destNode:(id)arg3;
+- (id)copyPhysicsBody:(id)arg1;
 
 @end
 

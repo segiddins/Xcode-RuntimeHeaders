@@ -6,23 +6,24 @@
 
 #import <DevToolsCore/XCTargetDGSnapshot.h>
 
-@class NSString;
+@class NSArray, NSString;
+@protocol DVTMacroExpansion;
 
 @interface XCExternalTargetDGSnapshot : XCTargetDGSnapshot
 {
-    NSString *_buildToolPath;
-    NSString *_buildArgumentsString;
-    NSString *_buildWorkingDirectory;
+    NSString<DVTMacroExpansion> *_buildToolPath;
+    NSArray<DVTMacroExpansion> *_buildArguments;
+    NSString<DVTMacroExpansion> *_buildWorkingDirectory;
     BOOL _passBuildSettingsInEnvironment;
 }
 
+- (void).cxx_destruct;
 - (BOOL)passesBuildSettingsInEnvironment;
 - (id)buildWorkingDirectory;
-- (id)buildArgumentsString;
+- (id)buildArguments;
 - (id)buildToolPath;
-- (void)dealloc;
-- (id)initWithInformationFromTarget:(id)arg1 withBuildState:(id)arg2;
-- (void)computeDependenciesInTargetBuildContext:(id)arg1;
+- (id)initWithInformationFromTarget:(id)arg1 withBuildParameters:(id)arg2;
+- (void)computeDependenciesWithMacroExpansionScope:(id)arg1;
 
 @end
 

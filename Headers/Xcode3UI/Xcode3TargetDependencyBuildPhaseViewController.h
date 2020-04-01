@@ -20,6 +20,8 @@
 - (id)rootItemsForFilePickerPanel;
 - (void)configureFilePickerPanel:(id)arg1;
 - (id)supportedDragTypes;
+- (BOOL)isSyntheticBuildPhase;
+- (void)addItems:(id)arg1;
 
 @end
 

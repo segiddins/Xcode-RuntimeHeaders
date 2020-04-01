@@ -11,17 +11,14 @@
 @interface IDETestingActivityReporter : IDEActivityReporter
 {
     NSMapTable *_reportForTestSessionTable;
-    NSMapTable *_reportForCoverageSessionTable;
+    NSMapTable *_reportForTestingActivity;
 }
 
-+ (void)initialize;
 - (void).cxx_destruct;
 - (void)_updateTestRunReport:(id)arg1 withSession:(id)arg2;
 - (id)_titleForTestRunSession:(id)arg1;
 - (void)_removeTestRunSession:(id)arg1;
 - (void)_addTestRunSession:(id)arg1;
-- (void)_removeGenerateCoverageReportSession:(id)arg1;
-- (void)_addGenerateCoverageReportSession:(id)arg1;
 - (id)initWithWorkspace:(id)arg1;
 
 @end

@@ -32,7 +32,6 @@
 - (void)_retrieveData;
 - (void)_startRetrieval;
 - (void)cancel;
-- (id)blockStartAddress;
 - (id)initWithDataValue:(id)arg1 options:(id)arg2;
 
 // Remaining properties

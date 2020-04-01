@@ -6,11 +6,11 @@
 
 #import <objc/NSObject.h>
 
-#import <IDEInterfaceBuilderCocoaIntegration/IBDocumentForiengContentReader-Protocol.h>
+#import <IDEInterfaceBuilderCocoaIntegration/IBDocumentForeignContentReader-Protocol.h>
 
 @class IBDocument, NSString;
 
-@interface IBCocoaNIB2Importer : NSObject <IBDocumentForiengContentReader>
+@interface IBCocoaNIB2Importer : NSObject <IBDocumentForeignContentReader>
 {
     IBDocument *_document;
 }

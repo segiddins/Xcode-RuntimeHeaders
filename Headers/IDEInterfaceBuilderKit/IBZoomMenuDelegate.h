@@ -13,9 +13,12 @@
 @interface IBZoomMenuDelegate : IBAbstractEditorMenuDelegate <NSMenuDelegate>
 {
     BOOL _hasInstalledZoomLevelMenuItems;
+    SEL _zoomAction;
 }
 
+@property(nonatomic) SEL zoomAction; // @synthesize zoomAction=_zoomAction;
 - (void)menuNeedsUpdate:(id)arg1;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

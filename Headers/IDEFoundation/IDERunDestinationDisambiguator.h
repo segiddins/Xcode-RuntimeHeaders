@@ -11,8 +11,8 @@
 }
 
 + (id)disambiguationAdditionsForDisambiguationInfos:(id)arg1;
-+ (id)disambiguatedRunDestinationsWithNamesForRunDestinations:(id)arg1;
-+ (id)disambiguatedRunDestinationsWithNameForRunDestinations:(id)arg1 scheme:(id)arg2;
++ (id)disambiguatedRunDestinationsWithNameAdditionsForRunDestinations:(id)arg1;
++ (id)disambiguatedRunDestinationsWithNameAdditionForRunDestinations:(id)arg1 scheme:(id)arg2;
 
 @end
 

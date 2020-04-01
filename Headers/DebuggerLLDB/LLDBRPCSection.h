@@ -10,7 +10,6 @@
 
 @class NSString;
 
-__attribute__((visibility("hidden")))
 @interface LLDBRPCSection : NSObject <DBGSBSection>
 {
     struct SBSection {
@@ -20,6 +19,8 @@ __attribute__((visibility("hidden")))
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (unsigned long long)GetFileAddress;
+- (_Bool)IsValid;
 - (id)initWithSBSection:(const struct SBSection *)arg1;
 - (unsigned long long)GetLoadAddress:(id)arg1;
 

@@ -10,11 +10,10 @@
 
 @class NSString;
 
-__attribute__((visibility("hidden")))
 @interface LLDBTypeSummaryOptions : NSObject <DBGSBTypeSummaryOptions>
 {
     struct SBTypeSummaryOptions {
-        struct unique_ptr<lldb_private::TypeSummaryOptions, std::__1::default_delete<lldb_private::TypeSummaryOptions>> m_opaque_ap;
+        struct unique_ptr<lldb_private::TypeSummaryOptions, std::__1::default_delete<lldb_private::TypeSummaryOptions>> m_opaque_up;
     } _typeSummaryOptions;
 }
 

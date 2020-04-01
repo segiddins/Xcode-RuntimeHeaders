@@ -6,20 +6,24 @@
 
 #import <AppKit/NSViewController.h>
 
-@class IBMemberConfiguration, IBMutableIdentityDictionary, NSStackView;
+@class IBMemberConfiguration, IBMutableIdentityDictionary, NSStackView, NSView;
+@protocol IBDeviceTraitPickerPopoverViewControllerDelegate;
 
 @interface IBDeviceTraitPickerPopoverViewController : NSViewController
 {
     IBMutableIdentityDictionary *_checkBoxToMemberConfigurationVariables;
-    CDUnknownBlockType _selectedTraitsChangedCallback;
+    id <IBDeviceTraitPickerPopoverViewControllerDelegate> _delegate;
+    NSView *_initialFirstResponder;
     NSStackView *_stackView;
     IBMemberConfiguration *_baseMemberConfiguration;
 }
 
 @property(retain, nonatomic) IBMemberConfiguration *baseMemberConfiguration; // @synthesize baseMemberConfiguration=_baseMemberConfiguration;
 @property __weak NSStackView *stackView; // @synthesize stackView=_stackView;
-@property(copy, nonatomic) CDUnknownBlockType selectedTraitsChangedCallback; // @synthesize selectedTraitsChangedCallback=_selectedTraitsChangedCallback;
+@property(readonly) NSView *initialFirstResponder; // @synthesize initialFirstResponder=_initialFirstResponder;
+@property(nonatomic) __weak id <IBDeviceTraitPickerPopoverViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)showHelp:(id)arg1;
 - (void)toggleMemberConfigurationVariable:(id)arg1;
 - (void)updateStackView;
 - (void)loadView;

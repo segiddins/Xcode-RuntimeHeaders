@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Foundation/NSObject.h>
+#import <objc/NSObject.h>
 
 @class NSMutableArray, NSString;
 
@@ -16,6 +16,7 @@
 }
 
 + (id)fileTypePartFromSpecificationArray:(id)arg1 identifier:(id)arg2;
+- (void).cxx_destruct;
 - (BOOL)isSymbolicLink;
 - (BOOL)isFolder;
 - (BOOL)isPlainFile;
@@ -23,7 +24,6 @@
 - (void)setSuperpart:(id)arg1;
 - (id)superpart;
 - (id)identifier;
-- (void)dealloc;
 - (id)init;
 - (id)initFromSpecificationArray:(id)arg1 identifier:(id)arg2;
 

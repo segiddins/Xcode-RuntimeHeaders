@@ -10,11 +10,9 @@
 
 @interface IDESourceControlTreeItem : DVTModelTreeNode
 {
-    int _sourceControlLocalStatus;
-    int _sourceControlServerStatus;
+    unsigned long long _sourceControlLocalStatus;
+    unsigned long long _sourceControlServerStatus;
     unsigned long long _conflictStateForUpdateOrMerge;
-    IDESourceControlRevision *_headRevision;
-    IDESourceControlRevision *_baseRevision;
     IDESourceControlRevision *_currentRevision;
     NSMutableDictionary *_revisions;
     NSString *_name;
@@ -28,8 +26,8 @@
 + (id)_revisionLock;
 + (void)initialize;
 @property unsigned long long conflictStateForUpdateOrMerge; // @synthesize conflictStateForUpdateOrMerge=_conflictStateForUpdateOrMerge;
-@property int sourceControlServerStatus; // @synthesize sourceControlServerStatus=_sourceControlServerStatus;
-@property int sourceControlLocalStatus; // @synthesize sourceControlLocalStatus=_sourceControlLocalStatus;
+@property unsigned long long sourceControlServerStatus; // @synthesize sourceControlServerStatus=_sourceControlServerStatus;
+@property unsigned long long sourceControlLocalStatus; // @synthesize sourceControlLocalStatus=_sourceControlLocalStatus;
 @property unsigned long long state; // @synthesize state=_state;
 @property(readonly) NSString *pathString; // @synthesize pathString=_pathString;
 @property(copy) NSString *name; // @synthesize name=_name;
@@ -37,6 +35,7 @@
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (void)clearAllRevisions;
+- (id)revisionsWithStartingRevision:(id)arg1 limit:(unsigned long long)arg2 branch:(id)arg3 includeHEAD:(BOOL)arg4 completionBlock:(CDUnknownBlockType)arg5;
 - (id)revisionsWithStartingRevision:(id)arg1 limit:(unsigned long long)arg2 branch:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;
 @property(readonly) NSArray *revisions;
 - (id)revisionsDictionary;
@@ -45,12 +44,8 @@
 - (id)currentRevisionWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)setCurrentRevision:(id)arg1;
 @property(readonly) IDESourceControlRevision *currentRevision;
-- (int)aggregateSourceControlServerStatus;
-- (int)aggregateSourceControlLocalStatus;
-- (id)baseRevisionWithCompletionBlock:(CDUnknownBlockType)arg1;
-- (id)headRevisionWithCompletionBlock:(CDUnknownBlockType)arg1;
-- (void)setBASERevision:(id)arg1;
-- (void)setHEADRevision:(id)arg1;
+- (unsigned long long)aggregateSourceControlServerStatus;
+- (unsigned long long)aggregateSourceControlLocalStatus;
 - (id)description;
 - (id)ideModelObjectTypeIdentifier;
 - (void)repositoryURLStringAtBranch:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;

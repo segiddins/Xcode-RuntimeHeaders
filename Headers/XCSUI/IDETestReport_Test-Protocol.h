@@ -5,24 +5,19 @@
 //
 
 #import <XCSUI/IDETestReport_Base-Protocol.h>
-#import <XCSUI/NSObject-Protocol.h>
+#import <XCSUI/IDETestReport_Common-Protocol.h>
 
-@class NSArray, NSImage, NSString;
+@class NSArray, NSString;
 
-@protocol IDETestReport_Test <NSObject, IDETestReport_Base>
-@property(readonly, nonatomic) BOOL ide_testReport_test_hasActivities;
-@property(readonly, copy, nonatomic) NSString *ide_testReport_test_keyPath;
-@property(readonly, copy, nonatomic) NSString *ide_testReport_test_UUID;
-@property(readonly, copy, nonatomic) NSString *ide_testReport_test_missingBaselineInfo;
-@property(readonly, nonatomic) BOOL ide_testReport_test_passed;
-@property(readonly, nonatomic) NSImage *ide_testReport_test_statusImage;
+@protocol IDETestReport_Test <IDETestReport_Base, IDETestReport_Common>
+@property(readonly, nonatomic) NSArray *ide_testReport_test_allTestRunsAcrossDevices;
 @property(readonly, copy, nonatomic) NSString *ide_testReport_test_testClassName;
 @property(readonly, copy, nonatomic) NSString *ide_testReport_test_testName;
-@property(readonly, copy, nonatomic) NSArray *ide_testReport_test_testRuns;
+@property(readonly, copy, nonatomic) NSArray *ide_testReport_test_testRunsByDevice;
 @property(readonly, nonatomic) BOOL ide_testReport_test_fetchesTestRunsLazily;
-@property(readonly, copy, nonatomic) NSArray *ide_testReport_test_perfMetrics;
 
 @optional
+@property(readonly, nonatomic) BOOL ide_testReport_test_mixedStatus;
 - (void)ide_testReport_test_fetchTestsWithCompletionHandler:(void (^)(NSArray *))arg1;
 @end
 

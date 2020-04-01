@@ -6,6 +6,13 @@
 
 #import <DTGraphKit/NSObject-Protocol.h>
 
+@class CALayer;
+
 @protocol CALayoutManager <NSObject>
+
+@optional
+- (void)layoutSublayersOfLayer:(CALayer *)arg1;
+- (void)invalidateLayoutOfLayer:(CALayer *)arg1;
+- (struct CGSize)preferredSizeOfLayer:(CALayer *)arg1;
 @end
 

@@ -6,17 +6,16 @@
 
 #import <IDEKit/IDEViewController.h>
 
-#import <IDEKit/IDEFilePickerViewDelegate-Protocol.h>
+@class DVTBorderedView, DVTGradientImageButton, DVTOutlineViewWithCustomGridDrawing, DVTScrollView, DVTSearchField, IDEBuildRunPhaseOptionsView, IDEBuildSchemeAction, IDEScheme, IDEWorkspace, NSBox, NSLayoutConstraint, NSString, NSView;
 
-@class DVTBorderedView, DVTGradientImageButton, DVTOutlineViewWithCustomGridDrawing, DVTScrollView, DVTSearchField, IDEBuildSchemeAction, IDEScheme, IDEWorkspace, NSArray, NSString, NSView;
-
-@interface IDEBuildRunPhaseSheetController : IDEViewController <IDEFilePickerViewDelegate>
+@interface IDEBuildRunPhaseSheetController : IDEViewController
 {
     DVTOutlineViewWithCustomGridDrawing *_outlineView;
     DVTGradientImageButton *_addButton;
     DVTGradientImageButton *_deleteButton;
     DVTBorderedView *_topBorderedView;
     DVTSearchField *_searchField;
+    NSBox *_backgroundProvidingBox;
     IDEScheme *_runContext;
     IDEWorkspace *_workspace;
     IDEBuildSchemeAction *_runPhase;
@@ -24,9 +23,15 @@
     id _buildablesDidChangeNotificationToken;
     DVTScrollView *_buildTargetsScrollView;
     NSView *_controlBar;
+    IDEBuildRunPhaseOptionsView *_buildOptionsView;
+    NSLayoutConstraint *_controlBarHeightConstraint;
+    NSLayoutConstraint *_filterFieldHeightConstraint;
 }
 
 + (void)initialize;
+@property __weak NSLayoutConstraint *filterFieldHeightConstraint; // @synthesize filterFieldHeightConstraint=_filterFieldHeightConstraint;
+@property __weak NSLayoutConstraint *controlBarHeightConstraint; // @synthesize controlBarHeightConstraint=_controlBarHeightConstraint;
+@property __weak IDEBuildRunPhaseOptionsView *buildOptionsView; // @synthesize buildOptionsView=_buildOptionsView;
 @property __weak NSView *controlBar; // @synthesize controlBar=_controlBar;
 @property __weak DVTScrollView *buildTargetsScrollView; // @synthesize buildTargetsScrollView=_buildTargetsScrollView;
 @property(retain) IDEBuildSchemeAction *runPhase; // @synthesize runPhase=_runPhase;
@@ -50,10 +55,7 @@
 - (unsigned long long)outlineView:(id)arg1 validateDrop:(id)arg2 proposedItem:(id)arg3 proposedChildIndex:(long long)arg4;
 - (BOOL)outlineView:(id)arg1 writeItems:(id)arg2 toPasteboard:(id)arg3;
 - (void)deleteBlueprintsAction:(id)arg1;
-- (void)filePickerView:(id)arg1 outlineView:(id)arg2 willDisplayCell:(id)arg3 forTableColumn:(id)arg4 item:(id)arg5;
 - (void)addBlueprintsAction:(id)arg1;
-- (BOOL)_shouldEnableFilePickerItem:(id)arg1;
-@property(readonly) NSArray *blueprintProviderWrappers;
 @property(retain) IDEWorkspace *workspace;
 - (void)primitiveInvalidate;
 - (void)loadView;
@@ -62,13 +64,7 @@
 - (void)updateBoundContent;
 - (void)updateBoundIDEWorkspaceBinding;
 - (void)updateBoundIDERunContextBinding;
-- (id)dvtExtraBindings;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
+- (id)dvt_extraBindings;
 
 @end
 

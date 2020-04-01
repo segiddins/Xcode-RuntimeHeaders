@@ -6,37 +6,31 @@
 
 #import <IDEKit/IDEInspectorViewController.h>
 
-@class DVTBorderedView, DVTNotificationToken, DVTObservingToken, IBConnectionsInspectorLayoutView, IBConnectionsViewController, IBDocument, NSScrollView, NSView;
+@class DVTBorderedView, DVTObservingToken, IBConnectionsInspectorLayoutView, IBConnectionsViewController, IBDocument, NSScrollView, NSView;
 
 @interface IBConnectionsInspector : IDEInspectorViewController
 {
-    id inspectedEndPoint;
-    IBDocument *inspectedDocument;
-    NSScrollView *scrollView;
-    DVTBorderedView *statusAreaView;
-    IBConnectionsInspectorLayoutView *layoutView;
-    NSView *scrolledDocumentView;
-    IBConnectionsViewController *connectionsController;
-    DVTObservingToken *classDataIsUpdatingObservanceToken;
-    DVTNotificationToken *_documentViewFrameChangeToken;
-    DVTNotificationToken *_scrollViewFrameChangeToken;
+    id _inspectedEndPoint;
+    IBDocument *_inspectedDocument;
+    NSView *_scrolledDocumentView;
+    IBConnectionsViewController *_connectionsController;
+    DVTObservingToken *_classDataIsUpdatingObservanceToken;
+    NSScrollView *_scrollView;
+    DVTBorderedView *_statusAreaView;
+    IBConnectionsInspectorLayoutView *_layoutView;
 }
 
+@property(retain, nonatomic) IBConnectionsInspectorLayoutView *layoutView; // @synthesize layoutView=_layoutView;
+@property(retain, nonatomic) DVTBorderedView *statusAreaView; // @synthesize statusAreaView=_statusAreaView;
+@property(retain, nonatomic) NSScrollView *scrollView; // @synthesize scrollView=_scrollView;
 - (void).cxx_destruct;
 - (id)findIndicatorContentViewForInspectedKeyPath:(id)arg1 withContext:(id)arg2;
 - (void)setContent:(id)arg1;
 - (void)primitiveInvalidate;
 - (BOOL)automaticallyInvalidatesChildViewControllers;
 - (void)loadView;
-- (id)layoutView;
-- (id)statusAreaView;
-- (id)scrollView;
-- (void)viewDidInstall;
-- (void)scrollViewDocumentViewFrameChanged:(id)arg1;
-- (void)stackClippingViewFrameChanged:(id)arg1;
 - (void)setInspectedEndPoint:(id)arg1;
 - (void)setScrolledDocumentView:(id)arg1;
-- (void)updateLastDisclosureViewBorderColor;
 
 @end
 

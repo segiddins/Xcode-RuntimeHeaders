@@ -6,7 +6,7 @@
 
 #import <IDEKit/IDEViewController.h>
 
-@class DVTStackView_AppKitAutolayout, IBAbstractDocumentEditor, IBStructureAreaBackgroundView, IBStructureAreaDockLabelContainer, NSLayoutConstraint, NSMutableDictionary, NSOrderedSet, NSSegmentedControl, NSSet, NSString, NSView;
+@class DVTBorderedView, DVTSearchField, IBAbstractDocumentEditor, IBStructureAreaDockLabelContainer, NSLayoutConstraint, NSMutableDictionary, NSSet, NSString, NSView;
 @protocol IBSelectionProvider, IBStructureViewControllerDelegate;
 
 @interface IBStructureViewController : IDEViewController
@@ -14,38 +14,32 @@
     NSMutableDictionary *_cachedSelectionProvidersByStateSavingIdentifier;
     BOOL _isLoadingSelectionProviders;
     BOOL _drawsWithActiveLook;
-    BOOL _shouldShowSelectionProviderSwitcher;
-    NSOrderedSet *_structureAreaStructureProviders;
     NSSet *_selectionProviders;
     IBAbstractDocumentEditor *_documentEditor;
     IBStructureAreaDockLabelContainer *_dockItemLabelPopUpContainer;
     id <IBStructureViewControllerDelegate> _delegate;
     IDEViewController<IBSelectionProvider> *_currentStructureProvider;
-    NSView *_contentView;
-    IBStructureAreaBackgroundView *_backgroundView;
-    IBStructureAreaBackgroundView *_structureSwitcherContainerView;
-    NSSegmentedControl *_structureSwitcherSegmentedControl;
-    NSLayoutConstraint *_stackViewConstraint;
-    DVTStackView_AppKitAutolayout *_topStackView;
+    DVTBorderedView *_contentBorderedView;
+    NSView *_filterFieldContainerView;
+    DVTBorderedView *_outerBorderedView;
+    DVTSearchField *_filterField;
+    NSLayoutConstraint *_barHeightConstraint;
+    NSLayoutConstraint *_filterFieldHeightConstraint;
 }
 
-@property(nonatomic) BOOL shouldShowSelectionProviderSwitcher; // @synthesize shouldShowSelectionProviderSwitcher=_shouldShowSelectionProviderSwitcher;
-@property __weak DVTStackView_AppKitAutolayout *topStackView; // @synthesize topStackView=_topStackView;
-@property(retain, nonatomic) NSLayoutConstraint *stackViewConstraint; // @synthesize stackViewConstraint=_stackViewConstraint;
-@property(nonatomic) __weak NSSegmentedControl *structureSwitcherSegmentedControl; // @synthesize structureSwitcherSegmentedControl=_structureSwitcherSegmentedControl;
-@property(retain, nonatomic) IBStructureAreaBackgroundView *structureSwitcherContainerView; // @synthesize structureSwitcherContainerView=_structureSwitcherContainerView;
-@property(retain, nonatomic) IBStructureAreaBackgroundView *backgroundView; // @synthesize backgroundView=_backgroundView;
-@property(nonatomic) __weak NSView *contentView; // @synthesize contentView=_contentView;
++ (id)keyPathsForValuesAffectingCurrentFilterFieldWantingStructureProvider;
+@property(retain, nonatomic) NSLayoutConstraint *filterFieldHeightConstraint; // @synthesize filterFieldHeightConstraint=_filterFieldHeightConstraint;
+@property(retain, nonatomic) NSLayoutConstraint *barHeightConstraint; // @synthesize barHeightConstraint=_barHeightConstraint;
+@property(retain, nonatomic) DVTSearchField *filterField; // @synthesize filterField=_filterField;
+@property(retain, nonatomic) DVTBorderedView *outerBorderedView; // @synthesize outerBorderedView=_outerBorderedView;
+@property(retain, nonatomic) NSView *filterFieldContainerView; // @synthesize filterFieldContainerView=_filterFieldContainerView;
+@property(retain, nonatomic) DVTBorderedView *contentBorderedView; // @synthesize contentBorderedView=_contentBorderedView;
 @property(retain, nonatomic) IDEViewController<IBSelectionProvider> *currentStructureProvider; // @synthesize currentStructureProvider=_currentStructureProvider;
 @property(nonatomic) __weak id <IBStructureViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) IBStructureAreaDockLabelContainer *dockItemLabelPopUpContainer; // @synthesize dockItemLabelPopUpContainer=_dockItemLabelPopUpContainer;
 @property(nonatomic) BOOL drawsWithActiveLook; // @synthesize drawsWithActiveLook=_drawsWithActiveLook;
 @property(retain, nonatomic) IBAbstractDocumentEditor *documentEditor; // @synthesize documentEditor=_documentEditor;
 - (void).cxx_destruct;
-- (void)userSelectedStructureProviderFromSwitcher:(id)arg1;
-- (void)_updateSelectionProviderSwitcherVisibility;
-@property(readonly, nonatomic) NSOrderedSet *structureAreaStructureProviders; // @synthesize structureAreaStructureProviders=_structureAreaStructureProviders;
-- (void)populateStructureAreaStructureProviders:(id)arg1;
 @property(readonly, nonatomic) NSSet *selectionProviders; // @synthesize selectionProviders=_selectionProviders;
 - (void)_ensureSelectionProvidersAreCreated;
 - (void)makeAndPopulateSelectionProviders:(id)arg1;
@@ -54,15 +48,16 @@
 - (void)configureStructureAreaForUserPreferences;
 @property(readonly, nonatomic) IDEViewController<IBSelectionProvider> *lastStructureSelectionProvider;
 - (id)closedSelectionProvider;
+- (id)initialSelectionProvider;
 - (id)structureAreaExpansionPreferencesKey;
 - (void)editorInstalled;
+@property(readonly, nonatomic) IDEViewController<IBSelectionProvider> *currentFilterFieldWantingStructureProvider;
 @property(readonly, nonatomic, getter=isShowingStructureArea) BOOL showingStructureArea;
 - (BOOL)supportsTogglingStructureArea;
 - (void)toggleStructureArea:(id)arg1;
 - (void)selectionProviderDidBecomeActive:(id)arg1;
 - (double)constrainContentWidthAndChangeModesIfNeeded:(double)arg1;
 - (id)selectionProviderForRevealingMembers:(id)arg1;
-@property(readonly, nonatomic) double maximumContentWidth;
 @property(readonly, nonatomic) double minimumContentWidth;
 @property(readonly, nonatomic) double contentWidth;
 @property(readonly, nonatomic) NSSet *highlightProviders;
@@ -71,6 +66,7 @@
 - (void)topLevelObjectsChanged;
 - (void)loadView;
 - (void)primitiveInvalidate;
+- (id)initUsingDefaultNib;
 
 @end
 

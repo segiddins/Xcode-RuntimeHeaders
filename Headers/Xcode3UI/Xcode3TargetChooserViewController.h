@@ -8,13 +8,13 @@
 
 #import <Xcode3UI/NSPathControlDelegate-Protocol.h>
 
-@class IDENavigableItem, IDENavigableItemCoordinator, IDEPathControl, IDEWorkspace, NSArray, NSString;
+@class DVTPathControl, IDENavigableItem, IDENavigableItemCoordinator, IDEWorkspace, NSArray, NSString;
 @protocol IDEBlueprint;
 
 @interface Xcode3TargetChooserViewController : IDEViewController <NSPathControlDelegate>
 {
     IDEWorkspace *_rootWorkspace;
-    IDEPathControl *_pathControl;
+    DVTPathControl *_pathControl;
     IDENavigableItemCoordinator *_navigableItemCoordinator;
     NSArray *_blueprintProviderWrappers;
     NSArray *_blueprintProviderNavigables;
@@ -26,7 +26,7 @@
 @property(retain, nonatomic) NSArray *blueprintProviderNavigables; // @synthesize blueprintProviderNavigables=_blueprintProviderNavigables;
 @property(retain, nonatomic) NSArray *blueprintProviderWrappers; // @synthesize blueprintProviderWrappers=_blueprintProviderWrappers;
 @property(readonly, nonatomic) IDENavigableItemCoordinator *navigableItemCoordinator; // @synthesize navigableItemCoordinator=_navigableItemCoordinator;
-@property(readonly, nonatomic) IDEPathControl *pathControl; // @synthesize pathControl=_pathControl;
+@property(readonly, nonatomic) DVTPathControl *pathControl; // @synthesize pathControl=_pathControl;
 @property(readonly, nonatomic) IDEWorkspace *rootWorkspace; // @synthesize rootWorkspace=_rootWorkspace;
 - (void).cxx_destruct;
 - (void)primitiveInvalidate;

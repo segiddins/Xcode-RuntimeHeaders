@@ -6,11 +6,17 @@
 
 #import <IDEKit/IDELaunchActionOptionViewController.h>
 
+@class NSButton, NSLayoutConstraint;
+
 @interface IDEDebugXPCOptionsController : IDELaunchActionOptionViewController
 {
+    NSButton *_MSLOption;
+    NSLayoutConstraint *_verticalSpacingContraint;
 }
 
 + (BOOL)availableForScheme:(id)arg1;
+- (void).cxx_destruct;
+- (void)loadView;
 
 @end
 

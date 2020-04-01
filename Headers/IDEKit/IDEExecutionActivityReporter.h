@@ -14,7 +14,6 @@
     NSMapTable *_reportForLaunchSessionTable;
 }
 
-+ (void)initialize;
 - (void).cxx_destruct;
 - (void)_updateActivityReport:(id)arg1;
 - (id)_titleForLaunchSession:(id)arg1 prefix:(id)arg2;

@@ -7,6 +7,7 @@
 #import <Foundation/NSString.h>
 
 @interface NSString (_CoreDataPlugin_Extensions)
++ (id)cdm_uniqueStringForString:(id)arg1 givenExistingStrings:(id)arg2;
 - (long long)_xdcaseInsensitiveNumericCompare:(id)arg1;
 @end
 

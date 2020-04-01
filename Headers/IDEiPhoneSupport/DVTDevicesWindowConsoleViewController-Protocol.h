@@ -7,6 +7,7 @@
 #import <IDEiPhoneSupport/DVTDevicesWindowDetailViewController-Protocol.h>
 
 @protocol DVTDevicesWindowConsoleViewController <DVTDevicesWindowDetailViewController>
+- (void)reload;
 - (void)save:(id)arg1;
 - (void)clear:(id)arg1;
 @end

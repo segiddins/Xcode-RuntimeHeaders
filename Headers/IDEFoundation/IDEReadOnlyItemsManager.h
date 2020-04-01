@@ -17,6 +17,8 @@
 + (BOOL)tryToMakeFilePathWritable:(id)arg1 error:(id *)arg2;
 + (BOOL)_addUserWritePermissionToFilePath:(id)arg1 error:(id *)arg2;
 + (int)readOnlyStatusOfFilePath:(id)arg1;
++ (void)deregisterDerivedDataPath:(id)arg1;
++ (void)registerDerivedDataPath:(id)arg1;
 
 @end
 

@@ -59,6 +59,7 @@
 - (id)createSourceListSections;
 - (id)shownSourceListSectionIdentifiers;
 - (void)setupSourceListAndCells;
+- (void)setupContextualMenu;
 - (id)createSourceListItemCell;
 - (id)createSourceListTitleCell;
 - (id)modelRoot;

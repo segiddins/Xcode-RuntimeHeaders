@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <GPURenderTargetEditor/GPURenderJob.h>
+#import <GPUDebugger/GPURenderJob.h>
 
 @class GPUFramebufferAttachmentInfo;
 
@@ -18,16 +18,11 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) GPUFramebufferAttachmentInfo *attachmentInfo; // @synthesize attachmentInfo=_attachmentInfo;
 @property(readonly, nonatomic) unsigned int attachment; // @synthesize attachment=_attachment;
 - (void).cxx_destruct;
-- (BOOL)showOverlay;
-- (void)setRenderingAttributes:(id)arg1;
-- (BOOL)isColor;
-- (BOOL)flipped;
-- (struct CGSize)imageSize;
 - (id)displayElementName;
 - (BOOL)isStencilDisplayElement;
 - (BOOL)isDepthDisplayElement;
-- (id)initWithResource:(id)arg1 modelFactory:(id)arg2 attachment:(unsigned int)arg3 overlayResource:(id)arg4 attachmentInfo:(id)arg5;
-- (void)resolveWithTraceResourceItem:(id)arg1;
+- (id)initWithResource:(id)arg1 modelFactory:(id)arg2 attachment:(unsigned int)arg3 overlayResources:(id)arg4 attachmentInfo:(id)arg5;
+- (id)initWithItem:(id)arg1 resource:(id)arg2 overlayResources:(id)arg3 modelFactory:(id)arg4 textureImageGroupComponent:(unsigned long long)arg5;
 
 @end
 

@@ -11,11 +11,12 @@
 }
 
 + (id)defaultName;
-- (id)initWithInformationFromBuildPhase:(id)arg1 forTargetSnapshot:(id)arg2;
-- (void)computeDependenciesInTargetBuildContext:(id)arg1;
-- (void)copyResourcesFromResourcesDirAtPath:(id)arg1 inTargetBuildContext:(id)arg2;
-- (void)computeDependenciesForBuildFileReference:(id)arg1 inTargetBuildContext:(id)arg2;
-- (void)copyResourceFile:(id)arg1 ofType:(id)arg2 toDirectory:(id)arg3 inTargetBuildContext:(id)arg4;
+- (id)initWithInformationFromBuildPhase:(id)arg1 forTargetSnapshot:(id)arg2 withResolver:(id)arg3;
+- (void)computeDependenciesWithMacroExpansionScope:(id)arg1;
+- (void)copyResourcesFromResourcesDirAtPath:(id)arg1 withMacroExpansionScope:(id)arg2;
+- (void)computeDependenciesForBuildFileReference:(id)arg1 withMacroExpansionScope:(id)arg2;
+- (void)_copyResourceFile:(id)arg1 ofType:(id)arg2 toDirectory:(id)arg3 withMacroExpansionScope:(id)arg4;
+- (BOOL)shouldResolveBuildRulesForFileReferences;
 
 @end
 

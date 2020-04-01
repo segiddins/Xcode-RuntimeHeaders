@@ -18,6 +18,8 @@
 + (double)dragImageOpacity;
 + (id)imageOfViews:(id)arg1 withOpacity:(double)arg2 renderingDestination:(id)arg3;
 + (struct CGRect)boundingFrameForViews:(id)arg1;
++ (id)liveUpdatingImageOfView:(id)arg1 appearance:(id)arg2;
++ (id)imageOfView:(id)arg1 renderingDestination:(id)arg2 appearance:(id)arg3;
 + (id)imageOfView:(id)arg1 renderingDestination:(id)arg2;
 + (id)imageOfView:(id)arg1 withScale:(double)arg2 renderingDestination:(id)arg3;
 + (id)imageOfView:(id)arg1 withScale:(double)arg2 andOpacity:(double)arg3 renderingDestination:(id)arg4;

@@ -6,7 +6,11 @@
 
 #import <AppKit/NSPredicateEditor.h>
 
-@interface NSPredicateEditor (IBNSPredicateEditorIntegration)
+#import <IDEInterfaceBuilderCocoaIntegration/IBDocumentArchiving-Protocol.h>
+
+@class NSString;
+
+@interface NSPredicateEditor (IBNSPredicateEditorIntegration) <IBDocumentArchiving>
 + (id)keyPathsForValuesAffectingIbInspectedRowTemplates;
 + (id)instantiateWithDocumentUnarchiver:(id)arg1;
 - (void)completeUnarchivingAfterChildrenAreUnarchived:(id)arg1;
@@ -17,7 +21,6 @@
 - (BOOL)ibCanAcceptContentsOfPasteboard:(id)arg1 inDocument:(id)arg2 targetChildRelation:(id *)arg3;
 - (BOOL)ibHasSingleCell;
 - (void)ibPrepareCocoaDocumentForCompiling:(id)arg1 withContext:(id)arg2;
-- (void)ibWarnings:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
 - (struct CGRect)ibRectForChild:(id)arg1 inFrameController:(id)arg2;
 - (void)ibDidAddToDocument:(id)arg1 phase:(unsigned long long)arg2;
 - (BOOL)ibIsUserMovable;
@@ -33,5 +36,14 @@
 - (void)ibCompleteFinalSetup;
 - (BOOL)ibSwizzledForceUseDelegate;
 - (id)ibSwizzledInitWithCoder:(id)arg1;
+- (id)ibLocalChildToManyRelationshipsKeyPaths;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @end
 

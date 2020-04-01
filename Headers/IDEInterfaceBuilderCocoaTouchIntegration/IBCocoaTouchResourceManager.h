@@ -10,13 +10,19 @@
 {
 }
 
++ (id)_systemImageRecordsByOSVersion;
++ (id)_systemImageResources;
++ (void)populateResourceSet:(id)arg1 withOrderedSymbolNames:(id)arg2 symbolSemanticNamesMap:(id)arg3 symbolToUsageInfomationMap:(id)arg4 deprecationAliasMap:(id)arg5;
++ (id)systemImageResourceForTargetRuntimeIdentifier:(id)arg1;
++ (id)simRuntimeRootPath;
 + (id)systemMediaRepository;
++ (id)platform;
 + (id)missingImage;
-- (id)foldingStrategy;
+- (void)ibPopulateAdditionalTargetOSVersions:(id)arg1 forCompilingDocument:(id)arg2;
+- (void)populateIssues:(id)arg1 forResourceReferences:(id)arg2;
 - (id)typesForDefaultMediaRepositories;
 - (id)placeholderResourceIconForMediaType:(id)arg1;
-- (id)scaleVaraibleForForcingOneXImages;
-- (id)placeholderResourceContentForMediaType:(id)arg1 originalValue:(id)arg2;
+- (id)placeholderResourceContentForMediaType:(id)arg1 runtimeName:(id)arg2 originalValue:(id)arg3;
 
 @end
 

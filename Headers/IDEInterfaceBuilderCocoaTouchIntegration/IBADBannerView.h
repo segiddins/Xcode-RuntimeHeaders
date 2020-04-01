@@ -12,24 +12,26 @@
 
 @interface IBADBannerView : IBUIView <IBDocumentArchiving>
 {
-    int adType;
+    int _adType;
 }
 
 + (id)ibInstantiateViewForRole:(long long)arg1 withTargetRuntime:(id)arg2 documentClass:(Class)arg3 assetIdentifier:(id)arg4;
-@property int adType; // @synthesize adType;
+@property int adType; // @synthesize adType=_adType;
 - (void)drawRect:(struct CGRect)arg1;
 - (BOOL)shouldDrawAsPlaceholder;
 - (void)archiveRequiredContentSizeIdentifiers:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
-- (void)archiveWithDocumentArchiver:(id)arg1;
 - (id)ibLegalSizesForType:(int)arg1;
-- (void)ibWarnings:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
+- (void)ibPopulateIssues:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
 - (id)ibAdditionalFrameworkPathForSimulation;
 - (struct CGSize)ibNearestLegalBoundsSize;
 - (struct CGSize)ibPreferredSize;
 - (Class)ibTrackerClass;
+- (Class)ibEditorClass;
+- (id)ibLocalAttributeKeyPaths;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

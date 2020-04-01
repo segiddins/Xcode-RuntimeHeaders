@@ -17,17 +17,21 @@
     NSMutableArray *_genericIssues;
     unsigned long long _currentIssueGeneration;
     NSMutableSet *_observedTestables;
+    BOOL _shouldPrefixAnnotationsWithConfigurationName;
 }
 
++ (id)_documentLocationForFilePath:(id)arg1 lineNumber:(id)arg2 timestamp:(id)arg3;
 + (unsigned long long)assertionBehaviorAfterEndOfEventForSelector:(SEL)arg1;
+@property BOOL shouldPrefixAnnotationsWithConfigurationName; // @synthesize shouldPrefixAnnotationsWithConfigurationName=_shouldPrefixAnnotationsWithConfigurationName;
 - (void).cxx_destruct;
-- (void)_processResult:(id)arg1;
+- (void)_processResult:(id)arg1 forTest:(id)arg2;
 - (void)_addIssuesForTest:(id)arg1 issues:(id)arg2 isGeneric:(BOOL)arg3;
-- (void)_clearIssuesForTest:(id)arg1;
+- (void)_clearStaleIssuesForTest:(id)arg1;
+- (void)_clearGenericIssues;
 - (void)_postTestIssue:(id)arg1 forTestable:(id)arg2;
 - (id)_documentLocationForFilePath:(id)arg1 lineNumber:(id)arg2 timestamp:(id)arg3;
 - (id)_headingNameForTest:(id)arg1;
-- (void)_beginNewIssueGeneration;
+- (void)_beginNewIssueGenerationPrefixingAnnotationsWithConfigurationName:(BOOL)arg1;
 - (BOOL)_filterIssuesByActiveScheme;
 - (id)displayNameForIssueTypeIdentifier:(id)arg1;
 - (void)testsChanged:(id)arg1;

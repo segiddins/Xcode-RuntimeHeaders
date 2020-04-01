@@ -13,6 +13,7 @@
 
 @property(nonatomic) long long insertionIndex; // @synthesize insertionIndex=_insertionIndex;
 - (struct CGRect)dropRectForDragAndDropInsertionIndicator:(id)arg1;
+- (double)effectiveEditedStackViewSpacing;
 - (unsigned long long)orderedRelationInsertionEdgeForDragAndDropInsertionIndicator:(id)arg1;
 - (id)orderedRelationForDragAndDropInsertionIndicator:(id)arg1;
 - (long long)orderedRelationInsertionIndexForDragAndDropInsertionIndicator:(id)arg1;

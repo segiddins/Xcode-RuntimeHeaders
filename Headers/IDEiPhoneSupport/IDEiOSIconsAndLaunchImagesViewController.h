@@ -12,6 +12,7 @@
 
 @interface IDEiOSIconsAndLaunchImagesViewController : IDEViewController <IDEiOSImageSectionDelegate>
 {
+    int _targetEditorImageType;
     NSArray *_imageSections;
     IDEiOSTargetEditor *_targetEditor;
     DVTStackView_ML *_contentStackView;
@@ -29,6 +30,7 @@
 @property(retain) NSView *assetCatalogSlice; // @synthesize assetCatalogSlice=_assetCatalogSlice;
 @property(retain) NSView *convertAssetCatalogSlice; // @synthesize convertAssetCatalogSlice=_convertAssetCatalogSlice;
 @property(retain) DVTStackView_ML *contentStackView; // @synthesize contentStackView=_contentStackView;
+@property(readonly) int targetEditorImageType; // @synthesize targetEditorImageType=_targetEditorImageType;
 @property(readonly) IDEiOSTargetEditor *targetEditor; // @synthesize targetEditor=_targetEditor;
 @property(retain, nonatomic) NSArray *imageSections; // @synthesize imageSections=_imageSections;
 - (void).cxx_destruct;
@@ -41,7 +43,7 @@
 - (BOOL)iPadTargeted;
 - (BOOL)iPhoneTargeted;
 @property(readonly) NSString *imageTypeString;
-@property(readonly) int targetEditorImageType;
+- (void)setImageSections:(id)arg1 imageType:(int)arg2;
 - (void)rebuildUI;
 - (void)rebuildAssetCatalogMenu;
 - (void)removeExistingPlistKeys;

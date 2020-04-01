@@ -21,6 +21,7 @@
 - (BOOL)_copyFile:(id)arg1 toDevicePath:(id)arg2 error:(id *)arg3;
 - (_Bool)uploadFile:(id)arg1 error:(id *)arg2;
 - (void)_notifyFinishOfUpload;
+- (void)_notifyUploadProgressOfFile:(id)arg1 progress:(long long)arg2;
 - (void)_notifyStartOfUpload;
 - (id)sandboxFileBases;
 - (_Bool)downloadOptimizationProfilesToFile:(id)arg1 error:(id *)arg2;

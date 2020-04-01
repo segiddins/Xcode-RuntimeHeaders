@@ -6,12 +6,9 @@
 
 #import <IDEInterfaceBuilderCocoaTouchIntegration/NSObject-Protocol.h>
 
-@class IBDocument, IBUIFontDescription;
+@class IBUIFontDescription;
 
 @protocol IBUIFontedObject <NSObject>
 @property(readonly, copy, nonatomic) IBUIFontDescription *fontDescription;
-
-@optional
-- (IBUIFontDescription *)legacyDefaultArchivedFontDescriptionForDocument:(IBDocument *)arg1;
 @end
 

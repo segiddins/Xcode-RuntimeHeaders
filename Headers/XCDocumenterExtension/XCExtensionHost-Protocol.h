@@ -6,9 +6,10 @@
 
 #import "NSObject-Protocol.h"
 
-@class NSDictionary;
+@class NSDictionary, NSXPCListenerEndpoint;
 
 @protocol XCExtensionHost <NSObject>
+- (void)useEndpointForService:(NSXPCListenerEndpoint *)arg1 reply:(void (^)(NSDictionary *))arg2;
 - (void)checkInWithXcode:(NSDictionary *)arg1 reply:(void (^)(NSDictionary *))arg2;
 @end
 

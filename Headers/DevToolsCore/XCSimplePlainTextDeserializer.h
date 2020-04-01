@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Foundation/NSObject.h>
+#import <objc/NSObject.h>
 
 @class NSData, NSError;
 
@@ -16,6 +16,7 @@
     NSError *_error;
 }
 
+- (void).cxx_destruct;
 - (id)error;
 - (id)data;
 - (id)decodeObjectList;
@@ -24,7 +25,6 @@
 - (unsigned long long)decodeInteger;
 - (Class)classForUppercaseAsciiCharacter:(BOOL)arg1;
 - (void)setClass:(Class)arg1 forUppercaseAsciiCharacter:(BOOL)arg2;
-- (void)finalize;
 - (void)dealloc;
 - (id)init;
 - (id)initWithData:(id)arg1;

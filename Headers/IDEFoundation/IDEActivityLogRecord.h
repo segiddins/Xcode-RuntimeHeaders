@@ -6,11 +6,17 @@
 
 #import <objc/NSObject.h>
 
-@class DVTFileDataType, IDEEntityIdentifier, IDETypeIdentifier, NSString, NSURL;
+@class DVTFileDataType, DVTFilePath, DVTFilePromise, IDEActivityLogObservableRecord, IDEEntityIdentifier, IDETypeIdentifier, NSString, NSURL;
+@protocol IDELogStoreManageable;
 
 @interface IDEActivityLogRecord : NSObject
 {
+    BOOL _isImported;
+    BOOL _disablesSourceIntegration;
+    BOOL _hasTests;
+    NSString *_auxiliaryLogUniqueIdentifier;
     IDEEntityIdentifier *_entityIdentifier;
+    DVTFilePath *_buildMetricsReportFilePath;
 }
 
 + (unsigned long long)assertionBehaviorAfterEndOfEventForSelector:(SEL)arg1;
@@ -18,20 +24,33 @@
 + (void)uncacheLogRecord:(id)arg1;
 + (void)cacheLogRecord:(id)arg1;
 + (id)cachedLogRecordWithURL:(id)arg1;
+@property(readonly) DVTFilePath *buildMetricsReportFilePath; // @synthesize buildMetricsReportFilePath=_buildMetricsReportFilePath;
+@property(readonly) BOOL hasTests; // @synthesize hasTests=_hasTests;
 @property(readonly) IDEEntityIdentifier *entityIdentifier; // @synthesize entityIdentifier=_entityIdentifier;
+@property(readonly) BOOL disablesSourceIntegration; // @synthesize disablesSourceIntegration=_disablesSourceIntegration;
+@property BOOL isImported; // @synthesize isImported=_isImported;
+@property(readonly) NSString *auxiliaryLogUniqueIdentifier; // @synthesize auxiliaryLogUniqueIdentifier=_auxiliaryLogUniqueIdentifier;
 - (void).cxx_destruct;
-- (id)testableSummariesForFilePath:(id)arg1 runDestinationRecord:(id *)arg2 error:(id *)arg3;
-- (id)coverageReport;
-- (id)coverageReportFilePath;
-- (id)testableSummariesPlistFilePath;
+@property(readonly) BOOL hasTimelineData;
+@property(readonly) NSString *onDiskPath;
+@property(readonly) DVTFilePath *coverageArchiveFilePath;
+@property(readonly) DVTFilePromise *coverageArchiveFilePromise;
+@property(readonly) DVTFilePromise *coverageReportFilePromise;
+@property(readonly) BOOL hasCoverageData;
+@property(readonly) BOOL hasAuxiliaryLog;
+@property(readonly) BOOL hasPrimaryLog;
 - (id)initWithEntityIdentifier:(id)arg1;
 - (long long)compareUsingTimeStartedRecording:(id)arg1;
 - (id)fullLogIfInMemory;
+- (id)fullLogStoreManageableWithError:(id *)arg1;
+- (id)logSectionForItem:(id)arg1 error:(id *)arg2;
+- (id)auxiliaryLogItems;
+- (id)primaryLogItems;
+- (id)auxiliaryLogWithError:(id *)arg1;
 - (id)fullLogWithError:(id *)arg1;
-- (void)removeSelfWithCompletionBlock:(CDUnknownBlockType)arg1;
-@property(readonly) BOOL isRemoved;
+@property(readonly) IDEActivityLogObservableRecord *auxiliaryObservable;
+@property(readonly) IDEActivityLogObservableRecord *primaryObservable;
 @property(readonly) BOOL isRecording;
-@property(readonly) NSString *highLevelStatus;
 @property(readonly) NSString *signature;
 @property(readonly) DVTFileDataType *documentType;
 @property(readonly, nonatomic) double timeStoppedRecording;
@@ -40,6 +59,9 @@
 @property(readonly) IDETypeIdentifier *domainType;
 @property(readonly) NSString *uniqueIdentifier;
 @property(readonly) NSURL *logURL;
+
+// Remaining properties
+@property(readonly) id <IDELogStoreManageable> logStoreManageable; // @dynamic logStoreManageable;
 
 @end
 

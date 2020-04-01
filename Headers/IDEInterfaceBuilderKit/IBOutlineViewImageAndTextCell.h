@@ -4,16 +4,16 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <DVTKit/DVTImageAndTextCell.h>
+#import <DVTUserInterfaceKit/DVTImageAndTextCell.h>
 
 @interface IBOutlineViewImageAndTextCell : DVTImageAndTextCell
 {
-    BOOL usesGroupHeaderStyle;
-    BOOL usesBoldFontForGroupHeaders;
+    BOOL _usesGroupHeaderStyle;
+    BOOL _usesBoldFontForGroupHeaders;
 }
 
-@property(nonatomic) BOOL usesBoldFontForGroupHeaders; // @synthesize usesBoldFontForGroupHeaders;
-@property(nonatomic) BOOL usesGroupHeaderStyle; // @synthesize usesGroupHeaderStyle;
+@property(nonatomic) BOOL usesBoldFontForGroupHeaders; // @synthesize usesBoldFontForGroupHeaders=_usesBoldFontForGroupHeaders;
+@property(nonatomic) BOOL usesGroupHeaderStyle; // @synthesize usesGroupHeaderStyle=_usesGroupHeaderStyle;
 - (id)subtitleFont;
 - (struct CGRect)imageRectForBounds:(struct CGRect)arg1;
 - (id)initTextCell:(id)arg1;

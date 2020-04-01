@@ -13,6 +13,7 @@
     NSString *_referenceName;
 }
 
++ (BOOL)supportsSecureCoding;
 @property(copy, nonatomic) NSString *referenceName; // @synthesize referenceName=_referenceName;
 - (void).cxx_destruct;
 - (id)getSKAction;

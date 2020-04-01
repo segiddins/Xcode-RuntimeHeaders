@@ -6,14 +6,14 @@
 
 #import <objc/NSObject.h>
 
-#import <GPUToolsServices/NSCoding-Protocol.h>
 #import <GPUToolsServices/NSCopying-Protocol.h>
 #import <GPUToolsServices/NSObject-Protocol.h>
+#import <GPUToolsServices/NSSecureCoding-Protocol.h>
 
-@class NSArray, NSIndexSet, NSMutableDictionary, NSMutableIndexSet, NSMutableString, NSString;
-@protocol NSCoding><NSCopying><NSObject;
+@class NSArray, NSIndexSet, NSMutableArray, NSMutableDictionary, NSMutableIndexSet, NSMutableString, NSString;
+@protocol NSSecureCoding><NSCopying><NSObject;
 
-@interface DYAnalyzerFinding : NSObject <NSCopying, NSCoding, NSObject>
+@interface DYAnalyzerFinding : NSObject <NSCopying, NSSecureCoding, NSObject>
 {
     NSString *_kind;
     NSString *_generator;
@@ -23,21 +23,36 @@
     NSString *_links;
     NSMutableIndexSet *_functionIndices;
     NSMutableDictionary *_statistics;
-    id <NSCoding><NSCopying><NSObject> _additionalData;
+    id <NSSecureCoding><NSCopying><NSObject> _additionalData;
     unsigned int _frameNum;
     unsigned int _drawCallNum;
     unsigned int _classification;
     int _warningLevel;
     int _granularity;
+    BOOL _unsorted;
+    BOOL _showUniqueSeparator;
+    BOOL _showUniqueTerminator;
     int _platform;
     unsigned long long _graphicsEngineID;
     unsigned long long _resourceGroupID;
     NSArray *_subfindings;
+    NSString *_diagnosticID;
+    NSMutableArray *_issues;
+    NSString *_uniqueInfo;
+    unsigned long long _associatedResourceID;
 }
 
 + (id)_findingLevelString:(int)arg1;
++ (BOOL)supportsSecureCoding;
+@property(nonatomic) BOOL showUniqueTerminator; // @synthesize showUniqueTerminator=_showUniqueTerminator;
+@property(nonatomic) BOOL showUniqueSeparator; // @synthesize showUniqueSeparator=_showUniqueSeparator;
+@property(nonatomic) unsigned long long associatedResourceID; // @synthesize associatedResourceID=_associatedResourceID;
+@property(copy, nonatomic) NSString *uniqueInfo; // @synthesize uniqueInfo=_uniqueInfo;
+@property(retain, nonatomic) NSMutableArray *issues; // @synthesize issues=_issues;
+@property(copy, nonatomic) NSString *diagnosticID; // @synthesize diagnosticID=_diagnosticID;
+@property(nonatomic) BOOL unsorted; // @synthesize unsorted=_unsorted;
 @property(retain, nonatomic) NSArray *subfindings; // @synthesize subfindings=_subfindings;
-@property(retain, nonatomic) id <NSCoding><NSCopying><NSObject> additionalData; // @synthesize additionalData=_additionalData;
+@property(retain, nonatomic) id <NSSecureCoding><NSCopying><NSObject> additionalData; // @synthesize additionalData=_additionalData;
 @property(readonly, copy, nonatomic) NSMutableDictionary *statistics; // @synthesize statistics=_statistics;
 @property(nonatomic) unsigned int drawCallNum; // @synthesize drawCallNum=_drawCallNum;
 @property(nonatomic) unsigned int frameNum; // @synthesize frameNum=_frameNum;
@@ -82,6 +97,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithPlatform:(int)arg1;
+- (id)initWithPlatform:(int)arg1 unsorted:(BOOL)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

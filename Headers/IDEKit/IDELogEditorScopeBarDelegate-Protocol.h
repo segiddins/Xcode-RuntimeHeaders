@@ -6,11 +6,14 @@
 
 #import <IDEKit/NSObject-Protocol.h>
 
-@class IDELogEditorScopeBar, NSString;
+@class IDELogEditorScopeBar, IDELogStoreManageableLogItem, NSString;
 
 @protocol IDELogEditorScopeBarDelegate <NSObject>
+- (void)logEditorScopeBarCopyShownTranscripts:(IDELogEditorScopeBar *)arg1;
+- (void)logEditorScopeBarSaveReport:(IDELogEditorScopeBar *)arg1;
 - (void)logEditorScopeBar:(IDELogEditorScopeBar *)arg1 searchTextChanged:(NSString *)arg2;
 - (void)logEditorScopeBar:(IDELogEditorScopeBar *)arg1 showAllResultsChanged:(BOOL)arg2;
 - (void)logEditorScopeBar:(IDELogEditorScopeBar *)arg1 stateChanged:(int)arg2;
+- (void)logEditorScopeBar:(IDELogEditorScopeBar *)arg1 switchedToLog:(IDELogStoreManageableLogItem *)arg2;
 @end
 

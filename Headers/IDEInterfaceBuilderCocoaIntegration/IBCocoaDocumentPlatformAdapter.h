@@ -17,6 +17,7 @@
 @property(retain, nonatomic) NSNumber *explicitCustomObjectInstantiationBehavior; // @synthesize explicitCustomObjectInstantiationBehavior=_explicitCustomObjectInstantiationBehavior;
 @property(readonly, nonatomic) IBCocoaBindingsManager *bindingManager; // @synthesize bindingManager=_bindingManager;
 - (void).cxx_destruct;
+- (void)performAdditionDocumentVerificationAndPopulateMessages:(id)arg1;
 - (id)applicableInspectorCategoriesGivenSuggestion:(id)arg1;
 - (id)storyboardExitPlaceholder;
 - (id)storyboardFirstResponderPlaceholder;
@@ -29,10 +30,10 @@
 - (void)populateEmptyXIBDocumentWithInitialPlaceholders;
 - (void)installTopLevelPlaceholderWithLabel:(id)arg1 className:(id)arg2 andObjectID:(id)arg3;
 - (Class)externalReferencePlaceholderClass;
-- (id)hybridNIBPackageRuntimeFileName;
+- (id)defaultHybridNIBPackageRuntimeFileName;
 - (id)compiledStoryBoardIntermediateXibFileType;
-- (void)addToManyOutletFromObject:(id)arg1 referencingInstnace:(id)arg2 byName:(id)arg3;
-- (void)addOutletFromObject:(id)arg1 referencingInstnace:(id)arg2 byName:(id)arg3;
+- (void)addToManyOutletFromObject:(id)arg1 referencingInstance:(id)arg2 byName:(id)arg3;
+- (void)addOutletFromObject:(id)arg1 referencingInstance:(id)arg2 byName:(id)arg3;
 - (void)addActionFromSender:(id)arg1 toReceiver:(id)arg2 withSelector:(id)arg3;
 - (id)archiveTypeForFileType:(id)arg1;
 - (id)forcedUpgradeFileTypeForFileType:(id)arg1;
@@ -41,6 +42,10 @@
 - (void)frameDecider:(id)arg1 didPropagateFrameSize:(struct CGSize)arg2 toView:(id)arg3;
 - (void)frameDecider:(id)arg1 didPropagateFrame:(struct CGRect)arg2 toView:(id)arg3;
 - (void)internalFrameDecider:(id)arg1 didPropagateFrameSize:(struct CGSize)arg2 toView:(id)arg3;
+- (id)effectiveAppearanceForConfiguration:(id)arg1;
+- (id)desiredConfigurationBasedOnEditorWindow:(id)arg1;
+- (BOOL)isConfigurationAffectedByEditorAppearance;
+- (id)initialDefaultConfiguration;
 - (void)primitiveInvalidate;
 - (BOOL)isObjectBuiltInXIBPlaceholder:(id)arg1;
 - (id)platform;

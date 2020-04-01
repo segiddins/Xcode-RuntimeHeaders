@@ -6,8 +6,27 @@
 
 #import <AppKit/NSFont.h>
 
-@interface NSFont (IBFontAdditions)
+#import <IDEInterfaceBuilderKit/IBDocumentArchiving-Protocol.h>
+
+@class NSString;
+
+@interface NSFont (IBFontAdditions) <IBDocumentArchiving>
 + (id)boldSystemFontWithControlSize:(unsigned long long)arg1;
 + (id)systemFontWithControlSize:(unsigned long long)arg1;
++ (id)instantiateWithDocumentUnarchiver:(id)arg1;
+- (BOOL)xmlCoder:(id)arg1 shouldEncodeObject:(id *)arg2 forKey:(id)arg3 context:(id)arg4;
+- (id)xmlCoderEncodingCallbackContext:(id)arg1;
+- (id)metaFontName;
+- (long long)metaFont;
+- (BOOL)ibIsAppearanceFont;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
+- (id)ibCoerceToDescriptivePListWithStrictness:(long long)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @end
 

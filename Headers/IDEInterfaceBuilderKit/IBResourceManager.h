@@ -7,20 +7,24 @@
 #import <objc/NSObject.h>
 
 #import <IDEInterfaceBuilderKit/DVTInvalidation-Protocol.h>
+#import <IDEInterfaceBuilderKit/IDEResourceManager-Protocol.h>
 
-@class DVTStackBacktrace, IBDocument, IBMutableIdentityDictionary, IDEContainer, IDEMediaResourceVariantContext, IDEMutableMediaRepository, NSDictionary, NSMutableDictionary, NSString;
+@class DVTStackBacktrace, IBDocument, IBMutableIdentityDictionary, IDEContainer, IDEMediaResourceVariantContext, IDEMutableMediaRepository, NSDictionary, NSMutableDictionary, NSSet, NSString;
 @protocol DVTInvalidation;
 
-@interface IBResourceManager : NSObject <DVTInvalidation>
+@interface IBResourceManager : NSObject <DVTInvalidation, IDEResourceManager>
 {
     id <DVTInvalidation> _variantContextObservation;
     IDEMediaResourceVariantContext *_variantContext;
     IDEMutableMediaRepository *_placeholderRepository;
     IDEMutableMediaRepository *_importedRepository;
     NSMutableDictionary *_observers;
+    NSSet *_previousEscapedResourcesToPreferIfEqual;
     IBMutableIdentityDictionary *_escapedResourceValuesToVariantSets;
     IBMutableIdentityDictionary *_transformedValuesToTransformers;
-    NSMutableDictionary *_mediaTypesToNamesToResources;
+    NSMutableDictionary *_loadedMediaTypesToNamesToVariantSets;
+    NSMutableDictionary *_resourceRecordCacheOfMediaTypesToNamesToVariantSets;
+    IBMutableIdentityDictionary *_variantSetsToResourceValue;
     CDUnknownBlockType _variantSetTieBreaker;
     IBDocument *_document;
     IDEContainer *_resourceProvidingContainer;
@@ -29,32 +33,56 @@
 
 + (id)systemMediaRepository;
 + (void)initialize;
+@property(readonly, nonatomic) IBMutableIdentityDictionary *escapedResourceValuesToVariantSets; // @synthesize escapedResourceValuesToVariantSets=_escapedResourceValuesToVariantSets;
 @property(copy, nonatomic) NSDictionary *variantForMatching; // @synthesize variantForMatching=_variantForMatching;
 @property(retain, nonatomic) IDEContainer *resourceProvidingContainer; // @synthesize resourceProvidingContainer=_resourceProvidingContainer;
 @property(readonly) __weak IBDocument *document; // @synthesize document=_document;
 - (void).cxx_destruct;
+- (void)ibPopulateAdditionalTargetOSVersions:(id)arg1 forCompilingDocument:(id)arg2;
 - (id)variantContextExportedToLibrary;
 - (BOOL)mediaLibraryController:(id)arg1 variantSetIsSystemProvided:(id)arg2;
 - (id)mediaLibraryController:(id)arg1 dragImagesByStateIdentifierForMediaResourceVariantSet:(id)arg2;
 - (void)mediaLibraryController:(id)arg1 populatePasteboard:(id)arg2 withMediaResourceVariantSets:(id)arg3;
+- (id)effectiveEscapedResourceContentForContent:(id)arg1;
+- (id)documentLocationForContent:(id)arg1;
 - (id)placeholderResourceIconForMediaType:(id)arg1;
-- (id)placeholderResourceContentForMediaType:(id)arg1 originalValue:(id)arg2;
+- (id)placeholderResourceContentForMediaType:(id)arg1 runtimeName:(id)arg2 originalValue:(id)arg3;
 - (void)synchronizeObjectPropertyValuesWithVariantContext;
+- (void)populateRequiredDocumentCapabilities:(id)arg1 forArchivedValueWhichMightBeResource:(id)arg2;
+- (void)populateIssues:(id)arg1 forResourceReferences:(id)arg2;
+- (void)populateIssues:(id)arg1 forResourceReferencesFromObjects:(id)arg2;
+- (id)computeResourceReferencesFromObjects:(id)arg1;
 - (id)computeResourceReferences;
 - (id)resourceReferenceForObject:(id)arg1 resourceValue:(id)arg2 keyPath:(id)arg3 configuration:(id)arg4;
-- (void)importResourcesFromResourceManager:(id)arg1;
+- (void)importResourcesWithNamesGroupedByType:(id)arg1 fromResourceManager:(id)arg2;
+- (id)resourcesWithNamesGroupedByType:(id)arg1;
 - (id)registerResourceObserver:(CDUnknownBlockType)arg1;
 - (id)extractResourceValuesFromPasteboard:(id)arg1 ofMediaType:(id)arg2;
 - (void)populatePasteboard:(id)arg1 withMediaResourceVariantSets:(id)arg2;
 - (id)dragIdentifierForResourceValue:(id)arg1;
 - (id)dragIdentifierForVariantSet:(id)arg1;
 - (id)transformResourceValue:(id)arg1 withValueTransformer:(id)arg2;
+- (id)resourceNamesGroupedByMediaTypeReferencedByObjects:(id)arg1;
 - (id)referencedResourceValuesToRuntimeNamesForMediaType:(id)arg1;
-- (id)firstResourceValueOfMediaType:(id)arg1 withRuntimeName:(id)arg2 creatingPlaceholderOfClassIfMissing:(Class)arg3 fromOriginalValue:(id)arg4;
-- (id)firstResourceValueOfMediaType:(id)arg1 withRuntimeName:(id)arg2;
-- (id)scaleVaraibleForForcingOneXImages;
-- (id)availableRuntimeNamesForMediaType:(id)arg1;
+- (id)firstResourceValueOfMediaType:(id)arg1 withRuntimeName:(id)arg2 namespaceID:(id)arg3 creatingPlaceholderOfClassIfMissing:(Class)arg4 fromOriginalValue:(id)arg5;
+- (id)resourceValueForVariantSet:(id)arg1;
+- (id)IBUIColorByWrappingNSColorIfNecessaryFromValue:(id)arg1;
+- (BOOL)shouldWrapNSColorWithIBUIColor;
+- (id)firstResourceValueOfMediaType:(id)arg1 withRuntimeName:(id)arg2 namespaceID:(id)arg3;
+- (id)resourceForVariantSet:(id)arg1;
+- (id)firstResourceVariantSetOfMediaType:(id)arg1 withRuntimeName:(id)arg2 namespaceID:(id)arg3;
+- (void)requestIconForResourceRecord:(id)arg1 compeletion:(CDUnknownBlockType)arg2;
+- (id)resourceRecordOfMediaType:(id)arg1 matchingRuntimeName:(id)arg2 namespaceID:(id)arg3;
+- (id)resourceRecordsOfMediaType:(id)arg1 matchingRuntimeNames:(id)arg2 namespaceID:(id)arg3;
+- (void)prepareResourceRecordsCacheForMediaType:(id)arg1 namespaceID:(id)arg2;
+- (BOOL)isVariantSet:(id)arg1 inNamespace:(id)arg2;
+- (BOOL)isVariantSet:(id)arg1 aPlaceholderWithNameMatchingNamespace:(id)arg2;
+- (id)namespaceForVariantSet:(id)arg1;
+@property(readonly) BOOL supportsSystemNamespace;
+- (id)availableRuntimeNamesForMediaType:(id)arg1 sourceType:(long long)arg2;
 - (id)resources;
+- (id)namespaceIDForNamedResource:(id)arg1;
+- (id)namespaceIDForResourceValue:(id)arg1;
 - (id)runtimeNameForResourceValue:(id)arg1;
 - (id)variantSetForEscapedResourceValue:(id)arg1;
 - (void)setupVariantContextWithContainerRepositories:(id)arg1;

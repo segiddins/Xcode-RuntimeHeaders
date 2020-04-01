@@ -6,13 +6,25 @@
 
 #import <AppKit/NSBrowser.h>
 
-@interface NSBrowser (IBBrowserIntegration)
+#import <IDEInterfaceBuilderCocoaIntegration/IBDocumentArchiving-Protocol.h>
+
+@class NSString;
+
+@interface NSBrowser (IBBrowserIntegration) <IBDocumentArchiving>
 - (BOOL)ibOverridablePrefersToVerticallyResizeWithContainer;
 - (BOOL)ibOverridablePrefersToHorizontallyResizeWithContainer;
 - (void)adjustMinimumBrowserSizeForInspectedProperty:(id)arg1;
-- (void)setIbShadowedDefaultNewColumnWidth:(long long)arg1;
-- (long long)ibShadowedDefaultNewColumnWidth;
+@property long long ibShadowedDefaultNewColumnWidth;
 - (id)ibWidgetType;
 - (BOOL)ibHasSingleCell;
+- (id)ibLocalAttributeKeyPaths;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @end
 

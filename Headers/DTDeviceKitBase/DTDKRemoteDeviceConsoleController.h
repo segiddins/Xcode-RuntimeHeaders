@@ -6,8 +6,8 @@
 
 #import <objc/NSObject.h>
 
-@class DTDKRemoteDeviceToken, DVTDispatchLock, NSString;
-@protocol DTDKRemoteDeviceConsoleControllerDelegate, OS_dispatch_queue, OS_dispatch_source;
+@class DVTDispatchLock, NSString;
+@protocol DTDKRemoteDeviceConsoleControllerDelegate, DTDKRemoteDeviceToken, OS_dispatch_queue, OS_dispatch_semaphore, OS_dispatch_source;
 
 @interface DTDKRemoteDeviceConsoleController : NSObject
 {
@@ -18,18 +18,20 @@
     _Bool _isInvalidating;
     struct DTDKCircularBuffer *_circularBuffer;
     DVTDispatchLock *_bufferLock;
+    NSObject<OS_dispatch_semaphore> *_sourceCancelledSemaphore;
     id <DTDKRemoteDeviceConsoleControllerDelegate> _delegate;
-    DTDKRemoteDeviceToken *_token;
+    id <DTDKRemoteDeviceToken> _token;
 }
 
 + (id)consoleStringWithData:(id)arg1 startingAtOffset:(unsigned long long)arg2;
 + (id)controllerForDevice:(id)arg1;
-@property __weak DTDKRemoteDeviceToken *token; // @synthesize token=_token;
+@property __weak id <DTDKRemoteDeviceToken> token; // @synthesize token=_token;
 @property(retain) id <DTDKRemoteDeviceConsoleControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 @property(readonly, copy) NSString *consoleString;
 - (void)clear;
 - (void)reload;
+- (void)stop;
 - (void)invalidate;
 - (void)dealloc;
 

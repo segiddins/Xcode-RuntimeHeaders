@@ -17,6 +17,8 @@
     NSMutableArray *_recordHandlers;
 }
 
++ (BOOL)localMachineSupportsPMI;
++ (BOOL)localMachineSupportsPMC;
 + (void)initialize;
 @property(nonatomic) unsigned int kdebugTriggerIndex; // @synthesize kdebugTriggerIndex=_kdebugTriggerIndex;
 @property(readonly, nonatomic) BOOL hasAtLeastOneRecordHandler; // @synthesize hasAtLeastOneRecordHandler=_hasAtLeastOneRecordHandler;
@@ -29,6 +31,8 @@
 - (int)_addTriggerConfig:(id)arg1 withRecordHandler:(id)arg2;
 - (unsigned long long)triggerConfigCount;
 - (void)enumerateTriggerConfigs:(CDUnknownBlockType)arg1;
+@property(nonatomic) BOOL bufferSizeOverrideClamping;
+@property(nonatomic) unsigned long long bufferSizeOverride;
 @property(nonatomic) unsigned char recordingPriority;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)init;

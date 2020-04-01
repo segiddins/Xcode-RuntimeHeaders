@@ -4,45 +4,24 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <DVTKit/DVTPopoverContentViewController.h>
+#import <DVTUserInterfaceKit/DVTPopoverContentViewController.h>
 
-#import <IDEKit/NSTableViewDataSource-Protocol.h>
-#import <IDEKit/NSTableViewDelegate-Protocol.h>
+@class IDEProfileQualification, IDEProvisioningProfileInfoViewController;
 
-@class DVTNotificationToken, IDEProfileQualification, NSArray, NSImageView, NSString, NSTableView, NSTextField;
-
-@interface IDEProvisioningProfileInfoPopoverViewController : DVTPopoverContentViewController <NSTableViewDelegate, NSTableViewDataSource>
+@interface IDEProvisioningProfileInfoPopoverViewController : DVTPopoverContentViewController
 {
-    NSArray *_items;
-    DVTNotificationToken *_frameChangeToken;
     IDEProfileQualification *_qualification;
-    NSImageView *_profileImageView;
-    NSTextField *_profileTitleField;
-    NSTextField *_profileSubtitleField;
-    NSTableView *_qualifierTable;
+    IDEProvisioningProfileInfoViewController *_infoViewController;
 }
 
-@property(retain, nonatomic) NSTableView *qualifierTable; // @synthesize qualifierTable=_qualifierTable;
-@property(retain, nonatomic) NSTextField *profileSubtitleField; // @synthesize profileSubtitleField=_profileSubtitleField;
-@property(retain, nonatomic) NSTextField *profileTitleField; // @synthesize profileTitleField=_profileTitleField;
-@property(retain, nonatomic) NSImageView *profileImageView; // @synthesize profileImageView=_profileImageView;
+@property(retain, nonatomic) IDEProvisioningProfileInfoViewController *infoViewController; // @synthesize infoViewController=_infoViewController;
 @property(retain, nonatomic) IDEProfileQualification *qualification; // @synthesize qualification=_qualification;
 - (void).cxx_destruct;
 - (void)primitiveInvalidate;
-- (double)tableView:(id)arg1 heightOfRow:(long long)arg2;
-- (BOOL)tableView:(id)arg1 shouldSelectRow:(long long)arg2;
-- (id)tableView:(id)arg1 viewForTableColumn:(id)arg2 row:(long long)arg3;
-- (long long)numberOfRowsInTableView:(id)arg1;
-- (id)_subtitle;
 - (void)viewDidLoad;
-- (id)_makeItems;
 - (id)initWithQualification:(id)arg1;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 
 @end
 

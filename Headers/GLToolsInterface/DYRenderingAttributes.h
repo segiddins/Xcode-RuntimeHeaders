@@ -6,72 +6,83 @@
 
 #import <objc/NSObject.h>
 
-@class NSString;
-@protocol DYResource;
+@class GPUHistogram;
 
 @interface DYRenderingAttributes : NSObject
 {
-    struct ReductionJob<float> floatReductionJob;
-    struct ReductionJob<int> intReductionJob;
-    struct ReductionJob<unsigned int> uintReductionJob;
-    unsigned int _fundamentalType;
-    struct CGColorSpace *_colorSpace;
-    id <DYResource> _toneMapResource;
-    char _channelStates[4];
-    struct ToneMapRange _toneMapValues[4];
-    struct ToneMapRange _toneMapExtents[4];
-    struct ToneMapRange _toneMapLimits[4];
-    struct ToneMapRange _toneMapDefaults[4];
-    BOOL _userDefaultAlphaOverride;
-    BOOL _toneMapIsFromUser;
-    BOOL _convertTosRGB;
-    unsigned char _alphaChannelIndex;
+    // Error parsing type: , name: _enabledStates
+    double _toneMapFactors[4];
+    GPUHistogram *_histograms[4];
+    BOOL _hasUserDefinedChannelMappings;
+    BOOL _hasUserDefinedToneMapping;
+    BOOL _flipped;
+    BOOL _premultipliedAlpha;
+    BOOL _combineColorChannelHistograms;
+    union DYTextureChannelMappings _channelMappings;
+    union DYTextureChannelMappings _defaultChannelMappings;
     int _selectedMipmapLevel;
     int _selectedLayer;
-    unsigned int _resourceFormat;
-    long long _numberOfColumns;
-    NSString *_displayFormat;
-    struct CGRect _documentRect;
+    int _renderTargetArrayIndex;
+    unsigned int _pixelFormat;
+    unsigned long long _channelFlags;
+    // Error parsing type: , name: _minValues
+    // Error parsing type: , name: _maxValues
+    // Error parsing type: , name: _defaultMinValues
+    // Error parsing type: , name: _defaultMaxValues
+    // Error parsing type: , name: _histogramMinValues
+    // Error parsing type: , name: _histogramMaxValues
 }
 
-+ (id)renderedImageWithImageInfo:(struct ImageInfo)arg1 size:(struct CGSize)arg2 imageData:(id)arg3 dataOffset:(unsigned long long)arg4 showDepth:(BOOL)arg5 flipped:(BOOL)arg6 showAlpha:(BOOL)arg7;
-+ (unsigned int)getRenderableFormatFromImage:(id)arg1 showDepth:(BOOL)arg2 dataOffsetOut:(unsigned long long *)arg3;
-+ (unsigned char)maxImageChannels;
-+ (unsigned char)invalidChannelIndex;
-@property(readonly, nonatomic) unsigned char alphaChannelIndex; // @synthesize alphaChannelIndex=_alphaChannelIndex;
-@property(copy, nonatomic) NSString *displayFormat; // @synthesize displayFormat=_displayFormat;
-@property(nonatomic) long long numberOfColumns; // @synthesize numberOfColumns=_numberOfColumns;
-@property(nonatomic) struct CGRect documentRect; // @synthesize documentRect=_documentRect;
-@property(readonly, nonatomic) unsigned int resourceFormat; // @synthesize resourceFormat=_resourceFormat;
++ (void)initialize;
+@property(nonatomic) BOOL combineColorChannelHistograms; // @synthesize combineColorChannelHistograms=_combineColorChannelHistograms;
+// Error parsing type for property histogramMaxValues:
+// Property attributes: T,N,V_histogramMaxValues
+
+// Error parsing type for property histogramMinValues:
+// Property attributes: T,N,V_histogramMinValues
+
+@property(nonatomic) BOOL premultipliedAlpha; // @synthesize premultipliedAlpha=_premultipliedAlpha;
+@property(readonly, nonatomic) unsigned long long channelFlags; // @synthesize channelFlags=_channelFlags;
+@property(readonly, nonatomic) unsigned int pixelFormat; // @synthesize pixelFormat=_pixelFormat;
+@property(nonatomic) BOOL flipped; // @synthesize flipped=_flipped;
+@property(nonatomic) int renderTargetArrayIndex; // @synthesize renderTargetArrayIndex=_renderTargetArrayIndex;
 @property(nonatomic) int selectedLayer; // @synthesize selectedLayer=_selectedLayer;
 @property(nonatomic) int selectedMipmapLevel; // @synthesize selectedMipmapLevel=_selectedMipmapLevel;
-@property(nonatomic) BOOL convertTosRGB; // @synthesize convertTosRGB=_convertTosRGB;
-@property(nonatomic) BOOL toneMapIsFromUser; // @synthesize toneMapIsFromUser=_toneMapIsFromUser;
-- (id).cxx_construct;
+@property(nonatomic) BOOL hasUserDefinedToneMapping; // @synthesize hasUserDefinedToneMapping=_hasUserDefinedToneMapping;
+// Error parsing type for property defaultMaxValues:
+// Property attributes: T,N,V_defaultMaxValues
+
+// Error parsing type for property defaultMinValues:
+// Property attributes: T,N,V_defaultMinValues
+
+// Error parsing type for property maxValues:
+// Property attributes: T,N,V_maxValues
+
+// Error parsing type for property minValues:
+// Property attributes: T,N,V_minValues
+
+@property(nonatomic) BOOL hasUserDefinedChannelMappings; // @synthesize hasUserDefinedChannelMappings=_hasUserDefinedChannelMappings;
+@property(nonatomic) union DYTextureChannelMappings defaultChannelMappings; // @synthesize defaultChannelMappings=_defaultChannelMappings;
+@property(nonatomic) union DYTextureChannelMappings channelMappings; // @synthesize channelMappings=_channelMappings;
+// Error parsing type for property enabledStates:
+// Property attributes: T,N,V_enabledStates
+
 - (void).cxx_destruct;
-- (id)renderedImageUsingRenderer:(struct ImageRenderer *)arg1 imageInfo:(struct ImageInfo)arg2 size:(struct CGSize)arg3 imageData:(id)arg4 dataOffset:(unsigned long long)arg5 showDepth:(BOOL)arg6 flipped:(BOOL)arg7;
-- (void)updateToneMapRangeAndResource:(id)arg1 showingDepth:(BOOL)arg2 usingRenderer:(struct ImageRenderer *)arg3;
-- (void)setDefaultMax:(double)arg1 forChannelIndex:(unsigned char)arg2;
-- (double)defaultMaxForChannelIndex:(unsigned char)arg1;
-- (void)setDefaultMin:(double)arg1 forChannelIndex:(unsigned char)arg2;
-- (double)defaultMinForChannelIndex:(unsigned char)arg1;
-- (void)setToneMapLimitMax:(double)arg1 forChannelIndex:(unsigned char)arg2;
-- (double)toneMapLimitMaxForChannelIndex:(unsigned char)arg1;
-- (void)setToneMapLimitMin:(double)arg1 forChannelIndex:(unsigned char)arg2;
-- (double)toneMapLimitMinForChannelIndex:(unsigned char)arg1;
-- (void)setToneMapExtentMax:(double)arg1 forChannelIndex:(unsigned char)arg2;
-- (double)toneMapExtentMaxForChannelIndex:(unsigned char)arg1;
-- (void)setToneMapExtentMin:(double)arg1 forChannelIndex:(unsigned char)arg2;
-- (double)toneMapExtentMinForChannelIndex:(unsigned char)arg1;
-- (void)setToneMapMax:(double)arg1 forChannelIndex:(unsigned char)arg2;
-- (double)toneMapMaxForChannelIndex:(unsigned char)arg1;
-- (void)setToneMapMin:(double)arg1 forChannelIndex:(unsigned char)arg2;
-- (double)toneMapMinForChannelIndex:(unsigned char)arg1;
+- (id)description;
+- (void)getChannelMap:(unsigned char [4])arg1;
+- (void)updateWithMinValues:(double [4])arg1 maxValues:(double [4])arg2 minLimits:(double [4])arg3 maxLimits:(double [4])arg4 factors:(double [4])arg5;
+- (double)toneMapFactorForChannelIndex:(unsigned char)arg1;
+- (void)setHistogram:(id)arg1 forChannel:(long long)arg2;
+- (id)histogramForChannel:(long long)arg1;
 - (void)setChannelEnabled:(BOOL)arg1 forIndex:(unsigned char)arg2;
 - (BOOL)isChannelEnabledForIndex:(unsigned char)arg1;
-@property(readonly, nonatomic) unsigned int toneMapType;
-- (void)dealloc;
-- (id)init;
+- (void)setMaxValue:(double)arg1 forChannel:(long long)arg2;
+- (void)setMinValue:(double)arg1 forChannel:(long long)arg2;
+- (void)setChannelMapping:(unsigned char)arg1 forChannel:(long long)arg2;
+- (unsigned char)channelMappingForChannel:(long long)arg1;
+- (void)setEnabledState:(BOOL)arg1 forChannel:(long long)arg2;
+- (BOOL)enabledStateForChannel:(long long)arg1;
+- (id)initWithPixelFormat:(unsigned int)arg1;
 
 @end
 

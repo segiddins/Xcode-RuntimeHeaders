@@ -12,6 +12,7 @@
 {
     struct kpep_db *_kpepDB;
     NSMutableArray *_events;
+    NSString *_lookupName;
     NSString *_name;
 }
 
@@ -19,6 +20,7 @@
 + (id)cpuNamed:(id)arg1 fromSerializedData:(id)arg2 error:(id *)arg3;
 + (id)cpuNamed:(id)arg1 error:(id *)arg2;
 + (id)localCPU:(id *)arg1;
++ (id)localOverrideName;
 + (void)initialize;
 @property(retain, nonatomic) NSMutableArray *events; // @synthesize events=_events;
 @property(readonly, retain, nonatomic) NSString *name; // @synthesize name=_name;
@@ -30,6 +32,7 @@
 - (struct kpep_db *)kpepDB;
 - (void)dealloc;
 - (id)initWithName:(id)arg1 database:(struct kpep_db *)arg2;
+- (id)description;
 
 @end
 

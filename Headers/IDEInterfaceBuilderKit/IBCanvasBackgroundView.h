@@ -4,15 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <DVTKit/DVTLayoutView_ML.h>
+#import <DVTStructuredLayoutKit/DVTLayoutView_ML.h>
 
 @interface IBCanvasBackgroundView : DVTLayoutView_ML
 {
-    CDUnknownBlockType _drawingCompletionBlock;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType drawingCompletionBlock; // @synthesize drawingCompletionBlock=_drawingCompletionBlock;
-- (void).cxx_destruct;
 - (id)hitTest:(struct CGPoint)arg1;
 - (void)setBoundsOrigin:(struct CGPoint)arg1;
 - (BOOL)isFlipped;

@@ -10,18 +10,16 @@
 #import <IDEFoundation/IDEFlightChecking-Protocol.h>
 
 @class DVTStackBacktrace, NSError, NSString;
-@protocol OS_dispatch_queue;
 
 @interface IDEProjectItemModelFlightCheck : NSObject <IDEFlightChecking, DVTInvalidation>
 {
-    NSObject<OS_dispatch_queue> *_activityQueue;
     BOOL _requiresAccountAndTeamSelection;
     BOOL _longRunning;
     BOOL _failed;
     int _status;
-    CDUnknownBlockType _backgroundResolutionBlock;
-    CDUnknownBlockType _backgroundUnresolutionBlock;
-    CDUnknownBlockType _backgroundValidityCheckBlock;
+    CDUnknownBlockType _resolutionBlock;
+    CDUnknownBlockType _unresolutionBlock;
+    CDUnknownBlockType _validityCheckBlock;
     NSString *_title;
     NSString *_resolvingTitle;
     NSString *_pastTitle;
@@ -35,23 +33,23 @@
 @property(readonly, copy, nonatomic) NSString *pastTitle; // @synthesize pastTitle=_pastTitle;
 @property(readonly, copy, nonatomic) NSString *resolvingTitle; // @synthesize resolvingTitle=_resolvingTitle;
 @property(readonly, copy, nonatomic) NSString *title; // @synthesize title=_title;
-@property(readonly, copy, nonatomic) CDUnknownBlockType backgroundValidityCheckBlock; // @synthesize backgroundValidityCheckBlock=_backgroundValidityCheckBlock;
-@property(readonly, copy, nonatomic) CDUnknownBlockType backgroundUnresolutionBlock; // @synthesize backgroundUnresolutionBlock=_backgroundUnresolutionBlock;
-@property(readonly, copy, nonatomic) CDUnknownBlockType backgroundResolutionBlock; // @synthesize backgroundResolutionBlock=_backgroundResolutionBlock;
+@property(readonly, copy, nonatomic) CDUnknownBlockType validityCheckBlock; // @synthesize validityCheckBlock=_validityCheckBlock;
+@property(readonly, copy, nonatomic) CDUnknownBlockType unresolutionBlock; // @synthesize unresolutionBlock=_unresolutionBlock;
+@property(readonly, copy, nonatomic) CDUnknownBlockType resolutionBlock; // @synthesize resolutionBlock=_resolutionBlock;
 @property(readonly, nonatomic, getter=isLongRunning) BOOL longRunning; // @synthesize longRunning=_longRunning;
 @property(readonly, nonatomic) BOOL requiresAccountAndTeamSelection; // @synthesize requiresAccountAndTeamSelection=_requiresAccountAndTeamSelection;
 - (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isAutomaticallyResolvable) BOOL automaticallyResolvable;
 - (void)revert;
-- (void)unresolveWithContext:(id)arg1;
+- (void)unresolve;
 - (void)resolveWithContext:(id)arg1;
 - (void)validate;
+- (id)initForFrameworksWithResolutionBlock:(CDUnknownBlockType)arg1 unresolutionBlock:(CDUnknownBlockType)arg2 validityCheckBlock:(CDUnknownBlockType)arg3 framework:(id)arg4;
+- (id)initForBuildSettingsWithResolutionBlock:(CDUnknownBlockType)arg1 unresolutionBlock:(CDUnknownBlockType)arg2 validityCheckBlock:(CDUnknownBlockType)arg3 buildSetting:(id)arg4;
+- (id)initForInfoPlistWithResolutionBlock:(CDUnknownBlockType)arg1 unresolutionBlock:(CDUnknownBlockType)arg2 validityCheckBlock:(CDUnknownBlockType)arg3 plistKey:(id)arg4;
+- (id)initForEntitlementsWithResolutionBlock:(CDUnknownBlockType)arg1 unresolutionBlock:(CDUnknownBlockType)arg2 validityCheckBlock:(CDUnknownBlockType)arg3 entitlement:(id)arg4;
 - (void)primitiveInvalidate;
-- (id)initForFrameworksWithBackgroundResolutionBlock:(CDUnknownBlockType)arg1 backgroundUnresolutionBlock:(CDUnknownBlockType)arg2 backgroundValidityCheckBlock:(CDUnknownBlockType)arg3 framework:(id)arg4;
-- (id)initForBuildSettingsWithBackgroundResolutionBlock:(CDUnknownBlockType)arg1 backgroundUnresolutionBlock:(CDUnknownBlockType)arg2 backgroundValidityCheckBlock:(CDUnknownBlockType)arg3 buildSetting:(id)arg4;
-- (id)initForInfoPlistWithBackgroundResolutionBlock:(CDUnknownBlockType)arg1 backgroundUnresolutionBlock:(CDUnknownBlockType)arg2 backgroundValidityCheckBlock:(CDUnknownBlockType)arg3 plistKey:(id)arg4;
-- (id)initForEntitlementsWithBackgroundResolutionBlock:(CDUnknownBlockType)arg1 backgroundUnresolutionBlock:(CDUnknownBlockType)arg2 backgroundValidityCheckBlock:(CDUnknownBlockType)arg3 entitlement:(id)arg4;
-- (id)initWithBackgroundResolutionBlock:(CDUnknownBlockType)arg1 backgroundUnresolutionBlock:(CDUnknownBlockType)arg2 backgroundValidityCheckBlock:(CDUnknownBlockType)arg3 title:(id)arg4 resolvingTitle:(id)arg5 pastTitle:(id)arg6;
+- (id)initWithResolutionBlock:(CDUnknownBlockType)arg1 unresolutionBlock:(CDUnknownBlockType)arg2 validityCheckBlock:(CDUnknownBlockType)arg3 title:(id)arg4 resolvingTitle:(id)arg5 pastTitle:(id)arg6;
 
 // Remaining properties
 @property(retain) DVTStackBacktrace *creationBacktrace;

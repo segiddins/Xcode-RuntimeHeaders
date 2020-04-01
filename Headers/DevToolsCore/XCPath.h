@@ -4,9 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Foundation/NSObject.h>
+#import <objc/NSObject.h>
 
-@interface XCPath : NSObject
+#import <DevToolsCore/NSCopying-Protocol.h>
+
+@interface XCPath : NSObject <NSCopying>
 {
     unsigned short _length;
     unsigned char _bytes[0];
@@ -16,7 +18,7 @@
 + (id)pathWithPathComponents:(id)arg1;
 + (id)pathWithBasePath:(id)arg1 pathComponents:(id)arg2;
 + (id)pathWithPrefixPath:(id)arg1 basePath:(id)arg2 pathComponents:(id)arg3;
-+ (id)pathWithPrefixPath:(id)arg1 basePath:(id)arg2 pathComponents:(id *)arg3 count:(unsigned long long)arg4;
++ (id)pathWithPrefixPath:(id)arg1 basePath:(id)arg2 pathComponents:(const id *)arg3 count:(unsigned long long)arg4;
 + (id)pathWithString:(id)arg1;
 + (id)pathWithFileSystemRepresentation:(const char *)arg1;
 + (id)pathWithFileSystemRepresentation:(const char *)arg1 length:(unsigned long long)arg2;

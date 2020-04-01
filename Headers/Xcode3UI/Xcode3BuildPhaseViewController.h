@@ -9,15 +9,17 @@
 #import <Xcode3UI/IDECapsuleViewController-Protocol.h>
 #import <Xcode3UI/IDECapsuleViewDelegate-Protocol.h>
 
-@class NSImage, NSString, Xcode3BuildPhase, Xcode3BuildPhasesEditor;
+@class NSColor, NSImage, NSString, Xcode3BuildPhase, Xcode3BuildPhasesEditor;
 
 @interface Xcode3BuildPhaseViewController : IDEViewController <IDECapsuleViewController, IDECapsuleViewDelegate>
 {
     Xcode3BuildPhase *_buildPhase;
     Xcode3BuildPhasesEditor *_editor;
+    BOOL _isSyntheticBuildPhase;
 }
 
 + (id)keyPathsForValuesAffectingTitleForDisplay;
+@property(readonly, nonatomic) BOOL isSyntheticBuildPhase; // @synthesize isSyntheticBuildPhase=_isSyntheticBuildPhase;
 @property(retain) Xcode3BuildPhasesEditor *editor; // @synthesize editor=_editor;
 @property(retain) Xcode3BuildPhase *buildPhase; // @synthesize buildPhase=_buildPhase;
 - (void).cxx_destruct;
@@ -40,6 +42,7 @@
 - (void)primitiveInvalidate;
 
 // Remaining properties
+@property(retain) NSColor *backgroundColor;
 @property BOOL canAddItems;
 @property(readonly) BOOL canDrag;
 @property(readonly) BOOL canRemove;
@@ -53,6 +56,7 @@
 @property(readonly) unsigned long long hash;
 @property(readonly) NSImage *icon;
 @property(readonly) Class superclass;
+@property(readonly) BOOL wantsDisclosureButtonHidden;
 
 @end
 

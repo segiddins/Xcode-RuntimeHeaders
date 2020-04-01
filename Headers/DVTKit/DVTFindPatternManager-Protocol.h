@@ -6,7 +6,6 @@
 
 #import <DVTKit/NSObject-Protocol.h>
 
-@class DVTFindPattern;
 @protocol DVTFindPatternField;
 
 @protocol DVTFindPatternManager <NSObject>
@@ -15,6 +14,5 @@
 
 @optional
 - (BOOL)supportsPatterns;
-- (void)findPatternField:(id <DVTFindPatternField>)arg1 findPatternDoubleClicked:(DVTFindPattern *)arg2;
 @end
 

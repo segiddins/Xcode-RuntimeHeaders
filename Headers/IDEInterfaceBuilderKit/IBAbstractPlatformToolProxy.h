@@ -10,7 +10,7 @@
 #import <IDEInterfaceBuilderKit/IBDiagnosticsHandlerConfigurator-Protocol.h>
 
 @class DVTStackBacktrace, IBAbstractPlatformToolExecutionContext, IBMessageSendChannel, IBPlatformToolLaunchContext, NSMutableArray, NSPipe, NSString;
-@protocol OS_dispatch_queue;
+@protocol IBAbstractPlatformToolProxyDelegate, OS_dispatch_queue, OS_dispatch_source;
 
 @interface IBAbstractPlatformToolProxy : NSObject <IBAbstractPlatformTool, IBDiagnosticsHandlerConfigurator>
 {
@@ -19,15 +19,23 @@
     SEL _previousCommandSelector;
     NSMutableArray *_additionalRequestContextStack;
     NSObject<OS_dispatch_queue> *_queue;
+    NSObject<OS_dispatch_queue> *_busyCountToolQueue;
     NSObject<OS_dispatch_queue> *_backtraceQueue;
     NSPipe *_keepAlivePipe;
+    long long _isBusyCount;
+    double _timeStampFromLastIdleOrBusy;
+    NSObject<OS_dispatch_source> *_toolExitDispatchSource;
+    BOOL _isAlive;
     BOOL _shouldRaiseOnFailures;
     IBAbstractPlatformToolExecutionContext *_executionContext;
     IBPlatformToolLaunchContext *_launchContext;
     CDUnknownBlockType _terminationHandler;
+    NSObject<IBAbstractPlatformToolProxyDelegate> *_proxyDelegate;
 }
 
 @property(nonatomic) BOOL shouldRaiseOnFailures; // @synthesize shouldRaiseOnFailures=_shouldRaiseOnFailures;
+@property BOOL isAlive; // @synthesize isAlive=_isAlive;
+@property(readonly, nonatomic) __weak NSObject<IBAbstractPlatformToolProxyDelegate> *proxyDelegate; // @synthesize proxyDelegate=_proxyDelegate;
 @property(readonly, copy, nonatomic) CDUnknownBlockType terminationHandler; // @synthesize terminationHandler=_terminationHandler;
 @property(readonly, nonatomic) IBPlatformToolLaunchContext *launchContext; // @synthesize launchContext=_launchContext;
 @property(readonly, nonatomic) IBAbstractPlatformToolExecutionContext *executionContext; // @synthesize executionContext=_executionContext;
@@ -43,17 +51,24 @@
 - (void)populateRequestContext:(id)arg1;
 - (void)recordLastCommandBacktrace:(id)arg1 cmd:(SEL)arg2;
 - (id)effectiveMarshallingResultGivenResult:(id)arg1 andPossibleError:(id)arg2;
+- (BOOL)isIdleForAtLeast:(double)arg1;
+- (void)setIdleTimeToAtLeast:(double)arg1;
+- (double)timeSinceLastIdleOrBusy;
+- (void)decrementBusy;
+@property(readonly, copy) NSString *description;
+- (void)incrementBusy;
+- (BOOL)incrementBusyOnlyIfIdle;
 - (id)_errorByAddingAdditionalCrashInformationToError:(id)arg1 orRaiseIfNeededOnFailure:(BOOL)arg2 shouldRaiseOnFailures:(BOOL)arg3 waitForCrashLog:(BOOL)arg4;
 - (id)errorByAddingAdditionalCrashInformationToError:(id)arg1 orRaiseIfNeededOnFailure:(BOOL)arg2;
 - (void)configureDiagnosticsHandler:(id)arg1;
 - (id)_previousCommandsBacktrace;
-- (id)initWithWriteDescriptor:(int)arg1 readDescriptor:(int)arg2 executionContext:(id)arg3 launchContext:(id)arg4 shouldRaiseOnFailures:(BOOL)arg5 terminationHandler:(CDUnknownBlockType)arg6 error:(id *)arg7;
-- (id)initWithSocket:(int)arg1 executionContext:(id)arg2 launchContext:(id)arg3 shouldRaiseOnFailures:(BOOL)arg4 terminationHandler:(CDUnknownBlockType)arg5 error:(id *)arg6;
+- (id)initWithWriteDescriptor:(int)arg1 readDescriptor:(int)arg2 executionContext:(id)arg3 launchContext:(id)arg4 proxyDelegate:(id)arg5 shouldRaiseOnFailures:(BOOL)arg6 terminationHandler:(CDUnknownBlockType)arg7 error:(id *)arg8;
+- (id)initWithSocket:(int)arg1 executionContext:(id)arg2 launchContext:(id)arg3 proxyDelegate:(id)arg4 shouldRaiseOnFailures:(BOOL)arg5 terminationHandler:(CDUnknownBlockType)arg6 error:(id *)arg7;
+- (void)setupToolExitDispatchSource;
 - (void)didLaunchWithPipeToKeepAlive:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

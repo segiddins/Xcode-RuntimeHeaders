@@ -6,11 +6,22 @@
 
 #import <AppKit/NSTableCellView.h>
 
-@interface NSTableCellView (IBNSTableCellViewIntegration)
+#import <IDEInterfaceBuilderCocoaIntegration/IBDocumentArchiving-Protocol.h>
+
+@class NSString;
+
+@interface NSTableCellView (IBNSTableCellViewIntegration) <IBDocumentArchiving>
 - (id)ibWidgetType;
 - (id)ibPasteboardTypes;
-- (BOOL)ibIsChildInitiallySelectable:(id)arg1;
 - (BOOL)ibCanBeBoundToFromObject:(id)arg1;
 - (id)ibDesignableContentView;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @end
 

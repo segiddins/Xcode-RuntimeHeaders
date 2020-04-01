@@ -6,7 +6,7 @@
 
 #import <IDEKit/IDELibraryController.h>
 
-@class DVTObservingToken, IDEMediaResourceFoldingStrategy, IDEMediaResourceVariantContext, NSDictionary, NSMapTable, NSObject, NSSet;
+@class DVTLibraryAsset, DVTLibrarySection, DVTObservingToken, IDEMediaResourceFoldingStrategy, IDEMediaResourceVariantContext, NSDictionary, NSMapTable, NSObject, NSSet, _TtC6IDEKit25IDEMediaLibraryDetailView;
 @protocol DVTInvalidation, IDEMediaLibraryDelegate;
 
 @interface IDEMediaLibraryController : IDELibraryController
@@ -20,43 +20,54 @@
     DVTObservingToken *_delegateExportedVariantContextKVOToken;
     DVTObservingToken *_delegateExportedVariantKVOToken;
     NSObject<IDEMediaLibraryDelegate> *_delegate;
-    NSDictionary *_variantForResolving;
+    NSDictionary *_variantsForResolvingByMediaType;
     NSMapTable *_variantSetsToAssets;
+    DVTLibrarySection *_workspaceSection;
+    DVTLibrarySection *_systemSection;
     BOOL _isLibraryLoaded;
+    _TtC6IDEKit25IDEMediaLibraryDetailView *_inlineDetailView;
+    DVTLibraryAsset *_inlineDetailViewAsset;
+    long long _detailAreaFetchGeneration;
+    NSSet *_allowedMediaTypes;
     NSSet *_mediaRepositories;
 }
 
++ (id)swatchWithColor:(id)arg1 size:(struct CGSize)arg2;
++ (id)swatchWithColor:(id)arg1 size:(struct CGSize)arg2 radius:(double)arg3;
++ (id)alternatePreviewForColor:(id)arg1;
 @property(retain, nonatomic) NSSet *mediaRepositories; // @synthesize mediaRepositories=_mediaRepositories;
 - (void).cxx_destruct;
 - (void)populatePasteboard:(id)arg1 withAssets:(id)arg2;
 - (void)populatePasteboard:(id)arg1 withAssets:(id)arg2 defaultDraggedImageState:(id *)arg3 identifierMapTable:(id *)arg4;
-- (struct CGSize)detailAreaSize;
-- (id)audioDetailController:(id)arg1 audioForLibraryAsset:(id)arg2 representedObject:(id)arg3;
-- (id)imageDetailController:(id)arg1 imageForLibraryAsset:(id)arg2 representedObject:(id)arg3;
-- (BOOL)quickLookDetailController:(id)arg1 shouldScaleToFitPreviewForLibraryAsset:(id)arg2 representedObject:(id)arg3;
-- (id)quickLookDetailController:(id)arg1 URLForLibraryAsset:(id)arg2 representedObject:(id)arg3;
-- (id)tooltipForDetailControllerRepresentedObject:(id)arg1 forAsset:(id)arg2;
-- (id)titleForDetailControllerRepresentedObject:(id)arg1 forAsset:(id)arg2;
-- (id)representedObjectForDetailControllerIdentifier:(id)arg1 index:(unsigned long long)arg2 forAsset:(id)arg3;
-- (id)detailControllerIdentifiersForVariantSet:(id)arg1;
 - (void)faultIconForAsset:(id)arg1;
+- (id)displayedResourceForVariantSet:(id)arg1;
+- (id)displayedResourceForAsset:(id)arg1;
 - (void)refreshAssetIconsBecauseVariantForResovlingChanged;
 - (void)migrateAssetsAfterVariantContextChange;
+- (id)effectiveVariantSetsForEffectiveContext;
 - (void)updateAssetsWithAddedOrModifiedVariantSets:(id)arg1 removedVariantSets:(id)arg2;
 - (id)createAssetForVariantSet:(id)arg1;
-- (id)groupIdentifierForVariantSet:(id)arg1;
+- (id)sectionForVariantSet:(id)arg1;
 - (void)updateMediaRepositories;
 - (id)effectiveVariantContext;
 - (void)configureAsset:(id)arg1 toReflectVariantSet:(id)arg2;
+- (void)refreshImageForAsset:(id)arg1 andFaultIfNeeded:(BOOL)arg2;
 - (void)libraryDidLoad;
-- (void)activeEditorDocumentDidChange:(id)arg1;
+- (void)activeEditorDidChange:(id)arg1;
+- (void)refreshDetailViewForAsset:(id)arg1;
+- (id)inlineDetailViewForAssets:(id)arg1;
+- (id)alternatesForVariantSet:(id)arg1;
+- (id)resourcesGroupedByIdiomForVariantSet:(id)arg1;
+- (void)fetchAllVariantsThenRefreshDetailsOfVariantSet:(id)arg1;
+- (CDUnknownBlockType)weakSelfBlockWithGenerationGuard:(CDUnknownBlockType)arg1;
 - (id)variantSetForAsset:(id)arg1;
-- (CDUnknownBlockType)groupComparator;
-- (id)activeWorkspaceTabController;
-- (id)workspaceWindowController;
-- (id)workspace;
+- (CDUnknownBlockType)assetComparator;
+- (BOOL)showsSectionHeaders;
 - (void)primitiveInvalidate;
+- (void)loadView;
+- (void)setRepresentedExtension:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (id)_rebuildVariantsForResolvingByMediaType;
 
 @end
 

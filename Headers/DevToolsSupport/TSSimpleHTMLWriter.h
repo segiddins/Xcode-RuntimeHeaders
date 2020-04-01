@@ -14,6 +14,7 @@
     unsigned long long _headerLevel;
 }
 
+- (void).cxx_destruct;
 - (void)writeContent:(id)arg1 inBlock:(id)arg2;
 - (void)writeLine:(id)arg1;
 - (void)writeTag:(id)arg1;
@@ -29,7 +30,6 @@
 - (char *)_endStartTagString;
 - (void)_writeXMLEpilogue;
 - (void)_writeXMLPrologue;
-- (void)dealloc;
 - (id)init;
 - (id)initWithTitle:(id)arg1;
 - (id)initForWritingWithMutableData:(id)arg1;

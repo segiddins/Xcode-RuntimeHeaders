@@ -8,7 +8,7 @@
 
 #import <IDEKit/IDEFilePickerViewDelegate-Protocol.h>
 
-@class DVTObservingToken, IDEInstallSchemeAction, IDEScheme, IDEWorkspace, NSString, NSTextField;
+@class DVTObservingToken, IDEInstallSchemeAction, IDEScheme, IDEWorkspace, NSBox, NSString, NSTextField;
 
 @interface IDEInstallActionSheetController : IDEViewController <IDEFilePickerViewDelegate>
 {
@@ -18,9 +18,11 @@
     DVTObservingToken *_customInstallNameObservingToken;
     DVTObservingToken *_defaultInstallNameObservingToken;
     NSTextField *_installNameTextField;
+    NSBox *_box;
 }
 
 + (void)initialize;
+@property __weak NSBox *box; // @synthesize box=_box;
 @property(retain) NSTextField *installNameTextField; // @synthesize installNameTextField=_installNameTextField;
 @property(retain) IDEInstallSchemeAction *runPhase; // @synthesize runPhase=_runPhase;
 @property(retain) IDEScheme *runContext; // @synthesize runContext=_runContext;
@@ -33,7 +35,7 @@
 - (void)updateBoundContent;
 - (void)updateBoundIDEWorkspaceBinding;
 - (void)updateBoundIDERunContextBinding;
-- (id)dvtExtraBindings;
+- (id)dvt_extraBindings;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

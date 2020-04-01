@@ -12,10 +12,8 @@
 {
     NSArray *_foundLocations;
     DVTTextDocumentLocation *_currentFoundLocation;
-    int _findResultStyle;
 }
 
-@property int findResultStyle; // @synthesize findResultStyle=_findResultStyle;
 - (void).cxx_destruct;
 - (void)drawFoundLocationsInRange:(struct _NSRange)arg1;
 - (id)_findResultUnderlineColor;

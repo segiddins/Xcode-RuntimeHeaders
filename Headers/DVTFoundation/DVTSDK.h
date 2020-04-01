@@ -6,20 +6,21 @@
 
 #import <objc/NSObject.h>
 
-@class DVTFilePath, DVTPlatform, DVTSearchPath, NSArray, NSDictionary, NSNumber, NSString, NSURL;
+@class DVTFilePath, DVTPlatform, DVTSDKVariant, DVTSearchPath, NSArray, NSDictionary, NSNumber, NSSet, NSString;
 
 @interface DVTSDK : NSObject
 {
     DVTPlatform *_platform;
     NSString *_canonicalName;
+    NSSet *_aliases;
     NSString *_displayName;
     NSString *_operatingSystemVersion;
     DVTFilePath *_sdkPath;
-    NSString *_docSetFeedName;
-    NSURL *_docSetFeedURL;
     NSString *_alternateSDKName;
     NSArray *_supportedBuildToolComponents;
     NSArray *_librarySearchPaths;
+    NSArray *_libraryFilenameExtensions;
+    BOOL _supportsDeveloperFrameworks;
     NSDictionary *_infoDictionary;
     NSString *_propertyConditionName;
     NSArray *_propertyConditionFallbackNames;
@@ -32,16 +33,19 @@
     NSArray *_frameworkSearchPaths;
     NSDictionary *_versionInfo;
     NSArray *_toolchains;
+    NSString *_canonicalNameForBuildSettings;
     NSArray *_toolchainNames;
+    NSDictionary *_debuggerOptions;
+    NSDictionary *_variants;
+    DVTSDKVariant *_defaultVariant;
 }
 
 + (id)sdksInDirectory:(id)arg1 forPlatform:(id)arg2;
 + (id)sdkInDirectory:(id)arg1 forPlatform:(id)arg2;
 + (id)sdkForPath:(id)arg1 forceCreate:(BOOL)arg2;
 + (id)sdkForPath:(id)arg1;
-+ (BOOL)sdkForBootSystemRequiresSpecialTreatment;
-+ (id)sdkForBootSystemOrNil;
-+ (id)sdkForBootSystem;
++ (id)sdkForUnsetSDKROOTOrNil;
++ (id)sdkForUnsetSDKROOT;
 + (id)sdkForNameOrPath:(id)arg1 withBasePath:(id)arg2 forceCreate:(BOOL)arg3;
 + (id)_absolutePathForSDKPathString:(id)arg1;
 + (id)sdksForFamily:(id)arg1;
@@ -50,14 +54,18 @@
 + (id)_sdkForResolvedAbsolutePath:(id)arg1;
 + (void)_setSDK:(id)arg1 forResolvedAbsolutePath:(id)arg2;
 + (id)knownSDKs;
-+ (BOOL)shouldAllowBootSystemSDK;
 + (void)initialize;
+@property(retain) NSSet *aliases; // @synthesize aliases=_aliases;
+@property(readonly) DVTSDKVariant *defaultVariant; // @synthesize defaultVariant=_defaultVariant;
+@property(readonly) NSDictionary *variants; // @synthesize variants=_variants;
+@property(readonly, copy) NSDictionary *debuggerOptions; // @synthesize debuggerOptions=_debuggerOptions;
 @property(readonly, copy) NSArray *toolchainNames; // @synthesize toolchainNames=_toolchainNames;
+@property(readonly, copy) NSString *canonicalNameForBuildSettings; // @synthesize canonicalNameForBuildSettings=_canonicalNameForBuildSettings;
 @property(readonly, copy) NSArray *propertyConditionFallbackNames; // @synthesize propertyConditionFallbackNames=_propertyConditionFallbackNames;
 @property(readonly, copy) NSDictionary *defaultProperties; // @synthesize defaultProperties=_defaultProperties;
 @property(readonly, copy) NSArray *toolchains; // @synthesize toolchains=_toolchains;
-@property(readonly, copy) NSURL *docSetFeedURL; // @synthesize docSetFeedURL=_docSetFeedURL;
-@property(readonly, copy) NSString *docSetFeedName; // @synthesize docSetFeedName=_docSetFeedName;
+@property(readonly) BOOL supportsDeveloperFrameworks; // @synthesize supportsDeveloperFrameworks=_supportsDeveloperFrameworks;
+@property(readonly, copy) NSArray *libraryFilenameExtensions; // @synthesize libraryFilenameExtensions=_libraryFilenameExtensions;
 @property(readonly, copy) NSArray *librarySearchPaths; // @synthesize librarySearchPaths=_librarySearchPaths;
 @property(readonly, copy) NSString *alternateSDKName; // @synthesize alternateSDKName=_alternateSDKName;
 @property(readonly, copy) NSArray *supportedBuildToolComponents; // @synthesize supportedBuildToolComponents=_supportedBuildToolComponents;
@@ -72,6 +80,7 @@
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)description;
+- (id)additionalLibrarySearchPaths;
 - (id)additionalFrameworkSearchPaths;
 - (id)additionalHeaderSearchPaths;
 - (id)commandLineToolSearchPath;

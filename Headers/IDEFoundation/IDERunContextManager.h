@@ -8,7 +8,8 @@
 
 #import <IDEFoundation/DVTInvalidation-Protocol.h>
 
-@class DVTStackBacktrace, IDERunDestination, IDEScheme, IDEWorkspace, NSArray, NSCountedSet, NSEvent, NSMapTable, NSMutableArray, NSMutableSet, NSString;
+@class DVTObservingToken, DVTStackBacktrace, IDERunDestination, IDEScheme, IDEWorkspace, NSArray, NSCountedSet, NSEvent, NSMapTable, NSMutableArray, NSMutableSet, NSString;
+@protocol DVTInvalidation;
 
 @interface IDERunContextManager : NSObject <DVTInvalidation>
 {
@@ -24,8 +25,16 @@
     NSEvent *_schemeForcedSwitchEvent;
     BOOL _bulkChangingBlueprints;
     BOOL _blueprintChangedDuringBulkChanges;
+    BOOL _suppressingAutocreation;
+    DVTObservingToken *_customDataStoresObserver;
+    DVTObservingToken *_availableDevicesObserver;
+    id <DVTInvalidation> _blueprintDidChangeObserver;
 }
 
++ (void)postBlueprintsDidChangeWithBlueprintSet:(id)arg1;
++ (void)postBlueprintsDidChange:(id)arg1;
++ (id)observeAllBlueprintChangesOnQueue:(id)arg1 withTarget:(id)arg2 selector:(SEL)arg3;
++ (id)observeAllBlueprintChangesOnQueue:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
 + (BOOL)automaticallyNotifiesObserversOfActiveRunDestination;
 + (BOOL)automaticallyNotifiesObserversOfActiveRunContext;
 + (void)initialize;
@@ -37,7 +46,6 @@
 @property(readonly) IDEWorkspace *workspace; // @synthesize workspace=_workspace;
 - (void).cxx_destruct;
 - (void)setActiveRunContext:(id)arg1 andRunDestination:(id)arg2;
-- (BOOL)validateActiveRunContext:(id *)arg1 error:(id *)arg2;
 - (void)blueprintsDidBulkChange:(id)arg1;
 - (void)blueprintsWillBulkChange:(id)arg1;
 - (void)blueprintsDidChange:(id)arg1;
@@ -45,7 +53,7 @@
 - (id)_preferredDestinationForRunDestination:(id)arg1 inDestinations:(id)arg2;
 - (void)_invalidateAvailableRunDestinations;
 - (void)_invalidateAvailableRunDestinationsForSchemes:(id)arg1;
-- (void)_invalidateActiveRunDestinationDueToDeviceAvailable;
+- (void)_invalidateActiveRunDestinationDueToDeviceAvailable:(id)arg1;
 - (void)_invalidateActiveRunDestination;
 - (void)shouldIgnoreDeviceChangesDidEnd:(id)arg1;
 - (void)shouldIgnoreDeviceChangesWillBegin:(id)arg1;
@@ -66,10 +74,16 @@
 - (id)_newSchemeWithCustomDataStore:(id)arg1 customDataSpecifier:(id)arg2 orderHint:(unsigned long long)arg3 schemeCreationBlock:(CDUnknownBlockType)arg4;
 - (void)_addContext:(id)arg1 specifierToRunContextMap:(id)arg2;
 - (id)_uniqueSpecifierForSpecifier:(id)arg1 inMap:(id)arg2;
+- (void)_setAutocreationSuppressed:(BOOL)arg1 forBuildables:(id)arg2 returningStoresNeedingSave:(id *)arg3;
+- (void)_setAutocreationSuppressed:(BOOL)arg1 forBuildables:(id)arg2;
+- (void)allowAutocreationForBuildables:(id)arg1;
+- (void)suppressAutocreationForBuildables:(id)arg1;
+- (id)_schemesInvolvingBuildables:(id)arg1 excludingContexts:(id)arg2;
 - (void)_customDataStoresDidUpdate;
 - (void)_finishUpdatingRunContexts;
 - (void)_startUpdatingRunContexts;
 - (void)_ensureActiveRunContext;
+- (void)_restoreActiveRunDestinationIfPossibleForScheme:(id)arg1;
 - (void)_restoreActiveRunContextIfPossible;
 - (void)_updateMap:(id)arg1 contextForCustomDataStore:(id)arg2 specifier:(id)arg3;
 - (void)_addScheme:(id)arg1;

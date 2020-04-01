@@ -25,12 +25,15 @@
     IDEInspectorKeyPath *_enabledKeyPath;
     IDEInspectorKeyPath *_minValueKeyPath;
     IDEInspectorKeyPath *_maxValueKeyPath;
+    IDEInspectorKeyPath *_nilPlaceholderKeyPath;
     NSString *_nilPlaceholder;
     NSString *_title;
     NSString *_nonNilValueLabel;
     NSNumberFormatter *_numberFormatter;
     NSNumber *_maxValue;
     NSNumber *_minValue;
+    NSNumber *_minimumSignificantDigits;
+    NSNumber *_maximumSignificantDigits;
     NSTextField *_textField;
     NSStepper *_stepper;
     NSTextField *_label;

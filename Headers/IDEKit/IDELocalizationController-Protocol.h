@@ -4,13 +4,15 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class NSObject;
+#import <IDEKit/DVTInvalidation-Protocol.h>
+
+@class IDEBuildParameters, IDEWorkspace, NSObject;
 @protocol IDELocalizationWorkProgress;
 
-@protocol IDELocalizationController
+@protocol IDELocalizationController <DVTInvalidation>
 @property(readonly) BOOL complete;
 @property(readonly) NSObject<IDELocalizationWorkProgress> *worker;
 - (void)cancel;
-- (void)start;
+- (void)startLocalizationOperationForWorkspace:(IDEWorkspace *)arg1 buildParameters:(IDEBuildParameters *)arg2;
 @end
 

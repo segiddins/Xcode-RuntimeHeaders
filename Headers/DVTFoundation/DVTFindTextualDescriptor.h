@@ -13,11 +13,11 @@
 @interface DVTFindTextualDescriptor : DVTFindDescriptor <DVTTextlikeFindDescriptor>
 {
     NSString *_findString;
-    int _matchStyle;
+    unsigned long long _matchStyle;
     BOOL _caseSensitive;
 }
 
-@property(readonly) int matchStyle; // @synthesize matchStyle=_matchStyle;
+@property(readonly) unsigned long long matchStyle; // @synthesize matchStyle=_matchStyle;
 - (BOOL)caseSensitive;
 @property(readonly) NSString *findString; // @synthesize findString=_findString;
 - (void).cxx_destruct;
@@ -27,7 +27,7 @@
 - (id)displayString;
 - (BOOL)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;
-- (id)initWithString:(id)arg1 ignoreCase:(BOOL)arg2 matchStyle:(int)arg3;
+- (id)initWithString:(id)arg1 ignoreCase:(BOOL)arg2 matchStyle:(unsigned long long)arg3;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

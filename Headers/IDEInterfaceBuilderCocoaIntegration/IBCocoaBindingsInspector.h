@@ -12,11 +12,6 @@
 
 @interface IBCocoaBindingsInspector : IBInspectorViewController <IBCocoaBindingsInspectorSliceDelegate>
 {
-    NSScrollView *_scrollView;
-    DVTStackView_ML *_mainView;
-    IBCocoaBindingsSuggestedKeyPathProvider *_keyPathProvider;
-    NSArray *_controllers;
-    NSArray *_controllerInfo;
     NSArray *_connections;
     NSMutableArray *_bindingSlicePool;
     NSMutableSet *_expandedBindings;
@@ -31,10 +26,18 @@
     DVTDelayedInvocation *_refreshInvalidator;
     BOOL _establishingBinding;
     BOOL _refreshing;
+    IBCocoaBindingsSuggestedKeyPathProvider *_keyPathProvider;
+    NSArray *_controllers;
+    NSScrollView *_scrollView;
+    DVTStackView_ML *_mainView;
+    NSArray *_controllerInfo;
 }
 
 + (BOOL)supportsMultipleObjectInspection;
-@property(readonly, nonatomic) NSArray *controllers; // @synthesize controllers=_controllers;
+@property(retain, nonatomic) NSArray *controllerInfo; // @synthesize controllerInfo=_controllerInfo;
+@property(retain) DVTStackView_ML *mainView; // @synthesize mainView=_mainView;
+@property(retain) NSScrollView *scrollView; // @synthesize scrollView=_scrollView;
+@property(retain, nonatomic) NSArray *controllers; // @synthesize controllers=_controllers;
 @property(retain) IBCocoaBindingsSuggestedKeyPathProvider *keyPathProvider; // @synthesize keyPathProvider=_keyPathProvider;
 - (void).cxx_destruct;
 - (void)unbindDocumentBindingNamed:(id)arg1;
@@ -53,7 +56,6 @@
 - (void)bindingSlice:(id)arg1 didChangeExpansionState:(BOOL)arg2;
 - (id)categoryViewWithCategoryString:(id)arg1;
 - (void)rebuildKeyPathProvider;
-- (void)documentWillRemoveObject:(id)arg1;
 - (void)viewWillUninstall;
 - (void)primitiveInvalidate;
 - (BOOL)automaticallyInvalidatesChildViewControllers;

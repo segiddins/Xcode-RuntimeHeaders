@@ -10,9 +10,12 @@
 {
 }
 
++ (id)coalescableReadOnlyKeyPaths;
+- (id)coalescableWriteableKeyPathToDataSource;
 - (BOOL)isEnabledUsingEducatedGuess;
 - (id)flightChecks;
 - (id)entitlementsFlightCheck;
+- (id)initWithCapabilitiesContext:(id)arg1 item:(id)arg2;
 
 @end
 

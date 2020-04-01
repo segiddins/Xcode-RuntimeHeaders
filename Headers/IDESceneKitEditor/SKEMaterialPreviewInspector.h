@@ -6,11 +6,12 @@
 
 #import <IDESceneKitEditor/SKEInspectorViewController.h>
 
-@class DVTDelayedInvocation, NSMutableArray, SCNView, SKEMaterialPreviewDescription;
+@class DVTDelayedInvocation, NSImageView, NSMutableArray, SCNRenderer, SKEMaterialPreviewDescription;
 
 @interface SKEMaterialPreviewInspector : SKEInspectorViewController
 {
-    SCNView *_previewView;
+    SCNRenderer *_previewRenderer;
+    NSImageView *_imageView;
     NSMutableArray *_observingTokens;
     DVTDelayedInvocation *_previewRefreshInvocation;
     SKEMaterialPreviewDescription *_pbrPreviewDescription;
@@ -19,8 +20,8 @@
 
 + (id)nonPBRPreviewDescription;
 + (id)pbrPreviewDescription;
-+ (id)previewForMaterial:(id)arg1 withLightingEnvironmentContents:(id)arg2 size:(struct CGSize)arg3;
-+ (void)configurePreviewDescription:(id)arg1 withMaterial:(id)arg2 withLightingEnvironmentContents:(id)arg3;
++ (id)previewForMaterial:(id)arg1 withLightingEnvironmentContents:(id)arg2 document:(id)arg3 size:(struct CGSize)arg4;
++ (void)configurePreviewDescription:(id)arg1 withMaterial:(id)arg2 document:(id)arg3 withLightingEnvironmentContents:(id)arg4;
 - (void).cxx_destruct;
 - (void)refreshPreview:(id)arg1;
 - (void)schedulePreviewRefresh;

@@ -24,7 +24,7 @@
 - (CDUnknownBlockType)_defaultDiagnosticsBlockForOperationNamed:(id)arg1 extraStringBlock:(CDUnknownBlockType)arg2;
 - (id)buildMarshallingDescriptionWithLiveViewsManager:(id)arg1;
 - (id)buildAutolayoutStatusMarshallingRequestWithLiveViewsManager:(id)arg1;
-- (id)buildMarshallingDescriptionForcingIgnoreDesignables:(BOOL)arg1 returningProvider:(id *)arg2 andFailedLoadResult:(id *)arg3;
+- (void)buildMarshallingDescriptionAllowingRetryByIgnoringDesignables:(BOOL)arg1 during:(CDUnknownBlockType)arg2;
 - (id)_attachToProviderReturningFailedLoadResult:(id *)arg1 andLiveViewsManager:(id *)arg2 forceIgnoreDesignables:(BOOL)arg3;
 - (id)_liveViewsManagerInferredFromObjects;
 @property(readonly) IBDocument *document;

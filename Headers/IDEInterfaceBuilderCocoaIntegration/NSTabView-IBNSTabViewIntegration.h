@@ -6,11 +6,15 @@
 
 #import <AppKit/NSTabView.h>
 
-@class NSArray, NSTabViewItem;
+#import <IDEInterfaceBuilderCocoaIntegration/IBDocumentArchiving-Protocol.h>
 
-@interface NSTabView (IBNSTabViewIntegration)
+@class NSArray, NSString, NSTabViewItem;
+
+@interface NSTabView (IBNSTabViewIntegration) <IBDocumentArchiving>
 + (id)keyPathsForValuesAffectingIbInspectedInitialTabViewItem;
 + (id)keyPathsForValuesAffectingIbInspectedNumberOfTabViewItems;
++ (id)keyPathsForValuesAffectingIbInspectedControlSize;
+- (id)ibWidgetTypeForDefaultLabel;
 - (unsigned long long)ibCustomSubviewLayoutStrategy;
 - (BOOL)ibShouldChildBeIncludedInArbitrationUnitWithParent:(id)arg1;
 - (BOOL)ibOverridablePrefersToVerticallyResizeWithContainer;
@@ -26,7 +30,7 @@
 - (BOOL)ibCanAcceptContentsOfPasteboard:(id)arg1 inDocument:(id)arg2 targetChildRelation:(id *)arg3;
 - (void)ibResumeAutoResizingSubviews:(id)arg1;
 - (id)ibStopAutoResizingSubviewsWhileGrowingFromKnob:(CDUnion_42e99c75)arg1 inDocument:(id)arg2;
-- (void)ibTakeTrackedFrame:(struct CGRect)arg1;
+- (void)ibTakeTrackedFrame:(struct CGRect)arg1 originalFrame:(struct CGRect)arg2 isFinalFrame:(BOOL)arg3;
 - (BOOL)ibCanUnembedChildrenInDocument:(id)arg1;
 - (id)ibQualifyingInfoForDefaultLabel;
 - (struct CGSize)ibPreferredSize;
@@ -52,6 +56,21 @@
 - (void)ibRemoveChildren:(id)arg1;
 - (void)ibPopulateEditorSelectionOrderRelationLists:(id)arg1;
 - (void)ibPopulateChildRelationOrder:(id)arg1;
+- (BOOL)ibShouldBeProcessedForLocalizationWarnings;
 - (BOOL)ibIsNSAppearanceContainer;
+- (id)ibLocalLocalizableToManyRelationshipsKeyPaths;
+- (id)ibLocalAttributeKeyPaths;
+- (id)ibLocalChildToManyRelationshipsKeyPaths;
+- (id)ibLocalChildToOneRelationshipsKeyPaths;
+- (void)setIbInspectedControlSize:(unsigned long long)arg1;
+- (unsigned long long)ibInspectedControlSize;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @end
 

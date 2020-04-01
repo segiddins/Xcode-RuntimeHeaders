@@ -18,16 +18,20 @@
     NSView *_mainView;
     NSView *_scheduleLayer;
     NSPopUpButton *_scheduleTypePopUp;
+    NSView *_upgradeIntegrationView;
     NSView *_onCommitLayer;
     NSView *_manualLayer;
     NSView *_scheduleViewContainer;
+    NSPopUpButton *_cleaningPopUp;
 }
 
 + (id)keyPathsForValuesAffectingCreateBotAssistantContext;
 + (id)keyPathsForValuesAffectingAssistantContext;
+@property __weak NSPopUpButton *cleaningPopUp; // @synthesize cleaningPopUp=_cleaningPopUp;
 @property __weak NSView *scheduleViewContainer; // @synthesize scheduleViewContainer=_scheduleViewContainer;
 @property(retain, nonatomic) NSView *manualLayer; // @synthesize manualLayer=_manualLayer;
 @property(retain, nonatomic) NSView *onCommitLayer; // @synthesize onCommitLayer=_onCommitLayer;
+@property(retain, nonatomic) NSView *upgradeIntegrationView; // @synthesize upgradeIntegrationView=_upgradeIntegrationView;
 @property(retain, nonatomic) NSPopUpButton *scheduleTypePopUp; // @synthesize scheduleTypePopUp=_scheduleTypePopUp;
 @property(retain, nonatomic) NSView *scheduleLayer; // @synthesize scheduleLayer=_scheduleLayer;
 @property(retain, nonatomic) NSView *mainView; // @synthesize mainView=_mainView;
@@ -40,6 +44,7 @@
 - (void)saveSchedule;
 - (void)prepareLayers;
 - (void)moveView:(id)arg1 belowView:(id)arg2;
+- (void)cleanPreferenceAction:(id)arg1;
 - (void)scheduleTypePopUpAction:(id)arg1;
 - (void)addLayerToEnd:(id)arg1 belowView:(id)arg2;
 - (void)setupLayers;

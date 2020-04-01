@@ -8,7 +8,7 @@
 
 #import <IDEModelEditor/IDEDataModelEditorController-Protocol.h>
 
-@class DVTNotificationToken, DVTObservingToken, IDEDataModelEntityContentsEditor, NSString, XDDiagramView, XDLineGraphic;
+@class DVTNotificationToken, DVTObservingToken, DVTStackBacktrace, IDEDataModelEditor, IDEDataModelEntityContentsEditor, NSString, XDDiagramView, XDLineGraphic;
 
 @interface IDEDataModelDiagramEditor : IDEDMEditorController <IDEDataModelEditorController>
 {
@@ -25,7 +25,6 @@
     BOOL _hasDoneInitialLayout;
 }
 
-+ (id)defaultEntityColor;
 + (id)keyPathsForValuesAffectingSelection;
 + (id)keyPathsForValuesAffectingDiagramStorage;
 @property BOOL _hasDoneInitialLayout; // @synthesize _hasDoneInitialLayout;
@@ -47,6 +46,7 @@
 - (void)layoutByFlowOnDiagram:(id)arg1;
 - (id)PDFRepresentationForGraphics:(id)arg1;
 - (id)TIFFRepresentationForGraphics:(id)arg1;
+- (id)graphicsForDiagramRepresentation:(id)arg1;
 - (id)diagramRepresentationForGraphics:(id)arg1;
 - (id)imageRepresentationForGraphics:(id)arg1;
 - (struct CGRect)drawingBoundsForGraphics:(id)arg1 drawingMask:(long long)arg2;
@@ -77,7 +77,7 @@
 - (void)setupDiagramView;
 - (id)diagramStorage;
 - (id)document;
-- (id)rootEditor;
+@property(readonly) IDEDataModelEditor *rootEditor;
 - (id)identifier;
 - (id)nibBundle;
 - (id)nibName;
@@ -98,10 +98,13 @@
 - (BOOL)lineGraphicTool:(id)arg1 shouldStartLineWithTailGraphic:(id)arg2;
 
 // Remaining properties
+@property(retain) DVTStackBacktrace *creationBacktrace;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
+@property(readonly) DVTStackBacktrace *invalidationBacktrace;
 @property(readonly) Class superclass;
+@property(readonly, nonatomic, getter=isValid) BOOL valid;
 
 @end
 

@@ -23,9 +23,11 @@
 
 + (void)initialize;
 + (id)filePickerPanel;
++ (id)filePickerPanelShowsAddOtherAsPullDown:(BOOL)arg1;
 @property(copy) NSArray *allowedFileTypesForAddOther; // @synthesize allowedFileTypesForAddOther=_allowedFileTypesForAddOther;
 @property(copy) NSURL *directoryURL; // @synthesize directoryURL=_directoryURL;
 - (void).cxx_destruct;
+- (id)accessibilityIdentifier;
 - (void)hideProgressIndicator;
 - (void)showProgressIndicator;
 @property(retain) id <IDEFilePickerViewDelegate> filePickerDelegate;
@@ -43,13 +45,14 @@
 @property(copy) NSString *cancelButtonTitle;
 @property(copy) NSString *addOtherButtonTitle;
 @property(copy) NSString *addButtonTitle;
+- (void)secondPullDownButton:(id)arg1;
 - (void)addOther:(id)arg1;
 - (void)cancel:(id)arg1;
 - (void)add:(id)arg1;
 - (void)_pickingEndedWithReturnCode:(long long)arg1;
 - (void)beginSheetModalForWindow:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)primitiveInvalidate;
-- (id)initWithContentRect:(struct CGRect)arg1 styleMask:(unsigned long long)arg2 backing:(unsigned long long)arg3 defer:(BOOL)arg4;
+- (id)initWithContentRect:(struct CGRect)arg1 styleMask:(unsigned long long)arg2 backing:(unsigned long long)arg3 defer:(BOOL)arg4 showsAddOtherAsPullDown:(BOOL)arg5;
 
 // Remaining properties
 @property(retain) DVTStackBacktrace *creationBacktrace;

@@ -6,11 +6,10 @@
 
 #import <IDEiOSSupportCore/DVTBasicDevice-Protocol.h>
 
-@class IDEBuildParameters, NSArray;
-@protocol IDEBuildable;
+@class NSArray;
 
 @protocol DVTBasiciOSDevice <DVTBasicDevice>
+@property(readonly) _Bool isPasscodeLocked;
 - (NSArray *)supportedDeviceFamilies;
-- (BOOL)deviceSupportsBuildable:(id <IDEBuildable>)arg1 buildParameters:(IDEBuildParameters *)arg2 error:(id *)arg3;
 @end
 

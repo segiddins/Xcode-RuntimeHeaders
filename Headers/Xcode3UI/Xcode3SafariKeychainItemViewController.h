@@ -6,11 +6,10 @@
 
 #import <IDEKit/IDEProjectItemViewController.h>
 
-@class DVTBorderedView, DVTGradientImageButton, DVTObservingToken, DVTTableView, NSArrayController, Xcode3SafariKeychainItemModel;
+@class DVTBorderedView, DVTGradientImageButton, DVTTableView, NSArrayController, Xcode3SafariKeychainItemModel;
 
 @interface Xcode3SafariKeychainItemViewController : IDEProjectItemViewController
 {
-    DVTObservingToken *_itemObserver;
     DVTBorderedView *_tableBorder;
     DVTTableView *_domainsTable;
     DVTGradientImageButton *_addDomainButton;
@@ -26,10 +25,6 @@
 - (void).cxx_destruct;
 - (void)removeSelectedDomains:(id)arg1;
 - (void)addDomain:(id)arg1;
-- (void)primitiveInvalidate;
-- (void)viewWillUninstall;
-- (void)viewDidInstall;
-- (void)layout;
 - (void)loadView;
 - (id)initWithEditorItemModel:(id)arg1 portalInfoDelegate:(id)arg2;
 

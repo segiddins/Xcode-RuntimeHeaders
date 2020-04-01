@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class IBDocument, IBStructureAreaDockView, NSObject, NSString, NSView;
+@class IBDocument, IBStructureAreaDockView, NSObject, NSString;
 @protocol IBCollection;
 
 @protocol IBDockViewHighlightProviderDelegate
@@ -14,6 +14,6 @@
 - (NSString *)groupForObject:(NSObject *)arg1;
 - (IBDocument *)document;
 - (IBStructureAreaDockView *)dockView;
-- (NSView *)view;
+- (BOOL)isViewVisibleInWindow;
 @end
 

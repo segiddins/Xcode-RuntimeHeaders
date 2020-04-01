@@ -4,25 +4,24 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <DVTKit/DVTDisclosureHeaderView.h>
+#import <DVTUserInterfaceKit/DVTDisclosureHeaderView.h>
 
 @class IBConnectionInterfaceStyle, IBImageButton;
 
 @interface IBConnectionDisclosureHeaderView : DVTDisclosureHeaderView
 {
-    IBImageButton *disclosureImageButton;
-    IBConnectionInterfaceStyle *connectionInterfaceStyle;
+    IBImageButton *_disclosureImageButton;
+    IBConnectionInterfaceStyle *_connectionInterfaceStyle;
 }
 
+@property(readonly) IBConnectionInterfaceStyle *connectionInterfaceStyle; // @synthesize connectionInterfaceStyle=_connectionInterfaceStyle;
 - (void).cxx_destruct;
-- (void)drawRect:(struct CGRect)arg1;
 - (void)disclosureClicked:(id)arg1;
 - (void)layoutBottomUp;
 - (double)preferredHeight;
 - (struct CGRect)titleFrame;
 - (struct CGRect)disclosureButtonFrame;
 - (void)setDisclosed:(BOOL)arg1;
-- (id)connectionInterfaceStyle;
 - (id)frameView;
 - (id)initWithFrame:(struct CGRect)arg1 andInterfaceStyle:(id)arg2;
 

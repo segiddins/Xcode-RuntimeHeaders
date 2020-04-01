@@ -22,6 +22,7 @@
 }
 
 + (SEL)selectorForLazilyBoundSetter:(CDUnknownFunctionPointerType)arg1 withIdentifier:(id)arg2 forConfiguration:(id)arg3;
++ (void)enumerateValuesForAttributeKeyPath:(id)arg1 withUnarchiver:(id)arg2 during:(CDUnknownBlockType)arg3;
 @property(retain, nonatomic) NSObject *documentObject; // @synthesize documentObject=_documentObject;
 - (void).cxx_destruct;
 - (void)enumerateObservers:(CDUnknownBlockType)arg1;
@@ -37,8 +38,8 @@
 - (BOOL)isObjectTurnedOn:(id)arg1 inAnyConfigurationByRelationship:(id)arg2;
 - (BOOL)isObjectTurnedOn:(id)arg1 inRelationship:(id)arg2 inConfiguration:(id)arg3;
 - (void)flattenAllDataWithEffectiveValuesFromConfiguration:(id)arg1;
-- (BOOL)hasExplicitValueForPropertyAnyNonEmptyConfiguration:(id)arg1;
-- (BOOL)hasExplicitValueForAnyNonEmptyConfiguration;
+- (BOOL)anyNonEmptyConfigurationsHaveExplicitValuesForProperty:(id)arg1;
+- (BOOL)anyNonEmptyConfigurationsHaveExplicitValues;
 - (BOOL)allExplicitValuesAreForEmptyConfiguration;
 - (void)enumerateArchivingOrderedPropertiesGroupedByArchivingOrderedConfigurations:(CDUnknownBlockType)arg1;
 - (BOOL)isToManyRelationship:(id)arg1;
@@ -70,6 +71,7 @@
 - (void)enumerateExplicitValuesForProperty:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
 - (void)setBits:(id)arg1 forToManyRelationship:(id)arg2 inConfiguration:(id)arg3;
 - (void)setEvaluatedValueInEmptyConfigurationByClearingInAllOtherConfigurations:(id)arg1 forAttribute:(id)arg2;
+- (void)removeAllOverridesForAttribute:(id)arg1;
 - (void)setEvaluatedValueInEmptyConfiguration:(id)arg1 forAttribute:(id)arg2;
 - (void)setEvaluatedValue:(id)arg1 forAttribute:(id)arg2 inConfiguration:(id)arg3;
 - (void)promoteEffectiveValueToExplicitForProperty:(id)arg1 inConfiguration:(id)arg2;

@@ -12,9 +12,6 @@
 
 @interface IDESplitViewDebugArea : IDEDebugArea <DVTSplitViewDelegate>
 {
-    DVTSplitView *_splitView;
-    DVTReplacementView *_leftReplacementView;
-    DVTReplacementView *_rightReplacementView;
     int _preferredLayoutMode;
     int _actualLayoutMode;
     double _proportionOfLeftWidthVsTotalWidth;
@@ -28,6 +25,9 @@
     NSButton *_currentPressedButton;
     DVTScopeBarView *_leftScopeBarView;
     DVTScopeBarView *_rightScopeBarView;
+    DVTSplitView *_splitView;
+    DVTReplacementView *_leftReplacementView;
+    DVTReplacementView *_rightReplacementView;
 }
 
 + (long long)version;
@@ -55,7 +55,7 @@
 - (void)setStateToken:(id)arg1;
 - (void)commitStateToDictionary:(id)arg1;
 - (void)revertStateWithDictionary:(id)arg1;
-- (void)_adjustedHiddenSplitViewItemsMagitudeIfNeccessary;
+- (void)_adjustedHiddenSplitViewItemsMagnitudeIfNeccessary;
 - (void)_animateToLayoutMode:(int)arg1;
 - (BOOL)delegateFirstResponder;
 - (BOOL)_shouldConsiderAnimationForModeTransition:(int)arg1 toMode:(int)arg2;

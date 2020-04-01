@@ -10,15 +10,17 @@
 #import <IDEKit/IDECommandHandlerVendor-Protocol.h>
 
 @class NSString;
-@protocol IDESelectionSource;
+@protocol IDESelectionSource, IDETestingSelection;
 
 @interface IDETestingCommands : NSObject <IDECommandHandlerVendor, IDECommandHandler>
 {
     id <IDESelectionSource> _selectionSource;
+    id <IDETestingSelection> _testSelectionSource;
 }
 
 + (id)handlerForAction:(SEL)arg1 withSelectionSource:(id)arg2;
 + (id)_sharedHandler;
+@property(retain) id <IDETestingSelection> testSelectionSource; // @synthesize testSelectionSource=_testSelectionSource;
 @property(retain) id <IDESelectionSource> selectionSource; // @synthesize selectionSource=_selectionSource;
 - (void).cxx_destruct;
 - (void)runTestToHereThenRecordUITest:(id)arg1;

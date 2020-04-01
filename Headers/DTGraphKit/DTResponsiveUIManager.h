@@ -6,26 +6,28 @@
 
 #import <objc/NSObject.h>
 
-@class DTResponsiveUIMainThreadDeliverySubframe, DTResponsiveUIRenderSubframe, DTResponsiveUIRequestSubframe, XRFrameCommutator, XRFrameRing;
+@class DTResponsiveUIContext, DTResponsiveUIMainThreadDeliverySubframe, DTResponsiveUIRenderSubframe, DTResponsiveUIRequestSubframe, XRFrameCommutator, XRFrameRing;
 
 @interface DTResponsiveUIManager : NSObject
 {
     XRFrameRing *_ring;
     XRFrameCommutator *_commutator;
+    DTResponsiveUIContext *_context;
     DTResponsiveUIRequestSubframe *_requestManager;
-    DTResponsiveUIRenderSubframe *_executionManager;
+    DTResponsiveUIRenderSubframe *_renderManager;
     DTResponsiveUIMainThreadDeliverySubframe *_deliveryManager;
+    struct __CVDisplayLink *_displayLink;
     BOOL _needsSync;
 }
 
 + (id)sharedInstance;
 - (void).cxx_destruct;
-- (void)dealloc;
-- (void)_mainThreadCBDispatchForProvider:(id)arg1 delegate:(id)arg2;
-- (id)_popLatestContent:(id)arg1;
-- (void)_setRequest:(id)arg1 provider:(id)arg2 serialNumber:(unsigned long long)arg3;
+- (void)enableLoadSensingDynamicFrameRates:(BOOL)arg1;
+- (void)_stopDisplayLink;
+- (void)_startDisplayLink;
 - (void)synchronize;
 - (void)invalidateContentProvider:(id)arg1;
+- (void)_providerHasNewRequest:(id)arg1;
 - (void)registerContentProvider:(id)arg1;
 - (id)init;
 

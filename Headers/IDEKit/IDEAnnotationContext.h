@@ -15,9 +15,9 @@
     IDEWorkspaceTabController *_workspaceTabController;
 }
 
-@property(retain) IDEWorkspaceTabController *workspaceTabController; // @synthesize workspaceTabController=_workspaceTabController;
-@property(retain) NSDocument *document; // @synthesize document=_document;
-@property(retain) IDEEditor *editor; // @synthesize editor=_editor;
+@property(readonly) IDEWorkspaceTabController *workspaceTabController; // @synthesize workspaceTabController=_workspaceTabController;
+@property(readonly) NSDocument *document; // @synthesize document=_document;
+@property(readonly) IDEEditor *editor; // @synthesize editor=_editor;
 - (void).cxx_destruct;
 - (id)description;
 @property(readonly) IDEWorkspace *workspace;

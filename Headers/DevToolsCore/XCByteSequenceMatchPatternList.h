@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Foundation/NSObject.h>
+#import <objc/NSObject.h>
 
 @class NSArray;
 
@@ -16,9 +16,9 @@
     unsigned long long _maxNumberOfWildcards;
 }
 
+- (void).cxx_destruct;
 - (id)firstMatchForBytes:(const char *)arg1 length:(unsigned long long)arg2 wildcardRanges:(struct _NSRange *)arg3;
 - (unsigned long long)maximumNumberOfWildcards;
-- (void)dealloc;
 - (id)initWithContentsOfFile:(id)arg1 error:(id *)arg2;
 - (id)initWithPatterns:(id)arg1;
 

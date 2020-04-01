@@ -32,58 +32,33 @@ struct CGSize {
     double height;
 };
 
-struct NSEdgeInsets {
+struct GKCQuadTree<NSObject> {
+    CDUnknownFunctionPointerType *_field1;
+    struct GKCQuadTreeNode<NSObject> *_field2;
+};
+
+struct GKCQuadTreeNode<NSObject>;
+
+struct IBMutableIdentityDictionary {
+    Class _field1;
+};
+
+struct IBNSDirectionalEdgeInsets {
     double _field1;
     double _field2;
     double _field3;
     double _field4;
 };
 
-struct NSView {
+struct NSEdgeInsets {
+    double top;
+    double left;
+    double bottom;
+    double right;
+};
+
+struct NSObject {
     Class _field1;
-    id _field2;
-    struct CGRect _field3;
-    struct CGRect _field4;
-    id _field5;
-    id _field6;
-    id _field7;
-    id _field8;
-    id _field9;
-    id _field10;
-    id _field11;
-    id _field12;
-    struct __VFlags {
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :5;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :2;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :6;
-        unsigned int :1;
-        unsigned int :1;
-    } _field13;
-    struct __VFlags2 {
-        unsigned int :14;
-        unsigned int :14;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-    } _field14;
 };
 
 struct Token {
@@ -99,13 +74,6 @@ struct _CALayerIvars {
     int _field1;
     unsigned int _field2;
     void *_field3;
-};
-
-struct _IBEdgeInsets {
-    double _field1;
-    double _field2;
-    double _field3;
-    double _field4;
 };
 
 struct _NSRange {
@@ -145,6 +113,10 @@ typedef struct {
     unsigned long long *_field3;
     unsigned long long _field4[5];
 } CDStruct_70511ce9;
+
+typedef struct {
+    unsigned long long _field1[4];
+} CDStruct_68506f87;
 
 typedef struct {
     char *_field1;
@@ -187,9 +159,9 @@ typedef struct {
 } CDStruct_c519178c;
 
 typedef struct {
-    double _field1;
-    double _field2;
-} CDStruct_c3b9c2ee;
+    double x;
+    double y;
+} CDStruct_34734122;
 
 typedef struct {
     long long _field1;
@@ -220,9 +192,10 @@ typedef struct {
     struct CGRect _field2;
     struct CGRect _field3;
     struct CGRect _field4;
-    struct CGSize _field5;
+    struct CGRect _field5;
     struct CGSize _field6;
-} CDStruct_b9fac97c;
+    struct CGSize _field7;
+} CDStruct_a5efb618;
 
 typedef struct {
     struct {
@@ -241,8 +214,8 @@ typedef struct {
 
 typedef union {
     double _field1[2];
-    CDStruct_c3b9c2ee _field2;
-} CDUnion_af3ad131;
+    CDStruct_34734122 _field2;
+} CDUnion_4a127b1b;
 
 typedef union {
     double _field1[4];

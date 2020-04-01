@@ -9,12 +9,18 @@
 @class DVTFileDataType, DVTFilePath, IDEBuildParameters, NSDictionary, NSString;
 
 @protocol IDEBuildableProduct <IDEBuildable>
-@property(readonly) BOOL productIsExecutable;
-@property(readonly) NSDictionary *productSettings;
-@property(readonly) NSString *iconPath;
-@property(readonly, copy) DVTFileDataType *fileDataType;
-@property(readonly) DVTFilePath *filePath;
+@property(nonatomic, readonly) BOOL isWatchAppRunsIndependentlyOfCompanionApplication;
+@property(nonatomic, readonly) BOOL isWatchOnlyApplication;
+@property(nonatomic, readonly) BOOL productIsExecutable;
+- (void)setProductSetting:(id)arg1 forKey:(NSString *)arg2;
+- (id)productSettingForKey:(NSString *)arg1;
+@property(nonatomic, readonly) NSDictionary *productSettings;
+@property(nonatomic, readonly) NSString *iconPath;
+@property(nonatomic, readonly) DVTFileDataType *fileDataType;
 - (DVTFilePath *)filePathForBuildParameters:(IDEBuildParameters *)arg1;
-- (NSString *)productTypeIdentifier;
+@property(nonatomic, readonly) DVTFilePath *filePath;
+
+@optional
+@property(nonatomic, readonly) BOOL isEmbeddablePackageProduct;
 @end
 

@@ -22,6 +22,7 @@
         unsigned int observingForCurrentSDKRelative:1;
         unsigned int observingForSourceTreeRelative:1;
     } _flags;
+    NSDictionary *_cachedResolutionContext;
 }
 
 + (id)keyPathsForValuesAffectingExpectedFilePath;
@@ -34,13 +35,14 @@
 + (id)supportedResolutionStrategies;
 + (void)initialize;
 @property(readonly) NSString *path; // @synthesize path=_path;
-@property(readonly) DVTReferenceResolver *resolver; // @synthesize resolver=_resolver;
 - (void).cxx_destruct;
 - (id)knownAssetTags;
 - (id)assetTags;
 - (void)setAssetTags:(id)arg1;
 - (BOOL)canHaveAssetTags;
 - (void)primitiveInvalidate;
+- (void)_performMove:(id)arg1 newFilePath:(id)arg2 inContext:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;
+- (BOOL)_structureEditNameForItemsConnectedToFileSystem:(id)arg1 inContext:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (void)_takePathAndResolutionStrategiesFromContainerItem:(id)arg1;
 @property(readonly) DVTFilePath *expectedFilePath;
 @property(readonly) DVTFilePath *resolvedFilePath;
@@ -49,16 +51,19 @@
 - (BOOL)_getPath:(id *)arg1 forStrategies:(id)arg2 absolutePath:(id)arg3;
 - (id)_absolutePath;
 - (id)resolutionContextForStrategies:(id)arg1;
+@property(readonly) long long progress; // @dynamic progress;
+- (id)issueLog;
 @property(readonly) unsigned long long aggregateSourceControlConflictStatus;
-@property(readonly) int aggregateSourceControlServerStatus;
-@property(readonly) int aggregateSourceControlLocalStatus;
+@property(readonly) unsigned long long aggregateSourceControlServerStatus;
+@property(readonly) unsigned long long aggregateSourceControlLocalStatus;
 @property(readonly) unsigned long long conflictStateForUpdateOrMerge;
-@property(readonly) int sourceControlServerStatus;
-@property(readonly) int sourceControlLocalStatus;
+@property(readonly) unsigned long long sourceControlServerStatus;
+@property(readonly) unsigned long long sourceControlLocalStatus;
 - (void)_setContainerItemEdited;
 @property(readonly, copy) NSString *description;
 - (void)debugPrintStructure;
 - (void)debugPrintInnerStructure;
+@property(readonly) DVTReferenceResolver *resolver;
 @property(copy) DVTSourceCodeLanguage *language;
 @property BOOL wrapsLines;
 @property long long indentWidth;
@@ -71,7 +76,7 @@
 - (id)_propertyForKey:(id)arg1 searchParent:(BOOL)arg2;
 - (id)_propertiesCreatingIfNeeded;
 @property(readonly) NSDictionary *properties;
-- (id)name;
+@property(readonly, copy, nonatomic) NSString *name; // @dynamic name;
 @property(readonly, getter=isEditable) BOOL editable;
 - (void)_didSetContainer;
 - (void)_setContainer:(id)arg1;

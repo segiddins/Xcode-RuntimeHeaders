@@ -7,6 +7,6 @@
 #import <Foundation/NSMutableAttributedString.h>
 
 @interface NSMutableAttributedString (IBAppKitMutableAttributedStringAdditions)
-- (void)setAlignment:(unsigned long long)arg1 andLineBreakingMode:(unsigned long long)arg2;
+- (void)setAlignment:(long long)arg1 andLineBreakingMode:(unsigned long long)arg2;
 @end
 

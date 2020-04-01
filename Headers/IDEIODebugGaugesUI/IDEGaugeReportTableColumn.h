@@ -17,6 +17,7 @@
 - (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithIdentifier:(id)arg1 attributeName:(id)arg2;
+- (void)_dvt_common_init;
 
 @end
 

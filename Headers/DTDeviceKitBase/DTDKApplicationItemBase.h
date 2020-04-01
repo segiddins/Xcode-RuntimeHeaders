@@ -23,6 +23,7 @@
 + (id)alloc;
 @property __weak DTDKApplicationItemBase *parent; // @synthesize parent=_parent;
 - (void).cxx_destruct;
+- (void)performBatchedOperations:(CDUnknownBlockType)arg1;
 - (id)childNamed:(id)arg1;
 - (long long)compare:(id)arg1;
 - (unsigned long long)hash;
@@ -39,7 +40,7 @@
 @property(readonly, copy) NSString *containerPath;
 @property(readonly, copy) NSString *identifier;
 @property(readonly, copy) NSString *deviceIdentifier;
-- (_Bool)_withConnection:(CDUnknownBlockType)arg1;
+- (id)_withConnection:(CDUnknownBlockType)arg1;
 @property(readonly) DTDKApplication *application;
 - (_Bool)removeFromDeviceWithError:(id *)arg1;
 - (_Bool)uploadFile:(id)arg1 error:(id *)arg2;

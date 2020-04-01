@@ -16,7 +16,6 @@
     BOOL _showDisclosureButton;
 }
 
-+ (id)stringDropShadow;
 + (id)matchAttributedStringForCount:(long long)arg1;
 @property(readonly) NSButton *disclosureButton; // @synthesize disclosureButton=_disclosureButton;
 @property(nonatomic) BOOL showDisclosureButton; // @synthesize showDisclosureButton=_showDisclosureButton;

@@ -6,18 +6,24 @@
 
 #import <AppKit/NSMenuItem.h>
 
-@interface NSMenuItem (IBMenuItemIntegration)
+#import <IDEInterfaceBuilderCocoaIntegration/IBDocumentArchiving-Protocol.h>
+
+@class NSString;
+
+@interface NSMenuItem (IBMenuItemIntegration) <IBDocumentArchiving>
 + (id)defaultMixedStateImage;
 + (id)defaultOffStateImage;
 + (id)defaultOnStateImage;
 + (id)instantiateWithDocumentUnarchiver:(id)arg1;
++ (id)keyPathsForValuesAffectingIbInspectedMixedStateImage;
++ (id)keyPathsForValuesAffectingIbInspectedOnStateImage;
++ (id)keyPathsForValuesAffectingIbInspectedTitle;
 + (id)keyPathsForValuesAffectingIbInspectedKeyEquivalent;
 - (void)ibSetupTriggerForSegueTemplate:(id)arg1 inCompilationUnit:(id)arg2;
 - (BOOL)ibCanBeValidSheetSegueSource;
 - (BOOL)ibCanBeValidPopoverSegueSource;
 - (id)ibSegueTriggers;
 - (id)ibDefaultSegueTrigger;
-- (id)ibDefaultImage;
 - (void)setIbInspectedMixedStateImage:(id)arg1;
 - (id)ibInspectedMixedStateImage;
 - (void)setIbInspectedOnStateImage:(id)arg1;
@@ -29,7 +35,6 @@
 - (id)ibInitialConnectionLabelSearchTerm;
 - (id)ibAcceptContentsOfPasteboard:(id)arg1 inDocument:(id)arg2 insertionContext:(id)arg3;
 - (BOOL)ibCanAcceptContentsOfPasteboard:(id)arg1 inDocument:(id)arg2 targetChildRelation:(id *)arg3;
-- (void)ibWarnings:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
 - (id)ibUnembedChildrenInDocument:(id)arg1;
 - (BOOL)ibCanUnembedChildrenInDocument:(id)arg1;
 - (BOOL)ibCanBeBoundToFromObject:(id)arg1;
@@ -38,5 +43,22 @@
 - (id)ibPasteboardTypes;
 - (void)ibRemoveChildren:(id)arg1;
 - (void)ibPopulateChildRelationOrder:(id)arg1;
+- (BOOL)ibCanSupportIdentifierProperty;
+- (id)ibEditedMenuItemRepresentation;
+- (Class)ibEditorClass;
+- (id)ibLocalAdditionalLocalizableAttributeKeyPaths;
+- (id)ibLocalLocalizableStringsAttributeKeyPaths;
+- (id)_ibLocalAttributeKeyPaths_NSMenuItem;
+- (id)ibLocalAttributeKeyPaths;
+- (id)ibLocalChildToOneRelationshipsKeyPaths;
+@property(copy) NSString *ibPredicateExpressionValue;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @end
 

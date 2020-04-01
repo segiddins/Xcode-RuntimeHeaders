@@ -6,9 +6,9 @@
 
 #import <IDEFoundation/IDEFramework.h>
 
-@class NSImage;
-
 @interface IDEFramework (IDEKitFrameworkPropertyAdditions)
-@property(readonly) NSImage *navigableItem_image;
+- (id)navigableItem_image;
+- (id)ideInspectedReferenceMessageForChoosingRelativeLocation;
+- (BOOL)ideInspectedIsReferenceNameEditable;
 @end
 

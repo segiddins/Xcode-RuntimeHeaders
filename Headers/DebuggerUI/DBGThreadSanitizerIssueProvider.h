@@ -4,26 +4,19 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <IDEFoundation/IDEIssueProvider.h>
+#import <DebuggerUI/DBGSanitizerIssueProvider.h>
 
-@class NSMapTable, NSMutableSet;
-
-@interface DBGThreadSanitizerIssueProvider : IDEIssueProvider
+@interface DBGThreadSanitizerIssueProvider : DBGSanitizerIssueProvider
 {
-    NSMapTable *_issuesForGroupingObjectTable;
-    NSMutableSet *_retiredDebugSessions;
 }
 
-+ (int)providerType;
-- (void).cxx_destruct;
-- (void)primitiveInvalidate;
-- (id)imageForIssueTypeIdentifier:(id)arg1 ofSize:(long long)arg2;
+- (unsigned long long)breakpointType;
 - (id)ideModelObjectTypeIdentifier;
 - (id)displayNameForIssueTypeIdentifier:(id)arg1;
-- (void)_handleDebugSessionsChanged:(id)arg1;
-- (void)_handleLaunchSessionsChanged:(id)arg1;
-- (id)_groupObjectForDebugSession:(id)arg1;
-- (id)initWithIssueManager:(id)arg1 extension:(id)arg2;
+- (id)issueNoticeTypeIdentifier;
+- (id)issueTypeIdentifier;
+- (id)issueProviderContext;
+- (id)keypathToRuntimeIssues;
 
 @end
 

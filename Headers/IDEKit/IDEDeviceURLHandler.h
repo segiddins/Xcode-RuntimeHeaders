@@ -16,6 +16,7 @@
 
 + (void)_enableForDevelopmentDeviceIdentifier:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 + (void)handleURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
++ (long long)_tabNameToIndex:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

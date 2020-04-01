@@ -52,6 +52,7 @@
 - (void)setActivityReportLayer:(id)arg1 forReport:(id)arg2;
 - (id)layer;
 - (void)primitiveInvalidate;
+- (void)updateTheme;
 - (id)init;
 - (void)loadLayer;
 - (id)initWithWorkspaceDocument:(id)arg1 initialDataSource:(id)arg2;

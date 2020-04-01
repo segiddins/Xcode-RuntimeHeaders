@@ -12,9 +12,9 @@
 
 @interface IDEDMSubViewControllerStateManager : NSObject <DVTInvalidation>
 {
-    DVTStateToken *_token;
     NSMutableArray *_stateIdentifiers;
     IDEDMEditorController *_parent;
+    DVTStateToken *_token;
 }
 
 + (void)initialize;

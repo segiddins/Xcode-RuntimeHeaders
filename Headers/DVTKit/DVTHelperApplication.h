@@ -17,6 +17,8 @@
 }
 
 + (id)moreHelperApplicationsURL;
++ (id)availableInternalHelperApplications;
++ (id)_internalHelperAppsContentForKey:(id)arg1;
 + (id)availableHelperApplications;
 + (id)_helperAppsContentForKey:(id)arg1;
 + (id)helperApplicationWithIdentifier:(id)arg1;

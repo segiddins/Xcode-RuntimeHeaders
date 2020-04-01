@@ -10,11 +10,10 @@
 
 @class NSString;
 
-__attribute__((visibility("hidden")))
 @interface LLDBExpressionOptions : NSObject <DBGSBExpressionOptions>
 {
     struct SBExpressionOptions {
-        struct unique_ptr<lldb_private::EvaluateExpressionOptions, std::__1::default_delete<lldb_private::EvaluateExpressionOptions>> m_opaque_ap;
+        struct unique_ptr<lldb_private::EvaluateExpressionOptions, std::__1::default_delete<lldb_private::EvaluateExpressionOptions>> m_opaque_up;
     } _expressionOptions;
 }
 

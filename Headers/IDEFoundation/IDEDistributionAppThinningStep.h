@@ -11,6 +11,8 @@
 }
 
 + (_Bool)runsPerThinningVariant;
++ (id)thinningDestinationPathMapWithSourceToDestinationPath:(id)arg1 distributionCoalescedThinningVariant:(id)arg2;
++ (id)sourceToDestinationPath:(id)arg1 fromOldParentPath:(id)arg2 toNewParentPath:(id)arg3;
 - (_Bool)runWithError:(id *)arg1;
 - (_Bool)shouldSkip;
 - (id)providedOutputContextPropertyNames;

@@ -17,6 +17,7 @@
 + (void)report:(char *)arg1 number:(long long)arg2 deresolver:(CDUnknownBlockType)arg3;
 + (void)reportSummarized:(char *)arg1 ID:(id)arg2 category:(id)arg3 collecting:(CDUnknownBlockType)arg4;
 + (void)reportSummarized:(char *)arg1 collecting:(CDUnknownBlockType)arg2;
++ (void)reportSummarized:(char *)arg1 ID:(id)arg2 number:(long long)arg3 deresolver:(CDUnknownBlockType)arg4;
 + (void)reportSummarized:(char *)arg1 number:(long long)arg2 deresolver:(CDUnknownBlockType)arg3;
 + (void)reportSummarized:(char *)arg1 ID:(id)arg2;
 + (void)report:(char *)arg1 ID:(id)arg2;

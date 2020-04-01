@@ -13,7 +13,6 @@
 
 @interface IBClassDescriber : NSObject <NSCoding, DVTInvalidation>
 {
-    int _retainCountMinusOne;
     DVTDelayedInvocation *_classDataIsUpdatingDelayedInvocation;
     NSSet *_readonlyPartialsToIntegrateWhenClassProvidersAreFirstSet;
     IBMutableIdentityDictionary *_classProviderObservingTokens;
@@ -64,15 +63,18 @@
 - (id)actionsForClassNamed:(id)arg1 recursive:(BOOL)arg2;
 - (id)namedRelationsOfRelationshipType:(long long)arg1 forClassNamed:(id)arg2 matchingClassNamed:(id)arg3 recursive:(BOOL)arg4;
 - (id)namedRelationsOfRelationshipType:(long long)arg1;
+- (id)suggestedClassSymbolForUnqualifiedClassName:(id)arg1 inWorkspace:(id)arg2;
 - (BOOL)moduleNamed:(id)arg1 inWorkspace:(id)arg2 containsAllClassesNamed:(id)arg3;
 - (BOOL)blueprint:(id)arg1 inWorkspace:(id)arg2 containsClassNamed:(id)arg3;
 - (id)namesOfModulesContainingClassNamed:(id)arg1 inWorkspace:(id)arg2;
 - (id)classDescriptionSourcesDescribingClassNamed:(id)arg1;
 - (BOOL)isClassNameDesignable:(id)arg1 recursive:(BOOL)arg2;
 - (id)commonBaseClassOfClassesNamed:(id)arg1;
-- (BOOL)is:(id)arg1 aKindOfClassNameInSet:(id)arg2;
-- (BOOL)is:(id)arg1 aKindOf:(id)arg2;
+- (BOOL)shouldRefactorConnectionLabelForObject:(id)arg1 whenRefactoringClassName:(id)arg2;
+- (long long)isTypeNamed:(id)arg1 aKindOfTypeNameInSet:(id)arg2;
+- (long long)isTypeNamed:(id)arg1 aKindOfTypeNamed:(id)arg2;
 - (BOOL)isClassNameCompletelyDescribed:(id)arg1;
+- (BOOL)isRootClass:(id)arg1;
 - (id)classNamesReferencedByDocument;
 - (id)classNamesForClassesWithActionsNamed:(id)arg1;
 - (id)classNames;
@@ -85,7 +87,6 @@
 - (void)scheduleOrImmediatelySendNotificationOfModifiedClass:(id)arg1;
 - (void)notifyObserversOfModifiedClasses;
 - (id)addObserver:(CDUnknownBlockType)arg1;
-- (void)removeObserver:(CDUnknownBlockType)arg1;
 @property(readonly, copy) NSString *description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
@@ -94,11 +95,6 @@
 - (void)initializeClassDataIsUpdatingDelayedInvocation;
 - (id)initWithDocument:(id)arg1;
 - (id)init;
-- (BOOL)_isDeallocating;
-- (BOOL)_tryRetain;
-- (unsigned long long)retainCount;
-- (oneway void)release;
-- (id)retain;
 
 // Remaining properties
 @property(retain) DVTStackBacktrace *creationBacktrace;

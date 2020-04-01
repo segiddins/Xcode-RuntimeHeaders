@@ -8,6 +8,8 @@
 
 @interface NSSet (DVTNSSetAdditions)
 - (id)dvt_objectByFoldingWithBlock:(CDUnknownBlockType)arg1;
+- (id)dvt_dictionaryWithEntriesAsValuesAndKeysFromBlock:(CDUnknownBlockType)arg1;
+- (id)dvt_dictionaryWithEntriesAsKeysAndValuesFromBlock:(CDUnknownBlockType)arg1;
 - (id)dvt_sortedArrayUsingComparator:(CDUnknownBlockType)arg1;
 - (id)dvt_sortedArrayUsingSelector:(SEL)arg1;
 - (id)dvt_sortedArray;
@@ -16,8 +18,10 @@
 - (id)dvt_objectsPassingTest:(CDUnknownBlockType)arg1;
 - (BOOL)dvt_areAllObjectsPassingTest:(CDUnknownBlockType)arg1;
 - (id)dvt_anyObjectPassingTest:(CDUnknownBlockType)arg1;
+- (BOOL)dvt_areAnyObjectsPassingTest:(CDUnknownBlockType)arg1;
 - (id)dvt_setByFilteringUsingBlock:(CDUnknownBlockType)arg1;
 - (id)dvt_setByApplyingBlockStrictly:(CDUnknownBlockType)arg1;
+- (id)dvt_arrayByApplyingBlock:(CDUnknownBlockType)arg1;
 - (id)dvt_setByApplyingBlock:(CDUnknownBlockType)arg1;
 - (id)dvt_setByApplyingSelector:(SEL)arg1;
 - (id)dvt_setByRemovingObject:(id)arg1;

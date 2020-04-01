@@ -17,7 +17,7 @@
 
 - (void).cxx_destruct;
 - (id)internalDictionary;
-- (id)initWithUIDSet:(id)arg1 identifier:(id)arg2 name:(id)arg3 filePath:(id)arg4 isDefault:(BOOL)arg5;
+- (id)initWithUIDSet:(id)arg1 identifier:(id)arg2 name:(id)arg3 filePath:(id)arg4 isDefault:(BOOL)arg5 disableClientResponseHandling:(id)arg6;
 
 @end
 

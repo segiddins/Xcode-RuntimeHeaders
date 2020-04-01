@@ -20,7 +20,7 @@
 + (id)sharedInstance;
 - (void).cxx_destruct;
 - (BOOL)hasIntegratorBundleForClassName:(id)arg1;
-- (BOOL)hasPluginIdentifierBeenSupercededByIntegratorBundleIdentifier:(id)arg1;
+- (BOOL)hasPluginIdentifierBeenSupersededByIntegratorBundleIdentifier:(id)arg1;
 - (id)integratorBundleDependencyForClassName:(id)arg1 inDocument:(id)arg2;
 - (id)frameworkDependenciesForClassName:(id)arg1 inDocument:(id)arg2;
 - (id)integratorBundleForIdentifier:(id)arg1;

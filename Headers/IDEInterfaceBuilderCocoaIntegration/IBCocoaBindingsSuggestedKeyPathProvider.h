@@ -8,19 +8,16 @@
 
 #import <IDEInterfaceBuilderCocoaIntegration/DVTInvalidation-Protocol.h>
 
-@class DVTStackBacktrace, IBDocument, IDEIndex, NSArray, NSMutableDictionary, NSOperationQueue, NSString;
+@class DVTStackBacktrace, IBDocument, NSArray, NSMutableDictionary, NSString;
 @protocol DVTCancellable;
 
 @interface IBCocoaBindingsSuggestedKeyPathProvider : NSObject <DVTInvalidation>
 {
-    IBDocument *document;
-    IDEIndex *index;
-    NSMutableDictionary *classNameToBindingCompletionItems;
-    NSArray *allObjectClasses;
-    NSArray *availableControllers;
-    NSOperationQueue *accessQueue;
-    NSOperationQueue *processQueue;
-    id <DVTCancellable> classDescriberToken;
+    IBDocument *_document;
+    NSMutableDictionary *_classNameToBindingCompletionItems;
+    NSArray *_allObjectClasses;
+    NSArray *_availableControllers;
+    id <DVTCancellable> _classDescriberToken;
 }
 
 + (void)initialize;
@@ -31,9 +28,9 @@
 - (id)bindingCompletionItemsWorthSuggestingInClassNamed:(id)arg1;
 - (id)bindingCompletionItemsForClassNamed:(id)arg1;
 - (id)allInstanceMethodsInClassHierarchyForClassSymbol:(id)arg1;
-- (id)allIvarsInClassHeirarchyForClassSymbol:(id)arg1;
+- (id)allIvarsInClassHierarchyForClassSymbol:(id)arg1;
 - (id)queryIndexForIvarsInClassSymbol:(id)arg1;
-- (id)allPropertiesInClassHeirarchyForClassSymbol:(id)arg1;
+- (id)allPropertiesInClassHierarchyForClassSymbol:(id)arg1;
 - (id)queryIndexForPropertiesInClassSymbol:(id)arg1;
 - (BOOL)isClassNamed:(id)arg1 reachableFromController:(id)arg2 usingControllerKey:(id)arg3;
 - (id)findInitialSuggestionForKeyPathFromController:(id)arg1 withControllerKey:(id)arg2 resolvingToClassNamed:(id)arg3;
@@ -44,8 +41,6 @@
 - (void)clearCache;
 - (void)stopCachingIndexInformationForClassesReachableFromControllers;
 - (void)beginCachingIndexInformationForClassesReachableFromControllers;
-- (void)prefetchIndexInformationForClassNamesInArray:(id)arg1;
-- (void)prefetchIndexInformationForClassNamed:(id)arg1;
 - (BOOL)shouldPrefetchIndexInfoForClassNamed:(id)arg1;
 - (id)queryIndexAndCacheAllBindingCompletionItemsInClassNamed:(id)arg1;
 - (void)prepareForInstallation;

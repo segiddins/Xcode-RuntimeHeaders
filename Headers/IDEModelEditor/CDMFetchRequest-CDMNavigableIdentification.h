@@ -24,6 +24,7 @@
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
+@property(readonly) id <IDEDMModelObject> model;
 @property(readonly) NSString *name; // @dynamic name;
 @property(readonly) Class superclass;
 @end

@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Foundation/NSObject.h>
+#import <objc/NSObject.h>
 
 @class TSRegularExpression;
 
@@ -15,9 +15,9 @@
 }
 
 + (id)buildCommandOutputRegexParseRulesFromPListArrays:(id)arg1 outerKeyNameForExceptions:(id)arg2 innerKeyNameForExceptions:(id)arg3;
+- (void).cxx_destruct;
 - (id)description;
-- (BOOL)matchCommandOutputLineString:(id)arg1 logSectionRecorder:(id)arg2;
-- (void)dealloc;
+- (BOOL)matchCommandOutputLineString:(id)arg1 shortTitle:(id)arg2 categoryString:(id)arg3 logSectionRecorder:(id)arg4 parser:(id)arg5;
 - (id)initWithRegularExpression:(id)arg1 actionCode:(int)arg2;
 
 @end

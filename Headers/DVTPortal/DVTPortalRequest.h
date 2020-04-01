@@ -7,34 +7,34 @@
 #import <DVTServices/DVTServicesRequest.h>
 
 @class NSDictionary, NSString, NSURL;
+@protocol DVTPortalSerialization;
 
 @interface DVTPortalRequest : DVTServicesRequest
 {
-    BOOL _wantsPlatformInRequestURL;
     NSString *_requestID;
-    NSString *_action;
-    NSDictionary *_payload;
+    id <DVTPortalSerialization> _payloadSerializer;
 }
 
-@property(readonly, nonatomic) NSDictionary *payload; // @synthesize payload=_payload;
-@property(readonly, nonatomic) BOOL wantsPlatformInRequestURL; // @synthesize wantsPlatformInRequestURL=_wantsPlatformInRequestURL;
-@property(readonly, nonatomic) NSString *action; // @synthesize action=_action;
+@property(readonly, nonatomic) id <DVTPortalSerialization> payloadSerializer; // @synthesize payloadSerializer=_payloadSerializer;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *portalURLPrefix;
+- (id)serializedPayload:(id *)arg1;
 - (id)sendRequestAndReceiveResponse:(id *)arg1;
-- (id)_sendRequestAndReceiveResponseWithPayload:(id)arg1 payloadPlist:(id)arg2 error:(id *)arg3;
+- (id)_sendRequestAndReceiveResponseWithPayload:(id)arg1 error:(id *)arg2;
+@property(readonly, nonatomic) unsigned long long expectedHTTPStatusCode;
 - (BOOL)_shouldRetryRequest:(id)arg1 response:(id)arg2;
 - (id)_sendURLRequestWaitForResponse:(id)arg1 URLResponse:(id *)arg2 error:(id *)arg3;
 - (id)_serverCertificateCredential;
 - (id)_URLRequestWithPayloadData:(id)arg1 session:(id)arg2;
-@property(readonly, nonatomic) NSURL *URL;
-- (id)_portalHostname;
-- (BOOL)_usesCertAuth;
-- (id)_payloadWithStandardItems:(id)arg1;
 - (id)_standardPayloadItemsWithSession:(id)arg1;
+@property(readonly, nonatomic) Class responseClass;
+@property(readonly, nonatomic) NSDictionary *additionalHTTPHeaders;
+@property(readonly, nonatomic) NSString *contentType;
+@property(readonly, nonatomic) NSString *httpMethod;
+@property(readonly, nonatomic) NSURL *URL;
 @property(readonly, nonatomic) NSString *requestID; // @synthesize requestID=_requestID;
-- (id)_protocolVersion;
+@property(readonly, nonatomic) NSString *portalProtocolVersion;
 - (id)_serviceClientID;
-- (id)initWithPortalSession:(id)arg1 action:(id)arg2 wantsPlatformInRequestURL:(BOOL)arg3 payload:(id)arg4;
 
 @end
 

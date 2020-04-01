@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class DVTPortalTeam, DVTServicesSession, NSArray, NSFileHandle, NSString;
+@class DVTKeychain, DVTPortalTeam, DVTServicesAccountBasedSession, NSArray, NSError, NSFileHandle, NSString;
 
 @interface IDEPortalTool : NSObject
 {
@@ -30,15 +30,24 @@
     NSArray *_inputFeatureIdentifiers;
     NSArray *_inputFeatureValues;
     NSArray *_inputContainerIdentifiers;
+    NSString *_inputMachineName;
+    NSString *_inputMachineID;
+    NSString *_inputSerialNumber;
     long long _command;
-    DVTServicesSession *_session;
+    DVTServicesAccountBasedSession *_session;
     DVTPortalTeam *_team;
+    DVTKeychain *_keychain;
+    NSError *_keychainError;
 }
 
-+ (id)portalTool;
+@property(retain, nonatomic) NSError *keychainError; // @synthesize keychainError=_keychainError;
+@property(retain, nonatomic) DVTKeychain *keychain; // @synthesize keychain=_keychain;
 @property(retain, nonatomic) DVTPortalTeam *team; // @synthesize team=_team;
-@property(retain, nonatomic) DVTServicesSession *session; // @synthesize session=_session;
+@property(retain, nonatomic) DVTServicesAccountBasedSession *session; // @synthesize session=_session;
 @property(nonatomic) long long command; // @synthesize command=_command;
+@property(retain, nonatomic) NSString *inputSerialNumber; // @synthesize inputSerialNumber=_inputSerialNumber;
+@property(retain, nonatomic) NSString *inputMachineID; // @synthesize inputMachineID=_inputMachineID;
+@property(retain, nonatomic) NSString *inputMachineName; // @synthesize inputMachineName=_inputMachineName;
 @property(retain, nonatomic) NSArray *inputContainerIdentifiers; // @synthesize inputContainerIdentifiers=_inputContainerIdentifiers;
 @property(retain, nonatomic) NSArray *inputFeatureValues; // @synthesize inputFeatureValues=_inputFeatureValues;
 @property(retain, nonatomic) NSArray *inputFeatureIdentifiers; // @synthesize inputFeatureIdentifiers=_inputFeatureIdentifiers;
@@ -65,6 +74,7 @@
 - (id)_pathRequiredError;
 - (id)_platformRequiredError;
 - (BOOL)_ensureRequiredArgumentsWithError:(id *)arg1;
+- (BOOL)revokeIdentityWithError:(id *)arg1;
 - (BOOL)downloadIdentityWithError:(id *)arg1;
 - (BOOL)downloadProfileWithError:(id *)arg1;
 - (BOOL)addDeviceWithError:(id *)arg1;
@@ -79,8 +89,13 @@
 - (id)_sessionWithError:(id *)arg1;
 - (id)_teamWithError:(id *)arg1;
 - (id)_developerAccountWithError:(id *)arg1;
-- (void)_setupUserDefaults;
+- (id)_signingCertificateManagerWithError:(id *)arg1;
+- (id)_provisioningProfileManager;
+- (id)_credentialsManagerWithError:(id *)arg1;
+- (BOOL)_wantsAllApplicationsToAccessKeychainItems;
+- (id)_keychainWithError:(id *)arg1;
 - (BOOL)runWithError:(id *)arg1;
+- (id)init;
 
 @end
 

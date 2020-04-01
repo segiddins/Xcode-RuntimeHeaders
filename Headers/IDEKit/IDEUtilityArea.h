@@ -8,7 +8,7 @@
 
 #import <IDEKit/IDENavigableItemCoordinatorDelegate-Protocol.h>
 
-@class DVTBorderedView, DVTChoice, DVTChooserView, DVTDelayedInvocation, DVTDisclosureView, DVTExtension, DVTMutableOrderedSet, DVTNotificationToken, DVTStackView_ML, IDEEditorDocument, IDENavigableItemCoordinator, IDESelection, IDEUtilityPlaceholderView, NSArray, NSMapTable, NSMutableArray, NSScrollView, NSSet, NSString;
+@class DVTBorderView, DVTBorderedView, DVTChoice, DVTChooserView, DVTDelayedInvocation, DVTDisclosureView, DVTEmptyContentPlaceholder, DVTExtension, DVTNotificationToken, DVTStackView_ML, IDEEditorDocument, IDENavigableItemCoordinator, IDESelection, NSArray, NSMapTable, NSMutableArray, NSMutableOrderedSet, NSScrollView, NSSet, NSString;
 @protocol DVTCancellable;
 
 @interface IDEUtilityArea : IDEViewController <IDENavigableItemCoordinatorDelegate>
@@ -17,6 +17,7 @@
     DVTBorderedView *_borderedView;
     DVTStackView_ML *_stackView;
     NSScrollView *_scrollView;
+    DVTBorderView *_leftDividerView;
     DVTDisclosureView *_lastDisclosureView;
     DVTChoice *_selectedCategoryChoice;
     NSMapTable *_categoriesToChoices;
@@ -24,9 +25,10 @@
     NSMapTable *_sliceExtensionsToWrappingViews;
     NSMapTable *_installedSliceExtensionsToContentViews;
     NSArray *_builtinCategories;
-    DVTMutableOrderedSet *_userPreferredCategories;
+    NSMutableOrderedSet *_userPreferredCategoryExtensions;
     NSSet *_displayedSlices;
     NSArray *_observedParentNavigableItemTokens;
+    NSArray *_observedParentNavigableItemNotificationTokens;
     DVTDelayedInvocation *_refreshInvocation;
     DVTExtension *_displayedCategory;
     IDESelection *_content;
@@ -34,19 +36,27 @@
     id <DVTCancellable> _clipViewFillToken;
     NSSet *_selectedDocuments;
     IDENavigableItemCoordinator *_navigableItemCoordinator;
-    IDEUtilityPlaceholderView *_placeholderView;
+    DVTEmptyContentPlaceholder *_placeholderView;
     IDEEditorDocument *_retainedDocument;
     DVTNotificationToken *_retainedDocumentWillCloseNotificationToken;
     DVTNotificationToken *_frameChangeToken;
     BOOL _forceInputSelectionToEmpty;
     NSSet *_inputURLs;
     NSMutableArray *_refreshCallbacks;
+    BOOL _visibleOrPreparingShow;
+    NSArray *_categoryChoices;
+    DVTChoice *_defaultChoice;
 }
 
++ (void)configureStateSavingObjectPersistenceByName:(id)arg1;
++ (id)extensionIdentifierForChoice:(id)arg1;
 + (id)utilityConfiguredDisclosureView;
 + (id)notApplicablePlaceholder;
 + (id)emptySelectionPlaceholder;
 + (id)defaultViewNibName;
+@property(readonly, nonatomic) DVTChoice *defaultChoice; // @synthesize defaultChoice=_defaultChoice;
+@property(readonly, copy) NSArray *categoryChoices; // @synthesize categoryChoices=_categoryChoices;
+@property(nonatomic) BOOL visibleOrPreparingShow; // @synthesize visibleOrPreparingShow=_visibleOrPreparingShow;
 @property(readonly) DVTExtension *displayedCategory; // @synthesize displayedCategory=_displayedCategory;
 @property(readonly) NSSet *displayedSlices; // @synthesize displayedSlices=_displayedSlices;
 @property(copy, nonatomic) NSArray *builtinCategories; // @synthesize builtinCategories=_builtinCategories;
@@ -59,22 +69,28 @@
 - (void)primitiveInvalidate;
 - (BOOL)automaticallyInvalidatesChildViewControllers;
 - (void)invalidateContentView:(id)arg1;
+- (void)commitStateToDictionary:(id)arg1;
+- (void)revertStateWithDictionary:(id)arg1;
 - (void)viewWillUninstall;
 - (void)viewDidInstall;
-- (void)workspaceWindowIsClosing;
+- (void)setupInputsAndStartObserving;
 - (void)clearInputsAndStopObserving;
+- (void)styleForEmbeddedInWindow;
+- (void)styleForPopover;
 - (void)loadView;
 - (void)userSelectedCategoryChoiceFromMenu:(id)arg1;
 - (void)simulateUserSelectionOfChoice:(id)arg1;
-- (void)chooserView:(id)arg1 userDidSelectChoices:(id)arg2;
+- (void)chooserView:(id)arg1 userDidSelectChoice:(id)arg2;
 - (void)noteUserDidExplicitlyChooseChoice:(id)arg1;
 - (CDUnknownBlockType)willReplaceSliceViewControllers:(id)arg1;
 - (void)_rebuildCategoriesAndStack;
 - (id)deriveInputSelection;
+- (id)selectionProvidingViewController;
 - (id)navigableItemsForSelection:(id)arg1;
-- (id)_preferredChoiceForChoices:(id)arg1;
+- (id)_userPreferredCategoryForExtensions:(id)arg1;
 - (void)_rebuildStackWithNavigableItems:(id)arg1;
-- (void)pushContentNavigables:(id)arg1 toInstalledSliceExentions:(id)arg2;
+- (void)_forceRefreshAndEmpty;
+- (void)pushContentNavigables:(id)arg1 toInstalledSlices:(id)arg2;
 - (void)prepareToRemoveSlices:(id)arg1 forCategory:(id)arg2;
 - (void)prepareToAddSlices:(id)arg1 forCategory:(id)arg2;
 - (id)selectedDocuments;
@@ -87,11 +103,10 @@
 - (void)_updateLastDisclosureViewBorderColor;
 - (id)_categoriesForNavigables:(id)arg1;
 - (id)editorContributedCategoryExtensionsForNavigable:(id)arg1;
+- (id)editorExtensionForNavigable:(id)arg1;
 - (id)_categoriesForCategoryIdentifiers:(id)arg1;
 - (id)_categoryForCategoryIdentifier:(id)arg1;
 - (id)choiceMatchingExtensionIdentifier:(id)arg1;
-- (id)defaultChoice;
-- (id)_choicesForCategories:(id)arg1;
 - (id)_choiceForCategory:(id)arg1;
 - (id)_sliceViewsForSlices:(id)arg1 inCategory:(id)arg2;
 - (id)_cachedSliceViewForSlice:(id)arg1 inCategory:(id)arg2;
@@ -105,8 +120,7 @@
 - (id)navigableItemCoordinator:(id)arg1 editorDocumentForNavigableItem:(id)arg2;
 - (void)dropRetainedDocument;
 - (void)performBlockAfterNextRefresh:(CDUnknownBlockType)arg1;
-- (void)setSelectedCategoryChoices:(id)arg1;
-- (id)selectedCategoryChoices;
+- (void)setSelectedCategoryChoice:(id)arg1;
 @property(readonly) DVTChoice *selectedCategoryChoice;
 - (void)validateIfNeeded;
 - (id)selectedCategory;
@@ -120,10 +134,10 @@
 - (id)titleForCategoryExtension:(id)arg1;
 - (id)alternateImageForCategoryExtension:(id)arg1;
 - (id)imageForCategoryExtension:(id)arg1;
+- (id)defaultCategoryFromExtensions:(id)arg1;
 - (BOOL)categorySupportsMultipleSlices:(id)arg1;
 - (id)slicesForNavigableItems:(id)arg1 inCategory:(id)arg2 withWorkspaceDocument:(id)arg3;
 - (id)categoryIdentifiersForEditorExtension:(id)arg1;
-- (id)preferredCategoriesPersistenceKey;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 
 // Remaining properties

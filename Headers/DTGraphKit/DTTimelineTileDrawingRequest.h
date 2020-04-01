@@ -6,16 +6,20 @@
 
 #import <objc/NSObject.h>
 
-@class DTTimelineDecorator;
+@class DTTimelineDecorator, DTTimelineTileDrawingContent;
 
 __attribute__((visibility("hidden")))
 @interface DTTimelineTileDrawingRequest : NSObject
 {
     DTTimelineDecorator *_decorator;
+    DTTimelineTileDrawingContent *_oldContent;
     shared_ptr_1f7ca383 _containerPtr;
+    struct TileMetrics _currentTileMetrics;
 }
 
+@property(retain, nonatomic) DTTimelineTileDrawingContent *oldContent; // @synthesize oldContent=_oldContent;
 @property(retain, nonatomic) DTTimelineDecorator *decorator; // @synthesize decorator=_decorator;
+@property(nonatomic) struct TileMetrics currentTileMetrics; // @synthesize currentTileMetrics=_currentTileMetrics;
 @property(nonatomic) shared_ptr_1f7ca383 containerPtr; // @synthesize containerPtr=_containerPtr;
 - (id).cxx_construct;
 - (void).cxx_destruct;

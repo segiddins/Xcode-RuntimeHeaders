@@ -9,23 +9,29 @@
 #import <Xcode3UI/NSTableViewDataSource-Protocol.h>
 #import <Xcode3UI/NSTableViewDelegate-Protocol.h>
 
-@class IDENavigatorDataCell, NSArray, NSPopUpButtonCell, NSString, NSTableView;
+@class DVTBindingToken, DVTImageAndTextCell, NSArray, NSArrayController, NSPopUpButtonCell, NSString, NSTableView, NSTextField;
 
 @interface Xcode3ProjectLocalizationLocaleAssistant : IDEAssistant <NSTableViewDelegate, NSTableViewDataSource>
 {
-    NSTableView *_tableView;
-    NSPopUpButtonCell *_popupButtonCell;
-    IDENavigatorDataCell *_nameAndImageCell;
+    DVTBindingToken *_titleBinding;
+    DVTBindingToken *_imageBinding;
     NSArray *_availableFileTypes;
     NSArray *_availableLocales;
+    NSTableView *_tableView;
+    NSArrayController *_localizableFilesArrayController;
+    NSPopUpButtonCell *_popupButtonCell;
+    DVTImageAndTextCell *_nameAndImageCell;
+    NSTextField *_selectionProjectPathField;
 }
 
 + (id)keyPathsForValuesAffectingCanFinish;
+@property(retain) NSTextField *selectionProjectPathField; // @synthesize selectionProjectPathField=_selectionProjectPathField;
+@property(retain) DVTImageAndTextCell *nameAndImageCell; // @synthesize nameAndImageCell=_nameAndImageCell;
+@property(retain) NSPopUpButtonCell *popupButtonCell; // @synthesize popupButtonCell=_popupButtonCell;
+@property(retain) NSArrayController *localizableFilesArrayController; // @synthesize localizableFilesArrayController=_localizableFilesArrayController;
+@property(retain) NSTableView *tableView; // @synthesize tableView=_tableView;
 @property(readonly) NSArray *availableLocales; // @synthesize availableLocales=_availableLocales;
 @property(readonly) NSArray *availableFileTypes; // @synthesize availableFileTypes=_availableFileTypes;
-@property(retain) IDENavigatorDataCell *nameAndImageCell; // @synthesize nameAndImageCell=_nameAndImageCell;
-@property(retain) NSPopUpButtonCell *popupButtonCell; // @synthesize popupButtonCell=_popupButtonCell;
-@property(retain) NSTableView *tableView; // @synthesize tableView=_tableView;
 - (void).cxx_destruct;
 - (void)finishWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (BOOL)alwaysShowFinish;
@@ -33,10 +39,12 @@
 - (BOOL)canGoBack;
 - (BOOL)canFinish;
 - (id)assistantTitle;
+- (void)updateSelectionProjectPathField;
+- (id)displayPathForLocalizableFile:(id)arg1;
+- (void)tableViewSelectionDidChange:(id)arg1;
 - (id)tableView:(id)arg1 dataCellForTableColumn:(id)arg2 row:(long long)arg3;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forTableColumn:(id)arg3 row:(long long)arg4;
 - (BOOL)tableView:(id)arg1 shouldTrackCell:(id)arg2 forTableColumn:(id)arg3 row:(long long)arg4;
-- (BOOL)tableView:(id)arg1 shouldSelectRow:(long long)arg2;
 - (id)context;
 - (void)primitiveInvalidate;
 - (void)loadView;

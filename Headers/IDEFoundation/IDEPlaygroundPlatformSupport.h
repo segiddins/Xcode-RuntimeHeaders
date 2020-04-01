@@ -15,6 +15,7 @@
 + (id)_availableSDKs;
 + (id)legacySDKIdentifierForTargetPlatformIdentifier:(id)arg1;
 + (id)targetPlatformIdentifierForLegacySDKIdentifier:(id)arg1;
++ (id)targetDeviceIdentifierForSDK:(id)arg1;
 + (id)targetPlatformIdentifierForSDK:(id)arg1;
 + (id)sdkForTargetPlatformIdentifier:(id)arg1;
 + (id)targetableSDKSortedByPlatformFamilyName;

@@ -11,6 +11,7 @@
 @interface IDESchemeActionDeviceRecord : NSObject
 {
     BOOL _concreteDevice;
+    BOOL _isWireless;
     NSString *_name;
     NSString *_operatingSystemVersion;
     NSString *_operatingSystemVersionWithBuildNumber;
@@ -37,6 +38,7 @@
 @property unsigned long long cpuSpeedInMHz; // @synthesize cpuSpeedInMHz=_cpuSpeedInMHz;
 @property unsigned long long cpuCount; // @synthesize cpuCount=_cpuCount;
 @property(copy) NSString *cpuKind; // @synthesize cpuKind=_cpuKind;
+@property(readonly) BOOL isWireless; // @synthesize isWireless=_isWireless;
 @property(readonly, copy) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly, copy, nonatomic) NSString *modelUTI; // @synthesize modelUTI=_modelUTI;
 @property(readonly, copy, nonatomic) NSString *modelCode; // @synthesize modelCode=_modelCode;
@@ -50,7 +52,7 @@
 - (id)dictionaryRepresentation;
 - (id)initWithDictionaryRepresentation:(id)arg1;
 - (id)initWithDevice:(id)arg1;
-- (id)initWithDeviceName:(id)arg1 isConcreteDevice:(BOOL)arg2 nativeArchitecture:(id)arg3 operatingSystemVersion:(id)arg4 operatingSystemVersionWithBuildNumber:(id)arg5 modelName:(id)arg6 modelCode:(id)arg7 modelUTI:(id)arg8 identifier:(id)arg9 cpuKind:(id)arg10 cpuCount:(unsigned long long)arg11 cpuSpeedInMHz:(unsigned long long)arg12 busSpeedInMHz:(unsigned long long)arg13 ramSizeInMegabytes:(unsigned long long)arg14 physicalCPUCoresPerPackage:(unsigned long long)arg15 logicalCPUCoresPerPackage:(unsigned long long)arg16 platformRecord:(id)arg17;
+- (id)initWithDeviceName:(id)arg1 isConcreteDevice:(BOOL)arg2 nativeArchitecture:(id)arg3 operatingSystemVersion:(id)arg4 operatingSystemVersionWithBuildNumber:(id)arg5 modelName:(id)arg6 modelCode:(id)arg7 modelUTI:(id)arg8 identifier:(id)arg9 isWireless:(BOOL)arg10 cpuKind:(id)arg11 cpuCount:(unsigned long long)arg12 cpuSpeedInMHz:(unsigned long long)arg13 busSpeedInMHz:(unsigned long long)arg14 ramSizeInMegabytes:(unsigned long long)arg15 physicalCPUCoresPerPackage:(unsigned long long)arg16 logicalCPUCoresPerPackage:(unsigned long long)arg17 platformRecord:(id)arg18;
 
 @end
 

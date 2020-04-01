@@ -9,7 +9,7 @@
 #import <IDEModelEditor/IDECapsuleListViewDataSource-Protocol.h>
 #import <IDEModelEditor/IDEDataModelEditorController-Protocol.h>
 
-@class IDECapsuleListView, IDEDataModelEntityContentsEditor, IDEDataModelPropertiesTableController, NSArrayController, NSString;
+@class DVTStackBacktrace, IDECapsuleListView, IDEDataModelEditor, IDEDataModelEntityContentsEditor, IDEDataModelPropertiesTableController, NSArrayController, NSString;
 
 @interface IDEDataModelBrowserEditor : IDEDMEditorController <IDECapsuleListViewDataSource, IDEDataModelEditorController>
 {
@@ -60,7 +60,7 @@
 - (void)selectedPropertiesChanged;
 - (void)primitiveInvalidate;
 - (void)loadView;
-- (id)rootEditor;
+@property(readonly) IDEDataModelEditor *rootEditor;
 - (id)_propertiesControllerForModelObject:(id)arg1;
 - (id)allSubViewControllers;
 - (id)identifier;
@@ -68,10 +68,13 @@
 - (id)nibName;
 
 // Remaining properties
+@property(retain) DVTStackBacktrace *creationBacktrace;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
+@property(readonly) DVTStackBacktrace *invalidationBacktrace;
 @property(readonly) Class superclass;
+@property(readonly, nonatomic, getter=isValid) BOOL valid;
 
 @end
 

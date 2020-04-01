@@ -12,41 +12,40 @@
 
 @interface DVTSourceControlOperation : NSOperation <DVTSourceControlCancellable>
 {
-    BOOL _isExecuting;
-    BOOL _isFinished;
-    BOOL _isCanceled;
-    BOOL suppressAuthenticationFailure;
-    id context;
-    CDUnknownBlockType _operationBlock;
+    // Error parsing type: AB, name: _isExecuting
+    // Error parsing type: AB, name: _isFinished
+    // Error parsing type: AB, name: _isCancelled
+    CDUnknownBlockType operationBlock;
+    unsigned long long authenticationOptions;
     CDUnknownBlockType _progressBlock;
     CDUnknownBlockType _incrementalLogBlock;
     CDUnknownBlockType _terminationBlock;
     DVTSourceControlManager *_sourceControlManager;
     DVTSourceControlSystem *_system;
+    id _proxyCompletionBlock;
 }
 
 + (id)sourceControlOperationStateQueue;
+@property(retain) id proxyCompletionBlock; // @synthesize proxyCompletionBlock=_proxyCompletionBlock;
 @property(retain, nonatomic) DVTSourceControlSystem *system; // @synthesize system=_system;
 @property(retain, nonatomic) DVTSourceControlManager *sourceControlManager; // @synthesize sourceControlManager=_sourceControlManager;
-@property(copy) CDUnknownBlockType terminationBlock; // @synthesize terminationBlock=_terminationBlock;
-@property(copy) CDUnknownBlockType incrementalLogBlock; // @synthesize incrementalLogBlock=_incrementalLogBlock;
-@property(copy) CDUnknownBlockType progressBlock; // @synthesize progressBlock=_progressBlock;
-@property(copy) CDUnknownBlockType operationBlock; // @synthesize operationBlock=_operationBlock;
-@property __weak id context; // @synthesize context;
-@property BOOL suppressAuthenticationFailure; // @synthesize suppressAuthenticationFailure;
+@property(nonatomic) unsigned long long authenticationOptions; // @synthesize authenticationOptions;
+@property(copy, nonatomic) CDUnknownBlockType operationBlock; // @synthesize operationBlock;
 - (void).cxx_destruct;
 - (void)cancel;
 - (void)finish;
 - (void)retry;
 - (void)start;
+- (BOOL)isAsynchronous;
 - (BOOL)isFinished;
 - (BOOL)isExecuting;
-- (void)_startOperation;
+- (BOOL)isCancelled;
 @property(readonly) NSString *identifier;
-- (id)initWithSourceControlManager:(id)arg1 system:(id)arg2 operationBlock:(CDUnknownBlockType)arg3 incrementalLogBlock:(CDUnknownBlockType)arg4 progressBlock:(CDUnknownBlockType)arg5 terminationBlock:(CDUnknownBlockType)arg6;
-- (id)initWithSourceControlManager:(id)arg1 system:(id)arg2 operationBlock:(CDUnknownBlockType)arg3 progressBlock:(CDUnknownBlockType)arg4 terminationBlock:(CDUnknownBlockType)arg5;
-- (id)initWithSourceControlManager:(id)arg1 system:(id)arg2 operationBlock:(CDUnknownBlockType)arg3 incrementalLogBlock:(CDUnknownBlockType)arg4 terminationBlock:(CDUnknownBlockType)arg5;
+- (id)initWithSourceControlManager:(id)arg1 system:(id)arg2 authenticationOptions:(unsigned long long)arg3 operationBlock:(CDUnknownBlockType)arg4 incrementalLogBlock:(CDUnknownBlockType)arg5 progressBlock:(CDUnknownBlockType)arg6 terminationBlock:(CDUnknownBlockType)arg7;
 - (id)initWithSourceControlManager:(id)arg1 system:(id)arg2 operationBlock:(CDUnknownBlockType)arg3 terminationBlock:(CDUnknownBlockType)arg4;
+@property(readonly, copy) CDUnknownBlockType terminationBlock; // @synthesize terminationBlock=_terminationBlock;
+@property(readonly, copy) CDUnknownBlockType incrementalLogBlock; // @synthesize incrementalLogBlock=_incrementalLogBlock;
+@property(readonly, copy) CDUnknownBlockType progressBlock; // @synthesize progressBlock=_progressBlock;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

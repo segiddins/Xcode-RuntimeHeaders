@@ -12,6 +12,7 @@
 
 + (BOOL)isObjectValidSource:(id)arg1;
 + (BOOL)isObjectValidDestination:(id)arg1;
++ (id)ibDefaultImageForInstance:(id)arg1 targetRuntime:(id)arg2;
 + (id)classIdentifier;
 - (id)instantiateSegueTemplate;
 - (id)badgeImage;

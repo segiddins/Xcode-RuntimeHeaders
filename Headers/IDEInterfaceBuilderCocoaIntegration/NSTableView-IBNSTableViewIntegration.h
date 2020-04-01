@@ -6,22 +6,26 @@
 
 #import <AppKit/NSTableView.h>
 
-@class NSArray, NSTableColumn;
+#import <IDEInterfaceBuilderCocoaIntegration/IBDocumentArchiving-Protocol.h>
 
-@interface NSTableView (IBNSTableViewIntegration)
+@class NSArray, NSString, NSTableColumn;
+
+@interface NSTableView (IBNSTableViewIntegration) <IBDocumentArchiving>
++ (id)keyPathsForValuesAffectingIbShadowedUsesAutomaticRowHeights;
 + (id)keyPathsForValuesAffectingIbInspectedRowHeight;
 + (id)keyPathsForValuesAffectingIbShadowedRowHeight;
 + (id)keyPathsForValuesAffectingIbShadowedRowSizeStyle;
++ (id)keyPathsForValuesAffectingIbInspectedRowSizeStyle;
 + (id)ibSampleController;
 + (id)keyPathsForValuesAffectingIbInspectedVerticalGridStyleMask;
 + (id)keyPathsForValuesAffectingIbInspectedHorizontalGridStyleMask;
 + (id)keyPathsForValuesAffectingIbInspectedNumberOfTableColumns;
 + (id)keyPathsForValuesAffectingIbInspectedHasHeaderView;
++ (id)keyPathsForValuesAffectingIbInspectedIsInViewBasedMode;
 - (void)unarchivePlaceholderTables:(id)arg1;
 - (void)archivePlaceholderTables:(id)arg1;
 - (void)unarchiveRegisteredNibsByIdentifier:(id)arg1;
 - (void)archiveRegisteredNibsByIdentifier:(id)arg1;
-- (id)ibDocumentationPropertyInfosForKeyPath:(id)arg1;
 - (unsigned long long)ibCustomSubviewLayoutStrategy;
 - (BOOL)ibShouldUseConstraintsInsteadOfAutoresizingWhenChildOfClipView;
 - (BOOL)ibChildView:(id)arg1 shouldUseConstraintsInsteadOfAutoresizingWhenAddedToDocument:(id)arg2;
@@ -29,11 +33,15 @@
 - (void)ibPrepareCocoaDocumentForCompiling:(id)arg1 withContext:(id)arg2;
 - (BOOL)isContainedTableColumn:(id)arg1;
 - (void)ibSyncRowHeightWithContainedViewsIfNecessary;
+@property BOOL ibShadowedUsesAutomaticRowHeights;
+- (id)ibPlaceholderRowHeight;
 - (void)setIbInspectedRowHeight:(id)arg1;
 - (id)ibInspectedRowHeight;
 - (void)setIbShadowedRowHeight:(double)arg1;
 - (double)ibShadowedRowHeight;
 @property long long ibShadowedRowSizeStyle;
+- (void)setIbInspectedRowSizeStyle:(long long)arg1;
+- (long long)ibInspectedRowSizeStyle;
 - (void)setIbInspectedLineBreakMode:(long long)arg1;
 - (long long)ibInspectedLineBreakMode;
 - (void)setIbInspectedContinuous:(long long)arg1;
@@ -56,7 +64,6 @@
 - (void)ibAwakeInDocument:(id)arg1;
 - (id)ibBeginDesigningInDocument:(id)arg1;
 - (id)ibSwizzledInitWithCoder:(id)arg1;
-- (void)ibSwizzledEncodeWithCoder:(id)arg1;
 - (void)setInitingDesignableTableView:(BOOL)arg1;
 - (BOOL)isInitingDesignableTableView;
 @property unsigned long long ibInspectedControlSize;
@@ -80,7 +87,7 @@
 - (void)ibDidSuggestLayout:(struct CGRect)arg1 inView:(id)arg2 context:(id)arg3;
 - (struct CGRect)ibRectForChild:(id)arg1 inFrameController:(id)arg2;
 - (Class)ibEditorClass;
-- (void)ibWarnings:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
+- (void)ibPopulateIssues:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
 - (void)ibRemoveChildren:(id)arg1;
 - (void)ibPopulateEditorSelectionOrderRelationLists:(id)arg1;
 - (void)ibPopulateChildRelationOrder:(id)arg1;
@@ -96,6 +103,25 @@
 @property long long ibInspectedNumberOfTableColumns;
 - (void)setIbInspectedHasHeaderView:(BOOL)arg1;
 - (BOOL)ibInspectedHasHeaderView;
+- (BOOL)ibIgnoreMissingPositioningConstraintsForLocalizationWarnings;
+- (BOOL)ibShouldBeProcessedForLocalizationWarnings;
 - (id)ibContainingScrollViewInDocument:(id)arg1;
+- (id)ibLocalLocalizableGeometryAttributeKeyPaths;
+- (id)ibLocalLocalizableToManyRelationshipsKeyPaths;
+- (id)ibLocalAttributeKeyPaths;
+- (id)ibLocalChildToManyRelationshipsKeyPaths;
+- (id)ibLocalNonChildToOneRelationshipsKeyPaths;
+- (id)ibSuggestUserInterfaceItemIdentifierForObject:(id)arg1;
+@property BOOL ibInspectedIsInViewBasedMode;
+@property BOOL ibExternalIsInViewBasedMode;
+- (void)ibInvalidateIssuesAfterDescendant:(id)arg1 changedProperty:(id)arg2 inDocument:(id)arg3 fromValue:(id)arg4;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @end
 

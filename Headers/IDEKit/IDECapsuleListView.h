@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <DVTKit/DVTStackView_ML.h>
+#import <DVTUserInterfaceKit/DVTStackView_ML.h>
 
 #import <IDEKit/CAAnimationDelegate-Protocol.h>
 #import <IDEKit/DVTInvalidation-Protocol.h>
@@ -20,11 +20,9 @@
     id <IDECapsuleListViewDataSource> _dataSource;
     long long _dragDestinationIndex;
     NSTimer *_autoscrollTimer;
-    NSColor *_backgroundColor;
     NSString *_emptyContentString;
     DVTStateToken *_stateToken;
     long long _selectedIndex;
-    id _lastFirstResponder;
     NSMutableSet *_subviewFrameChangedObservers;
     BOOL _reloadAfterDrag;
     BOOL _restoringState;
@@ -34,18 +32,18 @@
         unsigned int viewControllerForRow:1;
         unsigned int acceptDrop:1;
         unsigned int validateDrop:1;
-        unsigned int pastboardTypesForRowWithIndex:1;
+        unsigned int allowDragOfRowAtIndex:1;
         unsigned int didCollapse:1;
         unsigned int didExpand:1;
         unsigned int didCompleteLayout:1;
+        unsigned int isCollapsedSavedStateForRow:1;
     } _dataSourceRespondsTo;
     BOOL _highlightingEnabled;
+    NSColor *_backgroundColor;
 }
 
 + (long long)version;
 + (void)configureStateSavingObjectPersistenceByName:(id)arg1;
-+ (id)_subviewTopShadow;
-+ (id)_subviewBottomShadow;
 + (void)initialize;
 @property(nonatomic) BOOL highlightingEnabled; // @synthesize highlightingEnabled=_highlightingEnabled;
 @property long long selectedIndex; // @synthesize selectedIndex=_selectedIndex;
@@ -119,6 +117,7 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 // Remaining properties
+@property(readonly) BOOL canRevertWithEmptyStateDictionary;
 @property(retain) DVTStackBacktrace *creationBacktrace;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;

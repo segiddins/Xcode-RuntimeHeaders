@@ -13,13 +13,18 @@
     DVTSourceTextView *_parent;
 }
 
-@property(retain) DVTSourceTextView *parent; // @synthesize parent=_parent;
+@property(readonly) DVTSourceTextView *parent; // @synthesize parent=_parent;
 - (void).cxx_destruct;
-- (id)accessibilityAttributeValue:(id)arg1;
-- (id)accessibilityAttributeNames;
+- (id)accessibilityChildren;
+- (BOOL)accessibilityFocused;
+- (id)accessibilityTitle;
+- (id)accessibilityParent;
+- (id)accessibilityValue;
+- (id)accessibilityTopLevelUIElement;
+- (id)accessibilityRole;
 - (id)accessibilityHitTest:(struct CGPoint)arg1;
-- (BOOL)accessibilityIsIgnored;
-- (struct CGRect)frameForProxy;
+- (struct CGRect)accessibilityFrame;
+- (BOOL)isAccessibilityElement;
 - (id)initWithParent:(id)arg1;
 
 @end

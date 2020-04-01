@@ -7,11 +7,10 @@
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBUIStoryboardAbstractTriggeredSegue.h>
 
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBCocoaTouchStoryboardAbstractPopoverSegue-Protocol.h>
-#import <IDEInterfaceBuilderCocoaTouchIntegration/NSCoding-Protocol.h>
 
 @class IBUIBarButtonItem, IBUIView, NSOrderedSet, NSString;
 
-@interface IBCocoaTouchStoryboardPopoverPresentationSegue : IBUIStoryboardAbstractTriggeredSegue <NSCoding, IBCocoaTouchStoryboardAbstractPopoverSegue>
+@interface IBCocoaTouchStoryboardPopoverPresentationSegue : IBUIStoryboardAbstractTriggeredSegue <IBCocoaTouchStoryboardAbstractPopoverSegue>
 {
     unsigned long long _permittedArrowDirections;
     NSOrderedSet *_passthroughViews;
@@ -34,16 +33,17 @@
 - (id)ibInspectedAnchorObjectCandidateFilterPredicate;
 - (id)ibInspectedPassthroughViewsCandidateFilterPredicate;
 - (id)badgeImage;
-- (void)ibWarnings:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
+- (id)metricChainSucceedingMetric:(id)arg1;
+- (void)ibPopulateIssues:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
 - (void)copyCommonInstanceStateToTriggeredSegue:(id)arg1;
 - (id)instantiateSegueTemplate;
 - (void)unarchiveWithDocumentUnarchiver:(id)arg1;
 - (void)archiveWithDocumentArchiver:(id)arg1;
 - (void)setIbInspectedAnchorObject:(id)arg1;
 - (id)ibInspectedAnchorObject;
-- (id)initWithSource:(id)arg1 label:(id)arg2 destination:(id)arg3;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithSource:(id)arg1 label:(id)arg2 destination:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -29,7 +29,7 @@
 - (void)showInFinder:(id)arg1;
 - (id)documentEditor;
 - (id)actionContext;
-- (id)generateMenuItemsForCatalogClass:(Class)arg1 includeImportItems:(BOOL)arg2 includeRemoveItems:(BOOL)arg3 includeShowItems:(BOOL)arg4 includeQuickLook:(BOOL)arg5;
+- (id)generateMenuItemsForCatalogClass:(Class)arg1 includeImportItems:(BOOL)arg2 includeRemoveItems:(BOOL)arg3 includeShowItems:(BOOL)arg4 includeQuickLook:(BOOL)arg5 includeHelp:(BOOL)arg6;
 - (id)generateRemoveItems;
 - (id)generateImageSetSlotSelectionItemsWithIdent:(long long)arg1;
 - (id)menuItemsForRepSuggestionSets:(id)arg1 indent:(long long)arg2;

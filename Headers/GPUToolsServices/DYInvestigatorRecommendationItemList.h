@@ -13,6 +13,7 @@
     NSMutableArray *value;
 }
 
++ (BOOL)supportsSecureCoding;
 @property(retain, nonatomic) NSArray *value; // @synthesize value;
 - (void).cxx_destruct;
 - (void)addString:(id)arg1;

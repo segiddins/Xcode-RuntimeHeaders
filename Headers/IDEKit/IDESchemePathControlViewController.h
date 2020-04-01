@@ -7,17 +7,17 @@
 #import <AppKit/NSViewController.h>
 
 #import <IDEKit/DVTInvalidation-Protocol.h>
-#import <IDEKit/IDEPathCellDelegate-Protocol.h>
+#import <IDEKit/DVTPathCellDelegate-Protocol.h>
 #import <IDEKit/NSMenuDelegate-Protocol.h>
 #import <IDEKit/NSPathControlDelegate-Protocol.h>
 
-@class DVTStackBacktrace, IDENavigableItem, IDENavigableItemCoordinator, IDEPathControl, IDESchemeManagerNavigable, IDEWorkspace, NSString;
+@class DVTPathControl, DVTStackBacktrace, IDENavigableItem, IDENavigableItemCoordinator, IDESchemeManagerNavigable, IDEWorkspace, NSString;
 
-@interface IDESchemePathControlViewController : NSViewController <NSPathControlDelegate, IDEPathCellDelegate, NSMenuDelegate, DVTInvalidation>
+@interface IDESchemePathControlViewController : NSViewController <NSPathControlDelegate, DVTPathCellDelegate, NSMenuDelegate, DVTInvalidation>
 {
     IDENavigableItemCoordinator *_navigableItemCoordinator;
     unsigned long long _menusOpen;
-    IDEPathControl *_pathControl;
+    DVTPathControl *_pathControl;
     IDESchemeManagerNavigable *_rootNavigable;
     IDEWorkspace *_workspace;
 }
@@ -26,7 +26,7 @@
 + (void)initialize;
 @property(retain, nonatomic) IDEWorkspace *workspace; // @synthesize workspace=_workspace;
 @property(retain, nonatomic) IDESchemeManagerNavigable *rootNavigable; // @synthesize rootNavigable=_rootNavigable;
-@property(readonly, nonatomic) IDEPathControl *pathControl; // @synthesize pathControl=_pathControl;
+@property(readonly, nonatomic) DVTPathControl *pathControl; // @synthesize pathControl=_pathControl;
 - (void).cxx_destruct;
 - (id)pathCell:(id)arg1 accessibilityDescriptionForPathComponentCell:(id)arg2 atIndex:(unsigned long long)arg3;
 - (void)didUpdateRunDestinationMenu:(id)arg1;

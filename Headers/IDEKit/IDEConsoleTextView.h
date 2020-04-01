@@ -41,6 +41,7 @@
 @property(retain) id <IDEConsoleTextViewObjectiveCExpressionRangeDelegate> openingBracketLocationDelegate; // @synthesize openingBracketLocationDelegate=_openingBracketLocationDelegate;
 @property(retain) id <IDEConsoleTextViewStandardIODelegate> standardIODelegate; // @synthesize standardIODelegate=_standardIODelegate;
 - (void).cxx_destruct;
+- (id)_URLForDocumentLocations;
 - (id)startingLocationForFindBar:(id)arg1 findingBackwards:(BOOL)arg2;
 - (void)dvtFindBar:(id)arg1 didUpdateCurrentResult:(id)arg2;
 - (id)findStringMatchingDescriptor:(id)arg1 backwards:(BOOL)arg2 from:(id)arg3 to:(id)arg4;
@@ -60,7 +61,6 @@
 - (BOOL)_isValidForHistoryTracking;
 - (BOOL)readSelectionFromPasteboard:(id)arg1;
 - (id)writablePasteboardTypes;
-- (void)_undoManagerDidUndoChangeNotification:(id)arg1;
 - (BOOL)shouldChangeTextInRanges:(id)arg1 replacementStrings:(id)arg2;
 - (void)keyDown:(id)arg1;
 - (void)_sendKeyImmediatelyIfNecessary:(id)arg1 event:(id)arg2;
@@ -86,7 +86,7 @@
 - (struct _NSRange)_inputTextRange;
 - (void)_reapplyAttributes;
 - (void)_recreateAttributes;
-- (void)_themeFontsAndColorsUpdated;
+- (void)themeFontsAndColorsUpdates;
 - (void)viewWillMoveToWindow:(id)arg1;
 - (void)setCompletionStrategies:(id)arg1;
 - (void)invalidateCompletionsDataSource;

@@ -18,11 +18,11 @@
     IBICExtent *_extent;
 }
 
-+ (id)allDefaultFileTypes;
 + (id)detailAreaGroupPathForVersion:(id)arg1 idiom:(id)arg2 orientation:(id)arg3 extent:(id)arg4;
-+ (id)variantSlotComponentClassesExcludingCoreVariants;
 + (id)orderedComponentClasses;
 + (id)slotWithIdiom:(id)arg1 subtype:(id)arg2 scale:(id)arg3 deviceOrientation:(id)arg4 extent:(id)arg5 minimumSystemVersion:(id)arg6;
++ (Class)assetRepClass;
++ (Class)assetSetClass;
 @property(readonly) IBICExtent *extent; // @synthesize extent=_extent;
 @property(readonly) IBICSystemVersion *minimumSystemVersion; // @synthesize minimumSystemVersion=_minimumSystemVersion;
 @property(readonly) IBICScale *scale; // @synthesize scale=_scale;

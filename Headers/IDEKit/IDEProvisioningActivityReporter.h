@@ -13,7 +13,6 @@
     NSMutableDictionary *_entryToReportMap;
 }
 
-+ (void)initialize;
 - (void).cxx_destruct;
 - (void)_removeActivityReportForLedgerEntry:(id)arg1;
 - (id)_activityReportForLedgerEntry:(id)arg1;

@@ -6,9 +6,32 @@
 
 #import <XCSCore/XCSTestDevice.h>
 
-@interface XCSTestDevice (XCSUIAdditions)
+#import <XCSUI/IDETestReport_Device-Protocol.h>
+
+@class NSNumber, NSString;
+
+@interface XCSTestDevice (XCSUIAdditions) <IDETestReport_Device>
 - (id)xcsui_image;
 - (BOOL)allTestsPassedInIntegration;
 - (id)testInDeviceTestRunForTest:(id)arg1;
+@property(readonly, copy, nonatomic) NSString *ide_testReport_device_platformName;
+@property(readonly, copy, nonatomic) NSString *ide_testReport_device_modelCodename;
+@property(readonly, copy, nonatomic) NSString *ide_testReport_device_modelName;
+@property(readonly, copy, nonatomic) NSString *ide_testReport_device_identifier;
+@property(readonly, copy, nonatomic) NSString *ide_testReport_device_architecture;
+@property(readonly, copy, nonatomic) NSString *ide_testReport_device_osVersion;
+@property(readonly, nonatomic) BOOL ide_testReport_device_isSimulator;
+- (id)ide_testReport_device_statusImage;
+@property(readonly, copy, nonatomic) NSString *ide_testReport_device_UTI;
+@property(readonly, copy, nonatomic) NSString *ide_testReport_device_name;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly, copy, nonatomic) NSString *ide_testReport_device_combined_platformName_and_osVersion;
+@property(readonly, copy, nonatomic) NSNumber *ide_testReport_device_isSimulator_asNumber;
+@property(readonly, copy, nonatomic) NSString *ide_testReport_device_modelKind;
+@property(readonly) Class superclass;
 @end
 

@@ -31,5 +31,6 @@
 - (BOOL)enabled_commit;
 - (void)setcategoryBitMask_commit:(unsigned int)arg1;
 - (unsigned int)categoryBitMask_commit;
+- (unsigned long long)manipulationSupport;
 @end
 

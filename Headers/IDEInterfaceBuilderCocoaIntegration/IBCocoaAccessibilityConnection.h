@@ -15,11 +15,11 @@
 + (id)prototypeConnectionsForObject:(id)arg1;
 - (id)endPointForEstimatingUnlabeledConnection;
 - (id)displayDescriptionInDocument:(id)arg1;
-- (id)displayGroupIdentifierFromReferenceEndPoint:(id)arg1;
+- (id)displayGroupFromReferenceEndPoint:(id)arg1;
 - (id)errorMessageForExistenceWithoutPrototypeInDocument:(id)arg1;
 - (BOOL)validateSource:(id)arg1;
 - (BOOL)validateDestination:(id)arg1;
-- (void)ibWarnings:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
+- (void)ibPopulateIssues:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
 - (BOOL)isActuallyAnOutlet;
 - (id)archiveConnection;
 - (Class)classForDocumentArchiver:(id)arg1;

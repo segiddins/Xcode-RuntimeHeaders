@@ -6,20 +6,20 @@
 
 #import <IDEKit/IDEAssistant.h>
 
-#import <Xcode3UI/IDEFilterControlBarTarget-Protocol.h>
+#import <Xcode3UI/DVTFilterControlBarTarget-Protocol.h>
 #import <Xcode3UI/NSOutlineViewDataSource-Protocol.h>
 #import <Xcode3UI/NSOutlineViewDelegate-Protocol.h>
 
-@class DVTOutlineViewWithCustomGridDrawing, DVTPopUpButtonCell, IDEFilterControlBar, IDEMigrationTargetChooserStatePersistence, NSArray, NSMutableIndexSet, NSString, NSTreeController;
+@class DVTFilterControlBar, DVTOutlineViewWithCustomGridDrawing, DVTPopUpButtonCell, IDEMigrationTargetChooserStatePersistence, NSArray, NSMenu, NSMutableIndexSet, NSString, NSTreeController, NSView;
 
-@interface IDEObjCModernizationOptionChooserAssistant : IDEAssistant <NSOutlineViewDataSource, NSOutlineViewDelegate, IDEFilterControlBarTarget>
+@interface IDEObjCModernizationOptionChooserAssistant : IDEAssistant <NSOutlineViewDataSource, NSOutlineViewDelegate, DVTFilterControlBarTarget>
 {
     NSArray *_optionItems;
     NSString *_searchString;
     NSMutableIndexSet *_expandedRowIndexes;
     NSArray *_selectedOptionItems;
     IDEMigrationTargetChooserStatePersistence *_statePersistence;
-    IDEFilterControlBar *_filterControlBar;
+    DVTFilterControlBar *_filterControlBar;
     DVTOutlineViewWithCustomGridDrawing *_outlineView;
     NSTreeController *_optionItemsController;
 }
@@ -48,8 +48,10 @@
 - (void)_setChecked:(BOOL)arg1 forOptionItemAtIndexes:(id)arg2;
 - (id)_effectiveSelectedRowIndexes;
 @property(readonly) DVTPopUpButtonCell *valuePopUpButtonCellTemplate;
-- (id)filterButtonMenu;
-- (id)filterDefinitionIdentifier;
+@property(readonly, nonatomic) NSString *filterButtonAccessibilityDescription;
+@property(readonly, nonatomic) NSString *filterButtonToolTip;
+@property(readonly, nonatomic) NSMenu *filterButtonMenu;
+@property(readonly, nonatomic) NSString *filterDefinitionIdentifier;
 - (void)_restoreSelectedOptionItemsAndExpandedRows;
 - (void)_saveSelectedOptionItemsAndExpandedRows;
 @property(readonly, copy) NSArray *arrangedOptionItems;
@@ -67,6 +69,7 @@
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
+@property(readonly, nonatomic) NSView *view;
 
 @end
 

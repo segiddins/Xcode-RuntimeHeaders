@@ -18,6 +18,7 @@
 + (id)allowedFileTypes;
 + (id)defaultName;
 + (id)identifier;
+- (void).cxx_destruct;
 - (Class)dependencyGraphSnapshotClass;
 - (void)setDefaultAttributesForNewBuildFile:(id)arg1;
 - (void)setContextName:(id)arg1;
@@ -26,7 +27,6 @@
 - (BOOL)isDefaultContext;
 - (void)setIsSharedContext:(BOOL)arg1;
 - (BOOL)isSharedContext;
-- (void)dealloc;
 - (id)init;
 - (id)initWithName:(id)arg1;
 

@@ -6,13 +6,13 @@
 
 #import <objc/NSObject.h>
 
-@class DTTimelineGroupPlane, DTTimelinePlane, NSMutableArray;
+@class DTTimelinePlane, NSMutableArray;
 
 __attribute__((visibility("hidden")))
 @interface DTTimelineGroupPlaneChanges : NSObject
 {
-    DTTimelineGroupPlane *_groupPlane;
     BOOL _hasChanges;
+    BOOL _subplanesChanged;
     BOOL _expanded;
     NSMutableArray *_subplanes;
     long long _groupPlaneType;
@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
 
 @property(nonatomic) __weak DTTimelinePlane *representativePlane; // @synthesize representativePlane=_representativePlane;
 @property(nonatomic) BOOL expanded; // @synthesize expanded=_expanded;
+@property(nonatomic) BOOL subplanesChanged; // @synthesize subplanesChanged=_subplanesChanged;
 @property(nonatomic) BOOL hasChanges; // @synthesize hasChanges=_hasChanges;
 @property(nonatomic) long long groupPlaneType; // @synthesize groupPlaneType=_groupPlaneType;
 @property(retain, nonatomic) NSMutableArray *subplanes; // @synthesize subplanes=_subplanes;

@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Foundation/NSObject.h>
+#import <objc/NSObject.h>
 
 @class NSMutableArray;
 
@@ -18,13 +18,13 @@
 + (void)setEnumeration:(id)arg1 forClass:(Class)arg2;
 + (id)enumerationForClass:(Class)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 - (id)enumeratedValues;
 - (void)addEnumeratedValue:(id)arg1;
 - (id)enumeratedValueForIntValue:(long long)arg1;
 - (void)addEnumeratedValueWithIntValue:(int)arg1 shortDescription:(id)arg2 fullDescription:(id)arg3;
 - (Class)enumeratedValueClass;
 - (void)setEnumeratedValueClass:(Class)arg1;
-- (void)dealloc;
 - (id)init;
 
 @end

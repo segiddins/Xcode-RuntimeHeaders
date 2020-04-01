@@ -22,6 +22,7 @@
 @property(readonly) IDELaunchSession *launchSession; // @synthesize launchSession;
 - (void).cxx_destruct;
 - (void)primitiveInvalidate;
+- (BOOL)isDoingAsyncAttach;
 - (id)contentDelegateUIExtensionIdentifier;
 @property(readonly, copy) NSString *associatedProcessUUID; // @synthesize associatedProcessUUID=_associatedProcessUUID;
 - (id)initWithDebugSession:(id)arg1 name:(id)arg2;

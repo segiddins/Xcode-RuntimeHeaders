@@ -6,9 +6,11 @@
 
 #import <DebuggerFoundation/DBGViewObject.h>
 
+#import <DebuggerFoundation/IBLayoutConstraintRepresentation-Protocol.h>
+
 @class DBGViewSurface, NSString;
 
-@interface DBGLayoutConstraint : DBGViewObject
+@interface DBGLayoutConstraint : DBGViewObject <IBLayoutConstraintRepresentation>
 {
     BOOL _hasCalculatedContentType;
     long long _contentType;
@@ -23,9 +25,9 @@
     DBGViewSurface *_secondItem;
 }
 
-@property(retain) DBGViewSurface *secondItem; // @synthesize secondItem=_secondItem;
-@property(retain) DBGViewSurface *firstItem; // @synthesize firstItem=_firstItem;
-@property(copy, nonatomic) NSString *constraintIdentifier; // @synthesize constraintIdentifier=_constraintIdentifier;
+@property(retain, nonatomic) DBGViewSurface *secondItem; // @synthesize secondItem=_secondItem;
+@property(retain, nonatomic) DBGViewSurface *firstItem; // @synthesize firstItem=_firstItem;
+@property(retain) NSString *constraintIdentifier; // @synthesize constraintIdentifier=_constraintIdentifier;
 @property long long relation; // @synthesize relation=_relation;
 @property long long secondAttribute; // @synthesize secondAttribute=_secondAttribute;
 @property long long firstAttribute; // @synthesize firstAttribute=_firstAttribute;
@@ -39,8 +41,26 @@
 @property(readonly) BOOL isVertical;
 @property(readonly) BOOL isHorizontal;
 @property(readonly) NSString *categoryString;
-- (id)formulaStringRelativeToItem:(id)arg1;
+- (id)formulaStringRelativeToItem:(id)arg1 prefixWithConstraintIdentifier:(BOOL)arg2;
 - (id)initWithViewDescriber:(id)arg1 parent:(id)arg2 dictionary:(id)arg3;
+- (unsigned long long)hashOfComponentsIgnoringScoring;
+- (unsigned long long)hashOfComponents;
+- (BOOL)hasComponentsEqualToComponentsOfRepresentationAllowingReversingIgnoringScoring:(id)arg1;
+- (BOOL)hasComponentsEqualToComponentsOfRepresentationAllowingReversing:(id)arg1;
+- (BOOL)hasComponentsEqualToComponentsOfRepresentation:(id)arg1;
+@property(readonly, nonatomic) double scoringType;
+@property(readonly, nonatomic) long long scoringClass;
+@property(readonly, nonatomic, getter=isPlaceholder) BOOL placeholder;
+@property(readonly, nonatomic) id secondItemRepresentation;
+@property(readonly, nonatomic) id firstItemRepresentation;
+@property(readonly, nonatomic) id containingViewRepresentation;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly, copy, nonatomic) NSString *identifier;
+@property(readonly) Class superclass;
 
 @end
 

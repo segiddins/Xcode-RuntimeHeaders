@@ -9,7 +9,7 @@
 @class NSArray, NSDictionary;
 
 @protocol DVTAnalyticsServiceURLComponentProviding <NSObject>
-@property(readonly) NSDictionary *parameters;
-@property(readonly) NSArray *pathComponents;
+@property(nonatomic, readonly) NSDictionary *parameters;
+@property(nonatomic, readonly) NSArray *pathComponents;
 @end
 

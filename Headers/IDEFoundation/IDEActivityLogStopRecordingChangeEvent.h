@@ -16,6 +16,7 @@
 @property(readonly) NSSet *supersections; // @synthesize supersections=_supersections;
 - (void).cxx_destruct;
 - (id)description;
+- (void)writeToLogEventStream:(id)arg1;
 - (id)initWithSection:(id)arg1 supersections:(id)arg2;
 
 @end

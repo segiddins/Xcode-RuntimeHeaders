@@ -4,21 +4,24 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Foundation/NSObject.h>
+#import <objc/NSObject.h>
 
-@class NSDictionary, NSString, XCSpecification_ivars;
+#import <DevToolsCore/DVTRegistrable-Protocol.h>
 
-@interface XCSpecification : NSObject
+@class DVTVersion, NSArray, NSBundle, NSDictionary, NSString, TSPropertyListDictionary;
+
+@interface XCSpecification : NSObject <DVTRegistrable>
 {
     NSString *_identifier;
     XCSpecification *_superSpecification;
     NSDictionary *_properties;
+    TSPropertyListDictionary *_tsProperties;
     NSDictionary *_localizationDictionary;
-    XCSpecification_ivars *_specIvars;
+    NSBundle *_bundle;
+    NSString *_domain;
 }
 
 + (BOOL)_booleanValueForValue:(id)arg1;
-+ (void)loadSpecificationsWithProperty:(id)arg1;
 + (Class)specificationBaseClassForType:(id)arg1;
 + (id)specificationTypeForPathExtension:(id)arg1;
 + (id)allRegisteredSpecifications;
@@ -27,30 +30,36 @@
 + (id)_subSpecificationsOfSpecification:(id)arg1 inDomain:(id)arg2;
 + (id)registeredSpecifications;
 + (id)registeredSpecificationsInDomain:(id)arg1;
-+ (id)registeredSpecificationsInDomainOrDefault:(id)arg1;
 + (id)specificationsForIdentifiers:(id)arg1;
 + (id)specificationsForIdentifiers:(id)arg1 inDomain:(id)arg2;
 + (id)specificationForIdentifier:(id)arg1;
 + (id)specificationForIdentifier:(id)arg1 inDomain:(id)arg2;
 + (void)_getDomain:(id *)arg1 identifier:(id *)arg2 fromDomainPrefixedIdentifier:(id)arg3;
++ (void)registerSpecificationsFromDVTPlugInsForDomains:(id)arg1 skippingDomains:(id)arg2;
 + (id)registerSpecificationProxiesFromPropertyListsInDirectory:(id)arg1 recursively:(BOOL)arg2;
 + (id)registerSpecificationProxiesFromPropertyListsInDirectory:(id)arg1 recursively:(BOOL)arg2 inDomain:(id)arg3;
 + (id)registerSpecificationProxiesFromPropertyListsInDirectory:(id)arg1 recursively:(BOOL)arg2 inDomain:(id)arg3 inBundle:(id)arg4;
++ (BOOL)isBlacklistedSpecificationDirectory:(id)arg1;
 + (BOOL)_shouldRecurseIntoDirectoryNamed:(id)arg1 ofType:(id)arg2;
 + (id)_registerSpecificationProxiesOfType:(id)arg1 fromDictionaryOrArray:(id)arg2 inDirectory:(id)arg3 bundle:(id)arg4 sourceDescription:(id)arg5 inDomain:(id)arg6;
 + (id)registerSpecificationProxyFromPropertyList:(id)arg1;
-+ (id)registerSpecificationProxyFromPropertyList:(id)arg1 inDomain:(id)arg2;
++ (id)registerSpecificationProxyFromPropertyList:(id)arg1 inDomain:(id)arg2 outSpecificationOrProxy:(id *)arg3;
 + (void)registerSpecificationOrProxy:(id)arg1;
 + (void)registerSpecificationTypeBaseClass:(Class)arg1;
-+ (id)_pathExensionsToTypesRegistry;
++ (id)_pathExtensionsToTypesRegistry;
 + (id)_typesToSpecTypeBaseClassesRegistry;
 + (id)specificationRegistryForDomain:(id)arg1;
++ (void)enumerateSpecificationsInDomain:(id)arg1 includingDefault:(BOOL)arg2 usingBlock:(CDUnknownBlockType)arg3;
++ (void)enumerateAllSpecificationsInDomain:(id)arg1 includingDefault:(BOOL)arg2 usingBlock:(CDUnknownBlockType)arg3;
++ (void)_enumerateAllSpecificationsInDomain:(id)arg1 registryNameOrNil:(id)arg2 specificationIdentifierOrNil:(id)arg3 includingDefault:(BOOL)arg4 usingBlock:(CDUnknownBlockType)arg5;
++ (void)_recursivelyEnumerateSpecificationsInStartDomain:(id)arg1 currentDomain:(id)arg2 registryNameOrNil:(id)arg3 specificationIdentifierOrNil:(id)arg4 alreadyEnumeratedDomains:(id)arg5 alreadyEnumeratedIdentifiers:(id)arg6 stopPtr:(char *)arg7 usingBlock:(CDUnknownBlockType)arg8;
 + (id)specificationRegistryName;
 + (id)specificationTypePathExtensions;
 + (id)localizedSpecificationTypeName;
 + (id)specificationType;
 + (Class)specificationTypeBaseClass;
-- (id)description;
+- (void).cxx_destruct;
+@property(readonly, copy) NSString *description;
 - (id)valueForUndefinedKey:(id)arg1;
 - (id)arrayOrStringForKey:(id)arg1;
 - (BOOL)boolForKeyFromProxy:(id)arg1;
@@ -72,22 +81,34 @@
 - (id)domain;
 - (id)bundle;
 - (id)localizationDictionary;
+- (id)tsProperties;
 - (id)properties;
 - (id)type;
-- (id)identifier;
+@property(readonly) NSString *identifier;
 - (BOOL)isMissingSpecificationProxy;
 - (id)loadedSpecification;
 - (BOOL)isNotYetLoadedSpecificationProxy;
+- (BOOL)showOnlySelfDefinedPropertiesInBuildSettingsGUI;
 - (BOOL)isAbstract;
 - (BOOL)isKindOfSpecification:(id)arg1;
+- (id)kindOfSpecificationDistance:(id)arg1;
 - (id)subSpecifications;
 - (id)subSpecificationsInDomain:(id)arg1;
 - (id)superSpecification;
-- (void)dealloc;
+- (void)awakeAfterInitialization;
 - (id)init;
 - (id)initAsMissingSpecificationProxyWithIdentifier:(id)arg1 name:(id)arg2 description:(id)arg3 inDomain:(id)arg4;
 - (id)initWithPropertyListDictionary:(id)arg1;
 - (id)initWithPropertyListDictionary:(id)arg1 inDomain:(id)arg2;
+
+// Remaining properties
+@property(readonly) NSArray *aliases;
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) NSString *displayDescription;
+@property(readonly) NSString *displayName;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(readonly) DVTVersion *version;
 
 @end
 

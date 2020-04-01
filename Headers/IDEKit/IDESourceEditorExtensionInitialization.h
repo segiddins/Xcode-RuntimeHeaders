@@ -12,7 +12,7 @@
 {
 }
 
-+ (BOOL)ide_deferredInitializeWithOptions:(int)arg1 error:(id *)arg2;
++ (BOOL)ide_deferredInitializeWithOptions:(unsigned long long)arg1 error:(id *)arg2;
 
 @end
 

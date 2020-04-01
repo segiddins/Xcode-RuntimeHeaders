@@ -9,6 +9,7 @@
 @class DVTSigningCertificate, DVTSigningCertificateSource;
 
 @protocol DVTSigningCertificateSourceDelegate <NSObject>
+- (void)signingCertificateSource:(DVTSigningCertificateSource *)arg1 certificateTrustChanged:(DVTSigningCertificate *)arg2;
 - (void)signingCertificateSourceShouldDoFullResetFromSigningCertificates:(DVTSigningCertificateSource *)arg1;
 - (void)signingCertificateSourcePrivateKeyStatusForCertificatesMayHaveChanged:(DVTSigningCertificateSource *)arg1;
 - (void)signingCertificateSource:(DVTSigningCertificateSource *)arg1 didRemoveCertificate:(DVTSigningCertificate *)arg2;

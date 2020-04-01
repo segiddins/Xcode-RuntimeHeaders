@@ -45,8 +45,5 @@
 - (struct CGRect)canvasView:(IBCanvasView *)arg1 frameForOverlayView:(IBCanvasOverlay *)arg2 ofCanvasFrame:(IBCanvasFrame *)arg3 scale:(double)arg4;
 - (double)canvasView:(IBCanvasView *)arg1 scaleForOverlayView:(IBCanvasOverlay *)arg2 ofCanvasFrame:(IBCanvasFrame *)arg3 canvasMagnification:(double)arg4;
 - (NSValue *)canvasView:(IBCanvasView *)arg1 decoratorRectForCanvasFrame:(IBCanvasFrame *)arg2;
-- (void)canvasView:(IBCanvasView *)arg1 userDidAddSpaceWithArrowKeyEvent:(NSEvent *)arg2;
-- (void)canvasView:(IBCanvasView *)arg1 didAutopositionCanvasFrame:(IBCanvasFrame *)arg2;
-- (void)canvasView:(IBCanvasView *)arg1 willAutopositionCanvasFrame:(IBCanvasFrame *)arg2;
 @end
 

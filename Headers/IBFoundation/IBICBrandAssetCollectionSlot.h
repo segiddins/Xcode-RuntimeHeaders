@@ -15,8 +15,9 @@
     IBICSize *_size;
 }
 
++ (Class)assetRepClass;
++ (Class)assetSetClass;
 + (id)slotWithIdiom:(id)arg1 role:(id)arg2 size:(id)arg3;
-+ (id)variantSlotComponentClassesExcludingCoreVariants;
 + (id)orderedComponentClasses;
 @property(readonly) IBICSize *size; // @synthesize size=_size;
 @property(readonly) IBICRole *role; // @synthesize role=_role;

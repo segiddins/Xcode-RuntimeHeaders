@@ -18,7 +18,6 @@
 @property(getter=isSelected) BOOL selected; // @synthesize selected=_selected;
 @property(readonly) IDEDistributionMethod *distributionMethod; // @synthesize distributionMethod=_distributionMethod;
 - (void).cxx_destruct;
-@property(readonly, getter=isGroup) BOOL group;
 
 @end
 

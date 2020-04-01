@@ -9,6 +9,7 @@
 @protocol DBGSBType, DBGSBTypeMember;
 
 @protocol DBGSBType <NSObject>
+- (BOOL)IsReferenceType;
 - (const char *)GetDisplayTypeName;
 - (id <DBGSBTypeMember>)GetDirectBaseClassAtIndex:(unsigned int)arg1;
 - (unsigned int)GetNumberOfDirectBaseClasses;

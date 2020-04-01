@@ -16,44 +16,43 @@
 {
     id <IDEFlightChecking> _flightCheck;
     NSOrderedSet *_unexpandedIdentifiers;
+    BOOL _isRefreshing;
     BOOL _requiresPortalIdentifiers;
     IDEProjectItemModel *_itemModel;
     NSString *_teamItemsKeyPath;
-    NSString *_featuresItemsKeyPath;
     DVTPortalContainerType *_containerType;
-    Class _listTeamItemsOpClass;
     NSSet *_availableTeamIdentifiers;
 }
 
-+ (id)expandedIdentifiers:(id)arg1 targetCapabilitiesContext:(id)arg2 error:(id *)arg3;
++ (id)containerIdentifiersJobCache;
++ (id)expandedIdentifiers:(id)arg1 targetCapabilitiesContext:(id)arg2 buildConfiguration:(id)arg3 expansion:(id)arg4 error:(id *)arg5;
 + (void)initialize;
+@property(copy, nonatomic) NSOrderedSet *unexpandedIdentifiers; // @synthesize unexpandedIdentifiers=_unexpandedIdentifiers;
 @property(retain) NSSet *availableTeamIdentifiers; // @synthesize availableTeamIdentifiers=_availableTeamIdentifiers;
-@property(readonly) Class listTeamItemsOpClass; // @synthesize listTeamItemsOpClass=_listTeamItemsOpClass;
 @property(readonly) DVTPortalContainerType *containerType; // @synthesize containerType=_containerType;
-@property(readonly) NSString *featuresItemsKeyPath; // @synthesize featuresItemsKeyPath=_featuresItemsKeyPath;
 @property(readonly) NSString *teamItemsKeyPath; // @synthesize teamItemsKeyPath=_teamItemsKeyPath;
-@property(retain) IDEProjectItemModel *itemModel; // @synthesize itemModel=_itemModel;
 @property(readonly) BOOL requiresPortalIdentifiers; // @synthesize requiresPortalIdentifiers=_requiresPortalIdentifiers;
+@property(nonatomic) BOOL isRefreshing; // @synthesize isRefreshing=_isRefreshing;
+@property(readonly, nonatomic) IDEProjectItemModel *itemModel; // @synthesize itemModel=_itemModel;
 - (void).cxx_destruct;
+@property(readonly) unsigned long long hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)flightCheckIsValidating:(id)arg1;
+- (void)flightCheckWillUnresolve:(id)arg1;
 - (id)containerIdentifiersForFlightCheck:(id)arg1 error:(id *)arg2;
 @property(readonly) id <IDEFlightChecking> flightCheck;
-- (id)refreshAvailableTeamIdentifiers;
-- (id)_availableTeamContainerIdentifiersForAccount:(id)arg1 teamID:(id)arg2 portalProgram:(id)arg3 error:(id *)arg4;
+- (void)refreshAvailableTeamIdentifiersUseCachedResult:(BOOL)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)expandedIdentifiersWithError:(id *)arg1;
 - (id)expandedIdentifier:(id)arg1 error:(id *)arg2;
-@property(copy, nonatomic) NSOrderedSet *unexpandedIdentifiers;
-- (void)_setUnexpandedIdentifiers:(id)arg1 postAssignmentBlock:(CDUnknownBlockType)arg2;
+- (void)setUnexpandedIdentifiersWithoutPublishing:(id)arg1;
 - (void)primitiveInvalidate;
 - (id)initWithoutPortalWithItemModel:(id)arg1;
-- (id)initWithItemModel:(id)arg1 teamItemsKeyPath:(id)arg2 featuresItemsKeyPath:(id)arg3 listTeamItemsOpClass:(Class)arg4 containerType:(id)arg5;
-- (id)initWithItemModel:(id)arg1 teamItemsKeyPath:(id)arg2 featuresItemsKeyPath:(id)arg3 listTeamItemsOpClass:(Class)arg4 containerType:(id)arg5 flightCheckName:(id)arg6;
+- (id)initWithItemModel:(id)arg1 teamItemsKeyPath:(id)arg2 containerType:(id)arg3;
 
 // Remaining properties
 @property(retain) DVTStackBacktrace *creationBacktrace;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
 @property(readonly) DVTStackBacktrace *invalidationBacktrace;
 @property(readonly) Class superclass;
 @property(readonly, nonatomic, getter=isValid) BOOL valid;

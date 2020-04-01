@@ -10,13 +10,14 @@
 
 @interface IBUIToolbarEditingPolicy : NSObject
 {
-    IBEditor *editor;
-    IBUIToolbar *toolbar;
+    IBUIToolbar *_toolbar;
+    IBEditor *_editor;
 }
 
-@property(readonly) IBUIToolbar *toolbar; // @synthesize toolbar;
-@property(readonly) IBEditor *editor; // @synthesize editor;
+@property(readonly) IBEditor *editor; // @synthesize editor=_editor;
+@property(readonly) IBUIToolbar *toolbar; // @synthesize toolbar=_toolbar;
 - (void).cxx_destruct;
+- (id)captureImagesAndProcessGeometryOfItems:(id)arg1;
 - (BOOL)isFrameLockedForButtonBarItem:(id)arg1;
 - (BOOL)shouldChildHaveResizeKnobs:(id)arg1;
 - (CDStruct_b58c4854)activeKnobRectsForObject:(id)arg1 inOverlayView:(id)arg2 withKnobSize:(struct CGSize)arg3;

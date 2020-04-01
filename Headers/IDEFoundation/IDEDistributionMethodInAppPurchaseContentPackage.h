@@ -10,12 +10,12 @@
 {
 }
 
-- (id)packagingStepIdentifier;
+- (id)packagingStepIdentifierForDestination:(long long)arg1;
 - (id)installerCertificateKind;
 - (id)certificateKind;
-- (BOOL)wantsProvisioningProfiles;
+- (long long)wantsProvisioningProfiles;
 - (id)exportStepName;
-- (id)orderedDistributionStepClassNames;
+- (id)orderedDistributionStepClassNamesForDestination:(long long)arg1;
 - (id)shortTitle;
 - (id)subtitle;
 - (id)title;

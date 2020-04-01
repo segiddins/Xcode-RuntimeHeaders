@@ -11,6 +11,7 @@
 }
 
 - (void)populateVariantForResolvingMediaResources:(id)arg1 forDocument:(id)arg2;
+- (id)foldingStrategy;
 - (Class)storyboardCompilerClass;
 - (Class)xibCompilerClass;
 - (BOOL)allowsEditingWhileCanvasZoomed;
@@ -26,11 +27,15 @@
 - (Class)xibAssetProviderClass;
 - (Class)storyboardVerifierClass;
 - (Class)xibVerifierClass;
-- (void)populateSubtypes:(id)arg1;
+- (id)appearances;
+- (id)branchModeLabelSuffixForConfiguration:(id)arg1;
 - (double)defaultEditingZoomFactorForCanvasBackingScaleFactor:(double)arg1;
 - (id)pluginName;
 - (id)platform;
+- (id)imageForDocumentOutlinePlaceholdersGroup;
+- (id)imageForDocumentOutlineObjectsGroup;
 - (id)icon;
+- (id)archiveIdentifier;
 - (id)idiomName;
 - (id)identifier;
 

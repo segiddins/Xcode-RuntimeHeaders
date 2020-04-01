@@ -20,6 +20,7 @@
     id <DVTInvalidation> _installedControlsToken;
     id <DVTInvalidation> _installedCounterpartObservationToken;
     id <DVTCancellable> _editorContextObservingToken;
+    id <DVTCancellable> _scaleFactorObservingToken;
     id _previewedObject;
     DVTDelayedInvocation *_batchInvocation;
     BOOL _controlsNeedRebuild;
@@ -46,8 +47,9 @@
 @property(retain, nonatomic) IBAbstractDocumentEditor *observedEditor; // @synthesize observedEditor=_observedEditor;
 - (void).cxx_destruct;
 - (void)commitStateToDictionary:(id)arg1;
+- (void)revertStateRecipes:(id)arg1;
 - (void)revertStateWithDictionary:(id)arg1;
-- (id)displayNameForAppyingRecipe:(id)arg1 toObject:(id)arg2;
+- (id)displayNameForApplyingRecipe:(id)arg1 toObject:(id)arg2;
 - (BOOL)isValidRecipe:(id)arg1;
 - (void)refreshImmediately;
 - (void)refreshImmediatelyIfNeeded;
@@ -55,8 +57,8 @@
 - (void)addRecipe:(id)arg1;
 - (void)didChangeRecipes;
 - (void)menuNeedsUpdate:(id)arg1;
-- (void)addRightView:(id)arg1;
-- (void)addLeftView:(id)arg1;
+- (id)addRightView:(id)arg1;
+- (id)addLeftView:(id)arg1;
 - (void)applySettingsToDocument:(id)arg1 forPreviewRecipe:(id)arg2 withPasteboardCloningContext:(id)arg3;
 - (BOOL)validateUserInterfaceItem:(id)arg1;
 - (void)preparePreviewResultView:(id)arg1;
@@ -72,7 +74,8 @@
 - (void)backgroundView:(id)arg1 userDidClickInEmptyAreaWithEvent:(id)arg2;
 - (void)reschedulAfterDragComplete:(id)arg1;
 - (void)update:(id)arg1;
-- (id)imageOfObject:(id)arg1 fromDocument:(id)arg2;
+- (id)imageOfObject:(id)arg1 previewRecipe:(id)arg2 fromDocument:(id)arg3;
+- (id)effectivePreviewAppearanceForRecipe:(id)arg1;
 - (void)refreshControlState;
 - (void)refreshScaleState;
 - (void)applyScale:(double)arg1 toPreviewResultView:(id)arg2 withOriginalImage:(id)arg3;

@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <DVTKit/DVTDisclosureView.h>
+#import <DVTUserInterfaceKit/DVTDisclosureView.h>
 
 #import <IDEKit/DVTInvalidation-Protocol.h>
 #import <IDEKit/NSTextFieldDelegate-Protocol.h>
@@ -80,12 +80,11 @@
 - (id)initWithCoder:(id)arg1;
 - (BOOL)allowCustomContentHeaderViewToDriveHeaderHeight;
 - (double)sidePadding;
-- (id)borderColor;
-- (id)backgroundColor;
 @property(readonly) BOOL _renamable;
 @property(readonly) BOOL _removable;
 - (double)_contentXOffset;
 - (double)_delegatePreferredContentWidthWithCapsuleWidth:(double)arg1;
+- (void)_updateTitleAndDisclosureButtonColors;
 - (void)setDisclosed:(BOOL)arg1;
 - (void)setContentView:(id)arg1;
 @property(retain) IDECapsuleHeaderView *headerView;
@@ -98,7 +97,6 @@
 - (BOOL)_shouldDrawContent;
 - (BOOL)_shouldDrawFooter;
 - (BOOL)_shouldSuppressBottomSeparator;
-- (BOOL)_shouldDrawHeaderBottomBorder;
 - (struct CGRect)_footerRectForBounds:(struct CGRect)arg1;
 - (struct CGRect)_headerRectForBounds:(struct CGRect)arg1;
 - (struct CGRect)capsuleBoundsForRect:(struct CGRect)arg1;

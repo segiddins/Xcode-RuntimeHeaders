@@ -43,6 +43,7 @@
 + (id)keyPathsForValuesAffectingTextIndexFolderPath;
 + (id)buildIntermediatesFolderPathForSettings:(id)arg1 usingPlaceholderOfType:(int *)arg2;
 + (id)buildProductsFolderPathForSettings:(id)arg1 usingPlaceholderOfType:(int *)arg2;
++ (id)keyPathsForValuesAffectingClonedSourcePackagesFolderPath;
 + (id)keyPathsForValuesAffectingPrecompiledHeadersFolderPath;
 + (id)keyPathsForValuesAffectingIBLiveViewsBuildFolderPath;
 + (id)keyPathsForValuesAffectingSwiftMigrationBuildFolderPath;
@@ -53,6 +54,7 @@
 + (id)keyPathsForValuesAffectingBuildIntermediatesFolderPath;
 + (id)keyPathsForValuesAffectingBuildProductsFolderPath;
 + (void)_buildResultsPathForBuildResultsType:(int)arg1 settings:(id)arg2 workspaceArena:(id)arg3 returningFilePath:(id *)arg4 orReturningPathString:(id *)arg5 withPlaceholder:(int *)arg6;
++ (BOOL)_customBuildResultsPathForBuildResultsType:(int)arg1 settings:(id)arg2 workspaceArena:(id)arg3 returningFilePath:(id *)arg4 orReturningPathString:(id *)arg5 withPlaceholder:(int *)arg6;
 + (id)_resolvedBuildFolderSettingsGivenSettings:(id)arg1;
 + (id)keyPathsForValuesAffectingPath;
 + (id)keyPathsForValuesAffectingDerivedDataFolderForWorkspace;
@@ -77,6 +79,7 @@
 @property(readonly) DVTFilePath *indexDataStoreFolderPath;
 @property(readonly) DVTFilePath *indexFolderPath;
 @property(readonly) DVTFilePath *textIndexFolderPath;
+@property(readonly) DVTFilePath *clonedSourcePackagesFolderPath;
 @property(readonly) DVTFilePath *precompiledHeadersFolderPath;
 @property(readonly) DVTFilePath *IBLiveViewsBuildFolderPath;
 @property(readonly) DVTFilePath *swiftMigrationBuildFolderPath;
@@ -93,6 +96,7 @@
 - (id)_buildFolderPathForSettings:(id)arg1;
 - (void)buildFolderSettingsDidChange:(id)arg1;
 - (id)presumptiveBuildFolderPathWithName:(id)arg1 baseBuildFolderLocation:(id)arg2;
+- (id)_clonedSourcePackagesFolderPathOverride;
 - (id)_derivedDataFolderPathOverride;
 - (id)path;
 @property(readonly) DVTFilePath *derivedDataFolderForWorkspace;

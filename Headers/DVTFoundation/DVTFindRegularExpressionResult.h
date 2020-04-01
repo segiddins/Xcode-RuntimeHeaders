@@ -9,22 +9,23 @@
 #import <DVTFoundation/NSCoding-Protocol.h>
 #import <DVTFoundation/NSCopying-Protocol.h>
 
-@class NSString, NSTextCheckingResult;
+@class NSRegularExpression, NSString, NSTextCheckingResult;
 
 @interface DVTFindRegularExpressionResult : DVTFindResult <NSCoding, NSCopying>
 {
-    NSTextCheckingResult *_match;
     NSString *_wholeContextString;
+    NSRegularExpression *_regularExpression;
+    NSTextCheckingResult *_match;
 }
 
-@property(retain, nonatomic) NSString *wholeContextString; // @synthesize wholeContextString=_wholeContextString;
-@property(retain) NSTextCheckingResult *match; // @synthesize match=_match;
+@property(readonly) NSTextCheckingResult *match; // @synthesize match=_match;
+@property(readonly) NSRegularExpression *regularExpression; // @synthesize regularExpression=_regularExpression;
 - (void).cxx_destruct;
 - (id)stringForReplacementString:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)initWithFoundLocation:(id)arg1 withRange:(struct _NSRange)arg2 inContext:(id)arg3 andRegexMatch:(id)arg4 foundUsingDescriptor:(id)arg5;
+- (id)initWithFoundLocation:(id)arg1 withRange:(struct _NSRange)arg2 inContext:(id)arg3 regularExpression:(id)arg4 andRegexMatch:(id)arg5;
 
 @end
 

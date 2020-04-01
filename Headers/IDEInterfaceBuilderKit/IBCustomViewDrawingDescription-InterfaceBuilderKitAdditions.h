@@ -7,6 +7,6 @@
 #import <IBFoundation/IBCustomViewDrawingDescription.h>
 
 @interface IBCustomViewDrawingDescription (InterfaceBuilderKitAdditions)
-+ (id)defaultDescription;
++ (id)descriptionForTheme:(id)arg1;
 @end
 

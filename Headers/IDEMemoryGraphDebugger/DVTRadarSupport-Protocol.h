@@ -12,12 +12,18 @@
 @protocol DVTRadarSupport <NSObject>
 + (id)sharedClient;
 @property id <DVTRadar_AttachmentDownloadDelegate> attachmentDownloadDelegate;
-- (void)reportSelfDiagnosisIssueWithSignature:(NSString *)arg1 title:(NSString *)arg2 componentName:(NSString *)arg3 componentVersion:(NSString *)arg4 description:(NSString *)arg5 keywords:(NSArray *)arg6 ownerProblemID:(NSNumber *)arg7 completionBlock:(void (^)(BOOL, unsigned long long, BOOL))arg8;
+- (void)setUpToolchainIssueReporter;
+- (void)reportSelfDiagnosisIssueWithSignature:(NSString *)arg1 title:(NSString *)arg2 componentName:(NSString *)arg3 componentVersion:(NSString *)arg4 description:(NSString *)arg5 keywords:(NSArray *)arg6 classification:(unsigned long long)arg7 ownerProblemID:(NSNumber *)arg8 canFileNewProblem:(BOOL)arg9 pathsToAttachments:(NSArray *)arg10 completionBlock:(void (^)(unsigned long long, unsigned long long))arg11;
+- (void)reportSelfDiagnosisIssueWithSignature:(NSString *)arg1 title:(NSString *)arg2 componentName:(NSString *)arg3 componentVersion:(NSString *)arg4 description:(NSString *)arg5 keywords:(NSArray *)arg6 classification:(unsigned long long)arg7 ownerProblemID:(NSNumber *)arg8 completionBlock:(void (^)(unsigned long long, unsigned long long))arg9;
 - (void)asyncPrepareToReportSelfDiagnosisIssueWithBlock:(void (^)(void))arg1;
 - (BOOL)selfDiagnosisEnabled;
 - (void)validateRadarComponentName:(NSString *)arg1 version:(NSString *)arg2 completionBlock:(void (^)(BOOL, NSError *))arg3;
+- (id <DVTRadar_ComponentForIdentifier>)bestComponentForBundleName:(NSString *)arg1;
 - (id <DVTRadar_ComponentForIdentifier>)bestComponentForClassName:(NSString *)arg1;
 - (id <DVTRadar_ComponentForIdentifier>)bestComponentForFrame:(DVTStackBacktraceFrame *)arg1;
+- (id <DVTRadar_ComponentForIdentifier>)bestComponentForPath:(NSString *)arg1;
+- (id <DVTRadar_ComponentForIdentifier>)defaultComponent;
+- (NSArray *)hltComponentForBundleNames;
 - (NSArray *)hltComponentForClassNames;
 - (NSArray *)hltComponentForPaths;
 - (id)attachmentFromData:(NSData *)arg1 withFilename:(NSString *)arg2 isPicture:(BOOL)arg3;
@@ -27,7 +33,7 @@
 - (void)problemsForProblemIDs:(NSArray *)arg1 completionBlock:(void (^)(NSError *, NSArray *))arg2;
 - (void)showRadarNumberPromptForIssues:(NSArray *)arg1 attachedToWindow:(NSWindow *)arg2 completionBlock:(void (^)(NSError *, unsigned long long))arg3;
 - (void)showRadarNumberPromptForIssue:(id <DVTRadarSupport_Issue>)arg1 attachedToWindow:(NSWindow *)arg2 completionBlock:(void (^)(NSError *, unsigned long long))arg3;
-- (void)showRadarUIForIssues:(NSArray *)arg1 bugTitle:(NSString *)arg2 componentName:(NSString *)arg3 componentVersion:(NSString *)arg4 attachmentDownloadDelegate:(id <DVTRadar_AttachmentDownloadDelegate>)arg5 attachedToWindow:(NSWindow *)arg6 completionBlock:(void (^)(NSError *, unsigned long long))arg7;
-- (void)showRadarUIForIssue:(id <DVTRadarSupport_Issue>)arg1 componentName:(NSString *)arg2 componentVersion:(NSString *)arg3 attachmentDownloadDelegate:(id <DVTRadar_AttachmentDownloadDelegate>)arg4 attachedToWindow:(NSWindow *)arg5 completionBlock:(void (^)(NSError *, unsigned long long))arg6;
+- (void)showRadarUIForIssues:(NSArray *)arg1 bugTitle:(NSString *)arg2 componentName:(NSString *)arg3 componentVersion:(NSString *)arg4 keywords:(NSArray *)arg5 attachmentDownloadDelegate:(id <DVTRadar_AttachmentDownloadDelegate>)arg6 attachedToWindow:(NSWindow *)arg7 completionBlock:(void (^)(NSError *, unsigned long long))arg8;
+- (void)showRadarUIForIssue:(id <DVTRadarSupport_Issue>)arg1 componentName:(NSString *)arg2 componentVersion:(NSString *)arg3 keywords:(NSArray *)arg4 attachmentDownloadDelegate:(id <DVTRadar_AttachmentDownloadDelegate>)arg5 attachedToWindow:(NSWindow *)arg6 completionBlock:(void (^)(NSError *, unsigned long long))arg7;
 @end
 

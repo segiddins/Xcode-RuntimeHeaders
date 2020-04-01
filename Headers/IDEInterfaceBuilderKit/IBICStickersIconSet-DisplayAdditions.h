@@ -7,7 +7,6 @@
 #import <IBFoundation/IBICStickersIconSet.h>
 
 @interface IBICStickersIconSet (DisplayAdditions)
-- (id)typeIcon;
-- (id)includedAttributeUtilitySlicesForChild:(id)arg1;
+- (id)includedAttributesInspectorSlicesForChild:(id)arg1;
 @end
 

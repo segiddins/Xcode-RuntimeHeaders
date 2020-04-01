@@ -6,7 +6,9 @@
 
 #import <Foundation/NSMutableSet.h>
 
-@interface DTMutableOrderedSet : NSMutableSet
+#import <DevToolsKit/NSSecureCoding-Protocol.h>
+
+@interface DTMutableOrderedSet : NSMutableSet <NSSecureCoding>
 {
     CDStruct_f2932e27 callbacks;
     struct DTBucketTag *freelist;
@@ -17,6 +19,7 @@
     unsigned long long changeCount;
 }
 
++ (BOOL)supportsSecureCoding;
 + (CDStruct_f2932e27)cocoaSetCallbacks;
 + (CDStruct_f2932e27)pointerSetCallbacks;
 - (id)description;

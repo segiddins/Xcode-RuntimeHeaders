@@ -13,26 +13,33 @@
     SKESceneDocument *_document;
 }
 
++ (id)referencedImagesAbsolutePathInScene:(id)arg1 atPath:(id)arg2 replaceWithDestinationFolder:(id)arg3;
++ (void)_addMaterialProperty:(id)arg1 toReferencedImageList:(id)arg2 scenePath:(id)arg3 replaceWithDestinationFolder:(id)arg4;
 + (id)genericPreviewForSceneAtURL:(id)arg1 size:(struct CGSize)arg2 asynchronousPreviewGenerationCompletionHandler:(CDUnknownBlockType)arg3;
 + (id)previewForSceneAtURL:(id)arg1 size:(struct CGSize)arg2;
 + (id)genericPreviewForScene:(id)arg1 size:(struct CGSize)arg2 asynchronousPreviewGenerationCompletionHandler:(CDUnknownBlockType)arg3;
 + (id)previewForScene:(id)arg1 size:(struct CGSize)arg2;
 + (id)genericPreviewForNode:(id)arg1 size:(struct CGSize)arg2 asynchronousPreviewGenerationCompletionHandler:(CDUnknownBlockType)arg3;
 + (id)previewForNode:(id)arg1 size:(struct CGSize)arg2;
-+ (id)missingMediaImage;
 + (void)endObservationOfFilePathForAssociatedObject:(id)arg1;
 + (void)beginObservationOfFilePath:(id)arg1 forAssociatedObject:(id)arg2 block:(CDUnknownBlockType)arg3;
 + (void)observeContentsOfMaterialProperty:(id)arg1;
++ (void)observeContentsOfMaterial:(id)arg1;
++ (void)beginObservationOfPath:(id)arg1 forReferenceNode:(id)arg2;
++ (void)sanitizeMaterial:(id)arg1 withDocument:(id)arg2;
++ (void)sanitizeMaterialProperty:(id)arg1 withDocument:(id)arg2;
 + (id)contentsOfMaterialProperty:(id)arg1;
 + (void)setContents:(id)arg1 ofMaterialProperty:(id)arg2;
-+ (id)relativePathForImagePath:(id)arg1;
-+ (id)absolutePathForImagePath:(id)arg1;
++ (id)relativePathForImagePath:(id)arg1 document:(id)arg2;
++ (id)bundleRelativePathForPath:(id)arg1;
++ (id)absolutePathForImagePath:(id)arg1 documentPath:(id)arg2;
++ (id)absolutePathForImagePath:(id)arg1 document:(id)arg2;
 + (void)refreshImageContentsOfMaterialProperty:(id)arg1;
 - (void).cxx_destruct;
-- (void)observeAllReferenceNodesInDocument;
-- (void)observeContentsOfAllParticleSystemsInDocument;
+- (void)sanitizeAllNodesInDocument;
+- (void)sanitizeAllReferencesInDocument;
+- (void)sanitizeAllParticleImagesInDocument;
 - (void)sanitizeAllMaterialsInDocument;
-- (void)performBlockBySettingAllMissingContentsToTheirWantedContents:(CDUnknownBlockType)arg1;
 - (id)init;
 - (id)initWithDocument:(id)arg1;
 

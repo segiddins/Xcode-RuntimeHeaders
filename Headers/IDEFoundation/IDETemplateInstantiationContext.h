@@ -8,7 +8,7 @@
 
 #import <IDEFoundation/NSCopying-Protocol.h>
 
-@class DVTFilePath, IDEContainerItem, IDEGroup, IDETemplate, IDEWorkspace, NSArray;
+@class DVTFilePath, IDEContainerItem, IDEGroup, IDETemplate, IDEWorkspace, NSArray, NSDictionary;
 @protocol IDEProvisioningBasicTeam;
 
 @interface IDETemplateInstantiationContext : NSObject <NSCopying>
@@ -42,6 +42,8 @@
 @property(retain, nonatomic) IDETemplate *documentTemplate; // @synthesize documentTemplate=_documentTemplate;
 @property(retain, nonatomic) IDEWorkspace *workspace; // @synthesize workspace=_workspace;
 - (void).cxx_destruct;
+@property(readonly) NSDictionary *additionalMacroExpansions;
+@property(readonly) NSArray *customDataStoresForTemplateMacros;
 - (id)destinationBlueprintProvider;
 - (id)sectionsForAvailableTemplatesOfKind:(id)arg1;
 - (id)arrayBySortingSections:(id)arg1;

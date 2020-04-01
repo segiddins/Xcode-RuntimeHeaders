@@ -6,11 +6,9 @@
 
 #import <IDEFoundation/IDEARCConversionBuildFile.h>
 
-@class NSImage;
-
 @interface IDEARCConversionBuildFile (IDEKitAdditions)
 - (id)_treeControllerWarningMessage;
 - (id)_treeControllerChildren;
-@property(readonly, copy) NSImage *iconImage;
+- (id)iconImage;
 @end
 

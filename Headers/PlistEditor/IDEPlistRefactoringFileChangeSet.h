@@ -6,25 +6,21 @@
 
 #import <IDEKit/IDERefactoringFileChangeSet.h>
 
-@class NSArray, NSObject, NSString;
-@protocol OS_dispatch_semaphore;
+@class IDEWorkspaceDocument, NSArray, NSString;
 
 @interface IDEPlistRefactoringFileChangeSet : IDERefactoringFileChangeSet
 {
     NSArray *_findResults;
     NSString *_newClassName;
-    NSObject<OS_dispatch_semaphore> *_saveWaiter;
+    IDEWorkspaceDocument *_workspaceDocument;
 }
 
 + (id)changeSetForFileAtPath:(id)arg1 transformation:(id)arg2 error:(id *)arg3;
+@property __weak IDEWorkspaceDocument *workspaceDocument; // @synthesize workspaceDocument=_workspaceDocument;
 @property(retain) NSString *newClassName; // @synthesize newClassName=_newClassName;
 @property(retain) NSArray *findResults; // @synthesize findResults=_findResults;
 - (void).cxx_destruct;
-- (void)writeTempResults;
-- (BOOL)writesOwnTempResults;
-- (BOOL)resultIsEditable;
-- (void)document:(id)arg1 didSave:(BOOL)arg2 contextInfo:(void *)arg3;
-- (BOOL)applyChangesWithError:(id *)arg1;
+- (BOOL)commitChangesWithError:(id *)arg1;
 
 @end
 

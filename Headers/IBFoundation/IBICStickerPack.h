@@ -6,9 +6,11 @@
 
 #import <IBFoundation/IBICAbstractCatalogItem.h>
 
-@class IBICManifestArchivist;
+#import <IBFoundation/IBICCompilableSticker-Protocol.h>
 
-@interface IBICStickerPack : IBICAbstractCatalogItem
+@class IBICManifestArchivist, NSString;
+
+@interface IBICStickerPack : IBICAbstractCatalogItem <IBICCompilableSticker>
 {
     IBICManifestArchivist *_manifestArchivist;
     long long _gridSize;
@@ -16,6 +18,7 @@
 
 + (id)importPriority;
 + (BOOL)fileNameIsIdentifier;
++ (id)displayNameForChildren;
 + (Class)requiredChildrenClass;
 + (id)contentReferenceTypeName;
 + (id)classNameComponents;
@@ -47,7 +50,19 @@
 - (id)displayName;
 - (id)defaultUnqualifiedRuntimeName;
 - (id)init;
+- (BOOL)compileToPath:(id)arg1 options:(id)arg2 results:(id)arg3;
+- (id)effectiveBundleIDWithPrefix:(id)arg1;
+- (id)compiledStickerpackFileName;
+- (BOOL)compileInfoPlist:(id)arg1 toPath:(id)arg2 options:(id)arg3 results:(id)arg4;
+- (BOOL)compileStringFilesToPath:(id)arg1 options:(id)arg2 results:(id)arg3;
+- (BOOL)compileChildrenToPath:(id)arg1 options:(id)arg2 results:(id)arg3;
 - (void)createSampleStickersWithBaseName:(id)arg1 size:(struct CGSize)arg2 count:(long long)arg3 usingRenderer:(CDUnknownBlockType)arg4;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

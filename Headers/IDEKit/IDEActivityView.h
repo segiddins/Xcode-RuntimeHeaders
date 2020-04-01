@@ -56,7 +56,10 @@
 - (void)activityViewDataSource:(id)arg1 activityReportDidComplete:(id)arg2;
 - (void)activityReportListDidChangeForActivityViewDataSource:(id)arg1;
 - (void)updateActionIndicators;
+- (void)resizeSubviewsWithOldSize:(struct CGSize)arg1;
+- (void)viewDidEndLiveResize;
 - (void)window:(id)arg1 didChangeActivationState:(long long)arg2;
+- (void)disableActions:(CDUnknownBlockType)arg1;
 - (void)makeSureIssuesLayerIsVisible;
 - (void)viewDidMoveToSuperview;
 - (void)viewDidMoveToWindow;
@@ -64,6 +67,7 @@
 - (void)tearDown;
 - (void)setup;
 - (void)teardownLayers;
+- (void)viewDidChangeEffectiveAppearance;
 - (void)setupLayers;
 - (id)_buildMultiActionIndicatorLayer;
 - (id)_buildAllStatusLayer;
@@ -71,6 +75,7 @@
 - (id)_backgroundLayer;
 - (void)_updateCurrentActivityReportForWindowActivationState;
 - (id)clickableLayerAtPoint:(struct CGPoint)arg1;
+- (struct NSEdgeInsets)alignmentRectInsets;
 - (struct CGRect)insetReportLayerBounds;
 - (struct CGRect)insetRootLayerBounds;
 @property struct CGSize contentSize;

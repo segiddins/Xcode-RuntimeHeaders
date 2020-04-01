@@ -10,8 +10,5 @@
 {
 }
 
-- (id)createUniversalBinaryFromThinBinaries:(id)arg1 inTargetBuildContext:(id)arg2;
-- (id)linkerSpecificationForObjectFilesInTargetBuildContext:(id)arg1;
-
 @end
 

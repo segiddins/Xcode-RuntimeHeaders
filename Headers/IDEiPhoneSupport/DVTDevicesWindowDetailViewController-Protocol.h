@@ -9,7 +9,7 @@
 @class DVTDevice;
 
 @protocol DVTDevicesWindowDetailViewController <DVTInvalidation>
-@property(retain) DVTDevice *device;
+@property(retain, nonatomic) DVTDevice *device;
 
 @optional
 - (void)detailViewDidDisappear;

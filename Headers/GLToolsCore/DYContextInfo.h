@@ -7,11 +7,11 @@
 #import <objc/NSObject.h>
 
 #import <GLToolsCore/DYGraphicsAPIInfo-Protocol.h>
-#import <GLToolsCore/NSCoding-Protocol.h>
+#import <GLToolsCore/NSSecureCoding-Protocol.h>
 
 @class NSArray, NSString;
 
-@interface DYContextInfo : NSObject <DYGraphicsAPIInfo, NSCoding>
+@interface DYContextInfo : NSObject <DYGraphicsAPIInfo, NSSecureCoding>
 {
     unsigned long long _identifier;
     unsigned long long _sharegroupIdentifier;
@@ -21,6 +21,7 @@
     int _api;
 }
 
++ (BOOL)supportsSecureCoding;
 @property(retain, nonatomic) NSString *debugLabel; // @synthesize debugLabel=_debugLabel;
 @property(readonly, nonatomic) int api; // @synthesize api=_api;
 @property(readonly, nonatomic) unsigned int currentRendererIndex; // @synthesize currentRendererIndex=_currentRendererIndex;
@@ -38,13 +39,13 @@
 - (void)determineTextureUnitLimitsForRendererAtIndex:(unsigned int)arg1 limits:(CDStruct_cc4e5495 *)arg2;
 - (void)dealloc;
 @property(readonly, copy) NSString *description;
+@property(readonly, copy) NSString *debugDescription;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithIdentifier:(unsigned long long)arg1 sharegroupIdentifier:(unsigned long long)arg2 renderers:(id)arg3 currentRendererIndex:(unsigned int)arg4 api:(int)arg5;
 - (id)init;
 
 // Remaining properties
-@property(readonly, copy) NSString *debugDescription;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

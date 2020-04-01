@@ -4,15 +4,16 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Foundation/NSObject.h>
+#import <objc/NSObject.h>
 
 #import <IDESpriteKitParticleEditor/NSKeyedArchiverDelegate-Protocol.h>
 
-@class NSKeyedArchiver, NSMutableDictionary, NSString, SKCustomClassStack;
+@class NSData, NSKeyedArchiver, NSMutableDictionary, NSString, SKCustomClassStack;
 
 @interface SKSceneCustomClassKeyedArchiver : NSObject <NSKeyedArchiverDelegate>
 {
     NSKeyedArchiver *_archiver;
+    NSData *_encodedData;
     SKCustomClassStack *_classStack;
     NSMutableDictionary *_classMapping;
 }
@@ -20,6 +21,7 @@
 - (void).cxx_destruct;
 - (void)archiver:(id)arg1 didEncodeObject:(id)arg2;
 - (id)archiver:(id)arg1 willEncodeObject:(id)arg2;
+- (id)encodedData;
 - (void)finishEncoding;
 - (void)encodeObject:(id)arg1 forKey:(id)arg2;
 - (void)encodeRootObject:(id)arg1;

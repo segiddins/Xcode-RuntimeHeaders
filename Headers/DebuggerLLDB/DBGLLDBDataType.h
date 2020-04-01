@@ -9,7 +9,6 @@
 @class NSString;
 @protocol DBGSBType;
 
-__attribute__((visibility("hidden")))
 @interface DBGLLDBDataType : DBGDataType
 {
     id <DBGSBType> _lldbType;

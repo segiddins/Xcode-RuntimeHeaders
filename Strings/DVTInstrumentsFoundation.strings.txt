@@ -1,0 +1,5815 @@
+kDTKPCounterDatabaseError
+kDTKPCounterEventNotFound
+kDTKPCounterEventAlreadyAdded
+kDTKPCounterPMIEventAlreadySet
+kDTKPCounterEventConflict
+kDTKPCounterEventUnavailable
+kDTKPCounterFailedToForceCounters
+kDTKPCounterAlreadyForcedCounters
+kDTKPCounterFailedToUnforceCounters
+kDTKPCounterAlreadyUnforcedCounters
+kDTKPCPUDatabaseCreationFailure
+kDTKPCPUDatabaseSerializationFailure
+kDTKPCallbackThreadLockCreationFailure
+kDTKPCallbackThreadCreationFailure
+kDTKPCallbackAlreadyCreated
+kDTKPSessionAPIMisuse
+kDTKPSessionFailedToGetKernelBuffer
+kDTKPSessionFailedToReturnKernelBuffer
+kDTKPSessionStopCallbackTimeout
+kDTKPSessionRecordEnumerationStopped
+kDTKPSessionAnotherSessionAlreadyRunning
+kDTKPSessionFailedToCreateOnDeckDatastream
+kDTKPSessionReturnedWithoutReadingAllKernelData
+kDTKPSessionMultiplePETTriggersNotSupported
+kDTKPSessionMultiplePMCTriggersNotSupported
+kDTKPTriggerFailedToStart
+kDTKPTriggerFailedToStop
+kDTKPTriggerFailedToResetKPerf
+kDTKPTriggerFailureInDeallocate
+kDTKPDatastreamCannotReadFromActiveStream
+kDTKPDatastreamCannotWriteToInactiveStream
+kDTKPDatastreamReadingAlreadyCompleted
+kDTKPDatastreamWritingAlreadyComplete
+kDTKPDatastreamAlreadyInErrorState
+kDTKPDatastreamNoFilesInDirectory
+kDTKPDatastreamEmpty
+kDTKPMemAllocFailed
+kDTKPIOFailure
+kDTKPPermissionDenied
+kDTKPCouldNotOpenFile
+kDTKPCouldNotCreateFile
+kDTKPCouldNotReadFile
+kDTKPCouldNotWriteFile
+kDTKPCouldNotCreateDirectory
+kDTKPFailure
+kDTKPUnknownError
+kDTKPInternalInconsistency
+kDTKPBadArgument
+kDTKPBadTraceDataConfig
+kDTKPFailureInKPerf
+kDTKPFailureInKPEP
+kDTKPFailureInKPC
+kDTKPFileReadError
+kDTKPDataParsingError
+kDTKPSuccess
+DTKPTriggerPMI
+Error allocating a PMI trigger action
+Error setting the PMI trigger samplers (0x%x)
+Error configuring the Time trigger task filter
+targetTask
+TI,N,V_targetTask
+pmiEventNameOrAlias
+T@"NSString",R,&,N,V_pmiEventNameOrAlias
+thresholdCount
+TQ,R,N,V_thresholdCount
+pmcEventCount
+TQ,R,N
+Expired Pid Cache
+v8@?0
+v16@?0@"_XRExpiredPidCache"8
+Possible race condition or code ordering issued caused a failure to globally disable the expired pid cache #Developer
+Expired PID tracking intentionally disabled for process
+v16@?0^{__CFArray=}8
+DTExpiredPidCacheService: Fixing unbalanced enable/disable
+com.apple.instruments.server.services.ultraviolet.renderer
+stdoutPath
+stderrPath
+v16@?0I8I12
+Failed to launch CLI: %@
+launchPath
+"startCLI" message payload is not a dictionary: %@
+"startCLI" "launchPath" does not exist: %@
+No "launchPath" provided for "startCLI": %@
+"startCLI" has already been called and a connection established (%@): %@
+Rendering service produced unknown error
+Rendering service could not respond
+Rendering service was interrupted
+v16@?0@"DTXMessage"8
+No connection has been established to the CLI yet for "forwardMessage". Make sure to pass a "startCLI" command first. Message was: %@
+injectionPath
+launchedPath
+No "injectionPath" or "launchedPath" provided for "connectToPreviewHost": %@
+No "pid" provided for "connectToPreviewHost": %@
+__SERVICEHUB_ATTACH_POINT__
+success
+connectToPreviewHost: Failed to connect to %d: %@
+startCLI
+forwardMessage
+connectToPreviewHost
+Unknown command "%@": %@
+serviceCommand
+No "serviceCommand" specified for message: %@
+inheritEnvironment
+environment
+com.apple.dt.DTAssetHTTPServer
+localhost
+socket
+T@"_DT_GCDAsyncSocket",&,V_socket
+socketDelegateQueue
+T@"NSObject<OS_dispatch_queue>",&,V_socketDelegateQueue
+port
+TQ,R
+channel
+T@"DTXChannel",&,V_channel
+BundlePath
+CFBundleIdentifier
+ExecutableName
+Restricted
+DisplayName
+Version
+Type
+User
+System
+Internal
+PluginKit
+VPNPlugin
+Unknown
+Placeholder
+AppExtensionUUIDs
+PluginUUID
+PluginIdentifier
+ExtensionDictionary
+ContainerBundlePath
+ContainerBundleIdentifier
+v32@?0@"NSString"8@?<v@?@"NSDictionary"c>16^c24
+v32@?0@"NSURL"8Q16^c24
+com.apple.
+v20@?0@"NSDictionary"8c16
+v32@?0@"NSString"8@"NSDictionary"16^c24
+hash
+superclass
+T#,R
+description
+T@"NSString",R,C
+debugDescription
+NSExtension
+v32@?0@"NSString"8@16^c24
+com.apple.instruments.server.services.assets.response
+-[XRNetworkingServiceObservationTuple initWithKind:count:]
+<Unknown Function>
+/Library/Caches/com.apple.xbs/Sources/DVTInstrumentsFrameworks/DVTInstrumentsFrameworks-64531.2/Services/DTNetworkingService.m
+<Unknown File>
+Invalid parameter not satisfying: %@
+count < 50
+count > 0
+-[XRNetworkingServiceObservationTuple initWithKind:count:source:indexToKeyMap:]
+kind
+Ti,N,V_kind
+count
+TC,N,V_count
+com.apple.instruments.server.services.networking
+com.apple.instruments.server.services.networking.immediate
+com.apple.instruments.server.services.networking.deferred
+com.apple.dt.instruments.networking
+XRIncludeLoopback
+Including Loopback device in recording
+awdl0
+Passed a nil PID for the filter, removing pid filtering for networking service
+Supplied pid to filter, %d, is invalid, removing all pid filters
+endOfStream
+v16@?0r*8
+v16@?0^{__CFDictionary=}8
+v16@?0^{__NStatSource=}8
+Could not create NStatManagerRef
+Checking a pid of -1, this shouldn't be happening
+Failed to get network information for net idx %d
+BOOL TakeDifferenceBetweenTuples(XRNetworkingServiceObservationTuple *__strong, XRNetworkingServiceObservationTuple *__strong, XRNetworkingServiceObservationTuple *__strong)
+ending.kind == XRNET_CONNECTION_STATS
+starting.kind == XRNET_CONNECTION_STATS
+shortName
+T@"NSString",R,N,V_shortName
+displayName
+T@"NSString",R,N,V_displayName
+tooltip
+T@"NSString",R,N,V_tooltip
+defaultValue
+Tc,R,N,V_defaultValue
+groupName
+T@"NSString",&,N,V_groupName
+settings
+T@"NSArray",&,N,V_settings
+sysmon
+plist
+Processes
+Coalitions
+type
+checkbox
+_loadSysmonAttributes
+/Library/Caches/com.apple.xbs/Sources/DVTInstrumentsFrameworks/DVTInstrumentsFrameworks-64531.2/PresentationRegistry/DTPresentationRegistry.m
+groups
+name
+default
+v32@?0@"NSDictionary"8Q16^c24
+com.apple.instruments.server.services.deviceinfo
+com.apple.instruments.server.services.deviceinfo.systemversion
+com.apple.instruments.server.services.deviceinfo.recordOptions
+com.apple.instruments.server.services.deviceinfo.metal
+com.apple.instruments.server.services.deviceinfo.energytracing.location
+com.apple.instruments.server.services.deviceinfo.cocoalayout
+com.apple.instruments.server.services.deviceinfo.cocoalayout.deferred
+com.apple.instruments.server.services.deviceinfo.cocoalayout.immediate
+com.apple.instruments.target.user-page-size
+com.apple.instruments.target.physical-cpus
+com.apple.instruments.target.logical-cpus
+com.apple.instruments.target.osx
+com.apple.instruments.server.services.deviceinfo.app-life-cycle
+com.apple.instruments.server.services.deviceinfo.dyld-tracing
+com.apple.instruments.server.services.deviceinfo.scenekit-tracing
+com.apple.instruments.server.services.deviceinfo.gcd-perf
+com.apple.instruments.server.services.deviceinfo.gpu-allocation
+com.apple.instruments.target.mtb.numer
+com.apple.instruments.target.mtb.denom
+.framework
+SpringBoard
+XPC_SIMULATOR_LAUNCHD_NAME
+PID %d
+isApplication
+realAppName
+startDate
+Mach Kernel
+mach_kernel
+root
+nobody
+kern.version
+/mach.%s.%s
+signature
+v28@?0I8{_CSTypeRef=QQ}12
+v24@?0{_CSTypeRef=QQ}8
+v44@?0I8{_CSNotificationData={_CSTypeRef=QQ}(?={Ping=I}{DyldLoad={_CSTypeRef=QQ}}{DyldUnload={_CSTypeRef=QQ}})}12
+Info.plist
+Contents/Info.plist
+CFBundleIcons
+CFBundleIcons~iphone
+CFBundleIcons~ipad
+CFBundleIcons~ipod
+CFBundleIconFiles
+CFBundleIconFiles~iphone
+CFBundleIconFiles~ipad
+CFBundleIconFiles~ipod
+CFBundlePrimaryIcon
+CFBundleIconFile
+Icon
+icon
+Contents/Resources/
+.png
+@2x.png
+-72.png
+.icns
+~ipad.png
+@2x~ipad.png
+~iphone.png
+@2x~iphone.png
+imageData
+width
+height
+hw.cpusubtype
+hw.cputype
+numberOfPhysicalCpus
+numberOfCpus
+speedOfCpus
+hwCPUtype
+hwCPUsubtype
+hwCPU64BitCapable
+MISSING
+/System/Library/CoreServices/SystemVersion.plist
+ProductVersion
+hw.model
+kern.osversion
+kern.hostname
+Build Version %@, %@ ID %@
+_deviceDescription
+%@ (v%@)
+_deviceDisplayName
+_deviceIdentifier
+_deviceVersion
+_productVersion
+_productType
+XRSessionDevice
+_xrdeviceClassName
+/usr/share/misc/trace.codes
+Error reading contents of trace.codes file: %@
+Unable to create KPEP database: %d
+Unable to serialize KPEP database: %d
+hw.physicalcpu_max
+.app
+com.apple.dt.Instruments.DTTap.logQueue
+DTTapLogLevel
+com.apple.dt.Instruments
+DTTap
+DTKPTapMaxRAMPercentage
+DTKPTapMinRAMBytes
+Device reported 0 MB of physical memory
+Device reported 0 cores
+Unsupported buffer mode: %lu
+Unknown action in config: %d
+v12@?0i8
+Unsupported trigger kind: %u
+v16@?0@"DTKTraceTapTriggerConfig"8
+DTKPTapBufferScalingFactor
+Exception caught at %s:%d - %@
+/Library/Caches/com.apple.xbs/Sources/DVTInstrumentsFrameworks/DVTInstrumentsFrameworks-64531.2/Taps/Ktrace/DTKTraceTapLocalDelegate.m
+triggerIDs
+triggerUUIDs
+The number of trigger IDs (%lu) does not match the number of trigger UUIDs (%lu)
+Unsupported PMI trigger requested
+Unsupported PMC event read requested
+Tried to start a tap while it's already running
+v32@?0@"DTKPTriggerKDebug"8Q16^c24
+v32@?0@"DTKPTriggerPMI"8Q16^c24
+v32@?0@"DTKPTriggerTime"8Q16^c24
+v12@?0I8
+Failed to start the recording: %@
+v32@?0@"<DTKTraceTapLocalEventProducer>"8Q16^c24
+Failed to create a recording session: %@ 
+Failed to stop recording session (%d): %@ 
+Failed to pause recording session (%d): %@ 
+Failed to resume recording session (%d): %@ 
+DTKPTapMaxCustomClassSubclassFilters
+v24@?0@"NSNumber"8^c16
+dtkperftap.trace.XXXXXX
+Error adding event %@ to Time trigger: %@.
+Error adding event %@ to PMI trigger: %@.
+Tried to add a PMC to an unsupported trigger type: %@
+com.apple.instruments.server.services.sampling
+com.apple.instruments.server.services.sampling.immediate
+com.apple.instruments.server.services.sampling.deferred
+com.apple.instruments.server.services.coresampling
+DTSamplingServiceException
+Failed to get task for pid %d
+code
+supportsSecureCoding
+Tc,R
+tapVersion
+TI,N
+runningMetadata
+T@"NSDictionary",C,N,V_runningMetadata
+timestamp
+TQ,N
+com.apple.instruments.server.services.assets
+resources
+http
+127.0.0.1
+http://localhost:%li%@
+isStreamable
+ondemandd is not available on this platform.
+server
+T@"DTAssetHTTPServer",&,V_server
+ondemandConnection
+T@"NSXPCConnection",&,V_ondemandConnection
+com.apple.dt.AssetService
+authorization
+with_authorized_xpc_message
+/Library/Caches/com.apple.xbs/Sources/DVTInstrumentsFrameworks/DVTInstrumentsFrameworks-64531.2/InstrumentsSupport/dt_xpc_rpc.m
+block
+Message
+v16@?0@"NSObject<OS_xpc_object>"8
+status
+errno_status
+xpc connection invalid: %s
+DTKPTriggerTime
+A %@ trigger was deallocated without freeing up its timer ID.
+Failed to allocate memory for kperf timers: %d.
+Failed to set the number of kperf timers: %d
+-[DTKPTriggerTime _timerIDDdealloc:]
+/Library/Caches/com.apple.xbs/Sources/DVTInstrumentsFrameworks/DVTInstrumentsFrameworks-64531.2/DTKPerfInterface/DTKPTriggerTime.m
+(timerID < sTimerCount) && sAllocatedTimers[timerID]
+Error allocating a Time trigger action
+Error setting the Time trigger samplers (0x%x)
+Error allocating a Time trigger ID
+Error configuring the Time trigger action
+Error enabling the PET mode timer: %d
+sampleRate
+TQ,N,V_sampleRate
+profileEveryThread
+Tc,N,V_profileEveryThread
+sampleInterval
+sysAttrs
+procAttrs
+coalAttrs
+cpuUsage
+pids
+StartMachAbsTime
+EndMachAbsTime
+ProcessesAttributes
+SystemAttributes
+CoalitionAttributes
+DeadProcesses
+DeadCoalitions
+CPUCount
+EnabledCPUs
+SystemCPUUsage
+PerCPUUsage
+CPU_TotalLoad
+CPU_UserLoad
+CPU_SystemLoad
+CPU_NiceLoad
+Ti,N,V_pid
+attributes
+T@"NSArray",&,N,V_attributes
+TQ,N,V_cid
+totalLoad
+Td,N,V_totalLoad
+userLoad
+Td,N,V_userLoad
+systemLoad
+Td,N,V_systemLoad
+niceLoad
+Td,N,V_niceLoad
+cpuCount
+TI,N,V_cpuCount
+enabledCPUs
+TI,N,V_enabledCPUs
+averageCPUUsage
+T@"DTSysmonCPUUsageEntry",&,N,V_averageCPUUsage
+perCPUUsage
+T@"NSArray",&,N,V_perCPUUsage
+recordType
+TI,N,V_recordType
+startTimestamp
+TQ,N,V_startTimestamp
+endTimestamp
+TQ,N,V_endTimestamp
+changedProcesses
+T@"NSArray",&,N,V_changedProcesses
+deadProcesses
+T@"NSArray",&,N,V_deadProcesses
+system
+T@"DTSysmonSystemRecord",&,N,V_system
+coalitions
+T@"NSArray",&,N,V_coalitions
+deadCoalitions
+T@"NSArray",&,N,V_deadCoalitions
+T@"DTSysmonCPUUsageRecord",&,N,V_cpuUsage
+processAttributes
+T@"NSArray",&,N,V_processAttributes
+systemAttributes
+T@"NSArray",&,N,V_systemAttributes
+coalitionAttributes
+T@"NSArray",&,N,V_coalitionAttributes
+recordDecoder
+T@"DTSysmonTapRecordDecoder",&,N,V_recordDecoder
+samples
+T@"NSArray",&,N,V_samples
+T@"NSArray",&
+sampleCPUUsage
+sessionHandler
+T@?,C,N,V_sessionHandler
+T@"DTXChannel",R,&,N,V_channel
+playback
+%@ is trying to register capability %@, but it was already registered by %@. Ignoring this new delegate.
+v32@?0@"NSString"8@"NSNumber"16^c24
+com.apple.dt.tap_service
+DTTapService requires its channels to have names.
+DTTapService could not locate a delegate for the channel named %@.
+(%d) Unable to create configuration from remote connection.
+v36@?0I8Q12@"NSString"20@"NSDictionary"28
+pid_tracking_service
+allocator<T>::allocate(size_t n) 'n' exceeds maximum supported size
+com.apple.dt.Instruments.process-watcher
+-[DTDTraceTapLocalDelegate initWithConfig:]
+/Library/Caches/com.apple.xbs/Sources/DVTInstrumentsFrameworks/DVTInstrumentsFrameworks-64531.2/Taps/DTrace/DTDTraceTapLocalDelegate.m
+config != nil
+-[DTDTraceTapLocalDelegate setTap:]
+tap != nil
+DTracePermitZeroMatchProbes
+message
+filename
+fatal
+dtrace_code
+DTrace returned a message.
+v32@?0r*8I16r*20B28
+v28@?0Q8q16I24
+%d.%@.script
+v32@?0@"NSString"8@"NSString"16^c24
+Failed to connect to DTrace service.
+Timed out waiting for DTrace XPC service to start
+Failed to connect to DTrace XPC service
+system.privilege.admin
+com.apple.dt.instruments.process.analysis
+com.apple.dt.instruments.process.kill
+username
+password
+shared
+Failed to create the authorization ref: %ld.
+%s: %s Please enter an administrator username and password to allow this.
+Username (%s): 
+Username: 
+Password: 
+Failed to authorize rights (%#x) with status: %ld.
+prompt
+Instruments wants permission to analyze other processes.
+Instruments wants permission to use dtrace.
+Instruments wants permission to setup launch daemons.
+Instruments wants permission to terminate other processes.
+v24@?0r^v8r^v16
+B16@?0r*8
+class
+user
+group
+admin
+allow-root
+timeout
+comment
+Rights for Instruments
+accelerator-id
+vendor-name
+family-name
+product-name
+device-name
+supported-counter-profiles
+min-collection-interval
+headless
+removable
+low-power
+recommended-max-working-set-size
+mobile
+displays
+-[DTGPUDataSource _sampleCounters]_block_invoke
+/Library/Caches/com.apple.xbs/Sources/DVTInstrumentsFrameworks/DVTInstrumentsFrameworks-64531.2/Services/DTGPUDataSource.mm
+numCounters == _counterBuffer->sampleSize()
+v24@?0r^Q8Q16
+v32@?0r^Q8Q16Q24
+en_US
+Display
+Built-In Display
+display-id
+framebuffer-index
+pixel-width
+pixel-height
+resolution
+built-in
+supportedCounterProfiles
+T@"NSArray",R,N
+minSampleInterval
+device
+T@"<MTLDevice>",R,W,N,V_device
+deviceName
+T@"NSString",R,N
+deviceInfoDict
+T@"NSDictionary",R,N
+windowLimit
+collectingProfile
+T@"DTGPUCounterProfile",R,N
+delegate
+T@"<DTGPUDataSourceDelegate>",W,N,V_delegate
+os-log
+time
+category
+subsystem
+sender-image-path
+format-string
+backtrace
+outOfData
+Tc,R,N,GisOutOfData,V_outOfData
+failed
+Tc,R,N,GhasFailed,V_failed
+senderImagePath
+format
+T@"XRConstantEngineeringValue",R,N
+/Library/Caches/com.apple.xbs/Sources/DVTInstrumentsFrameworks/DVTInstrumentsFrameworks-64531.2/DVTInstrumentsUtilities/ImportProtocol/DTStateActionCoder.hpp
+_decompressWithExpectedSize
+under <= UINT8_MAX
+head[i] == top->background
+T@"NSArray",C,N,V_samples
+-[DTDTraceTapMessageHandler initWithConfig:]
+/Library/Caches/com.apple.xbs/Sources/DVTInstrumentsFrameworks/DVTInstrumentsFrameworks-64531.2/Taps/DTrace/DTDTraceTapMessageHandler.m
+_writeFD != -1
+T@"NSString",&,N,V_name
+rawCounters
+T@"NSArray",&,N,V_rawCounters
+counterDescription
+T@"NSString",&,N,V_counterDescription
+T@"NSString",&,N,V_type
+maxValue
+TQ,N,V_maxValue
+functionName
+T@"NSString",&,N,V_functionName
+groupIndex
+TI,N,V_groupIndex
+multiplier
+TI,N,V_multiplier
+T@"NSString",R,N,V_name
+T@"<MTLDevice>",&,N,V_device
+defaultSampleInterval
+TQ,N,V_defaultSampleInterval
+derivedCounterScriptPath
+T@"NSString",&,N,V_derivedCounterScriptPath
+profileName
+T@"NSString",&,N,V_profileName
+profile
+TQ,R,N,V_profile
+counters
+T@"NSArray",R,N,V_counters
+Utilization %
+Device Utilization %
+PerformanceStatistics
+com.apple.instruments.server.services.fsusage
+com.apple.instruments.server.services.fsusage.immediate
+com.apple.instruments.server.services.fsusage.deferred
+fsusage_creator_pid
+libfsmonitor_interpose
+dylib
+DTFSUsageActivityServiceException
+Could not locate instrumentation binary.
+DYLD_INSERT_LIBRARIES
+-[%@ %s]: Unable to acquire task for pid: %d
+libfsmonitor_interpose.dylib
+-[%@ %s]: Target failed to load interposing library in time.
+FSM_shared_memory_address
+v16@?0^v8
+com.apple.dt.DTAssetProviderService
+/Library/Caches/com.apple.xbs/Sources/DVTInstrumentsFrameworks/DVTInstrumentsFrameworks-64531.2/Assets/DTAssetProviderService.m
+v24@?0@"DTAssetProviderService"8@"NSError"16
+v24@?0@"NSError"8Q16
+no connection provided
+com.apple.DTAssetProviderService
+File does not exist at path %@
+RequestIdentifier
+v16@?0@"NSFileHandle"8
+AssetPackManifestTemplate.plist
+AssetPackManifestTemplate
+connection
+T@"DTXConnection",W,N,V_connection
+concurrentRequestQueue
+T@"NSObject<OS_dispatch_queue>",&,N,V_concurrentRequestQueue
+com.apple.dt.AssetProviderService
+setup_rights
+com.apple.dt.instruments.dtsecurity.xpc
+task_for_pid
+task
+vfs_trace_paths
+kill_process
+get_process_command_name_and_path
+process_command_name
+process_path
+ktrace_bless
+bless
+coreprofile_core_control
+coreCount
+coreEnableArray
+setup_launch_daemon
+archived_dictionary
+authorized_xpc_attach
+/Library/Caches/com.apple.xbs/Sources/DVTInstrumentsFrameworks/DVTInstrumentsFrameworks-64531.2/InstrumentsSupport/dtsecurity_xpc_client.m
+handler
+outputfd
+host_pid
+debug_xpc_process
+archived_array
+archived_options
+v20@?0I8I12I16
+symbolicate_pid
+signatures_data
+pid_watcher_register_update_handler
+queue != nil && handler != nil
+track_updates
+dyld_load
+dyld_unload
+process_watcher_add_with_tracking
+process_watcher_add_without_tracking
+process_watcher_copy_signatures
+should_disconnect
+isSession
+Tc,N,V_isSession
+triggerCount
+TI,N,V_triggerCount
+T@"NSData",&,N,V_triggerIDs
+datastream
+T@"<DTKPDatastream>",&,N,V_datastream
+containers
+T@"NSValue",&,N,V_containers
+v36@?0r^v8Q16@?<v@?>24c32
+Export session data failed: %@
+-[DTKTraceTapMemoHandlerDelegate sendDataMemo:toBulkReceiver:]
+/Library/Caches/com.apple.xbs/Sources/DVTInstrumentsFrameworks/DVTInstrumentsFrameworks-64531.2/Taps/Ktrace/DTKTraceTapMemoHandlerDelegate.m
+-[DTKTraceTapMemoHandlerDelegate sendDataMemo:toClientUsingConfig:]
+memo.isSession
+v24@?0@"DTKPRecord"8*16
+-[DTKTraceTapMemoHandlerDelegate peekAtMemo:]
+pidOrRoute
+TQ,V_pidOrRoute
+ifaceIndex
+TI,V_ifaceIndex
+localAddress
+T@"NSData",&,V_localAddress
+remoteAddress
+T@"NSData",&,V_remoteAddress
+T@"NSString",&,V_kind
+v32@?0@"NSString"8@"NSMutableDictionary"16^c24
+v32@?0@"NSNumber"8@"NSArray"16^c24
+v32@?0@"NSNumber"8Q16^c24
+@"NSArray"24@?0@"NSString"8@"NSMutableDictionary"16
+processIdentifier == %d AND subsystem == 'com.apple.dt.instruments' AND category == 'heartbeat'
+com.apple.dt.os_log-loader
+arg0
+arg1
+arg2
+arg3
+arg4
+arg5
+arg%d
+xcode
+address
+uint64
+fixed-decimal
+string
+narrative-text
+os-log-arg
+os-signpost
+os-signpost-arg
+TODO
+Default
+Debug
+Info
+Error
+Fault
+Begin
+Event
+Thread
+Process
+v16@?0@"OSLogEventProxy"8
+Log stream ended early because the system is overwhelmed with logs
+Log stream ended early because of a disconnection
+Log stream ended due to an internal error
+Log stream ended due to misuse
+Log stream ended due to insufficient permissions
+Log stream ended due to inability to evaluate filter predicate
+Log stream faced initialization failure.
+-[DTOSLogLoader _setupCommonStreamParameters:]_block_invoke_2
+/Library/Caches/com.apple.xbs/Sources/DVTInstrumentsFrameworks/DVTInstrumentsFrameworks-64531.2/Taps/ActivityTracing/DTOSLogLoader.mm
+_agentWaitingForStop == nil
+v24@?0Q8@"OSLogEventStreamPosition"16
+-[DTOSLogLoader _setupLiveStream:]
+OSLogEventLiveStreamClass() != nil
+v16@?0@"OSLogEventDroppedContext"8
+filterPredicate
+T@"NSPredicate",&,N,V_filterPredicate
+failureReason
+T@"NSError",R,N,V_failureReason
+T@"<DTOSLogLoaderDelegate>",W,N,V_delegate
+v24@?0@"OSLogEventLiveSource"8@"NSError"16
+Live logging stream could not be accessed.
+c8@?0
+v24@?0d8@"NSError"16
+v24@?0@"OSLogEventSource"8@"NSError"16
+Local logging store could not be accessed.
+mode
+TQ,N,V_mode
+signpostConfig
+TQ,N,V_signpostConfig
+exclusions
+TQ,N,V_exclusions
+-[DTOSLogLoaderStopTicket prepareAgent:loader:]
+loader->_loggedStream == nil && loader->_liveStream == nil
+-[DTOSLogLoaderFetchTicket holdAgent:loader:]_block_invoke_2
+loader->_loggedStream == (id)[NSNull null]
+loader->_agentWaitingForEvents == nil
+-[DTOSLogLoaderFetchTicket holdAgent:loader:]
+windowInSeconds
+Td,N,V_windowInSeconds
+currentPosition
+T@"OSLogEventStreamPosition",&,N,V_currentPosition
+com.apple.dt.instruments
+heartbeat
+distance
+_generation == other._generation
+push
+length == 0
+_findBackgroundPatternStart
+startOfPartiallyEncodedData != end
+data == end || (data+1) == end || *(data+1) == _background
+writeWord
+start <= head
+_writeActionToTape
+newRef >= 0
+copy
+/Library/Caches/com.apple.xbs/Sources/DVTInstrumentsFrameworks/DVTInstrumentsFrameworks-64531.2/DVTInstrumentsUtilities/ImportProtocol/DTTableRowCoder.hpp
+ref.valid()
+process
+thread
+message-type
+value
+event-type
+scope
+identifier
+signpost-name
+OSLogEventLiveStream
+DynamicTracing
+DynamicStackTracing
+OSLogEventLiveStore
+replaceTape
+loader->_encoder.outputTape().start == loader->_encoder.outputTape().head
+com.apple.instruments.server.services.gpu
+com.apple.instruments.server.services.gpu.immediate
+com.apple.instruments.server.services.gpu.deferred
+com.apple.instruments.server.services.gpu.counters
+com.apple.dt.instruments.gpu
+v24@?0@"<MTLDevice>"8@"NSString"16
+Already collecting counters
+Waiting for target process
+No configured data sources
+Failed to start counter collection
+pid %d
+IOService
+IOUserClientCreator
+Invalid device ID
+Selected profile is not supported on target device
+com.apple.DTGPUService
+TI,N,V_tapVersion
+TQ,N,V_timestamp
+TI,N,V_status
+notice
+T@"NSString",&,N,V_notice
+info
+T@"NSDictionary",&,N,V_info
+supportsPeek
+Tc,N,V_supportsPeek
+finalMemo
+Tc,N,V_finalMemo
+-[DTTapMemoHandler initWithConfig:delegate:]
+/Library/Caches/com.apple.xbs/Sources/DVTInstrumentsFrameworks/DVTInstrumentsFrameworks-64531.2/Taps/DTTapMemoHandler.m
+delegate != nil
+com.apple.dt.tap.memoHandler
+config
+T@"DTTapConfig",R,&,N,V_config
+ifaceBlacklist
+tcpAttrs
+udpAttrs
+routeAttrs
+TCPAttributes
+UDPAttributes
+RouteAttributes
+TCPDesc
+TCPCount
+TCPRemoved
+UDPDesc
+UDPCount
+UDPRemoved
+RouteDesc
+RouteCount
+RouteRemoved
+SrcSerialNum
+CountAttrs
+DescPIDOrRouteID
+DescIFInded
+DescLocalAddr
+DescRemoteAddr
+serialNumber
+TQ,N,V_serialNumber
+TI,N,V_ifaceIndex
+T@"NSData",N,V_localAddress
+T@"NSData",N,V_remoteAddress
+routeID
+Tq,N,V_routeID
+changedTCPConnections
+T@"NSArray",&,N,V_changedTCPConnections
+deadTCPConnections
+T@"NSArray",&,N,V_deadTCPConnections
+changedUDPConnections
+T@"NSArray",&,N,V_changedUDPConnections
+deadUDPConnections
+T@"NSArray",&,N,V_deadUDPConnections
+changedRoutes
+T@"NSArray",&,N,V_changedRoutes
+deadRoutes
+T@"NSArray",&,N,V_deadRoutes
+tcpAttributes
+T@"NSArray",&,N,V_tcpAttributes
+udpAttributes
+T@"NSArray",&,N,V_udpAttributes
+routeAttributes
+T@"NSArray",&,N,V_routeAttributes
+T@"DTNetStatTapRecordDecoder",&,N,V_recordDecoder
+interfaceBlacklist
+com.apple.instruments.server.services.vmtracking
+com.apple.instruments.server.services.vmtracking.immediate
+com.apple.instruments.server.services.vmtracking.deferred
+com.apple.dt.services.capabilities.vmtracking
+v16@?0@"NSDictionary"8
+DTKDebugFilterMatchesEvent
+/Library/Caches/com.apple.xbs/Sources/DVTInstrumentsFrameworks/DVTInstrumentsFrameworks-64531.2/DTKPerfInterface/DTKPTriggerKDebug.m
+filterType <= KPERF_KDEBUG_FILTER_DEBUGID_FN
+filterMode
+Ti,N,V_filterMode
+codeSet
+T@"DTKPKDebugCodeSet",R,&,N,V_codeSet
+DTTapMessagePlist
+Ti,N
+heart
+heartbeatTime
+/tmp/dtrace-script.XXXXXX
+GCDAsyncSocketException
+GCDAsyncSocketErrorDomain
+_DT_GCDAsyncSocket
+_DT_GCDAsyncSocket-CFStream
+GCDAsyncSocketManuallyEvaluateTrust
+GCDAsyncSocketSSLPeerID
+GCDAsyncSocketSSLProtocolVersionMin
+GCDAsyncSocketSSLProtocolVersionMax
+GCDAsyncSocketSSLSessionOptionFalseStart
+GCDAsyncSocketSSLSessionOptionSendOneByteRecord
+GCDAsyncSocketSSLCipherSuites
+GCDAsyncSocketSSLDiffieHellmanParameters
+/Library/Caches/com.apple.xbs/Sources/DVTInstrumentsFrameworks/DVTInstrumentsFrameworks-64531.2/Assets/GCDAsyncSocket.m
+This method does not apply to term reads
+Invalid parameter: bytesAvailable
+This method does not apply to non-term reads
+Invoked with empty pre buffer!
+The given socketQueue parameter must not be a concurrent queue.
+Error in socket() function
+Error enabling non-blocking IO on socket (fcntl)
+Error enabling address reuse (setsockopt)
+Error in bind() function
+Error in listen() function
+i20@?0i8@"NSData"12
+Attempting to accept without a delegate. Set a delegate first.
+Attempting to accept without a delegate queue. Set a delegate queue first.
+Both IPv4 and IPv6 have been disabled. Must enable at least one protocol first.
+Attempting to accept while connected or accepting connections. Disconnect first.
+Unknown interface. Specify valid interface by name (e.g. "en1") or IP address.
+IPv4 has been disabled and specified interface doesn't support IPv6.
+IPv6 has been disabled and specified interface doesn't support IPv4.
+Must be dispatched on socketQueue
+Attempting to connect without a delegate. Set a delegate first.
+Attempting to connect without a delegate queue. Set a delegate queue first.
+Attempting to connect while connected or accepting connections. Disconnect first.
+Invalid host parameter (nil or ""). Should be a domain name or IP address string.
+A valid IPv4 or IPv6 address was not given
+IPv4 has been disabled and an IPv4 address was passed.
+IPv6 has been disabled and an IPv6 address was passed.
+Expected at least one valid address
+IPv4 has been disabled and DNS lookup found no IPv6 address.
+IPv6 has been disabled and DNS lookup found no IPv4 address.
+Error in connect() function
+kCFStreamErrorDomainNetDB
+Error code definition can be found in Apple's SecureTransport.h
+kCFStreamErrorDomainSSL
+GCDAsyncSocketConnectTimeoutError
+Attempt to connect to host timed out
+GCDAsyncSocketReadMaxedOutError
+Read operation reached set maximum length
+GCDAsyncSocketReadTimeoutError
+Read operation timed out
+GCDAsyncSocketWriteTimeoutError
+Write operation timed out
+GCDAsyncSocketClosedError
+Socket closed by remote peer
+loopback
+Cannot flush ssl buffers on non-secure socket
+Invalid logic
+Error in read() function
+Trying to complete current read when there is no current read.
+Error in write() function
+Trying to complete current write when there is no current write.
+Logic error
+Error in SSLCreateContext
+Error in SSLSetIOFuncs
+Error in SSLSetConnection
+Manual trust validation is not supported for server sockets
+Error in SSLSetSessionOption
+Error in SSLSetPeerDomainName
+Invalid value for kCFStreamSSLPeerName. Value must be of type NSString.
+Invalid value for kCFStreamSSLPeerName.
+Error in SSLSetCertificate
+Invalid value for kCFStreamSSLCertificates. Value must be of type NSArray.
+Invalid value for kCFStreamSSLCertificates.
+Error in SSLSetPeerID
+Invalid value for GCDAsyncSocketSSLPeerID. Value must be of type NSData. (You can convert strings to data using a method like [string dataUsingEncoding:NSUTF8StringEncoding])
+Invalid value for GCDAsyncSocketSSLPeerID.
+Error in SSLSetProtocolVersionMin
+Invalid value for GCDAsyncSocketSSLProtocolVersionMin. Value must be of type NSNumber.
+Invalid value for GCDAsyncSocketSSLProtocolVersionMin.
+Error in SSLSetProtocolVersionMax
+Invalid value for GCDAsyncSocketSSLProtocolVersionMax. Value must be of type NSNumber.
+Invalid value for GCDAsyncSocketSSLProtocolVersionMax.
+Error in SSLSetSessionOption (kSSLSessionOptionFalseStart)
+Invalid value for GCDAsyncSocketSSLSessionOptionFalseStart. Value must be of type NSNumber.
+Invalid value for GCDAsyncSocketSSLSessionOptionFalseStart.
+Error in SSLSetSessionOption (kSSLSessionOptionSendOneByteRecord)
+Invalid value for GCDAsyncSocketSSLSessionOptionSendOneByteRecord. Value must be of type NSNumber.
+Invalid value for GCDAsyncSocketSSLSessionOptionSendOneByteRecord.
+Error in SSLSetEnabledCiphers
+Invalid value for GCDAsyncSocketSSLCipherSuites. Value must be of type NSArray.
+Invalid value for GCDAsyncSocketSSLCipherSuites.
+Error in SSLSetDiffieHellmanParams
+Invalid value for GCDAsyncSocketSSLDiffieHellmanParameters. Value must be of type NSData.
+Invalid value for GCDAsyncSocketSSLDiffieHellmanParameters.
+Security option unavailable - kCFStreamSSLAllowsAnyRoot - You must use manual trust evaluation
+Security option unavailable - kCFStreamSSLAllowsAnyRoot
+Security option unavailable - kCFStreamSSLAllowsExpiredRoots - You must use manual trust evaluation
+Security option unavailable - kCFStreamSSLAllowsExpiredRoots
+Security option unavailable - kCFStreamSSLValidatesCertificateChain - You must use manual trust evaluation
+Security option unavailable - kCFStreamSSLValidatesCertificateChain
+Security option unavailable - kCFStreamSSLAllowsExpiredCertificates - You must use manual trust evaluation
+Security option unavailable - kCFStreamSSLAllowsExpiredCertificates
+Security option unavailable - kCFStreamSSLLevel - You must use GCDAsyncSocketSSLProtocolVersionMin & GCDAsyncSocketSSLProtocolVersionMax
+Security option unavailable - kCFStreamSSLLevel
+v12@?0c8
+GCDAsyncSocketManuallyEvaluateTrust specified in tlsSettings, but delegate doesn't implement socket:shouldTrustPeer:
+T@,W
+delegateQueue
+T@"NSObject<OS_dispatch_queue>",&
+IPv4Enabled
+Tc,GisIPv4Enabled
+IPv6Enabled
+Tc,GisIPv6Enabled
+IPv4PreferredOverIPv6
+Tc,GisIPv4PreferredOverIPv6
+userData
+T@,&
+isDisconnected
+isConnected
+connectedHost
+T@"NSString",R
+connectedPort
+TS,R
+localHost
+localPort
+connectedAddress
+T@"NSData",R
+isIPv4
+isIPv6
+isSecure
+autoDisconnectOnClosedReadStream
+OSStatus SSLReadFunction(SSLConnectionRef, void *, size_t *)
+What the deuce?
+OSStatus SSLWriteFunction(SSLConnectionRef, const void *, size_t *)
+*All*
+*Dirty*
+dataList
+path
+XRVMRegion
+%@  %16@ %#16llx-%#16llx %1x/%1x %@
+(submap)
+-[%@ %s] called. Don't.
+< multiple >
+-[DTKPSession callbackThreadAlertForReason:]
+/Library/Caches/com.apple.xbs/Sources/DVTInstrumentsFrameworks/DVTInstrumentsFrameworks-64531.2/DTKPerfInterface/DTKPSession.m
+(self.state == kSessionStopping) || (self.state == kSessionStopped)
+-[DTKPSession callbackThread]
+_kernelCallback.state == CBSTAT_STARTING
+-[DTKPSession init]
+Error stopping recording while deallocating DTKPSession object: %@
+-[DTKPSession logKPRecsIncludingCallstacks:toFile:]
+file != NULL
+DTKPSession
+Failed to create new on-deck datastream.
+Cannot create KDebug trigger unless session is idle. Current state: %d
+Cannot create PMI trigger unless session is idle. Current state: %d
+Cannot create Time trigger unless session is idle. Current state: %d
+Failed to %s kdebug callstacks.
+enable
+disable
+Failed to enable kdebug context switch events: %d
+Could not reset kperf (%s).
+Recording with the current configuration is not supported.
+-[DTKPSession start:]
+_kperfBuffer == NULL
+Cannot start session unless it's idle. Current state: %d
+Failed to set the current session
+Could not set the recording priority.
+Could not create live kernel buffer.
+-[DTKPSession start:]_block_invoke
+!_hasPMCs
+Could not configure kdebug settings.
+Could not set session configuration.
+Error enabling kperf sampling: %d
+Could not start kperf logging.
+Cannot pause a session which is not the currently running session
+Cannot pause session session unless it's running. Current state: %d
+Cannot resume a session which is not the currently paused session
+Cannot resume session session unless it's paused. Current state: %d
+Cannot stop a session which is not the currently running session
+Error turning off kperf sampling: %d
+Could not stop Time trigger
+Could not stop PMI trigger
+Could not stop KDebug trigger
+Could not stop kperf logging: %d
+Could not unconfigure kdebug settings
+Cannot stop an idle session. Current state: %d
+-[DTKPSession _releaseKernelResources]
+(self.state == kSessionIdle) || (self.state == kSessionStopping) || (self.state == kSessionStopped) || (self.state == kSessionError)
+-[DTKPSession _getKernelBuffer:bufferSize:more:]
+_kperfBuffer != NULL
+-[DTKPSession _flushDataFromKernelLocked:actualBytesReadOut:]
+buffer == NULL
+lock
+T@"NSObject<OS_dispatch_semaphore>",R,&,N,V_lock
+state
+TI,N,V_state
+currentDatastream
+T@"<DTKPDatastream>",&,N,V_currentDatastream
+onDeckDatastream
+T@"<DTKPDatastream>",&,N,V_onDeckDatastream
+sessionID
+TI,R,N
+collectionMode
+TC,N,V_collectionMode
+recordingPriority
+TC,N,V_recordingPriority
+bufferSize
+TQ,N,V_bufferSize
+callback
+T@?,C,N,V_callback
+KTrace Callback Thread
+com.apple.instruments.server.services.filebrowser
+%@/Info.plist
+simple_executable
+DTFileBrowserEntryType
+DTFileBrowserEntryPath
+DTFileBrowserEntryName
+DTFileBrowserEntryAttributes
+DTFileBrowserEntryPList
+DTFileBrowserEntryIsDirectory
+XRFileSystemException
+-[DTKTraceTapMessageHandler initWithConfig:]
+/Library/Caches/com.apple.xbs/Sources/DVTInstrumentsFrameworks/DVTInstrumentsFrameworks-64531.2/Taps/Ktrace/DTKTraceTapMessageHandler.m
+_datastream
+Failed to add the chunk of data to logging session (%d): %@
+-[DTKTraceTapMessageHandler messageReceived:]
+status == kDTKPSuccess
+nil != _datastream
+A trigger UUID (%@) was configured but doesn't exist in this trace.
+Received a legacy message (%d) when in Session mode.
+launchevent
+com.apple.instruments.server.services.processcontrol
+com.apple.instruments.server.services.processcontrolbydictionary
+DTFetchAtLaunchOptionKey
+com.apple.instruments.server.services.processcontrol.capability.signal
+process death queue
+I/O redirection queue
+DTProcessControlConcreteImplementationRequiredException
+launchSuspendedProcessWithDevicePath:bundleIdentifier:environment:arguments: not implemented in %@; subclass and override.
+DTProcessControlServiceSendSignalException
+Unsupported signal %i
+Failed to send signal %i to process %i: %i
+kern.memorystatus_vm_pressure_send
+DTSpringBoardProcessControlServiceException
+failed to send memory warning to %d
+DTProcessControlOptionsSetEvent
+Event is not an NSDictionary or a DTProcessControlEvent. It is a '%@'.
+Unexpected event type while unpacking an options dictionary: %@
+DTProcessControlSendEventToPid
+DTProcessControlServiceLog
+com.apple.dt.Instruments.server
+Could not create service named %@
+v32@?0@"DTXChannel"8@"NSString"16#24
+v24@?0@"NSString"8^c16
+com.apple.dt.Instruments.inlineCapabilities
+bundle
+DTServerServicesKey
+DTXConnectionException
+Unable to register services in bundle "%@" - bundle could not be loaded: %@
+ServiceClass
+Unable to load class "%@" for service: %@
+ServiceName
+ServiceVersion
+Failed to publish services in bundle '%@': %@
+channelRestrictBlock
+T@?,C,V_channelRestrictBlock
+T@"DTXConnection",R,N,V_connection
+http://127.0.0.1:7808/session/latest/log.dtx
+com.apple.DTInstrumentServer
+Invalid UUID for analysis task.
+com.apple.dt.Instruments.tfpserver
+Unable to register for no-senders notification for vended tfp service.
+Failed to transfer port send right into analysis process: %d
+Failed to get valid task for analysis pid: %d
+com.apple.dt.ultraviolet.service
+register_client_with_singleton
+/Library/Caches/com.apple.xbs/Sources/DVTInstrumentsFrameworks/DVTInstrumentsFrameworks-64531.2/InstrumentsSupport/dtarbiter_xpc_client.m
+version && "null version specified"
+sharedMemAddressInClient && "null shared memory address specified"
+arbiter_register_client
+dtx_shared_memory
+port_integer
+version
+com.apple.dt.instruments.dtarbiter.xpc
+register_daemon
+arbiter_register_daemon
+test_and_clear_singleton_lock_file
+arbiter_test_and_clear_lock_file
+com.apple.dt.Instruments.DTKP.logQueue
+DTKPLogLevel
+DTKP
+Error #%d (%s): %@
+DTConditionInducerService
+Condition Inducer service is not supported on this platform.
+The Condition Inducer service is not available.
+v24@?0@"NSArray"8@"NSError"16
+There was a problem enabling the condition inducer.
+v20@?0c8@"NSError"12
+There was a problem disabling the condition inducer.
+ActiveConditionsWillStop
+ActiveConditionsDidStop
+connectionToService
+T@"NSXPCConnection",&,V_connectionToService
+pidOrRouteID
+Tq,N,V_pidOrRouteID
+interfaceIndex
+TI,N,V_interfaceIndex
+-[DTNetStatTapLocalDelegate initWithConfig:]
+/Library/Caches/com.apple.xbs/Sources/DVTInstrumentsFrameworks/DVTInstrumentsFrameworks-64531.2/Taps/NetworkStatisticsTap/DTNetStatTapLocalDelegate.m
+v32@?0@"NSString"8Q16^c24
+NetStatTap Process Queue
+Route
+-[DTNetStatTapLocalDelegate setTap:]
+-[DTNetStatTapLocalDelegate checkFilterForPID:]
+pid != XRNetworkingNoPid
+Cellular
+Wired
+Wifi
+Loopback
+-[DTNetStatTapLocalDelegate start]_block_invoke
+attr
+attrNum
+-[DTNetStatTapLocalDelegate start]_block_invoke_2
+Unknown %@ attributes: %@.
+uuid
+pmiet
+pmidi
+pmicn
+pmiem
+kdf2
+56594D66-845C-4205-B7D1-A8D7CF32362D
+/Library/Caches/com.apple.xbs/Sources/DVTInstrumentsFrameworks/DVTInstrumentsFrameworks-64531.2/Taps/Ktrace/DTKTraceTapTriggerConfig.m
+self.hasThreadStateFilter = YES is supposed to create an entry in the dictionary
+self.isAllProcesses = NO is supposed to create an entry in the dictionary
+DTKT_ACTION_MAX not a real action
+isAllProcesses
+Tc,N
+hasThreadStateFilter
+Tc,R,N
+eventLimitHint
+T@"NSString",R,&,N
+pmiEventMnemonic
+T@"NSString",&,N
+pmiCounterName
+pmiEventThreshold
+pmiDeviceIndices
+T@"NSArray",&,N
+kdebugFilter
+T@"DTKPKDebugCodeSet",&,N
+callstackFrameDepth
+-[DTActivityTraceTapLocalDelegate initWithConfig:]
+/Library/Caches/com.apple.xbs/Sources/DVTInstrumentsFrameworks/DVTInstrumentsFrameworks-64531.2/Taps/ActivityTracing/DTActivityTraceTapLocalDelegate.m
+Internal error contains no diagnostics
+Predicate supplied to logging system appears invalid. %@.
+-[DTActivityTraceTapLocalDelegate setTap:]
+-[DTActivityTraceTapLocalDelegate start]
+_dock.dockedAgent == _shuttle
+Failed to start recording logging system data.
+Failed to prepare the logging system for recording.
+Failed to stop the logging system recording.
+Internal agent failure.
+Fatal logging system error: %@
+%llu log/signpost messages lost due to high rates in live mode recording. Try windowed recording mode.
+Preparing Stream
+Starting Stream
+Stopping Stream
+Waiting
+Fetching
+nextOutputBytes
+T@"NSData",&,N
+fetchComplete
+Tc,N,GisFetchComplete
+lastMachContinuousTime
+lostEventsSinceLastVisit
+T@"NSError",&,N
+didPrepare
+Tc,N,V_didPrepare
+shouldStart
+Tc,N,V_shouldStart
+didStart
+Tc,N,V_didStart
+shouldStop
+Tc,N,V_shouldStop
+didStop
+Tc,N,V_didStop
+shouldFetch
+Tc,N,V_shouldFetch
+logLoaderMode
+TQ,N,V_logLoaderMode
+fetchWindow
+Td,N,V_fetchWindow
+predicate
+T@"NSPredicate",&,N,V_predicate
+loaderStop
+T@"DTOSLogLoader",&,N,V_loaderStop
+ownersDock
+T@"XRMobileAgentDock",&,N,V_ownersDock
+T@"NSData",&,N,VnextOutputBytes
+Tc,N,GisFetchComplete,VfetchComplete
+TQ,N,VlastMachContinuousTime
+TI,N,VlostEventsSinceLastVisit
+T@"NSError",&,N,VfailureReason
+-[DTTapMessageHandler initWithConfig:]
+/Library/Caches/com.apple.xbs/Sources/DVTInstrumentsFrameworks/DVTInstrumentsFrameworks-64531.2/Taps/DTTapMessageHandler.m
+DTTapRecordingInfo_Timestamp
+v32@?0@8@16^c24
+Unsupported buffer mode enum %d, defaulting to DTTAP_RECORDING_MODE_IMMEDIATE
+pollingInterval
+isDeferredDisplay
+bufferMode
+windowSize
+serviceName
+T@"NSString",C,N,V_serviceName
+serviceVersion
+Tq,N,V_serviceVersion
+T@"NSString",&,N,V_uuid
+filePreservation
+Tc,N,V_filePreservation
+bulkDataReceiver
+T@"<DTTapBulkDataReceiver>",N,V_bulkDataReceiver
+runningMetadataChangedHandler
+T@?,C,N,V_runningMetadataChangedHandler
+statusHandler
+T@?,C,N,V_statusHandler
+recordingInfoHandler
+T@?,C,N,V_recordingInfoHandler
+OSLogEventProvider
+signpostName
+com.apple.instruments.server.services.activitytracetap
+com.apple.instruments.server.services.activitytracetap.deferred
+com.apple.instruments.server.services.activitytracetap.immediate
+com.apple.instruments.server.services.activitytracetap.windowed
+com.apple.instruments.server.services.sysmontap
+com.apple.instruments.server.services.sysmontap.deferred
+com.apple.instruments.server.services.sysmontap.immediate
+com.apple.instruments.server.services.sysmontap.windowed
+com.apple.instruments.server.services.sysmontap.processes
+com.apple.instruments.server.services.sysmontap.system
+com.apple.instruments.server.services.processcontrol.posixspawn
+com.apple.dt.services.capabilities.posix_spawn
+DTPosixSpawnFailureException
+Unable to call posix_spawn with empty path
+Unable to find actual binary to posix_spawn for path: %@
+Unable to set flags via posix_spawnattr_setflags(): flags=0x%016x, error=%d
+posix_spawn failure while launching: %@%@
+Unable to choose architecture %d: %d
+responsibility_spawnattrs_setdisclaim
+Unable to allocate process I/O pipes %d
+/dev/null
+-NSDisableAutomaticTermination
+v20@?0i8i12i16
+DTPosixSpawnProcessControlServiceLog
+restorePort
+/Library/Caches/com.apple.xbs/Sources/DVTInstrumentsFrameworks/DVTInstrumentsFrameworks-64531.2/InstrumentsSupport/XRProcessWatcherExceptionPort.cp
+_oldHandlerCount <= XRHOST_EXCEPTION_COUNT
+WaitForRegistrationMessage_ClientToServer
+/Library/Caches/com.apple.xbs/Sources/DVTInstrumentsFrameworks/DVTInstrumentsFrameworks-64531.2/DTServiceHub/DTServiceHubRegistrationMessages_ClientToServer.m
+outTransportSharedMemoryInClient && "null outTransportSharedMemoryInClient"
+outAuthorization && "null outAuthorization"
+v28@?0^v8Q16I24
+securityd
+DTKPDatastreamFile
+Error importing data.
+Could not close datastream file at '%@': %s
+Could not write to an already completed stream '%@'
+Cannot modify a stream already in an error state '%@'
+ArgumentValidation
+Invalid argument, %s is %s.
+buffer
+NULL
+Could not create directory '%@': %s
+Could not create file '%@': %s
+-[DTKPDatastreamFile importRawData:bufferSize:error:destructor:]
+/Library/Caches/com.apple.xbs/Sources/DVTInstrumentsFrameworks/DVTInstrumentsFrameworks-64531.2/DTKPerfInterface/DTKPDatastreamFile.m
+_wrFD != -1
+Could not write %zu bytes to file '%@': %s
+Writing to a read-only stream '%@' is prohibited.
+Cannot write to a stream '%@' that was already marked completed.
+Cannot modify a stream already in an error state
+Cannot read from an active stream '%@'
+-[DTKPDatastreamFile exportRawDataWithError:block:]
+_wrFD == -1
+ Final chunk.
+Could not read from file '%@': %s
+Failed to allocate a buffer to read from '%@'
+Could not open the file for reading '%@': %s
+Cannot export from a stream that has already exported its data.
+Cannot peek at an active stream '%@'
+Cannot peek at a stream that has already exported its data.
+Cannot peek at a stream already in an error state
+datastream_%08d
+DTTap_Option_MessageArchiveFileURL
+com.apple.instruments.server.services.coreprofilesessiontap
+com.apple.instruments.server.services.dtracetap
+com.apple.instruments.server.services.networkstatisticstap
+-[DTTapFactory createNewTapWithConfig:connection:options:]
+/Library/Caches/com.apple.xbs/Sources/DVTInstrumentsFrameworks/DVTInstrumentsFrameworks-64531.2/Taps/DTTapFactory.m
+messageHandler == nil
+LeakedGraphOnly
+DeferAsGraphToken
+LeakedCount
+CompressionOption
+SerializedGraph
+GraphToken
+Ti,N,V_fd
+size
+TQ,N,V_size
+token
+TQ,N,V_token
+metaDict
+T@"NSDictionary",C,N,V_metaDict
+com.apple.instruments.server.services.remoteleaks
+com.apple.instruments.server.services.remoteleaks.immediate
+com.apple.instruments.server.services.remoteleaks.deferred
+Leaks service helper queue
+Leaks service file preservation queue
+DTLeaksServiceNoPidException
+No pid was provided to DTLeaksService for leaks analysis
+DTLeaksService
+an unknown error occurred launching the helper task
+%d.%d.memgraph
+no preserved graph could be found for token: %#llx
+preserved graph token already invalidated by later request: %#llx
+unable to mmap preserved graph for token: %#llx
+v24@?0^v8Q16
+invalid target specified (%llx)
+v24@?0@"<NSSecureCoding><NSObject>"8@"NSError"16
+v32@?0@"NSNumber"8@"NSNumber"16^c24
+LeakAgent
+Unable to locate resource: 'LeakAgent'
+Unable to acquire required task port (%d:%d)
+TQ,N,V_tid
+userStack
+T^v,N,V_userStack
+userStackSize
+TQ,N,V_userStackSize
+kernelStack
+T^v,N,V_kernelStack
+kernelStackSize
+TQ,N,V_kernelStackSize
+T@"NSString",R,C,N
+T@"NSDictionary",R,C,N
+-[DTTapRemote initWithConfig:memoHandler:messageHandler:connection:]
+/Library/Caches/com.apple.xbs/Sources/DVTInstrumentsFrameworks/DVTInstrumentsFrameworks-64531.2/Taps/DTTapRemote.m
+messageHandler != nil
+DTTapRemote unprocessed message queue
+messageHandler
+T@"DTTapMessageHandler",R,&,N,V_messageHandler
+-[DTTapLocal initWithConfig:memoHandler:delegate:]
+/Library/Caches/com.apple.xbs/Sources/DVTInstrumentsFrameworks/DVTInstrumentsFrameworks-64531.2/Taps/DTTapLocal.m
+I12@?0i8
+-[DTTapLocal setTaskForPidBlock:]
+nil != block
+-[DTTapLocal _start]
+_nextTaskForPid != nil
+Seems like the timer is still running
+-[DTTapLocal _fetchDataForReason:]_block_invoke
+lastMemoForThisFetch
+memoCount == 0
+!sawLastMemo
+v20@?0@"DTTapMemo"8c16
+-[DTTapLocal _fetchDataForReason:]
+sawLastMemo
+T@"<DTTapLocalDelegate>",R,&,V_delegate
+Tq,R,N,V_serialNumber
+lastStats
+T@"XRNetworkingServiceObservationTuple",&,N,V_lastStats
+The %@ class cannot be initialized by calling -init.
+-[DTTap init]
+/Library/Caches/com.apple.xbs/Sources/DVTInstrumentsFrameworks/DVTInstrumentsFrameworks-64531.2/Taps/DTTap.m
+-[DTTap initWithConfig:memoHandler:]
+com.apple.dt.tap
+Trying to start an already running DTTap. Ignoring.
+Trying to start a DTTap without first setting a configuration. Ignoring.
+Cannot read from a running tap while archiving to disk.
+-[DTTap _start]
+-[DTTap _stop]
+-[DTTap _pause]
+-[DTTap _unpause]
+-[DTTap _fetchDataForReason:]
+tapID
+TI,R,N,V_tapID
+serialQueue
+T@"NSObject<OS_dispatch_queue>",R,&,N,V_serialQueue
+memoHandler
+T@"DTTapMemoHandler",R,&,N,V_memoHandler
+isRunning
+Tc,N,V_isRunning
+/Library/Caches/com.apple.xbs/Sources/DVTInstrumentsFrameworks/DVTInstrumentsFrameworks-64531.2/Assets/DTAssetRequest.m
+assetPath
+T@"NSString",R,N,V_identifier
+T@"NSString",R,N,V_assetPath
+T@"DTXMessage",R,N
+data
+completed
+<DTAssetResponse:%@ dataLength=%lu completed:%s>
+T@"NSData",R,N,V_data
+Tc,R,N,GisCompleted,V_completed
+TI,R,N,V_pid
+maxStackDepth
+TI,R,N,V_maxStackDepth
+numFrames
+TQ,R,N,V_numFrames
+stackFrames
+T^Q,R,N,V_stackFrames
+/Library/Caches/com.apple.xbs/Sources/DVTInstrumentsFrameworks/DVTInstrumentsFrameworks-64531.2/Taps/DTrace/DTDTraceTapRecordDecoder.m
+Allocation failure
+No value for _maxStackDepth
+Parsed backwards in unformatted DTrace data
+Bad stack delimiter from scanForStackDelimiter
+Stack trace read past end of buffer.
+Read too much data for buffer
+Parsed DTrace past end of buffer
+Bad value for bytesInReadBuffer
+Bad value from scanForEventDelimiter
+Strack trace read past end of event
+Kernel stack trace read past end of event
+Event end delimiter found past end of buffer
+fileURL
+T@"NSURL",R,&,N,V_fileURL
+local_override
+DTKPCPU
+Error getting CPU database name local machine (%d).
+Error creating CPU database for local machine (%d).
+Error creating CPU database for '%@' (%d).
+Error creating CPU database from serialized data for '%@' (%d).
+local
+iPad4
+iPhone6
+iPad5
+iPhone7
+iPod7
+iPad6
+iPhone8
+serialized
+%@ CPU with %ld events
+%@ (%@) CPU with %ld events
+-[DTKPCPU initWithName:database:]
+/Library/Caches/com.apple.xbs/Sources/DVTInstrumentsFrameworks/DVTInstrumentsFrameworks-64531.2/DTKPerfInterface/DTKPCPU.m
+db != NULL
+c32@?0@"DTKPCPUEvent"8Q16^c24
+q24@?0@"DTKPCPUEvent"8@"DTKPCPUEvent"16
+Error allocating memory to hold CPU events.
+Error fetching events count from counters database.
+v32@?0@"DTKPCPUEvent"8Q16^c24
+self
+Error serializing CPU database for '%@' (%d).
+events
+T@"NSMutableArray",&,N,V_events
+T@"NSString",R,&,N,V_name
+hw.cpufamily
+cpu_%x_%x_%x
+procFlags
+procStatus
+procXstatus
+ppid
+ruid
+rgid
+svuid
+svgid
+comm
+nfiles
+pgid
+pjobc
+tdev
+tpgid
+nice
+memVirtualSize
+memResidentSize
+cpuTotalUser
+cpuTotalSystem
+threadsUser
+threadsSystem
+policy
+faults
+vmPageIns
+cowFaults
+msgSent
+msgRecv
+sysCallsMach
+sysCallsUnix
+ctxSwitch
+threadCount
+numRunning
+priority
+wqNumThreads
+wqRunThreads
+wqBlockedThreads
+wqState
+intWakeups
+platIdleWakeups
+timerWakeBin1
+timerWakeBin2
+machPortCount
+powerScore
+memRPrvt
+memRShrd
+responsiblePID
+appSleep
+latencyQosTier
+throughputQosTier
+memPurgeable
+totalEnergyScore
+procAge
+avgPowerScore
+startAbsTime
+wiredSize
+physFootprint
+memAnon
+memAnonPeak
+uniqueID
+parentUniqueID
+responsibleUniqueID
+diskBytesRead
+diskBytesWritten
+memCompressed
+coalitionID
+__arch
+__restricted
+__sandbox
+__suddenTerm
+vmFreeCount
+vmActiveCount
+vmInactiveCount
+vmWireCount
+vmZeroFillCount
+vmReactivations
+vmPageOuts
+vmFaults
+vmCowFaults
+vmLookups
+vmHits
+vmPurges
+vmPurgeableCount
+vmSpeculativeCount
+vmDecompressions
+vmCompressions
+vmSwapIns
+vmSwapOuts
+vmCompressorPageCount
+vmThrottledCount
+diskReadOps
+diskWriteOps
+netPacketsIn
+netBytesIn
+netPacketsOut
+netBytesOut
+vmExtPageCount
+vmIntPageCount
+vmTotalUncompPagesInComp
+physMemSize
+vmSize
+vmUsedCount
+__vmSwapUsage
+tasksStarted
+tasksExited
+timeNonEmpty
+cpuTime
+bytesRead
+bytesWritten
+launchdJobName
+bundleID
+onlySignposts
+signpostsAndLogs
+trackExpiredPIDs
+excludeInfo
+excludeDebug
+predicateString
+T@"NSString",C,N
+T@?,C,N,V_memoHandler
+lastMachContinuousTimeSeen
+TQ,N,V_lastMachContinuousTimeSeen
+ExternalSettings.plist
+InternalSettings.plist
+InternalSettings_iOS.plist
+AppleInternal.plist
+Cannot configure XRInternalizedSettingsStore after it's already been configured/used.
+com.apple.dt.instruments.DVTInstrumentsFoundation
+../..
+Developer/AppleInternal/Library/Instruments
+Applications/Instruments.app/Contents/Resources
+Instruments Frameworks
+Cannot find path for DVTInstrumentsFoundation
+Cannot find the bundle for DVTInstrumentsFoundation
+XrayInternalSettingsPath
+Failed to use internal settings override path: %@
+DTScreenshotRequestService
+Unknown error.
+Screenshot service not supported on this platform.
+com.apple.dt.DTScreenshotService
+v24@?0@"NSData"8@"NSError"16
+hw.cpu64bit_capable
+dontcare
+rxPackets
+rxBytes
+txPackets
+txBytes
+rxDupeBytes
+oooBytes
+txReTx
+connectAttempt
+connectSuccess
+minRTT
+avgRTT
+varRTT
+rxCellularBytes
+txCellularBytes
+rxWifiBytes
+txWifiBytes
+rxWiredBytes
+txWiredBytes
+remote
+interface
+upid
+rcvBufSize
+rcvBufUsed
+trafficClass
+trafficMgtFlags
+epid
+eupid
+sndBufSize
+sndBufUsed
+tcpTxUnacked
+tcpTxWindow
+tcpTxCongWindow
+tcpState
+tcpCCAlgo
+probeActivated
+connProbeFailed
+readProbeFailed
+writeProbeFailed
+__ifType
+ifIsExpensive
+isAWDL
+isAWD
+routeParentID
+routeGatewayID
+routeDestination
+routeMask
+routeGateway
+routeFlags
+ODR: Request %s sent %llu bytes
+ODR: Got a message we're not sure how to handle: %s
+Transfer-Encoding
+chunked
+Error retrieving requested asset: %@
+ODR: Received GET request %s for asset pack %s. Requesting from Xcode.
+HEAD
+ODR: Received HEAD request for asset pack. Sending default 200 response.
+This server does not handle %@ requests.
+DTAssetHTTPRequestHandler
+ODR: Socket %s disconnected with error: %s
+ODR: Socket %s disconnected without error.
+completion
+T@?,C,V_completion
+sentHeader
+Tc,V_sentHeader
+dataSent
+TQ,V_dataSent
+T@"NSString",R,V_identifier
+TQ,R,N,V_timestamp
+filePositionEnd
+Tq,R,N,V_filePositionEnd
+TI,R,N,V_code
+T@"NSURL",&,N,V_fileURL
+firstFilePosition
+Tq,N,V_firstFilePosition
+fragments
+T@"NSArray",&,N,V_fragments
+-[DTDTraceTapMemoHandlerDelegate sendDataMemo:toBulkReceiver:]
+/Library/Caches/com.apple.xbs/Sources/DVTInstrumentsFrameworks/DVTInstrumentsFrameworks-64531.2/Taps/DTrace/DTDTraceTapMemoHandlerDelegate.m
+_readFD != -1
+v32@?0@"DTraceMemoFragment"8Q16^c24
+-[DTDTraceTapMemoHandlerDelegate peekAtMemo:]
+XRRunAsAppleInternal
+IsAppleInternal
+v32@?0@"NSNumber"8@16^c24
+trace
+kpep
+unknown
+com.apple.dt.Instruments/device_cache
+/tmp/instruments_device_cache
+%@.%@
+Failed to create the DTKP cache path at: %@.
+Tr^v,N,V_buffer
+destructor
+T@?,C,N,V_destructor
+DTKPDatastreamMemory
+Could not write to an already completed stream
+Cannot write to a stream that was already marked completed.
+Cannot read from an active stream
+Cannot peek at an active stream
+serviceIdentifier
+T@"NSString",C,N,V_serviceIdentifier
+oneshotHandler
+T@?,C,N,V_oneshotHandler
+client
+T@,&,N,V_client
+pkHandle
+T@,&,N,V_pkHandle
+xpcObject
+T@"NSObject<OS_xpc_object>",&,N,V_xpcObject
+XPCServiceController guard
+XPCServiceController exec monitor
+Label
+Program
+ProgramArguments
+DTXPCServiceController
+Failed to load plist for launchd job with path: %@
+XPC service is restricted: %@
+c28@?0@"NSString"8i16@20
+XPC service name %@ already under observation for pid: %d
+Unable to create xpc registration object.
+v36@?0@"NSString"8i16i20i24@"NSError"28
+v28@?0i8r*12I20I24
+non-
+v32@?0@"NSString"8@"NSObject"16^c24
+Service exited before exec %d '%@'. 
+attempted to attach to an existing process (pid=%d) for XPC service '%@' using DTXPCServiceController - should use generic attach instead
+StartJob
+v24@?0@"NSSet"8@"NSError"16
+v16@?0@"DTXPCRegistration"8
+v28@?0r*8i16i20i24
+Unable to use privileged helper to register for xpc-based launch: %s (parent: %d)
+Unable to register for xpc-based launch: %s (parent: %d)
+v32@?0@"NSNumber"8@"NSMutableArray"16^c24
+XPC Service observer canceled or superceded.
+v32@?0@"DTXPCRegistration"8Q16^c24
+DTXPCServiceControllerLog
+com.apple.instruments.server.services.device.xpccontrol
+Invalid bundle identifier
+DTXPCControlServiceLog
+com.apple.instruments.server.services.objectalloc
+com.apple.instruments.server.services.objectalloc.immediate
+com.apple.instruments.server.services.objectalloc.deferred
+com.apple.instruments.server.services.objectalloc.zombies
+v20@?0r^v8I16
+-[%@ %s]: %@
+DontRemoveMemoryLimits
+caught exception while attempting to remove a process assertion for pid %d: %@
+v32@?0@?<v@?>8Q16^c24
+blocks
+T@"NSArray",R,V_blocks
+Ti,R,V_pid
+DTAssertionManager
+v32@?0@"<DTAssertionFactory>"8Q16^c24
+v32@?0@8@"DTAssertionPidInfo"16^c24
+DTAssertionManagerLog
+Q24@?0r*8r*16
+mach_task_self
+mach_thread_self
+mach_port_allocate
+mach_port_deallocate
+mach_msg
+thread_terminate
+__syscall_logger
+pthread_create
+pthread_create_from_mach_thread
+pthread_detach
+pthread_self
+dlopen
+dlsym
+dlerror
+sandbox_extension_consume
+RemoteInjectionAgent
+/Library/Caches/com.apple.xbs/Sources/DVTInstrumentsFrameworks/DVTInstrumentsFrameworks-64531.2/RemoteInjection/RemoteBundleLoader.m
+RemoteBundleLoader not intended for targeting calling process - use dlopen() instead
+Unable to locate RemoteInjectionAgent; built products likely corrupt
+RemoteBundleLoader symbol lookup queue
+RemoteBundleLoader injection queue
+RemoteBundleLoaderError
+No dylib found at path: %@
+No function specified
+file-read-data
+Unable to load library due to target sandbox.
+Unable to audit target sandbox: %d. Target task (pid: %d) is invalid.
+Unable to audit target sandbox: %d
+Unable to launch RemoteInjectionAgent
+Failed to load library %@ because target process appears to have exited
+Failed to load library %@ due to missing bootstrapping symbols
+RemoteInjectionAgent terminated unexpectedly
+Failed to schedule loader thread in target.
+<any>
+libsystem_kernel.dylib
+libsystem_pthread.dylib
+libdyld.dylib
+dyld_sim
+dyld
+libsystem_sandbox.dylib
+com.apple.dt.DTAssetResponseBroker
+ODR: Got message not meant for any active handler: %s
+Registered new request handler. Current requests: %s
+Unregistered a request handler. Current requests: %s
+activeHandlers
+T@"NSMutableDictionary",&,N,V_activeHandlers
+activeHandlersQueue
+T@"NSObject<OS_dispatch_queue>",&,N,V_activeHandlersQueue
+KillExisting
+RequestingPid
+StartSuspendedKey
+iODestinationKey
+OnceOnly
+architectureType
+XRDeviceFileChooserWorkingDirectory
+EnableExtension
+DisableMemoryLimits
+DisableWatchdogAssertion
+DisableBacklightAssertion
+DisableTALAutomaticTermination
+InheritLauncherEnvironmentVariables
+ActivateSuspended
+PCEventType
+ShowMessagesExtension
+ShowNotificationCenter
+BackgroundFetchEvent
+MemoryEvent
+PressHomeButton
+TriggerSiri
+SimulateNotification
+SnapshotUI
+MetricPayloadsExample
+WidgetIdentifier
+BundleIdentifier
+NotificationPayload
+SiriRequestPayload
+IDEDebugLogging
+IDEWatchLaunchMode
+IDEWatchLaunchMode-Glance
+IDEWatchLaunchMode-Notification
+IDEWatchLaunchMode-Complication
+IDEWatchNotificationPayload
+IDEWatchLaunchNotificationType-Static
+IDEWatchLaunchEnvironment
+IDEWatchLaunchArguments
+IDEWatchExeptionProcessAssertionDisabled
+bsoc
+Received a recording session without a trigger ID map
+Error enumerating records in datastream (%d)
+Error enumerating records in session (%p) (%d)
+Error flushing records from decoder (%d)
+session
+T^v,N,V_session
+T@"DTKPRecordDecoder",&,N,V_recordDecoder
+triggerIDsToIndicesArray
+Tr^I,N,V_triggerIDsToIndicesArray
+kdebugTriggerIndex
+TI,N,V_kdebugTriggerIndex
+finalEnumerator
+Tc,N,V_finalEnumerator
+trustTriggerID
+Tc,N,V_trustTriggerID
+DTCoreProfileTapMessage
+Unsupported recording priority %d, defaulting to background priority
+-[DTKTraceTapConfig _addTriggerConfig:withRecordHandler:]
+/Library/Caches/com.apple.xbs/Sources/DVTInstrumentsFrameworks/DVTInstrumentsFrameworks-64531.2/Taps/Ktrace/DTKTraceTapConfig.m
+_kdebugTriggerIndex == ~0x0
+TC,N
+spoolToDiskWhenPossible
+Tc,N,V_spoolToDiskWhenPossible
+bufferSizeOverride
+bufferSizeOverrideClamping
+recordHandlers
+T@"NSMutableArray",&,N,V_recordHandlers
+hasAtLeastOneRecordHandler
+Tc,R,N,V_hasAtLeastOneRecordHandler
+enumerator
+T@"DTKPSessionRecordEnumerator",&,N,V_enumerator
+memo
+T@"DTTapMemo",&,N,V_memo
+Failed to get task for pid %d: %x
+Invalid task port provided: %x
+Attach to %d: Failed to transfer mach rights: %d.
+Unable to create a RemoteBundleLoader; target is already invalid
+v16@?0@"NSError"8
+Target process %d exited prematurely, likely crashed
+Attach to %d: Failed to create transport
+com.apple.dt.ProcessAttachUtilities
+com.apple.instruments.server.services.coreprofilesessiontap.multipleTimeTriggers
+com.apple.instruments.server.services.coreprofilesessiontap.deferred
+com.apple.instruments.server.services.coreprofilesessiontap.immediate
+com.apple.instruments.server.services.coreprofilesessiontap.windowed
+com.apple.instruments.server.services.coreprofilesessiontap.pmc
+com.apple.instruments.server.services.coreprofilesessiontap.pmi
+DTKTraceTapServiceDelegate was unable to secure the necessary kernel recording resources for pid %d (%d).
+DTKTraceTapServiceDelegate was unable to release the kernel recording resources for pid %d (%d).
+kpepEvent
+T^{kpep_event=},N,V_kpepEvent
+parent
+T@"DTKPCPUCounterAllocatorRecord",W,N,V_parent
+child
+T@"DTKPCPUCounterAllocatorRecord",W,N,V_child
+eventName
+T@"NSString",&,N,V_eventName
+eventOrAliasName
+T@"NSString",&,N,V_eventOrAliasName
+counterName
+T@"NSString",&,N,V_counterName
+isPMI
+Tc,N,V_isPMI
+-[DTKPCPUCounterAllocator initWithCPU:error:]
+/Library/Caches/com.apple.xbs/Sources/DVTInstrumentsFrameworks/DVTInstrumentsFrameworks-64531.2/DTKPerfInterface/DTKPCPUCounterAllocator.m
+cpu != NULL
+DTKPCPUCounterAllocator
+Failed to create a kpep config for %@: %d
+Failed to force on all counters for %@: %d
+Failed to get fixed counter count for %@: %d
+Failed to get configurable counter count for %@: %d
+v32@?0@"DTKPCPUCounterAllocatorRecord"8Q16^c24
+-[DTKPCPUCounterAllocator _counterClassForEventIndex:error:]
+eventIndex < _eventRecords.count
+_eventRecords[eventIndex].parent == nil
+Failed to access kpc_map: %d
+Failed to access kpc_classes: %d
+Unexpected set of kpc_classes: 0x%x
+-[DTKPCPUCounterAllocator _counterIndexForEventIndex:absolute:error:]
+PMC<X>
+PMC%zu
+Cannot changed the allocated PMI event from '%@' to '%@'
+Cannot add a PMI mevent matching a previously added PMC event: '%@'
+-[DTKPCPUCounterAllocator setPMIEventName:pmiThreshold:error:]
+rc == KPEP_ERR_NONE
+Error trying to set PMI event named '%@'
+The PMI event '%@' conflicts with previously added PMC events.
+The PMI event '%@' requires power counters that are not enabled.
+The PMI event '%@' is unavailable to be added.
+Unexpected error trying to set the PMI event '%@'.
+There is no event named '%@'.
+An unknown error occurred trying to set the PMI event named '%@'.
+Error trying to add event named '%@'
+The event '%@' conflicts with previously added events.
+The event '%@' requires power counters that are not enabled.
+The event '%@' is unavailable to be added.
+Unexpected error trying to add the event '%@'.
+-[DTKPCPUCounterAllocator addPMCEventName:error:]
+An unknown error occurred trying to add the event named '%@'.
+The event named '%@' has already been added.
+Error removing an event from the kpep config: %d
+Error recording config words into buffer (%zu): %@
+Failed to set kpc config: %d.
+Failed to access kpc config.
+c32@?0@"DTKPCPUCounterAllocatorRecord"8Q16^c24
+-[DTKPCPUCounterAllocator configureHardwarePMIPeriods:]
+pmiIndex != NSNotFound
+Failed to set kpc PMI period: %d.
+-[DTKPCPUCounterAllocator configurePMIActionID:error:]
+Failed to start kpc counting: %d.
+Failed to stop kpc counting: %d.
+T@"DTKPCPU",R,&,N,V_cpu
+allocatedPMIRecord
+T@"DTKPCPUCounterAllocatorRecord",R,&,N
+pmiEnabled
+pmiThreshold
+DTServiceHubClientLog
+DTServiceHubClient
+DTServiceHub
+com.apple.private.SimulatedPid
+Invalid simulator connection provided.
+'localConnectionWithAuthorization:returningServerPid:error:' failed but didn't provide an error.
+Connection to Simulator service hub (%d) interrupted. Simulator service hub %@ still alive.
+IS NOT
+blessSimulatorHub failed. Simulator service hub (%d) %@ still alive.
+blessSimulatorHub failed. Response received but no port or error returned. Simulator service hub (%d) %@ still alive.
+Handshake process failed. Did not recieve valid ports for server (%d) or self (%d).
+Failed to create shared memory transport for client pid %d.
+Failed to send registration message to server for client pid %d.
+Failed to create transport with shared memory (local address: %p)
+SUCCESS
+FAILURE
+Failed to establish connection with DTServiceHub service '%s'
+nextRecord
+T@"_DTKPPendingRecord",&,N,V_nextRecord
+latestRecord
+T@"_DTKPPendingRecord",N,V_latestRecord
+v28@?0r^v8Q16c24
+-[DTKPRecordDecoder applyCallstackEvent:withBlock:]
+/Library/Caches/com.apple.xbs/Sources/DVTInstrumentsFrameworks/DVTInstrumentsFrameworks-64531.2/DTKPerfInterface/DTKPRecordDecoder.mm
+kprec->ustack.nframes <= 1000
+v32@?0@"_DTKPPendingRecord"8Q16^c24
+-[DTKPRecordDecoder _decodeConfig:]
+!_configSeen
+-[DTKPRecordDecoder _handleRecord:withBlock:]
+pendingTid != 0
+com.apple.dt.instruments.recordEnumerator
+v16@?0^{kpdecode_record=QQQi{?=[20c]}{?=I[4Q]}{?=iiQ}{kpdecode_callstack=II[128Q]}{kpdecode_callstack=II[128Q]}{kpdecode_pmc=i[32Q]}{?=IIII}{?=IQQQQ}{?=QQIssb3b3b3b3}{?=QiiQQ}{?=QQsC}{?=Q}{?=II}{?=Qi}{?=i^Q}{?=Q}{?=Ii}{?=[256c]QQI}{?=QQQQ}{?=QQ}{?=b3b3b3}}8
+v16@?0^{trace_point=QQQQQQII{timeval=qi}**i}8
+v32@?0@"NSNumber"8@"DTKPTailSpinLPETSample"16^c24
+%llu
+%lld) Timestamp: %lld
+(Straggler)
+TID: 0x%llx
+CPU: %d
+Sample: TriggerID: %d ActionID %d
+ThreadInfo: PID: %d TID: 0x%llx ThreadState: 0x%x DispatchQ: %lld
+KEvent%s: 0x%x (%d,%d,%d,%d) Args: 0x%llx 0x%llx 0x%llx 0x%llx 0x%llx
+ (internal)
+KernelCallstack: FrameCount: %d ExtraDataCount: %d
+0x%016llx
+0x%016llx
+UserCallstack: FrameCount: %d ExtraDataCount: %d
+CONFIG HEADER
+ContextSwitch: PID: %d TID: %lld
+Summary:
+Buffers) Count: %lld  Size: %lldB
+Records) Decoded: %lld  Internal: %lld  Time Filtered Out: %lld  Event Pool Depth: %lld
+eventHorizon
+TQ,R,N,V_eventHorizon
+tidToPid
+T@"NSDictionary",&,N,V_tidToPid
+decodeKPerfFromSession
+Tc,V_decodeKPerfFromSession
+decodeKTraceFromSession
+Tc,V_decodeKTraceFromSession
+tailspinLPET
+T@"NSDictionary",&,N,V_tailspinLPET
+_addCountersToRecord
+pmcCount <= 32
+hwIndex < 32
+com.apple.dt.instruments.ktrace.localeventproducer
+-[DTTapMessageHandlerArchiver initWithConfig:archiveURL:]
+/Library/Caches/com.apple.xbs/Sources/DVTInstrumentsFrameworks/DVTInstrumentsFrameworks-64531.2/Taps/DTTapMessageHandlerArchiver.m
+archiveURL
+An unexpected error occurred with the message handler archiving connection helper.
+VMUClassInfoMap
+VMUClassInfo
+unrecognized dataCode: %d. (%@)
+tried to add class names without a leak count (%@)
+GeneralBlock-
+< unknown >
+tried to add data contents without a leak count (%@)
+malformed data received by %@
+Insufficient task_for_pid privileges
+Error suspending target
+Failure while acquiring malloc pointers
+Error while attempting to identify leaks
+Error resuming target
+Unknown error %d occurred
+com.apple.Instruments.LeakAnalyzer
+v44@?0I8{?=Qb60b4@}12^c36
+v36@?0I8Q12I20I24Q28
+com.apple.instruments.server.services.dtracetap.deferred
+com.apple.instruments.server.services.dtracetap.immediate
+Couldn't set DTrace Tap archiving URL to %@: %@
+/tmp
+dtrace_tap_XXXXXXX
+dtst
+dtpid
+dtpp
+dtmsd
+TQ,N,V_type
+eventText
+Tr*,N,V_eventText
+eventTextLength
+TQ,N,V_eventTextLength
+userStackFrames
+Tr^Q,N,V_userStackFrames
+numUserFrames
+TQ,N,V_numUserFrames
+kernelStackFrames
+Tr^Q,N,V_kernelStackFrames
+numKernelFrames
+TQ,N,V_numKernelFrames
+consoleMessage
+T@"NSString",&,N,V_consoleMessage
+T@"DTDTraceTapRecordDecoder",&,N,V_recordDecoder
+T@"DTDTraceTapMemo",&,N,V_memo
+dtdtrace.data
+targetPid
+scriptTextByIdentifier
+T@"NSDictionary",&,N
+preprocessorPath
+Tr^{AuthorizationOpaqueRef=},N,V_authorization
+DTKPDatastreamFileOverlay
+File does not exist '%@': %s
+-[DTKPDatastreamFileOverlay exportRawDataWithError:block:]
+/Library/Caches/com.apple.xbs/Sources/DVTInstrumentsFrameworks/DVTInstrumentsFrameworks-64531.2/DTKPerfInterface/DTKPDatastreamFileOverlay.m
+_startingOffset < fileSize
+_endingOffset <= fileSize
+Failed to seek overlay datastream: %d
+Failed to seek to correct offset in overlay datastream: %lld != %lld
+-[DTKPDatastreamFileOverlay peekAtRawDataWithError:block:]
+KDebugCodeSet:
+ {*,*}
+ {*,%d}
+ {%d,*}
+ {%d,%d}
+<events>
+<event type="KDebug" class="*" subclass="*" code="*"/>
+<event type="KDebug" class="*" subclass="%d" code="*"/>
+<event type="KDebug" class="%d" subclass="*" code="*"/>
+<event type="KDebug" class="%d" subclass="%d" code="*"/>
+</events>
+kdebugCodes
+T@"NSMutableSet",R,&,N,V_kdebugCodes
+kdebugCode
+T(?=I{?=b2b14b8b8}),R,N,V_kdebugCode
+osx_%@_trace
+ios_%@_trace
+ios_9.0_trace
++[DTKPKDebugCodes legacyTraceCodesURLForOS:productVersion:]
+/Library/Caches/com.apple.xbs/Sources/DVTInstrumentsFrameworks/DVTInstrumentsFrameworks-64531.2/DTKPerfInterface/DTKPKDebugCodes.m
+codes
+v24@?0@"DTKPKDebugCodeWithName"8^c16
+allKDebugCodes
+T@"NSSet",R,&,N,V_allKDebugCodes
+%31s %255s
+DTKPKDebugCode
+Could not convert kdebug code string '%s' into a number.
+Could not parse a kdebug code line: %s
+dtrace_run_script
+/Library/Caches/com.apple.xbs/Sources/DVTInstrumentsFrameworks/DVTInstrumentsFrameworks-64531.2/InstrumentsSupport/dtdtrace_xpc_client.c
+script_path_list && (num_script_paths > 0) && output_path
+run_dtrace_script
+script_text_list
+preprocessor_path
+output_path
+allow_zero_probes
+use_mach_timestamps
+pids_array
+com.apple.dt.instruments.dtdtrace.xpc
+invalid connection with dtrace server
+report_dtrace_status
+status_message
+is_fatal_error
+report_consume_buffers
+offset
+Allocations processing queue
+Allocations send queue
+OAKeepAllocationStatistics
+OAWaitForSetupByPid
+0x%x
+OAAllocationStatisticsOutputMask
+NSZombieEnabled
+liboainject
+MallocStackLogging
+MallocStackLoggingNoCompact
+Unable to configure target process for recording
+Instruments could not acquire the necessary privileges to profile the target application.
+Unable to determine pid for task
+CoreFoundation
+Attaching requires that CoreFoundation.framework is in use by the target.
+Couldn't map shared memory into target process
+_OAAttachAndInitialize
+%#llx
+Unable to instantiate loader for target.
+liboainject.dylib
+__OASharedMemoryAddress
+Allocations tracking library was not loaded in time.
+Allocations recording already in process.
+-[DTAllocationsRecorder _startWithError:]_block_invoke
+/Library/Caches/com.apple.xbs/Sources/DVTInstrumentsFrameworks/DVTInstrumentsFrameworks-64531.2/DTAllocationsRecorder.mm
+_partialFilled <= sizeof(OAAllocationEvent)
+Fatal: partial event too large (%d), stream malformed.
+_partialFilled <= MAX_ALLOCATION_EVENT_SIZE
+Fatal: whole event too large (%d), stream malformed.
+v40@?0{mach_stack_logging_record=IQQQ}8
+v28@?0r^v8I16^B20
+eventHandler
+T@?,C,N,V_eventHandler
+bufferHandler
+T@?,C,N,V_bufferHandler
+readStackLogsUponAttach
+Tc,N,V_readStackLogsUponAttach
+sharedMemorySize
+TI,N,V_sharedMemorySize
+eventCount
+Ti,R
+XRObjectAllocDomain
+triggerMetadata
+T@"NSDictionary",C,N
+sessionMetadata
+triggerIndex
+logicalProcessorCore
+recordCount
+unused shared library
+VMStateVersion
+VMStateMachAbsolute
+VMStateRegions
+VMStateTotalSize
+VMStateSharedStart
+VMStateSharedLength
+VMStateAnnotationCount
+VMStateAnnotationRegionsKeys
+VMSTateAnnotations
+XRVMState
+Regions: %@
+Object_id=%x
+__LINKEDIT
+dyld_shared_cache
+unknown thread
+thread %qx
+unable to obtain thread identifier info for thread port: %d (region:
+-[DTKPRecord _resetAndPopulateFieldsWithEvent:]
+/Library/Caches/com.apple.xbs/Sources/DVTInstrumentsFrameworks/DVTInstrumentsFrameworks-64531.2/DTKPerfInterface/DTKPRecord.m
+kpdecode_rec_is_timestamp(kprec)
+kpdecode_rec_is_tid(kprec)
+kpdecode_rec_is_cpuno(kprec)
+kprec->kstack.nframes <= 1000
+-[DTKPRecord _assignUserCallstackWithEvent:]
+-[DTKPRecord _setCounterValues:count:]
+count > 0 && counterEventValues
+Type: 0x%x Time: %lld CPU: %d PID/TID: (%d, 0x%llx) User Frames: %d Kernel Frames: %d
+  Type: 0x%x
+    Time: %lld
+    CPU: %d
+    PID/TID: (%d, 0x%llx)
+    User Frames: (%d, %d)
+        0x%llx
+        0x%llx (*)
+    Supervisor Frames: (%d, %d)
+    KDebug Event: 0x%x (%d, %d, %d, %d)
+        Arg%d: 0x%llx
+    KDebug String ID: %lld => "%@"
+    Counter Values:
+        %lld
+TI,R,N,V_recordType
+triggerID
+TI,R,N,V_triggerID
+cpuNumber
+TI,R,N,V_cpuNumber
+TQ,R,N,V_tid
+threadState
+TI,R,N,V_threadState
+dispatchQueue
+TQ,R,N,V_dispatchQueue
+supervisorFrameCount
+TI,R,N,V_supervisorFrameCount
+supervisorExtraDataCount
+TI,R,N,V_supervisorExtraDataCount
+supervisorFramesAndExtraData
+T^Q,R,N,V_supervisorFramesAndExtraData
+supervisorExtraData
+T^Q,R,N
+userFrameCount
+TI,R,N,V_userFrameCount
+userExtraDataCount
+TI,R,N,V_userExtraDataCount
+userFramesTruncated
+Tc,R,N,V_userFramesTruncated
+userFramesAndExtraData
+T^Q,R,N,V_userFramesAndExtraData
+userExtraData
+kdebugEvent
+T(?=I{?=b2b14b8b8}),R,N,V_kdebugEvent
+kdebugArgumentCount
+TI,R,N,V_kdebugArgumentCount
+kdebugArguments
+kdebugStringUUID
+TQ,R,N,V_kdebugStringUUID
+kdebugString
+T@"NSString",R,&,N,V_kdebugString
+counterEventCount
+TI,R,N,V_counterEventCount
+counterEventValues
+T^Q,R,N,V_counterEventValues
+-[DTKPCPUEvent initWithName:alias:definition:kpepEvent:]
+/Library/Caches/com.apple.xbs/Sources/DVTInstrumentsFrameworks/DVTInstrumentsFrameworks-64531.2/DTKPerfInterface/DTKPCPUEvent.m
+name.length > 0
+kpepEvent != NULL
+%@ (%@)
+ %@ (%@)
+no alias
+alias
+T@"NSString",&,N,V_alias
+aliasOrName
+definition
+T@"NSString",R,&,N,V_definition
+com.apple.instruments.server.services.device.applictionListing
+-[DTSysmonTapLocalDelegate initWithConfig:]
+/Library/Caches/com.apple.xbs/Sources/DVTInstrumentsFrameworks/DVTInstrumentsFrameworks-64531.2/Taps/Sysmon/DTSysmonTapLocalDelegate.m
+SysmonTap Process Queue
+Missing the 'pid' process attribute.
+Unknown process attributes: %@.
+Unknown system attributes: %@.
+Missing the 'cid' coalition attribute.
+Unknown coalition attributes: %@.
+-[DTSysmonTapLocalDelegate setTap:]
+v16@?0@"NSObject<OS_sysmon_row>"8
+v32@?0@8Q16^c24
+-[DTSysmonTapLocalDelegate start]_block_invoke
+v16@?0@"NSObject<OS_sysmon_table>"8
+-[DTSysmonTapLocalDelegate start]_block_invoke_5
+Failed to sample host processor cpu usage: %d
+Failed to sample host processor basic info: %d
+q24@?0@"NSMutableDictionary"8@"NSMutableDictionary"16
+v32@?0@"NSMutableDictionary"8Q16^c24
+B24@?0Q8@"NSObject<OS_xpc_object>"16
+B24@?0r*8@"NSObject<OS_xpc_object>"16
+sysctl.proc_cputype
+DTKPTrigger
+A %@ trigger was deallocated without freeing up its action ID.
+Failed to allocate memory for kperf actions.
+Failed to set the number of kperf actions: %d
+-[DTKPTrigger start:]
+/Library/Caches/com.apple.xbs/Sources/DVTInstrumentsFrameworks/DVTInstrumentsFrameworks-64531.2/DTKPerfInterface/DTKPTrigger.m
+-[DTKPTrigger stop:]
+-[DTKPTrigger _actionDealloc:]
+(action < sActionCount) && (action > DTKP_INVALID_ACTION) && sActionAllocations[action]
+XRKPerfMaxFrames
+actionID
+TI,N,V_actionID
+samplers
+TI,N,V_samplers
+counterAllocatorProvider
+T@"<DTKPTriggerCounterAllocatorProvider>",R,N,V_counterAllocatorProvider
+counterAllocator
+T@"DTKPCPUCounterAllocator",R,&,N
+queryCounterAllocator
+collectUserStacks
+Tc,N,V_collectUserStacks
+collectKernelStacks
+Tc,N,V_collectKernelStacks
+__isPlatformOrVariantPlatformVersionAtLeast
+/BuildRoot/Library/Caches/com.apple.xbs/Sources/clang/clang-1100.0.33.12/src/projects/compiler-rt/lib/builtins/os_version_check.c
+Platform2 == PLATFORM_MACOS && "unexpected platform"
+_availability_version_check
+kCFAllocatorNull
+CFDataCreateWithBytesNoCopy
+CFPropertyListCreateWithData
+CFPropertyListCreateFromXMLData
+CFStringCreateWithCStringNoCopy
+CFDictionaryGetValue
+CFGetTypeID
+CFStringGetTypeID
+CFStringGetCString
+CFRelease
+%d.%d.%d
+_CFMZEnabled
+counterAllocator
+recordConfigWordsIntoBuffer:
+addPMCEventName:error:
+setPMIEventName:pmiThreshold:error:
+queryCounterAllocator
+pmcEventCount
+lock
+triggerID
+UTF8String
+collectKernelStacks
+collectUserStacks
+setSamplers:
+_actionAlloc
+setActionID:
+actionID
+stringWithFormat:
+configurePMIActionID:error:
+configureHardwarePMIPeriods:
+samplers
+_setSamplers:forAction:
+targetTask
+_setFilterByTask:forAction:
+_actionDealloc:
+_recordConfigWordsIntoBuffer:
+addPMCEventNamed:error:
+setPMIEventNamed:threshold:error:
+start:
+stop:
+.cxx_destruct
+setTargetTask:
+pmiEventNameOrAlias
+thresholdCount
+_targetTask
+_pmiEventNameOrAlias
+_thresholdCount
+pidWatcher
+enableCount
+signatures
+init
+_performOnCache:
+_cacheQ
+_cache
+dealloc
+defaultCache
+objectForKey:
+null
+setObject:forKey:
+isEqual:
+copy
+dictionaryWithDictionary:
+sharedAuthorization
+disableExpiredPidCaching
+signatureForExpiredPid:
+allExpiredSignatures
+enableCaching:
+countByEnumeratingWithState:objects:count:
+numberWithInt:
+publishCapability:withVersion:forClass:
+initWithChannel:
+cancel
+registerDisconnectHandler:
+stringForMessageKey:
+dictionary
+setObject:forKeyedSubscript:
+fileDescriptorHandshakeWithReceivePort:
+initWithTransport:
+resume
+channel
+newReplyWithObject:
+sendMessageAsync:replyHandler:
+defaultManager
+fileExistsAtPath:
+object
+class
+isKindOfClass:
+_launchCLIFromPath:message:arguments:environment:error:
+error
+errorStatus
+newReplyWithError:
+newReplyWithMessage:
+sendControlAsync:replyHandler:
+integerForMessageKey:
+newReply
+setInteger:forMessageKey:
+isEqualToString:
+processStartCLIFromMessage:error:
+processForwardMessageFromMessage:error:
+processConnectToPreviewHostFromMessage:error:
+processCommand:fromMessage:error:
+processMessage:error:
+sendMessage:replyHandler:
+registerCapabilities:
+messageReceived:
+_connection
+valueForKey:
+boolValue
+processInfo
+environment
+mutableCopy
+addEntriesFromDictionary:
+setSocketDelegateQueue:
+socketDelegateQueue
+initWithDelegate:delegateQueue:
+setSocket:
+socket
+acceptOnInterface:port:error:
+disconnect
+initWithSocket:channel:
+startReading
+localPort
+newSocketQueueForConnectionFromAddress:onSocket:
+socket:didAcceptNewSocket:
+socket:didConnectToHost:port:
+socket:didReadData:withTag:
+socket:didReadPartialDataOfLength:tag:
+socket:didWriteDataWithTag:
+socket:didWritePartialDataOfLength:tag:
+socket:shouldTimeoutReadWithTag:elapsed:bytesDone:
+socket:shouldTimeoutWriteWithTag:elapsed:bytesDone:
+socketDidCloseReadStream:
+socketDidDisconnect:withError:
+socketDidSecure:
+socket:didReceiveTrust:completionHandler:
+startListeningWithError:
+stopListening
+port
+setChannel:
+_channel
+_socket
+_socketDelegateQueue
+objectForKeyedSubscript:
+length
+isAppleInternal
+enumerateKeysAndObjectsUsingBlock:
+removeObjectForKey:
+count
+defaultWorkspace
+addObserver:
+applicationProxyForBundleURL:
+appState
+isRestricted
+bundleIdentifier
+addObject:
+_notifyWithDictionaryRepresentation:addition:
+enumerateObjectsUsingBlock:
+installedPlugins
+containingBundle
+containsObject:
+pluginIdentifier
+hasPrefix:
+applicationInstalled:
+applicationUninstalled:
+array
+removeObserver:
+_unregisterNotificationTokenInternal:
+sharedInstance
+self
+performSelector:
+performSelector:withObject:
+performSelector:withObject:withObject:
+isProxy
+isMemberOfClass:
+conformsToProtocol:
+respondsToSelector:
+retain
+release
+autorelease
+retainCount
+zone
+hash
+superclass
+description
+debugDescription
+applicationInstallsDidStart:
+applicationInstallsDidChange:
+applicationInstallsDidUpdateIcon:
+applicationsWillInstall:
+applicationsDidInstall:
+pluginsDidInstall:
+applicationsDidFailToInstall:
+applicationsWillUninstall:
+pluginsWillUninstall:
+applicationsDidUninstall:
+pluginsDidUninstall:
+applicationsDidFailToUninstall:
+applicationInstallsArePrioritized:arePaused:
+applicationInstallsDidPause:
+applicationInstallsDidResume:
+applicationInstallsDidCancel:
+applicationInstallsDidPrioritize:
+applicationStateDidChange:
+applicationIconDidChange:
+networkUsageChanged:
+observeLaunchProhibitedApps
+deviceManagementPolicyDidChange:
+registerNotificationToken:observer:query:
+unregisterNotificationToken:observer:
+_registrationsByToken
+_knownAppsByPath
+isPlaceholder
+numberWithBool:
+applicationType
+plugInKitPlugins
+pluginUUID
+UUIDString
+bundleURL
+path
+bundleExecutable
+localizedName
+bundleVersion
+objectForInfoDictionaryKey:ofClass:inScope:
+stringByAppendingFormat:
+sharedBroker
+forwardMessage:
+canContinueServingRequestWithIdentifier:
+stringWithUTF8String:
+currentHandler
+handleFailureInFunction:file:lineNumber:description:
+initWithKind:count:
+initWithKind:count:source:indexToKeyMap:
+kind
+setKind:
+setCount:
+data
+_count
+_kind
+standardUserDefaults
+boolForKey:
+arrayWithObjects:count:
+stopMonitoring
+intValue
+serviceName
+setWithObject:
+message
+mainQueue
+addOperation:
+startMonitoring
+setTargetPID:
+replayLastRecordedSession
+_workQueue
+_netstatMan
+_sources
+_seenInterfaces
+_hiddenInterfaces
+_dispatchTimer
+_interval
+_filteredToPid
+_isAppleInternal
+_isDisconnected
+serialNumber
+setPid:
+initWithInt:
+lastStats
+setLastStats:
+initWithObjects:count:
+messageWithObject:
+initWithShortName:displayName:tooltip:
+shortName
+displayName
+tooltip
+_shortName
+_displayName
+_tooltip
+initWithShortName:displayName:tooltip:defaultValue:
+defaultValue
+_defaultValue
+groupName
+setGroupName:
+settings
+setSettings:
+_groupName
+_settings
+bundleForClass:
+pathForResource:ofType:
+dictionaryWithContentsOfFile:
+_loadSysmonAttributesLocked
+sharedRegistry
+sysmonProcessAttributes
+sysmonSystemAttributes
+sysmonCoalitionAttributes
+_lock
+_sysmonProcessAttributes
+_sysmonSystemAttributes
+_sysmonCoalitionAttributes
+realAppName
+lastPathComponent
+rangeOfString:
+stringByAppendingPathExtension:
+numberWithUnsignedLongLong:
+numberWithUnsignedInt:
+allProcInfos
+valueForEnvVar:
+isApplication:
+startTime
+dateWithTimeIntervalSince1970:
+isCFM
+requestedAppName
+name
+dictionaryWithObjects:forKeys:count:
+mainBundle
+localizedStringForKey:value:table:
+initWithPid:
+procInfoWithPID:
+messageWithSelector:objectArguments:
+unsignedIntValue
+taskForPid:
+contentsOfDirectoryAtPath:error:
+stringByAppendingPathComponent:
+dataWithContentsOfFile:
+propertyListWithData:options:format:error:
+addObjectsFromArray:
+fileExistsAtPath:isDirectory:
+stringByAppendingString:
+iconDescriptionForIconPath:
+fileURLWithPath:
+dictionaryWithObjectsAndKeys:
+dataWithBytesNoCopy:length:freeWhenDone:
+numberOfPhysicalCpus
+numberOfCpus
+speedOfCpus
+hwCPUtype
+hwCPUsubtype
+hwCPU64BitCapable
+stringWithCString:encoding:
+lookupSysctl:
+productVersion
+uniqueID
+stringWithContentsOfFile:encoding:error:
+dataWithBytesNoCopy:length:
+localProcessAttributes
+localSystemAttributes
+localCoalitionAttributes
+localCountsAttributes
+localTCPAttributes
+localUDPAttributes
+localRouteAttributes
+interfaceNameMappings
+machTimeInfo
+runningProcesses
+nameForUID:
+nameForGID:
+execnameForPid:
+isRunningPid:
+machKernelName
+symbolicatorSignatureForPid:trackingSelector:
+unregisterSignatureTrackingForPid:
+symbolicatorSignaturesForExpiredPids
+directoryListingForPath:
+iconDescriptionFileForAppPath:
+hardwareInformation
+systemInformation
+networkInformation
+traceCodesFile
+kpepDatabase
+netstatCountsAttributes
+netstatTCPAttributes
+netstatUDPAttributes
+netstatRouteAttributes
+_trackingSymbolicatorsByPid
+_kpepDB
+decimalDigitCharacterSet
+invertedSet
+initWithString:
+isAtEnd
+scanUpToCharactersFromSet:intoString:
+rangeOfString:options:
+substringToIndex:
+stringByDeletingPathExtension
+integerForKey:
+errorWithDomain:code:userInfo:
+initWithStatus:notice:
+_handleStatusMemo:
+bufferMode
+windowSize
+pollingInterval
+enumerateActions:
+enumerateTriggerConfigs:
+floatForKey:
+uuid
+localMachineSupportsPMI
+localMachineSupportsPMC
+isDeferredDisplay
+archivingURL
+initAsFileBackedWithDirectory:retainFiles:error:
+spoolToDiskWhenPossible
+setArchivingURL:error:
+initAsMemoryBackedWithError:
+recordingPriority
+setRecordingPriority:
+setCollectionMode:
+bufferSizeOverride
+bufferSizeForConfiguration:
+_clampBufferSize:
+bufferSizeOverrideClamping
+setBufferSize:
+createTriggerTime:
+createTriggerPMI:
+clearTriggerPMI
+createTriggerKDebug:
+fetchDataNow
+setCallback:
+localizedDescription
+start
+_getSessionMetadata
+_runningMetadataChanged:
+stop
+pause:
+pause
+resume:
+unpause
+flushDataFromKernel:actualBytesReadOut:
+bufferSize
+ensureCallbackThreadIsActive
+initWithTimestamp:
+setTapVersion:
+setIsSession:
+setTriggerCount:
+dataWithBytes:length:
+setTriggerIDs:
+swapOutCurrentDatastream:
+setDatastream:
+setSupportsPeek:
+setFinalMemo:
+validateConfig
+setTap:
+canFetchWhileArchiving
+fetchDataForReason:block:
+setTaskForPidBlock:
+initWithConfig:
+_tap
+_config
+_taskForPid
+_removeArchivingURLWhenComplete
+_triggerCount
+_triggerIDs
+_metadataByTriggerIndex
+_session
+_stopWasCalled
+_localEventProducers
+sampleInterval
+hasThreadStateFilter
+enumerateThreadStatesToInclude:
+kdebugFilter
+containsClass:subclassID:
+kdebugCodes
+setWithObjects:
+addCodes:
+containsClass:
+fileSystemRepresentation
+stringWithFileSystemRepresentation:length:
+initFileURLWithPath:
+setSampleRate:
+isAllProcesses
+enumeratePIDsInFilter:
+setProfileEveryThread:
+setCollectUserStacks:
+setCollectKernelStacks:
+pmiEventMnemonic
+pmiEventThreshold
+setFilterMode:
+addCodeSet:
+unsignedLongLongValue
+raise:format:
+collectData
+detachNewThreadSelector:toTarget:withObject:
+messageWithBuffer:length:
+_allocateBuffer
+addSampleWithTimeInfo:useZeroDelta:
+_outputData
+timeIntervalSinceReferenceDate
+setSamplingRate:
+setOutputRate:
+setTargetPid:
+startSampling
+stopSampling
+_context
+_doCollectData
+_samplingRate
+_outputRate
+_outputRateDelta
+_backtraceBuffer
+_backtraceBufferSize
+_backtraceBufferUsedSize
+_task
+plist
+supportsSecureCoding
+encodeWithCoder:
+initWithCoder:
+tapVersion
+sessionMetadata
+setSessionMetadata:
+code
+setCode:
+timestamp
+setTimestamp:
+runningMetadata
+setRunningMetadata:
+_runningMetadata
+config
+getBufferWithReturnedLength:
+initWithBytes:length:
+objectWithAllowedClasses:
+unarchivedObjectOfClasses:fromData:error:
+setSamples:
+_tapVersion
+_nextSampleData
+URLWithString:
+scheme
+host
+URLPathAllowedCharacterSet
+stringByAddingPercentEncodingWithAllowedCharacters:
+dataWithPropertyList:format:options:error:
+server
+invokeCompletionWithReturnValue:error:
+setServer:
+connectToOnDemandDaemon
+numberWithUnsignedInteger:
+translatedManifest:withAssetServicePort:
+startServerForApplicationWithDevicePath:
+startServer
+registerApplicationIdentifier:manifest:
+ondemandConnection
+setOndemandConnection:
+_server
+_ondemandConnection
+archivedDataWithRootObject:requiringSecureCoding:error:
+bytes
+initWithCounterAllocatorProvider:
+sampleRate
+_timerIDAlloc
+_configureTimer:actionID:period:userData:
+profileEveryThread
+_timerIDDdealloc:
+reinitializeKperf:
+_timerID
+_profileEveryThread
+_sampleRate
+attributes
+setAttributes:
+_pid
+_attributes
+setCid:
+_cid
+initWithTotal:user:system:nice:
+totalLoad
+setTotalLoad:
+userLoad
+setUserLoad:
+systemLoad
+setSystemLoad:
+niceLoad
+setNiceLoad:
+_totalLoad
+_userLoad
+_systemLoad
+_niceLoad
+cpuCount
+setCpuCount:
+enabledCPUs
+setEnabledCPUs:
+averageCPUUsage
+setAverageCPUUsage:
+perCPUUsage
+setPerCPUUsage:
+_cpuCount
+_enabledCPUs
+_averageCPUUsage
+_perCPUUsage
+recordType
+setRecordType:
+startTimestamp
+setStartTimestamp:
+endTimestamp
+setEndTimestamp:
+changedProcesses
+setChangedProcesses:
+deadProcesses
+setDeadProcesses:
+system
+setSystem:
+coalitions
+setCoalitions:
+deadCoalitions
+setDeadCoalitions:
+cpuUsage
+setCpuUsage:
+processAttributes
+setProcessAttributes:
+systemAttributes
+setSystemAttributes:
+coalitionAttributes
+setCoalitionAttributes:
+_recordType
+_startTimestamp
+_endTimestamp
+_changedProcesses
+_deadProcesses
+_system
+_coalitions
+_deadCoalitions
+_cpuUsage
+_processAttributes
+_systemAttributes
+_coalitionAttributes
+enumerateRecordsFromSample:block:
+initWithHeartbeatTime:
+enumerateRecordsWithBlock:
+recordDecoder
+setRecordDecoder:
+samples
+_heartbeatTime
+_recordDecoder
+_samples
+copyWithZone:
+_getSerializableObjectForKey:
+_setSerializableObject:forKey:
+setSessionHandler:
+setSampleInterval:
+sampleCPUUsage
+setSampleCPUUsage:
+pids
+setPids:
+addPid:
+sessionHandler
+_sessionHandler
+sendMessageSync:replyHandler:
+sendMessage:
+sendBarrierMessage
+label
+alloc
+initWithMessageSender:
+createConfigWithPlist:
+setBulkDataReceiver:
+initWithStatus:timestamp:notice:info:
+setStatusHandler:
+willStartWithConfig:
+defaultFactory
+createNewTapWithConfig:connection:options:
+requiresExpiredPIDCacheForConfig:
+waitUntilFinished
+didStop
+messageReferencingBuffer:length:destructor:
+setHeartbeatTime:
+initialize
+playbackServiceName
+registerCapabilities:forDelegateClass:forConnection:
+setConfig:
+handleBulkData:size:destructor:
+sendFrameMessage:
+sendHeartbeatTime:
+_tapServiceID
+_tapIsRunning
+_delegate
+_useExpiredPidCache
+_serialQueue
+_messageSender
+targetPid
+whitespaceAndNewlineCharacterSet
+stringByTrimmingCharactersInSet:
+initWithStatus:notice:info:
+initWithTimestamp:filePositionEnd:code:
+scriptTextByIdentifier
+URLByAppendingPathComponent:
+writeToURL:atomically:encoding:error:
+dtraceDataFileName
+objectAtIndexedSubscript:
+cStringUsingEncoding:
+authorization
+preprocessorPath
+_prepareXPCConnection
+setFileURL:
+setFirstFilePosition:
+setFragments:
+lastObject
+filePositionEnd
+_daemonConnection
+_daemonSemaphore
+_fragmentsLock
+_fragments
+_filePositionStart
+create:
+defaultSampleInterval
+supportedCounterProfiles
+profile
+registryID
+vendorName
+familyName
+productName
+deviceName
+minSampleInterval
+isHeadless
+isRemovable
+isLowPower
+recommendedMaxWorkingSetSize
+_queryDisplayInfoDict
+prepare
+sampleSize
+_sampleCounters
+readyToSendData:sampleCount:dataSource:
+sampleCounters:callback:
+device
+unsignedIntegerValue
+initWithMTLDevice:workQueue:
+windowLimit
+deviceInfoDict
+collectingProfile
+configure:interval:windowLimit:
+flushRemainingData:
+reset
+timestampOfFirstSample
+.cxx_construct
+delegate
+setDelegate:
+_collectingProfile
+_windowLimit
+_sampleInterval
+_stopTime
+_counterBuffer
+_supportedCounterProfiles
+_device
+initWithLength:
+mutableBytes
+firstObject
+removeObjectAtIndex:
+getBufferWithLength:
+arrayWithCapacity:
+engineeringValueWithTypeID:value:
+addMemo:
+next
+time
+subsystem
+category
+senderImagePath
+format
+backtrace
+isOutOfData
+hasFailed
+_memos
+_currentChunk
+_stack
+_tableRowDecoder
+_decoder
+_osLogTableID
+_buffer
+_columns
+_outOfData
+_failed
+numberWithDouble:
+sendDataMemo:toBulkReceiver:
+sendDataMemo:toClientUsingConfig:
+sendHeartbeatMemo:toClientUsingConfig:
+peekAtMemo:
+_writeFD
+_filePositionEnd
+_outputURL
+initWithName:
+setName:
+_name
+initWithName:maxValue:
+infoArray
+maxValue
+setMaxValue:
+groupIndex
+setGroupIndex:
+rawCounters
+setRawCounters:
+counterDescription
+setCounterDescription:
+type
+setType:
+functionName
+setFunctionName:
+multiplier
+setMultiplier:
+_groupIndex
+_multiplier
+_maxValue
+_rawCounters
+_counterDescription
+_type
+_functionName
+initWithProfile:device:
+addCounter:
+counterProfileForHost
+profileName
+setProfileName:
+counters
+setDefaultSampleInterval:
+setDevice:
+derivedCounterScriptPath
+setDerivedCounterScriptPath:
+_counters
+_profile
+_profileName
+_defaultSampleInterval
+_derivedCounterScriptPath
+acceleratorPort
+unsignedLongValue
+_currentIORegSamplingInterval
+_deviceUtilization
+stringValue
+initWithMemoryAddress:inTask:
+setMessageHandler:
+setDispatchTarget:
+valueForSwitch:
+sendControlSync:replyHandler:
+setValue:forSwitchName:
+initialSwitches
+messageWithSelector:typesAndArguments:
+configureLaunchEnvironment:
+startSamplingWithPid:
+_targetConnection
+_switches
+setConcurrentRequestQueue:
+handleFailureInMethod:object:file:lineNumber:description:
+startServingAssetsForAppWithPath:withCompletion:
+assetProviderWithConnection:completion:
+shouldStartAssetServerForApplication:
+registerManifestForApplicationAtPath:onPort:
+startServerOnDeviceWithCompletion:
+remoteCapabilityVersion:
+setMaximumEnqueueSize:
+makeChannelWithIdentifier:
+setConnection:
+concurrentRequestQueue
+assetPath
+identifier
+messageWithError:
+serveDataFromZippedDirectory:forRequestIdentifier:
+serveDataFromFile:forRequestIdentifier:
+serveDataWithResultFromZippedDirectory:forRequestIdentifier:
+pipe
+fileHandleForWriting
+fileDescriptor
+serveDataFromFileHandle:forRequestIdentifier:
+fileHandleForReading
+setReadabilityHandler:
+isOperatingSystemAtLeastVersion:
+fileHandleForReadingAtPath:
+connection
+prepareForResponse
+availableData
+hasCancelledRequestWithIdentifier:onChannel:
+responseWithIdentifier:data:
+completedResponseWithIdentifier:
+assetManifestPathForApplication:
+bundleWithPath:
+beginProvidingAssetsForRemoteApplication:connection:completion:
+beginProvidingAssetsForLocalApplication:connection:completion:
+beginProvidingAssetsForApplication:onChannel:completion:
+_concurrentRequestQueue
+isSession
+triggerCount
+triggerIDs
+datastream
+containers
+setContainers:
+_isSession
+_datastream
+_containers
+exportRawDataWithError:block:
+hasAtLeastOneRecordHandler
+setTriggerIDsToIndicesArray:
+kdebugTriggerIndex
+setKdebugTriggerIndex:
+finalMemo
+setFinalEnumerator:
+setMemo:
+setEnumerator:
+recordHandlers
+enumerateRecordsFromDatastream:block:
+flushRecords:
+peekAtFirstRecordTimestampInDatastream:
+pidOrRoute
+setPidOrRoute:
+ifaceIndex
+setIfaceIndex:
+localAddress
+setLocalAddress:
+remoteAddress
+setRemoteAddress:
+_ifaceIndex
+_pidOrRoute
+_localAddress
+_remoteAddress
+setTcpAttributes:
+setUdpAttributes:
+setRouteAttributes:
+integerValue
+setChangedTCPConnections:
+setChangedUDPConnections:
+setRouteID:
+setChangedRoutes:
+setDeadTCPConnections:
+setDeadUDPConnections:
+setDeadRoutes:
+_mostRecentEpoch
+_tcpAttributes
+_udpAttributes
+_routeAttributes
+_liveTCP
+_liveUDP
+_liveRoute
+predicateWithFormat:
+initWithDispatchQueue:funnelTarget:
+needsHold
+_funnelQueue
+holdAgent:loader:
+setMode:
+setSignpostConfig:
+setExclusions:
+setFilterPredicate:
+setWindowInSeconds:
+prepareAgent:loader:
+escortAgent:loader:
+getUUIDBytes:
+machContinuousTimestamp
+logLoaderNeedsFetchNow:
+_performResetOnOutputStream
+threadIdentifier
+processIdentifier
+objectForIntegerKey:
+setObject:atIndexedSubscript:
+setObject:forIntegerKey:
+formatString
+signpostName
+_stackReferenceForRepeatedString:
+sender
+decomposedMessage
+placeholderCount
+literalPrefixAtIndex:
+placeholderAtIndex:
+argumentAtIndex:
+typeNamespace
+scalarCategory
+rawString
+objectRepresentation
+frames
+imageUUID
+_stackReferenceForRepeatedUUID:
+scalarType
+doubleValue
+unsignedInt64Value
+signpostType
+logType
+imageOffset
+signpostScope
+signpostIdentifier
+removeAllObjects
+filterPredicate
+heartbeatPredicate
+orPredicateWithSubpredicates:
+setFlags:
+setTarget:
+_handleRecord:
+lossCount
+setEventHandler:
+dvtiuErrorWithFormat:
+setCurrentPosition:
+_welcomeAgent:
+setInvalidationHandler:
+initWithSource:
+initWithSource:skipNonSignpostFiles:
+_setupCommonStreamParameters:
+initWithLiveSource:
+setDroppedEventHandler:
+heartbeat
+_holdReceivedAgent:ticket:
+ticketToStartStream:
+ticketToPrepare:filterPredicate:signposting:exclusions:mode:
+ticketToFetchData:window:
+ticketToStopStream:
+_prepareAgentToExecute:withTicket:
+_escortAgentToExit:withTicket:
+_setupLoggedStreamForNextChunk:
+_setupLiveStream:
+invalidate
+failureReason
+_loggedEventStore
+_loggedStream
+_liveEventStore
+_liveStream
+_failureReason
+_startTime
+_endTime
+_agentWaitingForStop
+_lastFetchTicket
+_stateChanged
+_stateLock
+_tableLoader
+_encoder
+_lastMachTime
+_agentWaitingForEvents
+_workingBuffer
+_deviceSessionRef
+_defaultLevelRef
+_infoLevelRef
+_debugLevelRef
+_errorLevelRef
+_faultLevelRef
+_beginRef
+_emitRef
+_endRef
+_threadScopeRef
+_processScopeRef
+_systemScopeRef
+_pushedProcessesByPid
+_pushedThreadsByTid
+_repeatedStrings
+_repeatedUUIDs
+_argReferenceConstants
+_rowsSent
+_lostEventAccumulator
+_workingBufferFull
+_workingBufferCanBeReplaced
+_didHandleRecord
+_ignoreNextRecord
+_calledForHelp
+_isLastBuffer
+_running
+_signpostConfig
+_exclusions
+_filterPredicate
+liveLocalStore
+prepareWithCompletionHandler:
+localStore
+setUpgradeConfirmationHandler:
+setProgressHandler:
+mode
+signpostConfig
+exclusions
+_mode
+activate
+ticket
+currentPosition
+activateStreamFromPosition:
+windowInSeconds
+dateByAddingTimeInterval:
+compare:
+activateStreamFromDate:
+setLength:
+setNextOutputBytes:
+setLastMachContinuousTime:
+setLostEventsSinceLastVisit:
+setFailureReason:
+nextOutputBytes
+setFetchComplete:
+_windowInSeconds
+_currentPosition
+content
+etype
+stringVal
+prefix
+tmpArgStruct
+dataWithLength:
+substringFromIndex:
+subpredicates
+leftExpression
+expressionType
+rightExpression
+predicateOperatorType
+keyPath
+constantValue
+initWithName:subsystem:
+setSignpostEnabled:
+stopCollectingCounters
+allValues
+defaultCenter
+_resetAllDataSources
+_stopHeartbeatTimer
+handleExternalGPUEventsForDevice:notification:
+_addGPU:
+_removeGPU:
+_setupDataSources
+_startHeartbeatTimer
+_sendErrorMessage:code:
+_findDataSourcesForTargetProcess:
+setWithArray:
+_waitForProcessMetalDevice:counterProfile:interval:windowLimit:
+_configureDataSourcesAndSendMessage:counterProfile:interval:windowLimit:
+requestDeviceGPUInfo
+configureCounters:counterProfile:interval:windowLimit:tracingPID:
+startCollectingCounters
+flushRemainingData
+_waitingForDeviceTimer
+_heartbeatTimer
+_deviceObserver
+_collectingDataSources
+_dataSourceDict
+_timestamp
+initWithStatus:notice:info:timestamp:
+status
+setStatus:
+notice
+setNotice:
+info
+setInfo:
+_status
+_notice
+_info
+supportsPeek
+_supportsPeek
+_finalMemo
+recordingInfoHandler
+statusHandler
+blockOperationWithBlock:
+bulkDataReceiver
+initWithConfig:delegate:
+suspend
+handleMemo:
+_seenNonStatusMemo
+setSerialNumber:
+_serialNumber
+routeID
+_routeID
+changedTCPConnections
+deadTCPConnections
+changedUDPConnections
+deadUDPConnections
+changedRoutes
+deadRoutes
+tcpAttributes
+udpAttributes
+routeAttributes
+_changedTCPConnections
+_deadTCPConnections
+_changedUDPConnections
+_deadUDPConnections
+_changedRoutes
+_deadRoutes
+setInterfaceBlacklist:
+interfaceBlacklist
+_emitVFSDump
+supportsConfig:
+currentStateForTask:pid:previousState:dehydratedDiffVersion:
+setTargetPid:referenceDate:
+requestVMSnapshot
+startTracking
+stopTracking
+_targetPid
+_currentState
+initWithPlist:
+setRunningMetadataChangedHandler:
+codeSet
+addClass:
+addClass:subclassID:
+createFilterMask:
+releaseFilterMask:
+kDebugCallstacksEnable:
+clearCodeSet
+enableClass:
+enableClass:subclass:
+filterMode
+_filterMode
+_codeSet
+decodeObjectOfClasses:forKey:
+encodeObject:forKey:
+initAsKind:
+_plist
+heartbeatTime
+availableSpace
+availableBytes
+initWithCapacity:
+ensureCapacityForWrite:
+readBuffer
+getReadBuffer:availableBytes:
+didRead:
+writeBuffer
+getWriteBuffer:availableSpace:
+didWrite:
+preBuffer
+preBufferSize
+readPointer
+writePointer
+increaseLengthBy:
+initWithData:startOffset:maxLength:timeout:readLength:terminator:tag:
+ensureCapacityForAdditionalDataOfLength:
+optimalReadLengthWithDefault:shouldPreBuffer:
+readLengthForNonTermWithHint:
+readLengthForTermWithHint:shouldPreBuffer:
+readLengthForTermWithPreBuffer:found:
+searchForTermAfterPreBuffering:
+buffer
+startOffset
+bytesDone
+maxLength
+timeout
+readLength
+term
+bufferOwner
+originalBufferLength
+initWithData:timeout:tag:
+initWithTLSSettings:
+tlsSettings
+initWithDelegate:delegateQueue:socketQueue:
+closeWithError:
+setDelegate:synchronously:
+setDelegateQueue:synchronously:
+setDelegate:delegateQueue:synchronously:
+errnoErrorWithReason:
+badConfigError:
+isDisconnected
+getInterfaceAddress4:address6:fromDescription:port:
+badParamError:
+localPort4
+doAccept:
+setupReadAndWriteSourcesForNewlyConnectedSocket:
+connectToHost:onPort:withTimeout:error:
+connectToHost:onPort:viaInterface:withTimeout:error:
+preConnectWithInterface:error:
+lookupHost:port:error:
+lookup:didFail:
+isIPv4Address:
+isIPv6Address:
+lookup:didSucceedWithAddress4:address6:
+startConnectTimeout:
+connectToAddress:viaInterface:withTimeout:error:
+connectWithAddress4:address6:error:
+otherError:
+endConnectTimeout
+portFromAddress:
+didConnect:
+didNotConnect:error:
+connectedHost
+connectedPort
+maybeDequeueRead
+maybeDequeueWrite
+doConnectTimeout
+connectTimeoutError
+endCurrentRead
+endCurrentWrite
+resumeReadSource
+resumeWriteSource
+maybeClose
+dictionaryWithObject:forKey:
+connectedHostFromSocket4:
+connectedHostFromSocket6:
+connectedPortFromSocket4:
+connectedPortFromSocket6:
+localHostFromSocket4:
+localHostFromSocket6:
+localPortFromSocket4:
+localPortFromSocket6:
+hostFromSockaddr4:
+hostFromSockaddr6:
+portFromSockaddr4:
+portFromSockaddr6:
+componentsSeparatedByString:
+objectAtIndex:
+doReadData
+doReadEOF
+doWriteData
+readDataWithTimeout:buffer:bufferOffset:maxLength:tag:
+readDataToLength:withTimeout:buffer:bufferOffset:tag:
+readDataToData:withTimeout:buffer:bufferOffset:maxLength:tag:
+maybeStartTLS
+setupReadTimerWithTimeout:
+flushSSLBuffers
+usingCFStreamForTLS
+suspendReadSource
+usingSecureTransportForTLS
+ssl_continueSSLHandshake
+readMaxedOutError
+sslError:
+completeCurrentRead
+connectionClosedError
+doReadTimeout
+doReadTimeoutWithExtension:
+readTimeoutError
+setupWriteTimerWithTimeout:
+suspendWriteSource
+completeCurrentWrite
+doWriteTimeout
+doWriteTimeoutWithExtension:
+writeTimeoutError
+ssl_startTLS
+shortValue
+ssl_shouldTrustPeer:stateIndex:
+gaiError:
+getHost:port:fromAddress:
+getHost:port:family:fromAddress:
+hostFromAddress:
+CRLFData
+CRData
+LFData
+ZeroData
+initWithSocketQueue:
+synchronouslySetDelegate:
+delegateQueue
+setDelegateQueue:
+synchronouslySetDelegateQueue:
+getDelegate:delegateQueue:
+setDelegate:delegateQueue:
+synchronouslySetDelegate:delegateQueue:
+isIPv4Enabled
+setIPv4Enabled:
+isIPv6Enabled
+setIPv6Enabled:
+isIPv4PreferredOverIPv6
+setIPv4PreferredOverIPv6:
+userData
+setUserData:
+acceptOnPort:error:
+connectToHost:onPort:error:
+connectToAddress:error:
+connectToAddress:withTimeout:error:
+disconnectAfterReading
+disconnectAfterWriting
+disconnectAfterReadingAndWriting
+errnoError
+isConnected
+localHost
+connectedHost4
+connectedHost6
+connectedPort4
+connectedPort6
+localHost4
+localHost6
+localPort6
+connectedAddress
+isIPv4
+isIPv6
+isSecure
+readDataWithTimeout:tag:
+readDataWithTimeout:buffer:bufferOffset:tag:
+readDataToLength:withTimeout:tag:
+readDataToData:withTimeout:tag:
+readDataToData:withTimeout:buffer:bufferOffset:tag:
+readDataToData:withTimeout:maxLength:tag:
+progressOfReadReturningTag:bytesDone:total:
+writeData:withTimeout:tag:
+progressOfWriteReturningTag:bytesDone:total:
+startTLS:
+sslReadWithBuffer:length:
+sslWriteWithBuffer:length:
+autoDisconnectOnClosedReadStream
+setAutoDisconnectOnClosedReadStream:
+markSocketQueueTargetQueue:
+unmarkSocketQueueTargetQueue:
+performBlock:
+socketFD
+socket4FD
+socket6FD
+sslContext
+flags
+stateIndex
+connectInterface4
+connectInterface6
+socketQueue
+accept4Source
+accept6Source
+connectTimer
+readSource
+writeSource
+readTimer
+writeTimer
+readQueue
+writeQueue
+currentRead
+currentWrite
+socketFDBytesAvailable
+sslPreBuffer
+sslWriteCachedLength
+sslErrCode
+IsOnSocketQueueOrTargetQueueKey
+setVersion:
+allocWithZone:
+allowsKeyedCoding
+encodeBytes:length:forKey:
+encodeValueOfObjCType:at:
+encodeObject:
+decodeBytesForKey:returnedLength:
+decodeObjectOfClass:forKey:
+decodeValueOfObjCType:at:
+versionForClassName:
+decodeObject
+displayType
+typeMatches:
+regionIndexInArray:forAddress:
+initWithAddress:size:regionInfo:
+matchesAddr:size:regionInfo:
+regionMatch:
+isAdjacentTo:
+setPath:type:
+setAddress:size:
+_setResident:dirty:swapped:speculative:
+isSubmapRegion
+location
+virtualSize
+virtualPages
+residentSize
+dirtySize
+swappedSize
+pageSize
+currentProtection
+maxProtection
+displayPath
+current_prot
+max_prot
+external_pager
+share_mode
+user_tag
+is_submap
+pages_resident
+pages_shared_now_private
+pages_swapped_out
+pages_dirtied
+ref_count
+region_page_shift
+initSamplingRegion:inTask:updateRegionStatistics:
+dispositionForPage:
+_baseAddress
+_pageMap
+_vpages
+addRegion:
+sortUsingComparator:
+initWithRegions:groupName:
+subRegions
+isFakeAggregate
+sortSubregionsWithComparator:
+_subRegions
+_virtualSize
+_multiplicityFlags
+existsInDirectory:
+notifyCallbackThreadLocked:
+state
+_flushDataFromKernelLocked:actualBytesReadOut:
+_kernelCallbackShutdown
+callbackThreadAlertForReason:
+_kernelCallbackThreadActive
+_startCallbackThread
+setState:
+_commonInitWithError:
+initWithError:
+setOnDeckDatastream:
+initWithBackingDirectory:retainFiles:error:
+waitForIdle
+_releaseKernelResources
+localCPU:
+initWithCPU:error:
+_swapOutCurrentDatastreamLocked:
+setEnumerateTimeRangeStart:stop:
+logKPRecsFromBuffer:bufferSize:finalBuffer:includingCallstacks:toFile:
+currentDatastream
+createNextStream:
+setCurrentDatastream:
+hasData
+setWritingCompletedWithError:
+onDeckDatastream
+sessionID
+collectionMode
+_validateConfigLocked
+_kernelCallbackThreadInit
+_setActiveSessionLocked
+_reinitializeKperf:
+_configureSettingsForKDebug:callstacks:contextSwitch:error:
+_setSessionConfigLocked:
+forceCounters:
+configureHardwareCounters:
+startHardwareCounters:
+notifyCallbackThread:
+_clearActiveSessionLocked
+_isActiveSessionLocked
+stopHardwareCounters:
+_kernelCallbackStop
+_getKernelBuffer:bufferSize:more:
+_returnKernelBuffer:
+importRawData:bufferSize:error:destructor:
+blessPid:
+callbackThread
+enumerateRecords:block:
+exportData:error:block:
+logKPRecsIncludingCallstacks:toFile:
+clearTriggerKDebug
+clearTriggerTimeAtIndex:
+clearAllTriggerTime
+triggerKDebug
+triggerPMI
+firstTriggerTime
+allTriggerTime
+isActive
+isPaused
+flushDataFromKernel:
+callback
+_sessionID
+_holdingSessionLock
+_replayOnly
+_idleSemaphore
+_triggerKDebug
+_triggerPMI
+_allTriggerTimes
+_initializedCounterAllocator
+_counterAllocator
+_kernelCallback
+_kperfBuffer
+_hasPMI
+_hasPMCs
+_hasTimer
+_tryingToStop
+_collectionMode
+_recordingPriority
+_state
+_bufferSize
+_callback
+_currentDatastream
+_onDeckDatastream
+attributesOfItemAtPath:error:
+dataWithContentsOfFile:options:error:
+userInfo
+initWithName:reason:userInfo:
+raise
+entriesAtPath:
+entriesInPathsArray:
+dataFromFileAtPath:
+contentsOfDirectoryAtPath:
+updateAttributesForItem:
+filePreservation
+dictionaryWithObjects:forKeys:
+coreCount
+_rawMessages
+_coreCount
+removeClaimsHeldByClient:
+pidDiedCallback:
+cleanupPid:
+stopObservingPid:
+indexOfObject:
+removeAssertionsForPid:onBehalfOfClient:
+takeAssertionsForPid:onBehalfOfClient:withOptions:
+launchSuspendedProcessWithDevicePath:bundleIdentifier:environment:arguments:options:
+sendSignal:toPid:
+_performMemoryWarningForPid:
+outputReceived:fromProcess:atTime:
+maybeRedirectFromFileDescriptor:fromPid:withScratchBuffer:ofByteLength:
+handleRedirectionIterationForFileDescriptor:forPid:withDispatchSource:
+startObservingPid:
+suspendPid:
+resumePid:
+killPid:
+sendProcessControlEvent:toPid:
+launchSuspendedProcessWithDevicePath:bundleIdentifier:environment:arguments:
+watchOutputFileDescriptor:forPid:
+watchOutputFileName:directory:forPid:
+_pids
+_activeIODispatchSources
+_deathNoteQueue
+_synchronousRedirectionQueue
+channelRestrictBlock
+instantiateServiceWithChannel:
+setChannelHandler:
+executablePath
+bundlePath
+URLByDeletingPathExtension
+publishServicesInImagePath:
+setChannelRestrictBlock:
+pathExtension
+initWithContentsOfFile:
+isLoaded
+loadAndReturnError:
+_taskInvalid:forPid:
+_tfpPortReceived:
+takeOwnershipOfSharedAuthorization:
+prohibitPromptingForAuthorization
+setMaxConnectionEnqueue:
+_blessSimulatorHub:
+_notifyOfTFPCommunicationsPort:
+loadServicesAtPath:
+restrictChannelsWithBlock:
+_channelRestrictBlock
+initWithRemoteAddress:
+removeObject:
+addDependency:
+initWithFormat:arguments:
+_disconnectServiceConnection
+connectionToService
+remoteObjectProxy
+listAvailableConditionInducersWithReply:
+enableConditionInducerWithIdentifier:profileIdentifier:reply:
+disableConditionInducerWithIdentifier:reply:
+disableActiveConditionInducerWithReply:
+activeConditionsWillStop
+activeConditionsDidStop
+availableConditionInducers
+disableActiveCondition
+disableConditionWithIdentifier:
+enableConditionWithIdentifier:profileIdentifier:
+_requestAvailableConditionInducersWithCompletion:
+_requestEnableConditionInducerWithIdentifier:profileIdentifier:completion:
+_requestDisableConditionInducerWithIdentifier:completion:
+_requestDisableActiveConditionInducerWithCompletion:
+setConnectionToService:
+_connectionToService
+pidOrRouteID
+setPidOrRouteID:
+interfaceIndex
+setInterfaceIndex:
+_interfaceIndex
+_pidOrRouteID
+addSource:
+getSource:
+removeSource:
+removeAndReturnSource:
+_nextSerialNumber
+_container
+componentsJoinedByString:
+removeObjectsInRange:
+shouldHideInterfaceIndex:
+shouldExposePID:
+checkFilterForPID:
+numberWithLongLong:
+_getInterfaceTypeFromDict:
+localTCPAttributesMap
+localTCPAttributesNumberMap
+localUDPAttributesMap
+localUDPAttributesNumberMap
+localRouteAttributesMap
+localRouteAttributesNumberMap
+_purgeOldSamplesForCurrentTime:
+_createAttributesSample
+_addSample:
+_pidFilter
+_isWindowed
+_lastWindowPurgeTime
+_purgeEveryNTicks
+_effectiveWindowSize
+_netStatMan
+_serialQ
+_samplesLock
+_currentSample
+_newAttributesSample
+_currentNetstatSrcMap
+_tcpWindowedConnections
+_udpWindowedConnections
+_routeWindowedConnections
+_dataAtWindowBeginning
+_tcpAttributesByNumber
+_udpAttributesByNumber
+_routeAttributesByNumber
+initWithUUIDString:
+setKdebugFilter:
+addAction:
+setHasThreadStateFilter:
+setIsAllProcesses:
+arrayWithObjects:
+legacyXML
+initWithCodes:
+deviceSignPostConfig
+eventLimitHint
+setEventLimitHint:
+includeThreadState:
+includePID:
+pmiCounterName
+setPmiCounterName:
+setPmiEventMnemonic:
+setPmiEventThreshold:
+pmiDeviceIndices
+setPmiDeviceIndices:
+setUuid:
+callstackFrameDepth
+setCallstackFrameDepth:
+_dict
+_kdebugFilterSet
+_GetTriggerDict
+_SetTriggerDict:
+abandon
+predicateString
+reason
+setLoaderStop:
+setOwnersDock:
+onlySignposts
+signpostsAndLogs
+excludeInfo
+excludeDebug
+setPredicate:
+setLogLoaderMode:
+setFetchWindow:
+activateWithFinalDestination:ticket:
+waitForAgentToDock
+dockedAgent
+didPrepare
+setShouldStart:
+releaseDockedAgent
+didStart
+setShouldStop:
+initWithData:
+setShouldFetch:
+localizedFailureReason
+lostEventsSinceLastVisit
+appendData:
+isFetchComplete
+lastMachContinuousTime
+setLastMachContinuousTimeSeen:
+_loaderStop
+_dock
+_shuttle
+executeStopOnItinerary:
+predicate
+setNextStop:mode:ticket:
+setNextStop:mode:
+revisit
+setDidPrepare:
+shouldStart
+setDidStart:
+shouldStop
+setDidStop:
+shouldFetch
+logLoaderMode
+fetchWindow
+loaderStop
+ownersDock
+_commonFetchTicket
+fetchComplete
+_didPrepare
+_shouldStart
+_didStart
+_shouldStop
+_didStop
+_shouldFetch
+_logLoaderMode
+_fetchWindow
+_predicate
+_ownersDock
+lastMachContinuousTimeSeen
+memoHandler
+setBufferMode:
+createDirectoryAtURL:withIntermediateDirectories:attributes:error:
+_removeSerializableObjectForKey:
+setIsDeferredDisplay:
+setPollingInterval:
+refreshUUID
+_dispatchStatus:timestamp:notice:info:
+setSpoolToDiskWhenPossible:
+setWindowSize:
+setServiceName:
+serviceVersion
+setServiceVersion:
+setFilePreservation:
+runningMetadataChangedHandler
+setRecordingInfoHandler:
+_archivingURL
+_createdArchivingURL
+_filePreservation
+_serviceName
+_serviceVersion
+_uuid
+_bulkDataReceiver
+_runningMetadataChangedHandler
+_statusHandler
+_recordingInfoHandler
+trackExpiredPIDs
+validateConfig:
+longValue
+posixSpawnWithPath:environment:arguments:options:fileDescriptorHandler:
+initWithBackingDirectory:fileOwnership:fileIndex:error:
+relativePath
+progressWithTotalUnitCount:
+setCompletedUnitCount:
+peekAtRawDataWithError:block:
+initFromDirectory:error:
+initFromDatastream:backingDirectory:retainFiles:error:
+_error
+_backingDirectory
+_fileName
+_fileIndex
+_wrFD
+_fileOwnership
+_checkIfNeedCreateDirectory
+initWithConfig:archiveURL:
+initWithConfig:memoHandler:messageHandler:connection:
+initWithConfig:memoHandler:delegate:
+setFd:
+size
+setSize:
+token
+setToken:
+metaDict
+setMetaDict:
+_size
+_token
+_metaDict
+cancelAllRequests
+initWithFileDescriptor:closeOnDealloc:
+writeData:
+initWithBytesNoCopy:length:deallocator:
+_lookupGraphByToken:response:
+serializedGraphWithOptions:
+_preserveDict:forPid:
+_internalRequestForPid:message:completion:
+mallocStackLogForAddress:size:isLiteZone:
+vmRegionStackLogForAddress:size:
+leakDataWithOptions:
+handleCompletion:
+requestLeaksForPid:context:provideBacktraces:
+requestGraph:options:
+requestMallocStackLog:forAddress:size:isLiteZone:
+requestVMregionStackLog:forAddress:size:
+_coordinationQueue
+_preservationQueue
+_helperConnectionByTargetPid
+_helperPidByTargetPid
+_fileByPid
+resourcePath
+setTid:
+userStack
+setUserStack:
+userStackSize
+setUserStackSize:
+kernelStack
+setKernelStack:
+kernelStackSize
+setKernelStackSize:
+_tid
+_userStack
+_userStackSize
+_kernelStack
+_kernelStackSize
+initWithConfig:memoHandler:
+serialQueue
+setIsRunning:
+_start
+_stop
+_pause
+_unpause
+_fetchDataForReason:
+messageHandler
+_unprocessedMessageQueue
+_connectionEnabled
+_messageHandler
+_canFetchWhileArchiving
+_nextTaskForPid
+_pollTimer
+_validConfig
+_lastStats
+suspendDataProcessing
+resumeDataProcessing
+tapID
+isRunning
+_isRunning
+_tapID
+_memoHandler
+initWithIdentifier:path:
+requestWithIdentifier:path:
+_identifier
+_assetPath
+initWithIdentifier:data:completed:
+decodeBoolForKey:
+isCompleted
+encodeBool:forKey:
+_completed
+_data
+initWithMaxStackDepth:
+readNextStackTraceFromBuffer:withLength:
+maxStackDepth
+numFrames
+stackFrames
+_numStoredFrames
+_maxStackDepth
+_numFrames
+_stackFrames
+dateWithTimeIntervalSinceNow:
+sleepUntilDate:
+initWithData:encoding:
+setConsoleMessage:
+setKernelStackFrames:
+setNumKernelFrames:
+setUserStackFrames:
+setNumUserFrames:
+_processUnformattedData:len:timestamp:block:
+setEventText:
+setEventTextLength:
+stringDelimiter
+stringDelimiterLength
+initWithFileURL:maxStackDepth:
+enumerateRecordsUpToPosition:timestamp:block:
+fileURL
+_userStackTrace
+_kernelStackTrace
+_dtraceFile
+_readBuf
+_bytesInReadBuffer
+_currentFilepos
+_fileURL
+localOverrideName
+initWithName:database:
+URLForResource:withExtension:
+initWithName:alias:definition:kpepEvent:
+aliasOrName
+indexOfObjectPassingTest:
+alias
+localizedCaseInsensitiveCompare:
+initWithKey:ascending:selector:
+sortedArrayUsingDescriptors:
+cpuNamed:error:
+cpuNamed:fromSerializedData:error:
+legacyKPEPDatabaseURLForProductType:
+kpepDB
+eventFromName:
+eventFromNameOrAlias:
+allAliasAndNameStrings
+serializationData:
+events
+setEvents:
+_events
+_lookupName
+localProcessAttributesMap
+localSystemAttributesMap
+localCoalitionAttributesMap
+setPredicateString:
+setOnlySignposts:
+setSignpostsAndLogs:
+setTrackExpiredPIDs:
+setExcludeInfo:
+setExcludeDebug:
+setMemoHandler:
+initWithMessage:
+_message
+_lastMachContinuousTimeSeen
+arrayByAddingObjectsFromArray:
+configureWithAdditionalURLs:
+internalizedSettings
+bundleWithIdentifier:
+URLByAppendingPathComponent:isDirectory:
+URLByStandardizingPath
+defaultResponder
+handleIssue:type:from:
+subarrayWithRange:
+stringByStandardizingPath
+fileURLWithPath:isDirectory:
+_screenshotWithError:
+initWithServiceName:
+takeScreenshotWithReply:
+interfaceWithProtocol:
+setRemoteObjectInterface:
+takeScreenshot
+_screenshotServiceRequestWithError:
+localCountsAttributesMap
+localCountsAttributesNumberMap
+UUID
+setDataSent:
+registerHandler:
+serveErrorMessageForError:
+sendDataChunk:
+dataSent
+dataUsingEncoding:
+sentHeader
+setSentHeader:
+serveResponseAndDisconnect:
+absoluteString
+requestAssetAtPath:
+unregisterHandler:
+receivedMessage:
+completion
+setCompletion:
+_httpMessage
+_sentHeader
+_completion
+_dataSent
+_code
+firstFilePosition
+fragments
+_firstFilePosition
+_readFD
+sharedDTCPRemoteCache
+URLsForDirectory:inDomains:
+kindToString:
+_directoryForDevice:
+_filePathForKind:fileType:directoryURL:
+createDirectoryAtPath:withIntermediateDirectories:attributes:error:
+accessFileKind:device:fileType:block:
+_locks
+setBuffer:
+destructor
+setDestructor:
+_destructor
+_releaseRecords
+initFromDatastream:error:
+_records
+serviceIdentifier
+setServiceIdentifier:
+oneshotHandler
+setOneshotHandler:
+client
+setClient:
+pkHandle
+setPkHandle:
+xpcObject
+setXpcObject:
+_serviceIdentifier
+_oneshotHandler
+_client
+_pkHandle
+_xpcObject
+isEqualToNumber:
+_matchRemove:
+stringByDeletingLastPathComponent
+defaultHost
+userElection
+setUserElection:
+continuouslyDiscoverPlugInsForAttributes:flags:found:
+_registryModify:identifier:parent:client:block:
+indexSet
+addIndex:
+cancelPlugInDiscovery:
+removeObjectsAtIndexes:
+releaseAssertionsMadeByClient:
+registerClient:forXPCService:environment:arguments:options:handler:
+unregisterClient:withIdentifier:parent:
+_registrationDictsByPid
+_guard
+_execMonitorQueue
+xpcServiceObserved:withProcessIdentifier:requestedByProcess:options:
+observeServicesWithIdentifier:requestingProcess:environment:arguments:options:
+stopObservationsForIdentifier:requestingProcess:
+setBufferHandler:
+configureLocalLaunchEnvironment:recordedEventsMask:
+startAttachingToRunningTask:recordedEventsMask:error:
+startWithLaunchedTask:error:
+stopCollection
+preparedEnvironmentForLaunch:eventsMask:
+attachToPid:eventsMask:
+startCollectionWithPid:
+_recorder
+anyObject
+initForPid:withRemoveBlocks:onBehalfOfClient:
+removeAssertions
+addClaimForClient:
+removeClaimFromClient:
+hasNoMoreClients
+blocks
+_blocks
+_clientsWithClaim
+defaultAssertionFactories:andDisableKeys:
+initWithAssertionFactories:andDisableKeys:
+assertionForPid:
+removeObjectsForKeys:
+_assertionFactories
+_disableKeys
+_pidInfosByPid
+_lookupFunctionAddresses:
+injectLibrary:withFunctionPayload:sandboxExtension:callingFunction:arguments:
+initWithTask:
+scheduleLibraryLoad:calling:arguments:callback:
+_releaseOpaqueSymbolicator
+_remoteFunctionAddresses
+_helperLaunchPath
+_symbolLookupQueue
+_injectionQueue
+_attemptedSymbolLookup
+_exited
+_missingSymbol
+addInterface:toNameMapping:
+setActiveHandlers:
+setActiveHandlersQueue:
+activeHandlersQueue
+activeHandlers
+activeHandlerWithIdentifier:
+allKeys
+_activeHandlers
+_activeHandlersQueue
+heartbeatTime:block:
+enumerateRecordsFromSession:block:
+eventHorizon
+session
+setSession:
+triggerIDsToIndicesArray
+finalEnumerator
+trustTriggerID
+setTrustTriggerID:
+_finalEnumerator
+_trustTriggerID
+_kdebugTriggerIndex
+_triggerIDsToIndicesArray
+setClass:forClassName:
+_addTriggerConfig:withRecordHandler:
+setBufferSizeOverride:
+setBufferSizeOverrideClamping:
+triggerConfigCount
+addTriggerConfig:
+addTriggerConfig:withRecordHandler:
+setRecordHandlers:
+_spoolToDiskWhenPossible
+_hasAtLeastOneRecordHandler
+_recordHandlers
+enumerator
+memo
+_enumerator
+_memo
+waitForFulfillment
+setCoreCount:
+initWithName:nameOrAlias:counterName:kpepEvent:isPMI:
+eventName
+setEventName:
+eventOrAliasName
+setEventOrAliasName:
+counterName
+setCounterName:
+isPMI
+setIsPMI:
+kpepEvent
+setKpepEvent:
+parent
+setParent:
+child
+setChild:
+_isPMI
+_eventName
+_eventOrAliasName
+_counterName
+_kpepEvent
+_parent
+_child
+_hardwareEventCount
+_counterIndexForEventIndex:absolute:error:
+_counterNameForEventIndex:error:
+pmiEnabled
+_indexOfPMIEvent
+_enumerateAllocatedEventsWithIndex:
+kpcClasses
+_counterClassForEventIndex:error:
+pmiThreshold
+removeAllEvents
+enumerateAllocatedPMCs:
+allocatedPMIRecord
+eventCount
+unforceCounters:
+_kpepConfig
+_eventRecords
+_pmiEventOrAliasName
+_pmiThreshold
+_fixedCounterCount
+_configurableCounterCount
+_cpu
+localConnectionWithAuthorization:returningServerPid:error:
+getServerBinaryPath
+initWithLocalName:size:
+sharedMemory
+blessSimulatorServiceHub:error:
+localConnectionWithAuthorization:
+localConnectionWithAuthorization:returningServerPid:
+_resetAndPopulateFieldsWithEvent:
+nextRecord
+setNextRecord:
+latestRecord
+setLatestRecord:
+_nextRecord
+_latestRecord
+removeObjectForIntegerKey:
+_assignUserCallstackWithEvent:
+enumerateObjectsAndIntegerKeys:
+_setPMCConfigWordCount:wordArray:
+_decodeConfig:
+applyCallstackEvent:withBlock:
+_getPid:fromTid:
+removeLastObject
+_handleRecord:withBlock:
+_enumerateRecordsFromBuffer:bufferSize:block:
+drainEventsThroughTimestamp:withBlock:
+_logKPRec:includingCallstacks:toFile:
+tidToPid
+setTidToPid:
+decodeKPerfFromSession
+setDecodeKPerfFromSession:
+decodeKTraceFromSession
+setDecodeKTraceFromSession:
+tailspinLPET
+setTailspinLPET:
+_tidToPidMap
+_storageFreeList
+_earliestPendingByThread
+_latestTimestamp
+_kpcursor
+_callstackActionFilter
+_stopped
+_pmcCount
+_pmcIndices
+_configSeen
+_configInvalid
+_configMode
+_configHasPET
+_configSystrace
+_pmcLastValues
+_stats
+_enumerateStartTime
+_enumerateStopTime
+_decodingSession
+_decodeKPerfFromSession
+_decodeKTraceFromSession
+_eventHorizon
+_tidToPid
+_tailspinLPET
+_setCounterValues:count:
+thermalState
+_processInfoThermalStateToCLTMPressureLevel:
+_emitThermalState:currentState:
+_currentThermalState
+_timer
+initWithIncomingFilePath:outgoingFilePath:error:
+setCompressionHint:forChannel:
+_helperConnectionError
+_helperConnection
+unarchivedObjectOfClass:fromData:error:
+classInfoWithClassName:binaryPath:type:
+addClassInfo:forAddress:
+appendBytes:length:
+setMaxInteriorOffset:
+descriptionForLeakErrorCode:
+addRootNodesFromTask
+addMallocNodesFromTask
+removeRootReachableNodes
+nodeCount
+remoteIsa
+contentForNode:
+enumerateObjectsWithBlock:
+nodeDetails:
+scanNodesForReferences:
+detachFromTask
+deserializeLeakData:withBlock:
+serializedLeakDataWithCount:leaks:contents:references:layouts:timestamp:
+findLeaksWithOptions:block:
+eventText
+eventTextLength
+userStackFrames
+numUserFrames
+kernelStackFrames
+numKernelFrames
+consoleMessage
+_eventText
+_eventTextLength
+_userStackFrames
+_numUserFrames
+_kernelStackFrames
+_numKernelFrames
+_consoleMessage
+numberWithUnsignedLong:
+setScriptTextByIdentifier:
+setPreprocessorPath:
+setMaxStackDepth:
+setAuthorization:
+_authorization
+initWithOverlayFile:startingFileOffset:error:
+_overlayFile
+_startingOffset
+_endingOffset
+appendFormat:
+appendString:
+_kdebugCodes
+initWithValue:name:
+kdebugCode
+_kdebugCode
+localKDebugCodes:
+codesFromURL:error:
+legacyTraceCodesURLForOS:productVersion:
+kdebugCodeWithNameForValue:
+kdebugCodeWithNameForCode:
+kdebugCodeByValue:
+allKDebugCodes
+_allKDebugCodes
+_codeMap
+initWithUTF8String:
+vmEventsMask
+retainReleaseAutoEventsMask
+mallocReallocFreeEventsMask
+zombieEventsMask
+sharedMemorySize
+_setupSharedMemoryInTask:error:
+_startWithError:
+bufferHandler
+eventHandler
+addKeyFrame:
+createFullEventFromDelta:withEvent:
+_processIncomingData
+_endAndTossResources:
+readStackLogsUponAttach
+allEventsMask
+cppClassNamesMask
+currentVersion
+startForProcessingBuffersWithError:
+processBufferMessage:
+setReadStackLogsUponAttach:
+setSharedMemorySize:
+_shmem
+_processingQueue
+_serialEventQueue
+_partialEvent
+_fullEvent
+_partialSize
+_partialFilled
+_eventTotal
+_bytesTotal
+_outstandingBytes
+_stopCollection
+_threadToKeyFramesMap
+_readStackLogsUponAttach
+_sharedMemorySize
+_eventHandler
+_bufferHandler
+triggerIndex
+setTriggerIndex:
+logicalProcessorCore
+setLogicalProcessorCore:
+recordCount
+setRecordCount:
+triggerMetadata
+setTriggerMetadata:
+initWithDictionary:
+encodeInteger:forKey:
+encodeInt64:forKey:
+decodeIntegerForKey:
+decodeInt64ForKey:
+_recalculateSizes
+regionForAddress:
+_addRegion:annotation:new:
+stringByResolvingSymlinksInPath
+_annotateRange:withPath:type:
+initWithBytes:length:encoding:
+replaceObjectAtIndex:withObject:
+_annotationForRegion:
+insertObject:atIndex:
+regionsWithOptions:
+arrayWithObject:
+detailsForRegion:
+hydrateWithPreviousState:
+regions
+machAbsoluteTimestamp
+traceRelativeTimestamp
+summaryRegionsWithOptions:
+_machAbsolute
+_traceRelative
+_regions
+_residentSize
+_swapSize
+_dirtySize
+_totalSize
+_sharedRegionStart
+_sharedRegionLength
+_pageAnnotationsByRegion
+_setKernelCallstackAndExtraFrames:frames:extra:
+_setUserCallstackAndExtraFrames:frames:extra:
+cpuNumber
+userFrameCount
+supervisorFrameCount
+userFramesAndExtraData
+userExtraData
+supervisorFramesAndExtraData
+supervisorExtraData
+kdebugEvent
+kdebugArgumentCount
+kdebugArguments
+kdebugStringUUID
+kdebugString
+counterEventCount
+counterEventValues
+initWithTimestamp:recordType:cpuNumber:threadState:thread:
+detailedDescription
+threadState
+dispatchQueue
+supervisorExtraDataCount
+userExtraDataCount
+userFramesTruncated
+_kdebugArgumentsArray
+_counterDataSize
+_userFrameSize
+_supervisorFrameSize
+_userFramesTruncated
+_triggerID
+_cpuNumber
+_threadState
+_supervisorFrameCount
+_supervisorExtraDataCount
+_userFrameCount
+_userExtraDataCount
+_kdebugEvent
+_kdebugArgumentCount
+_counterEventCount
+_counterEventValues
+_userFramesAndExtraData
+_supervisorFramesAndExtraData
+_dispatchQueue
+_kdebugStringUUID
+_kdebugString
+setAlias:
+definition
+_alias
+_definition
+_sendNotification:install:
+installedApplicationsMatching:registerUpdateToken:
+unregisterUpdateToken:
+allObjects
+_addCPUUsageToSample:
+_handleSysmonProcessTable:startTime:endTime:
+_handleSysmonSystemTable:startTime:endTime:
+_handleSysmonCoalitionTable:startTime:endTime:
+_processesFromLastSample
+_coalitionsFromLastSample
+_processesAtWindowBeginning
+_systemAtWindowBeginning
+_coalitionsAtWindowBeginning
+_processRequest
+_systemRequest
+_coalitionRequest
+_processLastSampleTime
+_systemLastSampleTime
+_coalitionLastSampleTime
+_savedTicks
+initWithUUIDBytes:
+counterAllocatorProvider
+_collectUserStacks
+_collectKernelStacks
+_actionID
+_samplers
+_counterAllocatorProvider
+DTKPTriggerPMI: Starting PMI Trigger (%d). Event: %s. Threshold: %lld. PMCs: %lu
+Detected uncopyable value in NetworkStatistics dictionary
+Device Info Service was unable to create symbolicator for PID %d
+DTTapLogging: Enabled
+%s: %s
+DTKPTriggerTime: Starting Time Trigger (%d). Period: %lld us. PMCs: %lu
+DTTapService: (%d) Created new Tap service with delegate %s
+DTTapService: (%d) Setting the config.
+DTTapService: (%d) Starting the tap.
+DTTapService: (%d) Stopping the tap.
+DTTapService: (%d) Tap has been stopped and fully fetched from.
+DTTapService: (%d) All stop related messages have been sent. Stop complete
+DTTapService: (%d) Pausing the tap.
+DTTapService: (%d) Unpausing the tap.
+DTTapService: (%d) Fetching data from the tap.
+Failed to find client %u
+Failed to copy: %s
+Failed to allocate: %s
+Failed to create a plist to return to client
+failed to create signature for %d
+Unable to map memory for address: %#llx in task: %d (%d)
+Unable to map memory r/w for address: %#llx in task: %d (%d)
+Error starting server on device: %@
+ODR: Could not find path at %@
+ODR: Serving data for request %@ from directory %@
+ODR: Reading data for file handle for request %@
+ODR: Could not serve streaming zip with outFILE for request %s.
+ODR: Could not serve streaming zip with callbacks for request %s.
+ODR: Completed reading streaming zip data for request %@
+ODR: Serving data for request %@ from file %@
+ODR: Opening new channel to send response packets for request %@
+ODR: Using existing channel to send response packets for request %@
+ODR: Starting to send data for request %@.
+ODR: Request %@ has been cancelled, stopping sending data.
+ODR: Cancelled request %@ after sending %llu bytes from %llu messages.
+ODR: Finished sending request %@. Sent bytes: %llu from %llu messages.
+ODR: Closing channel for request %@
+ODR: Error checking if request %@ is cancelled: %@
+fwrite returned result > INTPTR_MAX and so is not representable as a ssize_t
+fread returned result > INTPTR_MAX and so is not representable as a ssize_t
+Unexpected symbolicator message: %s
+Symbolicator notification with no signature
+Bad response from symbolicator update service
+%s[%d]: [error] 'mach_msg_send' failed: %s (%d)
+Failed to add send right to client handle port: %s
+Failed to create client handle port: %s
+Signatures from daemon in invalid format
+Heartbeat
+Encoding a RESET command
+Partial error attaching to log: %@
+Data Size: %lu, Rows Sent: %d, Stack depth: %d
+DTKPTriggerKDebug: Starting KDebug Trigger (%d). Filter Mode: %d. %s.
+Failed to open DTrace handle for compiling
+Failed to create temp file for DTrace script: %s
+Failed to open temp file descriptor for DTrace script: %s
+Failed to write DTrace script: %s
+DTKPSession: Taking ownership of the active session lock. ID %d.
+DTKPSession: Failed to take ownership of the active session lock. ID %d.
+DTKPSession: Releasing ownership of the active session lock. ID %d.
+DTKPSession: Failed to release the active session lock: not the current owner. ID %d.
+DTKPSession: Starting recording. ID %d. Triggers: KDebug: %d, PMI: %d, Time: %lu
+DTKPSession: Set the kernel buffer size to %zuB. ID %d.
+DTKPSession: Pausing recording. ID %d.
+DTKPSession: Resuming recording. ID %d.
+DTKPSession: Stopping recording. ID %d.
+DTKPSession: Waiting for idle... ID %d.
+DTKPSession: Idle. ID %d.
+DTKPSession: Flushed buffer of size %zu from kernel. More: %d. ID %d.
+DTKPSession: Done flushing current kernel buffers. ID %d.
+%@ channel for (service %p) disconnected: releasing claims on assertions
+sent SIGCONT to pid %d
+failed to resume pid %d with SIGCONT (%s), will attempt task_resume() if authorized
+no task port available to resume pid %d with task_resume()
+attempting suspend via SIGSTOP for pid %d
+failed to suspend pid %d with SIGSTOP: %s
+Failed to open the I/O redirection file '%s' for reading: %s
+failed to remove I/O redirection read-side file for pid %d: %s
+failed to remove I/O redirection read-side file directory for pid %d: %s
+failed to close I/O redirection read-side file for pid %d: %s
+failed to construct base name for DTInstrumentServer bundle '%@'
+publishing services in image path %s
+no services to publish - this DTXConnection is likely to be useless
+dtarbiter XPC call failure (register_client_with_singleton): %s
+dtarbiter XPC call failure (register_daemon): %s
+dtarbiter XPC call failure (test_and_clear_singleton_lock_file): %s
+DTKPLogging: Enabled
+%s: Error #%d (%s): %s
+%@: availableConditionInducers called on unsupported platform.
+%@: disable active condition
+%@: disableActiveCondition called on unsupported platform.
+%@: disable condition with identifier: %@
+%@: disableConditionWithIdentifier called on unsupported platform.
+%@: enable condition with identifier '%@' profile '%@'
+%@: enableConditionWithIdentifier called on unsupported platform.
+%s registering capabilities
+Unable to call posix_spawn with empty path
+Unable to find actual binary to posix_spawn for path: %s
+passing %d environment variables:
+- %d: %s
+Unable to set up posix_spawnattr_t: %d
+Failed to connect to host exception port: %s
+Failed to restore a host port exception handler: 0x%x
+Failure waiting for exception: %s
+Exception handler server failed
+Failed to send reply to exit exception: %s
+failed to convert authorization to external form, aborting connection retrieval process
+failed to process externalized authorization form, aborting client registration process
+Failed to connect to host port
+DTKPDatastreamFile: Marking writing as completed for this datastream.
+DTKPDatastreamFile: Preparing to import data to %s
+DTKPDatastreamFile: Importing %zu bytes of data.
+DTKPDatastreamFile: Preparing to export data from %s
+DTKPDatastreamFile: Exporting %zu bytes of data.%s
+DTKPDatastreamFile: Peeking at %zu bytes of data.
+preserved to: %s
+Exception encountered trying to set tap configuration: %@
+Device disconnected while trying to set tap configuration
+Exception caught at %s:%d - %@
+Exception encountered trying to start tap: %@
+Device disconnected while trying to start tap
+Exception encountered trying to stop the tap: %@
+Device disconnected while trying to stop tap
+Exception encountered trying to pause the tap: %@
+Device disconnected while trying to pause tap
+Exception encountered trying to unpause the tap: %@
+Device disconnected while trying to unpause tap
+DTTap: (%d) Called start API
+DTTap: (%d) start API: Began running
+DTTap: (%d) start API: Finished running
+DTTap: (%d) Called stop API
+DTTap: (%d) stop API: Began running
+DTTap: (%d) stop API: Finished running
+DTTap: (%d) Called pause API
+DTTap: (%d) pause API: Began running
+DTTap: (%d) pause API: Finished running
+DTTap: (%d) Called unpause API
+DTTap: (%d) unpause API: Began running
+DTTap: (%d) unpause API: Finished running
+DTTap: (%d) Called fetchDataNow API
+DTTap: (%d) fetchDataNow API: Began running
+DTTap: (%d) fetchDataNow API: Finished running
+DTTap: (%d) Called suspendDataProcessing API
+DTTap: (%d) Called resumeDataProcessing API
+DTKPCPU: Loading KPEP database for %s
+DTKPCPU: Error getting an event name (%zu of %zu) from the KPEP '%s' database: %d
+DTKPCPU: Error getting an event alias (%s) from the KPEP '%s' database: %d
+DTKPCPU: Error getting an event description (%s) from the KPEP '%s' database: %d
+DTKPCPU: Created serialization data for CPU %s. %lu bytes.
+%@: Screenshot failed: %@
+%@: Screenshot succeeded (%lu bytes)
+failed to retrieve process info for pid %d: %{public}s
+DTKPDatastreamMemory: Marking writing as completed for this datastream.
+DTKPDatastreamMemory: Importing %zu bytes of data.
+DTKPDatastreamMemory: Exporting %zu bytes of data.%s
+DTKPDatastreamMemory: Peeking at %zu bytes of data.
+%@ releasing active assertions taken on behalf of client %@
+DTXPCServiceController: calling xpc_connection_create: serviceName=%s
+DTXPCServiceController: xpc attach handler entered
+DTXPCServiceController: xpc attach handler, pid = %d
+invoked for %sconfigurable service: %s pid: %d
+DTXPCServiceController: pid %d died, releasing claims on assertions taken on behalf of client %@
+xpc_service_instance_is_configurable(): true
+xpc launch: starting suspended
+xpc launch: started *not* suspended
+Watching pid %d '%s' for exec
+Service pid %d '%s' exec-ed
+Service pid %d '%s'  exited before exec
+Calling xpc_service_instance_run
+xpc_service_instance_is_configurable(): false, existing service
+killing service because we were instructed to kill existing services
+warning: multiple plugins discovered for identifier '%s': { %s }
+XPCControlService %p
+channel for service %p disconnected: releasing claims on assertions
+DTXPCControlService launchSuspendedProcessWithDevicePath called: path=%@, bundleIdentifier=%@, environment=%@, arguments=%@, options=%@
+DTXPCControlService launch process handler called: serviceIdentifier=%@, servicePid=%d, requestingPid=%d, outputFD=%d, error=%@
+DTXPCControlService observeServicesWithIdentifier called: serviceID=%@, requestingProcess=%d, environment=%@, arguments=%@, options=%@
+DTAssertionManager: skipping taking of assertion for pid %d due to option %@ being set
+DTAssertionManager: options dictionary specified item of class %@ (%@) as disable value, don't know how to interpret so leaving enabled
+Unable to lookup symbols 
+ target process %d has likely exited
+Found multiple symbols named '%s'; specified owner necessary:
+Unable to find symbol named '%s' in owner: %s.
+%s[%d]: [error] 'mach_port_mod_refs' failed: %s (%d)
+%s[%d]: [error] 'mach_port_deallocate' failed: %s (%d)
+%s[%d]: [error] 'mach_port_allocate' failed: %s (%d)
+%s[%d]: [error] 'mach_port_insert_right' failed: %s (%d)
+failed to find DTServiceHub binary (%s) within bundle for class %s (%s)
+cannot locate DTServiceHub binary: failed to find bundle for class %s
+starting handshake process with server
+about to send registration for client pid %d to server
+pid %d sent registration to server
+waiting to receive registration result from peer
+handshake status: %s (singleton pid %d)
+DTServiceHubClient: connected to server (singleton pid: %d, initial pid: %d)
+DTKPRecordDecoder: Buffers: %lld. Bytes: %lld. KPRecs: %lld. KPRecs Internal: %lld. KP User Callstacks: %lld. KP Kernel Callstacks: %lld. DTKP Records: %lld. DTKP Fixup: %lld. Max Event Pool: %lld
+DTKPDatastreamFileOverlay: Marking writing as completed for this datastream.
+DTKPDatastreamFileOverlay: Preparing to import data to %s
+DTKPDatastreamFileOverlay: Importing %zu bytes of data.
+DTKPDatastreamFileOverlay: Preparing to export data from %s
+DTKPDatastreamFileOverlay: Exporting %zu bytes of data.%s
+DTKPDatastreamFileOverlay: Peeking at %zu bytes of data.
+Unable to acquire task for pid: %d (%d)
+Inconsistent reader offset in shared memory! MT reception suspected...
+failed to set the maximum user callstack depth to %u on trigger: %@ - error %d
+DTKPTriggerPMI
+_XRExpiredPidCache
+XRExpiredPidCacheServiceProtected
+DTExpiredPidCacheService
+DTUVRenderingService
+DTAssetHTTPServer
+GCDAsyncSocketDelegate
+DTApplicationWorkspaceObserver
+LSApplicationWorkspaceObserverProtocol
+NSObject
+DTAssetResponseService
+DTAssetResponseServiceProtocol
+DTXAllowedRPC
+XRNetworkingServiceObservationTuple
+DTNetworkingService
+DTNetworkingServiceAuthorizedAPI
+DTPresentationSetting
+DTPresentationCheckable
+DTPresentationSettingGroup
+DTPresentationRegistry
+DTDeviceInfoService
+DTDeviceInfoServiceAuthorizedAPI
+DTKTraceTapLocalDelegate
+DTTapLocalDelegate
+DTSamplingService
+DTSamplingServiceAuthorizedAPI
+DTDTraceTapMessage
+NSSecureCoding
+NSCoding
+DTSysmonTapMessageHandler
+DTNetStatTapMessage
+DTAssetService
+DTAssetServiceProtocol
+DTKPTriggerTime
+DTSysmonProcessRecord
+DTSysmonSystemRecord
+DTSysmonCoalitionRecord
+DTSysmonCPUUsageEntry
+DTSysmonCPUUsageRecord
+DTSysmonRecord
+DTSysmonRecordEnumerator
+DTSysmonTapConfig
+DTTapServiceMessageSender
+DTTapService
+DTTapAuthorizedAPI
+DTTapBulkDataReceiver
+DTDTraceTapLocalDelegate
+DTGPUDataSource
+DTActivityTapTableDecoder
+DTSysmonTapMemo
+DTSysmonTapMemoHandlerDelegate
+DTTapMemoHandlerDelegate
+DTDTraceTapMessageHandler
+DTGPURawCounter
+DTGPUCounter
+DTGPUCounterProfile
+DTGPUCounterProfile_GPUStats
+DTFSUsageActivityService
+DTFSUsageActivityServiceAuthorizedAPI
+DTAssetProviderService
+DTKTraceTapMemo
+DTKTraceTapMemoHandlerDelegate
+DTNetStatLiveConnection
+DTNetStatTapRecordDecoder
+DTOSLogLoader
+DTOSLogLoaderTicket
+DTOSLogLoaderPrepareTicket
+DTOSLogLoaderStartTicket
+DTOSLogLoaderStopTicket
+DTOSLogLoaderFetchTicket
+DTOSLogStackReferenceWrapper
+DTOSLogArgumentConstReferences
+DTGPUService
+DTGPUServiceAuthorizedAPI
+DTGPUDataSourceDelegate
+DTTapMemo
+DTTapHeartbeatMemo
+DTTapStatusMemo
+DTTapDataMemo
+DTTapMemoHandler
+DTNetStatTCPRecord
+DTNetStatUDPRecord
+DTNetStatRouteRecord
+DTNetStatRecord
+DTNetStatRecordEnumerator
+DTNetStatTapConfig
+DTKTraceTapLocalVFSTracePathsProducer
+DTKTraceTapLocalEventProducer
+DTVMTrackingService
+DTVMTrackingServiceAuthorizedAPI
+DTNetStatTapServiceDelegate
+DTTapServiceDelegate
+DTKPTriggerKDebug
+DTTapMessage
+DTTapHeartbeatMessage
+_DT_GCDAsyncSocketPreBuffer
+_DT_GCDAsyncReadPacket
+_DT_GCDAsyncWritePacket
+_DT_GCDAsyncSpecialPacket
+_DT_GCDAsyncSocket
+XRVMRegion
+NSCopying
+XRVMRegionAnnotation
+XRVMCoalescedRegion
+DTKPSession
+DTKPTriggerCounterAllocatorProvider
+DTActivityTraceTapMessage
+DTFileBrowserService
+DTFileBrowserServiceAuthorizedAPI
+DTKTraceTapMessageHandler
+DTProcessControlService
+DTProcessControlServiceAuthorizedMethods
+DTProcessControlEvent
+DTProcessControlBackgroundFetchEvent
+DTProcessControlApplicationMemoryWarning
+DTInstrumentServer
+DTInstrumentServerAllowedRPC
+DTInstrumentServerSimulatorPrivilege
+DTConditionInducerService
+DTConditionInducerSupportUpdatesProtocol
+DTConditionInducerServiceAPI
+DTNetStatSourceMapEntry
+DTNetStatSourceMap
+DTNetStatTapLocalDelegate
+DTKTraceTapTriggerConfig
+Private
+DTActivityTraceTapLocalDelegate
+DTOSLogLoaderDelegate
+DTActivityTraceTapLocalShuttle
+DTOSLogLoaderVisitor
+DTActivityTraceTapMemoHandlerDelegate
+DTTapMessageHandler
+DTTapConfig
+DTActivityTraceTapServiceDelegate
+DTSysmonTapServiceDelegate
+DTPosixSpawnProcessControlService
+DTKPDatastreamFile
+DTKPDatastream
+DTTapFactory
+DTLeaksServicePreservedGraphFile
+DTLeaksService
+DTLeaksServiceLegacyRPC
+DTLeaksServiceAuthorizedRPC
+DTKPTailSpinLPETSample
+DTTapStatusMessage
+DTNetStatTapMessageHandler
+DTTapRemote
+DTTapLocal
+DTNStatSourceMapEntry
+DTTap
+DTAssetRequest
+DTAssetResponse
+_XRDTraceStackTrace
+DTDTraceTapRecordDecoder
+DTKPCPU
+DTSysmonTapSupportedAttributes
+DTActivityTraceTapConfig
+DTActivityTraceTapMemo
+DTNetStatTapMemo
+DTNetStatTapMemoHandlerDelegate
+XRInternalizedSettingsStore
+DTScreenshotServiceProtocol
+DTScreenshotRequestService
+DTScreenshotRequestServiceAPI
+DTNetStatTapSupportedAttributes
+DTAssetHTTPRequestHandler
+DTraceMemoFragment
+DTDTraceTapMemo
+DTDTraceTapMemoHandlerDelegate
+DVTInstrumentsFoundation
+DTSysmonTapRecordDecoder
+DTCPRemoteCache
+DTKPDataStreamMemoryRecord
+DTKPDatastreamMemory
+DTXPCRegistration
+DTXPCServiceController
+DTXPCControlService
+DTXPCControlServiceRequests
+DTObjectAllocService
+DTObjectAllocServiceAuthorizedAPI
+DTAssertionPidInfo
+DTAssertionManager
+RemoteBundleLoader
+DTNetworkInterfaceInfo
+DTSysmonTapMessage
+DTAssetResponseBroker
+DTKPSessionRecordEnumerator
+DTKTraceTapConfig
+DTKPSessionRecordBundle
+DTActivityTraceTapMessageHandler
+DTKTraceTapServiceDelegate
+DTKPCPUCounterAllocatorRecord
+DTKPCPUCounterAllocator
+DTServiceHubClient
+_DTKPPendingRecord
+DTKPRecordDecoder
+DTKTraceTapLocalThermalEventProducer
+DTTapMessageHandlerArchiver
+LeakAnalyzer
+DTDTraceTapServiceDelegate
+DTDTraceRecord
+DTDTraceRecordEnumerator
+DTDTraceTapConfig
+DTKPDatastreamFileOverlay
+DTKPKDebugCodeSet
+DTKPKDebugCodeWithName
+DTKPKDebugCodes
+DTAllocationsRecorder
+DTKTraceTapMessage
+XRVMState
+DTKPRecord
+DTKPCPUEvent
+DTApplicationListingService
+DTApplicationWorkspaceClient
+DTApplicationListingServiceRequests
+DTSysmonTapLocalDelegate
+DTKPTrigger
+Q24@0:8^Q16
+i32@0:8@16^@24
+i40@0:8@16Q24^@32
+Q16@0:8
+i24@0:8^@16
+v16@0:8
+I16@0:8
+v20@0:8I16
+@16@0:8
+@"NSString"
+{TFPPidWatcher="clientPort"I}
+@"NSMutableDictionary"
+v24@0:8@?16
+@"NSObject<OS_dispatch_queue>"
+@"_XRExpiredPidCache"
+@24@0:8@16
+v20@0:8c16
+v24@0:8@16
+c56@0:8@16@24@32@40^@48
+c32@0:8@16^@24
+c40@0:8@16@24^@32
+@"DTXConnection"
+@32@0:8@16@24
+v32@0:8@16@24
+v36@0:8@16@24S32
+v40@0:8@16@24q32
+v40@0:8@16Q24q32
+v32@0:8@16q24
+d48@0:8@16q24d32Q40
+v40@0:8@16^{__SecTrust=}24@?32
+@"NSObject<OS_dispatch_queue>"32@0:8@"NSData"16@"_DT_GCDAsyncSocket"24
+v32@0:8@"_DT_GCDAsyncSocket"16@"_DT_GCDAsyncSocket"24
+v36@0:8@"_DT_GCDAsyncSocket"16@"NSString"24S32
+v40@0:8@"_DT_GCDAsyncSocket"16@"NSData"24q32
+v40@0:8@"_DT_GCDAsyncSocket"16Q24q32
+v32@0:8@"_DT_GCDAsyncSocket"16q24
+d48@0:8@"_DT_GCDAsyncSocket"16q24d32Q40
+v24@0:8@"_DT_GCDAsyncSocket"16
+v32@0:8@"_DT_GCDAsyncSocket"16@"NSError"24
+v40@0:8@"_DT_GCDAsyncSocket"16^{__SecTrust=}24@?<v@?c>32
+c24@0:8^@16
+@"DTXChannel"
+@"_DT_GCDAsyncSocket"
+c24@0:8@16
+#16@0:8
+@24@0:8:16
+@32@0:8:16@24
+@40@0:8:16@24@32
+c16@0:8
+c24@0:8#16
+c24@0:8:16
+Vv16@0:8
+^{_NSZone=}16@0:8
+c24@0:8@"Protocol"16
+@"NSString"16@0:8
+v24@0:8@"NSArray"16
+v32@0:8@"NSArray"16@"NSArray"24
+v28@0:8@16c24
+@40@0:8@16@24@32
+@"NSNumber"24@0:8@"NSString"16
+@24@0:8i16C20
+@40@0:8i16C20^{__CFDictionary=}24r^^^{__CFString}32
+i16@0:8
+v20@0:8i16
+C16@0:8
+v20@0:8C16
+v24@0:8@"NSNumber"16
+^{__NStatManager=}
+{DTNStatSourceMap="_container"^{__CFDictionary}"_nextSerialNumber"q}
+@"NSObject<OS_dispatch_source>"
+@44@0:8@16@24@32c40
+@"NSArray"
+@"NSObject<OS_dispatch_semaphore>"
+@"NSArray"16@0:8
+@"NSString"24@0:8@"NSNumber"16
+@"NSNumber"24@0:8@"NSNumber"16
+@"NSData"32@0:8@"NSNumber"16@"NSString"24
+@"NSDictionary"16@0:8
+@"NSArray"24@0:8@"NSString"16
+@"NSDictionary"24@0:8@"NSString"16
+@"NSData"16@0:8
+@"NSSet"16@0:8
+@24@0:8r*16
+^{__CFDictionary=}
+^{kpep_db=}
+v32@0:8Q16@?24
+@"DTTapStatusMemo"16@0:8
+v24@0:8@"DTTapLocal"16
+v32@0:8Q16@?<v@?@"DTTapMemo"c>24
+v24@0:8@?<I@?i>16
+Q24@0:8Q16
+Q24@0:8@16
+@"DTTapLocal"
+@"DTKTraceTapConfig"
+@"NSMutableArray"
+@"DTKPSession"
+v28@0:8^{__CFDictionary=}16c24
+^{sampling_context_t=}
+v24@0:8@"NSCoder"16
+@24@0:8@"NSCoder"16
+v24@0:8Q16
+@"NSDictionary"
+@"NSData"
+@28@0:8@16I24
+@"NSNumber"16@0:8
+@32@0:8@"NSString"16@"NSData"24
+@"DTAssetHTTPServer"
+@"NSXPCConnection"
+i36@0:8I16I20Q24I32
+@48@0:8d16d24d32d40
+d16@0:8
+v24@0:8d16
+@"DTSysmonCPUUsageEntry"
+@"DTSysmonSystemRecord"
+@"DTSysmonCPUUsageRecord"
+@24@0:8Q16
+Q24@0:8@?16
+@"DTSysmonTapRecordDecoder"
+@24@0:8^{_NSZone=}16
+@?16@0:8
+v40@0:8@16#24@32
+v24@0:8@"NSDictionary"16
+v40@0:8r^v16Q24@?32
+v40@0:8r^v16Q24@?<v@?>32
+v24@0:8@"DTTapMessage"16
+@"<DTTapServiceDelegate>"
+@"DTTapConfig"
+@"DTTapServiceMessageSender"
+@"DTDTraceTapConfig"
+@"NSObject<OS_xpc_object>"
+@36@0:8I16Q20Q28
+@"DTGPUCounterProfile"
+{unique_ptr<DTGPUCounterRingBuffer, std::__1::default_delete<DTGPUCounterRingBuffer> >="__ptr_"{__compressed_pair<DTGPUCounterRingBuffer *, std::__1::default_delete<DTGPUCounterRingBuffer> >="__value_"^{DTGPUCounterRingBuffer}}}
+@"<MTLDevice>"
+@"<DTGPUDataSourceDelegate>"
+@"DTActivityTraceTapMemo"
+@"NSMutableData"
+{unique_ptr<DTTableRowDecoder, std::__1::default_delete<DTTableRowDecoder> >="__ptr_"{__compressed_pair<DTTableRowDecoder *, std::__1::default_delete<DTTableRowDecoder> >="__value_"^{DTTableRowDecoder}}}
+{unique_ptr<DTStateActionDecoder, std::__1::default_delete<DTStateActionDecoder> >="__ptr_"{__compressed_pair<DTStateActionDecoder *, std::__1::default_delete<DTStateActionDecoder> >="__value_"^{DTStateActionDecoder}}}
+[1024c]
+{?="time"C"category"C"subsystem"C"senderImagePath"C"format"C"message"C"backtrace"C}
+v32@0:8@"DTTapDataMemo"16@"<DTTapBulkDataReceiver>"24
+v32@0:8@"DTTapDataMemo"16@"DTTapConfig"24
+v32@0:8@"DTTapHeartbeatMemo"16@"DTTapConfig"24
+@"NSDictionary"24@0:8@"DTTapDataMemo"16
+@"NSURL"
+@32@0:8@16Q24
+@32@0:8Q16@24
+c24@0:8Q16
+{EMA<unsigned long long>="currentValue"Q"coefficient"d}
+@"NSMutableDictionary"24@0:8@"NSMutableDictionary"16
+v32@0:8@"NSNumber"16@"NSString"24
+@"NSMutableDictionary"16@0:8
+v40@0:8@16@24@?32
+v32@0:8@16@?24
+B32@0:8@16@24
+c32@0:8@16@24
+v32@0:8@16Q24
+@"<DTKPDatastream>"
+@"NSValue"
+@"DTKPRecordDecoder"
+Q32@0:8@16@?24
+@56@0:8@16@24Q32Q40Q48
+@32@0:8@16d24
+@"OSLogEventStore"
+@"OSLogEventStream"
+@"OSLogEventLiveStore"
+@"OSLogEventLiveStream"
+@"NSError"
+@"NSDate"
+@"XRMobileAgent<DTOSLogLoaderVisitor>"
+@"DTOSLogLoaderFetchTicket"
+{_opaque_pthread_cond_t="__sig"q"__opaque"[40c]}
+{_opaque_pthread_mutex_t="__sig"q"__opaque"[56c]}
+{unique_ptr<DTOSLogTableLoader, std::__1::default_delete<DTOSLogTableLoader> >="__ptr_"{__compressed_pair<DTOSLogTableLoader *, std::__1::default_delete<DTOSLogTableLoader> >="__value_"^{DTOSLogTableLoader}}}
+{DTStateActionEncoder="_state"i"_tape"{OutputTape="start"^S"head"^S"end"^S}"_pushBufferStart"*"_pushBufferEnd"*"_pushBufferBitOffset"Q"_backgroundPatternStart"Q"_topOfStackRef"{StackReference="_generation"S"_reference"S}"_background"C"_stateWhenTapeRanOut"i"_pushBufferSizeToXmit"I}
+{StackReference="_generation"S"_reference"S}
+@"XRIntKeyedDictionary"
+@"NSPredicate"
+@"<DTOSLogLoaderDelegate>"
+@"OSLogEventStreamPosition"
+@"DTOSLogStackReferenceWrapper"
+v48@0:8Q16I24Q28Q36i44
+v40@0:8r^Q16Q24@32
+v40@0:8r^Q16Q24@"DTGPUDataSource"32
+@20@0:8i16
+v44@0:8@16I24Q28Q36
+v40@0:8i16I20Q24Q32
+@"<NSObject>"
+@28@0:8I16@20
+@36@0:8I16@20@28
+@44@0:8I16@20@28Q36
+@"<DTTapMemoHandlerDelegate>"
+q16@0:8
+v24@0:8q16
+@"DTNetStatTapRecordDecoder"
+v32@0:8@"NSNumber"16@"NSDate"24
+@"XRVMState"16@0:8
+@"XRVMState"
+@24@0:8@"DTTapServiceMessageSender"16
+@"DTTapConfig"24@0:8@"NSDictionary"16
+c24@0:8@"DTTapConfig"16
+@"DTTapMessage"24@0:8@"DTTapConfig"16
+v24@0:8@"DTXConnection"16
+i20@0:8c16
+v24@0:8C16C20
+@"DTKPKDebugCodeSet"
+*16@0:8
+v32@0:8^*16^Q24
+@72@0:8@16Q24Q32d40Q48@56q64
+Q32@0:8Q16^c24
+Q32@0:8@16^c24
+q24@0:8q16
+@40@0:8@16d24q32
+@36@0:8@16S24^@28
+@24@0:8r^{sockaddr_in=CCS{in_addr=I}[8c]}16
+@24@0:8r^{sockaddr_in6=CCSI{in6_addr=(?=[16C][8S][4I])}I}16
+S24@0:8r^{sockaddr_in=CCS{in_addr=I}[8c]}16
+S24@0:8r^{sockaddr_in6=CCSI{in6_addr=(?=[16C][8S][4I])}I}16
+S24@0:8@16
+c40@0:8^@16^S24@32
+c48@0:8^@16^S24*32@40
+v32@0:8^@16^@24
+v36@0:8@16@24c32
+c28@0:8S16^@20
+c36@0:8@16S24^@28
+c20@0:8i16
+c44@0:8@16S24d28^@36
+c52@0:8@16S24@28d36^@44
+c40@0:8@16d24^@32
+c48@0:8@16@24d32^@40
+v36@0:8i16@20@28
+v28@0:8i16@20
+S16@0:8
+S20@0:8i16
+v44@0:8^@16^@24@32S40
+v32@0:8d16q24
+v48@0:8d16@24Q32q40
+v56@0:8d16@24Q32Q40q48
+v40@0:8Q16d24q32
+v56@0:8Q16d24@32Q40q48
+v40@0:8@16d24q32
+v56@0:8@16d24@32Q40q48
+v48@0:8@16d24Q32q40
+v64@0:8@16d24@32Q40Q48q56
+f40@0:8^q16^Q24^Q32
+i32@0:8^v16^Q24
+i32@0:8r^v16^Q24
+v24@0:8c16i20
+^{SSLContext=}16@0:8
+@"_DT_GCDAsyncReadPacket"
+@"_DT_GCDAsyncWritePacket"
+@"_DT_GCDAsyncSocketPreBuffer"
+^{SSLContext=}
+Q32@0:8@16Q24
+@40@0:8Q16Q24^{vm_region_submap_info_64=iiIQIIIIIISCCIiISIQ}32
+c40@0:8Q16Q24^{vm_region_submap_info_64=iiIQIIIIIISCCIiISIQ}32
+v32@0:8Q16Q24
+v32@0:8I16I20I24I28
+@32@0:8@16I24c28
+i24@0:8Q16
+i20@0:8i16
+@"DTKPCPUCounterAllocator"16@0:8
+^v16@0:8
+@24@0:8^@16
+@36@0:8@16c24^@28
+i32@0:8^@16@?24
+i40@0:8^c16^@24@?32
+v28@0:8c16^{__sFILE=*iiss{__sbuf=*i}i^v^?^?^?^?{__sbuf=*i}^{__sFILEX}i[3C][1C]{__sbuf=*i}iq}20
+i36@0:8c16c20c24^@28
+i40@0:8^^v16^Q24^B32
+i24@0:8^v16
+i20@0:8I16
+i28@0:8I16^I20
+@"DTKPTriggerKDebug"
+@"DTKPTriggerPMI"
+@"DTKPCPUCounterAllocator"
+{SessionCallbackState="thread"^{_opaque_pthread_t}"lock"{_opaque_pthread_mutex_t="__sig"q"__opaque"[56c]}"conditionVariable"{_opaque_pthread_cond_t="__sig"q"__opaque"[40c]}"state"i"buffer_drained"B}
+^{kperf_buf=}
+@"NSArray"24@0:8@"NSArray"16
+@"NSData"24@0:8@"NSString"16
+@56@0:8@16@24@32@40@48
+@"NSNumber"56@0:8@"NSString"16@"NSString"24@"NSDictionary"32@"NSArray"40@"NSDictionary"48
+v32@0:8@"NSNumber"16@"NSNumber"24
+v32@0:8@"NSData"16@"NSNumber"24
+@48@0:8@16@24@32@40
+i40@0:8i16i20*24Q32
+v32@0:8i16i20@24
+v24@0:8i16i20
+v36@0:8@16@24i32
+v24@0:8^{AuthorizationOpaqueRef=}16
+^{AuthorizationOpaqueRef=}16@0:8
+I20@0:8i16
+v24@0:8I16i20
+@"NSNumber"20@0:8i16
+@"NSNumber"32@0:8@"NSString"16@"NSString"24
+@24@0:8r^{__NStatSource=}16
+v24@0:8r^{__NStatSource=}16
+@24@0:8^{__CFDictionary=}16
+@"DTNetStatTapConfig"
+@"NSSet"
+@"DTNetStatSourceMap"
+v24@0:8@"DTOSLogLoader"16
+@"DTActivityTraceTapConfig"
+@"DTOSLogLoader"
+@"XRMobileAgentDock"
+@"DTActivityTraceTapLocalShuttle"
+v24@0:8@"NSData"16
+@"NSError"16@0:8
+v24@0:8@"NSError"16
+v44@0:8I16Q20@28@36
+@"<DTTapBulkDataReceiver>"
+i56@0:8@16@24@32@40@?48
+i48@0:8r^v16Q24^@32@?40
+i48@0:8r^v16Q24^@32@?<v@?>40
+i32@0:8^@16@?<v@?^vQ@?<v@?>c>24
+i32@0:8^@16@?<v@?^vQc>24
+@40@0:8@16i24I28^@32
+@32@0:8@16^@24
+@44@0:8@16@24c32^@36
+v40@0:8@16@24@32
+v40@0:8@"NSNumber"16@"NSNumber"24@"NSNumber"32
+@40@0:8i16^Q20Q28I36
+@36@0:8i16^Q20Q28
+@"NSDictionary"32@0:8Q16@"NSDictionary"24
+@"NSArray"40@0:8i16^Q20Q28I36
+@"NSArray"36@0:8i16^Q20Q28
+v36@0:8i16@20@?28
+@28@0:8@16i24
+v32@0:8Q16@24
+v24@0:8^v16
+@44@0:8I16Q20@28@36
+@"DTTapMessageHandler"
+@"<DTTapLocalDelegate>"
+@"XRNetworkingServiceObservationTuple"
+@"DTTapMemoHandler"
+@36@0:8@16@24c32
+@20@0:8I16
+*32@0:8*16Q24
+^Q16@0:8
+r*16@0:8
+^v48@0:8*16Q24Q32@?40
+v40@0:8q16Q24@?32
+@"_XRDTraceStackTrace"
+^{__sFILE=*iiss{__sbuf=*i}i^v^?^?^?^?{__sbuf=*i}^{__sFILEX}i[3C][1C]{__sbuf=*i}iq}
+@40@0:8@16@24^@32
+@32@0:8@16^{kpep_db=}24
+^{kpep_db=}16@0:8
+r^v24@0:8^Q16
+@"DTXMessage"
+v24@0:8@?<v@?@"NSData"@"NSError">16
+v24@0:8^{__CFHTTPMessage=}16
+^{__CFHTTPMessage=}
+@36@0:8Q16q24I32
+@"DTDTraceTapRecordDecoder"
+@24@0:8q16
+@40@0:8q16@24@32
+c48@0:8q16@24@32@?40
+r^v16@0:8
+v24@0:8r^v16
+{vector<DTKPDataStreamMemoryRecord *, std::__1::allocator<DTKPDataStreamMemoryRecord *> >="__begin_"^@"__end_"^@"__end_cap_"{__compressed_pair<DTKPDataStreamMemoryRecord *__strong *, std::__1::allocator<DTKPDataStreamMemoryRecord *> >="__value_"^@}}
+v64@0:8@16@24@32@40@48@?56
+v48@0:8c16@20i28@32@?40
+v52@0:8@16i24@28@36@44
+v28@0:8@16i24
+v52@0:8@"NSString"16i24@"NSDictionary"28@"NSArray"36@"NSDictionary"44
+v28@0:8@"NSString"16i24
+@"NSDictionary"32@0:8@"NSDictionary"16@"NSNumber"24
+@"NSNumber"32@0:8@"NSNumber"16@"NSNumber"24
+@"DTAllocationsRecorder"
+@36@0:8i16@20@28
+@"NSMutableSet"
+v32@0:8{_CSTypeRef=QQ}16
+v48@0:8@16@24@32@?40
+^{?=QQQQQQQQQQQQQQQQQ}
+v32@0:8^{__SCNetworkInterface=}16@24
+r^I16@0:8
+v24@0:8r^I16
+i32@0:8@16@24
+i24@0:8@16
+i32@0:8@16@?24
+@"DTKPSessionRecordEnumerator"
+@"DTTapMemo"
+@52@0:8@16@24@32^{kpep_event=}40c48
+^{kpep_event=}16@0:8
+v24@0:8^{kpep_event=}16
+^{kpep_event=}
+@"DTKPCPUCounterAllocatorRecord"
+I32@0:8Q16^@24
+Q36@0:8Q16c24^@28
+@32@0:8Q16^@24
+i28@0:8I16^@20
+^{kpep_config=}
+@"DTKPCPU"
+@24@0:8^{AuthorizationOpaqueRef=}16
+@32@0:8^{AuthorizationOpaqueRef=}16^i24
+@40@0:8^{AuthorizationOpaqueRef=}16^i24^@32
+v24@0:8^{kpdecode_record=QQQi{?=[20c]}{?=I[4Q]}{?=iiQ}{kpdecode_callstack=II[128Q]}{kpdecode_callstack=II[128Q]}{kpdecode_pmc=i[32Q]}{?=IIII}{?=IQQQQ}{?=QQIssb3b3b3b3}{?=QiiQQ}{?=QQsC}{?=Q}{?=II}{?=Qi}{?=i^Q}{?=Q}{?=Ii}{?=[256c]QQI}{?=QQQQ}{?=QQ}{?=b3b3b3}}16
+@"_DTKPPendingRecord"
+v32@0:8^{kpdecode_record=QQQi{?=[20c]}{?=I[4Q]}{?=iiQ}{kpdecode_callstack=II[128Q]}{kpdecode_callstack=II[128Q]}{kpdecode_pmc=i[32Q]}{?=IIII}{?=IQQQQ}{?=QQIssb3b3b3b3}{?=QiiQQ}{?=QQsC}{?=Q}{?=II}{?=Qi}{?=i^Q}{?=Q}{?=Ii}{?=[256c]QQI}{?=QQQQ}{?=QQ}{?=b3b3b3}}16@?24
+i32@0:8Q16@?24
+v32@0:8Q16^Q24
+i40@0:8r^v16Q24@?32
+i32@0:8^{ktrace_session=}16@?24
+c32@0:8^i16Q24
+i24@0:8@?16
+v36@0:8^{kpdecode_record=QQQi{?=[20c]}{?=I[4Q]}{?=iiQ}{kpdecode_callstack=II[128Q]}{kpdecode_callstack=II[128Q]}{kpdecode_pmc=i[32Q]}{?=IIII}{?=IQQQQ}{?=QQIssb3b3b3b3}{?=QiiQQ}{?=QQsC}{?=Q}{?=II}{?=Qi}{?=i^Q}{?=Q}{?=Ii}{?=[256c]QQI}{?=QQQQ}{?=QQ}{?=b3b3b3}}16c24^{__sFILE=*iiss{__sbuf=*i}i^v^?^?^?^?{__sbuf=*i}^{__sFILEX}i[3C][1C]{__sbuf=*i}iq}28
+v48@0:8r^v16Q24c32c36^{__sFILE=*iiss{__sbuf=*i}i^v^?^?^?^?{__sbuf=*i}^{__sFILEX}i[3C][1C]{__sbuf=*i}iq}40
+{unordered_map<unsigned long long, int, std::__1::hash<unsigned long long>, std::__1::equal_to<unsigned long long>, std::__1::allocator<std::__1::pair<const unsigned long long, int> > >="__table_"{__hash_table<std::__1::__hash_value_type<unsigned long long, int>, std::__1::__unordered_map_hasher<unsigned long long, std::__1::__hash_value_type<unsigned long long, int>, std::__1::hash<unsigned long long>, true>, std::__1::__unordered_map_equal<unsigned long long, std::__1::__hash_value_type<unsigned long long, int>, std::__1::equal_to<unsigned long long>, true>, std::__1::allocator<std::__1::__hash_value_type<unsigned long long, int> > >="__bucket_list_"{unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, int>, void *> *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, int>, void *> *> *> > >="__ptr_"{__compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, int>, void *> *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, int>, void *> *> *> > >="__value_"^^{__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, int>, void *> *>}"__value_"{__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, int>, void *> *> *> >="__data_"{__compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, int>, void *> *> *> >="__value_"Q}}}}"__p1_"{__compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, int>, void *> *>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, int>, void *> > >="__value_"{__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, int>, void *> *>="__next_"^{__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, int>, void *> *>}}}"__p2_"{__compressed_pair<unsigned long, std::__1::__unordered_map_hasher<unsigned long long, std::__1::__hash_value_type<unsigned long long, int>, std::__1::hash<unsigned long long>, true> >="__value_"Q}"__p3_"{__compressed_pair<float, std::__1::__unordered_map_equal<unsigned long long, std::__1::__hash_value_type<unsigned long long, int>, std::__1::equal_to<unsigned long long>, true> >="__value_"f}}}
+^{kpdecode_cursor=}
+^{kperf_kdebug_filter=}
+[32^{pmc_lastval}]
+{?="buffersProcessed"Q"bufferBytes"Q"kprecsDecoded"Q"kprecsInternal"Q"kprecsWithUserStacks"Q"kprecsWithKernelStacks"Q"kprecsTimeFilteredOut"Q"dtkpRecsSent"Q"dtkpCallstackFixup"Q"eventPoolDepth"Q}
+^{ktrace_session=}
+Q24@0:8q16
+v32@0:8q16q24
+@68@0:8I16^{?=QQII}20^@28{?=II^{?}}36@52Q60
+@28@0:8I16@?20
+v24@0:8r*16
+r^Q16@0:8
+v24@0:8r^Q16
+@"DTDTraceTapMemo"
+r^{AuthorizationOpaqueRef=}16@0:8
+v24@0:8r^{AuthorizationOpaqueRef=}16
+r^{AuthorizationOpaqueRef=}
+@40@0:8@16q24^@32
+v24@0:8*16
+v24@0:8I16I20
+c20@0:8I16
+c24@0:8I16I20
+*20@0:8c16
+(?=I{?=b2b14b8b8})16@0:8
+(?="value"I"field"{?="qualifier"b2"code"b14"subclass"b8"classID"b8})
+@20@0:8(?=I{?=b2b14b8b8})16
+c28@0:8@16I24
+Q28@0:8I16^@20
+c32@0:8I16I20^@24
+c28@0:8I16^@20
+v24@0:8^{?=dIIQQQq[0Q]}16
+v32@0:8^{?=dIIQQQq[0Q]}16^{?=dIIQQQq[0Q]}24
+^{DTXSharedMemory=QQQIIIIAiAiAIAiAiAiAiIII[0c]}
+^{?=dIIQQQq[0Q]}
+{map<unsigned long long, std::__1::map<unsigned int, OAKeyFrame *, std::__1::less<unsigned int>, std::__1::allocator<std::__1::pair<const unsigned int, OAKeyFrame *> > >, std::__1::less<unsigned long long>, std::__1::allocator<std::__1::pair<const unsigned long long, std::__1::map<unsigned int, OAKeyFrame *, std::__1::less<unsigned int>, std::__1::allocator<std::__1::pair<const unsigned int, OAKeyFrame *> > > > > >="__tree_"{__tree<std::__1::__value_type<unsigned long long, std::__1::map<unsigned int, OAKeyFrame *, std::__1::less<unsigned int>, std::__1::allocator<std::__1::pair<const unsigned int, OAKeyFrame *> > > >, std::__1::__map_value_compare<unsigned long long, std::__1::__value_type<unsigned long long, std::__1::map<unsigned int, OAKeyFrame *, std::__1::less<unsigned int>, std::__1::allocator<std::__1::pair<const unsigned int, OAKeyFrame *> > > >, std::__1::less<unsigned long long>, true>, std::__1::allocator<std::__1::__value_type<unsigned long long, std::__1::map<unsigned int, OAKeyFrame *, std::__1::less<unsigned int>, std::__1::allocator<std::__1::pair<const unsigned int, OAKeyFrame *> > > > > >="__begin_node_"^{__tree_end_node<std::__1::__tree_node_base<void *> *>}"__pair1_"{__compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<unsigned long long, std::__1::map<unsigned int, OAKeyFrame *, std::__1::less<unsigned int>, std::__1::allocator<std::__1::pair<const unsigned int, OAKeyFrame *> > > >, void *> > >="__value_"{__tree_end_node<std::__1::__tree_node_base<void *> *>="__left_"^{__tree_node_base<void *>}}}"__pair3_"{__compressed_pair<unsigned long, std::__1::__map_value_compare<unsigned long long, std::__1::__value_type<unsigned long long, std::__1::map<unsigned int, OAKeyFrame *, std::__1::less<unsigned int>, std::__1::allocator<std::__1::pair<const unsigned int, OAKeyFrame *> > > >, std::__1::less<unsigned long long>, true> >="__value_"Q}}}
+@36@0:8I16i20@24c32
+v48@0:8{_CSRange=QQ}16@32@40
+@44@0:8Q16I24I28I32Q36
+v32@0:8^Q16I24I28
+v28@0:8r^Q16I24
+[5Q]
+@48@0:8@16@24@32^{kpep_event=}40
+@"NSArray"32@0:8@"NSDictionary"16@"NSString"24
+v24@0:8@"NSString"16
+v40@0:8@16Q24Q32
+@"DTSysmonTapConfig"
+@"NSObject<OS_sysmon_request>"
+^{processor_cpu_load_info=[4I]}
+i24@0:8I16I20
+@"<DTKPTriggerCounterAllocatorProvider>"
+C23XRProcessWatcherService
+24XRProcessWatcherDelegate
+32XRProcessMaintenanceTickProvider
+30XRProcessTableObserverDelegate
+NSt3__117bad_function_callE
+NSt3__110__function6__funcIZN17DTTableRowEncoder27assertStackDepthWithDebugIDEhEUlR20DTStateActionEncoderE_NS_9allocatorIS5_EEFvS4_EEE
+NSt3__110__function6__baseIFvR20DTStateActionEncoderEEE
+ZN17DTTableRowEncoder27assertStackDepthWithDebugIDEhEUlR20DTStateActionEncoderE_
+NSt3__110__function6__funcIZN17DTTableRowEncoder4copyERKN18DTStateActionCoder14StackReferenceEEUlR20DTStateActionEncoderE_NS_9allocatorIS9_EEFvS8_EEE
+ZN17DTTableRowEncoder4copyERKN18DTStateActionCoder14StackReferenceEEUlR20DTStateActionEncoderE_
+NSt3__110__function6__funcIZN17DTTableRowEncoder4copyERKN18DTStateActionCoder14StackReferenceEEUlR20DTStateActionEncoderE0_NS_9allocatorIS9_EEFvS8_EEE
+ZN17DTTableRowEncoder4copyERKN18DTStateActionCoder14StackReferenceEEUlR20DTStateActionEncoderE0_
+NSt3__110__function6__funcIZN17DTTableRowEncoder13makeStructureERKN18DTStateActionCoder14StackReferenceEEUlR20DTStateActionEncoderE_NS_9allocatorIS9_EEFvS8_EEE
+ZN17DTTableRowEncoder13makeStructureERKN18DTStateActionCoder14StackReferenceEEUlR20DTStateActionEncoderE_
+NSt3__110__function6__funcIZN17DTTableRowEncoder13makeStructureERKN18DTStateActionCoder14StackReferenceEEUlR20DTStateActionEncoderE0_NS_9allocatorIS9_EEFvS8_EEE
+ZN17DTTableRowEncoder13makeStructureERKN18DTStateActionCoder14StackReferenceEEUlR20DTStateActionEncoderE0_
+NSt3__110__function6__funcIZN17DTTableRowEncoder12pushSentinelEvEUlR20DTStateActionEncoderE_NS_9allocatorIS5_EEFvS4_EEE
+ZN17DTTableRowEncoder12pushSentinelEvEUlR20DTStateActionEncoderE_
+NSt3__110__function6__funcIZN17DTTableRowEncoder21convertMachContinuousEvEUlR20DTStateActionEncoderE_NS_9allocatorIS5_EEFvS4_EEE
+ZN17DTTableRowEncoder21convertMachContinuousEvEUlR20DTStateActionEncoderE_
+NSt3__110__function6__funcIZN17DTTableRowEncoder6endRowEhEUlR20DTStateActionEncoderE_NS_9allocatorIS5_EEFvS4_EEE
+ZN17DTTableRowEncoder6endRowEhEUlR20DTStateActionEncoderE_
+NSt3__110__function6__funcIZN17DTTableRowEncoder5resetEvEUlR20DTStateActionEncoderE_NS_9allocatorIS5_EEFvS4_EEE
+ZN17DTTableRowEncoder5resetEvEUlR20DTStateActionEncoderE_
+NSt3__110__function6__funcIZN17DTTableRowEncoder11defineTableEhPKcmPKvmPKS4_hEUlR20DTStateActionEncoderE_NS_9allocatorISB_EEFvSA_EEE
+ZN17DTTableRowEncoder11defineTableEhPKcmPKvmPKS1_hEUlR20DTStateActionEncoderE_
+18DTOSLogTableLoader
+17DTTableRowEncoder
+@(#)PROGRAM:DVTInstrumentsFoundation  PROJECT:DVTInstrumentsFrameworks-64531.2
+fffff
+zPLR
+zPLR
+zPLR
+zPLR
+zPLR
+zPLR
+zPLR
+zPLR
+zPLR
+zPLR
+zPLR
+zPLR
+zPLR
+zPLR
+zPLR
+zPLR
+zPLR
+zPLR
+zPLR
+zPLR
+zPLR
+zPLR
+zPLR
+zPLR
+zPLR
+zPLR
+zPLR
+zPLR
+zPLR
+zPLR
+zPLR
+zPLR
+zPLR
+zPLR
+zPLR
+zPLR
+zPLR
+zPLR
+zPLR
+zPLR
+zPLR
+zPLR
+zPLR
+zPLR
+zPLR
+zPLR
+zPLR
+zPLR
+zPLR
+zPLR
+zPLR
+zPLR
+zPLR
+zPLR
+zPLR
+zPLR
+zPLR
+zPLR
+zPLR
+zPLR
+zPLR
+zPLR
+zPLR
+zPLR
+zPLR

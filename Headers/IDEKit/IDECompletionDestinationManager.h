@@ -11,15 +11,15 @@
 
 @interface IDECompletionDestinationManager : NSObject
 {
+    NSURL *_lastSetDirectoryURL;
+    IDENavigableItem *_workspaceNavigableItem;
     id <IDECompletionDestinationDelegate> _delegate;
+    NSPopUpButton *_destinationGroupPopUp;
     NSPopUpButton *_destinationWorkspacePopUp;
     NSSavePanel *_savePanel;
-    NSURL *_lastSetDirectoryURL;
     IDEWorkspace *_workspace;
     IDEGroup *_destinationGroup;
     IDENavigableItemCoordinator *_navigableItemCoordinator;
-    IDENavigableItem *_workspaceNavigableItem;
-    NSPopUpButton *_destinationGroupPopUp;
 }
 
 @property(retain, nonatomic) IDENavigableItemCoordinator *navigableItemCoordinator; // @synthesize navigableItemCoordinator=_navigableItemCoordinator;

@@ -4,11 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <DTDeviceKitBase/DTDKRemoteDeviceToken.h>
+#import <DTDeviceKitBase/DTDKMobileDeviceToken.h>
 
 @class NSDictionary, NSString;
 
-@interface DTDKRemoteDeviceSpecToken : DTDKRemoteDeviceToken
+@interface DTDKRemoteDeviceSpecToken : DTDKMobileDeviceToken
 {
     NSString *_deviceIdentifier;
     NSDictionary *_tokenProperties;
@@ -16,9 +16,6 @@
 
 + (id)specTokenForDeviceIdentifier:(id)arg1;
 - (void).cxx_destruct;
-- (long long)deviceNFSPort;
-- (long long)deviceRsyncPort;
-- (long long)deviceTelnetPort;
 - (long long)deviceSSHPort;
 - (id)supportedDeviceFamilies;
 - (id)deviceArchitecture;

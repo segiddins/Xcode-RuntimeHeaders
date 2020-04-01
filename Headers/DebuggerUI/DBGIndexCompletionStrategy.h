@@ -7,14 +7,14 @@
 #import <DVTKit/DVTTextCompletionStrategy.h>
 
 @class DVTTextDocumentLocation, IDEEditorDocument, NSDictionary;
+@protocol DVTSourceLanguagePrimaryCompletionStrategy;
 
 @interface DBGIndexCompletionStrategy : DVTTextCompletionStrategy
 {
     NSDictionary *_indexCompletionsRequestDictionary;
     DVTTextDocumentLocation *_locationInAdjustedText;
-    BOOL _doSwiftCompletion;
-    IDEEditorDocument *_swiftDocument;
-    DVTTextCompletionStrategy *_swiftCompletionStrategy;
+    id <DVTSourceLanguagePrimaryCompletionStrategy> _completionStrategy;
+    IDEEditorDocument *_document;
 }
 
 - (void).cxx_destruct;

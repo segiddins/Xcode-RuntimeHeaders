@@ -6,9 +6,11 @@
 
 #import <IBFoundation/IBICAbstractCatalogItem.h>
 
+#import <IBFoundation/IBICVariantObject-Protocol.h>
+
 @class IBICSlot, NSData, NSString;
 
-@interface IBICSlottedAssetRep : IBICAbstractCatalogItem
+@interface IBICSlottedAssetRep : IBICAbstractCatalogItem <IBICVariantObject>
 {
     NSData *_assetData;
     IBICSlot *_slot;
@@ -35,6 +37,11 @@
 @property(nonatomic) unsigned long long conflictState; // @synthesize conflictState=_conflictState;
 @property(copy, nonatomic) IBICSlot *slot; // @synthesize slot=_slot;
 - (void).cxx_destruct;
+- (id)languageComponentsRepresentedByConflictFreeSiblings;
+- (long long)compareForVariantMatching:(id)arg1;
+- (long long)filteringPriorityForVariantSelection;
+- (BOOL)isMinimallyFitForVariantSelection;
+- (id)slotForVariantSelection;
 - (BOOL)matchesFileType:(id)arg1;
 - (id)fileType;
 @property(readonly) NSString *fullyQualifiedRelativePathForFileWriter;
@@ -72,6 +79,12 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithSlot:(id)arg1;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

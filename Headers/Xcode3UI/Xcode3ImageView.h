@@ -49,7 +49,7 @@
 - (void)awakeFromNib;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (void)commonInit;
-- (id)dvtExtraBindings;
+- (id)dvt_extraBindings;
 - (BOOL)accessibilityIsIgnored;
 
 @end

@@ -7,18 +7,20 @@
 #import <objc/NSObject.h>
 
 #import <IDEFoundation/DVTInvalidation-Protocol.h>
+#import <IDEFoundation/IDEProvisioningMechanicContextProvider-Protocol.h>
 #import <IDEFoundation/IDEProvisioningMechanicDelegate-Protocol.h>
-#import <IDEFoundation/IDEProvisioningStyleDataSourceProvider-Protocol.h>
+#import <IDEFoundation/IDESigningEditorProvisionableManagerProvider-Protocol.h>
 
-@class DVTDispatchLock, DVTLogAspect, DVTPerformanceMetric, DVTPortalProfilePurpose, DVTProvisioningProfileManager, DVTSigningCertificateManager, DVTStackBacktrace, IDEProvisioningLedger, IDEProvisioningManagerContext, IDEProvisioningTeamManager, IDEProvisioningUserAction, NSMapTable, NSSet, NSString;
+@class DVTDispatchLock, DVTLogAspect, DVTPerformanceMetric, DVTProvisioningProfileManager, DVTSigningCertificateManager, DVTStackBacktrace, IDEProvisioningLedger, IDEProvisioningManagerContext, IDEProvisioningTeamManager, IDEProvisioningUserAction, NSMapTable, NSMutableSet, NSSet, NSString;
 @protocol IDEProvisionableProvider, IDEProvisioningManagerDelegate, OS_dispatch_queue;
 
-@interface IDEProvisioningManager : NSObject <IDEProvisioningMechanicDelegate, DVTInvalidation, IDEProvisioningStyleDataSourceProvider>
+@interface IDEProvisioningManager : NSObject <IDEProvisioningMechanicDelegate, DVTInvalidation, IDESigningEditorProvisionableManagerProvider, IDEProvisioningMechanicContextProvider>
 {
+    DVTDispatchLock *_onDemandEvaluationFuturesLock;
+    NSMutableSet *_onDemandEvaluationFutures;
     BOOL _finishedInitialProvisionableLoading;
-    IDEProvisioningLedger *_ledger;
-    DVTPortalProfilePurpose *_automaticProvisioningPurpose;
     IDEProvisioningManagerContext *_context;
+    IDEProvisioningLedger *_ledger;
     NSMapTable *_provisionablesToManagers;
     DVTLogAspect *_logAspect;
     DVTPerformanceMetric *_loadingMetric;
@@ -32,7 +34,15 @@
     NSObject<OS_dispatch_queue> *_delegateCallbackQueue;
 }
 
++ (id)keyPathsForValuesAffectingProvisionableDevices;
++ (void)setRequiredCodesignableDevices:(id)arg1;
++ (id)requiredCodesignableDevices;
++ (void)setAutomaticallyRegisterDevices:(BOOL)arg1;
++ (BOOL)automaticallyRegisterDevices;
++ (void)setSupportCommandLineRepairs:(BOOL)arg1;
++ (BOOL)supportCommandLineRepairs;
 + (id)keyPathsForValuesAffectingFinishedLoading;
++ (BOOL)supportsInvalidationPrevention;
 + (void)initialize;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *delegateCallbackQueue; // @synthesize delegateCallbackQueue=_delegateCallbackQueue;
 @property(nonatomic) __weak id <IDEProvisioningManagerDelegate> delegate; // @synthesize delegate=_delegate;
@@ -46,9 +56,8 @@
 @property(nonatomic) BOOL finishedInitialProvisionableLoading; // @synthesize finishedInitialProvisionableLoading=_finishedInitialProvisionableLoading;
 @property(retain, nonatomic) DVTLogAspect *logAspect; // @synthesize logAspect=_logAspect;
 @property(retain, nonatomic) NSMapTable *provisionablesToManagers; // @synthesize provisionablesToManagers=_provisionablesToManagers;
-@property(retain, nonatomic) IDEProvisioningManagerContext *context; // @synthesize context=_context;
-@property(retain, nonatomic) DVTPortalProfilePurpose *automaticProvisioningPurpose; // @synthesize automaticProvisioningPurpose=_automaticProvisioningPurpose;
 @property(readonly, nonatomic) IDEProvisioningLedger *ledger; // @synthesize ledger=_ledger;
+@property(retain, nonatomic) IDEProvisioningManagerContext *context; // @synthesize context=_context;
 - (void).cxx_destruct;
 - (void)setDelegate:(id)arg1 callbackQueue:(id)arg2;
 - (void)repairForRepairable:(id)arg1 userAction:(id)arg2 didFailWithError:(id)arg3;
@@ -62,16 +71,19 @@
 - (void)repairForRepairable:(id)arg1 isExecutingStep:(id)arg2;
 - (void)repairDidBeginForRepairable:(id)arg1;
 - (void)repairPendingForRepairable:(id)arg1;
-- (void)_performStateUpdateOnMainThreadForRepairable:(id)arg1 updatedState:(long long)arg2 additionalUpdateBlock:(CDUnknownBlockType)arg3;
+- (void)_performStateUpdateOnMainThreadForRepairable:(id)arg1 updateBlock:(CDUnknownBlockType)arg2;
 - (id)_observersForRepairable:(id)arg1;
 - (id)_repairablesForObserver:(id)arg1;
 - (id)_allRepairables;
 - (void)_removeObserver:(id)arg1 forRepairable:(id)arg2;
 - (void)_addObserver:(id)arg1 forRepairable:(id)arg2;
+- (void)setRepairables:(id)arg1 forObserver:(id)arg2 retryExistingRepairs:(BOOL)arg3 repairStateCallback:(CDUnknownBlockType)arg4;
 - (void)setRepairables:(id)arg1 forObserver:(id)arg2 repairStateCallback:(CDUnknownBlockType)arg3;
 - (void)setRepairables:(id)arg1 forObserver:(id)arg2;
-- (id)evaluateProvisioningForProvisionable:(id)arg1 buildConfiguration:(id)arg2 overrides:(id)arg3;
+- (id)evaluateProvisioningForProvisionable:(id)arg1 overrides:(id)arg2 deviceRequirement:(id)arg3 isXBS:(BOOL)arg4;
 - (void)waitUntilFinished;
+@property(readonly, nonatomic) NSSet *provisionableDevices;
+- (id)teamsForScheme:(id)arg1 commands:(id)arg2 buildConfiguration:(id)arg3;
 @property(readonly, getter=isFinishedLoading) BOOL finishedLoading;
 - (void)_provisionablesChanged;
 - (void)_finishedLoading;
@@ -85,8 +97,10 @@
 - (void)primitiveInvalidate;
 - (void)_commonInit;
 - (id)initWithProvisionableProvider:(id)arg1 context:(id)arg2;
+- (id)initWithProvisionableProvider:(id)arg1 provisioningContext:(id)arg2;
 - (id)initWithProvisionableProvider:(id)arg1;
 - (id)_defaultContext;
+- (id)_newMechanic;
 - (id)init;
 
 // Remaining properties

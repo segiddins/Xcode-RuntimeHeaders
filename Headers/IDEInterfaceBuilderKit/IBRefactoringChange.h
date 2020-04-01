@@ -6,24 +6,20 @@
 
 #import <IDEKit/IDERefactoringFileChange.h>
 
-@class NSMutableDictionary;
+@class IBRefactoringModification, NSString;
 
 @interface IBRefactoringChange : IDERefactoringFileChange
 {
-    NSMutableDictionary *_commands;
-    NSMutableDictionary *_properties;
-    long long _objectID;
+    NSString *_originalValueName;
+    IBRefactoringModification *_modification;
 }
 
-+ (id)commandString;
-@property(readonly) NSMutableDictionary *properties; // @synthesize properties=_properties;
-@property(readonly) NSMutableDictionary *commands; // @synthesize commands=_commands;
-@property long long objectID; // @synthesize objectID=_objectID;
+@property(readonly) IBRefactoringModification *modification; // @synthesize modification=_modification;
+@property(retain) NSString *originalValueName; // @synthesize originalValueName=_originalValueName;
 - (void).cxx_destruct;
-- (BOOL)applyChange;
-- (void)_setProperty:(id)arg1 forKey:(id)arg2;
-- (void)_setCommand:(id)arg1 forKey:(id)arg2;
-- (id)initWithFileChangeSet:(id)arg1 fileLocation:(id)arg2;
+- (id)keyName;
+- (id)categoryName;
+- (id)initWithFileChangeSet:(id)arg1 modification:(id)arg2;
 
 @end
 

@@ -8,7 +8,7 @@
 
 #import <IDEModelEditor/IDEDataModelEditorController-Protocol.h>
 
-@class IDEDataModelBrowserEditor, IDEDataModelDiagramEditor, IDEDataModelEditor, NSString, NSTabView;
+@class DVTStackBacktrace, IDEDataModelBrowserEditor, IDEDataModelDiagramEditor, IDEDataModelEditor, NSString, NSTabView;
 @protocol IDEDataModelEditorController;
 
 @interface IDEDataModelEntityContentsEditor : IDEDMEditorController <IDEDataModelEditorController>
@@ -28,8 +28,8 @@
 - (BOOL)commitEditingForAction:(int)arg1 errors:(id)arg2;
 - (void)selectModelObjects:(id)arg1;
 - (id)selection;
-- (void)setViewType:(int)arg1;
-- (BOOL)allowsViewType:(int)arg1;
+- (void)setViewType:(unsigned long long)arg1;
+- (BOOL)allowsViewType:(unsigned long long)arg1;
 - (id)model;
 - (void)primitiveInvalidate;
 - (void)loadView;
@@ -38,17 +38,20 @@
 - (void)copy:(id)arg1;
 - (void)selectEditor:(id)arg1;
 - (void)takeFocus;
-- (id)rootEditor;
+@property(readonly) IDEDataModelEditor *rootEditor;
 - (id)allSubViewControllers;
 - (id)identifier;
 - (id)nibBundle;
 - (id)nibName;
 
 // Remaining properties
+@property(retain) DVTStackBacktrace *creationBacktrace;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
+@property(readonly) DVTStackBacktrace *invalidationBacktrace;
 @property(readonly) Class superclass;
+@property(readonly, nonatomic, getter=isValid) BOOL valid;
 
 @end
 

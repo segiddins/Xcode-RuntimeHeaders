@@ -6,11 +6,12 @@
 
 #import <AppKit/NSView.h>
 
-@class NSColor, NSString;
+@class NSAppearance, NSColor, NSString;
 @protocol GTFActionTimelineInfoDelegate;
 
 @interface GTFActionView : NSView
 {
+    NSColor *_boxTextColor;
     NSColor *_boxColor;
     NSColor *_interiorColor;
     NSColor *_textColor;
@@ -22,6 +23,7 @@
     NSColor *_selectedTextColor;
     NSString *_title;
     NSString *_infoText;
+    NSAppearance *_previousAppearance;
     int _track;
     BOOL _detailedView;
     BOOL _validPlacement;

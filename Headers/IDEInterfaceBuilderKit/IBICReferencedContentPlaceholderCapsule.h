@@ -13,7 +13,7 @@
 + (id)createPlaceholderTextField;
 - (void)refreshFromReferencingItem:(id)arg1;
 - (id)assetComponentIDAtPoint:(struct CGPoint)arg1;
-- (id)targettedAssetComponentIDsAtPoint:(struct CGPoint)arg1;
+- (id)targetedAssetComponentIDsAtPoint:(struct CGPoint)arg1;
 - (struct CGRect)frameForImageOfComponentWithAssetComponentID:(id)arg1;
 - (void)setSelectedAssetComponentIDs:(id)arg1;
 - (void)setContextFocusedAssetComponentIDs:(id)arg1;

@@ -7,14 +7,13 @@
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBUIViewController.h>
 
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBDocumentArchiving-Protocol.h>
-#import <IDEInterfaceBuilderCocoaTouchIntegration/NSCoding-Protocol.h>
 
 @class IBUIRefreshControl, IBUITableView, NSString;
 
-@interface IBUITableViewController : IBUIViewController <IBDocumentArchiving, NSCoding>
+@interface IBUITableViewController : IBUIViewController <IBDocumentArchiving>
 {
-    IBUIRefreshControl *refreshControl;
-    BOOL clearsSelectionOnViewWillAppear;
+    BOOL _clearsSelectionOnViewWillAppear;
+    IBUIRefreshControl *_refreshControl;
 }
 
 + (void)registerMarshallingRecordHandlers;
@@ -22,13 +21,11 @@
 + (id)ibViewPasteboardType;
 + (Class)ibViewClass;
 + (id)ibInstantiateForRole:(long long)arg1 withTargetRuntime:(id)arg2 documentClass:(Class)arg3 assetIdentifier:(id)arg4;
-@property BOOL clearsSelectionOnViewWillAppear; // @synthesize clearsSelectionOnViewWillAppear;
-@property(retain) IBUIRefreshControl *refreshControl; // @synthesize refreshControl;
+@property BOOL clearsSelectionOnViewWillAppear; // @synthesize clearsSelectionOnViewWillAppear=_clearsSelectionOnViewWillAppear;
+@property(retain) IBUIRefreshControl *refreshControl; // @synthesize refreshControl=_refreshControl;
 - (void).cxx_destruct;
 - (BOOL)hasTableView;
 @property(retain) IBUITableView *tableView;
-- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
-- (void)archiveWithDocumentArchiver:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)ibShouldChildBeIncludedInArbitrationUnitWithParent:(id)arg1;
@@ -37,7 +34,7 @@
 - (BOOL)ibCanBeEmbeddedInTabBarController;
 - (void)setIbInspectedHasRefreshControl:(BOOL)arg1;
 - (BOOL)ibInspectedHasRefreshControl;
-- (void)ibWarnings:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
+- (void)ibPopulateIssues:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
 - (void)ibRemoveChildren:(id)arg1;
 - (void)ibEffectiveSimulatedMetricsDidChange;
 - (id)ibImageForOwnedScene;
@@ -46,6 +43,10 @@
 - (void)ibDidExtractObjects:(id)arg1 fromPasteboard:(id)arg2 intoDocument:(id)arg3 context:(id)arg4;
 - (void)ibCustomizeForInsertionIntoIBUIViewController:(id)arg1 withObjects:(id)arg2 fromLibraryOrDifferentTargetRuntime:(BOOL)arg3 andInsertionContext:(id)arg4;
 - (void)ibEstablishViewOutletsInDocument:(id)arg1;
+- (id)ibLocalAttributeKeyPaths;
+- (id)ibLocalChildToOneRelationshipsKeyPaths;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

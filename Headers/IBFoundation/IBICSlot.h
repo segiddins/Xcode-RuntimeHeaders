@@ -6,78 +6,82 @@
 
 #import <objc/NSObject.h>
 
+#import <IBFoundation/IBBinaryArchiving-Protocol.h>
 #import <IBFoundation/NSCoding-Protocol.h>
 #import <IBFoundation/NSCopying-Protocol.h>
 #import <IBFoundation/NSFastEnumeration-Protocol.h>
 
-@class NSArray, NSDictionary;
+@class NSArray, NSDictionary, NSString;
 
-@interface IBICSlot : NSObject <NSFastEnumeration, NSCopying, NSCoding>
+@interface IBICSlot : NSObject <NSFastEnumeration, NSCopying, NSCoding, IBBinaryArchiving>
 {
-    int _retainCountMinusOne;
     id *_componentsByID;
     id *_denseComponents;
-    NSDictionary *_placeholderIDsByClass;
+    NSDictionary *_unknownIDsByClass;
     unsigned long long _hash;
-    unsigned long long _numberOfActiveComponents;
+    unsigned long long _numberOfNonPlaceholderValueComponents;
 }
 
-+ (id)allDefaultFileTypes;
-+ (id)variantSlotComponentClassesExcludingCoreVariants;
-+ (id)variantSlotComponentClassesExcludingIdiom;
++ (BOOL)variesByComponent:(Class)arg1;
++ (unsigned long long)componentIDMask;
 + (id)orderedComponentClasses;
-+ (id)defaultSlot;
-+ (id)emptySlot;
++ (Class)assetRepClass;
++ (Class)assetSetClass;
++ (id)decodeWithBinaryUnarchiver:(id)arg1;
++ (id)genesisSlotsForSlots:(id)arg1;
 + (id)slotWithComponents:(id)arg1;
++ (id)rootNameFromPath:(id)arg1;
++ (id)slotFromFileName:(id)arg1 returningRootName:(id *)arg2 andExtension:(id *)arg3 withDefaults:(id)arg4;
++ (id)slotFromFileName:(id)arg1 returningRootName:(id *)arg2 andExtension:(id *)arg3;
 + (id)allocWithZone:(struct _NSZone *)arg1;
 + (void)initialize;
++ (id)slotWithComponents:(id *)arg1 count:(unsigned long long)arg2 unknownIDs:(id)arg3;
 + (id)slotWithComponents:(id *)arg1 count:(unsigned long long)arg2;
 - (void).cxx_destruct;
+- (id)baseSlotWithoutSecondaryVariations;
+- (BOOL)containsAllSlotComponents:(id)arg1;
 - (void)ibic_generateAttributes:(CDUnknownBlockType)arg1;
-- (id)coreVariantSlotExcludingVariantAxis:(Class)arg1 returningVariantSlotComponents:(id *)arg2;
-- (id)coreVariantSlot;
-- (id)slotByAddingSlotComponents:(id)arg1;
-- (id)slotByAddingSlotComponent:(id)arg1;
-- (id)defaultFileTypes;
-- (long long)numberOfPlaceholderValues;
-- (long long)numberOfActiveComponents;
+- (id)slotBySettingSlotComponents:(const id *)arg1 count:(long long)arg2;
+- (id)slotBySettingSlotComponents:(id)arg1;
+- (id)slotBySettingSlotComponent:(id)arg1;
+- (long long)numberOfUnknownComponentIdentifiers;
+- (long long)numberOfNonPlaceholderValueComponents;
 - (id)slotComponentEnumerator;
-- (id)slotComponentsByClass;
 @property(readonly) NSArray *components;
 - (id)outputFileNameGivenBaseName:(id)arg1 andExtension:(id)arg2;
 - (id)detailAreaPath;
 - (BOOL)isValidFileNameForDragAndDrop:(id)arg1;
 - (id)requiredFileName;
 - (id)displayName;
-- (id)description;
+@property(readonly, copy) NSString *description;
 - (id)stringRepresentation;
 - (id)stringRepresentationWithValueFormat:(id)arg1 placeholdFormat:(id)arg2 emptyPlaceholder:(id)arg3;
 - (id)shortDisplayNameConsideringCounterparts:(id)arg1;
-- (unsigned long long)hash;
-- (BOOL)isEqualToSlot:(id)arg1 ignoringSlotComponentClasses:(id)arg2;
+@property(readonly) unsigned long long hash;
 - (long long)compareDisplayOrder:(id)arg1;
-- (BOOL)hasPlaceholderValues;
-- (id)placeholderComponentIdentifierForClass:(Class)arg1;
+- (BOOL)hasUnknownComponentIdentifier;
+- (id)unknownComponentIdentifierForClass:(Class)arg1;
 - (id)slotComponentForClass:(Class)arg1;
 - (id)slotComponentForComponentID:(long long)arg1;
+- (BOOL)containsComponent:(id)arg1;
 - (void)enumerateOrderedSlotComponentsAndValues:(CDUnknownBlockType)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithComponents:(id)arg1 placeholderIDs:(id)arg2;
+- (void)encodeWithBinaryArchiver:(id)arg1;
+- (id)initWithComponents:(id)arg1 unknownIDs:(id)arg2;
 - (void)captureComponents;
 - (unsigned long long)countByEnumeratingWithState:(CDStruct_70511ce9 *)arg1 objects:(id *)arg2 count:(unsigned long long)arg3;
 - (void)dealloc;
-- (id)_initWithComponents:(id *)arg1 count:(unsigned long long)arg2 placeholderIDs:(id)arg3 delayCapturingComponents:(BOOL)arg4;
-- (id)initWithComponents:(id *)arg1 count:(unsigned long long)arg2 placeholderIDs:(id)arg3;
+- (id)_initWithComponents:(id *)arg1 count:(unsigned long long)arg2 unknownIDs:(id)arg3 delayCapturingComponents:(BOOL)arg4;
+- (id)initWithComponents:(id *)arg1 count:(unsigned long long)arg2 unknownIDs:(id)arg3;
 - (void)extractSlotsByComponentID:(id *)arg1 capacity:(long long)arg2;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToSlot:(id)arg1;
-- (BOOL)_isDeallocating;
-- (BOOL)_tryRetain;
-- (unsigned long long)retainCount;
-- (oneway void)release;
-- (id)retain;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) Class superclass;
 
 @end
 

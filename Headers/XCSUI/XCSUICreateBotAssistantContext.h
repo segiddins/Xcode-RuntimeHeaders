@@ -27,22 +27,15 @@
 @property(readonly, nonatomic) BOOL schemeSupportsArchiveAction;
 @property(readonly, nonatomic) NSSet *preflightIgnoredRepositoryIdentifiers;
 @property(readonly, nonatomic) long long preflightRepositoryAuthenticationStatus;
-@property(readonly, nonatomic) BOOL isInvalidTestingDestinationType;
 @property(readonly, copy, nonatomic) NSString *defaultBotName;
 @property(readonly, copy, nonatomic) NSString *botName;
 @property(readonly, nonatomic) BOOL needsCommitAndPushUponCompletion;
 @property(readonly, nonatomic) BOOL creationComplete;
-@property(readonly, copy, nonatomic) NSArray *selectedTestingDeviceIDs;
-@property(readonly, nonatomic) BOOL schemeSupportsMac32BitArchitecture;
-@property(readonly, nonatomic) BOOL schemeSupportsDevices;
-@property(readonly, nonatomic) BOOL schemeSupportsMac;
 @property(readonly, nonatomic) BOOL exportsProductFromArchive;
 @property(readonly, nonatomic) BOOL performsArchiveAction;
 @property(readonly, nonatomic) unsigned long long codeCoveragePreference;
 @property(readonly, nonatomic) BOOL performsTestAction;
 @property(readonly, nonatomic) BOOL performsAnalyzeAction;
-@property(readonly, nonatomic) unsigned long long defaultTestingDestinationType;
-@property(readonly, nonatomic) unsigned long long testingDestinationType;
 @property(readonly, nonatomic) XCSToolchain *overrideToolchain;
 @property(readonly, nonatomic) NSString *buildConfiguration;
 @property(readonly, copy, nonatomic) NSArray *triggers;
@@ -68,7 +61,7 @@
 - (BOOL)shouldDisplayAssistantWithIdentifier:(id)arg1;
 - (id)workspaceTabController;
 - (id)workspace;
-- (id)initWithWorkspaceTabController:(id)arg1 editingMode:(long long)arg2 bot:(id)arg3;
+- (id)initWithWorkspaceTabController:(id)arg1 selectedService:(id)arg2 editingMode:(long long)arg3 bot:(id)arg4;
 
 @end
 

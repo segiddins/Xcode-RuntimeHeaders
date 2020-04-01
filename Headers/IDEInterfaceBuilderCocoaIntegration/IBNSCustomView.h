@@ -23,6 +23,12 @@
 - (id)marshalledRepresentationForRendering;
 - (id)marshalledClassName;
 - (id)marshalledUserDefinedRuntimeAttributeKeyValuePairs;
+- (void)setAppearance:(id)arg1;
+- (void)setLayer:(id)arg1;
+- (void)willRemoveSubview:(id)arg1;
+- (void)didAddSubview:(id)arg1;
+- (BOOL)drawsDirectlyAsPlaceholder;
+- (BOOL)ibCanDirectlySetCanDrawConcurrently;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)drawPlaceholder:(struct CGRect)arg1;
 - (BOOL)prefersCachedImageBasedDrawing;
@@ -44,6 +50,7 @@
 - (Class)classForCoder;
 - (BOOL)ibShouldUseClassSwapper;
 - (void)ibPrepareCocoaDocumentForCompiling:(id)arg1 withContext:(id)arg2;
+- (id)ibLocalAttributeKeyPaths;
 - (void)unarchiveWithDocumentUnarchiver:(id)arg1;
 - (void)archiveWithDocumentArchiver:(id)arg1;
 

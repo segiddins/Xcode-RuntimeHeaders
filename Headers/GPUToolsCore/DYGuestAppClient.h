@@ -6,9 +6,11 @@
 
 #import <objc/NSObject.h>
 
-@class DYTransport, DYTransportSource, NSMutableDictionary;
+#import <GPUToolsCore/DYCaptureManager-Protocol.h>
 
-@interface DYGuestAppClient : NSObject
+@class DYCaptureArchive, DYCaptureDescriptor, DYCaptureState, DYTransport, DYTransportSource, NSMutableDictionary, NSString;
+
+@interface DYGuestAppClient : NSObject <DYCaptureManager>
 {
     DYTransport *_transport;
     DYTransportSource *_source;
@@ -16,89 +18,104 @@
     struct dispatch_queue_s *_saveptrQueue;
     NSMutableDictionary *_ptrUrlInfoDict;
     struct dispatch_queue_s *_globalSyncQueue;
-    BOOL _triggerCaptureOnNextGraphicsCommand;
-    BOOL _includeBacktraceInPbufs;
-    BOOL _queryDriverEventsOnGraphicsCommands;
-    BOOL _harvestAtEndOfCapture;
-    BOOL _suspendAfterCapture;
-    BOOL _lockGraphicsAfterCapture;
-    BOOL _didSendAllDataSentMessage;
-    BOOL _allDataReceivedAck;
-    BOOL _isLocalDebuggingEnabled;
+    struct dispatch_queue_s *_stopCaptureQueue;
     struct Stream *_defaultFbufStream;
-    struct Stream *_platformFbufStream;
+    struct Stream *_startup0Stream;
+    struct Stream *_startup1Stream;
     int _traceMode;
     int _previousTraceMode;
     unsigned int _globalFrameCounter;
-    struct CaptureInfo *_captureInfo;
-    unsigned int _overrideFlags;
-    unsigned long long _xcodeOverrideFlags;
-    double _xcodeOverrideScaleTessFactor;
-    unsigned int _capturing;
     int _waitOnGraphicsSemaphoreAssertions;
     struct dispatch_queue_s *_graphicsLockWaitQueue;
     struct dispatch_semaphore_s *_graphicsSemaphore;
+    BOOL _boundaryLessCaptureMode;
+    unsigned int _overrideFlags;
+    unsigned long long _lastSessionSerial;
+    unsigned long long _xcodeOverrideFlags;
+    double _xcodeOverrideScaleTessFactor;
+    unsigned long long _state;
+    DYCaptureDescriptor *_activeCaptureDescriptor;
+    DYCaptureState *_activeCaptureState;
+    DYCaptureArchive *_localActiveArchive;
+    BOOL _liveDebugging;
+    NSMutableDictionary *_liveDebuggingCaptureData;
 }
 
 + (id)timebaseDictionary;
+@property(readonly, nonatomic) DYCaptureArchive *localActiveArchive; // @synthesize localActiveArchive=_localActiveArchive;
+@property(readonly, nonatomic) struct Stream *startup1Stream; // @synthesize startup1Stream=_startup1Stream;
+@property(readonly, nonatomic) NSMutableDictionary *liveDebuggingCaptureData; // @synthesize liveDebuggingCaptureData=_liveDebuggingCaptureData;
+@property(nonatomic) BOOL liveDebugging; // @synthesize liveDebugging=_liveDebugging;
+@property(readonly, nonatomic) DYCaptureState *activeCaptureState; // @synthesize activeCaptureState=_activeCaptureState;
+@property(readonly, nonatomic) DYCaptureDescriptor *activeCaptureDescriptor; // @synthesize activeCaptureDescriptor=_activeCaptureDescriptor;
+@property(readonly) unsigned long long state; // @synthesize state=_state;
 @property(readonly, nonatomic) struct dispatch_queue_s *graphicsLockWaitQueue; // @synthesize graphicsLockWaitQueue=_graphicsLockWaitQueue;
 @property(readonly, nonatomic) struct dispatch_semaphore_s *graphicsSemaphore; // @synthesize graphicsSemaphore=_graphicsSemaphore;
 @property(readonly, nonatomic) int waitOnGraphicsSemaphoreAssertions; // @synthesize waitOnGraphicsSemaphoreAssertions=_waitOnGraphicsSemaphoreAssertions;
-@property(nonatomic) BOOL queryDriverEventsOnGraphicsCommands; // @synthesize queryDriverEventsOnGraphicsCommands=_queryDriverEventsOnGraphicsCommands;
-@property(nonatomic) BOOL includeBacktraceInPbufs; // @synthesize includeBacktraceInPbufs=_includeBacktraceInPbufs;
 @property(readonly, nonatomic) struct dispatch_queue_s *saveptrQueue; // @synthesize saveptrQueue=_saveptrQueue;
-@property(readonly) unsigned int capturing; // @synthesize capturing=_capturing;
 @property(readonly, nonatomic) struct dispatch_queue_s *globalSyncQueue; // @synthesize globalSyncQueue=_globalSyncQueue;
 @property(readonly, nonatomic) NSMutableDictionary *ptrUrlInfoDict; // @synthesize ptrUrlInfoDict=_ptrUrlInfoDict;
 @property(readonly, nonatomic) NSMutableDictionary *saveptrPtrInfoDict; // @synthesize saveptrPtrInfoDict=_saveptrPtrInfoDict;
 @property double xcodeOverrideScaleTessFactor; // @synthesize xcodeOverrideScaleTessFactor=_xcodeOverrideScaleTessFactor;
 @property unsigned long long xcodeOverrideFlags; // @synthesize xcodeOverrideFlags=_xcodeOverrideFlags;
 @property unsigned int overrideFlags; // @synthesize overrideFlags=_overrideFlags;
-@property(readonly, nonatomic) struct CaptureInfo *captureInfo; // @synthesize captureInfo=_captureInfo;
+@property BOOL boundaryLessCaptureMode; // @synthesize boundaryLessCaptureMode=_boundaryLessCaptureMode;
 @property(readonly) unsigned int globalFrameCounter; // @synthesize globalFrameCounter=_globalFrameCounter;
 @property(nonatomic) int previousTraceMode; // @synthesize previousTraceMode=_previousTraceMode;
 @property(nonatomic) int traceMode; // @synthesize traceMode=_traceMode;
-@property(readonly, nonatomic) struct Stream *platformFbufStream; // @synthesize platformFbufStream=_platformFbufStream;
+@property(readonly, nonatomic) struct Stream *startup0Stream; // @synthesize startup0Stream=_startup0Stream;
 @property(readonly, nonatomic) struct Stream *defaultFbufStream; // @synthesize defaultFbufStream=_defaultFbufStream;
-@property(readonly, nonatomic) BOOL harvestAtEndOfCapture; // @synthesize harvestAtEndOfCapture=_harvestAtEndOfCapture;
-@property(readonly, nonatomic) BOOL triggerCaptureOnNextGraphicsCommand; // @synthesize triggerCaptureOnNextGraphicsCommand=_triggerCaptureOnNextGraphicsCommand;
 - (void)_waitForGraphicsThreads;
 - (BOOL)_canTriggerCaptureOnNextGraphicsCommand;
 - (void)_appendLinkTimeLibrariesToVersionsDictionary:(id)arg1;
 - (void)_appendToAllCaptureDataSentMessagePayload:(id)arg1;
 - (void)_populateQueueAndThreadLabelMaps;
-- (void)_appendLinkTimeLibrary:(const char *)arg1 toVersionsDictionary:(id)arg2;
-- (void)unlockGraphics;
-- (void)lockGraphicsAndWaitForThreads:(BOOL)arg1;
-- (void)notifyAllCaptureDataSent;
-- (void)_handleActivateCaptureMessage:(id)arg1;
-- (void)_armCapturing:(unsigned int)arg1 andFrameLimit:(unsigned int)arg2 andSerial:(unsigned int)arg3;
-- (void)_turnOnCapturing;
-- (void)_resetBufferUsageCounters;
-- (void)invalidateSavePointerMap:(id)arg1;
-- (void)resetPointerToUrlAssociation:(const void *)arg1;
+- (void)stopCapture;
+- (BOOL)startCaptureWithDescriptor:(id)arg1;
+- (BOOL)triggerArmedCapture;
+- (BOOL)armCaptureWithDescriptor:(id)arg1;
+- (void)_armCaptureWithTransportMessage:(id)arg1;
+- (void)invalidateCapture;
 - (void)_turnOffCapturing;
+- (void)_handleActivateCaptureMessage:(id)arg1;
+- (void)_turnOnCapturing;
+- (void)_armCapture;
+- (void)_startCapture;
+- (void)_appendLinkTimeLibrary:(const char *)arg1 toVersionsDictionary:(id)arg2;
+- (void)_resetBufferUsageCounters;
 - (void)_sendBufferUsageCounters;
 - (id)_buildLibraryLinkTimeVersionsDictionary;
 - (id)_buildQueueThreadLabelsDictionary;
+- (void)incrementCapturedFramesCounter;
+- (void)unlockGraphics;
+- (void)lockGraphicsAndWaitForThreads:(BOOL)arg1;
+- (void)notifyAllCaptureMetadataSent;
+- (void)notifyUsedDataSentWithDictionary:(id)arg1;
+- (void)notifyAllCaptureDataSent;
+- (void)invalidateSavePointerMap:(id)arg1;
+- (void)resetPointerToUrlAssociation:(const void *)arg1;
 - (void)sendTimebaseUpdate;
 - (void)sendCaptureData:(id)arg1 name:(id)arg2 inReplyTo:(id)arg3;
 - (void)sendMessage:(id)arg1;
 - (void)sendMessage:(id)arg1 inReplyTo:(id)arg2;
-- (BOOL)shouldLockGraphicsWhenTurningOffCapturing;
 - (void)processMessage:(id)arg1;
-- (void)_resetCapturing;
 - (void)handleCaptureModeTransition:(_Bool)arg1;
 - (void)handleFrameBoundaryCommon;
 - (void)atexit;
 - (void)dealloc;
 - (id)initWithTransport:(id)arg1;
-- (BOOL)globalFrameCounterAtomicCompareAndSwap32:(int)arg1 newValue:(int)arg2;
-- (BOOL)capturingCompareAndSwap;
-- (unsigned int)globalFrameCounterAtomicIncrement;
+- (unsigned int)incrementGlobalFrameCounter;
 - (id)init;
+- (void)_handleFrameEnd:(unsigned long long)arg1;
+- (void)_handleCaptureStreamCreated;
 - (void)_handleTurnOffCapture;
 - (void)_handleTurnOnCapture;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

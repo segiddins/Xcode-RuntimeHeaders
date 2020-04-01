@@ -10,7 +10,7 @@
 
 @interface XCSSecurityCertificate : NSObject
 {
-    struct OpaqueSecCertificateRef *_certificate;
+    struct __SecCertificate *_certificate;
 }
 
 - (id)description;
@@ -18,7 +18,7 @@
 @property(readonly) NSString *serialNumber;
 @property(readonly) NSString *commonName;
 - (void)dealloc;
-- (id)initWithCertificate:(struct OpaqueSecCertificateRef *)arg1;
+- (id)initWithCertificate:(struct __SecCertificate *)arg1;
 - (id)initWithData:(id)arg1;
 
 @end

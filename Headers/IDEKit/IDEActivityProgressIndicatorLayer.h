@@ -49,6 +49,7 @@
 - (BOOL)accessibilityIsIgnored;
 - (void)invalidateProgressState;
 - (void)validateProgressStateIfNeeded;
+- (void)_updateProgressLayerColor;
 - (void)updateProgressLayer;
 - (void)reflectStyle;
 - (struct CGRect)effectiveProgressLayerBoundsCalculatingPercentage;
@@ -65,13 +66,12 @@
 - (struct CGRect)_rectForIndeterminateSpinningIndicator;
 - (void)setBounds:(struct CGRect)arg1;
 - (void)setHidden:(BOOL)arg1;
-- (id)_determinateProgressIndicatorColor;
 @property(getter=isIndeterminate) BOOL indeterminate;
 - (double)effectivePercentage;
 - (void)cancelProgressUpdater;
 - (id)init;
 - (void)updateBoundValue;
-- (id)dvtExtraBindings;
+- (id)dvt_extraBindings;
 
 @end
 

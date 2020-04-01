@@ -6,16 +6,30 @@
 
 #import <Foundation/NSFormatter.h>
 
-@interface NSFormatter (IBFormatterIntegration)
+#import <IDEInterfaceBuilderCocoaIntegration/IBDocumentArchiving-Protocol.h>
+
+@class NSString;
+
+@interface NSFormatter (IBFormatterIntegration) <IBDocumentArchiving>
 + (id)keyPathsForValuesAffectingIbExternalSampleValueFormatted;
++ (id)instantiateWithDocumentUnarchiver:(id)arg1;
 - (unsigned long long)ibMinOSVersionForUseInCell;
-- (id)ibDocumentationPropertyInfosForKeyPath:(id)arg1;
-- (id)ibExternalSampleValueTooltipRelatedMethods;
+- (id)ibDocumentationSymbolInfosForKeyPath:(id)arg1;
+- (SEL)ibExternalSampleValueTooltipRelatedSelector;
 - (id)ibExternalSampleValueMetadataKey;
 - (id)ibExternalSampleValueFormatted;
 - (id)ibExternalSampleValueDefault;
 @property(retain, nonatomic) id ibExternalSampleValue;
 - (id)ibDefaultDataValueForTableView:(id)arg1;
 - (id)ibPasteboardTypes;
+- (id)ibLocalAttributeKeyPaths;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @end
 

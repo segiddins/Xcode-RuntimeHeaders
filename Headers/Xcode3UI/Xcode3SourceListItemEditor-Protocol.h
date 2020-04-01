@@ -7,6 +7,7 @@
 #import <Xcode3UI/NSObject-Protocol.h>
 
 @class DVTSourceExpression, NSArray, NSString, Xcode3ProjectEditor;
+@protocol IDEBlueprint;
 
 @protocol Xcode3SourceListItemEditor <NSObject>
 + (NSString *)localizedSourceListItemEditorName;
@@ -17,7 +18,7 @@
 @property(readonly, nonatomic) DVTSourceExpression *mouseOverExpression;
 @property(readonly) struct CGRect currentSelectionFrame;
 @property(readonly, nonatomic) DVTSourceExpression *selectedExpression;
-@property(retain, nonatomic) id inspectedBlueprint;
+@property(retain, nonatomic) id <IDEBlueprint> inspectedBlueprint;
 @property(copy, nonatomic) NSArray *inspectedBlueprints;
 - (NSString *)titleKeyPathForToolbarButtonWithIdentifier:(NSString *)arg1;
 - (SEL)menuSourceSelectorForToolbarButtonWithIdentifier:(NSString *)arg1;

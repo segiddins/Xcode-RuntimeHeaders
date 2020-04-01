@@ -34,6 +34,7 @@
 - (id)divisionPositionsXAxis;
 - (unsigned long long)numberOfEntriesThatFitRect:(struct CGRect)arg1;
 - (void)clearCache;
+- (void)drawRect:(struct CGRect)arg1;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (void)_addEntries:(id)arg1 toStacks:(id)arg2;
@@ -45,7 +46,6 @@
 - (double)_scaledHeightForValue:(double)arg1 inRect:(struct CGRect)arg2 forRange:(struct DTRealRange)arg3;
 - (double)_scaleToFitValuesWithAxis:(struct DTRealRange)arg1;
 - (struct DTRealRange)_rangeOfSummedValuesForKeyPath:(id)arg1 inStacks:(id)arg2;
-- (void)viewWillDraw;
 - (id)_getStacksForModel:(id)arg1;
 - (void)drawStacks:(id)arg1 rect:(struct CGRect)arg2;
 - (double)calculateVerticalBorderBuffer;
@@ -54,6 +54,9 @@
 - (struct CGRect)calculateYAxisBoundsWithinBounds:(struct CGRect)arg1;
 - (void)drawBorder:(struct CGRect)arg1;
 - (void)drawXAxis:(struct CGRect)arg1;
+@property(readonly) double minimumYValueDouble;
+@property(readonly) double maximumYValueDouble;
+@property(readonly) id heightsModel;
 - (BOOL)hasHorizontalAxisPosition;
 @property(readonly) double horizontalAxisPosition;
 - (BOOL)hasVerticalAxisPosition;

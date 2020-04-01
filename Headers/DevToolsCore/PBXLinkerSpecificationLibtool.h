@@ -10,7 +10,9 @@
 {
 }
 
-- (id)doSpecialDependencySetupForCommand:(id)arg1 withInputNodes:(id)arg2 inBuildContext:(id)arg3;
+- (id)doSpecialDependencySetupForCommand:(id)arg1 withInputNodes:(id)arg2 withMacroExpansionScope:(id)arg3;
+- (id)versionWithMacroExpansionScope:(id)arg1;
+- (id)discoveredToolInfoWithMacroExpansionScope:(id)arg1;
 
 @end
 

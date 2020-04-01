@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Xcode3UI/Xcode3CustomUpgradeTask.h>
+#import <DevToolsCore/Xcode3CustomUpgradeTask.h>
 
 @interface Xcode3UpgradeGarbageCollection : Xcode3CustomUpgradeTask
 {

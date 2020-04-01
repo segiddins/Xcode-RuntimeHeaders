@@ -12,6 +12,7 @@
 {
 }
 
+@property(readonly) NSString *parent;
 @property(readonly) IDESourceKitResponseDocumentLocation *location;
 @property(readonly) NSString *symbolName;
 

@@ -13,5 +13,6 @@
 @property(readonly, nonatomic) id <DYBuffer> controlPointIndexBuffer;
 @property(readonly, nonatomic) id <DYBuffer> patchIndexBuffer;
 @property(readonly, nonatomic) id <DYBuffer> tessellationFactorBuffer;
+@property(readonly, nonatomic) id <DYBuffer> postVertexDumpBuffer;
 @end
 

@@ -22,6 +22,7 @@
     NSString *_defaultValue;
     NSString *_placeholder;
     NSString *_privateDragType;
+    BOOL _readonly;
     DVTTableView *_itemsTableView;
     IDEControlGroup *_controlGroup;
     DVTBorderedView *_controlBar;

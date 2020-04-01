@@ -8,8 +8,6 @@
 
 @interface IBICAbstractTextureSet (DisplayAdditions)
 + (id)generatePixelFormatPopUp:(id)arg1;
-- (void)setIbInspectedScaleSlots:(long long)arg1;
-- (long long)ibInspectedScaleSlots;
 - (BOOL)shouldAvoidDeletingChild:(id)arg1;
 - (void)setIbInspectedTextureContentIntent:(long long)arg1;
 - (long long)ibInspectedTextureContentIntent;

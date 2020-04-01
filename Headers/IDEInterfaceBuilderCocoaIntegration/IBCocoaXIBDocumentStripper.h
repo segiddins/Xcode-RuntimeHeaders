@@ -10,7 +10,9 @@
 {
 }
 
-- (id)strippedWrapperOfContentsAtPath:(id)arg1 error:(id *)arg2;
++ (id)allHybridNIBPackageRuntimeFileNames;
+- (id)filenamesToPreserveInContents:(id)arg1;
+- (BOOL)wantsDirectoryForFileWrappers:(id)arg1;
 
 @end
 

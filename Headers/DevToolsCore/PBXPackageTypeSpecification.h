@@ -6,31 +6,29 @@
 
 #import <DevToolsCore/XCSpecification.h>
 
-@class NSString, PBXBuildSettingsDictionary, PBXFileType, XCPropertyDictionary;
+@class DVTMacroDefinitionTable, NSString, PBXFileType;
 
 @interface PBXPackageTypeSpecification : XCSpecification
 {
-    PBXBuildSettingsDictionary *_defaultBuildSettings;
-    PBXBuildSettingsDictionary *_flattenedDefaultBuildSettings;
-    XCPropertyDictionary *_flattenedDefaultSettingsAsProperties;
+    DVTMacroDefinitionTable *_defaultMacros;
+    DVTMacroDefinitionTable *_flattenedDefaultMacros;
     NSString *_productReferenceFileTypeIdentifier;
     PBXFileType *_productReferenceFileType;
     NSString *_productReferenceName;
     BOOL _productReferenceIsLaunchable;
 }
 
-+ (id)wrapperSubpathForWrapperPart:(int)arg1;
++ (id)wrapperSubpathForWrapperPart:(long long)arg1;
 + (id)specificationRegistryName;
 + (id)specificationTypePathExtensions;
 + (id)localizedSpecificationTypeName;
 + (id)specificationType;
 + (Class)specificationTypeBaseClass;
+- (void).cxx_destruct;
 - (BOOL)productReferenceIsLaunchable;
 - (id)productReferenceName;
 - (id)productReferenceFileType;
-- (id)defaultBuildSettings_asPropertyValues;
-- (id)defaultBuildSettings;
-- (void)dealloc;
+- (id)defaultMacros;
 - (id)initWithPropertyListDictionary:(id)arg1 inDomain:(id)arg2;
 
 @end

@@ -8,22 +8,26 @@
 
 #import <IDEInterfaceBuilderKit/DVTInvalidation-Protocol.h>
 
-@class DVTDelayedInvocation, DVTDispatchLock, DVTStackBacktrace, IBLiveViewsBundleBlueprintMap, IBMutableIdentityDictionary, NSCountedSet, NSMapTable, NSMutableDictionary, NSMutableOrderedSet, NSMutableSet, NSString;
+@class DVTDelayedInvocation, DVTDispatchLock, DVTStackBacktrace, IBCancellationToken, IBLiveViewsBundleBlueprintMap, IBMutableIdentityDictionary, NSCountedSet, NSHashTable, NSMapTable, NSMutableDictionary, NSMutableOrderedSet, NSString;
 
 @interface IBLiveViewsManager : NSObject <DVTInvalidation>
 {
     IBMutableIdentityDictionary *_sourceCodeClassProviderObservationTokensByProvider;
     IBMutableIdentityDictionary *_observingTokensByBlueprintProvider;
     DVTDelayedInvocation *_bundleRegenerationInvocation;
+    IBCancellationToken *_notificationToken;
     NSMutableOrderedSet *_invalidatedFilePaths;
     NSCountedSet *_blueprintProviders;
-    NSMutableSet *_classProviders;
+    NSCountedSet *_classProviders;
     NSMutableDictionary *_attachedRemoteToolProxiesByIdentifier;
     DVTDispatchLock *_attachedRemoteToolProxiesLock;
+    DVTDispatchLock *_binaryBundlesLock;
     IBMutableIdentityDictionary *_imageRequestersByTargetRuntime;
-    IBMutableIdentityDictionary *_sceneUpdateRequestersByTargetRuntimeThenScaleFactorThenFidelity;
-    NSMapTable *_buildOperationsToTrackers;
+    IBMutableIdentityDictionary *_sceneUpdateRequestersByTargetRuntimeThenScaleFactor;
+    NSMapTable *_blueprintsToBuildQueue;
+    NSHashTable *_internallyCancelledExecutionTrackers;
     BOOL _startedInvalidating;
+    NSMutableDictionary *_binaryBundlesByPlatformIdentifierAndFilePath;
     BOOL _enabled;
     IBLiveViewsBundleBlueprintMap *_bundlesByBlueprintMap;
 }
@@ -35,10 +39,12 @@
 @property(nonatomic, getter=isEnabled) BOOL enabled; // @synthesize enabled=_enabled;
 - (void).cxx_destruct;
 - (id)cachedRequestProxyAttachingIfNeededWithDescription:(id)arg1 returningFailedLoadResult:(id *)arg2;
+- (id)marshallingResultErrorWithMessage:(id)arg1;
 - (BOOL)_INSIDE_LOCK_loadLiveViewsBundleBuiltInstances:(id)arg1 inTool:(id)arg2 returningFailedLoadResult:(id *)arg3;
 - (id)_INSIDE_LOCK_cachedRequestProxyAttachingIfNeededWithDescription:(id)arg1;
-- (id)sceneUpdateRequesterForTargetRuntime:(id)arg1 scaleFactor:(double)arg2 renderingFidelity:(long long)arg3;
-- (id)imageRequesterForTargetRuntime:(id)arg1 scaleFactor:(double)arg2;
+- (id)attachedRemoteToolForIdentifier:(id)arg1;
+- (id)sceneUpdateRequesterForTargetRuntime:(id)arg1 deviceTypeDescription:(id)arg2;
+- (id)imageRequesterForTargetRuntime:(id)arg1 deviceTypeDescription:(id)arg2;
 - (void)tearDownAllAttachedToolsAndSpeculativelyRelaunchForNextSession;
 - (void)_INSIDE_LOCK_asynchronouslyLaunchToolsForIdentifiers:(id)arg1;
 - (id)_INSIDE_LOCK_shutdownAllAttachedTools;
@@ -47,6 +53,7 @@
 - (void)_rebuildInvalidBundles;
 - (void)_mainThread_rebuildBlueprintsMappedToContainingWorkspaceWithoutUpdatingInvalidatedSources:(id)arg1;
 - (void)_mainThread_rebuildBlueprint:(id)arg1 forSourceCodeCaseProvider:(id)arg2;
+- (id)_buildParametersForBlueprint:(id)arg1 inWorkspace:(id)arg2;
 - (id)_additionalBuildSettingsForWorkspace:(id)arg1;
 - (BOOL)_shouldParallelizeBuild;
 - (BOOL)_shouldFindImplicitDependencies;
@@ -61,16 +68,20 @@
 - (id)validBuiltLiveViewsBundleInstancesForPlatform:(id)arg1;
 - (id)liveViewsBundlesForPlatform:(id)arg1;
 - (id)liveViewsBundleForClassNamed:(id)arg1 inDocument:(id)arg2 error:(id *)arg3;
+- (id)_bundleForBinaryFramework:(id)arg1 platform:(id)arg2;
 - (id)_representingFilePathsDeclaringClassNamed:(id)arg1 inDocument:(id)arg2;
 - (id)_filePathsImplementingClassNamed:(id)arg1 inDocument:(id)arg2;
+- (id)binaryFrameworkPathImplementingClassNamed:(id)arg1 inDocument:(id)arg2;
 - (void)_unregisterAllBundlesForBlueprintProvider:(id)arg1;
 - (void)_unregisterBundlesForBlueprints:(id)arg1;
 - (void)_registerBundle:(id)arg1 forBlueprint:(id)arg2;
+- (id)_buildParametersForBuildableProduct:(id)arg1;
 - (id)_bundleForBlueprint:(id)arg1;
 - (id)_blueprintForSourceFileAtPath:(id)arg1;
 @property(nonatomic) BOOL automaticallyRefreshesInvalidBundles;
 - (void)unregisterSourceCodeClassProvider:(id)arg1;
 - (void)registerSourceCodeClassProvider:(id)arg1;
+- (void)editorDidInstallViewForDocument:(id)arg1;
 - (void)primitiveInvalidate;
 - (id)init;
 

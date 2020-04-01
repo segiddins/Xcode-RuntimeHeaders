@@ -56,7 +56,7 @@
 - (id)writableTypesForPasteboard:(id)arg1;
 - (void)_doWorkThatRequiresFilteredChildrenRecalculation:(CDUnknownBlockType)arg1;
 - (void)_ensureChildrenAreValid:(CDUnknownBlockType)arg1;
-- (void)recursivleyRestoreExpansionStateAndLoadChildrenUsingContextState:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)recursivelyRestoreExpansionStateAndLoadChildrenUsingContextState:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 @property(readonly) NSArray *children; // @dynamic children;
 - (void)_calculateAndSetFilteredChildren;
 @property(readonly) NSArray *filteredChildren;

@@ -7,20 +7,18 @@
 #import <AppKit/NSTableCellView.h>
 
 @class IDETestReportViewController, NSButton;
-@protocol IDETestReport_Test, IDETestReport_TestRun;
+@protocol IDETestReport_TestRun;
 
 @interface _IDETestReportsPerfMetricTableCellView : NSTableCellView
 {
     NSButton *_button;
     id <IDETestReport_TestRun> _testRun;
-    id <IDETestReport_Test> _test;
     IDETestReportViewController *_reportViewController;
 }
 
 @property __weak IDETestReportViewController *reportViewController; // @synthesize reportViewController=_reportViewController;
-@property(retain) id <IDETestReport_Test> test; // @synthesize test=_test;
 @property(retain) id <IDETestReport_TestRun> testRun; // @synthesize testRun=_testRun;
-@property(retain) NSButton *button; // @synthesize button=_button;
+@property __weak NSButton *button; // @synthesize button=_button;
 - (void).cxx_destruct;
 - (void)showPerfPopover:(id)arg1;
 

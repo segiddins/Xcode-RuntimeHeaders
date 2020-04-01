@@ -6,14 +6,21 @@
 
 #import <IDEKit/IDEIndexGeniusResultsFinder.h>
 
+@class DVTObservingToken;
+
 @interface XRMemoryGraphDebuggerGeniusResultsFinder : IDEIndexGeniusResultsFinder
 {
+    DVTObservingToken *_documentSelectedItemToken;
 }
 
 + (Class)editorDocumentClass;
+- (void).cxx_destruct;
+- (void)primitiveInvalidate;
 - (id)_packagedGeniusResultsFromLocations:(id)arg1;
-- (id)_geniusLocationsForClassType:(id)arg1 inIndex:(id)arg2;
-- (BOOL)_getUpdateGeniusResultsPhaseOneBlock:(CDUnknownBlockType *)arg1 phaseTwoBlock:(CDUnknownBlockType *)arg2 phaseThreeBlock:(CDUnknownBlockType *)arg3;
+- (id)_geniusLocationsForClassType:(id)arg1 withSearchManager:(id)arg2;
+- (id)_geniusLocationsForReferenceType:(id)arg1 withSearchManager:(id)arg2;
+- (BOOL)_getUpdateGeniusResultsPhase1Block:(CDUnknownBlockType *)arg1 phase2Block:(CDUnknownBlockType *)arg2 phase3Block:(CDUnknownBlockType *)arg3;
+- (void)findGeniusResultsForEditorDocument:(id)arg1 selectedDocumentLocations:(id)arg2;
 - (id)geniusCategoryIdentifier;
 
 @end

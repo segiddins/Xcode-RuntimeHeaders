@@ -4,21 +4,21 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <GPUDebuggerMTLSupport/GPUMTLRenderJob.h>
+#import <GPUDebugger/GPURenderJob.h>
 
 @class NSString;
 
 __attribute__((visibility("hidden")))
-@interface GPUMTLTextureDisplayableRenderJob : GPUMTLRenderJob
+@interface GPUMTLTextureDisplayableRenderJob : GPURenderJob
 {
+    unsigned long long _elementIndex;
     NSString *_displayElementName;
 }
 
-- (id)displayElementName;
 - (void).cxx_destruct;
+- (id)displayElementName;
 - (BOOL)isStencilDisplayElement;
 - (BOOL)isDepthDisplayElement;
-- (void)_determineElementNameWithItem:(id)arg1 andElementIndex:(unsigned long long)arg2;
 - (id)initWithResource:(id)arg1 modelFactory:(id)arg2 displayableItem:(id)arg3 elementIndex:(unsigned long long)arg4 level:(unsigned long long)arg5 slice:(unsigned long long)arg6;
 
 @end

@@ -42,12 +42,14 @@
 - (id)menu;
 - (BOOL)_hasMenu;
 - (id)textColor;
-- (id)tokenBackgroundColor;
-- (id)tokenForegroundColor;
+- (id)tokenColorWithBaseSaturation:(double)arg1 baseBrightness:(double)arg2 controlView:(id)arg3;
+- (id)tokenBackgroundColorForControlView:(id)arg1;
+- (id)tokenForegroundColorForControlView:(id)arg1;
 - (long long)interiorBackgroundStyle;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 @property(retain) DVTFindPattern *findPattern;
 - (id)_attributedString;
+- (void)regenerateAttributedString;
 - (void)_setGroupID:(int)arg1;
 - (id)description;
 - (void)dealloc;

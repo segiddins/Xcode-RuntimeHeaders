@@ -4,90 +4,73 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <DVTKit/DVTLayoutView_ML.h>
+#import <DVTStructuredLayoutKit/DVTLayoutView_ML.h>
 
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBDocumentArbitrationResponder-Protocol.h>
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBSceneUpdateContentViewDelegate-Protocol.h>
-#import <IDEInterfaceBuilderCocoaTouchIntegration/IBUIOverlayViewDelegate-Protocol.h>
 
-@class IBCocoaTouchTargetRuntime, IBUINavigationBar, IBUIOverlayView, IBUISimulatedMetricsContainer, IBUIStatusBar, IBUITabBar, IBUIToolbar, NSArray, NSColor, NSMutableDictionary, NSString, NSView;
+@class DVTObservingToken, IBCocoaTouchTargetRuntime, IBSceneUpdateContentView, IBUIColor, IBUIEditorMetrics, IBUINavigationBar, IBUITabBar, IBUIToolbar, NSString, NSView;
 
-@interface IBUIEditorView : DVTLayoutView_ML <IBDocumentArbitrationResponder, IBUIOverlayViewDelegate, IBSceneUpdateContentViewDelegate>
+@interface IBUIEditorView : DVTLayoutView_ML <IBDocumentArbitrationResponder, IBSceneUpdateContentViewDelegate>
 {
-    IBCocoaTouchTargetRuntime *targetRuntime;
-    IBUISimulatedMetricsContainer *simulatedMetricsContainer;
-    NSView *editedView;
-    IBUIOverlayView *decoratorOverlayView;
-    NSMutableDictionary *cornerImageViews;
-    NSColor *cornerColor;
-    NSColor *backgroundColor;
-    NSArray *_decoratorableViews;
     BOOL _needsSynchronize;
-    IBUIStatusBar *_statusBarView;
-    NSView *_bottomBarView;
-    NSView *_topBarView;
-    NSColor *_effectiveBackgroundColor;
+    IBUIColor *_effectiveBackgroundColor;
+    DVTObservingToken *_editorMetricsObservingToken;
+    IBUINavigationBar *_navigationBar;
+    IBUIToolbar *_toolbar;
+    IBUIColor *_backgroundColor;
+    IBSceneUpdateContentView *_owningSceneUpdateContentView;
+    IBCocoaTouchTargetRuntime *_targetRuntime;
+    NSView *_editedView;
     IBUIEditorView *_parentEditorView;
     NSView *_wrapperView;
+    NSView *_topBarView;
+    NSView *_bottomBarView;
+    IBUIEditorMetrics *_editorMetrics;
 }
 
+@property(retain, nonatomic) IBUIEditorMetrics *editorMetrics; // @synthesize editorMetrics=_editorMetrics;
+@property(readonly, nonatomic) NSView *bottomBarView; // @synthesize bottomBarView=_bottomBarView;
+@property(readonly, nonatomic) NSView *topBarView; // @synthesize topBarView=_topBarView;
 @property(retain, nonatomic) NSView *wrapperView; // @synthesize wrapperView=_wrapperView;
 @property(nonatomic) __weak IBUIEditorView *parentEditorView; // @synthesize parentEditorView=_parentEditorView;
-@property(retain, nonatomic) NSView *editedView; // @synthesize editedView;
-@property(readonly) IBCocoaTouchTargetRuntime *targetRuntime; // @synthesize targetRuntime;
+@property(retain, nonatomic) NSView *editedView; // @synthesize editedView=_editedView;
+@property(readonly) IBCocoaTouchTargetRuntime *targetRuntime; // @synthesize targetRuntime=_targetRuntime;
+@property(nonatomic) __weak IBSceneUpdateContentView *owningSceneUpdateContentView; // @synthesize owningSceneUpdateContentView=_owningSceneUpdateContentView;
 - (void).cxx_destruct;
-- (CDStruct_c519178c)ibEffectiveSimulatedEditorViewInset;
-- (struct CGSize)ibEffectiveSimulatedCanvasFrameContentViewSize;
-- (struct CGRect)sceneUpdateContentView:(id)arg1 imageContentRectForImageSize:(struct CGSize)arg2 scaleFactor:(double)arg3;
+- (id)maskImageForContentView:(id)arg1;
+- (id)normalizedMaskPathForContentView:(id)arg1;
+- (id)maskIdentifierForContentView:(id)arg1;
+- (BOOL)isLandscapeForContentView:(id)arg1;
+- (id)editedDocumentObject;
 - (id)backgroundColorForSceneUpdateContentView:(id)arg1;
 - (id)targetRuntimeForSceneUpdateContentView:(id)arg1;
-- (BOOL)shouldSceneUpdateContentViewRegisterForAsynchronousRendering:(id)arg1;
-- (void)invalidateSceneForContentView:(id)arg1 forReason:(CDUnknownBlockType)arg2;
-- (double)scaleFactorForRenderingSceneContentView:(id)arg1;
-- (id)overlayView:(id)arg1 hitTest:(struct CGPoint)arg2 defaultHit:(id)arg3;
-- (void)overlayView:(id)arg1 drawRect:(struct CGRect)arg2;
+- (double)defaultScreenScaleForContentView:(id)arg1;
+- (struct CGSize)defaultContentSizeForContentView:(id)arg1;
+- (struct CGRect)ibEditorSceneRect;
+- (struct CGSize)ibEffectiveSimulatedCanvasFrameContentViewSize;
 - (void)layoutBottomUp;
+- (void)setToolbarEditorFrame:(struct CGRect)arg1;
+- (void)setNavigationBarEditorFrame:(struct CGRect)arg1;
 - (void)layoutTopDown;
-- (id)extendedEdgeProvider;
 - (id)editedIBUIView;
-- (id)layoutPolicy;
+- (id)toolbarForEditorMetrics:(id)arg1;
+- (id)navigationBarForEditorMetrics:(id)arg1;
 - (BOOL)isFlipped;
 - (void)document:(id)arg1 willRunArbitrationOfUnits:(id)arg2;
-- (void)synchronizeBottomBar;
-- (void)customizeBottomBarView:(id)arg1 forSimulatedBarMetrics:(id)arg2;
-- (id)bottomBarForSimulatedBarMetrics:(id)arg1;
-- (void)synchronizeTopBar;
-- (void)customizeTopBarView:(id)arg1 forSimulatedBarMetrics:(id)arg2;
-- (void)customizeView:(id)arg1 forSimulatedBarMetricsIfApplicable:(id)arg2;
-- (id)topBarForSimulatedBarMetrics:(id)arg1;
-- (void)synchronizeStatusBar;
-- (void)invalidateCornerImageViews;
-- (void)layoutCornerImageViewsInFrame:(struct CGRect)arg1;
-- (BOOL)shouldDrawCorners;
-@property(readonly) double cornerRadius;
-@property(copy) NSColor *cornerColor;
 @property(readonly, nonatomic) IBUITabBar *tabBar;
 @property(readonly, nonatomic) IBUIToolbar *toolbar;
 @property(readonly, nonatomic) IBUINavigationBar *navigationBar;
-- (id)decoratorOverlayView;
-- (unsigned long long)innerShadowEdgeMask;
-@property(readonly, nonatomic) NSView *bottomBarView;
-@property(readonly, nonatomic) NSView *topBarView;
-@property(readonly, nonatomic) IBUIStatusBar *statusBarView;
-- (void)synchronizeSimulatedMetricsContainer;
+- (void)synchronizeNewMetricBars;
+- (void)synchronizeEditorMetrics;
 - (void)synchronizeEditorView;
 - (void)synchronizeEditorViewIfNeeded;
 - (void)invalidateEditorView;
-- (void)editedViewDidChangeInvalidatingProperty;
 - (id)contentView;
-- (void)setSimulatedMetricsContainer:(id)arg1;
-@property(readonly, copy, nonatomic) IBUISimulatedMetricsContainer *simulatedMetricsContainer; // @synthesize simulatedMetricsContainer;
 - (void)setTargetRuntime:(id)arg1;
 - (void)_invalidateEffectiveBackgroundColor;
-@property(copy, nonatomic) NSColor *backgroundColor; // @synthesize backgroundColor;
-- (void)setBottomBarView:(id)arg1;
-- (void)setTopBarView:(id)arg1;
-- (void)setStatusBarView:(id)arg1;
+@property(copy, nonatomic) IBUIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
+- (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1 targetRuntime:(id)arg2;
 
 // Remaining properties

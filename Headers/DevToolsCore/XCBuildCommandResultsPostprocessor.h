@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Foundation/NSObject.h>
+#import <objc/NSObject.h>
 
 @class XCDependencyCommand;
 
@@ -13,6 +13,7 @@
     XCDependencyCommand *_command;
 }
 
+- (void).cxx_destruct;
 - (void)postprocessResultsForCommandInvocation:(id)arg1;
 - (id)command;
 - (id)initWithCommand:(id)arg1;

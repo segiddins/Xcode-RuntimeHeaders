@@ -48,7 +48,7 @@
 - (void)importTestResultsCompleteIntegrationWithID:(id)arg1 testedDevices:(struct NSArray *)arg2 testHierarchy:(id)arg3 perfMetricNames:(id)arg4 perfMetricKeyPaths:(id)arg5 completionHandler:(CDUnknownBlockType)arg6;
 - (void)finalizeWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)addTestResult:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (id)testResultWithDevice:(id)arg1 keyPath:(id)arg2 date:(id)arg3 startTime:(double)arg4 endTime:(double)arg5 passed:(BOOL)arg6 failureSummaries:(id)arg7 testableBlueprintPath:(id)arg8 testableBlueprintName:(id)arg9 validationErrors:(id *)arg10;
+- (id)testResultWithDevice:(id)arg1 keyPath:(id)arg2 date:(id)arg3 startTime:(double)arg4 endTime:(double)arg5 duration:(double)arg6 passed:(BOOL)arg7 testPlanRun:(id)arg8 failureSummaries:(id)arg9 testableBlueprintPath:(id)arg10 testableBlueprintName:(id)arg11 validationErrors:(id *)arg12;
 
 @end
 

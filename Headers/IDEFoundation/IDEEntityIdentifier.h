@@ -8,34 +8,36 @@
 
 #import <IDEFoundation/NSCopying-Protocol.h>
 
-@class NSString;
+@class NSDictionary, NSString;
 
 @interface IDEEntityIdentifier : NSObject <NSCopying>
 {
     unsigned long long _hashValue;
-    int _sharedState;
-    int _entityType;
+    long long _sharedState;
     NSString *_entityName;
     NSString *_containerName;
+    long long _entityType;
     NSString *_entityGUID;
 }
 
-+ (id)entityIdentifierFromEntityName:(id)arg1 entityType:(int)arg2 containerName:(id)arg3;
-+ (id)entityIdentifierFromEntityName:(id)arg1 entityType:(int)arg2 containerName:(id)arg3 isShared:(BOOL)arg4;
-+ (id)entityIdentifierFromGUID:(id)arg1 entityName:(id)arg2 entityType:(int)arg3 containerName:(id)arg4;
-+ (id)entityIdentifierFromGUID:(id)arg1 entityName:(id)arg2 entityType:(int)arg3 containerName:(id)arg4 isShared:(BOOL)arg5;
++ (id)entityIdentifierFromEntityName:(id)arg1 entityType:(long long)arg2 containerName:(id)arg3;
++ (id)entityIdentifierFromEntityName:(id)arg1 entityType:(long long)arg2 containerName:(id)arg3 isShared:(BOOL)arg4;
++ (id)entityIdentifierFromGUID:(id)arg1 entityName:(id)arg2 entityType:(long long)arg3 containerName:(id)arg4;
++ (id)entityIdentifierFromGUID:(id)arg1 entityName:(id)arg2 entityType:(long long)arg3 containerName:(id)arg4 isShared:(BOOL)arg5;
 @property(readonly, copy) NSString *entityGUID; // @synthesize entityGUID=_entityGUID;
-@property(readonly) int entityType; // @synthesize entityType=_entityType;
+@property(readonly) long long entityType; // @synthesize entityType=_entityType;
 @property(readonly, copy) NSString *containerName; // @synthesize containerName=_containerName;
 @property(readonly, copy) NSString *entityName; // @synthesize entityName=_entityName;
-@property(readonly) int sharedState; // @synthesize sharedState=_sharedState;
+@property(readonly) long long sharedState; // @synthesize sharedState=_sharedState;
 - (void).cxx_destruct;
+@property(readonly, copy) NSDictionary *dictionaryRepresentation;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (BOOL)isSimilarToEntityIdentifier:(id)arg1;
 - (unsigned long long)hash;
 - (id)description;
 - (BOOL)isEqual:(id)arg1;
-- (id)initWithGUID:(id)arg1 entityName:(id)arg2 entityType:(int)arg3 containerName:(id)arg4 shared:(int)arg5;
+- (id)initWithDictionaryRepresentation:(id)arg1 error:(id *)arg2;
+- (id)initWithGUID:(id)arg1 entityName:(id)arg2 entityType:(long long)arg3 containerName:(id)arg4 shared:(long long)arg5;
 
 @end
 

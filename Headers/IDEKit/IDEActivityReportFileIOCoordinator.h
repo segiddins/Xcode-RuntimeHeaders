@@ -7,6 +7,7 @@
 #import <objc/NSObject.h>
 
 @class NSArray, NSMapTable, NSMutableArray, NSMutableSet, NSSet;
+@protocol OS_dispatch_queue;
 
 @interface IDEActivityReportFileIOCoordinator : NSObject
 {
@@ -14,6 +15,7 @@
     NSMutableSet *_runningThrottleableActivityReports;
     NSMutableSet *_runningUnthrottleableActivityReports;
     NSMapTable *_activityReportObservations;
+    NSObject<OS_dispatch_queue> *_activityReportsQueue;
 }
 
 + (id)sharedActivityReportFileIOCoordinator;

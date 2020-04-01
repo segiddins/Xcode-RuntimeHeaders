@@ -6,7 +6,7 @@
 
 #import <IDEFoundation/IDEIssueProvider.h>
 
-@class DVTDelayedInvocation, DVTObservingToken, NSMutableSet, NSSet;
+@class DVTDelayedInvocation, DVTObservingToken, IDETypeIdentifier, NSMutableSet, NSSet;
 @protocol DVTInvalidation;
 
 @interface IDEAbstractLiveIssueProvider : IDEIssueProvider
@@ -23,9 +23,9 @@
 
 + (int)providerType;
 - (void).cxx_destruct;
-- (id)documentDataTypeIdentifiers;
-- (Class)documentClass;
-- (id)ideModelObjectTypeIdentifier;
+@property(readonly) NSSet *documentDataTypeIdentifiers;
+@property(readonly) Class documentClass;
+@property(readonly) IDETypeIdentifier *ideModelObjectTypeIdentifier;
 - (id)displayNameForIssueTypeIdentifier:(id)arg1;
 - (void)processBatchedChanges:(id)arg1;
 - (void)processDocumentIssues;

@@ -19,6 +19,9 @@
 @property(retain) NSString *displayName; // @synthesize displayName=_displayName;
 @property(retain) NSURL *url; // @synthesize url=_url;
 - (void).cxx_destruct;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (BOOL)uniqueByBundleID;
 - (id)initWithDefaultDictionary:(id)arg1;
 
 @end

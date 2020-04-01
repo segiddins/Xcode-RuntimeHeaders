@@ -11,6 +11,7 @@
     unsigned int _functionEnum;
 }
 
++ (BOOL)supportsSecureCoding;
 @property(nonatomic) unsigned int functionEnum; // @synthesize functionEnum=_functionEnum;
 - (BOOL)isTextureImageCompletelyUpdated;
 - (BOOL)isBufferDataCompletelyUpdated;

@@ -6,35 +6,53 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableDictionary;
+@class NSString;
 @protocol IDETestOperationStateMachineDelegate, OS_dispatch_queue;
 
 @interface IDETestOperationStateMachine : NSObject
 {
-    BOOL _hasReported;
+    BOOL _testPlanDidStartExecuting;
+    BOOL _testRunnerHasFinishedExecutingTests;
+    BOOL _readyForTestBundleToConnect;
+    BOOL _launchSessionInitialIntensiveFileIODone;
     id <IDETestOperationStateMachineDelegate> _delegate;
-    double _exitWithCodeTimeout;
-    double _connectionLostTimeout;
-    double _crashedWithReportTimeout;
-    NSMutableDictionary *_userInfo;
+    double _timeout;
+    unsigned long long _state;
+    NSString *_candidateDescription;
+    NSString *_crashReportDescription;
     NSObject<OS_dispatch_queue> *_queue;
+    NSObject<OS_dispatch_queue> *_callbackQueue;
 }
 
-@property(retain) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-@property(retain) NSMutableDictionary *userInfo; // @synthesize userInfo=_userInfo;
-@property BOOL hasReported; // @synthesize hasReported=_hasReported;
-@property double crashedWithReportTimeout; // @synthesize crashedWithReportTimeout=_crashedWithReportTimeout;
-@property double connectionLostTimeout; // @synthesize connectionLostTimeout=_connectionLostTimeout;
-@property double exitWithCodeTimeout; // @synthesize exitWithCodeTimeout=_exitWithCodeTimeout;
-@property __weak id <IDETestOperationStateMachineDelegate> delegate; // @synthesize delegate=_delegate;
++ (void)initialize;
+@property(readonly) NSObject<OS_dispatch_queue> *callbackQueue; // @synthesize callbackQueue=_callbackQueue;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
+@property(copy, nonatomic) NSString *crashReportDescription; // @synthesize crashReportDescription=_crashReportDescription;
+@property(copy, nonatomic) NSString *candidateDescription; // @synthesize candidateDescription=_candidateDescription;
+@property(nonatomic) unsigned long long state; // @synthesize state=_state;
+@property(readonly) double timeout; // @synthesize timeout=_timeout;
+@property(readonly) __weak id <IDETestOperationStateMachineDelegate> delegate; // @synthesize delegate=_delegate;
+@property BOOL launchSessionInitialIntensiveFileIODone; // @synthesize launchSessionInitialIntensiveFileIODone=_launchSessionInitialIntensiveFileIODone;
+@property BOOL readyForTestBundleToConnect; // @synthesize readyForTestBundleToConnect=_readyForTestBundleToConnect;
+@property BOOL testRunnerHasFinishedExecutingTests; // @synthesize testRunnerHasFinishedExecutingTests=_testRunnerHasFinishedExecutingTests;
+@property BOOL testPlanDidStartExecuting; // @synthesize testPlanDidStartExecuting=_testPlanDidStartExecuting;
 - (void).cxx_destruct;
+- (void)_on_queue_receivedCrashReportForTestRunnerProcessWithDescription:(id)arg1;
+- (void)receivedCrashReportForTestRunnerProcessWithDescription:(id)arg1;
+- (void)_on_queue_willReceiveCrashReportForTestRunnerProcess;
+- (void)willReceiveCrashReportForTestRunnerProcess;
+- (void)_on_queue_handleFinalizationEventWithDescription:(id)arg1;
 - (void)testmanagerdConnectionLost;
-- (void)launchSessionCrashedWithDescription:(id)arg1;
 - (void)launchSessionConnectionLost;
-- (void)launchSessionExitedWithCode:(int)arg1;
 - (void)launchSessionExpired;
-- (void)_queue_finalizeWithDescription:(id)arg1;
-- (id)initWithDelegate:(id)arg1;
+- (void)_on_queue_launchSessionExitedWithCode:(int)arg1;
+- (void)_on_queue_launchSessionCrashedWithSignal:(int)arg1;
+- (void)_on_queue_launchSessionExitedWithCode:(int)arg1 hasCrashed:(BOOL)arg2;
+- (void)launchSessionExitedWithCode:(int)arg1 hasCrashed:(BOOL)arg2;
+- (id)_runnerExitDescriptionWithMessage:(id)arg1;
+- (void)launchSessionInitialIntensiveFileIODoneState;
+- (id)initWithDelegate:(id)arg1 callbackQueue:(id)arg2;
+- (id)initWithDelegate:(id)arg1 timeout:(double)arg2 callbackQueue:(id)arg3;
 
 @end
 

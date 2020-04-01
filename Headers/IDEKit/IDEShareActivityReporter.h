@@ -10,7 +10,6 @@
 {
 }
 
-+ (void)initialize;
 - (id)initWithWorkspace:(id)arg1;
 
 @end

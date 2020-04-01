@@ -38,7 +38,7 @@
 - (void)drawTextStatusWithFrame:(struct CGRect)arg1 inView:(id)arg2;
 - (void)_drawStatusStringInPathRect:(struct CGRect)arg1 view:(id)arg2;
 - (id)initWithType:(int)arg1;
-- (id)dvtExtraBindings;
+- (id)dvt_extraBindings;
 
 @end
 

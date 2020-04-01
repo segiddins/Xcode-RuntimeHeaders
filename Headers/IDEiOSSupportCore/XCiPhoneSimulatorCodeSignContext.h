@@ -13,7 +13,7 @@
 + (id)codeSignNode:(id)arg1 withMacroExpansionScope:(id)arg2 reSignOnly:(BOOL)arg3;
 + (id)prepareForCodeSigningWithMacroExpansionScope:(id)arg1;
 + (BOOL)requiresEntitlementsWithMacroExpansionScope:(id)arg1;
-+ (BOOL)shouldPassEntitlementsToCodeSign;
++ (BOOL)shouldPassEntitlementsFileContentToCodeSignWithMacroExpansionScope:(id)arg1;
 + (BOOL)supportsIOSSigning;
 + (BOOL)supportsMacSigning;
 + (BOOL)supportsDeveloperIDSigning;

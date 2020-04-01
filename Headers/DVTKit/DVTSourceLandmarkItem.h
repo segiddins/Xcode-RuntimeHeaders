@@ -6,15 +6,18 @@
 
 #import <objc/NSObject.h>
 
+#import <DVTKit/DVTSourceLandmarkItemProtocol-Protocol.h>
+
 @class DVTStackBacktrace, NSArray, NSMutableArray, NSString;
 @protocol DVTSourceLandmarkItemDelegate;
 
-@interface DVTSourceLandmarkItem : NSObject
+@interface DVTSourceLandmarkItem : NSObject <DVTSourceLandmarkItemProtocol>
 {
     DVTSourceLandmarkItem *_parent;
     NSMutableArray *_children;
     NSString *_name;
-    int _type;
+    unsigned long long _type;
+    unsigned long long _markStyle;
     struct _NSRange _range;
     struct _NSRange _nameRange;
     NSString *_typeName;
@@ -26,16 +29,25 @@
     void *_itemRef;
 }
 
-+ (int)sourceLandmarkItemTypeForNodeType:(long long)arg1;
++ (unsigned long long)sourceLandmarkItemTypeForNodeType:(long long)arg1;
 @property long long indentLevel; // @synthesize indentLevel=_indentLevel;
 @property long long nestingLevel; // @synthesize nestingLevel=_nestingLevel;
 @property(readonly) double timestamp; // @synthesize timestamp=_timestamp;
 @property(nonatomic) struct _NSRange nameRange; // @synthesize nameRange=_nameRange;
 @property(nonatomic) struct _NSRange range; // @synthesize range=_range;
-@property(readonly) int type; // @synthesize type=_type;
+@property unsigned long long markStyle; // @synthesize markStyle=_markStyle;
+@property(readonly) unsigned long long type; // @synthesize type=_type;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property DVTSourceLandmarkItem *parent; // @synthesize parent=_parent;
 - (void).cxx_destruct;
+- (id)landmarkItemTypeName;
+- (unsigned long long)landmarkItemType;
+- (struct _NSRange)landmarkItemNameRange;
+- (struct _NSRange)landmarkItemRange;
+- (id)landmarkItemName;
+- (id)childLandmarkItems;
+- (long long)numberOfChildLandmarkItems;
+- (id)parentLandmarkItem;
 @property(readonly) BOOL needsUpdate;
 - (void)markForUpdate;
 - (long long)compareWithLandmarkItem:(id)arg1;
@@ -54,9 +66,9 @@
 - (void)_evaluateTypeName;
 - (void)_evaluateNameAndRange;
 - (void)dealloc;
-- (id)initWithItem:(id)arg1 type:(int)arg2 delegate:(id)arg3;
-- (id)initWithItemReference:(void *)arg1 type:(int)arg2 delegate:(id)arg3;
-- (id)initWithName:(id)arg1 type:(int)arg2;
+- (id)initWithItem:(id)arg1 type:(unsigned long long)arg2 delegate:(id)arg3;
+- (id)initWithItemReference:(void *)arg1 type:(unsigned long long)arg2 delegate:(id)arg3;
+- (id)initWithName:(id)arg1 type:(unsigned long long)arg2;
 
 @end
 

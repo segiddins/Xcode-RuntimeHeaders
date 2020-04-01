@@ -21,6 +21,8 @@
 - (BOOL)isLeaf;
 - (id)contentDocumentLocation;
 - (BOOL)isDocumentNavigableItem;
+- (BOOL)_allowsNonFileReferenceDocumentInFileInspector;
+- (id)fileReference;
 - (id)_editorDocument;
 - (void)_updateEditorDocument:(id)arg1;
 - (void)primitiveInvalidate;

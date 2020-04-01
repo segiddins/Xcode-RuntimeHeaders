@@ -14,6 +14,8 @@
 + (id)keyPathsForValuesAffectingIbShadowedRoundingIncrement;
 + (id)keyPathsForValuesAffectingIbShadowedThousandSeparator;
 + (id)keyPathsForValuesAffectingIbShadowedAttributedStringForZero;
++ (id)keyPathsForValuesAffectingIbShadowedAttributedStringForNotANumber;
++ (id)keyPathsForValuesAffectingIbShadowedAttributedStringForNil;
 + (id)keyPathsForValuesAffectingIbShadowedPaddingCharacter;
 + (id)keyPathsForValuesAffectingIbShadowedExponentSymbol;
 + (id)keyPathsForValuesAffectingIbShadowedPlusSign;
@@ -37,7 +39,13 @@
 + (id)keyPathsForValuesAffectingIbShadowedDecimalSeparator;
 + (id)keyPathsForValuesAffectingIbShadowedNegativeFormat;
 + (id)keyPathsForValuesAffectingIbShadowedPositiveFormat;
-- (void)ibWarnings:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
++ (id)instantiateWithDocumentUnarchiver:(id)arg1;
++ (id)keyPathsForValuesAffectingIbInspectedTenOhMaximum;
++ (id)keyPathsForValuesAffectingIbInspectedTenOhMinimum;
++ (id)keyPathsForValuesAffectingIbInspectedNumberStyle;
++ (id)keyPathsForValuesAffectingIbInspectedFormatterBehavior;
++ (id)keyPathsForValuesAffectingIbInspectedShowsNegativeNumbersInRed;
+- (void)ibPopulateIssues:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
 - (void)ibReset;
 - (void)ibPrepareCocoaDocumentForCompiling:(id)arg1 withContext:(id)arg2;
 @property BOOL ibExternalLocalizesFormat;
@@ -52,6 +60,10 @@
 @property(retain) NSString *ibShadowedThousandSeparator;
 - (void)setIbShadowedAttributedStringForZero:(id)arg1;
 - (id)ibShadowedAttributedStringForZero;
+- (void)setIbShadowedAttributedStringForNotANumber:(id)arg1;
+- (id)ibShadowedAttributedStringForNotANumber;
+- (void)setIbShadowedAttributedStringForNil:(id)arg1;
+- (id)ibShadowedAttributedStringForNil;
 @property(retain) NSString *ibShadowedPaddingCharacter;
 @property(retain) NSString *ibShadowedExponentSymbol;
 @property(retain) NSString *ibShadowedPlusSign;
@@ -76,5 +88,25 @@
 @property(retain) NSString *ibShadowedNegativeFormat;
 @property(retain) NSString *ibShadowedPositiveFormat;
 - (id)ibExplicitValueForKey:(id)arg1;
+- (id)ibLocalAttributeKeyPaths;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
+- (id)ibUnarchiveNilDefaultStringForKey:(id)arg1 withUnarchiver:(id)arg2 xcode5DefaultValue:(id)arg3;
+- (void)ibArchiveNilDefaultString:(id)arg1 forKey:(id)arg2 withArchiver:(id)arg3 xcode5DefaultValue:(id)arg4;
+- (id)ibMaximumDefaultValue;
+- (id)ibMinimumDefaultValue;
+- (void)setIbInspectedTenOhMaximum:(id)arg1;
+- (id)ibInspectedTenOhMaximum;
+- (void)setIbInspectedTenOhMinimum:(id)arg1;
+- (id)ibInspectedTenOhMinimum;
+- (void)setIbInspectedNumberStyle:(long long)arg1;
+- (long long)ibInspectedNumberStyle;
+- (SEL)ibExternalSampleValueTooltipRelatedSelector;
+- (id)ibExternalSampleValueFormatted;
+- (id)ibExternalSampleValueDefault;
+- (void)setIbInspectedFormatterBehavior:(long long)arg1;
+- (long long)ibInspectedFormatterBehavior;
+- (BOOL)ibInspectedShowsNegativeNumbersInRed;
+- (void)setIbInspectedShowsNegativeNumbersInRed:(BOOL)arg1;
 @end
 

@@ -12,42 +12,17 @@
 
 - (id)completionMenuPopUpBackgroundColorHighlighted;
 - (id)completionMenuPopUpBackgroundColor;
-- (id)completionMenuPopUpTextColorHighlighted;
-- (id)completionMenuPopUpTextColor;
-- (id)connectionWellFillColor;
-- (id)connectionWellBorderColorWhenRolloverOrPreceeded;
-- (id)connectionWellFillColorRolloverOrPreceeded;
-- (id)connectionWellBorderColor;
-- (id)connectionWellBorderColorDisabled;
-- (id)connectionWellPlusColorPressed;
-- (id)connectionWellPlusColor;
-- (id)predecessorViewTextColorDisabled;
-- (id)predecessorViewTextColor;
-- (id)predecessorViewDisconnectButtonRolledOverFillColor;
-- (id)predecessorViewDisconnectButtonPressedStrokeColor;
-- (id)predecessorViewDisconnectButtonRolledOverStrokeColor;
-- (id)predecessorViewDisconnectButtonPressedFillColor;
-- (id)predecessorViewDisconnectButtonFillColor;
-- (id)predecessorViewDisconnectButtonPressedIconColor;
-- (id)predecessorViewDisconnectButtonIconColor;
-- (id)predecessorViewDisconnectButtonRolledOverIconColor;
-- (id)predecessorViewWarningBangColor;
-- (id)predecessorViewWarningTriangleColor;
-- (id)predecessorViewWarningPressedColor;
-- (id)prototypeViewBottomBorderColor;
+- (id)connectionWellDisabledColor;
 - (id)prototypeViewBackgroundColor;
-- (id)prototypeViewLinkBubbleBorderColor;
-- (id)prototypeViewLinkBubbleBackgroundColor;
-- (id)prototypeViewLinkBubbleBorderColorRolledOver;
-- (id)prototypeViewLinkBubbleBackgroundColorRolledOver;
-- (id)prototypeViewTextColor;
-- (id)prototypeViewFont;
-- (id)disclosureHeaderTitleColor;
+- (id)connectionBubbleFillColorRolledOver;
+- (id)connectionBubbleFillColor;
+- (id)connectionBubbleStrokeColor;
 - (id)disclosureHeaderButtonColorPressed;
 - (id)disclosureHeaderButtonColor;
 - (id)disclosureViewBottomBorderColor;
 - (id)disclosureView;
-- (BOOL)fadesOutDragWindow;
+- (id)disabledTextColor;
+- (id)textColor;
 
 @end
 

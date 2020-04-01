@@ -35,8 +35,10 @@ __attribute__((visibility("hidden")))
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
+@property(retain) id <DYResource> outlineTexture;
+@property(retain) id <DYResource> solidTexture;
 @property(readonly) Class superclass;
-@property(retain) id <DYResource> wireframeImage;
+@property(retain) id <DYResource> wireframeTexture;
 
 @end
 

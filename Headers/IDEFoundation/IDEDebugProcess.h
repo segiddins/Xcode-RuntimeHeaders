@@ -8,12 +8,13 @@
 
 #import <IDEFoundation/IDEDebugTopNavigableModel-Protocol.h>
 
-@class DVTStackBacktrace, IDEDebugSession, IDELaunchSession, IDEStackFrame, IDEThread, NSArray, NSMutableArray, NSMutableSet, NSString;
+@class DVTStackBacktrace, IDEDebugSession, IDELaunchSession, IDEStackFrame, IDEThread, NSArray, NSMutableArray, NSMutableSet, NSNumber, NSString;
 
 @interface IDEDebugProcess : NSObject <IDEDebugTopNavigableModel>
 {
     NSMutableArray *_memoryDatas;
     NSMutableArray *_memoryFaultedMemoryData;
+    NSMutableArray *_delayedInvalidationQueues;
     NSMutableSet *_threadsAutoRefreshStackFrames;
     BOOL _threadsAutoRefreshStackFramesDone;
     int _PID;
@@ -22,16 +23,19 @@
     IDELaunchSession *_launchSession;
     NSString *_name;
     NSString *_rawName;
+    NSString *_subtitle;
     NSArray *_threads;
     NSArray *_queues;
     IDEThread *_currentThread;
     IDEStackFrame *_currentStackFrame;
+    NSNumber *_restoreFrameNumber;
     IDEStackFrame *_instructionPointerStackFrame;
     NSArray *_loadedCodeModules;
     unsigned long long _addressByteSize;
     IDEDebugSession *_parentDebugSession;
 }
 
++ (unsigned long long)assertionBehaviorAfterEndOfEventForSelector:(SEL)arg1;
 + (id)keyPathsForValuesAffectingSubtitle;
 + (id)keyPathsForValuesAffectingThreads;
 + (void)initialize;
@@ -40,17 +44,19 @@
 @property(readonly, nonatomic) unsigned long long addressByteSize; // @synthesize addressByteSize=_addressByteSize;
 @property(readonly, nonatomic) NSArray *loadedCodeModules; // @synthesize loadedCodeModules=_loadedCodeModules;
 @property(retain, nonatomic) IDEStackFrame *instructionPointerStackFrame; // @synthesize instructionPointerStackFrame=_instructionPointerStackFrame;
+@property(retain, nonatomic) NSNumber *restoreFrameNumber; // @synthesize restoreFrameNumber=_restoreFrameNumber;
 @property(retain, nonatomic) IDEStackFrame *currentStackFrame; // @synthesize currentStackFrame=_currentStackFrame;
 @property(retain, nonatomic) IDEThread *currentThread; // @synthesize currentThread=_currentThread;
 @property(copy, nonatomic) NSArray *queues; // @synthesize queues=_queues;
 @property(copy, nonatomic) NSArray *threads; // @synthesize threads=_threads;
+@property(copy, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(nonatomic) int controlState; // @synthesize controlState=_controlState;
 @property(nonatomic) int PID; // @synthesize PID=_PID;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, copy) NSString *associatedProcessUUID; // @synthesize associatedProcessUUID=_associatedProcessUUID;
 - (void).cxx_destruct;
 - (void)primitiveInvalidate;
-- (id)symbolicatedThreadWithAddresses:(id)arg1;
+- (void)symbolicatedThreadFromAddress:(unsigned long long)arg1 size:(unsigned long long)arg2 isLiteZone:(BOOL)arg3 isVMregion:(BOOL)arg4 handler:(CDUnknownBlockType)arg5;
 - (void)deregisterThreadAutoRefreshesStackFrames:(id)arg1;
 - (void)registerThreadAutoRefreshesStackFrames:(id)arg1;
 - (void)recordedThreadsForAddress:(unsigned long long)arg1 handleOnMainQueueWithResultHandler:(CDUnknownBlockType)arg2;
@@ -67,7 +73,6 @@
 - (id)memoryDataForAddressOfExpression:(id)arg1 numberOfBytes:(unsigned long long)arg2;
 - (Class)classForMemoryData;
 - (BOOL)isPaused;
-@property(readonly) NSString *subtitle;
 @property(readonly) NSString *rawName; // @synthesize rawName=_rawName;
 @property(readonly) IDELaunchSession *launchSession; // @synthesize launchSession=_launchSession;
 - (id)contentDelegateUIExtensionIdentifier;

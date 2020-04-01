@@ -21,7 +21,7 @@
 @property(readonly, copy, nonatomic) NSString *title;
 - (void)revert;
 - (void)validate;
-- (void)unresolveWithContext:(id <IDEFlightCheckingContext>)arg1;
+- (void)unresolve;
 - (void)resolveWithContext:(id <IDEFlightCheckingContext>)arg1;
 @end
 

@@ -6,19 +6,25 @@
 
 #import <IDEInterfaceBuilderKit/IBAbstractPreviewDocumentEditor.h>
 
-@class IDENotifyingLocalizedGroup, NSSegmentedControl;
+#import <IDEInterfaceBuilderKit/NSMenuDelegate-Protocol.h>
 
-@interface IBBasePreviewDocumentEditor : IBAbstractPreviewDocumentEditor
+@class IDENotifyingLocalizedGroup, NSMenu, NSSegmentedControl, NSString;
+
+@interface IBBasePreviewDocumentEditor : IBAbstractPreviewDocumentEditor <NSMenuDelegate>
 {
     NSSegmentedControl *_accessoryLocalizationControl;
     IDENotifyingLocalizedGroup *_localizedGroup;
+    NSSegmentedControl *_addButton;
+    NSMenu *_addConfigurationMenu;
 }
 
 + (id)buildAccessoryLocalizationControlForLanguages:(id)arg1 developmentLanguage:(id)arg2 withTarget:(id)arg3;
 + (id)languageMenuForLanguages:(id)arg1 developmentLanguage:(id)arg2 withTarget:(id)arg3;
+@property(readonly) NSMenu *addConfigurationMenu; // @synthesize addConfigurationMenu=_addConfigurationMenu;
 - (void).cxx_destruct;
-- (id)displayNameForAppyingRecipe:(id)arg1 toObject:(id)arg2;
+- (id)displayNameForApplyingRecipe:(id)arg1 toObject:(id)arg2;
 - (id)initialRecipe;
+- (Class)previewRecipeClass;
 - (BOOL)validateUserInterfaceItem:(id)arg1;
 - (void)changeLanguage:(id)arg1;
 - (void)applySettingsToDocument:(id)arg1 forPreviewRecipe:(id)arg2 withPasteboardCloningContext:(id)arg3;
@@ -27,8 +33,19 @@
 - (id)selectedLanguages;
 - (id)targetRecipes;
 - (id)installControls;
+- (BOOL)supportsAddConfigurationMenu;
 - (id)installEditorObservations;
 - (void)primitiveInvalidate;
+- (void)refreshControlState;
+- (void)menuNeedsUpdate:(id)arg1;
+- (void)userAddedNewConfiguration:(id)arg1;
+- (id)applicableIdioms;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

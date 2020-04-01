@@ -4,20 +4,29 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <DVTKit/DVTLibraryController.h>
+#import <DVTLibraryKit/DVTLibraryController.h>
 
-@class DVTObservingToken;
+@class DVTObservingToken, IDEWorkspace, IDEWorkspaceDocument, IDEWorkspaceTabController;
+@protocol IDELibraryContentDestination;
 
 @interface IDELibraryController : DVTLibraryController
 {
     DVTObservingToken *_activeEditorDocumentKVOToken;
+    id <IDELibraryContentDestination> _contentDestination;
+    IDEWorkspaceDocument *_workspaceDocument;
+    IDEWorkspaceTabController *_contentDefiningWorkspaceTabController;
 }
 
+@property(retain) IDEWorkspaceTabController *contentDefiningWorkspaceTabController; // @synthesize contentDefiningWorkspaceTabController=_contentDefiningWorkspaceTabController;
+@property(retain) IDEWorkspaceDocument *workspaceDocument; // @synthesize workspaceDocument=_workspaceDocument;
 - (void).cxx_destruct;
+- (BOOL)depositAssets:(id)arg1;
 - (void)viewWillUninstall;
 - (void)viewDidInstall;
-- (id)workspaceWindowController;
-- (void)activeEditorDocumentDidChange:(id)arg1;
+@property(readonly) IDEWorkspace *workspace;
+- (void)activeEditorDidChange:(id)arg1;
+- (void)primitiveInvalidate;
+- (id)initWithWorkspaceDocument:(id)arg1;
 
 @end
 

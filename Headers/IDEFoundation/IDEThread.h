@@ -9,7 +9,7 @@
 #import <IDEFoundation/DVTInvalidation-Protocol.h>
 #import <IDEFoundation/IDEDebugNavigableModel-Protocol.h>
 
-@class DVTStackBacktrace, IDEDebugProcess, IDEDebugQueue, IDEIssue, IDELaunchSession, IDERecordedThreadCollection, NSArray, NSCache, NSMutableArray, NSNumber, NSString;
+@class DVTDispatchLock, DVTStackBacktrace, IDEDebugProcess, IDEDebugQueue, IDEIssue, IDELaunchSession, IDERecordedThreadCollection, NSArray, NSCache, NSMutableArray, NSNumber, NSString;
 
 @interface IDEThread : NSObject <IDEDebugNavigableModel, DVTInvalidation>
 {
@@ -19,13 +19,15 @@
     long long _secondLastCompressionValue;
     NSCache *_compressedStackFramesCache;
     NSMutableArray *_stackFrames;
-    NSMutableArray *_delayedInvalidationRecordedThreads;
+    NSMutableArray *_delayedInvalidationChildren;
+    DVTDispatchLock *_delayedInvalidationChildrenLock;
     BOOL _autoRefreshStackFramesWhenPaused;
     BOOL _hasLatestStackFrames;
     BOOL _hasInitializedStackFrames;
     BOOL _recorded;
     BOOL _recordedForInstrumentation;
     BOOL _userSuspended;
+    BOOL _specialRuntimeThread;
     int _state;
     int _stopReason;
     int _breakpointStackSelectionBehavior;
@@ -49,6 +51,7 @@
 + (void)initialize;
 @property(nonatomic) int breakpointStackSelectionBehavior; // @synthesize breakpointStackSelectionBehavior=_breakpointStackSelectionBehavior;
 @property(copy, nonatomic) NSString *qualityOfServiceValue; // @synthesize qualityOfServiceValue=_qualityOfServiceValue;
+@property BOOL specialRuntimeThread; // @synthesize specialRuntimeThread=_specialRuntimeThread;
 @property(retain, nonatomic) IDEIssue *runtimeIssue; // @synthesize runtimeIssue=_runtimeIssue;
 @property(retain, nonatomic) IDERecordedThreadCollection *recordedThreadCollection; // @synthesize recordedThreadCollection=_recordedThreadCollection;
 @property(nonatomic) BOOL userSuspended; // @synthesize userSuspended=_userSuspended;
@@ -69,13 +72,11 @@
 @property(readonly, copy) NSString *associatedProcessUUID; // @synthesize associatedProcessUUID=_associatedProcessUUID;
 - (void).cxx_destruct;
 - (void)primitiveInvalidate;
-- (void)requestUnsuspend;
-- (void)requestSuspend;
 - (void)_inferStateFromStackFrames:(id)arg1;
 - (void)_inferState;
 - (id)primitiveStackFrames;
 - (id)compressedStackFrames:(long long)arg1;
-- (void)requestStackFrames:(unsigned long long)arg1 handleOnMainQueueWithResultHandler:(CDUnknownBlockType)arg2;
+- (void)requestStackFrames:(unsigned long long)arg1 handleOnMainQueue:(BOOL)arg2 resultHandler:(CDUnknownBlockType)arg3;
 - (void)refreshStackFrames;
 - (void)invalidateUnusedStackFramesAfterCallToSetStackFrames:(id)arg1;
 @property(copy, nonatomic) NSArray *stackFrames; // @dynamic stackFrames;

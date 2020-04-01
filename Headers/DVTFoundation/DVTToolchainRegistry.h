@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class DVTDelayedInvocation, DVTDispatchLock, DVTSearchPath, DVTToolchain, NSDictionary, NSMutableDictionary, NSSet;
+@class DVTDelayedInvocation, DVTDispatchLock, DVTSearchPath, DVTToolchain, NSDictionary, NSSet;
 @protocol DVTUserDefaults;
 
 @interface DVTToolchainRegistry : NSObject
@@ -17,36 +17,35 @@
     DVTDispatchLock *_lock;
     NSSet *_toolchains;
     NSDictionary *_invalidToolchains;
-    NSMutableDictionary *_identsToToolchains;
-    NSMutableDictionary *_aliasesToToolchains;
+    NSDictionary *_identsToToolchains;
+    NSDictionary *_aliasesToToolchains;
     DVTDelayedInvocation *_scanSearchPathsInvocation;
 }
 
 + (BOOL)verifySignatureRevocationStatusForPath:(id)arg1 error:(id *)arg2;
-+ (id)keyPathsForValuesAffectingAvailableSwiftVersionToolchains;
 + (id)keyPathsForValuesAffectingAvailableOverrideToolchains;
 + (id)keyPathsForValuesAffectingAvailableBuildSystemToolchains;
 + (id)keyPathsForValuesAffectingActiveDefaultToolchain;
 + (id)keyPathsForValuesAffectingDefaultToolchainOverride;
 + (id)keyPathsForValuesAffectingDefaultToolchain;
++ (BOOL)registerToolchain:(id)arg1 identsToToolchains:(id)arg2 aliasesToToolchains:(id)arg3 appleApprovedPaths:(id)arg4 error:(id *)arg5;
 + (id)defaultRegistry;
 - (void).cxx_destruct;
+- (id)swiftDemangleToolchainForToolchains:(id)arg1;
+- (id)llvmProfdataToolchainForToolchains:(id)arg1;
+- (id)lldbToolchainForToolchains:(id)arg1;
 - (BOOL)isBuiltInToolchain:(id)arg1;
 - (BOOL)verifyToolchain:(id)arg1 error:(id *)arg2;
-@property(readonly) NSSet *availableSwiftVersionToolchains;
 @property(readonly) NSSet *availableOverrideToolchains;
 @property(readonly) NSSet *availableBuildSystemToolchains;
+- (id)defaultToolchainOverrideForBuildSettings:(id)arg1;
 - (id)toolchainsForToolchainsBuildSettingValue:(id)arg1;
 @property(readonly) DVTToolchain *activeDefaultToolchain;
 @property(retain) DVTToolchain *defaultToolchainOverride;
 - (void)scanSearchPaths;
-- (BOOL)scanSearchPathAndRegisterToolchains:(id *)arg1;
 @property(readonly) DVTToolchain *defaultToolchain;
 - (id)_toolchainForIdentifier:(id)arg1;
 - (id)toolchainForIdentifier:(id)arg1;
-- (id)toolchainForIdentifier:(id)arg1 includingOverrides:(BOOL)arg2;
-- (id)allRegisteredToolchains;
-- (BOOL)registerToolchain:(id)arg1 error:(id *)arg2;
 @property(readonly) NSDictionary *invalidToolchains;
 @property(readonly) NSSet *toolchains;
 - (void)dealloc;

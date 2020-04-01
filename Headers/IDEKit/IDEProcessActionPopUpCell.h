@@ -6,14 +6,15 @@
 
 #import <AppKit/NSPopUpButtonCell.h>
 
-@class NSString;
+@class NSImageCell, NSString;
 
 @interface IDEProcessActionPopUpCell : NSPopUpButtonCell
 {
     struct CGSize _cellSize;
     BOOL _mouseEntered;
-    NSString *_toolTip;
+    NSImageCell *_arrowImageCell;
     BOOL _arrowIsVisible;
+    NSString *_toolTip;
 }
 
 @property(nonatomic) BOOL arrowIsVisible; // @synthesize arrowIsVisible=_arrowIsVisible;

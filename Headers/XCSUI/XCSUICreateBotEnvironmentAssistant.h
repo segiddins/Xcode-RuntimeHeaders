@@ -10,6 +10,7 @@
 
 @interface XCSUICreateBotEnvironmentAssistant : IDEAssistant
 {
+    BOOL _preventGoNextOrFinish;
     BOOL _viewIsInstalled;
     XCSUIBotDefinition_EnvironmentEditor *_environmentEditor;
 }
@@ -19,13 +20,15 @@
 @property(retain, nonatomic) XCSUIBotDefinition_EnvironmentEditor *environmentEditor; // @synthesize environmentEditor=_environmentEditor;
 @property(nonatomic) BOOL viewIsInstalled; // @synthesize viewIsInstalled=_viewIsInstalled;
 - (void).cxx_destruct;
+- (void)setPreventGoNextOrFinish:(BOOL)arg1;
+- (BOOL)preventGoNextOrFinish;
 - (BOOL)canGoForward;
 - (void)viewWillUninstall;
 - (void)viewDidInstall;
 - (id)nextAssistantIdentifier;
 - (id)createBotAssistantContext;
 - (void)primitiveInvalidate;
-- (void)viewDidLoad;
+- (void)loadView;
 
 @end
 

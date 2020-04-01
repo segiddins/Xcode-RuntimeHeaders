@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class DVTFileDataType, DVTFilePath, NSImage, NSMutableSet, NSSet, NSString;
+@class DVTDocumentLocation, DVTFileDataType, DVTFilePath, IDEMediaResourceMetadata, NSImage, NSMutableSet, NSSet, NSString;
 
 @interface IDEMediaResource : NSObject
 {
@@ -18,23 +18,31 @@
     NSString *_explicitNameForFolding;
     NSSet *_applicableFoldingStrategies;
     NSImage *_icon;
+    IDEMediaResourceMetadata *_metadata;
     id _content;
     NSMutableSet *_contentRequests;
     NSMutableSet *_iconRequests;
 }
 
++ (id)generateContentWithContext:(id)arg1;
++ (id)generateIconWithContext:(id)arg1;
 + (id)mediaType;
 + (Class)mediaResourceClassForFileType:(id)arg1;
 + (id)allMediaFileDataTypes;
 + (id)allResourceTypesOrderedByClass;
 + (id)resourceWithPath:(id)arg1 contentType:(id)arg2 name:(id)arg3 icon:(id)arg4;
++ (id)resourceWithPath:(id)arg1 contentType:(id)arg2 name:(id)arg3 icon:(id)arg4 metadata:(id)arg5;
 + (id)resourceWithName:(id)arg1 contentType:(id)arg2 icon:(id)arg3 content:(id)arg4;
++ (id)resourceWithName:(id)arg1 contentType:(id)arg2 icon:(id)arg3 content:(id)arg4 metadata:(id)arg5;
 + (id)resourceWithName:(id)arg1 contentType:(id)arg2 icon:(id)arg3 content:(id)arg4 explicitNameForFolding:(id)arg5 applicableFoldingStrategies:(id)arg6;
++ (id)resourceWithName:(id)arg1 contentType:(id)arg2 icon:(id)arg3 content:(id)arg4 explicitNameForFolding:(id)arg5 applicableFoldingStrategies:(id)arg6 metadata:(id)arg7;
 + (id)resourceWithPath:(id)arg1 contentType:(id)arg2 name:(id)arg3 icon:(id)arg4 explicitNameForFolding:(id)arg5 applicableFoldingStrategies:(id)arg6;
++ (id)resourceWithPath:(id)arg1 contentType:(id)arg2 name:(id)arg3 icon:(id)arg4 explicitNameForFolding:(id)arg5 applicableFoldingStrategies:(id)arg6 metadata:(id)arg7;
 @property(readonly, copy, nonatomic) NSMutableSet *iconRequests; // @synthesize iconRequests=_iconRequests;
 @property(readonly, copy, nonatomic) NSMutableSet *contentRequests; // @synthesize contentRequests=_contentRequests;
 @property(nonatomic, getter=isIconValid) BOOL iconValid; // @synthesize iconValid=_iconValid;
 @property(retain, nonatomic) id content; // @synthesize content=_content;
+@property(readonly, nonatomic) IDEMediaResourceMetadata *metadata; // @synthesize metadata=_metadata;
 @property(nonatomic, getter=isContentValid) BOOL contentValid; // @synthesize contentValid=_contentValid;
 @property(retain, nonatomic) NSImage *icon; // @synthesize icon=_icon;
 @property(readonly, nonatomic) NSSet *applicableFoldingStrategies; // @synthesize applicableFoldingStrategies=_applicableFoldingStrategies;
@@ -43,32 +51,39 @@
 @property(readonly, nonatomic) DVTFilePath *sourceFilePath; // @synthesize sourceFilePath=_sourceFilePath;
 @property(readonly, nonatomic) DVTFileDataType *contentType; // @synthesize contentType=_contentType;
 - (void).cxx_destruct;
+- (BOOL)alwaysShowsIconAsLibraryDetailViewPreview;
+- (id)detailViewHeading;
+- (BOOL)detailViewShowsAlternates;
+- (id)detailViewAlternateWithTitle:(id)arg1;
+- (BOOL)needsContentForDetailViewAlternate;
+- (id)variantSetKeyWithFoldingStrategy:(id)arg1;
 - (id)variantSetNameWithFoldingStrategy:(id)arg1;
 - (id)variantWithFoldingStrategy:(id)arg1;
-- (id)extractNonVariantNameFromString:(id)arg1 forMediaType:(id)arg2 usingVariables:(id)arg3 withFoldingStrategy:(id)arg4 returningVariant:(id *)arg5;
+- (id)extractNonVariantNameFromString:(id)arg1 withFoldingStrategy:(id)arg2 returningVariant:(id *)arg3;
 - (id)extractNonVariantNameWithFoldingStrategy:(id)arg1 returningVariant:(id *)arg2;
 - (void)populateAdditionalTypesToPasteboard:(id)arg1;
 - (id)requestContentSynchronously;
 - (void)requestContentAsynchronously:(CDUnknownBlockType)arg1;
 - (id)requestIconSynchronously;
 - (void)requestIconAsynchronously:(CDUnknownBlockType)arg1;
-- (id)generateContentForFilePath:(id)arg1 contentType:(id)arg2;
-- (id)generateIconForFilePath:(id)arg1 contentType:(id)arg2;
+- (id)captureContextOnMainThreadBeforeGeneratingContent;
+- (id)captureContextOnMainThreadBeforeGeneratingIcon;
 - (BOOL)isAppicableToFoldingStrategy:(id)arg1;
 - (id)iconRequestsCreatingIfNeeded;
 - (id)contentRequestsCreatingIfNeeded;
-- (id)mediaLibraryDetailControllerIdentifier;
 - (id)contentIfValid;
 - (id)iconIfValid;
 - (void)_stopObservingFilePath;
+- (void)invalidateIconAndContent;
 - (void)_startObservingFilePath;
 - (BOOL)isBundleLike;
+@property(readonly, nonatomic) DVTDocumentLocation *documentLocation;
 @property(readonly, nonatomic, getter=isPathBased) BOOL pathBased;
 - (id)debugDescription;
 - (id)description;
 - (id)mediaType;
 - (void)dealloc;
-- (id)initWithFilePath:(id)arg1 content:(id)arg2 contentType:(id)arg3 name:(id)arg4 icon:(id)arg5 explicitNameForFolding:(id)arg6 applicableFoldingStrategies:(id)arg7;
+- (id)initWithFilePath:(id)arg1 content:(id)arg2 contentType:(id)arg3 name:(id)arg4 icon:(id)arg5 explicitNameForFolding:(id)arg6 applicableFoldingStrategies:(id)arg7 metadata:(id)arg8;
 
 @end
 

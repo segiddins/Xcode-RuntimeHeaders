@@ -10,6 +10,8 @@
 {
 }
 
+- (void)deferHandlingTask;
+@property(readonly) BOOL shouldHandleImmediately;
 - (id)handlerForTask;
 
 @end

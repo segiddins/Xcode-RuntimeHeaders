@@ -13,10 +13,13 @@
     DVTLogAspect *_logAspect;
 }
 
-@property(retain, nonatomic) DVTLogAspect *logAspect; // @synthesize logAspect=_logAspect;
+@property(readonly, nonatomic) DVTLogAspect *logAspect; // @synthesize logAspect=_logAspect;
 - (void).cxx_destruct;
+- (id)_localExecutionCodesignParametersForEvaluationInputs:(id)arg1 configuration:(id)arg2 error:(id *)arg3;
 - (id)_provisioningInputsForEvaluationInputs:(id)arg1 configuration:(id)arg2 entitlements:(id)arg3 error:(id *)arg4;
 - (long long)_signingStyleForProvisionableSnapshot:(id)arg1 configuration:(id)arg2;
+- (id)evaluationForInputs:(id)arg1 configuration:(id)arg2;
+- (id)evaluateStatusWithInputs:(id)arg1 iOSMacInputs:(id)arg2;
 - (id)evaluateStatusWithInputs:(id)arg1;
 - (id)initWithName:(id)arg1 logAspect:(id)arg2;
 

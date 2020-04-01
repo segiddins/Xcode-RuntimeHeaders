@@ -10,13 +10,13 @@
 {
 }
 
+- (id)defaultTableColumnIdentifiersForTableView:(id)arg1;
+- (id)allowedTableColumnIdentifiersForTableView:(id)arg1;
 - (id)identifier;
 - (void)removeItems:(id)arg1;
 - (void)addItems:(id)arg1;
 - (Class)targetedEditorClass;
 - (id)titleForDisplay;
-- (id)defaultTableColumnIdentifiersForTableView:(id)arg1;
-- (id)allowedTableColumnIdentifiersForTableView:(id)arg1;
 
 @end
 

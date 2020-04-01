@@ -6,19 +6,15 @@
 
 #import <IDEInterfaceBuilderKit/IBSourceCodeConnectionEndPointProvider.h>
 
-@class DVTSourceModel;
-
 @interface IBObjCSourceCodeConnectionEndPointProvider : IBSourceCodeConnectionEndPointProvider
 {
-    DVTSourceModel *_sourceModel;
 }
 
-- (void).cxx_destruct;
 - (id)endPointHandlerForPoint:(struct CGPoint)arg1 inView:(id)arg2 withContext:(id)arg3 forDocument:(id)arg4;
 - (long long)validatedRealLineNumberForRealInsertionCharacterIndex:(long long)arg1 inClassItem:(id)arg2;
 - (BOOL)shouldIgnoreContainingSourceModelItemIfFolded:(id)arg1;
 - (id)containingModelItemForSourceModelItem:(id)arg1 inClassItem:(id)arg2;
-- (id)initWithSourceTextView:(id)arg1;
+- (id)initWithSourceEditorView:(id)arg1;
 
 @end
 

@@ -6,13 +6,13 @@
 
 #import <IDEKit/IDETemplateCompletionAssistant.h>
 
-@class DVTReplacementView, NSView;
+@class DVTReplacementView, NSLayoutConstraint, NSView;
 
 @interface Xcode3ProjectTemplateCompletionAssistant : IDETemplateCompletionAssistant
 {
-    NSView *_groupSubview;
     DVTReplacementView *_gitSubview;
     NSView *_workspaceSubview;
+    NSLayoutConstraint *_heightConstraint;
 }
 
 - (void).cxx_destruct;
@@ -21,14 +21,15 @@
 - (void)_updateDirectoryURL:(id)arg1;
 - (id)gitController;
 - (void)destinationManagerWorkspaceDidChange:(id)arg1;
+- (void)destinationManagerGroupDidChange:(id)arg1;
 - (BOOL)destinationManager:(id)arg1 shouldAddItemToMenu:(id)arg2;
 - (BOOL)_isProjectSafeToReplaceAtURL:(id)arg1 busyProjectName:(id *)arg2;
 - (void)panel:(id)arg1 didChangeToDirectoryURL:(id)arg2;
 - (BOOL)panel:(id)arg1 validateURL:(id)arg2 error:(id *)arg3;
-- (id)finalURLForSelectedURL:(id)arg1;
 - (id)configuredSavePanel;
 - (void)viewDidInstall;
 - (void)awakeFromNib;
+- (void)_updateGroupPopUp;
 - (void)_updateViewsDisplayed;
 - (void)primitiveInvalidate;
 - (BOOL)shouldShowAccessoryView;

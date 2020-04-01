@@ -24,6 +24,7 @@
 - (void).cxx_destruct;
 @property(readonly, retain, nonatomic) NSString *displayName;
 @property(readonly, retain, nonatomic) NSString *aliasOrName;
+- (id)description;
 - (id)initWithName:(id)arg1 alias:(id)arg2 definition:(id)arg3 kpepEvent:(struct kpep_event *)arg4;
 
 @end

@@ -10,29 +10,30 @@
 
 @interface PBXCopyFilesBuildPhase : PBXBuildPhase
 {
-    int _dstSubfolderSpec;
+    long long _dstSubfolderSpec;
     NSString *_dstPath;
 }
 
 + (id)archivableAttributes;
 + (id)defaultName;
 + (id)identifier;
+- (void).cxx_destruct;
+- (void)findFeaturesInUseAndAddToSet:(id)arg1 usingPathPrefix:(id)arg2;
 - (Class)dependencyGraphSnapshotClass;
 - (BOOL)acceptsVariantGroups;
 - (void)awakeFromPListUnarchiver:(id)arg1;
+- (void)buildFileWasAdded:(id)arg1;
+- (BOOL)shouldRemoveHeadersWhenCopying:(id)arg1;
+- (BOOL)shouldCodeSignBuildFileAfterCopying:(id)arg1;
+- (BOOL)copiesFilesIntoProduct;
 - (id)allowedFileTypes;
-- (void)setSubpath:(id)arg1 relativeToSubfolder:(int)arg2;
+- (void)setSubpath:(id)arg1 relativeToSubfolder:(long long)arg2;
 - (void)setAbsolutePath:(id)arg1;
 - (id)destinationPath;
-- (int)destinationSubfolder;
+- (long long)destinationSubfolder;
 - (BOOL)canRename;
-- (void)dealloc;
 - (id)initWithName:(id)arg1;
 - (id)initFromTemplateDictionary:(id)arg1;
-- (void)setAppleScriptDestinationSubfolder:(unsigned int)arg1;
-- (unsigned int)appleScriptDestinationSubfolder;
-- (void)setDestinationPath:(id)arg1;
-- (void)setDestinationSubfolder:(int)arg1;
 
 @end
 

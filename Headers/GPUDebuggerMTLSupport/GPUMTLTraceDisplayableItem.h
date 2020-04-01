@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <GPUDebuggerFoundation/GPUTraceDisplayableItem.h>
+#import <GPUDebugger/GPUTraceDisplayableItem.h>
 
 #import <GPUDebuggerMTLSupport/DYFunctionTracerDelegate-Protocol.h>
 #import <GPUDebuggerMTLSupport/GPUMTLStateMirrorInterface-Protocol.h>
@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
 @interface GPUMTLTraceDisplayableItem : GPUTraceDisplayableItem <DYFunctionTracerDelegate, GPUMTLStateMirrorInterface, GPUMTLTraceItemInterface>
 {
     id <DYPMTLStateMirror> _stateMirror;
+    int _stateMirrorLock;
     unsigned long long _owningDeviceID;
 }
 
@@ -25,12 +26,15 @@ __attribute__((visibility("hidden")))
 - (id)rewriteArgument:(const struct Argument *)arg1;
 - (id)rewriteReceiver:(unsigned long long)arg1;
 - (id)rewriteURL:(const char *)arg1;
+- (id)_thumbnailToImage:(id)arg1;
+- (id)_resourceInfoWithThumbnailInfo:(id)arg1;
 - (id)_renderedImage:(id)arg1 showDepth:(BOOL)arg2;
+- (id)generateFenumInfo;
 - (id)generateLabel;
 @property(readonly, nonatomic) unsigned long long receiverID;
+- (void)invalidateStateMirror;
 @property(readonly, nonatomic) BOOL hasStateMirror;
 @property(readonly, nonatomic) id <DYPMTLStateMirror> stateMirror;
-- (void)primitiveInvalidate;
 @property(readonly, copy) NSString *description;
 - (id)initWithController:(id)arg1 parent:(id)arg2 deviceID:(unsigned long long)arg3 functionIndex:(int)arg4 displayIndex:(int)arg5;
 

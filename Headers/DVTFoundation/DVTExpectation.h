@@ -31,6 +31,7 @@
 - (void)fulfill;
 - (void)dealloc;
 @property(readonly) __weak DVTExpectation *delegateExpectation;
+- (id)description;
 - (id)initWithReason:(id)arg1;
 - (id)init;
 

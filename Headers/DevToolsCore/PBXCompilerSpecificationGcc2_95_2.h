@@ -6,31 +6,33 @@
 
 #import <DevToolsCore/PBXCompilerSpecificationGcc.h>
 
+@class NSArray;
+@protocol DVTMacroExpansion;
+
 @interface PBXCompilerSpecificationGcc2_95_2 : PBXCompilerSpecificationGcc
 {
+    NSArray<DVTMacroExpansion> *_dependencyInfoArgs;
 }
 
-- (unsigned long long)concurrentExecutionCountInTargetBuildContext:(id)arg1;
-- (id)compileSourceCodeFileAtPath:(id)arg1 ofType:(id)arg2 toOutputDirectory:(id)arg3 inTargetBuildContext:(id)arg4;
-- (id)symbolizeHeaderFileAtPath:(id)arg1 forSourceFileOfType:(id)arg2 withExtraFlags:(id)arg3 toSymbolSeparationRepositoryPath:(id)arg4 inTargetBuildContext:(id)arg5;
-- (id)precompileHeaderFileAtPath:(id)arg1 forSourceFileOfType:(id)arg2 withExtraFlags:(id)arg3 toPrecompPath:(id)arg4 inTargetBuildContext:(id)arg5;
-- (id)hashStringForCommandLineComponents:(id)arg1 inputFilePaths:(id)arg2 inTargetBuildContext:(id)arg3;
++ (id)headerSearchPathFlagsWithMacroExpansionScope:(id)arg1;
+- (void).cxx_destruct;
+- (unsigned long long)concurrentExecutionCountWithMacroExpansionScope:(id)arg1;
+- (id)compileSourceCodeFileAtPath:(id)arg1 ofType:(id)arg2 toOutputDirectory:(id)arg3 withMacroExpansionScope:(id)arg4;
+- (void)addSDKDepenenciesForCommand:(id)arg1 withMacroExpansionScope:(id)arg2;
+- (id)moduleMapForCompiler:(id)arg1 withMacroExpansionScope:(id)arg2;
+- (id)symbolizeHeaderFileAtPath:(id)arg1 forSourceFileOfType:(id)arg2 withExtraFlags:(id)arg3 toSymbolSeparationRepositoryPath:(id)arg4 withMacroExpansionScope:(id)arg5;
+- (id)precompileHeaderFileAtPath:(id)arg1 forSourceFileOfType:(id)arg2 withExtraFlags:(id)arg3 toPrecompPath:(id)arg4 withMacroExpansionScope:(id)arg5;
+- (id)hashStringForCommandLineComponents:(id)arg1 inputFilePaths:(id)arg2 withMacroExpansionScope:(id)arg3;
 - (id)subprocessCommandLineForPreprocessingBehaviorWithCommand:(id)arg1 commandLine:(id)arg2;
-- (id)dwarfRepositoryNameForPCHPath:(id)arg1 inTargetBuildContext:(id)arg2;
-- (id)symrepFileNameForHeaderPath:(id)arg1 inTargetBuildContext:(id)arg2;
+- (id)symrepFileNameForHeaderPath:(id)arg1 withMacroExpansionScope:(id)arg2;
 - (void)removeFlagsThatDoNotAffectPrecompValidityFromMutableArray:(id)arg1;
-- (id)flagsForIncludingPrecompiledPrefixHeaderAtPath:(id)arg1 inTargetBuildContext:(id)arg2;
-- (id)precompFileNameForHeaderPath:(id)arg1 inTargetBuildContext:(id)arg2;
+- (id)flagsForIncludingPrecompiledPrefixHeaderAtPath:(id)arg1 withMacroExpansionScope:(id)arg2;
+- (id)precompFileNameForHeaderPath:(id)arg1 withMacroExpansionScope:(id)arg2;
 - (id)precompFileExtension;
-- (id)otherFlagsInTargetBuildContext:(id)arg1;
-- (id)standardFlagsInTargetBuildContext:(id)arg1;
-- (id)additionalEnvironmentEntriesInTargetBuildContext:(id)arg1;
-- (id)perCompilerStandardBuildFlagsInTargetBuildContext:(id)arg1;
-- (id)distributedBuildFlagsInTargetBuildContext:(id)arg1;
-- (id)optionalSDKPackageFlagsInBuildContext:(id)arg1;
-- (id)optionalHeaderSearchPathsInBuildContext:(id)arg1;
-- (id)optionalFrameworkSearchPathsInBuildContext:(id)arg1;
-- (id)perSpecificationFlagsInTargetBuildContext:(id)arg1;
+- (id)otherFlagsWithMacroExpansionScope:(id)arg1;
+- (id)standardFlagsWithMacroExpansionScope:(id)arg1;
+- (id)additionalEnvironmentEntriesWithMacroExpansionScope:(id)arg1;
+@property(readonly, nonatomic) NSArray<DVTMacroExpansion> *dependencyInfoArgs;
 
 @end
 

@@ -6,7 +6,7 @@
 
 #import <IDEKit/IDEViewController.h>
 
-@class IDEWorkspace, NSButton, NSPopUpButton, NSString, NSTextField, NSWindow;
+@class IDEBlueprintMenuFilteringDelegate, IDEWorkspace, NSButton, NSPopUpButton, NSString, NSTextField, NSWindow;
 @protocol IDEClientTrackingToken;
 
 @interface IDENewSchemeSheetController : IDEViewController
@@ -22,10 +22,12 @@
     BOOL _userHasEditedName;
     NSString *_name;
     id <IDEClientTrackingToken> _clientTrackingToken;
+    IDEBlueprintMenuFilteringDelegate *_blueprintMenuFilteringDelegate;
 }
 
 + (BOOL)automaticallyNotifiesObserversForName;
 + (void)runSheetForWindow:(id)arg1 workspaceWindow:(id)arg2;
+@property(retain) IDEBlueprintMenuFilteringDelegate *blueprintMenuFilteringDelegate; // @synthesize blueprintMenuFilteringDelegate=_blueprintMenuFilteringDelegate;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
 - (void)windowDidResize:(id)arg1;
@@ -39,8 +41,8 @@
 - (void)_beginSheetForWindow:(id)arg1 workspaceWindow:(id)arg2;
 - (void)_updateOKButtonEnabledState;
 - (void)_populateBlueprintPopUp;
-- (id)_titleAttributedStringWithImage:(id)arg1 andTitle:(id)arg2;
 - (id)_menuImageForImage:(id)arg1;
+- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 
 @end
 

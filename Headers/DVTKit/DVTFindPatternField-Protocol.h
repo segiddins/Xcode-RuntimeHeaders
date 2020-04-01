@@ -6,11 +6,13 @@
 
 #import <DVTKit/NSObject-Protocol.h>
 
-@class DVTFindPattern, DVTFindPatternAttachmentCell, NSArray, NSMenu, NSString;
+@class DVTFindPattern, DVTFindPatternAttachmentCell, DVTFindPatternComponents, NSArray, NSFont, NSMenu, NSString;
 @protocol DVTFindPatternManager;
 
 @protocol DVTFindPatternField <NSObject>
+@property(copy) DVTFindPatternComponents *findPatternComponents;
 @property id <DVTFindPatternManager> findPatternManager;
+- (NSFont *)font;
 - (NSMenu *)menuForFindPatternAttachment:(DVTFindPatternAttachmentCell *)arg1;
 - (NSString *)plainTextValue;
 - (void)setFindPatternPropertyList:(id)arg1;
@@ -18,7 +20,7 @@
 - (BOOL)hasFindPattern;
 - (NSString *)replacementExpression;
 - (NSString *)regularExpression;
-- (NSArray *)findPatternArray;
+- (NSArray *)findPatternTokenArray;
 - (void)setFindPatternArray:(NSArray *)arg1;
 - (void)insertNewFindPattern:(DVTFindPattern *)arg1;
 - (BOOL)removeFindPattern:(DVTFindPattern *)arg1;

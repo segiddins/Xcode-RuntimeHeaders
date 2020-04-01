@@ -13,7 +13,7 @@
 
 @interface IDEProgressSearchField : DVTFindPatternSearchField <DVTInvalidation>
 {
-    NSString *_sanatizedSuggestionString;
+    NSString *_sanitizedSuggestionString;
     NSTableView *_suggestionTableView;
     NSTableColumn *_suggestionTitleColumn;
     NSWindow *_suggestionWindow;

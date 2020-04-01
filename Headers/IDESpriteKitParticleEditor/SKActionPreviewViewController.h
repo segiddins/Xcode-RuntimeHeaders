@@ -4,15 +4,16 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <DVTKit/DVTViewController.h>
+#import <DVTViewControllerKit/DVTViewController.h>
 
-@class GTFActionEditor, GTFActionLibrary, NSArray, NSDocument;
+@class GTFActionEditor, GTFActionLibrary, NSArray, NSURL, SKActionDocument, SKScene;
 @protocol SKActionPreviewViewControllerDelegate;
 
 @interface SKActionPreviewViewController : DVTViewController
 {
     id <SKActionPreviewViewControllerDelegate> _delegate;
-    NSDocument *_previewSceneDocument;
+    NSURL *_previewURL;
+    SKActionDocument *_actionDocument;
     GTFActionEditor *_actionEditor;
     GTFActionLibrary *_actionLibrary;
     double _playbackSpeed;
@@ -21,9 +22,11 @@
 @property(nonatomic) double playbackSpeed; // @synthesize playbackSpeed=_playbackSpeed;
 @property(retain, nonatomic) GTFActionLibrary *actionLibrary; // @synthesize actionLibrary=_actionLibrary;
 @property(nonatomic) __weak GTFActionEditor *actionEditor; // @synthesize actionEditor=_actionEditor;
-@property(retain, nonatomic) NSDocument *previewSceneDocument; // @synthesize previewSceneDocument=_previewSceneDocument;
+@property(retain, nonatomic) SKActionDocument *actionDocument; // @synthesize actionDocument=_actionDocument;
+@property(retain, nonatomic) NSURL *previewURL; // @synthesize previewURL=_previewURL;
 @property(nonatomic) __weak id <SKActionPreviewViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(retain, nonatomic) SKScene *previewScene;
 - (void)clearSelection;
 - (void)setIsInitialLayout;
 - (id)restoreCachedNodeAssignmentsForEditorURL:(id)arg1;

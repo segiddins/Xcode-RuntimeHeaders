@@ -10,7 +10,9 @@
 {
 }
 
-- (int)runTaskWithArguments:(id)arg1 environment:(id)arg2 workingDirectoryPath:(id)arg3;
+- (id)mergeUIRequiredDeviceCapabilitiesValue:(id)arg1 fromFileAtPath:(id)arg2 intoOldValue:(id)arg3 fromFileAtPath:(id)arg4;
+- (id)propertyListForFileAtPath:(id)arg1 returningInputPlistFormat:(unsigned long long *)arg2 returningExitCode:(int *)arg3;
+- (int)runTaskWithArguments:(id)arg1 environment:(id)arg2 workingDirectoryPath:(id)arg3 infd:(int)arg4 outerrfd:(int)arg5;
 
 @end
 

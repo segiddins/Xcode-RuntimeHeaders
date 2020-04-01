@@ -7,13 +7,12 @@
 #import <IDEKit/IDEOutlineBasedNavigator.h>
 
 #import <IDEKit/IDEIndexSymbolSelectionSource-Protocol.h>
-#import <IDEKit/IDERefactoringExpressionSource-Protocol.h>
 #import <IDEKit/IDESourceExpressionSource-Protocol.h>
 
-@class DVTDispatchLock, DVTNotificationToken, DVTObservingToken, DVTPerformanceMetric, DVTSDK, DVTScopeBarView, DVTScrollView, DVTSourceExpression, DVTSourceLanguageService, DVTStackBacktrace, NSArray, NSDictionary, NSMutableSet, NSSet, NSString;
+@class DVTBorderView, DVTDispatchLock, DVTNotificationToken, DVTObservingToken, DVTPerformanceMetric, DVTSDK, DVTScopeBarView, DVTScrollView, DVTSourceExpression, DVTSourceLanguageService, DVTStackBacktrace, NSArray, NSDictionary, NSLayoutConstraint, NSMutableSet, NSSet, NSString;
 @protocol IDEOpenRequest;
 
-@interface IDESymbolNavigator : IDEOutlineBasedNavigator <IDEIndexSymbolSelectionSource, IDESourceExpressionSource, IDERefactoringExpressionSource>
+@interface IDESymbolNavigator : IDEOutlineBasedNavigator <IDEIndexSymbolSelectionSource, IDESourceExpressionSource>
 {
     DVTNotificationToken *_indexingFinishedObserver;
     DVTObservingToken *_outlineViewSelectedObjectsObserver;
@@ -40,6 +39,9 @@
     DVTSourceExpression *_mouseOverExpression;
     DVTScrollView *_symbolNavigatorScrollView;
     DVTScopeBarView *_scopeBarView;
+    DVTBorderView *_scopeBarBottomDividerView;
+    NSLayoutConstraint *_scopeBarViewHeightConstraint;
+    DVTBorderView *_dividerView;
     struct CGRect _currentSelectionFrame;
 }
 
@@ -47,6 +49,9 @@
 + (unsigned long long)assertionBehaviorForKeyValueObservationsAtEndOfEvent;
 + (unsigned long long)assertionBehaviorAfterEndOfEventForSelector:(SEL)arg1;
 + (void)initialize;
+@property __weak DVTBorderView *dividerView; // @synthesize dividerView=_dividerView;
+@property __weak NSLayoutConstraint *scopeBarViewHeightConstraint; // @synthesize scopeBarViewHeightConstraint=_scopeBarViewHeightConstraint;
+@property __weak DVTBorderView *scopeBarBottomDividerView; // @synthesize scopeBarBottomDividerView=_scopeBarBottomDividerView;
 @property __weak DVTScopeBarView *scopeBarView; // @synthesize scopeBarView=_scopeBarView;
 @property __weak DVTScrollView *symbolNavigatorScrollView; // @synthesize symbolNavigatorScrollView=_symbolNavigatorScrollView;
 @property(retain, nonatomic) DVTSourceExpression *mouseOverExpression; // @synthesize mouseOverExpression=_mouseOverExpression;
@@ -61,7 +66,7 @@
 @property(copy) NSSet *symbolsForFiltering; // @synthesize symbolsForFiltering=_symbolsForFiltering;
 @property(copy) NSSet *parentsForFiltering; // @synthesize parentsForFiltering=_parentsForFiltering;
 - (void).cxx_destruct;
-- (void)_revealNavigableItems:(id)arg1;
+- (void)revealNavigableItems:(id)arg1;
 - (void)revealSymbols:(id)arg1;
 - (void)revealNavigableItemsWithIdentifiers:(id)arg1 identifiersToExpand:(id)arg2 generation:(unsigned long long)arg3;
 - (id)findNavigableItemsInItems:(id)arg1 withIdentifiers:(id)arg2 includeParents:(BOOL)arg3;
@@ -73,17 +78,12 @@
 - (void)outlineViewItemDidExpand:(id)arg1;
 - (id)outlineView:(id)arg1 selectionIndexesForProposedSelection:(id)arg2;
 - (BOOL)outlineView:(id)arg1 isGroupHeaderItem:(id)arg2;
-- (void)openDoubleClickedNavigableItemsAction:(id)arg1;
-- (void)openClickedNavigableItemAction:(id)arg1;
-- (void)openSelectedNavigableItemsKeyAction:(id)arg1;
 - (id)openSpecifierForNavigableItem:(id)arg1 error:(id *)arg2;
-- (id)refactoringExpressionUsingContextMenu:(BOOL)arg1;
 - (void)showQuickHelpForCurrentSelection:(id)arg1;
 @property(readonly) DVTSourceExpression *contextMenuExpression;
-- (id)_resolvedLocation:(id)arg1 symbol:(id)arg2;
 - (void)_updateSelectedExpression;
 - (id)_expressionForNavItem:(id)arg1;
-- (void)symbolsForExpression:(id)arg1 inQueue:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
+- (void)symbolsForExpression:(id)arg1 queue:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (struct CGRect)expressionFrameForExpression:(id)arg1;
 - (BOOL)isExpressionModuleImport:(id)arg1;
 - (BOOL)isExpressionPoundImport:(id)arg1;
@@ -104,7 +104,7 @@
 @property(copy) NSString *visibleRectString;
 - (void)commitStateToDictionary:(id)arg1;
 - (void)revertStateWithDictionary:(id)arg1;
-- (id)dvtExtraBindings;
+- (id)dvt_extraBindings;
 - (BOOL)isCurrentGeneration:(unsigned long long)arg1;
 @property(readonly) unsigned long long currentGeneration; // @dynamic currentGeneration;
 - (void)primitiveInvalidate;

@@ -4,23 +4,33 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import "IDEProductsUtilityPane.h"
+#import <IDEProductsUI/IDEProductsUtilityPane.h>
 
-@class NSButton, NSString;
+@class NSButton, NSLayoutConstraint, NSString;
 @protocol IDEProductsInspectableVending;
 
 @interface IDEProductsSingleButtonUtilityPane : IDEProductsUtilityPane
 {
+    BOOL _highlighted;
+    BOOL _removeBottomMargin;
     NSString *_buttonTitle;
     NSString *_buttonTitleKeyPath;
     NSString *_buttonEnabledKeyPath;
     NSString *_buttonAction;
-    id <IDEProductsInspectableVending> _vendor;
     NSButton *_button;
+    id <IDEProductsInspectableVending> _vendor;
+    NSLayoutConstraint *_bottomMarginConstraint;
+    NSLayoutConstraint *_centeringConstraint;
+    NSLayoutConstraint *_contentHeightConstraint;
 }
 
-@property(retain) NSButton *button; // @synthesize button=_button;
+@property(retain) NSLayoutConstraint *contentHeightConstraint; // @synthesize contentHeightConstraint=_contentHeightConstraint;
+@property(retain) NSLayoutConstraint *centeringConstraint; // @synthesize centeringConstraint=_centeringConstraint;
+@property(retain) NSLayoutConstraint *bottomMarginConstraint; // @synthesize bottomMarginConstraint=_bottomMarginConstraint;
 @property __weak id <IDEProductsInspectableVending> vendor; // @synthesize vendor=_vendor;
+@property(retain) NSButton *button; // @synthesize button=_button;
+@property(nonatomic) BOOL removeBottomMargin; // @synthesize removeBottomMargin=_removeBottomMargin;
+@property(nonatomic) BOOL highlighted; // @synthesize highlighted=_highlighted;
 @property(retain, nonatomic) NSString *buttonAction; // @synthesize buttonAction=_buttonAction;
 @property(retain, nonatomic) NSString *buttonEnabledKeyPath; // @synthesize buttonEnabledKeyPath=_buttonEnabledKeyPath;
 @property(retain, nonatomic) NSString *buttonTitleKeyPath; // @synthesize buttonTitleKeyPath=_buttonTitleKeyPath;

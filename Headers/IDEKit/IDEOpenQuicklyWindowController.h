@@ -4,71 +4,86 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <AppKit/NSWindowController.h>
+#import <IDEKit/IDEAbstractOpenQuicklyWindowController.h>
 
-#import <IDEKit/IDEOpenQuicklyQueryDelegate-Protocol.h>
-#import <IDEKit/NSTableViewDelegate-Protocol.h>
-#import <IDEKit/NSWindowDelegate-Protocol.h>
+#import <IDEKit/IDEOpenQuicklyResultConsumer-Protocol.h>
+#import <IDEKit/IDEOpenQuicklyTableCellViewDelegate-Protocol.h>
+#import <IDEKit/NSOutlineViewDataSource-Protocol.h>
+#import <IDEKit/NSOutlineViewDelegate-Protocol.h>
 
-@class DVTBorderedView, DVTSearchField, IDEOpenQuicklyQuery, IDEOpenQuicklyTableView, IDEWorkspaceTabController, NSArray, NSArrayController, NSImageView, NSMutableArray, NSString, NSVisualEffectView;
+@class DVTDelayedInvocation, IDEOpenQuicklyOutlineView, IDEOpenQuicklyQueryContext, IDEOpenQuicklyResultGenerator, NSArray, NSButton, NSDate, NSString;
 @protocol DVTCancellable;
 
-@interface IDEOpenQuicklyWindowController : NSWindowController <IDEOpenQuicklyQueryDelegate, NSTableViewDelegate, NSWindowDelegate>
+@interface IDEOpenQuicklyWindowController : IDEAbstractOpenQuicklyWindowController <IDEOpenQuicklyResultConsumer, IDEOpenQuicklyTableCellViewDelegate, NSOutlineViewDelegate, NSOutlineViewDataSource>
 {
-    DVTSearchField *_searchField;
-    NSArrayController *_arrayController;
-    IDEOpenQuicklyTableView *_tableView;
-    DVTBorderedView *_separatorView;
-    NSImageView *_magnifyingGlassImageView;
-    NSMutableArray *_bindingTokens;
-    IDEWorkspaceTabController *_workspaceTabController;
-    IDEOpenQuicklyQuery *_query;
-    NSArray *_oldSelection;
-    id <DVTCancellable> _appActionsMonitor;
-    id _eventMonitor;
-    id _notificationTokenWillResignActive;
-    id _notificationTokenWillHide;
-    id _notificationTokenActiveSpaceChanged;
-    BOOL _scoped;
-    BOOL _windowClosed;
-    BOOL _waitingForBetterResults;
-    BOOL _disableSelectionSave;
-    NSVisualEffectView *_visualEffectView;
+    IDEOpenQuicklyOutlineView *_outlineView;
+    NSDate *_issuedGenerationDate;
+    long long _issuedGeneration;
+    long long _completedGeneration;
+    BOOL _initiatedGenerator;
+    BOOL _finishedStartingGenerator;
+    BOOL _preferGeneratedInterface;
+    BOOL _resutlsAreGeneratedInterface;
+    BOOL _generatedInterfaceIsApplicable;
+    NSArray *_pendingResults;
+    NSArray *_originalShowResults;
+    DVTDelayedInvocation *_refreshInvocation;
+    IDEOpenQuicklyQueryContext *_context;
+    NSArray *_topLevelResultDisplayRecords;
+    long long _maximumNumberOfVisibleRows;
+    IDEOpenQuicklyResultGenerator *_resultGenerator;
+    struct __CFDictionary *_previousResultsToRecords;
+    id <DVTCancellable> _workspaceFinishedLoadingObserver;
+    NSDate *_perfStart;
+    NSString *_perfTarget;
+    long long _perfIternation;
+    long long _perfIternationCount;
+    long long _perfPosition;
+    NSButton *_generatedInterfaceButton;
 }
 
-+ (id)openQuicklyWindowController;
++ (id)sharedInstance;
 + (void)initialize;
-@property __weak NSVisualEffectView *visualEffectView; // @synthesize visualEffectView=_visualEffectView;
-@property BOOL windowClosed; // @synthesize windowClosed=_windowClosed;
-@property(retain) IDEOpenQuicklyQuery *query; // @synthesize query=_query;
 - (void).cxx_destruct;
-- (void)tableDoubleClickAction:(id)arg1;
-- (void)cancelAction:(id)arg1;
-- (void)okAction:(id)arg1;
-- (void)searchAction:(id)arg1;
-- (void)_openSelectedMatch;
-- (void)windowDidResignKey:(id)arg1;
-- (void)_applicationWillDispatchAction:(SEL)arg1 fromSender:(id)arg2;
-- (void)beginOpeningQuicklyWithQueryString:(id)arg1;
-- (void)beginOpeningQuicklyScoped:(BOOL)arg1;
-- (void)_beginOpeningQuicklyWithQueryString:(id)arg1 scoped:(BOOL)arg2;
-- (void)_configureWindowForRunningScoped;
-- (void)_openMatch:(id)arg1;
-- (void)_openLocation:(id)arg1;
-- (BOOL)_workspace:(id)arg1 containsContainerWithFilePath:(id)arg2;
+- (id)targetScreen;
+- (void)updateSearchWithText:(id)arg1;
+- (void)updateGeneratorPattern;
+- (id)locationToOpen;
+- (id)selectedDisplayRecord;
+- (long long)minimumInstantQueryLength;
 - (BOOL)control:(id)arg1 textView:(id)arg2 doCommandBySelector:(SEL)arg3;
-- (void)_updateQueryString:(id)arg1 updateInterface:(BOOL)arg2;
-- (void)openQuicklyQueryDidUpdate:(id)arg1;
-- (void)openQuicklyQueryWillUpdate:(id)arg1;
-- (void)_resizeView;
-- (void)_captureQueryString;
-- (id)_titleForMatch:(id)arg1;
-- (id)tableView:(id)arg1 viewForTableColumn:(id)arg2 row:(long long)arg3;
-- (void)tableView:(id)arg1 didAddRowView:(id)arg2 forRow:(long long)arg3;
+- (void)showWindowWithQueryString:(id)arg1;
+- (void)sizeWindowToMatchContentAndDisplay:(BOOL)arg1;
+- (double)contentHeightForDisclosedRowCount:(CDStruct_912cb5d2)arg1 limitToMaxSuggestedHeight:(BOOL)arg2;
+- (CDStruct_912cb5d2)disclosedRowCount;
+- (void)tableCellViewToggleAlternatesVisibility:(id)arg1;
+- (double)outlineView:(id)arg1 heightOfRowByItem:(id)arg2;
+- (id)outlineView:(id)arg1 viewForTableColumn:(id)arg2 item:(id)arg3;
+- (id)displayModeQualifiedViewIdentifierForViewIdentifier:(id)arg1;
+- (id)outlineView:(id)arg1 rowViewForItem:(id)arg2;
+- (BOOL)outlineView:(id)arg1 isItemExpandable:(id)arg2;
+- (id)outlineView:(id)arg1 child:(long long)arg2 ofItem:(id)arg3;
+- (long long)outlineView:(id)arg1 numberOfChildrenOfItem:(id)arg2;
+- (id)childrenOfItem:(id)arg1;
+- (void)tableDoubleClickAction:(id)arg1;
+- (void)togglePreferGeneratedInterface:(id)arg1;
+- (id)contentViewNibName;
+- (void)continuePerfTest;
+- (void)initiatePerfTestIfNeeded;
+- (void)prepareToShowWindow;
+- (void)showWindow;
+- (id)registerWorkspaceDidFinshLoadingObserver;
+- (void)workspaceDidFinishLoading;
+- (void)refreshUserInterface:(id)arg1;
+- (void)resultGenerator:(id)arg1 didGenerateOrderedResults:(id)arg2 generation:(long long)arg3;
+- (void)resultGeneratorFinishedStarting:(id)arg1;
+- (id)resultConsumptionQueue;
 - (void)windowWillClose:(id)arg1;
 - (void)windowDidLoad;
-- (id)_activeWorkspaceWindowController;
-- (id)_openWindowTerminationDisablingReason;
+- (double)searchAccessoryYAdjustment;
+- (id)userDefaultsBaseName;
+- (id)init;
+- (void)dealloc;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

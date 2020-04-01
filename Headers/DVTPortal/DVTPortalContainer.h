@@ -43,6 +43,7 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
 - (BOOL)isEqual:(id)arg1;
+- (BOOL)associateWithSession:(id)arg1 appID:(id)arg2 error:(id *)arg3;
 
 @end
 

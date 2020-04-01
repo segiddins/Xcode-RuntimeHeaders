@@ -6,11 +6,11 @@
 
 #import <objc/NSObject.h>
 
-#import <DVTFoundation/DVTDirectoryServicesSessionDescription-Protocol.h>
+#import <DVTFoundation/DVTDeveloperAccountSessionProtocol-Protocol.h>
 
 @class DVTDeveloperAccount, NSData, NSString;
 
-@interface DVTDeveloperAccountSession : NSObject <DVTDirectoryServicesSessionDescription>
+@interface DVTDeveloperAccountSession : NSObject <DVTDeveloperAccountSessionProtocol>
 {
     id _identity;
     DVTDeveloperAccount *_account;
@@ -19,19 +19,14 @@
     NSData *_sessionData;
 }
 
-@property(copy, nonatomic) NSData *sessionData; // @synthesize sessionData=_sessionData;
-@property(copy, nonatomic) NSString *sessionID; // @synthesize sessionID=_sessionID;
+@property(copy) NSData *sessionData; // @synthesize sessionData=_sessionData;
+@property(copy) NSString *sessionID; // @synthesize sessionID=_sessionID;
 @property(copy) NSString *prsID; // @synthesize prsID=_prsID;
 @property(nonatomic) __weak DVTDeveloperAccount *account; // @synthesize account=_account;
 - (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
-@property(readonly) unsigned long long hash;
-@property struct OpaqueSecIdentityRef *identity;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) Class superclass;
+- (unsigned long long)hash;
+@property struct __SecIdentity *identity;
 
 @end
 

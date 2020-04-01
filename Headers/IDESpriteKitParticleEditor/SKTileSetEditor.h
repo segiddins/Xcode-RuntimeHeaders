@@ -11,7 +11,7 @@
 #import <IDESpriteKitParticleEditor/SKTileSetEditorRuleDetailViewDelegate-Protocol.h>
 #import <IDESpriteKitParticleEditor/SKTileSetEditorViewDelegate-Protocol.h>
 
-@class DVTNotificationToken, DVTReplacementView, NSArray, NSString, SKDocumentSplitView, SKInputView, SKTileSetDocument, SKTileSetEditorGroupOverviewView, SKTileSetEditorOutlineViewController, SKTileSetEditorRuleDetailView, SKTileSetEditorScene, SKTileSetEditorView, SKTileSetNavigableContainer;
+@class DVTNotificationToken, DVTObservingToken, DVTReplacementView, NSArray, NSString, SKDocumentSplitView, SKInputView, SKTileSetDocument, SKTileSetEditorGroupOverviewView, SKTileSetEditorOutlineViewController, SKTileSetEditorRuleDetailView, SKTileSetEditorScene, SKTileSetEditorView, SKTileSetNavigableContainer;
 
 @interface SKTileSetEditor : IDEEditor <SKTileSetEditorViewDelegate, SKTileSetEditorOutlineViewDelegate, SKTileSetEditorRuleDetailViewDelegate, SKTileSetEditorGroupOverviewViewDelegate>
 {
@@ -26,6 +26,7 @@
     BOOL _oldIsScenePaused;
     SKTileSetEditorGroupOverviewView *_groupOverviewView;
     SKTileSetEditorRuleDetailView *_ruleDetailView;
+    DVTObservingToken *_documentTileSetContainerKVOToken;
     SKTileSetNavigableContainer *_tileSetContainer;
     NSArray *_currentSelectedItems;
 }
@@ -34,9 +35,11 @@
 @property(retain, nonatomic) SKTileSetNavigableContainer *tileSetContainer; // @synthesize tileSetContainer=_tileSetContainer;
 - (void).cxx_destruct;
 - (void)selectionObserversTriggered;
-- (void)editorViewFrameDidChange:(id)arg1;
+- (void)skViewFrameDidChange:(id)arg1;
 - (void)updateRuleDetailView;
 - (void)updateGroupOverview;
+- (void)tileSetEditorGroupOverviewView:(id)arg1 addTileDefinitions:(id)arg2 toRule:(id)arg3;
+- (void)tileSetEditorGroupOverviewView:(id)arg1 addRule:(id)arg2 toGroup:(id)arg3;
 - (void)tileSetEditorGroupOverviewView:(id)arg1 updateDefaultTileSizeWithSize:(struct CGSize)arg2;
 - (void)tileSetEditorGroupOverviewView:(id)arg1 selectTileIndex:(unsigned long long)arg2;
 - (BOOL)tileSetEditorGroupOverviewView:(id)arg1 ruleSelected:(id)arg2;
@@ -45,6 +48,7 @@
 - (void)tileSetEditorGroupOverviewViewUpdateOutline:(id)arg1;
 - (unsigned long long)tileSetEditorGroupOverviewViewCurrentTileSetType:(id)arg1;
 - (unsigned long long)tileSetEditorGroupOverviewViewSelectedTileDefinitionIndex:(id)arg1;
+- (void)tileSetEditorRuleDetailView:(id)arg1 addTileDefinitions:(id)arg2 toRule:(id)arg3;
 - (void)tileSetEditorRuleDetailView:(id)arg1 updateDefaultTileSizeWithSize:(struct CGSize)arg2;
 - (void)tileSetEditorRuleDetailViewUpdateGroupOverviewView:(id)arg1;
 - (void)tileSetEditorRuleDetailViewUpdateOutline:(id)arg1;
@@ -78,7 +82,6 @@
 - (id)getSelectedTileGroup;
 - (id)getSelectedTileSet;
 - (void)selectTileWithTileIndex:(unsigned long long)arg1;
-- (void)addRule:(id)arg1 toTileGroup:(id)arg2;
 - (void)updateSelectionTokens;
 - (void)selectDocumentLocations:(id)arg1;
 - (void)tileSetEditorView:(id)arg1 touchEnded:(unsigned long long)arg2 atLocation:(struct CGPoint)arg3 clickCount:(int)arg4;
@@ -100,6 +103,7 @@
 - (id)currentSelectedDocumentLocations;
 - (void)setDefaultSelection;
 - (void)_createEditorScene;
+- (void)_registerDocumentObservers;
 - (void)viewDidInstall;
 - (void)viewDidLoad;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2 document:(id)arg3;

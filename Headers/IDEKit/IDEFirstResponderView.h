@@ -12,7 +12,7 @@
 }
 
 @property BOOL useSourceTextBackgroundColor; // @synthesize useSourceTextBackgroundColor=_useSourceTextBackgroundColor;
-- (void)drawRect:(struct CGRect)arg1;
+- (BOOL)wantsUpdateLayer;
 - (id)hitTest:(struct CGPoint)arg1;
 - (BOOL)acceptsFirstResponder;
 

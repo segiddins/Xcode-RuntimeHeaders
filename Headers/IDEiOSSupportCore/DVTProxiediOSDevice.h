@@ -6,17 +6,20 @@
 
 #import <IDEiOSSupportCore/DVTBasicProxiediOSDevice.h>
 
-@class DTDKRemoteDeviceToken, DVTProxiedDeviceSymbolsCoordinator;
+@class DVTProxiedDeviceSymbolsCoordinator;
+@protocol DTDKRemoteDeviceToken;
 
 @interface DVTProxiediOSDevice : DVTBasicProxiediOSDevice
 {
-    DTDKRemoteDeviceToken *_token;
+    id <DTDKRemoteDeviceToken> _token;
     DVTProxiedDeviceSymbolsCoordinator *_symbolsCoordinator;
 }
 
 + (id)keyPathsForValuesAffectingIsAvailable;
 + (id)keyPathsForValuesAffectingDeviceIsBusy;
++ (id)keyPathsForValuesAffectingIsPasscodeLocked;
 + (id)keyPathsForValuesAffectingNativeArchitecture;
++ (id)keyPathsForValuesAffectingPlatform;
 + (id)keyPathsForValuesAffectingProcessorDescription;
 + (id)keyPathsForValuesAffectingOperatingSystemVersionWithBuildNumber;
 + (id)keyPathsForValuesAffectingAdjustedOperatingSystemVersion;
@@ -28,13 +31,15 @@
 + (id)keyPathsForValuesAffectingName;
 + (id)keyPathsForValuesAffectingIdentifier;
 @property(retain) DVTProxiedDeviceSymbolsCoordinator *symbolsCoordinator; // @synthesize symbolsCoordinator=_symbolsCoordinator;
-@property(readonly) DTDKRemoteDeviceToken *token; // @synthesize token=_token;
+@property(readonly) id <DTDKRemoteDeviceToken> token; // @synthesize token=_token;
 - (void).cxx_destruct;
 - (BOOL)deviceSupportsBuildable:(id)arg1 buildParameters:(id)arg2 error:(id *)arg3;
 - (id)unavailabilityError;
 - (id)developerPrepError;
 - (BOOL)isAvailable;
 - (_Bool)deviceIsBusy;
+- (_Bool)isPasscodeLocked;
+- (void)cancelPrimaryInstrumentsServer;
 - (id)primaryInstrumentsServer;
 - (id)supportedDeviceFamilies;
 - (BOOL)isProxiedDevice;
@@ -49,6 +54,7 @@
 - (id)operatingSystemVersion;
 - (id)modelCode;
 - (id)modelUTI;
+- (id)modelCodename;
 - (id)modelName;
 - (id)name;
 - (id)identifier;

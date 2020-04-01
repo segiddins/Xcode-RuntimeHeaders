@@ -48,6 +48,7 @@
 @property(readonly) struct CGPoint startingPoint; // @synthesize startingPoint=_startingPoint;
 - (void).cxx_destruct;
 - (void)updateBadgeLayer:(id)arg1;
+- (id)effectiveBadgeImage;
 - (void)updateArrowLayer:(id)arg1;
 - (id)createBadgeLayer;
 - (id)createArrowLayer;
@@ -55,7 +56,7 @@
 - (struct CGRect)conservativePathDrawingBounds;
 - (struct CGRect)conservativeDrawingBounds;
 - (id)effectiveBadgeFillColor;
-- (id)effectivePathStrokeColor;
+- (id)effectivePathStrokeColorIsSelected:(BOOL)arg1;
 - (BOOL)intersectsRect:(struct CGRect)arg1;
 - (BOOL)isPathHitByPoint:(struct CGPoint)arg1;
 - (BOOL)isBadgeHitByPoint:(struct CGPoint)arg1;

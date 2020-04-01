@@ -10,19 +10,25 @@
 #import <IDEFoundation/IDETestable-Protocol.h>
 
 @class DVTStackBacktrace, NSArray, NSMutableArray, NSMutableDictionary, NSMutableSet, NSSet, NSString;
-@protocol IDETestableProvider;
+@protocol IDEBuildable, IDETestableDataSourceToken, IDETestableProvider;
 
 @interface IDEStandardTestable : NSObject <IDETestable, DVTInvalidation>
 {
     NSMutableSet *_subtests;
     NSMutableArray *_cachedArrangedSubtests;
+    BOOL _isSearchingForTests;
+    id <IDETestableDataSourceToken> _testableDataSourceToken;
     NSMutableDictionary *_testIDsByURL;
     NSMutableDictionary *_testsByID;
 }
 
++ (id)_blueprintNameForTestingSpecifier:(id)arg1;
++ (id)_blueprintProviderRelativePathForTestingSpecifier:(id)arg1;
 + (void)initialize;
 @property(readonly, copy) NSMutableDictionary *testsByID; // @synthesize testsByID=_testsByID;
 @property(readonly, copy) NSMutableDictionary *testIDsByURL; // @synthesize testIDsByURL=_testIDsByURL;
+@property(retain) id <IDETestableDataSourceToken> testableDataSourceToken; // @synthesize testableDataSourceToken=_testableDataSourceToken;
+@property BOOL isSearchingForTests; // @synthesize isSearchingForTests=_isSearchingForTests;
 - (void).cxx_destruct;
 @property(readonly, copy) NSArray *arrangedSubtests; // @dynamic arrangedSubtests;
 - (void)removeSubtest:(id)arg1;
@@ -35,32 +41,35 @@
 - (id)supertestForTestWithIdentifier:(id)arg1;
 - (id)supertestForTestWithIdentifier:(id)arg1 createIfNeeded:(BOOL)arg2;
 - (id)nameForTestWithIdentifier:(id)arg1;
-- (id)testForIdentifier:(id)arg1 location:(id)arg2 createIfNeeded:(BOOL)arg3;
+- (id)testForIdentifier:(id)arg1 createIfNeeded:(BOOL)arg2 fromSourceKitTest:(id)arg3;
 - (id)testForIdentifier:(id)arg1 createIfNeeded:(BOOL)arg2;
-- (id)testForIdentifier:(id)arg1;
 - (void)_removeTestIDFromURL:(id)arg1 testID:(id)arg2;
 - (void)_updateLocationOfTest:(id)arg1 oldLocation:(id)arg2;
 @property(readonly) NSSet *testFiles;
 - (id)testsInFile:(id)arg1;
-- (id)targetApplicationBuildableForWorkspace:(id)arg1;
+- (void)_updateExistingTests:(id)arg1 toMatchNewTestIdentifiersToTests:(id)arg2;
+- (void)_setupTestDiscoveryWithWorkspace:(id)arg1 indexable:(id)arg2;
+- (void)searchForTestsInWorkspace:(id)arg1;
 - (id)targetApplicationBuildableForWorkspace:(id)arg1 withBuildParameters:(id)arg2;
 - (id)parentBuildableInWorkspace:(id)arg1;
-- (id)testHostBuildableInWorkspace:(id)arg1;
-- (id)primaryBuildable;
-- (BOOL)matchesBlueprint:(id)arg1;
-@property(readonly) BOOL isSearchingForTests;
-- (void)searchForTestsInWorkspace:(id)arg1;
-- (id)testRunSpecificationWithTestingSpecifier:(id)arg1 executionEnvironment:(id)arg2 buildOperation:(id)arg3 withBuildParameters:(id)arg4 runDestination:(id)arg5 error:(id *)arg6;
+- (id)testHostBuildableInWorkspace:(id)arg1 buildParameters:(id)arg2;
+- (id)testRunSpecificationWithTestingSpecifier:(id)arg1 forScheme:(id)arg2 buildParameters:(id)arg3 buildables:(id)arg4 error:(id *)arg5;
+@property(readonly) NSSet *supportedPlatformsForParallelization;
+- (long long)testHostStyle;
 @property(readonly) BOOL isUITest;
-@property(readonly) NSString *name;
+@property(readonly) id <IDEBuildable> primaryBuildable;
+@property(readonly, copy) NSString *name;
 @property(readonly) id <IDETestableProvider> testableProvider;
+@property(readonly, copy) NSString *description;
+- (void)cancelTestDiscovery;
 - (void)primitiveInvalidate;
+- (id)initWithWorkspace:(id)arg1 indexable:(id)arg2;
 - (id)init;
+- (void)_initializeInstanceVariables;
 
 // Remaining properties
 @property(retain) DVTStackBacktrace *creationBacktrace;
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) DVTStackBacktrace *invalidationBacktrace;
 @property(readonly, copy) NSMutableSet *mutableSubtests; // @dynamic mutableSubtests;

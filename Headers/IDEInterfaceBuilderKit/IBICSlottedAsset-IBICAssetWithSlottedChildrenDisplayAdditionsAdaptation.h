@@ -9,12 +9,23 @@
 #import <IDEInterfaceBuilderKit/IBICAssetWithSlottedChildrenDisplayAdditions_ONLY-Protocol.h>
 
 @interface IBICSlottedAsset (IBICAssetWithSlottedChildrenDisplayAdditionsAdaptation) <IBICAssetWithSlottedChildrenDisplayAdditions_ONLY>
-- (id)mutateByAddingNewChildForSlot:(id)arg1 inDocument:(id)arg2;
++ (id)keyPathsForValuesAffectingIbInspectedShowLocalizations;
++ (id)keyPathsForValuesAffectingIbInspectedShowLocalizeButton;
++ (BOOL)groupedRepCapsuleWrapsAllSubgroupsOfGroupWithPath:(id)arg1;
++ (id)groupedRepCapsuleTitleOfGroupWithPath:(id)arg1 containingAssetRepIDs:(id)arg2;
++ (CDStruct_7ddbbeae)capsuleGroupingAttributesForGroupWithPath:(id)arg1;
+- (id)createDefaultChildForNewSlot:(id)arg1 byModifyingSlot:(id)arg2;
+- (id)mutateByAddingNewChild:(id)arg1 forSlot:(id)arg2 inDocument:(id)arg3;
 - (id)mutateByAddingCopyOfChild:(id)arg1 usingSlot:(id)arg2 inDocument:(id)arg3;
-- (void)setIbInspectedLanguageDirection:(id)arg1;
-- (id)ibInspectedLanguageDirection;
-- (id)ibDefaultSuggestionSetsToPopulateEmptyChildren;
-- (void)setIbInspectedColorSpace:(id)arg1;
-- (id)ibInspectedColorSpace;
+- (void)idInspectedMakeLocalizable;
+- (BOOL)ibInspectedShowLocalizations;
+- (BOOL)ibInspectedShowLocalizeButton;
+- (BOOL)isDisplayNameFindable;
+- (id)overviewCapsuleSpecification;
+- (id)detachedSlottedAssetRepByAcceptingPasteboardObject:(id)arg1 forRepIdentifier:(id)arg2;
+- (id)itemsForOpeningInExternalEditor;
+- (id)icon;
+- (id)ibInspectedLocalizations;
+- (id)project;
 @end
 

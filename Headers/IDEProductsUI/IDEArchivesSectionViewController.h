@@ -4,11 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import "IDEProductSectionViewController.h"
+#import <IDEProductsUI/IDEProductSectionViewController.h>
 
-#import "DVTReplacementViewDelegate-Protocol.h"
+#import <IDEProductsUI/DVTReplacementViewDelegate-Protocol.h>
 
-@class DVTObservingToken, DVTReplacementView, IDEArchivesViewController, NSString;
+@class DVTDelayedInvocation, DVTObservingToken, DVTReplacementView, IDEArchivesViewController, NSString;
 
 @interface IDEArchivesSectionViewController : IDEProductSectionViewController <DVTReplacementViewDelegate>
 {
@@ -16,17 +16,20 @@
     DVTReplacementView *_replacementView;
     DVTObservingToken *_inspectableObserver;
     DVTObservingToken *_selectedProductObserver;
+    DVTObservingToken *_hasCompletedInitialLoadingObserver;
+    DVTDelayedInvocation *_delayedHideSpinner;
 }
 
 + (BOOL)canShowContentForProduct:(id)arg1;
+@property(retain) DVTDelayedInvocation *delayedHideSpinner; // @synthesize delayedHideSpinner=_delayedHideSpinner;
+@property(retain) DVTObservingToken *hasCompletedInitialLoadingObserver; // @synthesize hasCompletedInitialLoadingObserver=_hasCompletedInitialLoadingObserver;
 @property(retain) DVTObservingToken *selectedProductObserver; // @synthesize selectedProductObserver=_selectedProductObserver;
 @property(retain) DVTObservingToken *inspectableObserver; // @synthesize inspectableObserver=_inspectableObserver;
 @property __weak DVTReplacementView *replacementView; // @synthesize replacementView=_replacementView;
-@property BOOL vendorIsBusy; // @synthesize vendorIsBusy=_vendorIsBusy;
+- (BOOL)vendorIsBusy;
 - (void).cxx_destruct;
 - (BOOL)shouldShowNoSelection;
 - (void)handleAction:(id)arg1 fromInspectable:(id)arg2;
-- (void)_updateTeams;
 - (void)replacementView:(id)arg1 willCloseViewController:(id)arg2;
 - (void)replacementView:(id)arg1 didInstallViewController:(id)arg2;
 @property(readonly) IDEArchivesViewController *archivesViewController;

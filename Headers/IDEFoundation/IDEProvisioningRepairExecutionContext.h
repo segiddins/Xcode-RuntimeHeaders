@@ -6,8 +6,8 @@
 
 #import <objc/NSObject.h>
 
-@class DVTPortalTeam, DVTProvisioningProfileManager, DVTSigningCertificateManager, IDEProvisioningLedgerEntry, IDEProvisioningRepairContext;
-@protocol IDEProvisioningRepairPortal, IDERepairable;
+@class DVTPortalTeam, DVTProvisioningContext, DVTProvisioningProfileManager, DVTSigningCertificateManager, IDEProvisioningLedgerEntry, IDEProvisioningPortal, IDEProvisioningRepairContext;
+@protocol IDERepairable;
 
 @interface IDEProvisioningRepairExecutionContext : NSObject
 {
@@ -17,8 +17,9 @@
 
 @property(readonly, nonatomic) IDEProvisioningLedgerEntry *repairLedgerEntry; // @synthesize repairLedgerEntry=_repairLedgerEntry;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) DVTProvisioningContext *provisioningContext;
 @property(readonly, nonatomic) unsigned long long successiveRepairCount;
-@property(readonly, nonatomic) id <IDEProvisioningRepairPortal> portal;
+@property(readonly, nonatomic) IDEProvisioningPortal *portal;
 @property(readonly, nonatomic) DVTProvisioningProfileManager *provisioningProfileManager;
 @property(readonly, nonatomic) DVTSigningCertificateManager *signingCertificateManager;
 @property(readonly, nonatomic) DVTPortalTeam *team;

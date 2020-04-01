@@ -7,12 +7,13 @@
 #import <AppKit/NSTextFieldCell.h>
 
 @class NSButtonCell;
+@protocol IDEJumpToFieldCellDelegate;
 
 @interface IDEJumpToFieldCell : NSTextFieldCell
 {
     NSButtonCell *_linkButtonCell;
     double _linkButtonWidth;
-    id _delegate;
+    id <IDEJumpToFieldCellDelegate> _delegate;
     BOOL _showLinkButton;
     BOOL _showLink;
 }

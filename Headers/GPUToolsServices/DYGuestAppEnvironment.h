@@ -6,18 +6,19 @@
 
 #import <objc/NSObject.h>
 
-#import <GPUToolsServices/NSCoding-Protocol.h>
 #import <GPUToolsServices/NSCopying-Protocol.h>
+#import <GPUToolsServices/NSSecureCoding-Protocol.h>
 
 @class NSString;
 
-@interface DYGuestAppEnvironment : NSObject <NSCoding, NSCopying>
+@interface DYGuestAppEnvironment : NSObject <NSSecureCoding, NSCopying>
 {
     BOOL _enabled;
     NSString *_key;
     NSString *_stringValue;
 }
 
++ (BOOL)supportsSecureCoding;
 + (id)environmentWithKey:(id)arg1 value:(id)arg2 enabled:(BOOL)arg3;
 @property(nonatomic) BOOL enabled; // @synthesize enabled=_enabled;
 @property(copy, nonatomic) NSString *stringValue; // @synthesize stringValue=_stringValue;

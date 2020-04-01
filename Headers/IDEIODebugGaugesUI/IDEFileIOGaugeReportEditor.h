@@ -13,10 +13,11 @@
 #import <IDEIODebugGaugesUI/NSTableViewDataSource-Protocol.h>
 #import <IDEIODebugGaugesUI/NSTableViewDelegate-Protocol.h>
 
-@class IDEDebugGaugeReportByteStatisticsViewController, IDEDebugGaugeReportEntityListViewController, IDEDebugGaugeReportSearchFieldController, IDEDebugGaugeReportThroughputGaugeViewController, IDEDebugGaugeStatisticsByteRateFormatter, IDEFileIOGaugeDebuggingAddition, IDEODRTableViewDelegate, NSArray, NSButton, NSNumberFormatter, NSString;
+@class IDEDebugGaugeReportByteStatisticsViewController, IDEDebugGaugeReportEntityListViewController, IDEDebugGaugeReportSearchFieldController, IDEDebugGaugeReportThroughputGaugeViewController, IDEDebugGaugeStatisticsByteRateFormatter, IDEFIleIOGaugeReportTotalIOGraphDelegate, IDEFileIOGaugeDebuggingAddition, IDEODRTableViewDelegate, NSArray, NSButton, NSNumberFormatter, NSString;
 
 @interface IDEFileIOGaugeReportEditor : IDEDebugGaugeReportEditor <NSTableViewDataSource, NSTableViewDelegate, IDEDebugGaugeReportContentDelegate, IDEDebugGaugeReportTopSectionContentDelegate, IDEGraphDelegate, IDEGaugeCollectedDataListeners>
 {
+    IDEFIleIOGaugeReportTotalIOGraphDelegate *_totalIOGraphDelegate;
     BOOL _resourcesFilterRecentsEnabled;
     IDEFileIOGaugeDebuggingAddition *_debuggingAddition;
     IDEDebugGaugeReportByteStatisticsViewController *_inputStatsViewController;
@@ -24,6 +25,7 @@
     IDEDebugGaugeReportThroughputGaugeViewController *_graphViewController;
     IDEDebugGaugeStatisticsByteRateFormatter *_graphViewYAxisFormatter;
     NSNumberFormatter *_graphViewXAxisFormatter;
+    IDEDebugGaugeReportThroughputGaugeViewController *_totalIOGraphViewController;
     IDEDebugGaugeReportEntityListViewController *_fileListViewController;
     NSArray *_sortedFileListTableViewEntries;
     IDEDebugGaugeReportEntityListViewController *_resourceTagListViewController;
@@ -47,6 +49,7 @@
 @property(retain, nonatomic) IDEDebugGaugeReportEntityListViewController *resourceTagListViewController; // @synthesize resourceTagListViewController=_resourceTagListViewController;
 @property(retain, nonatomic) NSArray *sortedFileListTableViewEntries; // @synthesize sortedFileListTableViewEntries=_sortedFileListTableViewEntries;
 @property(retain, nonatomic) IDEDebugGaugeReportEntityListViewController *fileListViewController; // @synthesize fileListViewController=_fileListViewController;
+@property(retain, nonatomic) IDEDebugGaugeReportThroughputGaugeViewController *totalIOGraphViewController; // @synthesize totalIOGraphViewController=_totalIOGraphViewController;
 @property(retain, nonatomic) NSNumberFormatter *graphViewXAxisFormatter; // @synthesize graphViewXAxisFormatter=_graphViewXAxisFormatter;
 @property(retain, nonatomic) IDEDebugGaugeStatisticsByteRateFormatter *graphViewYAxisFormatter; // @synthesize graphViewYAxisFormatter=_graphViewYAxisFormatter;
 @property(retain, nonatomic) IDEDebugGaugeReportThroughputGaugeViewController *graphViewController; // @synthesize graphViewController=_graphViewController;
@@ -55,6 +58,7 @@
 @property(retain, nonatomic) IDEFileIOGaugeDebuggingAddition *debuggingAddition; // @synthesize debuggingAddition=_debuggingAddition;
 - (void).cxx_destruct;
 - (void)debuggingAdditionDidUpdateCollectedQueryResults:(id)arg1;
+- (id)accumulateIODeltas:(id)arg1 initialValue:(id)arg2;
 - (void)tableView:(id)arg1 sortDescriptorsDidChange:(id)arg2;
 - (id)tableView:(id)arg1 objectValueForTableColumn:(id)arg2 row:(long long)arg3;
 - (BOOL)tableView:(id)arg1 shouldEditTableColumn:(id)arg2 row:(long long)arg3;
@@ -67,6 +71,7 @@
 - (id)topSectionComponentEntries;
 - (id)topSectionTitle;
 - (void)addSectionsToView:(id)arg1;
+- (void)_setupFilesTable:(id)arg1;
 - (void)filterRecentResourcesClicked:(id)arg1;
 - (id)filterSortedResources:(id)arg1 forRecent:(BOOL)arg2;
 - (void)updateResourcesFilteringAndReload:(BOOL)arg1;

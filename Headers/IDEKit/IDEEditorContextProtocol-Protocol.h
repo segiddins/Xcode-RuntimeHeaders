@@ -6,14 +6,15 @@
 
 #import <IDEKit/NSObject-Protocol.h>
 
-@class IDEEditor, IDEEditorHistoryItem, IDENavigableItemCoordinator;
+@class IDEEditor, IDENavigableItemCoordinator;
+@protocol IDEEditorHistoryControllerItem;
 
 @protocol IDEEditorContextProtocol <NSObject>
 @property(readonly, nonatomic) IDEEditor *editor;
 @property(readonly) IDENavigableItemCoordinator *navigableItemCoordinator;
 - (BOOL)_openEmptyEditor;
 - (void)_giveEditorFocusIfNeeded;
-- (BOOL)_openEditorHistoryItem:(IDEEditorHistoryItem *)arg1 updateHistory:(BOOL)arg2;
-- (IDEEditorHistoryItem *)currentHistoryItem;
+- (BOOL)_openEditorHistoryItem:(id <IDEEditorHistoryControllerItem>)arg1 updateHistory:(BOOL)arg2;
+- (id <IDEEditorHistoryControllerItem>)currentHistoryItem;
 @end
 

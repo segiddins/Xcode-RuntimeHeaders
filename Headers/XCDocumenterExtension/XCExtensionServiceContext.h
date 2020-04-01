@@ -7,20 +7,15 @@
 #import <Foundation/NSExtensionContext.h>
 
 #import "XCExtensionService-Protocol.h"
-#import "XCExtensionServiceDispatcher-Protocol.h"
 
 @class NSString;
-@protocol XCExtensionHost;
 
-@interface XCExtensionServiceContext : NSExtensionContext <XCExtensionService, XCExtensionServiceDispatcher>
+@interface XCExtensionServiceContext : NSExtensionContext <XCExtensionService>
 {
 }
 
-+ (void)registerRequestHandler:(CDUnknownBlockType)arg1;
 + (id)_extensionAuxiliaryVendorProtocol;
 + (id)_extensionAuxiliaryHostProtocol;
-- (void)sendRequest:(id)arg1 reply:(CDUnknownBlockType)arg2;
-@property(readonly) id <XCExtensionHost> hostContext;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -4,17 +4,17 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <DVTKit/DVTLayoutView_ML.h>
+#import <DVTStructuredLayoutKit/DVTLayoutView_ML.h>
 
 @class IBCanvasView, NSMutableSet, NSSet;
 
 @interface IBCanvasFrame : DVTLayoutView_ML
 {
-    IBCanvasView *canvasView;
-    IBCanvasFrame *parentFrame;
-    NSMutableSet *childFrames;
-    BOOL autopositionOnNextLayout;
+    NSMutableSet *_childFrames;
+    BOOL _autopositionOnNextLayout;
     BOOL _frameIsSelected;
+    IBCanvasView *_canvasView;
+    IBCanvasFrame *_parentFrame;
     double _chromeScaleFactor;
     struct CGPoint _anchor;
 }
@@ -22,10 +22,10 @@
 @property(nonatomic) struct CGPoint anchor; // @synthesize anchor=_anchor;
 @property(nonatomic) double chromeScaleFactor; // @synthesize chromeScaleFactor=_chromeScaleFactor;
 @property BOOL frameIsSelected; // @synthesize frameIsSelected=_frameIsSelected;
-@property BOOL autopositionOnNextLayout; // @synthesize autopositionOnNextLayout;
-@property(readonly) IBCanvasFrame *parentFrame; // @synthesize parentFrame;
-@property(readonly) NSSet *childFrames; // @synthesize childFrames;
-@property(retain) IBCanvasView *canvasView; // @synthesize canvasView;
+@property(readonly) IBCanvasFrame *parentFrame; // @synthesize parentFrame=_parentFrame;
+@property(readonly) NSSet *childFrames; // @synthesize childFrames=_childFrames;
+@property BOOL autopositionOnNextLayout; // @synthesize autopositionOnNextLayout=_autopositionOnNextLayout;
+@property(retain) IBCanvasView *canvasView; // @synthesize canvasView=_canvasView;
 - (void).cxx_destruct;
 - (BOOL)isVerticallyResizableForCanvasAlignment;
 - (BOOL)isHorizontallyResizableForCanvasAlignment;

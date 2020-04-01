@@ -4,16 +4,15 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <IDEInterfaceBuilderCocoaTouchIntegration/IBUISimulatedMetricsExtendedEdgeProvider-Protocol.h>
-
 @class IBUISimulatedBarMetrics, IBUISimulatedMetricsContainer, IBUISimulatedOrientationMetrics, IBUISimulatedSizeMetrics, IBUISimulatedStatusBarMetrics;
 
-@protocol IBUISimulatedMetricsObject <IBUISimulatedMetricsExtendedEdgeProvider>
-@property(copy) IBUISimulatedSizeMetrics *simulatedDestinationMetrics;
-@property(copy) IBUISimulatedOrientationMetrics *simulatedOrientationMetrics;
-@property(copy) IBUISimulatedBarMetrics *simulatedBottomBarMetrics;
-@property(copy) IBUISimulatedBarMetrics *simulatedTopBarMetrics;
-@property(copy) IBUISimulatedStatusBarMetrics *simulatedStatusBarMetrics;
+@protocol IBUISimulatedMetricsObject
+@property(nonatomic) long long simulatedUserInterfaceStyle;
+@property(copy, nonatomic) IBUISimulatedSizeMetrics *simulatedDestinationMetrics;
+@property(copy, nonatomic) IBUISimulatedOrientationMetrics *simulatedOrientationMetrics;
+@property(copy, nonatomic) IBUISimulatedBarMetrics *simulatedBottomBarMetrics;
+@property(copy, nonatomic) IBUISimulatedBarMetrics *simulatedTopBarMetrics;
+@property(copy, nonatomic) IBUISimulatedStatusBarMetrics *simulatedStatusBarMetrics;
 - (struct CGSize)effectiveFreeformSize;
 - (IBUISimulatedMetricsContainer *)effectiveSimulatedMetrics;
 @end

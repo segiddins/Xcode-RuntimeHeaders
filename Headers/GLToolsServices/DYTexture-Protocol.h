@@ -20,5 +20,11 @@
 - (NSString *)cubemapLabelForFaceIndex:(int)arg1;
 - (id <DYTextureImage>)textureImageForMipmapLevel:(int)arg1 layer:(int)arg2;
 - (unsigned int)layerCountForMipmapLevel:(unsigned int)arg1;
+
+@optional
+@property(readonly, nonatomic) unsigned int IOSurfaceYCbCrMatrix;
+@property(readonly, nonatomic) unsigned int IOSurfacePixelFormat;
+@property(readonly, nonatomic) unsigned int IOSurfacePlane;
+@property(readonly, nonatomic) union DYTextureChannelMappings channelMappings;
 @end
 

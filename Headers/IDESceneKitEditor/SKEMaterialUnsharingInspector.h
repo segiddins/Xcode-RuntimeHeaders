@@ -10,6 +10,7 @@
 {
 }
 
++ (void)unshareMaterialsOfNodes:(id)arg1 materialIndexes:(id)arg2 document:(id)arg3;
 - (void)unshareMaterial:(id)arg1;
 
 @end

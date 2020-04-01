@@ -7,43 +7,40 @@
 #import <objc/NSObject.h>
 
 #import <IDEFoundation/NSCopying-Protocol.h>
-#import <IDEFoundation/NSMutableCopying-Protocol.h>
 
-@class IDETest, NSArray, NSDate, NSMutableArray, NSMutableSet, NSSet, NSString;
+@class IDETestIdentifier, NSArray, NSDate, NSMutableArray, NSMutableSet, NSSet, NSString;
 
-@interface IDETestResult : NSObject <NSCopying, NSMutableCopying>
+@interface IDETestResult : NSObject <NSCopying>
 {
-    IDETest *_mutableTest;
-    NSString *_mutableIdentifier;
-    unsigned long long _mutableStatus;
-    NSDate *_mutableDate;
-    double _mutableDuration;
-    NSMutableSet *_mutableFailureLocations;
+    IDETestIdentifier *_identifier;
+    NSString *_testName;
+    NSString *_configurationName;
+    unsigned long long _status;
+    NSDate *_date;
+    double _duration;
     NSMutableArray *_mutablePerformanceMetrics;
     NSMutableArray *_mutableMessages;
+    NSMutableSet *_mutableFailureLocations;
 }
 
+@property(retain) NSMutableSet *mutableFailureLocations; // @synthesize mutableFailureLocations=_mutableFailureLocations;
 @property(retain) NSMutableArray *mutableMessages; // @synthesize mutableMessages=_mutableMessages;
 @property(retain) NSMutableArray *mutablePerformanceMetrics; // @synthesize mutablePerformanceMetrics=_mutablePerformanceMetrics;
-@property(retain) NSMutableSet *mutableFailureLocations; // @synthesize mutableFailureLocations=_mutableFailureLocations;
-@property double mutableDuration; // @synthesize mutableDuration=_mutableDuration;
-@property(retain) NSDate *mutableDate; // @synthesize mutableDate=_mutableDate;
-@property unsigned long long mutableStatus; // @synthesize mutableStatus=_mutableStatus;
-@property(retain) NSString *mutableIdentifier; // @synthesize mutableIdentifier=_mutableIdentifier;
-@property(retain) IDETest *mutableTest; // @synthesize mutableTest=_mutableTest;
+@property double duration; // @synthesize duration=_duration;
+@property(copy) NSDate *date; // @synthesize date=_date;
+@property unsigned long long status; // @synthesize status=_status;
+@property(readonly, copy) NSString *configurationName; // @synthesize configurationName=_configurationName;
+@property(readonly, copy) NSString *testName; // @synthesize testName=_testName;
+@property(readonly, copy) IDETestIdentifier *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
-- (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-@property(readonly) NSArray *performanceMetrics;
-@property(readonly) NSArray *messages;
+- (void)addFailureLocation:(id)arg1;
 @property(readonly) NSSet *failureLocations;
-@property(readonly) double duration;
-@property(readonly) NSDate *date;
-@property(readonly) unsigned long long status;
-@property(readonly) IDETest *test;
-@property(readonly) NSString *identifier;
-- (id)initWithTest:(id)arg1;
-- (id)initWithIdentifier:(id)arg1;
+- (void)addMessage:(id)arg1;
+@property(readonly) NSArray *messages;
+- (void)addPerformanceMetric:(id)arg1;
+@property(readonly) NSArray *performanceMetrics;
+- (id)initWithIdentifier:(id)arg1 testName:(id)arg2 configurationName:(id)arg3;
 - (id)init;
 
 @end

@@ -21,9 +21,11 @@
 @property(readonly, copy) NSString *processorDescription;
 @property(readonly, copy, nonatomic) NSString *modelUTI;
 @property(readonly, copy, nonatomic) NSString *modelCode;
+@property(readonly, copy, nonatomic) NSString *modelCodename;
 @property(readonly, copy, nonatomic) NSString *modelName;
 
 @optional
+- (void)cancelPrimaryInstrumentsServer;
 - (DTXConnection *)primaryInstrumentsServer;
 @end
 

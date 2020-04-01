@@ -6,11 +6,24 @@
 
 #import <AppKit/NSTokenFieldCell.h>
 
-@interface NSTokenFieldCell (IBNSTokenFieldIntegration)
+#import <IDEInterfaceBuilderCocoaIntegration/IBDocumentArchiving-Protocol.h>
+
+@class NSString;
+
+@interface NSTokenFieldCell (IBNSTokenFieldIntegration) <IBDocumentArchiving>
 + (id)keyPathsForValuesAffectingObjectValue;
 - (BOOL)xmlCoder:(id)arg1 shouldEncodeObject:(id *)arg2 forKey:(id)arg3 context:(id)arg4;
 - (id)xmlCoderEncodingCallbackContext:(id)arg1;
 - (id)ibWidgetType;
 - (id)ibOrderedSnapshotAttributesKeyPaths;
+- (id)ibLocalAttributeKeyPaths;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @end
 

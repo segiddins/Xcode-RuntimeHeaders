@@ -6,58 +6,86 @@
 
 #import <IDEFoundation/IDEProjectItemModel.h>
 
-@class NSSet, NSString;
+@class DVTObservingToken, DVTVersion, NSArray, NSDictionary, _TtC13IDEFoundation25BackgroundModeSessionType;
 @protocol IDEFlightChecking;
 
 @interface IDEBackgroundModesItemModel : IDEProjectItemModel
 {
     id <IDEFlightChecking> _infoPlistFlightCheck;
-    NSSet *_enabledBackgroundModes;
-    NSString *_backgroundModesKey;
+    BOOL _isProgrammaticallySettingSessionType;
+    NSArray *_sessionTypes;
+    _TtC13IDEFoundation25BackgroundModeSessionType *_sessionType;
+    NSDictionary *_backgroundModesInfoPlistKeyToEnabledBackgroundModes;
+    DVTVersion *_deploymentTargetVersion;
+    DVTObservingToken *_backgroundModesObservation;
+    DVTObservingToken *_sessionTypeObservation;
 }
 
++ (id)coalescableReadOnlyKeyPaths;
 + (id)keyPathsForValuesAffectingWorkoutProcessing;
++ (id)keyPathsForValuesAffectingProcessing;
 + (id)keyPathsForValuesAffectingRemoteNotificationInitiatedFetch;
 + (id)keyPathsForValuesAffectingOpportunisticFetch;
 + (id)keyPathsForValuesAffectingBluetoothPeripheral;
 + (id)keyPathsForValuesAffectingBluetoothCentral;
 + (id)keyPathsForValuesAffectingExternalAccessory;
-+ (id)keyPathsForValuesAffectingNewsstandContent;
 + (id)keyPathsForValuesAffectingVoip;
 + (id)keyPathsForValuesAffectingLocation;
 + (id)keyPathsForValuesAffectingAudio;
-+ (id)backgroundModesKeyForContext:(id)arg1;
-@property(readonly) NSString *backgroundModesKey; // @synthesize backgroundModesKey=_backgroundModesKey;
-@property(copy, nonatomic) NSSet *enabledBackgroundModes; // @synthesize enabledBackgroundModes=_enabledBackgroundModes;
++ (id)selectedBackgroundSessionTypes:(id)arg1 forBackgroundModes:(id)arg2;
++ (id)defaultSessionTypes;
+@property(nonatomic) BOOL isProgrammaticallySettingSessionType; // @synthesize isProgrammaticallySettingSessionType=_isProgrammaticallySettingSessionType;
+@property(retain, nonatomic) DVTObservingToken *sessionTypeObservation; // @synthesize sessionTypeObservation=_sessionTypeObservation;
+@property(retain, nonatomic) DVTObservingToken *backgroundModesObservation; // @synthesize backgroundModesObservation=_backgroundModesObservation;
+@property(retain, nonatomic) DVTVersion *deploymentTargetVersion; // @synthesize deploymentTargetVersion=_deploymentTargetVersion;
+@property(copy, nonatomic) NSDictionary *backgroundModesInfoPlistKeyToEnabledBackgroundModes; // @synthesize backgroundModesInfoPlistKeyToEnabledBackgroundModes=_backgroundModesInfoPlistKeyToEnabledBackgroundModes;
+@property(retain, nonatomic) _TtC13IDEFoundation25BackgroundModeSessionType *sessionType; // @synthesize sessionType=_sessionType;
+@property(readonly, nonatomic) NSArray *sessionTypes; // @synthesize sessionTypes=_sessionTypes;
 - (void).cxx_destruct;
+- (id)coalescableWriteableKeyPathToDataSource;
+- (void)primitiveInvalidate;
 - (BOOL)isEnabledUsingEducatedGuess;
 - (id)flightChecks;
 - (id)infoPlistFlightCheck;
+- (id)backgroundModesInfoPlistKeyForWorkoutProcessing;
 @property(nonatomic) BOOL workoutProcessing; // @dynamic workoutProcessing;
-- (void)_setWorkoutProcessing:(BOOL)arg1 postAssignmentBlock:(CDUnknownBlockType)arg2;
+- (void)_setWorkoutProcessing:(BOOL)arg1;
+- (id)backgroundModesInfoPlistKeyForProcessing;
+@property(nonatomic) BOOL processing; // @dynamic processing;
+- (void)_setProcessing:(BOOL)arg1;
+- (id)backgroundModesInfoPlistKeyForRemoteNotificationInitiatedFetch;
 @property(nonatomic) BOOL remoteNotificationInitiatedFetch; // @dynamic remoteNotificationInitiatedFetch;
-- (void)_setRemoteNotificationInitiatedFetch:(BOOL)arg1 postAssignmentBlock:(CDUnknownBlockType)arg2;
+- (void)_setRemoteNotificationInitiatedFetch:(BOOL)arg1;
+- (id)backgroundModesInfoPlistKeyForOpportunisticFetch;
 @property(nonatomic) BOOL opportunisticFetch; // @dynamic opportunisticFetch;
-- (void)_setOpportunisticFetch:(BOOL)arg1 postAssignmentBlock:(CDUnknownBlockType)arg2;
+- (void)_setOpportunisticFetch:(BOOL)arg1;
+- (id)backgroundModesInfoPlistKeyForBluetoothPeripheral;
 @property(nonatomic) BOOL bluetoothPeripheral; // @dynamic bluetoothPeripheral;
-- (void)_setBluetoothPeripheral:(BOOL)arg1 postAssignmentBlock:(CDUnknownBlockType)arg2;
+- (void)_setBluetoothPeripheral:(BOOL)arg1;
+- (id)backgroundModesInfoPlistKeyForBluetoothCentral;
 @property(nonatomic) BOOL bluetoothCentral; // @dynamic bluetoothCentral;
-- (void)_setBluetoothCentral:(BOOL)arg1 postAssignmentBlock:(CDUnknownBlockType)arg2;
+- (void)_setBluetoothCentral:(BOOL)arg1;
+- (id)backgroundModesInfoPlistKeyForExternalAccessory;
 @property(nonatomic) BOOL externalAccessory; // @dynamic externalAccessory;
-- (void)_setExternalAccessory:(BOOL)arg1 postAssignmentBlock:(CDUnknownBlockType)arg2;
-@property(nonatomic) BOOL newsstandContent; // @dynamic newsstandContent;
-- (void)_setNewsstandContent:(BOOL)arg1 postAssignmentBlock:(CDUnknownBlockType)arg2;
+- (void)_setExternalAccessory:(BOOL)arg1;
+- (id)backgroundModesInfoPlistKeyForVoip;
 @property(nonatomic) BOOL voip; // @dynamic voip;
-- (void)_setVoip:(BOOL)arg1 postAssignmentBlock:(CDUnknownBlockType)arg2;
+- (void)_setVoip:(BOOL)arg1;
+- (id)backgroundModesInfoPlistKeyForLocation;
 @property(nonatomic) BOOL location; // @dynamic location;
-- (void)_setLocation:(BOOL)arg1 postAssignmentBlock:(CDUnknownBlockType)arg2;
+- (void)_setLocation:(BOOL)arg1;
+- (id)backgroundModesInfoPlistKeyForAudio;
 @property(nonatomic) BOOL audio; // @dynamic audio;
-- (void)_setAudio:(BOOL)arg1 postAssignmentBlock:(CDUnknownBlockType)arg2;
-- (void)_setEnabledBackgroundModes:(id)arg1 postAssignmentBlock:(CDUnknownBlockType)arg2;
+- (void)_setAudio:(BOOL)arg1;
+- (void)removeEnabledBackgroundModes:(id)arg1 fromBackgroundModesInfoPlistKey:(id)arg2;
+- (void)addEnabledBackgroundMode:(id)arg1 toBackgroundModesInfoPlistKey:(id)arg2 removingModes:(id)arg3;
+- (void)addEnabledBackgroundMode:(id)arg1 toBackgroundModesInfoPlistKey:(id)arg2;
+- (BOOL)isBackgroundModeEnabled:(id)arg1 withUpperCaseName:(id)arg2;
+- (void)readValuesFromBuildSettings;
 - (void)readValuesFromPlist;
-- (void)publishStateWithContext:(id)arg1;
-- (void)modelWasDisabled;
-- (void)modelWasEnabledWithContext:(id)arg1;
+- (void)targetCoordinatorsChanged:(id)arg1;
+- (id)allSessionTypeBackgroundKeys;
+- (void)setUpObservations;
 - (id)initWithCapabilitiesContext:(id)arg1 item:(id)arg2;
 
 // Remaining properties

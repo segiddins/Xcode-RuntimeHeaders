@@ -13,10 +13,11 @@
     NSString *_relativePath;
 }
 
-+ (id)catalogDocumentLocationForItem:(id)arg1 fromDocument:(id)arg2;
++ (id)catalogDocumentLocationForItem:(id)arg1 timestamp:(id)arg2;
 + (id)catalogDocumentLocationForRelativeItemIdentifier:(id)arg1 fromDocument:(id)arg2;
 @property(readonly, nonatomic) NSString *relativePath; // @synthesize relativePath=_relativePath;
 - (void).cxx_destruct;
+- (id)description;
 - (BOOL)isEqualDisregardingTimestamp:(id)arg1;
 - (id)copyWithURL:(id)arg1;
 - (long long)compare:(id)arg1;

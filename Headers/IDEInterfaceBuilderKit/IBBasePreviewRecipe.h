@@ -17,7 +17,6 @@
 - (void).cxx_destruct;
 - (id)propertyListRepresentation;
 - (id)initWithPropertyList:(id)arg1;
-- (id)initWithLanguage:(id)arg1;
 
 @end
 

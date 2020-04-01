@@ -10,7 +10,7 @@
 
 @interface _XCSUIIssuesSummaryViewRadarGroup : NSObject
 {
-    NSMutableArray *_issueViews;
+    NSMutableArray *_integrationIssues;
     NSString *_path;
     NSString *_radarComponentName;
     NSString *_radarComponentVersion;
@@ -19,7 +19,7 @@
 @property(copy) NSString *radarComponentVersion; // @synthesize radarComponentVersion=_radarComponentVersion;
 @property(copy) NSString *radarComponentName; // @synthesize radarComponentName=_radarComponentName;
 @property(copy) NSString *path; // @synthesize path=_path;
-@property(retain) NSMutableArray *issueViews; // @synthesize issueViews=_issueViews;
+@property(retain) NSMutableArray *integrationIssues; // @synthesize integrationIssues=_integrationIssues;
 - (void).cxx_destruct;
 
 @end

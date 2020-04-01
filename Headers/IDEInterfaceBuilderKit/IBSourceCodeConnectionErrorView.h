@@ -4,21 +4,21 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <DVTKit/DVTLayoutView_ML.h>
+#import <DVTStructuredLayoutKit/DVTLayoutView_ML.h>
 
 @class NSAttributedString, NSError, NSString;
 
 @interface IBSourceCodeConnectionErrorView : DVTLayoutView_ML
 {
-    NSAttributedString *cachedAttributedDisplayMessage;
-    NSError *displayedError;
-    NSString *prefixText;
-    NSString *suffixText;
+    NSAttributedString *_cachedAttributedDisplayMessage;
+    NSError *_displayedError;
+    NSString *_prefixText;
+    NSString *_suffixText;
 }
 
-@property(copy) NSString *suffixText; // @synthesize suffixText;
-@property(copy) NSString *prefixText; // @synthesize prefixText;
-@property(retain, nonatomic) NSError *displayedError; // @synthesize displayedError;
+@property(copy) NSString *suffixText; // @synthesize suffixText=_suffixText;
+@property(copy) NSString *prefixText; // @synthesize prefixText=_prefixText;
+@property(retain, nonatomic) NSError *displayedError; // @synthesize displayedError=_displayedError;
 - (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)layoutBottomUp;

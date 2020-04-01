@@ -17,7 +17,6 @@
 - (void).cxx_destruct;
 - (void)enumerateToolsWithBlock:(CDUnknownBlockType)arg1;
 - (id)launchNewToolWithDescription:(id)arg1 error:(id *)arg2 forReason:(CDUnknownBlockType)arg3;
-- (id)cachedToolWithDescription:(id)arg1 error:(id *)arg2 forReason:(CDUnknownBlockType)arg3;
 - (Class)toolProxyClass;
 - (id)executionContextForDescription:(id)arg1 error:(id *)arg2;
 - (id)contextForLaunchingToolWithDescription:(id)arg1 error:(id *)arg2;

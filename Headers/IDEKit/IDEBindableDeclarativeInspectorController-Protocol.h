@@ -6,10 +6,11 @@
 
 #import <IDEKit/NSObject-Protocol.h>
 
-@class IDEInspectorContentView, IDEInspectorProperty, NSArray, NSAttributedString, NSBundle, NSSet, NSString, NSView, NSXMLElement;
+@class IDEInspectorContentView, IDEInspectorProperty, IDEWorkspaceTabController, NSArray, NSAttributedString, NSBundle, NSSet, NSString, NSView, NSXMLElement;
 
 @protocol IDEBindableDeclarativeInspectorController <NSObject>
 + (NSArray *)inspectedArrayControllerKeys;
+@property(readonly, nonatomic) IDEWorkspaceTabController *workspaceTabController;
 @property(readonly) IDEInspectorContentView *inspectorContentView;
 @property(readonly) id inspectedObject;
 @property(readonly) NSArray *inspectedObjects;

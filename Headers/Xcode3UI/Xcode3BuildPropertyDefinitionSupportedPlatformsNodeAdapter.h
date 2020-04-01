@@ -11,6 +11,7 @@
 }
 
 - (id)_buildPropertyEditor;
+- (id)menuItemForUnknownValue:(id)arg1 existingItems:(id)arg2;
 - (id)objectValueForExpandedString:(id)arg1 orValue:(id)arg2;
 - (void)addMenuItemsToPopUpCell:(id)arg1;
 - (id)_platformNamesSortDescriptors;

@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <DVTKit/DVTViewController.h>
+#import <DVTViewControllerKit/DVTViewController.h>
 
 #import <IDESpriteKitParticleEditor/NSOutlineViewDataSource-Protocol.h>
 #import <IDESpriteKitParticleEditor/NSOutlineViewDelegate-Protocol.h>
@@ -13,7 +13,7 @@
 #import <IDESpriteKitParticleEditor/NSUserInterfaceValidations-Protocol.h>
 #import <IDESpriteKitParticleEditor/SKSceneDocumentObserver-Protocol.h>
 
-@class DVTBorderedView, DVTDelayedInvocation, DVTObservingToken, DVTSearchField, NSArray, NSIndexSet, NSMutableArray, NSSet, NSString, NSTrackingArea, SKOutlineButtonCell, SKOutlineItemCell, SKOutlineView, SKSceneDocument, SKSceneNavigableRoot;
+@class DVTBorderedView, DVTDelayedInvocation, DVTNotificationToken, DVTObservingToken, DVTSearchField, NSArray, NSIndexSet, NSMutableArray, NSSet, NSString, NSTrackingArea, SKOutlineButtonCell, SKOutlineItemCell, SKOutlineView, SKSceneDocument, SKSceneNavigableRoot;
 @protocol SKSceneOutlineViewControllerDelegate><NSUserInterfaceValidations;
 
 @interface SKSceneOutlineViewController : DVTViewController <NSOutlineViewDataSource, NSOutlineViewDelegate, SKSceneDocumentObserver, NSTextDelegate, NSSearchFieldDelegate, NSUserInterfaceValidations>
@@ -37,12 +37,18 @@
     NSTrackingArea *_trackingArea;
     NSIndexSet *_lastValidSelection;
     NSIndexSet *_ignoreNextProposedSelection;
+    DVTNotificationToken *_resourceUpdateNotifObserver;
     SKSceneDocument *_sceneDocument;
     SKSceneNavigableRoot *_rootItem;
     NSArray *_selection;
     id <SKSceneOutlineViewControllerDelegate><NSUserInterfaceValidations> _delegate;
 }
 
++ (void)setLastOutlineWidth:(double)arg1;
++ (double)lastOutlineWidth;
++ (void)setLastEditorVisibility:(BOOL)arg1;
++ (BOOL)lastOutlineVisibility;
++ (id)dataCache;
 @property(retain, nonatomic) id <SKSceneOutlineViewControllerDelegate><NSUserInterfaceValidations> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSArray *selection; // @synthesize selection=_selection;
 @property(retain, nonatomic) SKSceneNavigableRoot *rootItem; // @synthesize rootItem=_rootItem;
@@ -88,6 +94,7 @@
 - (BOOL)outlineView:(id)arg1 isItemExpandable:(struct NSObject *)arg2;
 - (id)outlineView:(id)arg1 child:(long long)arg2 ofItem:(struct NSObject *)arg3;
 - (long long)outlineView:(id)arg1 numberOfChildrenOfItem:(struct NSObject *)arg2;
+- (void)keyDown:(id)arg1;
 - (void)rightMouseDown:(id)arg1;
 - (void)editTileMap:(id)arg1;
 - (void)editNagivationGraph:(id)arg1;
@@ -103,6 +110,7 @@
 - (BOOL)validateUserInterfaceItem:(id)arg1;
 - (void)_refreshOutlineViewSelection;
 - (void)_performBlockIfSelectionAvailable:(CDUnknownBlockType)arg1;
+- (void)_setupResourceObserver;
 - (void)primitiveInvalidate;
 - (void)viewDidLayout;
 - (void)viewDidInstall;

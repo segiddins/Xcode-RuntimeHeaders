@@ -6,17 +6,20 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableDictionary;
+@class DVTDeveloperPaths, NSMutableDictionary;
 
 @interface DTDeveloperPaths : NSObject
 {
     NSMutableDictionary *_pathCache;
+    DVTDeveloperPaths *_underlyingDeveloperPaths;
 }
 
 + (id)defaultPaths;
+- (void).cxx_destruct;
 - (id)_developerUsrPath;
 - (id)_developerFolderPath;
 - (id)_pathForDirectory:(unsigned long long)arg1 inDomain:(unsigned long long)arg2 forVersionPathComponent:(id)arg3;
+- (id)legacyDeveloperFolderPath;
 - (void)_setValidDomains:(unsigned long long)arg1;
 - (unsigned long long)_validDomains;
 - (id)description;
@@ -27,10 +30,10 @@
 - (id)developerPathForDirectory:(unsigned long long)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
 - (id)initWithDeveloperDirPath:(id)arg1 developerUsrPath:(id)arg2 validDomains:(unsigned long long)arg3;
 - (id)initWithDeveloperDirPath:(id)arg1 developerUsrPath:(id)arg2;
 - (id)init;
+- (id)initWithDefaultPaths:(BOOL)arg1;
 
 @end
 

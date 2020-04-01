@@ -24,6 +24,7 @@
 @property(readonly, nonatomic) BOOL ide_coverage_showChangeColumn;
 
 // Remaining properties
+@property(readonly, nonatomic) NSArray *creationErrors;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;

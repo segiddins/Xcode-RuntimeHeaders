@@ -4,42 +4,17 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import <DVTAnalytics/DVTAnalyticsLogProvider.h>
 
-#import <DVTAnalytics/DVTServicesFileSystemSerialization-Protocol.h>
-
-@class DVTFilePath, NSArray, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString;
-
-@interface DVTCrashLogProvider : NSObject <DVTServicesFileSystemSerialization>
+@interface DVTCrashLogProvider : DVTAnalyticsLogProvider
 {
-    NSMutableArray *_crashLogIdentifiers;
-    DVTFilePath *_cacheDirectory;
-    NSMutableDictionary *_crashLogDict;
-    NSMutableSet *_crashLogsToDelete;
 }
 
-+ (id)objectFromFilePath:(id)arg1 error:(id *)arg2;
-+ (id)crashLogProviderWithCacheDirectory:(id)arg1 crashLogIdentifiers:(id)arg2;
-@property(readonly, nonatomic) NSMutableSet *crashLogsToDelete; // @synthesize crashLogsToDelete=_crashLogsToDelete;
-@property(readonly, nonatomic) NSMutableDictionary *crashLogDict; // @synthesize crashLogDict=_crashLogDict;
-@property(readonly, nonatomic) DVTFilePath *cacheDirectory; // @synthesize cacheDirectory=_cacheDirectory;
-@property(retain, nonatomic) NSArray *crashLogIdentifiers; // @synthesize crashLogIdentifiers=_crashLogIdentifiers;
-- (void).cxx_destruct;
-- (BOOL)writeToFilePath:(id)arg1 error:(id *)arg2;
-- (BOOL)_writeCrashLogSnapshots:(id)arg1 error:(id *)arg2;
-- (id)crashLogRecordAtIndex:(unsigned long long)arg1;
-- (id)crashLogRecordForCrashLogIdentifier:(id)arg1;
-- (void)addCrashLogs:(id)arg1;
-- (void)_flushInMemoryCache;
-- (id)crashLogSavingQueue;
-- (id)init;
-- (id)initWithCacheDirectory:(id)arg1;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
++ (id)unableToFindAnalyticsLogSubTitleMessage;
++ (id)unableToFindAnalyticsLogTitleMessage;
++ (id)unableToReadAnalyticsLogMessage;
++ (Class)analyticsPointSymbolicatorClass;
++ (Class)analyticsLogClass;
 
 @end
 

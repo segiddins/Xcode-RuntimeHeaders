@@ -10,19 +10,8 @@ typedef void (*CDUnknownFunctionPointerType)(void); // return type and parameter
 
 #pragma mark Named Structures
 
-struct FSRef {
-    unsigned char _field1[80];
-};
-
 struct _NSRange {
     unsigned long long location;
     unsigned long long length;
-};
-
-struct __va_list_tag {
-    unsigned int _field1;
-    unsigned int _field2;
-    void *_field3;
-    void *_field4;
 };
 

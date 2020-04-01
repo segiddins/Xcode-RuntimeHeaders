@@ -17,10 +17,10 @@
 
 + (id)archivableRelationships;
 + (id)archivableAttributes;
+- (void).cxx_destruct;
 - (void)awakeFromPListUnarchiver:(id)arg1;
 - (void)_setProductType:(id)arg1;
 - (id)_productType;
-- (void)dealloc;
 - (id)init;
 
 @end

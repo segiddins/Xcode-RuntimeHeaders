@@ -17,6 +17,7 @@
 - (void)resizeSubviewsWithOldSize:(struct CGSize)arg1;
 - (void)awakeFromNib;
 - (void)sizeSegmentedControlToFit;
+- (void)legacySizeSegmentedControlToFit;
 - (void)optimallySizeSegments;
 - (double)autosizedSegmentWidthForSegment:(long long)arg1;
 

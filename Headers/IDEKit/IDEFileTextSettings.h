@@ -21,11 +21,15 @@
     BOOL _wrapsLines;
     NSMutableArray *_fileReferenceObservingTokens;
     NSMutableArray *_textPreferencesObservingTokens;
+    BOOL _trimTrailingWhitespace;
+    BOOL _trimWhitespaceOnlyLines;
     NSMapTable *_sourceTextViewToObservingTokensMapTable;
 }
 
 + (void)initialize;
 @property(retain) NSMapTable *sourceTextViewToObservingTokensMapTable; // @synthesize sourceTextViewToObservingTokensMapTable=_sourceTextViewToObservingTokensMapTable;
+@property BOOL trimWhitespaceOnlyLines; // @synthesize trimWhitespaceOnlyLines=_trimWhitespaceOnlyLines;
+@property BOOL trimTrailingWhitespace; // @synthesize trimTrailingWhitespace=_trimTrailingWhitespace;
 @property BOOL wrapsLines; // @synthesize wrapsLines=_wrapsLines;
 @property long long indentWidth; // @synthesize indentWidth=_indentWidth;
 @property long long tabWidth; // @synthesize tabWidth=_tabWidth;
@@ -35,6 +39,8 @@
 @property(retain, nonatomic) IDEFileReference *fileReference; // @synthesize fileReference=_fileReference;
 - (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
+- (void)updateTrimWhitespaceOnlyLines;
+- (void)updateTrimTrailingWhitespace;
 - (void)updateWrapLines;
 - (void)updateIndentWidth;
 - (void)updateTabWidth;

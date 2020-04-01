@@ -6,13 +6,14 @@
 
 #import <objc/NSObject.h>
 
-@class IBLiveViewsManager, IBMutableOrderedDictionary, IBSemaphore, IBTargetRuntime, NSMutableDictionary, NSMutableSet, NSString;
+@class IBAbstractInterfaceBuilderPlatformToolManager, IBGenericDeviceTypeDescription, IBLiveViewsManager, IBMutableOrderedDictionary, IBSemaphore, IBTargetRuntime, NSMutableDictionary, NSMutableSet, NSString;
 @protocol IBPlatformToolRequestProcessor, OS_dispatch_queue;
 
 @interface IBPlatformToolRequester : NSObject
 {
     IBTargetRuntime *_targetRuntime;
-    double _scaleFactor;
+    IBAbstractInterfaceBuilderPlatformToolManager *_toolProxyManager;
+    IBGenericDeviceTypeDescription *_deviceTypeDescription;
     id <IBPlatformToolRequestProcessor> _requestProcessor;
     IBMutableOrderedDictionary *_pendingRequestsByID;
     IBSemaphore *_waitingRequestSemaphore;
@@ -23,17 +24,20 @@
     NSString *_waitingRequestID;
     long long _batchSize;
     IBLiveViewsManager *_liveViewsManager;
+    NSString *_identifier;
 }
 
+@property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly, nonatomic) IBLiveViewsManager *liveViewsManager; // @synthesize liveViewsManager=_liveViewsManager;
 - (void).cxx_destruct;
 - (void)processRequests;
-- (id)_connectToToolProxyReturningFailedLoadResult:(id *)arg1;
+- (void)_connectToToolProxyWithSupersessionIdentifier:(id)arg1 during:(CDUnknownBlockType)arg2;
 - (void)processResults;
+- (void)waitForRequestWithIDs:(id)arg1 timeout:(id)arg2;
 - (BOOL)waitForRequestWithID:(id)arg1 timeout:(id)arg2;
 - (void)cancelRequestWithID:(id)arg1;
 - (id)issueRequestWithData:(id)arg1 supersessionIdentifier:(id)arg2 diagnosticsBlock:(CDUnknownBlockType)arg3 completionBlock:(CDUnknownBlockType)arg4;
-- (id)initWithTargetRuntime:(id)arg1 scaleFactor:(double)arg2 liveViewsManager:(id)arg3 batchSize:(long long)arg4 requestProcessor:(id)arg5;
+- (id)initWithTargetRuntime:(id)arg1 deviceTypeDescription:(id)arg2 liveViewsManager:(id)arg3 batchSize:(long long)arg4 requestProcessor:(id)arg5;
 - (id)init;
 
 @end

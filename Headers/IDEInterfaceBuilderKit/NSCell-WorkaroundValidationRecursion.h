@@ -8,5 +8,6 @@
 
 @interface NSCell (WorkaroundValidationRecursion)
 - (void)_validateEditingAndDontInfinitelyRecurse:(id)arg1;
+- (BOOL)needsFlippedDrawingWorkaround;
 @end
 

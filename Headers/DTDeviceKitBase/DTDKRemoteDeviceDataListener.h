@@ -28,6 +28,9 @@
 - (id)allConnections;
 - (void)presentError:(id)arg1;
 - (void)listenerThreadImplementation;
+- (void)notifyDeviceNotificationsStopped;
+- (void)_unsubscribe;
+- (void)_subscribe;
 - (void)stopListening;
 - (void)startListening;
 @property(nonatomic) struct __CFRunLoop *listenerRunLoop; // @synthesize listenerRunLoop=_listenerRunLoop;

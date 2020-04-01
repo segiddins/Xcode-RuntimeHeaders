@@ -21,7 +21,7 @@
     NSSet *_allTagSets;
 }
 
-+ (id)scanContentsOfPath:(id)arg1;
++ (id)scanContentsOfPath:(id)arg1 error:(id *)arg2;
 + (BOOL)shouldOverrideScanningForCatalogAtPath:(id)arg1;
 - (void).cxx_destruct;
 - (BOOL)propagateAllTags;
@@ -29,8 +29,8 @@
 - (void)enumeratePropagationSourcesOfNode:(id)arg1 enumerator:(CDUnknownBlockType)arg2;
 - (void)indexAdornersByAdornees;
 - (void)enumeratePropagationTargetsOfNode:(id)arg1 enumerator:(CDUnknownBlockType)arg2;
-- (id)buildEntryForFilePath:(id)arg1 withLocalNamespace:(id)arg2 isIsolated:(BOOL)arg3;
-- (id)initWithFilePath:(id)arg1;
+- (id)buildEntryForFilePath:(id)arg1 withLocalNamespace:(id)arg2 isIsolated:(BOOL)arg3 error:(id *)arg4;
+- (id)initWithFilePath:(id)arg1 error:(id *)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

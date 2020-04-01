@@ -8,18 +8,17 @@
 
 #import <IDEFoundation/IDEProfileQualifier-Protocol.h>
 
-@class IDEProfileQualifierResult, NSArray, NSString;
-@protocol DVTProvisioningProfile;
+@class DVTProvisioningProfile, IDEProfileQualifierResult, NSArray, NSString;
 
 @interface IDEProfileDevicesQualifier : NSObject <IDEProfileQualifier>
 {
     IDEProfileQualifierResult *_result;
-    id <DVTProvisioningProfile> _profile;
+    DVTProvisioningProfile *_profile;
     NSArray *_devices;
 }
 
 @property(readonly, nonatomic) NSArray *devices; // @synthesize devices=_devices;
-@property(readonly, nonatomic) id <DVTProvisioningProfile> profile; // @synthesize profile=_profile;
+@property(readonly, nonatomic) DVTProvisioningProfile *profile; // @synthesize profile=_profile;
 @property(retain, nonatomic) IDEProfileQualifierResult *result; // @synthesize result=_result;
 - (void).cxx_destruct;
 - (BOOL)qualify;

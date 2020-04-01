@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <DVTKit/DVTLayoutView_ML.h>
+#import <DVTStructuredLayoutKit/DVTLayoutView_ML.h>
 
 #import <IDEKit/DVTFontTextFieldCellDelegate-Protocol.h>
 #import <IDEKit/DVTInvalidation-Protocol.h>
@@ -12,7 +12,7 @@
 #import <IDEKit/IDEGroupedSegmentedControlDelegate-Protocol.h>
 #import <IDEKit/IDEParagraphStylePopoverControllerDelegate-Protocol.h>
 
-@class DVTFontTextField, DVTSegmentColorWell, DVTStackBacktrace, IDEAttributedStringControlParagraphStylePopoverController, IDEAttributedStringControlTextView, IDEGroupedSegmentedControl, IDEGroupedSegmentedControlGroup, IDEGroupedSegmentedControlItem, NSAttributedString, NSFont, NSPopover, NSScrollView, NSStepper, NSString, NSTextView;
+@class DVTFontTextField, DVTSegmentColorWell, DVTStackBacktrace, IDEAttributedStringControlParagraphStylePopoverController, IDEAttributedStringControlTextView, IDEGroupedSegmentedControl, IDEGroupedSegmentedControlGroup, IDEGroupedSegmentedControlItem, NSAttributedString, NSDictionary, NSFont, NSPopover, NSScrollView, NSStepper, NSString, NSTextView;
 @protocol DVTFontTextFieldDataSource;
 
 @interface IDEAttributedStringControl : DVTLayoutView_ML <IDEGroupedSegmentedControlDelegate, IDEParagraphStylePopoverControllerDelegate, IDEAttributedStringControlTextViewDelegate, DVTInvalidation, DVTFontTextFieldCellDelegate>
@@ -41,9 +41,11 @@
     NSFont *_currentFontForSelection;
     id _target;
     SEL _action;
+    NSDictionary *_defaultTypingAttributes;
 }
 
 + (void)initialize;
+@property(copy, nonatomic) NSDictionary *defaultTypingAttributes; // @synthesize defaultTypingAttributes=_defaultTypingAttributes;
 @property SEL action; // @synthesize action=_action;
 @property __weak id target; // @synthesize target=_target;
 - (void).cxx_destruct;
@@ -86,7 +88,6 @@
 - (id)rangesToScanForAttributes;
 @property(retain) NSFont *currentFontForSelection;
 @property(copy) NSAttributedString *attributedStringValue;
-- (id)defaultTypingAttributes;
 @property(copy) NSString *placeholder;
 @property(readonly) NSTextView *textView;
 - (void)awakeFromNib;

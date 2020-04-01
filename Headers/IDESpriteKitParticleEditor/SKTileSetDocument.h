@@ -9,7 +9,7 @@
 #import <IDESpriteKitParticleEditor/IDEMediaLibraryDelegate-Protocol.h>
 #import <IDESpriteKitParticleEditor/NSKeyedUnarchiverDelegate-Protocol.h>
 
-@class NSMutableSet, NSSet, NSString, SKTileSetNavigableContainer;
+@class IDEMediaResourceVariantContext, NSArray, NSDictionary, NSMutableSet, NSSet, NSString, SKTileSetNavigableContainer;
 
 @interface SKTileSetDocument : SKEditorDocument <NSKeyedUnarchiverDelegate, IDEMediaLibraryDelegate>
 {
@@ -25,13 +25,23 @@
 - (void)mediaLibraryController:(id)arg1 populatePasteboard:(id)arg2 withMediaResourceVariantSets:(id)arg3;
 - (void)_unobserveTileSetBehaviorChanges;
 - (void)_observeTileSetBehaviorChanges;
+- (void)modifiedUserData:(id)arg1 onTileDefinition:(id)arg2;
+- (void)removeTileDefinitions:(id)arg1 fromTileGroupRule:(id)arg2 forTileSet:(id)arg3;
+- (void)addTileDefinitions:(id)arg1 toTileGroupRule:(id)arg2 forTileSet:(id)arg3;
+- (void)removeTileGroupRule:(id)arg1 fromTileGroup:(id)arg2 forTileSet:(id)arg3;
+- (void)addTileGroupRule:(id)arg1 toTileGroup:(id)arg2 forTileSet:(id)arg3;
+- (void)removeTileGroup:(id)arg1 fromTileSet:(id)arg2;
+- (void)addTileGroup:(id)arg1 toTileSet:(id)arg2;
 - (void)removeTileSet:(id)arg1;
 - (void)addTileSet:(id)arg1;
 - (void)unregisterTileSetContainerForEditor:(id)arg1;
 - (id)registerEditorForTileSetContainer:(id)arg1;
 - (BOOL)_processTileSet:(id)arg1 fromFileInfo:(id)arg2 error:(id *)arg3;
 - (BOOL)processFileData:(id)arg1 error:(id *)arg2;
+- (id)tileSetNamed:(id)arg1;
+@property(readonly, nonatomic) NSArray *tileSets;
 - (id)dataOfType:(id)arg1 error:(id *)arg2;
+- (id)namedAssets;
 - (Class)unarchiver:(id)arg1 cannotDecodeObjectOfClassName:(id)arg2 originalClasses:(id)arg3;
 - (BOOL)readFromURL:(id)arg1 ofType:(id)arg2 error:(id *)arg3;
 - (id)ideTopLevelStructureObjects;
@@ -44,6 +54,8 @@
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
+@property(readonly) IDEMediaResourceVariantContext *variantContextForMediaLibrary;
+@property(readonly) NSDictionary *variantForResolvingMediaResources;
 
 @end
 

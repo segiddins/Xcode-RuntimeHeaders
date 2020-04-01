@@ -6,36 +6,73 @@
 
 #import <IDEKit/IDEViewController.h>
 
-@class NSMatrix, NSPopUpButton, NSTextField;
+@class NSPopUpButton, NSTextField;
 
 @interface IDENavigationPrefsPaneController : IDEViewController
 {
-    NSMatrix *_singleClickRadioButtons;
-    NSPopUpButton *_optionClickPopUpButton;
-    NSPopUpButton *_doubleClickPopUpButton;
+    NSPopUpButton *_commandClickOnCodePopUpButton;
+    NSPopUpButton *_optionClickOnCodePopUpButton;
+    NSPopUpButton *_navigationPopUpButton;
+    NSPopUpButton *_optionalNavigationPopUpButton;
+    NSPopUpButton *_doubleClickNavigationPopUpButton;
+    NSTextField *_commandControlClickTextLabel;
+    NSTextField *_optionControlClickTextLabel;
     NSTextField *_singleClickTextLabel;
     NSTextField *_optionClickTextLabel;
+    NSTextField *_optionShiftClickTextLabel;
     NSTextField *_doubleClickTextLabel;
 }
 
++ (unsigned long long)defaultOptionControlClickOnCodeAction;
++ (unsigned long long)defaultOptionClickOnCodeAction;
++ (unsigned long long)defaultCommandControlClickOnCodeAction;
++ (BOOL)useCommandClickForNavigation;
++ (unsigned long long)defaultCommandClickOnCodeAction;
++ (void)registerUserDefaultsIfNeeded;
++ (void)initialize;
 @property(retain) NSTextField *doubleClickTextLabel; // @synthesize doubleClickTextLabel=_doubleClickTextLabel;
+@property(retain) NSTextField *optionShiftClickTextLabel; // @synthesize optionShiftClickTextLabel=_optionShiftClickTextLabel;
 @property(retain) NSTextField *optionClickTextLabel; // @synthesize optionClickTextLabel=_optionClickTextLabel;
 @property(retain) NSTextField *singleClickTextLabel; // @synthesize singleClickTextLabel=_singleClickTextLabel;
-@property(retain) NSPopUpButton *doubleClickPopUpButton; // @synthesize doubleClickPopUpButton=_doubleClickPopUpButton;
-@property(retain) NSPopUpButton *optionClickPopUpButton; // @synthesize optionClickPopUpButton=_optionClickPopUpButton;
-@property(retain) NSMatrix *singleClickRadioButtons; // @synthesize singleClickRadioButtons=_singleClickRadioButtons;
+@property(retain) NSTextField *optionControlClickTextLabel; // @synthesize optionControlClickTextLabel=_optionControlClickTextLabel;
+@property(retain) NSTextField *commandControlClickTextLabel; // @synthesize commandControlClickTextLabel=_commandControlClickTextLabel;
+@property(retain) NSPopUpButton *doubleClickNavigationPopUpButton; // @synthesize doubleClickNavigationPopUpButton=_doubleClickNavigationPopUpButton;
+@property(retain) NSPopUpButton *optionalNavigationPopUpButton; // @synthesize optionalNavigationPopUpButton=_optionalNavigationPopUpButton;
+@property(retain) NSPopUpButton *navigationPopUpButton; // @synthesize navigationPopUpButton=_navigationPopUpButton;
+@property(retain) NSPopUpButton *optionClickOnCodePopUpButton; // @synthesize optionClickOnCodePopUpButton=_optionClickOnCodePopUpButton;
+@property(retain) NSPopUpButton *commandClickOnCodePopUpButton; // @synthesize commandClickOnCodePopUpButton=_commandClickOnCodePopUpButton;
 - (void).cxx_destruct;
-@property BOOL shouldActivateNewTabsAndWindows;
-- (void)setNavigatorDetailPopUpLevel:(unsigned long long)arg1;
-- (unsigned long long)navigatorDetailPopUpLevel;
-@property unsigned long long doubleClickTarget;
-@property unsigned long long optionClickTarget;
-@property(nonatomic) BOOL singleClickTargetsPrimary;
-- (unsigned long long)_singleClickTarget;
-- (void)_setSingleClickTarget:(unsigned long long)arg1;
-- (void)loadView;
+- (void)setDoubleClickTarget:(int)arg1;
+- (int)doubleClickTarget;
+- (void)_setupDoubleClickNavigationPopUpButton;
+- (void)setOptionShiftClickTarget:(int)arg1;
+- (int)optionShiftClickTarget;
+- (void)setOptionClickTarget:(int)arg1;
+- (int)optionClickTarget;
+- (void)_setupOptionalNavigationPopUpButton;
+- (void)setSingleClickTarget:(int)arg1;
+- (int)singleClickTarget;
+- (void)_setupNavigationPopUpButton;
+- (unsigned long long)optionControlClickOnCodeAction;
+- (void)setOptionClickOnCodeAction:(unsigned long long)arg1;
+- (unsigned long long)optionClickOnCodeAction;
+- (void)_setupOptionClickOnCodePopUpButton;
+- (unsigned long long)commandControlClickOnCodeAction;
+- (void)setCommandClickOnCodeAction:(unsigned long long)arg1;
+- (unsigned long long)commandClickOnCodeAction;
+- (void)_setupCommandClickOnCodePopUpButton;
+- (void)setUseTabsInsteadOfWindowsInFullscreen:(BOOL)arg1;
+- (BOOL)useTabsInsteadOfWindowsInFullscreen;
+- (void)setShouldActivateNewTabsAndWindows:(BOOL)arg1;
+- (BOOL)shouldActivateNewTabsAndWindows;
 - (id)_labelNameForTarget:(int)arg1;
+- (id)_labelNameForModifierClickOnCodeAction:(unsigned long long)arg1;
+- (void)_updateTextLabels;
 - (id)_menuNameForTarget:(int)arg1;
+- (id)_menuItemForEventBehavior:(int)arg1 target:(int)arg2;
+- (id)_menuNameForModifierClickOnCodeAction:(unsigned long long)arg1;
+- (id)_menuItemForModifierClickOnCodeAction:(unsigned long long)arg1;
+- (void)loadView;
 
 @end
 

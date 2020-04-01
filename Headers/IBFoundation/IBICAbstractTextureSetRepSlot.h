@@ -17,7 +17,7 @@
     IBICColorSpace *_colorSpace;
 }
 
-+ (id)allDefaultFileTypes;
++ (Class)assetRepClass;
 + (id)allocWithZone:(struct _NSZone *)arg1;
 @property(readonly) IBICColorSpace *colorSpace; // @synthesize colorSpace=_colorSpace;
 @property(readonly) IBICGraphicsFeatureSet *graphicsFeatureSet; // @synthesize graphicsFeatureSet=_graphicsFeatureSet;

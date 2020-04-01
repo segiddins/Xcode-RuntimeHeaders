@@ -12,6 +12,7 @@
 {
 }
 
++ (BOOL)automaticallyNotifiesObserversForShouldUseLegacyBuildSystem;
 + (BOOL)automaticallyNotifiesObserversForIssueFilterStyle;
 + (BOOL)automaticallyNotifiesObserversForLiveSourceIssuesEnabled;
 + (BOOL)automaticallyNotifiesObserversForHasAskedToTakeAutomaticSnapshotBeforeSignificantChanges;
@@ -25,6 +26,10 @@
 + (BOOL)automaticallyNotifiesObserversForBuildLocationStyle;
 + (BOOL)automaticallyNotifiesObserversForDerivedDataCustomLocation;
 + (BOOL)automaticallyNotifiesObserversForDerivedDataLocationStyle;
++ (id)shouldUseLegacyBuildSystemOverride;
++ (void)setShouldUseLegacyBuildSystemOverride:(id)arg1;
+- (BOOL)usesPerTargetBuildLocations;
+- (BOOL)shouldUseLegacyBuildSystem;
 - (void)loadSettings;
 - (void)saveSettings;
 @property int issueFilterStyle;

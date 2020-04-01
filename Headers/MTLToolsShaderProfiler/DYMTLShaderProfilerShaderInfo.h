@@ -11,6 +11,7 @@
     unsigned long long _libraryId;
 }
 
++ (BOOL)supportsSecureCoding;
 @property(nonatomic) unsigned long long libraryId; // @synthesize libraryId=_libraryId;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

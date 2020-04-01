@@ -8,18 +8,17 @@
 
 @protocol DBGSBQueue;
 
-__attribute__((visibility("hidden")))
 @interface DBGLLDBQueue : IDEDebugQueue
 {
     id <DBGSBQueue> _lldbQueue;
-    unsigned long long _numPendingBlocks;
     BOOL _derivedPendingBlocks;
+    unsigned long long _numberOfPendingBlocks;
 }
 
 + (BOOL)supportsInvalidationPrevention;
+- (unsigned long long)numberOfPendingBlocks;
 - (void).cxx_destruct;
 - (void)primitiveInvalidate;
-- (unsigned long long)numberOfPendingBlocks;
 - (id)pendingBlocksThreads;
 - (id)lldbSession;
 - (id)lldbQueue;

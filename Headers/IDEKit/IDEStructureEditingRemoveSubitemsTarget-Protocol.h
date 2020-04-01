@@ -10,6 +10,7 @@
 
 @protocol IDEStructureEditingRemoveSubitemsTarget <NSObject>
 - (BOOL)structureEditingRemoveSubitemsAtIndexes:(NSIndexSet *)arg1 error:(id *)arg2;
+- (NSSet *)structureEditingFilePathsForGroupSubitemsFilteringOutNonProjectItemsAtIndexes:(NSIndexSet *)arg1;
 - (NSSet *)structureEditingFileURLsForSubitemsAtIndexes:(NSIndexSet *)arg1;
 - (BOOL)structureEditingCanRemoveSubitemsAtIndexes:(NSIndexSet *)arg1;
 @end

@@ -8,7 +8,7 @@
 
 #import <IDEModelFoundation/NSCopying-Protocol.h>
 
-@class CDMEntity, CDMModel, DVTFilePath, NSDictionary, NSSet;
+@class CDMEntity, CDMModel, DVTFilePath, DVTVersion, NSDictionary, NSSet;
 
 @interface IDECDManagedObjectTemplateInstantiationContext : IDETextSubstitutionTemplateInstantiationContext <NSCopying>
 {
@@ -18,11 +18,13 @@
     CDMModel *_model;
     CDMEntity *_entity;
     NSDictionary *_deploymentTargets;
+    DVTVersion *_swiftVersion;
     DVTFilePath *_modelFilePath;
 }
 
 @property(retain) DVTFilePath *modelFilePath; // @synthesize modelFilePath=_modelFilePath;
 @property(getter=isAutomaticInvocation) BOOL automaticInvocation; // @synthesize automaticInvocation=_automaticInvocation;
+@property(retain) DVTVersion *swiftVersion; // @synthesize swiftVersion=_swiftVersion;
 @property(retain) NSDictionary *deploymentTargets; // @synthesize deploymentTargets=_deploymentTargets;
 @property(retain) CDMEntity *entity; // @synthesize entity=_entity;
 @property(retain) CDMModel *model; // @synthesize model=_model;

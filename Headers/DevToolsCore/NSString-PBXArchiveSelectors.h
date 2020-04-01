@@ -7,6 +7,17 @@
 #import <Foundation/NSString.h>
 
 @interface NSString (PBXArchiveSelectors)
++ (id)stringWithHexRepresentationOfMD5:(CDUnion_221be8ec)arg1;
++ (id)stringWithFileSystemRepresentation:(const char *)arg1 length:(unsigned long long)arg2;
++ (id)stringWithNewlyGeneratedUUID;
++ (id)stringWithPotentiallyMalformedUTF8Bytes:(const char *)arg1 length:(unsigned long long)arg2;
++ (id)pbx_stringFromOSType:(unsigned int *)arg1;
 - (SEL)selectorForArchiveMask:(int)arg1;
+- (BOOL)isBuiltInSourceTree;
+- (void)_appendPListDescriptionToUTF8Data:(id)arg1 withIndentLevel:(unsigned long long)arg2;
+- (void)_appendPListDescriptionToString:(id)arg1 withIndentLevel:(unsigned long long)arg2;
+- (void)_appendStringRepresentationToString:(id)arg1 quoteOnlyIfNeeded:(BOOL)arg2 quoteTabsAndEOLs:(BOOL)arg3;
+- (id)initWithPotentiallyMalformedUTF8Bytes:(const char *)arg1 length:(unsigned long long)arg2;
+- (unsigned int)pbx_macosRomanEncodedSignature;
 @end
 

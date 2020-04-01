@@ -8,20 +8,27 @@
 
 #import <IDEMemoryGraphDebugger/IDEDocumentStructureProviding-Protocol.h>
 
-@class DVTObservingToken, NSArray, NSString, XRMemoryGraphDebugger;
+@class DVTObservingToken, NSArray, NSString, NSURL, XRMemoryGraphDebugger, XRMemoryGraphProcessDescription;
 
 @interface XRMemoryGraphDebuggerDocument : IDEEditorDocument <IDEDocumentStructureProviding>
 {
     DVTObservingToken *_memoryDebuggerValidObserverToken;
     DVTObservingToken *_coalescedStateObserver;
+    DVTObservingToken *_processDescriptionObserver;
     BOOL _performingSaveAs;
     XRMemoryGraphDebugger *_memoryGraphDebugger;
+    XRMemoryGraphProcessDescription *_processDescription;
     NSArray *_ideTopLevelStructureObjects;
+    CDUnknownBlockType _documentSavedCallback;
+    NSURL *_savedLocation;
 }
 
-+ (BOOL)_shouldShowUtilititesAreaAtLoadForSimpleFilesFocusedWorkspace;
++ (BOOL)shouldShowInspectorAreaAtLoadForSimpleFilesFocusedWorkspace;
 + (id)documentLocationWithDebugSession:(id)arg1 instanceItem:(id)arg2;
+@property(retain, nonatomic) NSURL *savedLocation; // @synthesize savedLocation=_savedLocation;
+@property(copy, nonatomic) CDUnknownBlockType documentSavedCallback; // @synthesize documentSavedCallback=_documentSavedCallback;
 @property(retain) NSArray *ideTopLevelStructureObjects; // @synthesize ideTopLevelStructureObjects=_ideTopLevelStructureObjects;
+@property(retain, nonatomic) XRMemoryGraphProcessDescription *processDescription; // @synthesize processDescription=_processDescription;
 @property(readonly) XRMemoryGraphDebugger *memoryGraphDebugger; // @synthesize memoryGraphDebugger=_memoryGraphDebugger;
 - (void).cxx_destruct;
 - (void)editorDocumentWillClose;
@@ -30,6 +37,8 @@
 - (id)filePath;
 - (void)saveToURL:(id)arg1 ofType:(id)arg2 forSaveOperation:(unsigned long long)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)setupObservationsForMemoryGraphDebugger:(id)arg1;
+- (void)document:(id)arg1 didSave:(BOOL)arg2 contextInfo:(void *)arg3;
+- (void)export:(CDUnknownBlockType)arg1;
 - (void)exportDocument:(id)arg1;
 - (BOOL)validateUserInterfaceItem:(id)arg1;
 - (BOOL)canSave;

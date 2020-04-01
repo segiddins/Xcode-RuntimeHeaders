@@ -36,6 +36,7 @@
 - (double)boundsHeightForContentHeight:(double)arg1;
 @property(readonly) CDStruct_bf6d4a14 contentInset;
 - (void)primitiveInvalidate;
+- (void)viewDidChangeEffectiveAppearance;
 - (void)viewDidMoveToWindow;
 - (id)initWithPopUpController:(id)arg1 initialDataSource:(id)arg2;
 

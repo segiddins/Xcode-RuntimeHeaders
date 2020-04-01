@@ -6,18 +6,15 @@
 
 #import <objc/NSObject.h>
 
-#import <DVTInstrumentsFoundation/NSCoding-Protocol.h>
-
 @class NSSet, XRIntKeyedDictionary;
 
-@interface DTKPKDebugCodes : NSObject <NSCoding>
+@interface DTKPKDebugCodes : NSObject
 {
     NSSet *_allKDebugCodes;
     XRIntKeyedDictionary *_codeMap;
 }
 
 + (id)legacyTraceCodesURLForOS:(unsigned long long)arg1 productVersion:(id)arg2;
-+ (id)codesFromString:(id)arg1 error:(id *)arg2;
 + (id)codesFromURL:(id)arg1 error:(id *)arg2;
 + (id)localKDebugCodes:(id *)arg1;
 + (void)initialize;
@@ -26,8 +23,6 @@
 - (id)kdebugCodeByValue:(unsigned int)arg1;
 - (id)kdebugCodeWithNameForCode:(CDUnion_1678db3a)arg1;
 - (id)kdebugCodeWithNameForValue:(unsigned int)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 - (id)initWithCodes:(id)arg1;
 
 @end

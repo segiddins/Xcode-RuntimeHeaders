@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-#import "IDEProductCategoryUIProvider-Protocol.h"
+#import <IDEProductsUI/IDEProductCategoryUIProvider-Protocol.h>
 
 @interface IDEProductCategoryUIProviderMacApp : NSObject <IDEProductCategoryUIProvider>
 {

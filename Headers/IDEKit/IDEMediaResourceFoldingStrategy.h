@@ -6,13 +6,22 @@
 
 #import <objc/NSObject.h>
 
+@class NSMutableDictionary;
+
 @interface IDEMediaResourceFoldingStrategy : NSObject
 {
+    NSMutableDictionary *_defaultVariantForMatchingByMediaType;
+    NSMutableDictionary *_variablesMediaTypeAndVariableType;
 }
 
 + (id)emptyVariant;
-+ (id)sharedInstance;
-- (id)defaultVariantForMatching;
++ (id)allFoldingStrategies;
++ (void)setFoldingStrategy:(id)arg1 forPlatform:(id)arg2;
++ (id)foldingStrategyForPlatform:(id)arg1;
++ (id)foldingStrategiesByPlatform;
+- (void).cxx_destruct;
+- (void)setDefaultVariantForMatching:(id)arg1 forMediaType:(id)arg2;
+- (id)defaultVariantForMatchingForMediaType:(id)arg1;
 - (id)descriptionForVariant:(id)arg1;
 - (id)variantDescriptionForResource:(id)arg1;
 - (id)titleForVariant:(id)arg1;
@@ -21,6 +30,9 @@
 - (BOOL)namesForFilesOfTypeIncludeFileExtensions:(id)arg1;
 - (id)mostToLeastSpecificVariablesForMediaType:(id)arg1;
 - (id)variablesInParsingOrderForMediaType:(id)arg1;
+- (void)addVariable:(id)arg1 forMediaType:(id)arg2;
+- (id)variableForType:(id)arg1 andMediaType:(id)arg2;
+- (id)variablesForMediaType:(id)arg1;
 - (id)init;
 
 @end

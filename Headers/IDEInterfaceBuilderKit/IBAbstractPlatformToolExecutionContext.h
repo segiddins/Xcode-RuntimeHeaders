@@ -9,24 +9,37 @@
 #import <IDEInterfaceBuilderKit/IBDiagnosticsHandlerConfigurator-Protocol.h>
 #import <IDEInterfaceBuilderKit/IBVerboseDescriptionProvider-Protocol.h>
 
-@class NSString;
+@class NSDictionary, NSString;
+@protocol OS_dispatch_queue;
 
 @interface IBAbstractPlatformToolExecutionContext : NSObject <IBDiagnosticsHandlerConfigurator, IBVerboseDescriptionProvider>
 {
+    long long _isBusyCount;
+    NSObject<OS_dispatch_queue> *_busyCountToolQueue;
+    double _timeStampFromLastIdleOrBusy;
+    NSDictionary *_additionalEnvironment;
 }
 
-- (id)registerSceneUpdateRenderingDelegate:(id)arg1 returningSceneIdentifier:(long long *)arg2;
++ (void)initialize;
+@property(copy, nonatomic) NSDictionary *additionalEnvironment; // @synthesize additionalEnvironment=_additionalEnvironment;
+- (void).cxx_destruct;
 - (id)ib_verboseDescription;
+@property(readonly, copy) NSString *description;
+- (void)setIdleTimeToAtLeast:(double)arg1;
+- (BOOL)isIdleForAtLeast:(double)arg1;
+- (double)timeSinceLastIdleOrBusy;
+- (void)decrementBusy;
+- (void)incrementBusy;
+- (id)busyCountQueue;
 - (void)configureDiagnosticsHandler:(id)arg1;
-- (void)toolProxyWillDispatchMessage:(id)arg1;
 - (BOOL)populateEnvironment:(id)arg1 launchContext:(id)arg2 error:(id *)arg3;
 - (void)populateDYLDFrameworkSearchPaths:(id)arg1 launchContext:(id)arg2;
+@property(readonly) NSString *runtimeDestinationHint;
 - (id)environmentWithLaunchContext:(id)arg1 error:(id *)arg2;
-- (id)launchAndConnectToToolWithLaunchContext:(id)arg1 toolProxyClass:(Class)arg2 shouldRaiseOnFailures:(BOOL)arg3 error:(id *)arg4;
+- (id)launchAndConnectToToolWithLaunchContext:(id)arg1 toolProxyClass:(Class)arg2 proxyDelegate:(id)arg3 shouldRaiseOnFailures:(BOOL)arg4 error:(id *)arg5;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

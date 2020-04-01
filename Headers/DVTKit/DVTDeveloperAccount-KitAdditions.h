@@ -7,7 +7,6 @@
 #import <DVTFoundation/DVTDeveloperAccount.h>
 
 @interface DVTDeveloperAccount (KitAdditions)
-+ (BOOL)isInvalidCredentialsError:(id)arg1;
 + (id)_reauthLock;
 - (void)_reauthenticateWithAuthKitUsingHostWindow:(id)arg1 callback:(CDUnknownBlockType)arg2;
 - (BOOL)reauthenticateUsingHostWindow:(id)arg1 error:(id *)arg2;

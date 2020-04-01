@@ -6,17 +6,27 @@
 
 #import <AppKit/NSArrayController.h>
 
-@interface NSArrayController (IBNSArrayControllerIntegration)
-+ (id)ibSynthesizeControllerKeyPaths;
-- (void)ibWarnings:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
+#import <IDEInterfaceBuilderCocoaIntegration/IBDocumentArchiving-Protocol.h>
+
+@class NSString;
+
+@interface NSArrayController (IBNSArrayControllerIntegration) <IBDocumentArchiving>
++ (id)ibDynamicShadowedKeyPathsToTypes;
 - (id)ibResolvedTypeNameForControllerKey:(id)arg1;
+- (id)ibLocalAttributeKeyPaths;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
 
 // Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
 @property BOOL ibShadowedAlwaysUsesMultipleValuesMarker; // @dynamic ibShadowedAlwaysUsesMultipleValuesMarker;
 @property BOOL ibShadowedAutomaticallyRearrangesObjects; // @dynamic ibShadowedAutomaticallyRearrangesObjects;
 @property BOOL ibShadowedAvoidsEmptySelection; // @dynamic ibShadowedAvoidsEmptySelection;
 @property BOOL ibShadowedClearsFilterPredicateOnInsertion; // @dynamic ibShadowedClearsFilterPredicateOnInsertion;
 @property BOOL ibShadowedPreservesSelection; // @dynamic ibShadowedPreservesSelection;
 @property BOOL ibShadowedSelectsInsertedObjects; // @dynamic ibShadowedSelectsInsertedObjects;
+@property(readonly) Class superclass;
 @end
 

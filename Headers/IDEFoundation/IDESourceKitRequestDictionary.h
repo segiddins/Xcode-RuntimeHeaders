@@ -11,6 +11,7 @@
 }
 
 + (id)createFromYAML:(id)arg1 connection:(id)arg2 error:(id *)arg3;
+- (void)setData:(id)arg1 forKey:(struct _sourcekit_uid_s *)arg2;
 - (void)setArray:(id)arg1 forKey:(struct _sourcekit_uid_s *)arg2;
 - (void)setDictionary:(id)arg1 forKey:(struct _sourcekit_uid_s *)arg2;
 - (void)setUID:(struct _sourcekit_uid_s *)arg1 forKey:(struct _sourcekit_uid_s *)arg2;

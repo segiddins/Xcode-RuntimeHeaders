@@ -11,7 +11,8 @@
 }
 
 + (void)initialize;
-- (id)decode:(id)arg1 format:(unsigned int)arg2 level:(unsigned int)arg3 width:(unsigned int)arg4 height:(unsigned int)arg5 options:(id)arg6;
+- (unsigned int)decodedFormat:(unsigned int)arg1 options:(id)arg2;
+- (id)decode:(id)arg1 format:(unsigned int)arg2 level:(unsigned int)arg3 width:(unsigned int)arg4 height:(unsigned int)arg5 bytesPerRow:(unsigned int)arg6 options:(id)arg7;
 - (id)encode:(id)arg1 level:(unsigned int)arg2 width:(unsigned int)arg3 height:(unsigned int)arg4 options:(id)arg5 errorCode:(int *)arg6;
 - (id)describeOptions:(id)arg1;
 - (BOOL)supportsFormat:(unsigned int)arg1;

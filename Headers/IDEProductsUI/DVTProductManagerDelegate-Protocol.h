@@ -4,11 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import "NSObject-Protocol.h"
+#import <IDEProductsUI/NSObject-Protocol.h>
 
-@class DVTProductManager, DVTProductSource, NSArray;
+@class IDEProductManager, IDEProductSource, NSArray;
 
 @protocol DVTProductManagerDelegate <NSObject>
-- (void)productManager:(DVTProductManager *)arg1 receivedErrors:(NSArray *)arg2 fromSource:(DVTProductSource *)arg3;
+- (void)productManager:(IDEProductManager *)arg1 receivedErrors:(NSArray *)arg2 fromSource:(IDEProductSource *)arg3;
 @end
 

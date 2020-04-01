@@ -29,7 +29,7 @@
 + (BOOL)_shouldRecurseIntoDirectoryNamed:(id)arg1 ofType:(id)arg2;
 + (id)_registerSpecificationProxiesOfType:(id)arg1 fromDictionaryOrArray:(id)arg2 inDirectory:(id)arg3 bundle:(id)arg4 sourceDescription:(id)arg5;
 + (id)registerSpecificationProxyFromPropertyList:(id)arg1;
-+ (id)_pathExensionsToTypesRegistry;
++ (id)_pathExtensionsToTypesRegistry;
 + (id)_typesToSpecTypeBaseClassesRegistry;
 + (id)specificationTypePathExtensions;
 + (id)specificationType;

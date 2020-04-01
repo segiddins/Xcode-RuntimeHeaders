@@ -10,8 +10,9 @@
 {
 }
 
-- (void)renderIntoCoreGraphicsContext:(id)arg1;
-- (id)renderContent;
+- (void)attemptToSetScaleFactor:(double)arg1 during:(CDUnknownBlockType)arg2;
+- (void)renderIntoCoreGraphicsContext:(id)arg1 scale:(double)arg2 appearance:(id)arg3;
+- (id)renderContentWithAppearance:(id)arg1;
 
 @end
 

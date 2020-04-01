@@ -7,6 +7,7 @@
 #import <AppKit/NSView.h>
 
 @interface NSView (SKEAdditions)
+-     // Error parsing type: 32@0:8{CGPoint=dd}16, name: ske_simdConvertPointFromWindow:
 - (struct CGPoint)ske_convertPointFromWindow:(struct CGPoint)arg1;
 - (struct CGPoint)ske_convertPointToWindow:(struct CGPoint)arg1;
 @end

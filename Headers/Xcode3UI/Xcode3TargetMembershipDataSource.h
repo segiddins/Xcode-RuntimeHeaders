@@ -9,19 +9,19 @@
 #import <Xcode3UI/NSTableViewDataSource-Protocol.h>
 #import <Xcode3UI/NSTableViewDelegate-Protocol.h>
 
-@class IDEGroup, NSMutableArray, NSSet, NSString, NSTableView, PBXProject, PBXTarget;
+@class IDEGroup, NSArray, NSMutableArray, NSSet, NSString, NSTableView, PBXProject, PBXTarget;
 
 @interface Xcode3TargetMembershipDataSource : NSObject <NSTableViewDataSource, NSTableViewDelegate>
 {
-    NSString *_buildableType;
-    NSSet *_fileTypes;
-    IDEGroup *_group;
-    CDUnknownBlockType _willChangeTargetsBlock;
-    CDUnknownBlockType _didChangeTargetsBlock;
     NSMutableArray *_wrappedTargets;
     PBXProject *_lastProject;
     PBXTarget *_lastTarget;
+    NSString *_buildableType;
+    NSSet *_fileTypes;
+    IDEGroup *_group;
     NSTableView *_tableView;
+    CDUnknownBlockType _willChangeTargetsBlock;
+    CDUnknownBlockType _didChangeTargetsBlock;
 }
 
 @property(copy) CDUnknownBlockType didChangeTargetsBlock; // @synthesize didChangeTargetsBlock=_didChangeTargetsBlock;
@@ -37,9 +37,9 @@
 - (BOOL)tableView:(id)arg1 shouldTrackCell:(id)arg2 forTableColumn:(id)arg3 row:(long long)arg4;
 - (id)tableView:(id)arg1 selectionIndexesForProposedSelection:(id)arg2;
 - (void)setSelectedBuildables:(id)arg1;
-- (id)selectedBuildables;
-- (id)selectedXcode3Targets;
-- (id)selectedTargets;
+@property(readonly) NSArray *selectedBuildables;
+@property(readonly) NSArray *selectedXcode3Targets;
+@property(readonly) NSArray *selectedTargets;
 - (void)rememberSelectedTargets;
 - (void)updateTargets;
 - (id)testTargetFromTargets:(id)arg1 validTargets:(id)arg2 project:(id)arg3;

@@ -6,7 +6,19 @@
 
 #import <AppKit/NSStepper.h>
 
-@interface NSStepper (IBNSStepperIntegration)
+#import <IDEInterfaceBuilderCocoaIntegration/IBDocumentArchiving-Protocol.h>
+
+@class NSString;
+
+@interface NSStepper (IBNSStepperIntegration) <IBDocumentArchiving>
 - (BOOL)ibUsesWidgetTypeForTypeNameForDefaultLabel;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @end
 

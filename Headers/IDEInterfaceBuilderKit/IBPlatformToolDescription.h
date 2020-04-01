@@ -9,17 +9,17 @@
 #import <IDEInterfaceBuilderKit/IBVerboseDescriptionProvider-Protocol.h>
 #import <IDEInterfaceBuilderKit/NSCopying-Protocol.h>
 
-@class IBTargetRuntime, NSString;
+@class IBAbstractInterfaceBuilderPlatformToolManager, IBGenericDeviceTypeDescription, IBTargetRuntime, NSString;
 
 @interface IBPlatformToolDescription : NSObject <NSCopying, IBVerboseDescriptionProvider>
 {
     IBTargetRuntime *_targetRuntime;
     long long _role;
-    double _scaleFactor;
+    IBGenericDeviceTypeDescription *_deviceTypeDescription;
 }
 
-+ (id)effectiveToolDescriptionForTargetRuntime:(id)arg1 role:(long long)arg2 scaleFactor:(double)arg3;
-@property(readonly, nonatomic) double scaleFactor; // @synthesize scaleFactor=_scaleFactor;
++ (id)descriptionForTargetRuntime:(id)arg1 role:(long long)arg2 deviceTypeDescription:(id)arg3;
+@property(readonly, nonatomic) IBGenericDeviceTypeDescription *deviceTypeDescription; // @synthesize deviceTypeDescription=_deviceTypeDescription;
 @property(readonly, nonatomic) long long role; // @synthesize role=_role;
 @property(readonly, nonatomic) IBTargetRuntime *targetRuntime; // @synthesize targetRuntime=_targetRuntime;
 - (void).cxx_destruct;
@@ -27,12 +27,13 @@
 - (id)toolName;
 @property(readonly, copy) NSString *description;
 - (id)_roleString;
+@property(readonly, nonatomic) IBAbstractInterfaceBuilderPlatformToolManager *toolProxyManager;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)descriptionBySettingRole:(long long)arg1;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqualToDescription:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
-- (id)initWithTargetRuntime:(id)arg1 role:(long long)arg2 scaleFactor:(double)arg3;
+- (id)initWithTargetRuntime:(id)arg1 role:(long long)arg2 deviceTypeDescription:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

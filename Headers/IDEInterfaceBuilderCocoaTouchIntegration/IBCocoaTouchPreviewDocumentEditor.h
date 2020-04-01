@@ -6,37 +6,21 @@
 
 #import <IDEInterfaceBuilderKit/IBBasePreviewDocumentEditor.h>
 
-#import <IDEInterfaceBuilderCocoaTouchIntegration/NSMenuDelegate-Protocol.h>
-
-@class NSMenu, NSSegmentedControl, NSString;
-
-@interface IBCocoaTouchPreviewDocumentEditor : IBBasePreviewDocumentEditor <NSMenuDelegate>
+@interface IBCocoaTouchPreviewDocumentEditor : IBBasePreviewDocumentEditor
 {
-    NSSegmentedControl *_addButton;
-    NSMenu *_addConfigurationMenu;
 }
 
-- (void).cxx_destruct;
-- (id)displayNameForAppyingRecipe:(id)arg1 toObject:(id)arg2;
+- (id)displayNameForApplyingRecipe:(id)arg1 toObject:(id)arg2;
 - (BOOL)isValidRecipe:(id)arg1;
 - (void)userAddedNewConfiguration:(id)arg1;
 - (void)rotatePreviewItem:(id)arg1;
 - (void)rotateRecipe:(id)arg1;
 - (void)preparePreviewResultView:(id)arg1;
 - (void)applyScale:(double)arg1 toPreviewResultView:(id)arg2 withOriginalImage:(id)arg3;
-- (void)menuNeedsUpdate:(id)arg1;
 - (id)applicableVersions;
 - (id)applicableIdioms;
-- (void)refreshControlState;
-- (id)installControls;
-- (id)initialRecipe;
+- (Class)previewRecipeClass;
 - (id)installEditorObservations;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

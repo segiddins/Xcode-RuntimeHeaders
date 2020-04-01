@@ -6,11 +6,38 @@
 
 #import <IDEKit/IDEDebugGaugeTrayCell.h>
 
-@interface DBGGaugeMemoryTrayCell : IDEDebugGaugeTrayCell
+#import <DebuggerUI/IDEDebugGaugeDataSource-Protocol.h>
+
+@class NSImage, NSString;
+@protocol IDEDataSourceReloadable;
+
+@interface DBGGaugeMemoryTrayCell : IDEDebugGaugeTrayCell <IDEDebugGaugeDataSource>
 {
 }
 
 - (id)initWithLabel:(id)arg1;
+
+// Remaining properties
+@property(nonatomic) double barWidth;
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(getter=isDisabled) BOOL disabled;
+@property(nonatomic) double failingPoint;
+@property(readonly) unsigned long long hash;
+@property(copy, nonatomic) NSImage *icon;
+@property(copy) NSString *label;
+@property(nonatomic) BOOL largerValueIsBetter;
+@property(nonatomic) unsigned long long lastCountOfDisplayableBars;
+@property(nonatomic) double maxValueFromValues;
+@property(nonatomic) double maximumValue;
+@property(nonatomic) double realMaxValue;
+@property(nonatomic) unsigned long long specificValue;
+@property(readonly) Class superclass;
+@property(nonatomic) BOOL suppressSuddenIncreases;
+@property(copy) NSString *toolTip;
+@property(nonatomic) int valueButtonFormat;
+@property __weak id <IDEDataSourceReloadable> visualDelegate;
+@property(nonatomic) double warningPoint;
 
 @end
 

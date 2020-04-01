@@ -16,7 +16,11 @@
 @property(nonatomic) __weak id <IBAutolayoutIssueResolvingViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)didCancelChanges:(id)arg1;
+- (void)resizeConstraints;
+- (void)deleteConstraints;
 - (void)confirmChanges;
+- (void)didConfirmResizingChanges:(id)arg1;
+- (void)didConfirmDeletionChanges:(id)arg1;
 - (void)didConfirmChanges:(id)arg1;
 
 @end

@@ -10,9 +10,7 @@
 {
 }
 
-- (id)createUniversalBinaryFromThinBinaries:(id)arg1 inTargetBuildContext:(id)arg2;
-- (void)addBaseLinkerFlagsInTargetBuildContext:(id)arg1;
-- (id)linkerSpecificationForObjectFilesInTargetBuildContext:(id)arg1;
+- (id)createUniversalBinaryFromThinBinaries:(id)arg1 withMacroExpansionScope:(id)arg2;
 
 @end
 

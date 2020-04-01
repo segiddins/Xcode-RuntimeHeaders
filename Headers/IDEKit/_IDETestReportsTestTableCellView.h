@@ -8,23 +8,28 @@
 
 #import <IDEKit/IDETestsInTestableObserver-Protocol.h>
 
-@class IDETest, NSButton, NSString;
-@protocol IDETestReport_Test, IDETestReport_TestGroup;
+@class IDETest, NSButton, NSImageView, NSString;
+@protocol IDETestReport_Common;
 
 @interface _IDETestReportsTestTableCellView : NSTableCellView <IDETestsInTestableObserver>
 {
     IDETest *_jumpToTest;
+    BOOL _selected;
+    NSImageView *_statusImageView;
     NSButton *_jumpButton;
-    id <IDETestReport_Test> _test;
-    id <IDETestReport_TestGroup> _testGroup;
+    id <IDETestReport_Common> _item;
 }
 
-@property(retain) id <IDETestReport_TestGroup> testGroup; // @synthesize testGroup=_testGroup;
-@property(retain) id <IDETestReport_Test> test; // @synthesize test=_test;
+@property(retain) id <IDETestReport_Common> item; // @synthesize item=_item;
 @property __weak NSButton *jumpButton; // @synthesize jumpButton=_jumpButton;
+@property __weak NSImageView *statusImageView; // @synthesize statusImageView=_statusImageView;
 - (void).cxx_destruct;
+- (void)resizeSubviewsWithOldSize:(struct CGSize)arg1;
+- (void)viewDidMoveToSuperview;
+- (void)fitViews;
 - (void)testsChanged:(id)arg1;
 - (void)allTestablesChanged;
+- (void)setBackgroundStyle:(long long)arg1;
 - (void)testablesChanged:(id)arg1;
 - (void)jumpToTestSourceCode:(id)arg1;
 

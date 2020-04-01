@@ -25,6 +25,7 @@
 @property(readonly) NSString *title; // @synthesize title=_title;
 @property(readonly) id representedObject; // @synthesize representedObject=_representedObject;
 - (void).cxx_destruct;
+- (id)debugDescription;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToGroupedSegmentedControlItem:(id)arg1;
 - (unsigned long long)hash;

@@ -8,41 +8,56 @@
 
 #import <IDEFoundation/IDERepairable-Protocol.h>
 
-@class DVTAppIDFeatures, DVTPlatform, DVTPortalProfileType, NSArray, NSString;
-@protocol IDEProvisioningBasicTeam;
+@class DVTPlatform, DVTPortalAppIDFeatures, DVTPortalCertificatePurpose, DVTPortalProfileType, DVTSigningCertificate, IDEProvisionableEntitlements, NSArray, NSError, NSString, _TtC13IDEFoundation32IDEProvisioningDeviceRequirement;
+@protocol IDEProvisioningBasicProfile, IDEProvisioningBasicTeam;
 
 @interface IDEProvisioningRepairInfo : NSObject <IDERepairable>
 {
+    BOOL _preferExplicitAppID;
     NSString *_repairableName;
     id <IDEProvisioningBasicTeam> _team;
-    NSArray *_certificateTypes;
-    NSArray *_devices;
+    DVTPortalCertificatePurpose *_certificatePurpose;
+    _TtC13IDEFoundation32IDEProvisioningDeviceRequirement *_deviceRequirement;
     NSArray *_instigatingErrors;
+    long long _provisioningStyle;
+    id <IDEProvisioningBasicProfile> _profile;
+    DVTPlatform *_platform;
+    IDEProvisionableEntitlements *_entitlements;
+    DVTPortalProfileType *_profileType;
     NSString *_machineName;
     NSString *_machineID;
-    DVTPlatform *_platform;
     NSString *_bundleID;
-    DVTPortalProfileType *_profileType;
-    DVTAppIDFeatures *_appIDFeatures;
+    DVTPortalAppIDFeatures *_appIDFeatures;
+    DVTSigningCertificate *_signingCertificate;
+    NSError *_signingCertificateError;
 }
 
 + (id)repairInfoWithProvisioningInputs:(id)arg1 instigatingErrors:(id)arg2;
-+ (id)repairInfoWithRepairableName:(id)arg1 team:(id)arg2 certificateTypes:(id)arg3 devices:(id)arg4 bundleID:(id)arg5 profileType:(id)arg6 appIDFeatures:(id)arg7 platform:(id)arg8 instigatingErrors:(id)arg9;
-@property(readonly, nonatomic) DVTAppIDFeatures *appIDFeatures; // @synthesize appIDFeatures=_appIDFeatures;
-@property(readonly, nonatomic) DVTPortalProfileType *profileType; // @synthesize profileType=_profileType;
++ (id)repairInfoWithRepairableName:(id)arg1 team:(id)arg2 provisioningStyle:(long long)arg3 certificatePurpose:(id)arg4 deviceRequirement:(id)arg5 bundleID:(id)arg6 profileType:(id)arg7 appIDFeatures:(id)arg8 platform:(id)arg9 profile:(id)arg10 signingCertificate:(id)arg11 signingCertificateError:(id)arg12 entitlements:(id)arg13 instigatingErrors:(id)arg14;
+@property(readonly, nonatomic) NSError *signingCertificateError; // @synthesize signingCertificateError=_signingCertificateError;
+@property(readonly, nonatomic) DVTSigningCertificate *signingCertificate; // @synthesize signingCertificate=_signingCertificate;
+@property(readonly, nonatomic) DVTPortalAppIDFeatures *appIDFeatures; // @synthesize appIDFeatures=_appIDFeatures;
 @property(readonly, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
+@property(readonly, nonatomic) DVTPortalProfileType *profileType; // @synthesize profileType=_profileType;
+@property(nonatomic) BOOL preferExplicitAppID; // @synthesize preferExplicitAppID=_preferExplicitAppID;
+@property(readonly, nonatomic) IDEProvisionableEntitlements *entitlements; // @synthesize entitlements=_entitlements;
 @property(readonly, nonatomic) DVTPlatform *platform; // @synthesize platform=_platform;
+@property(readonly, nonatomic) id <IDEProvisioningBasicProfile> profile; // @synthesize profile=_profile;
+@property(readonly, nonatomic) long long provisioningStyle; // @synthesize provisioningStyle=_provisioningStyle;
 @property(readonly, nonatomic) NSArray *instigatingErrors; // @synthesize instigatingErrors=_instigatingErrors;
-@property(readonly, nonatomic) NSArray *devices; // @synthesize devices=_devices;
-@property(readonly, nonatomic) NSArray *certificateTypes; // @synthesize certificateTypes=_certificateTypes;
+@property(readonly, nonatomic) _TtC13IDEFoundation32IDEProvisioningDeviceRequirement *deviceRequirement; // @synthesize deviceRequirement=_deviceRequirement;
+@property(readonly, nonatomic) DVTPortalCertificatePurpose *certificatePurpose; // @synthesize certificatePurpose=_certificatePurpose;
 @property(readonly, nonatomic) id <IDEProvisioningBasicTeam> team; // @synthesize team=_team;
 @property(readonly, nonatomic) NSString *repairableName; // @synthesize repairableName=_repairableName;
 - (void).cxx_destruct;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
+@property(readonly, nonatomic) BOOL wantsRepairStatusSuppressed;
 @property(readonly, nonatomic) NSString *machineID; // @synthesize machineID=_machineID;
 @property(readonly, nonatomic) NSString *machineName; // @synthesize machineName=_machineName;
+- (id)instigatingErrorsDescription;
 @property(readonly, copy) NSString *description;
+- (id)profileQualificationWithProfile:(id)arg1;
 - (BOOL)profileCharacteristicsWithContext:(id)arg1 profileCharacteristics:(id *)arg2 error:(id *)arg3;
 
 // Remaining properties

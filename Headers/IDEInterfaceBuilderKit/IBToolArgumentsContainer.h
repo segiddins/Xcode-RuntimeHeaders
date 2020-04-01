@@ -36,7 +36,6 @@
     BOOL _printTargetRuntime;
     BOOL _printIndexingInformation;
     BOOL _printSearchDescription;
-    BOOL _printStrippedTextContent;
     BOOL _makeEditableWhenCompiling;
     BOOL _shouldPrintVersion;
     BOOL _extractLocalizableGeometry;
@@ -48,8 +47,9 @@
     BOOL _shouldUpdateAutoLayoutFrames;
     BOOL _shouldUpdateAutoLayoutConstraints;
     BOOL _autoActivateCustomFonts;
+    NSString *_platformName;
     NSString *_targetRuntimeIdentifier;
-    NSDictionary *_refactorInfo;
+    NSDictionary *_renameRefactorToPreview;
     NSDictionary *_exportPropertiesDescription;
     NSDictionary *_exportPropertiesDescription3;
     NSDictionary *_importProperties;
@@ -73,10 +73,12 @@
     NSNumber *_launchScreen;
     NSString *_module;
     NSString *_outputPartialInfoPlistPath;
+    NSNumber *_useNIBArchivesForMacOS;
     NSString *_baseSDK;
 }
 
 @property(copy) NSString *baseSDK; // @synthesize baseSDK=_baseSDK;
+@property(retain) NSNumber *useNIBArchivesForMacOS; // @synthesize useNIBArchivesForMacOS=_useNIBArchivesForMacOS;
 @property BOOL autoActivateCustomFonts; // @synthesize autoActivateCustomFonts=_autoActivateCustomFonts;
 @property(copy) NSString *outputPartialInfoPlistPath; // @synthesize outputPartialInfoPlistPath=_outputPartialInfoPlistPath;
 @property(copy) NSString *module; // @synthesize module=_module;
@@ -117,9 +119,9 @@
 @property(copy) NSDictionary *importProperties; // @synthesize importProperties=_importProperties;
 @property(copy) NSDictionary *exportPropertiesDescription3; // @synthesize exportPropertiesDescription3=_exportPropertiesDescription3;
 @property(copy) NSDictionary *exportPropertiesDescription; // @synthesize exportPropertiesDescription=_exportPropertiesDescription;
-@property(copy) NSDictionary *refactorInfo; // @synthesize refactorInfo=_refactorInfo;
+@property(copy) NSDictionary *renameRefactorToPreview; // @synthesize renameRefactorToPreview=_renameRefactorToPreview;
 @property(copy) NSString *targetRuntimeIdentifier; // @synthesize targetRuntimeIdentifier=_targetRuntimeIdentifier;
-@property BOOL printStrippedTextContent; // @synthesize printStrippedTextContent=_printStrippedTextContent;
+@property(copy) NSString *platformName; // @synthesize platformName=_platformName;
 @property BOOL printSearchDescription; // @synthesize printSearchDescription=_printSearchDescription;
 @property BOOL printIndexingInformation; // @synthesize printIndexingInformation=_printIndexingInformation;
 @property BOOL printTargetRuntime; // @synthesize printTargetRuntime=_printTargetRuntime;

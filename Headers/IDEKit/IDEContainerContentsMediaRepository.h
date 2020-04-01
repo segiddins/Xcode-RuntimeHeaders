@@ -8,35 +8,30 @@
 
 #import <IDEKit/IDEDefaultMediaLibrary-Protocol.h>
 
-@class IDEFileReferenceContainerObserver, IDETimedInvalidatableObjectCache, NSSet, NSString;
+@class IDEContainerContentProductionSpecifier, IDETimedInvalidatableObjectCache, NSString;
 @protocol DVTInvalidation;
 
 @interface IDEContainerContentsMediaRepository : IDEMediaRepository <IDEDefaultMediaLibrary>
 {
-    IDEFileReferenceContainerObserver *_observer;
+    IDEContainerContentProductionSpecifier *_specifier;
     id <DVTInvalidation> _containerContentObservationToken;
     IDETimedInvalidatableObjectCache *_timedCache;
 }
 
 + (id)mediaRepositoryForContainer:(id)arg1 fileDataTypes:(id)arg2;
-+ (CDUnknownBlockType)cleanupHandlerBlock;
-+ (CDUnknownBlockType)updateHandlerBlock;
 + (id)containerObserverIdentifer;
 + (id)allSupportedMediaFileDataTypes;
-+ (void)cleanupFileReferenceContainerObserverResult:(id)arg1 forPath:(id)arg2;
-+ (id)handleFileReferenceContainerObserverChange:(long long)arg1 forPath:(id)arg2 withDataType:(id)arg3;
-+ (void)discardMediaRepositoryForContainerObserver:(id)arg1;
-+ (id)mediaRepositoryForContainerObserver:(id)arg1;
-+ (id)containerObserverToRepositoryMap;
++ (void)containerContentProducer:(id)arg1 disposeValue:(id)arg2 forFilePath:(id)arg3;
++ (id)containerContentProducer:(id)arg1 produceValueForFilePath:(id)arg2 fileDataType:(id)arg3;
++ (void)discardMediaRepositoryForContainerObservationSpecifier:(id)arg1;
++ (id)mediaRepositoryForContainerObservationSpecifier:(id)arg1;
 - (void).cxx_destruct;
 - (void)fileReferenceObserverDidReportUpdatedAndAddedResourcesByPath:(id)arg1 removedPaths:(id)arg2;
-- (void)willRegisterMediaRepositoryObserver;
-- (void)didUnregisterMediaRepositoryObserver;
-@property(readonly) NSSet *types;
+- (id)pin;
 - (id)resources;
 - (void)primitiveInvalidate;
 - (void)_startObserving;
-- (id)initWithContainerObserver:(id)arg1;
+- (id)initWithContentProductionSpecifier:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -11,7 +11,7 @@
 }
 
 - (void)terminate;
-- (void)start;
+- (void)performWorkerAction;
 
 @end
 

@@ -21,6 +21,7 @@
     IDEProvisioningLogDVTLogAspectListener *_provisioningManagerListener;
     IDEProvisioningLogDVTLogAspectListener *_provisioningMechanicListener;
     IDEProvisioningLogDVTLogAspectListener *_codesigningAllTheThingsListener;
+    IDEProvisioningLogDVTLogAspectListener *_signingCertificateManagerListener;
     NSMutableString *_orphanedLogEntries;
     id <IDEProvisioningWorkspaceMonitorDelegate> _delegate;
     IDELogStore *_logStore;

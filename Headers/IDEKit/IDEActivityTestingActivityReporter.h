@@ -15,12 +15,12 @@
 }
 
 + (id)activityTests;
-+ (void)initialize;
 - (void).cxx_destruct;
 - (void)testNewAndCompletedNonUserInitiatedTasksActivity;
 - (void)testNewAndCompletedUserInitiatedTasksActivity;
 - (void)runTestFromNotification:(id)arg1;
 - (void)stopTestingAllActivities:(id)arg1;
+- (void)testStressActivities;
 - (void)testInstallActionActivity;
 - (void)testShowingDeterminateActivityBar;
 - (void)testDeterminateActivities;

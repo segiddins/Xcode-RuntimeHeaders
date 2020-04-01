@@ -10,7 +10,7 @@
 #import <Xcode3UI/NSTableViewDataSource-Protocol.h>
 #import <Xcode3UI/Xcode3BuildPhaseFiltering-Protocol.h>
 
-@class DVTBorderedView, DVTObservingToken, DVTTableView, IDEFilePickerPanel, IDENavigableItem, IDENavigableItemSyncFilteringCoordinator, IDENavigatorDataCell, NSArray, NSPredicate, NSString, NSTimer, Xcode3BuildFileGroup;
+@class DVTBorderedView, DVTObservingToken, DVTPopUpButtonCell, DVTTableView, IDEFilePickerPanel, IDENavigableItem, IDENavigableItemSyncFilteringCoordinator, IDENavigatorDataCell, NSArray, NSPredicate, NSString, NSTimer, Xcode3BuildFileGroup;
 
 @interface Xcode3FileBuildPhaseViewController : Xcode3BuildPhaseViewController <NSTableViewDataSource, Xcode3BuildPhaseFiltering, IDEFilePickerViewDelegate>
 {
@@ -30,7 +30,15 @@
     DVTObservingToken *_roleObserver;
     id _navigableItemPropertyObserver;
     BOOL _loadedView;
+    DVTObservingToken *_platformsFilterObserver;
+    DVTPopUpButtonCell *_platformsFilterCell;
+    DVTObservingToken *_embedObserver;
+    DVTPopUpButtonCell *_embedCell;
+    DVTPopUpButtonCell *_embedCellWithSign;
     IDEFilePickerPanel *_filePickerPanel;
+    NSString *_platformFilterLabel_AllPlatforms;
+    NSString *_platformFilterLabel_macCatalyst;
+    NSString *_platformFilterLabel_iOS;
 }
 
 + (id)_attributesForHighlightedPathString;
@@ -55,6 +63,7 @@
 - (void)_updateArrangedItemCount;
 - (id)_tableMenu;
 - (id)contextMenuSelection;
+- (id)contextMenuSelectedRowIndexes;
 - (id)outputSelection;
 - (id)_tooltipForRoleColumnForBuildFile:(id)arg1;
 - (id)_objectValueForRoleColumnOfBuildFile:(id)arg1;
@@ -83,7 +92,7 @@
 - (void)tableView:(id)arg1 draggingDidEnter:(id)arg2;
 - (BOOL)tableView:(id)arg1 doCommandBySelector:(SEL)arg2;
 - (void)tableViewSelectionDidChange:(id)arg1;
-- (BOOL)tableView:(id)arg1 writeRowsWithIndexes:(id)arg2 toPasteboard:(id)arg3;
+- (id)tableView:(id)arg1 pasteboardWriterForRow:(long long)arg2;
 - (BOOL)tableView:(id)arg1 acceptDrop:(id)arg2 row:(long long)arg3 dropOperation:(unsigned long long)arg4;
 - (unsigned long long)tableView:(id)arg1 validateDrop:(id)arg2 proposedRow:(long long)arg3 proposedDropOperation:(unsigned long long)arg4;
 - (id)tableView:(id)arg1 toolTipForCell:(id)arg2 rect:(struct CGRect *)arg3 tableColumn:(id)arg4 row:(long long)arg5 mouseLocation:(struct CGPoint)arg6;
@@ -107,14 +116,13 @@
 - (id)rootItemsForFilePickerPanel;
 - (void)configureFilePickerPanel:(id)arg1;
 @property(readonly) BOOL hasSearchResults;
-- (id)_filterPredicate;
 - (BOOL)validateMenuItem:(id)arg1;
 - (void)contextMenu_revealInProjectNavigator:(id)arg1;
 - (void)revealInProjectNavigator:(id)arg1;
-- (void)_revealInProjectNavigatorUsingContextualSelection:(BOOL)arg1;
 - (void)delete:(id)arg1;
 - (void)copy:(id)arg1;
 - (void)_reloadData;
+- (void)_calculatePlatformFilterLabels;
 - (void)contextMenu_moveSelectedItems:(id)arg1;
 - (void)moveSelectedItems:(id)arg1;
 - (BOOL)canRemoveItems;
@@ -122,6 +130,20 @@
 - (void)addItems:(id)arg1;
 - (void)editSettings:(id)arg1;
 - (void)_setAttributeOfSelectedBuildFiles:(id)arg1 toBoolValue:(BOOL)arg2;
+- (id)_objectValueForEmbedColumnOfBuildFile:(id)arg1;
+- (void)_setEmbedOptionOfSelectedBuildFiles:(long long)arg1;
+- (void)_setEmbedOption:(id)arg1;
+- (id)_dataCellForEmbedOfBuildFile:(id)arg1;
+- (BOOL)isEmbeddablePackageProduct:(id)arg1;
+- (BOOL)_canShowEmbed;
+- (void)_setPlatformsFilterOfSelectedBuildFiles:(long long)arg1;
+- (void)_setPlatformsFilter:(id)arg1;
+- (id)_objectValueForPlatformFilters:(id)arg1;
+- (id)_dataCellForPlatformsFilterOfBuildFile:(id)arg1;
+- (void)_showPlatformsFilterIfNeeded;
+- (BOOL)_canShowPlatformsFilter;
+- (void)_addBuildFileLinkageAndSetRoleOfSelectedBuildFilesToString:(id)arg1;
+- (void)_removeBuildFileFromLinkageForSelectedBuildFiles;
 - (void)_setRoleOfSelectedBuildFilesToString:(id)arg1;
 - (BOOL)_canSetRole;
 - (void)_showHeaderView;

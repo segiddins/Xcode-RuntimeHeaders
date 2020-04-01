@@ -9,24 +9,27 @@
 #import <DVTFoundation/NSCopying-Protocol.h>
 #import <DVTFoundation/NSMutableCopying-Protocol.h>
 
-@class NSDictionary, NSSet, NSString;
+@class DVTStackBacktrace, NSDictionary, NSSet, NSString;
 
 @interface DVTMacroDefinitionTable : NSObject <NSCopying, NSMutableCopying>
 {
     struct DVTMacroValueAssignmentMapTable *_mapTable;
+    CDUnknownBlockType _willSetValueBlock;
+    CDUnknownBlockType _didSetValueBlock;
+    DVTStackBacktrace *_rootBacktrace;
+    DVTMacroDefinitionTable *_originalTable;
     NSString *_label;
-    // Error parsing type: AB, name: _cacheLock
     NSDictionary *_cachedDictRep;
     NSSet *_cachedMacroNameSet;
     unsigned long long _cachedHash;
-    int _retainCount;
+    struct os_unfair_lock_s _cacheLock;
     BOOL _isImmutable;
     BOOL _postsChangeNotifications;
-    CDUnknownBlockType _willSetValueBlock;
-    CDUnknownBlockType _didSetValueBlock;
+    BOOL _declaredMutable;
 }
 
 + (id)macroNameRegistry;
++ (id)empty;
 + (id)newWithLabel:(id)arg1;
 @property BOOL postsChangeNotifications; // @synthesize postsChangeNotifications=_postsChangeNotifications;
 - (void).cxx_destruct;
@@ -36,9 +39,11 @@
 - (void)setObject:(id)arg1 forKeyedSubscript:(id)arg2;
 - (id)objectForKeyedSubscript:(id)arg1;
 - (id)valueForKey:(id)arg1;
+- (void)declareMutable;
 - (void)makeImmutable;
 - (BOOL)isImmutable;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
+- (id)copyWithLabel:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)removeAllMacros;
 - (void)removeMacroNames:(id)arg1;
@@ -52,7 +57,9 @@
 - (void)enumerateValuesForMacroName:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (id)valueForMacroName:(id)arg1 conditionSet:(id)arg2;
 - (void)parseAndSetValue:(id)arg1 forMacroName:(id)arg2 conditionSet:(id)arg3;
+- (void)_setLiteralValue:(id)arg1 forMacroName:(id)arg2 conditionSet:(id)arg3 wantsCheckForDVTMacroExpansionConformance:(BOOL)arg4;
 - (void)setLiteralValue:(id)arg1 forMacroName:(id)arg2 conditionSet:(id)arg3;
+- (void)setStringValue:(id)arg1 forMacroName:(id)arg2 conditionSet:(id)arg3;
 - (void)setValue:(id)arg1 forMacroName:(id)arg2 conditionSet:(id)arg3;
 - (void)discardCaches;
 - (BOOL)isEqual:(id)arg1;
@@ -66,11 +73,7 @@
 - (void)dealloc;
 - (id)init;
 - (id)initWithLabel:(id)arg1;
-- (BOOL)_isDeallocating;
-- (BOOL)_tryRetain;
-- (unsigned long long)retainCount;
-- (oneway void)release;
-- (id)retain;
+- (id)initWithLabel:(id)arg1 rootBacktrace:(id)arg2;
 
 @end
 

@@ -18,11 +18,12 @@
 @property(readonly) IBDocument *document; // @synthesize document=_document;
 - (void).cxx_destruct;
 - (void)verifyViewsHaveCorrectFrames;
+- (void)_verifyRemoveCustomClassAndRuntimeAttributesForIBAutolayoutGuide;
 - (void)_verifyRootObjectRootsAllObjectsAndPopulateMessages:(id)arg1;
 - (void)_verifyFramesInSyncForViewsForAutoresizingMasks;
 - (void)_verifyXcodeContentViews;
 - (void)_verifyIDGenerationStrategy;
-- (void)_verifyGeneratesPrototypingConstraints;
+- (void)_verifyMisplacementFlagOnNonAutolayoutDocument;
 - (void)_verifyTranslatesAutoresizingMaskIntoConstraints;
 - (void)_verifyConstraintsAndPopulateMessages:(id)arg1;
 - (void)_verifyDevelopmentTarget;
@@ -33,7 +34,7 @@
 - (void)_verifyExclusiveConnectionsAndPopulateMessages:(id)arg1;
 - (void)_verifyIllegalEditorSizesAndPopulateMessages:(id)arg1;
 - (void)verifyAndPopulateMessages:(id)arg1;
-- (void)verificationDidFinish;
+- (void)verifyEnableAutolayout;
 - (id)performVerification;
 - (id)initWithDocument:(id)arg1;
 

@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Foundation/NSObject.h>
+#import <objc/NSObject.h>
 
 @class NSMutableArray, NSString;
 
@@ -21,6 +21,7 @@
 + (BOOL)shouldCreateTimedTraceWithName:(id)arg1;
 + (id)_namesToTraceObjectsDictionary;
 + (id)_enabledTraceNames;
+- (void).cxx_destruct;
 - (void)endSubtraceWithDescription:(id)arg1;
 - (void)markWithDescription:(id)arg1;
 - (void)beginSubtraceWithDescription:(id)arg1;

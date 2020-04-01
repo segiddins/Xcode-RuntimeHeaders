@@ -18,7 +18,8 @@ __attribute__((visibility("hidden")))
     struct TileMetrics _tileMetrics;
     DTTimelineDecorator *_decorator;
     DTTimelineTileDrawingProvider *_drawingProvider;
-    DTTimelineTileDrawingContent *_currentDrawingContent;
+    DTTimelineTileDrawingContent *_drawableContent;
+    BOOL _contentComing;
     BOOL _presentingCheckerboard;
     unsigned long long _tileIndex;
 }
@@ -35,18 +36,19 @@ __attribute__((visibility("hidden")))
 - (struct DynamicRange)dynamicRangeForTimeRange:(struct XRTimeRange)arg1;
 - (void)setTileMetrics:(struct TileMetrics *)arg1;
 @property(nonatomic) double displayScale;
+- (void)prepareTileForReuseAtIndex:(unsigned long long)arg1;
 - (void)dealloc;
 - (id)initWithIndex:(unsigned long long)arg1 tileSize:(struct CGSize)arg2 tileMetrics:(struct TileMetrics *)arg3 decorator:(id)arg4;
 - (void)discardContentIfPossible;
 - (BOOL)isContentDiscarded;
 - (id)actionForLayer:(id)arg1 forKey:(id)arg2;
-- (void)drawLayer:(id)arg1 inContext:(struct CGContext *)arg2;
+- (void)displayLayer:(id)arg1;
 - (void)invalidate;
 - (void)removeFromSuperlayer;
 - (void)attachToSuperlayer:(id)arg1;
 - (BOOL)backedByLayer:(id)arg1;
 @property(readonly, nonatomic) BOOL displaying;
-- (void)layoutWithOffset:(double)arg1;
+- (void)layoutWithOffset:(struct CGPoint)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

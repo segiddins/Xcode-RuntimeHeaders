@@ -4,16 +4,17 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <DVTKit/DVTViewController.h>
+#import <IDEKit/IDEViewController.h>
 
-#import "DVTFindBarHostable-Protocol.h"
-#import "DVTScopeBarHost-Protocol.h"
-#import "NSOutlineViewDataSource-Protocol.h"
-#import "NSOutlineViewDelegate-Protocol.h"
+#import <IDEProductsUI/DVTFindBarHostable-Protocol.h>
+#import <IDEProductsUI/DVTScopeBarHost-Protocol.h>
+#import <IDEProductsUI/IDEAnalyticsPointLogViewControllerProtocol-Protocol.h>
+#import <IDEProductsUI/NSOutlineViewDataSource-Protocol.h>
+#import <IDEProductsUI/NSOutlineViewDelegate-Protocol.h>
 
-@class DVTBasicFindBar, DVTCrashLog, DVTCrashLogOutlineView, DVTCrashPoint, DVTDelayedInvocation, DVTNotificationToken, DVTScopeBarController, DVTScopeBarsManager, DVTUserDefaultsLeastRecentlyUsedCache, NSArray, NSDictionary, NSScrollView, NSString, NSValue, NSView;
+@class DVTBasicFindBar, DVTCrashLog, DVTCrashLogOutlineView, DVTCrashPoint, DVTDelayedInvocation, DVTNotificationToken, DVTScopeBarController, DVTScopeBarsManager, DVTUserDefaultsLeastRecentlyUsedCache, IDEAnalyticsPointLogViewController, NSArray, NSDictionary, NSScrollView, NSString, NSValue, NSView;
 
-@interface DVTCrashLogViewController : DVTViewController <NSOutlineViewDataSource, NSOutlineViewDelegate, DVTFindBarHostable, DVTScopeBarHost>
+@interface DVTCrashLogViewController : IDEViewController <NSOutlineViewDataSource, NSOutlineViewDelegate, DVTFindBarHostable, DVTScopeBarHost, IDEAnalyticsPointLogViewControllerProtocol>
 {
     DVTBasicFindBar *_findBar;
     DVTScopeBarController *_findBarScopeBarController;
@@ -29,6 +30,7 @@
     DVTCrashLog *_crashLog;
     DVTCrashPoint *_crashPoint;
     NSArray *_findBarMatches;
+    IDEAnalyticsPointLogViewController *_analyticsPointLogViewController;
     NSView *_scopeBarsBaseView;
     NSArray *_findBarMatchingFrames;
     NSScrollView *_scrollView;
@@ -38,6 +40,7 @@
 }
 
 + (id)_colorForStackFrameWithoutSymbols;
++ (id)keyPathsForValuesAffectingIsSymbolicating;
 + (void)initialize;
 @property(retain) NSString *findString; // @synthesize findString=_findString;
 @property __weak DVTCrashLogOutlineView *outlineView; // @synthesize outlineView=_outlineView;
@@ -48,12 +51,14 @@
 @property(copy) NSArray *findBarMatchingFrames; // @synthesize findBarMatchingFrames=_findBarMatchingFrames;
 @property(retain) NSView *scopeBarsBaseView; // @synthesize scopeBarsBaseView=_scopeBarsBaseView;
 @property(nonatomic) BOOL isFindBarInstalled; // @synthesize isFindBarInstalled=_isFindBarInstalled;
+@property(nonatomic) __weak IDEAnalyticsPointLogViewController *analyticsPointLogViewController; // @synthesize analyticsPointLogViewController=_analyticsPointLogViewController;
 @property(copy) NSArray *findBarMatches; // @synthesize findBarMatches=_findBarMatches;
 @property(retain, nonatomic) DVTCrashPoint *crashPoint; // @synthesize crashPoint=_crashPoint;
 @property(retain, nonatomic) DVTCrashLog *crashLog; // @synthesize crashLog=_crashLog;
 @property(retain, nonatomic) DVTDelayedInvocation *saveCrashLogScrollPositionInvocation; // @synthesize saveCrashLogScrollPositionInvocation=_saveCrashLogScrollPositionInvocation;
 - (void).cxx_destruct;
 - (void)_updateFindBar:(id)arg1;
+- (void)pullSharedFindPattern;
 - (id)findBar;
 - (id)scopeBarsManager;
 - (void)basicFindBarLostFocus:(id)arg1;
@@ -65,13 +70,16 @@
 - (BOOL)_findNextByWrapping:(BOOL)arg1;
 - (long long)findMatchingFramesAndThreads;
 - (void)clearFindMatches;
-- (long long)basicFindBar:(id)arg1 findString:(id)arg2 caseSensitive:(BOOL)arg3 withFindType:(unsigned long long)arg4 andMatchStyle:(int)arg5;
-- (BOOL)basicFindBar:(id)arg1 supportsMatchStyle:(int)arg2;
+- (long long)basicFindBar:(id)arg1 findString:(id)arg2 caseSensitive:(BOOL)arg3 withFindType:(unsigned long long)arg4 andMatchStyle:(unsigned long long)arg5;
+- (BOOL)basicFindBar:(id)arg1 supportsMatchStyle:(unsigned long long)arg2;
 - (BOOL)basicFindBar:(id)arg1 supportsFindType:(unsigned long long)arg2;
 - (void)dismissFindBar:(id)arg1 andRestoreSelection:(BOOL)arg2;
 - (void)dismissFindBar;
 - (void)showContentFindView;
 - (void)find:(id)arg1;
+- (void)symbolicateAnalyticsLog:(id)arg1;
+- (void)showAnalyticsLogInFinder:(id)arg1;
+- (BOOL)validateMenuItem:(id)arg1;
 - (id)outlineView:(id)arg1 viewForTableColumn:(id)arg2 item:(id)arg3;
 - (id)_frameAndImageAttributes;
 - (double)outlineView:(id)arg1 heightOfRowByItem:(id)arg2;
@@ -83,7 +91,7 @@
 - (BOOL)stackFrameIsLastChildOfThread:(id)arg1;
 - (id)framesForThreadRespectingCompression:(id)arg1;
 - (id)threadsRespectingCompression;
-- (void)toggleThreadAndFrameCompression;
+- (void)toggleLibraryFrameCompression;
 - (id)stackFrameImage:(id)arg1;
 - (id)stackFrameFont:(id)arg1;
 - (id)stackFrameColor:(id)arg1;
@@ -95,12 +103,18 @@
 - (unsigned long long)compressionPadding;
 - (void)scrollViewBoundsDidChange:(id)arg1;
 - (void)_restoreCrashLogScrollPosition;
-@property BOOL compressThreadsAndFrames;
+@property BOOL compressLibraryFrames;
 - (void)_restoreDefaultExpansion;
+- (BOOL)wantsAutomaticSymbolication;
+- (void)refreshCrashLogView;
+- (void)symbolicateWithCompletion:(CDUnknownBlockType)arg1;
+@property(readonly) BOOL isSymbolicating;
+- (id)crashLogProvider;
 - (void)primitiveInvalidate;
 - (void)loadView;
 
 // Remaining properties
+@property(readonly) BOOL compressLowSampleCountFrames;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;

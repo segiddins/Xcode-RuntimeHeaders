@@ -11,6 +11,7 @@
 }
 
 + (Class)repIdentifierClass;
+- (id)inferredComponentIDsForPaths:(id)arg1;
 
 @end
 

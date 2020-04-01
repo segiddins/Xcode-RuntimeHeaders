@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <DVTKit/DVTViewController.h>
+#import <DVTViewControllerKit/DVTViewController.h>
 
 #import <IDESpriteKitParticleEditor/NSPopoverDelegate-Protocol.h>
 
@@ -29,6 +29,7 @@
     NSScrollView *_scrollView;
 }
 
++ (BOOL)supportsSecureCoding;
 @property __weak NSScrollView *scrollView; // @synthesize scrollView=_scrollView;
 @property(nonatomic) double verticalButtonSpacing; // @synthesize verticalButtonSpacing=_verticalButtonSpacing;
 @property(nonatomic) double horizontalButtonSpacing; // @synthesize horizontalButtonSpacing=_horizontalButtonSpacing;

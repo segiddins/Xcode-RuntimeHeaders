@@ -67,7 +67,6 @@
 - (void)reloadTableViewDataIgnoringEditingActions;
 - (id)contentLayoutView;
 - (void)setContent:(id)arg1;
-- (void)didSetInspectedObjects:(id)arg1;
 - (void)loadView;
 - (void)setupControlBarAfterLoading;
 - (void)primitiveInvalidate;

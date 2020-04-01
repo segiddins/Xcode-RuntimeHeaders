@@ -7,20 +7,20 @@
 #import <IDEKit/IDEViewController.h>
 
 @class DVTObservingToken, NSProgressIndicator, NSTextField;
-@protocol IDEProvisioningSigningSelectionDataSource;
+@protocol IDEProvisioningRepairBusyReasonDataSource;
 
 @interface IDEProvisioningRepairProgressIndicatorViewController : IDEViewController
 {
-    id <IDEProvisioningSigningSelectionDataSource> _dataSource;
-    NSTextField *_busyReasonLabel;
+    id <IDEProvisioningRepairBusyReasonDataSource> _dataSource;
     NSProgressIndicator *_busyIndicator;
+    NSTextField *_busyReasonLabel;
     DVTObservingToken *_repairBusyReasonObserver;
 }
 
 @property(retain, nonatomic) DVTObservingToken *repairBusyReasonObserver; // @synthesize repairBusyReasonObserver=_repairBusyReasonObserver;
-@property __weak NSProgressIndicator *busyIndicator; // @synthesize busyIndicator=_busyIndicator;
 @property __weak NSTextField *busyReasonLabel; // @synthesize busyReasonLabel=_busyReasonLabel;
-@property(readonly, nonatomic) id <IDEProvisioningSigningSelectionDataSource> dataSource; // @synthesize dataSource=_dataSource;
+@property(nonatomic) __weak NSProgressIndicator *busyIndicator; // @synthesize busyIndicator=_busyIndicator;
+@property(retain, nonatomic) id <IDEProvisioningRepairBusyReasonDataSource> dataSource; // @synthesize dataSource=_dataSource;
 - (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (void)startObservations;

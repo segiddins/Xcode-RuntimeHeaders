@@ -6,19 +6,16 @@
 
 #import <IDEInterfaceBuilderCocoaIntegration/IBNSStoryboardAbstractTriggeredSegue.h>
 
-#import <IDEInterfaceBuilderCocoaIntegration/NSCoding-Protocol.h>
-
-@interface IBNSStoryboardCustomSegue : IBNSStoryboardAbstractTriggeredSegue <NSCoding>
+@interface IBNSStoryboardCustomSegue : IBNSStoryboardAbstractTriggeredSegue
 {
 }
 
++ (id)ibDefaultImageForInstance:(id)arg1 targetRuntime:(id)arg2;
 + (id)classIdentifier;
 + (BOOL)wantsDefaultCustomClassCompatibilityWarning;
 - (id)instantiateSegueTemplate;
 - (id)badgeImage;
-- (void)ibWarnings:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
+- (void)ibPopulateIssues:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
 
 @end
 

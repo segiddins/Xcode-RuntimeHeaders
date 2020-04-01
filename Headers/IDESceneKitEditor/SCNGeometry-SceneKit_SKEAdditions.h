@@ -9,6 +9,17 @@
 @class NSArray, NSString;
 
 @interface SCNGeometry (SceneKit_SKEAdditions)
++ (id)keyPathsForValuesAffectingSke_enableTessellation;
++ (id)keyPathsForValuesAffectingske_enableTessellation_edit;
++ (id)keyPathsForValuesAffectingshaderModifiers_edit;
++ (id)keyPathsForValuesAffectingske_primitiveSegmentCount3_edit;
++ (id)keyPathsForValuesAffectingske_primitiveSegmentCount2_edit;
++ (id)keyPathsForValuesAffectingske_primitiveSize3_edit;
++ (id)keyPathsForValuesAffectingske_primitiveSize2_edit;
++ (id)keyPathsForValuesAffectingsubdivisionLevel_edit;
++ (id)keyPathsForValuesAffectingname_edit;
+@property(nonatomic) long long ske_materialSelectionIndex;
+@property(nonatomic) BOOL ske_enableTessellation;
 @property(nonatomic) struct CGSize ske_primitiveSegmentCount2;
 @property(nonatomic) struct SCNVector3 ske_primitiveSegmentCount3;
 @property(nonatomic) struct CGSize ske_primitiveSize2;
@@ -17,5 +28,21 @@
 @property(readonly) NSArray *ske_allElements;
 @property(readonly) NSString *ske_polygonCount;
 @property(readonly) NSString *ske_vertexCount;
+- (void)setske_enableTessellation_edit:(BOOL)arg1;
+- (BOOL)ske_enableTessellation_edit;
+- (void)setshaderModifiers_edit:(id)arg1;
+- (id)shaderModifiers_edit;
+- (void)setske_primitiveSegmentCount3_edit:(struct SCNVector3)arg1;
+- (struct SCNVector3)ske_primitiveSegmentCount3_edit;
+- (void)setske_primitiveSegmentCount2_edit:(struct CGSize)arg1;
+- (struct CGSize)ske_primitiveSegmentCount2_edit;
+- (void)setske_primitiveSize3_edit:(struct SCNVector3)arg1;
+- (struct SCNVector3)ske_primitiveSize3_edit;
+- (void)setske_primitiveSize2_edit:(struct CGSize)arg1;
+- (struct CGSize)ske_primitiveSize2_edit;
+- (void)setsubdivisionLevel_edit:(unsigned long long)arg1;
+- (unsigned long long)subdivisionLevel_edit;
+- (void)setname_edit:(id)arg1;
+- (id)name_edit;
 @end
 

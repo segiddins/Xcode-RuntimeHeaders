@@ -6,11 +6,23 @@
 
 #import <Foundation/NSUserDefaults.h>
 
-@interface NSUserDefaults (DVTNSUserDefaultsAdditions)
+#import <DVTFoundation/DVTUserDefaults-Protocol.h>
+
+@class NSString;
+
+@interface NSUserDefaults (DVTNSUserDefaultsAdditions) <DVTUserDefaults>
 - (void)dvt_setupDefaultsFromEnvironment;
 - (void)dvt_setFilePath:(id)arg1 forKey:(id)arg2;
 - (id)dvt_filePathForKey:(id)arg1;
 - (BOOL)dvt_objectIsChangedForKey:(id)arg1;
 - (id)dvt_objectForKey:(id)arg1 inVolatileDomainForName:(id)arg2;
+- (void)setObject:(id)arg1 forKeyedSubscript:(id)arg2;
+- (id)objectForKeyedSubscript:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @end
 

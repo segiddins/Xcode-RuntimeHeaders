@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <DVTKit/DVTViewController.h>
+#import <DVTViewControllerKit/DVTViewController.h>
 
 @class NSButton, NSError, NSTextField, XCSUIAddServerWindowController;
 
@@ -34,6 +34,7 @@
 - (void)windowDidUpdate:(id)arg1;
 - (void)cancelAction:(id)arg1;
 - (void)goBackAction:(id)arg1;
+- (void)_addAccountForAuthenticatedService:(id)arg1;
 - (void)okAction:(id)arg1;
 - (void)primitiveInvalidate;
 - (void)viewWillUninstall;

@@ -11,11 +11,11 @@
 
 @interface IDEDiagnosticActivityLogMessage : IDEActivityLogMessage
 {
+    long long _diagnosticSeverity;
     DVTDispatchLock *_diagnosticFixItItemsLock;
     NSMutableArray *_diagnosticFixItItems;
     DVTWeakInterposer *_delegate_dvtWeakInterposer;
     DVTWeakInterposer *_representedObject_dvtWeakInterposer;
-    int _diagnosticSeverity;
 }
 
 + (id)keyPathsForValuesAffectingFixableDiagnosticItems;
@@ -31,7 +31,7 @@
 - (void)insertObject:(id)arg1 inDiagnosticFixItItemsAtIndex:(unsigned long long)arg2;
 @property(readonly) NSMutableArray *mutableDiagnosticFixItItems;
 @property(readonly) NSString *severityString;
-@property(readonly) int diagnosticSeverity;
+@property(readonly) long long diagnosticSeverity;
 - (id)description;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
@@ -40,7 +40,7 @@
 - (BOOL)_isEqualToDiagnosticItem:(id)arg1 disregardingTimestamp:(BOOL)arg2;
 - (BOOL)_array:(id)arg1 isEqualToArray:(id)arg2;
 - (id)init;
-- (id)initWithSeverity:(int)arg1 title:(id)arg2 location:(id)arg3;
+- (id)initWithSeverity:(long long)arg1 title:(id)arg2 location:(id)arg3;
 
 @end
 

@@ -6,24 +6,27 @@
 
 #import <objc/NSObject.h>
 
-@class DVTFilePath, IDEArchivedApplication, IDEArchivedContent, NSArray, NSDate, NSDictionary, NSMutableDictionary, NSString;
+#import <IDEFoundation/IDEArchiveDistributionRecordObserver-Protocol.h>
+#import <IDEFoundation/IDEDistributable-Protocol.h>
+#import <IDEFoundation/IDEDistributableEventRecording-Protocol.h>
 
-@interface IDEArchive : NSObject
+@class DVTDelayedInvocation, DVTDispatchLock, DVTFilePath, IDEArchiveDistributionRecord, IDEArchivedContent, IDEProductCategory, NSArray, NSDate, NSMutableDictionary, NSString;
+@protocol IDEDistributableContent, IDEDistributableEventRecording;
+
+@interface IDEArchive : NSObject <IDEArchiveDistributionRecordObserver, IDEDistributable, IDEDistributableEventRecording>
 {
     NSMutableDictionary *_infoDictionary;
-    BOOL _savePending;
+    DVTDispatchLock *_infoDictionaryLock;
+    DVTDelayedInvocation *_delayedSave;
     NSArray *_topLevelDistributionItems;
+    NSArray *_distributionsStorage;
+    DVTDispatchLock *_onlineStatusLock;
     BOOL _symbolDownloadInProgress;
-    BOOL _estimateInProgress;
-    BOOL _isFromFreeProvisioningTeam;
     DVTFilePath *_path;
     IDEArchivedContent *_archivedContent;
-    NSString *_archiveSize;
+    NSString *_statusString;
 }
 
-+ (long long)_computedApproximateAppStoreFileSizeForArchiveContentPath:(id)arg1 forPlatform:(id)arg2;
-+ (long long)_fileSizeForPathString:(id)arg1;
-+ (BOOL)_zipDirectoryAtPath:(id)arg1 destination:(id)arg2 excluding:(id)arg3;
 + (id)_availableArchivePathInDirectory:(id)arg1 withName:(id)arg2 creationDate:(id)arg3 usingFileManager:(id)arg4;
 + (id)_archivePathOverride;
 + (id)_archivePlistPathForArchivePath:(id)arg1;
@@ -38,8 +41,11 @@
 + (id)_infoForToolchain:(id)arg1;
 + (id)installArchiveWithArchivePath:(id)arg1 usingFileManager:(id)arg2;
 + (id)archiveWithArchivePath:(id)arg1;
++ (id)keyPathsForValuesAffectingCurrentDeveloperIDUploadRecord;
 + (id)keyPathsForValuesAffectingProductDefinitionPlistPath;
 + (id)_productDefinitionPlistPathForArchivePath:(id)arg1;
++ (id)keyPathsForValuesAffectingSubmissionsDirectoryPath;
++ (id)_submissionsDirectoryPathForArchivePath:(id)arg1;
 + (id)keyPathsForValuesAffectingSourceControlBlueprint;
 + (id)_sourceControlBlueprintDirectoryPathForArchivePath:(id)arg1;
 + (id)keyPathsForValuesAffectingDSYMDirectoryPath;
@@ -47,8 +53,10 @@
 + (id)keyPathsForValuesAffectingProductsDirectoryPath;
 + (id)_productsDirectoryPathForArchivePath:(id)arg1;
 + (id)keyPathsForValuesAffectingCanDownloadSymbols;
-@property BOOL isFromFreeProvisioningTeam; // @synthesize isFromFreeProvisioningTeam=_isFromFreeProvisioningTeam;
-@property BOOL estimateInProgress; // @synthesize estimateInProgress=_estimateInProgress;
++ (id)keyPathsForValuesAffectingProducts_hideDeveloperIDStatus;
++ (id)keyPathsForValuesAffectingProducts_hideShowStatusLog;
++ (id)largestImageInFilePaths:(id)arg1;
+@property(retain, nonatomic) NSString *statusString; // @synthesize statusString=_statusString;
 @property(readonly) IDEArchivedContent *archivedContent; // @synthesize archivedContent=_archivedContent;
 @property(retain) DVTFilePath *path; // @synthesize path=_path;
 - (void).cxx_destruct;
@@ -56,38 +64,62 @@
 @property(readonly) NSString *toolchainIdentifier;
 - (id)_toolchainInfo;
 @property(readonly) BOOL containsCustomToolchain;
-- (void)estimateSizeInBackgroundForPlatform:(id)arg1;
-- (void)_saveArchive:(id)arg1;
-- (void)markDirty;
-- (id)objectForEnterpriseDistributionKey:(id)arg1;
-- (void)setObject:(id)arg1 forEnterpriseDistributionKey:(id)arg2;
-@property(copy) NSDictionary *enterpriseDistributionManifest;
-@property(readonly) NSString *archiveSize; // @synthesize archiveSize=_archiveSize;
+- (void)_saveArchive;
+- (void)_delayedSaveArchive;
 - (void)addDownloadedSymbolUUID:(id)arg1;
 @property(readonly, copy) NSArray *downloadedSymbolUUIDs;
-@property(copy) NSString *statusString;
+- (BOOL)_downloadStatusLogFromURL:(id)arg1 destination:(id)arg2 record:(id)arg3 error:(id *)arg4;
+- (id)auditLogPathForRecord:(id)arg1;
+- (id)embeddedPackagePathForRecord:(id)arg1 error:(id *)arg2;
+- (BOOL)_lockedCheckDeveloperIDStatusForRecord:(id)arg1 error:(id *)arg2;
+- (BOOL)refreshDeveloperIDStatus:(id *)arg1;
+@property(readonly) BOOL isCurrentDeveloperIDUploadRecordSuccessfulOrProcessing;
+@property(readonly) IDEArchiveDistributionRecord *currentDeveloperIDUploadRecord;
+- (void)distributionRecordUpdated:(id)arg1;
+- (void)setDistributions:(id)arg1;
+- (BOOL)addDistribution:(id)arg1 error:(id *)arg2;
+- (BOOL)_embedPackageFromDistributionRecord:(id)arg1 error:(id *)arg2;
+@property(readonly, copy) NSArray *distributions;
 @property(copy) NSString *comment;
-@property long long estimatedAppStoreFileSize;
-@property BOOL estimatedAppStoreFileSizeIsValid;
 @property(readonly) NSDate *creationDate;
 @property(readonly) unsigned long long version;
 @property(readonly) NSString *schemeName;
 @property(copy) NSString *name;
 @property(readonly) DVTFilePath *productDefinitionPlistPath;
+@property(readonly) DVTFilePath *submissionsDirectoryPath;
 @property(readonly) DVTFilePath *sourceControlBlueprintDirectoryPath;
 @property(readonly) DVTFilePath *dSYMDirectoryPath;
 @property(readonly) DVTFilePath *productsDirectoryPath;
 @property(readonly) NSMutableDictionary *infoDictionary;
+@property(readonly) id <IDEDistributableEventRecording> recorder;
+@property(readonly) id <IDEDistributableContent> content;
 @property BOOL symbolDownloadInProgress; // @synthesize symbolDownloadInProgress=_symbolDownloadInProgress;
 @property(readonly) BOOL canDownloadSymbols;
 - (BOOL)canSubmitIgnoringPreflightChecks;
 - (BOOL)_canPerformAllTasksWithError:(id *)arg1;
-@property(readonly) BOOL canSubmit;
-@property(readonly) BOOL canExport;
+@property(readonly) BOOL canDistribute;
 @property(readonly) BOOL canValidate;
-- (BOOL)_canPerformTask:(int)arg1 ignorePreflightChecks:(BOOL)arg2 error:(id *)arg3;
-@property(readonly) IDEArchivedApplication *application;
+- (BOOL)_canPerformTask:(long long)arg1 ignorePreflightChecks:(BOOL)arg2 error:(id *)arg3;
 - (id)_initWithPath:(id)arg1 infoDictionary:(id)arg2;
+- (void)dealloc;
+@property(readonly) BOOL products_canExportDeveloperIDApp;
+- (BOOL)products_hideDeveloperIDStatus;
+@property(readonly) BOOL products_hideShowStatusLog;
+- (BOOL)products_hideDownloadSymbols;
+- (id)products_validateButtonTitle;
+- (id)products_distributeButtonTitle;
+@property(readonly) IDEProductCategory *products_productCategory;
+- (id)products_platform;
+- (id)applicationBundle;
+- (id)products_platformName;
+- (id)products_appInfoPlist;
+@property(readonly) NSString *products_displayName;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

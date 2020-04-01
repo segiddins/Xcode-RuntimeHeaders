@@ -20,6 +20,7 @@
 - (id)liveThreadChildItems;
 - (void)invalidateChildItems;
 - (id)childRepresentedObjects;
+- (id)_realRepresentedObject;
 - (BOOL)_shouldSkipRecordedFrames;
 - (BOOL)isLeaf;
 - (id)image;

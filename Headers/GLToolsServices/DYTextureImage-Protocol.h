@@ -5,11 +5,12 @@
 //
 
 #import <GLToolsServices/DYCacheableResource-Protocol.h>
+#import <GLToolsServices/DYTextureStride-Protocol.h>
 #import <GLToolsServices/NSObject-Protocol.h>
 
-@class NSData, NSString;
+@class DYTextureImagePlane, NSData, NSString;
 
-@protocol DYTextureImage <NSObject, DYCacheableResource>
+@protocol DYTextureImage <NSObject, DYCacheableResource, DYTextureStride>
 + (NSString *)textureImageKeyForLevel:(unsigned int)arg1 layer:(unsigned int)arg2;
 @property(readonly, nonatomic) unsigned long long offset;
 @property(readonly, nonatomic) NSData *data;
@@ -21,5 +22,10 @@
 @property(readonly, nonatomic) unsigned long long width;
 @property(readonly, nonatomic) unsigned int genericFormat;
 - (NSData *)uncompressedData;
+
+@optional
+@property(readonly, nonatomic) unsigned long long planeCount;
+@property(readonly, nonatomic) unsigned long long planeIndex;
+- (DYTextureImagePlane *)planeAtIndex:(unsigned long long)arg1;
 @end
 

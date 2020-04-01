@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Foundation/NSObject.h>
+#import <objc/NSObject.h>
 
 @class NSDictionary, NSMutableArray, NSMutableDictionary, PBXContainer;
 
@@ -27,6 +27,7 @@
     struct _NSZone *_objectZone;
     id _delegate;
     NSMutableDictionary *_breakpointFileRefToPathMap;
+    id _errorHandler;
 }
 
 + (id)currentArchiveFormat;
@@ -35,6 +36,7 @@
 + (id)unarchivedRootObjectFromPListArchive:(id)arg1;
 + (id)unarchivedRootObjectFromPListArchive:(id)arg1 userSettings:(id)arg2 contextInfo:(id)arg3;
 + (id)unarchivedRootObjectFromPListArchive:(id)arg1 userSettings:(id)arg2 contextInfo:(id)arg3 inContainer:(id)arg4;
+- (void).cxx_destruct;
 - (id)breakpointFileRefToPathMap;
 - (id)decodeMutablePListDictionaryForKey:(id)arg1;
 - (id)decodeMutablePListArrayForKey:(id)arg1;
@@ -57,6 +59,8 @@
 - (id)decodeRootObject;
 - (id)classNameDecodedForArchiveClassName:(id)arg1;
 - (void)setClassName:(id)arg1 decodedForArchiveClassName:(id)arg2;
+- (void)setErrorHandler:(id)arg1;
+- (id)errorHandler;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (unsigned long long)archivedObjectVersion;
@@ -64,7 +68,6 @@
 - (id)userSettings;
 - (void)setObjectZone:(struct _NSZone *)arg1;
 - (struct _NSZone *)objectZone;
-- (void)dealloc;
 - (id)init;
 - (id)initWithPListArchive:(id)arg1;
 - (id)initWithPListArchive:(id)arg1 userSettings:(id)arg2 contextInfo:(id)arg3;

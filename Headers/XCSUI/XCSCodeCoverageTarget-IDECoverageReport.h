@@ -17,7 +17,9 @@
 @property(readonly, copy, nonatomic) NSString *ide_coverage_title;
 @property(readonly, nonatomic) unsigned long long ide_coverage_filesCount;
 @property(readonly, copy, nonatomic) NSArray *ide_coverage_files;
-@property(readonly, copy, nonatomic) NSString *ide_coverage_identifier;
+- (void)setSortedFiles:(id)arg1;
+- (id)sortedFiles;
+- (id)ide_coverage_identifier;
 @property(readonly, copy, nonatomic) NSArray *ide_coverage_devices;
 
 // Remaining properties

@@ -8,15 +8,22 @@
 
 #import <IDEKit/IDEURLHandler-Protocol.h>
 
-@class NSString;
+@class DVTObservingToken, NSString;
 
 @interface IDEBotsURLHandler : NSObject <IDEURLHandler>
 {
+    DVTObservingToken *_workspaceFinishedLoadingObserver;
 }
 
 + (void)handleURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-+ (void)showWorkspaceForProjectName:(id)arg1 bot:(id)arg2 integration:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
-+ (void)selectBotInReportsNavigator:(id)arg1 integration:(id)arg2;
++ (id)sharedURLHandler;
+- (void).cxx_destruct;
+- (void)promptToAddAccountForHostName:(id)arg1 originalURL:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)handleURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (BOOL)canHandleURL:(id)arg1;
+- (void)botAndIntegrationIDsFromURL:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)openMostRecentWorkspaceWithCompletionBlock:(CDUnknownBlockType)arg1;
+- (void)waitForWorkspace:(id)arg1 completion:(CDUnknownBlockType)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

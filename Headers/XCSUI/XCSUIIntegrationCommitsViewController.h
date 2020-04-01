@@ -4,15 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <DVTKit/DVTViewController.h>
+#import <DVTViewControllerKit/DVTViewController.h>
 
 #import <XCSUI/NSTableViewDataSource-Protocol.h>
 #import <XCSUI/NSTableViewDelegate-Protocol.h>
-#import <XCSUI/XCSBotSupportingEditorHostedViewController-Protocol.h>
 
-@class DVTLozengeTextField, DVTReplacementView, DVTScrollView, NSArray, NSMapTable, NSString, NSTableView, NSTextField, NSView, XCSBot, XCSBotSupportingEditor, XCSContributor, XCSIntegration, XCSUIInsetHorizontalDividerLine, XCSUIProgressReplacementView, _XCSUIAllCommittersBadgeView;
+@class DVTEmptyContentPlaceholder, DVTReplacementView, DVTScrollView, NSArray, NSError, NSMapTable, NSString, NSTableView, NSTextField, NSView, XCSContributor, XCSIntegration, XCSUIInsetHorizontalDividerLine, XCSUIIntegrationCommitterBadgeView, XCSUIProgressReplacementView, _XCSUIAllCommittersBadgeView;
 
-@interface XCSUIIntegrationCommitsViewController : DVTViewController <NSTableViewDelegate, NSTableViewDataSource, XCSBotSupportingEditorHostedViewController>
+@interface XCSUIIntegrationCommitsViewController : DVTViewController <NSTableViewDelegate, NSTableViewDataSource>
 {
     NSArray *_contributors;
     NSArray *_allCommits;
@@ -20,10 +19,8 @@
     NSMapTable *_contributorsAndBadgeViews;
     XCSContributor *_showingDetailsContributor;
     double _defaultHeight;
-    NSArray *_currentSelectedDocumentLocations;
     XCSIntegration *_integration;
-    XCSBotSupportingEditor *_botSupportingEditor;
-    XCSBot *_bot;
+    NSError *_error;
     NSTableView *_committersTableView;
     unsigned long long _countOfFilesChangedInIntegration;
     NSTextField *_contributorsTextField;
@@ -39,16 +36,14 @@
     XCSUIProgressReplacementView *_progressReplacementView;
     NSView *_contentCustomView;
     NSView *_commitsView;
-    NSView *_noCommitsView;
-    DVTLozengeTextField *_noCommitsLozenge;
+    DVTEmptyContentPlaceholder *_noCommitsPlaceholder;
     NSView *_placeholder;
+    XCSUIIntegrationCommitterBadgeView *_activeBadgeView;
 }
 
-+ (BOOL)instancesCanContainDocumentLocation:(id)arg1;
-+ (id)keyPathsForValuesAffectingCurrentSelectedItems;
+@property(retain, nonatomic) XCSUIIntegrationCommitterBadgeView *activeBadgeView; // @synthesize activeBadgeView=_activeBadgeView;
 @property __weak NSView *placeholder; // @synthesize placeholder=_placeholder;
-@property __weak DVTLozengeTextField *noCommitsLozenge; // @synthesize noCommitsLozenge=_noCommitsLozenge;
-@property __weak NSView *noCommitsView; // @synthesize noCommitsView=_noCommitsView;
+@property __weak DVTEmptyContentPlaceholder *noCommitsPlaceholder; // @synthesize noCommitsPlaceholder=_noCommitsPlaceholder;
 @property __weak NSView *commitsView; // @synthesize commitsView=_commitsView;
 @property __weak NSView *contentCustomView; // @synthesize contentCustomView=_contentCustomView;
 @property __weak XCSUIProgressReplacementView *progressReplacementView; // @synthesize progressReplacementView=_progressReplacementView;
@@ -64,22 +59,15 @@
 @property __weak NSTextField *contributorsTextField; // @synthesize contributorsTextField=_contributorsTextField;
 @property unsigned long long countOfFilesChangedInIntegration; // @synthesize countOfFilesChangedInIntegration=_countOfFilesChangedInIntegration;
 @property __weak NSTableView *committersTableView; // @synthesize committersTableView=_committersTableView;
-@property(retain, nonatomic) XCSBot *bot; // @synthesize bot=_bot;
-@property(retain, nonatomic) XCSBotSupportingEditor *botSupportingEditor; // @synthesize botSupportingEditor=_botSupportingEditor;
+@property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(retain, nonatomic) XCSIntegration *integration; // @synthesize integration=_integration;
 - (void).cxx_destruct;
-- (void)selectDocumentLocations:(id)arg1;
-@property(readonly, copy) NSArray *currentSelectedItems;
-@property(readonly, copy) NSArray *currentSelectedDocumentLocations; // @synthesize currentSelectedDocumentLocations=_currentSelectedDocumentLocations;
 - (void)toggleDetailViewForTableCellView:(id)arg1 committer:(id)arg2;
 - (void)tableView:(id)arg1 didRemoveRowView:(id)arg2 forRow:(long long)arg3;
 - (id)tableView:(id)arg1 viewForTableColumn:(id)arg2 row:(long long)arg3;
 - (id)_badgeViewForCommitter:(id)arg1;
 - (double)tableView:(id)arg1 heightOfRow:(long long)arg2;
 - (long long)numberOfRowsInTableView:(id)arg1;
-- (void)drawDividerLineWithPointerToBadge:(id)arg1;
-- (void)showDividerLinePointer;
-- (void)hideDividerLinePointer;
 - (id)commitsDetailViewController;
 - (void)showCommitsView;
 - (void)showNoCommitsView:(id)arg1;
@@ -89,9 +77,9 @@
 - (void)showBadges;
 - (void)hideBadges;
 - (void)updateCommitDetailsWithCommitHistory:(id)arg1;
+- (id)sourceControlWorkspace;
 - (void)refreshLogViewWithSourceControlLogItems:(id)arg1;
-- (id)logItemForCommit:(id)arg1;
-- (void)committersScrollViewContentBoundsDidChange:(id)arg1;
+- (id)logItemForCommit:(id)arg1 inSourceControlWorkspace:(id)arg2;
 - (void)observeCommittersScrollView;
 - (void)removeAllTableColumns;
 - (id)contributors;

@@ -17,10 +17,10 @@
 
 - (void).cxx_destruct;
 - (void)_updateGeniusResults;
-- (BOOL)_getUpdateGeniusResultsPhaseOneBlock:(CDUnknownBlockType *)arg1 phaseTwoBlock:(CDUnknownBlockType *)arg2 phaseThreeBlock:(CDUnknownBlockType *)arg3;
+- (BOOL)_getUpdateGeniusResultsPhase1Block:(CDUnknownBlockType *)arg1 phase2Block:(CDUnknownBlockType *)arg2 phase3Block:(CDUnknownBlockType *)arg3;
 - (void)setIdle:(BOOL)arg1;
 - (void)primitiveInvalidate;
-- (id)_initWithWorkspaceTabController:(id)arg1 navigableItemCoordinator:(id)arg2;
+- (id)_initWithEditorModeViewController:(id)arg1 navigableItemCoordinator:(id)arg2;
 
 @end
 

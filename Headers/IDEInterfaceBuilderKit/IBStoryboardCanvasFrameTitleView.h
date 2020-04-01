@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <DVTKit/DVTLayoutView_ML.h>
+#import <DVTStructuredLayoutKit/DVTLayoutView_ML.h>
 
-@class NSAttributedString, NSColor, NSFont, NSImage, NSString, NSValue, NSView;
+@class NSAttributedString, NSFont, NSImage, NSString, NSValue, NSView;
 
 @interface IBStoryboardCanvasFrameTitleView : DVTLayoutView_ML
 {
@@ -14,7 +14,6 @@
     NSValue *_cachedTitleSize;
     NSFont *_font;
     NSString *_title;
-    NSColor *_titleColor;
     NSImage *_image;
     NSView *_closeButton;
     long long _alignment;
@@ -23,7 +22,6 @@
 @property(nonatomic) long long alignment; // @synthesize alignment=_alignment;
 @property(copy, nonatomic) NSView *closeButton; // @synthesize closeButton=_closeButton;
 @property(copy, nonatomic) NSImage *image; // @synthesize image=_image;
-@property(copy, nonatomic) NSColor *titleColor; // @synthesize titleColor=_titleColor;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(copy, nonatomic) NSFont *font; // @synthesize font=_font;
 - (void).cxx_destruct;

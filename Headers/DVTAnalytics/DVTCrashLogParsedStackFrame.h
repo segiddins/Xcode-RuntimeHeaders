@@ -6,37 +6,45 @@
 
 #import <objc/NSObject.h>
 
+#import <DVTAnalytics/DVTAnalyticsLogStackFrameProtocol-Protocol.h>
+
 @class NSString;
 
-@interface DVTCrashLogParsedStackFrame : NSObject
+@interface DVTCrashLogParsedStackFrame : NSObject <DVTAnalyticsLogStackFrameProtocol>
 {
     BOOL _symbolicated;
-    unsigned long long _depth;
-    NSString *_image;
     NSString *_address;
+    NSString *_comment;
+    long long _depth;
+    NSString *_image;
     NSString *_symbol;
     unsigned long long _offset;
-    NSString *_comment;
     NSString *_sourceFile;
     unsigned long long _sourceLine;
     NSString *_parserIdentifier;
 }
 
 @property(readonly) NSString *parserIdentifier; // @synthesize parserIdentifier=_parserIdentifier;
-@property(getter=isSymbolicated) BOOL symbolicated; // @synthesize symbolicated=_symbolicated;
 @property unsigned long long sourceLine; // @synthesize sourceLine=_sourceLine;
 @property(retain) NSString *sourceFile; // @synthesize sourceFile=_sourceFile;
-@property(retain) NSString *comment; // @synthesize comment=_comment;
 @property unsigned long long offset; // @synthesize offset=_offset;
 @property(retain) NSString *symbol; // @synthesize symbol=_symbol;
-@property(retain) NSString *address; // @synthesize address=_address;
 @property(retain) NSString *image; // @synthesize image=_image;
-@property unsigned long long depth; // @synthesize depth=_depth;
+@property long long depth; // @synthesize depth=_depth;
+@property(getter=isSymbolicated) BOOL symbolicated; // @synthesize symbolicated=_symbolicated;
+@property(retain) NSString *comment; // @synthesize comment=_comment;
+@property(retain) NSString *address; // @synthesize address=_address;
 - (void).cxx_destruct;
-- (id)description;
-- (unsigned long long)hash;
+@property(readonly) NSString *instructionPointerAddressString;
+@property(readonly) unsigned long long stackFrameOffset;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)initWithParserIdentifier:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) Class superclass;
 
 @end
 

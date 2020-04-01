@@ -6,7 +6,11 @@
 
 #import <AppKit/NSFormCell.h>
 
-@interface NSFormCell (IBNSFormCellIntegration)
+#import <IDEInterfaceBuilderCocoaIntegration/IBDocumentArchiving-Protocol.h>
+
+@class NSString;
+
+@interface NSFormCell (IBNSFormCellIntegration) <IBDocumentArchiving>
 + (id)keyPathsForValuesAffectingIbInspectedTitle;
 - (struct CGSize)ibPreferredSizeForSize:(struct CGSize)arg1;
 - (Class)ibEditorClass;
@@ -14,5 +18,15 @@
 - (id)ibInspectedTitle;
 - (id)ibDefaultFontKeyPath;
 - (id)ibQualifyingInfoForDefaultLabel;
+- (id)ibLocalLocalizableStringsAttributeKeyPaths;
+- (id)ibLocalAttributeKeyPaths;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @end
 

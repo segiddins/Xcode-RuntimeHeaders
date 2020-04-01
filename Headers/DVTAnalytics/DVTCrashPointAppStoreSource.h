@@ -21,7 +21,6 @@
 }
 
 + (id)_timestampLock;
-+ (void)invalidateCachedTimestamps;
 @property(readonly) DVTFilePath *cachePath; // @synthesize cachePath=_cachePath;
 @property(readonly) DVTCrashPointParameters *parameters; // @synthesize parameters=_parameters;
 @property(readonly) NSMapTable *identifierToCrashPointRecordObservedMap; // @synthesize identifierToCrashPointRecordObservedMap=_identifierToCrashPointRecordObservedMap;
@@ -35,11 +34,9 @@
 - (void)dealloc;
 - (void)_setUserDataObservationTokenForCrashPointRecord:(id)arg1;
 - (id)pathOfCrashPointRecordForCrashPointIdentifier:(id)arg1;
-- (id)cachedCrashPointsForFilter:(id)arg1 error:(id *)arg2;
-- (void)cacheCrashPoints:(id)arg1;
+- (id)cachedCrashPointsForFilter:(id)arg1;
+- (void)cacheAnalyticsPoints:(id)arg1;
 - (id)_cacheLock;
-- (id)cachedLastRefreshDateForFilter:(id)arg1;
-- (void)cacheLastRefreshDate:(id)arg1 forFilter:(id)arg2;
 - (id)crashPointRecordForIdentifier:(id)arg1 summary:(id)arg2;
 - (id)parameterizedSourceForFilter:(id)arg1;
 - (id)initWithAppIdentifier:(id)arg1 appExtensionPointIdentifier:(id)arg2 parameters:(id)arg3 cachePath:(id)arg4;

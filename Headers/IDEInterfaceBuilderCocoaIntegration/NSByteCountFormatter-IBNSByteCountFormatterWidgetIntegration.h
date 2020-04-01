@@ -6,11 +6,25 @@
 
 #import <Foundation/NSByteCountFormatter.h>
 
-@interface NSByteCountFormatter (IBNSByteCountFormatterWidgetIntegration)
+#import <IDEInterfaceBuilderCocoaIntegration/IBDocumentArchiving-Protocol.h>
+
+@class NSString;
+
+@interface NSByteCountFormatter (IBNSByteCountFormatterWidgetIntegration) <IBDocumentArchiving>
 + (id)keyPathsForValuesAffectingIbInspectedShouldShowActualByteCount;
-- (void)ibWarnings:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
++ (id)instantiateWithDocumentUnarchiver:(id)arg1;
+- (void)ibPopulateIssues:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
 - (BOOL)ibInspectedShouldShowActualByteCount;
-- (id)ibExternalSampleValueTooltipRelatedMethods;
+- (SEL)ibExternalSampleValueTooltipRelatedSelector;
 - (id)ibExternalSampleValueDefault;
+- (id)ibLocalAttributeKeyPaths;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @end
 

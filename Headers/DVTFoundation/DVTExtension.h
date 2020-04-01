@@ -15,7 +15,6 @@
     NSMutableDictionary *_extensionData;
     DVTPlugInManager *_plugInManager;
     NSString *_identifier;
-    NSString *_version;
     NSString *_name;
     DVTPlugIn *_plugIn;
     DVTExtensionPoint *_extensionPoint;
@@ -37,7 +36,6 @@
 @property(readonly) NSDictionary *extensionData; // @synthesize extensionData=_extensionData;
 @property(readonly) DVTPlugInManager *plugInManager; // @synthesize plugInManager=_plugInManager;
 @property(readonly, copy) NSString *name; // @synthesize name=_name;
-@property(readonly, copy) NSString *version; // @synthesize version=_version;
 @property(readonly, copy) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
 - (id)_localizedStringForString:(id)arg1;
@@ -48,6 +46,7 @@
 - (BOOL)_adjustElement:(id)arg1 forKey:(id)arg2 inParameterData:(id)arg3;
 - (BOOL)_adjustAttribute:(id)arg1 forKey:(id)arg2 inParameterData:(id)arg3;
 - (BOOL)_adjustParameterData:(id)arg1 usingSchema:(id)arg2;
+- (id)requiredValueForKey:(id)arg1;
 - (id)objectForKeyedSubscript:(id)arg1;
 - (BOOL)hasValueForKey:(id)arg1;
 - (BOOL)_hasValueForKey:(id)arg1 inParameterData:(id)arg2 usingSchema:(id)arg3;
@@ -57,8 +56,10 @@
 @property(readonly, copy) NSXMLElement *extensionElement;
 @property(readonly, getter=isValid) BOOL valid;
 @property(readonly) NSBundle *bundle;
+@property(readonly, copy) NSString *version;
 @property(readonly, copy) NSString *description;
 - (void)encodeIntoPropertyList:(id)arg1;
+- (void)awakeFromPropertyList;
 - (void)awakeWithPropertyList:(id)arg1;
 - (id)initWithPropertyList:(id)arg1 owner:(id)arg2;
 - (id)initWithExtensionData:(id)arg1 plugIn:(id)arg2;

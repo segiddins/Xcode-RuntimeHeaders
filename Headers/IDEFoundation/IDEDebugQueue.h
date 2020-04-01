@@ -9,12 +9,14 @@
 #import <IDEFoundation/DVTInvalidation-Protocol.h>
 #import <IDEFoundation/IDEDebugNavigableModel-Protocol.h>
 
-@class DVTStackBacktrace, IDEDebugProcess, IDELaunchSession, IDEThread, NSArray, NSString;
+@class DVTStackBacktrace, IDEDebugProcess, IDELaunchSession, IDEThread, NSArray, NSMutableArray, NSString;
 
 @interface IDEDebugQueue : NSObject <IDEDebugNavigableModel, DVTInvalidation>
 {
     NSString *_type;
     BOOL _displayNameComputed;
+    NSMutableArray *_delayedInvalidationChildren;
+    BOOL _toBeInvalidated;
     NSString *_displayName;
     IDEDebugProcess *_parentProcess;
     NSString *_name;
@@ -27,6 +29,7 @@
 + (id)keyPathsForValuesAffectingRecorded;
 + (BOOL)_queueNameBelongsToConcurrentQueues:(id)arg1;
 + (void)initialize;
+@property BOOL toBeInvalidated; // @synthesize toBeInvalidated=_toBeInvalidated;
 @property(retain, nonatomic) IDEThread *recordedThread; // @synthesize recordedThread=_recordedThread;
 @property(copy, nonatomic) NSArray *pendingBlocksThreads; // @synthesize pendingBlocksThreads=_pendingBlocksThreads;
 @property(copy, nonatomic) NSArray *threads; // @synthesize threads=_threads;
@@ -35,18 +38,19 @@
 - (void).cxx_destruct;
 - (void)primitiveInvalidate;
 @property(readonly, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
-- (unsigned long long)numberOfPendingBlocks;
+@property(readonly, nonatomic) unsigned long long numberOfPendingBlocks;
 - (void)setPrimitiveThreads:(id)arg1;
 @property(readonly, nonatomic, getter=isRecorded) BOOL recorded;
 @property(readonly) IDELaunchSession *launchSession;
 @property(readonly, copy) NSString *associatedProcessUUID;
 @property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned long long hash;
+- (BOOL)isEqual:(id)arg1;
 - (id)initWithParentProcess:(id)arg1 name:(id)arg2 type:(id)arg3 recordedThread:(id)arg4;
 
 // Remaining properties
 @property(retain) DVTStackBacktrace *creationBacktrace;
 @property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
 @property(readonly) DVTStackBacktrace *invalidationBacktrace;
 @property(readonly) Class superclass;
 @property(readonly, nonatomic, getter=isValid) BOOL valid;

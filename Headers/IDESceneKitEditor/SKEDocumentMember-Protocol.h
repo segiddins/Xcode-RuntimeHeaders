@@ -13,6 +13,7 @@
 
 @protocol SKEDocumentMember <IDEInspectorMatching, SKEDocumentMemberMutationDelegate, IDEKeyDrivenNavigableItemRepresentedObject>
 + (NSString *)ske_memberClassDescriptionWithPlurality:(BOOL)arg1;
++ (NSArray *)ske_attributeClassesOfInterestInEditorWithAvailability:(unsigned long long)arg1;
 + (unsigned long long)ske_availability;
 @property(readonly) id <SKEDocumentMember> ske_shadableMember;
 @property(readonly) id <SKEDocumentMember> ske_animationMember;
@@ -26,6 +27,7 @@
 @property(readonly) id <SKEDocumentMember> ske_cameraMember;
 @property(readonly) id <SKEDocumentMember> ske_lightMember;
 @property(readonly) id <SKEDocumentMember> ske_nodeMember;
+@property(readonly) BOOL ske_isScene;
 @property(readonly) BOOL ske_isEditable;
 @property(readonly) BOOL ske_isShadable;
 @property(readonly) BOOL ske_isAction;
@@ -42,6 +44,7 @@
 @property(readonly) BOOL ske_isLight;
 @property(readonly) BOOL ske_isNode;
 @property(readonly) SKEDocumentLocation *ske_navigableDocumentLocation;
+@property(readonly) NSArray *ske_overridesMembers;
 @property(readonly) NSArray *ske_attributesMembers;
 @property(readonly) NSArray *ske_childMembers;
 @property(readonly) IDETypeIdentifier *ideModelObjectTypeIdentifier;
@@ -49,11 +52,12 @@
 @property(readonly) NSString *ske_extendedName;
 @property(readonly) NSImage *ske_image;
 @property(readonly) NSString *ske_name;
+@property(readonly) NSString *ske_referencePath;
 @property(readonly) NSString *ske_modelPath;
 @property(readonly) id ske_identifier;
 @property(retain) IDEEditorDocument<SKEDocumentProtocol> *ske_document;
+- (NSArray *)ske_hierarchyAttributesStatusIconNames;
 - (void)ske_setAttribute:(id <SKEDocumentMember>)arg1 ofClass:(Class)arg2;
 - (id <SKEDocumentMember>)ske_attributeOfClass:(Class)arg1;
-- (NSArray *)ske_attributeClassesOfInterestInEditorWithAvailability:(unsigned long long)arg1;
 @end
 

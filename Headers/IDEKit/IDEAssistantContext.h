@@ -12,6 +12,7 @@
 
 @interface IDEAssistantContext : NSObject <NSCopying>
 {
+    IDEWorkspace *_workspace;
     NSWindow *_workspaceWindow;
     IDEWorkspaceTabController *_workspaceTabController;
     IDEAssistantWindowController *_assistantWindowController;
@@ -20,11 +21,11 @@
 @property(retain) IDEAssistantWindowController *assistantWindowController; // @synthesize assistantWindowController=_assistantWindowController;
 @property(retain) IDEWorkspaceTabController *workspaceTabController; // @synthesize workspaceTabController=_workspaceTabController;
 @property(retain, nonatomic) NSWindow *workspaceWindow; // @synthesize workspaceWindow=_workspaceWindow;
+@property(retain, nonatomic) IDEWorkspace *workspace; // @synthesize workspace=_workspace;
 - (void).cxx_destruct;
 @property(readonly) struct CGSize windowSize;
 @property(readonly) NSString *windowTitle;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-@property(readonly) IDEWorkspace *workspace;
 
 @end
 

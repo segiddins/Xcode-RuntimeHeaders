@@ -6,7 +6,7 @@
 
 #import <DevToolsCore/PBXProjectItem.h>
 
-@class NSMutableArray, PBXContainer, PBXFileReference, PBXGroup;
+@class NSDictionary, NSMutableArray, PBXContainer, PBXFileReference, PBXGroup;
 
 @interface XCProjectReferenceInfo : PBXProjectItem
 {
@@ -14,11 +14,13 @@
     PBXContainer *_container;
     NSMutableArray *_targetProxies;
     PBXGroup *_productsGroup;
+    NSDictionary *_projectGeneratorInfo;
     BOOL _needsSync;
     BOOL _createdByUpgrading;
 }
 
 + (id)archivableRelationships;
+- (void).cxx_destruct;
 - (long long)compareName:(id)arg1;
 - (id)description;
 - (BOOL)createdByUpgrading;
@@ -37,7 +39,6 @@
 - (BOOL)needsSync;
 - (void)setNeedsSync:(BOOL)arg1;
 - (void)_needsSyncDueToNotification:(id)arg1;
-- (void)_activeConfigurationNameDidChange:(id)arg1;
 - (void)_startObservingNotifications;
 - (id)container;
 - (void)setContainer:(id)arg1;

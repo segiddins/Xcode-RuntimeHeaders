@@ -14,7 +14,6 @@
     NSString *_uniqueIdentifier;
 }
 
-+ (id)allDefaultFileTypes;
 + (BOOL)itemNameIsFileNameWithoutCatalogExtension;
 + (id)keyPathsForValuesAffectingIbInspectedItemName;
 + (Class)requiredParentClass;
@@ -31,7 +30,6 @@
 - (id)imageIOProperties;
 - (BOOL)matchesFileType:(id)arg1;
 - (id)fileType;
-- (id)defaultFileTypes;
 - (void)setItemName:(id)arg1;
 - (id)itemName;
 - (id)parent;

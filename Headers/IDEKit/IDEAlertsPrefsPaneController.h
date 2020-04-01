@@ -10,9 +10,10 @@
 
 @interface IDEAlertsPrefsPaneController : IDEViewController
 {
-    DVTBorderedView *_borderView;
+    DVTBorderedView *_masterBorderView;
     NSScrollView *_alertsScrollView;
     IDEAlertsView *_alertsView;
+    DVTBorderedView *_detailBorderView;
     NSTableView *_tableView;
     DVTBorderedView *_controlGroupContainer;
     IDEControlGroup *_controlGroup;

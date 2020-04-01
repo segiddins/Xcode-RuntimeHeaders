@@ -18,6 +18,7 @@
     unsigned int _messageSendQueueDepth;
     BOOL _invalid;
     BOOL _prioritizeOutgoingMessages;
+    unsigned int _interposerVersion;
     NSMutableSet *_sources;
     DYIntKeyedDictionary *_replyHandlersMap;
     NSError *_error;
@@ -25,6 +26,7 @@
     CDUnknownFunctionPointerType _dispatch_send;
 }
 
+@property(nonatomic) unsigned int interposerVersion; // @synthesize interposerVersion=_interposerVersion;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(nonatomic) BOOL prioritizeOutgoingMessages; // @synthesize prioritizeOutgoingMessages=_prioritizeOutgoingMessages;
 @property(readonly, retain, nonatomic) NSError *error; // @synthesize error=_error;

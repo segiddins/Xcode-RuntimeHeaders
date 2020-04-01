@@ -7,9 +7,10 @@
 #import <IDEKit/NSObject-Protocol.h>
 
 @class IDEWorkspaceTabController, NSWindow;
+@protocol IDECIService;
 
 @protocol IDEContinuousIntegrationCreateEditBotWindowController <NSObject>
 - (void)beginSessionModalForWorkspaceTabController:(IDEWorkspaceTabController *)arg1 redefineBot:(id)arg2 hostWindow:(NSWindow *)arg3 withCompletionBlock:(void (^)(int, id, NSError *))arg4;
-- (void)beginSessionModalForWorkspaceTabController:(IDEWorkspaceTabController *)arg1 hostWindow:(NSWindow *)arg2 withCompletionBlock:(void (^)(int, id, NSError *))arg3;
+- (void)beginSessionModalForWorkspaceTabController:(IDEWorkspaceTabController *)arg1 selectedService:(id <IDECIService>)arg2 hostWindow:(NSWindow *)arg3 withCompletionBlock:(void (^)(int, id, NSError *))arg4;
 @end
 

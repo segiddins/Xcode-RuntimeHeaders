@@ -8,13 +8,15 @@
 
 @interface NSXMLElement (SKEAdditions)
 + (id)ske_spritekitThreeComponentsPropertyElementWithKeyPath1:(id)arg1 keyPath2:(id)arg2 keyPath3:(id)arg3 editable:(BOOL)arg4;
++ (id)ske_metalSourceFilePickerElementWithKeyPath:(id)arg1 editable:(BOOL)arg2 title:(id)arg3;
 + (id)ske_materialFoldableContentsPropertyElementWithKeyPath:(id)arg1 acceptsImages:(BOOL)arg2 editable:(BOOL)arg3 showKeyPath:(id)arg4 disclosableKeyPath:(id)arg5 disclosablePlainKeyPath:(id)arg6 title:(id)arg7;
 + (id)ske_materialContentsPropertyElementWithKeyPath:(id)arg1 acceptsImages:(BOOL)arg2 editable:(BOOL)arg3;
 + (id)ske_imagePreviewPropertyElementWithKeyPath:(id)arg1;
-+ (id)ske_pathfieldPropertyElementWithKeyPath:(id)arg1 placeholder:(id)arg2 showLink:(BOOL)arg3 showChooser:(BOOL)arg4 editable:(BOOL)arg5;
++ (id)ske_pathfieldPropertyElementWithKeyPath:(id)arg1 linkPathKeyPath:(id)arg2 placeholder:(id)arg3 showLink:(BOOL)arg4 showChooser:(BOOL)arg5 editable:(BOOL)arg6;
 + (id)ske_numberPropertyElementWithKeyPath:(id)arg1 minValue:(id)arg2 maxValue:(id)arg3 editable:(BOOL)arg4;
 + (id)ske_optionElementWithTitle:(id)arg1 value:(id)arg2;
 + (id)ske_enumerationPropertyElementWithKeyPath:(id)arg1 options:(id)arg2 editable:(BOOL)arg3;
++ (id)ske_float4PropertyElementWithKeyPath:(id)arg1 editable:(BOOL)arg2;
 + (id)ske_scrubberPropertyElementWithKeyPath:(id)arg1 minValue:(id)arg2 maxValue:(id)arg3 editable:(BOOL)arg4;
 + (id)ske_elementWithName:(id)arg1 attributes:(id)arg2;
 + (id)ske_elementWithName:(id)arg1 stringValue:(id)arg2 attributes:(id)arg3;

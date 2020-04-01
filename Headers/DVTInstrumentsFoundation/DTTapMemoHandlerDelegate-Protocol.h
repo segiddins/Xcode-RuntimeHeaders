@@ -6,14 +6,15 @@
 
 #import <DVTInstrumentsFoundation/NSObject-Protocol.h>
 
-@class DTTapConfig, DTTapMemo, NSDictionary;
+@class DTTapConfig, DTTapDataMemo, DTTapHeartbeatMemo, NSDictionary;
 @protocol DTTapBulkDataReceiver;
 
 @protocol DTTapMemoHandlerDelegate <NSObject>
-- (void)sendMemo:(DTTapMemo *)arg1 toClientUsingConfig:(DTTapConfig *)arg2;
-- (void)sendMemo:(DTTapMemo *)arg1 toBulkReceiver:(id <DTTapBulkDataReceiver>)arg2;
+- (void)sendHeartbeatMemo:(DTTapHeartbeatMemo *)arg1 toClientUsingConfig:(DTTapConfig *)arg2;
+- (void)sendDataMemo:(DTTapDataMemo *)arg1 toClientUsingConfig:(DTTapConfig *)arg2;
+- (void)sendDataMemo:(DTTapDataMemo *)arg1 toBulkReceiver:(id <DTTapBulkDataReceiver>)arg2;
 
 @optional
-- (NSDictionary *)peekAtMemo:(DTTapMemo *)arg1;
+- (NSDictionary *)peekAtMemo:(DTTapDataMemo *)arg1;
 @end
 

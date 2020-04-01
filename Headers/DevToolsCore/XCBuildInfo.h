@@ -4,62 +4,33 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Foundation/NSObject.h>
+#import <objc/NSObject.h>
 
-@class NSDictionary, NSMutableArray, NSString;
+@class NSDictionary, NSString;
 @protocol XCBuildInfoManagers;
 
 @interface XCBuildInfo : NSObject
 {
-    int _lock;
+    struct os_unfair_lock_s _lock;
     id _entityIdent;
     id <XCBuildInfoManagers> _manager;
     NSDictionary *_indexingInfo;
-    BOOL _canBeProcessed;
-    BOOL _needsToBeProcessed;
-    BOOL _canBeTouched;
-    BOOL _canBeUntouched;
-    unsigned long long _compiledCodeFileSize;
-    NSMutableArray *_buildMessages;
-    NSMutableArray *_errorBuildMessages;
-    NSMutableArray *_warningBuildMessages;
-    NSMutableArray *_analyzerResultBuildMessages;
-    unsigned long long _numberOfErrors;
-    unsigned long long _numberOfWarnings;
-    unsigned long long _numberOfAnalyzerResults;
-    NSString *_toolIdentifier;
+    NSDictionary *_ASTBuildingInfo;
+    NSString *_prefixFilePath;
+    NSString *_precompFilePath;
     NSString *_gccDialectName;
 }
 
+- (void).cxx_destruct;
 - (id)description;
-- (void)removeFileInfoAnnotations;
-- (void)clearCompiledFileInfo;
 - (void)setGccDialectName:(id)arg1;
 - (id)gccDialectName;
-- (void)setToolIdentifier:(id)arg1;
-- (id)toolIdentifier;
-- (void)setNumberOfAnalyzerResults:(unsigned long long)arg1;
-- (unsigned long long)numberOfAnalyzerResults;
-- (void)setNumberOfWarnings:(unsigned long long)arg1;
-- (unsigned long long)numberOfWarnings;
-- (void)setNumberOfErrors:(unsigned long long)arg1;
-- (unsigned long long)numberOfErrors;
-- (id)analyzerResultBuildMessages;
-- (id)warningBuildMessages;
-- (id)errorBuildMessages;
-- (void)addBuildMessage:(id)arg1;
-- (void)removeAllBuildMessages;
-- (id)buildMessages;
-- (void)setCompiledCodeFileSize:(unsigned long long)arg1;
-- (unsigned long long)compiledCodeFileSize;
-- (void)setCanBeUntouched:(BOOL)arg1;
-- (BOOL)canBeUntouched;
-- (void)setCanBeTouched:(BOOL)arg1;
-- (BOOL)canBeTouched;
-- (void)setNeedsToBeProcessed:(BOOL)arg1;
-- (BOOL)needsToBeProcessed;
-- (void)setCanBeProcessed:(BOOL)arg1;
-- (BOOL)canBeProcessed;
+- (void)setPrecompFilePath:(id)arg1;
+- (id)precompFilePath;
+- (void)setPrefixFilePath:(id)arg1;
+- (id)prefixFilePath;
+- (void)setASTBuildingInfo:(id)arg1;
+- (id)ASTBuildingInfo;
 - (void)setIndexingInfo:(id)arg1;
 - (id)indexingInfo;
 - (void)invalidate;

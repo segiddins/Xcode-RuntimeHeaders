@@ -10,7 +10,6 @@
 
 @class NSString;
 
-__attribute__((visibility("hidden")))
 @interface LLDBRPCCompileUnit : NSObject <DBGSBCompileUnit>
 {
     struct SBCompileUnit {
@@ -24,6 +23,7 @@ __attribute__((visibility("hidden")))
 - (id)initWithSBCompileUnit:(const struct SBCompileUnit *)arg1;
 - (id)GetLineEntryAtIndex:(unsigned int)arg1;
 - (unsigned int)FindLineEntryIndex:(unsigned int)arg1 line:(unsigned int)arg2 inline_file_spec:(id)arg3;
+- (unsigned int)GetNumLineEntries;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

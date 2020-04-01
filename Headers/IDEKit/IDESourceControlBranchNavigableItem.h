@@ -11,8 +11,8 @@
 @interface IDESourceControlBranchNavigableItem : IDEKeyDrivenNavigableItem
 {
     NSMutableArray *_computedChildItems;
-    IDESourceControlTreeItem *_treeItem;
     NSError *_error;
+    IDESourceControlTreeItem *_treeItem;
 }
 
 @property(retain) IDESourceControlTreeItem *treeItem; // @synthesize treeItem=_treeItem;

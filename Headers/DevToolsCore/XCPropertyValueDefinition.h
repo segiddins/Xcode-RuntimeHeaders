@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Foundation/NSObject.h>
+#import <objc/NSObject.h>
 
 @class NSString, TSPropertyListDictionary;
 
@@ -17,13 +17,13 @@
     TSPropertyListDictionary *_properties;
 }
 
+- (void).cxx_destruct;
 - (id)valueForUndefinedKey:(id)arg1;
 - (id)properties;
 - (id)localizedDescription;
 - (id)localizedValue;
 - (id)value;
 - (id)commandArgumentGenerationInfo;
-- (void)dealloc;
 - (id)initFromPListDictionary:(id)arg1 forPropertyName:(id)arg2;
 
 @end

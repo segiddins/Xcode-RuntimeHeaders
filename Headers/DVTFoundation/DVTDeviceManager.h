@@ -6,14 +6,17 @@
 
 #import <objc/NSObject.h>
 
-@class DVTLocalComputer, NSMapTable, NSMutableDictionary, NSMutableSet, NSSet;
+@class DVTDeviceStateManager, DVTDispatchLock, DVTLocalComputer, NSMapTable, NSMutableDictionary, NSMutableSet, NSSet;
 
 @interface DVTDeviceManager : NSObject
 {
+    DVTDeviceStateManager *_stateManager;
     NSMutableDictionary *_locatorTrackers;
     NSMapTable *_observingTokens;
     NSMutableSet *_availableDevices;
     DVTLocalComputer *_localComputer;
+    DVTDispatchLock *_startStopLocatingLock;
+    DVTDispatchLock *_availableDevicesLock;
 }
 
 + (id)defaultDeviceManager;
@@ -31,6 +34,7 @@
 - (void)stopLocating;
 - (BOOL)startLocatingWithError:(id *)arg1;
 - (void)startLocating;
+- (void)_updateDefaultsForDevice:(id)arg1;
 - (void)_adjustAvailableDevicesForChangeKind:(unsigned long long)arg1 addedObjects:(id)arg2 removedObjects:(id)arg3;
 - (void)_stopObservingDevice:(id)arg1;
 - (void)_startObservingDevice:(id)arg1;
@@ -40,9 +44,9 @@
 - (id)devicesMatchingPredicate:(id)arg1;
 @property(readonly) DVTLocalComputer *localComputer;
 - (id)init;
+@property(copy) NSSet *availableDevices; // @dynamic availableDevices;
 
 // Remaining properties
-@property(copy) NSSet *availableDevices; // @dynamic availableDevices;
 @property(readonly, copy) NSMutableSet *mutableAvailableDevices; // @dynamic mutableAvailableDevices;
 
 @end

@@ -6,80 +6,109 @@
 
 #import <objc/NSObject.h>
 
+#import <DTGraphKit/CALayerDelegate-Protocol.h>
 #import <DTGraphKit/CALayoutManager-Protocol.h>
 
-@class CALayer, CATextLayer, CIFilter, DTTimelineGraph, DTTimelineGraphLayoutManagerLayerDelegate, NSSet, NSString;
+@class CALayer, CATextLayer, DTTimelineGraph, DTTimelineGraphLabelAreaSubtree, DTTimelineGraphPinnedLabelAreaSubtree, DTTimelineSelectionLayerSubtree, DTTimelineZoomSelectionLayerSubtree, NSMutableSet, NSSet, NSString, _DTTimelineScrollView;
 
 __attribute__((visibility("hidden")))
-@interface DTTimelineGraphLayoutManager : NSObject <CALayoutManager>
+@interface DTTimelineGraphLayoutManager : NSObject <CALayerDelegate, CALayoutManager>
 {
     DTTimelineGraph *_timelineGraph;
-    DTTimelineGraphLayoutManagerLayerDelegate *_layerDelegate;
     CALayer *_inspectionPointLayer;
+    CALayer *_inspectionPointBorderLayer;
     CALayer *_summaryInspectionPointLayer;
-    CALayer *_leftSelectionIndicatorLayer;
-    CALayer *_rightSelectionIndicatorLayer;
-    CALayer *_leftSelectionPointLayer;
-    CALayer *_rightSelectionPointLayer;
+    DTTimelineSelectionLayerSubtree *_selectionIndicatorSubtree;
+    DTTimelineZoomSelectionLayerSubtree *_zoomIndicatorSubtree;
     CALayer *_inspectionSummaryLayer;
-    CALayer *_leftZoomIndicationPointLayer;
-    CALayer *_zoomIndicationLayer;
-    CALayer *_rightZoomIndicationPointLayer;
     CATextLayer *_rangeInfoTextLayer;
     CALayer *_rangeInfoLayer;
-    CALayer *_horizontalScrollerLayer;
-    CALayer *_verticalScrollerLayer;
-    CALayer *_labelBackgroundLayer;
-    CALayer *_labelRightBorderLayer;
-    CIFilter *_colorEffect;
+    DTTimelineGraphLabelAreaSubtree *_labelAreaSubtree;
+    CALayer *_scrollablePlaneRegion;
+    DTTimelineGraphPinnedLabelAreaSubtree *_bottomPinnedLabelArea;
+    _DTTimelineScrollView *_scrollView;
+    unsigned long long _lastNanosecondPerPoint;
     BOOL _displayInspectionSummary;
     BOOL _displayExtendedSummary;
     unsigned long long _inspectionInfoSummaryTime;
     NSSet *_inspectionSummaryContainers;
-    double _computedHeight;
+    double _scrollableContentHeight;
+    double _fullContentHeight;
     NSSet *_visiblePlanes;
+    NSMutableSet *_delegatedLayers;
+    NSSet *__decoratedVisiblePlaneSet;
+    struct map<double, DTTimelinePlaneBorderSubtree *, std::__1::less<double>, std::__1::allocator<std::__1::pair<const double, DTTimelinePlaneBorderSubtree *>>> _borderMap;
     BOOL _animateChanges;
     BOOL _displayCurrentInspectionTime;
+    BOOL _showsScrollers;
 }
 
+@property(nonatomic) BOOL showsScrollers; // @synthesize showsScrollers=_showsScrollers;
 @property(nonatomic) BOOL displayCurrentInspectionTime; // @synthesize displayCurrentInspectionTime=_displayCurrentInspectionTime;
 @property(nonatomic) BOOL animateChanges; // @synthesize animateChanges=_animateChanges;
+- (id).cxx_construct;
 - (void).cxx_destruct;
 - (struct CGPoint)_localMousePoint;
-- (void)_layoutLabelBackground:(id)arg1;
-- (void)_layoutLabelRightBorder:(id)arg1;
-- (BOOL)_shouldShowVerticalScrollerWithOffset:(double)arg1 scrollableHeight:(double)arg2 contentHeight:(double)arg3;
-- (BOOL)_shouldShowHorizontalScrollerWithOffset:(long long)arg1 scrollableWidthInNanoseconds:(unsigned long long)arg2 duration:(unsigned long long)arg3;
-- (void)_layoutVerticalScroller:(id)arg1;
-- (void)_layoutHorizontalScroller:(id)arg1;
-- (void)_layoutScrollers:(id)arg1;
-- (void)_layoutRangeInfo:(id)arg1;
+- (void)layoutLabelBackground;
+- (void)layoutRangeInfo;
 - (void)_layoutInspectionSummary:(id)arg1;
+- (void)layoutInspectionSummary;
 - (void)_layoutInspectionPoint:(id)arg1;
-- (void)_layoutZoomIndicator:(id)arg1;
-- (void)_layoutSelection:(id)arg1;
-- (void)_positionPlane:(id)arg1 includeBottomBorder:(BOOL)arg2;
+- (void)layoutInspectionPoint;
+- (void)layoutZoomIndicator;
+- (double)_scrollableWidth;
+- (double)horizontalScale;
+- (void)_scrollOffsetDidChange;
+- (void)_scrollFinished;
+- (void)setAutohidesScrollers:(BOOL)arg1;
+- (void)flashScrollers;
+- (void)layoutScrollView;
+- (BOOL)_isPresentingScrollableAreaPastDuration;
+- (double)_timelineXOffsetRange;
+- (double)_timelineYOffsetRange;
+- (double)_documentViewXOffsetRange;
+- (double)_documentViewYOffsetRange;
+- (double)_percentageTimelineXOffset;
+- (double)_percentageTimelineYOffset;
+- (double)_percentageDocumentViewXOffset;
+- (double)_percentageDocumentViewYOffset;
+- (void)layoutSelection;
+- (void)contextChanged;
+- (void)_positionPlane:(id)arg1;
 - (void)_positionFullHeightPlane:(id)arg1;
-- (void)_positionBottomBorderForPlane:(id)arg1;
-- (void)_positionTopBorderForPlane:(id)arg1;
 - (void)_updateVisiblePlanes:(id)arg1;
 - (void)clearInspectionSummary;
 - (void)displayInspectionSummaryForNanosecond:(unsigned long long)arg1 planes:(id)arg2;
 - (void)addDecorationSummaryLayer:(id)arg1;
-- (BOOL)_mouseIsOverScroller:(id)arg1;
-- (double)verticalScrollerScale;
-- (double)horizontalScrollerScale;
-@property(readonly, nonatomic) BOOL mouseIsOverVerticalScroller;
-@property(readonly, nonatomic) BOOL mouseIsOverHorizontalScroller;
 - (id)resizablePlaneForRect:(struct CGRect)arg1;
 - (id)planesUnderPoint:(struct CGPoint)arg1;
 - (void)addBottomBorderLayer:(id)arg1;
-- (void)_addPlane:(id)arg1 toMap:(unordered_map_c1fbcd3c *)arg2 distanceFromTop:(double)arg3;
-- (double)computedHeight;
-- (const unordered_map_c1fbcd3c *)planeLayoutMap;
-- (void)generatePlaneLayoutMap;
+- (double)scrollableContentHeight;
+- (const unordered_map_b8b4eb21 *)planeLayoutMap;
+- (int)computeFullLayout;
+- (void)recolorSelections;
+- (void)_recolorBorders;
+- (void)forceColorUpdates;
+@property(retain, nonatomic) id selectionColorEffect;
+- (void)layoutXSensitiveFeatures;
+- (void)performFullLayout;
+- (void)reborderVisibleLayout;
+- (void)hardReset;
+- (id)allVisiblePlanes;
+- (id)visibleDecoratedPlanes;
+- (void)tileDidUpdateDynamicRange:(id)arg1;
+- (void)refreshVisiblePlanes;
 - (void)layoutSublayersOfLayer:(id)arg1;
+- (void)layoutFixedPlanesAndTheirSubplanes;
+- (void)removeVisiblePlaneFromLayout:(id)arg1;
+- (void)makePlaneVisible:(id)arg1;
+- (void)rebuildAccessibilitySelection;
+- (void)rebuildAccessibility;
+- (void)unregisterObservers;
+- (void)registerObservers;
+- (void)dealloc;
 - (id)initWithTimelineGraph:(id)arg1;
+- (id)actionForLayer:(id)arg1 forKey:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

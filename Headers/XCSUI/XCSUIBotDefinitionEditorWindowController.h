@@ -19,10 +19,10 @@
     XCSSettings *_settings;
     DVTReplacementView *_replacementView;
     NSTextField *_editBotLabel;
-    NSButton *_triggersHelpButton;
+    NSButton *_helpButton;
 }
 
-@property __weak NSButton *triggersHelpButton; // @synthesize triggersHelpButton=_triggersHelpButton;
+@property __weak NSButton *helpButton; // @synthesize helpButton=_helpButton;
 @property __weak NSTextField *editBotLabel; // @synthesize editBotLabel=_editBotLabel;
 @property __weak DVTReplacementView *replacementView; // @synthesize replacementView=_replacementView;
 @property(retain, nonatomic) XCSSettings *settings; // @synthesize settings=_settings;
@@ -33,7 +33,8 @@
 @property(retain, nonatomic) XCSBot *bot; // @synthesize bot=_bot;
 @property(retain, nonatomic) IDEWorkspaceTabController *workspaceTabController; // @synthesize workspaceTabController=_workspaceTabController;
 - (void).cxx_destruct;
-- (void)triggersHelp:(id)arg1;
+- (void)goToBotConfigurationURL;
+- (void)goToEnvVarURL;
 - (void)done:(id)arg1;
 - (void)cancel:(id)arg1;
 @property(readonly, nonatomic) XCSUIBotDefinitionContext *definitionContext;

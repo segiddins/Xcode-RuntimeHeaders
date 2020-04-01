@@ -20,6 +20,7 @@
 
 + (BOOL)_ignoreMobileDevice;
 + (id)deviceLocator;
++ (void)initialize;
 - (void).cxx_destruct;
 - (BOOL)matchDevice:(id)arg1 againstOptions:(id)arg2 genericOnly:(BOOL)arg3 allowAliases:(BOOL)arg4;
 - (BOOL)validateDeviceSpecifierOptions:(id)arg1 genericOnly:(BOOL)arg2 allowMultipleMatches:(BOOL)arg3 error:(id *)arg4;
@@ -27,6 +28,7 @@
 - (void)presentError:(id)arg1;
 - (void)deviceDetached:(id)arg1;
 - (void)deviceAttached:(id)arg1;
+- (BOOL)_shouldCreateDeviceInstanceForDeviceRepresentedByToken:(id)arg1;
 - (id)iOSDeviceWithIdentifier:(id)arg1;
 - (id)knownDeviceAtDeviceLocation:(id)arg1;
 - (id)platforms;
@@ -36,6 +38,8 @@
 - (void)forgetDevice:(id)arg1;
 - (void)beginWatchingDevice:(id)arg1;
 - (void)updateDefaultsForDevice:(id)arg1;
+- (void)updateSavedDeviceTokenForDevice:(id)arg1;
+- (void)removeSavedDeviceTokenForDeviceIdentifier:(id)arg1;
 - (id)init;
 
 @end

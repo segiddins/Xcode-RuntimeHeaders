@@ -4,12 +4,25 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <PDFKit/PDFThumbnailView.h>
+#import <Quartz/PDFThumbnailView.h>
 
-@interface PDFThumbnailView (PDFThumbnailViewIBIntegration)
-- (void)setThumbnailSizeHeight:(unsigned long long)arg1;
-- (unsigned long long)thumbnailSizeHeight;
-- (void)setThumbnailSizeWidth:(unsigned long long)arg1;
-- (unsigned long long)thumbnailSizeWidth;
+#import <IDEInterfaceBuilderCocoaIntegration/IBDocumentArchiving-Protocol.h>
+
+@class NSString;
+
+@interface PDFThumbnailView (PDFThumbnailViewIBIntegration) <IBDocumentArchiving>
++ (id)keyPathsForValuesAffectingIbInspectedMaximumNumberOfColumns;
+- (void)setIbInspectedMaximumNumberOfColumns:(id)arg1;
+- (id)ibInspectedMaximumNumberOfColumns;
+- (id)ibInspectedDefaultMaximumNumberOfColumns;
+- (id)ibLocalAttributeKeyPaths;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @end
 

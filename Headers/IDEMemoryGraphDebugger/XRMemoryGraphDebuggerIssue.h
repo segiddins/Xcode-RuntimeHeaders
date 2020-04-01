@@ -8,7 +8,7 @@
 
 #import <IDEMemoryGraphDebugger/DVTRadarSupport_Issue-Protocol.h>
 
-@class NSString;
+@class NSAttributedString, NSString;
 
 @interface XRMemoryGraphDebuggerIssue : NSObject <DVTRadarSupport_Issue>
 {
@@ -27,6 +27,7 @@
 @property(readonly, copy) NSString *briefStringRepresentation;
 
 // Remaining properties
+@property(readonly, copy, nonatomic) NSAttributedString *attributedStringRepresentation;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;

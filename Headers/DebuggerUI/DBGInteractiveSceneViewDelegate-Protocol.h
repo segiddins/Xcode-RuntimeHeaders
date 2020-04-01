@@ -26,5 +26,7 @@
 - (void)mousedOverNode:(SCNNode *)arg1;
 - (void)mouseClickedAndHitRangeSliderNode:(SCNNode *)arg1 withEvent:(NSEvent *)arg2;
 - (void)mouseClickedAndHitNode:(SCNNode *)arg1 withEvent:(NSEvent *)arg2;
+- (void)sceneViewDidChangeEffectiveAppearance;
+- (void)sceneViewDidMoveToWindow;
 @end
 

@@ -6,22 +6,48 @@
 
 #import <QuartzCore/CALayer.h>
 
-@class NSAttributedString, NSColor;
+@class NSAttributedString, NSColor, NSFont, NSMutableAttributedString, NSString;
 
 @interface DTTimelineGraphPlaneLabelLayer : CALayer
 {
     BOOL _preferredFrameSizeComputed;
     struct CGSize _computedPreferredFrameSize;
+    NSMutableAttributedString *_badgeAttrString;
+    NSMutableAttributedString *_topDescriptionAttrString;
+    NSMutableAttributedString *_subtitleAttrString;
+    NSMutableAttributedString *_rightContentAttrString;
+    NSFont *_topSubtitleFont;
+    NSFont *_badgeFont;
+    NSFont *_subtitleFont;
+    NSFont *_rightContentFont;
+    BOOL _mouseHoveringOverLabel;
+    unsigned long long _options;
+    CALayer *_glyphLayer;
     NSAttributedString *_string;
-    NSColor *_textColor;
+    NSString *_badgeString;
+    NSString *_subtitleString;
+    NSString *_topSubtitleString;
+    NSString *_rightContentString;
+    NSColor *_titleTextColor;
+    NSColor *_topSubtitleColor;
 }
 
-@property(retain, nonatomic) NSColor *textColor; // @synthesize textColor=_textColor;
+@property(retain, nonatomic) NSColor *topSubtitleColor; // @synthesize topSubtitleColor=_topSubtitleColor;
+@property(retain, nonatomic) NSColor *titleTextColor; // @synthesize titleTextColor=_titleTextColor;
+@property(copy, nonatomic) NSString *rightContentString; // @synthesize rightContentString=_rightContentString;
+@property(copy, nonatomic) NSString *topSubtitleString; // @synthesize topSubtitleString=_topSubtitleString;
+@property(copy, nonatomic) NSString *subtitleString; // @synthesize subtitleString=_subtitleString;
+@property(copy, nonatomic) NSString *badgeString; // @synthesize badgeString=_badgeString;
 @property(copy, nonatomic) NSAttributedString *string; // @synthesize string=_string;
 - (void).cxx_destruct;
 - (void)setContentsScale:(double)arg1;
 - (void)drawInContext:(struct CGContext *)arg1;
+- (struct __CTLine *)_createLineToDrawBasedOnString:(id)arg1 truncationType:(unsigned int)arg2 allowedWidth:(double)arg3 context:(struct CGContext *)arg4;
+@property BOOL mouseHoveringOverLabel;
+- (BOOL)getClickableGlyphFrame:(struct CGRect *)arg1;
 - (struct CGSize)preferredFrameSize;
+- (id)initWithOptions:(unsigned long long)arg1;
+- (id)init;
 
 @end
 

@@ -8,7 +8,7 @@
 
 #import <IDEFoundation/DVTInvalidation-Protocol.h>
 
-@class DVTStackBacktrace, IDEGaugeDataQueryCoordinator, NSSet, NSString;
+@class DVTStackBacktrace, IDEGaugeDataProviderService, IDEGaugeDataQueryCoordinator, NSSet, NSString;
 
 @interface IDEGaugeDataQuery : NSObject <DVTInvalidation>
 {
@@ -16,6 +16,7 @@
     BOOL _isSuspended;
     BOOL _useProxiedDevice;
     IDEGaugeDataQueryCoordinator *_queryCoordinator;
+    IDEGaugeDataProviderService *_service;
     NSSet *_observedAttributes;
     CDUnknownBlockType _resultDictHandler;
 }
@@ -25,6 +26,7 @@
 @property(nonatomic) BOOL isSuspended; // @synthesize isSuspended=_isSuspended;
 @property(copy, nonatomic) CDUnknownBlockType resultDictHandler; // @synthesize resultDictHandler=_resultDictHandler;
 @property(copy, nonatomic) NSSet *observedAttributes; // @synthesize observedAttributes=_observedAttributes;
+@property(retain) IDEGaugeDataProviderService *service; // @synthesize service=_service;
 @property(retain, nonatomic) IDEGaugeDataQueryCoordinator *queryCoordinator; // @synthesize queryCoordinator=_queryCoordinator;
 - (void).cxx_destruct;
 - (void)handleResultDict:(id)arg1;

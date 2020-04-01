@@ -6,36 +6,46 @@
 
 #import <IDEKit/IDEViewController.h>
 
-@class NSButton, NSPopUpButton, NSTextField;
-@protocol IDEProvisioningSigningSelectionDataSource, IDEProvisioningStyleDataSource;
+@class DVTObservingToken, IDEProvisioningSliceConfiguration, NSButton, NSLayoutConstraint, NSPopUpButton, NSTextField;
+@protocol IDESigningEditorTeamDataSource;
 
 @interface IDEProvisioningTeamSelectionViewController : IDEViewController
 {
-    id <IDEProvisioningStyleDataSource> _styleDataSource;
-    id <IDEProvisioningSigningSelectionDataSource> _signingSelectionDataSource;
+    id <IDESigningEditorTeamDataSource> _dataSource;
     NSPopUpButton *_teamPopUpButton;
     NSButton *_addAccountButton;
     NSTextField *_teamLabel;
+    NSTextField *_teamLabelLabel;
+    NSLayoutConstraint *_popUpLeftPaddingConstraint;
+    NSLayoutConstraint *_sliceHeightConstraint;
+    NSLayoutConstraint *_popUpWidthConstraint;
+    DVTObservingToken *_dataSourceTeamsObserver;
+    IDEProvisioningSliceConfiguration *_configuration;
 }
 
+@property(retain, nonatomic) IDEProvisioningSliceConfiguration *configuration; // @synthesize configuration=_configuration;
+@property(retain, nonatomic) DVTObservingToken *dataSourceTeamsObserver; // @synthesize dataSourceTeamsObserver=_dataSourceTeamsObserver;
+@property(retain) NSLayoutConstraint *popUpWidthConstraint; // @synthesize popUpWidthConstraint=_popUpWidthConstraint;
+@property(retain) NSLayoutConstraint *sliceHeightConstraint; // @synthesize sliceHeightConstraint=_sliceHeightConstraint;
+@property(retain) NSLayoutConstraint *popUpLeftPaddingConstraint; // @synthesize popUpLeftPaddingConstraint=_popUpLeftPaddingConstraint;
+@property __weak NSTextField *teamLabelLabel; // @synthesize teamLabelLabel=_teamLabelLabel;
 @property __weak NSTextField *teamLabel; // @synthesize teamLabel=_teamLabel;
 @property __weak NSButton *addAccountButton; // @synthesize addAccountButton=_addAccountButton;
 @property __weak NSPopUpButton *teamPopUpButton; // @synthesize teamPopUpButton=_teamPopUpButton;
-@property(readonly, nonatomic) id <IDEProvisioningSigningSelectionDataSource> signingSelectionDataSource; // @synthesize signingSelectionDataSource=_signingSelectionDataSource;
-@property(readonly, nonatomic) id <IDEProvisioningStyleDataSource> styleDataSource; // @synthesize styleDataSource=_styleDataSource;
+@property(retain, nonatomic) id <IDESigningEditorTeamDataSource> dataSource; // @synthesize dataSource=_dataSource;
 - (void).cxx_destruct;
 - (void)primitiveInvalidate;
+- (void)startObservations;
 - (void)selectionChangedForProvisoningTeamPopUpButton:(id)arg1;
 - (void)updateDevelopmentTeamMenuSelection;
 - (void)selectUnknownTeamItemForDisplayName:(id)arg1 showWithRedText:(BOOL)arg2;
 - (void)updateDevelopmentTeams;
-- (BOOL)isTeamSelectable;
 - (id)displayNameForTeam:(id)arg1;
 - (void)showTeamAsSelectable:(BOOL)arg1 hasTeams:(BOOL)arg2;
 - (void)clickedAddAccountButton:(id)arg1;
 - (void)showAddAccountsSheet;
 - (void)viewDidLoad;
-- (id)initWithStyleDataSource:(id)arg1 signingSelectionDataSource:(id)arg2;
+- (id)initWithDataSource:(id)arg1 configuration:(id)arg2;
 
 @end
 

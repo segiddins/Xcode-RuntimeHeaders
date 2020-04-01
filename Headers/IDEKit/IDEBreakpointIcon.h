@@ -6,33 +6,20 @@
 
 #import <objc/NSObject.h>
 
-@class NSImage;
-
 @interface IDEBreakpointIcon : NSObject
 {
-    struct CGSize _size;
-    BOOL _includeBottomHighlight;
-    BOOL _useDarkerBorderColor;
-    NSImage *_enabledImage;
-    NSImage *_disabledImage;
-    NSImage *_deactivatedEnabledImage;
-    NSImage *_deactivatedDisabledImage;
 }
 
-+ (id)_createPressedImageFromImage:(id)arg1;
 + (double)tipLengthForBreakpointHeight:(double)arg1;
-- (void).cxx_destruct;
-- (id)_createBreakpointPathWithFrame:(struct CGRect)arg1;
-- (id)_createImageUsingBorderColor:(id)arg1 bodyColor:(id)arg2;
-- (id)_deactivatedDisabledImage;
-- (id)_deactivatedEnabledImage;
-- (id)_disabledImage;
-- (id)_enabledImage;
-- (id)cachedImageForBreakpointsActivated:(BOOL)arg1 breakpointEnabled:(BOOL)arg2 pressed:(BOOL)arg3;
-- (void)drawBreakpointAtPoint:(struct CGPoint)arg1 inView:(id)arg2 breakpointsActivated:(BOOL)arg3 breakpointEnabled:(BOOL)arg4 pressed:(BOOL)arg5;
-- (struct CGSize)visualPlacementSize;
-- (id)initWithSize:(struct CGSize)arg1 includeBottomHighlight:(BOOL)arg2 useDarkerBorderColor:(BOOL)arg3;
-- (id)initWithHeight:(double)arg1 includeBottomHighlight:(BOOL)arg2 useDarkerBorderColor:(BOOL)arg3;
++ (id)shared;
+- (id)_createBreakpointPathsWithFrame:(struct CGRect)arg1 breakpointModified:(BOOL)arg2;
+- (void)_drawModifiedBreakpointIndicatorPath:(id)arg1;
+- (void)_drawFullBreakpointPath:(id)arg1 backgroundFillColor:(id)arg2 fillColor:(id)arg3 strokeColor:(id)arg4;
+- (id)_strokeColorForFillColor:(id)arg1;
+- (id)_fillColorForActive:(BOOL)arg1 enabled:(BOOL)arg2;
+- (id)_backgroundFillColor:(int)arg1;
+- (id)_imageKeyForActive:(BOOL)arg1 enabled:(BOOL)arg2 modified:(BOOL)arg3 bordered:(BOOL)arg4 backgroundFill:(int)arg5 size:(struct CGSize)arg6;
+- (id)cachedImageForActivated:(BOOL)arg1 enabled:(BOOL)arg2 modified:(BOOL)arg3 bordered:(BOOL)arg4 backgroundFill:(int)arg5 size:(struct CGSize)arg6;
 
 @end
 

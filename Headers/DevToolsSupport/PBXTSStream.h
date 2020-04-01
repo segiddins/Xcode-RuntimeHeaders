@@ -4,33 +4,33 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Foundation/NSObject.h>
+#import <objc/NSObject.h>
 
-@class NSString;
+@class DVTWeakInterposer, NSString;
 @protocol PBXTSStreamConsuming;
 
 @interface PBXTSStream : NSObject
 {
     NSString *_name;
-    id <PBXTSStreamConsuming> _streamConsumer;
     PBXTSStream *_upstreamStream;
     struct {
         unsigned int retainConsumer:1;
         unsigned int consumerIsStream:1;
     } _flags;
+    id <PBXTSStreamConsuming> _retainedStreamConsumer;
+    DVTWeakInterposer *_unretainedStreamConsumer_dvtWeakInterposer;
 }
 
 + (id)stream;
+@property(retain) PBXTSStream *upstreamStream; // @synthesize upstreamStream=_upstreamStream;
+@property(copy) NSString *name; // @synthesize name=_name;
+- (void).cxx_destruct;
 - (void)sendStreamDidEnd;
-- (id)sourceStream;
-- (id)upstreamStream;
-- (void)setUpstreamStream:(id)arg1;
-- (id)streamConsumer;
-- (void)setStreamConsumer:(id)arg1;
-- (id)name;
-- (void)setName:(id)arg1;
+@property(readonly) PBXTSStream *sourceStream;
+@property id <PBXTSStreamConsuming> streamConsumer;
 - (void)dealloc;
 - (id)init;
+@property __weak id <PBXTSStreamConsuming> unretainedStreamConsumer;
 
 @end
 

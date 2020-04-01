@@ -14,12 +14,10 @@
 - (BOOL)canPackageHeaders;
 - (id)fullProductName;
 - (id)fullProductNameForConfigurationNamed:(id)arg1;
-- (void)setWrapperPathExtension:(id)arg1;
 - (id)wrapperPathExtension;
 - (id)wrapperPathExtensionForConfigurationNamed:(id)arg1;
 - (id)productNameForConfigurationNamed:(id)arg1;
 - (id)productReferenceExpectedFileTypeForConfigurationNamed:(id)arg1;
-- (id)defaultProductTypeIdentifierByAnalyzingConfiguration;
 
 @end
 

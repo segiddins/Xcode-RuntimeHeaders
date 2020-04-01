@@ -30,6 +30,7 @@
 }
 
 - (void).cxx_destruct;
+- (id)imageForContentsPickerImageName:(id)arg1;
 - (id)suggestedImagesForContentsPicker:(id)arg1;
 - (void)selectDocumentLocations:(id)arg1;
 - (void)updateBottomBarColorScheme;

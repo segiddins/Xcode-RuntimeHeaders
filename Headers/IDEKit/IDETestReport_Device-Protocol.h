@@ -6,17 +6,22 @@
 
 #import <IDEKit/NSObject-Protocol.h>
 
-@class NSImage, NSString;
+@class NSNumber, NSString;
 
 @protocol IDETestReport_Device <NSObject>
-@property(readonly, copy, nonatomic) NSString *ide_testReport_device_platformName;
-@property(readonly, nonatomic) NSImage *ide_testReport_device_statusImage;
-@property(readonly, copy, nonatomic) NSString *ide_testReport_device_architecture;
-@property(readonly, copy, nonatomic) NSString *ide_testReport_device_osVersion;
-@property(readonly, copy, nonatomic) NSString *ide_testReport_device_modelName;
-@property(readonly, nonatomic) BOOL ide_testReport_device_isSimulator;
-@property(readonly, copy, nonatomic) NSString *ide_testReport_device_UTI;
-@property(readonly, copy, nonatomic) NSString *ide_testReport_device_name;
-@property(readonly, copy, nonatomic) NSString *ide_testReport_device_identifier;
+@property(nonatomic, readonly) NSString *ide_testReport_device_platformName;
+@property(nonatomic, readonly) NSString *ide_testReport_device_architecture;
+@property(nonatomic, readonly) NSString *ide_testReport_device_osVersion;
+@property(nonatomic, readonly) NSString *ide_testReport_device_modelCodename;
+@property(nonatomic, readonly) NSString *ide_testReport_device_modelName;
+@property(nonatomic, readonly) BOOL ide_testReport_device_isSimulator;
+@property(nonatomic, readonly) NSString *ide_testReport_device_UTI;
+@property(nonatomic, readonly) NSString *ide_testReport_device_name;
+@property(nonatomic, readonly) NSString *ide_testReport_device_identifier;
+
+@optional
+@property(nonatomic, readonly) NSString *ide_testReport_device_combined_platformName_and_osVersion;
+@property(nonatomic, readonly) NSString *ide_testReport_device_modelKind;
+@property(nonatomic, readonly) NSNumber *ide_testReport_device_isSimulator_asNumber;
 @end
 

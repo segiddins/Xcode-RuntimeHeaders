@@ -8,5 +8,6 @@
 
 @interface NSArray (DVTNSArrayAdditionsFilterNull)
 - (id)dvt_arrayByRemovingNSNull;
+- (id)sourcekit_asStringArray;
 @end
 

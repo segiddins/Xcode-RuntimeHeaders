@@ -14,7 +14,7 @@
 }
 
 - (void).cxx_destruct;
-- (id)initWithContext:(id)arg1;
+- (id)initWithRing:(id)arg1 context:(id)arg2;
 
 @end
 

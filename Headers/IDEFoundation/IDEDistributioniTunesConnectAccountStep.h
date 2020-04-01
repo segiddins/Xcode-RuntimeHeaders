@@ -10,8 +10,10 @@
 {
 }
 
++ (id)propertyListForContext:(id)arg1;
 + (id)availableOptionsForPropertyList;
-- (BOOL)loadFromPropertyList:(id)arg1 error:(id *)arg2;
+- (BOOL)loadFromExportOptions:(id)arg1 error:(id *)arg2;
+- (id)checkForITunesAccount;
 - (id)providedOutputContextPropertyNames;
 - (id)requiredInputContextPropertyNames;
 

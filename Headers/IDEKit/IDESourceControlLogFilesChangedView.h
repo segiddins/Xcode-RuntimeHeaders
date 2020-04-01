@@ -32,10 +32,8 @@
 - (void)_drawInteriorWithTextFrame:(struct CGRect)arg1 tokenFrame:(struct CGRect)arg2;
 - (void)_drawTextWithFrame:(struct CGRect)arg1;
 - (void)_drawTokenWithFrame:(struct CGRect)arg1;
-- (id)foregroundGradient;
-- (id)selectedForegroundColor;
-- (id)backgroundColor;
-- (void)_drawTokenWithContext:(id)arg1 frame:(struct CGRect)arg2 clip:(BOOL)arg3;
+- (id)tokenSelectedColor;
+- (id)tokenColor;
 - (struct CGRect)_tokenRectForStringRect:(struct CGRect)arg1;
 @property(copy) NSString *value;
 @property(readonly) struct CGRect textFrame;

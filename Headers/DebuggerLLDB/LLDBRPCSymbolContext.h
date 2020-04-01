@@ -10,7 +10,6 @@
 
 @class NSString;
 
-__attribute__((visibility("hidden")))
 @interface LLDBRPCSymbolContext : NSObject <DBGSBSymbolContext>
 {
     struct SBSymbolContext {
@@ -23,6 +22,7 @@ __attribute__((visibility("hidden")))
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)initWithSBSymbolContext:(const struct SBSymbolContext *)arg1;
+- (id)GetCompileUnit;
 - (id)GetSymbol;
 - (id)GetLineEntry;
 - (id)GetModule;

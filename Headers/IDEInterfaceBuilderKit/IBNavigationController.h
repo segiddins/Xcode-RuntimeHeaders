@@ -26,7 +26,7 @@
 
 @property(retain, nonatomic) IBNavigationControllerItem *previousNavigationItem; // @synthesize previousNavigationItem=_previousNavigationItem;
 @property(retain, nonatomic) IBNavigationControllerItem *currentNavigationItem; // @synthesize currentNavigationItem=_currentNavigationItem;
-@property __weak NSView *containerView; // @synthesize containerView=_containerView;
+@property(retain, nonatomic) NSView *containerView; // @synthesize containerView=_containerView;
 - (void).cxx_destruct;
 - (void)didPopNavigationItem:(id)arg1;
 - (void)didPushNavigationItem:(id)arg1 previousItem:(id)arg2;

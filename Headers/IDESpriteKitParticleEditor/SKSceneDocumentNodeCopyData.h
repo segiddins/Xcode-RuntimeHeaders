@@ -4,15 +4,15 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Foundation/NSObject.h>
+#import <objc/NSObject.h>
 
-#import <IDESpriteKitParticleEditor/NSCoding-Protocol.h>
 #import <IDESpriteKitParticleEditor/NSPasteboardReading-Protocol.h>
 #import <IDESpriteKitParticleEditor/NSPasteboardWriting-Protocol.h>
+#import <IDESpriteKitParticleEditor/NSSecureCoding-Protocol.h>
 
 @class NSString, NSValue, SKNode;
 
-@interface SKSceneDocumentNodeCopyData : NSObject <NSCoding, NSPasteboardWriting, NSPasteboardReading>
+@interface SKSceneDocumentNodeCopyData : NSObject <NSSecureCoding, NSPasteboardWriting, NSPasteboardReading>
 {
     SKNode *_node;
     NSValue *_parentUID;
@@ -20,6 +20,7 @@
 
 + (unsigned long long)readingOptionsForType:(id)arg1 pasteboard:(id)arg2;
 + (id)readableTypesForPasteboard:(id)arg1;
++ (BOOL)supportsSecureCoding;
 + (id)copyDataForNavNode:(id)arg1;
 @property(readonly, nonatomic) NSValue *parentUID; // @synthesize parentUID=_parentUID;
 @property(readonly, nonatomic) SKNode *node; // @synthesize node=_node;

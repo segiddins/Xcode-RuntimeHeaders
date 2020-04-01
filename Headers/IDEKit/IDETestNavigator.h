@@ -8,14 +8,14 @@
 
 #import <IDEKit/DVTOutlineViewDelegate-Protocol.h>
 #import <IDEKit/DVTTableRowViewMouseInsideDelegate-Protocol.h>
-#import <IDEKit/IDERefactoringExpressionSource-Protocol.h>
 #import <IDEKit/IDETestingSelection-Protocol.h>
 #import <IDEKit/NSMenuDelegate-Protocol.h>
 #import <IDEKit/NSOutlineViewDelegate-Protocol.h>
 
-@class IDENavigatorOutlineView, IDESelection, IDEWorkspaceTabController, NSDictionary, NSMutableArray, NSMutableSet, NSSet, NSString;
+@class DVTScopeBarView, IDENavigatorOutlineView, IDESelection, IDEWorkspaceTabController, NSDictionary, NSLayoutConstraint, NSMutableArray, NSMutableSet, NSPopUpButton, NSSet, NSString, NSTextField;
+@protocol IDETestCollection;
 
-@interface IDETestNavigator : IDEOutlineBasedNavigator <DVTTableRowViewMouseInsideDelegate, NSOutlineViewDelegate, NSMenuDelegate, IDETestingSelection, IDERefactoringExpressionSource, DVTOutlineViewDelegate>
+@interface IDETestNavigator : IDEOutlineBasedNavigator <DVTTableRowViewMouseInsideDelegate, NSOutlineViewDelegate, NSMenuDelegate, IDETestingSelection, DVTOutlineViewDelegate>
 {
     NSDictionary *_previouslyRestoredStateDictionary;
     BOOL _restoringState;
@@ -31,6 +31,11 @@
     BOOL _showSchemeTestablesOnly;
     BOOL _isRunningTests;
     long long _loadingProgress;
+    NSPopUpButton *_activeTestPlanPopUpButton;
+    NSLayoutConstraint *_activeTestPlanPopUpButtonWidthConstraint;
+    NSTextField *_testPlanLabel;
+    DVTScopeBarView *_scopeBar;
+    NSLayoutConstraint *_scopeBarHeightConstraint;
 }
 
 + (void)configureStateSavingObjectPersistenceByName:(id)arg1;
@@ -40,6 +45,11 @@
 @property(retain, nonatomic) NSString *testNamePatternString; // @synthesize testNamePatternString=_testNamePatternString;
 @property(nonatomic) BOOL showSchemeTestablesOnly; // @synthesize showSchemeTestablesOnly=_showSchemeTestablesOnly;
 @property(nonatomic) BOOL showFailingTestsOnly; // @synthesize showFailingTestsOnly=_showFailingTestsOnly;
+@property(retain) NSLayoutConstraint *scopeBarHeightConstraint; // @synthesize scopeBarHeightConstraint=_scopeBarHeightConstraint;
+@property(retain) DVTScopeBarView *scopeBar; // @synthesize scopeBar=_scopeBar;
+@property(retain) NSTextField *testPlanLabel; // @synthesize testPlanLabel=_testPlanLabel;
+@property(retain) NSLayoutConstraint *activeTestPlanPopUpButtonWidthConstraint; // @synthesize activeTestPlanPopUpButtonWidthConstraint=_activeTestPlanPopUpButtonWidthConstraint;
+@property(retain) NSPopUpButton *activeTestPlanPopUpButton; // @synthesize activeTestPlanPopUpButton=_activeTestPlanPopUpButton;
 @property(readonly) long long loadingProgress; // @synthesize loadingProgress=_loadingProgress;
 - (void).cxx_destruct;
 - (void)tableRowView:(id)arg1 mouseInside:(BOOL)arg2;
@@ -61,16 +71,15 @@
 - (id)selectedTestable;
 - (void)menuNeedsUpdate:(id)arg1;
 - (id)_contextForTestingHelper;
-- (id)selectedTestsAndTestables;
-- (id)testingExpressionUsingContextMenu:(BOOL)arg1;
-- (id)refactoringExpressionUsingContextMenu:(BOOL)arg1;
+@property(readonly) NSString *selectionUIContext;
+@property(readonly) id <IDETestCollection> selectedTests;
 - (void)_updateFilter;
 - (void)_updateTableCellViewsUIState:(id)arg1;
 - (void)_updateTableCellViewsUIStateForNavItem:(id)arg1;
 - (void)_updateSchemeFilter;
 - (void)setFilter:(id)arg1;
 - (id)filterDefinitionIdentifier;
-- (void)focusedEditorDidSelectItem:(id)arg1;
+- (void)focusedEditorDidSelectItem;
 - (void)revealTestsAndTestables:(id)arg1;
 - (void)setVisibleRectString:(id)arg1;
 - (id)visibleRectString;
@@ -91,6 +100,11 @@
 - (id)_localizedString:(id)arg1;
 - (void)_updateEnablednessForTableCellView:(id)arg1;
 - (void)viewWillUninstall;
+- (void)manageTestPlansItemSelected:(id)arg1;
+- (void)newTestPlanItemSelected:(id)arg1;
+- (void)editTestPlanItemSelected:(id)arg1;
+- (void)changeActiveTestPlan:(id)arg1;
+- (void)rebuildActiveTestPlanPopUpButtonMenu;
 - (void)viewDidInstall;
 - (void)loadView;
 - (void)_updateEmptyContentPlaceholders;

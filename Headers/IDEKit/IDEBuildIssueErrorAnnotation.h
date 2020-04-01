@@ -14,6 +14,7 @@
 + (id)editedTheme;
 + (id)focusedTheme;
 + (id)normalTheme;
++ (id)sidebarIconBorderMask;
 + (id)sidebarIcon;
 + (unsigned long long)severity;
 + (double)precedence;

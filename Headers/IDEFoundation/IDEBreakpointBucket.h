@@ -9,7 +9,7 @@
 #import <IDEFoundation/DVTInvalidation-Protocol.h>
 #import <IDEFoundation/DVTXMLUnarchiving-Protocol.h>
 
-@class DVTCustomDataSpecifier, DVTStackBacktrace, IDEContainer, NSArray, NSMutableArray, NSString;
+@class DVTCustomDataSpecifier, DVTStackBacktrace, IDEContainer, NSArray, NSMutableArray, NSString, NSURL;
 @protocol DVTCustomDataStoring;
 
 @interface IDEBreakpointBucket : NSObject <DVTXMLUnarchiving, DVTInvalidation>
@@ -17,19 +17,26 @@
     DVTCustomDataSpecifier *_archivingDataSpecifier;
     NSString *_archivingContainerItemBaseStandardizedPathString;
     NSMutableArray *_breakpoints;
+    NSMutableArray *_fileBuckets;
     BOOL _currentlyDecoding;
-    int _type;
+    NSString *_uuid;
+    unsigned long long _type;
     IDEContainer<DVTCustomDataStoring> *_archivingContainer;
     NSString *_displayName;
+    NSURL *_fileURL;
 }
 
 + (id)keyPathsForValuesAffectingDisplayName;
++ (id)keyPathsForValuesAffectingBucketsAndBreakpoints;
 + (id)keyPathsForValuesAffectingShared;
 + (id)userGlobalBucket:(id *)arg1;
++ (id)bucketForUUID:(id)arg1;
 + (void)initialize;
+@property(copy) NSURL *fileURL; // @synthesize fileURL=_fileURL;
 @property(copy, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(retain) IDEContainer<DVTCustomDataStoring> *archivingContainer; // @synthesize archivingContainer=_archivingContainer;
-@property(readonly) int type; // @synthesize type=_type;
+@property(readonly) unsigned long long type; // @synthesize type=_type;
+@property(copy, nonatomic) NSString *uuid; // @synthesize uuid=_uuid;
 - (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (void)addBreakpoints:(id)arg1 fromXMLUnarchiver:(id)arg2;
@@ -44,16 +51,17 @@
 - (void)notifyPersistencyStateChanged;
 - (BOOL)removeBreakpoint:(id)arg1;
 - (void)addBreakpoint:(id)arg1;
+- (void)_addToFileBucketIfNecessary:(id)arg1;
+- (id)_fileBreakpointBucketForBreakpoint:(id)arg1 shouldCreate:(BOOL)arg2;
+@property(readonly) NSArray *bucketsAndBreakpoints;
 @property(readonly, getter=isShared) BOOL shared;
-- (BOOL)containsBreakpoint:(id)arg1;
-- (id)initWithType:(int)arg1 archivingContainer:(id)arg2 error:(id *)arg3;
-- (BOOL)_isErrorNoSuchFileError:(id)arg1;
 - (BOOL)_decodeFromContainer:(id *)arg1;
 - (void)_encodeToContainer;
 - (BOOL)_shouldEncodeDecode;
 - (id)_archivingDataSpecifierWithName:(id)arg1;
 @property(readonly) DVTCustomDataSpecifier *archivingDataSpecifier;
 - (id)_archivingDataStore;
+- (id)initWithType:(unsigned long long)arg1 archivingContainer:(id)arg2 error:(id *)arg3;
 - (id)init;
 
 // Remaining properties

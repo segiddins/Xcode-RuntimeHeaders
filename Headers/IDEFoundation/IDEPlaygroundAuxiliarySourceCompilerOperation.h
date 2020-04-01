@@ -27,9 +27,13 @@
 @property(retain) IDEPlaygroundAuxiliarySourceFrameworkLocation *frameworkLocation; // @synthesize frameworkLocation=_frameworkLocation;
 @property(retain) NSDate *compilationDate; // @synthesize compilationDate=_compilationDate;
 - (void).cxx_destruct;
+- (id)linkerBuildFlags;
 @property(readonly) NSArray *basicBuildFlags;
+- (BOOL)signFrameworkDylibAtPath:(id)arg1 error:(id *)arg2;
 - (void)main;
 - (void)cancel;
+- (void)makeHighestPriority;
+- (void)makeDefaultPriority;
 - (id)initWithContext:(id)arg1 swiftSourceFiles:(id)arg2;
 
 @end

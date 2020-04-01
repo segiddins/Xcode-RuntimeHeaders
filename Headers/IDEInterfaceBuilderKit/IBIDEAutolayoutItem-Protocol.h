@@ -6,35 +6,42 @@
 
 #import <IDEInterfaceBuilderKit/IBAutolayoutItem-Protocol.h>
 
-@class IBAutolayoutAmbiguityGroup, IBAutolayoutStatus, IBDocument, NSMutableArray, NSObject, NSString;
+@class IBAutolayoutAmbiguityGroup, IBAutolayoutStatus, IBDocument, NSArray, NSMutableArray, NSObject, NSString;
 @protocol IBCollection, IBIDEAutolayoutItem;
 
 @protocol IBIDEAutolayoutItem <IBAutolayoutItem>
+@property(nonatomic) BOOL ibCanFrameDecideEvenWhenAmbiguousForNextStatusUpdate;
 @property(readonly, nonatomic) BOOL ibShouldPropagateFramesDuringFrameDecision;
 @property(readonly, nonatomic) BOOL ibShouldIgnoreSizeMisplacement;
 @property(readonly, nonatomic) BOOL ibShouldIgnorePositionMisplacement;
 @property(readonly, nonatomic) BOOL ibShouldIgnoreSizeAmbiguity;
 @property(readonly, nonatomic) BOOL ibShouldIgnorePositionAmbiguity;
-@property(nonatomic) BOOL ibExternalWasMisplacedOnLastSave;
-@property(nonatomic) BOOL ibExternalHadAnyAmbiguityOnLastSave;
+@property(nonatomic) BOOL ibExternalWasMisplacedOnLastStatusUpdate;
+@property(nonatomic) BOOL ibExternalWasAmbiguousOnLastStatusUpdate;
 @property(nonatomic) BOOL ibExternalHasUninitializedAutolayoutAmbiguityStatus;
 @property(readonly, nonatomic) NSObject<IBIDEAutolayoutItem> *ibDesignableContentItem;
+- (BOOL)ibAllowsBaselineConstraints;
 - (BOOL)ibAllowsShowingControlDragConstraintFromAttribute:(unsigned long long)arg1 toAttribute:(unsigned long long)arg2 ofItem:(NSObject<IBIDEAutolayoutItem> *)arg3;
+- (BOOL)ibAllowsContainerLikeTreatmentForSiblingConstraintGeneration;
+- (unsigned long long)ibPreferredItemReplacementAttributeForAttribute:(unsigned long long)arg1;
+- (unsigned long long)ibPreferredConstrainingLayoutAttributeToSiblingWithAttribute:(unsigned long long)arg1;
 - (BOOL)ibAllowsConstrainingAttribute:(unsigned long long)arg1 toAttribute:(unsigned long long)arg2 ofItem:(NSObject<IBIDEAutolayoutItem> *)arg3;
 - (BOOL)ibHasOwnedPositionLayoutInDocument:(IBDocument *)arg1;
 - (BOOL)ibHasOwnedSizeLayoutInDocument:(IBDocument *)arg1;
 - (void)ibPrimitiveRemoveConstraintsFromCandidates:(id <IBCollection>)arg1 andFromDocument:(IBDocument *)arg2 allowingCascadingDelete:(BOOL)arg3;
 - (void)ibPrimitiveRemoveConstraintsFromCandidateListOnly:(id <IBCollection>)arg1 keepingInDocument:(IBDocument *)arg2;
 - (void)ibPrimitiveAddConstraintsToCandidateListOnly:(id <IBCollection>)arg1 thatAreAlreadyInDocument:(IBDocument *)arg2;
-- (void)ibInvalidateCachedInstalledConstraints;
+- (void)ibInvalidateCachedInstalledConstraintsIncludingChildren:(BOOL)arg1;
+- (NSString *)ibEffectiveTitleSuffixForConstrainingAttribute:(unsigned long long)arg1;
+- (NSObject<IBIDEAutolayoutItem> *)ibEffectiveItemForConstrainingAttribute:(unsigned long long)arg1;
+- (NSArray *)ibAuxiliaryItemsForConstraintDrawables;
 - (BOOL)ibCanHaveUninitializedAutolayoutAmbiguityStatusInDocument:(IBDocument *)arg1;
-- (void)ibVerifyConstraintsAreWellFormedInDocument:(IBDocument *)arg1 andPopulateMessages:(NSMutableArray *)arg2;
+- (void)ibVerifyConstraintsAreWellFormedInDocument:(IBDocument *)arg1 subarbitrationUnitCache:(struct IBMutableIdentityDictionary *)arg2 andPopulateMessages:(NSMutableArray *)arg3;
 - (void)ibVerifyConstraintsAreSortedInDocument:(IBDocument *)arg1;
 - (void)ibRemoveCandidateConstraints:(id <IBCollection>)arg1;
 - (void)ibAddCandidateConstraints:(id <IBCollection>)arg1 shouldAddToEffectiveEditedConfiguration:(BOOL)arg2;
 - (BOOL)ibShouldIgnoreForAmbiguityGroup:(IBAutolayoutAmbiguityGroup *)arg1;
 - (BOOL)ibShouldBeIncludedForReportingAmbiguityWithStatus:(IBAutolayoutStatus *)arg1 inDocument:(IBDocument *)arg2;
-- (void)setIbMarkAsExplicitlyMisplaced;
 - (double)ibPriorityForPlaceholderAmbiguousSubviewVerticalConstraints;
 - (double)ibPriorityForPlaceholderAmbiguousSubviewHorizontalConstraints;
 - (double)ibPriorityForPlaceholderUninitializedSubviewVerticalConstraints;

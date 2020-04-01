@@ -6,7 +6,8 @@
 
 #import <IDEKit/IDEInspectorProperty.h>
 
-@class IDEIndexSymbol, IDEInspectorKeyPath, NSButton, NSLayoutConstraint, NSTextField;
+@class IDEInspectorKeyPath, NSButton, NSLayoutConstraint, NSTextField;
+@protocol IDEIndexSymbol;
 
 @interface DBGClassNameInspectorProperty : IDEInspectorProperty
 {
@@ -14,10 +15,10 @@
     NSLayoutConstraint *_trailingLabelToJumpButtonConstraint;
     NSTextField *_textField;
     NSButton *_linkButton;
-    IDEIndexSymbol *_symbol;
+    id <IDEIndexSymbol> _symbol;
 }
 
-@property(retain) IDEIndexSymbol *symbol; // @synthesize symbol=_symbol;
+@property(retain) id <IDEIndexSymbol> symbol; // @synthesize symbol=_symbol;
 @property __weak NSButton *linkButton; // @synthesize linkButton=_linkButton;
 @property __weak NSTextField *textField; // @synthesize textField=_textField;
 @property(nonatomic) __weak NSLayoutConstraint *trailingLabelToJumpButtonConstraint; // @synthesize trailingLabelToJumpButtonConstraint=_trailingLabelToJumpButtonConstraint;
@@ -26,6 +27,7 @@
 - (id)_tabControllerForWindow;
 - (void)_setLinkButtonHidden:(BOOL)arg1;
 - (void)_configureForNilString;
+- (id)symbolForName:(id)arg1 moduleName:(id)arg2 inCollection:(id)arg3;
 - (void)_getSymbol:(id)arg1;
 - (double)baseline;
 - (void)tearDownRefreshTriggers;

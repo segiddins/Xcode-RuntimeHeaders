@@ -6,9 +6,11 @@
 
 #import <IDEFoundation/IDESchemeAction.h>
 
+#import <IDEFoundation/IDECodeCoverageBuildableResolving-Protocol.h>
+
 @class DVTObservingToken, IDEBuildActionEntry, NSArray, NSMapTable, NSMutableArray, NSString;
 
-@interface IDEBuildSchemeAction : IDESchemeAction
+@interface IDEBuildSchemeAction : IDESchemeAction <IDECodeCoverageBuildableResolving>
 {
     NSMutableArray *_legacyBuildableReferences;
     BOOL _parallelizeBuildables;
@@ -18,22 +20,27 @@
     NSMutableArray *_buildActionEntries;
     IDEBuildActionEntry *_launchRunnableEntry;
     IDEBuildActionEntry *_profileRunnableEntry;
-    NSMutableArray *_testBuildableEntries;
     BOOL _buildablesDidChangeNotificationEnabled;
     BOOL _isBuildablesDidChangeNotificationPending;
     DVTObservingToken *_launchActionRunnableObservingToken;
     DVTObservingToken *_profileActionRunnableObservingToken;
+    DVTObservingToken *_testPlanReferencesObservingToken;
     DVTObservingToken *_testBuildableReferencesObservingToken;
     DVTObservingToken *_testHostBuildableReferencesObservingToken;
+    BOOL _collectBuildTimelineMetrics;
+    BOOL _runPostActionsOnFailure;
     NSMapTable *_overridingBuildPropertiesForBuildable;
 }
 
++ (id)resolveDependenciesForBuildables:(id)arg1 buildParameters:(id)arg2 executionEnvironment:(id)arg3 includeImplicitDependencies:(BOOL)arg4;
 + (id)_uniquedBuildablesForBuildables:(id)arg1 includingDependencies:(BOOL)arg2;
 + (id)buildablesForTestingSpecifiers:(id)arg1 includingDependencies:(BOOL)arg2;
 + (id)keyPathsForValuesAffectingAvailableBuildConfigurations;
 + (id)keyPathsForValuesAffectingSubtitle;
 + (void)initialize;
 @property(readonly) NSMapTable *overridingBuildPropertiesForBuildable; // @synthesize overridingBuildPropertiesForBuildable=_overridingBuildPropertiesForBuildable;
+@property BOOL runPostActionsOnFailure; // @synthesize runPostActionsOnFailure=_runPostActionsOnFailure;
+@property BOOL collectBuildTimelineMetrics; // @synthesize collectBuildTimelineMetrics=_collectBuildTimelineMetrics;
 @property(nonatomic, getter=isBuildablesDidChangeNotificationEnabled) BOOL buildablesDidChangeNotificationEnabled; // @synthesize buildablesDidChangeNotificationEnabled=_buildablesDidChangeNotificationEnabled;
 @property BOOL buildImplicitDependencies; // @synthesize buildImplicitDependencies=_buildImplicitDependencies;
 @property BOOL parallelizeBuildables; // @synthesize parallelizeBuildables=_parallelizeBuildables;
@@ -43,10 +50,13 @@
 - (void)addBuildActionEntries:(id)arg1 fromXMLUnarchiver:(id)arg2;
 - (void)addBuildableProductReferences:(id)arg1 fromXMLUnarchiver:(id)arg2;
 - (void)setBuildImplicitDependenciesFromUTF8String:(char *)arg1 fromXMLUnarchiver:(id)arg2;
+- (void)setCollectBuildTimelineMetricsFromUTF8String:(char *)arg1 fromXMLUnarchiver:(id)arg2;
+- (void)setRunPostActionsOnFailureFromUTF8String:(char *)arg1 fromXMLUnarchiver:(id)arg2;
 - (void)setParallelizeBuildablesFromUTF8String:(char *)arg1 fromXMLUnarchiver:(id)arg2;
 - (void)dvt_encodeRelationshipsWithXMLArchiver:(id)arg1 version:(id)arg2;
 - (void)dvt_encodeAttributesWithXMLArchiver:(id)arg1 version:(id)arg2;
 - (void)dvt_awakeFromXMLUnarchiver:(id)arg1;
+@property(readonly) BOOL needsNewSchemeVersionForExplicitTestPlanEntries;
 - (void)setOverridingBuildProperties:(id)arg1 forBuildable:(id)arg2;
 - (void)postBuildablesDidChangeNotification;
 - (CDUnknownBlockType)_matcherBlockForCommand:(id)arg1;
@@ -58,6 +68,7 @@
 - (id)buildablesForSchemeCommand:(id)arg1 testingSpecifiers:(id)arg2 includingDependencies:(BOOL)arg3;
 - (id)buildablesForAllSchemeCommandsIncludingDependencies:(BOOL)arg1;
 - (id)buildablesForShowingIssues;
+- (id)resolveImplicitDependenciesIfEnabledForBuildables:(id)arg1;
 - (id)_buildablesIncludingDependencies:(BOOL)arg1 restrictToSchemeCommand:(id)arg2;
 - (id)buildableReferenceForBuildable:(id)arg1;
 @property(readonly) NSArray *availableBuildConfigurations;
@@ -66,6 +77,7 @@
 - (id)addBuildActionEntryForBuildableReference:(id)arg1;
 - (void)removeBuildActionEntries:(id)arg1;
 - (void)removeBuildActionEntryAtIndex:(unsigned long long)arg1;
+- (void)forceOffBuildForPreviewingForBuildActionEntry:(id)arg1;
 - (void)forceOffBuildForProfilingForBuildActionEntry:(id)arg1;
 - (void)forceOffBuildForTestingForBuildActionEntry:(id)arg1;
 - (void)forceOffBuildForRunningForBuildActionEntry:(id)arg1;

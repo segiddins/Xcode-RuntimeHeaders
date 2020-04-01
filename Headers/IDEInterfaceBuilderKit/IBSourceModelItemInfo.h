@@ -19,6 +19,19 @@
     struct _NSRange _range;
 }
 
++ (id)sourceModelInfoForSourceModelItem:(id)arg1 inSourceModel:(id)arg2 matchingAnnotationKindMask:(unsigned long long)arg3;
++ (id)sourceModelInfoForBindingObjCPropertyContextItem:(id)arg1 inSourceModel:(id)arg2;
++ (id)sourceModelInfoForBindingObjCInstanceVariableContextItem:(id)arg1 inSourceModel:(id)arg2;
++ (id)firstSourceModelItemOccurringBeforeRange:(struct _NSRange)arg1 fromSourceModelItem:(id)arg2 inSourceModel:(id)arg3;
++ (id)extendedTypeNameFromSourceModelItem:(id)arg1 inSourceModel:(id)arg2 range:(struct _NSRange *)arg3;
++ (id)sourceModelInfoForObjCInstanceVariableOutletContextItem:(id)arg1 inSourceModel:(id)arg2;
++ (id)sourceModelInfoForObjCPropertyOutletContextItem:(id)arg1 inSourceModel:(id)arg2;
++ (id)sourceModelInfoForObjCInstanceVariableOutletCollectionContextItem:(id)arg1 inSourceModel:(id)arg2;
++ (id)sourceModelInfoForObjCPropertyOutletCollectionContextItem:(id)arg1 inSourceModel:(id)arg2;
++ (id)sourceModelInfoForSegueActionContextItem:(id)arg1 inSourceModel:(id)arg2 languageSpecification:(id)arg3;
++ (BOOL)sourceModelItemHasDescendantIBSegueActionItem:(id)arg1 inSourceModel:(id)arg2;
++ (id)sourceModelInfoForActionContextItem:(id)arg1 inSourceModel:(id)arg2 languageSpecification:(id)arg3;
++ (BOOL)sourceModelItemHasDescendantIBActionItem:(id)arg1 inSourceModel:(id)arg2;
 @property unsigned long long annotationKind; // @synthesize annotationKind=_annotationKind;
 @property long long relationshipType; // @synthesize relationshipType=_relationshipType;
 @property(retain) NSString *collectionType; // @synthesize collectionType=_collectionType;

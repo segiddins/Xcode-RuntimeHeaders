@@ -6,19 +6,20 @@
 
 #import <objc/NSObject.h>
 
-@class DVTLogAspect, NSMutableArray, NSString, NSTimer;
+@class DVTDispatchLock, DVTLogAspect, NSMutableArray, NSString, NSTimer;
 @protocol DVTSelfInstrumentationSession;
 
 @interface DVTPerformanceMetric : NSObject
 {
     DVTLogAspect *_aspect;
-    int _logLevel;
+    unsigned long long _logLevel;
     id <DVTSelfInstrumentationSession> _selfInstrumentationSession;
     NSString *_label;
     NSString *_context;
     NSString *_result;
     NSString *_profileLogInfo;
     id _identifier;
+    DVTDispatchLock *_checkpointsLock;
     NSMutableArray *_checkpoints;
     struct __CFRunLoopObserver *_runLoopObserver;
     double _tolerance;
@@ -35,7 +36,8 @@
 }
 
 + (Class)selfInstrumentationClass;
-+ (id)startedMetricForAspect:(id)arg1 logLevel:(int)arg2 label:(id)arg3;
++ (void)dumpAggregateStats:(id)arg1;
++ (id)startedMetricForAspect:(id)arg1 logLevel:(unsigned long long)arg2 label:(id)arg3;
 + (id)metricWithIdentifier:(id)arg1;
 + (void)initialize;
 - (void).cxx_destruct;
@@ -56,7 +58,7 @@
 - (void)setResultString:(id)arg1;
 - (void)setEndTime;
 - (void)setStartTime;
-- (id)initWithAspect:(id)arg1 logLevel:(int)arg2 label:(id)arg3;
+- (id)initWithAspect:(id)arg1 logLevel:(unsigned long long)arg2 label:(id)arg3;
 
 @end
 

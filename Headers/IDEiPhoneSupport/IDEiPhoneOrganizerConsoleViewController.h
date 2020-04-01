@@ -13,7 +13,7 @@
 #import <IDEiPhoneSupport/DVTScopeBarHost-Protocol.h>
 #import <IDEiPhoneSupport/DVTWindowActivationStateObserver-Protocol.h>
 
-@class DVTIncrementalFindBar, DVTScopeBarController, DVTScopeBarsManager, DVTStackBacktrace, DVTSystemActivityToken, DVTiOSDevice, IDEiPhoneConsoleTextView, NSScrollView, NSString, NSView;
+@class DVTDelayedInvocation, DVTDispatchLock, DVTIncrementalFindBar, DVTScopeBarController, DVTScopeBarsManager, DVTStackBacktrace, DVTSystemActivityToken, DVTiOSDevice, IDEiPhoneConsoleTextView, NSMutableString, NSScrollView, NSString, NSView;
 @protocol DVTCancellable;
 
 @interface IDEiPhoneOrganizerConsoleViewController : DTDKDetailViewController <DVTWindowActivationStateObserver, DTDKRemoteDeviceConsoleControllerDelegate, DVTDevicesWindowConsoleViewController, DVTScopeBarHost, DVTFindBarHostable, DVTFindBarFindable>
@@ -29,13 +29,21 @@
     DVTScopeBarsManager *_scopeBarsManager;
     DVTScopeBarController *_findBarScopeBarController;
     DVTIncrementalFindBar *_findBar;
+    NSMutableString *_textBuffer;
+    DVTDelayedInvocation *_textBufferDrainInvocation;
+    DVTDispatchLock *_textBufferLock;
+    BOOL _currentlyUpdatingConsoleText;
 }
 
 + (id)defaultViewNibName;
 + (id)nibName;
-@property(retain) DVTiOSDevice *device; // @synthesize device=_device;
+@property BOOL currentlyUpdatingConsoleText; // @synthesize currentlyUpdatingConsoleText=_currentlyUpdatingConsoleText;
+@property(retain, nonatomic) DVTiOSDevice *device; // @synthesize device=_device;
 @property _Bool shouldWrapLines; // @synthesize shouldWrapLines;
 - (void).cxx_destruct;
+- (void)_drainTextBuffer;
+- (void)_clearTextBuffer;
+- (void)_appendToTextBuffer:(id)arg1;
 - (void)find:(id)arg1;
 - (void)dismissFindBar:(id)arg1 andRestoreSelection:(BOOL)arg2;
 - (BOOL)isFindBarInstalled;
@@ -49,6 +57,7 @@
 - (void)consoleController:(id)arg1 didReceiveConsoleText:(id)arg2;
 - (void)save:(id)arg1;
 - (void)clear:(id)arg1;
+- (void)reload;
 - (void)detailViewDidDisappear;
 - (void)detailViewDidAppear;
 - (void)saveConsole;

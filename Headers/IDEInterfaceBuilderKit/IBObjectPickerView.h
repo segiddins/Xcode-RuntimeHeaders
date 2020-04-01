@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <DVTKit/DVTLayoutView_ML.h>
+#import <DVTStructuredLayoutKit/DVTLayoutView_ML.h>
 
 #import <IDEInterfaceBuilderKit/IBObjectPickerElementViewDelegate-Protocol.h>
 
@@ -13,21 +13,21 @@
 
 @interface IBObjectPickerView : DVTLayoutView_ML <IBObjectPickerElementViewDelegate>
 {
-    NSTextFieldCell *backgroundCell;
-    IBImageButton *dragWellButton;
-    NSArray *pickedObjects;
-    DVTStackView_ML *pickedObjectsStackView;
-    NSString *placeholderString;
-    IBObjectPickerElementView *lastRolledOverView;
-    BOOL viewsAreInvalid;
-    BOOL allowsEmptyRelation;
+    NSTextFieldCell *_backgroundCell;
+    IBImageButton *_dragWellButton;
+    DVTStackView_ML *_pickedObjectsStackView;
+    IBObjectPickerElementView *_lastRolledOverView;
+    BOOL _viewsAreInvalid;
+    BOOL _allowsEmptyRelation;
     id <IBObjectPickerViewDelegate> _delegate;
+    NSArray *_pickedObjects;
+    NSString *_placeholderString;
 }
 
+@property(nonatomic) BOOL allowsEmptyRelation; // @synthesize allowsEmptyRelation=_allowsEmptyRelation;
+@property(copy, nonatomic) NSString *placeholderString; // @synthesize placeholderString=_placeholderString;
+@property(copy, nonatomic) NSArray *pickedObjects; // @synthesize pickedObjects=_pickedObjects;
 @property __weak id <IBObjectPickerViewDelegate> delegate; // @synthesize delegate=_delegate;
-@property(nonatomic) BOOL allowsEmptyRelation; // @synthesize allowsEmptyRelation;
-@property(copy, nonatomic) NSString *placeholderString; // @synthesize placeholderString;
-@property(copy, nonatomic) NSArray *pickedObjects; // @synthesize pickedObjects;
 - (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (id)backgroundCell;
@@ -42,6 +42,7 @@
 - (BOOL)isFlipped;
 - (id)effectivePlaceholderString;
 @property(getter=isEnabled) BOOL enabled;
+- (void)updateDragWellButtonImages;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 // Remaining properties

@@ -6,48 +6,31 @@
 
 #import <IDEKit/IDEDistributionStepViewController.h>
 
-@class DVTFuture, DVTReplacementView, NSArray, NSSet;
-
 @interface IDEDistributionSigningAssetsStepViewController : IDEDistributionStepViewController
 {
-    DVTFuture *_recoveryFuture;
-    unsigned long long _retryCounter;
-    BOOL _useLocalSigningAssets;
-    DVTReplacementView *_replacementView;
-    NSArray *_errors;
-    NSSet *_devices;
+    IDEDistributionStepViewController *_actualViewController;
 }
 
 + (BOOL)skipStepForContext:(id)arg1 assistantDirection:(int)arg2;
-+ (id)keyPathsForValuesAffectingWantsNextAction;
-+ (id)keyPathsForValuesAffectingNextButtonTitle;
-+ (id)keyPathsForValuesAffectingCanGoNext;
++ (id)keyPathsForValuesAffectingAdditionalActionTitle;
++ (id)keyPathsForValuesAffectingWantsPreviousAction;
 + (id)keyPathsForValuesAffectingCanGoPrevious;
++ (id)keyPathsForValuesAffectingWantsNextAction;
++ (id)keyPathsForValuesAffectingCanGoNext;
 + (id)keyPathsForValuesAffectingTitle;
-+ (void)initialize;
-@property BOOL useLocalSigningAssets; // @synthesize useLocalSigningAssets=_useLocalSigningAssets;
-@property(retain) NSSet *devices; // @synthesize devices=_devices;
-@property(retain, nonatomic) NSArray *errors; // @synthesize errors=_errors;
-@property(retain) DVTReplacementView *replacementView; // @synthesize replacementView=_replacementView;
++ (Class)actualViewControllerClassForContext:(id)arg1;
+@property(retain, nonatomic) IDEDistributionStepViewController *actualViewController; // @synthesize actualViewController=_actualViewController;
 - (void).cxx_destruct;
+- (void)takeAdditionalAction;
+- (id)additionalActionTitle;
+- (void)takePreviousAction;
+- (BOOL)wantsPreviousAction;
+- (BOOL)canGoPrevious;
 - (void)takeNextAction;
 - (BOOL)wantsNextAction;
-- (id)nextButtonTitle;
 - (BOOL)canGoNext;
-- (BOOL)canGoPrevious;
-- (id)_attemptToResolveProvisioningError:(id)arg1;
-- (void)_displayError:(id)arg1 waitUntilDate:(id)arg2;
-- (void)_locateSigningAssetsAsync;
-- (void)_refreshDevicesFromPortal;
-- (id)_portalPlatform;
-- (id)_platformForArchive;
-- (void)_promptForTeamIfNecessaryAndLocateSigningAssets;
-- (BOOL)_isValidPortalTeam:(id)arg1;
-- (id)_installAndReturnProgressView;
-- (BOOL)_shouldRetryGeneratingAssets;
-- (void)viewDidInstall;
 - (id)title;
-- (id)nibName;
+- (void)loadView;
 - (void)primitiveInvalidate;
 
 @end

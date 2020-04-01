@@ -6,14 +6,26 @@
 
 #import <AppKit/NSImageCell.h>
 
-@interface NSImageCell (IBNSImageViewCellIntegration)
-- (id)ibDocumentationPropertyInfosForKeyPath:(id)arg1;
-- (void)ibSwizzledSetImage:(id)arg1;
+#import <IDEInterfaceBuilderCocoaIntegration/IBDocumentArchiving-Protocol.h>
+
+@class NSString;
+
+@interface NSImageCell (IBNSImageViewCellIntegration) <IBDocumentArchiving>
+- (BOOL)ibIsInNSImageView;
 - (id)ibAcceptContentsOfPasteboard:(id)arg1 inDocument:(id)arg2 insertionContext:(id)arg3;
 - (BOOL)ibCanAcceptContentsOfPasteboard:(id)arg1 inDocument:(id)arg2 targetChildRelation:(id *)arg3;
 - (Class)ibPreferredControlClass;
 - (id)ibDefaultDataValueForTableView:(id)arg1;
 - (id)ibPreferredSizeForSize:(struct CGSize)arg1 suggestedWidth:(char *)arg2 suggestedHeight:(char *)arg3 scaleAxesIndependently:(char *)arg4;
 - (struct CGSize)ibPreferredSizeForSize:(struct CGSize)arg1;
+- (id)ibLocalAttributeKeyPaths;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @end
 

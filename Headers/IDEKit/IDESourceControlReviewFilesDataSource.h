@@ -8,19 +8,11 @@
 
 #import <IDEKit/IDEReviewFilesDataSource-Protocol.h>
 
-@class IDENavigatorDataCell, IDEWorkspace, NSArray, NSMutableSet, NSPredicate, NSString;
+@class IDENavigableItem, IDEWorkspace, NSArray, NSPredicate, NSString;
 
 @interface IDESourceControlReviewFilesDataSource : NSObject <IDEReviewFilesDataSource>
 {
-    IDENavigatorDataCell *_containerFileRefCell;
-    IDENavigatorDataCell *_aggregateContainerFileRefCell;
-    IDENavigatorDataCell *_fileReferenceCell;
-    IDENavigatorDataCell *_groupCell;
-    IDENavigatorDataCell *_plainObjectCell;
-    IDENavigatorDataCell *_workingCopyTreeItemCell;
-    IDENavigatorDataCell *_workingCopyTreeGroupCell;
-    NSMutableSet *_bindingTokens;
-    NSArray *_navigableItems;
+    IDENavigableItem *_navigableItem;
     NSArray *_statusCategoryNames;
     NSString *_selectedRevisionIdentifier;
     NSPredicate *_filterPredicate;
@@ -28,37 +20,24 @@
     NSString *_filterString;
 }
 
-+ (id)keyPathsForValuesAffectingFlatNavigableItems;
-+ (id)keyPathsForValuesAffectingFileSystemNavigableItems;
-+ (id)keyPathsForValuesAffectingWorkspaceNavigableItems;
++ (id)keyPathsForValuesAffectingFlatNavigableItem;
++ (id)keyPathsForValuesAffectingFileSystemNavigableItem;
++ (id)keyPathsForValuesAffectingWorkspaceNavigableItem;
 @property(copy) NSArray *statusCategoryNames; // @synthesize statusCategoryNames=_statusCategoryNames;
 @property(retain) IDEWorkspace *workspace; // @synthesize workspace=_workspace;
 @property(copy) NSString *selectedRevisionIdentifier; // @synthesize selectedRevisionIdentifier=_selectedRevisionIdentifier;
 - (void).cxx_destruct;
 - (void)dealloc;
 - (void)teardown;
-- (void)reviewFilesNavigator:(id)arg1 outlineView:(id)arg2 willDisplayCell:(id)arg3 forNavigableItem:(id)arg4;
 - (id)reviewFilesNavigator:(id)arg1 importantFilePathsForNavigableItem:(id)arg2 excludingDisabledItems:(id)arg3;
 - (id)reviewFilesNavigator:(id)arg1 documentLocationForNavigableItem:(id)arg2;
-- (id)reviewFilesNavigator:(id)arg1 outlineView:(id)arg2 dataCellForNavigableItem:(id)arg3;
-- (id)plainObjectCell;
-- (id)workingCopyTreeGroupCell;
-- (id)workingCopyTreeItemCell;
-- (id)groupCell;
-- (id)fileReferenceCell;
-- (id)aggregateContainerFileRefCell;
-- (id)containerFileRefCell;
-- (id)newBasicContainerFileRefCell;
-- (id)aggregateSourceControlCategoryStatusCellsWithRepresentedObject:(id)arg1;
-- (id)sourceControlCategoryStatusCellsWithRepresentedObject:(id)arg1;
-- (id)statusCellsForCategoryName:(id)arg1 representedObject:(id)arg2;
 @property(copy) NSString *filterString; // @synthesize filterString=_filterString;
 @property(copy) NSPredicate *filterPredicate; // @synthesize filterPredicate=_filterPredicate;
-- (id)issueNavigableItems;
-@property(readonly) NSArray *flatNavigableItems;
-@property(readonly) NSArray *fileSystemNavigableItems;
-@property(readonly) NSArray *workspaceNavigableItems;
-@property(copy) NSArray *navigableItems; // @synthesize navigableItems=_navigableItems;
+- (id)issueNavigableItem;
+@property(readonly) IDENavigableItem *flatNavigableItem;
+@property(readonly) IDENavigableItem *fileSystemNavigableItem;
+@property(readonly) IDENavigableItem *workspaceNavigableItem;
+@property(copy) IDENavigableItem *navigableItem; // @synthesize navigableItem=_navigableItem;
 - (id)init;
 
 // Remaining properties

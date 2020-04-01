@@ -4,16 +4,24 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Foundation/NSObject.h>
+#import <objc/NSObject.h>
 
 #import <IDESpriteKitParticleEditor/DVTInvalidation-Protocol.h>
 
-@class DVTStackBacktrace, IDEWorkspace, NSString, NSURL, SKResourceManager, SKWorkspacePreferences;
+@class DVTDelayedInvocation, DVTObservingToken, DVTStackBacktrace, IDEWorkspace, NSMutableSet, NSSet, NSString, NSURL, SKAssetManager, SKResourceManager, SKWorkspacePreferences;
+@protocol DVTInvalidation;
 
 @interface SKWorkspace : NSObject <DVTInvalidation>
 {
+    id <DVTInvalidation> _fileObserverToken;
+    NSMutableSet *_workspaceFilePaths;
+    NSMutableSet *_cachedEditorDocuments;
+    DVTObservingToken *_allEditorDocumentsKVOToken;
+    NSMutableSet *_retainedDocuments;
+    DVTDelayedInvocation *_releaseInvocation;
     SKResourceManager *_resourceManager;
     SKWorkspacePreferences *_preferences;
+    SKAssetManager *_assetManager;
     IDEWorkspace *_ideWorkspace;
     NSURL *_url;
 }
@@ -22,10 +30,18 @@
 + (void)initialize;
 @property(readonly, nonatomic) NSURL *url; // @synthesize url=_url;
 @property(readonly, nonatomic) IDEWorkspace *ideWorkspace; // @synthesize ideWorkspace=_ideWorkspace;
+@property(readonly, nonatomic) NSSet *workspaceFilePaths; // @synthesize workspaceFilePaths=_workspaceFilePaths;
 - (void).cxx_destruct;
-- (id)allFilesInWorkspaceOfType:(id)arg1;
+- (id)editorDocumentForURL:(id)arg1;
+- (id)retainedDocumentWithFileNamed:(id)arg1;
+- (id)retainedDocumentForURL:(id)arg1;
+- (id)allFilesPathsInWorkspaceOfType:(id)arg1;
+- (id)fileObserverWithUpdate:(CDUnknownBlockType)arg1;
+@property(readonly, nonatomic) NSSet *editorDocuments;
+@property(readonly, nonatomic) SKAssetManager *assetManager; // @synthesize assetManager=_assetManager;
 @property(readonly, nonatomic) SKWorkspacePreferences *preferences; // @synthesize preferences=_preferences;
 @property(readonly, nonatomic) SKResourceManager *resourceManager; // @synthesize resourceManager=_resourceManager;
+- (void)_releaseEditorDocuments;
 - (void)primitiveInvalidate;
 - (id)initWithIDEWorkspace:(id)arg1;
 

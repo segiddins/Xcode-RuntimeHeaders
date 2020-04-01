@@ -6,15 +6,23 @@
 
 #import <IDEFoundation/IDEDistributionStep.h>
 
+@class NSArray;
+
 @interface IDEDistributionOptionsStep : IDEDistributionStep
 {
+    NSArray *_options;
 }
 
++ (id)propertyListForContext:(id)arg1;
 + (id)availableOptionsForPropertyList;
-+ (id)entitlementsProcessorsClasses;
++ (id)distributionOptionClasses;
++ (id)distributionOptionExtensions;
+@property(readonly, nonatomic) NSArray *options; // @synthesize options=_options;
+- (void).cxx_destruct;
 - (id)providedOutputContextPropertyNames;
 - (id)requiredInputContextPropertyNames;
-- (BOOL)loadFromPropertyList:(id)arg1 error:(id *)arg2;
+- (BOOL)loadFromExportOptions:(id)arg1 error:(id *)arg2;
+- (id)initWithContext:(id)arg1;
 
 @end
 

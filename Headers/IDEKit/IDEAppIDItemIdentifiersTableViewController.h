@@ -16,7 +16,6 @@
 {
     NSMutableArray *_cancellationTokens;
     BOOL _enabled;
-    BOOL _isRefreshing;
     IDEAppIDItemIdentifiersItemModelSet *_identifiers;
     NSArray *_displayedContainerIDs;
     id <IDEPortalInfoDelegate> _portalInfoDelegate;
@@ -34,7 +33,6 @@
     NSString *_requiredPrefix;
 }
 
-@property BOOL isRefreshing; // @synthesize isRefreshing=_isRefreshing;
 @property(readonly, nonatomic) NSString *requiredPrefix; // @synthesize requiredPrefix=_requiredPrefix;
 @property(retain) DVTGradientImageButton *removeButton; // @synthesize removeButton=_removeButton;
 @property(retain) DVTGradientImageButton *refreshButton; // @synthesize refreshButton=_refreshButton;

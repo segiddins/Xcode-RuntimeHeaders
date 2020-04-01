@@ -7,27 +7,28 @@
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBUIViewController.h>
 
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBDocumentArchiving-Protocol.h>
-#import <IDEInterfaceBuilderCocoaTouchIntegration/NSCoding-Protocol.h>
 
 @class IBUITabBar, NSArray, NSString;
 
-@interface IBUITabBarController : IBUIViewController <IBDocumentArchiving, NSCoding>
+@interface IBUITabBarController : IBUIViewController <IBDocumentArchiving>
 {
-    IBUITabBar *tabBar;
-    NSArray *viewControllers;
-    IBUIViewController *selectedViewController;
+    NSArray *_viewControllers;
+    BOOL _displaysAllTabsForReordering;
+    IBUITabBar *_tabBar;
+    IBUIViewController *_selectedViewController;
     NSArray *_simulatedTabBarItems;
 }
 
 + (void)registerMarshallingRecordHandlers;
 + (id)ibObservedPropertiesForEditorViewInvalidation;
-+ (id)ibObservedPropertiesForInheritableMetricsInvalidation;
 + (id)ibInstantiateForRole:(long long)arg1 withTargetRuntime:(id)arg2 documentClass:(Class)arg3 assetIdentifier:(id)arg4;
 @property(retain, nonatomic) NSArray *simulatedTabBarItems; // @synthesize simulatedTabBarItems=_simulatedTabBarItems;
-@property(retain) IBUITabBar *tabBar; // @synthesize tabBar;
-@property(retain) IBUIViewController *selectedViewController; // @synthesize selectedViewController;
+@property(retain, nonatomic) IBUIViewController *selectedViewController; // @synthesize selectedViewController=_selectedViewController;
+@property(nonatomic) BOOL displaysAllTabsForReordering; // @synthesize displaysAllTabsForReordering=_displaysAllTabsForReordering;
+@property(retain, nonatomic) IBUITabBar *tabBar; // @synthesize tabBar=_tabBar;
 - (void).cxx_destruct;
 - (id)localExtraMarshalledToManyRelationshipKeyPaths;
+- (id)localExtraMarshalledAttributesKeyPaths;
 - (id)simulatedMetricsFromParentChainForPipeline;
 - (id)displayedChildViewController;
 - (BOOL)displaysContentView;
@@ -35,9 +36,7 @@
 - (BOOL)ownsTopBar;
 - (void)setViewControllers:(id)arg1;
 - (id)viewControllers;
-@property long long selectedViewControllerIndex;
-- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
-- (void)archiveWithDocumentArchiver:(id)arg1;
+@property(nonatomic) long long selectedViewControllerIndex;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)ibIsChildArbitrationUnitRoot:(id)arg1;
@@ -48,6 +47,7 @@
 - (id)ibImageForOwnedScene;
 - (Class)ibEditorClass;
 - (BOOL)ibTabBarShouldArchiveItems:(id)arg1;
+- (id)ibMetricChainForDownstreamController:(id)arg1 viaSegue:(id)arg2 succeedingMetric:(id)arg3;
 - (void)setIbInspectedSimulatedTopBarMetrics:(id)arg1;
 - (void)setIbInspectedSimulatedBottomBarMetrics:(id)arg1;
 - (void)ibUpdateTabBarAfterSettingSimulatedMetrics:(id)arg1;
@@ -70,6 +70,12 @@
 - (void)ibRemoveChildren:(id)arg1;
 - (BOOL)ibIsChildViewUserSizable:(id)arg1;
 - (BOOL)ibIsChildViewUserMovable:(id)arg1;
+- (id)ibLeafMetricForValidationWithPrecedingMetric:(id)arg1;
+- (id)ibLocalNonUndoableDisplayOnlyKeyPaths;
+- (id)ibLocalChildToManyRelationshipsKeyPaths;
+- (id)ibLocalChildToOneRelationshipsKeyPaths;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

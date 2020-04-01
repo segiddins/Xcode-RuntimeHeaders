@@ -6,11 +6,11 @@
 
 #import <objc/NSObject.h>
 
-#import <GPUToolsCore/NSCoding-Protocol.h>
+#import <GPUToolsCore/NSSecureCoding-Protocol.h>
 
 @class NSArray, NSMutableData, NSPredicate, NSString;
 
-@interface DYBreakpoint : NSObject <NSCoding>
+@interface DYBreakpoint : NSObject <NSSecureCoding>
 {
     NSString *_name;
     NSPredicate *_predicate;
@@ -27,6 +27,7 @@
     BOOL _noExec;
 }
 
++ (BOOL)supportsSecureCoding;
 + (id)keyPathsForValuesAffectingName;
 @property(readonly, retain, nonatomic) NSString *threadName; // @synthesize threadName=_threadName;
 @property(readonly, retain, nonatomic) NSArray *backtrace; // @synthesize backtrace=_backtrace;

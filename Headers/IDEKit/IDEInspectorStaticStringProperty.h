@@ -18,7 +18,7 @@
 @property __weak NSTextField *textField; // @synthesize textField=_textField;
 - (void).cxx_destruct;
 - (void)setupRefreshTriggersAndConfigure;
-- (unsigned long long)_textAlignmentFromString:(id)arg1;
+- (long long)_textAlignmentFromString:(id)arg1;
 - (void)refresh;
 - (double)baseline;
 - (id)view;

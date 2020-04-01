@@ -11,7 +11,7 @@
 }
 
 - (BOOL)populateEnvironment:(id)arg1 launchContext:(id)arg2 error:(id *)arg3;
-- (id)launchAndConnectToToolWithLaunchContext:(id)arg1 toolProxyClass:(Class)arg2 shouldRaiseOnFailures:(BOOL)arg3 error:(id *)arg4;
+- (id)launchAndConnectToToolWithLaunchContext:(id)arg1 toolProxyClass:(Class)arg2 proxyDelegate:(id)arg3 shouldRaiseOnFailures:(BOOL)arg4 error:(id *)arg5;
 
 @end
 

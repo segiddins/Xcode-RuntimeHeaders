@@ -8,7 +8,7 @@
 
 #import <IDESceneKitEditor/SKEDocumentMember-Protocol.h>
 
-@class DVTDocumentLocation, DVTFileDataType, IDEEditorDocument, IDEFileReference, IDETypeIdentifier, NSArray, NSImage, NSString, SKEDocumentLocation, SKESceneDocument;
+@class DVTDocumentLocation, DVTFileDataType, IDEEditorDocument, IDEFileReference, IDETypeIdentifier, NSArray, NSImage, NSNull, NSString, NSURL, SKEDocumentLocation, SKESceneDocument, _TtC13DVTFoundation9DVTSymbol;
 @protocol SKEDocumentMember, SKEDocumentProtocol;
 
 @interface SKEDocumentGroup : NSObject <SKEDocumentMember>
@@ -17,14 +17,18 @@
     NSImage *_image;
     SKESceneDocument *_document;
     CDUnknownBlockType _chilMembersEnumerator;
+    NSString *ske_referencePath;
 }
 
++ (id)ske_attributeClassesOfInterestInEditorWithAvailability:(unsigned long long)arg1;
 + (unsigned long long)ske_availability;
 + (id)ske_memberClassDescriptionWithPlurality:(BOOL)arg1;
-@property(readonly) SKESceneDocument *document; // @synthesize document=_document;
+@property(readonly) __weak SKESceneDocument *document; // @synthesize document=_document;
+@property(readonly) NSString *ske_referencePath; // @synthesize ske_referencePath;
 - (void).cxx_destruct;
 @property(readonly) IDETypeIdentifier *ideModelObjectTypeIdentifier;
 - (id)humanReadableNameForInspectorKeyPath:(id)arg1;
+@property(readonly) NSArray *ske_overridesMembers;
 @property(readonly) id <SKEDocumentMember> ske_shadableMember;
 @property(readonly) id <SKEDocumentMember> ske_particleSystemMember;
 @property(readonly) id <SKEDocumentMember> ske_materialMember;
@@ -38,6 +42,7 @@
 @property(readonly) id <SKEDocumentMember> ske_animationMember;
 @property(readonly) id <SKEDocumentMember> ske_nodeMember;
 @property(readonly) BOOL ske_isEditable;
+@property(readonly) BOOL ske_isScene;
 @property(readonly) BOOL ske_isShadable;
 @property(readonly) BOOL ske_isAction;
 @property(readonly) BOOL ske_isAnimation;
@@ -60,11 +65,10 @@
 - (void)document:(id)arg1 willAddChildMember:(id)arg2 toMember:(id)arg3;
 - (void)ske_setAttribute:(id)arg1 ofClass:(Class)arg2;
 - (id)ske_attributeOfClass:(Class)arg1;
-- (id)ske_attributeClassesOfInterestInEditorWithAvailability:(unsigned long long)arg1;
 @property(readonly) NSArray *ske_attributesMembers;
 @property(readonly) NSArray *ske_childMembers;
-@property(readonly) NSString *navigableItem_name;
-- (id)applicableInspectorsForCategory:(id)arg1 suggestion:(id)arg2;
+@property(readonly, nonatomic) NSString *navigableItem_name;
+- (id)applicableInspectorSlicesForCategory:(id)arg1 suggestedSlices:(id)arg2;
 @property(readonly) SKEDocumentLocation *ske_navigableDocumentLocation;
 @property(retain) NSString *ske_entityIdentifier;
 @property(readonly) NSImage *ske_image;
@@ -80,18 +84,27 @@
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly) unsigned long long hash;
-@property(readonly) NSString *navigableItem_accessibleImageDescription;
-@property(readonly) DVTDocumentLocation *navigableItem_contentDocumentLocation;
-@property(readonly) DVTFileDataType *navigableItem_documentType;
-@property(readonly) IDEFileReference *navigableItem_fileReference;
-@property(readonly) NSString *navigableItem_groupIdentifier;
-@property(readonly) NSImage *navigableItem_image;
-@property(readonly) BOOL navigableItem_isLeaf;
-@property(readonly) BOOL navigableItem_isMajorGroup;
-@property(readonly) BOOL navigableItem_missingReferencedContentIsImportant;
-@property(readonly) BOOL navigableItem_referencedContentExists;
-@property(readonly) NSString *navigableItem_subtitle;
-@property(readonly) NSString *navigableItem_toolTip;
+@property(readonly, nonatomic) NSString *navigableItem_accessibilityIdentifier;
+@property(readonly, nonatomic) NSString *navigableItem_accessibleImageDescription;
+@property(readonly, nonatomic) NSArray *navigableItem_additionalFilterMatchingText;
+@property(readonly, nonatomic) NSArray *navigableItem_childRepresentedObjects;
+@property(readonly, nonatomic) DVTDocumentLocation *navigableItem_contentDocumentLocation;
+@property(readonly, nonatomic) DVTFileDataType *navigableItem_documentType;
+@property(readonly, nonatomic) IDEFileReference *navigableItem_fileReference;
+@property(readonly, nonatomic) NSNull *navigableItem_filtered;
+@property(readonly, nonatomic) NSString *navigableItem_groupIdentifier;
+@property(readonly, nonatomic) NSImage *navigableItem_image;
+@property(readonly, nonatomic) BOOL navigableItem_isEnabled;
+@property(readonly, nonatomic) BOOL navigableItem_isLeaf;
+@property(readonly, nonatomic) BOOL navigableItem_isMajorGroup;
+@property(readonly, nonatomic) BOOL navigableItem_isVisible;
+@property(readonly, nonatomic) BOOL navigableItem_missingReferencedContentIsImportant;
+@property(readonly, nonatomic) id navigableItem_parentRepresentedObject;
+@property(readonly, nonatomic) BOOL navigableItem_referencedContentExists;
+@property(readonly, nonatomic) _TtC13DVTFoundation9DVTSymbol *navigableItem_representedSymbol;
+@property(readonly, nonatomic) NSURL *navigableItem_representedURL;
+@property(readonly, nonatomic) NSString *navigableItem_subtitle;
+@property(readonly, nonatomic) NSString *navigableItem_toolTip;
 @property(readonly) Class superclass;
 
 @end

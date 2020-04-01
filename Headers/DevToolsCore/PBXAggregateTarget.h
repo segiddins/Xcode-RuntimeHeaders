@@ -18,13 +18,15 @@
 - (id)relevantToolSpecifications;
 - (id)relevantToolSpecificationsForConfigurationsNamed:(id)arg1;
 - (id)relevantToolSpecificationsForConfigurationNamed:(id)arg1;
+- (BOOL)allowsZeroBuildPhases;
+- (BOOL)allowsCopyFilesBuildPhases;
+- (BOOL)allowsShellScriptBuildPhases;
+- (BOOL)wantsTopLevelItemForBuildPhases;
 - (BOOL)isAggregate;
 - (BOOL)canPackageHeaders;
 - (BOOL)canInstallHeaders;
 - (BOOL)wantsProductSettings;
 - (BOOL)hasUserConfigurableBuildRules;
-- (id)buildSettingsPanes;
-- (id)defaultProductTypeIdentifierByAnalyzingConfiguration;
 
 @end
 

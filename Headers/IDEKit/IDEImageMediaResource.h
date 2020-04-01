@@ -11,9 +11,11 @@
 }
 
 + (id)mediaType;
++ (id)generateContentWithContext:(id)arg1;
+- (id)detailViewAlternateWithTitle:(id)arg1;
+- (BOOL)needsContentForDetailViewAlternate;
 - (void)populateAdditionalTypesToPasteboard:(id)arg1;
-- (id)mediaLibraryDetailControllerIdentifier;
-- (id)generateContentForFilePath:(id)arg1 contentType:(id)arg2;
+- (id)captureContextOnMainThreadBeforeGeneratingContent;
 
 @end
 

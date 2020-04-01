@@ -6,20 +6,15 @@
 
 #import <IDEFoundation/IDEDistributionStep.h>
 
-@class IDEDistributionManifest;
-
 @interface IDEDistributionManifestStep : IDEDistributionStep
 {
 }
 
-+ (id)keyPathsForValuesDistributionManifest;
++ (id)propertyListForContext:(id)arg1;
 + (id)availableOptionsForPropertyList;
-@property(retain) IDEDistributionManifest *distributionManifest;
 - (id)providedOutputContextPropertyNames;
 - (id)requiredInputContextPropertyNames;
-- (BOOL)wantsAssetPackManifestURL;
-- (BOOL)loadFromPropertyList:(id)arg1 error:(id *)arg2;
-- (id)initWithContext:(id)arg1;
+- (BOOL)loadFromExportOptions:(id)arg1 error:(id *)arg2;
 
 @end
 

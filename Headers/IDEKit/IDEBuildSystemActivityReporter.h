@@ -19,7 +19,6 @@
     NSTimer *_uiRefreshTimer;
 }
 
-+ (void)initialize;
 - (void).cxx_destruct;
 - (void)updateActivityReportsForBuildOperation:(id)arg1;
 - (void)refreshUIIfNeededAfterTimerFired:(id)arg1;

@@ -8,16 +8,22 @@
 
 #import <IDEFoundation/DVTInvalidation-Protocol.h>
 
-@class DVTStackBacktrace, NSMapTable, NSString;
+@class DVTStackBacktrace, NSMapTable, NSOperationQueue, NSString;
 
 @interface IDEPlaygroundResourcesSymlinkManager : NSObject <DVTInvalidation>
 {
     NSMapTable *__contextToResourcesMonitorMap;
     NSMapTable *__monitorToModificationObservingTokenMap;
+    NSOperationQueue *__compilerOperationQueue;
 }
 
 + (void)initialize;
++ (BOOL)isResourceNeededForCompilation:(id)arg1;
++ (BOOL)isResourceTypeXIB:(id)arg1;
++ (BOOL)isResourceTypeStoryboard:(id)arg1;
++ (BOOL)isResourceTypeCoreMLModel:(id)arg1;
 + (id)sharedManager;
+@property(retain) NSOperationQueue *_compilerOperationQueue; // @synthesize _compilerOperationQueue=__compilerOperationQueue;
 @property(retain) NSMapTable *_monitorToModificationObservingTokenMap; // @synthesize _monitorToModificationObservingTokenMap=__monitorToModificationObservingTokenMap;
 @property(retain) NSMapTable *_contextToResourcesMonitorMap; // @synthesize _contextToResourcesMonitorMap=__contextToResourcesMonitorMap;
 - (void).cxx_destruct;

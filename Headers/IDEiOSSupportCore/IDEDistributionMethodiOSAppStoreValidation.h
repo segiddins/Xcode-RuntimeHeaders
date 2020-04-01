@@ -10,9 +10,7 @@
 {
 }
 
-- (id)subtitle;
-- (id)title;
-- (int)supportedTask;
+- (long long)supportedTask;
 - (double)sortOrder;
 
 @end

@@ -10,14 +10,18 @@
 {
 }
 
-+ (void)recordDocDownloadInteraction:(id)arg1;
 + (void)recordDocViewNavigationForURL:(id)arg1;
 + (id)_setOfNavigatedSchemesUsedByDocViewer;
 + (void)recordAppDidShutdown:(id)arg1;
 + (void)recordAppAboutToShutdown;
 + (void)scheduleAppReportWithStartTime:(double)arg1;
 + (void)recordAppUsedGPUDebugger;
++ (void)_reportNavigationPreferences;
 + (void)_reportLVStatus;
++ (id)_sipStatus;
++ (void)_reportSourceEditorExtensions;
++ (void)_reportNonAppleInProcessPlugins;
++ (void)_reportWorkspaceWindowUIStatus;
 + (void)_performAppReportWithStartupDuration:(double)arg1;
 + (id)_diskTypes;
 + (id)_diskTypeFor:(struct __DADisk *)arg1 withDiskManager:(id)arg2;

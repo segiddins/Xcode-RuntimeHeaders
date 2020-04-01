@@ -4,15 +4,15 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <GPUDebuggerFoundation/GPUDebuggerController.h>
+#import <GPUDebugger/GPUDebuggerController.h>
 
-#import <GPUDebuggerMTLSupport/DYPShaderUpdaterDelegate-Protocol.h>
+#import <GPUDebuggerMTLSupport/DYPShaderReloaderDelegate-Protocol.h>
 
-@class DVTFilePath, DVTObservingToken, DYMTLAnalyzerArchiveVisitor, NSArray, NSMutableArray, NSString;
-@protocol DYPDebuggerControllerProxy, DYPShaderUpdater;
+@class DVTFilePath, DVTObservingToken, DYAsyncTaskToken, DYMTLAnalyzerArchiveVisitor, NSArray, NSMapTable, NSMutableArray, NSObject, NSString;
+@protocol DYPDebuggerControllerProxy, DYPDependencyGraph, DYPResourceMemoryDataSource, DYPShaderReloader, OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
-@interface GPUMTLDebuggerController : GPUDebuggerController <DYPShaderUpdaterDelegate>
+@interface GPUMTLDebuggerController : GPUDebuggerController <DYPShaderReloaderDelegate>
 {
     DYMTLAnalyzerArchiveVisitor *_analyzerVisitor;
     NSArray *_invalidOverridesCache;
@@ -21,45 +21,71 @@ __attribute__((visibility("hidden")))
     DVTFilePath *_defaultLibraryPath;
     BOOL _updateDefaultLibrary;
     id <DYPDebuggerControllerProxy> _platformDebuggerController;
-    id <DYPShaderUpdater> _shaderUpdater;
+    id <DYPShaderReloader> _shaderReloader;
+    DYAsyncTaskToken *_currentShaderReloadTask;
+    NSMapTable *_batchCounterDataHandlerMap;
+    NSMapTable *_highPriorityBatchRequestHandlerMap;
+    NSMapTable *_profilingDataUpdateHandlerMap;
+    id <DYPDependencyGraph> _dependencyGraph;
+    id <DYPResourceMemoryDataSource> _resourceMemoryDataSource;
+    struct unordered_set<unsigned long long, std::__1::hash<unsigned long long>, std::__1::equal_to<unsigned long long>, std::__1::allocator<unsigned long long>> _handledHighPriorityBatchRequests;
+    id _batchCounterDataUpdateToken;
+    NSObject<OS_dispatch_queue> *_queue;
     BOOL _shadersUpdatable;
     NSArray *_invalidOverrides;
 }
 
 + (id)assetBundle;
-@property(nonatomic) BOOL shadersUpdatable; // @synthesize shadersUpdatable=_shadersUpdatable;
+- (void)setShadersUpdatable:(BOOL)arg1;
+- (BOOL)shadersUpdatable;
+- (id).cxx_construct;
 - (void).cxx_destruct;
+- (id)buildDefaultLibraryAtURL:(id)arg1 error:(id *)arg2;
+- (id)_buildProductsDefaultLibraryURL:(id)arg1;
+- (id)gpuVendorForAPIItem:(id)arg1;
+- (id)gpuNameForAPIItem:(id)arg1;
 - (id)invalidOverrides;
-- (void)defaultLibraryUpdateRequested:(CDUnknownBlockType)arg1;
-- (void)setInfoDictForProgram:(unsigned long long)arg1 dict:(id)arg2 container:(unsigned long long)arg3;
-- (id)infoDictForProgram:(unsigned long long)arg1 container:(unsigned long long)arg2;
-- (void)shaderUpdatedWithStatus:(BOOL)arg1 resource:(id)arg2;
-- (BOOL)supportsDebugBarShaderUpdate;
+- (BOOL)dumpInstructions;
+- (BOOL)wantsDerivedCounters;
 - (BOOL)analyzeStoredCaptureArchive;
-- (void)onRequestProfilerData:(id)arg1;
+- (void)requestPerLineShaderProfilerData:(unsigned long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (BOOL)isDisassemblerAvailable;
-- (id)runShaderProfiler;
+- (void)notifyProfilingDataUpdateObservers:(id)arg1;
+- (void)removeProfilingUpdateObserver:(id)arg1;
+- (id)registerForProfilingDataUpdatesOnQueue:(id)arg1 handler:(CDUnknownBlockType)arg2;
+- (void)notifyBatchedCounterDataOnQueue:(id)arg1 handler:(CDUnknownBlockType)arg2;
+- (void)_handleBatchDerivedCountersUpdate;
+- (void)_requestHighPriortyBatch:(id)arg1;
+- (void)notifyCounterGraphItemChangedOnQueue:(id)arg1 handler:(CDUnknownBlockType)arg2;
+- (id)runShaderProfiler:(int)arg1;
 - (void)traceSessionEstablishedWithNewArchive:(BOOL)arg1;
 - (BOOL)_configureInvestigatorWithCaseConfigData:(id)arg1;
 - (id)createProgramPerformanceReportProvider:(id)arg1;
 - (id)createInvestigatorReportProvider:(id)arg1;
 - (void)createReportWithCompletionBlock:(CDUnknownBlockType)arg1;
+- (void)_notifyShaderEditContinueResourcesUpdated;
+- (void)_notifyShaderEditContinueEndWithCompleted:(BOOL)arg1;
+- (void)_notifyShaderEditContinueBegin;
+- (void)_restartShaderDebuggerIfActive;
+- (BOOL)_purgeCachedResources;
+- (void)_updateShaders:(CDUnknownBlockType)arg1;
 - (void)updateShaders;
-- (void)handleDocumentChanged:(id)arg1 currentAPIItem:(id)arg2;
+- (void)handleDocumentChanged:(id)arg1 shaderItem:(id)arg2;
+- (void)startShaderDebuggerSessionWithShaderItem:(id)arg1 region:(id)arg2 userInfo:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)resetResourceManagerWithResourceStreamer:(id)arg1;
 - (BOOL)handleCaptureSessionFinalization:(id)arg1;
 - (void)setupCaptureSessionInfoWithArchive:(id)arg1;
 - (void)handleAppSessionTransportMessage:(id)arg1;
 - (void)setupGuestAppSession:(id)arg1;
 - (id)newGuestAppSessionWithGuestApp:(id)arg1 device:(id)arg2 deferLaunch:(BOOL)arg3 error:(id *)arg4;
-- (BOOL)isOfflineShaderInLoadedCapture;
 - (void)createModelFactory;
 - (void)setDeviceInfo:(id)arg1;
 - (BOOL)supportsInvestigator;
 - (void)primitiveInvalidate;
 - (id)init;
 - (void)setupCaptureSession:(id)arg1;
-- (id)appRunnableLocation;
+- (id)resourceMemoryDataSource;
+- (id)dependencyGraph;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

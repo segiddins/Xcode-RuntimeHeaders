@@ -11,7 +11,7 @@
 }
 
 - (id)description;
-- (BOOL)evaluateAsBooleanInContext:(id)arg1;
+- (BOOL)evaluateAsBooleanWithMacroExpansionScope:(id)arg1;
 
 @end
 

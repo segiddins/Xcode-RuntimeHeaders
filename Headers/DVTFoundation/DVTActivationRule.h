@@ -19,7 +19,7 @@
 }
 
 + (long long)integerValueForVersionString:(id)arg1;
-+ (id)keyPathsForKeysAffectingPredicate;
++ (id)keyPathsForValuesAffectingPredicate;
 @property(copy) NSPredicate *query; // @synthesize query=_query;
 @property(copy) NSString *versionString; // @synthesize versionString=_versionString;
 @property(copy) NSString *identifier; // @synthesize identifier=_identifier;
@@ -28,12 +28,11 @@
 @property(readonly) NSPredicate *predicate;
 - (id)_predicateWithIdentifier:(id)arg1 versionString:(id)arg2 query:(id)arg3;
 - (void)encodeIntoPropertyList:(id)arg1;
-- (void)awakeWithPropertyList:(id)arg1;
+@property(readonly, copy) NSString *description;
 - (id)initWithPropertyList:(id)arg1 owner:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

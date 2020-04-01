@@ -41,6 +41,7 @@
 - (void)setFunctionIndex:(int)arg1;
 - (void)addLinks:(id)arg1 fromKey:(id)arg2;
 - (void)addFunctionDerivedDetails:(id)arg1;
+- (id)findingWithKind:(id)arg1 warningLevel:(int)arg2 classification:(unsigned int)arg3 detailsKey:(id)arg4 linksKey:(id)arg5 triggerIndex:(int)arg6 uniqueInfo:(id)arg7;
 - (id)findingWithKind:(id)arg1 warningLevel:(int)arg2 classification:(unsigned int)arg3 detailsKey:(id)arg4 linksKey:(id)arg5 triggerIndex:(int)arg6;
 - (id)errorFindingFromFunction:(const struct Function *)arg1;
 - (id)finding;

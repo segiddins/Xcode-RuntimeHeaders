@@ -6,12 +6,11 @@
 
 #import <objc/NSObject.h>
 
-@class DVTSigningCertificate, IDEProfileQualification, NSString;
-@protocol DVTProvisioningProfile;
+@class DVTProvisioningProfile, DVTSigningCertificate, IDEProfileQualification, NSString;
 
 @interface IDECodesignParameterSnapshot : NSObject
 {
-    id <DVTProvisioningProfile> _provisioningProfile;
+    DVTProvisioningProfile *_provisioningProfile;
     DVTSigningCertificate *_signingCertificate;
     NSString *_identityHash;
     IDEProfileQualification *_profileQualification;
@@ -25,7 +24,7 @@
 @property(retain, nonatomic) IDEProfileQualification *profileQualification; // @synthesize profileQualification=_profileQualification;
 @property(copy) NSString *identityHash; // @synthesize identityHash=_identityHash;
 @property(retain) DVTSigningCertificate *signingCertificate; // @synthesize signingCertificate=_signingCertificate;
-@property(retain) id <DVTProvisioningProfile> provisioningProfile; // @synthesize provisioningProfile=_provisioningProfile;
+@property(retain) DVTProvisioningProfile *provisioningProfile; // @synthesize provisioningProfile=_provisioningProfile;
 - (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;

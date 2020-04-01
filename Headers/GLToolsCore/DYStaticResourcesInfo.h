@@ -6,11 +6,11 @@
 
 #import <objc/NSObject.h>
 
-#import <GLToolsCore/NSCoding-Protocol.h>
+#import <GLToolsCore/NSSecureCoding-Protocol.h>
 
 @class NSArray;
 
-@interface DYStaticResourcesInfo : NSObject <NSCoding>
+@interface DYStaticResourcesInfo : NSObject <NSSecureCoding>
 {
     NSArray *textures;
     NSArray *renderbuffers;
@@ -23,6 +23,7 @@
     NSArray *programPipelines;
 }
 
++ (BOOL)supportsSecureCoding;
 @property(retain, nonatomic) NSArray *programPipelines; // @synthesize programPipelines;
 @property(retain, nonatomic) NSArray *programs; // @synthesize programs;
 @property(retain, nonatomic) NSArray *shaders; // @synthesize shaders;
@@ -33,6 +34,7 @@
 @property(retain, nonatomic) NSArray *renderbuffers; // @synthesize renderbuffers;
 @property(retain, nonatomic) NSArray *textures; // @synthesize textures;
 - (void)encodeWithCoder:(id)arg1;
+- (id)debugDescription;
 - (id)initWithCoder:(id)arg1;
 - (void)dealloc;
 

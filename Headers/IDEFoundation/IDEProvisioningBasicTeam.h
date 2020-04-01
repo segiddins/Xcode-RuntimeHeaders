@@ -25,6 +25,7 @@
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
+- (id)initWithTeamID:(id)arg1 teamName:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

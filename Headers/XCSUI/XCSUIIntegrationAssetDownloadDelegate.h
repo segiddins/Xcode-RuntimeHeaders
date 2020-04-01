@@ -12,14 +12,11 @@
 
 @interface XCSUIIntegrationAssetDownloadDelegate : NSObject <NSURLSessionDownloadDelegate>
 {
-    NSString *_destinationFilePath;
     CDUnknownBlockType _callback;
-    NSString *_destinationDirectory;
-    NSString *_destinationFile;
+    NSString *_destinationFilePath;
 }
 
-@property(copy) NSString *destinationFile; // @synthesize destinationFile=_destinationFile;
-@property(copy) NSString *destinationDirectory; // @synthesize destinationDirectory=_destinationDirectory;
+@property(copy) NSString *destinationFilePath; // @synthesize destinationFilePath=_destinationFilePath;
 @property(copy) CDUnknownBlockType callback; // @synthesize callback=_callback;
 - (void).cxx_destruct;
 - (void)URLSession:(id)arg1 task:(id)arg2 didCompleteWithError:(id)arg3;
@@ -27,6 +24,7 @@
 - (void)URLSession:(id)arg1 downloadTask:(id)arg2 didFinishDownloadingToURL:(id)arg3;
 - (void)unzipArchiveAtPath:(id)arg1;
 - (void)URLSession:(id)arg1 task:(id)arg2 didReceiveChallenge:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (id)initWithDestination:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

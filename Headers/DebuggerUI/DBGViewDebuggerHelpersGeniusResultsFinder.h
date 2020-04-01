@@ -15,7 +15,7 @@
 @property long long selectedObjectsWaitingForFetch; // @synthesize selectedObjectsWaitingForFetch=_selectedObjectsWaitingForFetch;
 - (id)_packagedGeniusResultsFromLocations:(id)arg1;
 - (id)_geniusLocationsForName:(id)arg1 inIndex:(id)arg2;
-- (BOOL)_getUpdateGeniusResultsPhaseOneBlock:(CDUnknownBlockType *)arg1 phaseTwoBlock:(CDUnknownBlockType *)arg2 phaseThreeBlock:(CDUnknownBlockType *)arg3;
+- (BOOL)_getUpdateGeniusResultsPhase1Block:(CDUnknownBlockType *)arg1 phase2Block:(CDUnknownBlockType *)arg2 phase3Block:(CDUnknownBlockType *)arg3;
 - (void)findPropertyValueForKey:(id)arg1 inList:(id)arg2 addToNames:(id)arg3;
 - (id)geniusCategoryIdentifier;
 

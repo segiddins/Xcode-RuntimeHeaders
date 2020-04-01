@@ -6,16 +6,12 @@
 
 #import <objc/NSObject.h>
 
-#import <DevToolsKit/NSCoding-Protocol.h>
-#import <DevToolsKit/NSCopying-Protocol.h>
+@class DTTileView, NSView;
 
-@class DTTileView, NSMutableData, NSView;
-
-@interface DTTileViewItem : NSObject <NSCopying, NSCoding>
+@interface DTTileViewItem : NSObject
 {
     void *_reserved;
     void *_reserved2;
-    NSMutableData *_archive;
     DTTileView *_layoutItemOwnerView;
     id _representedObject;
     NSView *_view;
@@ -55,10 +51,6 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
 - (void)_releaseResources;
-- (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)_copyConnectionsOfView:(id)arg1 referenceObject:(id)arg2 toView:(id)arg3 referenceObject:(id)arg4;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 - (id)init;
 - (void)_init;
 

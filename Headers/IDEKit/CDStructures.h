@@ -46,16 +46,19 @@ struct NSObject {
     Class _field1;
 };
 
-struct NSSet {
-    Class _field1;
-};
-
 struct OpaqueAEDataStorageType;
 
 struct _CALayerIvars {
     int _field1;
     unsigned int _field2;
     void *_field3;
+};
+
+struct _DVTGraphBounds {
+    double minX;
+    double maxX;
+    double minY;
+    double maxY;
 };
 
 struct _IDEKeyBindingFieldCellFlags {
@@ -78,7 +81,7 @@ struct _IDEKeyBindingFlags {
     unsigned int isConflicted:1;
     unsigned int isConflictedWithHotKey:1;
     unsigned int isShiftModifierMaskLocked:1;
-    unsigned int isAlternateModifierMaskLocked:1;
+    unsigned int isOptionModifierMaskLocked:1;
     unsigned int isCommandModifierMaskLocked:1;
     unsigned int isControlModifierMaskLocked:1;
     unsigned int disablesPostingKeyboardShortcutsDidChangeNotification:1;
@@ -128,8 +131,18 @@ typedef struct {
 } CDStruct_bf6d4a14;
 
 typedef struct {
+    double distance;
+    long long anchor;
+} CDStruct_7e09e69b;
+
+typedef struct {
     long long numberOfDirectlyTaggedObjects;
     long long numberOfImplicitlyTaggedObjects;
     long long numberOfSelectedObjects;
 } CDStruct_5017ad51;
+
+typedef struct {
+    long long _field1;
+    long long _field2;
+} CDStruct_912cb5d2;
 

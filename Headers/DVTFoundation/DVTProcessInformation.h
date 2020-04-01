@@ -14,18 +14,18 @@
     NSString *_displayName;
     NSURL *_processURL;
     NSString *_preferredArchitecture;
+    BOOL _foregroundRunning;
 }
 
-@property(readonly) NSString *preferredArchitecture; // @synthesize preferredArchitecture=_preferredArchitecture;
+@property(retain) NSString *preferredArchitecture; // @synthesize preferredArchitecture=_preferredArchitecture;
 @property(readonly) NSURL *processURL; // @synthesize processURL=_processURL;
-@property(readonly) NSString *displayName; // @synthesize displayName=_displayName;
+@property(readonly, getter=isForegroundRunning) BOOL foregroundRunning; // @synthesize foregroundRunning=_foregroundRunning;
+@property(copy, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property int pid; // @synthesize pid=_pid;
 - (void).cxx_destruct;
 - (long long)displayNameCompare:(id)arg1;
-- (void)setPreferredArchitecture:(id)arg1;
+- (void)setForegroundRunning:(BOOL)arg1;
 - (void)setProcessURL:(id)arg1;
-- (void)setDisplayName:(id)arg1;
-@property(readonly) BOOL isDebuggable;
 - (id)initWithPID:(int)arg1;
 
 @end

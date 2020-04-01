@@ -6,7 +6,7 @@
 
 #import <IDEInterfaceBuilderKit/IBDocument.h>
 
-@class DVTMutableOrderedSet, IBStoryboardGlobalEntryPointIndicator, IBStoryboardMetricsInferrer, NSDictionary, NSObject;
+@class DVTMutableOrderedSet, IBStoryboardGlobalEntryPointIndicator, NSDictionary, NSObject;
 @protocol IBPrimarySceneObject;
 
 @interface IBStoryboardDocument : IBDocument
@@ -20,7 +20,6 @@
 + (Class)libraryAssetProviderClassForIdiom:(id)arg1;
 + (int)libraryInclusionStatusForExternalPrimarySceneObject;
 + (int)libraryInclusionStatusForContainerView;
-+ (BOOL)wantsViewControllersAtTopOfLibrary;
 + (BOOL)supportsPrototypeObjects;
 - (void).cxx_destruct;
 - (BOOL)isStoryboardDocument;
@@ -45,6 +44,7 @@
 - (void)objectContainer:(id)arg1 didRemoveObject:(id)arg2 fromParent:(id)arg3;
 - (BOOL)unarchivePlatformIndependentDataWithUnarchiver:(id)arg1 error:(id *)arg2;
 - (void)unarchiveDesignatedEntryPointWithUnarchiver:(id)arg1;
+- (void)initializeGlobalEntryPointIndicators;
 - (void)archivePlatformIndependentDataWithDocumentArchiver:(id)arg1;
 - (void)unarchiveTopLevelObjects:(id)arg1;
 - (void)archiveTopLevelObjects:(id)arg1;
@@ -79,6 +79,8 @@
 - (BOOL)isBuiltInPlaceholder:(id)arg1 forSceneGroup:(id)arg2;
 - (void)removeObjects:(id)arg1;
 - (id)sceneGroupMemberWrapperForObject:(id)arg1;
+@property(readonly, nonatomic) IBStoryboardGlobalEntryPointIndicator *designatedMenuIndicator;
+@property(retain, nonatomic) NSObject<IBPrimarySceneObject> *designatedMenu;
 @property(retain, nonatomic) NSObject<IBPrimarySceneObject> *designatedEntryPoint;
 - (id)globalEntryPointIndicatorForKeyPath:(id)arg1;
 @property(readonly, nonatomic) IBStoryboardGlobalEntryPointIndicator *designatedEntryPointIndicator;
@@ -88,8 +90,8 @@
 - (id)entryPointPrimarySceneObjects;
 - (id)groupForPrimarySceneObject:(id)arg1;
 - (id)sceneGroups;
-- (id)primarySceneObjectGraphSources;
 - (id)primarySceneObjects;
+- (BOOL)isPrimarySceneObject:(id)arg1;
 - (BOOL)isObjectBuiltInPlaceholder:(id)arg1;
 - (BOOL)isObjectExitPlaceholder:(id)arg1;
 - (id)firstResponderForConnectingToObject:(id)arg1;
@@ -110,14 +112,9 @@
 - (void)didFinishUndoing;
 - (void)undoManagerWillCloseUndoGroup:(id)arg1;
 - (void)changeDocumentTargetRuntimeTo:(id)arg1 andPerformFrameDecision:(BOOL)arg2 withContext:(id)arg3 andContextForUndo:(id)arg4;
-- (void)setDefaultSimulatedMetricsContainer:(id)arg1;
 - (id)transformForCanvasAnchorsWhenDisablingConfigurations;
 - (id)transformForCanvasAnchorsWhenEnablingConfigurations;
-- (void)setUsesConfigurations:(BOOL)arg1;
 - (id)defaultPreviewedObject;
-
-// Remaining properties
-@property(readonly, nonatomic) IBStoryboardMetricsInferrer *metricsInferrer; // @dynamic metricsInferrer;
 
 @end
 

@@ -6,7 +6,19 @@
 
 #import <AppKit/NSSearchField.h>
 
-@interface NSSearchField (IBSearchFieldCellIntegration)
+#import <IDEInterfaceBuilderCocoaIntegration/IBDocumentArchiving-Protocol.h>
+
+@class NSString;
+
+@interface NSSearchField (IBSearchFieldCellIntegration) <IBDocumentArchiving>
 - (void)setIbInspectedControlSize:(unsigned long long)arg1;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @end
 

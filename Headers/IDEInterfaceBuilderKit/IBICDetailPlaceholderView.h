@@ -4,18 +4,17 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <DVTKit/DVTLayoutView_ML.h>
+#import <DVTStructuredLayoutKit/DVTLayoutView_ML.h>
 
 #import <IDEInterfaceBuilderKit/NSAccessibilityGroup-Protocol.h>
 
-@class DVTLozengeTextField, IBImageButton, NSColor, NSString, NSView;
+@class NSButton, NSColor, NSString, NSTextField, NSView;
 @protocol IBViewDragDelegate;
 
 @interface IBICDetailPlaceholderView : DVTLayoutView_ML <NSAccessibilityGroup>
 {
-    DVTLozengeTextField *_textField;
-    IBImageButton *_imageButton;
-    BOOL _imagesNeedsUpdate;
+    NSTextField *_textField;
+    NSButton *_actionButton;
     id <IBViewDragDelegate> _delegate;
     NSView *_overlayView;
     NSColor *_backgroundColor;
@@ -29,14 +28,13 @@
 @property(nonatomic) __weak id <IBViewDragDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (id)accessibilityLabel;
-- (void)drawRect:(struct CGRect)arg1;
+- (void)updateLayer;
+- (BOOL)wantsUpdateLayer;
 - (void)layoutTopDown;
 - (id)effectiveAttributedActionText;
-- (id)buttonBackgroundImageWithWhite:(double)arg1 actionText:(id)arg2;
 @property(retain, nonatomic) id target;
 @property(nonatomic) SEL action;
 @property(copy, nonatomic) NSString *placeholderString;
-- (void)invalidateImage;
 - (void)layoutBottomUp;
 - (id)initWithFrame:(struct CGRect)arg1;
 

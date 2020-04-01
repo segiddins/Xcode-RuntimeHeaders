@@ -25,6 +25,8 @@
 - (void).cxx_destruct;
 - (void)moreInfoRequestedForBlockingEventView:(id)arg1;
 - (void)escapeHatchRequestedForBlockingEventView:(id)arg1;
+- (void)viewDidDisappear;
+- (void)viewWillAppear;
 - (void)viewDidLoad;
 - (id)initUsingDefaultNib;
 

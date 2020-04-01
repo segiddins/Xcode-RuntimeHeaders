@@ -7,7 +7,36 @@
 #import <Foundation/NSValue.h>
 
 @interface NSValue (IBICSchemaDebugDescription)
++ (id)decodeWithBinaryUnarchiver:(id)arg1;
++ (id)ib_valueWithUnsafeUnretainedPointer:(id)arg1;
++ (id)ib_valueWithKnobPosition:(CDUnion_42e99c75)arg1;
++ (id)ib_valueWithDirectionalEdgeInsets:(struct IBNSDirectionalEdgeInsets)arg1;
++ (id)ib_valueWithIBEdgeInsets:(struct NSEdgeInsets)arg1;
++ (id)ib_valueWithOffset:(CDStruct_c3b9c2ee)arg1;
++ (id)ib_valueWithInset:(CDStruct_c519178c)arg1;
++ (id)ib_valueWithSize:(struct CGSize)arg1;
++ (id)ib_valueWithRect:(struct CGRect)arg1;
++ (id)ib_valueWithPoint:(struct CGPoint)arg1;
++ (id)valueWithSlicedImageDivider:(CDStruct_912cb5d2)arg1;
++ (id)valueWithSlicedImagePart:(CDStruct_912cb5d2)arg1;
 - (void)ibic_generateAttributes:(CDUnknownBlockType)arg1;
 - (id)ibic_attributeValueDescription;
+- (void)encodeWithBinaryArchiver:(id)arg1;
+- (CDUnion_42e99c75)ib_knobPosition;
+- (BOOL)ib_isDirectionalEdgeInsetsValue;
+- (struct NSEdgeInsets)ib_edgeInsetsValue;
+- (CDStruct_d0b1bdbd)ib_lineValue;
+- (BOOL)ib_isOffset;
+- (CDStruct_c3b9c2ee)ib_offsetValue;
+- (BOOL)ib_isInset;
+@property(readonly) struct IBNSDirectionalEdgeInsets ib_directionalEdgeInsetsValue;
+- (CDStruct_c519178c)ib_insetValue;
+@property(readonly) struct CGSize ib_sizeValue;
+@property(readonly) struct CGRect ib_rectValue;
+@property(readonly) struct CGPoint ib_pointValue;
+- (long long)ib_valueType;
+- (id)ib_unsafeUnretainedPointerValue;
+- (CDStruct_912cb5d2)slicedImageDividerValue;
+- (CDStruct_912cb5d2)slicedImagePartValue;
 @end
 

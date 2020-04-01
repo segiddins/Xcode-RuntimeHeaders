@@ -16,6 +16,7 @@
     NSString *_bundleIdentifier;
     BOOL _usesSwift;
     BOOL _checkedForSwift;
+    BOOL _isPlaceholder;
     int _runnableDebuggingMode;
     IDEScheme *_scheme;
     DVTFilePath *_remotePath;
@@ -24,6 +25,7 @@
 + (id)_productTypeForBuildableProduct:(id)arg1 scheme:(id)arg2;
 + (id)runnableForBuildProduct:(id)arg1 inScheme:(id)arg2;
 @property int runnableDebuggingMode; // @synthesize runnableDebuggingMode=_runnableDebuggingMode;
+@property(nonatomic) BOOL isPlaceholder; // @synthesize isPlaceholder=_isPlaceholder;
 @property(readonly, copy) DVTFilePath *remotePath; // @synthesize remotePath=_remotePath;
 @property(copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(retain) IDEScheme *scheme; // @synthesize scheme=_scheme;

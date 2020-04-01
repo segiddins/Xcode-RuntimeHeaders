@@ -11,17 +11,17 @@
 #import <DVTFoundation/NSCopying-Protocol.h>
 #import <DVTFoundation/NSSecureCoding-Protocol.h>
 
-@class NSDictionary, NSNumber, NSString, NSURL;
+@class NSNumber, NSString, NSURL;
 
 @interface DVTDocumentLocation : NSObject <NSSecureCoding, NSCopying, DVTStringRepresentationPersistable, DVTSimpleSerialization>
 {
-    NSDictionary *_docParams;
-    NSDictionary *_locParams;
     NSURL *_documentURL;
     NSNumber *_timestamp;
 }
 
++ (id)deserializedDocumentLocationForClassName:(id)arg1 stringRepresentation:(id)arg2 error:(id *)arg3;
 + (BOOL)supportsSecureCoding;
++ (id)dvt_documentLocationFromPersistableStringRepresentation:(id)arg1 error:(id *)arg2;
 + (id)documentLocationWithURLScheme:(id)arg1 path:(id)arg2 documentParameters:(id)arg3 locationParameters:(id)arg4;
 @property(readonly) NSNumber *timestamp; // @synthesize timestamp=_timestamp;
 @property(readonly) NSURL *documentURL; // @synthesize documentURL=_documentURL;
@@ -35,11 +35,10 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)dvt_persistableStringRepresentation;
-- (id)dvt_initFromPersistableStringRepresentation:(id)arg1 error:(id *)arg2;
+- (id)dvt_initFromPersistableStringRepresentation:(id)arg1 error:(out id *)arg2;
 - (long long)compare:(id)arg1;
 @property(readonly, copy) NSString *description;
 - (BOOL)isEqualDisregardingTimestamp:(id)arg1;
-- (BOOL)isEqualToDocumentLocationDisregardingDocumentURL:(id)arg1;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithURL:(id)arg1;

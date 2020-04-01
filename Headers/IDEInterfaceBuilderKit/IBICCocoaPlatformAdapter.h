@@ -10,16 +10,31 @@
 {
 }
 
++ (id)_appearanceForColorSetRepSlot:(id)arg1;
++ (id)systemCatalogColors;
++ (id)appearanceSpecificationToPlatformAppearanceMapping;
++ (BOOL)supportsSidebarIconSets;
++ (BOOL)supportsIconBadgeSets;
++ (BOOL)supportsLocales;
++ (BOOL)supportsAppearances;
++ (id)platform;
+- (id)firstVersionSupportingLaunchStoryboards;
+- (id)firstVersionSupportingOSVariantsForThinning;
 - (id)firstVersionSupportingThinning;
 - (id)firstVersionSupportingOnDemandResources;
 - (BOOL)canHostPDFContentOutsideOfCARFiles;
 - (void)compileCARItems:(id)arg1 tagSolutionSpace:(id)arg2 options:(id)arg3 queue:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (id)compileBundleIconFromSelection:(id)arg1 options:(id)arg2;
 - (id)imageCatalogCompilerOptionsFromToolArguments:(id)arg1 forCatalogCollection:(id)arg2 populatingResults:(id)arg3;
+- (id)minimumDeploymentTargetSupportingIconsInCARFiles;
+- (id)minimumDeploymentTargetSupportingAppIconsInCARFiles;
+- (id)minimumDeploymentTargetSupportingModels;
+- (id)minimumDeploymentTargetSupportingTexturesInCARFiles;
 - (id)minimumDeploymentTargetSupportingAppIcons;
 - (id)minimumDeploymentTargetSupportingDataInCARFiles;
 - (id)minimumDeploymentTargetSupportingSpriteAtlasesInCARFiles;
 - (id)absoluteMinimumDeploymentTarget;
+- (id)minimumDeploymentTargetSupportingHEIFFiles;
 - (id)minimumDeploymentTargetSupportingPDFInCARFiles;
 - (id)minimumDeploymentTargetSupportingJPGInCARFiles;
 - (id)minimumDeploymentTargetSupportingCARFiles;

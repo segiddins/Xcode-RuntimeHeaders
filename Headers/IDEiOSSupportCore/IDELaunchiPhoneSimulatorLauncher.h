@@ -4,19 +4,20 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <IDEFoundation/IDERunOperationWorker.h>
+#import <IDEiOSSupportCore/IDEDeviceRunOperationWorker.h>
 
 #import <IDEiOSSupportCore/DTMISProcessControlServiceAuthorizedAPI-Protocol.h>
 
-@class DTXChannel, DVTDispatchLock, DVTObservingToken, DVTiPhoneSimulator, IDEPseudoTerminal, NSString;
+@class DTXChannel, DVTDispatchLock, DVTFuture, DVTObservingToken, DVTiPhoneSimulator, IDEPseudoTerminal, NSString;
 
-@interface IDELaunchiPhoneSimulatorLauncher : IDERunOperationWorker <DTMISProcessControlServiceAuthorizedAPI>
+@interface IDELaunchiPhoneSimulatorLauncher : IDEDeviceRunOperationWorker <DTMISProcessControlServiceAuthorizedAPI>
 {
     BOOL _debugSessionStarted;
     BOOL _responsibleForTermination;
     BOOL _setUpSimulatorSessionForAttaching;
     BOOL _terminateCalled;
     BOOL _executionEndedCalled;
+    DVTFuture *_launchFuture;
     DVTDispatchLock *_lifeCycleLock;
     DVTObservingToken *_debugSessionStateObservingToken;
     BOOL _launchingToDebug;
@@ -31,14 +32,15 @@
 @property(retain) DVTiPhoneSimulator *device; // @synthesize device=_device;
 @property(getter=isLaunchingToDebug) BOOL launchingToDebug; // @synthesize launchingToDebug=_launchingToDebug;
 - (void).cxx_destruct;
-- (BOOL)_willUseExistingProcess:(id)arg1;
+- (BOOL)_willUseExistingProcess;
 - (void)pidDiedCallback:(id)arg1;
 - (void)_cancelProcessControlChannel;
-- (id)_instrumentsProcessControlChannel;
+- (id)_instrumentsProcessControlChannel:(BOOL)arg1;
 - (void)launchCompleteWithAppPID:(int)arg1;
 - (void)executionDidEnd;
 - (void)terminate;
-- (void)start;
+- (void)performWorkerAction;
+- (BOOL)_setupPTY;
 - (void)_setUpSimulatorSessionForAttaching;
 - (void)primitiveInvalidate;
 - (id)initWithExtensionIdentifier:(id)arg1 launchSession:(id)arg2;

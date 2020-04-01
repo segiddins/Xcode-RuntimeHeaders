@@ -6,8 +6,30 @@
 
 #import <XCSCore/XCSTestClassPlaceholder.h>
 
-@interface XCSTestClassPlaceholder (XCSUIAdditions)
+#import <XCSUI/IDETestReport_TestGroup-Protocol.h>
+
+@class NSString;
+@protocol IDETestReport_Base;
+
+@interface XCSTestClassPlaceholder (XCSUIAdditions) <IDETestReport_TestGroup>
 - (id)xcsui_image;
 - (id)failingTests;
+- (id)ide_sharedTests_testGroup_includePassingTests:(BOOL)arg1 includeFailingTests:(BOOL)arg2 includeOnlyPerfTests:(BOOL)arg3;
+- (id)ide_sharedTests_testGroup_perfTests;
+- (id)testsIncludePassing:(BOOL)arg1 includeFailing:(BOOL)arg2 perfOnly:(BOOL)arg3;
+- (id)ide_sharedTests_failingTests;
+- (id)ide_sharedTests_passingTests;
+- (id)ide_sharedTests_testGroup_allTests;
+@property(readonly, copy, nonatomic) NSString *ide_testReport_testGroup_groupName;
+@property(readonly, copy, nonatomic) NSString *ide_testReport_testGroup_testTargetName;
+@property(readonly, copy, nonatomic) NSString *ide_testReport_base_identifier;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(nonatomic) __weak id <IDETestReport_Base> ide_testReport_base_parent;
+@property(readonly, nonatomic) double ide_testReport_testGroup_duration;
+@property(readonly) Class superclass;
 @end
 

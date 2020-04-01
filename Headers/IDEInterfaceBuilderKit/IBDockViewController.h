@@ -87,12 +87,12 @@
 - (long long)dockView:(id)arg1 minimumNumberOfItemsInGroup:(id)arg2;
 - (id)dockViewRepresentedGroups:(id)arg1;
 - (void)dockViewWillValidateData:(id)arg1;
-- (void)loadView;
 @property(readonly) id <IBHighlightProvider> highlightProvider;
 - (void)incrementHighlightGeneration;
 - (long long)highlightGeneration;
 - (id)groupForObject:(id)arg1;
 - (id)highlightableObjects;
+- (BOOL)isViewVisibleInWindow;
 @property(readonly) BOOL wantsFilterField;
 - (void)willResignAsSelectionProviderForDocumentEditor:(id)arg1;
 - (void)didBecomeSelectionProviderForDocumentEditor:(id)arg1;
@@ -100,7 +100,7 @@
 - (void)documentEditor:(id)arg1 deselectMembers:(id)arg2;
 - (void)documentEditor:(id)arg1 pullSelection:(id)arg2;
 @property(readonly, nonatomic) BOOL onlySupportsDocumentObjectMembers;
-- (void)documentEditor:(id)arg1 selectMembers:(id)arg2 takeFocus:(BOOL)arg3 zoomIfNeeded:(BOOL)arg4;
+- (void)documentEditor:(id)arg1 selectMembers:(id)arg2 takeFocus:(BOOL)arg3;
 @property(readonly) NSString *stateSavingIdentifier;
 - (void)becomeSelectionProvider;
 - (void)selectionDidChange;

@@ -7,6 +7,6 @@
 #import <objc/NSObject.h>
 
 @interface NSObject (DVTServicesTypeAdditions)
-- (BOOL)dvt_servicesTypeInstanceDidFinishLoading:(id *)arg1;
+- (BOOL)dvt_servicesTypeInstanceDidFinishLoadingWithContext:(id)arg1 error:(id *)arg2;
 @end
 

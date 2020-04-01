@@ -21,6 +21,7 @@
     BOOL _showInPreferences;
 }
 
++ (id)alertLogAspect;
 + (id)alertEventsForGroup:(id)arg1;
 + (id)alertEventGroups;
 + (id)alertEvents;
@@ -40,6 +41,7 @@
 - (void)saveToUserDefaults;
 - (id)propertyList;
 - (id)propertyListForVersion:(int)arg1;
+- (id)_defaultsForOnDiskPlistOfBehaviors;
 - (id)alertDefaults;
 - (id)alertDefaultsKey;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;

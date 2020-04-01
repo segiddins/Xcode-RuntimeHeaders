@@ -6,21 +6,19 @@
 
 #import <DVTFoundation/DVTDocumentLocation.h>
 
-@class IDETest;
+@class NSString;
 
 @interface XCSBotTestDocumentLocation : DVTDocumentLocation
 {
-    IDETest *_test;
-    id _activityLog;
+    NSString *_testIdentifier;
 }
 
-@property(retain) id activityLog; // @synthesize activityLog=_activityLog;
-@property(retain) IDETest *test; // @synthesize test=_test;
+@property(copy, nonatomic) NSString *testIdentifier; // @synthesize testIdentifier=_testIdentifier;
 - (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)description;
-- (id)initWithDocumentURL:(id)arg1 timestamp:(id)arg2 selectedTest:(id)arg3;
+- (id)initWithDocumentURL:(id)arg1 timestamp:(id)arg2 testIdentifier:(id)arg3;
 
 @end
 

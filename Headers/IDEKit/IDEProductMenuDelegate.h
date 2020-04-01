@@ -14,6 +14,7 @@
 {
 }
 
+- (void)_setupCleanMenuItemsForMenu:(id)arg1;
 - (void)menuWillOpen:(id)arg1;
 
 // Remaining properties

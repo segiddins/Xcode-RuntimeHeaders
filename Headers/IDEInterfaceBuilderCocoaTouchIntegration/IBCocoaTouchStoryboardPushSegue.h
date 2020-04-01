@@ -6,11 +6,9 @@
 
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBUIStoryboardAbstractTriggeredSegue.h>
 
-#import <IDEInterfaceBuilderCocoaTouchIntegration/NSCoding-Protocol.h>
-
 @class NSNumber;
 
-@interface IBCocoaTouchStoryboardPushSegue : IBUIStoryboardAbstractTriggeredSegue <NSCoding>
+@interface IBCocoaTouchStoryboardPushSegue : IBUIStoryboardAbstractTriggeredSegue
 {
     NSNumber *_splitViewControllerTargetIndex;
 }
@@ -22,6 +20,7 @@
 - (void).cxx_destruct;
 - (id)effectiveConnectionForEnablingConfigurationsInDocument:(id)arg1 segueReachabilityContext:(id)arg2 error:(id *)arg3;
 - (id)badgeImage;
+- (id)metricChainSucceedingMetric:(id)arg1;
 - (void)copyCommonInstanceStateToTriggeredSegue:(id)arg1;
 - (id)instantiateSegueTemplate;
 - (void)unarchiveWithDocumentUnarchiver:(id)arg1;

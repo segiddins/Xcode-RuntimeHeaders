@@ -43,6 +43,11 @@ struct CoreFunction {
     void *internal_buffer;
 };
 
+struct DYInterposeVersion {
+    int version;
+    char *patch;
+};
+
 struct DecodedFunctionStream;
 
 struct Function {
@@ -147,9 +152,21 @@ struct _NSRange {
     unsigned long long _field2;
 };
 
-struct __hash_node<std::__1::__hash_value_type<unsigned long long, std::__1::tuple<void *, unsigned long>>, void *>;
+struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<const char *, OpaqueJSString *>, void *>*> {
+    struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<const char *, OpaqueJSString *>, void *>*> *__next_;
+};
 
-struct __hash_node<std::__1::__hash_value_type<void *, unsigned long>, void *>;
+struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<const char *, OpaqueJSValue *>, void *>*> {
+    struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<const char *, OpaqueJSValue *>, void *>*> *__next_;
+};
+
+struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, std::__1::tuple<void *, unsigned long>>, void *>*> {
+    struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, std::__1::tuple<void *, unsigned long>>, void *>*> *_field1;
+};
+
+struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<void *, unsigned long>, void *>*> {
+    struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<void *, unsigned long>, void *>*> *__next_;
+};
 
 struct __shared_weak_count;
 
@@ -157,11 +174,43 @@ struct __wrap_iter<std::__1::unique_ptr<GPUTools::Playback::FunctionStreamEntry,
     struct unique_ptr<GPUTools::Playback::FunctionStreamEntry, std::__1::default_delete<GPUTools::Playback::FunctionStreamEntry>> *__i;
 };
 
+struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> {
+    struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>::__rep, std::__1::allocator<char>> {
+        struct __rep {
+            union {
+                struct __long {
+                    unsigned long long _field1;
+                    unsigned long long _field2;
+                    char *_field3;
+                } _field1;
+                struct __short {
+                    union {
+                        unsigned char _field1;
+                        char _field2;
+                    } _field1;
+                    char _field2[23];
+                } _field2;
+                struct __raw {
+                    unsigned long long _field1[3];
+                } _field3;
+            } _field1;
+        } _field1;
+    } _field1;
+};
+
+struct dispatch_semaphore_s;
+
 struct objc_ref<DYCaptureArchive *>;
 
 struct objc_ref<DYCaptureFile *> {
     id _field1;
 };
+
+struct os_unfair_lock_s {
+    unsigned int _os_unfair_lock_opaque;
+};
+
+struct pair<std::__1::basic_string<char>, bool>;
 
 struct shared_ptr<GPUTools::FD::TFunctionStream<GPUTools::FD::CoreFunction, void>> {
     struct TFunctionStream<GPUTools::FD::CoreFunction, void> *_field1;
@@ -189,39 +238,89 @@ struct unique_ptr<GPUTools::Playback::FunctionStreamEntry, std::__1::default_del
 
 struct unique_ptr<GPUTools::RunningStatistics<unsigned long long>, std::__1::default_delete<GPUTools::RunningStatistics<unsigned long long>>> {
     struct __compressed_pair<GPUTools::RunningStatistics<unsigned long long>*, std::__1::default_delete<GPUTools::RunningStatistics<unsigned long long>>> {
-        struct RunningStatistics<unsigned long long> *__first_;
+        struct RunningStatistics<unsigned long long> *__value_;
     } __ptr_;
 };
 
-struct unique_ptr<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, std::__1::tuple<void *, unsigned long>>, void *>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, std::__1::tuple<void *, unsigned long>>, void *>*>>> {
-    struct __compressed_pair<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, std::__1::tuple<void *, unsigned long>>, void *>**, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, std::__1::tuple<void *, unsigned long>>, void *>*>>> {
-        struct __hash_node<std::__1::__hash_value_type<unsigned long long, std::__1::tuple<void *, unsigned long>>, void *> **_field1;
-        struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, std::__1::tuple<void *, unsigned long>>, void *>*>> {
-            struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, std::__1::tuple<void *, unsigned long>>, void *>*>> {
+struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<const char *, OpaqueJSString *>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<const char *, OpaqueJSString *>, void *>*>*>>> {
+    struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<const char *, OpaqueJSString *>, void *>*>**, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<const char *, OpaqueJSString *>, void *>*>*>>> {
+        struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<const char *, OpaqueJSString *>, void *>*> **__value_;
+        struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<const char *, OpaqueJSString *>, void *>*>*>> {
+            struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<const char *, OpaqueJSString *>, void *>*>*>> {
+                unsigned long long __value_;
+            } __data_;
+        } __value_;
+    } __ptr_;
+};
+
+struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<const char *, OpaqueJSValue *>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<const char *, OpaqueJSValue *>, void *>*>*>>> {
+    struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<const char *, OpaqueJSValue *>, void *>*>**, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<const char *, OpaqueJSValue *>, void *>*>*>>> {
+        struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<const char *, OpaqueJSValue *>, void *>*> **__value_;
+        struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<const char *, OpaqueJSValue *>, void *>*>*>> {
+            struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<const char *, OpaqueJSValue *>, void *>*>*>> {
+                unsigned long long __value_;
+            } __data_;
+        } __value_;
+    } __ptr_;
+};
+
+struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, std::__1::tuple<void *, unsigned long>>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, std::__1::tuple<void *, unsigned long>>, void *>*>*>>> {
+    struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, std::__1::tuple<void *, unsigned long>>, void *>*>**, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, std::__1::tuple<void *, unsigned long>>, void *>*>*>>> {
+        struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, std::__1::tuple<void *, unsigned long>>, void *>*> **_field1;
+        struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, std::__1::tuple<void *, unsigned long>>, void *>*>*>> {
+            struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, std::__1::tuple<void *, unsigned long>>, void *>*>*>> {
                 unsigned long long _field1;
             } _field1;
         } _field2;
     } _field1;
 };
 
-struct unique_ptr<std::__1::__hash_node<std::__1::__hash_value_type<void *, unsigned long>, void *>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<void *, unsigned long>, void *>*>>> {
-    struct __compressed_pair<std::__1::__hash_node<std::__1::__hash_value_type<void *, unsigned long>, void *>**, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<void *, unsigned long>, void *>*>>> {
-        struct __hash_node<std::__1::__hash_value_type<void *, unsigned long>, void *> **__first_;
-        struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<void *, unsigned long>, void *>*>> {
-            struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<void *, unsigned long>, void *>*>> {
-                unsigned long long __first_;
+struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<void *, unsigned long>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<void *, unsigned long>, void *>*>*>>> {
+    struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<void *, unsigned long>, void *>*>**, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<void *, unsigned long>, void *>*>*>>> {
+        struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<void *, unsigned long>, void *>*> **__value_;
+        struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<void *, unsigned long>, void *>*>*>> {
+            struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<void *, unsigned long>, void *>*>*>> {
+                unsigned long long __value_;
             } __data_;
-        } __second_;
+        } __value_;
     } __ptr_;
+};
+
+struct unordered_map<const char *, OpaqueJSString *, std::__1::hash<const char *>, std::__1::equal_to<const char *>, std::__1::allocator<std::__1::pair<const char *const, OpaqueJSString *>>> {
+    struct __hash_table<std::__1::__hash_value_type<const char *, OpaqueJSString *>, std::__1::__unordered_map_hasher<const char *, std::__1::__hash_value_type<const char *, OpaqueJSString *>, std::__1::hash<const char *>, true>, std::__1::__unordered_map_equal<const char *, std::__1::__hash_value_type<const char *, OpaqueJSString *>, std::__1::equal_to<const char *>, true>, std::__1::allocator<std::__1::__hash_value_type<const char *, OpaqueJSString *>>> {
+        struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<const char *, OpaqueJSString *>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<const char *, OpaqueJSString *>, void *>*>*>>> __bucket_list_;
+        struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<const char *, OpaqueJSString *>, void *>*>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<const char *, OpaqueJSString *>, void *>>> {
+            struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<const char *, OpaqueJSString *>, void *>*> __value_;
+        } __p1_;
+        struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<const char *, std::__1::__hash_value_type<const char *, OpaqueJSString *>, std::__1::hash<const char *>, true>> {
+            unsigned long long __value_;
+        } __p2_;
+        struct __compressed_pair<float, std::__1::__unordered_map_equal<const char *, std::__1::__hash_value_type<const char *, OpaqueJSString *>, std::__1::equal_to<const char *>, true>> {
+            float __value_;
+        } __p3_;
+    } __table_;
+};
+
+struct unordered_map<const char *, OpaqueJSValue *, std::__1::hash<const char *>, std::__1::equal_to<const char *>, std::__1::allocator<std::__1::pair<const char *const, OpaqueJSValue *>>> {
+    struct __hash_table<std::__1::__hash_value_type<const char *, OpaqueJSValue *>, std::__1::__unordered_map_hasher<const char *, std::__1::__hash_value_type<const char *, OpaqueJSValue *>, std::__1::hash<const char *>, true>, std::__1::__unordered_map_equal<const char *, std::__1::__hash_value_type<const char *, OpaqueJSValue *>, std::__1::equal_to<const char *>, true>, std::__1::allocator<std::__1::__hash_value_type<const char *, OpaqueJSValue *>>> {
+        struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<const char *, OpaqueJSValue *>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<const char *, OpaqueJSValue *>, void *>*>*>>> __bucket_list_;
+        struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<const char *, OpaqueJSValue *>, void *>*>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<const char *, OpaqueJSValue *>, void *>>> {
+            struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<const char *, OpaqueJSValue *>, void *>*> __value_;
+        } __p1_;
+        struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<const char *, std::__1::__hash_value_type<const char *, OpaqueJSValue *>, std::__1::hash<const char *>, true>> {
+            unsigned long long __value_;
+        } __p2_;
+        struct __compressed_pair<float, std::__1::__unordered_map_equal<const char *, std::__1::__hash_value_type<const char *, OpaqueJSValue *>, std::__1::equal_to<const char *>, true>> {
+            float __value_;
+        } __p3_;
+    } __table_;
 };
 
 struct unordered_map<unsigned long long, std::__1::tuple<void *, unsigned long>, std::__1::hash<unsigned long long>, std::__1::equal_to<unsigned long long>, std::__1::allocator<std::__1::pair<const unsigned long long, std::__1::tuple<void *, unsigned long>>>> {
     struct __hash_table<std::__1::__hash_value_type<unsigned long long, std::__1::tuple<void *, unsigned long>>, std::__1::__unordered_map_hasher<unsigned long long, std::__1::__hash_value_type<unsigned long long, std::__1::tuple<void *, unsigned long>>, std::__1::hash<unsigned long long>, true>, std::__1::__unordered_map_equal<unsigned long long, std::__1::__hash_value_type<unsigned long long, std::__1::tuple<void *, unsigned long>>, std::__1::equal_to<unsigned long long>, true>, std::__1::allocator<std::__1::__hash_value_type<unsigned long long, std::__1::tuple<void *, unsigned long>>>> {
-        struct unique_ptr<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, std::__1::tuple<void *, unsigned long>>, void *>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, std::__1::tuple<void *, unsigned long>>, void *>*>>> _field1;
+        struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, std::__1::tuple<void *, unsigned long>>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, std::__1::tuple<void *, unsigned long>>, void *>*>*>>> _field1;
         struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, std::__1::tuple<void *, unsigned long>>, void *>*>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, std::__1::tuple<void *, unsigned long>>, void *>>> {
-            struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, std::__1::tuple<void *, unsigned long>>, void *>*> {
-                struct __hash_node<std::__1::__hash_value_type<unsigned long long, std::__1::tuple<void *, unsigned long>>, void *> *_field1;
-            } _field1;
+            struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, std::__1::tuple<void *, unsigned long>>, void *>*> _field1;
         } _field2;
         struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<unsigned long long, std::__1::__hash_value_type<unsigned long long, std::__1::tuple<void *, unsigned long>>, std::__1::hash<unsigned long long>, true>> {
             unsigned long long _field1;
@@ -234,26 +333,40 @@ struct unordered_map<unsigned long long, std::__1::tuple<void *, unsigned long>,
 
 struct unordered_map<void *, unsigned long, std::__1::hash<void *>, std::__1::equal_to<void *>, std::__1::allocator<std::__1::pair<void *const, unsigned long>>> {
     struct __hash_table<std::__1::__hash_value_type<void *, unsigned long>, std::__1::__unordered_map_hasher<void *, std::__1::__hash_value_type<void *, unsigned long>, std::__1::hash<void *>, true>, std::__1::__unordered_map_equal<void *, std::__1::__hash_value_type<void *, unsigned long>, std::__1::equal_to<void *>, true>, std::__1::allocator<std::__1::__hash_value_type<void *, unsigned long>>> {
-        struct unique_ptr<std::__1::__hash_node<std::__1::__hash_value_type<void *, unsigned long>, void *>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<void *, unsigned long>, void *>*>>> __bucket_list_;
+        struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<void *, unsigned long>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<void *, unsigned long>, void *>*>*>>> __bucket_list_;
         struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<void *, unsigned long>, void *>*>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<void *, unsigned long>, void *>>> {
-            struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<void *, unsigned long>, void *>*> {
-                struct __hash_node<std::__1::__hash_value_type<void *, unsigned long>, void *> *__next_;
-            } __first_;
+            struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<void *, unsigned long>, void *>*> __value_;
         } __p1_;
         struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<void *, std::__1::__hash_value_type<void *, unsigned long>, std::__1::hash<void *>, true>> {
-            unsigned long long __first_;
+            unsigned long long __value_;
         } __p2_;
         struct __compressed_pair<float, std::__1::__unordered_map_equal<void *, std::__1::__hash_value_type<void *, unsigned long>, std::__1::equal_to<void *>, true>> {
-            float __first_;
+            float __value_;
         } __p3_;
     } __table_;
+};
+
+struct vector<DYCaptureArchiveCacheEntry, std::__1::allocator<DYCaptureArchiveCacheEntry>> {
+    CDStruct_183601bc *__begin_;
+    CDStruct_183601bc *__end_;
+    struct __compressed_pair<DYCaptureArchiveCacheEntry *, std::__1::allocator<DYCaptureArchiveCacheEntry>> {
+        CDStruct_183601bc *__value_;
+    } __end_cap_;
 };
 
 struct vector<GPUTools::objc_ref<DYCaptureArchive *>, std::__1::allocator<GPUTools::objc_ref<DYCaptureArchive *>>> {
     struct objc_ref<DYCaptureArchive *> *__begin_;
     struct objc_ref<DYCaptureArchive *> *__end_;
     struct __compressed_pair<GPUTools::objc_ref<DYCaptureArchive *>*, std::__1::allocator<GPUTools::objc_ref<DYCaptureArchive *>>> {
-        struct objc_ref<DYCaptureArchive *> *__first_;
+        struct objc_ref<DYCaptureArchive *> *__value_;
+    } __end_cap_;
+};
+
+struct vector<std::__1::pair<std::__1::basic_string<char>, bool>, std::__1::allocator<std::__1::pair<std::__1::basic_string<char>, bool>>> {
+    struct pair<std::__1::basic_string<char>, bool> *__begin_;
+    struct pair<std::__1::basic_string<char>, bool> *__end_;
+    struct __compressed_pair<std::__1::pair<std::__1::basic_string<char>, bool>*, std::__1::allocator<std::__1::pair<std::__1::basic_string<char>, bool>>> {
+        struct pair<std::__1::basic_string<char>, bool> *__value_;
     } __end_cap_;
 };
 
@@ -271,7 +384,7 @@ struct vector<std::__1::vector<std::__1::pair<unsigned int, unsigned int>, std::
     struct vector<std::__1::pair<unsigned int, unsigned int>, std::__1::allocator<std::__1::pair<unsigned int, unsigned int>>> *__begin_;
     struct vector<std::__1::pair<unsigned int, unsigned int>, std::__1::allocator<std::__1::pair<unsigned int, unsigned int>>> *__end_;
     struct __compressed_pair<std::__1::vector<std::__1::pair<unsigned int, unsigned int>, std::__1::allocator<std::__1::pair<unsigned int, unsigned int>>>*, std::__1::allocator<std::__1::vector<std::__1::pair<unsigned int, unsigned int>, std::__1::allocator<std::__1::pair<unsigned int, unsigned int>>>>> {
-        struct vector<std::__1::pair<unsigned int, unsigned int>, std::__1::allocator<std::__1::pair<unsigned int, unsigned int>>> *__first_;
+        struct vector<std::__1::pair<unsigned int, unsigned int>, std::__1::allocator<std::__1::pair<unsigned int, unsigned int>>> *__value_;
     } __end_cap_;
 };
 
@@ -279,16 +392,16 @@ struct vector<unsigned int, std::__1::allocator<unsigned int>> {
     unsigned int *__begin_;
     unsigned int *__end_;
     struct __compressed_pair<unsigned int *, std::__1::allocator<unsigned int>> {
-        unsigned int *__first_;
+        unsigned int *__value_;
     } __end_cap_;
 };
 
 struct vector<unsigned long long, std::__1::allocator<unsigned long long>> {
-    unsigned long long *_field1;
-    unsigned long long *_field2;
+    unsigned long long *__begin_;
+    unsigned long long *__end_;
     struct __compressed_pair<unsigned long long *, std::__1::allocator<unsigned long long>> {
-        unsigned long long *_field1;
-    } _field3;
+        unsigned long long *__value_;
+    } __end_cap_;
 };
 
 #pragma mark Typedef'd Structures
@@ -328,6 +441,8 @@ typedef struct {
     unsigned int type;
 } CDStruct_e4c1f684;
 
+typedef struct CDStruct_183601bc;
+
 typedef struct {
     unsigned int _field1;
     union {
@@ -339,29 +454,58 @@ typedef struct {
     unsigned int _field5;
 } CDStruct_fa775e3a;
 
+typedef struct {
+    unsigned long long _field1;
+    unsigned long long _field2;
+    int _field3;
+    struct dispatch_semaphore_s *_field4;
+} CDStruct_05590e52;
+
 // Template types
+typedef struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> {
+    struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>::__rep, std::__1::allocator<char>> {
+        struct __rep {
+            union {
+                struct __long {
+                    unsigned long long _field1;
+                    unsigned long long _field2;
+                    char *_field3;
+                } _field1;
+                struct __short {
+                    union {
+                        unsigned char _field1;
+                        char _field2;
+                    } _field1;
+                    char _field2[23];
+                } _field2;
+                struct __raw {
+                    unsigned long long _field1[3];
+                } _field3;
+            } _field1;
+        } _field1;
+    } _field1;
+} basic_string_a1f69cfb;
+
 typedef struct unordered_map<void *, unsigned long, std::__1::hash<void *>, std::__1::equal_to<void *>, std::__1::allocator<std::__1::pair<void *const, unsigned long>>> {
     struct __hash_table<std::__1::__hash_value_type<void *, unsigned long>, std::__1::__unordered_map_hasher<void *, std::__1::__hash_value_type<void *, unsigned long>, std::__1::hash<void *>, true>, std::__1::__unordered_map_equal<void *, std::__1::__hash_value_type<void *, unsigned long>, std::__1::equal_to<void *>, true>, std::__1::allocator<std::__1::__hash_value_type<void *, unsigned long>>> {
-        struct unique_ptr<std::__1::__hash_node<std::__1::__hash_value_type<void *, unsigned long>, void *>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<void *, unsigned long>, void *>*>>> __bucket_list_;
+        struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<void *, unsigned long>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<void *, unsigned long>, void *>*>*>>> __bucket_list_;
         struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<void *, unsigned long>, void *>*>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<void *, unsigned long>, void *>>> {
-            struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<void *, unsigned long>, void *>*> {
-                struct __hash_node<std::__1::__hash_value_type<void *, unsigned long>, void *> *__next_;
-            } __first_;
+            struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<void *, unsigned long>, void *>*> __value_;
         } __p1_;
         struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<void *, std::__1::__hash_value_type<void *, unsigned long>, std::__1::hash<void *>, true>> {
-            unsigned long long __first_;
+            unsigned long long __value_;
         } __p2_;
         struct __compressed_pair<float, std::__1::__unordered_map_equal<void *, std::__1::__hash_value_type<void *, unsigned long>, std::__1::equal_to<void *>, true>> {
-            float __first_;
+            float __value_;
         } __p3_;
     } __table_;
-} unordered_map_82d59a1a;
+} unordered_map_8e11cf9d;
 
 typedef struct vector<unsigned long long, std::__1::allocator<unsigned long long>> {
-    unsigned long long *_field1;
-    unsigned long long *_field2;
+    unsigned long long *__begin_;
+    unsigned long long *__end_;
     struct __compressed_pair<unsigned long long *, std::__1::allocator<unsigned long long>> {
-        unsigned long long *_field1;
-    } _field3;
-} vector_cfeb9b06;
+        unsigned long long *__value_;
+    } __end_cap_;
+} vector_7984f87c;
 

@@ -6,43 +6,38 @@
 
 #import <DevToolsCore/XCWorkQueueCommandInvocation.h>
 
-@class NSArray, NSDictionary, NSInvocationOperation, NSString;
+@class NSArray, NSBlockOperation, NSDictionary, NSString;
 
 @interface XCWorkQueueCommandBuiltinInvocation : XCWorkQueueCommandInvocation
 {
     NSArray *_arguments;
     NSDictionary *_environment;
     NSString *_workingDirPath;
-    BOOL _isRunning;
+    BOOL _mightHaveOutput;
     int _exitCode;
-    NSInvocationOperation *_operation;
+    NSBlockOperation *_operation;
     int _outputFD;
     int _inputFD;
     int _taskOutputFD;
     int _taskInputFD;
 }
 
+- (void).cxx_destruct;
 - (int)emitMessageWithFormat:(id)arg1;
 - (int)emitMessage:(id)arg1;
-- (int)runTaskWithArguments:(id)arg1 environment:(id)arg2 workingDirectoryPath:(id)arg3;
-- (BOOL)isCancelled;
-- (void)performTaskOperationWithContext:(id)arg1;
-- (BOOL)_startBuiltinTaskWithArguments:(id)arg1 environment:(id)arg2 workingDirectoryPath:(id)arg3;
-- (void)cancel;
-- (void)stopJob;
 - (void)handleInputFileDescriptorActivity;
-- (void)handleOutputFileDescriptorActivity;
 - (void)handleEndOfOutput;
 - (void)handleOutputBytes:(const char *)arg1 length:(unsigned long long)arg2;
+- (void)handleOutputFileDescriptorActivity;
 - (BOOL)startRunning;
-- (int)realExitCode;
+- (int)runTaskWithArguments:(id)arg1 environment:(id)arg2 workingDirectoryPath:(id)arg3 infd:(int)arg4 outerrfd:(int)arg5;
+- (void)cancelAndWaitUntilFinished;
 - (int)exitCode;
+- (BOOL)isCancelled;
 - (BOOL)isRunning;
 - (int)inputFileDescriptor;
 - (int)outputFileDescriptor;
-- (void)createOutputStreamIfNeeded;
-- (void)dealloc;
-- (id)initWithSlotNumber:(unsigned long long)arg1 workQueueOperation:(id)arg2 workQueueCommand:(id)arg3 arguments:(id)arg4 environment:(id)arg5 workingDirectoryPath:(id)arg6;
+- (id)initWithWorkQueueCommand:(id)arg1 arguments:(id)arg2 environment:(id)arg3 workingDirectoryPath:(id)arg4;
 
 @end
 

@@ -45,10 +45,6 @@ struct NSDictionary {
     Class _field1;
 };
 
-struct NSMutableDictionary {
-    Class _field1;
-};
-
 struct NSObject {
     Class _field1;
 };
@@ -142,23 +138,25 @@ struct _NSRange {
     unsigned long long _field2;
 };
 
+struct __tree_end_node<std::__1::__tree_node_base<void *>*> {
+    struct __tree_node_base<void *> *__left_;
+};
+
 struct map<std::__1::basic_string<char>, CGImage *, std::__1::less<std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, CGImage *>>> {
     struct __tree<std::__1::__value_type<std::__1::basic_string<char>, CGImage *>, std::__1::__map_value_compare<std::__1::basic_string<char>, std::__1::__value_type<std::__1::basic_string<char>, CGImage *>, std::__1::less<std::__1::basic_string<char>>, true>, std::__1::allocator<std::__1::__value_type<std::__1::basic_string<char>, CGImage *>>> {
-        struct __tree_node<std::__1::__value_type<std::__1::basic_string<char>, CGImage *>, void *> *__begin_node_;
+        struct __tree_end_node<std::__1::__tree_node_base<void *>*> *__begin_node_;
         struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<std::__1::basic_string<char>, CGImage *>, void *>>> {
-            struct __tree_end_node<std::__1::__tree_node_base<void *>*> {
-                struct __tree_node_base<void *> *__left_;
-            } __first_;
+            struct __tree_end_node<std::__1::__tree_node_base<void *>*> __value_;
         } __pair1_;
         struct __compressed_pair<unsigned long, std::__1::__map_value_compare<std::__1::basic_string<char>, std::__1::__value_type<std::__1::basic_string<char>, CGImage *>, std::__1::less<std::__1::basic_string<char>>, true>> {
-            unsigned long long __first_;
+            unsigned long long __value_;
         } __pair3_;
     } __tree_;
 };
 
 struct unique_ptr<DelayedTouchEvent, std::__1::default_delete<DelayedTouchEvent>> {
     struct __compressed_pair<DelayedTouchEvent *, std::__1::default_delete<DelayedTouchEvent>> {
-        struct DelayedTouchEvent *__first_;
+        struct DelayedTouchEvent *__value_;
     } __ptr_;
 };
 
@@ -166,7 +164,7 @@ struct vector<CGPoint, std::__1::allocator<CGPoint>> {
     struct CGPoint *__begin_;
     struct CGPoint *__end_;
     struct __compressed_pair<CGPoint *, std::__1::allocator<CGPoint>> {
-        struct CGPoint *__first_;
+        struct CGPoint *__value_;
     } __end_cap_;
 };
 
@@ -174,7 +172,7 @@ struct vector<NSObject<SKSceneManipulating, SKSceneNavigating>*, std::__1::alloc
     id *__begin_;
     id *__end_;
     struct __compressed_pair<NSObject<SKSceneManipulating, SKSceneNavigating>*__strong *, std::__1::allocator<NSObject<SKSceneManipulating, SKSceneNavigating>*>> {
-        id *__first_;
+        id *__value_;
     } __end_cap_;
 };
 
@@ -182,7 +180,7 @@ struct vector<SKManipulationHandleSet, std::__1::allocator<SKManipulationHandleS
     struct SKManipulationHandleSet *__begin_;
     struct SKManipulationHandleSet *__end_;
     struct __compressed_pair<SKManipulationHandleSet *, std::__1::allocator<SKManipulationHandleSet>> {
-        struct SKManipulationHandleSet *__first_;
+        struct SKManipulationHandleSet *__value_;
     } __end_cap_;
 };
 
@@ -190,7 +188,7 @@ struct vector<double, std::__1::allocator<double>> {
     double *__begin_;
     double *__end_;
     struct __compressed_pair<double *, std::__1::allocator<double>> {
-        double *__first_;
+        double *__value_;
     } __end_cap_;
 };
 

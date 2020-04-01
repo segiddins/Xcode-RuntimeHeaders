@@ -7,36 +7,43 @@
 #import <objc/NSObject.h>
 
 #import <IDEModelFoundation/CDMIdentification-Protocol.h>
+#import <IDEModelFoundation/CDMXMLCoding-Protocol.h>
 #import <IDEModelFoundation/DVTInvalidation-Protocol.h>
 #import <IDEModelFoundation/IDEInspectorAccessibilitySupport-Protocol.h>
 #import <IDEModelFoundation/IDEKeyDrivenNavigableItemRepresentedObject-Protocol.h>
 
-@class CDMModel, DVTDocumentLocation, DVTFileDataType, DVTStackBacktrace, IDEFileReference, NSImage, NSMutableArray, NSNumber, NSString;
+@class CDMModel, DVTDocumentLocation, DVTFileDataType, DVTStackBacktrace, DVTSymbol, IDEFileReference, NSArray, NSImage, NSNull, NSNumber, NSString, NSURL;
 
-@interface CDMConfiguration : NSObject <IDEInspectorAccessibilitySupport, CDMIdentification, DVTInvalidation, IDEKeyDrivenNavigableItemRepresentedObject>
+@interface CDMConfiguration : NSObject <IDEInspectorAccessibilitySupport, CDMIdentification, CDMXMLCoding, DVTInvalidation, IDEKeyDrivenNavigableItemRepresentedObject>
 {
-    NSNumber *_uniqueID;
+    BOOL _usedWithCloudKit;
+    BOOL _defaultConfiguration;
     NSString *_name;
-    NSMutableArray *_entities;
+    NSNumber *_uniqueID;
+    NSArray *_entities;
     CDMModel *_model;
 }
 
 + (id)configurationFromPasteboradPlist:(id)arg1 model:(id)arg2;
++ (id)keyPathsForValuesAffectingName;
 + (void)initialize;
+@property(readonly, getter=isDefaultConfiguration) BOOL defaultConfiguration; // @synthesize defaultConfiguration=_defaultConfiguration;
 @property(retain) CDMModel *model; // @synthesize model=_model;
-@property(copy) NSMutableArray *entities; // @synthesize entities=_entities;
-@property(copy, nonatomic) NSString *name; // @synthesize name=_name;
+@property(copy) NSArray *entities; // @synthesize entities=_entities;
 @property(copy) NSNumber *uniqueID; // @synthesize uniqueID=_uniqueID;
 - (void).cxx_destruct;
-- (id)stringRepresentationForTextIndex;
 - (id)stringRepresentation;
-- (id)xmlElementDescription;
+- (void)generateCloudKitErrorsAndWarningsWithCallback:(id)arg1 forDocumentAtURL:(id)arg2;
+- (void)generateErrorsAndWarningsWithCallback:(id)arg1 forDocumentAtURL:(id)arg2;
+- (id)encodeXMLElement;
 - (id)xmlElementAttributes;
-- (id)initWithXMLElementDescription:(id)arg1 belongingToModel:(id)arg2;
-@property(readonly) NSString *navigableItem_name;
+- (void)awakeAfterXMLDecoding;
+- (id)initWithXMLElement:(id)arg1 owner:(id)arg2 error:(id *)arg3;
+@property(readonly, nonatomic) NSString *navigableItem_name;
 - (id)pasteboardPlist;
 - (void)cascadeChangesToLegacyConfiguration:(id)arg1 givenModernToLegacyEntityMapping:(id)arg2;
 - (id)initWithLegacyConfiguration:(id)arg1 andEntityMapping:(id)arg2 belongingToModel:(id)arg3;
+- (id)initDefaultConfigurationWithEntities:(id)arg1 inModel:(id)arg2;
 - (id)initWithEntities:(id)arg1 andName:(id)arg2 inModel:(id)arg3;
 - (id)init;
 - (id)initInModel:(id)arg1;
@@ -46,29 +53,41 @@
 - (void)removeEntities:(id)arg1;
 - (void)removeEntity:(id)arg1;
 - (void)addEntity:(id)arg1;
+@property(readonly, copy) NSString *description;
 - (BOOL)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;
-- (void)_registerUndoBlockForConfiguration:(CDUnknownBlockType)arg1;
+@property(getter=isUsedWithCloudKit) BOOL usedWithCloudKit; // @synthesize usedWithCloudKit=_usedWithCloudKit;
 - (BOOL)validateName:(id *)arg1 error:(id *)arg2;
+- (BOOL)canSetName;
+@property(copy, nonatomic) NSString *name; // @synthesize name=_name;
+- (void)_registerUndoBlockForConfiguration:(CDUnknownBlockType)arg1;
 - (id)humanReadableNameForInspectorKeyPath:(id)arg1;
 
 // Remaining properties
 @property(retain) DVTStackBacktrace *creationBacktrace;
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) DVTStackBacktrace *invalidationBacktrace;
-@property(readonly) NSString *navigableItem_accessibleImageDescription;
-@property(readonly) DVTDocumentLocation *navigableItem_contentDocumentLocation;
-@property(readonly) DVTFileDataType *navigableItem_documentType;
-@property(readonly) IDEFileReference *navigableItem_fileReference;
-@property(readonly) NSString *navigableItem_groupIdentifier;
-@property(readonly) NSImage *navigableItem_image;
-@property(readonly) BOOL navigableItem_isLeaf;
-@property(readonly) BOOL navigableItem_isMajorGroup;
-@property(readonly) BOOL navigableItem_missingReferencedContentIsImportant;
-@property(readonly) BOOL navigableItem_referencedContentExists;
-@property(readonly) NSString *navigableItem_subtitle;
-@property(readonly) NSString *navigableItem_toolTip;
+@property(readonly, nonatomic) NSString *navigableItem_accessibilityIdentifier;
+@property(readonly, nonatomic) NSString *navigableItem_accessibleImageDescription;
+@property(readonly, nonatomic) NSArray *navigableItem_additionalFilterMatchingText;
+@property(readonly, nonatomic) NSArray *navigableItem_childRepresentedObjects;
+@property(readonly, nonatomic) DVTDocumentLocation *navigableItem_contentDocumentLocation;
+@property(readonly, nonatomic) DVTFileDataType *navigableItem_documentType;
+@property(readonly, nonatomic) IDEFileReference *navigableItem_fileReference;
+@property(readonly, nonatomic) NSNull *navigableItem_filtered;
+@property(readonly, nonatomic) NSString *navigableItem_groupIdentifier;
+@property(readonly, nonatomic) NSImage *navigableItem_image;
+@property(readonly, nonatomic) BOOL navigableItem_isEnabled;
+@property(readonly, nonatomic) BOOL navigableItem_isLeaf;
+@property(readonly, nonatomic) BOOL navigableItem_isMajorGroup;
+@property(readonly, nonatomic) BOOL navigableItem_isVisible;
+@property(readonly, nonatomic) BOOL navigableItem_missingReferencedContentIsImportant;
+@property(readonly, nonatomic) id navigableItem_parentRepresentedObject;
+@property(readonly, nonatomic) BOOL navigableItem_referencedContentExists;
+@property(readonly, nonatomic) DVTSymbol *navigableItem_representedSymbol;
+@property(readonly, nonatomic) NSURL *navigableItem_representedURL;
+@property(readonly, nonatomic) NSString *navigableItem_subtitle;
+@property(readonly, nonatomic) NSString *navigableItem_toolTip;
 @property(readonly) Class superclass;
 @property(readonly, nonatomic, getter=isValid) BOOL valid;
 

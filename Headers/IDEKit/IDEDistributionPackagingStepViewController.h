@@ -6,16 +6,29 @@
 
 #import <IDEKit/IDEDistributionStepViewController.h>
 
+@class DVTDelayedInvocation, NSString;
+
 @interface IDEDistributionPackagingStepViewController : IDEDistributionStepViewController
 {
+    NSString *_currentMessage;
+    DVTDelayedInvocation *_delayedMessageUpdate;
+    BOOL _cancelled;
+    double _startTime;
 }
 
 + (BOOL)skipStepForContext:(id)arg1 assistantDirection:(int)arg2;
+- (void).cxx_destruct;
+- (void)setCancelled:(BOOL)arg1;
+- (void)_pipelineFailedWithError:(id)arg1;
+- (void)_pipelineSucceeded;
+- (void)_updateMessage;
+- (void)_runPipeline;
 - (void)viewDidInstall;
 - (BOOL)canGoPrevious;
 - (BOOL)canGoNext;
 - (id)title;
 - (id)nibName;
+- (void)primitiveInvalidate;
 
 @end
 

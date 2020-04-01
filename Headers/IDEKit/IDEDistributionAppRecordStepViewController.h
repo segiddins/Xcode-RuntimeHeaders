@@ -10,16 +10,19 @@
 
 @interface IDEDistributionAppRecordStepViewController : IDEDistributionStepViewController
 {
+    BOOL _loadingRecords;
     DVTReplacementView *_replacementView;
 }
 
++ (id)keyPathsForValuesAffectingCanGoNext;
+@property(nonatomic) BOOL loadingRecords; // @synthesize loadingRecords=_loadingRecords;
 @property(retain) DVTReplacementView *replacementView; // @synthesize replacementView=_replacementView;
 - (void).cxx_destruct;
 - (void)selectAppRecord:(id)arg1;
 - (void)_loadAppRecords;
-- (void)_initializeStepWithReasonForPicker:(id)arg1;
 - (void)viewDidInstall;
 - (id)_installAndReturnProgressView;
+- (BOOL)canGoNext;
 - (id)title;
 - (id)nibName;
 - (id)providedOutputContextPropertyNames;

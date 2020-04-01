@@ -6,17 +6,19 @@
 
 #import <IDEKit/IDEEditor.h>
 
-#import <IDEKit/IDEPathCellDelegate-Protocol.h>
+#import <IDEKit/DVTPathCellDelegate-Protocol.h>
 #import <IDEKit/NSPathControlDelegate-Protocol.h>
 #import <IDEKit/NSSplitViewDelegate-Protocol.h>
+#import <IDEKit/NSTouchBarDelegate-Protocol.h>
+#import <IDEKit/NSTouchBarProvider-Protocol.h>
 
-@class DVTBindingToken, DVTComparisonDocumentLocation, DVTDispatchLock, DVTObservingToken, DVTPerformanceMetric, DVTReplacementView, IDEComparisonEditorAutoLayoutView, IDEComparisonEditorSubmode, IDEComparisonNavTimelineBar, IDEEditorDocument, IDENavigableItem, IDENavigableItemCoordinator, IDESourceControlConflictResolutionController, IDESourceControlInteractiveCommitController, NSArray, NSDictionary, NSMutableArray, NSMutableSet, NSSet, NSSplitView, NSString;
-@protocol DVTInvalidation, IDEComparisonEditorDataSource, IDEComparisonEditorDelegate;
+@class DVTBindingToken, DVTComparisonDocumentLocation, DVTDispatchLock, DVTObservingToken, DVTPerformanceMetric, DVTReplacementView, IDEComparisonEditorAutoLayoutView, IDEComparisonEditorDFRController, IDEComparisonEditorSplitView, IDEComparisonEditorSubmode, IDEComparisonNavTimelineBar, IDEEditorDocument, IDENavigableItem, IDENavigableItemCoordinator, IDESourceControlConflictResolutionController, IDESourceControlInteractiveCommitController, NSArray, NSDictionary, NSMutableArray, NSMutableSet, NSSet, NSString, NSTouchBar;
+@protocol DVTInvalidation, IDEComparisonEditorCollapsibleSourceList, IDEComparisonEditorDataSource, IDEComparisonEditorDelegate;
 
-@interface IDEComparisonEditor : IDEEditor <NSSplitViewDelegate, IDEPathCellDelegate, NSPathControlDelegate>
+@interface IDEComparisonEditor : IDEEditor <NSTouchBarProvider, NSTouchBarDelegate, NSSplitViewDelegate, DVTPathCellDelegate, NSPathControlDelegate>
 {
     IDEComparisonNavTimelineBar *_navTimelineBar;
-    NSSplitView *_aboveView;
+    IDEComparisonEditorSplitView *_aboveView;
     DVTReplacementView *_logReplacementView;
     DVTReplacementView *_submodeReplacementView;
     id <IDEComparisonEditorDelegate> _comparisonEditorDelegate;
@@ -76,6 +78,7 @@
     DVTDispatchLock *_performanceDispatchLock;
     BOOL _nextFinishPerformanceTestFinishesTest;
     NSString *_pathCellTitle;
+    IDEComparisonEditorDFRController *_comparisonEditorDFRController;
 }
 
 + (id)keyPathsForValuesAffectingCurrentSelectedDocumentLocations;
@@ -108,7 +111,7 @@
 @property(retain) DVTReplacementView *submodeReplacementView; // @synthesize submodeReplacementView=_submodeReplacementView;
 @property(retain) DVTReplacementView *logReplacementView; // @synthesize logReplacementView=_logReplacementView;
 @property(retain) IDEComparisonEditorAutoLayoutView *layoutView; // @synthesize layoutView=_layoutView;
-@property(retain) NSSplitView *aboveView; // @synthesize aboveView=_aboveView;
+@property(retain) IDEComparisonEditorSplitView *aboveView; // @synthesize aboveView=_aboveView;
 @property(retain) IDEComparisonNavTimelineBar *navTimelineBar; // @synthesize navTimelineBar=_navTimelineBar;
 @property(retain) id <IDEComparisonEditorDelegate> comparisonEditorDelegate; // @synthesize comparisonEditorDelegate=_comparisonEditorDelegate;
 @property(retain) IDEEditorDocument *ancestorDocument; // @synthesize ancestorDocument=_ancestorDocument;
@@ -134,7 +137,7 @@
 - (void)_exportSecondaryDocument;
 - (void)_exportPrimaryDocument;
 - (void)_disposeDocument:(id)arg1;
-- (void)_trackDocument:(id)arg1 options:(int)arg2;
+- (void)_trackDocument:(id)arg1 options:(long long)arg2;
 - (void)_updateSecondaryPathControl;
 - (void)_updatePrimaryPathControl;
 - (void)_updateBothPathControlsForcingReload:(BOOL)arg1;
@@ -152,10 +155,12 @@
 - (id)secondaryEditorInstance;
 - (id)primaryEditorInstance;
 - (id)keyEditor;
+- (id)_preselectedRevisionItemForBranchItem:(id)arg1;
 @property(retain) IDENavigableItem *secondarySubNavigableItem; // @synthesize secondarySubNavigableItem=_secondarySubNavigableItem;
 @property(retain) IDENavigableItem *primarySubNavigableItem; // @synthesize primarySubNavigableItem=_primarySubNavigableItem;
 - (void)setInternalComparisonDocumentLocation:(id)arg1;
 - (void)reloadComparisonEditorWithComparisonDocumentLocation:(id)arg1 force:(BOOL)arg2;
+@property(retain) id <IDEComparisonEditorCollapsibleSourceList> collapsibleSourceListDelegate;
 - (void)_setPathCellTitle:(id)arg1;
 - (void)_finishPerformanceTest;
 - (void)_exportOperationFinished;
@@ -163,7 +168,8 @@
 - (void)_pendingExportOperations:(unsigned long long)arg1 withDocumentLocation:(id)arg2 force:(BOOL)arg3;
 - (id)internalComparisonDocumentLocation;
 @property(readonly) IDEComparisonEditorSubmode *submode;
-@property int editorSubmode;
+- (void)setEditorSubmode:(int)arg1 client:(unsigned long long)arg2;
+@property(readonly) int editorSubmode;
 @property BOOL hideNavTimelineBar;
 @property BOOL hideRootJumpBarItem; // @synthesize hideRootJumpBarItem=_hideRootJumpBarItem;
 @property BOOL hideToolBar;
@@ -189,12 +195,21 @@
 - (void)_setupNavItemCoordinators;
 - (void)_cleanupNavItemCoordinators;
 - (id)performanceMetric;
+- (id)comparisonEditorDFRController;
+- (id)_modeActionItemWithIdentifier:(id)arg1;
+- (id)_navigationItemWithIdentifier:(id)arg1;
+- (id)touchBar:(id)arg1 makeItemForIdentifier:(id)arg2;
+- (void)_registerForComparisonEditorModeChange;
+- (id)_touchBarForComparisonSubmode;
+- (id)_touchBarForComparisonEditor;
+- (id)makeTouchBar;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
+@property(readonly) NSTouchBar *touchBar;
 
 @end
 

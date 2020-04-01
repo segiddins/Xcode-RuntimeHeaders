@@ -70,6 +70,8 @@
 - (void)updateConstraints;
 @property __weak id <IDEGraphDelegate> modelDelegate;
 - (void)clearChartNamed:(id)arg1;
+- (void)addMetricsEntries:(id)arg1 onChartNamed:(id)arg2 withLabels:(id)arg3;
+- (void)addLabeledEntries:(id)arg1 onChartNamed:(id)arg2;
 - (void)addEntries:(id)arg1 onChartNamed:(id)arg2;
 - (void)addEntry:(id)arg1 onChartNamed:(id)arg2;
 - (void)addEntry:(id)arg1 forDate:(id)arg2 onChartNamed:(id)arg3;

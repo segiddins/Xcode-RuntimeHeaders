@@ -6,9 +6,11 @@
 
 #import <DevToolsCore/PBXProjectItem.h>
 
-@class NSMutableArray, NSString, PBXFileType, PBXTarget;
+#import <DevToolsCore/XCCompatibilityChecking-Protocol.h>
 
-@interface PBXBuildRule : PBXProjectItem
+@class NSArray, NSMutableArray, NSString, PBXFileType, PBXTarget;
+
+@interface PBXBuildRule : PBXProjectItem <XCCompatibilityChecking>
 {
     NSString *_name;
     PBXTarget *_target;
@@ -16,29 +18,35 @@
     NSString *_filePatterns;
     NSString *_compilerSpecIdentifier;
     NSString *_script;
+    NSMutableArray *_inputFiles;
     NSMutableArray *_outputFiles;
+    NSString *_dependencyFile;
+    NSMutableArray *_outputFilesCompilerFlags;
     BOOL _isEditable;
+    BOOL _isAlternate;
+    BOOL _runOncePerArchitecture;
 }
 
-+ (id)findFirstBuildRuleInArray:(id)arg1 thatAppliesToInputFileNamed:(id)arg2 ofType:(id)arg3 withDesiredOutputTypes:(id)arg4 inContext:(id)arg5 platformDomain:(id)arg6;
 + (id)archivableAttributes;
 + (id)compilerSpecIsScriptProxy;
 + (id)fileTypeIsPatternProxy;
-+ (id)buildPhaseSpecificBuildRulesForBuildPhaseIdentifier:(id)arg1 platform:(id)arg2;
++ (id)buildPhaseSpecificBuildRulesForBuildPhaseIdentifier:(id)arg1 forSDK:(id)arg2;
 + (id)systemBuildRules;
 + (id)systemBuildRulesForPlatform:(id)arg1;
++ (id)systemBuildRulesForToolchains:(id)arg1 platform:(id)arg2;
++ (id)systemBuildRulesForToolchains:(id)arg1 platform:(id)arg2 buildPhaseIdentifier:(id)arg3;
 + (id)buildRulesFromCompilationTaskSpecification:(id)arg1;
 + (id)buildRulesFromBuildRuleActionSpecification:(id)arg1;
 + (id)loadBuildRulesFromPropertyListsInDirectory:(id)arg1;
 + (id)_loadBuildRulesAtPath:(id)arg1;
-+ (id)buildRuleWithName:(id)arg1;
 + (void)initialize;
-- (id)createDependencyGraphSnapshotForPlatform:(id)arg1;
+- (void).cxx_destruct;
+- (id)createDependencyGraphSnapshot;
 - (Class)dependencyGraphSnapshotClass;
-- (void)addRelevantToolSpecificationsForFileType:(id)arg1 inPropertyExpansionContext:(id)arg2 andPlatformDomain:(id)arg3 toSet:(id)arg4;
-- (BOOL)appliesToInputFileNamed:(id)arg1 ofType:(id)arg2 withDesiredOutputTypes:(id)arg3 inContext:(id)arg4 platformDomain:(id)arg5;
-- (BOOL)_filePath:(const char *)arg1 matchesPatternInPatternString:(id)arg2;
+- (BOOL)addRelevantToolSpecificationsForFileType:(id)arg1 withMacroExpansionScope:(id)arg2 forSDK:(id)arg3 toOrderedSet:(id)arg4;
+- (BOOL)appliesToInputFilesOfType:(id)arg1 withMacroExpansionScope:(id)arg2 forSDK:(id)arg3;
 - (void)willChange;
+- (void)findFeaturesInUseAndAddToSet:(id)arg1 usingPathPrefix:(id)arg2;
 - (id)innerDescription;
 - (id)description;
 - (id)errorRegexes;
@@ -47,25 +55,45 @@
 - (id)outputParseRules;
 - (id)statusMessageFormat;
 - (unsigned long long)inputFileParameterNumber;
+- (void)_setOutputFilesCompilerFlags:(id)arg1;
+- (id)_outputFilesCompilerFlags;
 - (void)_setCompilerSpec:(id)arg1;
 - (id)_compilerSpec;
 - (void)_setFileType:(id)arg1;
 - (id)_fileType;
+- (id)readFromPListUnarchiver:(id)arg1;
+- (BOOL)shouldArchiveRunOncePerArchitecture;
+- (void)setIsAlternate:(BOOL)arg1;
+- (BOOL)isAlternate;
 - (void)setIsEditable:(BOOL)arg1;
 - (BOOL)isEditable;
+- (void)setDependencyFile:(id)arg1;
+- (id)dependencyFile;
+- (void)replaceOutputFileCompilerFlagsAtIndex:(unsigned long long)arg1 withFlags:(id)arg2;
+- (void)_checkOutputFilesCompilerFlags;
+- (id)outputFileCompilerFlagsStringAtIndex:(unsigned long long)arg1;
+- (id)outputFileCompilerFlagsAtIndex:(unsigned long long)arg1;
+- (void)setOutputFilesCompilerFlags:(id)arg1;
+- (id)outputFilesCompilerFlags;
 - (void)replaceOutputFileAtIndex:(unsigned long long)arg1 withFile:(id)arg2;
 - (void)removeOutputFileAtIndex:(unsigned long long)arg1;
 - (void)insertOutputFile:(id)arg1 atIndex:(unsigned long long)arg2;
 - (id)outputFileAtIndex:(unsigned long long)arg1;
-- (void)setOutputFiles:(id)arg1;
-- (id)outputFiles;
+@property(copy) NSArray *outputFiles;
+- (void)replaceInputFileAtIndex:(unsigned long long)arg1 withFile:(id)arg2;
+- (void)removeInputFileAtIndex:(unsigned long long)arg1;
+- (void)insertInputFile:(id)arg1 atIndex:(unsigned long long)arg2;
+- (id)inputFileAtIndex:(unsigned long long)arg1;
+@property(copy) NSArray *inputFiles;
 - (void)setScript:(id)arg1;
 - (id)script;
 - (id)compilerSpecForIdentifier:(id)arg1;
 - (id)fileTypeForIdentifier:(id)arg1;
+- (id)compilerSpecificationForSDK:(id)arg1;
 - (id)compilerSpecificationInDomain:(id)arg1;
 - (void)setCompilerSpecificationIdentifier:(id)arg1;
 - (id)compilerSpecificationIdentifier;
+@property(getter=runOncePerArchitecture) BOOL runOncePerArchitecture;
 - (void)setFilePatterns:(id)arg1;
 - (id)filePatterns;
 - (void)setFileType:(id)arg1;
@@ -77,11 +105,9 @@
 - (id)name;
 - (id)_defaultName;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)dealloc;
 - (id)initWithPropertyListDictionary:(id)arg1;
 - (id)init;
 - (id)initWithName:(id)arg1;
-- (id)objectSpecifier;
 
 @end
 

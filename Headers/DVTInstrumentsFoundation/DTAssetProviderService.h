@@ -26,8 +26,10 @@
 - (void).cxx_destruct;
 - (void)registerManifestForApplicationAtPath:(id)arg1 onPort:(unsigned long long)arg2;
 - (void)startServerOnDeviceWithCompletion:(CDUnknownBlockType)arg1;
-- (void)serveDataFromFileHandle:(id)arg1 forRequestIdentifier:(id)arg2;
+- (BOOL)hasCancelledRequestWithIdentifier:(id)arg1 onChannel:(id)arg2;
+- (BOOL)serveDataFromFileHandle:(id)arg1 forRequestIdentifier:(id)arg2;
 - (void)serveDataFromFile:(id)arg1 forRequestIdentifier:(id)arg2;
+- (_Bool)serveDataWithResultFromZippedDirectory:(id)arg1 forRequestIdentifier:(id)arg2;
 - (void)serveDataFromZippedDirectory:(id)arg1 forRequestIdentifier:(id)arg2;
 - (void)messageReceived:(id)arg1;
 - (void)startServingAssetsForAppWithPath:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;

@@ -24,17 +24,14 @@
 @property(readonly) DVTFilePath *tempFilePath; // @synthesize tempFilePath=_tempFilePath;
 @property(readonly) DVTFilePath *filePath; // @synthesize filePath=_filePath;
 - (void).cxx_destruct;
-- (void)writeTempResults;
-- (BOOL)writesOwnTempResults;
+- (BOOL)commitChangesWithError:(id *)arg1;
 - (id)resultTempFilePath;
 - (id)resultNewFileName;
 - (id)resultFilePath;
 - (BOOL)resultIsEditable;
 @property(readonly, copy) NSString *description;
-- (BOOL)applyChangesWithError:(id *)arg1;
 - (BOOL)willRenameFile;
 - (id)newFilePath;
-- (BOOL)isEqualToFileChangeSet:(id)arg1;
 - (void)addChange:(id)arg1;
 - (long long)numberOfChanges;
 - (id)initWithFilePath:(id)arg1;

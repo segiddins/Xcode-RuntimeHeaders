@@ -7,16 +7,18 @@
 #import <objc/NSObject.h>
 
 #import <IDEFoundation/OSActivityStreamDelegate-Protocol.h>
+#import <IDEFoundation/_TtP13IDEFoundation38IDETestingLaunchSession_ConsoleAdaptor_-Protocol.h>
 
-@class NSDateFormatter, NSFileHandle, NSMutableArray, NSMutableData, NSString, NSTimer, OSActivityStream;
+@class NSDateFormatter, NSFileHandle, NSMutableArray, NSMutableData, NSMutableString, NSString, NSTimer, OSActivityStream;
 @protocol IDEConsoleAdaptorDelegateProtocol, OS_dispatch_queue;
 
-@interface IDEConsoleAdaptor : NSObject <OSActivityStreamDelegate>
+@interface IDEConsoleAdaptor : NSObject <_TtP13IDEFoundation38IDETestingLaunchSession_ConsoleAdaptor_, OSActivityStreamDelegate>
 {
+    int _readMode;
     OSActivityStream *_stream;
     NSDateFormatter *_dateFormatter;
     int _pid;
-    NSString *_type;
+    unsigned long long _type;
     NSObject<OS_dispatch_queue> *_writeSerialQueue;
     NSTimer *_endOfStandardOutputReadTimer;
     NSTimer *_endOfStandardErrorReadTimer;
@@ -26,9 +28,14 @@
     NSFileHandle *_standardOutput;
     NSFileHandle *_standardError;
     NSMutableData *_currentOutputOverflow;
+    NSMutableString *_currentOutputLineOverflow;
     NSMutableData *_currentErrorOverflow;
+    NSMutableString *_currentErrorLineOverflow;
     NSTimer *_targetOutputOverflowTimer;
+    NSTimer *_targetOutputNewlineTimer;
     id <IDEConsoleAdaptorDelegateProtocol> _delegate;
+    BOOL _delegateRespondsToParseConsoleOutputFromOriginalOutput;
+    BOOL _delegateRespondsToParseConsoleInputFromOriginalInput;
     unsigned long long _currNumStoredChars;
     struct __CFDictionary *_completeContent;
     struct __CFArray *_completeContentSequences;
@@ -50,10 +57,9 @@
 @property(readonly) struct __CFArray *standardInputSequences; // @synthesize standardInputSequences=_standardInputSequences;
 @property(readonly) struct __CFArray *completeContentSequences; // @synthesize completeContentSequences=_completeContentSequences;
 @property(readonly) struct __CFDictionary *completeContent; // @synthesize completeContent=_completeContent;
-@property(retain) id <IDEConsoleAdaptorDelegateProtocol> delegate; // @synthesize delegate=_delegate;
 @property BOOL ignoreFutureOutput; // @synthesize ignoreFutureOutput=_ignoreFutureOutput;
 @property BOOL finishedReceivingData; // @synthesize finishedReceivingData=_finishedReceivingData;
-@property(readonly) NSString *type; // @synthesize type=_type;
+@property(readonly) unsigned long long type; // @synthesize type=_type;
 - (void).cxx_destruct;
 - (BOOL)activityStream:(id)arg1 results:(id)arg2;
 - (void)setupLoggingStreamForPid:(int)arg1 withDevice:(id)arg2;
@@ -66,11 +72,21 @@
 - (void)_setStandardOutput:(id)arg1;
 - (void)_addObserverToReadCompletion:(id)arg1 selector:(SEL)arg2;
 - (void)_getError:(id)arg1;
+- (void)_getErrorFromFileHandle:(id)arg1;
+- (void)_getErrorFromNotification:(id)arg1;
 - (void)_getOutput:(id)arg1;
+- (void)_getOutputFromFileHandle:(id)arg1;
+- (void)_getOutputFromNotification:(id)arg1;
 - (void)_timerFiredToCheckEndOfRead:(id)arg1;
 - (void)_fileHandleCompletedRead:(id)arg1;
-- (id)_getData:(id)arg1 overflowBuffer:(id *)arg2;
+- (id)_getData:(id)arg1 fileHandle:(id)arg2 overflowBuffer:(id *)arg3 stringBuffer:(id *)arg4;
+- (id)_getDataFromFileHandle:(id)arg1 overflowBuffer:(id *)arg2 stringBuffer:(id *)arg3;
+- (id)_getDataFromNotification:(id)arg1 overflowBuffer:(id *)arg2 stringBuffer:(id *)arg3;
 - (void)_timerFiredForTargetOutputOverflow:(id)arg1;
+- (void)_outputForStandardErrorThroughDelegate:(id)arg1;
+- (void)_outputForStandardOutputThroughDelegate:(id)arg1;
+- (void)_timerFiredForTargetOutputWaitingForNewline:(id)arg1;
+- (id)_delegateProcessedOutput:(id)arg1;
 - (void)_setStandardInput:(id)arg1;
 - (void)outputForStandardError:(id)arg1 kind:(int)arg2;
 - (void)outputForStandardError:(id)arg1;
@@ -83,9 +99,10 @@
 - (void)_makeExpired;
 - (void)_addToCompleteContent:(id)arg1 andSupportingSequences:(struct __CFArray *)arg2;
 - (BOOL)_removeSequence:(unsigned long long)arg1 fromSupportingSequences:(struct __CFArray *)arg2;
+@property(retain) id <IDEConsoleAdaptorDelegateProtocol> delegate; // @synthesize delegate=_delegate;
 @property(readonly, copy) NSString *description;
 - (void)dealloc;
-- (id)initWithType:(id)arg1 standardInput:(id)arg2 standardOutput:(id)arg3 standardError:(id)arg4;
+- (id)initWithType:(unsigned long long)arg1 standardInput:(id)arg2 standardOutput:(id)arg3 standardError:(id)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

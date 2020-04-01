@@ -17,12 +17,12 @@
     Class _documentClass;
     NSSet *_archiveTypes;
     NSString *_fileType;
-    Class _foriengContentImporter;
+    Class _foreignContentImporter;
 }
 
 + (BOOL)platform:(id)arg1 supportsFileType:(id)arg2;
 + (id)allTypeDescriptions;
-@property(readonly) Class foriengContentImporter; // @synthesize foriengContentImporter=_foriengContentImporter;
+@property(readonly) Class foreignContentImporter; // @synthesize foreignContentImporter=_foreignContentImporter;
 @property(readonly) NSString *fileType; // @synthesize fileType=_fileType;
 @property(readonly) NSSet *archiveTypes; // @synthesize archiveTypes=_archiveTypes;
 @property(readonly) Class documentClass; // @synthesize documentClass=_documentClass;

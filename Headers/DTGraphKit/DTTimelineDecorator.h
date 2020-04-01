@@ -15,6 +15,7 @@
 - (id)decorateContainer:(struct DTTimelineDecorationContainer *)arg1;
 - (void)decorateContainer:(struct DTTimelineDecorationContainer *)arg1 qualityOfService:(unsigned int)arg2 priority:(int)arg3 group:(id)arg4;
 - (BOOL)heightChangedForPlane:(id)arg1;
+- (void)effectiveAppearance:(id)arg1 didChangeForPlane:(id)arg2;
 - (void)setDefaultsForPlane:(id)arg1;
 - (BOOL)mustDecorateOnMainThread;
 - (BOOL)needsMajorMinorTickPOIs;

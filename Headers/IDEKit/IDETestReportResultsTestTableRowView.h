@@ -6,38 +6,32 @@
 
 #import <AppKit/NSTableRowView.h>
 
-@class NSColor, NSTrackingArea;
+@class NSTrackingArea;
 
 @interface IDETestReportResultsTestTableRowView : NSTableRowView
 {
     BOOL _mouseInside;
     NSTrackingArea *_trackingArea;
-    BOOL _isFirstRowAfterTestRunPickerRow;
+    BOOL _disableJumpToSource;
     id _item;
     long long _row;
-    CDUnknownBlockType _selectionChangedCallback;
-    NSColor *_separatorColor;
 }
 
-@property(retain) NSColor *separatorColor; // @synthesize separatorColor=_separatorColor;
-@property(copy) CDUnknownBlockType selectionChangedCallback; // @synthesize selectionChangedCallback=_selectionChangedCallback;
+@property BOOL disableJumpToSource; // @synthesize disableJumpToSource=_disableJumpToSource;
 @property long long row; // @synthesize row=_row;
 @property(retain) id item; // @synthesize item=_item;
-@property BOOL isFirstRowAfterTestRunPickerRow; // @synthesize isFirstRowAfterTestRunPickerRow=_isFirstRowAfterTestRunPickerRow;
 - (void).cxx_destruct;
 - (void)mouseExited:(id)arg1;
 - (void)mouseEntered:(id)arg1;
 - (id)tableCellView;
+- (id)testAttachmentTableCellView;
 - (id)testTargetTableCellView;
 - (id)testTableCellView;
 - (void)updateTrackingAreas;
 - (void)ensureTrackingArea;
 - (BOOL)mouseInside;
 - (void)setMouseInside:(BOOL)arg1;
-- (void)drawBackgroundInRect:(struct CGRect)arg1;
 - (void)drawSeparatorInRect:(struct CGRect)arg1;
-- (void)setSelected:(BOOL)arg1;
-- (void)refreshSelectedState;
 
 @end
 

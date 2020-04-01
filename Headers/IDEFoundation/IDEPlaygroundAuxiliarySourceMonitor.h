@@ -8,7 +8,7 @@
 
 #import <IDEFoundation/DVTInvalidation-Protocol.h>
 
-@class DVTFilePath, DVTObservingToken, DVTStackBacktrace, IDEPlaygroundCommonSharedContext, NSArray, NSDate, NSDictionary, NSSet, NSString;
+@class DVTObservingToken, DVTStackBacktrace, IDEPlaygroundCommonSharedContext, NSArray, NSDate, NSDictionary, NSSet, NSString;
 
 @interface IDEPlaygroundAuxiliarySourceMonitor : NSObject <DVTInvalidation>
 {
@@ -16,9 +16,8 @@
     IDEPlaygroundAuxiliarySourceMonitor *_dependency;
     NSDate *_lastModificationDate;
     NSSet *_sourcesDirectorySwiftFiles;
-    DVTFilePath *__monitoredSourcesDirectory;
     NSArray *__monitoredFrameworksDirectories;
-    DVTObservingToken *__sourcesDirectoryObserverToken;
+    DVTObservingToken *__sourcesDirectorySwiftFileObserverToken;
     DVTObservingToken *__frameworkSearchPathsObserverToken;
     DVTObservingToken *__dependencyModificationObserverToken;
     NSDictionary *__sourcesFileContentsHashes;
@@ -28,16 +27,15 @@
 @property(retain, nonatomic) NSDictionary *_sourcesFileContentsHashes; // @synthesize _sourcesFileContentsHashes=__sourcesFileContentsHashes;
 @property(retain, nonatomic) DVTObservingToken *_dependencyModificationObserverToken; // @synthesize _dependencyModificationObserverToken=__dependencyModificationObserverToken;
 @property(retain, nonatomic) DVTObservingToken *_frameworkSearchPathsObserverToken; // @synthesize _frameworkSearchPathsObserverToken=__frameworkSearchPathsObserverToken;
-@property(retain, nonatomic) DVTObservingToken *_sourcesDirectoryObserverToken; // @synthesize _sourcesDirectoryObserverToken=__sourcesDirectoryObserverToken;
+@property(retain, nonatomic) DVTObservingToken *_sourcesDirectorySwiftFileObserverToken; // @synthesize _sourcesDirectorySwiftFileObserverToken=__sourcesDirectorySwiftFileObserverToken;
 @property(retain, nonatomic, setter=_setMonitoredFrameworksDirectories:) NSArray *_monitoredFrameworksDirectories; // @synthesize _monitoredFrameworksDirectories=__monitoredFrameworksDirectories;
-@property(retain, nonatomic, setter=_setMonitoredSourcesDirectory:) DVTFilePath *_monitoredSourcesDirectory; // @synthesize _monitoredSourcesDirectory=__monitoredSourcesDirectory;
 @property(copy, nonatomic) NSSet *sourcesDirectorySwiftFiles; // @synthesize sourcesDirectorySwiftFiles=_sourcesDirectorySwiftFiles;
 @property(retain, nonatomic) NSDate *lastModificationDate; // @synthesize lastModificationDate=_lastModificationDate;
 @property(readonly) __weak IDEPlaygroundAuxiliarySourceMonitor *dependency; // @synthesize dependency=_dependency;
 @property(readonly, nonatomic) IDEPlaygroundCommonSharedContext *context; // @synthesize context=_context;
 - (void).cxx_destruct;
 - (id)_hashesForSwiftFiles:(id)arg1;
-- (id)_sourcesDirectorySwiftFiles;
+- (void)sourceDirectorySwiftFilesUpdated;
 - (void)primitiveInvalidate;
 - (id)initWithPlaygroundContext:(id)arg1 dependency:(id)arg2;
 

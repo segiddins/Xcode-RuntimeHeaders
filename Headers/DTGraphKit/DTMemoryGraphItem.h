@@ -17,9 +17,11 @@
 @property(nonatomic) BOOL showStatus; // @synthesize showStatus=_showStatus;
 @property(readonly, nonatomic) __weak DTObjectGraphIndex *graphIndex; // @synthesize graphIndex=_graphIndex;
 - (void).cxx_destruct;
-- (void)_setFilter:(CDUnknownBlockType)arg1 string:(id)arg2 instanceFilter:(unsigned long long)arg3;
+- (void)_setFilter:(CDUnknownBlockType)arg1 string:(id)arg2 instanceFilter:(unsigned long long)arg3 leaksOnly:(BOOL)arg4;
 @property(readonly, nonatomic) CDStruct_599faf0f nodeDetails;
 @property(readonly, nonatomic) unsigned int identifier;
+@property(readonly, nonatomic) BOOL isGroup;
+@property(readonly, nonatomic) BOOL isRoot;
 @property(readonly, nonatomic) __weak DTMemoryGraphItem *parentItem;
 - (id)subitemAtIndex:(unsigned long long)arg1;
 @property(readonly, nonatomic) NSArray *subitems;

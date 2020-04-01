@@ -6,18 +6,21 @@
 
 #import <IDEIODebugGaugesCore/IDEGaugeDebuggingAddition.h>
 
-@class NSArray, NSDate, NSNumber;
+@class DVTDispatchLock, NSArray, NSDate, NSMutableArray, NSNumber;
 
 @interface IDEFileIOGaugeDebuggingAddition : IDEGaugeDebuggingAddition
 {
+    NSMutableArray *_rdBytesDeltas;
+    NSMutableArray *_wrBytesDeltas;
+    DVTDispatchLock *_openFilesLock;
+    DVTDispatchLock *_allFilesLock;
     NSDate *_updateTime;
     NSNumber *_rdBytesPerSecond;
     NSNumber *_wrBytesPerSecond;
     NSNumber *_rdBytes;
     NSNumber *_wrBytes;
-    NSArray *_rdBytesDeltas;
-    NSArray *_wrBytesDeltas;
     NSArray *_openFiles;
+    NSArray *_allFiles;
     NSArray *_assets;
 }
 
@@ -26,16 +29,19 @@
 + (id)basicDataQueryAttributes;
 + (BOOL)shouldInstantiateInLaunchSession:(id)arg1;
 @property(readonly, nonatomic) NSArray *assets; // @synthesize assets=_assets;
+@property(readonly, nonatomic) NSArray *allFiles; // @synthesize allFiles=_allFiles;
 @property(readonly, nonatomic) NSArray *openFiles; // @synthesize openFiles=_openFiles;
-@property(readonly, nonatomic) NSArray *wrBytesDeltas; // @synthesize wrBytesDeltas=_wrBytesDeltas;
-@property(readonly, nonatomic) NSArray *rdBytesDeltas; // @synthesize rdBytesDeltas=_rdBytesDeltas;
 @property(readonly, nonatomic) NSNumber *wrBytes; // @synthesize wrBytes=_wrBytes;
 @property(readonly, nonatomic) NSNumber *rdBytes; // @synthesize rdBytes=_rdBytes;
 @property(readonly, nonatomic) NSNumber *wrBytesPerSecond; // @synthesize wrBytesPerSecond=_wrBytesPerSecond;
 @property(readonly, nonatomic) NSNumber *rdBytesPerSecond; // @synthesize rdBytesPerSecond=_rdBytesPerSecond;
 @property(readonly, nonatomic) NSDate *updateTime; // @synthesize updateTime=_updateTime;
+@property(readonly, nonatomic) NSArray *wrBytesDeltas; // @synthesize wrBytesDeltas=_wrBytesDeltas;
+@property(readonly, nonatomic) NSArray *rdBytesDeltas; // @synthesize rdBytesDeltas=_rdBytesDeltas;
 - (void).cxx_destruct;
 - (void)processQueryResultDict:(id)arg1;
+- (id)_mergeExistingFiles;
+- (id)initInLaunchSession:(id)arg1 withAppDisplayName:(id)arg2 runDestination:(id)arg3 fromExtension:(id)arg4;
 
 @end
 

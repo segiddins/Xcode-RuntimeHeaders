@@ -16,6 +16,7 @@
     NSString *_applicationKeyPath;
 }
 
++ (void)addKeyPathPrefixesToStripForHumanReadableName:(id)arg1;
 + (id)keyPathWithApplicationKeyPath:(id)arg1;
 @property(readonly) NSString *applicationKeyPath; // @synthesize applicationKeyPath=_applicationKeyPath;
 @property(readonly) NSString *observationKeyPath; // @synthesize observationKeyPath=_observationKeyPath;

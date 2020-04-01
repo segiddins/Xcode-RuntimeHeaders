@@ -10,8 +10,9 @@
 {
 }
 
++ (id)propertyListForContext:(id)arg1;
 + (id)availableOptionsForPropertyList;
-- (BOOL)loadFromPropertyList:(id)arg1 error:(id *)arg2;
+- (BOOL)loadFromExportOptions:(id)arg1 error:(id *)arg2;
 - (BOOL)fetchAndSetAppStoreConfigurationUsingDefaultConfiguration:(BOOL)arg1 error:(id *)arg2;
 - (id)platformsDictionaryForConfigurationResponse:(id)arg1 topLevelKey:(id)arg2 logAspect:(id)arg3 error:(id *)arg4;
 - (id)defaultConfigurationPlatformsDictionaryWithError:(id *)arg1;

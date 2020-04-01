@@ -11,11 +11,10 @@
 
 @interface SKDocumentLocation : DVTDocumentLocation
 {
-    id _skobject;
     id _representedObject;
 }
 
-@property(readonly, nonatomic) id representedObject; // @synthesize representedObject=_representedObject;
+@property(readonly, nonatomic) __weak id representedObject; // @synthesize representedObject=_representedObject;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) SKTileDefinition *asTileDefinition;
 @property(readonly, nonatomic) BOOL isTileDefinition;

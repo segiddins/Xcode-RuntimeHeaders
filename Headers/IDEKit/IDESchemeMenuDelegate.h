@@ -6,28 +6,37 @@
 
 #import <objc/NSObject.h>
 
+#import <IDEKit/DVTInvalidation-Protocol.h>
 #import <IDEKit/NSMenuDelegate-Protocol.h>
 
-@class NSString;
+@class DVTStackBacktrace, IDEWorkspaceWindowController, NSString;
 
-@interface IDESchemeMenuDelegate : NSObject <NSMenuDelegate>
+@interface IDESchemeMenuDelegate : NSObject <NSMenuDelegate, DVTInvalidation>
 {
-    BOOL _needsUpdate;
-    id _currentRunContextManagerObservingToken;
+    int _updateFlags;
+    IDEWorkspaceWindowController *_currentWorkspaceWindowController;
 }
 
-+ (id)_currentRunContextManager;
++ (id)keyPathsForValuesAffectingCurrentRunContextManager;
++ (id)_findCurrentWorkspaceWindowController;
++ (void)initialize;
+@property(retain) IDEWorkspaceWindowController *currentWorkspaceWindowController; // @synthesize currentWorkspaceWindowController=_currentWorkspaceWindowController;
 - (void).cxx_destruct;
 - (void)menuNeedsUpdate:(id)arg1;
 - (id)_schemeMenuItems;
 - (void)_selectScheme:(id)arg1;
+- (id)currentRunContextManager;
 - (id)init;
+- (void)primitiveInvalidate;
 
 // Remaining properties
+@property(retain) DVTStackBacktrace *creationBacktrace;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
+@property(readonly) DVTStackBacktrace *invalidationBacktrace;
 @property(readonly) Class superclass;
+@property(readonly, nonatomic, getter=isValid) BOOL valid;
 
 @end
 

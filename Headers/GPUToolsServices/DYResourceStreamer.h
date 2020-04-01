@@ -6,21 +6,25 @@
 
 #import <objc/NSObject.h>
 
-@class DYTransport;
+@class DYTransport, NSOperationQueue;
 
 @interface DYResourceStreamer : NSObject
 {
     DYTransport *_transport;
-    struct dispatch_queue_s *_outputQueue;
+    // Error parsing type: {atomic<unsigned long long>="__a_"AQ}, name: _inflight
+    struct dispatch_queue_s *_legacyQueue;
     struct dispatch_queue_s *_replyQueue;
+    NSOperationQueue *_sendQueue;
 }
 
++ (id)processRealizeBatchResourceMessages:(id)arg1 resourceObjects:(id)arg2 tempDict:(id)arg3;
 + (id)processRealizeResourceMessages:(id)arg1 resourceObject:(id)arg2 tempDict:(id)arg3;
 + (id)_createResource:(id)arg1 funcStreamData:(id)arg2 objectCache:(id)arg3;
 + (id)findDataForURL:(const char *)arg1 inCache:(id)arg2;
 - (void).cxx_destruct;
 - (id)updateResource:(id)arg1;
-- (id)realizeResource:(id)arg1 functionIndex:(unsigned int)arg2;
+- (id)realizeResourceBatch:(id)arg1 withCompression:(unsigned long long)arg2 priority:(long long)arg3 functionIndex:(unsigned long long)arg4;
+- (id)realizeResource:(id)arg1 functionIndex:(unsigned long long)arg2;
 - (void)dealloc;
 - (id)initWithTransport:(id)arg1;
 - (id)init;

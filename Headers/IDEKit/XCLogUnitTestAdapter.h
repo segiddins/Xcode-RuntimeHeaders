@@ -17,6 +17,7 @@
 - (unsigned long long)testFailuresForDataNode:(id)arg1;
 - (unsigned long long)errorsForDataNode:(id)arg1;
 - (id)dataNode:(id)arg1 toolTipForTableColumn:(id)arg2;
+- (id)accessibilityDescriptionForDataNode:(id)arg1;
 - (id)titleSecondPartForDataNode:(id)arg1;
 - (BOOL)supportsTextExpansionAtSectionLevelForDataNode:(id)arg1;
 - (BOOL)supportsTextExpansionForDataNode:(id)arg1;

@@ -6,26 +6,29 @@
 
 #import <AppKit/NSMenu.h>
 
-@interface NSMenu (IBMenuIntegration)
+#import <IDEInterfaceBuilderCocoaIntegration/IBDocumentArchiving-Protocol.h>
+
+@class NSArray, NSString;
+
+@interface NSMenu (IBMenuIntegration) <IBDocumentArchiving>
 + (id)keyPathsForValuesAffectingIbInspectedUserInterfaceLayoutDirection;
-- (BOOL)ibUsesStandardIdentifierPropertySlice;
++ (id)keyPathsForValuesAffectingIbInspectedTitle;
++ (id)instantiateWithDocumentUnarchiver:(id)arg1;
 - (BOOL)ibCanSupportIdentifierProperty;
 @property long long ibArchivedSystemMenuType;
 - (id)ibAcceptContentsOfPasteboard:(id)arg1 inDocument:(id)arg2 insertionContext:(id)arg3;
 - (BOOL)ibCanAcceptContentsOfPasteboard:(id)arg1 inDocument:(id)arg2 targetChildRelation:(id *)arg3;
-- (void)ibWarnings:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
 - (id)ibQualifyingInfoForDefaultLabel;
 - (id)ibDefaultLabel;
 @property long long ibInspectedUserInterfaceLayoutDirection;
 - (void)setIbInspectedTitle:(id)arg1;
 - (id)ibInspectedTitle;
-- (void)setIbShadowedItemArray:(id)arg1;
-- (id)ibShadowedItemArray;
+@property(copy) NSArray *ibShadowedItemArray;
 - (id)ibPasteboardTypes;
 - (BOOL)ibMustBeBaseObjectOfEditorFrame;
 - (Class)ibEditorClass;
 - (id)ibEditorCanvasFrameControllerForDocument:(id)arg1;
-- (id)ibDefaultImage;
+- (id)ibEditedMenuRepresentation;
 - (BOOL)ibRepresentsMainMenuOrDescendantOfMainMenu;
 - (BOOL)ibRepresentsMainMenu;
 - (BOOL)ibSupportsMultipleSimultaneousEditors;
@@ -33,7 +36,17 @@
 - (void)ibPopulateEditorSelectionOrderRelationLists:(id)arg1;
 - (void)ibPopulateChildRelationOrder:(id)arg1;
 - (id)ibLocalAttributeKeyPaths;
+- (id)ibLocalChildToManyRelationshipsKeyPaths;
 - (BOOL)ibCanBeBoundToFromObject:(id)arg1;
 - (struct CGRect)ibRectForChild:(id)arg1 inFrameController:(id)arg2;
+- (id)ibLocalLocalizableStringsAttributeKeyPaths;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @end
 

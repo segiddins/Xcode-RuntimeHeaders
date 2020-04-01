@@ -15,6 +15,10 @@
 - (id)availableTranslucentBottomBarMetrics;
 - (id)availableOpaqueTopBarMetrics;
 - (id)availableTranslucentTopBarMetrics;
+- (id)availableUserInterfaceStyleDisplayNames;
+- (id)availableUserInterfaceStyles;
+- (id)unspecifiedUserInterfaceStyleDisplayName;
+- (id)unspecifiedUserInterfaceStyle;
 - (id)availableOrientationMetrics;
 - (id)availableSplitViewMetrics;
 - (id)availablePresentationMetrics;

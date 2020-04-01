@@ -9,12 +9,14 @@
 #import <Xcode3UI/IDEKeyDrivenNavigableItemRepresentedObject-Protocol.h>
 #import <Xcode3UI/Xcode3ContainerItemWrapping-Protocol.h>
 
-@class DVTDocumentLocation, DVTFileDataType, IDEFileReference, NSImage, NSString, PBXBuildFile, PBXReference, Xcode3BuildFileGroup, Xcode3BuildPhase;
+@class DVTDocumentLocation, DVTFileDataType, IDEFileReference, NSArray, NSImage, NSNull, NSString, NSURL, PBXBuildFile, PBXReference, Xcode3BuildFileGroup, Xcode3BuildPhase, _TtC13DVTFoundation9DVTSymbol;
 
 @interface Xcode3BuildFile : DVTModelTreeNode <IDEKeyDrivenNavigableItemRepresentedObject, Xcode3ContainerItemWrapping>
 {
     PBXBuildFile *_buildFile;
     NSString *_parentPathForDisplay;
+    BOOL _isIigDefsFile;
+    BOOL _needToCheckIfIsIigDefsFile;
     BOOL _isMigDefsFile;
     BOOL _needToCheckIfIsMigDefsFile;
     BOOL _isSceneKitFile;
@@ -24,6 +26,7 @@
 + (void)batchSetCompilerFlags:(id)arg1 forBuildFiles:(id)arg2;
 + (id)wrappingXcode3BuildFileForPBXBuildFile:(id)arg1;
 + (void)initialize;
++ (id)keyPathsForValuesAffectingNavigableItem_name;
 @property(readonly) PBXBuildFile *pbxBuildFile; // @synthesize pbxBuildFile=_buildFile;
 - (void).cxx_destruct;
 - (long long)compareToBuildFile:(id)arg1;
@@ -31,30 +34,40 @@
 @property(readonly, copy) NSString *description;
 @property(readonly) BOOL isSceneKitFile; // @synthesize isSceneKitFile=_isSceneKitFile;
 @property(readonly) BOOL isMigDefsFile; // @synthesize isMigDefsFile=_isMigDefsFile;
+@property(readonly) BOOL isIigDefsFile; // @synthesize isIigDefsFile=_isIigDefsFile;
 @property(copy) NSString *compilerFlags;
 @property(readonly) PBXReference *navigableReference;
 - (id)reference;
 @property(readonly) NSString *name;
 - (void)primitiveInvalidate;
 - (id)initWithBuildFile:(id)arg1;
-@property(readonly) NSString *navigableItem_name;
+@property(readonly, nonatomic) NSString *navigableItem_name;
 
 // Remaining properties
 @property(readonly) Xcode3BuildPhase *buildPhase; // @dynamic buildPhase;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly) unsigned long long hash;
-@property(readonly) NSString *navigableItem_accessibleImageDescription;
-@property(readonly) DVTDocumentLocation *navigableItem_contentDocumentLocation;
-@property(readonly) DVTFileDataType *navigableItem_documentType;
-@property(readonly) IDEFileReference *navigableItem_fileReference;
-@property(readonly) NSString *navigableItem_groupIdentifier;
-@property(readonly) NSImage *navigableItem_image;
-@property(readonly) BOOL navigableItem_isLeaf;
-@property(readonly) BOOL navigableItem_isMajorGroup;
-@property(readonly) BOOL navigableItem_missingReferencedContentIsImportant;
-@property(readonly) BOOL navigableItem_referencedContentExists;
-@property(readonly) NSString *navigableItem_subtitle;
-@property(readonly) NSString *navigableItem_toolTip;
+@property(readonly, nonatomic) NSString *navigableItem_accessibilityIdentifier;
+@property(readonly, nonatomic) NSString *navigableItem_accessibleImageDescription;
+@property(readonly, nonatomic) NSArray *navigableItem_additionalFilterMatchingText;
+@property(readonly, nonatomic) NSArray *navigableItem_childRepresentedObjects;
+@property(readonly, nonatomic) DVTDocumentLocation *navigableItem_contentDocumentLocation;
+@property(readonly, nonatomic) DVTFileDataType *navigableItem_documentType;
+@property(readonly, nonatomic) IDEFileReference *navigableItem_fileReference;
+@property(readonly, nonatomic) NSNull *navigableItem_filtered;
+@property(readonly, nonatomic) NSString *navigableItem_groupIdentifier;
+@property(readonly, nonatomic) NSImage *navigableItem_image;
+@property(readonly, nonatomic) BOOL navigableItem_isEnabled;
+@property(readonly, nonatomic) BOOL navigableItem_isLeaf;
+@property(readonly, nonatomic) BOOL navigableItem_isMajorGroup;
+@property(readonly, nonatomic) BOOL navigableItem_isVisible;
+@property(readonly, nonatomic) BOOL navigableItem_missingReferencedContentIsImportant;
+@property(readonly, nonatomic) id navigableItem_parentRepresentedObject;
+@property(readonly, nonatomic) BOOL navigableItem_referencedContentExists;
+@property(readonly, nonatomic) _TtC13DVTFoundation9DVTSymbol *navigableItem_representedSymbol;
+@property(readonly, nonatomic) NSURL *navigableItem_representedURL;
+@property(readonly, nonatomic) NSString *navigableItem_subtitle;
+@property(readonly, nonatomic) NSString *navigableItem_toolTip;
 @property(readonly) Xcode3BuildFileGroup *parentGroup; // @dynamic parentGroup;
 @property(readonly) Class superclass;
 

@@ -4,26 +4,27 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <DVTKit/DVTLayoutView_ML.h>
+#import <DVTStructuredLayoutKit/DVTLayoutView_ML.h>
 
-@class IBImageButton, NSString;
+@class IBConnectionInterfaceStyle, IBImageButton, NSString;
 @protocol IBObjectPickerElementViewDelegate;
 
 @interface IBObjectPickerElementView : DVTLayoutView_ML
 {
-    NSString *title;
-    id representedObject;
-    IBImageButton *deleteButton;
-    id mouseObserveringToken;
-    id mouseWillCloseNotificationToken;
-    BOOL rolledOver;
-    id <IBObjectPickerElementViewDelegate> delegate;
+    IBImageButton *_deleteButton;
+    id _mouseObserveringToken;
+    id _mouseWillCloseNotificationToken;
+    IBConnectionInterfaceStyle *_connectionInterfaceStyle;
+    BOOL _rolledOver;
+    id _representedObject;
+    NSString *_title;
+    id <IBObjectPickerElementViewDelegate> _delegate;
 }
 
-@property(nonatomic, getter=isRolledOver) BOOL rolledOver; // @synthesize rolledOver;
-@property(copy, nonatomic) NSString *title; // @synthesize title;
-@property(retain) id representedObject; // @synthesize representedObject;
-@property __weak id <IBObjectPickerElementViewDelegate> delegate; // @synthesize delegate;
+@property __weak id <IBObjectPickerElementViewDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic, getter=isRolledOver) BOOL rolledOver; // @synthesize rolledOver=_rolledOver;
+@property(copy, nonatomic) NSString *title; // @synthesize title=_title;
+@property(retain) id representedObject; // @synthesize representedObject=_representedObject;
 - (void).cxx_destruct;
 - (void)delete:(id)arg1;
 - (void)didCompleteLayout;
@@ -35,17 +36,11 @@
 - (id)attributedTitle;
 - (id)titleAttributes;
 - (id)titleParagraphStyle;
-- (id)titleColor;
-- (id)effectiveBorderColor;
-- (id)effectiveFillColor;
-- (id)rolledOverBorderColor;
-- (id)rolledOverFillColor;
-- (id)normalBorderColor;
-- (id)normalFillColor;
 - (void)layoutBottomUp;
 - (void)layoutTopDown;
 - (BOOL)isFlipped;
 @property BOOL allowsDelete;
+- (void)updateDeleteButtonImages;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

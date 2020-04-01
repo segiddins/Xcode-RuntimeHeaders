@@ -22,6 +22,8 @@
 @property(retain, nonatomic) NSObject<IBPrimarySceneObject> *indicatedEntryPoint; // @synthesize indicatedEntryPoint=_indicatedEntryPoint;
 @property(retain, nonatomic) IBTargetRuntime *targetRuntime; // @synthesize targetRuntime=_targetRuntime;
 - (void).cxx_destruct;
+- (BOOL)ibIsValidOutletSource;
+- (BOOL)ibIsValidOutletDestination;
 - (id)storyboardIndicatedEntryPointKeyPath;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
@@ -31,7 +33,7 @@
 - (BOOL)ibIsCopyableGivenSelection:(id)arg1;
 - (id)ibTopLevelObjectToSelectInCanvasForDocument:(id)arg1;
 - (BOOL)ibTopLevelSceneObjectWantsInclusionInCompiledStoryboard;
-- (BOOL)ibIsInspectorApplicable:(id)arg1 forCategory:(id)arg2;
+- (BOOL)ibIsInspectorSliceApplicable:(id)arg1 forCategory:(id)arg2;
 - (id)ibStoryboardEntryPointIndicatorCanvasTitle;
 
 // Remaining properties

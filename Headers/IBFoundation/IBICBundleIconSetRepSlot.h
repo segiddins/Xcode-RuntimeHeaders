@@ -18,13 +18,14 @@
     IBICSubtype *_subtype;
 }
 
-+ (id)allDefaultFileTypes;
 + (id)detailAreaGroupPathForIdiom:(id)arg1 role:(id)arg2 size:(id)arg3;
-+ (id)variantSlotComponentClassesExcludingCoreVariants;
 + (id)orderedComponentClasses;
 + (id)slotWithIdiom:(id)arg1 size:(id)arg2 role:(id)arg3 subtype:(id)arg4 scale:(id)arg5;
 + (id)slotWithIdiom:(id)arg1 size:(id)arg2 scale:(id)arg3 role:(id)arg4;
++ (id)slotWithIdiom:(id)arg1 size:(id)arg2 scale:(id)arg3;
 + (id)allocWithZone:(struct _NSZone *)arg1;
++ (Class)assetRepClass;
++ (Class)assetSetClass;
 @property(readonly) IBICSubtype *subtype; // @synthesize subtype=_subtype;
 @property(readonly) IBICRole *role; // @synthesize role=_role;
 @property(readonly) IBICScale *scale; // @synthesize scale=_scale;

@@ -1,10 +1,12 @@
 #!/usr/bin/env ruby
 
+require 'fileutils'
+require 'shellwords'
 
 xcode = ARGV[0] || "/Applications/Xcode.app/"
 
-def xcode_folder(xcode_path, relative)
-  File.join(xcode_path, 'Contents', relative)
+def xcode_folder(xcode_path, *relative)
+  File.join(xcode_path, 'Contents', *relative)
 end
 
 def framework_name(path)
@@ -15,15 +17,44 @@ folders = [
   xcode_folder(xcode, 'Frameworks'),
   xcode_folder(xcode, 'OtherFrameworks'),
   xcode_folder(xcode, 'SharedFrameworks'),
-  xcode_folder(xcode, 'PlugIns')
+  xcode_folder(xcode, 'PlugIns'),
+  xcode_folder(xcode, 'PlugIns/Xcode3Core.ideplugin/Contents/Frameworks'),
 ]
+
+def system(*args)
+  warn "running #{args.shelljoin}"
+  super.tap { |rv| raise "Command failed: #{$?}" unless rv }
+end
+
+FileUtils.rm_rf ['Headers', 'Strings']
+
+File.open('xcode_version.txt', 'w') do |f|
+  system(File.join(xcode, 'Contents/Developer/usr/bin/xcodebuild'), '-version', out: f)
+end
 
 folders.each do |path|
   Dir.each_child(path) do |item|
     name = framework_name(item)
-    dir_name = File.expand_path(name, 'Headers')
-    Dir.mkdir_p(dir_name)
+    headers_dir_name = File.expand_path(name, 'Headers')
+    strings_dir_name = File.expand_path('Strings')
+    FileUtils.mkdir_p([headers_dir_name, strings_dir_name])
 
-    system('class-dump', '-H', '-o', dir_name, File.join(path, item))
+    framework = File.join(path, item)
+    extension = File.extname(framework)
+    binary =
+      case extension
+      when '.framework'
+        File.join(framework, name)
+      when '.ideplugin', '.appex', '.dvtplugin'
+        File.join(framework, 'Contents', 'MacOS', name)
+      else
+        framework
+      end
+
+    File.open(File.join(strings_dir_name, name + '.strings.txt'), 'w') do |f|
+      system('strings', binary, out: f)
+    end
+
+    system('class-dump/build/Release/class-dump', '-H', '-o', headers_dir_name, framework)
   end
 end

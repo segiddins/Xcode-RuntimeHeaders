@@ -4,52 +4,43 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <IDEFoundation/IDESchemeAction.h>
+#import <IDEFoundation/IDELaunchTestSchemeAction.h>
 
-@class DVTNotificationToken, DVTObservingToken, IDESchemeBuildableReference, NSArray, NSDictionary, NSMutableArray, NSString;
+@class DVTObservingToken, NSArray, NSMutableArray, _TtC13IDEFoundation11IDETestPlan, _TtC13IDEFoundation26IDESchemeTestPlanReference;
 
-@interface IDETestSchemeAction : IDESchemeAction
+@interface IDETestSchemeAction : IDELaunchTestSchemeAction
 {
-    NSMutableArray *_testableReferences;
+    NSMutableArray *_testPlanReferences;
+    NSMutableArray *_loadingTestPlanReferences;
+    NSMutableArray *_legacyTestableReferences;
     NSMutableArray *_loadingTestableReferences;
-    NSMutableArray *_commandLineArgumentEntries;
-    NSMutableArray *_environmentVariableEntries;
-    BOOL _codeCoverageEnabled;
+    BOOL _localizableStringsDataGatheringEnabled;
     DVTObservingToken *_testablesObservingToken;
     DVTObservingToken *_skippedTestsObservingToken;
     DVTObservingToken *_workspaceRunnableProductsToken;
-    DVTNotificationToken *_buildablesToken;
     NSArray *_hostBuildableReferences;
-    IDESchemeBuildableReference *_testBuildableReferenceToUseForMacroExpansion;
-    BOOL _shouldUseLaunchSchemeArgsEnv;
-    BOOL _mallocStackLoggingSelected;
-    BOOL _enableAddressSanitizer;
-    BOOL _enableThreadSanitizer;
-    unsigned int _debugProcessAsUID;
-    NSString *_selectedDebuggerIdentifier;
-    NSString *_selectedLauncherIdentifier;
-    NSString *_selectedMallocStackLoggingType;
-    NSDictionary *_additionalOptionEntriesDict;
-    NSString *_debugAsWhichUser;
+    BOOL _suppressSimulatorApplication;
+    _TtC13IDEFoundation26IDESchemeTestPlanReference *_activeTestPlanReference;
+    _TtC13IDEFoundation26IDESchemeTestPlanReference *_defaultTestPlanReference;
 }
 
++ (id)keyPathsForValuesAffectingActiveTestPlanReference;
 + (id)keyPathsForValuesAffectingBuildableReferenceToUseForMacroExpansion;
-+ (id)keyPathsForValuesAffectingDebugProcessAsUID;
 + (id)keyPathsForValuesAffectingTestBuildableReferences;
++ (id)keyPathsForValuesAffectingTestableReferences;
 + (id)keyPathsForValuesAffectingDoesNonActionWork;
-+ (id)keyPathsForValuesAffectingSubtitle;
 + (void)forceCodeCoverageEnabledTo:(BOOL)arg1;
 + (void)initialize;
-@property(copy) NSString *debugAsWhichUser; // @synthesize debugAsWhichUser=_debugAsWhichUser;
-@property BOOL enableThreadSanitizer; // @synthesize enableThreadSanitizer=_enableThreadSanitizer;
-@property BOOL enableAddressSanitizer; // @synthesize enableAddressSanitizer=_enableAddressSanitizer;
-@property(readonly) NSDictionary *additionalOptionEntriesDict; // @synthesize additionalOptionEntriesDict=_additionalOptionEntriesDict;
-@property(nonatomic) unsigned int debugProcessAsUID; // @synthesize debugProcessAsUID=_debugProcessAsUID;
-@property(nonatomic) BOOL shouldUseLaunchSchemeArgsEnv; // @synthesize shouldUseLaunchSchemeArgsEnv=_shouldUseLaunchSchemeArgsEnv;
-@property(copy) NSString *selectedLauncherIdentifier; // @synthesize selectedLauncherIdentifier=_selectedLauncherIdentifier;
+@property(nonatomic) BOOL suppressSimulatorApplication; // @synthesize suppressSimulatorApplication=_suppressSimulatorApplication;
+@property BOOL localizableStringsDataGatheringEnabled; // @synthesize localizableStringsDataGatheringEnabled=_localizableStringsDataGatheringEnabled;
+@property(retain) _TtC13IDEFoundation26IDESchemeTestPlanReference *defaultTestPlanReference; // @synthesize defaultTestPlanReference=_defaultTestPlanReference;
+@property(retain, nonatomic) _TtC13IDEFoundation26IDESchemeTestPlanReference *activeTestPlanReference; // @synthesize activeTestPlanReference=_activeTestPlanReference;
 - (void).cxx_destruct;
+- (void)primitiveInvalidate;
+- (BOOL)isCodeCoverageEnabled;
+- (id)selectedInternalDebuggerToolchainIdentifier;
 - (int)internalDebuggerToolchainSelectionMode;
-- (id)productTypesToIgnoreForSwiftDebuggerToolchain;
+- (void)setTestContainers:(id)arg1 enabled:(BOOL)arg2;
 - (void)setTestOrTestable:(id)arg1 enabled:(BOOL)arg2;
 - (void)disableTestsReferencedByTestableReference:(id)arg1;
 - (void)_disableTestOrTestable:(id)arg1;
@@ -58,67 +49,50 @@
 - (BOOL)isTestOrTestableEnabled:(id)arg1;
 - (BOOL)isTestableEnabled:(id)arg1;
 - (BOOL)isTestEnabled:(id)arg1;
-- (id)_testableReferenceForTestable:(id)arg1;
+- (id)testableReferenceForTestable:(id)arg1;
 - (BOOL)_isEnabledTest:(id)arg1 testableReference:(id)arg2;
-- (BOOL)_isTestEditable:(id)arg1 testableReference:(id)arg2;
+- (void)removeTestPlanReference:(id)arg1;
+- (void)addTestPlanReference:(id)arg1;
+@property(readonly) BOOL needsNewSchemeVersionForTestPlans;
 - (BOOL)needsNewSchemeVersionForLocationSimulation;
 - (BOOL)needsNewSchemeVersionForAppDataPackages;
-- (void)setEnableThreadSanitizerFromUTF8String:(char *)arg1 fromXMLUnarchiver:(id)arg2;
-- (void)setEnableAddressSanitizerFromUTF8String:(char *)arg1 fromXMLUnarchiver:(id)arg2;
-- (void)addMacroExpansion:(id)arg1 fromXMLUnarchiver:(id)arg2;
-- (void)addAdditionalOptions:(id)arg1 fromXMLUnarchiver:(id)arg2;
-- (void)addEnvironmentVariables:(id)arg1 fromXMLUnarchiver:(id)arg2;
-- (void)addCommandLineArguments:(id)arg1 fromXMLUnarchiver:(id)arg2;
 - (void)addTestables:(id)arg1 fromXMLUnarchiver:(id)arg2;
-- (void)setCodeCoverageEnabledFromUTF8String:(char *)arg1 fromXMLUnarchiver:(id)arg2;
-- (void)setShouldUseLaunchSchemeArgsEnvFromUTF8String:(char *)arg1 fromXMLUnarchiver:(id)arg2;
+- (void)addTestPlans:(id)arg1 fromXMLUnarchiver:(id)arg2;
+- (void)setLocalizableStringsDataGatheringEnabledFromUTF8String:(char *)arg1 fromXMLUnarchiver:(id)arg2;
 - (void)dvt_encodeRelationshipsWithXMLArchiver:(id)arg1 version:(id)arg2;
 - (void)dvt_encodeAttributesWithXMLArchiver:(id)arg1 version:(id)arg2;
-- (void)dvt_awakeFromXMLUnarchiver:(id)arg1;
 - (id)initFromXMLUnarchiver:(id)arg1 archiveVersion:(float)arg2;
-- (void)primitiveInvalidate;
-- (id)_createAdditionalOptionsDict;
-- (id)_expandMacrosInString:(id)arg1 forBuildParameters:(id)arg2;
-- (void)setBuildableReferenceToUseForMacroExpansion:(id)arg1;
-- (id)buildableReferenceToUseForMacroExpansion;
-- (BOOL)_shouldDebugAppExtensions;
-- (BOOL)_shouldDebugXPCServices;
-- (id)_additionalOptions;
-- (id)_additionalOptionEntries;
-- (id)environmentVariablesForBuildParameters:(id)arg1;
-@property(readonly) NSMutableArray *mutableEnvironmentVariableEntries; // @dynamic mutableEnvironmentVariableEntries;
-@property(copy) NSArray *environmentVariableEntries; // @dynamic environmentVariableEntries;
-- (id)commandLineArgumentsForBuildParameters:(id)arg1;
-@property(readonly) NSMutableArray *mutableCommandLineArgumentEntries; // @dynamic mutableCommandLineArgumentEntries;
-@property(copy) NSArray *commandLineArgumentEntries; // @dynamic commandLineArgumentEntries;
-- (void)_updateTestActionBuildableToUseForMacroExpansion;
-- (void)_modifyEnvironmentForMallocStackLogging:(id)arg1;
-- (void)_setSelectedMallocStackLoggingType:(id)arg1;
-@property BOOL mallocStackLoggingSelected; // @synthesize mallocStackLoggingSelected=_mallocStackLoggingSelected;
-@property(copy) NSString *selectedMallocStackLoggingType; // @synthesize selectedMallocStackLoggingType=_selectedMallocStackLoggingType;
-@property(readonly) NSArray *availableMallocStackLoggingTypes;
-@property(copy) NSString *selectedDebuggerIdentifier; // @synthesize selectedDebuggerIdentifier=_selectedDebuggerIdentifier;
+- (BOOL)shouldDebugAppExtensions;
+- (BOOL)shouldDebugXPCServices;
+- (id)additionalOptions;
 - (void)setRunContext:(id)arg1;
 @property(readonly, getter=isTestable) BOOL testable;
 @property(readonly) NSArray *testBuildableReferences;
 @property(readonly) NSArray *hostBuildableReferences;
+- (void)removeTestableReference:(id)arg1;
+- (void)addTestableReference:(id)arg1;
+@property(readonly) NSArray *testableReferences;
+@property(copy) NSArray *testPlanReferences; // @dynamic testPlanReferences;
+@property(readonly) BOOL usesTestPlans;
+@property(readonly) _TtC13IDEFoundation11IDETestPlan *activeTestPlan;
+- (id)derivedTestPlan;
 - (void)testableDidChangeHost:(id)arg1;
-- (id)testOperationWithSchemeOperationParameters:(id)arg1 testManager:(id)arg2 withBuildOperation:(id)arg3 buildParameters:(id)arg4 schemeCommand:(id)arg5 actionRecord:(id)arg6 testRunSpecifications:(id)arg7 outError:(id *)arg8 actionCallbackBlock:(CDUnknownBlockType)arg9;
+- (id)_removeLogIfNeededOperationWithLogStore:(id)arg1 logRecord:(id)arg2 buildOperation:(id)arg3;
+- (id)_finalizeLogOperationWithRecorder:(id)arg1;
+- (id)testOperationWithSchemeOperationParameters:(id)arg1 testManager:(id)arg2 buildOperation:(id)arg3 buildParameters:(id)arg4 schemeCommand:(id)arg5 actionRecord:(id)arg6 testRunSpecificationGroups:(id)arg7 coverageBuildableInfos:(id)arg8 deviceAvailableChecker:(CDUnknownBlockType)arg9 outError:(id *)arg10 actionCallbackBlock:(CDUnknownBlockType)arg11;
 - (id)workingDirectoryForBuildParameters:(id)arg1;
-- (id)filePathForOptimizationProfileFile:(id)arg1 withBuildParameters:(id)arg2 schemeCommand:(id)arg3;
-- (id)firstBuildableContainingBuildSetting:(id)arg1 withBuildParameters:(id)arg2 schemeCommand:(id)arg3;
 - (id)effectiveBlueprintForOptimizationProfileGenerationForSchemeCommand:(id)arg1;
-@property BOOL codeCoverageEnabled;
 - (id)runnable;
 - (BOOL)doesNonActionWork;
-- (id)subtitle;
+- (id)schemeCommand;
 - (id)name;
-- (void)_commonInit;
+- (void)dvt_commonInit;
 - (id)init;
 
 // Remaining properties
-@property(readonly) NSMutableArray *mutableTestableReferences; // @dynamic mutableTestableReferences;
-@property(copy) NSArray *testableReferences; // @dynamic testableReferences;
+@property(copy) NSArray *legacyTestableReferences; // @dynamic legacyTestableReferences;
+@property(retain) NSMutableArray *mutableLegacyTestableReferences; // @dynamic mutableLegacyTestableReferences;
+@property(readonly) NSMutableArray *mutableTestPlanReferences; // @dynamic mutableTestPlanReferences;
 
 @end
 

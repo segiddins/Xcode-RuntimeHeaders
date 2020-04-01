@@ -6,26 +6,20 @@
 
 #import <IDEInterfaceBuilderKit/IBSimulatedMetricsInferrer.h>
 
-@class DVTMutableOrderedSet, IBStoryboardDocument;
+@class IBStoryboardDocument, NSOrderedSet;
 
 @interface IBStoryboardMetricsInferrer : IBSimulatedMetricsInferrer
 {
-    DVTMutableOrderedSet *_selectedOrPreviouslySelectedMembersFromOldToFresh;
-    DVTMutableOrderedSet *_tieBreakersFromOldToNew;
+    NSOrderedSet *_selectedOrPreviouslySelectedMembersFromOldToFresh;
+    NSOrderedSet *_tieBreakersFromOldToNew;
 }
 
-@property(retain, nonatomic) DVTMutableOrderedSet *tieBreakersFromOldToNew; // @synthesize tieBreakersFromOldToNew=_tieBreakersFromOldToNew;
-@property(copy, nonatomic) DVTMutableOrderedSet *selectedOrPreviouslySelectedMembersFromOldToFresh; // @synthesize selectedOrPreviouslySelectedMembersFromOldToFresh=_selectedOrPreviouslySelectedMembersFromOldToFresh;
+@property(retain, nonatomic) NSOrderedSet *tieBreakersFromOldToNew; // @synthesize tieBreakersFromOldToNew=_tieBreakersFromOldToNew;
+@property(copy, nonatomic) NSOrderedSet *selectedOrPreviouslySelectedMembersFromOldToFresh; // @synthesize selectedOrPreviouslySelectedMembersFromOldToFresh=_selectedOrPreviouslySelectedMembersFromOldToFresh;
 - (void).cxx_destruct;
 - (void)rebuildInferredMetrics;
+- (void)recursivelyApplyMetricsInheritenceToController:(struct NSObject *)arg1 visited:(id)arg2 inheritanceSegues:(id)arg3;
 - (id)globallyInheritedSimulatedMetrics;
-- (void)recursivelyApplyMetricsInheritenceToController:(id)arg1 visited:(id)arg2 tieBreakers:(id)arg3;
-- (id)disconnectedSubgraphsOfScenes:(id)arg1 usingTieBreakers:(id)arg2;
-- (void)findInheritanceProvidingControllersStartingAtController:(id)arg1 connectedSubgraph:(id)arg2 mutableTieBreakers:(id)arg3 visited:(id)arg4;
-- (id)downstreamInheritanceProvidingControllersForController:(id)arg1 usingTieBreakers:(id)arg2;
-- (id)upstreamInheritanceProvidingControllersForController:(id)arg1 usingTieBreakers:(id)arg2;
-- (BOOL)doesSegueConferInheritance:(id)arg1 mutableTieBreakers:(id)arg2;
-- (id)tieBreakerForIncomingSegues:(id)arg1;
 - (void)didRemoveSegue:(id)arg1;
 - (void)didAddSegue:(id)arg1;
 - (void)noteMember:(id)arg1 didChangeProperty:(id)arg2 fromValue:(id)arg3;

@@ -6,12 +6,12 @@
 
 #import <IDEKit/NSObject-Protocol.h>
 
-@class IDEConsoleTextView, NSString;
+@class NSString;
 
 @protocol IDEConsoleTextViewStandardIODelegate <NSObject>
 @property(readonly) BOOL tracksInputHistoryForDebugger;
-- (void)showNextCommandFromHistory:(IDEConsoleTextView *)arg1;
-- (void)showPreviousCommandFromHistory:(IDEConsoleTextView *)arg1 currentStringAfterPrompt:(NSString *)arg2;
-- (void)consoleView:(IDEConsoleTextView *)arg1 didEndText:(NSString *)arg2 forDebugger:(BOOL)arg3 trackHistory:(BOOL)arg4;
+- (void)showNextCommandFromHistory:(id)arg1;
+- (void)showPreviousCommandFromHistory:(id)arg1 currentStringAfterPrompt:(NSString *)arg2;
+- (void)consoleView:(id)arg1 didEndText:(NSString *)arg2 forDebugger:(BOOL)arg3 trackHistory:(BOOL)arg4;
 @end
 

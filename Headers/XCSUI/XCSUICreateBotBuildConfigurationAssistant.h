@@ -19,15 +19,16 @@
 @property(retain, nonatomic) XCSUIBotDefinition_BuildConfigurationEditor *buildConfigurationEditor; // @synthesize buildConfigurationEditor=_buildConfigurationEditor;
 @property(nonatomic) BOOL viewIsInstalled; // @synthesize viewIsInstalled=_viewIsInstalled;
 - (void).cxx_destruct;
+- (void)helpAction;
+- (BOOL)showHelpButton;
 - (BOOL)canGoForward;
-- (void)willGoNextOrFinish;
 - (void)viewWillUninstall;
 - (void)viewDidInstall;
 - (id)nextAssistantIdentifier;
 - (id)previousAssistantIdentifier;
 @property(readonly) XCSUICreateBotAssistantContext *createBotAssistantContext;
 - (void)primitiveInvalidate;
-- (void)viewDidLoad;
+- (void)loadView;
 
 @end
 

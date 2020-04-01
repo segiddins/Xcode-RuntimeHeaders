@@ -13,35 +13,34 @@
 {
     id <IDEFlightChecking> _entitlementsFlightCheck;
     id <IDEFlightChecking> _cloudKitFrameworkFlightCheck;
+    id <IDEFlightChecking> _pushNotificationFlightCheck;
     NSString *_keyValueStoreID;
     NSArray *_serviceIDs;
     IDEAppIDItemIdentifiersItemModelSet *_cloudContainers;
+    NSString *_defaultContainerID;
 }
 
++ (id)coalescableReadOnlyKeyPaths;
 + (id)keyPathsForValuesAffectingUbiquityContainerIDs;
 + (id)keyPathsForValuesAffectingUnexpandedContainerIDs;
+@property(readonly, nonatomic) NSString *defaultContainerID; // @synthesize defaultContainerID=_defaultContainerID;
 @property(retain) IDEAppIDItemIdentifiersItemModelSet *cloudContainers; // @synthesize cloudContainers=_cloudContainers;
 @property(copy, nonatomic) NSArray *serviceIDs; // @synthesize serviceIDs=_serviceIDs;
 @property(copy, nonatomic) NSString *keyValueStoreID; // @synthesize keyValueStoreID=_keyValueStoreID;
 - (void).cxx_destruct;
+- (id)coalescableWriteableKeyPathToDataSource;
 - (BOOL)isEnabledUsingEducatedGuess;
 - (id)flightChecks;
+- (id)pushNotificationFlightCheck;
 - (id)cloudKitFrameworkFlightCheck;
 - (id)entitlementsFlightCheck;
 @property(readonly, nonatomic) NSString *defaultKeyValueStoreID;
 @property(readonly, nonatomic) NSString *requiredContainerPrefix;
-@property(readonly, nonatomic) NSString *defaultContainerID;
-- (void)_setKeyValueStoreID:(id)arg1 postAssignmentBlock:(CDUnknownBlockType)arg2;
 - (id)ubiquityContainerIDs;
 @property(readonly) BOOL supportsCloudDocs;
 @property(readonly) BOOL allowsCloudKit;
-- (void)_setServiceIDs:(id)arg1 postAssignmentBlock:(CDUnknownBlockType)arg2;
-- (void)_setProperty:(id)arg1 instanceVariable:(id *)arg2 value:(id)arg3 postAssignmentBlock:(CDUnknownBlockType)arg4;
-- (void)modelWasDisabled;
-- (void)modelWasEnabledWithContext:(id)arg1;
 - (void)readValuesFromEntitlements;
 - (void)targetCoordinatorsChanged:(id)arg1;
-- (void)publishStateWithContext:(id)arg1;
 - (void)primitiveInvalidate;
 - (id)initWithCapabilitiesContext:(id)arg1 item:(id)arg2;
 

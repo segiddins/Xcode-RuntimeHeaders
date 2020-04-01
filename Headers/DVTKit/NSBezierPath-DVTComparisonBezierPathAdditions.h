@@ -7,6 +7,7 @@
 #import <AppKit/NSBezierPath.h>
 
 @interface NSBezierPath (DVTComparisonBezierPathAdditions)
++ (id)dvtComparison_bezierPathWithRect:(struct CGRect)arg1 style:(unsigned long long)arg2;
 + (id)dvtComparison_bezierPathWithRect:(struct CGRect)arg1 cornerRadius:(double)arg2;
 @end
 

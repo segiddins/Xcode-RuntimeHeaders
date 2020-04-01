@@ -6,9 +6,37 @@
 
 #import <AppKit/NSLevelIndicator.h>
 
-@interface NSLevelIndicator (IBLevelIndicatorIntegration)
+#import <IDEInterfaceBuilderCocoaIntegration/IBDocumentArchiving-Protocol.h>
+
+@class NSString;
+
+@interface NSLevelIndicator (IBLevelIndicatorIntegration) <IBDocumentArchiving>
++ (id)keyPathsForValuesAffectingIbInspectedCriticalFillColor;
++ (id)keyPathsForValuesAffectingIbInspectedWarningFillColor;
++ (id)keyPathsForValuesAffectingIbInspectedFillColor;
++ (id)keyPathsForValuesAffectingIbStyleIsRating;
++ (id)keyPathsForValuesAffectingIbStyleIsCapacity;
+- (void)setIbInspectedCriticalFillColor:(id)arg1;
+- (id)ibInspectedCriticalFillColor;
+- (void)setIbInspectedWarningFillColor:(id)arg1;
+- (id)ibInspectedWarningFillColor;
+- (void)setIbInspectedFillColor:(id)arg1;
+- (id)ibInspectedFillColor;
+- (BOOL)ibSupportsCustomFillColors;
+- (BOOL)ibStyleIsRating;
+- (BOOL)ibStyleIsCapacity;
+- (id)ibInspectedCell;
+- (id)ibLocalAttributeKeyPaths;
 - (struct CGSize)ibMaximumSize;
 - (struct CGSize)ibMinimumSize;
 - (double)ibCustomImageHeight;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @end
 

@@ -8,11 +8,12 @@
 
 #import <IDEKit/NSApplicationDelegate-Protocol.h>
 #import <IDEKit/NSMenuDelegate-Protocol.h>
+#import <IDEKit/UNUserNotificationCenterDelegate-Protocol.h>
 
-@class DVTDelayedInvocation, DVTNotificationToken, DVTObservingToken, IDESourceControlUIHandler, NSArray, NSDictionary, NSMenuItem, NSMutableDictionary, NSString;
+@class DVTDelayedInvocation, DVTNotificationToken, DVTObservingToken, IDEBuildTimeStatistics, IDERemoteNotificationRegistration, NSArray, NSDictionary, NSMenuItem, NSMutableDictionary, NSString;
 @protocol NSMenuDelegate;
 
-@interface IDEApplicationController : NSObject <NSApplicationDelegate, NSMenuDelegate>
+@interface IDEApplicationController : NSObject <UNUserNotificationCenterDelegate, NSApplicationDelegate, NSMenuDelegate>
 {
     BOOL _haveScannedForPlugins;
     NSDictionary *_extensionIdToMenuDict;
@@ -25,9 +26,9 @@
     NSArray *_currentDebuggingAdditonUIExtensions;
     NSMenuItem *_shiftedCloseMenuItem;
     NSMenuItem *_shiftedCloseAllMenuItem;
-    IDESourceControlUIHandler *_sourceControlUIHandler;
     DVTDelayedInvocation *_tabStateContextDelayedSaveInvocation;
     NSMutableDictionary *_tabStateContextForTabNameMap;
+    IDEBuildTimeStatistics *_buildTimeStatistics;
     DVTObservingToken *_lastActiveEditorToken;
     DVTNotificationToken *_lastActiveEditorContextNotificationToken;
     id _keyBindingSetWillActivateObserver;
@@ -36,14 +37,21 @@
     BOOL _hasScheduledMobileDeviceLoadBlock;
     BOOL _applicationIsTerminatingDuringLaunch;
     BOOL _applicationShouldTerminateRecursionGuard;
+    BOOL _forceUpdateOfEditorAndNavigateMenus;
     BOOL _currentEditorAndNavigatorMenusAreBackstop;
+    IDERemoteNotificationRegistration *_remoteNotificationRegistration;
 }
 
 + (id)sharedAppController;
 + (void)initialize;
+@property(readonly) IDEBuildTimeStatistics *buildTimeStatistics; // @synthesize buildTimeStatistics=_buildTimeStatistics;
+@property(readonly) BOOL currentEditorAndNavigatorMenusAreBackstop; // @synthesize currentEditorAndNavigatorMenusAreBackstop=_currentEditorAndNavigatorMenusAreBackstop;
+@property(retain) IDERemoteNotificationRegistration *remoteNotificationRegistration; // @synthesize remoteNotificationRegistration=_remoteNotificationRegistration;
+@property BOOL forceUpdateOfEditorAndNavigateMenus; // @synthesize forceUpdateOfEditorAndNavigateMenus=_forceUpdateOfEditorAndNavigateMenus;
 @property BOOL applicationIsTerminatingDuringLaunch; // @synthesize applicationIsTerminatingDuringLaunch=_applicationIsTerminatingDuringLaunch;
 @property BOOL haveScannedForPlugins; // @synthesize haveScannedForPlugins=_haveScannedForPlugins;
 - (void).cxx_destruct;
+- (void)userNotificationCenter:(id)arg1 didReceiveNotificationResponse:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)batchFind:(id)arg1 userData:(id)arg2 error:(id *)arg3;
 - (void)openQuickly:(id)arg1 userData:(id)arg2 error:(id *)arg3;
 - (void)_setTabStateContext:(id)arg1 forTabNamed:(id)arg2;
@@ -57,7 +65,7 @@
 - (void)editorMenuWillOpen:(id)arg1;
 - (void)_modifyMenu:(id)arg1 withItemsFromMenu:(id)arg2 replace:(BOOL)arg3;
 - (void)_updateEditorAndNavigateMenusIfNeeded;
-- (void)_updateMenuKeyBindingSet;
+- (void)_activateMenuKeyBindingSetWithMenuDefinitionExtensionIdentifiers:(id)arg1;
 - (void)_pruneNavigateMenu;
 - (void)_pruneEditorMenu;
 - (id)_debugMenu;
@@ -66,12 +74,13 @@
 - (id)_editorMenuProviderExtension;
 - (BOOL)_useOrganizerForMenuContent;
 - (id)_editorForMenuContent;
-- (void)_updateUtilitiesMenuIfNeeded;
+- (void)_updateInspectorsMenusIfNeeded;
 - (void)_updateEditMenuIfNeeded;
-- (id)_utilitiesMenu;
+- (id)_inspectorsMenu;
+- (id)_viewMenu;
 - (id)_editMenu;
 - (id)_closeMenuItem;
-- (id)_closeCurrentTabMenuItem;
+- (id)_closeWindowAsTabMenuItem;
 - (id)_fileMenu;
 - (id)_cachedMenuForDefinitionExtensionIdentifier:(id)arg1;
 - (id)_cachedMenuDefinitionExtensionIdentifiers;
@@ -85,9 +94,14 @@
 - (unsigned long long)_shouldTerminateClosingDocuments;
 - (void)menuNeedsUpdate:(id)arg1;
 - (void)menuWillOpen:(id)arg1;
+- (void)viewMenuWillOpen:(id)arg1;
+- (void)application:(id)arg1 didReceiveRemoteNotification:(id)arg2;
+- (void)application:(id)arg1 didFailToRegisterForRemoteNotificationsWithError:(id)arg2;
+- (void)application:(id)arg1 didRegisterForRemoteNotificationsWithDeviceToken:(id)arg2;
 - (void)applicationDidFinishLaunching:(id)arg1;
 - (void)applicationIsTerminating:(id)arg1;
 - (void)_incrementCountForKey:(id)arg1 in:(id)arg2;
+- (void)handleURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_handleGetURLEvent:(id)arg1 withReplyEvent:(id)arg2;
 - (BOOL)applicationOpenUntitledFile:(id)arg1;
 - (void)_setUpGetURLAppleEventHandler;
@@ -96,7 +110,7 @@
 - (void)_setUpOpenDocumentAppleEventHandler;
 - (BOOL)application:(id)arg1 openFile:(id)arg2;
 - (void)application:(id)arg1 openFiles:(id)arg2;
-- (void)_openFiles:(id)arg1;
+- (void)openURLs:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)_terminateDueToFailureDuringLaunch:(id)arg1;
 - (id)init;
 

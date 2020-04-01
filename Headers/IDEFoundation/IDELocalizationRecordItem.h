@@ -10,18 +10,15 @@
 
 @interface IDELocalizationRecordItem : NSObject
 {
+    BOOL _projectChange;
     NSString *_message;
-    NSString *_className;
-    IDELocalizationRecordItem *_subItem;
 }
 
-+ (id)itemWithMessage:(id)arg1 className:(id)arg2 subItem:(id)arg3;
-@property(retain) IDELocalizationRecordItem *subItem; // @synthesize subItem=_subItem;
-@property(retain) NSString *className; // @synthesize className=_className;
-@property(retain) NSString *message; // @synthesize message=_message;
+@property(readonly, getter=isProjectChange) BOOL projectChange; // @synthesize projectChange=_projectChange;
+@property(readonly, copy) NSString *message; // @synthesize message=_message;
 - (void).cxx_destruct;
-- (BOOL)containsString:(id)arg1;
 - (id)description;
+- (id)initWithMessage:(id)arg1 projectChange:(BOOL)arg2;
 
 @end
 

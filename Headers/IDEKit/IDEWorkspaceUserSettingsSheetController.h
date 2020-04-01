@@ -9,16 +9,22 @@
 #import <IDEKit/DVTFilePathFieldCellDelegate-Protocol.h>
 #import <IDEKit/IDEBuildFolderLocationSheetControllerDelegate-Protocol.h>
 
-@class DVTBorderedView, DVTFilePathField, IDEWorkspace, NSButton, NSMenuItem, NSString, NSTextField, NSWindow;
+@class DVTBorderedView, DVTFilePathField, IDEWorkspace, NSButton, NSMenuItem, NSPopUpButton, NSStackView, NSString, NSTextField, NSWindow;
 
 @interface IDEWorkspaceUserSettingsSheetController : IDEViewController <IDEBuildFolderLocationSheetControllerDelegate, DVTFilePathFieldCellDelegate>
 {
     NSWindow *_sheetWindow;
     NSButton *_doneButton;
+    DVTBorderedView *_sharedBorderedView;
     DVTBorderedView *_borderedView;
+    NSStackView *_sharedSettingsStackView;
+    NSButton *_showEditorPreviewsCheckbox;
+    NSTextField *_previewsCategoryLabel;
+    BOOL _previewsEnabled;
     NSWindow *_hostWindow;
     CDUnknownBlockType _completionBlock;
     BOOL _didSheetEnd;
+    NSPopUpButton *_sharedBuildSystemPopupMenu;
     NSString *_derivedDataCustomLocation;
     int _derivedDataLocationStyle;
     int _buildLocationStyle;
@@ -33,15 +39,20 @@
     DVTFilePathField *_derivedDataFilePathField;
     NSTextField *_derivedDataRelativePathField;
     DVTFilePathField *_derivedDataPathLabel;
+    NSTextField *_sheetSharedTitleLabel;
     NSTextField *_sheetTitleLabel;
+    int _sharedBuildSystemType;
+    int _buildSystemType;
 }
 
 + (id)keyPathsForValuesAffectingDerivedDataWorkspaceRelativeLocation;
 + (id)keyPathsForValuesAffectingUseCustomLocation;
 + (id)keyPathsForValuesAffectingDerivedDataLocationChoice;
-+ (id)keyPathsForValuesAffectingSelectedTabChoices;
 + (void)runSheetForWindow:(id)arg1;
 + (void)beginSheetForWindow:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+@property BOOL previewsEnabled; // @synthesize previewsEnabled=_previewsEnabled;
+@property int buildSystemType; // @synthesize buildSystemType=_buildSystemType;
+@property int sharedBuildSystemType; // @synthesize sharedBuildSystemType=_sharedBuildSystemType;
 @property int issueFilterStyle; // @synthesize issueFilterStyle=_issueFilterStyle;
 @property BOOL liveSourceIssuesEnabled; // @synthesize liveSourceIssuesEnabled=_liveSourceIssuesEnabled;
 @property(copy) NSString *customBuildIntermediatesPath; // @synthesize customBuildIntermediatesPath=_customBuildIntermediatesPath;
@@ -66,6 +77,8 @@
 @property(readonly) NSString *derivedDataFolderDefaultLocation;
 @property(readonly) BOOL useCustomLocation;
 @property int derivedDataLocationChoice;
+@property int buildSystemChoice;
+@property unsigned long long sharedBuildSystemChoice;
 @property(retain) IDEWorkspace *workspace;
 - (void)primitiveInvalidate;
 - (void)loadView;

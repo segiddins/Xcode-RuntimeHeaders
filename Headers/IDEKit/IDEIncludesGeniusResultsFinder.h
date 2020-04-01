@@ -11,7 +11,7 @@
 }
 
 + (id)_documentLocationFromCharacterRange:(struct _NSRange)arg1 textStorage:(id)arg2 fileURL:(id)arg3;
-- (BOOL)_getUpdateGeniusResultsPhaseOneBlock:(CDUnknownBlockType *)arg1 phaseTwoBlock:(CDUnknownBlockType *)arg2 phaseThreeBlock:(CDUnknownBlockType *)arg3;
+- (BOOL)_getUpdateGeniusResultsPhase1Block:(CDUnknownBlockType *)arg1 phase2Block:(CDUnknownBlockType *)arg2 phase3Block:(CDUnknownBlockType *)arg3;
 
 @end
 

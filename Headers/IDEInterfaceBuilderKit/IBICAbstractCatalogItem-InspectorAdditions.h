@@ -6,9 +6,86 @@
 
 #import <IBFoundation/IBICAbstractCatalogItem.h>
 
-@class NSString;
+#import <IDEInterfaceBuilderKit/IDEInspectorMatching-Protocol.h>
 
-@interface IBICAbstractCatalogItem (InspectorAdditions)
+@class IBICAbstractCatalogDocument, IBICTransientUIStateRepository, NSImage, NSString;
+
+@interface IBICAbstractCatalogItem (InspectorAdditions) <IDEInspectorMatching>
++ (id)keyPathsForValuesAffectingIbInspectedTags;
++ (long long)actionForAcceptingItemsViaDragAndDrop:(id)arg1;
++ (id)keysThatImpactCapsuleViewControllerClassForOverview;
++ (id)pasteboardTypes;
++ (id)pasteboardType;
++ (id)ideModelObjectTypeIdentifier;
++ (id)keyPathsForValuesAffectingIbInspectedItemName;
++ (id)keyPathsForValuesAffectingValueForKey:(id)arg1;
++ (id)emptyThumbnailIcon;
+- (id)ibInspectedImplicitTags;
+- (void)setIbInspectedTags:(id)arg1;
+- (id)ibInspectedTags;
+- (id)acceptDropOfItems:(id)arg1 atIndex:(id)arg2 inDocument:(id)arg3;
+- (id)ibInspectedCompressionTypeNilPlaceholder;
+- (long long)ibEffectiveInheritedCompressionType;
+- (void)setIbInspectedCompressionType:(id)arg1;
+- (id)ibInspectedCompressionType;
+- (BOOL)shouldAvoidDeleting;
+- (BOOL)shouldAvoidDeletingChild:(id)arg1;
+- (CDUnknownBlockType)contentReferencePreservingCallbackGivenEndPointGenerator:(CDUnknownBlockType)arg1;
+- (id)contentReferenceKeyPathToPreserve:(Class *)arg1;
+- (id)titleProvidingItemForDetailCapsule;
+- (BOOL)isTitleProvidingItemForDetailCapsuleForDescendant:(id)arg1;
+- (long long)effectiveNameEditingMode;
+- (id)overridingNameEditingModeForChild:(id)arg1;
+- (long long)defaultNameEditingMode;
+- (void)populateChildrenForInclusionInMediaLibrary:(id)arg1;
+- (id)plistDescriptionForSearch;
+- (void)populateFindTextFragments:(id)arg1;
+- (BOOL)isDisplayNameFindable;
+- (id)plistDescriptionForIctool;
+- (BOOL)shouldIncludeInPlistDescriptionForIctool;
+- (void)populatePlistWithDescriptionForIctool:(id)arg1 forChild:(id)arg2;
+- (void)populatePlistWithDescriptionForIctool:(id)arg1;
+- (id)applicableInspectorSlicesForCategory:(id)arg1 suggestedSlices:(id)arg2;
+- (id)includedAttributesInspectorSlicesForChild:(id)arg1;
+- (void)populatePasteboardContext:(id)arg1 forChild:(id)arg2;
+- (void)prepareToReatatchForDragWithContext:(id)arg1;
+- (void)prepareToDetatchForDragWithContext:(id)arg1;
+- (id)overviewCapsuleSpecification;
+- (id)catalogItemForHostingInContainer:(id)arg1;
+@property(readonly, getter=isDraggable) BOOL draggable;
+- (id)quickLookPreviewItem;
+- (id)itemsForOpeningInExternalEditor;
+- (id)documentTransientUIStateForKey:(id)arg1;
+- (void)setDocumentTransientUIState:(id)arg1 forKey:(id)arg2;
+- (id)unsetImageForSize:(struct CGSize)arg1;
+@property(readonly) IBICTransientUIStateRepository *documentTransientUIStateRepository;
+@property(readonly, nonatomic) IBICAbstractCatalogDocument *catalogDocument;
+- (id)firstAncestorIncludingReceiverVisibleInOutline;
+- (BOOL)standsInForDeletionOfChild:(id)arg1;
+- (id)targetForDeleteAction;
+- (void)performDeleteInDocument:(id)arg1;
+- (id)ideModelObjectTypeIdentifier;
+@property(retain) NSString *ibInspectedItemName;
+- (BOOL)isDisplayNameEditable;
+@property(readonly) BOOL displaysInOutlineView;
+@property(readonly) BOOL displaysChildrenInOutlineView;
+@property(readonly) NSImage *dragImage;
+- (id)thumbnailImageFromImage:(id)arg1;
+- (id)emptyQuicklookThumbnail;
+- (id)generateImageViaQuickLookAndNotifyWhenCreated;
+- (void)_backgroundGenerateImageViaQuickLookAndNotifyWhenCreated;
+@property(readonly) NSImage *image;
+@property(readonly) NSImage *icon;
+- (double)offsetForDropAfterOrnament;
+- (double)offsetForDropBeforeOrnament;
+- (id)abstractCatalogItemDisplayAdditionsSwizzledValueForKey:(id)arg1;
 @property(readonly) NSString *ibInspectedResourceName;
+- (id)positionsForStickerComponentID;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @end
 

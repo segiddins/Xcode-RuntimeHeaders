@@ -19,7 +19,6 @@
 - (BOOL)canInstallHeaders;
 - (BOOL)isJavaProduct;
 - (id)defaultProductNameForPlatform:(id)arg1;
-- (id)defaultProductTypeIdentifierByAnalyzingConfiguration;
 
 @end
 

@@ -16,7 +16,8 @@
 + (Class)ibDropTargetResolverClass;
 - (void).cxx_destruct;
 - (BOOL)interceptEvent:(id)arg1;
-- (id)viewForClippingToWhenDrawingSelectionKnobsForObject:(id)arg1;
+- (void)handleDragForHitItem:(id)arg1 selectedItems:(id)arg2 withDragEvent:(id)arg3;
+- (BOOL)handleDragForChild:(id)arg1 forDragEvent:(id)arg2;
 - (BOOL)areKnobsLockedForObject:(id)arg1;
 - (BOOL)shouldChildHaveResizeKnobs:(id)arg1;
 - (CDStruct_b58c4854)activeKnobRectsForObject:(id)arg1;

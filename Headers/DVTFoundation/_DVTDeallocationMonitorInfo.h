@@ -19,6 +19,7 @@
     unsigned long long _survivedCount;
 }
 
++ (void)initialize;
 @property unsigned long long survivedCount; // @synthesize survivedCount=_survivedCount;
 @property(readonly) unsigned long long invalidationDepth; // @synthesize invalidationDepth=_invalidationDepth;
 @property(readonly, copy) NSString *name; // @synthesize name=_name;

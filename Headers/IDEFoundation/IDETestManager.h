@@ -8,8 +8,8 @@
 
 #import <IDEFoundation/DVTInvalidation-Protocol.h>
 
-@class DVTDelayedInvocation, DVTFilePath, DVTNotificationToken, DVTObservingToken, DVTStackBacktrace, DVTTimeSlicedMainThreadWorkQueue, IDELogStore, IDETestRunSession, IDEWorkspace, NSMapTable, NSMutableDictionary, NSMutableSet, NSSet, NSString;
-@protocol DVTCancellable, IDETestManagerUITestingPermissionSheetDelegate;
+@class DVTDelayedInvocation, DVTFilePath, DVTNotificationToken, DVTObservingToken, DVTStackBacktrace, DVTTimeSlicedMainThreadWorkQueue, IDELogStore, IDETestRunSession, IDEWorkspace, NSArray, NSMapTable, NSMutableArray, NSMutableDictionary, NSMutableSet, NSSet, NSString, _TtC13IDEFoundation21IDEAdHocTestSelection;
+@protocol DVTCancellable, DVTInvalidation, IDETestManagerUITestingPermissionSheetDelegate, IDETestMetadataDatabase;
 
 @interface IDETestManager : NSObject <DVTInvalidation>
 {
@@ -22,7 +22,7 @@
     NSMutableSet *_searchedTestables;
     NSMutableSet *_testableObservingTokens;
     NSMapTable *_subtestObservingTokenMapTable;
-    DVTNotificationToken *_blueprintsChangedObserver;
+    id <DVTInvalidation> _blueprintsChangedObserver;
     DVTNotificationToken *_buildOperationObserver;
     DVTNotificationToken *_cleanBuildFolderObserver;
     DVTNotificationToken *_testableChangedHackNotification;
@@ -33,29 +33,41 @@
     NSMutableDictionary *_dataSources;
     NSMutableDictionary *_testRunGenerationCountsByID;
     DVTDelayedInvocation *_forceReloadAllTestablesInvocation;
+    BOOL _didRunTests;
     BOOL _loadingComplete;
     IDETestRunSession *_testRunSession;
     NSSet *_generateCoverageReportSessions;
     IDELogStore *_logStore;
-    NSSet *_testsLastRun;
-    NSSet *_testsLastProfiled;
+    _TtC13IDEFoundation21IDEAdHocTestSelection *_testsLastRun;
+    _TtC13IDEFoundation21IDEAdHocTestSelection *_testsLastProfiled;
+    id <IDETestMetadataDatabase> _testDatabase;
     NSMutableDictionary *_testableStateByTestableName;
     NSMutableDictionary *_fileChangeBrokersByFileURL;
     unsigned long long _testSessionGenerationCounter;
+    NSMutableArray *_concurrentTestRunSessions;
+    NSArray *_testConfigurationsLastRun;
+    NSArray *_testConfigurationsLastProfiled;
     DVTFilePath *_actionResultsBundleWithBaselineOverridesFilePath;
     id <IDETestManagerUITestingPermissionSheetDelegate> _UITestingPermissionSheetDelegate;
 }
 
++ (id)testLocationsForFileURL:(id)arg1 fromTestablesByFileURL:(id)arg2 testablesInScheme:(id)arg3 compositeStateBlock:(CDUnknownBlockType)arg4;
++ (id)testsForFileURL:(id)arg1 fromTestablesByFileURL:(id)arg2 testablesInScheme:(id)arg3;
 + (void)initialize;
 + (id)testingTypeIdentifier;
 @property(nonatomic) __weak id <IDETestManagerUITestingPermissionSheetDelegate> UITestingPermissionSheetDelegate; // @synthesize UITestingPermissionSheetDelegate=_UITestingPermissionSheetDelegate;
 @property(retain) DVTFilePath *actionResultsBundleWithBaselineOverridesFilePath; // @synthesize actionResultsBundleWithBaselineOverridesFilePath=_actionResultsBundleWithBaselineOverridesFilePath;
+@property(copy) NSArray *testConfigurationsLastProfiled; // @synthesize testConfigurationsLastProfiled=_testConfigurationsLastProfiled;
+@property(copy) NSArray *testConfigurationsLastRun; // @synthesize testConfigurationsLastRun=_testConfigurationsLastRun;
+@property(retain) NSMutableArray *concurrentTestRunSessions; // @synthesize concurrentTestRunSessions=_concurrentTestRunSessions;
 @property unsigned long long testSessionGenerationCounter; // @synthesize testSessionGenerationCounter=_testSessionGenerationCounter;
 @property(readonly) NSMutableDictionary *fileChangeBrokersByFileURL; // @synthesize fileChangeBrokersByFileURL=_fileChangeBrokersByFileURL;
 @property(readonly) NSMutableDictionary *testableStateByTestableName; // @synthesize testableStateByTestableName=_testableStateByTestableName;
+@property(readonly) id <IDETestMetadataDatabase> testDatabase; // @synthesize testDatabase=_testDatabase;
 @property BOOL loadingComplete; // @synthesize loadingComplete=_loadingComplete;
-@property(retain) NSSet *testsLastProfiled; // @synthesize testsLastProfiled=_testsLastProfiled;
-@property(retain) NSSet *testsLastRun; // @synthesize testsLastRun=_testsLastRun;
+@property(retain) _TtC13IDEFoundation21IDEAdHocTestSelection *testsLastProfiled; // @synthesize testsLastProfiled=_testsLastProfiled;
+@property(retain) _TtC13IDEFoundation21IDEAdHocTestSelection *testsLastRun; // @synthesize testsLastRun=_testsLastRun;
+@property BOOL didRunTests; // @synthesize didRunTests=_didRunTests;
 @property(retain) IDELogStore *logStore; // @synthesize logStore=_logStore;
 @property(copy) NSSet *generateCoverageReportSessions; // @synthesize generateCoverageReportSessions=_generateCoverageReportSessions;
 @property(retain) IDETestRunSession *testRunSession; // @synthesize testRunSession=_testRunSession;
@@ -67,21 +79,27 @@
 - (id)testablesForFileURL:(id)arg1;
 - (id)testForIdentifier:(id)arg1;
 - (id)fileURLForTestIdentifier:(id)arg1;
+- (id)testLocationsForFileURL:(id)arg1;
 - (id)testsForFileURL:(id)arg1;
 - (id)_bestTestableForFileURL:(id)arg1;
 - (id)testableDataSourceForTestingSystemWithIdentifier:(id)arg1;
 - (void)setTestableDataSource:(id)arg1 forTestingSystemWithIdentifier:(id)arg2;
-- (id)testOperationForTestRunSpecifications:(id)arg1 executionEnvironment:(id)arg2 withBuildOperation:(id)arg3 runDestination:(id)arg4 actionRecord:(id)arg5 schemeIdentifier:(id)arg6 outSchemeActionResultOperation:(id *)arg7 launchParametersBlock:(CDUnknownBlockType)arg8 actionCallbackBlock:(CDUnknownBlockType)arg9 error:(id *)arg10;
-- (void)_purgeInvalidRuntimeDiscoveredTestsForTestable:(id)arg1 withSkippedTests:(id)arg2;
+- (void)didCompleteFor:(id)arg1;
+- (id)testOperationForTestRunSpecificationGroups:(id)arg1 executionEnvironment:(id)arg2 runDestination:(id)arg3 actionRecord:(id)arg4 schemeIdentifier:(id)arg5 outSchemeActionResultOperation:(id *)arg6 launchParametersBlock:(CDUnknownBlockType)arg7 actionCallbackBlock:(CDUnknownBlockType)arg8 error:(id *)arg9;
+- (void)finishTestingForTestingSpecifier:(id)arg1;
 - (void)_purgeInvalidRuntimeDiscoveredTestsForTest:(id)arg1 withSkippedTests:(id)arg2;
 - (BOOL)_shouldPurgeRuntimeDiscoveredTestTestResultForTest:(id)arg1;
 - (unsigned long long)_latestGenerationForAncestorsOfTest:(id)arg1;
+- (void)startTestingFor:(id)arg1;
+- (void)resetTestsLastRun;
+- (unsigned long long)compositeStateOfTests:(id)arg1;
 - (unsigned long long)stateOfTestable:(id)arg1;
 - (id)performanceMetricsForTest:(id)arg1;
 - (unsigned long long)stateOfTest:(id)arg1;
 - (BOOL)isTestablePendingRun:(id)arg1;
 - (BOOL)isTestPendingRun:(id)arg1;
 - (void)_cancelAndRemoveAllTestObservingTokens;
+- (void)_unregisterSubtestsObservanceForAllTestsInTestable:(id)arg1;
 - (void)_unregisterSubtestsObservanceForTest:(id)arg1 inTestable:(id)arg2;
 - (void)_registerSubtestsObservance:(id)arg1 forTest:(id)arg2 inTestable:(id)arg3;
 - (void)_loadTestsForTestable:(id)arg1;
@@ -105,7 +123,7 @@
 - (void)_removeCoverageReportOperation:(id)arg1;
 - (unsigned long long)_lastRunSessionGenerationCountForTestable:(id)arg1;
 - (unsigned long long)_lastRunSessionGenerationCountForTest:(id)arg1;
-- (void)processNewTestResult:(id)arg1;
+- (void)processNewTestResult:(id)arg1 forTest:(id)arg2;
 - (void)setLastRunSessionGenerationCount:(unsigned long long)arg1 forTest:(id)arg2;
 - (void)removeRunningTest:(id)arg1;
 - (void)addRunningTest:(id)arg1;

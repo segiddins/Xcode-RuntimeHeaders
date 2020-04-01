@@ -13,11 +13,11 @@
     id <TSOutputStreams> _outputStream;
 }
 
+- (void).cxx_destruct;
 - (void)close;
 - (void)flush;
 - (void)writeBytes:(const void *)arg1 length:(unsigned long long)arg2;
 - (id)outputStream;
-- (void)dealloc;
 - (id)init;
 - (id)initWithOutputStream:(id)arg1;
 

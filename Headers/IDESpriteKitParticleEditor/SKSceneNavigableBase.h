@@ -4,11 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Foundation/NSObject.h>
+#import <objc/NSObject.h>
 
 #import <IDESpriteKitParticleEditor/SKSceneNavigating-Protocol.h>
 
-@class DVTDocumentLocation, DVTFileDataType, IDEFileReference, NSArray, NSImage, NSMutableArray, NSString, SKSceneDocument;
+@class DVTDocumentLocation, DVTFileDataType, IDEFileReference, NSArray, NSImage, NSMutableArray, NSNull, NSString, NSURL, SKSceneDocument, _TtC13DVTFoundation9DVTSymbol;
 @protocol SKSceneNavigating;
 
 @interface SKSceneNavigableBase : NSObject <SKSceneNavigating>
@@ -27,14 +27,14 @@
 + (id)keyPathsForValuesAffectingNavigableItem_name;
 + (id)keyPathsForValuesAffectingChildren;
 @property(nonatomic) __weak NSObject<SKSceneNavigating> *parent; // @synthesize parent=_parent;
-@property(readonly, nonatomic) SKSceneDocument *document; // @synthesize document=_document;
+@property(readonly, nonatomic) __weak SKSceneDocument *document; // @synthesize document=_document;
 - (void).cxx_destruct;
-@property(readonly) DVTDocumentLocation *navigableItem_contentDocumentLocation;
-@property(readonly) DVTFileDataType *navigableItem_documentType;
-@property(readonly) BOOL navigableItem_isMajorGroup;
-@property(readonly) BOOL navigableItem_isLeaf;
-@property(readonly) NSImage *navigableItem_image;
-@property(readonly) NSString *navigableItem_name;
+@property(readonly, nonatomic) DVTDocumentLocation *navigableItem_contentDocumentLocation;
+@property(readonly, nonatomic) DVTFileDataType *navigableItem_documentType;
+@property(readonly, nonatomic) BOOL navigableItem_isMajorGroup;
+@property(readonly, nonatomic) BOOL navigableItem_isLeaf;
+@property(readonly, nonatomic) NSImage *navigableItem_image;
+@property(readonly, nonatomic) NSString *navigableItem_name;
 @property(readonly, nonatomic) SKSceneNavigableBase *greatestReferenceAncestor;
 @property(readonly, nonatomic) BOOL isReferenced;
 - (struct NSObject *)childFromIndexPath:(id)arg1;
@@ -70,13 +70,22 @@
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
-@property(readonly) NSString *navigableItem_accessibleImageDescription;
-@property(readonly) IDEFileReference *navigableItem_fileReference;
-@property(readonly) NSString *navigableItem_groupIdentifier;
-@property(readonly) BOOL navigableItem_missingReferencedContentIsImportant;
-@property(readonly) BOOL navigableItem_referencedContentExists;
-@property(readonly) NSString *navigableItem_subtitle;
-@property(readonly) NSString *navigableItem_toolTip;
+@property(readonly, nonatomic) NSString *navigableItem_accessibilityIdentifier;
+@property(readonly, nonatomic) NSString *navigableItem_accessibleImageDescription;
+@property(readonly, nonatomic) NSArray *navigableItem_additionalFilterMatchingText;
+@property(readonly, nonatomic) NSArray *navigableItem_childRepresentedObjects;
+@property(readonly, nonatomic) IDEFileReference *navigableItem_fileReference;
+@property(readonly, nonatomic) NSNull *navigableItem_filtered;
+@property(readonly, nonatomic) NSString *navigableItem_groupIdentifier;
+@property(readonly, nonatomic) BOOL navigableItem_isEnabled;
+@property(readonly, nonatomic) BOOL navigableItem_isVisible;
+@property(readonly, nonatomic) BOOL navigableItem_missingReferencedContentIsImportant;
+@property(readonly, nonatomic) id navigableItem_parentRepresentedObject;
+@property(readonly, nonatomic) BOOL navigableItem_referencedContentExists;
+@property(readonly, nonatomic) _TtC13DVTFoundation9DVTSymbol *navigableItem_representedSymbol;
+@property(readonly, nonatomic) NSURL *navigableItem_representedURL;
+@property(readonly, nonatomic) NSString *navigableItem_subtitle;
+@property(readonly, nonatomic) NSString *navigableItem_toolTip;
 @property(readonly) Class superclass;
 
 @end

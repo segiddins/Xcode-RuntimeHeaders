@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Foundation/NSObject.h>
+#import <objc/NSObject.h>
 
 @class NSMutableArray, NSMutableData;
 
@@ -17,6 +17,7 @@
     BOOL _isInsideContainerTag;
 }
 
+- (void).cxx_destruct;
 - (id)stringValue;
 - (id)data;
 - (void)finishWriting;
@@ -32,7 +33,6 @@
 - (void)beginStartTag:(id)arg1;
 - (void)beginStartTag:(id)arg1 isContainer:(BOOL)arg2;
 - (void)writeRawUTF8:(const char *)arg1;
-- (void)dealloc;
 - (id)init;
 - (id)initForWritingWithMutableData:(id)arg1;
 - (void)_writeXMLEpilogue;

@@ -8,7 +8,7 @@
 
 #import <DVTInstrumentsFoundation/DTTapLocalDelegate-Protocol.h>
 
-@class DTKPSession, DTKTraceTapConfig, DTTapLocal, NSMutableArray, NSString;
+@class DTKPSession, DTKTraceTapConfig, DTTapLocal, NSArray, NSMutableArray, NSString;
 
 @interface DTKTraceTapLocalDelegate : NSObject <DTTapLocalDelegate>
 {
@@ -21,6 +21,7 @@
     NSMutableArray *_metadataByTriggerIndex;
     DTKPSession *_session;
     BOOL _stopWasCalled;
+    NSArray *_localEventProducers;
 }
 
 - (void).cxx_destruct;
@@ -32,9 +33,11 @@
 - (void)start;
 - (void)setTaskForPidBlock:(CDUnknownBlockType)arg1;
 - (void)setTap:(id)arg1;
+- (id)validateConfig;
 - (id)initWithConfig:(id)arg1;
 - (id)_getSessionMetadata;
 - (unsigned long long)bufferSizeForConfiguration:(id)arg1;
+- (unsigned long long)_clampBufferSize:(unsigned long long)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

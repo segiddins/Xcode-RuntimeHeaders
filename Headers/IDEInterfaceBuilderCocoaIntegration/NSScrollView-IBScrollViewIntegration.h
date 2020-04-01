@@ -6,9 +6,11 @@
 
 #import <AppKit/NSScrollView.h>
 
-@class NSValue, NSView;
+#import <IDEInterfaceBuilderCocoaIntegration/IBDocumentArchiving-Protocol.h>
 
-@interface NSScrollView (IBScrollViewIntegration)
+@class NSString, NSValue, NSView;
+
+@interface NSScrollView (IBScrollViewIntegration) <IBDocumentArchiving>
 + (id)ibKeyPathsForContentViewSubviews;
 + (long long)ibDevelopmentTargetForDocumentContentView;
 + (id)ibKeyPathForDocumentContentView;
@@ -16,8 +18,6 @@
 + (id)keyPathsForValuesAffectingIbInspectedUseFixedContentInsets;
 + (id)keyPathsForValuesAffectingIbInspectedMaxMagnification;
 + (id)keyPathsForValuesAffectingIbInspectedMinMagnification;
-- (void)ibDidAddToDocument:(id)arg1 phase:(unsigned long long)arg2;
-@property(nonatomic) BOOL ibShadowedUsesManualLayerBacking;
 - (id)ibObjectsToReparentWhenAddingOrRemovingActiveContentView;
 - (id)ibVerifyContentViewCurrentContentView;
 - (BOOL)ibCanEmbedDirectlyInSplitView;
@@ -30,12 +30,15 @@
 - (void)awakeAfterUsingDocumentUnarchiver:(id)arg1;
 - (id)ibArchivedDesignableContentView;
 - (BOOL)ibInspectedUseFixedContentInsets;
+@property(retain) NSValue *ibWrappedScrollerInsets;
 @property(retain) NSValue *ibWrappedContentInsets;
 - (void)setIbShadowedSubviews:(id)arg1;
-- (id)ibShadowedSubviews;
+- (id)ibShadowedSubviewsNoCopy;
 @property(retain) NSView *ibArchivedHeaderView;
 @property(retain) NSView *ibShadowedHeaderView;
 @property BOOL ibShadowedAutohidesScrollers;
+- (void)ibVerifyScrollViewHasBothScrollersInDocument:(id)arg1;
+- (void)ibDidAddToDocument:(id)arg1 phase:(unsigned long long)arg2;
 - (id)ibLabelQualifierForChild:(id)arg1;
 - (id)ibUnembedChildrenInDocument:(id)arg1;
 - (BOOL)ibCanUnembedChildrenInDocument:(id)arg1;
@@ -54,7 +57,7 @@
 - (BOOL)ibIsChildTypicalConnectionTarget:(id)arg1;
 - (BOOL)ibOverridablePrefersToVerticallyResizeWithContainer;
 - (BOOL)ibOverridablePrefersToHorizontallyResizeWithContainer;
-- (void)ibWarnings:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
+- (void)ibPopulateIssues:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
 - (void)ibPrepareCocoaDocumentForCompiling:(id)arg1 withContext:(id)arg2;
 - (void)ibAwakeInDocument:(id)arg1;
 - (Class)ibEditorClass;
@@ -68,5 +71,15 @@
 - (BOOL)ibCanRemoveChildren:(id)arg1;
 - (void)ibPopulateChildRelationOrder:(id)arg1;
 - (BOOL)ibIsNSAppearanceContainer;
+- (id)ibLocalAttributeKeyPaths;
+- (id)ibLocalChildToOneRelationshipsKeyPaths;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @end
 

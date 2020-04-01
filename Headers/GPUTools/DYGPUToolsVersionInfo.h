@@ -6,11 +6,11 @@
 
 #import <objc/NSObject.h>
 
-#import <GPUTools/NSCoding-Protocol.h>
+#import <GPUTools/NSSecureCoding-Protocol.h>
 
 @class NSDictionary, NSString;
 
-@interface DYGPUToolsVersionInfo : NSObject <NSCoding>
+@interface DYGPUToolsVersionInfo : NSObject <NSSecureCoding>
 {
     NSDictionary *_infoPlist;
     NSDictionary *_versionPlist;
@@ -18,6 +18,7 @@
     unsigned int _interposeVersionMetal;
 }
 
++ (BOOL)supportsSecureCoding;
 @property(nonatomic) unsigned int interposeVersionMetal; // @synthesize interposeVersionMetal=_interposeVersionMetal;
 @property(nonatomic) unsigned int interposeVersionGL; // @synthesize interposeVersionGL=_interposeVersionGL;
 @property(copy, nonatomic) NSDictionary *versionPlist; // @synthesize versionPlist=_versionPlist;

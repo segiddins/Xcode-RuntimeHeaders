@@ -15,6 +15,7 @@
 - (void)unarchiveWithDocumentUnarchiver:(id)arg1;
 - (void)archiveWithDocumentArchiver:(id)arg1;
 - (Class)classForDocumentArchiver:(id)arg1;
+- (id)ibCoerceToDescriptivePListWithStrictness:(long long)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

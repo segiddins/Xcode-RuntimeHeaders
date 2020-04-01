@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <DVTKit/DVTUndoManager.h>
+#import <DVTFoundation/DVTUndoManager.h>
 
 @class IBDocument;
 
@@ -15,8 +15,6 @@
 
 @property(readonly, nonatomic) __weak IBDocument *document; // @synthesize document=_document;
 - (void).cxx_destruct;
-- (void)endUndoGrouping;
-- (void)discardActionsAndClearChangeCountIfNeeded;
 - (void)redo;
 - (void)undo;
 - (void)primitiveInvalidate;

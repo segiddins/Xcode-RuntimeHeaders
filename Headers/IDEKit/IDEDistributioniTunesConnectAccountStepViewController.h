@@ -6,29 +6,34 @@
 
 #import <IDEKit/IDEDistributionStepViewController.h>
 
-@class DVTDelayedInvocation, DVTReplacementView, NSMutableArray;
+@class DVTDelayedInvocation, IDEDistributionAccountIssueViewController;
+@protocol DVTInvalidation;
 
 @interface IDEDistributioniTunesConnectAccountStepViewController : IDEDistributionStepViewController
 {
-    DVTReplacementView *_replacementView;
     double _startTime;
-    NSMutableArray *_accountObservers;
+    id <DVTInvalidation> _accountsToken;
     DVTDelayedInvocation *_delayedAccountCheck;
+    IDEDistributionAccountIssueViewController *_accountIssuesVC;
 }
 
++ (BOOL)skipStepForContext:(id)arg1 assistantDirection:(int)arg2;
++ (id)keyPathsForValuesAffectingCanGoPrevious;
++ (id)keyPathsForValuesAffectingAdditionalActionTitle;
++ (id)keyPathsForValuesAffectingTitle;
+@property(retain, nonatomic) IDEDistributionAccountIssueViewController *accountIssuesVC; // @synthesize accountIssuesVC=_accountIssuesVC;
 @property(retain) DVTDelayedInvocation *delayedAccountCheck; // @synthesize delayedAccountCheck=_delayedAccountCheck;
-@property(readonly) NSMutableArray *accountObservers; // @synthesize accountObservers=_accountObservers;
+@property(retain) id <DVTInvalidation> accountsToken; // @synthesize accountsToken=_accountsToken;
 @property double startTime; // @synthesize startTime=_startTime;
-@property __weak DVTReplacementView *replacementView; // @synthesize replacementView=_replacementView;
 - (void).cxx_destruct;
-- (void)iTunesConnectAccountForTeamID:(id)arg1 callback:(CDUnknownBlockType)arg2;
+- (BOOL)canGoPrevious;
+- (void)takeAdditionalAction;
+- (id)additionalActionTitle;
 - (void)_checkForiTunesAccount;
-- (void)_cancelAccountObservers;
 - (BOOL)canGoNext;
 - (void)viewDidInstall;
 - (id)title;
 - (void)primitiveInvalidate;
-- (id)initWithContext:(id)arg1 assistantWindowController:(id)arg2;
 
 @end
 

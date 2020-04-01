@@ -17,8 +17,8 @@
 }
 
 - (void).cxx_destruct;
-- (BOOL)revert;
-- (BOOL)apply;
+- (BOOL)_performRevert;
+- (BOOL)_performApply;
 - (id)initWithDocument:(id)arg1 target:(id)arg2 newValue:(id)arg3 oldValue:(id)arg4 keyPath:(id)arg5;
 
 @end

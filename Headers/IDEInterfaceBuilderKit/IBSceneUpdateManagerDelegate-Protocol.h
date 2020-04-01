@@ -10,6 +10,7 @@
 @protocol IBCollection, IBSceneUpdateRequest;
 
 @protocol IBSceneUpdateManagerDelegate <NSObject>
+- (void)sceneUpdateManager:(IBSceneUpdateManager *)arg1 didFinishUpdatingScenesWithRoots:(id <IBCollection>)arg2;
 - (void)sceneUpdateManager:(IBSceneUpdateManager *)arg1 didUpdateScene:(IBSceneUpdate *)arg2 result:(IBMarshallingResult *)arg3 usingLiveViews:(BOOL)arg4;
 - (void)sceneUpdateManager:(IBSceneUpdateManager *)arg1 didFailToUpdateSceneWithRoot:(NSObject *)arg2 diagnosticsHandler:(IBDiagnosticsHandler *)arg3;
 - (void)sceneUpdateManager:(IBSceneUpdateManager *)arg1 configureRequest:(id <IBSceneUpdateRequest>)arg2 forObject:(NSObject *)arg3 ofSceneWithRoot:(NSObject *)arg4;

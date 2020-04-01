@@ -6,11 +6,11 @@
 
 #import <objc/NSObject.h>
 
-#import <GameToolsFoundation/NSCoding-Protocol.h>
+#import <GameToolsFoundation/NSSecureCoding-Protocol.h>
 
 @class GTFActionTimelineModel, NSArray, NSMutableArray;
 
-@interface GTFActionModelGroup : NSObject <NSCoding>
+@interface GTFActionModelGroup : NSObject <NSSecureCoding>
 {
     NSMutableArray *_tracks;
     struct map<int, NSMutableArray *, std::__1::less<int>, std::__1::allocator<std::__1::pair<const int, NSMutableArray *>>> _trackActions;
@@ -24,6 +24,7 @@
     GTFActionTimelineModel *_ownerTimeline;
 }
 
++ (BOOL)supportsSecureCoding;
 @property(nonatomic) BOOL actionsLocked; // @synthesize actionsLocked=_actionsLocked;
 @property(nonatomic) int groupId; // @synthesize groupId=_groupId;
 @property(nonatomic) __weak GTFActionTimelineModel *ownerTimeline; // @synthesize ownerTimeline=_ownerTimeline;

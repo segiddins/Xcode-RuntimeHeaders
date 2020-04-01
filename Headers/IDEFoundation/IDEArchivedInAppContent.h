@@ -6,9 +6,11 @@
 
 #import <IDEFoundation/IDEArchivedContent.h>
 
-@class DVTFilePath;
+#import <IDEFoundation/IDEDistributableInAppContent-Protocol.h>
 
-@interface IDEArchivedInAppContent : IDEArchivedContent
+@class DVTFilePath, NSString;
+
+@interface IDEArchivedInAppContent : IDEArchivedContent <IDEDistributableInAppContent>
 {
 }
 
@@ -17,11 +19,16 @@
 + (id)archivedContentPropertiesPlistKey;
 + (BOOL)fillInfoDictionary:(id)arg1 forContentAtPath:(id)arg2 inArchiveProductsDirectory:(id)arg3;
 + (id)soleArchivedContentRelativePathInDirectory:(id)arg1;
-- (long long)autodetectedFormatForPackaging;
-- (BOOL)supportsPackagingAsFormat:(long long)arg1;
-- (id)packager;
 - (id)teamIdentifier;
 @property(readonly) DVTFilePath *inAppContentPath;
+
+// Remaining properties
+@property(readonly) NSString *bundleIdentifier;
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) DVTFilePath *path;
+@property(readonly) Class superclass;
 
 @end
 

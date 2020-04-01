@@ -4,26 +4,31 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <DVTKit/DVTBorderedView.h>
+#import <DVTUserInterfaceKit/DVTBorderedView.h>
 
 #import <IDEKit/DVTInvalidation-Protocol.h>
 
-@class DVTGradientImageButton, DVTStackBacktrace, IDEComparisonEditor, IDEComparisonEditorChangesStepperView, IDEPathControl, NSString;
+@class DVTGradientImageButton, DVTPathControl, DVTStackBacktrace, IDEComparisonEditor, IDEComparisonEditorChangesStepperView, NSString;
+@protocol IDEComparisonEditorCollapsibleSourceList;
 
 @interface IDEComparisonEditorTimelineNavBar : DVTBorderedView <DVTInvalidation>
 {
-    IDEComparisonEditor *_comparisonEditor;
-    IDEPathControl *_primaryPathControl;
-    IDEPathControl *_secondaryPathControl;
     DVTGradientImageButton *_centerButton;
-    IDEComparisonEditorChangesStepperView *_changesStepperControl;
+    DVTGradientImageButton *_collapseToggleButton;
     BOOL _hideSecondaryPathControl;
+    BOOL _toggleStateIsCollapsed;
+    IDEComparisonEditor *_comparisonEditor;
+    DVTPathControl *_primaryPathControl;
+    DVTPathControl *_secondaryPathControl;
+    IDEComparisonEditorChangesStepperView *_changesStepperControl;
+    id <IDEComparisonEditorCollapsibleSourceList> _delegate;
 }
 
 + (void)initialize;
+@property(retain) id <IDEComparisonEditorCollapsibleSourceList> delegate; // @synthesize delegate=_delegate;
 @property(readonly) IDEComparisonEditorChangesStepperView *changesStepperControl; // @synthesize changesStepperControl=_changesStepperControl;
-@property(retain) IDEPathControl *secondaryPathControl; // @synthesize secondaryPathControl=_secondaryPathControl;
-@property(retain) IDEPathControl *primaryPathControl; // @synthesize primaryPathControl=_primaryPathControl;
+@property(retain) DVTPathControl *secondaryPathControl; // @synthesize secondaryPathControl=_secondaryPathControl;
+@property(retain) DVTPathControl *primaryPathControl; // @synthesize primaryPathControl=_primaryPathControl;
 @property(retain) IDEComparisonEditor *comparisonEditor; // @synthesize comparisonEditor=_comparisonEditor;
 - (void).cxx_destruct;
 @property BOOL hideSecondaryPathControl;
@@ -31,6 +36,9 @@
 - (void)centerChangesStepperControl;
 - (void)layoutTopDown;
 - (void)selectDiff:(id)arg1;
+@property BOOL toggleStateIsCollapsed; // @synthesize toggleStateIsCollapsed=_toggleStateIsCollapsed;
+- (void)collapseToggle:(id)arg1;
+- (void)_updateCollapseToggleImage;
 - (void)_dvt_commonInit;
 - (id)initWithFrame:(struct CGRect)arg1;
 

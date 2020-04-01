@@ -7,18 +7,15 @@
 #import <IDEInterfaceBuilderCocoaIntegration/IBNSStoryboardSegueTemplate.h>
 
 #import <IDEInterfaceBuilderCocoaIntegration/IBDocumentArchiving-Protocol.h>
-#import <IDEInterfaceBuilderCocoaIntegration/NSCoding-Protocol.h>
 
 @class NSString;
 
-@interface IBNSStoryboardSheetSegueTemplate : IBNSStoryboardSegueTemplate <IBDocumentArchiving, NSCoding>
+@interface IBNSStoryboardSheetSegueTemplate : IBNSStoryboardSegueTemplate <IBDocumentArchiving>
 {
 }
 
 - (void)unarchiveWithDocumentUnarchiver:(id)arg1;
 - (void)archiveWithDocumentArchiver:(id)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

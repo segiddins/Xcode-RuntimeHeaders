@@ -10,24 +10,25 @@
 
 @interface IDESchemeActionCodeCoverageFile : DVTCoverageDataContainer
 {
+    NSNumber *_functionCoverage;
     NSString *_documentLocation;
     NSArray *_functions;
-    NSArray *_lines;
-    NSNumber *_functionCoverage;
 }
 
-@property(readonly, nonatomic) NSNumber *functionCoverage; // @synthesize functionCoverage=_functionCoverage;
-@property(readonly, nonatomic) NSArray *lines; // @synthesize lines=_lines;
++ (BOOL)supportsSecureCoding;
 @property(readonly, nonatomic) NSArray *functions; // @synthesize functions=_functions;
 @property(readonly, nonatomic) NSString *documentLocation; // @synthesize documentLocation=_documentLocation;
 - (void).cxx_destruct;
 - (id)wrappedContainer;
-- (id)aggregateWithCodeCoverageFile:(id)arg1;
-- (id)mergeLines:(id)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithDocumentLocation:(id)arg1 lines:(id)arg2 functions:(id)arg3 lineCoverage:(id)arg4 functionCoverage:(id)arg5;
+@property(readonly, nonatomic) NSNumber *functionCoverage;
+- (id)initWithDocumentLocation:(id)arg1 functions:(id)arg2;
+- (id)makeCopyWithChildren:(id)arg1;
+- (id)diffableChildren;
+- (id)diffIdentifier;
+- (unsigned long long)diffType;
 
 @end
 

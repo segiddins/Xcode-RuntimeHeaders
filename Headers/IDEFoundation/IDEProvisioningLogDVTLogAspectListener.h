@@ -11,14 +11,14 @@
 @interface IDEProvisioningLogDVTLogAspectListener : NSObject
 {
     DVTLogAspect *_logAspect;
-    int _logLevelThreshold;
+    unsigned long long _logLevelThreshold;
     CDUnknownBlockType _handler;
     id _logHandlerToken;
 }
 
 - (void).cxx_destruct;
 - (void)invalidate;
-- (id)initWithLogAspect:(id)arg1 logLevelThreshold:(int)arg2 logHandler:(CDUnknownBlockType)arg3;
+- (id)initWithLogAspect:(id)arg1 logLevelThreshold:(unsigned long long)arg2 logHandler:(CDUnknownBlockType)arg3;
 
 @end
 

@@ -9,18 +9,19 @@
 #import <IDEKit/NSMenuDelegate-Protocol.h>
 
 @class NSButton, NSString;
-@protocol IDEProvisioningStyleDataSource;
+@protocol IDESigningEditorStyleDataSource;
 
 @interface IDEProvisioningStyleSettingsViewController : IDEViewController <NSMenuDelegate>
 {
-    id <IDEProvisioningStyleDataSource> _dataSource;
+    id <IDESigningEditorStyleDataSource> _dataSource;
     NSButton *_provisioningStyleCheckBoxButton;
 }
 
 @property __weak NSButton *provisioningStyleCheckBoxButton; // @synthesize provisioningStyleCheckBoxButton=_provisioningStyleCheckBoxButton;
-@property(readonly, nonatomic) id <IDEProvisioningStyleDataSource> dataSource; // @synthesize dataSource=_dataSource;
+@property(retain, nonatomic) id <IDESigningEditorStyleDataSource> dataSource; // @synthesize dataSource=_dataSource;
 - (void).cxx_destruct;
 - (void)primitiveInvalidate;
+- (void)startObservations;
 - (void)clickedProvisioningStyleSelecthionCheckBoxButton:(id)arg1;
 - (void)updateProvisioningStyleSelection;
 - (void)viewDidLoad;

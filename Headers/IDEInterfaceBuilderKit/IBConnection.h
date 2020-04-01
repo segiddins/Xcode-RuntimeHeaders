@@ -19,6 +19,7 @@
     NSString *_label;
 }
 
++ (long long)connectionTypeOrderingPriorityForCompilation;
 + (BOOL)isOrderedRelativeToUniformInstances;
 + (long long)ibMemberType;
 + (id)ibDefaultImageForInstance:(id)arg1 targetRuntime:(id)arg2;
@@ -36,20 +37,26 @@
 + (id)determineBestInitialSelectionForObjects:(id)arg1 sourceObject:(id)arg2;
 + (id)prototypeConnectionsForObject:(id)arg1;
 + (id)prototypeConnectionsFromObject:(id)arg1 toObject:(id)arg2;
++ (BOOL)supportsConnectionsFromSourceInCanvas;
 + (BOOL)supportsIdiom:(id)arg1;
 + (BOOL)isDeprecatedInDocument:(id)arg1;
 + (BOOL)shouldBeUserVisibleInDocument:(id)arg1;
 + (id)effectiveMenuLabelForConnection:(id)arg1 inDocument:(id)arg2;
 + (id)menuLabelForConnection:(id)arg1;
 + (id)instantiateWithDocumentUnarchiver:(id)arg1;
-+ (id)connectionWithSource:(id)arg1 label:(id)arg2 andDestination:(id)arg3;
++ (id)connectionWithSource:(id)arg1 label:(id)arg2 destination:(id)arg3;
 @property(copy, nonatomic) NSString *label; // @synthesize label=_label;
 @property(retain, nonatomic) NSObject *destination; // @synthesize destination=_destination;
 @property(retain, nonatomic) NSObject *source; // @synthesize source=_source;
 - (void).cxx_destruct;
+- (void)populateRefactoringModifications:(id)arg1 forRenameRefactoringRequest:(id)arg2 inDocument:(id)arg3;
+- (id)categoryNameForRefactoringRequest:(id)arg1 inDocument:(id)arg2;
+- (id)typeNameForRefactoringRequest:(id)arg1 inDocument:(id)arg2;
+- (BOOL)shouldRefactorLabelForRenameRefactoringRequest:(id)arg1 inDocument:(id)arg2;
 - (id)effectiveConnectionForDisablingConfigurationsInDocument:(id)arg1 segueReachabilityContext:(id)arg2;
 - (id)effectiveConnectionForEnablingConfigurationsInDocument:(id)arg1 segueReachabilityContext:(id)arg2 error:(id *)arg3;
 - (void)replaceIfNecessaryAfterEnablingOrDisablingConfigurationsInDocument:(id)arg1 segueReachabilityContext:(id)arg2;
+- (BOOL)ibIsValidOutletDestination;
 - (id)messageForConnectingAcrossRepeatingStoryboardRelationship;
 - (id)endPointForStoryboardCrossRepetitionWarning;
 - (BOOL)canHaveDestinationSeparatedWithSeparationType:(int)arg1;
@@ -60,11 +67,9 @@
 - (id)ibLocalAutoNullifyingNonChildToManyRelationshipsKeyPaths;
 - (id)ibLocalChildToManyRelationshipsKeyPaths;
 - (id)ibLocalNonChildToManyRelationshipsKeyPaths;
-- (id)ibLocalToManyRelationshipsKeyPaths;
 - (id)ibLocalAutoNullifyingNonChildToOneRelationshipsKeyPaths;
 - (id)ibLocalChildToOneRelationshipsKeyPaths;
 - (id)ibLocalNonChildToOneRelationshipsKeyPaths;
-- (id)ibLocalToOneRelationshipsKeyPaths;
 - (id)ibLocalAttributeKeyPaths;
 - (id)connectionByCompletingWithConnectionContext:(id)arg1;
 - (void)populateExternalConnectionRepresentation:(id)arg1 forContainer:(id)arg2 fromContainer:(id)arg3 otherExternalConnections:(id)arg4 context:(id)arg5;
@@ -74,6 +79,7 @@
 - (void)objectContainer:(id)arg1 didRemoveConnectionWithContext:(id)arg2;
 - (void)objectContainer:(id)arg1 willRemoveConnectionWithContext:(id)arg2;
 - (void)objectContainer:(id)arg1 willRemoveObject:(id)arg2 context:(id)arg3;
+- (void)removeFromDocument:(id)arg1;
 - (void)addToDocument:(id)arg1;
 - (id)endPointForEstimatingUnlabeledConnection;
 - (id)printablePListForIBToolInDocument:(id)arg1;
@@ -87,8 +93,8 @@
 - (id)prototypeWithRespectTo:(id)arg1;
 - (BOOL)shouldShowInDocumentStructure;
 - (long long)previousConnectionStateIndicatorForDragFromObject:(id)arg1 toObject:(id)arg2 inDocument:(id)arg3;
-- (id)displayGroupIdentifierFromReferenceEndPoint:(id)arg1;
-- (id)displayGroupIdentifierForDragFromObject:(id)arg1 toObject:(id)arg2;
+- (id)displayGroupFromReferenceEndPoint:(id)arg1;
+- (id)displayGroupForDragFromObject:(id)arg1 toObject:(id)arg2;
 - (BOOL)isCatchAllPrototypeForDisplayGroup;
 - (id)_descriptionSubstringForDestination;
 - (id)_descriptionSubstringForLabel;
@@ -127,15 +133,15 @@
 - (void)unarchiveWithDocumentUnarchiver:(id)arg1;
 - (void)archiveWithDocumentArchiver:(id)arg1;
 - (BOOL)shouldBeArchivedByEndPoint;
-- (id)archiveKeyForEndPoint:(long long)arg1;
-- (id)archiveKeyForLabel;
+- (id)archivingKeyForEndPoint:(long long)arg1;
+- (id)archivingKeyForLabel;
 - (long long)endPointToArchive;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithSource:(id)arg1 label:(id)arg2 destination:(id)arg3;
-- (id)initWithSource:(id)arg1 andLabel:(id)arg2;
+- (id)initWithSource:(id)arg1 label:(id)arg2;
 - (id)initWithDestination:(id)arg1;
-- (id)initWithDestination:(id)arg1 andLabel:(id)arg2;
+- (id)initWithDestination:(id)arg1 label:(id)arg2;
 - (id)connectionDefinitionForObject:(id)arg1;
 - (id)ibXLIFFClassName:(id)arg1;
 

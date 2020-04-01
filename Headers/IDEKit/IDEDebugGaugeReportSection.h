@@ -17,6 +17,7 @@
     NSLayoutConstraint *_widthConstraintToRemoveAtRuntime;
 }
 
++ (id)labelFont;
 @property __weak NSLayoutConstraint *widthConstraintToRemoveAtRuntime; // @synthesize widthConstraintToRemoveAtRuntime=_widthConstraintToRemoveAtRuntime;
 @property __weak IDEDebugGaugeReportContentBackground *contentContainer; // @synthesize contentContainer=_contentContainer;
 @property __weak NSView *accessoryContainerView; // @synthesize accessoryContainerView=_accessoryContainerView;

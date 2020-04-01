@@ -58,7 +58,7 @@
 - (BOOL)documentEditor:(id)arg1 canSelectMembers:(id)arg2;
 - (void)documentEditor:(id)arg1 deselectMembers:(id)arg2;
 - (void)documentEditor:(id)arg1 pullSelection:(id)arg2;
-- (void)documentEditor:(id)arg1 selectMembers:(id)arg2 takeFocus:(BOOL)arg3 zoomIfNeeded:(BOOL)arg4;
+- (void)documentEditor:(id)arg1 selectMembers:(id)arg2 takeFocus:(BOOL)arg3;
 @property(readonly, nonatomic) BOOL onlySupportsDocumentObjectMembers;
 - (void)outlineViewSelectionDidChange:(id)arg1;
 - (id)_readSelectedMembersFromOutlineView;
@@ -104,7 +104,12 @@
 - (void)_addMissingConstraintsCategoryToCollection:(id)arg1 forViews:(id)arg2 inAmbiguityGroup:(id)arg3;
 - (BOOL)_addContentSizeConstraintsCategoryToCollection:(id)arg1 forAmbiguityGroupIfNeeded:(id)arg2;
 - (id)_effectiveAmbiguityCategoryNameForName:(id)arg1 ambiguityGroup:(id)arg2;
+- (id)addLocalizationFixedLeadingTrailingConstraintsWarningWithCenterConstraintCategoryToCollection:(id)arg1 localizationWarningType:(long long)arg2 title:(id)arg3;
+- (id)addLocalizationMissingLeadingTrailingConstraintsWarningCategoryToCollection:(id)arg1 localizationWarningType:(long long)arg2 title:(id)arg3;
+- (id)addLocalizationMissingConstraintsWarningCategoryToCollection:(id)arg1 title:(id)arg2;
+- (id)addLocalizationFixedWidthWarningCategoryToCollection:(id)arg1 title:(id)arg2;
 - (void)_refreshAfterStatusUpdate;
+- (void)addLocalizationIssuesToTopLevelItems:(id)arg1;
 - (void)_ensureTopLevelItemsAreExpanded;
 - (id)document;
 - (void)_setFallbackDocumentForTesting:(id)arg1;

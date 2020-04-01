@@ -10,10 +10,10 @@
 
 @protocol IDEReviewFilesDataSource <NSObject>
 - (DVTDocumentLocation *)reviewFilesNavigator:(IDEReviewFilesNavigator *)arg1 documentLocationForNavigableItem:(IDENavigableItem *)arg2;
-- (NSArray *)issueNavigableItems;
-- (NSArray *)flatNavigableItems;
-- (NSArray *)fileSystemNavigableItems;
-- (NSArray *)workspaceNavigableItems;
+- (IDENavigableItem *)issueNavigableItem;
+- (IDENavigableItem *)flatNavigableItem;
+- (IDENavigableItem *)fileSystemNavigableItem;
+- (IDENavigableItem *)workspaceNavigableItem;
 
 @optional
 - (BOOL)reviewFilesNavigator:(IDEReviewFilesNavigator *)arg1 outlineView:(IDENavigatorOutlineView *)arg2 showCheckboxForNavigableItem:(IDENavigableItem *)arg3;

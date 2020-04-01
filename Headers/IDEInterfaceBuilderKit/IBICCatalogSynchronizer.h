@@ -9,7 +9,7 @@
 #import <IDEInterfaceBuilderKit/DVTInvalidation-Protocol.h>
 
 @class DVTDelayedInvocation, DVTFilePath, DVTStackBacktrace, IBICAbstractCatalog, NSArray, NSMutableArray, NSString;
-@protocol DVTInvalidation, IBICCatalogSynchronizerDelegate;
+@protocol DVTInvalidation, IBICCatalogSynchronizerDelegate, OS_dispatch_queue;
 
 @interface IBICCatalogSynchronizer : NSObject <DVTInvalidation>
 {
@@ -23,17 +23,27 @@
     id <DVTInvalidation> _fileSystemObservationToken;
     IBICAbstractCatalog *_catalog;
     long long _disableCount;
+    BOOL _waitingToValidateChangesFromDisk;
+    NSObject<OS_dispatch_queue> *_completionQueue;
+    BOOL _pendingSynchronization;
+    NSMutableArray *_completionBlocks;
+    BOOL _hasPendingChanges;
+    BOOL _isCurrentlySynchronizing;
     NSString *_path;
     id <IBICCatalogSynchronizerDelegate> _delegate;
 }
 
++ (id)keyPathsForValuesAffectingHasWrittenAllChanges;
 + (id)takeOwnershipOfCatalogDisconnectingItFromFileSystemAndInvaldiateSynchronizer:(id *)arg1;
 + (id)synchronizerForCatalogAtPath:(id)arg1;
 + (id)synchronizerTakingOwnershipForCatalog:(id)arg1 atPath:(id)arg2;
 + (void)initialize;
+@property(nonatomic) BOOL isCurrentlySynchronizing; // @synthesize isCurrentlySynchronizing=_isCurrentlySynchronizing;
+@property(nonatomic) BOOL hasPendingChanges; // @synthesize hasPendingChanges=_hasPendingChanges;
 @property __weak id <IBICCatalogSynchronizerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly) NSString *path; // @synthesize path=_path;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) BOOL hasWrittenAllChanges;
 - (void)preventSynchronizationDuring:(CDUnknownBlockType)arg1;
 - (BOOL)isSynchronizationEnabled;
 - (void)enableSynchronization;
@@ -42,9 +52,11 @@
 - (id)replaceCatalogWithContentsOfPathWhileItIsKnowThatSyncOperationsAreNotInflightAndAreDisabled:(id)arg1;
 - (id)replaceCatalogWithContentsOfPath:(id)arg1;
 - (void)validateBatchedChanges:(id)arg1;
-- (void)validateChangesToDiskIfNeeded;
-- (void)validateChangesFromDiskIfNeeded;
+- (void)_synchronizePendingChangesThenReenableSynchronization;
+- (void)synchronizeWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)validateChangesFromDiskIfNeededWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)resetContentFromDisk;
+- (void)_dispatchFileAccessBlockToMainThread:(CDUnknownBlockType)arg1;
 @property(readonly) IBICAbstractCatalog *catalog;
 - (void)primitiveInvalidate;
 - (id)initWithCatalogClass:(Class)arg1;

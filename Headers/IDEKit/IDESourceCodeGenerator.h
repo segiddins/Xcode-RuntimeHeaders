@@ -22,7 +22,7 @@
 - (void)releaseEditorDocumentsFromEditorDocumentComponents:(id)arg1;
 - (id)editorDocumentComponentsForCounterparts:(id)arg1 documentLocationForCounterpartBlock:(CDUnknownBlockType)arg2 error:(id *)arg3;
 @property(readonly) DVTSourceCodeLanguage *generatedLanguage;
-- (id)classSymbolForClassNamed:(id)arg1 error:(id *)arg2;
+- (id)classSymbolForClassNamed:(id)arg1 options:(id)arg2 error:(id *)arg3;
 - (id)initWithWorkspaceDocument:(id)arg1;
 
 @end

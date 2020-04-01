@@ -19,13 +19,14 @@
     NSString *_className;
 }
 
-+ (void)ibPopulateAdditionalInspectors:(id)arg1 forCategory:(id)arg2;
++ (void)ibPopulateAdditionalInspectorSlices:(id)arg1 forCategory:(id)arg2;
 + (id)keyPathsForValuesAffectingIbExternalCustomClassName;
 + (id)ibDefaultImageForInstance:(id)arg1 targetRuntime:(id)arg2;
++ (id)ibClassNamesThatRequireCustomObjectSemantics;
 + (id)instantiateWithDocumentUnarchiver:(id)arg1;
 @property(copy) NSString *className; // @synthesize className=_className;
 - (void).cxx_destruct;
-- (BOOL)ibIsInspectorApplicable:(id)arg1 forCategory:(id)arg2;
+- (BOOL)ibIsInspectorSliceApplicable:(id)arg1 forCategory:(id)arg2;
 - (id)ibRuntimeClassName;
 - (id)ibExternalCustomClassModule;
 - (void)setIbExternalCustomClassModule:(id)arg1;

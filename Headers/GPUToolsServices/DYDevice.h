@@ -21,6 +21,8 @@
 @property(readonly, nonatomic) struct dispatch_queue_s *eventsQueue; // @synthesize eventsQueue=_eventsQueue;
 @property(readonly, retain, nonatomic) DYDeviceInfo *deviceInfo; // @synthesize deviceInfo=_deviceInfo;
 - (void).cxx_destruct;
+- (id)unlocked;
+- (BOOL)connected;
 - (BOOL)supportsPlaybackOfCaptureWithInfo:(id)arg1 limitBackwardsCompatibility:(BOOL)arg2 isInternal:(BOOL)arg3;
 - (BOOL)versionIsOlderThan:(id)arg1;
 - (id)iconDataForApplicationIdentifiers:(id)arg1;
@@ -36,7 +38,6 @@
 @property(readonly, retain, nonatomic) NSString *build;
 @property(readonly, retain, nonatomic) NSString *version;
 @property(readonly, retain, nonatomic) NSString *name;
-@property(readonly, nonatomic) BOOL sharedPermanentIdentifier;
 @property(readonly, retain, nonatomic) NSString *permanentIdentifier;
 @property(readonly, nonatomic) unsigned long long runtimeIdentifier;
 @property(readonly, nonatomic) int platform;

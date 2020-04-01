@@ -4,15 +4,15 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <DVTKit/DVTLayoutView_ML.h>
+#import <DVTStructuredLayoutKit/DVTLayoutView_ML.h>
 
-@class IBMutableIdentityDictionary, NSView;
+@class IBMutableIdentityDictionary, NSArray, NSView;
 
 @interface IBStructureAreaDockLabelContainer : DVTLayoutView_ML
 {
-    IBMutableIdentityDictionary *installedLabels;
-    IBMutableIdentityDictionary *previouslyInstalledLabels;
-    NSView *labelLayoutToken;
+    IBMutableIdentityDictionary *_installedLabels;
+    NSArray *_previouslyInstalledLabels;
+    NSView *_labelLayoutToken;
 }
 
 - (void).cxx_destruct;

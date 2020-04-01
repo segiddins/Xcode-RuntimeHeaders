@@ -8,13 +8,13 @@
 
 #import <IDEModelFoundation/XDMappingCompilerCallback-Protocol.h>
 
-@class NSDictionary, NSMutableArray, XDMappingModelManager;
+@class NSDictionary, NSMappingModel, NSMutableArray, XDMappingModelManager;
 
 @interface XDMappingCompilerSupport : NSObject <XDMappingCompilerCallback>
 {
     XDMappingModelManager *_modelManager;
     NSMutableArray *_errorsAndWarnings;
-    id _result;
+    NSMappingModel *_result;
     BOOL _hasErrors;
     NSDictionary *_options;
 }

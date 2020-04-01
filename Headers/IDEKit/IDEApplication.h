@@ -18,18 +18,23 @@
 
 @property(retain) id <IDEApplicationEventDelegate> eventDelegate; // @synthesize eventDelegate=_ideEventDelegate;
 - (void).cxx_destruct;
+- (void)_openDocumentURLs:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (id)supplementalTargetForAction:(SEL)arg1 sender:(id)arg2;
 - (void)endSheet:(id)arg1 returnCode:(long long)arg2;
 - (void)beginSheet:(id)arg1 modalForWindow:(id)arg2 modalDelegate:(id)arg3 didEndSelector:(SEL)arg4 contextInfo:(void *)arg5;
 - (void)closeAll:(id)arg1;
 - (void)terminate:(id)arg1;
+- (id)_workspaceWindowControllers;
 - (void)sendEvent:(id)arg1;
 - (void)updateWindowsItem:(id)arg1;
 - (void)changeWindowsItem:(id)arg1 title:(id)arg2 filename:(BOOL)arg3;
 - (void)addWindowsItem:(id)arg1 title:(id)arg2 filename:(BOOL)arg3;
 - (void)removeWindowsItem:(id)arg1;
 - (void)setWindowsMenu:(id)arg1;
+- (void)enumerateWindowsWithOptions:(long long)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (void)menuNeedsUpdate:(id)arg1;
+- (void)_removeWindowMenuItemsIfNeeded;
+- (BOOL)_removeWindowMenuItems;
 - (void)reportException:(id)arg1;
 - (BOOL)restoreWindowWithIdentifier:(id)arg1 state:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)setSdefSupport_activeWorkspaceDocument:(id)arg1;

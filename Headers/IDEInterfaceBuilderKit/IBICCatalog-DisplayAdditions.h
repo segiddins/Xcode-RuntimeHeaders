@@ -7,5 +7,6 @@
 #import <IBFoundation/IBICCatalog.h>
 
 @interface IBICCatalog (DisplayAdditions)
+- (id)catalogItemForHostingInContainer:(id)arg1;
 @end
 

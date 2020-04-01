@@ -4,56 +4,29 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <IDEKit/IDEViewController.h>
+#import <IDEKit/IDEEditorBannerController.h>
 
-#import <IDEKit/DVTScopeBarContentController-Protocol.h>
+@class NSDictionary, NSURL;
+@protocol IDEEditorInternalErrorBannerControllerDelegate;
 
-@class DVTButtonTextField, DVTObservingToken, NSArray, NSImage, NSString, NSTextField, NSURL;
-
-@interface IDEEditorInternalErrorBannerController : IDEViewController <DVTScopeBarContentController>
+@interface IDEEditorInternalErrorBannerController : IDEEditorBannerController
 {
-    double _preferredViewHeight;
-    double *_cachedMessageTextWidths;
-    DVTObservingToken *_viewFrameObservingToken;
-    BOOL _showsReportErrorButton;
-    NSString *_messageText;
-    NSArray *_phrases;
-    CDUnknownBlockType _errorReportingBlock;
     NSURL *_reportErrorURL;
-    NSString *_reportErrorButtonTitle;
-    NSTextField *_messageTextField;
-    DVTButtonTextField *_reportErrorButtonTextField;
-    NSString *_toolTip;
+    NSDictionary *_context;
+    id <IDEEditorInternalErrorBannerControllerDelegate> _internalErrorDelegate;
 }
 
-@property(copy) NSString *toolTip; // @synthesize toolTip=_toolTip;
-@property(retain) DVTButtonTextField *reportErrorButtonTextField; // @synthesize reportErrorButtonTextField=_reportErrorButtonTextField;
-@property(retain) NSTextField *messageTextField; // @synthesize messageTextField=_messageTextField;
-@property(copy, nonatomic) NSString *reportErrorButtonTitle; // @synthesize reportErrorButtonTitle=_reportErrorButtonTitle;
-@property(nonatomic) BOOL showsReportErrorButton; // @synthesize showsReportErrorButton=_showsReportErrorButton;
++ (id)defaultComponent;
++ (id)defaultMessageText;
++ (id)defaultViewNibBundle;
++ (id)defaultViewNibName;
+@property(nonatomic) __weak id <IDEEditorInternalErrorBannerControllerDelegate> internalErrorDelegate; // @synthesize internalErrorDelegate=_internalErrorDelegate;
+@property(copy, nonatomic) NSDictionary *context; // @synthesize context=_context;
 @property(copy, nonatomic) NSURL *reportErrorURL; // @synthesize reportErrorURL=_reportErrorURL;
-@property(copy, nonatomic) CDUnknownBlockType errorReportingBlock; // @synthesize errorReportingBlock=_errorReportingBlock;
-@property(copy, nonatomic) NSArray *phrases; // @synthesize phrases=_phrases;
-@property(copy) NSString *messageText; // @synthesize messageText=_messageText;
 - (void).cxx_destruct;
-- (void)_reportErrorButtonTextFieldAction:(id)arg1;
-- (void)wasAssociatedWithScopeBarController:(id)arg1;
-- (void)viewWillUninstall;
-- (void)viewDidInstall;
-- (void)loadView;
-- (void)_updateMessageText;
-@property(readonly) NSImage *icon;
-@property double preferredViewHeight; // @synthesize preferredViewHeight=_preferredViewHeight;
-- (void)viewDidLoad;
-- (void)primitiveInvalidate;
-- (void)dealloc;
+- (void)createXCIssue;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
+- (id)init;
 
 @end
 

@@ -6,33 +6,40 @@
 
 #import <IBFoundation/IBICSlotComponent.h>
 
-@class NSArray, NSString;
+#import <IBFoundation/IBICCoreUISlotComponent-Protocol.h>
 
-@interface IBICColorSpace : IBICSlotComponent
+@class NSString;
+
+@interface IBICColorSpace : IBICSlotComponent <IBICCoreUISlotComponent>
 {
-    struct CGColorSpace *_cgColorSpace;
-    NSString *_colorSpaceIdentifier;
     long long _coreUIValue;
 }
 
-+ (BOOL)slotsMayExistWithoutNullSlotComponent;
-+ (id)itemWithIdentifier:(id)arg1 fileNameComponent:(id)arg2 title:(id)arg3 colorSpace:(id)arg4 coreUIValue:(long long)arg5 displayOrder:(double)arg6;
++ (id)sRGBColorSpace;
++ (id)p3ColorSpace;
++ (id)itemWithIdentifier:(id)arg1 fileNameComponent:(id)arg2 title:(id)arg3 coreUIValue:(long long)arg4 displayOrder:(double)arg5;
++ (id)displayName;
++ (id)fallbackContentsJSONKeys;
 + (id)contentsJSONKey;
 + (void)setComponentID:(long long)arg1;
 + (long long)componentID;
++ (id)unspecifiedValuePlaceholder;
 @property(readonly, nonatomic) long long coreUIValue; // @synthesize coreUIValue=_coreUIValue;
-@property(readonly, nonatomic) struct CGColorSpace *cgColorSpace; // @synthesize cgColorSpace=_cgColorSpace;
-@property(readonly) NSString *colorSpaceIdentifier; // @synthesize colorSpaceIdentifier=_colorSpaceIdentifier;
-- (void).cxx_destruct;
+- (void)encodeWithBinaryArchiver:(id)arg1;
+- (id)initWithBinaryUnarchiver:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-@property(readonly, nonatomic) NSArray *componentNames;
-@property(readonly, nonatomic) long long model;
-@property(readonly, nonatomic) unsigned long long componentCount;
+@property(readonly, nonatomic) struct CGColorSpace *CGColorSpace;
+@property(readonly, nonatomic) int colorModel;
 - (BOOL)isEqualToSlotComponentCounterpartWithKnownEqualClass:(id)arg1;
-- (void)dealloc;
-- (id)initWithIdentifier:(id)arg1 fileNameComponent:(id)arg2 title:(id)arg3 colorSpace:(id)arg4 coreUIValue:(long long)arg5 displayOrder:(double)arg6;
+- (id)initWithIdentifier:(id)arg1 fileNameComponent:(id)arg2 title:(id)arg3 coreUIValue:(long long)arg4 displayOrder:(double)arg5;
 - (long long)componentID;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

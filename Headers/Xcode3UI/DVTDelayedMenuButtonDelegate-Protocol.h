@@ -11,6 +11,7 @@
 @protocol DVTDelayedMenuButtonDelegate <NSObject>
 
 @optional
+- (void)delayedMenuButton:(DVTDelayedMenuButton *)arg1 sendClickAction:(SEL)arg2 to:(id)arg3 from:(id)arg4;
 - (NSMenu *)updatedMenuForDelayedMenuButton:(DVTDelayedMenuButton *)arg1;
 - (NSMenuItem *)delayedMenuButton:(DVTDelayedMenuButton *)arg1 willSetCurrentMenuItem:(NSMenuItem *)arg2;
 @end

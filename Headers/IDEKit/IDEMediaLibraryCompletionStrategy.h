@@ -10,6 +10,7 @@
 {
 }
 
++ (BOOL)usesImageLiteralCompletion;
 - (id)completionItemsForDocumentLocation:(id)arg1 context:(id)arg2 highlyLikelyCompletionItems:(id *)arg3 areDefinitive:(char *)arg4;
 - (void)prepareForDocumentLocation:(id)arg1 context:(id)arg2;
 

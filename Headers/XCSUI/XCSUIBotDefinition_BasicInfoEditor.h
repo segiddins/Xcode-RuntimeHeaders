@@ -6,19 +6,23 @@
 
 #import <IDEKit/IDEViewController.h>
 
-@class DVTObservingToken, NSArray, NSButton, NSPopUpButton, NSProgressIndicator, NSTextField, NSView, XCSUIAccountReachabilityToImageTransformer, XCSUIBotDefinitionContext;
+#import <XCSUI/XCSUIDataSourceSnapshotsObserver-Protocol.h>
 
-@interface XCSUIBotDefinition_BasicInfoEditor : IDEViewController
+@class DVTBorderedView, DVTObservingToken, NSArray, NSButton, NSPopUpButton, NSProgressIndicator, NSTextField, NSView, XCSUIAccountReachabilityToImageTransformer, XCSUIBotDefinitionContext;
+
+@interface XCSUIBotDefinition_BasicInfoEditor : IDEViewController <XCSUIDataSourceSnapshotsObserver>
 {
     DVTObservingToken *_scmDefinitionObservingToken;
     DVTObservingToken *_reachabilityObservingToken;
     DVTObservingToken *_userCanCreateBotsObserver;
+    DVTObservingToken *_observeAvailability;
     BOOL _canCreateBotOnServer;
     BOOL _queryingCanCreateBotsOnServer;
     BOOL _viewIsInstalled;
     XCSUIBotDefinitionContext *_botDefinitionContext;
     NSArray *_servers;
     XCSUIAccountReachabilityToImageTransformer *_imageTransformer;
+    DVTBorderedView *_borderedView;
     NSPopUpButton *_serversPopup;
     NSTextField *_botNameField;
     NSView *_controlsView;
@@ -31,6 +35,7 @@
 @property(retain) NSView *controlsView; // @synthesize controlsView=_controlsView;
 @property(retain) NSTextField *botNameField; // @synthesize botNameField=_botNameField;
 @property(retain) NSPopUpButton *serversPopup; // @synthesize serversPopup=_serversPopup;
+@property __weak DVTBorderedView *borderedView; // @synthesize borderedView=_borderedView;
 @property(nonatomic) BOOL viewIsInstalled; // @synthesize viewIsInstalled=_viewIsInstalled;
 @property(nonatomic) BOOL queryingCanCreateBotsOnServer; // @synthesize queryingCanCreateBotsOnServer=_queryingCanCreateBotsOnServer;
 @property(nonatomic) BOOL canCreateBotOnServer; // @synthesize canCreateBotOnServer=_canCreateBotOnServer;
@@ -48,6 +53,8 @@
 - (void)textDidChange:(id)arg1;
 - (void)viewWillUninstall;
 - (void)commitChanges;
+- (void)dataSource:(id)arg1 didFinishInitialLoadForService:(id)arg2;
+- (void)dataSource:(id)arg1 accountWasAddedForService:(id)arg2;
 - (void)viewDidInstall;
 - (void)loadView;
 - (void)primitiveInvalidate;

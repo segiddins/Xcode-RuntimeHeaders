@@ -10,6 +10,7 @@
 
 @interface GTFActionTimelineControlView : NSView
 {
+    BOOL _tabClipped;
     BOOL _showTab;
     BOOL _showNeedle;
     int _track;
@@ -28,8 +29,12 @@
 @property(retain, nonatomic) NSColor *needleColor; // @synthesize needleColor=_needleColor;
 - (void).cxx_destruct;
 - (BOOL)isAnimating;
+- (void)pauseAnimation;
 - (void)startAnimation:(double)arg1 playbackSpeed:(double)arg2;
 - (void)drawRect:(struct CGRect)arg1;
+- (void)setFrame:(struct CGRect)arg1;
+- (void)updateScrubbing;
+- (void)_updateClip;
 - (void)awakeFromNib;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

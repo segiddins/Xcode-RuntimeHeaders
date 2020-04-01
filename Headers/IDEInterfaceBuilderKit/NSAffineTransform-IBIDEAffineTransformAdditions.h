@@ -9,7 +9,14 @@
 @interface NSAffineTransform (IBIDEAffineTransformAdditions)
 + (id)ib_transformForFlippingRect:(double)arg1 aroundPoint:(struct CGPoint)arg2;
 + (id)ib_transformForFlippingRect:(struct CGRect)arg1;
++ (id)ib_transformWithRotateByRadians:(double)arg1;
++ (id)ib_transformWithTranslateXBy:(double)arg1 yBy:(double)arg2;
++ (id)ib_transformWithScaleXBy:(double)arg1 yBy:(double)arg2;
 + (id)ib_transformWithScale:(double)arg1;
++ (id)instantiateWithDocumentUnarchiver:(id)arg1;
 - (struct CGRect)ib_transformRect:(struct CGRect)arg1;
+- (id)ib_invertedTransform;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
 @end
 

@@ -16,6 +16,7 @@
     NSMutableArray *_issuesWithNoFile;
     NSMutableArray *_issueTypeGroups;
     NSMapTable *_issueTypeGroupsIndex;
+    NSMutableArray *_runtimeTopGroups;
     unsigned long long _testFailureCount;
     unsigned long long _errorCount;
     unsigned long long _warningCount;
@@ -41,6 +42,7 @@
 @property(readonly) NSSet *_allIssues;
 - (void)_removeIssues:(id)arg1;
 - (void)_addIssues:(id)arg1;
+- (void)_createRuntimeGroupIfNecessary:(id)arg1;
 - (void)_addNoFileIssues:(id)arg1;
 - (void)_updateIssueType;
 @property(readonly) unsigned long long issueCount;

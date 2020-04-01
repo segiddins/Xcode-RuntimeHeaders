@@ -53,7 +53,7 @@
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly) unsigned long long hash;
-@property(copy) NSMutableArray *mutableSubtrackers; // @dynamic mutableSubtrackers;
+@property(retain) NSMutableArray *mutableSubtrackers; // @dynamic mutableSubtrackers;
 @property(readonly, copy) NSArray *subtrackers; // @dynamic subtrackers;
 @property(readonly) Class superclass;
 

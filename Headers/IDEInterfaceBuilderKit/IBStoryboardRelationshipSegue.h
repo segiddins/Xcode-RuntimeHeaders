@@ -10,6 +10,7 @@
 
 @interface IBStoryboardRelationshipSegue : IBAbstractSegueConnection
 {
+    NSString *_childControllerCreationSelectorName;
 }
 
 + (id)prototypeConnectionsFromObject:(id)arg1 toObject:(id)arg2;
@@ -21,7 +22,9 @@
 + (double)displayOrderPriority;
 + (BOOL)isObjectValidDestination:(id)arg1;
 + (BOOL)isObjectValidSource:(id)arg1;
-- (id)displayGroupIdentifierForDragFromObject:(id)arg1 toObject:(id)arg2;
+@property(retain, nonatomic) NSString *childControllerCreationSelectorName; // @synthesize childControllerCreationSelectorName=_childControllerCreationSelectorName;
+- (void).cxx_destruct;
+- (id)displayGroupForDragFromObject:(id)arg1 toObject:(id)arg2;
 - (id)missingComponents;
 - (void)populateSegueTemplates:(id)arg1 andOutletsForCompiledDocument:(id)arg2;
 - (BOOL)validateDestination:(id)arg1;
@@ -35,8 +38,12 @@
 - (id)userPresentableLabel;
 - (id)_relationshipDescriptionForKeyPath:(id)arg1;
 @property(readonly) NSString *relationshipKeyPath;
+- (void)setDestinationCreationSelectorName:(id)arg1;
+- (id)destinationCreationSelectorName;
 - (void)unarchiveWithDocumentUnarchiver:(id)arg1;
 - (void)archiveWithDocumentArchiver:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 
 @end
 

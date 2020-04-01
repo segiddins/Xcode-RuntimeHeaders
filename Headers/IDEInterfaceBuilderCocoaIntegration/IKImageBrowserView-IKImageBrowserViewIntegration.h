@@ -6,9 +6,13 @@
 
 #import <ImageKit/IKImageBrowserView.h>
 
-@interface IKImageBrowserView (IKImageBrowserViewIntegration)
+#import <IDEInterfaceBuilderCocoaIntegration/IBDocumentArchiving-Protocol.h>
+
+@class NSString;
+
+@interface IKImageBrowserView (IKImageBrowserViewIntegration) <IBDocumentArchiving>
+- (void)ibPopulateIssues:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
 - (void)ibSwizzledSetDraggingDestinationDelegate:(id)arg1;
-- (void)ibSwizzledAdjustScroller;
 - (id)ibSwizzledInitWithCoder:(id)arg1;
 - (void)_willInitWithCoder;
 - (void)ibSwizzledSetDelegate:(id)arg1;
@@ -21,5 +25,14 @@
 - (BOOL)useOutlinedStyle;
 - (void)setUseShadowedStyle:(BOOL)arg1;
 - (BOOL)useShadowedStyle;
+- (id)ibLocalAttributeKeyPaths;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @end
 

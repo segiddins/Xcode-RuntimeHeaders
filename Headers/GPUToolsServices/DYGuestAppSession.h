@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class DYBreakpoint, DYCaptureSession, DYDevice, DYFuture, DYGuestApp, DYGuestAppControlStrategy, DYGuestAppLaunchStrategy, DYResourceStreamer, DYSymbolicator, DYTransport, DYTransportSource, NSDictionary, NSError, NSMapTable, NSMutableArray, NSMutableDictionary;
+@class DYBreakpoint, DYCaptureSession, DYDevice, DYFuture, DYGuestApp, DYGuestAppControlStrategy, DYGuestAppLaunchStrategy, DYResourceStreamer, DYShaderDebuggerDataSourceProviderDelegate, DYSymbolicator, DYTransport, DYTransportSource, NSDictionary, NSError, NSMapTable, NSMutableArray, NSMutableDictionary, NSString;
 
 @interface DYGuestAppSession : NSObject
 {
@@ -14,6 +14,7 @@
     unsigned int _transactionBits;
     BOOL _attemptedLaunch;
     unsigned int _graphicsAPI;
+    NSString *_appTransportAddress;
     struct dispatch_queue_s *_masterQueue;
     struct dispatch_semaphore_s *_transactionSema;
     NSMutableArray *_launchEnvironmentMutators;
@@ -29,6 +30,7 @@
     DYCaptureSession *_activeCaptureSession;
     unsigned int _captureSessionSerial;
     NSMutableArray *_displayLinkInfo;
+    int _displayLinkInfoUpdateLock;
     struct dy_timebase _appTimebase;
     BOOL _didTerminate;
     BOOL _interposeSemaphoreSignalSent;
@@ -48,6 +50,7 @@
     NSError *_error;
     DYBreakpoint *_currentBreakpoint;
     DYResourceStreamer *_resourceStreamer;
+    DYShaderDebuggerDataSourceProviderDelegate *_shaderDebuggerDataSourceProviderDelegate;
     unsigned long long _profilingSendPeriod;
     unsigned long long _profilingFlags;
     NSDictionary *_hardwareCountersConfiguration;
@@ -65,13 +68,15 @@
 @property(nonatomic) BOOL includeDriverEventsInTrace; // @synthesize includeDriverEventsInTrace=_includeDriverEventsInTrace;
 @property(nonatomic) BOOL includeBacktracesInTrace; // @synthesize includeBacktracesInTrace=_includeBacktracesInTrace;
 @property(nonatomic) int traceMode; // @synthesize traceMode=_traceMode;
+@property(readonly, retain, nonatomic) DYShaderDebuggerDataSourceProviderDelegate *shaderDebuggerDataSourceProviderDelegate; // @synthesize shaderDebuggerDataSourceProviderDelegate=_shaderDebuggerDataSourceProviderDelegate;
 @property(readonly, retain, nonatomic) DYResourceStreamer *resourceStreamer; // @synthesize resourceStreamer=_resourceStreamer;
 @property(retain, nonatomic) DYBreakpoint *currentBreakpoint; // @synthesize currentBreakpoint=_currentBreakpoint;
 @property(readonly, nonatomic) unsigned int graphicsAPI; // @synthesize graphicsAPI=_graphicsAPI;
 @property(readonly, retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(readonly, nonatomic) BOOL invalid; // @synthesize invalid=_invalid;
 @property(readonly, nonatomic) BOOL running; // @synthesize running=_running;
-@property(readonly, retain, nonatomic) NSDictionary *finalLaunchDictionary; // @synthesize finalLaunchDictionary=_finalLaunchDictionary;
+@property(readonly, retain, nonatomic) NSString *appTransportAddress; // @synthesize appTransportAddress=_appTransportAddress;
+@property(retain, nonatomic) NSDictionary *finalLaunchDictionary; // @synthesize finalLaunchDictionary=_finalLaunchDictionary;
 @property(nonatomic) BOOL remainSuspendedAfterLaunch; // @synthesize remainSuspendedAfterLaunch=_remainSuspendedAfterLaunch;
 @property(nonatomic) BOOL disableLaunchTimeout; // @synthesize disableLaunchTimeout=_disableLaunchTimeout;
 @property(nonatomic) BOOL disableAllInterposing; // @synthesize disableAllInterposing=_disableAllInterposing;
@@ -94,6 +99,7 @@
 - (id)updateResources:(id)arg1;
 - (id)queryForGraphicsAPIUsage;
 - (id)getDisplayLinkInfo;
+- (id)activateCaptureSessionInitatedByInferior:(id)arg1 sessionSerial:(unsigned int)arg2;
 - (id)activateCaptureSession:(id)arg1;
 - (id)prepareSymbolicator;
 - (void)removeObserver:(id)arg1;

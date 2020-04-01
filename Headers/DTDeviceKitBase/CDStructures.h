@@ -16,12 +16,12 @@ struct deque<double, std::__1::allocator<double>> {
         double **__begin_;
         double **__end_;
         struct __compressed_pair<double **, std::__1::allocator<double *>> {
-            double **__first_;
+            double **__value_;
         } __end_cap_;
     } __map_;
     unsigned long long __start_;
     struct __compressed_pair<unsigned long, std::__1::allocator<double>> {
-        unsigned long long __first_;
+        unsigned long long __value_;
     } __size_;
 };
 

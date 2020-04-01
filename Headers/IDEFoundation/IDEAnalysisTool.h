@@ -13,8 +13,10 @@
     int _type;
     NSString *_identifier;
     NSString *_displayName;
+    NSString *_path;
 }
 
+@property(readonly) NSString *path; // @synthesize path=_path;
 @property(readonly) NSString *displayName; // @synthesize displayName=_displayName;
 @property(readonly) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly) int type; // @synthesize type=_type;
@@ -24,7 +26,7 @@
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (long long)displayNameCompare:(id)arg1;
-- (id)initWithType:(int)arg1 identifer:(id)arg2 displayName:(id)arg3;
+- (id)initWithType:(int)arg1 identifer:(id)arg2 displayName:(id)arg3 path:(id)arg4;
 
 @end
 

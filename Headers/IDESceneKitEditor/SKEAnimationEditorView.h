@@ -23,6 +23,7 @@
     struct CGPoint _origin;
     struct CGSize _canvasSize;
     long long _selectedPointIndex;
+    long long _hoveredPointIndex;
     id <SKEAnimationEditorViewDelegate> _delegate;
     NSString *_placeholderString;
 }
@@ -35,10 +36,12 @@
 - (BOOL)isOpaque;
 - (void)clearDrawInfo;
 - (void)computeDrawInfoIfNeeded;
+- (void)keyDown:(id)arg1;
 - (void)mouseDragged:(id)arg1;
 - (void)mouseMoved:(id)arg1;
 - (void)mouseDown:(id)arg1;
 - (BOOL)acceptsFirstMouse:(id)arg1;
+- (BOOL)becomeFirstResponder;
 - (BOOL)acceptsFirstResponder;
 - (void)setFrame:(struct CGRect)arg1;
 @property(copy) NSBezierPath *bezierPath;

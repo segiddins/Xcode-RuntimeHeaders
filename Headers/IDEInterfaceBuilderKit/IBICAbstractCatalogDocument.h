@@ -6,18 +6,22 @@
 
 #import <IDEKit/IDEEditorDocument.h>
 
+#import <IDEInterfaceBuilderKit/DVTTextFindable-Protocol.h>
+#import <IDEInterfaceBuilderKit/DVTTextReplacable-Protocol.h>
+#import <IDEInterfaceBuilderKit/IBICActivityReportingDelegate-Protocol.h>
 #import <IDEInterfaceBuilderKit/IBICCatalogItemObserver-Protocol.h>
 #import <IDEInterfaceBuilderKit/IBICCatalogSynchronizerDelegate-Protocol.h>
 #import <IDEInterfaceBuilderKit/IDEDocumentStructureProviding-Protocol.h>
 #import <IDEInterfaceBuilderKit/IDENavigableItemArchivableRepresentationSupport-Protocol.h>
 
-@class DVTDelayedInvocation, IBFileBuildSettingsSnapshot, IBICAbstractCatalog, IBICCatalogMutator, IBICCatalogSynchronizer, IBICPasteboardManager, IBICTransientUIStateRepository, IBMutableIdentityDictionary, NSArray, NSMutableSet, NSSet, NSString;
+@class DVTDelayedInvocation, IBFileBuildSettingsSnapshot, IBICAbstractCatalog, IBICCatalogMutator, IBICCatalogSynchronizer, IBICPasteboardManager, IBICTransientUIStateRepository, IBMutableIdentityDictionary, NSArray, NSMutableArray, NSMutableOrderedSet, NSMutableSet, NSSet, NSString;
 @protocol IBInvalidation;
 
-@interface IBICAbstractCatalogDocument : IDEEditorDocument <IDEDocumentStructureProviding, IDENavigableItemArchivableRepresentationSupport, IBICCatalogItemObserver, IBICCatalogSynchronizerDelegate>
+@interface IBICAbstractCatalogDocument : IDEEditorDocument <IDEDocumentStructureProviding, IDENavigableItemArchivableRepresentationSupport, IBICCatalogItemObserver, IBICCatalogSynchronizerDelegate, IBICActivityReportingDelegate, DVTTextFindable, DVTTextReplacable>
 {
     NSMutableSet *_imageCatalogDocumentEditors;
     IBMutableIdentityDictionary *_editorsToWorkspaceDocuments;
+    NSSet *_workspaceMonitorsWithBlockedFetching;
     id <IBInvalidation> _catalogObservationToken;
     IBICCatalogMutator *_activeMutator;
     IBICAbstractCatalog *_unsynchronizedCatalog;
@@ -25,6 +29,10 @@
     NSArray *_importingFileRefs;
     BOOL _replacingContent;
     BOOL _startedVerifications;
+    IBMutableIdentityDictionary *_issuesByCatalogItem;
+    NSSet *_cachedActivityReporters;
+    NSMutableOrderedSet *_itemsWithActivity;
+    NSMutableArray *_cachedFindTextFragments;
     NSArray *_ideTopLevelStructureObjects;
     IBICPasteboardManager *_pasteboardManager;
     IBICCatalogSynchronizer *_synchronizer;
@@ -33,6 +41,10 @@
     NSArray *_issues;
 }
 
++ (id)issueBadgeForIssues:(id)arg1 ofSize:(double)arg2;
++ (long long)highestIssuesSeverityForIssues:(id)arg1;
++ (id)keyPathsForValuesAffectingIbInspectedCompressionType;
++ (id)keyPathsForValuesAffectingDocumentEdited;
 + (BOOL)shouldTrackFileSystemChanges;
 + (BOOL)autosavesDrafts;
 + (BOOL)autosavesInPlace;
@@ -48,6 +60,26 @@
 @property(readonly, nonatomic) IBICPasteboardManager *pasteboardManager; // @synthesize pasteboardManager=_pasteboardManager;
 @property(readonly) NSArray *ideTopLevelStructureObjects; // @synthesize ideTopLevelStructureObjects=_ideTopLevelStructureObjects;
 - (void).cxx_destruct;
+- (long long)compareFindableLocation:(id)arg1 withLocation:(id)arg2;
+- (id)findStringMatchingDescriptor:(id)arg1 backwards:(BOOL)arg2 from:(id)arg3 to:(id)arg4;
+- (id)relativePathForDisplayOrder:(long long)arg1;
+- (long long)displayOrderForRelativePath:(id)arg1;
+- (id)cachedFindTextFragments;
+- (void)invalidateCachedFindTextFragments;
+- (BOOL)replaceFindResults:(id)arg1 withString:(id)arg2 withError:(id *)arg3;
+- (id)activityReporterForWorkspaceDocument:(id)arg1;
+- (void)updateActivityReportsForRegisteredEditorChanges:(CDUnknownBlockType)arg1;
+- (id)activityReporters;
+- (void)purgeAllActivities;
+- (void)activityDidEndForItem:(id)arg1;
+- (void)activityDidUpdateForItem:(id)arg1;
+- (void)activityDidStartForItem:(id)arg1;
+- (id)issueBadgeForCatalogItem:(id)arg1 accountingForChildren:(BOOL)arg2 ofSize:(double)arg3;
+- (id)issuesForCatalogItem:(id)arg1 includeChildIssues:(BOOL)arg2;
+- (void)populateIssues:(id)arg1 forCatalogItem:(id)arg2 includeChildIssues:(BOOL)arg3;
+- (id)ibInspectedCompressionTypeNilPlaceholder;
+- (void)setIbInspectedCompressionType:(id)arg1;
+- (id)ibInspectedCompressionType;
 - (unsigned long long)navigableItem_indexOfRepresentedObjectForIdentifier:(id)arg1 inRelationshipKeyPath:(id)arg2;
 - (id)navigableItem_identifierForRepresentedObjectAtIndex:(unsigned long long)arg1 inRelationshipKeyPath:(id)arg2;
 - (void)refreshTopLevelStructureItems;
@@ -71,18 +103,28 @@
 - (void)catalogDidRecoverFromFailureByReplaceContentWithContentFromDisk:(id)arg1 result:(id)arg2;
 - (void)catalogWillRecoverFromFailureByReplaceContentWithContentFromDisk:(id)arg1;
 - (void)catalogSynchronizerDidDetectExternalChangesOnDisk:(id)arg1;
+- (void)_unblockFetchingFilesAndStatusFromWorkspaceMonitors:(id)arg1;
 - (void)catalogSynchronizer:(id)arg1 didCompleteSynchronizingWithStatus:(long long)arg2 error:(id)arg3;
+- (void)catalogSynchronizer:(id)arg1 dispatchFileAccessBlockToMainThread:(CDUnknownBlockType)arg2;
+- (void)catalogSynchronizerWillSynchronizeToDisk:(id)arg1;
+- (void)catalogSynchronizer:(id)arg1 requestsAsynchronousFileAccessUsingBlock:(CDUnknownBlockType)arg2;
 - (void)presentErrorOnBestDocumentEditor:(id)arg1;
 - (void)imageCatalogItemDidChangeDisplayOrderedChildren:(id)arg1;
+- (void)imageCatalogItemDidUpdateIssues:(id)arg1;
 - (void)imageCatalogItem:(id)arg1 willChangeKey:(id)arg2 fromValue:(id)arg3 toValue:(id)arg4;
 - (void)batchValidateIssues:(id)arg1;
 - (void)didExternallyRelocateFileContent;
 - (void)willExternallyRelocateFileContent;
 - (void)editorDocumentWillClose;
 - (BOOL)readFromURL:(id)arg1 ofType:(id)arg2 error:(id *)arg3;
-- (void)addRequiredCounterparts;
+- (void)addImpliedCounterparts;
+- (void)applyAddImpliedCounterpartsChangesToItem:(id)arg1;
 - (void)saveToURL:(id)arg1 ofType:(id)arg2 forSaveOperation:(unsigned long long)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (BOOL)isDocumentEdited;
 @property(readonly, nonatomic) BOOL supportsSlicing;
+- (BOOL)canAsynchronouslyWriteToURL:(id)arg1 ofType:(id)arg2 forSaveOperation:(unsigned long long)arg3;
+- (BOOL)canSaveAs;
+- (BOOL)canSave;
 - (void)tellEditorsToReplaceSelectionOfItems:(id)arg1 withItem:(id)arg2;
 - (void)unregisterImageCatalogDocumentEditor:(id)arg1;
 - (void)registerImageCatalogDocumentEditor:(id)arg1;
@@ -90,6 +132,8 @@
 - (void)applyChanges:(id)arg1;
 - (void)applyChange:(id)arg1;
 - (void)catalogSynchronizer:(id)arg1 didApplyMutationToModel:(id)arg2;
+- (void)finishReplacingContent;
+- (void)beginReplacingContent;
 - (Class)catalogClass;
 - (id)init;
 
@@ -98,6 +142,7 @@
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
+@property unsigned long long supportedMatchingOptions;
 
 @end
 

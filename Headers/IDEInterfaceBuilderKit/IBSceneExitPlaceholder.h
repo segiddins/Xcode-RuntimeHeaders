@@ -7,26 +7,27 @@
 #import <objc/NSObject.h>
 
 #import <IDEInterfaceBuilderKit/IBDocumentArchiving-Protocol.h>
-#import <IDEInterfaceBuilderKit/NSCoding-Protocol.h>
+#import <IDEInterfaceBuilderKit/IBStoryboardSceneExitPlaceholder-Protocol.h>
 
 @class IBTargetRuntime, NSString;
 
-@interface IBSceneExitPlaceholder : NSObject <IBDocumentArchiving, NSCoding>
+@interface IBSceneExitPlaceholder : NSObject <IBStoryboardSceneExitPlaceholder, IBDocumentArchiving>
 {
-    IBTargetRuntime *targetRuntime;
+    IBTargetRuntime *_targetRuntime;
 }
 
 + (id)instantiateWithDocumentUnarchiver:(id)arg1;
+@property(retain) IBTargetRuntime *targetRuntime; // @synthesize targetRuntime=_targetRuntime;
 - (void).cxx_destruct;
-- (id)initWithTargetRuntime:(id)arg1;
-- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
-- (void)archiveWithDocumentArchiver:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithTargetRuntime:(id)arg1;
 - (BOOL)ibIsCopyableGivenSelection:(id)arg1;
 - (BOOL)ibNeedsToBeArchived;
-- (BOOL)ibIsInspectorApplicable:(id)arg1 forCategory:(id)arg2;
+- (BOOL)ibIsInspectorSliceApplicable:(id)arg1 forCategory:(id)arg2;
 - (BOOL)ibTopLevelSceneObjectWantsInclusionInCompiledStoryboard;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

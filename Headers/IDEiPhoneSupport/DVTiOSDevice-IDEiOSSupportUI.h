@@ -16,8 +16,12 @@
 + (id)keyPathsForValuesAffectingActivityImage;
 + (id)keyPathsForValuesAffectingImage;
 + (id)keyPathsForValuesAffectingIconImage;
++ (id)keyPathsForValuesAffectingTokenUI;
 + (id)keyPathsForValuesAffectingStatusImage;
 + (void)userInterfacePresentBasicAlertWithMessageText:(id)arg1 informativeText:(id)arg2;
++ (id)keyPathsForValuesAffectingDvtDevicesWindow_canSSH;
++ (id)keyPathsForValuesAffectingDeviceSummaryInternalPropertyDictionaries;
++ (id)keyPathsForValuesAffectingDvtDevicesWindow_isWirelessEnabled;
 - (_Bool)_askForAlternateApplicationIfNeeded:(id *)arg1;
 - (void)takeScreenshotWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (_Bool)canTakeScreenshot;
@@ -26,11 +30,19 @@
 @property(readonly) NSArray *deviceSummaryPropertyDictionaries;
 - (_Bool)supportsBatteryUpdateNotifications;
 - (id)activityImage;
+@property(readonly) NSImage *proxyDeviceImage;
 @property(readonly) NSImage *image;
 - (id)iconImage;
+- (id)tokenUI;
 - (id)statusImage;
 - (BOOL)shouldApplicationTerminate;
 - (void)userInterfacePresentAlertForNoRoutingCoverageFileAtPath:(id)arg1;
+- (BOOL)_canRemoteSSH;
+- (BOOL)_canDirectSSH;
+- (BOOL)dvtDevicesWindow_canSSH;
+@property(readonly) NSArray *deviceSummaryInternalPropertyDictionaries;
+- (id)dvtDevicesWindow_isWirelessEnabled;
+- (id)_placeholderValue;
 
 // Remaining properties
 @property(readonly, getter=isAvailable) BOOL available;
@@ -42,6 +54,7 @@
 @property(readonly, copy, nonatomic) NSString *identifier;
 @property(readonly) BOOL isProxiedDevice;
 @property(readonly, copy, nonatomic) NSString *modelCode;
+@property(readonly, copy, nonatomic) NSString *modelCodename;
 @property(readonly, copy, nonatomic) NSString *modelName;
 @property(readonly, copy, nonatomic) NSString *modelUTI;
 @property(readonly, copy, nonatomic) NSString *name;

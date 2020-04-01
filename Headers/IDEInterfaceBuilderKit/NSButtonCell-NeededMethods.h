@@ -7,9 +7,9 @@
 #import <AppKit/NSButtonCell.h>
 
 @interface NSButtonCell (NeededMethods)
-- (void)setImageWithMinimalSideEffects:(id)arg1;
-- (id)imageWithMinimalSideEffects;
-- (void)setAlternateImageWithMinimalSideEffects:(id)arg1;
-- (id)alternateImageWithMinimalSideEffects;
+- (void)_setImageWithMinimalSideEffects:(id)arg1;
+- (id)_imageWithMinimalSideEffects;
+- (void)_setAlternateImageWithMinimalSideEffects:(id)arg1;
+- (id)_alternateImageWithMinimalSideEffects;
 @end
 

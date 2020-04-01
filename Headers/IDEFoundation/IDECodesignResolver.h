@@ -6,49 +6,39 @@
 
 #import <objc/NSObject.h>
 
-@class DVTProvisioningProfileManager, DVTSigningCertificate, DVTSigningCertificateManager, IDEProvisioningInputs;
+@class DVTSigningCertificate, IDEProvisioningInputs;
 
 @interface IDECodesignResolver : NSObject
 {
-    BOOL _allowsAutomaticSelectionOfAllProfiles;
     DVTSigningCertificate *_signingCertificate;
-    DVTProvisioningProfileManager *_profileManager;
-    DVTSigningCertificateManager *_signingCertificateManager;
+    long long _automaticLocationStyle;
     IDEProvisioningInputs *_inputs;
 }
 
-+ (id)parametersForInputs:(id)arg1 identity:(id)arg2 profileUUID:(id)arg3 signingCertificateManager:(id)arg4 provisioningProfileManager:(id)arg5 withError:(id *)arg6;
-+ (id)parametersForInputs:(id)arg1 identity:(id)arg2 signingCertificateManager:(id)arg3 withError:(id *)arg4;
-+ (id)_identitySigningCertificatesInArray:(id)arg1 matchingIdentityString:(id)arg2 inputs:(id)arg3 withError:(id *)arg4;
-+ (id)parametersForInputs:(id)arg1 applicableSigningIdentityCertificates:(id)arg2 profileManager:(id)arg3 logAspect:(id)arg4 withError:(id *)arg5;
-+ (id)_filterCertificates:(id)arg1 inputs:(id)arg2 logAspect:(id)arg3 error:(id *)arg4;
-+ (id)parametersForInputs:(id)arg1 signingCertificateManager:(id)arg2 provisioningProfileManager:(id)arg3 withError:(id *)arg4;
-+ (id)signingIdentityCertificatesForTeamID:(id)arg1 certificateKind:(id)arg2 certificateManager:(id)arg3 logAspect:(id)arg4;
-+ (id)parametersForCertificate:(id)arg1;
 + (id)parametersForAdHocSigning;
 + (id)parametersForNullSigning;
-+ (id)resolutionErrorWithCode:(long long)arg1 message:(id)arg2 recoverySuggestion:(id)arg3 inputs:(id)arg4;
-+ (id)_errorForNoSigningCertificateMatchingAuto:(id)arg1;
-+ (id)automaticSigningCertificateFromCertificates:(id)arg1 certificateKind:(id)arg2 teamID:(id)arg3 outError:(id *)arg4;
++ (id)_errorForManuallySpecifiedIdentityMissingPrivateKey:(id)arg1;
++ (id)_errorForNoCertificateMatchingManualSpecifier:(id)arg1 team:(id)arg2 platform:(id)arg3 errorProvider:(id)arg4;
++ (id)_errorForNoSigningCertificateMatchingAuto:(id)arg1 teamID:(id)arg2 platform:(id)arg3;
++ (id)_errorForInvalidSigningCertificate:(id)arg1 platform:(id)arg2 errorProvider:(id)arg3;
++ (id)_manageCertificatesErrorWithCode:(long long)arg1 message:(id)arg2 recoverySuggestion:(id)arg3 team:(id)arg4 platform:(id)arg5 specifier:(id)arg6;
++ (id)_certificateMatchingPartialName:(id)arg1 signingCertificates:(id)arg2 team:(id)arg3;
++ (id)_certificateMatchingExactName:(id)arg1 signingCertificates:(id)arg2 team:(id)arg3;
++ (id)_certificateMatchingHash:(id)arg1 signingCertificates:(id)arg2;
++ (id)automaticSigningCertificateFromCertificates:(id)arg1 certificatePurpose:(id)arg2 teamID:(id)arg3 platform:(id)arg4 limitToIdentities:(BOOL)arg5 outError:(id *)arg6;
++ (id)_signingCertificateForManualSpecifier:(id)arg1 signingCertificates:(id)arg2 team:(id)arg3 platform:(id)arg4 errorProvider:(id)arg5 error:(id *)arg6;
++ (id)signingCertificateForIdentifier:(id)arg1 platform:(id)arg2 signingCertificates:(id)arg3 team:(id)arg4 errorProvider:(id)arg5 error:(id *)arg6;
++ (id)profileQualificationForProfile:(id)arg1 team:(id)arg2 bundleID:(id)arg3 platform:(id)arg4 signingCertificate:(id)arg5 appIDFeatures:(id)arg6 entitlements:(id)arg7 devices:(id)arg8 profileType:(id)arg9 allowTeamProfiles:(BOOL)arg10 verboseErrors:(BOOL)arg11;
 @property(readonly, nonatomic) IDEProvisioningInputs *inputs; // @synthesize inputs=_inputs;
-@property(retain, nonatomic) DVTSigningCertificateManager *signingCertificateManager; // @synthesize signingCertificateManager=_signingCertificateManager;
-@property(retain, nonatomic) DVTProvisioningProfileManager *profileManager; // @synthesize profileManager=_profileManager;
-@property(nonatomic) BOOL allowsAutomaticSelectionOfAllProfiles; // @synthesize allowsAutomaticSelectionOfAllProfiles=_allowsAutomaticSelectionOfAllProfiles;
+@property(nonatomic) long long automaticLocationStyle; // @synthesize automaticLocationStyle=_automaticLocationStyle;
 @property(retain, nonatomic) DVTSigningCertificate *signingCertificate; // @synthesize signingCertificate=_signingCertificate;
 - (void).cxx_destruct;
-- (id)_errorForNoCertificateMatchingManualSpecifier:(id)arg1;
 - (id)_errorForSigningCertificateOverrideInManual;
 - (id)_errorForProfile:(id)arg1 qualification:(id)arg2;
-- (id)_certificateMatchingPartialName:(id)arg1;
-- (id)_certificateMatchingExactName:(id)arg1;
-- (id)_certificateMatchingHash:(id)arg1;
-- (id)_signingCertificateForManualSpecifier:(id)arg1 error:(id *)arg2;
-- (BOOL)_isAutomaticDevelopmentSpecifier:(id)arg1;
-- (BOOL)_isAutomaticCertificateSpecifier:(id)arg1;
-- (BOOL)_hasManualCertificateSpecifier;
 - (id)_signingCertificateWithError:(id *)arg1;
 - (id)_profileLocatorWithError:(id *)arg1;
 - (id)_snapshotIncludingProfileWithErrors:(id *)arg1;
+- (BOOL)_wantVerboseErrors;
 - (id)parametersWithErrors:(id *)arg1;
 - (id)initWithInputs:(id)arg1;
 

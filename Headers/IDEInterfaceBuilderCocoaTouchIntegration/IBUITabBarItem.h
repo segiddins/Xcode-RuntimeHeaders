@@ -7,17 +7,18 @@
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBUIBarItem.h>
 
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBDocumentArchiving-Protocol.h>
-#import <IDEInterfaceBuilderCocoaTouchIntegration/NSCoding-Protocol.h>
 #import <IDEInterfaceBuilderCocoaTouchIntegration/NSCopying-Protocol.h>
 
-@class IBOffsetWrapper, IBUITabBar, NSImage, NSNumber, NSString;
+@class IBOffsetWrapper, IBUIColor, IBUITabBar, NSImage, NSNumber, NSString;
 
-@interface IBUITabBarItem : IBUIBarItem <IBDocumentArchiving, NSCoding, NSCopying>
+@interface IBUITabBarItem : IBUIBarItem <IBDocumentArchiving, NSCopying>
 {
+    BOOL _springLoaded;
+    IBUITabBar *_tabBar;
+    IBUIColor *_badgeColor;
     NSString *_badgeValue;
     NSImage *_selectedImage;
     NSNumber *_systemItemIdentifier;
-    IBUITabBar *_tabBar;
     IBOffsetWrapper *_titlePositionAdjustment;
 }
 
@@ -25,32 +26,33 @@
 + (id)systemTabBarItem:(int)arg1 withTargetRuntime:(id)arg2;
 + (id)keyPathsForValuesAffectingIbInspectedTitlePositionVerticalAdjustment;
 + (id)keyPathsForValuesAffectingIbInspectedTitlePositionHorizontalAdjustment;
-+ (id)keyPathsForValuesAffectingIbInspectedHasSearchTextPositionAdjustment;
++ (id)keyPathsForValuesAffectingIbInspectedHasTitlePositionAdjustment;
++ (id)keyPathsForValuesAffectingIbInspectedSystemItemIdentifier;
 + (id)keyPathsForValuesAffectingIbInspectedSelectedImage;
+@property(nonatomic, getter=isSpringLoaded) BOOL springLoaded; // @synthesize springLoaded=_springLoaded;
 @property(copy, nonatomic) IBOffsetWrapper *titlePositionAdjustment; // @synthesize titlePositionAdjustment=_titlePositionAdjustment;
 @property(copy, nonatomic) NSNumber *systemItemIdentifier; // @synthesize systemItemIdentifier=_systemItemIdentifier;
 @property(retain, nonatomic) NSImage *selectedImage; // @synthesize selectedImage=_selectedImage;
 @property(copy, nonatomic) NSString *badgeValue; // @synthesize badgeValue=_badgeValue;
+@property(copy, nonatomic) IBUIColor *badgeColor; // @synthesize badgeColor=_badgeColor;
+@property(readonly) __weak IBUITabBar *tabBar; // @synthesize tabBar=_tabBar;
 - (void).cxx_destruct;
-- (void)encodeSystemItemIdentifier:(id)arg1;
-- (void)decodeSystemItemIdentifier:(id)arg1;
 - (BOOL)isSystemItem;
 - (void)setTabBar:(id)arg1;
-- (id)titleFont;
-- (struct CGRect)titleRect;
-- (struct CGRect)frame;
 - (id)barView;
-- (id)tabBar;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
-- (void)archiveWithDocumentArchiver:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)shouldAcceptImages;
-- (void)ibWarnings:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
+- (void)ibPopulateIssues:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
 - (id)ibPasteboardTypes;
 - (id)ibQualifyingInfoForDefaultLabel;
-- (id)ibDocumentationPropertyInfosForKeyPath:(id)arg1;
+- (id)ibLocalLocalizableGeometryAttributeKeyPaths;
+- (Class)ibEditorClass;
+- (id)ibLocalPropertiesForInheritableMetricsInvalidation;
+- (id)ibLocalLocalizableStringsAttributeKeyPaths;
+- (id)ibLocalAttributeKeyPaths;
+- (id)ibDocumentationSymbolInfosForKeyPath:(id)arg1;
 - (void)setIbInspectedTitlePositionVerticalAdjustment:(double)arg1;
 - (double)ibInspectedTitlePositionVerticalAdjustment;
 - (void)setIbInspectedTitlePositionHorizontalAdjustment:(double)arg1;
@@ -59,10 +61,13 @@
 - (BOOL)ibInspectedHasTitlePositionAdjustment;
 - (void)setIbInspectedSystemItemIdentifier:(id)arg1;
 - (id)ibInspectedSystemItemIdentifier;
+- (void)setIbInspectedLandscapeImage:(id)arg1;
 - (void)setIbInspectedImage:(id)arg1;
 - (void)setIbInspectedTitle:(id)arg1;
 - (void)setIbInspectedSelectedImage:(id)arg1;
 - (id)ibInspectedSelectedImage;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

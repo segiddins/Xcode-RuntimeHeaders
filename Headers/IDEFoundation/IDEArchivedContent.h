@@ -6,9 +6,11 @@
 
 #import <objc/NSObject.h>
 
-@class DVTFilePath, IDEArchive, IDEArchivePackager, NSString;
+#import <IDEFoundation/IDEDistributableContent-Protocol.h>
 
-@interface IDEArchivedContent : NSObject
+@class DVTFilePath, IDEArchive, NSString;
+
+@interface IDEArchivedContent : NSObject <IDEDistributableContent>
 {
     IDEArchive *_archive;
 }
@@ -17,6 +19,7 @@
 + (id)soleArchivedContentRelativePathInDirectory:(id)arg1;
 + (id)archivedContentPathPlistKey;
 + (id)archivedContentPropertiesPlistKey;
++ (id)teamIdentifierForPath:(id)arg1;
 + (id)keyPathsForValuesAffectingContentPath;
 + (id)_archivedContentPathForArchive:(id)arg1;
 + (id)_archivedContentShortBundleVersionStringForArchive:(id)arg1;
@@ -27,17 +30,21 @@
 + (id)archivedContentWithArchive:(id)arg1;
 + (BOOL)fillArchivedContentInfoInArchiveInfoDictionary:(id)arg1 forContentInArchiveProductsDirectory:(id)arg2;
 + (id)contentClasses;
-@property(readonly) IDEArchive *archive; // @synthesize archive=_archive;
+@property(readonly) __weak IDEArchive *archive; // @synthesize archive=_archive;
 - (void).cxx_destruct;
-- (long long)autodetectedFormatForPackaging;
-- (BOOL)supportsPackagingAsFormat:(long long)arg1;
-@property(readonly) IDEArchivePackager *packager;
 @property(readonly) NSString *teamIdentifier;
 @property(readonly) NSString *shortBundleVersionString;
 @property(readonly) NSString *bundleVersion;
 @property(readonly) NSString *bundleIdentifier;
+@property(readonly) DVTFilePath *path;
 @property(readonly) DVTFilePath *contentPath;
 - (id)initWithArchive:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

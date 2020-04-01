@@ -17,8 +17,9 @@
 
 - (void).cxx_destruct;
 - (id)peekAtMemo:(id)arg1;
-- (void)sendMemo:(id)arg1 toClientUsingConfig:(id)arg2;
-- (void)sendMemo:(id)arg1 toBulkReceiver:(id)arg2;
+- (void)sendHeartbeatMemo:(id)arg1 toClientUsingConfig:(id)arg2;
+- (void)sendDataMemo:(id)arg1 toClientUsingConfig:(id)arg2;
+- (void)sendDataMemo:(id)arg1 toBulkReceiver:(id)arg2;
 - (id)init;
 
 // Remaining properties

@@ -6,13 +6,14 @@
 
 #import <objc/NSObject.h>
 
-@class DYCaptureArchive, DYContinuation, DYFuture, DYGuestAppSession, DYTransportSource, NSError, NSMapTable, NSMutableDictionary;
+@class DYCaptureArchive, DYContinuation, DYFuture, DYGuestAppSession, DYProgressDigest, DYTransportSource, NSError, NSMapTable, NSMutableDictionary;
 
 @interface DYCaptureSession : NSObject
 {
     DYGuestAppSession *_session;
     DYCaptureArchive *_archive;
     struct dispatch_queue_s *_queue;
+    struct dispatch_queue_s *_backgroundQueue;
     NSMutableDictionary *_finalConfigurationDictionary;
     DYTransportSource *_source;
     DYContinuation *_invalidationCompletion;
@@ -30,16 +31,24 @@
     BOOL _lockGraphicsAfterCompletion;
     BOOL _harvestStateAtEnd;
     BOOL _suspendAfterCompletion;
+    BOOL _noRecentGPUWorkloadDetected;
     BOOL _complete;
     BOOL _clientDidSendAllData;
     BOOL _deviceSupportsSessionSerial;
+    struct dispatch_source_s *_noGPUWorkloadDetectedTimer;
+    BOOL _noGPUWorkloadDetectedTimerSuspended;
+    BOOL _noGPUWorkloadDetectedTimerSignaled;
+    BOOL _noGPUWorkloadDetectedTimerMessagesCount;
+    DYProgressDigest *_progressDigest;
 }
 
 + (void)initialize;
 + (BOOL)accessInstanceVariablesDirectly;
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
+@property(nonatomic) __weak DYProgressDigest *progressDigest; // @synthesize progressDigest=_progressDigest;
 @property(nonatomic) BOOL complete; // @synthesize complete=_complete;
 @property(nonatomic) int storeSymbolicatorSignature; // @synthesize storeSymbolicatorSignature=_storeSymbolicatorSignature;
+@property(nonatomic) BOOL noRecentGPUWorkloadDetected; // @synthesize noRecentGPUWorkloadDetected=_noRecentGPUWorkloadDetected;
 @property(nonatomic) BOOL suspendAfterCompletion; // @synthesize suspendAfterCompletion=_suspendAfterCompletion;
 @property(nonatomic) BOOL harvestStateAtEnd; // @synthesize harvestStateAtEnd=_harvestStateAtEnd;
 @property(nonatomic) BOOL lockGraphicsAfterCompletion; // @synthesize lockGraphicsAfterCompletion=_lockGraphicsAfterCompletion;
@@ -49,15 +58,18 @@
 @property(nonatomic) BOOL automaticallyDeleteArchiveOnFailure; // @synthesize automaticallyDeleteArchiveOnFailure=_automaticallyDeleteArchiveOnFailure;
 @property(readonly, retain, nonatomic) DYCaptureArchive *archive; // @synthesize archive=_archive;
 - (void).cxx_destruct;
+- (void)_resetNOGPUWorkloadDetectedStatusWithForceRestoreMessage:(BOOL)arg1;
 - (void)_replaceArchive:(id)arg1;
 - (void)_postProcessArchive;
 - (void)_saveAPISpecificData:(id)arg1;
 - (void)_setupFinalConfigurationDictionary:(id)arg1;
+- (void)_receivedUsedClientData:(id)arg1;
 - (void)_receivedAllClientData:(id)arg1;
 - (void)_flushBuffers;
 - (BOOL)stopCapturing;
+- (BOOL)startCapturingWithSessionId:(unsigned int)arg1;
 - (BOOL)startCapturing;
-- (BOOL)_activateWithSession:(id)arg1 serial:(unsigned int)arg2 invalidationCompletion:(id)arg3;
+- (BOOL)_activateWithSession:(id)arg1 serial:(unsigned int)arg2 invalidationCompletion:(id)arg3 initiatedByInferior:(BOOL)arg4;
 - (BOOL)_sendActivationMessage;
 - (void)invalidate;
 - (void)_invalidate:(id)arg1;

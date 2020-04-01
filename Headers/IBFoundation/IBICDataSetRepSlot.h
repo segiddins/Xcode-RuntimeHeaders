@@ -6,24 +6,30 @@
 
 #import <IBFoundation/IBICSlot.h>
 
-@class IBICColorSpace, IBICGraphicsFeatureSet, IBICIdiom, IBICMemoryClass;
+@class IBICColorSpace, IBICGraphicsFeatureSet, IBICIdiom, IBICMemoryClass, IBICSubtype;
 
 @interface IBICDataSetRepSlot : IBICSlot
 {
     IBICIdiom *_idiom;
+    IBICSubtype *_subtype;
     IBICMemoryClass *_memory;
     IBICGraphicsFeatureSet *_graphicsFeatureSet;
     IBICColorSpace *_colorSpace;
 }
 
-+ (id)allDefaultFileTypes;
-+ (id)slotWithIdiom:(id)arg1 memory:(id)arg2 graphicsFeatureSet:(id)arg3;
-+ (id)variantSlotComponentClassesExcludingIdiom;
-+ (id)variantSlotComponentClassesExcludingCoreVariants;
 + (id)orderedComponentClasses;
++ (id)slotWithIdiom:(id)arg1 memory:(id)arg2 graphicsFeatureSet:(id)arg3;
++ (id)slotWithIdiom:(id)arg1;
++ (id)genesisSlotsForSlots:(id)arg1;
++ (Class)assetRepClass;
++ (Class)assetSetClass;
++ (id)slotFilterWithIdiomFilter:(id)arg1 subtypeFilter:(id)arg2 memoryFilter:(id)arg3 graphicsFeatureSetFilter:(id)arg4 colorSpaceFilter:(id)arg5;
++ (id)slotFilterWithNilMatching:(long long)arg1 idioms:(id)arg2 subtypes:(id)arg3 memoryClasses:(id)arg4 graphicsFeatureSets:(id)arg5 colorSpaces:(id)arg6;
++ (id)slotFilterUnionedWithStandardUniversalCounterpart:(BOOL)arg1 idioms:(id)arg2 subtypes:(id)arg3 memoryClasses:(id)arg4 graphicsFeatureSets:(id)arg5 colorSpaces:(id)arg6;
 @property(readonly) IBICColorSpace *colorSpace; // @synthesize colorSpace=_colorSpace;
 @property(readonly) IBICGraphicsFeatureSet *graphicsFeatureSet; // @synthesize graphicsFeatureSet=_graphicsFeatureSet;
 @property(readonly) IBICMemoryClass *memory; // @synthesize memory=_memory;
+@property(readonly) IBICSubtype *subtype; // @synthesize subtype=_subtype;
 @property(readonly) IBICIdiom *idiom; // @synthesize idiom=_idiom;
 - (void).cxx_destruct;
 - (id)outputFileNameGivenBaseName:(id)arg1 andExtension:(id)arg2;

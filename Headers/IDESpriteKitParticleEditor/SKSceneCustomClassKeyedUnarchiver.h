@@ -8,17 +8,21 @@
 
 #import <IDESpriteKitParticleEditor/NSKeyedUnarchiverDelegate-Protocol.h>
 
-@class NSString;
+@class NSString, SKSceneDocument;
 @protocol NSKeyedUnarchiverDelegate;
 
 @interface SKSceneCustomClassKeyedUnarchiver : NSKeyedUnarchiver <NSKeyedUnarchiverDelegate>
 {
     id <NSKeyedUnarchiverDelegate> _clientDelegate;
+    SKSceneDocument *_document;
 }
 
+@property(readonly, nonatomic) SKSceneDocument *document; // @synthesize document=_document;
 - (void).cxx_destruct;
 - (Class)unarchiver:(id)arg1 cannotDecodeObjectOfClassName:(id)arg2 originalClasses:(id)arg3;
+- (void)finishDecoding;
 - (id)initForReadingWithData:(id)arg1;
+- (id)initForReadingWithData:(id)arg1 forDocument:(id)arg2;
 - (id)delegate;
 - (void)setDelegate:(id)arg1;
 

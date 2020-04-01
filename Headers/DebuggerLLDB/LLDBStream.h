@@ -10,11 +10,10 @@
 
 @class NSString;
 
-__attribute__((visibility("hidden")))
 @interface LLDBStream : NSObject <DBGSBStream>
 {
     struct SBStream {
-        struct unique_ptr<lldb_private::Stream, std::__1::default_delete<lldb_private::Stream>> m_opaque_ap;
+        struct unique_ptr<lldb_private::Stream, std::__1::default_delete<lldb_private::Stream>> m_opaque_up;
         _Bool m_is_file;
     } _stream;
 }

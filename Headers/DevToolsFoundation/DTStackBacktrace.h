@@ -17,9 +17,9 @@
 + (id)_callStackReturnAddressesExcludingTwoFrames;
 + (id)currentStackBacktrace;
 + (id)stackBacktraceWithCallStackReturnAddresses:(id)arg1;
+- (void).cxx_destruct;
 - (id)_frameStringForAddress:(unsigned long long)arg1 symbolicatorPtr:(struct _CSTypeRef)arg2 symbolPtr:(struct _CSTypeRef)arg3;
 - (id)stringRepresentation;
-- (void)dealloc;
 - (id)initWithCallStackReturnAddresses:(id)arg1;
 - (id)init;
 

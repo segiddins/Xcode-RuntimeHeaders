@@ -12,7 +12,7 @@
 - (void)builder:(IDEBuilder *)arg1 didUpdateBuildStatusWithStateDescription:(NSString *)arg2 fileProgressString:(NSString *)arg3 builderProgress:(double)arg4;
 - (void)builderDidFinishExecuting:(IDEBuilder *)arg1;
 - (void)builderDidStartExecuting:(IDEBuilder *)arg1;
-- (void)builder:(IDEBuilder *)arg1 resultDidChange:(int)arg2;
+- (void)builder:(IDEBuilder *)arg1 resultDidChange:(long long)arg2;
 - (void)builder:(IDEBuilder *)arg1 activityLogSectionDidChange:(IDEActivityLogSection *)arg2;
 @end
 

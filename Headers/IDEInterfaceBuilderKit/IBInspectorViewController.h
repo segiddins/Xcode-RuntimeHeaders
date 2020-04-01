@@ -14,10 +14,10 @@
 @interface IBInspectorViewController : IDEInspectorViewController <IBConfigurablePropertyKeyPathAdapterDelegate>
 {
     IBMutableIdentityDictionary *_documentToObservingTokenMap;
-    DVTDelayedInvocation *_storyboardNameInvocation;
     DVTDelayedInvocation *_imageNameInvocation;
+    DVTDelayedInvocation *_systemImageNameInvocation;
     DVTDelayedInvocation *_soundNameInvocation;
-    DVTDelayedInvocation *_nibNameInvocation;
+    DVTDelayedInvocation *_systemSoundNameInvocation;
     NSSet *previousInspectedInterfaceBuilderDocuments;
     NSArrayController *_configurablePropertyAdapterController;
     NSXMLElement *_originalSlice;
@@ -32,7 +32,9 @@
     NSArray *_inspectedDocumentObjects;
     NSUserDefaultsController *_userDefaultsController;
     NSArray *_availableSoundNames;
+    NSArray *_availableSystemSoundNames;
     NSArray *_availableImageNames;
+    NSArray *_availableSystemImageNames;
 }
 
 + (id)keyPathsForValuesAffectingBundleIdentifierPlaceholder;
@@ -40,7 +42,9 @@
 + (id)keyPathsForValuesAffectingInspectedDocumentName;
 + (id)keyPathsForValuesAffectingInspectedDocument;
 + (id)inspectedArrayControllerKeys;
+@property(copy, nonatomic) NSArray *availableSystemImageNames; // @synthesize availableSystemImageNames=_availableSystemImageNames;
 @property(copy, nonatomic) NSArray *availableImageNames; // @synthesize availableImageNames=_availableImageNames;
+@property(copy, nonatomic) NSArray *availableSystemSoundNames; // @synthesize availableSystemSoundNames=_availableSystemSoundNames;
 @property(copy, nonatomic) NSArray *availableSoundNames; // @synthesize availableSoundNames=_availableSoundNames;
 @property(readonly) id <IDEInspectorContentController> configurablePropertyAdapterController; // @synthesize configurablePropertyAdapterController=_configurablePropertyAdapterController;
 @property(readonly, nonatomic) NSUserDefaultsController *userDefaultsController; // @synthesize userDefaultsController=_userDefaultsController;
@@ -52,25 +56,20 @@
 @property(copy, nonatomic) NSArray *availableStoryboardNames; // @synthesize availableStoryboardNames=_availableStoryboardNames;
 - (void).cxx_destruct;
 - (id)inspectorProperty:(id)arg1 toolTipContentFromKeyPath:(id)arg2 titleAttribute:(id)arg3 placeholderAttribute:(id)arg4;
-- (id)platformForToolTipDocumentationLookup;
-- (id)tokenForMethod:(id)arg1 className:(id)arg2 metaQueries:(id)arg3;
-- (id)documentationTokensFromKeyPath:(id)arg1 configurable:(BOOL)arg2;
-- (id)documentationTokenFromPropertyInfo:(id)arg1 objectForDocumentation:(id)arg2 metaQueries:(id)arg3;
-- (id)docTokenKeyVariationsFromDocumentationPropertyInfo:(id)arg1;
-- (id)lastObjectInKeyPath:(id)arg1;
-- (id)toolTipTitleFromKeyPath:(id)arg1 configurable:(BOOL)arg2 titleAttribute:(id)arg3 placeholderAttribute:(id)arg4;
 - (id)filePathForExternalInspectorContentWithIdentifier:(id)arg1;
 - (id)searchableAttributesForProperty:(id)arg1;
 - (void)didSetInspectedObjects:(id)arg1;
 - (id)willSetInspectedObjects:(id)arg1;
 - (void)stopObservingDocument:(id)arg1;
 - (void)startObservingDocument:(id)arg1;
-- (void)updateVisibiltyFlags;
+- (void)updateVisibilityFlags;
 - (void)constrainBoundsOfSelectionToNearestLegalSize;
 - (id)createNameInvocationForComputationKeyPath:(id)arg1 withStorageKeyPath:(id)arg2;
+- (id)computeAvailableSystemSoundNames;
+- (id)computeAvailableSystemImageNames;
 - (id)computeAvailableSoundNames;
 - (id)computeAvailableImageNames;
-- (id)computeResourceNamesForMediaType:(id)arg1;
+- (id)computeResourceNamesForMediaType:(id)arg1 sourceType:(long long)arg2;
 - (void)updateContainerDocumentNames;
 - (id)sliceElement;
 - (void)expandIncludeElements:(id)arg1;

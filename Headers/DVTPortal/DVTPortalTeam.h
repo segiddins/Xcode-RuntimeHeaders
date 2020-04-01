@@ -26,12 +26,13 @@
 @property(copy, nonatomic) NSString *teamID; // @synthesize teamID=_teamID;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
+- (id)plaStatusWithSession:(id)arg1 error:(id *)arg2;
 - (id)membershipForPlatform:(id)arg1;
 - (BOOL)supportsOneCertPerMac;
 - (BOOL)isFreeProvisioningTeam;
 - (BOOL)isEnterpriseTeam;
 - (BOOL)isUniversityTeam;
-- (BOOL)dvt_servicesTypeInstanceDidFinishLoading:(id *)arg1;
+- (BOOL)dvt_servicesTypeInstanceDidFinishLoadingWithContext:(id)arg1 error:(id *)arg2;
 @property(readonly, copy, nonatomic) NSSet *portalPrograms;
 @property(readonly, copy, nonatomic) NSArray *memberships; // @synthesize memberships=_memberships;
 - (id)description;

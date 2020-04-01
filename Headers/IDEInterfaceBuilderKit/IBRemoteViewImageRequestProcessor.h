@@ -14,7 +14,7 @@
 {
 }
 
-- (id)toolDescriptionForProcessingRequestsWithTargetRuntime:(id)arg1 role:(long long)arg2 scaleFactor:(double)arg3;
+- (id)toolDescriptionForProcessingRequestsWithTargetRuntime:(id)arg1 role:(long long)arg2 deviceTypeDescription:(id)arg3;
 - (id)performRequestOnBackgroundThreadWithData:(id)arg1 diagnosticsBlock:(CDUnknownBlockType)arg2 platformTool:(id)arg3;
 - (struct CGColorSpace *)colorSpace;
 - (id)classNamesForFailedRequestsSeparatedByComma:(id)arg1;

@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Foundation/NSObject.h>
+#import <objc/NSObject.h>
 
 #import <DevToolsSupport/PBXTSByteStreamConsuming-Protocol.h>
 
@@ -13,31 +13,31 @@
 
 @interface PBXTSTask : NSObject <PBXTSByteStreamConsuming>
 {
-    BOOL _isActive;
     NSObject<PBXTSTaskDelegate> *_delegate;
     NSTask *_task;
     NSPipe *_toTaskPipe;
     NSPipe *_fromTaskPipe;
     NSFileHandle *_fromTaskHandle;
     NSFileHandle *_toTaskHandle;
-    BOOL _readTaskOutput;
-    BOOL _stopRequested;
-    BOOL _taskIsRunning;
-    BOOL _gotTaskTerminationNotification;
-    BOOL _gotLastFileNotification;
     NSString *_taskPath;
     NSString *_taskDirectory;
     NSArray *_taskArgs;
     NSDictionary *_taskEnv;
     NSData *_taskAutoStdinData;
-    int _terminationStatus;
-    BOOL _startsNewProcessGroup;
     PBXTSByteStream *_byteStream;
     NSString *_dataCaptureRunLoopMode;
     NSObject<PBXTSTaskSynchronizedFileHandle> *_synchronizedFileHandleDelegate;
     NSConditionLock *_writeLock;
     NSMutableArray *_writeQueue;
     NSArray *_preferredArchitectures;
+    int _terminationStatus;
+    BOOL _isActive;
+    BOOL _readTaskOutput;
+    BOOL _stopRequested;
+    BOOL _taskIsRunning;
+    BOOL _gotTaskTerminationNotification;
+    BOOL _gotLastFileNotification;
+    BOOL _startsNewProcessGroup;
 }
 
 + (void)checkInRunLoopMode:(id)arg1;
@@ -48,6 +48,7 @@
 + (id)_cpuStringForCPUSubType:(id)arg1;
 + (id)_cpuTypeForArch:(id)arg1;
 @property(retain) NSArray *preferredArchitectures; // @synthesize preferredArchitectures=_preferredArchitectures;
+- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (void)setTaskAutomaticStandardInData:(id)arg1;
 - (id)taskAutomaticStandardInData;
@@ -96,7 +97,6 @@
 - (BOOL)isRunning;
 - (int)platformExitInformation;
 - (int)terminationStatus;
-- (void)finalize;
 - (void)dealloc;
 - (id)init;
 

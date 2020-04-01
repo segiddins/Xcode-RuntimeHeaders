@@ -6,21 +6,23 @@
 
 #import <IDEInterfaceBuilderKit/IBDeviceSubtype.h>
 
-@class NSArray, NSMutableDictionary;
+@class NSArray, NSDictionary;
 
 @interface IBCocoaTouchDeviceSubtype : IBDeviceSubtype
 {
-    NSMutableDictionary *_legacyScreenMetricsByAdaptationIdentifier;
-    NSArray *_allLegacyScreenMetrics;
+    NSDictionary *_screenMetricsByLayout;
+    NSArray *_allScreenMetrics;
 }
 
+@property(readonly, nonatomic) NSArray *allScreenMetrics; // @synthesize allScreenMetrics=_allScreenMetrics;
 - (void).cxx_destruct;
 - (id)idiom;
 - (id)defaultScreenMetrics;
-@property(readonly, nonatomic) NSArray *screenMetrics;
-- (id)screenMetricsForAdaptationIdentifier:(id)arg1;
+- (id)_makeScreenMetricsForAdaptationsWithLayout:(id)arg1;
+- (id)screenMetricsForAdaptation:(id)arg1;
 - (id)makeScreenMetricsWithIdiom:(id)arg1 displayName:(id)arg2 archiveIdentifier:(id)arg3 landscapeSize:(struct CGSize)arg4 portraitSize:(struct CGSize)arg5 minimumSupportedOSVersion:(id)arg6 legacyIdentifiersForMigration:(id)arg7;
-- (id)screenMetricsArchivingIdentifierForAdaptationType:(id)arg1;
+- (id)screenMetricsArchivingIdentifierForLayout:(id)arg1;
+- (id)initWithExtension:(id)arg1 idiom:(id)arg2;
 
 @end
 

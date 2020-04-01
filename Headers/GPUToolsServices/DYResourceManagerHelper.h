@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class DYResourceStreamer, NSCache, NSMutableSet;
+@class DYResourceStreamer, DeviceResourceRequestPriorityQueue, NSCache, NSMutableSet;
 @protocol DYCaptureStore;
 
 @interface DYResourceManagerHelper : NSObject
@@ -20,15 +20,18 @@
     struct dispatch_queue_s *_resourceQueue;
     struct dispatch_queue_s *_deviceQueue;
     int _captureStoreSpinLock;
+    DeviceResourceRequestPriorityQueue *_resourceRequestQueue;
 }
 
-+ (id)_keyForResource:(id)arg1 sharegroup:(unsigned long long)arg2 funcIndex:(unsigned int)arg3;
++ (id)_keyForResource:(id)arg1 sharegroup:(unsigned long long)arg2 funcIndex:(unsigned int)arg3 subCommandIndex:(int)arg4;
 - (void).cxx_destruct;
 - (BOOL)hasResourceStreamer;
 - (id)updateResource:(id)arg1 sharegroup:(unsigned long long)arg2;
 - (BOOL)hasResourceBeenUpdated:(unsigned long long)arg1 resourceType:(unsigned int)arg2 container:(unsigned long long)arg3;
 - (void)invalidateDeviceResource:(id)arg1 sharegroup:(unsigned long long)arg2 functionIndex:(unsigned int)arg3;
 - (void)invalidateDeviceCache;
+- (id)loadDeviceResourceBatch:(id)arg1 withCompression:(unsigned long long)arg2 priority:(long long)arg3 sharegroup:(unsigned long long)arg4 functionIndex:(unsigned int)arg5;
+- (id)loadDeviceResource:(id)arg1 sharegroup:(unsigned long long)arg2 functionIndex:(unsigned int)arg3 subCommandIndex:(int)arg4;
 - (id)loadDeviceResource:(id)arg1 sharegroup:(unsigned long long)arg2 functionIndex:(unsigned int)arg3;
 - (id)loadTextureImageBackingStore:(id)arg1 creationClass:(Class)arg2;
 - (id)loadCaptureStoreData:(id)arg1;

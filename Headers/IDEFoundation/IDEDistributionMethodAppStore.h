@@ -4,23 +4,21 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <IDEFoundation/IDEDistributionMethod.h>
+#import <IDEFoundation/IDEDistributionMethodAppleSigning.h>
 
-@class DVTPlatform;
-
-@interface IDEDistributionMethodAppStore : IDEDistributionMethod
+@interface IDEDistributionMethodAppStore : IDEDistributionMethodAppleSigning
 {
 }
 
-@property(readonly) DVTPlatform *supportedPlatform;
-- (BOOL)requiresDeveloperAccount;
+- (id)provisioningProfilePurpose;
+- (id)shortTitle;
+- (id)subtitle;
+- (id)title;
+- (id)distributionOptionIdentifiers;
 - (BOOL)isAppStoreBound;
-- (id)orderedDistributionStepClassNamesForTask:(int)arg1;
-- (id)orderedDistributionStepClassNames;
-- (id)exportStepName;
-- (id)availableICloudEnvironmentsOverride;
-- (id)taskNoun;
-- (id)taskVerb;
+- (id)commandLineName;
+- (BOOL)requiresAppStoreConfigurationForDestination:(long long)arg1;
+- (id)appStoreName;
 
 @end
 

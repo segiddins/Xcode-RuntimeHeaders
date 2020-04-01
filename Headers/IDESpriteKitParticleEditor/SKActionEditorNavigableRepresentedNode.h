@@ -4,15 +4,17 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Foundation/NSObject.h>
+#import <objc/NSObject.h>
 
 #import <IDESpriteKitParticleEditor/IDEKeyDrivenNavigableItemRepresentedObject-Protocol.h>
+#import <IDESpriteKitParticleEditor/SKDocumentMember-Protocol.h>
 
-@class DVTDocumentLocation, DVTFileDataType, IDEFileReference, NSArray, NSImage, NSMutableArray, NSString, SKNode;
+@class DVTDocumentLocation, DVTFileDataType, IDEFileReference, NSArray, NSImage, NSMutableArray, NSNull, NSString, NSURL, SKEditorDocument, SKNode, _TtC13DVTFoundation9DVTSymbol;
 
-@interface SKActionEditorNavigableRepresentedNode : NSObject <IDEKeyDrivenNavigableItemRepresentedObject>
+@interface SKActionEditorNavigableRepresentedNode : NSObject <SKDocumentMember, IDEKeyDrivenNavigableItemRepresentedObject>
 {
     NSArray *_children;
+    NSString *_navigableItemName;
     SKNode *_representedNode;
     NSMutableArray *_actions;
 }
@@ -20,28 +22,39 @@
 @property(retain, nonatomic) NSMutableArray *actions; // @synthesize actions=_actions;
 @property(readonly, nonatomic) SKNode *representedNode; // @synthesize representedNode=_representedNode;
 - (void).cxx_destruct;
+@property(nonatomic) __weak SKEditorDocument *document;
+@property(readonly, nonatomic) DVTDocumentLocation *navigableItem_contentDocumentLocation;
 - (id)ideModelObjectTypeIdentifier;
-@property(readonly) NSString *navigableItem_name;
+@property(readonly, nonatomic) BOOL navigableItem_isLeaf;
+@property(readonly, nonatomic) NSString *navigableItem_name;
 @property(readonly, nonatomic) NSArray *children;
 - (void)updateRepresentedNode:(id)arg1;
-- (id)initForRepresentedNode:(id)arg1;
+- (id)initForRepresentedNavigableNode:(id)arg1 inDocument:(id)arg2;
+- (id)initForRepresentedNode:(id)arg1 inDocument:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
-@property(readonly) NSString *navigableItem_accessibleImageDescription;
-@property(readonly) DVTDocumentLocation *navigableItem_contentDocumentLocation;
-@property(readonly) DVTFileDataType *navigableItem_documentType;
-@property(readonly) IDEFileReference *navigableItem_fileReference;
-@property(readonly) NSString *navigableItem_groupIdentifier;
-@property(readonly) NSImage *navigableItem_image;
-@property(readonly) BOOL navigableItem_isLeaf;
-@property(readonly) BOOL navigableItem_isMajorGroup;
-@property(readonly) BOOL navigableItem_missingReferencedContentIsImportant;
-@property(readonly) BOOL navigableItem_referencedContentExists;
-@property(readonly) NSString *navigableItem_subtitle;
-@property(readonly) NSString *navigableItem_toolTip;
+@property(readonly, nonatomic) NSString *navigableItem_accessibilityIdentifier;
+@property(readonly, nonatomic) NSString *navigableItem_accessibleImageDescription;
+@property(readonly, nonatomic) NSArray *navigableItem_additionalFilterMatchingText;
+@property(readonly, nonatomic) NSArray *navigableItem_childRepresentedObjects;
+@property(readonly, nonatomic) DVTFileDataType *navigableItem_documentType;
+@property(readonly, nonatomic) IDEFileReference *navigableItem_fileReference;
+@property(readonly, nonatomic) NSNull *navigableItem_filtered;
+@property(readonly, nonatomic) NSString *navigableItem_groupIdentifier;
+@property(readonly, nonatomic) NSImage *navigableItem_image;
+@property(readonly, nonatomic) BOOL navigableItem_isEnabled;
+@property(readonly, nonatomic) BOOL navigableItem_isMajorGroup;
+@property(readonly, nonatomic) BOOL navigableItem_isVisible;
+@property(readonly, nonatomic) BOOL navigableItem_missingReferencedContentIsImportant;
+@property(readonly, nonatomic) id navigableItem_parentRepresentedObject;
+@property(readonly, nonatomic) BOOL navigableItem_referencedContentExists;
+@property(readonly, nonatomic) _TtC13DVTFoundation9DVTSymbol *navigableItem_representedSymbol;
+@property(readonly, nonatomic) NSURL *navigableItem_representedURL;
+@property(readonly, nonatomic) NSString *navigableItem_subtitle;
+@property(readonly, nonatomic) NSString *navigableItem_toolTip;
 @property(readonly) Class superclass;
 
 @end

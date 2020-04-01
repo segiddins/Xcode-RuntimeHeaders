@@ -21,10 +21,12 @@
     NSSet *_conflictingConstraintSets;
     NSSet *_ambiguousViewStatusGroups;
     NSDictionary *_misplacedViewsToMisplacementStatus;
+    NSSet *_frameDecidedItems;
     NSSet *_objects;
 }
 
 @property(readonly, nonatomic) NSSet *objects; // @synthesize objects=_objects;
+@property(readonly, nonatomic) NSSet *frameDecidedItems; // @synthesize frameDecidedItems=_frameDecidedItems;
 @property(readonly, nonatomic) NSDictionary *viewsToLayoutFrames; // @synthesize viewsToLayoutFrames=_viewsToLayoutFrames;
 @property(readonly, nonatomic) NSDictionary *misplacedViewsToMisplacementStatus; // @synthesize misplacedViewsToMisplacementStatus=_misplacedViewsToMisplacementStatus;
 @property(readonly, nonatomic) NSSet *ambiguousViewStatusGroups; // @synthesize ambiguousViewStatusGroups=_ambiguousViewStatusGroups;
@@ -35,8 +37,10 @@
 - (void)enumerateMisplacedViewsUsingBlock:(CDUnknownBlockType)arg1;
 - (void)enumerateAmbiguousViewsUsingBlock:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) NSSet *misplacedOnlyStatusSet; // @synthesize misplacedOnlyStatusSet=_lazyMisplacedOnlyStatusSet;
+- (BOOL)isViewMisplaced:(id)arg1 forOrientation:(unsigned long long)arg2;
 - (BOOL)isViewMisplaced:(id)arg1;
 - (BOOL)isViewUninitialized:(id)arg1;
+- (BOOL)isViewAmbiguous:(id)arg1 forOrientation:(unsigned long long)arg2;
 - (BOOL)isViewAmbiguous:(id)arg1;
 - (BOOL)isViewAffectedByConflictingConstraints:(id)arg1;
 - (void)enumerateAmbiguityGroupsForView:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
@@ -50,12 +54,11 @@
 @property(readonly, nonatomic) BOOL hasIssues;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToAutolayoutStatus:(id)arg1;
-- (BOOL)isEqualToAutolayoutStatus:(id)arg1 ignoring:(unsigned long long)arg2;
 @property(readonly) unsigned long long hash;
 - (id)statusByUnioningWithStatuses:(id)arg1;
 - (void)encodeWithBinaryArchiver:(id)arg1;
 - (id)initWithBinaryUnarchiver:(id)arg1;
-- (id)initWithConflictingConstraintSets:(id)arg1 ambiguousViewStatusGroups:(id)arg2 misplacedViewsToMisplacementStatus:(id)arg3 viewsToLayoutFrames:(id)arg4;
+- (id)initWithConflictingConstraintSets:(id)arg1 ambiguousViewStatusGroups:(id)arg2 misplacedViewsToMisplacementStatus:(id)arg3 viewsToLayoutFrames:(id)arg4 frameDecidedItems:(id)arg5;
 - (id)init;
 
 // Remaining properties

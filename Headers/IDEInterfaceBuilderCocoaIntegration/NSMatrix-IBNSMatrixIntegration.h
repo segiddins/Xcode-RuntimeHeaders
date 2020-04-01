@@ -6,7 +6,16 @@
 
 #import <AppKit/NSMatrix.h>
 
-@interface NSMatrix (IBNSMatrixIntegration)
+#import <IDEInterfaceBuilderCocoaIntegration/IBDocumentArchiving-Protocol.h>
+
+@class NSString;
+
+@interface NSMatrix (IBNSMatrixIntegration) <IBDocumentArchiving>
++ (id)keyPathsForValuesAffectingIbInspectedControlSize;
++ (id)keyPathsForValuesAffectingIbInspectedInterCellSpacingHeight;
++ (id)keyPathsForValuesAffectingIbInspectedInterCellSpacingWidth;
++ (id)keyPathsForValuesAffectingIbInspectedCellSizeHeight;
++ (id)keyPathsForValuesAffectingIbInspectedCellSizeWidth;
 + (id)keyPathsForValuesAffectingIbInspectedNumberOfColumns;
 + (id)keyPathsForValuesAffectingIbInspectedNumberOfRows;
 + (id)keyPathsForValuesAffectingCell;
@@ -67,7 +76,7 @@
 - (BOOL)ibIsChildTypicalConnectionTarget:(id)arg1;
 - (Class)ibTrackerClass;
 - (Class)ibEditorClass;
-- (void)ibWarnings:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
+- (void)ibPopulateIssues:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
 - (id)ibOrderedSnapshotAttributesKeyPaths;
 - (BOOL)ibCanRemoveChildren:(id)arg1;
 - (BOOL)ibToManyRelationSupportsReplacement:(id)arg1;
@@ -75,5 +84,17 @@
 - (void)ibPopulateEditorSelectionOrderRelationLists:(id)arg1;
 - (id)ibUndoKeyPathForToManyRelationshipKeyPath:(id)arg1;
 - (void)ibPopulateChildRelationOrder:(id)arg1;
+- (id)ibLocalLocalizableGeometryAttributeKeyPaths;
+- (id)ibLocalAttributeKeyPaths;
+- (id)ibLocalChildToManyRelationshipsKeyPaths;
+- (id)ibLocalChildToOneRelationshipsKeyPaths;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @end
 

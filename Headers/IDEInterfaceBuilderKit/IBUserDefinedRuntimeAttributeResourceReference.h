@@ -13,6 +13,7 @@
 
 + (id)referenceToVariantSet:(id)arg1 fromDocumentObject:(id)arg2 originalValue:(id)arg3 attributeIndex:(long long)arg4 transformer:(id)arg5;
 - (BOOL)updateValueFromResourceValueIfNeeded:(id)arg1 inDocument:(id)arg2;
+- (id)description;
 - (id)initWithVariantSet:(id)arg1 documentObject:(id)arg2 originalValue:(id)arg3 index:(long long)arg4 transformer:(id)arg5;
 
 @end

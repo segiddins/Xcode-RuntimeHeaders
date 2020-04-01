@@ -14,6 +14,7 @@
     BOOL _restore;
 }
 
++ (BOOL)supportsSecureCoding;
 + (id)keyPathsForValuesAffectingInspectorTextureFileNames;
 + (id)keyPathsForValuesAffectingInspectorRestore;
 + (id)keyPathsForValuesAffectingInspectorResize;

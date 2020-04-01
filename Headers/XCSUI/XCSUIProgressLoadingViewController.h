@@ -4,21 +4,23 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <DVTKit/DVTViewController.h>
+#import <DVTViewControllerKit/DVTViewController.h>
 
-@class NSProgressIndicator, NSTextField;
+@class NSError, NSProgressIndicator, NSTextField;
 
 @interface XCSUIProgressLoadingViewController : DVTViewController
 {
     double _minProgressIndicatorValue;
     double _maxProgressIndicatorValue;
     double _progressIndicatorValue;
+    NSError *_error;
     NSProgressIndicator *_progressIndicator;
     NSTextField *_loadingLabel;
 }
 
 @property __weak NSTextField *loadingLabel; // @synthesize loadingLabel=_loadingLabel;
 @property __weak NSProgressIndicator *progressIndicator; // @synthesize progressIndicator=_progressIndicator;
+@property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(nonatomic) double progressIndicatorValue; // @synthesize progressIndicatorValue=_progressIndicatorValue;
 @property(nonatomic) double maxProgressIndicatorValue; // @synthesize maxProgressIndicatorValue=_maxProgressIndicatorValue;
 @property(nonatomic) double minProgressIndicatorValue; // @synthesize minProgressIndicatorValue=_minProgressIndicatorValue;

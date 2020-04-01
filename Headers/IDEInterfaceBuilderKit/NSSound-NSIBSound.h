@@ -7,6 +7,7 @@
 #import <AppKit/NSSound.h>
 
 @interface NSSound (NSIBSound)
+- (id)ibTransformValueBeforePushingOntoUndoStackWithDocument:(id)arg1;
 - (id)replacementObjectForCoder:(id)arg1;
 @end
 

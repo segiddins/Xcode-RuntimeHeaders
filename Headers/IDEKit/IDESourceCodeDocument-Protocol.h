@@ -6,12 +6,13 @@
 
 #import <IDEKit/NSObject-Protocol.h>
 
-@class DVTTextDocumentLocation, DVTTextStorage, NSString;
+@class DVTTextDocumentLocation, NSString;
 
 @protocol IDESourceCodeDocument <NSObject>
-@property(readonly) DVTTextStorage *textStorage;
-- (struct _NSRange)characterRangeFromDocumentLocation:(DVTTextDocumentLocation *)arg1;
-- (DVTTextDocumentLocation *)documentLocationFromCharacterRange:(struct _NSRange)arg1;
+- (BOOL)hasMultiLineAnnotationHighlight;
+- (DVTTextDocumentLocation *)documentLocationWithLastLineRangeAtLocation:(DVTTextDocumentLocation *)arg1;
+- (DVTTextDocumentLocation *)documentLocation:(DVTTextDocumentLocation *)arg1 byUnion:(DVTTextDocumentLocation *)arg2;
+- (DVTTextDocumentLocation *)documentLocationWithEnclosingLineRangeAtLocation:(DVTTextDocumentLocation *)arg1;
 - (DVTTextDocumentLocation *)insertCharactersAfterLocation:(DVTTextDocumentLocation *)arg1 withString:(NSString *)arg2;
 - (DVTTextDocumentLocation *)insertCharactersBeforeLocation:(DVTTextDocumentLocation *)arg1 withString:(NSString *)arg2;
 - (DVTTextDocumentLocation *)replaceCharactersAtLocation:(DVTTextDocumentLocation *)arg1 withString:(NSString *)arg2;

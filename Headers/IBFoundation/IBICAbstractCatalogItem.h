@@ -6,13 +6,13 @@
 
 #import <objc/NSObject.h>
 
+#import <IBFoundation/IBICActivtyItem-Protocol.h>
 #import <IBFoundation/NSCoding-Protocol.h>
 
 @class NSArray, NSData, NSDate, NSDictionary, NSMutableDictionary, NSNumber, NSOrderedSet, NSSet, NSString, NSURL;
 
-@interface IBICAbstractCatalogItem : NSObject <NSCoding>
+@interface IBICAbstractCatalogItem : NSObject <IBICActivtyItem, NSCoding>
 {
-    int _retainCountMinusOne;
     NSDictionary *_cachedChildrenByIdentifier;
     NSArray *_cachedDisplayOrderedChildren;
     NSOrderedSet *_intrinsicallyOrderedChildren;
@@ -31,11 +31,12 @@
     NSNumber *_compressionType;
 }
 
-+ (BOOL)ecnodesCompressionForChildren;
++ (long long)validateCompressionType:(long long)arg1;
++ (BOOL)encodesCompressionForChildren;
 + (BOOL)supportsCompression;
 + (id)fileUTIsToAllowInUnstructuredImport;
 + (id)fileExtensionsToAllowInUnstructuredImport;
-+ (id)syntehsizeItemsFromLoosePaths:(id)arg1 claimingPaths:(id *)arg2;
++ (id)synthesizeItemsFromLoosePaths:(id)arg1 claimingPaths:(id *)arg2;
 + (id)importPriority;
 + (id)contentReferenceTypeName;
 + (id)catalogItemFileExtensionWithAlternatesForReading;
@@ -53,6 +54,7 @@
 + (id)allDescendantsOfItemsIncludingItems:(id)arg1;
 + (BOOL)areItemsFromSameRoot:(id)arg1;
 + (id)pluralTypeNameForIssues;
++ (id)typeNameForDisplay;
 + (id)typeNameForIssues;
 + (id)classNameComponents;
 + (id)uniqueKeyForCatalogCompilationSelection;
@@ -63,6 +65,7 @@
 + (id)keysThatImpactDisplayOrder;
 + (BOOL)fileNameIsIdentifier;
 + (id)keysThatImpactIdentifier;
++ (id)displayNameForChildren;
 + (BOOL)displayNameIsItemName;
 + (BOOL)itemNameIsFileNameWithoutCatalogExtension;
 + (void)updateModificationDatesOfItem:(id)arg1 withMutationResult:(id)arg2;
@@ -85,6 +88,7 @@
 @property long long descendantChangeCount; // @synthesize descendantChangeCount=_descendantChangeCount;
 @property long long changeCount; // @synthesize changeCount=_changeCount;
 - (void).cxx_destruct;
+- (id)verifyExistenceInCompiledBundle:(id)arg1 forPlatform:(id)arg2;
 - (BOOL)isEqualForUnitTests:(id)arg1;
 - (long long)effectiveCompressionType;
 - (long long)incrementThumbnailSourceChangeGeneration;
@@ -114,6 +118,9 @@
 - (id)enclosingItemThatCanHostItems:(id)arg1 includingReceiver:(BOOL)arg2;
 - (id)firstEnclosingItemIncludingReceiver:(BOOL)arg1 passingTest:(CDUnknownBlockType)arg2;
 - (id)rootItem;
+@property(readonly, nonatomic) long long activityProgress;
+@property(readonly, nonatomic) NSString *activityName;
+- (void)recursivelyNotifyAboutIssuesUpdate;
 - (void)recursivelyNotifyAboutDisplayPropertiesChanged;
 - (void)recursivelyNotifyAboutDidChange:(CDUnknownBlockType)arg1;
 - (void)recursivelyNotifyAboutChangeToObject:(id)arg1 forKey:(id)arg2 oldValue:(id)arg3 newValue:(id)arg4 itemWithDisplayOrderChange:(id)arg5;
@@ -122,8 +129,9 @@
 - (void)updateDescendantChangeCount;
 - (void)updateChangeCount;
 - (id)descriptionShortClassName;
-- (id)pluralTypeNameForIssues;
-- (id)typeNameForIssues;
+@property(readonly, nonatomic) NSString *pluralTypeNameForIssues;
+@property(readonly, nonatomic) NSString *typeNameForDisplay;
+@property(readonly, nonatomic) NSString *typeNameForIssues;
 - (void)populateIssues:(id)arg1 context:(id)arg2;
 - (BOOL)exportToURL:(id)arg1 error:(id *)arg2;
 - (id)fileWrapperRepresentationWithOptions:(unsigned long long)arg1;
@@ -144,18 +152,19 @@
 - (id)childrenWithFileName:(id)arg1;
 - (long long)numberOfChildrenWithFileName:(id)arg1;
 - (id)childForIdentifier:(id)arg1;
-- (id)description;
-- (id)debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly, copy) NSString *debugDescription;
 - (id)descriptionWithIndent:(long long)arg1 includeChildren:(BOOL)arg2;
 - (void)enumerateDescriptionAttributeComponents:(CDUnknownBlockType)arg1;
 - (void)populateMutatorsToAddRequiredChildCounterparts:(id)arg1;
 - (void)removeAllChildren;
 - (void)removeFromParent;
+- (void)addChildren:(id)arg1 andUpdateIdentifierToBeUnique:(BOOL)arg2;
 - (void)addChildren:(id)arg1;
 - (void)removeChildren:(id)arg1;
 - (void)removeChild:(id)arg1;
 - (void)addChild:(id)arg1 andUpdateIdentifierToBeUnique:(BOOL)arg2;
-- (void)updateIdentifierOfIncommingChildToBeUnique:(id)arg1;
+- (void)updateIdentifierOfIncomingChildToBeUnique:(id)arg1;
 - (void)addChild:(id)arg1;
 - (void)insertChild:(id)arg1 atIndex:(id)arg2;
 @property(readonly, nonatomic) long long childOrdering;
@@ -197,6 +206,7 @@
 - (void)updateInitialModificationDateForOnDiskMutationIfNecessaryWithMutationResult:(id)arg1;
 - (BOOL)updateModificationDatesWithMutationResult:(id)arg1;
 - (void)setAssetDataFromPath:(id)arg1;
+- (void)updateModificationDateAndKVONotify:(id)arg1;
 @property(copy, nonatomic) NSData *assetData;
 @property(readonly, nonatomic) IBICAbstractCatalogItem *effectiveNodeForIssueGenerationForCARCompiler;
 @property(readonly, nonatomic) NSDate *effectiveModificationDateForCARCompiler;
@@ -209,6 +219,8 @@
 - (id)initWithCoder:(id)arg1;
 - (id)init;
 - (void)enumerateSizeProvidingItemsForValidatingBrandAssetCollection:(CDUnknownBlockType)arg1;
+- (void)populateLocaleImportInfo:(id)arg1 forLocale:(id)arg2 withDevelopmentLanguage:(id)arg3;
+- (void)populateAppearanceImportInfo:(id)arg1 withOptions:(id)arg2 forLuminosityAppearance:(id)arg3 vibrancyAppearance:(id)arg4 contrastAppearance:(id)arg5;
 - (BOOL)populateNamedAssetImportInfo:(id)arg1 allCompiledItems:(id)arg2 withOptions:(id)arg3 error:(id *)arg4;
 - (id)fullyQualifiedRuntimeNameWithOptions:(id)arg1;
 - (Class)manifestArchivist:(id)arg1 childClassForChildEntry:(id)arg2 results:(id)arg3;
@@ -228,11 +240,11 @@
 - (unsigned long long)manifestArchivist:(id)arg1 conflictStateForChild:(id)arg2;
 - (id)manifestArchivist:(id)arg1 slotForChild:(id)arg2;
 - (Class)manifestArchivistSlotClassForChildren:(id)arg1;
-- (BOOL)_isDeallocating;
-- (BOOL)_tryRetain;
-- (unsigned long long)retainCount;
-- (oneway void)release;
-- (id)retain;
+- (BOOL)shouldPerformCV3DValidation;
+
+// Remaining properties
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

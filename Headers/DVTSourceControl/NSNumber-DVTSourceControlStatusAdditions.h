@@ -7,6 +7,6 @@
 #import <Foundation/NSNumber.h>
 
 @interface NSNumber (DVTSourceControlStatusAdditions)
-@property(readonly) unsigned long long dvtscm_statusValue;
+- (unsigned long long)dvtscm_statusValue;
 @end
 

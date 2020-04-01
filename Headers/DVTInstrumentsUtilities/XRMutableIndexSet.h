@@ -13,10 +13,6 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)addIndexesInRange:(struct _XRIndexRange)arg1;
 - (void)addIndex:(unsigned long long)arg1;
-- (void)_addRange:(struct _XRIndexRange)arg1;
-- (void)_mergeRangesFromIndex:(unsigned long long)arg1;
-- (void)_insertRange:(struct _XRIndexRange)arg1 atIndex:(unsigned long long)arg2;
-- (void)growArray;
 
 @end
 

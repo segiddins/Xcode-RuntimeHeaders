@@ -25,7 +25,7 @@
 + (BOOL)wantsEditionBar;
 @property(readonly) DVTScopeBarView *scopeBarView; // @synthesize scopeBarView=_scopeBarView;
 @property(readonly) NSArrayController *arrayController; // @synthesize arrayController=_arrayController;
-@property(readonly) DVTTableView *tableView; // @synthesize tableView=_tableView;
+@property(retain) DVTTableView *tableView; // @synthesize tableView=_tableView;
 - (void).cxx_destruct;
 - (id)makeProtoptypeStepperTextField;
 - (id)makeProtoptypeTextField;

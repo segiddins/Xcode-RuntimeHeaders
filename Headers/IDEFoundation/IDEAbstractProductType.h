@@ -10,6 +10,9 @@
 {
 }
 
++ (BOOL)productTypeIdentifierIsMessagesExtension:(id)arg1;
++ (BOOL)productTypeIdentifierIsTodayExtension:(id)arg1;
++ (BOOL)productTypeIdentifierIsIntentExtensionFamily:(id)arg1;
 + (BOOL)productTypeIdentifierIsWatch1Extension:(id)arg1;
 + (BOOL)productTypeIdentifierIsWatch2Extension:(id)arg1;
 + (BOOL)productTypeIdentifierIsWatch1Application:(id)arg1;

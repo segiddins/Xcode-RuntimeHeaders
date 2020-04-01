@@ -31,6 +31,7 @@
 - (void)inputView:(id)arg1 touchEnded:(unsigned long long)arg2 location:(struct CGPoint)arg3 clickCount:(int)arg4;
 - (void)inputView:(id)arg1 touchMoved:(unsigned long long)arg2 location:(struct CGPoint)arg3 clickCount:(int)arg4;
 - (void)inputView:(id)arg1 touchBegan:(unsigned long long)arg2 location:(struct CGPoint)arg3 clickCount:(int)arg4;
+- (void)viewDidChangeEffectiveAppearance;
 - (void)dealloc;
 - (void)awakeFromNib;
 

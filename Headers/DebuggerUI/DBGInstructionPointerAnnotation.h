@@ -6,48 +6,41 @@
 
 #import <DVTKit/DVTMessageBubbleAnnotation.h>
 
-#import <DebuggerUI/DVTMessageBubbleAnnotationDelegate-Protocol.h>
+@class DVTObservingToken, DVTTextAnnotationTheme, DVTTextDocumentLocation, IDEDebugSession, IDEStackFrame, NSImage;
 
-@class DVTObservingToken, DVTTextAnnotationTheme, DVTTextDocumentLocation, IDEDebugSession, IDEStackFrame, IDEWorkspaceWindowController, NSImage, NSString;
-
-@interface DBGInstructionPointerAnnotation : DVTMessageBubbleAnnotation <DVTMessageBubbleAnnotationDelegate>
+@interface DBGInstructionPointerAnnotation : DVTMessageBubbleAnnotation
 {
-    IDEWorkspaceWindowController *_workspaceWindowController;
     IDEDebugSession *_debugSession;
     IDEStackFrame *_stackFrame;
     DVTTextAnnotationTheme *_previousTheme;
     NSImage *_icon;
-    DVTTextDocumentLocation *_preDragAnnotationLocation;
     DVTObservingToken *_theadNameObserverToken;
     DVTObservingToken *_uniqueIDObserverToken;
     DVTObservingToken *_lastReasonStoppedObserverToken;
+    unsigned long long _perfMeasurementCounter;
+    DVTTextDocumentLocation *_preDragAnnotationLocation;
 }
 
 + (id)dvt_instructionPointerPathWithSize:(struct CGSize)arg1 tipWidth:(double)arg2;
 + (id)dvt_instructionPointerPathWithSize:(struct CGSize)arg1;
 + (id)_dvt_instructionPointerImageForSize:(struct CGSize)arg1 fillColor:(id)arg2;
+@property(retain) DVTTextDocumentLocation *preDragAnnotationLocation; // @synthesize preDragAnnotationLocation=_preDragAnnotationLocation;
 - (void).cxx_destruct;
 - (id)annotationDisplayDescription;
 - (id)annotationDisplayName;
-- (void)_moveInstructionPointerToAnnotationLocation;
-- (void)didMoveAnnotation:(id)arg1;
-- (unsigned long long)annotation:(id)arg1 willMoveToParagraphNumber:(unsigned long long)arg2;
+- (void)moveInstructionPointerToParagraphLocation;
+- (void)willDrawInTextSidebarView:(id)arg1;
 - (id)_themeBasedOnCurrentThreadState;
 - (id)_iconForRect:(struct CGRect)arg1;
+- (id)sidebarMarkerImage;
 - (void)drawSidebarMarkerIconInRect:(struct CGRect)arg1 textView:(id)arg2;
 - (struct CGRect)sidebarMarkerRectForFirstLineRect:(struct CGRect)arg1;
 - (void)fontAndColorThemeChanged:(id)arg1;
 - (void)_updateMessageBubbleText;
 - (void)setRepresentedObject:(id)arg1;
 - (void)annotationWillUninstall;
-- (id)initWithWorkspaceWindowController:(id)arg1 documentLocation:(id)arg2 stackFrame:(id)arg3;
+- (id)initWithDocumentLocation:(id)arg1 stackFrame:(id)arg2;
 - (id)init;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

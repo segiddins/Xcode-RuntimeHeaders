@@ -22,7 +22,8 @@
 - (void).cxx_destruct;
 - (void)setWaitUntilDoneFromUTF8String:(char *)arg1 fromXMLUnarchiver:(id)arg2;
 - (void)dvt_encodeAttributesWithXMLArchiver:(id)arg1 version:(id)arg2;
-- (void)dvt_awakeFromXMLUnarchiver:(id)arg1;
+- (void)setArgumentsFromUTF8String:(char *)arg1 fromXMLUnarchiver:(id)arg2;
+- (void)setCommandFromUTF8String:(char *)arg1 fromXMLUnarchiver:(id)arg2;
 - (id)initFromXMLUnarchiver:(id)arg1 archiveVersion:(float)arg2;
 - (id)_stringForFileHandleData:(id)arg1;
 - (id)_taskWithLaunchPath:(id)arg1 arguments:(id)arg2 consoleAdaptor:(id)arg3;

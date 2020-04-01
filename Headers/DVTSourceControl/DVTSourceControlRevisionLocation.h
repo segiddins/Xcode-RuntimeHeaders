@@ -11,15 +11,16 @@
 #import <DVTSourceControl/NSCopying-Protocol.h>
 #import <DVTSourceControl/NSSecureCoding-Protocol.h>
 
-@class DVTSourceControlRevision, NSString;
+@class DVTSourceControlRevision, NSDate, NSString;
 
 @interface DVTSourceControlRevisionLocation : NSObject <DVTSourceControlDisplayable, DVTSourceControlSerializable, NSSecureCoding, NSCopying>
 {
     DVTSourceControlRevision *_revision;
+    NSDate *_date;
 }
 
 + (BOOL)supportsSecureCoding;
-+ (id)defaultImage;
+@property(copy) NSDate *date; // @synthesize date=_date;
 @property(copy) DVTSourceControlRevision *revision; // @synthesize revision=_revision;
 - (void).cxx_destruct;
 @property(readonly, copy) NSString *description;

@@ -10,7 +10,6 @@
 
 @class NSString;
 
-__attribute__((visibility("hidden")))
 @interface LLDBRPCTarget : NSObject <DBGSBTarget>
 {
     struct SBTarget {
@@ -27,6 +26,8 @@ __attribute__((visibility("hidden")))
 - (void)Clear;
 - (_Bool)IsValid;
 - (id)initWithSBTarget:(const struct SBTarget *)arg1;
+- (id)GetStatistics;
+- (id)FindGlobalFunctions:(const char *)arg1 max_matches:(unsigned int)arg2 match_type:(int)arg3;
 - (id)ResolveLoadAddress:(unsigned long long)arg1;
 - (id)GetBroadcaster;
 - (id)GetModuleAtIndex:(unsigned int)arg1;

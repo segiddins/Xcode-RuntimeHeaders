@@ -14,8 +14,8 @@
     NSObject<OS_dispatch_queue> *_capture_lock;
     struct __NStatManager *_netstatManager;
     NSObject<OS_dispatch_queue> *_netstatQueue;
-    struct unordered_map<int, ProcessInfo, std::__1::hash<int>, std::__1::equal_to<int>, std::__1::allocator<std::__1::pair<const int, ProcessInfo>>> _processInfoByPID;
-    struct unordered_map<__NStatSource *, SourceInfo, std::__1::hash<__NStatSource *>, std::__1::equal_to<__NStatSource *>, std::__1::allocator<std::__1::pair<__NStatSource *const, SourceInfo>>> _sourceInfosBySrcRef;
+    struct unordered_map<int, (anonymous namespace)::ProcessInfo, std::__1::hash<int>, std::__1::equal_to<int>, std::__1::allocator<std::__1::pair<const int, (anonymous namespace)::ProcessInfo>>> _processInfoByPID;
+    struct unordered_map<__NStatSource *, (anonymous namespace)::SourceInfo, std::__1::hash<__NStatSource *>, std::__1::equal_to<__NStatSource *>, std::__1::allocator<std::__1::pair<__NStatSource *const, (anonymous namespace)::SourceInfo>>> _sourceInfosBySrcRef;
 }
 
 + (id)sharedDataProvider;

@@ -7,11 +7,11 @@
 #import <objc/NSObject.h>
 
 #import <IDEInterfaceBuilderKit/DVTPropertyListEncoding-Protocol.h>
-#import <IDEInterfaceBuilderKit/NSCopying-Protocol.h>
+#import <IDEInterfaceBuilderKit/IDETextFragmentProviderSeed-Protocol.h>
 
 @class NSDictionary, NSString;
 
-@interface IBAttributeSearchLocation : NSObject <NSCopying, DVTPropertyListEncoding>
+@interface IBAttributeSearchLocation : NSObject <DVTPropertyListEncoding, IDETextFragmentProviderSeed>
 {
     long long _offsetFromStart;
     long long _offsetFromEnd;
@@ -19,6 +19,7 @@
     NSDictionary *_locationData;
 }
 
++ (BOOL)supportsSecureCoding;
 @property(readonly, copy, nonatomic) NSDictionary *locationData; // @synthesize locationData=_locationData;
 @property(readonly, copy, nonatomic) NSString *keyPath; // @synthesize keyPath=_keyPath;
 - (void).cxx_destruct;
@@ -38,6 +39,10 @@
 - (void)awakeWithPropertyList:(id)arg1;
 - (void)encodeIntoPropertyList:(id)arg1;
 - (id)initWithPropertyList:(id)arg1 owner:(id)arg2;
+- (void)dvt_writeToSerializer:(id)arg1;
+- (id)dvt_initFromDeserializer:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithKeyPath:(id)arg1 locationData:(id)arg2 offsetFromStart:(long long)arg3 offsetFromEnd:(long long)arg4;
 - (id)initWithKeyPath:(id)arg1 locationData:(id)arg2;
 

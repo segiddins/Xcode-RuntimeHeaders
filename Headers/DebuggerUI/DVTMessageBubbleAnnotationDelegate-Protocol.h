@@ -6,11 +6,11 @@
 
 #import <DebuggerUI/DVTTextAnnotationDelegate-Protocol.h>
 
-@class DVTMessageBubbleAnnotation, DVTSourceTextView, NSEvent;
+@class DVTMessageBubbleAnnotation, NSEvent, NSView;
 
 @protocol DVTMessageBubbleAnnotationDelegate <DVTTextAnnotationDelegate>
 
 @optional
-- (void)didClickMessageBubbleForAnnotation:(DVTMessageBubbleAnnotation *)arg1 onIcon:(BOOL)arg2 inTextView:(DVTSourceTextView *)arg3 event:(NSEvent *)arg4;
+- (void)didClickMessageBubbleForAnnotation:(DVTMessageBubbleAnnotation *)arg1 onIcon:(BOOL)arg2 inView:(NSView *)arg3 event:(NSEvent *)arg4;
 @end
 

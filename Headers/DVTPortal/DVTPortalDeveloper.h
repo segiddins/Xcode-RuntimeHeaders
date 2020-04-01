@@ -6,13 +6,16 @@
 
 #import <objc/NSObject.h>
 
-@class NSString;
+@class NSNumber, NSString;
 
 @interface DVTPortalDeveloper : NSObject
 {
     NSString *_memberID;
+    NSNumber *_personID;
 }
 
++ (id)developerForAccount:(id)arg1 outError:(id *)arg2;
+@property(copy, nonatomic) NSNumber *personID; // @synthesize personID=_personID;
 @property(copy, nonatomic) NSString *memberID; // @synthesize memberID=_memberID;
 - (void).cxx_destruct;
 

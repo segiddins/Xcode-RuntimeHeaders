@@ -8,12 +8,14 @@
 
 #import <DVTKit/DVTInvalidation-Protocol.h>
 #import <DVTKit/DVTTextCompletionDataSourceDelegate-Protocol.h>
+#import <DVTKit/DVTTextCompletionListDataSource-Protocol.h>
 
-@class DVTCompletingTextView, DVTObservingToken, DVTPerformanceMetric, DVTStackBacktrace, DVTTextCompletionListWindowController, NSArray, NSDictionary, NSString;
+@class DVTObservingToken, DVTPerformanceMetric, DVTStackBacktrace, DVTTextCompletionListWindowController, NSArray, NSDictionary, NSString, NSView;
+@protocol DVTTextCompletionSupportingTextView;
 
-@interface DVTTextCompletionSession : NSObject <DVTTextCompletionDataSourceDelegate, DVTInvalidation>
+@interface DVTTextCompletionSession : NSObject <DVTTextCompletionDataSourceDelegate, DVTTextCompletionListDataSource, DVTInvalidation>
 {
-    DVTCompletingTextView *_textView;
+    NSView<DVTTextCompletionSupportingTextView> *_textView;
     DVTTextCompletionListWindowController *_listWindowController;
     unsigned long long _wordStartLocation;
     unsigned long long _cursorLocation;
@@ -23,6 +25,7 @@
     NSArray *_filteredCompletionsAlpha;
     NSString *_usefulPrefix;
     long long _selectedCompletionIndex;
+    NSDictionary *_priorityCoefficients;
     DVTPerformanceMetric *_currentMetric;
     int _pendingRequestState;
     BOOL _generatingCompletions;
@@ -37,7 +40,7 @@
 }
 
 + (void)_addToRecentCompletions:(id)arg1;
-+ (id)notRecommendedStrikeThroughColor;
++ (id)completionPriorityCoefficientsForLanguage:(id)arg1;
 + (id)keyPathsForValuesAffectingShowingCompletions;
 + (id)infrequentTextCompletionsSetForLanguage:(id)arg1;
 + (id)infrequentTextCompletionsForLanguage:(id)arg1;
@@ -59,7 +62,7 @@
 @property(nonatomic) unsigned long long cursorLocation; // @synthesize cursorLocation=_cursorLocation;
 @property(readonly) unsigned long long wordStartLocation; // @synthesize wordStartLocation=_wordStartLocation;
 @property(readonly) DVTTextCompletionListWindowController *listWindowController; // @synthesize listWindowController=_listWindowController;
-@property(readonly) DVTCompletingTextView *textView; // @synthesize textView=_textView;
+@property(readonly) NSView<DVTTextCompletionSupportingTextView> *textView; // @synthesize textView=_textView;
 - (void).cxx_destruct;
 @property(readonly) NSString *debugStateString;
 - (void)primitiveInvalidate;
@@ -74,7 +77,7 @@
 - (long long)_priorityBucketForItem:(id)arg1 usingPrefix:(id)arg2;
 - (double)_intrinsicPriorityForItem:(id)arg1 usingPrefix:(id)arg2;
 - (id)filterCompletionItems:(id)arg1 openQuicklyPattern:(id)arg2;
-- (id)_doFilterCompletionItems:(id)arg1 range:(struct _NSRange)arg2 openQuicklyPattern:(id)arg3 highestPriority:(double *)arg4 highestPriorityBucket:(long long *)arg5;
+- (id)_doFilterCompletionItems:(id)arg1 range:(struct _NSRange)arg2 openQuicklyPattern:(id)arg3 language:(id)arg4 highestPriority:(double *)arg5 highestPriorityBucket:(long long *)arg6;
 - (void)_setFilteringPrefix:(id)arg1 forceFilter:(BOOL)arg2;
 - (void)_ensureCompletionsUpToDate;
 - (id)attributesForCompletionAtCharacterIndex:(unsigned long long)arg1 effectiveRange:(struct _NSRange *)arg2;

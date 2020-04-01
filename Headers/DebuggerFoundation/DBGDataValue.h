@@ -27,6 +27,8 @@
     BOOL _containsFunctionExpressions;
     int _valueValidity;
     IDEStackFrame *_stackFrame;
+    NSString *address;
+    NSString *pointeeAddress;
     DBGDataType *_dynamicType;
     DBGDataValueSummaryFormatter *_summaryFormatter;
     DBGLazyObservableDictionary *_lazyChildValuesByName;
@@ -34,7 +36,6 @@
 
 + (void)initialize;
 + (id)summaryUnavailableAttributedString;
-+ (id)summaryUnavailableString;
 + (id)keyPathsForValuesAffectingFormattedSummary;
 + (id)keyPathsForValuesAffectingTypeHasChanged;
 + (id)keyPathsForValuesAffectingType;
@@ -46,6 +47,8 @@
 @property BOOL containsFunctionExpressions; // @synthesize containsFunctionExpressions=_containsFunctionExpressions;
 @property int valueValidity; // @synthesize valueValidity=_valueValidity;
 @property(readonly) DBGDataType *dynamicType; // @synthesize dynamicType=_dynamicType;
+@property(readonly, copy) NSString *pointeeAddress; // @synthesize pointeeAddress;
+@property(readonly, copy) NSString *address; // @synthesize address;
 @property(readonly) IDEStackFrame *stackFrame; // @synthesize stackFrame=_stackFrame;
 - (void).cxx_destruct;
 - (void)primitiveInvalidate;
@@ -99,7 +102,6 @@
 @property(readonly) BOOL dynamicTypeHasChanged;
 @property(readonly) BOOL summaryHasChanged;
 @property(retain) DBGDataValueFormat *format;
-@property(readonly, copy) NSString *blockStartAddress;
 @property(readonly, copy) NSString *summary;
 - (void)primitiveSetDynamicType:(id)arg1;
 - (id)simpleTypeName;

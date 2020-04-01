@@ -6,15 +6,15 @@
 
 #import <DebuggerUI/NSObject-Protocol.h>
 
-@class DVTOutlineView, DVTTableCellView, DVTTableRowView, IDEDebugNavigator, IDELaunchSession, IDENavigableItem, IDEProcessActionPopUpCell, NSArray, NSDictionary, NSMenu, NSMutableDictionary, NSOutlineView, NSPopUpButton, NSString, NSTableCellView, NSView;
-@protocol IDEDebugTopNavigableModel;
+@class DVTOutlineView, DVTTableCellView, DVTTableRowView, IDEDebugNavigator, IDELaunchSession, IDENavigableItem, IDEProcessActionPopUpCell, NSArray, NSDictionary, NSMenu, NSMutableDictionary, NSOutlineView, NSSet, NSString, NSTableCellView, NSView;
+@protocol IDEDebugGaugeDataSource, IDEDebugTopNavigableModel;
 
 @protocol IDEDebugNavigableContentDelegate <NSObject>
 @property(readonly) NSString *associatedProcessUUID;
 - (NSArray *)representedObjectsToReveal;
 - (NSString *)pasteboardStringForRepresentedObject:(id)arg1;
 - (BOOL)shouldHandleUserDirectMoveUpOrDown:(BOOL)arg1 forRepresentedObject:(id)arg2 newRow:(long long *)arg3;
-- (NSArray *)expandableItemsForProcessItem:(IDENavigableItem *)arg1;
+- (NSArray *)expandableItemsForProcessItem:(IDENavigableItem *)arg1 tokens:(NSSet *)arg2;
 - (NSString *)tokenForExpandedRepresentedObject:(id)arg1;
 - (IDELaunchSession *)launchSessionForSelectedRepresentedObject:(id)arg1;
 - (void)openSelectedRepresentedObject:(id)arg1 withEventType:(unsigned long long)arg2;
@@ -29,11 +29,11 @@
 - (id)initWithTopNavigableModel:(id <IDEDebugTopNavigableModel>)arg1 debugNavigator:(IDEDebugNavigator *)arg2;
 
 @optional
+@property(readonly) BOOL prefersStrongSelection;
 - (NSDictionary *)tableViewCellPropertyBindingsForCell:(DVTTableCellView *)arg1;
 - (BOOL)shouldShowOutlineCellForRepresentedObject:(id)arg1;
 - (DVTTableRowView *)tableRowViewForRepresentedObject:(id)arg1 withOutlineView:(NSOutlineView *)arg2;
 - (DVTTableCellView *)tableCellViewForTopLevelItem:(id)arg1 withOutlineView:(NSOutlineView *)arg2;
-- (void)debugNavigator:(IDEDebugNavigator *)arg1 updateProcessActionPopUpButton:(NSPopUpButton *)arg2;
 - (IDENavigableItem *)outputSelectionNavItemForSelectedNavItem:(IDENavigableItem *)arg1;
 - (void)commitStateToDictionary:(NSMutableDictionary *)arg1;
 - (void)revertStateWithDictionary:(NSDictionary *)arg1;
@@ -47,8 +47,9 @@
 - (BOOL)shouldExpandItemAsResultOfOptionClick:(id)arg1 clickedItem:(id)arg2;
 - (double)heightOfRowForRepresentedObject:(id)arg1;
 - (NSString *)persistentNameForRepresentedObject:(id)arg1;
-- (NSArray *)trayCellsForProcessHeader;
+- (NSArray<IDEDebugGaugeDataSource> *)dataSourcesForNavigationProcessHeader;
 - (void)configureMenuForProcessHeaderActionPopUpCell:(IDEProcessActionPopUpCell *)arg1;
+- (void)revealRepresentedObjects:(NSArray *)arg1;
 - (id)controllerForQueryingDescendantItem;
 @end
 

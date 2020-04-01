@@ -4,27 +4,31 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <DVTKit/DVTToolbarViewController.h>
+#import <DVTUserInterfaceKit/DVTToolbarViewController.h>
 
-#import <IDEKit/IDEPathCellDelegate-Protocol.h>
+#import <IDEKit/DVTPathCellDelegate-Protocol.h>
 #import <IDEKit/NSMenuDelegate-Protocol.h>
 #import <IDEKit/NSPathControlDelegate-Protocol.h>
 
-@class IDENavigableItem, IDENavigableItemCoordinator, IDEPathControl, IDESchemeManagerNavigable, IDEWorkspace, IDEWorkspaceTabController, NSString, NSToolbarItem;
+@class DVTNotificationToken, DVTPathControl, IDENavigableItem, IDENavigableItemCoordinator, IDESchemeManagerNavigable, IDEWorkspace, IDEWorkspaceTabController, NSString, NSToolbarItem;
 
-@interface IDESchemeToolbarController : DVTToolbarViewController <NSPathControlDelegate, IDEPathCellDelegate, NSMenuDelegate>
+@interface IDESchemeToolbarController : DVTToolbarViewController <NSPathControlDelegate, DVTPathCellDelegate, NSMenuDelegate>
 {
     IDENavigableItemCoordinator *_navigableItemCoordinator;
-    IDEPathControl *_pathControl;
+    DVTPathControl *_pathControl;
+    DVTNotificationToken *_shouldOpenNotificationToken;
     unsigned long long _menusOpen;
+    BOOL _backgroundButtonHighlighted;
     NSToolbarItem *_toolbarItem;
     IDESchemeManagerNavigable *_rootNavigable;
 }
 
 + (id)keyPathsForValuesAffectingSelectedNavigable;
++ (id)keyPathsForValuesAffectingPathControlIsHidden;
 + (id)keyPathsForValuesAffectingPathControlIsEnabled;
 + (id)keyPathsForValuesAffectingActiveWorkspaceTabController;
 + (id)keyPathsForValuesAffectingWorkspace;
+@property BOOL backgroundButtonHighlighted; // @synthesize backgroundButtonHighlighted=_backgroundButtonHighlighted;
 @property(retain) IDESchemeManagerNavigable *rootNavigable; // @synthesize rootNavigable=_rootNavigable;
 @property(nonatomic) __weak NSToolbarItem *toolbarItem; // @synthesize toolbarItem=_toolbarItem;
 - (void).cxx_destruct;
@@ -45,6 +49,7 @@
 - (struct CGSize)maxSize;
 - (struct CGSize)minSize;
 - (void)_windowWillClose:(id)arg1;
+- (BOOL)pathControlIsHidden;
 - (BOOL)pathControlIsEnabled;
 - (void)menuDidClose:(id)arg1;
 - (void)menuWillOpen:(id)arg1;

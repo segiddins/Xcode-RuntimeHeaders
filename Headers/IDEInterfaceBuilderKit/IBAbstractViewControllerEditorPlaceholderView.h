@@ -15,12 +15,12 @@
     unsigned long long _shadowEdgeMask;
     NSString *_title;
     NSString *_subtitle;
-    NSString *_explanitoryText;
+    NSString *_explanatoryText;
     struct CGRect _placeholderAlignmentRect;
 }
 
 @property(nonatomic, getter=isShowingDropHighlight) BOOL showingDropHighlight; // @synthesize showingDropHighlight=_showingDropHighlight;
-@property(copy, nonatomic) NSString *explanitoryText; // @synthesize explanitoryText=_explanitoryText;
+@property(copy, nonatomic) NSString *explanatoryText; // @synthesize explanatoryText=_explanatoryText;
 @property(copy, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(nonatomic) unsigned long long shadowEdgeMask; // @synthesize shadowEdgeMask=_shadowEdgeMask;

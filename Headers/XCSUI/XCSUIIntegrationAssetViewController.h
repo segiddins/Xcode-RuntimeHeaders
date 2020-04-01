@@ -6,9 +6,11 @@
 
 #import <AppKit/NSViewController.h>
 
+#import <XCSUI/NSOpenSavePanelDelegate-Protocol.h>
+
 @class NSImage, NSProgressIndicator, NSString, NSURLSessionDownloadTask, NSView, XCSIntegration, XCSIntegrationAsset, XCSUIIntegrationAssetView;
 
-@interface XCSUIIntegrationAssetViewController : NSViewController
+@interface XCSUIIntegrationAssetViewController : NSViewController <NSOpenSavePanelDelegate>
 {
     XCSIntegration *_integration;
     NSView *_actionView;
@@ -32,12 +34,13 @@
 @property(retain) NSImage *icon;
 @property(copy) NSString *title;
 @property(readonly) XCSUIIntegrationAssetView *assetView;
-- (void)downloadAndUnzipAssetToDirectory:(id)arg1 withCallback:(CDUnknownBlockType)arg2;
-- (void)saveAssetToDirectory:(id)arg1 withCallback:(CDUnknownBlockType)arg2;
+- (void)downloadAndUnzipAssetToPath:(id)arg1 withCallback:(CDUnknownBlockType)arg2;
+- (void)saveAssetToPath:(id)arg1 withCallback:(CDUnknownBlockType)arg2;
 - (void)cancelDownload:(id)arg1;
 - (void)installAsset:(id)arg1;
 - (void)submitAsset:(id)arg1;
 - (void)showAssetInOrganizer:(id)arg1;
+- (id)assetFilePath;
 - (void)downloadAsset:(id)arg1;
 - (void)copyAssetInstallationLink:(id)arg1;
 - (void)copyAssetDownloadLink:(id)arg1;
@@ -45,6 +48,12 @@
 - (void)displayProgressView;
 - (void)displayActionView;
 - (void)loadView;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

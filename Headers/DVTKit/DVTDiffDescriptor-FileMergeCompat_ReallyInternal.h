@@ -12,5 +12,12 @@
 @property(readonly) int fmc_operation;
 - (struct CGRect)fmc_displayRect:(id)arg1 forSide:(int)arg2 ensureLayout:(BOOL)arg3;
 @property(readonly) _DVTFileMergeDiffVitalStats *fmc_vitals;
+@property(readonly) long long fmc_numAddLines;
+@property(readonly) long long fmc_numLines;
+- (long long)fmc_rightDelta;
+- (double)fmc_verticalSpan:(id)arg1 forSide:(int)arg2 ensureLayout:(BOOL)arg3;
+- (double)fmc_endCoordinate:(id)arg1 forSide:(int)arg2 ensureLayout:(BOOL)arg3;
+- (double)fmc_startCoordinate:(id)arg1 forSide:(int)arg2 ensureLayout:(BOOL)arg3;
+- (void)fmc_invalidateVitals;
 @end
 

@@ -8,12 +8,15 @@
 
 #import <IDEInterfaceBuilderKit/IBObjectContainerArchivingDelegate-Protocol.h>
 
-@class DVTNotificationToken, DVTPerformanceMetric, IBMutableIdentityDictionary, IBTargetRuntime, NSString;
+@class DVTNotificationToken, DVTObservingToken, DVTPerformanceMetric, IBMutableIdentityDictionary, IBObjectContainer, IBObjectLibraryDetailView, IBTargetRuntime, NSString;
 
 @interface IBObjectLibraryController : IDELibraryController <IBObjectContainerArchivingDelegate>
 {
     DVTNotificationToken *_documentDidAddDraggedObjectsToken;
+    DVTObservingToken *_documentTargetRuntimeObservationToken;
     IBMutableIdentityDictionary *_assetProviders;
+    IBObjectContainer *_metadataContainer;
+    IBObjectLibraryDetailView *_detailView;
     IBTargetRuntime *_targetRuntime;
     Class _documentClass;
     NSString *_currentDragMarker;
@@ -26,37 +29,35 @@
 @property(retain, nonatomic) IBTargetRuntime *targetRuntime; // @synthesize targetRuntime=_targetRuntime;
 - (void).cxx_destruct;
 - (void)libraryDidLoad;
-- (void)activeEditorDocumentDidChange:(id)arg1;
+- (void)activeEditorDidChange:(id)arg1;
+- (id)inlineDetailViewForAssets:(id)arg1;
 - (void)loadAvailableLibraryAssetProviders;
-- (void)removeLibraryAssetProviders;
-- (void)userDidEditAsset:(id)arg1;
-- (BOOL)createAsset:(id *)arg1 forLibrarySourceWithIdentifier:(id *)arg2 fromPasteboard:(id)arg3;
-- (id)constructAssetImageForDraggedObjects:(id)arg1;
-- (id)defaultLabelForObjectAsset:(id)arg1;
-- (BOOL)canCreateAssetsFromPasteboard:(id)arg1 targetingLibrarySourceIdentifier:(id *)arg2;
 - (BOOL)depositAssets:(id)arg1;
-- (id)activeWorkspaceTabController;
 - (void)documentDidAddDraggedObjects:(id)arg1;
 - (id)readableAssetPasteboardTypes;
 - (void)populatePasteboard:(id)arg1 withAssets:(id)arg2 defaultDraggedImageState:(id *)arg3 identifierMapTable:(id *)arg4;
+- (id)lastActiveDocumentEditor;
 - (id)viewBackedDragImageOfAsset:(id)arg1;
 - (id)bitmapDragImageOfAsset:(id)arg1;
 - (void)populatePasteboard:(id)arg1 withAssets:(id)arg2;
 - (void)populatePasteboard:(id)arg1 withAssets:(id)arg2 identifierMapTable:(id *)arg3;
+- (void)prepareDocumentlessMetadataDuring:(CDUnknownBlockType)arg1;
 - (void)putObjectContainer:(id)arg1 onPasteboard:(id)arg2;
 - (void)objectContainerClass:(Class)arg1 didCreateObjectContainerWithCoder:(id)arg2;
 - (void)objectContainerClass:(Class)arg1 willCreateObjectContainerWithCoder:(id)arg2;
 - (void)objectContainer:(id)arg1 didCreateDataRepresentationWithCoder:(id)arg2 context:(id)arg3;
 - (void)objectContainer:(id)arg1 willCreateDataRepresentationWithCoder:(id)arg2 context:(id)arg3;
 - (id)searchStringsForAsset:(id)arg1;
+- (void)viewDidChangeEffectiveAppearance;
 - (CDUnknownBlockType)initialAssetComparator;
 - (id)loadAssetsFromAssetProvider:(id)arg1;
 - (void)prepareObjectLibraryAssetForAssetCreation:(id)arg1 fromProvider:(id)arg2;
 - (id)createLibraryAssetForObjectAsset:(id)arg1 inNamespace:(id)arg2;
+- (id)fullDescriptionAttributes;
+- (id)fullDescriptionParagraphStyle;
 - (id)_createImageFromObjectAsset:(id)arg1;
 - (id)objectLibraryAssetsFromNibContent:(id)arg1 fromProvider:(id)arg2;
 - (BOOL)shouldIncludeObjectLibraryAsset:(id)arg1 fromProvider:(id)arg2;
-- (id)objectPasteboardType;
 - (id)idiom;
 - (id)platform;
 - (id)allObjectLibraryAssetProviderExtensions;

@@ -7,22 +7,22 @@
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBUIGestureRecognizer.h>
 
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBDocumentArchiving-Protocol.h>
-#import <IDEInterfaceBuilderCocoaTouchIntegration/NSCoding-Protocol.h>
 
 @class NSString;
 
-@interface IBUIRotationGestureRecognizer : IBUIGestureRecognizer <IBDocumentArchiving, NSCoding>
+@interface IBUIRotationGestureRecognizer : IBUIGestureRecognizer <IBDocumentArchiving>
 {
     double _rotation;
 }
 
 @property double rotation; // @synthesize rotation=_rotation;
 @property double rotationInDegrees;
-- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
-- (void)archiveWithDocumentArchiver:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)ibSegueTriggers;
+- (id)ibLocalAttributeKeyPaths;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

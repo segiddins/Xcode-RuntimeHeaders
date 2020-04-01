@@ -29,7 +29,7 @@
 @property(copy) NSString *title; // @synthesize title=_title;
 @property(copy) NSString *commandString; // @synthesize commandString=_commandString;
 - (void).cxx_destruct;
-- (void)emitContentsForAspect:(id)arg1 logLevel:(int)arg2 indentLevel:(unsigned long long)arg3 withBlock:(CDUnknownBlockType)arg4;
+- (void)emitContentsForAspect:(id)arg1 logLevel:(unsigned long long)arg2 indentLevel:(unsigned long long)arg3 withBlock:(CDUnknownBlockType)arg4;
 - (id)defaultEmissionStringWithIndentLevel:(unsigned long long)arg1;
 @property(readonly) long long numberOfVMPageouts;
 @property(readonly) long long numberOfVMPageins;

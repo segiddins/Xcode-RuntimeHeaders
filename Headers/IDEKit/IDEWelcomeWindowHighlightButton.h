@@ -11,7 +11,6 @@
 }
 
 - (BOOL)isFlipped;
-- (void)setImage:(id)arg1;
 - (void)_ideWelcomeWindowHighlightButtonCommonInit;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

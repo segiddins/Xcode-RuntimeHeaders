@@ -8,42 +8,50 @@
 
 #import <IDEFoundation/DVTXMLUnarchiving-Protocol.h>
 
-@class IDEBuildSchemeAction, IDESchemeBuildableReference, NSString;
+@class IDEBuildSchemeAction, IDESchemeBuildableReference, NSArray, NSString, _TtC13IDEFoundation26IDESchemeTestPlanReference;
 
 @interface IDEBuildActionEntry : NSObject <DVTXMLUnarchiving>
 {
     BOOL _isExplicitEntry;
-    BOOL _shouldBuildForTesting;
-    BOOL _mustBuildForTesting;
     BOOL _shouldBuildForRunning;
     BOOL _mustBuildForRunning;
+    BOOL _shouldBuildForTesting;
+    BOOL _mustBuildForTesting;
     BOOL _shouldBuildForProfiling;
     BOOL _mustBuildForProfiling;
+    BOOL _shouldBuildForPreviewing;
+    BOOL _mustBuildForPreviewing;
     BOOL _shouldBuildForArchiving;
     BOOL _shouldBuildForAnalyzing;
     BOOL _shouldHideIssues;
-    IDESchemeBuildableReference *_buildableReference;
+    IDESchemeBuildableReference *_primaryBuildableReference;
+    _TtC13IDEFoundation26IDESchemeTestPlanReference *_testPlanReference;
     IDEBuildSchemeAction *_buildAction;
 }
 
 + (id)keyPathsForValuesAffectingCanRemoveEntry;
++ (id)keyPathsForValuesAffectingShouldBuildForPreviewing;
 + (id)keyPathsForValuesAffectingShouldBuildForProfiling;
-+ (id)keyPathsForValuesAffectingShouldBuildForRunning;
 + (id)keyPathsForValuesAffectingShouldBuildForTesting;
++ (id)keyPathsForValuesAffectingShouldBuildForRunning;
 @property(retain) IDEBuildSchemeAction *buildAction; // @synthesize buildAction=_buildAction;
-@property(readonly) IDESchemeBuildableReference *buildableReference; // @synthesize buildableReference=_buildableReference;
+@property(readonly) _TtC13IDEFoundation26IDESchemeTestPlanReference *testPlanReference; // @synthesize testPlanReference=_testPlanReference;
+@property(readonly) IDESchemeBuildableReference *primaryBuildableReference; // @synthesize primaryBuildableReference=_primaryBuildableReference;
+@property(nonatomic) BOOL mustBuildForPreviewing; // @synthesize mustBuildForPreviewing=_mustBuildForPreviewing;
 @property(nonatomic) BOOL mustBuildForProfiling; // @synthesize mustBuildForProfiling=_mustBuildForProfiling;
-@property(nonatomic) BOOL mustBuildForRunning; // @synthesize mustBuildForRunning=_mustBuildForRunning;
 @property(nonatomic) BOOL mustBuildForTesting; // @synthesize mustBuildForTesting=_mustBuildForTesting;
+@property(nonatomic) BOOL mustBuildForRunning; // @synthesize mustBuildForRunning=_mustBuildForRunning;
 @property(readonly) BOOL isExplicitEntry; // @synthesize isExplicitEntry=_isExplicitEntry;
 - (void).cxx_destruct;
+- (void)addTestPlanReference:(id)arg1 fromXMLUnarchiver:(id)arg2;
 - (void)addBuildableReference:(id)arg1 fromXMLUnarchiver:(id)arg2;
 - (void)setHideIssuesFromUTF8String:(char *)arg1 fromXMLUnarchiver:(id)arg2;
 - (void)setBuildForAnalyzingFromUTF8String:(char *)arg1 fromXMLUnarchiver:(id)arg2;
 - (void)setBuildForArchivingFromUTF8String:(char *)arg1 fromXMLUnarchiver:(id)arg2;
+- (void)setBuildForPreviewingFromUTF8String:(char *)arg1 fromXMLUnarchiver:(id)arg2;
 - (void)setBuildForProfilingFromUTF8String:(char *)arg1 fromXMLUnarchiver:(id)arg2;
-- (void)setBuildForRunningFromUTF8String:(char *)arg1 fromXMLUnarchiver:(id)arg2;
 - (void)setBuildForTestingFromUTF8String:(char *)arg1 fromXMLUnarchiver:(id)arg2;
+- (void)setBuildForRunningFromUTF8String:(char *)arg1 fromXMLUnarchiver:(id)arg2;
 - (void)dvt_encodeRelationshipsWithXMLArchiver:(id)arg1 version:(id)arg2;
 - (void)dvt_encodeAttributesWithXMLArchiver:(id)arg1 version:(id)arg2;
 - (void)enableBuildEntry;
@@ -52,13 +60,18 @@
 @property BOOL shouldHideIssues;
 @property BOOL shouldBuildForAnalyzing;
 @property BOOL shouldBuildForArchiving;
+@property BOOL shouldBuildForPreviewing;
 @property BOOL shouldBuildForProfiling;
-@property BOOL shouldBuildForRunning;
 @property BOOL shouldBuildForTesting;
+@property BOOL shouldBuildForRunning;
 - (void)_makeExplicit;
+@property(readonly) NSString *name;
+@property(readonly) IDESchemeBuildableReference *buildableReference;
+- (BOOL)containsBuildableReferenceMatchingReference:(id)arg1;
+@property(readonly) NSArray *buildableReferences;
 - (void)dvt_awakeFromXMLUnarchiver:(id)arg1;
 - (id)initFromXMLUnarchiver:(id)arg1 archiveVersion:(float)arg2;
-- (id)initWithBuildableReference:(id)arg1 buildAction:(id)arg2 explicityManaged:(BOOL)arg3;
+- (id)initWithPrimaryBuildableReference:(id)arg1 testPlanReference:(id)arg2 buildAction:(id)arg3 explicityManaged:(BOOL)arg4;
 @property(readonly, copy) NSString *description;
 
 // Remaining properties

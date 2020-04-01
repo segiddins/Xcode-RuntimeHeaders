@@ -13,5 +13,6 @@
 - (void)deleteLeadingWhitespace;
 - (void)deleteCharactersFromSet:(id)arg1 atIndex:(unsigned long long)arg2 options:(unsigned long long)arg3;
 - (void)appendSubstringWithRange:(struct _NSRange)arg1 ofString:(id)arg2;
+- (void)insertString:(id)arg1 atLine:(unsigned long long)arg2;
 @end
 

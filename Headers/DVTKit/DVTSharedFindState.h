@@ -6,29 +6,33 @@
 
 #import <objc/NSObject.h>
 
-@class NSAttributedString, NSString;
+@class DVTFindPatternComponents, NSAttributedString, NSString;
 
 @interface DVTSharedFindState : NSObject
 {
-    NSAttributedString *_findAttributedString;
-    NSAttributedString *_replaceAttributedString;
+    DVTFindPatternComponents *_findPatternComponents;
+    DVTFindPatternComponents *_replacePatternComponents;
 }
 
-+ (id)keyPathsForValuesAffectingReplaceString;
-+ (id)keyPathsForValuesAffectingFindString;
++ (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
++ (id)sharedInstance;
 + (id)sharedFindState;
-+ (void)_setFindPasteboardStringValue:(id)arg1;
-+ (id)_findPasteboardStringValue;
-+ (void)_setFindPasteboardAttributedStringValue:(id)arg1;
-+ (id)_findPasteboardAttributedStringValue;
++ (void)initialize;
+@property(copy, nonatomic) DVTFindPatternComponents *replacePatternComponents; // @synthesize replacePatternComponents=_replacePatternComponents;
+@property(copy, nonatomic) DVTFindPatternComponents *findPatternComponents; // @synthesize findPatternComponents=_findPatternComponents;
 - (void).cxx_destruct;
-@property(copy) NSString *replaceString;
+@property(nonatomic) BOOL wrapText;
+@property(nonatomic) BOOL ignoresCase;
+@property(nonatomic) unsigned long long matchStyle;
+@property(nonatomic) unsigned long long findType;
+- (void)applicationDidBecomeActive:(id)arg1;
+- (void)readFromPasteboard;
+- (void)writeToPasteboard;
+- (id)init;
 @property(copy, nonatomic) NSAttributedString *replaceAttributedString;
-@property(copy) NSAttributedString *findAttributedString;
-@property(copy) NSString *findString;
-- (void)_applicationDidBecomeActive:(id)arg1;
-- (void)dealloc;
-- (id)initWithFindAttributedString:(id)arg1;
+@property(copy, nonatomic) NSString *replaceString;
+@property(copy, nonatomic) NSAttributedString *findAttributedString;
+@property(copy, nonatomic) NSString *findString;
 
 @end
 

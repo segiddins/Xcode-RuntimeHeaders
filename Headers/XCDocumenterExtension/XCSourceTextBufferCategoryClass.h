@@ -10,6 +10,7 @@
 {
 }
 
++ (BOOL)isWholeFileSelected:(id)arg1;
 + (id)buffer:(id)arg1 firstPlaceholderRangeStartingAtLine:(long long)arg2;
 + (id)buffer:(id)arg1 stringForLineRange:(long long)arg2 endLine:(long long)arg3;
 + (id)buffer:(id)arg1 stringForRangeBetweenStartPosition:(CDStruct_912cb5d2)arg2 endPosition:(CDStruct_912cb5d2)arg3;

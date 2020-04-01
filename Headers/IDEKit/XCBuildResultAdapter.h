@@ -15,6 +15,7 @@
     XCBuildResultsCell *_forwardingCell;
 }
 
++ (struct CGRect)rectForImage:(id)arg1 atPoint:(struct CGPoint)arg2;
 - (void).cxx_destruct;
 - (void)clear;
 - (void)_drawImage:(id)arg1 atPoint:(struct CGPoint)arg2;
@@ -33,8 +34,9 @@
 - (BOOL)supportsTextExpansionForDataNode:(id)arg1;
 - (BOOL)dataNode:(id)arg1 doubleClickInColumn:(id)arg2;
 - (id)newAttributesForFont:(id)arg1 color:(id)arg2;
+- (id)secondaryTextColorForDataNode:(id)arg1;
 - (id)textColorForDataNode:(id)arg1;
-- (double)verticaImageOffsetForDataNode:(id)arg1;
+- (double)_baseHeightOfRowForDataNode:(id)arg1;
 - (double)titleFontHeigthForDataNode:(id)arg1;
 - (id)titleFontForDataNode:(id)arg1;
 - (id)defaultBoldFont;

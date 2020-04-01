@@ -6,21 +6,22 @@
 
 #import <XCSCore/XCSObject.h>
 
-@class NSString;
+@class NSString, XCSPlatformChanges;
 
 @interface XCSIssueCause : XCSObject
 {
 }
 
-+ (id)causeWithType:(unsigned long long)arg1 key:(id)arg2 validationErrors:(id *)arg3;
++ (id)causeWithType:(unsigned long long)arg1 key:(id)arg2 xcodeChanges:(id)arg3 validationErrors:(id *)arg4;
 + (id)configurationChangeCauseWithKey:(id)arg1;
-+ (id)upgradeCause;
++ (id)upgradeCauseWithChanges:(id)arg1;
 - (id)initWithContents:(id)arg1 service:(id)arg2 validationErrors:(id *)arg3;
-- (id)initWithType:(unsigned long long)arg1 key:(id)arg2 validationErrors:(id *)arg3;
+- (id)initWithType:(unsigned long long)arg1 key:(id)arg2 xcodeChanges:(id)arg3 validationErrors:(id *)arg4;
 
 // Remaining properties
 @property(retain, nonatomic) NSString *key; // @dynamic key;
 @property(nonatomic) unsigned long long type; // @dynamic type;
+@property(retain, nonatomic) XCSPlatformChanges *xcodeChanges; // @dynamic xcodeChanges;
 
 @end
 

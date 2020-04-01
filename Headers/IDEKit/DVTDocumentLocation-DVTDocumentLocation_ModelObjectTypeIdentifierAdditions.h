@@ -6,7 +6,43 @@
 
 #import <DVTFoundation/DVTDocumentLocation.h>
 
-@interface DVTDocumentLocation (DVTDocumentLocation_ModelObjectTypeIdentifierAdditions)
+#import <IDEKit/IDEKeyDrivenNavigableItemRepresentedObject-Protocol.h>
+
+@class DVTFileDataType, DVTSymbol, IDEFileReference, NSArray, NSImage, NSNull, NSString, NSURL;
+
+@interface DVTDocumentLocation (DVTDocumentLocation_ModelObjectTypeIdentifierAdditions) <IDEKeyDrivenNavigableItemRepresentedObject>
++ (id)quicklookDataTypes;
++ (id)fileDataTypeForFileDataType:(id)arg1;
 - (id)ideModelObjectTypeIdentifier;
+@property(readonly, nonatomic) DVTDocumentLocation *navigableItem_contentDocumentLocation;
+@property(readonly, nonatomic) DVTFileDataType *navigableItem_documentType;
+@property(readonly, nonatomic) NSImage *navigableItem_image;
+@property(readonly, nonatomic) NSString *navigableItem_name;
+- (id)exportDocumentUsingTemplateDocument:(id)arg1 completionBlock:(CDUnknownBlockType)arg2 primaryBehavior:(BOOL)arg3;
+- (id)exportDocumentUsingTemplateDocument:(id)arg1 fromWorkspace:(id)arg2 completionBlock:(CDUnknownBlockType)arg3 primaryBehavior:(BOOL)arg4;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly, nonatomic) NSString *navigableItem_accessibilityIdentifier;
+@property(readonly, nonatomic) NSString *navigableItem_accessibleImageDescription;
+@property(readonly, nonatomic) NSArray *navigableItem_additionalFilterMatchingText;
+@property(readonly, nonatomic) NSArray *navigableItem_childRepresentedObjects;
+@property(readonly, nonatomic) IDEFileReference *navigableItem_fileReference;
+@property(readonly, nonatomic) NSNull *navigableItem_filtered;
+@property(readonly, nonatomic) NSString *navigableItem_groupIdentifier;
+@property(readonly, nonatomic) BOOL navigableItem_isEnabled;
+@property(readonly, nonatomic) BOOL navigableItem_isLeaf;
+@property(readonly, nonatomic) BOOL navigableItem_isMajorGroup;
+@property(readonly, nonatomic) BOOL navigableItem_isVisible;
+@property(readonly, nonatomic) BOOL navigableItem_missingReferencedContentIsImportant;
+@property(readonly, nonatomic) id navigableItem_parentRepresentedObject;
+@property(readonly, nonatomic) BOOL navigableItem_referencedContentExists;
+@property(readonly, nonatomic) DVTSymbol *navigableItem_representedSymbol;
+@property(readonly, nonatomic) NSURL *navigableItem_representedURL;
+@property(readonly, nonatomic) NSString *navigableItem_subtitle;
+@property(readonly, nonatomic) NSString *navigableItem_toolTip;
+@property(readonly) Class superclass;
 @end
 

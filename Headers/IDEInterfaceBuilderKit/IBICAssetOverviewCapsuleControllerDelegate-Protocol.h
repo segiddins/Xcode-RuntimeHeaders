@@ -6,10 +6,18 @@
 
 #import <IDEInterfaceBuilderKit/NSObject-Protocol.h>
 
-@class IBICAssetOverviewCapsuleController, NSArray, NSEvent, NSSet;
+@class IBICAssetCapsule, IBICAssetOverviewCapsuleController, NSArray, NSEvent, NSMenu, NSSet;
 @protocol IBCollection;
 
 @protocol IBICAssetOverviewCapsuleControllerDelegate <NSObject>
+- (void)assetOverviewCapsuleController:(IBICAssetOverviewCapsuleController *)arg1 didTrackContextMenuFromEvent:(NSEvent *)arg2;
+- (void)assetOverviewCapsuleController:(IBICAssetOverviewCapsuleController *)arg1 willTrackContextMenuFromEvent:(NSEvent *)arg2;
+- (NSMenu *)assetOverviewCapsuleController:(IBICAssetOverviewCapsuleController *)arg1 menuForEvent:(NSEvent *)arg2;
+- (void)assetOverviewCapsuleControllerDidFinishBandSelecting:(IBICAssetOverviewCapsuleController *)arg1;
+- (void)assetOverviewCapsuleController:(IBICAssetOverviewCapsuleController *)arg1 didUpdateBandSelectionRect:(struct CGRect)arg2 withEvent:(NSEvent *)arg3 andInitialSelection:(NSSet *)arg4;
+- (NSSet *)assetOverviewCapsuleControllerInitialSelectionForBandSelection:(IBICAssetOverviewCapsuleController *)arg1;
+- (void)assetOverviewCapsuleController:(IBICAssetOverviewCapsuleController *)arg1 assetCapsule:(IBICAssetCapsule *)arg2 cancelPreview:(id)arg3;
+- (void)assetOverviewCapsuleController:(IBICAssetOverviewCapsuleController *)arg1 assetCapsule:(IBICAssetCapsule *)arg2 togglePreview:(id)arg3;
 - (void)assetOverviewCapsuleController:(IBICAssetOverviewCapsuleController *)arg1 trackBandSelectionWithInitialMouseDown:(NSEvent *)arg2 currentMouseDragged:(NSEvent *)arg3 selectionBeforeMouseDown:(NSSet *)arg4;
 - (void)assetOverviewCapsuleController:(IBICAssetOverviewCapsuleController *)arg1 performDelete:(id)arg2;
 - (void)assetOverviewCapsuleController:(IBICAssetOverviewCapsuleController *)arg1 userDidDragItems:(NSArray *)arg2 withMouseDown:(NSEvent *)arg3 andMouseDragged:(NSEvent *)arg4;

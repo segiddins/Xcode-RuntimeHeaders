@@ -6,10 +6,12 @@
 
 #import <objc/NSObject.h>
 
-@class DVTFileDataType, DVTFuture, DVTObservingToken, DVTPerformanceMetric, IDEDebugSession, IDEExecutionEnvironment, IDEExecutionTracker, IDELaunchParametersSnapshot, IDELocationSimulator, IDERunDestination, IDESchemeActionRecord, IDESchemeCommand, NSArray, NSError, NSMapTable, NSMutableArray, NSMutableSet, NSSet, NSString, XCTestConfiguration;
+#import <IDEFoundation/_TtP13IDEFoundation37IDETestingLaunchSession_LaunchSession_-Protocol.h>
+
+@class DVTFileDataType, DVTFuture, DVTObservingToken, DVTPerformanceMetric, IDEDebugSession, IDEExecutionEnvironment, IDEExecutionTracker, IDELaunchParametersSnapshot, IDELocationSimulator, IDERunDestination, IDERuntimeIssuesCollector, IDESchemeActionRecord, IDESchemeCommand, NSArray, NSError, NSMapTable, NSMutableArray, NSMutableSet, NSSet, NSString, XCTestConfiguration;
 @protocol IDETraceInferiorSession;
 
-@interface IDELaunchSession : NSObject
+@interface IDELaunchSession : NSObject <_TtP13IDEFoundation37IDETestingLaunchSession_LaunchSession_>
 {
     NSMutableArray *_debugSessions;
     NSMutableArray *_debuggingAdditions;
@@ -23,7 +25,9 @@
     BOOL _hasAlreadyOutputExitString;
     DVTFuture *_appExtensionInstallFuture;
     DVTObservingToken *_appExtensionObserverToken;
-    BOOL _iconChanged;
+    BOOL _debuggerShouldAttachToTarget;
+    BOOL _wasDetached;
+    BOOL _shouldHidePID;
     BOOL _representsAnXPCService;
     BOOL _hasExitCode;
     BOOL _hasCrashed;
@@ -33,12 +37,12 @@
     int _simulatorPID;
     int _targetOutputState;
     IDEExecutionEnvironment *_executionEnvironment;
+    DVTFileDataType *_runnableType;
     IDESchemeActionRecord *_schemeActionRecord;
     IDEExecutionTracker *_executionTracker;
     IDEDebugSession *_currentDebugSession;
     id <IDETraceInferiorSession> _currentTraceInferiorSession;
     IDELaunchParametersSnapshot *_launchParameters;
-    DVTFileDataType *_runnableType;
     IDESchemeCommand *_schemeCommand;
     IDERunDestination *_runDestination;
     NSString *_runnableDisplayName;
@@ -48,6 +52,7 @@
     NSArray *_xpcServices;
     XCTestConfiguration *_testConfiguration;
     long long _exitCode;
+    IDERuntimeIssuesCollector *_runtimeIssuesCollector;
     NSMutableSet *_consoleAdaptors;
     NSMapTable *_targetConsoleAdaptorToTerminationToken;
     DVTObservingToken *_codeModulesObserver;
@@ -63,7 +68,7 @@
 + (BOOL)automaticallyNotifiesObserversOfTargetOutputState;
 + (void)terminateLaunchSession:(id)arg1 inWorkspace:(id)arg2;
 + (void)terminateLaunchSession:(id)arg1;
-+ (id)createLaunchSessionForCrashPoint:(id)arg1 inWorkspace:(id)arg2;
++ (id)createLaunchSessionForAnalyticsPoint:(id)arg1 inWorkspace:(id)arg2;
 + (id)createLaunchSessionForDebuggingAddition:(id)arg1 inWorkspace:(id)arg2 launchParameters:(id)arg3 runnableDisplayName:(id)arg4 runDestination:(id)arg5;
 + (id)launchSessionForReference:(id)arg1;
 + (void)_setLaunchSession:(id)arg1 forReference:(id)arg2;
@@ -71,6 +76,7 @@
 @property(retain, nonatomic) DVTObservingToken *codeModulesObserver; // @synthesize codeModulesObserver=_codeModulesObserver;
 @property(retain, nonatomic) NSMapTable *targetConsoleAdaptorToTerminationToken; // @synthesize targetConsoleAdaptorToTerminationToken=_targetConsoleAdaptorToTerminationToken;
 @property(retain, nonatomic) NSMutableSet *consoleAdaptors; // @synthesize consoleAdaptors=_consoleAdaptors;
+@property(retain) IDERuntimeIssuesCollector *runtimeIssuesCollector; // @synthesize runtimeIssuesCollector=_runtimeIssuesCollector;
 @property BOOL hasCrashed; // @synthesize hasCrashed=_hasCrashed;
 @property long long exitCode; // @synthesize exitCode=_exitCode;
 @property BOOL hasExitCode; // @synthesize hasExitCode=_hasExitCode;
@@ -84,14 +90,15 @@
 @property(readonly, copy) NSString *runnableDisplayName; // @synthesize runnableDisplayName=_runnableDisplayName;
 @property(retain, nonatomic) IDERunDestination *runDestination; // @synthesize runDestination=_runDestination;
 @property(retain) IDESchemeCommand *schemeCommand; // @synthesize schemeCommand=_schemeCommand;
-@property BOOL iconChanged; // @synthesize iconChanged=_iconChanged;
 @property int simulatorPID; // @synthesize simulatorPID=_simulatorPID;
 @property int parentPID; // @synthesize parentPID=_parentPID;
+@property BOOL shouldHidePID; // @synthesize shouldHidePID=_shouldHidePID;
 @property(nonatomic) int runnablePID; // @synthesize runnablePID=_runnablePID;
-@property(readonly) DVTFileDataType *runnableType; // @synthesize runnableType=_runnableType;
 @property(retain) IDELaunchParametersSnapshot *launchParameters; // @synthesize launchParameters=_launchParameters;
 @property(readonly, copy) NSArray *debuggingAdditions; // @synthesize debuggingAdditions=_debuggingAdditions;
 @property(retain) id <IDETraceInferiorSession> currentTraceInferiorSession; // @synthesize currentTraceInferiorSession=_currentTraceInferiorSession;
+@property(nonatomic) BOOL wasDetached; // @synthesize wasDetached=_wasDetached;
+@property(readonly, nonatomic) BOOL debuggerShouldAttachToTarget; // @synthesize debuggerShouldAttachToTarget=_debuggerShouldAttachToTarget;
 @property(retain, nonatomic) IDEDebugSession *currentDebugSession; // @synthesize currentDebugSession=_currentDebugSession;
 @property(nonatomic) int state; // @synthesize state=_state;
 @property(retain) IDEExecutionTracker *executionTracker; // @synthesize executionTracker=_executionTracker;
@@ -105,6 +112,7 @@
 - (void)_fillUpXPCServiceWithPid:(int)arg1 forServiceName:(id)arg2;
 - (id)_findShellXPCLaunchSessionForServiceName:(id)arg1;
 - (id)xpcLaunchSessions;
+@property(readonly, nonatomic) IDELaunchSession *parentLaunchSession;
 - (void)_cancelXPCPostLaunchActions;
 - (void)_startXPCPostLaunchActions;
 - (void)_startObservingXPCServicesAndAppExtensionsStage2;
@@ -138,6 +146,7 @@
 - (void)addConsoleAdaptor:(id)arg1;
 @property(readonly, copy) NSMutableSet *kvoConsoleAdaptors;
 - (void)setTargetOutputState:(int)arg1;
+@property(readonly, nonatomic) DVTFileDataType *runnableType; // @synthesize runnableType=_runnableType;
 @property(readonly) IDEExecutionEnvironment *executionEnvironment; // @synthesize executionEnvironment=_executionEnvironment;
 @property(readonly) int CPUType;
 - (void)dealloc;

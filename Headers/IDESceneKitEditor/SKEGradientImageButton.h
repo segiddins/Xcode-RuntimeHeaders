@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <DVTKit/DVTGradientImageButton.h>
+#import <DVTUserInterfaceKit/DVTGradientImageButton.h>
 
 #import <IDESceneKitEditor/SKEUIFactoryAppearanceControl-Protocol.h>
 
@@ -26,6 +26,7 @@
 - (void)setGradientStyle:(int)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setImage:(id)arg1;
+- (void)viewDidChangeEffectiveAppearance;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

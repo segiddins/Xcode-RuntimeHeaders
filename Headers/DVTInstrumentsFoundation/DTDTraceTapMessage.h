@@ -6,15 +6,16 @@
 
 #import <DVTInstrumentsFoundation/DTTapMessage.h>
 
-#import <DVTInstrumentsFoundation/NSCoding-Protocol.h>
+#import <DVTInstrumentsFoundation/NSSecureCoding-Protocol.h>
 
 @class NSDictionary;
 
-@interface DTDTraceTapMessage : DTTapMessage <NSCoding>
+@interface DTDTraceTapMessage : DTTapMessage <NSSecureCoding>
 {
     NSDictionary *_runningMetadata;
 }
 
++ (BOOL)supportsSecureCoding;
 @property(copy, nonatomic) NSDictionary *runningMetadata; // @synthesize runningMetadata=_runningMetadata;
 - (void).cxx_destruct;
 @property(nonatomic) unsigned long long timestamp;

@@ -14,7 +14,6 @@
     IDEActivityReport *_workspaceActivityReport;
 }
 
-+ (void)initialize;
 - (void).cxx_destruct;
 - (void)updateActivityReport:(id)arg1;
 - (void)primitiveInvalidate;

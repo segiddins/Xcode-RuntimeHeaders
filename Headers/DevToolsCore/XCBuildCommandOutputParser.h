@@ -6,13 +6,26 @@
 
 #import <DevToolsCore/XCFilterOutputStream.h>
 
-@class XCBuildLogSectionRecorder;
+@class IDEActivityLogSection, IDEActivityLogSectionRecorder, NSDictionary, NSString, XCMacroExpansionScope;
 
 @interface XCBuildCommandOutputParser : XCFilterOutputStream
 {
-    XCBuildLogSectionRecorder *_logSectionRecorder;
+    IDEActivityLogSectionRecorder *_logSectionRecorder;
+    NSDictionary *_messageCategoryInfo;
+    NSDictionary *_severityBasedMessageCategoryInfo;
+    NSString *_workingDirectoryPath;
+    NSDictionary *_previouslyCopiedFilePaths;
+    XCMacroExpansionScope *_macroExpansionScope;
+    IDEActivityLogSection *_priorActivityLogSection;
 }
 
+@property(retain) IDEActivityLogSection *priorActivityLogSection; // @synthesize priorActivityLogSection=_priorActivityLogSection;
+@property(retain) XCMacroExpansionScope *macroExpansionScope; // @synthesize macroExpansionScope=_macroExpansionScope;
+@property(copy) NSDictionary *previouslyCopiedFilePaths; // @synthesize previouslyCopiedFilePaths=_previouslyCopiedFilePaths;
+@property(copy) NSString *workingDirectoryPath; // @synthesize workingDirectoryPath=_workingDirectoryPath;
+@property(copy) NSDictionary *severityBasedMessageCategoryInfo; // @synthesize severityBasedMessageCategoryInfo=_severityBasedMessageCategoryInfo;
+@property(copy) NSDictionary *messageCategoryInfo; // @synthesize messageCategoryInfo=_messageCategoryInfo;
+- (void).cxx_destruct;
 - (void)writeBytes:(const char *)arg1 length:(unsigned long long)arg2;
 - (void)setLogSectionRecorder:(id)arg1;
 - (id)logSectionRecorder;

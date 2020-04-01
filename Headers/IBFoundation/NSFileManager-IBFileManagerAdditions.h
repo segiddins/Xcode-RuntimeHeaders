@@ -6,7 +6,12 @@
 
 #import <Foundation/NSFileManager.h>
 
-@interface NSFileManager (IBFileManagerAdditions)
+#import <IBFoundation/IBICCatalogFileManager-Protocol.h>
+
+@class NSString;
+
+@interface NSFileManager (IBFileManagerAdditions) <IBICCatalogFileManager>
++ (id)ib_defaultManager;
 - (id)ib_directoriesAtPath:(id)arg1 error:(id *)arg2;
 - (id)ib_filesAtPath:(id)arg1 error:(id *)arg2;
 - (BOOL)ib_overwriteFileAtPath:(id)arg1 withLinkToFileAtPath:(id)arg2 error:(id *)arg3;
@@ -14,5 +19,19 @@
 - (BOOL)ib_removeFileAtPathIfExists:(id)arg1 error:(id *)arg2;
 - (BOOL)pathIsFile:(id)arg1;
 - (BOOL)ib_pathIsDirectory:(id)arg1;
+- (BOOL)ib_directoryExistsAtPath:(id)arg1;
+- (void)ib_endBatchEdits;
+- (void)ib_startBatchEdits;
+- (BOOL)ib_moveItemsAtPaths:(id)arg1 toPaths:(id)arg2 error:(id *)arg3;
+- (BOOL)ib_copyItemsAtPaths:(id)arg1 toPaths:(id)arg2 error:(id *)arg3;
+- (BOOL)ib_addItemsAtPaths:(id)arg1 force:(BOOL)arg2 error:(id *)arg3;
+- (BOOL)ib_removeItemsAtPaths:(id)arg1 moveToTrash:(BOOL)arg2 error:(id *)arg3;
+- (BOOL)ib_createDirectoryAtPath:(id)arg1 withIntermediateDirectories:(BOOL)arg2 attributes:(id)arg3 error:(id *)arg4;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @end
 

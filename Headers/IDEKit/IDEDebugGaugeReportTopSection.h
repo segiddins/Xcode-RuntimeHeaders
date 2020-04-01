@@ -27,6 +27,7 @@
     NSView *_v1Look;
 }
 
++ (id)descriptionFont;
 @property __weak NSView *v1Look; // @synthesize v1Look=_v1Look;
 @property __weak NSView *v2Look; // @synthesize v2Look=_v2Look;
 @property __weak NSView *contentContainer; // @synthesize contentContainer=_contentContainer;

@@ -6,7 +6,8 @@
 
 #import <objc/NSObject.h>
 
-@class DVTExtension, DVTSourceLandmarkItem, IBConnection, IBDocument, IDEWorkspaceDocument, NSArray, NSError, NSString, NSURL;
+@class DVTExtension, IBConnection, IBDocument, IDEWorkspaceDocument, NSArray, NSError, NSString, NSURL;
+@protocol DVTSourceLandmarkItemProtocol;
 
 @interface IBSourceCodeConnectionContext : NSObject
 {
@@ -28,7 +29,7 @@
     IBDocument *_document;
     NSURL *_sourceCodeDocumentURL;
     DVTExtension *_representedExtension;
-    DVTSourceLandmarkItem *_sourceLandmarkItem;
+    id <DVTSourceLandmarkItemProtocol> _sourceLandmarkItem;
     NSString *_name;
     NSArray *_springLoadedTraversal;
     NSString *_type;
@@ -41,11 +42,14 @@
     IDEWorkspaceDocument *_destinationWorkspaceDocument;
     unsigned long long _sourceLineNumber;
     NSError *_insertionError;
+    double _positionPriority;
     struct _NSRange _range;
 }
 
++ (Class)swiftActionSourceCodeContextClass;
++ (BOOL)shouldBePrioritizedWhenInsertingBelowFirstMethod;
 + (id)targetCandidatesForContainingClassNamed:(id)arg1 toObject:(id)arg2 document:(id)arg3 preferredTarget:(id *)arg4;
-+ (id)defaultType;
+@property(nonatomic) double positionPriority; // @synthesize positionPriority=_positionPriority;
 @property(retain) NSError *insertionError; // @synthesize insertionError=_insertionError;
 @property(nonatomic) BOOL wasInserted; // @synthesize wasInserted=_wasInserted;
 @property(nonatomic) unsigned long long sourceLineNumber; // @synthesize sourceLineNumber=_sourceLineNumber;
@@ -60,7 +64,7 @@
 @property(copy, nonatomic) NSString *type; // @synthesize type=_type;
 @property(copy) NSArray *springLoadedTraversal; // @synthesize springLoadedTraversal=_springLoadedTraversal;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-@property(retain) DVTSourceLandmarkItem *sourceLandmarkItem; // @synthesize sourceLandmarkItem=_sourceLandmarkItem;
+@property(retain) id <DVTSourceLandmarkItemProtocol> sourceLandmarkItem; // @synthesize sourceLandmarkItem=_sourceLandmarkItem;
 @property(retain) DVTExtension *representedExtension; // @synthesize representedExtension=_representedExtension;
 @property(copy, nonatomic) NSURL *sourceCodeDocumentURL; // @synthesize sourceCodeDocumentURL=_sourceCodeDocumentURL;
 @property(retain, nonatomic) IBDocument *document; // @synthesize document=_document;
@@ -75,10 +79,10 @@
 - (id)validatedSourceCodeConnectionNameForName:(id)arg1 error:(id *)arg2;
 - (BOOL)parseSourceLandmarkItem:(id)arg1;
 - (BOOL)parseSourceModelItem:(id)arg1 sourceModel:(id)arg2;
+- (id)defaultType;
 - (id)traversedContexts;
 - (id)counterpartsToCustomLocations;
 - (id)springLoadedDocumentLocation;
-- (double)positionPriority;
 - (BOOL)shouldAlwaysShowConfigurationPopUp;
 - (Class)userConfigurableOptionsViewControllerClass;
 - (BOOL)userCanConfigureTarget;
@@ -95,6 +99,7 @@
 - (id)initForAction:(long long)arg1 withExtension:(id)arg2 sourceLandmarkItem:(id)arg3;
 - (id)initForAction:(long long)arg1 withExtension:(id)arg2 sourceModelItem:(id)arg3 sourceModel:(id)arg4;
 - (id)initWithExtension:(id)arg1;
+- (id)init;
 
 @end
 

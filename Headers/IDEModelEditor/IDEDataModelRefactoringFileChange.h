@@ -21,6 +21,10 @@
 @property(copy) NSString *destinationEntityClassName; // @synthesize destinationEntityClassName=_dstEntityClassName;
 @property(copy) NSString *sourceEntityClassName; // @synthesize sourceEntityClassName=_srcEntityClassName;
 - (void).cxx_destruct;
+- (void)setValueName:(id)arg1;
+- (id)valueName;
+- (id)originalValueName;
+- (id)keyName;
 - (BOOL)applyChange;
 - (BOOL)_applyChangeToEntity:(id)arg1;
 

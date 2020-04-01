@@ -11,20 +11,13 @@
 @interface IBDevicePickerConfigurationButton : NSButton
 {
     BOOL _inBranchMode;
-    CDUnknownBlockType _callback;
     IBDeviceConfiguration *_deviceConfiguration;
 }
 
 @property(nonatomic, getter=isInBranchMode) BOOL inBranchMode; // @synthesize inBranchMode=_inBranchMode;
 @property(retain, nonatomic) IBDeviceConfiguration *deviceConfiguration; // @synthesize deviceConfiguration=_deviceConfiguration;
-@property(copy, nonatomic) CDUnknownBlockType callback; // @synthesize callback=_callback;
 - (void).cxx_destruct;
-- (void)setState:(long long)arg1;
-- (void)mouseExited:(id)arg1;
-- (void)mouseEntered:(id)arg1;
-- (void)_initTrackingRect;
-- (void)updateTrackingAreas;
-- (id)initWithFrame:(struct CGRect)arg1;
+- (void)drawRect:(struct CGRect)arg1;
 
 @end
 

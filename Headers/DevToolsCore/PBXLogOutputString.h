@@ -25,6 +25,7 @@
     NSString *_pendingConditionalSubheading;
 }
 
+- (void).cxx_destruct;
 - (void)appendNL;
 - (void)appendErrorText:(id)arg1;
 - (void)appendWarningText:(id)arg1;
@@ -49,7 +50,6 @@
 - (void)replaceCharactersInRange:(struct _NSRange)arg1 withString:(id)arg2;
 - (id)attributesAtIndex:(unsigned long long)arg1 effectiveRange:(struct _NSRange *)arg2;
 - (id)string;
-- (void)dealloc;
 - (id)init;
 - (id)initWithString:(id)arg1;
 - (id)initWithString:(id)arg1 attributes:(id)arg2;

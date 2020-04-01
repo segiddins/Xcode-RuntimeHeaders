@@ -6,12 +6,12 @@
 
 #import <objc/NSObject.h>
 
-#import <GPUToolsServices/NSCoding-Protocol.h>
 #import <GPUToolsServices/NSCopying-Protocol.h>
+#import <GPUToolsServices/NSSecureCoding-Protocol.h>
 
 @class NSArray, NSDictionary, NSMutableArray, NSString, NSURL;
 
-@interface DYGuestApp : NSObject <NSCoding, NSCopying>
+@interface DYGuestApp : NSObject <NSSecureCoding, NSCopying>
 {
     unsigned long long _kind;
     NSMutableArray *_argumentEntries;
@@ -29,6 +29,7 @@
     unsigned long long _launchArchitecture;
 }
 
++ (BOOL)supportsSecureCoding;
 + (id)keyPathsForValuesAffectingUrl;
 + (id)keyPathsForValuesAffectingPath;
 + (void)initialize;

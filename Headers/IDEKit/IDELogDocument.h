@@ -8,20 +8,21 @@
 
 #import <IDEKit/DVTTextFindable-Protocol.h>
 
-@class IDEActivityLogSection, IDESchemeActionCodeCoverage, IDESchemeActionRunDestinationRecord, NSArray, NSString;
+@class IDEActivityLogRecord, IDEActivityLogSection, IDELogStoreManageableLogItem, NSArray, NSString;
 
 @interface IDELogDocument : IDEEditorDocument <DVTTextFindable>
 {
-    IDEActivityLogSection *_activityLog;
-    IDESchemeActionCodeCoverage *_coverageReport;
-    NSArray *_testableSummaries;
-    IDESchemeActionRunDestinationRecord *_runDestinationRecord;
+    IDEActivityLogSection *_buildLog;
+    NSArray *_availableLogs;
+    IDELogStoreManageableLogItem *_currentLogItem;
+    IDEActivityLogRecord *_logRecord;
 }
 
 + (BOOL)shouldUnlockFileURLBeforeMakingChanges;
-@property(readonly) IDESchemeActionRunDestinationRecord *runDestinationRecord; // @synthesize runDestinationRecord=_runDestinationRecord;
-@property(readonly) NSArray *testableSummaries; // @synthesize testableSummaries=_testableSummaries;
-@property(readonly) IDEActivityLogSection *buildLog; // @synthesize buildLog=_activityLog;
+@property(retain, nonatomic) IDEActivityLogRecord *logRecord; // @synthesize logRecord=_logRecord;
+@property(retain, nonatomic) IDELogStoreManageableLogItem *currentLogItem; // @synthesize currentLogItem=_currentLogItem;
+@property(retain, nonatomic) NSArray *availableLogs; // @synthesize availableLogs=_availableLogs;
+@property(retain, nonatomic) IDEActivityLogSection *buildLog; // @synthesize buildLog=_buildLog;
 - (void).cxx_destruct;
 - (void)printDocument:(id)arg1;
 - (id)findStringMatchingDescriptor:(id)arg1 backwards:(BOOL)arg2 from:(id)arg3 to:(id)arg4;
@@ -32,10 +33,9 @@
 - (id)lastIndexPathInSection:(id)arg1 inIndexPath:(id)arg2;
 - (id)_iterateStartingWith:(id)arg1 section:(id)arg2 index:(unsigned long long)arg3 backwards:(BOOL)arg4 level:(long long)arg5 messageCount:(unsigned long long)arg6 onRefPath:(BOOL)arg7 passingTest:(CDUnknownBlockType)arg8;
 - (id)messageOrSectionForDocumentLocation:(id)arg1;
-@property(readonly) IDESchemeActionCodeCoverage *coverageReport;
-- (void)refreshTestableSummaries;
 - (int)readOnlyStatus;
 - (id)displayName;
+- (void)switchToLogItem:(id)arg1;
 - (id)initForURL:(id)arg1 withContentsOfURL:(id)arg2 ofType:(id)arg3 error:(id *)arg4;
 
 // Remaining properties

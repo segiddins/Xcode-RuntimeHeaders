@@ -10,9 +10,14 @@
 {
 }
 
++ (id)permanentlyEnabledExtensionIdentifiers;
 + (id)sharedExtensionManager;
 + (void)initialize;
+- (BOOL)checkWhetherExtension:(id)arg1 matchesCodeSigningRequirements:(struct __SecRequirement *)arg2 error:(id *)arg3;
 - (id)startSearchingForExtensionsOfExtensionPoint:(id)arg1 callback:(CDUnknownBlockType)arg2;
+- (void)endMatchingExtensions:(id)arg1;
+- (id)beginMatchingExtensionsWithAttributes:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (id)_minimumVersionForExtension:(id)arg1;
 - (id)_attributesForMatchingWithExtensionPointIdentifier:(id)arg1;
 
 @end

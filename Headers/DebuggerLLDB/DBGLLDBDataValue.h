@@ -9,7 +9,6 @@
 @class DBGLLDBDataType, NSArray, NSMutableArray, NSMutableIndexSet, NSString;
 @protocol DBGSBValue;
 
-__attribute__((visibility("hidden")))
 @interface DBGLLDBDataValue : DBGDataValue
 {
     BOOL _isDictionarySynthesizedParent;
@@ -35,6 +34,8 @@ __attribute__((visibility("hidden")))
     BOOL _in_scope;
     NSString *_name;
     NSString *_value_str;
+    NSString *_address;
+    NSString *_pointeeAddress;
     NSString *_summary_str;
     NSString *_fullSummary;
     DBGDataValue *_parent;
@@ -55,6 +56,8 @@ __attribute__((visibility("hidden")))
 - (BOOL)hasChildValues;
 @property BOOL childValuesCountValid; // @synthesize childValuesCountValid=_childValuesCountValid;
 - (BOOL)valueHasChanged;
+- (id)pointeeAddress;
+- (id)address;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
 - (void)primitiveInvalidate;
@@ -82,7 +85,7 @@ __attribute__((visibility("hidden")))
 - (void)setFormat:(id)arg1;
 - (id)format;
 - (const char *)valueAsCString;
-- (void)rawDataWithHandler:(CDUnknownBlockType)arg1;
+- (void)_rawDataWithHandler:(CDUnknownBlockType)arg1;
 - (id)primitiveChildValues;
 - (void)_faultNextSetOfChildValuesStartingAtIndex:(unsigned long long)arg1;
 - (void)_setChildValuesToArrayOfPlaceholders;
@@ -101,12 +104,12 @@ __attribute__((visibility("hidden")))
 - (BOOL)dynamicTypeHasChanged;
 - (BOOL)summaryHasChanged;
 - (void)setValue:(id)arg1;
-- (id)blockStartAddress;
 - (id)expressionPath;
 - (void)_addSessionThreadAction:(CDUnknownBlockType)arg1;
 - (id)_lldbSession;
 - (BOOL)_isSessionThread;
 - (void)_assertOnSessionThread;
+- (void)_refreshValue;
 - (id)lldbStackFrame;
 - (id)initWithLLDBValueObject:(id)arg1 forStackFrame:(id)arg2 withParent:(id)arg3 updateSummary:(BOOL)arg4;
 - (id)initWithLLDBValueObject:(id)arg1 forStackFrame:(id)arg2 withParent:(id)arg3;

@@ -13,11 +13,12 @@
     NSMutableArray *_rules;
 }
 
++ (id)defaultOverlayWithScanner:(id)arg1;
 + (id)defaultOverlay;
 @property(readonly, nonatomic) NSArray *refinementRules; // @synthesize refinementRules=_rules;
+- (void).cxx_destruct;
 - (void)addMetadataRefinementRule:(CDUnknownBlockType)arg1;
-- (void)dealloc;
-- (id)init;
+- (id)initWithScanner:(id)arg1;
 
 @end
 

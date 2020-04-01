@@ -7,71 +7,49 @@
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBUIView.h>
 
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBDocumentArchiving-Protocol.h>
-#import <IDEInterfaceBuilderCocoaTouchIntegration/IBUIEditorDecoratableView-Protocol.h>
-#import <IDEInterfaceBuilderCocoaTouchIntegration/IBUIViewCachedItemFramesDictionaryInfoDelegate-Protocol.h>
-#import <IDEInterfaceBuilderCocoaTouchIntegration/NSCoding-Protocol.h>
 
-@class IBMutableIdentityDictionary, NSArray, NSColor, NSMutableArray, NSString;
+@class IBMutableIdentityDictionary, IBUIColor, NSArray, NSMutableArray, NSString;
 
-@interface IBUIToolbar : IBUIView <IBDocumentArchiving, NSCoding, IBUIEditorDecoratableView, IBUIViewCachedItemFramesDictionaryInfoDelegate>
+@interface IBUIToolbar : IBUIView <IBDocumentArchiving>
 {
-    IBMutableIdentityDictionary *cachedItemFrames;
-    IBMutableIdentityDictionary *cachedTitleRects;
-    IBMutableIdentityDictionary *cachedItemImages;
-    int barStyle;
-    NSMutableArray *items;
-    NSArray *observedSubviews;
-    BOOL isTopBar;
-    BOOL translucent;
-    NSColor *barTintColor;
+    IBMutableIdentityDictionary *_cachedItemFrames;
+    IBMutableIdentityDictionary *_cachedTitleRects;
+    NSArray *_observedSubviews;
+    NSMutableArray *_items;
+    BOOL _translucent;
+    BOOL _isTopBar;
+    IBUIColor *_barTintColor;
+    long long _barStyle;
 }
 
 + (void)registerMarshallingRecordHandlers;
 + (BOOL)shouldArchiveTintColorWithUIViewProperties;
-+ (id)ibObservedPropertiesForInheritableMetricsInvalidation;
 + (long long)ibInstantiationSizeBehavior;
 + (id)ibInstantiateViewForRole:(long long)arg1 withTargetRuntime:(id)arg2 documentClass:(Class)arg3 assetIdentifier:(id)arg4;
-@property(copy, nonatomic) NSColor *barTintColor; // @synthesize barTintColor;
-@property(nonatomic, getter=isTranslucent) BOOL translucent; // @synthesize translucent;
+@property(nonatomic) BOOL isTopBar; // @synthesize isTopBar=_isTopBar;
+@property(nonatomic) long long barStyle; // @synthesize barStyle=_barStyle;
+@property(copy, nonatomic) IBUIColor *barTintColor; // @synthesize barTintColor=_barTintColor;
+@property(nonatomic, getter=isTranslucent) BOOL translucent; // @synthesize translucent=_translucent;
 - (void).cxx_destruct;
 - (void)layoutSubviews;
 - (void)setObservedSubviews:(id)arg1;
 - (void)subviewFrameChanged:(id)arg1;
 - (double)estimatedMaximumAvailableWidth;
-- (void)drawRect:(struct CGRect)arg1;
 - (void)viewWillDraw;
-- (id)imageOfItem:(id)arg1;
-- (void)_setCachedItemImagesFromBarItemImagesArray:(id)arg1;
-- (id)itemImages;
-- (struct CGRect)titleRectForItem:(id)arg1;
 - (id)titleRects;
-- (struct CGRect)frameForItem:(id)arg1;
-- (id)itemFrames;
-- (void)populateCachedGeometryInfos:(id)arg1;
-- (void)configureFullSceneUpdateRequest:(id)arg1;
-- (void)enumerateCachedImageKeyPaths:(CDUnknownBlockType)arg1;
 - (id)localExtraMarshalledAttributesKeyPaths;
 - (void)validateTopBarIfNeeded;
 - (void)setTopBar:(BOOL)arg1;
-- (BOOL)isTopBar;
 - (BOOL)effectiveIsTopBar;
-- (void)setBarStyle:(int)arg1;
-- (int)barStyle;
-- (void)setItems:(id)arg1;
-- (id)orderedItemsForCachedItemFramesDictionaryInfo:(id)arg1;
-- (id)items;
+@property(retain, nonatomic) NSArray *items;
 - (void)removeItem:(id)arg1;
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect)arg1 targetRuntime:(id)arg2;
-- (Class)barMetricsClass;
-- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
-- (void)archiveWithDocumentArchiver:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)ibWantsPlaceholderContainingViewController;
-- (void)editorView:(id)arg1 drawDecoratorInRect:(struct CGRect)arg2 overlayView:(id)arg3;
+- (id)initWithFrame:(struct CGRect)arg1 targetRuntime:(id)arg2;
+- (Class)barMetricsClass;
+- (BOOL)ibWantsPlaceholderContainingViewControllerWhenMarshallingWithContext:(id)arg1;
 - (BOOL)ibShouldChildBeIncludedInArbitrationUnitWithParent:(id)arg1;
-- (id)ibComparableToolbarColor;
 - (BOOL)ibIsChildInitiallySelectable:(id)arg1;
 - (struct CGRect)ibRectForChild:(id)arg1 inFrameController:(id)arg2;
 - (id)ibAcceptContentsOfPasteboard:(id)arg1 inDocument:(id)arg2 insertionContext:(id)arg3;
@@ -83,10 +61,16 @@
 - (BOOL)ibCanBeTableViewBracketingView;
 - (void)ibRemoveChildren:(id)arg1;
 - (void)ibPopulateChildRelationOrder:(id)arg1;
-- (long long)ibPreferredResizeDirection;
+- (long long)ibPreferredResizeDirectionMask;
 - (id)ibWidgetType;
 - (void)ibCustomizeForInsertionIntoIBUIView:(id)arg1 withObjects:(id)arg2 fromLibraryOrDifferentTargetRuntime:(BOOL)arg3 andInsertionContext:(id)arg4;
 - (BOOL)ibArchivesToolbarItems;
+- (id)ibLocalPropertiesForInheritableMetricsInvalidation;
+- (Class)ibEditorClass;
+- (id)ibLocalAttributeKeyPaths;
+- (id)ibLocalChildToManyRelationshipsKeyPaths;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

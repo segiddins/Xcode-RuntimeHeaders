@@ -24,7 +24,12 @@
 - (struct CGSize)effectiveSimulatedViewSize;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (BOOL)ibConnectionsRequireClassSwapper;
+- (BOOL)ibRequiresClassSwapperForConnection:(id)arg1;
+- (BOOL)ibChildEditsWithSingleClick:(id)arg1;
+@property(readonly, nonatomic) BOOL ibWantsSceneExitPlaceholder;
 - (id)ibShortDisplayName;
+- (void)ibPropagatePropertiesToCompiledSceneObject:(id)arg1;
 - (BOOL)ibIsPrimarySceneObject:(id)arg1 validSplitViewDetailWithSegue:(id)arg2;
 - (BOOL)ibIsPrimarySceneObject:(id)arg1 validSplitViewMasterWithSegue:(id)arg2;
 - (BOOL)ibIsValidPushReceiver;
@@ -33,7 +38,9 @@
 - (BOOL)ibSegueTemplatesAreTopLevel;
 - (void)ibResizeToEffectiveSimulatedSizeForSceneTreeDragImageNode;
 @property(nonatomic) BOOL ibInspectedIsDesignatedEntryPoint;
-- (BOOL)ibIsStrandedInStoryboard:(id)arg1;
+- (BOOL)ibIsUnreachableInStoryboard;
+- (BOOL)ibCanBeValidSegueDestination;
+- (BOOL)ibIsPrimarySceneObjectInStoryboard;
 - (void)ibDidPutObjects:(id)arg1 onPasteboard:(id)arg2 fromDocument:(id)arg3 context:(id)arg4;
 - (void)ibSetupTriggerForSegueTemplate:(id)arg1 inCompilationUnit:(id)arg2;
 - (id)ibSegueTriggers;
@@ -63,6 +70,7 @@
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
+@property(nonatomic) BOOL ibInspectedIsDesignatedMenu;
 @property(readonly) Class superclass;
 
 @end

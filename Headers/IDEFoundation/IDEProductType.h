@@ -15,10 +15,13 @@
 + (BOOL)buildableProductIsWatchAppExtension:(id)arg1;
 + (BOOL)buildableProductIsWatchApp:(id)arg1;
 + (BOOL)buildableProductIsAppExtension:(id)arg1;
++ (BOOL)buildableProductIsApp:(id)arg1;
 + (id)_expandedPlatformForBuildableProduct:(id)arg1;
 + (id)platformProductTypeOfBuildable:(id)arg1;
 + (id)productTypeForIdentifier:(id)arg1 platform:(id)arg2;
+- (BOOL)isBundleIdentifierRequired;
 - (long long)provisioningProfileSupport;
+- (BOOL)willEmbedRunSanitizerLibraries;
 - (BOOL)runsDirectlyOnProxy;
 - (BOOL)runsOnProxy;
 - (BOOL)installsOnProxy;
@@ -29,6 +32,9 @@
 - (BOOL)isWatch1Application;
 - (BOOL)isWatch2Application;
 - (BOOL)isWatchApplication;
+- (BOOL)isSystemExtension;
+- (BOOL)isDriverExtension;
+- (BOOL)isCommandLineTool;
 - (BOOL)isAppExtension;
 - (BOOL)isApplication;
 - (BOOL)isKindOfProductType:(id)arg1;
@@ -37,7 +43,9 @@
 @property(readonly) NSString *localizedDescription;
 @property(readonly) NSString *name;
 @property(readonly) NSString *identifier;
-- (id)debugDescription;
+- (id)description;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
 
 @end
 

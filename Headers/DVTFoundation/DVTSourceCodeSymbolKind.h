@@ -41,6 +41,7 @@
 + (id)ibOutletPropertySymbolKind;
 + (id)ibOutletVariableSymbolKind;
 + (id)ibOutletSymbolKind;
++ (id)ibSegueActionMethodSymbolKind;
 + (id)ibActionMethodSymbolKind;
 + (id)testMethodSymbolKind;
 + (id)globalVariableSymbolKind;
@@ -49,6 +50,8 @@
 + (id)typedefSymbolKind;
 + (id)structSymbolKind;
 + (id)protocolSymbolKind;
++ (id)staticPropertySymbolKind;
++ (id)classPropertySymbolKind;
 + (id)propertySymbolKind;
 + (id)parameterSymbolKind;
 + (id)macroSymbolKind;

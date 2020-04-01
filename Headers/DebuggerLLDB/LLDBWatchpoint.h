@@ -10,11 +10,10 @@
 
 @class NSString;
 
-__attribute__((visibility("hidden")))
 @interface LLDBWatchpoint : NSObject <DBGSBWatchpoint>
 {
     struct SBWatchpoint {
-        struct shared_ptr<lldb_private::Watchpoint> m_opaque_sp;
+        struct weak_ptr<lldb_private::Watchpoint> m_opaque_wp;
     } _watchpoint;
 }
 

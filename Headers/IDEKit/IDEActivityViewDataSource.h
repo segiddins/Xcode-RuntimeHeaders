@@ -34,15 +34,20 @@
     IDEActivityStatusCategory *_testFailuresIssueCategory;
     IDEActivityStatusCategory *_runtimeIssueCategory;
     IDEActivityStatusCategory *_toolchainIssueCategory;
+    IDEActivityStatusCategory *_legacyBuildSystemIssueCategory;
+    IDEActivityStatusCategory *_newBuildSystemIssueCategory;
+    IDEActivityStatusCategory *_slowBuildIssueCategory;
     NSArray *_issueCategories;
+    double _minimumReportTime;
 }
 
 + (void)initialize;
+@property(nonatomic) double minimumReportTime; // @synthesize minimumReportTime=_minimumReportTime;
 @property(copy) NSString *debugName; // @synthesize debugName=_debugName;
 @property(copy) NSArray *issueCategories; // @synthesize issueCategories=_issueCategories;
 @property(readonly) IDEWorkspaceDocument *workspaceDocument; // @synthesize workspaceDocument=_workspaceDocument;
 - (void).cxx_destruct;
-- (void)_openIssuesNavigator:(BOOL)arg1;
+- (void)_openIssuesNavigator:(BOOL)arg1 clearFilterType:(unsigned long long)arg2;
 - (void)_openTestNavigator;
 - (void)stopObservingActivityReports;
 - (void)startObservingActivityReports;
@@ -80,6 +85,7 @@
 - (id)workspace;
 - (id)dataSourceByCloningReportTimingData;
 - (void)primitiveInvalidate;
+- (id)_slowBuildIcon;
 - (id)initWithWorkspaceDocument:(id)arg1;
 
 // Remaining properties

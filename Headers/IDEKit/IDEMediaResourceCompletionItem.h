@@ -12,19 +12,20 @@
 
 @interface IDEMediaResourceCompletionItem : NSObject <DVTTextCompletionItem>
 {
+    NSImage *_cachedIcon;
     NSString *name;
     NSString *displayText;
     NSString *displayType;
     NSString *completionText;
     NSAttributedString *descriptionText;
-    NSImage *icon;
+    CDUnknownBlockType iconProvidingMainThreadBlock;
     double priority;
     double fuzzyMatchingScore;
 }
 
 @property double fuzzyMatchingScore; // @synthesize fuzzyMatchingScore;
 @property double priority; // @synthesize priority;
-@property(retain) NSImage *icon; // @synthesize icon;
+@property(copy) CDUnknownBlockType iconProvidingMainThreadBlock; // @synthesize iconProvidingMainThreadBlock;
 @property(copy) NSAttributedString *descriptionText; // @synthesize descriptionText;
 @property(copy) NSString *completionText; // @synthesize completionText;
 @property(copy) NSString *displayType; // @synthesize displayType;
@@ -34,6 +35,7 @@
 @property(readonly) BOOL notRecommended;
 @property(readonly) unsigned long long priorityComparatorKind;
 @property(readonly) long long priorityBucket;
+@property(retain) NSImage *icon; // @synthesize icon=_cachedIcon;
 @property(readonly, copy) NSString *parentText;
 
 // Remaining properties

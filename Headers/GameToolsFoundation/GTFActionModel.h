@@ -7,12 +7,12 @@
 #import <objc/NSObject.h>
 
 #import <GameToolsFoundation/IDEKeyDrivenNavigableItemRepresentedObject-Protocol.h>
-#import <GameToolsFoundation/NSCoding-Protocol.h>
 #import <GameToolsFoundation/NSCopying-Protocol.h>
+#import <GameToolsFoundation/NSSecureCoding-Protocol.h>
 
-@class DVTDocumentLocation, DVTFileDataType, GTFActionModelGroup, GTFActionTimelineModel, IDEFileReference, NSArray, NSColor, NSImage, NSString;
+@class DVTDocumentLocation, DVTFileDataType, GTFActionModelGroup, GTFActionTimelineModel, IDEFileReference, NSArray, NSColor, NSImage, NSNull, NSString, NSURL, _TtC13DVTFoundation9DVTSymbol;
 
-@interface GTFActionModel : NSObject <NSCoding, NSCopying, IDEKeyDrivenNavigableItemRepresentedObject>
+@interface GTFActionModel : NSObject <NSSecureCoding, NSCopying, IDEKeyDrivenNavigableItemRepresentedObject>
 {
     GTFActionModelGroup *_ownerGroup;
     int _track;
@@ -29,6 +29,7 @@
     NSArray *_customStringArray1;
 }
 
++ (BOOL)supportsSecureCoding;
 + (id)actionWithSCNAction:(id)arg1;
 + (id)actionReferenceWithName:(id)arg1;
 + (id)actionAnimateWithTextures:(id)arg1 resize:(BOOL)arg2 restore:(BOOL)arg3;
@@ -73,11 +74,11 @@
 @property(readonly, nonatomic) NSColor *actionColor;
 @property(readonly, nonatomic) NSString *actionName;
 @property(readonly, nonatomic) long long actionType;
-@property(readonly) BOOL navigableItem_isLeaf;
-@property(readonly) DVTDocumentLocation *navigableItem_contentDocumentLocation;
+@property(readonly, nonatomic) BOOL navigableItem_isLeaf;
+@property(readonly, nonatomic) DVTDocumentLocation *navigableItem_contentDocumentLocation;
 @property(readonly, nonatomic) NSArray *nav_children;
 - (id)ideModelObjectTypeIdentifier;
-@property(readonly) NSString *navigableItem_name;
+@property(readonly, nonatomic) NSString *navigableItem_name;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 @property(readonly, nonatomic) BOOL canMove;
@@ -114,16 +115,25 @@
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
-@property(readonly) NSString *navigableItem_accessibleImageDescription;
-@property(readonly) DVTFileDataType *navigableItem_documentType;
-@property(readonly) IDEFileReference *navigableItem_fileReference;
-@property(readonly) NSString *navigableItem_groupIdentifier;
-@property(readonly) NSImage *navigableItem_image;
-@property(readonly) BOOL navigableItem_isMajorGroup;
-@property(readonly) BOOL navigableItem_missingReferencedContentIsImportant;
-@property(readonly) BOOL navigableItem_referencedContentExists;
-@property(readonly) NSString *navigableItem_subtitle;
-@property(readonly) NSString *navigableItem_toolTip;
+@property(readonly, nonatomic) NSString *navigableItem_accessibilityIdentifier;
+@property(readonly, nonatomic) NSString *navigableItem_accessibleImageDescription;
+@property(readonly, nonatomic) NSArray *navigableItem_additionalFilterMatchingText;
+@property(readonly, nonatomic) NSArray *navigableItem_childRepresentedObjects;
+@property(readonly, nonatomic) DVTFileDataType *navigableItem_documentType;
+@property(readonly, nonatomic) IDEFileReference *navigableItem_fileReference;
+@property(readonly, nonatomic) NSNull *navigableItem_filtered;
+@property(readonly, nonatomic) NSString *navigableItem_groupIdentifier;
+@property(readonly, nonatomic) NSImage *navigableItem_image;
+@property(readonly, nonatomic) BOOL navigableItem_isEnabled;
+@property(readonly, nonatomic) BOOL navigableItem_isMajorGroup;
+@property(readonly, nonatomic) BOOL navigableItem_isVisible;
+@property(readonly, nonatomic) BOOL navigableItem_missingReferencedContentIsImportant;
+@property(readonly, nonatomic) id navigableItem_parentRepresentedObject;
+@property(readonly, nonatomic) BOOL navigableItem_referencedContentExists;
+@property(readonly, nonatomic) _TtC13DVTFoundation9DVTSymbol *navigableItem_representedSymbol;
+@property(readonly, nonatomic) NSURL *navigableItem_representedURL;
+@property(readonly, nonatomic) NSString *navigableItem_subtitle;
+@property(readonly, nonatomic) NSString *navigableItem_toolTip;
 @property(readonly) Class superclass;
 
 @end

@@ -4,12 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <GPURenderTargetEditor/GPUResourceEditor.h>
+#import <GPUDebugger/GPUTraceSubEditor.h>
 
 @class GPUBufferViewerViewController;
 
 __attribute__((visibility("hidden")))
-@interface GPUGLVAOEditor : GPUResourceEditor
+@interface GPUGLVAOEditor : GPUTraceSubEditor
 {
     GPUBufferViewerViewController *_bufferViewerViewController;
 }
@@ -21,10 +21,12 @@ __attribute__((visibility("hidden")))
 - (void)readGLVertexAttribute:(id)arg1 containerStruct:(struct Struct *)arg2 dataBuffers:(vector_c26b6358 *)arg3;
 - (void)readGLTransformFeedbackVaryings:(id)arg1 containerStruct:(struct Struct *)arg2 dataBuffers:(vector_c26b6358 *)arg3;
 - (void)readGLVertexAttributes:(id)arg1 containerStruct:(struct Struct *)arg2 dataBuffers:(vector_c26b6358 *)arg3;
-- (void)beginEditor;
-- (void)viewWillUninstall;
+- (void)_beginEditor;
+- (void)handleNotification:(id)arg1;
+- (void)setRepresentedObject:(id)arg1;
+- (void)viewWillLayout;
+- (void)viewDidLoad;
 - (void)loadView;
-- (id)supportedResourceClasses;
 
 @end
 

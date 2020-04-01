@@ -13,6 +13,9 @@
 - (BOOL)adjunctFileExistsForFilename:(NSString *)arg1 error:(id *)arg2;
 - (NSMutableData *)copyAdjunctDataForFilename:(NSString *)arg1 error:(id *)arg2;
 - (id)metadataValueForKey:(NSString *)arg1;
+- (void)releaseBytesForFilePosition:(unsigned long long)arg1;
+- (_Bool)requestDataForFilePosition:(unsigned long long)arg1 buffer:(void **)arg2 size:(unsigned long long *)arg3 error:(id *)arg4;
+- (void)cacheAllResources;
 - (NSString *)getFilenameForFilePosition:(unsigned long long)arg1 error:(id *)arg2;
 - (BOOL)getInfo:(CDStruct_61ea625d *)arg1 forFilePosition:(unsigned long long)arg2 error:(id *)arg3;
 - (NSMutableData *)copyDataForFilePosition:(unsigned long long)arg1 error:(id *)arg2;
@@ -27,7 +30,7 @@
 - (long long)readDataForFilename:(NSString *)arg1 buffer:(void *)arg2 size:(unsigned long long)arg3 error:(id *)arg4;
 - (long long)readDataForFilenameBuffer:(const char *)arg1 buffer:(void *)arg2 size:(unsigned long long)arg3 error:(id *)arg4;
 - (DYCaptureFile *)openFileWithFilename:(NSString *)arg1 error:(id *)arg2;
-- (vector_cfeb9b06)getSortedFilePositionsForDataCaching;
+- (vector_7984f87c)getSortedFilePositionsForDataCaching;
 - (NSString *)resolveFilename:(NSString *)arg1 error:(id *)arg2;
 - (NSArray *)filenamesWithPredicate:(NSPredicate *)arg1 error:(id *)arg2;
 - (NSArray *)filenamesWithPrefix:(NSString *)arg1 error:(id *)arg2;

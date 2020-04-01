@@ -6,37 +6,71 @@
 
 #import <objc/NSObject.h>
 
-@class IBDeviceOrientation, IBIdiom, IBMutableIdentityDictionary, NSArray, NSOrderedSet, NSString;
+#import <IDEInterfaceBuilderKit/NSCopying-Protocol.h>
 
-@interface IBDeviceSubtype : NSObject
+@class IBDeviceOrientation, IBGenericDeviceTypeDescription, IBIdiom, NSArray, NSDictionary, NSNumber, NSOrderedSet, NSString;
+
+@interface IBDeviceSubtype : NSObject <NSCopying>
 {
-    IBMutableIdentityDictionary *_defaultAdaptationByOrientationMap;
+    NSDictionary *_layoutsByOrientation;
+    NSDictionary *_defaultLayoutByOrientation;
+    NSDictionary *_adaptationsByOrientation;
+    NSDictionary *_defaultAdaptationByOrientation;
+    NSDictionary *_defaultAdaptationByAppearance;
     NSString *_identifier;
+    NSString *_archivingName;
     NSString *_displayName;
     IBIdiom *_idiom;
     double _scaleFactor;
-    NSOrderedSet *_orientations;
+    NSString *_preferredSimulatorDeviceType;
+    IBGenericDeviceTypeDescription *_preferredDeviceTypeDescription;
+    Class _toolManagerClass;
+    NSNumber *_minimumHostOSVersion;
+    NSString *_resourceSubtypeIdentifier;
+    NSNumber *_bezelCornerRadius;
+    NSNumber *_bezelCornerRadiusInset;
+    NSArray *_appearances;
+    NSArray *_orientations;
     IBDeviceOrientation *_defaultOrientation;
+    NSArray *_layouts;
     NSOrderedSet *_adaptations;
 }
 
 @property(readonly, nonatomic) NSOrderedSet *adaptations; // @synthesize adaptations=_adaptations;
+@property(readonly, nonatomic) NSArray *layouts; // @synthesize layouts=_layouts;
 @property(readonly, nonatomic) IBDeviceOrientation *defaultOrientation; // @synthesize defaultOrientation=_defaultOrientation;
-@property(readonly, nonatomic) NSOrderedSet *orientations; // @synthesize orientations=_orientations;
+@property(readonly, nonatomic) NSArray *orientations; // @synthesize orientations=_orientations;
+@property(readonly, nonatomic) NSArray *appearances; // @synthesize appearances=_appearances;
+@property(readonly, nonatomic) NSNumber *bezelCornerRadiusInset; // @synthesize bezelCornerRadiusInset=_bezelCornerRadiusInset;
+@property(readonly, nonatomic) NSNumber *bezelCornerRadius; // @synthesize bezelCornerRadius=_bezelCornerRadius;
+@property(readonly, nonatomic) NSString *resourceSubtypeIdentifier; // @synthesize resourceSubtypeIdentifier=_resourceSubtypeIdentifier;
+@property(readonly, nonatomic) NSNumber *minimumHostOSVersion; // @synthesize minimumHostOSVersion=_minimumHostOSVersion;
+@property(readonly, nonatomic) Class toolManagerClass; // @synthesize toolManagerClass=_toolManagerClass;
+@property(readonly, nonatomic) IBGenericDeviceTypeDescription *preferredDeviceTypeDescription; // @synthesize preferredDeviceTypeDescription=_preferredDeviceTypeDescription;
+@property(readonly, nonatomic) NSString *preferredSimulatorDeviceType; // @synthesize preferredSimulatorDeviceType=_preferredSimulatorDeviceType;
 @property(readonly, nonatomic) double scaleFactor; // @synthesize scaleFactor=_scaleFactor;
 @property(readonly, nonatomic) IBIdiom *idiom; // @synthesize idiom=_idiom;
 @property(readonly, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
+@property(readonly, nonatomic) NSString *archivingName; // @synthesize archivingName=_archivingName;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) NSArray *ib_testing_allMemberConfigurations;
-- (id)memberConfigurationForOrientation:(id)arg1 withAdaptation:(id)arg2;
-- (id)displayNameForAdaptation:(id)arg1 separator:(id)arg2 includeOrientation:(BOOL)arg3;
-- (id)configurationWithDefaultOrientationAndAdaptation;
-- (id)adaptationForIdentifier:(id)arg1 orientation:(id)arg2;
+- (id)displayNameForAdaptation:(id)arg1 includeOrientation:(BOOL)arg2 includeAppearance:(BOOL)arg3;
+- (id)defaultDeviceConfiguration;
+- (id)adaptationForLayoutIdentifier:(id)arg1 orientation:(id)arg2;
+- (id)defaultAdaptation;
+- (id)defaultAdaptationForAppearance:(id)arg1;
 - (id)defaultAdaptationForOrientation:(id)arg1;
-- (id)adaptationsForOrientation:(id)arg1;
+- (id)adaptationForOrientation:(id)arg1 layout:(id)arg2 appearance:(id)arg3;
+- (id)adaptationsForOrientation:(id)arg1 layout:(id)arg2 appearance:(id)arg3;
+- (id)defaultLayoutForOrientation:(id)arg1;
+- (id)layoutsForOrientation:(id)arg1;
+- (id)layoutForArchivingName:(id)arg1;
+- (id)orientationForArchivingName:(id)arg1;
+- (id)defaultAppearance;
+- (id)appearanceForArchivingName:(id)arg1;
+- (id)appearanceForIdentifier:(id)arg1;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithExtension:(id)arg1 idiom:(id)arg2;
-- (id)initWithIdentifier:(id)arg1 displayName:(id)arg2 scaleFactor:(double)arg3 idiom:(id)arg4 adaptations:(id)arg5 defaultOrientation:(id)arg6 defaultAdaptationByOrientationMap:(id)arg7;
 
 @end
 

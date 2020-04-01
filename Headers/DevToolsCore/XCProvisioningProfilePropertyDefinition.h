@@ -11,6 +11,7 @@
 }
 
 + (BOOL)isListType;
++ (id)localizedName;
 + (id)identifier;
 - (id)initFromPListDictionary:(id)arg1;
 

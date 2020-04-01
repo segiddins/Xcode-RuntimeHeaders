@@ -22,12 +22,13 @@
 - (void).cxx_destruct;
 - (void)_clientCancellationTimeout;
 - (void)cancelTrackedClients;
+- (void)_callSignpostForClientsBlockingCancellation:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)_waitForTokensToCancel:(id)arg1;
 - (void)unregisterClient:(id)arg1;
 - (id)clientsNotSupportingCancellation;
 - (id)clientsRequiringCancellationPrompt;
-- (id)registerUncancellableClientWithName:(id)arg1;
-- (id)registerClientWithName:(id)arg1 promptForCancellation:(BOOL)arg2 cancellationBlock:(CDUnknownBlockType)arg3;
+- (id)registerUncancellableClientWithName:(id)arg1 terminationSignpost:(CDUnknownBlockType)arg2;
+- (id)registerClientWithName:(id)arg1 promptForCancellation:(BOOL)arg2 terminationSignpost:(CDUnknownBlockType)arg3 cancellationBlock:(CDUnknownBlockType)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

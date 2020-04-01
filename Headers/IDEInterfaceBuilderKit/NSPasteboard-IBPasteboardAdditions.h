@@ -7,8 +7,11 @@
 #import <AppKit/NSPasteboard.h>
 
 @interface NSPasteboard (IBPasteboardAdditions)
-+ (void)invokeWithTemporaryPasteboard:(CDUnknownBlockType)arg1;
++ (void)ib_invokeWithTemporaryPasteboard:(CDUnknownBlockType)arg1;
++ (id)superAllocWithZone:(struct _NSZone *)arg1;
++ (id)superAlloc;
 - (void)encodeRootObject:(id)arg1 asKeyedArchiveForType:(id)arg2;
 - (id)decodeRootObjectFromKeyedArchiveDataForType:(id)arg1;
+- (id)description;
 @end
 

@@ -6,14 +6,19 @@
 
 #import <objc/NSObject.h>
 
+@class NSFileManager;
+
 @interface IDEDistributionExportStep : NSObject
 {
+    NSFileManager *_fileManager;
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 - (BOOL)_exportPath:(id)arg1 toPath:(id)arg2 context:(id)arg3 error:(id *)arg4;
 - (BOOL)_exportToDirectory:(id)arg1 withContext:(id)arg2 error:(id *)arg3;
-- (BOOL)exportToDirectory:(id)arg1 withContext:(id)arg2 error:(id *)arg3;
+- (BOOL)exportToDirectory:(id)arg1 removeTemporaryFiles:(BOOL)arg2 withContext:(id)arg3 error:(id *)arg4;
+- (id)fileManager;
 
 @end
 

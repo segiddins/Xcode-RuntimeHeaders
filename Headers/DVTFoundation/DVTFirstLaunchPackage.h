@@ -6,20 +6,22 @@
 
 #import <objc/NSObject.h>
 
-@class NSString;
+@class NSString, NSURL, PKPackage;
 
 @interface DVTFirstLaunchPackage : NSObject
 {
     NSString *_displayName;
-    NSString *_description;
-    NSString *_path;
+    NSURL *_url;
+    PKPackage *_pkPackage;
 }
 
-@property(readonly) NSString *path; // @synthesize path=_path;
-@property(readonly) NSString *description; // @synthesize description=_description;
+@property(readonly) NSURL *url; // @synthesize url=_url;
 @property(readonly) NSString *displayName; // @synthesize displayName=_displayName;
 - (void).cxx_destruct;
-- (id)_initWithPath:(id)arg1 packageInfo:(id)arg2;
+- (id)debugDescription;
+@property(readonly) PKPackage *pkPackage; // @synthesize pkPackage=_pkPackage;
+- (id)_initWithURL:(id)arg1;
+@property(readonly) NSString *path;
 
 @end
 

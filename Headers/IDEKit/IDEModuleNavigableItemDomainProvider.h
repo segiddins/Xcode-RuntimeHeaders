@@ -12,6 +12,7 @@
 
 + (id)domainObjectForURL:(id)arg1 forWorkspace:(id)arg2;
 + (id)domainObjectForWorkspace:(id)arg1;
++ (id)logAspect;
 
 @end
 

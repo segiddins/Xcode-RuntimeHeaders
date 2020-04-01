@@ -9,8 +9,8 @@
 #import <IDEKit/IDEBindableDeclarativeInspectorController-Protocol.h>
 #import <IDEKit/NSUserInterfaceValidations-Protocol.h>
 
-@class DVTDelayedInvocation, IDEInspectorCategoryController, IDEInspectorContentView, IDEUtilityArea, IDEUtilitySlice, NSArray, NSArrayController, NSBundle, NSDictionary, NSMapTable, NSMutableDictionary, NSString, NSView;
-@protocol DVTIssueDisplayingView, IDEInspectorContentController;
+@class DVTDelayedInvocation, IDEInspectorCategoryController, IDEInspectorContentView, IDEUtilityArea, IDEUtilitySlice, IDEWorkspaceTabController, NSArray, NSArrayController, NSBundle, NSMapTable, NSMutableDictionary, NSString;
+@protocol IDEInspectorContentController;
 
 @interface IDEInspectorViewController : IDEViewController <NSUserInterfaceValidations, IDEBindableDeclarativeInspectorController>
 {
@@ -21,8 +21,6 @@
     IDEUtilityArea *_utilityArea;
     IDEUtilitySlice *_utilitySlice;
     NSArray *_inspectedDocuments;
-    NSDictionary *_issueInfoDictionary;
-    NSView<DVTIssueDisplayingView> *_issueDisplayingView;
     id _selectionProxy;
     id _selectedDocumentsProxy;
     NSMutableDictionary *_keyPathTriggeringReloadObservers;
@@ -42,8 +40,6 @@
 @property(retain, nonatomic) NSMutableDictionary *keyPathTriggeringReloadObservers; // @synthesize keyPathTriggeringReloadObservers=_keyPathTriggeringReloadObservers;
 @property(retain, nonatomic) id selectedDocumentsProxy; // @synthesize selectedDocumentsProxy=_selectedDocumentsProxy;
 @property(retain, nonatomic) id selectionProxy; // @synthesize selectionProxy=_selectionProxy;
-@property(retain, nonatomic) NSView<DVTIssueDisplayingView> *issueDisplayingView; // @synthesize issueDisplayingView=_issueDisplayingView;
-@property(copy, nonatomic) NSDictionary *issueInfoDictionary; // @synthesize issueInfoDictionary=_issueInfoDictionary;
 @property(readonly) NSArray *inspectedDocuments; // @synthesize inspectedDocuments=_inspectedDocuments;
 @property(retain, nonatomic) IDEUtilitySlice *utilitySlice; // @synthesize utilitySlice=_utilitySlice;
 @property(retain, nonatomic) IDEUtilityArea *utilityArea; // @synthesize utilityArea=_utilityArea;
@@ -64,7 +60,7 @@
 @property(readonly) id inspectedObject;
 @property(readonly) NSArray *inspectedObjects;
 @property(readonly) NSBundle *bundle;
-- (id)dvtExtraBindings;
+- (id)dvt_extraBindings;
 - (void)didSetInspectedObjects:(id)arg1;
 - (id)willSetInspectedObjects:(id)arg1;
 - (void)setInspectedDocuments:(id)arg1;
@@ -86,6 +82,7 @@
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
+@property(readonly, nonatomic) IDEWorkspaceTabController *workspaceTabController;
 
 @end
 

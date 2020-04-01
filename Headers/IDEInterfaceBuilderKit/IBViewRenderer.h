@@ -11,17 +11,19 @@
 
 @interface IBViewRenderer : NSObject
 {
-    NSView *view;
-    id <IBRenderingDestination> destination;
+    NSView *_view;
+    id <IBRenderingDestination> _destination;
 }
 
 + (id)rendererWithView:(id)arg1 renderingDestination:(id)arg2;
-@property(readonly, nonatomic) id <IBRenderingDestination> destination; // @synthesize destination;
-@property(readonly, nonatomic) NSView *view; // @synthesize view;
+@property(readonly, nonatomic) id <IBRenderingDestination> destination; // @synthesize destination=_destination;
+@property(readonly, nonatomic) NSView *view; // @synthesize view=_view;
 - (void).cxx_destruct;
-- (void)renderIntoCoreGraphicsContext:(id)arg1;
-- (id)renderViewImage;
-- (id)renderContent;
+- (void)renderIntoCoreGraphicsContext:(id)arg1 scale:(double)arg2 appearance:(id)arg3;
+- (void)renderIntoCoreGraphicsContext:(id)arg1 scale:(double)arg2;
+- (id)renderViewImageWithAppearance:(id)arg1;
+- (void)ignoreAutolayoutStatusInvalidationForDocument:(id)arg1 during:(CDUnknownBlockType)arg2;
+- (id)renderContentWithAppearance:(id)arg1;
 - (void)invokeWithDestinationScaleFactors:(CDUnknownBlockType)arg1;
 - (id)initWithView:(id)arg1 renderingDestination:(id)arg2;
 

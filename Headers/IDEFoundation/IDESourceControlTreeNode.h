@@ -4,12 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <DVTFoundation/DVTModelTreeNode.h>
+#import <objc/NSObject.h>
 
 @class DVTFilePath, NSArray, NSMutableArray, NSString;
 
-@interface IDESourceControlTreeNode : DVTModelTreeNode
+@interface IDESourceControlTreeNode : NSObject
 {
+    NSMutableArray *_children;
     DVTFilePath *_filePath;
     unsigned long long _sourceControlLocalStatus;
     unsigned long long _sourceControlServerStatus;
@@ -19,7 +20,6 @@
     NSString *_navigableItem_sourceControlServerStatus;
 }
 
-+ (id)keyPathsForValuesAffectingSparseChildren;
 @property(readonly) NSString *navigableItem_sourceControlServerStatus; // @synthesize navigableItem_sourceControlServerStatus=_navigableItem_sourceControlServerStatus;
 @property(readonly) NSString *navigableItem_sourceControlLocalStatus; // @synthesize navigableItem_sourceControlLocalStatus=_navigableItem_sourceControlLocalStatus;
 @property(retain) IDESourceControlTreeNode *parentGroup; // @synthesize parentGroup=_parentGroup;
@@ -31,11 +31,10 @@
 - (id)description;
 @property(readonly) NSMutableArray *mutableChildren;
 @property(copy) NSArray *children;
-- (id)sparseChildren;
 @property(readonly, nonatomic) BOOL isLeaf;
 @property(readonly, nonatomic) NSString *relativeFilePath;
-- (void)primitiveInvalidate;
 - (id)initWithFilePath:(id)arg1 basePath:(id)arg2 sourceControlLocalStatus:(unsigned long long)arg3 sourceControlServerStatus:(unsigned long long)arg4;
+- (id)init;
 
 @end
 

@@ -6,27 +6,22 @@
 
 #import <IDEKit/IDERefactoringFileChangeSet.h>
 
-@class IDEWorkspaceDocument, NSDictionary, NSMutableArray, NSMutableDictionary;
+@class IBRenameRefactoringRequest, IDEWorkspaceDocument;
 
 @interface IBRefactoringChangeSet : IDERefactoringFileChangeSet
 {
-    NSMutableArray *_commands;
-    NSMutableDictionary *_properties;
-    NSDictionary *_resultDictionary;
     IDEWorkspaceDocument *_workspaceDocument;
+    IBRenameRefactoringRequest *_request;
 }
 
 + (id)changeSetForFileAtPath:(id)arg1 transformation:(id)arg2 error:(id *)arg3;
-@property __weak IDEWorkspaceDocument *workspaceDocument; // @synthesize workspaceDocument=_workspaceDocument;
-@property(readonly) NSDictionary *resultDictionary; // @synthesize resultDictionary=_resultDictionary;
++ (id)changeSetForFileAtPath:(id)arg1 request:(id)arg2 inWorkspaceDocument:(id)arg3 error:(id *)arg4;
+@property(readonly) IBRenameRefactoringRequest *request; // @synthesize request=_request;
+@property(readonly) __weak IDEWorkspaceDocument *workspaceDocument; // @synthesize workspaceDocument=_workspaceDocument;
 - (void).cxx_destruct;
-- (void)writeTempResults;
-- (BOOL)writesOwnTempResults;
-- (BOOL)resultIsEditable;
-- (BOOL)applyChangesWithError:(id *)arg1;
-- (void)setNibFileToolPropertyDictionary:(id)arg1 forKey:(id)arg2;
-- (void)addNibFileToolCommandDictionary:(id)arg1;
-- (id)initWithFilePath:(id)arg1;
+- (BOOL)commitChangesWithError:(id *)arg1;
+- (BOOL)commitChangesToDocument:(id)arg1 error:(id *)arg2;
+- (id)initWithFilePath:(id)arg1 workspaceDocument:(id)arg2 request:(id)arg3;
 
 @end
 

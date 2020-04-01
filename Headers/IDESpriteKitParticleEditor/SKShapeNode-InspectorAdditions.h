@@ -10,8 +10,56 @@
 
 @interface SKShapeNode (InspectorAdditions)
 + (id)keyPathsForValuesAffectingSk_fillTextureImageName;
++ (id)keyPathsForValuesAffectingSk_strokeTextureImageName;
++ (id)keyPathsForValuesAffectingsk_fillTextureImageName_commit;
++ (id)keyPathsForValuesAffectingsk_strokeTextureImageName_commit;
++ (id)keyPathsForValuesAffectingblendMode_commit;
++ (id)keyPathsForValuesAffectingmiterLimit_commit;
++ (id)keyPathsForValuesAffectinglineJoin_commit;
++ (id)keyPathsForValuesAffectinglineCap_commit;
++ (id)keyPathsForValuesAffectingstrokeShader_commit;
++ (id)keyPathsForValuesAffectingstrokeTexture_commit;
++ (id)keyPathsForValuesAffectingstrokeColor_commit;
++ (id)keyPathsForValuesAffectingantialiased_commit;
++ (id)keyPathsForValuesAffectingglowWidth_commit;
++ (id)keyPathsForValuesAffectinglineWidth_commit;
++ (id)keyPathsForValuesAffectingfillShader_commit;
++ (id)keyPathsForValuesAffectingfillTexture_commit;
++ (id)keyPathsForValuesAffectingfillColor_commit;
++ (id)keyPathsForValuesAffectingpath_commit;
 @property(retain, nonatomic) NSString *sk_fillTextureImageName;
 @property(retain, nonatomic) NSString *sk_strokeTextureImageName;
-- (id)keyPathsForValuesAffectingSk_strokeTextureImageName;
+- (void)setsk_fillTextureImageName_commit:(id)arg1;
+- (id)sk_fillTextureImageName_commit;
+- (void)setsk_strokeTextureImageName_commit:(id)arg1;
+- (id)sk_strokeTextureImageName_commit;
+- (void)setblendMode_commit:(long long)arg1;
+- (long long)blendMode_commit;
+- (void)setmiterLimit_commit:(double)arg1;
+- (double)miterLimit_commit;
+- (void)setlineJoin_commit:(int)arg1;
+- (int)lineJoin_commit;
+- (void)setlineCap_commit:(int)arg1;
+- (int)lineCap_commit;
+- (void)setstrokeShader_commit:(id)arg1;
+- (id)strokeShader_commit;
+- (void)setstrokeTexture_commit:(id)arg1;
+- (id)strokeTexture_commit;
+- (void)setstrokeColor_commit:(id)arg1;
+- (id)strokeColor_commit;
+- (void)setantialiased_commit:(BOOL)arg1;
+- (BOOL)antialiased_commit;
+- (void)setglowWidth_commit:(double)arg1;
+- (double)glowWidth_commit;
+- (void)setlineWidth_commit:(double)arg1;
+- (double)lineWidth_commit;
+- (void)setfillShader_commit:(id)arg1;
+- (id)fillShader_commit;
+- (void)setfillTexture_commit:(id)arg1;
+- (id)fillTexture_commit;
+- (void)setfillColor_commit:(id)arg1;
+- (id)fillColor_commit;
+- (void)setpath_commit:(const struct CGPath *)arg1;
+- (const struct CGPath *)path_commit;
 @end
 

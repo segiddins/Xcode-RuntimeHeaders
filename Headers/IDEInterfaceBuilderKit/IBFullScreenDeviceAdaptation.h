@@ -10,5 +10,8 @@
 {
 }
 
+- (BOOL)wantsHomeIndicator;
+- (BOOL)wantsDeviceMask;
+
 @end
 

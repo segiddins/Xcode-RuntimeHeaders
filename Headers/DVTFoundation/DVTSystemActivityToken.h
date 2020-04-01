@@ -19,7 +19,7 @@
     id _processInfoToken;
 }
 
-+ (id)_descriptionOfOutstandingTokens:(id)arg1 withActivityOptions:(unsigned long long)arg2 logLevel:(int)arg3;
++ (id)_descriptionOfOutstandingTokens:(id)arg1 withActivityOptions:(unsigned long long)arg2 logLevel:(unsigned long long)arg3;
 + (void)initialize;
 + (id)_stringForActivityOptions:(unsigned long long)arg1;
 + (void)_accessSystemActivityTokensWithBlock:(CDUnknownBlockType)arg1;

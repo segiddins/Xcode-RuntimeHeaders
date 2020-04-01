@@ -10,17 +10,11 @@
 {
 }
 
-+ (id)_platformsRequiringBitcodeWithAppStoreSubmissionConfiguration:(id)arg1 flattenedDistributionItems:(id)arg2 error:(id *)arg3;
-+ (id)_platformsWantingBitcodeAskWithAppStoreSubmissionConfiguration:(id)arg1 flattenedDistributionItems:(id)arg2 error:(id *)arg3;
++ (id)propertyListForContext:(id)arg1;
 + (id)availableOptionsForPropertyList;
-- (id)platformsRequiringBitcodeForDistributionItemsWithError:(id *)arg1;
-- (id)platformsWantingBitcodeAskWithError:(id *)arg1;
-@property(readonly) BOOL requiresBitcode;
-@property(readonly) BOOL wantsCompileBitcodeAsk;
-@property(readonly) BOOL wantsSymbolCollectionAsk;
+- (BOOL)loadFromExportOptions:(id)arg1 error:(id *)arg2;
 - (id)providedOutputContextPropertyNames;
 - (id)requiredInputContextPropertyNames;
-- (BOOL)loadFromPropertyList:(id)arg1 error:(id *)arg2;
 
 @end
 

@@ -23,9 +23,9 @@
 + (id)standardBuildPhaseClasses;
 + (id)targetTypeDisplayName;
 + (id)categorizedTargetName;
-+ (id)buildSystemDefaultBuildSettings_asPropertyValues;
-+ (id)buildSystemDefaultBuildSettings;
-- (id)workQueueForBuildingWithBuildOperation:(id)arg1 buildLogRecorder:(id)arg2;
++ (id)buildSystemDefaultMacros;
+- (void).cxx_destruct;
+- (BOOL)buildWillStartForBuilder:(id)arg1 buildContext:(id)arg2 buildParameters:(id)arg3;
 - (id)commandsForCleaningInBuildContext:(id)arg1;
 - (BOOL)shouldWriteAuxiliaryFilesForBuildAction:(id)arg1;
 - (Class)dependencyGraphSnapshotClass;
@@ -33,8 +33,11 @@
 - (void)_setSettingsToPassInEnvironment:(id)arg1;
 - (id)_settingsToPassInEnvironment;
 - (id)_settingsToExpand;
-- (id)dynamicallyComputedTargetBuildSettingsWithAction:(id)arg1 configurationName:(id)arg2;
-- (BOOL)isJambased;
+- (id)dynamicallyComputedTargetMacrosWithAction:(id)arg1 configurationName:(id)arg2;
+- (BOOL)allowsZeroBuildPhases;
+- (BOOL)allowsCopyFilesBuildPhases;
+- (BOOL)allowsShellScriptBuildPhases;
+- (BOOL)wantsTopLevelItemForBuildPhases;
 - (void)setPassesBuildSettingsInEnvironment:(BOOL)arg1;
 - (BOOL)passesBuildSettingsInEnvironment;
 - (void)setBuildWorkingDirectory:(id)arg1;
@@ -43,10 +46,8 @@
 - (id)buildArgumentsString;
 - (void)setBuildToolPath:(id)arg1;
 - (id)buildToolPath;
-- (void)dealloc;
 - (id)initWithName:(id)arg1 productTypeIdentifier:(id)arg2 templateDictionary:(id)arg3 baseDirectoryPath:(id)arg4;
 - (BOOL)canInstallHeaders;
-- (id)buildSettingsPanes;
 - (BOOL)wantsProductSettings;
 
 @end

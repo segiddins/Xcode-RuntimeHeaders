@@ -17,6 +17,7 @@
     BOOL _required;
     BOOL _notPersisted;
     NSMutableDictionary *_subclassCache;
+    BOOL _indented;
     BOOL _enabled;
     BOOL _disabledByConstraints;
     NSString *_displayValue;
@@ -31,6 +32,7 @@
     NSString *_prefix;
     NSString *_suffix;
     NSArray *_values;
+    NSDictionary *_requiredOptionsForDisplayValues;
     NSDictionary *_suffixes;
     NSDictionary *_mainTemplateFiles;
     NSDictionary *_allowedTypes;
@@ -46,11 +48,13 @@
 @property(copy) NSDictionary *requiredOptions; // @synthesize requiredOptions=_requiredOptions;
 @property(nonatomic) BOOL disabledByConstraints; // @synthesize disabledByConstraints=_disabledByConstraints;
 @property(nonatomic) BOOL enabled; // @synthesize enabled=_enabled;
+@property(nonatomic) BOOL indented; // @synthesize indented=_indented;
 @property long long sortOrder; // @synthesize sortOrder=_sortOrder;
 @property(readonly) NSDictionary *variables; // @synthesize variables=_variables;
 @property(readonly) NSDictionary *allowedTypes; // @synthesize allowedTypes=_allowedTypes;
 @property(readonly) NSDictionary *mainTemplateFiles; // @synthesize mainTemplateFiles=_mainTemplateFiles;
 @property(readonly) NSDictionary *suffixes; // @synthesize suffixes=_suffixes;
+@property(readonly) NSDictionary *requiredOptionsForDisplayValues; // @synthesize requiredOptionsForDisplayValues=_requiredOptionsForDisplayValues;
 @property(copy) NSArray *values; // @synthesize values=_values;
 @property(copy, nonatomic) NSString *suffix; // @synthesize suffix=_suffix;
 @property(copy, nonatomic) NSString *prefix; // @synthesize prefix=_prefix;
@@ -65,14 +69,14 @@
 - (void).cxx_destruct;
 - (void)addImportMacroToEngine:(id)arg1;
 - (id)_importStringFromWorkspaceVisibilityForFilePath:(id)arg1;
-- (id)identifierValue;
-- (id)subclassesForClass:(id)arg1;
-- (BOOL)shouldPersistValue;
+@property(readonly) NSString *identifierValue;
+@property(readonly) BOOL shouldPersistValue;
 - (void)addMacroToEngine:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)uniqueIdentifier;
 @property BOOL booleanValue;
+- (void)updateFilteredDisplayValuesWithOptions:(id)arg1;
 @property(readonly) NSArray *displayValues;
 @property(readonly) BOOL hasExplicitValues;
 @property(readonly) BOOL hasValidValue;
@@ -83,6 +87,7 @@
 - (void)setConstrainedDisplayValue:(id)arg1;
 @property(copy, nonatomic) NSString *displayValue; // @synthesize displayValue=_displayValue;
 - (BOOL)validateValue:(id *)arg1 forKey:(id)arg2 error:(id *)arg3;
+- (BOOL)isValue:(id)arg1 usableWithOptions:(id)arg2;
 - (BOOL)isUsableWithOptions:(id)arg1;
 - (id)init;
 - (id)initWithOptionInfo:(id)arg1 filePath:(id)arg2;

@@ -6,16 +6,23 @@
 
 #import <IDEiPhoneSupport/DVTiPhoneSubController.h>
 
-@class NSMutableDictionary;
+@class DVTiOSScreenshotClient, NSMutableDictionary, NSObject;
+@protocol OS_os_log;
 
 @interface DVTiPhoneScreenshotController : DVTiPhoneSubController
 {
     NSMutableDictionary *_requestDict;
     void *_connection;
     BOOL transferSuccess;
+    BOOL _screenshotPending;
+    NSObject<OS_os_log> *_log;
+    DVTiOSScreenshotClient *_screenshotClient;
 }
 
 + (id)keyPathsForValuesAffectingScreenshots;
+@property BOOL screenshotPending; // @synthesize screenshotPending=_screenshotPending;
+@property(retain) DVTiOSScreenshotClient *screenshotClient; // @synthesize screenshotClient=_screenshotClient;
+@property(retain) NSObject<OS_os_log> *log; // @synthesize log=_log;
 - (void).cxx_destruct;
 - (id)initWithDevice:(id)arg1;
 - (void)addCapturedScreenshot:(id)arg1;
@@ -23,6 +30,12 @@
 - (void)sendFileDone:(id)arg1;
 - (void)connectionLost:(id)arg1;
 - (void)connectionFailed:(id)arg1;
+- (void)_notifyRequestFailedWithMessage:(id)arg1;
+- (void)_synchronousScreenShotRequest;
+- (void)requestScreenshotModern;
+- (void)requestScreenshotLegacy;
+- (void)_requestScreenshotViaBestAvailableService;
+- (void)requestScreenshotModernAndFallbackIfNecessary;
 - (void)requestScreenshot;
 - (_Bool)canTakeScreenshot;
 - (void)_connectToDevice;
@@ -31,7 +44,6 @@
 - (void)primitiveInvalidate;
 - (void)closeConnection;
 - (void)setStatusText:(id)arg1;
-- (void)setScreenshotPending:(BOOL)arg1;
 - (id)screenshots;
 - (id)globalController;
 

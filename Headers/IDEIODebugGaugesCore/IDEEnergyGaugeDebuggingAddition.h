@@ -8,6 +8,7 @@
 
 @interface IDEEnergyGaugeDebuggingAddition : IDEGaugeDebuggingAddition
 {
+    double _totalAverage;
 }
 
 + (id)requiredDataQueryAttribute;

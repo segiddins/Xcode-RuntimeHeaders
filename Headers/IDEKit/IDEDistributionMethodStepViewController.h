@@ -27,7 +27,7 @@
 - (id)tableView:(id)arg1 viewForTableColumn:(id)arg2 row:(long long)arg3;
 - (id)tableView:(id)arg1 objectValueForTableColumn:(id)arg2 row:(long long)arg3;
 - (long long)numberOfRowsInTableView:(id)arg1;
-- (void)selectGroupedDistributionMethod:(id)arg1;
+- (id)helpID;
 - (void)selectDistributionMethod:(id)arg1;
 - (void)selectDistributionMethodWrapper:(id)arg1;
 - (void)loadView;

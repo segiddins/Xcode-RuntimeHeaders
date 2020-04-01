@@ -9,5 +9,8 @@
 @interface OSAClassDefinition (IDEScriptingDefinitionItem)
 - (id)scriptingDefinition_childDefinitions;
 - (id)ideModelObjectTypeIdentifier;
+- (id)documentLocation_commandOrClassCode;
+- (id)documentLocation_code;
+- (id)_extendedClassDefinition;
 @end
 

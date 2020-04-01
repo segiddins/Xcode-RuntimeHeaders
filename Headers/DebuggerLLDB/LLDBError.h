@@ -10,11 +10,10 @@
 
 @class NSString;
 
-__attribute__((visibility("hidden")))
 @interface LLDBError : NSObject <DBGSBError>
 {
     struct SBError {
-        struct unique_ptr<lldb_private::Error, std::__1::default_delete<lldb_private::Error>> m_opaque_ap;
+        struct unique_ptr<lldb_private::Status, std::__1::default_delete<lldb_private::Status>> m_opaque_up;
     } _error;
 }
 

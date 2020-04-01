@@ -6,24 +6,27 @@
 
 #import <objc/NSObject.h>
 
-@class DVTPortalCertificate, NSString;
+#import <DVTPortal/DVTPortalIdentityProtocol-Protocol.h>
 
-@interface DVTPortalIdentity : NSObject
+@class DVTSigningCertificate, NSString;
+@protocol DVTPortalCertificateProtocol;
+
+@interface DVTPortalIdentity : NSObject <DVTPortalIdentityProtocol>
 {
-    DVTPortalCertificate *_certificate;
+    id <DVTPortalCertificateProtocol> _portalCertificate;
     NSString *_keyName;
     id _underlyingPrivateKey;
 }
 
 + (id)createIdentityWithSession:(id)arg1 team:(id)arg2 type:(id)arg3 machineName:(id)arg4 machineID:(id)arg5 error:(id *)arg6;
-+ (id)createIdentityWithSession:(id)arg1 team:(id)arg2 type:(id)arg3 error:(id *)arg4;
-+ (id)identityWithCertificate:(id)arg1 privateKey:(struct OpaqueSecKeyRef *)arg2 keyName:(id)arg3;
++ (id)identityWithCertificate:(id)arg1 privateKey:(struct __SecKey *)arg2 keyName:(id)arg3;
 @property(retain) id underlyingPrivateKey; // @synthesize underlyingPrivateKey=_underlyingPrivateKey;
 @property(readonly) NSString *keyName; // @synthesize keyName=_keyName;
-@property(readonly) DVTPortalCertificate *certificate; // @synthesize certificate=_certificate;
+@property(readonly) id <DVTPortalCertificateProtocol> portalCertificate; // @synthesize portalCertificate=_portalCertificate;
 - (void).cxx_destruct;
-@property(readonly) struct OpaqueSecKeyRef *privateKey;
-- (id)_initWithCertificate:(id)arg1 privateKey:(struct OpaqueSecKeyRef *)arg2 keyName:(id)arg3;
+@property(readonly) DVTSigningCertificate *signingCertificate;
+@property(readonly) struct __SecKey *privateKey;
+- (id)_initWithCertificate:(id)arg1 privateKey:(struct __SecKey *)arg2 keyName:(id)arg3;
 
 @end
 

@@ -10,7 +10,6 @@
 
 @class NSString;
 
-__attribute__((visibility("hidden")))
 @interface LLDBRPCModule : NSObject <DBGSBModule>
 {
     struct SBModule {
@@ -24,6 +23,7 @@ __attribute__((visibility("hidden")))
 - (const char *)GetUUIDString;
 - (_Bool)IsValid;
 - (id)initWithSBModule:(const struct SBModule *)arg1;
+- (id)ResolveFileAddress:(unsigned long long)arg1;
 - (id)FindSection:(const char *)arg1;
 - (_Bool)SetPlatformFileSpec:(id)arg1;
 - (id)GetFileSpec;

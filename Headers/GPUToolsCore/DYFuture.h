@@ -4,35 +4,64 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import <Foundation/NSOperation.h>
 
-@class NSError, NSMutableArray;
-@protocol NSObject;
+@class NSCondition, NSError, NSMutableArray, NSTimer;
 
-@interface DYFuture : NSObject
+@interface DYFuture : NSOperation
 {
-    id <NSObject> _result;
-    NSError *_error;
-    struct dispatch_queue_s *_waitQueue;
-    struct dispatch_queue_s *_writeQueue;
-    NSMutableArray *_notifyList;
+    NSTimer *_timeout;
+    NSCondition *_condition;
     BOOL _resolved;
+    BOOL _cancelled;
+    id _result;
+    NSError *_error;
+    NSMutableArray *_notifyList;
+    NSMutableArray *_inflightDependencies;
+    BOOL _started;
+    CDUnknownBlockType _completion;
+    long long _priority;
 }
 
++ (BOOL)enableAssertMainThread;
++ (BOOL)logPerformance;
++ (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
++ (id)futureWithResult:(id)arg1 error:(id)arg2;
 + (id)future;
 @property(readonly, nonatomic) BOOL resolved; // @synthesize resolved=_resolved;
+- (id)_dependencies_NOLOCK;
+- (BOOL)_waitForDependencies_REQUIRESLOCK;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
+- (void)_addDependency_REQUIRESLOCK:(id)arg1;
 - (void)notifyGroup:(struct dispatch_group_s *)arg1;
 - (void)notifyOnQueue:(struct dispatch_queue_s *)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)resolveWithFuture:(id)arg1;
 - (void)timeoutAfter:(double)arg1 label:(id)arg2;
 @property(retain, nonatomic) NSError *error;
-- (void)_setError:(id)arg1;
+- (void)cancel;
 @property(retain, nonatomic) id result;
-- (void)_setResult:(id)arg1;
+- (void)_setResult:(id)arg1 error:(id)arg2 notify_NOLOCK:(BOOL)arg3;
 - (int)intResult;
 - (unsigned int)uint32Result;
 - (BOOL)boolResult;
+- (void)requestResult:(CDUnknownBlockType)arg1;
+- (void)addResultHandler:(CDUnknownBlockType)arg1;
+@property(readonly, retain, nonatomic) NSError *resolvedError;
+@property(readonly, retain, nonatomic) id resolvedResult;
 - (void)waitUntilResolved;
+- (void)start;
+- (id)dependencies;
+- (void)addDependency:(id)arg1;
+- (void)waitUntilFinished;
+- (void)_start_NOLOCK;
+- (void)setCompletionBlock:(CDUnknownBlockType)arg1;
+- (CDUnknownBlockType)completionBlock;
+- (void)setQueuePriority:(long long)arg1;
+- (long long)queuePriority;
+- (BOOL)isFinished;
+- (BOOL)isExecuting;
+- (BOOL)isAsynchronous;
+- (BOOL)isCancelled;
 - (void)dealloc;
 - (id)init;
 

@@ -6,9 +6,10 @@
 
 #import <IDEKit/NSObject-Protocol.h>
 
-@class IDEEditorArea, IDEEditorContext, IDEEditorMultipleContext;
+@class IDEEditorArea, IDEEditorAreaSplit, IDEEditorContext, IDEEditorMultipleContext;
 
 @protocol IDEEditorMultipleContextDelegate <NSObject>
+- (IDEEditorAreaSplit *)editorAreaSplit;
 - (IDEEditorArea *)editorArea;
 - (void)editorMultipleContext:(IDEEditorMultipleContext *)arg1 didSplitEditorContext:(IDEEditorContext *)arg2 creatingEditorContext:(IDEEditorContext *)arg3;
 @end

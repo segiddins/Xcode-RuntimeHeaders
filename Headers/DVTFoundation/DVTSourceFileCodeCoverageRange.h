@@ -6,26 +6,19 @@
 
 #import <objc/NSObject.h>
 
-#import <DVTFoundation/NSCoding-Protocol.h>
-
-@interface DVTSourceFileCodeCoverageRange : NSObject <NSCoding>
+@interface DVTSourceFileCodeCoverageRange : NSObject
 {
-    BOOL _executable;
-    unsigned long long _line;
-    unsigned long long _column;
-    unsigned long long _length;
+    unsigned int _column;
+    unsigned int _length;
+    unsigned long long _executionCount;
 }
 
-@property(readonly, nonatomic) BOOL executable; // @synthesize executable=_executable;
-@property(readonly, nonatomic) unsigned long long length; // @synthesize length=_length;
-@property(readonly, nonatomic) unsigned long long column; // @synthesize column=_column;
-@property(readonly, nonatomic) unsigned long long line; // @synthesize line=_line;
+@property(readonly, nonatomic) unsigned long long executionCount; // @synthesize executionCount=_executionCount;
+@property(readonly, nonatomic) unsigned int length; // @synthesize length=_length;
+@property(readonly, nonatomic) unsigned int column; // @synthesize column=_column;
 - (id)description;
-@property(readonly, nonatomic) int executionCount;
-- (BOOL)isExecutable;
-- (id)initWithCoder:(id)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithLine:(unsigned long long)arg1 column:(unsigned long long)arg2 length:(unsigned long long)arg3;
+- (BOOL)isEqual:(id)arg1;
+- (id)initWithColumn:(unsigned int)arg1 length:(unsigned int)arg2 executionCount:(unsigned long long)arg3;
 
 @end
 

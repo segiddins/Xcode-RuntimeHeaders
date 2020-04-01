@@ -13,10 +13,16 @@
 @interface DVTProxiediOSDevice (IDEiOSSupportUI) <DVTBasicDeviceUI>
 + (id)keyPathsForValuesAffectingDeviceSummaryPropertyDictionaries;
 + (id)keyPathsForValuesAffectingImage;
++ (id)keyPathsForValuesAffectingTokenUI;
 @property(readonly) BOOL showCompanionUI;
 @property(readonly) NSArray *deviceSummaryPropertyDictionaries;
+- (id)ui_deviceBatteryCapacity;
+- (id)ui_deviceAvailableCapacity;
+- (id)ui_deviceTotalCapacity;
 @property(readonly) int deviceWindowCategory;
+@property(readonly) NSImage *proxyDeviceImage;
 @property(readonly) NSImage *image;
+- (id)tokenUI;
 
 // Remaining properties
 @property(readonly, getter=isAvailable) BOOL available;
@@ -27,6 +33,7 @@
 @property(readonly, copy, nonatomic) NSString *identifier;
 @property(readonly) BOOL isProxiedDevice;
 @property(readonly, copy, nonatomic) NSString *modelCode;
+@property(readonly, copy, nonatomic) NSString *modelCodename;
 @property(readonly, copy, nonatomic) NSString *modelName;
 @property(readonly, copy, nonatomic) NSString *modelUTI;
 @property(readonly, copy, nonatomic) NSString *name;

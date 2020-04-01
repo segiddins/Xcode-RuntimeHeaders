@@ -8,7 +8,7 @@
 
 #import <DVTKit/CAAnimationDelegate-Protocol.h>
 
-@class NSString, NSWindow;
+@class CALayer, NSString, NSWindow;
 
 @interface DVTScaleInWindowAnimator : NSObject <CAAnimationDelegate>
 {
@@ -16,12 +16,14 @@
     struct CGPoint _pointToScaleFrom;
     double _finalAlpha;
     NSWindow *_animationWindow;
+    CALayer *_animationLayer;
 }
 
-+ (void)scaleInWindow:(id)arg1 fromPoint:(struct CGPoint)arg2 finalAlpha:(double)arg3;
-+ (void)scaleInWindow:(id)arg1 fromPoint:(struct CGPoint)arg2;
++ (id)scaleInWindow:(id)arg1 fromPoint:(struct CGPoint)arg2 finalAlpha:(double)arg3;
++ (id)scaleInWindow:(id)arg1 fromPoint:(struct CGPoint)arg2;
 - (void).cxx_destruct;
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
+- (void)cancel;
 - (id)_createFadeInAnimation;
 - (id)_createScaleInAnimation;
 - (id)_createScaleInAndFadeInAnimation;

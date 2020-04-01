@@ -19,6 +19,7 @@
 - (void).cxx_destruct;
 - (void)dvt_writeToSerializer:(id)arg1;
 - (id)dvt_initFromDeserializer:(id)arg1;
+- (id)initWithTitle:(id)arg1 location:(id)arg2 resultType:(id)arg3 categoryIdentifier:(id)arg4 keyEventIndex:(long long)arg5 submessages:(id)arg6;
 - (id)resultCategory;
 - (id)resultType;
 - (void)setResultType:(id)arg1;

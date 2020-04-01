@@ -16,6 +16,7 @@
 - (id)dvt_initFromDeserializer:(id)arg1;
 - (unsigned long long)totalNumberOfWarnings;
 - (BOOL)isAnalyzerStepMessage;
+- (id)initWithParentIndex:(long long)arg1 title:(id)arg2 location:(id)arg3;
 
 @end
 

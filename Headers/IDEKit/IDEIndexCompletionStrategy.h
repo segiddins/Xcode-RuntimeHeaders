@@ -6,36 +6,11 @@
 
 #import <DVTKit/DVTTextCompletionStrategy.h>
 
-@class DVTDispatchLock, IDEIndexCodeCompletionContext, NSArray, NSMapTable;
-
 @interface IDEIndexCompletionStrategy : DVTTextCompletionStrategy
 {
-    unsigned long long _importStatementLocation;
-    BOOL _shouldInsertIncludeStatements;
-    IDEIndexCodeCompletionContext *_codeCompletionContext;
-    NSArray *_knownSDKs;
-    NSMapTable *_optimalBuildableProductForFileCache;
-    DVTDispatchLock *_buildableProductCachesLock;
-    NSArray *_sourceBuildableProductProxiesCache;
 }
 
-- (void).cxx_destruct;
-- (void)dealloc;
-- (unsigned long long)locationForImportStatementWithContext:(id)arg1 shouldInsertIncludeStatements:(char *)arg2;
-- (id)autoImportCompletionItemsForDocumentLocation:(id)arg1 fileContext:(id)arg2 completionContexts:(id)arg3;
-- (void)addCompletionItems:(id)arg1 forAllSymbolsOfKind:(id)arg2 matchingLanguage:(id)arg3 inIndex:(id)arg4 context:(id)arg5;
-- (id)cachedResultOfQueryForAllSymbolsOfKind:(id)arg1 matchingLanguage:(id)arg2 inIndex:(id)arg3;
-- (void)addCompletionItems:(id)arg1 forAllSymbolsOfKind:(id)arg2 inIndex:(id)arg3 context:(id)arg4;
-- (id)cachedResultOfQueryForAllSymbolsOfKind:(id)arg1 inIndex:(id)arg2;
-- (BOOL)shouldAddAutoImportable:(id)arg1 intoContext:(id)arg2;
-- (id)optimalBuildableProductForAutoImportable:(id)arg1 inContext:(id)arg2 headerVisibility:(unsigned long long *)arg3 alreadyLinked:(char *)arg4;
-- (id)buildableProductsForFilePath:(id)arg1;
-- (id)additionalCompletionItemsForDocumentLocation:(id)arg1 context:(id)arg2;
 - (id)completionItemsForDocumentLocation:(id)arg1 context:(id)arg2 highlyLikelyCompletionItems:(id *)arg3 areDefinitive:(char *)arg4;
-- (void)prepareForDocumentLocation:(id)arg1 context:(id)arg2;
-- (void)clearAllBuildableProductCaches:(id)arg1;
-- (void)clearCacheForFileAddedOrRemoved:(id)arg1;
-- (id)init;
 
 @end
 

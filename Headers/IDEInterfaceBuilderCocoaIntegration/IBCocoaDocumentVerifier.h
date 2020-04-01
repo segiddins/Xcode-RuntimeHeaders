@@ -10,10 +10,16 @@
 {
 }
 
+- (void)_verifyScrollViewsHaveBothScrollers;
+- (void)_verifyTextControlColors;
+- (void)_verifyPopUpMenuCellsAndPopulateMessages:(id)arg1;
 - (void)_verifyTextFieldPreferredMaxLayoutWidthUsingAutomaticMode;
 - (void)_verifyTextViewFrames;
+- (void)_verifyToggleSidebarActionAndPopulateMessages:(id)arg1;
 - (void)_verifyPDFThumbnailViewAndPopulateMessages:(id)arg1;
+- (void)_verifyNSDatePickerDoesNotUseNSCalendarDate;
 - (void)_restoreMenuDefaultLayoutDirection;
+- (void)_verifyCustomClasses;
 - (void)verifyAndPopulateMessages:(id)arg1;
 
 @end

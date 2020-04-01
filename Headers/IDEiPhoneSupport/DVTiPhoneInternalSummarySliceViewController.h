@@ -4,31 +4,25 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <DVTKit/DVTDeviceSummarySliceViewController.h>
+#import <DVTDeviceKit/DVTDeviceSummarySliceViewController.h>
 
 #import <IDEiPhoneSupport/DVTTableViewDelegate-Protocol.h>
 #import <IDEiPhoneSupport/NSTableViewDataSource-Protocol.h>
 
-@class DVTBorderedView, DVTObservingToken, DVTTableView, NSArray, NSBox, NSString;
+@class DVTObservingToken, DVTTableView, NSArray, NSString;
 
 @interface DVTiPhoneInternalSummarySliceViewController : DVTDeviceSummarySliceViewController <DVTTableViewDelegate, NSTableViewDataSource>
 {
     NSArray *_deviceInfo;
     DVTObservingToken *_deviceInfoToken;
-    DVTBorderedView *_tableHeaderLine;
-    NSBox *_separator;
     DVTTableView *_table;
 }
 
 @property(retain) DVTTableView *table; // @synthesize table=_table;
-@property(retain) NSBox *separator; // @synthesize separator=_separator;
-@property(retain) DVTBorderedView *tableHeaderLine; // @synthesize tableHeaderLine=_tableHeaderLine;
 - (void).cxx_destruct;
 - (void)sshDeviceAsRoot:(id)arg1;
 - (void)sshDeviceAsMobile:(id)arg1;
-- (void)telnetDeviceAsRoot:(id)arg1;
-- (void)telnetDeviceAsMobile:(id)arg1;
-- (void)connectUsingSSH:(_Bool)arg1 asUser:(id)arg2;
+- (void)connectUsingSSHAsUser:(id)arg1;
 - (id)tableView:(id)arg1 viewForTableColumn:(id)arg2 row:(long long)arg3;
 - (id)tableView:(id)arg1 objectValueForTableColumn:(id)arg2 row:(long long)arg3;
 - (long long)numberOfRowsInTableView:(id)arg1;

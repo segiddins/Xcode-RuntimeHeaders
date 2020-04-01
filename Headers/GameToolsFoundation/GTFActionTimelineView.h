@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <DVTKit/DVTBorderedView.h>
+#import <DVTUserInterfaceKit/DVTBorderedView.h>
 
-@class GTFActionTimelineControlView, NSColor, NSDictionary, NSFont;
+@class GTFActionTimelineControlView, NSColor, NSDictionary, NSFont, NSLayoutConstraint;
 @protocol GTFActionTimelineViewDelegate;
 
 @interface GTFActionTimelineView : DVTBorderedView
@@ -18,6 +18,8 @@
     NSFont *_textFont;
     GTFActionTimelineControlView *_timelineControl;
     float _timeScale;
+    NSLayoutConstraint *_widthConstraint;
+    NSLayoutConstraint *_heightConstraint;
     id <GTFActionTimelineViewDelegate> _delegate;
     struct CGSize _size;
 }
@@ -26,6 +28,8 @@
 @property(nonatomic) struct CGSize size; // @synthesize size=_size;
 - (void).cxx_destruct;
 - (void)setPlayForTimelineControl:(double)arg1;
+- (void)resetTimelineControl;
+- (void)pauseTimelineControl;
 - (void)updatePreviewTime:(double)arg1;
 - (void)moveRight:(id)arg1;
 - (void)moveLeft:(id)arg1;
@@ -37,7 +41,6 @@
 - (BOOL)acceptsFirstResponder;
 - (void)drawRect:(struct CGRect)arg1;
 - (BOOL)isOpaque;
-- (struct CGSize)intrinsicContentSize;
 - (void)updateTimeScaleTo:(float)arg1;
 - (void)awakeFromNib;
 

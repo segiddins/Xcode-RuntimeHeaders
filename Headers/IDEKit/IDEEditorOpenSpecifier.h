@@ -23,16 +23,19 @@
 }
 
 + (id)structureEditorOpenSpecifierForDocumentURL:(id)arg1 inWorkspace:(id)arg2 annotationRepresentedObject:(id)arg3 wantsIndicatorAnimation:(BOOL)arg4 exploreAnnotationRepresentedObject:(id)arg5 error:(id *)arg6;
++ (id)structureEditorOpenSpecifierForDocumentURL:(id)arg1 inWorkspace:(id)arg2 error:(id *)arg3;
 + (id)structureEditorOpenSpecifierForDocumentLocation:(id)arg1 inWorkspace:(id)arg2 error:(id *)arg3;
 + (id)structureEditorOpenSpecifiersForNavigableItems:(id)arg1 inWorkspace:(id)arg2 error:(id *)arg3;
+@property(readonly) NSURL *documentURL; // @synthesize documentURL=_documentURL;
 @property BOOL highlightSelection; // @synthesize highlightSelection=_highlightSelection;
 @property(readonly) DVTFileDataType *fileDataType; // @synthesize fileDataType=_fileDataType;
 @property(readonly) IDENavigableItemArchivableRepresentation *navigableItemRepresentation; // @synthesize navigableItemRepresentation=_archivableRepresentation;
 @property(readonly) DVTDocumentLocation *locationToSelect; // @synthesize locationToSelect=_locationToSelect;
-@property(readonly) NSString *documentExtensionIdentifier; // @synthesize documentExtensionIdentifier=_documentExtensionIdentifier;
+@property(retain) NSString *documentExtensionIdentifier; // @synthesize documentExtensionIdentifier=_documentExtensionIdentifier;
 @property(readonly) BOOL annotationWantsIndicatorAnimation; // @synthesize annotationWantsIndicatorAnimation=_annotationWantsIndicatorAnimation;
 @property(readonly) id exploreAnnotationRepresentedObject; // @synthesize exploreAnnotationRepresentedObject=_exploreAnnotationRepresentedObject;
 @property(readonly) id annotationRepresentedObject; // @synthesize annotationRepresentedObject=_annotationRepresentedObject;
+@property(readonly) DVTStackBacktrace *creationBacktrace; // @synthesize creationBacktrace=_creationBacktrace;
 - (void).cxx_destruct;
 - (id)initWithNavigableItemArchivableRepresentation:(id)arg1 documentExtensionIdentifier:(id)arg2 error:(id *)arg3;
 - (id)initWithNavigableItemArchivableRepresentation:(id)arg1 locationToSelect:(id)arg2 error:(id *)arg3;

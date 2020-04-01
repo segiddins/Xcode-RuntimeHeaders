@@ -33,6 +33,9 @@
 @property(readonly, copy, nonatomic) NSString *label;
 @property(readonly, nonatomic) unsigned long long objectID;
 @property(readonly, nonatomic) NSMutableDictionary *properties;
+@property(readonly, nonatomic) unsigned long long rasterizationRateMap;
+@property(readonly, nonatomic) unsigned long long renderTargetArrayLength;
+@property(readonly, nonatomic) CDStruct_b00b4bef resolution;
 @property(readonly, nonatomic) unsigned int resourceType;
 @property(readonly) Class superclass;
 

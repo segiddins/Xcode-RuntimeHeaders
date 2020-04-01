@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Foundation/NSObject.h>
+#import <objc/NSObject.h>
 
 @class NSError, NSString, TSPropertyListDictionary, XCSpecification, XCSpecificationCache;
 
@@ -21,6 +21,7 @@
 }
 
 + (id)localizedSpecificationTypeName;
+- (void).cxx_destruct;
 - (id)domain;
 - (id)objectOrNilForKey:(id)arg1;
 - (id)description;
@@ -36,9 +37,9 @@
 - (id)specificationType;
 - (id)localizedDescription;
 - (id)name;
+- (id)tsProperties;
 - (id)properties;
 - (id)identifier;
-- (void)dealloc;
 - (id)initWithSpecificationTypeBaseClass:(Class)arg1 identifier:(id)arg2 cache:(id)arg3 byteRange:(struct _NSRange)arg4 inDomain:(id)arg5;
 - (id)initWithSpecificationTypeBaseClass:(Class)arg1 propertyList:(id)arg2 inDomain:(id)arg3;
 

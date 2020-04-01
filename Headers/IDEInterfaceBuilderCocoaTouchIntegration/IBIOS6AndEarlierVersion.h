@@ -13,8 +13,6 @@
 - (id)hybridNIBPackageRuntimeFileName;
 - (id)firstInapplicableSystemTarget;
 - (id)firstApplicableSystemTarget;
-- (id)displayNameForUserInterfaceStyle;
-- (id)displayName;
 - (long long)userInterfaceEra;
 - (id)explicitArchiveIdentifier;
 - (id)identifier;

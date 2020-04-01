@@ -12,10 +12,8 @@
 {
     int _tabTarget;
     NSString *_tabName;
-    double _lastChanged;
 }
 
-@property(nonatomic) double lastChanged; // @synthesize lastChanged=_lastChanged;
 @property(nonatomic) int tabTarget; // @synthesize tabTarget=_tabTarget;
 @property(retain, nonatomic) NSString *tabName; // @synthesize tabName=_tabName;
 - (void).cxx_destruct;

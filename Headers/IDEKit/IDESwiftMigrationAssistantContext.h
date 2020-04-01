@@ -12,10 +12,10 @@
 {
     NSMutableArray *_targets;
     NSMutableArray *_selectedTargets;
+    NSMutableArray *_migrationBuildOptions;
     unsigned long long _currentConversionStage;
     long long _numIncompatibilityErrors;
-    BOOL _wasContinueBuildingAfterErrors;
-    BOOL _shouldRemoveContinueBuildingAfterErrors;
+    BOOL _remindMe;
     DVTFilePath *_migrationBuildFolder;
     NSURL *_savedPlaygroundURL;
 }
@@ -24,9 +24,11 @@
 + (void)initialize;
 @property(retain) NSURL *savedPlaygroundURL; // @synthesize savedPlaygroundURL=_savedPlaygroundURL;
 @property(readonly) DVTFilePath *migrationBuildFolder; // @synthesize migrationBuildFolder=_migrationBuildFolder;
+@property BOOL remindMe; // @synthesize remindMe=_remindMe;
 @property unsigned long long currentConversionStage; // @synthesize currentConversionStage=_currentConversionStage;
 @property long long numberOfIncompatibilityErrors; // @synthesize numberOfIncompatibilityErrors=_numIncompatibilityErrors;
 @property(readonly, copy) NSArray *targets; // @synthesize targets=_targets;
+@property(copy) NSArray *migrationBuildOptions; // @synthesize migrationBuildOptions=_migrationBuildOptions;
 - (void).cxx_destruct;
 - (void)endPerformingContextTask;
 - (void)beginPerformingContextTask;

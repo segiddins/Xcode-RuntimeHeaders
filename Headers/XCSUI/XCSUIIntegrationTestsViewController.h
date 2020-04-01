@@ -4,40 +4,39 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <DVTKit/DVTViewController.h>
+#import <IDEKit/IDEViewController.h>
 
+#import <XCSUI/DVTReplacementViewDelegate-Protocol.h>
 #import <XCSUI/DVTSplitViewDelegate-Protocol.h>
-#import <XCSUI/XCSBotSupportingEditorHostedViewController-Protocol.h>
 
-@class DVTBorderedView, DVTLozengeTextField, DVTReplacementView, DVTSplitView, NSArray, NSString, XCSBot, XCSBotSupportingEditor, XCSIntegration;
+@class DVTBorderedView, DVTEmptyContentPlaceholder, DVTSplitView, IDETestReportViewController, NSError, NSString, NSURL, XCSIntegration, XCSUIProgressReplacementView;
 
-@interface XCSUIIntegrationTestsViewController : DVTViewController <DVTSplitViewDelegate, XCSBotSupportingEditorHostedViewController>
+@interface XCSUIIntegrationTestsViewController : IDEViewController <DVTSplitViewDelegate, DVTReplacementViewDelegate>
 {
-    XCSBotSupportingEditor *_botSupportingEditor;
-    NSArray *_currentSelectedItems;
-    NSArray *_currentSelectedDocumentLocations;
     XCSIntegration *_integration;
-    XCSBot *_bot;
-    DVTReplacementView *_detailReplacementView;
+    NSError *_error;
+    NSURL *_documentURL;
+    CDUnknownBlockType _selectionChangedCallback;
+    XCSUIProgressReplacementView *_detailReplacementView;
     DVTBorderedView *_borderedView;
     DVTSplitView *_splitView;
-    DVTLozengeTextField *_errorTextField;
+    DVTEmptyContentPlaceholder *_errorPlaceholder;
 }
 
-+ (BOOL)instancesCanContainDocumentLocation:(id)arg1;
-+ (id)keyPathsForValuesAffectingCurrentSelectedItems;
-@property __weak DVTLozengeTextField *errorTextField; // @synthesize errorTextField=_errorTextField;
+@property __weak DVTEmptyContentPlaceholder *errorPlaceholder; // @synthesize errorPlaceholder=_errorPlaceholder;
 @property __weak DVTSplitView *splitView; // @synthesize splitView=_splitView;
 @property __weak DVTBorderedView *borderedView; // @synthesize borderedView=_borderedView;
-@property __weak DVTReplacementView *detailReplacementView; // @synthesize detailReplacementView=_detailReplacementView;
-@property(retain, nonatomic) XCSBot *bot; // @synthesize bot=_bot;
+@property __weak XCSUIProgressReplacementView *detailReplacementView; // @synthesize detailReplacementView=_detailReplacementView;
+@property(copy, nonatomic) CDUnknownBlockType selectionChangedCallback; // @synthesize selectionChangedCallback=_selectionChangedCallback;
+@property(retain, nonatomic) NSURL *documentURL; // @synthesize documentURL=_documentURL;
+@property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(retain, nonatomic) XCSIntegration *integration; // @synthesize integration=_integration;
-@property(readonly, copy) NSArray *currentSelectedItems; // @synthesize currentSelectedItems=_currentSelectedItems;
-@property(retain, nonatomic) XCSBotSupportingEditor *botSupportingEditor; // @synthesize botSupportingEditor=_botSupportingEditor;
 - (void).cxx_destruct;
-- (void)selectDocumentLocations:(id)arg1;
-@property(readonly, copy) NSArray *currentSelectedDocumentLocations; // @synthesize currentSelectedDocumentLocations=_currentSelectedDocumentLocations;
-- (id)installedDetailsViewController;
+- (void)installTestReport;
+@property(readonly, nonatomic) IDETestReportViewController *testReportViewController;
+- (void)_configureTestReport;
+- (void)replacementView:(id)arg1 didInstallViewController:(id)arg2;
+- (void)_cleanUpOldDefaults;
 - (void)primitiveInvalidate;
 - (void)loadView;
 

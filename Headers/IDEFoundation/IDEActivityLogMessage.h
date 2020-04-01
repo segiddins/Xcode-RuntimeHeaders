@@ -16,7 +16,6 @@
     NSString *_shortTitle;
     double _timeEmitted;
     IDEActivityLogSection *_supersection;
-    struct _NSRange _rangeInSectionText;
     IDEActivityLogMessage *_supermessage;
     NSMutableArray *_submessages;
     unsigned long long _severity;
@@ -24,12 +23,12 @@
     DVTDocumentLocation *_location;
     NSString *_categoryIdent;
     NSArray *_secondaryLocations;
-    NSString *_additionalDescription;
-    // Error parsing type: AB, name: _lock
+    struct os_unfair_lock_s _lock;
 }
 
 + (id)messageWithType:(id)arg1 severity:(unsigned long long)arg2 title:(id)arg3 filePath:(id)arg4 lineNumber:(unsigned long long)arg5;
 + (id)messageWithType:(id)arg1 severity:(unsigned long long)arg2 title:(id)arg3 location:(id)arg4;
++ (id)defaultMessageType;
 @property(readonly) IDETypeIdentifier *type; // @synthesize type=_type;
 @property(readonly) unsigned long long severity; // @synthesize severity=_severity;
 - (void).cxx_destruct;
@@ -42,22 +41,17 @@
 @property(readonly) unsigned long long totalNumberOfTestFailures;
 - (void)setSecondaryLocations:(id)arg1;
 @property(readonly) NSArray *secondaryLocations;
-@property(readonly) NSString *additionalDescription;
 - (void)setCategoryIdentifier:(id)arg1;
 @property(readonly) NSString *categoryIdentifier;
 @property(readonly) DVTDocumentLocation *location;
 - (void)setShortTitle:(id)arg1;
 @property(readonly) NSString *shortTitle;
-- (void)logRecorder:(id)arg1 addSectionTextRange:(struct _NSRange)arg2;
-- (void)logRecorder:(id)arg1 setSectionTextRange:(struct _NSRange)arg2;
 @property(readonly) NSString *logMessageString;
 - (void)logRecorder:(id)arg1 addSubmessage:(id)arg2;
 - (void)addSubmessage:(id)arg1;
 @property(readonly) NSArray *submessages;
 - (void)_setSupermessage:(id)arg1;
 @property(readonly) __weak IDEActivityLogMessage *supermessage;
-- (void)setSectionTextRange:(struct _NSRange)arg1;
-@property(readonly) struct _NSRange rangeInSectionText;
 - (void)_setSupersection:(id)arg1;
 @property(readonly) __weak IDEActivityLogSection *supersection;
 - (id)description;
@@ -67,10 +61,14 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithType:(id)arg1 severity:(unsigned long long)arg2 title:(id)arg3 filePath:(id)arg4;
 - (id)initWithType:(id)arg1 severity:(unsigned long long)arg2 title:(id)arg3 filePath:(id)arg4 lineNumber:(unsigned long long)arg5;
+- (id)initWithType:(id)arg1 severity:(unsigned long long)arg2 title:(id)arg3 shortTitle:(id)arg4 categoryIdentifier:(id)arg5 filePath:(id)arg6 lineNumber:(unsigned long long)arg7;
 - (id)initWithType:(id)arg1 severity:(unsigned long long)arg2 title:(id)arg3 location:(id)arg4;
+- (id)initWithType:(id)arg1 severity:(unsigned long long)arg2 title:(id)arg3 shortTitle:(id)arg4 categoryIdentifier:(id)arg5 location:(id)arg6;
 - (id)initWithTitle:(id)arg1;
 - (id)init;
 - (id)initWithType:(id)arg1 severity:(unsigned long long)arg2 title:(id)arg3;
+- (id)initWithTitle:(id)arg1 shortTitle:(id)arg2 timeEmitted:(double)arg3 submessages:(id)arg4 severity:(unsigned long long)arg5 typeIdentifierString:(id)arg6 location:(id)arg7 categoryIdentifier:(id)arg8 secondaryLocations:(id)arg9;
+- (id)formatForIndexLog;
 
 @end
 

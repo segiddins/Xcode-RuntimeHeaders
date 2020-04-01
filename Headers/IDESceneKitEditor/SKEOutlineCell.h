@@ -4,16 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <DVTKit/DVTImageAndTextCell.h>
+#import <DVTUserInterfaceKit/DVTImageAndTextCell.h>
 
 @interface SKEOutlineCell : DVTImageAndTextCell
 {
 }
 
 + (id)cell;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
-- (void)unbind:(id)arg1;
-- (void)bind:(id)arg1 toObject:(id)arg2 withKeyPath:(id)arg3 options:(id)arg4;
 - (void)configureWithMember:(id)arg1;
 - (id)titleTextColor;
 - (BOOL)isEnabled;

@@ -20,12 +20,12 @@
 - (id)accessibilityDescriptionForDataNode:(id)arg1;
 - (id)secondRowStringForDataNode:(id)arg1;
 - (id)titleSecondPartForDataNode:(id)arg1;
-- (id)targetHeadingBadgeForDataNode:(id)arg1;
-- (struct CGRect)_drawSummaryBackgroundWithRoundedRectInFrame:(struct CGRect)arg1 forDataNode:(id)arg2;
+- (BOOL)displaysBadge;
+- (id)badgeImageForDataNode:(id)arg1;
 - (void)_drawExpandedTitleInFrame:(struct CGRect)arg1 selected:(BOOL)arg2 forDataNode:(id)arg3;
 - (void)_drawOptionalTextInFrame:(struct CGRect)arg1 inView:(id)arg2 forDataNode:(id)arg3;
 - (struct CGRect)drawAllIssuesForDataNode:(id)arg1 inFrame:(struct CGRect)arg2 attributes:(id)arg3 doDraw:(BOOL)arg4;
-- (struct CGRect)drawIssues:(unsigned long long)arg1 withImage:(id)arg2 inFrame:(struct CGRect)arg3 attributes:(id)arg4 doDraw:(BOOL)arg5 verticalImageOffset:(double)arg6;
+- (struct CGRect)drawIssues:(unsigned long long)arg1 withImage:(id)arg2 inFrame:(struct CGRect)arg3 attributes:(id)arg4 doDraw:(BOOL)arg5 dataNode:(id)arg6;
 - (void)_updateButtonImagesForButtonCell:(id)arg1 inFrame:(struct CGRect)arg2 selectionKnown:(BOOL)arg3 selected:(BOOL)arg4 forDataNode:(id)arg5;
 - (struct CGRect)_expandButtonFrameForFrame:(struct CGRect)arg1 ofView:(id)arg2 knownToDisplay:(BOOL)arg3 forDataNode:(id)arg4;
 - (BOOL)shouldDrawButtonForExpandingTitleForDataNode:(id)arg1;
@@ -38,7 +38,6 @@
 - (unsigned long long)warningsForDataNode:(id)arg1;
 - (unsigned long long)errorsForDataNode:(id)arg1;
 - (unsigned long long)testFailuresForDataNode:(id)arg1;
-- (void)_drawRoundedRect:(struct CGRect)arg1 bgColor:(id)arg2 fgColor:(id)arg3;
 - (void)_drawOvalInRect:(struct CGRect)arg1 bgColor:(id)arg2 fgColor:(id)arg3;
 - (BOOL)isSummaryAdapter;
 - (BOOL)isTargetHeadingAdapter;
@@ -55,7 +54,6 @@
 - (BOOL)isDataNodeExpandable:(id)arg1;
 - (void)dataNode:(id)arg1 outlineView:(id)arg2 willDisplayCell:(id)arg3 forTableColumn:(id)arg4;
 - (double)heightOfRowForDataNode:(id)arg1;
-- (double)_baseHeightOfRowForDataNode:(id)arg1;
 - (id)dataNode:(id)arg1 objectValueForTableColumn:(id)arg2;
 - (void)dataNodeConfigure:(id)arg1;
 - (id)init;

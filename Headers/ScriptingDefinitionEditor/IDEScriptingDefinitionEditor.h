@@ -34,8 +34,8 @@
 - (void)basicFindBarLostFocus:(id)arg1;
 - (BOOL)basicFindBar:(id)arg1 findPreviousByWrapping:(BOOL)arg2;
 - (BOOL)basicFindBar:(id)arg1 findNextByWrapping:(BOOL)arg2;
-- (long long)basicFindBar:(id)arg1 findString:(id)arg2 caseSensitive:(BOOL)arg3 withFindType:(unsigned long long)arg4 andMatchStyle:(int)arg5;
-- (BOOL)basicFindBar:(id)arg1 supportsMatchStyle:(int)arg2;
+- (long long)basicFindBar:(id)arg1 findString:(id)arg2 caseSensitive:(BOOL)arg3 withFindType:(unsigned long long)arg4 andMatchStyle:(unsigned long long)arg5;
+- (BOOL)basicFindBar:(id)arg1 supportsMatchStyle:(unsigned long long)arg2;
 - (BOOL)basicFindBar:(id)arg1 supportsFindType:(unsigned long long)arg2;
 - (id)createFindBar;
 - (BOOL)findBarSupported;
@@ -60,6 +60,12 @@
 - (void)takeFocus;
 - (void)loadView;
 - (void)_setUpContentView;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

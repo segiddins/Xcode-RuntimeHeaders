@@ -7,18 +7,19 @@
 #import <objc/NSObject.h>
 
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBDocumentArchiving-Protocol.h>
+#import <IDEInterfaceBuilderCocoaTouchIntegration/IBUICommandInspectable-Protocol.h>
 #import <IDEInterfaceBuilderCocoaTouchIntegration/NSCoding-Protocol.h>
 #import <IDEInterfaceBuilderCocoaTouchIntegration/NSCopying-Protocol.h>
 
-@class NSString;
+@class IBKeyEquivalent, NSString;
 
-@interface IBUIKeyCommand : NSObject <IBDocumentArchiving, NSCoding, NSCopying>
+@interface IBUIKeyCommand : NSObject <IBDocumentArchiving, NSCoding, NSCopying, IBUICommandInspectable>
 {
-    NSString *_input;
     int _modifierFlags;
+    NSString *_input;
     NSString *_actionName;
-    NSString *_segueName;
     NSString *_discoverabilityTitle;
+    NSString *_segueName;
 }
 
 + (void)registerMarshallingRecordHandlers;
@@ -29,14 +30,17 @@
 @property(nonatomic) int modifierFlags; // @synthesize modifierFlags=_modifierFlags;
 @property(copy, nonatomic) NSString *input; // @synthesize input=_input;
 - (void).cxx_destruct;
+@property(retain, nonatomic) IBKeyEquivalent *keyEquivalent;
+@property(copy, nonatomic) NSString *title;
 - (Class)classToTakeInitialMarshalledKeysFrom:(id)arg1;
 - (id)runtimeClassNameForContext:(id)arg1 returningOptionalFallbackClassName:(id *)arg2;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (id)ibLocalAttributeKeyPaths;
 - (id)inputAndModifierMaskAsIBKeyEquivalent;
 - (void)unarchiveWithDocumentUnarchiver:(id)arg1;
 - (void)archiveWithDocumentArchiver:(id)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

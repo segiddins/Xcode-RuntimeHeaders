@@ -6,7 +6,15 @@
 
 #import <DVTFoundation/DVTDocumentLocation.h>
 
-@interface DVTDocumentLocation (IDEFoundationAdditions)
+#import <IDEFoundation/IDEIssueCoalescingDocumentLocationIdentifiable-Protocol.h>
+
+@protocol NSCopying;
+
+@interface DVTDocumentLocation (IDEFoundationAdditions) <IDEIssueCoalescingDocumentLocationIdentifiable>
 - (id)ide_copyInWorkspace:(id)arg1 fromWorkspaceAtRepresentingPath:(id)arg2;
+- (id)sourcekit_asRequest:(id)arg1;
+@property(readonly, nonatomic) id <NSCopying> issueCoalescingGroupIdentifier;
+@property(readonly, nonatomic) id <NSCopying> issueCoalescingIdentifier;
+- (id)activityLogMessage_locationString;
 @end
 

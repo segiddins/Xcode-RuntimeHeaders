@@ -11,6 +11,7 @@
 }
 
 + (id)cell;
+- (void)setRepresentedObject:(id)arg1;
 
 @end
 

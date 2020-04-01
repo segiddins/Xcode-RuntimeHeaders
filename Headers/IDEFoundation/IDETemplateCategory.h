@@ -20,6 +20,7 @@
 - (long long)categoryCompare:(id)arg1;
 - (id)standardCategoryNames;
 - (id)init;
+- (id)initWithName:(id)arg1;
 
 // Remaining properties
 @property(readonly) NSMutableArray *mutableTemplates; // @dynamic mutableTemplates;

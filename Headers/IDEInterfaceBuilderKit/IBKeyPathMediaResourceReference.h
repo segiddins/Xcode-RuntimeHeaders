@@ -19,6 +19,7 @@
 - (void).cxx_destruct;
 - (BOOL)updateValueFromResourceValueIfNeeded:(id)arg1 inDocument:(id)arg2;
 - (BOOL)isArrayBased;
+- (id)description;
 - (id)initWithVariantSet:(id)arg1 documentObject:(id)arg2 originalValue:(id)arg3 keyPath:(id)arg4 memberConfiguration:(id)arg5 index:(id)arg6 transformer:(id)arg7;
 
 @end

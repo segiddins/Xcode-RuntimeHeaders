@@ -44,6 +44,7 @@
     XCBuildResultAdapter *_analyzerControlFlowStepAdapter;
     XCBuildResultAdapter *_analyzerEventStepAdapter;
     XCBuildResultAdapter *_unitTestAdapter;
+    XCBuildResultAdapter *_unitTestWorkerGroupAdapter;
     XCBuildResultAdapter *_headerInclusionAdapter;
     XCBuildResultAdapter *_noticeAdapter;
     XCBuildResultAdapter *_summaryItemAdapter;
@@ -74,8 +75,6 @@
 + (id)formattedLogTranscript:(id)arg1;
 + (id)formattedLogStringForLogMessage:(id)arg1;
 + (id)formattedLogStringForSection:(id)arg1;
-+ (id)boldAttributesForTranscript;
-+ (id)attributesForTranscript;
 + (id)standardMonoSpaceFont;
 + (id)attributedTranscriptForLogSection:(id)arg1 commandDetailLengthPtr:(unsigned long long *)arg2;
 + (id)_commandInvocationStringForLogSection:(id)arg1;
@@ -89,6 +88,8 @@
 + (id)moreUnderlinedImage;
 + (id)moreImage;
 + (id)newImageWithTitle:(id)arg1 selected:(BOOL)arg2 underlined:(BOOL)arg3;
++ (id)buildTimingAggregateImage;
++ (id)buildTimingSummaryImage;
 + (id)condensedOverImage;
 + (id)condensedDownImage;
 + (id)condensedUpImage;
@@ -115,6 +116,10 @@
 + (id)noticeIconImage;
 + (id)imageNamed:(id)arg1;
 + (id)sharedTextLayout;
++ (void)setBoldAttributesForTranscript:(id)arg1;
++ (id)boldAttributesForTranscript;
++ (void)setAttributesForTranscript:(id)arg1;
++ (id)attributesForTranscript;
 + (void)initialize;
 @property(readonly, nonatomic) id <IDEBuildResultsOutlineDelegate> buildResultsOutlineDelegate; // @synthesize buildResultsOutlineDelegate=_buildResultsOutlineDelegate;
 @property(copy, nonatomic) NSString *searchFieldValue; // @synthesize searchFieldValue=_searchFieldValue;
@@ -128,6 +133,8 @@
 - (void)dealloc;
 - (id)initWithDelegate:(id)arg1 outlineView:(id)arg2 outlineIssuesView:(id)arg3;
 - (void)primitiveInvalidate;
+- (void)_rebuildBoldAttributesForTranscript;
+- (void)_rebuildAttributesForTranscript;
 - (void)selectMessage:(id)arg1 withinDataNode:(id)arg2;
 - (void)selectMessageOrSection:(id)arg1 usingTranscript:(BOOL)arg2;
 - (void)_delayedHighLightMessage:(id)arg1;
@@ -138,11 +145,12 @@
 - (id)transcriptAttributedStringForDataNode:(id)arg1;
 - (void)updateSearchFieldValue:(id)arg1;
 - (void)copyShownTranscripts:(id)arg1;
+- (id)transcriptAsAttributedString;
 - (void)copyTranscriptToNewTextFile:(id)arg1;
 - (BOOL)outlineView:(id)arg1 writeItems:(id)arg2 toPasteboard:(id)arg3;
 - (id)attributedLogStringForItems:(id)arg1 inOutlineView:(id)arg2;
 - (id)dataSource:(id)arg1 contextMenuForSelectedNodes:(id)arg2;
-- (id)mentuItemTitleForCopyShownTranscripts;
+- (id)menuItemTitleForCopyShownTranscripts;
 - (id)localizedStringFor:(id)arg1 explanation:(id)arg2;
 - (BOOL)dataSource:(id)arg1 filterDisplayedRootNode:(id)arg2;
 - (void)jumpToSelection:(id)arg1;
@@ -167,7 +175,6 @@
 - (void)buildOperationDidUpdateBuildLogItems:(id)arg1;
 - (void)updateByStepView:(id)arg1;
 - (id)textLayoutForDataNode:(id)arg1;
-- (void)buildOperationDidUpdateBuildLogItems_addingChildrenInsteadOfReloading_Radar6707952:(id)arg1;
 - (void)buildOperationDidUpdateBuildLogItems_addingChildrenInsteadOfReloading:(id)arg1;
 - (id)nodeForLogItem:(id)arg1;
 - (void)displayActivityLog:(id)arg1;
@@ -179,6 +186,7 @@
 - (void)_rebuildOutline;
 - (void)_updateCounts;
 - (void)_updateRoots;
+- (id)_allLogItemRootsWithFiltering:(BOOL)arg1;
 - (BOOL)shouldDisplaySummary;
 - (void)_expandSubcommandNodesForNode:(id)arg1;
 - (void)_recursivelyExpandUnitTestNodesWithImportantMessagesForNode:(id)arg1;
@@ -205,6 +213,7 @@
 - (id)issueCategoryAdapter;
 - (id)summaryItemAdapter;
 - (id)noticeAdapter;
+- (id)unitTestWorkerGroupAdapter;
 - (id)unitTestAdapter;
 - (id)headerInclusionAdapter;
 - (id)analyzerEventStepAdapter;

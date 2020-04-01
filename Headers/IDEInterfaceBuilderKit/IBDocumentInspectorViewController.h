@@ -23,6 +23,7 @@
     NSString *_developmentSummary;
     long long _usesAutolayoutState;
     long long _useConfigurationsState;
+    long long _useSafeAreaLayoutGuidesState;
 }
 
 + (BOOL)canInspectFileReferenceNavigableItems:(id)arg1;
@@ -30,6 +31,7 @@
 + (id)documentPlatform;
 @property BOOL deploymentEnabled; // @synthesize deploymentEnabled=_deploymentEnabled;
 @property BOOL developmentEnabled; // @synthesize developmentEnabled=_developmentEnabled;
+@property(nonatomic) long long useSafeAreaLayoutGuidesState; // @synthesize useSafeAreaLayoutGuidesState=_useSafeAreaLayoutGuidesState;
 @property(nonatomic) long long useConfigurationsState; // @synthesize useConfigurationsState=_useConfigurationsState;
 @property(nonatomic) long long usesAutolayoutState; // @synthesize usesAutolayoutState=_usesAutolayoutState;
 @property(copy) NSString *developmentSummary; // @synthesize developmentSummary=_developmentSummary;
@@ -48,10 +50,10 @@
 - (id)versionItemWithTitle:(id)arg1 version:(id)arg2 andDependency:(id)arg3;
 - (id)categoryHeaderItemWithTitle:(id)arg1;
 - (BOOL)shouldShowLaunchScreenCheckbox;
-- (void)disableConfigurationsAndAutolayout:(BOOL)arg1 forDocuments:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
-- (void)enableAutolayoutAndConfigurations:(BOOL)arg1 forDocuments:(id)arg2;
+- (void)disableConfigurationsAndAutolayout:(BOOL)arg1 forDocuments:(id)arg2;
+- (void)enableAutolayoutAndConfigurations:(BOOL)arg1 andSafeAreas:(BOOL)arg2 forDocuments:(id)arg3;
 - (void)finishDisablingConfigurationsAndAutolayout:(BOOL)arg1 forDocuments:(id)arg2 withAlert:(id)arg3;
-- (void)finishEnablingAutolayoutAndConfigurations:(BOOL)arg1 arbitrate:(BOOL)arg2 forDocuments:(id)arg3;
+- (void)finishEnablingAutolayoutAndConfigurations:(BOOL)arg1 andSafeAreas:(BOOL)arg2 arbitrate:(BOOL)arg3 forDocuments:(id)arg4;
 - (id)alertAccessoryViewForDisablingConfigurations;
 - (id)informativeTextForDisablingConfigurations;
 - (id)informativeTextForEnablingConfigurations;
@@ -61,8 +63,11 @@
 - (BOOL)documentNeedsToUpgradeDependencyToEnableAutolayout:(id)arg1;
 - (id)upgradeTargetsForDocuments:(id)arg1;
 - (id)autolayoutDependencyExtensionParameterForDocument:(id)arg1 matchingVersion:(long long)arg2;
+- (BOOL)supportsSafeAreaLayoutGuides;
+- (void)setUseSafeAreaLayoutGuidesStateForUIOnly:(long long)arg1;
 - (void)setUseConfigurationsStateForUIOnly:(long long)arg1;
 - (void)setUsesAutolayoutStateForUIOnly:(long long)arg1;
+@property(readonly, nonatomic) BOOL isUsesAutolayoutStateVisible;
 - (void)resetLocalizationLocking:(id)arg1;
 - (void)takeDocumentDependency:(id)arg1;
 - (void)applyDependencyValue:(id)arg1 toDependency:(id)arg2 forDocuments:(id)arg3;

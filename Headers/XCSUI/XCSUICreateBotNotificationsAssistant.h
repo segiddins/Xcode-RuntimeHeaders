@@ -10,6 +10,7 @@
 
 @interface XCSUICreateBotNotificationsAssistant : IDEAssistant
 {
+    BOOL preventGoNextOrFinish;
     BOOL _viewIsInstalled;
     XCSUIBotDefinition_TriggersEditor *_triggersEditor;
 }
@@ -20,6 +21,8 @@
 @property(nonatomic) BOOL viewIsInstalled; // @synthesize viewIsInstalled=_viewIsInstalled;
 - (void).cxx_destruct;
 - (BOOL)alwaysShowFinish;
+- (void)setPreventGoNextOrFinish:(BOOL)arg1;
+- (BOOL)preventGoNextOrFinish;
 - (void)helpAction;
 - (BOOL)showHelpButton;
 - (BOOL)canGoForward;

@@ -11,6 +11,7 @@
 @protocol DBGSBCompileUnit <NSObject>
 - (id <DBGSBLineEntry>)GetLineEntryAtIndex:(unsigned int)arg1;
 - (unsigned int)FindLineEntryIndex:(unsigned int)arg1 line:(unsigned int)arg2 inline_file_spec:(id <DBGSBFileSpec>)arg3;
+- (unsigned int)GetNumLineEntries;
 - (_Bool)IsValid;
 @end
 

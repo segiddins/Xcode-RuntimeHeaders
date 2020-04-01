@@ -6,7 +6,12 @@
 
 #import <AppKit/NSScroller.h>
 
-@interface NSScroller (IBNSScrollerIntegration)
+#import <IDEInterfaceBuilderCocoaIntegration/IBDocumentArchiving-Protocol.h>
+
+@class NSString;
+
+@interface NSScroller (IBNSScrollerIntegration) <IBDocumentArchiving>
++ (id)keyPathsForValuesAffectingIbInspectedControlSize;
 + (id)instantiateWithDocumentUnarchiver:(id)arg1;
 + (id)keyPathsForValuesAffectingDoubleValue;
 - (BOOL)ibHasSingleCell;
@@ -16,5 +21,15 @@
 - (Class)ibEditorClass;
 - (struct CGSize)ibMaximumSize;
 - (struct CGSize)ibMinimumSize;
+- (id)ibDefaultImage;
+- (id)ibLocalAttributeKeyPaths;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @end
 

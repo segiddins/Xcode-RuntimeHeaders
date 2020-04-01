@@ -19,10 +19,11 @@
 @property(retain) NSData *mgScreenshot; // @synthesize mgScreenshot=_mgScreenshot;
 @property(retain) NSData *memoryGraph; // @synthesize memoryGraph=_memoryGraph;
 - (void).cxx_destruct;
-- (void)fileRadarForGraph:(id)arg1 withNodeID:(unsigned int)arg2 andLabel:(id)arg3 screenshot:(id)arg4 inWindow:(id)arg5;
-- (void)fileRadarForGraph:(id)arg1 withSelectedNodeID:(unsigned int)arg2 selectedNodeLabel:(id)arg3 pivotNodeID:(unsigned int)arg4 pivotNodeLabel:(id)arg5 screenshot:(id)arg6 inWindow:(id)arg7;
+- (void)fileRadarForGraph:(id)arg1 withNodeID:(unsigned int)arg2 nodeAddressDescription:(id)arg3 andLabel:(id)arg4 screenshot:(id)arg5 inWindow:(id)arg6;
+- (void)fileRadarForGraph:(id)arg1 withSelectedNodeID:(unsigned int)arg2 nodeAddressDescription:(id)arg3 selectedNodeLabel:(id)arg4 pivotNodeID:(unsigned int)arg5 pivotNodeLabel:(id)arg6 screenshot:(id)arg7 inWindow:(id)arg8;
 - (void)fileRadarForIssue:(id)arg1 withGraph:(id)arg2 andScreenshot:(id)arg3 inWindow:(id)arg4;
-- (void)fetchAttachmentsCompletionBlock:(CDUnknownBlockType)arg1;
+- (void)cancelFetchAttachments:(id)arg1;
+- (id)fetchAttachmentsCompletionBlock:(CDUnknownBlockType)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

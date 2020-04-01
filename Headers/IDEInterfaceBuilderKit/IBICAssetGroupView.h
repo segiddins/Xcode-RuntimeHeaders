@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <DVTKit/DVTLayoutView_ML.h>
+#import <DVTStructuredLayoutKit/DVTLayoutView_ML.h>
 
 #import <IDEInterfaceBuilderKit/NSAccessibilityGroup-Protocol.h>
 
@@ -17,17 +17,22 @@
     NSMutableDictionary *_repIDsToAssetRepViews;
     BOOL _drawDebugBorder;
     BOOL _wrapAllGroups;
+    BOOL _alwaysUseMaxWidth;
     NSString *_header;
     NSString *_footer;
     NSNumber *_horizontalSpacing;
+    NSNumber *_verticalSpacing;
     double _suggestedMaxWidth;
     IBICDetailAreaGroupPathComponent *_pathComponent;
     long long _accessoryViewLocation;
     NSView *_accessoryView;
     long long _rowAlignment;
+    NSNumber *_singleRowAlignment;
     CDStruct_c519178c _margins;
 }
 
+@property(nonatomic) BOOL alwaysUseMaxWidth; // @synthesize alwaysUseMaxWidth=_alwaysUseMaxWidth;
+@property(copy, nonatomic) NSNumber *singleRowAlignment; // @synthesize singleRowAlignment=_singleRowAlignment;
 @property(nonatomic) long long rowAlignment; // @synthesize rowAlignment=_rowAlignment;
 @property(retain, nonatomic) NSView *accessoryView; // @synthesize accessoryView=_accessoryView;
 @property(nonatomic) long long accessoryViewLocation; // @synthesize accessoryViewLocation=_accessoryViewLocation;
@@ -36,6 +41,7 @@
 @property(nonatomic) BOOL wrapAllGroups; // @synthesize wrapAllGroups=_wrapAllGroups;
 @property(nonatomic) double suggestedMaxWidth; // @synthesize suggestedMaxWidth=_suggestedMaxWidth;
 @property(nonatomic) BOOL drawDebugBorder; // @synthesize drawDebugBorder=_drawDebugBorder;
+@property(copy, nonatomic) NSNumber *verticalSpacing; // @synthesize verticalSpacing=_verticalSpacing;
 @property(copy, nonatomic) NSNumber *horizontalSpacing; // @synthesize horizontalSpacing=_horizontalSpacing;
 @property(copy, nonatomic) NSString *footer; // @synthesize footer=_footer;
 @property(copy, nonatomic) NSString *header; // @synthesize header=_header;
@@ -49,7 +55,6 @@
 - (id)attributedHeader;
 - (id)headerAttributes;
 - (id)headerParagraphStyle;
-- (id)effectiveHeaderColor;
 - (double)ibAssetGroupViewVerticalAlignmentAnchor;
 - (struct CGSize)footerSize;
 - (struct CGRect)footerRect;
@@ -57,7 +62,6 @@
 - (id)attributedFooter;
 - (id)footerAttributes;
 - (id)footerParagraphStyle;
-- (id)effectiveFooterColor;
 - (id)font;
 - (void)layoutBottomUp;
 - (struct CGSize)sizeOfRow:(id)arg1 baseline:(double *)arg2;
@@ -67,6 +71,7 @@
 - (double)maxRowWidth;
 - (double)maxSubviewWidth;
 - (void)layoutTopDown;
+- (double)maxPreferredWidthForHeaderOrFooter;
 - (BOOL)isFlipped;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)addSubgroup:(id)arg1;

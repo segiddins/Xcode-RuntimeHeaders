@@ -15,6 +15,7 @@
     BOOL _copyFilesToTargetGroup;
     BOOL _stripOutBuildProductContainerItems;
     BOOL _shouldHideCopyFilesToTargetGroupSwitchButton;
+    BOOL _isMovingReferencesWithinSameContainer;
     IDEGroup *_targetGroup;
     NSArray *_containerItems;
     NSString *_buildToolPath;
@@ -30,6 +31,7 @@
 @property(copy) CDUnknownBlockType validationBlock; // @synthesize validationBlock=_validationBlock;
 @property(copy) NSString *buildArgumentsString; // @synthesize buildArgumentsString=_buildArgumentsString;
 @property(copy) NSString *buildToolPath; // @synthesize buildToolPath=_buildToolPath;
+@property BOOL isMovingReferencesWithinSameContainer; // @synthesize isMovingReferencesWithinSameContainer=_isMovingReferencesWithinSameContainer;
 @property BOOL shouldHideCopyFilesToTargetGroupSwitchButton; // @synthesize shouldHideCopyFilesToTargetGroupSwitchButton=_shouldHideCopyFilesToTargetGroupSwitchButton;
 @property BOOL stripOutBuildProductContainerItems; // @synthesize stripOutBuildProductContainerItems=_stripOutBuildProductContainerItems;
 @property(copy) NSArray *containerItems; // @synthesize containerItems=_containerItems;

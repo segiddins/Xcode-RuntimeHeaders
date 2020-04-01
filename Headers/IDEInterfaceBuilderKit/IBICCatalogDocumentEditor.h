@@ -6,6 +6,7 @@
 
 #import <IDEKit/IDEEditor.h>
 
+#import <IDEInterfaceBuilderKit/DVTFindBarFindable-Protocol.h>
 #import <IDEInterfaceBuilderKit/DVTStatefulObject-Protocol.h>
 #import <IDEInterfaceBuilderKit/IBICCatalogItemObserver-Protocol.h>
 #import <IDEInterfaceBuilderKit/IBSelectionChannelApplicator-Protocol.h>
@@ -13,11 +14,13 @@
 @class DVTSplitView, IBICAbstractCatalogDetailController, IBICCatalogOverviewController, IBICCatalogSlicingController, IBICCatalogSourceListController, IBSelectionChannel, IDEFilePickerPanel, NSArray, NSMutableArray, NSSet, NSString;
 @protocol DVTCancellable, IBInvalidation;
 
-@interface IBICCatalogDocumentEditor : IDEEditor <IBICCatalogItemObserver, IBSelectionChannelApplicator, DVTStatefulObject>
+@interface IBICCatalogDocumentEditor : IDEEditor <IBICCatalogItemObserver, IBSelectionChannelApplicator, DVTStatefulObject, DVTFindBarFindable>
 {
     NSSet *_itemsInfluencingOrderOfDisplayedCatalogItems;
     id <IBInvalidation> _catalogObservation;
     NSString *_lastFocusedArea;
+    BOOL _isRestoringSourceListWidth;
+    double _preferredSourceListWidth;
     id <DVTCancellable> _mainViewControllerToken;
     IDEFilePickerPanel *_importFilePickerPanel;
     NSMutableArray *_importableItems;
@@ -46,23 +49,44 @@
 @property(readonly, nonatomic) IBSelectionChannel *selectionChannel; // @synthesize selectionChannel=_selectionChannel;
 @property(copy, nonatomic) NSSet *selectedCatalogItems; // @synthesize selectedCatalogItems=_selectedCatalogItems;
 - (void).cxx_destruct;
+- (void)splitViewDidResizeSubviews:(id)arg1;
+- (void)restoreSourceListToPreferredWidth;
 - (void)splitView:(id)arg1 resizeSubviewsWithOldSize:(struct CGSize)arg2;
 - (double)splitView:(id)arg1 constrainSplitPosition:(double)arg2 ofSubviewAt:(long long)arg3;
+- (BOOL)splitView:(id)arg1 canCollapseSubview:(id)arg2;
 - (id)itemsFromDocumentLocations:(id)arg1;
 - (void)warnAboutBogusDocumentLocations:(id)arg1;
 - (void)addAssetTagsToProject:(id)arg1;
 - (void)addAssetTagsToProjectForItem:(id)arg1;
+- (void)duplicate:(id)arg1;
+- (void)duplicateItems:(BOOL)arg1;
+- (void)cut:(id)arg1;
+- (void)copy:(id)arg1;
+- (void)paste:(id)arg1;
+- (void)pasteItems:(BOOL)arg1;
+- (void)setupEditorMenu:(id)arg1;
 - (BOOL)validateMenuItem:(id)arg1;
 - (BOOL)validateUserInterfaceItem:(id)arg1;
+- (BOOL)canPerformDuplicateWithActionContext:(id)arg1;
+- (BOOL)canPerformPasteWithActionContext:(id)arg1;
+- (BOOL)canPerformCutWithActionContext:(id)arg1;
+- (BOOL)canPerformCopyWithActionContext:(id)arg1;
+- (BOOL)canPopulateAssetCatalogSlot:(id)arg1;
+- (void)populateAssetCatalogSlot:(id)arg1;
 - (BOOL)validateDeviceSlotMenuItem:(id)arg1 actionContext:(id)arg2;
 - (id)imageSetsForActionContext:(id)arg1;
+- (void)convertDarkSuffixedAssets:(id)arg1;
 - (void)openImageCatalogItemsInExternalEditor:(id)arg1;
 - (void)showImageCatalogItemsInFinder:(id)arg1;
 - (void)removeImageCatalogItemsBasedOnSelectionContext:(id)arg1;
+- (void)delete:(id)arg1;
 - (void)showSlicingControllerInDetailArea:(id)arg1;
 - (void)showOverviewControllerInDetailArea:(id)arg1;
 - (void)switchToAlternateDetailController:(id)arg1;
 - (void)setCurrentDetailController:(id)arg1;
+- (id)startingLocationForFindBar:(id)arg1 findingBackwards:(BOOL)arg2;
+- (void)dvtFindBar:(id)arg1 didUpdateCurrentResult:(id)arg2;
+- (BOOL)canConvertDarkSuffixedAssets;
 - (BOOL)canImportImageCatalogContentWithActionContext:(id)arg1;
 - (BOOL)canRemoveItemsWithActionContext:(id)arg1;
 - (BOOL)canOpenImageCatalogItemsInExternalEditorWithActionContext:(id)arg1;
@@ -78,7 +102,7 @@
 - (void)showImageCatalogItemsInFinderWithActionContext:(id)arg1;
 - (id)imageCatalogItemURLsForShowingInFinderForActionContext:(id)arg1;
 - (id)imageCatalogItemURLsForOpenningInExternalEditorForActionContext:(id)arg1;
-- (id)ordredURLsForItems:(id)arg1;
+- (id)orderedURLsForItems:(id)arg1;
 - (void)applyAssetInstantiationCommand:(id)arg1 inActionContext:(id)arg2;
 - (BOOL)canApplyAssetInstantiationCommand:(id)arg1 inActionContext:(id)arg2;
 - (void)removeItemsWithActionContext:(id)arg1;
@@ -117,6 +141,7 @@
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2 document:(id)arg3;
 
 // Remaining properties
+@property(readonly) BOOL canRevertWithEmptyStateDictionary;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;

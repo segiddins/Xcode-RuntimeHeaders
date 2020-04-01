@@ -11,6 +11,8 @@
 }
 
 + (Class)repIdentifierClass;
+- (id)addItemFromPasteboardReferencedFilePath:(id)arg1 withComponentID:(id)arg2;
+- (id)inferredComponentIDsForPaths:(id)arg1;
 
 @end
 

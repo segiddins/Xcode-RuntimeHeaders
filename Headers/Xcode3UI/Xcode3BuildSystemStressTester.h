@@ -13,6 +13,7 @@
 - (void)launchBuildWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)dispatchAndWaitForBuild;
 - (void)invalidateAllTargetSettings;
+- (id)_anyWorkspace;
 - (void)runStressTest;
 - (id)logAspect;
 

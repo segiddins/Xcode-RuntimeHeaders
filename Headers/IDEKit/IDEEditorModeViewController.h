@@ -6,7 +6,7 @@
 
 #import <IDEKit/IDEViewController.h>
 
-@class DVTStateToken, IDEEditorArea, IDEEditorContext, NSDictionary;
+@class IDEEditorArea, IDEEditorAreaSplit, IDEEditorContext, NSDictionary;
 
 @interface IDEEditorModeViewController : IDEViewController
 {
@@ -15,16 +15,22 @@
     NSDictionary *_lastSetEditorLayoutConfiguration;
     NSDictionary *_lastSetPersistentRepresentation;
     IDEEditorArea *_editorArea;
+    IDEEditorAreaSplit *_editorAreaSplit;
 }
 
 + (long long)version;
 + (void)configureStateSavingObjectPersistenceByName:(id)arg1;
 + (id)stateSavingIdentifiers;
+@property(retain, nonatomic) IDEEditorAreaSplit *editorAreaSplit; // @synthesize editorAreaSplit=_editorAreaSplit;
 @property(retain) IDEEditorContext *selectedAlternateEditorContext; // @synthesize selectedAlternateEditorContext=_selectedAlternateEditorContext;
 @property(retain, nonatomic) IDEEditorContext *primaryEditorContext; // @synthesize primaryEditorContext=_primaryEditorContext;
 @property(retain, nonatomic) IDEEditorArea *editorArea; // @synthesize editorArea=_editorArea;
 - (void).cxx_destruct;
+- (void)applyStateDictionary:(id)arg1 forEditor:(id)arg2;
+- (id)navigationOverlayTargetAccessibilityTitle;
 - (void)editorContext:(id)arg1 editorStateRepositoryDidChange:(id)arg2;
+- (void)editorContext:(id)arg1 didSetEditor:(id)arg2;
+- (BOOL)allowAutomaticallyChangingMode;
 - (void)commitStateToDictionary:(id)arg1;
 - (void)revertStateWithDictionary:(id)arg1;
 - (void)_setPersistentRepresentation:(id)arg1 forIdentifier:(id)arg2;
@@ -42,26 +48,26 @@
 - (BOOL)_getItems:(id *)arg1 itemsKey:(id)arg2 selected:(id *)arg3 geometry:(id *)arg4 inConfigurationDictionary:(id)arg5;
 - (id)_configurationDictionaryWithItems:(id)arg1 itemsKey:(id)arg2 selected:(id)arg3 geometry:(id)arg4;
 - (void)primitiveInvalidate;
+- (BOOL)automaticallyInvalidatesChildViewControllers;
 - (id)_stealPrimaryEditorContext;
 - (id)editorContexts;
 - (BOOL)openEditorOpenSpecifier:(id)arg1 editorContext:(id)arg2;
 - (BOOL)openEditorHistoryItem:(id)arg1 editorContext:(id)arg2;
 @property(readonly) struct CGSize minimumContentViewFrameSize;
 - (BOOL)canCreateSplitForNavigationHUD;
-- (void)resetEditor;
-- (BOOL)canResetEditor;
+- (void)resetAssistantEditorSelection;
+- (BOOL)canResetAssistantEditorSelection;
 - (void)removeAssistantEditor;
 - (id)addNewAssistantEditor;
 - (BOOL)canAddNewAssistantEditor;
 - (BOOL)canRemoveAssistantEditor;
 - (void)addAssistantEditor;
 - (BOOL)canAddAssistantEditor;
-- (void)setAssistantEditorsLayout:(int)arg1;
+- (void)setAssistantEditorsLayout:(unsigned long long)arg1;
 - (BOOL)canChangeAssistantEditorsLayout;
+- (void)resetEditorSizes;
+- (BOOL)canResetEditorSizes;
 - (id)_initWithPrimaryEditorContext:(id)arg1;
-
-// Remaining properties
-@property(retain) DVTStateToken *stateToken; // @dynamic stateToken;
 
 @end
 

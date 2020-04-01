@@ -6,9 +6,23 @@
 
 #import <AppKit/NSRuleEditor.h>
 
-@interface NSRuleEditor (IBNSRuleEditorIntegration)
+#import <IDEInterfaceBuilderCocoaIntegration/IBDocumentArchiving-Protocol.h>
+
+@class NSString;
+
+@interface NSRuleEditor (IBNSRuleEditorIntegration) <IBDocumentArchiving>
 - (BOOL)ibShouldUseConstraintsInsteadOfAutoresizingWhenChildOfClipView;
 - (void)awakeAfterUsingDocumentUnarchiver:(id)arg1;
 - (struct CGSize)ibPreferredSize;
+- (id)ibLocalAttributeKeyPaths;
+- (id)ibLocalLocalizableGeometryAttributeKeyPaths;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @end
 

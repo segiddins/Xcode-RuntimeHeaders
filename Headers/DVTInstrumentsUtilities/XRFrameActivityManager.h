@@ -6,58 +6,60 @@
 
 #import <objc/NSObject.h>
 
-#import <DVTInstrumentsUtilities/XRFrameActivityManager-Protocol.h>
+#import <DVTInstrumentsUtilities/XRFrameActivityManagerPrivate-Protocol.h>
+#import <DVTInstrumentsUtilities/XRMobileAgentStop-Protocol.h>
 
 @class NSString, XRFrameActivity;
-@protocol OS_dispatch_queue, OS_dispatch_semaphore, XRFrameCommutator;
 
-@interface XRFrameActivityManager : NSObject <XRFrameActivityManager>
+@interface XRFrameActivityManager : NSObject <XRFrameActivityManagerPrivate, XRMobileAgentStop>
 {
-    const char *_shouldYield;
-    id <XRFrameCommutator> _commutator;
-    BOOL _yieldFlag;
-    BOOL _establishesAffinity;
-    BOOL _activitiesCanRunInParallel;
-    BOOL _debugCanCallSuspend;
-    BOOL _debugCanCallResume;
-    unsigned char _suspendCount;
-    unsigned int _activityQoS;
-    struct XRSerializedAccess<ActivityInfo> _activityInfo;
-    NSObject<OS_dispatch_semaphore> *_actionRequired;
-    NSObject<OS_dispatch_queue> *_serialActivityQueue;
-    struct _opaque_pthread_rwlock_t _insideFrameLock;
-    struct _opaque_pthread_rwlock_t _outsideFrameLock;
+    shared_ptr_5180c3d3 _managerImpl;
+    shared_ptr_5180c3d3 _secondTierManagerImpl;
     XRFrameActivity *_syncActivity;
     int _kdebugCodeBase;
+    unsigned long long _signpostID;
+    unsigned long long _ringSignpostID;
+    unsigned char _currentSlot;
 }
 
 + (void)initialize;
++ (BOOL)_establishesAffinity;
 + (int)_identifierForSignposting;
 + (unsigned int)_activityQoS;
-+ (BOOL)_establishesAffinity;
-+ (BOOL)_enableConcurrentActivities;
++ (BOOL)supportsQoS;
++ (BOOL)enableConcurrentActivities;
+@property(readonly, nonatomic) unsigned char currentSlot; // @synthesize currentSlot=_currentSlot;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (BOOL)holdBackArrivingAgent:(id)arg1;
+- (BOOL)holdBackRevisitingAgent:(id)arg1;
+- (void)extendingMinorFrame:(unsigned char)arg1;
+- (void)underrunMinorFrame:(unsigned char)arg1;
+- (void)yieldingMinorFrame:(unsigned char)arg1;
+- (void)enteringMinorFrame:(unsigned char)arg1;
+- (shared_ptr_5180c3d3 *)_secondTierManagerImplPtr;
+- (shared_ptr_5180c3d3 *)_managerImplPtr;
+- (void)_extendingMinorFrame:(unsigned char)arg1;
+- (void)_underrunMinorFrame:(unsigned char)arg1;
+- (void)_yieldingMinorFrame:(unsigned char)arg1;
+- (void)_acquiredMinorFrame:(unsigned char)arg1;
+- (void)activateNextMajorFrame;
+- (void)_needsScheduling;
 - (void)_finalShutdown;
-- (void)underrunWarning;
-- (void)shutdown;
-- (id)_scheduleActivityWithBlock:(CDUnknownBlockType)arg1;
-- (void)_performOutsideMinorFrame:(CDUnknownBlockType)arg1;
-- (void)_performDuringMinorFrame:(CDUnknownBlockType)arg1;
-- (int)_handleMinorFrameWithDeadline:(unsigned long long)arg1;
-- (void)_markAsReady;
-- (void)beginMinorFrameWithDeadline:(unsigned long long)arg1;
-- (void)_suspendActivitiesWithDeadline:(unsigned long long)arg1;
-- (void)_resumeActivities;
-- (void)_dispatchScheduledActivitiesUntil:(unsigned long long)arg1;
-@property(readonly, nonatomic, getter=isReady) BOOL ready;
-- (void)_activityFinished:(id)arg1;
-- (void)_activityYielded:(id)arg1;
-- (BOOL)_hasRunnableActivities;
-- (void)setCommutator:(id)arg1;
-- (const char *)_shouldYieldFlag;
+- (void)_prepareMinorFrameAgent:(id)arg1;
+- (void)_escortMinorFrameAgentToExit:(id)arg1;
+- (void)_reevaluateArrivingAgent:(id)arg1;
+- (void)receiveMobileAgent:(id)arg1;
+- (void)setupVisitDuringMinorFrame:(id)arg1 agent:(id)arg2 mode:(id)arg3 ticket:(id)arg4;
+- (void)scheduleInactivity:(CDUnknownBlockType)arg1;
+- (void)scheduleActivity:(CDUnknownBlockType)arg1;
+- (id)scheduleActivityAsOperation:(CDUnknownBlockType)arg1;
+- (void)performOutsideMinorFrame:(CDUnknownBlockType)arg1;
+- (void)performDuringMinorFrame:(CDUnknownBlockType)arg1;
+- (int)agentStopDiagnosticsTypeCode;
 - (void)dealloc;
 - (id)init;
+- (id)initWithRing:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

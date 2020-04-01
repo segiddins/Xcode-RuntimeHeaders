@@ -51,6 +51,7 @@
 - (void)_updateDisclosedSubviews;
 - (void)setEditor:(id)arg1;
 - (void)viewWillUninstall;
+- (void)_updateDisclosureViewTitle:(id)arg1;
 - (void)viewDidInstall;
 - (id)initWithBuildPhase:(id)arg1;
 - (void)_commonInit;

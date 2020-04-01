@@ -7,17 +7,21 @@
 #import <DevToolsCore/XCSpecification.h>
 
 @class NSArray, NSString;
+@protocol DVTMacroExpansion;
 
 @interface XCArchitectureSpecification : XCSpecification
 {
     long long _byteOrder;
     NSString *_canonicalName;
-    NSString *_userVisibleName;
-    NSArray *_realArchitectures;
+    NSArray<DVTMacroExpansion> *_realArchitectures;
     NSString *_architectureSetting;
-    _Bool _isShownInPopup;
-    int _sortNumber;
+    BOOL _isShownInPopup;
+    long long _sortNumber;
     NSArray *_compatibilityArchs;
+    BOOL _errorOutsideDeploymentTargetRange;
+    BOOL _deprecated;
+    BOOL _deprecatedError;
+    NSArray *_deploymentTargetRange;
 }
 
 + (id)validArchitectureCanonicalNamesInDomain:(id)arg1;
@@ -26,15 +30,18 @@
 + (id)localizedSpecificationTypeName;
 + (id)specificationType;
 + (Class)specificationTypeBaseClass;
-- (id)compatibilityArchitectures;
-- (int)sortNumber;
-- (_Bool)isShownInPopup;
-- (id)architectureSetting;
-- (id)realArchitectures;
-- (id)userVisibleName;
-- (id)canonicalName;
-- (long long)byteOrder;
-- (void)dealloc;
+@property(readonly) BOOL deprecatedError; // @synthesize deprecatedError=_deprecatedError;
+@property(readonly) BOOL deprecated; // @synthesize deprecated=_deprecated;
+@property(readonly) BOOL errorOutsideDeploymentTargetRange; // @synthesize errorOutsideDeploymentTargetRange=_errorOutsideDeploymentTargetRange;
+@property(readonly) NSArray *deploymentTargetRange; // @synthesize deploymentTargetRange=_deploymentTargetRange;
+- (void).cxx_destruct;
+@property(readonly) NSArray *compatibilityArchitectures;
+@property(readonly) long long sortNumber;
+@property(readonly) BOOL isShownInPopup;
+@property(readonly) NSString *architectureSetting;
+@property(readonly) NSArray<DVTMacroExpansion> *realArchitectures;
+@property(readonly) NSString *canonicalName;
+@property(readonly) long long byteOrder;
 - (id)initWithPropertyListDictionary:(id)arg1 inDomain:(id)arg2;
 
 @end

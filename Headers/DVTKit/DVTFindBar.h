@@ -4,12 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <DVTKit/DVTViewController.h>
+#import "DVTViewController.h"
 
 #import <DVTKit/DVTFindPatternManager-Protocol.h>
 #import <DVTKit/DVTScopeBarContentController-Protocol.h>
 
-@class DVTBorderedView, DVTFindBarOptionsCtrl, DVTFindPatternTextField, DVTLogAspect, DVTObservingToken, DVTSearchField, DVTSharedFindState, DVTStackView_AppKitAutolayout, NSAttributedString, NSLayoutConstraint, NSMutableArray, NSObject, NSPopUpButton, NSSegmentedControl, NSString, NSTextField, NSTimer, NSView;
+@class DVTBorderedView, DVTFindBarOptionsCtrl, DVTFindPatternComponents, DVTFindPatternTextField, DVTLogAspect, DVTObservingToken, DVTSearchField, DVTSharedFindState, DVTStackView_AppKitAutolayout, NSAttributedString, NSLayoutConstraint, NSMutableArray, NSObject, NSPopUpButton, NSSegmentedControl, NSString, NSTextField, NSTimer, NSView;
 @protocol DVTFindBarHostable, DVTFindPatternField;
 
 @interface DVTFindBar : DVTViewController <DVTFindPatternManager, DVTScopeBarContentController>
@@ -28,8 +28,8 @@
     NSObject<DVTFindBarHostable> *_delegate;
     id _findObject;
     double _preferredViewHeight;
-    NSAttributedString *_findAttributedString;
-    NSAttributedString *_replaceAttributedString;
+    DVTFindPatternComponents *_findPatternComponents;
+    DVTFindPatternComponents *_replacePatternComponents;
     unsigned long long _finderMode;
     struct _DVTFindBarFlags _fbflags;
     BOOL _canReplace;
@@ -43,30 +43,34 @@
     NSSegmentedControl *_doneSegmentedButtom;
     NSLayoutConstraint *_findSearchFieldLeadingConstraint;
     NSLayoutConstraint *_replaceSegmentControlWidth;
-    NSLayoutConstraint *_findSearchFieldHeight;
-    NSLayoutConstraint *_replaceSearchFieldHeight;
+    NSLayoutConstraint *_findSearchFieldHeightConstraint;
+    NSLayoutConstraint *_replaceSearchFieldHeightConstraint;
     long long _numberOfMatches;
 }
 
-+ (id)keyPathsForValuesAffectingReplaceString;
++ (id)keyPathsForValuesAffectingHasFindPattern;
++ (id)keyPathsForValuesAffectingReplaceExpression;
++ (id)keyPathsForValuesAffectingReplaceAttributedString;
++ (id)keyPathsForValuesAffectingFindAttributedString;
 + (id)keyPathsForValuesAffectingFindRegularExpression;
++ (id)keyPathsForValuesAffectingReplaceString;
 + (id)keyPathsForValuesAffectingFindString;
 + (void)initialize;
 @property(nonatomic) long long numberOfMatches; // @synthesize numberOfMatches=_numberOfMatches;
-@property __weak NSLayoutConstraint *replaceSearchFieldHeight; // @synthesize replaceSearchFieldHeight=_replaceSearchFieldHeight;
-@property __weak NSLayoutConstraint *findSearchFieldHeight; // @synthesize findSearchFieldHeight=_findSearchFieldHeight;
+@property(nonatomic) BOOL hasResults; // @synthesize hasResults=_hasResults;
+@property(copy, nonatomic) DVTFindPatternComponents *replacePatternComponents; // @synthesize replacePatternComponents=_replacePatternComponents;
+@property(copy, nonatomic) DVTFindPatternComponents *findPatternComponents; // @synthesize findPatternComponents=_findPatternComponents;
+@property __weak NSLayoutConstraint *replaceSearchFieldHeightConstraint; // @synthesize replaceSearchFieldHeightConstraint=_replaceSearchFieldHeightConstraint;
+@property __weak NSLayoutConstraint *findSearchFieldHeightConstraint; // @synthesize findSearchFieldHeightConstraint=_findSearchFieldHeightConstraint;
 @property __weak NSLayoutConstraint *replaceSegmentControlWidth; // @synthesize replaceSegmentControlWidth=_replaceSegmentControlWidth;
 @property __weak NSLayoutConstraint *findSearchFieldLeadingConstraint; // @synthesize findSearchFieldLeadingConstraint=_findSearchFieldLeadingConstraint;
 @property __weak NSSegmentedControl *doneSegmentedButtom; // @synthesize doneSegmentedButtom=_doneSegmentedButtom;
 @property __weak NSSegmentedControl *replaceSegmentedControl; // @synthesize replaceSegmentedControl=_replaceSegmentedControl;
 @property __weak NSView *findBarView; // @synthesize findBarView=_findBarView;
-@property BOOL recentsNeedUpdate; // @synthesize recentsNeedUpdate=_recentsNeedUpdate;
 @property double preferredViewHeight; // @synthesize preferredViewHeight=_preferredViewHeight;
-@property(nonatomic) BOOL hasResults; // @synthesize hasResults=_hasResults;
-@property BOOL canReplace; // @synthesize canReplace=_canReplace;
 @property(nonatomic) unsigned long long finderMode; // @synthesize finderMode=_finderMode;
-@property(copy, nonatomic) NSAttributedString *replaceAttributedString; // @synthesize replaceAttributedString=_replaceAttributedString;
-@property(copy, nonatomic) NSAttributedString *findAttributedString; // @synthesize findAttributedString=_findAttributedString;
+@property BOOL recentsNeedUpdate; // @synthesize recentsNeedUpdate=_recentsNeedUpdate;
+@property BOOL canReplace; // @synthesize canReplace=_canReplace;
 @property(retain, nonatomic) id findObject; // @synthesize findObject=_findObject;
 @property(retain) NSObject<DVTFindBarHostable> *delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
@@ -77,7 +81,6 @@
 - (void)_endedEditing:(id)arg1;
 - (void)findBarLostFocus;
 - (void)controlTextDidChange:(id)arg1;
-- (void)findPatternField:(id)arg1 findPatternDoubleClicked:(id)arg2;
 - (BOOL)hasFindPattern;
 - (id)replaceFieldForField:(id)arg1;
 - (id)findFieldForField:(id)arg1;
@@ -98,7 +101,7 @@
 - (void)_insertFindPattern:(id)arg1;
 - (void)_optionsChanged:(id)arg1;
 - (BOOL)supportsCaseInsensitiveMatch;
-- (BOOL)supportsTextMatchStyle:(int)arg1;
+- (BOOL)supportsTextMatchStyle:(unsigned long long)arg1;
 - (BOOL)supportsFindBarMode:(unsigned long long)arg1;
 - (BOOL)supportsFindBarType:(unsigned long long)arg1;
 - (void)performFindHighlightingFirstResult:(BOOL)arg1 informDelegate:(BOOL)arg2;
@@ -121,6 +124,14 @@
 - (void)selectReplaceField:(id)arg1;
 @property(readonly) BOOL findFieldHasFocus;
 - (void)selectFindField:(id)arg1;
+@property(readonly, copy, nonatomic) NSString *replaceExpression;
+@property(copy, nonatomic) NSAttributedString *replaceAttributedString;
+@property(copy, nonatomic) NSAttributedString *findAttributedString;
+- (void)setFindAttributedStringAndUpdate:(id)arg1;
+- (void)setFindAttributedString:(id)arg1 andUpdate:(BOOL)arg2;
+@property(readonly, copy, nonatomic) NSString *findRegularExpression;
+@property(copy) NSString *replaceString;
+@property(copy, nonatomic) NSString *findString;
 @property(readonly) BOOL viewIsInstalled;
 @property(readonly) DVTFindBarOptionsCtrl *optionsCtrl;
 @property(readonly) DVTLogAspect *logAspect;
@@ -128,17 +139,13 @@
 @property BOOL findResultsValid;
 - (BOOL)shouldCloseOnEscape;
 - (void)wasAssociatedWithScopeBarController:(id)arg1;
-@property(readonly, copy, nonatomic) NSString *replaceExpression;
-@property(copy) NSString *replaceString;
-@property(readonly, copy, nonatomic) NSString *findRegularExpression;
-@property(copy, nonatomic) NSString *findString;
-- (void)setFindAttributedStringAndUpdate:(id)arg1;
-- (void)setFindAttributedString:(id)arg1 andUpdate:(BOOL)arg2;
+- (void)setFindPatternComponentsAndUpdate:(id)arg1;
+- (void)setFindPatternComponents:(id)arg1 andUpdate:(BOOL)arg2;
 - (void)updateRecentsMenu;
 - (void)sanitizeStrings;
 - (BOOL)validateUserInterfaceItem:(id)arg1;
-- (void)_updateSharedFindStateReplaceAttributedString:(id)arg1;
-- (void)_updateSharedFindStateFindAttributedString:(id)arg1;
+- (void)_pushSharedReplacePatternComponents;
+- (void)_pushSharedFindPatternComponents;
 - (void)windowDidUpdate:(id)arg1;
 - (void)viewWillUninstall;
 - (void)viewDidInstall;

@@ -8,12 +8,8 @@
 
 @interface HFByteSlice : NSObject
 {
-    unsigned long long retainCount;
 }
 
-- (unsigned long long)retainCount;
-- (oneway void)release;
-- (id)retain;
 - (CDStruct_91ee6ea3)sourceRangeForFile:(id)arg1;
 - (BOOL)isSourcedFromFile;
 - (id)byteSliceByAppendingSlice:(id)arg1;

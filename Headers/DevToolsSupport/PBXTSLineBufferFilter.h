@@ -17,6 +17,7 @@
     BOOL _coalesceLines;
 }
 
+- (void).cxx_destruct;
 - (void)stream:(id)arg1 processCharacters:(id)arg2;
 - (void)streamDidEnd:(id)arg1;
 - (void)setCoalescesCompleteLines:(BOOL)arg1;

@@ -6,9 +6,11 @@
 
 #import <IDESpriteKitParticleEditor/NSObject-Protocol.h>
 
-@class SKTileGroupRule, SKTileSetEditorGroupOverviewView;
+@class NSArray, SKTileGroup, SKTileGroupRule, SKTileSetEditorGroupOverviewView;
 
 @protocol SKTileSetEditorGroupOverviewViewDelegate <NSObject>
+- (void)tileSetEditorGroupOverviewView:(SKTileSetEditorGroupOverviewView *)arg1 addTileDefinitions:(NSArray *)arg2 toRule:(SKTileGroupRule *)arg3;
+- (void)tileSetEditorGroupOverviewView:(SKTileSetEditorGroupOverviewView *)arg1 addRule:(SKTileGroupRule *)arg2 toGroup:(SKTileGroup *)arg3;
 - (void)tileSetEditorGroupOverviewView:(SKTileSetEditorGroupOverviewView *)arg1 updateDefaultTileSizeWithSize:(struct CGSize)arg2;
 - (void)tileSetEditorGroupOverviewView:(SKTileSetEditorGroupOverviewView *)arg1 selectTileIndex:(unsigned long long)arg2;
 - (BOOL)tileSetEditorGroupOverviewView:(SKTileSetEditorGroupOverviewView *)arg1 ruleSelected:(SKTileGroupRule *)arg2;

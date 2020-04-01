@@ -1037,12 +1037,18 @@ struct _CGLContextObject {
         CDUnknownFunctionPointerType _field972;
         CDUnknownFunctionPointerType _field973;
         CDUnknownFunctionPointerType _field974;
+        CDUnknownFunctionPointerType _field975;
     } _field2;
     struct _CGLPrivateObject *_field3;
     void *_field4;
 };
 
 struct _CGLPrivateObject;
+
+struct _DVTComparisonDiffDescriptorRatio {
+    double _field1;
+    int _field2;
+};
 
 struct _DVTFindBarFlags {
     unsigned int findResultsValid:1;
@@ -1084,6 +1090,11 @@ struct _DVTLayoutManagerFlags {
     unsigned int delegateRespondsToTokenizableRangesWithRange:1;
 };
 
+struct _DVTSourceCodeComparisonTextEditorScrollPosition {
+    long long _field1;
+    double _field2;
+};
+
 struct _DVTTextChangeEntry {
     struct _NSRange _field1;
     long long _field2;
@@ -1118,9 +1129,4 @@ typedef struct {
     double minY;
     double maxY;
 } CDStruct_bf6d4a14;
-
-typedef struct {
-    double leftInset;
-    double rightInset;
-} CDStruct_2b6e6e30;
 

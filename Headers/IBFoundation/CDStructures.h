@@ -25,12 +25,14 @@ struct CGSize {
     double height;
 };
 
-struct IBObjectIDHashEntry_tag {
-    long long _field1;
-    id _field2;
+struct IBNSDirectionalEdgeInsets {
+    double _field1;
+    double _field2;
+    double _field3;
+    double _field4;
 };
 
-struct _IBEdgeInsets {
+struct NSEdgeInsets {
     double _field1;
     double _field2;
     double _field3;
@@ -40,6 +42,13 @@ struct _IBEdgeInsets {
 struct _NSRange {
     unsigned long long _field1;
     unsigned long long _field2;
+};
+
+struct __va_list_tag {
+    unsigned int _field1;
+    unsigned int _field2;
+    void *_field3;
+    void *_field4;
 };
 
 #pragma mark Typedef'd Structures

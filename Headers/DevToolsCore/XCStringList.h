@@ -4,32 +4,25 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Foundation/NSObject.h>
+#import <objc/NSObject.h>
 
 #import <DevToolsCore/NSCopying-Protocol.h>
 
 @interface XCStringList : NSObject <NSCopying>
 {
-    unsigned int _expandsAsString:1;
-    unsigned int RESERVED:7;
-    unsigned int _count:24;
+    unsigned int _count;
     struct _XCStringListNode *_firstNode;
     struct _XCStringListNode *_lastNode;
 }
 
-+ (id)stringByExpandingProperty:(const char *)arg1 withPropertyDictionaries:(id)arg2;
-+ (id)stringByExpandingPropertyReferencesInString:(id)arg1 withPropertyDictionaries:(id)arg2;
 + (void)printStatistics;
 + (id)stringListFromArrayRepresentation:(id)arg1;
 + (id)stringListFromStringRepresentation:(id)arg1;
 + (id)stringList;
 + (id)stringListWithString:(id)arg1;
 + (id)stringListWithElements:(const void *)arg1;
-+ (void)unregisterFileSystemRepresentationProviderClass:(Class)arg1;
-+ (void)registerFileSystemRepresentationProviderClass:(Class)arg1;
 + (void)initialize;
 + (id)stringListWithDirectoryEntriesAtPath:(id)arg1 relativeToPath:(id)arg2 includedNamePatterns:(id)arg3 excludedNamePatterns:(id)arg4 directoriesOnly:(BOOL)arg5 followSymlinks:(BOOL)arg6 recursionType:(int)arg7 includeTopLevelDirectoryItself:(BOOL)arg8 maxArgumentSize:(unsigned long long)arg9 errorPath:(id *)arg10;
-- (id)stringListByExpandingPropertyReferencesWithPropertyDictionaries:(id)arg1;
 - (id)description;
 - (id)stringRepresentationForDebugging;
 - (id)arrayRepresentation;
@@ -54,13 +47,11 @@
 - (void)appendUTF8String:(const char *)arg1;
 - (void)appendUTF8String:(const char *)arg1 length:(unsigned long long)arg2;
 - (void)appendElements:(const void *)arg1;
-- (void)setExpandsAsString:(BOOL)arg1;
-- (BOOL)expandsAsString;
+- (void)enumerateUTF8StringsUsingBlock:(CDUnknownBlockType)arg1;
 - (void)getUTF8StringPtrs:(const char **)arg1;
 - (unsigned long long)count;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
-- (void)finalize;
 - (void)dealloc;
 - (id)copy;
 - (id)copyWithZone:(struct _NSZone *)arg1;

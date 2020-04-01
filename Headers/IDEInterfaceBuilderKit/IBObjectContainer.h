@@ -14,11 +14,8 @@
 
 @interface IBObjectContainer : NSObject <IBGroupDelegate, NSCoding>
 {
-    IBMutableIdentityDictionary *connectionsBySource;
-    IBMutableIdentityDictionary *connectionsByDestination;
-    NSString *sourceID;
-    NSString *uniqueID;
-    NSArray *verificationIssues;
+    IBMutableIdentityDictionary *_connectionsBySource;
+    IBMutableIdentityDictionary *_connectionsByDestination;
     IBObjectRecord *_rootRecord;
     NSMutableOrderedSet *_objects;
     NSArray *_cachedConnections;
@@ -27,22 +24,29 @@
     IBMutableIdentityDictionary *_membersToRecords;
     NSMutableDictionary *_memberIDsToRecords;
     BOOL _usesAutoincrementingIDs;
+    NSString *_uniqueID;
+    NSString *_sourceID;
     NSObject *_rootObject;
     long long _maxID;
     id <IBObjectContainerDelegate> _delegate;
+    NSArray *_verificationIssues;
 }
 
-+ (id)objectContainerFromData:(id)arg1 withArchivingDelegate:(id)arg2;
-+ (id)objectContainerWithInitilallyDesignableChildrenOfObjects:(id)arg1 usingAutoincrementingIDs:(BOOL)arg2;
++ (id)objectContainerFromOpaqueToken:(id)arg1 forPasteboard:(id)arg2 withArchivingDelegate:(id)arg3;
++ (id)dataForOpaqueToken:(id)arg1 forPasteboard:(id)arg2;
++ (BOOL)hasDataForOpaqueToken:(id)arg1 forPasteboard:(id)arg2;
++ (id)objectContainerWithInitiallyDesignableChildrenOfObjects:(id)arg1 usingAutoincrementingIDs:(BOOL)arg2;
+@property(retain) NSArray *verificationIssues; // @synthesize verificationIssues=_verificationIssues;
 @property id <IBObjectContainerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) long long maxID; // @synthesize maxID=_maxID;
 @property(nonatomic) BOOL usesAutoincrementingIDs; // @synthesize usesAutoincrementingIDs=_usesAutoincrementingIDs;
 @property(readonly) NSObject *rootObject; // @synthesize rootObject=_rootObject;
+@property(readonly) NSString *sourceID; // @synthesize sourceID=_sourceID;
+@property(readonly) NSString *uniqueID; // @synthesize uniqueID=_uniqueID;
 - (void).cxx_destruct;
+- (void)renameObjectWithMemberID:(id)arg1 toMemberID:(id)arg2;
 - (void)removeObject:(id)arg1;
 - (void)setSourceID:(id)arg1;
-- (id)uniqueID;
-- (id)sourceID;
 - (void)setConfigurationPropertyStorage:(id)arg1 forObject:(id)arg2;
 - (id)configurationPropertyStorageForObject:(id)arg1;
 - (BOOL)containsObject:(id)arg1 andIfSoGetPropertyStorage:(id *)arg2;
@@ -110,7 +114,6 @@
 - (id)connectionsForObject:(id)arg1;
 - (id)orderedConnections;
 - (id)connections;
-- (id)rebuiltConnectionsList;
 - (void)setExplicitLabel:(id)arg1 forObject:(id)arg2;
 - (id)explicitLabelForObject:(id)arg1;
 - (id)memberForMemberID:(id)arg1;
@@ -145,6 +148,7 @@
 - (void)didAddObject:(id)arg1 phase:(unsigned long long)arg2;
 - (void)willAddObject:(id)arg1 toParent:(id)arg2;
 - (void)didChangeMetadataPropertyFromValue:(id)arg1 toValue:(id)arg2 forKey:(id)arg3 ofMember:(id)arg4;
+- (void)didRenameObject:(id)arg1 fromMemberID:(id)arg2 toMemberID:(id)arg3;
 - (void)didRemoveObject:(id)arg1 fromParent:(id)arg2;
 - (void)willRemoveObject:(id)arg1 previouslyMemberOfGroup:(id)arg2 identifierInGroup:(id)arg3;
 - (void)didRemoveConnection:(id)arg1;
@@ -161,9 +165,9 @@
 - (void)decodeConnectionsWithCoder:(id)arg1;
 - (void)encodeObjectsWithCoder:(id)arg1;
 - (void)decodeObjectsWithCoder:(id)arg1;
+- (void)dealloc;
 - (id)initUsingAutoincrementingIDs:(BOOL)arg1;
 - (id)init;
-@property(readonly) NSArray *verificationIssues;
 - (void)verify;
 - (void)verifyMembersHaveUniqueIDs;
 - (id)verifyMaxID;
@@ -177,8 +181,8 @@
 - (id)firstAncestorOfObject:(id)arg1 passingTest:(CDUnknownBlockType)arg2;
 - (id)topLevelObjectsForObjects:(id)arg1;
 - (id)topLevelObjectForObject:(id)arg1;
-- (id)descendantsOfObjects:(id)arg1;
-- (id)descendantsOfObject:(id)arg1;
+- (id)descendantsOfObjects:(id)arg1 includingInitialObjects:(BOOL)arg2;
+- (id)descendantsOfObject:(id)arg1 includingInitialObject:(BOOL)arg2;
 - (id)objectsToTopLevelFromParentOfObject:(id)arg1;
 - (id)objectsToTopLevelFromObject:(id)arg1;
 - (id)objectsFromObject:(id)arg1 toAncestor:(id)arg2;
@@ -192,7 +196,7 @@
 - (id)objectsFromTopLevelToObject:(id)arg1;
 - (id)objectsFromAncestor:(id)arg1 toObject:(id)arg2;
 - (long long)depthOfObject:(id)arg1;
-- (void)addObjectAndItsInitilallyDesignableChildren:(id)arg1 toParent:(id)arg2;
+- (void)addObjectAndItsInitiallyDesignableChildren:(id)arg1 toParent:(id)arg2;
 - (id)pasteboardTypes;
 - (void)putObjects:(id)arg1 onPasteboard:(id)arg2 withArchivingDelegate:(id)arg3 context:(id)arg4;
 - (void)addObjects:(id)arg1 toPasteboard:(id)arg2 withArchivingDelegate:(id)arg3 context:(id)arg4;
@@ -212,7 +216,7 @@
 - (BOOL)areObjectsDivergent:(id)arg1;
 - (id)moveChildrenFromPasteboard:(id)arg1 ofType:(id)arg2 toParent:(id)arg3 atIndex:(long long)arg4;
 - (id)localPasteboardObjects:(id)arg1 ofType:(id)arg2;
-- (id)dataRepresentationWithArchivingDelegate:(id)arg1 context:(id)arg2;
+- (id)_opaqueTokenForPasteboard:(id)arg1 withArchivingDelegate:(id)arg2 context:(id)arg3;
 
 @end
 

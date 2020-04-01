@@ -4,22 +4,21 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <AppKit/NSDocument.h>
+#import <DVTCocoaAdditionsKit/DVTDealloc2Main_Document.h>
 
 #import <IDEKit/DVTInvalidation-Protocol.h>
 #import <IDEKit/DVTStateRepositoryDelegate-Protocol.h>
 #import <IDEKit/DVTStatefulObject-Protocol.h>
-#import <IDEKit/DVTTabbedWindowCreation-Protocol.h>
 #import <IDEKit/IDEActiveRunContextStoring-Protocol.h>
 #import <IDEKit/IDEMustCloseOnQuitDocument-Protocol.h>
 #import <IDEKit/IDEPreBuildSavingDelegate-Protocol.h>
 #import <IDEKit/IDETestManagerUITestingPermissionSheetDelegate-Protocol.h>
 #import <IDEKit/IDEWorkspaceDelegate-Protocol.h>
 
-@class DVTDelayedInvocation, DVTNotificationToken, DVTObservingToken, DVTPerformanceMetric, DVTStackBacktrace, DVTStateRepository, DVTStateToken, DVTSystemActivityToken, IDEActivityReportManager, IDEScriptingSchemeActionResult, IDESourceControlWorkspaceUIHandler, IDEUIRecordingManager, IDEUITestingTCCPermissionWindowController, IDEWorkspace, IDEWorkspaceWindowController, NSArray, NSDictionary, NSHashTable, NSMapTable, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString;
-@protocol DVTInvalidation;
+@class DVTDelayedInvocation, DVTNotificationToken, DVTObservingToken, DVTPerformanceMetric, DVTStackBacktrace, DVTStateRepository, DVTStateToken, DVTSystemActivityToken, IDEActivityReportManager, IDEFindNavigatorQueryHistoryManager, IDELibraryWindowController, IDEOpenQuicklyWorkspaceContentContextProvider, IDEScriptingSchemeActionResult, IDEUIRecordingManager, IDEUITestingTCCPermissionWindowController, IDEWorkspace, IDEWorkspaceWindowController, NSArray, NSDictionary, NSHashTable, NSMapTable, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString;
+@protocol DVTCancellable, DVTInvalidation, IDESourceControlWorkspaceDocumentUIHandlerProtocol;
 
-@interface IDEWorkspaceDocument : NSDocument <IDEActiveRunContextStoring, IDEWorkspaceDelegate, IDETestManagerUITestingPermissionSheetDelegate, DVTInvalidation, DVTTabbedWindowCreation, DVTStatefulObject, DVTStateRepositoryDelegate, IDEMustCloseOnQuitDocument, IDEPreBuildSavingDelegate>
+@interface IDEWorkspaceDocument : DVTDealloc2Main_Document <IDEActiveRunContextStoring, IDEWorkspaceDelegate, IDETestManagerUITestingPermissionSheetDelegate, DVTInvalidation, DVTStatefulObject, DVTStateRepositoryDelegate, IDEMustCloseOnQuitDocument, IDEPreBuildSavingDelegate>
 {
     DVTStackBacktrace *_invalidationBacktrace;
     DVTStateRepository *_stateRepository;
@@ -34,7 +33,7 @@
     NSMapTable *_controllerForDebugSessionTable;
     DVTDelayedInvocation *_stateSavingDelayedInvocation;
     IDEActivityReportManager *_activityReportManager;
-    IDESourceControlWorkspaceUIHandler *_sourceControlWorkspaceUIHandler;
+    id <IDESourceControlWorkspaceDocumentUIHandlerProtocol> _sourceControlWorkspaceUIHandler;
     DVTObservingToken *_isWorkspaceIdleToken;
     DVTObservingToken *_launchSessionsObservingToken;
     DVTObservingToken *_launchSessionsRunnablePIDObservingToken;
@@ -52,18 +51,27 @@
     BOOL _applicationIsTerminating;
     BOOL _isClosing;
     BOOL _isInvalidated;
-    BOOL _didSetupUISubsystems;
+    BOOL _didSetupUISubsystemsForFullWorkspace;
+    BOOL _didSetupUISubsystemsForFullWorkspaceOrSimpleFilesFocused;
     BOOL _isCheckingCanClose;
     id _openingPerformanceMetricIdentifier;
+    BOOL _didRevertWindowState;
+    NSString *_windowTabbingIdentifier;
     DVTSystemActivityToken *_systemActivityToken;
     DVTObservingToken *_executionTrackerIsFinishedObservingToken;
     DVTObservingToken *_executionTrackerWantsHoldObservingToken;
     DVTObservingToken *_executionEnvironmentCurrentBuildOperationObservingToken;
     DVTObservingToken *_simpleFilesFocusedObservingToken;
     DVTPerformanceMetric *_closingMetric;
+    id <DVTCancellable> _delayedStatisticsCollectionToken;
+    double _workspaceSessionStartTime;
+    BOOL _dvt_closed;
     BOOL _createdAsUntitled;
+    BOOL _didReportCanClose;
     IDEUIRecordingManager<DVTInvalidation> *_uiRecordingManager;
     IDEScriptingSchemeActionResult *_lastScriptingSchemeActionResult;
+    IDEFindNavigatorQueryHistoryManager *_findNavigatorQueryHistoryManager;
+    IDEOpenQuicklyWorkspaceContentContextProvider *_openQuicklyContentContextProvider;
     IDEUITestingTCCPermissionWindowController *_TCCPermissionWindowController;
 }
 
@@ -73,6 +81,7 @@
 + (void)_setMaximumRecentEditorDocumentCount:(long long)arg1;
 + (long long)_maximumRecentEditorDocumentCount;
 + (long long)_unlimitedMaximumRecentEditorDocumentCountMarker;
++ (BOOL)canRecentFilesUseDocumentURL:(id)arg1 checkIsFileURLReachable:(BOOL)arg2;
 + (id)documentForWorkspace:(id)arg1;
 + (id)debuggerUIExtensionForLaunchSession:(id)arg1;
 + (id)documentTypeName;
@@ -81,45 +90,54 @@
 + (BOOL)autosavesInPlace;
 + (BOOL)preservesVersions;
 + (void)initialize;
+@property BOOL didReportCanClose; // @synthesize didReportCanClose=_didReportCanClose;
 @property(retain) IDEUITestingTCCPermissionWindowController *TCCPermissionWindowController; // @synthesize TCCPermissionWindowController=_TCCPermissionWindowController;
+@property(readonly) IDEOpenQuicklyWorkspaceContentContextProvider *openQuicklyContentContextProvider; // @synthesize openQuicklyContentContextProvider=_openQuicklyContentContextProvider;
+@property(readonly) IDEFindNavigatorQueryHistoryManager *findNavigatorQueryHistoryManager; // @synthesize findNavigatorQueryHistoryManager=_findNavigatorQueryHistoryManager;
 @property(nonatomic) BOOL createdAsUntitled; // @synthesize createdAsUntitled=_createdAsUntitled;
 @property(retain) IDEScriptingSchemeActionResult *lastScriptingSchemeActionResult; // @synthesize lastScriptingSchemeActionResult=_lastScriptingSchemeActionResult;
+@property(readonly, getter=dvt_isClosed) BOOL dvt_closed; // @synthesize dvt_closed=_dvt_closed;
 @property(retain, nonatomic) IDEUIRecordingManager<DVTInvalidation> *uiRecordingManager; // @synthesize uiRecordingManager=_uiRecordingManager;
-@property(retain) IDESourceControlWorkspaceUIHandler *sourceControlWorkspaceUIHandler; // @synthesize sourceControlWorkspaceUIHandler=_sourceControlWorkspaceUIHandler;
+@property(retain) id <IDESourceControlWorkspaceDocumentUIHandlerProtocol> sourceControlWorkspaceUIHandler; // @synthesize sourceControlWorkspaceUIHandler=_sourceControlWorkspaceUIHandler;
 @property BOOL applicationIsTerminating; // @synthesize applicationIsTerminating=_applicationIsTerminating;
 @property(retain) NSMutableDictionary *tabStateContextForTabNameMap; // @synthesize tabStateContextForTabNameMap=_tabStateContextForTabNameMap;
 @property(retain) DVTStateToken *stateToken; // @synthesize stateToken=_stateToken;
 @property(readonly) DVTStackBacktrace *invalidationBacktrace; // @synthesize invalidationBacktrace=_invalidationBacktrace;
 - (void).cxx_destruct;
-- (id)dvtExtraBindings;
+- (id)dvt_extraBindings;
 - (id)storedRunDestinationSelectable;
 - (id)storedRunContextName;
 - (id)activeRunDestinationInfo;
 - (id)activeRunContextInfo;
 - (void)displayWorkspaceSheetForUITestingPermissionWithReply:(CDUnknownBlockType)arg1;
 @property(copy) NSArray *orderedWindowControllerNames;
+- (void)_restoreSelectedTabsByIdentifierFromStateSaving:(id)arg1;
+- (id)_selectedWindowControllerNamesForStateSaving;
+- (id)_tabGroupIDsBySelectedWindowControllerIdentifierForStateSaving;
 @property BOOL userWantsBreakpointsActivated;
 @property(copy) NSDictionary *stateSavingDefaultEditorStatesForURLs;
+- (void)_reallySetStatesForURLs:(id)arg1;
 @property(copy) NSArray *stateSavingRecentEditorDocumentURLs;
+- (void)showWindows;
 - (void)commitStateToDictionary:(id)arg1;
-- (id)_tabStateContextForTabController:(id)arg1 owningWindowController:(id)arg2;
 - (void)revertStateWithDictionary:(id)arg1;
 @property(readonly) DVTStateRepository *stateRepository; // @synthesize stateRepository=_stateRepository;
 - (void)configureStateSavingObservers;
 - (void)stateRepositoryDidChange:(id)arg1;
+- (void)_setWindowTabbingIdentifier:(id)arg1;
+- (id)_windowTabbingIdentifier;
 - (BOOL)readStateData;
 - (void)writeStateData;
 - (id)_stateSavingCustomDataSpecifier;
 - (void)removeWindowController:(id)arg1;
 - (void)addWindowController:(id)arg1;
 - (void)makeWindowControllers;
-- (id)showOrCreateTabNamed:(id)arg1 inNewWindow:(BOOL)arg2 restoringAfter:(double)arg3;
-- (id)_recreateTabNamed:(id)arg1 withTabStateContext:(id)arg2 shouldCreateWindow:(BOOL)arg3 restoringAfter:(double)arg4;
-- (id)_bestWindowControllerForTabNamed:(id)arg1 withTabStateContext:(id)arg2 shouldCreateWindow:(BOOL)arg3 restoringAfter:(double)arg4;
-- (id)_makeTabbedWindowControllerWithStateFromTabController:(id)arg1 documentURL:(id)arg2 simpleEditorWindowLayout:(BOOL)arg3 frontmost:(BOOL)arg4;
-- (id)windowControllerWithUniqueIdentifier:(id)arg1;
-- (id)makeTabbedWindowControllerShowingWindow:(BOOL)arg1;
-- (id)_makeTabbedWindowControllerShowingWindow:(BOOL)arg1 createNewTabUponLoadIfNoTabsExist:(BOOL)arg2;
+- (id)createWindowWithUserDefinedTabLabel:(id)arg1 addToTabGroup:(BOOL)arg2 activate:(BOOL)arg3;
+- (id)createWindowWithUserDefinedTabLabel:(id)arg1 inNewWindow:(BOOL)arg2 restoringAfter:(double)arg3;
+- (id)existingWindowWithUserDefinedTabLabel:(id)arg1;
+- (id)windowControllerWithStateSavingIdentifier:(id)arg1;
+- (id)_makeWindowControllerWithStateSavingIdentifier:(id)arg1;
+- (id)_makeWindowControllerWithUniqueID;
 - (void)_addRecentEditorDocumentURL:(id)arg1;
 @property(readonly) NSArray *recentEditorDocumentURLs;
 - (id)_allRecentEditorDocumentURLs;
@@ -138,9 +156,8 @@
 - (void)activateTargetProcessForLaunchSession:(id)arg1;
 - (void)_delayedActivateTargetProcess:(id)arg1;
 - (BOOL)_isXcodeActiveAndTargetInActivatableState:(id)arg1;
-- (void)_setAppIcon:(id)arg1 forLaunchSession:(id)arg2;
-- (id)_appIconForRunnableLocation:(id)arg1 pid:(int)arg2;
-- (void)_updateIconForLaunchSessionForMacIfNecessary:(id)arg1 pid:(int)arg2;
+- (id)_appIconForLaunchSession:(id)arg1 pid:(int)arg2;
+- (void)_updateIconForLaunchSessionIfNecessary:(id)arg1 pid:(int)arg2;
 - (void)_activateTargetProcess:(id)arg1 tryCounter:(long long)arg2;
 - (void)_setLaunchSessionToIntensiveFileIODoneStateIfNecessary:(id)arg1;
 - (void)presentedItemDidChange;
@@ -165,13 +182,30 @@
 - (BOOL)_shouldShowAutosaveButtonForWindow:(id)arg1;
 - (BOOL)_checkAutosavingPossibilityAndReturnError:(id *)arg1;
 - (BOOL)checkAutosavingSafetyAndReturnError:(id *)arg1;
+- (void)setupUISubsystemsForFullWorkspace;
+@property(readonly) IDELibraryWindowController *libraryWindowController;
+- (void)setupUISubsystemsForFullWorkspaceOrSimpleFilesFocused;
 - (void)setupUISubsystems;
 - (void)_workspace:(id)arg1 failedToResolveContainerForProjectFile:(id)arg2;
 - (void)_setupLaunchSessionsObservation;
 - (void)_presentErrorForLaunch:(id)arg1;
 - (id)_firstErrorForExecutionTracker:(id)arg1;
-- (void)_recordWorkspaceStatisticsLater;
-- (void)_recordWorkspaceStatistics;
+- (void)_reportSCMStatisticsInWorkspace:(id)arg1;
+- (void)_reportBuildPhaseStatisticsInWorkspace:(id)arg1;
+- (long long)_projectCountForWorkspace:(id)arg1;
+- (void)_reportSchemeStatisticsInWorkspace:(id)arg1 inReport:(id)arg2;
+- (void)_reportTargetFileTypes:(id)arg1;
+- (id)_makeFileExtensions;
+- (id)_headerFileExtensions;
+- (id)_allClangFileExtensions;
+- (id)_objcppFileExtensions;
+- (id)_cppFileExtensions;
+- (void)_reportWorkspaceMetricsForInternalUsersAtStage:(long long)arg1;
+- (void)_reportFileTypeTotal:(unsigned long long)arg1 forFileType:(id)arg2;
+- (void)_reportTargetCount:(unsigned long long)arg1 forTargetType:(id)arg2;
+- (void)_reportStatisticsInWorkspace:(id)arg1;
+- (void)_reportTabStatisticsInWorkspace:(id)arg1;
+- (void)_reportWorkspaceStatistics;
 - (BOOL)saveToURL:(id)arg1 ofType:(id)arg2 forSaveOperation:(unsigned long long)arg3 error:(id *)arg4;
 - (void)saveAsWorkspace:(id)arg1 showAlert:(BOOL)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (void)_upgradeAlertDidEnd:(id)arg1 returnCode:(long long)arg2;
@@ -190,7 +224,6 @@
 - (void)shouldCloseWindowController:(id)arg1 delegate:(id)arg2 shouldCloseSelector:(SEL)arg3 contextInfo:(void *)arg4;
 - (BOOL)canCloseDocumentAtQuit;
 - (BOOL)_canCloseWorkspaceDocument;
-- (id)_dirtyDocuments;
 - (BOOL)_closeAfterSavingDirtyEditorDocumentsWithCancelButton:(BOOL)arg1;
 - (void)close;
 - (void)primitiveInvalidate;
@@ -200,6 +233,8 @@
 - (id)_openingPerformanceMetricIdentifier;
 - (void)dvt_shouldDeallocate;
 - (BOOL)_isLocatedByURL:(id)arg1 becauseOfAutosavedContentsFile:(char *)arg2;
+- (id)windowForSheet;
+- (void)_setUpSourceControlWorkspaceHandler;
 - (id)initForURL:(id)arg1 withContentsOfURL:(id)arg2 ofType:(id)arg3 error:(id *)arg4;
 - (id)initWithType:(id)arg1 error:(id *)arg2;
 - (id)initWithWorkspace:(id)arg1;
@@ -227,8 +262,10 @@
 - (id)sdefSupport_projects;
 - (BOOL)_checkForLoading;
 - (BOOL)sdefSupport_isLoaded;
+- (id)librariesByExtensionID;
 
 // Remaining properties
+@property(readonly) BOOL canRevertWithEmptyStateDictionary;
 @property(retain) DVTStackBacktrace *creationBacktrace;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;

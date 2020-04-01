@@ -12,16 +12,11 @@
 #import <IDEInterfaceBuilderKit/NSOutlineViewDelegate-Protocol.h>
 #import <IDEInterfaceBuilderKit/NSUserInterfaceValidations-Protocol.h>
 
-@class DVTBorderedView, DVTDelayedInvocation, DVTObservingToken, IBAbstractDocumentEditor, IBCancellationToken, IBDocument, IBMutableIdentityDictionary, IBOutlineView, IBOutlineViewControllerItem, IBOutlineViewImageAndTextCell, IDEUtilityPlaceholderView, NSArray, NSMutableSet, NSPredicate, NSSet, NSString;
+@class DVTBorderedView, DVTDelayedInvocation, DVTEmptyContentPlaceholder, DVTObservingToken, IBAbstractDocumentEditor, IBCancellationToken, IBDocument, IBMutableIdentityDictionary, IBOutlineView, IBOutlineViewControllerItem, IBOutlineViewImageAndTextCell, NSArray, NSMutableSet, NSPredicate, NSSet, NSString;
 @protocol IBOutlineViewControllerDelegate;
 
 @interface IBOutlineViewController : IDEViewController <IBEndPointProvider, NSOutlineViewDataSource, NSOutlineViewDelegate, NSUserInterfaceValidations, IBOutlineViewDelegate>
 {
-    IBOutlineView *_outlineView;
-    DVTBorderedView *_borderedView;
-    NSString *_filterString;
-    NSPredicate *_filterPredicate;
-    IBOutlineViewControllerItem *_rootItem;
     IBOutlineViewControllerItem *_placeholdersGroupItem;
     IBMutableIdentityDictionary *_memberWrapperToItemMap;
     NSArray *_topLevelGroupsOtherThanPlaceholders;
@@ -38,28 +33,33 @@
     BOOL _allowPushSelectionToOutlineViewNextInvocation;
     BOOL _allowDirectDropInOutlineView;
     long long _ignoreOutlineViewSelectionUpdates;
-    IDEUtilityPlaceholderView *_placeholderView;
     IBMutableIdentityDictionary *_unfilteredExpansionState;
-    BOOL _drawsWithActiveLook;
     BOOL _wrapperTreeValid;
+    BOOL _drawsWithActiveLook;
+    DVTEmptyContentPlaceholder *_placeholderView;
+    IBOutlineView *_outlineView;
+    DVTBorderedView *_borderedView;
+    NSString *_filterString;
     id <IBOutlineViewControllerDelegate> _delegate;
     IBAbstractDocumentEditor *_documentEditor;
     NSSet *_selectedMembers;
+    NSPredicate *_filterPredicate;
+    IBOutlineViewControllerItem *_rootItem;
 }
 
 + (id)wrapperKeyPathsToObserve;
 + (id)defaultViewNibBundle;
 + (id)defaultViewNibName;
+@property(retain) IBOutlineViewControllerItem *rootItem; // @synthesize rootItem=_rootItem;
+@property(copy) NSPredicate *filterPredicate; // @synthesize filterPredicate=_filterPredicate;
 @property(readonly, copy) NSSet *selectedMembers; // @synthesize selectedMembers=_selectedMembers;
 @property(retain, nonatomic) IBAbstractDocumentEditor *documentEditor; // @synthesize documentEditor=_documentEditor;
 @property __weak id <IBOutlineViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-@property(retain) IBOutlineViewControllerItem *rootItem; // @synthesize rootItem=_rootItem;
-@property(retain) IBOutlineView *outlineView; // @synthesize outlineView=_outlineView;
+@property(nonatomic) BOOL drawsWithActiveLook; // @synthesize drawsWithActiveLook=_drawsWithActiveLook;
 @property(copy) NSString *filterString; // @synthesize filterString=_filterString;
 @property(retain) DVTBorderedView *borderedView; // @synthesize borderedView=_borderedView;
-@property(retain) IDEUtilityPlaceholderView *placeholderView; // @synthesize placeholderView=_placeholderView;
-@property(copy) NSPredicate *filterPredicate; // @synthesize filterPredicate=_filterPredicate;
-@property(nonatomic) BOOL drawsWithActiveLook; // @synthesize drawsWithActiveLook=_drawsWithActiveLook;
+@property(retain) IBOutlineView *outlineView; // @synthesize outlineView=_outlineView;
+@property(retain) DVTEmptyContentPlaceholder *placeholderView; // @synthesize placeholderView=_placeholderView;
 - (void).cxx_destruct;
 - (void)cut:(id)arg1;
 - (void)deleteBackward:(id)arg1;
@@ -87,6 +87,7 @@
 - (unsigned long long)outlineView:(id)arg1 validateDrop:(id)arg2 proposedItem:(id)arg3 proposedChildIndex:(long long)arg4;
 - (BOOL)outlineView:(id)arg1 writeItems:(id)arg2 toPasteboard:(id)arg3;
 - (BOOL)canMoveAllObjects:(id)arg1;
+- (void)showConnectionsUIForInitialEvent:(id)arg1 actionBlock:(CDUnknownBlockType)arg2;
 - (void)beginOldSchoolConnectionWithInitialEvent:(id)arg1;
 - (void)showConnectionsPanelForInitialEvent:(id)arg1;
 - (BOOL)shouldFilterConstraintChoicesBasedUponAngleOfLine;
@@ -96,6 +97,7 @@
 - (void)revealSpringLoadedObjectAndIndicateSuccess:(id)arg1;
 - (id)springLoadedObjectInfoAtPoint:(struct CGPoint)arg1 inView:(id)arg2 withContext:(id)arg3 forDocument:(id)arg4;
 - (id)highlightObjects:(id)arg1 showLabels:(BOOL)arg2 successfulObjects:(id *)arg3;
+- (BOOL)isViewVisibleInWindow;
 - (void)synchronizeOutlineViewSelection;
 - (void)selectMembers:(id)arg1 withOutlineExpansion:(BOOL)arg2;
 - (void)selectMembers:(id)arg1;
@@ -143,9 +145,11 @@
 - (BOOL)outlineView:(id)arg1 isItemExpandable:(id)arg2;
 - (id)outlineView:(id)arg1 child:(long long)arg2 ofItem:(id)arg3;
 - (void)_refreshAutolayoutStatus;
+- (id)computeStatusImageForItem:(id)arg1;
 - (id)autolayoutStatusMemberWrapperForTopLevelObject:(id)arg1;
 - (void)_invalidateAutolayoutStatusForObject:(id)arg1;
 - (BOOL)_shouldHaveAutolayoutIssuesIndicatorForItem:(id)arg1;
+- (BOOL)_hasLocalizationIssues:(id)arg1;
 - (id)_aggregateStatusAtAndBelowItem:(id)arg1;
 - (id)strictItemForMemberWrapper:(id)arg1;
 - (id)itemForMemberWrapper:(id)arg1;
@@ -172,6 +176,7 @@
 - (void)loadView;
 @property(readonly) IBDocument *document;
 - (void)registerWithDocumentEditor;
+- (void)registerEndPointProviderAndDragAndDropTypesIfPossible;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 
 // Remaining properties

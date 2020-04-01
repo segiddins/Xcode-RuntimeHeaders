@@ -10,6 +10,8 @@
 {
 }
 
+- (id)accessibilityDescription;
+- (BOOL)shouldBeModifiedAfterCreation;
 - (id)symbolNames;
 - (id)displayName;
 - (id)init;

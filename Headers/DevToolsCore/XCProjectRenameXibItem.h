@@ -11,7 +11,6 @@
 }
 
 - (void)rename;
-- (BOOL)saveDictionaryAsStringsFile:(id)arg1 toPath:(id)arg2 error:(id *)arg3;
 
 @end
 

@@ -13,7 +13,7 @@
 #import <Xcode3UI/NSTableViewDelegate-Protocol.h>
 #import <Xcode3UI/Xcode3SourceListItemEditor-Protocol.h>
 
-@class DVTBorderedView, DVTGradientImageButton, DVTGradientImagePopUpButton, DVTImageAndTextCell, DVTLocale, DVTLozengeTextField, DVTOutlineViewWithCustomGridDrawing, DVTPerformanceMetric, DVTSourceExpression, DVTStackView_ML, DVTTableView, IDECapsuleListView, NSArray, NSButton, NSComboBox, NSMenu, NSMutableArray, NSMutableDictionary, NSPopUpButton, NSString, NSTextField, NSTextFieldCell, NSTimer, NSView, PBXProject, Xcode3ProjectEditor;
+@class DVTBorderedView, DVTEmptyContentPlaceholder, DVTGradientImageButton, DVTGradientImagePopUpButton, DVTImageAndTextCell, DVTNotificationToken, DVTOutlineViewWithCustomGridDrawing, DVTPerformanceMetric, DVTSourceExpression, DVTStackView_ML, DVTTableView, IDECapsuleListView, NSArray, NSButton, NSComboBox, NSMenu, NSMutableArray, NSMutableDictionary, NSPopUpButton, NSString, NSTextField, NSTextFieldCell, NSTimer, NSView, PBXProject, Xcode3LocalizationController, Xcode3ProjectEditor;
 @protocol IDEBlueprint, IDECapsuleViewController;
 
 @interface Xcode3ProjectInfoEditor : IDEViewController <Xcode3SourceListItemEditor, NSTableViewDelegate, NSTableViewDataSource, NSOutlineViewDelegate, NSOutlineViewDataSource, IDECapsuleListViewDataSource>
@@ -24,8 +24,7 @@
     NSArray *_localizations;
     NSMutableDictionary *_localizationFileCount;
     NSTimer *_localizationReloadTimer;
-    NSView *_noTargetsLozengeHolder;
-    DVTLozengeTextField *_noTargetsLozengeTextField;
+    DVTEmptyContentPlaceholder *_noTargetsPlaceholder;
     BOOL _noTargetsFound;
     BOOL _applicationTargetPresent;
     BOOL _iPhoneTargetPresent;
@@ -59,16 +58,13 @@
     NSPopUpButton *_defaultConfigurationPopup;
     NSTextField *_deploymentOSMacLabel;
     DVTPerformanceMetric *_metric;
-    NSArray *_baseDestinationLocales;
-    NSView *_baseLocalizationAccessoryView;
-    DVTLocale *_baseDestinationLocale;
+    Xcode3LocalizationController *_localizationController;
+    DVTNotificationToken *_localizationsObservation;
 }
 
 + (id)localizedSourceListItemEditorName;
 + (BOOL)canInspectBlueprint:(id)arg1;
 + (void)initialize;
-@property(retain) DVTLocale *baseDestinationLocale; // @synthesize baseDestinationLocale=_baseDestinationLocale;
-@property NSView *baseLocalizationAccessoryView; // @synthesize baseLocalizationAccessoryView=_baseLocalizationAccessoryView;
 @property(readonly) NSArray *configurations; // @synthesize configurations=_configurations;
 @property(readonly) NSArray *configFileBasedOnList; // @synthesize configFileBasedOnList=_configFileBasedOnList;
 @property(retain) NSArray *localizations; // @synthesize localizations=_localizations;
@@ -116,22 +112,22 @@
 - (BOOL)validateMenuItem:(id)arg1;
 - (void)tableViewSelectionDidChange:(id)arg1;
 - (void)updateForTableViewSelectionChange;
+- (BOOL)_canDeleteSelectedLocalization;
+- (id)_selectedLocalization;
 - (id)tableView:(id)arg1 objectValueForTableColumn:(id)arg2 row:(long long)arg3;
 - (long long)numberOfRowsInTableView:(id)arg1;
 - (void)_removeBaseLocalization;
 - (void)_removeLocalization:(id)arg1;
 - (void)_showLocalizationsSheetForNewLocale:(id)arg1;
-- (void)_convertLocalizationVariantGroups:(id)arg1 toLocalization:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
-- (void)_convertVariantFileReference:(id)arg1 localizationVariantGroup:(id)arg2 toLocalization:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;
-- (void)_convertFileAtPath:(id)arg1 toDefaultFileTypeForVariantGroup:(id)arg2 locale:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;
-- (id)_loadDocumentAtPath:(id)arg1 ofType:(id)arg2;
+- (void)_presentLocalizationError:(id)arg1;
+- (id)_localizationController;
 - (void)_localizationReloadTimerAction:(id)arg1;
 - (void)_restartLocalizationReloadTimer;
 - (void)_updateInternationalization;
 - (void)_updateLocalizations;
 - (void)_updateAddLocalizationMenu;
-- (void)setBaseDestinationLocales:(id)arg1;
-@property(readonly) NSArray *baseDestinationLocales; // @synthesize baseDestinationLocales=_baseDestinationLocales;
+- (void)_subscribeToLocalizationChangeNotificationsForProject:(id)arg1;
+- (void)_unsubscribeFromLocalizationChangeNotificationsForProject:(id)arg1;
 - (void)outlineViewSelectionDidChange:(id)arg1;
 - (void)outlineView:(id)arg1 setObjectValue:(id)arg2 forTableColumn:(id)arg3 byItem:(id)arg4;
 - (void)outlineView:(id)arg1 willDisplayCell:(id)arg2 forTableColumn:(id)arg3 item:(id)arg4;
@@ -159,7 +155,7 @@
 - (void)_unsubscribeFromBuildConfigurationChangeNotificationsForProject:(id)arg1;
 - (void)_updateSDKAndDeployment;
 - (void)_reloadSDKAndDeploymentBuildSettings;
-- (id)_noTargetsLozengeView;
+- (id)_noTargetsPlaceholder;
 - (id)_applicationPlatformNames;
 - (id)_iPhonePlatformNames;
 - (id)project;

@@ -12,21 +12,32 @@
 
 @interface DBGViewDebuggerAddition : NSObject <IDEDebuggingAddition>
 {
-    DBGViewDebugger *_viewDebugger;
     BOOL _didInsertDylib;
     BOOL _insertDylibPending;
     NSString *_viewDebuggingDyldPath;
-    IDELaunchSession *_launchSession;
+    DBGViewDebugger *_viewDebugger;
     NSString *_identifier;
+    IDELaunchSession *_launchSession;
 }
 
++ (BOOL)_isViewDebuggingDisabledViaEnVarInLaunchParameters:(id)arg1;
++ (BOOL)_isWatchProductType:(id)arg1;
++ (BOOL)_is32BitMacRunDestination:(id)arg1;
++ (BOOL)_isViewDebuggingEnabledForLaunchParameters:(id)arg1;
++ (BOOL)_isDebuggingEnabledForLaunchParameters:(id)arg1;
 + (BOOL)shouldInstantiateInLaunchSession:(id)arg1;
 + (void)initialize;
-@property(retain) NSString *identifier; // @synthesize identifier=_identifier;
 @property(retain, nonatomic) IDELaunchSession *launchSession; // @synthesize launchSession=_launchSession;
+@property(retain) NSString *identifier; // @synthesize identifier=_identifier;
 @property(retain) DBGViewDebugger *viewDebugger; // @synthesize viewDebugger=_viewDebugger;
 - (void).cxx_destruct;
 - (void)primitiveInvalidate;
+- (BOOL)_shouldSkipDylibLoadingOnLaunchDueToSceneKitSymbolConflictForLaunchSession:(id)arg1;
+- (BOOL)_shouldSkipDylibLoadingOnLaunchDueToUserDefault;
+- (BOOL)_shouldSkipDylibLoadingOnLaunchDueToTestingForLaunchParameters:(id)arg1;
+- (BOOL)_shouldLoadDylibOnLaunchOfLaunchSession:(id)arg1 forLaunchParameters:(id)arg2;
+- (id)_loadAdditionalEnvars;
+- (id)_additionalEnvars;
 - (id)adjustedLaunchParametersForLaunchParameters:(id)arg1;
 - (id)_viewDebuggingDylibPath:(id)arg1;
 - (void)_loadViewDebuggingDylibIfNecessary;

@@ -6,11 +6,35 @@
 
 #import <objc/NSObject.h>
 
-@interface FirstLaunchExperienceHelper : NSObject
+#import <Xcode3Core/DVTPackageInstallerHelperDelegate-Protocol.h>
+
+@class NSError, NSFileHandle, NSString;
+
+@interface FirstLaunchExperienceHelper : NSObject <DVTPackageInstallerHelperDelegate>
 {
+    NSFileHandle *_outputFileHandle;
+    NSError *_installError;
+    long long _recordedProgress;
 }
 
++ (id)installPackagesWithOutput:(id)arg1;
 + (BOOL)needToInstallPackages;
+@property long long recordedProgress; // @synthesize recordedProgress=_recordedProgress;
+@property(retain) NSError *installError; // @synthesize installError=_installError;
+@property(retain) NSFileHandle *outputFileHandle; // @synthesize outputFileHandle=_outputFileHandle;
+- (void).cxx_destruct;
+- (void)installationFailed:(id)arg1;
+- (void)installationSucceeded;
+- (void)installationProgressChanged:(long long)arg1;
+- (void)installationStarted;
+- (id)installPackagesAndWait;
+- (id)initWithOutput:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

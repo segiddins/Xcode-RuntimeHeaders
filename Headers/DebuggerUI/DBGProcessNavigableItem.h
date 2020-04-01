@@ -16,8 +16,6 @@
     BOOL _hasFilterString;
     DBGMemoryDataProcessWrapper *_memoryDataGroup;
     DVTObservingToken *_viewDebuggerObservingToken;
-    DVTObservingToken *_showOnlyInterestingViewObjectsObservingToken;
-    DVTObservingToken *_showOnlyVisibleViewObjectsObservingToken;
     DVTObservingToken *_focusObservingToken;
     DVTObservingToken *_memoryGraphDebuggerObservingToken;
     XRMemoryGraphDebuggerAdditionUIController *_memoryDebuggingUIController;
@@ -40,8 +38,8 @@
 + (id)_mainQueueName;
 @property(retain, nonatomic) DBGMemoryDataProcessWrapper *memoryDataGroup; // @synthesize memoryDataGroup=_memoryDataGroup;
 @property(copy, nonatomic) NSString *filterString; // @synthesize filterString=_filterString;
-@property(retain, nonatomic) id <IDEDebuggingAdditionUIController> memoryDebuggingUIController; // @synthesize memoryDebuggingUIController=_memoryDebuggingUIController;
-@property(retain, nonatomic) DBGViewDebuggerAdditionUIController *viewDebuggingUIController; // @synthesize viewDebuggingUIController=_viewDebuggingUIController;
+@property(nonatomic) __weak id <IDEDebuggingAdditionUIController> memoryDebuggingUIController; // @synthesize memoryDebuggingUIController=_memoryDebuggingUIController;
+@property(nonatomic) __weak DBGViewDebuggerAdditionUIController *viewDebuggingUIController; // @synthesize viewDebuggingUIController=_viewDebuggingUIController;
 @property(nonatomic) BOOL showsGauges; // @synthesize showsGauges=_showsGauges;
 @property(nonatomic) BOOL showsOnlyRunningBlocks; // @synthesize showsOnlyRunningBlocks=_showsOnlyRunningBlocks;
 @property(nonatomic) BOOL showsOnlyAncestorWithInterestingFrames; // @synthesize showsOnlyAncestorWithInterestingFrames=_showsOnlyAncestorWithInterestingFrames;
@@ -54,9 +52,11 @@
 - (void)recursivelyInvalidateChildItems;
 - (id)childItemsToSearchForFindingDescendant:(id)arg1;
 - (void)_addGaugeDocumentLocationsIfNecessary:(id)arg1;
+- (id)_childRepresentedObjectsForDebugNavigatorViewMode;
 - (id)childRepresentedObjects;
 - (void)findInterestingThreads:(id *)arg1 filteredInterestingThreads:(id *)arg2 fromThreads:(id)arg3;
 - (id)_generateQueueChildrenFromFilteredInterestingThreads:(id)arg1;
+- (BOOL)_processRespondsToSelectorAndIsDoingAsyncAttach;
 - (BOOL)isLeaf;
 - (id)subtitle;
 - (id)image;

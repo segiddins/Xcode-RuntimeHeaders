@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <DVTKit/DVTLayoutView_ML.h>
+#import <DVTStructuredLayoutKit/DVTLayoutView_ML.h>
 
 #import <IDEInterfaceBuilderKit/DVTFirstResponderShowingView-Protocol.h>
 #import <IDEInterfaceBuilderKit/NSAccessibilityGroup-Protocol.h>
@@ -74,7 +74,7 @@
 - (struct CGSize)idealSize;
 - (struct CGRect)frameForPart:(CDStruct_912cb5d2)arg1;
 - (struct CGRect)frameForDivider:(CDStruct_912cb5d2)arg1;
-- (CDStruct_c3b9c2ee)dividerOffsetForPart:(CDStruct_912cb5d2)arg1;
+- (CDStruct_34734122)dividerOffsetForPart:(CDStruct_912cb5d2)arg1;
 - (CDStruct_c519178c)scaledCapInsets;
 - (struct CGRect)contentRect;
 - (struct CGSize)contentSizeWithoutDividers;

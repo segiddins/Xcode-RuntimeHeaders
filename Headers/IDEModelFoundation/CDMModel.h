@@ -6,12 +6,14 @@
 
 #import <objc/NSObject.h>
 
+#import <IDEModelFoundation/CDMXMLCoding-Protocol.h>
 #import <IDEModelFoundation/DVTInvalidation-Protocol.h>
 #import <IDEModelFoundation/IDEInspectorAccessibilitySupport-Protocol.h>
 
-@class CDMConfiguration, DVTStackBacktrace, DVTToolsVersion, NSArray, NSMutableArray, NSString, NSUndoManager;
+@class CDMConfiguration, DVTStackBacktrace, DVTToolsVersion, DVTVersion, NSArray, NSMutableArray, NSString, NSUndoManager;
+@protocol CDMModelOwner;
 
-@interface CDMModel : NSObject <IDEInspectorAccessibilitySupport, DVTInvalidation>
+@interface CDMModel : NSObject <IDEInspectorAccessibilitySupport, DVTInvalidation, CDMXMLCoding>
 {
     NSString *_name;
     NSMutableArray *_entities;
@@ -22,10 +24,12 @@
     NSMutableArray *_rootsOfEntityTree;
     NSMutableArray *_topLevelObjects;
     BOOL _isLoading;
+    BOOL _forceDowngradeOfFetchIndexes;
+    BOOL _supportsFetchIndexes;
     unsigned long long _sourceLanguage;
-    id _owner;
     DVTToolsVersion *_minimumToolsVersion;
-    NSUndoManager *_undoManager;
+    DVTVersion *_swiftVersion;
+    id <CDMModelOwner> _owner;
     NSString *_lastSavedToolsVersion;
 }
 
@@ -34,13 +38,14 @@
 + (id)arrayOfFetchRequestsPlistsFromFetchRequests:(id)arg1;
 + (id)arrayOfEntitiesPListsFromEntities:(id)arg1;
 + (id)keyPathsForValuesAffectingDisplayConfigurations;
++ (id)keyPathsForValuesAffectingSupportsFetchIndexes;
++ (id)keyPathsForValuesAffectingSupportsSyncServices;
++ (id)keyPathsForValuesAffectingSupportsDerivedAttributes;
++ (id)keyPathsForValuesAffectingSupportsCloudKit;
 + (id)keyPathsForValuesAffectingSupportsAutomaticCodeGeneration;
-+ (id)keyPathsForValuesAffectingSupportsSpecificationOfSourceLanguage;
 + (void)initialize;
 @property(readonly, copy) NSString *lastSavedToolsVersion; // @synthesize lastSavedToolsVersion=_lastSavedToolsVersion;
-@property(retain) NSUndoManager *undoManager; // @synthesize undoManager=_undoManager;
-@property(retain) DVTToolsVersion *minimumToolsVersion; // @synthesize minimumToolsVersion=_minimumToolsVersion;
-@property __weak id owner; // @synthesize owner=_owner;
+@property(retain) id <CDMModelOwner> owner; // @synthesize owner=_owner;
 @property(copy) NSArray *rootsOfEntityTree; // @synthesize rootsOfEntityTree=_rootsOfEntityTree;
 @property(retain) CDMConfiguration *defaultConfiguration; // @synthesize defaultConfiguration=_defaultConfiguration;
 @property(copy, nonatomic) NSString *modelVersionIdentifier; // @synthesize modelVersionIdentifier=_modelVersionIdentifier;
@@ -49,10 +54,10 @@
 @property(copy, nonatomic) NSArray *entities; // @synthesize entities=_entities;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
-- (id)stringRepresentationForTextIndex;
 - (id)stringRepresentation;
-- (id)xmlDescription;
-- (id)initWithXMLElementDescription:(id)arg1;
+- (id)encodeXMLElement;
+- (void)awakeAfterXMLDecoding;
+- (id)initWithXMLElement:(id)arg1 owner:(id)arg2 error:(id *)arg3;
 - (id)pasteEmptyEntitiesFromPList:(id)arg1;
 - (void)fillInPastedEntitiesWithUpdatedPList:(id)arg1;
 - (void)generateErrorsAndWarningsWithCallback:(id)arg1 forDocumentAtURL:(id)arg2;
@@ -62,6 +67,7 @@
 - (id)entityForName:(id)arg1;
 - (id)fetchRequestForName:(id)arg1;
 - (void)updateDefaultConfiguration;
+@property(readonly) NSUndoManager *undoManager;
 - (id)descendantsOfEntity:(id)arg1;
 - (id)displayConfigurations;
 - (id)legacyRepresentation;
@@ -77,10 +83,17 @@
 - (void)addEntity:(id)arg1;
 @property(readonly) NSArray *topLevelObjects;
 - (void)updateTopLevelObjects;
+@property(retain) DVTToolsVersion *minimumToolsVersion; // @synthesize minimumToolsVersion=_minimumToolsVersion;
+@property(retain) DVTVersion *swiftVersion; // @synthesize swiftVersion=_swiftVersion;
 @property unsigned long long sourceLanguage; // @synthesize sourceLanguage=_sourceLanguage;
 - (id)fetchRequestsForEntity:(id)arg1;
+@property(readonly) BOOL supportsFetchIndexes; // @synthesize supportsFetchIndexes=_supportsFetchIndexes;
+- (void)forceDowngradeOfFetchIndexes;
+- (void)updateSupportsFetchIndexes;
+@property(readonly) BOOL supportsSyncServices;
+@property(readonly) BOOL supportsDerivedAttributes;
+@property(readonly) BOOL supportsCloudKit;
 @property(readonly) BOOL supportsAutomaticCodeGeneration;
-@property(readonly) BOOL supportsSpecificationOfSourceLanguage;
 - (id)humanReadableNameForInspectorKeyPath:(id)arg1;
 
 // Remaining properties

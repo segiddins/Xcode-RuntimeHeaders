@@ -15,6 +15,7 @@
     BOOL _exists;
 }
 
++ (BOOL)supportsSecureCoding;
 + (id)keyPathsForValuesAffectingExists;
 @property(readonly, nonatomic) BOOL exists; // @synthesize exists=_exists;
 - (void).cxx_destruct;

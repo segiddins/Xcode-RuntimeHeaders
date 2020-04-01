@@ -8,12 +8,13 @@
 
 #import <IDEFoundation/IDEIndexable-Protocol.h>
 
-@class NSString;
+@class NSArray, NSSet, NSString;
 @protocol IDEIndexable, IDEIndexable><DVTInvalidation;
 
 @interface IDESourceKitIndexableProxy : NSObject <IDEIndexable>
 {
-    BOOL _respondsToSettingsForFiles;
+    BOOL _respondsToSettingsForFilesNoQueue;
+    BOOL _respondsToSettingsForFilesWithQueue;
     NSString *_cachedIdentifier;
     NSString *_cachedIndexName;
     id <IDEIndexable><DVTInvalidation> _indexableObject;
@@ -21,21 +22,23 @@
 
 @property(retain) id <IDEIndexable><DVTInvalidation> indexableObject; // @synthesize indexableObject=_indexableObject;
 - (void).cxx_destruct;
-- (BOOL)isUnitTest;
-- (id)productType;
+@property(readonly) NSSet *supportedPlatformsForIndexing;
+@property(readonly, getter=isUnitTest) BOOL unitTest;
+@property(readonly, copy) NSString *productType;
 - (id)productNameWithBuildSetting:(id)arg1 workspace:(id)arg2;
 - (id)buildSettingsForMainFile:(id)arg1 workspace:(id)arg2;
-- (id)localizedIndexableDescription;
+@property(readonly, copy) NSString *localizedIndexableDescription;
 - (void)languageOfMainFile:(id)arg1 workspace:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (void)clearCachedBuildSettings;
+- (void)settingsForFilesInWorkspace:(id)arg1 shouldWriteAuxiliaryFiles:(BOOL)arg2 queue:(id)arg3 withCompletionBlock:(CDUnknownBlockType)arg4;
 - (void)settingsForFilesInWorkspace:(id)arg1 shouldWriteAuxiliaryFiles:(BOOL)arg2 withCompletionBlock:(CDUnknownBlockType)arg3;
 - (BOOL)writeProductHeaders:(id)arg1 toFile:(id)arg2 error:(id *)arg3;
 - (void)productHeadersInWorkspace:(id)arg1 withCompletionBlock:(CDUnknownBlockType)arg2;
 - (id)containerForIndexables:(id)arg1 rootPaths:(id)arg2;
-- (id)indexableFiles;
-- (id)indexName;
-- (id)identifier;
-- (BOOL)requiresMainThread;
+@property(readonly, copy) NSArray *indexableFiles;
+@property(readonly, copy) NSString *indexName;
+@property(readonly, copy) NSString *identifier;
+@property(readonly) BOOL requiresMainThread;
 @property(readonly, copy) NSString *description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithIndexable:(id)arg1;

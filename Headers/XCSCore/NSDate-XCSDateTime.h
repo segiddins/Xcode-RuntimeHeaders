@@ -7,8 +7,11 @@
 #import <Foundation/NSDate.h>
 
 @interface NSDate (XCSDateTime)
++ (id)dateWithISO8601Format:(id)arg1;
 - (id)dictionaryXCSDateTimeRepresentation;
 - (id)ISO8601String;
 - (id)initWithDictionaryRepresentation:(id)arg1;
+- (id)dateTime;
+- (id)stringWithISO8601Format;
 @end
 

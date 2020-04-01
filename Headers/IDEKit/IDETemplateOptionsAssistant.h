@@ -8,12 +8,15 @@
 
 #import <IDEKit/NSComboBoxDataSource-Protocol.h>
 
-@class IDETemplateOptionsView, NSArray, NSMutableDictionary, NSString, NSTextField;
+@class IDETemplateOptionsView, NSArray, NSComboBox, NSMutableDictionary, NSString, NSTextField;
 
 @interface IDETemplateOptionsAssistant : IDETemplateInstantiationAssistant <NSComboBoxDataSource>
 {
     IDETemplateOptionsView *_mainView;
+    NSArray *_indexClassNames;
+    BOOL _fetchedIndexClassNames;
     NSArray *_classNames;
+    NSComboBox *_classComboBox;
     NSMutableDictionary *_controlsForOptionIds;
     BOOL _canGoForward;
     NSTextField *_firstTextField;
@@ -29,19 +32,19 @@
 - (id)comboBox:(id)arg1 objectValueForItemAtIndex:(long long)arg2;
 - (long long)numberOfItemsInComboBox:(id)arg1;
 - (id)classNamesForComboBox:(id)arg1;
+- (void)computeIndexClassNamesIfNeeded;
 - (void)writeStateToUserDefaults;
 - (void)restoreSelectionFromUserDefaults;
 - (struct CGRect)_frameForControl:(id)arg1 option:(id)arg2 mainViewBounds:(struct CGRect)arg3 minLabelWidth:(double)arg4;
 - (void)setupOptionViews;
-- (id)additionalSortedOptions;
-- (id)additionalOptions;
+@property(readonly) NSArray *additionalSortedOptions;
+@property(readonly) NSArray *additionalOptions;
 - (double)requiredViewSpacingForOption:(id)arg1;
 - (id)createLabelForOption:(id)arg1;
 - (id)createControlForOption:(id)arg1 withOptionArray:(id)arg2;
 - (id)_valueProvidingOptionForOption:(id)arg1 fromOptionArray:(id)arg2;
 - (void)_setControl:(id)arg1 forOptionIdentifier:(id)arg2;
 - (id)controlForOptionIdentifier:(id)arg1;
-- (void)_setAccessibilityForCell:(id)arg1 withOption:(id)arg2 prefix:(id)arg3;
 - (id)assistantTitle;
 - (void)viewWillUninstall;
 - (void)viewDidInstall;

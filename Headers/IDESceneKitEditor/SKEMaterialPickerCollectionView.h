@@ -6,14 +6,19 @@
 
 #import <AppKit/NSCollectionView.h>
 
+@class NSObject;
+@protocol OS_dispatch_queue;
+
 @interface SKEMaterialPickerCollectionView : NSCollectionView
 {
+    NSObject<OS_dispatch_queue> *_thumbnailQueue;
     CDUnknownBlockType _doubleClickHandler;
 }
 
 @property(copy) CDUnknownBlockType doubleClickHandler; // @synthesize doubleClickHandler=_doubleClickHandler;
 - (void).cxx_destruct;
 - (void)mouseDown:(id)arg1;
+- (id)thumbnailQueue;
 
 @end
 

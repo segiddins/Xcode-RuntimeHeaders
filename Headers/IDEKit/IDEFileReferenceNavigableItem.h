@@ -6,14 +6,11 @@
 
 #import <IDEKit/IDEFileNavigableItem.h>
 
-@class DVTFileDataType, NSColor, NSString, NSURL;
+@class NSColor, NSString, NSURL;
 
 @interface IDEFileReferenceNavigableItem : IDEFileNavigableItem
 {
     NSURL *_fileURL;
-    DVTFileDataType *_fileDataType;
-    NSString *_name;
-    NSString *_scmCurrentRevision;
     NSString *_scmLocalStatus;
     NSString *_scmServerStatus;
     struct {
@@ -23,8 +20,6 @@
     BOOL _associatedFileExists;
 }
 
-+ (id)keyPathsForValuesAffectingReferencedContentExists;
-+ (id)keyPathsForValuesAffectingToolTip;
 + (id)keyPathsForValuesAffectingFileReference;
 + (id)_createExtraInfoObject;
 + (void)_editorDocumentDirtyStatusDidChange:(id)arg1;
@@ -33,25 +28,20 @@
 + (void)initialize;
 @property(readonly) BOOL associatedFileExists; // @synthesize associatedFileExists=_associatedFileExists;
 - (void).cxx_destruct;
+@property(readonly) BOOL displaysStatus;
+@property(readonly) BOOL displaysProgress;
 - (unsigned long long)conflictStateForUpdateOrMerge;
-- (id)sourceControlCurrentRevision;
 - (id)sourceControlServerStatus;
-- (int)sourceControlServerStatusFlag;
+- (unsigned long long)sourceControlServerStatusFlag;
 - (id)sourceControlLocalStatus;
-- (int)sourceControlLocalStatusFlag;
-- (BOOL)referencedContentExists;
-- (id)toolTip;
+- (unsigned long long)sourceControlLocalStatusFlag;
+- (BOOL)isDocumentNavigableItem;
 @property(readonly) NSColor *textColor;
 - (id)newImage;
-- (id)name;
-- (BOOL)shouldNavigateToContentDocumentLocation;
-- (id)documentType;
 - (id)fileURL;
-- (id)contentDocumentLocation;
 - (void)updateChildRepresentedObjects;
 - (void)updateAttributes;
 - (id)fileReference;
-- (id)accessibleImageDescription;
 - (id)initWithRepresentedObject:(id)arg1;
 
 @end

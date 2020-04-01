@@ -6,7 +6,19 @@
 
 #import <DevToolsCore/Xcode3FileReference.h>
 
-@interface Xcode3FileReference (IDENavigableItemSupport)
+#import <Xcode3UI/IDEInspectorMatching-Protocol.h>
+
+@class NSString;
+
+@interface Xcode3FileReference (IDENavigableItemSupport) <IDEInspectorMatching>
 - (id)navigableItem_conformanceString;
+- (id)applicableInspectorSlicesForCategory:(id)arg1 suggestedSlices:(id)arg2;
+- (id)referenceForAssetTagEditor;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @end
 

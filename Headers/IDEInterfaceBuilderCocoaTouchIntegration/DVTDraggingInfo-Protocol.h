@@ -6,13 +6,12 @@
 
 #import <IDEInterfaceBuilderCocoaTouchIntegration/NSDraggingInfo-Protocol.h>
 
-@class DVTDraggedImageState, NSDictionary, NSSet, NSValue;
+@class DVTDraggedImageState, NSDictionary, NSValue;
 @protocol DVTInvalidation;
 
 @protocol DVTDraggingInfo <NSDraggingInfo>
 @property(nonatomic) unsigned long long draggingModifierFlags;
 @property(retain, nonatomic) NSValue *draggingSnapSuggestedOrigin;
-@property(retain, nonatomic) NSSet *draggingSnapGuides;
 @property(nonatomic) BOOL draggedImageStateNeedsUpdate;
 - (void)invalidateObjectAtEndOfDragLoop:(id <DVTInvalidation>)arg1;
 - (struct CGPoint)draggingLocationOnScreen;

@@ -19,6 +19,7 @@
 + (id)propertyListDictionaryWithContentsOfFile:(id)arg1 encoding:(unsigned long long)arg2;
 + (id)propertyListDictionaryWithContentsOfString:(id)arg1;
 + (id)propertyListDictionaryWithDictionary:(id)arg1;
+- (void).cxx_destruct;
 - (id)arrayOrObjectOrNilForKey:(id)arg1;
 - (id)arrayOrNilForKey:(id)arg1;
 - (id)arrayForKey:(id)arg1;
@@ -38,7 +39,6 @@
 - (id)bundle;
 - (void)setLocalizedMessageDescription:(id)arg1;
 - (id)localizedMessageDescription;
-- (void)dealloc;
 - (id)init;
 - (id)initWithContentsOfFile:(id)arg1 encoding:(unsigned long long)arg2;
 - (id)initWithContentsOfString:(id)arg1;

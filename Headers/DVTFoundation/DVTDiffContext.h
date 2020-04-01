@@ -6,67 +6,83 @@
 
 #import <objc/NSObject.h>
 
+#import <DVTFoundation/DVTFineGrainDiffObserver-Protocol.h>
 #import <DVTFoundation/DVTInvalidation-Protocol.h>
 
-@class DVTDiffDataSource, DVTObservingToken, DVTStackBacktrace, NSArray, NSIndexSet, NSMutableArray, NSOperationQueue, NSString;
+@class DVTDiffContextCoalescing, DVTDiffContextSharedState, DVTDiffDataSource, DVTObservingToken, DVTStackBacktrace, NSArray, NSIndexSet, NSOperationQueue, NSString;
+@protocol DVTDiffContextDelegate;
 
-@interface DVTDiffContext : NSObject <DVTInvalidation>
+@interface DVTDiffContext : NSObject <DVTFineGrainDiffObserver, DVTInvalidation>
 {
     DVTDiffDataSource *_originalDataSource;
     DVTDiffDataSource *_modifiedDataSource;
     DVTObservingToken *_originalDataSourceObserver;
     DVTObservingToken *_modifiedDataSourceObserver;
-    NSMutableArray *_diffDescriptors;
-    NSMutableArray *_tmpDiffDescriptors;
-    NSOperationQueue *_diffQueue;
-    unsigned long long _timestamp;
-    int _needsUpdate;
-    struct _DVTDiffContextFlags _dcFlags;
-    int _defaultDiffMergeDirection;
-    BOOL _shouldGenerateSubdiffDescriptors;
+    long long _defaultDiffMergeDirection;
     BOOL _isRestoringState;
     BOOL _updatingChangedDescriptor;
+    // Error parsing type: Ai, name: _needsUpdate
+    NSOperationQueue *_diffQueue;
+    struct _DVTDiffContextFlags _dcFlags;
+    BOOL _shouldGenerateSubdiffDescriptors;
+    BOOL _synchronouslyAdjustDescriptorTokenRanges;
+    BOOL _skipTokenizingNewlines;
+    BOOL _shouldGenerateDiffString;
+    BOOL _coalesceFineGrainEvents;
+    BOOL _preventAsynchronicity;
+    id <DVTDiffContextDelegate> _delegate;
+    NSString *_diffString;
+    DVTDiffContextSharedState *_sharedState;
+    DVTDiffContextCoalescing *_insertionCoalescing;
+    DVTDiffContextCoalescing *_deletionCoalescing;
+    NSArray *_diffDescriptors;
+    NSArray *_synchronouslyAdjustedDescriptors;
+    unsigned long long _diffCachingMode;
 }
 
-+ (BOOL)supportsInvalidationPrevention;
-+ (unsigned long long)assertionBehaviorAfterEndOfEventForSelector:(SEL)arg1;
++ (id)modifiedDescriptorIndexesForDiffDescriptors:(id)arg1;
++ (id)commonDescriptorIndexesForDiffDescriptors:(id)arg1;
++ (Class)_sharedStateClass;
++ (Class)_diffOperationClass;
 + (void)initialize;
-+ (id)performanceLogAspect;
+@property BOOL preventAsynchronicity; // @synthesize preventAsynchronicity=_preventAsynchronicity;
 @property BOOL isRestoringState; // @synthesize isRestoringState=_isRestoringState;
-@property(retain) NSMutableArray *tmpDiffDescriptors; // @synthesize tmpDiffDescriptors=_tmpDiffDescriptors;
-@property unsigned long long timestamp; // @synthesize timestamp=_timestamp;
+@property unsigned long long diffCachingMode; // @synthesize diffCachingMode=_diffCachingMode;
+@property(retain) NSArray *synchronouslyAdjustedDescriptors; // @synthesize synchronouslyAdjustedDescriptors=_synchronouslyAdjustedDescriptors;
+@property(retain) NSArray *diffDescriptors; // @synthesize diffDescriptors=_diffDescriptors;
+@property(retain) DVTDiffContextCoalescing *deletionCoalescing; // @synthesize deletionCoalescing=_deletionCoalescing;
+@property(retain) DVTDiffContextCoalescing *insertionCoalescing; // @synthesize insertionCoalescing=_insertionCoalescing;
+@property(retain) DVTDiffContextSharedState *sharedState; // @synthesize sharedState=_sharedState;
+@property(copy) NSString *diffString; // @synthesize diffString=_diffString;
+@property BOOL coalesceFineGrainEvents; // @synthesize coalesceFineGrainEvents=_coalesceFineGrainEvents;
+@property BOOL shouldGenerateDiffString; // @synthesize shouldGenerateDiffString=_shouldGenerateDiffString;
+@property BOOL skipTokenizingNewlines; // @synthesize skipTokenizingNewlines=_skipTokenizingNewlines;
+@property BOOL synchronouslyAdjustDescriptorTokenRanges; // @synthesize synchronouslyAdjustDescriptorTokenRanges=_synchronouslyAdjustDescriptorTokenRanges;
+@property __weak id <DVTDiffContextDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)_dumpDataSources;
-- (void)copyDiffResultsWithDiffString:(CDUnknownBlockType)arg1;
-- (void)copyDiffResults:(CDUnknownBlockType)arg1;
-- (void)_waitOnAllPendingDiffQueueOperations;
-@property(readonly) NSString *diffString;
-- (id)diffStringForDescriptorInRange:(struct _NSRange)arg1;
-- (id)diffStringForDescriptorInRange:(struct _NSRange)arg1 options:(id)arg2;
-- (id)diffStringForDescriptors:(id)arg1 options:(id)arg2;
 - (id)diffDescriptorIndexesForModifiedTokenRange:(struct _NSRange)arg1;
 - (id)diffDescriptorIndexesForOriginalTokenRange:(struct _NSRange)arg1;
 - (long long)numberOfModifiedDescriptors;
 - (long long)numberOfCommonDescriptors;
-- (long long)numberOfDiffDescriptors;
-- (void)_buildDiffDescriptors;
-- (void)_buildSubdescriptors;
-- (struct __CFStorage *)_createLCSStorageInDiffDescriptor:(id)arg1 startIndex:(long long *)arg2;
-- (id)tmpModifiedDescriptorIndexes;
 @property(readonly) NSIndexSet *modifiedDescriptorIndexes;
 @property(readonly) NSIndexSet *commonDescriptorIndexes;
 - (void)setNeedsUpdateDiffDescriptors:(BOOL)arg1;
-- (void)_internalBuildDiffDescriptors;
+- (void)configureSynchronously:(CDUnknownBlockType)arg1;
+- (void)cancelAllDiffOperations;
+- (void)_adjustDescriptorsForStartLine:(long long)arg1 endLine:(long long)arg2 isDeletion:(BOOL)arg3;
+- (void)deletedTextAtStartLine:(long long)arg1 endLine:(long long)arg2;
+- (void)insertedTextAtStartLine:(long long)arg1 endLine:(long long)arg2;
+- (void)_enqueueDiffOperationWithLineRange:(struct _NSRange)arg1 isDeletion:(BOOL)arg2 shouldCommence:(CDUnknownBlockType)arg3;
+- (BOOL)_shouldEnqueueLineRange:(struct _NSRange)arg1 isDeletion:(BOOL)arg2;
+- (BOOL)_isCurrentlyCoalescing;
+- (void)_synchronouslyBuildDiffDescriptorsForLineRange:(struct _NSRange)arg1 isDeletion:(BOOL)arg2;
+- (void)_synchronouslyBuildDiffDescriptors;
 @property(readonly, copy) NSString *description;
-- (struct _DVTDiffContextFlags)dcFlags;
-- (void)setDcFlags:(struct _DVTDiffContextFlags)arg1;
-@property int defaultDiffMergeDirection;
+@property long long defaultDiffMergeDirection;
 @property BOOL shouldGenerateSubdiffDescriptors;
-@property BOOL ignoresCommon;
 @property BOOL ignoresLineEnds;
-@property BOOL ignoresTrailingSpaces;
-@property BOOL ignoresSpacesInRuns;
-@property BOOL ignoresLeadingSpaces;
+@property BOOL ignoresWhitespace;
 @property BOOL ignoresCase;
 @property(retain) DVTDiffDataSource *modifiedDataSource;
 - (BOOL)_setModifiedDataSource:(id)arg1;
@@ -74,21 +90,18 @@
 - (BOOL)_setOriginalDataSource:(id)arg1;
 - (void)setUpdatingChangedDescriptor:(BOOL)arg1;
 - (BOOL)updatingChangedDescriptor;
-- (void)setDiffQueue:(id)arg1;
-- (id)diffQueue;
 - (id)_observeDataSource:(id)arg1;
 - (void)primitiveInvalidate;
 - (id)init;
 - (id)initWithOriginalDataSource:(id)arg1 modifiedDataSource:(id)arg2;
-- (id)initWithOriginalDataSource:(id)arg1 modifiedDataSource:(id)arg2 updatesDescriptorsImmediately:(BOOL)arg3;
+- (id)initWithOriginalDataSource:(id)arg1 modifiedDataSource:(id)arg2 updatesDescriptorsImmediately:(BOOL)arg3 cachingMode:(unsigned long long)arg4;
+- (id)initWithOriginalDataSource:(id)arg1 modifiedDataSource:(id)arg2 updatesDescriptorsImmediately:(BOOL)arg3 cachingMode:(unsigned long long)arg4 diffQueue:(id)arg5;
 
 // Remaining properties
 @property(retain) DVTStackBacktrace *creationBacktrace;
 @property(readonly, copy) NSString *debugDescription;
-@property(copy) NSArray *diffDescriptors; // @dynamic diffDescriptors;
 @property(readonly) unsigned long long hash;
 @property(readonly) DVTStackBacktrace *invalidationBacktrace;
-@property(readonly, copy) NSMutableArray *mutableDiffDescriptors; // @dynamic mutableDiffDescriptors;
 @property(readonly) Class superclass;
 @property(readonly, nonatomic, getter=isValid) BOOL valid;
 

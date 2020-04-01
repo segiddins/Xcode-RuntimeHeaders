@@ -7,19 +7,20 @@
 #import <DevToolsCore/XCBuildPhaseDGSnapshot.h>
 
 @class NSString;
+@protocol DVTMacroExpansion;
 
 @interface XCCopyFilesBuildPhaseDGSnapshot : XCBuildPhaseDGSnapshot
 {
-    int _dstSubfolderSpec;
-    NSString *_dstPath;
+    long long _dstSubfolderSpec;
+    NSString<DVTMacroExpansion> *_dstPath;
 }
 
 + (id)defaultName;
+- (void).cxx_destruct;
 - (id)destinationPath;
-- (int)destinationSubfolder;
-- (void)dealloc;
-- (id)initWithInformationFromBuildPhase:(id)arg1 forTargetSnapshot:(id)arg2;
-- (void)computeDependenciesForBuildFileReference:(id)arg1 inTargetBuildContext:(id)arg2;
+- (long long)destinationSubfolder;
+- (id)initWithInformationFromBuildPhase:(id)arg1 forTargetSnapshot:(id)arg2 withResolver:(id)arg3;
+- (void)computeDependenciesForBuildFileReference:(id)arg1 withMacroExpansionScope:(id)arg2;
 
 @end
 

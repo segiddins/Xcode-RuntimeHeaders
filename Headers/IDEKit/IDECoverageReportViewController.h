@@ -9,67 +9,70 @@
 #import <IDEKit/NSOutlineViewDataSource-Protocol.h>
 #import <IDEKit/NSOutlineViewDelegate-Protocol.h>
 
-@class DVTOutlineView, DVTSearchField, NSArray, NSButton, NSDictionary, NSMapTable, NSMutableArray, NSMutableOrderedSet, NSString, NSURL;
-@protocol IDECoverageReportFunctionFetcher, IDECoverage_RootObject;
+@class DVTOutlineView, DVTReplacementView, IDEEditor, IDETestReportStateSaving, NSArray, NSMapTable, NSMutableOrderedSet, NSString, NSURL;
+@protocol IDECoverageReportFunctionFetcher, IDECoverage_DeviceHelper, IDECoverage_RootObject;
 
 @interface IDECoverageReportViewController : IDEViewController <NSOutlineViewDataSource, NSOutlineViewDelegate>
 {
-    NSMutableArray *_currentlyExpandedCoverageItemIdentifiers;
     NSMutableOrderedSet *_targetsFilteredByFilterField;
     NSMutableOrderedSet *_filesFilteredByFilterField;
     NSMutableOrderedSet *_methodsFilteredByFilterField;
     NSMapTable *_cachedFilteredItemsBasedOnCoverageDifferencesAndTestBundleCheckbox;
-    BOOL _showDevices;
+    IDETestReportStateSaving *_stateSavingHelper;
+    BOOL _disableStateSaving;
+    BOOL _disableJumpToSource;
     NSURL *_documentURL;
     id <IDECoverage_RootObject> _rootObject;
+    id <IDECoverage_DeviceHelper> _deviceHelper;
     NSArray *_currentSelectedDocumentLocations;
     id <IDECoverageReportFunctionFetcher> _functionFetcher;
     CDUnknownBlockType _fetchFunctionsForFile;
-    DVTOutlineView *_outlineView;
     NSString *_filterString;
-    DVTSearchField *_filterField;
-    NSDictionary *_coverageItemsByIdentifier;
+    IDEEditor *_hostEditor;
+    DVTOutlineView *_outlineView;
     NSArray *_deviceColumns;
-    NSButton *_showTestBundlesCheckBox;
     long long _coverageBarColumnIndex;
-    NSButton *_showDeviceDifferencesButton;
+    DVTReplacementView *_scopeBarReplacementView;
 }
 
 + (void)jumpToSourceCodeForItem:(id)arg1 inWorkspace:(id)arg2;
 + (void)initialize;
-@property __weak NSButton *showDeviceDifferencesButton; // @synthesize showDeviceDifferencesButton=_showDeviceDifferencesButton;
+@property __weak DVTReplacementView *scopeBarReplacementView; // @synthesize scopeBarReplacementView=_scopeBarReplacementView;
 @property long long coverageBarColumnIndex; // @synthesize coverageBarColumnIndex=_coverageBarColumnIndex;
-@property __weak NSButton *showTestBundlesCheckBox; // @synthesize showTestBundlesCheckBox=_showTestBundlesCheckBox;
 @property(retain, nonatomic) NSArray *deviceColumns; // @synthesize deviceColumns=_deviceColumns;
-@property(nonatomic) BOOL showDevices; // @synthesize showDevices=_showDevices;
-@property(retain, nonatomic) NSDictionary *coverageItemsByIdentifier; // @synthesize coverageItemsByIdentifier=_coverageItemsByIdentifier;
-@property __weak DVTSearchField *filterField; // @synthesize filterField=_filterField;
-@property(copy, nonatomic) NSString *filterString; // @synthesize filterString=_filterString;
 @property __weak DVTOutlineView *outlineView; // @synthesize outlineView=_outlineView;
+@property(nonatomic) BOOL disableJumpToSource; // @synthesize disableJumpToSource=_disableJumpToSource;
+@property(nonatomic) __weak IDEEditor *hostEditor; // @synthesize hostEditor=_hostEditor;
+@property(copy, nonatomic) NSString *filterString; // @synthesize filterString=_filterString;
 @property(copy, nonatomic) CDUnknownBlockType fetchFunctionsForFile; // @synthesize fetchFunctionsForFile=_fetchFunctionsForFile;
 @property __weak id <IDECoverageReportFunctionFetcher> functionFetcher; // @synthesize functionFetcher=_functionFetcher;
-@property(readonly, nonatomic) NSArray *currentlyExpandedCoverageItemIdentifiers; // @synthesize currentlyExpandedCoverageItemIdentifiers=_currentlyExpandedCoverageItemIdentifiers;
 @property(retain) NSArray *currentSelectedDocumentLocations; // @synthesize currentSelectedDocumentLocations=_currentSelectedDocumentLocations;
+@property(retain, nonatomic) id <IDECoverage_DeviceHelper> deviceHelper; // @synthesize deviceHelper=_deviceHelper;
 @property(retain, nonatomic) id <IDECoverage_RootObject> rootObject; // @synthesize rootObject=_rootObject;
 @property(retain, nonatomic) NSURL *documentURL; // @synthesize documentURL=_documentURL;
 - (void).cxx_destruct;
-- (void)showDeviceDifferences:(id)arg1;
-- (void)showTestBundlesAction:(id)arg1;
-- (void)filterFieldAction:(id)arg1;
+- (void)restoreFilterField;
 - (void)_filterOutlineAndRefresh;
 - (id)_filterItemsBasedOnCoverageDifferencesAndTestBundleCheckboxes:(id)arg1 contextItem:(id)arg2;
 - (id)testBundleExtension;
 - (id)allFiles;
+- (void)viewWillDisappear;
 - (id)outlineView:(id)arg1 rowViewForItem:(id)arg2;
+- (void)_stashSelection:(id)arg1;
 - (void)outlineViewItemDidCollapse:(id)arg1;
 - (void)outlineViewItemDidExpand:(id)arg1;
+- (id)indexPathForOutlineItem:(id)arg1;
+- (id)indexPathForCoverageMethod:(id)arg1 inFile:(id)arg2 inTarget:(id)arg3;
+- (id)indexPathForCoverageFile:(id)arg1 inTarget:(id)arg2;
+- (id)indexPathForCoverageTarget:(id)arg1;
 - (void)doubleClickInTable:(id)arg1;
 - (void)outlineViewSelectionDidChange:(id)arg1;
 - (id)outlineView:(id)arg1 viewForTableColumn:(id)arg2 item:(id)arg3;
 - (id)_deviceViewForItem:(id)arg1 column:(id)arg2;
-- (id)devicesNotMatchingID:(id)arg1 inCoverageItem:(id)arg2;
-- (id)deviceMatchingID:(id)arg1 inCoverageItem:(id)arg2;
+- (id)lineCoverageOfDevicesNotMatchingID:(id)arg1 inCoverageItem:(id)arg2;
+- (id)coverageForDeviceWithIdentifier:(id)arg1 inCoverageItem:(id)arg2;
 - (id)_viewForChangeColumnForItem:(id)arg1;
+- (id)_percentFormatter;
 - (id)_viewForBarColumnForItem:(id)arg1;
 - (id)_viewForNodeColumnForItem:(id)arg1;
 - (void)revealClickedItemInProjectNavigator:(id)arg1;
@@ -80,23 +83,23 @@
 - (long long)outlineView:(id)arg1 numberOfChildrenOfItem:(id)arg2;
 - (void)outlineView:(id)arg1 sortDescriptorsDidChange:(id)arg2;
 - (id)_methodsForFile:(id)arg1;
-- (id)rootItems;
+@property(readonly, copy, nonatomic) NSArray *rootItems;
 - (void)reloadOutlineView;
+- (void)_restoreSavedState;
+- (void)_mutateSelectedDocumentLocationsToPrimeAssisantEditorGeniusResultsFinder;
 - (void)_refreshColumns;
-- (void)selectItemWithIdentifier:(id)arg1;
-- (void)expandItemsWithIdentifiers:(id)arg1;
+- (void)navigateToTestLogErrors;
 - (void)refreshOutline;
+- (id)scopeBar;
 - (void)primitiveInvalidate;
 - (void)loadView;
-- (BOOL)showDeviceDifferencesDefault;
-- (BOOL)showTestBundlesDefault;
-- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+@property(readonly, nonatomic) BOOL showDeviceDifferencesDefault;
+@property(readonly, nonatomic) BOOL showTestBundlesDefault;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
-@property(readonly, nonatomic) NSMutableArray *mutableCurrentlyExpandedCoverageItemIdentifiers; // @dynamic mutableCurrentlyExpandedCoverageItemIdentifiers;
 @property(readonly) Class superclass;
 
 @end

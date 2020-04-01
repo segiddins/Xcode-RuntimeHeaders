@@ -10,11 +10,13 @@
 
 @interface IBUIMarshallableAccessibilityConfiguration : NSObject
 {
-    IBUIAccessibilityConfiguration *configuration;
-    NSObject *object;
+    IBUIAccessibilityConfiguration *_configuration;
+    NSObject *_object;
 }
 
 + (void)registerMarshallingRecordHandlers;
+@property(retain) NSObject *object; // @synthesize object=_object;
+@property(retain) IBUIAccessibilityConfiguration *configuration; // @synthesize configuration=_configuration;
 - (void).cxx_destruct;
 - (Class)classToTakeInitialMarshalledKeysFrom:(id)arg1;
 - (id)localExtraMarshalledAttributesKeyPaths;

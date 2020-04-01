@@ -20,11 +20,13 @@
     NSColor *_caretColor;
     NSColor *_highlightedRangeBorderColor;
     NSColor *_textColor;
+    DVTTextAnnotationTheme *_darkVariant;
 }
 
 + (id)defaultOverlayTintedGlassGradient;
 + (id)defaultOverlayGlassGradient;
-+ (id)diffTextAnnotationThemeSelected:(BOOL)arg1 conflict:(BOOL)arg2 disabled:(BOOL)arg3 focused:(BOOL)arg4 inactive:(BOOL)arg5;
++ (id)_themeForVariant:(int)arg1 normal:(id)arg2 faded:(id)arg3 dimmed:(id)arg4;
++ (void)_createThemeVariants:(id *)arg1 faded:(id *)arg2 dimmed:(id *)arg3 highlightColor:(id)arg4 bubbleColor:(id)arg5 darkBubbleColor:(id)arg6;
 + (id)grayGlassTextAnnotationThemeForVariant:(int)arg1;
 + (id)purpleGlassTextAnnotationThemeForVariant:(int)arg1;
 + (id)blueGlassTextAnnotationThemeForVariant:(int)arg1;
@@ -36,10 +38,9 @@
 + (id)greenTextAnnotationBaseHighlightColor;
 + (id)redTextAnnotationBaseHighlightColor;
 + (BOOL)hasDarkBackground;
-+ (double)diffTextAnnotationAlphaAdjustmentForDarkTheme:(BOOL)arg1;
-+ (void)initialize;
+@property(retain, nonatomic) DVTTextAnnotationTheme *darkVariant; // @synthesize darkVariant=_darkVariant;
+@property(retain) NSColor *highlightedRangeBorderColor; // @synthesize highlightedRangeBorderColor=_highlightedRangeBorderColor;
 @property(readonly) NSColor *textColor; // @synthesize textColor=_textColor;
-@property(readonly) NSColor *highlightedRangeBorderColor; // @synthesize highlightedRangeBorderColor=_highlightedRangeBorderColor;
 @property(readonly) NSColor *caretColor; // @synthesize caretColor=_caretColor;
 @property(readonly) NSColor *messageBubbleBorderColor; // @synthesize messageBubbleBorderColor=_messageBubbleBorderColor;
 @property(readonly) NSGradient *messageBubbleGradient; // @synthesize messageBubbleGradient=_messageBubbleGradient;

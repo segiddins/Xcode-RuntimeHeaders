@@ -6,11 +6,14 @@
 
 #import <AppKit/NSPathCell.h>
 
-@interface NSPathCell (IBNSPathControlIntegration)
+#import <IDEInterfaceBuilderCocoaIntegration/IBDocumentArchiving-Protocol.h>
+
+@class NSString;
+
+@interface NSPathCell (IBNSPathControlIntegration) <IBDocumentArchiving>
 + (id)keyPathsForValuesAffectingIbInspectedAllowsAllTypes;
 + (id)keyPathsForValuesAffectingIbInspectedAllowsSpecificTypes;
 + (id)keyPathsForValuesAffectingIbInspectedPath;
-- (void)ibWarnings:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
 - (void)setIbInspectedAllowsAllTypes:(BOOL)arg1;
 - (BOOL)ibInspectedAllowsAllTypes;
 - (BOOL)ibInspectedAllowsSpecificTypes;
@@ -23,6 +26,15 @@
 - (struct CGRect)ibTitleRectForBounds:(struct CGRect)arg1;
 - (id)ibPreferredSizeForSize:(struct CGSize)arg1 suggestedWidth:(char *)arg2 suggestedHeight:(char *)arg3 scaleAxesIndependently:(char *)arg4;
 - (Class)ibEditorClass;
-- (id)ibDocumentationPropertyInfosForKeyPath:(id)arg1;
+- (id)ibLocalLocalizableStringsAttributeKeyPaths;
+- (id)ibLocalAttributeKeyPaths;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @end
 

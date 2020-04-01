@@ -14,7 +14,7 @@
 {
 }
 
-+ (id)scanContentsOfPath:(id)arg1;
++ (id)scanContentsOfPath:(id)arg1 error:(id *)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

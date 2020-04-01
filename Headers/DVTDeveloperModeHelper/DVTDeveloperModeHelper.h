@@ -10,9 +10,9 @@
 {
 }
 
-- (id)_stringForFileHandleData:(id)arg1;
-- (void)setDeveloperModeEnabled:(BOOL)arg1;
-- (BOOL)isDeveloperModeEnabled;
++ (id)_checkSystemPolicyForDeveloperModeEnabled;
++ (id)isDeveloperModeEnabled;
+- (BOOL)setDeveloperModeEnabledWithError:(id *)arg1;
 
 @end
 

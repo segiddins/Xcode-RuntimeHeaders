@@ -12,7 +12,7 @@
 
 + (BOOL)isObjectValidOutletDestination:(id)arg1;
 + (BOOL)isObjectValidOutletSource:(id)arg1;
-- (void)ibWarnings:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
+- (void)ibPopulateIssues:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
 - (id)archiveConnection;
 - (Class)classForDocumentArchiver:(id)arg1;
 - (Class)classForCoder;

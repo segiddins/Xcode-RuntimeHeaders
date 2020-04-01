@@ -21,6 +21,7 @@
 - (id)slot;
 - (id)parent;
 - (id)initWithSlot:(id)arg1;
+- (BOOL)populateNamedAssetImportInfo:(id)arg1 allCompiledItems:(id)arg2 withOptions:(id)arg3 error:(id *)arg4;
 
 @end
 

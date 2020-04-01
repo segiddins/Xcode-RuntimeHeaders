@@ -6,10 +6,10 @@
 
 #import <IDEInterfaceBuilderKit/NSObject-Protocol.h>
 
-@class IBDocumentAsynchronousToolLoadingQueue;
+@class IBDocumentAsynchronousToolLoadingQueue, IBGenericDeviceTypeDescription;
 
 @protocol IBDocumentAsynchronousToolLoadingQueueDelegate <NSObject>
 - (void)asynchronousToolLoadingQueue:(IBDocumentAsynchronousToolLoadingQueue *)arg1 didTransitionFromState:(long long)arg2 toState:(long long)arg3;
-- (void)asynchronousToolLoadingQueue:(IBDocumentAsynchronousToolLoadingQueue *)arg1 launchToolForScaleFactor:(double)arg2 completionHandler:(void (^)(NSError *))arg3;
+- (void)asynchronousToolLoadingQueue:(IBDocumentAsynchronousToolLoadingQueue *)arg1 launchToolForDeviceTypeDescription:(IBGenericDeviceTypeDescription *)arg2 completionHandler:(void (^)(NSError *))arg3;
 @end
 

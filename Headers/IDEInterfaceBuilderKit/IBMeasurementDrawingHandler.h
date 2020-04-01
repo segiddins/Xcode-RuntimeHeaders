@@ -13,29 +13,31 @@
 
 @interface IBMeasurementDrawingHandler : NSObject <DVTInvalidation>
 {
-    IBViewEditorCanvasFrameController *frameController;
     struct CGRect _trackingLayoutRectangle;
-    struct CGRect trackedKnobRect;
-    IBTrackingIndicatorLayoutInfo *trackingIndicatorLayoutInfo;
-    id <DVTInvalidation> canvasOverlayToken;
-    IBCancellationToken *documentStatusToken;
+    struct CGRect _trackedKnobRect;
+    IBTrackingIndicatorLayoutInfo *_trackingIndicatorLayoutInfo;
+    id <DVTInvalidation> _canvasOverlayToken;
+    IBCancellationToken *_documentStatusToken;
     BOOL _showingLayoutRectangles;
     BOOL _showingBoundsRectangles;
+    IBViewEditorCanvasFrameController *_frameController;
     NSSet *_viewsUnconditionallyDrawingLayoutRectangles;
+    NSSet *_viewsToExcludeFromBorderDrawing;
 }
 
 + (void)initialize;
+@property(copy, nonatomic) NSSet *viewsToExcludeFromBorderDrawing; // @synthesize viewsToExcludeFromBorderDrawing=_viewsToExcludeFromBorderDrawing;
 @property(copy, nonatomic) NSSet *viewsUnconditionallyDrawingLayoutRectangles; // @synthesize viewsUnconditionallyDrawingLayoutRectangles=_viewsUnconditionallyDrawingLayoutRectangles;
 @property(nonatomic, getter=isShowingBoundsRectangles) BOOL showingBoundsRectangles; // @synthesize showingBoundsRectangles=_showingBoundsRectangles;
 @property(nonatomic, getter=isShowingLayoutRectangles) BOOL showingLayoutRectangles; // @synthesize showingLayoutRectangles=_showingLayoutRectangles;
-@property(readonly, nonatomic) IBViewEditorCanvasFrameController *frameController; // @synthesize frameController;
+@property(readonly, nonatomic) IBViewEditorCanvasFrameController *frameController; // @synthesize frameController=_frameController;
 - (void).cxx_destruct;
 - (void)drawTrackingLayoutRectangle;
 - (void)drawTrackingSizeText;
 - (void)drawTrackingKnob;
 - (void)drawBorderRectangles;
 - (void)drawFrameMarkersForView:(id)arg1;
-- (void)drawAdditionalLinesForView:(id)arg1;
+- (void)drawLayoutGuidesForView:(id)arg1;
 - (void)drawContainerContentInsetsForView:(id)arg1;
 - (void)drawBoundsRectForView:(id)arg1;
 - (void)drawLayoutMarginsForView:(id)arg1;

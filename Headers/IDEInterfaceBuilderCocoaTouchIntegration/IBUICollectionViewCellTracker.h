@@ -16,7 +16,7 @@
 
 - (struct CGRect)constrainCellFrameToSection:(struct CGRect)arg1;
 - (void)trackWithEvent:(id)arg1;
-- (void)placeSubviewInFrame:(struct CGRect)arg1 event:(id)arg2;
+- (void)placeSubviewInFrame:(struct CGRect)arg1 event:(id)arg2 originalFrame:(struct CGRect)arg3 isFinalFrame:(BOOL)arg4;
 - (BOOL)shouldSetCollectionViewFlowLayoutItemSize;
 - (id)collectionView;
 - (id)trackedCollectionViewCell;

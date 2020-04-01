@@ -8,8 +8,10 @@
 
 @interface IDEProductsEmptyView : NSView
 {
+    BOOL _isBackgroundColorSet;
 }
 
+@property BOOL isBackgroundColorSet; // @synthesize isBackgroundColorSet=_isBackgroundColorSet;
 - (void)drawRect:(struct CGRect)arg1;
 
 @end

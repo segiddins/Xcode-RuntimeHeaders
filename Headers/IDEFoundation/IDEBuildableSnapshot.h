@@ -16,17 +16,17 @@
     IDEBuildParameters *_buildParameters;
     IDEActivityLogSection *_activityLogSection;
     BOOL _cleanupDidRun;
-    int _buildResult;
     NSMutableArray *_postprocessingBlocks;
     NSMutableArray *_readyBuildCommands;
     NSMutableArray *_startedBuildTasks;
+    long long _buildResult;
     DVTDispatchLock *_syncLock;
 }
 
 + (id)_enqueue_semaphore;
 + (void)initialize;
 @property(retain) DVTDispatchLock *syncLock; // @synthesize syncLock=_syncLock;
-@property int buildResult; // @synthesize buildResult=_buildResult;
+@property long long buildResult; // @synthesize buildResult=_buildResult;
 @property(retain) NSMutableArray *startedBuildTasks; // @synthesize startedBuildTasks=_startedBuildTasks;
 @property(retain) NSMutableArray *readyBuildCommands; // @synthesize readyBuildCommands=_readyBuildCommands;
 @property(retain) NSMutableArray *postprocessingBlocks; // @synthesize postprocessingBlocks=_postprocessingBlocks;
@@ -46,9 +46,9 @@
 - (void)buildDidFinishForBuilder:(id)arg1 buildPlan:(id)arg2;
 - (id)buildTaskForBuildCommand:(id)arg1 builder:(id)arg2;
 - (BOOL)prepareForBuildingWithBuildPlan:(id)arg1;
-- (id)buildPlanForBuilder:(id)arg1 buildCommand:(int)arg2 buildOnlyTheseFiles:(id)arg3;
+- (id)buildPlanForBuilder:(id)arg1 buildCommand:(long long)arg2 buildOnlyTheseFiles:(id)arg3;
 - (BOOL)buildForBuilderWillStart:(id)arg1;
-- (int)performBuildForBuilder:(id)arg1 buildCommand:(int)arg2 buildOnlyTheseFiles:(id)arg3;
+- (long long)performBuildForBuilder:(id)arg1 buildCommand:(long long)arg2 buildOnlyTheseFiles:(id)arg3;
 - (void)prepareForBuildingForBuilder:(id)arg1;
 - (void)_buildCommandDidRestoreCachedOutputs:(id)arg1;
 - (void)_updateBuildOperationStatusForBuilder:(id)arg1 buildTask:(id)arg2;

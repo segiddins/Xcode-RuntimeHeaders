@@ -15,6 +15,7 @@
 }
 
 + (void)_addGetMoreToolsMenuItemTo:(id)arg1;
++ (void)addInternalHelperAppLaunchMenuItemsTo:(id)arg1;
 + (void)addHelperAppLaunchMenuItemsTo:(id)arg1;
 + (id)_menuItemForPath:(id)arg1;
 + (void)_openURL:(id)arg1;

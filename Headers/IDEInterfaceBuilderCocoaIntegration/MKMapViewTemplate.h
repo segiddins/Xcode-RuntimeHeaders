@@ -22,11 +22,13 @@
     BOOL _showsCompass;
     BOOL _showsZoomControls;
     BOOL _showsScale;
+    BOOL _showsTraffic;
     BOOL _encodeAsRuntimeInstance;
     unsigned long long _mapType;
 }
 
 @property BOOL encodeAsRuntimeInstance; // @synthesize encodeAsRuntimeInstance=_encodeAsRuntimeInstance;
+@property(nonatomic) BOOL showsTraffic; // @synthesize showsTraffic=_showsTraffic;
 @property(nonatomic) BOOL showsScale; // @synthesize showsScale=_showsScale;
 @property(nonatomic) BOOL showsZoomControls; // @synthesize showsZoomControls=_showsZoomControls;
 @property(nonatomic) BOOL showsCompass; // @synthesize showsCompass=_showsCompass;
@@ -38,7 +40,7 @@
 @property(nonatomic, getter=isScrollEnabled) BOOL scrollEnabled; // @synthesize scrollEnabled=_scrollEnabled;
 @property(nonatomic, getter=isZoomEnabled) BOOL zoomEnabled; // @synthesize zoomEnabled=_zoomEnabled;
 @property(nonatomic) unsigned long long mapType; // @synthesize mapType=_mapType;
-- (void)ibWarnings:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
+- (void)ibPopulateIssues:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
@@ -48,6 +50,7 @@
 - (Class)classForCoder;
 - (id)ibRuntimeClassName;
 - (void)drawRect:(struct CGRect)arg1;
+- (id)ibLocalAttributeKeyPaths;
 - (void)unarchiveWithDocumentUnarchiver:(id)arg1;
 - (void)archiveWithDocumentArchiver:(id)arg1;
 

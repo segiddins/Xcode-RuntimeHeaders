@@ -10,17 +10,22 @@
 #import <DebuggerUI/IDEDebugSessionController-Protocol.h>
 
 @class DBGDataTipController, DVTObservingToken, DVTStackBacktrace, IDEDebugSession, IDEEditorOpenSpecifier, IDEWorkspaceDocument, NSString;
+@protocol DVTCancellable;
 
 @interface DBGDebugSessionController : NSObject <IDEDebugSessionController, DVTInvalidation>
 {
     IDEWorkspaceDocument *_workspaceDocument;
     BOOL _settingCurrentStackFrameFromUIGesture;
-    BOOL _isNavigatingToViewDebuggerDocument;
-    BOOL _isNavigatingToMemoryGraphDebuggerDocument;
+    DVTObservingToken *_debugSessionStateObservingToken;
+    DVTObservingToken *_instructionPointerStackFrameObservingToken;
+    DVTObservingToken *_processControlStateObservingToken;
     DVTObservingToken *_currentStackFrameFramePointerObservingToken;
     DVTObservingToken *_viewDebuggerOpenRequestStateObservingToken;
     DVTObservingToken *_memoryGraphDebuggerOpenRequestStateObservingToken;
-    DVTObservingToken *_debugSessionStateObservingtToken;
+    DVTObservingToken *_currentThreadStopReasonObservingToken;
+    id <DVTCancellable> _memoryGraphAdditionUIControllerToken;
+    BOOL _isNavigatingToViewDebuggerDocument;
+    BOOL _isNavigatingToMemoryGraphDebuggerDocument;
     DBGDataTipController *_dataTipController;
     IDEDebugSession *_debugSession;
     IDEEditorOpenSpecifier *_viewDebuggerOpenSpecifierToOpenWhenPaused;
@@ -35,9 +40,12 @@
 @property(retain) IDEEditorOpenSpecifier *memoryGraphDebuggerOpenSpecifierToOpenWhenPaused; // @synthesize memoryGraphDebuggerOpenSpecifierToOpenWhenPaused=_memoryGraphDebuggerOpenSpecifierToOpenWhenPaused;
 @property(retain) IDEEditorOpenSpecifier *viewDebuggerOpenSpecifierToOpenWhenPaused; // @synthesize viewDebuggerOpenSpecifierToOpenWhenPaused=_viewDebuggerOpenSpecifierToOpenWhenPaused;
 @property(retain) IDEDebugSession *debugSession; // @synthesize debugSession=_debugSession;
+@property(readonly) BOOL isNavigatingToMemoryGraphDebuggerDocument; // @synthesize isNavigatingToMemoryGraphDebuggerDocument=_isNavigatingToMemoryGraphDebuggerDocument;
+@property(readonly) BOOL isNavigatingToViewDebuggerDocument; // @synthesize isNavigatingToViewDebuggerDocument=_isNavigatingToViewDebuggerDocument;
 @property(retain) DBGDataTipController *dataTipController; // @synthesize dataTipController=_dataTipController;
 - (void).cxx_destruct;
 - (void)primitiveInvalidate;
+- (BOOL)_isBridgedSwiftType:(id)arg1;
 - (id)_quickLookProviderExtensionForTypeNames:(id)arg1;
 - (id)_quickLookProviderFromExtension:(id)arg1 forDataValue:(id)arg2;
 - (void)_quickLookProviderForDeveloperQuickLookMethod:(id)arg1 quickLookProviderHandler:(CDUnknownBlockType)arg2;
@@ -45,9 +53,10 @@
 - (void)quickLookProviderForDataValue:(id)arg1 quickLookProviderHandler:(CDUnknownBlockType)arg2;
 - (void)_userWantsRerunFromConsole:(id)arg1;
 - (void)_userWantsQuitFromConsole:(id)arg1;
-- (id)_openMemoryGraphDebuggerDocumentLocation:(id)arg1 inWorkspaceTabController:(id)arg2 withEventType:(unsigned long long)arg3;
+- (id)_openMemoryGraphDebuggerDocumentLocation:(id)arg1 inWorkspaceTabController:(id)arg2 withEventType:(unsigned long long)arg3 didNavigate:(char *)arg4;
 - (void)openMemoryGraphDebugger:(id)arg1 inWorkspaceTabController:(id)arg2 withEventType:(unsigned long long)arg3;
 - (void)openMemoryGraphDebugger:(id)arg1 withEventType:(unsigned long long)arg2;
+- (void)openViewDebuggerFetchedDocument:(id)arg1 inWorkspaceTabController:(id)arg2 withEventType:(unsigned long long)arg3;
 - (id)_openViewDebuggerDocumentLocation:(id)arg1 inWorkspaceTabController:(id)arg2 withEventType:(unsigned long long)arg3;
 - (void)openViewDebuggerViewObject:(id)arg1 inWorkspaceTabController:(id)arg2 withEventType:(unsigned long long)arg3;
 - (void)openViewDebugger:(id)arg1 withEventType:(unsigned long long)arg2;
@@ -57,14 +66,16 @@
 - (void)mouseOverSidebarAtLocation:(id)arg1 withinBlockAtRange:(struct _NSRange)arg2 withScreenFrame:(struct CGRect)arg3;
 - (void)setSelectedNavigableItemFromUserInterface:(id)arg1;
 - (void)_handleShowDisassemblyWhenDebuggingChanged;
+- (void)_handleStopReasonChanged;
 - (void)_handleDebugSessionStateChanged;
-- (void)_handleFinishedRunPausesAlert;
+- (void)_handleFinishedRunPausesAlert:(id)arg1;
 - (void)_handleWatchpointHit:(id)arg1;
 - (void)_handleProcessRunStateChanged;
 - (void)_handleCurrentStackFrameChanged;
 - (void)_updateFileBreakpointsLocation;
-- (void)_navigateEditorToMemoryGraphDebuggerInActiveTab;
+- (BOOL)_navigateEditorToMemoryGraphDebuggerInActiveTab;
 - (void)_navigateEditorToViewDebuggerInActiveTab;
+- (void)_selectNavigatorContentModeForViewDebugger;
 - (void)_navigateEditorToCurrentStackFrame;
 - (int)_navigationModeForActiveWorkspaceTabController;
 - (id)_activeWorkspaceTabController;

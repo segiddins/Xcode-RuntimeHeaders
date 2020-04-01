@@ -14,6 +14,7 @@
 + (id)defaultAction;
 + (double)displayOrderPriority;
 - (id)effectiveConnectionForDisablingConfigurationsInDocument:(id)arg1 segueReachabilityContext:(id)arg2;
+- (id)metricChainSucceedingMetric:(id)arg1;
 
 @end
 

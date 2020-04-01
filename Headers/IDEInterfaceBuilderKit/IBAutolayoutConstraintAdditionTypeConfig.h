@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class DVTButtonTextField, NSButton, NSDictionary, NSSet, NSTextField;
+@class DVTButtonTextField, NSButton, NSDictionary, NSImageView, NSSet, NSTextField;
 @protocol IBAutolayoutItem;
 
 @interface IBAutolayoutConstraintAdditionTypeConfig : NSObject
@@ -17,6 +17,7 @@
     NSButton *_checkBox;
     NSButton *_overlayButton;
     NSTextField *_label;
+    NSImageView *_imageView;
     NSSet *_constraints;
     NSDictionary *_orderedNearestNeighborsToDistance;
     NSObject<IBAutolayoutItem> *_selectedNearestNeighbor;
@@ -29,6 +30,7 @@
 @property(nonatomic) BOOL enabled; // @synthesize enabled=_enabled;
 @property(nonatomic) BOOL shouldAdd; // @synthesize shouldAdd=_shouldAdd;
 @property(copy, nonatomic) NSSet *constraints; // @synthesize constraints=_constraints;
+@property(retain, nonatomic) NSImageView *imageView; // @synthesize imageView=_imageView;
 @property(retain, nonatomic) NSTextField *label; // @synthesize label=_label;
 @property(retain, nonatomic) NSButton *overlayButton; // @synthesize overlayButton=_overlayButton;
 @property(retain, nonatomic) NSButton *checkBox; // @synthesize checkBox=_checkBox;

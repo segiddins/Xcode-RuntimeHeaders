@@ -6,15 +6,25 @@
 
 #import <DevToolsCore/PBXCompilerSpecificationGcc3_3.h>
 
+@class NSString;
+
 @interface XCCompilerSpecificationClang : PBXCompilerSpecificationGcc3_3
 {
+    NSString *_moduleMapFilePath;
 }
 
-- (void)addIdentifierToListOfCompilersUsedInTargetBuildContext:(id)arg1;
-- (BOOL)dwarfSymbolRepositoryIsEnabledInTargetBuildContext:(id)arg1;
-- (BOOL)symbolSeparationIsEnabledInTargetBuildContext:(id)arg1;
+@property(retain) NSString *moduleMapFilePath; // @synthesize moduleMapFilePath=_moduleMapFilePath;
+- (void).cxx_destruct;
+- (BOOL)supportsArchitecture:(id)arg1 inDomain:(id)arg2 allArchitectures:(id)arg3 withMacroExpansionScope:(id)arg4;
+- (id)hashStringForCommandLineComponents:(id)arg1 inputFilePaths:(id)arg2 withMacroExpansionScope:(id)arg3;
+- (id)standardFlagsWithMacroExpansionScope:(id)arg1;
+- (id)moduleMapForCompiler:(id)arg1 withMacroExpansionScope:(id)arg2;
+- (id)compileSourceCodeFileAtPath:(id)arg1 ofType:(id)arg2 toOutputDirectory:(id)arg3 withMacroExpansionScope:(id)arg4;
+- (BOOL)areOutputFilesAffectedByCommandLineArgument:(id)arg1 previousArgument:(id)arg2;
+- (void)addIdentifierToListOfCompilersUsedWithMacroExpansionScope:(id)arg1;
 - (id)precompFileExtension;
-- (id)effectiveCompilerSpecificationForFileType:(id)arg1 inPropertyExpansionContext:(id)arg2 platformDomain:(id)arg3;
+- (id)effectiveCompilerSpecificationForFileType:(id)arg1 withMacroExpansionScope:(id)arg2 forSDK:(id)arg3;
+- (id)effectiveCompilerSpecificationForFileType:(id)arg1 withMacroExpansionScope:(id)arg2 platformDomain:(id)arg3;
 
 @end
 

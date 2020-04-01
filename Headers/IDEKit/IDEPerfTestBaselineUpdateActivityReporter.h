@@ -15,7 +15,6 @@
     NSMapTable *_baselineRecordsToActivityReports;
 }
 
-+ (void)initialize;
 - (void).cxx_destruct;
 - (void)publishActivityReport:(id)arg1;
 - (void)destroyActivityReportForBaselineController:(id)arg1;

@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Foundation/NSObject.h>
+#import <objc/NSObject.h>
 
 @class NSString;
 
@@ -17,6 +17,7 @@
 }
 
 + (id)nodeWithString:(id)arg1 representedObject:(id)arg2;
+- (void).cxx_destruct;
 - (id)subnodeWithString:(id)arg1;
 - (void)removeSubnode:(id)arg1;
 - (void)addSubnode:(id)arg1;
@@ -33,7 +34,6 @@
 - (id)representedObject;
 - (void)setString:(id)arg1;
 - (id)string;
-- (void)dealloc;
 - (id)init;
 - (id)initWithString:(id)arg1 representedObject:(id)arg2;
 

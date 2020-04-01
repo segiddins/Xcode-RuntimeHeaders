@@ -4,39 +4,41 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <DVTKit/DVTLayoutView_ML.h>
+#import <DVTStructuredLayoutKit/DVTLayoutView_ML.h>
 
-#import <IDEInterfaceBuilderKit/IBSceneUpdateRenderingDelegate-Protocol.h>
 #import <IDEInterfaceBuilderKit/IBSceneUpdateRequestConfiguring-Protocol.h>
 
-@class IBCancellationToken, IBSceneImageData, NSString;
+@class IOSurface, NSImage, NSString;
 @protocol IBSceneUpdateContentViewDelegate;
 
-@interface IBSceneUpdateContentView : DVTLayoutView_ML <IBSceneUpdateRenderingDelegate, IBSceneUpdateRequestConfiguring>
+@interface IBSceneUpdateContentView : DVTLayoutView_ML <IBSceneUpdateRequestConfiguring>
 {
-    long long _asyncUpdateSceneIdentifier;
-    IBCancellationToken *_renderingDelegateToken;
-    double _currentScaleFactor;
+    NSImage *_image;
+    unsigned int _ioSurfaceID;
+    IOSurface *_ioSurface;
+    struct CGSize _imageSize;
+    double _scaleFactor;
+    struct CGRect _lastSceneMaskBounds;
+    NSString *_lastSceneMaskIdentifier;
     id <IBSceneUpdateContentViewDelegate> _delegate;
-    IBSceneImageData *_sceneImageData;
 }
 
-@property(retain) IBSceneImageData *sceneImageData; // @synthesize sceneImageData=_sceneImageData;
 @property(nonatomic) __weak id <IBSceneUpdateContentViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (void)updateOnBackgroundThreadWithImage:(struct CGImage *)arg1 scaleFactor:(double)arg2;
-- (void)configureSceneUpdateRequest:(id)arg1;
+- (void)configureSceneUpdateRequest:(id)arg1 isIncrementalUpdate:(BOOL)arg2;
+- (id)surfaceForRenderingAllowingReuse:(BOOL)arg1;
+- (struct CGSize)effectiveIOSurfacePixelScreenSize;
 - (void)configureIncrementalSceneUpdateRequest:(id)arg1;
 - (void)configureFullSceneUpdateRequest:(id)arg1;
-- (void)drawRect:(struct CGRect)arg1;
+- (void)prepareBezierPathMask:(id)arg1 bounds:(struct CGRect)arg2 forShapeLayer:(id)arg3;
 - (void)updateLayer;
 - (BOOL)wantsUpdateLayer;
-- (void)_teardownRenderingDelegate;
+- (BOOL)wantsToDrawMask;
 - (Class)renderingProcessingRequestClass;
 - (id)targetRuntime;
+- (struct CGSize)contentSize;
 - (id)makeBackingLayer;
-- (void)invalidateOnMainQueueForReason:(CDUnknownBlockType)arg1;
-- (void)dealloc;
+- (id)initWithFrame:(struct CGRect)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

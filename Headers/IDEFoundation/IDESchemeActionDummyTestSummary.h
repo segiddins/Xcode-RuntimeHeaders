@@ -14,6 +14,8 @@
 }
 
 - (void).cxx_destruct;
+- (void)loadAttachmentsFromDirectory:(id)arg1;
+- (void)loadDiagnosticsFromFilePromise:(id)arg1;
 - (BOOL)updateWithDictionaryRepresentation:(id)arg1;
 - (id)dictionaryRepresentation;
 - (unsigned long long)status;

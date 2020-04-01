@@ -25,10 +25,11 @@
     NSString *_formatString;
 }
 
++ (void)_addUnknownFramesForParentFrame:(id)arg1 newChildFrames:(id)arg2 minDuration:(double)arg3;
 + (void)_purgeSmallFramesFromParentFrame:(id)arg1 minDuration:(double)arg2;
 + (id)unknownFrameForStartTime:(unsigned long long)arg1 endTime:(unsigned long long)arg2 minimumDuration:(double)arg3;
-+ (void)logSoftAssertForNodes:(id)arg1;
-+ (id)_prepareNodesForSoftAssert:(id)arg1;
++ (void)logSoftAssertForNodes:(id)arg1 performanceAnalysisID:(id)arg2;
++ (id)_rootFrameForSoftAssert:(id)arg1;
 + (void)logNodesForTesting:(id)arg1;
 + (id)rootNodeForNodes:(id)arg1;
 @property(getter=isValid) BOOL valid; // @synthesize valid=_valid;
@@ -48,13 +49,7 @@
 - (id)frameTree;
 - (double)minimumDurationForReporting;
 - (void)_frameTreeWithParent:(id)arg1;
-- (BOOL)findLeafMostCandidates:(id)arg1 passingTest:(CDUnknownBlockType)arg2;
-- (BOOL)findRootMostCandidates:(id)arg1 passingTest:(CDUnknownBlockType)arg2;
-- (void)fileRadarWithLog:(id)arg1;
-- (id)_fetchNodeForRadarSignature;
-- (void)enumerateNodesWithBlock:(CDUnknownBlockType)arg1;
-- (id)identifierSubstringsForRadarSignature;
-- (void)logToSoftAssertWithID:(id)arg1;
+- (id)_longestToShortestChildNodes;
 - (id)description;
 - (void)invalidate;
 - (id)init;

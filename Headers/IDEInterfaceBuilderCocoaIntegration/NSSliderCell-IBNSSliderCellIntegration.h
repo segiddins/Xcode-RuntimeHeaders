@@ -6,9 +6,15 @@
 
 #import <AppKit/NSSliderCell.h>
 
-@interface NSSliderCell (IBNSSliderCellIntegration)
+#import <IDEInterfaceBuilderCocoaIntegration/IBDocumentArchiving-Protocol.h>
+
+@class NSString;
+
+@interface NSSliderCell (IBNSSliderCellIntegration) <IBDocumentArchiving>
 + (id)keyPathsForValuesAffectingibShouldShowTickPositionVertical;
 + (id)keyPathsForValuesAffectingibShouldShowTickPositionHorizontal;
++ (id)keyPathsForValuesAffectingIbInspectedMinValue;
++ (id)keyPathsForValuesAffectingIbInspectedMaxValue;
 + (id)keyPathsForValuesAffectingIbInspectedDoubleValue;
 @property unsigned long long ibArchivedTickMarkPosition;
 - (Class)ibPreferredControlClass;
@@ -25,5 +31,14 @@
 - (double)ibInspectedMaxValue;
 - (void)setIbInspectedDoubleValue:(double)arg1;
 - (double)ibInspectedDoubleValue;
+- (id)ibLocalAttributeKeyPaths;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @end
 

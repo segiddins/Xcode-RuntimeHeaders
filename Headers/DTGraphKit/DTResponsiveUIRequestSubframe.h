@@ -10,11 +10,12 @@
 {
 }
 
-+ (BOOL)_enableConcurrentActivities;
-+ (BOOL)_establishesAffinity;
-- (void)setRequest:(id)arg1 provider:(id)arg2 serialNumber:(unsigned long long)arg3;
++ (BOOL)enableConcurrentActivities;
+- (void)yieldingMinorFrame:(unsigned char)arg1;
+- (void)extendingMinorFrame:(unsigned char)arg1;
 - (void)invalidateContentProvider:(id)arg1;
-- (void)registerContentProvider:(id)arg1;
+- (void)providerHasRequest:(id)arg1;
+- (int)agentStopDiagnosticsTypeCode;
 
 @end
 

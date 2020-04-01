@@ -22,13 +22,13 @@
 + (id)localizedSpecificationTypeName;
 + (id)specificationType;
 + (Class)specificationTypeBaseClass;
+- (void).cxx_destruct;
 - (BOOL)canPerformOffline;
 - (BOOL)canRenameFiles;
 - (BOOL)canAddDirectories;
 - (Class)repositoryClass;
 - (id)repositoryClassName;
 - (id)classBaseName;
-- (void)dealloc;
 - (id)initWithPropertyListDictionary:(id)arg1 inDomain:(id)arg2;
 
 @end

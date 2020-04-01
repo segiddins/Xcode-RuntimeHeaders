@@ -6,18 +6,19 @@
 
 #import <objc/NSObject.h>
 
-#import <GPUToolsServices/NSCoding-Protocol.h>
 #import <GPUToolsServices/NSCopying-Protocol.h>
+#import <GPUToolsServices/NSSecureCoding-Protocol.h>
 
 @class DYInvestigatorRecommendationInfo, DYInvestigatorRecommendationSection, NSMutableDictionary;
 
-@interface DYInvestigatorRecommendation : NSObject <NSCopying, NSCoding>
+@interface DYInvestigatorRecommendation : NSObject <NSCopying, NSSecureCoding>
 {
     NSMutableDictionary *_sectionsDict;
     DYInvestigatorRecommendationSection *_currentSection;
     DYInvestigatorRecommendationInfo *_summary;
 }
 
++ (BOOL)supportsSecureCoding;
 @property(retain, nonatomic) DYInvestigatorRecommendationInfo *summary; // @synthesize summary=_summary;
 - (void).cxx_destruct;
 - (void)printFormatted;

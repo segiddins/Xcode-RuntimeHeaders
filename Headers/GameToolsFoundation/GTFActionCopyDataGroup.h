@@ -6,17 +6,18 @@
 
 #import <objc/NSObject.h>
 
-#import <GameToolsFoundation/NSCoding-Protocol.h>
+#import <GameToolsFoundation/NSSecureCoding-Protocol.h>
 
 @class NSArray, NSMutableArray;
 
-@interface GTFActionCopyDataGroup : NSObject <NSCoding>
+@interface GTFActionCopyDataGroup : NSObject <NSSecureCoding>
 {
     NSMutableArray *_actions;
     int _loopCount;
     long long _type;
 }
 
++ (BOOL)supportsSecureCoding;
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;
 @property(readonly, nonatomic) int loopCount; // @synthesize loopCount=_loopCount;
 @property(readonly, nonatomic) NSArray *actions; // @synthesize actions=_actions;

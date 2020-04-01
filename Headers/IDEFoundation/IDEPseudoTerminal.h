@@ -16,14 +16,16 @@
     NSString *_slaveName;
 }
 
++ (void)initialize;
 @property(readonly) int slaveFD; // @synthesize slaveFD=_slaveFD;
 @property(readonly) NSString *slaveName; // @synthesize slaveName=_slaveName;
 @property(readonly) NSFileHandle *masterFileHandle; // @synthesize masterFileHandle=_masterFileHandle;
 - (void).cxx_destruct;
 @property(readonly) NSFileHandle *slaveFileHandle;
-- (int)_openSlaveCounterpart:(int)arg1 error:(id *)arg2;
-- (BOOL)_openFirstAvailableMasterWithAccessMode:(int)arg1 error:(id *)arg2;
+- (BOOL)_configSlaveCounterpartWithError:(id *)arg1;
+- (BOOL)_openFirstAvailableMasterOwnsSlaveFileDescriptor:(BOOL)arg1 error:(id *)arg2;
 - (void)_closeMasterFD;
+- (id)description;
 - (id)initWithAccessMode:(int)arg1 error:(id *)arg2;
 - (id)initWithAccessMode:(int)arg1 ownsSlaveFileDescriptor:(BOOL)arg2 error:(id *)arg3;
 

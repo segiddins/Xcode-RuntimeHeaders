@@ -34,6 +34,7 @@
 @property(readonly, nonatomic, getter=isRunning) BOOL running; // @synthesize running=_running;
 - (void).cxx_destruct;
 - (id)triggersToExecuteForPhase:(unsigned long long)arg1;
+- (BOOL)_hasResolvedIssues;
 - (BOOL)_hasTestWithKeyPathPerfMetrics:(id)arg1;
 - (id)_testedDeviceWithIdentifier:(id)arg1;
 - (void)_instantiateTestClassFamily;
@@ -48,6 +49,7 @@
 - (id)initWithBot:(id)arg1 shouldClean:(BOOL)arg2 devices:(struct NSArray *)arg3 number:(id)arg4 queuedDate:(id)arg5 startedTime:(id)arg6 endedTime:(id)arg7 currentStep:(long long)arg8 result:(long long)arg9 successStreak:(unsigned long long)arg10 buildResultSummary:(id)arg11 revisionBlueprint:(id)arg12 assets:(id)arg13 assetsPruned:(BOOL)arg14 tags:(id)arg15 testHierarchy:(id)arg16 perfMetricNames:(id)arg17 perfMetricKeyPaths:(id)arg18 controlledChanges:(id)arg19 anID:(id)arg20 aRev:(id)arg21 aTinyID:(id)arg22 docType:(id)arg23 service:(id)arg24 error:(id *)arg25;
 - (id)initWithBot:(id)arg1 shouldClean:(BOOL)arg2 devices:(struct NSArray *)arg3 number:(id)arg4 queuedDate:(id)arg5 startedTime:(id)arg6 endedTime:(id)arg7 currentStep:(long long)arg8 result:(long long)arg9 successStreak:(unsigned long long)arg10 buildResultSummary:(id)arg11 revisionBlueprint:(id)arg12 assets:(id)arg13 assetsPruned:(BOOL)arg14 tags:(id)arg15 testHierarchy:(id)arg16 perfMetricNames:(id)arg17 perfMetricKeyPaths:(id)arg18 anID:(id)arg19 aRev:(id)arg20 aTinyID:(id)arg21 docType:(id)arg22 service:(id)arg23 error:(id *)arg24;
 @property(readonly, nonatomic) NSURL *productInstallationURL;
+@property(readonly, nonatomic, getter=isImported) BOOL imported;
 @property(readonly, nonatomic, getter=isControl) BOOL control;
 - (BOOL)isFlagged;
 @property(retain, nonatomic) NSSet *tags; // @dynamic tags;

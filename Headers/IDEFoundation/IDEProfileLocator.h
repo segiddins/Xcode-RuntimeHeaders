@@ -6,26 +6,28 @@
 
 #import <objc/NSObject.h>
 
-@class DVTPlatform, IDEProfileSpecifier, NSSet, NSString;
-@protocol IDEProvisioningBasicTeam;
+@class DVTPlatform, DVTPortalProfileType, IDEProfileSpecifier, NSSet, NSString;
+@protocol IDEProvisioningBasicTeam, IDEProvisioningErrorProvider;
 
 @interface IDEProfileLocator : NSObject
 {
-    BOOL _allowsAutomaticSelectionOfAllProfiles;
     id <IDEProvisioningBasicTeam> _team;
     NSSet *_profiles;
     NSString *_bundleID;
     long long _style;
     DVTPlatform *_platform;
-    unsigned long long _profilePurpose;
+    id <IDEProvisioningErrorProvider> _errorProvider;
     IDEProfileSpecifier *_profileSpecifier;
     NSSet *_signingCertificates;
+    long long _automaticLocationStyle;
+    DVTPortalProfileType *_profileType;
 }
 
-@property(nonatomic) BOOL allowsAutomaticSelectionOfAllProfiles; // @synthesize allowsAutomaticSelectionOfAllProfiles=_allowsAutomaticSelectionOfAllProfiles;
+@property(retain, nonatomic) DVTPortalProfileType *profileType; // @synthesize profileType=_profileType;
+@property(nonatomic) long long automaticLocationStyle; // @synthesize automaticLocationStyle=_automaticLocationStyle;
 @property(retain, nonatomic) NSSet *signingCertificates; // @synthesize signingCertificates=_signingCertificates;
 @property(retain, nonatomic) IDEProfileSpecifier *profileSpecifier; // @synthesize profileSpecifier=_profileSpecifier;
-@property(readonly, nonatomic) unsigned long long profilePurpose; // @synthesize profilePurpose=_profilePurpose;
+@property(readonly, nonatomic) id <IDEProvisioningErrorProvider> errorProvider; // @synthesize errorProvider=_errorProvider;
 @property(readonly, nonatomic) DVTPlatform *platform; // @synthesize platform=_platform;
 @property(readonly, nonatomic) long long style; // @synthesize style=_style;
 @property(readonly, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
@@ -46,6 +48,7 @@
 - (id)_logAspect;
 - (id)profilesForManualProvisioning;
 - (id)profileWithError:(id *)arg1;
+- (id)initWithProfiles:(id)arg1 team:(id)arg2 bundleID:(id)arg3 style:(long long)arg4 platform:(id)arg5 errorProvider:(id)arg6;
 - (id)initWithProfiles:(id)arg1 team:(id)arg2 bundleID:(id)arg3 style:(long long)arg4 platform:(id)arg5;
 
 @end

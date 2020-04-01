@@ -7,8 +7,6 @@
 #import <Foundation/NSMutableAttributedString.h>
 
 @interface NSMutableAttributedString (FindPatternAdditions)
-+ (id)dvt_mutableAttributedStringFromPatternArray:(id)arg1 inField:(id)arg2 excludingPatterns:(BOOL)arg3;
-- (void)dvt_replaceFindPatternAttachmentsWithAttributes:(id)arg1 negationAttributes:(id)arg2;
 - (void)dvt_setFindPatternAttachmentFont:(id)arg1;
 @end
 

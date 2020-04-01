@@ -7,27 +7,27 @@
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBUIStoryboardSegueTemplate.h>
 
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBDocumentArchiving-Protocol.h>
-#import <IDEInterfaceBuilderCocoaTouchIntegration/NSCoding-Protocol.h>
 
 @class NSString;
 
-@interface IBUIStoryboardModalSegueTemplate : IBUIStoryboardSegueTemplate <IBDocumentArchiving, NSCoding>
+@interface IBUIStoryboardModalSegueTemplate : IBUIStoryboardSegueTemplate <IBDocumentArchiving>
 {
-    BOOL useDefaultModalPresentationStyle;
-    BOOL useDefaultModalTransitionStyle;
-    int modalPresentationStyle;
-    int modalTransitionStyle;
+    BOOL _useDefaultModalPresentationStyle;
+    BOOL _useDefaultModalTransitionStyle;
+    long long _modalPresentationStyle;
+    long long _modalTransitionStyle;
 }
 
-+ (id)segueTemplateWithIdentifier:(id)arg1 trigger:(id)arg2 segueClassName:(id)arg3 destinationControllerIdentifier:(id)arg4 modalPresentationStyleOrNilForDefault:(id)arg5 modalTransitionStyleOrNilForDefault:(id)arg6 animates:(BOOL)arg7;
-@property int modalTransitionStyle; // @synthesize modalTransitionStyle;
-@property int modalPresentationStyle; // @synthesize modalPresentationStyle;
-@property BOOL useDefaultModalPresentationStyle; // @synthesize useDefaultModalPresentationStyle;
-@property BOOL useDefaultModalTransitionStyle; // @synthesize useDefaultModalTransitionStyle;
-- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
-- (void)archiveWithDocumentArchiver:(id)arg1;
++ (id)segueTemplateWithIdentifier:(id)arg1 trigger:(id)arg2 segueClassName:(id)arg3 destinationControllerIdentifier:(id)arg4 destinationControllerCreationSelectorName:(id)arg5 modalPresentationStyleOrNilForDefault:(id)arg6 modalTransitionStyleOrNilForDefault:(id)arg7 animates:(BOOL)arg8;
+@property long long modalTransitionStyle; // @synthesize modalTransitionStyle=_modalTransitionStyle;
+@property long long modalPresentationStyle; // @synthesize modalPresentationStyle=_modalPresentationStyle;
+@property BOOL useDefaultModalTransitionStyle; // @synthesize useDefaultModalTransitionStyle=_useDefaultModalTransitionStyle;
+@property BOOL useDefaultModalPresentationStyle; // @synthesize useDefaultModalPresentationStyle=_useDefaultModalPresentationStyle;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)ibLocalAttributeKeyPaths;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

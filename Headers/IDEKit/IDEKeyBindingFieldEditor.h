@@ -21,9 +21,10 @@
     NSButton *_deleteKeyboardShortcutButton;
     NSColor *_borderColor;
     struct CGSize _buttonOffset;
+    struct CGSize _buttonOffet;
 }
 
-@property(nonatomic) struct CGSize buttonOffet; // @synthesize buttonOffet=_buttonOffset;
+@property(nonatomic) struct CGSize buttonOffet; // @synthesize buttonOffet=_buttonOffet;
 @property(retain, nonatomic) NSColor *borderColor; // @synthesize borderColor=_borderColor;
 @property(readonly) IDEKeyBindingFieldCell *editingCell; // @synthesize editingCell=_editingCell;
 - (void).cxx_destruct;

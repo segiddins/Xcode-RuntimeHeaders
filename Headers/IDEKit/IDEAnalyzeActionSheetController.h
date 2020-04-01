@@ -24,7 +24,7 @@
 - (void)updateBoundContent;
 - (void)updateBoundIDEWorkspaceBinding;
 - (void)updateBoundIDERunContextBinding;
-- (id)dvtExtraBindings;
+- (id)dvt_extraBindings;
 - (void)primitiveInvalidate;
 - (void)loadView;
 

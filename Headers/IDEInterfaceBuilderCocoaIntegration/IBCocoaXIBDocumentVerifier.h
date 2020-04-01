@@ -14,7 +14,6 @@
 - (void)_verifyTableViewBackgroundColors;
 - (void)_verifySegmentedControlBorders;
 - (void)_verifyTextFieldPreferredMaxLayoutWidthAndPopulateMessages:(id)arg1;
-- (void)_verifyScrollViewsUseManualLayerBacking;
 - (void)_verifySystemFont;
 - (void)_verifyViewBasedTableViewsHaveCorrectColumnState;
 - (void)_verifyButtonCellMenus;
@@ -37,7 +36,6 @@
 - (void)_verifyAppleScriptSupportAndPopulateMessages:(id)arg1;
 - (void)_verifyMenuItemToMenuInverseRelations;
 - (void)_verifyViewsAutoresizeSubviews;
-- (void)_verifyCustomClasses;
 - (void)_verifyPopupButtonCellImages;
 - (void)_verifyTabViewItemToTabViewInverseRelations;
 - (void)_verifyPopUpMenuOwnership:(id)arg1;

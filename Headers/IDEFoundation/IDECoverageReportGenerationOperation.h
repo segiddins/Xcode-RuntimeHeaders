@@ -8,45 +8,45 @@
 
 #import <IDEFoundation/DVTProgressReporting-Protocol.h>
 
-@class DVTFilePath, IDEActivityLogSection, IDEBuildParameters, IDEScheme, NSMutableArray, NSString;
+@class DVTFilePath, IDEActivityLogSection, NSArray, NSOperationQueue, NSString;
 
 @interface IDECoverageReportGenerationOperation : DVTOperation <DVTProgressReporting>
 {
-    BOOL isCpp;
-    BOOL isSwift;
-    NSString *baseFileName;
-    NSMutableArray *lineCoverageObjects;
-    NSMutableArray *functions;
-    unsigned int numFunctions;
-    unsigned int coveredFunctions;
-    unsigned int executableLines;
-    unsigned int coveredLines;
-    unsigned int prevLine;
     NSString *_logIdentifier;
-    IDEScheme *_runContext;
-    IDEBuildParameters *_buildParameters;
-    NSString *_architecture;
-    DVTFilePath *_outputLogFilePath;
-    IDEActivityLogSection *_logSection;
+    NSArray *_buildableInfos;
+    DVTFilePath *_coverageReportDestinationPath;
+    DVTFilePath *_coverageArchiveDestinationPath;
+    DVTFilePath *_profileFilePath;
+    IDEActivityLogSection *_errorLog;
     long long _progress;
-    NSMutableArray *_staticLibFiles;
+    NSOperationQueue *_workQueue;
+    NSOperationQueue *_ioQueue;
 }
 
-@property(retain) NSMutableArray *staticLibFiles; // @synthesize staticLibFiles=_staticLibFiles;
++ (id)coverageErrorsLogSectionDomainType;
++ (id)logAspect;
+@property(retain, nonatomic) NSOperationQueue *ioQueue; // @synthesize ioQueue=_ioQueue;
+@property(retain, nonatomic) NSOperationQueue *workQueue; // @synthesize workQueue=_workQueue;
 @property long long progress; // @synthesize progress=_progress;
-@property(nonatomic) __weak IDEActivityLogSection *logSection; // @synthesize logSection=_logSection;
-@property(retain) DVTFilePath *outputLogFilePath; // @synthesize outputLogFilePath=_outputLogFilePath;
-@property(retain, nonatomic) NSString *architecture; // @synthesize architecture=_architecture;
-@property(retain, nonatomic) IDEBuildParameters *buildParameters; // @synthesize buildParameters=_buildParameters;
-@property(retain, nonatomic) IDEScheme *runContext; // @synthesize runContext=_runContext;
+@property(retain) IDEActivityLogSection *errorLog; // @synthesize errorLog=_errorLog;
+@property(retain) DVTFilePath *profileFilePath; // @synthesize profileFilePath=_profileFilePath;
+@property(retain) DVTFilePath *coverageArchiveDestinationPath; // @synthesize coverageArchiveDestinationPath=_coverageArchiveDestinationPath;
+@property(retain) DVTFilePath *coverageReportDestinationPath; // @synthesize coverageReportDestinationPath=_coverageReportDestinationPath;
+@property(retain, nonatomic) NSArray *buildableInfos; // @synthesize buildableInfos=_buildableInfos;
 @property(readonly, copy) NSString *logIdentifier; // @synthesize logIdentifier=_logIdentifier;
 - (void).cxx_destruct;
-- (void)notifyCoverageReportGenerationFailedWithError:(id)arg1;
-- (id)generateCoverageDataObjectForBuildable:(id)arg1 error:(id *)arg2;
-- (id)generateCoverageDataForFunction:(struct LLVMOpaqueCoverageData *)arg1 functionName:(const char *)arg2 toolchains:(id)arg3;
-- (void)addLine:(unsigned int)arg1 executionCount:(unsigned long long)arg2 executable:(BOOL)arg3 subRanges:(id)arg4;
+- (void)cancel;
 - (void)main;
-- (id)initWithRunContext:(id)arg1 buildParameters:(id)arg2 architechture:(id)arg3 outputLogFilePath:(id)arg4 logSection:(id)arg5;
+- (id)initWithBuildableInfos:(id)arg1 coverageReportDestinationPath:(id)arg2 coverageArchiveDestinationPath:(id)arg3 errorLog:(id)arg4 profileFilePath:(id)arg5;
+- (void)appendErrorsToLog:(id)arg1;
+- (BOOL)writeCoverageReportToDisk:(id)arg1 error:(id *)arg2;
+- (id)buildersForBuildableInfos:(id)arg1 errors:(id)arg2;
+- (id)aggregateBuilderForBuilders:(id)arg1 error:(id *)arg2;
+- (id)generateTargetsForBuildableInfos:(id)arg1 usingAggregateBuilder:(id)arg2 updatingArchive:(id)arg3;
+- (id)generateCoverageFilesForBuildableInfos:(id)arg1 usingAggregateBuilder:(id)arg2 updatingArchive:(id)arg3;
+- (id)aggregatedSourceFilesForBuildableInfos:(id)arg1;
+- (id)aggregatedToolchainsForBuildableInfos:(id)arg1;
+- (id)populateBuildableInfos:(id)arg1 usingBuilders:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

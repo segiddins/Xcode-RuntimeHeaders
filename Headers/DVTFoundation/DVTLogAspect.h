@@ -6,36 +6,38 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSMutableDictionary, NSString;
+@class NSArray, NSDictionary, NSString;
 
 @interface DVTLogAspect : NSObject
 {
+    unsigned long long _logLevel;
+    unsigned long long _effectiveLogLevel;
     NSString *_name;
     BOOL _signalInstruments;
     BOOL _takeTimeProfile;
-    NSMutableDictionary *_logHandlers;
-    int _logLevel;
-    int _effectiveLogLevel;
+    NSDictionary *_logHandlers;
     NSArray *_activeLoggers;
 }
 
 + (id)logAspectWithName:(id)arg1;
 + (id)allAspects;
-+ (int)defaultLogLevel;
++ (unsigned long long)defaultLogLevel;
 + (void)initialize;
 @property(copy) NSArray *activeLoggers; // @synthesize activeLoggers=_activeLoggers;
 @property BOOL takeTimeProfile; // @synthesize takeTimeProfile=_takeTimeProfile;
 @property BOOL signalInstruments; // @synthesize signalInstruments=_signalInstruments;
 @property(readonly) NSString *name; // @synthesize name=_name;
+@property(readonly) unsigned long long effectiveLogLevel; // @synthesize effectiveLogLevel=_effectiveLogLevel;
 - (void).cxx_destruct;
 - (id)description;
 - (void)unregisterLogHandler:(id)arg1;
 - (id)registerLogHandler:(CDUnknownBlockType)arg1;
-- (void)_logAndOutdentAtLogLevel:(int)arg1 withFormat:(id)arg2;
-- (void)_logAndIndentAtLogLevel:(int)arg1 withFormat:(id)arg2;
-- (void)_logAtLogLevel:(int)arg1 withFormat:(id)arg2;
-@property int logLevel;
-- (id)initWithName:(id)arg1 logLevel:(int)arg2 signalInstruments:(BOOL)arg3 takeTimeProfile:(BOOL)arg4 activeLoggers:(id)arg5;
+- (void)_logAndOutdentAtLogLevel:(unsigned long long)arg1 withFormat:(id)arg2;
+- (void)_logAndIndentAtLogLevel:(unsigned long long)arg1 withFormat:(id)arg2;
+- (void)_logAtLogLevel:(unsigned long long)arg1 withFormat:(id)arg2;
+- (void)_primitiveLog:(unsigned long long)arg1 message:(id)arg2;
+@property unsigned long long logLevel;
+- (id)initWithName:(id)arg1 logLevel:(unsigned long long)arg2 signalInstruments:(BOOL)arg3 takeTimeProfile:(BOOL)arg4 activeLoggers:(id)arg5;
 - (id)init;
 
 @end

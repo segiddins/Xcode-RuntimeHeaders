@@ -14,6 +14,8 @@
 @property(readonly, nonatomic) unsigned int numElements;
 
 @optional
-@property(retain) id <DYResource> wireframeImage;
+@property(retain) id <DYResource> solidTexture;
+@property(retain) id <DYResource> outlineTexture;
+@property(retain) id <DYResource> wireframeTexture;
 @end
 

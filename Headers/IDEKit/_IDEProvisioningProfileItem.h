@@ -21,6 +21,7 @@
 @property(retain, nonatomic) NSAttributedString *subtitle; // @synthesize subtitle=_subtitle;
 @property(retain, nonatomic) NSAttributedString *title; // @synthesize title=_title;
 - (void).cxx_destruct;
+- (id)description;
 
 @end
 

@@ -10,5 +10,8 @@
 {
 }
 
++ (Class)assetRepClass;
++ (Class)assetSetClass;
+
 @end
 

@@ -6,11 +6,12 @@
 
 #import <IDEFoundation/IDEThread.h>
 
-@class DBGLLDBSession, DVTDispatchLock, NSMutableArray;
+#import <DebuggerLLDB/IDEThreadSuspendProtocol-Protocol.h>
+
+@class DBGLLDBSession, DVTDispatchLock, NSArray, NSMutableArray, NSString;
 @protocol DBGSBQueueItem, DBGSBThread;
 
-__attribute__((visibility("hidden")))
-@interface DBGLLDBThread : IDEThread
+@interface DBGLLDBThread : IDEThread <IDEThreadSuspendProtocol>
 {
     id <DBGSBThread> _lldbThread;
     id <DBGSBQueueItem> _lldbQueueItem;
@@ -18,8 +19,11 @@ __attribute__((visibility("hidden")))
     BOOL _hasFetchedFullListOfStackFrames;
     NSMutableArray *_backingStackFrames;
     NSMutableArray *_delayedInvalidationStackFrames;
+    DVTDispatchLock *_delayedInvalidationStackFramesLock;
     unsigned long long _reuseGeneration;
     DVTDispatchLock *_reuseGenerationLock;
+    BOOL _currentThread;
+    BOOL _delayToAllowFastPCDrawing;
 }
 
 + (id)createPendingBlockThreadWithParentProcess:(id)arg1 queueItem:(id)arg2 name:(id)arg3;
@@ -27,14 +31,16 @@ __attribute__((visibility("hidden")))
 + (BOOL)_isLookingForNSOperationInStackFrames:(id)arg1;
 + (BOOL)supportsInvalidationPrevention;
 + (void)initialize;
+@property BOOL delayToAllowFastPCDrawing; // @synthesize delayToAllowFastPCDrawing=_delayToAllowFastPCDrawing;
+@property(getter=isCurrentThread) BOOL currentThread; // @synthesize currentThread=_currentThread;
+@property(readonly) NSArray *backingStackFrames; // @synthesize backingStackFrames=_backingStackFrames;
 - (void).cxx_destruct;
 - (void)_invalidateAndClearBackingStackFrames:(id)arg1;
 - (void)primitiveInvalidate;
 - (void)invalidateUnusedStackFramesAfterCallToSetStackFrames:(id)arg1;
 - (void)requestUnsuspend;
 - (void)requestSuspend;
-- (void)setStackFramesWithAddresses:(id)arg1;
-- (void)requestStackFrames:(unsigned long long)arg1 handleOnMainQueueWithResultHandler:(CDUnknownBlockType)arg2;
+- (void)requestStackFrames:(unsigned long long)arg1 handleOnMainQueue:(BOOL)arg2 resultHandler:(CDUnknownBlockType)arg3;
 - (void)_setStackFramesOnMainThread:(id)arg1;
 - (void)setStackFrames:(id)arg1;
 - (void)willReuse:(BOOL)arg1;
@@ -48,6 +54,12 @@ __attribute__((visibility("hidden")))
 - (void)_setLLDBQueueItem:(id)arg1;
 - (id)lldbThread;
 - (id)initWithParentProcess:(id)arg1 uniqueID:(id)arg2 lldbThread:(id)arg3;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

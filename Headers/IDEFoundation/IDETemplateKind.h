@@ -18,7 +18,9 @@
 }
 
 + (id)targetTemplateKind;
++ (id)packageTemplateKind;
 + (id)projectTemplateKind;
++ (id)playgroundTemplateKind;
 + (id)fileTemplateKind;
 + (id)allTemplateKinds;
 + (id)templateKindForIdentifier:(id)arg1;
@@ -30,7 +32,12 @@
 - (id)nextAssistantIdentifierForWorkspace:(id)arg1;
 - (id)newTemplateInstantiationContext;
 - (Class)instantiationContextClass;
-- (id)createdObjectTypeName;
+@property(readonly, nonatomic) BOOL prefersStandaloneWorkspace;
+@property(readonly, nonatomic) BOOL requiresProject;
+@property(readonly, nonatomic) BOOL wantsToolbarInSimpleFilesWorkspace;
+@property(readonly, nonatomic) BOOL wantsSimpleFilesWorkspace;
+@property(readonly) NSString *createdObjectTypeName;
+- (id)_possiblyInheritedValueForExtensionKey:(id)arg1;
 - (BOOL)conformsToTemplateKind:(id)arg1;
 @property(readonly, copy) NSArray *conformedToTemplateKinds; // @synthesize conformedToTemplateKinds=_conformedToTemplateKinds;
 @property(readonly) Class templateClass;

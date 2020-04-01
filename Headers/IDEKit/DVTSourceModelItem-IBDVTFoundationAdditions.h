@@ -32,6 +32,7 @@
 - (BOOL)isObjCSuperKeywordInSourceModel:(id)arg1;
 - (BOOL)isObjCAtEndKeywordInSourceModel:(id)arg1;
 - (BOOL)isClassIdentifierInSourceModel:(id)arg1;
+- (BOOL)isSegueActionKeywordInSourceModel:(id)arg1;
 - (BOOL)isActionKeywordInSourceModel:(id)arg1;
 - (BOOL)isOutletCollectionKeywordInSourceModel:(id)arg1;
 - (BOOL)isOutletKeywordInSourceModel:(id)arg1;

@@ -11,7 +11,6 @@
     struct __asl_object_s *_message;
 }
 
-@property struct __asl_object_s *message; // @synthesize message=_message;
 - (void)recordSuccess:(BOOL)arg1 reason:(id)arg2;
 - (void)recordID:(id)arg1 forKey:(char *)arg2;
 - (void)recordNumber:(long long)arg1 forKey:(char *)arg2 deresolver:(CDUnknownBlockType)arg3;

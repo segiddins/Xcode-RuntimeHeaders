@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Foundation/NSObject.h>
+#import <objc/NSObject.h>
 
 @class NSDictionary, NSString;
 
@@ -15,12 +15,12 @@
     NSString *_conditionPath;
 }
 
+- (void).cxx_destruct;
 - (id)description;
-- (id)createDependenciesInBuildContext:(id)arg1;
+- (id)createDependenciesWithMacroExpansionScope:(id)arg1;
 - (id)conditionPath;
 - (id)parameterDictionary;
 - (id)toolIdentifier;
-- (void)dealloc;
 - (id)init;
 - (id)initWithPropertyListDictionary:(id)arg1;
 - (id)initWithToolIdentifier:(id)arg1 parameters:(id)arg2;

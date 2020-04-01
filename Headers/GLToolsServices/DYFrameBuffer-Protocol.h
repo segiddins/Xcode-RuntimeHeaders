@@ -11,5 +11,9 @@
 @protocol DYFramebuffer <DYResource>
 @property(readonly, nonatomic) NSDictionary *attachmentsDict;
 - (id)initWithProperties:(NSDictionary *)arg1;
+
+@optional
+@property(readonly, nonatomic) unsigned long long rasterizationRateMap;
+@property(readonly, nonatomic) unsigned long long renderTargetArrayLength;
 @end
 

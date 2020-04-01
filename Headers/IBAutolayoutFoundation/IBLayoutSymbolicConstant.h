@@ -13,12 +13,16 @@
 }
 
 - (void).cxx_destruct;
+- (id)description;
+- (id)constantBySettingValueToValue:(double)arg1;
 - (void)invalidateEngineEvaluatedUnderlyingValue;
 - (void)takeEngineEvaluatedValue:(double)arg1;
 - (BOOL)needsEngineToEvaluateValue;
 - (Class)classForArchiver;
 - (id)symbolicValue;
 - (id)shortDescription;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)encodeWithBinaryArchiver:(id)arg1;
 - (id)initWithBinaryUnarchiver:(id)arg1;
 - (id)initWithSymbolicValue:(id)arg1 engineEvaluatedUnderlyingValue:(double)arg2;

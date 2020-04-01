@@ -10,7 +10,7 @@
 #import <Xcode3UI/NSMenuDelegate-Protocol.h>
 #import <Xcode3UI/Xcode3SourceListItemEditor-Protocol.h>
 
-@class DVTBorderedView, DVTGradientImagePopUpButton, DVTObservingToken, DVTPerformanceMetric, DVTSearchField, DVTSourceExpression, DVTStateToken, IDECapsuleListView, IDEContainerQuery, NSArray, NSMutableArray, NSMutableSet, NSScrollView, NSString, NSView, Xcode3BuildPhaseViewController, Xcode3ProjectEditor;
+@class DVTBorderedView, DVTEmptyContentPlaceholder, DVTGradientImagePopUpButton, DVTObservingToken, DVTPerformanceMetric, DVTSearchField, DVTSourceExpression, DVTStateToken, IDECapsuleListView, IDEContainerQuery, NSArray, NSMutableArray, NSMutableSet, NSScrollView, NSString, Xcode3BuildPhaseViewController, Xcode3ProjectEditor;
 @protocol IDEBlueprint;
 
 @interface Xcode3BuildPhasesEditor : IDEViewController <Xcode3SourceListItemEditor, IDECapsuleListViewDataSource, NSMenuDelegate>
@@ -28,7 +28,7 @@
     Xcode3BuildPhaseViewController *_modifiedController;
     struct CGPoint _scrollPointBeforeFiltering;
     struct CGPoint _scrollPointToRestore;
-    NSView *_emptyView;
+    DVTEmptyContentPlaceholder *_emptyView;
     DVTObservingToken *_phaseViewControllersObserver;
     DVTObservingToken *_searchStringObserver;
     DVTObservingToken *_rezQueryObserver;
@@ -58,6 +58,8 @@
 @property(retain, nonatomic) id <IDEBlueprint> inspectedBlueprint; // @synthesize inspectedBlueprint=_inspectedBlueprint;
 @property(retain) Xcode3ProjectEditor *projectEditor; // @synthesize projectEditor=_projectEditor;
 - (void).cxx_destruct;
+- (long long)numberOfPseudoBuildPhases;
+- (BOOL)shouldIncludePackageProductDependencies;
 - (void)commitStateToDictionary:(id)arg1;
 - (void)revertStateWithDictionary:(id)arg1;
 - (void)_setScrollPoint:(struct CGPoint)arg1;
@@ -65,10 +67,9 @@
 - (void)_setDisclosedBuildPhaseIdentifiers:(id)arg1;
 - (void)capsuleListView:(id)arg1 didCollapseRow:(long long)arg2;
 - (void)capsuleListView:(id)arg1 didExpandRow:(long long)arg2;
-- (BOOL)capsuleListView:(id)arg1 shouldAllowDragOfRow:(long long)arg2;
-- (id)capsuleListView:(id)arg1 pastboardTypesForRowWithIndex:(unsigned long long)arg2;
+- (BOOL)capsuleListView:(id)arg1 allowDragOfRowAtIndex:(unsigned long long)arg2;
 - (unsigned long long)capsuleListView:(id)arg1 validateDrop:(id)arg2 proposedRow:(long long)arg3;
-- (BOOL)capsuleListView:(id)arg1 acceptDrop:(id)arg2 row:(long long)arg3;
+- (BOOL)capsuleListView:(id)arg1 acceptDrop:(id)arg2 draggedRow:(unsigned long long)arg3 destinationRow:(unsigned long long)arg4;
 - (BOOL)capsuleListView:(id)arg1 canDeleteRow:(long long)arg2;
 - (BOOL)capsuleListView:(id)arg1 canRenameRow:(long long)arg2;
 - (id)capsuleListView:(id)arg1 titleForRow:(long long)arg2;
@@ -82,10 +83,12 @@
 - (id)_buildPhaseViewControllerForPBXBuildPhase:(id)arg1;
 - (id)_buildPhaseViewControllerForXcode3BuildPhase:(id)arg1;
 - (void)_buildPhaseViewControllers;
+- (void)_replaceBuildPhaseViewControllers:(id)arg1;
+- (void)_removeAllBuildPhaseViewControllers;
 - (void)_addBuildPhaseViewControllers:(id)arg1;
-- (void)_addBuildPhaseViewController:(id)arg1 scrollToVisible:(BOOL)arg2;
 - (void)_addBuildPhaseViewControllers:(id)arg1 atIndex:(unsigned long long)arg2 scrollToVisible:(BOOL)arg3;
 - (void)_updateDisclosedBuildPhases;
+- (void)reloadDataForBuildPhases;
 - (void)removeObjectFromPhaseViewControllersAtIndex:(unsigned long long)arg1;
 - (void)insertObject:(id)arg1 inPhaseViewControllersAtIndex:(unsigned long long)arg2;
 - (id)objectInPhaseViewControllersAtIndex:(unsigned long long)arg1;

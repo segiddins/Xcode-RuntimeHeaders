@@ -30,6 +30,7 @@
 @property(readonly, copy) NSString *warningMessage;
 - (id)latestSDK;
 - (void)updateBuildSettings;
+- (id)description;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)initWithBlueprint:(id)arg1 migrationContext:(id)arg2;

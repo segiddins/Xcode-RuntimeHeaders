@@ -6,36 +6,45 @@
 
 #import <DVTFoundation/DVTProvisioningProfileManager.h>
 
-@class DVTDispatchLock, NSMutableSet, NSSet;
+@class DVTDispatchLock, NSError, NSMutableDictionary, NSMutableSet, NSSet;
+@protocol DVTMockProvisioningProfileManagerDelegate;
 
 @interface DVTMockProvisioningProfileManager : DVTProvisioningProfileManager
 {
     NSMutableSet *_profiles;
     NSMutableSet *_certificates;
     DVTDispatchLock *_lock;
+    id <DVTMockProvisioningProfileManagerDelegate> _testDelegate;
+    NSError *_installProfilesError;
+    NSMutableDictionary *_mockDataToProvisioningProfile;
+    NSMutableDictionary *_mockDataToProvisioningProfileError;
 }
 
++ (id)logAspect;
+@property(retain, nonatomic) NSMutableDictionary *mockDataToProvisioningProfileError; // @synthesize mockDataToProvisioningProfileError=_mockDataToProvisioningProfileError;
+@property(retain, nonatomic) NSMutableDictionary *mockDataToProvisioningProfile; // @synthesize mockDataToProvisioningProfile=_mockDataToProvisioningProfile;
+@property(retain, nonatomic) NSError *installProfilesError; // @synthesize installProfilesError=_installProfilesError;
+@property(retain, nonatomic) id <DVTMockProvisioningProfileManagerDelegate> testDelegate; // @synthesize testDelegate=_testDelegate;
 - (void).cxx_destruct;
 - (id)profileMatchingUUID:(id)arg1;
 - (void)forceProfileLoading;
-- (id)allUsableProfiles;
-- (id)allProfiles;
+- (id)provisioningProfiles;
 - (BOOL)areProfilesLoaded;
 - (void)removeProfile:(id)arg1;
 - (void)addProfile:(id)arg1;
 - (void)setProfiles:(id)arg1;
 @property(readonly) NSSet *certificates;
+- (void)installProfiles:(id)arg1 callback:(CDUnknownBlockType)arg2;
+- (id)profileWithData:(id)arg1 platform:(id)arg2 error:(id *)arg3;
+- (void)addProfile:(id)arg1 andError:(id)arg2 forData:(id)arg3;
 - (id)expiringProfiles;
 - (id)profilesMatchingPredicate:(id)arg1;
-- (void)installHostProfiles:(id)arg1 callback:(CDUnknownBlockType)arg2;
-- (id)profileWithData:(id)arg1 error:(id *)arg2;
 - (id)profileWithURL:(id)arg1 error:(id *)arg2;
 - (id)expiringProfilesInExpansionContext:(id)arg1;
-- (BOOL)isProfileExpiringWithCodeSigningIdentity:(id)arg1 profileName:(id *)arg2;
 - (id)profilesMatchingApplicationID:(id)arg1;
-- (id)provider;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithPlist:(id)arg1;
+- (id)initWithSource:(id)arg1;
 - (id)init;
 
 @end

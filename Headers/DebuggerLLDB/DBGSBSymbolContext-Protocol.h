@@ -6,9 +6,10 @@
 
 #import <DebuggerLLDB/NSObject-Protocol.h>
 
-@protocol DBGSBLineEntry, DBGSBModule, DBGSBSymbol;
+@protocol DBGSBCompileUnit, DBGSBLineEntry, DBGSBModule, DBGSBSymbol;
 
 @protocol DBGSBSymbolContext <NSObject>
+- (id <DBGSBCompileUnit>)GetCompileUnit;
 - (id <DBGSBSymbol>)GetSymbol;
 - (id <DBGSBLineEntry>)GetLineEntry;
 - (id <DBGSBModule>)GetModule;

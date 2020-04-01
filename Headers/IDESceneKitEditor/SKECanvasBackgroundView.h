@@ -10,7 +10,7 @@
 {
 }
 
-- (void)drawRect:(struct CGRect)arg1;
+- (BOOL)acceptsFirstResponder;
 
 @end
 

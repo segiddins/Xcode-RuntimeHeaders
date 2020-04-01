@@ -14,15 +14,17 @@
 @interface IBAbstractStoryboardSegueTemplate : NSObject <IBDocumentArchiving, NSCoding>
 {
     NSString *_identifier;
-    NSString *_trigger;
     NSString *_segueClassName;
     NSString *_destinationControllerIdentifier;
+    NSString *_trigger;
+    NSString *_destinationControllerCreationSelectorName;
 }
 
-+ (id)segueTemplateWithIdentifier:(id)arg1 trigger:(id)arg2 segueClassName:(id)arg3 destinationControllerIdentifier:(id)arg4;
++ (id)segueTemplateWithIdentifier:(id)arg1 trigger:(id)arg2 segueClassName:(id)arg3 destinationControllerIdentifier:(id)arg4 destinationControllerCreationSelectorName:(id)arg5;
 + (BOOL)requiresDestinationControllerIdentifier;
 + (id)codingKeyForPropertyName:(id)arg1;
 + (id)instantiateWithDocumentUnarchiver:(id)arg1;
+@property(copy) NSString *destinationControllerCreationSelectorName; // @synthesize destinationControllerCreationSelectorName=_destinationControllerCreationSelectorName;
 @property(copy) NSString *trigger; // @synthesize trigger=_trigger;
 @property(copy) NSString *destinationControllerIdentifier; // @synthesize destinationControllerIdentifier=_destinationControllerIdentifier;
 @property(copy) NSString *segueClassName; // @synthesize segueClassName=_segueClassName;
@@ -31,6 +33,7 @@
 @property(readonly, copy) NSString *debugDescription;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)ibLocalAttributeKeyPaths;
 - (void)unarchiveWithDocumentUnarchiver:(id)arg1;
 - (void)archiveWithDocumentArchiver:(id)arg1;
 

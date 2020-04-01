@@ -15,7 +15,7 @@
 + (id)imageNameForURLDrop:(id)arg1 inSliceController:(id)arg2 acceptBlock:(CDUnknownBlockType)arg3;
 + (id)imageNameForContainerItemDrop:(id)arg1;
 + (void)showIconFilePickerForProject:(id)arg1 workspace:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
-+ (id)pathForImageNamed:(id)arg1 inProject:(id)arg2;
++ (id)pathForImageNamed:(id)arg1 inTarget:(id)arg2;
 + (id)containerItemDragTypes;
 + (id)infoEditorConfiguredInnerSliceDisclosureView;
 + (id)infoEditorConfiguredSliceDisclosureViewWithCloseHandler:(CDUnknownBlockType)arg1;

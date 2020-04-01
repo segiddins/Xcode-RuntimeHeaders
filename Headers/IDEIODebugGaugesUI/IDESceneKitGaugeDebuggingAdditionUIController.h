@@ -8,16 +8,31 @@
 
 #import <IDEIODebugGaugesUI/IDEGaugeCollectedDataListeners-Protocol.h>
 
-@class IDESceneKitGaugeDebuggingAddition, NSString;
+@class DVTDevice, IDESceneKitGaugeDebuggingAddition, IDEWorkspaceTabController, NSButton, NSNumber, NSPopUpButton, NSString, NSTextField, NSView;
 
 @interface IDESceneKitGaugeDebuggingAdditionUIController : IDEGFXGaugeDebuggingAdditionUIController <IDEGaugeCollectedDataListeners>
 {
     long long _frameCount;
     BOOL _isActive;
+    float _cumulatedShaderCompilationTime;
+    DVTDevice *_device;
+    NSNumber *_pid;
+    unsigned long long _collectedCount;
+    IDEWorkspaceTabController *_workspaceTabController;
+    NSView *_shaderCompilationView;
+    NSTextField *_messageField;
+    NSButton *_collectButton;
+    NSPopUpButton *_shaderCacheList;
+    NSView *_shaderCacheListGroup;
     IDESceneKitGaugeDebuggingAddition *_debuggingAddition;
 }
 
 @property(retain, nonatomic) IDESceneKitGaugeDebuggingAddition *debuggingAddition; // @synthesize debuggingAddition=_debuggingAddition;
+@property(nonatomic) __weak NSView *shaderCacheListGroup; // @synthesize shaderCacheListGroup=_shaderCacheListGroup;
+@property(nonatomic) __weak NSPopUpButton *shaderCacheList; // @synthesize shaderCacheList=_shaderCacheList;
+@property(nonatomic) __weak NSButton *collectButton; // @synthesize collectButton=_collectButton;
+@property(nonatomic) __weak NSTextField *messageField; // @synthesize messageField=_messageField;
+@property(nonatomic) __weak NSView *shaderCompilationView; // @synthesize shaderCompilationView=_shaderCompilationView;
 - (void).cxx_destruct;
 - (void)debuggingAdditionDidUpdateCollectedQueryResults:(id)arg1;
 - (id)frameIntervalColors;

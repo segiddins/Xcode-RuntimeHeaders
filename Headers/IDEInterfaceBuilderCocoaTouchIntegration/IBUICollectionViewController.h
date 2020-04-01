@@ -7,34 +7,36 @@
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBUIViewController.h>
 
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBDocumentArchiving-Protocol.h>
-#import <IDEInterfaceBuilderCocoaTouchIntegration/NSCoding-Protocol.h>
 
 @class IBUICollectionView, NSString;
 
-@interface IBUICollectionViewController : IBUIViewController <IBDocumentArchiving, NSCoding>
+@interface IBUICollectionViewController : IBUIViewController <IBDocumentArchiving>
 {
-    BOOL clearsSelectionOnViewWillAppear;
+    BOOL _clearsSelectionOnViewWillAppear;
 }
 
++ (void)registerMarshallingRecordHandlers;
 + (id)ibViewPasteboardType;
 + (Class)ibViewClass;
 + (id)ibInstantiateForRole:(long long)arg1 withTargetRuntime:(id)arg2 documentClass:(Class)arg3 assetIdentifier:(id)arg4;
-@property BOOL clearsSelectionOnViewWillAppear; // @synthesize clearsSelectionOnViewWillAppear;
+@property BOOL clearsSelectionOnViewWillAppear; // @synthesize clearsSelectionOnViewWillAppear=_clearsSelectionOnViewWillAppear;
+- (id)localExtraMarshalledAttributesKeyPaths;
+- (BOOL)useDefaultLayout;
 @property(retain) IBUICollectionView *collectionView;
-- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
-- (void)archiveWithDocumentArchiver:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)ibCanBeEmbeddedInSplitViewControllerController;
 - (BOOL)ibCanBeEmbeddedInNavigationController;
 - (BOOL)ibCanBeEmbeddedInTabBarController;
 - (void)ibEffectiveSimulatedMetricsDidChange;
-- (void)ibWarnings:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
 - (id)ibPasteboardTypes;
 - (id)ibImageForOwnedScene;
 - (id)ibExplanatoryTextForEditor;
 - (void)ibCustomizeForInsertionIntoIBUIViewController:(id)arg1 withObjects:(id)arg2 fromLibraryOrDifferentTargetRuntime:(BOOL)arg3 andInsertionContext:(id)arg4;
 - (void)ibEstablishViewOutletsInDocument:(id)arg1;
+- (id)ibLocalAttributeKeyPaths;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

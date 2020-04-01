@@ -20,9 +20,13 @@
     NSString *_appBuild;
     NSString *_bundleId;
     NSNumber *_numCrashes;
+    NSString *_rootVersion;
+    NSString *_rootBuild;
 }
 
 + (id)crashPointListForSession:(id)arg1 appIdentifier:(id)arg2 options:(id)arg3 error:(id *)arg4;
+@property(retain) NSString *rootBuild; // @synthesize rootBuild=_rootBuild;
+@property(retain) NSString *rootVersion; // @synthesize rootVersion=_rootVersion;
 @property(retain) NSNumber *numCrashes; // @synthesize numCrashes=_numCrashes;
 @property(retain) NSString *bundleId; // @synthesize bundleId=_bundleId;
 @property(retain) NSString *appBuild; // @synthesize appBuild=_appBuild;

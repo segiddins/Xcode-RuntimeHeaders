@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableDictionary;
+@class NSMutableDictionary, NSString;
 @protocol DYFunctionTracerDelegate;
 
 @interface DYFunctionTracer : NSObject
@@ -30,10 +30,12 @@
     unsigned long long _currentReceiverID;
     BOOL _compilable;
     BOOL _compactEffective;
+    NSString *_nilString;
 }
 
 + (void)initialize;
 @property(readonly, retain, nonatomic) NSMutableDictionary *urlIndices; // @synthesize urlIndices;
+@property(readonly, nonatomic) NSString *nilString; // @synthesize nilString=_nilString;
 @property(nonatomic) __weak id <DYFunctionTracerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) BOOL emitErrors; // @synthesize emitErrors=_emitErrors;
 @property(nonatomic) BOOL emitVariables; // @synthesize emitVariables=_emitVariables;

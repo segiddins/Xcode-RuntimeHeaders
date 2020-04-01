@@ -6,6 +6,8 @@
 
 #import <DVTFoundation/DVTDocumentLocation.h>
 
+@class NSURL;
+
 @interface DVTComparisonDocumentLocation : DVTDocumentLocation
 {
     DVTDocumentLocation *_primaryDocumentLocation;
@@ -19,7 +21,6 @@
 - (void).cxx_destruct;
 - (long long)compare:(id)arg1;
 - (id)description;
-- (BOOL)isEqualToDocumentLocationDisregardingDocumentURL:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqualDisregardingTimestamp:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
@@ -27,7 +28,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)timestamp;
-- (id)documentURL;
+@property(readonly) NSURL *documentURL;
 - (id)initWithDocumentURL:(id)arg1 timestamp:(id)arg2;
 - (id)initWithPrimaryDocumentLocation:(id)arg1 secondaryDocumentLocation:(id)arg2 ancestorDocumentLocation:(id)arg3;
 

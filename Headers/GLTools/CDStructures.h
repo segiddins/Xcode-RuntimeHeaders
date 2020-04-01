@@ -1005,9 +1005,12 @@ struct __GLIFunctionDispatchRec {
     CDUnknownFunctionPointerType _field972;
     CDUnknownFunctionPointerType _field973;
     CDUnknownFunctionPointerType _field974;
+    CDUnknownFunctionPointerType _field975;
 };
 
-struct __hash_node<std::__1::__hash_value_type<unsigned long long, std::__1::unique_ptr<GPUTools::Playback::GL::ContextInfo, std::__1::default_delete<GPUTools::Playback::GL::ContextInfo>>>, void *>;
+struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, std::__1::unique_ptr<GPUTools::Playback::GL::ContextInfo, std::__1::default_delete<GPUTools::Playback::GL::ContextInfo>>>, void *>*> {
+    struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, std::__1::unique_ptr<GPUTools::Playback::GL::ContextInfo, std::__1::default_delete<GPUTools::Playback::GL::ContextInfo>>>, void *>*> *__next_;
+};
 
 struct deque<std::__1::unique_ptr<GPUTools::VMBuffer, std::__1::default_delete<GPUTools::VMBuffer>>, std::__1::allocator<std::__1::unique_ptr<GPUTools::VMBuffer, std::__1::default_delete<GPUTools::VMBuffer>>>> {
     struct __split_buffer<std::__1::unique_ptr<GPUTools::VMBuffer, std::__1::default_delete<GPUTools::VMBuffer>>*, std::__1::allocator<std::__1::unique_ptr<GPUTools::VMBuffer, std::__1::default_delete<GPUTools::VMBuffer>>*>> {
@@ -1038,30 +1041,28 @@ struct stack<std::__1::unique_ptr<GPUTools::VMBuffer, std::__1::default_delete<G
 
 struct unique_ptr<GPUTools::VMBuffer, std::__1::default_delete<GPUTools::VMBuffer>>;
 
-struct unique_ptr<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, std::__1::unique_ptr<GPUTools::Playback::GL::ContextInfo, std::__1::default_delete<GPUTools::Playback::GL::ContextInfo>>>, void *>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, std::__1::unique_ptr<GPUTools::Playback::GL::ContextInfo, std::__1::default_delete<GPUTools::Playback::GL::ContextInfo>>>, void *>*>>> {
-    struct __compressed_pair<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, std::__1::unique_ptr<GPUTools::Playback::GL::ContextInfo, std::__1::default_delete<GPUTools::Playback::GL::ContextInfo>>>, void *>**, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, std::__1::unique_ptr<GPUTools::Playback::GL::ContextInfo, std::__1::default_delete<GPUTools::Playback::GL::ContextInfo>>>, void *>*>>> {
-        struct __hash_node<std::__1::__hash_value_type<unsigned long long, std::__1::unique_ptr<GPUTools::Playback::GL::ContextInfo, std::__1::default_delete<GPUTools::Playback::GL::ContextInfo>>>, void *> **__first_;
-        struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, std::__1::unique_ptr<GPUTools::Playback::GL::ContextInfo, std::__1::default_delete<GPUTools::Playback::GL::ContextInfo>>>, void *>*>> {
-            struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, std::__1::unique_ptr<GPUTools::Playback::GL::ContextInfo, std::__1::default_delete<GPUTools::Playback::GL::ContextInfo>>>, void *>*>> {
-                unsigned long long __first_;
+struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, std::__1::unique_ptr<GPUTools::Playback::GL::ContextInfo, std::__1::default_delete<GPUTools::Playback::GL::ContextInfo>>>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, std::__1::unique_ptr<GPUTools::Playback::GL::ContextInfo, std::__1::default_delete<GPUTools::Playback::GL::ContextInfo>>>, void *>*>*>>> {
+    struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, std::__1::unique_ptr<GPUTools::Playback::GL::ContextInfo, std::__1::default_delete<GPUTools::Playback::GL::ContextInfo>>>, void *>*>**, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, std::__1::unique_ptr<GPUTools::Playback::GL::ContextInfo, std::__1::default_delete<GPUTools::Playback::GL::ContextInfo>>>, void *>*>*>>> {
+        struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, std::__1::unique_ptr<GPUTools::Playback::GL::ContextInfo, std::__1::default_delete<GPUTools::Playback::GL::ContextInfo>>>, void *>*> **__value_;
+        struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, std::__1::unique_ptr<GPUTools::Playback::GL::ContextInfo, std::__1::default_delete<GPUTools::Playback::GL::ContextInfo>>>, void *>*>*>> {
+            struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, std::__1::unique_ptr<GPUTools::Playback::GL::ContextInfo, std::__1::default_delete<GPUTools::Playback::GL::ContextInfo>>>, void *>*>*>> {
+                unsigned long long __value_;
             } __data_;
-        } __second_;
+        } __value_;
     } __ptr_;
 };
 
 struct unordered_map<unsigned long long, std::__1::unique_ptr<GPUTools::Playback::GL::ContextInfo, std::__1::default_delete<GPUTools::Playback::GL::ContextInfo>>, std::__1::hash<unsigned long long>, std::__1::equal_to<unsigned long long>, std::__1::allocator<std::__1::pair<const unsigned long long, std::__1::unique_ptr<GPUTools::Playback::GL::ContextInfo, std::__1::default_delete<GPUTools::Playback::GL::ContextInfo>>>>> {
     struct __hash_table<std::__1::__hash_value_type<unsigned long long, std::__1::unique_ptr<GPUTools::Playback::GL::ContextInfo, std::__1::default_delete<GPUTools::Playback::GL::ContextInfo>>>, std::__1::__unordered_map_hasher<unsigned long long, std::__1::__hash_value_type<unsigned long long, std::__1::unique_ptr<GPUTools::Playback::GL::ContextInfo, std::__1::default_delete<GPUTools::Playback::GL::ContextInfo>>>, std::__1::hash<unsigned long long>, true>, std::__1::__unordered_map_equal<unsigned long long, std::__1::__hash_value_type<unsigned long long, std::__1::unique_ptr<GPUTools::Playback::GL::ContextInfo, std::__1::default_delete<GPUTools::Playback::GL::ContextInfo>>>, std::__1::equal_to<unsigned long long>, true>, std::__1::allocator<std::__1::__hash_value_type<unsigned long long, std::__1::unique_ptr<GPUTools::Playback::GL::ContextInfo, std::__1::default_delete<GPUTools::Playback::GL::ContextInfo>>>>> {
-        struct unique_ptr<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, std::__1::unique_ptr<GPUTools::Playback::GL::ContextInfo, std::__1::default_delete<GPUTools::Playback::GL::ContextInfo>>>, void *>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, std::__1::unique_ptr<GPUTools::Playback::GL::ContextInfo, std::__1::default_delete<GPUTools::Playback::GL::ContextInfo>>>, void *>*>>> __bucket_list_;
+        struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, std::__1::unique_ptr<GPUTools::Playback::GL::ContextInfo, std::__1::default_delete<GPUTools::Playback::GL::ContextInfo>>>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, std::__1::unique_ptr<GPUTools::Playback::GL::ContextInfo, std::__1::default_delete<GPUTools::Playback::GL::ContextInfo>>>, void *>*>*>>> __bucket_list_;
         struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, std::__1::unique_ptr<GPUTools::Playback::GL::ContextInfo, std::__1::default_delete<GPUTools::Playback::GL::ContextInfo>>>, void *>*>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, std::__1::unique_ptr<GPUTools::Playback::GL::ContextInfo, std::__1::default_delete<GPUTools::Playback::GL::ContextInfo>>>, void *>>> {
-            struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, std::__1::unique_ptr<GPUTools::Playback::GL::ContextInfo, std::__1::default_delete<GPUTools::Playback::GL::ContextInfo>>>, void *>*> {
-                struct __hash_node<std::__1::__hash_value_type<unsigned long long, std::__1::unique_ptr<GPUTools::Playback::GL::ContextInfo, std::__1::default_delete<GPUTools::Playback::GL::ContextInfo>>>, void *> *__next_;
-            } __first_;
+            struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, std::__1::unique_ptr<GPUTools::Playback::GL::ContextInfo, std::__1::default_delete<GPUTools::Playback::GL::ContextInfo>>>, void *>*> __value_;
         } __p1_;
         struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<unsigned long long, std::__1::__hash_value_type<unsigned long long, std::__1::unique_ptr<GPUTools::Playback::GL::ContextInfo, std::__1::default_delete<GPUTools::Playback::GL::ContextInfo>>>, std::__1::hash<unsigned long long>, true>> {
-            unsigned long long __first_;
+            unsigned long long __value_;
         } __p2_;
         struct __compressed_pair<float, std::__1::__unordered_map_equal<unsigned long long, std::__1::__hash_value_type<unsigned long long, std::__1::unique_ptr<GPUTools::Playback::GL::ContextInfo, std::__1::default_delete<GPUTools::Playback::GL::ContextInfo>>>, std::__1::equal_to<unsigned long long>, true>> {
-            float __first_;
+            float __value_;
         } __p3_;
     } __table_;
 };

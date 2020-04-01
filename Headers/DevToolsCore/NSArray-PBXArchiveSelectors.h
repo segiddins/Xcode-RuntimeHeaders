@@ -8,5 +8,6 @@
 
 @interface NSArray (PBXArchiveSelectors)
 - (SEL)selectorForArchiveMask:(int)arg1;
+- (void)_appendPListDescriptionToUTF8Data:(id)arg1 withIndentLevel:(unsigned long long)arg2;
 @end
 

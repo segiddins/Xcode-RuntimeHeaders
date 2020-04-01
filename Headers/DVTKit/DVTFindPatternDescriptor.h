@@ -8,22 +8,22 @@
 
 #import <DVTKit/DVTTextlikeFindDescriptor-Protocol.h>
 
-@class NSAttributedString, NSString;
+@class DVTFindPatternComponents, NSString;
 
 @interface DVTFindPatternDescriptor : DVTFindRegularExpressionDescriptor <DVTTextlikeFindDescriptor>
 {
-    NSAttributedString *_findAttributedString;
-    int _matchStyle;
+    unsigned long long _matchStyle;
+    DVTFindPatternComponents *_findPatternComponents;
 }
 
 + (id)keyPathsForValuesAffectingDisplayAttributedString;
-@property(readonly) NSAttributedString *findAttributedString; // @synthesize findAttributedString=_findAttributedString;
-@property(readonly) int matchStyle; // @synthesize matchStyle=_matchStyle;
+@property(readonly) DVTFindPatternComponents *findPatternComponents; // @synthesize findPatternComponents=_findPatternComponents;
+@property(readonly) unsigned long long matchStyle; // @synthesize matchStyle=_matchStyle;
 - (void).cxx_destruct;
 - (id)displayAttributedString;
 - (BOOL)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;
-- (id)initWithAttributedString:(id)arg1 ignoreCase:(BOOL)arg2 matchStyle:(int)arg3;
+- (id)initWithPatternComponents:(id)arg1 ignoreCase:(BOOL)arg2 matchStyle:(unsigned long long)arg3;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

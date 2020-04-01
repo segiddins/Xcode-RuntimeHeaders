@@ -6,12 +6,12 @@
 
 #import <objc/NSObject.h>
 
-#import <DVTInstrumentsFoundation/NSCoding-Protocol.h>
 #import <DVTInstrumentsFoundation/NSCopying-Protocol.h>
+#import <DVTInstrumentsFoundation/NSSecureCoding-Protocol.h>
 
 @class NSString;
 
-@interface XRVMRegion : NSObject <NSCoding, NSCopying>
+@interface XRVMRegion : NSObject <NSSecureCoding, NSCopying>
 {
     unsigned long long start;
     unsigned long long length;
@@ -32,6 +32,7 @@
 }
 
 + (void)initialize;
++ (BOOL)supportsSecureCoding;
 + (unsigned long long)regionIndexInArray:(id)arg1 forAddress:(unsigned long long)arg2;
 - (void).cxx_destruct;
 - (id)displayPath;

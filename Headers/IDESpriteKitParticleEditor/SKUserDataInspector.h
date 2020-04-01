@@ -66,7 +66,6 @@
 - (id)userDataDictionaryFromArray:(id)arg1;
 - (id)userDataArrayFromDictionary:(id)arg1;
 - (void)setContent:(id)arg1;
-- (void)didSetInspectedObjects:(id)arg1;
 - (void)loadView;
 - (void)setupControlBarAfterLoading;
 - (void)primitiveInvalidate;

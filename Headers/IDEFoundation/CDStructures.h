@@ -10,19 +10,11 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 
 #pragma mark Named Structures
 
-struct CGPoint {
-    double _field1;
-    double _field2;
-};
-
-struct CGRect {
-    struct CGPoint _field1;
-    struct CGSize _field2;
-};
-
-struct CGSize {
-    double _field1;
-    double _field2;
+struct IDEOpenQuicklyQueryCandidate {
+    unsigned int _field1;
+    unsigned long long _field2;
+    unsigned char _field3;
+    unsigned char _field4[0];
 };
 
 struct IDESourceKitUIDKeys {
@@ -40,17 +32,21 @@ struct IDESourceKitUIDKeys {
     struct _sourcekit_uid_s *USR;
     struct _sourcekit_uid_s *Line;
     struct _sourcekit_uid_s *Column;
+    struct _sourcekit_uid_s *EndLine;
+    struct _sourcekit_uid_s *EndColumn;
     struct _sourcekit_uid_s *NameOffset;
     struct _sourcekit_uid_s *NameLength;
     struct _sourcekit_uid_s *SourceFile;
     struct _sourcekit_uid_s *SourceText;
     struct _sourcekit_uid_s *Notification;
     struct _sourcekit_uid_s *Callback;
+    struct _sourcekit_uid_s *Crashed;
     struct _sourcekit_uid_s *Keyword;
     struct _sourcekit_uid_s *EnableSyntaxMap;
     struct _sourcekit_uid_s *EnableDiagnostics;
     struct _sourcekit_uid_s *SyntacticOnly;
     struct _sourcekit_uid_s *ReceiverUSR;
+    struct _sourcekit_uid_s *Invocation;
     struct _sourcekit_uid_s *IsDynamic;
     struct _sourcekit_uid_s *IsTestCandidate;
     struct _sourcekit_uid_s *Description;
@@ -73,7 +69,10 @@ struct IDESourceKitUIDKeys {
     struct _sourcekit_uid_s *FilePath;
     struct _sourcekit_uid_s *FilePaths;
     struct _sourcekit_uid_s *PrevFilePath;
+    struct _sourcekit_uid_s *MainFilePath;
     struct _sourcekit_uid_s *FileURLs;
+    struct _sourcekit_uid_s *PlatformIdentifier;
+    struct _sourcekit_uid_s *SupportedPlatforms;
     struct _sourcekit_uid_s *ModuleInterfaceName;
     struct _sourcekit_uid_s *Hash;
     struct _sourcekit_uid_s *Related;
@@ -112,6 +111,11 @@ struct IDESourceKitUIDKeys {
     struct _sourcekit_uid_s *Unpopular;
     struct _sourcekit_uid_s *Parent;
     struct _sourcekit_uid_s *IncludedFiles;
+    struct _sourcekit_uid_s *RenameFile;
+    struct _sourcekit_uid_s *Category;
+    struct _sourcekit_uid_s *ArgIndex;
+    struct _sourcekit_uid_s *Simplified;
+    struct _sourcekit_uid_s *CrossLanguage;
     struct _sourcekit_uid_s *Priority;
     struct _sourcekit_uid_s *IsDeprecated;
     struct _sourcekit_uid_s *IsUnavailable;
@@ -126,8 +130,25 @@ struct IDESourceKitUIDKeys {
     struct _sourcekit_uid_s *LogLevel;
     struct _sourcekit_uid_s *Toolchains;
     struct _sourcekit_uid_s *IsDefault;
+    struct _sourcekit_uid_s *DisableClientResponseHandling;
     struct _sourcekit_uid_s *ModuleGroups;
     struct _sourcekit_uid_s *GroupName;
+    struct _sourcekit_uid_s *Edits;
+    struct _sourcekit_uid_s *NewName;
+    struct _sourcekit_uid_s *OldName;
+    struct _sourcekit_uid_s *PercentCompleted;
+    struct _sourcekit_uid_s *Error;
+    struct _sourcekit_uid_s *IsFinished;
+    struct _sourcekit_uid_s *FindFilesToken;
+    struct _sourcekit_uid_s *SearchString;
+    struct _sourcekit_uid_s *IsSupported;
+    struct _sourcekit_uid_s *URLs;
+    struct _sourcekit_uid_s *CompileID;
+    struct _sourcekit_uid_s *ToolID;
+    struct _sourcekit_uid_s *Title;
+    struct _sourcekit_uid_s *ConsoleOutput;
+    struct _sourcekit_uid_s *Value;
+    struct _sourcekit_uid_s *AffectsAllCompilationsForTool;
     struct _sourcekit_uid_s *Symbols;
     struct _sourcekit_uid_s *Symbol;
     struct _sourcekit_uid_s *SymbolOccurrence;
@@ -141,14 +162,19 @@ struct IDESourceKitUIDKeys {
     struct _sourcekit_uid_s *PchHeaderFolder;
     struct _sourcekit_uid_s *BuildConfig;
     struct _sourcekit_uid_s *DestinationTargetIdentifier;
-    struct _sourcekit_uid_s *UseBolt;
+    struct _sourcekit_uid_s *DestinationSDKVariant;
+    struct _sourcekit_uid_s *IndexDatabasePath;
+    struct _sourcekit_uid_s *ToolchainInvocationLoggingPath;
     struct _sourcekit_uid_s *EnableFullStoreVisibility;
+    struct _sourcekit_uid_s *DumpIndexables;
+    struct _sourcekit_uid_s *InitialDBSize;
     struct _sourcekit_uid_s *ThrottleFactor;
-    struct _sourcekit_uid_s *WillRegisterMoreFilesFlag;
     struct _sourcekit_uid_s *IndexerFilePath;
     struct _sourcekit_uid_s *IndexableInfo;
     struct _sourcekit_uid_s *IndexableList;
     struct _sourcekit_uid_s *IndexerToken;
+    struct _sourcekit_uid_s *BuildOperationToken;
+    struct _sourcekit_uid_s *RefactoringActionToken;
     struct _sourcekit_uid_s *DatabaseFile;
     struct _sourcekit_uid_s *IndexDataDump;
     struct _sourcekit_uid_s *QueryName;
@@ -164,8 +190,8 @@ struct IDESourceKitUIDKeys {
     struct _sourcekit_uid_s *Url;
     struct _sourcekit_uid_s *StartLine;
     struct _sourcekit_uid_s *StartCol;
-    struct _sourcekit_uid_s *EndLine;
-    struct _sourcekit_uid_s *EndCol;
+    struct _sourcekit_uid_s *DocLocEndLine;
+    struct _sourcekit_uid_s *DocLocEndCol;
     struct _sourcekit_uid_s *RangeLoc;
     struct _sourcekit_uid_s *RangeCount;
     struct _sourcekit_uid_s *TimeStamp;
@@ -183,7 +209,6 @@ struct IDESourceKitUIDKeys {
     struct _sourcekit_uid_s *Callees;
     struct _sourcekit_uid_s *SymbolName;
     struct _sourcekit_uid_s *DisplayName;
-    struct _sourcekit_uid_s *QualifiedDisplayName;
     struct _sourcekit_uid_s *SymbolKind;
     struct _sourcekit_uid_s *SymbolKinds;
     struct _sourcekit_uid_s *Language;
@@ -202,6 +227,9 @@ struct IDESourceKitUIDKeys {
     struct _sourcekit_uid_s *IndexableIdentifier;
     struct _sourcekit_uid_s *IndexableIsUnitTest;
     struct _sourcekit_uid_s *IndexableSettings;
+    struct _sourcekit_uid_s *PreferredTargets;
+    struct _sourcekit_uid_s *PriorityTargets;
+    struct _sourcekit_uid_s *LinkedIndexableIds;
     struct _sourcekit_uid_s *CallbackKind;
     struct _sourcekit_uid_s *OnWillIndexWorkspaceDeferredReindexing;
     struct _sourcekit_uid_s *OnIsIndexingWorkspaceUserInfo;
@@ -213,19 +241,22 @@ struct IDESourceKitUIDKeys {
 
 struct IDESourceKitUIDRequests {
     struct _sourcekit_uid_s *TestMe;
+    struct _sourcekit_uid_s *TestEcho;
+    struct _sourcekit_uid_s *TestingInvalidateFilePath;
     struct _sourcekit_uid_s *SetLoggingSettings;
+    struct _sourcekit_uid_s *SetEnableCompileNotifications;
     struct _sourcekit_uid_s *DemangleNames;
     struct _sourcekit_uid_s *MangleSimpleClasses;
     struct _sourcekit_uid_s *IndexOpenOrCreate;
+    struct _sourcekit_uid_s *IndexStart;
     struct _sourcekit_uid_s *IndexClose;
-    struct _sourcekit_uid_s *IndexRegisterFile;
-    struct _sourcekit_uid_s *IndexUnregisterFile;
     struct _sourcekit_uid_s *IndexRegisterObject;
     struct _sourcekit_uid_s *IndexUnregisterObject;
+    struct _sourcekit_uid_s *IndexRegisterPreferredTargets;
     struct _sourcekit_uid_s *IndexSetThrottleFactor;
-    struct _sourcekit_uid_s *IndexWillRegisterMoreFiles;
     struct _sourcekit_uid_s *IndexIsQuiescent;
-    struct _sourcekit_uid_s *IndexDumpIndexData;
+    struct _sourcekit_uid_s *IndexSuspendIndexing;
+    struct _sourcekit_uid_s *IndexResumeIndexing;
     struct _sourcekit_uid_s *CollectModuleGroups;
     struct _sourcekit_uid_s *RegisterToolchains;
     struct _sourcekit_uid_s *UnregisterToolchains;
@@ -237,9 +268,9 @@ struct IDESourceKitUIDRequests {
     struct _sourcekit_uid_s *IndexFileContains;
     struct _sourcekit_uid_s *IndexTestMethods;
     struct _sourcekit_uid_s *MainFilesForFile;
-    struct _sourcekit_uid_s *AnyBuildSettingsForFile;
     struct _sourcekit_uid_s *WorkspaceCallersForSymbol;
     struct _sourcekit_uid_s *WorkspaceSymbolDeclarations;
+    struct _sourcekit_uid_s *WorkspaceSymbolQualifiedDisplayName;
     struct _sourcekit_uid_s *WorkspaceSymbolDefinitions;
     struct _sourcekit_uid_s *WorkspaceSymbolOccurrences;
     struct _sourcekit_uid_s *WorkspaceSymbolReferences;
@@ -252,7 +283,6 @@ struct IDESourceKitUIDRequests {
     struct _sourcekit_uid_s *WorkspaceSymbolAllSuperclasses;
     struct _sourcekit_uid_s *WorkspaceSymbolAllSubclasses;
     struct _sourcekit_uid_s *WorkspaceSymbolImplementingClassesForProtocol;
-    struct _sourcekit_uid_s *WorkspaceSymbolAllOccurrencesOfMembers;
     struct _sourcekit_uid_s *WorkspaceSymbolReferencingFiles;
     struct _sourcekit_uid_s *WorkspaceSymbolModelOccurrence;
     struct _sourcekit_uid_s *WorkspaceSymbolContainer;
@@ -271,6 +301,7 @@ struct IDESourceKitUIDRequests {
     struct _sourcekit_uid_s *WorkspaceFilesIncludingFile;
     struct _sourcekit_uid_s *WorkspaceFilesIncludedByFile;
     struct _sourcekit_uid_s *WorkspaceMembersMatchingKinds;
+    struct _sourcekit_uid_s *WorkspaceAllSymbolNames;
     struct _sourcekit_uid_s *DocumentSymbolsMatchingName;
     struct _sourcekit_uid_s *DocumentSymbolOccurrences;
     struct _sourcekit_uid_s *DocumentReferencesToSymbol;
@@ -279,21 +310,36 @@ struct IDESourceKitUIDRequests {
     struct _sourcekit_uid_s *DocumentTypeSymbolForSymbol;
     struct _sourcekit_uid_s *DocumentImportedFiles;
     struct _sourcekit_uid_s *DocumentGeniusCallersCallees;
-    struct _sourcekit_uid_s *WorkspaceGeniusReferencingTestClasses;
+    struct _sourcekit_uid_s *RefactoringFindRenameRangesAtLocation;
+    struct _sourcekit_uid_s *RefactoringRenameAtLocation;
+    struct _sourcekit_uid_s *RefactoringLocalRefactoring;
+    struct _sourcekit_uid_s *RefactoringActionCancel;
+    struct _sourcekit_uid_s *RefactoringActionClose;
+    struct _sourcekit_uid_s *RefactoringActionStart;
+    struct _sourcekit_uid_s *RefactoringAvailableRefactorings;
+    struct _sourcekit_uid_s *FilesContainingWordUpdate;
+    struct _sourcekit_uid_s *TestFilesContainingWord;
     struct _sourcekit_uid_s *IndexPrebuildCompleted;
     struct _sourcekit_uid_s *IndexNotifyIndexableDidAddFile;
     struct _sourcekit_uid_s *IndexNotifyIndexableWillRemoveFile;
     struct _sourcekit_uid_s *IndexNotifyIndexableDidRenameFile;
+    struct _sourcekit_uid_s *IndexNotifyIndexableChangedLinkedIndexables;
     struct _sourcekit_uid_s *IndexBuildSettingsChanged;
     struct _sourcekit_uid_s *IndexBuildOperationWillStart;
     struct _sourcekit_uid_s *IndexBuildOperationDidStop;
+    struct _sourcekit_uid_s *IndexNotifyActiveRunDestinationDidChange;
+    struct _sourcekit_uid_s *IndexEditorWillSaveFile;
+    struct _sourcekit_uid_s *IndexEditorDidSaveFile;
+    struct _sourcekit_uid_s *IndexRegisterFileForBuildSettingsNotifications;
+    struct _sourcekit_uid_s *IndexUnregisterFileForBuildSettingsNotifications;
 };
 
 struct IDESourceKitUIDValues {
     struct _sourcekit_uid_s *NoteLogOutput;
     struct _sourcekit_uid_s *NoteToolchainCompilerCrashed;
+    struct _sourcekit_uid_s *NoteIndexCompileWillStart;
+    struct _sourcekit_uid_s *NoteIndexCompileDidFinish;
     struct _sourcekit_uid_s *IndexCallbackInitiatePrebuildKind;
-    struct _sourcekit_uid_s *IndexCallbackBeginTextIndexingKind;
     struct _sourcekit_uid_s *IndexCallbackOnDidChangeKind;
     struct _sourcekit_uid_s *IndexCallbackOnDidChangeStateKind;
     struct _sourcekit_uid_s *IndexCallbackOnWillIndexWorkspaceKind;
@@ -307,12 +353,19 @@ struct IDESourceKitUIDValues {
     struct _sourcekit_uid_s *IndexWillFastScanNotificationKind;
     struct _sourcekit_uid_s *IndexIsFastScanningNotificationKind;
     struct _sourcekit_uid_s *IndexDidFastScanNotificationKind;
-    struct _sourcekit_uid_s *IndexCallbackCreateWorkspaceArenaFolder;
+    struct _sourcekit_uid_s *IndexUnitTestsDidChangeNotificationKind;
+    struct _sourcekit_uid_s *BuildSettingsForFileNotificationKind;
+    struct _sourcekit_uid_s *RefactoringStateChangedNotificationKind;
+    struct _sourcekit_uid_s *RefactoringProgressUpdatedNotificationKind;
+    struct _sourcekit_uid_s *RefactoringRenameRangesFoundNotificationKind;
+    struct _sourcekit_uid_s *RefactoringUnhandledURLsNotificationKind;
     struct _sourcekit_uid_s *IndexCallbackWriteHeaderMap;
     struct _sourcekit_uid_s *IndexCallbackGatherProductHeaders;
     struct _sourcekit_uid_s *IndexCallbackSettingsForIndexable;
+    struct _sourcekit_uid_s *IndexCallbackFilesContainingWord;
     struct _sourcekit_uid_s *IndexCallback;
     struct _sourcekit_uid_s *IndexCallbackPostNotificationKind;
+    struct _sourcekit_uid_s *RefactoringCallback;
     struct _sourcekit_uid_s *CodeCompletionContextObjCClass;
     struct _sourcekit_uid_s *CodeCompletionContextObjCCategory;
     struct _sourcekit_uid_s *CodeCompletionContextObjCProtocol;
@@ -352,9 +405,40 @@ struct IDESourceKitUIDValues {
     struct _sourcekit_uid_s *SymbolKindClassTemplate;
     struct _sourcekit_uid_s *SymbolKindMacro;
     struct _sourcekit_uid_s *SymbolKindNamespace;
+    struct _sourcekit_uid_s *RefactoringActionStateRequested;
+    struct _sourcekit_uid_s *RefactoringActionStateRunning;
+    struct _sourcekit_uid_s *RefactoringActionStateSucceeded;
+    struct _sourcekit_uid_s *RefactoringActionStateCancelled;
+    struct _sourcekit_uid_s *RefactoringActionStateFailed;
+    struct _sourcekit_uid_s *EditKindSourcecode;
+    struct _sourcekit_uid_s *EditKindInactiveSourceCode;
+    struct _sourcekit_uid_s *EditKindSelectorExpr;
+    struct _sourcekit_uid_s *EditKindComment;
+    struct _sourcekit_uid_s *EditKindFilename;
+    struct _sourcekit_uid_s *EditKindStringLiteral;
+    struct _sourcekit_uid_s *RenameRangeKindBase;
+    struct _sourcekit_uid_s *RenameRangeKindKeywordBase;
+    struct _sourcekit_uid_s *RenameRangeKindParam;
+    struct _sourcekit_uid_s *RenameRangeKindParamAndWhitespace;
+    struct _sourcekit_uid_s *RenameRangeKindNoncollapsibleParam;
+    struct _sourcekit_uid_s *RenameRangeKindDeclArgLabel;
+    struct _sourcekit_uid_s *RenameRangeKindCallArgLabel;
+    struct _sourcekit_uid_s *RenameRangeKindCallArgColon;
+    struct _sourcekit_uid_s *RenameRangeKindCallArgCombined;
+    struct _sourcekit_uid_s *RenameRangeKindSelectorArgLabel;
+    struct _sourcekit_uid_s *RenameRangeKindObjCSetter;
+    struct _sourcekit_uid_s *RenameRangeKindObjCSelectorPiece;
+    struct _sourcekit_uid_s *RenameRangeKindObjCUnderscoredIVar;
+    struct _sourcekit_uid_s *AvailableRefactoringRename;
+    struct _sourcekit_uid_s *AvailableRefactoringLocalRename;
+    struct _sourcekit_uid_s *AvailableRefactoringLocal;
 };
 
 struct NSDictionary {
+    Class _field1;
+};
+
+struct NSMutableDictionary {
     Class _field1;
 };
 
@@ -385,126 +469,126 @@ struct _NSRange {
     unsigned long long length;
 };
 
-struct __hash_node<std::__1::__hash_value_type<__NStatSource *, SourceInfo>, void *>;
+struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<__NStatSource *, (anonymous namespace)::SourceInfo>, void *>*> {
+    struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<__NStatSource *, (anonymous namespace)::SourceInfo>, void *>*> *__next_;
+};
 
-struct __hash_node<std::__1::__hash_value_type<_sourcekit_uid_s *, DVTSourceCodeSymbolKind *>, void *>;
+struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<_sourcekit_uid_s *, DVTSourceCodeSymbolKind *>, void *>*> {
+    struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<_sourcekit_uid_s *, DVTSourceCodeSymbolKind *>, void *>*> *__next_;
+};
 
-struct __hash_node<std::__1::__hash_value_type<int, ProcessInfo>, void *>;
+struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<int, (anonymous namespace)::ProcessInfo>, void *>*> {
+    struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<int, (anonymous namespace)::ProcessInfo>, void *>*> *__next_;
+};
+
+struct __sFILE {
+    char *_field1;
+    int _field2;
+    int _field3;
+    short _field4;
+    short _field5;
+    struct __sbuf _field6;
+    int _field7;
+    void *_field8;
+    CDUnknownFunctionPointerType _field9;
+    CDUnknownFunctionPointerType _field10;
+    CDUnknownFunctionPointerType _field11;
+    CDUnknownFunctionPointerType _field12;
+    struct __sbuf _field13;
+    struct __sFILEX *_field14;
+    int _field15;
+    unsigned char _field16[3];
+    unsigned char _field17[1];
+    struct __sbuf _field18;
+    int _field19;
+    long long _field20;
+};
+
+struct __sbuf {
+    char *_field1;
+    int _field2;
+};
 
 struct _sourcekit_uid_s;
 
-struct sockaddr_un {
-    unsigned char _field1;
-    unsigned char _field2;
-    char _field3[104];
+struct os_unfair_lock_s {
+    unsigned int _os_unfair_lock_opaque;
 };
 
-struct stat {
-    int _field1;
-    unsigned short _field2;
-    unsigned short _field3;
-    unsigned long long _field4;
-    unsigned int _field5;
-    unsigned int _field6;
-    int _field7;
-    struct timespec _field8;
-    struct timespec _field9;
-    struct timespec _field10;
-    struct timespec _field11;
-    long long _field12;
-    long long _field13;
-    int _field14;
-    unsigned int _field15;
-    unsigned int _field16;
-    int _field17;
-    long long _field18[2];
-};
-
-struct timespec {
-    long long _field1;
-    long long _field2;
-};
-
-struct unique_ptr<std::__1::__hash_node<std::__1::__hash_value_type<__NStatSource *, SourceInfo>, void *>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<__NStatSource *, SourceInfo>, void *>*>>> {
-    struct __compressed_pair<std::__1::__hash_node<std::__1::__hash_value_type<__NStatSource *, SourceInfo>, void *>**, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<__NStatSource *, SourceInfo>, void *>*>>> {
-        struct __hash_node<std::__1::__hash_value_type<__NStatSource *, SourceInfo>, void *> **__first_;
-        struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<__NStatSource *, SourceInfo>, void *>*>> {
-            struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<__NStatSource *, SourceInfo>, void *>*>> {
-                unsigned long long __first_;
+struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<__NStatSource *, (anonymous namespace)::SourceInfo>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<__NStatSource *, (anonymous namespace)::SourceInfo>, void *>*>*>>> {
+    struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<__NStatSource *, (anonymous namespace)::SourceInfo>, void *>*>**, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<__NStatSource *, (anonymous namespace)::SourceInfo>, void *>*>*>>> {
+        struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<__NStatSource *, (anonymous namespace)::SourceInfo>, void *>*> **__value_;
+        struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<__NStatSource *, (anonymous namespace)::SourceInfo>, void *>*>*>> {
+            struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<__NStatSource *, (anonymous namespace)::SourceInfo>, void *>*>*>> {
+                unsigned long long __value_;
             } __data_;
-        } __second_;
+        } __value_;
     } __ptr_;
 };
 
-struct unique_ptr<std::__1::__hash_node<std::__1::__hash_value_type<_sourcekit_uid_s *, DVTSourceCodeSymbolKind *>, void *>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<_sourcekit_uid_s *, DVTSourceCodeSymbolKind *>, void *>*>>> {
-    struct __compressed_pair<std::__1::__hash_node<std::__1::__hash_value_type<_sourcekit_uid_s *, DVTSourceCodeSymbolKind *>, void *>**, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<_sourcekit_uid_s *, DVTSourceCodeSymbolKind *>, void *>*>>> {
-        struct __hash_node<std::__1::__hash_value_type<_sourcekit_uid_s *, DVTSourceCodeSymbolKind *>, void *> **__first_;
-        struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<_sourcekit_uid_s *, DVTSourceCodeSymbolKind *>, void *>*>> {
-            struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<_sourcekit_uid_s *, DVTSourceCodeSymbolKind *>, void *>*>> {
-                unsigned long long __first_;
+struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<_sourcekit_uid_s *, DVTSourceCodeSymbolKind *>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<_sourcekit_uid_s *, DVTSourceCodeSymbolKind *>, void *>*>*>>> {
+    struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<_sourcekit_uid_s *, DVTSourceCodeSymbolKind *>, void *>*>**, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<_sourcekit_uid_s *, DVTSourceCodeSymbolKind *>, void *>*>*>>> {
+        struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<_sourcekit_uid_s *, DVTSourceCodeSymbolKind *>, void *>*> **__value_;
+        struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<_sourcekit_uid_s *, DVTSourceCodeSymbolKind *>, void *>*>*>> {
+            struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<_sourcekit_uid_s *, DVTSourceCodeSymbolKind *>, void *>*>*>> {
+                unsigned long long __value_;
             } __data_;
-        } __second_;
+        } __value_;
     } __ptr_;
 };
 
-struct unique_ptr<std::__1::__hash_node<std::__1::__hash_value_type<int, ProcessInfo>, void *>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<int, ProcessInfo>, void *>*>>> {
-    struct __compressed_pair<std::__1::__hash_node<std::__1::__hash_value_type<int, ProcessInfo>, void *>**, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<int, ProcessInfo>, void *>*>>> {
-        struct __hash_node<std::__1::__hash_value_type<int, ProcessInfo>, void *> **__first_;
-        struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<int, ProcessInfo>, void *>*>> {
-            struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<int, ProcessInfo>, void *>*>> {
-                unsigned long long __first_;
+struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<int, (anonymous namespace)::ProcessInfo>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<int, (anonymous namespace)::ProcessInfo>, void *>*>*>>> {
+    struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<int, (anonymous namespace)::ProcessInfo>, void *>*>**, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<int, (anonymous namespace)::ProcessInfo>, void *>*>*>>> {
+        struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<int, (anonymous namespace)::ProcessInfo>, void *>*> **__value_;
+        struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<int, (anonymous namespace)::ProcessInfo>, void *>*>*>> {
+            struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<int, (anonymous namespace)::ProcessInfo>, void *>*>*>> {
+                unsigned long long __value_;
             } __data_;
-        } __second_;
+        } __value_;
     } __ptr_;
 };
 
-struct unordered_map<__NStatSource *, SourceInfo, std::__1::hash<__NStatSource *>, std::__1::equal_to<__NStatSource *>, std::__1::allocator<std::__1::pair<__NStatSource *const, SourceInfo>>> {
-    struct __hash_table<std::__1::__hash_value_type<__NStatSource *, SourceInfo>, std::__1::__unordered_map_hasher<__NStatSource *, std::__1::__hash_value_type<__NStatSource *, SourceInfo>, std::__1::hash<__NStatSource *>, true>, std::__1::__unordered_map_equal<__NStatSource *, std::__1::__hash_value_type<__NStatSource *, SourceInfo>, std::__1::equal_to<__NStatSource *>, true>, std::__1::allocator<std::__1::__hash_value_type<__NStatSource *, SourceInfo>>> {
-        struct unique_ptr<std::__1::__hash_node<std::__1::__hash_value_type<__NStatSource *, SourceInfo>, void *>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<__NStatSource *, SourceInfo>, void *>*>>> __bucket_list_;
-        struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<__NStatSource *, SourceInfo>, void *>*>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<__NStatSource *, SourceInfo>, void *>>> {
-            struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<__NStatSource *, SourceInfo>, void *>*> {
-                struct __hash_node<std::__1::__hash_value_type<__NStatSource *, SourceInfo>, void *> *__next_;
-            } __first_;
+struct unordered_map<__NStatSource *, (anonymous namespace)::SourceInfo, std::__1::hash<__NStatSource *>, std::__1::equal_to<__NStatSource *>, std::__1::allocator<std::__1::pair<__NStatSource *const, (anonymous namespace)::SourceInfo>>> {
+    struct __hash_table<std::__1::__hash_value_type<__NStatSource *, (anonymous namespace)::SourceInfo>, std::__1::__unordered_map_hasher<__NStatSource *, std::__1::__hash_value_type<__NStatSource *, (anonymous namespace)::SourceInfo>, std::__1::hash<__NStatSource *>, true>, std::__1::__unordered_map_equal<__NStatSource *, std::__1::__hash_value_type<__NStatSource *, (anonymous namespace)::SourceInfo>, std::__1::equal_to<__NStatSource *>, true>, std::__1::allocator<std::__1::__hash_value_type<__NStatSource *, (anonymous namespace)::SourceInfo>>> {
+        struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<__NStatSource *, (anonymous namespace)::SourceInfo>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<__NStatSource *, (anonymous namespace)::SourceInfo>, void *>*>*>>> __bucket_list_;
+        struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<__NStatSource *, (anonymous namespace)::SourceInfo>, void *>*>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<__NStatSource *, (anonymous namespace)::SourceInfo>, void *>>> {
+            struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<__NStatSource *, (anonymous namespace)::SourceInfo>, void *>*> __value_;
         } __p1_;
-        struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<__NStatSource *, std::__1::__hash_value_type<__NStatSource *, SourceInfo>, std::__1::hash<__NStatSource *>, true>> {
-            unsigned long long __first_;
+        struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<__NStatSource *, std::__1::__hash_value_type<__NStatSource *, (anonymous namespace)::SourceInfo>, std::__1::hash<__NStatSource *>, true>> {
+            unsigned long long __value_;
         } __p2_;
-        struct __compressed_pair<float, std::__1::__unordered_map_equal<__NStatSource *, std::__1::__hash_value_type<__NStatSource *, SourceInfo>, std::__1::equal_to<__NStatSource *>, true>> {
-            float __first_;
+        struct __compressed_pair<float, std::__1::__unordered_map_equal<__NStatSource *, std::__1::__hash_value_type<__NStatSource *, (anonymous namespace)::SourceInfo>, std::__1::equal_to<__NStatSource *>, true>> {
+            float __value_;
         } __p3_;
     } __table_;
 };
 
 struct unordered_map<_sourcekit_uid_s *, DVTSourceCodeSymbolKind *, std::__1::hash<_sourcekit_uid_s *>, std::__1::equal_to<_sourcekit_uid_s *>, std::__1::allocator<std::__1::pair<_sourcekit_uid_s *const, DVTSourceCodeSymbolKind *>>> {
     struct __hash_table<std::__1::__hash_value_type<_sourcekit_uid_s *, DVTSourceCodeSymbolKind *>, std::__1::__unordered_map_hasher<_sourcekit_uid_s *, std::__1::__hash_value_type<_sourcekit_uid_s *, DVTSourceCodeSymbolKind *>, std::__1::hash<_sourcekit_uid_s *>, true>, std::__1::__unordered_map_equal<_sourcekit_uid_s *, std::__1::__hash_value_type<_sourcekit_uid_s *, DVTSourceCodeSymbolKind *>, std::__1::equal_to<_sourcekit_uid_s *>, true>, std::__1::allocator<std::__1::__hash_value_type<_sourcekit_uid_s *, DVTSourceCodeSymbolKind *>>> {
-        struct unique_ptr<std::__1::__hash_node<std::__1::__hash_value_type<_sourcekit_uid_s *, DVTSourceCodeSymbolKind *>, void *>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<_sourcekit_uid_s *, DVTSourceCodeSymbolKind *>, void *>*>>> __bucket_list_;
+        struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<_sourcekit_uid_s *, DVTSourceCodeSymbolKind *>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<_sourcekit_uid_s *, DVTSourceCodeSymbolKind *>, void *>*>*>>> __bucket_list_;
         struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<_sourcekit_uid_s *, DVTSourceCodeSymbolKind *>, void *>*>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<_sourcekit_uid_s *, DVTSourceCodeSymbolKind *>, void *>>> {
-            struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<_sourcekit_uid_s *, DVTSourceCodeSymbolKind *>, void *>*> {
-                struct __hash_node<std::__1::__hash_value_type<_sourcekit_uid_s *, DVTSourceCodeSymbolKind *>, void *> *__next_;
-            } __first_;
+            struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<_sourcekit_uid_s *, DVTSourceCodeSymbolKind *>, void *>*> __value_;
         } __p1_;
         struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<_sourcekit_uid_s *, std::__1::__hash_value_type<_sourcekit_uid_s *, DVTSourceCodeSymbolKind *>, std::__1::hash<_sourcekit_uid_s *>, true>> {
-            unsigned long long __first_;
+            unsigned long long __value_;
         } __p2_;
         struct __compressed_pair<float, std::__1::__unordered_map_equal<_sourcekit_uid_s *, std::__1::__hash_value_type<_sourcekit_uid_s *, DVTSourceCodeSymbolKind *>, std::__1::equal_to<_sourcekit_uid_s *>, true>> {
-            float __first_;
+            float __value_;
         } __p3_;
     } __table_;
 };
 
-struct unordered_map<int, ProcessInfo, std::__1::hash<int>, std::__1::equal_to<int>, std::__1::allocator<std::__1::pair<const int, ProcessInfo>>> {
-    struct __hash_table<std::__1::__hash_value_type<int, ProcessInfo>, std::__1::__unordered_map_hasher<int, std::__1::__hash_value_type<int, ProcessInfo>, std::__1::hash<int>, true>, std::__1::__unordered_map_equal<int, std::__1::__hash_value_type<int, ProcessInfo>, std::__1::equal_to<int>, true>, std::__1::allocator<std::__1::__hash_value_type<int, ProcessInfo>>> {
-        struct unique_ptr<std::__1::__hash_node<std::__1::__hash_value_type<int, ProcessInfo>, void *>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<int, ProcessInfo>, void *>*>>> __bucket_list_;
-        struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<int, ProcessInfo>, void *>*>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<int, ProcessInfo>, void *>>> {
-            struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<int, ProcessInfo>, void *>*> {
-                struct __hash_node<std::__1::__hash_value_type<int, ProcessInfo>, void *> *__next_;
-            } __first_;
+struct unordered_map<int, (anonymous namespace)::ProcessInfo, std::__1::hash<int>, std::__1::equal_to<int>, std::__1::allocator<std::__1::pair<const int, (anonymous namespace)::ProcessInfo>>> {
+    struct __hash_table<std::__1::__hash_value_type<int, (anonymous namespace)::ProcessInfo>, std::__1::__unordered_map_hasher<int, std::__1::__hash_value_type<int, (anonymous namespace)::ProcessInfo>, std::__1::hash<int>, true>, std::__1::__unordered_map_equal<int, std::__1::__hash_value_type<int, (anonymous namespace)::ProcessInfo>, std::__1::equal_to<int>, true>, std::__1::allocator<std::__1::__hash_value_type<int, (anonymous namespace)::ProcessInfo>>> {
+        struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<int, (anonymous namespace)::ProcessInfo>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<int, (anonymous namespace)::ProcessInfo>, void *>*>*>>> __bucket_list_;
+        struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<int, (anonymous namespace)::ProcessInfo>, void *>*>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<int, (anonymous namespace)::ProcessInfo>, void *>>> {
+            struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<int, (anonymous namespace)::ProcessInfo>, void *>*> __value_;
         } __p1_;
-        struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<int, std::__1::__hash_value_type<int, ProcessInfo>, std::__1::hash<int>, true>> {
-            unsigned long long __first_;
+        struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<int, std::__1::__hash_value_type<int, (anonymous namespace)::ProcessInfo>, std::__1::hash<int>, true>> {
+            unsigned long long __value_;
         } __p2_;
-        struct __compressed_pair<float, std::__1::__unordered_map_equal<int, std::__1::__hash_value_type<int, ProcessInfo>, std::__1::equal_to<int>, true>> {
-            float __first_;
+        struct __compressed_pair<float, std::__1::__unordered_map_equal<int, std::__1::__hash_value_type<int, (anonymous namespace)::ProcessInfo>, std::__1::equal_to<int>, true>> {
+            float __value_;
         } __p3_;
     } __table_;
 };
@@ -521,38 +605,17 @@ struct vector<long long, std::__1::allocator<long long>> {
 
 typedef struct {
     unsigned long long _field1;
+    unsigned long long _field2;
+} CDStruct_4bcfbbae;
+
+typedef struct {
+    unsigned long long _field1;
     id *_field2;
     unsigned long long *_field3;
     unsigned long long _field4[5];
 } CDStruct_70511ce9;
 
 typedef struct {
-    unsigned long long _field1[3];
-} CDStruct_3c4b7cd8;
-
-typedef struct {
     unsigned long long data[4];
 } CDStruct_4c46f3f5;
-
-typedef struct {
-    CDUnknownFunctionPointerType _field1;
-    CDUnknownFunctionPointerType _field2;
-    CDUnknownFunctionPointerType _field3;
-    CDUnknownFunctionPointerType _field4;
-    CDUnknownFunctionPointerType _field5;
-    CDUnknownFunctionPointerType _field6;
-    CDUnknownFunctionPointerType _field7;
-    CDUnknownFunctionPointerType _field8;
-} CDStruct_9b0a347d;
-
-typedef struct {
-    int _field1;
-    void *_field2[2];
-} CDStruct_9b248d9b;
-
-typedef struct {
-    int _field1;
-    int _field2;
-    void *_field3[3];
-} CDStruct_a94d320b;
 

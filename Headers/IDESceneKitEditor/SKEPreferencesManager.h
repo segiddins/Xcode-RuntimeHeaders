@@ -6,8 +6,11 @@
 
 #import <objc/NSObject.h>
 
+@class NSMutableDictionary;
+
 @interface SKEPreferencesManager : NSObject
 {
+    NSMutableDictionary *_kvc;
     BOOL _materialInspectorShow_diffuse;
     BOOL _materialInspectorShow_ambient;
     BOOL _materialInspectorShow_specular;
@@ -21,10 +24,18 @@
     BOOL _materialInspectorShow_multiply;
     BOOL _materialInspectorShow_normal;
     BOOL _materialInspectorShow_shininess;
+    BOOL _materialInspectorShow_displacement;
+    BOOL _materialInspectorShow_clearCoat;
+    BOOL _materialInspectorShow_clearCoatNormal;
+    BOOL _materialInspectorShow_clearCoatRoughness;
 }
 
 + (id)keyPathsForValuesAffectingBakeryNeedsAttenuation;
 + (id)sharedPreferencesManager;
+@property(nonatomic) BOOL materialInspectorShow_clearCoatRoughness; // @synthesize materialInspectorShow_clearCoatRoughness=_materialInspectorShow_clearCoatRoughness;
+@property(nonatomic) BOOL materialInspectorShow_clearCoatNormal; // @synthesize materialInspectorShow_clearCoatNormal=_materialInspectorShow_clearCoatNormal;
+@property(nonatomic) BOOL materialInspectorShow_clearCoat; // @synthesize materialInspectorShow_clearCoat=_materialInspectorShow_clearCoat;
+@property(nonatomic) BOOL materialInspectorShow_displacement; // @synthesize materialInspectorShow_displacement=_materialInspectorShow_displacement;
 @property(nonatomic) BOOL materialInspectorShow_shininess; // @synthesize materialInspectorShow_shininess=_materialInspectorShow_shininess;
 @property(nonatomic) BOOL materialInspectorShow_normal; // @synthesize materialInspectorShow_normal=_materialInspectorShow_normal;
 @property(nonatomic) BOOL materialInspectorShow_multiply; // @synthesize materialInspectorShow_multiply=_materialInspectorShow_multiply;
@@ -38,6 +49,7 @@
 @property(nonatomic) BOOL materialInspectorShow_specular; // @synthesize materialInspectorShow_specular=_materialInspectorShow_specular;
 @property(nonatomic) BOOL materialInspectorShow_ambient; // @synthesize materialInspectorShow_ambient=_materialInspectorShow_ambient;
 @property(nonatomic) BOOL materialInspectorShow_diffuse; // @synthesize materialInspectorShow_diffuse=_materialInspectorShow_diffuse;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL bakeryNeedsAttenuation;
 @property(nonatomic) float bakeryAttenuationFactor;
 @property(nonatomic) float bakeryQuality;
@@ -46,6 +58,8 @@
 @property(readonly, nonatomic) BOOL nodeInspectorCoordinatesSystemIsLocal;
 @property(readonly, nonatomic) BOOL nodeInspectorCoordinatesSystemIsWorld;
 @property(nonatomic) unsigned long long nodeInspectorCoordinatesSystem;
+- (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
+- (id)valueForUndefinedKey:(id)arg1;
 
 @end
 

@@ -16,6 +16,7 @@
 @property(retain) NSWindowController *controller; // @synthesize controller=_controller;
 - (void).cxx_destruct;
 - (void)performClose:(id)arg1;
+- (void)dvt_performCloseWindow:(id)arg1;
 - (void)close;
 - (BOOL)validateMenuItem:(id)arg1;
 - (BOOL)canBecomeKeyWindow;

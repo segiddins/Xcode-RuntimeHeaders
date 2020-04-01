@@ -107,6 +107,8 @@
 - (id)parentOfObject:(id)arg1;
 - (id)parentOfObjectOrNSNull:(id)arg1;
 - (BOOL)containsObject:(id)arg1;
+- (id)hierarchyDescriptionForObjects:(id)arg1 indent:(id)arg2;
+- (id)hierarchyDescription;
 @property(readonly, copy) NSString *debugDescription;
 - (void)trackObjectAsView:(id)arg1;
 - (BOOL)objectIsView:(id)arg1;

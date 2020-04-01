@@ -25,6 +25,7 @@
 - (CDStruct_c519178c)contentInsetForAttachingSeguesToEdge:(unsigned long long)arg1 inSeriesOfSeguesWithCount:(long long)arg2;
 - (id)accessibilityRoleDescription;
 - (id)accessibilityChildren;
+- (double)effectiveHeaderViewOffset;
 - (void)setTitle:(id)arg1;
 - (id)storyboardCanvasViewController;
 - (void)willRemoveFromCanvas;

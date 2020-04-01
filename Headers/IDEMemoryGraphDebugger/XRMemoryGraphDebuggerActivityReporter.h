@@ -15,7 +15,6 @@
 }
 
 + (id)_titleForMemoryGraphDebuggerAddition:(id)arg1;
-+ (void)initialize;
 - (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (void)_removeAndInvalidateReportForDebuggingAddition:(id)arg1;

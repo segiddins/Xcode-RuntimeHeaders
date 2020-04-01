@@ -6,12 +6,12 @@
 
 #import <DVTAnalyticsClient/DVTAnalyticsData.h>
 
-#import <DVTAnalyticsClient/DVTServicesJSONSerialization-Protocol.h>
-
 @class DVTAnalyticsCrashPointIdentifier, NSString;
 
-@interface DVTAnalyticsCrashPointData : DVTAnalyticsData <DVTServicesJSONSerialization>
+@interface DVTAnalyticsCrashPointData : DVTAnalyticsData
 {
+    NSString *_rootVersion;
+    NSString *_rootBuild;
     DVTAnalyticsCrashPointIdentifier *_crashPointIdentifier;
     NSString *_adamId;
     NSString *_appVersion;
@@ -26,14 +26,9 @@
 @property(retain) NSString *appVersion; // @synthesize appVersion=_appVersion;
 @property(retain) NSString *adamId; // @synthesize adamId=_adamId;
 - (void).cxx_destruct;
-- (id)JSONRepresentation;
+@property(copy) NSString *rootBuild; // @synthesize rootBuild=_rootBuild;
+@property(copy) NSString *rootVersion; // @synthesize rootVersion=_rootVersion;
 @property(readonly) DVTAnalyticsCrashPointIdentifier *crashPointIdentifier; // @synthesize crashPointIdentifier=_crashPointIdentifier;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

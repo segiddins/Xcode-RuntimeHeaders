@@ -4,11 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Foundation/NSObject.h>
+#import <objc/NSObject.h>
+
+#import <DevToolsCore/NSCopying-Protocol.h>
 
 @class NSMutableArray, NSString;
 
-@interface XCPropertyCategory : NSObject
+@interface XCPropertyCategory : NSObject <NSCopying>
 {
     NSString *_name;
     NSMutableArray *_propertyNames;
@@ -18,6 +20,7 @@
     NSString *_localizedDescription;
 }
 
+- (void).cxx_destruct;
 - (id)description;
 - (id)localizedDescription;
 - (id)localizedName;
@@ -30,7 +33,6 @@
 - (id)propertyDefinitionsWithLookupDictionary:(id)arg1;
 - (id)propertyNames;
 - (id)name;
-- (void)dealloc;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)init;
 - (id)initWithName:(id)arg1;

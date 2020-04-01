@@ -10,20 +10,22 @@
 
 @interface IDEDistributionMethodStep : IDEDistributionStep
 {
+    NSNumber *_distributionTask;
 }
 
-+ (id)distributionMethodForSameAsArchiveWithAvailableMethods:(id)arg1 existingCertificateInfo:(CDUnknownBlockType)arg2 existingProfileInfo:(CDUnknownBlockType)arg3 fallbackMethod:(id)arg4 logAspect:(id)arg5;
-+ (id)distributionMethodForSameAsArchive:(id)arg1 contentPath:(id)arg2 task:(int)arg3 logAspect:(id)arg4;
-+ (id)keyPathsForValuesDistributionTask;
++ (id)propertyListForContext:(id)arg1;
++ (id)distributionMethodForSameAsArchiveWithAvailableMethods:(id)arg1 existingCertificateInfo:(CDUnknownBlockType)arg2 existingProfilePurposes:(CDUnknownBlockType)arg3 fallbackMethod:(id)arg4 logAspect:(id)arg5;
++ (id)distributionMethodForSameAsArchive:(id)arg1 contentPath:(id)arg2 task:(long long)arg3 logAspect:(id)arg4;
 + (id)keyPathsForValuesDistributionMethod;
++ (id)availableDistributionMethodsForTasks:(id)arg1 archive:(id)arg2 logAspect:(id)arg3;
 + (id)availableOptionsForPropertyList;
-- (void)setDistributionTask:(id)arg1;
-@property(readonly) NSNumber *distributionTask;
+@property(readonly) NSNumber *distributionTask; // @synthesize distributionTask=_distributionTask;
+- (void).cxx_destruct;
 @property(retain) IDEDistributionMethod *distributionMethod;
 @property(readonly) NSArray *availableDistributionMethods;
 - (id)providedOutputContextPropertyNames;
 - (id)requiredInputContextPropertyNames;
-- (BOOL)loadFromPropertyList:(id)arg1 error:(id *)arg2;
+- (BOOL)loadFromExportOptions:(id)arg1 error:(id *)arg2;
 
 @end
 

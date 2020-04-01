@@ -8,23 +8,18 @@
 
 #import <Xcode3UI/IDENavigableItemFileReferenceProxy-Protocol.h>
 
-@class DVTDocumentLocation, DVTFileDataType, IDENavigableItem, NSString;
+@class IDENavigableItem, NSString;
 
 @interface Xcode3VariantGroupNavigableItem : IDEKeyDrivenNavigableItem <IDENavigableItemFileReferenceProxy>
 {
-    DVTDocumentLocation *_lastContentDocumentLocation;
-    DVTFileDataType *_lastDocumentType;
 }
 
 + (id)keyPathsForValuesAffectingPrimaryChildItem;
-+ (id)keyPathsForValuesAffectingToolTip;
 + (id)keyPathsForValuesAffectingDefaultReference;
 + (id)keyPathsForValuesAffectingVariantGroup;
-- (void).cxx_destruct;
 - (BOOL)showSubitems;
 - (id)_navigableItemForExternalDrag;
 @property(readonly) IDENavigableItem *primaryChildItem;
-- (id)toolTip;
 - (id)contentDocumentLocation;
 - (id)documentType;
 - (id)textColor;

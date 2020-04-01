@@ -6,38 +6,40 @@
 
 #import <objc/NSObject.h>
 
+#import <DVTSourceControl/NSCopying-Protocol.h>
 #import <DVTSourceControl/NSSecureCoding-Protocol.h>
 
-@class ABPerson, NSArray, NSNotification, NSString, NSURL;
+@class CNContact, NSArray, NSImage, NSString;
 
-@interface DVTSourceControlAuthor : NSObject <NSSecureCoding>
+@interface DVTSourceControlAuthor : NSObject <NSSecureCoding, NSCopying>
 {
-    NSString *_pairedUUID;
-    ABPerson *_cachedPairedPerson;
-    NSNotification *_lastSeenNotification;
+    NSString *_pairedIdentifier;
+    CNContact *_cachedPairedPerson;
+    NSImage *_contactsImage;
+    NSImage *_defaultImage;
     NSString *_name;
     NSString *_displayName;
     NSArray *_emails;
-    NSURL *_imageURL;
+    NSImage *_image;
 }
 
 + (BOOL)supportsSecureCoding;
-@property(retain) NSURL *imageURL; // @synthesize imageURL=_imageURL;
+@property(retain) NSImage *image; // @synthesize image=_image;
 @property(retain) NSArray *emails; // @synthesize emails=_emails;
 @property(retain) NSString *displayName; // @synthesize displayName=_displayName;
 @property(retain) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
-@property(retain) ABPerson *pairedPerson;
-@property(retain) NSString *pairedUUID;
-- (void)abDatabaseChangedNotification:(id)arg1;
-- (id)_emailsFromPerson:(id)arg1;
-- (id)_arrayFromABMultiValue:(id)arg1;
-- (id)_displayNameFromPerson:(id)arg1;
-- (id)_imageFromPerson:(id)arg1;
+@property(readonly) NSImage *defaultImage;
+@property(readonly) NSImage *contactsImage;
+@property(retain) CNContact *pairedPerson;
+@property(retain) NSString *pairedIdentifier;
+- (id)_emailsFromContact:(id)arg1;
+- (id)_displayNameFromContact:(id)arg1;
 - (id)description;
 - (id)initWithPairedAddressBookPerson:(id)arg1;
 - (id)initWithUsername:(id)arg1 email:(id)arg2;
-- (id)initWithUsername:(id)arg1 displayName:(id)arg2 emails:(id)arg3 imageURL:(id)arg4;
+- (id)initWithUsername:(id)arg1 displayName:(id)arg2 emails:(id)arg3;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <GPUDebuggerFoundation/GPUTraceModelFactory.h>
+#import <GPUDebugger/GPUTraceModelFactory.h>
 
 @class GPUGLTraceOutline, NSMapTable;
 
@@ -15,36 +15,26 @@ __attribute__((visibility("hidden")))
     GPUGLTraceOutline *_outline;
 }
 
-+ (id)_keyForResourceItem:(id)arg1;
 + (Class)renderJobClass;
-+ (Class)imageResourceSettingBubbleClass;
-+ (Class)textureInfoBubbleClass;
-+ (Class)depthStencilInfoBubbleClass;
-+ (Class)colorInfoBubbleClass;
 + (Class)captureSessionInfoClassWithAPI:(unsigned int)arg1;
 @property(retain, nonatomic) GPUGLTraceOutline *outline; // @synthesize outline=_outline;
 - (void).cxx_destruct;
-- (id)createInfoBubbleForImageResource:(id)arg1 parentView:(id)arg2 owner:(id)arg3 renderingAttributes:(id)arg4;
+- (struct NSArray *)resourceInfoForResource:(id)arg1 level:(int)arg2 layer:(int)arg3;
 - (int)openGLAPI;
-- (id)resourceItemOfType:(unsigned int)arg1 resourceID:(unsigned int)arg2 forFunctionIndex:(unsigned int)arg3;
-- (id)storedRenderingAttributesForResourceItem:(id)arg1;
-- (id)resolveCurrentResourceItemWithPreviousItem:(id)arg1 currentMainEditorItem:(id)arg2 topLevelObjects:(id)arg3;
-- (void)establishChildrenForProgramItem:(id)arg1;
+- (id)resourceItemOfType:(unsigned int)arg1 resourceID:(unsigned long long)arg2 forFunctionIndex:(unsigned int)arg3;
+- (id)newDataProviderForShaderDataItem:(id)arg1;
+- (void)establishResource:(id)arg1 forProgramChildren:(id)arg2 containerID:(unsigned long long)arg3;
 - (id)programObjectFromProgramItem:(id)arg1 shaderType:(unsigned int)arg2;
-- (void)generateResourcesForGroup:(id)arg1 apiItem:(id)arg2 boundOnly:(BOOL)arg3;
-- (void)createParentResourceGroupsForAPIItem:(id)arg1;
-- (id)_createResourceGroup:(id)arg1 parentItem:(id)arg2 boundOnly:(BOOL)arg3;
+- (id)generateAllResourcesGroupForAPIItem:(id)arg1 boundOnly:(BOOL)arg2;
 - (void)primitiveInvalidate;
 - (id)apiItemFromDisplayIndex:(unsigned int)arg1;
-- (id)locateDisplayableItemToDraw:(id)arg1 isAssociatedWithStateItem:(char *)arg2;
+- (id)locateDisplayableItemToDraw:(id)arg1;
+- (id)apiItemForTrueFunctionIndex:(unsigned int)arg1 subCommandIndex:(int)arg2;
 - (id)apiItemForTrueFunctionIndex:(unsigned int)arg1;
 - (id)apiItemFromFunctionIndex:(unsigned int)arg1;
 - (void)invalidateModel;
 - (void)generateModelWithTraceSession:(id)arg1;
 - (id)resourceTypeToViewClassMaptable;
-- (id)frames;
-- (id)domainProviderRootProgramGroup;
-- (id)domainProviderRootResourceGroup;
 - (id)allAPIItems;
 - (id)allMarkerItems;
 - (id)allDisplayableItems;

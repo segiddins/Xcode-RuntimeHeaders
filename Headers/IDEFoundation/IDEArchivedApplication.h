@@ -6,26 +6,33 @@
 
 #import <IDEFoundation/IDEArchivedContent.h>
 
+#import <IDEFoundation/IDEDistributableApplication-Protocol.h>
+
 @class DVTFilePath, DVTPlatform, NSString;
 
-@interface IDEArchivedApplication : IDEArchivedContent
+@interface IDEArchivedApplication : IDEArchivedContent <IDEDistributableApplication>
 {
 }
 
 + (id)keyPathsForValuesAffectingIconPath;
 + (id)keyPathsForValuesAffectingApplicationPath;
-+ (id)_codesigningIdentityFromApplicationPath:(id)arg1;
 + (id)archivedContentPathPlistKey;
 + (id)archivedContentPropertiesPlistKey;
 + (BOOL)fillInfoDictionary:(id)arg1 forContentAtPath:(id)arg2 inArchiveProductsDirectory:(id)arg3;
 + (id)soleArchivedContentRelativePathInDirectory:(id)arg1;
 @property(readonly) DVTPlatform *platform;
-- (long long)autodetectedFormatForPackaging;
-- (BOOL)supportsPackagingAsFormat:(long long)arg1;
-- (id)packager;
 - (id)platformName;
 @property(readonly) DVTFilePath *applicationPath;
+@property(readonly) NSString *teamID;
 @property(readonly) NSString *signingIdentity;
+
+// Remaining properties
+@property(readonly) NSString *bundleIdentifier;
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) DVTFilePath *path;
+@property(readonly) Class superclass;
 
 @end
 

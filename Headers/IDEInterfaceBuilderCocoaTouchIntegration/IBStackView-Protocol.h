@@ -5,7 +5,9 @@
 //
 
 @protocol IBStackView
+@property(readonly, getter=isFlipped) BOOL flipped;
 @property(nonatomic) long long orientation;
+- (void)setIbShadowedSpacing:(double)arg1;
 - (void)setIbShadowedAlignment:(long long)arg1;
 @end
 

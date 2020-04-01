@@ -28,5 +28,8 @@
 - (void)fadeOff:(double)arg1;
 - (void)fadeOn:(double)arg1 block:(BOOL)arg2;
 - (void)dragWithMouseDown:(id)arg1 andMouseDragged:(id)arg2;
+- (id)toolbarView;
+- (id)themeView;
+- (id)ibLayoutTree;
 @end
 

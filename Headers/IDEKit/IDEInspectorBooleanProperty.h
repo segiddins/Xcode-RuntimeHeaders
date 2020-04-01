@@ -15,6 +15,7 @@
     BOOL _allowsMixedState;
     long long _bits;
     long long _bitMask;
+    struct CGRect _unindentedCheckboxFrame;
     NSButton *_checkbox;
 }
 

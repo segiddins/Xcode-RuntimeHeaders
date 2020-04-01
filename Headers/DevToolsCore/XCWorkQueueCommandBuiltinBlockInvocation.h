@@ -11,10 +11,9 @@
     CDUnknownBlockType _block;
 }
 
-- (int)runTaskWithArguments:(id)arg1 environment:(id)arg2 workingDirectoryPath:(id)arg3;
-- (void)finalize;
-- (void)dealloc;
-- (id)initWithSlotNumber:(unsigned long long)arg1 workQueueOperation:(id)arg2 workQueueCommand:(id)arg3 arguments:(id)arg4 environment:(id)arg5 workingDirectoryPath:(id)arg6 block:(CDUnknownBlockType)arg7;
+- (void).cxx_destruct;
+- (int)runTaskWithArguments:(id)arg1 environment:(id)arg2 workingDirectoryPath:(id)arg3 infd:(int)arg4 outerrfd:(int)arg5;
+- (id)initWithWorkQueueCommand:(id)arg1 arguments:(id)arg2 environment:(id)arg3 workingDirectoryPath:(id)arg4 block:(CDUnknownBlockType)arg5;
 
 @end
 

@@ -4,29 +4,35 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <GPURenderTargetEditor/GPUResourceEditor.h>
+#import <GPUDebugger/GPUTraceSubEditor.h>
 
-@class GPUBufferViewerViewController;
+@class GPUBufferViewerViewController, NSData;
 
 __attribute__((visibility("hidden")))
-@interface GPUMTLBufferEditor : GPUResourceEditor
+@interface GPUMTLBufferEditor : GPUTraceSubEditor
 {
+    NSData *_postVertexData;
     GPUBufferViewerViewController *_bufferViewerViewController;
 }
 
 + (id)assetBundle;
++ (BOOL)asyncLoadingSupported;
 @property(retain, nonatomic) GPUBufferViewerViewController *bufferViewerViewController; // @synthesize bufferViewerViewController=_bufferViewerViewController;
 - (void).cxx_destruct;
 - (void)extractGeometryParams:(struct GPUBufferViewerAdaptorGeometryParams *)arg1 fromDrawPatchesIndirectBufferPtr:(const char *)arg2;
 - (void)extractGeometryParams:(struct GPUBufferViewerAdaptorGeometryParams *)arg1 fromDrawIndexedPrimitivesIndirectBufferPtr:(const char *)arg2;
 - (void)extractGeometryParams:(struct GPUBufferViewerAdaptorGeometryParams *)arg1 fromDrawPrimitivesIndirectBufferPtr:(const char *)arg2;
-- (void)extractPatchAttributesDataLayout:(out vector_44d4fed2 *)arg1 dataBuffers:(out vector_c26b6358 *)arg2 geometryParams:(out struct GPUBufferViewerAdaptorGeometryParams *)arg3 resourceItem:(id)arg4;
-- (void)extractVertexAttributesDataLayout:(out vector_44d4fed2 *)arg1 dataBuffers:(out vector_c26b6358 *)arg2 geometryParams:(out struct GPUBufferViewerAdaptorGeometryParams *)arg3 resourceItem:(id)arg4;
-- (void)extractSingleBufferDataLayouts:(out vector_44d4fed2 *)arg1 dataBuffers:(out vector_c26b6358 *)arg2 resourceItem:(id)arg3 preferredDataStruct:(out int *)arg4;
-- (void)beginEditor;
-- (void)viewWillUninstall;
+- (void)extractComputeAttributesDataLayout:(out vector_44d4fed2 *)arg1 dataBuffers:(out vector_c26b6358 *)arg2 geometryParams:(out struct GPUBufferViewerAdaptorGeometryParams *)arg3 resourceItem:(id)arg4 resourceObject:(id)arg5;
+- (void)extractPatchAttributesDataLayout:(out vector_44d4fed2 *)arg1 dataBuffers:(out vector_c26b6358 *)arg2 geometryParams:(out struct GPUBufferViewerAdaptorGeometryParams *)arg3 resourceItem:(id)arg4 resourceObject:(id)arg5;
+- (void)extractVertexAttributesDataLayout:(out vector_44d4fed2 *)arg1 dataBuffers:(out vector_c26b6358 *)arg2 geometryParams:(out struct GPUBufferViewerAdaptorGeometryParams *)arg3 resourceItem:(id)arg4 resourceObject:(id)arg5;
+- (void)extractSingleBufferDataLayouts:(out vector_44d4fed2 *)arg1 dataBuffers:(out vector_c26b6358 *)arg2 encodedResourceMaps:(out vector_17e8e373 *)arg3 resourceItem:(id)arg4 resourceObject:(id)arg5 preferredDataStruct:(out int *)arg6 byfferType:(out id *)arg7;
+- (void)GPUDebugger_navigateToResourceValue:(id)arg1;
+- (void)_beginEditor;
+- (void)handleNotification:(id)arg1;
+- (void)setRepresentedObject:(id)arg1;
+- (void)viewWillLayout;
+- (void)viewDidLoad;
 - (void)loadView;
-- (id)supportedResourceProtocols;
 
 @end
 

@@ -34,7 +34,8 @@
 - (struct CGPoint)convertPoint:(struct CGPoint)arg1 toView:(id)arg2;
 - (struct CGPoint)convertPoint:(struct CGPoint)arg1 fromView:(id)arg2;
 @property(readonly) NSArray *sublayersExcludingHiddenLayers;
-@property(readonly) NSView *view;
+- (id)view;
+@property(readonly) NSView *dvt_view;
 @property(readonly) NSWindow *window;
 @property(readonly) CALayer *rootLayer;
 @end

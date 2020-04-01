@@ -1,0 +1,1635 @@
++[DVTAnalyticsCrashPointList crashPointListForSession:appIdentifier:options:error:]
+/Library/Caches/com.apple.xbs/Sources/IDEFrameworks/IDEFrameworks-15526.1/IDEProducts/DVTProducts/DVTProducts/DVTAnalyticsClient/DVTAnalyticsCrashPointList.m
+((session)) != nil
+%@ should not be nil.
+(session)
+((appIdentifier)) != nil
+(appIdentifier)
+(options) == nil || CFGetTypeID((CFArrayRef)options) == CFArrayGetTypeID()
+%@ should be an array, but it is %@
+options
+(_castedResult) == nil || [(id)(_castedResult) isKindOfClass:[DVTAnalyticsCrashPointList class]]
+%@ should be an instance inheriting from %@, but it is %@
+_castedResult
+!___localError
+A method claimed to have succeeded but provided an error! (%@)
+___localError
+A method claimed to have failed but provided no error!
+true
+ApplicationIdentifier
+SortedBy
+Crashes
+@16@?0@"DVTAnalyticsCrashPointSummary"8
+TQ,R
+superclass
+T#,R
+T@"NSString",R,C
+T@"NSString",&,V_adamId
+T@"NSString",&,V_appVersion
+appBuild
+T@"NSString",&,V_appBuild
+T@"NSString",&,V_bundleId
+numCrashes
+T@"NSNumber",&,V_numCrashes
+T@"NSString",&,V_rootVersion
+T@"NSString",&,V_rootBuild
+topCrashes
+T@"NSArray",R,V_topCrashes
+T@"DVTAnalyticsAppIdentifier",R,V_appIdentifier
+crashesSortedBy
+T@"NSString",R,V_crashesSortedBy
+T@"NSArray",R,V_options
+DVTAnalyticsPointStandardDateRange
+v8@?0
+q8@?0
+startDate
+endDate
++[DVTAnalyticsPointDateDistributionOption _nameForType:]
+/Library/Caches/com.apple.xbs/Sources/IDEFrameworks/IDEFrameworks-15526.1/IDEProducts/DVTProducts/DVTProducts/DVTAnalyticsClient/DVTAnalyticsPointDateDistributionOption.m
+code which should be unreachable has been reached
+@"NSDateFormatter"8@?0
+yyyy-MM-dd
++[DVTAnalyticsPointDateDistributionOption distributionWithDate:type:]
+((date)) != nil
+(date)
+deviceFamily
++[DVTAnalyticsDownloadMoreLogsService downloadMoreLogsServiceWithCrashPointIdentifier:options:]
+/Library/Caches/com.apple.xbs/Sources/IDEFrameworks/IDEFrameworks-15526.1/IDEProducts/DVTProducts/DVTProducts/DVTAnalyticsClient/DVTAnalyticsDownloadMoreLogsService.m
+((crashPointIdentifier)) != nil
+(crashPointIdentifier)
+((options)) != nil
+(options)
+Xcode.Analytics.Service.CrashPoint.DownloadMoreLogs
+crashpoint
+-[DVTAnalyticsPointTimeData initWithPeriodStart:value:]
+/Library/Caches/com.apple.xbs/Sources/IDEFrameworks/IDEFrameworks-15526.1/IDEProducts/DVTProducts/DVTProducts/DVTAnalyticsClient/DVTAnalyticsPointTimeData.m
+((periodStart)) != nil
+(periodStart)
+((value)) != nil
+(value)
+PeriodStart
+Value
+periodStart
+value
+<%@ %p: %@>
+T@"NSString",R,V_periodStart
+T@"NSNumber",R,V_value
+<%@: %p: crashPointId: %@>
+CrashPointId
+CrashPointName
+SourceFileName
+SourceFileLineNumber
+RollingOccurenceCount
+RollingUniqueDeviceCount
+crashPointId
+T@"NSString",R,V_crashPointId
+crashPointName
+T@"NSString",R,V_crashPointName
+T@"NSString",R,V_sourceFileName
+T@"NSNumber",R,V_sourceFileLineNumber
+T@"NSNumber",R,V_rollingOccurenceCount
+T@"NSNumber",R,V_rollingUniqueDeviceCount
+-[DVTAnalyticsCrashPointData crashPointIdentifier]_block_invoke
+/Library/Caches/com.apple.xbs/Sources/IDEFrameworks/IDEFrameworks-15526.1/IDEProducts/DVTProducts/DVTProducts/DVTAnalyticsClient/DVTAnalyticsCrashPointData.m
+self.rootBuild
+self.rootVersion
+@"DVTAnalyticsCrashPointIdentifier"8@?0
+-[DVTAnalyticsCrashPointData rootVersion]
+[_rootVersion dvt_isNonEmpty]
+rootVersion wasn't initialized
+-[DVTAnalyticsCrashPointData rootBuild]
+[_rootBuild dvt_isNonEmpty]
+rootBuild wasn't initialized
+T@"NSString",&,V_crashPointId
+T@"NSString",C,V_rootVersion
+T@"NSString",C,V_rootBuild
+crashPointIdentifier
+T@"DVTAnalyticsCrashPointIdentifier",R,V_crashPointIdentifier
+DVTAnalyticsClientErrorDomain
+-[DVTAnalyticsClientTool runWithError:]
+/Library/Caches/com.apple.xbs/Sources/IDEFrameworks/IDEFrameworks-15526.1/IDEProducts/DVTProducts/DVTProducts/DVTAnalyticsClient/DVTAnalyticsClientTool.m
+list
+download
+moreLogs
+Unknown command '%@'
+-[DVTAnalyticsClientTool _commandFromString:error:]
+-[DVTAnalyticsClientTool _stringFromCommand:]
+-[DVTAnalyticsClientTool _executeWithError:executionBlock:]
+@"<DVTServicesJSONSerialization>"16@?0^@8
+-[DVTAnalyticsClientTool _downloadLogsWithError:]
+method %@ has not yet been implemented for class %@
+-[DVTAnalyticsClientTool _downloadMoreLogsWithError:]
+@"NSError"40@?0@"DVTCommandLineOptionDefinition"8@"NSMutableArray"16@"NSString"24@"NSMutableDictionary"32
+false
+The isBeta parameter only av value of either 'true' or 'false'
+-user
+-user NAME
+user name for logging into analytics services
+developerAccountUser
+-adamId
+-adamId ADAMID
+specifies the adam ID of the app for which to fetch analytics
+appAdamId
+-bundleId
+-bundleId BUNDLEID
+specifies the bundle identifier of the app for which to fetch analytics
+appBundleId
+-version
+-version VERSION
+specifies the version (CFBundleShortVersionString) of the app for which to fetch analytics
+-build
+-build BUILD
+specifies the build number (CFBundleVersion) of the app for which to fetch analytics
+-isBeta
+-isBeta true/false
+specifies whether to fetch analytics for a beta version of the app
+isBeta
+-platformSDKIdentifier
+-platformSDKIdentifier PLATFORMSDKIDENTIFIER
+specifies the platform SDK identifier of the app for which to fetch analytics
+-crashPointId
+-crashPointId CRASHPOINTID
+specifies the identifier of the crash point for which to fetch data
+-deviceFamily
+-deviceFamily FAMILY
+device family to use in generating a crash point distribution
+deviceFamilies
+-osVersion
+-osVersion VERSION
+operating system version to use in generating a crash point distribution
+osVersions
+-lastCrashReporterKey
+-lastCrashReporterKey KEY
+crash reporter key of the last downloaded log list
+lastCrashReporterKey
+-lastCrashReportTime
+-lastCrashReportTime DATETIME
+ISO 8601 date/time string of the last downloaded log list
+lastCrashReportTime
+c24@?0@"NSString"8@"NSMutableArray"16
+One of the following commands must be specified: %@
+-[DVTAnalyticsClientTool _parseArgumentsWithError:]
+%@ %@ required parameters -adamId, -bundleId, -version, -build, -isBeta, and valid -platformSDKIdentifier must all be provided
+%@ %@ required parameters -crashPointId, -osVersion, and -deviceFamily must all be provided
+%@ %@ required parameters -lastCrashReporterKey and -lastCrashReportTime
+%@ required parameter -user not provided
+-[DVTAnalyticsClientTool _ensureRequiredArgumentsWithError:]
+-[DVTAnalyticsClientTool appIdentifier]
+-[DVTAnalyticsClientTool developerAccount]_block_invoke
+(self.developerAccountUser) != nil
+%@ should be a non-empty string, but it is nil
+self.developerAccountUser
+CFGetTypeID((CFStringRef)self.developerAccountUser) == CFStringGetTypeID()
+%@ should be a non-empty string, but it is %@
+![(self.developerAccountUser) isEqualToString:@""]
+%@ should be a non-empty string, but it's an empty string
+@"DVTDeveloperAccount"8@?0
+-[DVTAnalyticsClientTool _sessionWithError:]
+((self.developerAccount)) != nil
+(self.developerAccount)
+T@"NSString",&,V_developerAccountUser
+T@"NSString",&,V_appAdamId
+T@"NSString",&,V_appBundleId
+T@"NSString",&,V_isBeta
+T@"NSString",&,V_platformSDKIdentifier
+T@"NSArray",&,V_deviceFamilies
+T@"NSArray",&,V_osVersions
+T@"NSString",&,V_lastCrashReporterKey
+T@"NSString",&,V_lastCrashReportTime
+command
+Tq,V_command
+developerAccount
+T@"DVTDeveloperAccount",R,V_developerAccount
+session
+T@"DVTServicesAccountBasedSession",&,V_session
+name
+T@"NSString",&,V_name
+arguments
+T@"NSArray",&,V_arguments
+standardInput
+T@"NSFileHandle",&,V_standardInput
+standardOutput
+T@"NSFileHandle",&,V_standardOutput
+standardError
+T@"NSFileHandle",&,V_standardError
+Failed to find a password for '%@' in the keychain.
+Enter the password: 
++[DVTAnalyticsDownloadCrashPointService downloadCrashPointServiceWithCrashPointIdentifier:distributionOptions:]
+/Library/Caches/com.apple.xbs/Sources/IDEFrameworks/IDEFrameworks-15526.1/IDEProducts/DVTProducts/DVTProducts/DVTAnalyticsClient/DVTAnalyticsDownloadCrashPointService.m
+Xcode.Analytics.Service.CrashPoint.Download
+-[DVTAnalyticsPointDeviceFamilyData initWithDeviceFamily:value:]
+/Library/Caches/com.apple.xbs/Sources/IDEFrameworks/IDEFrameworks-15526.1/IDEProducts/DVTProducts/DVTProducts/DVTAnalyticsClient/DVTAnalyticsPointDeviceFamilyData.m
+((deviceFamily)) != nil
+(deviceFamily)
+DeviceFamily
+T@"NSString",R,V_deviceFamily
+DVTAnalyticsServiceEnvironment
+DVTAnalyticsServiceDevHost
+DVTAnalyticsServiceTestHost
+DVTAnalyticsServiceProdHost
+-[DVTAnalyticsService init]
+/Library/Caches/com.apple.xbs/Sources/IDEFrameworks/IDEFrameworks-15526.1/IDEProducts/DVTProducts/DVTProducts/DVTAnalyticsClient/DVTAnalyticsService.m
+method %@ is inappropriate for instances of %@
+-[DVTAnalyticsService initWithServiceExtensionIdentifier:pathComponents:parameters:]
+(pathComponents) != nil
+%@ should be a non-empty array, but it is nil
+CFGetTypeID((CFArrayRef)pathComponents) == CFArrayGetTypeID()
+%@ should be a non-empty array, but it is %@
+[(pathComponents) count] > 0
+%@ should be a non-empty array, but it's an empty array
+[extension isValid]
+parameters
+defaultValue
+required
+c16@?0@"NSString"8
+[requiredParameters dvt_areAllObjectsPassingTest:^BOOL(NSString *requiredParamName) { return _parameters[requiredParamName] != ((void *)0); }]
+c24@?0@"NSString"8@16
+[self.parameters dvt_areAllEntriesPassingTest:^BOOL(NSString *key, id obj) { return [self.orderedParameters containsObject:key]; }]
+responseType
+(deserializedTypeName) != nil
+deserializedTypeName
+CFGetTypeID((CFStringRef)deserializedTypeName) == CFStringGetTypeID()
+![(deserializedTypeName) isEqualToString:@""]
+((deserializedType)) != nil
+(deserializedType)
+-[DVTAnalyticsService resultWithSession:error:]
+orderedParameters
+T@"NSArray",R,V_orderedParameters
+T@"NSArray",C,V_pathComponents
+T@"NSDictionary",C,V_parameters
+T@"DVTServicesType",C,V_responseType
+@"NSString"8@?0
+https://ma-cwsd-lapp01.corp.apple.com:8443
+NSString * _Nonnull DVTAnalyticsServiceHost()_block_invoke_2
+(host) != nil
+host
+CFGetTypeID((CFStringRef)host) == CFStringGetTypeID()
+![(host) isEqualToString:@""]
+DVTAnalyticsClient
++[DVTAnalyticsCrashPointDownloadData crashPointForSession:crashPointIdentifier:distributionOptions:error:]
+/Library/Caches/com.apple.xbs/Sources/IDEFrameworks/IDEFrameworks-15526.1/IDEProducts/DVTProducts/DVTProducts/DVTAnalyticsClient/DVTAnalyticsCrashPointDownloadData.m
+((distributionOptions)) != nil
+(distributionOptions)
+(_castedResult) == nil || [(id)(_castedResult) isKindOfClass:[DVTAnalyticsCrashPointDownloadData class]]
+OSVersionDistribution
+DeviceFamilyDistribution
+CrashPointTimeSeries
+LogList
+T@"DVTAnalyticsPointOSVersionDistribution",&,V_osVersionDistribution
+T@"DVTAnalyticsPointDeviceFamilyDistribution",&,V_deviceFamilyDistribution
+crashPointTimeSeries
+T@"DVTAnalyticsPointTimeDistribution",&,V_crashPointTimeSeries
+logList
+T@"DVTAnalyticsCrashPointLogList",&,V_logList
+DVTAnalyticsResponseErrorDomain
+DVTAnalyticsResponseError_UnderlyingHTTPErrorCode
+DVTAnalyticsResponseError_PayloadData
+DVTAnalyticsResponseError_PayloadObject
+DVTAnalyticsResponseError_URL
+Communication with the service failed.
++[DVTAnalyticsResponse responseFromData:httpResponse:error:]
+/Library/Caches/com.apple.xbs/Sources/IDEFrameworks/IDEFrameworks-15526.1/IDEProducts/DVTProducts/DVTProducts/DVTAnalyticsClient/DVTAnalyticsResponse.m
+((data)) != nil
+(data)
+((httpResponse)) != nil
+(httpResponse)
+The service did not return a dictionary.
+The service did not return valid JSON data.
+The service did not return any data.
+Received an unsuccessful response (HTTP code %ld).
+payload
+T@"NSDictionary",R,V_payload
++[DVTAnalyticsLastCrashReportKeyOption optionWithLastCrashReportKey:]
+/Library/Caches/com.apple.xbs/Sources/IDEFrameworks/IDEFrameworks-15526.1/IDEProducts/DVTProducts/DVTProducts/DVTAnalyticsClient/DVTAnalyticsLastCrashReportKeyOption.m
+(crashReportKey) != nil
+crashReportKey
+CFGetTypeID((CFStringRef)crashReportKey) == CFStringGetTypeID()
+![(crashReportKey) isEqualToString:@""]
+TimeSeriesData
+@16@?0@"DVTAnalyticsPointTimeData"8
+timeSeriesData
+T@"NSArray",R,V_timeSeriesData
++[DVTAnalyticsCrashPointIdentifier crashPointIdentifierWithAppIdentifier:crashPointId:]
+/Library/Caches/com.apple.xbs/Sources/IDEFrameworks/IDEFrameworks-15526.1/IDEProducts/DVTProducts/DVTProducts/DVTAnalyticsClient/DVTAnalyticsCrashPointIdentifier.m
+(crashPointId) != nil
+CFGetTypeID((CFStringRef)crashPointId) == CFStringGetTypeID()
+![(crashPointId) isEqualToString:@""]
+T@"NSArray",R
+T@"NSDictionary",R
+T@"DVTAnalyticsAppIdentifier",R
+T@"NSString",R
+T@"NSString",R,V_analyticsPointIdentifier
++[DVTAnalyticsServiceOption dictionaryFromOptions:]
+/Library/Caches/com.apple.xbs/Sources/IDEFrameworks/IDEFrameworks-15526.1/IDEProducts/DVTProducts/DVTProducts/DVTAnalyticsClient/DVTAnalyticsServiceOption.m
+(option) != nil
+%@ should be an instance inheriting from %@, but it is nil
+option
+[(id)(option) isKindOfClass:[DVTAnalyticsServiceOption class]]
+(option.name) != nil
+option.name
+CFGetTypeID((CFStringRef)option.name) == CFStringGetTypeID()
+![(option.name) isEqualToString:@""]
+(option.value) != nil
+option.value
+CFGetTypeID((CFStringRef)option.value) == CFStringGetTypeID()
+![(option.value) isEqualToString:@""]
+<%@ %p: name: %@, value: %@>
+T@"NSString",R,V_name
+T@"NSString",R,V_value
++[DVTAnalyticsLastCrashPointTimeOption optionWithLastCrashPointTime:]
+/Library/Caches/com.apple.xbs/Sources/IDEFrameworks/IDEFrameworks-15526.1/IDEProducts/DVTProducts/DVTProducts/DVTAnalyticsClient/DVTAnalyticsLastCrashPointTimeOption.m
+(crashPointTime) != nil
+crashPointTime
+CFGetTypeID((CFStringRef)crashPointTime) == CFStringGetTypeID()
+![(crashPointTime) isEqualToString:@""]
+lastCrashPointTime
+crashLogsCount
+uniqueDevicesCount
++[DVTAnalyticsListTopCrashPointsService listTopCrashPointsServiceWithAppIdentifier:options:]
+/Library/Caches/com.apple.xbs/Sources/IDEFrameworks/IDEFrameworks-15526.1/IDEProducts/DVTProducts/DVTProducts/DVTAnalyticsClient/DVTAnalyticsListTopCrashPointsService.m
+Xcode.Analytics.Service.CrashPoint.List
+crashes
++[DVTAnalyticsAppIdentifier appIdentifierWithAdamId:bundleIdentifier:version:buildNumber:rootVersion:rootBuildNumber:isBeta:platformSDKIdentifierOrNil:]
+/Library/Caches/com.apple.xbs/Sources/IDEFrameworks/IDEFrameworks-15526.1/IDEProducts/DVTProducts/DVTProducts/DVTAnalyticsClient/DVTAnalyticsAppIdentifier.m
+(adamId) != nil
+CFGetTypeID((CFStringRef)adamId) == CFStringGetTypeID()
+![(adamId) isEqualToString:@""]
+(bundleIdentifier) != nil
+CFGetTypeID((CFStringRef)bundleIdentifier) == CFStringGetTypeID()
+![(bundleIdentifier) isEqualToString:@""]
+(version) != nil
+CFGetTypeID((CFStringRef)version) == CFStringGetTypeID()
+![(version) isEqualToString:@""]
+(buildNumber) != nil
+buildNumber
+CFGetTypeID((CFStringRef)buildNumber) == CFStringGetTypeID()
+![(buildNumber) isEqualToString:@""]
++[DVTAnalyticsAppIdentifier platformSDKIdentifierForAnalyticsPlatformIdentifier:]
+analyticsPlatformIdentifier
++[DVTAnalyticsAppIdentifier platformSDKIdentifierForAnalyticsPlatformIdentifier:]_block_invoke_2
+!mutableResult[analyticsPlatformIdentifier]
+Each platform must have unique analytics platform identifier
+@8@?0
++[DVTAnalyticsAppIdentifier analyticsPlatformIdentifierForPlatformSDKIdentifier:]
+(platformSDKIdentifier) != nil
+CFGetTypeID((CFStringRef)platformSDKIdentifier) == CFStringGetTypeID()
+![(platformSDKIdentifier) isEqualToString:@""]
+-[DVTAnalyticsAppIdentifier setPlatformSDKIdentifier:]
+platformSDKIdentifier initialized more than once with a different value.
+-[DVTAnalyticsAppIdentifier platformSDKIdentifier]
+[_platformSDKIdentifier dvt_isNonEmpty]
+platformSDKIdentifier wasn't initialized
+-[DVTAnalyticsAppIdentifier analyticsPlatformIdentifier]
+_analyticsPlatformIdentifier
+platformSDKIdentifier initialized with invalid analytics platform
+-[DVTAnalyticsAppIdentifier rootVersion]
+rootVersion wasn't initialized.
+-[DVTAnalyticsAppIdentifier rootBuildNumber]
+[_rootBuildNumber dvt_isNonEmpty]
+rootBuildNumber wasn't initialized.
+rootBuildNumber
+AdamId
+BundleId
+Version
+Build
+IsBeta
+PlatformSDKIdentifier
+RootVersion
+RootBuild
+T@"NSString",R,V_adamId
+T@"NSString",R,V_bundleIdentifier
+T@"NSString",R,V_version
+T@"NSString",R,V_buildNumber
+T@"NSString",C,V_rootBuildNumber
+Tc,R,V_isBeta
+T@"NSString",C,V_platformSDKIdentifier
+T@"NSString",R,V_analyticsPlatformIdentifier
+OSVersionData
+@16@?0@"DVTAnalyticsPointOSVersionData"8
+osVersionData
+T@"NSArray",R,V_osVersionData
+-[DVTAnalyticsData setIsBeta:]
+/Library/Caches/com.apple.xbs/Sources/IDEFrameworks/IDEFrameworks-15526.1/IDEProducts/DVTProducts/DVTProducts/DVTAnalyticsClient/DVTAnalyticsData.m
+-[DVTAnalyticsData setPlatform:]
+_platform
+Analytics service responded with invalid platform
+-[DVTAnalyticsData platform]
+Analytics service did not initialize platform
+platform
+T@"NSString",&,V_platform
+T@"NSString",&,N,V_isBeta
+Data
+data
+T@"NSString",R,V_data
+DeviceFamilyData
+@16@?0@"DVTAnalyticsPointDeviceFamilyData"8
+deviceFamilyData
+T@"NSArray",R,V_deviceFamilyData
+-[DVTAnalyticsPointOSVersionData initWithOSVersion:value:]
+/Library/Caches/com.apple.xbs/Sources/IDEFrameworks/IDEFrameworks-15526.1/IDEProducts/DVTProducts/DVTProducts/DVTAnalyticsClient/DVTAnalyticsPointOSVersionData.m
+((osVersion)) != nil
+(osVersion)
+OSVersion
+T@"NSString",R,V_osVersion
++[DVTAnalyticsPointOSDistributionOption distributionWithOSVersions:]
+/Library/Caches/com.apple.xbs/Sources/IDEFrameworks/IDEFrameworks-15526.1/IDEProducts/DVTProducts/DVTProducts/DVTAnalyticsClient/DVTAnalyticsPointOSDistributionOption.m
+(osVersions) != nil
+CFGetTypeID((CFArrayRef)osVersions) == CFArrayGetTypeID()
+[(osVersions) count] > 0
++[DVTAnalyticsCrashPointOSFilter filterWithOSVersion:]
+/Library/Caches/com.apple.xbs/Sources/IDEFrameworks/IDEFrameworks-15526.1/IDEProducts/DVTProducts/DVTProducts/DVTAnalyticsClient/DVTAnalyticsCrashPointOSFilter.m
+((version)) != nil
+(version)
++[DVTAnalyticsCrashPointMoreLogsData crashPointUpdateForSession:crashPointIdentifier:moreLogsOptions:error:]
+/Library/Caches/com.apple.xbs/Sources/IDEFrameworks/IDEFrameworks-15526.1/IDEProducts/DVTProducts/DVTProducts/DVTAnalyticsClient/DVTAnalyticsCrashPointMoreLogsData.m
+((moreLogsOptions)) != nil
+(moreLogsOptions)
+(_castedResult) == nil || [(id)(_castedResult) isKindOfClass:[DVTAnalyticsCrashPointMoreLogsData class]]
+@"DVTAnalyticsCrashPointLogList"8@?0
+T@"NSString",&,V_moreLogs
+T@"NSString",&,V_lastCrashPointTime
+logData
+T@"NSArray",&,V_logData
+T@"DVTAnalyticsCrashPointLogList",R,V_logList
+DVTAnalyticsServiceAPIVersion
+-[DVTAnalyticsRequest _analyticsAPIVersion]
+/Library/Caches/com.apple.xbs/Sources/IDEFrameworks/IDEFrameworks-15526.1/IDEProducts/DVTProducts/DVTProducts/DVTAnalyticsClient/DVTAnalyticsRequest.m
+(_result) != nil
+[[NSUserDefaults standardUserDefaults] stringForKey:DVTAnalyticsServiceAPIVersionDefault]
+%@/api/%@/%@%@
+X-Request-ID
+Accept-Encoding
+gzip
+Accept
+application/json
+-[DVTAnalyticsRequest responseBySendingRequestWithError:]_block_invoke
+(_castedResult) == nil || [(id)(_castedResult) isKindOfClass:[NSHTTPURLResponse class]]
+An unexpected error occurred communicating with Apple.
+Try again later.
+v32@?0@"NSData"8@"NSURLResponse"16@"NSError"24
+Sending request: %@
+HTTP Headers
+Received response (%@): %@
+success
+failure
+-[DVTAnalyticsRequest responseBySendingRequestWithError:]
+endpoint
+T@"NSString",R,V_endpoint
+query
+T@"NSString",R,V_query
++[DVTAnalyticsPointDeviceFamilyDistributionOption distributionWithDeviceFamilies:]
+/Library/Caches/com.apple.xbs/Sources/IDEFrameworks/IDEFrameworks-15526.1/IDEProducts/DVTProducts/DVTProducts/DVTAnalyticsClient/DVTAnalyticsPointDeviceFamilyDistributionOption.m
+(deviceFamilies) != nil
+CFGetTypeID((CFArrayRef)deviceFamilies) == CFArrayGetTypeID()
+[(deviceFamilies) count] > 0
++[DVTAnalyticsPointDistributionOptions _distributionWithStartDateDistro:endDateDistro:osVersions:deviceFamilies:]
+/Library/Caches/com.apple.xbs/Sources/IDEFrameworks/IDEFrameworks-15526.1/IDEProducts/DVTProducts/DVTProducts/DVTAnalyticsClient/DVTAnalyticsPointDistributionOptions.m
+osDistro == ((void *)0) || deviceFamilyDistro == ((void *)0)
++[DVTAnalyticsPointDistributionOptions distributionStartDate:endDate:osVersions:deviceFamilies:]
+((startDate)) != nil
+(startDate)
+((endDate)) != nil
+(endDate)
++[DVTAnalyticsPointDistributionOptions distributionWithDefaultDateRangeAndOSVersions:]
++[DVTAnalyticsPointDistributionOptions distributionWithDefaultDateRangeAndDeviceFamilies:]
+HasMoreLogs
+LastCrashReporterKey
+LastCrashPointTime
+LogData
+@16@?0@"DVTAnalyticsCrashPointLogData"8
+T@"NSString",R,V_moreLogs
+hasMoreLogs
+Tc,R,V_hasMoreLogs
+T@"NSString",R,V_lastCrashPointTime
+T@"NSString",R,V_lastCrashReporterKey
+T@"NSArray",R,V_logData
+_TtC18DVTAnalyticsClient49AnalyticsProcessorUsagePointLogMetaStackFrameData
+parsedFrame
+rawFrame
+childrenCount
+T@"_TtC18DVTAnalyticsClient51AnalyticsProcessorUsagePointLogParsedStackFrameData",N,&,VparsedFrame
+T@"NSString",N,C
+T@"NSNumber",N,&,VchildrenCount
+DVTAnalyticsMetricsServiceAPIVersion
+_TtC18DVTAnalyticsClient23AnalyticsMetricsRequest
+@24@0:8@16
+DVTAnalyticsMetricsDevHostDefault
+https://uat-perfmetricsservices.apple.com
+DVTAnalyticsMetricsTestHostDefault
+https://crashwebservices-uat.corp.apple.com
+DVTAnalyticsMetricsProdHostDefault
+https://crashwebservices.apple.com
+Xcode.Analytics.Service.ProcessorUsagePoint.Download
+DVTAnalyticsClient.AnalyticsDownloadProcessorUsagePointsService
+init(serviceExtensionIdentifier:pathComponents:parameters:)
+_TtC18DVTAnalyticsClient44AnalyticsDownloadProcessorUsagePointsService
+@40@0:8@16@24@32
+servicePathComponents
+_TtC18DVTAnalyticsClient35AnalyticsProcessorUsagePointLogData
+betaIdentifier
+osBuild
+osPlatform
+osVersion
+parent
+buildVersion
+appVersion
+hardwareModel
+dateTime
+activeCPUs
+reportVersion
+endTime
+microstackshots
+primaryState
+event
+architecture
+startTime
+powerSource
+powerStatsFor
+energyDetail
+steps
+actionTaken
+userActivity
+duration
+cpuUsed
+cpuLimit
+limitDuration
+executionPath
+sampledExecutionTree
+binaryImageList
+T@"NSNumber",N,&,VactiveCPUs
+T@"NSNumber",N,&,Vpid
+T@"NSNumber",N,&,Vsteps
+T@"NSArray",N,C
+_TtC18DVTAnalyticsClient39AnalyticsProcessorUsagePointLogMetaData
+T@"_TtC18DVTAnalyticsClient35AnalyticsProcessorUsagePointLogData",N,&,VlogData
+_TtC18DVTAnalyticsClient32AnalyticsProcessorUsagePointList
+adamId
+bundleId
+numProcessorUsagePoints
+sortedBy
+topProcessorUsagePoints
+rootVersion
+rootBuild
+T@"NSNumber",N,&,VnumProcessorUsagePoints
+_TtC18DVTAnalyticsClient40AnalyticsProcessorUsagePointDownloadData
+processorUsagePointIdentifier
+osVersionDistribution
+processorUsagePointTimeSeries
+deviceFamilyDistribution
+processorUsageLogData
+T@"DVTAnalyticsPointOSVersionDistribution",N,&,VosVersionDistribution
+T@"DVTAnalyticsPointTimeDistribution",N,&,VprocessorUsagePointTimeSeries
+T@"DVTAnalyticsPointDeviceFamilyDistribution",N,&,VdeviceFamilyDistribution
+T@"_TtC18DVTAnalyticsClient35AnalyticsProcessorUsagePointLogList",N,&,VprocessorUsageLogData
+Xcode.Analytics.Service.ProcessorUsagePoint.List
+DVTAnalyticsClient.AnalyticsListTopProcessorUsagePointsService
+_TtC18DVTAnalyticsClient43AnalyticsListTopProcessorUsagePointsService
+AnalyticsMetricsAppIdentifier(identifier: 
+, adamIdentifier: 
+, bundleIdentifier: 
+, analyticsPlatform: 
+_TtC18DVTAnalyticsClient29AnalyticsMetricsAppIdentifier
+v24@0:8@16
+adamIdentifier
+bundleIdentifier
+analyticsPlatform
+identifier
+T@"NSString",N,R
+debugDescription
+c24@0:8@16
+DVTAnalyticsClient1
+q16@0:8
+hash
+Tq,N,R
+DVTAnalyticsClient2
+pathComponents
+T@"NSArray",N,R
+T@"NSDictionary",N,R
+DVTAnalyticsServiceURLComponentProviding
+@"NSArray"16@0:8
+@"NSDictionary"16@0:8
+NSObject
+#16@0:8
+^@24@0:8:16
+^@32@0:8:16@24
+^@40@0:8:16@24@32
+c16@0:8
+c24@0:8#16
+c24@0:8:16
+^v16@0:8
+T#,N,R
+c24@0:8@"Protocol"16
+@"NSString"16@0:8
+_TtC18DVTAnalyticsClient53AnalyticsProcessorUsagePointLogMetaStackFrameDataRoot
+@16@0:8
+root
+_TtC18DVTAnalyticsClient35AnalyticsProcessorUsagePointLogList
+logMetaDatas
+_TtC18DVTAnalyticsClient35AnalyticsProcessorUsagePointSummary
+processorUsagePointName
+sourceFileName
+sourceFileLineNumber
+rollingOccurenceCount
+rollingUniqueDeviceCount
+bugType
+T@"NSNumber",N,&,VsourceFileLineNumber
+T@"NSNumber",N,&,VrollingOccurenceCount
+T@"NSNumber",N,&,VrollingUniqueDeviceCount
+DVTAnalyticsMetricsDomain
+The metrics returned were invalid.
+No metrics were returned.
+Unable to retrieve metrics from the service.
+_TtC18DVTAnalyticsClient35AnalyticsMetricsProductDataResponse
+v16@0:8
+categories
+filterCriteriaSets
+lastUpdated
+T@"_TtC18DVTAnalyticsClient42AnalyticsMetricsFilterCriteriaSetsResponse",N,&,VfilterCriteriaSets
+_TtC18DVTAnalyticsClient31AnalyticsMetricsPayloadResponse
+productData
+returnCode
+_TtC18DVTAnalyticsClient31AnalyticsMetricsSectionResponse
+sectionIdentifier
+datasets
+unit
+T@"_TtC18DVTAnalyticsClient28AnalyticsMetricsUnitResponse",N,&,Vunit
+Xcode.Analytics.Metrics.Service.AnalyticsMetricsProductDataResponse.Download
+DVTAnalyticsClient.AnalyticsMetricsDownloadProductDataService
+_TtC18DVTAnalyticsClient42AnalyticsMetricsDownloadProductDataService
+AnalyticsProcessorUsagePointIdentifier(processorUsagePointIdentifier: 
+DVTAnalyticsClient.AnalyticsProcessorUsagePointIdentifier
+init()
+_TtC18DVTAnalyticsClient38AnalyticsProcessorUsagePointIdentifier
+platformSDKIdentifier
+description
+appIdentifier
+T@"DVTAnalyticsAppIdentifier",N,R
+analyticsPointIdentifier
+DVTAnalyticsPointIdentifierProtocol
+@"DVTAnalyticsAppIdentifier"16@0:8
+_TtC18DVTAnalyticsClient28AnalyticsMetricsUnitResponse
+unitIdentifier
+_TtC18DVTAnalyticsClient38AnalyticsMetricsBreakdownValueResponse
+label
+T@"NSNumber",N,&,Vvalue
+_TtC18DVTAnalyticsClient29AnalyticsMetricsPointResponse
+summary
+rawSummary
+percentageBreakdown
+version
+T@"NSNumber",N,&,Vsummary
+T@"NSNumber",N,&,VrawSummary
+_TtC18DVTAnalyticsClient31AnalyticsMetricsDatasetResponse
+c32@0:8@16^@24
+points
+normalizedRunningTime
+filterCriteria
+T@"NSNumber",N,&,VnormalizedRunningTime
+T@"_TtC18DVTAnalyticsClient38AnalyticsMetricsFilterCriteriaResponse",N,&,VfilterCriteria
+_TtC18DVTAnalyticsClient46AnalyticsProcessorUsagePointLogBinaryImageData
+startAddress
+build
+uuid
+endAddress
+path
+_TtC18DVTAnalyticsClient51AnalyticsProcessorUsagePointLogParsedStackFrameData
+offset
+function
+fileName
+indentLevel
+isBlameFrame
+library
+sampleCount
+lineNumber
+address
+T@"NSNumber",N,&,Voffset
+T@"NSNumber",N,&,VindentLevel
+T@"NSNumber",N,&,VisBlameFrame
+T@"NSNumber",N,&,VsampleCount
+T@"NSNumber",N,&,VlineNumber
+_TtC18DVTAnalyticsClient38AnalyticsMetricsFilterCriteriaResponse
+device
+percentile
+_TtC18DVTAnalyticsClient30AnalyticsMetricsDeviceResponse
+deviceIdentifier
+isRepresented
+_TtC18DVTAnalyticsClient44AnalyticsMetricsDeviceFamilyCriteriaResponse
+familyIdentifier
+devices
+_TtC18DVTAnalyticsClient42AnalyticsMetricsPercentileCriteriaResponse
+percentileIdentifier
+_TtC18DVTAnalyticsClient42AnalyticsMetricsFilterCriteriaSetsResponse
+defaultCriteria
+percentiles
+T@"_TtC18DVTAnalyticsClient38AnalyticsMetricsFilterCriteriaResponse",N,&,VdefaultCriteria
+_TtC18DVTAnalyticsClient32AnalyticsMetricsCategoryResponse
+categoryIdentifier
+displayName
+sections
+_TtCs12_SwiftObject
+__TEXT
+descriptionForAssertionMessage
+listTopCrashPointsServiceWithAppIdentifier:options:
+resultWithSession:error:
+class
+isKindOfClass:
+rootVersion
+setRootVersion:
+rootBuildNumber
+setRootBuild:
+adamId
+bundleId
+appVersion
+appBuild
+rootBuild
+isBeta
+isEqualToString:
+platform
+appIdentifierWithAdamId:bundleIdentifier:version:buildNumber:rootVersion:rootBuildNumber:isBeta:platformSDKIdentifierOrNil:
+appIdentifier
+JSONRepresentation
+crashesSortedBy
+topCrashes
+dvt_arrayByApplyingBlock:
+dictionaryWithObjects:forKeys:count:
+crashPointListForSession:appIdentifier:options:error:
+isEqual:
+self
+performSelector:
+performSelector:withObject:
+performSelector:withObject:withObject:
+isProxy
+isMemberOfClass:
+conformsToProtocol:
+respondsToSelector:
+retain
+release
+autorelease
+retainCount
+zone
+hash
+superclass
+description
+debugDescription
+objectFromJSONRepresentation:error:
+.cxx_destruct
+setAdamId:
+setAppVersion:
+setAppBuild:
+setBundleId:
+numCrashes
+setNumCrashes:
+_appIdentifier
+_topCrashes
+_crashesSortedBy
+_adamId
+_appVersion
+_appBuild
+_bundleId
+_numCrashes
+_rootVersion
+_rootBuild
+optionWithLastCrashReportKey:
+optionWithLastCrashPointTime:
+init
+arrayWithObjects:count:
+downloadMoreLogsOptionsWithLastCrashReportKey:lastCrashPointTime:
+options
+_options
+standardUserDefaults
+numberWithInt:
+registerDefaults:
+integerForKey:
+setDateFormat:
+_dateFormatter
+stringFromDate:
+_nameForType:
+optionWithName:value:
+dateWithTimeIntervalSinceNow:
+distributionWithDate:type:
+date
+distributionWithStandardStartDate
+distributionWithStandardEndDate
+copy
+filterWithDeviceModel:
+servicePathComponents
+pathComponents
+arrayByAddingObjectsFromArray:
+combinedParametersFromOptions:andURLComponentProvider:
+initWithServiceExtensionIdentifier:pathComponents:parameters:
+downloadMoreLogsServiceWithCrashPointIdentifier:options:
+periodStart
+value
+objectForKeyedSubscript:
+initWithPeriodStart:value:
+arrayWithObjects:
+stringWithFormat:
+_periodStart
+_value
+className
+crashPointId
+crashPointName
+sourceFileName
+sourceFileLineNumber
+rollingOccurenceCount
+rollingUniqueDeviceCount
+_crashPointId
+_crashPointName
+_sourceFileName
+_sourceFileLineNumber
+_rollingOccurenceCount
+_rollingUniqueDeviceCount
+crashPointIdentifierWithAppIdentifier:crashPointId:
+dvt_isNonEmpty
+crashPointIdentifier
+setCrashPointId:
+_crashPointIdentifier
+_parseArgumentsWithError:
+_sessionWithError:
+setSession:
+session
+command
+_listLogsWithError:
+_downloadLogsWithError:
+_downloadMoreLogsWithError:
+dvt_errorWithDomain:errorCode:message:recoverySuggestion:
+dataWithJSONObject:options:error:
+initWithData:encoding:
+_executeWithError:executionBlock:
+stringWithUTF8String:
+dvt_popFirstObject
+lowercaseString
+setObject:forKeyedSubscript:
+initWithName:usageName:usageDescription:argumentType:argumentKey:handlerBlock:
+setOptionDefinitions:
+hasPrefix:
+setFallbackOptionHandlerBlock:
+dictionary
+arguments
+parseArguments:intoOptionsDictionary:error:
+dvt_onlyObject
+_commandFromString:error:
+setCommand:
+dvt_componentsJoinedByString:finalComponentJoinString:
+setValuesForKeysWithDictionary:
+_ensureRequiredArgumentsWithError:
+name
+_stringFromCommand:
+osVersions
+deviceFamilies
+lastCrashReporterKey
+lastCrashReportTime
+developerAccountUser
+defaultAccountCredentialsManager
+accountCredentialsForUsername:error:
+accountCredentialsFromUsername:password:successfullyPersisted:error:
+accountWithCredentials:
+developerAccount
+servicesSessionByLoggingInWithAccount:executionContext:error:
+analyticsClientTool
+runWithError:
+setName:
+setArguments:
+standardInput
+setStandardInput:
+standardOutput
+setStandardOutput:
+standardError
+setStandardError:
+setDeveloperAccountUser:
+appAdamId
+setAppAdamId:
+appBundleId
+setAppBundleId:
+setIsBeta:
+platformSDKIdentifier
+setPlatformSDKIdentifier:
+setDeviceFamilies:
+setOsVersions:
+setLastCrashReporterKey:
+setLastCrashReportTime:
+_developerAccount
+_name
+_arguments
+_standardInput
+_standardOutput
+_standardError
+_developerAccountUser
+_appAdamId
+_appBundleId
+_isBeta
+_platformSDKIdentifier
+_deviceFamilies
+_osVersions
+_lastCrashReporterKey
+_lastCrashReportTime
+_command
+_session
+cStringUsingEncoding:
+stringWithCString:encoding:
+downloadCrashPointServiceWithCrashPointIdentifier:distributionOptions:
+deviceFamily
+initWithDeviceFamily:value:
+_deviceFamily
+count
+defaultPlugInManager
+extensionWithIdentifier:
+isValid
+array
+countByEnumeratingWithState:objects:count:
+boolValue
+addObject:
+dvt_dictionaryByAddingEntriesFromDictionary:
+valueForKey:
+dvt_areAllObjectsPassingTest:
+parameters
+orderedParameters
+containsObject:
+dvt_areAllEntriesPassingTest:
+typeWithName:
+_responseFromServiceWithSession:error:
+responseType
+payload
+deserialize:context:error:
+dictionaryFromOptions:
+_analyticsRequestClass
+_requestEndpoint
+_requestQueryString
+requestWithSession:endpoint:query:
+responseBySendingRequestWithError:
+componentsJoinedByString:
+stringWithString:
+appendString:
+URLQueryAllowedCharacterSet
+stringByAddingPercentEncodingWithAllowedCharacters:
+setPathComponents:
+setParameters:
+setResponseType:
+_orderedParameters
+_pathComponents
+_parameters
+_responseType
+numberWithInteger:
+stringForKey:
+logAspectWithName:
+osVersionDistribution
+deviceFamilyDistribution
+crashPointTimeSeries
+logList
+crashPointForSession:crashPointIdentifier:distributionOptions:error:
+setOsVersionDistribution:
+setDeviceFamilyDistribution:
+setCrashPointTimeSeries:
+setLogList:
+_osVersionDistribution
+_deviceFamilyDistribution
+_crashPointTimeSeries
+_logList
+statusCode
+length
+JSONObjectWithData:options:error:
+initWithPayload:
+dvt_errorByInjectingUserInfoObjects:
+dvt_errorByInjectingUserInfoObject:forKey:
+responseFromData:httpResponse:error:
+_payload
+timeSeriesData
+_timeSeriesData
+analyticsPointIdentifier
+arrayByAddingObject:
+dvt_dictionaryBySettingObject:forKey:
+_analyticsPointIdentifier
+_sortingOptionWithValue:
+crashlogsCountSortingOption
+uniqueDevicesCountSortingOption
+allPlatforms
+dvt_extendedInfo
+analyticsPlatformIdentifier
+identifier
+platformForIdentifier:
+analyticsPlatformIdentifierForPlatformSDKIdentifier:
+bundleIdentifier
+version
+buildNumber
+numberWithBool:
+platformSDKIdentifierForAnalyticsPlatformIdentifier:
+hasValidAnalyticsPlatformIdentifierForPlatformSDKIdentifier:
+setRootBuildNumber:
+_rootBuildNumber
+_analyticsPlatformIdentifier
+_bundleIdentifier
+_version
+_buildNumber
+osVersionData
+_osVersionData
+setPlatform:
+_platform
+data
+_data
+deviceFamilyData
+_deviceFamilyData
+osVersion
+initWithOSVersion:value:
+_osVersion
+distributionWithOSVersions:
+stringValue
+filterWithOSVersion:
+moreLogs
+lastCrashPointTime
+logData
+logListWithHasMoreLogs:lastCrashPointTime:lastCrashReporterKey:logData:
+crashPointUpdateForSession:crashPointIdentifier:moreLogsOptions:error:
+setMoreLogs:
+setLastCrashPointTime:
+setLogData:
+_moreLogs
+_lastCrashPointTime
+_logData
+alloc
+initWithSession:endpoint:query:
+initWithSession:
+_analyticsServiceHostname
+_analyticsAPIVersion
+endpoint
+query
+URLWithString:
+dvt_UUIDString
+mutableCopy
+authenticationHeadersForRequest:
+addEntriesFromDictionary:
+defaultSessionConfiguration
+standardXcodeHeaders
+_additionalHTTPHeaders
+accountBasedSession
+account
+accountCredentials
+appleIDSession
+set_appleIDContext:
+setHTTPCookieAcceptPolicy:
+setHTTPCookieStorage:
+setHTTPShouldSetCookies:
+setHTTPAdditionalHeaders:
+setHTTPShouldUsePipelining:
+setRequestCachePolicy:
+setTimeoutIntervalForRequest:
+setHTTPMaximumConnectionsPerHost:
+_urlSessionConfiguration
+sessionWithConfiguration:delegate:delegateQueue:
+semaphoreWithCount:
+requestURL
+signal
+dataTaskWithURL:completionHandler:
+currentRequest
+configuration
+HTTPAdditionalHeaders
+_logAtLogLevel:withFormat:
+resume
+wait
+invalidateAndCancel
+protectionSpace
+serverTrust
+credentialForTrust:
+proposedCredential
+initialize
+URLSession:didBecomeInvalidWithError:
+URLSession:didReceiveChallenge:completionHandler:
+URLSessionDidFinishEventsForBackgroundURLSession:
+_endpoint
+_query
+distributionWithDeviceFamilies:
+_distributionWithStartDateDistro:endDateDistro:osVersions:deviceFamilies:
+distributionStartDate:endDate:osVersions:deviceFamilies:
+distributionWithDefaultDateRange
+distributionWithDefaultDateRangeAndOSVersions:
+distributionWithDefaultDateRangeAndDeviceFamilies:
+hasMoreLogs
+_hasMoreLogs
+dealloc
+parsedFrame
+setParsedFrame:
+rawFrame
+setRawFrame:
+childrenCount
+setChildrenCount:
+betaIdentifier
+setBetaIdentifier:
+osBuild
+setOsBuild:
+osPlatform
+setOsPlatform:
+setOsVersion:
+parent
+setParent:
+buildVersion
+setBuildVersion:
+hardwareModel
+setHardwareModel:
+dateTime
+setDateTime:
+activeCPUs
+setActiveCPUs:
+reportVersion
+setReportVersion:
+endTime
+setEndTime:
+microstackshots
+setMicrostackshots:
+primaryState
+setPrimaryState:
+event
+setEvent:
+architecture
+setArchitecture:
+setPid:
+startTime
+setStartTime:
+powerSource
+setPowerSource:
+powerStatsFor
+setPowerStatsFor:
+energyDetail
+setEnergyDetail:
+steps
+setSteps:
+actionTaken
+setActionTaken:
+userActivity
+setUserActivity:
+duration
+setDuration:
+cpuUsed
+setCpuUsed:
+cpuLimit
+setCpuLimit:
+limitDuration
+setLimitDuration:
+uuid
+setUuid:
+executionPath
+setExecutionPath:
+sampledExecutionTree
+setSampledExecutionTree:
+binaryImageList
+setBinaryImageList:
+numProcessorUsagePoints
+setNumProcessorUsagePoints:
+sortedBy
+setSortedBy:
+topProcessorUsagePoints
+setTopProcessorUsagePoints:
+processorUsagePointIdentifier
+setProcessorUsagePointIdentifier:
+processorUsagePointTimeSeries
+setProcessorUsagePointTimeSeries:
+processorUsageLogData
+setProcessorUsageLogData:
+initWithAdamIdentifier:bundleIdentifier:platform:
+adamIdentifier
+setAdamIdentifier:
+setBundleIdentifier:
+analyticsPlatform
+setAnalyticsPlatform:
+root
+setRoot:
+logMetaDatas
+setLogMetaDatas:
+processorUsagePointName
+setProcessorUsagePointName:
+setSourceFileName:
+setSourceFileLineNumber:
+setRollingOccurenceCount:
+setRollingUniqueDeviceCount:
+bugType
+setBugType:
+errorForInvalidData
+categories
+setCategories:
+filterCriteriaSets
+setFilterCriteriaSets:
+lastUpdated
+setLastUpdated:
+setVersion:
+dvt_servicesTypeInstanceDidFinishLoadingWithContext:error:
+productData
+setProductData:
+returnCode
+setReturnCode:
+sectionIdentifier
+setSectionIdentifier:
+displayName
+setDisplayName:
+datasets
+setDatasets:
+unit
+setUnit:
+initWithString:
+unitIdentifier
+setUnitIdentifier:
+label
+setLabel:
+setValue:
+summary
+setSummary:
+rawSummary
+setRawSummary:
+percentageBreakdown
+setPercentageBreakdown:
+points
+setPoints:
+normalizedRunningTime
+setNormalizedRunningTime:
+filterCriteria
+setFilterCriteria:
+startAddress
+setStartAddress:
+library
+setLibrary:
+build
+setBuild:
+endAddress
+setEndAddress:
+path
+setPath:
+offset
+setOffset:
+function
+setFunction:
+fileName
+setFileName:
+indentLevel
+setIndentLevel:
+isBlameFrame
+setIsBlameFrame:
+sampleCount
+setSampleCount:
+lineNumber
+setLineNumber:
+address
+setAddress:
+device
+setDevice:
+percentile
+setPercentile:
+deviceIdentifier
+setDeviceIdentifier:
+isRepresented
+setIsRepresented:
+familyIdentifier
+setFamilyIdentifier:
+devices
+setDevices:
+percentileIdentifier
+setPercentileIdentifier:
+defaultCriteria
+setDefaultCriteria:
+percentiles
+setPercentiles:
+categoryIdentifier
+setCategoryIdentifier:
+sections
+setSections:
+DVTAnalyticsCrashPointList
+DVTServicesJSONSerialization
+NSObject
+DVTAnalyticsDownloadMoreLogsOptions
+DVTAnalyticsPointDateDistributionOption
+DVTAnalyticsCrashPointDeviceFilter
+DVTAnalyticsDownloadMoreLogsService
+DVTAnalyticsPointTimeData
+DVTAnalyticsCrashPointSummary
+DVTAnalyticsCrashPointData
+DVTAnalyticsClientTool
+DVTAnalyticsDownloadCrashPointService
+DVTAnalyticsPointDeviceFamilyData
+DVTAnalyticsService
+DVTAnalyticsCrashPointDownloadData
+DVTAnalyticsResponse
+DVTAnalyticsLastCrashReportKeyOption
+DVTAnalyticsPointTimeDistribution
+DVTAnalyticsCrashPointIdentifier
+DVTAnalyticsServiceURLComponentProviding
+DVTAnalyticsPointIdentifierProtocol
+DVTAnalyticsServiceOption
+DVTAnalyticsLastCrashPointTimeOption
+DVTAnalyticsCrashPointSortingOption
+DVTAnalyticsListTopCrashPointsService
+DVTAnalyticsAppIdentifier
+DVTAnalyticsPointOSVersionDistribution
+DVTAnalyticsData
+DVTAnalyticsCrashPointLogData
+DVTAnalyticsPointDeviceFamilyDistribution
+DVTAnalyticsPointOSVersionData
+DVTAnalyticsPointOSDistributionOption
+DVTAnalyticsCrashPointOSFilter
+DVTAnalyticsCrashPointMoreLogsData
+DVTAnalyticsRequest
+NSURLSessionDelegate
+DVTAnalyticsPointDeviceFamilyDistributionOption
+DVTAnalyticsPointDistributionOptions
+DVTAnalyticsCrashPointLogList
+@48@0:8@16@24@32^@40
+c24@0:8@16
+#16@0:8
+@16@0:8
+@24@0:8:16
+@32@0:8:16@24
+@40@0:8:16@24@32
+c16@0:8
+c24@0:8#16
+c24@0:8:16
+Vv16@0:8
+Q16@0:8
+^{_NSZone=}16@0:8
+c24@0:8@"Protocol"16
+@"NSString"16@0:8
+@32@0:8@16^@24
+v16@0:8
+v24@0:8@16
+@"DVTAnalyticsAppIdentifier"
+@"NSArray"
+@"NSString"
+@"NSNumber"
+@32@0:8@16@24
+@24@0:8q16
+@32@0:8@16q24
+@24@0:8@16
+@"DVTAnalyticsCrashPointIdentifier"
+c24@0:8^@16
+q32@0:8@16^@24
+c32@0:8^@16@?24
+@24@0:8^@16
+q16@0:8
+v24@0:8q16
+@"DVTDeveloperAccount"
+@"NSFileHandle"
+@"DVTServicesAccountBasedSession"
+@40@0:8@16@24@32
+@"NSDictionary"
+@"DVTServicesType"
+@"DVTAnalyticsPointOSVersionDistribution"
+@"DVTAnalyticsPointDeviceFamilyDistribution"
+@"DVTAnalyticsPointTimeDistribution"
+@"DVTAnalyticsCrashPointLogList"
+@40@0:8@16@24^@32
+@"NSArray"16@0:8
+@"NSDictionary"16@0:8
+@"DVTAnalyticsAppIdentifier"16@0:8
+@76@0:8@16@24@32@40@48@56c64@68
+v32@0:8@16@24
+v40@0:8@16@24@?32
+v32@0:8@"NSURLSession"16@"NSError"24
+v40@0:8@"NSURLSession"16@"NSURLAuthenticationChallenge"24@?<v@?q@"NSURLCredential">32
+v24@0:8@"NSURLSession"16
+@48@0:8@16@24@32@40
+@44@0:8c16@20@28@36
+DVTAnalyticsClient
+AnalyticsProcessorUsagePointLogMetaStackFrameData
+DVTAnalyticsClient
+AnalyticsMetricsRequest
+DVTAnalyticsClient
+AnalyticsDownloadServiceProtocol
+AnalyticsDownloadProcessorUsagePointsService
+DVTAnalyticsClient
+AnalyticsProcessorUsagePointLogData
+DVTAnalyticsClient
+AnalyticsProcessorUsagePointLogMetaData
+DVTAnalyticsClient
+AnalyticsProcessorUsagePointListError
+AnalyticsProcessorUsagePointList
+DVTAnalyticsClient
+AnalyticsProcessorUsagePointDownloadDataError
+AnalyticsProcessorUsagePointDownloadData
+DVTAnalyticsClient
+AnalyticsListServiceProtocol
+AnalyticsListTopProcessorUsagePointsService
+DVTAnalyticsClient
+AnalyticsMetricsAppIdentifier
+CodingKeys
+DVTAnalyticsClient
+AnalyticsProcessorUsagePointLogMetaStackFrameDataRoot
+DVTAnalyticsClient
+AnalyticsProcessorUsagePointLogList
+DVTAnalyticsClient
+AnalyticsProcessorUsagePointSummary
+DVTAnalyticsClient
+AnalyticsMetricsProductDataResponse
+AnalyticsMetricsPayloadResponse
+AnalyticsMetricsError
+Code
+AnalyticsMetricsProductDataResponseError
+AnalyticsMetricsProductDataResponseProtocol
+DVTAnalyticsClient
+AnalyticsMetricsSectionResponse
+DVTAnalyticsClient
+AnalyticsMetricsDownloadProductDataServiceProtocol
+AnalyticsMetricsDownloadProductDataService
+DVTAnalyticsClient
+AnalyticsProcessorUsagePointIdentifier
+CodingKeys
+DVTAnalyticsClient
+AnalyticsMetricsUnitResponse
+AnalyticsMetricsBreakdownValueResponse
+AnalyticsMetricsPointResponse
+AnalyticsMetricsDatasetResponse
+DVTAnalyticsClient
+AnalyticsProcessorUsagePointLogBinaryImageData
+DVTAnalyticsClient
+AnalyticsProcessorUsagePointLogParsedStackFrameData
+DVTAnalyticsClient
+AnalyticsMetricsResponse
+AnalyticsMetricsFilterCriteriaResponse
+DVTAnalyticsClient
+AnalyticsMetricsDeviceResponse
+AnalyticsMetricsDeviceFamilyCriteriaResponse
+AnalyticsMetricsPercentileCriteriaResponse
+AnalyticsMetricsFilterCriteriaSetsResponse
+DVTAnalyticsClient
+AnalyticsServiceProtocol
+DVTAnalyticsClient
+AnalyticsMetricsCategoryResponse
+@(#)PROGRAM:DVTAnalyticsClient  PROJECT:DVTProducts-1
+?__swift5_proto
+So16DVTAnalyticsDataC
+18DVTAnalyticsClient51AnalyticsProcessorUsagePointLogParsedStackFrameDataCSg
+SSSg
+So8NSNumberCSg
+So19DVTAnalyticsRequestC
+$s18DVTAnalyticsClient32AnalyticsDownloadServiceProtocolP
+So19DVTAnalyticsServiceC
+SaySSG
+Say18DVTAnalyticsClient53AnalyticsProcessorUsagePointLogMetaStackFrameDataRootCGSg
+Say18DVTAnalyticsClient46AnalyticsProcessorUsagePointLogBinaryImageDataCGSg
+18DVTAnalyticsClient35AnalyticsProcessorUsagePointLogDataCSg
+Say18DVTAnalyticsClient35AnalyticsProcessorUsagePointSummaryCGSg
+So38DVTAnalyticsPointOSVersionDistributionCSg
+So33DVTAnalyticsPointTimeDistributionCSg
+So41DVTAnalyticsPointDeviceFamilyDistributionCSg
+18DVTAnalyticsClient35AnalyticsProcessorUsagePointLogListCSg
+$s18DVTAnalyticsClient28AnalyticsListServiceProtocolP
+So8NSObjectC
+Say18DVTAnalyticsClient49AnalyticsProcessorUsagePointLogMetaStackFrameDataCGSg
+Say18DVTAnalyticsClient39AnalyticsProcessorUsagePointLogMetaDataCGSg
+Say18DVTAnalyticsClient32AnalyticsMetricsCategoryResponseCGSg
+18DVTAnalyticsClient42AnalyticsMetricsFilterCriteriaSetsResponseCSg
+$s18DVTAnalyticsClient43AnalyticsMetricsProductDataResponseProtocolP
+18DVTAnalyticsClient21AnalyticsMetricsErrorV4CodeO
+$sSY
+Say18DVTAnalyticsClient31AnalyticsMetricsDatasetResponseCGSg
+18DVTAnalyticsClient28AnalyticsMetricsUnitResponseCSg
+$s18DVTAnalyticsClient50AnalyticsMetricsDownloadProductDataServiceProtocolP
+18DVTAnalyticsClient38AnalyticsMetricsFilterCriteriaResponseCSg
+$s18DVTAnalyticsClient24AnalyticsMetricsResponseP
+$s18DVTAnalyticsClient24AnalyticsServiceProtocolP
+Say18DVTAnalyticsClient31AnalyticsMetricsSectionResponseCGSg
+parsedFrame
+rawFrame
+childrenCount
+servicePathComponents
+command
+betaIdentifier
+osBuild
+osPlatform
+osVersion
+parent
+buildVersion
+appVersion
+hardwareModel
+dateTime
+activeCPUs
+reportVersion
+endTime
+microstackshots
+primaryState
+event
+architecture
+startTime
+powerSource
+powerStatsFor
+energyDetail
+steps
+actionTaken
+userActivity
+duration
+cpuUsed
+cpuLimit
+limitDuration
+uuid
+executionPath
+sampledExecutionTree
+binaryImageList
+logData
+deserializationError
+adamId
+appVersion
+appBuild
+bundleId
+numProcessorUsagePoints
+sortedBy
+topProcessorUsagePoints
+rootVersion
+rootBuild
+deserializationError
+adamId
+appVersion
+appBuild
+bundleId
+processorUsagePointIdentifier
+osVersionDistribution
+processorUsagePointTimeSeries
+deviceFamilyDistribution
+processorUsageLogData
+servicePathComponents
+adamIdentifier
+bundleIdentifier
+platform
+analyticsPlatform
+root
+logMetaDatas
+processorUsagePointIdentifier
+processorUsagePointName
+sourceFileName
+sourceFileLineNumber
+rollingOccurenceCount
+rollingUniqueDeviceCount
+bugType
+categories
+filterCriteriaSets
+lastUpdated
+version
+productData
+returnCode
+unknown
+unableToDeserializeNetworkResponse
+unableToDeserializeCacheData
+noData
+invalidProductData
+noPathProvidedForSnapshot
+invalidFilePath
+missingFile
+failedToCreateProductData
+badLastUpdatedString
+obsoleteVersion
+unknownVersion
+clientDidNotHandle
+clientAccessRestricted
+unableToDeserialize
+RawValue
+sectionIdentifier
+displayName
+datasets
+unit
+processorUsagePointIdentifier
+adamIdentifier
+bundleIdentifier
+version
+build
+rootVersion
+rootBuild
+isBeta
+platformSDKIdentifier
+unitIdentifier
+displayName
+label
+value
+summary
+rawSummary
+percentageBreakdown
+version
+points
+normalizedRunningTime
+filterCriteria
+startAddress
+version
+library
+build
+uuid
+endAddress
+path
+offset
+function
+fileName
+indentLevel
+isBlameFrame
+library
+sampleCount
+lineNumber
+address
+device
+percentile
+deviceIdentifier
+displayName
+isRepresented
+familyIdentifier
+devices
+percentileIdentifier
+defaultCriteria
+deviceFamilies
+percentiles
+categoryIdentifier
+displayName
+sections
+zPLR
+powerpoint
+powerpoint
+powermetrics
+powermetrics

@@ -6,15 +6,17 @@
 
 #import <objc/NSObject.h>
 
-#import <DVTInstrumentsFoundation/NSCoding-Protocol.h>
+#import <DVTInstrumentsFoundation/NSSecureCoding-Protocol.h>
 
 @class NSMutableDictionary;
 
-@interface DTTapMessage : NSObject <NSCoding>
+@interface DTTapMessage : NSObject <NSSecureCoding>
 {
     NSMutableDictionary *_plist;
 }
 
++ (BOOL)supportsSecureCoding;
++ (void)initialize;
 - (void).cxx_destruct;
 @property(nonatomic) int kind;
 - (id)plist;

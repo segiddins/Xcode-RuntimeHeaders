@@ -7,10 +7,10 @@
 @class NSImage, NSString;
 
 @protocol IDEAccountPrefsPaneAccount
-@property(readonly, nonatomic) long long accountReachability;
-@property(readonly, nonatomic) BOOL accountEnabled;
-@property(readonly, nonatomic) NSImage *accountImage;
-@property(readonly, nonatomic) NSString *accountSubTitle;
-@property(readonly, nonatomic) NSString *accountTitle;
+@property(nonatomic, readonly) long long accountReachability;
+@property(nonatomic, readonly) BOOL accountEnabled;
+@property(nonatomic, readonly) NSImage *accountImage;
+@property(nonatomic, readonly) NSString *accountSubTitle;
+@property(nonatomic, readonly) NSString *accountTitle;
 @end
 

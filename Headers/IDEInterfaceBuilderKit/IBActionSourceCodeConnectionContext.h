@@ -14,7 +14,7 @@
 - (id)sourceCodeInsertionOptions;
 - (id)validatedSourceCodeConnectionNameForName:(id)arg1 error:(id *)arg2;
 - (id)insertionConnectionTypeString;
-- (double)positionPriority;
+- (id)init;
 
 @end
 

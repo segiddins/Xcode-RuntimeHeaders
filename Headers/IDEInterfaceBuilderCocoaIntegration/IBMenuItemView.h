@@ -12,14 +12,14 @@
 
 @interface IBMenuItemView : NSView <IBDocumentArchiving>
 {
-    BOOL showsSubmenuIndicator;
-    long long style;
-    NSString *title;
+    BOOL _showsSubmenuIndicator;
+    NSString *_title;
+    long long _style;
 }
 
-@property(copy, nonatomic) NSString *title; // @synthesize title;
-@property(nonatomic) BOOL showsSubmenuIndicator; // @synthesize showsSubmenuIndicator;
-@property(nonatomic) long long style; // @synthesize style;
+@property(nonatomic) long long style; // @synthesize style=_style;
+@property(nonatomic) BOOL showsSubmenuIndicator; // @synthesize showsSubmenuIndicator=_showsSubmenuIndicator;
+@property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 - (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (struct CGRect)titleRect;
@@ -33,6 +33,7 @@
 - (BOOL)isFlipped;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)ibLocalAttributeKeyPaths;
 - (void)unarchiveWithDocumentUnarchiver:(id)arg1;
 - (void)archiveWithDocumentArchiver:(id)arg1;
 

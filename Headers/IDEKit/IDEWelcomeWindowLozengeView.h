@@ -14,6 +14,8 @@
 - (void)_updateTransientControlVisibility;
 - (void)mouseExited:(id)arg1;
 - (void)mouseEntered:(id)arg1;
+- (void)updateLayer;
+- (BOOL)wantsUpdateLayer;
 
 @end
 

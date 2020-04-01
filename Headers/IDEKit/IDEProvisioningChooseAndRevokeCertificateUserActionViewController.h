@@ -9,7 +9,8 @@
 #import <IDEKit/DVTTableViewDelegate-Protocol.h>
 #import <IDEKit/IDEProvisioningIssueResolverViewController-Protocol.h>
 
-@class DVTBorderedView, DVTObservingToken, DVTPortalCertificate, DVTTableView, IDEProvisioningChooseAndRevokeCertificateUserAction, NSArrayController, NSString, NSView;
+@class DVTBorderedView, DVTObservingToken, DVTTableView, IDEProvisioningChooseAndRevokeCertificateUserAction, NSArrayController, NSDateFormatter, NSString, NSView;
+@protocol DVTPortalCertificateProtocol;
 
 @interface IDEProvisioningChooseAndRevokeCertificateUserActionViewController : IDEViewController <DVTTableViewDelegate, IDEProvisioningIssueResolverViewController>
 {
@@ -18,10 +19,12 @@
     DVTTableView *_certificatesTable;
     NSArrayController *_certificatesController;
     DVTObservingToken *_selectionObserver;
-    DVTPortalCertificate *_certificate;
+    id <DVTPortalCertificateProtocol> _certificate;
+    NSDateFormatter *_dateFormatter;
 }
 
-@property(retain, nonatomic) DVTPortalCertificate *certificate; // @synthesize certificate=_certificate;
+@property(retain, nonatomic) NSDateFormatter *dateFormatter; // @synthesize dateFormatter=_dateFormatter;
+@property(retain, nonatomic) id <DVTPortalCertificateProtocol> certificate; // @synthesize certificate=_certificate;
 @property(retain, nonatomic) DVTObservingToken *selectionObserver; // @synthesize selectionObserver=_selectionObserver;
 @property(retain) NSArrayController *certificatesController; // @synthesize certificatesController=_certificatesController;
 @property __weak DVTTableView *certificatesTable; // @synthesize certificatesTable=_certificatesTable;

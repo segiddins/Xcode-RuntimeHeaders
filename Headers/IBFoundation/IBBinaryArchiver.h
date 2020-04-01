@@ -6,30 +6,29 @@
 
 #import <objc/NSObject.h>
 
-@class IBBinaryArchiverObjectIDTable, NSData, NSDictionary, NSMutableArray;
+@class NSArray, NSDictionary, NSMapTable, NSMutableArray;
 @protocol IBObjectRepresentationTranslator;
 
 @interface IBBinaryArchiver : NSObject
 {
-    IBBinaryArchiverObjectIDTable *objectToOIDMap;
+    NSMapTable *_objectToOIDMap;
     struct {
         unsigned long long length;
         unsigned long long capacity;
         char *bytes;
-    } buffer;
-    unsigned long long nextOID;
-    BOOL finished;
-    NSData *archiveData;
-    long long archiveVersion;
+    } _buffer;
+    unsigned long long _nextOID;
+    BOOL _finished;
+    NSMutableArray *_externalDataArray;
     NSMutableArray *_objectTranslationDelegateStack;
+    NSArray *_archiveDataArray;
     NSDictionary *_context;
 }
 
-+ (id)archivedDataWithRootObject:(id)arg1 version:(long long)arg2 context:(id)arg3;
-+ (id)archiveDataWithVersion:(long long)arg1 context:(id)arg2 byRunningBlock:(CDUnknownBlockType)arg3;
++ (id)archivedDataArrayWithRootObject:(id)arg1 context:(id)arg2;
++ (id)archiveDataArrayWithContext:(id)arg1 byRunningBlock:(CDUnknownBlockType)arg2;
 @property(readonly, nonatomic) NSDictionary *context; // @synthesize context=_context;
-@property(readonly, nonatomic) long long archiveVersion; // @synthesize archiveVersion;
-@property(readonly) NSData *archiveData; // @synthesize archiveData;
+@property(readonly) NSArray *archiveDataArray; // @synthesize archiveDataArray=_archiveDataArray;
 - (void).cxx_destruct;
 - (void)encodeObjectReferenceIfPossible:(id)arg1;
 - (void)encodeObject:(id)arg1;
@@ -49,6 +48,7 @@
 - (void)encodeUInt64:(unsigned long long)arg1;
 - (void)encodeInteger:(long long)arg1;
 - (void)encodeInt64:(long long)arg1;
+- (void)encodeData:(id)arg1;
 - (void)encodeBytes:(const char *)arg1 length:(unsigned long long)arg2;
 - (void)encodeHeader;
 - (void)finishEncoding;
@@ -56,7 +56,8 @@
 - (void)pushObjectTranslationDelegate:(id)arg1;
 @property(readonly, nonatomic) __weak NSObject<IBObjectRepresentationTranslator> *currentObjectTranslationDelegate;
 - (void)dealloc;
-- (id)initWithVersion:(long long)arg1 context:(id)arg2;
+- (id)initWithContext:(id)arg1;
+- (id)init;
 
 @end
 

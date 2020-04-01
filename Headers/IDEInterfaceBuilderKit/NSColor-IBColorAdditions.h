@@ -6,8 +6,26 @@
 
 #import <AppKit/NSColor.h>
 
-@interface NSColor (IBColorAdditions)
+#import <IDEInterfaceBuilderKit/IBBinaryArchivableColor-Protocol.h>
+#import <IDEInterfaceBuilderKit/IBBinaryArchiving-Protocol.h>
+#import <IDEInterfaceBuilderKit/IBColor-Protocol.h>
+#import <IDEInterfaceBuilderKit/IBDocumentArchiving-Protocol.h>
+
+@class IBUIColor, NSString;
+
+@interface NSColor (IBColorAdditions) <IBColor, IBBinaryArchiving, IBBinaryArchivableColor, IBDocumentArchiving>
 + (id)ib_colorWithDisplayP3Red:(double)arg1 green:(double)arg2 blue:(double)arg3 alpha:(double)arg4;
++ (id)ib_newNSCatalogColorWithCoder:(id)arg1 zone:(struct _NSZone *)arg2;
++ (id)ibColorWithName:(id)arg1 bundleID:(id)arg2 fallbackColor:(id)arg3 unarchiveAsColorWrapper:(BOOL)arg4;
++ (id)ibColorWithPatternBitmap:(id)arg1 colorSpace:(struct CGColorSpace *)arg2;
++ (id)ibColorWithDisplayP3Red:(double)arg1 green:(double)arg2 blue:(double)arg3 alpha:(double)arg4;
++ (id)ibColorWithSRGBRed:(double)arg1 green:(double)arg2 blue:(double)arg3 alpha:(double)arg4;
++ (id)ibColorWithGenericGamma22White:(double)arg1 alpha:(double)arg2;
++ (id)decodeWithBinaryUnarchiver:(id)arg1;
++ (id)instantiateWithDocumentUnarchiver:(id)arg1;
++ (CDUnion_4a127b1b)unarchiveWhiteValueWithDocumentUnarchiver:(id)arg1;
++ (CDUnion_24d33b01)unarchiveRGBValueWithDocumentUnarchiver:(id)arg1;
++ (CDUnion_b8f7e27c)unarchiveCMYKValueWithDocumentUnarchiver:(id)arg1;
 - (BOOL)ib_isAnyGraySpaceColor;
 - (id)ib_displayP3Color;
 - (id)ib_calibratedRGBColor;
@@ -15,6 +33,31 @@
 - (id)ib_genericGamma22WhiteColor;
 - (id)ib_calibratedWhiteColor;
 - (id)ib_patternImageOrNil;
+- (id)ib_colorSpace;
 - (BOOL)ib_isPatternColor;
+@property(readonly, nonatomic) BOOL ib_isAssetCatalogNamedColor;
+@property(readonly, nonatomic) NSColor *ib_assetCatalogNamedColorBaseColor;
+@property(readonly, nonatomic) IBUIColor *IBUIColor;
+@property(readonly, nonatomic) NSColor *NSColor;
+- (id)ib_fallbackColorForMarshalling;
+- (const char *)cStringClassNameForBinaryArchiver:(id)arg1;
+- (id)ibArchivedSystemKeyPathForBinaryArchiver:(id)arg1 fallbackColor:(id *)arg2;
+- (BOOL)ibGetColorName:(id *)arg1 bundleID:(id *)arg2 fallbackColor:(id *)arg3 unarchiveAsColorWrapper:(char *)arg4;
+- (BOOL)ibGetDisplayP3Red:(double *)arg1 green:(double *)arg2 blue:(double *)arg3 alpha:(double *)arg4;
+- (BOOL)ibGetSRGBRed:(double *)arg1 green:(double *)arg2 blue:(double *)arg3 alpha:(double *)arg4;
+- (BOOL)ibGetGenericGamma22White:(double *)arg1 alpha:(double *)arg2;
+- (void)encodeWithBinaryArchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWhiteComponentsWithDocumentArchiver:(id)arg1;
+- (void)archiveRGBComponentsWithDocumentArchiver:(id)arg1;
+- (void)archiveCMYKComponentsWithDocumentArchiver:(id)arg1;
+- (id)ibCoerceToDescriptivePListWithStrictness:(long long)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @end
 

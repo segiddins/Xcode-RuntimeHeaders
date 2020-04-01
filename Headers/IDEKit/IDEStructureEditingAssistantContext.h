@@ -12,6 +12,7 @@
 {
     DVTObservingToken *_targetContainerValidObservationToken;
     BOOL _skipAssistant;
+    BOOL _onlyPackages;
     BOOL _useMakefileProject;
     NSString *_assistantIdentifier;
     CDUnknownBlockType _acceptBlock;
@@ -23,6 +24,7 @@
     unsigned long long _dragOperation;
 }
 
++ (id)swiftPackageFileDataType;
 @property unsigned long long dragOperation; // @synthesize dragOperation=_dragOperation;
 @property(copy) NSArray *templates; // @synthesize templates=_templates;
 @property BOOL useMakefileProject; // @synthesize useMakefileProject=_useMakefileProject;
@@ -31,6 +33,7 @@
 @property unsigned long long inputDragOperation; // @synthesize inputDragOperation=_inputDragOperation;
 @property(retain, nonatomic) IDEContainer *targetContainer; // @synthesize targetContainer=_targetContainer;
 @property(copy) CDUnknownBlockType acceptBlock; // @synthesize acceptBlock=_acceptBlock;
+@property(readonly) BOOL onlyPackages; // @synthesize onlyPackages=_onlyPackages;
 @property BOOL skipAssistant; // @synthesize skipAssistant=_skipAssistant;
 @property(copy) NSString *assistantIdentifier; // @synthesize assistantIdentifier=_assistantIdentifier;
 - (void).cxx_destruct;

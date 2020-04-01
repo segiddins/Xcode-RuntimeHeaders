@@ -6,29 +6,55 @@
 
 #import <IDEKit/IDEInspectorProperty.h>
 
-@class DBGInspectorConstraintViewController, DVTObservingToken, IDEInspectorKeyPath, NSMutableArray;
+#import <DebuggerUI/IBReferencingConstraintsFilterDelegate-Protocol.h>
 
-@interface DBGConstraintsListInspectorProperty : IDEInspectorProperty
+@class DBGInspectorConstraintViewController, DVTObservingToken, IBReferencingConstraintsFilter, IDEInspectorKeyPath, NSArray, NSBox, NSString;
+@protocol DVTInvalidation;
+
+@interface DBGConstraintsListInspectorProperty : IDEInspectorProperty <IBReferencingConstraintsFilterDelegate>
 {
     IDEInspectorKeyPath *_valueKeyPath;
     IDEInspectorKeyPath *_selectedViewsKeyPath;
-    NSMutableArray *_constraintModelControllers;
     DBGInspectorConstraintViewController *_mousedOverController;
     DVTObservingToken *_mouseOverObserver;
+    NSBox *_visualFilterContainer;
+    IBReferencingConstraintsFilter *_visualFilter;
+    NSArray *_constraintModelControllers;
+    id <DVTInvalidation> _tooltipRegistration;
 }
 
+@property(retain) id <DVTInvalidation> tooltipRegistration; // @synthesize tooltipRegistration=_tooltipRegistration;
+@property(retain, nonatomic) NSArray *constraintModelControllers; // @synthesize constraintModelControllers=_constraintModelControllers;
+@property(nonatomic) __weak IBReferencingConstraintsFilter *visualFilter; // @synthesize visualFilter=_visualFilter;
+@property(nonatomic) __weak NSBox *visualFilterContainer; // @synthesize visualFilterContainer=_visualFilterContainer;
 @property(retain, nonatomic) DBGInspectorConstraintViewController *mousedOverController; // @synthesize mousedOverController=_mousedOverController;
 - (void).cxx_destruct;
+- (void)encodeWithCoder:(id)arg1;
+- (BOOL)commitEditingAndReturnError:(id *)arg1;
+- (void)constraintFilterViewWillDeleteSelectedConstraints:(id)arg1;
+- (void)_highlightConstraintsInList:(id)arg1;
+- (void)_highlightConstraintsInActiveViewDebugger:(id)arg1;
+- (void)constraintFilterViewWillChangeHighlighted:(id)arg1 shouldHighlight:(BOOL)arg2;
+- (void)constraintFilterViewWillChangeConstraintAttributeSelection:(id)arg1;
 - (void)primitiveInvalidate;
-- (void)_addNoConstraintsView;
+- (id)_statusLabelView:(id)arg1 header:(BOOL)arg2;
+- (id)constraintsFilteredByVisualFilter:(id)arg1;
+- (void)updateReferencingConstraintsFilter:(id)arg1;
 - (void)updateConstraintIssues;
 - (void)updateReferencingConstraintSubviews;
-- (id)singleSelectedViewObject;
+- (id)singleSelectedViewObjectHierarchyItem;
 - (id)layoutConstraintSet;
 - (void)refresh;
+- (void)tearDownRefreshTriggers;
 - (void)setupRefreshTriggersAndConfigure;
 - (id)inspectedDocument;
 - (void)loadView;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

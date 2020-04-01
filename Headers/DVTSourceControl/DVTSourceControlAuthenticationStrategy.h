@@ -15,6 +15,7 @@
 
 + (id)sharedAnonymousStrategy;
 + (BOOL)supportsSecureCoding;
++ (Class)classForSerializationName:(id)arg1;
 + (BOOL)strategyIsValidForURL:(id)arg1;
 + (id)name;
 - (unsigned long long)type;
@@ -24,6 +25,7 @@
 - (id)init;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)serializationName;
 
 @end
 

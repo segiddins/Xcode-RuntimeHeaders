@@ -35,12 +35,13 @@
 @property(retain, nonatomic) CDMEntity *destinationEntity; // @synthesize destinationEntity=_destinationEntity;
 - (void).cxx_destruct;
 - (id)stringRepresentation;
-- (id)xmlElementDescription;
+- (id)encodeXMLElement;
 - (id)xmlElementAttributes;
-- (void)stitchToRelatedModelElements;
-- (id)initWithXMLElementDescription:(id)arg1 belongingToModel:(id)arg2;
+- (void)awakeAfterXMLDecoding;
+- (id)initWithXMLElement:(id)arg1 owner:(id)arg2 error:(id *)arg3;
 - (id)addKeysToDictionary:(id)arg1;
 - (id)initWithDictionary:(id)arg1 inModel:(id)arg2;
+- (void)generateCloudKitErrorsAndWarningsForConfigurations:(id)arg1 withCallback:(id)arg2 forDocumentAtURL:(id)arg3;
 - (void)generateErrorsAndWarningsWithCallback:(id)arg1 forDocumentAtURL:(id)arg2;
 - (BOOL)mapsDirectlyTo:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
@@ -62,10 +63,14 @@
 - (id)initWithLegacyRelationship:(id)arg1 andEntityMapping:(id)arg2 belongingToEntity:(id)arg3 inModel:(id)arg4;
 - (id)initInModel:(id)arg1;
 - (void)_registerUndoBlockForFoundRelationship:(CDUnknownBlockType)arg1;
+- (id)code_accessorsObjC;
+- (id)code_accessorsSwift;
 - (id)code_accessors;
 - (id)code_relationshipDestinationClass;
 - (id)code_relationshipSetType;
 - (id)code_propertyParameter;
+- (id)code_propertyTypeObjC;
+- (id)code_propertyTypeSwift;
 - (id)code_propertyType;
 
 @end

@@ -13,13 +13,13 @@
     id <DTOutputStreams> _nextOutputStream;
 }
 
+- (void).cxx_destruct;
 - (void)close;
 - (void)flush;
 - (void)writeBytes:(const char *)arg1 length:(unsigned long long)arg2;
 - (id)lastOutputStream;
 - (void)setNextOutputStream:(id)arg1;
 - (id)nextOutputStream;
-- (void)dealloc;
 - (id)init;
 - (id)initWithNextOutputStream:(id)arg1;
 

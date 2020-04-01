@@ -6,17 +6,32 @@
 
 #import <DVTFoundation/DVTOperationGroup.h>
 
-@class IDEBuildOperation;
+#import <IDEFoundation/IDEBuildOperationProviding-Protocol.h>
 
-@interface IDEBuildOperationGroup : DVTOperationGroup
+@class IDEActivityLogSection, IDEBuildOperation, NSArray, NSDate, NSString;
+
+@interface IDEBuildOperationGroup : DVTOperationGroup <IDEBuildOperationProviding>
 {
-    IDEBuildOperation *_buildOperation;
+    DVTOperationGroup *_buildOperations;
+    IDEActivityLogSection *_buildLog;
 }
 
-+ (id)operationGroupWithSuboperations:(id)arg1;
-+ (id)operationGroupWithBuildOperation:(id)arg1 otherOperations:(id)arg2;
-@property(readonly) IDEBuildOperation *buildOperation; // @synthesize buildOperation=_buildOperation;
+@property(readonly) IDEActivityLogSection *buildLog; // @synthesize buildLog=_buildLog;
+@property(readonly) DVTOperationGroup *buildOperations; // @synthesize buildOperations=_buildOperations;
 - (void).cxx_destruct;
+@property(readonly) NSArray *buildables;
+@property(readonly, copy) NSDate *startTime;
+@property(readonly) long long result;
+@property(readonly) IDEBuildOperation *buildOperation;
+- (id)initWithBuildOperations:(id)arg1 otherOperations:(id)arg2 buildLog:(id)arg3;
+- (id)initWithBuildOperations:(id)arg1 otherOperations:(id)arg2;
+- (id)initWithBuildOperations:(id)arg1 buildLog:(id)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

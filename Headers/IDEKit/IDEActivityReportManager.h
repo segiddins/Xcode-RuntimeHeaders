@@ -22,17 +22,17 @@
     NSMutableSet *_observers;
     NSArray *_orderedActivityReports;
     NSSet *_activityReports;
-    BOOL _lastCompletedUserVisiblePersistentSchemeBasedReportShouldBeInvalidated;
 }
 
 + (void)initialize;
 + (unsigned long long)assertionBehaviorForKeyValueObservationsAtEndOfEvent;
-@property(nonatomic) BOOL lastCompletedUserVisiblePersistentSchemeBasedReportShouldBeInvalidated; // @synthesize lastCompletedUserVisiblePersistentSchemeBasedReportShouldBeInvalidated=_lastCompletedUserVisiblePersistentSchemeBasedReportShouldBeInvalidated;
 @property(retain, nonatomic) IDEActivityReport *lastCompletedUserVisiblePersistentSchemeBasedReport; // @synthesize lastCompletedUserVisiblePersistentSchemeBasedReport=_lastCompletedUserVisiblePersistentSchemeBasedReport;
 @property(copy, nonatomic) NSArray *orderedActivityReports; // @synthesize orderedActivityReports=_orderedActivityReports;
 @property(copy, nonatomic) NSSet *activityReports; // @synthesize activityReports=_activityReports;
 @property(readonly) IDEWorkspaceDocument *workspaceDocument; // @synthesize workspaceDocument=_workspaceDocument;
 - (void).cxx_destruct;
+- (void)postDistributedNotificationForReport:(id)arg1;
+- (void)_postNotificationForRemovedReport:(id)arg1;
 - (void)reportDidComplete:(id)arg1;
 - (void)stopObservingReportForCompletion:(id)arg1;
 - (void)startObservingReportForCompletion:(id)arg1;
@@ -44,7 +44,7 @@
 @property(readonly) IDEActivityReport *lastCompletedUserVisibleReport; // @synthesize lastCompletedUserVisibleReport=_lastCompletedUserVisibleReport;
 - (void)rebuildActivityReportCaches;
 - (void)handleUpdateFromActivityReporter:(id)arg1;
-@property(readonly) NSSet *activityReporters;
+@property(retain) NSSet *activityReporters;
 - (void)loadActivityReporters;
 - (void)primitiveInvalidate;
 - (id)initWithWorkspaceDocument:(id)arg1;

@@ -25,17 +25,18 @@
     id <IDEDebugBarContentProvider> _grabRectProvider;
     id <IDEDebugBarContentProvider> _sharedLibrariesXOffsetProvider;
     BOOL _prefersToAlwaysBeShown;
+    NSArray *_contentProviders;
     id <IDEDebuggerBarEditorInfoProvider> _editorInfoProvider;
     id _selectedModelObject;
-    NSArray *_contentProviders;
 }
 
++ (unsigned long long)assertionBehaviorAfterEndOfEventForSelector:(SEL)arg1;
 + (id)standardDebugBarButtonWithImage:(id)arg1 alternateImage:(id)arg2 toolTip:(id)arg3 accessibilityDescription:(id)arg4;
 + (struct CGSize)standardDebugBarButtonSize;
 @property BOOL prefersToAlwaysBeShown; // @synthesize prefersToAlwaysBeShown=_prefersToAlwaysBeShown;
-@property(retain, nonatomic) NSArray *contentProviders; // @synthesize contentProviders=_contentProviders;
 @property(retain) id selectedModelObject; // @synthesize selectedModelObject=_selectedModelObject;
 @property(retain) id <IDEDebuggerBarEditorInfoProvider> editorInfoProvider; // @synthesize editorInfoProvider=_editorInfoProvider;
+@property(retain, nonatomic) NSArray *contentProviders; // @synthesize contentProviders=_contentProviders;
 - (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (void)showSharedLibrariesPopUp;

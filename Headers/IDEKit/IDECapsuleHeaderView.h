@@ -4,13 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <DVTKit/DVTDisclosureHeaderView.h>
+#import <DVTUserInterfaceKit/DVTDisclosureHeaderView.h>
 
-@class IDECapsuleView, NSView;
+@class CALayer, IDECapsuleView, NSView;
 
 @interface IDECapsuleHeaderView : DVTDisclosureHeaderView
 {
     struct CGPoint _lastMouseDownLoc;
+    CALayer *_highlightLayer;
     NSView *_capsuleHeaderContentView;
     IDECapsuleView *_capsuleView;
 }
@@ -18,7 +19,8 @@
 @property IDECapsuleView *capsuleView; // @synthesize capsuleView=_capsuleView;
 @property(retain, nonatomic) NSView *capsuleHeaderContentView; // @synthesize capsuleHeaderContentView=_capsuleHeaderContentView;
 - (void).cxx_destruct;
-- (void)drawRect:(struct CGRect)arg1;
+- (void)updateLayer;
+- (BOOL)wantsUpdateLayer;
 - (id)defaultCloseButton;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (void)layoutBottomUp;

@@ -55,11 +55,12 @@
 - (void)loadLegacyBuildableWithResolutionContextContainer:(id)arg1;
 - (void)resolveBuildableFromImport;
 - (BOOL)referencesSameBuildableAsReference:(id)arg1;
-- (id)currentReferencedContainerPath;
-- (void)markSchemeDirty;
+@property(readonly, nonatomic) NSString *currentReferencedContainerPath;
+- (void)_markSchemeDirty;
 - (id)referencedContainerFromSchemeForArchivedPath:(id)arg1;
 - (id)referenceResolutionContext;
 - (id)containerReferenceResolver;
+- (id)blueprintNameAddingMissingSpecifierIfNecessary:(BOOL)arg1;
 @property(readonly) NSString *blueprintName;
 @property(readonly) NSString *buildableName;
 - (BOOL)updateCachedBuildableName;
@@ -76,6 +77,7 @@
 - (void)dealloc;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initFromXMLUnarchiver:(id)arg1 archiveVersion:(float)arg2;
+- (id)initWithBuildableReference:(id)arg1;
 - (id)initWithBuildable:(id)arg1 scheme:(id)arg2 willBeArchived:(BOOL)arg3;
 
 // Remaining properties

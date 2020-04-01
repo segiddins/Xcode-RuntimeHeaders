@@ -76,6 +76,10 @@
 - (id)initWithResourceObject:(id)arg1 functionStream:(id)arg2 dataResolver:(CDUnknownBlockType)arg3;
 
 // Remaining properties
+@property(readonly, nonatomic) unsigned int IOSurfacePixelFormat;
+@property(readonly, nonatomic) unsigned int IOSurfacePlane;
+@property(readonly, nonatomic) unsigned int IOSurfaceYCbCrMatrix;
+@property(readonly, nonatomic) union DYTextureChannelMappings channelMappings;
 @property(readonly, nonatomic) unsigned long long containerID;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
@@ -84,6 +88,7 @@
 @property(readonly, copy, nonatomic) NSString *label;
 @property(readonly, nonatomic) unsigned long long objectID;
 @property(readonly, nonatomic) NSMutableDictionary *properties;
+@property(readonly, nonatomic) CDStruct_b00b4bef resolution;
 @property(readonly, nonatomic) unsigned int resourceType;
 @property(readonly) Class superclass;
 

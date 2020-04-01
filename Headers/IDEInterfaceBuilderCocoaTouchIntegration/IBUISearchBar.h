@@ -8,37 +8,36 @@
 
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBDocumentArchiving-Protocol.h>
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBUITextInputTraits-Protocol.h>
-#import <IDEInterfaceBuilderCocoaTouchIntegration/NSCoding-Protocol.h>
 
-@class IBOffsetWrapper, IBUITextInputTraits, NSArray, NSColor, NSImage, NSString;
+@class IBOffsetWrapper, IBUIColor, IBUITextInputTraits, NSArray, NSImage, NSString;
 
-@interface IBUISearchBar : IBUIView <IBDocumentArchiving, NSCoding, IBUITextInputTraits>
+@interface IBUISearchBar : IBUIView <IBDocumentArchiving, IBUITextInputTraits>
 {
-    int barStyle;
-    int searchBarStyle;
-    long long selectedScopeButtonIndex;
-    NSString *text;
-    NSString *prompt;
-    NSString *placeholder;
-    NSArray *scopeButtonTitles;
-    BOOL showsScopeBar;
-    BOOL showsSearchResultsButton;
-    BOOL showsBookmarkButton;
-    BOOL showsCancelButton;
-    BOOL forcesPrompt;
-    BOOL isInBar;
-    BOOL translucent;
-    IBUITextInputTraits *textInputTraits;
-    NSImage *backgroundImage;
-    NSImage *scopeBarBackgroundImage;
-    IBOffsetWrapper *searchFieldBackgroundPositionAdjustment;
-    IBOffsetWrapper *searchTextPositionAdjustment;
-    NSColor *barTintColor;
+    BOOL _translucent;
+    BOOL _showsSearchResultsButton;
+    BOOL _showsBookmarkButton;
+    BOOL _showsCancelButton;
+    BOOL _showsScopeBar;
+    BOOL _isInBar;
+    BOOL _forcesPrompt;
+    int _searchBarStyle;
+    NSArray *_scopeButtonTitles;
+    IBUITextInputTraits *_textInputTraits;
+    long long _barStyle;
+    NSString *_text;
+    NSString *_prompt;
+    NSString *_placeholder;
+    IBUIColor *_barTintColor;
+    IBOffsetWrapper *_searchFieldBackgroundPositionAdjustment;
+    IBOffsetWrapper *_searchTextPositionAdjustment;
+    NSImage *_backgroundImage;
+    NSImage *_scopeBarBackgroundImage;
+    long long _selectedScopeButtonIndex;
 }
 
 + (void)registerMarshallingRecordHandlers;
 + (BOOL)shouldArchiveTintColorWithUIViewProperties;
-+ (id)keyPathsForValuesAffectingIbPrompted;
++ (id)keyPathsForValuesAffectingIsPrompted;
 + (id)keyPathsForValuesAffectingIbInspectedSearchFieldBackgroundPositionVerticalAdjustment;
 + (id)keyPathsForValuesAffectingIbInspectedSearchFieldBackgroundPositionHorizontalAdjustment;
 + (id)keyPathsForValuesAffectingIbInspectedHasSearchFieldBackgroundPositionAdjustment;
@@ -47,40 +46,37 @@
 + (id)keyPathsForValuesAffectingIbInspectedHasSearchTextPositionAdjustment;
 + (id)keyPathsForValuesAffectingInspectedScopeButtonTitles;
 + (id)keyPathsForValuesAffectingInspectedShowsScopeBar;
-+ (id)ibObservedPropertiesForInheritableMetricsInvalidation;
 + (long long)ibInstantiationSizeBehavior;
 + (id)ibInstantiateViewForRole:(long long)arg1 withTargetRuntime:(id)arg2 documentClass:(Class)arg3 assetIdentifier:(id)arg4;
-@property(copy, nonatomic) NSColor *barTintColor; // @synthesize barTintColor;
-@property(copy, nonatomic) IBOffsetWrapper *searchTextPositionAdjustment; // @synthesize searchTextPositionAdjustment;
-@property(copy, nonatomic) IBOffsetWrapper *searchFieldBackgroundPositionAdjustment; // @synthesize searchFieldBackgroundPositionAdjustment;
-@property(retain, nonatomic) NSImage *scopeBarBackgroundImage; // @synthesize scopeBarBackgroundImage;
-@property(retain, nonatomic) NSImage *backgroundImage; // @synthesize backgroundImage;
-@property(nonatomic) BOOL isInBar; // @synthesize isInBar;
-@property(nonatomic) BOOL showsScopeBar; // @synthesize showsScopeBar;
-@property(nonatomic) long long selectedScopeButtonIndex; // @synthesize selectedScopeButtonIndex;
-@property(nonatomic) BOOL forcesPrompt; // @synthesize forcesPrompt;
-@property(nonatomic) BOOL showsCancelButton; // @synthesize showsCancelButton;
-@property(nonatomic) BOOL showsBookmarkButton; // @synthesize showsBookmarkButton;
-@property(nonatomic) BOOL showsSearchResultsButton; // @synthesize showsSearchResultsButton;
-@property(copy, nonatomic) NSString *placeholder; // @synthesize placeholder;
-@property(copy, nonatomic) NSString *prompt; // @synthesize prompt;
-@property(copy, nonatomic) NSString *text; // @synthesize text;
-@property(nonatomic) int searchBarStyle; // @synthesize searchBarStyle;
-@property(nonatomic) int barStyle; // @synthesize barStyle;
-@property(nonatomic, getter=isTranslucent) BOOL translucent; // @synthesize translucent;
+@property(nonatomic) BOOL forcesPrompt; // @synthesize forcesPrompt=_forcesPrompt;
+@property(nonatomic) BOOL isInBar; // @synthesize isInBar=_isInBar;
+@property(nonatomic) BOOL showsScopeBar; // @synthesize showsScopeBar=_showsScopeBar;
+@property(nonatomic) long long selectedScopeButtonIndex; // @synthesize selectedScopeButtonIndex=_selectedScopeButtonIndex;
+@property(nonatomic) BOOL showsCancelButton; // @synthesize showsCancelButton=_showsCancelButton;
+@property(nonatomic) BOOL showsBookmarkButton; // @synthesize showsBookmarkButton=_showsBookmarkButton;
+@property(nonatomic) BOOL showsSearchResultsButton; // @synthesize showsSearchResultsButton=_showsSearchResultsButton;
+@property(retain, nonatomic) NSImage *scopeBarBackgroundImage; // @synthesize scopeBarBackgroundImage=_scopeBarBackgroundImage;
+@property(retain, nonatomic) NSImage *backgroundImage; // @synthesize backgroundImage=_backgroundImage;
+@property(copy, nonatomic) IBOffsetWrapper *searchTextPositionAdjustment; // @synthesize searchTextPositionAdjustment=_searchTextPositionAdjustment;
+@property(copy, nonatomic) IBOffsetWrapper *searchFieldBackgroundPositionAdjustment; // @synthesize searchFieldBackgroundPositionAdjustment=_searchFieldBackgroundPositionAdjustment;
+@property(copy, nonatomic) IBUIColor *barTintColor; // @synthesize barTintColor=_barTintColor;
+@property(copy, nonatomic) NSString *placeholder; // @synthesize placeholder=_placeholder;
+@property(copy, nonatomic) NSString *prompt; // @synthesize prompt=_prompt;
+@property(copy, nonatomic) NSString *text; // @synthesize text=_text;
+@property(nonatomic, getter=isTranslucent) BOOL translucent; // @synthesize translucent=_translucent;
+@property(nonatomic) int searchBarStyle; // @synthesize searchBarStyle=_searchBarStyle;
+@property(nonatomic) long long barStyle; // @synthesize barStyle=_barStyle;
 - (void).cxx_destruct;
 - (id)localExtraMarshalledAttributesKeyPaths;
 - (void)decodeTintColor:(id)arg1;
 - (void)encodeTintColor:(id)arg1;
-@property(retain, nonatomic) IBUITextInputTraits *textInputTraits;
-@property(copy, nonatomic) NSArray *scopeButtonTitles;
+@property(retain, nonatomic) IBUITextInputTraits *textInputTraits; // @synthesize textInputTraits=_textInputTraits;
+@property(copy, nonatomic) NSArray *scopeButtonTitles; // @synthesize scopeButtonTitles=_scopeButtonTitles;
 @property(readonly, nonatomic, getter=isPrompted) BOOL prompted;
-- (id)initWithFrame:(struct CGRect)arg1 targetRuntime:(id)arg2;
-- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
-- (void)archiveWithDocumentArchiver:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)ibWarnings:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
+- (id)initWithFrame:(struct CGRect)arg1 targetRuntime:(id)arg2;
+- (void)ibPopulateIssues:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
 - (void)ibCustomizeForInsertionIntoIBUIView:(id)arg1 withObjects:(id)arg2 fromLibraryOrDifferentTargetRuntime:(BOOL)arg3 andInsertionContext:(id)arg4;
 - (id)ibFieldEditorConfigurationForTextKeyPath:(id)arg1;
 - (struct CGRect)ibInlineTextEditingRectForKeyPath:(id)arg1;
@@ -111,7 +107,14 @@
 - (id)ibUnarchiveValueForAttribute:(id)arg1 inConfiguration:(id)arg2 withDocumentUnarchiver:(id)arg3;
 - (void)ibArchiveEvaluatedValue:(id)arg1 forAttribute:(id)arg2 inConfiguration:(id)arg3 withDocumentArchiver:(id)arg4;
 - (id)ibLocalPerConfigurationAttributeKeyPaths;
+- (id)ibLocalLocalizableStringArrayAttributeKeyPaths;
+- (id)ibLocalLocalizableGeometryAttributeKeyPaths;
+- (id)ibLocalLocalizableStringsAttributeKeyPaths;
+- (Class)ibEditorClass;
+- (id)ibLocalAttributeKeyPaths;
 - (Class)barMetricsClass;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

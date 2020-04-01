@@ -14,7 +14,7 @@
 - (struct CGRect)layoutFrameForContainer:(id)arg1 byAligningToLayoutFrame:(struct CGRect)arg2 orientation:(long long)arg3 alignment:(long long)arg4;
 - (id)canvasPositionOrderedItemsForObjects:(id)arg1 forOrientation:(long long)arg2;
 - (id)createContainerForObjects:(id)arg1 toParent:(id)arg2 fromDocument:(id)arg3 context:(id)arg4;
-- (long long)inferredStackViewOrientationFromObjects:(id)arg1 forDocument:(id)arg2 outInferredAlignment:(long long *)arg3;
+- (double)averageIntegralizedSpacingBetweenViews:(id)arg1 orientation:(unsigned long long)arg2 flipped:(BOOL)arg3;
 - (BOOL)supportsFillAlignment;
 - (long long)inferOrientationFromLayoutOfObjects:(id)arg1 inDocument:(id)arg2;
 - (id)embedObjects:(id)arg1 fromDocument:(id)arg2 context:(id)arg3;

@@ -11,6 +11,9 @@
 @interface DVTSourceModelParserProductionRule : NSObject
 {
     int _rc;
+    int _startToken;
+    int _endToken;
+    int _altEndToken;
     id *_tokenPredictSetBuffer;
     unsigned long long _tokenPredictSetBufferSize;
     id *_nodePredictSetBuffer;
@@ -22,9 +25,6 @@
     BOOL _saveEndToken;
     BOOL _interiorRuleMayHaveTemporaryLexerFlags;
     short _itemSyntaxType;
-    int _startToken;
-    int _endToken;
-    int _altEndToken;
     DVTLanguageSpecification *_startProduction;
     DVTLanguageSpecification *_endProduction;
     DVTLanguageSpecification *_altEndProduction;
@@ -75,11 +75,6 @@
 - (void)dealloc;
 - (id)initWithStartProduction:(id)arg1 langSpec:(id)arg2;
 - (id)initWithStartToken:(int)arg1 endToken:(int)arg2 langSpec:(id)arg3 predictSet:(id)arg4;
-- (BOOL)_isDeallocating;
-- (BOOL)_tryRetain;
-- (unsigned long long)retainCount;
-- (oneway void)release;
-- (id)retain;
 
 @end
 

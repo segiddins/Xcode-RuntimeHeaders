@@ -6,25 +6,27 @@
 
 #import <AppKit/NSStackView.h>
 
+#import <IDEInterfaceBuilderCocoaIntegration/IBDocumentArchiving-Protocol.h>
 #import <IDEInterfaceBuilderCocoaIntegration/IBStackView-Protocol.h>
 
-@class NSArray, NSDictionary;
+@class NSArray, NSString;
 
-@interface NSStackView (IBNSStackViewIntegration) <IBStackView>
+@interface NSStackView (IBNSStackViewIntegration) <IBStackView, IBDocumentArchiving>
 + (id)keyPathsForValuesAffectingIbInspectedVerticalClippingResistancePriority;
 + (id)keyPathsForValuesAffectingIbInspectedHorizontalClippingResistancePriority;
 + (id)keyPathsForValuesAffectingIbInspectedVerticalHuggingPriority;
 + (id)keyPathsForValuesAffectingIbInspectedHorizontalHuggingPriority;
 + (id)keyPathsForValuesAffectingIbShadowedCustomSpacing;
-+ (id)keyPathsForValuesAffectingIbInspectedHasViewsForGravityAreas;
++ (id)keyPathsForValuesAffectingIbEffectivePaddedVisibilityPriorities;
++ (id)keyPathsForValuesAffectingIbInspectedVisibilityPriorities;
++ (id)keyPathsForValuesAffectingIbInspectedHasViewsInGravityAreas;
 + (id)keyPathsForValuesAffectingIbInspectedHorizontal;
 + (id)keyPathsForValuesAffectingIbInspectedVertical;
++ (id)keyPathsForValuesAffectingIbInspectedOrientation;
 + (id)keyPathsForValuesAffectingIbDesignableContentView;
 + (id)ibDefaultImageForInstance:(id)arg1 targetRuntime:(id)arg2;
 + (id)keyPathsForValuesAffectingIbShadowedSubviews;
-+ (BOOL)ibIsAutoLayoutSelfManagedContainer;
-+ (id)keyPathsForValuesAffectingIbInspectedStackingDistribution;
-+ (id)keyPathsForValuesAffectingIbShadowedStackingDistribution;
++ (id)keyPathsForValuesAffectingIbInspectedDistribution;
 + (id)keyPathsForValuesAffectingIbIsUsingGravityAreas;
 + (int)ibLibraryInclusionStatusForTargetRuntime:(id)arg1 andDocumentClass:(Class)arg2 assetIdentifier:(id)arg3;
 + (id)ibInstantiateForRole:(long long)arg1 withTargetRuntime:(id)arg2 documentClass:(Class)arg3 assetIdentifier:(id)arg4;
@@ -46,10 +48,17 @@
 @property double ibInspectedVerticalHuggingPriority;
 @property double ibInspectedHorizontalHuggingPriority;
 @property(retain) NSArray *ibShadowedCustomSpacing;
+- (void)setIbShadowedSpacing:(double)arg1;
 - (id)ibIdentifierForView:(id)arg1;
 @property(retain) NSArray *ibArchivedVisibilityPriorities;
-- (void)ibUpdateExternalVisibilityPriorities;
-@property(retain) NSDictionary *ibExternalVisibilityPriorities;
+- (void)ibUpdateExternalVisibilityPrioritiesAfter:(CDUnknownBlockType)arg1;
+- (void)setIbRecentVisibilityPriority:(id)arg1 forMemberID:(id)arg2;
+- (id)ibRecentVisibilityPriorityForMemberID:(id)arg1;
+- (id)ibEffectivePaddedVisibilityPriorities;
+- (void)setIbInspectedVisibilityPriorities:(id)arg1;
+- (id)ibInspectedVisibilityPriorities;
+- (void)setIbExternalVisibilityPriorities:(id)arg1;
+- (id)ibExternalVisibilityPriorities;
 @property(readonly) BOOL ibInspectedHasViewsInGravityAreas;
 @property(retain) NSArray *ibShadowedEndViews;
 @property(retain) NSArray *ibShadowedMiddleViews;
@@ -68,10 +77,15 @@
 - (id)ibTitleForSubgroupWithIdentifier:(id)arg1;
 - (BOOL)ibShouldDisplaySubgroupsEvenWithNoChildren;
 - (id)ibSubgroupIdentifiers;
+- (id)ibAttributeKeyPathsAffectingChildWrappers;
 - (id)ibAcceptContentsOfPasteboard:(id)arg1 inDocument:(id)arg2 insertionContext:(id)arg3;
 - (BOOL)ibCanAcceptContentsOfPasteboard:(id)arg1 inDocument:(id)arg2 targetChildRelation:(id *)arg3;
-- (void)ibPopulateRequiredDocumentCapabilities:(id)arg1 document:(id)arg2;
-- (id)ibDocumentationPropertyInfosForKeyPath:(id)arg1;
+- (id)ibDocumentationSymbolInfosForKeyPath:(id)arg1;
+- (void)ibTakeTrackedFrame:(struct CGRect)arg1 originalFrame:(struct CGRect)arg2 isFinalFrame:(BOOL)arg3;
+- (BOOL)ibIsVerticallyResizable;
+- (BOOL)ibIsHorizontallyResizable;
+- (BOOL)ibCanResizeForOrientation:(long long)arg1;
+- (BOOL)ibIsUserSizableForBothOrientations;
 - (struct CGRect)ibDropInsetLayoutBoundsForSubviews;
 - (Class)ibEditorClass;
 - (id)ibDesignableContentView;
@@ -81,33 +95,36 @@
 - (void)ibMapCopyOfReceiver:(id)arg1 intoLayoutEngine:(id)arg2;
 - (BOOL)ibShouldArchiveAutolayoutPropertiesWithNSViewProperties;
 - (BOOL)ibCanUnembedChildrenInDocument:(id)arg1;
-- (BOOL)ibIsUserSizable;
 - (BOOL)ibIsChildViewUserSizable:(id)arg1;
 - (BOOL)ibAllowResizeBasedOnIntrinsicContentSizeForChild:(id)arg1;
 - (BOOL)ibIsChildViewUserMovable:(id)arg1;
-- (void)ibWillUpdateFrameOnAutoLayoutSelfLayoutManagedView;
 - (void)_updateStackingMode;
 - (void)setIbShadowedSubviews:(id)arg1;
 - (void)_ibRemoveSubviews:(id)arg1;
-- (id)ibShadowedSubviews;
+- (id)ibShadowedSubviewsNoCopy;
 - (id)ibArrangedSubviews;
-- (void)ibWarnings:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
-- (BOOL)ibIsAutoLayoutSelfManagedContainerCurrentlyActive;
+- (void)ibPopulateIssues:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
+- (long long)ibManagedContainerBehavior;
 - (void)ibPrepareCocoaDocumentForCompiling:(id)arg1 withContext:(id)arg2;
 - (id)ibArchivedSubviewsWithConfigurationPropertyStorage:(id)arg1;
 @property BOOL ibExternalDetachesHiddenViews;
-- (void)setIbShadowedDetachesHiddenViews:(BOOL)arg1;
-- (BOOL)ibShadowedDetachesHiddenViews;
-- (void)setIbInspectedStackingDistribution:(long long)arg1;
-- (long long)ibInspectedStackingDistribution;
+- (void)setIbInspectedDistribution:(long long)arg1;
+- (long long)ibInspectedDistribution;
 - (void)_updateEffectiveStackingDistribution;
-@property long long ibExternalStackingDistribution;
-- (void)setIbShadowedStackingDistribution:(long long)arg1;
-- (long long)ibShadowedStackingDistribution;
+@property long long ibExternalDistribution;
 - (BOOL)ibIsUsingGravityAreas;
 - (void)ibDidAddToDocument:(id)arg1 phase:(unsigned long long)arg2;
+- (id)ibLocalAttributeKeyPaths;
+- (id)ibLocalChildToManyRelationshipsKeyPaths;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
 
 // Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly, getter=isFlipped) BOOL flipped;
+@property(readonly) unsigned long long hash;
 @property(nonatomic) long long orientation;
+@property(readonly) Class superclass;
 @end
 

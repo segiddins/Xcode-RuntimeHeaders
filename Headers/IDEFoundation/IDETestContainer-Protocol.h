@@ -6,11 +6,12 @@
 
 #import <IDEFoundation/NSObject-Protocol.h>
 
-@class NSArray, NSSet;
+@class NSArray, NSSet, NSString;
 
 @protocol IDETestContainer <NSObject>
-@property(readonly, copy) NSArray *arrangedSubtests;
-@property(readonly) BOOL canHaveSubtests;
-@property(readonly, copy) NSSet *subtests;
+@property(nonatomic, readonly) NSArray *arrangedSubtests;
+@property(nonatomic, readonly) NSSet *subtests;
+@property(nonatomic, readonly) BOOL canHaveSubtests;
+@property(nonatomic, readonly) NSString *name;
 @end
 

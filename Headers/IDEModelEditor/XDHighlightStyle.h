@@ -16,8 +16,7 @@
 + (void)initialize;
 - (void).cxx_destruct;
 - (void)drawGraphic:(id)arg1 inView:(id)arg2;
-- (id)highlightColor;
-- (void)setHighlightColor:(id)arg1;
+@property(copy) NSColor *highlightColor;
 - (id)defaultColor;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCoder:(id)arg1;

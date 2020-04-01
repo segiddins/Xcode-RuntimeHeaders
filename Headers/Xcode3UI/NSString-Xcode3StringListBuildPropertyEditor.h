@@ -9,5 +9,6 @@
 @interface NSString (Xcode3StringListBuildPropertyEditor)
 - (id)adjustedPathUsingTarget:(id)arg1 forWorkspaceArenaSnapshot:(id)arg2 configurationNamed:(id)arg3;
 - (id)adjustedPathUsingProject:(id)arg1 forWorkspaceArenaSnapshot:(id)arg2 configurationNamed:(id)arg3;
+- (long long)assetTagCompare:(id)arg1;
 @end
 

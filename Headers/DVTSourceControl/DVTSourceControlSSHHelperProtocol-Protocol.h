@@ -9,11 +9,11 @@
 @class NSString, NSURL;
 
 @protocol DVTSourceControlSSHHelperProtocol <NSObject>
-- (void)uploadPublicSSHKeyFromFolder:(NSURL *)arg1 toServer:(NSURL *)arg2 forUsername:(NSString *)arg3 completionBlock:(void (^)(NSError *))arg4;
+- (void)agentHasValidKeyForURL:(NSURL *)arg1 completionBlock:(void (^)(BOOL, NSError *))arg2;
 - (void)knownHostsWithCompletionBlock:(void (^)(NSDictionary *, NSError *))arg1;
 - (void)defaultSSHKeyAuthenticationStrategyForURL:(NSURL *)arg1 completionBlock:(void (^)(DVTSourceControlSSHKeysAuthenticationStrategy *, NSError *))arg2;
-- (void)generateSSHKeysWithPassphrase:(NSString *)arg1 inFolder:(NSURL *)arg2 completionBlock:(void (^)(DVTSourceControlSSHKeysAuthenticationStrategy *, NSError *))arg3;
-- (void)generateSSHKeysWithPassphrase:(NSString *)arg1 comment:(NSString *)arg2 inFolder:(NSURL *)arg3 completionBlock:(void (^)(DVTSourceControlSSHKeysAuthenticationStrategy *, NSError *))arg4;
-- (void)validateSSHKeysWithPrivateKeyURL:(NSURL *)arg1 completionBlock:(void (^)(NSError *))arg2;
+- (void)generateSSHKeysWithName:(NSString *)arg1 comment:(NSString *)arg2 passphrase:(NSString *)arg3 inFolder:(NSURL *)arg4 completionBlock:(void (^)(DVTSourceControlSSHKeysAuthenticationStrategy *, NSError *))arg5;
+- (void)validateSSHKeysWithPrivateKeyURL:(NSURL *)arg1 passphrase:(NSString *)arg2 completionBlock:(void (^)(NSError *))arg3;
+- (void)listSSHKeys:(void (^)(NSArray *, NSError *))arg1;
 @end
 

@@ -4,13 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Foundation/NSObject.h>
+#import <objc/NSObject.h>
 
-@class PBXGlobalID;
+@class PBXObjectID;
 
 @interface PBXObject : NSObject
 {
-    PBXGlobalID *_globalID;
+    PBXObjectID *_objectID;
 }
 
 + (id)longDescription;
@@ -30,6 +30,7 @@
 + (id)archivableAttributes;
 + (void)_clearFallbackClassNameCache:(id)arg1;
 + (id)_classNameToFallbackClassNameDict;
+- (void).cxx_destruct;
 - (void)appendSpotlightDescriptionToString:(id)arg1;
 - (id)longDescription;
 - (id)innerLongDescriptionWithIndentLevel:(unsigned long long)arg1;
@@ -46,15 +47,10 @@
 - (id)fallbackClassNameForPListArchive;
 - (id)gidCommentForArchive;
 - (id)classNameForPListArchive;
-- (id)globalID;
+- (id)objectID;
 - (id)globalIDCreateIfNeeded:(BOOL)arg1;
-- (void)dealloc;
-- (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)copyWithZone:(struct _NSZone *)arg1 getUnretainedObjectMappings:(id *)arg2;
-- (id)init;
 - (SEL)selectorForArchiveMask:(int)arg1;
 - (void)_setUnarchivedGlobalIDFromHexString:(id)arg1;
-- (id)appleScriptID;
 
 @end
 

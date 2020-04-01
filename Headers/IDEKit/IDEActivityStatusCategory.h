@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSImage, NSString;
+@class NSImage, NSNumber, NSString;
 
 @interface IDEActivityStatusCategory : NSObject
 {
@@ -14,11 +14,13 @@
     NSString *_title;
     NSImage *_image;
     long long _count;
+    NSNumber *_updateDelay;
     CDUnknownBlockType _clickHandler;
 }
 
 + (id)keyPathsForValuesAffectingShouldShow;
 @property(readonly) CDUnknownBlockType clickHandler; // @synthesize clickHandler=_clickHandler;
+@property(retain) NSNumber *updateDelay; // @synthesize updateDelay=_updateDelay;
 @property BOOL alwaysShow; // @synthesize alwaysShow=_alwaysShow;
 @property long long count; // @synthesize count=_count;
 @property(retain) NSImage *image; // @synthesize image=_image;

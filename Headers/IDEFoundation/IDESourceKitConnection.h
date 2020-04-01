@@ -7,14 +7,16 @@
 #import <objc/NSObject.h>
 
 @class DVTObservingToken, IDESourceKitLowLevelConnection, IDESourceKitUIDSet, NSMutableArray;
-@protocol OS_dispatch_queue;
+@protocol OS_dispatch_queue, OS_dispatch_semaphore;
 
 @interface IDESourceKitConnection : NSObject
 {
     IDESourceKitLowLevelConnection *_conn;
     IDESourceKitUIDSet *_UID;
+    NSObject<OS_dispatch_queue> *_toolchainUpdateQueue;
     NSObject<OS_dispatch_queue> *_notificationQueue;
     NSMutableArray *_workspaceDelegates;
+    NSMutableArray *_refactoringDelegates;
     NSMutableArray *_connectionDelegates;
     NSMutableArray *_logOutputHandlers;
     unsigned long long _logLevel;
@@ -23,9 +25,9 @@
     CDUnknownBlockType _extraNotificationReceiver;
     // Error parsing type: AQ, name: _connectionToken
     DVTObservingToken *_availableToolchainsObservingToken;
+    NSObject<OS_dispatch_semaphore> *_toolchainsRegisteredSema;
 }
 
-+ (void)initialize;
 + (id)sharedInstance;
 - (void).cxx_destruct;
 - (void)_debugCrashService;
@@ -34,20 +36,26 @@
 - (void)enableServiceLogOutput:(BOOL)arg1;
 - (void)removeServiceLogOutputHandler:(CDUnknownBlockType)arg1;
 - (void)addServiceLogOutputHandler:(CDUnknownBlockType)arg1;
+- (BOOL)waitForToolchainRegistrationWithTimeout:(double)arg1;
 - (void)sendYAMLRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)mangleSwiftSimpleClasses:(id)arg1 toolchains:(id)arg2 queue:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;
+- (id)demangleSwiftMangledName:(id)arg1 toolchains:(id)arg2;
 - (void)demangleSwiftMangledNames:(id)arg1 toolchains:(id)arg2 queue:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;
 - (void)collectModuleGroups:(id)arg1 args:(id)arg2 toolchains:(id)arg3 queue:(id)arg4 completionBlock:(CDUnknownBlockType)arg5;
 - (void)postNotificationName:(id)arg1;
 - (void)postNotificationName:(id)arg1 userInfo:(id)arg2;
 - (void)_pingForServiceRestoration;
+- (void)_handleServiceCrash;
 - (void)_handleCallbackWithInfo:(id)arg1 reply:(id)arg2;
 - (void)_handleNotification:(id)arg1;
 - (void)removeConnectionDelegate:(id)arg1;
 - (void)addConnectionDelegate:(id)arg1;
+- (void)removeRefactoringDelegate:(id)arg1;
+- (void)addRefactoringDelegate:(id)arg1;
 - (void)removeWorkspaceDelegate:(id)arg1;
 - (void)addWorkspaceDelegate:(id)arg1;
 - (void)setExtraNotificationReceiver:(CDUnknownBlockType)arg1;
+- (void)_sendUpdatedToolchainInfo:(id)arg1;
 - (void)_observeToolchains;
 - (struct _sourcekit_connection_s *)sourceKitConnectionObject;
 - (id)internalConnection;
@@ -56,19 +64,21 @@
 - (id)init;
 - (id)makeSymbol:(id)arg1 symbolKind:(id)arg2 language:(id)arg3 resolution:(id)arg4;
 - (id)makeDocumentLocation:(id)arg1 startLine:(long long)arg2 startCol:(long long)arg3 endLine:(long long)arg4 endCol:(long long)arg5 rangeLoc:(long long)arg6 rangeCount:(long long)arg7 timeStamp:(id)arg8 encoding:(long long)arg9;
-- (id)makeIndexable:(id)arg1 fileURLs:(id)arg2 indexableIsUnitTest:(id)arg3;
-- (id)makeToolchainInfo:(id)arg1 name:(id)arg2 filePath:(id)arg3 isDefault:(BOOL)arg4;
-- (void)openIndex:(id)arg1 workspaceFile:(id)arg2 indexFolder:(id)arg3 datastoreFolder:(id)arg4 databaseFolder:(id)arg5 pchHeaderFolder:(id)arg6 buildConfig:(id)arg7 destinationTargetIdentifier:(id)arg8 useBolt:(BOOL)arg9 enableFullStoreVisibility:(id)arg10 queue:(id)arg11 completion:(CDUnknownBlockType)arg12;
-- (id)openIndex:(id)arg1 workspaceFile:(id)arg2 indexFolder:(id)arg3 datastoreFolder:(id)arg4 databaseFolder:(id)arg5 pchHeaderFolder:(id)arg6 buildConfig:(id)arg7 destinationTargetIdentifier:(id)arg8 useBolt:(BOOL)arg9 enableFullStoreVisibility:(id)arg10 error:(id *)arg11;
-- (void)unregisterToolchains:(id)arg1 queue:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (id)makeIndexable:(id)arg1 fileURLs:(id)arg2 supportedPlatforms:(id)arg3 linkedIndexableIds:(id)arg4 indexableIsUnitTest:(id)arg5;
+- (id)makeToolchainInfo:(id)arg1 name:(id)arg2 filePath:(id)arg3 isDefault:(BOOL)arg4 disableClientResponseHandling:(id)arg5;
+- (id)openIndex:(id)arg1 workspaceFile:(id)arg2 indexFolder:(id)arg3 datastoreFolder:(id)arg4 databaseFolder:(id)arg5 pchHeaderFolder:(id)arg6 buildConfig:(id)arg7 destinationTargetIdentifier:(id)arg8 platformIdentifier:(id)arg9 indexDatabasePath:(id)arg10 toolchainInvocationLoggingPath:(id)arg11 enableFullStoreVisibility:(id)arg12 dumpIndexables:(id)arg13 initialDBSize:(id)arg14 queue:(id)arg15 completion:(CDUnknownBlockType)arg16;
+- (id)openIndex:(id)arg1 workspaceFile:(id)arg2 indexFolder:(id)arg3 datastoreFolder:(id)arg4 databaseFolder:(id)arg5 pchHeaderFolder:(id)arg6 buildConfig:(id)arg7 destinationTargetIdentifier:(id)arg8 platformIdentifier:(id)arg9 indexDatabasePath:(id)arg10 toolchainInvocationLoggingPath:(id)arg11 enableFullStoreVisibility:(id)arg12 dumpIndexables:(id)arg13 initialDBSize:(id)arg14 error:(id *)arg15;
+- (id)unregisterToolchains:(id)arg1 queue:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (BOOL)unregisterToolchains:(id)arg1 error:(id *)arg2;
-- (void)registerToolchains:(id)arg1 queue:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (id)registerToolchains:(id)arg1 queue:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (BOOL)registerToolchains:(id)arg1 error:(id *)arg2;
-- (void)dumpIndexData:(id)arg1 queue:(id)arg2 completion:(CDUnknownBlockType)arg3;
-- (id)dumpIndexData:(id)arg1 error:(id *)arg2;
-- (void)setLoggingSettings:(BOOL)arg1 logLevel:(long long)arg2 queue:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (id)setEnableCompileNotifications:(BOOL)arg1 queue:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (BOOL)setEnableCompileNotifications:(BOOL)arg1 error:(id *)arg2;
+- (id)setLoggingSettings:(BOOL)arg1 logLevel:(long long)arg2 queue:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (id)setLoggingSettings:(BOOL)arg1 logLevel:(long long)arg2 error:(id *)arg3;
-- (void)testMe:(id)arg1 failedText:(id)arg2 crash:(id)arg3 notRecommended:(id)arg4 queue:(id)arg5 completion:(CDUnknownBlockType)arg6;
+- (id)testingInvalidateFilePath:(id)arg1 queue:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (BOOL)testingInvalidateFilePath:(id)arg1 error:(id *)arg2;
+- (id)testMe:(id)arg1 failedText:(id)arg2 crash:(id)arg3 notRecommended:(id)arg4 queue:(id)arg5 completion:(CDUnknownBlockType)arg6;
 - (id)testMe:(id)arg1 failedText:(id)arg2 crash:(id)arg3 notRecommended:(id)arg4 error:(id *)arg5;
 
 @end

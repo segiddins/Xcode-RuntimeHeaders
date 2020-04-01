@@ -15,6 +15,7 @@
     NSMutableDictionary *_pagesByFilename;
     NSMutableArray *_pageFilenames;
     NSArray *_workspaceFrameworkSearchPaths;
+    DVTDevice *_device;
     BOOL _allowsReset;
     BOOL _executeOnSourceChanges;
     BOOL _timelineScrubberEnabled;
@@ -30,7 +31,6 @@
 }
 
 + (id)keyPathsForValuesAffectingWorkspaceFrameworkSearchPaths;
-+ (id)targetTripleFromSDK:(id)arg1;
 + (id)keyPathsForValuesAffectingFrameworkSearchPaths;
 + (id)keyPathsForValuesAffectingTargetTriple;
 + (id)keyPathsForValuesAffectingTargetPlatformIdentifier;
@@ -68,6 +68,8 @@
 @property(readonly, nonatomic) BOOL lastSwiftMigrationIsCurrent;
 - (id)workspaceFrameworkSearchPathsForWorkspace:(id)arg1;
 - (id)workspaceFrameworkSearchPaths;
+- (void)invalidateWorkspaceFrameworkSearchPaths;
+- (void)_workspaceRunContextsChanged;
 - (BOOL)unregisterReferencingContainer:(id)arg1;
 - (BOOL)registerReferencingContainer:(id)arg1;
 - (BOOL)representsLegacyInteractiveLearningDocument;
@@ -83,13 +85,13 @@
 - (void)_notifyPagesDirectoryChangedOnBackgroundQueue;
 - (void)_updatePagesFromDirectoryContents;
 - (id)knownPlaygroundPageExtensions;
-- (void)_prepareForPageCreationWithCompletion:(CDUnknownBlockType)arg1;
+- (void)_prepareForPageCreationWithHandler:(id)arg1;
 - (BOOL)_renamePage:(id)arg1 toName:(id)arg2 withStructureEditingBlock:(CDUnknownBlockType)arg3;
 - (void)_movePage:(id)arg1 toIndex:(unsigned long long)arg2;
 - (void)_invalidatePlaygroundPageContextForFilename:(id)arg1;
 - (id)_createPlaygroundPageContextForFilePath:(id)arg1;
 - (id)_addPageContextForFilePath:(id)arg1 atIndex:(unsigned long long)arg2;
-- (id)_pageContextForPath:(id)arg1;
+- (id)pageContextForPath:(id)arg1;
 @property(readonly, nonatomic) IDEPlaygroundCommonSharedContext *firstPageContext;
 @property(readonly, nonatomic) NSArray *pageContexts;
 - (id)description;

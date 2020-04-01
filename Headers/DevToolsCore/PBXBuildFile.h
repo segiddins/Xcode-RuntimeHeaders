@@ -6,46 +6,41 @@
 
 #import <DevToolsCore/PBXProjectItem.h>
 
-@class NSMutableDictionary, PBXBuildPhase, PBXReference, XCBuildInfo;
+#import <DevToolsCore/PBXPlatformFilterable-Protocol.h>
 
-@interface PBXBuildFile : PBXProjectItem
+@class NSArray, NSDictionary, NSSet, NSString, PBXBuildPhase, PBXProductDependency, PBXReference, XCBuildInfo;
+@protocol DVTMacroExpansion;
+
+@interface PBXBuildFile : PBXProjectItem <PBXPlatformFilterable>
 {
     PBXBuildPhase *_buildPhase;
     PBXReference *_fileRef;
-    NSMutableDictionary *_settings;
     XCBuildInfo *_buildInfo;
+    BOOL _hasBuildPhase;
+    BOOL _hasOverridingCompilerArgs;
+    unsigned int _commonAttrs;
+    NSSet *_otherAttrs;
+    NSArray<DVTMacroExpansion> *_addlCompilerArgs;
+    NSSet *_assetTags;
+    NSDictionary *_unknownSettings;
+    NSSet *_platformFilters;
+    PBXProductDependency *_productReference;
 }
 
++ (void)batchSetAdditionalCompilerArguments:(id)arg1 forBuildFiles:(id)arg2;
++ (id)archiveNameForKey:(id)arg1;
 + (id)archivableWeakRelationshipsForPListArchiver:(id)arg1;
 + (id)archivableRelationships;
 + (id)archivableAttributes;
 + (id)buildFileWithReference:(id)arg1;
-- (void)addDependencyGraphSnapshotsForBuildPhaseSnapshot:(id)arg1 toMutableArray:(id)arg2;
-- (void)addRelevantToolSpecificationsForContext:(id)arg1 toSet:(id)arg2;
+@property(readonly) PBXProductDependency *productReference; // @synthesize productReference=_productReference;
+- (void).cxx_destruct;
 - (BOOL)archiveInPlistOnSingleLine;
 - (id)gidCommentForArchive;
 - (id)buildFileForAbsolutePath:(id)arg1;
 - (id)targetBuildContext;
 - (id)displayName;
-- (void)untouch;
-- (void)touch;
-- (long long)compiledCodeFileSize;
-- (long long)numberOfAnalyzerResults;
-- (long long)numberOfWarnings;
-- (long long)numberOfErrors;
-- (BOOL)canBeUntouched;
-- (BOOL)canBeTouched;
-- (BOOL)needsToBeProcessed;
-- (BOOL)canBeProcessed;
-- (void)removeAllBuildMessages;
-- (void)addBuildMessage:(id)arg1;
-- (id)analyzerResultBuildMessages;
-- (id)warningBuildMessages;
-- (id)errorBuildMessages;
-- (id)buildMessages;
 - (id)preprocessingInfoForIndexing;
-- (BOOL)isPlusPlus;
-- (id)programmingLanguage;
 - (id)buildInfo;
 - (void)setStringValueForPrimaryAttribute:(id)arg1;
 - (id)stringValueForPrimaryAttribute;
@@ -55,45 +50,46 @@
 - (long long)compareFullPath:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
-- (void)processSynchronouslyWithAction:(id)arg1;
 - (id)buildContext;
-- (void)setValue:(id)arg1 forSettingKey:(id)arg2;
-- (id)valueForSettingKey:(id)arg1;
+- (void)setAssetTags:(id)arg1;
+- (id)assetTags;
+- (long long)headerVisibility;
+- (void)setOverridingAdditionalCompilerArguments:(id)arg1;
+- (id)overridingAdditionalCompilerArguments;
+- (void)_setAdditionalCompilerArguments:(id)arg1 isBatch:(BOOL)arg2;
+- (void)setAdditionalCompilerArguments:(id)arg1;
+@property(readonly) NSString *additionalCompilerArgumentsAsString;
+- (id)additionalCompilerArguments;
 - (void)setBoolValue:(BOOL)arg1 ofAttributeNamed:(id)arg2;
 - (BOOL)boolValueOfAttributeNamed:(id)arg1;
-- (void)removeValue:(id)arg1 fromSettingsArrayForKey:(id)arg2;
-- (void)addValue:(id)arg1 toSettingsArrayForKey:(id)arg2;
-- (BOOL)hasValue:(id)arg1 inSettingsArrayForKey:(id)arg2;
-- (id)settingsArrayForKey:(id)arg1;
-- (id)settingsArrayForKey:(id)arg1 create:(BOOL)arg2;
+- (id)attributes;
+- (BOOL)shouldArchivePlatformFilter;
+- (void)setPlatformFilter:(id)arg1;
+- (id)_platformFilter;
+- (BOOL)shouldArchiveFilter;
+- (void)setFilter:(id)arg1;
+- (id)_filter;
+@property(copy) NSSet *platformFilters;
+- (void)makeSettingsMatchBuildFile:(id)arg1;
 - (void)_setSettings:(id)arg1;
+- (void)_addAssetTagsToProjectKnownTags;
 - (BOOL)shouldArchiveSettings;
-- (id)settings;
+- (id)_settings;
 - (void)_upgradeAfterAwakingFromUnarchiver:(id)arg1;
-- (void)awakeFromPListUnarchiver:(id)arg1;
+- (void)_setBooleanValue:(BOOL)arg1 ofAttributeNamed:(id)arg2;
+- (BOOL)_booleanValueOfAttributeNamed:(id)arg1;
 - (void)setContainer:(id)arg1;
-- (int)changeMask;
 - (void)willChange;
 - (id)container;
 - (id)target;
 - (void)_setBuildPhase:(id)arg1;
 - (id)buildPhase;
-- (id)projectRelativePath;
-- (id)resolvedAbsolutePath;
-- (id)absolutePath;
-- (id)path;
 - (id)name;
-- (id)fileReference;
-- (void)_setFileRef:(id)arg1;
+- (void)_unsetFileReference;
+@property(readonly) PBXReference *fileReference;
 - (id)innerDescription;
-- (void)referenceWillDealloc:(id)arg1;
-- (void)dealloc;
+- (id)initWithProductReference:(id)arg1;
 - (id)initWithReference:(id)arg1;
-- (id)valueInAppleScriptBuildMessagesAtIndex:(unsigned long long)arg1;
-- (id)appleScriptBuildMessages;
-- (id)objectSpecifier;
-- (BOOL)_isNotObjCCompilationUnit;
-- (BOOL)_isObjCCompilationUnit_alsoCheckForC:(BOOL)arg1;
 
 @end
 

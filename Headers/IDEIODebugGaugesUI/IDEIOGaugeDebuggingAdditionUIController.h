@@ -28,7 +28,7 @@
 - (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (void)debuggingAdditionDidUpdateCollectedQueryResults:(id)arg1;
-- (id)trayCellForNavigationProcessHeader;
+- (id)dataSourceForNavigationProcessHeader;
 - (id)initWithWorkspaceTabController:(id)arg1 withDebuggingAddition:(id)arg2 forExtension:(id)arg3;
 
 // Remaining properties

@@ -10,8 +10,8 @@
 {
 }
 
-- (void)addWarningLinkerFlagsInTargetBuildContext:(id)arg1;
-- (void)addBaseLinkerFlagsInTargetBuildContext:(id)arg1;
+- (BOOL)shouldEmbedSwiftStandardLibraries;
+- (void)registerProductWithLaunchServicesWithMacroExpansionScope:(id)arg1;
 
 @end
 

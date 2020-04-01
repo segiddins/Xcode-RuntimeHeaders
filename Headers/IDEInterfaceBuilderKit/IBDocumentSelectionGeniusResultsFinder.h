@@ -20,7 +20,7 @@
 - (void)findGeniusResultsForEditorDocument:(id)arg1 selectedDocumentLocations:(id)arg2;
 - (void)unregisterDocumentAndSelectionObservations;
 - (void)registerObservationsWithDocument:(id)arg1 andLocations:(id)arg2;
-- (BOOL)_getUpdateGeniusResultsPhaseOneBlock:(CDUnknownBlockType *)arg1 phaseTwoBlock:(CDUnknownBlockType *)arg2 phaseThreeBlock:(CDUnknownBlockType *)arg3;
+- (BOOL)_getUpdateGeniusResultsPhase1Block:(CDUnknownBlockType *)arg1 phase2Block:(CDUnknownBlockType *)arg2 phase3Block:(CDUnknownBlockType *)arg3;
 - (void)primitiveInvalidate;
 - (id)editorDocument;
 

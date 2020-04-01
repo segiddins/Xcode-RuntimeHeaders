@@ -8,10 +8,8 @@
 
 @interface DBGStackFramePointerAnnotationView : NSView
 {
-    long long _backgroundStyle;
 }
 
-@property(nonatomic) long long backgroundStyle; // @synthesize backgroundStyle=_backgroundStyle;
 - (BOOL)allowsVibrancy;
 - (void)drawRect:(struct CGRect)arg1;
 

@@ -8,13 +8,9 @@
 
 @interface DTTapMemo : NSObject
 {
-    BOOL _supportsPeek;
-    BOOL _finalMemo;
     unsigned int _tapVersion;
 }
 
-@property(nonatomic) BOOL finalMemo; // @synthesize finalMemo=_finalMemo;
-@property(nonatomic) BOOL supportsPeek; // @synthesize supportsPeek=_supportsPeek;
 @property(nonatomic) unsigned int tapVersion; // @synthesize tapVersion=_tapVersion;
 
 @end

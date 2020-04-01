@@ -10,11 +10,10 @@
 #import <IDEMemoryGraphDebugger/IDEDebuggingAdditionUIController-Protocol.h>
 #import <IDEMemoryGraphDebugger/XRNavigatorExpansionManager-Protocol.h>
 
-@class DVTExtension, DVTObservingToken, DVTStackBacktrace, DVTStateToken, IDEWorkspaceTabController, NSArray, NSMutableDictionary, NSString, XRMemoryGraphDebuggerAddition, XRMemoryGraphDebuggerIndex;
+@class DVTDispatchLock, DVTExtension, DVTObservingToken, DVTStackBacktrace, DVTStateToken, IDEWorkspaceTabController, NSArray, NSMutableDictionary, NSString, XRMemoryGraphDebuggerAddition, XRMemoryGraphDebuggerIndex;
 
 @interface XRMemoryGraphDebuggerAdditionUIController : NSObject <DVTStatefulObject, IDEDebuggingAdditionUIController, XRNavigatorExpansionManager>
 {
-    IDEWorkspaceTabController *_workspaceTabController;
     NSMutableDictionary *_savedNavigatorState;
     DVTObservingToken *_memoryGraphDebuggerObservationToken;
     DVTObservingToken *_debuggerStateObservingToken;
@@ -22,19 +21,27 @@
     BOOL _shouldAutoSwitchDebugNavigatorContentMode;
     BOOL _showsOnlyLeakedBlocks;
     BOOL _showsOnlyContentFromWorkspace;
+    BOOL _generatingGraphForExport;
     XRMemoryGraphDebuggerAddition *_debuggingAddition;
     NSString *_filterString;
     DVTExtension *_extension;
+    XRMemoryGraphDebuggerIndex *_unfilteredIndex;
     XRMemoryGraphDebuggerIndex *_filteredIndex;
+    DVTDispatchLock *_filteredIndexLock;
     DVTStateToken *_stateToken;
+    IDEWorkspaceTabController *_workspaceTabController;
 }
 
 + (void)configureStateSavingObjectPersistenceByName:(id)arg1;
 + (id)keyPathsForValuesAffectingFilteredChildren;
 + (void)initialize;
+@property(retain, nonatomic) IDEWorkspaceTabController *workspaceTabController; // @synthesize workspaceTabController=_workspaceTabController;
 @property(retain) DVTStateToken *stateToken; // @synthesize stateToken=_stateToken;
-@property(copy, nonatomic) XRMemoryGraphDebuggerIndex *filteredIndex; // @synthesize filteredIndex=_filteredIndex;
+@property(readonly) DVTDispatchLock *filteredIndexLock; // @synthesize filteredIndexLock=_filteredIndexLock;
+@property(readonly, copy, nonatomic) XRMemoryGraphDebuggerIndex *filteredIndex; // @synthesize filteredIndex=_filteredIndex;
+@property __weak XRMemoryGraphDebuggerIndex *unfilteredIndex; // @synthesize unfilteredIndex=_unfilteredIndex;
 @property(readonly) DVTExtension *extension; // @synthesize extension=_extension;
+@property(nonatomic) BOOL generatingGraphForExport; // @synthesize generatingGraphForExport=_generatingGraphForExport;
 @property(copy, nonatomic) NSString *filterString; // @synthesize filterString=_filterString;
 @property(nonatomic) BOOL showsOnlyContentFromWorkspace; // @synthesize showsOnlyContentFromWorkspace=_showsOnlyContentFromWorkspace;
 @property(nonatomic) BOOL showsOnlyLeakedBlocks; // @synthesize showsOnlyLeakedBlocks=_showsOnlyLeakedBlocks;
@@ -45,15 +52,20 @@
 - (void)primitiveInvalidate;
 - (void)commitStateToDictionary:(id)arg1;
 - (void)revertStateWithDictionary:(id)arg1;
+- (id)preferredDescendantForItem:(id)arg1;
+- (void)exemptItem:(id)arg1 fromFilterAndReset:(BOOL)arg2;
 - (void)_reapplyFilteringState;
 @property(readonly, nonatomic) NSArray *filteredChildren;
+- (void)_updateFilteredIndex:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)generateAndSaveMemoryGraph;
 - (void)applyInitialExpansion:(id)arg1 toItem:(id)arg2;
 - (BOOL)restoreExpansionAndScrollState:(id)arg1;
 - (void)saveExpansionAndScrollState:(id)arg1;
-- (void)willSelectItem:(id)arg1 inNavigatorOutlineView:(id)arg2;
+- (BOOL)willSelectItem:(id)arg1 inNavigatorOutlineView:(id)arg2;
 - (id)initWithWorkspaceTabController:(id)arg1 withDebuggingAddition:(id)arg2 forExtension:(id)arg3;
 
 // Remaining properties
+@property(readonly) BOOL canRevertWithEmptyStateDictionary;
 @property(retain) DVTStackBacktrace *creationBacktrace;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;

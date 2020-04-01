@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Foundation/NSObject.h>
+#import <objc/NSObject.h>
 
 @class NSMutableDictionary, NSString, PBXStringTreeNode;
 
@@ -17,6 +17,7 @@
     NSMutableDictionary *_sortHintsForPaths;
 }
 
+- (void).cxx_destruct;
 - (void)removeAllNodes;
 - (void)setObject:(id)arg1 forPath:(id)arg2;
 - (id)objectForPath:(id)arg1;
@@ -29,7 +30,6 @@
 - (BOOL)sortAllButTopLevel;
 - (id)_lookupNode:(id *)arg1 forPath:(id)arg2;
 - (id)description;
-- (void)dealloc;
 - (id)init;
 - (id)initWithPathSeparator:(id)arg1;
 

@@ -6,23 +6,20 @@
 
 #import <IBFoundation/IBICSticker.h>
 
-#import <IDEInterfaceBuilderKit/IBICStickerPackChild-Protocol.h>
+#import <IDEInterfaceBuilderKit/IBICAbstractCollectionChild-Protocol.h>
+#import <IDEInterfaceBuilderKit/IBICAbstractCollectionDropChild-Protocol.h>
 
 @class NSString;
 
-@interface IBICSticker (DisplayAdditions) <IBICStickerPackChild>
-+ (id)emptyThumbnailIcon;
-+ (id)stickersFromDropIndicator:(id)arg1;
-+ (id)stickersFromImageReps:(id)arg1;
+@interface IBICSticker (DisplayAdditions) <IBICAbstractCollectionChild, IBICAbstractCollectionDropChild>
++ (id)itemsFromOverlayOrnament:(id)arg1;
++ (id)itemsFromImageReps:(id)arg1;
 - (void)setIbInspectedAccessibilityLabel:(id)arg1;
 - (id)ibInspectedAccessibilityLabel;
 - (id)quickLookPreviewItem;
 - (BOOL)applyContentFromDropIndicator:(id)arg1;
-- (id)defaultFileTypes;
 - (id)thumbnail;
-- (id)typeIcon;
 - (id)icon;
-- (BOOL)isPredominantlyWhite;
 - (id)bitmap;
 - (id)dragImage;
 - (id)image;

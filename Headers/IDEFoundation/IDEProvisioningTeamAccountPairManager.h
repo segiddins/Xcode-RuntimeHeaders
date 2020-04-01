@@ -7,13 +7,15 @@
 #import <objc/NSObject.h>
 
 #import <IDEFoundation/DVTInvalidation-Protocol.h>
+#import <IDEFoundation/IDEProvisioningTeamAccountPairProvider-Protocol.h>
 
-@class DVTDeveloperAccountManager, DVTDispatchLock, DVTObservingToken, DVTStackBacktrace, IDEProvisioningPortal, IDEProvisioningSessionManager, NSMutableDictionary, NSString;
+@class DVTDeveloperAccountManager, DVTDispatchLock, DVTStackBacktrace, IDEProvisioningPortal, IDEProvisioningSessionManager, NSMutableDictionary, NSString;
+@protocol DVTInvalidation;
 
-@interface IDEProvisioningTeamAccountPairManager : NSObject <DVTInvalidation>
+@interface IDEProvisioningTeamAccountPairManager : NSObject <DVTInvalidation, IDEProvisioningTeamAccountPairProvider>
 {
     DVTDispatchLock *_lock;
-    DVTObservingToken *_accountsToken;
+    id <DVTInvalidation> _accountsToken;
     NSMutableDictionary *_teamIDToPairMap;
     DVTDeveloperAccountManager *_accountManager;
     IDEProvisioningSessionManager *_sessionManager;
@@ -27,9 +29,10 @@
 @property(readonly, nonatomic) DVTDeveloperAccountManager *accountManager; // @synthesize accountManager=_accountManager;
 - (void).cxx_destruct;
 - (id)_teamIDToPairMapForTesting;
-- (id)_errorForNoAccounts;
 - (id)_pairForTeam:(id)arg1 error:(id *)arg2;
 - (id)pairForTeam:(id)arg1 error:(id *)arg2;
+- (void)invalidateCachedPairMap;
+- (id)sessionProviders;
 - (void)primitiveInvalidate;
 - (id)initWithAccountManager:(id)arg1;
 

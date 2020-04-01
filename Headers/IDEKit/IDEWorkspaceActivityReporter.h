@@ -15,7 +15,6 @@
     IDEActivityReport *_activeReport;
 }
 
-+ (void)initialize;
 - (void).cxx_destruct;
 - (id)_title;
 - (void)updateActivity;

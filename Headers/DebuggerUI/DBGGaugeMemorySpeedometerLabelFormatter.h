@@ -6,10 +6,14 @@
 
 #import <Foundation/NSByteCountFormatter.h>
 
+@class NSNumberFormatter;
+
 @interface DBGGaugeMemorySpeedometerLabelFormatter : NSByteCountFormatter
 {
+    NSNumberFormatter *_numberFormatter;
 }
 
+- (void).cxx_destruct;
 - (id)stringForObjectValue:(id)arg1;
 - (id)init;
 

@@ -23,9 +23,10 @@
 @property(readonly, nonatomic) long long relation;
 @property(readonly, nonatomic) unsigned long long firstAttribute;
 @property(readonly, nonatomic) id firstItemRepresentation;
+- (unsigned long long)hashOfComponentsIgnoringScoring;
 - (unsigned long long)hashOfComponents;
+- (BOOL)hasComponentsEqualToComponentsOfRepresentationAllowingReversingIgnoringScoring:(NSObject<IBLayoutConstraintRepresentation> *)arg1;
 - (BOOL)hasComponentsEqualToComponentsOfRepresentationAllowingReversing:(NSObject<IBLayoutConstraintRepresentation> *)arg1;
 - (BOOL)hasComponentsEqualToComponentsOfRepresentation:(NSObject<IBLayoutConstraintRepresentation> *)arg1;
-- (NSObject<IBLayoutConstraintRepresentation> *)representationByReversingFirstAndSecondItem;
 @end
 

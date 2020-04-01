@@ -19,15 +19,18 @@
     id <IDEFlightChecking> _entitlementFlightCheck;
 }
 
++ (id)coalescableReadOnlyKeyPaths;
 - (void).cxx_destruct;
+- (id)coalescableWriteableKeyPathToDataSource;
 - (BOOL)isEnabledUsingEducatedGuess;
 - (id)flightChecks;
 - (id)entitlementFlightCheck;
 - (id)infoPlistFlightCheck;
 - (id)linkedFrameworksFlightCheck;
-- (void)publishStateWithContext:(id)arg1;
+- (BOOL)onlyRequiresLinkedFramework;
 - (BOOL)requiresLocalGameCenterEntitlement;
 - (BOOL)requiresGameCenterDeviceCompatibilityInfoPlistEntry;
+- (id)initWithCapabilitiesContext:(id)arg1 item:(id)arg2;
 
 @end
 

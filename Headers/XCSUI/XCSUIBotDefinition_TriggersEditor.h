@@ -14,6 +14,7 @@
 
 @interface XCSUIBotDefinition_TriggersEditor : IDEViewController <NSOutlineViewDataSource, DVTOutlineViewDelegate, NSTextFieldDelegate>
 {
+    BOOL _preventGoFowardOrFinish;
     BOOL _viewIsInstalled;
     XCSUIBotDefinitionContext *_botDefinitionContext;
     NSMutableArray *_triggers;
@@ -43,6 +44,7 @@
 @property __weak DVTBorderedView *triggersBorderedView; // @synthesize triggersBorderedView=_triggersBorderedView;
 @property __weak NSView *triggerDetailCustomView; // @synthesize triggerDetailCustomView=_triggerDetailCustomView;
 @property __weak DVTOutlineView *triggersOutlineView; // @synthesize triggersOutlineView=_triggersOutlineView;
+@property(nonatomic) BOOL preventGoFowardOrFinish; // @synthesize preventGoFowardOrFinish=_preventGoFowardOrFinish;
 @property(retain, nonatomic) NSMutableArray *triggers; // @synthesize triggers=_triggers;
 @property(retain, nonatomic) XCSUIBotDefinitionContext *botDefinitionContext; // @synthesize botDefinitionContext=_botDefinitionContext;
 - (void).cxx_destruct;

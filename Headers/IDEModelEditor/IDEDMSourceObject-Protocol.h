@@ -11,6 +11,6 @@
 @protocol IDEDMSourceObject <IDEDMModelObject>
 
 @optional
-- (id <IDEDMModelObject>)model;
+@property(readonly) id <IDEDMModelObject> model;
 @end
 

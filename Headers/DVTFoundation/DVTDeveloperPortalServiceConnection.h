@@ -20,6 +20,7 @@
     CDUnknownBlockType _completionHandler;
 }
 
++ (id)urlSessionForCredential:(id)arg1;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(retain, nonatomic) NSMutableData *responseData; // @synthesize responseData=_responseData;
 @property(retain, nonatomic) NSURLResponse *response; // @synthesize response=_response;

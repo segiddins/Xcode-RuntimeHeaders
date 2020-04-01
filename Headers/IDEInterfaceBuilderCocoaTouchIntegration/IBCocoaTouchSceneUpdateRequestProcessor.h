@@ -4,17 +4,17 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <IDEInterfaceBuilderKit/IBAbstractSceneUpdateRequestProcessor.h>
+#import <objc/NSObject.h>
 
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBPlatformToolRequestProcessor-Protocol.h>
 
 @class NSString;
 
-@interface IBCocoaTouchSceneUpdateRequestProcessor : IBAbstractSceneUpdateRequestProcessor <IBPlatformToolRequestProcessor>
+@interface IBCocoaTouchSceneUpdateRequestProcessor : NSObject <IBPlatformToolRequestProcessor>
 {
 }
 
-- (id)toolDescriptionForProcessingRequestsWithTargetRuntime:(id)arg1 role:(long long)arg2 scaleFactor:(double)arg3;
+- (id)toolDescriptionForProcessingRequestsWithTargetRuntime:(id)arg1 role:(long long)arg2 deviceTypeDescription:(id)arg3;
 - (id)resultsAfterFailingToLaunchPlatformToolWithResult:(id)arg1 forRequests:(id)arg2;
 - (id)performRequestOnBackgroundThreadWithData:(id)arg1 diagnosticsBlock:(CDUnknownBlockType)arg2 platformTool:(id)arg3;
 

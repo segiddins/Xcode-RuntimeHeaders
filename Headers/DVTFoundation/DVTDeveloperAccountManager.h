@@ -8,29 +8,42 @@
 
 #import <DVTFoundation/DVTDeveloperProfileAccountProvider-Protocol.h>
 
-@class DVTDeveloperAccount, NSOrderedSet, NSString;
+@class DVTDispatchLock, NSMutableArray, NSOrderedSet, NSString;
 
 @interface DVTDeveloperAccountManager : NSObject <DVTDeveloperProfileAccountProvider>
 {
-    NSOrderedSet *_accounts;
-    DVTDeveloperAccount *_defaultAccount;
+    NSMutableArray *_accountObservers;
+    DVTDispatchLock *_accountsLock;
+    NSOrderedSet *_allAccounts;
 }
 
++ (id)keyPathsForValuesAffectingServerAccounts;
++ (id)keyPathsForValuesAffectingDeveloperAccounts;
 + (id)sharedAccountManager;
-@property(retain, nonatomic) DVTDeveloperAccount *defaultAccount; // @synthesize defaultAccount=_defaultAccount;
 - (void).cxx_destruct;
 @property(readonly) NSString *typeIdentifier;
-- (BOOL)importAccountsFromKeychain:(struct OpaqueSecKeychainRef *)arg1 propertyList:(id)arg2 numberOfAccounts:(unsigned long long *)arg3 error:(id *)arg4;
-- (BOOL)exportAccountsToKeychain:(struct OpaqueSecKeychainRef *)arg1 propertyList:(id *)arg2 numberOfAccounts:(unsigned long long *)arg3 error:(id *)arg4;
+- (BOOL)importAccountsFromKeychain:(id)arg1 propertyList:(id)arg2 numberOfAccounts:(unsigned long long *)arg3 error:(id *)arg4;
+- (BOOL)exportAccountsToKeychain:(id)arg1 propertyList:(id *)arg2 numberOfAccounts:(unsigned long long *)arg3 error:(id *)arg4;
 - (void)addAccountsFromArray:(id)arg1;
 - (void)removeAccount:(id)arg1;
-- (void)addAccount:(id)arg1;
-@property(copy, nonatomic) NSOrderedSet *accounts; // @synthesize accounts=_accounts;
+- (void)addServerAccount:(id)arg1;
+- (void)addDeveloperAccount:(id)arg1;
+@property(readonly, nonatomic) NSOrderedSet *serverAccounts;
+@property(readonly, nonatomic) NSOrderedSet *developerAccounts;
+@property(copy, nonatomic) NSOrderedSet *allAccounts; // @synthesize allAccounts=_allAccounts;
+- (void)loadAccountsWithCallback:(CDUnknownBlockType)arg1;
+- (void)notifyAndUpdateAccountSessionObservers;
 - (void)updateUserDefaults;
+- (id)_accountDefaults;
 - (id)_accountsByCreatingFromDefaults;
+- (id)_accountsFromDefaults:(id)arg1 keychain:(struct __SecKeychain *)arg2;
+- (id)_certBasedAccountWithCommonName:(id)arg1 serialNumber:(id)arg2 keychain:(struct __SecKeychain *)arg3;
+- (id)_tokenBasedAccountWithUsername:(id)arg1;
+- (BOOL)temporaryStateManagerWantsInMemoryOnlyBehavior;
 - (id)_accountDefaultsWithFallbacks;
 - (BOOL)hasAccountWithUsername:(id)arg1;
 - (id)accountWithUsername:(id)arg1;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

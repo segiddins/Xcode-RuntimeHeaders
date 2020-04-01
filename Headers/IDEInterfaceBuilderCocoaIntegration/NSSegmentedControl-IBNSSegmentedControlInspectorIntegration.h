@@ -6,8 +6,34 @@
 
 #import <AppKit/NSSegmentedControl.h>
 
-@interface NSSegmentedControl (IBNSSegmentedControlInspectorIntegration)
+#import <IDEInterfaceBuilderCocoaIntegration/IBDocumentArchiving-Protocol.h>
+
+@class NSString;
+
+@interface NSSegmentedControl (IBNSSegmentedControlInspectorIntegration) <IBDocumentArchiving>
++ (id)keyPathsForValuesAffectingIbInspectedSpringLoaded;
++ (id)ibInstantiateForRole:(long long)arg1 withTargetRuntime:(id)arg2 documentClass:(Class)arg3 assetIdentifier:(id)arg4;
 - (void)setIbInspectedSpringLoaded:(BOOL)arg1;
 - (BOOL)ibInspectedSpringLoaded;
+- (void)ibPopulateIssues:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
+- (void)ibCustomizeForInsertionIntoNSToolbar:(id)arg1 withObjects:(id)arg2 fromLibraryOrDifferentTargetRuntime:(BOOL)arg3 andInsertionContext:(id)arg4;
+- (void)ibEnableAutolayoutInDocument:(id)arg1 context:(id)arg2;
+- (id)ibWidgetType;
+- (id)ibQualifyingInfoForDefaultLabel;
+- (BOOL)ibIsUserSizable;
+- (struct CGSize)ibMaximumSize;
+- (struct CGSize)ibMinimumSize;
+- (struct CGSize)ibNearestLegalBoundsSize;
+- (double)ibPreferredWidth;
+- (id)ibLocalAttributeKeyPaths;
+- (Class)ibTrackerClass;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @end
 

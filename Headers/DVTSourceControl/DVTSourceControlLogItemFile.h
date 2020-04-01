@@ -6,26 +6,37 @@
 
 #import <objc/NSObject.h>
 
+#import <DVTSourceControl/NSCopying-Protocol.h>
 #import <DVTSourceControl/NSSecureCoding-Protocol.h>
 
-@class NSString;
+@class DVTSourceControlRevision, NSArray, NSString;
 
-@interface DVTSourceControlLogItemFile : NSObject <NSSecureCoding>
+@interface DVTSourceControlLogItemFile : NSObject <NSSecureCoding, NSCopying>
 {
     NSString *_filePath;
+    DVTSourceControlRevision *_revision;
     NSString *_previousFilePath;
+    NSArray *_parents;
     unsigned long long _status;
 }
 
 + (BOOL)supportsSecureCoding;
 @property(nonatomic) unsigned long long status; // @synthesize status=_status;
+@property(retain, nonatomic) NSArray *parents; // @synthesize parents=_parents;
 @property(retain, nonatomic) NSString *previousFilePath; // @synthesize previousFilePath=_previousFilePath;
+@property(retain, nonatomic) DVTSourceControlRevision *revision; // @synthesize revision=_revision;
 @property(retain, nonatomic) NSString *filePath; // @synthesize filePath=_filePath;
 - (void).cxx_destruct;
+- (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFilePath:(id)arg1 previousFilePath:(id)arg2 status:(unsigned long long)arg3;
-- (id)initWithFilePath:(id)arg1 status:(unsigned long long)arg2;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (id)copyWithZone:(struct _NSZone *)arg1;
+@property(readonly, nonatomic) NSString *fileName;
+@property(readonly, nonatomic) NSString *previousFileName;
+- (id)initWithFilePath:(id)arg1 previousFilePath:(id)arg2 revision:(id)arg3 status:(unsigned long long)arg4;
+- (id)initWithFilePath:(id)arg1 revision:(id)arg2 status:(unsigned long long)arg3;
 
 @end
 

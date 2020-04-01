@@ -155,10 +155,14 @@
 - (void)actionTimelineViewDidBeginScrubbing:(id)arg1;
 - (void)incrementPreviewStartTime:(double)arg1 startPreview:(BOOL)arg2;
 - (void)setNodeSelectorTimelineControlViewPositionForPreviewTime;
+- (void)stopTimelineControlAnimation;
 - (void)setActionPreviewStartTime:(double)arg1 startPreview:(BOOL)arg2;
 - (void)didUpdatePreviewScene:(double)arg1;
 - (BOOL)canLiveReloadScene;
+- (void)updateAnimationForPlaybackSpeed;
 - (void)didEndPlayingPreviewScene;
+- (void)didUnpausePlayingPreviewScene;
+- (void)didPausePlayingPreviewScene;
 - (void)startPlayForTimelineControl;
 - (void)willBeginPlayingPreviewScene;
 - (void)actionRefPopover:(id)arg1 didPressGotoSourceForTimeline:(id)arg2;

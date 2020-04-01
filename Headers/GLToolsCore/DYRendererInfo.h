@@ -6,11 +6,11 @@
 
 #import <objc/NSObject.h>
 
-#import <GLToolsCore/NSCoding-Protocol.h>
+#import <GLToolsCore/NSSecureCoding-Protocol.h>
 
 @class NSDictionary, NSSet, NSString;
 
-@interface DYRendererInfo : NSObject <NSCoding>
+@interface DYRendererInfo : NSObject <NSSecureCoding>
 {
     NSString *vendor;
     NSString *renderer;
@@ -24,6 +24,7 @@
 
 + (BOOL)_dimensionsAreSupported:(id)arg1 supportedDimensions:(id)arg2;
 + (BOOL)_rangeIsSupported:(id)arg1 supportedRange:(id)arg2;
++ (BOOL)supportsSecureCoding;
 + (id)rendererInfoWithGLIContext:(struct __GLIContextRec *)arg1 dispatch:(struct __GLIFunctionDispatchRec *)arg2 api:(int)arg3;
 @property(retain, nonatomic) NSDictionary *shaderPrecisionsFormats; // @synthesize shaderPrecisionsFormats;
 @property(retain, nonatomic) NSDictionary *bitCounts; // @synthesize bitCounts;

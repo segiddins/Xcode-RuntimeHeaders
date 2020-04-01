@@ -8,10 +8,11 @@
 
 #import <IDEFoundation/IDEExecutingOperationTrackable-Protocol.h>
 
-@class DVTDisallowFinishToken, IDELaunchSession, IDERunOperationWorker, NSMutableArray, NSString;
+@class DVTDisallowFinishToken, DVTDispatchLock, IDELaunchSession, IDERunOperationWorker, NSMutableArray, NSString;
 
 @interface IDERunOperation : DVTOperation <IDEExecutingOperationTrackable>
 {
+    DVTDispatchLock *_workerAndFinishedTokenLock;
     NSMutableArray *_trackerObserverTokens;
     DVTDisallowFinishToken *_finishToken;
     BOOL _workaroundIsCancelled;

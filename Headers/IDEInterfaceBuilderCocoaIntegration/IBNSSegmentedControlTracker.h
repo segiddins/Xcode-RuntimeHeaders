@@ -8,14 +8,14 @@
 
 @interface IBNSSegmentedControlTracker : IBNSViewTracker
 {
-    BOOL stretch;
-    long long targetWidth;
-    long long roundRobin;
-    BOOL wasGrowing;
+    BOOL _stretch;
+    long long _targetWidth;
+    long long _roundRobin;
+    BOOL _wasGrowing;
 }
 
 - (void)trackWithEvent:(id)arg1;
-- (void)placeSubviewInFrame:(struct CGRect)arg1 event:(id)arg2;
+- (void)placeSubviewInFrame:(struct CGRect)arg1 event:(id)arg2 originalFrame:(struct CGRect)arg3 isFinalFrame:(BOOL)arg4;
 - (void)growViewToSize:(struct CGSize)arg1;
 - (long long)lastSegment;
 - (void)stretchViewToSize:(struct CGSize)arg1;

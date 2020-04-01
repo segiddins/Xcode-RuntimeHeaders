@@ -6,16 +6,26 @@
 
 #import <GPUDebuggerGLSupport/NSObject-Protocol.h>
 
-@class DYFuture, DYResourceStreamer, NSDictionary;
-@protocol DYCaptureStore, DYPResourceItem, DYPStateMirror, DYResource;
+@class DYDeviceInfo, DYFuture, DYResourceStreamer, NSArray, NSDictionary;
+@protocol DYCaptureStore, DYPResourceItem, DYPStateMirror, DYPlatformSDK, DYResource;
 
 @protocol DYPResourceManager <NSObject>
 + (id <DYResource>)updatedResourceWithType:(unsigned int)arg1 objectID:(unsigned long long)arg2 containerID:(unsigned long long)arg3 changes:(NSDictionary *)arg4;
 - (DYFuture *)performUpdateWithResource:(id <DYResource>)arg1;
+- (DYFuture *)loadThumbnailBatchWithContainerID:(unsigned long long)arg1 resourceInfo:(NSArray *)arg2;
+- (DYFuture *)loadThumbnailImageWithResourceInfo:(NSDictionary *)arg1;
+- (DYFuture *)loadSolidImageWithContainerID:(unsigned long long)arg1 functionIndex:(unsigned int)arg2 subCommandIndex:(int)arg3;
+- (DYFuture *)loadOutlineImageWithContainerID:(unsigned long long)arg1 functionIndex:(unsigned int)arg2 subCommandIndex:(int)arg3;
+- (DYFuture *)loadWireframeImageWithContainerID:(unsigned long long)arg1 functionIndex:(unsigned int)arg2 subCommandIndex:(int)arg3;
 - (DYFuture *)loadWireframeImageWithContainerID:(unsigned long long)arg1 functionIndex:(unsigned int)arg2;
 - (DYFuture *)loadResourceItem:(id <DYPResourceItem>)arg1 withStateMirror:(id <DYPStateMirror>)arg2;
-- (DYFuture *)loadResourceItem:(id <DYPResourceItem>)arg1;
+- (DYFuture *)loadResourceItem:(id <DYPResourceItem>)arg1 withResolution:(CDStruct_14f26992)arg2 subCommandIndex:(int)arg3;
+- (DYFuture *)loadResourceItem:(id <DYPResourceItem>)arg1 withResolution:(CDStruct_14f26992)arg2;
 - (void)invalidateDeviceCache;
 - (id)initWithCaptureStore:(id <DYCaptureStore>)arg1 resourceStreamer:(DYResourceStreamer *)arg2;
+
+@optional
+- (id)initWithCaptureStore:(id <DYCaptureStore>)arg1 resourceStreamer:(DYResourceStreamer *)arg2 deviceInfo:(DYDeviceInfo *)arg3 platformSDK:(id <DYPlatformSDK>)arg4;
+- (id)initWithCaptureStore:(id <DYCaptureStore>)arg1 resourceStreamer:(DYResourceStreamer *)arg2 platformSDK:(id <DYPlatformSDK>)arg3;
 @end
 

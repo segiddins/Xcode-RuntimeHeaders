@@ -6,13 +6,16 @@
 
 #import <IDEFoundation/IDEActivityLogSectionRecorder.h>
 
+@class IDEActivityLogUnitTestSection;
+
 @interface IDEActivityLogUnitTestSectionRecorder : IDEActivityLogSectionRecorder
 {
     BOOL _canFinish;
 }
 
 @property BOOL canFinish; // @synthesize canFinish=_canFinish;
-- (id)section;
+- (void)stopRecording;
+@property(readonly) IDEActivityLogUnitTestSection *section;
 
 @end
 

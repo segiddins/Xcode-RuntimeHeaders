@@ -9,27 +9,29 @@
 #import <IDEKit/DVTInvalidation-Protocol.h>
 #import <IDEKit/NSSearchFieldDelegate-Protocol.h>
 
-@class DVTMutableOrderedDictionary, DVTSearchField, DVTStackBacktrace, IDEAppChooserModelObject, IDERunDestination, IDEScheme, IDESchemeCommand, NSArray, NSArrayController, NSButton, NSIndexSet, NSLock, NSMutableArray, NSMutableSet, NSObject, NSProgressIndicator, NSString, NSTableView, NSWindow;
+@class DVTMutableOrderedDictionary, DVTSearchField, DVTStackBacktrace, IDEAppChooserModelObject, IDEAppChooserTableView, IDERunDestination, IDEScheme, IDESchemeCommand, NSArray, NSArrayController, NSButton, NSIndexSet, NSLock, NSMutableArray, NSMutableSet, NSObject, NSOrderedSet, NSProgressIndicator, NSString, NSWindow;
 @protocol OS_dispatch_queue;
 
 @interface IDEAppChooserWindowController : NSWindowController <DVTInvalidation, NSSearchFieldDelegate>
 {
     NSLock *_foundAppsLock;
     CDUnknownBlockType _completionHandler;
+    unsigned long long _type;
     NSMutableArray *_sortedFoundApplications;
     NSMutableSet *_foundApplicationURLs;
-    NSObject<OS_dispatch_queue> *_appChooserQueue;
-    unsigned long long _type;
-    NSWindow *_sheet;
-    BOOL _haveFoundAtLeastOneUserAppOnDevice;
     NSWindow *_parentWindow;
+    NSWindow *_sheet;
+    NSObject<OS_dispatch_queue> *_appChooserQueue;
+    BOOL _haveFoundAtLeastOneUserAppOnDevice;
+    BOOL _isBrowsingWithOpenPanel;
+    BOOL _runDestinationIsMac;
     NSArray *_orderedChooserApplications;
     NSString *_filterString;
     IDEAppChooserModelObject *_selectedApplicationModelObject;
     NSArrayController *_applicationsArrayController;
     NSIndexSet *_applicationsSelectionIndexes;
     DVTSearchField *_filterField;
-    NSTableView *_tableView;
+    IDEAppChooserTableView *_tableView;
     NSButton *_runLaunchButton;
     NSButton *_cancelButton;
     NSButton *_browseButton;
@@ -40,11 +42,11 @@
     NSArray *_suggestedApps;
     NSArray *_installedApplications;
     DVTMutableOrderedDictionary *_orderedRecentsByURL;
-    NSArray *_recentApplicationItems;
+    NSOrderedSet *_recentApplicationItems;
 }
 
 + (void)initialize;
-@property(readonly) NSArray *recentApplicationItems; // @synthesize recentApplicationItems=_recentApplicationItems;
+@property(readonly) NSOrderedSet *recentApplicationItems; // @synthesize recentApplicationItems=_recentApplicationItems;
 @property(retain, nonatomic) DVTMutableOrderedDictionary *orderedRecentsByURL; // @synthesize orderedRecentsByURL=_orderedRecentsByURL;
 @property(retain, nonatomic) NSArray *installedApplications; // @synthesize installedApplications=_installedApplications;
 @property(copy) NSArray *suggestedApps; // @synthesize suggestedApps=_suggestedApps;
@@ -55,7 +57,7 @@
 @property __weak NSButton *browseButton; // @synthesize browseButton=_browseButton;
 @property __weak NSButton *cancelButton; // @synthesize cancelButton=_cancelButton;
 @property __weak NSButton *runLaunchButton; // @synthesize runLaunchButton=_runLaunchButton;
-@property __weak NSTableView *tableView; // @synthesize tableView=_tableView;
+@property __weak IDEAppChooserTableView *tableView; // @synthesize tableView=_tableView;
 @property __weak DVTSearchField *filterField; // @synthesize filterField=_filterField;
 @property(retain, nonatomic) NSIndexSet *applicationsSelectionIndexes; // @synthesize applicationsSelectionIndexes=_applicationsSelectionIndexes;
 @property(retain) NSArrayController *applicationsArrayController; // @synthesize applicationsArrayController=_applicationsArrayController;

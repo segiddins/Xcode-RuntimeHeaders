@@ -11,7 +11,7 @@
 }
 
 + (id)inferredRepIdentifiersGroupedByItemNameForPaths:(id)arg1;
-+ (id)inferredRepIdentifierForPath:(id)arg1 slotComponentTransformer:(CDUnknownBlockType)arg2;
++ (id)inferredRepIdentifierForPath:(id)arg1;
 + (BOOL)isValidFilenameForImport:(id)arg1;
 + (Class)slotClass;
 + (id)identifierWithSlot:(id)arg1 fileName:(id)arg2 explicitlyUnassigned:(BOOL)arg3;

@@ -10,7 +10,8 @@
 {
 }
 
-- (id)generateContentForFilePath:(id)arg1 contentType:(id)arg2;
++ (id)generateContentWithContext:(id)arg1;
+- (id)captureContextOnMainThreadBeforeGeneratingContent;
 
 @end
 

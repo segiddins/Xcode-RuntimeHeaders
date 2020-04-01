@@ -10,17 +10,17 @@
 
 @class NSString;
 
-__attribute__((visibility("hidden")))
 @interface LLDBSymbolContext : NSObject <DBGSBSymbolContext>
 {
     struct SBSymbolContext {
-        struct unique_ptr<lldb_private::SymbolContext, std::__1::default_delete<lldb_private::SymbolContext>> m_opaque_ap;
+        struct unique_ptr<lldb_private::SymbolContext, std::__1::default_delete<lldb_private::SymbolContext>> m_opaque_up;
     } _symbolContext;
 }
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)initWithSBSymbolContext:(const struct SBSymbolContext *)arg1;
+- (id)GetCompileUnit;
 - (id)GetSymbol;
 - (id)GetLineEntry;
 - (id)GetModule;

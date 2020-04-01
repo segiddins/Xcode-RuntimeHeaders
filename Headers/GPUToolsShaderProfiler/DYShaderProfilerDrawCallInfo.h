@@ -6,12 +6,12 @@
 
 #import <objc/NSObject.h>
 
-#import <GPUToolsShaderProfiler/NSCoding-Protocol.h>
 #import <GPUToolsShaderProfiler/NSCopying-Protocol.h>
+#import <GPUToolsShaderProfiler/NSSecureCoding-Protocol.h>
 
 @class DYShaderProfilerProgramInfo, NSString;
 
-@interface DYShaderProfilerDrawCallInfo : NSObject <NSCoding, NSCopying>
+@interface DYShaderProfilerDrawCallInfo : NSObject <NSSecureCoding, NSCopying>
 {
     NSString *_vertexShaderKey;
     NSString *_fragmentShaderKey;
@@ -25,17 +25,23 @@
     BOOL _blendingIsEnabled;
     unsigned int _drawCallIndex;
     unsigned int _functionIndex;
+    int _subCommandIndex;
+    unsigned int _encoderIndex;
+    unsigned int _comanndBufferIndex;
     unsigned int _vertexCount;
     unsigned int _fragmentCount;
     unsigned int _instanceCount;
-    unsigned int _encoderIndex;
+    unsigned int _commandType;
+    unsigned int _commandBufferIndex;
     DYShaderProfilerProgramInfo *_programInfo;
     double _vertexCountPercentage;
     double _fragmentCountPercentage;
     double _instanceCountPercentage;
 }
 
-@property(nonatomic) unsigned int encoderIndex; // @synthesize encoderIndex=_encoderIndex;
++ (BOOL)supportsSecureCoding;
+@property(nonatomic) unsigned int commandBufferIndex; // @synthesize commandBufferIndex=_commandBufferIndex;
+@property(nonatomic) unsigned int commandType; // @synthesize commandType=_commandType;
 @property(readonly, nonatomic) struct DYShaderProfilerTiming timing; // @synthesize timing=_timing;
 @property(nonatomic) BOOL blendingIsEnabled; // @synthesize blendingIsEnabled=_blendingIsEnabled;
 @property(nonatomic) BOOL fragmentShaderUseDiscard; // @synthesize fragmentShaderUseDiscard=_fragmentShaderUseDiscard;
@@ -50,14 +56,19 @@
 @property(nonatomic) double vertexCountPercentage; // @synthesize vertexCountPercentage=_vertexCountPercentage;
 @property(nonatomic) unsigned int vertexCount; // @synthesize vertexCount=_vertexCount;
 @property(retain, nonatomic) DYShaderProfilerProgramInfo *programInfo; // @synthesize programInfo=_programInfo;
+@property(readonly, nonatomic) unsigned int comanndBufferIndex; // @synthesize comanndBufferIndex=_comanndBufferIndex;
+@property(nonatomic) unsigned int encoderIndex; // @synthesize encoderIndex=_encoderIndex;
+@property(nonatomic) int subCommandIndex; // @synthesize subCommandIndex=_subCommandIndex;
 @property(nonatomic) unsigned int functionIndex; // @synthesize functionIndex=_functionIndex;
 @property(nonatomic) unsigned int drawCallIndex; // @synthesize drawCallIndex=_drawCallIndex;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (BOOL)isComputeDispatchCall;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)init;
 
 @end
 

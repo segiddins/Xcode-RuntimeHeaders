@@ -8,13 +8,14 @@
 #import <IDEKit/NSObject-Protocol.h>
 
 @class DVTExtension, IDEWorkspaceTabController, NSCell, NSMenu;
-@protocol IDEDebuggingAddition;
+@protocol IDEDebugGaugeDataSource, IDEDebuggingAddition;
 
 @protocol IDEDebuggingAdditionUIController <NSObject, DVTInvalidation>
 - (DVTExtension *)extension;
 - (id)initWithWorkspaceTabController:(IDEWorkspaceTabController *)arg1 withDebuggingAddition:(id <IDEDebuggingAddition>)arg2 forExtension:(DVTExtension *)arg3;
 
 @optional
+- (id <IDEDebugGaugeDataSource>)dataSourceForNavigationProcessHeader;
 - (NSCell *)trayCellForNavigationProcessHeader;
 - (NSMenu *)debugSubmenu;
 - (BOOL)shouldReplaceDebugSubmenu;

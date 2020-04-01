@@ -6,38 +6,41 @@
 
 #import <objc/NSObject.h>
 
-@class DVTPlatform, DVTPortalProfileType, DVTPortalTeam, NSDictionary, NSSet, NSString;
+@class DVTPlatform, DVTPortalAppIDFeatures, DVTPortalProfileType, DVTPortalTeam, NSSet, NSString;
 
 @interface DVTPortalProfileCharacteristics : NSObject
 {
     BOOL _forceExplicitAppID;
+    BOOL _overrideDeletionOfPreExistingProfile;
     DVTPortalTeam *_team;
     DVTPortalProfileType *_profileType;
     NSString *_bundleID;
-    NSDictionary *_features;
-    NSDictionary *_containers;
-    DVTPlatform *_platform;
-    NSSet *_manualStyleProfileDevices;
+    DVTPortalAppIDFeatures *_features;
+    DVTPlatform *_profilePlatform;
+    DVTPlatform *_appIDPlatform;
+    NSSet *_registeredDevices;
+    NSSet *_unregisteredDevices;
     NSString *_manualStyleProfileName;
 }
 
 + (id)_errorFeatures:(id)arg1 mustMatchContainers:(id)arg2;
 + (BOOL)_allContainers:(id)arg1 haveFeaturesEnabled:(id)arg2 error:(id *)arg3;
+@property(nonatomic) BOOL overrideDeletionOfPreExistingProfile; // @synthesize overrideDeletionOfPreExistingProfile=_overrideDeletionOfPreExistingProfile;
 @property BOOL forceExplicitAppID; // @synthesize forceExplicitAppID=_forceExplicitAppID;
 @property(readonly, nonatomic) NSString *manualStyleProfileName; // @synthesize manualStyleProfileName=_manualStyleProfileName;
-@property(readonly, nonatomic) NSSet *manualStyleProfileDevices; // @synthesize manualStyleProfileDevices=_manualStyleProfileDevices;
-@property(readonly, nonatomic) DVTPlatform *platform; // @synthesize platform=_platform;
-@property(readonly, copy, nonatomic) NSDictionary *containers; // @synthesize containers=_containers;
-@property(readonly, copy, nonatomic) NSDictionary *features; // @synthesize features=_features;
+@property(readonly, nonatomic) NSSet *unregisteredDevices; // @synthesize unregisteredDevices=_unregisteredDevices;
+@property(readonly, nonatomic) NSSet *registeredDevices; // @synthesize registeredDevices=_registeredDevices;
+@property(readonly, nonatomic) DVTPlatform *appIDPlatform; // @synthesize appIDPlatform=_appIDPlatform;
+@property(readonly, nonatomic) DVTPlatform *profilePlatform; // @synthesize profilePlatform=_profilePlatform;
+@property(retain, nonatomic) DVTPortalAppIDFeatures *features; // @synthesize features=_features;
 @property(readonly, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
 @property(readonly, nonatomic) DVTPortalProfileType *profileType; // @synthesize profileType=_profileType;
 @property(readonly, nonatomic) DVTPortalTeam *team; // @synthesize team=_team;
 - (void).cxx_destruct;
 - (id)description;
-- (void)_setFeaturesToValues:(id)arg1 containerTypesToValues:(id)arg2;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
-- (id)initWithTeam:(id)arg1 type:(id)arg2 manualStyleProfileDevices:(id)arg3 manualStyleProfileName:(id)arg4 bundleID:(id)arg5 featuresToValues:(id)arg6 containerTypesToValues:(id)arg7 platform:(id)arg8 error:(id *)arg9;
+- (id)initWithTeam:(id)arg1 type:(id)arg2 registeredDevices:(id)arg3 unregisteredDevices:(id)arg4 manualStyleProfileName:(id)arg5 bundleID:(id)arg6 features:(id)arg7 profilePlatform:(id)arg8 appIDPlatform:(id)arg9 error:(id *)arg10;
 
 @end
 

@@ -16,7 +16,7 @@
 
 - (void).cxx_destruct;
 - (void)annotationWillUninstall;
-- (id)initWithWorkspaceWindowController:(id)arg1 documentLocation:(id)arg2 stackFrame:(id)arg3;
+- (id)initWithDocumentLocation:(id)arg1 stackFrame:(id)arg2;
 - (void)_updateLocation;
 
 @end

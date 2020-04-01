@@ -4,25 +4,29 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <DVTKit/DVTPagingSheetWindowController.h>
+#import <DVTUserInterfaceKit/DVTPagingSheetWindowController.h>
 
 #import <XCSUI/IDEContinuousIntegrationNewServiceAccountController-Protocol.h>
 
-@class NSString, XCSService;
+@class NSError, NSString, XCSService, XCSUIService;
 
 @interface XCSUIAddServerWindowController : DVTPagingSheetWindowController <IDEContinuousIntegrationNewServiceAccountController>
 {
     CDUnknownBlockType _completionBlock;
-    NSString *_connectionAddress;
+    NSString *_serverAddress;
     XCSService *_service;
+    XCSUIService *_authenticatedService;
+    NSError *_addAccountError;
 }
 
+@property(retain, nonatomic) NSError *addAccountError; // @synthesize addAccountError=_addAccountError;
+@property(retain, nonatomic) XCSUIService *authenticatedService; // @synthesize authenticatedService=_authenticatedService;
 @property(retain, nonatomic) XCSService *service; // @synthesize service=_service;
+@property(copy) NSString *serverAddress; // @synthesize serverAddress=_serverAddress;
 - (void).cxx_destruct;
 - (void)didEndSheetWithReturnCode:(long long)arg1;
-- (void)beginSheetModalForWindow:(id)arg1 connectionAddress:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
+- (void)beginSheetModalForWindow:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)windowDidLoad;
-- (id)initWithWindow:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

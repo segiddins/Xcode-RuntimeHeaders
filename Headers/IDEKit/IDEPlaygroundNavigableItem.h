@@ -15,7 +15,8 @@
 {
 }
 
-- (id)_navigableItemForNavigation;
+- (id)representedURL;
+- (id)contentDocumentLocation;
 @property(readonly, nonatomic) NSString *debugAreaExtensionID;
 - (id)debugAreaDelegate;
 @property(readonly, nonatomic) NSString *debugBarContentProviderCategory;

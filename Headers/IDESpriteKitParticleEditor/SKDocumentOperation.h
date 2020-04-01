@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Foundation/NSObject.h>
+#import <objc/NSObject.h>
 
 @class NSDocument;
 
@@ -16,6 +16,7 @@
 
 @property(readonly, nonatomic) __weak NSDocument *document; // @synthesize document=_document;
 - (void).cxx_destruct;
+- (void)registerWithoutApply;
 - (id)reverseOperation;
 - (void)revertWithObject:(id)arg1;
 - (BOOL)revert;

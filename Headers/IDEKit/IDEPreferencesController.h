@@ -4,17 +4,19 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <AppKit/NSWindowController.h>
+#import <DVTCocoaAdditionsKit/DVTDealloc2Main_WindowController.h>
 
+#import <IDEKit/DVTInvalidation-Protocol.h>
 #import <IDEKit/DVTReplacementViewDelegate-Protocol.h>
 #import <IDEKit/DVTStateRepositoryDelegate-Protocol.h>
 #import <IDEKit/DVTStatefulObject-Protocol.h>
 #import <IDEKit/NSToolbarDelegate-Protocol.h>
+#import <IDEKit/NSTouchBarProvider-Protocol.h>
 #import <IDEKit/NSWindowRestoration-Protocol.h>
 
-@class DVTDelayedInvocation, DVTExtension, DVTReplacementView, DVTStateRepository, DVTStateToken, IDEViewController, NSString;
+@class DVTDelayedInvocation, DVTExtension, DVTReplacementView, DVTStackBacktrace, DVTStateRepository, DVTStateToken, IDEViewController, NSString, NSTouchBar;
 
-@interface IDEPreferencesController : NSWindowController <NSToolbarDelegate, NSWindowRestoration, DVTStatefulObject, DVTStateRepositoryDelegate, DVTReplacementViewDelegate>
+@interface IDEPreferencesController : DVTDealloc2Main_WindowController <NSTouchBarProvider, NSToolbarDelegate, NSWindowRestoration, DVTStatefulObject, DVTStateRepositoryDelegate, DVTReplacementViewDelegate, DVTInvalidation>
 {
     struct CGRect _targetWindowFrame;
     DVTReplacementView *_paneReplacementView;
@@ -27,6 +29,7 @@
 + (void)configureStateSavingObjectPersistenceByName:(id)arg1;
 + (void)restoreWindowWithIdentifier:(id)arg1 state:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 + (id)defaultPreferencesController;
++ (void)initialize;
 @property(retain) DVTStateToken *stateToken; // @synthesize stateToken=_stateToken;
 @property(readonly) DVTDelayedInvocation *stateSavingInvocation; // @synthesize stateSavingInvocation=_stateSavingInvocation;
 @property(readonly) DVTStateRepository *stateRepository; // @synthesize stateRepository=_stateRepository;
@@ -50,18 +53,26 @@
 - (id)toolbarDefaultItemIdentifiers:(id)arg1;
 - (id)toolbarAllowedItemIdentifiers:(id)arg1;
 - (id)toolbar:(id)arg1 itemForItemIdentifier:(id)arg2 willBeInsertedIntoToolbar:(BOOL)arg3;
+- (void)primitiveInvalidate;
 - (void)windowWillClose:(id)arg1;
 - (void)selectPreferencePaneWithIdentifier:(id)arg1;
 @property(readonly) IDEViewController *currentPreferencePaneViewController;
+- (BOOL)validateUserInterfaceItem:(id)arg1;
 - (void)windowDidLoad;
 - (id)initWithWindow:(id)arg1;
 - (void)_cachePreferencePaneExtensions;
+- (id)makeTouchBar;
 
 // Remaining properties
+@property(readonly) BOOL canRevertWithEmptyStateDictionary;
+@property(retain) DVTStackBacktrace *creationBacktrace;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
+@property(readonly) DVTStackBacktrace *invalidationBacktrace;
 @property(readonly) Class superclass;
+@property(readonly) NSTouchBar *touchBar;
+@property(readonly, nonatomic, getter=isValid) BOOL valid;
 
 @end
 

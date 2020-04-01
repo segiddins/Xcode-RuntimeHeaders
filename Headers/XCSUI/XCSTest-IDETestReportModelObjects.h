@@ -8,11 +8,12 @@
 
 #import <XCSUI/IDETestReport_TestRun-Protocol.h>
 
-@class IDESchemeActionRunDestinationRecord, IDESchemeActionsInvocationRecord, NSArray, NSImage, NSString;
-@protocol IDETestReport_Device;
+@class IDESchemeActionRunDestinationRecord, NSArray, NSImage, NSNumber, NSString;
+@protocol IDETestReport_Base, IDETestReport_Device;
 
 @interface XCSTest (IDETestReportModelObjects) <IDETestReport_TestRun>
 - (void)ide_testReport_testRun_schemeActionsInvocationRecord:(CDUnknownBlockType)arg1;
+@property(readonly, nonatomic) IDESchemeActionRunDestinationRecord *ide_testReport_testRun_schemeActionRunDestinationRecord;
 @property(readonly, nonatomic) BOOL ide_testReport_testRun_fetchesSchemeActionsInvocationRecordAsync;
 - (id)ide_sharedTests_testedDevice;
 @property(readonly, copy, nonatomic) NSArray *ide_testReport_testRun_perfMetrics;
@@ -21,8 +22,14 @@
 - (id)testClassName;
 - (void)setTestName:(id)arg1;
 - (id)testName;
-@property(readonly, nonatomic) NSImage *ide_testReport_testRun_statusImage;
-@property(readonly, nonatomic) BOOL ide_testReport_testRun_passed;
+@property(readonly, copy, nonatomic) NSString *ide_testReport_base_identifier;
+@property(readonly, copy, nonatomic) NSString *ide_testReport_testRun_runName;
+@property(readonly, nonatomic) NSNumber *ide_testReport_common_duration;
+@property(readonly, nonatomic) NSString *ide_testReport_common_statusTooltip;
+@property(readonly, nonatomic) NSImage *ide_testReport_common_typeImage;
+@property(readonly, nonatomic) NSImage *ide_testReport_common_statusImage;
+@property(readonly, copy, nonatomic) NSString *ide_testReport_common_title;
+@property(readonly, nonatomic) BOOL ide_testReport_common_passed;
 @property(readonly, copy, nonatomic) NSString *ide_testReport_testRun_UUID;
 @property(readonly, nonatomic) id <IDETestReport_Device> ide_testReport_testRun_testedDevice;
 @property(readonly, copy, nonatomic) NSString *ide_testReport_testRun_testName;
@@ -35,8 +42,7 @@
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
-@property(readonly, nonatomic) IDESchemeActionRunDestinationRecord *ide_testReport_testRun_schemeActionRunDestinationRecord;
-@property(readonly, nonatomic) IDESchemeActionsInvocationRecord *ide_testReport_testRun_schemeActionsInvocationRecord;
+@property(nonatomic) __weak id <IDETestReport_Base> ide_testReport_base_parent;
 @property(readonly) Class superclass;
 @end
 

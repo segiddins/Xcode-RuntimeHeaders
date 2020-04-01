@@ -6,13 +6,12 @@
 
 #import <objc/NSObject.h>
 
-#import <DVTAnalytics/DVTAnalyticsSnapshotFileSystemSerialization-Protocol.h>
+#import <DVTAnalytics/DVTAnalyticsLogProtocol-Protocol.h>
 
 @class DVTCrashLogBacktrace, DVTCrashLogThread, DVTFilePath, DVTMutableOrderedDictionary, NSArray, NSData, NSDate, NSDictionary, NSNumber, NSString;
 
-@interface DVTCrashLog : NSObject <DVTAnalyticsSnapshotFileSystemSerialization>
+@interface DVTCrashLog : NSObject <DVTAnalyticsLogProtocol>
 {
-    NSDictionary *_sections;
     DVTMutableOrderedDictionary *_loadedBinariesByName;
     NSNumber *_isSymbolicated;
     NSNumber *_isFullySymbolicated;
@@ -29,14 +28,19 @@
     NSString *_osVersion;
     NSString *_osBuild;
     DVTFilePath *_cachePath;
+    NSArray *_orderedSections;
+    NSDictionary *_sections;
 }
 
++ (id)fileNameExtension;
 + (id)objectFromFilePath:(id)arg1 error:(id *)arg2;
 + (id)_parseOSVersionAndBuildNumber:(id)arg1 withError:(id *)arg2;
 + (id)_parseVersionAndBuildString:(id)arg1 withError:(id *)arg2;
 + (id)escapedDateTimeForDateTimeSectionContents:(id)arg1;
 + (id)crashLogFromFile:(id)arg1 error:(id *)arg2;
 + (id)crashLogFromText:(id)arg1 cachePath:(id)arg2 error:(id *)arg3;
+@property(readonly) NSDictionary *sections; // @synthesize sections=_sections;
+@property(readonly) NSArray *orderedSections; // @synthesize orderedSections=_orderedSections;
 @property(retain) DVTFilePath *cachePath; // @synthesize cachePath=_cachePath;
 @property(readonly) NSString *osBuild; // @synthesize osBuild=_osBuild;
 @property(readonly) NSString *osVersion; // @synthesize osVersion=_osVersion;
@@ -50,10 +54,14 @@
 @property(readonly) NSData *rawData; // @synthesize rawData=_rawData;
 @property(readonly) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
-- (void)symbolicateWithSymbolicator:(id)arg1 callback:(CDUnknownBlockType)arg2;
+@property(readonly) NSString *longUserDescription;
+@property(readonly) NSString *hardwareModelDescription;
+@property(readonly) NSString *blameThreadDescription;
+- (void)symbolicateWithCallback:(CDUnknownBlockType)arg1;
+@property(readonly) BOOL isLocallySymbolicatedCachePath;
 - (id)deletionSnapshotWithError:(id *)arg1;
 - (id)snapshotWithError:(id *)arg1;
-@property(readonly, getter=isFullySymbolicated) BOOL fullySymbolicated;
+@property(readonly) BOOL isFullySymbolicated;
 @property(readonly, getter=isSymbolicated) BOOL symbolicated;
 - (void)_checkSymbolicationStatus;
 @property(readonly) DVTCrashLogThread *crashingThread; // @synthesize crashingThread=_crashingThread;
@@ -62,8 +70,10 @@
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)_parseExecutableInfoWithError:(id *)arg1;
 - (id)loadedBinaryNamed:(id)arg1;
+@property(readonly) NSArray *loadedParsedBinaries;
 @property(readonly) NSArray *loadedBinaries;
 - (id)_parseProcessString:(id)arg1 withError:(id *)arg2;
+@property(readonly) NSString *dataSource;
 @property(readonly) NSString *appName;
 - (BOOL)_parseLastExceptionBacktraceWithError:(id *)arg1;
 - (BOOL)_parseThreadsWithError:(id *)arg1;

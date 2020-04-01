@@ -6,10 +6,9 @@
 
 #import <IDEFoundation/IDEDebugProcess.h>
 
-@class DBGLLDBAddressSanitizerHelper, DBGLLDBSession, DBGLLDBThreadSanitizerHelper, DVTDispatchLock, NSArray, NSMutableDictionary, NSMutableSet;
+@class DBGLLDBAddressSanitizerHelper, DBGLLDBMainThreadCheckerHelper, DBGLLDBSession, DBGLLDBSwiftRuntimeReportingHelper, DBGLLDBThreadSanitizerHelper, DBGLLDBUBSanitizerHelper, DVTDispatchLock, NSArray, NSMutableDictionary, NSMutableSet;
 @protocol DBGSBProcess, DBGSBTarget;
 
-__attribute__((visibility("hidden")))
 @interface DBGLLDBProcess : IDEDebugProcess
 {
     id <DBGSBTarget> _lldbTarget;
@@ -20,21 +19,47 @@ __attribute__((visibility("hidden")))
     unsigned long long _addressByteSize;
     BOOL _needCodeModuleUpdate;
     BOOL _pendingLazyCodeModuleUpdate;
+    BOOL _hasEnabledMallocStackLoggingDuringAttach;
     DVTDispatchLock *_codeModulesTableLock;
     NSMutableDictionary *_codeModuleForModuleIDTable;
+    BOOL _reflectingLLDBSelectedThreadAndFrame;
+    NSArray *_threadsForReflection;
     DBGLLDBAddressSanitizerHelper *_addressSanitizerHelper;
     DBGLLDBThreadSanitizerHelper *_threadSanitizerHelper;
+    DBGLLDBUBSanitizerHelper *_UBSanitizerHelper;
+    DBGLLDBMainThreadCheckerHelper *_mainThreadCheckerHelper;
+    DBGLLDBSwiftRuntimeReportingHelper *_swiftRuntimeReportingHelper;
+    unsigned long long _TSanBreakpointCurrentIgnoreCount;
+    unsigned long long _UBSanBreakpointCurrentIgnoreCount;
+    unsigned long long _MTCBreakpointCurrentIgnoreCount;
     BOOL _isDoingAsyncAttach;
     BOOL _isCoreFile;
     NSArray *_loadedCodeModules;
+    unsigned long long _TSanBreakpointTotalIgnoreCount;
+    unsigned long long _UBSanBreakpointTotalIgnoreCount;
+    unsigned long long _MTCBreakpointTotalIgnoreCount;
 }
 
++ (id)keyPathsForValuesAffectingSubtitle;
 + (void)initialize;
+@property unsigned long long MTCBreakpointTotalIgnoreCount; // @synthesize MTCBreakpointTotalIgnoreCount=_MTCBreakpointTotalIgnoreCount;
+@property unsigned long long UBSanBreakpointTotalIgnoreCount; // @synthesize UBSanBreakpointTotalIgnoreCount=_UBSanBreakpointTotalIgnoreCount;
+@property unsigned long long TSanBreakpointTotalIgnoreCount; // @synthesize TSanBreakpointTotalIgnoreCount=_TSanBreakpointTotalIgnoreCount;
 @property BOOL isCoreFile; // @synthesize isCoreFile=_isCoreFile;
 @property BOOL isDoingAsyncAttach; // @synthesize isDoingAsyncAttach=_isDoingAsyncAttach;
 @property(copy) NSArray *loadedCodeModules; // @synthesize loadedCodeModules=_loadedCodeModules;
 - (void).cxx_destruct;
-- (id)symbolicatedThreadWithAddresses:(id)arg1;
+- (void)enableMallocStackLoggingDuringAttach;
+- (BOOL)isAddressSanitizerRuntimePresent;
+- (BOOL)isThreadSanitizerRuntimePresent;
+- (id)_mallocStackLogForAddress:(unsigned long long)arg1 size:(unsigned long long)arg2 isLiteZone:(BOOL)arg3 isVMregion:(BOOL)arg4 error:(id *)arg5;
+- (void)symbolicatedThreadFromAddress:(unsigned long long)arg1 size:(unsigned long long)arg2 isLiteZone:(BOOL)arg3 isVMregion:(BOOL)arg4 handler:(CDUnknownBlockType)arg5;
+- (id)_symbolicatedFramesFromAddresses:(id)arg1;
+- (id)symbolicatedFrameFromSymbolContext:(id)arg1 parentThread:(id)arg2 frameNumber:(id)arg3 address:(id)arg4;
+- (id)_lineEntryWithLineNumberFromSymbolContext:(id)arg1 lineEntry:(id)arg2;
+- (id)_swiftRuntimeReportingHelper;
+- (id)_mainThreadCheckerHelper;
+- (id)_UBSanitizerHelper;
 - (id)_threadSanitizerHelper;
 - (BOOL)isMemoryFaultForDataValue:(id)arg1;
 - (void)shadowMemoryForAddress:(unsigned long long)arg1 numberOfBytes:(unsigned long long)arg2 handleOnMainQueueWithResultHandler:(CDUnknownBlockType)arg3;
@@ -45,10 +70,13 @@ __attribute__((visibility("hidden")))
 - (void)_assertIsLLDBSessionThread;
 - (void)reflectLLDBSelectedThreadAndFrame;
 - (BOOL)_isExceptionBreakpoint:(unsigned long long)arg1;
-- (void)_updateThreadStateAndStopReason:(id)arg1 isCurrentThread:(BOOL)arg2 controlState:(int *)arg3;
+- (void)_updateThreadStateAndStopReason:(id)arg1 controlState:(int *)arg2;
+- (id)_getStopReasonText:(id)arg1;
 - (void)_handleStopForInstrumentation:(id)arg1 controlState:(int *)arg2 threadState:(int *)arg3 hasCrashed:(char *)arg4;
 - (BOOL)isSignalNumberFatal:(unsigned long long)arg1;
+- (BOOL)isMemoryResourceException:(unsigned long long)arg1 thread:(id)arg2;
 - (BOOL)isLLDBExceptionFatal:(unsigned long long)arg1;
+- (id)subtitle;
 - (void)clearQueueThreadStackStates;
 - (void)_readMemoryAtAddress:(unsigned long long)arg1 numberOfBytes:(unsigned long long)arg2 dataToReadInto:(id)arg3 shouldCancel:(id)arg4 progressHandler:(CDUnknownBlockType)arg5 resultHandler:(CDUnknownBlockType)arg6;
 - (id)readMemoryAtAddress:(unsigned long long)arg1 numberOfBytes:(unsigned long long)arg2 progressHandler:(CDUnknownBlockType)arg3 resultHandler:(CDUnknownBlockType)arg4;
@@ -57,13 +85,15 @@ __attribute__((visibility("hidden")))
 - (void)rawMemoryDataForAddressExpression:(id)arg1 numberOfBytes:(unsigned long long)arg2 resultHandler:(CDUnknownBlockType)arg3;
 - (Class)classForMemoryData;
 - (BOOL)updateQueuesAndThreads:(int *)arg1;
-- (void)_setInitialCurrentStackFrame;
-- (BOOL)_shouldLookForStackFrameWithDebugSymbols;
-- (BOOL)_shouldSelectFirstSymbolFrame;
+- (void)_setInitialCurrentStackFrameForThread:(id)arg1;
+- (id)bestStackFrameForFrames:(id)arg1;
+- (BOOL)_shouldLookForStackFrameWithDebugSymbols:(id)arg1;
+- (BOOL)_shouldSelectFirstSymbolFrame:(id)arg1;
 - (void)_updateQueues:(id *)arg1 withComputedThreads:(id)arg2;
 - (void)_updateThreads:(id *)arg1 currentThread:(id *)arg2 controlState:(int *)arg3;
 - (id)_currentLLDBThread;
 - (void)_updateCodeModulesImmediatelyIfNecessary;
+- (void)updateCodeModulesImmediately;
 - (id)codeModuleForLLDBModule:(id)arg1;
 - (void)_updateCodeModulesAfterDelay;
 @property BOOL needCodeModuleUpdate;

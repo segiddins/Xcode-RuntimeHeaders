@@ -17,7 +17,9 @@
     NSDictionary *_childrenIdentifiersToConflictStates;
 }
 
++ (id)defaultInstanceWithChildSlots:(id)arg1;
 + (BOOL)fileNameIsIdentifier;
++ (BOOL)supportsLocalization;
 + (Class)requiredChildrenClass;
 + (Class)slotClass;
 @property(copy, nonatomic) NSDictionary *childrenIdentifiersToConflictStates; // @synthesize childrenIdentifiersToConflictStates=_childrenIdentifiersToConflictStates;
@@ -25,11 +27,9 @@
 - (void).cxx_destruct;
 - (BOOL)isEqualForUnitTests:(id)arg1;
 - (void)populateMutatorsToAddRequiredChildCounterparts:(id)arg1;
-- (id)missingRequiredCounterpartSlots;
-- (id)requiredCounterpartsMask;
+- (BOOL)shouldMutateChild:(id)arg1 byCopyingContentToNewSlot:(id)arg2;
 - (BOOL)isChildMinimallyFitForCompiling:(id)arg1;
 - (id)conflictFreeChildForSlot:(id)arg1;
-- (id)suggestionSetMaskForSuggestionSet:(id)arg1 usingValueModifierBlock:(CDUnknownBlockType)arg2;
 - (void)populateIssues:(id)arg1 context:(id)arg2;
 - (Class)expectedChildClassForSlot:(id)arg1;
 - (void)populateIssues:(id)arg1 forUnconflictedChild:(id)arg2 inSlot:(id)arg3 context:(id)arg4;

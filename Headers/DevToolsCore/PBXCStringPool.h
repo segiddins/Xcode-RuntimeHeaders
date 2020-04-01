@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Foundation/NSObject.h>
+#import <objc/NSObject.h>
 
 @class NSMutableData;
 
@@ -21,11 +21,13 @@
     unsigned long long _numGrowths;
 }
 
+- (void).cxx_destruct;
 - (id)description;
+- (unsigned long long)count;
 - (id)stringData;
 - (const char *)cStringAtOffset:(unsigned long long)arg1;
 - (unsigned long long)addCString:(const char *)arg1;
-- (void)dealloc;
+- (id)initWithData:(id)arg1;
 - (id)init;
 - (id)initWithCapacity:(unsigned long long)arg1;
 

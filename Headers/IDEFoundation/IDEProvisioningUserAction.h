@@ -6,52 +6,46 @@
 
 #import <objc/NSObject.h>
 
-#import <IDEFoundation/DVTInvalidation-Protocol.h>
-
 @class DVTStackBacktrace, IDEProvisioningLedgerEntry, IDEProvisioningRepairExecutionContext, NSArray, NSError, NSString;
 @protocol IDEProvisioningUserActionDelegate;
 
-@interface IDEProvisioningUserAction : NSObject <DVTInvalidation>
+@interface IDEProvisioningUserAction : NSObject
 {
     IDEProvisioningLedgerEntry *_ledgerEntry;
     BOOL _executing;
     BOOL _authorized;
-    BOOL _wantsResetOfRetryCountOnFinish;
+    BOOL _wantsRepairRetriedOnFinish;
+    BOOL _representsRepairFailure;
     id <IDEProvisioningUserActionDelegate> _delegate;
     IDEProvisioningRepairExecutionContext *_context;
     NSArray *_steps;
     NSError *_error;
-    NSString *_userActionName;
+    DVTStackBacktrace *_creationBacktrace;
 }
 
-+ (void)initialize;
-@property(readonly, nonatomic) BOOL wantsResetOfRetryCountOnFinish; // @synthesize wantsResetOfRetryCountOnFinish=_wantsResetOfRetryCountOnFinish;
++ (BOOL)supportsInvalidationPrevention;
+@property(retain, nonatomic) DVTStackBacktrace *creationBacktrace; // @synthesize creationBacktrace=_creationBacktrace;
+@property(readonly, nonatomic) BOOL representsRepairFailure; // @synthesize representsRepairFailure=_representsRepairFailure;
+@property(readonly, nonatomic) BOOL wantsRepairRetriedOnFinish; // @synthesize wantsRepairRetriedOnFinish=_wantsRepairRetriedOnFinish;
 @property(nonatomic, getter=isAuthorized) BOOL authorized; // @synthesize authorized=_authorized;
-@property(readonly, nonatomic) NSString *userActionName; // @synthesize userActionName=_userActionName;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(getter=isExecuting) BOOL executing; // @synthesize executing=_executing;
 @property(copy, nonatomic) NSArray *steps; // @synthesize steps=_steps;
 @property(readonly, nonatomic) IDEProvisioningRepairExecutionContext *context; // @synthesize context=_context;
-@property(retain, nonatomic) id <IDEProvisioningUserActionDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) __weak id <IDEProvisioningUserActionDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) BOOL supportsBatchAuthorization;
+@property(readonly, nonatomic) NSString *executionMessage;
 @property(readonly, nonatomic) NSString *userActionMessage;
 @property(readonly, nonatomic) NSString *userActionTitle;
+@property(readonly, nonatomic) NSString *userActionName;
 - (BOOL)executeWithError:(id *)arg1;
 - (BOOL)preflightWithError:(id *)arg1;
 - (void)execute;
 - (void)userDidAuthorizeAction;
-- (void)primitiveInvalidate;
+- (void)dealloc;
 - (id)init;
 - (id)initWithContext:(id)arg1 steps:(id)arg2;
-
-// Remaining properties
-@property(retain) DVTStackBacktrace *creationBacktrace;
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) DVTStackBacktrace *invalidationBacktrace;
-@property(readonly) Class superclass;
-@property(readonly, nonatomic, getter=isValid) BOOL valid;
 
 @end
 

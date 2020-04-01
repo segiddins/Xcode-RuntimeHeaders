@@ -26,6 +26,7 @@
 
 + (id)overridingMacrosForArchiveBuildWithSchemeName:(id)arg1 workspaceArena:(id)arg2;
 + (void)_calculateArchiveBuildFolder:(id *)arg1 dstrootPath:(id *)arg2 symrootPath:(id *)arg3 objrootPath:(id *)arg4 sharedPrecompsPath:(id *)arg5 givenSchemeName:(id)arg6 workspaceArena:(id)arg7;
++ (BOOL)shouldEnableUnsafeIncrementalArchiveBuild;
 @property(retain) IDEWorkspaceArena *workspaceArena; // @synthesize workspaceArena=_workspaceArena;
 @property(readonly) IDEArchivePathsSnapshot *archiveSnapshot; // @synthesize archiveSnapshot=_archiveSnapshot;
 - (void).cxx_destruct;

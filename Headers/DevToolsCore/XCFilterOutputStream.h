@@ -10,19 +10,17 @@
 
 @interface XCFilterOutputStream : XCOutputStream
 {
+    BOOL _closesNextOutputStreamWhenClosed;
     id <XCOutputStreams> _nextOutputStream;
-    BOOL _closesNextOutputStream;
 }
 
+@property BOOL closesNextOutputStreamWhenClosed; // @synthesize closesNextOutputStreamWhenClosed=_closesNextOutputStreamWhenClosed;
+@property(retain) id <XCOutputStreams> nextOutputStream; // @synthesize nextOutputStream=_nextOutputStream;
+- (void).cxx_destruct;
 - (void)close;
 - (void)flush;
 - (void)writeBytes:(const char *)arg1 length:(unsigned long long)arg2;
-- (void)setClosesNextOutputStreamWhenClosed:(BOOL)arg1;
-- (BOOL)closesNextOutputStreamWhenClosed;
 - (id)lastOutputStream;
-- (void)setNextOutputStream:(id)arg1;
-- (id)nextOutputStream;
-- (void)dealloc;
 - (id)init;
 - (id)initWithNextOutputStream:(id)arg1;
 

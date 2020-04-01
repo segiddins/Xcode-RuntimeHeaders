@@ -15,7 +15,7 @@
 }
 
 @property __weak NSOutlineView *hostOutlineView; // @synthesize hostOutlineView=_hostOutlineView;
-@property(retain) NSButton *statusButton; // @synthesize statusButton=_statusButton;
+@property __weak NSButton *statusButton; // @synthesize statusButton=_statusButton;
 - (void).cxx_destruct;
 
 @end

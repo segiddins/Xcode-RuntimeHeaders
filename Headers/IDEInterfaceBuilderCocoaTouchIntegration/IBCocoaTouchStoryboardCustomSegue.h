@@ -12,6 +12,7 @@
 
 + (void)populatePrototypes:(id)arg1 inStoryboard:(id)arg2 forSegueFromObject:(id)arg3 toObject:(id)arg4 withTrigger:(id)arg5;
 + (id)prototypeTriggeredSeguesForDestination:(id)arg1 inStoryboard:(id)arg2;
++ (id)qualifiedSegueClassSymbolsForDocument:(id)arg1;
 + (id)customSegueSubclassesForDocument:(id)arg1;
 + (id)builtInSegueClasses;
 + (id)ibDefaultImageForInstance:(id)arg1 targetRuntime:(id)arg2;
@@ -23,7 +24,8 @@
 - (id)badgeImage;
 - (id)explicitDisplayNameWithRespectToPredecessors:(id)arg1;
 - (id)errorMessageForExistenceWithoutPrototypeInDocument:(id)arg1;
-- (void)ibWarnings:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
+- (void)ibPopulateIssues:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
+- (id)metricChainSucceedingMetric:(id)arg1;
 - (id)instantiateSegueTemplate;
 - (BOOL)isPrototypeFor:(id)arg1;
 - (BOOL)isEqualToPrototype:(id)arg1;

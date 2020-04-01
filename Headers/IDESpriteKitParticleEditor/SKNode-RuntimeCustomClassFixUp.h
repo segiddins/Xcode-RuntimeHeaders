@@ -6,7 +6,147 @@
 
 #import <SpriteKit/SKNode.h>
 
-@interface SKNode (RuntimeCustomClassFixUp)
+#import <IDESpriteKitParticleEditor/GTFActionLibraryTarget-Protocol.h>
+#import <IDESpriteKitParticleEditor/SKDocumentMember-Protocol.h>
+#import <IDESpriteKitParticleEditor/SKSceneManipulating-Protocol.h>
+
+@class GTFActionLibraryTargetThumbnail, NSIndexPath, NSNumber, NSString, NSValue, SKEditorDocument, SKSceneNavigableNode;
+@protocol NSCopying;
+
+@interface SKNode (RuntimeCustomClassFixUp) <SKDocumentMember, GTFActionLibraryTarget, SKSceneManipulating>
++ (id)keyPathsForValuesAffectingsk_legacyCustomModuleName_commit;
++ (id)keyPathsForValuesAffectingsk_legacyCustomClassName_commit;
++ (id)keyPathsForValuesAffectingsk_zRotationDeg_commit;
++ (id)keyPathsForValuesAffectingsk_name_commit;
++ (id)keyPathsForValuesAffectingisLocked_commit;
++ (id)keyPathsForValuesAffecting_anchorPoint_commit;
++ (id)keyPathsForValuesAffectingisHidden_commit;
++ (id)keyPathsForValuesAffectinghidden_commit;
++ (id)keyPathsForValuesAffectingalpha_commit;
++ (id)keyPathsForValuesAffectingzRotation_commit;
++ (id)keyPathsForValuesAffectingyScale_commit;
++ (id)keyPathsForValuesAffectingxScale_commit;
++ (id)keyPathsForValuesAffectingzPosition_commit;
++ (id)keyPathsForValuesAffectingposition_commit;
++ (id)keyPathsForValuesAffectingname_commit;
++ (id)keyPathsForValuesAffectingGtf_name;
++ (id)keyPathsForValuesAffectingGtf_thumbnailImage;
++ (id)keyPathsForValuesAffectingSk_hasPhysicsBody;
++ (id)keyPathsForValuesAffectingSk_zRotationDeg;
++ (id)keyPathsForValuesAffectingSk_parentRef_commit;
++ (id)keyPathsForValuesAffectingSk_name;
 - (id)awakeAfterUsingCoder:(id)arg1;
+- (struct CGRect)sk_convertFrameToView:(id)arg1;
+- (struct CGRect)sk_convertFrameToNode:(id)arg1;
+- (void)setsk_legacyCustomModuleName_commit:(id)arg1;
+- (id)sk_legacyCustomModuleName_commit;
+- (void)setsk_legacyCustomClassName_commit:(id)arg1;
+- (id)sk_legacyCustomClassName_commit;
+- (void)setsk_zRotationDeg_commit:(double)arg1;
+- (double)sk_zRotationDeg_commit;
+- (void)setsk_name_commit:(id)arg1;
+- (id)sk_name_commit;
+- (void)setisLocked_commit:(BOOL)arg1;
+@property(nonatomic) BOOL isLocked_commit;
+- (void)set_anchorPoint_commit:(struct CGPoint)arg1;
+- (struct CGPoint)_anchorPoint_commit;
+- (void)setisHidden_commit:(BOOL)arg1;
+@property(nonatomic) BOOL isHidden_commit;
+- (void)sethidden_commit:(BOOL)arg1;
+- (BOOL)hidden_commit;
+- (void)setalpha_commit:(double)arg1;
+- (double)alpha_commit;
+- (void)setzRotation_commit:(double)arg1;
+@property(nonatomic) double zRotation_commit;
+- (void)setyScale_commit:(double)arg1;
+@property(nonatomic) double yScale_commit;
+- (void)setxScale_commit:(double)arg1;
+@property(nonatomic) double xScale_commit;
+- (void)setzPosition_commit:(double)arg1;
+- (double)zPosition_commit;
+- (void)setposition_commit:(struct CGPoint)arg1;
+@property(nonatomic) struct CGPoint position_commit;
+- (void)setname_commit:(id)arg1;
+- (id)name_commit;
+@property(readonly, nonatomic) NSString *gtf_name;
+- (void)sk_invalidateThumbnail;
+@property(readonly, nonatomic) GTFActionLibraryTargetThumbnail *gtf_thumbnailImage;
+- (void)setGtf_uid:(id)arg1;
+@property(readonly, nonatomic) id <NSCopying> gtf_uid;
+@property(nonatomic) __weak SKEditorDocument *document;
+- (struct CGRect)sk_displayRectInView:(id)arg1;
+@property(readonly, nonatomic) BOOL sk_displaysAnchorPointHandle;
+@property(readonly, nonatomic) BOOL sk_displaysRotationHandle;
+@property(readonly, nonatomic) BOOL sk_displaysScaleHandles;
+@property(readonly, nonatomic) BOOL sk_displaysBoundsBox;
+- (void)sk_enumerateAllSubNodesInclusivelyExcludingReferencedUsingBlock:(CDUnknownBlockType)arg1;
+- (void)sk_enumerateAllSubNodesExcludingReferencedUsingBlock:(CDUnknownBlockType)arg1;
+- (void)sk_enumerateAllSubNodesInclusivelyUsingBlock:(CDUnknownBlockType)arg1;
+- (void)sk_enumerateAllSubNodesUsingBlock:(CDUnknownBlockType)arg1;
+- (void)sk_enumerateChildNodesUsingBlock:(CDUnknownBlockType)arg1;
+@property(readonly, nonatomic) SKNode *sk_greatestReferenceNodeAncestor;
+- (id)sk_unidenticalCopy;
+@property(retain, nonatomic) NSValue *sk_uid;
+- (double)sk_globalZPosition;
+- (id)sk_childFromIndexPath:(id)arg1;
+- (id)sk_indexPathRelativeToNode:(id)arg1;
+- (void)sk_invalidateIndexPath;
+@property(readonly, nonatomic) NSIndexPath *sk_indexPath;
+@property(nonatomic) __weak SKSceneNavigableNode *sk_navigable;
+@property(readonly, nonatomic) unsigned long long manipulationSupport;
+@property(readonly, nonatomic) BOOL isReferenced;
+@property(nonatomic) BOOL isHidden;
+@property(nonatomic) BOOL isLocked;
+@property(nonatomic) float sk_physicsMass;
+@property(nonatomic) double sk_physicsBodyInitialVelocityY;
+@property(nonatomic) double sk_physicsBodyInitialVelocityX;
+@property(nonatomic) double sk_physicsBodyAngularDamping;
+@property(nonatomic) double sk_physicsBodyLinearDamping;
+@property(nonatomic) double sk_physicsBodyRestitution;
+@property(nonatomic) double sk_physicsBodyFriction;
+@property(nonatomic) BOOL sk_physicsBodyAffectedByGravity;
+@property(nonatomic) BOOL sk_physicsBodyPinned;
+@property(nonatomic) BOOL sk_physicsBodyAllowsRotation;
+@property(nonatomic) BOOL sk_physicsBodyDynamicType;
+@property(retain, nonatomic) NSNumber *sk_fieldMask;
+@property(retain, nonatomic) NSNumber *sk_contactMask;
+@property(retain, nonatomic) NSNumber *sk_collisionMask;
+@property(retain, nonatomic) NSNumber *sk_categoryMask;
+@property(nonatomic) int sk_physicsBodyType;
+- (void)sk_refreshPhysicsBody;
+@property(readonly, nonatomic) BOOL sk_hasPhysicsBody;
+- (struct CGSize)sk_representedSizeInView:(id)arg1;
+- (struct CGRect)sk_representedFrameInView:(id)arg1;
+@property(readonly, nonatomic) BOOL sk_isIconRepresented;
+- (void)sk_restoreLegacyCustomClassInfo;
+- (void)sk_migrateLegacyCustomClassInfo;
+@property(retain, nonatomic) NSString *sk_legacyCustomModuleName;
+@property(retain, nonatomic) NSString *sk_legacyCustomClassName;
+- (id)sk_CustomClassPlaceholderName;
+@property(retain, nonatomic) NSString *sk_customModuleName;
+- (BOOL)_isValidCustomSublcass:(id)arg1 inModule:(id)arg2;
+- (Class)_swiftClassFromString:(id)arg1 moduleName:(id)arg2;
+@property(retain, nonatomic) NSString *sk_customClassName;
+@property(nonatomic) double sk_zRotationDeg;
+@property(retain, nonatomic) SKNode *sk_parentRef_commit;
+@property(readonly, nonatomic) __weak SKNode *sk_selfRef;
+@property(retain, nonatomic) NSString *sk_name;
+
+// Remaining properties
+@property(nonatomic) struct CGPoint anchorPoint;
+@property(nonatomic) struct CGPoint anchorPoint_commit;
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly, nonatomic) struct CGRect frame;
+@property(readonly) unsigned long long hash;
+@property(readonly, nonatomic) struct CGPoint position;
+@property(readonly, nonatomic) struct CGSize size;
+@property(nonatomic) double sk_xScale_commit;
+@property(nonatomic) double sk_yScale_commit;
+@property(readonly) Class superclass;
+@property(nonatomic) double xScale;
+@property(nonatomic) double yScale;
+@property(readonly, nonatomic) double zPosition;
+@property(nonatomic) double zRotation;
 @end
 

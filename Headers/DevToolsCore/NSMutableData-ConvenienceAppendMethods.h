@@ -8,9 +8,8 @@
 
 @interface NSMutableData (ConvenienceAppendMethods)
 - (void)appendHexadecimalRepresentationOfBytes:(const char *)arg1 length:(unsigned long long)arg2;
-- (void)appendUnicodeCharactersAsQuotedUTF8:(const unsigned short *)arg1 length:(unsigned long long)arg2 quoteOnlyIfNeeded:(BOOL)arg3 quoteTabsAndEOLs:(BOOL)arg4;
+- (void)appendUnicodeStringAsQuotedUTF8:(id)arg1 quoteOnlyIfNeeded:(BOOL)arg2 quoteTabsAndEOLs:(BOOL)arg3;
 - (void)appendStringAsUTF8:(id)arg1;
-- (void)appendUnicodeCharactersAsUTF8:(const unsigned short *)arg1 length:(unsigned long long)arg2;
 - (void)appendUTF8String:(const char *)arg1;
 - (void)appendIndentation:(unsigned long long)arg1;
 @end

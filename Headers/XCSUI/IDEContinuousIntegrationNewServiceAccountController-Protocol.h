@@ -9,6 +9,7 @@
 @class NSString, NSWindow;
 
 @protocol IDEContinuousIntegrationNewServiceAccountController <NSObject>
-- (void)beginSheetModalForWindow:(NSWindow *)arg1 connectionAddress:(NSString *)arg2 completionBlock:(void (^)(long long, id, NSError *))arg3;
+@property(copy) NSString *serverAddress;
+- (void)beginSheetModalForWindow:(NSWindow *)arg1 completionBlock:(void (^)(long long, id, NSError *))arg2;
 @end
 

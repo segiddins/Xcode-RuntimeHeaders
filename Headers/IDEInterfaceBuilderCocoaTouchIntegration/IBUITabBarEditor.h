@@ -11,7 +11,9 @@
 }
 
 + (Class)ibDropTargetResolverClass;
+- (id)tabBarItemForEvent:(id)arg1;
 - (BOOL)interceptEvent:(id)arg1;
+- (id)captureImagesAndProcessGeometryOfItems:(id)arg1;
 - (void)reattachDraggedObjects:(id)arg1 dragContext:(id)arg2;
 - (id)draggedImageState:(id)arg1;
 - (id)initialDragImageState:(id)arg1;

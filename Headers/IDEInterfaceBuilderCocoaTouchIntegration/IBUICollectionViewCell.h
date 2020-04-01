@@ -7,45 +7,66 @@
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBUICollectionReusableView.h>
 
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBDocumentArchiving-Protocol.h>
-#import <IDEInterfaceBuilderCocoaTouchIntegration/NSCoding-Protocol.h>
 
-@class IBUIView, NSString, NSValue;
+@class IBUICollectionViewCellContentView, IBUIView, NSString, NSValue;
 
-@interface IBUICollectionViewCell : IBUICollectionReusableView <IBDocumentArchiving, NSCoding>
+@interface IBUICollectionViewCell : IBUICollectionReusableView <IBDocumentArchiving>
 {
-    IBUIView *contentView;
-    NSValue *customSize;
+    BOOL _ibWantsDocumentContentView;
+    BOOL _ibRequiresCompileTimeContentViewConstraints;
+    NSValue *_customSize;
+    IBUIView *_contentView;
 }
 
 + (void)registerMarshallingRecordHandlers;
 + (id)keyPathsForValuesAffectingIsInsideCollectionView;
++ (id)ibKeyPathForDocumentContentView;
++ (id)keyPathsForValuesAffectingIbIsUsingDocumentContentView;
++ (id)keyPathsForValuesAffectingIbInspectedUsesContentView;
++ (id)keyPathsForValuesAffectingIbInspectedShowContentViewOption;
++ (id)keyPathsForValuesAffectingIbArchivedDesignableContentView;
++ (id)keyPathsForValuesAffectingIbDesignableContentView;
 + (id)keyPathsForValuesAffectingIbInspectedCustomSize;
 + (id)keyPathsForValuesAffectingIbInspectedSizeMode;
 + (id)keyPathsForValuesAffectingIbInspectedDefaultSize;
 + (void)ibDidInstantiateView:(id)arg1 forAsset:(id)arg2 role:(long long)arg3;
 + (long long)ibInstantiationSizeBehavior;
-@property(retain, nonatomic) IBUIView *contentView; // @synthesize contentView;
-@property(copy, nonatomic) NSValue *customSize; // @synthesize customSize;
++ (id)ibInstantiateViewForRole:(long long)arg1 withTargetRuntime:(id)arg2 documentClass:(Class)arg3 assetIdentifier:(id)arg4;
+@property(nonatomic) BOOL ibRequiresCompileTimeContentViewConstraints; // @synthesize ibRequiresCompileTimeContentViewConstraints=_ibRequiresCompileTimeContentViewConstraints;
+@property(retain, nonatomic) IBUIView *contentView; // @synthesize contentView=_contentView;
+@property(copy, nonatomic) NSValue *customSize; // @synthesize customSize=_customSize;
 - (void).cxx_destruct;
 - (id)configurableKeyPathForMarshalledDesignTimeToManyRelationship:(id)arg1;
 - (id)localExtraMarshalledToManyRelationshipKeyPaths;
 - (id)localExtraMarshalledAttributesKeyPaths;
+@property(readonly, nonatomic) BOOL ibIsUsingAutomaticSizing;
 @property(readonly) BOOL isInsideCollectionView;
 - (void)collectionViewItemSizeDidChange:(id)arg1;
-- (void)verifyContentView:(id)arg1;
-- (void)installContentViewIfNeeded;
+- (void)ibInstallNonDocumentContentViewIfNeeded;
 - (void)layoutSubviews;
-- (id)initWithFrame:(struct CGRect)arg1 targetRuntime:(id)arg2;
-- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
-- (void)archiveWithDocumentArchiver:(id)arg1;
+- (id)ibVerifyContentViewCurrentContentView;
+- (void)setIbVerifyContentViewCurrentContentView:(id)arg1;
+- (id)ibEffectiveContentViewToUseForDocument:(id)arg1;
+@property(readonly, nonatomic) IBUICollectionViewCellContentView *documentContentView;
+@property(readonly, nonatomic) BOOL ibIsUsingDocumentContentView;
+@property(nonatomic) BOOL ibWantsDocumentContentView;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithFrame:(struct CGRect)arg1 targetRuntime:(id)arg2;
 - (id)ibViewForAncestorViewEdgeMovementQuestionsOfSubview:(id)arg1;
+- (long long)ibFrameDecisionStrategyDuringFrameDecisionForChild:(id)arg1 hasCleanStatus:(BOOL)arg2;
+- (BOOL)ibIsSubarbitrationUnitRoot;
+- (BOOL)ibIsChildASubarbitrationUnitRoot:(id)arg1;
+- (void)ibVerifyXcodeContentViewWithDocument:(id)arg1;
+- (BOOL)ibInspectedAllowsCollectionViewCellContentView;
+@property(nonatomic) BOOL ibInspectedUsesContentView;
+- (BOOL)ibInspectedShowContentViewOption;
+- (void)ibPrepareToBackwardsDeployToOSVersion:(id)arg1 inDocument:(id)arg2;
+- (BOOL)ibIsCellOrContentViewReferencingConstraints;
 - (void)ibPopulateAdditionalTargetOSVersions:(id)arg1 forCompilingDocument:(id)arg2;
-- (BOOL)ibIsInspectorApplicable:(id)arg1 forCategory:(id)arg2;
 - (void)ibEnumerateIncrementallyMarshalledKeyPathsForChangeToKeyPath:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
 - (BOOL)ibShouldShowCustomSizeInSizeInspector;
-- (int)ibBoundsIndicatorRectBorderSides;
+- (unsigned long long)ibBoundsIndicatorRectBorderSides;
 - (id)ibDuplicateReuseIdentifierWarningKey;
 - (id)ibMissingReuseIdentifierWarningKey;
 - (BOOL)ibHasDuplicateReuseIdentifierWithComputationContext:(id)arg1;
@@ -55,6 +76,7 @@
 - (BOOL)ibIsSizable;
 - (BOOL)ibIsMovable;
 - (BOOL)ibCanAcceptContentsOfPasteboard:(id)arg1 inDocument:(id)arg2 targetChildRelation:(id *)arg3;
+- (BOOL)ibIsChildInitiallySelectable:(id)arg1;
 - (void)setIbArchivedDesignableContentView:(id)arg1 unarchiver:(id)arg2;
 - (id)ibArchivedDesignableContentView;
 - (id)ibDesignableContentView;
@@ -65,7 +87,13 @@
 - (void)setIbInspectedSizeMode:(long long)arg1;
 - (long long)ibInspectedSizeMode;
 - (id)ibQualifyingInfoForDefaultLabel;
-- (struct CGSize)ibInspectedDefaultSize;
+@property(readonly, nonatomic) struct CGSize ibInspectedDefaultSize;
+- (void)ibDidAddToDocument:(id)arg1 phase:(unsigned long long)arg2;
+- (Class)ibEditorClass;
+- (id)ibLocalAttributeKeyPaths;
+- (id)ibLocalChildToOneRelationshipsKeyPaths;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

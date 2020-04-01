@@ -22,7 +22,11 @@
     IDELaunchParametersSnapshot *_launchParameters;
 }
 
++ (id)_instrumentsInternalAppPluginsPath;
++ (id)_instrumentsPlugInsPath;
++ (id)_instrumentsPackagesPath;
 + (id)_apppleInternalTemplatesPath;
++ (id)_userInstalledPackagesPath;
 + (id)_homePrefsTemplatesPath;
 + (id)_instrumentsAppTemplatesPath;
 + (id)_platformsPath;
@@ -30,11 +34,11 @@
 + (id)_analysisToolsForPlugin:(id)arg1 platform:(id)arg2;
 + (id)_analysisToolsForPlatform:(id)arg1;
 + (id)_analysisToolsDictForAllPlatforms;
++ (id)_pathsForTemplatesDirsAtBasePath:(id)arg1;
 + (id)_analysisToolsAtPath:(id)arg1 type:(int)arg2;
++ (id)_instrumentsPlugInsDirectories;
 + (id)sharedPlatformToAnalysisToolsMap;
-+ (id)_sharedGraphicsDetectiveTool;
 + (id)_anyPlatformID;
-+ (id)_graphicsPerformanceDetectivePath;
 + (id)analysisToolWithIdentifier:(id)arg1 platformIdentifier:(id)arg2;
 + (id)analysisToolsForPlatformIdentifier:(id)arg1;
 + (void)addUniqueTools:(id)arg1 toArray:(id)arg2;
@@ -42,8 +46,14 @@
 @property(retain) IDELaunchParametersSnapshot *launchParameters; // @synthesize launchParameters=_launchParameters;
 - (void).cxx_destruct;
 - (void)setAttachRunnablePID:(int)arg1 applicationName:(id)arg2;
-- (id)operationWithWorkingDirectory:(id)arg1 workspaceFilePath:(id)arg2 projectFilePath:(id)arg3 outError:(id *)arg4;
-- (CDUnknownBlockType)_operationBlockWithWorkingDirectory:(id)arg1 workspaceFilePath:(id)arg2 projectFilePath:(id)arg3;
+- (id)operationWithWorkingDirectory:(id)arg1 workspaceFilePath:(id)arg2 projectFilePath:(id)arg3 packagesPaths:(id)arg4 outError:(id *)arg5;
+- (id)packagesPathsToLoadDuringProfileAnalysisForBuildSchemeAction:(id)arg1 schemeCommand:(id)arg2;
+- (id)customExecutableToSelectForBuildSchemeAction:(id)arg1 schemeCommand:(id)arg2;
+- (id)pathsForAllBuildablesInSchemeMatchingPredicate:(CDUnknownBlockType)arg1 buildEntryPredicate:(CDUnknownBlockType)arg2 buildSchemeAction:(id)arg3 schemeCommand:(id)arg4;
+- (id)allBuildablesMatchingPredicate:(CDUnknownBlockType)arg1 buildEntryPredicate:(CDUnknownBlockType)arg2 buildSchemeAction:(id)arg3;
+- (id)pathsForBuildables:(id)arg1 buildSchemeAction:(id)arg2 schemeCommand:(id)arg3;
+- (id)_plistableExtensionInfo:(id)arg1;
+- (CDUnknownBlockType)_operationBlockWithWorkingDirectory:(id)arg1 workspaceFilePath:(id)arg2 projectFilePath:(id)arg3 packagesPaths:(id)arg4;
 - (void)_launch:(id)arg1 WithConfigFile:(id)arg2;
 - (id)_analysisAppPathForType:(int)arg1;
 - (id)_instrumentsPath;

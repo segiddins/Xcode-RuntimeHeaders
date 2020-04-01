@@ -10,11 +10,7 @@
 {
 }
 
-- (id)childRepresentedObjects;
-- (BOOL)isLeaf;
 - (id)subtitle;
-- (id)name;
-- (int)_parentage;
 
 @end
 

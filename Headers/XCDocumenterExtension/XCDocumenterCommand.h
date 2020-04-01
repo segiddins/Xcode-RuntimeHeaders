@@ -19,7 +19,6 @@
 - (void).cxx_destruct;
 - (void)performCommandWithInvocation:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (BOOL)line:(id)arg1 startsWith:(id)arg2;
-- (BOOL)supportsFileType:(id)arg1;
 - (id)documenterForInvocationFileType:(id)arg1;
 
 // Remaining properties

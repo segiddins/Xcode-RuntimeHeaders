@@ -17,7 +17,12 @@
     NSURL *_url;
 }
 
++ (id)shortLastOpenedDateForURL:(id)arg1;
++ (id)_lastOpenedDateWithPrefix:(BOOL)arg1 url:(id)arg2;
 + (id)_descriptionForLastOpenedDate:(id)arg1 isLastOpenedDate:(BOOL)arg2 withPrefix:(BOOL)arg3;
++ (id)truncatedPathForURL:(id)arg1;
++ (id)nameForURL:(id)arg1;
++ (id)imageForURL:(id)arg1;
 + (id)recentsForURLs:(id)arg1;
 + (id)recentsForRecentInfos:(id)arg1;
 - (void).cxx_destruct;

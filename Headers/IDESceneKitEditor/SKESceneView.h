@@ -6,24 +6,31 @@
 
 #import <SceneKit/SCNView.h>
 
+#import <IDESceneKitEditor/SCNCameraNavigationControllerDelegate-Protocol.h>
 #import <IDESceneKitEditor/SCNSceneRendererDelegate-Protocol.h>
 
 @class NSString, SCNNode;
 @protocol SKESceneViewDelegate;
 
-@interface SKESceneView : SCNView <SCNSceneRendererDelegate>
+@interface SKESceneView : SCNView <SCNSceneRendererDelegate, SCNCameraNavigationControllerDelegate>
 {
     BOOL _mouseDragged;
     BOOL _editable;
     long long _mouseClickCount;
-    struct CGPoint _mouseClickLocation;
+    // Error parsing type: , name: _mouseDownLocation
+    struct CGPoint _mouseUpLocation;
+    struct CATransform3D _originalTransform;
     id <SKESceneViewDelegate> _selectionDelegate;
 }
 
 @property __weak id <SKESceneViewDelegate> selectionDelegate; // @synthesize selectionDelegate=_selectionDelegate;
 - (void).cxx_destruct;
+- (void)switchToNextCamera;
+- (void)didChangePointOfView;
+- (void)willChangePointOfView;
 @property(nonatomic, getter=isMultisamplingEnabled) BOOL multisamplingEnabled;
-- (void)focusNode:(id)arg1;
+- (id)menuForEvent:(id)arg1;
+- (void)focusNodes:(id)arg1;
 - (void)cancelOperation:(id)arg1;
 - (void)deselectSelection;
 - (void)deleteBackward:(id)arg1;
@@ -37,6 +44,7 @@
 - (unsigned long long)draggingEntered:(id)arg1;
 - (unsigned long long)draggingUpdated:(id)arg1;
 @property __weak SCNNode *cameraNode;
+- (BOOL)acceptsFirstResponder;
 @property(nonatomic, getter=isEditable) BOOL editable;
 - (BOOL)_isEditor;
 - (id)makeBackingLayer;

@@ -20,7 +20,7 @@
 - (void)layoutBottomUp;
 - (double)suggestedMaxWidthForContent;
 - (void)layoutTopDown;
-- (id)targettedAssetComponentIDsAtPoint:(struct CGPoint)arg1;
+- (id)targetedAssetComponentIDsAtPoint:(struct CGPoint)arg1;
 - (id)assetComponentIDAtPoint:(struct CGPoint)arg1;
 - (BOOL)isComponentID:(id)arg1 hitByPoint:(struct CGPoint)arg2;
 - (struct CGRect)frameForImageOfComponentWithAssetComponentID:(id)arg1;
@@ -30,12 +30,15 @@
 - (void)setContextFocusedAssetComponentIDs:(id)arg1;
 - (void)setSelectedAssetComponentIDs:(id)arg1;
 - (void)reloadValues;
+- (id)immediateAncestorGroupViews;
 - (id)allImageRepIdentifiersForImageRepViews;
 - (id)assetRepIdentifierForRepView:(id)arg1;
 - (id)repViewForAssetRepIdentifier:(id)arg1;
+- (void)_rebuildGroupSubview;
 - (void)pullRecursiveDelegatedValuesForGroup:(id)arg1 path:(id)arg2;
 - (void)pullInvididualDelegatedValuesForGroup:(id)arg1 path:(id)arg2;
 - (id)rebuildRootGroupView;
+- (id)displayOrderedAssetRepIdentifiers;
 - (void)setDrawsWithKeyAppearance:(BOOL)arg1;
 
 @end

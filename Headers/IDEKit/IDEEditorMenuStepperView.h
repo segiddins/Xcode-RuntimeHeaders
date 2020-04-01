@@ -19,7 +19,6 @@
 @property(retain) id <IDEEditorMenuStepperViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)primitiveInvalidate;
-- (void)setGradientStyle:(int)arg1;
 - (void)selectPrevious:(id)arg1;
 - (void)selectNext:(id)arg1;
 - (BOOL)canMove;

@@ -14,7 +14,7 @@
     IDEInspectorKeyPath *_assignedFileTypeKeyPath;
     IDEInspectorKeyPath *_resolvedFilePathKeyPath;
     id <DVTCancellable> _popUpWillPopToken;
-    NSMenuItem *_defaulItem;
+    NSMenuItem *_defaultItem;
     NSPopUpButton *_popup;
 }
 

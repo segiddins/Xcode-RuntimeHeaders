@@ -7,7 +7,7 @@
 #import <IBFoundation/IBICSpriteAtlas.h>
 
 @interface IBICSpriteAtlas (DisplayAdditions)
-- (id)typeIcon;
+- (BOOL)isDisplayNameFindable;
 - (id)icon;
 @end
 

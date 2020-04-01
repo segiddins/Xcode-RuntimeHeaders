@@ -10,8 +10,8 @@
 {
 }
 
+- (void)drawSeparatorInRect:(struct CGRect)arg1;
 - (void)drawBackgroundInRect:(struct CGRect)arg1;
-- (void)setSelected:(BOOL)arg1;
 
 @end
 

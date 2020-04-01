@@ -9,23 +9,28 @@
 @interface XCWorkQueueCommandLocalSubprocessInvocation : XCWorkQueueCommandSubprocessInvocation
 {
     int _processID;
+    BOOL _mightHaveMoreOutput;
     int _outputFD;
     int _inputFD;
+    BOOL _isCancelled;
 }
 
 + (void)initialize;
-- (void)killSubprocess;
+- (void)setIsCancelled:(BOOL)arg1;
+- (BOOL)isCancelled;
+@property BOOL mightHaveMoreOutput; // @synthesize mightHaveMoreOutput=_mightHaveMoreOutput;
+@property int processID; // @synthesize processID=_processID;
+@property int inputFileDescriptor; // @synthesize inputFileDescriptor=_inputFD;
+@property int outputFileDescriptor; // @synthesize outputFileDescriptor=_outputFD;
+- (BOOL)killSubprocess;
 - (void)handleInputFileDescriptorActivity;
 - (void)handleOutputFileDescriptorActivity;
+- (void)handleEndOfOutput;
 - (void)reapExitedSubprocess;
 - (BOOL)launchSubprocessWithArguments:(const char **)arg1 environment:(const char **)arg2 workingDirectory:(const char *)arg3;
-- (int)processID;
 - (BOOL)isRunning;
-- (int)inputFileDescriptor;
-- (int)outputFileDescriptor;
-- (void)finalize;
 - (void)dealloc;
-- (id)initWithSlotNumber:(unsigned long long)arg1 workQueueOperation:(id)arg2 workQueueCommand:(id)arg3 arguments:(id)arg4 environmentAssignments:(id)arg5 workingDirectoryPath:(id)arg6;
+- (id)initWithWorkQueueCommand:(id)arg1 arguments:(id)arg2 environmentAssignments:(id)arg3 workingDirectoryPath:(id)arg4 searchPath:(id)arg5;
 
 @end
 

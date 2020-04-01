@@ -13,6 +13,7 @@
 + (id)keyPathsForValuesAffectingIbInspectedBehavior;
 + (id)keyPathsForValuesAffectingIbInspectedKeyEquivalent;
 + (id)keyPathsForValuesAffectingIbInspectedTitle;
++ (id)keyPathsForValuesAffectingIbInspectedFont;
 + (id)keyPathsForValuesAffectingIbInspectedAlternateImage;
 + (id)keyPathsForValuesAffectingIbShadowedAlternateImage;
 + (id)keyPathsForValuesAffectingIbInspectedImage;
@@ -31,6 +32,8 @@
 - (id)ibInspectedKeyEquivalent;
 - (void)setIbInspectedTitle:(id)arg1;
 - (id)ibInspectedTitle;
+- (void)setIbInspectedFont:(id)arg1;
+- (id)ibInspectedFont;
 @property long long ibShadowedInset;
 - (void)archiveWithDocumentArchiver:(id)arg1;
 - (void)unarchiveWithDocumentUnarchiver:(id)arg1;
@@ -44,7 +47,7 @@
 - (Class)ibPreferredControlClass;
 - (struct CGSize)ibPreferredSizeForSize:(struct CGSize)arg1;
 - (id)ibPreferredSizeForSize:(struct CGSize)arg1 suggestedWidth:(char *)arg2 suggestedHeight:(char *)arg3 scaleAxesIndependently:(char *)arg4;
-- (void)ibWarnings:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
+- (void)ibPopulateIssues:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
 - (BOOL)ibWantsBoundsIndicatorDuringTracking;
 - (BOOL)ibIsBaselineAtIndex:(long long)arg1 inMotionWithKnob:(CDUnion_42e99c75)arg2;
 - (id)ibBaselineCount;
@@ -58,7 +61,7 @@
 - (void)setIbInspectedImagePosition:(unsigned long long)arg1;
 - (unsigned long long)ibInspectedImagePosition;
 @property unsigned long long ibShadowedImagePosition;
-- (BOOL)ibShowSpringLoaded;
+- (BOOL)ibIsInNSButton;
 - (unsigned long long)ibInspectedMaxAcceleratorLevelMinimumValue;
 - (unsigned long long)ibInspectedMaxAcceleratorLevelMaximumValue;
 - (BOOL)ibInspectedMaxAcceleratorLevelIsVisible;
@@ -66,7 +69,7 @@
 - (id)ibDefaultFontForCurrentConfiguration;
 - (BOOL)ibSwizzledIsAnimatingDefaultCell;
 @property long long ibShadowedStyle;
-- (id)ibDocumentationPropertyInfosForKeyPath:(id)arg1;
+- (id)ibDocumentationSymbolInfosForKeyPath:(id)arg1;
 - (void)ibAwakeInDocument:(id)arg1;
 - (id)ibLocalLocalizableStringsAttributeKeyPaths;
 - (id)ibLocalAdditionalLocalizableAttributeKeyPaths;

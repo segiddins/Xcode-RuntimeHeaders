@@ -6,9 +6,11 @@
 
 #import <IDEInterfaceBuilderKit/NSObject-Protocol.h>
 
-@class IBConnectionPopUpMenuView, NSMenuItem;
+@class IBConnectionPopUpMenuView, NSMenuItem, NSSet;
 
 @protocol IBConnectionPopUpMenuDelegate <NSObject>
+- (void)connectionMenu:(IBConnectionPopUpMenuView *)arg1 willDeselectItems:(NSSet *)arg2;
+- (void)connectionMenu:(IBConnectionPopUpMenuView *)arg1 willSelectItems:(NSSet *)arg2;
 - (void)connectionMenu:(IBConnectionPopUpMenuView *)arg1 willHighlightItem:(NSMenuItem *)arg2;
 @end
 

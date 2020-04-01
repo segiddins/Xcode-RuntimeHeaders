@@ -11,6 +11,9 @@
 + (id)keyPathsForValuesAffectingDefaultUISimulatedMetricsContainer;
 + (int)libraryInclusionStatusForWindow;
 + (int)libraryInclusionStatusForProxyObject;
+- (void)printStatusForCocoaTouchTools:(id)arg1;
+- (void)shutdownCachedCocoaTouchTools:(id)arg1;
+- (void)switchOrientationManyTimes:(id)arg1;
 - (id)viewControllerRepresentativeForObject:(id)arg1;
 - (void)unarchiveCocoaTouchDataWithDocumentUnarchiver:(id)arg1;
 - (void)archiveCocoaTouchDataWithDocumentArchiver:(id)arg1;
@@ -20,9 +23,7 @@
 - (id)cocoaTouchPlatform;
 - (id)cocoaTouchTargetRuntime;
 - (BOOL)compilesSeparateContentOnIOSVersionsPriorToEight;
-- (BOOL)canTargetCurrentOSVersion;
 - (BOOL)canTargetIOS7;
-- (BOOL)canTargetIOSVersionsPriorToSeven;
 - (BOOL)isCocoaTouchDocument;
 - (void)setBaseInheritedScreenMetrics:(id)arg1 orientationMetrics:(id)arg2;
 - (id)defaultUISimulatedMetricsContainer;

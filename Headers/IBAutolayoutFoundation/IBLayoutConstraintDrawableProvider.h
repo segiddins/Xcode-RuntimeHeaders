@@ -23,7 +23,8 @@
 @property(retain, nonatomic) id <IBLayoutConstraintStatusProvider> constraintStatusProvider; // @synthesize constraintStatusProvider=_constraintStatusProvider;
 - (void).cxx_destruct;
 - (struct CGRect)rectForGuideLine:(CDStruct_f6143a38)arg1;
-- (void)determineConstraintDrawableGuideLines:(CDStruct_f6143a38 *)arg1 maxGuideLineCount:(unsigned long long)arg2 forDrawables:(id)arg3 givenMovedDrawableIndexes:(id)arg4;
+- (CDStruct_f6143a38)guideLineForConstraintAttribute:(unsigned long long)arg1 ofItem:(id)arg2 forDrawable:(id)arg3;
+- (id)determineConstraintDrawableGuideLinesForDrawables:(id)arg1 givenMovedDrawableIndexes:(id)arg2;
 - (id)moveDrawablesToAvoidOverlapping:(id)arg1 givenMoveableDrawableIndexes:(id)arg2 movingToAvoidDrawablesAtIndexes:(id)arg3 insettingToAvoidDrawablesAtIndexes:(id)arg4;
 - (BOOL)attemptToInsetDrawable:(id)arg1 toAvoidDrawable:(id)arg2;
 - (BOOL)isDrawable:(id)arg1 intersectingDrawable:(id)arg2;

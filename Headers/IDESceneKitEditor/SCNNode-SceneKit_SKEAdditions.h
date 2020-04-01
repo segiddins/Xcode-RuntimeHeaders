@@ -6,21 +6,65 @@
 
 #import <SceneKit/SCNNode.h>
 
-@class NSString, SCNParticleSystem;
+#import <IDESceneKitEditor/GTFActionLibraryTarget-Protocol.h>
 
-@interface SCNNode (SceneKit_SKEAdditions)
+@class GTFActionLibraryTargetThumbnail, NSArray, NSIndexPath, NSString, SCNParticleSystem, SCNReferenceNode;
+@protocol NSCopying;
+
+@interface SCNNode (SceneKit_SKEAdditions) <GTFActionLibraryTarget>
++ (id)keyPathsForValuesAffectingSke_hasNotMorpher;
++ (id)keyPathsForValuesAffectingSke_isMaterialEditable;
++ (id)keyPathsForValuesAffectingSke_materialOverrideButtonTitle;
++ (id)keyPathsForValuesAffectingSke_isMaterialNotOverriden;
++ (id)keyPathsForValuesAffectingSke_isMaterialOverriden;
 + (id)keyPathsForValuesAffectingSke_eulerAngles;
 + (id)keyPathsForValuesAffectingSke_worldPosition;
++ (id)keyPathsForValuesAffectingGtf_name;
++ (id)keyPathsForValuesAffectingske_movable_edit;
++ (id)keyPathsForValuesAffectingcastsShadow_edit;
++ (id)keyPathsForValuesAffectingske_referenceLoadingPolicy_edit;
++ (id)keyPathsForValuesAffectingske_physicsFieldType_edit;
++ (id)keyPathsForValuesAffectingske_physicsType_edit;
++ (id)keyPathsForValuesAffectingide_renderingOrder_edit;
++ (id)keyPathsForValuesAffectingorientation_edit;
++ (id)keyPathsForValuesAffectingeulerAngles_edit;
++ (id)keyPathsForValuesAffectingrotation_edit;
++ (id)keyPathsForValuesAffectingrenderingOrder_edit;
++ (id)keyPathsForValuesAffectingcategoryBitMask_edit;
++ (id)keyPathsForValuesAffectingopacity_edit;
++ (id)keyPathsForValuesAffectinghidden_edit;
++ (id)keyPathsForValuesAffectingtransform_edit;
++ (id)keyPathsForValuesAffectingscale_edit;
++ (id)keyPathsForValuesAffectingske_eulerAngles_edit;
++ (id)keyPathsForValuesAffectingide_rotationAngle_edit;
++ (id)keyPathsForValuesAffectingide_rotationAxis_edit;
++ (id)keyPathsForValuesAffectingske_worldPosition_edit;
++ (id)keyPathsForValuesAffectingposition_edit;
++ (id)keyPathsForValuesAffectingname_edit;
++ (id)keyPathsForValuesAffectingske_name_edit;
+@property(readonly) NSIndexPath *ske_indexPath;
+- (void)removeComponentOperation:(id)arg1;
+- (void)addComponentOperation:(id)arg1;
+- (id)inspectedComponent;
+- (void)setInspectedComponent:(id)arg1;
 @property BOOL ske_movable;
 - (BOOL)ske_hasMovabilityHint;
 - (struct SCNVector3)ske_worldBoundingBoxDimensions;
 - (struct SCNVector3)ske_localBoundingBoxDimensions;
 @property(nonatomic) long long ske_referenceLoadingPolicy;
 - (id)ske_nodeReferenceExpectedFilePath;
-- (void)setSke_referenceName:(id)arg1;
-- (id)ske_referenceName;
+@property(retain) NSString *ske_referenceName;
+@property(readonly) BOOL ske_hasNotMorpher;
 @property(readonly) BOOL ske_hasMorpher;
+@property(readonly) BOOL ske_isNotReferenceOrUnderAReference;
+- (BOOL)ske_canCastShadows;
+@property(readonly) BOOL ske_isMaterialEditable;
+@property(readonly) NSString *ske_materialOverrideButtonTitle;
+@property(readonly) BOOL ske_isMaterialNotOverriden;
+@property(readonly) BOOL ske_isMaterialOverriden;
+@property(readonly) SCNReferenceNode *ske_parentReferenceNode;
 @property(readonly) BOOL ske_isReferenceOrUnderAReference;
+- (BOOL)ske_isNotReference;
 @property(readonly) BOOL ske_isReference;
 - (id)ske_copyAndAutoUnshareAttributes;
 - (void)ske_autoUnshareAttributes;
@@ -41,5 +85,60 @@
 @property(retain) SCNParticleSystem *ide_firstParticleSystem;
 @property(readonly) long long polygonCount;
 @property long long ide_renderingOrder;
+@property(retain) NSString *ske_name;
+@property(readonly) NSArray *animations;
+@property(readonly, nonatomic) NSString *gtf_name;
+@property(readonly, nonatomic) GTFActionLibraryTargetThumbnail *gtf_thumbnailImage;
+@property(readonly, nonatomic) id <NSCopying> gtf_uid;
+- (void)setske_movable_edit:(BOOL)arg1;
+- (BOOL)ske_movable_edit;
+- (void)setcastsShadow_edit:(BOOL)arg1;
+- (BOOL)castsShadow_edit;
+- (void)setske_referenceLoadingPolicy_edit:(long long)arg1;
+- (long long)ske_referenceLoadingPolicy_edit;
+- (void)setske_physicsFieldType_edit:(unsigned long long)arg1;
+- (unsigned long long)ske_physicsFieldType_edit;
+- (void)setske_physicsType_edit:(unsigned long long)arg1;
+- (unsigned long long)ske_physicsType_edit;
+- (void)setide_renderingOrder_edit:(long long)arg1;
+- (long long)ide_renderingOrder_edit;
+- (void)setorientation_edit:(struct SCNVector4)arg1;
+- (struct SCNVector4)orientation_edit;
+- (void)seteulerAngles_edit:(struct SCNVector3)arg1;
+- (struct SCNVector3)eulerAngles_edit;
+- (void)setrotation_edit:(struct SCNVector4)arg1;
+- (struct SCNVector4)rotation_edit;
+- (void)setrenderingOrder_edit:(long long)arg1;
+- (long long)renderingOrder_edit;
+- (void)setcategoryBitMask_edit:(unsigned long long)arg1;
+- (unsigned long long)categoryBitMask_edit;
+- (void)setopacity_edit:(double)arg1;
+- (double)opacity_edit;
+- (void)sethidden_edit:(BOOL)arg1;
+- (BOOL)hidden_edit;
+- (void)settransform_edit:(struct CATransform3D)arg1;
+- (struct CATransform3D)transform_edit;
+- (void)setscale_edit:(struct SCNVector3)arg1;
+- (struct SCNVector3)scale_edit;
+- (void)setske_eulerAngles_edit:(struct SCNVector3)arg1;
+- (struct SCNVector3)ske_eulerAngles_edit;
+- (void)setide_rotationAngle_edit:(double)arg1;
+- (double)ide_rotationAngle_edit;
+- (void)setide_rotationAxis_edit:(struct SCNVector3)arg1;
+- (struct SCNVector3)ide_rotationAxis_edit;
+- (void)setske_worldPosition_edit:(struct SCNVector3)arg1;
+- (struct SCNVector3)ske_worldPosition_edit;
+- (void)setposition_edit:(struct SCNVector3)arg1;
+- (struct SCNVector3)position_edit;
+- (void)setname_edit:(id)arg1;
+- (id)name_edit;
+- (void)setske_name_edit:(id)arg1;
+- (id)ske_name_edit;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @end
 

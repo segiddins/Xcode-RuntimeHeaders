@@ -8,13 +8,13 @@
 
 #import <IDEFoundation/DVTInvalidation-Protocol.h>
 
-@class DVTObservingToken, DVTStackBacktrace, IDELocalizationManagerContext, IDEWorkspace, NSString;
-@protocol IDEClientTrackingToken, IDELocalizationController><DVTInvalidation, IDELocalizationWorkProgress;
+@class DVTObservingToken, DVTStackBacktrace, IDELocalizationAction, IDEWorkspace, NSString;
+@protocol IDEClientTrackingToken, IDELocalizationController, IDELocalizationWorkProgress;
 
 @interface IDELocalizationManager : NSObject <DVTInvalidation>
 {
-    IDELocalizationManagerContext *_context;
-    NSObject<IDELocalizationController><DVTInvalidation> *_controller;
+    IDELocalizationAction *_action;
+    NSObject<IDELocalizationController> *_controller;
     id <IDEClientTrackingToken> _token;
     DVTObservingToken *_controllerCompleteObserver;
     IDEWorkspace *_workspace;
@@ -25,12 +25,12 @@
 @property(retain) IDEWorkspace *workspace; // @synthesize workspace=_workspace;
 @property(retain) DVTObservingToken *controllerCompleteObserver; // @synthesize controllerCompleteObserver=_controllerCompleteObserver;
 @property(retain) id <IDEClientTrackingToken> token; // @synthesize token=_token;
-@property(retain) NSObject<IDELocalizationController><DVTInvalidation> *controller; // @synthesize controller=_controller;
-@property(retain) IDELocalizationManagerContext *context; // @synthesize context=_context;
+@property(retain) NSObject<IDELocalizationController> *controller; // @synthesize controller=_controller;
+@property(retain) IDELocalizationAction *action; // @synthesize action=_action;
 - (void).cxx_destruct;
 - (void)_complete;
 @property(readonly) NSObject<IDELocalizationWorkProgress> *currentLocalizationProgress;
-- (BOOL)startLocalizationOperation:(id)arg1 error:(id *)arg2;
+- (BOOL)startLocalizationAction:(id)arg1 withBuildParameters:(id)arg2 error:(id *)arg3;
 - (void)primitiveInvalidate;
 - (id)initWithWorkspace:(id)arg1;
 

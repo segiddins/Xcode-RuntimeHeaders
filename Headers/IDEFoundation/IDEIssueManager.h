@@ -44,15 +44,22 @@
     DVTObservingToken *_activeSchemeObserver;
     DVTObservingToken *_runDestinationObserver;
     DVTObservingToken *_implicitDependenciesObserver;
+    DVTObservingToken *_referencedBlueprintsOberver;
+    DVTObservingToken *_referencedContainersObserver;
+    DVTObservingToken *_workspaceFinishedLoadingObserver;
     BOOL _liveIssuesEnabled;
     IDEWorkspace *_workspace;
     IDEIssueLogRecordsGroup *_issueLogRecordsGroup;
+    unsigned long long _numberOfBuildtimeIssues;
+    unsigned long long _numberOfRuntimeIssues;
 }
 
 + (id)issueManagerLogAspect;
 + (id)_issueProviderInfo;
 + (void)_useDebugProviderExtensionPointWithIdentifier:(id)arg1;
 + (void)initialize;
+@property unsigned long long numberOfRuntimeIssues; // @synthesize numberOfRuntimeIssues=_numberOfRuntimeIssues;
+@property unsigned long long numberOfBuildtimeIssues; // @synthesize numberOfBuildtimeIssues=_numberOfBuildtimeIssues;
 @property(readonly) IDEIssueLogRecordsGroup *issueLogRecordsGroup; // @synthesize issueLogRecordsGroup=_issueLogRecordsGroup;
 @property(readonly, getter=areLiveIssuesEnabled) BOOL liveIssuesEnabled; // @synthesize liveIssuesEnabled=_liveIssuesEnabled;
 @property(readonly) IDEWorkspace *workspace; // @synthesize workspace=_workspace;
@@ -72,10 +79,12 @@
 - (void)_setIssues:(id)arg1 forProviderContext:(id)arg2 container:(id)arg3 blueprint:(id)arg4 runtimeGroupingObject:(id)arg5 session:(id)arg6;
 - (void)_removeIssues:(id)arg1 forProviderContext:(id)arg2 session:(id)arg3;
 - (void)_addIssues:(id)arg1 forProviderContext:(id)arg2 container:(id)arg3 blueprint:(id)arg4 runtimeGroupingObject:(id)arg5 session:(id)arg6 tryToCoalesce:(BOOL)arg7;
+- (BOOL)isIssueInRemotePackage:(id)arg1;
 - (BOOL)_vendOnlyActiveSchemeIssues;
 - (void)_retractIssues:(id)arg1;
 - (void)_vendIssues:(id)arg1 container:(id)arg2 blueprint:(id)arg3 runtimeGroupingObject:(id)arg4 issueToGroupingObjectMap:(id)arg5 session:(id)arg6;
-- (id)_similarExistingIssueForIssue:(id)arg1;
+- (void)_setNumBuildtimeIssues:(unsigned long long)arg1 numRuntimeIssues:(unsigned long long)arg2;
+- (id)similarExistingIssueForIssue:(id)arg1;
 - (id)_similarExistingIssueForIssue:(id)arg1 container:(id)arg2 blueprint:(id)arg3;
 - (_Bool)_doesIssue:(id)arg1 fromContainer:(id)arg2 andBlueprint:(id)arg3 coalesceWithIssue:(id)arg4;
 - (_Bool)_doesIssue:(id)arg1 coalesceWithIssue:(id)arg2;
@@ -86,6 +95,9 @@
 - (void)_notifyObserver:(id)arg1 forURL:(id)arg2 isPrior:(BOOL)arg3;
 - (id)issuesWithNoDocument;
 - (id)issuesForDocumentURL:(id)arg1;
+- (id)buildtimeIssuesWithNoDocument;
+- (id)buildtimeIssuesForDocumentURL:(id)arg1;
+- (id)_buildtimeIssuesFromIssues:(id)arg1;
 - (unsigned long long)maxSeverityOfDocumentAtURL:(id)arg1;
 - (unsigned long long)numberOfFixableDiagnosticItemsInDocumentAtURL:(id)arg1;
 - (unsigned long long)numberOfAnalyzerResultsInDocumentAtURL:(id)arg1;

@@ -13,6 +13,8 @@
     NSImageView *_imageView;
     NSTextField *_label;
     BOOL _isPressed;
+    NSImage *_cachedBackArrowImage;
+    NSImage *_cachedPressedArrowImage;
     CDUnknownBlockType _clickHandler;
     NSImage *_backImage;
     NSImage *_pressedBackImage;
@@ -25,7 +27,6 @@
 - (void)mouseUp:(id)arg1;
 - (void)mouseDown:(id)arg1;
 - (void)_updateImageViewAndLabelForPressedState;
-- (BOOL)wantsUpdateLayer;
 - (id)pressedArrowImage;
 - (id)backArrowImage;
 - (id)_makeBackArrowImageWithFillColor:(id)arg1;

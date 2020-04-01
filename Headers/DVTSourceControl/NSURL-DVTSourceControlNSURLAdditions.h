@@ -7,6 +7,7 @@
 #import <Foundation/NSURL.h>
 
 @interface NSURL (DVTSourceControlNSURLAdditions)
+- (BOOL)dvtscm_isEqual:(id)arg1;
 - (id)dvtscm_lastPathComponent;
 - (id)dvtscm_lastPathComponentNoExtension;
 - (BOOL)dvtscm_sameServerAs:(id)arg1;
@@ -14,12 +15,15 @@
 - (BOOL)dvtscm_isValid;
 - (BOOL)dvtscm_isSCPURI;
 - (id)dvtscm_scpURL;
+- (id)dvtscm_gitRemoteURL;
 - (id)dvtscm_anonymousURL;
 - (id)dvtscm_path;
+- (unsigned short)dvtscm_port_uint16;
 - (id)dvtscm_port;
 - (id)dvtscm_host;
 - (id)dvtscm_scheme;
 - (id)dvtscm_password;
 - (id)dvtscm_user;
+- (id)relativePathStringFromURL:(id)arg1;
 @end
 

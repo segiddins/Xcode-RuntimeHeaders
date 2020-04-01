@@ -4,9 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class NSDictionary, NSString;
+@class NSString;
 
 @protocol IDETestOperationStateMachineDelegate
-- (void)launchSessionDidFinalizeWithDescription:(NSString *)arg1 userInfo:(NSDictionary *)arg2;
+- (void)waitForTestProcessToConnect;
+- (void)launchSessionDidFinalizeWithDescription:(NSString *)arg1;
+- (void)launchSessionWillFinalize;
 @end
 

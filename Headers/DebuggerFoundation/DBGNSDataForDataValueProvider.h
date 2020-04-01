@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class DBGDataValue, DBGNSDataForDataValueProviderOptions, IDEStackFrame, NSData, NSString;
+@class DBGDataValue, DBGNSDataForDataValueProviderOptions, IDEStackFrame, NSData, NSError, NSString;
 @protocol DVTCancellable;
 
 @interface DBGNSDataForDataValueProvider : NSObject
@@ -21,19 +21,21 @@
     BOOL _autoHandleExceptions;
     DBGNSDataForDataValueProviderOptions *_options;
     DBGDataValue *_dataDataValue;
+    NSError *_retrievalError;
     double _timeToEvaluateExpression;
     double _timeToReadData;
 }
 
 @property double timeToReadData; // @synthesize timeToReadData=_timeToReadData;
 @property double timeToEvaluateExpression; // @synthesize timeToEvaluateExpression=_timeToEvaluateExpression;
+@property(retain) NSError *retrievalError; // @synthesize retrievalError=_retrievalError;
 @property(readonly) BOOL autoHandleExceptions; // @synthesize autoHandleExceptions=_autoHandleExceptions;
 @property(retain) DBGDataValue *dataDataValue; // @synthesize dataDataValue=_dataDataValue;
 @property(retain) DBGNSDataForDataValueProviderOptions *options; // @synthesize options=_options;
 @property(readonly) NSData *data; // @synthesize data=_data;
 @property(readonly) BOOL hasDataBeenRetrieved; // @synthesize hasDataBeenRetrieved=_hasDataBeenRetrieved;
 - (void).cxx_destruct;
-- (id)safelyUnarchiveRootObjectFromData;
+- (id)safelyUnarchiveRootObjectFromDataUsingSecureCoding:(BOOL)arg1 withValidClasses:(id)arg2;
 - (void)_dataWasFetched:(id)arg1;
 - (void)_failedToGetData;
 - (void)_readArchivedData:(id)arg1;

@@ -6,17 +6,26 @@
 
 #import <IDEKit/IDEViewController.h>
 
-@class NSImageView, NSString;
+@class NSButton, NSImage, NSImageView, NSString, NSURL;
 
 @interface IDEDistributionResultSuccessViewController : IDEViewController
 {
     NSString *_message;
+    NSURL *_link;
+    NSString *_linkToolTip;
+    NSImage *_image;
     NSImageView *_successImageView;
+    NSButton *_jumpButton;
 }
 
+@property(retain) NSButton *jumpButton; // @synthesize jumpButton=_jumpButton;
 @property(retain) NSImageView *successImageView; // @synthesize successImageView=_successImageView;
+@property(copy) NSImage *image; // @synthesize image=_image;
+@property(copy) NSString *linkToolTip; // @synthesize linkToolTip=_linkToolTip;
+@property(copy) NSURL *link; // @synthesize link=_link;
 @property(copy) NSString *message; // @synthesize message=_message;
 - (void).cxx_destruct;
+- (void)jumpButtonClicked:(id)arg1;
 - (void)loadView;
 - (id)nibName;
 

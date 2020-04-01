@@ -4,11 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <IDEFoundation/IDERunOperationWorker.h>
+#import <IDEiOSSupportCore/IDEDeviceRunOperationWorker.h>
 
 @class DVTiOSDevice;
 
-@interface IDEInstalliPhoneLauncher : IDERunOperationWorker
+@interface IDEInstalliPhoneLauncher : IDEDeviceRunOperationWorker
 {
     DVTiOSDevice *_device;
 }
@@ -16,8 +16,8 @@
 @property(retain) DVTiOSDevice *device; // @synthesize device=_device;
 - (void).cxx_destruct;
 - (void)terminate;
-- (void)start;
-- (void)delayLaunchIfNeededFor15147964;
+- (void)performWorkerAction;
+- (BOOL)preflightWithError:(id *)arg1 recoverable:(char *)arg2 shouldRetry:(char *)arg3;
 
 @end
 

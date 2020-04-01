@@ -20,6 +20,7 @@
 - (void).cxx_destruct;
 - (void)willBeDetachedFromDebugBar:(id)arg1;
 - (void)_updateCurrentUIController;
+- (void)_enableDebuggerButtonBasedOnDebugSession:(id)arg1;
 - (void)wasAttachedToDebugBar:(id)arg1;
 - (void)currentDebugSessionDidChange;
 - (void)currentDebugSessionStateDidChange;

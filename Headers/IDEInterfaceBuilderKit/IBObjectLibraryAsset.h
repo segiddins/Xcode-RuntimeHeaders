@@ -6,12 +6,11 @@
 
 #import <AppKit/NSView.h>
 
-#import <IDEInterfaceBuilderKit/IBDocumentArchiving-Protocol.h>
 #import <IDEInterfaceBuilderKit/NSCoding-Protocol.h>
 
 @class IBObjectLibraryAssetProvider, IBTargetRuntime, NSArray, NSImage, NSString;
 
-@interface IBObjectLibraryAsset : NSView <IBDocumentArchiving, NSCoding>
+@interface IBObjectLibraryAsset : NSView <NSCoding>
 {
     NSArray *_cachedPasteboardObjects;
     BOOL _hasCreatedContent;
@@ -27,24 +26,26 @@
     long long _animationScalingMode;
     NSString *_assetIdentifier;
     NSImage *_explicitImage;
+    NSString *_imageName;
+    NSString *_imageGroupName;
     IBObjectLibraryAssetProvider *_assetProvider;
     IBTargetRuntime *_targetRuntime;
     Class _documentClass;
     long long _minimumRequiredRuntimeOSVersion;
-    long long _ibInspectedInstantiationMode;
+    long long _instantiationMode;
     id _representedObject;
     NSView *_draggedView;
 }
 
-+ (id)keyPathsForValuesRepresentedObjectClassName;
-+ (id)keyPathsForValuesAffectingNibName;
 @property(retain, nonatomic) NSView *draggedView; // @synthesize draggedView=_draggedView;
 @property(retain, nonatomic) id representedObject; // @synthesize representedObject=_representedObject;
-@property(nonatomic) long long ibInspectedInstantiationMode; // @synthesize ibInspectedInstantiationMode=_ibInspectedInstantiationMode;
+@property(nonatomic) long long instantiationMode; // @synthesize instantiationMode=_instantiationMode;
 @property long long minimumRequiredRuntimeOSVersion; // @synthesize minimumRequiredRuntimeOSVersion=_minimumRequiredRuntimeOSVersion;
 @property(retain) Class documentClass; // @synthesize documentClass=_documentClass;
 @property(retain) IBTargetRuntime *targetRuntime; // @synthesize targetRuntime=_targetRuntime;
 @property(retain, nonatomic) IBObjectLibraryAssetProvider *assetProvider; // @synthesize assetProvider=_assetProvider;
+@property(copy) NSString *imageGroupName; // @synthesize imageGroupName=_imageGroupName;
+@property(copy) NSString *imageName; // @synthesize imageName=_imageName;
 @property(retain, nonatomic) NSImage *explicitImage; // @synthesize explicitImage=_explicitImage;
 @property(copy) NSString *assetIdentifier; // @synthesize assetIdentifier=_assetIdentifier;
 @property long long animationScalingMode; // @synthesize animationScalingMode=_animationScalingMode;
@@ -59,14 +60,14 @@
 - (void).cxx_destruct;
 - (BOOL)isOpaque;
 - (void)drawRect:(struct CGRect)arg1;
-- (void)_updateIbInspectedInstantiationModeForUnarchiver:(id)arg1;
-- (void)_updateIbInspectedInstantiationMode;
+- (BOOL)_appearanceIsLight;
+- (void)_inferInstantiationModeForUnarchiver:(id)arg1;
+- (void)_inferInstantiationMode;
 - (id)searchStrings;
 - (id)objectContainerCopyViaSerialization;
 - (id)objectContainer;
 - (id)pasteboardObjects;
-- (id)fullDescriptionAsAttributedString;
-@property(readonly, copy) NSString *description;
+- (id)description;
 @property(readonly) NSView *effectiveDraggedView;
 @property(readonly) NSView *effectiveDraggableView;
 @property(readonly) id effectiveRepresentedObject;
@@ -78,18 +79,6 @@
 - (void)didCreateContent;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
-- (void)archiveWithDocumentArchiver:(id)arg1;
-- (id)ibInspectedMinimumRequiredRuntimeOSVersionOptionValues;
-- (id)ibInspectedMinimumRequiredRuntimeOSVersionOptionTitles;
-- (id)ibQualifyingInfoForDefaultLabel;
-- (id)ibTypeNameForDefaultLabel;
-- (id)ibDesignableContentView;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

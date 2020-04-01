@@ -12,25 +12,24 @@
 
 @interface IBUITableViewEditor : IBUIScrollViewEditor <IBUITableViewCellOwningEditor>
 {
-    NSString *targetRelation;
-    NSValue *targetFrame;
+    NSString *_targetRelation;
+    NSValue *_targetFrame;
 }
 
 + (Class)ibDropTargetResolverClass;
-@property(copy, nonatomic) NSValue *targetFrame; // @synthesize targetFrame;
-@property(copy) NSString *targetRelation; // @synthesize targetRelation;
+@property(copy, nonatomic) NSValue *targetFrame; // @synthesize targetFrame=_targetFrame;
+@property(copy) NSString *targetRelation; // @synthesize targetRelation=_targetRelation;
 - (void).cxx_destruct;
 - (BOOL)dvt_autoscrollWithExternalDragEvent:(id)arg1 animate:(BOOL)arg2;
 - (BOOL)interceptEvent:(id)arg1;
+- (BOOL)handleDragForChild:(id)arg1 forDragEvent:(id)arg2;
 - (void)dragUITableViewContentObject:(id)arg1 fromRelationship:(id)arg2 withPasteboardType:(id)arg3 name:(id)arg4 leftMouseDown:(id)arg5 andLeftMouseDragged:(id)arg6;
 - (void)reattachDraggedObjects:(id)arg1 dragContext:(id)arg2;
 - (id)draggedImageState:(id)arg1;
 - (id)draggedImageStateForIdentifiedUITableViewContentObjects:(id)arg1 pasteboadType:(id)arg2 tableViewRelationship:(id)arg3 objectsAreInEditedTableView:(BOOL)arg4 name:(id)arg5;
 - (struct CGRect)frameForObject:(id)arg1 fromRelationship:(id)arg2 inTableView:(id)arg3;
 - (void)resizeChild:(id)arg1 fromKnob:(CDUnion_42e99c75)arg2 withEvent:(id)arg3;
-- (id)trackerForChild:(id)arg1 withView:(id)arg2 fromKnob:(CDUnion_42e99c75)arg3;
 - (CDStruct_b58c4854)activeKnobRectsForObject:(id)arg1;
-- (id)viewForClippingToWhenDrawingSelectionKnobsForObject:(id)arg1;
 - (BOOL)shouldChildHaveResizeKnobs:(id)arg1;
 - (BOOL)wantsDefaultDragInsertionIndicatorForDragInfo:(id)arg1;
 - (void)drawDragAndDropInsertionHints;
@@ -42,6 +41,7 @@
 - (void)prepareToAcceptDragInfo:(id)arg1;
 - (id)targetRelationForDragInfo:(id)arg1;
 - (id)targetRelationForPoint:(struct CGPoint)arg1 andPasteboard:(id)arg2;
+- (CDStruct_c519178c)effectiveContentInsetForEditing;
 - (id)selectableTableViewCells;
 - (id)editedTableView;
 

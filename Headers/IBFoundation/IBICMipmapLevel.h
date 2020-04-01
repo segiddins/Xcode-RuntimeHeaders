@@ -12,10 +12,14 @@
 }
 
 + (id)itemWithLevel:(long long)arg1;
++ (id)displayName;
 + (id)contentsJSONKey;
++ (id)unspecifiedValuePlaceholder;
 + (void)setComponentID:(long long)arg1;
 + (long long)componentID;
 @property(readonly, nonatomic) long long level; // @synthesize level=_level;
+- (void)encodeWithBinaryArchiver:(id)arg1;
+- (id)initWithBinaryUnarchiver:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isEqualToSlotComponentCounterpartWithKnownEqualClass:(id)arg1;

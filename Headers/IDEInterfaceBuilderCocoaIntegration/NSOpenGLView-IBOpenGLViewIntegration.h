@@ -6,7 +6,11 @@
 
 #import <AppKit/NSOpenGLView.h>
 
-@interface NSOpenGLView (IBOpenGLViewIntegration)
+#import <IDEInterfaceBuilderCocoaIntegration/IBDocumentArchiving-Protocol.h>
+
+@class NSString;
+
+@interface NSOpenGLView (IBOpenGLViewIntegration) <IBDocumentArchiving>
 + (id)keyPathsForValuesAffectingIbArchivedWantsBestResolutionOpenGLSurface;
 + (id)keyPathsForValuesAffectingIbArchivedAllowOffline;
 + (id)keyPathsForValuesAffectingIbArchivedUseRecovery;
@@ -22,9 +26,9 @@
 + (id)keyPathsForValuesAffectingIbArchivedDepthSize;
 + (id)keyPathsForValuesAffectingIbArchivedColorSize;
 + (id)keyPathsForValuesAffectingIbArchivedPolicy;
++ (id)_ibPixelFormatAttributesKeyPathSet;
 - (BOOL)ibOverridablePrefersToVerticallyResizeWithContainer;
 - (BOOL)ibOverridablePrefersToHorizontallyResizeWithContainer;
-- (void)ibWarnings:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
 - (void)ibVerifyAndPopulateMessages:(id)arg1 forDocument:(id)arg2;
 - (id)verifyBufferCollision:(id)arg1 document:(id)arg2;
 - (id)verifySampleAlpha:(id)arg1 document:(id)arg2;
@@ -36,7 +40,7 @@
 - (void)setIbPixelFormatFromDictionaryRepresentation:(id)arg1;
 - (id)ibPixelFormatMutableDictionaryRepresentation;
 - (id)ibPixelFormatDictionaryRepresentation;
-- (id)ibDocumentationPropertyInfosForKeyPath:(id)arg1;
+- (id)ibDocumentationSymbolInfosForKeyPath:(id)arg1;
 @property BOOL ibArchivedWantsBestResolutionOpenGLSurface;
 @property BOOL ibArchivedAllowOffline;
 @property BOOL ibArchivedUseRecovery;
@@ -53,8 +57,19 @@
 @property long long ibArchivedDepthSize;
 @property long long ibArchivedColorSize;
 @property long long ibArchivedPolicy;
+- (struct CGRect)ib_glBounds;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)ibDrawRectIntoDependentContext:(struct CGRect)arg1;
 - (Class)ibViewRendererClass;
+- (void)ibPopulateIssues:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
+- (id)ibLocalAttributeKeyPaths;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @end
 

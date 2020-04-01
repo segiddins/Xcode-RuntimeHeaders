@@ -13,8 +13,8 @@
     NSAttributedString *_measurementText;
     struct CGPoint _startPoint;
     struct CGPoint _endPoint;
-    struct CGPoint _auxiliarlyStartPoint;
-    struct CGPoint _auxiliarlyEndPoint;
+    struct CGPoint _auxiliaryStartPoint;
+    struct CGPoint _auxiliaryEndPoint;
     unsigned long long _auxiliaryRectEdge;
     long long _arrowDirection;
 }
@@ -27,7 +27,7 @@
 - (struct CGRect)measurementRectForDrawingInOverlayView:(id)arg1 fromCanvasFrame:(id)arg2;
 - (void)calculateLineFromStartRect:(struct CGRect)arg1 withStartEdge:(unsigned long long)arg2 andEndRect:(struct CGRect)arg3 withEndEdge:(unsigned long long)arg4;
 - (void)setMeasurementText:(id)arg1;
-- (void)calculateAuxiliarlyLineFromStartRect:(struct CGRect)arg1 withStartEdge:(unsigned long long)arg2 andEndRect:(struct CGRect)arg3 withEndEdge:(unsigned long long)arg4;
+- (void)calculateAuxiliaryLineFromStartRect:(struct CGRect)arg1 withStartEdge:(unsigned long long)arg2 andEndRect:(struct CGRect)arg3 withEndEdge:(unsigned long long)arg4;
 - (void)calculateStartAndEndPointsFromStartRect:(struct CGRect)arg1 withStartEdge:(unsigned long long)arg2 andEndRect:(struct CGRect)arg3 withEndEdge:(unsigned long long)arg4;
 - (id)attributes;
 - (id)initLineFromRect:(struct CGRect)arg1 withStartEdge:(unsigned long long)arg2 toEndRect:(struct CGRect)arg3 withEndEdge:(unsigned long long)arg4;

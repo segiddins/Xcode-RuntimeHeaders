@@ -6,24 +6,18 @@
 
 #import <IDEInterfaceBuilderKit/IBBasePreviewRecipe.h>
 
-@class IBCocoaTouchDeviceSubtype, IBCocoaTouchIdiom, IBDeviceConfiguration, IBUISimulatedOrientationMetrics;
+@class IBCocoaTouchDeviceSubtype, IBCocoaTouchIdiom, IBUISimulatedOrientationMetrics;
 
 @interface IBCocoaTouchPreviewRecipe : IBBasePreviewRecipe
 {
-    IBDeviceConfiguration *_deviceConfiguration;
 }
 
-- (void).cxx_destruct;
-@property(retain) IBDeviceConfiguration *deviceConfiguration;
-- (id)memberConfiguration;
 - (id)targetRuntime;
 @property(readonly) IBUISimulatedOrientationMetrics *orientationMetrics;
 - (id)screenMetrics;
-@property(readonly) IBCocoaTouchIdiom *idiom;
+- (id)idiom;
+@property(readonly) IBCocoaTouchIdiom *cocoaTouchIdiom;
 @property(readonly) IBCocoaTouchDeviceSubtype *deviceSubtype;
-- (id)propertyListRepresentation;
-- (id)initWithPropertyList:(id)arg1;
-- (id)initWithLanguage:(id)arg1 deviceConfiguration:(id)arg2;
 
 @end
 

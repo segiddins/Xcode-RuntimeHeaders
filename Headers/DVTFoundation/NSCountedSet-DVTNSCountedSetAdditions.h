@@ -7,6 +7,11 @@
 #import <Foundation/NSCountedSet.h>
 
 @interface NSCountedSet (DVTNSCountedSetAdditions)
+- (id)dvt_objectsWithMaxCount;
+- (long long)dvt_maxCount;
 - (void)dvt_removeAllCountsForObject:(id)arg1;
+- (BOOL)dvt_containsAnyObjects:(id)arg1;
+- (unsigned long long)dvt_countsOfAllObjects;
+- (unsigned long long)dvt_countForObjects:(id)arg1;
 @end
 

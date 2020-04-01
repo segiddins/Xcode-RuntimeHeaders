@@ -18,7 +18,6 @@
 - (BOOL)productReferenceIsExecutable;
 - (BOOL)isJavaProduct;
 - (BOOL)wantsProductSettings;
-- (id)defaultProductTypeIdentifierByAnalyzingConfiguration;
 
 @end
 

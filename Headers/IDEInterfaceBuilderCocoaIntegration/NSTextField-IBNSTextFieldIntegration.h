@@ -6,13 +6,21 @@
 
 #import <AppKit/NSTextField.h>
 
-@class NSNumber;
+#import <IDEInterfaceBuilderCocoaIntegration/IBDocumentArchiving-Protocol.h>
 
-@interface NSTextField (IBNSTextFieldIntegration)
+@class NSNumber, NSString;
+
+@interface NSTextField (IBNSTextFieldIntegration) <IBDocumentArchiving>
 + (id)keyPathsForValuesAffectingIbInspectedPreferredWidthMode;
-- (void)ibWarnings:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
++ (id)keyPathsForValuesAffectingIbDefaultImage;
++ (id)ibInstantiateForRole:(long long)arg1 withTargetRuntime:(id)arg2 documentClass:(Class)arg3 assetIdentifier:(id)arg4;
+- (void)ibPopulateIssues:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
 - (void)decodePreferredMaxLayoutWidthForUnarchiver:(id)arg1;
 - (void)encodePreferredMaxLayoutWidthForArchiver:(id)arg1;
+- (void)unarchiveAutomaticTextCompletionEnabled:(id)arg1;
+- (void)archiveAutomaticTextCompletionEnabled:(id)arg1;
+- (void)unarchiveAllowsCharacterPickerTouchBarItem:(id)arg1;
+- (void)archiveAllowsCharacterPickerTouchBarItem:(id)arg1;
 - (void)setIbInspectedPreferredWidthMode:(long long)arg1;
 - (long long)ibInspectedPreferredWidthMode;
 @property(copy) NSNumber *ibExternalPreferredMaxLayoutWidth;
@@ -30,10 +38,24 @@
 - (void)ibSetContentCompressionResistancePriorityForTextWrapping;
 - (BOOL)ibPrefersToBeSizedToFitAfterEditingTitle;
 - (id)ibQualifyingInfoForDefaultLabel;
+- (id)ibDefaultImage;
 - (BOOL)ibUsesWidgetTypeForTypeNameForDefaultLabel;
+- (BOOL)ibIgnoreFixedWidthConstraintsForLocalizationWarnings;
+- (BOOL)ibShouldBeProcessedForLocalizationWarnings;
 - (void)setIbInspectedControlSize:(unsigned long long)arg1;
 - (struct CGSize)ibPreferredSize;
 - (struct CGSize)ibMaximumSize;
 - (struct CGSize)ibMinimumSize;
+- (id)_ibLocalAttributeKeyPaths;
+- (id)ibLocalAttributeKeyPaths;
+- (BOOL)ibTouchBarPropertiesAreAvailable;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @end
 

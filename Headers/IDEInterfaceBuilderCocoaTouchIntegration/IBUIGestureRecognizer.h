@@ -13,17 +13,17 @@
 
 @interface IBUIGestureRecognizer : NSObject <IBDocumentArchiving, NSCoding>
 {
-    IBCocoaTouchTargetRuntime *_targetRuntime;
     BOOL _enabled;
     BOOL _cancelsTouchesInView;
     BOOL _delaysTouchesBegan;
     BOOL _delaysTouchesEnded;
     unsigned long long _allowedPressTypes;
+    IBCocoaTouchTargetRuntime *_targetRuntime;
 }
 
 + (void)registerMarshallingRecordHandlers;
-+ (id)instantiateWithDocumentUnarchiver:(id)arg1;
 + (id)ibInstantiateForRole:(long long)arg1 withTargetRuntime:(id)arg2 documentClass:(Class)arg3 assetIdentifier:(id)arg4;
++ (id)instantiateWithDocumentUnarchiver:(id)arg1;
 @property(retain) IBCocoaTouchTargetRuntime *targetRuntime; // @synthesize targetRuntime=_targetRuntime;
 @property unsigned long long allowedPressTypes; // @synthesize allowedPressTypes=_allowedPressTypes;
 @property BOOL delaysTouchesEnded; // @synthesize delaysTouchesEnded=_delaysTouchesEnded;
@@ -31,21 +31,21 @@
 @property BOOL cancelsTouchesInView; // @synthesize cancelsTouchesInView=_cancelsTouchesInView;
 @property(getter=isEnabled) BOOL enabled; // @synthesize enabled=_enabled;
 - (void).cxx_destruct;
-- (id)initWithTargetRuntime:(id)arg1;
-- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
-- (void)archiveWithDocumentArchiver:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithTargetRuntime:(id)arg1;
 - (BOOL)showAllowedPressTypes;
 - (id)ibSegueTriggers;
 - (id)ibDefaultSegueTrigger;
 - (void)ibSetupTriggerForSegueTemplate:(id)arg1 inCompilationUnit:(id)arg2;
-- (void)ibWarnings:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
+- (void)ibPopulateIssues:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
 - (id)associatedView;
 - (Class)classToTakeInitialMarshalledKeysFrom:(id)arg1;
 - (id)runtimeClassNameForContext:(id)arg1 returningOptionalFallbackClassName:(id *)arg2;
 - (id)ibPasteboardTypes;
 - (id)ibLocalAttributeKeyPaths;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -6,29 +6,41 @@
 
 #import <objc/NSObject.h>
 
-#import <IDEKit/IDEOpenRequest-Protocol.h>
+#import <IDEKit/_IDEPrivateOpenRequest-Protocol.h>
 
-@class IDEEditorContext, IDEEditorOpenSpecifier, IDEWorkspaceTabController, NSString;
+@class IDEEditorContext, IDEEditorOpenSpecifier, IDEWorkspaceTabController, NSMutableArray, NSString;
+@protocol IDEEditorHistoryControllerItem;
 
-@interface _IDEOpenRequest : NSObject <IDEOpenRequest>
+@interface _IDEOpenRequest : NSObject <_IDEPrivateOpenRequest>
 {
+    NSMutableArray *_postNavigationBlocks;
+    BOOL _isRunningPostNavigationBlocks;
+    id <IDEEditorHistoryControllerItem> _historyItem;
     IDEEditorOpenSpecifier *_openSpecifier;
     IDEWorkspaceTabController *_workspaceTabController;
     IDEEditorContext *_editorContext;
     IDEEditorContext *_explicitEditorContext;
-    int _eventBehavior;
+    int _target;
     int _takeFocus;
+    unsigned long long _client;
+    CDUnknownBlockType _completionBlock;
     int _requestState;
 }
 
++ (int)_defaultTakeFocusForTarget:(int)arg1 takeFocus:(int)arg2;
 @property int requestState; // @synthesize requestState=_requestState;
 - (void).cxx_destruct;
 - (void)cancel;
 - (void)_enqueueForEventBehavior:(int)arg1;
+- (void)_primitiveRunIfNecessary;
 - (void)_runIfNecessary;
 - (id)initWithOpenSpecifier:(id)arg1 explicitEditorContext:(id)arg2;
-- (id)initWithOpenSpecifier:(id)arg1 workspaceTabController:(id)arg2 editorContext:(id)arg3 eventBehavior:(int)arg4 takeFocus:(int)arg5;
+- (id)initWithEditorHistoryItem:(id)arg1 explicitEditorContext:(id)arg2;
+- (id)initWithOpenSpecifier:(id)arg1 workspaceTabController:(id)arg2 editorContext:(id)arg3 eventBehavior:(int)arg4 takeFocus:(int)arg5 completionBlock:(CDUnknownBlockType)arg6;
+- (id)initWithEditorHistoryItem:(id)arg1 workspaceTabController:(id)arg2 editorContext:(id)arg3 eventBehavior:(int)arg4 takeFocus:(int)arg5 completionBlock:(CDUnknownBlockType)arg6;
+- (id)initWithOpenSpecifier:(id)arg1 workspaceTabController:(id)arg2 editorContext:(id)arg3 target:(int)arg4 takeFocus:(int)arg5 client:(unsigned long long)arg6 completionBlock:(CDUnknownBlockType)arg7;
 - (id)initWithIgnore;
+- (void)addPostNavigationBlock:(CDUnknownBlockType)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

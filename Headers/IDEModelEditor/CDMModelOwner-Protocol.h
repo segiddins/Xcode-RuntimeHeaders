@@ -6,9 +6,10 @@
 
 #import <IDEModelEditor/NSObject-Protocol.h>
 
-@class NSURL;
+@class NSURL, NSUndoManager;
 
 @protocol CDMModelOwner <NSObject>
+@property(readonly) NSUndoManager *undoManager;
 @property(readonly, copy) NSURL *fileURL;
 @end
 

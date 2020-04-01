@@ -14,6 +14,7 @@
 + (id)nonCurrentTheme;
 + (id)inactiveCurrentTheme;
 + (id)activeTheme;
++ (id)sidebarIconBorderMask;
 + (id)sidebarIcon;
 + (unsigned long long)severity;
 + (double)precedence;

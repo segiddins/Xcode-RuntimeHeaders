@@ -6,25 +6,35 @@
 
 #import <objc/NSObject.h>
 
-@class IDEProvisioningUserAction, NSError, NSString;
+@class DVTLogAspect, IDEProvisioningUserAction, NSError, NSString;
 @protocol IDERepairable;
 
 @interface IDEProvisioningRepairStateInfo : NSObject
 {
     id <IDERepairable> _repairable;
     long long _state;
+    DVTLogAspect *_logAspect;
     NSString *_stepDescription;
     IDEProvisioningUserAction *_userAction;
     NSError *_error;
 }
 
-+ (id)repairStateWithRepairable:(id)arg1;
-@property(retain) NSError *error; // @synthesize error=_error;
-@property(retain) IDEProvisioningUserAction *userAction; // @synthesize userAction=_userAction;
-@property(retain) NSString *stepDescription; // @synthesize stepDescription=_stepDescription;
-@property long long state; // @synthesize state=_state;
++ (id)repairStateWithRepairable:(id)arg1 logAspect:(id)arg2;
+@property(readonly) NSError *error; // @synthesize error=_error;
+@property(readonly) IDEProvisioningUserAction *userAction; // @synthesize userAction=_userAction;
+@property(readonly) NSString *stepDescription; // @synthesize stepDescription=_stepDescription;
+@property(readonly) DVTLogAspect *logAspect; // @synthesize logAspect=_logAspect;
+@property(readonly) long long state; // @synthesize state=_state;
 @property(readonly) id <IDERepairable> repairable; // @synthesize repairable=_repairable;
 - (void).cxx_destruct;
+- (void)setFailedWithError:(id)arg1;
+- (void)setSucceeded;
+- (void)clearUserAction;
+- (void)setExecutingUserAction;
+- (void)setWaitingForUserAction:(id)arg1;
+- (void)setExecutingWithStepDescription:(id)arg1;
+- (void)setPending;
+- (id)description;
 
 @end
 

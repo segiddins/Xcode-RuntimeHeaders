@@ -15,7 +15,6 @@
     NSMapTable *_documentOperationsToActivityReports;
 }
 
-+ (void)initialize;
 - (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (void)removeObservingTokensForDocumentOperation:(id)arg1;

@@ -19,7 +19,7 @@
 + (id)sliverForXMLElement:(id)arg1 boundTo:(id)arg2;
 + (id)sliverWithProperties:(id)arg1 title:(id)arg2 attributedTitle:(id)arg3 accessibilityTitle:(id)arg4 fullWidth:(BOOL)arg5;
 + (id)label;
-+ (id)defaultLabelAttributes;
++ (id)defaultLabelAttributesUsingTheme:(id)arg1;
 - (void).cxx_destruct;
 - (void)pushFrameOriginsToViews;
 - (void)layoutGroupsBottomUp;

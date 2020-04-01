@@ -6,7 +6,7 @@
 
 #import <DebuggerUI/NSObject-Protocol.h>
 
-@class NSDictionary, NSString, NSURL, NSView;
+@class NSData, NSDictionary, NSString, NSURL, NSView;
 @protocol IDEDataValue;
 
 @protocol IDEVariablesViewQuickLookProvider <NSObject>
@@ -18,6 +18,6 @@
 @optional
 @property(readonly) NSString *extensionForTemporaryFile;
 @property(readonly) NSURL *existingURLToOpen;
-- (void)writeAtomicallyToTemporaryFile:(NSURL *)arg1;
+- (NSData *)dataRepresentation;
 @end
 

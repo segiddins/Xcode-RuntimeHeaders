@@ -7,6 +7,7 @@
 #import <AppKit/NSPanel.h>
 
 @interface NSPanel (IBWindowTemplateIntegration)
++ (id)ibDefaultImageForInstance:(id)arg1 targetRuntime:(id)arg2;
 - (BOOL)ibNeedsMaskForRoundedBottomCorners;
 @end
 

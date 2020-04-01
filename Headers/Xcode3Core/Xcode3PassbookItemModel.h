@@ -6,27 +6,33 @@
 
 #import <IDEFoundation/IDEProjectItemModel.h>
 
-@class NSArray, NSDictionary, NSMutableDictionary;
+@class NSSet;
 @protocol IDEFlightChecking;
 
 @interface Xcode3PassbookItemModel : IDEProjectItemModel
 {
-    NSMutableDictionary *_knownPassTypes;
+    id <IDEFlightChecking> _knownPassTypesFlightCheck;
     id <IDEFlightChecking> _entitlementsFlightCheck;
-    NSArray *_customPassTypes;
+    BOOL _isRefreshing;
+    NSSet *_knownPassTypes;
+    NSSet *_customPassTypeIdentifiersWithPrefix;
 }
 
-@property(retain, nonatomic) NSArray *customPassTypes; // @synthesize customPassTypes=_customPassTypes;
++ (id)coalescableReadOnlyKeyPaths;
++ (id)passTypeIdentifiersJobCache;
+@property(nonatomic) BOOL isRefreshing; // @synthesize isRefreshing=_isRefreshing;
+@property(retain, nonatomic) NSSet *customPassTypeIdentifiersWithPrefix; // @synthesize customPassTypeIdentifiersWithPrefix=_customPassTypeIdentifiersWithPrefix;
+@property(retain, nonatomic) NSSet *knownPassTypes; // @synthesize knownPassTypes=_knownPassTypes;
 - (void).cxx_destruct;
-- (void)_generateKnownPassTypesWithProvisioningPassTypes:(id)arg1;
+- (id)coalescableWriteableKeyPathToDataSource;
+- (void)updateKnownPassTypesWithProvisioningPassTypes:(id)arg1;
 - (BOOL)isEnabledUsingEducatedGuess;
 - (id)flightChecks;
+- (id)knownPassTypesFlightCheck;
 - (id)entitlementsFlightCheck;
-- (id)_passTypesForEntitlementsFile;
+- (id)sortedPassTypesForEntitlementsFile;
 - (id)_wildcardEntitlement;
-@property(readonly, nonatomic) NSDictionary *knownPassTypes;
-- (void)refreshKnownPassTypesWithPortalInfoDelegate:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)_setCustomPassTypes:(id)arg1 postAssignmentBlock:(CDUnknownBlockType)arg2;
+- (void)refreshKnownPassTypesWithPortalInfoDelegate:(id)arg1 useCachedResult:(BOOL)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)targetCoordinatorsChanged:(id)arg1;
 - (void)readCurrentState;
 - (id)initWithCapabilitiesContext:(id)arg1 item:(id)arg2;

@@ -11,12 +11,13 @@
 
 @interface DBGSceneCamera : SCNNode
 {
-    SCNView *_sceneView;
     double _zoomFactor;
     id <DBGSceneCameraDelegate> _cameraDelegate;
+    SCNView *_sceneView;
     struct SCNVector3 _pivotPoint;
 }
 
+@property __weak SCNView *sceneView; // @synthesize sceneView=_sceneView;
 @property __weak id <DBGSceneCameraDelegate> cameraDelegate; // @synthesize cameraDelegate=_cameraDelegate;
 @property struct SCNVector3 pivotPoint; // @synthesize pivotPoint=_pivotPoint;
 - (void).cxx_destruct;

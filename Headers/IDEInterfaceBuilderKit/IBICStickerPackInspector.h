@@ -12,6 +12,7 @@
 
 - (void)importLocalizations:(id)arg1;
 - (void)exportLocalizations:(id)arg1;
+- (void)performLocalizationAction:(id)arg1;
 - (id)project;
 - (id)catalog;
 

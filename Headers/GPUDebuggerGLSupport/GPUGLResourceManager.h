@@ -22,11 +22,19 @@ __attribute__((visibility("hidden")))
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)loadClientDataBufferFromArchive:(id)arg1 offset:(long long)arg2 functionIndex:(unsigned int)arg3;
+- (id)loadSolidImageWithContainerID:(unsigned long long)arg1 functionIndex:(unsigned int)arg2 subCommandIndex:(int)arg3;
+- (id)loadSolidImageWithContainerID:(unsigned long long)arg1 functionIndex:(unsigned int)arg2;
+- (id)loadOutlineImageWithContainerID:(unsigned long long)arg1 functionIndex:(unsigned int)arg2 subCommandIndex:(int)arg3;
+- (id)loadOutlineImageWithContainerID:(unsigned long long)arg1 functionIndex:(unsigned int)arg2;
 - (id)performUpdateWithResource:(id)arg1;
+- (id)loadWireframeImageWithContainerID:(unsigned long long)arg1 functionIndex:(unsigned int)arg2 subCommandIndex:(int)arg3;
 - (id)loadWireframeImageWithContainerID:(unsigned long long)arg1 functionIndex:(unsigned int)arg2;
+- (id)loadThumbnailBatchWithContainerID:(unsigned long long)arg1 resourceInfo:(id)arg2;
+- (id)loadThumbnailImageWithResourceInfo:(id)arg1;
 - (id)loadResourceWithType:(unsigned int)arg1 containerID:(unsigned long long)arg2 stateMirrorObject:(const void *)arg3 functionIndex:(unsigned int)arg4;
 - (id)loadResourceItem:(id)arg1 withStateMirror:(id)arg2;
-- (id)loadResourceItem:(id)arg1;
+- (id)loadResourceItem:(id)arg1 withResolution:(CDStruct_14f26992)arg2;
+- (id)loadResourceItem:(id)arg1 withResolution:(CDStruct_14f26992)arg2 subCommandIndex:(int)arg3;
 - (void)invalidateDeviceCache;
 - (id)initWithCaptureStore:(id)arg1 resourceStreamer:(id)arg2;
 

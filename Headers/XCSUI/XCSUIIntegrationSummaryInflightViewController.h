@@ -4,32 +4,39 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <DVTKit/DVTViewController.h>
+#import <DVTViewControllerKit/DVTViewController.h>
 
-@class NSString, XCSIntegration, XCSUIProgressViewController;
+#import <XCSUI/XCSUIDataSourceSnapshotsObserver-Protocol.h>
 
-@interface XCSUIIntegrationSummaryInflightViewController : DVTViewController
+@class NSArray, NSTimer, XCSIntegration, XCSUIProgressViewController, XCSUIService;
+
+@interface XCSUIIntegrationSummaryInflightViewController : DVTViewController <XCSUIDataSourceSnapshotsObserver>
 {
+    XCSUIService *_integrationService;
+    NSArray *_upcomingIntegrations;
     XCSIntegration *_integration;
     XCSUIProgressViewController *_progressView;
-    long long _currentStep;
-    NSString *_lastKnownAdvisoryStatus;
-    NSString *_pendingBuilderStatus;
     double _progressBarValue;
+    NSTimer *_progressTimer;
 }
 
+@property(retain) NSTimer *progressTimer; // @synthesize progressTimer=_progressTimer;
 @property double progressBarValue; // @synthesize progressBarValue=_progressBarValue;
-@property(retain) NSString *pendingBuilderStatus; // @synthesize pendingBuilderStatus=_pendingBuilderStatus;
-@property(retain) NSString *lastKnownAdvisoryStatus; // @synthesize lastKnownAdvisoryStatus=_lastKnownAdvisoryStatus;
-@property long long currentStep; // @synthesize currentStep=_currentStep;
 @property(retain) XCSUIProgressViewController *progressView; // @synthesize progressView=_progressView;
 @property(retain, nonatomic) XCSIntegration *integration; // @synthesize integration=_integration;
 - (void).cxx_destruct;
 - (id)accessibilityLabel;
+- (void)shareScreen:(id)arg1;
 - (void)cancelIntegration:(id)arg1;
 - (id)primaryText;
-- (void)updateProgressBar;
-- (void)updateBuilderStatus;
+- (void)updateProgress:(id)arg1;
+- (unsigned long long)numberOfIntegrationsAhead;
+- (id)stringForETA;
+- (id)dateComponentsFormatter;
+- (id)relativeDistanceFromDate:(id)arg1 toDate:(id)arg2;
+- (void)dataSource:(id)arg1 integrationStatusSnapshotsChanged:(id)arg2 serviceSnapshot:(id)arg3 botSnapshot:(id)arg4 integrationSnapshot:(id)arg5;
+- (void)dataSource:(id)arg1 buildQueueSnapshotsChanged:(id)arg2;
+- (void)setError:(id)arg1;
 - (void)primitiveInvalidate;
 - (void)loadView;
 

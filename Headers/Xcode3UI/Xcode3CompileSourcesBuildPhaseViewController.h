@@ -10,18 +10,21 @@
 
 @interface Xcode3CompileSourcesBuildPhaseViewController : Xcode3FileBuildPhaseViewController
 {
+    DVTPopUpButtonCell *_iigDefsRoleCell;
     DVTPopUpButtonCell *_migDefsRoleCell;
     NSCell *_noRoleCell;
-    BOOL _hasMigDefsFiles;
+    BOOL _hasRoleSettableFiles;
     DVTObservingToken *_childObservingToken;
 }
 
 - (void).cxx_destruct;
 - (id)_objectValueForRoleColumnOfBuildFile:(id)arg1;
 - (void)_setMigDefsFileRole:(id)arg1;
+- (void)_setIigDefsFileRole:(id)arg1;
 - (id)_dataCellForRoleOfBuildFile:(id)arg1;
 - (id)_noRoleCell;
 - (id)_migDefsRoleCell;
+- (id)_iigDefsRoleCell;
 - (BOOL)_canSetRole;
 - (void)viewDidInstall;
 - (void)primitiveInvalidate;

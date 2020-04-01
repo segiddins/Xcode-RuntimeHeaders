@@ -15,6 +15,7 @@
 
 @property __weak NSProgressIndicator *progressIndicator; // @synthesize progressIndicator=_progressIndicator;
 - (void).cxx_destruct;
+- (void)primitiveInvalidate;
 - (void)viewDidLoad;
 
 @end

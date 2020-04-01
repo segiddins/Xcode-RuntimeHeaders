@@ -15,6 +15,7 @@
 }
 
 + (id)sharedInstance;
++ (id)knownMediaTypes;
 @property(readonly) NSString *displayName;
 @property(readonly) Class mediaResourceClass;
 @property(readonly) NSArray *pasteboardTypes;

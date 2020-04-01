@@ -8,7 +8,7 @@
 
 #import <IDEKit/IDEBindableDeclarativeInspectorController-Protocol.h>
 
-@class IDEInspectorContentView, NSArray, NSBundle, NSString;
+@class IDEInspectorContentView, IDEWorkspaceTabController, NSArray, NSBundle, NSString;
 @protocol IDEBindableDeclarativeInspectorController;
 
 @interface IDEInspectorCapsuleController : NSObject <IDEBindableDeclarativeInspectorController>
@@ -23,6 +23,7 @@
 @property(readonly) id representedObject; // @synthesize representedObject;
 @property(readonly) NSObject<IDEBindableDeclarativeInspectorController> *parentInspectorController; // @synthesize parentInspectorController;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) IDEWorkspaceTabController *workspaceTabController;
 @property(readonly) id inspectedObject;
 @property(readonly) NSArray *inspectedObjects;
 @property(readonly) NSBundle *bundle;

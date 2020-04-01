@@ -11,11 +11,13 @@
 
 @protocol IBBinaryArchivableColor <NSObject, IBBinaryArchiving>
 + (id)blackColor;
++ (id)ibColorWithName:(NSString *)arg1 bundleID:(NSString *)arg2 fallbackColor:(id)arg3 unarchiveAsColorWrapper:(BOOL)arg4;
 + (id)ibColorWithDisplayP3Red:(double)arg1 green:(double)arg2 blue:(double)arg3 alpha:(double)arg4;
 + (id)ibColorWithSRGBRed:(double)arg1 green:(double)arg2 blue:(double)arg3 alpha:(double)arg4;
 + (id)ibColorWithGenericGamma22White:(double)arg1 alpha:(double)arg2;
-- (NSString *)ibArchivedSystemKeyPathForBinaryArchiver:(IBBinaryArchiver *)arg1;
+- (NSString *)ibArchivedSystemKeyPathForBinaryArchiver:(IBBinaryArchiver *)arg1 fallbackColor:(id *)arg2;
 - (void)set;
+- (BOOL)ibGetColorName:(id *)arg1 bundleID:(id *)arg2 fallbackColor:(id *)arg3 unarchiveAsColorWrapper:(char *)arg4;
 - (BOOL)ibGetDisplayP3Red:(double *)arg1 green:(double *)arg2 blue:(double *)arg3 alpha:(double *)arg4;
 - (BOOL)ibGetSRGBRed:(double *)arg1 green:(double *)arg2 blue:(double *)arg3 alpha:(double *)arg4;
 - (BOOL)ibGetGenericGamma22White:(double *)arg1 alpha:(double *)arg2;

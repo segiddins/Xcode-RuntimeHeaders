@@ -11,11 +11,13 @@
 @interface IDEPlaygroundCommon : IDEContainer
 {
     DVTObservingToken *_workspaceFinishedLoadingObservingToken;
+    DVTObservingToken *_workspaceRunContextsObservingToken;
 }
 
 + (BOOL)isSourcesDirectorySubPath:(id)arg1;
 + (BOOL)isOnlyUsedForUserInteraction;
 - (void).cxx_destruct;
+- (void)_workspaceRunContextsChanged;
 - (void)_registerReferenceWithContexts;
 - (void)_unregisterReferenceWithContexts;
 - (void)_removeDirectoryPathObservationForPath:(id)arg1;
@@ -30,8 +32,8 @@
 - (id)computedChildItemSubpathsFixed;
 - (id)computedChildItemSubpathsEditable;
 - (void)_didChangeContainerFilePath:(id)arg1 inContext:(id)arg2;
-- (void)_changeContainerFilePath:(id)arg1 inContext:(id)arg2;
 - (void)_willChangeContainerFilePath:(id)arg1 inContext:(id)arg2;
+- (void)_changeContainerFilePath:(id)arg1 inContext:(id)arg2;
 - (void)primitiveInvalidate;
 - (id)initWithFilePath:(id)arg1 extension:(id)arg2 workspace:(id)arg3 options:(id)arg4 error:(id *)arg5;
 

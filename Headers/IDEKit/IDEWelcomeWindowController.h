@@ -6,10 +6,13 @@
 
 #import <AppKit/NSWindowController.h>
 
-@class DVTBorderedView, DVTNotificationToken, DVTObservingToken, DVTRolloverImageButton, DVTScrollView, DVTTableView, IDEButtonWithBackgroundColor, IDEFirstLaunchExperienceViewController, IDERecentsHelper, IDEWelcomeWindowHighlightButton, NSArrayController, NSBox, NSImageView, NSProgressIndicator, NSString, NSTextField, NSTrackingArea, NSView;
+#import <IDEKit/NSTouchBarDelegate-Protocol.h>
+#import <IDEKit/NSTouchBarProvider-Protocol.h>
+
+@class DVTBorderedView, DVTNotificationToken, DVTObservingToken, DVTRolloverImageButton, DVTScrollView, DVTTableView, IDEFirstLaunchExperienceViewController, IDERecentsHelper, IDEWelcomeWindowHighlightButton, NSArrayController, NSButton, NSImageView, NSProgressIndicator, NSString, NSTextField, NSTouchBar, NSTrackingArea, NSView;
 @protocol IDEWelcomeWindowButtonProvider;
 
-@interface IDEWelcomeWindowController : NSWindowController
+@interface IDEWelcomeWindowController : NSWindowController <NSTouchBarProvider, NSTouchBarDelegate>
 {
     DVTTableView *_projectsTableView;
     IDEWelcomeWindowHighlightButton *_newProjectAssistantButton;
@@ -25,6 +28,7 @@
     BOOL _showingFirstLaunchExperience;
     DVTNotificationToken *_projectsScrollViewFrameChangeNotificationToken;
     DVTObservingToken *_projectsListChangedNotificationToken;
+    DVTObservingToken *_toolchainDescriptionObserver;
     IDERecentsHelper *_recentsHelper;
     id <IDEWelcomeWindowButtonProvider> _secretButtonProvider;
     BOOL _transientControlsHidden;
@@ -37,30 +41,25 @@
     DVTRolloverImageButton *_toolchainButton;
     DVTRolloverImageButton *_closeButton;
     DVTScrollView *_projectsScrollView;
-    IDEButtonWithBackgroundColor *_showWindowCheckbox;
-    IDEButtonWithBackgroundColor *_openAnotherProjectButton;
+    NSButton *_showWindowCheckbox;
+    NSButton *_openAnotherProjectButton;
     IDEWelcomeWindowHighlightButton *_createPlaygroundButton;
     NSTextField *_createPlaygroundButtonTitle;
-    NSBox *_buttonSeparatorOne;
-    NSBox *_buttonSeparatorTwo;
-    NSBox *_buttonSeparatorThree;
-    NSBox *_buttonSeparatorFour;
     DVTBorderedView *_openAnotherProjectContainerView;
 }
 
 + (BOOL)_canCoexistWithWindow:(id)arg1;
++ (id)keyPathsForValuesAffectingToolchainDescription;
 + (BOOL)wantsReopenedWelcomeWindow;
 + (id)sharedWelcomeWindowController;
++ (id)currentlyOpenOrNewWelcomeWindowController;
++ (id)currentlyOpenWelcomeWindowController;
 + (void)initialize;
 @property __weak DVTBorderedView *openAnotherProjectContainerView; // @synthesize openAnotherProjectContainerView=_openAnotherProjectContainerView;
-@property __weak NSBox *buttonSeparatorFour; // @synthesize buttonSeparatorFour=_buttonSeparatorFour;
-@property __weak NSBox *buttonSeparatorThree; // @synthesize buttonSeparatorThree=_buttonSeparatorThree;
-@property __weak NSBox *buttonSeparatorTwo; // @synthesize buttonSeparatorTwo=_buttonSeparatorTwo;
-@property __weak NSBox *buttonSeparatorOne; // @synthesize buttonSeparatorOne=_buttonSeparatorOne;
 @property __weak NSTextField *createPlaygroundButtonTitle; // @synthesize createPlaygroundButtonTitle=_createPlaygroundButtonTitle;
 @property __weak IDEWelcomeWindowHighlightButton *createPlaygroundButton; // @synthesize createPlaygroundButton=_createPlaygroundButton;
-@property __weak IDEButtonWithBackgroundColor *openAnotherProjectButton; // @synthesize openAnotherProjectButton=_openAnotherProjectButton;
-@property __weak IDEButtonWithBackgroundColor *showWindowCheckbox; // @synthesize showWindowCheckbox=_showWindowCheckbox;
+@property __weak NSButton *openAnotherProjectButton; // @synthesize openAnotherProjectButton=_openAnotherProjectButton;
+@property __weak NSButton *showWindowCheckbox; // @synthesize showWindowCheckbox=_showWindowCheckbox;
 @property __weak DVTScrollView *projectsScrollView; // @synthesize projectsScrollView=_projectsScrollView;
 @property __weak DVTRolloverImageButton *closeButton; // @synthesize closeButton=_closeButton;
 @property __weak DVTRolloverImageButton *toolchainButton; // @synthesize toolchainButton=_toolchainButton;
@@ -86,7 +85,9 @@
 - (void)closeWelcomeWindow:(id)arg1;
 - (void)runOpenPanel:(id)arg1;
 - (void)_openWelcomeWindowIfAppropriate;
+- (void)_prepareXcodeForUIWithRegistrationAndSetupOfExtraServices:(BOOL)arg1;
 - (BOOL)_showFirstLaunchExperienceIfAppropriate;
+- (BOOL)_waitingForFirstLaunch;
 - (BOOL)isShowingFirstLaunchExperience;
 - (void)showFirstLaunchExperienceIfAppropriate;
 - (void)openWelcomeWindowAfterWorkspaceWindowClosedIfAppropriate:(id)arg1;
@@ -98,13 +99,32 @@
 - (void)windowWillClose:(id)arg1;
 - (void)_configureWindowAdditionalAccessibility;
 - (void)_updateProjectsTableViewEmptyContentString;
+- (void)_updateToolchainJumpImage;
 - (void)_configureWindowControlEyeCandy;
 - (void)_configureWindow;
 - (void)windowDidLoad;
 - (void)_setProgressIndicatorVisible:(BOOL)arg1;
 - (void)windowWillLoad;
 @property(readonly) NSString *toolchainDescription;
+- (id)_toolchainRegistry;
 @property(readonly) NSString *xcodeVersion;
+- (id)_newProjectButton;
+- (id)_newPlaygroundButton;
+- (id)_newCheckoutButton;
+- (id)_newCheckoutItemWithIdentifier:(id)arg1;
+- (id)_newPlaygroundItemWithIdentifier:(id)arg1;
+- (id)_newProjectItemWithIdentifier:(id)arg1;
+- (id)_createTouchBar;
+- (id)touchBar:(id)arg1 makeItemForIdentifier:(id)arg2;
+- (id)makeTouchBar;
+- (void)updateTouchBar;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(readonly) NSTouchBar *touchBar;
 
 @end
 

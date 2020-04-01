@@ -6,18 +6,22 @@
 
 #import <IBAutolayoutFoundation/IBSceneUpdateProcessingRequest.h>
 
-@class IBAutolayoutArbitrationUnit;
+@class IBAutolayoutArbitrationUnit, IBAutolayoutArbitrationUnitSparseRepresentation, NSDictionary;
 
 @interface IBAutolayoutStatusProcessingRequest : IBSceneUpdateProcessingRequest
 {
+    IBAutolayoutArbitrationUnitSparseRepresentation *_sparseRepresentation;
     IBAutolayoutArbitrationUnit *_arbitrationUnit;
+    NSDictionary *_arbitrationOptions;
 }
 
+@property(readonly, nonatomic) NSDictionary *arbitrationOptions; // @synthesize arbitrationOptions=_arbitrationOptions;
 @property(readonly, nonatomic) IBAutolayoutArbitrationUnit *arbitrationUnit; // @synthesize arbitrationUnit=_arbitrationUnit;
 - (void).cxx_destruct;
+- (id)description;
 - (void)encodeWithBinaryArchiver:(id)arg1;
 - (id)initWithBinaryUnarchiver:(id)arg1;
-- (id)initWithArbitrationUnit:(id)arg1 resultPhase:(long long)arg2 postProcessingBlock:(CDUnknownBlockType)arg3;
+- (id)initWithArbitrationUnit:(id)arg1 arbitrationOptions:(id)arg2 resultPhase:(long long)arg3 postProcessingBlock:(CDUnknownBlockType)arg4;
 
 @end
 

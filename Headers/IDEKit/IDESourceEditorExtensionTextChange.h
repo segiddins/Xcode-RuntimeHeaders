@@ -19,6 +19,7 @@
 @property(readonly, copy) NSIndexSet *indexes; // @synthesize indexes=_indexes;
 @property(readonly) long long kind; // @synthesize kind=_kind;
 - (void).cxx_destruct;
+- (id)description;
 - (id)initWithDictionaryRepresentation:(id)arg1;
 - (id)initWithKind:(long long)arg1 indexes:(id)arg2 lines:(id)arg3;
 

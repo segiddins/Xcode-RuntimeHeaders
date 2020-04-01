@@ -6,16 +6,18 @@
 
 #import <IDEKit/IDEEditorDocument.h>
 
-@class SKEAssetCatalog;
+@class NSArray, SKEAssetCatalog;
 
 @interface SKEAssetCatalogDocument : IDEEditorDocument
 {
     SKEAssetCatalog *_assetCatalog;
+    NSArray *_scenes;
 }
 
+@property(retain) NSArray *scenes; // @synthesize scenes=_scenes;
 - (void).cxx_destruct;
+- (void)makeCurrent;
 @property BOOL preferCompressedTextures;
-@property BOOL interleaveGeometrySources;
 @property BOOL forceYUp;
 - (BOOL)writeSettings;
 - (BOOL)readFromURL:(id)arg1 ofType:(id)arg2 error:(id *)arg3;

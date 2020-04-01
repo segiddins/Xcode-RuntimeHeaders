@@ -10,6 +10,7 @@
 {
 }
 
+- (void)fullNameForUsername:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)userPictureWithEmail:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 
 @end

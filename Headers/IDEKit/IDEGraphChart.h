@@ -23,6 +23,8 @@
 - (void).cxx_destruct;
 - (void)clearValues;
 - (void)flushEntriesToCount:(unsigned long long)arg1;
+- (void)addLabeledMetrics:(id)arg1 chartName:(id)arg2 startingAtIndex:(long long)arg3 withLabels:(id)arg4;
+- (void)addLabeledEntries:(id)arg1 startingAtIndex:(long long)arg2;
 - (void)addValues:(id)arg1 startingAtIndex:(long long)arg2 userInfos:(id)arg3;
 - (void)addValues:(id)arg1 startingAtIndex:(long long)arg2;
 - (void)setValue:(id)arg1 forIndexedValue:(id)arg2 userInfo:(id)arg3;

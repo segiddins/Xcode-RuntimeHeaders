@@ -21,13 +21,12 @@
 @property(retain) IDEXcodeSelectableXcode *selectedXcode; // @synthesize selectedXcode=_selectedXcode;
 @property(readonly) NSArray *selectableXcodes; // @synthesize selectableXcodes=_selectableXcodes;
 - (void).cxx_destruct;
-- (BOOL)_switchXcodeSelectToXcodeAtBundlePath:(id)arg1;
+- (BOOL)_switchXcodeSelectToXcodeAtBundlePath:(id)arg1 error:(id *)arg2;
 - (void)switchXcodeSelectToRunningXcode;
 - (BOOL)_shouldSwitchToCurrentlyRunningXcode;
-- (id)selectedXcodePath;
 - (id)_xcodeSelectPrintPathResult;
 @property(readonly) BOOL isRunningXcodeTheSelectedXcode;
-- (BOOL)switchXcodeSelectTo:(id)arg1;
+- (BOOL)switchXcodeSelectTo:(id)arg1 error:(id *)arg2;
 - (BOOL)_isXcode4_2OrEarlier:(id)arg1;
 - (id)_determineSelectedXcode;
 - (id)_createXcodeSelectableXcodeForURL:(id)arg1;

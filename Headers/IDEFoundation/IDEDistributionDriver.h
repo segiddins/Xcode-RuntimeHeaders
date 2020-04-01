@@ -6,19 +6,21 @@
 
 #import <objc/NSObject.h>
 
-@class IDEDistributionContext, NSDictionary;
+@class IDEDistributionContext, IDEDistributionExportOptions, NSString;
 
 @interface IDEDistributionDriver : NSObject
 {
+    NSString *_successMessage;
     IDEDistributionContext *_initialContext;
-    NSDictionary *_exportOptionsPlist;
+    IDEDistributionExportOptions *_exportOptions;
 }
 
-+ (id)distributionDriverWithArchive:(id)arg1 optionsPlist:(id)arg2 andError:(id *)arg3;
-@property(readonly, copy) NSDictionary *exportOptionsPlist; // @synthesize exportOptionsPlist=_exportOptionsPlist;
++ (id)distributionDriverWithDistributable:(id)arg1 exportOptions:(id)arg2;
+@property(readonly, copy) IDEDistributionExportOptions *exportOptions; // @synthesize exportOptions=_exportOptions;
 @property(retain) IDEDistributionContext *initialContext; // @synthesize initialContext=_initialContext;
+@property(copy) NSString *successMessage; // @synthesize successMessage=_successMessage;
 - (void).cxx_destruct;
-- (_Bool)runWithDestinationPath:(id)arg1 error:(id *)arg2;
+- (BOOL)runWithDestinationPath:(id)arg1 error:(id *)arg2;
 
 @end
 

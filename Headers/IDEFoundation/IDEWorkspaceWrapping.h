@@ -10,8 +10,12 @@
 {
 }
 
++ (id)resolveContainerPath:(id)arg1 isPotentiallyPackage:(char *)arg2;
 + (id)wrappedWorkspacePathForContainerPath:(id)arg1;
 + (BOOL)isWorkspaceWrappingFileType:(id)arg1;
++ (BOOL)isWorkspaceWrappingFileType:(id)arg1 ignoreWrappingFolders:(BOOL)arg2;
++ (id)wrappingExtensionConformedByFileDataType:(id)arg1;
++ (id)workspaceWrappingExtensions;
 
 @end
 

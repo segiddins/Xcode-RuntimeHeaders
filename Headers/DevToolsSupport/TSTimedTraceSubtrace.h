@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Foundation/NSObject.h>
+#import <objc/NSObject.h>
 
 @class NSString;
 
@@ -18,6 +18,7 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 - (double)averageTimeBetweenMarks;
 - (double)lastMarkTime;
 - (void)setLastMarkTime:(double)arg1;
@@ -25,7 +26,6 @@
 - (id)userDescription;
 - (void)setStartTime:(double)arg1;
 - (double)startTime;
-- (void)dealloc;
 - (id)initWithStartTime:(double)arg1 userDescription:(id)arg2;
 
 @end

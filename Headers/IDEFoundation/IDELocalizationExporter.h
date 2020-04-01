@@ -4,52 +4,54 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import <IDEFoundation/IDELocalizationHandler.h>
 
-#import <IDEFoundation/DVTInvalidation-Protocol.h>
 #import <IDEFoundation/IDELocalizationWorkProgress-Protocol.h>
 
-@class DVTNotificationToken, DVTStackBacktrace, IDELocalizationBundleExportContext, IDEStream, NSString;
+@class DVTNotificationToken, NSArray, NSString, NSURL;
 
-@interface IDELocalizationExporter : NSObject <IDELocalizationWorkProgress, DVTInvalidation>
+@interface IDELocalizationExporter : IDELocalizationHandler <IDELocalizationWorkProgress>
 {
-    IDEStream *_exportWork;
-    IDELocalizationBundleExportContext *_exportContext;
-    long long _workDone;
-    long long _workOutstanding;
+    long long _completedFiles;
+    long long _totalFiles;
     DVTNotificationToken *_localizationPhaseObserver;
-    DVTNotificationToken *_localizationWorkItemIncrementObserver;
-    DVTNotificationToken *_localizationWorkItemDecrementObserver;
+    DVTNotificationToken *_localizationDetectedFilesToProcessObserver;
+    DVTNotificationToken *_localizationProcessedFilesObserver;
+    DVTNotificationToken *_localizationExportFailedObserver;
+    DVTNotificationToken *_localizationNonFatalErrorObserver;
     BOOL _complete;
+    NSArray *_targetLanguages;
+    NSString *_itsRulePath;
+    NSURL *_destinationUrl;
+    CDUnknownBlockType _onErrorBlock;
+    CDUnknownBlockType _onCompletedBlock;
     long long _progress;
     NSString *_phase;
     NSString *_workTitle;
-    CDUnknownBlockType _onErrorBlock;
-    CDUnknownBlockType _onCompletedBlock;
 }
 
 + (void)initialize;
-+ (id)exporterToURL:(id)arg1 container:(id)arg2 sourceLanguage:(id)arg3 targetLanguages:(id)arg4;
+@property(copy) NSString *workTitle; // @synthesize workTitle=_workTitle;
+@property(copy) NSString *phase; // @synthesize phase=_phase;
+@property long long progress; // @synthesize progress=_progress;
+@property BOOL complete; // @synthesize complete=_complete;
 @property(copy) CDUnknownBlockType onCompletedBlock; // @synthesize onCompletedBlock=_onCompletedBlock;
 @property(copy) CDUnknownBlockType onErrorBlock; // @synthesize onErrorBlock=_onErrorBlock;
-@property(readonly) NSString *workTitle; // @synthesize workTitle=_workTitle;
-@property(retain) NSString *phase; // @synthesize phase=_phase;
-@property BOOL complete; // @synthesize complete=_complete;
-@property long long progress; // @synthesize progress=_progress;
+@property(copy) NSURL *destinationUrl; // @synthesize destinationUrl=_destinationUrl;
+@property(copy) NSString *itsRulePath; // @synthesize itsRulePath=_itsRulePath;
+@property(copy) NSArray *targetLanguages; // @synthesize targetLanguages=_targetLanguages;
 - (void).cxx_destruct;
 - (void)cancel;
 - (void)start;
+- (void)exportLocalizations;
+- (id)initWithWorkspace:(id)arg1 buildParameters:(id)arg2 container:(id)arg3 options:(id)arg4 sourceLocale:(id)arg5 testActivities:(id)arg6 targetLanguages:(id)arg7 destinationURL:(id)arg8;
 - (void)primitiveInvalidate;
-- (id)initWithExportContext:(id)arg1;
 
 // Remaining properties
-@property(retain) DVTStackBacktrace *creationBacktrace;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
-@property(readonly) DVTStackBacktrace *invalidationBacktrace;
 @property(readonly) Class superclass;
-@property(readonly, nonatomic, getter=isValid) BOOL valid;
 
 @end
 

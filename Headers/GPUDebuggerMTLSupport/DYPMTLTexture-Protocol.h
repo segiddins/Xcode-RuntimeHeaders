@@ -9,10 +9,11 @@
 @class NSString;
 
 @protocol DYPMTLTexture <DYTexture>
+@property(readonly, nonatomic) unsigned long long arrayLength;
+@property(readonly, nonatomic) unsigned long long type;
 - (unsigned int)elementCount;
 - (NSString *)pixelFormatAsString;
 - (NSString *)typeAsString;
-- (BOOL)isLuminance;
 - (BOOL)isColor;
 - (BOOL)isStencil;
 - (BOOL)isDepth;

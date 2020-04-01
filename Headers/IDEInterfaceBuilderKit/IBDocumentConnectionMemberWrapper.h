@@ -15,7 +15,7 @@
 
 + (id)keyPathsForValuesAffectingImage;
 - (void).cxx_destruct;
-- (id)applicableInspectorsForCategory:(id)arg1 suggestion:(id)arg2;
+- (id)applicableInspectorSlicesForCategory:(id)arg1 suggestedSlices:(id)arg2;
 - (id)ideModelObjectTypeIdentifier;
 - (void)document:(id)arg1 didChangeKeyPath:(id)arg2 forMember:(id)arg3;
 - (void)refreshDisplayValues;

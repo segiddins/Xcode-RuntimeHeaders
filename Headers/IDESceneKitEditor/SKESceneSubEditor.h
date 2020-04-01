@@ -34,6 +34,7 @@
 - (void)replacementView:(id)arg1 willCloseViewController:(id)arg2;
 - (void)replacementView:(id)arg1 willInstallViewController:(id)arg2;
 - (void)documentSelectionDidChange;
+- (void)shaderEditorSelectionChanged:(long long)arg1;
 - (void)installPlaceholderViewWithState:(unsigned long long)arg1;
 - (void)viewDidInstall;
 - (void)loadView;

@@ -6,9 +6,11 @@
 
 #import <QuartzCore/CALayer.h>
 
-@class IDEActivityStatusContainerLabelLayer, NSArray, NSMapTable, NSMutableArray, NSString;
+#import <IDEKit/IDEActivityThemeableLayer-Protocol.h>
 
-@interface IDEActivityStatusContainerLayer : CALayer
+@class IDEActivityStatusContainerLabelLayer, IDEActivityView, NSArray, NSMapTable, NSMutableArray, NSString;
+
+@interface IDEActivityStatusContainerLayer : CALayer <IDEActivityThemeableLayer>
 {
     CDUnknownBlockType _statusCategoryClickHandler;
     IDEActivityStatusContainerLabelLayer *_labelLayer;
@@ -20,21 +22,32 @@
     NSString *_rootContainerLabel;
     NSString *_emptyRootContainerLabel;
     NSArray *_statusCategories;
+    BOOL _isActiveWindowStyle;
+    double _visibleStatusWidth;
+    IDEActivityView *_activityView;
     CALayer *_emptyRootContainerLayer;
     struct CGSize _preferredSize;
 }
 
++ (id)keyPathsForValuesAffectingVisibleStatus;
 @property(retain) CALayer *emptyRootContainerLayer; // @synthesize emptyRootContainerLayer=_emptyRootContainerLayer;
+@property(retain) IDEActivityView *activityView; // @synthesize activityView=_activityView;
 @property(readonly, nonatomic) struct CGSize preferredSize; // @synthesize preferredSize=_preferredSize;
+@property double visibleStatusWidth; // @synthesize visibleStatusWidth=_visibleStatusWidth;
 @property(readonly) NSArray *visibleStatusCategories; // @synthesize visibleStatusCategories=_visibleStatusCategories;
 @property(copy, nonatomic) CDUnknownBlockType statusCategoryClickHandler; // @synthesize statusCategoryClickHandler=_statusCategoryClickHandler;
 @property(copy, nonatomic) NSString *emptyRootContainerLabel; // @synthesize emptyRootContainerLabel=_emptyRootContainerLabel;
 @property(copy, nonatomic) NSString *rootContainerLabel; // @synthesize rootContainerLabel=_rootContainerLabel;
 @property(copy, nonatomic) NSArray *statusCategories; // @synthesize statusCategories=_statusCategories;
 - (void).cxx_destruct;
+- (id)accessibilityAttributeValue:(id)arg1;
+- (id)dvt_view;
+@property BOOL isActiveWindowStyle; // @synthesize isActiveWindowStyle=_isActiveWindowStyle;
+- (void)updateTheme;
 - (void)sizeToFit;
 - (void)layoutSublayers;
 - (void)updateClickHandlerDisableState:(BOOL)arg1;
+- (double)_computeVisibleStatusWidth;
 - (void)addVisibleStatusCategory:(id)arg1;
 - (void)removeVisibleStatusCategory:(id)arg1;
 - (id)orderedStatusCategoryLayers;
@@ -42,6 +55,7 @@
 - (id)textAttributes;
 - (void)addLayerForCategory:(id)arg1;
 - (id)makeLayerForCategory:(id)arg1;
+- (id)statusLayerEffectiveAppearance;
 - (void)removeLayerForCategory:(id)arg1;
 - (id)layerForCategory:(id)arg1;
 - (void)setStatusClickHandlerForCategory:(id)arg1 clickHandler:(CDUnknownBlockType)arg2;
@@ -52,6 +66,12 @@
 - (id)hidingValidatorForCategory:(id)arg1;
 - (void)dealloc;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

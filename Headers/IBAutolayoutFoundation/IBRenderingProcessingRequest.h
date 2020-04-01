@@ -6,19 +6,24 @@
 
 #import <IBAutolayoutFoundation/IBSceneUpdateProcessingRequest.h>
 
+@class IOSurface;
+
 @interface IBRenderingProcessingRequest : IBSceneUpdateProcessingRequest
 {
+    IOSurface *_ioSurface;
     BOOL _shouldRequestAsynchronously;
-    long long _sceneIdentifier;
+    unsigned int _ioSurfaceID;
 }
 
 + (struct CGColorSpace *)colorSpace;
+@property(readonly, nonatomic) IOSurface *ioSurface; // @synthesize ioSurface=_ioSurface;
+@property(readonly, nonatomic) unsigned int ioSurfaceID; // @synthesize ioSurfaceID=_ioSurfaceID;
 @property(readonly, nonatomic) BOOL shouldRequestAsynchronously; // @synthesize shouldRequestAsynchronously=_shouldRequestAsynchronously;
-@property(readonly, nonatomic) long long sceneIdentifier; // @synthesize sceneIdentifier=_sceneIdentifier;
-- (BOOL)requiresSynchronousResultProcessing;
+- (void).cxx_destruct;
 - (void)encodeWithBinaryArchiver:(id)arg1;
 - (id)initWithBinaryUnarchiver:(id)arg1;
-- (id)initWithSceneIdentifier:(long long)arg1 shouldRequestAsynchronously:(BOOL)arg2 resultPhase:(long long)arg3 postProcessingBlock:(CDUnknownBlockType)arg4;
+- (BOOL)requiresSynchronousResultProcessing;
+- (id)initWithResultPhase:(long long)arg1 shouldRequestAsynchronously:(BOOL)arg2 usingIOSurface:(id)arg3 postProcessingBlock:(CDUnknownBlockType)arg4;
 - (id)initWithResultPhase:(long long)arg1 postProcessingBlock:(CDUnknownBlockType)arg2;
 - (id)init;
 

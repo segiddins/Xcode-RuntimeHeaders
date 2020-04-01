@@ -6,24 +6,28 @@
 
 #import <DevToolsCore/XCBuildCommandOutputParser.h>
 
-@class XCBuildLogMessage, XCByteSequenceMatchPatternList;
+@class IDEActivityLogMessage, XCByteSequenceMatchPatternList;
 
 @interface XCGenericCommandOutputParser : XCBuildCommandOutputParser
 {
     XCByteSequenceMatchPatternList *_patternList;
-    XCBuildLogMessage *_mostRecentMessage;
+    IDEActivityLogMessage *_mostRecentMessage;
+    BOOL _appendInformationalLines;
 }
 
 + (id)genericMessageMatchPatternList;
 + (id)messagePatternListDefinitionFilename;
 + (id)messageMatchPatternListNamed:(id)arg1;
+@property BOOL appendInformationalLines; // @synthesize appendInformationalLines=_appendInformationalLines;
+- (void).cxx_destruct;
 - (void)writeBytes:(const char *)arg1 length:(unsigned long long)arg2;
 - (BOOL)parseOutputLineBytes:(const char *)arg1 length:(unsigned long long)arg2;
 - (id)_messageTitleFromBytes:(const char *)arg1 length:(unsigned long long)arg2;
+- (void)willSkipMessageWithTextDocumentLocation:(id)arg1;
+- (void)willAppendMessageText:(id)arg1;
 - (void)didAddLogMessage:(id)arg1;
 - (void)willAddLogMessage:(id)arg1;
 - (id)mostRecentlyEmittedLogMessage;
-- (void)dealloc;
 - (id)init;
 - (id)initWithMatchPatternList:(id)arg1;
 

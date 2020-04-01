@@ -6,13 +6,21 @@
 
 #import <AppKit/NSTextFieldCell.h>
 
-@interface NSTextFieldCell (IBNSTextFieldCellIntegration)
+#import <IDEInterfaceBuilderCocoaIntegration/IBDocumentArchiving-Protocol.h>
+
+@class NSString;
+
+@interface NSTextFieldCell (IBNSTextFieldCellIntegration) <IBDocumentArchiving>
 + (id)keyPathsForValuesAffectingIbInspectedAllowsOnlyRomanCharacters;
 + (id)keyPathsForValuesAffectingIbInspectedBackgroundColor;
 + (id)keyPathsForValuesAffectingIbInspectedDrawsBackground;
 + (id)keyPathsForValuesAffectingIbIsStaticText;
 + (id)keyPathsForValuesAffectingIbInspectorLayout;
 + (id)keyPathsForValuesAffectingIbInspectedTextBorderType;
++ (id)keyPathsForValuesAffectingIbInspectedPlaceholderString;
++ (id)keyPathsForValuesAffectingIbInspectedTitle;
++ (id)keyPathsForValuesAffectingIbDefaultTextColor;
++ (id)keyPathsForValuesAffectingIbInspectedFont;
 + (id)keyPathsForValuesAffectingIbInspectedEditingBehavior;
 - (id)ibQualifyingInfoForDefaultLabel;
 - (Class)ibPreferredControlClass;
@@ -30,15 +38,32 @@
 - (BOOL)ibIsSpecialCasingForMiniFont;
 - (id)ibWidgetType;
 - (BOOL)ibIsStaticText;
-- (void)ibWarnings:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
-- (id)ibDocumentationPropertyInfosForKeyPath:(id)arg1;
 - (id)ibDisplayNameForKeyPath:(id)arg1;
 - (Class)ibEditorClass;
 - (BOOL)ibWouldClipContentWithCellSize:(struct CGSize)arg1;
 @property(nonatomic) long long ibInspectorLayout;
 - (void)setIbInspectedTextBorderType:(long long)arg1;
 - (long long)ibInspectedTextBorderType;
+- (void)setIbInspectedPlaceholderString:(id)arg1;
+- (id)ibInspectedPlaceholderString;
+- (void)setIbInspectedTitle:(id)arg1;
+- (id)ibInspectedTitle;
+- (id)ibDefaultTextColor;
+- (void)setIbInspectedFont:(id)arg1;
+- (id)ibInspectedFont;
 - (void)setIbInspectedEditingBehavior:(long long)arg1;
 - (long long)ibInspectedEditingBehavior;
+- (id)ibLocalLocalizableStringsAttributeKeyPaths;
+- (id)ibLocalAdditionalLocalizableAttributeKeyPaths;
+- (id)ibLocalAttributeKeyPaths;
+- (BOOL)ibTouchBarPropertiesAreAvailable;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @end
 

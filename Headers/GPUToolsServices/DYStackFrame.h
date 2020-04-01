@@ -6,13 +6,10 @@
 
 #import <objc/NSObject.h>
 
-#import <GPUToolsServices/NSCopying-Protocol.h>
-
 @class DYSymbolicator, NSString;
 
-@interface DYStackFrame : NSObject <NSCopying>
+@interface DYStackFrame : NSObject
 {
-    BOOL _faulted;
     DYSymbolicator *_symbolicator;
     unsigned long long _address;
     unsigned long long _index;
@@ -28,12 +25,12 @@
 @property(nonatomic) unsigned long long address; // @synthesize address=_address;
 @property(retain, nonatomic) DYSymbolicator *symbolicator; // @synthesize symbolicator=_symbolicator;
 - (void).cxx_destruct;
+- (BOOL)hasSymbols;
+- (unsigned int)lineNumber;
 - (id)shortFormat;
 - (id)fullFormat;
+@property(readonly, nonatomic) NSString *ownerPath;
 @property(readonly, nonatomic) NSString *ownerName;
-- (void)_fault;
-- (void)_reset;
-- (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end
 

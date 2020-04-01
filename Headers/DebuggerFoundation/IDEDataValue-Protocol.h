@@ -6,7 +6,7 @@
 
 #import <DebuggerFoundation/NSObject-Protocol.h>
 
-@class NSArray, NSString;
+@class IDEStackFrame, NSArray, NSString;
 
 @protocol IDEDataValue <NSObject>
 @property(readonly) BOOL isMemoryFault;
@@ -23,7 +23,10 @@
 @property(readonly, copy) NSString *logicalValue;
 @property(readonly) BOOL valueHasChanged;
 @property(readonly) BOOL isValueEditable;
+@property(readonly, copy) NSString *pointeeAddress;
+@property(readonly, copy) NSString *address;
 @property(copy) NSString *value;
 @property(readonly, copy) NSString *name;
+@property(readonly) IDEStackFrame *stackFrame;
 @end
 

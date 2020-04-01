@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Foundation/NSObject.h>
+#import <objc/NSObject.h>
 
 @class NSMutableArray, NSMutableDictionary;
 
@@ -24,6 +24,7 @@
 + (id)plistArchiveWithRootObject:(id)arg1 delegate:(id)arg2;
 + (id)plistArchiveWithRootObject:(id)arg1 delegate:(id)arg2 role:(unsigned long long)arg3;
 + (void)initialize;
+- (void).cxx_destruct;
 - (void)encodePListDictionary:(id)arg1 forKey:(id)arg2;
 - (void)encodePListArray:(id)arg1 forKey:(id)arg2;
 - (void)encodeString:(id)arg1 forKey:(id)arg2;
@@ -50,7 +51,6 @@
 - (unsigned long long)role;
 - (id)userSettings;
 - (id)plistArchive;
-- (void)dealloc;
 - (id)init;
 - (id)initWithRootObject:(id)arg1;
 - (id)initWithRootObject:(id)arg1 delegate:(id)arg2;

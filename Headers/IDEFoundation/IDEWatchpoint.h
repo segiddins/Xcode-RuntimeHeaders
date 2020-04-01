@@ -22,6 +22,7 @@
 @property(readonly) NSString *variableName; // @synthesize variableName=_variableName;
 @property(readonly) NSString *expression; // @synthesize expression=_expression;
 - (void).cxx_destruct;
+- (id)accessibilityDescription;
 - (id)displayName;
 @property(readonly) NSString *hexAddress;
 - (id)initWithExpression:(id)arg1 variableName:(id)arg2;

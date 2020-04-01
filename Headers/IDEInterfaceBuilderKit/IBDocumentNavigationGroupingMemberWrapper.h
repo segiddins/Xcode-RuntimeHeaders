@@ -27,7 +27,7 @@
 - (void).cxx_destruct;
 - (id)acceptDrop:(id)arg1 childIndex:(long long)arg2;
 - (unsigned long long)dragOperationForDropInfo:(id)arg1 proposedIndex:(long long)arg2 acceptingIndex:(long long *)arg3 isAlternativeItem:(BOOL)arg4;
-- (id)applicableInspectorsForCategory:(id)arg1 suggestion:(id)arg2;
+- (id)applicableInspectorSlicesForCategory:(id)arg1 suggestedSlices:(id)arg2;
 - (id)navigableDocumentLocation;
 - (id)navigableGroupIdentifier;
 - (id)identifier;

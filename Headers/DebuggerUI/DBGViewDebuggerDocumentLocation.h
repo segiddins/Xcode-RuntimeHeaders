@@ -6,20 +6,28 @@
 
 #import <DVTFoundation/DVTDocumentLocation.h>
 
-@class NSString;
+#import <DebuggerUI/IDEIssueCoalescingDocumentLocationIdentifiable-Protocol.h>
 
-@interface DBGViewDebuggerDocumentLocation : DVTDocumentLocation
+@class NSString;
+@protocol NSCopying;
+
+@interface DBGViewDebuggerDocumentLocation : DVTDocumentLocation <IDEIssueCoalescingDocumentLocationIdentifiable>
 {
     NSString *_viewObjectAddress;
 }
 
 @property(readonly) NSString *viewObjectAddress; // @synthesize viewObjectAddress=_viewObjectAddress;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <NSCopying> issueCoalescingGroupIdentifier;
 - (id)description;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualDisregardingTimestamp:(id)arg1;
+- (id)initWithDocumentURL:(id)arg1 timestamp:(id)arg2 snapshotNode:(id)arg3;
 - (id)initWithDocumentURL:(id)arg1 timestamp:(id)arg2 viewObject:(id)arg3;
+
+// Remaining properties
+@property(readonly, nonatomic) id <NSCopying> issueCoalescingIdentifier; // @dynamic issueCoalescingIdentifier;
 
 @end
 

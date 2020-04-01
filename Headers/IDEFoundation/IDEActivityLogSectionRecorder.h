@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class IDEActivityLogSection, NSMapTable, NSMutableArray, NSMutableDictionary, NSPointerArray;
+@class IDEActivityLogSection, NSMutableArray, NSMutableDictionary, NSPointerArray, _TtC13IDEFoundation31IDEActivityLogEventStreamWriter;
 
 @interface IDEActivityLogSectionRecorder : NSObject
 {
@@ -16,19 +16,20 @@
     NSMutableArray *_observations;
     NSMutableArray *_changesToPost;
     BOOL _hasScheduledChangePosting;
-    NSMapTable *_rememberedMessagesByKey;
-    struct _NSRange _mostRecentTextRange;
     CDUnknownBlockType _completionBlock;
     NSMutableDictionary *_severityToLimitTable;
     NSMutableDictionary *_severityToCountTable;
-    // Error parsing type: AB, name: _lock
+    struct os_unfair_lock_s _lock;
     BOOL _hasAddedAnyErrorMessages;
-    int _hasRequestedStop;
+    // Error parsing type: AB, name: _isStillRecording
+    _TtC13IDEFoundation31IDEActivityLogEventStreamWriter *_eventStreamWriter;
 }
 
+@property(retain) _TtC13IDEFoundation31IDEActivityLogEventStreamWriter *eventStreamWriter; // @synthesize eventStreamWriter=_eventStreamWriter;
 @property BOOL hasAddedAnyErrorMessages; // @synthesize hasAddedAnyErrorMessages=_hasAddedAnyErrorMessages;
 - (void).cxx_destruct;
 - (id)addObserverUsingBlock:(CDUnknownBlockType)arg1;
+- (void)setTitle:(id)arg1;
 - (void)setCommandDetailDescription:(id)arg1;
 - (void)addContextInfoMessageWithTitle:(id)arg1;
 - (void)addAnalyzerResultStepMessageWithTitle:(id)arg1;
@@ -39,15 +40,18 @@
 - (void)addTestFailureMessageWithTitle:(id)arg1;
 - (void)stopRecordingWithInfo:(id)arg1;
 - (void)stopRecordingWithInfo:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
-- (void)_stopRecordingWithInfo:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
+- (void)endRecordingWithResult:(long long)arg1;
+- (void)stopRecordingWithResult:(long long)arg1;
+- (void)stopRecordingWithResult:(long long)arg1 duration:(double)arg2;
+- (void)stopRecordingWithResultCode:(long long)arg1 wasCancelled:(BOOL)arg2 duration:(double)arg3 completionBlock:(CDUnknownBlockType)arg4;
+- (BOOL)isRecording;
 - (void)childRecorderDidStopRecording:(id)arg1;
 - (void)addSubmessage:(id)arg1 toMessage:(id)arg2;
 - (void)addMessage:(id)arg1 ignoreMessageLimit:(BOOL)arg2;
 - (void)addMessage:(id)arg1;
-- (struct _NSRange)mostRecentlyAppendedTextRange;
-- (struct _NSRange)appendTextUTF8Bytes:(const char *)arg1 length:(unsigned long long)arg2;
-- (struct _NSRange)appendTextFormat:(id)arg1;
-- (struct _NSRange)appendText:(id)arg1;
+- (void)appendTextUTF8Bytes:(const char *)arg1 length:(unsigned long long)arg2;
+- (void)appendTextFormat:(id)arg1;
+- (void)appendText:(id)arg1;
 - (void)addSubsection:(id)arg1;
 - (BOOL)_attachToParentRecorderIfStillRecording:(id)arg1;
 - (BOOL)hasReachedAllMessageLimits;
@@ -64,12 +68,14 @@
 - (void)noteDescendantLogSection:(id)arg1 didAppendText:(id)arg2;
 - (void)noteDescendantLogSection:(id)arg1 didAddSubsection:(id)arg2;
 - (void)handleChangeEvent:(id)arg1;
-- (void)setRememberedMessage:(id)arg1 forKey:(id)arg2;
-- (id)rememberedMessageForKey:(id)arg1;
 - (void)addCompletionBlock:(CDUnknownBlockType)arg1;
 - (id)section;
 - (void)_performOrderedAsyncBlock:(CDUnknownBlockType)arg1;
 - (id)initWithLogSection:(id)arg1;
+- (BOOL)addMessagesFromClangDiagnosticsFileAtPath:(id)arg1 withSourceFileBasePath:(id)arg2 error:(id *)arg3;
+- (void)appendTextFromMessage:(id)arg1;
+- (void)addMessage:(id)arg1 appendText:(BOOL)arg2;
+- (void)addErrorMessageWithTitle:(id)arg1 appendText:(BOOL)arg2;
 
 @end
 

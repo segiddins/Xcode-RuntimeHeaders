@@ -6,10 +6,59 @@
 
 #import <SpriteKit/SKLabelNode.h>
 
-@class NSFont;
+@class NSAttributedString, NSFont;
 
 @interface SKLabelNode (InspectorAdditions)
 + (id)keyPathsForValuesAffectingSk_font;
++ (id)keyPathsForValuesAffectingsk_font_commit;
++ (id)keyPathsForValuesAffectingsk_preferredMaxLayoutWidth_commit;
++ (id)keyPathsForValuesAffectingsk_attributedText_commit;
++ (id)keyPathsForValuesAffectingsk_numberOfLines_commit;
++ (id)keyPathsForValuesAffectingsk_lineBreakMode_commit;
++ (id)keyPathsForValuesAffectingblendMode_commit;
++ (id)keyPathsForValuesAffectingcolorBlendFactor_commit;
++ (id)keyPathsForValuesAffectingcolor_commit;
++ (id)keyPathsForValuesAffectinghorizontalAlignmentMode_commit;
++ (id)keyPathsForValuesAffectingverticalAlignmentMode_commit;
++ (id)keyPathsForValuesAffectingfontSize_commit;
++ (id)keyPathsForValuesAffectingfontName_commit;
++ (id)keyPathsForValuesAffectingfontColor_commit;
++ (id)keyPathsForValuesAffectingtext_commit;
+@property(nonatomic) BOOL sk_useAttributedString;
+@property(nonatomic) double sk_preferredMaxLayoutWidth;
+@property(retain, nonatomic) NSAttributedString *sk_attributedText;
+@property(nonatomic) long long sk_numberOfLines;
+@property(nonatomic) unsigned long long sk_lineBreakMode;
+@property(readonly, nonatomic) BOOL sk_simpleLabelsOnly;
+@property(readonly, nonatomic) BOOL sk_enhancedLabelsAvailable;
 @property(retain, nonatomic) NSFont *sk_font;
+- (void)setsk_font_commit:(id)arg1;
+- (id)sk_font_commit;
+- (void)setsk_preferredMaxLayoutWidth_commit:(double)arg1;
+- (double)sk_preferredMaxLayoutWidth_commit;
+- (void)setsk_attributedText_commit:(id)arg1;
+- (id)sk_attributedText_commit;
+- (void)setsk_numberOfLines_commit:(long long)arg1;
+- (long long)sk_numberOfLines_commit;
+- (void)setsk_lineBreakMode_commit:(unsigned long long)arg1;
+- (unsigned long long)sk_lineBreakMode_commit;
+- (void)setblendMode_commit:(long long)arg1;
+- (long long)blendMode_commit;
+- (void)setcolorBlendFactor_commit:(double)arg1;
+- (double)colorBlendFactor_commit;
+- (void)setcolor_commit:(id)arg1;
+- (id)color_commit;
+- (void)sethorizontalAlignmentMode_commit:(long long)arg1;
+- (long long)horizontalAlignmentMode_commit;
+- (void)setverticalAlignmentMode_commit:(long long)arg1;
+- (long long)verticalAlignmentMode_commit;
+- (void)setfontSize_commit:(double)arg1;
+- (double)fontSize_commit;
+- (void)setfontName_commit:(id)arg1;
+- (id)fontName_commit;
+- (void)setfontColor_commit:(id)arg1;
+- (id)fontColor_commit;
+- (void)settext_commit:(id)arg1;
+- (id)text_commit;
 @end
 

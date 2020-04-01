@@ -6,16 +6,18 @@
 
 #import <IDEKit/IDEEditor.h>
 
-@class DVTLozengeTextField, DVTObservingToken, IDEFirstResponderView, NSProgressIndicator, NSString;
+@class DVTEmptyContentPlaceholder, DVTNotificationToken, DVTObservingToken, IDEFirstResponderView, NSProgressIndicator, NSString;
 
 @interface IDEEditorEmpty : IDEEditor
 {
     NSString *_emptyContentString;
     IDEFirstResponderView *_firstResponderView;
-    DVTLozengeTextField *_lozengeTextField;
     NSProgressIndicator *_progressIndicator;
     DVTObservingToken *_workspaceActivityObserver;
     BOOL _hideWorkspaceLoadingProgressIndicator;
+    DVTObservingToken *_themeObserver;
+    DVTNotificationToken *_fontThemeObserver;
+    DVTEmptyContentPlaceholder *_placeholderView;
     BOOL _useSourceTextBackgroundColor;
 }
 
@@ -23,6 +25,7 @@
 - (void).cxx_destruct;
 - (void)setEmptyContentString:(id)arg1;
 @property BOOL useSourceTextBackgroundColor; // @synthesize useSourceTextBackgroundColor=_useSourceTextBackgroundColor;
+- (void)_observeThemes;
 - (void)viewWillUninstall;
 - (void)viewDidInstall;
 - (void)_finishViewDidInstall;

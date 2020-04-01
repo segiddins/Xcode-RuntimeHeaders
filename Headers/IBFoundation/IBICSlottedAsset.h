@@ -8,16 +8,18 @@
 
 #import <IBFoundation/IBICAssetWithSlottedChildren-Protocol.h>
 
-@class IBICManifestArchivist, NSString;
+@class IBICManifestArchivist, NSSet, NSString;
 
 @interface IBICSlottedAsset : IBICAbstractCatalogItem <IBICAssetWithSlottedChildren>
 {
     IBICManifestArchivist *_manifestArchivist;
+    BOOL _localizable;
 }
 
++ (BOOL)supportsLocalization;
 + (id)fileUTIsToAllowInUnstructuredImport;
 + (id)fileExtensionsToAllowInUnstructuredImport;
-+ (id)syntehsizeItemsFromLoosePaths:(id)arg1 claimingPaths:(id *)arg2;
++ (id)synthesizeItemsFromLoosePaths:(id)arg1 claimingPaths:(id *)arg2;
 + (Class)repIdentifierClass;
 + (Class)slotClass;
 + (BOOL)fileNameIsIdentifier;
@@ -27,17 +29,17 @@
 + (id)defaultInstanceForIdioms:(id)arg1 enforceStrictIdioms:(BOOL)arg2;
 + (id)defaultName;
 + (BOOL)isAbstractCatalogItemClass;
++ (id)defaultInstanceWithChildSlots:(id)arg1;
+@property(nonatomic, getter=isLocalizable) BOOL localizable; // @synthesize localizable=_localizable;
 - (void).cxx_destruct;
 - (BOOL)isEqualForUnitTests:(id)arg1;
+- (BOOL)shouldMutateChild:(id)arg1 byCopyingContentToNewSlot:(id)arg2;
 - (void)setConflictState:(unsigned long long)arg1 forChild:(id)arg2;
 - (BOOL)isChildMinimallyFitForCompiling:(id)arg1;
 - (Class)expectedChildClassForSlot:(id)arg1;
 - (id)conflictFreeChildForSlot:(id)arg1;
 - (id)slotForChild:(id)arg1;
 - (unsigned long long)conflictStateForChild:(id)arg1;
-- (id)suggestionSetMaskForSuggestionSet:(id)arg1 usingValueModifierBlock:(CDUnknownBlockType)arg2;
-- (id)requiredCounterpartsMask;
-- (id)existingSlotComponentMask;
 - (long long)manifestArchivist:(id)arg1 orderChildrenForSlotConflictResolutionByComparing:(id)arg2 to:(id)arg3;
 - (void)manifestArchivist:(id)arg1 setConflictState:(unsigned long long)arg2 forChild:(id)arg3;
 - (void)manifestArchivist:(id)arg1 setSlot:(id)arg2 forChild:(id)arg3;
@@ -46,18 +48,22 @@
 - (Class)manifestArchivistSlotClassForChildren:(id)arg1;
 - (void)replaceChildrenFromFileSystemSnapshot:(id)arg1 results:(id)arg2;
 - (void)populateMutatorsToAddRequiredChildCounterparts:(id)arg1;
-- (id)missingRequiredCounterpartSlots;
+- (void)manifestArchivist:(id)arg1 populateManifest:(id)arg2;
+- (void)manifestArchivist:(id)arg1 applyPropertiesFromManifest:(id)arg2;
+- (void)enumerateDescriptionAttributeComponents:(CDUnknownBlockType)arg1;
 - (void)populateIssues:(id)arg1 context:(id)arg2;
+- (id)assetRepMatchingVariant:(id)arg1 forPlatform:(id)arg2;
 - (id)assetRepForSlot:(id)arg1;
 - (id)assetRepForStructuredIdentifier:(id)arg1;
 - (id)assetRepForIdentifier:(id)arg1;
 - (id)childForIdentifier:(id)arg1;
-- (id)children;
+@property(readonly, nonatomic) NSSet *children;
 - (id)defaultUnqualifiedRuntimeName;
 - (id)orderedSlotComponentClasses;
 - (BOOL)fileStructureSnapshotChildWouldMapToModelChild:(id)arg1;
 - (id)manifestContent;
 - (id)manifestFileName;
+- (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)init;
 - (id)initializeManifestArchivist;

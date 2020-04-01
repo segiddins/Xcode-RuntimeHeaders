@@ -7,21 +7,28 @@
 #import <AppKit/NSImage.h>
 
 @interface NSImage (IDENSImageAdditions)
++ (id)ide_moreImage;
 + (id)ide_textualSearchResultImage;
 + (id)ide_contextPhaseBuildImage;
++ (id)ide_sourceControlAccountSmallImage;
 + (id)ide_appleIDAccountSmallImage;
 + (id)ide_serverAccountSmallImage;
 + (id)ide_repositoryAccountSmallImage;
 + (id)ide_serverImage;
 + (id)ide_appleIDImage;
++ (id)ide_sourceControlStashesFolder;
++ (id)ide_sourceControlStash;
 + (id)ide_sourceControlRemotesFolderImage;
 + (id)ide_sourceControlTagsFolderImage;
 + (id)ide_sourceControlTrunkFolderImage;
 + (id)ide_sourceControlBranchFolderImage;
 + (id)ide_sourceControlRevision;
++ (id)ide_sourceControlTag;
++ (id)ide_sourceControlMerged;
 + (id)ide_sourceControlBranch;
 + (id)ide_sourceControlWorkingCopy;
-+ (id)ide_sourceControlRepository16;
++ (id)ide_sourceControlRepositoryStarredSelected;
++ (id)ide_sourceControlRepositoryStarred;
 + (id)ide_sourceControlRepository;
 @end
 

@@ -11,9 +11,11 @@
 }
 
 + (id)allowedFileTypes;
++ (void)_temporaryWWDCHack_rdar17004484_setExcludedSpecificationIdentifier:(id)arg1;
 + (id)defaultName;
 + (id)identifier;
 - (Class)dependencyGraphSnapshotClass;
+- (id)primaryAttributeForBuildFile:(id)arg1;
 - (BOOL)acceptsVariantGroups;
 
 @end

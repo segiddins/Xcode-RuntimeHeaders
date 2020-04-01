@@ -10,7 +10,6 @@
 
 @interface DBGHostNode : DBGNode
 {
-    DBGInteractiveSceneView *_sceneView;
     DBGTrueSpacingBox *_trueSpacingBox;
     unsigned long long _visibleRangeFromIndex;
     unsigned long long _visibleRangeToIndex;
@@ -19,6 +18,7 @@
     unsigned long long _maximumRenderingOrder;
     int _reason;
     int _explosionStyle;
+    DBGInteractiveSceneView *_sceneView;
     DBGSceneNode *_rootViewNode;
     NSMutableDictionary *_nodesByZPosition;
 }
@@ -27,11 +27,14 @@
 @property int explosionStyle; // @synthesize explosionStyle=_explosionStyle;
 @property int reason; // @synthesize reason=_reason;
 @property __weak DBGSceneNode *rootViewNode; // @synthesize rootViewNode=_rootViewNode;
+@property(readonly) __weak DBGInteractiveSceneView *sceneView; // @synthesize sceneView=_sceneView;
 - (void).cxx_destruct;
+- (void)performRecursivelyOnSceneNodesWithBlock:(CDUnknownBlockType)arg1;
 - (unsigned long long)updateRenderingOrderRecursively:(BOOL)arg1 withRenderingOrderRangeStartingAt:(unsigned long long)arg2;
 - (void)updateTrueSpacingBoxRenderingOrder:(BOOL)arg1;
+- (void)updateNodeShaderModifiersRecursively;
 - (void)updateNodeAppearenceAfterConstraintsUpdate:(BOOL)arg1 selectedItemCount:(unsigned long long)arg2;
-- (void)removeContraintsOnHostedNodes:(BOOL)arg1;
+- (void)removeConstraintsOnHostedNodes:(BOOL)arg1;
 - (void)updateNodesByZPosition;
 - (void)updateNodesByZPositionRecursively;
 - (unsigned long long)zOrderIndexOfNode:(id)arg1;
@@ -48,13 +51,13 @@
 - (void)updateSpacing:(double)arg1;
 @property(readonly) BOOL hasSubHostNodes;
 @property(readonly) BOOL hasTrueSpacingBox;
-- (void)setTrueSpacingBoxesHidden:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)traverseTrueSpacingBoxesInvokingBlock:(CDUnknownBlockType)arg1;
 - (void)updateBoxWithSpacing:(double)arg1;
 - (BOOL)boundingBoxAMin:(struct SCNVector3)arg1 max:(struct SCNVector3)arg2 overlappsBoundingBoxBMin:(struct SCNVector3)arg3 max:(struct SCNVector3)arg4;
 - (void)repositionNode:(id)arg1 spacing:(double)arg2;
 - (void)_repositionNodesWithSpacing:(double)arg1 recursively:(BOOL)arg2;
 - (void)_resetNodesPositionInfluencedRecursively:(BOOL)arg1;
-- (void)rebuildNodePositioningDependeciesWithSpacing:(double)arg1 recursively:(BOOL)arg2;
+- (void)rebuildNodePositioningDependenciesWithSpacing:(double)arg1 recursively:(BOOL)arg2;
 - (double)nodeSpacing;
 - (BOOL)isHostNodeNeededForView:(id)arg1 style:(int *)arg2;
 - (void)addNodesWithSubviews:(id)arg1 style:(int)arg2;

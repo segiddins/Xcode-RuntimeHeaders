@@ -6,17 +6,17 @@
 
 #import <IDEInterfaceBuilderKit/IBStoryboardAbstractTriggeredSegue.h>
 
-#import <IDEInterfaceBuilderCocoaIntegration/NSCoding-Protocol.h>
-
 @class NSString;
 
-@interface IBNSStoryboardAbstractTriggeredSegue : IBStoryboardAbstractTriggeredSegue <NSCoding>
+@interface IBNSStoryboardAbstractTriggeredSegue : IBStoryboardAbstractTriggeredSegue
 {
     NSString *_customSegueClassName;
     NSString *_customSegueClassModuleProvider;
 }
 
 + (id)ibKeyPathsAcceptingModuleNameBackfill;
++ (id)keyPathsForValuesAffectingCustomSegueClassModule;
++ (id)keyPathsForValuesAffectingCustomSegueFormattedClassSymbol;
 + (BOOL)wantsDefaultCustomClassCompatibilityWarning;
 + (BOOL)isObjectValidDestination:(id)arg1;
 + (BOOL)isObjectValidSource:(id)arg1;
@@ -33,13 +33,12 @@
 - (BOOL)isPrototypeFor:(id)arg1;
 - (BOOL)isEqualToPrototype:(id)arg1;
 @property(copy) NSString *customSegueClassModule;
-- (id)keyPathsAffectingCustomSegueClassModule;
 - (void)setCustomSegueFormattedClassSymbol:(id)arg1;
 - (id)customSegueFormattedClassSymbol;
 - (void)unarchiveWithDocumentUnarchiver:(id)arg1;
 - (void)archiveWithDocumentArchiver:(id)arg1;
-- (void)ibWarnings:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
-- (id)segueAttributeInspectorExtensionIdentifier;
+- (void)ibPopulateIssues:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
+- (id)attributesInspectorSliceIdentifier;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)ibCanChangeToSegueClass:(Class)arg1;

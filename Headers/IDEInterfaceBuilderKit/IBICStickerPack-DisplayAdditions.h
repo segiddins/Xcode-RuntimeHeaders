@@ -6,19 +6,19 @@
 
 #import <IBFoundation/IBICStickerPack.h>
 
-#import <IDEInterfaceBuilderKit/IBICStickerPackParent-Protocol.h>
+#import <IDEInterfaceBuilderKit/IBICAbstractCollectionParent-Protocol.h>
 
 @class NSString;
 
-@interface IBICStickerPack (DisplayAdditions) <IBICStickerPackParent>
-+ (id)syntehsizeItemsFromLoosePaths:(id)arg1 claimingPaths:(id *)arg2;
+@interface IBICStickerPack (DisplayAdditions) <IBICAbstractCollectionParent>
++ (id)synthesizeItemsFromLoosePaths:(id)arg1 claimingPaths:(id *)arg2;
+- (BOOL)isDisplayNameFindable;
 - (id)createChildContentFromDropIndicator:(id)arg1;
-- (id)includedAttributeUtilitySlicesForChild:(id)arg1;
+- (id)includedAttributesInspectorSlicesForChild:(id)arg1;
 - (long long)ibInspectedGridSize;
 - (void)setIbInspectedGridSize:(long long)arg1;
 - (id)overviewCapsuleSpecification;
 - (BOOL)displaysChildrenInOutlineView;
-- (id)typeIcon;
 - (id)icon;
 
 // Remaining properties

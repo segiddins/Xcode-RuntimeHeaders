@@ -6,11 +6,18 @@
 
 #import <AppKit/NSProgressIndicator.h>
 
-@interface NSProgressIndicator (IBNSProgressIndicatorIntegration)
+#import <IDEInterfaceBuilderCocoaIntegration/IBDocumentArchiving-Protocol.h>
+
+@class NSString;
+
+@interface NSProgressIndicator (IBNSProgressIndicatorIntegration) <IBDocumentArchiving>
++ (id)keyPathsForValuesAffectingIbDefaultImage;
 + (id)keyPathsForValuesAffectingIbInspectedDoubleValue;
 + (id)keyPathsForValuesAffectingIbInspectedMinValue;
 + (id)keyPathsForValuesAffectingIbInspectedMaxValue;
 - (id)ibWidgetTypeForDefaultLabel;
+- (id)ibDefaultImage;
+- (void)ibPrepareCocoaDocumentForCompiling:(id)arg1 withContext:(id)arg2;
 - (void)ibSwizzledInstallHeartBeat:(BOOL)arg1;
 - (void)setIbInspectedDoubleValue:(double)arg1;
 - (double)ibInspectedDoubleValue;
@@ -20,5 +27,14 @@
 - (double)ibInspectedMaxValue;
 - (id)ibWidgetType;
 - (id)ibOrderedSnapshotAttributesKeyPaths;
+- (id)ibLocalAttributeKeyPaths;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @end
 

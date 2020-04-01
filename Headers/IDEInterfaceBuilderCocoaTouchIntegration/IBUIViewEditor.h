@@ -11,12 +11,10 @@
 @interface IBUIViewEditor : IBViewEditor
 {
     DVTObservingToken *_targetRuntimeObservation;
-    DVTObservingToken *_inheritedMetricsObservation;
 }
 
 + (Class)ibDropTargetResolverClass;
 - (void).cxx_destruct;
-- (BOOL)shouldDragFrameWithMouseDownInEditedRect:(id)arg1;
 - (void)noteDescendant:(id)arg1 didChangeProperty:(id)arg2 fromValue:(id)arg3;
 - (id)editorView;
 - (BOOL)canSizeSelectionToFit;

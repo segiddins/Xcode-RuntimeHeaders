@@ -6,8 +6,39 @@
 
 #import <XCSCore/XCSTestPlaceholder.h>
 
-@interface XCSTestPlaceholder (XCSUIAdditions)
+#import <XCSUI/IDETestReport_Test-Protocol.h>
+
+@class NSArray, NSImage, NSNumber, NSString;
+@protocol IDETestReport_Base;
+
+@interface XCSTestPlaceholder (XCSUIAdditions) <IDETestReport_Test>
 - (id)xcsui_statusImageForDevice:(id)arg1;
 - (id)xcsui_image;
+@property(readonly, nonatomic) NSNumber *ide_testReport_common_duration;
+@property(readonly, nonatomic) NSArray *ide_testReport_test_allTestRunsAcrossDevices;
+@property(readonly, copy, nonatomic) NSArray *ide_testReport_test_testRunsByDevice;
+@property(readonly, nonatomic) NSString *ide_testReport_common_statusTooltip;
+@property(readonly, nonatomic) NSImage *ide_testReport_common_typeImage;
+@property(readonly, nonatomic) NSImage *ide_testReport_common_statusImage;
+@property(readonly, copy, nonatomic) NSString *ide_testReport_common_title;
+@property(readonly, copy, nonatomic) NSString *ide_testReport_base_identifier;
+@property(readonly, copy, nonatomic) NSString *ide_testReport_test_testClassName;
+@property(readonly, copy, nonatomic) NSString *ide_testReport_test_testName;
+- (void)ide_testReport_test_fetchTestsWithCompletionHandler:(CDUnknownBlockType)arg1;
+@property(readonly, nonatomic) BOOL ide_testReport_common_passed;
+@property(readonly, nonatomic) BOOL ide_testReport_test_fetchesTestRunsLazily;
+- (void)setSynthesizedDeviceTestRuns:(id)arg1;
+- (id)synthesizedDeviceTestRuns;
+@property(retain) NSArray *fetchedPerfMetrics;
+@property(retain) NSNumber *fetchingInProgress;
+@property(retain) NSArray *fetchedTests;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(nonatomic) __weak id <IDETestReport_Base> ide_testReport_base_parent;
+@property(readonly, nonatomic) BOOL ide_testReport_test_mixedStatus;
+@property(readonly) Class superclass;
 @end
 

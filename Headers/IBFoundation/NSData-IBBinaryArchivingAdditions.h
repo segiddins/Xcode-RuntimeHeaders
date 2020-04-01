@@ -11,8 +11,14 @@
 @class NSString;
 
 @interface NSData (IBBinaryArchivingAdditions) <IBBinaryArchiving>
++ (id)decodeWithBinaryUnarchiver:(id)arg1;
 - (void)encodeWithBinaryArchiver:(id)arg1;
-- (id)initWithBinaryUnarchiver:(id)arg1;
+- (id)ib_initWithPrettyBase64String:(id)arg1;
+- (id)ib_prettyBase64String;
+- (id)ib_prettyBase64StringWithLineLength:(long long)arg1 wrappedWithNewlines:(BOOL)arg2;
+- (id)ib_base64DecodedData;
+- (id)ib_base64EncodedData;
+- (Class)ib_immutableClassForPlistOverlay;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

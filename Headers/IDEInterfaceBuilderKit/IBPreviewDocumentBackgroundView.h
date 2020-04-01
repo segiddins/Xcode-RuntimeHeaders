@@ -8,14 +8,14 @@
 
 #import <IDEInterfaceBuilderKit/DVTFirstResponderShowingView-Protocol.h>
 
-@class DVTFirstResponderDrawingStrategy, DVTLozengeTextField, IBCanvasBandSelectionView, NSString;
+@class DVTEmptyContentPlaceholder, DVTFirstResponderDrawingStrategy, IBCanvasBandSelectionView, NSString;
 @protocol IBPreviewDocumentBackgroundViewDelegate;
 
 @interface IBPreviewDocumentBackgroundView : NSView <DVTFirstResponderShowingView>
 {
     IBCanvasBandSelectionView *_bandSelectionView;
     DVTFirstResponderDrawingStrategy *_firstResponderDrawingStrategy;
-    DVTLozengeTextField *_placeholderTextField;
+    DVTEmptyContentPlaceholder *_placeholderTextField;
     BOOL _showsFirstResponder;
     id <IBPreviewDocumentBackgroundViewDelegate> _delegate;
     NSString *_placeholderText;

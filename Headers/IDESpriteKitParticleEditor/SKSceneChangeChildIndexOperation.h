@@ -16,8 +16,8 @@
 }
 
 - (void).cxx_destruct;
-- (BOOL)revert;
-- (BOOL)apply;
+- (BOOL)_performRevert;
+- (BOOL)_performApply;
 - (void)_moveChildToIndex:(unsigned long long)arg1;
 - (id)initWithDocument:(id)arg1 movingNode:(id)arg2 toIndex:(unsigned long long)arg3;
 

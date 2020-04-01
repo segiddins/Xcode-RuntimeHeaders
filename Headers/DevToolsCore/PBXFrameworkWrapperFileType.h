@@ -10,7 +10,7 @@
 {
 }
 
-- (id)subpathForWrapperPart:(int)arg1 ofPath:(id)arg2 withExtraFileProperties:(id)arg3;
+- (id)subpathForWrapperPart:(long long)arg1 ofPath:(id)arg2 withExtraFileProperties:(id)arg3;
 
 @end
 

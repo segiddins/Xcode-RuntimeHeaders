@@ -11,21 +11,25 @@
 #import <IDEKit/DVTScopeBarHost-Protocol.h>
 #import <IDEKit/IDEConsoleTextViewObjectiveCExpressionRangeDelegate-Protocol.h>
 #import <IDEKit/IDEConsoleTextViewStandardIODelegate-Protocol.h>
+#import <IDEKit/NSTouchBarProvider-Protocol.h>
 
-@class DVTFindBar, DVTNotificationToken, DVTObservingToken, DVTScopeBarController, DVTScopeBarView, DVTScopeBarsManager, DVTScrollView, DVTSearchField, IDEConsoleTextView, IDELayoutControlView, IDEWorkspaceDocument, NSButton, NSMapTable, NSMutableArray, NSMutableSet, NSPopUpButton, NSScrollView, NSSet, NSString, NSTimer, NSUndoManager, NSView;
+@class DVTFindBar, DVTNotificationToken, DVTObservingToken, DVTScopeBarController, DVTScopeBarView, DVTScopeBarsManager, DVTScrollView, DVTSearchField, IDEConsoleTextView, IDELayoutControlView, IDEWorkspaceDocument, NSButton, NSMapTable, NSMutableArray, NSMutableSet, NSPopUpButton, NSScrollView, NSSet, NSString, NSTimer, NSTouchBar, NSUndoManager, NSView;
+@protocol DVTConsoleTextViewProtocol;
 
-@interface IDEConsoleArea : IDEViewController <IDEConsoleTextViewObjectiveCExpressionRangeDelegate, DVTFindBarHostable, DVTScopeBarHost, IDEConsoleTextViewStandardIODelegate, DVTCompletingTextViewDelegate>
+@interface IDEConsoleArea : IDEViewController <NSTouchBarProvider, IDEConsoleTextViewObjectiveCExpressionRangeDelegate, DVTFindBarHostable, DVTScopeBarHost, IDEConsoleTextViewStandardIODelegate, DVTCompletingTextViewDelegate>
 {
     DVTScopeBarView *_scopeBar;
     IDEConsoleTextView *_consoleView;
     NSPopUpButton *_filterModePopUpButton;
     NSButton *_clearConsoleButton;
+    NSView<DVTConsoleTextViewProtocol> *_consoleViewSwift;
     NSPopUpButton *_filterModePopUpButton_legacy;
     NSPopUpButton *_filterModePopUpButton_new;
     DVTSearchField *_consoleFilterField;
     IDELayoutControlView *_consoleFilterLayoutView;
     NSString *_consoleFilterString;
     NSString *_previousConsoleFilterString;
+    BOOL _lastFilterMatchTerminated;
     IDEWorkspaceDocument *_workspaceDocument;
     NSMutableArray *_inputHistoryForDebugger;
     unsigned long long _inputHistoryIndexForDebugger;
@@ -48,6 +52,7 @@
     int _filterMode;
     unsigned long long _filteredItemsCount;
     unsigned long long _filteredOutItemsCount;
+    BOOL _usingNewEditor;
     DVTScrollView *_consoleScrollView;
 }
 
@@ -55,6 +60,7 @@
 + (long long)version;
 + (void)configureStateSavingObjectPersistenceByName:(id)arg1;
 + (id)consoleStateSavingString;
++ (void)initialize;
 @property(retain) NSString *consoleFilterString; // @synthesize consoleFilterString=_consoleFilterString;
 @property __weak DVTScrollView *consoleScrollView; // @synthesize consoleScrollView=_consoleScrollView;
 @property(readonly) DVTScopeBarView *scopeBarView; // @synthesize scopeBarView=_scopeBar;
@@ -109,7 +115,9 @@
 - (void)_clearText;
 - (void)primitiveInvalidate;
 - (void)_removeObserverForConsoleAdaptor:(id)arg1;
+- (void)_themeUpdated;
 - (void)_clearTextAndReAddAllItems;
+- (void)filterChanged:(id)arg1;
 - (void)reloadConsole:(id)arg1;
 - (void)clearConsole:(id)arg1;
 - (void)viewWillUninstall;
@@ -124,6 +132,7 @@
 - (void)_setupClearConsoleButton;
 - (void)loadView;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (id)makeTouchBar;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
@@ -131,6 +140,7 @@
 @property(readonly) unsigned long long hash;
 @property(readonly) NSScrollView *scopeBarsAdjustableScrollView;
 @property(readonly) Class superclass;
+@property(readonly) NSTouchBar *touchBar;
 
 @end
 

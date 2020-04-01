@@ -8,7 +8,7 @@
 
 #import <IDEKit/IDEAccountDetailsRefresherDelegate-Protocol.h>
 
-@class DVTBorderedView, DVTTableView, IDEAccountDetailsRefresher, NSArrayController, NSImageView, NSObjectController, NSSet, NSView;
+@class DVTBorderedView, DVTTableView, IDEAccountDetailsRefresher, IDEProvisioningProfileBulkDownloader, NSArrayController, NSBox, NSImageView, NSObjectController, NSSet, NSString, NSView;
 
 @interface IDEAccountPrefsDeveloperAccountDetailViewController : IDEViewController <IDEAccountDetailsRefresherDelegate>
 {
@@ -24,12 +24,18 @@
     NSImageView *_errorImageView1;
     NSImageView *_errorImageView2;
     IDEAccountDetailsRefresher *_refresher;
+    IDEProvisioningProfileBulkDownloader *_profileDownloader;
+    NSBox *_separator1;
+    NSBox *_separator2;
 }
 
 + (unsigned long long)assertionBehaviorForKeyValueObservationsAtEndOfEvent;
 + (id)keyPathsForValuesAffectingUserDescription;
 + (id)keyPathsForValuesAffectingPassword;
 + (id)keyPathsForValuesAffectingDeveloperAccount;
+@property(retain) NSBox *separator2; // @synthesize separator2=_separator2;
+@property(retain) NSBox *separator1; // @synthesize separator1=_separator1;
+@property(retain) IDEProvisioningProfileBulkDownloader *profileDownloader; // @synthesize profileDownloader=_profileDownloader;
 @property(retain, nonatomic) IDEAccountDetailsRefresher *refresher; // @synthesize refresher=_refresher;
 @property __weak NSImageView *errorImageView2; // @synthesize errorImageView2=_errorImageView2;
 @property __weak NSImageView *errorImageView1; // @synthesize errorImageView1=_errorImageView1;
@@ -43,6 +49,9 @@
 @property(retain, nonatomic) NSArrayController *teamDescriptionsArrayController; // @synthesize teamDescriptionsArrayController=_teamDescriptionsArrayController;
 @property __weak NSObjectController *objectController; // @synthesize objectController=_objectController;
 - (void).cxx_destruct;
+- (void)clickedDownloadProfilesButton:(id)arg1;
+- (void)downloadAllProfilesForTeamDescription:(id)arg1;
+- (void)viewWillUninstall;
 - (void)viewDidInstall;
 - (id)contextMenu;
 - (void)_refreshUI;
@@ -58,6 +67,7 @@
 - (void)setPassword:(id)arg1;
 - (id)password;
 - (id)developerAccount;
+@property(readonly, nonatomic) NSString *appleIDTitle;
 - (void)primitiveInvalidate;
 
 @end

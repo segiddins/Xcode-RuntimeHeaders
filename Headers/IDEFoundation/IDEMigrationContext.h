@@ -16,11 +16,15 @@
     IDEWorkspace *_workspace;
     NSMutableArray *_targets;
     NSMutableArray *_selectedTargets;
+    NSMutableArray *_targetsToApplyMigrationSettingsTo;
 }
 
++ (id)buildablesIncludingImplicitDependenciesForWorkspace:(id)arg1 scheme:(id)arg2;
++ (BOOL)buildableProducesWatchApp:(id)arg1;
 + (Class)migrationTargetSublass;
 + (void)initialize;
 @property(retain) NSMutableArray *selectedTargets; // @synthesize selectedTargets=_selectedTargets;
+@property(readonly) NSArray *targetsToApplyMigrationSettingsTo; // @synthesize targetsToApplyMigrationSettingsTo=_targetsToApplyMigrationSettingsTo;
 @property(readonly) NSArray *targets; // @synthesize targets=_targets;
 - (void).cxx_destruct;
 - (void)selectDefaultTargets;

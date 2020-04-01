@@ -6,12 +6,12 @@
 
 #import <objc/NSObject.h>
 
-#import <GPUTools/NSCoding-Protocol.h>
 #import <GPUTools/NSCopying-Protocol.h>
+#import <GPUTools/NSSecureCoding-Protocol.h>
 
 @class NSMutableDictionary, NSString;
 
-@interface DYExperiment : NSObject <NSCoding, NSCopying>
+@interface DYExperiment : NSObject <NSSecureCoding, NSCopying>
 {
     NSString *_captureArchivePath;
     NSMutableDictionary *_results;
@@ -33,6 +33,7 @@
     CDUnknownBlockType _messageHandler;
 }
 
++ (BOOL)supportsSecureCoding;
 + (void)initialize;
 @property(nonatomic) BOOL usingModifiedArchive; // @synthesize usingModifiedArchive=_usingModifiedArchive;
 @property(copy, nonatomic) CDUnknownBlockType messageHandler; // @synthesize messageHandler=_messageHandler;

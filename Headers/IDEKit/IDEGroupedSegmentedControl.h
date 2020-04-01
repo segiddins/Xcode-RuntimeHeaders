@@ -6,12 +6,13 @@
 
 #import <AppKit/NSSegmentedControl.h>
 
-@class DVTWeakInterposer, NSArray;
+@class DVTWeakInterposer, NSArray, NSMutableArray;
 @protocol IDEGroupedSegmentedControlDelegate;
 
 @interface IDEGroupedSegmentedControl : NSSegmentedControl
 {
     DVTWeakInterposer *_delegate_dvtWeakInterposer;
+    NSMutableArray *_overlayViews;
     NSArray *_groups;
 }
 

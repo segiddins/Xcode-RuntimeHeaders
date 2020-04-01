@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Foundation/NSObject.h>
+#import <objc/NSObject.h>
 
 @interface XCPropertyMacroExpression : NSObject
 {
@@ -12,8 +12,8 @@
 
 + (id)propertyMacroExpressionFromString:(id)arg1 error:(id *)arg2;
 - (id)description;
-- (BOOL)evaluateAsBooleanInContext:(id)arg1;
-- (id)evaluateInContext:(id)arg1;
+- (BOOL)evaluateAsBooleanWithMacroExpansionScope:(id)arg1;
+- (id)evaluateWithMacroExpansionScope:(id)arg1;
 
 @end
 

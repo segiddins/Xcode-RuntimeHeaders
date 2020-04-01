@@ -21,10 +21,10 @@
 + (BOOL)simulatorsFromSimulatorPlatform:(id)arg1 arePresentInRunDestinations:(id)arg2;
 + (void)setSelectedNavigable:(id)arg1 withRunContextManager:(id)arg2;
 + (void)didUpdateRunDestinationMenu:(id)arg1 withRunContextManager:(id)arg2;
-- (void)menuNeedsUpdate:(id)arg1;
+- (BOOL)updateMenu:(id)arg1 withEvent:(id)arg2 withFlags:(unsigned long long)arg3;
 - (id)_destinationMenuItemsWithRunContextManager:(id)arg1 withSchemeNavigable:(id)arg2;
 - (id)_menuItemsForRunDestinationNavigable:(id)arg1;
-- (void)_setSelectedNavigable:(id)arg1;
+- (void)_setSelectedNavigableFromMenuItem:(id)arg1;
 - (id)_currentRunContextManager;
 
 // Remaining properties

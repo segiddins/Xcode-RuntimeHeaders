@@ -6,7 +6,7 @@
 
 #import <DevToolsCore/XCBuildCommandOutputParser.h>
 
-@class NSMutableArray;
+@class NSMutableArray, NSMutableString;
 
 @interface XCGccCommandOutputParser : XCBuildCommandOutputParser
 {
@@ -16,11 +16,13 @@
     NSMutableArray *_pendedFileInclusionNoteMessages;
     BOOL _pendingMessagesHaveBeenAdded;
     BOOL _warningsBeingTreatedAsErrors;
+    NSMutableString *_bufferedMessages;
 }
 
 + (id)gccMessageMatchPatternList;
+- (void).cxx_destruct;
+- (void)flush;
 - (void)writeBytes:(const char *)arg1 length:(unsigned long long)arg2;
-- (void)finalize;
 - (void)dealloc;
 - (id)initWithNextOutputStream:(id)arg1;
 

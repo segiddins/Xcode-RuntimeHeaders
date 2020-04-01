@@ -6,27 +6,16 @@
 
 #import <IDEInterfaceBuilderKit/IBAbstractViewControllerEditorPlaceholderView.h>
 
-#import <IDEInterfaceBuilderCocoaTouchIntegration/IBUISimulatedMetricsExtendedEdgeProvider-Protocol.h>
+@class IBCocoaTouchTargetRuntime;
 
-@class IBCocoaTouchTargetRuntime, NSString;
-
-@interface IBUIViewControllerEditorPlaceholderView : IBAbstractViewControllerEditorPlaceholderView <IBUISimulatedMetricsExtendedEdgeProvider>
+@interface IBUIViewControllerEditorPlaceholderView : IBAbstractViewControllerEditorPlaceholderView
 {
     IBCocoaTouchTargetRuntime *_targetRuntime;
 }
 
 @property(readonly, nonatomic) IBCocoaTouchTargetRuntime *targetRuntime; // @synthesize targetRuntime=_targetRuntime;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) BOOL simulatedMetricsExtendedLayoutIncludesStatusBars;
-@property(readonly, nonatomic) BOOL simulatedMetricsExtendedLayoutIncludesOpaqueBars;
-@property(readonly, nonatomic) long long simulatedMetricsExtendedEdges;
 - (id)initWithFrame:(struct CGRect)arg1 targetRuntime:(id)arg2;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

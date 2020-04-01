@@ -15,18 +15,20 @@
     IDEInspectorKeyPath *_valuesKeyPath;
     IDEInspectorKeyPath *_displayValueKeyPath;
     IDEInspectorKeyPath *_displayImagesKeyPath;
+    IDEInspectorKeyPath *_visibleKeyPath;
     NSArray *_options;
 }
 
 + (id)optionGroupsForInspectorProperty:(id)arg1;
 @property(readonly) NSArray *options; // @synthesize options=_options;
 @property(readonly, getter=isDynamic) BOOL dynamic; // @synthesize dynamic=_dynamic;
+@property(readonly) IDEInspectorKeyPath *visibleKeyPath; // @synthesize visibleKeyPath=_visibleKeyPath;
 @property(readonly) IDEInspectorKeyPath *displayImagesKeyPath; // @synthesize displayImagesKeyPath=_displayImagesKeyPath;
 @property(readonly) IDEInspectorKeyPath *displayValueKeyPath; // @synthesize displayValueKeyPath=_displayValueKeyPath;
 @property(readonly) IDEInspectorKeyPath *valuesKeyPath; // @synthesize valuesKeyPath=_valuesKeyPath;
 @property(readonly) NSString *title; // @synthesize title=_title;
 - (void).cxx_destruct;
-- (id)initWithXMLElement:(id)arg1 targettingInspectorProperty:(id)arg2;
+- (id)initWithXMLElement:(id)arg1 targetingInspectorProperty:(id)arg2;
 
 @end
 

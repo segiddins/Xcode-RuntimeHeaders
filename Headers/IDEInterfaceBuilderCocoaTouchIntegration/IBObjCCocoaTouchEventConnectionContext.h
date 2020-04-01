@@ -15,6 +15,7 @@
 }
 
 + (id)eventType;
++ (id)stringType;
 + (id)floatType;
 + (id)integerType;
 + (id)boolType;

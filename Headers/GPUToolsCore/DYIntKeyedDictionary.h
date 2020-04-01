@@ -6,13 +6,14 @@
 
 #import <objc/NSObject.h>
 
-#import <GPUToolsCore/NSCoding-Protocol.h>
+#import <GPUToolsCore/NSSecureCoding-Protocol.h>
 
-@interface DYIntKeyedDictionary : NSObject <NSCoding>
+@interface DYIntKeyedDictionary : NSObject <NSSecureCoding>
 {
     struct _IntKeyedDictionaryPrivate *_private;
 }
 
++ (BOOL)supportsSecureCoding;
 - (id)allKeys;
 - (void)removeObjectForKey:(id)arg1;
 - (id)objectForKey:(id)arg1;

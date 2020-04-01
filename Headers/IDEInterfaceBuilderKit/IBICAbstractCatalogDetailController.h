@@ -8,60 +8,46 @@
 
 #import <IDEInterfaceBuilderKit/DVTMainViewControllerDrawingStrategyDelegate-Protocol.h>
 #import <IDEInterfaceBuilderKit/IBICCatalogItemObserver-Protocol.h>
-#import <IDEInterfaceBuilderKit/IBICDetailDocumentViewDelegate-Protocol.h>
 #import <IDEInterfaceBuilderKit/IBSelectionChannelApplicator-Protocol.h>
+#import <IDEInterfaceBuilderKit/IBViewDragDelegate-Protocol.h>
 
-@class DVTDelayedInvocation, DVTMainViewControllerDrawingStrategy, IBICAbstractCatalogDocument, IBICCatalogDocumentEditor, IBICDetailDocumentView, IBICDetailOverlay, IBICDetailPlaceholderView, IBICDetailScrollView, IBSelectionChannel, NSArray, NSSegmentedControl, NSString;
-@protocol DVTInvalidation, IBInvalidation;
+@class DVTDelayedInvocation, DVTMainViewControllerDrawingStrategy, IBICAbstractCatalogDocument, IBICCatalogDocumentEditor, IBICDetailOverlay, IBICDetailPlaceholderView, IBICDetailScrollView, IBSelectionChannel, IDECanvasAppearanceSwitcherController, NSArray, NSSegmentedControl, NSString;
+@protocol IBInvalidation;
 
-@interface IBICAbstractCatalogDetailController : IDEViewController <DVTMainViewControllerDrawingStrategyDelegate, IBICDetailDocumentViewDelegate, IBICCatalogItemObserver, IBSelectionChannelApplicator>
+@interface IBICAbstractCatalogDetailController : IDEViewController <IBViewDragDelegate, DVTMainViewControllerDrawingStrategyDelegate, IBICCatalogItemObserver, IBSelectionChannelApplicator>
 {
     DVTMainViewControllerDrawingStrategy *_mainViewControllerDrawingStrategy;
     IBICAbstractCatalogDocument *_document;
     IBSelectionChannel *_selectionChannel;
     id <IBInvalidation> _catalogObservation;
-    id <DVTInvalidation> _scrollViewToken;
     DVTDelayedInvocation *_placeholderTextValidator;
     NSSegmentedControl *_zoomSegmentedControl;
     NSSegmentedControl *_showSlicingButton;
+    IDECanvasAppearanceSwitcherController *_backgroundColorSwitcher;
     BOOL _drawsWithKeyAppearance;
     IBICCatalogDocumentEditor *_documentEditor;
-    IBICDetailDocumentView *_detailDocumentView;
     IBICDetailOverlay *_overlay;
     IBICDetailScrollView *_scrollView;
     IBICDetailPlaceholderView *_placeholderView;
 }
 
-+ (id)defaultViewNibName;
 @property(retain, nonatomic) IBICDetailPlaceholderView *placeholderView; // @synthesize placeholderView=_placeholderView;
 @property(readonly) BOOL drawsWithKeyAppearance; // @synthesize drawsWithKeyAppearance=_drawsWithKeyAppearance;
 @property(retain, nonatomic) IBICDetailScrollView *scrollView; // @synthesize scrollView=_scrollView;
 @property(readonly) IBICDetailOverlay *overlay; // @synthesize overlay=_overlay;
-@property(retain, nonatomic) IBICDetailDocumentView *detailDocumentView; // @synthesize detailDocumentView=_detailDocumentView;
 @property(readonly) IBICAbstractCatalogDocument *document; // @synthesize document=_document;
 @property(readonly) IBICCatalogDocumentEditor *documentEditor; // @synthesize documentEditor=_documentEditor;
 @property(readonly) IBSelectionChannel *selectionChannel; // @synthesize selectionChannel=_selectionChannel;
 - (void).cxx_destruct;
 - (BOOL)isSubEditorExistanceInSyncForItem:(id)arg1;
 - (void)drawsWithKeyAppearanceDidChange;
-- (void)detailDocumentViewLayoutDidComplete:(id)arg1;
-- (void)detailDocumentViewWillLayoutTopDown:(id)arg1;
-- (void)detailDocumentView:(id)arg1 cancelPreview:(id)arg2;
-- (void)detailDocumentView:(id)arg1 togglePreview:(id)arg2;
-- (void)detailDocumentView:(id)arg1 performDelete:(id)arg2;
 - (BOOL)view:(id)arg1 performDragOperation:(id)arg2;
 - (BOOL)view:(id)arg1 prepareForDragOperation:(id)arg2;
 - (unsigned long long)view:(id)arg1 draggingEntered:(id)arg2;
 - (id)dragTypesForView:(id)arg1;
-- (void)detailDocumentViewDidFinishBandSelecting:(id)arg1;
-- (void)detailDocumentView:(id)arg1 didUpdateBandSelectionRect:(struct CGRect)arg2 withEvent:(id)arg3 andInitialSelection:(id)arg4;
 - (void)updateSelectionOwner:(id)arg1 forBandSelectionHittingObjects:(id)arg2 withEvent:(id)arg3 initialSelection:(id)arg4;
-- (id)detailDocumentViewInitialSelectionForBandSelection:(id)arg1;
 - (BOOL)item:(id)arg1 intersectsBandSelectionRect:(struct CGRect)arg2 fromView:(id)arg3;
 - (id)bandSelectionCandidates;
-- (void)detailDocumentView:(id)arg1 didTrackContextMenuFromEvent:(id)arg2;
-- (void)detailDocumentView:(id)arg1 willTrackContextMenuFromEvent:(id)arg2;
-- (id)detailDocumentView:(id)arg1 menuForEvent:(id)arg2;
 - (void)documentEditorDidChangeDisplayedCatalogItems;
 @property(readonly) NSArray *displayedCatalogItems;
 - (void)selectAll:(id)arg1;
@@ -78,6 +64,7 @@
 - (void)viewWillUninstall;
 - (void)viewDidInstall;
 - (void)loadView;
+- (id)backgroundColorAffectedViews;
 - (id)showAlternateDetailControllerTitle;
 - (void)zoomCanvas:(id)arg1;
 - (BOOL)canZoomCanvas;

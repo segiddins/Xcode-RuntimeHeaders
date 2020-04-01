@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <DVTKit/DVTLayoutView_ML.h>
+#import <DVTStructuredLayoutKit/DVTLayoutView_ML.h>
 
 #import <IDEKit/DVTInvalidation-Protocol.h>
 
@@ -25,13 +25,14 @@
 @property(retain) NSArrayController *arrayController; // @synthesize arrayController=_arrayController;
 - (void).cxx_destruct;
 - (void)primitiveInvalidate;
-- (void)setGradientStyle:(int)arg1;
 - (void)selectPrevious:(id)arg1;
 - (void)selectNext:(id)arg1;
 - (BOOL)canMove;
 - (id)_toolTipForRightArrow;
 - (id)_toolTipForLeftArrow;
 - (id)initWithFrame:(struct CGRect)arg1;
+- (id)rightArrowButton;
+- (id)leftArrowButton;
 - (id)newCenterView;
 - (void)layoutBottomUp;
 - (double)centerViewOverlap;

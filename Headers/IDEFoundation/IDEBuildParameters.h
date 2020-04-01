@@ -8,7 +8,7 @@
 
 #import <IDEFoundation/NSCopying-Protocol.h>
 
-@class IDEOverridingBuildProperties, IDERunDestination, IDESchemeCommand, IDEWorkspaceArenaSnapshot, NSString;
+@class IDEOverridingBuildProperties, IDERunDestination, IDESchemeCommand, IDEWorkspaceArenaSnapshot, IDEXBSBuildParameters, NSString;
 @protocol IDEPrimitiveSchemeCommand;
 
 @interface IDEBuildParameters : NSObject <NSCopying>
@@ -20,10 +20,16 @@
     IDERunDestination *_activeRunDestination;
     NSString *_activeArchitecture;
     IDEOverridingBuildProperties *_overridingProperties;
+    IDEXBSBuildParameters *_xbsBuildParameters;
     unsigned long long _hash;
+    BOOL _collectBuildTimeStatistics;
+    BOOL _collectTimelineMetrics;
 }
 
 + (void)registerDefaultXcconfigCommandLineOverridingProperties:(id)arg1;
+@property(readonly) BOOL collectTimelineMetrics; // @synthesize collectTimelineMetrics=_collectTimelineMetrics;
+@property(readonly) BOOL collectBuildTimeStatistics; // @synthesize collectBuildTimeStatistics=_collectBuildTimeStatistics;
+@property(readonly) IDEXBSBuildParameters *xbsBuildParameters; // @synthesize xbsBuildParameters=_xbsBuildParameters;
 @property(readonly, copy) IDEOverridingBuildProperties *overridingProperties; // @synthesize overridingProperties=_overridingProperties;
 @property(readonly, copy) NSString *activeArchitecture; // @synthesize activeArchitecture=_activeArchitecture;
 @property(readonly) IDERunDestination *activeRunDestination; // @synthesize activeRunDestination=_activeRunDestination;
@@ -43,7 +49,13 @@
 - (id)initForBuildWithWorkspaceArenaSnapshot:(id)arg1 configurationName:(id)arg2;
 - (id)initForBuildWithConfigurationName:(id)arg1;
 - (id)initForBuildWithWorkspaceArenaSnapshot:(id)arg1 schemeCommand:(id)arg2 configurationName:(id)arg3 activeRunDestination:(id)arg4 activeArchitecture:(id)arg5 overridingProperties:(id)arg6;
+- (id)initForBuildWithWorkspaceArenaSnapshot:(id)arg1 schemeCommand:(id)arg2 configurationName:(id)arg3 activeRunDestination:(id)arg4 activeArchitecture:(id)arg5 overridingProperties:(id)arg6 collectBuildTimeStatistics:(BOOL)arg7;
 - (id)initForAction:(id)arg1 workspaceArenaSnapshot:(id)arg2 schemeCommand:(id)arg3 configurationName:(id)arg4 activeRunDestination:(id)arg5 activeArchitecture:(id)arg6 overridingProperties:(id)arg7;
+- (id)initForAction:(id)arg1 workspaceArenaSnapshot:(id)arg2 schemeCommand:(id)arg3 configurationName:(id)arg4 activeRunDestination:(id)arg5 activeArchitecture:(id)arg6 overridingProperties:(id)arg7 collectBuildTimeStatistics:(BOOL)arg8 collectTimelineMetrics:(BOOL)arg9;
+- (id)initForAction:(id)arg1 workspaceArenaSnapshot:(id)arg2 schemeCommand:(id)arg3 configurationName:(id)arg4 activeRunDestination:(id)arg5 activeArchitecture:(id)arg6 overridingProperties:(id)arg7 collectBuildTimeStatistics:(BOOL)arg8;
+- (id)initForAction:(id)arg1 workspaceArenaSnapshot:(id)arg2 schemeCommand:(id)arg3 configurationName:(id)arg4 activeRunDestination:(id)arg5 activeArchitecture:(id)arg6 overridingProperties:(id)arg7 xbsParameters:(id)arg8;
+- (id)initForAction:(id)arg1 workspaceArenaSnapshot:(id)arg2 schemeCommand:(id)arg3 configurationName:(id)arg4 activeRunDestination:(id)arg5 activeArchitecture:(id)arg6 overridingProperties:(id)arg7 xbsParameters:(id)arg8 collectBuildTimeStatistics:(BOOL)arg9 collectTimelineMetrics:(BOOL)arg10;
+- (id)initForAction:(id)arg1 workspaceArenaSnapshot:(id)arg2 schemeCommand:(id)arg3 configurationName:(id)arg4 activeRunDestination:(id)arg5 activeArchitecture:(id)arg6 overridingProperties:(id)arg7 xbsParameters:(id)arg8 collectBuildTimeStatistics:(BOOL)arg9;
 - (id)init;
 
 @end

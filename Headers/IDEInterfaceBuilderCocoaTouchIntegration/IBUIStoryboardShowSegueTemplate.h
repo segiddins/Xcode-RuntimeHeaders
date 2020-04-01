@@ -7,21 +7,21 @@
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBUIStoryboardSegueTemplate.h>
 
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBDocumentArchiving-Protocol.h>
-#import <IDEInterfaceBuilderCocoaTouchIntegration/NSCoding-Protocol.h>
 
 @class NSString;
 
-@interface IBUIStoryboardShowSegueTemplate : IBUIStoryboardSegueTemplate <IBDocumentArchiving, NSCoding>
+@interface IBUIStoryboardShowSegueTemplate : IBUIStoryboardSegueTemplate <IBDocumentArchiving>
 {
     NSString *_action;
 }
 
 @property(copy, nonatomic) NSString *action; // @synthesize action=_action;
 - (void).cxx_destruct;
-- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
-- (void)archiveWithDocumentArchiver:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)ibLocalAttributeKeyPaths;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

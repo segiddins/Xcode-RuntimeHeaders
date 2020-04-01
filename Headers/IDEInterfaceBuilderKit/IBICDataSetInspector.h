@@ -11,7 +11,7 @@
 }
 
 + (Class)catalogSetClass;
-- (void)addPostSuggestionSetContent:(id)arg1;
+- (void)generateCompressionOptionWithBuilder:(id)arg1;
 
 @end
 

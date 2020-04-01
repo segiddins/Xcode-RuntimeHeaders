@@ -8,20 +8,26 @@
 
 #import <IDEFoundation/DVTInvalidation-Protocol.h>
 
-@class DVTStackBacktrace, IDEProvisioningManager, IDEProvisioningMechanic, NSString;
+@class DVTStackBacktrace, IDEProvisioningMechanic, NSString;
+@protocol IDEProvisioningMechanicContextProvider, IDEProvisioningTeamAccountPairProvider;
 
 @interface IDEProvisioningMechanicContext : NSObject <DVTInvalidation>
 {
+    BOOL _runningInIDE;
     IDEProvisioningMechanic *_mechanic;
-    IDEProvisioningManager *_provisioningManager;
+    id <IDEProvisioningMechanicContextProvider> _provisioningManager;
+    id <IDEProvisioningTeamAccountPairProvider> _teamAccountPairProvider;
 }
 
 + (void)initialize;
-@property(retain, nonatomic) IDEProvisioningManager *provisioningManager; // @synthesize provisioningManager=_provisioningManager;
+@property(nonatomic) BOOL runningInIDE; // @synthesize runningInIDE=_runningInIDE;
+@property(retain, nonatomic) id <IDEProvisioningTeamAccountPairProvider> teamAccountPairProvider; // @synthesize teamAccountPairProvider=_teamAccountPairProvider;
+@property(retain, nonatomic) id <IDEProvisioningMechanicContextProvider> provisioningManager; // @synthesize provisioningManager=_provisioningManager;
 @property(retain, nonatomic) IDEProvisioningMechanic *mechanic; // @synthesize mechanic=_mechanic;
 - (void).cxx_destruct;
 - (id)makeRepairForRepairable:(id)arg1;
 - (void)primitiveInvalidate;
+- (id)init;
 
 // Remaining properties
 @property(retain) DVTStackBacktrace *creationBacktrace;

@@ -23,6 +23,7 @@
 - (id)description;
 - (id)addedChild;
 - (id)changedParent;
+- (void)writeToLogEventStream:(id)arg1;
 - (id)initWithSection:(id)arg1;
 
 @end

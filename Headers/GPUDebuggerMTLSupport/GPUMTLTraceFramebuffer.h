@@ -19,10 +19,17 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_colorResourceObjects;
     id <DYResource> _depthResourceObject;
     id <DYResource> _stencilResourceObject;
-    id <DYResource> _wireframeImage;
+    id <DYResource> _wireframeTexture;
+    id <DYResource> _outlineTexture;
+    id <DYResource> _solidTexture;
 }
 
-@property(retain) id <DYResource> wireframeImage; // @synthesize wireframeImage=_wireframeImage;
+- (void)setSolidTexture:(id)arg1;
+@property(readonly) id <DYResource> solidTexture;
+- (void)setOutlineTexture:(id)arg1;
+@property(readonly) id <DYResource> outlineTexture;
+- (void)setWireframeTexture:(id)arg1;
+@property(readonly) id <DYResource> wireframeTexture;
 @property(retain) id <DYResource> stencilResourceObject; // @synthesize stencilResourceObject=_stencilResourceObject;
 @property(retain) id <DYResource> depthResourceObject; // @synthesize depthResourceObject=_depthResourceObject;
 @property(readonly) NSMutableDictionary *colorResourceObjects; // @synthesize colorResourceObjects=_colorResourceObjects;

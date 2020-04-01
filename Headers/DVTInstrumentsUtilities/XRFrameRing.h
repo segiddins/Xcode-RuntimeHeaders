@@ -6,19 +6,22 @@
 
 #import <objc/NSObject.h>
 
+@class NSMutableArray;
+
 @interface XRFrameRing : NSObject
 {
-    struct vector<XRFrameActivityManager *__weak, std::__1::allocator<XRFrameActivityManager *__weak>> _content;
-    unsigned char _currentPos;
+    shared_ptr_1de32825 _ringImpl;
+    unsigned long long _ringID;
+    NSMutableArray *_managersBySlot;
 }
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (id)nextReadyActivityManager;
-- (void)shutdown;
-- (void)setCommutator:(id)arg1;
+- (shared_ptr_1de32825)_parent;
+- (void)_removeFromCommutator:(struct Commutator *)arg1;
+- (void)_moveToCommutator:(struct Commutator *)arg1;
+- (void)assignActivityManager:(id)arg1 slot:(unsigned char)arg2;
 - (void)assignActivityManager:(id)arg1 frame:(id)arg2;
-@property(readonly, nonatomic) unsigned char frameCount;
 - (id)init;
 - (id)initWithMinorFrameCount:(unsigned char)arg1;
 

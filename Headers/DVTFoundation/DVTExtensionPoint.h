@@ -15,7 +15,6 @@
     NSDictionary *_extensionPointData;
     DVTPlugInManager *_plugInManager;
     NSString *_identifier;
-    NSString *_version;
     NSString *_name;
     DVTPlugIn *_plugIn;
     DVTExtensionElementDescription *_extensionSchema;
@@ -24,11 +23,12 @@
     NSMutableSet *_childExtensionPoints;
 }
 
++ (id)requiredExtensionsForExtensionPointWithIdentifier:(id)arg1;
++ (id)requiredExtensionPointForIdentifier:(id)arg1;
 @property(readonly, copy) NSSet *childExtensionPoints; // @synthesize childExtensionPoints=_childExtensionPoints;
 @property(readonly, copy) NSSet *extensions; // @synthesize extensions=_extensions;
 @property(readonly) DVTPlugIn *plugIn; // @synthesize plugIn=_plugIn;
 @property(readonly, copy) NSString *name; // @synthesize name=_name;
-@property(readonly, copy) NSString *version; // @synthesize version=_version;
 @property(readonly, copy) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
 - (void)_registerChildExtensionPoint:(id)arg1;
@@ -38,9 +38,10 @@
 @property(readonly) DVTExtensionPoint *parentExtensionPoint; // @dynamic parentExtensionPoint;
 @property(readonly, copy) DVTExtensionElementDescription *extensionSchema; // @dynamic extensionSchema;
 - (void)_setUpParentExtensionPoint;
+@property(readonly, copy) NSString *version;
 @property(readonly, copy) NSString *description;
 - (void)encodeIntoPropertyList:(id)arg1;
-- (void)awakeWithPropertyList:(id)arg1;
+- (void)awakeFromPropertyList;
 - (id)initWithPropertyList:(id)arg1 owner:(id)arg2;
 - (id)initWithExtensionPointData:(id)arg1 plugIn:(id)arg2;
 

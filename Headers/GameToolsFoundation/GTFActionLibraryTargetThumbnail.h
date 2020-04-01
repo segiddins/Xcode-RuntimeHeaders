@@ -6,16 +6,17 @@
 
 #import <objc/NSObject.h>
 
-#import <GameToolsFoundation/NSCoding-Protocol.h>
+#import <GameToolsFoundation/NSSecureCoding-Protocol.h>
 
 @class NSImage;
 
-@interface GTFActionLibraryTargetThumbnail : NSObject <NSCoding>
+@interface GTFActionLibraryTargetThumbnail : NSObject <NSSecureCoding>
 {
     BOOL _isIcon;
     NSImage *_image;
 }
 
++ (BOOL)supportsSecureCoding;
 + (id)targetThumbnailWithImage:(id)arg1;
 @property(nonatomic) BOOL isIcon; // @synthesize isIcon=_isIcon;
 @property(retain, nonatomic) NSImage *image; // @synthesize image=_image;

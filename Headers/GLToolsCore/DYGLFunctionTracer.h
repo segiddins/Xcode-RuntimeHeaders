@@ -31,6 +31,7 @@
 - (id)_stringForScalar1DArrayArgument:(const struct Argument *)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (id)_valueStringForPixelFormatAttributesArgument:(const struct Argument *)arg1;
 - (id)_stringWithNumber:(id)arg1 argument:(const struct Argument *)arg2;
+- (id)init;
 
 @end
 

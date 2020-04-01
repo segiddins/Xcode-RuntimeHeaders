@@ -6,15 +6,20 @@
 
 #import <objc/NSObject.h>
 
+#import <IDEModelEditor/NSCopying-Protocol.h>
+#import <IDEModelEditor/NSSecureCoding-Protocol.h>
+
 @class NSArray, NSString;
 
-@interface IDEDMSelection : NSObject
+@interface IDEDMSelection : NSObject <NSCopying, NSSecureCoding>
 {
     NSArray *_selectionPath;
 }
 
++ (BOOL)supportsSecureCoding;
 @property(readonly) NSArray *selectionPath; // @synthesize selectionPath=_selectionPath;
 - (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly) NSString *stringRepresentation;
 - (BOOL)isNearSelection:(id)arg1 inModel:(id)arg2;
 - (long long)compare:(id)arg1;

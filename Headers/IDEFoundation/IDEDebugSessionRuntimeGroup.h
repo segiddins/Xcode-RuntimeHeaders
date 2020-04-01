@@ -8,16 +8,20 @@
 
 #import <IDEFoundation/IDEIssueRuntimeGroupingObject-Protocol.h>
 
-@class DVTObservingToken, IDEDebugSession, NSString;
+@class DVTObservingToken, NSArray, NSMutableDictionary, NSString;
 
 @interface IDEDebugSessionRuntimeGroup : NSObject <IDEIssueRuntimeGroupingObject>
 {
     DVTObservingToken *_processPIDObservingToken;
     NSString *_name;
-    IDEDebugSession *_debugSession;
+    id _issueTypeIdentifier;
+    NSArray *subgroupTypeIdentifiers;
+    NSMutableDictionary *_typeIdentifierToSubgroupTypeIdenfiers;
 }
 
-@property(readonly) IDEDebugSession *debugSession; // @synthesize debugSession=_debugSession;
+@property(copy) NSMutableDictionary *typeIdentifierToSubgroupTypeIdenfiers; // @synthesize typeIdentifierToSubgroupTypeIdenfiers=_typeIdentifierToSubgroupTypeIdenfiers;
+@property(copy) NSArray *subgroupTypeIdentifiers; // @synthesize subgroupTypeIdentifiers;
+@property(copy) id issueTypeIdentifier; // @synthesize issueTypeIdentifier=_issueTypeIdentifier;
 @property(copy) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
 - (void)dealloc;

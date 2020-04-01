@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <DVTKit/DVTDisclosureHeaderView.h>
+#import <DVTUserInterfaceKit/DVTDisclosureHeaderView.h>
 
 @class NSTrackingArea;
 
@@ -25,7 +25,7 @@
 - (void)registerForMouseEvents;
 - (void)commonInit;
 - (void)setDisclosed:(BOOL)arg1;
-- (void)_toggleDisclosureButton:(BOOL)arg1;
+- (void)_updateDisclosureButtonAttributedTitle;
 - (id)defaultDisclosureButton;
 
 @end

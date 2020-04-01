@@ -19,6 +19,8 @@
     id <DVTDeviceApplication> _application;
 }
 
++ (id)keyPathsForValuesAffectingDisplayName;
++ (id)keyPathsForValuesAffectingUrl;
 @property BOOL isGroupHeader; // @synthesize isGroupHeader=_isGroupHeader;
 @property BOOL isRecent; // @synthesize isRecent=_isRecent;
 @property(retain) id <DVTDeviceApplication> application; // @synthesize application=_application;
@@ -29,8 +31,6 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)debugDescription;
 - (id)archiveRepresentation;
-- (id)keyPathsForValuesAffectingDisplayName;
-- (id)keyPathsForValuesAffectingUrl;
 
 @end
 

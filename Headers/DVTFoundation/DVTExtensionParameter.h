@@ -19,6 +19,7 @@
 - (void).cxx_destruct;
 - (void)_adjustClassReferencesInParameterData;
 - (BOOL)_adjustParameterData;
+- (id)requiredValueForKey:(id)arg1;
 - (BOOL)hasValueForKey:(id)arg1;
 - (id)valueForKey:(id)arg1 error:(id *)arg2;
 - (id)valueForKey:(id)arg1;

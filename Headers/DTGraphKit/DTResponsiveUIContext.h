@@ -6,24 +6,47 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableSet;
+@class NSMutableSet, NSSet;
 
 @interface DTResponsiveUIContext : NSObject
 {
-    BOOL _activeRequestsChanged;
-    BOOL _renderFrameMustRun;
-    BOOL _mainThreadCallbackPending;
-    NSMutableSet *_providers;
+    NSMutableSet *_providersNeedingExposure;
     NSMutableSet *_providersWithNewRequests;
+    NSMutableSet *_providersNeedingRender;
+    float _load;
+    // Error parsing type: {atomic_flag="_Value"AB}, name: _noProvidersNeedFulfillment
+    // Error parsing type: {atomic_flag="_Value"AB}, name: _noProvidersHaveRequests
+    BOOL _highLoadDetected;
+    BOOL _renderFrameMustRun;
+    BOOL _deliveryFrameMustRun;
+    BOOL _dynamicFrameRatesEnabled;
+    int _frequencyDivider;
+    int _requestsFulfilled;
 }
 
-@property(nonatomic) BOOL mainThreadCallbackPending; // @synthesize mainThreadCallbackPending=_mainThreadCallbackPending;
+@property(nonatomic) int requestsFulfilled; // @synthesize requestsFulfilled=_requestsFulfilled;
+@property(nonatomic) int frequencyDivider; // @synthesize frequencyDivider=_frequencyDivider;
+@property(nonatomic) BOOL dynamicFrameRatesEnabled; // @synthesize dynamicFrameRatesEnabled=_dynamicFrameRatesEnabled;
+@property(nonatomic) BOOL deliveryFrameMustRun; // @synthesize deliveryFrameMustRun=_deliveryFrameMustRun;
 @property(nonatomic) BOOL renderFrameMustRun; // @synthesize renderFrameMustRun=_renderFrameMustRun;
-@property(nonatomic) BOOL activeRequestsChanged; // @synthesize activeRequestsChanged=_activeRequestsChanged;
-@property(readonly, nonatomic) NSMutableSet *providersWithNewRequests; // @synthesize providersWithNewRequests=_providersWithNewRequests;
-@property(readonly, nonatomic) NSMutableSet *providers; // @synthesize providers=_providers;
 - (void).cxx_destruct;
 - (void)dealloc;
+- (void)didFulfillProvider:(id)arg1;
+- (void)providerNeedsExposure:(id)arg1;
+- (void)didExposeProviders:(id)arg1;
+- (void)didExposeProvider:(id)arg1;
+- (void)handOffRequests;
+- (void)providerInvalidated:(id)arg1;
+- (void)providerHasRequest:(id)arg1;
+- (BOOL)canHandOffToRender;
+- (BOOL)canExtendRenderWork;
+- (void)demandSatisfied;
+- (void)missedFramesDetected;
+- (void)highLoadDetected;
+- (void)_reduceFrequency;
+@property(readonly, nonatomic) NSSet *providersWithNewRequests;
+@property(readonly, nonatomic) NSSet *providersNeedingRender;
+@property(readonly, nonatomic) NSSet *providersNeedingExposure;
 - (id)init;
 
 @end

@@ -6,11 +6,11 @@
 
 #import <IDEKit/IDENavigatorOutlineView.h>
 
-@class IDEBreakpointNavigator, IDENavigableItem;
+@class IDEBreakpointNavigableNavigator, IDENavigableItem;
 
 @interface IDEBreakpointNavigatorOutlineView : IDENavigatorOutlineView
 {
-    IDEBreakpointNavigator *_breakpointNavigator;
+    IDEBreakpointNavigableNavigator *_breakpointNavigator;
     IDENavigableItem *_itemRequestedToBeCollapsed;
     BOOL _isCollapsingAllChildren;
 }

@@ -6,39 +6,43 @@
 
 #import <IDEFoundation/IDEContainer.h>
 
-@class DVTDispatchLock;
+@class _IDEFolderContents;
 
 @interface IDEFolder : IDEContainer
 {
-    DVTDispatchLock *_generationLock;
+    _IDEFolderContents *_contents;
+    BOOL _readingFromFilesystem;
     int _superclassActivity;
-    unsigned long long _updateOperationGeneration;
     BOOL _didSetSuperclassActivity;
-    unsigned long long _readingCount;
 }
 
-+ (unsigned long long)assertionBehaviorForKeyValueObservationsAtEndOfEvent;
 + (BOOL)supportsMultipleInstancesPerFilePath;
 + (BOOL)_observeContainerDataFilePathsForChanges;
 + (BOOL)_THREAD_shouldAddFileWithName:(id)arg1;
++ (unsigned long long)assertionBehaviorForKeyValueObservationsAtEndOfEvent;
 + (id)containerTypeDisplayName;
 + (id)containerFileDataType;
++ (BOOL)foldersShouldSortFirst;
 + (void)initialize;
 - (void).cxx_destruct;
-- (void)primitiveInvalidate;
-- (void)_respondToFileChangeOnDiskWithFilePath:(id)arg1;
-- (id)initWithFilePath:(id)arg1 extension:(id)arg2 workspace:(id)arg3 options:(id)arg4 error:(id *)arg5;
-- (void)_filePathDidChange:(id)arg1;
-- (void)_decrementReadingCount;
-- (void)_incrementReadingCount;
-@property(readonly, nonatomic) BOOL isReading;
+- (void)_endReadingActivity;
+- (void)_beginReadingActivity;
 - (void)setActivity:(int)arg1;
-- (id)_THREAD_fileNamesAtFilePath:(id)arg1;
-- (id)newFileReferenceForChildFilePath:(id)arg1;
+- (id)sortedSubitemsForSubitems:(id)arg1;
+- (void)_sortSubitems;
+- (void)_respondToFileChangeOnDiskWithFilePath:(id)arg1;
+- (void)_updateSubitemsFromContent;
+- (void)_filePathDidChange:(id)arg1;
+- (void)_addSubcontainer:(id)arg1;
 - (void)_updateSubitemsWithFileNames:(id)arg1;
-- (void)_addFileReferenceNamed:(id)arg1;
+- (id)_addFileReferenceNamed:(id)arg1;
+- (id)_itemWithFileName:(id)arg1;
 - (id)_itemBaseFilePathForFilePath:(id)arg1;
 - (id)createRootGroup;
+- (id)newFileReferenceForChildFilePath:(id)arg1;
+- (void)primitiveInvalidate;
+- (id)initWithFilePath:(id)arg1 extension:(id)arg2 workspace:(id)arg3 options:(id)arg4 error:(id *)arg5;
+- (BOOL)openQuickly_shouldIncludeAsResult;
 
 @end
 

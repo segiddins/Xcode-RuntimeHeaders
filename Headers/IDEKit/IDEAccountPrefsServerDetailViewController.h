@@ -6,7 +6,7 @@
 
 #import <IDEKit/IDEViewController.h>
 
-@class DVTBorderedView, NSTextField;
+@class DVTBorderedView, NSBox, NSTextField;
 
 @interface IDEAccountPrefsServerDetailViewController : IDEViewController
 {
@@ -14,15 +14,18 @@
     NSTextField *_textField;
     DVTBorderedView *_borderedView;
     NSTextField *_largeTextField;
+    NSBox *_separator1;
+    NSBox *_separator2;
 }
 
+@property(retain) NSBox *separator2; // @synthesize separator2=_separator2;
+@property(retain) NSBox *separator1; // @synthesize separator1=_separator1;
 @property __weak NSTextField *largeTextField; // @synthesize largeTextField=_largeTextField;
 @property(retain) DVTBorderedView *borderedView; // @synthesize borderedView=_borderedView;
 @property __weak NSTextField *textField; // @synthesize textField=_textField;
 @property __weak NSTextField *addressTextField; // @synthesize addressTextField=_addressTextField;
 - (void).cxx_destruct;
 - (id)contextMenu;
-- (void)primitiveInvalidate;
 - (void)setRepresentedObject:(id)arg1;
 - (void)loadView;
 

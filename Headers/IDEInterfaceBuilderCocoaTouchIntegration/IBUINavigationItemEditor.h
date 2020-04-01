@@ -20,8 +20,7 @@
 @property(nonatomic) struct CGRect dragTargetViewInsertionFrame; // @synthesize dragTargetViewInsertionFrame=_dragTargetViewInsertionFrame;
 @property(copy, nonatomic) NSString *lastDropTargetRelation; // @synthesize lastDropTargetRelation=_lastDropTargetRelation;
 - (void).cxx_destruct;
-- (id)stringEditingContextForEvent:(id)arg1;
-- (id)titleKeyPathForPoint:(struct CGPoint)arg1;
+- (id)editableStringAreas;
 - (BOOL)interceptEvent:(id)arg1;
 - (void)_dragObjects:(id)arg1 withEvent:(id)arg2 lastMouseDown:(id)arg3 draggedImageState:(id)arg4 effectiveHitObject:(id)arg5 originalRelation:(id)arg6 originalRelationValue:(id)arg7;
 - (id)_barButtonItemAtPoint:(struct CGPoint)arg1;
@@ -39,13 +38,12 @@
 - (id)draggedImageState:(id)arg1;
 - (id)initialDragImageState:(id)arg1;
 - (id)draggedImageStateForViews:(id)arg1 withName:(id)arg2;
-- (id)draggedImageStateForBarButtonItems:(id)arg1 itemRelation:(id)arg2 withName:(id)arg3;
+- (id)draggedImageStateWithName:(id)arg1 forBarButtonItems:(id)arg2 itemRelation:(id)arg3;
 - (id)decodeBarButtonItemsFromPasteboard:(id)arg1 context:(id)arg2;
 - (id)targetRelationForDragInfo:(id)arg1;
 - (id)targetRelationForDragInfo:(id)arg1 pasteboardTypeOut:(id *)arg2;
 - (id)targetRelationForPoint:(struct CGPoint)arg1 andPasteboard:(id)arg2 pasteboardTypeOut:(id *)arg3;
-- (id)navigationBarForMeasuring;
-- (id)navigationBar;
+- (id)imagesAfterAlteringWithClonedNavigationItem:(CDUnknownBlockType)arg1;
 - (id)editedNavigationItem;
 
 @end

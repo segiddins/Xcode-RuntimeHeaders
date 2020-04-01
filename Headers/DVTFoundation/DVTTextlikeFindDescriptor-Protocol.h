@@ -7,6 +7,6 @@
 #import <DVTFoundation/NSObject-Protocol.h>
 
 @protocol DVTTextlikeFindDescriptor <NSObject>
-@property(readonly) int matchStyle;
+@property(readonly) unsigned long long matchStyle;
 @end
 

@@ -24,7 +24,6 @@
 - (void).cxx_destruct;
 - (void)_changeThreadNavigableItem:(id)arg1;
 - (id)subtitle;
-- (id)keyPathsAffectingValueForSubtitle;
 - (id)childRepresentedObjects;
 - (void)primitiveInvalidate;
 - (BOOL)isLeaf;

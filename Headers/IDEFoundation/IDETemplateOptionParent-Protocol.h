@@ -9,8 +9,8 @@
 @class IDETemplateOption, IDEWorkspace, NSString;
 
 @protocol IDETemplateOptionParent <NSObject>
+@property(retain, nonatomic) IDEWorkspace *workspace;
+@property(readonly, copy) NSString *identifier;
 - (void)valueDidChangeForOption:(IDETemplateOption *)arg1;
-- (IDEWorkspace *)workspace;
-- (NSString *)identifier;
 @end
 

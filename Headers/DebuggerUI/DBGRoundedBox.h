@@ -14,12 +14,16 @@
     double *_pattern;
     long long _count;
     double _phase;
+    NSColor *_fillColor;
+    double _borderRadius;
 }
 
+@property double borderRadius; // @synthesize borderRadius=_borderRadius;
+@property(retain) NSColor *color; // @synthesize color=_color;
 - (void).cxx_destruct;
+@property(retain) NSColor *fillColor; // @synthesize fillColor=_fillColor;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)setLineDash:(double *)arg1 count:(long long)arg2 phase:(double)arg3;
-- (void)setColor:(id)arg1;
 - (void)dealloc;
 
 @end

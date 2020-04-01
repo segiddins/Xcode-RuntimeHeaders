@@ -6,12 +6,12 @@
 
 #import <objc/NSObject.h>
 
-#import <GPUToolsServices/NSCoding-Protocol.h>
 #import <GPUToolsServices/NSCopying-Protocol.h>
+#import <GPUToolsServices/NSSecureCoding-Protocol.h>
 
 @class DYDeviceInfo, DYInvestigatorStatistics, DYOverviewMeasurementsPerSample, NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSNumber, NSString;
 
-@interface DYInvestigatorCaseConfigData : NSObject <NSCopying, NSCoding>
+@interface DYInvestigatorCaseConfigData : NSObject <NSCopying, NSSecureCoding>
 {
     NSMutableArray *_overviewSamples;
     NSMutableDictionary *_reportData;
@@ -33,6 +33,7 @@
     DYInvestigatorStatistics *_overviewCAWaitTime;
 }
 
++ (BOOL)supportsSecureCoding;
 @property(readonly, nonatomic) NSDictionary *reportData; // @synthesize reportData=_reportData;
 @property(retain, nonatomic) DYInvestigatorStatistics *overviewCAWaitTime; // @synthesize overviewCAWaitTime=_overviewCAWaitTime;
 @property(retain, nonatomic) DYInvestigatorStatistics *overviewFrameTime; // @synthesize overviewFrameTime=_overviewFrameTime;
@@ -50,6 +51,7 @@
 - (void)reportDataCommit;
 - (void)reportDataRemoveObjectForKey:(id)arg1;
 - (void)reportDataSetObject:(id)arg1 forKey:(id)arg2;
+- (void)reportDataUpdateObject:(id)arg1 forKey:(id)arg2;
 - (void)debugPrintFormatted;
 - (id)totalFrameRateArray;
 - (void)addDisplayLinks:(id)arg1;

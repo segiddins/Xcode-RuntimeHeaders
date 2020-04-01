@@ -10,7 +10,6 @@
 
 @interface IDESchemeActionCodeCoverageTarget : DVTCoverageDataContainer
 {
-    NSNumber *_lineCoverage;
     NSNumber *_functionCoverage;
     NSString *_buildableIdentifier;
     NSArray *_sourceFiles;
@@ -18,20 +17,22 @@
     NSString *_fullDescription;
 }
 
++ (BOOL)supportsSecureCoding;
 @property(retain, nonatomic) NSString *fullDescription; // @synthesize fullDescription=_fullDescription;
-@property(retain, nonatomic) NSString *productPath; // @synthesize productPath=_productPath;
+@property(readonly, nonatomic) NSString *productPath; // @synthesize productPath=_productPath;
 @property(readonly, nonatomic) NSArray *sourceFiles; // @synthesize sourceFiles=_sourceFiles;
 @property(retain, nonatomic) NSString *buildableIdentifier; // @synthesize buildableIdentifier=_buildableIdentifier;
 - (void).cxx_destruct;
 - (id)description;
 @property(readonly, nonatomic) NSNumber *functionCoverage;
-- (id)lineCoverage;
 - (id)functions;
-- (id)lines;
-- (id)aggregateWithCodeCoverageTarget:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithBuildableIdentifier:(id)arg1 name:(id)arg2 productPath:(id)arg3 sourceFiles:(id)arg4;
+- (id)makeCopyWithChildren:(id)arg1;
+- (id)diffableChildren;
+- (id)diffIdentifier;
+- (unsigned long long)diffType;
 
 @end
 

@@ -12,16 +12,16 @@
 {
 }
 
-- (id)summaryPaneNextButtonTitleOverride;
+- (id)distributionOptionIdentifiers;
 - (BOOL)supportsManifestDistribution;
-- (id)packagingStepIdentifier;
+- (id)packagingStepIdentifierForDestination:(long long)arg1;
 - (id)exportStepName;
-- (unsigned long long)provisioningProfilePurpose;
+- (id)provisioningProfilePurpose;
 - (id)provisioningProfilePlatform;
-- (BOOL)wantsProvisioningProfiles;
+- (long long)wantsProvisioningProfiles;
 - (id)installerCertificateKind;
 - (id)certificateKind;
-- (id)orderedDistributionStepClassNames;
+- (id)orderedDistributionStepClassNamesForDestination:(long long)arg1;
 - (id)subtitle;
 - (id)shortTitle;
 - (id)title;

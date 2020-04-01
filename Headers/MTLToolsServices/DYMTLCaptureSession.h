@@ -9,8 +9,10 @@
 @interface DYMTLCaptureSession : DYCaptureSession
 {
     unsigned long long _captureCommandQueueAddress;
+    unsigned long long _captureScopeAddress;
 }
 
+@property(nonatomic) unsigned long long captureScopeAddress; // @synthesize captureScopeAddress=_captureScopeAddress;
 @property(nonatomic) unsigned long long captureCommandQueueAddress; // @synthesize captureCommandQueueAddress=_captureCommandQueueAddress;
 - (void)_saveAPISpecificData:(id)arg1;
 - (void)_setupFinalConfigurationDictionary:(id)arg1;

@@ -15,6 +15,7 @@
 
 + (BOOL)isObjectValidDestination:(id)arg1;
 + (BOOL)isObjectValidSource:(id)arg1;
++ (id)ibDefaultImageForInstance:(id)arg1 targetRuntime:(id)arg2;
 + (id)classIdentifier;
 @property(nonatomic) unsigned long long preferredEdge; // @synthesize preferredEdge=_preferredEdge;
 @property(nonatomic) long long popoverBehavior; // @synthesize popoverBehavior=_popoverBehavior;

@@ -6,19 +6,20 @@
 
 #import <XCSUI/NSObject-Protocol.h>
 
-@class IDEWorkspace, IDEWorkspaceTabController, NSString, NSURL;
+@class IDEWorkspace, IDEWorkspaceTabController, NSAlert, NSString, NSURL, NSWindow;
 
 @protocol IDEContinuousIntegrationActionManager <NSObject>
-- (void)hostedRepositoriesOnService:(id)arg1 completionHandler:(void (^)(NSArray *, NSError *))arg2;
-- (void)canCreateHostedRepositoriesOnService:(id)arg1 completionHandler:(void (^)(BOOL, NSError *))arg2;
-- (void)createHostedRepositoryWithName:(NSString *)arg1 onService:(id)arg2 completionHandler:(void (^)(BOOL, NSError *, DVTSourceControlRemoteRepository *))arg3;
+- (NSAlert *)alertForFailureToHandleXCBotURLRequestOnHost:(NSURL *)arg1;
+- (void)showBot:(id)arg1 window:(NSWindow *)arg2;
+- (void)showIntegrationWithID:(NSString *)arg1 bot:(id)arg2 window:(NSWindow *)arg3;
 - (NSURL *)webURLForIntegration:(id)arg1;
 - (NSURL *)webURLForBot:(id)arg1;
-- (BOOL)canUserDuplicateBot:(id)arg1;
-- (BOOL)canUserCreateAndDeleteBotsOnServiceForBotOrIntegration:(id)arg1;
+- (BOOL)canUserCreateAndDeleteBotsOnService:(id)arg1;
 - (NSString *)projectNameInBlueprintForBot:(id)arg1;
-- (void)serviceMatchingHostName:(NSString *)arg1 withTimeout:(double)arg2 completionBlock:(void (^)(BOOL, NSError *, id))arg3;
+- (void)botMatchingID:(NSString *)arg1 withTimeout:(double)arg2 completion:(void (^)(BOOL, NSError *, id))arg3;
+- (void)fetchMostRecentIntegrationForBot:(id)arg1 onService:(id)arg2 withCompletionBlock:(void (^)(BOOL, NSError *, id))arg3;
 - (void)fetchIntegrationForId:(NSString *)arg1 onService:(id)arg2 withCompletionBlock:(void (^)(BOOL, NSError *, id))arg3;
+- (void)populateIntegrations:(unsigned long long)arg1 forBot:(id)arg2 andIntegrationId:(NSString *)arg3 onService:(id)arg4 withCompletionBlock:(void (^)(BOOL, NSError *, id))arg5;
 - (void)fetchBotForBotId:(NSString *)arg1 onService:(id)arg2 withCompletionBlock:(void (^)(BOOL, NSError *, id))arg3;
 - (void)deleteIntegration:(id)arg1 withCompletionBlock:(void (^)(BOOL, NSError *, NSString *, NSString *))arg2;
 - (void)cancelIntegration:(id)arg1 withCompletionBlock:(void (^)(BOOL, NSError *, NSString *, NSString *))arg2;

@@ -6,18 +6,20 @@
 
 #import <IDEKit/IDEViewController.h>
 
-@class IDEScheme;
+@class IDEScheme, IDESchemeAction;
 
 @interface IDELaunchActionOptionViewController : IDEViewController
 {
     IDEScheme *_scheme;
+    IDESchemeAction *_schemeAction;
 }
 
 + (BOOL)availableForScheme:(id)arg1;
+@property(readonly) IDESchemeAction *schemeAction; // @synthesize schemeAction=_schemeAction;
 @property(readonly) IDEScheme *scheme; // @synthesize scheme=_scheme;
 - (void).cxx_destruct;
 - (void)primitiveInvalidate;
-- (id)initWithScheme:(id)arg1;
+- (id)initWithScheme:(id)arg1 schemeAction:(id)arg2;
 - (id)initUsingDefaultNib;
 
 @end

@@ -6,12 +6,14 @@
 
 #import <DebuggerFoundation/DBGViewSurface.h>
 
+#import <DebuggerUI/DBGHierarchyNavigationProxiedObject-Protocol.h>
 #import <DebuggerUI/IBAutolayoutItem-Protocol.h>
 
 @class NSArray, NSObject, NSSet, NSString;
 @protocol IBAutolayoutItem, IBCollection, IBOrderedCollection;
 
-@interface DBGViewSurface (IBAutolayoutItemProtocolCompliance) <IBAutolayoutItem>
+@interface DBGViewSurface (IBAutolayoutItemProtocolCompliance) <IBAutolayoutItem, DBGHierarchyNavigationProxiedObject>
+@property(readonly, nonatomic) NSArray *ibCandidateRedundantConstraintsFromHostedEngine;
 @property(readonly, nonatomic) BOOL ibIgnoreNearestNeighborProximityThreshold;
 @property(readonly, nonatomic) NSSet *ibFallbackViewsForCandidateConstraintGenerationForFailedArbitration;
 @property(readonly, nonatomic) id ibWindowForArbitration;
@@ -21,6 +23,8 @@
 @property(nonatomic) double ibShadowedHorizontalContentHuggingPriority;
 @property(readonly, nonatomic) BOOL ibExternalEffectiveTranslatesAutoresizingMaskIntoConstraints;
 @property(nonatomic) BOOL ibExternalExplicitTranslatesAutoresizingMaskIntoConstraints;
+@property(nonatomic) struct CGRect ibDesignBounds;
+@property(nonatomic) struct CGRect ibDesignFrame;
 @property(readonly, nonatomic) id <IBCollection> ibTurnedOnButPossiblyUninstalledReferencingConstraints;
 @property(readonly, nonatomic) id <IBCollection> ibInstalledReferencingConstraints;
 @property(readonly, nonatomic) id <IBCollection> ibCandidateReferencingConstraints;
@@ -41,13 +45,16 @@
 - (id)ibNextAncestorItemForFindingReferencingConstraintsInLayoutInfo:(id)arg1;
 - (void)ibInvalidateAutoresizingMaskConstraints;
 - (void)setNeedsUpdateConstraints;
-- (void)ibDidCreateRuntimeConstraint:(id)arg1 referencingItem:(id)arg2 context:(id)arg3;
 - (id)ibEffectiveItemForRuntimeConstraintAdjustingConstant:(double *)arg1 attribute:(unsigned long long *)arg2 orConstraintClassIfNeeded:(Class *)arg3 context:(id)arg4;
 - (unsigned long long)ibAmbiguityStatusForRepresentationOfItem:(id)arg1 inEngine:(id)arg2;
+@property(readonly, nonatomic) long long ibFrameDecisionStrategy;
+@property(readonly, nonatomic) BOOL ibIsSelfManagedContainerInEngine;
 - (BOOL)ibShouldIgnoreScrollableContentHeightAmbiguityForRepresentationOfItem:(id)arg1 inEngine:(id)arg2;
 - (BOOL)ibShouldIgnoreScrollableContentWidthAmbiguityForRepresentationOfItem:(id)arg1 inEngine:(id)arg2;
+- (BOOL)ibShouldIgnoreAmbiguityAndMisplacementIssuesBecauseLayoutIsExplicitlyManaged;
 - (unsigned long long)ibAllowedSiblingEdgesForGuidesToSelectedItems:(id)arg1;
 - (BOOL)ibAllowsSiblingGuidesToSelectedItems:(id)arg1 ofType:(long long)arg2;
+- (BOOL)ibAllowsConstraintSpacingFromInsideEdgesForSiblings;
 - (BOOL)ibShouldConsiderGuidesToEdgeWithAttribute:(unsigned long long)arg1 fromEdgeWithAttribute:(unsigned long long)arg2 ofSelectedItems:(id)arg3;
 - (id)ibViewForAncestorViewEdgeMovementQuestionsOfSubview:(id)arg1;
 - (struct CGRect)ibLayoutFrameForFrame:(struct CGRect)arg1;
@@ -65,16 +72,16 @@
 - (void)addConstraints:(id)arg1;
 - (void)addConstraint:(id)arg1;
 @property(readonly, nonatomic) NSArray *constraints;
-- (CDUnion_42e99c75)convertKnobPosition:(CDUnion_42e99c75)arg1 fromView:(struct NSView *)arg2;
-- (CDUnion_42e99c75)convertKnobPosition:(CDUnion_42e99c75)arg1 toView:(struct NSView *)arg2;
-- (unsigned int)convertRectEdge:(unsigned int)arg1 fromView:(struct NSView *)arg2;
-- (unsigned int)convertRectEdge:(unsigned int)arg1 toView:(struct NSView *)arg2;
-- (CDStruct_d2b197d1)convertInset:(CDStruct_d2b197d1)arg1 fromView:(struct NSView *)arg2;
-- (CDStruct_d2b197d1)convertInset:(CDStruct_d2b197d1)arg1 toView:(struct NSView *)arg2;
-- (struct CGRect)convertRect:(struct CGRect)arg1 fromView:(struct NSView *)arg2;
-- (struct CGSize)convertSize:(struct CGSize)arg1 toView:(struct NSView *)arg2;
-- (struct CGSize)convertSize:(struct CGSize)arg1 fromView:(struct NSView *)arg2;
-- (struct CGPoint)convertPoint:(struct CGPoint)arg1 fromView:(struct NSView *)arg2;
+- (CDUnion_42e99c75)convertKnobPosition:(CDUnion_42e99c75)arg1 fromView:(id)arg2;
+- (CDUnion_42e99c75)convertKnobPosition:(CDUnion_42e99c75)arg1 toView:(id)arg2;
+- (unsigned int)convertRectEdge:(unsigned int)arg1 fromView:(id)arg2;
+- (unsigned int)convertRectEdge:(unsigned int)arg1 toView:(id)arg2;
+- (CDStruct_d2b197d1)convertInset:(CDStruct_d2b197d1)arg1 fromView:(id)arg2;
+- (CDStruct_d2b197d1)convertInset:(CDStruct_d2b197d1)arg1 toView:(id)arg2;
+- (struct CGRect)convertRect:(struct CGRect)arg1 fromView:(id)arg2;
+- (struct CGSize)convertSize:(struct CGSize)arg1 toView:(id)arg2;
+- (struct CGSize)convertSize:(struct CGSize)arg1 fromView:(id)arg2;
+- (struct CGPoint)convertPoint:(struct CGPoint)arg1 fromView:(id)arg2;
 - (CDUnion_42e99c75)ib_convertKnobPosition:(CDUnion_42e99c75)arg1 fromItem:(id)arg2;
 - (CDUnion_42e99c75)ib_convertKnobPosition:(CDUnion_42e99c75)arg1 toItem:(id)arg2;
 - (unsigned int)ib_convertRectEdge:(unsigned int)arg1 fromItem:(id)arg2;
@@ -89,7 +96,7 @@
 - (void)setFrameSize:(struct CGSize)arg1;
 - (struct CGRect)alignmentRectForFrame:(struct CGRect)arg1;
 - (BOOL)ibSupportsLayoutMargins;
-- (struct _IBEdgeInsets)ibLayoutMargins;
+- (struct NSEdgeInsets)ibLayoutMargins;
 - (BOOL)ibSupportsFirstBaseline;
 - (BOOL)ibIsBaselineAtIndex:(long long)arg1 inMotionWithKnob:(CDUnion_42e99c75)arg2;
 - (double)ibBaselineAtIndex:(long long)arg1 inCoordinateSpaceOfItem:(id)arg2;
@@ -106,6 +113,15 @@
 - (id)ibEffectiveWindowForConversions;
 @property(readonly, nonatomic, getter=isFlipped) BOOL flipped;
 @property(readonly, nonatomic) struct CGRect ibLayoutBounds;
+- (id)descriptiveAmbiguityDescriptionIncludingReferenceToView:(BOOL)arg1;
+- (id)plainAmbiguityDescriptionIncludingReferenceToView:(BOOL)arg1;
+- (id)ambiguityDescriptionIncludingReferenceToView:(BOOL)arg1;
+- (BOOL)_needsImageSnapshot;
+- (unsigned long long)_snapshotType;
+- (id)layerSnapshot;
+- (id)renderedLayerSnapshotWithSublayers;
+- (id)renderedLayerSnapshot;
+- (Class)proxyHierarchyItemClass;
 
 // Remaining properties
 @property(readonly, nonatomic) struct CGRect bounds;

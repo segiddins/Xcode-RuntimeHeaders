@@ -8,9 +8,12 @@
 
 @interface IDEProvisioningPermissionsFailureUserAction : IDEProvisioningUserAction
 {
+    long long _requiredRole;
 }
 
-+ (id)permissionsFailureUserActionWithSteps:(id)arg1 context:(id)arg2;
++ (id)permissionsFailureUserActionWithSteps:(id)arg1 permissionsError:(id)arg2 context:(id)arg3;
+@property(readonly) long long requiredRole;
+- (id)userActionName;
 - (id)userActionMessage;
 - (id)userActionTitle;
 - (BOOL)preflightWithError:(id *)arg1;

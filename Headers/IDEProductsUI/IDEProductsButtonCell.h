@@ -13,6 +13,7 @@
 - (struct CGRect)titleRectForBounds:(struct CGRect)arg1;
 - (id)attributedTitle;
 - (void)drawBezelWithFrame:(struct CGRect)arg1 inView:(id)arg2;
+- (BOOL)_highlighted;
 
 @end
 

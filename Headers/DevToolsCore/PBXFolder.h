@@ -6,13 +6,8 @@
 
 #import <DevToolsCore/PBXContainer.h>
 
-@class NSMutableArray;
-
 @interface PBXFolder : PBXContainer
 {
-    NSMutableArray *_acceptedPathExtensionsCache;
-    NSMutableArray *_childrenWithAcceptedPathExtensionsCache;
-    BOOL _needsToValidateChildren;
 }
 
 + (id)_invisibleChildrenFilterExpression;
@@ -20,12 +15,8 @@
 + (id)folderForPath:(id)arg1;
 + (id)folderForPath:(id)arg1 withResolvedPath:(id)arg2;
 - (void)invalidateAbsolutePathCache;
-- (id)rootGroupChildrenWithPathExtensions:(id)arg1;
 - (id)children;
-- (void)validateChildren;
 - (id)rootGroup;
-- (void)dealloc;
-- (id)init;
 
 @end
 

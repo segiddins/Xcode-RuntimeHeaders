@@ -22,9 +22,11 @@
 @property(readonly, nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(readonly, nonatomic) NSObject<IBAutolayoutItem> *view; // @synthesize view=_view;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) BOOL affectsVerticalAxis;
 @property(readonly, nonatomic) BOOL affectsContentCompressionResistancePriority;
 @property(readonly, nonatomic) BOOL affectsContentHuggingPriority;
 @property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
 - (BOOL)isEqualToContentSizePriorityChange:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (void)encodeWithBinaryArchiver:(id)arg1;
@@ -33,7 +35,6 @@
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 @end

@@ -4,63 +4,44 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Foundation/NSObject.h>
+#import <objc/NSObject.h>
 
+#import <DevToolsCore/IDEBuildCommands-Protocol.h>
 #import <DevToolsCore/XCWorkQueueCommands-Protocol.h>
 
-@class NSString, XCWorkQueue;
+@class NSString, PBXTargetBuildContext, XCMacroExpansionScope;
 
-@interface XCWorkQueueCommand : NSObject <XCWorkQueueCommands>
+@interface XCWorkQueueCommand : NSObject <XCWorkQueueCommands, IDEBuildCommands>
 {
-    XCWorkQueue *_workQueue;
-    unsigned long long _workQueueCommandTag;
-    unsigned long long _waitCount;
-    unsigned long long _estimatedMemoryUse;
-    BOOL _rerunCommand;
-    BOOL _softError;
+    XCMacroExpansionScope *_macroExpansionScope;
 }
 
+@property(retain) XCMacroExpansionScope *macroExpansionScope; // @synthesize macroExpansionScope=_macroExpansionScope;
+- (void).cxx_destruct;
+- (id)messageFormatForFailingCommandWithNoErrors;
+- (CDUnknownBlockType)processDependencyInfoFileIfNecessaryWithCommandInvocationSucceeded:(BOOL)arg1;
 - (id)instantiatedCommandResultsPostprocessor;
 - (id)instantiatedCommandOutputParserWithLogSectionRecorder:(id)arg1;
+- (id)progressDescription;
+- (id)executionDescription;
 - (id)descriptionForWorkQueueLog;
 - (id)subprocessCommandLineForProcessing;
-- (void)didDeactivateInWorkQueue:(id)arg1 didCompleteSuccessfully:(BOOL)arg2;
-- (void)setSoftError:(BOOL)arg1;
-- (BOOL)softError;
 - (void)commandInvocationDidEnd:(id)arg1 successfully:(BOOL)arg2;
-- (void)commandInvocation:(id)arg1 didEmitBytes:(const char *)arg2 length:(unsigned long long)arg3;
 - (void)commandInvocationWillStart:(id)arg1;
-- (id)sharedMemoryName;
-- (id)predictiveProcessingValiditySignature;
-- (id)predictiveProcessingInputFilePath;
-- (id)predictiveProcessingCandidateFilePath;
-- (id)createStartedCommandInvocationInSlot:(unsigned long long)arg1 ofWorkQueueOperation:(id)arg2;
-- (void)willActivateInWorkQueue:(id)arg1;
-- (void)decrementWaitCountsOfDependingNodes;
-- (void)incrementWaitCountsOfDependingNodes;
-- (void)decrementWaitCount;
-- (void)incrementWaitCount;
-- (unsigned long long)waitCount;
-- (BOOL)isBlockedOnInputOrOutputFileLocks;
-- (BOOL)outputFilesHaveBeenUpdated;
-- (BOOL)isReadyForProcessing;
-- (void)addCommandIdentToBuildStateStoreDependencyList;
-- (void)propagateCachedOutputs;
-- (BOOL)shouldPropagateCachedOutputs;
-- (BOOL)hasCachedOutputs;
-- (unsigned long long)estimatedMemoryUse;
-- (void)setEstimatedMemoryUse:(unsigned long long)arg1;
+- (id)createStartedCommandInvocationWithParameters:(id)arg1;
+- (void)prepareForRunning;
+- (BOOL)shouldUniqueOnOutputFiles;
+- (id)activityLogSectionForCachedOutputs;
+- (BOOL)wasAnyInputNodeCreatedInBuildWithIdentifier:(id)arg1;
+- (BOOL)hasVirtualOutputNode;
+@property(readonly) BOOL needsToRun;
+@property(readonly) BOOL canRunInParallelWithOtherCommands;
+- (id)commandTypeGroupingString;
 - (id)ruleInfo;
+@property(readonly) unsigned long long buildBucketNumber;
 - (unsigned long long)phaseNumber;
-- (void)rerunCommand;
-- (void)setWorkQueueCommandTag:(unsigned long long)arg1;
-- (unsigned long long)workQueueCommandTag;
-- (void)willBeRemovedFromWorkQueue:(id)arg1;
-- (void)wasAddedToWorkQueue:(id)arg1;
-- (id)workQueue;
-- (void)finalize;
-- (void)dealloc;
-- (id)init;
+- (unsigned long long)commandNumber;
+@property(readonly) PBXTargetBuildContext *buildContext;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

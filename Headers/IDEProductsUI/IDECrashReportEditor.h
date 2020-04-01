@@ -6,7 +6,7 @@
 
 #import <IDEKit/IDEEditor.h>
 
-#import "DVTReplacementViewDelegate-Protocol.h"
+#import <IDEProductsUI/DVTReplacementViewDelegate-Protocol.h>
 
 @class DVTReplacementView, NSString;
 

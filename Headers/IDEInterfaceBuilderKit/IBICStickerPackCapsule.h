@@ -4,27 +4,15 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <IDEInterfaceBuilderKit/IBICGroupedRepCapsule.h>
+#import <IDEInterfaceBuilderKit/IBICAbstractCollectionCapsule.h>
 
-@class IBICStickerPackCapsuleDropOverlay, NSMutableArray;
-
-@interface IBICStickerPackCapsule : IBICGroupedRepCapsule
+@interface IBICStickerPackCapsule : IBICAbstractCollectionCapsule
 {
-    NSMutableArray *_dropIndicators;
-    IBICStickerPackCapsuleDropOverlay *_dropOverlay;
 }
 
-- (void).cxx_destruct;
-- (void)addSubview:(id)arg1;
-- (void)layoutBottomUp;
-- (void)drawRect:(struct CGRect)arg1;
-- (void)clearDropIndicators;
-- (void)addDropIndicator:(id)arg1;
-- (void)addDropIndicators:(id)arg1;
-- (void)setDropIndicators:(id)arg1;
-- (id)dropIndicators;
+- (id)accessibilityIdentifier;
+- (id)accessibilityLabel;
 - (BOOL)getAssetIdentifier:(id *)arg1 andDropLocation:(long long *)arg2 nearestPoint:(struct CGPoint)arg3 allowingDropOnto:(BOOL)arg4;
-- (id)initWithFrame:(struct CGRect)arg1;
 
 @end
 

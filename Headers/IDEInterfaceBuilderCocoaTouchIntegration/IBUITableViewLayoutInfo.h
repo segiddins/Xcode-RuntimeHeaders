@@ -8,10 +8,11 @@
 
 #import <IDEInterfaceBuilderCocoaTouchIntegration/NSCoding-Protocol.h>
 
-@class NSDictionary;
+@class NSArray, NSDictionary;
 
 @interface IBUITableViewLayoutInfo : NSObject <NSCoding>
 {
+    NSArray *_sections;
     NSDictionary *_sectionFrames;
     NSDictionary *_headerFrames;
     NSDictionary *_footerFrames;
@@ -19,12 +20,15 @@
 }
 
 - (void).cxx_destruct;
+- (id)description;
 - (id)frameForSection:(id)arg1;
 - (id)footerFrameForSection:(id)arg1;
 - (id)headerFrameForSection:(id)arg1;
 - (id)frameForCell:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)tableLayoutInfoByApplyingHeightDelta:(double)arg1 toCell:(id)arg2;
+- (id)initWithSections:(id)arg1 sectionFrames:(id)arg2 headerFrames:(id)arg3 footerFrames:(id)arg4 cellFrames:(id)arg5;
 - (id)initWithTableLayoutInfo:(id)arg1 andSections:(id)arg2;
 
 @end

@@ -6,30 +6,22 @@
 
 #import <IDEInterfaceBuilderKit/IBStructureViewController.h>
 
-@class DVTBorderedView, DVTSearchField, IBDockViewController, IBNavigationOutlineViewController, IDEViewController, NSLayoutConstraint, NSNumber, NSView;
+@class IBDockViewController, IBNavigationOutlineViewController, IDEViewController, NSNumber, NSView;
 @protocol IBHybridStructureSelectionProvider;
 
 @interface IBHybridStructureViewController : IBStructureViewController
 {
     NSView *_outlineAreaView;
-    DVTBorderedView *_borderedView;
-    DVTSearchField *_filterField;
     IBDockViewController *_dockViewController;
     IBNavigationOutlineViewController *_outlineViewController;
     NSNumber *_lastKnownOutlineViewWidth;
-    NSLayoutConstraint *_borderViewHeight;
-    NSLayoutConstraint *_filterFieldHeight;
 }
 
 + (void)configureStateSavingObjectPersistenceByName:(id)arg1;
 + (id)keyPathsForValuesAffectingCurrentFilterFieldWantingStructureProvider;
-@property __weak NSLayoutConstraint *filterFieldHeight; // @synthesize filterFieldHeight=_filterFieldHeight;
-@property __weak NSLayoutConstraint *borderViewHeight; // @synthesize borderViewHeight=_borderViewHeight;
 @property(copy, nonatomic) NSNumber *lastKnownOutlineViewWidth; // @synthesize lastKnownOutlineViewWidth=_lastKnownOutlineViewWidth;
 @property(retain) IBNavigationOutlineViewController *outlineViewController; // @synthesize outlineViewController=_outlineViewController;
 @property(retain) IBDockViewController *dockViewController; // @synthesize dockViewController=_dockViewController;
-@property(retain, nonatomic) DVTSearchField *filterField; // @synthesize filterField=_filterField;
-@property(retain, nonatomic) DVTBorderedView *borderedView; // @synthesize borderedView=_borderedView;
 - (void).cxx_destruct;
 - (void)commitStateToDictionary:(id)arg1;
 - (void)revertStateWithDictionary:(id)arg1;
@@ -40,7 +32,6 @@
 - (void)editorInstalled;
 - (void)topLevelObjectsChanged;
 - (id)selectionProviderForRevealingMembers:(id)arg1;
-- (double)maximumContentWidth;
 - (double)minimumContentWidth;
 - (double)contentWidth;
 - (double)outlineViewWidth;
@@ -58,7 +49,7 @@
 - (void)viewDidInstall;
 - (void)loadView;
 - (id)closedSelectionProvider;
-- (void)populateStructureAreaStructureProviders:(id)arg1;
+- (id)initialSelectionProvider;
 - (void)makeAndPopulateSelectionProviders:(id)arg1;
 - (void)setDockItemLabelPopUpContainer:(id)arg1;
 

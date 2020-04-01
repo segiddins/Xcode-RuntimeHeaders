@@ -9,32 +9,37 @@
 #import <DVTFoundation/DVTInvalidation-Protocol.h>
 #import <DVTFoundation/DVTSigningCertificateSourceDelegate-Protocol.h>
 
-@class DVTDispatchLock, DVTSigningCertificateSource, DVTStackBacktrace, NSMutableSet, NSSet, NSString;
+@class DVTDispatchLock, DVTSigningCertificate, DVTSigningCertificateSource, DVTStackBacktrace, NSMutableSet, NSSet, NSString;
+@protocol DVTInvalidation;
 
 @interface DVTSigningCertificateManager : NSObject <DVTSigningCertificateSourceDelegate, DVTInvalidation>
 {
     DVTDispatchLock *_certificateLock;
     NSMutableSet *_signingCertificates;
+    id <DVTInvalidation> _certTrustObserver;
     BOOL _areCertificatesLoaded;
     DVTSigningCertificateSource *_certificateSource;
+    DVTSigningCertificate *_localDevelopmentCertificate;
 }
 
 + (id)defaultCertificateManager;
 + (void)initialize;
+@property(retain) DVTSigningCertificate *localDevelopmentCertificate; // @synthesize localDevelopmentCertificate=_localDevelopmentCertificate;
 @property(retain) DVTSigningCertificateSource *certificateSource; // @synthesize certificateSource=_certificateSource;
 @property BOOL areCertificatesLoaded; // @synthesize areCertificatesLoaded=_areCertificatesLoaded;
 - (void).cxx_destruct;
-- (void)_delayedPostCertificatesChangedNotification;
+- (void)_delayedPostCertificatesChangedBroadcast;
 - (void)forceFullSyncWithCallback:(CDUnknownBlockType)arg1;
 - (void)forceFullSync;
+- (void)trustSettingsChangedForCertificate:(id)arg1;
+- (void)signingCertificateSource:(id)arg1 certificateTrustChanged:(id)arg2;
 - (void)signingCertificateSourceShouldDoFullResetFromSigningCertificates:(id)arg1;
 - (void)signingCertificateSourcePrivateKeyStatusForCertificatesMayHaveChanged:(id)arg1;
 - (void)signingCertificateSource:(id)arg1 didRemoveCertificate:(id)arg2;
 - (void)signingCertificateSource:(id)arg1 didAddCertificate:(id)arg2;
 - (id)signingCertificateFromDataObject:(id)arg1;
 - (BOOL)isCertificateAnIdentity:(id)arg1;
-- (BOOL)installPrivateKey:(struct OpaqueSecKeyRef *)arg1 privateKeyName:(id)arg2 error:(id *)arg3;
-- (BOOL)installCertificate:(id)arg1 error:(id *)arg2;
+- (BOOL)installCertificate:(id)arg1 privateKey:(struct __SecKey *)arg2 keyName:(id)arg3 error:(id *)arg4;
 - (id)keychainSearchList;
 @property(readonly) NSSet *signingCertificates;
 - (id)logAspect;

@@ -16,6 +16,7 @@
 }
 
 + (id)backgroundResolutionQueue;
++ (id)resolverWithStrategy:(id)arg1;
 + (void)initialize;
 @property(retain) id <DVTReferenceResolverClient> client; // @synthesize client=_client;
 - (void).cxx_destruct;

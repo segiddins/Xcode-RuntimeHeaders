@@ -4,52 +4,63 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import <IDEFoundation/IDELocalizationHandler.h>
 
-#import <IDEFoundation/DVTInvalidation-Protocol.h>
 #import <IDEFoundation/IDELocalizationWorkProgress-Protocol.h>
 
-@class DVTNotificationToken, DVTStackBacktrace, IDELocalizationImporterContext, IDEStream, NSString;
+@class DVTNotificationToken, NSString, NSURL;
 
-@interface IDELocalizationImporter : NSObject <IDELocalizationWorkProgress, DVTInvalidation>
+@interface IDELocalizationImporter : IDELocalizationHandler <IDELocalizationWorkProgress>
 {
-    IDEStream *_importWork;
-    IDELocalizationImporterContext *_importContext;
-    long long _workDone;
-    long long _workOutstanding;
+    long long _completedFiles;
+    long long _totalFiles;
     DVTNotificationToken *_localizationPhaseObserver;
-    DVTNotificationToken *_localizationWorkItemIncrementObserver;
-    DVTNotificationToken *_localizationWorkItemDecrementObserver;
+    DVTNotificationToken *_localizationDetectedFilesObserver;
+    DVTNotificationToken *_localizationProcessedFilesObserver;
+    DVTNotificationToken *_localizationImportFailedObserver;
+    DVTNotificationToken *_localizationNonFatalErrorObserver;
     BOOL _complete;
+    BOOL _allowProjectChanges;
+    CDUnknownBlockType _onErrorBlock;
+    CDUnknownBlockType _onCompletedBlock;
+    CDUnknownBlockType _onNeedsReviewBlock;
     long long _progress;
     NSString *_phase;
     NSString *_workTitle;
-    CDUnknownBlockType _onErrorBlock;
-    CDUnknownBlockType _onCompletedBlock;
+    NSString *_itsRulePath;
+    NSURL *_sourceUrl;
 }
 
 + (void)initialize;
-+ (id)importerFromURL:(id)arg1 container:(id)arg2 sourceLanguage:(id)arg3 allowProjectChanges:(BOOL)arg4 onNeedsReview:(CDUnknownBlockType)arg5;
+@property BOOL allowProjectChanges; // @synthesize allowProjectChanges=_allowProjectChanges;
+@property(copy) NSURL *sourceUrl; // @synthesize sourceUrl=_sourceUrl;
+@property(copy) NSString *itsRulePath; // @synthesize itsRulePath=_itsRulePath;
+@property(copy) NSString *workTitle; // @synthesize workTitle=_workTitle;
+@property(copy) NSString *phase; // @synthesize phase=_phase;
+@property long long progress; // @synthesize progress=_progress;
+@property BOOL complete; // @synthesize complete=_complete;
+@property(copy) CDUnknownBlockType onNeedsReviewBlock; // @synthesize onNeedsReviewBlock=_onNeedsReviewBlock;
 @property(copy) CDUnknownBlockType onCompletedBlock; // @synthesize onCompletedBlock=_onCompletedBlock;
 @property(copy) CDUnknownBlockType onErrorBlock; // @synthesize onErrorBlock=_onErrorBlock;
-@property(readonly) NSString *workTitle; // @synthesize workTitle=_workTitle;
-@property(retain) NSString *phase; // @synthesize phase=_phase;
-@property BOOL complete; // @synthesize complete=_complete;
-@property long long progress; // @synthesize progress=_progress;
 - (void).cxx_destruct;
 - (void)cancel;
 - (void)start;
+- (void)processImportedFileDescriptions:(id)arg1;
+- (id)_variantGroupForImportedFileDescription:(id)arg1 relativeToProjDir:(id)arg2;
+- (id)_blueprintsForImportedFileDescription:(id)arg1 relativeToProjDir:(id)arg2;
+- (id)_bestSuperitemForImportedFilePath:(id)arg1 associatedWithBlueprints:(id)arg2 bestPosition:(unsigned long long *)arg3 withVariantGroupsForName:(id)arg4;
+- (id)_fileReferenceForFilePath:(id)arg1;
+- (void)importLocalizationWithGroup:(id)arg1;
+- (void)compareAndImportLocalization;
+- (id)_computedLocalizedContentsDirectoryForImportAtURL:(id)arg1;
 - (void)primitiveInvalidate;
-- (id)initWithImportContext:(id)arg1;
+- (id)initWithWorkspace:(id)arg1 buildParameters:(id)arg2 container:(id)arg3 options:(id)arg4 sourceLocale:(id)arg5 sourceURL:(id)arg6 allowProjectChanges:(BOOL)arg7 onNeedsReviewBlock:(CDUnknownBlockType)arg8;
 
 // Remaining properties
-@property(retain) DVTStackBacktrace *creationBacktrace;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
-@property(readonly) DVTStackBacktrace *invalidationBacktrace;
 @property(readonly) Class superclass;
-@property(readonly, nonatomic, getter=isValid) BOOL valid;
 
 @end
 

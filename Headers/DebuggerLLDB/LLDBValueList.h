@@ -10,11 +10,10 @@
 
 @class NSString;
 
-__attribute__((visibility("hidden")))
 @interface LLDBValueList : NSObject <DBGSBValueList>
 {
     struct SBValueList {
-        struct unique_ptr<ValueListImpl, std::__1::default_delete<ValueListImpl>> m_opaque_ap;
+        struct unique_ptr<ValueListImpl, std::__1::default_delete<ValueListImpl>> m_opaque_up;
     } _valueList;
 }
 

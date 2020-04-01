@@ -6,14 +6,21 @@
 
 #import <DevToolsCore/XCDependencyCommand.h>
 
+@class NSString;
+
 @interface XCDependencyShadowCommand : XCDependencyCommand
 {
     XCDependencyCommand *_originalCommand;
+    NSString *_outputFilePath;
+    CDUnknownBlockType _subprocessCommandLineGenerationBlock;
 }
 
+- (void).cxx_destruct;
 - (id)description;
-- (void)decrementWaitCountsOfDependingNodes;
-- (void)incrementWaitCountsOfDependingNodes;
+- (id)workingDirectoryNode;
+- (id)environmentAssignments;
+- (id)commandLineArguments;
+- (id)detailedExecutionDescription;
 - (id)instantiatedCommandOutputParserWithLogSectionRecorder:(id)arg1;
 - (id)environment;
 - (id)workingDirectoryPath;
@@ -21,11 +28,9 @@
 - (id)arguments;
 - (id)commandPath;
 - (id)ruleInfo;
-- (BOOL)isReadyForProcessing;
-- (id)name;
+- (id)outputFilePath;
 - (id)originalCommand;
-- (void)dealloc;
-- (id)initWithOriginalCommand:(id)arg1;
+- (id)initWithNumber:(unsigned int)arg1 originalCommand:(id)arg2 outputFilePath:(id)arg3 subprocessCommandLineGenerationBlock:(CDUnknownBlockType)arg4;
 
 @end
 

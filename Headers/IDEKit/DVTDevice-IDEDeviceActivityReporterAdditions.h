@@ -6,12 +6,9 @@
 
 #import <DVTFoundation/DVTDevice.h>
 
-@class NSImage, NSString;
+@class NSImage;
 
 @interface DVTDevice (IDEDeviceActivityReporterAdditions)
 @property(readonly) NSImage *activityImage;
-@property(readonly) BOOL activityIsUserInitiated;
-@property(readonly, copy) NSString *activityTitle;
-@property(readonly) long long activityProgress;
 @end
 

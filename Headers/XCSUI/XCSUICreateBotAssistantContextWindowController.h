@@ -30,7 +30,7 @@
 - (void)didPresentErrorWithRecovery:(BOOL)arg1 contextInfo:(void *)arg2;
 - (void)doneLoadingSourceControlBlueprint:(id)arg1;
 - (void)beginSessionModalForWorkspaceTabController:(id)arg1 redefineBot:(id)arg2 hostWindow:(id)arg3 withCompletionBlock:(CDUnknownBlockType)arg4;
-- (void)beginSessionModalForWorkspaceTabController:(id)arg1 hostWindow:(id)arg2 withCompletionBlock:(CDUnknownBlockType)arg3;
+- (void)beginSessionModalForWorkspaceTabController:(id)arg1 selectedService:(id)arg2 hostWindow:(id)arg3 withCompletionBlock:(CDUnknownBlockType)arg4;
 @property(readonly) CDUnknownBlockType completionBlock;
 
 // Remaining properties

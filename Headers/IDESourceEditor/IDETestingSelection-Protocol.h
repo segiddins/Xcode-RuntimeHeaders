@@ -6,9 +6,13 @@
 
 #import <IDESourceEditor/IDESelectionSource-Protocol.h>
 
-@class NSSet;
+@class NSString;
+@protocol IDETestCollection;
 
 @protocol IDETestingSelection <IDESelectionSource>
-- (NSSet *)selectedTestsAndTestables;
+@property(nonatomic, readonly) id <IDETestCollection> selectedTests;
+
+@optional
+@property(nonatomic, readonly) NSString *selectionUIContext;
 @end
 

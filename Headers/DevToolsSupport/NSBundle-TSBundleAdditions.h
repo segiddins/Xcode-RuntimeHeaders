@@ -13,6 +13,10 @@
 + (id)searchPathsForSupportFilesWithSubpath:(id)arg1 developerPaths:(id)arg2 domainMask:(unsigned long long)arg3 forToolsVersions:(id)arg4;
 + (unsigned long long)defaultDomainMask;
 + (id)cachedBundleWithIdentifier:(id)arg1;
++ (id)libraryExtrasFallbackDirectoryName;
++ (id)libraryExtrasDirectoryName;
++ (void)setLibraryExtrasFallbackDirectoryName:(id)arg1;
++ (void)setLibraryExtrasDirectoryName:(id)arg1;
 - (id)infoDictionaryFullyLocalized;
 - (id)_TS_localizedInfoDictionary:(id)arg1;
 @end

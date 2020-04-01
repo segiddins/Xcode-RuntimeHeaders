@@ -11,6 +11,7 @@
 @interface IDESwiftMigrationTarget : IDEMigrationTarget
 {
     NSString *_currentSwiftVersion;
+    NSString *_alwaysEmbedSwiftLibraries;
     BOOL _enabled;
     NSString *_subTitle;
 }
@@ -19,11 +20,9 @@
 @property(readonly, copy) NSString *subTitle; // @synthesize subTitle=_subTitle;
 - (void).cxx_destruct;
 - (id)warningMessage;
-@property(readonly) BOOL canConvertToAlmostLatestSwift;
-@property(readonly) BOOL shouldMigrateToAlmostLatestSwift;
 - (BOOL)shouldMigrate;
 - (BOOL)canMigrate;
-@property(readonly) BOOL migratorHasBeenRun;
+- (BOOL)alwaysEmbedSwiftLibraries;
 - (id)currentSwiftVersion;
 - (void)updateBuildSettings;
 - (id)initWithBlueprint:(id)arg1 migrationContext:(id)arg2;

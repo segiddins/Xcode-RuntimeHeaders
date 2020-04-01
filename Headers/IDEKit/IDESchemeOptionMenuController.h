@@ -13,7 +13,7 @@
 @interface IDESchemeOptionMenuController : NSObject <NSMenuDelegate>
 {
     BOOL _validateMenuItems;
-    int _extraItems;
+    unsigned long long _extraItems;
     IDEWorkspaceTabController *_tabController;
     CDUnknownBlockType _itemWasSelectedCallback;
     CDUnknownBlockType _menuWasUpdatedCallback;
@@ -22,22 +22,20 @@
     id _additionContext;
     NSMenu *_menu;
     CDUnknownBlockType _enabledCallback;
-    NSArray *_itemsForFilesInWorkspace;
-    NSArray *_defaultItems;
     NSString *_menuTitle;
     NSString *_doNothingItemTitle;
     id _doNothingItemRepresentedObject;
-    NSString *_uti;
-    NSString *_fileExtension;
 }
 
-@property(readonly) NSString *fileExtension; // @synthesize fileExtension=_fileExtension;
-@property(readonly) NSString *uti; // @synthesize uti=_uti;
++ (id)fileExtension;
++ (id)uti;
++ (id)defaultItems;
++ (id)filesMatchingUTIInWorkspace:(id)arg1;
++ (id)itemsForMatchingFilesInWorkspace:(id)arg1;
++ (id)_itemForFileReference:(id)arg1 inWorkspace:(id)arg2;
 @property(readonly) id doNothingItemRepresentedObject; // @synthesize doNothingItemRepresentedObject=_doNothingItemRepresentedObject;
 @property(readonly) NSString *doNothingItemTitle; // @synthesize doNothingItemTitle=_doNothingItemTitle;
 @property(readonly) NSString *menuTitle; // @synthesize menuTitle=_menuTitle;
-@property(readonly) NSArray *defaultItems; // @synthesize defaultItems=_defaultItems;
-@property(readonly) NSArray *itemsForFilesInWorkspace; // @synthesize itemsForFilesInWorkspace=_itemsForFilesInWorkspace;
 @property(copy) CDUnknownBlockType enabledCallback; // @synthesize enabledCallback=_enabledCallback;
 @property(retain) id additionContext; // @synthesize additionContext=_additionContext;
 @property(copy) CDUnknownBlockType didAddFilesCallback; // @synthesize didAddFilesCallback=_didAddFilesCallback;
@@ -45,19 +43,20 @@
 @property(copy) CDUnknownBlockType menuWasUpdatedCallback; // @synthesize menuWasUpdatedCallback=_menuWasUpdatedCallback;
 @property(copy) CDUnknownBlockType itemWasSelectedCallback; // @synthesize itemWasSelectedCallback=_itemWasSelectedCallback;
 @property(retain, nonatomic) IDEWorkspaceTabController *tabController; // @synthesize tabController=_tabController;
-@property(nonatomic) int extraItems; // @synthesize extraItems=_extraItems;
+@property(nonatomic) unsigned long long extraItems; // @synthesize extraItems=_extraItems;
 @property BOOL validateMenuItems; // @synthesize validateMenuItems=_validateMenuItems;
 - (void).cxx_destruct;
 - (void)attachToMenu:(id)arg1;
 - (void)menuNeedsUpdate:(id)arg1;
 - (void)_updateMenu:(id)arg1;
+@property(readonly) NSString *fileTypeDescription;
 - (void)newFile:(id)arg1;
 - (void)addFile:(id)arg1;
 - (void)selectItem:(id)arg1;
 - (void)_selectItemWithRepresentedObject:(id)arg1;
 - (BOOL)validateMenuItem:(id)arg1;
 - (id)_buildMenu;
-- (id)_filesInWorkspaceMatchingUTI;
+@property(readonly) NSArray *itemsForFilesInWorkspace;
 - (unsigned long long)_indexOfIconItem;
 - (unsigned long long)_indexOfDoNothingItem;
 - (unsigned long long)_indexOfNoneItem;

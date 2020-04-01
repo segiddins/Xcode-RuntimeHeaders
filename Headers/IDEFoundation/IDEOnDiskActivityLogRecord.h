@@ -6,64 +6,83 @@
 
 #import <IDEFoundation/IDEActivityLogRecord.h>
 
-#import <IDEFoundation/DVTInvalidation-Protocol.h>
+@class DVTFileDataType, DVTFilePath, DVTObservingToken, IDEActivityLogObservableRecord, IDETypeIdentifier, NSDictionary, NSString;
+@protocol IDELogStoreManageable, IDEOnDiskActivityLogRecordManaging;
 
-@class DVTFileDataType, DVTObservingToken, DVTStackBacktrace, IDEActivityLogSection, IDEOnDiskLogStore_Impl, IDETypeIdentifier, NSString;
-
-@interface IDEOnDiskActivityLogRecord : IDEActivityLogRecord <DVTInvalidation>
+@interface IDEOnDiskActivityLogRecord : IDEActivityLogRecord
 {
-    IDEOnDiskLogStore_Impl *_logStore;
-    IDEActivityLogSection *_strongFullLog;
-    IDEActivityLogSection *_weakFullLog;
-    IDEActivityLogSection *_recorderLog;
-    DVTObservingToken *_recorderLogObservingToken;
+    BOOL _hasPrimaryLog;
+    BOOL _hasAuxiliaryLog;
+    BOOL _hasTests;
+    BOOL _hasCoverageData;
+    BOOL _hasTimelineData;
+    BOOL _isImported;
+    id <IDELogStoreManageable> _logStoreManageable;
+    double _timeStoppedRecording;
     NSString *_uniqueIdentifier;
+    NSString *_auxiliaryLogUniqueIdentifier;
+    double _timeStartedRecording;
+    DVTFileDataType *_documentType;
     IDETypeIdentifier *_domainType;
     NSString *_title;
-    double _timeStartedRecording;
-    double _timeStoppedRecording;
-    DVTFileDataType *_documentType;
     NSString *_signature;
-    NSString *_highLevelStatus;
+    DVTFilePath *_buildMetricsReportFilePath;
+    IDEActivityLogObservableRecord *_primaryObservable;
+    IDEActivityLogObservableRecord *_auxiliaryObservable;
+    id <IDEOnDiskActivityLogRecordManaging> _logRecordManager;
+    NSString *_logFileName;
+    NSString *_logClassName;
+    DVTObservingToken *_recorderLogObservingToken;
 }
 
 + (id)keyPathsForValuesAffectingIsRecording;
-+ (unsigned long long)assertionBehaviorAfterEndOfEventForSelector:(SEL)arg1;
-+ (void)initialize;
-+ (unsigned long long)assertionBehaviorForKeyValueObservationsAtEndOfEvent;
-@property(retain, nonatomic) IDEActivityLogSection *recorderLog; // @synthesize recorderLog=_recorderLog;
-@property(nonatomic) double timeStoppedRecording; // @synthesize timeStoppedRecording=_timeStoppedRecording;
-- (void).cxx_destruct;
-@property(readonly, copy) NSString *description;
-- (id)highLevelStatus;
++ (id)keyPathsForValuesAffectingAuxiliaryObservable;
++ (id)keyPathsForValuesAffectingPrimaryObservable;
++ (id)entityIdentifierFromDictionary:(id)arg1;
+@property(retain) DVTObservingToken *recorderLogObservingToken; // @synthesize recorderLogObservingToken=_recorderLogObservingToken;
+@property(readonly, copy) NSString *logClassName; // @synthesize logClassName=_logClassName;
+@property(readonly, copy) NSString *logFileName; // @synthesize logFileName=_logFileName;
+@property(readonly) __weak id <IDEOnDiskActivityLogRecordManaging> logRecordManager; // @synthesize logRecordManager=_logRecordManager;
+- (void)setIsImported:(BOOL)arg1;
+- (BOOL)isImported;
+- (BOOL)hasTimelineData;
+- (BOOL)hasCoverageData;
+- (BOOL)hasTests;
+- (BOOL)hasAuxiliaryLog;
+- (BOOL)hasPrimaryLog;
+- (id)buildMetricsReportFilePath;
 - (id)signature;
-- (id)documentType;
-- (double)timeStartedRecording;
 - (id)title;
 - (id)domainType;
-- (id)identifier;
+- (id)documentType;
+- (double)timeStartedRecording;
+- (id)auxiliaryLogUniqueIdentifier;
 - (id)uniqueIdentifier;
+- (double)timeStoppedRecording;
+@property(readonly) id <IDELogStoreManageable> logStoreManageable; // @synthesize logStoreManageable=_logStoreManageable;
+- (void).cxx_destruct;
+- (id)description;
 - (BOOL)isRecording;
-- (void)_setRemovedState;
-- (void)_makeWeak;
+- (void)transferLogStoreManageableToCache;
 - (id)fullLogIfInMemory;
+- (id)fullLogStoreManageableWithError:(id *)arg1;
+- (id)auxiliaryLogWithError:(id *)arg1;
 - (id)fullLogWithError:(id *)arg1;
-- (void)removeSelfWithCompletionBlock:(CDUnknownBlockType)arg1;
-- (BOOL)isRemoved;
-- (void)primitiveInvalidate;
-- (id)initWithUUID:(id)arg1 store:(id)arg2 cacheEntry:(id)arg3 updatedCache:(char *)arg4 error:(id *)arg5;
-- (id)initWithLog:(id)arg1 entityIdentifier:(id)arg2 store:(id)arg3;
-- (id)coverageReport;
-- (id)coverageReportFilePath;
-- (id)testableSummariesPlistFilePath;
-
-// Remaining properties
-@property(retain) DVTStackBacktrace *creationBacktrace;
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly) unsigned long long hash;
-@property(readonly) DVTStackBacktrace *invalidationBacktrace;
-@property(readonly) Class superclass;
-@property(readonly, nonatomic, getter=isValid) BOOL valid;
+- (id)auxiliaryObservable;
+- (id)primaryObservable;
+- (id)_faultedLogStoreManageable:(id *)arg1;
+- (id)_cachedLogStoreManageable;
+- (void)tearDown;
+- (id)onDiskPath;
+- (id)logSectionForItem:(id)arg1 error:(id *)arg2;
+- (id)auxiliaryLogItems;
+- (id)primaryLogItems;
+- (id)coverageArchiveFilePromise;
+- (id)coverageReportFilePromise;
+@property(readonly, copy) NSDictionary *dictionaryRepresentation;
+- (id)initWithDictionaryRepresentation:(id)arg1 logRecordManager:(id)arg2 error:(id *)arg3;
+- (id)initWithLogStoreManageable:(id)arg1 parameters:(id)arg2 logRecordManager:(id)arg3;
+- (id)initWithLogStoreManageable:(id)arg1 entityIdentifier:(id)arg2 logRecordManager:(id)arg3;
 
 @end
 

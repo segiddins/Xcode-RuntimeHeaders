@@ -24,6 +24,10 @@
     NSView *_frameRelativeView;
 }
 
++ (void)drawTargetPath:(id)arg1;
++ (void)fillThenStrokePath:(id)arg1 fillColor:(id)arg2 strokeColor:(id)arg3;
++ (id)targetInsideBorderColor;
++ (id)targetBorderColor;
 + (id)showTargetsWithSpecifiers:(id)arg1 forDuration:(double)arg2;
 + (void)runTargetIdentificationGroup:(CDUnknownBlockType)arg1;
 + (void)cancelAllOutstandingIdentifiers;
@@ -34,15 +38,10 @@
 - (void)drawInsertionLineInRect:(struct CGRect)arg1;
 - (id)insertionLineStrokeColor;
 - (id)primaryInsertionLineColor;
-- (void)drawTargetPath:(id)arg1;
-- (void)fillThenStrokePath:(id)arg1 fillGradient:(id)arg2 strokeColor:(id)arg3;
 - (id)targetBorderPathForRect:(struct CGRect)arg1;
 - (id)labelBorderPathForRect:(struct CGRect)arg1;
 - (id)labelBorderColor;
-- (id)labelBackgroundGradient;
-- (id)targetBackgroundGradient;
-- (id)targetInsideBorderColor;
-- (id)targetBorderColor;
+- (id)labelBackgroundColor;
 - (id)specifierWithLabel:(id)arg1 frameGenerator:(CDUnknownBlockType)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (id)showInsertionLinesWithFrameGenerators:(id)arg1 andLabels:(id)arg2 forDuration:(double)arg3;
 - (void)refreshGeneratedRects;

@@ -27,6 +27,7 @@
 - (id)plist;
 - (void)changeStructureDefinitionAction:(id)arg1;
 @property(retain) DVTPlistStructureDefinition *plistStructureDefinition;
+- (id)fileURL;
 - (id)init;
 
 // Remaining properties

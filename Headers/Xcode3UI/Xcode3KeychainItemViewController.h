@@ -6,11 +6,10 @@
 
 #import <IDEKit/IDEProjectItemViewController.h>
 
-@class DVTBorderedView, DVTGradientImageButton, DVTObservingToken, DVTTableView, NSArrayController, Xcode3KeychainItemModel;
+@class DVTBorderedView, DVTGradientImageButton, DVTTableView, NSArrayController, Xcode3KeychainItemModel;
 
 @interface Xcode3KeychainItemViewController : IDEProjectItemViewController
 {
-    DVTObservingToken *_itemObserver;
     DVTBorderedView *_tableBorder;
     DVTTableView *_groupsTable;
     DVTGradientImageButton *_addGroupButton;
@@ -26,10 +25,6 @@
 - (void).cxx_destruct;
 - (void)removeSelectedGroups:(id)arg1;
 - (void)addGroup:(id)arg1;
-- (void)primitiveInvalidate;
-- (void)viewWillUninstall;
-- (void)viewDidInstall;
-- (void)layout;
 - (void)loadView;
 - (id)headerColor;
 - (id)initWithEditorItemModel:(id)arg1 portalInfoDelegate:(id)arg2;

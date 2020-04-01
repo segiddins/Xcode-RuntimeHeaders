@@ -6,14 +6,15 @@
 
 #import <objc/NSObject.h>
 
-@class DVTServicesSession, NSDictionary, NSURL;
+@class NSDictionary, NSURL;
+@protocol DVTServicesSession;
 
 @interface DVTServicesRequest : NSObject
 {
-    DVTServicesSession *_session;
+    id <DVTServicesSession> _session;
 }
 
-@property(readonly, nonatomic) DVTServicesSession *session; // @synthesize session=_session;
+@property(readonly, nonatomic) id <DVTServicesSession> session; // @synthesize session=_session;
 - (void).cxx_destruct;
 - (id)_userAgentForExecutionContext:(long long)arg1;
 - (id)userAgent;

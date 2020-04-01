@@ -21,8 +21,8 @@
 - (void)cancelTrackedClients;
 - (id)clientsNotSupportingCancellation;
 - (id)clientsRequiringCancellationPrompt;
-- (id)registerUncancellableClientWithName:(id)arg1;
-- (id)registerClientWithName:(id)arg1 promptForCancellation:(BOOL)arg2 cancellationBlock:(CDUnknownBlockType)arg3;
+- (id)registerUncancellableClientWithName:(id)arg1 terminationSignpost:(CDUnknownBlockType)arg2;
+- (id)registerClientWithName:(id)arg1 promptForCancellation:(BOOL)arg2 terminationSignpost:(CDUnknownBlockType)arg3 cancellationBlock:(CDUnknownBlockType)arg4;
 - (id)init;
 
 // Remaining properties

@@ -10,11 +10,10 @@
 
 @class NSString;
 
-__attribute__((visibility("hidden")))
 @interface LLDBAddress : NSObject <DBGSBAddress>
 {
     struct SBAddress {
-        struct unique_ptr<lldb_private::Address, std::__1::default_delete<lldb_private::Address>> m_opaque_ap;
+        struct unique_ptr<lldb_private::Address, std::__1::default_delete<lldb_private::Address>> m_opaque_up;
     } _address;
 }
 

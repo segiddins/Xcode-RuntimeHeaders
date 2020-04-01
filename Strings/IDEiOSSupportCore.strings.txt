@@ -1,0 +1,4094 @@
+v8@?0
+net.rx.bytes
+net.rx.bytes.delta
+net.tx.bytes
+net.tx.bytes.delta
+net.bytes
+net.bytes.delta
+net.rx.packets
+net.rx.packets.delta
+net.tx.packets
+net.tx.packets.delta
+net.packets
+net.packets.delta
+net.connections[]
+com.apple.xcode.debug-gauge-data-providers.NetworkStatistics
+-[IDEGaugeDataProviderService_iOSSimulator_Energy sampleAttributes:forPIDs:]
+/Library/Caches/com.apple.xbs/Sources/DVTiOSFrameworks/DVTiOSFrameworks-15509/IDEiOSSupportCore/IDEGaugeDataProviderService_iOSSimulator_Energy.m
+(attrNames) != nil
+%@ should be an instance inheriting from %@, but it is nil
+attrNames
+[(id)(attrNames) isKindOfClass:[NSSet class]]
+%@ should be an instance inheriting from %@, but it is %@
+(pids) != nil
+pids
+[(id)(pids) isKindOfClass:[NSSet class]]
+OverrideProperties
+DEPLOYMENT_TARGET_SUGGESTED_VALUES
+DefaultProperties
+deploymentTargetSuggestedValues
+T@"NSArray",R
+Name
+Type
+Enumeration
+UIType
+deploymenttarget
+DisplayName
+Description
+Code will load on this and later versions of %@.  Framework APIs that are unavailable in earlier versions will be weak-linked; your code should check for null function pointers or specific system versions before calling newer APIs.
+Values
+Value
+%@ %@
+@16@?0@"NSString"8
+DefaultValue
+ConditionFlavors
+arch
+Category
+Deployment
+BuildSettings
+Domain
+IsGlobalDomainInUI
+Identifier
+com.apple.build-settings.%@
+Properties
+@"NSDictionary"16@?0@"DVTPlatform"8
+DRIVERKIT_DEPLOYMENT_TARGET
+DriverKit Deployment Target
+DriverKit
+driverkit
+com.apple.instruments.server.services.processcontrol
+com.apple.instruments.server.services.processcontrol.posixspawn
+DVTiOSTaskErrorDomain
+DVTiOSTaskStdOut
+DVTiOSTaskStdErr
+@"NSString"8@?0
+DVTTimeSlicedMainThreadWorkQueue:/Library/Caches/com.apple.xbs/Sources/DVTiOSFrameworks/DVTiOSFrameworks-15509/IDEiOSSupportCore/DVTAbstractiOSDevice.m:39
+Xcode SSH Authentication Agent
+rdar://45656838
+iPhoneConnect
+success, changed files: %@
+failure, exit code: %lu
+%@ error output: %@
+returnCode
+Tq,R,N,V_returnCode
+stdoutText
+T@"NSString",R,N,V_stdoutText
+stderrText
+T@"NSString",R,N,V_stderrText
+changedFiles
+T@"NSArray",R,N,V_changedFiles
+unknown name
+unknown class
+unknown build
+unknown identifier
+c16@?0@"<IDEBuildableProduct>"8
+-[DVTAbstractiOSDevice renameDevice:]
+/Library/Caches/com.apple.xbs/Sources/DVTiOSFrameworks/DVTiOSFrameworks-15509/IDEiOSSupportCore/DVTAbstractiOSDevice.m
+method %@ is a responsibility of subclasses of %@
+-[DVTAbstractiOSDevice supportedDeviceFamilies]
+iPhone
+iPad
+Apple TV
+Apple Watch
+HomePod
+com.apple.dt.Xcode.DVTAbstractiOSDevice.runTaskErrorDataLock
+com.apple.dt.Xcode.DVTAbstractiOSDevice.runTaskOutputDataLock
+-[DVTAbstractiOSDevice _runTask:withOutputHandler:]_block_invoke_2
+<Unknown Function>
+<Unknown File>
+Unexpected file handle passed to reader.
+v16@?0@"NSFileHandle"8
+-[DVTAbstractiOSDevice _runTask:withOutputHandler:]_block_invoke
+%@ running: %@
+ConcurrentQueue: %@
+%@ finished: %@
+---> Returned %ld
+Task failed: %@. Output: %@
+<no output>
+%@ error: %@
+%@ couldn't launch: %@
+---> Error: %@
+v16@?0@"DVTPromise"8
+-[DVTAbstractiOSDevice oneLineCommand:onDevice:withArguments:andEnvironment:]
+((command)) != nil
+%@ should not be nil.
+(command)
+-[DVTAbstractiOSDevice multiLineCommand:onDevice:]
+/bin/sh
+-[DVTAbstractiOSDevice oneLineCommand:onDevice:withArguments:environment:stdOutResult:error:]
+Use of %@ from main thread
+__objc_no
+Called DVTWarn
+-[DVTAbstractiOSDevice multiLineCommand:onDevice:stdOutResult:error:]
+-[DVTAbstractiOSDevice taskForHostCommand:withArguments:error:]
+(arguments) == nil || CFGetTypeID((CFArrayRef)arguments) == CFArrayGetTypeID()
+%@ should be an array, but it is %@
+arguments
+-[DVTAbstractiOSDevice hostAuthenticatedOneLineCommand:withArg:result:]
+system.privilege.admin
+InternalInstall
+%@ error running authenticated command %@
+-[DVTAbstractiOSDevice deviceSupportsBuildable:buildParameters:error:]
+(proxiedDevice) != nil
+%@ should conform to protocol %@, but it is nil
+proxiedDevice
+IDEBuildableTargetDevice
+hash
+TQ,R
+superclass
+T#,R
+description
+T@"NSString",R,C
+debugDescription
+name
+T@"NSString",R,C,N
+nameForDeveloperPortal
+identifier
+platformIdentifier
+platform
+T@"DVTPlatform",R
+supportsProvisioning
+Tc,R
+proxiedDevices
+T@"NSSet",R,C
+modelName
+modelCodename
+modelCode
+modelUTI
+processorDescription
+operatingSystemVersion
+operatingSystemBuild
+operatingSystemVersionWithBuildNumber
+nativeArchitecture
+isProxiedDevice
+available
+Tc,R,GisAvailable
+unavailabilityError
+T@"NSError",R
+deviceIsBusy
+TB,R
+[(id)(proxiedDevice) conformsToProtocol:@protocol(IDEBuildableTargetDevice)]
+%@ should conform to protocol %@, but %@ doesn't
+Invalid OS Version from device (%@) [error: %@]
+TARGETED_DEVICE_FAMILY
+Installs
+/Developer/Xcode/ActiveInstalls.txt
+/Developer/Xcode/
+ActiveInstalls.txt
+#!/bin/sh
+mkdir -p '%@'
+echo "%@" >> '%@'
+copyBackActiveInstallsWithError: -- Failed.
+-[DVTAbstractiOSDevice installSubstitutionPathsForDebugger]
+Error getting MachO status from file: '%@'
+Rsync install to %@ is not supported (<rdar://problem/36182111>)
+c16@?0@"NSString"8
+.dSYM/
+Info.plist
+embedded.mobileprovision
+%@ Not triggering launch DB rebuild because neither Info.plist nor embedded.mobileprovision was changed.
+%@ Not triggering launch DB rebuild without bundle ID
+-[DVTAbstractiOSDevice applicationForSession:]
+-[DVTAbstractiOSDevice fetchApplications]
+deviceBuiltProductsDir
+/private/var/mobile/XcodeBuiltProducts
+/private/var/tmp/com.apple.dt.XCTest
+-[DVTAbstractiOSDevice deviceInstallPathForLaunchSession:andBuildProductsPath:]
+valid
+Tc,R,N,GisValid
+invalidationBacktrace
+T@"DVTStackBacktrace",R
+creationBacktrace
+T@"DVTStackBacktrace",&
+productTypeIdentifier
+buildableIdentifier
+entityIdentifier
+T@"IDEEntityIdentifier",R,C
+blueprint
+T@"<IDEBlueprint>",R
+displayName
+T@"NSString",R
+toolTip
+namesOfLinkedBinaries
+T@"NSSet",R
+productModuleName
+legacyIdentifier
+filePath
+T@"DVTFilePath",R
+fileDataType
+T@"DVTFileDataType",R,C
+iconPath
+productSettings
+T@"NSDictionary",R
+productIsExecutable
+isWatchOnlyApplication
+isWatchAppRunsIndependentlyOfCompanionApplication
+isEmbeddablePackageProduct
+There was a problem finding the local build directory.
+-[DVTAbstractiOSDevice _waitForApplicationForSession:error:]
+((launchSession)) != nil
+(launchSession)
+((error)) != nil
+(error)
+Waiting for installation of %@ to complete
+the application
+%@ fetching applications...
+%@ done fetching applications...
+Installed application was not present in database of installed apps after multiple lookup attempts.
+-[DVTAbstractiOSDevice _copyBackAlternateApplication:atPath:error:]
+A failure occurred while %@.
+%@ [%@]
+Unable to install %@ on %@
+INSTALL_PATH_ACTUAL
+INSTALL_PATH
+/private/var/staged_system_apps
+DISABLE_MOBILEINSTALL_REBUILD
+@"DVTFilePath"16@?0@"NSString"8
+q24@?0@"DVTFilePath"8@"DVTFilePath"16
+@"NSString"16@?0@"DVTFilePath"8
+%@ rsyncing  "%@" to "%@"
+Rsyncing %@ to local staging area
+v24@?0q8^c16
+%@ failed rsyncing "%@" to "%@": %@
+rsyncing to local staging area
+Copy build products to %@
+LOCAL INSTALL PATH: %@
+rsyncing additional paths to local staging area
+Copy %@ to %@
+%@ rsyncing  "%@" to "/"
+Rsyncing %@
+Copy local staging area to device
+%@ failed rsyncing "%@" to "/": %@
+rsyncing local staging area to device
+Rebuilding device application database (%@ changed)
+%@ updating LS database
+%@ mobile_install rebuild failed: %@
+rebuilding device application database
+Update LS database
+%@ device application database rebuild skipped (no triggers)
+%@ installing staged system application, which may not be supported on older device OS versions
+Installing staged system applications
+/usr/local/bin/mobile_install
+installStaged
+%@ mobile_install installStaged failed with error code %ld: %@
+%@ not running mobile install because no applications are being installed
+%@ updating "/Developer/Xcode/ActiveInstalls.txt"
+Adding %@ to active installs
+%@ failed to update "/Developer/Xcode/ActiveInstalls.txt": %@
+updating active installs list
+Updated /Developer/Xcode/ActiveInstalls.txt
+Kill %@ process
+Kill %lu processes (%@)
+%@ killing "%@"
+/usr/bin/killall
+No matching processes
+%@ unable to kill one or more of "%@": %@
+Kill %@
+DYLD_FRAMEWORK_PATH
+DYLD_LIBRARY_PATH
+__XPC_DYLD_FRAMEWORK_PATH
+__XPC_DYLD_LIBRARY_PATH
+XCODE_BUILT_PRODUCTS
+%@ staging root - rsync %@ -> %@
+Staging root - rsync %@ built products
+Failed to stage root for %@
+%@ failed to stage root for %@ - rsync error(%ld) %@
+%@ applying root - installing %@ -> %@
+/usr/bin/readlink
+/bin/unlink
+Applying root - rsyncing %@
+%@ failed to apply root for %@ - rsync error(%ld) %@
+Failed to apply root for %@
+%@ installing staged system application %@, which may not be supported on older device OS versions
+%@ mobile_install installStaged failed with error code %ld while installing %@: %@
+Failed to apply root for %@ - mobile_install error(%ld) %@
+%@ checking installed path for rsync with session %@ application %@
+%@ has bundle identifier, waiting for application
+Please check your device's boot-args and verify that your application and all of its contents are signed (see https://confluence.sd.apple.com/x/wZa2Sw for instructions).
+Fetching installation diagnostics from %@
+performVerificationWithError
+MIInstallerErrorDomain
+%@ failed to run device error report: %@
+%@ dumping device error report
+[%@: %@] %@: %@
+ performVerificationWithError:]: 
+The 'DVTEnableMobileInstallRebuild' default has been set to false on this system. Either delete this default and perform the install again or run the mobile_install command manually on your device so that your application will be registered with LSApplicationWorkspace.
+[Internal only]
+Failed to install %@. Application was not registered with LSApplicationWorkspace after an rsync install.
+Could not locate installed application
+%@ failed to install %@: %@
+%@ still needs the app path, tried asking the application (if any) for it and got %@
+%@ remoteExecutable setInstalledPath:%@
+-[DVTAbstractiOSDevice _updateXCTestBundleInjectEnvironmentVariables:forApplication:]
+((testingEnvironmentVariables)) != nil
+(testingEnvironmentVariables)
+((application)) != nil
+(application)
+libXCTestBundleInject.dylib
+DYLD_INSERT_LIBRARIES
+Frameworks
+-[DVTAbstractiOSDevice _updateTestingEnvironmentVariables:forApplication:deviceConfigPath:testConfiguration:]
+((testConfiguration.testBundleURL)) != nil
+(testConfiguration.testBundleURL)
+__TESTBUNDLE__
+v24@?0@"NSString"8@"NSString"16
+/usr/lib/swift
+XCTestConfigurationFilePath
+%@ updated testing environment variables %@
+%@ rsyncing test configuration %@ to %@
+%@ failed to rsync test configuration at %@ - rsync error(%ld) %@
+Failed to rsync test configuration at %@ - rsync error(%ld)
+%@ rsynced test configuration from %@ to %@
+Testing environment variables do not include the path to the configuration file ('XCTestConfigurationFilePath').
+%@ installing %@ using rsync
+Rsyncing %@ built products
+-[DVTAbstractiOSDevice softwareVersion]
+RSYNC_PASSWORD
+alpine
+No such file or directory
+mkdir "
+%@ rsync error looked like missing file or directory but unable to determine missing path. Error text was: %@
+The rsync command failed with one or more errors.
+Warning: Permanently added 
+[additional lines elided]
+rsync: 
+rsync error: 
+/usr/bin/rsync
+%@ RSYNC %@ -- %@ (%@) -> %@
+SYNC
+COPY
+host
+--verbose
+--delete
+--recursive
+--perms
+--times
+--links
+--out-format=rsync-progress status=%i entry=%n end
+--progress
+--whole-file
+-[DVTAbstractiOSDevice _rsyncPath:toPath:sync:onDevice:withHardLinkDirs:withStatusObserver:]
+Hard links are not support for rsync transfers to a device (%@ -> %@)
+--link-dest
+to-check=
+rsync-progress 
+status=
+entry=
+ end
+v24@?0@"NSString"8@"DVTPromise"16
+%@ (%@)
+v28@?0@"NSString"8c16q20
+%@ RSYNC: Parent path not found on device. Attempting to create %@
+/bin/mkdir
+%@ RSYNC: Unable to create missing parent path on device (%@). The operation failed with error: %@
+rsync result from %s path %@ to device path %@: %@
+device
+local
+Copy operation failed. Source Device Path: %@. Destination Device Path: %@. Sync: %d
+Copy operation failed. Source Local Path: %@. Destination Device Path: %@. Sync: %d
+Copy operation failed. Source Device Path: %@. Destination Local Path: %@. Sync: %d
+Copy operation failed. Source Local Path: %@. Destination Local Path: %@. Sync: %d
+#!/bin/sh
+/usr/local/bin/mobile_install rebuild system internal user
+`mobile_install rebuild system internal user` completed successfully. Waiting 10s to continue. To avoid this delay, move away from using rsync for your app installation. See <rdar://problem/46507820>.
+Finished waiting for device propagation of `mobile_install rebuild system internal user` updates.
+Not calling /usr/local/bin/mobile_install rebuild system internal user because "DISABLE_MOBILEINSTALL_REBUILD" is set to true and "DVTEnableMobileInstallRebuild" is set to false
+Not calling /usr/local/bin/mobile_install rebuild system internal user because "DVTEnableMobileInstallRebuild" is set to false
+Not calling /usr/local/bin/mobile_install rebuild system internal user because "DISABLE_MOBILEINSTALL_REBUILD" is set to true
+Installing %@
+On Device
+-[DVTAbstractiOSDevice installActivityInWorkspace:operationInProgress:details:]
+(uiTitle) != nil
+%@ should be a non-empty string, but it is nil
+uiTitle
+CFGetTypeID((CFStringRef)uiTitle) == CFStringGetTypeID()
+%@ should be a non-empty string, but it is %@
+![(uiTitle) isEqualToString:@""]
+%@ should be a non-empty string, but it's an empty string
+Install Finished
+-[DVTAbstractiOSDevice taskForDeviceCommand:withArguments:error:]
+Unsupported process launcher kind %lu
+PCEventType
+ShowNotificationCenter
+WidgetIdentifier
+v16@?0@"DTXMessage"8
+TriggerSiri
+SiriRequestPayload
+PressHomeButton
+SimulateNotification
+NotificationPayload
+BundleIdentifier
+MetricPayloadsExample
+13.0
+-[DVTAbstractiOSDevice supportsFeature:]
+-supportsFeature: needs an explicit case for: %lu
+ShowMessagesExtension
+SnapshotUI
+BackgroundFetchEvent
+DVTDisableLaunchActivateSuspended
+A path to a test configuration must be provided.
+-[DVTAbstractiOSDevice _updateTestConfiguration:atPath:testBundleContainerPath:error:]
+((testConfiguration)) != nil
+(testConfiguration)
+__TESTHOST__
+((destinationTestBundlePath)) != nil
+(destinationTestBundlePath)
+Failed to serialize updated test configuration
+Failed to write updated test configuration to %@
+%@ updated test configuration at %@ with device paths: %@
+-[DVTAbstractiOSDevice fetchSpecificLaunchFailureReason]_block_invoke_2
+FBSSystemService
+%@ failed to run device error report for: %@
+failureReason = "
+isPasscodeLocked
+supportsLaunchActivateSuspended
+deviceTestRelatedArtifactsDir
+DVTEnableMobileInstallRebuild
+dvtdevice-iphone
+DTDKSuppressErrors
+com.apple.platform.iphoneos
+ArchName
+KillExisting
+RequestingPid
+StartSuspendedKey
+DisableMemoryLimits
+c16@?0@"DTDKApplication"8
+No matching application with bundle identifier '%@'
+-[_RuntimeProfileWorker createRuntimeProfileDirectory:]
+/Library/Caches/com.apple.xbs/Sources/DVTiOSFrameworks/DVTiOSFrameworks-15509/IDEiOSSupportCore/DVTiOSDevice.m
+-[_RuntimeProfileWorker downloadRuntimeProfilesFromDeviceDirectories:toLocalDirectory:error:]
+T@"DVTiOSDevice",R,V_device
+T@"DTDKApplication",R,V_app
+/bin/mkdir -p -m 0777 
+*.profraw
+/bin/rm -r 
+Copy operation failed: %@ -> %@
+_proxiedDevices
+Device Install Queue
+DeviceProgressOperationLock
+10.0
+com.apple.instruments.server.services.device.xpccontrol
+-[DVTiOSDevice outputReceived:fromProcess:atTime:]
+Could not convert output from pid %d to const char *. Output was '%@'
+-[DVTiOSDevice xpcServiceObserved:withProcessIdentifier:requestedByProcess:options:]
+Can't create standard output pipe for device XPC service using pipe(). errno : %d
+c24@?0@"DVTDevice"8@"NSDictionary"16
+%@:%@
+Xcode.DeviceType.iPhone
+v32@?0@8@"NSDictionary"16^c24
+isSupportedOS
+deviceDevelopmentStatus
+deviceActivationState
+deviceAllowsSecureServices
+v16@?0@"NSNotification"8
+proxiedDeviceTokens
+@"DVTProxiediOSDevice"16@?0@"<DTDKRemoteDeviceToken>"8
+-[DVTiOSDevice attachToken:]_block_invoke_3
+DVTTimeSlicedMainThreadWorkQueue:/Library/Caches/com.apple.xbs/Sources/DVTiOSFrameworks/DVTiOSFrameworks-15509/IDEiOSSupportCore/DVTiOSDevice.m:624
+iPhoneSupport
+%@ unable to mount DeveloperDiskImage (%@)
+DVTTimeSlicedMainThreadWorkQueue:/Library/Caches/com.apple.xbs/Sources/DVTiOSFrameworks/DVTiOSFrameworks-15509/IDEiOSSupportCore/DVTiOSDevice.m:636
+Waiting for Device
+v32@?0q8@16@"NSError"24
+token.canBeWatchCompanion
+token.deviceName
+-[DVTiOSDevice operatingSystemVersion]
+productVersion for %@ should be a string or nil, but it is a %@ (value: %@)
+/usr/lib/system/introspection
+/Developer/usr/lib
+/Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
+token.provisioningProfiles
+-[DVTiOSDevice installProvisioningProfileAtURL:error:]
+!___localError
+A method claimed to have succeeded but provided an error! (%@)
+___localError
+A method claimed to have failed but provided no error!
+token.deviceIsSupported
+token.isSupportedOS
+-[DVTiOSDevice _askForAlternateApplicationIfNeeded:]
+((ioSubstitution)) != nil
+(ioSubstitution)
+token.isWirelessEnabled
+token.deviceSSHPort
+isPaired
+developerPrepError
+token.deviceAllowsSecureServices
+%@ is not paired with your computer.
+The device
+To use %@ with Xcode, unlock it and choose to trust this computer when prompted.
+the device
+unknown OS
+Unknown device architecture
+%@ is not connected
+Xcode will continue when %@ is connected.
+Cancel
+c24@?0@"NSError"8q16
+Unsupported device model
+Unsupported %@ version
+%@ is busy%@
+: %@
+Xcode will continue when %@ is finished.
+%@ has recently restarted
+Xcode will continue when %@ is unlocked.
+Could not locate device support files.
+%@ may be running a version of %@ that is not supported by this version of Xcode. An updated version of Xcode may be found on the App Store or at developer.apple.com.
+-[DVTiOSDevice addPrepError:]
+-[DVTiOSDevice addPrepWarning:]
+ARCHS
+Expired
+ or 
+ Connect an %@ or choose a simulated %@ device to use.
+token.deviceArchitecture
+%@ missing architecture for device
+unknown
+%@ unsupported architecture for device (falling back to %@)
+@8@?0
+%@%@
+ Internal
+canonicalName
+.internal
+SDKROOT
+PLATFORM_NAME
+ONLY_ACTIVE_ARCH
+DEVICE_UDID
+DEVICE_HOSTNAME
+DEVICE_SSH_PORT
+data
+buildVersion
+deviceArchitecture
+deviceBluetoothMAC
+deviceTotalCapacity
+deviceAvailableCapacity
+deviceClass
+deviceColorString
+deviceEnclosureColorString
+deviceIdentifier
+deviceName
+deviceSerialNumber
+deviceSoftwareVersion
+deviceType
+deviceWiFiMAC
+productVersion
+deviceCodename
+deviceIsProduction
+@24@?0@8@16
+token.isConnected
+deviceAttached
+-[DVTiOSDevice renameDevice:]
+self.canRename
+canExecute
+token.deviceIsPaired
+token.applications
+token.systemApplications
+DTDeviceKit
+suppressing DTDeviceKit error: %@
+an error occurred: %@
+%@ {
+deviceSerialNumber:         %@
+identifier:                 %@
+deviceClass:                %@
+deviceName:                 %@
+deviceIdentifier:           %@
+productVersion:             %@
+buildVersion:               %@
+deviceSoftwareVersion:      %@
+deviceArchitecture:         %@
+deviceTotalCapacity:        %@
+deviceAvailableCapacity:    %@
+deviceIsTransient:          %s
+ignored:                    %s
+deviceIsBusy:               %s
+deviceIsPaired:             %s
+deviceIsActivated:          %s
+deviceActivationState:      %@
+isPasscodeLocked:           %s
+deviceType:                 %@
+supportedDeviceFamilies:    %@
+applications:              %@
+applications
+@16@?0@"DVTProvisioningProfile"8
+<unknown>
+provisioningProfiles:      %@
+hasInternalSupport:        %s
+hasWritableSystem:         %s
+isSupportedOS:             %s
+developerPrepErrors:
+developerPrepWarnings:
+bootArgs:                  %@
+nextBootArgs:              %@
+connected:                 %s
+isWirelessEnabled:         %s
+connectionType:            %s
+network
+direct
+hostname:                  %@
+bonjourServiceName:        %@
+directSSHPort:             %ld
+remoteSSHPort:             %ld
+activeProxiedDevice:       %@
+activeOperations:
+token.hasWirelessConnection
+token.hasWiredConnection
+token.deviceHostname
+token.deviceWiFiMAC
+token.deviceAddresses
+11.0
+DVTDevice
+%@ does not know how to attempt recovery from error: %@
+isSupportedHardware
+token.deviceDevelopmentStatus
+token.deviceProcessorDescription
+token.isPasscodeLocked
+token.platform
+XCDiagnosticLogsSyncErrorDomain
+AMSCopyCrashReportsFromTarget failed with status %d, error code %d
+AMSConnectToCrashReportCopyTarget failed with status %d, error code %d
+AMSInitialize failed with status %d
+-[DVTiOSDevice _syncDeviceCrashLogsDirectoryWithCompletionHandler:]_block_invoke_2
+ide_fallbackSelectorDeviceGroupingFamily
+T@"NSString",R,N
+token
+T@"NSObject<DTDKRemoteDeviceToken>",&,V_token
+mutableProxiedDevices
+T@"NSMutableSet",R,C,D
+deviceProgressOperation
+T@"DVTDeviceOperation",&,VdeviceProgressOperation
+deviceProgressOperationLock
+T@"DVTDispatchLock",&,N,VdeviceProgressOperationLock
+deviceConnectingOperation
+T@"DVTDeviceOperation",&,VdeviceConnectingOperation
+deviceReady
+TB,V_deviceReady
+inHasConnected
+TB,V_inHasConnected
+T@"NSError",C,V_developerPrepError
+developerPrepErrors
+developerPrepWarnings
+deviceInstallQueue
+T@"NSObject<OS_dispatch_queue>",&,V_deviceInstallQueue
+deviceInstallIsCancelled
+Tc,V_deviceInstallIsCancelled
+scriptLaunchParameters
+T@"IDELaunchParametersSnapshot",&,V_scriptLaunchParameters
+deviceIsTransient
+Tc,V_deviceIsTransient
+xpcAttachServiceChannel
+T@"DTXChannel",&,V_xpcAttachServiceChannel
+xpcProxyAttachServiceChannel
+T@"DTXChannel",&,V_xpcProxyAttachServiceChannel
+bootArgs
+T@"NSString",&,VbootArgs
+nextBootArgs
+T@"NSString",&,V_nextBootArgs
+remoteSSHPort
+Tq,VremoteSSHPort
+deviceHasWritableSystemPartition
+TB,V_deviceHasWritableSystemPartition
+deviceHasWakeupToken
+deviceWantsToBeForgotten
+TB,R,V_deviceWantsToBeForgotten
+mountOptions
+T@"NSString",R,C,V_mountOptions
+conditionInducerSession
+T@"DVTConditionInducerSession",R
+Xcode.Device.iOSDevice
+NSOrderedSet *AllowableArchitectures(NSString *__strong)
+(deviceArchitecture) != nil
+CFGetTypeID((CFStringRef)deviceArchitecture) == CFStringGetTypeID()
+![(deviceArchitecture) isEqualToString:@""]
+arm64e
+arm64v8
+arm64
+armv8
+arm64_32
+armv7s
+armv7
+armv6
+armv5e
+armv5
+armv7f
+armv7k
+DeviceCrashLogsLock
+com.apple.xcode.debug-gauge-data-providers.SceneKit
+-[IDEClassKitItemModel classKitEntitlement]
+/Library/Caches/com.apple.xbs/Sources/DVTiOSFrameworks/DVTiOSFrameworks-15509/IDEiOSSupportCore/Capabilities/IDEClassKitItemModel.m
+((entitlement)) != nil
+(entitlement)
+development
+v16@?0@"<IDEEntitlementsCoordinatorToken>"8
+@"NSError"16@?0@"<IDEFlightCheckingContext>"8
+c8@?0
+isEnabled
+ENABLE_BITCODE
+/Developer/usr/bin/xctest
+/Developer/usr/lib/libXCTTargetBootstrapInject.dylib
+backboardd
+iphoneos
+SpringBoard
+appletvos
+PineBoard
+watchos
+Carousel
+-[DVTBasicProxiediOSDevice modelUTI]
+/Library/Caches/com.apple.xbs/Sources/DVTiOSFrameworks/DVTiOSFrameworks-15509/IDEiOSSupportCore/DVTBasicProxiediOSDevice.m
+-[DVTBasicProxiediOSDevice modelName]
+-[DVTBasicProxiediOSDevice modelCodename]
+-[DVTBasicProxiediOSDevice nativeArchitecture]
+-[DVTBasicProxiediOSDevice operatingSystemBuild]
+-[DVTBasicProxiediOSDevice operatingSystemVersion]
+-[DVTBasicProxiediOSDevice operatingSystemVersionWithBuildNumber]
+-[DVTBasicProxiediOSDevice proxiedDevices]
+-[DVTBasicProxiediOSDevice supportsProvisioning]
+-[DVTBasicProxiediOSDevice processorDescription]
+-[DVTBasicProxiediOSDevice platformIdentifier]
+-[DVTBasicProxiediOSDevice platform]
+-[DVTBasicProxiediOSDevice identifier]
+-[DVTBasicProxiediOSDevice modelCode]
+-[DVTBasicProxiediOSDevice name]
+-[DVTBasicProxiediOSDevice supportedDeviceFamilies]
+-[DVTBasicProxiediOSDevice isAvailable]
+%@ does not support execution for %@
+This device
+%@ does not support running %@
+%@ does not support installation
+%@ does not support analyzing
+adjustedOperatingSystemVersion
+com.apple.xcode.debug-gauge-data-providers.Energy
+path
+bundleIdentifier
+Xcode.IDEFoundation.IDEDistributionProcessingStep.CreateIPA
+Xcode.IDEFoundation.IDEDistributionOption.UploadBitcode
+Xcode.IDEFoundation.IDEDistributionOption.StripSwiftSymbols
+IDEDistributionPackageExportStep
+localhost
+Internal workflows are not enabled
+Device does not have internal tools installed
+Could not get a valid ssh port.  If the device is network-connected, make sure that "Enable Remote SSH" is checked (control-click the device name in the Devices Window source list).
+--rsh
+/usr/bin/ssh -axC -l root -oUserKnownHostsFile=/dev/null -oStrictHostKeyChecking=no -oPort=%ld
+-[DVTiOSDevice(Connect) enableKeyBasedSSH]_block_invoke_2
+~/.ssh/identity
+~/.ssh/id_dsa
+~/.ssh/id_ecdsa
+~/.ssh/id_rsa
+SSH Setup Failed
+No ssh keys were found in ~/.ssh/. Please run 'ssh-keygen' to generate a key, and try again.
+%@ error enabling key-based SSH: %@
+mkdir -p ~{root,mobile}/.ssh/
+echo '%@' | sort -us ~{root,mobile}/.ssh/authorized_keys - > /tmp/xcode_ssh_keys
+cp /tmp/xcode_ssh_keys ~root/.ssh/authorized_keys
+cp /tmp/xcode_ssh_keys ~mobile/.ssh/authorized_keys
+chmod 644 ~root/.ssh/authorized_keys
+chown -R root:wheel ~root/.ssh
+chmod 644 ~mobile/.ssh/authorized_keys
+chown -R mobile:mobile ~mobile/.ssh
+-[DVTiOSDevice(Connect) enableKeyBasedSSH]_block_invoke
+/Library/Caches/com.apple.xbs/Sources/DVTiOSFrameworks/DVTiOSFrameworks-15509/IDEiOSSupportCore/DVTiPhoneConnect.m
+%@ -- enableKeyBasedSSH failed.
+v16@?0@"NSError"8
+SSH_ASKPASS
+DISPLAY
+none
+IDESourceControlPassword
+IDESourceControlUsername
+root
+SSH_AUTH_SOCK
+[%@]
+Internal Error: unable to prepare rsync path. There may be no tcprelay instance running for this device (the SSH port is unknown)
+The SSH port for this device is unknown or unavailable
+Internal Error: the hostname for this device is unknown
+The hostname for this device is unknown
+Internal Error: there was no path provided
+There was no path provided
+root@%@:%@
+'"'"'
+root@%@:'%@'
++[DVTiOSDevice(Connect) pathForInternalExecutable:searchInPlatform:]
+(path) != nil
+CFGetTypeID((CFStringRef)path) == CFStringGetTypeID()
+![(path) isEqualToString:@""]
+-[DVTiOSDevice(Connect) _openTCPRelayConnection]_block_invoke
+%@ -- openTCPRelayConnection failed.
+DeviceSupport
+DeveloperDiskImage.dmg
+@"NSString"16@?0@"NSString"8
+%@ using developer root found at:
+NSString
+%@ ##### skiping PROPNAME: %@   PROPATTR: %@ #####
+%@ conforms to device type %@
+%@ matches but does not conform to any device type derived from %@, ignoring
+iOSDevicePostDiscovery
+Handling hasConnected
+%@ ################ HAS CONNECTED ###################
+Set DTDeviceKitLogLevel to verbose (3) for detailed connection logs
+Unactivated
+-[DVTiOSDevice(Connect) hasConnected]_block_invoke
+Making %@ ready for development
+Starting DDI prep
+%@ unable to mount developer disk image, (%@) %@
+Failed DDI prep
+Copying developer files from %@ to %@
+Copying developer files to device's root
+Finished copying developer files to device's root
+Unable to copy developer files to device's root
+Failed to copy developer files to device's root: %@
+Preparing debugger support for %@
+%@ unable to process device shared cache, (%@) %@
+Finished DDI prep
+Finalizing debugger support for %@
+%@ -- An error occurred whilst preparing device for development -- %@
+%@ == Underlying device preparation errors ==
+%@ == END: Underlying device preparation errors ==
+%@ ################ FINISHED HAS CONNECTED (%d) ###################
+Done
+%@ -- Failed _shouldMakeReadyForDevelopment check even though device is not locked by passcode.
+allowsSecureServices: %d. isConnected: %d. Platform: %@. DTDKDeviceIdentifierIsIDID: %d
+%@ ################ HAS DIS CONNECTED ###################
+ignored
+token.deviceIsActivated
+IPHONE_INSTALL_PATH
+LOCAL_INSTALL_PATH
+IPHONE_DEVICE_IDENTIFIER
+%@ invoking %@ with env[%@]
+Making %@ ready for internal development
+DVTiPhoneConnectSetSandboxDebugMode
+/Developer/Library/LaunchDaemons services not running on internal build.
+Performing internal preflight check for %@
+%@ performing internal preflight check
+this is a test
+/bin/echo
+%@ internal preflight succeeded.
+%@. Internal preflight failed with unexpected output (stderr=="%@", stdout=="%@")
+v16@?0@"NSDictionary"8
+-[DVTiOSDevice(Connect) _internalPreflightCheck]_block_invoke
+%@. Internal preflight check echo command failed
+%@ executing load developer services command
+/bin/launchctl
+load
+/Developer/Library/LaunchDaemons
+-[DVTiOSDevice(Connect) _executeLoadDeveloperServicesCommand]_block_invoke
+%@. Failed to load developer LaunchDaemons.
+%@ executing launch services health check command
+list
+com.apple.testmanagerd
+-[DVTiOSDevice(Connect) _executeDeveloperServicesHealthCheckCommandWithServicesNotRunningNotificationBlock:]_block_invoke
+Could not find service "com.apple.testmanagerd" in domain for system
+%@ executing fetch boot args command
+/usr/sbin/sysctl
+kern.bootargs
+kern.bootargs:
+-[DVTiOSDevice(Connect) _executeFetchBootArgsCommand]_block_invoke
+%@. _executeFetchBootArgsCommand failed.
+%@ executing fetch next boot args command
+/usr/sbin/nvram
+boot-args
+-[DVTiOSDevice(Connect) _executeFetchNextBootArgsCommand]_block_invoke_2
+%@. _executeFetchNextBootArgsCommand failed.
+%@ executing mount-writable command
+/sbin/mount
+%@ system partition mounted writable
+v16@?0@8
+%@. Mount-writable command failed.
+%@ executing set sandbox debug mode command
+security.mac.sandbox.debug_mode=1
+-[DVTiOSDevice(Connect) _executeSetSandboxDebugModeCommand]_block_invoke
+%@. _executeSetSandboxDebugModeCommand failed.
+%@ executing make directory `%@' command
+-[DVTiOSDevice(Connect) _executeMakeDirectoryCommandWithPath:]_block_invoke
+%@. _executeMakeDirectoryCommandWithPath failed.
+%@ executing Enable Remote SSH command
+enable
+-[DVTiOSDevice(Connect) _executeEnableRemoteSSHRequest]_block_invoke
+%@. _execEnableRemoteSSHRequest failed.
+%@ executing Update Remote SSH Status command on device
+-[DVTiOSDevice(Connect) _executeUpdateRemoteSSHStatusRequest]_block_invoke
+%@. _executeUpdateRemoteSSHStatusRequest failed.
+-[DVTiOSDevice(Connect) taskForDeviceCommand:withArguments:error:]
+TARGET_APPLICATION_ID
+TARGET_APPLICATION
+%@ TARGET_APPLICATION_ID = '%@'
+/usr/bin/stat
+TARGET_APPLICATION_ID (%@) can't be located.
+/tmp/_TARGET_APPLICATIONs_
+%@ rsync %@ -> %@
+Failed to rsync %@ -> %@.
+Missing required testing component at: %@
+Try reinstalling Xcode
+../AppleInternal/Library
+Environment variable '%@' specified nonexistent path: '%@'
+INTERNAL_TESTING_FRAMEWORK_PATH
+Frameworks/XCTest.framework
+INTERNAL_AUTOMATION_SUPPORT_FRAMEWORK_PATH
+PrivateFrameworks/XCTAutomationSupport.framework
+INTERNAL_TESTING_SWIFT_SUPPORT_LIBRARY_PATH
+../usr/lib/libXCTestSwiftSupport.dylib
+Frameworks/OCMock.framework
+Xcode/Agents/xctest
+c16@?0@"DVTFilePath"8
+dSYM
+%@ including dSYM for test bundle in products to rsync (path:%@)
+/tmp
+xctest
+Failed to rsync %@ -> %@. Error: %@
+Failed to rsync %@ -> %@. Error %@
+%@ finished install for test bundle at path %@
+%@ installing %@ using MobileInstall
+SkipWatchAppInstall
+%@ failed to install proxy app for app %@ - it was not found on disk
+%@ unable to retrieve information about proxy app '%@'
+%@ unable to determine whether proxy app '%@' installs on proxy
+Unsupported %@ Configuration
+ To continue, edit the %@ scheme action and select a build configuration that does not include the %@ architecture.
+%@ failed to install %@ - error %@
+Failed to upload application data to path: %@. For bundle ID: %@. Error: %@
+Install claimed to have succeeded, but application could not be found on device. bundleId = %@
+-[DVTiOSDevice(Connect) installForMobileInstallWithSession:error:]
+XCSensorReplayData
+%@ stage deviceSensorReplayFile:%@
+%@ configuring for testing on device
+-[DVTiOSDevice(Connect) _configureTestingForLaunchSession:outError:]
+Launch parameters do not include testing environment variables.
+Launch session does not have a test configuration.
+No installed application found for launch session.
+Nil lastPathComponent for XCTestConfigurationFilePath %@
+No container path for app %@, is it using entitlement com.apple.private.security.no-container?
+%@ updating test configuration with device paths
+%@ error updating test configuration: %@
+(no error info)
+%@ uploading test configuration to app container
+%@ error uploading test configuration to app container: %@
+code which should be unreachable has been reached
+%@ updating test process environment variables
+rsync://
+/Applications
+device_%@__appBundle_%@
+AppDataSyncRecords
+v20@?0c8@"NSError"12
+.xcappdata
+%@ no file found at path "%@".  The Routing App Coverage file specified in your scheme may have been moved or deleted.
+v16@?0@"NSImage"8
+Xcode
+Installing Application
+IDEDisableInternalInstall
+Error when fetching supported SDKs for buildable: %@. Parameters: %@. Error: %@
+c16@?0@"DVTSDK"8
+DISABLE_INTERNAL_INSTALL
+%@ DISABLE_INTERNAL_INSTALL is set for %@. MobileInstall will be used.
+Unrecognized launch style (%d)
+DVTiOSDevice - debugserver service
+Paired device doesn't suppor -token, service failed to start
+%@ '%@' encountered starting debugserver on device. Full error: %@
+%@ started debugserver on device. fd = %d
+didExecute.sh
+%@ ############## DID EXECUTE #################
+systemApplications
+NSArray *DDISearchPaths(NSString *__strong, NSString *__strong, NSString *__strong)
+(platformPath) != nil
+%@ should be a string, but it is nil
+platformPath
+CFGetTypeID((CFStringRef)platformPath) == CFStringGetTypeID()
+%@ should be a string, but it is %@
+Looking for developer disk images in:
++[IDEGaugeDataProviderService_iOSDevice observableAttributes]
+/Library/Caches/com.apple.xbs/Sources/DVTiOSFrameworks/DVTiOSFrameworks-15509/IDEiOSSupportCore/IDEGaugeDataProviderService_iOSDevice.m
++[IDEGaugeDataProviderService_iOSDevice remoteServerChannelIdentifier]
+com.apple.platform.appletvos
+com.apple.platform.watchos
+-[IDEGaugeDataProviderService_iOSDevice startSamplingForPIDs:]_block_invoke
+(_castedResult) != nil
+_castedResult
+[(id)(_castedResult) isKindOfClass:[NSSet class]]
+error
+Communication failure: %@
+Communication failure: return type should have been NSDictionary, but is %@
+-[IDEGaugeDataProviderService_iOSDevice sampleAttributes:forPIDs:]_block_invoke
+[(id)(_castedResult) isKindOfClass:[NSDictionary class]]
+-[IDEGaugeDataProviderService_iOSDevice stopSamplingForPIDs:]_block_invoke
+channel
+T@"DTXChannel",&,V_channel
+samplingDevice
+T@"<DVTBasicDevice>",R
+inter-app-audio
+AudioToolbox
+com.apple.instruments.server.services.ConditionInducer
+DVTConditionInducerSessionErrorDomain
+-[DVTConditionInducerSession initWithDevice:]
+/Library/Caches/com.apple.xbs/Sources/DVTiOSFrameworks/DVTiOSFrameworks-15509/IDEiOSSupportCore/Condition Inducers/DVTConditionInducerSession.m
+((device)) != nil
+(device)
+Default
+Condition Inducer Session Queue
+hasConnection
+-[DVTConditionInducerSession _connectChannelWithDevice:]
+device != ((void *)0)
+The device was deallocated without first deallocating its DVTConditionInducerSession instance.
+ActiveConditionsWillStop
+ActiveConditionsDidStop
+Condition inducer service is not ready.
+Device conditions are not supported.
+Failed to determine available condition inducers (error code %d).
+-[DVTConditionInducerSession enableConditionInducer:profile:completion:]
+((conditionInducer)) != nil
+(conditionInducer)
+((profile)) != nil
+(profile)
+((self.activeCondition)) == nil
+%@ should be nil, but it is %@
+(self.activeCondition)
+conditionInducer.state == DVTiOSConditionInducerStateInactive
+Invalid condition inducer state %lu: %@
+Enable condition inducer request failed (error code %d).
+-[DVTConditionInducerSession disableConditionInducer:completion:]
+conditionInducer.state == DVTiOSConditionInducerStateActive || conditionInducer.state == DVTiOSConditionInducerStateSettingUp
+Disable condition inducer request failed (error code %d).
+DVTConditionInducerSessionExcludeInternal
+activeProfile
+isActive
+isDestructive
+isInternal
+profilesSorted
+-[DVTConditionInducerSession _updateAvailableConditionInducersWithDictionary:]
+isActive == __objc_no || activeProfileIdentifier != ((void *)0)
+Active condition has not specified an active profile identifier: %@
+profiles
+activeProfileIdentifier == ((void *)0) || activeProfile != ((void *)0)
+Invalid active profile identifier '%@'. Could not match a profile: %@
+q24@?0@"DVTiOSConditionInducerProfile"8@"DVTiOSConditionInducerProfile"16
+q24@?0@"DVTiOSConditionInducer"8@"DVTiOSConditionInducer"16
+T@"DVTiOSDevice",W,V_device
+serviceState
+TQ,V_serviceState
+channelQueue
+T@"NSObject<OS_dispatch_queue>",&,V_channelQueue
+channelResetQueued
+Tc,V_channelResetQueued
+registeredCallbackBlocks
+T@"NSMapTable",&,V_registeredCallbackBlocks
+deviceAllowsSecureServicesObservingToken
+T@"DVTObservingToken",&,V_deviceAllowsSecureServicesObservingToken
+deviceHasConnectionObservingToken
+T@"DVTObservingToken",&,V_deviceHasConnectionObservingToken
+deviceIsPairedObservingToken
+T@"DVTObservingToken",&,V_deviceIsPairedObservingToken
+T@"NSObject<OS_os_log>",&,V_log
+availableConditions
+T@"NSArray",&,V_availableConditions
+activeCondition
+T@"DVTiOSConditionInducer",W,V_activeCondition
+com.apple.dt.DVTConditionInducerSession
+-[IDEMobileDeviceArchiver createStreamableZipOfDirectory:atPath:options:error:]
+/Library/Caches/com.apple.xbs/Sources/DVTiOSFrameworks/DVTiOSFrameworks-15509/IDEiOSSupportCore/IDEMobileDeviceArchiver.m
+((directory)) != nil
+(directory)
+((destinationPath)) != nil
+(destinationPath)
+(options) == nil || CFGetTypeID((CFDictionaryRef)options) == CFDictionaryGetTypeID()
+%@ should be a dictionary, but it is %@
+options
+-[IDEMobileDeviceArchiver extractStreamableZipAtPath:toPath:error:]
+((zipPath)) != nil
+(zipPath)
+/usr/bin/ditto
+-[IDEMobileDeviceArchiver extractStreamableZipAtPath:toPath:error:]_block_invoke
+Ditto failed
+META-INF
+GeoJSON
+DirectProxyInstall
+IsCompanionApp
+identifier == %@
+-[DVTiOSDevice(DVTiPhoneApplicationInstallation) _checkForARM64SliceAtPath:executableName:zipFile:subpath:]
+/Library/Caches/com.apple.xbs/Sources/DVTiOSFrameworks/DVTiOSFrameworks-15509/IDEiOSSupportCore/DVTiPhoneApplicationInstallation.m
+Error extracting executable from the archive at path "%@" (%@)
+Error creating temporary file (%@)
+Error writing data to temporary file at path "%@" (%@)
+lipo
+-verify_arch
+Error running lipo (%@)
+application
+Unable to install %@
+The path is empty
+No application exists at %@
+%@ cannot be installed on %@. %@ is not an application bundle
+%@ cannot be installed on %@. %@ is not an ipa file
+Payload
+.app
+B32@?0@"NSString"8@"NSDictionary"16^@24
+%@ does not contain an application bundle, so it cannot be installed on %@
+%@ does not contain a valid Info.plist, so it cannot be installed on %@
+UIRequiredDeviceCapabilities
+CapabilitiesMatch
+%@ couldn't install %@ due to capability mismatch.
+MismatchedCapabilities
+%@ requires the following capabilities which are not supported by %@:
+CFBundleExecutable
+Watch
+UIDeviceFamily
+integerValue
+iPhones
+iPod Touches
+iPads
+Unknown Device (%@)
+%@ cannot be installed on %@. %@ can only be installed on %@.
+MinimumOSVersion
+WKWatchKitApp
+DTPlatformName
+%@ cannot be installed on %@ because the application has a minimum OS requirement of %@ %@ but the device is currently running %@ %@.
+EmbeddedAppDeltas
+AppInstallation
+Processing install set
+DVTDeviceShowInstallSpeed
+Canceling
+TotalBytes
+NumBytes
+Status
+CopyingFile
+Copying
+(%lu KB/sec)
+progress: %ld completed: %llu total: %llu speed: %@
+Performed Action: %@
+Performing install actions
+Path
+Installing to %@ | %@ %@ %@
+Developer
+PackageType
+Customer
+ShadowParentKey
+%@ was expected to have a proxied device but did not
+%@ installing %@ to proxy device
+Xcode Watch App Install
+Power assertion during Xcode app install
+%@ app uninstall set - %@
+Uninstalling "%@"
+Done uninstalling "%@"
+%@ app install set - %@
+Installing "%@"
+%@ installApplicationBundleAtPath:withOptions:andError:withCallback: failed with %@
+Done installing "%@"
+DVTAppInstallationResolveLinks
+%@ app to be installed is a symlink: %@
+%@ resolved symlink to: %@
+%@ skipped install of app already on device: %@
+Can't delete application
+No application exists with bundle identifier "%@"
+%@ failed to fetch applications. Error: %@
+-[DVTiOSDevice(DVTiPhoneApplicationInstallation) uninstallApplications:]
+(applicationObjects) != nil
+applicationObjects
+[(id)(applicationObjects) isKindOfClass:[NSSet class]]
+v16@?0@"DVTOperation"8
+DVTDeviceTokens
+DVTDisable18787855
+Xcode.IDEiOSSupportCore.iOSDeviceLocatorMapping
+devicePlatform
+-[DVTiOSDeviceLocator init]_block_invoke
+/Library/Caches/com.apple.xbs/Sources/DVTiOSFrameworks/DVTiOSFrameworks-15509/IDEiOSSupportCore/DVTiOSDeviceLocator.mm
+Missing platform %@ for %@
+placeholderClass
+@16@?0@"DVTExtension"8
+@16@?0@"DVTPlatform"8
+@16@?0@"DVTiOSDevice"8
+c32@?0@"NSDictionary"8Q16^c24
+-[DVTiOSDeviceLocator updateDefaultsForDevice:]_block_invoke
+-[DVTiOSDeviceLocator beginWatchingDevice:]
+-[DVTiOSDeviceLocator beginWatchingDevice:] called with nil device
+-[DVTiOSDeviceLocator forgetDevice:]
+-[DVTiOSDeviceLocator forgetDevice:] called with nil device
+env[@"RC_XBS"]
+RC_XBS
+env[@"RC_BUILDIT"]
+RC_BUILDIT
+env[@"DVTSuppressExternalDeviceLocation"]
+DVTSuppressExternalDeviceLocation
+[defaults objectForKey:@"DVTSuppressExternalDeviceLocation"]
+c24@?0@8@16
+Ignoring MobileDevice because of %@.
+-[DVTiOSDeviceLocator knownDeviceAtDeviceLocation:]
+((deviceLocation)) != nil
+(deviceLocation)
+c16@?0@"DVTDevice"8
+c16@?0@"DVTiOSDevice"8
+-[DVTiOSDeviceLocator deviceAttached:]
+DVTiOSDeviceLocator: deviceAttached: Running Locked Block
+Calling %s
+-[DVTiOSDeviceLocator deviceDetached:]
+-[DVTiOSDeviceLocator matchDevice:againstOptions:genericOnly:allowAliases:]
+(__objc_no == ((name == nullptr) && (identifier == nullptr)))
+(__objc_no == ((name != nullptr) && (identifier != nullptr)))
+ad-hoc
+Ad Hoc
+Install on designated devices.
+IDEDistributionReformatArchiveStepViewController
+IDEDistributionAnalyzeArchiveStepViewController
+IDEDistributionTeamStepViewController
+IDEDistributionOptionsStepViewController
+IDEDistributionManifestStepViewController
+IDEDistributionSigningMethodStepViewController
+IDEDistributionSigningAssetsStepViewController
+IDEDistributionPackagingStepViewController
+IDEDistributionSummaryStepViewController
+Xcode.Portal.Profile.Purpose.AdHoc
+Xcode.IDEFoundation.IDEDistributionOption.ODR
+Xcode.IDEFoundation.IDEDistributionOption.Thinning
+Xcode.IDEFoundation.IDEDistributionOption.CompileBitcode
+Xcode.IDEFoundation.IDEDistributionOption.Manifest
+supportedPlatform
+-[IDEGaugeDataProviderService_iOSSimulator_NetworkStatistics sampleAttributes:forPIDs:]
+/Library/Caches/com.apple.xbs/Sources/DVTiOSFrameworks/DVTiOSFrameworks-15509/IDEiOSSupportCore/IDEGaugeDataProviderService_iOSSimulator_NetworkStatistics.m
+com.apple.xcode.debug-gauge-data-providers.SpriteKit
+@"NSSet"8@?0
+Xcode.Device.iOSDevicePlaceholder
+HomeKit
+com.apple.developer.homekit
+ENTITLEMENTS_DESTINATION
+Signature
+ENTITLEMENTS_ALLOWED
+TARGET_BUILD_DIR
+FULL_PRODUCT_NAME
+simulator entitlements
+LD_ENTITLEMENTS_SECTION
+BUILD_COMPONENTS
+build
+simulator-as-device
+index
+DVTDownloadableIndex
+https://devimages-cdn.apple.com/downloads/xcode/simulators/
+-[DVTDownloadableIndexSourceiOS baseURL]
+/Library/Caches/com.apple.xbs/Sources/DVTiOSFrameworks/DVTiOSFrameworks-15509/IDEiOSSupportCore/DVTDownloadableIndexSourceiOS.m
+(_result) != nil
+[NSURL URLWithString:@"https://devimages-cdn.apple.com/downloads/xcode/simulators/"]
+omcIdentifiers
+merchantIDs.unexpandedIdentifiers
+merchantIDs.availableTeamIdentifiers
+merchantIDs
+T@"IDEAppIDItemIdentifiersItemModelSet",&,V_merchantIDs
+<%@: %p: %@>
+lastAccessedDate
+volume
+size
+isOrphaned
+T@"NSDate",R
+ManifestCache.plist
+mobileprovision
+Failed to load profile data.
+An unknown error occurred while loading provisioning profile data.
+-[IDEEmbeddedProvisioningProfileProvider provisioningProfileFromData:error:]
+/Library/Caches/com.apple.xbs/Sources/DVTiOSFrameworks/DVTiOSFrameworks-15509/IDEiOSSupportCore/IDEEmbeddedProvisioningProfileProvider.m
+-[IDEEmbeddedProvisioningProfileProvider provisioningProfileFromFilePath:error:]
+((profileFilePath)) != nil
+(profileFilePath)
+com.apple.developer.nfc.readersession.formats
+Near Field Communication Tag Reading
+NDEF
+Generic %@ Device
+Internal
+Xcode.DeviceType.iPhoneSimulator
+dvtdevice-%@-%@:placeholder
+Xcode.Device.iOSDeviceSimulatorPlaceholder
+enterprise
+Enterprise
+Distribute to your organization.
+-[IDEDistributionMethodEnterprise orderedDistributionStepClassNamesForDestination:]
+/Library/Caches/com.apple.xbs/Sources/DVTiOSFrameworks/DVTiOSFrameworks-15509/IDEiOSSupportCore/Distribution/IDEDistributionMethodEnterprise.m
+destination == self.supportedDestinations.dvt_onlyObject.integerValue
+Expected destination in %@, but got %@
+Xcode.Portal.Profile.Purpose.InHouse
+T@"DVTPlatform",R,V_supportedPlatform
+/Library/Caches/com.apple.xbs/Sources/DVTiOSFrameworks/DVTiOSFrameworks-15509/IDEiOSSupportCore/DVTiPhoneSimulator+IDETestingAdditions.m
+Invalid parameter not satisfying: %@
+testConfiguration != nil
+x86_64
+i386
+VALID_ARCHS
+TestSessionClaim_
+IDETestingDisableLogArchiveCollection-Simulator
+timestamp
+eventMessage
+DVTiOSDeviceErrorReportErrorDomain
+missing device
+/usr/bin/log
+show
+--debug
+--info
+--style
+json
+--start
+--end
+--predicate
+%@ contains "%@"
+ OR 
+log command return non-zero error code %ld
+log command failed but didn't return an error
+Error decoding log results stream: %@
+Error decoding log results stream: invalid result object
+reportEntries
+T@"NSArray",R,N,V_reportEntries
+yyyy-MM-dd HH:mm:ss
+com.apple.dt.Xcode.DVTiOSDeviceTaskErrorDomain
+com.apple.dt.Xcode
+DVTiOSDeviceTask
+/Library/Caches/com.apple.xbs/Sources/DVTiOSFrameworks/DVTiOSFrameworks-15509/IDEiOSSupportCore/DVTiOSDeviceTask.m
+launchPath
+Failed to execute task on device
+Device %@ is missing a platform
+487927
+Platform %@ is missing PurpleExec
+--stream
+--su
+--target
+ '%@'
+<%@: %p (on '%@') %@>
+<%@: %p (on invalid device) %@>
+Device %@ is disconnected
+logHandle
+T@"NSObject<OS_os_log>",R
+T@"DVTiOSDevice",&,N,V_device
+remoteArguments
+T@"NSArray",C,N,V_remoteArguments
+remoteLaunchPath
+T@"NSString",C,N,V_remoteLaunchPath
+AuthenticationServices
+com.apple.developer.authentication-services.autofill-credential-provider
+/Library/Caches/com.apple.xbs/Sources/DVTiOSFrameworks/DVTiOSFrameworks-15509/IDEiOSSupportCore/DVTiOSDevice+IDETestingAdditions.m
+sessionIdentifier must not be nil, test configuration: %@
+identifier must not be nil, device %@
+Logic Testing Unavailable
+Logic Testing on iOS devices is not supported. You can run logic tests on the Simulator.
+/var/mobile/Library/Logs/CrashReporter/
+@"NSSet"16@?0@"NSArray"8
+@16@?0@8
+@"NSArray"16@?0@"NSSet"8
+@16@?0@"DVTArchitecture"8
+@"DVTArchitecture"16@?0@"DVTArchitecture"8
+NSArray<DVTSDK *> *supportedSimulatorSDKsForBuildable(DVTDevice *__strong, __strong id<IDEBuildable>, IDEBuildParameters *__strong, NSError *__autoreleasing *)
+/Library/Caches/com.apple.xbs/Sources/DVTiOSFrameworks/DVTiOSFrameworks-15509/IDEiOSSupportCore/DVTSimulatorUtilities.m
+Couldn't find an SDK for %@ : %@
+IDEOverridingBuildProperties *simulatorSpecificOverridingPropertiesForBuildable(DVTDevice *__strong, NSSet *__strong, __strong id<IDEBuildable>, IDEBuildParameters *__strong, IDEOverridingBuildProperties *__strong)
+((overridingProperties)) != nil
+(overridingProperties)
+%@.internal
+device specific overrides
+v40@?0@"NSString"8@?<@@?@"NSArray">16@?<@"NSArray"@?@>24@?<@@?@>32
+@"NSSet"16@?0@"NSSet"8
+token.deviceIdentifier
+token.localizedDeviceModel
+token.deviceModelUTI
+token.deviceType
+token.productVersion
+token.buildVersion
+token.deviceSoftwareVersion
+symbolsCoordinator.downloadOperation
+self.symbolsCoordinator.downloadError
+%@ is busy downloading symbols
+Please select a different device, or wait for the download to complete and try again.
+-[DVTProxiediOSDevice deviceSupportsBuildable:buildParameters:error:]
+/Library/Caches/com.apple.xbs/Sources/DVTiOSFrameworks/DVTiOSFrameworks-15509/IDEiOSSupportCore/DVTProxiediOSDevice.m
+symbolsCoordinator
+T@"DVTProxiedDeviceSymbolsCoordinator",&,V_symbolsCoordinator
+T@"<DTDKRemoteDeviceToken>",R,V_token
+[Proxied device symbols coordinator] Got OS version: %@
+[Proxied device symbols coordinator] Got model code: %@
+[Proxied device symbols coordinator] Got OS build: %@
+[Proxied device symbols coordinator] Got platform: %@
+DVTDisableSymbolDownload
+[Proxied device symbols coordinator] OS Version %@ is older than minimum OS %@
+[Proxied device symbols coordinator] Skipping download because we already have a symbols path (%@)
+[Proxied device symbols coordinator] Skipping download because we already have a download operation (%@)
+[Proxied device symbols coordinator] Skipping download because we already have a download error (%@)
+-[DVTProxiedDeviceSymbolsCoordinator _checkForSymbols]_block_invoke
+/Library/Caches/com.apple.xbs/Sources/DVTiOSFrameworks/DVTiOSFrameworks-15509/IDEiOSSupportCore/DVTProxiedDeviceSymbolsCoordinator.m
+((symbolsURL)) != nil
+(symbolsURL)
+serverPath
+serverRequiresAuth
+[Proxied device symbols coordinator] Starting a download for %@ %@ (%@), to file path %@, for servers %@
+[Proxied device symbols coordinator] Download error %@
+[Proxied device symbols coordinator] Unable to download symbols %@
+Symbol download for %@ appeared to succeed, but no symbols exist at %@
+Failed to download %@, try again later.
+[Proxied device symbols coordinator] Download succeeded with symbols path %@
+Xcode.Symbols.%@.%@
+%@_%@.dmg
+Symbols for %@ %@ (%@)
+c16@?0@"DVTDownloadableOperation"8
+T@"DVTProxiediOSDevice",&,V_device
+T@"NSString",&,V_modelCode
+modelCodeObserver
+T@"DVTObservingToken",&,V_modelCodeObserver
+T@"NSString",&,V_operatingSystemVersion
+operatingSystemVersionObserver
+T@"DVTObservingToken",&,V_operatingSystemVersionObserver
+T@"NSString",&,V_operatingSystemBuild
+operatingSystemBuildObserver
+T@"DVTObservingToken",&,V_operatingSystemBuildObserver
+T@"DVTPlatform",&,V_platform
+platformObserver
+T@"DVTObservingToken",&,V_platformObserver
+downloadOperation
+T@"DVTDownloadableOperationDownload",&,V_downloadOperation
+symbolsPath
+T@"DVTFilePath",&,V_symbolsPath
+downloadError
+T@"NSError",&,V_downloadError
+DVTProxiedDeviceModelCodeOverride
+NSArray *_orderedSymbolServers(NSString *__strong, NSString *__strong)
+(platformDescription) != nil
+platformDescription
+CFGetTypeID((CFStringRef)platformDescription) == CFStringGetTypeID()
+![(platformDescription) isEqualToString:@""]
+(operatingSystemBuild) != nil
+CFGetTypeID((CFStringRef)operatingSystemBuild) == CFStringGetTypeID()
+![(operatingSystemBuild) isEqualToString:@""]
+https://devimages-cdn.apple.com/downloads/xcode/dsc/
+https://download.developer.apple.com/Developer_Tools/%@_%@/
+DVTSymbolDownloadURL
+-[IDERuniPhoneService capabilitySequenceForLaunchSession:]
+/Library/Caches/com.apple.xbs/Sources/DVTiOSFrameworks/DVTiOSFrameworks-15509/IDEiOSSupportCore/IDERuniPhoneService.m
+!debuggerId
+Plain running shouldn't have the debugger identifier set.
+debuggerId
+%@ expects an selected debugger identifier.
+T@"DVTiOSDevice",&,V_device
+com.apple.developer.siri
+Xcode.IDEiPhoneOrganizer.Install
+IDEInstalliPhoneService
+%@ installApplicationWithLaunchSession succeeded
+%@ installApplicationWithLaunchSession failed with error: %@
+-[IDEInstalliPhoneLauncher performWorkerAction]_block_invoke
+/Library/Caches/com.apple.xbs/Sources/DVTiOSFrameworks/DVTiOSFrameworks-15509/IDEiOSSupportCore/IDEInstalliPhoneService.m
+(_castedResult) == nil || [(id)(_castedResult) isKindOfClass:[DVTProxiediOSDevice class]]
+willExecute.sh
+%@ nil or empty bundle ID with launch parameters {%@}, appExtensionBuiltPaths: {%@}
+-[IDEInstalliPhoneLauncher performWorkerAction]_block_invoke_3
+IDELaunchiPhoneServiceAlertErrorDomain
+com.apple.instruments.server.services.processcontrol.capability.signal
+-[IDELaunchiPhoneLauncher performWorkerAction]_block_invoke
+-[IDELaunchiPhoneLauncher _setupDebugging]
+/Library/Caches/com.apple.xbs/Sources/DVTiOSFrameworks/DVTiOSFrameworks-15509/IDEiOSSupportCore/IDELaunchiPhoneLauncher.m
+self.isLaunchingToDebug
+-[IDELaunchiPhoneLauncher _setupDebugging]_block_invoke
+-[IDELaunchiPhoneLauncher _setupPlainLaunching]
+!self.isLaunchingToDebug
+ActivateSuspended
+Can't create standard output pipe for posix spawned app using pipe(). errno : %d
+com.apple.instruments.server.services.processcontrolbydictionary
+Unable to communicate with '%@'
+Disable WiFi on the Apple Watch in Settings and run again. If this worked you may have a weak WiFi connection, or the WiFi network you are connected to has disabled peer-to-peer connections. Setting up a dedicated 2.4Ghz WiFi network for the phone-watch pair is another option that can give improved performance.
+Unable to get pid for bundle identifier: %@
+v24@?0@"NSNumber"8@"NSError"16
+Lost connection to DTServiceHub
+%@ notified that pid %@ died
+-[IDELaunchiPhoneLauncher terminate]_block_invoke
+-[IDELaunchiPhoneLauncher terminate]_block_invoke_3
+Process %d did not die within 60 seconds of sending it SIGTERM; issuing SIGKILL.
+Unable to launch %@
+-[IDELaunchiPhoneLauncher observeProcessWithPID:]_block_invoke
+DTServiceHub: Server disconnected while trying to start observing pid %d.
+-[IDELaunchiPhoneLauncher killPID:]_block_invoke
+DTServiceHub - Error killing pid %d '%@'
+-[IDELaunchiPhoneLauncher sigtermPID:]_block_invoke
+DTServiceHub - Error sending SIGTERM to pid %d '%@'
+-[IDELaunchiPhoneLauncher setupAssetServerWithCompletion:]_block_invoke
+launchingToDebug
+Tc,GisLaunchingToDebug,V_launchingToDebug
+Xcode.IDEiPhoneOrganizer.Launch
+<%@: %p identifier='%@', name='%@'>
+T@"NSString",R,C,V_identifier
+T@"NSString",R,C,V_name
+profileDescription
+T@"NSString",R,C,V_profileDescription
+dvtdevice-iphonesimulator
+WaitForDebugger
+ShouldInstallApplicationToSimulate
+LocalBundlePath
+AppBundleIDKey
+AttachedPIDKey
+LaunchForBackgroundFetch
+DVTiPhoneSimulatorAlwaysLaunchInCoreSimulatorSession
+IDELaunchSimulatorApplicationForTestSessions
+XcodeDTServiceHubTimeout
+SimulatorInstallLaunchLock
+SimulatorSessionLock
+%@ checking to see if pid %d is valid: kill(pid, 0) = %d (%@)
+NO, it's dead
+YES, it's still running
+%@ removing %d (dead) from SimulatorSessionMap
+%@ tracking pid %d
+%@ got death notice for pid %d, removing from SimulatorSessionMap
+iOSSimulator
++[DVTiPhoneSimulator simulatorWithDevice:]
+/Library/Caches/com.apple.xbs/Sources/DVTiOSFrameworks/DVTiOSFrameworks-15509/IDEiOSSupportCore/DVTiPhoneSimulator.m
+device.deviceType.dvt_platform
+com.apple.dt.Xcode.iPhoneSimulatorLaunchSessionClaimsLock
+notification
+device_renamed
+devicePair
+device_pair_added
+device_pair_removed
+active_state_changed
+locatedDevices
+com.apple.dt.Xcode.iPhoneSimulatorBootOperationLock
+simDeviceState
+device.state
+@"DVTFuture"16@?0@8
+currentSessionMode
+/usr/lib
+DVTDeviceViewDebuggerDylibOptionIsWatchProductType
+-[DVTiPhoneSimulator viewDebuggerDylibPathWithOptions:]
+Unable to get proxied device for watch target. activeProxiedDevice is %@.
+DTDDISupport.framework
+libViewDebuggerSupport.dylib
+/Developer/Library/PrivateFrameworks/%@
+%@-%@
+%@ error attempting to trigger cloud sync for simulator: %@
+-[DVTiPhoneSimulator supportsFeature:]
+Xcode cannot generate an optimization profile using a simulated device.
+Connect a device running %@ and select it as the destination.
+ (n/a)
+-[DVTiPhoneSimulator nativeArchitecture]
+SimDevice native architecture is nil. Device: %@, deviceType: %@, supportedArches: %@ (%@). Runtime: %@, runtimeIdentifier: %@.
+proxiedDeviceSet.proxiedDevices
+proxiedDeviceSet.activeProxiedDevice
+-[DVTiPhoneSimulator _updateProxiedDeviceSet]
+DVTiPhoneSimulator proxied device update queue
+-[DVTiPhoneSimulator _updateProxiedDeviceSet]_block_invoke_2
+Unexpectedly found two active proxied devices for companion %@: %@ and %@
+-[DVTiPhoneSimulator _updateProxiedDeviceSet]_block_invoke
+-[DVTiPhoneSimulator setActiveProxiedDevice:]
+Error setting active proxied device on %@ to %@: %@
+Failed to set active proxied device.
+Device instance is no longer valid.
+-[DVTiPhoneSimulator setActiveProxiedDevice:completionQueue:completionHandler:]_block_invoke
+state
+Could not get simulator applications. Device is likely shutdown. Error: %@
+SBAppTags
+CFBundleDisplayName
+v32@?0@"NSString"8@"NSDictionary"16^c24
+.svn
+.git
+.DS_Store
+%@: %@
+The sessionMode passed for booting this simulator is invalid
+%@ could not find simulator
+Unable to find Simulator.app.
+deviceUDID
+%@ could not launch Simulator.app: %@
+Could not launch Simulator.app.
+%@ timed out waiting for Simulator.app (pid: %d) to become ready.
+Timed out waiting for Simulator.app to become ready.
+applicationPID
+-[DVTiPhoneSimulator bootSyncForLaunchSession:error:]
+Waiting for %@ to start
+simulator
+@"DVTFuture"16@?0@"NSDictionary"8
+%@ is no longer a valid device.
+-[DVTiPhoneSimulator launchSimulatedExecutable:launchService:error:]_block_invoke_4
+com.apple.platform.watchsimulator
+v12@?0i8
+Cannot launch simulated executable: no file found at %@
+@"DVTFuture"16@?0@"NSNumber"8
+com.apple.iphonesimulator
+<%@: %p> {
+SimDevice: %@
+Cannot simulate location
+Simulation location is not supported for this simulator
+Cannot stop simulating location
+Simulator runtime root is unknown
+Unable to transform empty path for device
+Failed to initiate service connection to simulator
+com.apple.dt.AssetProviderService
+-[DVTiPhoneSimulator installApplicationWithLaunchSession:error:]
+v32@?0@"SimDevicePair"8Q16^c24
+-[DVTiPhoneSimulator installApplicationWithLaunchSession:error:]_block_invoke
+com.apple.instruments.remoteserver
+The requested device does not support com.apple.instruments.remoteserver
+-[DVTiPhoneSimulator primaryInstrumentsServerWithError:]_block_invoke_2
+%@ fetching installed apps to ensure that launch services is ready for us to ask for a service connection
+%@ app fetch canary test failed. Launch services may be unavaiable. (%@)
+com.apple.instruments.deviceservice.lockdown
+%@ unable to connect to "com.apple.instruments.deviceservice.lockdown" (%@)
+Failed to get instruments port for simulator %@ (%@)
+The mach port is invalid
+DTServiceHubClient failed to bless service hub for simulator %@ (%@)
+blessSimulatorServiceHub:error: failed but didn't provide an error
+Connection timed out after %ld seconds. Please try again.
+%@ unable to connect to "com.apple.instruments.deviceservice.lockdown" - timed out after %ld seconds
+-[DVTiPhoneSimulator debugXPCServices:onPairedDevice:completionSemaphore:]_block_invoke
+Failed to configure XPCDebuggingChannel for XPC Debugging in the Simulator
+Failed to configure DTXConnection for XPC Debugging in the Simulator
+-[DVTiPhoneSimulator xpcServiceObserved:withProcessIdentifier:requestedByProcess:options:]
+Can't create standard output pipe for simulator XPC service using pipe(). errno : %d
+%@ claim %@ on simulator was issued, %lu claims exist.
+%@ claim %@ on simulator was relinquished, %lu claims remain.
+%@ not shutting down because device boot is externally managed.
+-[DVTiPhoneSimulator _shutdownLaterIfNoActiveClaims]_block_invoke
+%@ no more launch session claims on simulator, shutting down
+v16@?0Q8
+T@"SimDevice",&,V_device
+simulatorPID
+Ti,V_simulatorPID
+weBootedThisSimulatorInstance
+Tc,V_weBootedThisSimulatorInstance
+assetProvider
+T@"DTAssetProviderService",&,V_assetProvider
+proxiedDeviceSet
+T@"DVTProxiedDeviceSet",&,V_proxiedDeviceSet
+simulatorApplication
+T@"DVTSimulatorApplication",R,V_simulatorApplication
+Tq,V_currentSessionMode
+deviceInfo
+T@"SimDeviceType",R
+simulatedDeviceFamily
+T@"NSNumber",R
+supportedDeviceFamilies
+T@"NSArray",R,C
+simulatorIconFilePath
+DVTAllowMultipleSimSessions
+Xcode.Device.iPhoneSimulator
+LaunchSessionClaim_%p
+DVTTestSimulatorDeviceCloneCreatorErrorDomain
+~/Library/Developer/XCTestDevices
+dvtDevice
+T@"DVTDevice",R
+T@"<DVTTestingSimDevice>",R
+com.apple.dt.XCTest.iPhoneSimulatorCloning
+com.apple.dt.XCTest.DVTTestSimulatorDeviceCloneCreator
+-[DVTTestSimulatorDeviceCloneCreator finishInitialization]
+/Library/Caches/com.apple.xbs/Sources/DVTiOSFrameworks/DVTiOSFrameworks-15509/IDEiOSSupportCore/DVTTestSimulatorDeviceCloneCreator.m
+self.serviceClass != ((void *)0)
+Service class must not be nil!
+error != ((void *)0)
+CoreSimulator returned a nil service context but did not populate the out error
+Failed to obtain CoreSimulator service context
+CoreSimulator returned a nil device set but did not populate the out error
+Failed to obtain CoreSimulator device set
+-[DVTTestSimulatorDeviceCloneCreator cloneDevice:]
+((simulator)) != nil
+(simulator)
+((sourceSet)) != nil
+(sourceSet)
+v24@?0@"NSError"8@"<DVTTestingSimDevice>"16
+@"DVTFuture"16@?0@"<DVTTestingSimDevice>"8
+-[DVTTestSimulatorDeviceCloneCreator shutdownClone:]
+-[DVTTestSimulatorDeviceCloneCreator destroyClone:]
+v32@?0{_NSRange=QQ}8^c24
+Clone %lu of %@
+Clone (\d+)
+-[DVTTestSimulatorDeviceCloneCreator nameIndexForClone:]
+((regex)) != nil
+(regex)
+ClonePoolClaim_%@
+sharedCreator
+T@"<DVTTestDeviceCloneCreator>",R
+logAspect
+T@"NSObject<OS_os_log>",&
+serviceClass
+T#,R,V_serviceClass
+simulatorClass
+T#,R,V_simulatorClass
+deviceSet
+T@"<DVTTestingSimDeviceSet>",R,V_deviceSet
+customDeviceSetLocation
+T@"NSURL",R,V_customDeviceSetLocation
+developerDirPath
+T@"NSURL",R,V_developerDirPath
+simulatorClaims
+T@"NSMapTable",R,V_simulatorClaims
+cloneNameIndexes
+T@"NSMutableDictionary",R,V_cloneNameIndexes
+cloneMap
+T@"NSMutableDictionary",R,V_cloneMap
+queue
+T@"NSObject<OS_dispatch_queue>",R,V_queue
+-[DVTiPhoneSimulatorLocator startLocating]
+/Library/Caches/com.apple.xbs/Sources/DVTiOSFrameworks/DVTiOSFrameworks-15509/IDEiOSSupportCore/DVTiPhoneSimulatorLocator.m
+DVTIsMainThread()
+code should be running on main thread
+Couldn't find SimDevice.class. Simulator device support disabled.
+Beginning to locate
+-[DVTiPhoneSimulatorLocator startLocating]_block_invoke
+[SimServiceContext sharedServiceContextForDeveloperDir:error:] returned nil (%@). Simulator device support disabled.
+DVTSimulatorSetLocation
+Creating/fetching temporary SimDeviceSet at: %@
+[SimServiceContext deviceSetWithPath:error:] returned nil (%@). Simulator device support disabled.
+Creating/fetching default SimDeviceSet
+[SimServiceContext defaultDeviceSetWithError:] returned nil (%@). Simulator device support disabled.
+c16@?0@"DVTiPhoneSimulator"8
+-[DVTiPhoneSimulatorLocator stopLocating]
+Stopping listening
+c16@?0@"DVTPlatform"8
+-[DVTiPhoneSimulatorLocator knownDeviceAtDeviceLocation:]
+-[DVTiPhoneSimulatorLocator matchDevice:againstOptions:genericOnly:allowAliases:]
+Attempted to match non-DVTiPhoneSimulator device (%@) in DVTiPhoneSimulatorLocator
+family
+latest
+Simulator device %@ was not supported by any known simulator system roots
+(__objc_no == ((requestedDeviceName == ((void *)0)) && (requestedDeviceIdentifier == ((void *)0))))
+(__objc_no == ((requestedDeviceName != ((void *)0)) && (requestedDeviceIdentifier != ((void *)0))))
+-[DVTiPhoneSimulatorLocator deleteDevice:completionHandler:]
+[(id)(_castedResult) isKindOfClass:[DVTiPhoneSimulator class]]
+-[DVTiPhoneSimulatorLocator pairCompanionDevice:withGizmoDevice:completionHandler:]
+v24@?0@"NSError"8@"SimDevicePair"16
+-[DVTiPhoneSimulatorLocator unpairDevice:completionHandler:]
+-[DVTiPhoneSimulatorLocator _startLocatingDevicesInDeviceSet:]
+-[SimDeviceSet devices] is returning an array (you have an old CoreSimulator). Simulator device support disabled for device set %@.
+Got SimDeviceSet: %@
+Preparing to update list of devices in SimDeviceSet %@
+Updating list of devices in SimDeviceSet
+Another thread has stopped us listening while we were in the queue; clear device list and bail
+Adding any devices not yet represented in list for device set %@
+-[DVTiPhoneSimulatorLocator _startLocatingDevicesInDeviceSet:]_block_invoke_3
+Couldn't find platform for sim device %@
+%@ adding Simulator device
+v32@?0@"SimDevice"8Q16^c24
+c24@?0@"DVTiPhoneSimulator"8^c16
+Removing any devices that have been removed from device set %@
+%@ removing Simulator device
+q24@?0@"NSString"8@"NSString"16
+Apple TV 2
+v32@?0@"DVTiPhoneSimulator"8Q16^c24
+Simulator Sort Order: %lu
+device_added
+device_removed
+availableDevices_changed
+Performing initial list for device set %@
+defaultDeviceSet
+T@"SimDeviceSet",R
+com.apple.developer.networking.HotspotConfiguration
+NetworkExtension
+linkedFrameworksFlightCheck
+T@"<IDEFlightChecking>",&,N,V_linkedFrameworksFlightCheck
+entitlementsFlightCheck
+T@"<IDEFlightChecking>",&,N,V_entitlementsFlightCheck
+com.apple.developer.user-fonts
+fontInstallationValues
+app-usage
+system-installation
+T@"NSSet",&,N,V_fontInstallationValues
+appUsage
+Tc,D,N
+systemInstallation
+fontEnumeration
+Tc,N,V_fontEnumeration
+process.resources[]
+com.apple.xcode.debug-gauge-data-providers.resources
+-[IDEDebugiPhoneSimulatorService capabilitySequenceForLaunchSession:]
+/Library/Caches/com.apple.xbs/Sources/DVTiOSFrameworks/DVTiOSFrameworks-15509/IDEiOSSupportCore/IDERuniPhoneSimulatorService.m
+error: No Application specified.
+-verbose
+-warnings
+-errors
+-validate-for-store
+error: Unknown application extension '.%@' - expected '.app' or '.ipa'.
+-[XCWorkQueueCommandBuiltinInvocation_validationUtility runTaskWithArguments:environment:workingDirectoryPath:infd:outerrfd:]
+/Library/Caches/com.apple.xbs/Sources/DVTiOSFrameworks/DVTiOSFrameworks-15509/Validation/XCWorkQueueCommandBuiltinInvocation_validationUtility.m
+Validating %@ %@%@
+-verbose 
+warnings
+errors
+error: Failed to read Info.plist of app %@ (%@)
+DTPlatformVersion
+UIRequiresFullScreen
+UISupportedInterfaceOrientations~ipad
+UISupportedInterfaceOrientations
+UIInterfaceOrientationPortrait
+UIInterfaceOrientationPortraitUpsideDown
+UIInterfaceOrientationLandscapeLeft
+UIInterfaceOrientationLandscapeRight
+warning: All interface orientations must be supported unless the app requires full screen.
+UILaunchStoryboardName~ipad
+UILaunchStoryboardName
+UILaunchStoryboards~ipad
+UILaunchStoryboards
+UIDefaultLaunchStoryboard
+UILaunchStoryboardDefinitions
+UILaunchStoryboardIdentifier
+c16@?0@"NSDictionary"8
+UILaunchStoryboardFile
+warning: A launch storyboard or xib must be provided unless the app requires full screen.
+archive
+TB,V_archive
+verbose
+TB,V_verbose
+storeIssuesAreWarnings
+TB,V_storeIssuesAreWarnings
+storeValidation
+TB,V_storeValidation
+T@"NSString",&,V_application
+Development
+Distribute to members of your team.
+Xcode.Portal.Profile.Purpose.Development
+com.apple.developer.networking.multipath
+Xcode.IDEiPhoneSimulatorSupport.DeviceService.Install
+-[_IDEInstalliPhoneSimulatorWorker performWorkerAction]_block_invoke
+-[_IDEInstalliPhoneSimulatorWorker _willInstallWatchAppForCompanion:maxTries:]_block_invoke_3
+T@"DVTiPhoneSimulator",&,V_device
+process.age
+process.path
+disk.rd.bytes
+disk.wr.bytes
+disk.bytes
+disk.openfiles[]
+com.apple.xcode.debug-gauge-data-providers.procinfo
+-[IDEEmbeddedProvisioningProfile initWithProfileRef:error:]
+/Library/Caches/com.apple.xbs/Sources/DVTiOSFrameworks/DVTiOSFrameworks-15509/IDEiOSSupportCore/IDEEmbeddedProvisioningProfile.m
+((profileRef)) != nil
+(profileRef)
+Failed to load profile.
+Profile is missing the required UUID property.
+TeamIdentifier
+tvOS
+@"DVTPlatform"16@?0@"DVTPortalPlatform"8
+Profile has unknown platforms: %@.
+Profile is missing the required "Platforms" property.
+IsXcodeManaged
+application-identifier
+aps-environment
+com.apple.developer.aps-environment
+@"DVTSigningCertificate"16@?0@"NSData"8
+com.apple.developer.networking.wifi-info
+-[IDEGaugeDataProviderService_iOSSimulator_procinfo sampleAttributes:forPIDs:]
+/Library/Caches/com.apple.xbs/Sources/DVTiOSFrameworks/DVTiOSFrameworks-15509/IDEiOSSupportCore/IDEGaugeDataProviderService_iOSSimulator_procinfo.m
++[DVTProxiedDeviceSet proxiedDevicesSetWithDevices:activeProxiedDevice:]
+/Library/Caches/com.apple.xbs/Sources/DVTiOSFrameworks/DVTiOSFrameworks-15509/IDEiOSSupportCore/DVTProxiedDeviceSet.m
+activeProxiedDevice == ((void *)0) || [proxiedDevices containsObject:activeProxiedDevice]
+Active proxied device %@ is not present in the set of proxied devices %@
+T@"NSOrderedSet",R,V_proxiedDevices
+activeProxiedDevice
+T@"<DVTBasicDevice>",R,V_activeProxiedDevice
+IDEAlwaysLaunchSimulatorWhenRunningAgainstSimulator
+Xcode.IDEiPhoneSimulatorSupport.Launch
+IDELaunchiPhoneSimulatorLauncher Life Cycle Lock
+currentDebugSession.state
+-[IDELaunchiPhoneSimulatorLauncher performWorkerAction]_block_invoke
+/Library/Caches/com.apple.xbs/Sources/DVTiOSFrameworks/DVTiOSFrameworks-15509/IDEiOSSupportCore/IDELaunchiPhoneSimulatorService.m
+_alwaysLaunchSimulatorWhenRunningAgainstSimulator
+launchParameters.launchStyle > IDELaunchAutomatically
+-[IDELaunchiPhoneSimulatorLauncher _willUseExistingProcess]_block_invoke
+launchServiceChannel
+T@"DTXChannel",&,V_launchServiceChannel
+T@"IDEPseudoTerminal",&,V_pty
+<%@: %p identifier='%@', name='%@', state=%@, isDestructive=%@, isInternal=%@, activeProfile=%@, profiles=%lu>
+T@"NSString",C,V_identifier
+T@"NSString",C,V_name
+destructive
+Tc,GisDestructive,V_destructive
+internal
+Tc,GisInternal,V_internal
+T@"NSArray",&,V_profiles
+TQ,V_state
+T@"DVTiOSConditionInducerProfile",W,V_activeProfile
+DVTiOSConditionInducerStateActive
+DVTiOSConditionInducerStateSettingUp
+DVTiOSConditionInducerStateTearingDown
+DVTiOSConditionInducerStateInactive
+Unlock %@ to Continue
+Xcode cannot launch %@ on %@ because the device is locked.
+%@ is not available.
+Please reconnect the device.
+-[IDEDeviceRunOperationWorker _targetDevice]
+/Library/Caches/com.apple.xbs/Sources/DVTiOSFrameworks/DVTiOSFrameworks-15509/IDEiOSSupportCore/IDEDeviceRunOperationWorker.m
+Unexpected device class for %@
+Cancel %@
+arrayWithObjects:count:
+setWithArray:
+observableAttributes
+remoteServerChannelIdentifier
+sharedDataProvider
+supportedAttributes
+class
+isKindOfClass:
+descriptionForAssertionMessage
+captureAttributes:forPIDs:
+sampleAttributes:forPIDs:
+infoDictionary
+objectForKeyedSubscript:
+deploymentTargetSuggestedValues
+stringWithFormat:
+dictionaryWithObjects:forKeys:count:
+dvt_arrayByApplyingBlock:
+firstObject
+className
+allPlatforms
+ide_extendedInfo
+deploymentTargetSettingName
+dvt_extendedInfo
+isSimulatorPlatform
+propertyListDictionary
+SDKs
+countByEnumeratingWithState:objects:count:
+canonicalNameForBuildSettings
+dvt_isNonEmpty
+dvt_versionNumberComparison:
+sortedArrayUsingSelector:
+dvt_arrayByReversingObjects
+deploymentTargetSettingHumanReadableNameTitleCase
+userDescription
+deploymentTargetSpecForBuildSettingNamed:buildSettingDisplayName:platformDisplayName:allowedValues:
+sdkForCanonicalName:
+arrayByAddingObject:
+XCSpecProvider_specifications
+initWithReason:
+fulfill
+enqueueItem:
+wait
+pathForResource:ofType:
+logAspectWithName:
+init
+returnCode
+stderrText
+changedFiles
+initWithReturnCode:stdoutText:stderrText:changedFiles:
+description
+.cxx_destruct
+stdoutText
+_returnCode
+_stdoutText
+_stderrText
+_changedFiles
+initWithDeviceLocation:extension:
+weakToStrongObjectsMapTable
+name
+deviceClassForDisplay
+operatingSystemVersionWithBuildNumber
+identifier
+blueprint
+buildableProducts
+platformProductTypeOfBuildable:
+isWatchApplication
+dvt_areAnyObjectsPassingTest:
+canBeWatchCompanion
+dvt_errorWithDeviceIneligibilityErrorCode:device:buildable:buildParameters:
+shouldPresentDeviceForBuildable:buildParameters:error:
+canRename
+renameDevice:
+stringWithUTF8String:
+addObject:
+characterSetWithCharactersInString:
+componentsSeparatedByCharactersInSet:
+length
+intValue
+numberWithInt:
+count
+numberWithInteger:
+shortDescription
+setProgress:
+data
+pipe
+readWriteDispatchLockWithDebugName:
+hookStandardErrorToPipe:closingParentEndOnLaunch:
+hookStandardOutputToPipe:closingParentEndOnLaunch:
+fileHandleForReading
+currentHandler
+handleFailureInFunction:file:lineNumber:description:
+availableData
+appendData:
+performLockedWriterBlock:
+logLevel
+fileHandleWithStandardError
+writeData:
+bytes
+DTDK_stringWithLooseUTF8String:length:
+performLockedReaderBlock:
+setReadabilityHandler:
+_logAtLogLevel:withFormat:
+UTF8String
+exitStatus
+integerValue
+succeedWithResult:
+errorWithDomain:code:userInfo:
+dvt_errorByInjectingUserInfoObjects:
+failWithError:
+launchRunningTerminationHandlerOnQueue:error:terminationHandler:
+localizedDescription
+initWithBlock:
+_runTask:withOutputHandler:
+taskForDeviceCommand:withArguments:error:
+taskForHostCommand:withArguments:error:
+setEnvironment:
+futureWithError:
+_runTask:
+oneLineCommand:onDevice:withArguments:andEnvironment:
+waitUntilFinished
+error
+userInfo
+result
+multiLineCommand:onDevice:
+setLaunchPath:
+setArguments:
+string
+appendFormat:
+productTypeWithBuildParameters:
+runsOnProxy
+platform
+family
+platforms
+intersectsSet:
+activeProxiedDevice
+isEqual:
+self
+performSelector:
+performSelector:withObject:
+performSelector:withObject:withObject:
+isProxy
+isMemberOfClass:
+conformsToProtocol:
+respondsToSelector:
+retain
+release
+autorelease
+retainCount
+zone
+hash
+superclass
+debugDescription
+nameForDeveloperPortal
+platformIdentifier
+supportsProvisioning
+proxiedDevices
+modelName
+modelCodename
+modelCode
+modelUTI
+processorDescription
+operatingSystemVersion
+operatingSystemBuild
+nativeArchitecture
+isProxiedDevice
+isAvailable
+unavailabilityError
+deviceIsBusy
+primaryInstrumentsServer
+cancelPrimaryInstrumentsServer
+canBeRunDestination
+deviceSupportsBuildable:buildParameters:error:
+canBeDefaultDeviceForBuildable:buildParameters:
+shouldPresentDeviceForPathRunnableWithArchitecture:
+supportedArchitecturesForBuildable:buildParameters:error:
+supportedSDKsForBuildable:buildParameters:error:
+deviceSpecificOverridingPropertiesForBuildable:withBaselineParameters:
+supportsExecutionForArchitecture:launchSession:error:
+supportsRunningExecutableAtPath:usingArchitecture:error:
+closestRelativeOfTargetArchitecture:forBuildArchitectures:
+scriptingEnvironment
+canInstallBuildablesError:
+performInstallWithName:path:buildables:buildParameters:killProcesses:workspace:outError:
+analysisOperationWithAnalysisToolService:location:workingDirectory:workspaceFilePath:projectFilePath:packagesPaths:outError:
+supportedPlatformsForBuildParameters:
+evaluatedStringValueForBuildSetting:withBuildParameters:
+supportedDeviceFamilies
+allObjects
+setByAddingObjectsFromArray:
+defaultPaths
+dataDirectoryForCurrentApplication
+filePathForRelativePathString:
+stringByAppendingPathExtension:
+activeInstallsPath
+pathString
+copyDevicePath:toLocalPath:sync:error:
+_transformPathForDevice:forRsync:error:
+stringByAppendingPathComponent:
+multiLineCommand:onDevice:stdOutResult:error:
+copyBackActiveInstallsWithError:
+dictionary
+defaultManager
+fileURL
+stringWithContentsOfURL:encoding:error:
+componentsSeparatedByString:
+enumeratorAtPath:
+boolValue
+parentFilePath
+stringByDeletingLastPathComponent
+setObject:forKey:
+dvt_errorWithPOSIXErrorCode:messageFormat:
+containsString:
+lastPathComponent
+containsObject:
+dvt_firstObjectPassingTest:
+launchParameters
+executionEnvironment
+workspaceArena
+currentSnapshot
+buildConfiguration
+initForBuildWithWorkspaceArenaSnapshot:configurationName:
+buildableProduct
+copyWithOverridingProperties:
+runnableBundleIdentifier
+runnableLocation
+dvt_uncachedBundleIdentifierAtPath:
+standardUserDefaults
+stringForKey:
+primitiveInvalidate
+invalidate
+isValid
+invalidationBacktrace
+creationBacktrace
+setCreationBacktrace:
+assertionBehaviorAfterEndOfEventForSelector:
+assertionBehaviorForKeyValueObservationsAtEndOfEvent
+supportsInvalidationPrevention
+allBuildSettingNamesWithBuildParameters:
+evaluatedStringListValueForBuildSetting:withBuildParameters:
+stringByEvaluatingBuildSettingExpressionString:withBuildParameters:
+absolutePathByEvaluatingBuildSettingExpressionString:withBuildParameters:
+toolSearchPathWithBuildParameters:
+orderedRecursiveDependenciesIncludingSelf:
+directDependencies
+implicitDependenciesForBuildParameters:executionEnvironment:returningMessages:
+createBuilderForBuildCommand:withBuildTaskQueueSet:parameters:buildOnlyTheseFiles:restorePersistedBuildResults:withManager:
+productTypeIdentifier
+buildableIdentifier
+entityIdentifier
+displayName
+toolTip
+namesOfLinkedBinaries
+productModuleName
+legacyIdentifier
+buildOperationManagerClass
+filePathForBuildParameters:
+productSettingForKey:
+setProductSetting:forKey:
+filePath
+fileDataType
+iconPath
+productSettings
+productIsExecutable
+isWatchOnlyApplication
+isWatchAppRunsIndependentlyOfCompanionApplication
+isEmbeddablePackageProduct
+buildParametersForLaunchSession:
+shouldGenerateRuntimeProfile
+runnableDisplayName
+setInstallProgress:text:
+fetchApplications
+applicationForSession:
+dvt_errorWithDomain:errorCode:messageFormat:
+whitespaceAndNewlineCharacterSet
+stringByTrimmingCharactersInSet:
+stringByReplacingOccurrencesOfString:withString:
+setObject:forKeyedSubscript:
+pathExtension
+isEqualToString:
+hasPrefix:
+hasSuffix:
+stringByAppendingString:
+dvt_UUIDString
+createDirectoryAtURL:withIntermediateDirectories:attributes:error:
+array
+directoryContents
+addObjectsFromArray:
+modificationDate
+compare:
+sortUsingComparator:
+subarrayWithRange:
+_gatherRootPropertiesFromBuildables:forProductInstallWithWorkspace:installPath:buildParameters:outAdditionalPaths:outAnyAppsInstalledToStagingPath:outAnyAppsInstalledToNonStagingPaths:outDisableMobileInstallRebuild:
+copyLocalPath:toLocalPath:sync:withHardLinkDirs:
+observeProgress:
+_newInstallErrorForInstallNamed:activityDescription:details:underlyingError:
+installActivityInWorkspace:operationInProgress:details:
+allKeys
+createDirectoryAtPath:withIntermediateDirectories:attributes:error:
+_rsyncInstallLocalPath:toDevicePath:sync:activityString:deviceOperation:error:
+_launchDatabaseRebuildTriggerForRsyncResult:bundleIdentifier:
+updateInstalledApplicationsWithMobileInstallRebuild:error:
+oneLineCommand:onDevice:withArguments:environment:stdOutResult:error:
+code
+addUUIDToActiveInstalls:error:
+componentsJoinedByString:
+arrayByAddingObjectsFromArray:
+rangeOfString:
+installActivityWillBeginInWorkspace:withProductName:
+_validateRsyncInstallWithError:
+_gatherRootPropertiesForProductInstallWithWorkspace:buildables:buildParameters:filePath:outSourcePath:outInstallPath:outAdditionalPaths:outHardLinkDirs:outAnyAppsInstalledToStagingPath:outAnyAppsInstalledToNonStagingPaths:outInstallUUID:outDisableMobileInstallRebuild:
+_performStageRootForProductInstallWithWorkspace:originalName:sourcePath:additionalPaths:hardLinkDirs:installPath:outError:
+_performApplyRootForProductInstallWithWorkspace:originalName:installPath:outRsyncResult:outError:
+_updateDeviceApplicationDatabaseForProductInstallWithWorkspace:originalName:rsyncResult:anyAppsInstalledToNonStagingPaths:anyAppsInstalledToStagingPath:disableMobileInstallRebuilt:outError:
+_updateActiveInstallsForProductInstallWithWorkspace:originalName:installUUID:outError:
+_killProcessesForProductInstallWithWorkspace:killProcesses:error:
+localizedFailureReason
+installActivityDidEndInWorkspace:withError:
+testingEnvironmentVariables
+addEntriesFromDictionary:
+additionalDeviceSubstitutionPaths
+dvt_dictionaryByAddingEntriesFromDictionary:
+setAdditionalDeviceSubstitutionPaths:
+fileName
+deviceInstallPathForLaunchSession:andBuildProductsPath:
+_rsyncInstallDevicePath:toDevicePath:sync:activityString:deviceOperation:error:
+updateInstalledApplicationsWithError:
+_uncachedBundleIdentifierForSession:
+_waitForApplicationForSession:error:
+date
+dateByAddingTimeInterval:
+errorReportForDevice:startTime:endTime:keyphrases:outError:
+reportEntries
+substringFromIndex:
+installedPath
+setRemoteInstallPath:
+dvt_objectsPassingTest:
+testBundleURL
+path
+_updateXCTestBundleInjectEnvironmentVariables:forApplication:
+testConfiguration
+_updateTestConfiguration:atPath:testBundleContainerPath:error:
+containerPath
+deviceTestRelatedArtifactsDir
+_copyLocalTestConfigurationAtPath:toDeviceDirectory:error:
+_updateTestingEnvironmentVariables:forApplication:deviceConfigPath:testConfiguration:
+_localBuiltProductsPathWithSession:error:
+deviceBuiltProductsDir
+_updateLaunchParametersForRsyncDeveloperModeWithParameters:deviceBuiltProductsPath:localBuiltProductsPath:
+_performStageRootForRsyncDeveloperModeWithLaunchSession:localBuiltProductsPath:deviceBuiltProductsPath:deviceBuiltProductsDir:filePath:outInstalledAppPath:outError:
+_copyBackAlternateApplication:atPath:error:
+_performApplyRootForRsyncDeveloperModeWithLaunchSession:bundleId:deviceBuiltProductsPath:filePath:outInstalledAppPath:outError:
+workspace
+stringByDeletingPathExtension
+useDestinationArtifactsForTest
+_performInstallForRsyncDeveloperModeWithBundleId:filePath:launchSession:parameters:outInstalledAppPath:outAlternateRemoteAppPath:outError:
+_determineInstalledAppPathForRsyncDeveloperModeWithLaunchSession:parameters:alternateRemoteAppPath:installReportStart:outApplication:outInstalledAppPath:outError:
+_installTestArtifactsForRsyncDeveloperModelForApplication:launchSession:parameters:outError:
+_rsyncPath:toPath:sync:onDevice:withHardLinkDirs:withStatusObserver:
+scannerWithString:
+scanUpToString:intoString:
+scanLocation
+setScanLocation:
+scanUpToCharactersFromSet:intoString:
+stringByReplacingCharactersInRange:withString:
+_additionalRsyncParameters
+mutableCopy
+rsyncPath
+_rsyncEnvironment
+isAtEnd
+scanString:intoString:
+scanInteger:
+characterAtIndex:
+_rsyncInstallSourcePath:destinationPath:entirelyOnDevice:sync:activityString:retryCount:deviceOperation:error:
+setOperationDescription:
+copyDevicePath:toDevicePath:sync:withStatusObserver:
+copyLocalPath:toDevicePath:sync:withStatusObserver:
+_rsyncErrorIsMkdirFailure:missingPath:
+_rsyncErrorStringForNSError:
+_copyPath:toPath:sync:onDevice:withStatusObserver:
+copyLocalPath:toLocalPath:sync:withStatusObserver:
+copyDevicePath:toLocalPath:sync:withStatusObserver:
+copyDevicePath:toDevicePath:sync:
+copyLocalPath:toDevicePath:sync:
+copyDevicePath:toLocalPath:sync:
+copyLocalPath:toLocalPath:sync:
+defaultCenter
+postNotificationName:object:
+endDeviceOperation:
+startUserInitiatedDeviceOperation
+objectForKey:
+deviceInstallWorkspaceMonitor
+startActivityLogForAppNamed:deviceNamed:
+addOperationToActivityLog:details:
+setResultErrorString:
+stopActivityLog
+supportedUDIDs
+minimumOSForSensorReplay
+makeServiceHubProcessControlChannelForLauncher:onProxy:
+supportsXPCServiceDebugging
+numberWithUnsignedInteger:
+handleFailureInMethod:object:file:lineNumber:description:
+remoteCapabilityVersion:
+makeChannelWithIdentifier:
+makeServiceHubProcessControlChannelForLauncher:
+isWidgetExtension
+xpcServiceName
+archivedDataWithRootObject:
+sendProcessControlEvent:toPid:
+messageWithSelector:objectArguments:
+cancel
+sendControlAsync:replyHandler:
+_processControlForPid:payload:onProxy:completed:
+boolForKey:
+minimumOSForLaunchActivateSuspended
+testBundleRelativePath
+fileURLWithPath:
+setTestBundleURL:
+setTestBundleRelativePath:
+baselineFileRelativePath
+setBaselineFileURL:
+setBaselineFileRelativePath:
+archivedDataWithRootObject:requiringSecureCoding:error:
+writeToFile:options:error:
+substringWithRange:
+futureWithBlock:
+nameForDeviceFamilyObject:
+isPasscodeLocked
+isGenericDevice
+isConcreteDevice
+isWireless
+canRenameDevice
+setName:
+hostAuthenticatedOneLineCommand:withArg:result:
+preferredArchitectureForDeviceOptions:error:
+preferredSDKForDeviceOptions:error:
+installSubstitutionPathsForDebugger
+installForRsyncDeveloperModeWithSession:error:
+softwareVersion
+systemBasePath
+_copyPath:toPath:sync:onDevice:
+copyDevicePath:toDevicePath:sync:error:
+copyLocalPath:toDevicePath:sync:error:
+copyLocalPath:toLocalPath:sync:error:
+setInstallProgress:path:
+provisioningProfiles
+canInstallProfile:
+installProvisioningProfiles:
+uninstallProvisioningProfile:
+supportsBuildingThinnedResources
+supportsSensorReplayFile
+iconImage
+showTodayViewForExtensions:pid:
+showSiriForExtensions:queryText:pid:onProxy:completed:
+pressHomeButtonOnProxy:completed:
+simulateNotificationWithBundleID:payload:onProxy:completed:
+simulateMetricPayloadsWithBundleID:payload:onProxy:completed:
+supportsFeature:
+showMessagesExtensionOnProxy:completed:
+snapshotUIForBundleIdentifier:orPid:onProxy:completed:
+performFetchEventForBundleIdentifier:orPid:onProxy:
+supportsNewLogging
+supportsUISnapshotOnProxy:
+supportsLaunchActivateSuspended
+fetchSpecificLaunchFailureReason
+_workspaceInstallsInProgress
+_installOperation
+dvt_errorWithDomain:errorCode:message:recoverySuggestion:
+dvt_errorByInjectingUserInfoObject:forKey:
+numberWithBool:
+registerDefaults:
+platformForIdentifier:
+token
+applications
+bundleIdentifier
+dvt_anyObjectPassingTest:
+systemApplications
+initWithDevice:app:
+workerForDevice:applicationBundleID:outError:
+createRuntimeProfileDirectory:
+downloadRuntimeProfilesFromDeviceDirectories:toLocalDirectory:error:
+device
+_device
+_app
+UUID
+UUIDString
+children
+anyObject
+itemWithParent:andName:error:
+performBatchedOperations:
+temporaryDirectoryWithName:error:
+devicePath
+lazyRefresh
+downloadOptimizationProfilesToFile:error:
+synthesizeMutableSetProperty:withInstanceVariable:
+dispatchLockWithDebugName:
+setDeviceProgressOperationLock:
+setIgnored:
+supportsFetchEvents
+xpcProxyAttachServiceChannel
+xpcAttachServiceChannel
+proxiedPrimaryInstrumentsServer
+_setXPCAttachChannel:ForPairedDevice:
+registerDisconnectHandler:
+setDispatchTarget:
+setXpcProxyAttachServiceChannel:
+setXpcAttachServiceChannel:
+_xpcChannelForPairedDevice:
+extensionType
+environment
+observeServicesWithIdentifier:requestingProcess:environment:arguments:options:
+xpcParentPid
+arguments
+messageWithSelector:typesAndArguments:
+initWithServiceName:pid:parentPID:appContainerPath:
+setStartSuspended:
+dictionaryWithObject:forKey:
+initWithFileDescriptor:closeOnDealloc:
+postNotificationName:object:userInfo:
+stopObservationsForIdentifier:requestingProcess:
+defaultDeviceManager
+predicateWithBlock:
+devicesMatchingPredicate:
+deviceIdentifier
+URLPathAllowedCharacterSet
+stringByAddingPercentEncodingWithAllowedCharacters:
+initWithString:
+deviceTypeWithIdentifier:
+setDeviceType:
+attachToken:
+setToken:
+setIdentifier:
+deviceAllowsSecureServices
+setDeviceReady:
+deviceReady
+hasConnected
+arrayWithObjects:
+dvt_newObserverForKeyPath:options:withHandlerBlock:
+mainQueue
+object
+isConnected
+markDeviceIsWaitingForConnection
+dvt_addObserverForName:object:queue:usingBlock:
+dvt_stringOrNilForKey:
+copy
+deviceProgressOperationLock
+deviceProgressOperation
+setDeviceProgressOperation:
+startDeviceOperation
+asyncPerformLockedBlock:
+proxiedDeviceTokens
+initWithToken:
+dvt_setByApplyingBlock:
+mutableProxiedDevices
+wasProxiedToDevice:
+mountDeveloperDiskImageWithError:
+intersectSet:
+markDeviceIsNotWaitingForConnection
+setDeviceConnectingOperation:
+deviceConnectingOperation
+hasConnection
+futureWithResult:
+wakeup
+observeFinish:
+setDeviceInstallIsCancelled:
+minimumOSForBackgroundFetchEvents
+backgroundFetchSupportStyle
+setWithObject:
+deviceName
+localizedDeviceModel
+deviceCodename
+deviceModelUTI
+deviceType
+productVersion
+buildVersion
+deviceSoftwareVersion
+installProvisioningProfiles:error:
+profileWithURL:error:
+installProvisioningProfile:error:
+installProvisioningProfiles:withError:
+uninstallProvisioningProfile:withError:
+deviceClass
+deviceIsSupported
+isSupportedOS
+setWithObjects:
+hasWiredConnection
+deviceSSHPort
+isPaired
+_deviceIsUnpairedError
+hasWirelessConnection
+dvt_errorWithDomain:errorCode:message:recoverySuggestion:recoveryOptions:andRecoveryBlock:
+isSupportedHardware
+isRunningSupportedOS
+deviceOperations
+operationDescription
+developerPrepError
+dvt_hasDomain:errorCode:
+developerPrepErrors
+activeProxiedDeviceToken
+takeWatchPowerAssertionWithName:details:andTimeout:
+supportedArchitectures
+isIgnored
+deviceIsActivated
+deviceActivationState
+domain
+localizedRecoverySuggestion
+lastObject
+stringByAppendingFormat:
+deviceArchitecture
+orderedSetWithObject:
+isInternal
+baseSDKForBuildConfigurationName:
+configurationName
+isBaseSDK
+internalSDKName
+sdkName
+sortDescriptorWithKey:ascending:selector:
+arrayWithObject:
+sortUsingDescriptors:
+activeRunDestination
+targetSDK
+canonicalName
+isDeploymentPlatform
+uncachedOverridingPropertiesForBuildable:buildParameters:
+macroDefinitionTableForLevel:
+makeImmutable
+copyWithSynthesizedMacros:
+deviceHostname
+setValue:forKey:
+directSSHPort
+removeObjectForKey:
+setValuesForKeysWithDictionary:
+iPhoneDeviceWithDeviceToken:
+dictionaryWithValuesForKeys:
+dvt_dictionaryByApplyingBlock:
+removeObserver:
+dealloc
+wakeupToken
+deviceAttached
+canExecute
+deviceIsPaired
+userInterfacePresentError:
+deviceSerialNumber
+deviceTotalCapacity
+deviceAvailableCapacity
+deviceIsTransient
+valueForKey:
+_bothHaveInternalSupport
+deviceHasWritableSystemPartition
+developerPrepWarnings
+bootArgs
+nextBootArgs
+isWirelessEnabled
+hostname
+bonjourServiceName
+remoteSSHPort
+deviceWiFiMAC
+deviceAddresses
+presumedRemoteAddress
+setPresumedRemoteAddress:
+enableWireless
+disableWirelessWithError:
+extendedPairWithError:extendedInformationHandler:
+unpair
+disconnect
+hostPairingToken
+startUpDevice
+startSecureServices
+developmentFlag
+setDevelopmentFlag:
+deviceProcessorDescription
+primaryWirelessConnection
+monitorConnection
+initWithDevice:
+initialize
+alliOSDevices
+keyPathsForValuesAffectingCanBeWatchCompanion
+keyPathsForValuesAffectingName
+keyPathsForValuesAffectingProvisioningProfiles
+keyPathsForValuesAffectingIsSupportedHardware
+keyPathsForValuesAffectingIsRunningSupportedOS
+keyPathsForValuesAffectingDirectSSHPort
+keyPathsForValuesAffectingUnavailabilityError
+keyPathsForValuesAffectingNativeArchitecture
+keyPathsForValuesAffectingSupportedArchitectures
+itemWithPlistRepresentation:
+keyPathsForValuesAffectingDeviceAttached
+keyPathsForValuesAffectingCanRename
+keyPathsForValuesAffectingAvailable
+keyPathsForValuesAffectingDeviceIsPaired
+keyPathsForValuesAffectingApplications
+keyPathsForValuesAffectingSystemApplications
+presentError:
+keyPathsForValuesAffectingIsWireless
+keyPathsForValuesAffectingHasWirelessConnection
+keyPathsForValuesAffectingHasWiredConnection
+keyPathsForValuesAffectingHostname
+keyPathsForValuesAffectingPrimaryAddress
+keyPathsForValuesAffectingAddresses
+keyPathsForValuesAffectingIsWirelessEnabled
+keyPathsForValuesAffectingIsPaired
+keyPathsForValuesAffectingIgnored
+keyPathsForValuesAffectingIsUsedForDevelopment
+keyPathsForValuesAffectingProcessorDescription
+keyPathsForValuesAffectingIsPasscodeLocked
+keyPathsForValuesAffectingPlatform
+ide_fallbackSelectorDeviceGroupingFamily
+xpcServiceObserved:withProcessIdentifier:requestedByProcess:options:
+outputReceived:fromProcess:atTime:
+supportedLaunchOptions
+supportedLaunchOptionsForProxiedDevice
+supportsDYLDPrintToStdErr
+debugXPCServices:onPairedDevice:completionSemaphore:
+stopDebuggingXPCServices:forPairedDevice:
+cancelDeviceInstall
+supportsApplicationDataUploading
+supportsLocationSimulation
+supportsRoutingCoverageFile
+canIgnore
+displayOrder
+supportsAttachByPIDOrName
+recordedFramesLibdispatchIntrospectionDylibPath
+extraDebuggingRuntimeDylibPath
+viewDebuggerDylibPathWithOptions:
+canRunExecutables
+runsRemoteFromHostLauncher
+installProvisioningProfileAtURL:error:
+_askForAlternateApplicationIfNeeded:
+takeWatchPowerAssertionName:details:
+cancelWatchPowerAssertion
+addPrepError:
+addPrepWarning:
+errorMessageForBuildable:buildParameters:
+displayNameAdditionsWhenUsingArchitecture:withSDK:
+executionDisplayName
+deferProfileGenerationSetupUntilAfterInstallation
+createRuntimeProfileDirectoryForApplicationWithBundleIdentifier:error:
+downloadRuntimeProfilesFromDirectories:forApplicationWithBundleIdentifier:toDestinationDirectory:error:
+plistRepresentation
+setCrashLogDirectory:
+deviceHasWakeupToken
+canChangeDeviceSoftwareVersion
+deviceHasUI
+primaryAddress
+addresses
+canEnableWireless
+usesPairingRecord
+forget
+attemptRecoveryFromUnavailabilityError
+isUsedForDevelopment
+setUsedForDevelopment:
+monitorWirelessConnection
+wantsDeviceOperationActivityReporting
+_syncDeviceCrashLogsDirectoryWithCompletionHandler:
+conditionInducerSession
+setBootArgs:
+setRemoteSSHPort:
+deviceWantsToBeForgotten
+setDeviceHasWritableSystemPartition:
+setNextBootArgs:
+mountOptions
+inHasConnected
+setInHasConnected:
+setDeveloperPrepError:
+deviceInstallQueue
+setDeviceInstallQueue:
+deviceInstallIsCancelled
+scriptLaunchParameters
+setScriptLaunchParameters:
+setDeviceIsTransient:
+_conditionInducerSession
+_deviceInstallQueue
+_developmentStateObservingTokens
+_proxiedTokensObservingToken
+_deviceProgressToken
+_deviceConnectionDidAppearToken
+_deviceWantsToBeForgotten
+_xpcStdoutFDForPid
+_proxiedDevices
+_platform
+_supportedArchitectures
+_cachedNativeArchitecture
+_developerPrepErrorsStorage
+_developerPrepWarningsStorage
+_watchPowerAssertion
+_ignored
+_deviceHasWritableSystemPartition
+_deviceReady
+_inHasConnected
+_deviceInstallIsCancelled
+_deviceIsTransient
+_token
+_nextBootArgs
+_mountOptions
+_developerPrepError
+_scriptLaunchParameters
+_xpcAttachServiceChannel
+_xpcProxyAttachServiceChannel
+executableVersion
+DVT_nameAndVersion
+defaultPlugInManager
+extensionWithIdentifier:
+orderedSetWithObjects:
+null
+initWithCapabilitiesContext:item:
+setUpPublisherObservations
+item
+feature
+entitlements
+dvt_onlyObject
+entitlementsCoordinator
+classKitEntitlement
+setEntitlementValue:forKey:
+syncPerformEntitlementsInteractionBlock:
+containsEntitlementKey:
+initForEntitlementsWithResolutionBlock:unresolutionBlock:validityCheckBlock:entitlement:
+appIDFeatureFlightCheck
+entitlementsFlightCheck
+coalescableReadOnlyKeyPaths
+flightChecks
+isEnabledUsingEducatedGuess
+coalescableWriteableKeyPathToDataSource
+_entitlementsFlightCheck
+initWithLabel:
+appStoreSubmissionConfigurationBitCodeDefaultSupportLevel
+additionalDefaultPropertiesForSDK:
+supportsTargetBootstrapInjection
+versionWithMajorComponent:minorComponent:updateComponent:
+versionWithStringValue:
+filePathForPathString:
+internalSystemTestingToolPathForBuildableProduct:buildParameters:
+internalSystemTestBundleInjectionLibraryPathForBuildableProduct:buildParameters:
+processNamesToObserveForCrashReportsDuringTesting
+adjustedOperatingSystemVersion
+keyPathsForValuesAffectingNameForDeveloperPortal
+content
+supportedPlatform
+platformForName:
+portalPlatformWithPlatform:
+distributionOptionIdentifiers
+supportsDistributionOfArchive:
+certificateKind
+installerCertificateKind
+wantsProvisioningProfiles
+provisioningProfilePlatform
+packagingStepIdentifierForDestination:
+sortOrder
+supportedTask
+exportStepName
+_shouldUseDirectSSH
+deviceHasInternalTools
+_sshPortForRsync
+existsInFileSystem
+stringWithContentsOfFile:usedEncoding:error:
+appendString:
+trackFuture:
+observeFailure:
+processInfo
+_sshHostnameForRsync
+_deviceHostname
+platformPath
+isExecutableFileAtPath:
+connectToTCPRelayService
+sortedDirectoryContents
+minimumOSForDeviceSupport
+developerDiskImageSearchPaths
+fileExistsAtPath:isDirectory:
+valueForKeyPath:
+conformingDeviceTypeForDevice:
+startedMetricForAspect:logLevel:label:
+_adoptConformingDeviceType
+_shouldMakeReadyForDevelopment
+_setupForInternalSupportWithDispatchGroup:
+checkpoint:
+locateDeveloperRoot
+copyAndProcessSharedCache
+defaultErrorPresenter
+formattedDescriptionForError:
+setEndTime
+logPerformanceMetricData
+_passcodeBlocksMakingReadyForDevelopment
+_closeConnection
+remoteInstallPath
+_internalPreflightCheck
+observeFinishWithDispatchGroup:
+_openTCPRelayConnection
+_executeFetchBootArgsCommand
+_executeFetchNextBootArgsCommand
+enableKeyBasedSSH
+_executeMakeDirectoryCommandWithPath:
+_executeMountWritableCommandWithSuccessBlock:failureBlock:
+_executeSetSandboxDebugModeCommand
+_executeEnableRemoteSSHRequest
+_executeUpdateRemoteSSHStatusRequest
+_executeLoadDeveloperServicesCommand
+_executeDeveloperServicesHealthCheckCommandWithServicesNotRunningNotificationBlock:
+observeSuccess:
+shouldEnableActionForDevice:
+performForDevice:withArguments:infoRequestHandler:
+initWithDevice:launchPath:arguments:error:
+environmentVariables
+internalIOSSubstitutionApp
+setByAddingObjectsFromSet:
+setReplacementRunnableLocation:
+installedApplicationWithBundleIdentifier:
+developerLibraryDirectoryPlatform:
+_pathToPlatformDeveloperAppleInternalLibrarySubpath:
+_overriddenPathFromEnvironmentVariableNamed:path:error:
+_pathToPlatformDeveloperLibrarySubpath:error:
+_testingFrameworkPathWithError:
+_automationSupportFrameworkPathWithError:
+_testingSwiftSupportLibraryPathWithError:
+_mockObjectsFrameworkPath
+testingAdditionalBuiltDependenciesProductPaths
+_testingFrameworkPathsForLaunchParametersSnapshot:error:
+URLByAppendingPathExtension:
+checkResourceIsReachableAndReturnError:
+filePathForFileURL:
+_productsToSendToDeviceForTestBundleLaunchSession:error:
+_testingToolPathWithError:
+orderedSet
+appExtensionBuiltPaths
+debugXPCServices
+debugAppExtensions
+launchStyle
+routingCoverageFileReference
+resolvedReference
+isAbsolutePath
+dataWithContentsOfFile:
+presentAlertForNoRoutingCoverageFileAtPath:
+productType
+installsOnProxy
+launchAutomaticallySubstyle
+dictionaryWithDictionary:
+installApplicationSync:options:
+schemeCommand
+commandName
+dvt_errorWithDomain:errorCode:message:recoverySuggestion:underlyingError:
+deviceAppDataPackage
+uploadApplicationDataWithPath:forInstalledApplicationWithBundleIdentifier:error:
+runnableType
+_stageAndUploadSensorReplayFileToApplication:launchSession:outError:
+_configureTestingForLaunchSession:outError:
+allowDeviceSensorReplayData
+deviceSensorReplayFile
+fileExistsAtPath:
+removeItemAtPath:error:
+copyItemAtPath:toPath:error:
+_uploadSensorReplayDataWithPath:forInstalledApplicationWithBundleIdentifier:error:
+uploadFile:error:
+hostBuildableProductForBuildable:buildParameters:workspace:
+ownershipForCurrentUser
+customDataSpecifierWithName:groupingName:ownership:
+_customDataSpecifierForApplication:
+defaultStore
+readCustomDataWithSpecifier:error:
+propertyListWithData:options:format:error:
+dataWithPropertyList:format:options:error:
+writeCustomData:withSpecifier:forceOverwrite:completionQueue:completionBlock:
+_appDataSyncRecordsForApplication:
+uploadFile:syncRecords:resultingSyncRecords:error:
+_storeAppDataSyncRecords:forApplication:
+downloadToFile:error:
+userInterfacePresentAlertForNoRoutingCoverageFileAtPath:
+_resolveApplicationIconInRunnablePath:platformIdentifier:setImageCallback:
+runDestination
+targetDevice
+takeWirelessPowerAssertionWithName:deatils:andTimeout:
+setDebugAsAService:
+installForTestBundleWithSession:error:
+internalIOSLaunchStyle
+targetArchitecture
+skipInternalInstallSDKCheck
+installForMobileInstallWithSession:error:
+_resolveApplicationIcon:
+deviceArbitrationCheckIn
+deviceArbitrationForcedCheckIn
+debugServiceExtension
+runsDirectlyOnProxy
+startDebugServerServiceWithExtension:
+setDebugServiceFD:
+invokeUserScript:
+_hasSpringBoard
+_remoteDeviceProperties
+hasDisconnected
+downloadApplicationDataToPath:forInstalledApplicationWithBundleIdentifier:error:
+installApplicationWithLaunchSession:error:
+startDebugServerServiceForLaunchSession:
+didFinishRunning
+pathForInternalExecutable:searchInPlatform:
+allDeveloperDiskImagePathsForPlatform:
+keyPathsForValuesAffectingCanExecute
+uninstallApplicationWithBundleIdentifierSync:
+useProxiedDevice
+samplingDevice
+setChannel:
+_isTargetOSVersion:atLeastSupportedVersion:
+startSamplingForPIDs:
+channel
+errorStatus
+sendControlSync:replyHandler:
+stopSamplingForPIDs:
+willStartSamplingAtTime:withInterval:
+didStopSampling
+_channel
+boolEntitlementValueForKey:
+linkedFrameworksCoordinator
+linkedFrameworksFlightCheck
+portalFlightCheck
+_portalFlightCheck
+_linkedFrameworksFlightCheck
+_resetChannel
+channelResetQueued
+setChannelResetQueued:
+_cancelChannel
+_connectChannelWithDevice:
+setServiceState:
+_conditionInducerStateDidChange
+setActiveCondition:
+setAvailableConditions:
+channelQueue
+_handleMessage:
+setMessageHandler:
+integerForMessageKey:
+activeCondition
+_activeConditionTearingDown
+_clearActiveCondition
+serviceState
+_preflightServiceRequestWithCompletion:
+availableConditionInducers
+_updateAvailableConditionInducersWithDictionary:
+state
+setState:
+setActiveProfile:
+enableConditionWithIdentifier:profileIdentifier:
+disableConditionWithIdentifier:
+initWithIdentifier:name:description:
+initWithIdentifier:name:isDestructive:isInternal:profiles:
+registeredCallbackBlocks
+dvt_allValues
+fetchAvailableConditionInducersWithCompletion:
+enableConditionInducer:profile:completion:
+disableConditionInducer:completion:
+registerStateChangedCallbackWithOwner:block:
+unRegisterStateChangedCallbackWithOwner:
+availableConditions
+setDevice:
+setChannelQueue:
+setRegisteredCallbackBlocks:
+deviceAllowsSecureServicesObservingToken
+setDeviceAllowsSecureServicesObservingToken:
+deviceHasConnectionObservingToken
+setDeviceHasConnectionObservingToken:
+deviceIsPairedObservingToken
+setDeviceIsPairedObservingToken:
+setLog:
+_channelResetQueued
+_serviceState
+_availableConditions
+_activeCondition
+_channelQueue
+_registeredCallbackBlocks
+_deviceAllowsSecureServicesObservingToken
+_deviceHasConnectionObservingToken
+_deviceIsPairedObservingToken
+_log
+fileHandleForWritingToURL:error:
+closeFile
+fileDescriptor
+dvt_errorWithPOSIXErrorCode:
+fileSystemRepresentation
+removeItemAtURL:error:
+createStreamableZipOfDirectory:atPath:options:error:
+extractStreamableZipAtPath:toPath:error:
+predicateWithFormat:
+filteredSetUsingPredicate:
+extractFileWithInternalPath:error:
+filePathForUniqueRelativeFileWithPrefix:error:
+binSearchPathForPlatform:
+pathForFileWithRelativePathString:
+runReturningStandardOutput:standardError:error:
+isEqualToNumber:
+compare:options:
+dictionaryWithContentsOfFile:
+zipFileWithContentsOfURL:
+pathComponents
+objectAtIndexedSubscript:
+enumerateFilesWithError:andBlock:
+extractPropertyListWithInternalPath:error:
+checkDeviceCapabilities:withOptions:andError:
+fileExistsAtInternalPath:
+attributesForFileWithInternalPath:error:
+attributesOfItemAtPath:error:
+unsignedIntegerValue
+dvt_stringWithListComponentsJoinedByCommasAndOr:
+cacheDirectoryWithOptions:
+doubleValue
+timeIntervalSinceNow
+displayNameAtPath:
+dvt_setByFilteringUsingBlock:
+uninstallApplicationWithIdentifier:options:andError:withCallback:
+attributesForAllFilesWithError:
+installApplicationBundleAtPath:withOptions:andError:withCallback:
+isSymbolicLink
+symbolicLinkDestinationFilePath
+validateApplicationAtPath:forInstallationToToken:
+processAppInstallSet:appUninstallSet:installOptions:completionBlock:
+_installApplicationsImpl:allowReplacing:options:completionBlock:
+fetchApplications:
+installApplicationsSync:options:
+operationWithWorkingDirectory:workspaceFilePath:projectFilePath:packagesPaths:outError:
+block
+_analysisOperationWithAnalysisToolService:location:workingDirectory:workspaceFilePath:projectFilePath:packagesPaths:outError:
+operationWithBlock:
+_checkForARM64SliceAtPath:executableName:zipFile:subpath:
+installApplications:allowReplacing:
+uninstallApplications:
+strongToStrongObjectsMapTable
+extensionPointWithIdentifier:
+extensions
+defaultPlatform
+alloc
+initWithPlatform:
+arrayForKey:
+indexOfObjectPassingTest:
+removeObjectAtIndex:
+removeSavedDeviceTokenForDeviceIdentifier:
+dictionaryRepresentation
+setObject:atIndexedSubscript:
+currentThread
+qualityOfService
+updateSavedDeviceTokenForDevice:
+updateDefaultsForDevice:
+mutableLocatedDevices
+removeObject:
+unionSet:
+_ignoreMobileDevice
+deviceAttached:
+deviceDetached:
+sharedInstance
+startListening
+start
+dvt_cachedEnvironment
+dvt_areAnyEntriesPassingTest:
+stopListening
+removeAllObjects
+deviceLocation
+iOSDeviceWithIdentifier:
+_shouldCreateDeviceInstanceForDeviceRepresentedByToken:
+beginWatchingDevice:
+forgetDevice:
+deviceSpecifierPrefix
+deviceLocator
+startLocating
+stopLocating
+deviceLocationScheme
+knownDeviceAtDeviceLocation:
+validateDeviceSpecifierOptions:genericOnly:allowMultipleMatches:error:
+matchDevice:againstOptions:genericOnly:allowAliases:
+_deviceAttachedToken
+_deviceDetachedToken
+_deviceObservingTokens
+_savedDevices
+_placeholderDevices
+_platforms
+appStoreConnectNameTitleCase
+profilePurposeWithIdentifier:
+appStoreName
+commandLineName
+title
+shortTitle
+subtitle
+orderedDistributionStepClassNamesForDestination:
+provisioningProfilePurpose
+supportsManifestDistribution
+dictionaryWithObjectsAndKeys:
+deviceCapabilityWithProperties:
+capability
+operationWorkerWithLaunchSession:error:
+deviceExtension
+hasDisclosableContent
+prepareForCodeSigningWithMacroExpansionScope:
+evaluatedStringValueForMacroNamed:
+dependencyGraphCreationContext
+dependencyNodeForPath:
+simulatedEntitlementDependenciesForNode:withMacroExpansionScope:
+toolsInfo
+isAppleInternal
+entitlementDependenciesForNode:withMacroExpansionScope:
+newWithLabel:
+setValue:forMacroName:conditionSet:
+newWithParentScope:macros:definitionLevel:
+buildContext
+codeSignNode:withMacroExpansionScope:reSignOnly:
+producerCommand
+addInputNode:
+supportsDeveloperIDSigning
+supportsMacSigning
+supportsIOSSigning
+shouldPassEntitlementsFileContentToCodeSignWithMacroExpansionScope:
+requiresEntitlementsWithMacroExpansionScope:
+setLabel:
+setLiteralValue:forMacroName:conditionSet:
+newWithParentScope:macros:definitionLevel:conditionParameterValues:
+URLWithString:
+userDefaultsKey
+baseURL
+containerType
+initWithItemModel:teamItemsKeyPath:containerType:
+readValuesFromEntitlements
+entitlement
+arrayOfStringsEntitlementValueForKey:
+orderedSetWithArray:
+merchantIDs
+setUnexpandedIdentifiersWithoutPublishing:
+flightCheck
+unexpandedIdentifiers
+entitlementsContainsEntitlementKey
+targetCoordinatorsChanged:
+setMerchantIDs:
+_merchantIDs
+volumeFilePath
+recursiveFileSize
+invalidateFilePath
+lastAccessedDate
+volume
+size
+isOrphaned
+deleteWithError:
+initWithFilePath:effectiveModificationDate:orphaned:
+_filePath
+_effectiveModificationDate
+_isOrphaned
+initWithAppShadowFolder:
+isDirectory
+itemsWithError:
+_appInstallationShadowDirectoryLocation
+dvt_addObjectIfNonNil:
+initWithProfileRef:error:
+dataWithContentsOfURL:options:error:
+provisioningProfileFromData:error:
+provisioningProfilePathExtension
+supportedPlatforms
+provisioningProfileFromFilePath:error:
+isSubsetOfSet:
+architectureWithCanonicalName:
+_generalRunErrorWithLaunchSession:
+setPlatform:
+absoluteString
+requestProcessInformationsOnPairedDevice:handler:
+allowsManagedStateControl
+supportsArchiving
+supportsPGOReturningError:
+supportsRecordedFrames
+supportsMainThreadChecker
+disablesOnlyActiveArch
+supportedDestinations
+_supportedPlatform
+targetBootstrapInjectionPath
+runtime
+root
+automationFrameworkPath
+initWithSimDevice:
+requestSessionForSimulatorDevice:completion:
+sessionIdentifier
+initForSimulatorDevice:sessionIdentifier:
+testArchitectureForBuildableProduct:buildParameters:
+_availableArchitecturesForArchitecture:
+intersectOrderedSet:
+claimDeviceForToken:
+bootSyncForLaunchSession:error:
+isUITestBundle
+testHostStyle
+supportsTestDaemonControlSession
+testDaemonDTXConnectionProvider
+requestTestDaemonControlSessionWithCompletion:
+requestTestDaemonRecordingSessionWithCompletion:
+testRunnerSessionForConfiguration:
+claimDeviceForTestingWithSessionIdentifier:
+prepareDeviceForLaunchSession:error:
+supportsCloning
+testRunSpecificationWorkerRequiresUniqueClone:
+isLogArchiveCollectionEnabled
+arrayWithArray:
+dataUsingEncoding:
+JSONObjectWithData:options:error:
+initWithReportEntries:
+_reportEntries
+setDateFormat:
+stringFromDate:
+setRemoteLaunchPath:
+setRemoteArguments:
+logHandle
+remoteLaunchPath
+stringWithString:
+remoteArguments
+_remoteArguments
+_remoteLaunchPath
+initWithMobileDeviceIdentifier:
+requestSessionForMobileDeviceWithIdentifier:completion:
+initForMobileDeviceWithIdentifier:sessionIdentifier:
+supportsTestHostStyle:withError:
+crashReportsDirectoryPaths
+is64Bit
+specifiedBaseSDKForBuildConfigurationName:
+setMacroDefinitionTable:forLevel:
+setSymbolsCoordinator:
+stringByReplacingOccurrencesOfString:withString:options:range:
+symbolsCoordinator
+downloadOperation
+downloadError
+developerDiskImageMountError
+keyPathsForValuesAffectingIdentifier
+keyPathsForValuesAffectingModelName
+keyPathsForValuesAffectingModelUTI
+keyPathsForValuesAffectingModelCode
+keyPathsForValuesAffectingOperatingSystemVersion
+keyPathsForValuesAffectingOperatingSystemBuild
+keyPathsForValuesAffectingAdjustedOperatingSystemVersion
+keyPathsForValuesAffectingOperatingSystemVersionWithBuildNumber
+keyPathsForValuesAffectingDeviceIsBusy
+keyPathsForValuesAffectingIsAvailable
+_symbolsCoordinator
+_setUpPropertyObservers
+hasLoaded_productVersion
+operatingSystemVersionObserver
+setOperatingSystemVersionObserver:
+setOperatingSystemVersion:
+_checkForSymbols
+hasLoaded_deviceType
+modelCodeObserver
+setModelCodeObserver:
+setModelCode:
+hasLoaded_buildVersion
+operatingSystemBuildObserver
+setOperatingSystemBuildObserver:
+setOperatingSystemBuild:
+platformObserver
+setPlatformObserver:
+hasDirectConnection
+minimumOSForDownloadableSymbols
+symbolsPath
+exactSymbolsDirectoryForModel:architecture:version:build:
+setSymbolsPath:
+_downloadSymbolsToFileURL:
+_downloadSymbolsToFileURL:fromServers:
+dvt_popFirstObject
+_downloadOpForSymbolsFileURL:fromPath:requireAuth:error:
+setDownloadOperation:
+setDownloadError:
+isCancelled
+_completePreparationForSymbolsPath:
+downloadable
+source
+dvt_observeCompletionOnQueue:withBlock:
+initWithIdentifier:version:source:fileSize:name:dependencies:userInitiated:userInfo:
+defaultDownloadableManager
+operations
+download:authorization:error:
+_symbolsPath
+_downloadError
+_downloadOperation
+_modelCode
+_modelCodeObserver
+_operatingSystemVersion
+_operatingSystemVersionObserver
+_operatingSystemBuild
+_operatingSystemBuildObserver
+_platformObserver
+serviceIdentifierKey
+selectedDebuggerIdentifier
+currentCapability
+properties
+capabilitySequenceForLaunchSession:
+servicesMatchingCapability:
+initWithWorkers:launchSession:
+initWithWorker:
+setRunnableTracker:
+launchSession
+debugServiceObject
+deviceArbitrationObject
+setDebugServiceObject:
+setDeviceArbitrationObject:
+allSubworkersDidFinishWithError:
+initWithExtensionIdentifier:launchSession:
+preflightDeviceIsAvailableWithError:recoverable:retrying:
+performWorkerAction
+isWatch1Application
+idealExistingSymbolsDirectory:
+setSdkPath:
+startNextWorkerFromCompletedWorker:error:
+finishedWithError:
+willInstallWatchAppForCompanionIdentifier:completionBlock:
+preflightWithError:recoverable:shouldRetry:
+terminate
+preflightDeviceIsUnlockedWithError:recoverable:
+setupProfileGenerationForLaunchSession:error:
+_deviceWoke
+observeFinishOnQueue:withBlock:
+isLaunchingToDebug
+_serviceHubProcessControlChannel
+dvt_dictionaryBySettingObject:forKey:
+bundleIDToLaunch
+commandLineArgs
+runnableAppExtensionHostRunMode
+initWithType:standardInput:standardOutput:standardError:
+addConsoleAdaptor:
+launchProcessWithPath:bundleIdentifier:environment:arguments:options:
+useExistingAppInstanceForBundleIdentifier:
+launchNewAppInstanceForBundleIdentifier:path:environment:arguments:options:
+_bestPrimaryInstrumentsServer
+setRunnablePID:
+observeProcessWithPID:
+fetchPIDForBundleIdentifier:completionHandler:
+killPID:
+setIsLongTerm:
+_setupDebugging
+_setupPlainLaunching
+setupAssetServerWithCompletion:
+runnablePID
+sigtermPID:
+launchSuspendedProcessWithDevicePath:bundleIdentifier:environment:arguments:options:
+dvt_setObjectIfNonNil:forKey:
+startObservingPid:
+killPid:
+sendSignal:toPid:
+processIdentifierForBundleIdentifier:
+pidDiedCallback:
+_cancelServiceHubProcessControlChannel
+_assetServerConnection
+beginProvidingAssetsForLocalApplication:connection:completion:
+_assetServerChannel
+setLaunchingToDebug:
+_shouldSkipAppTermination
+_posixSpawnSTDOUTFDForRedirection
+_launchingToDebug
+_iPhone
+stopSimulatingLocationWithError:
+simulateLatitude:andLongitude:withError:
+stopLocationSimulationWithError:
+simulateLocationWithLatitude:longitude:error:
+profileDescription
+_identifier
+_name
+_profileDescription
+performLockedBlock:
+queue
+cleanUpSessionMap
+executionDidEnd
+productFamilyID
+simulatorApplication
+dvt_platform
+UDID
+deviceSetForDevice:
+setCanSelectArchitectureToExecute:
+setDisplayOrder:
+dvt_registerNotificationHandlerOnQueue:handler:
+companion
+_updateProxiedDeviceSet
+simDeviceState
+bootWithOptions:
+shutdown
+dvt_bootWithOptions:
+dvt_shutdown
+setCurrentSessionMode:
+then:
+dvt_eraseContentsAndSettings
+dvt_restoreContentsAndSettingsFrom:
+dvt_installApplicationAtPath:
+dvt_installApplicationAtPath:withOptions:
+dvt_uninstallApplicationWithBundleIdentifier:
+dvt_uninstallApplicationWithBundleIdentifier:andOptions:
+dvt_propertiesOfApplicationWithBundleIdentifier:
+dvt_applicationIsInstalledWithBundleIdentifier:
+dvt_spawnExecutableAtPath:withOptions:
+dvt_spawnExecutableAtPath:withOptions:andTerminationHandler:
+dvt_launchApplicationWithBundleIdentifier:
+dvt_launchApplicationWithBundleIdentifier:andOptions:
+currentSessionMode
+bundleForClass:
+bundlePath
+triggerCloudSyncWithCompletionQueue:completionHandler:
+correspondingDevicePlatform
+productFamily
+modelIdentifier
+rename:error:
+versionString
+buildVersionString
+available
+dvt_supportedArchStrings
+supportedArchs
+runtimeIdentifier
+proxiedDeviceSet
+devicePairsContainingDevice:
+gizmo
+deviceForSimDevice:
+active
+proxiedDevicesSetWithDevices:activeProxiedDevice:
+setProxiedDeviceSet:
+canSetActiveProxiedDevice
+setActiveWithError:
+supportedProductFamilyIDs
+simulatedDeviceFamily
+dvt_supportedArchs
+isWatch2Application
+isWatch2AppExtension
+isAppExtension
+bootSyncForMode:withError:
+willChangeValueForKey:
+didChangeValueForKey:
+installedAppsWithError:
+bundleWithPath:
+objectForInfoDictionaryKey:
+initWithPropertyListRepresentation:error:
+enumerateKeysAndObjectsUsingBlock:
+_launchSimulatorAndUpdateApplicationsWhenReady
+_updateApplications
+shouldProcessPath:
+userInterfacePresentBasicAlertWithMessageText:informativeText:
+_launchSimulatorAppAndStartSessionWithError:
+sendStartSessionNotificationWithUserInfo:
+launchWithError:andReadyCallback:
+setSimulatorPID:
+suppressSimulatorApplication
+shouldTest
+simulatorPID
+_claimDeviceForLaunchSession:
+propertiesOfApplicationWithBundleIdentifier:
+stringByResolvingSymlinksInPath
+dvt_notifyOfBootOnQueue:handler:
+fileTypeAttribute
+installApplicationAtPath:withOptions:
+_updateTestConfigurationFileAtPath:forLaunchSession:applicationBundleID:
+startAssetServerForApplicationAtPath:
+uploadApplicationDataToBundlePath:launchService:
+transferDirectionsFileToBundlePath:launchService:
+slaveName
+launchApplicationWithBundleIdentifier:withArguments:environment:options:
+slaveFileHandle
+dvt_duplicateFileHandleWithError:
+architecture
+spawnExecutableAtPath:withOptions:andTerminationHandler:
+_trackPid:forDevice:launchService:
+launchCompleteWithAppPID:
+_updateIconForPath:launchSession:
+presentErrorWithMessageText:informativeText:
+sendSimulateLocationNotificationWithLatitude:longitude:
+sendStopSimulateLocationNotification
+primaryInstrumentsServerWithError:
+shouldProfile
+deviceSets
+enumerateObjectsUsingBlock:
+cancelledFuture
+_installedPathForBundleIdentifier:
+integerForKey:
+cancelAfterTimeout:
+lookup:error:
+fileDescriptorHandshakeWithSendPort:
+initWithTransport:
+resume
+blessSimulatorServiceHub:error:
+_debugXPCServices:onChannel:completionSemaphore:
+launchApplicationWithBundleIdentifier:andOptions:
+_claimDeviceForToken:
+_relinquishClaimForToken:
+oneShotBlockWithCallback:
+_shutdownLaterIfNoActiveClaims
+_shutdownIfNoActiveClaims
+weBootedThisSimulatorInstance
+_devicesToShutdownWhenUnclaimed
+simulatorWithDevice:
+keyPathsForValuesAffectingState
+keyPathsForValuesAffectingSimDeviceState
+keyPathsForValuesAffectingSupportsLocationSimulation
+keyPathsForValuesAffectingSupportsFetchEvents
+keyPathsForValuesAffectingProxiedDevices
+keyPathsForValuesAffectingActiveProxiedDevice
+fileManager:shouldCopyItemAtPath:toPath:
+fileManager:shouldCopyItemAtURL:toURL:
+fileManager:shouldProceedAfterError:copyingItemAtPath:toPath:
+fileManager:shouldProceedAfterError:copyingItemAtURL:toURL:
+fileManager:shouldMoveItemAtPath:toPath:
+fileManager:shouldMoveItemAtURL:toURL:
+fileManager:shouldProceedAfterError:movingItemAtPath:toPath:
+fileManager:shouldProceedAfterError:movingItemAtURL:toURL:
+fileManager:shouldLinkItemAtPath:toPath:
+fileManager:shouldLinkItemAtURL:toURL:
+fileManager:shouldProceedAfterError:linkingItemAtPath:toPath:
+fileManager:shouldProceedAfterError:linkingItemAtURL:toURL:
+fileManager:shouldRemoveItemAtPath:
+fileManager:shouldRemoveItemAtURL:
+fileManager:shouldProceedAfterError:removingItemAtPath:
+fileManager:shouldProceedAfterError:removingItemAtURL:
+simulatorIconFilePath
+canStartUpAndShutDown
+shutDownDevice
+deviceInfo
+eraseContentsAndSettings
+restoreContentsAndSettingsFrom:
+installApplicationAtPath:
+uninstallApplicationWithBundleIdentifier:
+uninstallApplicationWithBundleIdentifier:andOptions:
+applicationIsInstalledWithBundleIdentifier:
+spawnExecutableAtPath:withOptions:
+launchApplicationWithBundleIdentifier:
+canPerformUbiquityFetchEvent
+performUbiquityFetchEvent
+supportsDisplayScaleOption
+setActiveProxiedDevice:
+setActiveProxiedDevice:completionQueue:completionHandler:
+effectiveSDKVersion
+simulatorDirectoriesForAppName:
+launchSimulatedExecutable:launchService:error:
+attachedToTarget:launchService:error:
+simulateLocationWithLatitude:longitude:
+stopLocationSimulation
+runExecutableAtPath:withArguments:environment:options:terminationHandler:
+canInstallApplication
+setWeBootedThisSimulatorInstance:
+assetProvider
+setAssetProvider:
+_deviceSet
+_deviceNotificationToken
+_deviceSetNotificationToken
+_locatedDeviceObservingToken
+_displayOrder
+_weBootedThisSimulatorInstance
+_extraDebuggingRuntimeDylibPath
+_applications
+_applicationsDict
+_instrumentsConnection
+_instrumentsConnectionSemaphore
+_simulatorApplication
+_currentSessionMode
+_activeLaunchSessionClaims
+_activeLaunchSessionClaimsLock
+_currentBootOperation
+_bootOperationLock
+_simulatorPID
+_assetProvider
+_proxiedDeviceSet
+dvtDevice
+stringByExpandingTildeInPath
+developerDirectory
+initWithServiceClass:simulatorClass:developerDirURL:customDeviceSetURL:
+serviceClass
+developerDirPath
+sharedServiceContextForDeveloperDir:error:
+logAspect
+customDeviceSetLocation
+deviceSetWithPath:error:
+simulatorClaims
+generateUniqueNameForCloneOfDevice:
+taskDeathPort
+deviceSet
+simulatorClass
+addClone:ofDeviceWithIdentifier:
+cloneDeviceAsync:name:options:toSet:completionQueue:completionHandler:
+cloneMap
+recycleNameForClone:ofDeviceWithIdentifier:
+destroyDevice:
+deleteDeviceAsync:completionQueue:completionHandler:
+cloneNameIndexes
+indexSet
+enumerateRangesUsingBlock:
+addIndex:
+regularExpressionWithPattern:options:error:
+firstMatchInString:options:range:
+numberOfRanges
+rangeAtIndex:
+nameIndexForClone:
+removeIndex:
+setLogAspect:
+sharedCreator
+setSharedCreator:
+finishInitialization
+canCloneDevice:
+cloneDevice:
+shutdownClone:
+destroyClone:
+_serviceClass
+_simulatorClass
+_customDeviceSetLocation
+_developerDirPath
+_simulatorClaims
+_cloneNameIndexes
+_cloneMap
+_queue
+dvt_sharedServiceContext:
+dvt_filePathForKey:
+defaultDeviceSetWithError:
+_startLocatingDevicesInDeviceSet:
+locatedDevices
+deviceSetForSimDevice:
+correspondingDevicePlatformIdentifier
+dvt_latestRuntime
+caseInsensitiveCompare:
+supportedDeviceTypesByAlias
+coreSimulatorQueue
+setActiveAsyncWithCompletionQueue:completionHandler:
+createDevicePairAsyncWithGizmo:companion:completionQueue:completionHandler:
+unpairDevicePairAsync:completionQueue:completionHandler:
+devices
+availableDevices
+objectsPassingTest:
+sortDescriptorWithKey:ascending:comparator:
+sortDescriptorWithKey:ascending:
+sortedArrayUsingDescriptors:
+setSet:
+dvt_registerNotificationHandler:
+defaultDeviceSet
+deleteDevice:completionHandler:
+pairCompanionDevice:withGizmoDevice:completionHandler:
+unpairDevice:completionHandler:
+_locating
+_deviceSets
+_notificationTokens
+setLinkedFrameworksFlightCheck:
+setEntitlementsFlightCheck:
+fontInstallationValues
+setFontInstallationValues:
+executeWithoutPublishingState:
+dvt_setByIntersectingSet:
+dvt_sortedArray
+isEnabledFontInstallationValue:
+appUsage
+addEnabledFontInstallationValue:
+removeEnabledFontInstallationValue:
+_setAppUsage:
+systemInstallation
+_setSystemInstallation:
+keyPathsForValuesAffectingAppUsage
+keyPathsForValuesAffectingSystemInstallation
+setAppUsage:
+setSystemInstallation:
+fontEnumeration
+setFontEnumeration:
+_fontEnumeration
+_fontInstallationValues
+setStoreIssuesAreWarnings:
+emitMessage:
+setVerbose:
+setStoreValidation:
+setApplication:
+application
+setArchive:
+emitMessageWithFormat:
+verbose
+storeIssuesAreWarnings
+dvt_rawInfoDictionaryForBundleAtPath:error:
+validateMedusaSupportWithInfoDictionary:errors:
+dvt_arrayOrNilForKey:
+dvt_boolForKey:defaultValue:
+arrayWithCapacity:
+isEqualToSet:
+dvt_dictionaryOrNilForKey:
+runTaskWithArguments:environment:workingDirectoryPath:infd:outerrfd:
+archive
+storeValidation
+_archive
+_verbose
+_storeIssuesAreWarnings
+_storeValidation
+_application
+_performInstall
+watchLaunchStyleForDevice:
+_willInstallWatchAppForCompanion:maxTries:
+distantFuture
+lowercaseString
+portalPlatformsForProvisioningProfilePlatformIdentifiers:
+dvt_componentsJoinedByString:finalComponentJoinString:
+dvt_sharedCopy
+initWithName:UUID:entitlements:appIdentifierName:appIdentifierPrefixes:teamName:teamIdentifierPrefixes:dateCreated:dateExpired:platforms:supportedUDIDs:certificates:isUniversal:isAppleInternal:isXcodeManaged:
+misProfile
+initWithParentScope:macroDefinitionTable:definitionLevel:definitionLevelsToClear:conditionParameterValues:expansionOptions:
+dvt_dictionaryByExpandingValuesWithMacroExpansionScope:
+initWithUnderlyingType:logAspect:
+applicationIdentifierEntitlement
+dataRepresentation
+matchesEntitlements:nonMatchingKeys:
+certificates
+underlyingProfile
+_underlyingProfile
+_applicationIdentifierEntitlement
+_activeProxiedDevice
+setPty:
+initWithAccessMode:error:
+masterFileHandle
+_setupPTY
+_willUseExistingProcess
+askOnLaunchChangedRunnable
+currentDebugSession
+wasDetached
+numberWithUnsignedLong:
+dvt_newObserverForKeyPath:options:owner:withHandlerBlock:
+_setUpSimulatorSessionForAttaching
+_cancelProcessControlChannel
+launchServiceChannel
+setLaunchServiceChannel:
+dvt_uncachedBundleExecutableAtURL:
+_instrumentsProcessControlChannel:
+_debugSessionStarted
+_responsibleForTermination
+_terminateCalled
+_executionEndedCalled
+_launchFuture
+_lifeCycleLock
+_debugSessionStateObservingToken
+_pty
+_launchServiceChannel
+isDestructive
+activeProfile
+profiles
+setDestructive:
+setInternal:
+setProfiles:
+_destructive
+_internal
+_profiles
+_state
+_activeProfile
+_simulator
+_targetDevice
+recoveredFromPreflightError
+_cancellableErrorWithError:observingToken:
+commandNameGerund
+dvt_errorBySettingRecoveryOptions:andRecoveryBlock:
+_passcodeLockedToken
+_availabilityToken
+IDEGaugeDataProviderService_iOSDevice_NetworkStatistics
+IDEGaugeDataProviderService_iOSSimulator_Energy
+IDEEmbeddedXCSpecProvider
+DVTRsyncResult
+IDEBuildableTargetDevice
+DVTBasicDevice
+DVTCodesignableDevice
+NSObject
+IDEBuildableProduct
+IDEBuildable
+DVTInvalidation
+DVTAbstractiOSDevice
+DVTBasiciOSDevice
+_RuntimeProfileWorker
+_RuntimeProfileWorkerInternal
+_RuntimeProfileWorkerExternal
+DVTiOSDevice
+IDERunDestinationFallbackSelectorDeviceInfo
+XCDTMobileIS_XPCDebuggingProcotol
+DTXAllowedRPC
+IDEiPhoneOrganizerApplications
+DVTiPhone
+IDEGaugeDataProviderService_iOSDevice_SceneKit
+IDEClassKitItemModel
+IDEiOSSDKPropertiesProvider
+DVTSDKPropertiesProvider
+IDETestingAdditions
+DVTBasicProxiediOSDevice
+IDEGaugeDataProviderService_iOSDevice_Energy
+IDEDistributableApplication
+IDEDistributableContent
+IDEDistributionMethodiOSAppStore
+IDEDistributionMethodiOSAppStoreDistribution
+IDEDistributionMethodiOSAppStoreValidation
+Connect
+DVTDeviceApplicationInstaller
+DVTDeviceApplicationProvider
+IDEGaugeDataProviderService_iOSDevice
+Xcode3InterAppAudioItemModel
+DVTConditionInducerSession
+IDEMobileDeviceArchiver
+DVTiPhoneApplicationInstallation
+DVTiOSDeviceLocator
+IDEDistributionMethodAdHoc
+IDEGaugeDataProviderService_iOSSimulator_NetworkStatistics
+DVTiOSDeviceSimulatorPlaceholderService
+IDEGaugeDataProviderService_iOSDevice_SpriteKit
+DVTiOSDevicePlaceholder
+DVTiPhonePlaceholder
+IDEHomeKitItemModel
+XCiPhoneSimulatorCodeSignContext
+DVTDownloadableIndexSourceiOS
+Xcode3ApplePayItemModel
+IDEiOSSupportCacheDeleteItem
+DVTDefaultPolicyCacheDeleteExtensionItem
+IDEiOSSupportCacheDeleteExtension
+IDEEmbeddedProvisioningProfileProvider
+Xcode3NearFieldCommunicationTagReadingItemModel
+DVTiOSDeviceSimulatorPlaceholder
+IDEDistributionMethodEnterprise
+IDEDistributionMethodiOSEnterprise
+DVTiOSDeviceErrorReport
+DVTiOSDeviceTask
+IDEAutoFillCredentialProviderItemModel
+DVTProxiediOSDevice
+DVTProxiedDeviceSymbolsCoordinator
+Xcode3BackgroundModesItemModel
+IDERuniPhoneService
+IDEDebugiPhoneService
+IDEiPhoneRunOperationWorkerGroup
+Xcode3SiriItemModel
+IDEInstalliPhoneService
+IDEInstalliPhoneLauncher
+IDELaunchiPhoneLauncher
+XCDTMobileIS_AppPosixSpawnProcotol
+DTMISProcessControlServiceAuthorizedAPI
+IDELaunchiPhoneService
+IDERuniPhonePlaceholderService
+IDEGaugeDataProviderService_iOSSimulator
+IDESimulateLocationiPhoneService
+DVTiOSConditionInducerProfile
+DVTiPhoneSimulator
+NSFileManagerDelegate
+DVTTestingRedeclarations
+DVTTestingiPhoneSimulator
+DVTTestDevice
+DVTTestSimulatorDeviceCloneCreator
+DVTTestDeviceCloneCreator
+Xcode3HealthKitItemModel
+DVTiPhoneSimulatorLocator
+Xcode3HotspotConfigurationItemModel
+IDEFontInstallationItemModel
+DVTiOSBuildTargetDevice
+IDEGaugeDataProviderService_iOSSimulator_resources
+IDERuniPhoneSimulatorService
+IDEDebugiPhoneSimulatorService
+XCWorkQueueCommandBuiltinInvocation_validationUtility
+IDEiOSNetworkExtensionsItemModel
+IDEDistributionMethodDevelopmentSigned
+Xcode3MultipathItemModel
+IDEInstalliPhoneSimulatorService
+_IDEInstalliPhoneSimulatorWorker
+IDEGaugeDataProviderService_iOSDevice_procinfo
+IDEEmbeddedProvisioningProfile
+IDEAccessWiFiItemModel
+IDEGaugeDataProviderService_iOSSimulator_procinfo
+DVTProxiedDeviceSet
+IDELaunchiPhoneSimulatorService
+IDELaunchiPhoneSimulatorLauncher
+DVTiOSConditionInducer
+IDESimulateLocationiPhoneSimulatorService
+IDEDeviceRunOperationWorker
+@16@0:8
+@32@0:8@16@24
+@48@0:8@16@24@32@40
+@48@0:8q16@24@32@40
+v16@0:8
+q16@0:8
+@"NSString"
+@"NSArray"
+c24@0:8@16
+#16@0:8
+@24@0:8:16
+@32@0:8:16@24
+@40@0:8:16@24@32
+c16@0:8
+c24@0:8#16
+c24@0:8:16
+Vv16@0:8
+Q16@0:8
+^{_NSZone=}16@0:8
+c24@0:8@"Protocol"16
+@"NSString"16@0:8
+@"DVTPlatform"16@0:8
+@"NSSet"16@0:8
+B16@0:8
+@"NSError"16@0:8
+@"DTXConnection"16@0:8
+c40@0:8@16@24^@32
+c32@0:8@16@24
+@40@0:8@16@24^@32
+c24@0:8^@16
+c72@0:8@16@24@32@40@48@56^@64
+@72@0:8@16@24@32@40@48@56^@64
+c40@0:8@"<IDEBuildable>"16@"IDEBuildParameters"24^@32
+c32@0:8@"<IDEBuildable>"16@"IDEBuildParameters"24
+c24@0:8@"NSString"16
+@"NSArray"40@0:8@"<IDEBuildable>"16@"IDEBuildParameters"24^@32
+@"IDEOverridingBuildProperties"32@0:8@"<IDEBuildable>"16@"IDEBuildParameters"24
+c40@0:8@"NSString"16@"IDELaunchSession"24^@32
+c40@0:8@"DVTFilePath"16@"NSString"24^@32
+@"NSString"32@0:8@"NSString"16@"NSArray"24
+@"NSDictionary"16@0:8
+c72@0:8@"NSString"16@"DVTFilePath"24@"NSArray"32@"IDEBuildParameters"40@"NSArray"48@"IDEWorkspace"56^@64
+@"DVTOperation"72@0:8@"<IDEAnalysisToolService>"16@24@"DVTFilePath"32@"DVTFilePath"40@"DVTFilePath"48@"NSArray"56^@64
+v24@0:8@16
+Q24@0:8:16
+@"DVTStackBacktrace"16@0:8
+v24@0:8@"DVTStackBacktrace"16
+@24@0:8@16
+@20@0:8c16
+@60@0:8q16@24@32@40c48@52
+@"IDEProductType"24@0:8@"IDEBuildParameters"16
+@"NSArray"24@0:8@"IDEBuildParameters"16
+@"NSString"32@0:8@"NSString"16@"IDEBuildParameters"24
+@"NSArray"32@0:8@"NSString"16@"IDEBuildParameters"24
+@"DVTSearchPath"24@0:8@"IDEBuildParameters"16
+@"NSArray"20@0:8c16
+@"NSArray"16@0:8
+@"NSArray"40@0:8@"IDEBuildParameters"16@"IDEExecutionEnvironment"24^@32
+@"IDEBuilder"60@0:8q16@"IDEBuildOperationQueueSet"24@"IDEBuildParameters"32@"NSArray"40c48@"<IDEBuildableOperationManager>"52
+@"IDEEntityIdentifier"16@0:8
+@"<IDEBlueprint>"16@0:8
+v32@0:8@16@24
+@"DVTFilePath"24@0:8@"IDEBuildParameters"16
+@24@0:8@"NSString"16
+v32@0:8@16@"NSString"24
+@"DVTFilePath"16@0:8
+@"DVTFileDataType"16@0:8
+@32@0:8@16@?24
+@44@0:8@16B24@28@36
+@28@0:8@16B24
+c60@0:8@16c24@28@36^@44^@52
+c44@0:8@16c24^@28^@36
+q40@0:8@16@24^@32
+@32@0:8@16^@24
+c32@0:8@16^@24
+B40@0:8@16^@24^@32
+v80@0:8@16@24@32@40^@48^c56^c64^c72
+v112@0:8@16@24@32@40^@48^@56^@64^@72^c80^c88^@96^c104
+c56@0:8@16@24@32^@40^@48
+c60@0:8@16@24@32c40c44c48^@52
+c48@0:8@16@24@32^@40
+v40@0:8@16@24@32
+c72@0:8@16@24@32@40@48^@56^@64
+c64@0:8@16@24@32@40^@48^@56
+c72@0:8@16@24@32@40^@48^@56^@64
+v48@0:8@16@24@32@40
+@44@0:8@16@24c32@36
+@36@0:8@16c24^@28
+@56@0:8@16@24B32B36@40@?48
+@60@0:8@16@24B32@36@44^@52
+@72@0:8@16@24c32c36@40Q48@56^@64
+@48@0:8@16@24B32B36@?40
+@44@0:8@16@24B32@?36
+@40@0:8@16@24B32B36
+@36@0:8@16@24B32
+c44@0:8@16@24c32^@36
+c28@0:8c16^@20
+v32@0:8q16@24
+@24@0:8Q16
+@28@0:8Q16c24
+v28@0:8@16i24
+v48@0:8@16@24i32c36@?40
+v28@0:8c16@?20
+v44@0:8@16@24c32@?36
+c24@0:8Q16
+v40@0:8@16i24c28@?32
+v32@0:8@16i24c28
+c20@0:8c16
+v40@0:8i16@20c28@?32
+@"NSMapTable"
+@"DVTDeviceOperation"
+@24@0:8^@16
+@"DVTiOSDevice"
+@"DTDKApplication"
+v40@0:8@16i24i28@32
+v36@0:8@16i24Q28
+v40@0:8@"NSString"16i24i28@"NSDictionary"32
+v36@0:8@"NSString"16i24Q28
+v28@0:8@16c24
+v36@0:8@16c24@28
+B24@0:8^@16
+B32@0:8^@16@?24
+v20@0:8c16
+v24@0:8@?16
+v24@0:8q16
+v20@0:8B16
+@"DVTConditionInducerSession"
+@"NSObject<OS_dispatch_queue>"
+@"NSMutableArray"
+@"DVTObservingToken"
+@"DVTNotificationToken"
+^{__CFDictionary=}
+@"NSMutableSet"
+@"DVTPlatform"
+@"NSOrderedSet"
+@"<DVTCancellable>"
+@"DVTDispatchLock"
+@"NSObject<DTDKRemoteDeviceToken>"
+@"NSError"
+@"IDELaunchParametersSnapshot"
+@"DTXChannel"
+@"<IDEFlightChecking>"
+@"DVTMacroDefinitionTable"24@0:8@"DVTSDK"16
+B24@0:8@16
+@24@0:8q16
+d16@0:8
+@24@0:8@?16
+@32@0:8@?16@?24
+c40@0:8@16^@24^@32
+@"NSError"24@0:8@"NSString"16
+c40@0:8@"NSString"16@"NSString"24^@32
+v32@0:8d16d24
+c24@0:8@?16
+v40@0:8@16@24@?32
+v32@0:8@16@?24
+v24@0:8Q16
+@"DVTiOSConditionInducer"
+@"NSObject<OS_os_log>"
+B48@0:8@16@24@32^@40
+B40@0:8@16@24^@32
+c48@0:8@16@24@32@40
+v48@0:8@16@24@32@?40
+v44@0:8@16c24@28@?36
+@?72@0:8@16@24@32@40@48@56^@64
+c40@0:8@16c24c28^@32
+c40@0:8@16@24c32c36
+@"NSSet"
+@36@0:8@16@24c32
+@"IDEAppIDItemIdentifiersItemModelSet"
+@"NSDate"16@0:8
+@"DVTFilePath"
+@"NSDate"
+@56@0:8@16@24@32@40^@48
+@48@0:8@16@24@32^@40
+c40@0:8@16^@24@?32
+c32@0:8q16^@24
+@"<DTDKRemoteDeviceToken>"
+@"DVTProxiedDeviceSymbolsCoordinator"
+@44@0:8@16@24c32^@36
+@"DVTDownloadableOperationDownload"
+@"DVTProxiediOSDevice"
+c40@0:8^@16^c24^c32
+v24@0:8@"NSNumber"16
+v56@0:8@16@24@32@40@48
+v20@0:8i16
+@40@0:8@16@24@32
+v36@0:8i16@20@28
+c40@0:8@16@24@32
+c40@0:8@"NSFileManager"16@"NSString"24@"NSString"32
+c40@0:8@"NSFileManager"16@"NSURL"24@"NSURL"32
+c48@0:8@"NSFileManager"16@"NSError"24@"NSString"32@"NSString"40
+c48@0:8@"NSFileManager"16@"NSError"24@"NSURL"32@"NSURL"40
+c32@0:8@"NSFileManager"16@"NSString"24
+c32@0:8@"NSFileManager"16@"NSURL"24
+c40@0:8@"NSFileManager"16@"NSError"24@"NSString"32
+c40@0:8@"NSFileManager"16@"NSError"24@"NSURL"32
+@40@0:8@16@24@?32
+q32@0:8q16^@24
+q32@0:8@16^@24
+@56@0:8@16@24@32@40@?48
+i16@0:8
+@"SimDeviceSet"
+@"NSDictionary"
+@"DTXConnection"
+@"NSObject<OS_dispatch_semaphore>"
+@"DVTSimulatorApplication"
+@"SimDevice"
+@"DTAssetProviderService"
+@"DVTProxiedDeviceSet"
+@"DVTDevice"16@0:8
+@"<DVTInvalidation>"24@0:8@"NSString"16
+@"<DVTTestingSimDevice>"16@0:8
+@"<DVTTestingiPhoneSimulator>"24@0:8@"<DVTTestingSimDevice>"16
+@"DVTFuture"16@0:8
+c24@0:8@"<DVTTestDevice>"16
+@"DVTFuture"24@0:8@"<DVTTestDevice>"16
+@"<DVTTestDeviceCloneCreator>"16@0:8
+@48@0:8#16#24@32@40
+Q24@0:8@16
+@"<DVTTestingSimDeviceSet>"
+@"NSURL"
+@"NSMutableDictionary"
+i48@0:8@16@24@32i40i44
+v32@0:8@16Q24
+@"DVTiPhoneSimulator"
+@32@0:8^{_MISProfile=}16^@24
+^{_MISProfile=}16@0:8
+@"<DVTBasicDevice>"
+@"DVTFuture"
+@"IDEPseudoTerminal"
+@48@0:8@16@24c32c36@40
+@"DVTiOSConditionInducerProfile"
+c32@0:8^@16^c24
+c36@0:8^@16^c24c32
+@(#)PROGRAM:IDEiOSSupportCore  PROJECT:DVTiOSFrameworks-15509
+Device connection state has changed, connected=%@: %{PRIVATE}@
+Device pairing state has changed, paired=%@: %{PRIVATE}@
+Device allowing secure services state changed, (deviceAllowsSecureServices=%@): %{PRIVATE}@
+Resetting condition inducer service channel for device: %{PRIVATE}@
+Initializing channel to paired/connected device: %{PRIVATE}@
+Initialized channel to device: %{PRIVATE}@
+Failed to initialize channel to device: %{PRIVATE}@
+Ignoring device in state [hasConnection=%d, isPaired=%d, activated=%d]: %{PRIVATE}@
+Channel disconnected. Resetting channel to device: %{PRIVATE}@
+Service reported active conditions are stopping (tearing down): %@
+Service reported active conditions did stop. Clearing condition: %@
+Unhandled message from service: %@
+Request pre-flight failed due to DVTConditionInducerSessionErrorNotReady: %@: %{PRIVATE}@
+Request pre-flight failed due to DVTConditionInducerSessionErrorNotSupported: %@: %{PRIVATE}@
+availableConditionInducers request failed with error %d: %@: %{PRIVATE}@
+enableConditionInducer request failed with error %d: %@: %{PRIVATE}@
+disableConditionWithIdentifier request failed with error %d: %@: %{PRIVATE}@
+Failed to execute due to missing platform: %{public}@
+Failed to execute due to missing PurpleExec: %{public}@
+Failed to execute due to device disconnect: %{public}@
+Failed to obtain CoreSimulator service context: %{public}@
+Failed to obtain CoreSimulator device set: %{public}@
+Cloning device %{public}@ (%{public}@)
+Successfully cloned device %{public}@: %{public}@
+Failed to clone device %{public}@: %{public}@
+Deleting device %{public}@
+Successfully deleted device %{public}@
+Failed to delete device %{public}@: %@

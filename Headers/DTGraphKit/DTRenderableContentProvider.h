@@ -11,22 +11,31 @@
 
 @interface DTRenderableContentProvider : NSObject
 {
-    BOOL _delegateWantsNewResponseCB;
-    BOOL _wantsProgress;
-    unsigned long long _nextRequestSerialNumber;
-    unsigned long long _requestSerialNumber;
-    DTResponsiveUIManager *_manager;
-    NSProgress *_progress;
+    struct _opaque_pthread_mutex_t {
+        long long __sig;
+        char __opaque[56];
+    } _lock;
+    struct _opaque_pthread_cond_t {
+        long long __sig;
+        char __opaque[40];
+    } _cond;
+    BOOL _registeredWithManager;
     BOOL _needFulfillment;
     BOOL _fulfillmentInProgress;
     BOOL _missedFrame;
     BOOL _hasNewResponse;
     BOOL _hasContent;
-    BOOL _mainThreadWasDispatched;
+    BOOL _mainThreadDispatched;
     unsigned long long _responseSerialNumber;
     NSObject *_activeRequest;
     NSProgress *_activeProgress;
     DTRenderableContentResponse *_activeResponse;
+    unsigned long long _nextRequestSerialNumber;
+    unsigned long long _requestSerialNumber;
+    NSProgress *_progress;
+    BOOL _delegateWantsNewResponseCB;
+    BOOL _wantsProgress;
+    DTResponsiveUIManager *_manager;
     id <DTRenderableContentProviderDelegate> _delegate;
 }
 
@@ -34,23 +43,19 @@
 @property(retain, nonatomic) NSProgress *progress; // @synthesize progress=_progress;
 @property(nonatomic) __weak id <DTRenderableContentProviderDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (void)_markCallbackExecuting;
+- (int)_exposeToMainThread;
 - (void)_markAsFulfilled;
 - (void)_markAsFrameMissed;
-- (void)_sendHasNewResponse;
+- (int)_sendHasNewResponse;
 - (void)_mainThreadDelegateDispatchTrampoline;
+- (int)_fulfillNewRequest;
 - (void)_fulfillActiveRequest;
 - (void)_safelyReleaseActiveOperationAndResponse;
 - (id)_popActiveResponse;
-- (id)_activeRequest;
 - (void)_replaceActiveRequest:(id)arg1 serialNumber:(unsigned long long)arg2 progress:(id)arg3;
+- (BOOL)_stillRendering;
 - (BOOL)_activeResponseStillPending;
-- (BOOL)_wantsProgress;
 - (BOOL)_isNewResponseApropos;
-- (BOOL)_hasContent;
-- (BOOL)_hasNewResponse;
-- (BOOL)_hasMissedFrame;
-- (BOOL)_requestNeedsFulfillment;
 - (void)_setManager:(id)arg1;
 - (void)responseWasCancelled:(id)arg1;
 - (id)fulfillRequest:(id)arg1 responseContainer:(id)arg2;

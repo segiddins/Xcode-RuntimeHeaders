@@ -27,7 +27,7 @@
 
 @optional
 - (BOOL)fontTextFieldCanShowFontPanel:(DVTFontTextField *)arg1;
-- (NSFont *)fontTextField:(DVTFontTextField *)arg1 displayFontForFamily:(id)arg2 andValue:(id)arg3;
+- (NSFont *)fontTextField:(DVTFontTextField *)arg1 displayFontForFamily:(NSString *)arg2 andValue:(id)arg3;
 - (NSString *)fontTextField:(DVTFontTextField *)arg1 sizePlaceholderForValue:(id)arg2;
 - (NSString *)fontTextField:(DVTFontTextField *)arg1 descriptionForFamily:(id)arg2;
 - (unsigned long long)fontTextField:(DVTFontTextField *)arg1 settableAttributesForValue:(id)arg2;

@@ -15,8 +15,8 @@
 }
 
 - (void).cxx_destruct;
-- (BOOL)revert;
-- (BOOL)apply;
+- (BOOL)_performRevert;
+- (BOOL)_performApply;
 - (id)initWithDocument:(id)arg1 object:(id)arg2 atIndex:(long long)arg3;
 
 @end

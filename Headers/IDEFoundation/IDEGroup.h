@@ -12,15 +12,15 @@
 
 @interface IDEGroup : IDEContainerItem <IDEStructureEditing>
 {
+    NSString *_name;
     IDEContainer *_container;
     DVTFilePath *_resolvedFilePath;
     DVTCopyOnWriteMutableArray *_subitems;
     BOOL _subitemsAreValid;
     BOOL _pendingAsynchronousUpdate;
-    int _sourceControlLocalStatus;
-    int _sourceControlServerStatus;
+    unsigned long long _sourceControlLocalStatus;
+    unsigned long long _sourceControlServerStatus;
     unsigned long long _conflictStateForUpdateOrMerge;
-    NSString *_name;
 }
 
 + (Class)_groupClassForGroup:(id)arg1;
@@ -34,6 +34,7 @@
 + (BOOL)automaticallyNotifiesObserversOfSourceControlServerStatus;
 + (BOOL)automaticallyNotifiesObserversOfSourceControlLocalStatus;
 + (BOOL)automaticallyNotifiesObserversOfSubitems;
++ (id)keyPathsForValuesAffectingOwnsFileSystemDirectory;
 + (unsigned long long)assertionBehaviorForKeyValueObservationsAtEndOfEvent;
 + (id)keyPathsForValuesAffectingConflictStateForUpdateOrMerge;
 + (id)keyPathsForValuesAffectingSourceControlServerStatus;
@@ -42,9 +43,10 @@
 - (void).cxx_destruct;
 - (BOOL)_structureEditRemoveSubitemsShouldCloseDocumentsUnderPathWithoutSaving;
 @property(readonly, getter=isLocationKnown) BOOL locationKnown;
-- (BOOL)createNewSubgroupAtIndex:(unsigned long long)arg1;
+- (BOOL)createNewSubgroupAtIndex:(unsigned long long)arg1 createDirectory:(BOOL)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (id)_availableNameBasedOn:(id)arg1;
 - (id)_subgroupNamed:(id)arg1;
+- (BOOL)structureEditName:(id)arg1 inContext:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (BOOL)structureEditSetName:(id)arg1 inContext:(id)arg2;
 - (BOOL)canStructureEditName;
 - (BOOL)structureEditRemoveSubitemsAtIndexes:(id)arg1 error:(id *)arg2;
@@ -60,6 +62,7 @@
 - (BOOL)_acceptsItem:(id)arg1;
 - (BOOL)_isSubitemOfItem:(id)arg1;
 - (BOOL)allowRemovingContainerGroup;
+- (id)allowedFileTypesOfChildItems;
 - (void)_takeConfigurationFromGroup:(id)arg1;
 - (void)_copyAndInsertSubitems:(id)arg1 atIndex:(unsigned long long)arg2;
 - (void)primitiveInvalidate;
@@ -69,14 +72,16 @@
 - (void)_setSourceControlServerStatusNeedsUpdate;
 - (void)_setSourceControlLocalStatusNeedsUpdate;
 - (void)_setConflictStateForUpdateOrMerge:(unsigned long long)arg1;
-- (void)_setSourceControlServerStatus:(int)arg1;
-- (void)_setSourceControlLocalStatus:(int)arg1;
+- (void)_setSourceControlServerStatus:(unsigned long long)arg1;
+- (void)_setSourceControlLocalStatus:(unsigned long long)arg1;
+- (long long)progress;
+- (id)issueLog;
 - (unsigned long long)aggregateSourceControlConflictStatus;
-- (int)aggregateSourceControlServerStatus;
-- (int)aggregateSourceControlLocalStatus;
+- (unsigned long long)aggregateSourceControlServerStatus;
+- (unsigned long long)aggregateSourceControlLocalStatus;
 - (unsigned long long)conflictStateForUpdateOrMerge;
-- (int)sourceControlServerStatus;
-- (int)sourceControlLocalStatus;
+- (unsigned long long)sourceControlServerStatus;
+- (unsigned long long)sourceControlLocalStatus;
 - (void)invalidateComputedSubitems;
 - (id)computedSubitemsWithOldSubitems:(id)arg1;
 - (void)insertObject:(id)arg1 inGroupSubitemsAtIndex:(unsigned long long)arg2;
@@ -91,6 +96,7 @@
 - (id)_subitems;
 @property(readonly) BOOL subitemsAreComputed;
 @property(readonly) BOOL subitemsAreEditable;
+@property(readonly, nonatomic) BOOL ownsFileSystemDirectory;
 - (id)resolvedFilePath;
 - (void)_invalidateResolvedFilePath;
 - (void)changePath:(id)arg1 resolutionStrategies:(id)arg2;
@@ -101,12 +107,20 @@
 - (id)initWithPath:(id)arg1 resolutionStrategies:(id)arg2;
 - (id)initWithName:(id)arg1;
 - (id)init;
+- (void)openQuickly_enumerateCandidateFilePathsNotingVisitedContainers:(id)arg1 enumerator:(CDUnknownBlockType)arg2;
 - (void)dvt_encodeRelationshipsWithXMLArchiver:(id)arg1 version:(id)arg2;
 - (void)dvt_encodeAttributesWithXMLArchiver:(id)arg1 version:(id)arg2;
 - (void)dvt_awakeFromXMLUnarchiver:(id)arg1;
 - (void)dvt_addObject:(id)arg1 fromXMLUnarchiver:(id)arg2;
 - (void)setNameFromUTF8String:(const char *)arg1 fromXMLUnarchiver:(id)arg2;
+- (id)ideFindScope_itemAtPath:(id)arg1 position:(long long)arg2 preferContainerFileReferenceToRootGroup:(BOOL)arg3;
+- (id)ideFindScope_componentForGroupPath;
+- (void)ideFindScope_accumulateFilePaths:(id)arg1 andVisitedContainers:(id)arg2;
 - (id)ideModelObjectTypeIdentifier;
+- (void)ide_populateSnapshotGroups:(id)arg1 filePaths:(id)arg2 visitedContainers:(id)arg3;
+- (id)structureEditingCopyOperationTo:(id)arg1 insertionHelper:(CDUnknownBlockType)arg2 errorHandlingBlock:(CDUnknownBlockType)arg3;
+- (id)structureEditingMoveOperationTo:(id)arg1 insertionHelper:(CDUnknownBlockType)arg2 errorHandlingBlock:(CDUnknownBlockType)arg3;
+@property(nonatomic, readonly) BOOL handlesStructureEditing;
 
 @end
 

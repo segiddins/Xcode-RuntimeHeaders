@@ -6,12 +6,13 @@
 
 #import <IDEKit/IDEViewController.h>
 
+#import <IDEKit/DVTReplacementViewDelegate-Protocol.h>
 #import <IDEKit/NSSplitViewDelegate-Protocol.h>
 
 @class IDEEditorContext, NSArray, NSMutableArray, NSString;
 @protocol IDEEditorContextDelegate, IDEEditorMultipleContextDelegate;
 
-@interface IDEEditorMultipleContext : IDEViewController <NSSplitViewDelegate>
+@interface IDEEditorMultipleContext : IDEViewController <NSSplitViewDelegate, DVTReplacementViewDelegate>
 {
     NSMutableArray *_editorContexts;
     IDEEditorContext *_selectedEditorContext;
@@ -23,21 +24,25 @@
     NSArray *_defaultEditorCategories;
     NSArray *_validEditorCategories;
     NSString *_emptyContentString;
+    BOOL _showRelatedItemsControl;
     BOOL _showNavBarHistoryStepperControls;
     BOOL _showSiblingStepperControls;
     BOOL _showMiniIssueNavigators;
 }
 
++ (void)initialize;
 @property(copy) NSArray *validEditorCategories; // @synthesize validEditorCategories=_validEditorCategories;
 @property(copy) NSArray *defaultEditorCategories; // @synthesize defaultEditorCategories=_defaultEditorCategories;
 @property(nonatomic) BOOL showMiniIssueNavigators; // @synthesize showMiniIssueNavigators=_showMiniIssueNavigators;
 @property(nonatomic) BOOL showSiblingStepperControls; // @synthesize showSiblingStepperControls=_showSiblingStepperControls;
 @property(nonatomic) BOOL showNavBarHistoryStepperControls; // @synthesize showNavBarHistoryStepperControls=_showNavBarHistoryStepperControls;
+@property(nonatomic) BOOL showRelatedItemsControl; // @synthesize showRelatedItemsControl=_showRelatedItemsControl;
 @property(retain, nonatomic) id <IDEEditorContextDelegate> editorContextDelegate; // @synthesize editorContextDelegate=_editorContextDelegate;
 @property(nonatomic) int layout; // @synthesize layout=_layout;
 @property(retain) id <IDEEditorMultipleContextDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain) IDEEditorContext *selectedEditorContext; // @synthesize selectedEditorContext=_selectedEditorContext;
 - (void).cxx_destruct;
+- (void)replacementView:(id)arg1 willInstallViewController:(id)arg2;
 - (void)splitView:(id)arg1 resizeSubviewsWithOldSize:(struct CGSize)arg2;
 - (void)_splitView:(id)arg1 resizeVerticalSubviewsWithOldSize:(struct CGSize)arg2;
 - (id)_splitViewResizingLogAspect;
@@ -70,19 +75,19 @@
 - (id)_addSplitAtIndex:(unsigned long long)arg1;
 - (id)secondEditorContext;
 - (id)firstEditorContext;
-- (id)editorContexts;
 - (void)_adjustEditorBorders;
 - (BOOL)_editorsAreStackedVertically;
 - (id)_splitView;
 - (void)loadView;
 - (void)primitiveInvalidate;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (id)_generateNodeAndAddMappingToWorkspaceTabControllerLayoutTree:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
+@property(readonly) NSArray *editorContexts; // @dynamic editorContexts;
 @property(readonly) unsigned long long hash;
+@property(readonly) NSMutableArray *mutableEditorContexts; // @dynamic mutableEditorContexts;
 @property(readonly) Class superclass;
 
 @end

@@ -10,11 +10,10 @@
 
 @class NSString;
 
-__attribute__((visibility("hidden")))
 @interface LLDBTypeMember : NSObject <DBGSBTypeMember>
 {
     struct SBTypeMember {
-        struct unique_ptr<lldb_private::TypeMemberImpl, std::__1::default_delete<lldb_private::TypeMemberImpl>> m_opaque_ap;
+        struct unique_ptr<lldb_private::TypeMemberImpl, std::__1::default_delete<lldb_private::TypeMemberImpl>> m_opaque_up;
     } _typeMember;
 }
 

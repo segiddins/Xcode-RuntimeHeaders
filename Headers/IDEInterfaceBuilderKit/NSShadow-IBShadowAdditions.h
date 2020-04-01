@@ -6,10 +6,23 @@
 
 #import <AppKit/NSShadow.h>
 
-@interface NSShadow (IBShadowAdditions)
+#import <IDEInterfaceBuilderKit/IBDocumentArchiving-Protocol.h>
+
+@class NSString;
+
+@interface NSShadow (IBShadowAdditions) <IBDocumentArchiving>
 + (id)ib_shadowWithOffset:(struct CGSize)arg1 blur:(double)arg2 color:(id)arg3;
 + (id)emptyShadow;
++ (id)instantiateWithDocumentUnarchiver:(id)arg1;
 - (struct CGRect)shadowBoundsForRect:(struct CGRect)arg1 flip:(BOOL)arg2;
 - (CDStruct_c519178c)shadowInsetFlip:(BOOL)arg1;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @end
 

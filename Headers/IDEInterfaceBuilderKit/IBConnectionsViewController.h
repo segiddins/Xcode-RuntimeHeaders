@@ -9,53 +9,48 @@
 #import <IDEInterfaceBuilderKit/DVTInvalidation-Protocol.h>
 #import <IDEInterfaceBuilderKit/IBConnectionPrototypeViewDelegate-Protocol.h>
 
-@class DVTDelayedInvocation, DVTMutableOrderedDictionary, DVTNotificationToken, DVTStackBacktrace, IBCancellationToken, IBConnectionInterfaceStyle, IBConnectionPrototypeView, IBDocument, NSColor, NSString;
+@class DVTDelayedInvocation, DVTMutableOrderedDictionary, DVTStackBacktrace, IBCancellationToken, IBConnectionInterfaceStyle, IBConnectionPrototypeView, IBDocument, NSArray, NSString;
 @protocol DVTCancellable;
 
 @interface IBConnectionsViewController : NSViewController <IBConnectionPrototypeViewDelegate, DVTInvalidation>
 {
-    DVTDelayedInvocation *delayedInvocation;
-    DVTMutableOrderedDictionary *dicslosureViews;
-    NSColor *lastDisclosureBottomBorderColor;
-    IBDocument *document;
-    IBConnectionPrototypeView *identifiedPrototypeView;
-    IBCancellationToken *identifiedPrototypeViewCancellationToken;
-    IBConnectionInterfaceStyle *connectionInterfaceStyle;
-    id endPoint;
-    id <DVTCancellable> classesObservingToken;
-    DVTNotificationToken *documentDidAddConnectionToken;
-    DVTNotificationToken *documentWillRemoveConnectionToken;
-    DVTNotificationToken *documentDidReorderConnectionToken;
-    DVTNotificationToken *documentDidAddObjectToken;
-    DVTNotificationToken *documentWillRemoveObjectToken;
+    NSArray *_documentNotificationTokens;
+    DVTDelayedInvocation *_delayedInvocation;
+    DVTMutableOrderedDictionary *_disclosureViewsByGroup;
+    IBDocument *_document;
+    IBConnectionPrototypeView *_identifiedPrototypeView;
+    IBCancellationToken *_identifiedPrototypeViewCancellationToken;
+    id _endPoint;
+    id <DVTCancellable> _classesObservingToken;
+    BOOL _forceHUDStyleBehavior;
+    IBConnectionInterfaceStyle *_connectionInterfaceStyle;
 }
 
 + (void)initialize;
+@property(retain) IBConnectionInterfaceStyle *connectionInterfaceStyle; // @synthesize connectionInterfaceStyle=_connectionInterfaceStyle;
 - (void).cxx_destruct;
 - (id)findIndicatorContentViewForConnection:(id)arg1;
 - (void)refreshConnectionsData:(id)arg1;
 - (void)syncPrototypeStack:(id)arg1 withPrototypeData:(id)arg2;
 - (id)matchingPrototypeForPrototype:(id)arg1 inSet:(id)arg2;
-- (void)refreshBorderColors;
 - (void)loadView;
 - (void)connectionPrototypeView:(id)arg1 didRollover:(id)arg2;
 - (void)connectionPrototypeViewHandleConnectionDrag:(id)arg1;
 - (void)connectionPrototypeView:(id)arg1 didDisconnect:(id)arg2;
 - (void)cancelPrototypeRollover;
 - (void)primitiveInvalidate;
-- (void)setLastDisclosureBottomBorderColor:(id)arg1;
 - (id)disclosureViews;
-- (id)connectionInterfaceStyle;
 - (id)document;
 - (id)window;
 - (id)view;
+- (void)documentWillChangePropertyConnection:(id)arg1;
 - (void)documentWillRemoveObject:(id)arg1;
 - (void)documentDidAddObject:(id)arg1;
 - (void)documentDidReorderConnection:(id)arg1;
 - (void)documentWillRemoveConnection:(id)arg1;
 - (void)documentDidAddConnection:(id)arg1;
 - (void)validateContent:(id)arg1;
-- (id)initWithDocument:(id)arg1 endPoint:(id)arg2 andInterfaceStyle:(id)arg3;
+- (id)initWithDocument:(id)arg1 endPoint:(id)arg2 forceHUDStyleBehavior:(BOOL)arg3;
 
 // Remaining properties
 @property(retain) DVTStackBacktrace *creationBacktrace;

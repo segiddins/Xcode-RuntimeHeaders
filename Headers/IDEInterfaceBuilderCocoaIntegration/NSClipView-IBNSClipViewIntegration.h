@@ -6,7 +6,15 @@
 
 #import <AppKit/NSClipView.h>
 
-@interface NSClipView (IBNSClipViewIntegration)
+#import <IDEInterfaceBuilderCocoaIntegration/IBDocumentArchiving-Protocol.h>
+
+@class NSString, NSValue;
+
+@interface NSClipView (IBNSClipViewIntegration) <IBDocumentArchiving>
++ (id)keyPathsForValuesAffectingIbInspectedUseFixedContentInsets;
++ (id)keyPathsForValuesAffectingContentInsets;
+@property(retain) NSValue *ibWrappedContentInsets;
+- (BOOL)ibInspectedUseFixedContentInsets;
 - (void)ibSwizzledNSClipViewWorkaround12332156UpdateConstraints;
 - (BOOL)ibChildView:(id)arg1 shouldUseConstraintsInsteadOfAutoresizingWhenAddedToDocument:(id)arg2;
 - (BOOL)ibChildPrefersToVerticallyResizeWithContainer:(id)arg1;
@@ -15,7 +23,7 @@
 - (void)setIbArchivedSubviews:(id)arg1 withConfigurationPropertyStorage:(id)arg2;
 - (id)ibArchivedSubviewsWithConfigurationPropertyStorage:(id)arg1;
 - (void)setIbShadowedSubviews:(id)arg1;
-- (id)ibShadowedSubviews;
+- (id)ibShadowedSubviewsNoCopy;
 - (BOOL)ibShouldIgnoreSizeMisplacement;
 - (BOOL)ibShouldIgnorePositionMisplacement;
 - (BOOL)ibHasResolved14284306;
@@ -28,5 +36,15 @@
 - (BOOL)ibCanRemoveChildren:(id)arg1;
 - (id)ibPasteboardTypes;
 - (id)scrollView;
+- (id)ibLocalAttributeKeyPaths;
+- (id)ibLocalChildToOneRelationshipsKeyPaths;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @end
 

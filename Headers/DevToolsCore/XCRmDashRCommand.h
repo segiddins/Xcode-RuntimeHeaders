@@ -6,23 +6,27 @@
 
 #import <DevToolsCore/XCWorkQueueCommand.h>
 
-@class NSString;
+@class NSString, PBXTargetBuildContext;
 
 @interface XCRmDashRCommand : XCWorkQueueCommand
 {
     NSString *_path;
+    PBXTargetBuildContext *_buildContext;
 }
 
+- (void).cxx_destruct;
 - (id)description;
-- (id)createStartedCommandInvocationInSlot:(unsigned long long)arg1 ofWorkQueueOperation:(id)arg2;
+- (id)progressDescription;
+- (id)executionDescription;
+- (id)createStartedCommandInvocationWithParameters:(id)arg1;
 - (id)instantiatedCommandOutputParserWithLogSectionRecorder:(id)arg1;
 - (id)descriptionForWorkQueueLog;
 - (id)subprocessCommandLineForProcessing;
 - (id)ruleInfo;
-- (BOOL)isReadyForProcessing;
+- (id)buildContext;
+- (void)setMacroExpansionScope:(id)arg1;
 - (id)name;
 - (id)path;
-- (void)dealloc;
 - (id)initWithPath:(id)arg1;
 
 @end

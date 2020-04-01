@@ -13,8 +13,8 @@
     XCPropertyMacroExpression *_expr;
 }
 
+- (void).cxx_destruct;
 - (id)description;
-- (void)dealloc;
 - (id)init;
 - (id)initWithExpression:(id)arg1;
 

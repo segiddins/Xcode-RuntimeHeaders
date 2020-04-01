@@ -17,9 +17,9 @@
 + (id)localizedSpecificationTypeName;
 + (id)specificationType;
 + (Class)specificationTypeBaseClass;
+- (void).cxx_destruct;
 - (id)inputFileTypes;
 - (id)architectures;
-- (void)dealloc;
 - (id)initWithPropertyListDictionary:(id)arg1 inDomain:(id)arg2;
 
 @end

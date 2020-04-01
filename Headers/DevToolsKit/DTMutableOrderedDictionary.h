@@ -6,9 +6,11 @@
 
 #import <Foundation/NSMutableDictionary.h>
 
+#import <DevToolsKit/NSSecureCoding-Protocol.h>
+
 @class DTMutableOrderedSet;
 
-@interface DTMutableOrderedDictionary : NSMutableDictionary
+@interface DTMutableOrderedDictionary : NSMutableDictionary <NSSecureCoding>
 {
     DTMutableOrderedSet *set;
     CDStruct_f2932e27 keyCallbacks;
@@ -17,6 +19,7 @@
 
 + (CDStruct_b3b3fc87)cocoaValueCallBacks;
 + (CDStruct_f2932e27)cocoaKeyCallBacks;
++ (BOOL)supportsSecureCoding;
 - (void)removeObjectForKey:(id)arg1;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
 - (id)keyEnumerator;

@@ -30,8 +30,8 @@
 - (void)setTextColor:(id)arg1;
 - (id)font;
 - (void)setFont:(id)arg1;
-- (unsigned long long)alignment;
-- (void)setAlignment:(unsigned long long)arg1;
+- (long long)alignment;
+- (void)setAlignment:(long long)arg1;
 - (id)dataCell;
 - (void)setDataCell:(id)arg1;
 - (id)representedObject;

@@ -17,15 +17,21 @@
 }
 
 + (BOOL)supportsSecureCoding;
-+ (id)validateSSHKeysWithPrivateKeyURL:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
++ (id)sshAuthenticationAgentFingerprintKey;
++ (id)sshAuthenticationAgentEnforceFingerprintKey;
++ (id)sshAuthenticationAgentPassphraseKey;
++ (id)sshAuthenticationAgentPasswordKey;
++ (id)sshAuthenticationAgentUsernameKey;
++ (id)sshAuthenticationAgentExecutableURL;
++ (id)validateSSHKeysWithPrivateKeyURL:(id)arg1 passphrase:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 + (id)defaultSSHKeyAuthenticationStrategy;
 + (id)defaultSSHKeyAuthenticationStrategyWithUsername:(id)arg1;
 + (id)defaultSSHKeyAuthenticationStrategyWithUsername:(id)arg1 password:(id)arg2;
++ (id)defaultSSHKeyName;
 + (id)defaultSSHKeyFolder;
 + (id)defaultSSHKeyAuthenticationStrategyForURL:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
-+ (id)generateNewKeysInFolder:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
-+ (id)generateNewKeysInFolder:(id)arg1 comment:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
-+ (id)generateNewKeysWithPassword:(id)arg1 inFolder:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
++ (id)generateSSHKeysWithName:(id)arg1 comment:(id)arg2 passphrase:(id)arg3 inFolder:(id)arg4 completionBlock:(CDUnknownBlockType)arg5;
++ (id)listSSHKeys:(CDUnknownBlockType)arg1;
 + (BOOL)strategyIsValidForURL:(id)arg1;
 + (id)name;
 @property(copy) NSString *privateKeyPassword; // @synthesize privateKeyPassword=_privateKeyPassword;
@@ -38,6 +44,7 @@
 - (unsigned long long)type;
 - (id)description;
 - (BOOL)isEqual:(id)arg1;
+- (BOOL)isEqualIgnoringPassphrase:(id)arg1;
 - (unsigned long long)hash;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithURLDefinedUsername:(id)arg1 privateKey:(id)arg2 password:(id)arg3;
@@ -46,6 +53,11 @@
 - (id)init;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (BOOL)existsInStandardLocation;
+@property(readonly) NSString *displayName;
+- (id)privateKeyContents;
+- (id)publicKeyContents;
+- (id)_keyContents:(id)arg1;
 
 @end
 

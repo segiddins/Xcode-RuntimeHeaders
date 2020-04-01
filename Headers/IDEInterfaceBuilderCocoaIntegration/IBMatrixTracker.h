@@ -8,11 +8,11 @@
 
 @interface IBMatrixTracker : IBNSViewTracker
 {
-    BOOL stretch;
+    BOOL _stretch;
 }
 
 - (void)trackWithEvent:(id)arg1;
-- (void)placeSubviewInFrame:(struct CGRect)arg1 event:(id)arg2;
+- (void)placeSubviewInFrame:(struct CGRect)arg1 event:(id)arg2 originalFrame:(struct CGRect)arg3 isFinalFrame:(BOOL)arg4;
 - (struct CGRect)snapToGuidedLayoutFrame:(struct CGRect)arg1 originalLayoutFrame:(struct CGRect)arg2;
 - (void)growMatrixToFrame:(struct CGRect)arg1;
 - (void)syncChildren;

@@ -6,18 +6,17 @@
 
 #import <IDEKit/IDEViewController.h>
 
-@class NSArray, NSPopUpButton;
-@protocol ITunesSoftwareApplicationDescription;
+@class IDEITunesConnectApplicationDescription, NSArray, NSPopUpButton;
 
 @interface IDEDistributionAppRecordSelectionViewController : IDEViewController
 {
     NSArray *_applicationRecords;
-    id <ITunesSoftwareApplicationDescription> _selectedApplicationRecord;
+    IDEITunesConnectApplicationDescription *_selectedApplicationRecord;
     NSPopUpButton *_appRecordPopUpButton;
 }
 
 @property(retain) NSPopUpButton *appRecordPopUpButton; // @synthesize appRecordPopUpButton=_appRecordPopUpButton;
-@property(retain, nonatomic) id <ITunesSoftwareApplicationDescription> selectedApplicationRecord; // @synthesize selectedApplicationRecord=_selectedApplicationRecord;
+@property(retain, nonatomic) IDEITunesConnectApplicationDescription *selectedApplicationRecord; // @synthesize selectedApplicationRecord=_selectedApplicationRecord;
 - (void).cxx_destruct;
 - (void)selectAppRecord:(id)arg1;
 @property(retain) NSArray *applicationRecords; // @synthesize applicationRecords=_applicationRecords;

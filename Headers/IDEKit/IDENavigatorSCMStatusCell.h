@@ -4,29 +4,30 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <AppKit/NSTextFieldCell.h>
+#import <DVTStructuredLayoutKit/DVTStructuredLayoutTextFieldCell.h>
 
 @class NSAttributedString, NSString;
 
-@interface IDENavigatorSCMStatusCell : NSTextFieldCell
+@interface IDENavigatorSCMStatusCell : DVTStructuredLayoutTextFieldCell
 {
     NSString *_localStatus;
     NSString *_serverStatus;
     NSAttributedString *_localAttrString;
     NSAttributedString *_serverAttrString;
-    BOOL _hidden;
     BOOL _hideLocalStatus;
 }
 
++ (id)keyPathsForValuesAffectingHasDisplayableStatus;
++ (struct CGSize)singleItemMaxSize;
 + (void)initialize;
 @property BOOL hideLocalStatus; // @synthesize hideLocalStatus=_hideLocalStatus;
-@property BOOL hidden; // @synthesize hidden=_hidden;
 @property(copy, nonatomic) NSString *serverStatus; // @synthesize serverStatus=_serverStatus;
 @property(copy, nonatomic) NSString *localStatus; // @synthesize localStatus=_localStatus;
 - (void).cxx_destruct;
+@property(readonly) BOOL hasDisplayableStatus;
 - (struct CGSize)cellSizeForBounds:(struct CGRect)arg1;
 - (struct CGSize)cellSize;
-- (struct CGSize)_singleItemMaxSize;
+- (void)_updateTitle;
 - (void)drawInteriorWithFrame:(struct CGRect)arg1 inView:(id)arg2;
 - (id)_bezelPathInRect:(struct CGRect)arg1;
 - (void)_drawStatusString:(id)arg1 inPathRect:(struct CGRect)arg2 view:(id)arg3;

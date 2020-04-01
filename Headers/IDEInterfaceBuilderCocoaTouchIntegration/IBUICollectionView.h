@@ -7,24 +7,24 @@
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBUIScrollView.h>
 
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBDocumentArchiving-Protocol.h>
-#import <IDEInterfaceBuilderCocoaTouchIntegration/NSCoding-Protocol.h>
 
 @class IBUICollectionReusableView, IBUICollectionViewFlowLayout, IBUICollectionViewLayout, IBUIView, NSArray, NSDictionary, NSMutableDictionary, NSString, NSValue;
 @protocol DVTCancellable;
 
-@interface IBUICollectionView : IBUIScrollView <IBDocumentArchiving, NSCoding>
+@interface IBUICollectionView : IBUIScrollView <IBDocumentArchiving>
 {
+    id <DVTCancellable> _cellObservingToken;
+    NSDictionary *_cachedCellFramesByPrototype;
+    NSMutableDictionary *_compiledPrototypeNIBs;
+    BOOL _prefetchingEnabled;
+    BOOL _separatingPrototypeChildrenForCompilation;
+    BOOL _springLoaded;
     long long _dataMode;
+    IBUICollectionViewLayout *_collectionViewLayout;
+    NSArray *_cells;
     IBUIView *_backgroundView;
     IBUICollectionReusableView *_sectionHeaderView;
     IBUICollectionReusableView *_sectionFooterView;
-    IBUICollectionViewLayout *_collectionViewLayout;
-    NSMutableDictionary *_compiledPrototypeNIBs;
-    BOOL _prefetchingEnabled;
-    BOOL separatingPrototypeChildrenForCompilation;
-    id <DVTCancellable> _cellObservingToken;
-    NSDictionary *_cachedCellFramesByPrototype;
-    NSArray *_cells;
     NSArray *_cachedCellFrames;
     NSArray *_cachedSectionHeaderViewFrames;
     NSArray *_cachedSectionFooterViewFrames;
@@ -34,12 +34,15 @@
 + (void)registerMarshallingRecordHandlers;
 + (id)keyPathsForValuesAffectingHasFlowLayout;
 + (id)keyPathsForValuesAffectingIbInspectedScrollDirection;
-+ (id)keyPathsForValuesAffectingIbInspectedLayoutContentInsetMaxY;
-+ (id)keyPathsForValuesAffectingIbInspectedLayoutContentInsetMaxX;
-+ (id)keyPathsForValuesAffectingIbInspectedLayoutContentInsetMinY;
-+ (id)keyPathsForValuesAffectingIbInspectedLayoutContentInsetMinX;
++ (id)keyPathsForValuesAffectingIbInspectedSectionInsetReference;
++ (id)keyPathsForValuesAffectingIbInspectedSectionInsetMaxY;
++ (id)keyPathsForValuesAffectingIbInspectedSectionInsetMaxX;
++ (id)keyPathsForValuesAffectingIbInspectedSectionInsetMinY;
++ (id)keyPathsForValuesAffectingIbInspectedSectionInsetMinX;
 + (id)keyPathsForValuesAffectingIbInspectedMinimumInteritemSpacing;
 + (id)keyPathsForValuesAffectingIbInspectedMinimumLineSpacing;
++ (id)keyPathsForValuesAffectingIbInspectedEstimatedItemSize;
++ (id)keyPathsForValuesAffectingIbInspectedEstimatedItemSizeMode;
 + (id)keyPathsForValuesAffectingIbInspectedItemSize;
 + (id)keyPathsForValuesAffectingIbInspectedHasSectionFooterView;
 + (id)keyPathsForValuesAffectingIbInspectedHasSectionHeaderView;
@@ -54,6 +57,8 @@
 @property(copy, nonatomic) NSArray *cachedSectionFooterViewFrames; // @synthesize cachedSectionFooterViewFrames=_cachedSectionFooterViewFrames;
 @property(copy, nonatomic) NSArray *cachedSectionHeaderViewFrames; // @synthesize cachedSectionHeaderViewFrames=_cachedSectionHeaderViewFrames;
 @property(copy, nonatomic) NSArray *cachedCellFrames; // @synthesize cachedCellFrames=_cachedCellFrames;
+@property(nonatomic, getter=isSpringLoaded) BOOL springLoaded; // @synthesize springLoaded=_springLoaded;
+@property BOOL separatingPrototypeChildrenForCompilation; // @synthesize separatingPrototypeChildrenForCompilation=_separatingPrototypeChildrenForCompilation;
 @property(nonatomic) BOOL prefetchingEnabled; // @synthesize prefetchingEnabled=_prefetchingEnabled;
 @property(retain, nonatomic) IBUICollectionReusableView *sectionFooterView; // @synthesize sectionFooterView=_sectionFooterView;
 @property(retain, nonatomic) IBUICollectionReusableView *sectionHeaderView; // @synthesize sectionHeaderView=_sectionHeaderView;
@@ -63,7 +68,6 @@
 @property(nonatomic) long long dataMode; // @synthesize dataMode=_dataMode;
 - (void).cxx_destruct;
 - (BOOL)ibShouldMarshallCollectionViewLayoutWithContext:(id)arg1;
-- (id)customCellSizes;
 - (id)localExtraMarshalledAttributesKeyPaths;
 - (BOOL)canFitCellOfSize:(struct CGSize)arg1;
 - (struct CGPoint)maxContentPoint;
@@ -71,6 +75,7 @@
 - (struct CGSize)sizeOfCellsAreaForSectionInset:(CDStruct_c519178c)arg1;
 - (void)shrinkCellsToFitWithSectionInset:(CDStruct_c519178c)arg1;
 @property(readonly) CDStruct_c519178c sectionInset;
+@property(readonly) BOOL hasFullScreenLayout;
 @property(readonly) BOOL hasFlowLayout;
 - (id)cellTouchingRightOfCell:(id)arg1;
 - (id)cellTouchingLeftOfCell:(id)arg1;
@@ -84,7 +89,6 @@
 - (struct CGRect)prototypeSectionFooterViewFrame;
 - (struct CGRect)prototypeSectionHeaderViewFrame;
 - (struct CGRect)backgroundViewFrame;
-- (BOOL)computesContentSize;
 - (void)layoutSubviews;
 - (void)verifyFramesInSyncForViewsForAutoresizingMasks;
 - (BOOL)isContainedPrototypeObject:(id)arg1;
@@ -96,6 +100,7 @@
 - (void)collectionViewLayoutGeometryDidChange:(id)arg1;
 - (void)populateGeometryMarshallingContext:(id)arg1;
 - (void)populateCachedGeometryInfos:(id)arg1;
+- (void)addCell:(id)arg1;
 - (void)collectionViewCellDidChangeCustomSize:(id)arg1;
 - (void)collectionReusableViewDidChangeBackgroundColor:(id)arg1;
 - (void)collectionReusableViewDidChangeSize:(id)arg1;
@@ -103,21 +108,23 @@
 - (void)drawRect:(struct CGRect)arg1;
 - (void)configurePlaceholderDrawingAttributes:(id)arg1;
 - (BOOL)shouldDrawAsPlaceholder;
-- (int)collectionViewBorderSides;
+- (unsigned long long)collectionViewBorderSides;
 - (BOOL)prefersCachedImageBasedDrawing;
 - (id)bezierPathForShadowClip;
+- (id)fullScreenLayout;
 @property(readonly, nonatomic) IBUICollectionViewFlowLayout *flowLayout;
-- (id)initWithFrame:(struct CGRect)arg1 targetRuntime:(id)arg2;
-- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
-- (void)archiveWithDocumentArchiver:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithFrame:(struct CGRect)arg1 targetRuntime:(id)arg2;
 - (id)ibPreviewingRegistrantSourceViewInDocument:(id)arg1;
 - (id)ibPrefersMarginRelativeConstraintsToChildItem:(id)arg1;
 - (BOOL)ibChildView:(id)arg1 shouldUseConstraintsInsteadOfAutoresizingWhenAddedToDocument:(id)arg2;
+- (long long)ibFrameDecisionStrategyDuringFrameDecisionForChild:(id)arg1 hasCleanStatus:(BOOL)arg2;
+- (BOOL)ibIsNotACellOrAnAutomaticSizingCellForChild:(id)arg1;
+- (BOOL)ibIsChildASubarbitrationUnitRoot:(id)arg1;
 - (BOOL)ibShouldChildBeIncludedInArbitrationUnitWithParent:(id)arg1;
 - (BOOL)ibIsChildArbitrationUnitRoot:(id)arg1;
-- (int)ibBoundsIndicatorBorderSidesForCell:(id)arg1;
+- (unsigned long long)ibBoundsIndicatorBorderSidesForCell:(id)arg1;
 - (BOOL)ibShouldDrawRightBoundsIndicatorBorderSideForCell:(id)arg1;
 - (BOOL)ibShouldDrawLeftBoundsIndicatorBorderSideForCell:(id)arg1;
 - (BOOL)ibShouldDrawBottomBoundsIndicatorBorderSideForCell:(id)arg1;
@@ -132,9 +139,10 @@
 - (void)ibCaptureStoryboardCompilationResult:(id)arg1 fromCompilationUnit:(id)arg2;
 - (void)ibStoryboardPrepareForSeparatingChild:(id)arg1 intoCompilationUnit:(id)arg2;
 - (int)ibStoryboardSeparationTypeForChild:(id)arg1 storyboardEquivalent:(id)arg2;
+- (id)ibDefaultiOSBackgroundColor;
 - (struct CGSize)preferredSectionHeaderOrFooterViewSize:(id)arg1;
-- (void)ibWarnings:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
-- (void)ibInvalidateWarningsAfterDescendant:(id)arg1 changedProperty:(id)arg2 inDocument:(id)arg3 fromValue:(id)arg4;
+- (void)ibPopulateIssues:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
+- (void)ibInvalidateIssuesAfterDescendant:(id)arg1 changedProperty:(id)arg2 inDocument:(id)arg3 fromValue:(id)arg4;
 - (id)ibAcceptContentsOfPasteboard:(id)arg1 inDocument:(id)arg2 insertionContext:(id)arg3;
 - (BOOL)ibCanAcceptContentsOfPasteboard:(id)arg1 inDocument:(id)arg2 targetChildRelation:(id *)arg3;
 - (BOOL)ibCanAcceptBackgroundViewFromPasteboard:(id)arg1 inDocument:(id)arg2 targetChildGroupInOut:(id *)arg3;
@@ -148,9 +156,11 @@
 - (void)ibPopulateChildBackToFrontRelationOrder:(id)arg1;
 - (void)ibPopulateChildRelationOrder:(id)arg1;
 - (void)ibRemoveChildren:(id)arg1;
-- (BOOL)ibIsInspectorApplicable:(id)arg1 forCategory:(id)arg2;
+- (BOOL)ibIsInspectorSliceApplicable:(id)arg1 forCategory:(id)arg2;
 - (void)setIbInspectedScrollDirection:(int)arg1;
 - (int)ibInspectedScrollDirection;
+- (long long)ibInspectedSectionInsetReference;
+- (void)setIbInspectedSectionInsetReference:(long long)arg1;
 - (void)setIbInspectedSectionInset:(CDStruct_c519178c)arg1;
 - (void)setIbInspectedSectionInsetMaxY:(double)arg1;
 - (double)ibInspectedSectionInsetMaxY;
@@ -164,8 +174,11 @@
 - (double)ibInspectedMinimumInteritemSpacing;
 - (void)setIbInspectedMinimumLineSpacing:(double)arg1;
 - (double)ibInspectedMinimumLineSpacing;
-- (void)setIbInspectedItemSize:(struct CGSize)arg1;
-- (struct CGSize)ibInspectedItemSize;
+@property(nonatomic) struct CGSize ibInspectedEstimatedItemSize;
+- (void)setIbInspectedEstimatedItemSizeMode:(long long)arg1;
+- (long long)ibInspectedEstimatedItemSizeMode;
+- (BOOL)ibInspectedAllowsCollectionViewAutomaticSizing;
+@property(nonatomic) struct CGSize ibInspectedItemSize;
 @property(nonatomic) BOOL ibInspectedHasSectionFooterView;
 @property(nonatomic) BOOL ibInspectedHasSectionHeaderView;
 - (void)setIbInspectedHasSectionHeaderOrFooterView:(BOOL)arg1 relationshipKeyPath:(id)arg2;
@@ -177,11 +190,17 @@
 - (struct CGSize)ibInspectedHeaderReferenceSize;
 - (void)setIbInspectedLayoutMode:(long long)arg1;
 - (long long)ibInspectedLayoutMode;
-- (void)setIbInspectedNumberOfCells:(long long)arg1;
+@property(nonatomic) long long ibInspectedNumberOfCells;
+- (BOOL)ibSupportsFullScreenLayout;
 - (BOOL)ibAllowsSettingNumberOfCellsFromInspector;
-- (long long)ibInspectedNumberOfCells;
 - (void)ibDidExtractObjects:(id)arg1 fromPasteboard:(id)arg2 intoDocument:(id)arg3 context:(id)arg4;
 - (void)ibDidAddToDocument:(id)arg1 phase:(unsigned long long)arg2;
+- (Class)ibEditorClass;
+- (id)ibLocalAttributeKeyPaths;
+- (id)ibLocalChildToManyRelationshipsKeyPaths;
+- (id)ibLocalChildToOneRelationshipsKeyPaths;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

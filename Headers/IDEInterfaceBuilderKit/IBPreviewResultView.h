@@ -58,6 +58,7 @@
 @property(retain) NSImage *contentImage;
 - (void)disableContentScrolling;
 - (void)enableContentScrollingWithClippingSize:(struct CGSize)arg1;
+@property(readonly) NSView *contentView;
 - (void)addBezelViewIfNeeded;
 - (void)removeBezelViewIfNeeded;
 - (void)updateBezelWithContentScale:(double)arg1;

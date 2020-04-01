@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Foundation/NSObject.h>
+#import <objc/NSObject.h>
 
 @class NSSet, NSString;
 
@@ -17,6 +17,7 @@
     NSSet *_archivingTranslations;
 }
 
+- (void).cxx_destruct;
 - (long long)compare:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
@@ -26,7 +27,6 @@
 - (id)minimumVersionSupportedName;
 - (id)archivingTranslations;
 - (id)supportedFeatures;
-- (void)dealloc;
 - (id)initWithArchiverVersion:(unsigned long long)arg1 identifier:(id)arg2 minimumVersionSupportedName:(id)arg3 supportedFeatures:(id)arg4 archivingTranslations:(id)arg5;
 - (id)init;
 

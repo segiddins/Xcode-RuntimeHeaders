@@ -7,11 +7,10 @@
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBUIStoryboardAbstractTriggeredSegue.h>
 
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBCocoaTouchStoryboardAbstractModalSegue-Protocol.h>
-#import <IDEInterfaceBuilderCocoaTouchIntegration/NSCoding-Protocol.h>
 
 @class NSNumber, NSString;
 
-@interface IBCocoaTouchStoryboardModalSegue : IBUIStoryboardAbstractTriggeredSegue <NSCoding, IBCocoaTouchStoryboardAbstractModalSegue>
+@interface IBCocoaTouchStoryboardModalSegue : IBUIStoryboardAbstractTriggeredSegue <IBCocoaTouchStoryboardAbstractModalSegue>
 {
     NSNumber *_modalPresentationStyle;
     NSNumber *_modalTransitionStyle;
@@ -28,7 +27,7 @@
 - (BOOL)isFlowTerminatingSegue;
 - (id)effectiveConnectionForEnablingConfigurationsInDocument:(id)arg1 segueReachabilityContext:(id)arg2 error:(id *)arg3;
 - (id)badgeImage;
-- (void)ibWarnings:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
+- (id)metricChainSucceedingMetric:(id)arg1;
 - (void)copyCommonInstanceStateToTriggeredSegue:(id)arg1;
 - (id)instantiateSegueTemplate;
 - (void)unarchiveWithDocumentUnarchiver:(id)arg1;

@@ -13,15 +13,14 @@
     IDEAppIDItemIdentifiersItemModelSet *_merchantIDs;
 }
 
++ (id)coalescableReadOnlyKeyPaths;
 @property(retain) IDEAppIDItemIdentifiersItemModelSet *merchantIDs; // @synthesize merchantIDs=_merchantIDs;
 - (void).cxx_destruct;
+- (id)coalescableWriteableKeyPathToDataSource;
 - (BOOL)isEnabledUsingEducatedGuess;
 - (id)flightChecks;
-- (void)modelWasDisabled;
-- (void)modelWasEnabledWithContext:(id)arg1;
 - (void)targetCoordinatorsChanged:(id)arg1;
 - (void)readValuesFromEntitlements;
-- (void)publishStateWithContext:(id)arg1;
 - (void)primitiveInvalidate;
 - (id)initWithCapabilitiesContext:(id)arg1 item:(id)arg2;
 

@@ -15,6 +15,7 @@
 @interface IDEProvisioningMechanic : NSObject <IDEProvisioningRepairDelegate, DVTInvalidation>
 {
     DVTDispatchLock *_lock;
+    DVTDispatchLock *_delegateLock;
     IDEProvisioningRepair *_activeRepair;
     NSMutableArray *_repairs;
     NSMutableArray *_pendingRepairs;
@@ -34,7 +35,6 @@
 - (BOOL)_pendRepair:(id)arg1 skip:(BOOL)arg2;
 - (BOOL)_executeNextRepairIfNeeded;
 - (id)_repairForRepairable:(id)arg1;
-- (void)_performDelegateMethod:(CDUnknownBlockType)arg1;
 - (void)repair:(id)arg1 userAction:(id)arg2 didFailWithError:(id)arg3;
 - (void)repair:(id)arg1 didFinishUserAction:(id)arg2;
 - (void)repairUserActionDidBegin:(id)arg1;
@@ -50,6 +50,7 @@
 - (id)pendingRepairs;
 - (id)repairs;
 - (id)repairForRepairable:(id)arg1 isExecuting:(char *)arg2 userAction:(id *)arg3 repairError:(id *)arg4;
+- (BOOL)removeRepairForRepairable:(id)arg1 includingFailedRepair:(BOOL)arg2;
 - (BOOL)removeRepairForRepairable:(id)arg1;
 - (BOOL)addRepairForRepairable:(id)arg1;
 - (void)primitiveInvalidate;

@@ -12,11 +12,13 @@
 
 @interface DVTToolchain : NSObject <NSCopying>
 {
-    NSString *_embeddedDebuggerSetting;
+    NSNumber *_embeddedDebuggerSetting;
     DVTFilePath *_lldbPath;
+    DVTFilePath *_llvmProfdataPath;
+    DVTFilePath *_swiftDemanglePath;
     DVTVersion *_swiftVersion;
-    NSNumber *_providesSwiftVersion;
-    NSNumber *_allowAsOverrideToolchain;
+    unsigned long long _hash;
+    NSNumber *_requiresSwiftDevelopmentRuntime;
     NSString *_identifier;
     DVTFilePath *_path;
     DVTVersion *_version;
@@ -35,13 +37,11 @@
     NSString *_compatibilityVersionDisplayString;
 }
 
-+ (id)lldbToolchainForToolchains:(id)arg1;
 + (id)defaultToolchain;
 @property(readonly) NSString *compatibilityVersionDisplayString; // @synthesize compatibilityVersionDisplayString=_compatibilityVersionDisplayString;
 @property(readonly) NSNumber *compatibilityVersion; // @synthesize compatibilityVersion=_compatibilityVersion;
 @property(readonly) NSDate *createdDate; // @synthesize createdDate=_createdDate;
 @property(readonly) NSString *shortDisplayName; // @synthesize shortDisplayName=_shortDisplayName;
-@property(readonly) NSNumber *allowAsOverrideToolchain; // @synthesize allowAsOverrideToolchain=_allowAsOverrideToolchain;
 @property(readonly) NSURL *reportProblemURL; // @synthesize reportProblemURL=_reportProblemURL;
 @property(readonly) DVTSearchPath *librarySearchPath; // @synthesize librarySearchPath=_librarySearchPath;
 @property(readonly) DVTSearchPath *executableBinarySearchPath; // @synthesize executableBinarySearchPath=_executableBinarySearchPath;
@@ -55,9 +55,13 @@
 @property(readonly) DVTFilePath *path; // @synthesize path=_path;
 @property(readonly) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
-@property(readonly) BOOL participatesInSwiftVersionSupport;
+@property(readonly) BOOL isSwiftOpenSourceToolchain;
+@property(readonly) BOOL requiresSwiftDevelopmentRuntime;
 @property(readonly) DVTVersion *swiftVersion;
+- (id)swiftDemanglePath;
+- (id)llvmProfdataPath;
 - (id)lldbPath;
+- (BOOL)isDefaultToolchain;
 - (BOOL)requiresEmbeddedDebuggerForSwift;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

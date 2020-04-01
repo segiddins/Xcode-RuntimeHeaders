@@ -10,7 +10,7 @@
 {
 }
 
-- (id)renderContent;
+- (id)renderContentWithAppearance:(id)arg1;
 - (id)openGLView;
 
 @end

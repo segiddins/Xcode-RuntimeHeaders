@@ -4,16 +4,16 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <IDEKit/IDEViewController.h>
+#import <IDEKit/IDEEditor.h>
 
 #import <IDEKit/DVTFindBarFindable-Protocol.h>
 #import <IDEKit/DVTScopeBarHost-Protocol.h>
 #import <IDEKit/IDEBuildResultsOutlineDelegate-Protocol.h>
 #import <IDEKit/IDELogEditorScopeBarDelegate-Protocol.h>
 
-@class DVTScopeBarsManager, IDEActivityLogSection, IDEBuildResultsOutlineLogic, IDEEditorDocument, IDELogAndTestsEditor, IDELogEditorScopeBar, NSArray, NSBox, NSIndexPath, NSPopUpButton, NSScrollView, NSString, NSView, XCBuildResultsOutlineView;
+@class DVTObservingToken, IDEActivityLogSection, IDEBuildResultsOutlineLogic, IDELogEditorScopeBar, NSArray, NSBox, NSIndexPath, NSPopUpButton, NSScrollView, NSString, NSView, XCBuildResultsOutlineView;
 
-@interface IDELogEditor : IDEViewController <IDEBuildResultsOutlineDelegate, IDELogEditorScopeBarDelegate, DVTScopeBarHost, DVTFindBarFindable>
+@interface IDELogEditor : IDEEditor <IDEBuildResultsOutlineDelegate, IDELogEditorScopeBarDelegate, DVTScopeBarHost, DVTFindBarFindable>
 {
     XCBuildResultsOutlineView *_buildResultsOutlineView;
     XCBuildResultsOutlineView *_buildIssuesOutlineView;
@@ -31,16 +31,11 @@
     BOOL _lastFindResult;
     NSView *_buildResultsEnclosingView;
     NSView *_buildIssuesEnclosingView;
-    IDELogAndTestsEditor *_hostEditor;
-    IDEEditorDocument *_document;
-    DVTScopeBarsManager *_scopeBarsManager;
+    DVTObservingToken *_documentObserver;
 }
 
 + (long long)version;
 + (void)configureStateSavingObjectPersistenceByName:(id)arg1;
-@property(retain) DVTScopeBarsManager *scopeBarsManager; // @synthesize scopeBarsManager=_scopeBarsManager;
-@property(retain, nonatomic) IDEEditorDocument *document; // @synthesize document=_document;
-@property __weak IDELogAndTestsEditor *hostEditor; // @synthesize hostEditor=_hostEditor;
 @property(readonly) IDEActivityLogSection *lastFindResultSection; // @synthesize lastFindResultSection=_lastFindResultSection;
 @property(readonly) struct _NSRange lastFindResultRange; // @synthesize lastFindResultRange=_lastFindResultRange;
 @property(readonly) BOOL lastFindResult; // @synthesize lastFindResult=_lastFindResult;
@@ -74,8 +69,11 @@
 - (void)viewDidInstall;
 @property(readonly) NSView *scopeBarsBaseView;
 - (void)loadView;
+- (void)logEditorScopeBarCopyShownTranscripts:(id)arg1;
+- (void)logEditorScopeBarSaveReport:(id)arg1;
 - (void)logEditorScopeBar:(id)arg1 searchTextChanged:(id)arg2;
 - (void)logEditorScopeBar:(id)arg1 showAllResultsChanged:(BOOL)arg2;
+- (void)logEditorScopeBar:(id)arg1 switchedToLog:(id)arg2;
 - (void)_setShowAllResults:(BOOL)arg1;
 - (void)logEditorScopeBar:(id)arg1 stateChanged:(int)arg2;
 - (id)attributesForScopeBarMenuItems;

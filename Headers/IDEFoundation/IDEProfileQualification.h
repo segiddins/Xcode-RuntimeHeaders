@@ -6,57 +6,59 @@
 
 #import <objc/NSObject.h>
 
-@class DVTAppIDFeatures, DVTPlatform, DVTPortalProfileType, DVTSigningCertificateManager, NSArray, NSDictionary, NSSet, NSString;
-@protocol DVTProvisioningProfile, IDEProvisioningBasicTeam;
+@class DVTPlatform, DVTPortalAppIDFeatures, DVTPortalProfileType, DVTProvisioningProfile, DVTSigningCertificateManager, IDEQualifiableProfileQualification, NSArray, NSDictionary, NSError, NSSet, NSString;
+@protocol IDEProvisioningBasicTeam;
 
 @interface IDEProfileQualification : NSObject
 {
-    BOOL _allowTeamProfiles;
     NSSet *_passed;
     NSSet *_failed;
     NSArray *_qualifiers;
     NSSet *_signingCertificates;
-    DVTAppIDFeatures *_features;
+    NSError *_signingCertificatesCodesignResolverError;
+    DVTPortalAppIDFeatures *_features;
     NSDictionary *_entitlements;
     NSArray *_devices;
     DVTPortalProfileType *_profileType;
     DVTSigningCertificateManager *_signingCertificateManager;
-    id <DVTProvisioningProfile> _profile;
+    DVTProvisioningProfile *_profile;
     id <IDEProvisioningBasicTeam> _team;
     NSString *_bundleID;
     DVTPlatform *_platform;
+    IDEQualifiableProfileQualification *_baseQualification;
 }
 
++ (id)keyPathsForValuesAffectingAllowTeamProfiles;
+@property(retain, nonatomic) IDEQualifiableProfileQualification *baseQualification; // @synthesize baseQualification=_baseQualification;
 @property(readonly, nonatomic) DVTPlatform *platform; // @synthesize platform=_platform;
 @property(readonly, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
 @property(readonly, nonatomic) id <IDEProvisioningBasicTeam> team; // @synthesize team=_team;
-@property(readonly, nonatomic) id <DVTProvisioningProfile> profile; // @synthesize profile=_profile;
-@property(nonatomic) BOOL allowTeamProfiles; // @synthesize allowTeamProfiles=_allowTeamProfiles;
+@property(readonly, nonatomic) DVTProvisioningProfile *profile; // @synthesize profile=_profile;
 @property(retain, nonatomic) DVTSigningCertificateManager *signingCertificateManager; // @synthesize signingCertificateManager=_signingCertificateManager;
 @property(retain, nonatomic) DVTPortalProfileType *profileType; // @synthesize profileType=_profileType;
 @property(copy, nonatomic) NSArray *devices; // @synthesize devices=_devices;
 @property(copy, nonatomic) NSDictionary *entitlements; // @synthesize entitlements=_entitlements;
-@property(copy, nonatomic) DVTAppIDFeatures *features; // @synthesize features=_features;
+@property(copy, nonatomic) DVTPortalAppIDFeatures *features; // @synthesize features=_features;
+@property(retain, nonatomic) NSError *signingCertificatesCodesignResolverError; // @synthesize signingCertificatesCodesignResolverError=_signingCertificatesCodesignResolverError;
 @property(retain, nonatomic) NSSet *signingCertificates; // @synthesize signingCertificates=_signingCertificates;
 @property(copy, nonatomic) NSArray *qualifiers; // @synthesize qualifiers=_qualifiers;
 @property(copy, nonatomic) NSSet *failed; // @synthesize failed=_failed;
 @property(copy, nonatomic) NSSet *passed; // @synthesize passed=_passed;
 - (void).cxx_destruct;
-- (id)_errorWithTitle:(id)arg1 code:(long long)arg2;
-- (id)_manuallyManagedQualifier;
+- (id)_profileTypeQualifier;
 - (id)_xcodeManagedQualifier;
 - (id)_devicesQualifier;
 - (id)_entitlementsQualifier;
+- (id)_containerQualifierWithType:(id)arg1;
 - (id)_featuresQualifier;
 - (id)_signingCertificateInclusionQualifier:(BOOL)arg1;
-- (id)_notExpiredQualifier;
-- (id)_platformQualifier;
-- (id)_teamIDQualifier;
-- (id)_bundleIDQualifier;
+- (id)signingCertificatesCodesignResolverErrorQualifierSubtitle;
 - (id)_manualQualifiers;
 - (id)_xcodeManagedQualifiers:(BOOL)arg1;
 @property(readonly, nonatomic) NSArray *qualificationErrors;
 - (id)_qualifiers;
+@property(nonatomic) BOOL verboseErrors;
+@property(nonatomic) BOOL allowTeamProfiles;
 - (BOOL)isQualified;
 - (BOOL)_qualifyWithQualifiers:(id)arg1;
 - (BOOL)qualifyForManuallyManaged;

@@ -8,26 +8,30 @@
 
 #import <DVTAnalytics/DVTAnalyticsSnapshotFileSystemSerialization-Protocol.h>
 
-@class DVTAnalyticsCrashPointIdentifier, DVTCrashPointUserData, DVTFilePath, NSMutableDictionary, NSString;
+@class DVTAnalyticsCrashPointIdentifier, DVTAnalyticsPointUserData, DVTFilePath, NSMutableDictionary, NSString;
 
 @interface DVTCrashPointRecord : NSObject <DVTAnalyticsSnapshotFileSystemSerialization>
 {
     DVTAnalyticsCrashPointIdentifier *_crashPointIdentifier;
-    DVTCrashPointUserData *_userData;
-    NSString *_crashPointString;
+    DVTAnalyticsPointUserData *_userData;
     NSString *_sourceFileName;
     unsigned long long _sourceFileLine;
     DVTFilePath *_cachePath;
     NSMutableDictionary *_crashPointForFilter;
+    NSString *_locallySymbolicatedCrashPointName;
+    NSString *_locallySymbolicatedSourceFileName;
+    unsigned long long _locallySymbolicatedSourceFileLine;
 }
 
 + (id)objectFromFilePath:(id)arg1 error:(id *)arg2;
+@property unsigned long long locallySymbolicatedSourceFileLine; // @synthesize locallySymbolicatedSourceFileLine=_locallySymbolicatedSourceFileLine;
+@property(copy) NSString *locallySymbolicatedSourceFileName; // @synthesize locallySymbolicatedSourceFileName=_locallySymbolicatedSourceFileName;
+@property(copy) NSString *locallySymbolicatedCrashPointName; // @synthesize locallySymbolicatedCrashPointName=_locallySymbolicatedCrashPointName;
 @property(retain) NSMutableDictionary *crashPointForFilter; // @synthesize crashPointForFilter=_crashPointForFilter;
-@property(retain) DVTFilePath *cachePath; // @synthesize cachePath=_cachePath;
+@property(copy) DVTFilePath *cachePath; // @synthesize cachePath=_cachePath;
 @property unsigned long long sourceFileLine; // @synthesize sourceFileLine=_sourceFileLine;
-@property(retain) NSString *sourceFileName; // @synthesize sourceFileName=_sourceFileName;
-@property(retain) NSString *crashPointString; // @synthesize crashPointString=_crashPointString;
-@property(readonly) DVTCrashPointUserData *userData; // @synthesize userData=_userData;
+@property(copy) NSString *sourceFileName; // @synthesize sourceFileName=_sourceFileName;
+@property(readonly) DVTAnalyticsPointUserData *userData; // @synthesize userData=_userData;
 @property(readonly) DVTAnalyticsCrashPointIdentifier *crashPointIdentifier; // @synthesize crashPointIdentifier=_crashPointIdentifier;
 - (void).cxx_destruct;
 - (id)snapshotWithError:(id *)arg1;
@@ -36,7 +40,7 @@
 - (id)crashPointForFilter:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
-- (id)initWithIdentifier:(id)arg1 userData:(id)arg2 crashPointString:(id)arg3 sourceFileName:(id)arg4 sourceFileLine:(unsigned long long)arg5 cachePath:(id)arg6;
+- (id)initWithIdentifier:(id)arg1 userData:(id)arg2 sourceFileName:(id)arg3 sourceFileLine:(unsigned long long)arg4 cachePath:(id)arg5;
 - (id)init;
 
 @end

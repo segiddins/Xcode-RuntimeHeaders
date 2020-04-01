@@ -8,7 +8,7 @@
 
 #import <DTGraphKit/DTTimelineMouseStateValidatorDelegate-Protocol.h>
 
-@class DTTimelineGraph, DTTimelineMouseStateValidator, DTTimelinePlane, NSEvent, NSString, NSTimer, NSTrackingArea;
+@class DTTimelineGraph, DTTimelineMouseStateValidator, DTTimelinePlane, NSEvent, NSSet, NSString, NSTimer, NSTrackingArea;
 @protocol DTTimelineGraphDelegate;
 
 __attribute__((visibility("hidden")))
@@ -17,12 +17,16 @@ __attribute__((visibility("hidden")))
     DTTimelineGraph *_timelineGraph;
     DTTimelineMouseStateValidator *_mouseStateValidator;
     NSTrackingArea *_trackingArea;
-    double _filterStartX;
-    double _filterEndX;
+    unsigned long long _filterStartNanosecond;
+    unsigned long long _filterEndNanosecond;
     double _zoomIndicatorStartX;
+    double _reorderStartY;
+    DTTimelinePlane *_reorderingPlane;
     long long _magnifyGestureCenter;
     BOOL _mouseDraggedSinceMouseDown;
     BOOL _delegateSupportsInspectionCB;
+    BOOL _mouseIsInLabelArea;
+    NSSet *_labelAreaHoverPlanes;
     NSEvent *_mouseDownEvent;
     DTTimelinePlane *_resizingPlane;
     NSTimer *_longPressTimer;
@@ -31,6 +35,10 @@ __attribute__((visibility("hidden")))
 
 @property(nonatomic) __weak id <DTTimelineGraphDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)_updateAccessoryDownState:(id)arg1 down:(BOOL)arg2;
+- (void)_endReorderingEvent:(id)arg1;
+- (void)_reorderPlaneEvent:(id)arg1;
+- (BOOL)_beginReorderEvent:(id)arg1;
 - (void)_dragInspectionPointEvent:(id)arg1;
 - (void)_endLongPressDragAtEvent:(id)arg1;
 - (void)_longPressDragToEvent:(id)arg1;
@@ -38,32 +46,38 @@ __attribute__((visibility("hidden")))
 - (void)_resizePlane:(id)arg1 event:(id)arg2;
 - (void)_zoomOutBasedOnZoomIndicator;
 - (void)_zoomInToZoomIndicator;
+- (BOOL)zoomCanBeApplied;
 - (void)_cancelZoom;
-- (void)_displayZoomIndicatorFrom:(double)arg1 to:(double)arg2;
+- (void)_displayZoomInIndicatorFrom:(double)arg1 to:(double)arg2;
+- (void)_displayZoomOutIndicatorFrom:(double)arg1 to:(double)arg2;
+- (struct XRTimeRange)_calculateZoomRangeFrom:(double)arg1 to:(double)arg2;
 - (void)_setRangeIndicatorState:(unsigned long long)arg1;
 - (void)_clickFromEvent:(id)arg1;
 - (void)_magnifyBy:(double)arg1;
 - (void)_finishFiltering;
-- (void)_applyFilterFrom:(double)arg1 to:(double)arg2;
+- (void)_applyFilterBetweenExistingNanosecond:(unsigned long long)arg1 eventPoint:(double)arg2;
 - (void)_clearInspectionInfo;
 - (void)_displayInspectionInfoForEvent:(id)arg1;
-- (void)_moveVerticalScrollerByY:(double)arg1;
-- (void)_moveHorizontalScrollerByX:(double)arg1;
-- (void)_moveByY:(double)arg1;
-- (void)_moveByX:(double)arg1;
+- (void)displayInspectionInfoForLocalPosition:(struct CGPoint)arg1;
+- (BOOL)_mouseIsOverAccessory:(id)arg1 plane:(out id *)arg2 rect:(out struct CGRect *)arg3;
+- (BOOL)_mouseIsOverGlyph:(id)arg1 plane:(out id *)arg2 rect:(out struct CGRect *)arg3;
 - (BOOL)_mouseIsOverDisclosureTriangle:(id)arg1 groupPlane:(out id *)arg2;
+- (BOOL)_mouseIsOverResizablePlanesHandleThatCanBeResized:(id)arg1;
+- (void)_performPlanesHandleResizingBasedOnEvent:(id)arg1;
+- (void)_updateCursorStateForResizablePlanesHandleState;
+- (unsigned long long)_resizingKindAllowedForPlanesHandle;
 - (BOOL)_mouseIsOverResizablePlaneBorder:(id)arg1;
 - (id)_planeToResizeForEvent:(id)arg1;
-- (BOOL)_mouseIsOverFilterEnd:(id)arg1;
-- (BOOL)_mouseIsOverFilterStart:(id)arg1;
-- (BOOL)_mouseIsInLabelOverlayArea:(id)arg1;
-- (BOOL)_mouseIsInBottomPinnedPlane:(id)arg1;
-- (BOOL)_mouseIsInRuler:(id)arg1;
-- (BOOL)_mouseIsInHoverArea:(id)arg1;
-- (BOOL)_mouseIsOverGraph:(id)arg1;
+- (BOOL)_mouseIsOverFilterEnd:(struct CGPoint)arg1;
+- (BOOL)_mouseIsOverFilterStart:(struct CGPoint)arg1;
+- (BOOL)_mouseIsInLabelOverlayArea:(struct CGPoint)arg1;
+- (BOOL)_mouseIsInBottomPinnedPlane:(struct CGPoint)arg1;
+- (BOOL)_mouseIsInRuler:(struct CGPoint)arg1;
+- (BOOL)_mouseIsInHoverArea:(struct CGPoint)arg1;
+- (BOOL)_mouseIsOverGraph:(struct CGPoint)arg1;
 - (void)_updateFilterStateFromTimeline;
-- (long long)_maxOffset;
 - (double)_rulerHeight;
+- (struct CGPoint)_flippedRootLayerPointFromEvent:(id)arg1;
 - (long long)_rationalizeSelectionOffset:(long long)arg1;
 - (double)_localYFromEvent:(id)arg1;
 - (double)_localXFromEvent:(id)arg1;
@@ -71,6 +85,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)_controlKeyPressed;
 - (BOOL)_shiftKeyPressed;
 - (BOOL)_optionKeyPressed;
+- (id)_topTimelinePlaneUnderPoint:(struct CGPoint)arg1;
 - (void)_fireLongPressTimer:(id)arg1;
 - (void)_cancelLongPressTimer;
 - (void)_startLongPressTimerWithEvent:(id)arg1;
@@ -78,8 +93,12 @@ __attribute__((visibility("hidden")))
 - (void)_setIdleStateBasedOnEvent:(id)arg1;
 - (void)scrollWheel:(id)arg1;
 - (void)magnifyWithEvent:(id)arg1;
+- (BOOL)_isLocalXPositionQualifyingForLeftAutoscroll:(double)arg1 deltaX:(double)arg2 offset:(double *)arg3;
+- (BOOL)_isLocalXPositionQualifyingForRightAutoscroll:(double)arg1 deltaX:(double)arg2 offset:(double *)arg3;
+- (void)_applyAutoscrollForLeftEnabled:(BOOL)arg1 rightEnabled:(BOOL)arg2 eventPointX:(double)arg3 xOffset:(double)arg4;
 - (void)mouseDragged:(id)arg1;
 - (void)mouseMoved:(id)arg1;
+- (void)updateMouseHoverStatusForPosition:(struct CGPoint)arg1;
 - (void)mouseUp:(id)arg1;
 - (void)mouseDown:(id)arg1;
 - (void)mouseExited:(id)arg1;

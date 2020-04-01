@@ -10,8 +10,8 @@
 
 @interface HFProgressTracker : NSObject
 {
-    unsigned long long currentProgress;
-    int cancelRequested;
+    // Error parsing type: AQ, name: currentProgress
+    // Error parsing type: AB, name: cancelRequested
     unsigned long long maxProgress;
     NSProgressIndicator *progressIndicator;
     NSTimer *progressTimer;

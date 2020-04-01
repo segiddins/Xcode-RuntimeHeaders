@@ -6,20 +6,21 @@
 
 #import <objc/NSObject.h>
 
+#import <DVTPortal/DVTPortalProfileProtocol-Protocol.h>
+
 @class DVTPlatform, DVTPortalAppID, DVTPortalProgram, DVTPortalTeam, NSData, NSDate, NSString;
 
-@interface DVTPortalProfile : NSObject
+@interface DVTPortalProfile : NSObject <DVTPortalProfileProtocol>
 {
-    BOOL _teamProfile;
-    NSData *_profileData;
-    NSString *_name;
-    NSString *_UUID;
-    DVTPortalTeam *_team;
-    DVTPlatform *_platform;
     NSDate *_expirationDate;
+    NSString *_name;
     NSString *_portalID;
+    NSString *_UUID;
+    NSData *_profileData;
     NSString *_managingApp;
     NSString *_portalSubPlatform;
+    DVTPortalTeam *_team;
+    DVTPlatform *_platform;
     DVTPortalAppID *_appID;
     DVTPortalProgram *_portalProgram;
     NSString *_status;
@@ -33,15 +34,19 @@
 + (BOOL)_updateContainersForAppID:(id)arg1 withCharacteristics:(id)arg2 session:(id)arg3 error:(id *)arg4;
 + (id)_preparedAppIDWithCharacteristics:(id)arg1 session:(id)arg2 error:(id *)arg3;
 + (BOOL)_existingAppIDWithCharacteristics:(id)arg1 session:(id)arg2 explicitAppIDRequired:(char *)arg3 appIDFeaturesNeedUpdating:(char *)arg4 existingAppID:(id *)arg5 error:(id *)arg6;
-+ (id)_errorForPermissionsFailure;
++ (id)_errorForProfileType:(id)arg1 unsupportedFeaturesError:(id)arg2 characteristics:(id)arg3;
++ (id)_errorForTeam:(id)arg1 unsupportedFeatures:(id)arg2 characteristics:(id)arg3;
++ (id)_errorForPermissionsFailure:(id)arg1;
 + (id)_errorForNoCertificates;
-+ (id)_errorForNoDevicesWithUnderlyingError:(id)arg1;
++ (id)_errorForBundleIdentifierUnavailable:(id)arg1 withUnderlyingError:(id)arg2;
++ (id)_errorForNoDevicesWhenRequiringProfileForPlatform:(id)arg1 withUnderlyingError:(id)arg2;
 + (id)_profileMatchingName:(id)arg1 session:(id)arg2 team:(id)arg3 profileType:(id)arg4 error:(id *)arg5;
 + (BOOL)_deletePreExistingProfileForType:(id)arg1 name:(id)arg2 session:(id)arg3 team:(id)arg4 error:(id *)arg5;
 + (id)_certificatesForProfileType:(id)arg1 session:(id)arg2 team:(id)arg3 error:(id *)arg4;
-+ (id)_createAndDownloadNonTeamProvisioningProfileWithTeam:(id)arg1 session:(id)arg2 profileType:(id)arg3 platform:(id)arg4 appID:(id)arg5 manualStyleProfileDevices:(id)arg6 manualStyleProfileName:(id)arg7 error:(id *)arg8;
++ (id)_createAndDownloadNonTeamProvisioningProfileWithTeam:(id)arg1 session:(id)arg2 profileType:(id)arg3 platform:(id)arg4 appID:(id)arg5 manualStyleProfileDevices:(id)arg6 manualStyleProfileName:(id)arg7 overrideDeletionOfPreExistingProfile:(BOOL)arg8 error:(id *)arg9;
++ (id)_downloadTeamProfileServiceWithTeam:(id)arg1 platform:(id)arg2 appID:(id)arg3 profileType:(id)arg4;
 + (id)_downloadTeamProfileServiceWithTeam:(id)arg1 platform:(id)arg2 appID:(id)arg3;
-+ (id)_requestProfileWithAppID:(id)arg1 type:(id)arg2 manualStyleProfileDevices:(id)arg3 manualStyleProfileName:(id)arg4 team:(id)arg5 platform:(id)arg6 session:(id)arg7 error:(id *)arg8;
++ (id)_requestProfileWithAppID:(id)arg1 type:(id)arg2 registeredDevices:(id)arg3 unregisteredDevices:(id)arg4 manualStyleProfileName:(id)arg5 team:(id)arg6 platform:(id)arg7 overrideDeletionOfPreExistingProfile:(BOOL)arg8 session:(id)arg9 error:(id *)arg10;
 + (BOOL)permittedToCreateProfileWithSession:(id)arg1 characteristics:(id)arg2 error:(id *)arg3;
 + (id)createProfileWithSession:(id)arg1 characteristics:(id)arg2 error:(id *)arg3;
 + (id)_listProfilesServiceWithTeam:(id)arg1 platform:(id)arg2;
@@ -49,21 +54,23 @@
 @property(retain, nonatomic) NSString *status; // @synthesize status=_status;
 @property(retain, nonatomic) DVTPortalProgram *portalProgram; // @synthesize portalProgram=_portalProgram;
 @property(retain, nonatomic) DVTPortalAppID *appID; // @synthesize appID=_appID;
-@property(copy, nonatomic) NSString *portalSubPlatform; // @synthesize portalSubPlatform=_portalSubPlatform;
-@property(copy, nonatomic) NSString *managingApp; // @synthesize managingApp=_managingApp;
-@property(copy, nonatomic) NSString *portalID; // @synthesize portalID=_portalID;
-@property(nonatomic, getter=isTeamProfile) BOOL teamProfile; // @synthesize teamProfile=_teamProfile;
-@property(retain, nonatomic) NSDate *expirationDate; // @synthesize expirationDate=_expirationDate;
 @property(retain, nonatomic) DVTPlatform *platform; // @synthesize platform=_platform;
 @property(retain, nonatomic) DVTPortalTeam *team; // @synthesize team=_team;
-@property(copy, nonatomic) NSString *UUID; // @synthesize UUID=_UUID;
-@property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
+@property(copy, nonatomic) NSString *portalSubPlatform; // @synthesize portalSubPlatform=_portalSubPlatform;
+@property(copy, nonatomic) NSString *managingApp; // @synthesize managingApp=_managingApp;
 @property(readonly, nonatomic) NSData *profileData; // @synthesize profileData=_profileData;
+@property(readonly, nonatomic) NSString *UUID; // @synthesize UUID=_UUID;
+@property(readonly, nonatomic) NSString *portalID; // @synthesize portalID=_portalID;
+@property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
+@property(readonly, nonatomic) NSDate *expirationDate; // @synthesize expirationDate=_expirationDate;
 - (void).cxx_destruct;
+- (id)description;
+- (unsigned long long)hash;
+- (BOOL)isEqual:(id)arg1;
 - (BOOL)removeWithSession:(id)arg1 error:(id *)arg2;
 - (BOOL)downloadWithSession:(id)arg1 error:(id *)arg2;
+@property(readonly, nonatomic, getter=isTeamProfile) BOOL teamProfile;
 - (BOOL)isActive;
-- (id)description;
 
 @end
 

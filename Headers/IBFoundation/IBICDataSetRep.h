@@ -16,6 +16,8 @@
 + (id)contentReferenceTypeName;
 + (Class)repIdentifierClass;
 + (Class)slottedAssetClass;
++ (long long)validateCompressionType:(long long)arg1;
++ (BOOL)supportsCompression;
 + (id)validSourceFileNameExtensions;
 + (id)assetRepWithSlot:(id)arg1 fileName:(id)arg2 explicitlyUnassigned:(BOOL)arg3;
 + (id)assetRepWithRepIdentifier:(id)arg1;

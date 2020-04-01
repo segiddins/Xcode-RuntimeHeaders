@@ -19,10 +19,12 @@
     BOOL _isLoading;
 }
 
++ (id)keyPathsForValuesAffectingNavigableItem_childRepresentedObjects;
 @property __weak IDESymbolNavigator *navigator; // @synthesize navigator=_navigator;
 - (void).cxx_destruct;
 - (id)ideModelObjectTypeIdentifier;
 - (void)fetchSymbols:(id)arg1 generation:(unsigned long long)arg2 lastOperation:(id)arg3;
+- (id)navigableItem_childRepresentedObjects;
 - (id)children;
 - (void)loadChildrenWithOperation:(id)arg1 fetchingSymbols:(id)arg2;
 - (id)loadChildren;

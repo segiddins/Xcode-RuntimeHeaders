@@ -21,6 +21,7 @@
 - (BOOL)updateWithDictionaryRepresentation:(id)arg1;
 - (id)dictionaryRepresentation;
 @property(readonly) unsigned long long status;
+- (void)loadDiagnosticsFromFilePromise:(id)arg1;
 - (void)loadAttachmentsFromDirectory:(id)arg1;
 - (id)initWithDictionaryRepresentation:(id)arg1;
 - (id)initWithName:(id)arg1;

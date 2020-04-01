@@ -8,14 +8,14 @@
 
 #import <IDEInterfaceBuilderKit/DVTInvalidation-Protocol.h>
 
-@class DVTStackBacktrace, NSError, NSMutableOrderedSet, NSNumber, NSString;
+@class DVTStackBacktrace, IBGenericDeviceTypeDescription, NSError, NSMutableOrderedSet, NSString;
 @protocol IBDocumentAsynchronousToolLoadingQueueDelegate;
 
 @interface IBDocumentAsynchronousToolLoadingQueue : NSObject <DVTInvalidation>
 {
-    NSMutableOrderedSet *_nonBlockingScaleFactors;
-    NSMutableOrderedSet *_blockingScaleFactors;
-    NSNumber *_scaleFactorCurrentlyLoading;
+    NSMutableOrderedSet *_nonBlockingDeviceTypeDescriptions;
+    NSMutableOrderedSet *_blockingDeviceTypeDescriptions;
+    IBGenericDeviceTypeDescription *_deviceTypeDescriptionCurrentlyLoading;
     BOOL _running;
     id <IBDocumentAsynchronousToolLoadingQueueDelegate> _delegate;
     long long _state;
@@ -28,10 +28,10 @@
 @property(readonly, nonatomic, getter=isRunning) BOOL running; // @synthesize running=_running;
 @property(nonatomic) __weak id <IBDocumentAsynchronousToolLoadingQueueDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (void)_processNextScaleFactorIfNeeded;
-- (void)blockLoadingDocumentUntilAfterCompletingEntryForScaleFactor:(double)arg1;
-- (void)enqueueNonBlockingEntryForScaleFactor:(double)arg1;
-- (void)enqueueBlockingEntryForScaleFactor:(double)arg1;
+- (void)_processNextDeviceTypeDescriptionIfNeeded;
+- (void)blockLoadingDocumentUntilAfterCompletingEntryForDeviceTypeDescription:(id)arg1;
+- (void)enqueueNonBlockingEntryForDeviceTypeDescription:(id)arg1;
+- (void)enqueueBlockingEntryForDeviceTypeDescription:(id)arg1;
 - (void)suspend;
 - (void)resume;
 - (void)primitiveInvalidate;

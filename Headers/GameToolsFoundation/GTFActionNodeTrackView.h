@@ -36,9 +36,7 @@
     double _totalDuration;
     double _trackEndTime;
     NSColor *_trackLightColor;
-    NSColor *_trackDarkColor;
     NSColor *_trackSelectedLightColor;
-    NSColor *_trackSelectedDarkColor;
     struct CGPoint _groupControlPosition;
     struct CGRect _currentGroupControlRect;
     int _currentGroup;

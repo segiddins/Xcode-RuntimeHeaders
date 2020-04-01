@@ -12,7 +12,8 @@
 #import <IDESpriteKitParticleEditor/IDEMediaLibraryDelegate-Protocol.h>
 #import <IDESpriteKitParticleEditor/SKObjectLibraryProvider-Protocol.h>
 
-@class DVTNotificationToken, DVTObservingToken, GKScene, GTFActionLibrary, NSArray, NSHashTable, NSMutableArray, NSMutableDictionary, NSString, SKScene, SKSceneNavigableRoot;
+@class DVTNotificationToken, DVTObservingToken, GKScene, GTFActionLibrary, IDEMediaResourceVariantContext, NSArray, NSDictionary, NSHashTable, NSMutableArray, NSMutableDictionary, NSString, SKScene, SKSceneNavigableRoot;
+@protocol DVTCancellable;
 
 @interface SKSceneDocument : SKEditorDocument <GTFActionLibraryDocumentLocationDelegate, SKObjectLibraryProvider, GTFActionEditorClientDocument, GTFActionLibraryUndoDelegate, IDEMediaLibraryDelegate>
 {
@@ -23,12 +24,15 @@
     double _scrubTime;
     double _lastScrubTime;
     BOOL _physicsSimulationPaused;
+    BOOL _navGraphGenerated;
     DVTObservingToken *_documentEditedKVOToken;
     DVTNotificationToken *_didAddTimelineKVOToken;
     DVTNotificationToken *_didRemoveTimelineKVOToken;
     DVTNotificationToken *_didReplaceTimelineKVOToken;
     DVTNotificationToken *_textureUpdateNotificationToken;
     BOOL _needsToWriteActionMetadata;
+    NSArray *_dynamicLibraryAssets;
+    id <DVTCancellable> _updateDynamicLibraryToken;
     GTFActionLibrary *_actionLibrary;
     SKScene *_layoutScene;
     SKScene *_activeScene;
@@ -52,11 +56,19 @@
 - (void).cxx_destruct;
 - (id)entityFromNode:(id)arg1;
 @property(readonly, nonatomic) NSMutableArray *dynamicObjectLibraryAssets;
+- (void)updateDynanicObjectLibraryAssets;
+- (void)renameObject:(id)arg1 newName:(id)arg2;
 - (void)moveObject:(id)arg1 toIndex:(long long)arg2;
 - (void)removeObject:(id)arg1;
 - (void)insertObject:(id)arg1 atIndex:(long long)arg2;
 - (void)addObject:(id)arg1;
 - (void)_createObjectsCategory;
+- (void)modifiedReference:(id)arg1 oldReference:(id)arg2 newReference:(id)arg3;
+- (void)modifiedUserData:(id)arg1 onNode:(id)arg2;
+- (void)changedTileSetOnTileMap:(id)arg1 oldTileSetName:(id)arg2 newTileSetName:(id)arg3 preChangeTilesArray:(unsigned int *)arg4 postChangeTilesArray:(unsigned int *)arg5;
+- (void)changedTileMap:(id)arg1 preChangeTilesArray:(unsigned int *)arg2 postChangeTilesArray:(unsigned int *)arg3 startColumn:(unsigned long long)arg4 startRow:(unsigned long long)arg5 modifiedWidth:(unsigned long long)arg6 modifiedHeight:(unsigned long long)arg7;
+- (void)removeComponent:(id)arg1 fromNode:(id)arg2;
+- (void)addComponent:(id)arg1 toNode:(id)arg2;
 - (void)removeEntityOnNode:(id)arg1;
 - (void)setEntity:(id)arg1 onNode:(id)arg2;
 - (void)moveChildNode:(id)arg1 toIndex:(unsigned long long)arg2;
@@ -92,8 +104,9 @@
 - (void)scrubToTime:(double)arg1;
 - (void)_refreshPhysicsBodiesAndEmitterPropertiesFromScene:(id)arg1;
 - (void)_updateObserversActiveScene;
+@property(readonly, nonatomic) NSArray *availableReferenceParticleNames;
+@property(readonly, nonatomic) NSArray *availableReferenceSceneNames;
 @property(readonly, nonatomic) NSArray *availableTileSetNames;
-@property(readonly, nonatomic) NSArray *availableTileSets;
 - (void)_encodeSKNodeComponentsInGKScene:(id)arg1;
 - (void)_decodeSKNodeComponentsInGKScene:(id)arg1 forSKScene:(id)arg2;
 - (void)clearActionAssignmentEntryForURL:(id)arg1;
@@ -102,13 +115,16 @@
 - (struct NSDictionary *)_decodeActionAssignments:(struct NSDictionary *)arg1 forScene:(id)arg2;
 - (void)_cleanupSceneForWriting:(id)arg1;
 - (id)dataOfType:(id)arg1 error:(id *)arg2;
+- (id)namedAssets;
 - (BOOL)_loadGKSceneFromArchiver:(id)arg1 forScene:(id)arg2 withFileInfo:(id)arg3 outGKScene:(id *)arg4 error:(id *)arg5;
 - (BOOL)_loadActionsFromArchiver:(id)arg1 forScene:(id)arg2 withFileInfo:(id)arg3 outActionLibrary:(id *)arg4 outActionAssignments:(struct NSDictionary **)arg5 error:(id *)arg6;
 - (BOOL)_loadSceneFromArchiver:(id)arg1 withFileInfo:(id)arg2 outScene:(id *)arg3 error:(id *)arg4;
+- (void)generateNavigableNodeGraph;
 - (BOOL)readFromURL:(id)arg1 ofType:(id)arg2 error:(id *)arg3;
 - (void)resumePhysicsSimulation;
 - (void)pausesPhysicsSimulation;
 - (id)ideTopLevelStructureObjects;
+- (void)assignNewUIDToNode:(id)arg1;
 - (id)nodeFromUID:(id)arg1;
 - (id)fileDataType;
 - (void)editorDocumentWillClose;
@@ -128,6 +144,8 @@
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
+@property(readonly) IDEMediaResourceVariantContext *variantContextForMediaLibrary;
+@property(readonly) NSDictionary *variantForResolvingMediaResources;
 
 @end
 

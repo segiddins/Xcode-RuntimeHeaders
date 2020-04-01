@@ -8,12 +8,13 @@
 
 #import <IBFoundation/IBICSchemaProvider-Protocol.h>
 
-@class IBICColorSpace, IBICFileType, IBICHeightClass, IBICIdiom, IBICLanguageDirection, IBICPlatform, IBICScale, IBICSlotComponentClassCombinationAxis, IBICWidthClass, NSArray, NSString;
+@class IBICColorSpace, IBICContrastAppearance, IBICFileType, IBICHeightClass, IBICIdiom, IBICLanguageDirection, IBICLuminosityAppearance, IBICPlatform, IBICScale, IBICScreenWidth, IBICSize, IBICSubtype, IBICVibrancyAppearance, IBICWidthClass, NSArray, NSDictionary, NSSet, NSString;
 
 @interface IBICBaseSchemaProvider : NSObject <IBICSchemaProvider>
 {
     IBICPlatform *_universalPlatform;
     IBICIdiom *_universalIdiom;
+    IBICScale *_anyScale;
     IBICScale *_oneXScale;
     IBICScale *_twoXScale;
     IBICScale *_threeXScale;
@@ -21,39 +22,71 @@
     IBICFileType *_jpegFileType;
     IBICFileType *_pdfFileType;
     IBICFileType *_gifFileType;
-    IBICWidthClass *_widthClassCompact;
-    IBICWidthClass *_widthClassRegular;
-    IBICHeightClass *_heightClassCompact;
-    IBICHeightClass *_heightClassRegular;
+    IBICFileType *_avicFileType;
+    IBICFileType *_heicFileType;
+    IBICFileType *_heifFileType;
+    IBICFileType *_arkit3DFileType;
+    NSSet *_allSupportedBitmapFileTypes;
+    NSSet *_allAlphaEnabledBitmapFileTypes;
+    NSSet *_allVectorFileTypes;
+    NSSet *_allVectorAndBitmapFileTypes;
+    NSSet *_allVectorAndAlphaEnabledBitmapFileTypes;
+    NSSet *_arkit3DFileTypes;
+    NSArray *_modelFileTypes;
+    IBICWidthClass *_anyWidthClass;
+    IBICWidthClass *_compactWidthClass;
+    IBICWidthClass *_regularWidthClass;
+    IBICHeightClass *_anyHeightClass;
+    IBICHeightClass *_compactHeightClass;
+    IBICHeightClass *_regularHeightClass;
+    IBICColorSpace *_anyColorSpace;
     IBICColorSpace *_sRGBColorSpace;
     IBICColorSpace *_P3ColorSpace;
+    NSDictionary *_graphicsFeatureSetInspectorLabels;
+    IBICLuminosityAppearance *_anyLightness;
+    IBICLuminosityAppearance *_darkAppearance;
+    IBICLuminosityAppearance *_lightAppearance;
+    IBICContrastAppearance *_anyContrast;
+    IBICContrastAppearance *_highContrast;
+    IBICVibrancyAppearance *_anyVibrancy;
+    IBICVibrancyAppearance *_vibrant;
+    IBICSubtype *_anySubtype;
+    IBICScreenWidth *_anyScreenWidth;
+    IBICSize *_size1024;
+    IBICLanguageDirection *_anyLanguageDirection;
     IBICLanguageDirection *_leftToRightLanguageDirection;
     IBICLanguageDirection *_rightToLeftLanguageDirection;
-    IBICSlotComponentClassCombinationAxis *_widthAxisAll;
-    IBICSlotComponentClassCombinationAxis *_widthAxisCompact;
-    IBICSlotComponentClassCombinationAxis *_widthAxisRegular;
-    IBICSlotComponentClassCombinationAxis *_heightAxisAll;
-    IBICSlotComponentClassCombinationAxis *_heightAxisCompact;
-    IBICSlotComponentClassCombinationAxis *_heightAxisRegular;
-    IBICSlotComponentClassCombinationAxis *_languageDirectionAxisFixed;
-    IBICSlotComponentClassCombinationAxis *_languageDirectionAxisLeftToRightFlippable;
-    IBICSlotComponentClassCombinationAxis *_languageDirectionAxisRightToLeftFlippable;
-    IBICSlotComponentClassCombinationAxis *_languageDirectionAxisSpecified;
-    IBICSlotComponentClassCombinationAxis *_colorSpaceAny;
-    IBICSlotComponentClassCombinationAxis *_colorSpaceSRGBAndP3;
     NSArray *_cubeFaces;
     NSArray *_mipmapLevels;
 }
 
 - (void).cxx_destruct;
-- (void)registerBaseDataSetSlots:(id)arg1;
-- (void)registerMipmapLevelSetSlots:(id)arg1;
-- (void)registerCubeTextureSetSlots:(id)arg1;
-- (void)registerFlatTextureSetSlots:(id)arg1;
-- (void)registerBaseImageSetSlots:(id)arg1;
+- (BOOL)hideGraphicsFeatureSets;
+- (void)registerBaseColorSetComponentImplications:(id)arg1;
+- (void)registerBaseModelSetComponentImplications:(id)arg1;
+- (void)registerBaseDataSetComponentImplications:(id)arg1;
+- (void)registerMipmapLevelSetComponentImplications:(id)arg1;
+- (void)registerCubeTextureSetComponentImplications:(id)arg1;
+- (void)registerFlatTextureSetComponentImplications:(id)arg1;
+- (void)registerImageSetComponentImplications:(id)arg1;
+- (void)registerAppIconSetComponentImplications:(id)arg1;
+- (void)applyGraphicsFeatureSetComponentImplicationsForSlotClass:(Class)arg1 schema:(id)arg2;
+- (void)applyMemoryClassComponentImplicationsForSlotClass:(Class)arg1 schema:(id)arg2;
+- (void)applyColorSpaceComponentImplicationsForSlotClass:(Class)arg1 schema:(id)arg2;
+- (void)applyScaleComponentImplicationsForSlotClass:(Class)arg1 schema:(id)arg2;
 - (void)registerSchemaComponents:(id)arg1;
+- (void)registerSuggestionSets:(id)arg1;
+- (void)registerContrastSuggestionSets:(id)arg1 forSlotClasses:(id)arg2;
+- (void)registerLuminositySuggestionSets:(id)arg1 forSlotClasses:(id)arg2;
+- (void)registerGPUCapabilitySuggestionSets:(id)arg1 forSlotClasses:(id)arg2;
+- (void)registerSizeClassSuggestionSets:(id)arg1 forSlotClasses:(id)arg2;
+- (void)registerColorSpaceSuggestionSets:(id)arg1 forSlotClasses:(id)arg2 baseDisplayOrder:(double)arg3;
+- (void)registerScaleSuggestionSets:(id)arg1 forSlotClasses:(id)arg2;
+- (id)registerIdiomSuggestionSets:(id)arg1 forSlotClasses:(id)arg2;
 - (void)captureExistingSlotComponents:(id)arg1;
 - (void)registerSlotComponents:(id)arg1;
+- (void)registerFileTypes:(id)arg1;
+- (void)registerClasses:(id)arg1;
 - (double)precedence;
 
 // Remaining properties

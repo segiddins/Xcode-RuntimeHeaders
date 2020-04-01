@@ -8,12 +8,13 @@
 
 @class NSOperation;
 
+__attribute__((visibility("hidden")))
 @interface XRFollowUpBlock : NSObject
 {
     CDUnknownBlockType _block;
     NSOperation *_op;
     XRFollowUpBlock *_myselfOrNil;
-    // Error parsing type: Ai, name: _shouldntExecuteBlock
+    // Error parsing type: {atomic<int>="__a_"Ai}, name: _shouldntExecuteBlock
 }
 
 - (void).cxx_destruct;

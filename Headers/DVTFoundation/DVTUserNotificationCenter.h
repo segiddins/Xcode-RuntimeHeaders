@@ -7,15 +7,22 @@
 #import <objc/NSObject.h>
 
 #import <DVTFoundation/NSUserNotificationCenterDelegate-Protocol.h>
+#import <DVTFoundation/UNUserNotificationCenterDelegate-Protocol.h>
 
-@class NSArray, NSMutableDictionary, NSString;
+@class NSArray, NSMapTable, NSMutableDictionary, NSString;
+@protocol UNUserNotificationCenterDelegate;
 
-@interface DVTUserNotificationCenter : NSObject <NSUserNotificationCenterDelegate>
+@interface DVTUserNotificationCenter : NSObject <NSUserNotificationCenterDelegate, UNUserNotificationCenterDelegate>
 {
     NSMutableDictionary *_handlers;
+    NSMapTable *_requests;
+    NSArray *_scheduledNotificationRequests;
+    NSObject<UNUserNotificationCenterDelegate> *_proxyDelegate;
 }
 
 + (id)defaultUserNotificationCenter;
+@property __weak NSObject<UNUserNotificationCenterDelegate> *proxyDelegate; // @synthesize proxyDelegate=_proxyDelegate;
+@property(copy) NSArray *scheduledNotificationRequests; // @synthesize scheduledNotificationRequests=_scheduledNotificationRequests;
 - (void).cxx_destruct;
 - (BOOL)userNotificationCenter:(id)arg1 shouldPresentNotification:(id)arg2;
 - (void)userNotificationCenter:(id)arg1 didRemoveDeliveredNotifications:(id)arg2;
@@ -30,6 +37,10 @@
 - (void)scheduleNotification:(id)arg1 withEventHandler:(CDUnknownBlockType)arg2;
 - (void)scheduleNotification:(id)arg1;
 @property(copy) NSArray *scheduledNotifications;
+- (void)userNotificationCenter:(id)arg1 didReceiveNotificationResponse:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
+- (void)removeDeliveredNotificationsWithIdentifiers:(id)arg1;
+- (void)removeDeliveredNotificationRequest:(id)arg1;
+- (void)scheduleNotificationRequest:(id)arg1 withEventHandler:(CDUnknownBlockType)arg2;
 - (id)init;
 
 // Remaining properties

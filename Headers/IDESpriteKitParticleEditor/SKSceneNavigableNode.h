@@ -6,13 +6,14 @@
 
 #import <IDESpriteKitParticleEditor/SKSceneNavigableBase.h>
 
+#import <IDESpriteKitParticleEditor/GTFNodeComponentable-Protocol.h>
 #import <IDESpriteKitParticleEditor/IDEInspectorMatching-Protocol.h>
 #import <IDESpriteKitParticleEditor/SKSceneManipulating-Protocol.h>
 #import <IDESpriteKitParticleEditor/SKSceneRenaming-Protocol.h>
 
 @class GKComponent, GKEntity, GTFActionTimelineModel, NSString, SKNode;
 
-@interface SKSceneNavigableNode : SKSceneNavigableBase <SKSceneManipulating, SKSceneRenaming, IDEInspectorMatching>
+@interface SKSceneNavigableNode : SKSceneNavigableBase <SKSceneManipulating, SKSceneRenaming, IDEInspectorMatching, GTFNodeComponentable>
 {
     GKEntity *_cachedEntity;
     GKComponent *_weakInspectedComponent;
@@ -52,9 +53,11 @@
 @property(nonatomic) BOOL isHidden;
 @property(nonatomic) BOOL isLocked_commit;
 @property(nonatomic) BOOL isLocked;
-- (id)applicableInspectorsForCategory:(id)arg1 suggestion:(id)arg2;
+- (id)applicableInspectorSlicesForCategory:(id)arg1 suggestedSlices:(id)arg2;
 - (id)ideModelObjectTypeIdentifier;
-- (void)addComponentWithClass:(id)arg1;
+- (void)removeComponentOperation:(id)arg1;
+- (void)addComponentOperation:(id)arg1;
+- (void)addComponent:(id)arg1;
 - (void)removeComponent:(id)arg1;
 @property(retain, nonatomic) GKComponent *inspectedComponent;
 - (void)_inspectFirstValidComponent;
@@ -83,6 +86,8 @@
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
+@property(nonatomic) double sk_xScale_commit;
+@property(nonatomic) double sk_yScale_commit;
 @property(readonly) Class superclass;
 
 @end

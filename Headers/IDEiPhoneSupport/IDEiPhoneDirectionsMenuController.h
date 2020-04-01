@@ -10,11 +10,10 @@
 {
 }
 
-- (id)fileExtension;
-- (id)uti;
++ (id)fileExtension;
++ (id)uti;
 - (id)doNothingItemRepresentedObject;
 - (id)doNothingItemTitle;
-- (id)itemsForFilesInWorkspace;
 - (id)menuTitle;
 - (id)init;
 

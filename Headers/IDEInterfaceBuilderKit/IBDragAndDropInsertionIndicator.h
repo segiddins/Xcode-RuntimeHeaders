@@ -16,7 +16,7 @@
 @property __weak id <IBDragAndDropInsertionIndicatorDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)drawInsertionIndicatorInView:(id)arg1;
-- (struct CGRect)dragInsertionIndicatorRect;
+- (struct CGRect)dragInsertionIndicatorInvalidationRectInView:(id)arg1;
 - (id)dragInsertionIndicatorPathInCoordinateSpaceOfView:(id)arg1;
 - (id)dragInsertionIndicatorPath;
 - (long long)orderedRelationGrowthDirection;

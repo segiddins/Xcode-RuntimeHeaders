@@ -6,17 +6,23 @@
 
 #import <IDEKit/IDELaunchActionOptionViewController.h>
 
-@class NSButton;
+@class IDEDiagnosticsTabAdvisoryContentController, NSButton;
 
 @interface IDEQueueDebuggingOptionsViewController : IDELaunchActionOptionViewController
 {
+    IDEDiagnosticsTabAdvisoryContentController *_advisoryContentController;
     NSButton *_enableQueueDebuggingCheckBox;
+    NSButton *_queueDebuggingInfoButton;
 }
 
++ (id)keyPathsForValuesAffectingAllowEnablingQueueDebugging;
 + (BOOL)availableForScheme:(id)arg1;
+@property __weak NSButton *queueDebuggingInfoButton; // @synthesize queueDebuggingInfoButton=_queueDebuggingInfoButton;
 @property __weak NSButton *enableQueueDebuggingCheckBox; // @synthesize enableQueueDebuggingCheckBox=_enableQueueDebuggingCheckBox;
 - (void).cxx_destruct;
+- (BOOL)allowEnablingQueueDebugging;
 - (void)enableQueueDebuggingClicked:(id)arg1;
+- (void)showInfoView:(id)arg1;
 - (void)loadView;
 
 @end

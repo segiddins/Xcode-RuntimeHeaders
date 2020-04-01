@@ -4,38 +4,39 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <DVTKit/DVTStackView_ML.h>
+#import <DVTUserInterfaceKit/DVTStackView_ML.h>
 
-@class DVTTypeCompletionHandler, IBConnectionPopUpMenuItemView, IBImageButton, IBMutableIdentityDictionary, IBScrollingStackView, NSArray, NSColor, NSMutableArray;
+#import <IDEInterfaceBuilderKit/DVTTypeCompletionHandlerDelegate-Protocol.h>
+
+@class DVTTypeCompletionHandler, IBConnectionPopUpMenuItemView, IBImageButton, IBMutableIdentityDictionary, IBScrollingStackView, NSArray, NSColor, NSMutableArray, NSString;
 @protocol IBConnectionPopUpMenuDelegate;
 
-@interface IBConnectionPopUpMenuView : DVTStackView_ML
+@interface IBConnectionPopUpMenuView : DVTStackView_ML <DVTTypeCompletionHandlerDelegate>
 {
-    IBScrollingStackView *scrollingItemView;
-    IBImageButton *scrollUpButton;
-    IBImageButton *scrollDownButton;
-    NSColor *backgroundColor;
-    NSMutableArray *itemViews;
-    NSMutableArray *installedItemViews;
-    NSArray *menuItems;
-    DVTTypeCompletionHandler *typeCompletionHandler;
-    IBConnectionPopUpMenuItemView *explanationItemsSeparator;
-    IBConnectionPopUpMenuItemView *multipleSelectionExplanationItem;
-    IBConnectionPopUpMenuItemView *multipleSelectionAcceptItem;
-    IBConnectionPopUpMenuItemView *alternateItemsExplanationItem;
-    IBMutableIdentityDictionary *itemViewsByItem;
-    IBMutableIdentityDictionary *itemsByItemView;
-    BOOL optionIsDown;
-    BOOL allowsAndNeedsMultipleSelection;
-    BOOL allowsMultipleSelection;
-    BOOL hasAlternateItems;
-    id <IBConnectionPopUpMenuDelegate> delegate;
+    IBScrollingStackView *_scrollingItemView;
+    IBImageButton *_scrollUpButton;
+    IBImageButton *_scrollDownButton;
+    NSColor *_backgroundColor;
+    NSMutableArray *_itemViews;
+    NSMutableArray *_installedItemViews;
+    NSArray *_menuItems;
+    DVTTypeCompletionHandler *_typeCompletionHandler;
+    IBConnectionPopUpMenuItemView *_explanationItemsSeparator;
+    IBConnectionPopUpMenuItemView *_multipleSelectionExplanationItem;
+    IBConnectionPopUpMenuItemView *_alternateItemsExplanationItem;
+    IBMutableIdentityDictionary *_itemViewsByItem;
+    IBMutableIdentityDictionary *_itemsByItemView;
+    BOOL _optionIsDown;
+    BOOL _allowsMultipleSelection;
+    BOOL _allowsAndNeedsMultipleSelection;
+    BOOL _hasAlternateItems;
+    id <IBConnectionPopUpMenuDelegate> _delegate;
 }
 
-@property __weak id <IBConnectionPopUpMenuDelegate> delegate; // @synthesize delegate;
-@property(readonly, nonatomic) BOOL hasAlternateItems; // @synthesize hasAlternateItems;
-@property(nonatomic) BOOL allowsMultipleSelection; // @synthesize allowsMultipleSelection;
-@property(readonly, nonatomic) BOOL allowsAndNeedsMultipleSelection; // @synthesize allowsAndNeedsMultipleSelection;
+@property(readonly, nonatomic) BOOL hasAlternateItems; // @synthesize hasAlternateItems=_hasAlternateItems;
+@property(readonly, nonatomic) BOOL allowsAndNeedsMultipleSelection; // @synthesize allowsAndNeedsMultipleSelection=_allowsAndNeedsMultipleSelection;
+@property(nonatomic) BOOL allowsMultipleSelection; // @synthesize allowsMultipleSelection=_allowsMultipleSelection;
+@property __weak id <IBConnectionPopUpMenuDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (id)effectiveBackgroundColor;
@@ -53,10 +54,15 @@
 - (void)setHighlightedBackgroundColor:(id)arg1;
 - (void)setHighlightedTextColor:(id)arg1;
 - (void)setBackgroundColor:(id)arg1;
-- (id)backgroundColor;
 - (void)setTextColor:(id)arg1;
 - (void)configureScrollButtonImages:(id)arg1 upButton:(BOOL)arg2;
-- (id)initWithMenuItems:(id)arg1 showsStateImagesForItems:(id)arg2 allowsMultipleSelection:(BOOL)arg3 withMultipleSelectionAcceptsTitle:(id)arg4 andMaxWidth:(double)arg5;
+- (id)initWithMenuItems:(id)arg1 showsStateImagesForItems:(id)arg2 allowsMultipleSelection:(BOOL)arg3 andMaxWidth:(double)arg4;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

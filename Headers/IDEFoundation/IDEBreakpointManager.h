@@ -7,11 +7,11 @@
 #import <objc/NSObject.h>
 
 #import <IDEFoundation/DVTInvalidation-Protocol.h>
-#import <IDEFoundation/IDEInternalBreakpointDelegate-Protocol.h>
+#import <IDEFoundation/IDEBreakpointDelegate-Protocol.h>
 
 @class DVTDispatchLock, DVTObservingToken, DVTStackBacktrace, IDEBreakpointBucket, IDEWorkspace, NSArray, NSMapTable, NSMutableArray, NSMutableSet, NSString;
 
-@interface IDEBreakpointManager : NSObject <IDEInternalBreakpointDelegate, DVTInvalidation>
+@interface IDEBreakpointManager : NSObject <IDEBreakpointDelegate, DVTInvalidation>
 {
     DVTObservingToken *_workspaceReferencedContainersToken;
     DVTObservingToken *_currentDebugSessionStateObserverToken;
@@ -21,6 +21,7 @@
     NSMutableArray *_sharedProjectBuckets;
     NSMapTable *_userToSharedBuckets;
     NSMapTable *_sharedToUserBuckets;
+    NSMutableArray *_allBucketsWithBreakpoints;
     NSMutableArray *_breakpoints;
     DVTDispatchLock *_registrationLock;
     unsigned long long _registrationNumber;
@@ -38,21 +39,28 @@
 + (void)initialize;
 @property(readonly) IDEWorkspace *workspace; // @synthesize workspace=_workspace;
 @property(nonatomic) BOOL breakpointsActivated; // @synthesize breakpointsActivated=_breakpointsActivated;
-@property(retain) IDEBreakpointBucket *sharedWorkspaceBucket; // @synthesize sharedWorkspaceBucket=_sharedWorkspaceBucket;
+@property(readonly) NSArray *allBucketsWithBreakpoints; // @synthesize allBucketsWithBreakpoints=_allBucketsWithBreakpoints;
+@property(readonly) IDEBreakpointBucket *sharedWorkspaceBucket; // @synthesize sharedWorkspaceBucket=_sharedWorkspaceBucket;
 @property(readonly) IDEBreakpointBucket *userGlobalBucket; // @synthesize userGlobalBucket=_userGlobalBucket;
-@property(retain) IDEBreakpointBucket *userWorkspaceBucket; // @synthesize userWorkspaceBucket=_userWorkspaceBucket;
+@property(readonly) IDEBreakpointBucket *userWorkspaceBucket; // @synthesize userWorkspaceBucket=_userWorkspaceBucket;
 @property(retain, nonatomic) IDEBreakpointBucket *defaultBucket; // @synthesize defaultBucket=_defaultBucket;
 - (void).cxx_destruct;
 - (void)primitiveInvalidate;
-- (void)internal_breakpointLocationsAdded:(id)arg1 removed:(id)arg2;
-- (void)internal_breakpointEnablementChanged:(id)arg1;
+- (void)breakpointLocationsAdded:(id)arg1 removed:(id)arg2;
+- (BOOL)breakpointShouldBeActivated:(id)arg1;
+- (void)breakpointTextFilterablePropertyChanged:(id)arg1;
+- (void)breakpointNameChanged:(id)arg1;
+- (void)breakpointModificationChanged:(id)arg1;
+- (void)breakpointEnablementChanged:(id)arg1;
 - (void)_notifyObserversOfActivationStateChange;
 - (void)removeBreakpointObserver:(id)arg1;
 - (void)addBreakpointObserver:(id)arg1;
-- (void)_handleBreakpointsChanged:(id)arg1;
+- (id)createSanitizerBreakpointIfNecessary:(unsigned long long)arg1 ignoreExisting:(BOOL)arg2;
+- (void)_handleBreakpointsForBucket:(id)arg1 change:(id)arg2;
 - (void)_addListenerToBucketsBreakpointList:(id)arg1;
 - (void)_removeListenerFromBucketsBreakpointList:(id)arg1;
 - (BOOL)_canSetBreakpointAtURL:(id)arg1;
+- (BOOL)_anyFileReferenceForPath:(id)arg1 matchesDataTypeIdentifier:(id)arg2;
 - (void)setBreakpointShared:(id)arg1 shared:(BOOL)arg2;
 - (id)fileBreakpointAtDocumentLocation:(id)arg1;
 - (void)registerDoingWorkOnBreakpoint:(id)arg1 block:(CDUnknownBlockType)arg2;
@@ -71,6 +79,7 @@
 - (void)_handleWorkspaceContainerInserted:(id)arg1;
 - (void)_handleWorkspaceContainersChanges:(id)arg1;
 - (void)_handleCurrentDebugSessionStateChanged:(id)arg1;
+- (void)_dealWithSanitizerPauseOnIssuesMigration;
 - (id)initWithWorkspace:(id)arg1 error:(id *)arg2;
 
 // Remaining properties

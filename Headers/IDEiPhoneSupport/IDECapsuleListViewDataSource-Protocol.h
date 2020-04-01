@@ -6,7 +6,7 @@
 
 #import <IDEiPhoneSupport/NSObject-Protocol.h>
 
-@class IDECapsuleListView, IDEViewController, NSArray;
+@class IDECapsuleListView, IDEViewController;
 @protocol IDECapsuleViewController, NSDraggingInfo;
 
 @protocol IDECapsuleListViewDataSource <NSObject>
@@ -17,8 +17,9 @@
 - (void)capsuleListViewDidCompleteLayout:(IDECapsuleListView *)arg1;
 - (void)capsuleListView:(IDECapsuleListView *)arg1 didExpandRow:(long long)arg2;
 - (void)capsuleListView:(IDECapsuleListView *)arg1 didCollapseRow:(long long)arg2;
-- (NSArray *)capsuleListView:(IDECapsuleListView *)arg1 pastboardTypesForRowWithIndex:(unsigned long long)arg2;
+- (BOOL)capsuleListView:(IDECapsuleListView *)arg1 allowDragOfRowAtIndex:(unsigned long long)arg2;
 - (unsigned long long)capsuleListView:(IDECapsuleListView *)arg1 validateDrop:(id <NSDraggingInfo>)arg2 proposedRow:(long long)arg3;
-- (BOOL)capsuleListView:(IDECapsuleListView *)arg1 acceptDrop:(id <NSDraggingInfo>)arg2 row:(long long)arg3;
+- (BOOL)capsuleListView:(IDECapsuleListView *)arg1 acceptDrop:(id <NSDraggingInfo>)arg2 draggedRow:(unsigned long long)arg3 destinationRow:(unsigned long long)arg4;
+- (BOOL)isCollapsedSavedStateForRow:(long long)arg1;
 @end
 

@@ -17,6 +17,7 @@
 
 + (id)archivableRelationships;
 + (id)archivableAttributes;
+- (void).cxx_destruct;
 - (id)innerDescription;
 - (void)awakeFromPListUnarchiver:(id)arg1;
 - (void)writeToPListArchiver:(id)arg1;
@@ -36,34 +37,30 @@
 - (BOOL)changeSourceTree:(id)arg1;
 - (BOOL)moveToNewPath:(id)arg1;
 - (BOOL)copyToNewPath:(id)arg1;
-- (BOOL)setPath:(id)arg1;
+- (void)setPath:(id)arg1;
 - (void)setPath:(id)arg1 andSourceTree:(id)arg2;
 - (BOOL)fileExists;
 - (id)absolutePathForDisplay;
 - (id)buildProductRelativePath;
 - (id)groupRelativePath;
 - (id)projectRelativePath;
-- (id)resolvedAbsoluteDirectory;
 - (id)resolvedAbsolutePath;
 - (id)absoluteDirectory;
-- (id)absolutePathForConfigurationNamed:(id)arg1;
+- (id)absolutePathForBuildParameters:(id)arg1;
 - (id)absolutePath;
 - (id)path;
 - (id)sourceTree;
 - (BOOL)canSetName;
 - (void)setName:(id)arg1;
 - (id)name;
-- (BOOL)allowsRemovalFromDisk;
 - (BOOL)allowsEditing;
 - (id)includingTargets;
 - (id)producingTarget;
-- (BOOL)deleteFromProjectAndDisk:(BOOL)arg1;
-- (void)deleteFromDisk;
 - (void)setContainer:(id)arg1;
 - (id)realReference;
 - (void)dealloc;
 - (id)initRemoteProductReferenceWithPortal:(id)arg1 remoteGlobalIDString:(id)arg2 remoteInfo:(id)arg3;
-- (id)initWithType:(int)arg1 portal:(id)arg2 remoteGlobalIDString:(id)arg3 remoteInfo:(id)arg4;
+- (id)initWithType:(long long)arg1 portal:(id)arg2 remoteGlobalIDString:(id)arg3 remoteInfo:(id)arg4;
 
 @end
 

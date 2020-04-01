@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Foundation/NSObject.h>
+#import <objc/NSObject.h>
 
 @class NSString;
 
@@ -13,21 +13,29 @@
     NSString *_name;
 }
 
++ (id)XCBuildFileProductReferenceSupportFeature;
++ (id)XCBuildFilePlatformFilterSupportFeature;
++ (id)XCXCFrameworkSupportFeature;
++ (id)XCBuildRuleArchitectureNeutralFlagFeature;
++ (id)XCBuildRuleInputDependenciesFeature;
++ (id)XCScriptPhaseDependencyFileFeature;
++ (id)XCScriptPhaseOutputFileListFeature;
++ (id)XCScriptPhaseInputFileListFeature;
++ (id)XCPackageProductDependenciesInBuildFilesFeature;
++ (id)XCSwiftPackageProductDependencyFeature;
++ (id)XCRemoteSwiftPackageReferenceFeature;
++ (id)XCBuildRuleCompilerFlagsFeature;
 + (id)XCProvisioningProfileFeature;
 + (id)XCMultipleProjectRootsFeature;
 + (id)XCCodeSigningOtherFlagsFeature;
 + (id)XCCodeSigningResourceRulesPathFeature;
 + (id)XCCodeSigningEntitlementsFeature;
 + (id)XCCodeSigningIdentityFeature;
-+ (id)XCGCCDisableStaticFunctionInliningFeature;
-+ (id)XCGCCEnableFunctionInliningFeature;
 + (id)XCGCCGenerateFloatingPointLibraryCallsFeature;
 + (id)XCGCCKernelDevelopmentModeFeature;
 + (id)XCGCCGenerateRegisterSubroutineFunctionCallsFeature;
 + (id)XCGCCGenerateIndirectFunctionCallsFeature;
 + (id)XCGCCEnableLinkingWithSharedLibrariesFeature;
-+ (id)XCGCCSetOutputFileSubtypeToAllFeature;
-+ (id)XCGCCCheckReturnValueOfOperatorNewFeature;
 + (id)XCGCCRecognizeBuiltinFunctionsFeature;
 + (id)XCGCCUseStandardIncludeSearchingFeature;
 + (id)XCWeakLinkFrameworkAttributeFeature;
@@ -36,12 +44,12 @@
 + (id)XCDataModelVersionGroupsFeature;
 + (id)XCPerSDKSettingsFeature;
 + (id)XCPerArchitectureSettingsFeature;
+- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)copy;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
 - (id)name;
 - (id)initWithName:(id)arg1;
 

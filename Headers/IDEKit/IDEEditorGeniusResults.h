@@ -8,11 +8,12 @@
 
 #import <IDEKit/DVTInvalidation-Protocol.h>
 
-@class DVTExtension, DVTFileDataType, DVTStackBacktrace, IDEEditorDocument, IDENavigableItemCoordinator, IDEWorkspaceTabController, NSArray, NSDictionary, NSString;
+@class DVTExtension, DVTFileDataType, DVTStackBacktrace, IDEEditorDocument, IDEEditorModeViewController, IDENavigableItemCoordinator, IDEWorkspaceTabController, NSArray, NSDictionary, NSString;
 
 @interface IDEEditorGeniusResults : NSObject <DVTInvalidation>
 {
     IDEWorkspaceTabController *_workspaceTabController;
+    IDEEditorModeViewController *_editorModeViewController;
     IDENavigableItemCoordinator *_navItemCoordinator;
     IDEEditorDocument *_editorDocument;
     NSArray *_documentLocations;
@@ -29,11 +30,12 @@
 }
 
 + (BOOL)automaticallyNotifiesObserversOfGeniusResults;
++ (BOOL)hideSubitemCountForGeniusCategory:(id)arg1;
++ (BOOL)showHierarchyForSingleResultsCategoryForGeniusCategory:(id)arg1;
 + (BOOL)singleResultsCategoryForGeniusCategory:(id)arg1;
 + (id)groupForGeniusCategory:(id)arg1;
 + (id)nameForGeniusCategory:(id)arg1;
 + (id)_geniusCategoryExtensions;
-+ (id)useGeniusCategoryForEditorDocumentIdentifier:(id)arg1;
 + (BOOL)validGeniusCategory:(id)arg1 forEditorDocumentIdentifier:(id)arg2;
 + (id)_geniusCategoriesForFinderExtensions:(id)arg1;
 + (id)_finderExtensionsForEditorDocumentIdentifier:(id)arg1 fileDataType:(id)arg2;
@@ -56,8 +58,10 @@
 - (void)_clearFindResultsTimer;
 - (void)_setForcedUpdateTimer;
 - (void)_clearForcedUpdateTimer;
+- (void)_doUpdateGeniusResultsAfterOneSecond;
 - (BOOL)_allGeniusFindersAreIdle;
 @property(readonly, copy) NSString *description;
+- (id)initWithEditorModeViewController:(id)arg1 navigableItemCoordinator:(id)arg2;
 - (id)initWithWorkspaceTabController:(id)arg1 navigableItemCoordinator:(id)arg2;
 
 // Remaining properties

@@ -6,15 +6,22 @@
 
 #import <AppKit/NSTextView.h>
 
-@class NSTextStorage;
+#import <IDEInterfaceBuilderCocoaIntegration/IBDocumentArchiving-Protocol.h>
 
-@interface NSTextView (IBNSTextViewIntegration)
-+ (id)keyPathsForValuesAffectingIbIncrementalSearchingEnabled;
-+ (id)keyPathsForValuesAffectingIbInspectedFindStyle;
+@class NSString, NSTextStorage;
+
+@interface NSTextView (IBNSTextViewIntegration) <IBDocumentArchiving>
++ (id)keyPathsForValuesAffectingIbShadowedIncrementalSearchingEnabled;
++ (id)keyPathsForValuesAffectingIbArchivedFindStyle;
 + (id)keyPathsForValuesAffectingIbShadowedUsesFindBar;
 + (id)keyPathsForValuesAffectingIbShadowedLayoutOrientation;
 + (id)keyPathsForValuesAffectingIbInspectedAllowsOnlyRomanCharacters;
 + (id)instantiateWithDocumentUnarchiver:(id)arg1;
++ (id)ibInstantiateForRole:(long long)arg1 withTargetRuntime:(id)arg2 documentClass:(Class)arg3 assetIdentifier:(id)arg4;
++ (id)ib_scrollablePlainDocumentContentTextView;
++ (id)ib_scrollableDocumentContentTextView;
++ (id)ib_scrollableTextView;
+- (id)ibDefaultTypingAttributes;
 - (BOOL)ibShouldPropagateFramesDuringFrameDecision;
 - (BOOL)ibShouldUseConstraintsInsteadOfAutoresizingWhenChildOfClipView;
 - (void)ibPrepareCocoaDocumentForCompiling:(id)arg1 withContext:(id)arg2;
@@ -25,12 +32,25 @@
 @property BOOL ibShadowedUsesFindBar;
 @property long long ibShadowedLayoutOrientation;
 @property BOOL ibShadowedUsesInspectorBar;
+- (void)ibDidAddToDocument:(id)arg1 phase:(unsigned long long)arg2;
 @property(copy) NSTextStorage *ibShadowedTextStorage;
 - (struct CGSize)ibNearestLegalBoundsSize;
 @property BOOL ibShadowedAllowsNonContiguousLayout;
 - (BOOL)ibIsUserMovable;
 - (BOOL)ibIsUserSizable;
 - (id)ibPasteboardTypes;
-- (void)ibWarnings:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
+- (void)ibPopulateIssues:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
+- (id)ibDocumentationSymbolInfosForKeyPath:(id)arg1;
+- (id)ibLocalAdditionalLocalizableAttributeKeyPaths;
+- (id)ibLocalAttributeKeyPaths;
+- (id)ibSwizzledReplacementObjectForKeyedArchiver:(id)arg1;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @end
 

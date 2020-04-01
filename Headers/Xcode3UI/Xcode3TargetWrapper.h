@@ -10,17 +10,17 @@
 
 @interface Xcode3TargetWrapper : NSObject
 {
+    BOOL _selected;
     Xcode3Target *_target;
     PBXTarget *_pbxTarget;
     Xcode3Project *_project;
     NSString *_name;
     NSImage *_image;
-    BOOL _selected;
 }
 
+@property BOOL selected; // @synthesize selected=_selected;
 @property(readonly) NSImage *image; // @synthesize image=_image;
 @property(readonly) NSString *name; // @synthesize name=_name;
-@property BOOL selected; // @synthesize selected=_selected;
 @property(readonly) Xcode3Project *project; // @synthesize project=_project;
 @property(readonly) PBXTarget *pbxTarget; // @synthesize pbxTarget=_pbxTarget;
 @property(readonly) Xcode3Target *target; // @synthesize target=_target;

@@ -9,10 +9,9 @@
 #import <DebuggerLLDB/DBGDebugSessionBreakpointLifeCycleDelegate-Protocol.h>
 #import <DebuggerLLDB/IDEConsoleAdaptorDelegateProtocol-Protocol.h>
 
-@class DBGLLDBLauncher, DVTDispatchLock, NSMutableArray, NSMutableString, NSObject, NSString;
+@class DBGLLDBLauncher, DBGLLDBRuntimeIssuesHelper, DVTDispatchLock, NSMutableArray, NSMutableString, NSObject, NSString;
 @protocol DBGSBBroadcaster, DBGSBTarget, OS_dispatch_queue;
 
-__attribute__((visibility("hidden")))
 @interface DBGLLDBSession : IDEDebugSession <IDEConsoleAdaptorDelegateProtocol, DBGDebugSessionBreakpointLifeCycleDelegate>
 {
     id <DBGSBTarget> _lldbTarget;
@@ -24,7 +23,6 @@ __attribute__((visibility("hidden")))
     BOOL _shouldSetIsLongRunningConsoleCommand;
     BOOL _isLongRunningConsoleCommand;
     NSObject<OS_dispatch_queue> *_isLongRunningConsoleCommandQueue;
-    BOOL _profilingEnabled;
     unsigned long long _previousHostUserTicks;
     unsigned long long _previousHostSystemTicks;
     unsigned long long _previousHostIdleTicks;
@@ -38,15 +36,23 @@ __attribute__((visibility("hidden")))
     BOOL _profilingCPUCapForWatch;
     NSMutableString *_previousProfileDataString;
     NSMutableArray *_threadSanitizerIssues;
-    BOOL _RPCServerExited;
+    NSMutableArray *_UBSanitizerIssues;
+    NSMutableArray *_mainThreadCheckerIssues;
+    NSMutableArray *_swiftRuntimeReportingIssues;
+    DBGLLDBRuntimeIssuesHelper *_runtimeIssuesHelper;
     BOOL _isTracingOnDeviceAndTargetGotJetsam;
-    BOOL _targetShouldNotAutoContinue;
+    BOOL _stopRequested;
+    BOOL _useSyncPerformBlock;
+    BOOL _profilingEnabled;
     BOOL _pauseRequested;
+    BOOL _continueRequestedAfterExpression;
     BOOL _fetchEventRequested;
     BOOL _killCalled;
     BOOL _readyForActionsWhenPaused;
     BOOL _shouldIssueKillAfterPause;
     int _profileScanType;
+    NSString *_memoryProfilingDisabledMessage;
+    NSString *_RPCServerCrashedOrExitedMessage;
     struct _opaque_pthread_t *_sessionThreadIdentifier;
     NSMutableArray *_actionsWhenPaused;
     NSMutableArray *_expressionsWhenPaused;
@@ -61,27 +67,33 @@ __attribute__((visibility("hidden")))
 @property(retain) NSMutableArray *actionsWhenPaused; // @synthesize actionsWhenPaused=_actionsWhenPaused;
 @property BOOL killCalled; // @synthesize killCalled=_killCalled;
 @property BOOL fetchEventRequested; // @synthesize fetchEventRequested=_fetchEventRequested;
+@property BOOL continueRequestedAfterExpression; // @synthesize continueRequestedAfterExpression=_continueRequestedAfterExpression;
 @property BOOL pauseRequested; // @synthesize pauseRequested=_pauseRequested;
 @property int profileScanType; // @synthesize profileScanType=_profileScanType;
 @property(nonatomic, getter=isProfilingEnabled) BOOL profilingEnabled; // @synthesize profilingEnabled=_profilingEnabled;
 @property struct _opaque_pthread_t *sessionThreadIdentifier; // @synthesize sessionThreadIdentifier=_sessionThreadIdentifier;
-@property BOOL targetShouldNotAutoContinue; // @synthesize targetShouldNotAutoContinue=_targetShouldNotAutoContinue;
+@property BOOL useSyncPerformBlock; // @synthesize useSyncPerformBlock=_useSyncPerformBlock;
+@property BOOL stopRequested; // @synthesize stopRequested=_stopRequested;
 @property BOOL isTracingOnDeviceAndTargetGotJetsam; // @synthesize isTracingOnDeviceAndTargetGotJetsam=_isTracingOnDeviceAndTargetGotJetsam;
-@property BOOL RPCServerExited; // @synthesize RPCServerExited=_RPCServerExited;
+@property(copy) NSString *RPCServerCrashedOrExitedMessage; // @synthesize RPCServerCrashedOrExitedMessage=_RPCServerCrashedOrExitedMessage;
+- (id)memoryProfilingDisabledMessage;
 - (void).cxx_destruct;
 - (void)_delayedTurnOnMemoryDebugging;
 - (void)_handleSessionThreadEndOfLifeWithExitCode:(long long)arg1 exitDescription:(id)arg2;
+- (BOOL)_showErrorMessageForExitDescription:(id)arg1;
 - (void)_setUpRecordingStackFramesForAttach;
 - (id)_lldbProcessPlugnPacketSend:(const char *)arg1;
 - (void)primitiveInvalidate;
 - (void)stopMemoryDebugging;
 - (void)startMemoryDebuggingIfNeeded;
+- (BOOL)_stopDueToMSLDuringAttach;
 - (BOOL)_shouldIgnoreSigTermKill;
 - (void)_runPendingExpressionsAndPurgeList;
 - (void)_refreshThreadListAndUpdateCurrentThread:(int *)arg1;
 - (void)assertIsLLDBSessionThread;
 - (void)_handleThreadEvent:(id)arg1;
 - (id)dbgLLDBProcess;
+- (id)symbolicatedFramesFromUUIDsAndOffsets:(id)arg1 markRecorded:(BOOL)arg2;
 - (void)forceRefreshPausedStates;
 - (void)appendProfileDataString:(id)arg1;
 - (void)processProfileDataString:(id)arg1;
@@ -95,6 +107,7 @@ __attribute__((visibility("hidden")))
 - (void)breakpointLocationIgnoreCount:(id)arg1;
 - (void)breakpointLocationConditionChanged:(id)arg1;
 - (void)breakpointEnablementChanged:(id)arg1;
+- (BOOL)_allSanitizerBreakpointsInSameEnabledStateAsBreakpoint:(id)arg1;
 - (void)breakpointIgnoreCountChanged:(id)arg1;
 - (void)breakpointConditionChanged:(id)arg1;
 - (void)_logBreakpointState:(id)arg1 usingPrefix:(id)arg2;
@@ -105,20 +118,24 @@ __attribute__((visibility("hidden")))
 - (void)_handleBreakpointLocationsRemovedEvent:(id)arg1;
 - (void)_handleBreakpointLocationsAddedEvent:(id)arg1;
 - (void)_handleBreakpointRemovedEventFromLLDB:(id)arg1;
-- (id)_breakpointLocationFromSBBreakpointLocation:(id)arg1;
+- (id)_breakpointLocationFromSBBreakpointLocation:(id)arg1 parentBreakpoint:(id)arg2;
 - (void)_handleBreakpointAddedEventFromLLDB:(id)arg1;
 - (void)_deleteWatchpointFromLLDBSessionThread:(id)arg1;
 - (void)deleteWatchpoint:(id)arg1;
 - (id)_createBreakpointFromAddressBreakpoint:(id)arg1;
 - (id)_createBreakpointFromExceptionBreakpoint:(id)arg1;
 - (id)_createBreakpointFromSwiftErrorBreakpoint:(id)arg1;
+- (id)_createBreakpointFromConstraintErrorBreakpoint:(id)arg1;
 - (id)_createBreakpointFromTestFailureBreakpoint:(id)arg1;
 - (id)_sbBreakpointForSymbolsNames:(id)arg1;
 - (id)_createBreakpointFromSymbolicBreakpoint:(id)arg1;
 - (id)_createBreakpointFromFileBreakpoint:(id)arg1;
 - (void)createBreakpointIfNecessary:(id)arg1;
-- (void)_evaluateExpressionFromSessionThread:(id)arg1 threadID:(unsigned long long)arg2 stackFrameID:(unsigned long long)arg3 queue:(id)arg4 options:(id)arg5 completionHandler:(CDUnknownBlockType)arg6;
+- (void)_handleSanitizerBreakpoint:(id)arg1 stop:(long long)arg2 multiplier:(long long)arg3;
+- (void)_evaluateExpressionFromSessionThread:(id)arg1 threadID:(unsigned long long)arg2 stackFrameID:(unsigned long long)arg3 queue:(id)arg4 options:(id)arg5 resultBlock:(CDUnknownBlockType)arg6 completionHandler:(CDUnknownBlockType)arg7;
+- (void)evaluateExpression:(id)arg1 threadID:(unsigned long long)arg2 stackFrameID:(unsigned long long)arg3 queue:(id)arg4 options:(id)arg5 resultBlock:(CDUnknownBlockType)arg6;
 - (void)evaluateExpression:(id)arg1 threadID:(unsigned long long)arg2 stackFrameID:(unsigned long long)arg3 queue:(id)arg4 options:(id)arg5 completionHandler:(CDUnknownBlockType)arg6;
+- (void)evaluateExpression:(id)arg1 threadID:(unsigned long long)arg2 stackFrameID:(unsigned long long)arg3 queue:(id)arg4 resultBlock:(CDUnknownBlockType)arg5;
 - (void)evaluateExpression:(id)arg1 threadID:(unsigned long long)arg2 stackFrameID:(unsigned long long)arg3 queue:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)_setProfilingEnabled:(BOOL)arg1;
 - (id)commandsExpectingExpressions;
@@ -137,17 +154,21 @@ __attribute__((visibility("hidden")))
 - (void)_removeBreakpointHitCallback:(unsigned long long)arg1;
 - (void)_addBreakpointHitCallback:(id)arg1;
 - (void)requestLoadDylibAtPath:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
+- (void)requestLoadSymbolsForStackFrameUUID:(id)arg1;
 - (void)requestMovePCInStackFrame:(id)arg1 toLineNumber:(unsigned long long)arg2;
 - (BOOL)supportsMultiplePCAnnotation;
 - (void)executeDebuggerCommand:(id)arg1 threadID:(unsigned long long)arg2 stackFrameID:(unsigned long long)arg3;
 - (void)executeConsoleCommand:(id)arg1 threadID:(unsigned long long)arg2 stackFrameID:(unsigned long long)arg3;
 - (void)_putLLDBInThreadID:(unsigned long long)arg1 stackFrameID:(unsigned long long)arg2 restoreThreadFrameAfterWork:(BOOL)arg3 toDoWork:(CDUnknownBlockType)arg4;
 - (void)_requestFetchEventOnSessionThread;
+- (void)requestUISnapshotRefresh;
+- (void)simulateMetricPayloads;
 - (void)requestFetchEvent;
 - (void)_runActionOnSessionThreadWhenPaused:(CDUnknownBlockType)arg1;
 - (void)requestContinueToLocation:(id)arg1;
 - (void)requestStepIntoCallSymbol:(id)arg1 atLocation:(id)arg2;
 - (void)requestStop;
+- (void)writeOutProfileDataWhenPaused;
 - (void)requestDetach;
 - (void)requestContinue;
 - (void)requestPause;
@@ -167,16 +188,23 @@ __attribute__((visibility("hidden")))
 - (void)_setAndAppendPrompt:(id)arg1;
 - (id)prompt;
 - (void)trackProcess;
-- (void)_addStackFramesForThread:(id)arg1;
+- (BOOL)_shouldRecordStatistics;
 - (id)lldbBroadcaster;
 - (id)lldbTarget;
 - (void)setTarget:(id)arg1;
 @property(readonly) DBGLLDBLauncher *launcher;
 - (void)_setupProfileScanType:(id)arg1;
+- (void)_setupProfileMemoryCap;
+- (void)_setupProfileEnergyCPUCap;
+- (void)setState:(int)arg1;
 - (id)initWithDebugLauncher:(id)arg1;
+- (BOOL)shouldStopForRuntimeIssuesBreakpointAtLocation:(id)arg1 frame:(id)arg2;
 
 // Remaining properties
+@property(readonly, copy) NSMutableArray *mutableMainThreadCheckerIssues; // @dynamic mutableMainThreadCheckerIssues;
+@property(readonly, copy) NSMutableArray *mutableSwiftRuntimeReportingIssues; // @dynamic mutableSwiftRuntimeReportingIssues;
 @property(readonly, copy) NSMutableArray *mutableThreadSanitizerIssues; // @dynamic mutableThreadSanitizerIssues;
+@property(readonly, copy) NSMutableArray *mutableUBSanitizerIssues; // @dynamic mutableUBSanitizerIssues;
 
 @end
 

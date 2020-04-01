@@ -10,10 +10,11 @@
 {
 }
 
-- (id)packagingStepIdentifier;
+- (id)commandLineName;
+- (id)packagingStepIdentifierForDestination:(long long)arg1;
 - (id)installerCertificateKind;
 - (id)certificateKind;
-- (BOOL)wantsProvisioningProfiles;
+- (long long)wantsProvisioningProfiles;
 - (_Bool)supportsDistributionOfArchive:(id)arg1;
 
 @end

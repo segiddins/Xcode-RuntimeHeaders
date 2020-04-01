@@ -6,10 +6,12 @@
 
 #import <IDEFoundation/NSObject-Protocol.h>
 
-@class IDESourceKitNotificationOnLogOutput;
+@class IDESourceKitNotificationOnIndexCompileDidFinish, IDESourceKitNotificationOnIndexCompileWillStart, IDESourceKitNotificationOnLogOutput, IDESourceKitNotificationOnToolchainCompilerCrashed;
 
 @protocol IDESourceKitConnectionDelegate <NSObject>
-- (void)onToolchainCompilerCrashed;
+- (void)onIndexCompileDidFinish:(IDESourceKitNotificationOnIndexCompileDidFinish *)arg1;
+- (void)onIndexCompileWillStart:(IDESourceKitNotificationOnIndexCompileWillStart *)arg1;
+- (void)onToolchainCompilerCrashed:(IDESourceKitNotificationOnToolchainCompilerCrashed *)arg1;
 - (void)onLogOutput:(IDESourceKitNotificationOnLogOutput *)arg1;
 @end
 

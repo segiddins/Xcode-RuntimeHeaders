@@ -13,7 +13,7 @@
 #import <IDESpriteKitParticleEditor/NSKeyedUnarchiverDelegate-Protocol.h>
 #import <IDESpriteKitParticleEditor/SKObjectLibraryProvider-Protocol.h>
 
-@class DVTObservingToken, GTFActionLibrary, NSMutableArray, NSString, SKActionEditorNavigableRepresentedNode;
+@class DVTObservingToken, GTFActionLibrary, IDEMediaResourceVariantContext, NSArray, NSDictionary, NSMutableArray, NSString, SKActionEditorNavigableRepresentedNode;
 
 @interface SKActionDocument : SKEditorDocument <GTFActionDocument, GTFActionLibraryUndoDelegate, GTFActionLibraryDocumentLocationDelegate, SKObjectLibraryProvider, IDEMediaLibraryDelegate, NSKeyedUnarchiverDelegate>
 {
@@ -27,6 +27,7 @@
 @property(retain, nonatomic) id topLevelNavigablePreviewSceneObject; // @synthesize topLevelNavigablePreviewSceneObject=_topLevelNavigablePreviewSceneObject;
 @property(retain, nonatomic) GTFActionLibrary *actionLibrary; // @synthesize actionLibrary=_actionLibrary;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *availableSceneNames;
 @property(readonly, nonatomic) NSMutableArray *dynamicObjectLibraryAssets;
 - (void)mediaLibraryController:(id)arg1 populatePasteboard:(id)arg2 withMediaResourceVariantSets:(id)arg3;
 - (id)undoManagerForActionLibrary:(id)arg1;
@@ -36,6 +37,7 @@
 - (id)nextAvailableActionName:(id)arg1;
 @property(readonly, nonatomic) long long actionEditorClientDocumentType;
 - (id)dataOfType:(id)arg1 error:(id *)arg2;
+- (id)namedAssets;
 - (Class)unarchiver:(id)arg1 cannotDecodeObjectOfClassName:(id)arg2 originalClasses:(id)arg3;
 - (BOOL)_loadActionsFromUnarchiver:(id)arg1 withFileInfo:(id)arg2 error:(id *)arg3;
 - (BOOL)readFromURL:(id)arg1 ofType:(id)arg2 error:(id *)arg3;
@@ -49,6 +51,8 @@
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
+@property(readonly) IDEMediaResourceVariantContext *variantContextForMediaLibrary;
+@property(readonly) NSDictionary *variantForResolvingMediaResources;
 
 @end
 

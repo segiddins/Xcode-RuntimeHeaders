@@ -21,6 +21,7 @@
 - (void).cxx_destruct;
 - (void)drawUnderTextInRect:(struct CGRect)arg1;
 - (void)drawUnderCurrentLineHighlightInRect:(struct CGRect)arg1;
+- (id)_pageGuideColor;
 - (void)fontAndColorThemeChanged;
 - (void)_updatePageGuideXCoordinate;
 

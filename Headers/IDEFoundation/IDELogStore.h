@@ -18,9 +18,10 @@
 + (id)onDiskOrInMemoryLogStoreInWorkspaceArena:(id)arg1 prefix:(id)arg2;
 + (void)initialize;
 - (void).cxx_destruct;
-- (id)coverageReportFilePathForActivityLogSection:(id)arg1;
-- (id)testableSummariesPlistFilePathForActivityLogSection:(id)arg1;
 - (id)logRecordWithURL:(id)arg1;
+- (void)purgeUntrackedItems;
+- (void)removeLogRecord:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
+- (id)addLog:(id)arg1 parameters:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (id)addLog:(id)arg1 entityIdentifier:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (id)init;
 - (void)primitiveInvalidate;

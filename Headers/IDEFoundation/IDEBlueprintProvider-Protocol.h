@@ -11,12 +11,17 @@
 @protocol IDEBlueprint, IDETestableProvider;
 
 @protocol IDEBlueprintProvider <DVTInvalidation, NSObject>
-- (id <IDETestableProvider>)testableProvider;
++ (NSArray *)availableSwiftVersions;
+@property(nonatomic, readonly) id <IDETestableProvider> testableProvider;
 - (id <IDEBlueprint>)blueprintForName:(NSString *)arg1;
 - (id <IDEBlueprint>)blueprintForIdentifier:(NSString *)arg1;
-- (NSString *)classPrefix;
-- (NSString *)organizationName;
-- (NSString *)name;
-- (NSArray *)blueprints;
+@property(nonatomic, readonly) NSString *classPrefix;
+@property(nonatomic, readonly) NSString *organizationName;
+@property(nonatomic, readonly) NSString *name;
+@property(nonatomic, readonly) NSArray *blueprints;
+
+@optional
+@property(nonatomic, readonly) NSArray *sourcePackageReferences;
+@property(nonatomic) int buildSystemType;
 @end
 

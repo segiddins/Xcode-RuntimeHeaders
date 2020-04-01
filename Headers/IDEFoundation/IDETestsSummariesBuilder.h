@@ -8,38 +8,50 @@
 
 #import <IDEFoundation/IDETestRunSessionEvents-Protocol.h>
 
-@class IDESchemeActionResult, IDESchemeActionTestSummaryGroup, IDESchemeActionTestableSummary, IDEWorkspaceArena, NSMutableArray, NSString;
+@class DVTFilePath, IDESchemeActionResult, IDESchemeActionTestSummaryGroup, IDESchemeActionTestableSummary, NSMapTable, NSMutableArray, NSString, _TtC13IDEFoundation28IDETestRunSpecificationGroup;
+@protocol IDETestsSummariesBuilderDelegate;
 
 @interface IDETestsSummariesBuilder : NSObject <IDETestRunSessionEvents>
 {
-    IDEWorkspaceArena *_workspaceArena;
-    NSString *_attachmentsDirectory;
+    DVTFilePath *_workspaceFilePath;
     IDESchemeActionTestableSummary *_currentTestableSummary;
-    IDESchemeActionTestSummaryGroup *_currentTestGroup;
-    NSMutableArray *_testSuiteStack;
-    NSMutableArray *_performanceMetricSummaries;
-    NSMutableArray *_failureSummaries;
-    NSMutableArray *_activitySummaries;
-    NSMutableArray *_currentActivityStack;
+    id <IDETestsSummariesBuilderDelegate> _delegate;
     IDESchemeActionResult *_actionResult;
+    NSMapTable *_stateForWorker;
+    NSString *_bundleDisplayName;
+    IDESchemeActionTestSummaryGroup *_synthesizedBundleSuiteGroup;
+    _TtC13IDEFoundation28IDETestRunSpecificationGroup *_currentTestRunSpecificationGroup;
+    NSMutableArray *_currentGroupTestableSummaries;
+    NSMutableArray *_testRunSummaries;
 }
 
+@property(retain) NSMutableArray *testRunSummaries; // @synthesize testRunSummaries=_testRunSummaries;
+@property(retain) NSMutableArray *currentGroupTestableSummaries; // @synthesize currentGroupTestableSummaries=_currentGroupTestableSummaries;
+@property(retain) _TtC13IDEFoundation28IDETestRunSpecificationGroup *currentTestRunSpecificationGroup; // @synthesize currentTestRunSpecificationGroup=_currentTestRunSpecificationGroup;
+@property(retain) IDESchemeActionTestSummaryGroup *synthesizedBundleSuiteGroup; // @synthesize synthesizedBundleSuiteGroup=_synthesizedBundleSuiteGroup;
+@property(retain) NSString *bundleDisplayName; // @synthesize bundleDisplayName=_bundleDisplayName;
+@property(retain) NSMapTable *stateForWorker; // @synthesize stateForWorker=_stateForWorker;
 @property(retain) IDESchemeActionResult *actionResult; // @synthesize actionResult=_actionResult;
+@property(retain) id <IDETestsSummariesBuilderDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (void)didFinishTest:(id)arg1 withTestResult:(id)arg2 rawOutput:(id)arg3;
-- (void)didFailTest:(id)arg1 withTestResultMessage:(id)arg2 rawOutput:(id)arg3;
-- (void)test:(id)arg1 didMeasurePerformanceMetric:(id)arg2 rawOutput:(id)arg3;
-- (void)test:(id)arg1 didFinishActivity:(id)arg2;
-- (void)test:(id)arg1 willStartActivity:(id)arg2;
-- (void)didStartTest:(id)arg1 withRawOutput:(id)arg2;
-- (void)testOperationGroupDidFinish;
-- (void)testOperationWillFinishWithSuccess:(BOOL)arg1 withError:(id)arg2;
-- (void)testSuiteDidFinish:(long long)arg1 withFailures:(long long)arg2 unexpected:(long long)arg3 testDuration:(double)arg4 totalDuration:(double)arg5 rawOutput:(id)arg6;
-- (void)testSuite:(id)arg1 willFinishAt:(id)arg2 rawOutput:(id)arg3;
-- (void)testDidOutput:(id)arg1;
-- (void)testSuite:(id)arg1 didStartAt:(id)arg2 rawOutput:(id)arg3;
-- (void)testRunner:(id)arg1 didLaunchTestSessionForScheme:(id)arg2 withDisplayName:(id)arg3 diagnosticLogPath:(id)arg4;
-- (id)initWithActionResult:(id)arg1 workspaceArena:(id)arg2;
+- (void)worker:(id)arg1 didFinishTestWithIdentifier:(id)arg2 withTestResult:(id)arg3 rawOutput:(id)arg4;
+- (void)worker:(id)arg1 testTargetRunner:(id)arg2 didFinishTestWithIdentifier:(id)arg3 withTestResult:(id)arg4 rawOutput:(id)arg5;
+- (void)worker:(id)arg1 didFailTestWithIdentifier:(id)arg2 withTestResultMessage:(id)arg3 rawOutput:(id)arg4;
+- (void)worker:(id)arg1 testTargetRunner:(id)arg2 didFailTestWithIdentifier:(id)arg3 withTestResultMessage:(id)arg4 rawOutput:(id)arg5;
+- (void)worker:(id)arg1 testTargetRunner:(id)arg2 testWithIdentifier:(id)arg3 didMeasurePerformanceMetric:(id)arg4 rawOutput:(id)arg5;
+- (void)worker:(id)arg1 testTargetRunner:(id)arg2 testWithIdentifier:(id)arg3 didFinishActivity:(id)arg4;
+- (void)worker:(id)arg1 testTargetRunner:(id)arg2 testWithIdentifier:(id)arg3 willStartActivity:(id)arg4;
+- (void)worker:(id)arg1 testTargetRunner:(id)arg2 didStartTestWithIdentifier:(id)arg3 withRawOutput:(id)arg4;
+- (void)testRunSessionDidFinish:(id)arg1 withCancellation:(BOOL)arg2;
+- (void)worker:(id)arg1 testTargetRunner:(id)arg2 willFinishWithSuccess:(BOOL)arg3 withError:(id)arg4;
+- (void)worker:(id)arg1 testTargetRunner:(id)arg2 testSuiteDidFinish:(unsigned long long)arg3 withFailures:(unsigned long long)arg4 unexpected:(unsigned long long)arg5 testDuration:(double)arg6 totalDuration:(double)arg7 rawOutput:(id)arg8;
+- (void)worker:(id)arg1 testTargetRunner:(id)arg2 testSuite:(id)arg3 willFinishAt:(id)arg4 rawOutput:(id)arg5;
+- (void)worker:(id)arg1 testTargetRunner:(id)arg2 testDidOutput:(id)arg3;
+- (void)worker:(id)arg1 testTargetRunner:(id)arg2 testSuite:(id)arg3 didStartAt:(id)arg4 rawOutput:(id)arg5;
+- (void)worker:(id)arg1 testTargetRunner:(id)arg2 didLaunchWithDiagnosticLogPath:(id)arg3;
+- (void)testTargetRunner:(id)arg1 didEndWithCancellation:(BOOL)arg2;
+- (void)testTargetRunnerDidStart:(id)arg1;
+- (id)initWithActionResult:(id)arg1 workspaceFilePath:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

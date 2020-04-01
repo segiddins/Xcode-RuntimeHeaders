@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <DVTKit/DVTViewController.h>
+#import <DVTViewControllerKit/DVTViewController.h>
 
 @class DVTObservingToken, IDEProvisioningTeamManager, NSOrderedSet, NSPopUpButton, NSProgressIndicator, NSView;
 @protocol IDETemplateTeamPickerViewControllerDelegate;
@@ -34,6 +34,7 @@
 @property(retain, nonatomic) IDEProvisioningTeamManager *teamManager; // @synthesize teamManager=_teamManager;
 @property(retain, nonatomic) id <IDETemplateTeamPickerViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)_rebuildTeamsMenu;
 - (void)_configureViewsForState:(long long)arg1;
 - (void)_updateState;
 - (void)_observeTeamManager:(id)arg1;

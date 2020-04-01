@@ -10,12 +10,8 @@
 {
 }
 
-- (id)connectionWellPlusColor;
-- (id)connectionWellPlusColorPressed;
-- (id)connectionWellFillColorRolloverOrPreceeded;
-- (id)connectionWellBorderColorWhenRolloverOrPreceeded;
-- (id)connectionWellFillColor;
-- (id)connectionWellBorderColor;
+- (id)connectionWellDisabledColor;
+- (id)connectionWellColor;
 
 @end
 

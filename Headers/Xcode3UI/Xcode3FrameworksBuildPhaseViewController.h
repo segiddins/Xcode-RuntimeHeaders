@@ -18,8 +18,10 @@
 - (id)_filterPredicate;
 - (id)footerLabel;
 - (BOOL)_displayFullPath;
+- (void)configureAddFrameworksController:(id)arg1;
 - (void)addItems:(id)arg1;
 - (BOOL)_acceptDrop:(id)arg1 onGroup:(id)arg2 proposedRow:(unsigned long long)arg3;
+- (BOOL)supportsMacCatalyst;
 - (BOOL)_addItems:(id)arg1 atRow:(unsigned long long)arg2;
 - (void)_setFrameworkRole:(id)arg1;
 - (id)_objectValueForRoleColumnOfBuildFile:(id)arg1;

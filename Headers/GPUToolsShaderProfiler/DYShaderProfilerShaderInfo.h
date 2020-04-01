@@ -6,19 +6,22 @@
 
 #import <objc/NSObject.h>
 
-#import <GPUToolsShaderProfiler/NSCoding-Protocol.h>
 #import <GPUToolsShaderProfiler/NSCopying-Protocol.h>
+#import <GPUToolsShaderProfiler/NSSecureCoding-Protocol.h>
 
 @class NSString;
 
-@interface DYShaderProfilerShaderInfo : NSObject <NSCoding, NSCopying>
+@interface DYShaderProfilerShaderInfo : NSObject <NSSecureCoding, NSCopying>
 {
     struct DYShaderProfilerTiming _timing;
     NSString *_source;
+    NSString *_name;
 }
 
-@property(readonly, nonatomic) struct DYShaderProfilerTiming timing; // @synthesize timing=_timing;
-@property(retain, nonatomic) NSString *source; // @synthesize source=_source;
++ (BOOL)supportsSecureCoding;
+@property(copy, nonatomic) NSString *name; // @synthesize name=_name;
+@property(nonatomic) struct DYShaderProfilerTiming timing; // @synthesize timing=_timing;
+@property(copy, nonatomic) NSString *source; // @synthesize source=_source;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)description;

@@ -9,7 +9,7 @@
 #import <IDEModelEditor/IDECapsuleViewController-Protocol.h>
 #import <IDEModelEditor/IDECapsuleViewDelegate-Protocol.h>
 
-@class DVTObservingToken, IDEMappingModelEditor, NSArray, NSArrayController, NSImage, NSIndexSet, NSString, XDTableView;
+@class DVTObservingToken, IDEMappingModelEditor, NSArray, NSArrayController, NSColor, NSImage, NSIndexSet, NSString, XDTableView;
 
 @interface IDEMappingModelPropertyMappingsController : IDEDMEditorController <IDECapsuleViewController, IDECapsuleViewDelegate>
 {
@@ -30,6 +30,7 @@
 @property(retain) IDEMappingModelEditor *parentEditor; // @synthesize parentEditor=_parentEditor;
 @property(retain) NSIndexSet *selectedPropertyMappingIndexes; // @synthesize selectedPropertyMappingIndexes=_selectedPropertyMappingIndexes;
 - (void).cxx_destruct;
+- (void)removeSelectedPropertyMappings;
 - (void)delete:(id)arg1;
 - (void)modelDidChange;
 - (void)modelWillChange;
@@ -57,6 +58,7 @@
 - (void)_setupCellsAndColumns;
 
 // Remaining properties
+@property(retain) NSColor *backgroundColor;
 @property BOOL canAddItems;
 @property(readonly) BOOL canDrag;
 @property(readonly) BOOL canRemove;
@@ -70,6 +72,7 @@
 @property(readonly) unsigned long long hash;
 @property(readonly) NSImage *icon;
 @property(readonly) Class superclass;
+@property(readonly) BOOL wantsDisclosureButtonHidden;
 
 @end
 

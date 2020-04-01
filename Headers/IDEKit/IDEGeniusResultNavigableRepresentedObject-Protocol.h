@@ -10,6 +10,5 @@
 
 @protocol IDEGeniusResultNavigableRepresentedObject <NSObject>
 - (NSString *)geniusResult_identifierForGeniusCategory;
-- (NSString *)geniusResult_identifierForManualCategory;
 @end
 

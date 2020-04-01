@@ -11,5 +11,6 @@
 @protocol DYPMTLVertexAttributes <DYBufferArray>
 @property(readonly, nonatomic) id <DYBuffer> indirectBuffer;
 @property(readonly, nonatomic) id <DYBuffer> indexBuffer;
+@property(readonly, nonatomic) id <DYBuffer> postVertexDumpBuffer;
 @end
 

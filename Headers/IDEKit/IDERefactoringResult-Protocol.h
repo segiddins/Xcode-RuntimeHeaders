@@ -9,8 +9,6 @@
 @class DVTFilePath, NSArray, NSString;
 
 @protocol IDERefactoringResult <NSObject>
-- (BOOL)writesOwnTempResults;
-- (void)writeTempResults;
 - (NSString *)resultNewFileName;
 - (DVTFilePath *)resultTempFilePath;
 - (DVTFilePath *)resultFilePath;

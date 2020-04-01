@@ -16,8 +16,8 @@
 }
 
 - (void).cxx_destruct;
-- (BOOL)revert;
-- (BOOL)apply;
+- (BOOL)_performRevert;
+- (BOOL)_performApply;
 - (id)initWithDocument:(id)arg1 navNode:(id)arg2 entity:(id)arg3;
 - (void)_setEntity:(id)arg1 oldEntity:(id)arg2;
 

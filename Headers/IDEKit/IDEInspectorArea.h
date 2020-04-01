@@ -13,13 +13,14 @@
     NSMutableDictionary *_categoryControllers;
 }
 
++ (id)keyPathsForValuesAffectingSelectionProvidingViewController;
 - (void).cxx_destruct;
 - (BOOL)delegateFirstResponder;
-- (id)_descendentsAcceptingKeyView:(id)arg1;
+- (id)_descendantsAcceptingKeyView:(id)arg1;
 - (void)loadView;
 - (id)placeholderStringForInputNavigableItems:(id)arg1 derivedItems:(id)arg2 inCategory:(id)arg3;
 - (void)invalidateContentView:(id)arg1;
-- (void)pushContentNavigables:(id)arg1 toInstalledSliceExentions:(id)arg2;
+- (void)pushContentNavigables:(id)arg1 toInstalledSlices:(id)arg2;
 - (void)prepareToRemoveContentView:(id)arg1 forSlice:(id)arg2 inCategory:(id)arg3;
 - (void)prepareToAddContentView:(id)arg1 forSlice:(id)arg2 inCategory:(id)arg3;
 - (id)_contentViewForSlice:(id)arg1 inCategory:(id)arg2;
@@ -27,6 +28,8 @@
 - (id)viewControllerForContentView:(id)arg1;
 - (BOOL)documentsNeededForSlices:(id)arg1;
 - (id)editorContributedCategoryExtensionsForNavigable:(id)arg1;
+- (id)selectionProvidingViewController;
+- (id)defaultCategoryFromExtensions:(id)arg1;
 - (id)categoryIdentifiersForEditorExtension:(id)arg1;
 - (id)titleKeyPathForSlice:(id)arg1;
 - (id)titleForSlice:(id)arg1;
@@ -34,7 +37,7 @@
 - (id)slicesForNavigableItems:(id)arg1 inCategory:(id)arg2 withWorkspaceDocument:(id)arg3;
 - (id)navigableItemsForInputNavigableItems:(id)arg1 inCategory:(id)arg2;
 - (id)categoryControllerForCategory:(id)arg1;
-- (id)preferredCategoriesPersistenceKey;
+- (void)viewDidLoad;
 - (void)viewDidInstall;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 

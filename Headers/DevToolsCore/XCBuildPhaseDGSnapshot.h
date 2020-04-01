@@ -4,25 +4,26 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Foundation/NSObject.h>
+#import <objc/NSObject.h>
 
-@class NSArray, NSDictionary, NSString, XCBuildPhaseSpecification, XCTargetDGSnapshot;
+@class DVTMacroDefinitionTable, DVTRegularExpression, NSArray, NSMutableArray, NSMutableDictionary, NSSet, NSString, XCBuildPhaseSpecification;
 
 @interface XCBuildPhaseDGSnapshot : NSObject
 {
-    XCTargetDGSnapshot *_targetSnapshot;
     XCBuildPhaseSpecification *_type;
     NSString *_name;
-    NSDictionary *_buildSettings;
+    DVTMacroDefinitionTable *_buildSettings;
     NSArray *_allBuildRules;
     NSArray *_buildFileRefs;
+    NSMutableArray *_effectiveBuildFileRefs;
+    NSMutableDictionary *_inputFileBucketsByName;
+    DVTRegularExpression *_hiDpiRegex;
+    NSSet *_hiDpiImageLowercaseSuffixes;
     BOOL _runOnlyForDeploymentPostprocessing;
 }
 
 + (id)defaultName;
-- (id)applyBuildRulesToFileReference:(id)arg1 forArchitecture:(id)arg2 inTargetBuildContext:(id)arg3;
-- (id)buildRuleForReference:(id)arg1 architecture:(id)arg2;
-- (id)buildRuleForFileNamed:(id)arg1 ofType:(id)arg2 architecture:(id)arg3;
+- (void).cxx_destruct;
 - (id)buildFilesToCountBaseNames;
 - (BOOL)runOnlyForDeploymentPostprocessing;
 - (id)allBuildRules;
@@ -31,17 +32,18 @@
 - (id)buildSettings;
 - (id)name;
 - (id)type;
-- (id)targetSnapshot;
 - (void)printForDebugging;
-- (void)dealloc;
 - (id)init;
 - (id)initWithTargetSnapshot:(id)arg1;
-- (id)initWithInformationFromBuildPhase:(id)arg1 forTargetSnapshot:(id)arg2;
-- (void)enqueueCommandsOntoWorkQueue:(id)arg1;
-- (void)computeDependenciesInTargetBuildContext:(id)arg1;
-- (void)computeDependenciesForAllBuildFileReferencesInTargetBuildContext:(id)arg1;
-- (void)computeDependenciesForBuildFileReference:(id)arg1 inTargetBuildContext:(id)arg2;
-- (id)filteredBuildFileReferencesForTargetBuildContext:(id)arg1;
+- (id)initWithInformationFromBuildPhase:(id)arg1 forTargetSnapshot:(id)arg2 withResolver:(id)arg3;
+- (void)computeDependenciesWithMacroExpansionScope:(id)arg1;
+- (void)computeDependenciesForAllBuildFileReferencesWithMacroExpansionScope:(id)arg1;
+- (void)computeDependenciesForBuildFileReference:(id)arg1 withMacroExpansionScope:(id)arg2;
+- (id)groupDependencyNode:(id)arg1 ifNecessaryForLaterProcessingWithMacroExpansionScope:(id)arg2;
+- (id)filteredBuildFileReferencesWithMacroExpansionScope:(id)arg1;
+- (BOOL)shouldResolveBuildRulesForFileReferences;
+- (id)buildRuleForReference:(id)arg1 architecture:(id)arg2 withMacroExpansionScope:(id)arg3;
+- (id)buildRuleForDependencyNode:(id)arg1 ofType:(id)arg2 architecture:(id)arg3 withMacroExpansionScope:(id)arg4;
 
 @end
 

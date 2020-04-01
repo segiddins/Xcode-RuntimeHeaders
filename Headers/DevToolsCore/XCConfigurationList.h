@@ -6,14 +6,17 @@
 
 #import <DevToolsCore/PBXProjectItem.h>
 
+#import <DevToolsCore/XCBuildConfigurationOwners-Protocol.h>
 #import <DevToolsCore/XCCompatibilityChecking-Protocol.h>
 
-@class NSMutableArray, NSString;
+@class NSArray, NSMutableArray, NSString, XCBuildConfiguration;
+@protocol XCConfigurationListOwners;
 
-@interface XCConfigurationList : PBXProjectItem <XCCompatibilityChecking>
+@interface XCConfigurationList : PBXProjectItem <XCCompatibilityChecking, XCBuildConfigurationOwners>
 {
     NSMutableArray *_buildConfigurations;
-    id _owner;
+    id <XCConfigurationListOwners> _owner;
+    BOOL _hasOwner;
     NSString *_defaultConfigurationName;
     BOOL _defaultConfigurationIsVisible;
 }
@@ -21,14 +24,14 @@
 + (id)archivableAttributes;
 + (id)archivableRelationships;
 + (id)configurationListWithConfigurations:(id)arg1;
+- (void).cxx_destruct;
 - (void)findFeaturesInUseAndAddToSet:(id)arg1 usingPathPrefix:(id)arg2;
-- (BOOL)buildSettingsDictionaryShouldExtractQuotedBuildSettingsWhenSplitting:(id)arg1;
-- (void)buildSettingsDictionary:(id)arg1 didSetValue:(id)arg2 withOperation:(int)arg3 forKeyPath:(id)arg4;
-- (id)buildSettingsDictionary:(id)arg1 willSetValue:(id)arg2 withOperation:(int)arg3 forKeyPath:(id)arg4;
-- (id)localBuildSettingsDictionariesForAllConfigurations;
-- (id)flattenedBuildSettingDictionaryForConfigurationName:(id)arg1;
+- (void)macroDefinitionTable:(id)arg1 didSetValue:(id)arg2 forMacroName:(id)arg3 conditionSet:(id)arg4;
+- (void)macroDefinitionTable:(id)arg1 willSetValue:(id)arg2 forMacroName:(id)arg3 conditionSet:(id)arg4;
+@property(readonly) NSArray *localBuildSettingsDictionariesForAllConfigurations;
 - (id)buildSettingDictionariesForConfigurationName:(id)arg1 errors:(id *)arg2;
-- (void)baseConfigurationReferenceChangedForConfigurationNamed:(id)arg1;
+- (void)notifyThatBaseConfigurationReferenceChangedForConfigurationNamed:(id)arg1;
+- (void)invalidateCachesBecauseBaseConfigurationReferenceChangedForConfigurationNamed:(id)arg1;
 - (id)effectiveBuildConfigurationForName:(id)arg1;
 - (id)buildConfigurationForName:(id)arg1;
 - (BOOL)buildConfigurationExistsForName:(id)arg1;
@@ -36,27 +39,33 @@
 - (void)removeObjectFromBuildConfigurationsAtIndex:(unsigned long long)arg1;
 - (void)addBuildConfiguration:(id)arg1;
 - (void)insertObject:(id)arg1 inBuildConfigurationsAtIndex:(unsigned long long)arg2;
-- (id)buildConfigurationNames;
-- (unsigned long long)countOfBuildConfigurations;
+@property(readonly) NSArray *buildConfigurationNames;
+@property(readonly) unsigned long long countOfBuildConfigurations;
 - (void)referenceWillBeRemoved:(id)arg1;
 - (void)invalidateCaches;
 - (id)container;
 - (id)gidCommentForArchive;
 - (void)_setBuildConfigurations:(id)arg1;
-- (id)defaultConfiguration;
-- (void)setDefaultConfigurationIsVisible:(BOOL)arg1;
-- (BOOL)defaultConfigurationIsVisible;
-- (void)setDefaultConfigurationName:(id)arg1;
-- (id)defaultConfigurationName;
+@property(readonly) XCBuildConfiguration *defaultConfiguration;
+@property BOOL defaultConfigurationIsVisible;
+@property(retain) NSString *defaultConfigurationName;
+@property(readonly) NSString *configurationTableDebugLabel;
 - (void)_setOwner:(id)arg1;
-- (id)owner;
-- (id)baseConfigurationList;
-- (id)buildConfigurations;
+@property(readonly) id <XCConfigurationListOwners> owner;
+@property(readonly) XCConfigurationList *baseConfigurationList;
+@property(readonly) NSArray *buildConfigurations;
 - (void)appendSpotlightDescriptionToString:(id)arg1;
 - (void)dealloc;
+- (void)invalidate;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)init;
 - (id)initWithConfigurations:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

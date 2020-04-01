@@ -9,38 +9,44 @@
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBDocumentArchiving-Protocol.h>
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBUIAttributedTextContainer-Protocol.h>
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBUITextInputTraits-Protocol.h>
-#import <IDEInterfaceBuilderCocoaTouchIntegration/NSCoding-Protocol.h>
 
-@class IBUIFontDescription, IBUITextInputTraits, NSAttributedString, NSColor, NSString;
+@class IBUIColor, IBUIFontDescription, IBUITextInputTraits, NSAttributedString, NSString;
 
-@interface IBUITextView : IBUIScrollView <IBDocumentArchiving, NSCoding, IBUIAttributedTextContainer, IBUITextInputTraits>
+@interface IBUITextView : IBUIScrollView <IBDocumentArchiving, IBUIAttributedTextContainer, IBUITextInputTraits>
 {
-    NSString *text;
-    IBUIFontDescription *fontDescription;
-    NSColor *textColor;
-    BOOL editable;
-    BOOL selectable;
-    int textAlignment;
-    IBUITextInputTraits *textInputTraits;
-    unsigned long long dataDetectorTypes;
-    NSAttributedString *attributedText;
-    BOOL usesAttributedText;
-    BOOL allowsEditingTextAttributes;
+    BOOL _usesAttributedText;
+    BOOL _editable;
+    BOOL _adjustsFontForContentSizeCategory;
+    BOOL _allowsEditingTextAttributes;
+    BOOL _selectable;
+    NSAttributedString *_attributedText;
+    IBUIFontDescription *_fontDescription;
+    NSString *_text;
+    long long _textAlignment;
+    IBUIColor *_textColor;
+    IBUITextInputTraits *_textInputTraits;
+    unsigned long long _dataDetectorTypes;
 }
 
 + (void)registerMarshallingRecordHandlers;
 + (BOOL)ibSupportsCocoaTouchAccessibility;
++ (id)keyPathsForValuesAffectingIbInspectedAttributedText;
++ (id)keyPathsForValuesAffectingIbInspectedText;
++ (id)keyPathsForValuesAffectingIbInspectedUsesAttributedText;
 + (id)ibInstantiateViewForRole:(long long)arg1 withTargetRuntime:(id)arg2 documentClass:(Class)arg3 assetIdentifier:(id)arg4;
-@property(nonatomic) int textAlignment; // @synthesize textAlignment;
-@property(nonatomic) BOOL editable; // @synthesize editable;
-@property(copy, nonatomic) NSString *text; // @synthesize text;
-@property(copy, nonatomic) NSColor *textColor; // @synthesize textColor;
-@property(nonatomic) BOOL selectable; // @synthesize selectable;
-@property(nonatomic) unsigned long long dataDetectorTypes; // @synthesize dataDetectorTypes;
-@property(nonatomic) BOOL allowsEditingTextAttributes; // @synthesize allowsEditingTextAttributes;
-@property(nonatomic) BOOL usesAttributedText; // @synthesize usesAttributedText;
-@property(copy, nonatomic) NSAttributedString *attributedText; // @synthesize attributedText;
+@property(nonatomic) BOOL selectable; // @synthesize selectable=_selectable;
+@property(nonatomic) unsigned long long dataDetectorTypes; // @synthesize dataDetectorTypes=_dataDetectorTypes;
+@property(nonatomic) BOOL allowsEditingTextAttributes; // @synthesize allowsEditingTextAttributes=_allowsEditingTextAttributes;
+@property(nonatomic) BOOL adjustsFontForContentSizeCategory; // @synthesize adjustsFontForContentSizeCategory=_adjustsFontForContentSizeCategory;
+@property(nonatomic) BOOL editable; // @synthesize editable=_editable;
+@property(nonatomic) BOOL usesAttributedText; // @synthesize usesAttributedText=_usesAttributedText;
+@property(copy, nonatomic) IBUIColor *textColor; // @synthesize textColor=_textColor;
+@property(nonatomic) long long textAlignment; // @synthesize textAlignment=_textAlignment;
+@property(copy, nonatomic) NSString *text; // @synthesize text=_text;
+@property(copy, nonatomic) NSAttributedString *attributedText; // @synthesize attributedText=_attributedText;
 - (void).cxx_destruct;
+- (void)unarchiveTextColor:(id)arg1;
+- (void)archiveTextColor:(id)arg1;
 - (void)decodeFont:(id)arg1;
 - (void)encodeFont:(id)arg1;
 - (void)unarchiveFont:(id)arg1;
@@ -49,28 +55,44 @@
 - (void)encodeAttributedText:(id)arg1;
 - (void)unarchiveAttributedText:(id)arg1;
 - (void)archiveAttributedText:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)localExtraMarshalledAttributesKeyPaths;
-@property(retain, nonatomic) IBUITextInputTraits *textInputTraits;
+@property(retain, nonatomic) IBUITextInputTraits *textInputTraits; // @synthesize textInputTraits=_textInputTraits;
 - (void)setFontDescription:(id)arg1;
 @property(readonly, copy, nonatomic) IBUIFontDescription *fontDescription;
 @property(readonly) IBUIFontDescription *defaultFontDescription;
 - (unsigned long long)ibDefaultAccessibilityTraits;
 - (BOOL)ibIsAccessibilityElementByDefault;
-- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
-- (void)archiveWithDocumentArchiver:(id)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (id)ibCompiledValueForKeyPath:(id)arg1 withPropertyStorage:(id)arg2 inConfiguration:(id)arg3;
+- (id)ibInspectedAttributedText;
+- (void)setIbInspectedAttributedText:(id)arg1;
+- (id)ibInspectedText;
+- (void)setIbInspectedText:(id)arg1;
+- (BOOL)ibInspectedUsesAttributedText;
+- (void)setIbInspectedUsesAttributedText:(BOOL)arg1;
+- (CDUnknownBlockType)ibInspectedAttributedTextFilter;
+- (void)ibTakeValue:(id)arg1 forInspectedConfigurableProperty:(id)arg2 inConfiguration:(id)arg3;
+- (id)ibCompiledValueForKeyPath:(id)arg1 withPropertyStorage:(id)arg2 inConfiguration:(id)arg3 context:(id)arg4;
 - (id)ibValueForInspectedConfigurableProperty:(id)arg1 inConfiguration:(id)arg2;
+- (id)ibUnarchiveValueForAttribute:(id)arg1 inConfiguration:(id)arg2 withDocumentUnarchiver:(id)arg3;
+- (void)ibArchiveEvaluatedValue:(id)arg1 forAttribute:(id)arg2 inConfiguration:(id)arg3 withDocumentArchiver:(id)arg4;
+- (id)ibLocalPerConfigurationAttributeKeyPaths;
+- (long long)ibPreferredResizeDirectionMask;
 - (BOOL)ibOverridesFrameworkMetricsForPreferredSize;
 - (id)ibFontFromFontDescription;
 - (id)ibDefaultFontKeyPath;
-- (void)ibWarnings:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
+- (void)ibPopulateIssues:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
+- (BOOL)ibAllowsScrollingInEditor;
 - (BOOL)ibWantsBoundsIndicatorDuringTracking;
 - (id)ibFieldEditorConfigurationForTextKeyPath:(id)arg1;
 - (struct CGRect)ibInlineTextEditingRectForKeyPath:(id)arg1;
 - (id)ibTextKeyPathForDefaultInlineStringEditing;
 - (Class)ibEditorClass;
+- (id)ibLocalLocalizableStringsAttributeKeyPaths;
+- (id)ibLocalAdditionalLocalizableAttributeKeyPaths;
+- (id)ibLocalAttributeKeyPaths;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

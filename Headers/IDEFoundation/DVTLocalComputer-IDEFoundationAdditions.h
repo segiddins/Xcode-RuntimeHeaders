@@ -7,7 +7,21 @@
 #import <DVTFoundation/DVTLocalComputer.h>
 
 @interface DVTLocalComputer (IDEFoundationAdditions)
++ (BOOL)isTargetBootstrapInjectionSupportedOnVersion:(id)arg1 buildVersion:(id)arg2 internal:(BOOL)arg3 overrideValue:(id)arg4;
 - (void)showTodayViewForExtensions:(id)arg1 pid:(int)arg2;
 - (BOOL)canBeDefaultDeviceForBuildable:(id)arg1 buildParameters:(id)arg2;
+- (id)connectionServicesFrameworkPath;
+- (id)additionalTestRunnerEnvironmentVariablesForBuildableProduct:(id)arg1 buildParameters:(id)arg2;
+- (id)internalSystemTestBundleInjectionLibraryPathForBuildableProduct:(id)arg1 buildParameters:(id)arg2;
+- (id)internalSystemTestingToolPathForBuildableProduct:(id)arg1 buildParameters:(id)arg2;
+- (id)testRunnerSessionForConfiguration:(id)arg1;
+- (void)requestTestDaemonControlSessionWithCompletion:(CDUnknownBlockType)arg1;
+- (BOOL)requiresLocalTCCPermissionForUITesting;
+- (BOOL)usesTestDaemonForUIRecording;
+- (id)automationFrameworkPath;
+- (id)targetBootstrapInjectionPath;
+- (BOOL)supportsTargetBootstrapInjection;
+- (BOOL)supportsTestDaemonControlSession;
+- (BOOL)supportsOverridingTestingToolPath;
 @end
 

@@ -6,43 +6,43 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSDictionary, NSSet, NSString;
+@class DVTPortalPlatform, DVTPortalProfilePurpose, NSArray, NSString;
 
 @interface IDEDistributionMethod : NSObject
 {
-    NSSet *_requiredTeamTypes;
 }
 
-@property(readonly) NSSet *requiredTeamTypes; // @synthesize requiredTeamTypes=_requiredTeamTypes;
-- (void).cxx_destruct;
+- (BOOL)_validateArchs:(id)arg1 logAspect:(id)arg2 error:(id *)arg3;
+- (BOOL)areDistributionItemsEligible:(id)arg1 destination:(long long)arg2 logAspect:(id)arg3 error:(id *)arg4;
+- (BOOL)requireHardenedRuntimeForDestination:(long long)arg1;
+- (id)distributionFinishedButtonTitleForDestination:(long long)arg1;
+- (id)exportDescription;
+- (id)uploadDescription;
+@property(readonly) NSArray *distributionOptionIdentifiers;
+@property(readonly) BOOL hasPostUploadProcessing;
 @property(readonly) BOOL supportsCustomToolchains;
 @property(readonly) BOOL supportsFreeProvisioning;
-@property(readonly) NSString *summaryPaneNextButtonTitleOverride;
-@property(readonly) BOOL requiresDeveloperAccount;
-@property(readonly) NSString *packagingStepIdentifier;
+- (id)packagingStepIdentifierForDestination:(long long)arg1;
 @property(readonly) NSString *exportStepName;
-@property(readonly) NSDictionary *requiredProfileEntitlements;
-@property(readonly) unsigned long long provisioningProfilePurpose;
-@property(readonly) NSArray *availableICloudEnvironmentsOverride;
-@property(readonly) NSString *provisioningProfilePlatform;
-@property(readonly) BOOL wantsProvisioningProfiles;
+@property(readonly) DVTPortalProfilePurpose *provisioningProfilePurpose;
+@property(readonly) DVTPortalPlatform *provisioningProfilePlatform;
+@property(readonly) long long wantsProvisioningProfiles;
 @property(readonly) NSString *installerCertificateKind;
 @property(readonly) NSString *certificateKind;
-@property(readonly) NSArray *orderedDistributionStepViewControllerClassNames;
-@property(readonly) NSArray *orderedDistributionStepModelClassNames;
-@property(readonly) NSArray *orderedDistributionStepClassNames;
+- (id)orderedDistributionStepViewControllerClassNamesForDestination:(long long)arg1;
+- (id)orderedDistributionStepModelClassNamesForDestination:(long long)arg1;
+- (id)orderedDistributionStepClassNamesForDestination:(long long)arg1;
 @property(readonly) NSString *subtitle;
 @property(readonly) NSString *shortTitle;
 @property(readonly) NSString *title;
 @property(readonly) NSString *commandLineName;
+- (id)commandLineNameForTask:(long long)arg1 destination:(long long)arg2;
 @property(readonly) BOOL supportsManifestDistribution;
 @property(readonly, getter=isAppStoreBound) BOOL appStoreBound;
-@property(readonly) int supportedTask;
+@property(readonly) NSArray *supportedDestinations;
+@property(readonly) long long supportedTask;
 - (_Bool)supportsDistributionOfArchive:(id)arg1;
-@property(readonly) NSString *group;
 @property(readonly) double sortOrder;
-@property(readonly) NSString *taskNoun;
-@property(readonly) NSString *taskVerb;
 
 @end
 

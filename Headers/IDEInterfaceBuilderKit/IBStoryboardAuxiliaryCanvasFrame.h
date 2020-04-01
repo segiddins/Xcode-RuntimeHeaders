@@ -14,7 +14,6 @@
 - (id)accessibilityChildren;
 - (void)setTitle:(id)arg1;
 - (id)titleView;
-- (void)drawRect:(struct CGRect)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

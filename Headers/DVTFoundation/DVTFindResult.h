@@ -9,13 +9,12 @@
 #import <DVTFoundation/NSCoding-Protocol.h>
 #import <DVTFoundation/NSCopying-Protocol.h>
 
-@class DVTDocumentLocation, DVTFindDescriptor, NSDictionary, NSString;
+@class DVTDocumentLocation, NSDictionary, NSString;
 
 @interface DVTFindResult : NSObject <NSCopying, NSCoding>
 {
     int _replaceState;
     DVTDocumentLocation *_location;
-    DVTFindDescriptor *_findDescriptor;
     NSString *_contextString;
     NSString *_replacedString;
     DVTDocumentLocation *_replacedLocation;
@@ -30,7 +29,6 @@
 @property int replaceState; // @synthesize replaceState=_replaceState;
 @property(readonly) struct _NSRange contextRange; // @synthesize contextRange=_contextRange;
 @property(readonly) NSString *contextString; // @synthesize contextString=_contextString;
-@property(readonly) DVTFindDescriptor *findDescriptor; // @synthesize findDescriptor=_findDescriptor;
 @property(readonly) DVTDocumentLocation *location; // @synthesize location=_location;
 - (void).cxx_destruct;
 - (id)copyWithContextString:(id)arg1 contextRange:(struct _NSRange)arg2 userInfo:(id)arg3;
@@ -40,7 +38,7 @@
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)description;
-- (id)initWithFoundLocation:(id)arg1 withRange:(struct _NSRange)arg2 inContext:(id)arg3 foundUsingDescriptor:(id)arg4;
+- (id)initWithFoundLocation:(id)arg1 withRange:(struct _NSRange)arg2 inContext:(id)arg3;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

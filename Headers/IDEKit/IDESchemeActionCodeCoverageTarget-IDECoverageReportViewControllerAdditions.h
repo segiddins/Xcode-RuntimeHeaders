@@ -18,7 +18,6 @@
 @property(readonly, copy, nonatomic) NSString *ide_coverage_title;
 @property(readonly, copy, nonatomic) NSArray *ide_coverage_files;
 @property(readonly, nonatomic) unsigned long long ide_coverage_filesCount;
-@property(readonly, copy, nonatomic) NSString *ide_coverage_identifier;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

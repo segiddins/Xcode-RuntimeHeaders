@@ -11,6 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
++ (BOOL)supportsSecureCoding;
 - (BOOL)waitOnGPU;
 - (void)log;
 - (id)initWithDictionary:(id)arg1;

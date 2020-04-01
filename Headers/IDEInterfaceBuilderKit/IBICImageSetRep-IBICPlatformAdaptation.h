@@ -6,7 +6,24 @@
 
 #import <IBFoundation/IBICImageSetRep.h>
 
-@interface IBICImageSetRep (IBICPlatformAdaptation)
-- (BOOL)validateSlottedAssetRepForWriting:(id)arg1 withOptions:(id)arg2 returningSuccessIssue:(id *)arg3 andFailureIssue:(id *)arg4;
+#import <IDEInterfaceBuilderKit/IBICMediaResourceProvider-Protocol.h>
+
+@class NSString;
+
+@interface IBICImageSetRep (IBICPlatformAdaptation) <IBICMediaResourceProvider>
++ (id)keyPathsForValuesAffectingIbInspectedResizingBehavior;
+- (BOOL)validateSlottedAssetRepForWriting:(id)arg1 withOptions:(id)arg2 andFailureIssue:(id *)arg3;
+- (id)mediaResource;
+- (BOOL)shouldIncludeInMediaLibrary;
+- (void)populateChildrenForInclusionInMediaLibrary:(id)arg1;
+@property(nonatomic) struct NSEdgeInsets ibInspectedAlignmentInsets;
+- (void)setIbInspectedResizingBehavior:(id)arg1;
+- (id)ibInspectedResizingBehavior;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @end
 

@@ -10,7 +10,7 @@
 
 @interface DVTPortalPlatform : NSObject
 {
-    NSString *_xcodeportalIdentifier;
+    NSString *_portalProgramExtensionPointIdentifier;
     NSString *_provisioningProfilePlatformIdentifier;
     NSString *_portalSubplatformIdentifier;
     NSSet *_portalDeviceClasses;
@@ -18,15 +18,21 @@
     NSString *_identifier;
     DVTPlatform *_platform;
     NSString *_parentPlatformIdentifier;
+    NSString *_defaultSDKVariant;
 }
 
 + (id)portalPlatformsForPortalPrograms:(id)arg1;
++ (id)portalPlatformsForProvisioningProfilePlatformIdentifiers:(id)arg1;
++ (id)portalPlatformsForProvisioningProfilePlatformIdentifier:(id)arg1;
++ (id)portalPlatformForPortalDeviceClass:(id)arg1;
 + (id)portalPlatformWithIdentifier:(id)arg1;
 + (id)portalPlatformWithPlatform:(id)arg1;
 + (id)_portalIdentifierToPortalPlatformsMap;
 + (id)_extensionPointIdentifierToPortalPlatformMap;
++ (id)_portalDeviceClassToPortalPlatformMap;
 + (id)_platformIdentifierToPortalPlatformsMap;
 + (id)portalPlatforms;
+@property(readonly) NSString *defaultSDKVariant; // @synthesize defaultSDKVariant=_defaultSDKVariant;
 @property(readonly) NSString *parentPlatformIdentifier; // @synthesize parentPlatformIdentifier=_parentPlatformIdentifier;
 @property(readonly, nonatomic) DVTPlatform *platform; // @synthesize platform=_platform;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
@@ -34,12 +40,13 @@
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)profileTypeForPurpose:(id)arg1;
-@property(readonly, nonatomic) NSDictionary *profileTypesByPurposeName; // @synthesize profileTypesByPurposeName=_profileTypesByPurposeName;
+- (id)profileTypeForPurpose:(id)arg1 sdkVariant:(id)arg2;
+@property(readonly) NSDictionary *profileTypesByPurposeName; // @synthesize profileTypesByPurposeName=_profileTypesByPurposeName;
 @property(readonly, nonatomic) NSSet *portalDeviceClasses; // @synthesize portalDeviceClasses=_portalDeviceClasses;
 @property(readonly, nonatomic) NSString *portalSubplatformIdentifier; // @synthesize portalSubplatformIdentifier=_portalSubplatformIdentifier;
 @property(readonly, nonatomic) NSString *provisioningProfilePlatformIdentifier; // @synthesize provisioningProfilePlatformIdentifier=_provisioningProfilePlatformIdentifier;
 @property(readonly, nonatomic) DVTPortalProgram *portalProgram;
-@property(readonly) NSString *xcodeportalIdentifier; // @synthesize xcodeportalIdentifier=_xcodeportalIdentifier;
+@property(readonly) NSString *portalProgramExtensionPointIdentifier; // @synthesize portalProgramExtensionPointIdentifier=_portalProgramExtensionPointIdentifier;
 - (id)parentPortalPlatform;
 
 @end

@@ -10,13 +10,13 @@
 
 @interface Xcode3CopyFilesBuildPhaseViewController_Destination : NSObject
 {
-    int _wrapperPart;
     NSString *_title;
+    long long _wrapperPart;
     NSString *_subPath;
 }
 
 @property(retain) NSString *subPath; // @synthesize subPath=_subPath;
-@property int wrapperPart; // @synthesize wrapperPart=_wrapperPart;
+@property long long wrapperPart; // @synthesize wrapperPart=_wrapperPart;
 @property(retain) NSString *title; // @synthesize title=_title;
 - (void).cxx_destruct;
 

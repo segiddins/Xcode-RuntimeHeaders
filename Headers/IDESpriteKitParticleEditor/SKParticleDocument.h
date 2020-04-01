@@ -30,6 +30,7 @@
 - (Class)unarchiver:(id)arg1 cannotDecodeObjectOfClassName:(id)arg2 originalClasses:(id)arg3;
 - (BOOL)_processEmitterNode:(id)arg1 fromFileInfo:(id)arg2 error:(id *)arg3;
 - (BOOL)readFromURL:(id)arg1 ofType:(id)arg2 error:(id *)arg3;
+- (id)namedAssets;
 - (id)ideTopLevelStructureObjects;
 - (id)fileDataType;
 - (void)editorDocumentWillClose;

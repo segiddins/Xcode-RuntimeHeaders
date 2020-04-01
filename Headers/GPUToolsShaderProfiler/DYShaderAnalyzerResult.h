@@ -6,12 +6,12 @@
 
 #import <objc/NSObject.h>
 
-#import <GPUToolsShaderProfiler/NSCoding-Protocol.h>
 #import <GPUToolsShaderProfiler/NSCopying-Protocol.h>
+#import <GPUToolsShaderProfiler/NSSecureCoding-Protocol.h>
 
-@class NSDictionary;
+@class NSArray, NSDictionary;
 
-@interface DYShaderAnalyzerResult : NSObject <NSCoding, NSCopying>
+@interface DYShaderAnalyzerResult : NSObject <NSSecureCoding, NSCopying>
 {
     double _instructionCount;
     double _instructionCountMin;
@@ -21,8 +21,13 @@
     NSDictionary *_drawCallCost;
     NSDictionary *_drawCallPerLineCost;
     NSDictionary *_perFileCost;
+    NSDictionary *_sourceInfo;
+    NSArray *_binaryDisassemblyInfo;
 }
 
++ (BOOL)supportsSecureCoding;
+@property(retain, nonatomic) NSArray *binaryDisassemblyInfo; // @synthesize binaryDisassemblyInfo=_binaryDisassemblyInfo;
+@property(retain, nonatomic) NSDictionary *sourceInfo; // @synthesize sourceInfo=_sourceInfo;
 @property(retain, nonatomic) NSDictionary *perFileCost; // @synthesize perFileCost=_perFileCost;
 @property(retain, nonatomic) NSDictionary *drawCallPerLineCost; // @synthesize drawCallPerLineCost=_drawCallPerLineCost;
 @property(retain, nonatomic) NSDictionary *drawCallCost; // @synthesize drawCallCost=_drawCallCost;

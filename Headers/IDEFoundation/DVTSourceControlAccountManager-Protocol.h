@@ -6,16 +6,17 @@
 
 #import <IDEFoundation/NSObject-Protocol.h>
 
-@class DVTSourceControlAccount, DVTSourceControlAuthenticationStrategy, DVTSourceControlRemoteRepository, DVTSourceControlSystem, NSOrderedSet, NSString, NSURL;
+@class DVTSourceControlAuthenticationStrategy, DVTSourceControlRemoteRepository, DVTSourceControlSystem, NSArray, NSString, NSURL;
+@protocol DVTSourceControlAccount;
 
 @protocol DVTSourceControlAccountManager <NSObject>
-@property(readonly) NSOrderedSet *knownRepositories;
-- (void)removeAccount:(DVTSourceControlAccount *)arg1;
-- (void)addAccount:(DVTSourceControlAccount *)arg1;
-- (void)accountChanged:(DVTSourceControlAccount *)arg1 previousUsername:(NSString *)arg2;
-- (NSString *)existingFingerprintForRepository:(DVTSourceControlRemoteRepository *)arg1;
-- (DVTSourceControlAccount *)existingAccountForRepository:(DVTSourceControlRemoteRepository *)arg1 authenticationStrategy:(DVTSourceControlAuthenticationStrategy *)arg2 createIfNeeded:(BOOL)arg3;
-- (DVTSourceControlAccount *)existingAccountLikeAccount:(DVTSourceControlAccount *)arg1 addingIfNew:(BOOL)arg2;
+- (DVTSourceControlAuthenticationStrategy *)authenticationStrategyForURL:(NSURL *)arg1 usingAccount:(id <DVTSourceControlAccount>)arg2;
+- (void)removeAccount:(id <DVTSourceControlAccount>)arg1;
+- (void)addAccount:(id <DVTSourceControlAccount>)arg1;
+- (void)accountChanged:(id <DVTSourceControlAccount>)arg1 previousUsername:(NSString *)arg2;
+- (id <DVTSourceControlAccount>)existingAccountForRepository:(DVTSourceControlRemoteRepository *)arg1 authenticationStrategy:(DVTSourceControlAuthenticationStrategy *)arg2 createIfNeeded:(BOOL)arg3;
+- (id <DVTSourceControlAccount>)existingAccountLikeAccount:(id <DVTSourceControlAccount>)arg1 addingIfNew:(BOOL)arg2;
 - (DVTSourceControlRemoteRepository *)knownRepositoryForURL:(NSURL *)arg1 sourceControlSystem:(DVTSourceControlSystem *)arg2;
+@property(nonatomic, readonly) NSArray *knownRepositories;
 @end
 

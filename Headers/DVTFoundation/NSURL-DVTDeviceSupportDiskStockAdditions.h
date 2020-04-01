@@ -7,11 +7,16 @@
 #import <Foundation/NSURL.h>
 
 #import <DVTFoundation/DVTDiskStockMember-Protocol.h>
+#import <DVTFoundation/DVTSimpleSerialization-Protocol.h>
 
 @class DVTFilePath, NSDate, NSObject, NSString;
 @protocol DVTDiskStock;
 
-@interface NSURL (DVTDeviceSupportDiskStockAdditions) <DVTDiskStockMember>
+@interface NSURL (DVTDeviceSupportDiskStockAdditions) <DVTDiskStockMember, DVTSimpleSerialization>
++ (id)dvt_xcodeHelpURLWithAnchor:(id)arg1;
++ (id)dvt_URLWithScheme:(id)arg1 path:(id)arg2 documentParameters:(id)arg3 locationParameters:(id)arg4;
++ (id)dvt_fileURLWithAbsoluteOrRelativePath:(id)arg1;
++ (id)dvt_emptyURL;
 - (void)diskStockManager:(id)arg1 didCullThisMemberFromDiskStock:(id)arg2;
 - (BOOL)diskStockManager:(id)arg1 willCullThisMemberFromDiskStock:(id)arg2;
 - (long long)diskStockMemberCompareTo:(id)arg1;
@@ -22,6 +27,14 @@
 - (BOOL)_markedAsKept;
 - (void)_markAsKept:(BOOL)arg1;
 - (id)_deviceSupportInfo;
+- (id)dvt_extractingLocationParametersWithNames:(id)arg1 updatedURL:(id *)arg2;
+- (id)dvt_locationParameters;
+- (id)dvt_extractingDocumentParametersWithNames:(id)arg1 updatedURL:(id *)arg2;
+- (id)dvt_documentParameters;
+- (id)dvt_sanitizedFilePath;
+- (BOOL)dvt_isGeneneratedInterface;
+- (BOOL)dvt_isEmptyURL;
+- (unsigned int)dvt_secProtocol;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

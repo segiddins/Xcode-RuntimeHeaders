@@ -17,6 +17,8 @@
 @property(readonly, copy, nonatomic) NSString *ide_coverage_title;
 @property(readonly, nonatomic) unsigned long long ide_coverage_targetCount;
 @property(readonly, copy, nonatomic) NSArray *ide_coverage_targets;
+- (void)setSortedTargets:(id)arg1;
+- (id)sortedTargets;
 @property(readonly, copy, nonatomic) NSString *ide_coverage_identifier;
 @property(readonly, copy, nonatomic) NSArray *ide_coverage_devices;
 @property(readonly, nonatomic) BOOL ide_coverage_supportsJumpToSourceEditor;
@@ -24,6 +26,7 @@
 @property(readonly, nonatomic) BOOL ide_coverage_showChangeColumn;
 
 // Remaining properties
+@property(readonly, nonatomic) NSArray *creationErrors;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;

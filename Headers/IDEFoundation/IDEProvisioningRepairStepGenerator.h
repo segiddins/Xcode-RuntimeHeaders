@@ -8,17 +8,14 @@
 
 @interface IDEProvisioningRepairStepGenerator : NSObject
 {
+    BOOL _runningInIDE;
 }
 
-- (id)_createProfileStepWithCharacteristics:(id)arg1;
-- (BOOL)_areDevicesRegisteredWithSession:(id)arg1 context:(id)arg2 devices:(id)arg3 missingDevices:(id *)arg4 error:(id *)arg5;
-- (id)_registerDeviceRepairStepWithDevice:(id)arg1 team:(id)arg2;
-- (BOOL)_evaluateDevicesWithSession:(id)arg1 context:(id)arg2 repairable:(id)arg3 steps:(id)arg4 userAction:(id *)arg5 error:(id *)arg6;
-- (BOOL)_evaluateCertificatesWithSession:(id)arg1 context:(id)arg2 repairable:(id)arg3 steps:(id)arg4 userAction:(id *)arg5 error:(id *)arg6;
-- (id)_createCertificateRepairStepWithCertificateType:(id)arg1;
-- (BOOL)_isUnderLimitForCertificateType:(id)arg1 certificates:(id)arg2 context:(id)arg3;
-- (BOOL)_hasAtLeastOneCertificateLocally:(id)arg1 context:(id)arg2;
++ (id)generatorForProvisioningStyle:(long long)arg1;
++ (id)generatorForProvisioningStyle:(long long)arg1 runningInIDE:(BOOL)arg2;
+@property BOOL runningInIDE; // @synthesize runningInIDE=_runningInIDE;
 - (id)stepsWithSession:(id)arg1 context:(id)arg2 userAction:(id *)arg3 error:(id *)arg4;
+- (id)initForProvisioningStyle:(long long)arg1;
 
 @end
 

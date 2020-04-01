@@ -7,33 +7,43 @@
 #import <DevToolsCore/XCCompilerSpecification.h>
 
 @class NSString;
+@protocol DVTMacroExpansion;
 
 @interface PBXCompilerSpecificationGcc : XCCompilerSpecification
 {
     NSString *_rawGccVersionString;
+    NSString<DVTMacroExpansion> *_executionDescriptionForPrecompileCommands;
+    NSString<DVTMacroExpansion> *_progressDescriptionForPrecompileCommands;
 }
 
-+ (id)systemGccVersionStringForDomain:(id)arg1;
-- (id)computeDependenciesForInputFile:(id)arg1 ofType:(id)arg2 variant:(id)arg3 architecture:(id)arg4 outputDirectory:(id)arg5 inTargetBuildContext:(id)arg6;
-- (void)rememberCompilerDriverForLinkingInTargetBuildContext:(id)arg1;
-- (void)addIdentifierToListOfCompilersUsedInTargetBuildContext:(id)arg1;
-- (id)compileSourceCodeFileAtPath:(id)arg1 ofType:(id)arg2 toOutputDirectory:(id)arg3 inTargetBuildContext:(id)arg4;
-- (id)precompileHeaderFileAtPath:(id)arg1 forSourceFileOfType:(id)arg2 withExtraFlags:(id)arg3 toPrecompPath:(id)arg4 inTargetBuildContext:(id)arg5;
-- (BOOL)dwarfSymbolRepositoryIsEnabledInTargetBuildContext:(id)arg1;
-- (BOOL)symbolSeparationIsEnabledInTargetBuildContext:(id)arg1;
-- (id)effectiveCompilerSpecificationForFileType:(id)arg1 inPropertyExpansionContext:(id)arg2 platformDomain:(id)arg3;
-- (id)builtinMacroDefinitionsInBuildContext:(id)arg1 forLanguageDialect:(id)arg2;
-- (id)builtinFrameworkSearchPathsInBuildContext:(id)arg1 forLanguageDialect:(id)arg2;
-- (id)builtinBracketSearchPathsInBuildContext:(id)arg1 forLanguageDialect:(id)arg2;
-- (id)builtinQuoteSearchPathsInBuildContext:(id)arg1 forLanguageDialect:(id)arg2;
++ (id)effectiveCompilerSpecificationForIdentifierStem:(id)arg1 requestedVersion:(id)arg2 forSDK:(id)arg3;
++ (id)effectiveCompilerSpecificationForIdentifierStem:(id)arg1 requestedVersion:(id)arg2 platformDomain:(id)arg3;
++ (id)defaultCompilerVersionStringForSDK:(id)arg1;
++ (id)defaultCompilerVersionStringForMacroExpansionScope:(id)arg1;
+- (void).cxx_destruct;
+- (id)progressDescriptionForPrecompileCommands;
+- (id)executionDescriptionForPrecompileCommands;
+- (id)computeDependenciesForInputNodes:(id)arg1 ofType:(id)arg2 variant:(id)arg3 architecture:(id)arg4 outputDirectory:(id)arg5 withMacroExpansionScope:(id)arg6;
+- (void)rememberCompilerDriverForLinkingWithMacroExpansionScope:(id)arg1;
+- (void)addIdentifierToListOfCompilersUsedWithMacroExpansionScope:(id)arg1;
+- (id)compileSourceCodeFileAtPath:(id)arg1 ofType:(id)arg2 toOutputDirectory:(id)arg3 withMacroExpansionScope:(id)arg4;
+- (id)precompileHeaderFileAtPath:(id)arg1 forSourceFileOfType:(id)arg2 withExtraFlags:(id)arg3 toPrecompPath:(id)arg4 withMacroExpansionScope:(id)arg5;
+- (id)effectiveCompilerSpecificationForFileType:(id)arg1 withMacroExpansionScope:(id)arg2 forSDK:(id)arg3;
+- (id)builtinMacroDefinitionsWithMacroExpansionScope:(id)arg1 forLanguageDialect:(id)arg2;
+- (id)builtinFrameworkSearchPathsWithMacroExpansionScope:(id)arg1 forLanguageDialect:(id)arg2;
+- (id)builtinBracketSearchPathsWithMacroExpansionScope:(id)arg1 forLanguageDialect:(id)arg2;
+- (id)builtinQuoteSearchPathsWithMacroExpansionScope:(id)arg1 forLanguageDialect:(id)arg2;
 - (id)compilerDriverRawVersionString;
-- (id)compilerDriverVersionStringInBuildContext:(id)arg1;
-- (id)discoveredCompilerDriverInfoInBuildContext:(id)arg1 forLanguageDialect:(id)arg2;
-- (id)executablePathInTargetBuildContext:(id)arg1;
-- (id)executablePathInTargetBuildContext:(id)arg1 forLanguageDialect:(id)arg2;
+- (id)compilerDriverTargetStringWithMacroExpansionScope:(id)arg1;
+- (id)versionWithMacroExpansionScope:(id)arg1;
+- (id)compilerDriverVersionStringWithMacroExpansionScope:(id)arg1;
+- (id)discoveredCompilerDriverInfoWithMacroExpansionScope:(id)arg1 forLanguageDialect:(id)arg2;
+- (id)executablePathWithMacroExpansionScope:(id)arg1;
+- (id)executablePathWithMacroExpansionScope:(id)arg1 forLanguageDialect:(id)arg2;
+- (void)_addPerToolOverridingMacrosToMacroDefinitionTable:(id)arg1;
 - (id)name;
-- (void)dealloc;
 - (id)initWithPropertyListDictionary:(id)arg1 inDomain:(id)arg2;
+- (CDUnknownBlockType)processDependencyInfoFileIfNecessaryForCommand:(id)arg1 commandInvocationSucceeded:(BOOL)arg2;
 
 @end
 

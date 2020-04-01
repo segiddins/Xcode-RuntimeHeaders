@@ -17,6 +17,7 @@
     NSString *_identifier;
 }
 
++ (id)errorMessageForSession:(id)arg1;
 + (BOOL)shouldInstantiateInLaunchSession:(id)arg1;
 + (void)initialize;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
@@ -25,6 +26,7 @@
 - (void).cxx_destruct;
 - (void)primitiveInvalidate;
 @property(readonly) NSString *targetPlatform;
+- (void)initiateMemoryGraphDebuggingWithSuccessCompletion:(CDUnknownBlockType)arg1;
 - (void)initiateMemoryGraphDebugging;
 - (id)initInLaunchSession:(id)arg1 withAppDisplayName:(id)arg2 runDestination:(id)arg3 fromExtension:(id)arg4;
 

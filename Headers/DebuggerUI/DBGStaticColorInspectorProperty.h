@@ -15,17 +15,22 @@
     long long _bitMask;
     BOOL _isBitfield;
     long long _bits;
-    NSTextField *_textField;
+    NSTextField *_colorValueTextField;
     DVTColorSwatchView *_colorWell;
+    NSTextField *_colorNameTextField;
 }
 
+@property __weak NSTextField *colorNameTextField; // @synthesize colorNameTextField=_colorNameTextField;
 @property __weak DVTColorSwatchView *colorWell; // @synthesize colorWell=_colorWell;
-@property __weak NSTextField *textField; // @synthesize textField=_textField;
+@property __weak NSTextField *colorValueTextField; // @synthesize colorValueTextField=_colorValueTextField;
 - (void).cxx_destruct;
 - (void)setupRefreshTriggersAndConfigure;
 - (double)baseline;
 - (void)_configureForNilColor;
+- (void)_adjustHeightTo:(double)arg1;
+- (void)_configureWithExtendedColorPropertyValue:(id)arg1;
 - (void)refresh;
+- (void)viewDidLoad;
 
 @end
 

@@ -9,7 +9,7 @@
 #import <Xcode3UI/IDECapsuleListViewDataSource-Protocol.h>
 #import <Xcode3UI/Xcode3SourceListItemEditor-Protocol.h>
 
-@class DVTDelayedInvocation, DVTObservingToken, DVTPerformanceMetric, DVTSourceExpression, DVTStackView_ML, IDECapsuleListView, NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSScrollView, NSString, NSView, Xcode3InfoController, Xcode3ProjectEditor;
+@class DVTDelayedInvocation, DVTEmptyContentPlaceholder, DVTObservingToken, DVTPerformanceMetric, DVTSourceExpression, DVTStackView_ML, IDECapsuleListView, NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSScrollView, NSString, Xcode3InfoController, Xcode3ProjectEditor;
 @protocol IDEBlueprint;
 
 @interface Xcode3InfoEditor : IDEViewController <Xcode3SourceListItemEditor, IDECapsuleListViewDataSource>
@@ -25,7 +25,7 @@
     id _targetBuildSettingsObserver;
     DVTDelayedInvocation *_delayedTargetFamilyInfoInvocation;
     BOOL _settingDictionaryFlag;
-    NSView *_emptyView;
+    DVTEmptyContentPlaceholder *_emptyView;
     DVTSourceExpression *_selectedExpression;
     struct CGRect _currentSelectionFrame;
     IDECapsuleListView *_capsuleListView;
@@ -54,7 +54,7 @@
 - (void)_hideEmptyView;
 - (void)_showEmptyView;
 - (void)viewWillUninstall;
-- (void)viewDidInstall;
+- (void)viewDidLoad;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

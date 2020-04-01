@@ -6,68 +6,62 @@
 
 #import <DTGraphKit/DTTimelinePlane.h>
 
-@class CALayer, DTTimelineGroupPlaneLayoutManager, NSArray;
+@class DTTimelineGroupPlaneChanges, DTTimelineGroupPlaneLayoutManager, NSArray;
 
 @interface DTTimelineGroupPlane : DTTimelinePlane
 {
+    DTTimelinePlane *_representativePlane;
     NSArray *_subplanes;
     DTTimelineGroupPlaneLayoutManager *_layoutManager;
     BOOL _expanded;
     long long _layoutMode;
     double _interplanePadding;
     long long _type;
-    DTTimelinePlane *_representativePlane;
-    CALayer *__disclosureTriangleLayer;
+    DTTimelineGroupPlaneChanges *_changes;
 }
 
-+ (id)_whiteTriangle;
-+ (id)_grayTriangle;
-@property(readonly, nonatomic) CALayer *_disclosureTriangleLayer; // @synthesize _disclosureTriangleLayer=__disclosureTriangleLayer;
-@property(readonly, nonatomic) __weak DTTimelinePlane *representativePlane; // @synthesize representativePlane=_representativePlane;
+@property(retain, nonatomic) DTTimelineGroupPlaneChanges *changes; // @synthesize changes=_changes;
 @property(readonly, nonatomic) BOOL expanded; // @synthesize expanded=_expanded;
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;
 @property(nonatomic) double interplanePadding; // @synthesize interplanePadding=_interplanePadding;
 @property(nonatomic) long long layoutMode; // @synthesize layoutMode=_layoutMode;
 @property(readonly, nonatomic) NSArray *subplanes; // @synthesize subplanes=_subplanes;
 - (void).cxx_destruct;
+- (void)rebuildAccessibility;
+- (id)accessibilityRows;
+- (void)_populateAccessibilityChildrenElements;
 @property(readonly, nonatomic) struct CGPoint accessibilityActivationPoint;
+- (void)setAccessibilityDisclosed:(BOOL)arg1;
+- (BOOL)isAccessibilityDisclosed;
+- (id)accessibilityLabel;
+- (struct CGRect)accessibilityDisclosureTriangleFrame;
+- (id)accessibilitySubrole;
+- (id)accessibilityRole;
+- (void)setDimmed:(BOOL)arg1;
 - (BOOL)_isGroupPlane;
 - (BOOL)_containsPlane:(id)arg1;
 - (void)_enumeratesPlanesHavingKey:(id)arg1 stopPtr:(char *)arg2 block:(CDUnknownBlockType)arg3;
 - (void)_enumeratePlanesWithStopPtr:(char *)arg1 block:(CDUnknownBlockType)arg2;
-- (void)_layoutLabelLayerAtPlanePosition:(struct CGPoint)arg1 planeSize:(struct CGSize)arg2 centerLabelWithin:(double)arg3;
-- (id)_labelLayer;
-- (id)_selectedDisclosureImage;
-- (void)_invalidateLabel;
+- (BOOL)_setPreferredHeight:(double)arg1;
 - (id)actionForLayer:(id)arg1 forKey:(id)arg2;
-- (void)_repositionDisclosureTriangle;
-- (void)setHidden:(BOOL)arg1;
-- (long long)_indexOfRepresentativePlane;
 - (void)_setRepresentativePlane:(id)arg1;
 - (void)_setExpanded:(BOOL)arg1;
-- (void)_updateIconAndLabelLayerZPosition;
-- (void)setBaseZPosition:(double)arg1;
-- (void)_updateSubplaneHiddenState;
+- (long long)_computeLabelSubtreeIndent;
 - (void)_setType:(long long)arg1;
-- (void)_populatePlaneLayoutMap:(unordered_map_c1fbcd3c *)arg1 offsetFromTop:(double)arg2;
-- (void)_didMoveOutOfView;
-- (void)_willMoveIntoView;
+- (int)_updateLayoutAndMap:(unordered_map_b8b4eb21 *)arg1 offsetFromTop:(double)arg2 priorSibling:(id)arg3 nextSibling:(id)arg4;
 - (void)setTimelineGraph:(id)arg1;
 - (id)_planesUnderPoint:(struct CGPoint)arg1;
-- (BOOL)_pointIntersectsDisclosureGlyph:(struct CGPoint)arg1 groupPlane:(out id *)arg2;
 - (void)_invalidateTimeRange:(struct XRTimeRange)arg1;
-- (void)_setPosition:(struct CGPoint)arg1 size:(struct CGSize)arg2;
-- (BOOL)_setHeight:(double)arg1;
-- (double)height;
-- (void)_removeFromContext;
+@property(readonly, nonatomic) double interplaneDistance;
+- (BOOL)_resizeToFit;
+- (void)_setNeedsResizeToFit;
+@property(readonly, nonatomic) __weak DTTimelinePlane *representativePlane;
+- (id)_disclosedSubplaneEnumerator;
 - (id)_decoratedPlanes;
-- (void)_contextChanged;
-- (void)_setContext:(struct TimelineViewContext *)arg1 layer:(id)arg2 anchorPoint:(struct CGPoint)arg3;
-- (void)_updateSelectionColors;
-- (BOOL)_drawBordersAsSelected;
-- (BOOL)_drawTopBorderAsSelected;
-- (BOOL)_drawBottomBorderAsSelected;
-- (BOOL)_disclosureTriangleIsAboveASelectedPlane;
+- (void)_removeFromContext;
+- (void)_setContext:(struct TimelineViewContext *)arg1;
+- (void)_setAppearance:(id)arg1;
+- (BOOL)shouldLeaveRoomForBottomBorder;
 - (void)_setSubplanes:(id)arg1;
 - (id)description;
 - (id)_description:(long long)arg1;

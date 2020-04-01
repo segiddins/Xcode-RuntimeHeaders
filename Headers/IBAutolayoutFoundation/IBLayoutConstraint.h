@@ -18,6 +18,7 @@
 {
     BOOL _contentTypeNeedsToBeInferred;
     BOOL _scoringTypeNeedsToBeInferred;
+    BOOL _isUsingLayoutAnchorEngineVariables;
     BOOL _placeholder;
     NSObject<IBAutolayoutItem> *_firstItem;
     unsigned long long _firstAttribute;
@@ -36,6 +37,7 @@
 
 + (id)dvt_keysToSkipWeakReferenceObservingValidation;
 + (Class)archivableRepresentationClass;
++ (double)inferredScoringTypeForFirstItem:(id)arg1 firstAttribute:(unsigned long long)arg2 secondItem:(id)arg3 secondAttribute:(unsigned long long)arg4 isAbsolute:(BOOL)arg5;
 + (id)keyPathsForValuesAffectingContentType;
 + (double)minimumPriority;
 + (double)maximumPriority;
@@ -45,9 +47,11 @@
 + (BOOL)isAttributeLeftLeadingOrTop:(unsigned long long)arg1;
 + (unsigned long long)marginAttributeForAttribute:(unsigned long long)arg1;
 + (id)explicitLayoutConstraintWithItem:(id)arg1 attribute:(unsigned long long)arg2 constant:(id)arg3;
++ (id)explicitLayoutConstraintWithFirstItem:(id)arg1 firstAttribute:(unsigned long long)arg2 relation:(long long)arg3 secondItem:(id)arg4 secondAttribute:(unsigned long long)arg5 constant:(id)arg6 containingView:(id)arg7;
 + (id)explicitLayoutConstraintWithFirstItem:(id)arg1 firstAttribute:(unsigned long long)arg2 relation:(long long)arg3 secondItem:(id)arg4 secondAttribute:(unsigned long long)arg5 constant:(id)arg6;
 + (id)systemRequiredLayoutConstraintWithItem:(id)arg1 attribute:(unsigned long long)arg2 constant:(id)arg3;
 + (id)systemRequiredLayoutConstraintWithFirstItem:(id)arg1 firstAttribute:(unsigned long long)arg2 relation:(long long)arg3 secondItem:(id)arg4 secondAttribute:(unsigned long long)arg5 constant:(id)arg6;
+@property(readonly, nonatomic) BOOL isUsingLayoutAnchorEngineVariables; // @synthesize isUsingLayoutAnchorEngineVariables=_isUsingLayoutAnchorEngineVariables;
 @property(nonatomic) long long contentType; // @synthesize contentType=_contentType;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(nonatomic, getter=isPlaceholder) BOOL placeholder; // @synthesize placeholder=_placeholder;
@@ -76,25 +80,31 @@
 - (CDStruct_00258f55)absoluteGeometricDescriptionInCoordinateSpaceOfView:(id)arg1 userInterfaceLayoutDirection:(long long)arg2 ofItem:(id)arg3 attribute:(unsigned long long)arg4;
 - (void)enumerateItems:(CDUnknownBlockType)arg1;
 - (unsigned long long)attributeReferencingItem:(id)arg1;
+- (BOOL)isReferencingItem:(id)arg1;
 - (id)itemNotMatchingItem:(id)arg1;
 - (id)constraintByReplacingView:(id)arg1 withView:(id)arg2 andReplacingView:(id)arg3 withView:(id)arg4;
 - (id)constraintByReplacingView:(id)arg1 withView:(id)arg2;
 - (id)constraintByReversingFirstAndSecondItem;
+- (void)setFirstItem:(id)arg1 firstAttribute:(unsigned long long)arg2 secondItem:(id)arg3 secondAttribute:(unsigned long long)arg4;
 - (void)reverseFirstAndSecondItem;
 - (id)generateNSLayoutConstraintWithContext:(id)arg1;
 - (id)generateNSLayoutConstraintWithContext:(id)arg1 constraintClass:(Class)arg2;
+- (unsigned long long)hashOfComponentsIgnoringScoring;
 - (unsigned long long)hashOfComponents;
+- (BOOL)hasComponentsEqualToComponentsOfConstraintAllowingReversingIgnoringScoring:(id)arg1;
 - (BOOL)hasComponentsEqualToComponentsOfConstraintAllowingReversing:(id)arg1;
 - (BOOL)hasComponentsEqualToComponentsOfConstraint:(id)arg1;
 - (long long)geometricCompare:(id)arg1 withUserInterfaceLayoutDirection:(long long)arg2;
 - (long long)compare:(id)arg1 withUserInterfaceLayoutDirection:(long long)arg2;
-- (id)representationByReversingFirstAndSecondItem;
+- (BOOL)hasComponentsEqualToComponentsOfRepresentationAllowingReversingIgnoringScoring:(id)arg1;
 - (BOOL)hasComponentsEqualToComponentsOfRepresentationAllowingReversing:(id)arg1;
 - (BOOL)hasComponentsEqualToComponentsOfRepresentation:(id)arg1;
 @property(readonly, nonatomic) id containingViewRepresentation;
 @property(readonly, nonatomic) id secondItemRepresentation;
 @property(readonly, nonatomic) id firstItemRepresentation;
 - (id)archivableRepresentationWithRepresentationForItemBlock:(CDUnknownBlockType)arg1;
+@property(readonly, nonatomic) BOOL affectsVerticalAxis;
+@property(readonly, nonatomic) BOOL affectsHorizontalAxis;
 @property(readonly, nonatomic, getter=isAbsolute) BOOL absolute;
 @property(readonly, copy) NSString *description;
 - (id)descriptionOfComponents;

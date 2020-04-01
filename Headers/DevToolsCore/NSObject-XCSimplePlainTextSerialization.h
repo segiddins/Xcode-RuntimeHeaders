@@ -4,10 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Foundation/NSObject.h>
+#import <objc/NSObject.h>
 
 @interface NSObject (XCSimplePlainTextSerialization)
++ (id)shortDescription;
 - (void)writeToSerializer:(id)arg1;
 - (id)initFromDeserializer:(id)arg1;
+- (void)_appendPListDescriptionToUTF8Data:(id)arg1 withIndentLevel:(unsigned long long)arg2;
+- (id)shortDescription;
 @end
 

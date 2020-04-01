@@ -16,9 +16,12 @@
 + (int)providerType;
 - (void).cxx_destruct;
 - (void)primitiveInvalidate;
+- (BOOL)shouldAutoExpandIssueInNavigator:(id)arg1;
 - (id)imageForIssueTypeIdentifier:(id)arg1 ofSize:(long long)arg2;
 - (id)ideModelObjectTypeIdentifier;
 - (id)displayNameForIssueTypeIdentifier:(id)arg1;
+- (id)_createIssueForItems:(id)arg1 issueIdentifier:(id)arg2 withMessageProvider:(CDUnknownBlockType)arg3;
+- (id)_prepareIssuesForLeakedObjects:(id)arg1 leakedBlocks:(id)arg2 abandonedObjectsIssuesMap:(id)arg3;
 - (id)initWithIssueManager:(id)arg1 extension:(id)arg2;
 
 @end

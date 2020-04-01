@@ -11,26 +11,26 @@
 
 @interface IBDocumentUnarchiver : NSObject
 {
-    IBDocumentUnarchiverRecursionState *recursionState;
-    IBDocumentArchivingSchema *schema;
-    NSMutableDictionary *context;
-    NSXMLDocument *xmlDocument;
-    id <IBUnarchivableDocument> unarchivedDocument;
-    NSXMLElement *documentElement;
-    NSMutableDictionary *referenceUnarchivingBlocksByType;
-    long long unarchivedObjects;
-    NSMutableSet *referenceTypesEnabledForUnarchiving;
-    NSSet *allowedReferenceTypes;
-    NSMutableArray *allUnarchivedObjects;
-    NSMutableArray *softErrorMessages;
-    IBMutableIdentityDictionary *postUnarchiveBlocksByObjectThenPriority;
-    NSMutableArray *classesBeingDecoded;
+    IBDocumentUnarchiverRecursionState *_recursionState;
+    NSXMLDocument *_xmlDocument;
+    NSXMLElement *_documentElement;
+    NSMutableDictionary *_referenceUnarchivingBlocksByType;
+    long long _unarchivedObjects;
+    NSMutableSet *_referenceTypesEnabledForUnarchiving;
+    NSSet *_allowedReferenceTypes;
+    NSMutableArray *_allUnarchivedObjects;
+    NSMutableArray *_softErrorMessages;
+    IBMutableIdentityDictionary *_postUnarchiveBlocksByObjectThenPriority;
+    NSMutableArray *_classesBeingDecoded;
+    NSMutableDictionary *_context;
+    id <IBUnarchivableDocument> _unarchivedDocument;
+    IBDocumentArchivingSchema *_schema;
 }
 
-@property(readonly) NSArray *classesBeingDecoded; // @synthesize classesBeingDecoded;
-@property(readonly) NSMutableDictionary *context; // @synthesize context;
-@property(readonly) IBDocumentArchivingSchema *schema; // @synthesize schema;
-@property(readonly) id <IBUnarchivableDocument> unarchivedDocument; // @synthesize unarchivedDocument;
+@property(readonly) NSArray *classesBeingDecoded; // @synthesize classesBeingDecoded=_classesBeingDecoded;
+@property(readonly) IBDocumentArchivingSchema *schema; // @synthesize schema=_schema;
+@property(readonly) id <IBUnarchivableDocument> unarchivedDocument; // @synthesize unarchivedDocument=_unarchivedDocument;
+@property(readonly) NSMutableDictionary *context; // @synthesize context=_context;
 - (void).cxx_destruct;
 - (id)duplicateValuesForAttributeName:(id)arg1;
 - (id)description;
@@ -53,8 +53,9 @@
 - (long long)unarchiveInt64ForKey:(id)arg1 defaultValue:(long long)arg2;
 - (long long)unarchiveIntegerForKey:(id)arg1 defaultValue:(long long)arg2;
 - (struct _NSRange)unarchiveRangeForKey:(id)arg1 defaultValue:(struct _NSRange)arg2;
-- (CDStruct_c3b9c2ee)unarchiveOffsetForKey:(id)arg1 defaultValue:(CDStruct_c3b9c2ee)arg2;
-- (struct _IBEdgeInsets)unarchiveIBEdgeInsetsForKey:(id)arg1 defaultValue:(struct _IBEdgeInsets)arg2;
+- (CDStruct_34734122)unarchiveOffsetForKey:(id)arg1 defaultValue:(CDStruct_34734122)arg2;
+- (struct IBNSDirectionalEdgeInsets)unarchiveIBDirectionalEdgeInsetsForKey:(id)arg1 defaultValue:(struct IBNSDirectionalEdgeInsets)arg2;
+- (struct NSEdgeInsets)unarchiveIBEdgeInsetsForKey:(id)arg1 defaultValue:(struct NSEdgeInsets)arg2;
 - (struct NSEdgeInsets)unarchiveEdgeInsetsForKey:(id)arg1 defaultValue:(struct NSEdgeInsets)arg2;
 - (CDStruct_c519178c)unarchiveInsetForKey:(id)arg1 defaultValue:(CDStruct_c519178c)arg2;
 - (struct CGRect)unarchiveRectForKey:(id)arg1 defaultValue:(struct CGRect)arg2;
@@ -81,6 +82,7 @@
 - (id)unarchiveArrayWithName:(id)arg1 forOptionalKey:(id)arg2;
 - (id)unarchiveObjectReferenceArrayWithName:(id)arg1 referenceType:(id)arg2 forOptionalKey:(id)arg3;
 - (id)unarchiveObjectForKey:(id)arg1;
+- (id)unarchiveObjectForElementName:(id)arg1 optionalKey:(id)arg2;
 - (id)unarchiveArrayDictionaryOrObjectFromElement:(id)arg1;
 - (void)raiseForUnexpectedChildElement:(id)arg1 expected:(id)arg2 key:(id)arg3;
 - (void)raiseForUnknownElement:(id)arg1;

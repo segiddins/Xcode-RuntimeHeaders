@@ -9,7 +9,7 @@
 #import <Xcode3UI/IDECapsuleViewController-Protocol.h>
 #import <Xcode3UI/IDECapsuleViewDelegate-Protocol.h>
 
-@class NSImage, NSString, Xcode3InfoEditor;
+@class NSColor, NSImage, NSString, Xcode3InfoEditor;
 
 @interface Xcode3InfoSliceController : IDEViewController <IDECapsuleViewController, IDECapsuleViewDelegate>
 {
@@ -24,7 +24,6 @@
 @property(readonly) NSString *sliceIdentifier; // @synthesize sliceIdentifier=_sliceIdentifier;
 - (void).cxx_destruct;
 - (double)capsuleView:(id)arg1 preferredContentViewWidthForCapsuleWidth:(double)arg2;
-- (id)capsuleViewBackgroundColor:(id)arg1;
 @property(readonly) BOOL hasContent;
 @property(readonly, copy) NSString *titleForDisplay;
 - (void)primitiveInvalidate;
@@ -33,6 +32,7 @@
 - (id)initWithSliceIdentifier:(id)arg1 infoEditor:(id)arg2;
 
 // Remaining properties
+@property(retain) NSColor *backgroundColor;
 @property BOOL canAddItems;
 @property(readonly) BOOL canDrag;
 @property(readonly) BOOL canRemove;
@@ -47,6 +47,7 @@
 @property(readonly) NSImage *icon;
 @property(copy) id info; // @dynamic info;
 @property(readonly) Class superclass;
+@property(readonly) BOOL wantsDisclosureButtonHidden;
 
 @end
 

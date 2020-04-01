@@ -27,6 +27,7 @@
 - (id)titleForDisplay;
 - (void)controllerInfoChanged:(id)arg1;
 - (void)sliceControllersChanged:(id)arg1 changeDictionary:(id)arg2;
+- (void)_updateSliceColors;
 - (void)_rebuildStackView;
 - (void)_recomputeInfoFromSliceControllers;
 - (BOOL)validateMenuItem:(id)arg1;

@@ -10,23 +10,26 @@
 {
 }
 
+- (BOOL)disablesOnlyActiveArch;
+- (id)extraDebuggingRuntimeDylibPath;
 - (id)initWithPlatform:(id)arg1;
 - (BOOL)isAvailable;
 - (id)deviceType;
 - (unsigned long long)supportsFetchEvents;
-- (id)deviceForRunningUnitTestsError:(id *)arg1;
 - (id)supportedDeviceFamilies;
+- (BOOL)supportsMainThreadChecker;
 - (BOOL)supportsRecordedFrames;
 - (BOOL)supportsPGOReturningError:(id *)arg1;
 - (BOOL)supportsAttachByPIDOrName;
 - (BOOL)supportsArchiving;
+- (BOOL)allowsManagedStateControl;
 - (void)requestProcessInformationsOnPairedDevice:(BOOL)arg1 handler:(CDUnknownBlockType)arg2;
 - (BOOL)supportsRunningExecutableAtPath:(id)arg1 usingArchitecture:(id)arg2 error:(id *)arg3;
 - (BOOL)supportsExecutionForArchitecture:(id)arg1 launchSession:(id)arg2 error:(id *)arg3;
 - (BOOL)canInstallBuildablesError:(id *)arg1;
-- (id)analysisOperationWithAnalysisToolService:(id)arg1 location:(id)arg2 workingDirectory:(id)arg3 workspaceFilePath:(id)arg4 projectFilePath:(id)arg5 outError:(id *)arg6;
+- (id)analysisOperationWithAnalysisToolService:(id)arg1 location:(id)arg2 workingDirectory:(id)arg3 workspaceFilePath:(id)arg4 projectFilePath:(id)arg5 packagesPaths:(id)arg6 outError:(id *)arg7;
 - (id)_generalRunErrorWithLaunchSession:(id)arg1;
-- (id)deviceSpecificOverridingPropertiesForBuildable:(id)arg1 withBaselineParameters:(id)arg2;
+- (id)uncachedOverridingPropertiesForBuildable:(id)arg1 buildParameters:(id)arg2;
 - (id)supportedSDKsForBuildable:(id)arg1 buildParameters:(id)arg2 error:(id *)arg3;
 - (id)nativeArchitecture;
 - (id)supportedArchitectures;

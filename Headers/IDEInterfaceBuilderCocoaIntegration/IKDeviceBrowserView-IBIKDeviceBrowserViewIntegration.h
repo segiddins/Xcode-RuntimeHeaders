@@ -6,6 +6,19 @@
 
 #import <ImageKit/IKDeviceBrowserView.h>
 
-@interface IKDeviceBrowserView (IBIKDeviceBrowserViewIntegration)
+#import <IDEInterfaceBuilderCocoaIntegration/IBDocumentArchiving-Protocol.h>
+
+@class NSString;
+
+@interface IKDeviceBrowserView (IBIKDeviceBrowserViewIntegration) <IBDocumentArchiving>
+- (id)ibLocalAttributeKeyPaths;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @end
 

@@ -6,10 +6,12 @@
 
 #import <QuartzCore/CALayer.h>
 
+#import <IDEKit/IDEActivityThemeableLayer-Protocol.h>
+
 @class IDEActivityPopUpReportLayer, NSArray, NSMutableArray, NSString;
 @protocol IDEActivityPopUpContentLayerDelegate;
 
-@interface IDEActivityPopUpContentLayer : CALayer
+@interface IDEActivityPopUpContentLayer : CALayer <IDEActivityThemeableLayer>
 {
     NSMutableArray *_orderedReportLayers;
     NSMutableArray *_lineLayers;
@@ -29,6 +31,7 @@
 @property(copy) NSArray *issueCategories; // @synthesize issueCategories=_issueCategories;
 @property BOOL issuesAreVisible; // @synthesize issuesAreVisible=_issuesAreVisible;
 - (void).cxx_destruct;
+- (void)updateTheme;
 - (void)layoutSublayers;
 @property(readonly) NSMutableArray *orderedVisibleReportLayers; // @synthesize orderedVisibleReportLayers=_orderedVisibleReportLayers;
 - (void)addActivityReportLayer:(id)arg1;
@@ -39,7 +42,11 @@
 - (id)init;
 
 // Remaining properties
+@property(readonly, copy) NSString *debugDescription;
 @property id <IDEActivityPopUpContentLayerDelegate> delegate; // @dynamic delegate;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

@@ -9,6 +9,6 @@
 @class DVTExtension, NSSet;
 
 @protocol IDEInspectorMatching <NSObject>
-- (NSSet *)applicableInspectorsForCategory:(DVTExtension *)arg1 suggestion:(NSSet *)arg2;
+- (NSSet *)applicableInspectorSlicesForCategory:(DVTExtension *)arg1 suggestedSlices:(NSSet *)arg2;
 @end
 

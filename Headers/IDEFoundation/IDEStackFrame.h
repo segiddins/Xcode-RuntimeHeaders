@@ -10,14 +10,15 @@
 #import <IDEFoundation/IDEDebugNavigableModel-Protocol.h>
 
 @class DVTObservingToken, DVTStackBacktrace, IDECodeModule, IDELaunchSession, IDEThread, NSArray, NSNumber, NSString, NSURL;
-@protocol DVTInvalidation><IDEDataValue;
+@protocol DVTAnalyticsLogStackFrameProtocol, DVTInvalidation><IDEDataValue;
 
 @interface IDEStackFrame : NSObject <IDEDebugNavigableModel, DVTInvalidation>
 {
     DVTObservingToken *_debugSessionStateObserver;
     BOOL _hasSymbols;
     BOOL _recorded;
-    BOOL _causedCrash;
+    BOOL _swiftThunk;
+    BOOL _blameFrame;
     BOOL _returnValueIsValid;
     BOOL _settingDisassembly;
     NSString *_associatedProcessUUID;
@@ -31,6 +32,7 @@
     NSURL *_fileURL;
     NSNumber *_lineNumber;
     IDECodeModule *_module;
+    NSNumber *_percentageOfTotalSample;
     NSString *_instructionPointerAddressString;
     NSArray *_locals;
     NSArray *_arguments;
@@ -47,6 +49,7 @@
 + (id)disassemblyURLForStackFrame:(id)arg1 inDebugSession:(id)arg2;
 + (id)compressedStackFrames:(id)arg1 usingCompressionValue:(long long)arg2;
 + (void)initialize;
++ (id)stackFrameWithThread:(id)arg1 analyticsLogStackFrame:(id)arg2 frameNumber:(long long)arg3 usingContext:(id)arg4;
 @property BOOL settingDisassembly; // @synthesize settingDisassembly=_settingDisassembly;
 @property(copy, nonatomic) NSString *disassemblyString; // @synthesize disassemblyString=_disassemblyString;
 @property(nonatomic) BOOL returnValueIsValid; // @synthesize returnValueIsValid=_returnValueIsValid;
@@ -56,7 +59,9 @@
 @property(readonly, nonatomic) NSArray *arguments; // @synthesize arguments=_arguments;
 @property(readonly, nonatomic) NSArray *locals; // @synthesize locals=_locals;
 @property(copy, nonatomic) NSString *instructionPointerAddressString; // @synthesize instructionPointerAddressString=_instructionPointerAddressString;
-@property(nonatomic, getter=hasCausedCrash) BOOL causedCrash; // @synthesize causedCrash=_causedCrash;
+@property(copy, nonatomic) NSNumber *percentageOfTotalSample; // @synthesize percentageOfTotalSample=_percentageOfTotalSample;
+@property(nonatomic, getter=isBlameFrame) BOOL blameFrame; // @synthesize blameFrame=_blameFrame;
+@property(readonly, nonatomic, getter=isSwiftThunk) BOOL swiftThunk; // @synthesize swiftThunk=_swiftThunk;
 @property(nonatomic, getter=isRecorded) BOOL recorded; // @synthesize recorded=_recorded;
 @property(retain, nonatomic) IDECodeModule *module; // @synthesize module=_module;
 @property(copy, nonatomic) NSNumber *lineNumber; // @synthesize lineNumber=_lineNumber;
@@ -73,6 +78,9 @@
 - (void)evaluateExpression:(id)arg1 options:(id)arg2 withResultBlock:(CDUnknownBlockType)arg3;
 - (void)evaluateExpression:(id)arg1 withResultBlock:(CDUnknownBlockType)arg2;
 - (void)requestDataValueForSymbol:(id)arg1 symbolKind:(id)arg2 atLocation:(id)arg3 onQueue:(id)arg4 withResultBlock:(CDUnknownBlockType)arg5;
+- (id)projectPath;
+- (id)projectName;
+@property(readonly) NSString *descriptionForPasteboard;
 @property(retain, nonatomic) id <DVTInvalidation><IDEDataValue> returnValue; // @synthesize returnValue=_returnValue;
 - (BOOL)hasSameDisassemblyURL:(id)arg1;
 @property(readonly, nonatomic) NSString *filePath; // @synthesize filePath=_filePath;
@@ -83,6 +91,7 @@
 - (BOOL)isEqual:(id)arg1;
 - (id)init;
 - (id)initWithParentThread:(id)arg1 frameNumber:(id)arg2 framePointer:(id)arg3 name:(id)arg4;
+@property(retain) id <DVTAnalyticsLogStackFrameProtocol> representativeAnalyticsLogStackFrame;
 
 // Remaining properties
 @property(retain) DVTStackBacktrace *creationBacktrace;

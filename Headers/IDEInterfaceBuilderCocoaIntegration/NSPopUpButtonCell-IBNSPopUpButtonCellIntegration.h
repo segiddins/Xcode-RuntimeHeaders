@@ -6,7 +6,11 @@
 
 #import <AppKit/NSPopUpButtonCell.h>
 
-@interface NSPopUpButtonCell (IBNSPopUpButtonCellIntegration)
+#import <IDEInterfaceBuilderCocoaIntegration/IBDocumentArchiving-Protocol.h>
+
+@class NSString;
+
+@interface NSPopUpButtonCell (IBNSPopUpButtonCellIntegration) <IBDocumentArchiving>
 + (id)keyPathsForValuesAffectingIbInspectedTitle;
 + (id)keyPathsForValuesAffectingIbInspectedImage;
 - (void)unarchiveMenu:(id)arg1;
@@ -16,6 +20,8 @@
 - (id)ibInspectedTitle;
 - (void)setIbInspectedImage:(id)arg1;
 - (id)ibInspectedImage;
+- (id)ibInspectedSelectableMenuItemTitles;
+- (id)ibInspectedSelectableMenuItems;
 - (id)ibLocalAdditionalIbtoolDescriptionKeyPaths;
 - (id)ibEquivalentSourceForToOneOutlet:(id)arg1;
 - (BOOL)ibWouldClipContentWithCellSize:(struct CGSize)arg1;
@@ -27,5 +33,18 @@
 - (void)ibPopulateChildRelationOrder:(id)arg1;
 - (id)ibButtonLocalLocalizableStringsAttributeKeyPaths;
 - (id)ibButtonLocalAttributesKeyPaths;
+- (id)ibLocalAdditionalLocalizableAttributeKeyPaths;
+- (id)ibLocalAttributeKeyPaths;
+- (id)ibLocalNonChildToOneRelationshipsKeyPaths;
+- (id)ibLocalChildToOneRelationshipsKeyPaths;
+- (void)setSelectedItem:(id)arg1;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @end
 

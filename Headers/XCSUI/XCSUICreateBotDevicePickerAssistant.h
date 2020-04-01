@@ -6,18 +6,16 @@
 
 #import <IDEKit/IDEAssistant.h>
 
-@class XCSUIBotDefinition_DevicePickerEditor, XCSUIBotDefinition_DevicePickerEditor_Legacy;
+@class XCSUIBotDefinition_DevicePickerEditor;
 
 @interface XCSUICreateBotDevicePickerAssistant : IDEAssistant
 {
     BOOL _viewIsInstalled;
-    XCSUIBotDefinition_DevicePickerEditor_Legacy *_legacyDevicePickerEditor;
     XCSUIBotDefinition_DevicePickerEditor *_devicePickerEditor;
 }
 
 + (id)keyPathsForValuesAffectingCanGoForward;
 @property(retain, nonatomic) XCSUIBotDefinition_DevicePickerEditor *devicePickerEditor; // @synthesize devicePickerEditor=_devicePickerEditor;
-@property(retain, nonatomic) XCSUIBotDefinition_DevicePickerEditor_Legacy *legacyDevicePickerEditor; // @synthesize legacyDevicePickerEditor=_legacyDevicePickerEditor;
 @property(nonatomic) BOOL viewIsInstalled; // @synthesize viewIsInstalled=_viewIsInstalled;
 - (void).cxx_destruct;
 - (id)nextAssistantIdentifier;

@@ -14,6 +14,7 @@
 #import <Xcode3UI/Xcode3SourceListItemEditor-Protocol.h>
 
 @class DVTBorderedView, DVTGradientImagePopUpButton, DVTMacroDefinitionConditionSet, DVTPerformanceMetric, DVTSearchField, DVTSourceExpression, NSArray, NSButton, NSMenu, NSMutableArray, NSMutableDictionary, NSMutableSet, NSOutlineView, NSScrollView, NSString, PBXProject, XCPropertyDefinition, Xcode3BuildPropertyEditor, Xcode3BuildPropertyOutlineView, Xcode3ConfigurableDataSource, Xcode3ProjectEditor;
+@protocol IDEBlueprint;
 
 @interface Xcode3BuildSettingsEditor : IDEViewController <Xcode3SourceListItemEditor, NSTableViewDataSource, NSTableViewDelegate, XCEDataRootAdapterP, XCEDataNodeAdapterP, DVTDelayedMenuButtonDelegate>
 {
@@ -66,6 +67,7 @@
     DVTBorderedView *_borderedView;
     DVTSourceExpression *_mouseOverExpression;
     DVTPerformanceMetric *_metric;
+    NSString *_buildPropertyTypeLocalizedName;
     NSScrollView *_buildSettingsScrollView;
 }
 
@@ -110,6 +112,7 @@
 @property(copy) NSString *buildPropertyInfoString; // @synthesize buildPropertyInfoString=_buildPropertyInfoString;
 @property(copy) NSString *buildPropertyLocalizedName; // @synthesize buildPropertyLocalizedName=_buildPropertyLocalizedName;
 @property(copy) NSString *buildPropertyName; // @synthesize buildPropertyName=_buildPropertyName;
+@property(copy) NSString *buildPropertyTypeLocalizedName; // @synthesize buildPropertyTypeLocalizedName=_buildPropertyTypeLocalizedName;
 @property(retain, nonatomic) DVTSourceExpression *mouseOverExpression; // @synthesize mouseOverExpression=_mouseOverExpression;
 @property(retain, nonatomic) DVTSourceExpression *selectedExpression; // @synthesize selectedExpression=_selectedExpression;
 @property(retain) Xcode3ProjectEditor *projectEditor; // @synthesize projectEditor=_projectEditor;
@@ -230,7 +233,7 @@
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
-@property(retain, nonatomic) id inspectedBlueprint;
+@property(retain, nonatomic) id <IDEBlueprint> inspectedBlueprint;
 @property(readonly) Class superclass;
 
 @end

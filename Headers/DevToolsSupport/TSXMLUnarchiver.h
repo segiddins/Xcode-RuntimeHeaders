@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Foundation/NSObject.h>
+#import <objc/NSObject.h>
 
 @class NSMutableDictionary;
 
@@ -15,6 +15,7 @@
     id _delegate;
 }
 
+- (void).cxx_destruct;
 - (void)finishDecoding;
 - (long long)decodeIntAttribute:(id)arg1;
 - (BOOL)decodeBoolAttribute:(id)arg1;

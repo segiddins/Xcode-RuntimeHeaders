@@ -6,20 +6,12 @@
 
 #import <IDEKit/IDEBaseDocumentNavigableItem.h>
 
-@class DVTDocumentLocation;
-
 @interface IDEDocumentURLNavigableItem : IDEBaseDocumentNavigableItem
 {
-    DVTDocumentLocation *_contentDocumentLocation;
 }
 
-- (void).cxx_destruct;
 - (id)fileURL;
-- (id)contentDocumentLocation;
-- (id)documentType;
-- (id)name;
 - (id)newImage;
-- (id)_documentURL;
 - (id)initWithRepresentedObject:(id)arg1;
 
 @end

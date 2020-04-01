@@ -8,16 +8,17 @@
 
 @interface DTResponsiveUIMainThreadDeliverySubframe : DTResponsiveUISubframe
 {
+    unsigned long long _missesDetected;
 }
 
-+ (BOOL)_enableConcurrentActivities;
-+ (BOOL)_establishesAffinity;
-- (int)_handleMinorFrameWithDeadline:(unsigned long long)arg1;
-- (BOOL)_providerMakingCallback:(id)arg1;
-- (id)_popLatestContent:(id)arg1;
++ (unsigned int)_activityQoS;
++ (BOOL)enableConcurrentActivities;
+- (void)yieldingMinorFrame:(unsigned char)arg1;
+- (void)enteringMinorFrame:(unsigned char)arg1;
+- (int)agentStopDiagnosticsTypeCode;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)dealloc;
-- (id)initWithContext:(id)arg1;
+- (id)initWithRing:(id)arg1 context:(id)arg2;
 
 @end
 

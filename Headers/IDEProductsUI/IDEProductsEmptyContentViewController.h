@@ -11,6 +11,7 @@
 @interface IDEProductsEmptyContentViewController : IDEViewController
 {
     BOOL _busy;
+    BOOL _shouldDelayShowingTitleAndSubtitle;
     BOOL _showResolutionButton;
     BOOL _shouldShowDelayedTitleAndSubtitle;
     BOOL _shouldShowDelayedSpinner;
@@ -24,10 +25,8 @@
     id _resolutionButtonTarget;
     SEL _resolutionButtonAction;
     DVTDelayedInvocation *_delayedShowTitleAndSubtitle;
-    DVTDelayedInvocation *_delayedShowSpinner;
 }
 
-@property(retain) DVTDelayedInvocation *delayedShowSpinner; // @synthesize delayedShowSpinner=_delayedShowSpinner;
 @property(retain) DVTDelayedInvocation *delayedShowTitleAndSubtitle; // @synthesize delayedShowTitleAndSubtitle=_delayedShowTitleAndSubtitle;
 @property BOOL shouldShowDelayedSpinner; // @synthesize shouldShowDelayedSpinner=_shouldShowDelayedSpinner;
 @property BOOL shouldShowDelayedTitleAndSubtitle; // @synthesize shouldShowDelayedTitleAndSubtitle=_shouldShowDelayedTitleAndSubtitle;
@@ -39,6 +38,7 @@
 @property __weak NSTextField *subtitleField; // @synthesize subtitleField=_subtitleField;
 @property __weak NSTextField *titleField; // @synthesize titleField=_titleField;
 @property __weak NSProgressIndicator *spinner; // @synthesize spinner=_spinner;
+@property BOOL shouldDelayShowingTitleAndSubtitle; // @synthesize shouldDelayShowingTitleAndSubtitle=_shouldDelayShowingTitleAndSubtitle;
 @property(nonatomic) BOOL busy; // @synthesize busy=_busy;
 @property(copy, nonatomic) NSString *emptyContentSubtitle; // @synthesize emptyContentSubtitle=_emptyContentSubtitle;
 @property(copy, nonatomic) NSString *emptyContentTitle; // @synthesize emptyContentTitle=_emptyContentTitle;
@@ -47,6 +47,8 @@
 - (void)resolve:(id)arg1;
 - (void)disableResolutionButton;
 - (void)enableResolutionButtonWithTitle:(id)arg1 target:(id)arg2 action:(SEL)arg3;
+- (void)_scheduleShowingTitleAndSubtitle;
+- (void)showTitleAndSubtitle;
 - (void)viewDidLoad;
 
 @end

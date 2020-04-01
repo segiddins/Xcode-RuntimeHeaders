@@ -10,10 +10,12 @@
 {
 }
 
-- (id)computeProductTouchActionInTargetBuildContext:(id)arg1;
-- (void)defineAuxiliaryFilesInTargetBuildContext:(id)arg1;
-- (void)computeProductDependenciesInTargetBuildContext:(id)arg1;
-- (id)linkerSpecificationForObjectFilesInTargetBuildContext:(id)arg1;
+- (void)generateAssetPackManifestWithMacroExpansionScope:(id)arg1;
+- (void)registerCoreProductStructureCreatorsWithMacroExpansionScope:(id)arg1;
+- (id)computeProductTouchActionWithMacroExpansionScope:(id)arg1;
+- (void)processInfoPlistFileWithMacroExpansionScope:(id)arg1;
+- (void)defineAuxiliaryFilesWithMacroExpansionScope:(id)arg1;
+- (void)computeProductDependenciesWithMacroExpansionScope:(id)arg1;
 
 @end
 

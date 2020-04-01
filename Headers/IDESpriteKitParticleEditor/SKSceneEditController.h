@@ -24,6 +24,7 @@
     NSArray *_snapLines;
     SKScene *_scene;
     BOOL _spaceBarDown;
+    double _touchDownTime;
     NSArray *_translatableSelection;
     SKSceneSelectionEngine *_selectionEngine;
     DVTObservingToken *_objectsKVOToken;
@@ -57,8 +58,12 @@
 @property(retain) SKInputView *inputView; // @synthesize inputView=_inputView;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+-     // Error parsing type: 64@0:8^{NSObject=#}1624324048c56c60, name: _snapItem:forScalingWithTouchLocation:withScaleBase:scaleXAxis:scaleYAxis:evaluateXAxis:evaluateYAxis:
+- (struct CGPoint)_nearestGridPositionForPoint:(struct CGPoint)arg1 withGridSpacing:(double)arg2 forAxis:(int)arg3;
 - (void)_snapNodeForMovement:(struct NSObject *)arg1 lastPosition:(struct CGPoint)arg2;
-- (void)_snapNodeToPoint:(id)arg1 sceneRect:(struct CGRect)arg2 targetValue:(float)arg3 axis:(int)arg4 side:(int)arg5 resultOut:(struct SnapResult *)arg6;
+-     // Error parsing type: v60@0:8^162432i40f44f48^{SnapResult=BBff}52, name: _snapScreenPoint:withManipulationVector:andStartPoint:toAxis:withSceneValue:andScreenValue:resultOut:
+- (void)_snapPoint:(struct CGPoint)arg1 ofNode:(id)arg2 toGridWithSpacing:(double)arg3 withAxis:(int)arg4 resultOut:(struct SnapResult *)arg5;
+- (void)_snapNodeToPoint:(id)arg1 sceneRect:(struct CGRect)arg2 screenRect:(struct CGRect)arg3 targetValue:(float)arg4 targetScreenValue:(float)arg5 axis:(int)arg6 side:(int)arg7 resultOut:(struct SnapResult *)arg8;
 - (void)_pan:(float)arg1 deltaY:(float)arg2;
 - (void)zoom:(float)arg1;
 - (void)_zoom:(float)arg1 towardScenePosition:(struct CGPoint)arg2;
@@ -87,6 +92,7 @@
 - (void)_startScalingItem:(struct NSObject *)arg1;
 - (void)_endRotation;
 - (void)_startRotatingItem:(struct NSObject *)arg1;
+- (void)_sendItemsToPasteboard:(id)arg1;
 - (void)_endTranslating;
 - (void)_startTranslatingItems:(id)arg1;
 - (BOOL)validateUserInterfaceItem:(id)arg1;

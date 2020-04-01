@@ -9,6 +9,7 @@
 @class DTTapMessage;
 
 @protocol DTTapBulkDataReceiver <NSObject>
+- (void)sendHeartbeatTime:(unsigned long long)arg1;
 - (void)sendFrameMessage:(DTTapMessage *)arg1;
 - (void)handleBulkData:(const void *)arg1 size:(unsigned long long)arg2 destructor:(void (^)(void))arg3;
 @end

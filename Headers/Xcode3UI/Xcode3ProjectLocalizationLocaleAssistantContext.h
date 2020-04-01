@@ -21,9 +21,8 @@
 @property(retain) NSArray *localizableFiles; // @synthesize localizableFiles=_localizableFiles;
 @property(retain) Xcode3Project *project; // @synthesize project=_project;
 - (void).cxx_destruct;
-- (id)populateLocalizableFiles;
 @property(readonly) NSString *assistantTitle;
-- (id)initWithProject:(id)arg1 toLocale:(id)arg2;
+- (id)initWithProject:(id)arg1 convertingFiles:(id)arg2 toLocale:(id)arg3;
 
 @end
 

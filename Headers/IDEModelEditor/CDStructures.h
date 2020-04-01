@@ -183,16 +183,6 @@ struct _XDLineGraphicToolFlags {
     unsigned int RESERVED:25;
 };
 
-struct _XDOutlineViewFlags {
-    unsigned int optionClickCausesEditing:1;
-    unsigned int optionClickEditsAnyCell:1;
-    unsigned int tableColumnProviderRespondsToWillAddTableColumn:1;
-    unsigned int tableColumnProviderRespondsToDidRemoveTableColumn:1;
-    unsigned int tableColumnProviderRespondsToWillSynchronizeTableHeaderContextMenu:1;
-    unsigned int tableColumnProviderRespondsToDidSynchronizeTableHeaderContextMenu:1;
-    unsigned int RESERVED:26;
-};
-
 struct _XDScrollViewFlags {
     unsigned int hasVerticalScrollerViews:1;
     unsigned int hasHorizontalScrollerViews:1;

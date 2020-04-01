@@ -8,18 +8,16 @@
 
 #import <XCSUI/XCSUIBotDefintionEditorViewController-Protocol.h>
 
-@class DVTStackBacktrace, NSString, XCSUIBotDefinitionContext, XCSUIBotDefinition_DevicePickerEditor, XCSUIBotDefinition_DevicePickerEditor_Legacy;
+@class DVTStackBacktrace, NSString, XCSUIBotDefinitionContext, XCSUIBotDefinition_DevicePickerEditor;
 
 @interface XCSUIBotDefinitionEditor_DevicePickerCapsule : IDEViewController <XCSUIBotDefintionEditorViewController>
 {
     XCSUIBotDefinitionContext *_definitionContext;
-    XCSUIBotDefinition_DevicePickerEditor_Legacy *_legacyDevicePickerEditor;
     XCSUIBotDefinition_DevicePickerEditor *_devicePickerEditor;
 }
 
 + (id)title;
 @property(retain, nonatomic) XCSUIBotDefinition_DevicePickerEditor *devicePickerEditor; // @synthesize devicePickerEditor=_devicePickerEditor;
-@property(retain, nonatomic) XCSUIBotDefinition_DevicePickerEditor_Legacy *legacyDevicePickerEditor; // @synthesize legacyDevicePickerEditor=_legacyDevicePickerEditor;
 @property(retain, nonatomic) XCSUIBotDefinitionContext *definitionContext; // @synthesize definitionContext=_definitionContext;
 - (void).cxx_destruct;
 - (void)commitChanges;

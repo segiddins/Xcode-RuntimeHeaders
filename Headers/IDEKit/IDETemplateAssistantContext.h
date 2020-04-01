@@ -12,12 +12,12 @@
 {
     BOOL _alwaysShowProjectNavigator;
     BOOL _skipFileChooser;
+    BOOL _preventDestinationChoice;
     IDETemplateInstantiationContext *_instantiationContext;
     IDEWorkspaceDocument *_createdDocument;
-    NSArray *_templateSectionNavigables;
 }
 
-@property(retain, nonatomic) NSArray *templateSectionNavigables; // @synthesize templateSectionNavigables=_templateSectionNavigables;
+@property BOOL preventDestinationChoice; // @synthesize preventDestinationChoice=_preventDestinationChoice;
 @property BOOL skipFileChooser; // @synthesize skipFileChooser=_skipFileChooser;
 @property(readonly) BOOL alwaysShowProjectNavigator; // @synthesize alwaysShowProjectNavigator=_alwaysShowProjectNavigator;
 @property(retain) IDEWorkspaceDocument *createdDocument; // @synthesize createdDocument=_createdDocument;
@@ -25,7 +25,6 @@
 - (void).cxx_destruct;
 - (void)_asyncFinishTemplateInstantiationAfterCreatingWorkspaceDocumentWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)asyncFinishTemplateInstantiationWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (void)loadAvailableTemplatesOfKind:(id)arg1 navigableItemCoordinator:(id)arg2;
 - (void)setWorkspaceTabController:(id)arg1;
 @property(readonly, copy) NSArray *targetWorkspaces;
 - (struct CGSize)windowSize;

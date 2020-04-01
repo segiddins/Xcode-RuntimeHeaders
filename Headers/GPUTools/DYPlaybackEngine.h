@@ -14,19 +14,25 @@
     id <DYCaptureStore> _captureStore;
     DYFunctionPlayer *_player;
     DYCaptureFile *_currentFile;
-    long long _playerOnce;
     struct dispatch_queue_s *_playbackQueue;
+    struct os_unfair_lock_s _playerLock;
     struct PlaybackEngineDecodeCache *_cache;
     struct __wrap_iter<std::__1::unique_ptr<GPUTools::Playback::FunctionStreamEntry, std::__1::default_delete<GPUTools::Playback::FunctionStreamEntry>>*> _fseIterator;
     unsigned int _functionBatchOffset;
     _Bool _active;
+    BOOL _waitUntilCompleteAfterEveryFrame;
+    BOOL _verbose;
     unsigned int _targetFunctionIndex;
+    unsigned int _targetSubCommandIndex;
     unsigned int _loopCount;
     unsigned int _currentFunctionIndex;
 }
 
+@property(nonatomic) BOOL verbose; // @synthesize verbose=_verbose;
+@property(nonatomic) BOOL waitUntilCompleteAfterEveryFrame; // @synthesize waitUntilCompleteAfterEveryFrame=_waitUntilCompleteAfterEveryFrame;
 @property(readonly, nonatomic) unsigned int currentFunctionIndex; // @synthesize currentFunctionIndex=_currentFunctionIndex;
 @property(nonatomic) unsigned int loopCount; // @synthesize loopCount=_loopCount;
+@property(nonatomic) unsigned int targetSubCommandIndex; // @synthesize targetSubCommandIndex=_targetSubCommandIndex;
 @property(nonatomic) unsigned int targetFunctionIndex; // @synthesize targetFunctionIndex=_targetFunctionIndex;
 @property(readonly, nonatomic) DYCaptureFile *currentFile; // @synthesize currentFile=_currentFile;
 @property(readonly, retain, nonatomic) id <DYCaptureStore> captureStore; // @synthesize captureStore=_captureStore;
@@ -36,8 +42,11 @@
 - (void)performPlaybackLoopIterationPreCaptureActions:(unsigned int)arg1;
 - (id)playback;
 - (id)playbackToFunction:(unsigned int)arg1;
+- (void)playbackToFunction:(unsigned int)arg1 subCommandIndex:(int)arg2 withLoops:(unsigned int)arg3;
+- (void)playbackToFunction:(unsigned int)arg1 withLoops:(unsigned int)arg2;
 - (void)onPlaybackRequestCompleted;
 - (void)onPlaybackRequestStart;
+- (void)waitUntilCompleted;
 - (void)_performPlaybackRequest:(unsigned int)arg1;
 - (void)_executeFunctionStreamEntriesPerformingLoopIterationActions:(_Bool)arg1 iteration:(unsigned int)arg2;
 - (void)_executeDeltaFSEs;

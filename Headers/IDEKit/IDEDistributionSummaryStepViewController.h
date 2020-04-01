@@ -6,77 +6,56 @@
 
 #import <IDEKit/IDEDistributionStepViewController.h>
 
-#import <IDEKit/DVTLinkViewDelegate-Protocol.h>
-#import <IDEKit/NSTableViewDelegate-Protocol.h>
+#import <IDEKit/DVTOutlineViewDelegate-Protocol.h>
+#import <IDEKit/NSOutlineViewDataSource-Protocol.h>
+#import <IDEKit/NSSplitViewDelegate-Protocol.h>
 
-@class DVTLinkView, DVTScrollView, DVTStackView_AppKitAutolayout, DVTTableView, IDEDistributionOptionLinkTextField, NSArray, NSButton, NSMenuItem, NSMutableArray, NSString, NSTextField, NSView, NSWindow;
+@class DVTFilePath, DVTOutlineView, DVTSplitView, DVTWrapperView, IDEDistributionItemSummaryNode, IDEDistributionItemSummaryViewController, NSProgressIndicator, NSString, NSTabView, NSTextField;
 
-@interface IDEDistributionSummaryStepViewController : IDEDistributionStepViewController <DVTLinkViewDelegate, NSTableViewDelegate>
+@interface IDEDistributionSummaryStepViewController : IDEDistributionStepViewController <DVTOutlineViewDelegate, NSOutlineViewDataSource, NSSplitViewDelegate>
 {
-    NSMutableArray *_cancellationTokens;
-    DVTStackView_AppKitAutolayout *_optionsStack;
-    NSView *_symbolOptionView;
-    DVTLinkView *_learnMoreLinkView;
-    NSTextField *_learnMoreLinkTextField;
-    NSView *_manifestOptionView;
-    IDEDistributionOptionLinkTextField *_manifestLearnMoreTextField;
-    NSView *_sendBitcodeOptionView;
-    NSButton *_sendBitcodeCheckbox;
-    NSString *_sendBitcodeButtonTitle;
-    DVTLinkView *_sendBitcodeLearnMoreLinkView;
-    NSTextField *_sendBitcodeLearnMoreLinkTextField;
-    NSMenuItem *_exportPackageMenuItem;
-    NSMenuItem *_exportArchiveMenuItem;
-    DVTTableView *_detailTable;
-    DVTScrollView *_detailTableScrollView;
-    NSWindow *_learnMoreSheet;
-    NSTextField *_learnMoreContentsTextField;
-    NSString *_signingIdentityName;
-    NSString *_packageName;
-    NSArray *_summaryItems;
+    BOOL _canNavigate;
+    NSTabView *_tabView;
+    DVTSplitView *_splitView;
+    DVTOutlineView *_masterOutlineView;
+    DVTWrapperView *_detailWrapperView;
+    NSProgressIndicator *_spinner;
+    NSTextField *_progressMessage;
+    DVTFilePath *_packagePath;
+    IDEDistributionItemSummaryNode *_rootItem;
+    IDEDistributionItemSummaryViewController *_detailViewController;
 }
 
-+ (id)keyPathsForValuesAffectingShowOptions;
-@property(retain) NSArray *summaryItems; // @synthesize summaryItems=_summaryItems;
-@property(retain) NSString *packageName; // @synthesize packageName=_packageName;
-@property(retain) NSString *signingIdentityName; // @synthesize signingIdentityName=_signingIdentityName;
-@property(retain, nonatomic) NSTextField *learnMoreContentsTextField; // @synthesize learnMoreContentsTextField=_learnMoreContentsTextField;
-@property(retain, nonatomic) NSWindow *learnMoreSheet; // @synthesize learnMoreSheet=_learnMoreSheet;
-@property(retain) DVTScrollView *detailTableScrollView; // @synthesize detailTableScrollView=_detailTableScrollView;
-@property(retain) DVTTableView *detailTable; // @synthesize detailTable=_detailTable;
-@property(retain) NSMenuItem *exportArchiveMenuItem; // @synthesize exportArchiveMenuItem=_exportArchiveMenuItem;
-@property(retain) NSMenuItem *exportPackageMenuItem; // @synthesize exportPackageMenuItem=_exportPackageMenuItem;
-@property(retain) NSTextField *sendBitcodeLearnMoreLinkTextField; // @synthesize sendBitcodeLearnMoreLinkTextField=_sendBitcodeLearnMoreLinkTextField;
-@property(retain) DVTLinkView *sendBitcodeLearnMoreLinkView; // @synthesize sendBitcodeLearnMoreLinkView=_sendBitcodeLearnMoreLinkView;
-@property(retain, nonatomic) NSString *sendBitcodeButtonTitle; // @synthesize sendBitcodeButtonTitle=_sendBitcodeButtonTitle;
-@property(retain) NSButton *sendBitcodeCheckbox; // @synthesize sendBitcodeCheckbox=_sendBitcodeCheckbox;
-@property(retain) NSView *sendBitcodeOptionView; // @synthesize sendBitcodeOptionView=_sendBitcodeOptionView;
-@property(retain, nonatomic) IDEDistributionOptionLinkTextField *manifestLearnMoreTextField; // @synthesize manifestLearnMoreTextField=_manifestLearnMoreTextField;
-@property(retain, nonatomic) NSView *manifestOptionView; // @synthesize manifestOptionView=_manifestOptionView;
-@property(retain, nonatomic) NSTextField *learnMoreLinkTextField; // @synthesize learnMoreLinkTextField=_learnMoreLinkTextField;
-@property(retain, nonatomic) DVTLinkView *learnMoreLinkView; // @synthesize learnMoreLinkView=_learnMoreLinkView;
-@property(retain, nonatomic) NSView *symbolOptionView; // @synthesize symbolOptionView=_symbolOptionView;
-@property(retain, nonatomic) DVTStackView_AppKitAutolayout *optionsStack; // @synthesize optionsStack=_optionsStack;
++ (id)keyPathsForValuesAffectingCanPerformAdditionalAction;
++ (id)keyPathsForValuesAffectingCanGoPrevious;
++ (id)keyPathsForValuesAffectingCanGoNext;
+@property(nonatomic) BOOL canNavigate; // @synthesize canNavigate=_canNavigate;
+@property(retain, nonatomic) IDEDistributionItemSummaryViewController *detailViewController; // @synthesize detailViewController=_detailViewController;
+@property(retain, nonatomic) IDEDistributionItemSummaryNode *rootItem; // @synthesize rootItem=_rootItem;
+@property(retain, nonatomic) DVTFilePath *packagePath; // @synthesize packagePath=_packagePath;
+@property(retain, nonatomic) NSTextField *progressMessage; // @synthesize progressMessage=_progressMessage;
+@property(retain, nonatomic) NSProgressIndicator *spinner; // @synthesize spinner=_spinner;
+@property(retain, nonatomic) DVTWrapperView *detailWrapperView; // @synthesize detailWrapperView=_detailWrapperView;
+@property(retain, nonatomic) DVTOutlineView *masterOutlineView; // @synthesize masterOutlineView=_masterOutlineView;
+@property(retain, nonatomic) DVTSplitView *splitView; // @synthesize splitView=_splitView;
+@property(retain, nonatomic) NSTabView *tabView; // @synthesize tabView=_tabView;
 - (void).cxx_destruct;
-- (BOOL)hideStrippingOptionsLabel;
-- (id)strippingOptionsUserDescription;
-- (void)revealProfile:(id)arg1;
-- (void)expandEntitlements:(id)arg1;
-- (id)_clickedSummaryItemForSender:(id)arg1;
-- (BOOL)tableView:(id)arg1 shouldSelectRow:(long long)arg2;
-- (double)tableView:(id)arg1 heightOfRow:(long long)arg2;
-- (id)tableView:(id)arg1 viewForTableColumn:(id)arg2 row:(long long)arg3;
+- (double)splitView:(id)arg1 constrainMinCoordinate:(double)arg2 ofSubviewAt:(long long)arg3;
+- (double)splitView:(id)arg1 constrainMaxCoordinate:(double)arg2 ofSubviewAt:(long long)arg3;
+- (BOOL)splitView:(id)arg1 canCollapseSubview:(id)arg2;
+- (void)outlineViewSelectionDidChange:(id)arg1;
+- (id)outlineView:(id)arg1 viewForTableColumn:(id)arg2 item:(id)arg3;
+- (BOOL)outlineView:(id)arg1 isItemExpandable:(id)arg2;
+- (long long)outlineView:(id)arg1 numberOfChildrenOfItem:(id)arg2;
+- (id)outlineView:(id)arg1 child:(long long)arg2 ofItem:(id)arg3;
+- (void)takeAdditionalAction;
+- (id)additionalActionTitle;
+- (BOOL)canPerformAdditionalAction;
 - (id)nextButtonTitle;
-- (void)done:(id)arg1;
-- (void)linkView:(id)arg1 didReceiveClickAtPoint:(struct CGPoint)arg2;
-@property(readonly, nonatomic) BOOL showOptions;
 - (id)title;
-- (id)nibName;
-- (void)_bind:(id)arg1 toKeyPath:(id)arg2;
-- (void)_bind:(id)arg1 toKeyPath:(id)arg2 options:(id)arg3;
-- (void)setupBitcodeAskCheckbox;
-- (void)viewDidInstall;
-- (void)loadView;
+- (BOOL)canGoPrevious;
+- (BOOL)canGoNext;
+- (void)viewDidLoad;
 - (void)primitiveInvalidate;
 
 // Remaining properties

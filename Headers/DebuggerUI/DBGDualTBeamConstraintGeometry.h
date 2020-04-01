@@ -13,6 +13,7 @@
 @interface DBGDualTBeamConstraintGeometry : SCNGeometry <DBGConstraintGeometry>
 {
     BOOL _horizontal;
+    BOOL _useLegacyGLRenderer;
     BOOL _verticesSnapToPixelGridIn2D;
     int _appearence;
     int _style;
@@ -24,7 +25,8 @@
     double _lineWidth;
 }
 
-+ (id)_sharedMaterial;
++ (id)_sharedMaterialForMetalRendererWithLibrary:(id)arg1;
++ (id)_sharedMaterialForLegacyGLRenderer;
 + (id)dualTBeamGeometryWithStart:(id)arg1 end:(id)arg2 view:(id)arg3;
 @property double lineWidth; // @synthesize lineWidth=_lineWidth;
 @property(retain) NSColor *lineColor; // @synthesize lineColor=_lineColor;
@@ -38,6 +40,7 @@
 - (id)init;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property int appearence; // @synthesize appearence=_appearence;
+- (void)_calculateBoundingBox;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

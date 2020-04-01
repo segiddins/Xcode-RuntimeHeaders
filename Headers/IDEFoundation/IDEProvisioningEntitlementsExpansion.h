@@ -10,6 +10,7 @@
 {
 }
 
+- (id)expandMacro:(id)arg1;
 - (id)expandEntitlements:(id)arg1 withOverrides:(id)arg2;
 
 @end

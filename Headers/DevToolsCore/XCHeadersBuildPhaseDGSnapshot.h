@@ -11,9 +11,9 @@
 }
 
 + (id)defaultName;
-- (id)initWithInformationFromBuildPhase:(id)arg1 forTargetSnapshot:(id)arg2;
-- (void)computeDependenciesInTargetBuildContext:(id)arg1;
-- (void)computeDependenciesForBuildFileReference:(id)arg1 inTargetBuildContext:(id)arg2;
+- (id)initWithInformationFromBuildPhase:(id)arg1 forTargetSnapshot:(id)arg2 withResolver:(id)arg3;
+- (void)computeDependenciesWithMacroExpansionScope:(id)arg1;
+- (void)computeDependenciesForBuildFileReference:(id)arg1 withMacroExpansionScope:(id)arg2;
 
 @end
 

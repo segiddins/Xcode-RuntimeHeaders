@@ -12,7 +12,6 @@
 
 - (void)validate;
 - (void)rename;
-- (void)finishedRenameWithRequest:(id)arg1;
 
 @end
 

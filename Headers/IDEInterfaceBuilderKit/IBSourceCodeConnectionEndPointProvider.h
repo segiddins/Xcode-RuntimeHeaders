@@ -8,17 +8,19 @@
 
 #import <IDEInterfaceBuilderKit/IBEndPointProvider-Protocol.h>
 
-@class DVTSourceTextView, IBTargetIdentifier, NSSet, NSString;
+@class IBTargetIdentifier, NSSet, NSString, NSURL, NSView;
+@protocol DVTSourceEditorViewProtocol;
 
 @interface IBSourceCodeConnectionEndPointProvider : NSObject <IBEndPointProvider>
 {
     IBTargetIdentifier *_targetIdentifier;
     NSSet *_connectionContextExtensions;
-    DVTSourceTextView *_sourceTextView;
+    NSView<DVTSourceEditorViewProtocol> *_sourceEditorView;
 }
 
-@property(retain) DVTSourceTextView *sourceTextView; // @synthesize sourceTextView=_sourceTextView;
+@property(retain) NSView<DVTSourceEditorViewProtocol> *sourceEditorView; // @synthesize sourceEditorView=_sourceEditorView;
 - (void).cxx_destruct;
+@property(readonly) NSURL *sourceDocumentURL;
 - (BOOL)shouldFilterConstraintChoicesBasedUponAngleOfLine;
 - (void)indicateConnectionSuccessForTarget:(id)arg1;
 - (id)showTargetIdentifierForEndPoint:(id)arg1;
@@ -33,13 +35,14 @@
 - (void)endPointConsumerWillStartConnecting;
 - (id)nearestInterestingConnectionHandlerContainingClassNamed:(id)arg1 realSourceLineNumber:(unsigned long long)arg2 withContext:(id)arg3 forDocument:(id)arg4 prototypeConnectionContextsBlock:(CDUnknownBlockType)arg5;
 - (void)determineValidMatchAndInsertionContextsForCompletingConnectionPrototype:(id)arg1 containingClassNamed:(id)arg2 realSourceLineNumber:(unsigned long long)arg3 withContext:(id)arg4 forDocument:(id)arg5 prototypeConnectionContextsBlock:(CDUnknownBlockType)arg6 populatingValidMatchContexts:(id)arg7 validInsertionContexts:(id)arg8;
+- (BOOL)checkIfInsertionBelowFirstMethodAtLineNumber:(unsigned long long)arg1;
 - (void)uninstallTargetIdentifier;
 - (void)installTargetIdentifier;
 - (id)destinationWorkspaceDocument;
 - (id)containingView;
+- (id)sourceEditorViewLayoutManager;
 - (id)editorForSourceTextView;
-- (id)textStorage;
-- (id)initWithSourceTextView:(id)arg1;
+- (id)initWithSourceEditorView:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -11,12 +11,13 @@
 @interface IDETemplateSection : NSObject
 {
     NSMutableDictionary *_templateCategoriesByName;
+    NSString *_explicitName;
     BOOL _showsCategoriesAsChildren;
     NSArray *_categories;
     DVTPlatform *_platform;
 }
 
-+ (id)keyPathsForValuesAffectingWillChangeDeviceSoftwareVersion;
++ (id)crossPlatformSectionName;
 @property BOOL showsCategoriesAsChildren; // @synthesize showsCategoriesAsChildren=_showsCategoriesAsChildren;
 @property(retain) DVTPlatform *platform; // @synthesize platform=_platform;
 - (void).cxx_destruct;
@@ -28,6 +29,8 @@
 @property(readonly) NSString *sectionIdentifier;
 @property(readonly) NSString *name;
 - (id)init;
+- (id)initWithName:(id)arg1;
+- (id)initWithPlatform:(id)arg1;
 
 @end
 

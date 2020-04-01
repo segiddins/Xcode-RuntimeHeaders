@@ -29,6 +29,7 @@
 @property(readonly, nonatomic) NSObject<IBIDEAutolayoutItem> *secondItem; // @synthesize secondItem=_secondItem;
 @property(readonly, nonatomic) NSObject<IBIDEAutolayoutItem> *firstItem; // @synthesize firstItem=_firstItem;
 - (void).cxx_destruct;
+- (id)debugDescription;
 - (void)addAlternateMenuItemInGroup:(unsigned long long)arg1 withTitle:(id)arg2 existingMatch:(long long)arg3 shouldSwapWithPreviousMenuItem:(BOOL)arg4 constraintCreationBlock:(CDUnknownBlockType)arg5;
 - (void)addAlternateMenuItem:(id)arg1 inGroup:(unsigned long long)arg2 shouldSwapWithPreviousMenuItem:(BOOL)arg3;
 - (void)addMenuItemInGroup:(unsigned long long)arg1 withTitle:(id)arg2 existingMatch:(long long)arg3 constraintCreationBlock:(CDUnknownBlockType)arg4;

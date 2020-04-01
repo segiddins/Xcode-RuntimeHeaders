@@ -12,9 +12,10 @@
 {
 }
 
++ (id)propertyListForContext:(id)arg1;
 + (id)availableOptionsForPropertyList;
 - (BOOL)runWithError:(id *)arg1;
-- (BOOL)loadFromPropertyList:(id)arg1 error:(id *)arg2;
+- (BOOL)loadFromExportOptions:(id)arg1 error:(id *)arg2;
 @property(copy, nonatomic) NSString *selectedEnvironment;
 @property(readonly, nonatomic) NSArray *availableEnvironments;
 - (BOOL)isApplicable;

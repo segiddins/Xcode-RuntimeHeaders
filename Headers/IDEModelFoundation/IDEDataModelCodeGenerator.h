@@ -14,6 +14,7 @@
     CDMModel *_model;
 }
 
++ (void)initialize;
 - (void).cxx_destruct;
 - (void)generateCodeForInputFile:(id)arg1 outputFilePath:(id)arg2 completionQueue:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (id)generatedFilePathsForInputFilePath:(id)arg1 outputFilePath:(id)arg2 error:(id *)arg3;

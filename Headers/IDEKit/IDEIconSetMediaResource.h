@@ -10,9 +10,10 @@
 {
 }
 
-- (id)mediaLibraryDetailControllerIdentifier;
-- (id)generateContentForFilePath:(id)arg1 contentType:(id)arg2;
-- (id)generateIconForFilePath:(id)arg1 contentType:(id)arg2;
++ (id)generateContentWithContext:(id)arg1;
++ (id)generateIconWithContext:(id)arg1;
+- (id)captureContextOnMainThreadBeforeGeneratingContent;
+- (id)captureContextOnMainThreadBeforeGeneratingIcon;
 
 @end
 

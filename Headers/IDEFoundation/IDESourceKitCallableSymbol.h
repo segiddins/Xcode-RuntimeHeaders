@@ -6,20 +6,38 @@
 
 #import <IDEFoundation/IDESourceKitSymbol.h>
 
-@interface IDESourceKitCallableSymbol : IDESourceKitSymbol
+#import <IDEFoundation/IDEIndexCallableSymbol-Protocol.h>
+
+@class DVTDocumentLocation, DVTFilePath, DVTSourceCodeLanguage, DVTSourceCodeSymbolKind, DVTSymbol, IDEIndexCollection, NSString, NSURL;
+@protocol IDEIndexPropertySymbol;
+
+@interface IDESourceKitCallableSymbol : IDESourceKitSymbol <IDEIndexCallableSymbol>
 {
 }
 
 - (BOOL)isKindOfClass:(Class)arg1;
-- (id)callsCancelWhen:(CDUnknownBlockType)arg1;
-- (id)calls;
-- (id)typeOfArgument:(unsigned long long)arg1;
-- (unsigned long long)numArguments;
-- (id)returnType;
-- (id)property;
-- (id)overridingSymbols;
-- (id)overriddenSymbols;
-- (void)setContainerSymbol:(id)arg1;
+@property(readonly, nonatomic) id <IDEIndexPropertySymbol> property;
+@property(readonly, nonatomic) IDEIndexCollection *overriddenSymbols;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) DVTFilePath *file;
+@property(readonly) BOOL hasOccurrence;
+@property(readonly) unsigned long long hash;
+@property(readonly) DVTSymbol *identifier;
+@property(readonly) BOOL isSystem;
+@property(readonly) BOOL isVirtual;
+@property(readonly) DVTDocumentLocation *location;
+@property(readonly) NSString *moduleName;
+@property(readonly) NSURL *moduleURL;
+@property(readonly) NSString *name;
+@property(readonly) BOOL navigationPrefersDefinition;
+@property(readonly) NSString *resolution;
+@property(readonly) long long role;
+@property(readonly) Class superclass;
+@property(readonly) DVTSourceCodeSymbolKind *symbolKind;
+@property(readonly) DVTSourceCodeLanguage *symbolLanguage;
 
 @end
 

@@ -10,6 +10,7 @@
 {
 }
 
++ (id)variantDescriptorsUserDescriptionForVariantDescriptorDictionaries:(id)arg1;
 + (_Bool)runsPerDistributionItem;
 + (_Bool)runsPerThinningVariant;
 - (_Bool)runWithError:(id *)arg1;

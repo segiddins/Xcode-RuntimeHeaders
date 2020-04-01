@@ -10,5 +10,13 @@
 + (id)dvt_writeOnlyFileHandleWithNullDevice:(id *)arg1;
 + (id)dvt_readOnlyFileHandleWithNullDevice:(id *)arg1;
 + (id)dvt_fileHandleWithNullDeviceInMode:(int)arg1 error:(id *)arg2;
+- (void)dvt_writeData:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
+- (void)dvt_readToEndOfFileWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (BOOL)dvt_writeFormat:(id)arg1;
+- (BOOL)dvt_writeFormat:(id)arg1 arguments:(struct __va_list_tag [1])arg2;
+- (BOOL)dvt_writeString:(id)arg1;
+- (BOOL)dvt_writeString:(id)arg1 error:(id *)arg2;
+- (BOOL)dvt_writeData:(id)arg1 error:(id *)arg2;
+- (id)dvt_duplicateFileHandleWithError:(id *)arg1;
 @end
 

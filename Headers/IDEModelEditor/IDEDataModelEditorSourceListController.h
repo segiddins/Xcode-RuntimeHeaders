@@ -8,7 +8,7 @@
 
 #import <IDEModelEditor/IDEDataModelEditorController-Protocol.h>
 
-@class DVTNotificationToken, DVTObservingToken, IDEDMSourceListSection, IDENavigatorStatusCell, NSString;
+@class DVTNotificationToken, DVTObservingToken, DVTStackBacktrace, IDEDMSourceListSection, IDEDataModelEditor, IDENavigatorStatusCell, NSString;
 
 @interface IDEDataModelEditorSourceListController : IDEDMEditorSourceListController <IDEDataModelEditorController>
 {
@@ -44,13 +44,14 @@
 - (id)shownSourceListSectionIdentifiers;
 - (id)treeControllerChildrenKeyPath;
 - (void)selectModelObjects:(id)arg1;
-@property(readonly) int selectedHierarchyMode;
+@property(readonly) unsigned long long selectedHierarchyMode;
 - (BOOL)outlineView:(id)arg1 shouldEditTableColumn:(id)arg2 item:(id)arg3;
 - (void)outlineView:(id)arg1 willDisplayCell:(id)arg2 forTableColumn:(id)arg3 item:(id)arg4;
 - (BOOL)outlineView:(id)arg1 shouldShowOutlineCellForItem:(id)arg2;
 - (void)primitiveInvalidate;
 - (void)loadView;
 - (void)setupSourceListAndCells;
+- (void)setupContextualMenu;
 - (id)identifier;
 - (void)setupSourceListSections;
 - (id)createSourceListSections;
@@ -59,10 +60,14 @@
 - (id)nibName;
 
 // Remaining properties
+@property(retain) DVTStackBacktrace *creationBacktrace;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
+@property(readonly) DVTStackBacktrace *invalidationBacktrace;
+@property(readonly) IDEDataModelEditor *rootEditor;
 @property(readonly) Class superclass;
+@property(readonly, nonatomic, getter=isValid) BOOL valid;
 
 @end
 

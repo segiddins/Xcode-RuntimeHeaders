@@ -9,7 +9,7 @@
 #import <IDEModelEditor/NSCoding-Protocol.h>
 #import <IDEModelEditor/NSCopying-Protocol.h>
 
-@class XDGraphic;
+@class NSUndoManager, XDGraphic;
 
 @interface XDDrawingStyle : NSObject <NSCoding, NSCopying>
 {
@@ -21,9 +21,8 @@
 - (void).cxx_destruct;
 - (void)drawInView:(id)arg1;
 - (void)drawGraphic:(id)arg1 inView:(id)arg2;
-- (id)undoManager;
-- (id)graphic;
-- (void)_setGraphic:(id)arg1;
+@property(readonly) NSUndoManager *undoManager;
+@property(retain, setter=_setGraphic:) XDGraphic *graphic;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

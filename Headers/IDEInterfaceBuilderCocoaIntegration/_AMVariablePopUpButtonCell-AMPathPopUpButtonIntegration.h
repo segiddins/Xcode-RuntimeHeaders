@@ -6,8 +6,20 @@
 
 #import <Automator/_AMVariablePopUpButtonCell.h>
 
-@interface _AMVariablePopUpButtonCell (AMPathPopUpButtonIntegration)
+#import <IDEInterfaceBuilderCocoaIntegration/IBDocumentArchiving-Protocol.h>
+
+@class NSString;
+
+@interface _AMVariablePopUpButtonCell (AMPathPopUpButtonIntegration) <IBDocumentArchiving>
 - (BOOL)ibShouldArchiveMenuItems;
 - (BOOL)ibShouldReattachTransientChildrenToChild:(id)arg1;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @end
 

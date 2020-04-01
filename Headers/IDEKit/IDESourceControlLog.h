@@ -23,6 +23,7 @@
     NSMutableArray *_logItems;
     NSObject<OS_dispatch_queue> *_queue;
     BOOL _displayFilesChanged;
+    BOOL _didEndLogging;
     BOOL _datasourceExternal;
     NSMapTable *_lastRevisionsLoaded;
     NSArray *_authors;
@@ -47,16 +48,13 @@
 @property BOOL displayFilesChanged; // @synthesize displayFilesChanged=_displayFilesChanged;
 @property(readonly) NSArray *logItems; // @synthesize logItems=_logItems;
 - (void).cxx_destruct;
-- (id)_logItemForRevision:(id)arg1;
+- (void)endLogging;
+- (void)beginLogging;
 - (id)loadLogItems:(id)arg1 searchType:(unsigned long long)arg2 incrementalLogBlock:(CDUnknownBlockType)arg3 completionBlock:(CDUnknownBlockType)arg4;
-- (id)createLogItemFromLogInfo:(id)arg1 withSourceTreeItem:(id)arg2;
-- (void)arrangeLogEntries:(id)arg1;
+- (BOOL)arrangeLogEntries:(id)arg1;
 - (unsigned long long)_lastIndexForWorkingCopy:(id)arg1;
 - (void)setLogContentsWithItems:(id)arg1;
 - (void)clearLog;
-- (void)cancelAllLogRequests;
-- (void)removeLogRequest:(id)arg1;
-- (void)addLogRequest:(id)arg1;
 @property(readonly) NSString *subpath;
 - (void)setWorkingCopy:(id)arg1 subpath:(id)arg2 branch:(id)arg3;
 @property(retain) DVTSourceControlWorkingCopy *workingCopy;

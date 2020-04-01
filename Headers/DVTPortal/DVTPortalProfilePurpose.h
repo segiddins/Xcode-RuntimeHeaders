@@ -12,6 +12,8 @@
 {
     BOOL _distribution;
     BOOL _mustContainDevices;
+    BOOL _isUniversal;
+    BOOL _allowsUnregisteredDevices;
     NSString *_name;
     NSString *_identifier;
     NSString *_portalDistributionType;
@@ -20,12 +22,15 @@
 + (id)profilePurposeWithName:(id)arg1;
 + (id)profilePurposeWithIdentifier:(id)arg1;
 + (id)allProfilePurposes;
+@property(readonly, nonatomic) BOOL allowsUnregisteredDevices; // @synthesize allowsUnregisteredDevices=_allowsUnregisteredDevices;
+@property(readonly, nonatomic) BOOL isUniversal; // @synthesize isUniversal=_isUniversal;
 @property(readonly, nonatomic) BOOL mustContainDevices; // @synthesize mustContainDevices=_mustContainDevices;
 @property(readonly, nonatomic, getter=isDistribution) BOOL distribution; // @synthesize distribution=_distribution;
 @property(readonly) NSString *portalDistributionType; // @synthesize portalDistributionType=_portalDistributionType;
 @property(readonly) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
+- (id)description;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 

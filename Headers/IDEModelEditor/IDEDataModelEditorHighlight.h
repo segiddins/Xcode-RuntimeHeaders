@@ -7,21 +7,22 @@
 #import <objc/NSObject.h>
 
 @class NSString;
+@protocol IDEDMModelObject;
 
 @interface IDEDataModelEditorHighlight : NSObject
 {
-    id _modelObject;
-    struct _NSRange _highlightRange;
+    BOOL _active;
+    id <IDEDMModelObject> _modelObject;
     NSString *_highlightProperty;
-    BOOL _isActive;
     unsigned long long _numberOfInternalHits;
+    struct _NSRange _highlightRange;
 }
 
 @property unsigned long long numberOfInternalHits; // @synthesize numberOfInternalHits=_numberOfInternalHits;
-@property BOOL isActive; // @synthesize isActive=_isActive;
-@property(readonly) NSString *highlightProperty; // @synthesize highlightProperty=_highlightProperty;
+@property(getter=isActive) BOOL active; // @synthesize active=_active;
+@property(readonly, copy) NSString *highlightProperty; // @synthesize highlightProperty=_highlightProperty;
 @property(readonly) struct _NSRange highlightRange; // @synthesize highlightRange=_highlightRange;
-@property(readonly) id modelObject; // @synthesize modelObject=_modelObject;
+@property(readonly) id <IDEDMModelObject> modelObject; // @synthesize modelObject=_modelObject;
 - (void).cxx_destruct;
 - (id)initWithModelObject:(id)arg1 range:(struct _NSRange)arg2 property:(id)arg3;
 

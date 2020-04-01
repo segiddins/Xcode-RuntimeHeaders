@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <DVTKit/DVTTableRowView.h>
+#import <DVTUserInterfaceKit/DVTTableRowView.h>
 
 @class NSView;
 
@@ -18,7 +18,9 @@
 @property(nonatomic) BOOL showsPointerAnnotationView; // @synthesize showsPointerAnnotationView=_showsPointerAnnotationView;
 @property(retain) NSView *pointerAnnotationView; // @synthesize pointerAnnotationView=_pointerAnnotationView;
 - (void).cxx_destruct;
+- (void)_updatePointerAnnotationViewFrame;
 - (void)_updateInstructionPointerAnnotation;
+- (void)setFrameSize:(struct CGSize)arg1;
 
 @end
 

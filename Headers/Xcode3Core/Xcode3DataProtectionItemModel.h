@@ -13,11 +13,14 @@
     id <IDEFlightChecking> _entitlementFlightCheck;
 }
 
++ (id)coalescableReadOnlyKeyPaths;
 - (void).cxx_destruct;
+- (id)coalescableWriteableKeyPathToDataSource;
 - (BOOL)isEnabledUsingEducatedGuess;
 - (id)entitlementFlightCheck;
 - (id)entitlement;
 - (id)flightChecks;
+- (id)initWithCapabilitiesContext:(id)arg1 item:(id)arg2;
 
 @end
 

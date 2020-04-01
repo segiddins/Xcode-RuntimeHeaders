@@ -7,18 +7,34 @@
 #import <objc/NSObject.h>
 
 #import <IDEiOSSupportCore/DVTBasiciOSDevice-Protocol.h>
+#import <IDEiOSSupportCore/IDEBuildableTargetDevice-Protocol.h>
 
 @class DVTPlatform, NSError, NSSet, NSString;
 
-@interface DVTBasicProxiediOSDevice : NSObject <DVTBasiciOSDevice>
+@interface DVTBasicProxiediOSDevice : NSObject <DVTBasiciOSDevice, IDEBuildableTargetDevice>
 {
 }
 
 + (id)keyPathsForValuesAffectingNameForDeveloperPortal;
+- (id)analysisOperationWithAnalysisToolService:(id)arg1 location:(id)arg2 workingDirectory:(id)arg3 workspaceFilePath:(id)arg4 projectFilePath:(id)arg5 packagesPaths:(id)arg6 outError:(id *)arg7;
+- (BOOL)performInstallWithName:(id)arg1 path:(id)arg2 buildables:(id)arg3 buildParameters:(id)arg4 killProcesses:(id)arg5 workspace:(id)arg6 outError:(id *)arg7;
+- (BOOL)canInstallBuildablesError:(id *)arg1;
+- (id)scriptingEnvironment;
+- (id)closestRelativeOfTargetArchitecture:(id)arg1 forBuildArchitectures:(id)arg2;
+- (BOOL)supportsRunningExecutableAtPath:(id)arg1 usingArchitecture:(id)arg2 error:(id *)arg3;
+- (BOOL)supportsExecutionForArchitecture:(id)arg1 launchSession:(id)arg2 error:(id *)arg3;
+- (id)deviceSpecificOverridingPropertiesForBuildable:(id)arg1 withBaselineParameters:(id)arg2;
+- (id)supportedSDKsForBuildable:(id)arg1 buildParameters:(id)arg2 error:(id *)arg3;
+- (id)supportedArchitecturesForBuildable:(id)arg1 buildParameters:(id)arg2 error:(id *)arg3;
+- (BOOL)shouldPresentDeviceForBuildable:(id)arg1 buildParameters:(id)arg2 error:(id *)arg3;
+- (BOOL)shouldPresentDeviceForPathRunnableWithArchitecture:(id)arg1;
+- (BOOL)canBeDefaultDeviceForBuildable:(id)arg1 buildParameters:(id)arg2;
 - (BOOL)deviceSupportsBuildable:(id)arg1 buildParameters:(id)arg2 error:(id *)arg3;
+- (BOOL)canBeRunDestination;
 @property(readonly) _Bool deviceIsBusy;
 @property(readonly) NSError *unavailabilityError;
 @property(readonly, getter=isAvailable) BOOL available;
+@property(readonly) _Bool isPasscodeLocked;
 @property(readonly) NSString *adjustedOperatingSystemVersion;
 - (id)supportedDeviceFamilies;
 @property(readonly, copy, nonatomic) NSString *name;
@@ -34,6 +50,7 @@
 @property(readonly, copy) NSString *operatingSystemVersion;
 @property(readonly, copy) NSString *operatingSystemBuild;
 @property(readonly, copy) NSString *nativeArchitecture;
+@property(readonly, copy, nonatomic) NSString *modelCodename;
 @property(readonly, copy, nonatomic) NSString *modelName;
 @property(readonly, copy, nonatomic) NSString *modelUTI;
 @property(readonly) BOOL isProxiedDevice;

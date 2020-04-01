@@ -4,11 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <GPUDebuggerFoundation/GPUDebuggerController.h>
+#import <GPUDebugger/GPUDebuggerController.h>
 
 #import <GPUDebuggerGLSupport/DYGLExpertDelegate-Protocol.h>
 
 @class DVTObservingToken, DYAnalyzerArchiveVisitor, DYCaptureArchive, DYGLExpert, DYGLExpertCase, NSArray, NSMutableArray;
+@protocol DYPShaderSourceDocument;
 
 @interface GPUGLDebuggerController : GPUDebuggerController <DYGLExpertDelegate>
 {
@@ -18,6 +19,7 @@
     DVTObservingToken *_inferiorSessionUpdatedResourcesDictObserver;
     DYAnalyzerArchiveVisitor *_analyzerVisitor;
     DYCaptureArchive *_modifiedCaptureArchive;
+    id <DYPShaderSourceDocument> _changedShaderSourceDocument;
     NSMutableArray *_overviewSampleArray;
     unsigned int _passCompletedExperiments;
     NSArray *_experimentsArray;
@@ -37,12 +39,22 @@
 + (id)assetBundle;
 @property(readonly) DYGLExpert *expert; // @synthesize expert=_expert;
 - (void).cxx_destruct;
+- (void)_onShaderEditContinueResourcesUpdated;
+- (void)onShaderEditContinueEndWithCompleted:(BOOL)arg1;
+- (void)onShaderEditContinueBegin;
+- (void)_performPostShaderEditContinueActions;
+- (id)gpuVendorForAPIItem:(id)arg1;
+- (id)gpuNameForAPIItem:(id)arg1;
+- (void)handleDocumentChanged:(id)arg1 shaderItem:(id)arg2;
+- (void)updateShaders;
+- (BOOL)dumpInstructions;
+- (BOOL)wantsDerivedCounters;
 - (id)invalidOverrides;
 - (id)createProgramPerformanceReportProvider:(id)arg1;
 - (id)createInvestigatorReportProvider:(id)arg1;
 - (void)resetResourceManagerWithResourceStreamer:(id)arg1;
 - (BOOL)isDisassemblerAvailable;
-- (id)runShaderProfiler;
+- (id)runShaderProfiler:(int)arg1;
 - (void)_checkForDeviceDifferences;
 - (void)traceSessionEstablishedWithNewArchive:(BOOL)arg1;
 - (void)reportFatalError:(id)arg1;

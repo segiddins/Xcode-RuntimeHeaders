@@ -11,11 +11,6 @@
 @interface DVTSourceModelItem : NSObject
 {
     int _rc;
-    struct _NSRange _relativeLocation;
-    long long _langId;
-    long long _token;
-    DVTSourceModelItem *_parent;
-    NSMutableArray *_children;
     unsigned int _nodeType:15;
     unsigned int _isOpaque:1;
     unsigned int _dirty:1;
@@ -27,6 +22,11 @@
     unsigned int _isSimpleToken:1;
     unsigned int _isVolatile:1;
     unsigned int _needToDirtyRightEdges:1;
+    struct _NSRange _relativeLocation;
+    long long _langId;
+    long long _token;
+    DVTSourceModelItem *_parent;
+    NSMutableArray *_children;
 }
 
 + (id)sourceModelItemWithRange:(struct _NSRange)arg1 language:(long long)arg2 token:(long long)arg3 nodeType:(short)arg4;
@@ -95,11 +95,6 @@
 - (id)description;
 - (id)innerDescription:(id)arg1 showSelf:(BOOL)arg2;
 - (id)initWithRange:(struct _NSRange)arg1 language:(long long)arg2 token:(long long)arg3 nodeType:(short)arg4;
-- (BOOL)_isDeallocating;
-- (BOOL)_tryRetain;
-- (unsigned long long)retainCount;
-- (oneway void)release;
-- (id)retain;
 
 @end
 

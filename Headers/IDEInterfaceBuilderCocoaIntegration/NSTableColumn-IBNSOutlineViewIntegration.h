@@ -6,8 +6,87 @@
 
 #import <AppKit/NSTableColumn.h>
 
-@interface NSTableColumn (IBNSOutlineViewIntegration)
+#import <IDEInterfaceBuilderCocoaIntegration/IBDocumentArchiving-Protocol.h>
+
+@class NSString;
+
+@interface NSTableColumn (IBNSOutlineViewIntegration) <IBDocumentArchiving>
 + (id)keyPathsForValuesAffectingIbInspectedTitleForOutlineColumnChoice;
++ (id)keyPathsForValuesAffectingIbInspectedToolTip;
++ (id)ibDefaultPrototypeTextCellView;
++ (id)keyPathsForValuesAffectingIbInspectedSortDescriptorAscending;
++ (id)keyPathsForValuesAffectingIbInspectedSortDescriptorSelector;
++ (id)keyPathsForValuesAffectingIbInspectedSortDescriptorKey;
++ (id)instantiateWithDocumentUnarchiver:(id)arg1;
 - (id)ibInspectedTitleForOutlineColumnChoice;
+- (void)ibCaptureDownstreamStoryboardPlaceholderTable:(id)arg1;
+- (void)ibCaptureStoryboardCompilationResult:(id)arg1 fromCompilationUnit:(id)arg2;
+- (void)ibStoryboardPrepareForSeparatingChild:(id)arg1 intoCompilationUnit:(id)arg2;
+- (int)ibStoryboardSeparationTypeForChild:(id)arg1 storyboardEquivalent:(id)arg2;
+- (id)ibSuperviewOfView:(id)arg1 inDocument:(id)arg2;
+- (BOOL)ibIsChildViewResizable:(id)arg1 whenSizingToFitDescendantView:(id)arg2;
+- (BOOL)ibIsChildArbitrationUnitRoot:(id)arg1;
+- (BOOL)ibIsChildViewUserMovable:(id)arg1;
+- (BOOL)ibChildView:(id)arg1 shouldUseConstraintsInsteadOfAutoresizingWhenAddedToDocument:(id)arg2;
+- (id)ibIssueForSubNibOutlet:(id)arg1 document:(id)arg2 withComputationContext:(id)arg3;
+- (id)ibIssueForSubNibAction:(id)arg1 document:(id)arg2 withComputationContext:(id)arg3;
+- (id)ibCompiledNibFileIdentifierForChild:(id)arg1 inDocument:(id)arg2;
+- (BOOL)ibIdentifierPropertyCanConflictsWithObject:(id)arg1;
+- (BOOL)ibCanSupportIdentifierProperty;
+- (id)ibSuggestUserInterfaceItemIdentifierForObject:(id)arg1;
+- (BOOL)ibAcceptsPasteboardImageResourcesAsViews;
+- (id)ibBeginDesigningInDocument:(id)arg1;
+- (void)constrainWidthToMax;
+- (void)constrainWidthToMin;
+- (void)ibPopulateObjectsForFloatingPanels:(id)arg1;
+- (id)ibInitialConnectionLabelSearchTerm;
+- (id)ibAcceptContentsOfPasteboard:(id)arg1 inDocument:(id)arg2 insertionContext:(id)arg3;
+- (BOOL)ibCanAcceptContentsOfPasteboard:(id)arg1 inDocument:(id)arg2 targetChildRelation:(id *)arg3;
+- (struct CGRect)ibTitleRectForEditingInView:(id)arg1;
+- (double)ibPreferredWidth;
+- (struct CGRect)ibRectForChild:(id)arg1 inFrameController:(id)arg2;
+- (id)ibQualifyingInfoForDefaultLabel;
+- (BOOL)ibIsChildInitiallySelectable:(id)arg1;
+- (BOOL)ibIsChildTypicalConnectionTarget:(id)arg1;
+- (id)ibInspectedToolTip;
+- (void)setIbInspectedToolTip:(id)arg1;
+- (void)ibPopulateIssues:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
+- (id)ibOrderedSnapshotAttributesKeyPaths;
+- (id)ibPasteboardTypes;
+- (Class)ibEditorClass;
+- (id)ibDocumentationSymbolInfosForKeyPath:(id)arg1;
+- (BOOL)ibCanRemoveChildren:(id)arg1;
+- (BOOL)ibCanBeBoundToFromObject:(id)arg1;
+- (void)ibPopulateChildRelationOrder:(id)arg1;
+- (void)ibSetSubviewControlSizes:(unsigned long long)arg1;
+- (BOOL)ibExternalIsInViewBasedMode;
+- (void)setIbExternalPrototypeCellViews:(id)arg1;
+- (id)ibExternalPrototypeCellViews;
+- (id)ibDefaultFontKeyPath;
+- (BOOL)ibIsContainedPrototypeCellView:(id)arg1;
+- (void)ibPrepareCocoaDocumentForCompiling:(id)arg1 withContext:(id)arg2;
+- (void)ibRemoveChildren:(id)arg1;
+- (void)setIbExternalUserInterfaceItemIdentifier:(id)arg1;
+- (id)ibExternalUserInterfaceItemIdentifier;
+- (BOOL)ibInspectedSortDescriptorAscending;
+- (void)setIbInspectedSortDescriptorAscending:(BOOL)arg1;
+- (id)ibInspectedSortDescriptorSelector;
+- (void)setIbInspectedSortDescriptorSelector:(id)arg1;
+- (id)ibInspectedSortDescriptorKey;
+- (void)setIbInspectedSortDescriptorKey:(id)arg1;
+- (id)ibLocalLocalizableStringsAttributeKeyPaths;
+- (id)ibLocalLocalizableGeometryAttributeKeyPaths;
+- (id)ibLocalAdditionalLocalizableAttributeKeyPaths;
+- (id)ibLocalAttributeKeyPaths;
+- (id)ibLocalChildToManyRelationshipsKeyPaths;
+- (id)ibLocalChildToOneRelationshipsKeyPaths;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @end
 

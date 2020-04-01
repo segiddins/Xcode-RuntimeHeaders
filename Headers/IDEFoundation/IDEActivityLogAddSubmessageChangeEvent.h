@@ -20,8 +20,9 @@
 - (id)description;
 - (id)addedChild;
 - (id)changedParent;
-- (id)initWithSection:(id)arg1 supermessage:(id)arg2 submessage:(id)arg3;
+- (void)writeToLogEventStream:(id)arg1;
 - (id)initWithSection:(id)arg1 submessage:(id)arg2;
+- (id)initWithSection:(id)arg1 supermessage:(id)arg2 submessage:(id)arg3;
 
 @end
 

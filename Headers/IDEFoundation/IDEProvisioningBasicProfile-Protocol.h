@@ -4,14 +4,17 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
+#import <IDEFoundation/NSObject-Protocol.h>
+
 @class IDEProfileSpecifier, NSString;
 @protocol IDEProvisioningBasicTeam;
 
-@protocol IDEProvisioningBasicProfile
+@protocol IDEProvisioningBasicProfile <NSObject>
 @property(readonly) IDEProfileSpecifier *specifier;
 @property(readonly) id <IDEProvisioningBasicTeam> team;
 @property(readonly) BOOL existsOnDisk;
 @property(readonly) NSString *name;
+@property(readonly) NSString *automaticIdentitySelector;
 @property(readonly) NSString *UUID;
 @end
 

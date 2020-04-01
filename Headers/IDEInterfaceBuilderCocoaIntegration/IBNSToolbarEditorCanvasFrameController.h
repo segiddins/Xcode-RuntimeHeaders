@@ -12,7 +12,7 @@
 {
 }
 
-- (BOOL)useViewBasedImageRepSnapshotForDragImage;
+- (BOOL)useLiveUpdatingImageForDragImage;
 - (void)sendEvent:(id)arg1;
 - (void)primitiveInvalidate;
 - (id)allowedItemsView;

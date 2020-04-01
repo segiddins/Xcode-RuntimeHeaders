@@ -6,8 +6,14 @@
 
 #import <AppKit/NSStepperCell.h>
 
-@interface NSStepperCell (IBNSStepperCellIntegration)
+#import <IDEInterfaceBuilderCocoaIntegration/IBDocumentArchiving-Protocol.h>
+
+@class NSString;
+
+@interface NSStepperCell (IBNSStepperCellIntegration) <IBDocumentArchiving>
 + (id)keyPathsForValuesAffectingIbInspectedDoubleValue;
++ (id)keyPathsForValuesAffectingIbInspectedMinValue;
++ (id)keyPathsForValuesAffectingIbInspectedMaxValue;
 - (Class)ibPreferredControlClass;
 - (id)ibTypeNameForDefaultLabel;
 - (id)ibWidgetType;
@@ -18,5 +24,14 @@
 - (double)ibInspectedMinValue;
 - (void)setIbInspectedMaxValue:(double)arg1;
 - (double)ibInspectedMaxValue;
+- (id)ibLocalAttributeKeyPaths;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @end
 

@@ -4,16 +4,19 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <AppKit/NSTextField.h>
+#import <DVTStructuredLayoutKit/DVTStructuredLayoutTextField.h>
 
 @class NSNumber;
 
-@interface IDESourceControlNavigatorConflictStatusTextField : NSTextField
+@interface IDESourceControlNavigatorConflictStatusTextField : DVTStructuredLayoutTextField
 {
 }
 
++ (id)keyPathsForValuesAffectingHasDisplayableStatus;
 + (Class)cellClass;
-+ (id)keyPathsForValuesAffectingLocalStatus;
++ (id)keyPathsForValuesAffectingConflictStateForUpdateOrMerge;
+- (BOOL)hasDisplayableStatus;
+- (id)cell;
 - (void)setHidden:(BOOL)arg1;
 - (void)setBackgroundStyle:(long long)arg1;
 @property(copy, nonatomic) NSNumber *conflictStateForUpdateOrMerge;

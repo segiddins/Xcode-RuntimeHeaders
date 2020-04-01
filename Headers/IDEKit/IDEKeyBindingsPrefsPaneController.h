@@ -6,13 +6,13 @@
 
 #import <IDEKit/IDEViewController.h>
 
+#import <IDEKit/DVTFilterControlBarTarget-Protocol.h>
 #import <IDEKit/DVTOutlineViewDelegate-Protocol.h>
-#import <IDEKit/IDEFilterControlBarTarget-Protocol.h>
 #import <IDEKit/IDEKeyBindingFieldCellDelegate-Protocol.h>
 
-@class DVTBorderedView, DVTImageAndTextCell, DVTObservingToken, DVTOutlineView, DVTPreferenceSetManager, DVTReplacementView, IDEFilterControlBar, NSArray, NSButton, NSMenu, NSScrollView, NSString, NSTextField, NSTreeController;
+@class DVTBorderedView, DVTImageAndTextCell, DVTObservingToken, DVTOutlineView, DVTPreferenceSetManager, DVTReplacementView, IDESearchFilterControlBar, NSArray, NSButton, NSMenu, NSScrollView, NSString, NSTextField, NSTreeController, NSView;
 
-@interface IDEKeyBindingsPrefsPaneController : IDEViewController <DVTOutlineViewDelegate, IDEKeyBindingFieldCellDelegate, IDEFilterControlBarTarget>
+@interface IDEKeyBindingsPrefsPaneController : IDEViewController <DVTOutlineViewDelegate, IDEKeyBindingFieldCellDelegate, DVTFilterControlBarTarget>
 {
     NSArray *_keyBindingItems;
     NSString *_searchString;
@@ -32,12 +32,13 @@
     NSButton *_displayTextScopeButton;
     NSButton *_displayModifiedScopeButton;
     NSButton *_displayConflictsScopeButton;
-    IDEFilterControlBar *_filterControlBar;
+    IDESearchFilterControlBar *_filterControlBar;
     NSMenu *_searchFieldMenu;
     NSScrollView *_scrollView;
     DVTBorderedView *_containerBorderedView;
     DVTBorderedView *_scopeBarBorderedView;
     DVTBorderedView *_keyBindingsBorderedView;
+    DVTBorderedView *_separatorBorderedView;
     DVTReplacementView *_preferenceSetReplacementView;
     DVTOutlineView *_keyBindingsOutlineView;
     NSTreeController *_keyBindingsController;
@@ -84,8 +85,10 @@
 - (void)_showConflictedKeyBindings;
 - (void)_updateScopeButtons;
 - (void)_showConflictedKeyBindingsStatusForKeyBinding:(id)arg1;
-- (id)filterButtonMenu;
-- (id)filterDefinitionIdentifier;
+@property(readonly, nonatomic) NSString *filterButtonAccessibilityDescription;
+@property(readonly, nonatomic) NSString *filterButtonToolTip;
+@property(readonly, nonatomic) NSMenu *filterButtonMenu;
+@property(readonly, nonatomic) NSString *filterDefinitionIdentifier;
 @property(readonly, copy) NSArray *searchWords;
 - (void)updateKeyBindingsItems;
 - (BOOL)_keyBindingOutlineViewNeedsGroupItem;
@@ -102,6 +105,7 @@
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
+@property(readonly, nonatomic) NSView *view;
 
 @end
 

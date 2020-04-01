@@ -23,11 +23,12 @@
 - (BOOL)setCompressionValue:(long long)arg1;
 - (void)invalidateChildItems;
 - (id)childRepresentedObjects;
+- (id)parentItem;
 - (id)image;
 - (BOOL)isLeaf;
 - (id)subtitle;
 - (id)name;
-- (BOOL)_isRecordedThreadForQueue;
+- (BOOL)_isRecordedThread;
 - (void)primitiveInvalidate;
 - (id)initWithRepresentedObject:(id)arg1;
 

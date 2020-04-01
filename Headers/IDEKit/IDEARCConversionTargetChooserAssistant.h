@@ -6,20 +6,20 @@
 
 #import <IDEKit/IDEAssistant.h>
 
-#import <IDEKit/IDEFilterControlBarTarget-Protocol.h>
+#import <IDEKit/DVTFilterControlBarTarget-Protocol.h>
 #import <IDEKit/NSOutlineViewDataSource-Protocol.h>
 #import <IDEKit/NSOutlineViewDelegate-Protocol.h>
 
-@class DVTBorderedView, DVTOutlineViewWithCustomGridDrawing, IDEFilterControlBar, IDEMigrationTargetChooserStatePersistence, NSArray, NSImageView, NSMutableIndexSet, NSString, NSTextField, NSTreeController;
+@class DVTBorderedView, DVTOutlineViewWithCustomGridDrawing, IDEMigrationTargetChooserStatePersistence, IDESearchFilterControlBar, NSArray, NSImageView, NSMenu, NSMutableIndexSet, NSString, NSTextField, NSTreeController, NSView;
 
-@interface IDEARCConversionTargetChooserAssistant : IDEAssistant <NSOutlineViewDataSource, NSOutlineViewDelegate, IDEFilterControlBarTarget>
+@interface IDEARCConversionTargetChooserAssistant : IDEAssistant <NSOutlineViewDataSource, NSOutlineViewDelegate, DVTFilterControlBarTarget>
 {
     NSArray *_targetItems;
     NSString *_searchString;
     NSMutableIndexSet *_expandedRowIndexes;
     NSArray *_selectedTargetChooserItems;
     IDEMigrationTargetChooserStatePersistence *_statePersistence;
-    IDEFilterControlBar *_filterControlBar;
+    IDESearchFilterControlBar *_filterControlBar;
     DVTBorderedView *_scopeBarBorderedView;
     DVTOutlineViewWithCustomGridDrawing *_outlineView;
     DVTBorderedView *_borderedView;
@@ -51,8 +51,10 @@
 - (unsigned long long)_numberOfCheckedItemsAtIndexes:(id)arg1;
 - (void)_setChecked:(BOOL)arg1 forTargetChooserItemAtIndexes:(id)arg2;
 - (id)_effectiveSelectedRowIndexes;
-- (id)filterButtonMenu;
-- (id)filterDefinitionIdentifier;
+@property(readonly, nonatomic) NSString *filterButtonAccessibilityDescription;
+@property(readonly, nonatomic) NSString *filterButtonToolTip;
+@property(readonly, nonatomic) NSMenu *filterButtonMenu;
+@property(readonly, nonatomic) NSString *filterDefinitionIdentifier;
 - (void)_restoreSelectedTargetChooserItemsAndExpandedRows;
 - (void)_saveSelectedTargetChooserItemsAndExpandedRows;
 @property(readonly, copy) NSArray *arrangedTargetItems;
@@ -71,6 +73,7 @@
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
+@property(readonly, nonatomic) NSView *view;
 
 @end
 

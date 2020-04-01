@@ -10,7 +10,6 @@
 - (void)moveObjectsFromIndexes:(id)arg1 toIndex:(unsigned long long)arg2;
 - (void)moveObjectsFromIndices:(unsigned long long *)arg1 numIndices:(unsigned long long)arg2 toIndex:(unsigned long long)arg3;
 - (void)moveObjectFromIndex:(unsigned long long)arg1 toIndex:(unsigned long long)arg2;
-- (void)correctlyRemoveObjectsFromIndices:(unsigned long long *)arg1 numIndices:(unsigned long long)arg2;
 - (void)addObjectsFromArrayIfAbsent:(id)arg1;
 - (void)addObjectIfAbsent:(id)arg1;
 @end

@@ -6,56 +6,68 @@
 
 #import <IDEKit/IDEViewController.h>
 
-#import "DVTProductManagerDelegate-Protocol.h"
-#import "DVTReplacementViewDelegate-Protocol.h"
-#import "DVTSplitViewDelegate-Protocol.h"
-#import "NSTableViewDelegate-Protocol.h"
+#import <IDEProductsUI/DVTProductManagerDelegate-Protocol.h>
+#import <IDEProductsUI/DVTReplacementViewDelegate-Protocol.h>
+#import <IDEProductsUI/DVTSplitViewDelegate-Protocol.h>
+#import <IDEProductsUI/NSTableViewDelegate-Protocol.h>
 
-@class DVTBorderedView, DVTGradientImageButton, DVTNotificationToken, DVTObservingToken, DVTProduct, DVTProductManager, DVTReplacementView, DVTScrollView, DVTSplitView, DVTTableView, IDEProductSectionViewController, IDEProductsUtilityViewController, NSArray, NSArrayController, NSIndexSet, NSMutableDictionary, NSString, NSView;
+@class DVTBorderedView, DVTDelayedInvocation, DVTGradientImageButton, DVTNotificationToken, DVTObservingToken, DVTReplacementView, DVTSplitView, DVTSplitViewDividerLine, DVTTableView, IDEProduct, IDEProductManager, IDEProductSectionViewController, IDEProductsUtilityViewController, NSArray, NSArrayController, NSIndexSet, NSMutableDictionary, NSString, NSView;
 
 @interface IDEProductsViewController : IDEViewController <NSTableViewDelegate, DVTSplitViewDelegate, DVTProductManagerDelegate, DVTReplacementViewDelegate>
 {
     BOOL _programmaticallyManipulatingProductsSourceListSplitPosition;
     BOOL _restoringSelectedSegmentIndex;
+    BOOL _restoringSelectedProductIndex;
     BOOL _displayedLogInErrors;
+    BOOL _hasCompletedInitialLoading;
     NSArray *_productSectionSegments;
     long long _selectedSegmentIndex;
     DVTSplitView *_splitView;
-    DVTScrollView *_scrollView;
+    DVTSplitViewDividerLine *_splitViewDividerLine;
+    NSView *_sourceListView;
     DVTReplacementView *_replacementView;
     NSArrayController *_productsArrayController;
     DVTTableView *_productsTable;
     DVTGradientImageButton *_refreshButton;
     NSView *_sourceListContainer;
     DVTBorderedView *_borderedContentView;
+    DVTBorderedView *_sourceListBottomBorderedView;
     NSIndexSet *_productsTableSelectionIndexes;
     NSArray *_productsForDisplay;
-    DVTProduct *_selectedProduct;
+    IDEProduct *_selectedProduct;
     NSArray *_sortedProductSectionExtensions;
     NSArray *_products;
     IDEProductsUtilityViewController *_utilityViewController;
     IDEProductSectionViewController *_currentSectionViewController;
     NSMutableDictionary *_sourcesToErrorsMap;
+    CDUnknownBlockType _showProductAfterInitialLoading;
     DVTObservingToken *_productsObserver;
     DVTObservingToken *_productsForDisplayObserver;
     DVTObservingToken *_inspectableObserver;
-    DVTObservingToken *_selectedProductObserver;
     DVTObservingToken *_busyObserver;
     DVTObservingToken *_currentSectionEmptyObserver;
+    DVTObservingToken *_appStoreProductSourceHasCompletedInitialLoading;
+    DVTObservingToken *_archiveProductSourceHasCompletedInitialLoading;
     DVTNotificationToken *_splitViewResizeObserver;
+    DVTDelayedInvocation *_updateProductsDelayedInvocation;
 }
 
 + (id)keyPathsForValuesAffectingBusyReason;
 + (id)keyPathsForValuesAffectingBusy;
 + (void)initialize;
+@property(retain, nonatomic) DVTDelayedInvocation *updateProductsDelayedInvocation; // @synthesize updateProductsDelayedInvocation=_updateProductsDelayedInvocation;
 @property(retain) DVTNotificationToken *splitViewResizeObserver; // @synthesize splitViewResizeObserver=_splitViewResizeObserver;
+@property(retain) DVTObservingToken *archiveProductSourceHasCompletedInitialLoading; // @synthesize archiveProductSourceHasCompletedInitialLoading=_archiveProductSourceHasCompletedInitialLoading;
+@property(retain) DVTObservingToken *appStoreProductSourceHasCompletedInitialLoading; // @synthesize appStoreProductSourceHasCompletedInitialLoading=_appStoreProductSourceHasCompletedInitialLoading;
 @property(retain) DVTObservingToken *currentSectionEmptyObserver; // @synthesize currentSectionEmptyObserver=_currentSectionEmptyObserver;
 @property(retain) DVTObservingToken *busyObserver; // @synthesize busyObserver=_busyObserver;
-@property(retain) DVTObservingToken *selectedProductObserver; // @synthesize selectedProductObserver=_selectedProductObserver;
 @property(retain) DVTObservingToken *inspectableObserver; // @synthesize inspectableObserver=_inspectableObserver;
 @property(retain) DVTObservingToken *productsForDisplayObserver; // @synthesize productsForDisplayObserver=_productsForDisplayObserver;
 @property(retain) DVTObservingToken *productsObserver; // @synthesize productsObserver=_productsObserver;
+@property(copy, nonatomic) CDUnknownBlockType showProductAfterInitialLoading; // @synthesize showProductAfterInitialLoading=_showProductAfterInitialLoading;
+@property(nonatomic) BOOL hasCompletedInitialLoading; // @synthesize hasCompletedInitialLoading=_hasCompletedInitialLoading;
 @property(nonatomic, getter=hasDisplayedLogInErrors) BOOL displayedLogInErrors; // @synthesize displayedLogInErrors=_displayedLogInErrors;
+@property(nonatomic, getter=isRestoringSelectedProductIndex) BOOL restoringSelectedProductIndex; // @synthesize restoringSelectedProductIndex=_restoringSelectedProductIndex;
 @property(nonatomic, getter=isRestoringSelectedSegmentIndex) BOOL restoringSelectedSegmentIndex; // @synthesize restoringSelectedSegmentIndex=_restoringSelectedSegmentIndex;
 @property(nonatomic, getter=isProgrammaticallyManipulatingProductsSourceListSplitPosition) BOOL programmaticallyManipulatingProductsSourceListSplitPosition; // @synthesize programmaticallyManipulatingProductsSourceListSplitPosition=_programmaticallyManipulatingProductsSourceListSplitPosition;
 @property(retain) NSMutableDictionary *sourcesToErrorsMap; // @synthesize sourcesToErrorsMap=_sourcesToErrorsMap;
@@ -63,16 +75,18 @@
 @property(retain) IDEProductsUtilityViewController *utilityViewController; // @synthesize utilityViewController=_utilityViewController;
 @property(retain) NSArray *products; // @synthesize products=_products;
 @property(retain, nonatomic) NSArray *sortedProductSectionExtensions; // @synthesize sortedProductSectionExtensions=_sortedProductSectionExtensions;
-@property(retain) DVTProduct *selectedProduct; // @synthesize selectedProduct=_selectedProduct;
+@property(retain) IDEProduct *selectedProduct; // @synthesize selectedProduct=_selectedProduct;
 @property(retain) NSArray *productsForDisplay; // @synthesize productsForDisplay=_productsForDisplay;
 @property(retain, nonatomic) NSIndexSet *productsTableSelectionIndexes; // @synthesize productsTableSelectionIndexes=_productsTableSelectionIndexes;
+@property __weak DVTBorderedView *sourceListBottomBorderedView; // @synthesize sourceListBottomBorderedView=_sourceListBottomBorderedView;
 @property __weak DVTBorderedView *borderedContentView; // @synthesize borderedContentView=_borderedContentView;
 @property __weak NSView *sourceListContainer; // @synthesize sourceListContainer=_sourceListContainer;
 @property __weak DVTGradientImageButton *refreshButton; // @synthesize refreshButton=_refreshButton;
 @property __weak DVTTableView *productsTable; // @synthesize productsTable=_productsTable;
 @property __weak NSArrayController *productsArrayController; // @synthesize productsArrayController=_productsArrayController;
 @property __weak DVTReplacementView *replacementView; // @synthesize replacementView=_replacementView;
-@property __weak DVTScrollView *scrollView; // @synthesize scrollView=_scrollView;
+@property __weak NSView *sourceListView; // @synthesize sourceListView=_sourceListView;
+@property __weak DVTSplitViewDividerLine *splitViewDividerLine; // @synthesize splitViewDividerLine=_splitViewDividerLine;
 @property __weak DVTSplitView *splitView; // @synthesize splitView=_splitView;
 @property(nonatomic) long long selectedSegmentIndex; // @synthesize selectedSegmentIndex=_selectedSegmentIndex;
 - (void).cxx_destruct;
@@ -85,6 +99,7 @@
 - (double)splitView:(id)arg1 constrainMaxCoordinate:(double)arg2 ofSubviewAt:(long long)arg3;
 - (double)splitView:(id)arg1 constrainMinCoordinate:(double)arg2 ofSubviewAt:(long long)arg3;
 - (void)primitiveInvalidate;
+- (void)setSelectedSegmentIndex:(long long)arg1 immediately:(BOOL)arg2;
 @property(readonly) NSArray *productSectionSegments; // @synthesize productSectionSegments=_productSectionSegments;
 - (id)sortedExtensionsWithDefinitionIdentifier:(id)arg1;
 - (id)tableView:(id)arg1 viewForTableColumn:(id)arg2 row:(long long)arg3;
@@ -112,11 +127,12 @@
 - (void)_toggleSourceListVisibility;
 - (BOOL)shouldShowSourceList;
 - (void)_updateProductsTableIssueDisplay;
-- (id)showProductsSectionWithIdentifier:(id)arg1 forProductIdentifier:(id)arg2;
+- (void)showProductsSectionWithIdentifier:(id)arg1 forProductIdentifier:(id)arg2 didShowProduct:(CDUnknownBlockType)arg3;
 - (unsigned long long)indexForProductSectionDefinitionIdentifier:(id)arg1;
+- (id)firstProduct;
 - (id)indexSetForProductIdentifier:(id)arg1;
 - (id)selectedProductFromSelectedIndex:(id)arg1;
-@property(readonly) DVTProductManager *productManager;
+@property(readonly) IDEProductManager *productManager;
 - (void)_updateDetailView;
 - (void)updateProductsDisplay;
 - (void)updateProducts;

@@ -6,9 +6,13 @@
 
 #import <Foundation/NSDateFormatter.h>
 
-@interface NSDateFormatter (IBNSDateFormatterInspectorIntegration)
+#import <IDEInterfaceBuilderCocoaIntegration/IBDocumentArchiving-Protocol.h>
+
+@class NSString;
+
+@interface NSDateFormatter (IBNSDateFormatterInspectorIntegration) <IBDocumentArchiving>
 + (id)keyPathsForValuesAffectingIbInspectedDateFormatterBehavior;
-- (id)ibExternalSampleValueTooltipRelatedMethods;
+- (SEL)ibExternalSampleValueTooltipRelatedSelector;
 - (id)ibExternalSampleValueDefault;
 - (void)setIbExternalTigerEditMode:(id)arg1;
 - (id)ibExternalTigerEditMode;
@@ -16,5 +20,20 @@
 - (id)ibExternalPantherEditMode;
 - (void)setIbInspectedDateFormatterBehavior:(long long)arg1;
 - (long long)ibInspectedDateFormatterBehavior;
+- (void)setIbShadowedFormatterBehavior:(long long)arg1;
+- (long long)ibShadowedFormatterBehavior;
+- (void)setIbShadowedDateFormat:(id)arg1;
+- (id)ibShadowedDateFormat;
+- (id)ibDefaultDataValueForTableView:(id)arg1;
+- (id)ibLocalLocalizableStringsAttributeKeyPaths;
+- (id)ibLocalAttributeKeyPaths;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @end
 

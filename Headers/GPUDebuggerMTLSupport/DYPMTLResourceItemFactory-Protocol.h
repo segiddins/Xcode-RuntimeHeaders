@@ -6,12 +6,12 @@
 
 #import <GPUDebuggerMTLSupport/DYPResourceItemFactory-Protocol.h>
 
-@class NSString, NSURL;
+@class NSString;
 @protocol DYPFunctionInfo, DYPProgramGroup, DYPShaderItem;
 
 @protocol DYPMTLResourceItemFactory <DYPResourceItemFactory>
 - (id <DYPShaderItem>)functionWithPipeline:(id <DYPProgramGroup>)arg1 shaderType:(unsigned int)arg2 functionInfo:(id <DYPFunctionInfo>)arg3 identifier:(NSString *)arg4;
 - (id <DYPProgramGroup>)pipelineStateWithProgramGroup:(id <DYPProgramGroup>)arg1 programType:(unsigned int)arg2 pipelineStateID:(unsigned long long)arg3 stateMirrorObject:(const void *)arg4 containerID:(unsigned long long)arg5 identifier:(NSString *)arg6;
-- (id <DYPFunctionInfo>)functionInfoWithSourceURL:(NSURL *)arg1 lineNumber:(long long)arg2 onlineCompiled:(BOOL)arg3;
+- (id <DYPFunctionInfo>)functionInfoWithSourceFilePath:(NSString *)arg1 onlineCompiled:(BOOL)arg2 functionID:(unsigned long long)arg3;
 @end
 

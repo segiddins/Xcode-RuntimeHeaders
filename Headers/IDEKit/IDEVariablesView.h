@@ -11,7 +11,7 @@
 #import <IDEKit/NSMenuDelegate-Protocol.h>
 #import <IDEKit/NSOutlineViewDataSource-Protocol.h>
 
-@class DVTBorderedView, DVTNotificationToken, DVTObservingToken, DVTOutlineView, DVTScopeBarView, DVTScrollView, DVTSearchField, IDEVariableViewRootNode, IDEVariablesViewQuickLookPopover, IDEVariablesViewStateManager, NSArray, NSButton, NSMapTable, NSPopUpButton, NSPopover, NSProgressIndicator, NSString, NSTableColumn, NSView;
+@class DVTBorderedView, DVTNotificationToken, DVTObservingToken, DVTOutlineView, DVTScopeBarView, DVTScrollView, DVTSearchField, IDEVariableViewRootNode, IDEVariablesViewQuickLookPopover, IDEVariablesViewStateManager, NSArray, NSButton, NSMapTable, NSPopUpButton, NSPopover, NSProgressIndicator, NSString, NSTableColumn, NSTextField, NSView;
 @protocol IDEVariablesViewContentProvider;
 
 @interface IDEVariablesView : IDEViewController <NSOutlineViewDataSource, NSMenuDelegate, DVTOutlineViewDelegate, IDEScopeableView>
@@ -30,6 +30,7 @@
     DVTObservingToken *_viewModeObservationToken;
     DVTNotificationToken *_outlineViewHiddenObservationToken;
     DVTObservingToken *_loadingNewVariablesInBackgroundObservationToken;
+    DVTObservingToken *_recordedStackFrameSelectedObservationToken;
     DVTNotificationToken *_outlineViewSelectionObserver;
     BOOL _viewWasInstalled;
     BOOL _restoringExpandedState;
@@ -44,10 +45,12 @@
     IDEVariablesViewStateManager *_stateManager;
     long long _selectedScopeTag;
     DVTOutlineView *_outlineView;
-    unsigned long long _textAlignment;
+    long long _textAlignment;
     NSView *_topContentContainerView;
     DVTBorderedView *_containerView;
     DVTScrollView *_scrollView;
+    DVTBorderedView *_unavailableForRecordedFrameView;
+    NSTextField *_unavailableForRecordedFrameText;
     DVTSearchField *_filterField;
     NSPopUpButton *_scopePopUp;
     NSProgressIndicator *_loadingIndicator;
@@ -64,10 +67,12 @@
 @property __weak NSProgressIndicator *loadingIndicator; // @synthesize loadingIndicator=_loadingIndicator;
 @property __weak NSPopUpButton *scopePopUp; // @synthesize scopePopUp=_scopePopUp;
 @property __weak DVTSearchField *filterField; // @synthesize filterField=_filterField;
+@property __weak NSTextField *unavailableForRecordedFrameText; // @synthesize unavailableForRecordedFrameText=_unavailableForRecordedFrameText;
+@property __weak DVTBorderedView *unavailableForRecordedFrameView; // @synthesize unavailableForRecordedFrameView=_unavailableForRecordedFrameView;
 @property __weak DVTScrollView *scrollView; // @synthesize scrollView=_scrollView;
 @property __weak DVTBorderedView *containerView; // @synthesize containerView=_containerView;
 @property __weak NSView *topContentContainerView; // @synthesize topContentContainerView=_topContentContainerView;
-@property unsigned long long textAlignment; // @synthesize textAlignment=_textAlignment;
+@property long long textAlignment; // @synthesize textAlignment=_textAlignment;
 @property BOOL showsRawValues; // @synthesize showsRawValues=_showsRawValues;
 @property BOOL showsType; // @synthesize showsType=_showsType;
 @property(nonatomic) BOOL scopeBarVisible; // @synthesize scopeBarVisible=_scopeBarVisible;
@@ -146,6 +151,7 @@
 - (void)_observeModelObject:(id)arg1;
 - (void)_hideLoadingIndicatorIfNecessary;
 - (void)_showLoadingIndicatorIfNecessary;
+- (void)_handleRecordedStackFrameSelectedChanged;
 - (void)_handleLoadingNewVariablesInBackgroundChanged;
 - (void)_updateRawValuesColumnVisibility;
 - (void)_cancelAndNilOutAllObservationTokens;

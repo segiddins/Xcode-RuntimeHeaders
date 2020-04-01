@@ -7,8 +7,10 @@
 #import <IDEKit/NSObject-Protocol.h>
 
 @class NSString;
+@protocol IDETestReport_Base;
 
 @protocol IDETestReport_Base <NSObject>
-@property(readonly, copy, nonatomic) NSString *ide_testReport_base_identifier;
+@property(nonatomic) __weak id <IDETestReport_Base> ide_testReport_base_parent;
+@property(nonatomic, readonly) NSString *ide_testReport_base_identifier;
 @end
 

@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Foundation/NSObject.h>
+#import <objc/NSObject.h>
 
 @class NSDictionary, NSString;
 
@@ -21,9 +21,9 @@
 + (unsigned short)xcodeBuildNumber;
 + (unsigned short)xcodeMinorVersionNumber;
 + (unsigned short)xcodeMajorVersionNumber;
+- (void).cxx_destruct;
 - (void)close;
 - (id)readPropertyListAtByteRange:(struct _NSRange)arg1 error:(id *)arg2;
-- (void)finalize;
 - (void)dealloc;
 - (id)init;
 - (id)initWithContentsOfFile:(id)arg1 forSpecificationsInSearchPaths:(id)arg2 error:(id *)arg3;

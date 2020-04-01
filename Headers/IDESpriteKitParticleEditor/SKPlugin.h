@@ -4,13 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Foundation/NSObject.h>
-
-#import <IDESpriteKitParticleEditor/IDEInitialization-Protocol.h>
+#import <objc/NSObject.h>
 
 @class DVTObservingToken, GTFMutableObjectDictionary, NSHashTable, NSMutableDictionary;
 
-@interface SKPlugin : NSObject <IDEInitialization>
+@interface SKPlugin : NSObject
 {
     NSHashTable *_workspacesAvailable;
     GTFMutableObjectDictionary *_ideWorkspaceToSKWorkspace;
@@ -23,7 +21,6 @@
 + (id)actionDocumentType;
 + (id)sceneDocumentType;
 + (id)spritekitDocumentType;
-+ (BOOL)ide_initializeWithOptions:(int)arg1 error:(id *)arg2;
 + (id)sharedInstance;
 - (void).cxx_destruct;
 - (id)convertURL:(id)arg1 toWorkspace:(id)arg2;

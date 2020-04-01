@@ -14,6 +14,7 @@
 }
 
 - (void).cxx_destruct;
+- (id)stringForSearch;
 - (id)rawPlist;
 - (id)xmlStringWithIndent:(id)arg1;
 - (id)plistStringWithIndent:(id)arg1;

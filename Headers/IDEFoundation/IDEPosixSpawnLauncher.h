@@ -15,7 +15,8 @@
     BOOL _terminateCalled;
     BOOL _targetReallyDead;
     BOOL _responsibleForTermination;
-    DVTDispatchLock *_atomizingLock;
+    DVTDispatchLock *_lifeCycleLock;
+    DVTDispatchLock *_deathMutex;
 }
 
 @property BOOL startSuspended; // @synthesize startSuspended=_startSuspended;
@@ -26,7 +27,7 @@
 - (void)_setPIDOnMainThread:(int)arg1;
 - (void)_forceQuit:(id)arg1;
 - (BOOL)_convertCmdArgs:(id)arg1 intoPtrArray:(const char ***)arg2 andEnvVars:(id)arg3 intoPtrArray:(const char ***)arg4 andReturnStandardizedPath:(const char **)arg5 error:(id *)arg6;
-- (void)_waitForChildExit;
+- (void)_waitForChildExit:(int)arg1;
 - (void *)_setupPosixSpawnAttributesAndPTY:(id *)arg1;
 - (void)dealloc;
 - (id)initWithExtensionIdentifier:(id)arg1 launchSession:(id)arg2;

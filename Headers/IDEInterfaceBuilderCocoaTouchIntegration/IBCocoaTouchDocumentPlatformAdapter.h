@@ -6,37 +6,44 @@
 
 #import <IDEInterfaceBuilderKit/IBDocumentPlatformAdapter.h>
 
-@class IBPreXcode8ColorCorrector, NSColor;
+@class IBPreXcode8ColorCorrector, IBUIColor;
 
 @interface IBCocoaTouchDocumentPlatformAdapter : IBDocumentPlatformAdapter
 {
     IBPreXcode8ColorCorrector *_colorCorrector;
-    NSColor *_storyboardGlobalTintColor;
+    IBUIColor *_storyboardGlobalTintColor;
 }
 
-@property(copy, nonatomic) NSColor *storyboardGlobalTintColor; // @synthesize storyboardGlobalTintColor=_storyboardGlobalTintColor;
+@property(copy, nonatomic) IBUIColor *storyboardGlobalTintColor; // @synthesize storyboardGlobalTintColor=_storyboardGlobalTintColor;
 - (void).cxx_destruct;
-- (void)asynchronouslyPreflightShowingDocumentUIForScaleFactor:(double)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (BOOL)preflightUnarchivingDocumentReturningError:(id *)arg1;
+- (id)documentFallbackColorForSystemColor:(id)arg1;
+- (id)documentSystemColorNamed:(id)arg1;
+- (id)documentSystemColorNamed:(id)arg1 fallbackColor:(id)arg2;
+- (void)preflightToolWithDeviceTypeDescription:(id)arg1 numberOfTimes:(long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)asynchronouslyPreflightShowingDocumentUIForDeviceTypeDescription:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (BOOL)preflightUnarchivingDocumentWithConfiguration:(id)arg1 error:(id *)arg2;
 - (id)customFontFilenamesPlistKey;
 - (void)repopulateCustomFontFilenames:(id)arg1;
 - (id)allCustomFontFilenames;
-- (struct CGSize)storyboardCanvasPositioningScaleForSimulatedMetricsContainer:(id)arg1;
+- (struct CGSize)canvasPositioningScaleForSimulatedMetricsContainer:(id)arg1;
 - (void)documentDidDisableMemberConfigurations;
-- (void)updateDocumentSimulatedMetricsWithDeviceConfiguration:(id)arg1;
+- (void)updateDocumentWithDeviceConfiguration:(id)arg1;
+- (id)effectiveAppearanceForConfiguration:(id)arg1;
 - (id)implicitIntegratorBundleDependencyIdentifier;
 - (void)populateEmptyXIBDocumentWithInitialPlaceholders;
 - (void)installTopLevelPlaceholderWithLabel:(id)arg1 className:(id)arg2 placeholderID:(id)arg3 andObjectID:(id)arg4;
 - (id)compiledStoryboardInfoPlistFileName;
-- (id)hybridNIBPackageRuntimeFileName;
 - (id)defaultCompiledStoryboardInfoPlistFileName;
 - (id)defaultHybridNIBPackageRuntimeFileName;
 - (id)compiledStoryBoardIntermediateXibFileType;
-- (void)addToManyOutletFromObject:(id)arg1 referencingInstnace:(id)arg2 byName:(id)arg3;
-- (void)addOutletFromObject:(id)arg1 referencingInstnace:(id)arg2 byName:(id)arg3;
+- (void)addToManyOutletFromObject:(id)arg1 referencingInstance:(id)arg2 byName:(id)arg3;
+- (void)addOutletFromObject:(id)arg1 referencingInstance:(id)arg2 byName:(id)arg3;
 - (void)addActionFromSender:(id)arg1 toReceiver:(id)arg2 withSelector:(id)arg3;
 - (id)intrinsicPackageContentForNewlyGeneratedPackageWithFileType:(id)arg1;
 - (id)archiveTypeForFileType:(id)arg1;
+- (void)didUpdateSceneWithRootObject:(id)arg1;
+- (void)didFinishUpdatingScenesWithRootObjects:(id)arg1;
+- (void)documentWillBeginRegisteringUndoableChanges;
 - (void)decodePlatformSpecificDocumentProperties:(id)arg1;
 - (void)encodePlatformSpecificDocumentProperties:(id)arg1;
 - (void)archivePlatformSpecificDocumentProperties:(id)arg1;
@@ -45,7 +52,7 @@
 - (id)storyboardExitPlaceholder;
 - (id)storyboardFirstResponderPlaceholder;
 - (id)connectToSourceTeardownMethodCounterpartsForContext:(id)arg1;
-- (BOOL)connectToSourceIsTargettingOSVersionWithRequiredViewUnloading;
+- (BOOL)connectToSourceIsTargetingOSVersionWithRequiredViewUnloading;
 - (id)targetRuntime;
 - (id)initWithDocument:(id)arg1;
 

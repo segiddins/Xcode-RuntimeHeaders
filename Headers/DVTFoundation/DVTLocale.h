@@ -15,18 +15,26 @@
 {
     NSString *_displayName;
     NSString *_localeIdentifier;
+    DVTLocale *_canonicalLocale;
+    BOOL _legacy;
 }
 
++ (void)initialize;
 + (id)localeWithLocaleIdentifier:(id)arg1;
++ (id)_legacyLocaleForIdentifier:(id)arg1 canonicalLocale:(id)arg2;
 + (id)systemLanguages;
-+ (id)availableLocales;
++ (void)addAvailableLocale:(id)arg1 forIdentifier:(id)arg2;
++ (id)availableLocaleForIdentifier:(id)arg1;
++ (void)prepopulateAvailableLocalesbyIdentifierIfNeeded;
++ (id)availableLocalesbyIdentifier;
 + (id)globalLocale;
 + (id)baseLocale;
 + (id)autoupdatingCurrentLocale;
 + (id)currentLocale;
 + (id)_xcodeLocale;
 + (id)systemLocale;
-@property(readonly) NSString *displayName; // @synthesize displayName=_displayName;
+@property(readonly, getter=isLegacy) BOOL legacy; // @synthesize legacy=_legacy;
+@property(readonly, copy) NSString *displayName; // @synthesize displayName=_displayName;
 - (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
@@ -34,12 +42,12 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+@property(readonly, copy) DVTLocale *canonicalLocale;
 - (id)rootLanguage;
 - (id)localeComponents;
-@property(readonly) NSString *localeIdentifier;
+@property(readonly, copy) NSString *localeIdentifier;
 - (id)description;
-- (id)_initWithLocaleIdentifier:(id)arg1;
-- (id)_initWithLocaleIdentifier:(id)arg1 displayName:(id)arg2;
+- (id)initWithLocaleIdentifier:(id)arg1 canonicalLocaleIdentifier:(id)arg2 displayName:(id)arg3 isLegacy:(BOOL)arg4;
 - (id)init;
 
 @end

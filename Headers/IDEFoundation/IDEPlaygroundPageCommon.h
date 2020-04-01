@@ -15,6 +15,8 @@
 }
 
 - (void).cxx_destruct;
+- (void)_didChangeContainerFilePath:(id)arg1 inContext:(id)arg2;
+- (void)_willChangeContainerFilePath:(id)arg1 inContext:(id)arg2;
 - (id)context;
 @property(readonly, nonatomic) IDEPlaygroundCommonSharedContext *pageContext;
 - (id)playgroundContext;

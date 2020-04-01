@@ -15,11 +15,11 @@
 
 + (id)slotWithLevel:(long long)arg1;
 + (id)baseSlot;
-+ (id)allDefaultFileTypes;
 + (id)slotWithMipmapLevel:(id)arg1;
-+ (id)variantSlotComponentClassesExcludingIdiom;
-+ (id)variantSlotComponentClassesExcludingCoreVariants;
 + (id)orderedComponentClasses;
++ (Class)assetRepClass;
++ (Class)assetSetClass;
++ (id)slotFilterWithLevelFilter:(id)arg1;
 @property(readonly) IBICMipmapLevel *mipmapLevel; // @synthesize mipmapLevel=_mipmapLevel;
 - (void).cxx_destruct;
 - (id)detailAreaPath;

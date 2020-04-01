@@ -25,8 +25,6 @@
 - (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (void)close:(id)arg1;
-- (void)viewWillUninstall;
-- (void)viewDidInstall;
 - (void)loadView;
 - (void)popoverDidClose:(id)arg1;
 

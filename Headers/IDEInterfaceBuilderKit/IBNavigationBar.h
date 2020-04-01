@@ -6,11 +6,12 @@
 
 #import <AppKit/NSView.h>
 
-@class IBNavigationBarOperationContext;
+@class CALayer, IBNavigationBarOperationContext;
 
 @interface IBNavigationBar : NSView
 {
     IBNavigationBarOperationContext *_currentContext;
+    CALayer *_bottomLineLayer;
     CDUnknownBlockType _didClickBackButtonHandler;
 }
 

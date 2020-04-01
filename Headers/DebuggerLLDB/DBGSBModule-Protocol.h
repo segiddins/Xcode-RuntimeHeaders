@@ -6,9 +6,10 @@
 
 #import <DebuggerLLDB/NSObject-Protocol.h>
 
-@protocol DBGSBFileSpec, DBGSBSection;
+@protocol DBGSBAddress, DBGSBFileSpec, DBGSBSection;
 
 @protocol DBGSBModule <NSObject>
+- (id <DBGSBAddress>)ResolveFileAddress:(unsigned long long)arg1;
 - (id <DBGSBSection>)FindSection:(const char *)arg1;
 - (_Bool)SetPlatformFileSpec:(id <DBGSBFileSpec>)arg1;
 - (unsigned int)GetNumCompileUnits;

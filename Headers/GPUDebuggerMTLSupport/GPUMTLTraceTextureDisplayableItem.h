@@ -12,18 +12,23 @@ __attribute__((visibility("hidden")))
 @interface GPUMTLTraceTextureDisplayableItem : GPUMTLTraceDisplayableItem
 {
     id <GPUMTLDisplayableStrategy> _displayableStrategy;
+    int _subCommandIndex;
+    shared_ptr_2d3f6817 _parentFunction;
 }
 
-+ (Class)blitDisplayableStrategyClass;
-+ (Class)computeDisplayableStrategyClass;
++ (Class)displayableStrategyClass:(long long)arg1;
+- (id).cxx_construct;
 - (void).cxx_destruct;
-- (id)createRenderJobsForDisplaySet:(BOOL)arg1;
+- (id)createRenderJobsForDisplaySetWithRenderTargetArrayIndex:(unsigned long long)arg1;
 - (id)imageToExportToFile;
 - (void)_connectElementResourceToDisplaySet:(unsigned long long)arg1 resourceObject:(id)arg2;
 - (id)_startLoadingDisplaySetElement:(unsigned long long)arg1;
 - (void)_displaySetLoadIsComplete:(id)arg1;
 - (id)_startLoadingDisplaySet;
-- (id)initWithController:(id)arg1 parent:(id)arg2 deviceID:(unsigned long long)arg3 functionIndex:(int)arg4 displayIndex:(int)arg5 displayableStrategyClass:(Class)arg6;
+- (struct Function *)parentFunction;
+- (int)subCommandIndex;
+- (id)initWithController:(id)arg1 parent:(id)arg2 deviceID:(unsigned long long)arg3 functionIndex:(int)arg4 displayIndex:(int)arg5 displayableType:(long long)arg6 subCommandIndex:(int)arg7 parentFunction:(const shared_ptr_2d3f6817 *)arg8;
+- (id)initWithController:(id)arg1 parent:(id)arg2 deviceID:(unsigned long long)arg3 functionIndex:(int)arg4 displayIndex:(int)arg5 displayableType:(long long)arg6;
 
 @end
 

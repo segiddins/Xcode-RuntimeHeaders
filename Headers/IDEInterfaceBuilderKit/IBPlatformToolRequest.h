@@ -27,6 +27,7 @@
 @property(readonly, copy) CDUnknownBlockType diagnosticsBlock; // @synthesize diagnosticsBlock=_diagnosticsBlock;
 @property(readonly, copy) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 - (void).cxx_destruct;
+- (id)description;
 - (void)runCompletionBlock;
 - (id)initWithRequestID:(id)arg1 data:(id)arg2 supersessionIdentifier:(id)arg3 diagnosticsBlock:(CDUnknownBlockType)arg4 completionBlock:(CDUnknownBlockType)arg5;
 

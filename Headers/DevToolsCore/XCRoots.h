@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Foundation/NSObject.h>
+#import <objc/NSObject.h>
 
 @class NSMutableArray, PBXProject;
 
@@ -14,11 +14,11 @@
     NSMutableArray *_roots;
 }
 
+- (void).cxx_destruct;
 - (id)absolutePathForRoot:(id)arg1;
 - (id)description;
 - (void)setRoots:(id)arg1;
 - (id)roots;
-- (void)dealloc;
 - (id)initWithArray:(id)arg1 project:(id)arg2;
 
 @end

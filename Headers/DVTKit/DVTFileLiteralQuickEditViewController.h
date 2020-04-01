@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <DVTKit/DVTPopoverContentViewController.h>
+#import "DVTPopoverContentViewController.h"
 
 #import <DVTKit/DVTObjectLiteralQuickEditor-Protocol.h>
 #import <DVTKit/NSTableViewDataSource-Protocol.h>
@@ -31,7 +31,7 @@
 @property(retain, nonatomic) NSDictionary *playgroundFiles; // @synthesize playgroundFiles=_playgroundFiles;
 @property(retain, nonatomic) DVTFilePath *selectedFilePath; // @synthesize selectedFilePath=_selectedFilePath;
 @property(nonatomic) id <DVTFileLiteralQuickEditViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-@property(nonatomic) __weak NSPopover *presentingPopover; // @synthesize presentingPopover=_presentingPopover;
+@property(retain) NSPopover *presentingPopover; // @synthesize presentingPopover=_presentingPopover;
 - (void).cxx_destruct;
 - (void)tableViewSelectionDidChange:(id)arg1;
 - (void)tableView:(id)arg1 didAddRowView:(id)arg2 forRow:(long long)arg3;

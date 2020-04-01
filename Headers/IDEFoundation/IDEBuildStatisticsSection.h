@@ -34,7 +34,7 @@
 @property(copy) NSString *title; // @synthesize title=_title;
 - (void).cxx_destruct;
 - (id)description;
-- (void)emitContentsForAspect:(id)arg1 logLevel:(int)arg2 indentLevel:(unsigned long long)arg3 withBlock:(CDUnknownBlockType)arg4;
+- (void)emitContentsForAspect:(id)arg1 logLevel:(unsigned long long)arg2 indentLevel:(unsigned long long)arg3 withBlock:(CDUnknownBlockType)arg4;
 - (id)defaultEmissionStringWithIndentLevel:(unsigned long long)arg1;
 @property(readonly) long long numberOfVMPageouts;
 @property(readonly) long long numberOfVMPageins;
@@ -52,6 +52,7 @@
 - (void)addBuildStatisticsSection:(id)arg1;
 - (void)addNewBuildStatisticsDataWithTitle:(id)arg1 commandString:(id)arg2 startSystemStatisticsMeasurement:(id)arg3 endSystemStatisticsMeasurement:(id)arg4 elapsedUserTime:(double)arg5 elapsedSystemTime:(double)arg6;
 - (id)buildStatisticsSectionWithTitleFormat:(id)arg1;
+- (id)buildStatisticsSectionWithTitle:(id)arg1;
 - (unsigned long long)_newOrdinal;
 - (id)initWithTitle:(id)arg1;
 - (id)initWithTitle:(id)arg1 ordinal:(unsigned long long)arg2;

@@ -39,7 +39,6 @@
 @property(retain, nonatomic) NSArray *buttons; // @synthesize buttons=_buttons;
 @property(copy, nonatomic) CDUnknownBlockType selectionChangedBlock; // @synthesize selectionChangedBlock=_selectionChangedBlock;
 - (void).cxx_destruct;
-- (id)selectedTemplateImageFromImage:(id)arg1 state:(unsigned long long)arg2;
 - (void)restoreConfiguration:(id)arg1 comparisonBlock:(CDUnknownBlockType)arg2;
 - (void)fillStack;
 - (void)_turnOffAllButtonsInStackview:(id)arg1 except:(id)arg2;

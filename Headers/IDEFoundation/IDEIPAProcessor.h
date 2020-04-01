@@ -13,10 +13,7 @@
 + (id)sharedInstance;
 - (BOOL)compileBitcodeForPayloadAppAtPath:(id)arg1 toPath:(id)arg2 logAspect:(id)arg3 error:(id *)arg4;
 - (BOOL)optimizePayloadAppAtPath:(id)arg1 toPath:(id)arg2 forDeviceFamily:(id)arg3 logAspect:(id)arg4 error:(id *)arg5;
-- (id)consolidateDeviceFamiliesWithEquivalentTraits:(id)arg1;
-- (id)applicableDeviceFamiliesForPayloadAtPath:(id)arg1 logAspect:(id)arg2 error:(id *)arg3;
-- (BOOL)enumerateSupportedDeviceSetInfosForPayloadAppAtPath:(id)arg1 logAspect:(id)arg2 error:(id *)arg3 usingBlock:(CDUnknownBlockType)arg4;
-- (id)runIPAToolWithInputPath:(id)arg1 outputPath:(id)arg2 arguments:(id)arg3 logAspect:(id)arg4 outError:(id *)arg5;
+- (BOOL)runIPAToolWithInputPath:(id)arg1 outputPath:(id)arg2 arguments:(id)arg3 logAspect:(id)arg4 standardOutput:(id *)arg5 standardError:(id *)arg6 json:(id *)arg7 outError:(id *)arg8;
 - (id)binSearchPathForIPATool;
 
 @end

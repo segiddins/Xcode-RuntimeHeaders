@@ -6,19 +6,15 @@
 
 #import <IDEFoundation/IDEDistributionProcessingPackagingStep.h>
 
-@class NSString;
-
 @interface IDEDistributionCreatePKGStep : IDEDistributionProcessingPackagingStep
 {
-    NSString *name;
 }
 
 + (id)packagePathExtension;
 + (_Bool)supportsDryRun;
 + (BOOL)wantsPayloadDir;
-@property(copy) NSString *name; // @synthesize name;
-- (void).cxx_destruct;
 - (_Bool)runWithError:(id *)arg1;
+- (id)name;
 - (id)providedOutputContextPropertyNames;
 - (id)requiredInputContextPropertyNames;
 

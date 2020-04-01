@@ -14,7 +14,6 @@
     IDEActivityScrollingTextLayer *_scrollingTextLayer;
     IDEActivityActionButtonLayer *_cancelButtonLayer;
     NSMutableArray *_stringSegments;
-    IDEActivityReport *_immutableReportForDisplay;
     BOOL _paused;
     DVTObservingToken *_kvoActivityReportTitleSegmentsToken;
     DVTObservingToken *_kvoActivityReportProgressToken;
@@ -26,6 +25,7 @@
     double _spaceNeededForMultiActionIndicator;
 }
 
++ (id)keyPathsForValuesAffectingIndeterminateReportInProgress;
 + (id)createActivityReportLayer;
 + (struct CGSize)defaultSizeForPopUpStyle;
 @property(nonatomic) BOOL makeSpaceForIndeterminateProgressIndicator; // @synthesize makeSpaceForIndeterminateProgressIndicator=_makeSpaceForIndeterminateProgressIndicator;
@@ -36,7 +36,6 @@
 - (double)spaceNeededForCancelButtonLayer;
 - (BOOL)shouldShowCancelButtonLayer;
 @property(readonly) BOOL indeterminateReportInProgress;
-- (id)keyPathsForValuesAffectingIndeterminateReportInProgress;
 - (void)updateVisibilityForCancelButtonAndAdjustLayoutIfNeeded;
 - (void)updateVisibilityForTextFieldAndAdjustLayoutIfNeeded;
 - (BOOL)shouldHideProgress;

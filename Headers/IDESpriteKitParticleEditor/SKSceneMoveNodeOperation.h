@@ -18,8 +18,8 @@
 }
 
 - (void).cxx_destruct;
-- (BOOL)revert;
-- (BOOL)apply;
+- (BOOL)_performRevert;
+- (BOOL)_performApply;
 - (void)_moveNodeFromParent:(id)arg1 toParent:(id)arg2;
 - (id)initWithDocument:(id)arg1 movingNode:(id)arg2 toParent:(id)arg3 convertTransform:(BOOL)arg4;
 

@@ -26,7 +26,6 @@
 - (id)graph;
 - (void)loadView;
 - (id)_qosUnavailableString;
-- (id)_qosUnavailableStringColor;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)initUsingDefaultNib;
 - (id)initWithThreadID:(id)arg1 threadDisplayName:(id)arg2 qualityOfServiceValue:(id)arg3;

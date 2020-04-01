@@ -4,54 +4,52 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <DVTKit/DVTLayoutView_ML.h>
+#import <DVTStructuredLayoutKit/DVTStructuredLayoutView.h>
 
 #import <IDEKit/DVTInvalidation-Protocol.h>
 
-@class DVTBorderedView, DVTStackBacktrace, IDEControlGroup, IDEPathControl, NSString;
+@class DVTBorderedView, DVTPathControl, DVTStackBacktrace, IDEControlGroup, NSString, NSVisualEffectView;
+@protocol IDENavBarDelegate;
 
-@interface IDENavBar : DVTLayoutView_ML <DVTInvalidation>
+@interface IDENavBar : DVTStructuredLayoutView <DVTInvalidation>
 {
     DVTBorderedView *_pathBorderedView;
+    BOOL _useControlAccentColorForBottomBorder;
+    NSVisualEffectView *_backgroundView;
     BOOL _drawsTopBorder;
     BOOL _drawsLeftBorder;
     BOOL _isGrouped;
-    IDEPathControl *_pathControl;
+    BOOL _isActive;
+    id <IDENavBarDelegate> _delegate;
+    DVTPathControl *_pathControl;
     IDEControlGroup *_leftControlGroup;
     IDEControlGroup *_rightControlGroup;
 }
 
-+ (id)inactiveTextColorForGradientStyle:(int)arg1;
-+ (id)textColorForGradientStyle:(int)arg1;
-+ (id)interiorHighlightColorForGradientStyle:(int)arg1;
-+ (id)inactiveInteriorBorderColorForGradientStyle:(int)arg1;
-+ (id)interiorBorderColorForGradientStyle:(int)arg1;
-+ (id)inactiveBackgroundGradientForGradientStyle:(int)arg1;
-+ (id)backgroundGradientForGradientStyle:(int)arg1;
-+ (id)inactiveBorderColorForGradientStyle:(int)arg1;
-+ (id)borderColorForGradientStyle:(int)arg1;
 + (void)initialize;
+@property(nonatomic) BOOL isActive; // @synthesize isActive=_isActive;
 @property BOOL isGrouped; // @synthesize isGrouped=_isGrouped;
 @property(retain) IDEControlGroup *rightControlGroup; // @synthesize rightControlGroup=_rightControlGroup;
 @property(retain) IDEControlGroup *leftControlGroup; // @synthesize leftControlGroup=_leftControlGroup;
-@property(retain) IDEPathControl *pathControl; // @synthesize pathControl=_pathControl;
+@property(retain) DVTPathControl *pathControl; // @synthesize pathControl=_pathControl;
+@property(nonatomic) __weak id <IDENavBarDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) BOOL drawsLeftBorder; // @synthesize drawsLeftBorder=_drawsLeftBorder;
 @property(nonatomic) BOOL drawsTopBorder; // @synthesize drawsTopBorder=_drawsTopBorder;
 - (void).cxx_destruct;
-- (void)refreshColorsForXcode5UI:(BOOL)arg1;
-- (void)_updateFocusStyleForGradientStyle:(int)arg1;
-- (void)makeUnfocusedStyle;
-- (void)makeFocusedStyle;
+- (id)accessibilityRole;
+- (BOOL)isAccessibilityElement;
 - (struct CGRect)grabRect;
 - (void)primitiveInvalidate;
+- (void)updateLayer;
+- (BOOL)wantsUpdateLayer;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
-- (void)_controlGroupDidChange:(id)arg1;
+@property(nonatomic) BOOL useControlAccentColorForBottomBorder;
 - (void)_IDENavBarSharedInit;
-- (void)layoutBottomUp;
-- (void)layoutTopDown;
-- (id)accessibilityAttributeValue:(id)arg1;
-- (BOOL)accessibilityIsIgnored;
+- (id)dvt_subviewsOrderedForLayout;
+- (void)dvt_positionSubviewsAndSizeSelfAfterSubviewLayout;
+- (void)dvt_willLayoutSubview:(id)arg1;
+- (void)dvt_configureSubviewsBeforeSubviewLayout;
 
 // Remaining properties
 @property(retain) DVTStackBacktrace *creationBacktrace;

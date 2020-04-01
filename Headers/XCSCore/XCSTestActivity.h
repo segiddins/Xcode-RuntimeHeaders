@@ -11,26 +11,30 @@
 @interface XCSTestActivity : XCSObject
 {
     NSString *_title;
+    NSString *_activityType;
     NSString *_UUID;
     NSDate *_start;
     NSDate *_finish;
-    XCSIntegrationAsset *_screenshot;
-    XCSIntegrationAsset *_snapshot;
-    XCSIntegrationAsset *_diagnosticReport;
+    NSArray *_attachments;
     NSArray *_subactivities;
 }
 
 @property(retain, nonatomic) NSArray *subactivities; // @synthesize subactivities=_subactivities;
-@property(retain, nonatomic) XCSIntegrationAsset *diagnosticReport; // @synthesize diagnosticReport=_diagnosticReport;
-@property(retain, nonatomic) XCSIntegrationAsset *snapshot; // @synthesize snapshot=_snapshot;
-@property(retain, nonatomic) XCSIntegrationAsset *screenshot; // @synthesize screenshot=_screenshot;
+@property(retain, nonatomic) NSArray *attachments; // @synthesize attachments=_attachments;
 @property(retain, nonatomic) NSDate *finish; // @synthesize finish=_finish;
 @property(retain, nonatomic) NSDate *start; // @synthesize start=_start;
 @property(copy, nonatomic) NSString *UUID; // @synthesize UUID=_UUID;
+@property(copy, nonatomic) NSString *activityType; // @synthesize activityType=_activityType;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 - (void).cxx_destruct;
-- (BOOL)_validateTitle:(id)arg1 UUID:(id)arg2 start:(id)arg3 finish:(id)arg4 screenshot:(id)arg5 snapshot:(id)arg6 diagnosticReport:(id)arg7 subactivities:(id)arg8 validationErrors:(id *)arg9;
-- (id)_initWithTitle:(id)arg1 UUID:(id)arg2 start:(id)arg3 finish:(id)arg4 screenshot:(id)arg5 snapshot:(id)arg6 diagnosticReport:(id)arg7 subactivities:(id)arg8 validationErrors:(id *)arg9;
+@property(readonly, nonatomic) XCSIntegrationAsset *memoryGraph;
+@property(readonly, nonatomic) XCSIntegrationAsset *diagnosticReport;
+@property(readonly, nonatomic) XCSIntegrationAsset *snapshot;
+@property(readonly, nonatomic) XCSIntegrationAsset *screenshot;
+- (id)_assetForAttachmentWithName:(id)arg1;
+- (BOOL)_validateTitle:(id)arg1 activityType:(id)arg2 UUID:(id)arg3 start:(id)arg4 finish:(id)arg5 attachments:(id)arg6 subactivities:(id)arg7 validationErrors:(id *)arg8;
+- (id)_initWithTitle:(id)arg1 activityType:(id)arg2 UUID:(id)arg3 start:(id)arg4 finish:(id)arg5 attachments:(id)arg6 subactivities:(id)arg7 validationErrors:(id *)arg8;
+- (void)_createLegacyAttachmentsFromInfo:(id)arg1 activityStart:(id)arg2 attachments:(id)arg3 service:(id)arg4 validationErrors:(id *)arg5;
 - (id)initWithContents:(id)arg1 service:(id)arg2 validationErrors:(id *)arg3;
 
 @end

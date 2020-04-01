@@ -28,7 +28,7 @@
 - (void)dvt_encodeRelationshipsWithXMLArchiver:(id)arg1 version:(id)arg2;
 - (void)dvt_encodeAttributesWithXMLArchiver:(id)arg1 version:(id)arg2;
 - (id)initFromXMLUnarchiver:(id)arg1 archiveVersion:(float)arg2;
-- (void)dvt_awakeFromXMLUnarchiver:(id)arg1;
+- (id)accessibilityDescription;
 - (BOOL)locationsProvideAdditionalInformation;
 - (BOOL)matchesAllExceptionsInScope;
 - (id)description;

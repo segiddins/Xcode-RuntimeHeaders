@@ -11,12 +11,13 @@
 #import <IDEInterfaceBuilderKit/IBHybridStructureSelectionProvider-Protocol.h>
 #import <IDEInterfaceBuilderKit/IBOutlineViewControllerDelegate-Protocol.h>
 
-@class IBAbstractDocumentEditor, IBNavigationControllerItem, IBOutlineViewController, NSString;
+@class IBAbstractDocumentEditor, IBAutolayoutSidebarViewController, IBNavigationControllerItem, IBOutlineViewController, NSString;
 
 @interface IBNavigationOutlineViewController : IBNavigationController <IBAutolayoutSidebarViewControllerDelegate, IBHybridStructureSelectionProvider, IBOutlineViewControllerDelegate, IBHighlightProvider>
 {
     IBNavigationControllerItem *_currentAutolayoutIssuesItem;
     IBNavigationControllerItem *_rootNavigationItem;
+    IBAutolayoutSidebarViewController *_autolayoutIssuesController;
     IBOutlineViewController *_outlineViewController;
 }
 
@@ -42,7 +43,7 @@
 - (BOOL)documentEditor:(id)arg1 canSelectMembers:(id)arg2;
 - (void)documentEditor:(id)arg1 deselectMembers:(id)arg2;
 - (void)documentEditor:(id)arg1 pullSelection:(id)arg2;
-- (void)documentEditor:(id)arg1 selectMembers:(id)arg2 takeFocus:(BOOL)arg3 zoomIfNeeded:(BOOL)arg4;
+- (void)documentEditor:(id)arg1 selectMembers:(id)arg2 takeFocus:(BOOL)arg3;
 @property(readonly, nonatomic) NSString *selectionProviderSwitcherTitle;
 @property(readonly, nonatomic) BOOL onlySupportsDocumentObjectMembers;
 @property(readonly) BOOL wantsFilterField;

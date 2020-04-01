@@ -6,10 +6,14 @@
 
 #import <objc/NSObject.h>
 
-@class NSDictionary, NSOrderedSet, NSSet, NSString;
+@class DVTFilePath, NSDictionary, NSOrderedSet, NSPredicate, NSSet, NSString;
 
 @interface DVTDeviceType : NSObject
 {
+    DVTFilePath *_bundlePath;
+    NSString *_baseDeviceTypeIdentifier;
+    NSPredicate *_matchPredicate;
+    NSPredicate *_filterPredicate;
     NSString *_identifier;
     NSString *_name;
     NSString *_UTI;
@@ -20,6 +24,15 @@
     NSSet *_requiredDeviceSpecifierOptions;
 }
 
++ (id)_propertyDictionaryForDeviceTypeAtPath:(id)arg1;
++ (void)_loadDeviceTypeBundleAtPath:(id)arg1;
++ (BOOL)loadAllDeviceTypeBundlesReturningError:(id *)arg1;
++ (id)conformingDeviceTypeForDevice:(id)arg1;
++ (void)registerDeviceTypeWithSpecification:(id)arg1;
++ (void)_locked_fulfillPendingDeviceTypeSpecificationsWaitingForBaseDeviceTypeWithIdentifier:(id)arg1;
++ (void)_locked_registerPendingDeviceTypeSpecification:(id)arg1 waitingForBaseDeviceTypeWithIdentifier:(id)arg2;
++ (void)_locked_registerDeviceType:(id)arg1;
++ (id)parentDeviceTypeForDeviceType:(id)arg1;
 + (id)deviceTypeWithIdentifier:(id)arg1;
 + (void)initialize;
 @property(readonly, copy) NSSet *requiredDeviceSpecifierOptions; // @synthesize requiredDeviceSpecifierOptions=_requiredDeviceSpecifierOptions;
@@ -31,8 +44,17 @@
 @property(readonly, copy) NSString *name; // @synthesize name=_name;
 @property(readonly, copy) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
+- (BOOL)_isFilteredDevice:(id)arg1;
+- (BOOL)_isMatchedDevice:(id)arg1;
+- (id)_baseDeviceType;
 - (id)description;
+- (void)_commonInit;
+- (void)_initFilterPredicateWithPredicateString:(id)arg1 fallbackPredicate:(id)arg2;
+- (void)_initMatchPredicateWithPredicateString:(id)arg1 fallbackPredicate:(id)arg2;
 - (id)initWithExtension:(id)arg1;
+- (id)initWithIdentifier:(id)arg1 baseDeviceType:(id)arg2 specification:(id)arg3;
+- (id)initWithIdentifier:(id)arg1 baseDeviceType:(id)arg2;
+@property(readonly) NSString *baseDeviceTypeIdentifier;
 
 @end
 

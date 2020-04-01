@@ -25,7 +25,7 @@
 - (void)setLoadedState:(int)arg1;
 - (int)loadedState;
 - (void).cxx_destruct;
-- (void)writeAtomicallyToTemporaryFile:(id)arg1;
+- (id)dataRepresentation;
 - (id)extensionForTemporaryFile;
 - (void)cancelLoading;
 - (void)_updateImage:(id)arg1;

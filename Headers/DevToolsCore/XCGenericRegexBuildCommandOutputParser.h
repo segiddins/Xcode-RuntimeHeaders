@@ -13,8 +13,8 @@
     NSArray *_parseRules;
 }
 
+- (void).cxx_destruct;
 - (void)writeBytes:(const char *)arg1 length:(unsigned long long)arg2;
-- (void)dealloc;
 - (id)init;
 - (id)initWithRegexParseRules:(id)arg1;
 

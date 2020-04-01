@@ -7,8 +7,10 @@
 #import <XCSUI/NSObject-Protocol.h>
 
 @class NSString;
+@protocol IDETestReport_Base;
 
 @protocol IDETestReport_Base <NSObject>
+@property(nonatomic) __weak id <IDETestReport_Base> ide_testReport_base_parent;
 @property(readonly, copy, nonatomic) NSString *ide_testReport_base_identifier;
 @end
 

@@ -13,17 +13,16 @@
 
 @interface IBGlassStyleEditorCanvasFrame : IBEditorCanvasFrame <IBGlassCanvasFrameBackgroundDelegate, IBImageButtonDelegate>
 {
-    IBGlassCanvasFrameBackground *background;
+    IBGlassCanvasFrameBackground *_background;
 }
 
 - (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (id)closeButtonImageForState:(unsigned long long)arg1;
-- (id)closeButtonShadow:(BOOL)arg1;
-- (id)closeButtonGradientKey:(BOOL)arg1 pressed:(BOOL)arg2;
-- (id)closeButtonOuterColor:(BOOL)arg1 pressed:(BOOL)arg2;
-- (id)closeButtonBorderColor:(BOOL)arg1 pressed:(BOOL)arg2;
+- (id)closeButtonBackgroundColor:(BOOL)arg1;
+- (id)closeButtonBorderColor:(BOOL)arg1;
 - (id)knobButtonImageForState:(unsigned long long)arg1 knob:(CDUnion_31865a80)arg2;
+- (BOOL)suportsIndependentPositioning;
 - (BOOL)shouldDragFrameWithMouseDown:(id)arg1;
 - (void)hasKeyLookDidChange;
 - (struct CGSize)sizeForKnob:(CDUnion_31865a80)arg1;

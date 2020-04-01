@@ -6,26 +6,22 @@
 
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBUIViewControllerEditorView.h>
 
-@class NSMutableArray, NSMutableDictionary, NSView;
+@class NSMutableArray, NSView;
 
 @interface IBUISplitViewControllerEditorView : IBUIViewControllerEditorView
 {
-    NSView *contentView;
-    NSMutableArray *orderedEditorViews;
-    NSMutableDictionary *interiorCornerImageViews;
+    NSView *_contentView;
+    NSMutableArray *_orderedEditorViews;
 }
 
-@property(retain, nonatomic) NSView *contentView; // @synthesize contentView;
+@property(retain, nonatomic) NSMutableArray *orderedEditorViews; // @synthesize orderedEditorViews=_orderedEditorViews;
+@property(retain, nonatomic) NSView *contentView; // @synthesize contentView=_contentView;
 - (void).cxx_destruct;
-- (void)drawRect:(struct CGRect)arg1;
 - (void)invalidateLayout;
 - (void)invalidateEditorView;
 - (void)layoutTopDown;
 - (void)layoutSplitViewControllerContentView;
 - (BOOL)shouldShowMasterEditorView;
-- (void)invalidateCornerImageViews;
-- (void)layoutCornerImageViewsInFrame:(struct CGRect)arg1;
-- (void)synchronizeSimulatedMetricsContainer;
 - (double)interiorCornerRadius;
 - (double)gutterWidth;
 - (double)masterColumnWidth;
@@ -34,7 +30,6 @@
 - (id)delegate;
 @property(readonly) IBUIViewControllerEditorView *detailEditorView;
 @property(readonly) IBUIViewControllerEditorView *masterEditorView;
-- (id)orderedEditorViews;
 - (id)initWithFrame:(struct CGRect)arg1 targetRuntime:(id)arg2;
 
 @end

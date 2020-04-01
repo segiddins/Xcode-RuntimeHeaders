@@ -4,28 +4,26 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <DVTKit/DVTSplitView.h>
+#import "DVTSplitView.h"
 
 #import <DVTKit/NSMenuDelegate-Protocol.h>
 
-@class DVTNotificationToken, DVTObservingToken, DVTSourceTextView, NSArray, NSIndexSet, NSMenu, NSPointerArray, NSString, NSTrackingArea;
-@protocol DVTComparisonSplitViewDelegate;
+@class DVTNotificationToken, DVTObservingToken, NSArray, NSIndexSet, NSMenu, NSPointerArray, NSString, NSTrackingArea, NSView;
+@protocol DVTComparisonSplitViewDelegate, DVTSourceCodeComparisonTextView;
 
 @interface DVTComparisonSplitView : DVTSplitView <NSMenuDelegate>
 {
     NSIndexSet *_depressedDiffDescriptorIndexes;
     NSTrackingArea *_trackingArea;
-    struct CGRect *_switchRectArray;
     struct CGRect *_menuRectArray;
     NSPointerArray *_swoops;
     NSArray *_diffDescriptors;
     NSIndexSet *_modifiedDiffDescriptorIndexes;
     NSIndexSet *_hiddenDiffDescriptorIndexes;
-    DVTSourceTextView *_primaryTextView;
-    DVTSourceTextView *_secondaryTextView;
+    NSView<DVTSourceCodeComparisonTextView> *_primaryTextView;
+    NSView<DVTSourceCodeComparisonTextView> *_secondaryTextView;
     NSIndexSet *_selectedDiffDescriptorIndexes;
     NSIndexSet *_toggledDiffDescriptorIndexes;
-    int _style;
     NSMenu *_diffMenu;
     BOOL _depressed;
     BOOL _selected;
@@ -44,24 +42,16 @@
     DVTNotificationToken *_secondaryLayoutCompleteToken;
     DVTNotificationToken *_secondaryFrameChangeToken;
     BOOL _enableDiffToggles;
+    BOOL _showsPrettySwitch;
     id <DVTComparisonSplitViewDelegate> _comparisonDelegate;
 }
 
-+ (id)diffButtonMenuImage;
-+ (id)diffButtonCheckImage;
-+ (id)diffButtonUncheckImage;
-+ (id)unsetImage;
-+ (id)neitherArrowImage;
-+ (id)rightLeftArrowImage;
-+ (id)rightArrowImage;
-+ (id)leftRightArrowImage;
-+ (id)leftArrowImage;
-+ (id)splitterDeselectedImage_depressed;
-+ (id)splitterDeselectedImage;
-+ (id)splitterSelectedImage_depressed;
-+ (id)splitterSelectedImage;
-+ (double)defaultSplitterWidthForStyle:(int)arg1;
++ (id)diffButtonMenuImageForTheme:(id)arg1 inForeground:(BOOL)arg2;
++ (id)diffButtonUncheckImageForTheme:(id)arg1 inForeground:(BOOL)arg2;
++ (id)_comparisonSplitterImage:(id)arg1 forTheme:(id)arg2 inForeground:(BOOL)arg3;
++ (double)defaultSplitterWidth;
 + (void)initialize;
+@property(readonly) BOOL showsPrettySwitch; // @synthesize showsPrettySwitch=_showsPrettySwitch;
 @property __weak id <DVTComparisonSplitViewDelegate> comparisonDelegate; // @synthesize comparisonDelegate=_comparisonDelegate;
 @property(retain) NSMenu *diffMenu; // @synthesize diffMenu=_diffMenu;
 @property BOOL hasFocus; // @synthesize hasFocus=_hasFocus;
@@ -79,18 +69,18 @@
 - (void)mouseEntered:(id)arg1;
 - (void)drawDividerInRect:(struct CGRect)arg1;
 - (void)_drawMultipleDiffDescriptors:(struct CGRect)arg1;
+- (CDUnknownBlockType)_drawDiff:(struct CGRect)arg1 withSwoop:(BOOL)arg2 diffDescriptor:(id)arg3 diffNumber:(unsigned long long)arg4 idx:(unsigned long long)arg5 theme:(id)arg6 sourceTheme:(id)arg7;
 - (unsigned long long)_nearestDiffDescriptorFromMiddleInDirection:(long long)arg1;
 - (void)_drawSingleDiffDescriptor:(struct CGRect)arg1;
+- (BOOL)wantsUpdateLayer;
 - (double)dividerThickness;
 - (void)setHiddenDiffDescriptorIndexes:(id)arg1;
 @property BOOL hideDiffMenu;
 @property BOOL isBinaryComparison;
 @property BOOL isThreeWayDiff;
-@property int style;
 @property(retain) NSIndexSet *toggledDiffDescriptorIndexes; // @synthesize toggledDiffDescriptorIndexes=_toggledDiffDescriptorIndexes;
-@property(retain) DVTSourceTextView *secondaryTextView; // @synthesize secondaryTextView=_secondaryTextView;
-@property(retain) DVTSourceTextView *primaryTextView; // @synthesize primaryTextView=_primaryTextView;
-@property(readonly) BOOL showsPrettySwitch;
+@property(retain) NSView<DVTSourceCodeComparisonTextView> *secondaryTextView; // @synthesize secondaryTextView=_secondaryTextView;
+@property(retain) NSView<DVTSourceCodeComparisonTextView> *primaryTextView; // @synthesize primaryTextView=_primaryTextView;
 @property(retain) NSIndexSet *selectedDiffDescriptorIndexes; // @synthesize selectedDiffDescriptorIndexes=_selectedDiffDescriptorIndexes;
 @property BOOL selected; // @synthesize selected=_selected;
 - (void)updateBoundTimestamp;
@@ -98,7 +88,7 @@
 - (void)updateBoundSelectedIndex;
 - (void)updateBoundModifiedDescriptorIndexes;
 - (void)updateBoundContentArray;
-- (id)dvtExtraBindings;
+- (id)dvt_extraBindings;
 - (void)resetCursorRects;
 - (BOOL)acceptsFirstResponder;
 - (void)scrollWheel:(id)arg1;
@@ -113,10 +103,9 @@
 - (void)setFrameSize:(struct CGSize)arg1;
 - (void)setFrame:(struct CGRect)arg1;
 - (void)_centerSplitter;
-- (void)_setSelectedDescriptorMergeDirection:(int)arg1;
+- (void)_setSelectedDescriptorMergeDirection:(long long)arg1;
 - (unsigned long long)_hitTestSwoopLocation:(struct CGPoint)arg1;
 - (unsigned long long)_hitTestMenuLocation:(struct CGPoint)arg1;
-- (unsigned long long)_hitTestLocation:(struct CGPoint)arg1;
 - (void)primitiveInvalidate;
 - (void)viewDidMoveToWindow;
 - (struct CGRect)_firstDividerFrame;

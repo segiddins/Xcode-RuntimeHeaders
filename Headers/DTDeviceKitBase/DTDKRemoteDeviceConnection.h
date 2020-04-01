@@ -8,8 +8,8 @@
 
 #import <DTDeviceKitBase/DVTInvalidation-Protocol.h>
 
-@class DTDKRemoteDeviceToken, DTXConnection, DVTDispatchLock, DVTPinger, DVTStackBacktrace, NSArray, NSMutableArray, NSMutableSet, NSString;
-@protocol OS_dispatch_queue, OS_dispatch_source;
+@class DTXConnection, DVTDispatchLock, DVTPinger, DVTStackBacktrace, NSArray, NSMutableArray, NSMutableSet, NSString;
+@protocol DTDKRemoteDeviceToken, OS_dispatch_queue, OS_dispatch_source;
 
 @interface DTDKRemoteDeviceConnection : NSObject <DVTInvalidation>
 {
@@ -21,17 +21,19 @@
     NSObject<OS_dispatch_source> *_pingTimer;
     NSObject<OS_dispatch_queue> *_pingQueue;
     NSMutableSet *_connectionMonitors;
+    NSObject<OS_dispatch_queue> *_sessionFutureQueue;
     unsigned long long _hash;
+    BOOL _removingConnection;
+    _Bool _deviceReportsWirelessEnabled;
     _Bool _wireless;
     _Bool _paired;
     unsigned int _interfaceSpeed;
     unsigned int _location;
-    DTDKRemoteDeviceToken *_owner;
+    id <DTDKRemoteDeviceToken> _owner;
     NSString *_identifier;
     NSString *_bonjourServiceName;
     NSString *_companionIdentifier;
     struct _AMDevice *_deviceRef;
-    void *_wakeupToken;
     DTXConnection *_instrumentsConnection;
     double _averageLatency;
     unsigned long long _pings;
@@ -43,32 +45,41 @@
 + (void)netServiceBrowser:(id)arg1 didRemoveService:(id)arg2 moreComing:(BOOL)arg3;
 + (void)netServiceBrowser:(id)arg1 didFindService:(id)arg2 moreComing:(BOOL)arg3;
 + (void)startServiceBrowsers;
++ (id)_connectionsForServiceKey:(id)arg1;
++ (id)_netServiceKeyForServiceName:(id)arg1;
 + (id)keyPathsForValuesAffectingAddresses;
 + (id)keyPathsForValuesAffectingHostname;
 + (id)allConnections;
 + (id)connectionForDeviceRef:(struct _AMDevice *)arg1;
++ (id)existingNonIDIDConnectionForIDID:(id)arg1;
++ (id)existingConnectionForDeviceIdentifier:(id)arg1;
 + (id)existingConnectionForDeviceRef:(struct _AMDevice *)arg1;
++ (BOOL)supportsInvalidationPrevention;
 + (void)initialize;
 @property(readonly) unsigned long long pongs; // @synthesize pongs=_pongs;
 @property(readonly) unsigned long long pings; // @synthesize pings=_pings;
 @property(readonly) double averageLatency; // @synthesize averageLatency=_averageLatency;
 @property(retain, nonatomic) DTXConnection *instrumentsConnection; // @synthesize instrumentsConnection=_instrumentsConnection;
-@property(readonly) void *wakeupToken; // @synthesize wakeupToken=_wakeupToken;
 @property(readonly) struct _AMDevice *deviceRef; // @synthesize deviceRef=_deviceRef;
 @property(readonly, copy) NSString *companionIdentifier; // @synthesize companionIdentifier=_companionIdentifier;
 @property(readonly) unsigned int location; // @synthesize location=_location;
 @property(readonly, copy) NSString *bonjourServiceName; // @synthesize bonjourServiceName=_bonjourServiceName;
 @property(getter=isPaired) _Bool paired; // @synthesize paired=_paired;
 @property(readonly, getter=isWireless) _Bool wireless; // @synthesize wireless=_wireless;
+@property _Bool deviceReportsWirelessEnabled; // @synthesize deviceReportsWirelessEnabled=_deviceReportsWirelessEnabled;
 @property(readonly) unsigned int interfaceSpeed; // @synthesize interfaceSpeed=_interfaceSpeed;
 @property(readonly, copy) NSString *identifier; // @synthesize identifier=_identifier;
-@property __weak DTDKRemoteDeviceToken *owner; // @synthesize owner=_owner;
+@property __weak id <DTDKRemoteDeviceToken> owner; // @synthesize owner=_owner;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (void)cancelInstrumentsConnection;
 - (void)removeConnectionMonitor:(id)arg1;
 - (id)monitorConnection;
 - (void)_createPingTimerIfNecessary;
+- (id)takeWatchPowerAssertionWithName:(id)arg1 details:(id)arg2 andTimeout:(double)arg3;
+- (id)takeWirelessPowerAssertionWithName:(id)arg1 deatils:(id)arg2 andTimeout:(double)arg3;
 - (id)fetchValueForDomain:(id)arg1 andKey:(id)arg2;
+- (void)_primitiveDrainPendingRequests;
 - (void)_drainPendingRequests;
 - (id)setValue:(id)arg1 forDomain:(id)arg2 andKey:(id)arg3;
 - (id)startHouseArrestServiceForAppIdentifier:(id)arg1;
@@ -78,8 +89,6 @@
 - (id)startServiceWithIdentifier:(id)arg1;
 - (id)futureWithSession:(CDUnknownBlockType)arg1;
 - (int)executeInSession:(CDUnknownBlockType)arg1;
-- (_Bool)unpair;
-- (id)wakeup;
 - (long long)compare:(id)arg1;
 @property(readonly, getter=isGizmo) _Bool gizmo;
 @property(readonly, getter=isConnected) _Bool connected;
@@ -89,8 +98,10 @@
 @property(readonly, copy) NSArray *addresses;
 @property(readonly, copy) NSString *hostname;
 - (void)updatePairingStatus;
+- (void *)createWakeupToken;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)primitiveInvalidate;
+- (void)removeAndInvalidate;
 
 // Remaining properties
 @property(retain) DVTStackBacktrace *creationBacktrace;

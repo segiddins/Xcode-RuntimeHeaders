@@ -8,15 +8,21 @@
 
 @interface IBRepresentedObjectRect : NSObject
 {
-    struct CGRect rect;
-    id representedObject;
+    id _representedObject;
+    id _orderingKey;
+    unsigned long long _layer;
+    long long _orderingTieBreaker;
+    struct CGRect _rect;
 }
 
+@property(readonly, nonatomic) long long orderingTieBreaker; // @synthesize orderingTieBreaker=_orderingTieBreaker;
+@property(readonly, nonatomic) unsigned long long layer; // @synthesize layer=_layer;
+@property(readonly, nonatomic) id orderingKey; // @synthesize orderingKey=_orderingKey;
+@property(readonly, nonatomic) id representedObject; // @synthesize representedObject=_representedObject;
+@property(readonly, nonatomic) struct CGRect rect; // @synthesize rect=_rect;
 - (void).cxx_destruct;
 - (id)description;
-- (id)representedObject;
-- (struct CGRect)rect;
-- (id)initWithRect:(struct CGRect)arg1 andRepresentedObject:(id)arg2;
+- (id)initWithRect:(struct CGRect)arg1 representedObject:(id)arg2 orderingKey:(id)arg3 layer:(unsigned long long)arg4 orderingTieBreaker:(long long)arg5;
 
 @end
 

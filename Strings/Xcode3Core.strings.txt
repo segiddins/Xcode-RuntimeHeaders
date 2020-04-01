@@ -1,0 +1,3922 @@
+class
+generateAvailableHardenedRuntimeAllowances
+initWithCapabilitiesContext:item:
+readValuesFromEntitlements
+setUpPublisherObservations
+entitlementsCoordinator
+hardenedRuntimeAllowances
+countByEnumeratingWithState:objects:count:
+enabled
+numberWithBool:
+entitlement
+setEntitlementValue:forKey:
+syncPerformEntitlementsInteractionBlock:
+setEnabled:
+initForEntitlementsWithResolutionBlock:unresolutionBlock:validityCheckBlock:entitlement:
+supportedBuildSettingNames
+buildSettingsCoordinator
+boolValueForBuildSetting:buildParameters:
+dvt_areAnyObjectsPassingTest:
+isIOSMac
+stringByAppendingString:
+setValue:forBuildSettingsKey:
+isEnabledUsingEducatedGuess
+initForBuildSettingsWithResolutionBlock:unresolutionBlock:validityCheckBlock:buildSetting:
+buildSettingsFlightCheck
+entitlementsFlightCheck
+arrayWithObjects:count:
+boolEntitlementValueForKey:
+dvt_changeValueForKey:usingBlock:
+executeWithoutPublishingState:
+containsObject:
+dvt_firstObjectPassingTest:
+isKindOfClass:
+boolValue
+iOSMacBuildParameters
+dictionary
+numberWithInteger:
+setObject:forKeyedSubscript:
+copy
+coalescableReadOnlyKeyPaths
+flightChecks
+targetCoordinatorsChanged:
+valueForUndefinedKey:
+setValue:forUndefinedKey:
+coalescableWriteableKeyPathToDataSource
+.cxx_destruct
+signingIdentityFlightCheck
+_hardenedRuntimeAllowances
+_entitlementsFlightCheck
+_buildSettingsFlightCheck
+_signingIdentityFlightCheck
+isEqualToString:
+fileDataTypeWithIdentifier:
+sourcePath
+filePathForRelativePathString:
+existsInFileSystem
+defaultRegistry
+defaultToolchain
+executableBinarySearchPath
+pathForFileWithRelativePathString:
+pathString
+setLaunchPath:
+setCurrentDirectoryPath:
+setArguments:
+runReturningStandardOutput:standardError:error:
+defaultManager
+moveItemAtPath:toPath:error:
+removeItemAtPath:error:
+generatedContentsType
+hasGeneratedContents
+generateContents
+arrayOfStringsEntitlementValueForKey:
+linkedFrameworksCoordinator
+appIDFeatureFlightCheck
+entitlementsContainsEntitlementKey
+dictionaryWithObjects:forKeys:count:
+readCurrentState
+isEnabled
+refreshKnownPassTypesWithPortalInfoDelegate:useCachedResult:completionHandler:
+setWithArray:
+dvt_onlyObject
+_wildcardEntitlement
+customPassTypeIdentifiersWithPrefix
+setCustomPassTypeIdentifiersWithPrefix:
+initWithName:
+selectedProvisioningTeam
+platform
+portalPlatform
+portalProgram
+passTypeIdentifiersJobCache
+teamID
+primaryPlatform
+identifier
+stringWithFormat:
+isValid
+setIsRefreshing:
+portalContainerTypeWithIdentifier:
+defaultTeamManager
+sessionProviderForTeam:error:
+initWithError:
+servicesSessionWithError:
+defaultPortal
+portalTeamForTeam:session:error:
+containersWithSession:team:program:containerType:error:
+dvt_arrayByApplyingBlock:
+initWithResult:
+initWithKey:work:
+result
+updateKnownPassTypesWithProvisioningPassTypes:
+error
+addWithJob:useCachedResult:useCachedError:completion:
+allObjects
+compare:
+sortedArrayUsingSelector:
+sortedPassTypesForEntitlementsFile
+isEqual:
+targetCapabilitiesContext
+knownPassTypesFlightCheck
+initWithPassTypeIdentifierWithPrefix:passTypeIdentifier:
+addObject:
+knownPassTypes
+setKnownPassTypes:
+setWithObject:
+isRefreshing
+_knownPassTypesFlightCheck
+_isRefreshing
+_knownPassTypes
+_customPassTypeIdentifiersWithPrefix
+platformIdentifier
+platformForIdentifier:
+dvt_extendedInfo
+requiresPortalAppGroups
+item
+containerType
+initWithItemModel:teamItemsKeyPath:containerType:
+initWithoutPortalWithItemModel:
+invalidate
+primitiveInvalidate
+applicationGroups
+requiresPortalIdentifiers
+orderedSetWithArray:
+setUnexpandedIdentifiersWithoutPublishing:
+flightCheck
+arrayByAddingObjectsFromArray:
+setApplicationGroups:
+_applicationGroups
+entitlementFlightCheck
+feature
+entitlements
+stringEntitlementValueForKey:
+_entitlementFlightCheck
+ancestorsFromUnits:
+addUnit:fromUnits:toDependencies:
+injectionsFromUnits:
+projectTemplateKind
+conformsToTemplateKind:
+targetTemplateKind
+additionalAvailableTemplatesOfTemplateKind:
+templateKindForIdentifier:
+availableTemplatesOfTemplateKind:
+isConcrete
+array
+setObject:forKey:
+isProjectOnly
+isTargetOnly
+alloc
+initWithUnits:templateKind:
+enumerateKeysAndObjectsUsingBlock:
+extension
+templateName
+length
+templateDescription
+templateCategory
+nameOfInitialFileForEditor
+filePath
+_isDebug
+initWithTemplateInfo:filePath:
+setParent:
+makeObjectsPerformSelector:withObject:
+valueDidChangeForOption:
+set_isDebug:
+templatePlatforms
+enumerateObjectsWithOptions:usingBlock:
+sortOrder
+templateOptions
+self
+performSelector:
+performSelector:withObject:
+performSelector:withObject:withObject:
+isProxy
+isMemberOfClass:
+conformsToProtocol:
+respondsToSelector:
+retain
+release
+autorelease
+retainCount
+zone
+hash
+superclass
+description
+debugDescription
+defaultCompletionName
+units
+_units
+defaultCenter
+gameCenterStateChanged:
+addObserver:selector:name:object:
+removeObserver:
+keyToPrivilege
+deprecatedEntitlement
+containsEntitlementKey:
+filesystemKeys
+allValues
+setEntitlements:
+setFilesystemPermissions:
+userInfo
+objectForKeyedSubscript:
+mutableCopy
+parentCapabilityEditingItem
+addCapabilityEditingItemWithIdentifiers:error:
+objectForKey:
+keyPathsForValuesAffectingValueForKey:
+valueForKey:
+filesystemPermissions
+numberWithInt:
+intValue
+filesystemPermissionNames
+filesystemPermissionsIndexedByName
+_entitlements
+_filesystemPermissions
+standardUserDefaults
+stringForKey:
+currentDirectoryPath
+macroDefinitionTableByParsingXcconfigFileAtPath:baseDirectoryPath:error:
+localizedDescription
+registerDefaultXcconfigCommandLineOverridingProperties:
+allMacroNames
+caseInsensitiveCompare:
+ide_initializeWithOptions:error:
+isAbsolutePath
+stringByAppendingPathComponent:
+preprocessor
+setForceIncludedFilesToEndWithNewline:
+arrayWithObjects:
+setIncludeSearchPath:
+preprocessFileAtPath:encoding:
+errors
+count
+stringWithString:
+appendFormat:
+dvt_dictionaryWithKeysAndValues:
+errorWithDomain:code:userInfo:
+newWithMacroName:value:conditionSet:
+dvt_parseAsMacroAssignmentsWithBlock:returningErrorString:
+setLabel:
+makeImmutable
+stringWithUTF8String:
+prefix
+dictionaryWithObject:forKey:
+transformedValue:
+reverseTransformedValue:
+hasPrefix:
+substringFromIndex:
+whitespaceAndNewlineCharacterSet
+stringByTrimmingCharactersInSet:
+dvt_isNonEmpty
+keychainAccessGroups
+setKeychainAccessGroups:
+bundleIdentifier
+stringByAppendingFormat:
+defaultKeychainAccessGroup
+_keychainAccessGroups
+isEqualToArray:
+applicationPreferencesBuildSettings
+newWithParentScope:macros:definitionLevel:
+evaluatedStringValueForMacroExpression:
+stringByExpandingSourceTreeReferencesInString:
+pushNotificationServiceEntitlement
+initWithDelegate:
+packagesToInstall
+initWithOutput:
+installPackagesAndWait
+init
+setOutputFileHandle:
+setRecordedProgress:
+installPackagesWithAuthRef:
+currentRunLoop
+dvt_spinRunLoopInMode:waitingForSemaphore:
+installError
+uncachedPackagesToInstall
+displayName
+outputFileHandle
+dvt_writeString:
+recordedProgress
+setInstallError:
+needToInstallPackages
+installPackagesWithOutput:
+installationStarted
+installationProgressChanged:
+installationSucceeded
+installationFailed:
+_outputFileHandle
+_installError
+_recordedProgress
+domains
+setDomains:
+instantiateEntitlementsFlightCheck
+defaultDomain
+defaultDomains
+_domains
+name
+allowedTemplateOptionTypes
+setByAddingObjectsFromArray:
+initWithOptionInfo:filePath:
+validAppCategories
+setValues:
+appCategoryDisplayValues
+arrayWithObject:
+type
+value
+isUsableWithOptions:
+effectiveValueWithOptions:
+addToNode:andDefinitions:withOptions:components:project:targets:executables:macros:workspaceSettings:replacementHandler:
+updateEnabledWithOptions:
+parent
+setWithObjects:
+values
+requiredOptionsForDisplayValues
+filterOptionsForDisplayValues
+setFilterOptionsForDisplayValues:
+defaultValue
+isValue:usableWithOptions:
+dvt_popLastObject
+setValue:
+allKeys
+localizedCaseInsensitiveCompare:
+keyPathsForValuesAffectingDisplayValues
+keyPathsForValuesAffectingValues
+keyPathsForValuesAffectingHasValidValue
+displayValues
+updateFilteredDisplayValuesWithOptions:
+setPrefix:
+setUnits:
+_specialType
+_filterOptionsForDisplayValues
+isLinkedToFrameworkWithName:
+allowedProjectArchiveVersions
+descriptionForAssertionMessage
+lastPathComponent
+stringByDeletingPathExtension
+obsoleteProjectVersion
+objectAtIndex:
+unsignedIntegerValue
+setErrorMessage:
+sharedCommandLineBuildTool
+unableToOpenProjectAtPath:reason:
+errorMessage
+lastObject
+numberWithUnsignedInteger:
+setDidEncounterFatalError:
+didEncounterFatalError
+shouldOpenProjectOfMismatchingVersion:atPath:
+shouldOpenProjectReadOnlyAtPath:
+_didEncounterFatalError
+_errorMessage
+boolForKey:withDefaultValue:
+fileExistsAtPath:isDirectory:
+logAspectWithName:
+isReadableFileAtPath:
+dictionaryWithCapacity:
+xcodebuildDebugLogAspect
+componentsJoinedByString:
+_logAndIndentAtLogLevel:withFormat:
+contentsOfDirectoryAtPath:error:
+_logAtLogLevel:withFormat:
+rangeOfString:
+pathExtension
+addObjectsFromArray:
+_logAndOutdentAtLogLevel:withFormat:
+processInfo
+environment
+fileHandleWithNullDevice
+declareMutable
+setName:
+exitStatus
+synthesizedMacros
+setSynthesizedMacros:
+macrosFromCommandLine
+setMacrosFromCommandLine:
+macrosFromXcconfigOption
+setMacrosFromCommandLineXcconfigFile:
+macrosFromXcconfigEnvVar
+setMacrosFromEnvironmentXcconfigFile:
+integerForKey:
+standardError
+dvt_writeFormat:
+setExitStatus:
+launchSchemeCommand
+workspace
+runContextManager
+activeRunContext
+testSchemeAction
+isTestable
+testSchemeCommand
+analyzeSchemeCommand
+archiveSchemeCommand
+enableInstallLocAction
+useArchiveActionForInstall
+stringByReplacingOccurrencesOfString:withString:
+setUsageBanner:
+usageBanner
+setShouldExit:
+setToolCommand:
+firstObject
+removeObjectAtIndex:
+argumentKey
+defaultPlugInManager
+setShouldClearPlugInCaches:
+agreeToLicense
+hasAgreedToLicense
+showCommandLineLicenseUIIfNeeded:
+standardOutput
+rangeOfString:options:
+substringWithRange:
+rangeOfString:options:range:
+characterAtIndex:
+prettyPrintedSupportedVersionsUsingSeparator:
+initWithName:usageName:usageDescription:argumentType:argumentKey:handlerBlock:
+dvt_popFirstObject
+initWithName:matchRegex:usageName:usageDescription:argumentType:handlerBlock:
+componentsSeparatedByString:
+objectAtIndexedSubscript:
+ide_realPath
+removeObjectsInRange:
+removeAllObjects
+setOptionDefinitions:
+whitespaceCharacterSet
+userDefaults
+setFallbackOptionHandlerBlock:
+arguments
+parseArguments:intoOptionsDictionary:error:
+_printErrorString:andFailWithCode:
+usageString
+setPotentialBuildActions:
+setBuildSettingAssignmentStrings:
+setProjectName:
+projectName
+setTargetNames:
+targetNames
+setAllTargets:
+setWorkspaceName:
+workspaceName
+setSchemeName:
+schemeName
+setActionName:
+actionName
+setConfigurationName:
+configurationName
+setXcconfigPathFromOption:
+xcconfigPathFromOption
+setActionResultsBundlePathWithBaselineOverridesFromOption:
+actionResultsBundlePathWithBaselineOverridesFromOption
+setAutomaticBaselineDescription:
+automaticBaselineDescription
+setArchitectures:
+architectures
+setBaseSdkName:
+baseSdkName
+setToolchainNames:
+toolchainNames
+setDestinationSpecifications:
+destinationSpecifications
+setSkipUnsupportedDestinations:
+setDestinationTimeout:
+destinationTimeout
+setParallelizeTargets:
+setHideShellScriptEnvironment:
+setMaxConcurrency:
+setMaxDeviceTestConcurrency:
+setMaxSimulatorTestConcurrency:
+setCollectBuildTimeStatistics:
+setParallelTestingEnabledOverride:
+setParallelTestingWorkerCountOverride:
+setParallelTestingMaximumWorkerCount:
+setDontActuallyRunCommands:
+setQuieterOutput:
+setSkipUnavailableActions:
+setLocalizationPath:
+localizationPath
+setExportLanguages:
+setIncludeLocalizedScreenshots:
+exportLanguages
+setNameOfFileToFind:
+nameOfFileToFind
+setResultBundlePath:
+resultBundlePath
+_stringByResolvingSymlinksInPath:
+integerValue
+setRequestedResultBundleVersion:
+supportedFormatVersions
+requestedResultBundleVersion
+deprecatedFormatVersions
+prettyPrintedNonDeprecatedVersionsUsingSeparator:
+_printWarningString:
+setResultStreamPath:
+resultStreamPath
+requestedFormatVersionForPassedInFormatVersion:
+supportedFormatVersionsForStreaming
+setBaseResultBundlePath:
+setSparseResultBundlePath:
+setCodeCoverageEnabled:
+setLocalizableStringsDataEnabled:
+setAddressSanitizerEnabled:
+setThreadSanitizerEnabled:
+setUBSanitizerEnabled:
+codeCoverageEnabled
+compare:options:
+localizableStringsDataEnabled
+addressSanitizerEnabled
+threadSanitizerEnabled
+UBSanitizerEnabled
+setTestRunSpecificationPathString:
+testRunSpecificationPathString
+setTestPlanNames:
+testPlanNames
+setSkipTestIdentifiers:
+skipTestIdentifiers
+setOnlyTestIdentifiers:
+onlyTestIdentifiers
+setSkipTestConfigurations:
+skipTestConfigurations
+setOnlyTestConfigurations:
+onlyTestConfigurations
+setTestWithLanguage:
+testWithLanguage
+setTestWithRegion:
+testWithRegion
+setRunSkippedTestsOnly:
+setDisableConcurrentTesting:
+setTestApplicationMappingOverrides:
+testApplicationMappingOverrides
+setTemplateOutputPath:
+templateOutputPath
+setTemplateTeamID:
+templateTeamID
+setTemplateName:
+setTemplatePlatform:
+templatePlatform
+setTemplateOptions:
+setTemplateNonPermutedOptionValues:
+templateNonPermutedOptionValues
+setTemplateRequiredOptions:
+templateRequiredOptions
+setClonedSourcePackagesDirPath:
+clonedSourcePackagesDirPath
+setDisableAutomaticPackageResolution:
+setUsePackageSupportBuiltinSCM:
+setOutputAsJSON:
+outputAsJSON
+setAllowProvisioningUpdates:
+setAllowProvisioningDeviceRegistration:
+setReadSourceControlBlueprint:
+setSourceControlSSHKeyPath:
+sourceControlSSHKeyPath
+setEnableSourceControlKeychainAccess:
+setDisableSourceControlKeychainAccess:
+initForProject:fromUpdate:sourceVersion:buildNumber:buildRecordPath:
+setXbsBuildParameters:
+UTF8String
+setExtractOnlyTestIdentifier:
+filePathForPathString:
+invalidateFilePath
+toolCommand
+baseResultBundlePath
+sparseResultBundlePath
+disableAutomaticPackageResolution
+usePackageSupportBuiltinSCM
+quieterOutput
+setXcconfigPathFromEnvVar:
+setExportOptionsPlist:
+setExportDestinationPath:
+exportOptionsPlist
+setEmitBuildTiming:
+setArchivePath:
+allTargets
+maxConcurrency
+runSkippedTestsOnly
+hideShellScriptEnvironment
+environmentUserDefaults
+addEntriesFromDictionary:
+setVolatileDomain:forName:
+boolForKey:
+registerDefaults:
+stringByExpandingTildeInPath
+stringByResolvingSymlinksInPath
+sdkForUnsetSDKROOT
+sdkForAbsolutePath:
+sdkForCanonicalName:
+sdkForDisplayName:
+canonicalName
+_resolveSdk:
+_schemeCommandForBuildAction:outSchemeTask:
+scheme
+immediatelyInvalidateAvailableRunDestinations
+perActionRunDestinations
+setPerActionRunDestinations:
+doubleValue
+defaultDeviceManager
+searchForDevicesWithType:options:timeout:error:
+searchForDeviceWithType:options:genericOnly:timeout:error:
+shortDescription
+nativeArchitecture
+availableDevices
+dvt_stringOrNilForKey:
+allPlatforms
+SDKs
+variants
+sdkVariantDisplayNames
+supportedSDKVariantNames
+aliases
+dvt_objectsPassingTest:
+dvt_flatMap:
+availableRunDestinations
+targetDevice
+targetArchitecture
+targetSDKVariant
+subarrayWithRange:
+_availableDestinationsDescriptionForDestinations:scheme:
+appendString:
+sharedRunDestinationManager
+executionEnvironment
+genericDeploymentRunDestinationForRunDestination:scheme:schemeCommands:executionEnvironment:allowNonConcreteDevices:
+_shouldSkipRunDestinationValidation
+isValidRunDestinationForScheme:schemeTask:schemeCommand:executionEnvironment:overridingTestingSpecifiers:error:
+skipUnsupportedDestinations
+defaultRunDestinationForScheme:schemeCommand:fromRunDestinations:preferGenericDestination:supportingSDK:preferArchitectures:
+fallbackRunDestination
+strongToStrongObjectsMapTable
+family
+isDeploymentPlatform
+arrayWithCapacity:
+_remainingUnavailableRunDestinationsAfterWaitingForDestinationsToBecomeAvailable:
+_unavailableRunDestinationsInDestinations:
+dateWithTimeIntervalSinceNow:
+mainRunLoop
+runMode:beforeDate:
+date
+timeIntervalSinceDate:
+isAvailable
+isConcreteDevice
+isTargetDeviceEligible
+deviceIsBusy
+string
+enumerateObjectsUsingBlock:
+dvt_arrayByRemovingObjectsInArray:
+supportsSourcePackages
+isWaitingForSourcePackages
+_projectLoadingTimeout
+waitForCondition:sourceObject:keyPathAffectingConditionBlock:timeout:
+referencedSourcePackages
+packageVersion
+packageName
+packageURL
+sourcePackageLoadingErrors
+describeSwiftPackageFailuresWithErrors:error:
+isRootPackage
+URLWithString:
+host
+hasSuffix:
+xbsXcodebuildSupportProvider
+xbsBuildParameters
+potentialBuildActions
+optionOverridesForParameters:performingAction:
+targetName
+buildSettingAssignmentStrings
+substringToIndex:
+buildStatisticsSectionWithTitleFormat:
+recordStartSystemStats
+setMacrosFromXcconfigOption:
+xcconfigPathFromEnvVar
+setMacrosFromXcconfigEnvVar:
+allowProvisioningUpdates
+sharedDefaults
+portalServiceHostDescription
+recordEndSystemStats
+arrayForKey:
+valueForMacroName:conditionSet:
+_legacyBuildActionMapping
+setBuildActions:
+buildActions
+overridingProperties
+macroDefinitionTables
+setObjectRootPathOverride:
+_supportedBuildActions
+knownProjectWrapperExtensions
+filesInDirectory:withExtensions:errorString:
+knownWorkspaceWrapperExtensions
+fileDataTypeForFileContentAtPath:error:
+swiftPackageFileDataType
+conformsToType:
+shouldExit
+currentProjectFileExtension
+containerFileDataType
+containerExtensionForFileDataType:
+initWithFilePath:extension:workspace:options:error:
+setWorkspace:
+dvt_UUIDString
+setContainerFilePath:error:
+setWorkspaceDelegate:
+finishedLoading
+customDataSpecifierWithName:groupingName:
+representingCustomDataStore
+newTransientSchemeWithCustomDataStore:customDataSpecifier:orderHint:
+fileExistsAtPath:
+fileDataTypeForFilePath:error:
+retainedWrappedWorkspaceForContainerAtFilePath:fileDataType:error:
+stringByDeletingLastPathComponent
+retainedContainerForFilePath:workspace:
+setProject:
+project
+waitForRemoteSourcePackagesToFinishLoading
+retainedContainerAtFilePath:fileDataType:workspace:error:
+blueprints
+targets
+blueprintForName:
+hasConfigurationNamed:
+runContexts
+disambiguatedName
+setScheme:
+sharedSettings
+autocreateContextsIfNeeded
+autocreateSchemeWithName:inWorkspace:
+skipUnavailableActions
+isBuildable
+isTransient
+isAnalyzable
+isArchivable
+usesTestPlans
+testPlanReferences
+_resolveRunDestinationsForBuildAction:
+resolvedFilePath
+disableConcurrentTesting
+initWithSignpost:
+resolvedBuildDestinationsForRunDestinations:scheme:schemeCommands:executionEnvironment:allowNoRunDestinationMatches:error:
+operationParametersWithSchemeTask:buildCommand:executionEnvironment:runDestination:schemeCommand:commandName:invocationRecord:
+dontActuallyRunCommands
+schemeOperationForSchemeOperationParameters:buildLog:overridingProperties:overridingBuildConfiguration:dontActuallyRunCommands:restorePersistedBuildResults:error:completionBlock:
+addDependency:
+addSuboperation:
+startTime
+buildables
+enumerateUsingBlock:
+cancel
+operationWithBlock:
+isSimulatorPlatform
+setMaxConcurrentOperationCount:
+maxConcurrentOperationCount
+valueForKeyPath:
+producingTarget
+dvt_arrayByGroupingAdjacentObjectsUsingBlock:
+errorSummaries
+_printIssueSummariesGroupedByTargetFromInvocationRecord:issueSummariesKeyPath:messageKeyPath:
+testFailureSummaries
+dataWithJSONObject:options:error:
+writeToFile:options:error:
+dvt_stringWithANSITextBold
+dvt_stringWithANSITextBoldRed
+initLocalRecordWithWorkspace:
+schemeIdentifier
+setSchemeIdentifier:
+setFilePath:
+createResultStreamIfNeededWithSocketAtPath:error:
+wantsModernBuildSystem
+buildSystemServiceProvider
+isModern
+_actionStringForBuildAction:
+stringByStandardizingPath
+installSourcesToPath:
+fileSystemRepresentation
+stringByAppendingPathExtension:
+writeSourcePackageIndexFileToPath:error:
+insertsynthesizedMacrosIntoOverridingProperties:
+_buildLogVerbosity
+activityLogStreamWriter
+initLogWithTitle:standardOutput:standardError:verbosity:targetSectionsAreTransparent:logStreamWriter:
+emitBuildTiming
+initForAction:workspaceArenaSnapshot:schemeCommand:configurationName:activeRunDestination:activeArchitecture:overridingProperties:xbsParameters:collectBuildTimeStatistics:collectTimelineMetrics:
+parallelizeTargets
+initWithBuildCommand:buildParameters:executionEnvironment:singleFileToBuild:buildLog:parallelizeBuildables:dontActuallyRunCommands:buildImplicitDependencies:restorePersistedBuildResults:
+setBuildables:
+buildOperationClass
+isSubclassOfClass:
+initWithConfiguration:
+setRequiredCodesignableDevices:
+status
+setAddressSanitizerEnabledOverride:
+setThreadSanitizerEnabledOverride:
+setUndefinedBehaviorSanitizerEnabledOverride:
+setupBuild:forScheme:migrationBuildOptions:withCompletionBlock:
+buildSchemeAction
+overridingBuildPropertiesForBuildable
+setOverridingBuildProperties:forBuildable:
+collectBuildTimelineMetrics
+initLogWithTitle:standardOutput:standardError:verbosity:logStreamWriter:
+setCollectTimelineMetrics:
+testManager
+setActionResultsBundleWithBaselineOverridesFilePath:
+setSuppressSimulatorApplication:
+forceCodeCoverageEnabledTo:
+setLocalizableStringsDataGatheringEnabledOverride:
+setLanguage:
+setRegion:
+_shouldTestConcurrentlyForRunDestinations:
+setContextString:
+setOverridingTestPlanReferences:
+parallelTestingEnabledOverride
+parallelTestingWorkerCountOverride
+parallelTestingMaximumWorkerCount
+maxDeviceTestConcurrency
+maxSimulatorTestConcurrency
+_concurrentTestOperations:schemeTask:schemeCommand:executionEnvironment:invocationRecord:buildLog:restorePersistedBuildResults:deviceOperationLimit:simulatorOperationLimit:schemeOperationParametersGenerator:outError:
+collectBuildTimeStatistics
+localizedRecoverySuggestion
+recorder
+addCompletionBlock:
+setTopLevelStatisticsSection:
+setCompletionBlock:
+executeOperation:withCommandName:serviceTier:invocationRecord:terminationSignpost:error:
+localizedFailureReason
+stopRecordingWithInfo:
+buildToolQueue
+addOperation:
+isFinished
+distantFuture
+_printTestingSummariesFromInvocationRecord:
+sectionsWithAnalyzerIssues
+signature
+title
+customDataObjectForClass:
+threadSanitizerMessage
+failedSections
+parentFilePath
+fileURL
+moveItemAtURL:toURL:error:
+createSymbolicLinkAtURL:withDestinationURL:error:
+saveWithCompletionBlock:
+buildablesForSchemeCommand:includingDependencies:
+buildablesForAllSchemeCommandsIncludingDependencies:
+dvt_arrayByFilteringUsingBlock:
+xcode3Target
+workspaceArena
+currentSnapshot
+activeRunDestination
+initForAction:workspaceArenaSnapshot:schemeCommand:configurationName:activeRunDestination:activeArchitecture:overridingProperties:
+dvt_stringByQuotingIfNeeded
+pbxTarget
+targetBuildContext
+setDependencyGraphParameters:withBuildOperationContext:
+provisioningManager
+waitUntilFinished
+waitForDependencyGraph
+dvt_spinRunLoopInMode:whileBlockExecutesConcurrently:
+initWithBuildContext:
+macroExpansionScope
+initWithParentScope:dependencyGraphCreationContext:
+environmentWithMacroExpansionScope:
+performLockedBlock:
+succeedWithResult:
+propagateTargetSnapshotIfNeededWithCompletionBlock:
+futureWithBlock:
+_writeJSONObjectTo:jsonObject:
+toolsInfo
+toolsVersion
+ide_buildInfoRevisionString
+toolsBuildVersion
+possibleSchemeNamesForAutocreationInWorkspace:
+localizedCompare:
+targetProxies
+configurationNames
+schemeNamesInWorkspace:
+defaultConfigurationName
+describeSchemesAsJSONWithWorkspace:error:
+describeProductsAsJSONWithWorkspace:schemeName:actionName:destinationIdentifier:error:
+describeArchivableProductsAsJSONWithWorkspace:error:
+sdkForNameOrPath:withBasePath:forceCreate:
+_sdkForUseWithFind
+filePathForExecutableWithName:commandLineToolchainNames:environmentVariables:sdk:diagnostics:
+filePathForLibraryWithName:commandLineToolchainNames:environmentVariables:sdk:diagnostics:
+userDescription
+sortedArrayUsingComparator:
+dvt_writeData:error:
+path
+version
+sdkPackage
+isBaseSDK
+versionInfo
+lowercaseString
+replaceCharactersInRange:withString:
+sdkForNameOrPath:
+_getJSONDataForSDK:platform:
+_enumerateAllPlatformsAlphabeticallyWithBlock:
+null
+dictionaryWithDictionary:
+_printVerboseInfoForSDK:keysToEmit:
+_printVersionInfoAndExit
+defaultDistributionMethodManager
+_orderedDistributionMethods
+commandLineName
+orderedDistributionStepModelClassNamesForDestination:
+availableOptionsForPropertyList
+archivePath
+archiveWithArchivePath:
+currentDeveloperIDUploadRecord
+refreshDeveloperIDStatus:
+dvt_hasDomain:errorCode:
+uniqueIdentifier
+fileName
+dvt_stringByAppendingSuffixIfMissing:
+processingCompletedEvent
+state
+embeddedPackagePathForRecord:error:
+exportDestinationPath
+createDirectoryAtPath:withIntermediateDirectories:attributes:error:
+copyItemAtURL:toURL:error:
+auditLogPathForRecord:
+stringByRemovingPrefix:
+fileURLWithPath:
+loadFromURL:error:
+distributionDriverWithDistributable:exportOptions:
+runWithDestinationPath:error:
+successMessage
+workspaceLocalizationEnabled
+referencedBlueprintProviders
+anyObject
+developmentRegion
+localizations
+isLegacy
+canonicalLocale
+removeObject:
+localeIdentifier
+indexOfObject:
+replaceObjectAtIndex:withObject:
+includeLocalizedScreenshots
+allTestActivitiesForWorkspace:error:destinationLanguages:
+initWithWorkspace:buildParameters:container:options:sourceLocale:testActivities:targetLanguages:destinationURL:
+setOnCompletedBlock:
+setOnErrorBlock:
+start
+filePathForFileURL:
+comparison
+filesWithChanges
+issues
+message
+initWithWorkspace:buildParameters:container:options:sourceLocale:sourceURL:allowProjectChanges:onNeedsReviewBlock:
+_saveProjectAfterLocalizationImport
+sharedAccountManager
+servicesSessionByLoggingInWithAccount:executionContext:error:
+username
+teamsForSession:error:
+loadAccountsWithCallback:
+extensionWithIdentifier:
+valueForKey:error:
+generateIndexingInfoForWorkspace:blueprint:completionBlock:
+generatePreviewInfoForBuildOperationConfiguration:blueprint:sourceFilePath:thunkVariantSuffix:completionBlock:
+generatePreviewInfoForWorkspace:scheme:runDestination:blueprint:sourceFilePath:thunkVariantSuffix:completionBlock:
+noteBlueprintProviderDidChange:inWorkspace:
+noteBuildFolderCleanedInWorkspace:
+createXCFramework:currentWorkingDirectory:
+macCatalystAppExtensionPointIdentifierWhitelist:
+macCatalystFrameworkNameBlacklist:
+setObject:atIndexedSubscript:
+describeSwiftPackagesWithPackages:error:
+dvt_setDisallowSavingOverride:
+objectGraph
+writeToFilePath:forceWrite:error:
+initWithOutputPath:teamID:
+setCrossPlatformOnly:
+platformForString:
+setPlatform:
+setNonPermutedOptionValues:
+setRequiredOptions:
+nonPermutedOptionValues
+requiredOptions
+runTemplateTests
+runCreateNewProjectWithTemplateNamed:platform:options:
+initWithFilePath:error:
+extractOnlyTestIdentifier
+initWithStringRepresentation:
+failWithError:
+saveSparseInvocationRecordToFilePath:testIdentifiers:completion:
+assertUnreachableShouldNotCall
+timerWithTimeInterval:target:selector:userInfo:repeats:
+dvt_setIsNonGraphicalProcess:
+initWithFileAtPath:
+open
+propertyListWithStream:options:format:error:
+close
+initWithTitle:
+_parseOptions
+timingLogAspect
+setXcode3ProjectCreationErrorHandler:
+setXbsXcodebuildSupportProvider:
+defaultPaths
+xcodeApplicationFilePath
+_resolveBaseSdk
+_availableExportArchiveOptionsSection
+_printPathToExecutableAndExit
+_printPathToLibraryAndExit
+_writeSDKListAsJSONTo:
+_printShortSDKListAndExit
+_printVerboseSDKListAndExit
+_permuteTemplatesAndExit
+_createNewProjectAndExit
+_extractSparseResultBundle
+_showDeveloperAccountsAndExit
+_createXCFrameworkAndExit
+setSupportCommandLineRepairs:
+allowProvisioningDeviceRegistration
+setAutomaticallyRegisterDevices:
+_distributeArchiveAndExit
+_exportNotarizedAppAndExit
+readSourceControlBlueprint
+fileHandleWithStandardInput
+setStandardInput:
+standardInput
+readDataToEndOfFile
+initWithJSONData:sshKeyDirectory:
+setSourceControlBlueprint:
+sourceControlBlueprint
+registerAsAuthenticationFailureHandler
+disableSourceControlKeychainAccess
+setDisableLoadingAccounts:
+enableSourceControlKeychainAccess
+setEnableLoadingAccounts:
+startLocating
+currentThread
+threadDictionary
+weakObjectsPointerArray
+_resolveInputOptionsWithTimingSection:
+removeObjectForKey:
+_showBuildSettings
+_printDestinationListAndExit
+_printTestPlanListAndExit
+_printContainerInformationAndExit
+_describeSchemesAndExit
+_describeProductsAndExit
+_describeAllArchivableProductsAndExit
+_exportLocalizationsAndExit
+_importLocalizationsAndExit
+_resolvePackageDependenciesAndExit
+_buildWithTimingSection:
+subtitle
+swiftDeprecationLogMessage
+shortTitle
+emitContentsForAspect:logLevel:indentLevel:withBlock:
+buildStatisticsEmissionSummaryBlock
+isRuntimeOSAppleInternal
+_container:didChangeFromFilePath:toFilePath:
+_workspace:failedToResolveContainerForProjectFile:
+_workspace:didChangeFinishedLoadingTo:
+_workspace:didChangeSimpleFilesFocusedTo:
+_schemeLoadingTimeout
+setEnvironment:
+setStandardOutput:
+setStandardError:
+setTargets:
+setUserDefaults:
+setEnvironmentUserDefaults:
+setBuildToolQueue:
+setActivityLogStreamWriter:
+_containerDidOpenContainerNotificationObserver
+_parser
+_shouldExit
+_allTargets
+_skipUnsupportedDestinations
+_parallelizeTargets
+_hideShellScriptEnvironment
+_dontActuallyRunCommands
+_skipUnavailableActions
+_quieterOutput
+_runSkippedTestsOnly
+_disableConcurrentTesting
+_disableAutomaticPackageResolution
+_usePackageSupportBuiltinSCM
+_collectBuildTimeStatistics
+_outputAsJSON
+_readSourceControlBlueprint
+_enableSourceControlKeychainAccess
+_disableSourceControlKeychainAccess
+_allowProvisioningUpdates
+_allowProvisioningDeviceRegistration
+_includeLocalizedScreenshots
+_toolCommand
+_name
+_arguments
+_environment
+_standardInput
+_standardOutput
+_standardError
+_exitStatus
+_projectName
+_targetNames
+_workspaceName
+_schemeName
+_actionName
+_xcconfigPathFromOption
+_xcconfigPathFromEnvVar
+_actionResultsBundlePathWithBaselineOverridesFromOption
+_automaticBaselineDescription
+_nameOfFileToFind
+_archivePath
+_exportOptionsPlist
+_exportDestinationPath
+_buildActions
+_potentialBuildActions
+_buildSettingAssignmentStrings
+_project
+_targets
+_workspace
+_perActionRunDestinations
+_configurationName
+_architectures
+_baseSdkName
+_toolchainNames
+_destinationSpecifications
+_destinationTimeout
+_emitBuildTiming
+_maxConcurrency
+_maxDeviceTestConcurrency
+_maxSimulatorTestConcurrency
+_parallelTestingEnabledOverride
+_parallelTestingWorkerCountOverride
+_parallelTestingMaximumWorkerCount
+_localizationPath
+_exportLanguages
+_codeCoverageEnabled
+_localizableStringsDataEnabled
+_addressSanitizerEnabled
+_threadSanitizerEnabled
+_UBSanitizerEnabled
+_testRunSpecificationPathString
+_testPlanNames
+_skipTestIdentifiers
+_onlyTestIdentifiers
+_skipTestConfigurations
+_onlyTestConfigurations
+_testApplicationMappingOverrides
+_testWithLanguage
+_testWithRegion
+_templateOutputPath
+_templateTeamID
+_templateName
+_templatePlatform
+_templateOptions
+_templateNonPermutedOptionValues
+_templateRequiredOptions
+_clonedSourcePackagesDirPath
+_synthesizedMacros
+_macrosFromCommandLine
+_macrosFromXcconfigOption
+_macrosFromXcconfigEnvVar
+_userDefaults
+_environmentUserDefaults
+_buildToolQueue
+_resultBundlePath
+_resultStreamPath
+_requestedResultBundleVersion
+_baseResultBundlePath
+_sparseResultBundlePath
+_extractOnlyTestIdentifier
+_sourceControlSSHKeyPath
+_sourceControlBlueprint
+_activityLogStreamWriter
+_xbsBuildParameters
+_xbsXcodebuildSupportProvider
+_scheme
+setValue:forKey:
+deviceType
+knownDeviceSpecifierOptions
+targetSDK
+operatingSystemVersion
+deviceIneligibilityError
+deviceOperations
+operationDescription
+callStackReturnAddresses
+stackBacktraceWithCallStackReturnAddresses:
+stringRepresentation
+macrosFromCommandLineXcconfigFile
+macrosFromEnvironmentXcconfigFile
+fileDescriptor
+passTypeIdentifierWithPrefix
+passTypeIdentifier
+_passTypeIdentifierWithPrefix
+_passTypeIdentifier
+children
+itemNamed:
+insertItem:atIndex:
+initWithPropertyList:fromPath:stringValueKey:
+pathType
+isGroup
+sourceTree
+setFileEncoding:
+setLineEnding:
+setTabWidth:
+setIndentWidth:
+setUsesTabs:
+setWrapsLines:
+isVariantGroup
+insertFiles:atIndex:copy:createGroupsRecursively:
+applyPropertiesToReference:
+setPath:andSourceTree:
+setPath:
+appropriateBuildPhaseForFileReference:
+defaultResourceBuildPhase
+copyFilesBuildPhases
+addReference:
+buildFileForReference:
+setBoolValue:ofAttributeNamed:
+isAbsolutePathTypeInRootGroup:
+groupWithName:
+addFileReferenceForPath:toGroup:absolute:
+setBaseConfigurationReference:
+defaultHeaderBuildPhase
+initWithReference:targetIdentifiers:extension:buildAttributes:
+addFileReference:toTarget:usingExtension:buildAttributes:
+replacementTargetInTargets:
+addFileReferenceToPath:rootGroup:targets:basedOn:deferredTargetAdditions:
+setPathType:
+beginning
+setBeginning:
+setEnd:
+indent
+setIndent:
+group
+setGroup:
+omitFromProjectStructure
+setOmitFromProjectStructure:
+targetIndices
+setTargetIndices:
+targetIdentifiers
+setTargetIdentifiers:
+substituteMacros
+setSubstituteMacros:
+setSortOrder:
+assetGeneration
+setAssetGeneration:
+fileType
+setFileType:
+textEncoding
+setTextEncoding:
+lineEnding
+tabWidth
+indentWidth
+usesTabs
+wrapsLines
+buildAttributes
+setBuildAttributes:
+groups
+setGroups:
+_beginning
+_end
+_indent
+_path
+_filePath
+_pathType
+_fileType
+_textEncoding
+_lineEnding
+_tabWidth
+_indentWidth
+_usesTabs
+_wrapsLines
+_group
+_targetIndices
+_targetIdentifiers
+_substituteMacros
+_groups
+_omitFromProjectStructure
+_sortOrder
+_assetGeneration
+_buildAttributes
+setReference:
+setExtension:
+reference
+_reference
+_extension
+pathForResource:ofType:
+initWithLicenseInfoPath:
+cStringUsingEncoding:
+getLicensePath
+pipe
+fileHandleForReading
+launch
+waitUntilExit
+initWithData:encoding:
+launchTaskAndReturnOutputForTaskPath:taskArguments:
+stringWithCString:encoding:
+printLicense
+promptForAgreement
+isWritableFileAtPath:
+shouldShowLicenseAgreement
+_shouldShowLicenseAgreement
+_isRunningAsSuperUser
+isTTY
+userHasWriteableHomeDirectory
+displayLicenseHasAgreed:
+bundleWithPath:
+initWithXcodeBundle:
+showLicenseUIIfNeeded:
+_agreeToLicense
+_licensePath
+_xcodeBundle
+_licenseAgreementHelper
+documentTemplate
+templateKind
+mainBundle
+localizedStringForKey:value:table:
+dictionaryWithObjectsAndKeys:
+documentFilePath
+container
+pbxProject
+subitems
+referencedContainer
+buildConfigurationExistsForName:
+buildConfigurationForName:
+buildSettings
+xc_setMacroNamesAndValuesFromDictionary:errorHandler:
+destinationGroup
+projectForItem:
+rootGroup
+projectInGroup:
+xcodeMinorVersion
+setLastUpgradeCheck:
+_defaultFormat
+setPreferredProjectFormat:
+setForceWriteToFileSystem:
+writeToFileSystemProjectFile:userFile:checkNeedsRevert:
+preferences
+useTabsToIndent
+organizationName
+customDataStoresForTemplateMacros
+initWithWorkspaceName:projectName:packageName:targetName:productName:fileName:organizationName:customDataStores:
+additionalMacroExpansions
+addExpansionsFrom:
+addMacroToEngine:
+setExpansion:forMacro:
+indentString
+targetTemplateIdentifier
+currentCompletionName
+projectPathForDestinationPath:instantiationContext:
+projectForProjectPath:context:
+buildConfigurationList
+defaultConfiguration
+setClassPrefix:
+setOrganizationName:
+macroEngineForProject:context:options:
+cachedProductSettingForKey:
+expandedValueForString:forBuildParameters:
+stringByManglingToLegalCIdentifier
+postNotificationName:object:
+productName
+resetStandardMacrosWithWorkspaceName:projectName:packageName:targetName:productName:fileName:organizationName:
+substituteMacrosIn:leavingUnknownMacros:error:
+suppressTopLevelGroup
+predicateWithBlock:
+filterUsingPredicate:
+countOfBuildConfigurations
+removeObjectFromBuildConfigurationsAtIndex:
+buildConfigurationWithName:settings:
+addBuildConfiguration:
+normalizeSettingsDictionary:
+buildSystemType
+currentHandler
+handleFailureInMethod:object:file:lineNumber:description:
+setBuildSystemType:
+createdWorkspace
+encodeWithCoder:
+initWithCoder:
+supportsSecureCoding
+copyWithZone:
+stringValue
+dataValue
+numberValue
+dateValue
+arrayValue
+dictionaryValue
+saveSettings
+addSettings:toConfigurationNamed:inList:
+buildConfigurationNames
+initWithName:productTypeIdentifier:templateDictionary:baseDirectoryPath:
+currentVersion
+setCreatedOnToolsVersion:
+createBuildConfigurationListFromProject
+removeAllMacros
+setDefaultConfigurationName:
+templateConfigurationName:projectNames:templateNames:
+addTarget:
+initWithLocalTarget:
+_targetWithTemplateIdentifier:inTargets:
+embedProductOfTarget:
+fileTypeForUTI:
+initWithName:path:sourceTree:fileType:extraFileProperties:
+absolutePath
+addItem:
+updateProductReference
+team
+addTeam:toTarget:
+decimalDigitCharacterSet
+invertedSet
+dvt_containsCharacterFromSet:
+productReference
+supportsHostingTests
+configureForTargetToBeTested:
+configureForTestHostTarget:includeBundleLoader:
+evaluatedStringValueForBuildSetting:forBuildParameters:
+setStringValue:forBuildSettingInAllConfigurations:
+outputToFilePath:withDefinitions:indentString:rootGroup:targets:basedOn:targetName:suppressTargetGroup:deferredTargetAdditions:error:replacementHandler:
+setLastSwiftUpdateCheck:
+addItemsAtFilePaths:workspace:force:completionBlockDispatchQueue:completionBlock:
+outputToContext:options:error:
+familyIdentifier
+isExecutable
+validatePackageName:context:error:
+canInstantiateTemplateForContext:
+proposedFilePathsForContext:options:error:
+instantiateTemplateForContext:options:whenDone:
+XC3_numericCompare:
+knownSDKs
+sortUsingSelector:
+optionDefinitionsWithEnvironment:
+setUsageName:
+setUsageDescription:
+performWithEnvironment:
+primaryBlueprintProvider
+commandLineOptions
+commandLineUnparsedArguments
+workingDirectory
+isSameFileAsFilePath:
+profileSchemeCommand
+buildProperties
+runDestination
+reverseObjectEnumerator
+buildConfiguration
+cachedMacroExpansionScopeForBuildParameters:
+primaryBuildable
+launchSchemeAction
+buildableReferenceToUseForMacroExpansion
+resolvedBuildable
+profileSchemeAction
+blueprint
+availableConfigurationNames
+evaluatedStringValueForMacroNamed:
+requiresScheme
+readValuesFromPlist
+infoPlistCoordinator
+valueForPlistSetting:ofType:
+enabledRoutingTypes
+setEnabledRoutingTypes:
+member:
+airplane
+addEnabledRouteType:
+removeEnabledRouteType:
+_setAirplane:
+bike
+_setBike:
+_setBus:
+_setCar:
+ferry
+_setFerry:
+pedestrian
+_setPedestrian:
+ridesharing
+_setRidesharing:
+streetcar
+_setStreetcar:
+subway
+_setSubway:
+taxi
+_setTaxi:
+train
+_setTrain:
+other
+_setOther:
+setValue:forPlistSetting:
+removeDirectionsRequestDocumentType
+plistContainsDirectionsRequestDocumentType
+addDirectionsRequestDocumentType
+removePlistSetting:
+initForInfoPlistWithResolutionBlock:unresolutionBlock:validityCheckBlock:plistKey:
+infoPlistFlightCheck
+linkedFrameworksFlightCheck
+directionsRequestDocumentTypeDeclarations
+predicateWithFormat:
+filteredArrayUsingPredicate:
+removeObjectsInArray:
+valueForPlistSetting:
+ide_extendedInfo
+wantsMapsRoutingOptions
+keyPathsForValuesAffectingAirplane
+keyPathsForValuesAffectingBike
+keyPathsForValuesAffectingBus
+keyPathsForValuesAffectingCar
+keyPathsForValuesAffectingFerry
+keyPathsForValuesAffectingPedestrian
+keyPathsForValuesAffectingRidesharing
+keyPathsForValuesAffectingStreetcar
+keyPathsForValuesAffectingSubway
+keyPathsForValuesAffectingTaxi
+keyPathsForValuesAffectingTrain
+keyPathsForValuesAffectingOther
+setAirplane:
+setBike:
+setBus:
+setCar:
+setFerry:
+setPedestrian:
+setRidesharing:
+setStreetcar:
+setSubway:
+setTaxi:
+setTrain:
+setOther:
+hasDisclosableContent
+_linkedFrameworksFlightCheck
+_infoPlistFlightCheck
+_enabledRoutingTypes
+requiresGameCenterDeviceCompatibilityInfoPlistEntry
+requiresLocalGameCenterEntitlement
+onlyRequiresLinkedFramework
+addRequiredCapabilityWithKey:
+removeRequiredCapabilityWithKey:
+requiredCapabilitiesStateForKey:
+postNotificationName:object:userInfo:
+dvt_addObjectIfNonNil:
+_requiresGameCenterDeviceCompatibilityInfoPlistEntry
+_requiresLocalGameCenterEntitlement
+_portalFlightCheck
+rangeOfNextSeparatorOrOpenerInString:range:foundScanType:
+rangeOfNextMacroCloserInString:range:
+rangeOfNextParenCloserInString:range:
+rangeOfNextSeparatorInString:range:
+addNodeWithNames:
+setExpansionString:
+mutableChildren
+nodeWithName:
+mutableArrayValueForKey:
+expansionString
+definitionForNames:withDefinitions:
+appendNonEmptyString:indenting:withString:wildcardString:
+addToString:withPrefixNames:definitions:indent:indentString:
+dvt_errorWithDomain:errorCode:messageFormat:
+developerDirectory
+setValue:forEnvironmentVariableNamed:
+launchReturningError:
+waitUntilExitRunningRunLoopInWaitMode
+shouldProcessPath:
+conformsTo:
+initWithContentsOfURL:usedEncoding:error:
+writeToURL:atomically:encoding:error:
+attributesOfItemAtPath:error:
+unsignedLongValue
+numberWithUnsignedLong:
+setAttributes:ofItemAtPath:error:
+doAssetGenerationForPath:definition:replacementFileName:replacementTarget:error:replacementHandler:
+sharedWorkspace
+typeOfFile:error:
+type:conformsToType:
+dataWithContentsOfURL:
+propertyListWithData:options:format:error:
+dataWithPropertyList:format:options:error:
+writeToURL:atomically:
+sortedArrayWithOptions:usingComparator:
+outputInDirectory:withDefinitions:indentString:rootGroup:targets:basedOn:deferredTargetAdditions:error:replacementHandler:
+stringByRemovingSuffix:
+addChildNodes:
+setChildren:
+_wildcardNode
+_children
+_expansionString
+stringByReplacingOccurrencesOfString:withString:options:range:
+enumerateLinesUsingBlock:
+arrayByAddingObject:
+keyValueStoreID
+setKeyValueStoreID:
+serviceIDs
+setServiceIDs:
+cloudContainers
+dvt_arrayByRemovingDuplicates
+expandedValueForString:
+sdkPath
+supportsCloudDocuments
+unexpandedIdentifiers
+allowsCloudKit
+dvt_dictionaryByAddingEntriesFromDictionary:
+linkFrameworkWithName:error:
+initForFrameworksWithResolutionBlock:unresolutionBlock:validityCheckBlock:framework:
+initWithResolutionBlock:unresolutionBlock:validityCheckBlock:title:resolvingTitle:pastTitle:
+pushNotificationFlightCheck
+cloudKitFrameworkFlightCheck
+keyPathsForValuesAffectingUnexpandedContainerIDs
+keyPathsForValuesAffectingUbiquityContainerIDs
+supportsCloudDocs
+ubiquityContainerIDs
+requiredContainerPrefix
+defaultKeyValueStoreID
+setCloudContainers:
+defaultContainerID
+_cloudKitFrameworkFlightCheck
+_pushNotificationFlightCheck
+_keyValueStoreID
+_serviceIDs
+_cloudContainers
+_defaultContainerID
+injectionTargetNames
+mergeSettingsDictionary:intoDictionary:replacementHandler:
+nodes
+templateOptionClass
+fallbackTemplateIcon
+numberOfComponents
+setIdentifier:
+macros
+wantsAssociatedTarget
+associatedTargetAllowableProductTypes
+associatedTargetAllowablePlatforms
+associatedTargetIsRequired
+associatedTargetIsTargetToBeTested
+associatedTargetIsDependent
+associatedTargetNeedsProductBuildPhaseInjection
+associatedTargetPopUpTitle
+associatedTargetPopUpDescription
+optionConstraints
+setSuppressTopLevelGroup:
+workspaceSettings
+_ancestorNames
+_componentDictionaries
+_definitions
+_requiredOptions
+_executables
+_concrete
+_projectOnly
+_targetOnly
+_wantsAssociatedTarget
+_associatedTargetIsRequired
+_associatedTargetIsTargetToBeTested
+_associatedTargetIsDependent
+_associatedTargetNeedsProductBuildPhaseInjection
+_suppressTopLevelGroup
+_identifier
+_parent
+_nodes
+_macros
+_associatedTargetAllowableProductTypes
+_associatedTargetAllowablePlatforms
+_associatedTargetPopUpTitle
+_associatedTargetPopUpDescription
+_optionConstraints
+_workspaceSettings
+_injectionTargetNames
+v16@?0@"<IDEEntitlementsCoordinatorToken>"8
+@"NSError"16@?0@"<IDEFlightCheckingContext>"8
+v8@?0
+c8@?0
+Hardened Runtime
+c16@?0@"NSString"8
+ENABLE_HARDENED_RUNTIME
+[sdk=macosx*]
+Enable Hardened Runtime
+c16@?0@"_TtC13IDEFoundation24HardenedRuntimeAllowance"8
+-[Xcode3HardenedRuntimeItemModel valueForUndefinedKey:]
+/Library/Caches/com.apple.xbs/Sources/IDEXcode3ProjectSupport/IDEXcode3ProjectSupport-15508/Xcode3Core/Provisioning/Capability Item Models/Xcode3HardenedRuntimeItemModel.m
+((allowance)) != nil
+%@ should not be nil.
+(allowance)
+-[Xcode3HardenedRuntimeItemModel setValue:forUndefinedKey:]
+isEnabled
+buildSettingsFlightCheck
+T@"<IDEFlightChecking>",R,V_buildSettingsFlightCheck
+entitlementsFlightCheck
+T@"<IDEFlightChecking>",R,V_entitlementsFlightCheck
+signingIdentityFlightCheck
+T@"<IDEFlightChecking>",R,V_signingIdentityFlightCheck
+hardenedRuntimeAllowances
+T@"NSArray",R,N,V_hardenedRuntimeAllowances
+com.apple.xcode.project
+-[Xcode3SwiftPMProjectGenerator generatedContentsType]
+/Library/Caches/com.apple.xbs/Sources/IDEXcode3ProjectSupport/IDEXcode3ProjectSupport-15508/Xcode3Core/ProjectGenerators/Xcode3SwiftPMProjectGenerator.m
+(_result) != nil
+[DVTFileDataType fileDataTypeWithIdentifier:@"com.apple.xcode.project"]
+project.pbxproj
+UmbrellaPackage.xcodeproj
+swift
+[SwiftPM] Couldn't generate %@ because swift tool could not be found
+build
+--generate-xcodeproj
+NetworkExtension
+com.apple.developer.networking.vpn.api
+allow-vpn
+Personal VPN
+PassKit
+com.apple.developer.pass-type-identifiers
+@"_TtC13DVTFoundation14OpaqueJobCache"8@?0
+Pass Type Identifiers Job Cache
+%@_%@
+Xcode.Portal.Container.Type.PassType
+@"NSString"16@?0@"DVTPortalContainer"8
+@"_TtC13DVTFoundation15OpaqueJobResult"8@?0
+v16@?0@"_TtC13DVTFoundation15OpaqueJobResult"8
+Pass Types
+Known Pass Types
+%@%@
+customPassTypeIdentifiersWithPrefix
+knownPassTypes
+T@"NSSet",&,N,V_knownPassTypes
+isRefreshing
+Tc,N,V_isRefreshing
+T@"NSSet",&,N,V_customPassTypeIdentifiersWithPrefix
+MapKit
+com.apple.developer.maps
+Maps
+com.apple.security.application-groups
+applicationGroups
+applicationGroups.unexpandedIdentifiers
+App Groups
+applicationGroups.availableTeamIdentifiers
+T@"IDEAppIDItemIdentifiersItemModelSet",&,V_applicationGroups
+requiresPortalIdentifiers
+Tc,R
+NSFileProtectionComplete
+Data Protection
+Xcode3ProjectTemplateErrorDomain
+v32@?0@8@16^c24
+v32@?0@8Q16^c24
+hash
+TQ,R
+superclass
+T#,R
+description
+T@"NSString",R,C
+debugDescription
+units
+T@"NSArray",R,C,V_units
+com.apple.security.app-sandbox
+fsUser
+fsDownloads
+fsMusic
+fsMovies
+fsPictures
+com.apple.security.files.user-selected.
+com.apple.security.files.downloads.
+com.apple.security.assets.music.
+com.apple.security.assets.movies.
+com.apple.security.assets.pictures.
+User Selected File
+Downloads Folder
+Music Folder
+Movies Folder
+Pictures Folder
+v32@?0@"NSString"8@"_TtC13IDEFoundation25SandboxItemModelPrivilege"16^c24
+read-only
+read-write
+state
+client
+Xcode.Xcode3ProjectSupport.Xcode3ProjectEditorItem.Sandbox
+entitlements
+filesystemPermissions
+-[Xcode3SandboxItemModel setValue:forUndefinedKey:]
+/Library/Caches/com.apple.xbs/Sources/IDEXcode3ProjectSupport/IDEXcode3ProjectSupport-15508/Xcode3Core/Provisioning/Capability Item Models/Xcode3SandboxItemModel.m
+Unknown sandbox filesystem permission tag %i; revoking permissions for %@
+__objc_no
+Called DVTWarn
+@16@?0@"_TtC13IDEFoundation25SandboxItemModelPrivilege"8
+App Sandbox
+T@"NSDictionary",&,V_entitlements
+T@"NSDictionary",&,V_filesystemPermissions
+OverridingXCConfigPath
+Ignoring configuration file '%@' because it could not be loaded.
+Reason: %@
+Build settings from command line:
+    %@ = %@
+Xcode3BuildSettingsDictionaryErrorDomain
+File could not be parsed due to preprocessing errors:
+    %@
+@32@?0@"NSString"8@16@"NSError"24
+@"DVTMacroAssignmentInfo"40@?0@"NSString"8@"NSString"16@"DVTMacroDefinitionConditionSet"24^@32
+File could not be parsed due to an error: %@
+macros from xcconfig file at '%@'
++[Xcode3IdentifierPrefixTransformer prefix]
+/Library/Caches/com.apple.xbs/Sources/IDEXcode3ProjectSupport/IDEXcode3ProjectSupport-15508/Xcode3Core/Provisioning/Capabilities Infrastructure/Xcode3TeamIdentifierPrefixTransformer.m
+method %@ is a responsibility of subclasses of %@
+name
+@"NSMutableDictionary"16@?0@"NSString"8
+@"NSString"16@?0@"NSDictionary"8
+keychain-access-groups
+keychainAccessGroups
+Keychain Sharing
+T@"NSArray",C,N,V_keychainAccessGroups
+defaultKeychainAccessGroup
+T@"NSString",R
+development
+Push Notifications
+FirstLaunchErrorDomain
+@"NSString"16@?0@"DVTFirstLaunchPackage"8
+Ran the package installer, but there are still packages to install %@
+Install Started
+100%
+Install Succeeded
+Install Failed: %@
+outputFileHandle
+T@"NSFileHandle",&,V_outputFileHandle
+installError
+T@"NSError",&,V_installError
+recordedProgress
+Tq,V_recordedProgress
+com.apple.developer.associated-domains
+webcredentials:example.com
+Associated Domains
+domains
+defaultDomain
+T@"NSArray",C,N,V_domains
+com.apple.external-accessory.wireless-configuration
+ExternalAccessory
+Units
+SpecialType
+targetChooser
+Xcode3TargetTemplateOptionProjectChooserIdentifier
+Xcode3TargetTemplateOptionTargetChooserIdentifier
+option special type
+option units
+LSApplicationCategoryType
+v32@?0@"NSString"8@"NSString"16^c24
+Invalid option value for template unit %@
+filterOptionsForDisplayValues
+value
+title
+T@"NSDictionary",C,V_units
+T@"NSArray",&,V_filterOptionsForDisplayValues
+parent
+T@"<Xcode3ProjectTemplateOptionParent>",W
+StoreKit
+XCODE_XCCONFIG_FILE
+XCODE_USER_DEFAULTS_FILE
+-[_Xcode3CommandLineProjectCreationErrorHandler shouldOpenProjectOfMismatchingVersion:atPath:]
+/Library/Caches/com.apple.xbs/Sources/IDEXcode3ProjectSupport/IDEXcode3ProjectSupport-15508/Xcode3Core/OtherSources/Xcode3CommandLineBuildTool.m
+(path) != nil
+%@ should be a string, but it is nil
+path
+CFGetTypeID((CFStringRef)path) == CFStringGetTypeID()
+%@ should be a string, but it is %@
+Project file '%@' was written by an unsupported Xcode version (%lu)
+NOTE: Xcode project '%@' was written by a newer Xcode version (%lu) -- temporarily downgrading it (without modifying project file)
+NOTE: Xcode project '%@' was written by an incompatible Xcode version (%lu) -- temporarily changing it (without modifying project file)
+didEncounterFatalError
+Tc,V_didEncounterFatalError
+errorMessage
+T@"NSString",C,V_errorMessage
+IDEUseArchiveActionForInstall
+IDEEnableInstallLocAction
+/var/db
+3AC94139-8D9A-4470-830B-C71063AAED49
+com.apple.dt.Xcode
+CommandLineBuildTiming
+xcodebuildDebug
+xcworkspace
+com.apple.dt.swiftpm-package
++[Xcode3CommandLineBuildTool filesInDirectory:withExtensions:errorString:]
+[directoryPath isAbsolutePath]
+(extensions) != nil
+%@ should be a non-empty array, but it is nil
+extensions
+CFGetTypeID((CFArrayRef)extensions) == CFArrayGetTypeID()
+%@ should be a non-empty array, but it is %@
+[(extensions) count] > 0
+%@ should be a non-empty array, but it's an empty array
+The directory does not exist.
+The path does not refer to a directory.
+The directory is not readable.
+Looking for files with extensions (%@) in directory %@ {
+filename %@
+--> accepted
+} found %lu file%@
+%@-0x%p
+synthesized macros
+macros from command line
+-[Xcode3CommandLineBuildTool init]
+IDECommandLineSchemeLoadingTimeout
+IDECommandLineProjectLoadingTimeout
+--- %@: WARNING: %@
+%@: error: %@
+clean
+analyze
+test
+build-for-testing
+test-without-building
+archive
+copysrc
+copyhdrs
+copyrsrcs
+install
+installdebugonly
+installprofileonly
+installdebugprofileonly
+installsrc
+installhdrs
+installloc
+installapi
+installrsrcs
+migrateswift
+buildfortesting
+testwithoutbuilding
+-[Xcode3CommandLineBuildTool _schemeCommandForBuildAction:outSchemeTask:]
+Unexpected build action '%@'. If this is a supported build action, it should be handled by this method.
+BUILD
+CLEAN
+ANALYZE
+TEST
+TEST BUILD
+TEST EXECUTE
+ARCHIVE
+COPY SOURCE
+COPY HEADERS
+COPY RESOURCES
+INSTALL
+INSTALL (DEBUG ONLY)
+INSTALL (PROFILE ONLY)
+INSTALL (DEBUG PROFILE ONLY)
+INSTALL SOURCE
+INSTALL HEADERS
+INSTALL LOCALIZATIONS
+INSTALL HEADERS AND API
+INSTALL RESOURCES
+MIGRATE SWIFT
+-[Xcode3CommandLineBuildTool _actionStringForBuildAction:]
+@"NSError"40@?0@"DVTCommandLineOptionDefinition"8@"NSMutableArray"16@"NSString"24@"NSMutableDictionary"32
+option '%@' may only be provided once
+AllSDKs
+option '%@' requires an argument
+option '%@' is no longer supported
+accept
+status
+check
+Checking first launch status
+Checking user license agreement status
+User has NOT agreed to license, returning code 65
+User has agreed to license
+Checking if packages need to be installed
+Packages need to be installed, returning code 65
+There are zero packages that need to be installed
+First launch status check succeeded (license and package installation status OK), returning code 0
+Installing Xcode system frameworks
+User has not yet agreed to license, starting the -license process interactively
+Tried to agree to the license, but still needs agreement, returning FirstLaunchErrorLicenseFailedToAgree
+The license has not been agreed. Please run sudo xcodebuild -license again.
+Packages need to be installed, starting the -install process
+Packages failed to install, returning code FirstLaunchErrorPackagesFailedToInstall
+matching/
+matching
+generic/
+generic
+[^=]+/
+unknown prefix '%@' to value for option '%@'
+[a-zA-Z]+=
+[^,]+,?
+missing value for key '%@' of option '%@'
+option '%@' requires at least one parameter of the form 'key=value'
+unreadable input '%@' at end of value for option '%@'
+DestinationSpecifications
+v32@?0@"NSMutableDictionary"8@"NSString"16@"NSString"24
+-resultBundleVersion %@
+-usage
+print brief usage
+--usage
+-help
+print complete usage
+--help
+-verbose
+provide additional status output
+Verbose
+-license
+show the Xcode and SDK license agreements
+Check License
+-checkFirstLaunchStatus
+Check if any First Launch tasks need to be performed
+Check FLE
+-runFirstLaunch
+install packages and agree to the license
+Run First Launch
+-project
+-project NAME
+build the project NAME
+ProjectName
+-target
+-target NAME
+build the target NAME
+TargetNames
+-alltargets
+build all targets
+AllTargets
+-workspace
+-workspace NAME
+build the workspace NAME
+WorkspaceName
+-scheme
+-scheme NAME
+build the scheme NAME
+SchemeName
+-action
+ActionName
+-configuration
+-configuration NAME
+use the build configuration NAME for building each target
+ConfigurationName
+-config
+-xcconfig
+-xcconfig PATH
+apply the build settings defined in the file at PATH as overrides
+ConfigFile
+-actionResultsBundleWithBaselineOverrides
+ActionResultsBundlePathWithBaselineOverrides
+-automaticBaselineDescription
+AutomaticBaselineDescription
+-arch
+-arch ARCH
+build each target for the architecture ARCH; this will override architectures defined in the project
+Architectures
+-sdk
+-sdk SDK
+use SDK as the name or path of the base SDK when building the project
+BaseSdkName
+-toolchain
+-toolchain NAME
+use the toolchain with identifier or name NAME
+ToolchainNames
+-destination
+-destination DESTINATIONSPECIFIER
+use the destination described by DESTINATIONSPECIFIER (a comma-separated set of key=value pairs describing the destination to use)
+Destination
+-skipUnsupportedDestinations
+SkipUnsupportedDestinations
+-destination-timeout
+-destination-timeout TIMEOUT
+wait for TIMEOUT seconds while searching for the destination device
+DestinationTimeout
+-parallelizeTargets
+build independent targets in parallel
+ParallelizeTargets
+-jobs
+-jobs NUMBER
+specify the maximum number of concurrent build operations
+MaxConcurrency
+-maximum-concurrent-test-device-destinations
+-maximum-concurrent-test-device-destinations NUMBER
+the maximum number of device destinations to test on concurrently
+MaxDeviceTestConcurrency
+-maximum-concurrent-test-simulator-destinations
+-maximum-concurrent-test-simulator-destinations NUMBER
+the maximum number of simulator destinations to test on concurrently
+MaxSimulatorTestConcurrency
+-parallel-testing-enabled
+-parallel-testing-enabled YES|NO
+overrides the per-target setting in the scheme
+ParallelTestingEnabledOverride
+-parallel-testing-worker-count
+-parallel-testing-worker-count NUMBER
+the exact number of test runners that will be spawned during parallel testing
+ParallelTestingWorkerCountOverride
+-maximum-parallel-testing-workers
+-maximum-parallel-testing-workers NUMBER
+the maximum number of test runners that will be spawned during parallel testing
+MaxParallelTestingWorkerCount
+-dry-run
+do everything except actually running the commands
+DontActuallyRunCommands
+-quiet
+do not print any output except for warnings and errors
+QuieterOutput
+-hideShellScriptEnvironment
+don't show shell script environment variables in build log
+HideShellScriptEnvironment
+-showsdks
+display a compact list of the installed SDKs
+ShowSDKs
+-showdestinations
+display a list of destinations
+ShowDestinations
+-showTestPlans
+display a list of test plans
+ShowTestPlans
+-showBuildSettings
+display a list of build settings and values
+ShowBuildSettings
+-list
+lists the targets and configurations in a project, or the schemes in a workspace
+List
+-describeSchemes
+DescribeSchemes
+-describeProducts
+DescribeProducts
+-describeAllArchivableProducts
+DescribeAllArchivableProducts
+-find-executable
+-find-executable NAME
+display the full path to executable NAME in the provided SDK and toolchain
+FindExecutable
+-find
+-find-library
+-find-library NAME
+display the full path to library NAME in the provided SDK and toolchain
+FindLibrary
+-version
+display the version of Xcode; with -sdk will display info about one or all installed SDKs
+Version
+-enableAddressSanitizer
+-enableAddressSanitizer YES|NO
+turn the address sanitizer on or off
+AddressSanitizerEnabled
+-enableThreadSanitizer
+-enableThreadSanitizer YES|NO
+turn the thread sanitizer on or off
+ThreadSanitizerEnabled
+-enableUndefinedBehaviorSanitizer
+-enableUndefinedBehaviorSanitizer YES|NO
+turn the undefined behavior sanitizer on or off
+UBSanitizerEnabled
+-clearPlugInCache
+-resultBundlePath
+-resultBundlePath PATH
+specifies the directory where a result bundle describing what occurred will be placed
+-resultStreamPath
+-resultStreamPath PATH
+specifies the file where a result stream will be written to (the file must already exist)
+-resultBundleVersion
+specifies which result bundle version should be used
+-clonedSourcePackagesDirPath
+-clonedSourcePackagesDirPath PATH
+specifies the directory to which remote source packages are fetch or expected to be found
+-derivedDataPath
+-derivedDataPath PATH
+specifies the directory where build products and other derived data will go
+-archivePath
+-archivePath PATH
+specifies the directory where any created archives will be placed, or the archive that should be exported
+-exportArchive
+specifies that an archive should be exported
+ExportArchive
+-exportNotarizedApp
+export an archive that has been notarized by Apple
+ExportNotarizedApp
+-exportOptionsPlist
+-exportOptionsPlist PATH
+specifies a path to a plist file that configures archive exporting
+ExportOptionsPlist
+-enableCodeCoverage
+-enableCodeCoverage YES|NO
+turn code coverage on or off when testing
+CodeCoverageEnabled
+-enableLocalizableStringsData
+LocalizableStringsDataEnabled
+-exportPath
+-exportPath PATH
+specifies the destination for the product exported from an archive
+ExportArchivePath
+-skipUnavailableActions
+specifies that scheme actions that cannot be performed should be skipped instead of causing a failure
+SkipUnavailableActions
+-exportLocalizations
+exports completed and outstanding project localizations
+ExportLocalizations
+-includeScreenshots
+IncludeLocalizedScreenshots
+-importLocalizations
+imports localizations for a project, assuming any necessary localized resources have been created in Xcode
+ImportLocalizations
+-localizationPath
+specifies a path to XLIFF localization files
+LocalizationPath
+-exportLanguage
+specifies multiple optional ISO 639-1 languages included in a localization export
+ExportLanguages
+-xctestrun
+specifies a path to a test run specification
+TestRunSpecification
+-testPlan
+specifies the name of the test plan associated with the scheme to use for testing
+TestPlanNames
+-only-testing
+constrains testing by specifying tests to include, and excluding other tests
+OnlyTestIdentifiers
+^-only-testing:.+
+-only-testing:TEST-IDENTIFIER
+-skip-testing
+constrains testing by specifying tests to exclude, but including other tests
+SkipTestIdentifiers
+^-skip-testing:.+
+-skip-testing:TEST-IDENTIFIER
+-run-skipped-tests-only
+RunSkippedTestsOnly
+-only-test-configuration
+constrains testing by specifying test configurations to include, and excluding other test configurations
+OnlyTestConfigurations
+-skip-test-configuration
+constrains testing by specifying test configurations to exclude, but including other test configurations
+SkipTestConfigurations
+-disable-concurrent-testing
+DisableConcurrentDestinationTestingLegacy
+-disable-concurrent-destination-testing
+DisableConcurrentDestinationTesting
+-testApplicationMapping
+TestApplicationMappingOverrides
+option -testApplicationMapping requires an argument of the form 'com.companyname.foo:/path/to/Foo.app'
+-testLanguage
+constrains testing by specifying ISO 639-1 language in which to run the tests
+TestWithLanguage
+-testRegion
+constrains testing by specifying ISO 3166-1 region in which to run the tests
+TestWithRegion
+-permuteTemplates
+PermuteTemplates
+-templateOutputPath
+TemplateOutputPath
+-templateTeamID
+TemplateTeamID
+-templatePlatform
+TemplatePlatform
+-templateOption
+TemplateNonPermutedOptionValues
+option -templateOption requires two additonal arguments (-templateOption <optionIdentifier> <optionValue>)
+-templateRequiredOption
+TemplateRequiredOptions
+option -requireTemplateOption requires an additonal argument (-requireTemplateOption <optionIdentifier>)
+-createNewProject
+CreateNewProject
+-resolvePackageDependencies
+resolves any Swift package dependencies referenced by the project or workspace
+ResolvePackageDependencies
+-disableAutomaticPackageResolution
+prevents packages from automatically being resolved to versions other than those recorded in the `Package.resolved` file
+-templateName
+TemplateName
+-templateOptions
+TemplateOptions
+-json
+output as JSON (note: -json implies -quiet)
+OutputAsJSON
+-allowProvisioningUpdates
+Allow xcodebuild to communicate with the Apple Developer website. For automatically signed targets, xcodebuild will create and update profiles, app IDs, and certificates. For manually signed targets, xcodebuild will download missing or updated provisioning profiles. Requires a developer account to have been added in Xcode's Accounts preference pane.
+AllowProvisioningUpdates
+-allowProvisioningDeviceRegistration
+Allow xcodebuild to register your destination device on the developer portal if necessary. This flag only takes effect if -allowProvisioningUpdates is also passed.
+AllowProvisioningDeviceRegistration
+-server-use
+ServerUse
+-server-headless-control-path
+ServerHeadlessControlPath
+-server-headless-user-name
+ServerHeadlessUserName
+-server-headless-user-path
+ServerHeadlessUserPath
+-scm-blueprint
+ReadSourceControlBlueprint
+-scm-ssh-key-path
+SourceControlSSHKeyPath
+-scm-enable-keychain
+EnableSourceControlKeychainAccess
+-scm-disable-keychain
+DisableSourceControlKeychainAccess
+-usePackageSupportBuiltinSCM
+use the builtin package support SCM system
+-showBuildTimingSummary
+display a report of the timings of all the commands invoked during the build
+ShowBuildTimingSummary
+-create-xcframework
+create an xcframework from prebuilt libraries; -help for more information.
+CreateXCFramework
+-showDeveloperAccounts
+ShowDeveloperAccounts
+-emitBuildTiming
+EmitBuildTiming
+-activetarget
+-activeconfiguration
+-buildstyle
+-xbsProject
+-xbsProject NAME
+build using XBS metadata for the project NAME
+XBSProjectName
+-xbsUpdate
+-xbsUpdate NAME
+build using XBS metadata from the update NAME
+XBSUpdateName
+-sourceVersion
+-sourceVersion NAME
+build using the source version NAME
+XBSSourceVersion
+-buildNumber
+-buildNumber NUMBER
+build using the build number NUMBER
+XBSBuildNumber
+-buildRecord
+-buildRecord PATH
+build to the build record at PATH
+XBSBuildRecordPath
+-extractSparseResultBundle
+specifies that a sparse result bundle should be extracted from the result bundle specified by -baseResultBundlePath and written to the location specified by -sparseResultBundlePath
+ExtractSparseResultBundle
+-baseResultBundlePath
+-baseResultBundlePath PATH
+specifies the path to the base result bundle
+BaseResultBundlePath
+-sparseResultBundlePath
+-sparseResultBundlePath PATH
+specifies the path where the sparse result bundle will be written
+SparseResultBundlePath
+-extract-only
+-extract-only TEST_IDENTIFIER
+specifies the test for which results should be included in the sparse result bundle
+ExtractOnlyTestIdentifier
+-needsUpgrade
+determine whether there are any project modernizations or Swift migrations to perform
+NeedsUpgrade
+-ssh-auth-sock-env
+-ssh-auth-sock-env VALUE
+value of SSH_AUTH_SOCK environment variable
+SSH_AUTH_SOCK
+-ssh-agent-pid-env
+-ssh-agent-pid-env VALUE
+value of SSH_AGENT_PID environment variable
+SSH_AGENT_PID
+-git-ssh-command-env
+-git-ssh-command-env VALUE
+value of GIT_SSH_COMMAND environment variable
+GIT_SSH_COMMAND
+-[Xcode3CommandLineBuildTool _parseOptions]_block_invoke_25
+[arg hasPrefix:@"-"]
+equCharRange.location >= 1
+c24@?0@"NSString"8@"NSMutableArray"16
+-[Xcode3CommandLineBuildTool _parseOptions]
+((self.projectName)) == nil || CFGetTypeID((CFStringRef)(self.projectName)) == CFStringGetTypeID()
+(self.projectName)
+(self.targetNames) == nil || CFGetTypeID((CFArrayRef)self.targetNames) == CFArrayGetTypeID()
+%@ should be an array, but it is %@
+self.targetNames
+((self.workspaceName)) == nil || CFGetTypeID((CFStringRef)(self.workspaceName)) == CFStringGetTypeID()
+(self.workspaceName)
+((self.schemeName)) == nil || CFGetTypeID((CFStringRef)(self.schemeName)) == CFStringGetTypeID()
+(self.schemeName)
+((self.actionName)) == nil || CFGetTypeID((CFStringRef)(self.actionName)) == CFStringGetTypeID()
+(self.actionName)
+((self.configurationName)) == nil || CFGetTypeID((CFStringRef)(self.configurationName)) == CFStringGetTypeID()
+(self.configurationName)
+((self.xcconfigPathFromOption)) == nil || CFGetTypeID((CFStringRef)(self.xcconfigPathFromOption)) == CFStringGetTypeID()
+(self.xcconfigPathFromOption)
+((self.actionResultsBundlePathWithBaselineOverridesFromOption)) == nil || CFGetTypeID((CFStringRef)(self.actionResultsBundlePathWithBaselineOverridesFromOption)) == CFStringGetTypeID()
+(self.actionResultsBundlePathWithBaselineOverridesFromOption)
+((self.automaticBaselineDescription)) == nil || CFGetTypeID((CFStringRef)(self.automaticBaselineDescription)) == CFStringGetTypeID()
+(self.automaticBaselineDescription)
+(self.architectures) == nil || CFGetTypeID((CFArrayRef)self.architectures) == CFArrayGetTypeID()
+self.architectures
+((self.baseSdkName)) == nil || CFGetTypeID((CFStringRef)(self.baseSdkName)) == CFStringGetTypeID()
+(self.baseSdkName)
+(self.toolchainNames) == nil || CFGetTypeID((CFArrayRef)self.toolchainNames) == CFArrayGetTypeID()
+self.toolchainNames
+(self.destinationSpecifications) == nil || CFGetTypeID((CFArrayRef)self.destinationSpecifications) == CFArrayGetTypeID()
+self.destinationSpecifications
+(self.destinationTimeout) == nil || [(id)(self.destinationTimeout) isKindOfClass:[NSNumber class]]
+%@ should be an instance inheriting from %@, but it is %@
+self.destinationTimeout
+((self.localizationPath)) == nil || CFGetTypeID((CFStringRef)(self.localizationPath)) == CFStringGetTypeID()
+(self.localizationPath)
+(self.exportLanguages) == nil || CFGetTypeID((CFArrayRef)self.exportLanguages) == CFArrayGetTypeID()
+self.exportLanguages
+((self.nameOfFileToFind)) == nil || CFGetTypeID((CFStringRef)(self.nameOfFileToFind)) == CFStringGetTypeID()
+(self.nameOfFileToFind)
+A -resultBundleVersion flag must be supplied with one of the supported result bundle versions: %@
+Result bundle version %@ is deprecated and will be removed in a future version of Xcode without a futher warning. Please use one of the non-deprecated versions: %@. Also see `xcrun xcresulttool --help` for parsing result bundles.
+Result bundle version %@ does not support result stream (-resultStreamPath was passed.)
+Result bundle stream requires -resultBundlePath to be passed in.
+((self.codeCoverageEnabled)) == nil || CFGetTypeID((CFStringRef)(self.codeCoverageEnabled)) == CFStringGetTypeID()
+(self.codeCoverageEnabled)
+The flag -enableCodeCoverage must be supplied with an argument YES or NO
+((self.localizableStringsDataEnabled)) == nil || CFGetTypeID((CFStringRef)(self.localizableStringsDataEnabled)) == CFStringGetTypeID()
+(self.localizableStringsDataEnabled)
+The flag -localizableStringsDataEnabled must be supplied with an argument YES or NO
+The flag -addressSanitizerEnabled must be supplied with an argument YES or NO
+The flag -threadSanitizerEnabled must be supplied with an argument YES or NO
+The flag -undefinedBehaviorSanitizerEnabled must be supplied with an argument YES or NO
+A -destination flag must be supplied when specifying -xctestrun.
+((self.testRunSpecificationPathString)) == nil || CFGetTypeID((CFStringRef)(self.testRunSpecificationPathString)) == CFStringGetTypeID()
+(self.testRunSpecificationPathString)
+(self.testPlanNames) == nil || CFGetTypeID((CFArrayRef)self.testPlanNames) == CFArrayGetTypeID()
+self.testPlanNames
+(self.skipTestIdentifiers) == nil || CFGetTypeID((CFArrayRef)self.skipTestIdentifiers) == CFArrayGetTypeID()
+self.skipTestIdentifiers
+(self.onlyTestIdentifiers) == nil || CFGetTypeID((CFArrayRef)self.onlyTestIdentifiers) == CFArrayGetTypeID()
+self.onlyTestIdentifiers
+(self.skipTestConfigurations) == nil || CFGetTypeID((CFArrayRef)self.skipTestConfigurations) == CFArrayGetTypeID()
+self.skipTestConfigurations
+(self.onlyTestConfigurations) == nil || CFGetTypeID((CFArrayRef)self.onlyTestConfigurations) == CFArrayGetTypeID()
+self.onlyTestConfigurations
+((self.testWithLanguage)) == nil || CFGetTypeID((CFStringRef)(self.testWithLanguage)) == CFStringGetTypeID()
+(self.testWithLanguage)
+((self.testWithRegion)) == nil || CFGetTypeID((CFStringRef)(self.testWithRegion)) == CFStringGetTypeID()
+(self.testWithRegion)
+Warning: -disable-concurrent-testing is deprecated. Use -disable-concurrent-destination-testing instead.
+(self.self.testApplicationMappingOverrides) == nil || CFGetTypeID((CFDictionaryRef)self.self.testApplicationMappingOverrides) == CFDictionaryGetTypeID()
+%@ should be a dictionary, but it is %@
+self.self.testApplicationMappingOverrides
+((self.templateOutputPath)) == nil || CFGetTypeID((CFStringRef)(self.templateOutputPath)) == CFStringGetTypeID()
+(self.templateOutputPath)
+((self.templateTeamID)) == nil || CFGetTypeID((CFStringRef)(self.templateTeamID)) == CFStringGetTypeID()
+(self.templateTeamID)
+((self.templateName)) == nil || CFGetTypeID((CFStringRef)(self.templateName)) == CFStringGetTypeID()
+(self.templateName)
+((self.templatePlatform)) == nil || CFGetTypeID((CFStringRef)(self.templatePlatform)) == CFStringGetTypeID()
+(self.templatePlatform)
+((self.templateOptions)) == nil || CFGetTypeID((CFStringRef)(self.templateOptions)) == CFStringGetTypeID()
+(self.templateOptions)
+(self.templateNonPermutedOptionValues) == nil || CFGetTypeID((CFDictionaryRef)self.templateNonPermutedOptionValues) == CFDictionaryGetTypeID()
+self.templateNonPermutedOptionValues
+(self.templateRequiredOptions) == nil || CFGetTypeID((CFArrayRef)self.templateRequiredOptions) == CFArrayGetTypeID()
+self.templateRequiredOptions
+((self.clonedSourcePackagesDirPath)) == nil || CFGetTypeID((CFStringRef)(self.clonedSourcePackagesDirPath)) == CFStringGetTypeID()
+(self.clonedSourcePackagesDirPath)
+((self.sourceControlSSHKeyPath)) == nil || CFGetTypeID((CFStringRef)(self.sourceControlSSHKeyPath)) == CFStringGetTypeID()
+(self.sourceControlSSHKeyPath)
+Existing file at -resultBundlePath "%@"
+-resultStreamPath "%@" does not exist
+No existing file at -baseResultBundlePath "%@"
+Existing file at -sparseResultBundlePath "%@"
+The flag -scheme or -xctestrun is required when specifying -derivedDataPath.
+-sdk must be supplied with an argument unless used with -version
+The flag -scheme cannot be specified along with -exportArchive.
+The flag -exportOptionsPlist is required when specifying -exportArchive.
+The flag -scheme cannot be specified along with -exportNotarizedApp.
+The flag -exportPath is required when specifying -exportNotarizedApp.
+The flags -exportArchive or -exportNotarizedApp are required when specifying -exportPath.
+The flag -exportArchive is requred when specifying -exportOptionsPlist
+The flag -scheme is required when specifying -archivePath but not -exportArchive.
+The flag -archivePath is required when specifying -exportArchive.
+The flag -archivePath is required when specifying -exportNotarizedApp.
+You cannot specify both an Xcode project and a workspace.
+You cannot specify both a scheme and targets.
+You cannot specify both a scheme and -alltargets.
+You cannot specify targets with a workspace.
+You cannot specify -alltargets with a workspace.
+If you specify a workspace then you must also specify a scheme.  Use -list to see the schemes in this workspace.
+You cannot specify -alltargets and also specify individual targets.
+You cannot specify -jobs with less than 1 job.
+IDEBuildOperationMaxNumberOfConcurrentCompileTasks
+IDETestRunSpecificationPath
+IDETestRunSkipIdentifiers
+IDETestRunOnlyIdentifiers
+IDETestRunSkippedTestsOnly
+IDETestApplicationMappingOverrides
+NSArgumentDomain
+IDEPostProgressNotifications
+GroupCommandsByTargetInBuildLog
+-[Xcode3CommandLineBuildTool _resolveSdk:]
+((sdkNameOrPath)) != nil
+(sdkNameOrPath)
+When using the -sdk flag, pass the canonical name '%@' rather than the display name '%@'
+SDK "%@" cannot be located.
+-[Xcode3CommandLineBuildTool _resolveRunDestinationsForBuildAction:]
+((buildAction)) != nil
+(buildAction)
+-destination may only be specified if -scheme is also specified.
+-destination implies architecture, -arch must not also be specified.
+(value) != nil
+%@ should be an instance inheriting from %@, but it is nil
+[(id)(value) isKindOfClass:[NSNumber class]]
+devicetype
+CFGetTypeID((CFStringRef)value) == CFStringGetTypeID()
+Starting device lookup with timeout %.2f s
+Specificer: %@
+Options: %@
+Matched Devices
+%@ <%@ / %@>
+no platform
+no architecture
+Matched %ld out of %ld devices
+arch
+variant
+c16@?0@"DVTSDKVariant"8
+@16@?0@"DVTSDK"8
+@16@?0@"DVTPlatform"8
+Considering %ld run destinations
+Gathered usable run destination %@, which matched device %@
+Rejected run destination %@, which matched device %@ but the specified architecture did not match the run destination's architecture
+c16@?0@"DVTDevice"8
+c16@?0@"IDERunDestination"8
+Gathered %ld run destinations
+@16@?0@"IDERunDestination"8
+Using the first of multiple matching destinations:
+Finished device lookup and matched %ld run destinations
+platform
+iOS Simulator
+latest
+Unable to find a destination matching the provided destination specifier:
+Specified destination '%@' is not valid for specified scheme '%@'
+SDKROOT
+ARCHS
+No destinations were specified with the -destination flag which allow the archive action and are valid for the specified scheme '%@'.
+No destinations were specified with the -destination flag which allow the archive action.
+No destinations were specified with the -destination flag which were valid for the specified scheme '%@'.
+Unhandled/unexpected case where no run destinations were produced.
+Timed out waiting for all destinations matching the provided destination specifier to become available
+Waiting up to %d seconds for %ld run destinations to become available
+Available destinations for the "%@" scheme:
+v32@?0@"IDERunDestination"8Q16^c24
+Ineligible destinations for the "%@" scheme:
+isWaitingForSourcePackages
+Resolved source packages:
+  %@: %@%@
+Error: %@
+Could not resolve package dependencies:
+  %@
+RC_XBS
+XCODE_ALLOWS_EXTERNAL_PACKAGES_IN_XBS
+this version of Xcode does not allow the use of external packages in XBS
+.apple.com
+package source domain '%@' disallowed in XBS (only .apple.com source domains are currently allowed)
+If you are passing in an XBS project and update you can only pass in one build action
+Unable to retrieve XBS build option overrides.
+-[Xcode3CommandLineBuildTool _resolveInputOptionsWithTimingSection:]
+equCharRange.location != NSNotFound && equCharRange.length == 1
+TOOLCHAINS
+xcconfig loading
+Working directory is '%@'
+User defaults from environment (%@='%@'):
+User defaults from command line:
+Build settings from configuration file '%@':
+Developer portal environment: '%@'
+ProjectsToAutomaticallyUseInstallAPIFor
+RC_ProjectName
+Using "installapi" instead of "installhdrs" for %@
+@16@?0@8
+The %@ action has been renamed to %@. Support for the old name will be removed in the future.
+@"NSString"16@?0@"NSString"8
+ACTION
+Using ACTION='%@' to override build actions is deprecated, explicitly pass the actions to perform.
+OBJROOT
+Unknown build action '%@'.
+Cannot use -xctestrun with -project, -workspace or -scheme options.
+Transient Testing
+Cannot determine the current working directory.
+Scanning for projects
+Scanning for project files (%@) in %@
+Found projects: %@
+<no projects found>
+The directory %@ does not contain an Xcode project%@
+: %@
+Scanning for workspace files (%@) in %@
+Found workspaces: %@
+<no workspaces found>
+The directory %@ does not contain an Xcode project, workspace or package%@
+The directory %@ contains %lu workspaces. Specify the workspace to use with the -workspace option.
+The directory %@ contains %lu projects, all of which are legacy projects. Specify the project to use with the -project option.
+The directory %@ contains %lu projects, including multiple projects with the current extension (.%@). Specify the project to use with the -project option.
+%lu legacy projects
+the legacy project '%@'
+The directory %@ also contains %@ - ignoring %@ and using '%@'.
+them
+Unknown.
+Unable to create temporary workspace.
+Reason: %@
+%@/temporary.xcworkspace
+Unable to setup temporary workspace.
+Reason: %@
+finishedLoading
+Unable to load temporary workspace; timeout occurred.
+Unable to create transient scheme
+Project loading
+'%@' does not exist.
+'%@' is not a project file.
+SRCROOT
+.swiftpm-packages
+Unable to read project '%@'%@.
+Reason: %@
+ from folder '%@'
+Malformed project workspace: Project '%@' did not open when opening project workspace '%@'
+Unable to load project '%@'; timeout occurred.
+Workspace loading
+'%@' is not a workspace file.
+Unable to load workspace '%@'.
+Reason: %@
+Unable to load workspace '%@'; timeout occurred.
+Unable to load workspace '%@'
+Unable to find a project to open.
+Unable to open project '%@'.
+Unable to open workspace '%@', and no scheme name was provided.
+The test action requires that the name of a scheme in the project is provided using the "-scheme" option. The "-list" option can be used to find the names of the schemes in the project.
+The migrateswift action requires that the name of a scheme in the project is provided using the "-scheme" option. The "-list" option can be used to find the names of the schemes in the project.
+The project '%@' contains no targets.
+The project '%@' does not contain a target named '%@'.
+Unable to determine a target to build.
+Configuration %@ is not in the project. Building default configuration.
+Scheme loading
+The %@ named "%@" does not contain a scheme named "%@". The "-list" option can be used to find the names of the schemes in the %@.
+project
+workspace
+You must specify a scheme with the -scheme option.
+Unable to find scheme '%@' in %@ '%@'
+Unable to load schemes for %@ '%@'
+Scheme %@ is not currently configured for the %@ action.
+The flag -enableCodeCoverage is only supported when testing.
+The flag -enableLocalizableStringsData is only supported when testing.
+The flag -xctestrun is only supported when testing.
+The flag -testPlan is only supported when testing.
+Unable to perform testing since the scheme uses test plans but has no test plan(s) associated with it.
+The flag -testPlan <name> cannot be used since the scheme does not use test plans.
+The flag -testPlan <name> cannot be used more than once for the requested actions.
+The flag -testLanguage is only supported when testing.
+The flag -testRegion is only supported when testing.
+Run destination resolution
+-[Xcode3CommandLineBuildTool _workspace:failedToResolveContainerForProjectFile:]
+workspace == [self workspace]
+Unable to open project file '%@' in workspace '%@'.
+Unable to open referenced project file '%@'.
+Reason: %@
+v16@?0@?<v@?>8
+-[Xcode3CommandLineBuildTool _concurrentTestOperations:schemeTask:schemeCommand:executionEnvironment:invocationRecord:buildLog:restorePersistedBuildResults:deviceOperationLimit:simulatorOperationLimit:schemeOperationParametersGenerator:outError:]
+runDestinations.count > 0
+ENABLE_ONLY_ACTIVE_RESOURCES
+Could not determine build destinations
+result
+Tq,R
+startTime
+T@"NSDate",R,C
+buildables
+T@"NSArray",R
+v24@?0@"DVTOperation"8^c16
+v16@?0@"DVTOperation"8
+Testing on multiple destinations concurrently. Note that it is not possible to run tests in parallel on individual destinations in this mode. Pass -disable-concurrent-destination-testing instead to allow tests to run in parallel on each destination, but have the destinations run serially.
+Maximum concurrent test device destinations is set to %ld. (Adjust this with -maximum-concurrent-test-device-destinations.) 
+Maximum concurrent test device destinations is unlimited. (Adjust this with -maximum-concurrent-test-device-destinations.) 
+Maximum concurrent test simulator destinations is set to %ld. (Adjust this with -maximum-concurrent-test-simulator-destinations.)
+c24@?0@"IDESchemeActionIssueSummary"8@"IDESchemeActionIssueSummary"16
+%@%@
+Testing failed:
+errorSummaries
+message
+Failing tests:
+testFailureSummaries
+testCaseName
+version
+embedded-packages
+external-packages
+v12@?0i8
+Failed to create result socket with error: %@
+Writing result bundle at path:
+error: This %@ is configured to use Xcode's new build system, but the new build system is not available.
+Action '%@'
+Cannot use the installsrc action with -scheme.
+=== INSTALLING SOURCE ===
+Copying sources from '%@' to '%@'
+No SRCROOT specified -- cannot install sources
+json
+Couldn't write package index to %@ (%@)
+** %@ FAILED **
+-[Xcode3CommandLineBuildTool _buildWithTimingSection:]
+self.scheme == ((void *)0) || [runDestinations count] > 0
+No run destinations were populated for build action %@
+Create build operation
+Analyzing
+Building
+%@ project %@ with configuration %@
+ENABLE_ADDRESS_SANITIZER
+ENABLE_THREAD_SANITIZER
+ENABLE_UNDEFINED_BEHAVIOR_SANITIZER
+[buildOpClass isSubclassOfClass:IDEBuildOperation.class]
+** UNKNOWN BUILD RESULT CODE: %lu **
+q8@?0
+@"DVTDevice"16@?0@"IDERunDestination"8
+Action '%@' and destination '%@'
+Create scheme operations
+-[Xcode3CommandLineBuildTool _buildWithTimingSection:]_block_invoke_2
+((invocationRecord)) != nil
+(invocationRecord)
+v24@?0@"DVTOperation"8@"NSError"16
+Skipping archive action as the scheme is not archivable.
+Skipping archive action with -dry-run.
+Archiving %@ %@ with scheme %@
+Skipping test action as the scheme is not testable.
+Skipping test action with -dry-run.
+Testing %@ %@ with scheme %@
+((testManager)) != nil
+(testManager)
+actionResultsBundleWithBaselineOverrides does not exist (%@)
+xcodebuild %@
+ (%@)
+xctestrun
+scheme
+ (filtered)
+c16@?0@"_TtC13IDEFoundation26IDESchemeTestPlanReference"8
+@"IDESchemeOperationParameters"56@?0q8q16@"IDEExecutionEnvironment"24@"IDERunDestination"32@"IDESchemeCommand"40@"IDESchemeActionsInvocationRecord"48
+IDETestConcurrently
+Skipping analyze action as the scheme is not analyzable.
+Analyzing %@ %@ with scheme %@
+schemeCommand == [IDESchemeCommand launchSchemeCommand]
+Cleaning %@ %@ with scheme %@%@
+ and configuration %@
+Building %@ %@ with scheme %@%@
+Failed to build %@ %@ with scheme %@.
+Reason: %@
+Recovery suggestion: %@
+-[Xcode3CommandLineBuildTool _buildWithTimingSection:]_block_invoke_3
+DVTIsMainThread()
+code should be running on main thread
+com.apple.dt.Xcode.interruptionQueue
+((title)) != nil
+(title)
+Failed to execute operation: %@ (Reason: %@)
+((buildLog)) != nil
+(buildLog)
+Uncaught exception while building
+((actionResultBlock)) != nil
+(actionResultBlock)
+Test session results, code coverage, and logs:
+Result bundle written to path:
+ShowBuildOperationDuration
+ [%.3f sec]
+** %@ SUCCEEDED **%@
+** %@ INTERRUPTED **
+** UNKNOWN RESULT CODE: %lu **
+The following commands produced analyzer issues:
+(%lu command%@ with analyzer issues)
+The following build commands failed:
+(%lu failure%@)
+Error saving invocation record to resultBundlePath:%@
+Failed to create symlink at %@ - a file already exists.
+Failed to move file, error: %@
+Failed to create a symlink, error: %@
+v20@?0c8@"NSError"12
+-showBuildSettings requires a workspace and scheme or a project and one or more targets.
+c16@?0@"Xcode3TargetBuildable"8
+-[Xcode3CommandLineBuildTool _showBuildSettings]_block_invoke_2
+(buildable) != nil
+buildable
+[(id)(buildable) isKindOfClass:[Xcode3TargetBuildable class]]
+@16@?0@"Xcode3TargetBuildable"8
+Build settings for action %@ and target %@:
+ConcurrentQueue: %@
+-[Xcode3CommandLineBuildTool _showBuildSettings]_block_invoke_3
+target
+action
+buildSettings
+v12@?0c8
+v16@?0@"DVTPromise"8
+Xcode %@
+Revision %@
+Build version %@
+You must specify either -project or -workspace.
+-[Xcode3CommandLineBuildTool _printContainerInformationAndExit]
+schemes
+(configurationNames) != nil
+%@ should be a array, but it is nil
+configurationNames
+CFGetTypeID((CFArrayRef)configurationNames) == CFArrayGetTypeID()
+targets
+configurations
+There are no targets in project "%@".
+Information about project "%@":
+    Targets:
+        %@
+There are no configurations in project "%@".
+    Build Configurations:
+    If no build configuration is specified and -scheme is not passed then "%@" is used.
+Information about workspace "%@":
+    Schemes:
+    This project contains no schemes.
+There are no schemes in workspace "%@".
+Describe schemes does not yet have a pretty print implementation, use -json instead.
+You must specify -action.
+You must specify -scheme.
+You must specify exactly one -destination argument.
+Describe products does not yet have a pretty print implementation, use -json instead.
+Describe archivable products does not yet have a pretty print implementation, use -json instead.
+-[Xcode3CommandLineBuildTool _sdkForUseWithFind]
+(sdkName) != nil
+sdkName
+CFGetTypeID((CFStringRef)sdkName) == CFStringGetTypeID()
+The SDK "%@" cannot be found.
+'%@' not found.
+q24@?0@8@16
+Unable to serialize JSON output: %@
+canonicalName
+displayName
+sdkPath
+sdkVersion
+isBaseSdk
+platformVersion
+platformPath
+SDK %@:
+There are no SDKs available.
+v24@?0@"Xcode3Platform"8@"NSArray"16
+%@ SDKs:
+%-30s
+-sdk %@
+No SDKs.
+%@ Additional SDKs:
+-showdestinations requires a workspace and scheme.
+Unable to find any destinations for the "%@" scheme
+-showTestPlans requires a workspace and scheme.
+@"NSDictionary"16@?0@"_TtC13IDEFoundation26IDESchemeTestPlanReference"8
+testPlans
+Test plans associated with the scheme "%@":
+The scheme "%@" has no associated test plans.
+The scheme "%@" is not configured to use test plans.
+SDKVersion
+Path
+PlatformVersion
+PlatformPath
+%@ - %@ (%@)
+<Filesystem Name Missing>
+<Display Name Missing>
+<Canonical Name Missing>
+%@: %@
+Error
+-[Xcode3CommandLineBuildTool _availableExportArchiveOptionsSection]
+No class for %@
+Available keys for -exportOptionsPlist:
+error: %@
+** EXPORT FAILED **
+v16@?0@"NSString"8
+archive at path '%@' is malformed
+file at path '%@' is not an archive
+archive not found at path '%@'
+archive at path '%@' hasn't been uploaded to Apple for Developer ID distribution.
+ITunesConnectionOperationErrorDomain
+No record found of Developer ID submission "%@" for archive "%@".
+%@ (%@)
+-[Xcode3CommandLineBuildTool _exportNotarizedAppAndExit]
+(self.exportDestinationPath) != nil
+%@ should be a non-empty string, but it is nil
+self.exportDestinationPath
+CFGetTypeID((CFStringRef)self.exportDestinationPath) == CFStringGetTypeID()
+%@ should be a non-empty string, but it is %@
+![(self.exportDestinationPath) isEqualToString:@""]
+%@ should be a non-empty string, but it's an empty string
+@"NSString"16@?0@"NSError"8
+error: %@ (%@)
+note: View the audit log for more information "%@"
+Archive "%@" is processing and not ready for distribution.
+** EXPORT SUCCEEDED **
+error: 
+warning: 
+notice: 
+%@%@: %@
+Couldn't load -exportOptionsPlist
+error: archive at path '%@' is malformed
+error: file at path '%@' is not an archive
+error: archive not found at path '%@'
+The flag -exportPath is required when specifying -exportArchive.
+exportArchive
+IDELocalizationExportInternalIncludeNonLocalizedResources
+No screenshots were found for '%@'
+v16@?0@"NSError"8
+A project must be specifed with -project to export localizations.
+Unable to find a project to export localizations.
+A source of localizations must be specified with -localizationPath
+An unsupported type of localization source was specified with -localizationPath.
+The specified localization source was not found.
+v24@?0@"IDELocalizationImportReviewContext"8@?<v@?c>16
+A project must be specifed with -project to import localizations.
+Unable to find a project to import localizations.
+Failed to login with account, %@%@.
+, with error: %@
+Failed to fetch teams for account, %@%@.
+@"NSString"16@?0@"DVTPortalTeam"8
+username
+teams
+@"NSDictionary"16@?0@"DVTDeveloperAccount"8
+accounts
+v16@?0@"NSOrderedSet"8
+Xcode.IDEFoundation.BuildSystemServiceProvider.XCBuild
+-[Xcode3CommandLineBuildTool _createXCFrameworkAndExit]
+((xcbuildExtension)) != nil
+(xcbuildExtension)
+Unable to find the XCBuildSupport plugin.
+providerClass
+(providerClass) != nil
+%@ should conform to protocol %@, but it is nil
+IDEBuildSystemServiceProvider
+isModern
+Tc,R,N
+buildOperationClass
+T#,R,N
+[(id)(providerClass) conformsToProtocol:@protocol(IDEBuildSystemServiceProvider)]
+%@ should conform to protocol %@, but %@ doesn't
+Unable to find the provider information for the XCBuildSupport plugin.
+Unable to create an instance of the XCBuildSupport plugin.
+createXCFramework
+[result count] == 2
+Either a project or a workspace must be specified when resolving package dependencies.
+@"NSString"16@?0@"<IDESourcePackage>"8
+resolved source packages: %@
+objectGraph
+T@"DVTModelObjectGraph",R,N
+Unable to save project: %@
+cross-platform
+crossplatform
+Unknown -templatePlatform '%@'.
+true
+hasUnitTests
+hasUITests
+nonPermutedOptions: %@
+requiredOptions: %@
+v24@?0@"IDESchemeActionsInvocationRecord"8@"NSError"16
+Failed to extract sparse result bundle: %@
+%@ value '%@' must be an absolute path
+unable to open %@ file '%@': %@'
+malformed user defaults file '%@': expected contents to be a dictionary
+malformed user defaults file '%@': unexpected key '%@' (expected a string)
+xcodebuild
+Option parsing
+parsing options
+did parse options
+%@LogLevel
+done printing version info
+IDEInitialize()
+Initialization failed.
+Reason: %@
+exiting early because the license hasn't been agreed to
+resolving base SDK
+did resolve base SDK
+Print usage
+done printing usage
+Find executable
+done printing path to executable
+Find library
+done printing path to library
+Show SDKs
+done printing short SDK list
+Verbose show SDKs
+done printing verbose SDK list
+Permute templates
+done permuting templates
+Create new project
+done generating project
+done extracting sparse result bundle
+Create xcframework
+done creating xcframework
+done exporting archive
+done exporting notarized app
+Device location
+starting locating devices
+did start locating devices
+Option resolution
+resolving input options
+DVTPerEventObjectsDictionary
+did resolve input options
+COLOR_DIAGNOSTICS
+diagnostic_message_length
+Show build settings
+done printing build settings
+Show Destinations
+done printing destination list
+Show Test Plans
+done printing test plan list
+Print container info
+done printing container information
+Describe schemes
+done describing schemes
+Describe products
+done describing products
+Describe archivable products
+done describing archivable products
+Export localizations
+done exporting localizations
+Import localizations
+done importing localizations
+Resolve package dependencies
+done resolving package dependencies
+Build actions
+building
+did build
+%@ - %@
+Unable to determine command to perform.
+                                            REAL        USER         SYS  PAGEIN  /    OUT
+IDELocalizationWorkspaceEnabled
+toolCommand
+Ti,V_toolCommand
+shouldExit
+Tc,N,V_shouldExit
+exitStatus
+Tq,V_exitStatus
+projectName
+T@"NSString",C,V_projectName
+targetNames
+T@"NSArray",&,V_targetNames
+workspaceName
+T@"NSString",C,V_workspaceName
+schemeName
+T@"NSString",C,V_schemeName
+actionName
+T@"NSString",C,V_actionName
+xcconfigPathFromOption
+T@"NSString",C,V_xcconfigPathFromOption
+xcconfigPathFromEnvVar
+T@"NSString",C,V_xcconfigPathFromEnvVar
+actionResultsBundlePathWithBaselineOverridesFromOption
+T@"NSString",C,V_actionResultsBundlePathWithBaselineOverridesFromOption
+automaticBaselineDescription
+T@"NSString",C,V_automaticBaselineDescription
+nameOfFileToFind
+T@"NSString",C,V_nameOfFileToFind
+archivePath
+T@"NSString",C,V_archivePath
+exportOptionsPlist
+T@"NSString",C,V_exportOptionsPlist
+exportDestinationPath
+T@"NSString",C,V_exportDestinationPath
+buildActions
+T@"NSArray",&,V_buildActions
+potentialBuildActions
+T@"NSArray",&,V_potentialBuildActions
+buildSettingAssignmentStrings
+T@"NSArray",&,V_buildSettingAssignmentStrings
+T@"Xcode3Project",&,V_project
+T@"NSMutableArray",&,V_targets
+allTargets
+Tc,V_allTargets
+T@"IDEWorkspace",&,V_workspace
+perActionRunDestinations
+T@"NSMutableDictionary",&,V_perActionRunDestinations
+configurationName
+T@"NSString",C,V_configurationName
+architectures
+T@"NSArray",&,V_architectures
+baseSdkName
+T@"NSString",C,V_baseSdkName
+toolchainNames
+T@"NSArray",&,V_toolchainNames
+destinationSpecifications
+T@"NSArray",C,V_destinationSpecifications
+skipUnsupportedDestinations
+Tc,V_skipUnsupportedDestinations
+destinationTimeout
+T@"NSNumber",C,V_destinationTimeout
+parallelizeTargets
+Tc,V_parallelizeTargets
+emitBuildTiming
+T@"NSNumber",&,V_emitBuildTiming
+hideShellScriptEnvironment
+Tc,V_hideShellScriptEnvironment
+maxConcurrency
+T@"NSNumber",C,V_maxConcurrency
+maxDeviceTestConcurrency
+T@"NSNumber",C,V_maxDeviceTestConcurrency
+maxSimulatorTestConcurrency
+T@"NSNumber",C,V_maxSimulatorTestConcurrency
+parallelTestingEnabledOverride
+T@"NSNumber",&,V_parallelTestingEnabledOverride
+parallelTestingWorkerCountOverride
+T@"NSNumber",&,V_parallelTestingWorkerCountOverride
+parallelTestingMaximumWorkerCount
+T@"NSNumber",&,V_parallelTestingMaximumWorkerCount
+dontActuallyRunCommands
+Tc,V_dontActuallyRunCommands
+skipUnavailableActions
+Tc,V_skipUnavailableActions
+quieterOutput
+Tc,V_quieterOutput
+localizationPath
+T@"NSString",&,V_localizationPath
+exportLanguages
+T@"NSArray",&,V_exportLanguages
+codeCoverageEnabled
+T@"NSString",&,V_codeCoverageEnabled
+localizableStringsDataEnabled
+T@"NSString",&,V_localizableStringsDataEnabled
+addressSanitizerEnabled
+T@"NSString",&,V_addressSanitizerEnabled
+threadSanitizerEnabled
+T@"NSString",&,V_threadSanitizerEnabled
+T@"NSString",&,V_UBSanitizerEnabled
+testRunSpecificationPathString
+T@"NSString",&,V_testRunSpecificationPathString
+testPlanNames
+T@"NSArray",&,V_testPlanNames
+skipTestIdentifiers
+T@"NSArray",&,V_skipTestIdentifiers
+onlyTestIdentifiers
+T@"NSArray",&,V_onlyTestIdentifiers
+skipTestConfigurations
+T@"NSArray",&,V_skipTestConfigurations
+onlyTestConfigurations
+T@"NSArray",&,V_onlyTestConfigurations
+runSkippedTestsOnly
+Tc,V_runSkippedTestsOnly
+disableConcurrentTesting
+Tc,V_disableConcurrentTesting
+testApplicationMappingOverrides
+T@"NSMutableDictionary",&,V_testApplicationMappingOverrides
+testWithLanguage
+T@"NSString",&,V_testWithLanguage
+testWithRegion
+T@"NSString",&,V_testWithRegion
+templateOutputPath
+T@"NSString",&,V_templateOutputPath
+templateTeamID
+T@"NSString",&,V_templateTeamID
+templateName
+T@"NSString",&,V_templateName
+templatePlatform
+T@"NSString",&,V_templatePlatform
+templateOptions
+T@"NSString",&,V_templateOptions
+templateNonPermutedOptionValues
+T@"NSDictionary",&,V_templateNonPermutedOptionValues
+templateRequiredOptions
+T@"NSArray",&,V_templateRequiredOptions
+clonedSourcePackagesDirPath
+T@"NSString",&,V_clonedSourcePackagesDirPath
+disableAutomaticPackageResolution
+Tc,V_disableAutomaticPackageResolution
+usePackageSupportBuiltinSCM
+Tc,V_usePackageSupportBuiltinSCM
+collectBuildTimeStatistics
+Tc,V_collectBuildTimeStatistics
+synthesizedMacros
+T@"DVTMacroDefinitionTable",&,V_synthesizedMacros
+macrosFromCommandLine
+T@"DVTMacroDefinitionTable",&,V_macrosFromCommandLine
+macrosFromXcconfigOption
+T@"DVTMacroDefinitionTable",&,V_macrosFromXcconfigOption
+macrosFromXcconfigEnvVar
+T@"DVTMacroDefinitionTable",&,V_macrosFromXcconfigEnvVar
+userDefaults
+T@"NSMutableDictionary",&,V_userDefaults
+environmentUserDefaults
+T@"NSMutableDictionary",&,V_environmentUserDefaults
+buildToolQueue
+T@"NSOperationQueue",&,V_buildToolQueue
+resultBundlePath
+T@"NSString",&,V_resultBundlePath
+resultStreamPath
+T@"NSString",&,V_resultStreamPath
+requestedResultBundleVersion
+T@"NSNumber",&,V_requestedResultBundleVersion
+baseResultBundlePath
+T@"NSString",C,V_baseResultBundlePath
+sparseResultBundlePath
+T@"NSString",C,V_sparseResultBundlePath
+extractOnlyTestIdentifier
+T@"NSString",C,V_extractOnlyTestIdentifier
+outputAsJSON
+Tc,V_outputAsJSON
+readSourceControlBlueprint
+Tc,V_readSourceControlBlueprint
+sourceControlSSHKeyPath
+T@"NSString",&,V_sourceControlSSHKeyPath
+sourceControlBlueprint
+T@"DVTSourceControlWorkspaceBlueprint",&,V_sourceControlBlueprint
+enableSourceControlKeychainAccess
+Tc,V_enableSourceControlKeychainAccess
+disableSourceControlKeychainAccess
+Tc,V_disableSourceControlKeychainAccess
+activityLogStreamWriter
+T@"_TtC13IDEFoundation31IDEActivityLogEventStreamWriter",&,V_activityLogStreamWriter
+xbsBuildParameters
+T@"IDEXBSBuildParameters",&,V_xbsBuildParameters
+xbsXcodebuildSupportProvider
+T@"<IDEXBSXcodebuildSupportProvider>",&,V_xbsXcodebuildSupportProvider
+allowProvisioningUpdates
+Tc,V_allowProvisioningUpdates
+allowProvisioningDeviceRegistration
+Tc,V_allowProvisioningDeviceRegistration
+includeLocalizedScreenshots
+Tc,V_includeLocalizedScreenshots
+T@"IDEScheme",&,V_scheme
+T@"NSString",C,V_name
+arguments
+T@"NSArray",C,V_arguments
+environment
+T@"NSDictionary",C,V_environment
+standardInput
+T@"NSFileHandle",&,V_standardInput
+standardOutput
+T@"NSFileHandle",&,V_standardOutput
+standardError
+T@"NSFileHandle",&,V_standardError
+error
+v24@?0@"NSString"8^c16
+unknown
+Device is busy
+@16@?0@"DVTDeviceOperation"8
+Device is busy (%@)
+%@:%@
+v32@?0@"NSString"8Q16^c24
+{ %@ }
+** INTERNAL ERROR: %s **
+Uncaught Exception: %@
+Stack:
+No stack information available.
+Uncaught exception
+TERM
+dumb
+passTypeIdentifierWithPrefix
+passTypeIdentifier
+T@"NSString",R,N,V_passTypeIdentifierWithPrefix
+T@"NSString",R,N,V_passTypeIdentifier
+Beginning
+Indent
+Name
+PathType
+FileType
+TextEncoding
+LineEnding
+TabWidth
+IndentWidth
+UsesTabs
+WrapsLines
+Group
+OmitFromProjectStructure
+TargetIndices
+TargetIdentifiers
+SubstituteMacros
+SortOrder
+Groups
+BuildAttributes
+AssetGeneration
+definition beginning
+definition end
+definition pathType
+definition fileType
+definition textEncoding
+definition lineEnding
+definition tabWidth
+definition indentWidth
+definition usesTabs
+definition wrapsLines
+definition indent
+definition name
+definition path
+definition group
+definition omitFromProjectStructure
+OmitFromProjectStructure is YES, but Group is specified. Ignoring OmitFromProjectStructure.
+definition targetIndices
+definition targetIdentifiers
+Found both TargetIndices and TargetIdentifiers at %@. Preferring TargetIdentifiers.
+definition buildAttributes
+definition substituteMacros
+groups
+definition sortOrder
+definition assetGeneration
+Invalid definition for template unit %@
+CRLF
+v32@?0@"PBXReference"8Q16^c24
+cikernel
+Supporting Files
+xcconfig
+T@"NSString",C,V_path
+filePath
+T@"DVTFilePath",C,V_filePath
+pathType
+T@"NSString",C,V_pathType
+fileType
+T@"NSString",C,V_fileType
+textEncoding
+T@"NSString",C,V_textEncoding
+lineEnding
+T@"NSString",C,V_lineEnding
+tabWidth
+T@,&,V_tabWidth
+indentWidth
+T@,&,V_indentWidth
+usesTabs
+T@,&,V_usesTabs
+wrapsLines
+T@,&,V_wrapsLines
+beginning
+T@"NSString",C,V_beginning
+T@"NSString",C,V_end
+indent
+Tq,V_indent
+group
+T@"NSArray",C,V_group
+omitFromProjectStructure
+Tc,V_omitFromProjectStructure
+targetIndices
+T@"NSArray",&,V_targetIndices
+targetIdentifiers
+T@"NSArray",&,V_targetIdentifiers
+buildAttributes
+T@"NSArray",&,V_buildAttributes
+substituteMacros
+T@,&,V_substituteMacros
+T@,&,V_groups
+sortOrder
+Tq,V_sortOrder
+assetGeneration
+T@"NSArray",&,V_assetGeneration
+reference
+T@"PBXReference",&,V_reference
+T@"NSArray",C,V_targetIdentifiers
+extension
+T@"NSString",C,V_extension
+T@"NSArray",C,V_buildAttributes
+Absolute
+Project
+BuildProduct
+DeveloperDir
+CurrentSDK
+LicenseInfo
+plist
+License
+You have not agreed to the Xcode license agreements. You must agree to both license agreements below in order to use Xcode.
+Hit the Enter key to view the license agreements at '%s'
+Software License Agreements. Press 'space' for more, or 'q' to quit.
+textutil -cat txt %s -stdout | LC_ALL= LESS= LESSCHARSET= LESSCHARDEF= LESSSECURE=1 more -P "%s"
+lpr %s
+Error while printing, Please configure a printer if one is not available
+/usr/bin/lpstat
+system default destination
+Successfully printed %s to %s
+By typing 'agree' you are agreeing to the terms of the software license agreements. Type 'print' to print them or anything else to cancel, [agree, print, cancel] 
+agree
+print
+Agreeing to the Xcode/iOS license requires admin privileges, please run 
+sudo xcodebuild -license
+ and then retry this command.
+You have not agreed to the Xcode license agreements, please run 'xcodebuild -license' (for user-level acceptance) or 'sudo xcodebuild -license' (for system-wide acceptance) from within a Terminal window to review and agree to the Xcode license agreements.
+Acceptance of the Xcode license requires a writeable home directory or root authentication. Please change to a user with a writeable home directory, or use 'sudo xcodebuild -license' to accept the license at the system level (for all users).
+You can view the license agreements in Xcode's About Box, or at %s
+Invalid %@ name.
+A %@ name can't begin with "~". Please choose a different name.
+Xcode.Xcode3ProjectSupport.Container.Xcode3project
+-[Xcode3ProjectTemplateFactory normalizeSettingsDictionary:]
+/Library/Caches/com.apple.xbs/Sources/IDEXcode3ProjectSupport/IDEXcode3ProjectSupport-15508/Xcode3Core/TemplateInfrastructure/Xcode3ProjectTemplateFactory.m
+(settings) != nil
+%@ should be a dictionary, but it is nil
+settings
+CFGetTypeID((CFDictionaryRef)settings) == CFDictionaryGetTypeID()
+DEPLOYMENT_TARGET
+v32@?0@"NSString"8@16^c24
+Debug
+debug
+Release
+release
+deployment
+distribution
+languageChoice
+SOURCELANGUAGE
+INDENT
+xcodeproj
+AssociatedXcode3Target
+AssociatedXcode3TargetIsDependent
+AssociatedXcode3TargetIsTargetToBeTested
+AssociatedTargetNeedsProductBuildPhaseInjection
+-[Xcode3ProjectTemplateFactory outputToContext:options:error:]
+(project) != nil
+[(id)(project) isKindOfClass:[PBXProject class]]
+(rootGroup) != nil
+rootGroup
+[(id)(rootGroup) isKindOfClass:[PBXGroup class]]
+(projectName) != nil
+CFGetTypeID((CFStringRef)projectName) == CFStringGetTypeID()
+![(projectName) isEqualToString:@""]
+(project.buildConfigurationList) != nil
+project.buildConfigurationList
+[(id)(project.buildConfigurationList) isKindOfClass:[XCConfigurationList class]]
+(project.buildConfigurationList.defaultConfiguration) != nil
+project.buildConfigurationList.defaultConfiguration
+[(id)(project.buildConfigurationList.defaultConfiguration) isKindOfClass:[XCBuildConfiguration class]]
+classPrefix
+organizationName
+CFBundleIdentifier
+ASSOCIATEDTARGET_bundleIdentifier
+CFBundleName
+ASSOCIATEDTARGET_bundleName
+ASSOCIATEDTARGET_bundleNameAsIdentifier
+FILEPATH
+@"NSString"40@?0@"NSString"8@"DVTFilePath"16@"NSString"24@"PBXTarget"32
+c24@?0@"NSDictionary"8@"NSDictionary"16
+RootGroup
+Configurations
+BasedOn
+SharedSettings
+<Unknown File>
+should not be reached
+supportsSecureCoding
+stringValue
+dataValue
+T@"NSData",R
+numberValue
+T@"NSNumber",R
+dateValue
+T@"NSDate",R
+arrayValue
+dictionaryValue
+T@"NSDictionary",R
+-[Xcode3ProjectTemplateFactory outputToContext:options:error:]_block_invoke
+ignoring unsupported value type %@ for workspace setting '%@' when instantiating template '%@'
+CustomProductSettings
+BuildPhases
+BuildToolPath
+BuildToolArgsString
+TargetIdentifier
+ProductType
+TargetType
+Aggregate
+Legacy
+ProductBuildPhaseInjections
+Frameworks
+OtherFrameworks
+System/Library/Frameworks
+Other Frameworks
+framework
+Developer/Library/Frameworks
+Library/Frameworks
+Dependencies
+ProductDependencies
+TargetIdentifierToBeTested
+SettingsToCopyFromTargetBeingTested
+v32@?0@"PBXTarget"8Q16^c24
+.swift
+identifier
+PACKAGENAME
+PARENTPACKAGENAME
+Identifier
+Couldn't find unit '%@' for template unit
+Dependents
+@"NSArray"52@?0@"NSArray"8@"NSArray"16@"NSArray"24@"NSString"32c40^@44
+Automatic
+CODE_SIGN_STYLE
+DEVELOPMENT_TEAM
+macosx
+latest_
+internal
+--workspace
+--src-install-dir
+directory in which to install the project source
+SourceInstallDir
+--srcroot
++[Xcode3InstallsrcCommandLineVerb performWithEnvironment:]
+/Library/Caches/com.apple.xbs/Sources/IDEXcode3ProjectSupport/IDEXcode3ProjectSupport-15508/Xcode3Core/CommandLineVerbs/Xcode3InstallsrcCommandLineVerb.m
+((environment.workspace)) != nil
+(environment.workspace)
+error: installsrc requires that a project be specified, not a workspace
+error: installsrc requires an Xcode 3-compatible project
+SRCROOT=
+error: no destination path specified; specify a destination using --src-install-dir | --srcroot
+error: cannot install sources to project directory: %@
+=== INSTALLING SOURCES ===
+Copying sources from '%@' to '%@'
+--single-value
+--single-value <setting>
+print out just the value of a single build setting
+SingleValueBuildSetting
+--expand
+--expand <string>
+expands macros of the form $(X) in the passed-in string
+MacroExpansionString
+--expand-input
+expands macros of the form $(X) from standard input
+ExpandMacrosInStandardInput
+--for-running
+specifies that scheme-based build setting resolution should use the run action (default)
+SchemeCommandSpecifier
+--for-testing
+specifies that scheme-based build setting resolution should use the test action
+--for-profiling
+specifies that scheme-based build setting resolution should use the profile action
++[Xcode3BuildSettingsCommandLineVerb performWithEnvironment:]
+/Library/Caches/com.apple.xbs/Sources/IDEXcode3ProjectSupport/IDEXcode3ProjectSupport-15508/Xcode3Core/CommandLineVerbs/Xcode3BuildSettingsCommandLineVerb.m
+((workspace)) != nil
+(workspace)
+error: cannot specify both --single-value and --expand in the same invocation
+error: cannot specify both --single-value and --expand-input in the same invocation
+error: cannot specify both --expand and --expand-input in the same invocation
+error: build setting resolution context not specified; must specify a project using --project, a single target using --target, or a scheme using --scheme
+error: build settings can only be resolved in the context of an Xcode 3 project, a target, or a scheme
+warning: project does not have a build configuration named "%@"; using default configuration
+Build settings for %@ project with %@ configuration:
+Unsupported scheme command passed (%@); will use run scheme action instead.
+code which should be unreachable has been reached
+warning: target does not have a build configuration named "%@"; using default configuration
+(_castedResult) != nil
+_castedResult
+[(id)(_castedResult) isKindOfClass:[Xcode3Target class]]
+Build settings for %@ target with %@ configuration:
+((macroExpansionScope)) != nil
+(macroExpansionScope)
+   %@ = ""
+   %@ = %@
+MKDirectionsApplicationSupportedModes
+enabledRoutingTypes
+MKDirectionsModePlane
+MKDirectionsModeBike
+MKDirectionsModeBus
+MKDirectionsModeCar
+MKDirectionsModeFerry
+MKDirectionsModePedestrian
+MKDirectionsModeRideShare
+MKDirectionsModeStreetCar
+MKDirectionsModeSubway
+MKDirectionsModeTaxi
+MKDirectionsModeTrain
+MKDirectionsModeOther
+Required Background Modes
+CFBundleDocumentTypes
+CFBundleTypeName
+MKDirectionsRequest
+com.apple.maps.directionsrequest
+LSItemContentTypes
+%K LIKE %@
+T@"NSSet",&,N,V_enabledRoutingTypes
+airplane
+Tc,D,N
+bike
+ferry
+pedestrian
+ridesharing
+streetcar
+subway
+taxi
+train
+other
+wantsMapsRoutingOptions
+GameKit
+gamekit
+com.apple.developer.game-center
+Xcode3GameCenterItemStateChangedNotification
+Game Center
+Found an open paren in a node name (%@) with no closing paren.
+Found an expansion expression in a node name that is not at the end of the name (%@).
+children
+.svn
+.git
+.DS_Store
+Type
+Platforms
+XcodeProjectTemplateError
+Malformed AssetGeneration dictionary. Dictionary must contain a 'Name' key (string), 'Type' key (string) and 'Platforms' key (dictionary)
+tvOS
+watchOS
+macOS
+ibtoold
+--persona
+acimagetool
+--out
+--create
+--name
+--idiom
+iphone
+ipad
+ios-marketing
+watch
+watch-marketing
+tv-marketing
+/usr/bin/xcrun
+DEVELOPER_DIR
+Asset generation failed with exit status: %d
+Warning: Unable to load string at %@: %@
+@"NSError"32@?0@"NSString"8@"DVTFilePath"16@"DVTFilePath"24
+com.apple.property-list
+q24@?0@"Xcode3ProjectTemplateDefinitionNode"8@"Xcode3ProjectTemplateDefinitionNode"16
+Error outputting %@: %@
+:'%@'>
+expansionString
+T@"NSString",C,V_expansionString
+T@"NSArray",C,V_children
+mutableChildren
+T@"NSMutableArray",R
+___*___
+CloudKit
+cloudContainers
+cloudContainers.unexpandedIdentifiers
+$(SDKROOT)
+-[Xcode3iCloudItemModel allowsCloudKit]
+/Library/Caches/com.apple.xbs/Sources/IDEXcode3ProjectSupport/IDEXcode3ProjectSupport-15508/Xcode3Core/Provisioning/Capability Item Models/Xcode3iCloudItemModel.m
+Couldn't get SDKROOT.
+Couldn't get sdk for SDKROOT=%@
+System/Library/Frameworks/CloudKit.framework
+serviceIDs
+iCloud.
+%@$(CFBundleIdentifier)
+keyValueStoreID
+ubiquityContainerIDs
+iCloud
+Xcode.Xcode3ProjectSupport.Xcode3ProjectEditorItem.Push
+Push Notification Capability
+Adding Push Notification Capability
+Added Push Notification Capability
+allowsCloudKit
+cloudContainers.availableTeamIdentifiers
+T@"IDEAppIDItemIdentifiersItemModelSet",&,V_cloudContainers
+T@"NSString",C,N,V_keyValueStoreID
+defaultKeyValueStoreID
+T@"NSString",R,N
+T@"NSArray",C,N,V_serviceIDs
+supportsCloudDocs
+defaultContainerID
+T@"NSString",R,N,V_defaultContainerID
+requiredContainerPrefix
+Concrete
+Ancestors
+InjectionTargets
+Components
+Nodes
+Definitions
+Macros
+RequiredOptions
+Targets
+Executables
+ProjectOnly
+TargetOnly
+AssociatedTargetSpecification
+AssociatedTargetIsSameAsIncluder
+OptionConstraints
+SuppressTopLevelGroup
+WorkspaceSettings
+Xcode.Xcode3.ProjectTemplateUnitKind
+concrete
+projectOnly
+targetOnly
+ancestorNames
+injectionTargetNames
+suppressTopLevelGroup
+associatedTargetSpecification
+PopUpTitle
+associatedTarget popUpTitle
+Target:
+PopUpDescription
+associatedTarget popUpDescription
+A target to associate with the new target.
+AllowableProductTypes
+associatedTarget allowableProductTypes
+AllowablePlatforms
+associatedTarget allowablePlatforms
+AssociatedTargetIsTargetToBeTested
+associatedTargetIsTargetToBeTested
+AssociatedTargetIsRequired
+associatedTargetIsRequired
+AssociatedTargetIsDependent
+associatedTargetIsDependent
+associatedTargetNeedsProductBuildPhaseInjection
+componentDictionaries
+component identifier
+component name
+component group
+component dependents
+component dependent
+component productBuildPhaseInjections
+component productDependent
+component AssociatedTargetIsSameAsIncluder
+nodes
+project SDK
+project basedOn
+project sharedSettings
+Invalid project configuration for template unit %@
+project configurations
+target name
+target targetType
+target targetIdentifier
+target productType
+target dependencies
+target dependency
+product dependencies
+product dependency
+target productBuildPhaseInjections
+target buildPhases
+target basedOn
+target configurations
+Invalid target configuration for template unit %@
+executables
+Arguments
+executable arguments
+EnvironmentVariables
+executable environmentVariables
+requiredOptions
+definitions
+macros
+v32@?0@8@"NSString"16^c24
+optionConstraints
+UserSettingsForCreatedWorkspace
+workspaceSettings
+T@"IDEWorkspace",&,N
+T@"NSString",C,V_identifier
+T@"NSArray",R,V_injectionTargetNames
+Tc,V_suppressTopLevelGroup
+T@"<Xcode3ProjectTemplateUnitParent>",W,V_parent
+T@"NSArray",R,C,V_nodes
+T@"NSDictionary",R,C,V_macros
+T@"NSDictionary",R,V_project
+numberOfComponents
+Tc,R,GisConcrete,V_concrete
+Tc,R,GisProjectOnly,V_projectOnly
+Tc,R,GisTargetOnly,V_targetOnly
+wantsAssociatedTarget
+Tc,R,V_wantsAssociatedTarget
+associatedTargetAllowableProductTypes
+T@"NSArray",R,V_associatedTargetAllowableProductTypes
+associatedTargetAllowablePlatforms
+T@"NSArray",R,V_associatedTargetAllowablePlatforms
+Tc,R,V_associatedTargetIsRequired
+Tc,R,V_associatedTargetIsTargetToBeTested
+Tc,R,V_associatedTargetIsDependent
+Tc,R,V_associatedTargetNeedsProductBuildPhaseInjection
+associatedTargetPopUpTitle
+T@"NSString",R,V_associatedTargetPopUpTitle
+associatedTargetPopUpDescription
+T@"NSString",R,V_associatedTargetPopUpDescription
+T@"NSArray",R,V_optionConstraints
+T@"NSDictionary",R,V_workspaceSettings
+__isPlatformOrVariantPlatformVersionAtLeast
+/BuildRoot/Library/Caches/com.apple.xbs/Sources/clang/clang-1100.0.33.12/src/projects/compiler-rt/lib/builtins/os_version_check.c
+Platform2 == PLATFORM_MACOS && "unexpected platform"
+_availability_version_check
+kCFAllocatorNull
+CFDataCreateWithBytesNoCopy
+CFPropertyListCreateWithData
+CFPropertyListCreateFromXMLData
+CFStringCreateWithCStringNoCopy
+CFDictionaryGetValue
+CFGetTypeID
+CFStringGetTypeID
+CFStringGetCString
+CFRelease
+/System/Library/CoreServices/SystemVersion.plist
+ProductVersion
+%d.%d.%d
+_CFMZEnabled
+Xcode3HardenedRuntimeItemModel
+Xcode3SwiftPMProjectGenerator
+Xcode3NetworkExtensionsItemModel
+Xcode3VPNLiteItemModel
+Xcode3PassbookItemModel
+Xcode3AppleSignInItemModel
+Xcode3MacMapsItemModel
+Xcode3ApplicationGroupsItemModel
+Xcode3DataProtectionItemModel
+Xcode3ProjectTemplate
+Xcode3ProjectTemplateUnitParent
+NSObject
+Xcode3SandboxItemModel
+Xcode3Core
+Xcode3CoreInitializer
+IDEInitialization
+Xcode3BuildSettingsDictionary
+Xcode3IdentifierPrefixTransformer
+Xcode3ArrayOfStringsValueTransformer
+Xcode3AppIdentifierPrefixTransformer
+Xcode3TeamIdentifierPrefixTransformer
+Xcode3KeychainItemModel
+Xcode3SourceTrees
+IDESourceTreeProvider
+Xcode3PushItemModel
+FirstLaunchExperienceHelper
+DVTPackageInstallerHelperDelegate
+Xcode3SystemExtensionInstallItemModel
+Xcode3SafariKeychainItemModel
+Xcode3WACItemModel
+Xcode3ProjectTemplateOption
+Xcode3InAppPurchaseItemModel
+Xcode3CustomNetworkProtocolItemModel
+Xcode3AppTransportSecurityItemModel
+_Xcode3CommandLineProjectCreationErrorHandler
+Xcode3ProjectCreationErrorHandling
+_Xcode3CommandLineImportLocalizationsProjectCreationErrorHandler
+IDEBuildOperationProviding
+IDEBuildSystemServiceProvider
+IDELocalizedContainer
+DVTModelObject
+Xcode3CommandLineBuildTool
+IDEWorkspaceDelegate
+IDEContainerDelegate
+Xcode3PassBookItemKnownPassType
+Xcode3ProjectTemplateDefinition
+Xcode3ProjectTemplateDeferredTargetAddition
+CommandLineLicenseHelper
+DVTPropertyListValue
+NSSecureCoding
+NSCoding
+NSCopying
+Xcode3ProjectTemplateFactory
+Xcode3ProjectTemplateFactoryExtensions
+Xcode3InstallsrcCommandLineVerb
+Xcode3BuildSettingsCommandLineVerb
+Xcode3MapsItemModel
+Xcode3GameCenterItemModel
+Xcode3ProjectTemplateDefinitionNode
+Xcode3ProjectTemplateDefinitionNodeAdditions
+Xcode3iCloudItemModel
+Xcode3ProjectTemplateUnit
+Xcode3ProjectTemplateOptionParent
+IDETemplateOptionParent
+@16@0:8
+@32@0:8@16@24
+c16@0:8
+v16@0:8
+v24@0:8@16
+@24@0:8@16
+v32@0:8@16@24
+@"NSArray"
+@"<IDEFlightChecking>"
+B16@0:8
+v36@0:8@16c24@?28
+v20@0:8c16
+@"NSSet"
+@"IDEAppIDItemIdentifiersItemModelSet"
+v40@0:8@16@24@32
+c24@0:8@16
+#16@0:8
+@24@0:8:16
+@32@0:8:16@24
+@40@0:8:16@24@32
+c24@0:8#16
+c24@0:8:16
+Vv16@0:8
+Q16@0:8
+^{_NSZone=}16@0:8
+c24@0:8@"Protocol"16
+@"NSString"16@0:8
+v24@0:8@"Xcode3ProjectTemplateOption"16
+q16@0:8
+@"NSDictionary"
+c32@0:8Q16^@24
+@40@0:8@16@24^@32
+@"NSString"24@0:8@"NSString"16
+v24@0:8q16
+v24@0:8@"NSError"16
+@"NSFileHandle"
+@"NSError"
+v96@0:8@16@24@32@40@48@56@64@72@80@?88
+c32@0:8@16@24
+@"NSString"
+c32@0:8Q16@24
+c32@0:8Q16@"NSString"24
+v32@0:8@"NSString"16@"NSString"24
+c24@0:8@"NSString"16
+@"NSDate"16@0:8
+@"NSArray"16@0:8
+v40@0:8@16@24@?32
+v56@0:8@16@24@32@40@?48
+v72@0:8@16@24@32@40@48@56@?64
+@24@0:8^@16
+v40@0:8@"IDEWorkspace"16@"<IDEBlueprint>"24@?<v@?@"NSDictionary"@"NSError">32
+v56@0:8@"IDEBuildOperationConfiguration"16@"<IDEBlueprint>"24@"DVTFilePath"32@"NSString"40@?<v@?@"NSArray"@"NSError">48
+v72@0:8@"IDEWorkspace"16@"IDEScheme"24@"IDERunDestination"32@"<IDEBlueprint>"40@"DVTFilePath"48@"NSString"56@?<v@?@"NSArray"@"NSError">64
+v32@0:8@"<IDEBlueprintProvider>"16@"IDEWorkspace"24
+v24@0:8@"IDEWorkspace"16
+v24@0:8@"NSString"16
+@"NSArray"32@0:8@"NSArray"16@"NSString"24
+@"NSSet"24@0:8^@16
+@"DVTModelObjectGraph"16@0:8
+@"DVTLocale"16@0:8
+v40@0:8@"IDEContainer"16@"DVTFilePath"24@"DVTFilePath"32
+v28@0:8@16c24
+v32@0:8@"IDEWorkspace"16@"IDEFileReference"24
+v28@0:8@"IDEWorkspace"16c24
+v32@0:8@16q24
+@32@0:8@16^q24
+@100@0:8@16q24@32@40@48@56c64q68q76@?84^@92
+c32@0:8@16o^@24
+v24@0:8@?16
+i16@0:8
+v20@0:8i16
+@"DVTCommandLineParser"
+@"Xcode3Project"
+@"NSMutableArray"
+@"IDEWorkspace"
+@"NSMutableDictionary"
+@"NSNumber"
+@"DVTMacroDefinitionTable"
+@"NSOperationQueue"
+@"DVTSourceControlWorkspaceBlueprint"
+@"_TtC13IDEFoundation31IDEActivityLogEventStreamWriter"
+@"IDEXBSBuildParameters"
+@"<IDEXBSXcodebuildSupportProvider>"
+@"IDEScheme"
+v48@0:8@16@24@32@40
+@40@0:8@16@24@32
+@36@0:8@16@24c32
+@56@0:8@16@24@32@40@48
+@"DVTFilePath"
+@48@0:8@16@24@32@40
+@"PBXReference"
+Q20@0:8c16
+r*16@0:8
+c20@0:8c16
+@"NSBundle"
+@"DVTLicenseAgreementHelper"
+v24@0:8@"NSCoder"16
+@24@0:8@"NSCoder"16
+@24@0:8^{_NSZone=}16
+@"NSData"16@0:8
+@"NSNumber"16@0:8
+@"NSDictionary"16@0:8
+c40@0:8@16@24^@32
+q24@0:8@16
+i24@0:8@16
+{_NSRange=QQ}48@0:8@16{_NSRange=QQ}24^q40
+{_NSRange=QQ}40@0:8@16{_NSRange=QQ}24
+v56@0:8@16@24@32^q40@48
+c64@0:8@16@24@32@40^@48@?56
+@88@0:8@16@24@32@40@48@56@64^@72@?80
+@100@0:8@16@24@32@40@48@56@64c72@76^@84@?92
+@"Xcode3ProjectTemplateDefinitionNode"
+v48@0:8@16q24@32@40
+v24@0:8@"IDETemplateOption"16
+@"IDEWorkspace"16@0:8
+c24@0:8@"NSArray"16
+@"<Xcode3ProjectTemplateUnitParent>"
+?** BUILD INTERRUPTED **
+@(#)PROGRAM:Xcode3Core  PROJECT:Xcode3ProjectSupport-15508
+zPLR
+zPLR
+zPLR
+zPLR
+zPLR
+zPLR
+zPLR
+zPLR
+zPLR
+zPLR
+zPLR
+zPLR
+zPLR
+zPLR
+zPLR
+zPLR

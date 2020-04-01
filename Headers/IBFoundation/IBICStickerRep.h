@@ -13,7 +13,6 @@
     NSData *_assetData;
 }
 
-+ (id)allDefaultFileTypes;
 + (BOOL)displayNameIsItemName;
 + (Class)requiredParentClass;
 + (id)contentReferenceTypeName;
@@ -25,7 +24,6 @@
 - (id)initWithCoder:(id)arg1;
 - (BOOL)matchesFileType:(id)arg1;
 - (id)fileType;
-- (id)defaultFileTypes;
 - (void)populateIssues:(id)arg1 context:(id)arg2;
 - (void)replaceChildrenFromFileSystemSnapshot:(id)arg1 results:(id)arg2;
 - (void)setAssetData:(id)arg1;

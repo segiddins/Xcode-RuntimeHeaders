@@ -6,12 +6,14 @@
 
 #import <IDEKit/IDEViewController.h>
 
-@class DVTBorderedView, DVTStackView_AppKitAutolayout, NSScrollView, NSTextField;
+@class DVTBorderedView, DVTDelayedInvocation, DVTStackView_AppKitAutolayout, NSMutableSet, NSObject, NSScrollView, NSTextField;
 @protocol IDEProductsInspectable, IDEProductsInspectableVending;
 
 @interface IDEProductsUtilityViewController : IDEViewController
 {
-    id <IDEProductsInspectable> _inspectable;
+    NSMutableSet *_inspectableObservers;
+    DVTDelayedInvocation *_delayedUpdateLayout;
+    NSObject<IDEProductsInspectable> *_inspectable;
     id <IDEProductsInspectableVending> _inspectableVendor;
     DVTBorderedView *_topBorderedView;
     DVTStackView_AppKitAutolayout *_infoPaneStackView;
@@ -29,16 +31,17 @@
 @property __weak DVTStackView_AppKitAutolayout *infoPaneStackView; // @synthesize infoPaneStackView=_infoPaneStackView;
 @property __weak DVTBorderedView *topBorderedView; // @synthesize topBorderedView=_topBorderedView;
 @property(retain, nonatomic) id <IDEProductsInspectableVending> inspectableVendor; // @synthesize inspectableVendor=_inspectableVendor;
-@property(retain, nonatomic) id <IDEProductsInspectable> inspectable; // @synthesize inspectable=_inspectable;
+@property(retain, nonatomic) NSObject<IDEProductsInspectable> *inspectable; // @synthesize inspectable=_inspectable;
 - (void).cxx_destruct;
 - (id)_customPaneWithExtension:(id)arg1;
 - (id)_descriptionPaneWithExtension:(id)arg1;
 - (id)_detailPaneWithExtension:(id)arg1;
 - (id)_doubleButtonPaneWithButtons:(id)arg1;
-- (id)_singleButtonPaneWithButton:(id)arg1 busyIndicatorKeyPath:(id)arg2 primary:(BOOL)arg3;
-- (id)_singleButtonPaneWithButton:(id)arg1 primary:(BOOL)arg2;
+- (id)_singleButtonPaneWithButton:(id)arg1 busyIndicatorKeyPath:(id)arg2 progressIndicatorAccessibilityTitle:(id)arg3 isLarge:(BOOL)arg4 isHighlighted:(BOOL)arg5 removeBottomMargin:(BOOL)arg6;
+- (id)_singleButtonPaneWithButton:(id)arg1 isLarge:(BOOL)arg2 isHighlighted:(BOOL)arg3 removeBottomMargin:(BOOL)arg4;
 - (id)_buttonPaneWithExtension:(id)arg1;
 - (void)_updateLayout;
+- (void)bindTypeUserDescriptionForKeyPath:(id)arg1;
 @property(readonly, nonatomic) BOOL shouldShowEmptyMessage;
 - (void)primitiveInvalidate;
 - (void)loadView;

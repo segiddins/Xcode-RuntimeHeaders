@@ -9,6 +9,6 @@
 @class DVTFilePath;
 
 @protocol IDEFilePathCachedValueProducer <NSObject>
-+ (id)scanContentsOfPath:(DVTFilePath *)arg1;
++ (id)scanContentsOfPath:(DVTFilePath *)arg1 error:(id *)arg2;
 @end
 

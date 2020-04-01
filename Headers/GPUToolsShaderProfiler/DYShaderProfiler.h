@@ -20,19 +20,19 @@
 
 + (void)removeTemporaryDirectory;
 + (id)temporaryDirectory;
++ (id)extractShaderBinaryTextSegment:(id)arg1;
 + (BOOL)isDisassemblerAvailable;
 + (BOOL)isFramebufferFetchWithEvents:(void *)arg1 type:(unsigned int)arg2;
 + (BOOL)isRenderBeginWithEvents:(void *)arg1 type:(unsigned int)arg2;
 + (BOOL)isRenderEndWithEvents:(void *)arg1 type:(unsigned int)arg2;
 + (id)newShaderProfilerWithDelegate:(id)arg1;
-+ (void)_initLLDB;
++ (void)loadLLDB;
 @property(readonly, nonatomic) __weak id <DYShaderProfilerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)calculateUtilizations:(id)arg1 result:(id)arg2;
 - (void)calculateFrameTime:(id)arg1 result:(id)arg2;
-- (BOOL)isDeviceSupported;
-- (BOOL)_isAlwaysEnabled;
 - (id)profileFrame;
+- (void)collectBatchFilteredDataForShaderProfilerResult:(id)arg1;
 - (id)profileShader:(id)arg1;
 - (void)initializeShaderAnalyzer;
 - (void)dealloc;

@@ -11,22 +11,22 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 #pragma mark Named Structures
 
 struct CATransform3D {
-    double _field1;
-    double _field2;
-    double _field3;
-    double _field4;
-    double _field5;
-    double _field6;
-    double _field7;
-    double _field8;
-    double _field9;
-    double _field10;
-    double _field11;
-    double _field12;
-    double _field13;
-    double _field14;
-    double _field15;
-    double _field16;
+    double m11;
+    double m12;
+    double m13;
+    double m14;
+    double m21;
+    double m22;
+    double m23;
+    double m24;
+    double m31;
+    double m32;
+    double m33;
+    double m34;
+    double m41;
+    double m42;
+    double m43;
+    double m44;
 };
 
 struct CGPoint {
@@ -42,6 +42,13 @@ struct CGRect {
 struct CGSize {
     double width;
     double height;
+};
+
+struct NSEdgeInsets {
+    double _field1;
+    double _field2;
+    double _field3;
+    double _field4;
 };
 
 struct SCNVector3 {
@@ -65,6 +72,19 @@ struct _NSRange {
 #pragma mark Typedef'd Structures
 
 typedef struct {
+    unsigned char _field1;
+    unsigned char _field2;
+    unsigned char _field3;
+    unsigned char _field4;
+} CDStruct_a06f635e;
+
+typedef struct {
+    unsigned long long _field1;
+    unsigned long long _field2;
+    unsigned long long _field3;
+} CDStruct_14f26992;
+
+typedef struct {
     unsigned long long type;
     float quality;
     float attenuationFactor;
@@ -77,4 +97,20 @@ typedef struct {
     double _field3;
     double _field4;
 } CDStruct_d2b197d1;
+
+typedef struct {
+    CDStruct_14f26992 _field1;
+    CDStruct_14f26992 _field2;
+} CDStruct_4c83c94d;
+
+#pragma mark Typedef'd Unions
+
+typedef union {
+    struct {
+        float _field1;
+        float _field2;
+        float _field3;
+        float _field4;
+    } _field1;
+} CDUnion_9a075853;
 

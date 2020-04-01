@@ -4,33 +4,33 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import <DebuggerUI/DBGRenderableInstance.h>
 
-@class DBG2DPolygon, DBGSceneNode, DBGViewDebuggerAdditionUIController, DBGViewSurface, NSArray, NSString;
-@protocol OS_dispatch_queue;
+#import <DebuggerUI/DBGViewSurfaceUpdateDelegate-Protocol.h>
 
-@interface DBGViewInstance : NSObject
+@class DBG2DPolygon, DBGSceneNode, DBGViewControllerInstance, DBGViewDebuggerAdditionUIController, DBGViewSurface, NSArray, NSString;
+
+@interface DBGViewInstance : DBGRenderableInstance <DBGViewSurfaceUpdateDelegate>
 {
-    id _snapshot;
     DBG2DPolygon *_boundsPolygon;
     BOOL _transformIs3D;
-    BOOL _selected;
     BOOL _highlighted;
     BOOL _showFlattened;
     BOOL _isCurrentMasterView;
     BOOL _isIOS;
-    int _zOffset;
-    NSString *_identifier;
+    DBGViewInstance *_layoutReference;
     DBG2DPolygon *_resultingClippingPolygon;
     DBG2DPolygon *_clippedShape;
+    DBG2DPolygon *_borderPolygon;
     unsigned long long _viewRenderingOrder;
+    id _snapshot;
     id _flattenedSnapshot;
     NSArray *_subviews;
     DBGViewInstance *_superview;
     DBGSceneNode *_node;
     DBGViewSurface *_modelObject;
     DBGViewDebuggerAdditionUIController *_debuggerUIController;
-    unsigned long long _flattenMode;
+    DBGViewControllerInstance *_owningController;
     struct SCNVector3 _position;
     struct SCNVector3 _anchorPoint;
     struct CGRect _frame;
@@ -41,22 +41,22 @@
     struct CATransform3D _composedLocalTransform;
 }
 
-+ (BOOL)useLayersDirectly;
-+ (void)initialize;
-@property unsigned long long flattenMode; // @synthesize flattenMode=_flattenMode;
+@property(retain) DBGViewControllerInstance *owningController; // @synthesize owningController=_owningController;
 @property BOOL isIOS; // @synthesize isIOS=_isIOS;
-@property int zOffset; // @synthesize zOffset=_zOffset;
 @property(nonatomic) __weak DBGViewDebuggerAdditionUIController *debuggerUIController; // @synthesize debuggerUIController=_debuggerUIController;
 @property(nonatomic) __weak DBGViewSurface *modelObject; // @synthesize modelObject=_modelObject;
 @property(nonatomic) __weak DBGSceneNode *node; // @synthesize node=_node;
 @property(nonatomic) __weak DBGViewInstance *superview; // @synthesize superview=_superview;
 @property(retain, nonatomic) NSArray *subviews; // @synthesize subviews=_subviews;
 @property(retain, nonatomic) id flattenedSnapshot; // @synthesize flattenedSnapshot=_flattenedSnapshot;
+@property(retain, nonatomic) id snapshot; // @synthesize snapshot=_snapshot;
 @property BOOL isCurrentMasterView; // @synthesize isCurrentMasterView=_isCurrentMasterView;
 @property unsigned long long viewRenderingOrder; // @synthesize viewRenderingOrder=_viewRenderingOrder;
+@property(retain, nonatomic) DBG2DPolygon *borderPolygon; // @synthesize borderPolygon=_borderPolygon;
 @property(retain, nonatomic) DBG2DPolygon *clippedShape; // @synthesize clippedShape=_clippedShape;
 @property(retain, nonatomic) DBG2DPolygon *resultingClippingPolygon; // @synthesize resultingClippingPolygon=_resultingClippingPolygon;
 @property(nonatomic) BOOL showFlattened; // @synthesize showFlattened=_showFlattened;
+@property(nonatomic) __weak DBGViewInstance *layoutReference; // @synthesize layoutReference=_layoutReference;
 @property struct CATransform3D composedLocalTransform; // @synthesize composedLocalTransform=_composedLocalTransform;
 @property struct CATransform3D sublayerTransform; // @synthesize sublayerTransform=_sublayerTransform;
 @property struct CATransform3D transform; // @synthesize transform=_transform;
@@ -65,10 +65,9 @@
 @property struct CGRect alignmentRect; // @synthesize alignmentRect=_alignmentRect;
 @property struct CGRect bounds; // @synthesize bounds=_bounds;
 @property struct CGRect frame; // @synthesize frame=_frame;
-@property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) DBG2DPolygon *boundsPolygon;
-@property(readonly, nonatomic) BOOL clipsSubviews;
+@property(readonly, nonatomic) BOOL clipsToBounds;
 @property(readonly, nonatomic) BOOL isDoubleSided;
 @property(readonly, nonatomic) BOOL isFlipped;
 - (BOOL)isNormalizationNecessaryForView:(id)arg1;
@@ -76,30 +75,38 @@
 - (struct CATransform3D)normalizeTransform:(struct CATransform3D)arg1 ofView:(id)arg2;
 - (struct CGPoint)normalizedPointForPoint:(struct CGPoint)arg1 ofView:(id)arg2;
 - (struct CGRect)normalizedRectForFrame:(struct CGRect)arg1 ofView:(id)arg2;
+- (void)viewSurfaceDidUpdateVisualRepresentation:(id)arg1;
 - (BOOL)transformIs3D;
 @property BOOL highlighted; // @synthesize highlighted=_highlighted;
-@property BOOL selected; // @synthesize selected=_selected;
+- (void)setSelected:(BOOL)arg1;
+- (BOOL)shouldSkipSnapshotUpdates;
 - (void)updateSnapshot;
-- (void)_reorientLayer:(id)arg1 fromiOS:(BOOL)arg2;
-- (id)_snapshotWithChildren:(id)arg1;
 - (void)_recursivelyDestroyLayerTreeConnectionsWithViewInstance:(id)arg1;
 - (void)_recursivelyBuildLayerTreeConnectionsWithViewInstance:(id)arg1;
 - (id)_snapshotWithChildrenUsingSublayerTree;
-- (id)_snapshotWithChildrenIfNecessary:(id)arg1;
-- (BOOL)_viewNeedsImageSnapshot:(id)arg1;
-- (unsigned long long)_snapshotTypeForView:(id)arg1;
-@property(retain, nonatomic) id snapshot;
-@property(readonly) NSObject<OS_dispatch_queue> *imageRenderingQueue;
-- (void)_updateSnapshot:(id)arg1;
-- (void)_updateSnapshotWithLayer:(id)arg1 forViewSurface:(id)arg2;
-@property(readonly) BOOL uninteresting;
+- (void)_updateSnapshotIfNecessary;
+- (id)snapshotRenderingWorkQueue;
+- (id)_viewDebugger;
 - (void)updateChildren;
 - (void)_sortSubviewsOfSurface:(id)arg1 outSubviewsToAdd:(id)arg2 outSubviewsToRemove:(id)arg3;
-- (void)_sortFlattenedSubviewsOfSurface:(id)arg1 outSubviewsToAdd:(id)arg2 outSubviewsToRemove:(id)arg3;
 - (id)subviewInstanceForSurface:(id)arg1;
+- (void)_calculateComposedLocalTransformForSKNode;
+- (void)_calculateComposedLocalTransformForSKScene;
+- (void)_calculateComposedLocalTransformForSubhierarchyView;
+- (void)_calculateComposedLocalTransformForView;
 - (void)calculateComposedLocalTransform;
+- (BOOL)_representsSubhierarchyNode;
+- (BOOL)_representsSKNode;
+- (BOOL)_representsSKScene;
 - (void)calculateResultingClippingPolygon;
-- (id)initWithViewSurface:(id)arg1 superview:(id)arg2 debuggerUIController:(id)arg3 flattenMode:(unsigned long long)arg4;
+- (void)_updateOwningController:(id)arg1;
+- (id)initWithViewSurface:(id)arg1 superview:(id)arg2 debuggerUIController:(id)arg3;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

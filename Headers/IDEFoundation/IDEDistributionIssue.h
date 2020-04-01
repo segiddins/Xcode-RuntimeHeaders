@@ -6,21 +6,22 @@
 
 #import <objc/NSObject.h>
 
-@class NSError;
+@class NSError, NSString;
 
 @interface IDEDistributionIssue : NSObject
 {
-    int _severity;
+    long long _severity;
     NSError *_error;
 }
 
-+ (id)issuesFromErrors:(id)arg1 withSeverity:(int)arg2;
++ (id)issuesFromErrors:(id)arg1 withSeverity:(long long)arg2;
 + (id)issuesFromITunesResponse:(id)arg1;
 @property(readonly) NSError *error; // @synthesize error=_error;
-@property(readonly) int severity; // @synthesize severity=_severity;
+@property(readonly) long long severity; // @synthesize severity=_severity;
 - (void).cxx_destruct;
 - (id)description;
-- (id)initWithSeverity:(int)arg1 error:(id)arg2;
+@property(readonly) NSString *humanReadableDescription;
+- (id)initWithSeverity:(long long)arg1 error:(id)arg2;
 
 @end
 

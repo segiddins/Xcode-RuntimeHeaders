@@ -17,7 +17,7 @@
 
 - (void).cxx_destruct;
 - (id)internalDictionary;
-- (id)initWithUIDSet:(id)arg1 indexableIdentifier:(id)arg2 fileURLs:(id)arg3 indexableIsUnitTest:(id)arg4;
+- (id)initWithUIDSet:(id)arg1 indexableIdentifier:(id)arg2 fileURLs:(id)arg3 supportedPlatforms:(id)arg4 linkedIndexableIds:(id)arg5 indexableIsUnitTest:(id)arg6;
 
 @end
 

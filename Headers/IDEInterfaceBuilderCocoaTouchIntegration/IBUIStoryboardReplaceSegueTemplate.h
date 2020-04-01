@@ -7,22 +7,22 @@
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBUIStoryboardSegueTemplate.h>
 
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBDocumentArchiving-Protocol.h>
-#import <IDEInterfaceBuilderCocoaTouchIntegration/NSCoding-Protocol.h>
 
 @class NSString;
 
-@interface IBUIStoryboardReplaceSegueTemplate : IBUIStoryboardSegueTemplate <IBDocumentArchiving, NSCoding>
+@interface IBUIStoryboardReplaceSegueTemplate : IBUIStoryboardSegueTemplate <IBDocumentArchiving>
 {
-    long long destinationContainmentContext;
-    long long splitViewControllerIndex;
+    long long _destinationContainmentContext;
+    long long _splitViewControllerIndex;
 }
 
-@property long long splitViewControllerIndex; // @synthesize splitViewControllerIndex;
-@property long long destinationContainmentContext; // @synthesize destinationContainmentContext;
-- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
-- (void)archiveWithDocumentArchiver:(id)arg1;
+@property long long splitViewControllerIndex; // @synthesize splitViewControllerIndex=_splitViewControllerIndex;
+@property long long destinationContainmentContext; // @synthesize destinationContainmentContext=_destinationContainmentContext;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)ibLocalAttributeKeyPaths;
+- (void)unarchiveWithDocumentUnarchiver:(id)arg1;
+- (void)archiveWithDocumentArchiver:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

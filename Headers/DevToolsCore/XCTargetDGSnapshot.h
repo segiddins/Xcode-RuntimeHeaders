@@ -4,24 +4,27 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Foundation/NSObject.h>
+#import <objc/NSObject.h>
 
-@class NSArray, NSDictionary, NSString, PBXGlobalID, PBXPackageTypeSpecification, XCPlatformSpecification, XCProductTypeSpecification, XCPropertyExpansionContext, XCSDKPackage;
+@class DVTFuture, DVTMacroDefinitionTable, DVTSearchPath, DVTSourceCodeLanguage, IDEBuildParameters, IDEOverridingBuildProperties, IDEWorkspaceArenaSnapshot, NSArray, NSDictionary, NSMutableArray, NSString, PBXObjectID, PBXPackageTypeSpecification, PBXTarget, XCMacroExpansionScope, XCPlatformSpecification, XCProductTypeSpecification, XCProjectHeadermapCreationInfo, XCSDKPackage;
 
 @interface XCTargetDGSnapshot : NSObject
 {
+    IDEBuildParameters *_requestedBuildParameters;
     NSString *_buildAction;
+    IDEWorkspaceArenaSnapshot *_workspaceArenaSnapshot;
     NSString *_requestedConfigName;
     NSString *_effectiveConfigName;
-    XCPropertyExpansionContext *_propertyExpansionContext;
+    XCMacroExpansionScope *_macroExpansionScope;
     XCPlatformSpecification *_platform;
     XCSDKPackage *_sdk;
     NSArray *_projectConfigFileErrors;
     NSArray *_targetConfigFileErrors;
-    PBXGlobalID *_globalID;
+    PBXObjectID *_objectID;
     NSString *_name;
     NSString *_productName;
     NSString *_fullProductName;
+    NSString *_classPrefix;
     NSString *_projectName;
     NSString *_projectDirectory;
     NSArray *_namesOfMissingDependencies;
@@ -33,33 +36,53 @@
     PBXPackageTypeSpecification *_packageType;
     NSArray *_buildPhases;
     NSString *_defaultConfigurationName;
-    NSDictionary *_universalDefaultBuildSettings;
-    NSDictionary *_buildSystemDefaultBuildSettings;
-    NSDictionary *_applicationPreferencesBuildSettings;
-    NSDictionary *_dynamicallyComputedProjectwideBuildSettings;
+    DVTMacroDefinitionTable *_universalDefaultBuildSettings;
+    DVTMacroDefinitionTable *_buildSystemDefaultBuildSettings;
+    DVTMacroDefinitionTable *_dynamicallyComputedTargetDefaultBuildSettings;
+    DVTMacroDefinitionTable *_applicationPreferencesBuildSettings;
+    DVTMacroDefinitionTable *_dynamicallyComputedProjectwideBuildSettings;
     NSArray *_projectBuildSettings;
-    NSDictionary *_userProjectBuildSettings;
-    NSDictionary *_dynamicallyComputedTargetBuildSettings;
+    DVTMacroDefinitionTable *_userProjectBuildSettings;
+    DVTMacroDefinitionTable *_dynamicallyComputedTargetBuildSettings;
     NSArray *_targetBuildSettings;
-    NSDictionary *_projectOverridingBuildSettings;
-    NSDictionary *_globalOverridingBuildSettings;
-    NSDictionary *_commandLineXcconfigFileBuildSettings;
-    NSDictionary *_environmentXcconfigFileBuildSettings;
+    IDEOverridingBuildProperties *_overridingBuildSettings;
     NSArray *_defaultBuildRules;
     NSArray *_customBuildRules;
     NSArray *_alternateBuildRules;
     NSDictionary *_productSettings;
     NSString *_infoPlistSourceFilePath;
-    BOOL _shouldUseDistributedBuilds;
-    int _distributedBuildSystemInUse;
-    NSString *_distributedBuildToolCommandPath;
     NSString *_activeArchitecture;
+    XCProjectHeadermapCreationInfo *_projectHeadermapInfo;
+    NSMutableArray *_validityCheckingBlocks;
+    DVTFuture *_provisioningCommandInputs;
+    BOOL _hasMigratedToIDEProvisioning;
+    DVTSourceCodeLanguage *_predominantSourceCodeLanguage;
+    BOOL _unitTest;
+    NSArray *_toolchains;
+    NSArray *_commandLineToolSpecificationRegistries;
+    DVTSearchPath *_commandLineToolSearchPath;
+    PBXTarget *_unitTestHostAppTarget;
+    NSString *_performanceTestsBaselinesPath;
 }
 
 + (id)targetTypeName;
++ (void)validateFallbackConditionalBuildSettingsWithMacroExpansionScope:(id)arg1;
+@property(readonly) DVTFuture *provisioningCommandInputs; // @synthesize provisioningCommandInputs=_provisioningCommandInputs;
+@property(readonly) NSString *performanceTestsBaselinesPath; // @synthesize performanceTestsBaselinesPath=_performanceTestsBaselinesPath;
+@property(readonly) PBXTarget *unitTestHostAppTarget; // @synthesize unitTestHostAppTarget=_unitTestHostAppTarget;
+@property(readonly, getter=isUnitTest) BOOL unitTest; // @synthesize unitTest=_unitTest;
+@property(readonly) DVTSearchPath *commandLineToolSearchPath; // @synthesize commandLineToolSearchPath=_commandLineToolSearchPath;
+@property(readonly) NSArray *commandLineToolSpecificationRegistries; // @synthesize commandLineToolSpecificationRegistries=_commandLineToolSpecificationRegistries;
+@property(readonly) NSArray *toolchains; // @synthesize toolchains=_toolchains;
+- (void).cxx_destruct;
 - (id)description;
+- (id)validityCheckingBlocks;
+- (void)addValidityCheckingBlock:(CDUnknownBlockType)arg1;
 - (id)pkgInfoContents;
 - (id)productSettingsWithPrunedCFBundleEntries;
+- (id)appleScriptBuildPhases;
+- (id)shellScriptBuildPhases;
+- (id)copyFilesBuildPhases;
 - (id)defaultRezBuildPhase;
 - (id)defaultJavaArchiveBuildPhase;
 - (id)defaultFrameworksBuildPhase;
@@ -67,59 +90,57 @@
 - (id)defaultSourceCodeBuildPhase;
 - (id)defaultResourceBuildPhase;
 - (id)defaultHeaderBuildPhase;
+- (id)buildPhasesOfClass:(Class)arg1;
 - (id)buildPhaseOfClass:(Class)arg1;
 - (BOOL)isAggregate;
-- (BOOL)isJambased;
 - (BOOL)isNative;
-- (id)environmentXcconfigFileBuildSettings;
-- (id)commandLineXcconfigFileBuildSettings;
-- (id)globalOverridingBuildSettings;
-- (id)projectOverridingBuildSettings;
+- (id)overridingBuildSettings;
 - (id)targetBuildSettings;
 - (id)dynamicallyComputedTargetBuildSettings;
 - (id)userProjectBuildSettings;
 - (id)projectBuildSettings;
 - (id)dynamicallyComputedProjectwideBuildSettings;
 - (id)applicationPreferencesBuildSettings;
+- (id)dynamicallyComputedTargetDefaultBuildSettings;
 - (id)buildSystemDefaultBuildSettings;
 - (id)universalDefaultBuildSettings;
 - (id)activeArchitecture;
 - (id)defaultConfigurationName;
 - (id)infoPlistSourceFilePath;
 - (id)productSettings;
-- (id)distributedBuildToolCommandPath;
-- (int)distributedBuildSystemInUse;
-- (BOOL)shouldUseDistributedBuilds;
 - (id)alternateBuildRules;
 - (id)customBuildRules;
 - (id)defaultBuildRules;
 - (id)buildPhases;
-- (id)productParts;
 - (id)packageType;
 - (id)productType;
 - (id)implicitRezSearchPathFilePaths;
 - (id)projectHeadermapFilePaths;
+- (id)projectHeadermapCreationInfo;
 - (id)targetHeadermapCreationInfoForAllTargets;
 - (id)namesOfMissingDependencies;
 - (id)projectDirectory;
 - (id)projectName;
+- (id)classPrefix;
 - (id)fullProductName;
 - (id)productName;
 - (id)name;
-- (id)globalID;
+- (id)objectID;
 - (id)sdk;
 - (id)platform;
-- (id)propertyExpansionContext;
+- (id)macroExpansionScope;
 - (id)effectiveConfigurationName;
 - (id)requestedConfigurationName;
 - (id)buildAction;
+- (id)workspaceArenaSnapshot;
+- (id)requestedBuildParameters;
 - (void)printForDebugging;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)dealloc;
 - (id)init;
-- (id)initWithInformationFromTarget:(id)arg1 withBuildState:(id)arg2;
-- (void)enqueueCommandsOntoWorkQueue:(id)arg1;
-- (void)computeDependenciesInTargetBuildContext:(id)arg1;
+- (id)initWithInformationFromTarget:(id)arg1 withBuildParameters:(id)arg2;
+- (id)predominantSourceCodeLanguage;
+- (id)scopeByPreparingForDependencyGraphCreationWithScope:(id)arg1;
+- (void)computeDependenciesWithMacroExpansionScope:(id)arg1;
 
 @end
 

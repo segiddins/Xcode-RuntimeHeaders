@@ -6,12 +6,16 @@
 
 #import <DVTInstrumentsFoundation/DTXAllowedRPC-Protocol.h>
 
-@class NSArray, NSData, NSDictionary, NSNumber, NSString;
+@class NSArray, NSData, NSDictionary, NSNumber, NSSet, NSString;
 
 @protocol DTDeviceInfoServiceAuthorizedAPI <DTXAllowedRPC>
-- (NSString *)cpDeviceName;
-- (NSString *)cpDeviceInfoAsXML;
-- (NSString *)cpKDebugEventsAsXML;
+- (NSSet *)netstatRouteAttributes;
+- (NSSet *)netstatUDPAttributes;
+- (NSSet *)netstatTCPAttributes;
+- (NSSet *)netstatCountsAttributes;
+- (NSSet *)sysmonCoalitionAttributes;
+- (NSSet *)sysmonSystemAttributes;
+- (NSSet *)sysmonProcessAttributes;
 - (NSData *)kpepDatabase;
 - (NSString *)traceCodesFile;
 - (NSDictionary *)networkInformation;
@@ -23,7 +27,6 @@
 - (void)unregisterSignatureTrackingForPid:(NSNumber *)arg1;
 - (NSData *)symbolicatorSignatureForPid:(NSNumber *)arg1 trackingSelector:(NSString *)arg2;
 - (NSString *)machKernelName;
-- (NSNumber *)pidIs64Bit:(NSNumber *)arg1;
 - (NSNumber *)isRunningPid:(NSNumber *)arg1;
 - (NSString *)execnameForPid:(NSNumber *)arg1;
 - (NSString *)nameForGID:(NSNumber *)arg1;

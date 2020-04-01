@@ -6,12 +6,12 @@
 
 #import <objc/NSObject.h>
 
-@class NSString;
+@class IDETestIdentifier;
 
 @interface _IDEXCTestSuiteRecord : NSObject
 {
     BOOL _shouldUseForReportingSuiteCompletion;
-    NSString *_suiteIdentifier;
+    IDETestIdentifier *_suiteIdentifier;
     long long _runCount;
     long long _failureCount;
     double _suiteStartTime;
@@ -23,7 +23,7 @@
 @property double suiteStartTime; // @synthesize suiteStartTime=_suiteStartTime;
 @property long long failureCount; // @synthesize failureCount=_failureCount;
 @property long long runCount; // @synthesize runCount=_runCount;
-@property(copy) NSString *suiteIdentifier; // @synthesize suiteIdentifier=_suiteIdentifier;
+@property(copy) IDETestIdentifier *suiteIdentifier; // @synthesize suiteIdentifier=_suiteIdentifier;
 - (void).cxx_destruct;
 - (id)description;
 

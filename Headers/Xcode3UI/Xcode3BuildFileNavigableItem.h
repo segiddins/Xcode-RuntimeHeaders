@@ -6,27 +6,24 @@
 
 #import <IDEKit/IDEKeyDrivenNavigableItem.h>
 
-@class IDENavigableItem, Xcode3BuildFile;
+@class IDENavigableItem;
 
 @interface Xcode3BuildFileNavigableItem : IDEKeyDrivenNavigableItem
 {
-    IDENavigableItem *_realNavigableItem;
     BOOL _hasInitializedNavItem;
+    IDENavigableItem *_realNavigableItem;
 }
 
-+ (id)keyPathsForValuesAffectingTextColor;
 + (id)keyPathsForValuesAffectingContentDocumentLocation;
 + (id)keyPathsForValuesAffectingImage;
-+ (id)keyPathsForValuesAffectingName;
-@property(readonly) IDENavigableItem *realNavigableItem; // @synthesize realNavigableItem=_realNavigableItem;
+@property(retain) IDENavigableItem *realNavigableItem; // @synthesize realNavigableItem=_realNavigableItem;
 - (void).cxx_destruct;
 - (void)primitiveInvalidate;
 - (id)textColor;
 - (id)contentDocumentLocation;
 - (id)image;
-- (id)name;
 - (BOOL)checkNavigableItem;
-@property(readonly) Xcode3BuildFile *_buildFile;
+- (id)_buildFile;
 
 @end
 

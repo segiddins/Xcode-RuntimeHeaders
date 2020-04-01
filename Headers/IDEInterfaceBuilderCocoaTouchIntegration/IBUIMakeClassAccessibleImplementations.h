@@ -13,7 +13,7 @@
 + (id)keyPathsForValuesAffectingIbInspectedIsAccessibilityElement;
 + (id)keyPathsForValuesAffectingIbInspectedAccessibilityTraits;
 + (void)registerMarshallingRecordHandlers;
-+ (void)ibPopulateAdditionalInspectors:(id)arg1 forCategory:(id)arg2;
++ (void)ibPopulateAdditionalInspectorSlices:(id)arg1 forCategory:(id)arg2;
 - (void)setIbInspectedIsAccessibilityElement:(BOOL)arg1;
 - (BOOL)ibInspectedIsAccessibilityElement;
 - (id)ibInspectedAccessibilityTraits;

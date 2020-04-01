@@ -69,6 +69,9 @@
 - (void)removeSelectedOutlineViewItems;
 - (id)sourceItemsActionContext;
 - (id)contextClickActionContext;
+- (BOOL)abortEditingInOutlineView;
+- (void)duplicate:(id)arg1;
+- (void)paste:(id)arg1;
 - (void)outlineView:(id)arg1 draggingSession:(id)arg2 endedAtPoint:(struct CGPoint)arg3 operation:(unsigned long long)arg4;
 - (void)removePendingDraggedItemsIfAppropriateForDragOperation:(unsigned long long)arg1;
 - (BOOL)outlineView:(id)arg1 writeItems:(id)arg2 toPasteboard:(id)arg3;
@@ -76,7 +79,7 @@
 - (void)outlineViewItemDidExpand:(id)arg1;
 - (BOOL)outlineView:(id)arg1 acceptDrop:(id)arg2 item:(id)arg3 childIndex:(long long)arg4;
 - (unsigned long long)outlineView:(id)arg1 validateDrop:(id)arg2 proposedItem:(id)arg3 proposedChildIndex:(long long)arg4;
-- (unsigned long long)dragOperationForTargettingItem:(id)arg1 withDragInfo:(id)arg2;
+- (unsigned long long)dragOperationForTargetingItem:(id)arg1 withDragInfo:(id)arg2;
 - (void)outlineViewDidBecomeFirstResponder:(id)arg1;
 - (void)outlineView:(id)arg1 setObjectValue:(id)arg2 forTableColumn:(id)arg3 byItem:(id)arg4;
 - (void)outlineView:(id)arg1 willDisplayCell:(id)arg2 forTableColumn:(id)arg3 item:(id)arg4;
@@ -123,6 +126,7 @@
 - (id)initWithDocumentEditor:(id)arg1;
 
 // Remaining properties
+@property(readonly) BOOL canRevertWithEmptyStateDictionary;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;

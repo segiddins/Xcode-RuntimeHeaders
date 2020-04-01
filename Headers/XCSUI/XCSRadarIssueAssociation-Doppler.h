@@ -8,10 +8,10 @@
 
 #import <XCSUI/DVTRadar_Associate-Protocol.h>
 
-@class NSAttributedString, NSString;
+@class NSString;
 
 @interface XCSRadarIssueAssociation (Doppler) <DVTRadar_Associate>
-@property(readonly, copy, nonatomic) NSAttributedString *radarSummary;
+- (id)radarSummaryWithLinkTextColor:(id)arg1 otherTextColor:(id)arg2 linkAttributes:(id)arg3;
 @property(nonatomic) unsigned long long duplicateOfProblemID;
 @property(nonatomic) unsigned long long priority;
 @property(copy, nonatomic) NSString *assignee;

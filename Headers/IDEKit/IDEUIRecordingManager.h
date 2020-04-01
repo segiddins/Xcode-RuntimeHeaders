@@ -35,10 +35,7 @@
 }
 
 + (void)recordUIAtLocation:(id)arg1 inTest:(id)arg2 forWorkspaceTabController:(id)arg3;
-+ (id)reservedNamesForMethodAtLine:(unsigned long long)arg1 document:(id)arg2 workspace:(id)arg3;
-+ (id)_locationToUseForFetchingReservedNamesAtLineNumber:(long long)arg1 document:(id)arg2;
-+ (id)_initialInsertionLocationForLineRange:(struct _NSRange)arg1 document:(id)arg2;
-+ (struct _NSRange)_lineRangeForLocation:(id)arg1 document:(id)arg2;
++ (id)reservedNamesForMethodAtLocation:(id)arg1 document:(id)arg2 workspace:(id)arg3;
 + (void)recordUIAtLocation:(id)arg1 afterRunningUITest:(id)arg2 forWorkspaceTabController:(id)arg3;
 + (void)initialize;
 @property unsigned long long language; // @synthesize language=_language;

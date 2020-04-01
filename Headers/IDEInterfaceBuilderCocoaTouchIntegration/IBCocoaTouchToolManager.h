@@ -6,12 +6,11 @@
 
 #import <IDEInterfaceBuilderKit/IBAbstractInterfaceBuilderPlatformToolManager.h>
 
-@class IBMutableIdentityDictionary, IBSimulatorToolDVTTaskExecutionContext, NSMutableSet;
+@class IBMutableIdentityDictionary, NSMutableSet;
 
 @interface IBCocoaTouchToolManager : IBAbstractInterfaceBuilderPlatformToolManager
 {
-    IBSimulatorToolDVTTaskExecutionContext *_sharedDVTTaskExecutionContext;
-    IBMutableIdentityDictionary *_executionContextsByDeviceThenFidelity;
+    IBMutableIdentityDictionary *_executionContextsByDevice;
     NSMutableSet *_fonts;
 }
 
@@ -26,9 +25,14 @@
 - (void)didLaunchTool:(id)arg1 withDescription:(id)arg2;
 - (void)enumerateToolsWithBlock:(CDUnknownBlockType)arg1;
 - (void)asyncLaunchNewToolWithDescription:(id)arg1 queue:(id)arg2 completionHandler:(CDUnknownBlockType)arg3 forReason:(CDUnknownBlockType)arg4;
-- (void)asyncCachedToolWithDescription:(id)arg1 queue:(id)arg2 completionHandler:(CDUnknownBlockType)arg3 forReason:(CDUnknownBlockType)arg4;
+- (void)asyncCachedToolIncrementBusyWithDescription:(id)arg1 sessionIdentifier:(id)arg2 queue:(id)arg3 completionHandler:(CDUnknownBlockType)arg4 forReason:(CDUnknownBlockType)arg5;
 - (id)launchNewToolWithDescription:(id)arg1 error:(id *)arg2 forReason:(CDUnknownBlockType)arg3;
-- (id)cachedToolWithDescription:(id)arg1 error:(id *)arg2 forReason:(CDUnknownBlockType)arg3;
+- (id)cachedToolIncrementBusyWithDescription:(id)arg1 error:(id *)arg2 forReason:(CDUnknownBlockType)arg3;
+- (void)shutdownToolsExceedingTimeoutOf:(double)arg1;
+- (id)executionContextsStillInUse;
+- (void)enumerateExecutionContextsWithBlock:(CDUnknownBlockType)arg1;
+- (void)shutdownToolsIgnoringToolDescriptions:(id)arg1 delayedShutdown:(BOOL)arg2;
+- (void)shutdownWithExecutionContext:(id)arg1;
 - (id)executionContextForDescription:(id)arg1 error:(id *)arg2;
 - (Class)toolProxyClass;
 - (id)contextForLaunchingToolWithDescription:(id)arg1 error:(id *)arg2;

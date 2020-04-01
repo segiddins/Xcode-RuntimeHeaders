@@ -8,5 +8,6 @@
 
 @interface NSTableView (UserDataInspector)
 - (void)scrollRowsToVisible:(id)arg1;
+- (void)scrollRowsToVisible:(id)arg1;
 @end
 

@@ -16,6 +16,7 @@
 + (Class)ibDropTargetResolverClass;
 - (void).cxx_destruct;
 - (BOOL)interceptEvent:(id)arg1;
+- (id)captureImagesAndProcessGeometryOfItems:(id)arg1;
 - (struct CGRect)windowClippingRectForHighlightingObject:(id)arg1;
 - (struct CGRect)highlightRectForObject:(id)arg1;
 - (void)reattachDraggedObjects:(id)arg1 dragContext:(id)arg2;
@@ -23,11 +24,7 @@
 - (id)initialDragImageState:(id)arg1;
 - (id)draggedImageStateForItems:(id)arg1 withName:(id)arg2;
 - (id)draggedImageStateForControllers:(id)arg1 withName:(id)arg2;
-- (id)bottomBarViewForEditorView:(id)arg1 withSimulatedBarMetrics:(id)arg2;
-- (id)topBarViewForEditorView:(id)arg1 withSimulatedBarMetrics:(id)arg2;
-- (id)tabBarForSimulatedBarMetrics:(id)arg1;
-- (id)editorView:(id)arg1 selectedItemForSimulatedTabBar:(id)arg2;
-- (id)editorView:(id)arg1 itemsForSimulatedTabBar:(id)arg2;
+- (id)effectiveDisplayedTabBarItems;
 - (void)noteDescendant:(id)arg1 didChangeProperty:(id)arg2 fromValue:(id)arg3;
 - (void)didDeactivate;
 - (void)selectionOwner:(id)arg1 didSelect:(id)arg2 andDeselect:(id)arg3;

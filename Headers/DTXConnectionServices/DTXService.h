@@ -19,8 +19,8 @@
 + (BOOL)automaticallyRegistersCapabilities;
 + (void)instantiateServiceWithChannel:(id)arg1;
 @property(readonly, retain, nonatomic) DTXChannel *channel; // @synthesize channel=_channel;
+- (void).cxx_destruct;
 - (void)messageReceived:(id)arg1;
-- (void)dealloc;
 - (id)initWithChannel:(id)arg1;
 
 // Remaining properties

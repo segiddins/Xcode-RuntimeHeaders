@@ -6,20 +6,21 @@
 
 #import <objc/NSObject.h>
 
+#import <DVTAnalyticsClient/DVTAnalyticsPointIdentifierProtocol-Protocol.h>
 #import <DVTAnalyticsClient/DVTAnalyticsServiceURLComponentProviding-Protocol.h>
 #import <DVTAnalyticsClient/DVTServicesJSONSerialization-Protocol.h>
 
 @class DVTAnalyticsAppIdentifier, NSArray, NSDictionary, NSString;
 
-@interface DVTAnalyticsCrashPointIdentifier : NSObject <DVTAnalyticsServiceURLComponentProviding, DVTServicesJSONSerialization>
+@interface DVTAnalyticsCrashPointIdentifier : NSObject <DVTAnalyticsServiceURLComponentProviding, DVTServicesJSONSerialization, DVTAnalyticsPointIdentifierProtocol>
 {
     DVTAnalyticsAppIdentifier *_appIdentifier;
-    NSString *_crashPointId;
+    NSString *_analyticsPointIdentifier;
 }
 
 + (id)objectFromJSONRepresentation:(id)arg1 error:(id *)arg2;
 + (id)crashPointIdentifierWithAppIdentifier:(id)arg1 crashPointId:(id)arg2;
-@property(readonly) NSString *crashPointId; // @synthesize crashPointId=_crashPointId;
+@property(readonly) NSString *analyticsPointIdentifier; // @synthesize analyticsPointIdentifier=_analyticsPointIdentifier;
 @property(readonly) DVTAnalyticsAppIdentifier *appIdentifier; // @synthesize appIdentifier=_appIdentifier;
 - (void).cxx_destruct;
 @property(readonly, copy) NSString *description;

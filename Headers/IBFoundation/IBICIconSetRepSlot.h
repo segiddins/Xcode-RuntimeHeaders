@@ -6,23 +6,29 @@
 
 #import <IBFoundation/IBICImageSlot.h>
 
-@class IBICScale, IBICSize;
+@class IBICColorSpace, IBICScale, IBICSize;
 
 @interface IBICIconSetRepSlot : IBICImageSlot
 {
     IBICSize *_size;
     IBICScale *_scale;
+    IBICColorSpace *_colorSpace;
 }
 
-+ (id)allDefaultFileTypes;
-+ (id)variantSlotComponentClassesExcludingCoreVariants;
++ (id)genesisSlotsForSlots:(id)arg1;
 + (id)orderedComponentClasses;
-+ (id)slotWithSize:(id)arg1 scale:(id)arg2;
++ (id)slotWithSize:(id)arg1 scale:(id)arg2 colorSpace:(id)arg3;
 + (id)slotForFileName:(id)arg1;
 + (id)requiredFileNamesToSlots;
++ (id)allSlots;
++ (Class)assetRepClass;
++ (Class)assetSetClass;
++ (id)slotFilterWithSizeFilter:(id)arg1 scaleFilter:(id)arg2 colorSpaceFilter:(id)arg3;
+@property(readonly) IBICColorSpace *colorSpace; // @synthesize colorSpace=_colorSpace;
 @property(readonly) IBICScale *scale; // @synthesize scale=_scale;
 @property(readonly) IBICSize *size; // @synthesize size=_size;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) BOOL hasColorSpace;
 - (id)requiredPixelSize;
 - (id)outputFileNameGivenBaseName:(id)arg1 andExtension:(id)arg2;
 - (id)detailAreaPath;

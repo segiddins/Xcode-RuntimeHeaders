@@ -4,35 +4,29 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Foundation/NSObject.h>
+#import <objc/NSObject.h>
 
-@class NSArray, NSString, TSPropertyListDictionary, XCPlatformSpecification;
+@class DVTDispatchLock, DVTMacroDefinitionTable, DVTSDK, NSArray, NSDictionary, NSString, XCCommandLineToolSpecificationRegistry, XCPlatformSpecification;
 
 @interface XCSDKPackage : NSObject
 {
-    NSString *_path;
-    TSPropertyListDictionary *_infoDictionary;
-    NSArray *_defaultPropertyDicts;
-    NSArray *_customPropertyDicts;
+    DVTMacroDefinitionTable *_buildSettingDefaults;
+    DVTMacroDefinitionTable *_toolchainDefaults;
+    DVTMacroDefinitionTable *_buildSettingOverrides;
     NSArray *_preprocessorDefinitions;
-    NSString *_canonicalName;
-    NSString *_version;
-    NSString *_displayName;
-    NSString *_minimalDisplayName;
-    NSString *_propertyConditionName;
     NSString *_propertyConditionFamily;
     XCPlatformSpecification *_platform;
-    NSArray *_libraries;
-    NSArray *_supportedBuildToolComponents;
-    BOOL _isUserSDK;
+    DVTSDK *_underlyingSDK;
+    NSString *_systemVersionPlistPath;
+    NSString *_digest;
+    NSDictionary *_variantBuildSettings;
+    XCCommandLineToolSpecificationRegistry *_commandLineToolSpecificationRegistry;
+    DVTDispatchLock *_lock;
 }
 
-+ (id)sdkPackageForBootSystem;
-+ (BOOL)_settingsPlistFileExistsAtPath:(id)arg1;
-+ (id)_pathToSettingsPlistFileAtPath:(id)arg1;
++ (id)sdkPackageForUnsetSDKROOT;
 + (id)systemSDKContainingAbsolutePath:(id)arg1;
-+ (id)localizedSDKNameForCanonicalName:(id)arg1;
-+ (id)localizedFamilyNameForCanonicalName:(id)arg1;
++ (id)sdkVersionForCanonicalName:(id)arg1;
 + (id)systemSdksOrderedByFamilyName;
 + (id)systemSdkFamilyNames;
 + (id)systemSdksForFamilyName:(id)arg1;
@@ -43,43 +37,59 @@
 + (id)systemSdkForName:(id)arg1;
 + (id)sdkPackageForAbsolutePath:(id)arg1;
 + (id)sdkPackageForAbsolutePath:(id)arg1 forceCreate:(BOOL)arg2;
-+ (void)_setSDKPackage:(id)arg1 forResolvedAbsolutePath:(id)arg2;
-+ (id)_sdkPackageForResolvedAbsolutePath:(id)arg1;
-+ (id)sdkPackagesInDirectory:(id)arg1 forPlatform:(id)arg2;
++ (id)absolutePathForSDKPathString:(id)arg1;
++ (id)sdkPackageForUnderlyingSDK:(id)arg1;
++ (id)loadSdkPackagesForPlatform:(id)arg1;
 + (void)initialize;
+@property(readonly) DVTDispatchLock *lock; // @synthesize lock=_lock;
+@property(readonly) XCCommandLineToolSpecificationRegistry *commandLineToolSpecificationRegistry; // @synthesize commandLineToolSpecificationRegistry=_commandLineToolSpecificationRegistry;
+@property(readonly) NSDictionary *variantBuildSettings; // @synthesize variantBuildSettings=_variantBuildSettings;
+@property(retain) NSString *digest; // @synthesize digest=_digest;
+@property(readonly) NSString *systemVersionPlistPath; // @synthesize systemVersionPlistPath=_systemVersionPlistPath;
+@property(readonly) DVTSDK *underlyingSDK; // @synthesize underlyingSDK=_underlyingSDK;
+- (void).cxx_destruct;
 - (id)description;
+- (id)compilerSpecificationForIdentifier:(id)arg1;
+- (id)commandLineToolSpecificationForIdentifier:(id)arg1;
+- (void)enumerateCommandLineToolSpecificationsUsingBlock:(CDUnknownBlockType)arg1;
+- (id)allCommandLineToolSpecifications;
+- (void)createCommandLineToolSpecificationRegistry;
+- (id)platformDomain;
+- (id)macroExpansionScopeByAddingMacroDefinitionTablesToScope:(id)arg1 includingToolchains:(BOOL)arg2;
+- (id)macroExpansionScopeByAddingMacroDefinitionTablesToScope:(id)arg1;
 - (long long)compare:(id)arg1;
 - (long long)caseInsensitiveCompare:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
+@property(readonly) NSArray *toolchainNames;
 - (id)copyDefaultDeploymentVersionDict;
+@property(readonly) BOOL supportsBitcode;
 - (id)supportedBuildToolComponents;
 - (id)libraries;
-- (void)setLibraries:(id)arg1;
+- (id)commandLineToolSearchPath;
+@property(readonly, getter=isBaseSDK) BOOL baseSDK;
 - (id)supportedDeviceFamilies;
 - (void)setPlatform:(id)arg1;
 - (id)platform;
 - (id)propertyConditionFamily;
 - (id)propertyConditionName;
 - (id)preprocessorDefinitions;
-- (id)customPropertyDictionaries;
-- (id)defaultPropertyDictionaries;
+- (id)buildSettingOverrides;
+- (id)buildSettingDefaults;
 - (id)infoDictionary;
+- (id)versionInfo;
+- (id)sdkPath;
+- (id)settingsPlistPath;
 - (id)alternateSDK;
-- (id)canonicalName;
 - (id)localizedDisplayName;
 - (id)minimalDisplayName;
 - (id)displayName;
+- (id)canonicalName;
 - (id)version;
-- (BOOL)isUserSDK;
-- (void)_setIsUserSDK:(BOOL)arg1;
 - (BOOL)exists;
 - (id)unresolvedPath;
 - (id)path;
-- (void)dealloc;
-- (id)initWithName:(id)arg1;
-- (id)initWithPath:(id)arg1;
-- (id)initWithPath:(id)arg1 infoDictionary:(id)arg2;
+- (id)initWithUnderlyingSDK:(id)arg1;
 
 @end
 

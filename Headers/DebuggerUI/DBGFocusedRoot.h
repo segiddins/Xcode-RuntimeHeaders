@@ -6,13 +6,14 @@
 
 #import <objc/NSObject.h>
 
+#import <DebuggerUI/DBGDebugNavigatorContentObjectDataSource-Protocol.h>
 #import <DebuggerUI/IDEDebugNavigableModel-Protocol.h>
 #import <DebuggerUI/IDEKeyDrivenNavigableItemRepresentedObject-Protocol.h>
 
-@class DBGViewDebuggerAdditionUIController, DVTDocumentLocation, DVTFileDataType, IDEFileReference, IDELaunchSession, NSImage, NSString;
+@class DBGViewDebuggerAdditionUIController, DVTDocumentLocation, DVTFileDataType, DVTSymbol, IDEFileReference, IDELaunchSession, NSArray, NSImage, NSNull, NSString, NSURL;
 @protocol IDEKeyDrivenNavigableItemRepresentedObject;
 
-@interface DBGFocusedRoot : NSObject <IDEKeyDrivenNavigableItemRepresentedObject, IDEDebugNavigableModel>
+@interface DBGFocusedRoot : NSObject <DBGDebugNavigatorContentObjectDataSource, IDEKeyDrivenNavigableItemRepresentedObject, IDEDebugNavigableModel>
 {
     id <IDEKeyDrivenNavigableItemRepresentedObject> _focusedRoot;
     CDUnknownBlockType _unfocusHandler;
@@ -20,6 +21,7 @@
 }
 
 + (id)focusedRootWithObject:(id)arg1 uiController:(id)arg2 unfocusHandler:(CDUnknownBlockType)arg3;
++ (void)registerTableCellViewsForDebugNavigatorContentDelegateWithOutlineView:(id)arg1;
 @property __weak DBGViewDebuggerAdditionUIController *viewDebuggingUIController; // @synthesize viewDebuggingUIController=_viewDebuggingUIController;
 @property(copy) CDUnknownBlockType unfocusHandler; // @synthesize unfocusHandler=_unfocusHandler;
 @property __weak id <IDEKeyDrivenNavigableItemRepresentedObject> focusedRoot; // @synthesize focusedRoot=_focusedRoot;
@@ -27,25 +29,40 @@
 - (void)dealloc;
 @property(readonly) IDELaunchSession *launchSession;
 @property(readonly, copy) NSString *associatedProcessUUID;
-@property(readonly) NSString *navigableItem_toolTip;
-@property(readonly) NSString *navigableItem_name;
+@property(readonly, nonatomic) NSString *navigableItem_toolTip;
+@property(readonly, nonatomic) NSString *navigableItem_name;
 - (id)focusedChildren;
+- (id)tokenStringForDebugNavigatorContent;
+- (BOOL)shouldShowOutlineCell;
+- (void)_unfocusHierarchy:(id)arg1;
+- (id)_createUnfocusButton;
+- (id)createDebugNavigatorTableCellViewWithContentDelegate:(id)arg1;
+- (id)createThreadsStackContentTableRowViewForWithContentDelegate:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
-@property(readonly) NSString *navigableItem_accessibleImageDescription;
-@property(readonly) DVTDocumentLocation *navigableItem_contentDocumentLocation;
-@property(readonly) DVTFileDataType *navigableItem_documentType;
-@property(readonly) IDEFileReference *navigableItem_fileReference;
-@property(readonly) NSString *navigableItem_groupIdentifier;
-@property(readonly) NSImage *navigableItem_image;
-@property(readonly) BOOL navigableItem_isLeaf;
-@property(readonly) BOOL navigableItem_isMajorGroup;
-@property(readonly) BOOL navigableItem_missingReferencedContentIsImportant;
-@property(readonly) BOOL navigableItem_referencedContentExists;
-@property(readonly) NSString *navigableItem_subtitle;
+@property(readonly, nonatomic) NSString *navigableItem_accessibilityIdentifier;
+@property(readonly, nonatomic) NSString *navigableItem_accessibleImageDescription;
+@property(readonly, nonatomic) NSArray *navigableItem_additionalFilterMatchingText;
+@property(readonly, nonatomic) NSArray *navigableItem_childRepresentedObjects;
+@property(readonly, nonatomic) DVTDocumentLocation *navigableItem_contentDocumentLocation;
+@property(readonly, nonatomic) DVTFileDataType *navigableItem_documentType;
+@property(readonly, nonatomic) IDEFileReference *navigableItem_fileReference;
+@property(readonly, nonatomic) NSNull *navigableItem_filtered;
+@property(readonly, nonatomic) NSString *navigableItem_groupIdentifier;
+@property(readonly, nonatomic) NSImage *navigableItem_image;
+@property(readonly, nonatomic) BOOL navigableItem_isEnabled;
+@property(readonly, nonatomic) BOOL navigableItem_isLeaf;
+@property(readonly, nonatomic) BOOL navigableItem_isMajorGroup;
+@property(readonly, nonatomic) BOOL navigableItem_isVisible;
+@property(readonly, nonatomic) BOOL navigableItem_missingReferencedContentIsImportant;
+@property(readonly, nonatomic) id navigableItem_parentRepresentedObject;
+@property(readonly, nonatomic) BOOL navigableItem_referencedContentExists;
+@property(readonly, nonatomic) DVTSymbol *navigableItem_representedSymbol;
+@property(readonly, nonatomic) NSURL *navigableItem_representedURL;
+@property(readonly, nonatomic) NSString *navigableItem_subtitle;
 @property(readonly) Class superclass;
 
 @end

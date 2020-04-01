@@ -6,10 +6,9 @@
 
 #import <XCSUI/NSObject-Protocol.h>
 
-@class NSAttributedString, NSString;
+@class NSString;
 
 @protocol DVTRadar_Associate <NSObject>
-@property(readonly, copy, nonatomic) NSAttributedString *radarSummary;
 @property(nonatomic) unsigned long long duplicateOfProblemID;
 @property(nonatomic) unsigned long long priority;
 @property(copy, nonatomic) NSString *resolution;

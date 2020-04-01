@@ -8,13 +8,14 @@
 
 #import <IDESceneKitEditor/DVTWindowActivationStateObserver-Protocol.h>
 #import <IDESceneKitEditor/IDEInspectorPropertyEnablable-Protocol.h>
+#import <IDESceneKitEditor/NSAccessibilityButton-Protocol.h>
 #import <IDESceneKitEditor/NSDraggingSource-Protocol.h>
 #import <IDESceneKitEditor/NSMenuDelegate-Protocol.h>
 
-@class DVTObservingToken, NSArray, NSDictionary, NSMenu, NSString;
+@class DVTObservingToken, NSArray, NSDictionary, NSImage, NSMenu, NSPopUpButtonCell, NSString;
 @protocol DVTCancellable, SKEContentsPickerPopUpButtonDataSource;
 
-@interface SKEContentsPickerPopUpButton : NSView <DVTWindowActivationStateObserver, NSMenuDelegate, IDEInspectorPropertyEnablable, NSDraggingSource>
+@interface SKEContentsPickerPopUpButton : NSView <DVTWindowActivationStateObserver, NSMenuDelegate, IDEInspectorPropertyEnablable, NSDraggingSource, NSAccessibilityButton>
 {
     NSMenu *_contentsMenu;
     struct CGRect _popUpButtonArrowsRect;
@@ -22,15 +23,23 @@
     struct CGRect _contentsLabelRect;
     struct CGRect _wellRect;
     struct CGRect _contentsLabelTitleRect;
+    NSImage *_thumbnailImage;
     BOOL _acceptsImages;
     BOOL _acceptsColors;
+    BOOL _acceptsMDLSkyCube;
+    BOOL _acceptsUseBackground;
+    BOOL _acceptsFloat4;
+    BOOL _acceptsFloat;
+    BOOL _useBackgroundSelected;
     NSDictionary *_imageStateDictionary;
     id <DVTCancellable> _windowActivationObservation;
     id _contentsValueBindingController;
     NSString *_contentsValueBindingKeyPath;
     DVTObservingToken *_contentsValueBindingObservingToken;
     NSString *_customTitle;
-    BOOL _grayscale;
+    long long _tag;
+    long long _contentsTimestamp;
+    NSPopUpButtonCell *_cell;
     BOOL _acceptsNil;
     BOOL _acceptsNonFilePathImages;
     BOOL _enabled;
@@ -49,7 +58,9 @@
 + (id)keyPathsForValuesAffectingContentsIsColor;
 + (id)imageStateDictionaryForControlSize:(unsigned long long)arg1;
 + (BOOL)contentsIsNonFilePathImage:(id)arg1;
++ (BOOL)contentsIsMDLSkyCube:(id)arg1;
 + (BOOL)contentsIsImage:(id)arg1;
++ (BOOL)contentsIsValue:(id)arg1;
 + (BOOL)contentsIsNumber:(id)arg1;
 + (BOOL)contentsIsColor:(id)arg1;
 @property(retain, nonatomic) NSArray *customEnumeration; // @synthesize customEnumeration=_customEnumeration;
@@ -65,15 +76,17 @@
 @property BOOL acceptsNonFilePathImages; // @synthesize acceptsNonFilePathImages=_acceptsNonFilePathImages;
 @property BOOL acceptsNil; // @synthesize acceptsNil=_acceptsNil;
 - (void).cxx_destruct;
+@property(nonatomic) long long tag;
+- (BOOL)accessibilityPerformPress;
+- (id)accessibilityLabel;
 @property(retain) id objectValue;
+@property(nonatomic) BOOL contentsIsSyncedWithBackground;
 - (void)mouseDown:(id)arg1;
 - (BOOL)isMouseEventInColorWellRect:(id)arg1;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)drawContentsLabel;
 - (void)drawContents;
 - (BOOL)wantsSeparator;
-- (void)drawPopUpButtonArrows;
-- (void)drawFocusRing;
 - (id)effectiveAttributedTitle;
 - (id)attributedTitleForTitle:(id)arg1 titleIsPlaceholder:(BOOL)arg2;
 - (id)titleAttributes:(BOOL)arg1;
@@ -100,6 +113,7 @@
 - (void)takeColorFromColorPanel:(id)arg1;
 - (void)takeContentsFromPopUpMenu:(id)arg1;
 - (void)setNilContents:(id)arg1;
+- (void)setUseBackgroundContents:(id)arg1;
 - (void)sendAction;
 - (unsigned long long)draggingSession:(id)arg1 sourceOperationMaskForDraggingContext:(long long)arg2;
 - (void)beginImageDragForEvent:(id)arg1;
@@ -131,14 +145,21 @@
 - (id)effectiveSwatchBorderColor;
 - (id)effectiveTextColor:(BOOL)arg1;
 - (BOOL)contentsIsAllowedNil;
+- (id)thumbnailImage;
 - (id)contentsAsNSImage;
 - (BOOL)contentsIsNonFilePathImage;
+@property(readonly, nonatomic) BOOL contentsIsMDLSkyCube;
 @property(readonly, nonatomic) BOOL contentsIsImage;
+- (BOOL)contentsIsValue;
 - (BOOL)contentsIsNumber;
 @property(readonly, nonatomic) BOOL contentsIsColor;
 - (BOOL)canAcceptContents:(id)arg1;
-@property BOOL grayscale;
+@property BOOL acceptsFloat4;
+@property BOOL acceptsFloat;
+- (BOOL)draggable;
 @property(readonly, nonatomic) BOOL showColor;
+@property BOOL acceptsUseBackground;
+@property BOOL acceptsMDLSkyCube;
 @property BOOL acceptsColors;
 @property BOOL acceptsImages;
 - (void)encodeWithCoder:(id)arg1;

@@ -13,13 +13,12 @@
 #import <DebuggerUI/DVTStatefulObject-Protocol.h>
 #import <DebuggerUI/SCNSceneRendererDelegate-Protocol.h>
 
-@class DBGHostNode, DBGLayoutConstraintOverlayImageProvider, DBGLayoutConstraintSet, DBGNode, DBGRangeSliderNode, DBGSceneCamera, DBGViewDebuggerAdditionUIController, DVTObservingToken, DVTStackBacktrace, DVTStateToken, NSMutableSet, NSSet, NSString;
+@class DBGCanvasBackgroundColorChoice, DBGHostNode, DBGInteractiveSceneView, DBGLayoutConstraintOverlayImageProvider, DBGLayoutConstraintSet, DBGNode, DBGRangeSliderNode, DBGRenderingDestinationHelper, DBGSceneCamera, DBGViewDebuggerAdditionUIController, DVTObservingToken, DVTStackBacktrace, DVTStateToken, NSDictionary, NSMutableArray, NSMutableSet, NSSet, NSString;
 @protocol DBGSceneViewControllerDataSourceProtocol, DBGSceneViewControllerDelegate;
 
 @interface DBGSceneViewController : NSViewController <SCNSceneRendererDelegate, DBGInteractiveSceneViewDelegate, DBGRangeSliderDelegate, DBGSceneCameraDelegate, DVTStatefulObject, DVTInvalidation>
 {
     DBGSceneCamera *_camera;
-    DBGNode *_rotationNode;
     DBGHostNode *_rootHostNode;
     DBGRangeSliderNode *_rangeSliderNode;
     unsigned long long _rangeSliderLeft;
@@ -29,40 +28,56 @@
     BOOL _mouseOverRangeSlider;
     struct CGPoint _panLeftover;
     BOOL _explicitZoom;
-    NSSet *_selectedViewInstances;
+    NSSet *_selectedInstances;
     DBGLayoutConstraintSet *_allConstraints;
     DBGLayoutConstraintOverlayImageProvider *_constraintOverlaySource;
     DVTObservingToken *_highlightedConstraintObserver;
     NSMutableSet *_cameraFacingNodes;
     BOOL _explicitlyHideTrueSpacingBoxes;
     id <DBGSceneViewControllerDataSourceProtocol> _dataSource;
+    struct CATransform3D _animatedPanStartPoint;
+    struct CATransform3D _animatedPanEndPoint;
+    double _animatedPanStartZoomFactor;
+    double _animatedPanEndZoomFactor;
     BOOL _hierarchyContainsTrueSpacingBoxes;
     BOOL _showTrueSpacingBoxes;
     BOOL _clippingEnabled;
     BOOL _isIn3D;
     BOOL _showOnCanvasRangeSlider;
     BOOL _constraintsEnabled;
+    BOOL _headerDecorationsEnabled;
     BOOL _shouldHaveLineWidth;
     int _nodeContentMode;
     unsigned long long _numberOfZPlanes;
     id <DBGSceneViewControllerDelegate> _delegate;
+    DBGNode *_rotationNode;
+    DBGRenderingDestinationHelper *_renderingDestinationHelper;
     double _nodeSpacing;
     DVTStateToken *_stateToken;
+    DBGCanvasBackgroundColorChoice *_canvasBackgroundColorChoice;
     CDUnknownBlockType _mouseUpAfterDragBlock;
     DBGViewDebuggerAdditionUIController *_debuggerUIController;
+    NSMutableArray *_revealedObjects;
+    NSDictionary *_presentedObjects;
 }
 
 + (long long)version;
 + (void)configureStateSavingObjectPersistenceByName:(id)arg1;
 + (void)initialize;
+@property(retain, nonatomic) NSDictionary *presentedObjects; // @synthesize presentedObjects=_presentedObjects;
+@property(retain, nonatomic) NSMutableArray *revealedObjects; // @synthesize revealedObjects=_revealedObjects;
 @property __weak DBGViewDebuggerAdditionUIController *debuggerUIController; // @synthesize debuggerUIController=_debuggerUIController;
 @property(copy) CDUnknownBlockType mouseUpAfterDragBlock; // @synthesize mouseUpAfterDragBlock=_mouseUpAfterDragBlock;
 @property(nonatomic) BOOL shouldHaveLineWidth; // @synthesize shouldHaveLineWidth=_shouldHaveLineWidth;
+@property(retain, nonatomic) DBGCanvasBackgroundColorChoice *canvasBackgroundColorChoice; // @synthesize canvasBackgroundColorChoice=_canvasBackgroundColorChoice;
 @property(nonatomic) __weak DVTStateToken *stateToken; // @synthesize stateToken=_stateToken;
 @property(nonatomic) double nodeSpacing; // @synthesize nodeSpacing=_nodeSpacing;
 @property(nonatomic) int nodeContentMode; // @synthesize nodeContentMode=_nodeContentMode;
+@property(retain) DBGRenderingDestinationHelper *renderingDestinationHelper; // @synthesize renderingDestinationHelper=_renderingDestinationHelper;
+@property(retain) DBGNode *rotationNode; // @synthesize rotationNode=_rotationNode;
 @property __weak id <DBGSceneViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly) id <DBGSceneViewControllerDataSourceProtocol> dataSource; // @synthesize dataSource=_dataSource;
+@property BOOL headerDecorationsEnabled; // @synthesize headerDecorationsEnabled=_headerDecorationsEnabled;
 @property(readonly, nonatomic) BOOL constraintsEnabled; // @synthesize constraintsEnabled=_constraintsEnabled;
 @property(readonly) BOOL showOnCanvasRangeSlider; // @synthesize showOnCanvasRangeSlider=_showOnCanvasRangeSlider;
 @property unsigned long long numberOfZPlanes; // @synthesize numberOfZPlanes=_numberOfZPlanes;
@@ -71,14 +86,23 @@
 - (void)commitStateToDictionary:(id)arg1;
 - (void)revertStateWithDictionary:(id)arg1;
 - (void)primitiveInvalidate;
+- (void)controllerDecorationVisibilityNeedsUpdate;
+- (void)_updateControllerDecorationAfterAppearanceChangeForHostNodeTree;
+- (void)_updateControllerDecorationVisibilityForHostNodeTree;
+- (void)updateControllerDecorationVisibilityAnimated:(BOOL)arg1;
+- (void)renderer:(id)arg1 updateAtTime:(double)arg2;
 - (void)renderer:(id)arg1 willRenderScene:(id)arg2 atTime:(double)arg3;
 - (void)cameraDidZoomTo100Percent;
 - (void)cameraIsUpdatingZoomFactor;
 - (void)moveTo2D:(BOOL)arg1;
 - (void)toggle2D3D;
-- (void)zoom100Percent;
-- (void)zoomOut;
-- (void)zoomIn;
+- (void)zoom100Percent:(id)arg1;
+- (void)zoomOut:(id)arg1;
+- (void)zoomIn:(id)arg1;
+- (BOOL)_animationRecordingEnabledForEvent:(id)arg1;
+- (void)_playbackStoredAnimation;
+- (void)_storeAnimationEndPoint;
+- (void)_storeAnimationStartPoint;
 - (struct SCNVector3)adjustedPivotPoint;
 - (struct SCNVector3)visibleCenter;
 - (void)resetPivotNode;
@@ -90,7 +114,9 @@
 @property BOOL hierarchyContainsTrueSpacingBoxes; // @synthesize hierarchyContainsTrueSpacingBoxes=_hierarchyContainsTrueSpacingBoxes;
 - (void)setShowTrueSpacingBoxesUserInitiated:(BOOL)arg1;
 @property BOOL showTrueSpacingBoxes; // @synthesize showTrueSpacingBoxes=_showTrueSpacingBoxes;
+- (void)openFetchedDocument:(id)arg1;
 - (void)updateRenderingOrderWithRootNode:(id)arg1;
+- (void)toggleShowControllersAnimated:(BOOL)arg1;
 - (void)toggleShowConstraints;
 - (void)focusOnParent;
 - (void)focusOnSelectionOrChild;
@@ -109,6 +135,7 @@
 - (struct CATransform3D)_applyRotationRails:(struct CATransform3D)arg1;
 - (struct CATransform3D)rotationTransformForDeltaX:(double)arg1 deltaY:(double)arg2;
 - (void)rotate3DViewsWithXValue:(double)arg1 yValue:(double)arg2;
+- (BOOL)enableConstrainedRotation;
 - (void)updateNodesWithUpdatedCameraZoomFactorBelowRootNode:(id)arg1;
 @property(readonly) double zoomFactor;
 - (void)adjustCameraZoomLevelWithValue:(double)arg1 towardsCursorLocation:(struct SCNVector3)arg2;
@@ -128,6 +155,11 @@
 - (void)mousedOverNode:(id)arg1;
 - (void)mouseClickedAndHitRangeSliderNode:(id)arg1 withEvent:(id)arg2;
 - (void)mouseClickedAndHitNode:(id)arg1 withEvent:(id)arg2;
+- (void)sceneViewDidChangeEffectiveAppearance;
+- (void)sceneViewDidMoveToWindow;
+- (id)sceneColorWithCorrectColorSpaceFromColor:(id)arg1;
+- (void)_updateCanvasBackgroundColor;
+- (void)_initializeCanvasBackgroundColorChoice;
 - (double)screenSpaceBetweenTicks;
 - (struct SCNVector3)_positionOnPlaneForZVectorStartingAtPoint:(struct SCNVector3)arg1 relativeToNode:(id)arg2;
 - (void)calculateVisiblePlanesAndUpdateRangeSlider;
@@ -144,17 +176,28 @@
 - (void)distanceSliderChanged:(id)arg1;
 - (void)updateSpacingWithDistance:(double)arg1 aroundZPlaneIndex:(long long)arg2;
 - (struct CGPoint)_offsetForFocusedHierarchy;
+- (id)nodeForViewObject:(id)arg1;
+- (void)showConstraints:(id)arg1 onInstances:(id)arg2 forReason:(id)arg3;
+- (void)showViews:(id)arg1 forReason:(id)arg2;
+- (void)showObjects:(id)arg1 forReason:(id)arg2;
+- (void)clearReveal;
+- (void)updateWithRevealedObjects:(id)arg1;
 - (void)updatePresentedConstraintsForViewInstances:(id)arg1;
+- (id)_selectableViewsForShowingConstraints:(id)arg1 alreadySelectedInstances:(id)arg2;
+- (id)rootViewSurface;
 - (void)updateWithSelectedViewObjects:(id)arg1;
 - (unsigned long long)zIndexForNode:(id)arg1;
 - (void)updateViewWithIdentifier:(id)arg1 withSnapshot:(id)arg2;
 - (void)_finishInitializationByUpdatingUIWithRootView:(id)arg1;
 - (void)_setupOrientationForModelObject:(id)arg1;
+- (void)_updateSceneViewWithRootViewSurface:(id)arg1;
 - (void)initializeSceneWithRootView:(id)arg1;
-- (void)loadDataWithRootObject:(id)arg1 constraintSet:(id)arg2 debuggerUIController:(id)arg3 dataSourceManager:(id)arg4;
+@property(readonly) DBGInteractiveSceneView *sceneView;
+- (void)loadDataWithRootObject:(id)arg1 constraintSet:(id)arg2 debuggerUIController:(id)arg3;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 // Remaining properties
+@property(readonly) BOOL canRevertWithEmptyStateDictionary;
 @property(retain) DVTStackBacktrace *creationBacktrace;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;

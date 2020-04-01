@@ -6,20 +6,21 @@
 
 #import <DVTFoundation/DVTDocumentLocation.h>
 
-@class DVTCoverageDataContainer, NSString;
+@class NSNumber, NSURL;
 
 @interface IDECoverageResultsDocumentLocation : DVTDocumentLocation
 {
-    DVTCoverageDataContainer *_coverageData;
-    NSString *_itemIdentifier;
+    NSURL *_file;
+    NSNumber *_line;
 }
 
-@property(retain, nonatomic) NSString *itemIdentifier; // @synthesize itemIdentifier=_itemIdentifier;
-@property(retain, nonatomic) DVTCoverageDataContainer *coverageData; // @synthesize coverageData=_coverageData;
++ (id)coverageDocumentLocationForLogURL:(id)arg1 coverageData:(id)arg2;
+@property(retain, nonatomic) NSNumber *line; // @synthesize line=_line;
+@property(retain, nonatomic) NSURL *file; // @synthesize file=_file;
 - (void).cxx_destruct;
-- (BOOL)isEqual:(id)arg1;
-- (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 
 @end
 

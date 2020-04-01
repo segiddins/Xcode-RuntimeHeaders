@@ -7,6 +7,7 @@
 #import <AppKit/NSAppearance.h>
 
 @interface NSAppearance (IBAppearanceAdditions)
-- (BOOL)ibIsEqualToAppearanceNamed:(id)arg1;
+- (id)ibBestMatchedAppearanceName;
+- (BOOL)ibIsEqualToAppearanceNamed:(id)arg1 withPrecomputedBestMatchedName:(id)arg2;
 @end
 

@@ -6,21 +6,21 @@
 
 #import <DVTAnalyticsClient/DVTAnalyticsCrashPointData.h>
 
-@class DVTAnalyticsCrashPointDeviceFamilyDistribution, DVTAnalyticsCrashPointLogList, DVTAnalyticsCrashPointOSVersionDistribution, DVTAnalyticsCrashPointTimeDistribution;
+@class DVTAnalyticsCrashPointLogList, DVTAnalyticsPointDeviceFamilyDistribution, DVTAnalyticsPointOSVersionDistribution, DVTAnalyticsPointTimeDistribution;
 
 @interface DVTAnalyticsCrashPointDownloadData : DVTAnalyticsCrashPointData
 {
-    DVTAnalyticsCrashPointOSVersionDistribution *_osVersionDistribution;
-    DVTAnalyticsCrashPointDeviceFamilyDistribution *_deviceFamilyDistribution;
-    DVTAnalyticsCrashPointTimeDistribution *_crashPointTimeSeries;
+    DVTAnalyticsPointOSVersionDistribution *_osVersionDistribution;
+    DVTAnalyticsPointDeviceFamilyDistribution *_deviceFamilyDistribution;
+    DVTAnalyticsPointTimeDistribution *_crashPointTimeSeries;
     DVTAnalyticsCrashPointLogList *_logList;
 }
 
 + (id)crashPointForSession:(id)arg1 crashPointIdentifier:(id)arg2 distributionOptions:(id)arg3 error:(id *)arg4;
 @property(retain) DVTAnalyticsCrashPointLogList *logList; // @synthesize logList=_logList;
-@property(retain) DVTAnalyticsCrashPointTimeDistribution *crashPointTimeSeries; // @synthesize crashPointTimeSeries=_crashPointTimeSeries;
-@property(retain) DVTAnalyticsCrashPointDeviceFamilyDistribution *deviceFamilyDistribution; // @synthesize deviceFamilyDistribution=_deviceFamilyDistribution;
-@property(retain) DVTAnalyticsCrashPointOSVersionDistribution *osVersionDistribution; // @synthesize osVersionDistribution=_osVersionDistribution;
+@property(retain) DVTAnalyticsPointTimeDistribution *crashPointTimeSeries; // @synthesize crashPointTimeSeries=_crashPointTimeSeries;
+@property(retain) DVTAnalyticsPointDeviceFamilyDistribution *deviceFamilyDistribution; // @synthesize deviceFamilyDistribution=_deviceFamilyDistribution;
+@property(retain) DVTAnalyticsPointOSVersionDistribution *osVersionDistribution; // @synthesize osVersionDistribution=_osVersionDistribution;
 - (void).cxx_destruct;
 - (id)JSONRepresentation;
 

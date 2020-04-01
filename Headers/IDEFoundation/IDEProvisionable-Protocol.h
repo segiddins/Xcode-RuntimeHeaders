@@ -6,27 +6,32 @@
 
 #import <IDEFoundation/NSObject-Protocol.h>
 
-@class DVTAppIDFeatures, DVTFilePath, DVTPlatform, IDEProvisioningEntitlementsExpansion, NSDictionary, NSOrderedSet, NSString;
-@protocol IDEProvisioningBasicProfile, IDEProvisioningBasicTeam;
+@class DVTFilePath, DVTPlatform, DVTPortalAppIDFeatures, DVTPortalProfilePurpose, DVTSDK, IDEBuildParameters, IDEProvisionableEntitlements, IDEProvisioningEntitlementsExpansion, NSDictionary, NSOrderedSet, NSString;
+@protocol IDEProvisioningBasicTeam;
 
 @protocol IDEProvisionable <NSObject>
 @property(readonly, nonatomic) NSOrderedSet *configurations;
-@property(readonly, nonatomic) DVTAppIDFeatures *appIDFeatures;
-@property(nonatomic) long long provisioningStyle;
 @property(readonly, nonatomic) NSString *name;
-- (BOOL)allowSigningWithoutTeamSelectionForConfigurationNamed:(NSString *)arg1;
+- (BOOL)supportsIOSMacForBuildParameters:(IDEBuildParameters *)arg1;
+- (DVTPortalProfilePurpose *)provisioningPurposeForBuildParameters:(IDEBuildParameters *)arg1;
+- (BOOL)signingRequiresTeamForBuildParameters:(IDEBuildParameters *)arg1;
+- (BOOL)allowSigningWithoutTeamSelectionForBuildParameters:(IDEBuildParameters *)arg1;
 - (void)noteProvisioningInputsChanged;
-- (IDEProvisioningEntitlementsExpansion *)entitlementsExpansionForConfigurationNamed:(NSString *)arg1;
-- (NSDictionary *)baseEntitlementsForConfigurationNamed:(NSString *)arg1;
-- (DVTFilePath *)entitlementsFilePathForConfigurationNamed:(NSString *)arg1;
-- (void)setSigningCertificateIdentifier:(NSString *)arg1 forConfigurationNamed:(NSString *)arg2;
-- (NSString *)signingCertificateIdentifierForConfigurationNamed:(NSString *)arg1;
-- (void)setProvisioningProfile:(id <IDEProvisioningBasicProfile>)arg1 forConfigurationNamed:(NSString *)arg2;
-- (NSString *)provisioningProfileSpecifierForConfigurationNamed:(NSString *)arg1;
-- (NSString *)bundleIdentifierForConfigurationNamed:(NSString *)arg1;
-- (long long)profileSupportForConfigurationNamed:(NSString *)arg1;
-- (DVTPlatform *)platformForConfigurationNamed:(NSString *)arg1;
-- (void)setTeam:(id <IDEProvisioningBasicTeam>)arg1 forConfigurationNamed:(NSString *)arg2;
-- (id <IDEProvisioningBasicTeam>)teamForConfigurationNamed:(NSString *)arg1;
+- (unsigned long long)entitlementsDestinationForBuildParameters:(IDEBuildParameters *)arg1;
+- (IDEProvisioningEntitlementsExpansion *)entitlementsExpansionForBuildParameters:(IDEBuildParameters *)arg1;
+- (IDEProvisionableEntitlements *)baseEntitlementsForBuildParameters:(IDEBuildParameters *)arg1;
+- (DVTPortalAppIDFeatures *)appIDFeaturesForBuildParameters:(IDEBuildParameters *)arg1;
+- (DVTPortalAppIDFeatures *)appIDFeaturesForBuildParameters:(IDEBuildParameters *)arg1 entitlements:(NSDictionary *)arg2 withEntitlementsExpansion:(IDEProvisioningEntitlementsExpansion *)arg3;
+- (DVTFilePath *)entitlementsFilePathForBuildParameters:(IDEBuildParameters *)arg1;
+- (NSString *)signingCertificateIdentifierForBuildParameters:(IDEBuildParameters *)arg1;
+- (NSString *)provisioningProfileSpecifierForBuildParameters:(IDEBuildParameters *)arg1;
+- (NSString *)bundleIdentifierForBuildParameters:(IDEBuildParameters *)arg1;
+- (BOOL)wantsBundleIdentifierEditingForBuildParameters:(IDEBuildParameters *)arg1;
+- (long long)profileSupportForBuildParameters:(IDEBuildParameters *)arg1;
+- (NSString *)sdkVariantForBuildParameters:(IDEBuildParameters *)arg1;
+- (DVTSDK *)sdkForBuildParameters:(IDEBuildParameters *)arg1;
+- (DVTPlatform *)platformForBuildParameters:(IDEBuildParameters *)arg1;
+- (id <IDEProvisioningBasicTeam>)teamForBuildParameters:(IDEBuildParameters *)arg1;
+- (long long)provisioningStyleForBuildParameters:(IDEBuildParameters *)arg1;
 @end
 

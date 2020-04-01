@@ -15,8 +15,10 @@
     DVTGradientImageButton *_toggleRecordingButton;
     IDEWorkspaceTabController *_workspaceTabController;
     BOOL prefersDebugBarToAlwaysBeShown;
+    BOOL _isAttachedToDebugBar;
 }
 
+@property BOOL isAttachedToDebugBar; // @synthesize isAttachedToDebugBar=_isAttachedToDebugBar;
 @property BOOL prefersDebugBarToAlwaysBeShown; // @synthesize prefersDebugBarToAlwaysBeShown;
 - (void).cxx_destruct;
 - (void)willBeDetachedFromDebugBar:(id)arg1;

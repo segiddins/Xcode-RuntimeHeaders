@@ -8,12 +8,12 @@
 
 @interface IDEDistributionConsoleLogger : DVTConsoleLogger
 {
-    int _exclusiveLogLevel;
+    unsigned long long _exclusiveLogLevel;
 }
 
-@property(readonly) int exclusiveLogLevel; // @synthesize exclusiveLogLevel=_exclusiveLogLevel;
-- (void)logMessage:(id)arg1 forAspect:(id)arg2 logLevel:(int)arg3;
-- (id)initWithExclusiveLogLevel:(int)arg1;
+@property(readonly) unsigned long long exclusiveLogLevel; // @synthesize exclusiveLogLevel=_exclusiveLogLevel;
+- (void)logMessage:(id)arg1 forAspect:(id)arg2 logLevel:(unsigned long long)arg3;
+- (id)initWithExclusiveLogLevel:(unsigned long long)arg1;
 
 @end
 

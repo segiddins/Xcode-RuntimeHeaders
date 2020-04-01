@@ -6,22 +6,14 @@
 
 #import <objc/NSObject.h>
 
-@class NSDictionary, NSNumber;
-
 @interface IBMessageChannel : NSObject
 {
     int _writeFD;
     int _readFD;
     BOOL _shutdown;
-    NSDictionary *_remoteCapabilities;
-    NSNumber *_protocolVersion;
 }
 
-+ (id)negotiateProtocolVersionFromLocalCapabilities:(id)arg1 remoteCapabilities:(id)arg2 error:(id *)arg3;
-- (void).cxx_destruct;
-- (long long)binaryArchiveVersion;
 - (void)shutdown;
-- (BOOL)startupReturningError:(id *)arg1;
 - (id)initWithSocket:(int)arg1 error:(id *)arg2;
 - (id)initWithWriteDescriptor:(int)arg1 readDescriptor:(int)arg2 error:(id *)arg3;
 

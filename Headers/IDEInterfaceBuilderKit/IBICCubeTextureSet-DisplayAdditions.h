@@ -8,6 +8,6 @@
 
 @interface IBICCubeTextureSet (DisplayAdditions)
 - (id)overviewCapsuleSpecification;
-- (id)typeIcon;
+- (id)includedAttributesInspectorSlicesForChild:(id)arg1;
 @end
 

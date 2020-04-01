@@ -6,9 +6,11 @@
 
 #import <IBFoundation/IBICAbstractStickerItem.h>
 
+#import <IBFoundation/IBICCompilableSticker-Protocol.h>
+
 @class IBICManifestArchivist, NSData, NSString;
 
-@interface IBICStickerFrameSet : IBICAbstractStickerItem
+@interface IBICStickerFrameSet : IBICAbstractStickerItem <IBICCompilableSticker>
 {
     IBICManifestArchivist *_manifestArchivist;
     NSData *_assetData;
@@ -35,7 +37,7 @@
 @property(nonatomic) long long repetitions; // @synthesize repetitions=_repetitions;
 - (void).cxx_destruct;
 - (BOOL)isEqualForUnitTests:(id)arg1;
-- (BOOL)writeAPNGToPath:(id)arg1 populatingIssues:(id)arg2 withError:(id *)arg3;
+- (BOOL)writeAPNGToPath:(id)arg1 withError:(id *)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)pixelSize;
@@ -56,12 +58,18 @@
 - (id)manifestFileName;
 - (id)initializeManifestArchivist;
 - (void)populateIssues:(id)arg1 context:(id)arg2;
-- (id)issueForMissingFrameContentInFrames:(id)arg1;
-- (void)updateIdentifierOfIncommingChildToBeUnique:(id)arg1;
+- (void)updateIdentifierOfIncomingChildToBeUnique:(id)arg1;
 - (long long)childOrdering;
 - (id)defaultUnqualifiedRuntimeName;
 - (Class)expectedChildClassForSlot:(id)arg1;
 - (id)init;
+- (BOOL)compileToPath:(id)arg1 options:(id)arg2 results:(id)arg3;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

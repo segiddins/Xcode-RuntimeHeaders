@@ -6,13 +6,14 @@
 
 #import <objc/NSObject.h>
 
-#import <GPUToolsServices/NSCoding-Protocol.h>
 #import <GPUToolsServices/NSCopying-Protocol.h>
+#import <GPUToolsServices/NSSecureCoding-Protocol.h>
 
-@interface DYInvestigatorRecommendationItem : NSObject <NSCoding, NSCopying>
+@interface DYInvestigatorRecommendationItem : NSObject <NSSecureCoding, NSCopying>
 {
 }
 
++ (BOOL)supportsSecureCoding;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

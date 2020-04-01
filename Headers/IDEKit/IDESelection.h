@@ -12,13 +12,15 @@
 
 @interface IDESelection : NSObject <NSCopying>
 {
-    NSArray *_navigableItemArchivableRepresentations;
+    NSArray *_selectedItems;
 }
 
 + (id)selectionWithNavigableItemArchivableRepresentations:(id)arg1;
 + (id)selectionWithNavigableItems:(id)arg1;
-@property(readonly, copy) NSArray *navigableItemArchivableRepresentations; // @synthesize navigableItemArchivableRepresentations=_navigableItemArchivableRepresentations;
+@property(readonly, nonatomic) NSArray *selectedItems; // @synthesize selectedItems=_selectedItems;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *navigableItemArchivableRepresentationsForTemporaryCompatibility;
+- (id)navigableItemArchivableRepresentations;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithNavigableItemArchivableRepresentations:(id)arg1;

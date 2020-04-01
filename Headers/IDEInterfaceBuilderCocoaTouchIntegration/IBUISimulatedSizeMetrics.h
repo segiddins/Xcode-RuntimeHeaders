@@ -25,7 +25,7 @@
 + (id)instantiateWithCoder:(id)arg1;
 + (id)instantiateWithDocumentUnarchiver:(id)arg1;
 @property(readonly, nonatomic) NSValue *documentViewInset;
-- (id)effectiveSimulatedCanvasFrameContentViewSizeForOrientation:(int)arg1;
+- (id)effectiveSimulatedCanvasFrameContentViewSizeForOrientation:(long long)arg1;
 @property(readonly, nonatomic) IBUISimulatedMetricsModifier *metricsModifier;
 - (id)migratableSimulatedDestinationMetricsOrNil;
 - (id)configurationForScreenMetrics:(id)arg1 orientationMetrics:(id)arg2;

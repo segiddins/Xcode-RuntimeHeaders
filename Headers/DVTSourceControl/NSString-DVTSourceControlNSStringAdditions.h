@@ -7,6 +7,7 @@
 #import <Foundation/NSString.h>
 
 @interface NSString (DVTSourceControlNSStringAdditions)
+- (BOOL)dvtscm_isEqualToURLStringIgnoringPercentEncoding:(id)arg1;
 - (id)dvtscm_stringWithInvalidStrings:(id)arg1;
 - (id)dvtscm_urlStringByAppendingPathComponent:(id)arg1;
 - (id)dvtscm_stringByDeletingTrailingSlash;

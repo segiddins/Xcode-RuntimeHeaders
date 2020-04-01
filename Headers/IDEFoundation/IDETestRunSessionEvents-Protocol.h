@@ -6,21 +6,24 @@
 
 #import <IDEFoundation/NSObject-Protocol.h>
 
-@class DVTTestPerformanceMetricOutput, IDEEntityIdentifier, IDETest, IDETestResult, IDETestResultMessage, IDETestRunner, NSError, NSString, XCActivityRecord;
+@class DVTTestPerformanceMetricOutput, IDETestIdentifier, IDETestResult, IDETestResultMessage, IDETestRunSession, NSError, NSString, XCActivityRecord;
+@protocol IDETestRunner, IDETestTargetRunner;
 
 @protocol IDETestRunSessionEvents <NSObject>
-- (void)didFinishTest:(IDETest *)arg1 withTestResult:(IDETestResult *)arg2 rawOutput:(NSString *)arg3;
-- (void)didFailTest:(IDETest *)arg1 withTestResultMessage:(IDETestResultMessage *)arg2 rawOutput:(NSString *)arg3;
-- (void)test:(IDETest *)arg1 didFinishActivity:(XCActivityRecord *)arg2;
-- (void)test:(IDETest *)arg1 willStartActivity:(XCActivityRecord *)arg2;
-- (void)test:(IDETest *)arg1 didMeasurePerformanceMetric:(DVTTestPerformanceMetricOutput *)arg2 rawOutput:(NSString *)arg3;
-- (void)testDidOutput:(NSString *)arg1;
-- (void)didStartTest:(IDETest *)arg1 withRawOutput:(NSString *)arg2;
-- (void)testSuiteDidFinish:(long long)arg1 withFailures:(long long)arg2 unexpected:(long long)arg3 testDuration:(double)arg4 totalDuration:(double)arg5 rawOutput:(NSString *)arg6;
-- (void)testSuite:(NSString *)arg1 willFinishAt:(NSString *)arg2 rawOutput:(NSString *)arg3;
-- (void)testSuite:(NSString *)arg1 didStartAt:(NSString *)arg2 rawOutput:(NSString *)arg3;
-- (void)testOperationGroupDidFinish;
-- (void)testOperationWillFinishWithSuccess:(BOOL)arg1 withError:(NSError *)arg2;
-- (void)testRunner:(IDETestRunner *)arg1 didLaunchTestSessionForScheme:(IDEEntityIdentifier *)arg2 withDisplayName:(NSString *)arg3 diagnosticLogPath:(NSString *)arg4;
+- (void)worker:(id <IDETestRunner>)arg1 testTargetRunner:(id <IDETestTargetRunner>)arg2 didFinishTestWithIdentifier:(IDETestIdentifier *)arg3 withTestResult:(IDETestResult *)arg4 rawOutput:(NSString *)arg5;
+- (void)worker:(id <IDETestRunner>)arg1 testTargetRunner:(id <IDETestTargetRunner>)arg2 didFailTestWithIdentifier:(IDETestIdentifier *)arg3 withTestResultMessage:(IDETestResultMessage *)arg4 rawOutput:(NSString *)arg5;
+- (void)worker:(id <IDETestRunner>)arg1 testTargetRunner:(id <IDETestTargetRunner>)arg2 testWithIdentifier:(IDETestIdentifier *)arg3 didFinishActivity:(XCActivityRecord *)arg4;
+- (void)worker:(id <IDETestRunner>)arg1 testTargetRunner:(id <IDETestTargetRunner>)arg2 testWithIdentifier:(IDETestIdentifier *)arg3 willStartActivity:(XCActivityRecord *)arg4;
+- (void)worker:(id <IDETestRunner>)arg1 testTargetRunner:(id <IDETestTargetRunner>)arg2 testWithIdentifier:(IDETestIdentifier *)arg3 didMeasurePerformanceMetric:(DVTTestPerformanceMetricOutput *)arg4 rawOutput:(NSString *)arg5;
+- (void)worker:(id <IDETestRunner>)arg1 testTargetRunner:(id <IDETestTargetRunner>)arg2 testDidOutput:(NSString *)arg3;
+- (void)worker:(id <IDETestRunner>)arg1 testTargetRunner:(id <IDETestTargetRunner>)arg2 didStartTestWithIdentifier:(IDETestIdentifier *)arg3 withRawOutput:(NSString *)arg4;
+- (void)worker:(id <IDETestRunner>)arg1 testTargetRunner:(id <IDETestTargetRunner>)arg2 testSuiteDidFinish:(unsigned long long)arg3 withFailures:(unsigned long long)arg4 unexpected:(unsigned long long)arg5 testDuration:(double)arg6 totalDuration:(double)arg7 rawOutput:(NSString *)arg8;
+- (void)worker:(id <IDETestRunner>)arg1 testTargetRunner:(id <IDETestTargetRunner>)arg2 testSuite:(NSString *)arg3 willFinishAt:(NSString *)arg4 rawOutput:(NSString *)arg5;
+- (void)worker:(id <IDETestRunner>)arg1 testTargetRunner:(id <IDETestTargetRunner>)arg2 testSuite:(NSString *)arg3 didStartAt:(NSString *)arg4 rawOutput:(NSString *)arg5;
+- (void)worker:(id <IDETestRunner>)arg1 testTargetRunner:(id <IDETestTargetRunner>)arg2 willFinishWithSuccess:(BOOL)arg3 withError:(NSError *)arg4;
+- (void)worker:(id <IDETestRunner>)arg1 testTargetRunner:(id <IDETestTargetRunner>)arg2 didLaunchWithDiagnosticLogPath:(NSString *)arg3;
+- (void)testTargetRunner:(id <IDETestTargetRunner>)arg1 didEndWithCancellation:(BOOL)arg2;
+- (void)testTargetRunnerDidStart:(id <IDETestTargetRunner>)arg1;
+- (void)testRunSessionDidFinish:(IDETestRunSession *)arg1 withCancellation:(BOOL)arg2;
 @end
 

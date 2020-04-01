@@ -6,36 +6,58 @@
 
 #import <objc/NSObject.h>
 
-@class DVTFilePath, IDEExecutionEnvironment, IDERunDestination, IDESchemeActionsInvocationRecord, IDESchemeCommand, NSArray, NSDictionary, NSString;
+@class DVTFilePath, IDEExecutionEnvironment, IDERunDestination, IDESchemeActionsInvocationRecord, IDESchemeCommand, NSArray, NSDictionary, NSNumber, NSString;
+@protocol IDEBuildOperationClientInfo;
 
 @interface IDESchemeOperationParameters : NSObject
 {
-    int _schemeTask;
-    int _buildCommand;
+    BOOL _collectBuildTimeStatistics;
+    BOOL _collectTimelineMetrics;
+    long long _schemeTask;
+    long long _buildCommand;
     IDEExecutionEnvironment *_executionEnvironment;
     IDERunDestination *_runDestination;
     IDESchemeCommand *_schemeCommand;
     NSString *_commandName;
     IDESchemeActionsInvocationRecord *_invocationRecord;
     DVTFilePath *_filePathForSingleFileAction;
-    NSArray *_overridingTestingSpecifiers;
+    NSArray *_overridingTestingSpecifierGroups;
+    NSArray *_overridingTestPlanReferences;
+    NSArray *_onlyTestConfigurations;
+    NSArray *_skipTestConfigurations;
     NSArray *_additionalLaunchCommandLineArguments;
     NSDictionary *_overridingLaunchEnvironmentVariables;
+    NSNumber *_parallelTestingEnabledOverride;
+    NSNumber *_parallelTestingWorkerCountOverride;
+    NSNumber *_parallelTestingMaximumWorkerCount;
+    NSString *_contextString;
+    id <IDEBuildOperationClientInfo> _buildOperationClientInfo;
 }
 
-+ (id)operationParametersWithSchemeTask:(int)arg1 buildCommand:(int)arg2 executionEnvironment:(id)arg3 runDestination:(id)arg4 schemeCommand:(id)arg5 commandName:(id)arg6 invocationRecord:(id)arg7;
-@property(retain) NSDictionary *overridingLaunchEnvironmentVariables; // @synthesize overridingLaunchEnvironmentVariables=_overridingLaunchEnvironmentVariables;
-@property(retain) NSArray *additionalLaunchCommandLineArguments; // @synthesize additionalLaunchCommandLineArguments=_additionalLaunchCommandLineArguments;
-@property(retain) NSArray *overridingTestingSpecifiers; // @synthesize overridingTestingSpecifiers=_overridingTestingSpecifiers;
-@property(retain) DVTFilePath *filePathForSingleFileAction; // @synthesize filePathForSingleFileAction=_filePathForSingleFileAction;
++ (id)operationParametersWithSchemeTask:(long long)arg1 buildCommand:(long long)arg2 executionEnvironment:(id)arg3 runDestination:(id)arg4 schemeCommand:(id)arg5 commandName:(id)arg6 invocationRecord:(id)arg7;
+@property(retain) id <IDEBuildOperationClientInfo> buildOperationClientInfo; // @synthesize buildOperationClientInfo=_buildOperationClientInfo;
+@property BOOL collectTimelineMetrics; // @synthesize collectTimelineMetrics=_collectTimelineMetrics;
+@property(copy) NSString *contextString; // @synthesize contextString=_contextString;
+@property BOOL collectBuildTimeStatistics; // @synthesize collectBuildTimeStatistics=_collectBuildTimeStatistics;
+@property(copy) NSNumber *parallelTestingMaximumWorkerCount; // @synthesize parallelTestingMaximumWorkerCount=_parallelTestingMaximumWorkerCount;
+@property(copy) NSNumber *parallelTestingWorkerCountOverride; // @synthesize parallelTestingWorkerCountOverride=_parallelTestingWorkerCountOverride;
+@property(copy) NSNumber *parallelTestingEnabledOverride; // @synthesize parallelTestingEnabledOverride=_parallelTestingEnabledOverride;
+@property(copy) NSDictionary *overridingLaunchEnvironmentVariables; // @synthesize overridingLaunchEnvironmentVariables=_overridingLaunchEnvironmentVariables;
+@property(copy) NSArray *additionalLaunchCommandLineArguments; // @synthesize additionalLaunchCommandLineArguments=_additionalLaunchCommandLineArguments;
+@property(copy) NSArray *skipTestConfigurations; // @synthesize skipTestConfigurations=_skipTestConfigurations;
+@property(copy) NSArray *onlyTestConfigurations; // @synthesize onlyTestConfigurations=_onlyTestConfigurations;
+@property(copy) NSArray *overridingTestPlanReferences; // @synthesize overridingTestPlanReferences=_overridingTestPlanReferences;
+@property(copy) NSArray *overridingTestingSpecifierGroups; // @synthesize overridingTestingSpecifierGroups=_overridingTestingSpecifierGroups;
+@property(copy) DVTFilePath *filePathForSingleFileAction; // @synthesize filePathForSingleFileAction=_filePathForSingleFileAction;
 @property(retain) IDESchemeActionsInvocationRecord *invocationRecord; // @synthesize invocationRecord=_invocationRecord;
 @property(copy) NSString *commandName; // @synthesize commandName=_commandName;
 @property(retain) IDESchemeCommand *schemeCommand; // @synthesize schemeCommand=_schemeCommand;
 @property(retain) IDERunDestination *runDestination; // @synthesize runDestination=_runDestination;
 @property(retain) IDEExecutionEnvironment *executionEnvironment; // @synthesize executionEnvironment=_executionEnvironment;
-@property int buildCommand; // @synthesize buildCommand=_buildCommand;
-@property int schemeTask; // @synthesize schemeTask=_schemeTask;
+@property long long buildCommand; // @synthesize buildCommand=_buildCommand;
+@property long long schemeTask; // @synthesize schemeTask=_schemeTask;
 - (void).cxx_destruct;
+- (id)init;
 
 @end
 

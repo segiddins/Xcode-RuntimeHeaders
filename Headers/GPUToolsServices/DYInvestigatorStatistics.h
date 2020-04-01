@@ -6,10 +6,10 @@
 
 #import <objc/NSObject.h>
 
-#import <GPUToolsServices/NSCoding-Protocol.h>
 #import <GPUToolsServices/NSCopying-Protocol.h>
+#import <GPUToolsServices/NSSecureCoding-Protocol.h>
 
-@interface DYInvestigatorStatistics : NSObject <NSCoding, NSCopying>
+@interface DYInvestigatorStatistics : NSObject <NSSecureCoding, NSCopying>
 {
     unsigned long long _minimum;
     unsigned long long _firstQuartile;
@@ -23,6 +23,7 @@
 }
 
 + (id)statisticsFromArray:(id)arg1 getter:(CDUnknownBlockType)arg2;
++ (BOOL)supportsSecureCoding;
 @property(nonatomic) unsigned long long meanQ1toQ3; // @synthesize meanQ1toQ3=_meanQ1toQ3;
 @property(nonatomic) unsigned long long sumWeightQ1toQ3; // @synthesize sumWeightQ1toQ3=_sumWeightQ1toQ3;
 @property(nonatomic) unsigned long long sumValueQ1toQ3; // @synthesize sumValueQ1toQ3=_sumValueQ1toQ3;

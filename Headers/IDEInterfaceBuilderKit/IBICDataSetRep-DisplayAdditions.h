@@ -13,5 +13,6 @@
 - (id)image;
 - (id)icon;
 @property(copy) NSString *ibInspectedUniversalTypeIdentifier;
+- (BOOL)validateSlottedAssetRepForWriting:(id)arg1 withOptions:(id)arg2 andFailureIssue:(id *)arg3;
 @end
 

@@ -15,6 +15,7 @@
     NSHashTable *_weakObserversHashTable;
     DVTDispatchLock *_accessLock;
     long long _lockCount;
+    IBPlatform *_platform;
     DVTFilePath *_builtFilePath;
     NSDictionary *_buildSettings;
     IBLiveViewsManager *_manager;
@@ -23,7 +24,7 @@
 + (void)initialize;
 @property(nonatomic) __weak IBLiveViewsManager *manager; // @synthesize manager=_manager;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) IBPlatform *platform;
+- (id)effectivePlatform;
 - (void)performLockedBlock:(CDUnknownBlockType)arg1;
 - (void)setBuiltFilePath:(id)arg1 withBuildSettings:(id)arg2;
 @property(copy, nonatomic) NSDictionary *buildSettings; // @synthesize buildSettings=_buildSettings;
@@ -35,7 +36,7 @@
 - (void)addObserver:(id)arg1;
 @property(readonly, copy) NSString *description;
 - (void)primitiveInvalidate;
-- (id)init;
+- (id)initWithExplicitPlatform:(id)arg1;
 
 // Remaining properties
 @property(retain) DVTStackBacktrace *creationBacktrace;

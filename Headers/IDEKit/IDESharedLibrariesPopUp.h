@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <DVTKit/DVTPopoverContentViewController.h>
+#import <DVTUserInterfaceKit/DVTPopoverContentViewController.h>
 
 @class DVTBorderedView, IDEDebugSession, NSArray, NSArrayController, NSURL;
 
@@ -31,7 +31,6 @@
 - (void)_cleanUpAfterClosingPopUpWindow;
 - (void)done:(id)arg1;
 - (void)_showPopUpAtPoint:(struct CGPoint)arg1 relativeToView:(id)arg2;
-- (void)_setupGlassBar;
 - (void)loadView;
 - (id)_initWithDebugSession:(id)arg1 executableURL:(id)arg2;
 

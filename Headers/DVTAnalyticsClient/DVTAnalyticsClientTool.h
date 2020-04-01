@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class DVTAnalyticsAppIdentifier, DVTAnalyticsCrashPointIdentifier, DVTDeveloperAccount, DVTServicesSession, NSArray, NSFileHandle, NSString;
+@class DVTAnalyticsAppIdentifier, DVTAnalyticsCrashPointIdentifier, DVTDeveloperAccount, DVTServicesAccountBasedSession, NSArray, NSFileHandle, NSString;
 
 @interface DVTAnalyticsClientTool : NSObject
 {
@@ -31,11 +31,11 @@
     NSString *_lastCrashReporterKey;
     NSString *_lastCrashReportTime;
     long long _command;
-    DVTServicesSession *_session;
+    DVTServicesAccountBasedSession *_session;
 }
 
 + (id)analyticsClientTool;
-@property(retain) DVTServicesSession *session; // @synthesize session=_session;
+@property(retain) DVTServicesAccountBasedSession *session; // @synthesize session=_session;
 @property long long command; // @synthesize command=_command;
 @property(retain) NSString *lastCrashReportTime; // @synthesize lastCrashReportTime=_lastCrashReportTime;
 @property(retain) NSString *lastCrashReporterKey; // @synthesize lastCrashReporterKey=_lastCrashReporterKey;

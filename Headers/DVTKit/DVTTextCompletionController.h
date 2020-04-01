@@ -6,12 +6,12 @@
 
 #import <objc/NSObject.h>
 
-@class DVTCompletingTextView, DVTTextCompletionSession, NSString;
-@protocol DVTCancellable;
+@class DVTTextCompletionSession, NSString, NSView;
+@protocol DVTCancellable, DVTTextCompletionSupportingTextView;
 
 @interface DVTTextCompletionController : NSObject
 {
-    DVTCompletingTextView *_textView;
+    NSView<DVTTextCompletionSupportingTextView> *_textView;
     DVTTextCompletionSession *_currentSession;
     NSString *_lastDismissingTextViewAction;
     NSString *_lastDismissingAppAction;
@@ -27,7 +27,7 @@
 @property(retain) DVTTextCompletionSession *currentSession; // @synthesize currentSession=_currentSession;
 @property(readonly) BOOL sessionInProgress; // @synthesize sessionInProgress=_sessionInProgress;
 @property(getter=isAutoCompletionEnabled) BOOL autoCompletionEnabled; // @synthesize autoCompletionEnabled=_autoCompletionEnabled;
-@property(readonly) DVTCompletingTextView *textView; // @synthesize textView=_textView;
+@property(readonly) NSView<DVTTextCompletionSupportingTextView> *textView; // @synthesize textView=_textView;
 - (void).cxx_destruct;
 - (id)debugStateString;
 - (BOOL)showInfoPanelForSelectedCompletion;

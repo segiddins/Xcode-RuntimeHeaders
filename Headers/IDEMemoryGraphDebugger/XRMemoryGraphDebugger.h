@@ -10,49 +10,70 @@
 #import <IDEMemoryGraphDebugger/IDEDebugNavigableModel-Protocol.h>
 #import <IDEMemoryGraphDebugger/IDEKeyDrivenNavigableItemRepresentedObject-Protocol.h>
 
-@class DTXChannel, DTXConnection, DVTDocumentLocation, DVTFileDataType, DVTObservingToken, DVTStackBacktrace, IDEDebugSession, IDEFileReference, IDELaunchSession, NSData, NSError, NSImage, NSString, NSURL, XRMemoryGraphDebuggerIndex, XRMemoryGraphIssueGenerator;
+@class DTMemoryGraphItem, DTXChannel, DTXConnection, DVTDispatchLock, DVTDocumentLocation, DVTFileDataType, DVTFuture, DVTObservingToken, DVTStackBacktrace, DVTSymbol, IDEDebugSession, IDEFileReference, IDELaunchSession, NSArray, NSData, NSError, NSImage, NSNull, NSString, NSURL, XRMemoryGraphDebuggerDomainProvider, XRMemoryGraphDebuggerIndex, XRMemoryGraphIssueGenerator, XRMemoryGraphProcessDescription;
+@protocol DVTCancellable;
 
 @interface XRMemoryGraphDebugger : NSObject <IDEDebugNavigableModel, IDEKeyDrivenNavigableItemRepresentedObject, DVTInvalidation>
 {
-    DTXChannel *_leaksChannel;
     DVTObservingToken *_debugSessionStateObservingToken;
     DVTObservingToken *_memoryDebuggingStateObservingToken;
     int _mallocStackLoggingState;
     int _loadedState;
-    unsigned int _initialItemIdentifier;
     XRMemoryGraphDebuggerIndex *_unfilteredIndex;
     IDEDebugSession *_debugSession;
     NSURL *_memoryGraphPath;
+    XRMemoryGraphProcessDescription *_processDescription;
+    XRMemoryGraphDebuggerDomainProvider *_domainProvider;
     double _percentLoaded;
     NSData *_cachedRawMemoryGraph;
-    DTXConnection *_primaryInstrumentsServer;
+    DVTObservingToken *_processControlStateObservingToken;
     XRMemoryGraphIssueGenerator *_issueGenerator;
+    DTXConnection *_primaryInstrumentsServer;
+    DTXChannel *_leaksChannel;
+    DVTFuture *_instrumentsServerFuture;
+    id <DVTCancellable> _indexCreationToken;
+    DVTDispatchLock *_resourceLock;
 }
 
 + (id)keyPathsForValuesAffectingLoadedState;
 + (id)keyPathsForValuesAffectingChildren;
 + (void)initialize;
++ (id)keyPathsForValuesAffectingNavigableItem_childRepresentedObjects;
+@property(retain) DVTDispatchLock *resourceLock; // @synthesize resourceLock=_resourceLock;
+@property(retain) id <DVTCancellable> indexCreationToken; // @synthesize indexCreationToken=_indexCreationToken;
+@property(retain) DVTFuture *instrumentsServerFuture; // @synthesize instrumentsServerFuture=_instrumentsServerFuture;
+@property(retain) DTXChannel *leaksChannel; // @synthesize leaksChannel=_leaksChannel;
+@property(retain) DTXConnection *primaryInstrumentsServer; // @synthesize primaryInstrumentsServer=_primaryInstrumentsServer;
 @property(readonly, nonatomic) XRMemoryGraphIssueGenerator *issueGenerator; // @synthesize issueGenerator=_issueGenerator;
-@property(retain, nonatomic) DTXConnection *primaryInstrumentsServer; // @synthesize primaryInstrumentsServer=_primaryInstrumentsServer;
-@property(nonatomic) unsigned int initialItemIdentifier; // @synthesize initialItemIdentifier=_initialItemIdentifier;
-@property(readonly, nonatomic) NSData *cachedRawMemoryGraph; // @synthesize cachedRawMemoryGraph=_cachedRawMemoryGraph;
+@property(retain) DVTObservingToken *processControlStateObservingToken; // @synthesize processControlStateObservingToken=_processControlStateObservingToken;
+@property(retain, nonatomic) NSData *cachedRawMemoryGraph; // @synthesize cachedRawMemoryGraph=_cachedRawMemoryGraph;
 @property int loadedState; // @synthesize loadedState=_loadedState;
 @property double percentLoaded; // @synthesize percentLoaded=_percentLoaded;
+@property __weak XRMemoryGraphDebuggerDomainProvider *domainProvider; // @synthesize domainProvider=_domainProvider;
+@property(retain, nonatomic) XRMemoryGraphProcessDescription *processDescription; // @synthesize processDescription=_processDescription;
 @property(retain, nonatomic) NSURL *memoryGraphPath; // @synthesize memoryGraphPath=_memoryGraphPath;
 @property(retain, nonatomic) IDEDebugSession *debugSession; // @synthesize debugSession=_debugSession;
 @property(retain, nonatomic) XRMemoryGraphDebuggerIndex *memoryGraphIndex; // @synthesize memoryGraphIndex=_unfilteredIndex;
 - (void).cxx_destruct;
 - (void)primitiveInvalidate;
-- (id)mallocStackLogForAddress:(unsigned long long)arg1 size:(unsigned long long)arg2 isLiteZone:(BOOL)arg3 error:(id *)arg4;
+- (id)mallocStackLogFromGraphForNode:(unsigned int)arg1 isLiteZone:(BOOL)arg2 error:(id *)arg3;
 @property(readonly, nonatomic) NSError *mallocStackLoggingStateError;
+- (void)fetchMemoryGraphWithSuccessCompletion:(CDUnknownBlockType)arg1;
 - (void)fetchMemoryGraphIfNecessary;
+- (void)_loadMemoryGraph:(CDUnknownBlockType)arg1;
+- (void)_loadMemoryGraphFromDebugger:(CDUnknownBlockType)arg1;
+- (void)_loadMemoryGraphFromLocalFile:(CDUnknownBlockType)arg1;
+@property(readonly, nonatomic) DTMemoryGraphItem *initialItem;
+- (id)instrumentsServer;
 - (void)_updateIssues;
 - (id)children;
 - (id)initWithPlatform:(id)arg1 debugSession:(id)arg2;
-@property(readonly) DVTDocumentLocation *navigableItem_contentDocumentLocation;
-@property(readonly) DVTFileDataType *navigableItem_documentType;
-@property(readonly) NSImage *navigableItem_image;
-@property(readonly) NSString *navigableItem_name;
+@property(readonly, nonatomic) NSArray *navigableItem_childRepresentedObjects;
+@property(readonly, nonatomic) id navigableItem_parentRepresentedObject;
+@property(readonly, nonatomic) DVTDocumentLocation *navigableItem_contentDocumentLocation;
+@property(readonly, nonatomic) DVTFileDataType *navigableItem_documentType;
+@property(readonly, nonatomic) NSImage *navigableItem_image;
+@property(readonly, nonatomic) NSString *navigableItem_name;
 @property(readonly) IDELaunchSession *launchSession;
 @property(readonly, copy) NSString *associatedProcessUUID;
 
@@ -62,15 +83,22 @@
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) DVTStackBacktrace *invalidationBacktrace;
-@property(readonly) NSString *navigableItem_accessibleImageDescription;
-@property(readonly) IDEFileReference *navigableItem_fileReference;
-@property(readonly) NSString *navigableItem_groupIdentifier;
-@property(readonly) BOOL navigableItem_isLeaf;
-@property(readonly) BOOL navigableItem_isMajorGroup;
-@property(readonly) BOOL navigableItem_missingReferencedContentIsImportant;
-@property(readonly) BOOL navigableItem_referencedContentExists;
-@property(readonly) NSString *navigableItem_subtitle;
-@property(readonly) NSString *navigableItem_toolTip;
+@property(readonly, nonatomic) NSString *navigableItem_accessibilityIdentifier;
+@property(readonly, nonatomic) NSString *navigableItem_accessibleImageDescription;
+@property(readonly, nonatomic) NSArray *navigableItem_additionalFilterMatchingText;
+@property(readonly, nonatomic) IDEFileReference *navigableItem_fileReference;
+@property(readonly, nonatomic) NSNull *navigableItem_filtered;
+@property(readonly, nonatomic) NSString *navigableItem_groupIdentifier;
+@property(readonly, nonatomic) BOOL navigableItem_isEnabled;
+@property(readonly, nonatomic) BOOL navigableItem_isLeaf;
+@property(readonly, nonatomic) BOOL navigableItem_isMajorGroup;
+@property(readonly, nonatomic) BOOL navigableItem_isVisible;
+@property(readonly, nonatomic) BOOL navigableItem_missingReferencedContentIsImportant;
+@property(readonly, nonatomic) BOOL navigableItem_referencedContentExists;
+@property(readonly, nonatomic) DVTSymbol *navigableItem_representedSymbol;
+@property(readonly, nonatomic) NSURL *navigableItem_representedURL;
+@property(readonly, nonatomic) NSString *navigableItem_subtitle;
+@property(readonly, nonatomic) NSString *navigableItem_toolTip;
 @property(readonly) Class superclass;
 @property(readonly, nonatomic, getter=isValid) BOOL valid;
 

@@ -19,7 +19,6 @@
 }
 
 + (id)_consecutiveThreadLineSeparatorColor;
-+ (id)_nonConsecutiveDashedThreadLineSeparatorColor;
 + (id)_crashingThreadHighlightColor;
 + (double)lastChildRowHeightAdjustment;
 @property(nonatomic) BOOL isLastChildRowInParent; // @synthesize isLastChildRowInParent=_isLastChildRowInParent;
@@ -35,7 +34,6 @@
 - (void)setMouseInside:(BOOL)arg1;
 - (BOOL)drawsSeparator;
 - (void)drawSeparatorInRect:(struct CGRect)arg1;
-- (id)_dashColor;
 - (void)drawSelectionInRect:(struct CGRect)arg1;
 - (void)drawBackgroundInRect:(struct CGRect)arg1;
 - (long long)selectionHighlightStyle;

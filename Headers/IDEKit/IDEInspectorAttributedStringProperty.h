@@ -6,13 +6,18 @@
 
 #import <IDEKit/IDEInspectorProperty.h>
 
-@class IDEAttributedStringControl, IDEInspectorKeyPath;
+@class IDEAttributedStringControl, IDEInspectorKeyPath, NSString;
 
 @interface IDEInspectorAttributedStringProperty : IDEInspectorProperty
 {
     IDEAttributedStringControl *_attributedStringControl;
+    NSString *_explicitPlaceholder;
+    IDEInspectorKeyPath *_explicitPlaceholderKeyPath;
     IDEInspectorKeyPath *_valueKeyPath;
     IDEInspectorKeyPath *_fontDataSourceKeyPath;
+    IDEInspectorKeyPath *_appearanceKeyPath;
+    IDEInspectorKeyPath *_backgroundColorKeyPath;
+    IDEInspectorKeyPath *_defaultTypingAttributesKeyPath;
 }
 
 - (void).cxx_destruct;

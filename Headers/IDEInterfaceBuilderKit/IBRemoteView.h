@@ -8,7 +8,7 @@
 
 #import <IDEInterfaceBuilderKit/IBLiveViewsBundleObserver-Protocol.h>
 
-@class IBDocument, IBLiveViewsBundle, IBPlatformToolRequester, NSArray, NSDate, NSError, NSImage, NSNumber, NSString;
+@class IBDocument, IBGenericDeviceTypeDescription, IBLiveViewsBundle, IBPlatformToolRequester, NSArray, NSDate, NSError, NSImage, NSNumber, NSString;
 
 @interface IBRemoteView : NSView <IBLiveViewsBundleObserver>
 {
@@ -29,8 +29,8 @@
     IBPlatformToolRequester *_cachedImageRequester;
 }
 
-+ (id)keyPathsForValuesAffectingIbHasDesignableCustomClass;
 + (id)keyPathsForValuesAffectingIbInspectedShouldShowDesignablesStatus;
++ (id)keyPathsForValuesAffectingIbHasDesignableCustomClass;
 @property(nonatomic, getter=isWaitingForRequestedImageInDrawRect) BOOL waitingForRequestedImageInDrawRect; // @synthesize waitingForRequestedImageInDrawRect=_waitingForRequestedImageInDrawRect;
 @property(retain, nonatomic) IBPlatformToolRequester *cachedImageRequester; // @synthesize cachedImageRequester=_cachedImageRequester;
 @property(copy, nonatomic) NSString *cachedImageRequestID; // @synthesize cachedImageRequestID=_cachedImageRequestID;
@@ -58,10 +58,10 @@
 - (void)optimisticallyDropBitmapCache;
 - (BOOL)cachedImageIsInvalid;
 - (void)invalidateCachedImage;
+- (void)invalidateRenderedScene;
 - (void)invalidateCachedImageIfCompositingWithinXcode;
 - (void)enumerateCachedImageKeyPaths:(CDUnknownBlockType)arg1;
 - (id)cachedImageWaitingIfNeeded;
-- (void)ibDocumentDidChangeUserDefinedRuntimeAttributesInNonUndoableWay;
 - (void)setIbExternalUserDefinedRuntimeAttributes:(id)arg1;
 - (id)environmentForObservingLiveViewsBundle:(id)arg1;
 - (void)liveViewsBundleWillInvalidate:(id)arg1;
@@ -75,6 +75,7 @@
 - (id)marshalledRepresentationForRendering;
 - (void)viewDidChangeBackingProperties;
 - (void)_updateWindowBackingScaleFactorHint;
+@property(readonly, nonatomic) IBGenericDeviceTypeDescription *effectiveDeviceTypeDescription;
 @property(readonly, nonatomic) double effectiveScaleFactor;
 @property(readonly, nonatomic) IBDocument *representedDocument;
 - (void)cancelImageRequest;
@@ -90,8 +91,9 @@
 - (void)ibAwakeInDocument:(id)arg1;
 - (void)ibWillRemoveFromDocument:(id)arg1 previouslyMemberOfGroup:(id)arg2 identifierInGroup:(id)arg3;
 - (void)ibDidAddToDocument:(id)arg1 phase:(unsigned long long)arg2;
-- (void)ibWarnings:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
+- (void)ibPopulateIssues:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
 - (void)ibInvalidateDesignablesStatusInDocument:(id)arg1;
+- (void)ibConfigureSceneUpdateRequest:(id)arg1;
 - (id)ibLiveViewsBundleForUpdatingScene:(id)arg1 inDocument:(id)arg2;
 - (void)ibUpdateDesignablesStatus;
 - (id)_ibDesignablesStatusForOutOfDateCachedImage;

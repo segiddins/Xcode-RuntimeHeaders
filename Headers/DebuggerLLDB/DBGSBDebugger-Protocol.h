@@ -9,6 +9,7 @@
 @protocol DBGSBAttachInfo, DBGSBBroadcaster, DBGSBCommandInterpreter, DBGSBCommandReturnObject, DBGSBError, DBGSBEvent, DBGSBExpressionOptions, DBGSBFileSpec, DBGSBFileSpecList, DBGSBLaunchInfo, DBGSBListener, DBGSBStream, DBGSBStringList, DBGSBTarget, DBGSBTypeSummaryOptions;
 
 @protocol DBGSBDebugger <NSObject>
+- (void)SetUseColor:(_Bool)arg1;
 - (id <DBGSBCommandInterpreter>)GetCommandInterpreter;
 - (id <DBGSBListener>)GetListener;
 - (const char *)GetPrompt;
@@ -21,6 +22,8 @@
 - (id <DBGSBTarget>)CreateTarget:(const char *)arg1 targetTriple:(const char *)arg2 platformName:(const char *)arg3 addDependentModules:(_Bool)arg4 error:(id <DBGSBError>)arg5;
 - (void)Destroy;
 - (void)RunCommandInterpreter:(_Bool)arg1 spawnThread:(_Bool)arg2;
+- (void)SkipAppInitFiles:(BOOL)arg1;
+- (void)SkipLLDBInitFiles:(BOOL)arg1;
 - (_Bool)IsValid;
 - (int)RemoteFileDescriptorForLocalFileDescriptor:(int)arg1;
 - (id <DBGSBFileSpecList>)CreateFileSpecList;

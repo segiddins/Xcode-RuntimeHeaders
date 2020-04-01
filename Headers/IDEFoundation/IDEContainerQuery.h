@@ -23,10 +23,14 @@
     BOOL _isCancelled;
     BOOL _isLiveQuery;
     BOOL _inObjectsDidChangeNotification;
+    BOOL _skipInvalidObjects;
+    unsigned long long _objectsDidChangeCount;
 }
 
++ (id)_invalidContainerObjectsRootedInContainerGraphObject:(id)arg1;
 + (BOOL)automaticallyNotifiesObserversOfMatches;
 + (id)containerQueryWithContainerGraphObject:(id)arg1 predicateBlock:(CDUnknownBlockType)arg2;
++ (void)traverseContainerGraphRootedInContainerGraphObject:(id)arg1 skipInvalidObjects:(BOOL)arg2 skipSubgraphBlock:(CDUnknownBlockType)arg3 visitorBlock:(CDUnknownBlockType)arg4;
 + (void)traverseContainerGraphRootedInContainerGraphObject:(id)arg1 skipSubgraphBlock:(CDUnknownBlockType)arg2 visitorBlock:(CDUnknownBlockType)arg3;
 + (void)initialize;
 - (void).cxx_destruct;
@@ -45,7 +49,7 @@
 @property(readonly) NSSet *matches;
 - (void)primitiveInvalidate;
 - (void)_cancelQueryIfNeeded;
-- (id)_initWithContainerGraphObject:(id)arg1 skipSubgraphBlock:(CDUnknownBlockType)arg2 predicateBlock:(CDUnknownBlockType)arg3 visitorBlock:(CDUnknownBlockType)arg4;
+- (id)_initWithContainerGraphObject:(id)arg1 skipSubgraphBlock:(CDUnknownBlockType)arg2 predicateBlock:(CDUnknownBlockType)arg3 visitorBlock:(CDUnknownBlockType)arg4 skipInvalidObjects:(BOOL)arg5;
 - (id)init;
 
 // Remaining properties

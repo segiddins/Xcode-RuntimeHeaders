@@ -11,14 +11,14 @@
 @interface IDEProvisioningSessionManager : NSObject
 {
     DVTDispatchLock *_lock;
-    NSMapTable *_accountToSessionMap;
+    NSMapTable *_sessionProviderToSessionMap;
 }
 
 + (id)sharedManager;
 - (void).cxx_destruct;
 - (void)invalidateSession:(id)arg1;
-- (id)sessionForAccount:(id)arg1 error:(id *)arg2;
-- (id)init;
+- (id)sessionForSessionProvider:(id)arg1 error:(id *)arg2;
+- (id)initWithLock:(id)arg1 sessionProvidersToSessionMap:(id)arg2;
 
 @end
 

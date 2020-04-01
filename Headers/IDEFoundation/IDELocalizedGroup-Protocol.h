@@ -7,9 +7,10 @@
 #import <IDEFoundation/NSObject-Protocol.h>
 
 @class DVTFileDataType, DVTFilePath, DVTLocale, IDEContainer, IDEFileReference, NSArray;
-@protocol IDELocalizedContainer;
+@protocol IDEBlueprint, IDELocalizedContainer;
 
 @protocol IDELocalizedGroup <NSObject>
+- (void)addToTargetDefaultResourcesBuildPhase:(id <IDEBlueprint>)arg1;
 - (void)addNewReferenceForLocale:(DVTLocale *)arg1 filePath:(DVTFilePath *)arg2 completionBlock:(void (^)(BOOL, NSError *))arg3;
 - (DVTFilePath *)proposedFilePathForLocalization:(DVTLocale *)arg1 fileType:(DVTFileDataType *)arg2;
 - (IDEFileReference *)subitemForLocale:(DVTLocale *)arg1;

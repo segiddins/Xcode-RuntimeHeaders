@@ -6,54 +6,43 @@
 
 #import <DevToolsCore/PBXBuildPhase.h>
 
-@class NSMutableArray, NSString;
+@class NSArray, NSString;
 
 @interface PBXShellScriptBuildPhase : PBXBuildPhase
 {
     NSString *_shellPath;
     NSString *_shellScript;
     BOOL _showEnvVarsInLog;
-    NSMutableArray *_inputPaths;
-    NSMutableArray *_outputPaths;
+    NSArray *_inputPaths;
+    NSArray *_inputFileListPaths;
+    NSArray *_outputPaths;
+    NSArray *_outputFileListPaths;
+    NSString *_dependencyFile;
 }
 
 + (id)archivableAttributes;
 + (id)defaultShellPath;
++ (id)allowedFileTypes;
 + (id)allowedExtensions;
 + (id)defaultName;
 + (id)identifier;
+- (void).cxx_destruct;
 - (Class)dependencyGraphSnapshotClass;
 - (id)readFromPListUnarchiver:(id)arg1;
 - (BOOL)shouldArchiveShowEnvVarsInLog;
-- (void)setShowEnvVarsInLog:(BOOL)arg1;
-- (BOOL)showEnvVarsInLog;
+- (void)findFeaturesInUseAndAddToSet:(id)arg1 usingPathPrefix:(id)arg2;
+@property BOOL showEnvVarsInLog;
 - (BOOL)acceptsReference:(id)arg1 checkFileType:(BOOL)arg2;
-- (void)setOutputPaths:(id)arg1;
-- (id)outputPaths;
-- (void)setInputPaths:(id)arg1;
-- (id)inputPaths;
-- (void)setShellScript:(id)arg1;
-- (id)shellScript;
-- (void)setShellPath:(id)arg1;
-- (id)shellPath;
+@property(retain) NSString *dependencyFile;
+@property(retain) NSArray *outputFileListPaths;
+@property(retain) NSArray *outputPaths;
+@property(retain) NSArray *inputFileListPaths;
+@property(retain) NSArray *inputPaths;
+@property(retain) NSString *shellScript;
+@property(retain) NSString *shellPath;
 - (BOOL)canRename;
-- (void)dealloc;
 - (id)initWithName:(id)arg1;
 - (id)initFromTemplateDictionary:(id)arg1;
-- (void)moveOutputPath:(id)arg1 toIndex:(unsigned long long)arg2;
-- (void)removeFromAppleScriptOutputPathsAtIndex:(unsigned long long)arg1;
-- (void)replaceInAppleScriptOutputPaths:(id)arg1 atIndex:(unsigned long long)arg2;
-- (void)insertInAppleScriptOutputPaths:(id)arg1;
-- (void)insertInAppleScriptOutputPaths:(id)arg1 atIndex:(unsigned long long)arg2;
-- (id)valueInAppleScriptOutputPathsAtIndex:(unsigned long long)arg1;
-- (id)appleScriptOutputPaths;
-- (void)moveInputPath:(id)arg1 toIndex:(unsigned long long)arg2;
-- (void)removeFromAppleScriptInputPathsAtIndex:(unsigned long long)arg1;
-- (void)replaceInAppleScriptInputPaths:(id)arg1 atIndex:(unsigned long long)arg2;
-- (void)insertInAppleScriptInputPaths:(id)arg1;
-- (void)insertInAppleScriptInputPaths:(id)arg1 atIndex:(unsigned long long)arg2;
-- (id)valueInAppleScriptInputPathsAtIndex:(unsigned long long)arg1;
-- (id)appleScriptInputPaths;
 
 @end
 

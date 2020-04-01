@@ -27,7 +27,8 @@
 - (void)_invalidateArrangedChildrenOfFilterProxies;
 - (void)_itemInvalidateMatchState:(id)arg1;
 - (id)_arrangeItems:(id)arg1 ofItem:(id)arg2;
-- (void)_performFilterEvaluationOf:(id)arg1;
+- (void)_performFilterEvaluationOfRepresentedObject:(id)arg1;
+- (void)_performFilterEvaluationOfItem:(id)arg1;
 - (void)_beginFilteringFrom:(id)arg1;
 - (BOOL)performingFiltering;
 - (int)_filterCurrentGeneration;

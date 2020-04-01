@@ -11,7 +11,9 @@
 
 @protocol IBPrimarySceneObject <NSObject>
 @property(copy, nonatomic) NSString *ibExplicitStoryboardIdentifier;
+@property(readonly, nonatomic) BOOL ibWantsSceneExitPlaceholder;
 - (NSString *)ibShortDisplayName;
+- (void)ibPropagatePropertiesToCompiledSceneObject:(NSObject<IBPrimarySceneObject> *)arg1;
 - (BOOL)ibIsPrimarySceneObject:(NSObject<IBPrimarySceneObject> *)arg1 validSplitViewDetailWithSegue:(IBStoryboardRelationshipSegue *)arg2;
 - (BOOL)ibIsPrimarySceneObject:(NSObject<IBPrimarySceneObject> *)arg1 validSplitViewMasterWithSegue:(IBStoryboardRelationshipSegue *)arg2;
 - (BOOL)ibIsValidPushReceiver;
@@ -27,6 +29,7 @@
 - (NSImage *)ibImageForOwnedScene;
 
 @optional
+@property(nonatomic) BOOL ibInspectedIsDesignatedMenu;
 @property(nonatomic) BOOL ibInspectedIsDesignatedEntryPoint;
 - (NSString *)ibUniqueIdentifierForStoryboardCompilation;
 - (void)ibPrepareTopLevelControllerForStoryboardCompilation;

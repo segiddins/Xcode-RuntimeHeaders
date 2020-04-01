@@ -10,7 +10,7 @@
 
 @interface PBXContainerItemProxy : PBXContainerItem
 {
-    int _proxyType;
+    long long _proxyType;
     PBXObject *_containerPortal;
     NSString *_remoteGlobalIDString;
     NSString *_remoteInfo;
@@ -20,6 +20,10 @@
 + (id)archivableWeakRelationshipsForPListArchiver:(id)arg1;
 + (id)archivableRelationships;
 + (id)archivableAttributes;
+- (void).cxx_destruct;
+- (id)readFromPListUnarchiver:(id)arg1;
+- (void)awakeFromPListUnarchiver:(id)arg1;
+- (void)validateWithUnarchiver:(id)arg1;
 - (void)_setContainerPortal:(id)arg1;
 - (id)_containerPortal;
 - (BOOL)isEqualToProxy:(id)arg1;
@@ -33,10 +37,8 @@
 - (void)setRemoteGlobalIDString:(id)arg1;
 - (void)setContainerPortal:(id)arg1;
 - (id)containerPortal;
-- (id)copyWithZone:(struct _NSZone *)arg1 getUnretainedObjectMappings:(id *)arg2;
-- (void)dealloc;
-- (id)initWithType:(int)arg1 portal:(id)arg2 remoteGlobalID:(id)arg3 remoteInfo:(id)arg4;
-- (id)initWithType:(int)arg1 portal:(id)arg2 remoteGlobalIDString:(id)arg3 remoteInfo:(id)arg4;
+- (id)initWithType:(long long)arg1 portal:(id)arg2 remoteGlobalID:(id)arg3 remoteInfo:(id)arg4;
+- (id)initWithType:(long long)arg1 portal:(id)arg2 remoteGlobalIDString:(id)arg3 remoteInfo:(id)arg4;
 
 @end
 

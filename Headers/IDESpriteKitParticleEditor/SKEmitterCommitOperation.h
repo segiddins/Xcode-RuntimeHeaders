@@ -18,7 +18,7 @@
 
 - (void).cxx_destruct;
 - (BOOL)revert;
-- (BOOL)apply;
+- (BOOL)_performApply;
 - (void)_setValueOnAllEmitters:(id)arg1;
 - (id)initWithDocument:(id)arg1 newValue:(id)arg2 oldValue:(id)arg3 keyPath:(id)arg4;
 

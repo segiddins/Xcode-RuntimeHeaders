@@ -9,7 +9,6 @@
 @interface IBICAppIconSet (DisplayAdditions)
 - (void)setIbInspectedPreRendered:(BOOL)arg1;
 - (BOOL)ibInspectedPreRendered;
-- (id)includedAttributeUtilitySlicesForChild:(id)arg1;
-- (id)typeIcon;
+- (id)includedAttributesInspectorSlicesForChild:(id)arg1;
 @end
 

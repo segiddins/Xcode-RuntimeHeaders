@@ -4,13 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <XCSUI/NSObject-Protocol.h>
+@class IDECoverageReportViewController;
 
-@class IDECoverageReportViewController, NSArray;
-
-@protocol XCSUIIntegrationCoverageViewController <NSObject>
+@protocol XCSUIIntegrationCoverageViewController
 @property(readonly, nonatomic) IDECoverageReportViewController *installedReportViewController;
-@property(retain, nonatomic) NSArray *itemIdentifiersToExpand;
-- (NSArray *)currentlyExpandedCoverageItemIdentifiers;
 @end
 

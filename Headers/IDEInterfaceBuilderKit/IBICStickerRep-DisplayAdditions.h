@@ -7,7 +7,7 @@
 #import <IBFoundation/IBICStickerRep.h>
 
 @interface IBICStickerRep (DisplayAdditions)
-+ (id)emptyThumbnailIcon;
+- (BOOL)isDisplayNameFindable;
 - (void)generateThumbnailWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)thumbnail;
 - (void)setLastRequestThumbnailGeneration:(long long)arg1;
@@ -15,7 +15,6 @@
 - (long long)incrementThumbnailSourceChangeGeneration;
 - (long long)thumbnailSourceChangeGeneration;
 - (id)icon;
-- (BOOL)isPredominantlyWhite;
 - (id)bitmap;
 - (id)dragImage;
 - (id)image;

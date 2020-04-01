@@ -22,15 +22,11 @@
 - (id)sceneKitActionAssets;
 - (id)spriteKitNamedActionAssets;
 - (id)spriteKitActionAssets;
-- (BOOL)canRemoveAsset:(id)arg1;
-- (BOOL)canEditAsset:(id)arg1;
 - (void)populatePasteboard:(id)arg1 withAssets:(id)arg2;
-- (BOOL)canCreateAssetsFromPasteboard:(id)arg1 targetingLibrarySourceIdentifier:(id *)arg2;
-- (id)readableAssetPasteboardTypes;
 @property(readonly, nonatomic) BOOL allowObjectLibrary;
 - (void)libraryDidLoad;
 - (void)refreshAssetsFromDocument:(id)arg1;
-- (void)activeEditorDocumentDidChange:(id)arg1;
+- (void)activeEditorDidChange:(id)arg1;
 - (void)clearCurrentCustomGroupIdentifier;
 - (void)populateObjectLibrary;
 - (void)updateObjectsLibraryArrayForSKDocument:(id)arg1 forceUpdate:(BOOL)arg2;

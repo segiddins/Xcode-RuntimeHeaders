@@ -26,9 +26,7 @@
 - (id)children;
 - (Class)expectedChildClassForSlot:(id)arg1;
 - (id)runtimeNamespaceQualifier;
-- (id)requiredCounterpartsMask;
 - (id)defaultUnqualifiedRuntimeName;
-- (id)suggestionSetMaskForSuggestionSet:(id)arg1 usingValueModifierBlock:(CDUnknownBlockType)arg2;
 - (CDStruct_550fdc95)taggingSupport;
 - (id)initializeManifestArchivist;
 - (BOOL)manifestArchivist:(id)arg1 validateManifestChildEntry:(id)arg2 results:(id)arg3;
@@ -38,7 +36,6 @@
 - (BOOL)manifestArchivist:(id)arg1 validateManifest:(id)arg2 results:(id)arg3;
 - (void)manifestArchivist:(id)arg1 applyPropertiesFromManifest:(id)arg2;
 - (void)manifestArchivist:(id)arg1 populateManifest:(id)arg2;
-- (long long)effectivePixelFormatForChild:(id)arg1;
 - (id)explicitPixelFormatForChild:(id)arg1;
 - (void)setExplicitPixelFormat:(id)arg1 forChild:(id)arg2;
 - (id)slotForChild:(id)arg1;

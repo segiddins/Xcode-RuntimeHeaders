@@ -9,5 +9,7 @@
 @interface NSDocument (NSDocumentScripting)
 - (void)setSdefSupport_path:(id)arg1;
 - (id)sdefSupport_path;
+- (void)ide_canCloseAsynchronouslyUsingBlock:(CDUnknownBlockType)arg1;
+- (void)ideNSDocument:(id)arg1 shouldClose:(BOOL)arg2 contextInfo:(void *)arg3;
 @end
 
