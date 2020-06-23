@@ -1,0 +1,5396 @@
+XCBCore
+XBSParameters
+BuildParameters
+StringEncodingDetectionOptionsKey
+NNSStringEncodingDetectionOptionsKey
+Foundation
+XCBCore
+CopyAppleTVContentProviderAppBinaryBuildStepSpec
+PepperCopyWatchAppBinaryBuildStepSpec
+SwiftStdlibToolBuildStepSpec
+SwiftValidationBuildStepSpec
+WatchKit1CopyWatchAppBinaryBuildStepSpec
+CopyMessagesApplicationStubBuildStepSpec
+CopyMessagesApplicationExtensionStubBuildStepSpec
+XCBCore
+BuildRuleSet
+MatchResult
+XCBCore
+ToolchainRegistryDelegate
+Toolchain
+ToolchainRegistry
+String
+Dictionary
+reference type
+Array
+Array
+UInt8
+UInt8
+XCBCore
+ProjectModelItem
+PIFStringEnum
+PIFParsingError
+PIFReferenceTypeValue
+PIFReferenceSourceTreeValue
+PIFTargetTypeValue
+PIFBuildPhaseTypeValue
+PIFDependencyFormatValue
+PIFBoolValue
+XCBCore
+IbtoolCompilerSupport
+IbtoolCompilerSpec
+BuildPhaseInfo
+IBStoryboardLinkerCompilerSpec
+AssetCatalogTaskConstructionDelegate
+DiscoveredDistillToolSpecInfo
+DistillCompilerSpec
+ActoolCompilerSpec
+CoreDataGeneratedFilePathsError
+CoreDataModelTaskConstructionDelegate
+CoreDataModelCompilerSpec
+CoreMLGeneratedFilePathsError
+CoreMLTaskConstructionDelegate
+CoreMLCompilerSpec
+InstrumentsPackageBuilderSpec
+IntentsGeneratedFilePathsError
+IntentsTaskConstructionDelegate
+IntentsCompilerSpec
+LexCompilerSpec
+MetalCompilerSpec
+MetalLinkerSpec
+OpenCLCompilerSpec
+RezCompilerSpec
+YaccCompilerSpec
+DiscoveredLdLinkerToolSpecInfo
+LdLinkerSpec
+DiscoveredLibtoolLinkerToolSpecInfo
+LibtoolLinkerSpec
+ResMergerLinkerSpec
+CompilationDatabaseGeneratorToolSpec
+CreateBuildDirectorySpec
+HeadermapGeneratorToolSpec
+CppToolSpec
+CodesignToolSpec
+CopyToolSpec
+CopyPlistFileSpec
+CopyStringsFileSpec
+CopyTiffFileSpec
+DittoToolSpec
+InfoPlistToolSpec
+LaunchServicesRegisterToolSpec
+DsymutilToolSpec
+MkdirToolSpec
+NMEditToolSpec
+ResourceCopierToolSpec
+SceneKitToolSpec
+ProductPackagingToolSpec
+PLUtilToolSpec
+ShellScriptToolSpec
+StripToolSpec
+SwiftHeaderToolSpec
+SwiftStdLibToolSpec
+SymlinkToolSpec
+ModuleVerifierToolSpec
+CreateAssetPackManifestToolSpec
+IconUtilToolSpec
+TiffUtilToolSpec
+TouchToolSpec
+UnifdefToolSpec
+ValidateEmbeddedBinaryToolSpec
+ValidateProductToolSpec
+ProcessXCFrameworkLibrarySpec
+IbtoolPlatformDefinition
+Delegate
+LdLinkerTaskPayload
+CopyToolTaskPayload
+CoreMLIndexingInfo
+CoreMLTaskPayload
+IntentsIndexingInfo
+IntentsTaskPayload
+MetalSourceFileIndexingInfo
+MetalTaskPayload
+LdLinkerTaskPreviewPayload
+MetalIndexingPayload
+LinkStyle
+XCBCore
+ConfiguredTarget
+ConfiguredTargetSerializerDelegate
+ConfiguredTargetDeserializerDelegate
+XCBCore
+BuildRuleConditionMatchPriority
+BuildRuleCondition
+BuildRuleFileTypeCondition
+BuildRuleFileNameCondition
+XCBCore
+MacroValueAssignmentTable
+MacroValueAssignmentTableDeserializerDelegate
+MacroValueAssignment
+XCBCore
+SpecParserDelegate
+SpecParser
+InstrumentExtensionPoint
+XCBCore
+InstrumentEventResult
+InstrumentEvent
+InstrumentEventSession
+InstrumentExtension
+XCBCore
+AbstractCCompilerSpec
+ClangOutputParser
+DiscoveredClangToolSpecInfo
+FlagPattern
+ClangCompilerSpec
+DataCache
+ClangStaticAnalyzerSpec
+ClangPreprocessorSpec
+ClangAssemblerSpec
+ConstantFlags
+ConstantFlagsKey
+ClangSourceFileIndexingInfo
+ClangTaskPayload
+PCHInfo
+Delegate
+ClangIndexingPayload
+ClangPrefixInfo
+XCBCore
+WorkspaceAnalyzer
+DelayedEvaluationDiagnostic
+AnyConsolidatableDiagnostic
+ConsolidatableDiagnostic
+IncompatibleBinaryContentDiagnosticContext
+IncompatibleLinkedOrEmbeddedContentDiagnostic
+MissingFrameworkDiagnosticContext
+IncompatibleLinkedOrEmbeddedContentDiagnosticContext
+UnavailableExtensionPointContext
+LevelAndConsolidationKey
+ContentItemType
+ConsolidationKeyType
+XCBCore
+LinkerSpec
+LibrarySpecifier
+Kind
+GenericLinkerSpec
+XCBCore
+ProductTypeSpec
+DeprecationLevel
+DeprecationInfo
+BuildPhaseFileRefAddition
+BundleProductTypeSpec
+ApplicationProductTypeSpec
+FrameworkProductTypeSpec
+StaticFrameworkProductTypeSpec
+KernelExtensionProductTypeSpec
+XCTestBundleProductTypeSpec
+StandaloneExecutableProductTypeSpec
+DynamicLibraryProductTypeSpec
+StaticLibraryProductTypeSpec
+ToolProductTypeSpec
+SymlinkDescriptor
+XCBCore
+ProvisioningTaskInputError
+ProvisioningTaskInputs
+XCBCore
+BuildLocationStyle
+BuildCommand
+SchemeCommand
+BuildRequest
+BuildTargetInfo
+XCBCore
+UserInfo
+SystemInfo
+WorkspaceContextSDKRegistry
+WorkspaceContext
+SettingsWrapper
+MacroConfigInfo
+AncestorInclude
+Delegate
+ConfigDiagnostics
+NestedConfigurations
+AncestorIncludes
+CascadingSDKRegistryLookup
+SettingsConfigFileParserDelegate
+SettingsCacheKey
+XCBCore
+SearchPathBuilder
+SearchPathCommandLineBuilder
+GCCCompatibleCompilerCommandLineBuilder
+GCCCompatibleLanguageDialect
+SearchPathEntry
+.mii
+XCBCore
+DiscoveredTAPIToolSpecInfo
+TAPIToolSpec
+TAPIMergeToolSpec
+XCBCore
+Project
+XCBCore
+MacroConfigFileDiagnostic
+Level
+Kind
+maccatalyst
+uikitformac
+XCBCore
+XCFrameworkValidationError
+XCFrameworkCreationError
+XCFramework
+LibraryType
+Library
+LibraryPathsKey
+CommandLineParsingResult
+Argument
+CodingKeys
+XCFrameworkInfoPlist_V1
+LibraryKey
+buildPhases
+Dictiona
+XCBCore
+TargetType
+TargetDependency
+Target
+BuildPhaseTarget
+StandardTarget
+SourceCodeLanguage
+AggregateTarget
+PackageProductTarget
+ExternalTarget
+CodingKeys
+XCBCore
+XCBFeatureFlag
+XCBCore
+MacCatalystInfo
+XCBCore
+DiscoveredMiGToolSpecInfo
+MigCompilerSpec
+XCBCore
+MacroEvaluationScope
+MacroEvaluationContext
+SubscopeKey
+x86_64
+XCBCore
+PlatformRegistryDelegate
+Platform
+AppStoreSubmissionSupportLevel
+PlatformRegistry
+XCBCore
+Spec
+ArchitectureSpec
+BuildStepSpec
+FileTypeSpec
+PackageTypeSpec
+ProductStructureDirectoryInfo
+PlatformSpec
+BuildSettingsSpec
+BuildSystemSpec
+BuildPhaseSpec
+XCBCore
+ClangSerializedDiagnostics
+LoadingError
+XCBCore
+MacroDeclaration
+BooleanMacroDeclaration
+EnumMacroDeclaration
+StringMacroDeclaration
+StringListMacroDeclaration
+UserDefinedMacroDeclaration
+XCBCore
+LipoToolSpec
+XCBCore
+LegacyPluginManagerDelegate
+LegacyPlugin
+LegacyPluginManager
+XCBCore
+SpecDataCache
+ModuleInfo
+CommandProducer
+CommandBuildContext
+PlannedTaskBuilder
+CoreClientDelegate
+TaskGenerationDelegate
+TaskTypeDescription
+DependencyDataStyle
+TaskPayload
+SourceFileIndexingInfo
+TaskGeneratePreviewInfoInput
+TaskGeneratePreviewInfoOutput
+TaskType
+SubtaskProgressReporter
+TaskOutputParser
+BuildSystemOperationIdentifier
+TaskOutputParserDelegate
+DependencyDataStyleCode
+XCBCore
+MacroExpressionDiagnostic
+Kind
+Level
+XCBCore
+XcodePluginManagerDelegate
+XcodePlugin
+XcodePluginManager
+PluginExtInfo
+XCBCore
+InputFileGroupingStrategyContext
+InputFileGroupingStrategy
+AllInputFilesGroupingStrategy
+CommonFileBaseInputFileGroupingStrategy
+ActoolInputFileGroupingStrategy
+ImageScaleFactorsInputFileGroupingStrategy
+BuildPhaseInfoForToolSpec
+DiscoveredCommandLineToolSpecInfo
+CommandLineToolSpec
+GenericCommandLineToolSpec
+GenericOutputParser
+AssetCatalogCompilerOutputParser
+ShellScriptOutputParser
+LdLinkerOutputParser
+InputFileTypeDescriptor
+RuleInfoTemplateArg
+CommandLineTemplateArg
+XCBCore
+TaskIdentifier
+PlannedTask
+UnownedPlannedTask
+ExecutableTask
+ConstructedTask
+GateTask
+GateTaskTypeDescription
+XCBCore
+SwiftSourceFileIndexingInfo
+SwiftCommandOutputParser
+DiscoveredSwiftCompilerToolSpecInfo
+SwiftCompilerSpec
+SwiftVersionState
+Subtask
+SwiftTaskPayload
+SwiftPreviewPayload
+SwiftIndexingPayload
+InputsCode
+Inputs
+XCBCore
+AppExtensionInfoManager
+ExtensionPointInfo
+AppExtensionPlatformFamily
+SettingsBuilderExtensionPoint
+XCBCore
+CoreSettings
+WorkspaceSettings
+Settings
+SigningSettings
+Identity
+Profile
+Entitlements
+SettingsBuilderExtension
+SettingsBuilder
+MacroValueAssignmentTableSet
+ExportType
+BuiltinSettingsInfo
+BuiltinSettingsInfoKey
+SystemBuildRules
+SystemBuildRuleCacheKey
+self
+XCBCore
+PlannedTaskAction
+InfoPlistProcessorTaskActionContext
+TaskActionCreationDelegate
+XCBCore
+EncodedPIFValue
+PIFObject
+PIFObjectProvider
+PIFLoader
+IncrementalPIFLoader
+LoadingSession
+PIFObjectReference
+PIFLoadingError
+ObjectProviderAdaptor
+StaticObjectProvider
+N@XCBCore
+Tuning
+XCBCore
+BuildFileFilteringContext
+type
+XCBCore
+BuildPhase
+BuildPhaseWithBuildFiles
+SourcesBuildPhase
+FrameworksBuildPhase
+HeadersBuildPhase
+ResourcesBuildPhase
+CopyFilesBuildPhase
+ShellScriptBuildPhase
+RezBuildPhase
+AppleScriptBuildPhase
+JavaArchiveBuildPhase
+XCBCore
+StringTargetDiagnostic
+DiagnosticProducingDelegate
+TargetDiagnosticProducingDelegate
+DiagnosticContextData
+TargetDiagnosticContext
+XCBCore
+InternalSpec
+SpecRegistryDelegate
+SpecLoadingError
+SpecType
+SpecImplementationType
+IdentifiedSpecType
+SpecClassType
+SpecProxy
+SpecDomainRegistry
+SpecRegistry
+SpecRegistryProvider
+Delegate
+LoadedSpecKind
+ProxyCacheKey
+XCBCore
+CoreDelegate
+Core
+Delegate
+CoreRegistryDelegate
+XCBCore
+MacroExpression
+MacroStringExpression
+MacroStringListExpression
+XCBCore
+BuiltinMacros
+EnumerationMacroType
+BooleanWarningLevel
+EntitlementsDestination
+XCBCore
+WorkspaceHeaderIndex
+ProjectHeaderInfo
+TargetHeaderInfo
+XCBCore
+DiscoveredIiGToolSpecInfo
+IIGCompilerSpec
+buildSettings
+XCBCore
+ImpartedBuildProperties
+XCBCore
+DependencyInfoFormat
+XCBCore
+MacroExpressionParser
+MacroExpressionParserDelegate
+XCBCore
+Reference
+GroupTreeReference
+FileReference
+VersionGroup
+FileGroup
+VariantGroup
+ProductReference
+XCBCore
+TargetLinkageGraph
+LinkageDependencyResolver
+XCBCore
+EnvironmentBindings
+XCBCore
+MacroType
+String
+XCBCore
+BuildRule
+XCBCore
+MacroNamespace
+MacroExpressionInstructionEmitterDelegate
+MacroDeclarationError
+XCBCore
+RegisterExecutionPolicyExceptionToolSpec
+XCBCore
+FilePathResolver
+XCBCore
+MacroConfigFileParser
+MacroConfigFileParserDelegate
+SingleMacroNameDelegate
+XCBCore
+BuildConfiguration
+XCBCore
+GateSpec
+MasterObjectLinkSpec
+SetAttributesSpec
+VersionPlistToolSpec
+WriteFileSpec
+XCBCore
+ExecutableSearchPaths
+XCBCore
+MacroConditionExpression
+MacroConditionStringExpression
+MacroConditionStringConstantExpression
+MacroConditionBooleanExpression
+MacroConditionUnaryBooleanExpression
+MacroConditionLogicalNOTExpression
+MacroConditionBinaryBooleanExpression
+MacroConditionEqualityExpression
+MacroConditionInequalityExpression
+MacroConditionLogicalANDExpression
+MacroConditionLogicalORExpression
+MacroConditionContainsExpression
+MacroConditionTernaryConditionalExpression
+ScannerState
+ParserState
+Token
+TokenType
+XCBCore
+EntitlementsVariant
+PlatformSigningContext
+DeviceSigningContext
+SimulatorSigningContext
+MacSigningContext
+XCBCore
+CompilerSpec
+GenericCompilerSpec
+ArchitecturesKind
+XCBCore
+MacroCondition
+XCBCore
+ScriptType
+XCBCore
+TargetDependencyResolverDelegate
+DependencyResolver
+XCBCore
+MacroConditionParameter
+MetalKit
+CoreServices
+Metal
+Contacts
+ContactsUI
+Photos
+XCBCore
+SDKRegistryDelegate
+SDKVariant
+SDKRegistryLookup
+FrameworkReplacementKind
+SDKRegistry
+SDKRegistryType
+XCBCore
+WorkspaceErrors
+Workspace
+WorkspaceDiff
+XCBCore
+TargetBuildGraph
+DiscoveredTargetInfo
+TargetDependencyResolver
+XCBCore
+PlatformFilter
+XCBCore
+RCProjectGeneratedFilePathsError
+RCTaskConstructionDelegate
+RCProjectCompilerSpec
+RCProjectIndexingInfo
+RCProjectTaskPayload
+XCBCore
+ProvisionalTask
+ProvisionalNode
+ProvisionalTaskValidationContext
+CreateDirectoryProvisionalTask
+CreateSymlinkProvisionalTask
+ProductPostprocessingProvisionalTask
+AssignedTask
+XCBCore
+MacroEvaluationProgram
+MacroEvaluationProgramBuilder
+MacroEvaluationResultBuilder
+EvalInstr
+ProgramVariant
+MacroEvaluationReplacementOperator
+MacroEvaluationRetrievalOperator
+XCBCore
+ODRAssetPackInfo
+AssetPackOutputSpecificationsPlist
+Entry
+OnDemandResourcesPlist
+AssetPackManifestPlist
+Resource
+PrimaryContentHash
+XCBCore
+BuildRuleAction
+BuildRuleTaskAction
+BuildRuleScriptAction
+OutputFileInfo
+XCBCore
+MacroConditionSet
+XCBCore
+BuildOptionType
+BoolBuildOptionType
+CodeSignIdentityBuildOptionType
+CodeSignStyleBuildOptionType
+CompilerVersionBuildOptionType
+DevelopmentTeamBuildOptionType
+EnumBuildOptionType
+StringBuildOptionType
+StringListBuildOptionType
+OpenCLArchitecturesBuildOptionType
+PathBuildOptionType
+PathListBuildOptionType
+ProvisioningProfileBuildOptionType
+ProvisioningProfileSpecifierBuildOptionType
+BuildOption
+BuildOptionGenerationContext
+PropertyDomainSpec
+BuildOptionValue
+CommandLineTemplateSpecifier
+XCBCore
+PlannedNode
+PlannedPathNode
+PlannedDirectoryTreeNode
+PlannedVirtualNode
+PathNode
+DirectoryTreeNode
+VirtualNode
+XCBCore
+RecursiveSearchPathResolver
+Request
+Result
+CachedResult
+XCBCore
+ProductTypeIdentifier
+XCBCore
+BuildFileRepresentable
+BuildFile
+BuildableItem
+XCBCore
+ApplicationWrapperFileTypeSpec
+CFBundleWrapperFileTypeSpec
+FrameworkWrapperFileTypeSpec
+HTMLFileTypeSpec
+MachOFileTypeSpec
+PlistFileTypeSpec
+PlugInKitPluginWrapperFileTypeSpec
+SpotlightImporternWrapperFileTypeSpec
+StaticFrameworkWrapperFileTypeSpec
+XPCServiceWrapperFileTypeSpec
+XCFrameworkWrapperFileTypeSpec
+XCBCore
+FileToBuild
+FileToBuildGroup
+RegionVariable
+@(#)PROGRAM:XCBCore  PROJECT:xcbuild-15509
+@__swift5_proto
+targets range 
+com.apple.xcode.tools.ibtool.storyboard.linker
+com.apple.xcode.tools.ibtool.storyboard.postprocessor
+com.apple.compilers.tiffutil
+com.apple.build-tasks.copy-png-file
+com.apple.build-tasks.copy-tiff-file
+group
+file
+product
+versionGroup
+variantGroup
+com.apple.buildphase.sources
+com.apple.buildphase.frameworks
+com.apple.buildphase.headers
+com.apple.buildphase.resources
+com.apple.buildphase.copy-files
+com.apple.buildphase.shell-script
+com.apple.buildphase.rez
+com.apple.buildphase.applescript
+com.apple.buildphase.java-archive
+client
+server
+both
+public
+private
+project
+no_codegen
+true
+false
+aggregate
+external
+packageProduct
+standard
+makefile
+makefiles
+-L/System/iOSSupport/usr/lib/swift
+-L/usr/lib/swift
+-force_load_swift_libs
+@executable_path
+builtin-swiftHeaderTool
+$(PLATFORM_DIR)/Developer/AppleInternal/Library/Frameworks
+YES_ERROR
+Signature
+__entitlements
+linked
+embedded
+linkedAndEmbedded
+app extension
+framework
+item
+library
+sourcecode.c.objc
+sourcecode.cpp.cpp
+sourcecode.cpp.objcpp
+LibraryIdentifier
+SupportedPlatform
+SupportedArchitectures
+SupportedPlatformVariant
+LibraryPath
+HeadersPath
+XCFrameworkFormatVersion
+AvailableLibraries
+CFBundlePackageType
+configurationName
+appIDHasFeaturesEnabled
+provisioningStyle
+legacyTeamID
+bundleIdentifierFromInfoPlist
+began
+finished
+signalled
+skipped
+compile
+backend
+merge-module
+link
+generate-pch
+generate-dsym
+$(BUILT_PRODUCTS_DIR)/include
+$(BUILT_PRODUCTS_DIR)
+sourcecode.cpp.h
+embedded-simulator
+appletvsimulator
+Intermediates.noindex
+-reexport_framework
+invalid
+string
+equals
+notEquals
+contains
+matches
+questionMark
+colon
+leftParen
+rightParen
+builtin
+overriding
+BuildAction value '
+toolchainOverride=
+XCBuildStepSpecification_CopyAppleTVContentProviderAppBinary
+XCBuildStepSpecification_PepperCopyWatchAppBinary
+XCBuildStepSpecification_SwiftStdlibTool
+XCBuildStepSpecification_SwiftValidation
+XCBuildStepSpecification_WatchKit1CopyWatchAppBinary
+XCBuildStepSpecification_CopyMessagesApplicationStub
+XCBuildStepSpecification_CopyMessagesApplicationExtensionStub
+_TtC7XCBCore48CopyAppleTVContentProviderAppBinaryBuildStepSpec
+_TtC7XCBCore37PepperCopyWatchAppBinaryBuildStepSpec
+_TtC7XCBCore28SwiftStdlibToolBuildStepSpec
+_TtC7XCBCore28SwiftValidationBuildStepSpec
+_TtC7XCBCore40WatchKit1CopyWatchAppBinaryBuildStepSpec
+_TtC7XCBCore40CopyMessagesApplicationStubBuildStepSpec
+_TtC7XCBCore49CopyMessagesApplicationExtensionStubBuildStepSpec
+action priority 
+com.apple.compilers.proxy.script
+_TtC7XCBCore12BuildRuleSet
+rules
+Multiple rules matching input '
+Applying first matching rule '
+com.apple.dt.toolchain.XcodeDefault
+_TtC7XCBCore9Toolchain
+version
+defaultSettings
+overrideSettings
+defaultSettingsWhenPrimary
+executableSearchPaths
+_TtC7XCBCore17ToolchainRegistry
+toolchainsByIdentifier
+toolchainsByAlias
+failed to load toolchains in 
+failed to load toolchain: 
+' already registered from 
+ToolchainInfo.plist
+expected dictionary in toolchain data
+CFBundleIdentifier
+invalid or missing 'Identifier' field
+DefaultBuildSettings
+OverrideBuildSettings
+DefaultBuildSettingsIfTopToolchain
+usr/lib/swift/undefined
+UIKITFORMAC_SWIFT_TOOLCHAIN_LIBRARY_DIR
+if the 'Aliases' key is present, it must be an array of strings
+if the 'Version' key is present, it must be a string
+'Version' parse error: 
+([0-9]+)
+buildConfigurations
+impartedBuildProperties
+projectDirectory
+projectIsPackage
+defaultConfigurationName
+developmentRegion
+appPreferencesBuildSettings
+regionVariantName
+fileTextEncoding
+productReference
+productTypeIdentifier
+performanceTestsBaselinesPath
+predominantSourceCodeLanguage
+provisioningSourceData
+frameworksBuildPhase
+workingDirectory
+passBuildSettingsInEnvironment
+destinationSubfolder
+destinationSubpath
+inputFileListPaths
+originalObjectID
+outputFileListPaths
+runOnlyForDeploymentPostprocessing
+dependencyFileFormat
+dependencyFilePaths
+additionalCompilerOptions
+headerVisibility
+intentsCodegenFiles
+intentsCodegenVisibility
+removeHeadersOnCopy
+shouldLinkWeakly
+fileTypeIdentifier
+compilerSpecificationIdentifier
+outputFilesCompilerFlags
+runOncePerArchitecture
+baseConfigurationFileReference
+build phase type
+dependency format
+ dictionary is unrecognized; must be one of: 
+A value in the Array value for '
+ dictionary must be a 
+ dictionary is not a 
+' is missing in 
+-dependency_info
+-exported_symbols_list
+-unexported_symbols_list
+/Library/Caches/com.apple.xbs/Sources/XCBuild/XCBuild-15509/XCBCore/Specs/CommandLineToolSpec.swift
+defaultRuleInfo(_:lookup:)
+ implementation for 
+-fembed-bitcode-marker
+-object_path_lto
+-bitcode_symbol_map
+-allowable_client
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.Internal.sdk/usr/lib/swift/Swift.swiftmodule/x86_64.swiftinterface
+ResMergerCollector
+Merge resources into 
+ResMergerProduct
+com.apple.tools.create-build-directory
+/Library/Caches/com.apple.xbs/Sources/XCBuild/XCBuild-15509/XCBCore/Specs/Tools/OtherTools.swift
+unexpected direct invocation
+CreateBuildDirectory-
+CreateBuildDirectory
+builtin-create-build-directory
+CodeSign warning: invalid codesign flags '
+Signing Identity:     "
+Provisioning Profile: "
+                      (
+--preserve-metadata=identifier,entitlements,flags
+--timestamp=none
+Code signing is required
+invalid copy command which requires file rename: '
+-ignore-missing-inputs
+-resolve-src-symlinks
+-strip-debug-symbols
+builtin-infoPlistUtility
+-additionalcontentfile
+-requiredArchitecture
+ProcessInfoPlistFile
+-expandbuildsettings
+-enforceminimumos
+GenerateDSYMFile 
+Create Directory 
+error: could not write entitlements source file
+Entitlements:
+ProcessProductPackaging
+com.apple.security.get-task-allow
+com.apple.build-tools.swift-header-tool
+SwiftMergeGeneratedHeaders
+SwiftStdLibToolInputDependencies.dep
+--emit-dependency-info
+CopySwiftStdlib 
+--filter-for-swift-os
+--strip-bitcode-tool
+com.apple.compilers.llvm.clang.1_0
+Verify Modularization of 
+com.apple.build-tools.odr.create-asset-pack-manifest
+AssetPackManifest.plist
+CreateAssetPackManifest
+Creating asset pack manifest
+AssetPackManifestTemplate.plist
+ValidateEmbeddedBinary 
+-no-validate-extension
+com.apple.build-tasks.process-xcframework-library
+, no library for this platform was found in '
+ProcessXCFrameworkLibrary
+ProcessXCFrameworkLibrarySwift
+Copy additional 
+ProcessXCFrameworkLibraryHeaders
+Copy headers from 
+XCCompilerSpecificationIbtool
+XCCompilerSpecificationIBStoryboardLinker
+XCCompilerSpecificationDistill
+XCCompilerSpecificationActool
+XCCompilerSpecificationDataModel
+XCCompilerSpecificationMLKit
+XCCompilerSpecificationIntents
+PBXCompilerSpecificationLex
+PBXCompilerSpecificationOpenCL
+PBXCompilerSpecificationRez
+PBXCompilerSpecificationYacc
+PBXLinkerSpecificationLd
+PBXLinkerSpecificationLibtool
+PBXLinkerSpecificationResMerger
+XCToolSpecificationCompilationDatabaseGenerator
+XCToolSpecificationHeadermapGenerator
+PBXCompilerSpecificationPbxCp
+XCProductPackagingUtilityToolSpecification
+_TtC7XCBCore18IbtoolCompilerSpec
+_TtCC7XCBCore18IbtoolCompilerSpecP33_32AFFC04E3ECE5DB9ED2E01D6E2DE9DC14BuildPhaseInfo
+allInputFilenames
+_TtC7XCBCore30IBStoryboardLinkerCompilerSpec
+_TtC7XCBCore19DistillCompilerSpec
+discoveredInfoCache
+_TtC7XCBCore18ActoolCompilerSpec
+_TtC7XCBCore25CoreDataModelCompilerSpec
+_TtC7XCBCore18CoreMLCompilerSpec
+_TtC7XCBCore29InstrumentsPackageBuilderSpec
+_TtC7XCBCore19IntentsCompilerSpec
+_TtC7XCBCore15LexCompilerSpec
+_TtC7XCBCore17MetalCompilerSpec
+_TtC7XCBCore15MetalLinkerSpec
+_TtC7XCBCore18OpenCLCompilerSpec
+_TtC7XCBCore15RezCompilerSpec
+_TtC7XCBCore16YaccCompilerSpec
+_TtC7XCBCore12LdLinkerSpec
+_TtC7XCBCore17LibtoolLinkerSpec
+_TtC7XCBCore19ResMergerLinkerSpec
+_TtC7XCBCore36CompilationDatabaseGeneratorToolSpec
+_TtC7XCBCore24CreateBuildDirectorySpec
+_TtC7XCBCore26HeadermapGeneratorToolSpec
+_TtC7XCBCore11CppToolSpec
+_TtC7XCBCore16CodesignToolSpec
+_TtC7XCBCore12CopyToolSpec
+_TtC7XCBCore17CopyPlistFileSpec
+_TtC7XCBCore19CopyStringsFileSpec
+_TtC7XCBCore16CopyTiffFileSpec
+_TtC7XCBCore13DittoToolSpec
+_TtC7XCBCore17InfoPlistToolSpec
+_TtC7XCBCore30LaunchServicesRegisterToolSpec
+_TtC7XCBCore16DsymutilToolSpec
+_TtC7XCBCore13MkdirToolSpec
+_TtC7XCBCore14NMEditToolSpec
+_TtC7XCBCore22ResourceCopierToolSpec
+_TtC7XCBCore16SceneKitToolSpec
+_TtC7XCBCore24ProductPackagingToolSpec
+_TtC7XCBCore14PLUtilToolSpec
+_TtC7XCBCore19ShellScriptToolSpec
+_TtC7XCBCore13StripToolSpec
+_TtC7XCBCore19SwiftHeaderToolSpec
+_TtC7XCBCore19SwiftStdLibToolSpec
+_TtC7XCBCore15SymlinkToolSpec
+_TtC7XCBCore22ModuleVerifierToolSpec
+_TtC7XCBCore31CreateAssetPackManifestToolSpec
+_TtC7XCBCore16IconUtilToolSpec
+_TtC7XCBCore16TiffUtilToolSpec
+_TtC7XCBCore13TouchToolSpec
+_TtC7XCBCore15UnifdefToolSpec
+_TtC7XCBCore30ValidateEmbeddedBinaryToolSpec
+_TtC7XCBCore23ValidateProductToolSpec
+_TtC7XCBCore29ProcessXCFrameworkLibrarySpec
+), supportedPlatforms=[
+ explicitTargetDeviceName=
+/Library/Caches/com.apple.xbs/Sources/XCBuild/XCBuild-15509/XCBCore/Specs/LinkerSpec.swift
+CopyStringsFile was passed two input files:
+SystemSevenOrLater=1
+-cl-auto-vectorize-disable
+-gcl-bc-bundle-identifier
+-cl-auto-vectorize-enable
+-cl-denorms-are-zero
+-cl-fast-relaxed-math
+-cl-double-as-single
+path indexingInfo 
+InputFileBaseUniquefier
+Failed to generate source indexing info for "
+IntentDefinitionGenerated
+: Unknown language "
+". Please set "Intent Class Generation Language" (INTENTS_CODEGEN_LANGUAGE) to Objective-C or Swift
+Could not determine generated file paths for Intent Definition generation: 
+IntentDefinitionCodegen
+Generate code for intent definition 
+: No predominant language detected. Please set "Intent Class Generation Language" (INTENTS_CODEGEN_LANGUAGE) to Objective-C or Swift
+: Target's predominant language "
+" is not supported for Intents code generation. Selecting Objective-C by default. Please set "Intent Class Generation Language" (INTENTS_CODEGEN_LANGUAGE) to Objective-C or Swift as required
+Xcode.SourceCodeLanguage.C
+BuildInstrumentsPackage 
+: COREML_CODEGEN_LANGUAGE set to unsupported language "
+".  Set COREML_CODEGEN_LANGUAGE to preferred language.
+Unknown language [2]
+Could not determine generated file paths for CoreML code generation: 
+Error preparing CoreML model "
+" for code generation: 
+CoreMLModelCodegen
+ language interface for CoreML model document 
+: No Swift version specified.  Set COREML_CODEGEN_SWIFT_VERSION to preferred Swift version.
+Unsupported Swift Version
+Disabled in project (CoreML Code Generation Language set to "none")
+: No predominant language detected.  Set COREML_CODEGEN_LANGUAGE to preferred language.
+Unknown language
+" is not supported for CoreML code generation.  Selecting Objective-C by default.  Set COREML_CODEGEN_LANGUAGE to preferred language.
+CoreDataGenerated
+Could not determine generated file paths for Core Data code generation: 
+DataModelCodegen
+Generate code for data model 
+folder.assetcatalog
+text.plist.strings
+--asset-pack-output-specifications
+failed to read asset tags: 
+AssetPackOutputSpecifications.plist
+failed to format plist for 
+--minimum-deployment-target
+CoreThemeDefinition.framework
+distil: version: 
+distill: version: 
+$(UnlocalizedProductResourcesDir)
+BUILT_PRODUCTS_DIR
+stringsFile region 
+$(VALIDATE_PRODUCT)
+failed to serialize product type infoPlistAdditions: 
+ProductTypeInfoPlistAdditions.plist
+replace-with-marker
+ for product type '
+$self.identifier
+codesign_allocate
+/usr/bin/codesign
+ cannot weak-link 
+Apple Inc. version cctools-
+-version_details
+@(#)PROGRAM:ld  PROJECT:ld64-
+configured to support archs: 
+com.apple.build-tools.codesign
+com.apple.build-tasks.copy-plist-file
+com.apple.build-tasks.copy-strings-file
+com.apple.compilers.cpp
+com.apple.tools.ditto
+com.apple.tools.dsymutil
+com.apple.compilers.iconutil
+com.apple.compilers.iig
+com.apple.tools.info-plist-utility
+com.apple.compilers.instruments-package-builder
+com.apple.build-tasks.ls-register-url
+com.apple.xcode.linkers.lipo
+com.apple.compilers.metal
+com.apple.compilers.metal-linker
+com.apple.tools.mkdir
+com.apple.build-tools.nmedit
+com.apple.tools.plutil
+com.apple.compilers.resource-copier
+com.apple.build-tasks.compile-rc-project.xcplugin
+com.apple.compilers.scntool
+com.apple.commands.shell-script
+com.apple.build-tools.strip
+com.apple.build-tools.swift-stdlib-tool
+com.apple.tools.symlink
+com.apple.build-tools.modules-verifier
+com.apple.build-tools.tapi.installapi
+com.apple.tools.touch
+public.build-task.unifdef
+com.apple.tools.validate-embedded-binary-utility
+com.apple.build-tools.platform.validate
+com.apple.build-tasks.register-execution-policy-exception
+Unexpected type code (
+COREMLCOMPILER_GENERATOR_ERROR
+COREMLCOMPILER_LANGUAGE_TO_GENERATE
+COREMLCOMPILER_GENERATOR_NOTICE
+COREMLCOMPILER_GENERATED_FILE_PATHS
+INTENTS_GENERATOR_ERROR
+INTENTS_GENERATED_FILE_PATHS
+metalASTCommandArguments
+metalASTBuiltProductsDir
+/Library/Caches/com.apple.xbs/Sources/XCBuild/XCBuild-15509/XCBCore/ConfiguredTarget.swift
+delegate must be a ConfiguredTargetSerializerDelegate
+delegate must be a ConfiguredTargetDeserializerDelegate
+Could not look up target for guid '
+' in workspace '
+BuildParameters placeholder was unexpected value '
+BuildParameters index 
+ in ConfiguredTarget is out of range (
+_TtC7XCBCore16ConfiguredTarget
+target
+$__lazy_storage_$_signature
+_TtC7XCBCore26BuildRuleFileTypeCondition
+fileTypes
+_TtC7XCBCore26BuildRuleFileNameCondition
+namePatterns
+/Library/Caches/com.apple.xbs/Sources/XCBuild/XCBuild-15509/XCBCore/Macros/MacroValueAssignmentTable.swift
+delegate must be a MacroValueAssignmentTableDeserializerDelegate
+Unrecognized code for MacroType for MacroDeclaration 
+Mismatched type for MacroDeclaration 
+_TtC7XCBCore25MacroValueAssignmentTable
+namespace
+valueAssignments
+_TtC7XCBCore20MacroValueAssignment
+expression
+next
+_TtC7XCBCore10SpecParser
+parsedKeys
+ (expected boolean 'YES' or 'NO')
+missing required value for key: '
+unexpected item: 
+ while parsing key '
+' (expected string or string list)
+ while parsing key 
+ (expected dictionary)
+macro conditions expression 
+invalid setting name: '
+unexpected value for build setting '
+' while parsing '
+macro parsing error for build setting '
+/Library/Caches/com.apple.xbs/Sources/XCBuild/XCBuild-15509/XCBCore/Specs/SpecParser.swift
+ (expected array of strings)
+unexpected array member: 
+ (expected string)
+' (expected array)
+ while parsing elements of key '
+' (expected dictionary)
+macro parsing error on '
+unexpected C compiler invocation with specified outputs: 
+--serialize-diagnostics
+com.apple.compilers.llvm.clang.1_0.compiler
+com.apple.compilers.llvm.clang.1_0.preprocessor
+com.apple.compilers.llvm.clang.1_0.assembler
+PBXCompilerSpecificationGcc
+XCCompilerSpecificationClang
+_TtC7XCBCore21AbstractCCompilerSpec
+_TtC7XCBCore17ClangOutputParser
+task
+workspaceContext
+payload
+_TtC7XCBCore17ClangCompilerSpec
+precompNeutralFlagPatterns
+_TtCC7XCBCore17ClangCompilerSpecP33_7843B0689C39E6A63FDEE696DADE55129DataCache
+constantFlagsCache
+_TtC7XCBCore23ClangStaticAnalyzerSpec
+_TtC7XCBCore21ClangPreprocessorSpec
+_TtC7XCBCore18ClangAssemblerSpec
+^module '(.+)' not found$
+^'([^/]+)/.*' file not found$
+clangASTCommandArguments
+clangASTBuiltProductsDir
+clangPrefixFilePath
+clangPCHFilePath
+clangPCHCommandArguments
+clangPCHHashCriteria
+PatternsOfFlagsNotAffectingPrecomps
+-fbuild-session-file=
+-fretain-comments-from-system-headers
+-ferror-limit=10
+-working-directory=
+-detailed-preprocessing-record
+-fmodules-validate-once-per-build-session
+__clang_version__
+$(CLANG_ANALYZER_OUTPUT_DIR)/StaticAnalyzer/$(PROJECT_NAME)/$(TARGET_NAME)/$(CURRENT_VARIANT)/$(CURRENT_ARCH)
+SDK_PRODUCT_BUILD_VERSION=
+-index-store-path
+SharedPrecompiledHeaders
+' triggered by '
+-fdiagnostics-format=
+-fdiagnostics-show-category=
+-fdiagnostics-hotness-threshold=
+-fmessage-length=
+-fmacro-backtrace-limit=
+-fbuild-session-timestamp=
+-fno-show-column
+-fshow-source-location
+-fno-show-source-location
+-fcaret-diagnostics
+-fno-caret-diagnostics
+-fcolor-diagnostics
+-fno-color-diagnostics
+-fansi-escape-codes
+-fdiagnostics-show-option
+-fno-diagnostics-show-option
+-fdiagnostics-show-hotness
+-fno-diagnostics-show-hotness
+-fdiagnostics-fixit-info
+-fno-diagnostics-fixit-info
+-fdiagnostics-print-source-range-info
+-fdiagnostics-parseable-fixits
+-fdiagnostics-show-template-tree
+-fdiagnostics-show-note-include-stack
+-fno-diagnostics-show-note-include-stack
+unsupported value '
+' for build setting GCC_INPUT_FILETYPE
+com.apple.compilers.llvm.clang.1_0.analyzer
+/Library/Caches/com.apple.xbs/Sources/XCBuild/XCBuild-15509/XCBCore/Specs/Tools/CCompiler.swift
+Fatal error
+_TtC7XCBCore17WorkspaceAnalyzer
+buildGraph
+delegate
+_TtC7XCBCore42IncompatibleBinaryContentDiagnosticContext
+diagnosticLocation
+buildPlatforms
+buildArchs
+context
+message
+_TtC7XCBCore45IncompatibleLinkedOrEmbeddedContentDiagnostic
+otherTargetName
+otherTargetPlatforms
+otherProductType
+macOS (zippered)
+com.apple.product-type.application.watchapp2
+com.apple.product-type.driver-extension
+You may need to 
+restrict the platforms for which this 
+ in the target editor
+, or replace it with an XCFramework that supports both platforms
+linked and embedded
+' is missing one or more architectures required by this target: 
+s are not available when building for 
+, which is not available when building for 
+ has been renamed.
+Consider migrating to 
+ is not available when building for 
+ is deprecated and is not available when building for 
+ to conditionally import this framework
+, first importing TargetConditionals.h if necessary
+` to conditionally import this framework when building for 
+targetEnvironment(
+TARGET_OS_DRIVERKIT
+TARGET_OS_MACCATALYST
+TARGET_OS_BRIDGE
+OS_dispatch_queue
+One of the paths in 
+ does not exist: 
+NSExtensionPointIdentifier
+_TtC7XCBCore10LinkerSpec
+_TtC7XCBCore17GenericLinkerSpec
+SupportsInputFileList
+com.apple.product-type.framework
+com.apple.product-type.library.dynamic
+-serialize-debugging-options
+RunnerEntitlements.plist
+Developer/AppleInternal/Library/Frameworks
+com.apple.platform.macosx
+_TtC7XCBCore15ProductTypeSpec
+buildSettings
+overridingBuildSettingsTable
+defaultPackageTypeIdentifier
+isWrapper
+hasInfoPlist
+frameworksRunpathSearchPath
+canEmbedCompilerSanitizerLibraries
+validateEmbeddedBinaries
+productValidationToolSpecIdentifier
+buildPhaseFileRefAdditions
+infoPlistAdditions
+supportsOnDemandResources
+deprecationInfo
+_TtC7XCBCore21BundleProductTypeSpec
+_TtC7XCBCore26ApplicationProductTypeSpec
+_TtC7XCBCore24FrameworkProductTypeSpec
+_TtC7XCBCore30StaticFrameworkProductTypeSpec
+_TtC7XCBCore30KernelExtensionProductTypeSpec
+_TtC7XCBCore27XCTestBundleProductTypeSpec
+_TtC7XCBCore35StandaloneExecutableProductTypeSpec
+_TtC7XCBCore29DynamicLibraryProductTypeSpec
+_TtC7XCBCore28StaticLibraryProductTypeSpec
+_TtC7XCBCore19ToolProductTypeSpec
+Processed-Info.plist
+DefaultBuildProperties
+OverridingBuildSettings
+RunpathSearchPathForEmbeddedFrameworks
+CanEmbedCompilerSanitizerLibraries
+ValidateEmbeddedBinaries
+InfoPlistAdditions
+SupportsOnDemandResources
+AddWatchCompanionRequirement
+AllowedFileTypes
+AllowedBuildPhases
+AlwaysPerformSeparateStrip
+CanEmbedAddressSanitizerLibraries
+DisableSchemeAutocreation
+HasInfoPlistStrings
+IsBundleIdentifierRequired
+IsCapabilitiesUnsupported
+SupportsZeroLink
+WantsBundleIdentifierEditing
+WantsGeneralTargetEditingOnly
+WantsInfoEditorHidden
+WantsSigningEditing
+WantsSimpleTargetEditing
+WantsSimpleTargetEditingWithoutCapabilities
+BuildPhaseInjectionsWhenEmbedding
+DefaultTargetName
+ProvisioningProfileRequired
+ProvisioningProfileSupported
+RequiredBuiltProductsDir
+ValidationToolSpec
+Value for 'ValidationToolSpec' in the 'Validation' dictionary for product type '
+' must be a string but is: 
+at least one entry for 'PackageTypes' must be defined
+com.apple.package-type.wrapper
+ITSWatchOnlyContainer
+LSApplicationIsStickerProvider
+LSApplicationLaunchProhibited
+XCTContainsUITests
+DeprecationReason
+expected 'DeprecationReason' if key 'DeprecationLevel' is used.
+invalid 'DeprecationLevel' value of '
+BuildPhaseFileRefAdditions
+Expected dict in 
+Expected array in 
+Expected string in 
+RegionVariantName
+Expected non-empty string in 
+['RegionVariantName']
+PBXToolProductType
+PBXStaticLibraryProductType
+-compatibility_version
+-current_version
+PBXDynamicLibraryProductType
+XCStandaloneExecutableProductType
+PBXXCTestBundleProductType
+XCKernelExtensionProductType
+XCStaticFrameworkProductType
+PBXFrameworkProductType
+PBXApplicationProductType
+PBXBundleProductType
+/$(PRODUCT_NAME)-Runner.app$(_WRAPPER_CONTENTS_DIR)/PlugIns
+$(TARGET_BUILD_DIR)
+$(TARGET_BUILD_DIR)/..
+$(TEST_HOST) is not an absolute path.
+could not compute relative build path for TEST_HOST: PlugIns folder relative to $(TEST_HOST) is not a descendant of $(TARGET_BUILD_DIR) (
+test-bundle-with-host: 
+com.apple.product-type.application
+$(BUILT_PRODUCTS_DIR)/
+Xcode/Agents/XCTRunner.app
+recoverySuggestion
+cleanBuildFolder
+prepareForIndexing
+generatePreprocessedFile
+generateAssemblyCode
+, continueBuildingAfterErrors: 
+, hideShellScriptEnvironment: 
+, useParallelTargets: 
+, useImplicitDependencies: 
+, useEagerCompilation: 
+, buildCommand: 
+, schemeCommand: 
+_TtC7XCBCore12BuildRequest
+buildTargets
+useParallelTargets
+useImplicitDependencies
+useDryRun
+useEagerCompilation
+continueBuildingAfterErrors
+hideShellScriptEnvironment
+showNonLoggedProgress
+shouldCollectMetrics
+buildPlanDiagnosticsDirPath
+buildCommand
+schemeCommand
+ModuleCache.noindex
+Session.modulevalidation
+/Library/Caches/com.apple.Xcode
+no path to xcconfig file provided
+/Library/Caches/com.apple.xbs/Sources/XCBuild/XCBuild-15509/XCBCore/WorkspaceContext.swift
+com.apple.xcode.CreatedByBuildSystem
+_TtC7XCBCore16WorkspaceContext
+core
+workspace
+userInfo
+systemInfo
+workspaceSettings
+sdkRegistryCache
+headerIndexCache
+settingsCache
+macroConfigCache
+_TtCC7XCBCore16WorkspaceContextP33_155B8230DE40CF7B32B2F69B91C2134415SettingsWrapper
+lock
+settings
+_TtCC7XCBCore16WorkspaceContextP33_155B8230DE40CF7B32B2F69B91C2134415AncestorInclude
+resolvedPathCache
+normalizedPathCache
+_TtCFV7XCBCore27WorkspaceContextSDKRegistrycFT15coreSDKRegistryCS_11SDKRegistry13userNamespaceCS_14MacroNamespace17overridingSDKsDirGSqV7XCBUtil4Path__S0_L_8Delegate
+diagnosticsEngine
+_TtCFC7XCBCore16WorkspaceContext22loadSettingsFromConfigFT4dataV7XCBUtil10ByteString4pathGSqVS1_4Path_9namespaceCS_14MacroNamespace11searchPathsGSaS3___VS0_15MacroConfigInfoL_17ConfigDiagnostics
+errors
+_TtCFC7XCBCore16WorkspaceContext22loadSettingsFromConfigFT4dataV7XCBUtil10ByteString4pathGSqVS1_4Path_9namespaceCS_14MacroNamespace11searchPathsGSaS3___VS0_15MacroConfigInfoL_20NestedConfigurations
+_TtCFC7XCBCore16WorkspaceContext22loadSettingsFromConfigFT4dataV7XCBUtil10ByteString4pathGSqVS1_4Path_9namespaceCS_14MacroNamespace11searchPathsGSaS3___VS0_15MacroConfigInfoL_16AncestorIncludes
+The assignment of '
+" uses $(inherited). In the new build system this will inherit from an earlier definition of '
+' in this xcconfig file or its imports; the old build system would discard earlier definitions. This may result in changes to resolved build setting values.
+could not find included file '
+' because there are no search paths to locate it
+' in search paths
+' does not exist
+unable to read included file '
+Skipping the inclusion of '
+' as it would create a cycle.
+Cycle Path: 
+Cycle Details:
+: unable to open file
+: unable to open file (in project "
+: unable to open file (in target "
+sourcecode.metal
+XCODE_OVERRIDING_SDKS_DIRECTORY
+Entitlements.plist
+_TtC7XCBCore17SearchPathBuilder
+searchPathEntries
+inputPaths
+headerSearchPaths
+systemHeaderSearchPaths
+frameworkSearchPaths
+systemFrameworkSearchPaths
+/Library/Caches/com.apple.xbs/Sources/XCBuild/XCBuild-15509/XCBCore/Specs/Tools/TAPITools.swift
+com.apple.build-tools.tapi.merge
+_TtC7XCBCore12TAPIToolSpec
+_TtC7XCBCore17TAPIMergeToolSpec
+--allow-arch-merges
+Apple TAPI version.+\(tapi[_\w\d]*-([\d.]+)\)
+_TtC7XCBCore7Project
+guid
+xcodeprojPath
+sourceRoot
+name
+targets
+groupTree
+isPackage
+/Library/Caches/com.apple.xbs/Sources/XCBuild/XCBuild-15509/XCBCore/ProjectModel/Reference.swift
+unexpected model: 
+There is no XCFramework found at '
+There is no Info.plist found at '
+A library with the identifier "
+" already exists.
+ represent two equivalent library definitions.
+ is not supported for a 
+An XCFramework cannot be composed of different library types: 
+Unknown library type with extension "
+There are no libraries provided for the XCFramework.
+The specified XCFramework format version (
+) is not supported.
+OVERVIEW: Utility for packaging multiple build configurations of a given library or framework into a single xcframework.
+USAGE:
+xcodebuild -create-xcframework -framework <path> [-framework <path>...] -output <path>
+xcodebuild -create-xcframework -library <path> [-headers <path>] [-library <path> [-headers <path>]...] -output <path>
+OPTIONS:
+-framework <path>         Adds a framework from the given <path>.
+-library <path>           Adds a static or dynamic library from the given <path>.
+-headers <path>           Adds the headers from the given <path>. Only applicable with -library.
+-output <path>            The <path> to write the xcframework to.
+-allow-internal-distribution
+                          Specifies that the created xcframework contains information not suitable for public distribution.
+-help                     Show this help content.
+OVERVIEW: Utility for packaging multiple build configurations of a given library or framework into a single xcframework.
+USAGE:
+xcodebuild -create-xcframework -framework <path> [-framework <path>...] -output <path>
+xcodebuild -create-xcframework -library <path> [-headers <path>] [-library <path> [-headers <path>]...] -output <path>
+OPTIONS:
+-framework <path>         Adds a framework from the given <path>.
+-library <path>           Adds a static or dynamic library from the given <path>.
+-headers <path>           Adds the headers from the given <path>. Only applicable with -library.
+-output <path>            The <path> to write the xcframework to.
+-allow-internal-distribution
+                          Specifies that the created xcframework contains information not suitable for public distribution.
+-help                     Show this help content.
+/Library/Caches/com.apple.xbs/Sources/XCBuild/XCBuild-15509/XCBCore/XCFramework.swift
+no output path found.
+xcframework successfully written out to: 
+No 'swiftinterface' files found within '
+error: unable to read the file at '
+error: unable to create a Mach-O from the binary at '
+error: unable to find any architecture information in the binary at '
+error: unable to find any specific architecture information in the binary at '
+error: binaries with multiple platforms are not supported '
+error: binaries with multiple environments are not supported '
+error: unable to determine the platform for the given binary '
+'; check your deployment version settings
+error: an xcframework cannot contain both frameworks and libraries.
+error: only a single output location may be specified.
+error: no output was specified.
+error: at least one framework or library must be specified.
+error: the output path must end with the extension 'xcframework'.
+error: headers are only allowed with the use of '-library'.
+createXCFramework
+-create-xcframework
+-allow-internal-distribution
+-ExtraPlugInFolders
+error: invalid argument '
+error: expected parameter to argument.
+Xcode.SourceCodeLanguage.Objective-C-Plus-Plus
+Xcode.SourceCodeLanguage.C-Plus-Plus
+Xcode.SourceCodeLanguage.Objective-C
+Xcode.SourceCodeLanguage.Swift
+invalid provisioning style
+ is not a boolean value
+_TtC7XCBCore16TargetDependency
+platformFilters
+_TtC7XCBCore6Target
+signature
+dependencies
+warnings
+_TtC7XCBCore16BuildPhaseTarget
+buildPhases
+sourcesBuildPhase
+headersBuildPhase
+resourcesBuildPhase
+_TtC7XCBCore14StandardTarget
+buildRules
+isUnitTest
+isPackageTarget
+classPrefix
+_TtC7XCBCore15AggregateTarget
+_TtC7XCBCore20PackageProductTarget
+_TtC7XCBCore14ExternalTarget
+toolPath
+arguments
+' has provisioning source data for configuration '
+' but no configuration of that name
+' has multiple provisioning source data for configuration '
+target has multiple 
+ build phases, which may cause it to build incorrectly - all but one should be deleted
+Copy Bundle Resources
+/Library/Caches/com.apple.xbs/Sources/XCBuild/XCBuild-15509/XCBCore/ProjectModel/BuildPhase.swift
+ build phase asked for its name
+:ProductReference
+/Library/Caches/com.apple.xbs/Sources/XCBuild/XCBuild-15509/XCBCore/ProjectModel/Target.swift
+EnableDefaultInfoPlistTemplateKeys
+DisableAutomaticWrongArchitectureTranslation
+DisableShellScriptAllowsMissingInputs
+UseHierarchicalLayoutForCopiedAsideProducts
+DisableExecutionPolicyExceptionRegistration
+TreatScriptInputsAsDirectories
+DisableSourcesTaskProducerVariantTaskFiltering
+PBXCompilerSpecificationMig
+_TtC7XCBCore15MigCompilerSpec
+$(CURRENT_ARCH)-$(LLVM_TARGET_TRIPLE_VENDOR)-$(LLVM_TARGET_TRIPLE_OS_VERSION)$(LLVM_TARGET_TRIPLE_SUFFIX)
+_TtC7XCBCore20MacroEvaluationScope
+conditionParameterValues
+stringCache
+stringListCache
+subscopes
+_TtC7XCBCore22MacroEvaluationContext
+scope
+parent
+macro
+value
+lookup
+MacroEvaluationScope.evaluationsComputed
+The number of evaluations which were actually computed (not cached).
+MacroEvaluationScope.exprEvaluations
+The number of expression evaluation requests.
+MacroEvaluationScope.evaluations
+The number of evaluation requests.
+', identifier: '
+_TtC7XCBCore8Platform
+familyName
+productBuildVersion
+defaultSettingsTable
+isDeploymentPlatform
+additionalInfoPlistEntries
+specRegistryProvider
+additionalBuiltProductsDirMacro
+additionalBuiltProductsDirValue
+deploymentTargetMacro
+deploymentTargetClangFlagName
+deploymentTargetClangEnvName
+deploymentTargetLdEnvName
+deploymentTargetLdFlagName
+swiftTargetPrefix
+embeddedProvisioningProfileName
+sdkCanonicalNamePublic
+sdkCanonicalNameInternal
+useFallbackEntitlementsInXBS
+correspondingDevicePlatform
+correspondingSimulatorPlatform
+signingContextCache
+deploymentTargetsCache
+addressSanitizerLibraryName
+threadSanitizerLibraryName
+undefinedBehaviorSanitizerLibraryName
+appStoreSubmissionConfigurationBitCodeDefaultSupportLevel
+sdks
+ibtoolPlatformDefinition
+_TtC7XCBCore16PlatformRegistry
+platforms
+platformsByIdentifier
+platformsByName
+allDeploymentTargetMacroNames
+hasLoadedExtendedInfo
+hasLoadedIbtoolPlatformDefinitions
+Xcode.InterfaceBuilderBuildSupport.PlatformDefinition
+/Library/Caches/com.apple.xbs/Sources/XCBuild/XCBuild-15509/XCBCore/PlatformRegistry.swift
+unexpected Xcode.InterfaceBuilderBuildSupport.PlatformDefinition data
+explicitTargetDeviceName
+explicitLinkerOutput
+unknown platform named '
+Cannot register 
+ as a platform definition for 
+ is already registered for that platform name
+targetDeviceName
+buildSystemDeviceIdentifier
+unexpected Xcode.InterfaceBuilderBuildSupport.PlatformDefinition data - buildSystemDeviceIdentifier should be an integer, but it is not
+Xcode.PreferredArchitecture
+missing 'platform' key in 'Xcode.PreferredArchitecture' extension
+Xcode.DVTFoundation.ExtendedPlatformInfo
+missing 'platform' key in 'Xcode.DVTFoundation.ExtendedPlatformInfo' extension
+Couldn't find Xcode.DVTFoundation.ExtendedPlatformInfo extension for 
+Xcode.IDEFoundation.ExtendedPlatformInfo
+missing 'platform' key in 'Xcode.IDEFoundation.ExtendedPlatformInfo' extension
+Couldn't find Xcode.IDEFoundation.ExtendedPlatformInfo extension for 
+unexpected macro parsing failure loading platform 
+deploymentTargetSettingName
+missing 'sdkName' key in 'Xcode.DVTFoundation.ExtendedPlatformInfo' extension
+missing 'internalSDKName' key in 'Xcode.DVTFoundation.ExtendedPlatformInfo' extension
+UBSanitizerLibraryName
+App store submission configuration is invalid. Invalid support level found: 
+additionalBuiltProductsDirName
+correspondingDevicePlatformIdentifier
+correspondingSimulatorPlatformIdentifier
+com.apple.platform.bridge
+unknown platform for '
+additionalBuiltProductsDirExpression
+missing 'architecture' key in 'Xcode.PreferredArchitecture' extension
+unexpected platform data
+invalid 'Type' field
+missing 'Name' field
+invalid 'Name' field
+missing 'Identifier' field
+invalid 'Identifier' field
+missing 'Description' field
+invalid 'Description' field
+missing 'FamilyName' field
+invalid 'FamilyName' field
+DefaultProperties
+IsDeploymentPlatform
+unable to load platform version info: '
+' was malformed: 
+ProductBuildVersion
+invalid 'Version' field
+unable to load platform: 'Info.plist' was malformed: 
+MACOSX_DEPLOYMENT_TARGET
+IPHONEOS_DEPLOYMENT_TARGET
+TVOS_DEPLOYMENT_TARGET
+WATCHOS_DEPLOYMENT_TARGET
+BRIDGEOS_DEPLOYMENT_TARGET
+RTKIT_DEPLOYMENT_TARGET
+DRIVERKIT_DEPLOYMENT_TARGET
+found previously-unknown deployment target macro '
+' declared by platform
+deployment target macro '
+' is defined for multiple platforms: 
+DEPLOYMENT_TARGET_SUGGESTED_VALUES
+DEPLOYMENT_TARGET_SETTING_NAME
+CODE_SIGN_CONTEXT_CLASS
+XCiPhoneOSCodeSignContext
+XCiPhoneSimulatorCodeSignContext
+_TtC7XCBCore4Spec
+domain
+identifier
+basedOnSpec
+_TtC7XCBCore16ArchitectureSpec
+canonicalName
+archSetting
+realArchs
+compatibilityArchs
+deploymentTargetRange
+errorOutsideDeploymentTargetRange
+deprecated
+deprecatedError
+_TtC7XCBCore13BuildStepSpec
+_TtC7XCBCore12FileTypeSpec
+isBundle
+isFramework
+extensions
+languageDialect
+isEmbeddableInProduct
+codeSignOnCopy
+validateOnCopy
+_TtC7XCBCore15PackageTypeSpec
+productReferenceFileTypeIdentifier
+_TtC7XCBCore12PlatformSpec
+_TtC7XCBCore17BuildSettingsSpec
+_TtC7XCBCore15BuildSystemSpec
+_TtC7XCBCore14BuildPhaseSpec
+IsFrameworkWrapper
+AppliesToBuildRules
+CanSetIncludeInIndex
+ChangesCauseDependencyGraphInvalidation
+ComputerLanguage
+ContainsNativeCode
+ExtraPropertyNames
+FallbackAutoroutingBuildPhase
+IsBuildPropertiesFile
+IsDynamicLibrary
+IsExecutableWithGUI
+IsProjectWrapper
+IsScannedForIncludes
+IsStaticFrameworkWrapper
+IsSwiftSourceCode
+FilenamePatterns
+PlistStructureDefinition
+RemoveHeadersOnCopy
+RequiresHardTabs
+ProductReference
+RealArchitectures
+ArchitectureSetting
+CompatibilityArchitectures
+ErrorOutsideDeploymentTargetRange
+PerArchBuildSettingName
+UserVisisbleName
+cannot define 'RealArchitectures' with no 'ArchitectureSetting'
+unable to bind architecture setting name '
+DeploymentTargetRange
+expected 2 entries, but got: 
+_TtC7XCBCore26ClangSerializedDiagnostics
+handle
+Cannot Load File: 
+_TtC7XCBCore16MacroDeclaration
+_TtC7XCBCore23BooleanMacroDeclaration
+_TtC7XCBCore22StringMacroDeclaration
+_TtC7XCBCore26StringListMacroDeclaration
+_TtC7XCBCore27UserDefinedMacroDeclaration
+CreateUniversalBinary
+CopyAndRemoveArchs
+CopyAndPreserveArchs
+_TtC7XCBCore12LipoToolSpec
+Prune architectures for 
+_TtC7XCBCore12LegacyPlugin
+path
+_TtC7XCBCore19LegacyPluginManager
+pluginsByName
+pluginsByIdentifier
+Contents/Info.plist
+unable to load plugin data: 
+invalid plugin data (expected dictionary)
+missing plugin data key: 'CFBundleIdentifier'
+:UnknownReplacementOperator("
+:UnknownRetrievalOperator("
+:InvalidOperatorCharacter("
+:MissingOperatorName("
+:MissingMacroName("
+:UnterminatedMacroSubexpression("
+:UnterminatedQuotation("
+:TrailingEscapeCharacter("
+:TrailingDollarSign("
+:DeprecatedMacroRefSyntax("
+_TtC7XCBCore11XcodePlugin
+data
+_TtC7XCBCore18XcodePluginManager
+searchPaths
+invalid plugin info (expected dictionary)
+invalid plugin info (missing 'CFBundleIdentifier' key)
+DVTPlugInHostRequirements
+unable to load plugin info: 
+/Library/Caches/com.apple.xbs/Sources/XCBuild/XCBuild-15509/XCBCore/XcodePluginManager.swift
+unexpected plugin data
+SwapOutputsWithInputsForIndexing is enabled, but there were 
+ outputs (expected 1 and 1)
+_TtC7XCBCore29AllInputFilesGroupingStrategy
+groupIdentifier
+_TtC7XCBCore39CommonFileBaseInputFileGroupingStrategy
+toolName
+_TtC7XCBCore31ActoolInputFileGroupingStrategy
+_TtC7XCBCore42ImageScaleFactorsInputFileGroupingStrategy
+_TtC7XCBCore19CommandLineToolSpec
+commandLineTemplate
+ruleInfoTemplate
+execPath
+execDescription
+outputs
+environmentVariables
+includeInUnionedDefaults
+wantsBuildSettingsInEnvironment
+generatedInfoPlistContent
+sourceFileOption
+additionalDirectoriesToCreate
+inputFileTypeDescriptors
+shouldSynthesizeBuildRules
+inputFileGroupingStrategies
+dontProcessOutputs
+isArchitectureNeutral
+areInputsDirectoryTrees
+isUnsafeToInterrupt
+swapOutputsWithInputsForIndexing
+llbuildControlDisabled
+_TtC7XCBCore26GenericCommandLineToolSpec
+_TtC7XCBCore19GenericOutputParser
+diagnosticRegex
+toolBasenames
+unparsedBytes
+_TtC7XCBCore32AssetCatalogCompilerOutputParser
+_TtC7XCBCore23ShellScriptOutputParser
+_TtC7XCBCore20LdLinkerOutputParser
+undefinedSymbols
+collectingUndefinedSymbols
+undefinedSymbolCountLimit
+com.apple.product-type.app-extension.messages-sticker-pack
+^([^'"]+: +|[ \t\f\p{Z}]*)(error|warning|note|notice|
+symbol(s) not found
+Undefined symbol: 
+ additional undefined symbols are shown in the transcript
+^[ ]*"([^"]*)", referenced from:$
+^[fF]ramework not found (.+)$
+^[ ]*Undefined symbols.*:$
+^ld:[ ]*((error|warning|note|notice): )?(.+)$
+^([^:]+):(?:([^:]+):)? +$
+^([^:]+):(?:([0-9]+):)?(?:([0-9]+):)? +$
+$(DERIVED_SOURCES_DIR)
+subclass responsibility
+EnvironmentVariables
+IncludeInUnionedToolDefaults
+WantsBuildSettingsInEnvironment
+GeneratedInfoPlistContentFilePath
+SourceFileOption
+AdditionalDirectoriesToCreate
+SynthesizeBuildRule
+SynthesizeBuildRuleForBuildPhases
+InputFileGroupings
+DontProcessOutputs
+IsArchitectureNeutral
+DeeplyStatInputDirectories
+IsUnsafeToInterrupt
+SwapOutputsWithInputsForIndexing
+LLBuildControlDisabled
+AdditionalFilesToClean
+AdditionalInputFiles
+CaresAboutInclusionDependencies
+CommandIdentifier
+CommandInvocationClass
+CommandOutputParser
+CommandResultsPostprocessor
+DashIFlagAcceptsHeadermaps
+DependencyInfoArgs
+DependencyInfoFile
+ExecCPlusPlusLinkerPath
+ExecDescriptionForCompile
+ExecDescriptionForCreateBitcode
+ExecDescriptionForPrecompile
+ExecutionDescription
+GenericCommandFailedErrorString
+IsNoLongerSupported
+MessageCategoryInfoOptions
+MessageInfoCategory
+MightNotEmitAllOutputs
+OutputFileExtension
+OutputsAreProducts
+OutputsAreSourceFiles
+OutputsAreTargets
+OverridingProperties
+PatternsOfFlagsNotAffectingOutputFile
+ProgressDescriptionForCompile
+ProgressDescriptionForCreateBitcode
+ProgressDescription
+ProgressDescriptionForPrecompile
+PrunePrecompiledHeaderCache
+RequiredComponents
+ShouldRerunOnError
+ShowInCompilerSelectionPopup
+SuccessExitCodes
+SupportsAnalyzeFile
+SupportsColoredDiagnostics
+SupportsGenerateAssemblyFile
+SupportsGeneratePreprocessedFile
+SupportsHeadermaps
+SupportsIsysroot
+SupportsMacOSXDeploymentTarget
+SupportsMacOSXMinVersionFlag
+SupportsPredictiveCompilation
+SupportsSeparateUserHeaderPaths
+SupportsSerializedDiagnostics
+SupportsSymbolSeparation
+UseCPlusPlusCompilerDriverWhenBundlizing
+common-file-base
+ib-base-region-and-strings
+image-scale-factors
+unknown grouping strategy: 
+invalid value for 'EnvironmentVariables' key (expected dictionary)
+invalid value for '
+' key in 'EnvironmentVariables' (expected string)
+missing required 'CommandLine' key
+missing required 'RuleName' key
+invalid 'CommandLine' template placeholder arg: '
+duplicate 'CommandLine' template arg: '
+invalid 'CommandLine' template: cannot use both '[input]' and '[inputs]'
+macro parsing error in 'CommandLine' template
+invalid 'RuleName' template placeholder arg: '
+duplicate 'RuleName' template arg: '
+macro parsing error in 'RuleName' template
+macro parsing error in 'Outputs'
+macro parsing error in 'OutputPath'
+macro parsing error in 'ExecPath'
+macro parsing error in 'EnvironmentVariables' for key '
+ outputs, ruleInfo: 
+_TtC7XCBCore15ConstructedTask
+additionalSignatureData
+inputs
+mustPrecede
+execTask
+allowDeduplication
+provisionalTask
+_TtC7XCBCore8GateTask
+_TtCC7XCBCore8GateTaskP33_C40DB67FD505194FA500EE0A5FB4F9B623GateTaskTypeDescription
+payloadType
+eventCategory
+swiftASTCommandArguments
+swiftASTBuiltProductsDir
+swiftASTModuleName
+Invalid SWIFT_VERSION: 
+Value for SWIFT_EXEC cannot be empty.
+The path for Swift input file list cannot be empty.
+' is unsupported, supported versions are: 
+Value for SWIFT_VERSION cannot be empty.
+swift_static/lib
+-enable-batch-mode
+-whole-module-optimization
+-emit-dependencies
+-emit-objc-header
+-embed-bitcode-marker
+-parse-as-library
+-import-underlying-module
+-enable-implicit-dynamic
+-enable-private-imports
+-enable-dynamic-replacement-chaining
+-disable-previous-implementation-calls-in-dynamic-replacements
+-output-file-map
+-emit-module-path
+-emit-objc-header-path
+-emit-module-interface-path
+-import-objc-header
+_PreviewReplacement_
+-disable-modules-validate-system-headers
+CompileSwiftSources
+GenerateSwiftModule
+sourcecode.swift
+XCCompilerSpecificationSwift
+_TtC7XCBCore24SwiftCommandOutputParser
+targetName
+variant
+arch
+buffer
+hasStreamError
+subtasks
+progressReporter
+commandDecoder
+_TtC7XCBCore17SwiftCompilerSpec
+invalid pid (no subtask record)
+missing error-message
+missing exit-status
+command_executable
+missing or invalid command
+command_arguments
+ (already in use)
+invalid item in Swift parseable output message (
+unknown Swift parseable message name: `
+Precompile bridging header
+Precompile Bridging Header 
+Merge swiftmodule
+Code Generation for Swift source files
+Code Generation 
+Compile Swift source files
+^no such module '(.+)'$
+Swift-GenerateDSYM
+PrecompileSwiftBridgingHeader
+MergeSwiftModule
+SwiftCodeGeneration
+invalid Swift parseable output message (
+Apple Swift version ([\d.]+) \(swiftlang-([\d.]+) clang-([\d.]+)\)
+Apple Swift version ([\d.]+) \(swift-([\d.]+)-RELEASE\)
+ABI version: ([\d.]+)
+-serialize-diagnostics
+-parseable-output
+/Library/Caches/com.apple.xbs/Sources/XCBuild/XCBuild-15509/XCBCore/Specs/Tools/SwiftCompiler.swift
+$($(DEPLOYMENT_TARGET_SETTING_NAME))
+swift-overrides.hmap
+-working-directory
+Generate Swift module
+[Internal Only] The SWIFT_EMIT_PARSEABLE_MODULE setting has been renamed to SWIFT_EMIT_MODULE_INTERFACE and will be removed in a future version of Xcode.
+-tbd-install_name
+-tbd-current-version
+-tbd-compatibility-version
+The use of Swift 3 @objc inference in Swift 4 mode is deprecated. Please address deprecated @objc inference warnings, test your code with 
+Use of deprecated Swift 3 @objc inference
+ logging enabled, and then disable inference by changing the "Swift 3 @objc Inference" build setting to "Default" for the "
+Duplicate values for key: '
+swift-dependencies
+~partial.swiftmodule
+System/iOSSupport/System/Library/Frameworks
+_TtC7XCBCore23AppExtensionInfoManager
+extensionPoints
+extensionPointsByIdentifier
+com.apple.AppSSO.idp-extension
+Authentication Services
+com.apple.AudioUnit
+com.apple.AudioUnit-UI
+com.apple.authentication-services-credential-provider-ui
+AutoFill Credential Provider
+com.apple.broadcast-services
+com.apple.broadcast-services-setupui
+Broadcast Setup UI
+com.apple.broadcast-services-upload
+Broadcast Upload
+com.apple.callkit.call-directory
+com.apple.classkit.context-provider
+ClassKit Context Provider
+com.apple.ctk-tokens
+Smart Card Token
+com.apple.dt.Xcode.extension.source-editor
+Xcode Source Editor
+com.apple.fileprovider-nonui
+com.apple.fileprovider-actionsui
+File Provider UI
+com.apple.FinderSync
+com.apple.identitylookup.classification-ui
+Unwanted Communication Reporting
+com.apple.identitylookup.message-filter
+com.apple.intents-service
+com.apple.intents-ui-service
+com.apple.keyboard-service
+com.apple.message-payload-provider
+com.apple.networkextension.app-proxy
+com.apple.networkextension.dns-proxy
+com.apple.networkextension.filter-control
+com.apple.networkextension.filter-data
+com.apple.networkextension.packet-tunnel
+com.apple.photo-editing
+com.apple.photo-project
+com.apple.quicklook.preview
+Quick Look Preview
+com.apple.quicklook.thumbnail
+com.apple.Safari.content-blocker
+com.apple.Safari.extension
+com.apple.services
+com.apple.share-services
+com.apple.spotlight.index
+com.apple.tv-top-shelf
+com.apple.ui-services
+com.apple.usernotifications.content-extension
+Notification Content
+com.apple.usernotifications.service
+Notification Service
+com.apple.watchkit
+com.apple.widget-extension
+_TtC7XCBCore12CoreSettings
+defaultPlatform
+defaultToolchain
+coreBuildSystemSpec
+externalBuildSystemSpec
+nativeBuildSystemSpec
+unionedToolDefaultsCache
+universalDefaultsCache
+systemBuildRuleCache
+_TtC7XCBCore17WorkspaceSettings
+builtinSettingsInfoCache
+_TtC7XCBCore8Settings
+parameters
+targetConfiguration
+platform
+sdkVariant
+toolchains
+sparseSDKs
+table
+productType
+packageType
+preferredArch
+exportedMacroNames
+exportedNativeMacroNames
+globalScope
+filePathResolver
+notes
+macroConfigPaths
+macroConfigSignature
+systemBuildRules
+signingSettings
+deploymentTarget
+supportedBuildVersionPlatforms
+_TtC7XCBCoreP33_E1C7224AF68B481F922A0855296183E015SettingsBuilder
+sdkRegistry
+provisioningTaskInputs
+forBindingProperties
+includeExports
+_table
+exportedMacroIDs
+exportedNativeIDs
+macroConfigSignatureCache
+_TtCC7XCBCoreP33_E1C7224AF68B481F922A0855296183E015SettingsBuilder28MacroValueAssignmentTableSet
+tables
+unable to parse user build settings: '
+ deployment target '
+' - setting to default value '
+, but the range of supported deployment target versions is 
+SWIFT_RESPONSE_FILE_PATH
+/Library/Caches/com.apple.xbs/Sources/XCBuild/XCBuild-15509/XCBCore/Settings/Settings.swift
+$(OBJECT_FILE_DIR)-
+/$(PRODUCT_NAME).
+OBJECT_FILE_DIR_
+$(TARGET_BUILD_SUBPATH)
+$(TEMP_ROOT)/UninstalledProducts$(TARGET_BUILD_SUBPATH)
+$(TEMP_ROOT)/UninstalledProducts/$(PLATFORM_NAME)$(TARGET_BUILD_SUBPATH)
+$(TARGET_BUILD_DIR)/$(EXECUTABLE_PATH)
+$(CONFIGURATION_BUILD_DIR)/BuiltProducts
+$(TARGET_TEMP_DIR)/all-product-headers.yaml
+ONLY_ACTIVE_ARCH=YES requested with multiple ARCHS and no run destination to provide an active architecture
+ONLY_ACTIVE_ARCH=YES used build machine's native architecture
+ architecture is deprecated. You should update your ARCHS build setting to remove the 
+ architecture is deprecated for your deployment target (
+). You should update your ARCHS build setting to remove the 
+com.apple.DeveloperTools
+-Simulated.xcent
+Entitlements are required for product type '
+An empty identity is not valid when signing a binary for the product type '
+Ad Hoc code signing is not allowed with SDK '
+ isn't code signed but requires entitlements. It is not possible to add entitlements to a binary without signing it.
+ isn't code signed but requires entitlements. Falling back to ad hoc signing.
+EMBEDDED_PROFILE_NAME '
+' differs from the profile name for the current platform '
+unable to resolve run destination platform: '
+Mapping architecture 
+. Ensure that this target's Architectures and Valid Architectures build settings are configured correctly for the 
+Ignoring destination platform 
+ and building against target platform 
+. If this target is intended to build for only 
+, configure its Supported Platforms build setting to remove 
+. If this target is intended to build for both 
+, set its Base SDK build setting to Latest 
+Did not find any platform for SUPPORTED_PLATFORMS '
+ errors 
+missing required Mac OS X platform
+missing required default toolchain
+com.apple.build-system.core
+com.apple.build-system.external
+com.apple.build-system.native
+missing required spec '
+invalid type for required 'BuildSystem' spec '
+/Applications/Utilities
+/Applications/Extras
+/System/Library/CoreServices
+/Library/Documentation
+/Library/Developer
+$(HOME)/Applications
+/AppleInternal/Developer
+/AppleInternal/Documentation
+/AppleInternal/Library
+/AppleInternal/Developer/Tools
+Contents/PlugIns/Xcode3Core.ideplugin/Contents/SharedSupport/Developer
+Performance Tools
+ADC Reference Library
+documentation/DeveloperTools
+Platforms/MacOSX.platform/Developer/SDKs
+unable to resolve run destination SDK: '
+$(EXECUTABLE_PATH:dir)/$(EXECUTABLE_NAME).preview.dylib
+, expected -Onone
+unable to create override build settings table from toolchain `
+unable to retrieve additional build property overrides
+unable to resolve product type '
+' for platform '
+unable to resolve package type '
+deprecated product type '
+USE_PER_CONFIGURATION_BUILD_LOCATIONS
+$(PROJECT_TEMP_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
+$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
+$(TARGET_TEMP_DIR)
+$(CONFIGURATION)
+$(CONFIGURATION_BUILD_DIR)
+$(CONFIGURATION_BUILD_DIR)$(TARGET_BUILD_SUBPATH)
+$(CONFIGURATION_TEMP_DIR)/$(TARGET_NAME).build
+$(PROJECT_TEMP_DIR)
+$(OBJROOT)/$(PROJECT_NAME).build
+ is not supported when using internal SDKs. Please remove the build setting.
+unable to parse application preferences build settings: '
+unable to load toolchain default settings: '
+/Developer/Applications
+/Developer/Tools
+/Developer/Library
+/Developer/usr/bin
+Multiple platforms define 
+ as their DEPLOYMENT_TARGET_SETTING_NAME: 
+$(DEVELOPER_SDK_DIR)
+$(DEVELOPER_BIN_DIR)
+$(DEVELOPER_USR_DIR)
+$(DEVELOPER_LIBRARY_DIR)
+$(DEVELOPER_TOOLS_DIR)
+$(DEVELOPER_APPLICATIONS_DIR)
+INSTALLED_PRODUCT_ASIDES
+$(INSTALL_ROOT)/$(INSTALL_PATH)$(TARGET_BUILD_SUBPATH)
+$(PROJECT_TEMP_DIR
+$(OTHER_LIPOFLAGS_$(CURRENT_VARIANT))
+$(OBJECT_FILE_DIR_$(CURRENT_VARIANT))
+$(OTHER_CFLAGS_$(CURRENT_VARIANT))
+$(OBJECT_FILE_DIR_$(CURRENT_VARIANT))/$(CURRENT_ARCH)
+$(LDPLUSPLUS_$(CURRENT_ARCH))
+$(LD_$(CURRENT_ARCH))
+$(PER_ARCH_CFLAGS_$(CURRENT_ARCH))
+unable to parse user environment: '
+$(TARGET_BUILD_DIR)/$(CONTENTS_FOLDER_PATH)/$(EXECUTABLE_PREFIX)$(PRODUCT_NAME)$(EXECUTABLE_VARIANT_SUFFIX).tbd
+$(TARGET_TEMP_DIR)/unextended-module-overlay.yaml
+$(TARGET_TEMP_DIR)/unextended-module.modulemap
+DT_TOOLCHAIN_DIR
+$(DEVELOPER_DIR)/../../..
+$(DEVELOPER_DIR)
+Conflicting default values for 
+unable to find sdk '
+can't find additional SDK '
+WRAP_ASSET_PACKS_IN_SEPARATE_DIRECTORIES=YES is not supported
+On-Demand Resources is enabled (ENABLE_ON_DEMAND_RESOURCES = YES), but is not supported for 
+missing target configuration for '
+uikitformac_version_min
+ requires macOS 10.15 or later.
+offset element 
+v8@?0
+Couldn't load tool spec com.apple.compilers.tiffutil
+Couldn't load tool spec com.apple.build-tasks.copy-tiff-file
+Resources/BuiltInBuildRules.plist
+Contents/Resources
+Couldn't load file type spec 
+Couldn
+t load 
+: expected an array at the root
+ top level item is not a dictionary
+: no 
+FileType
+ key in 
+ dictionary (ignoring dictionary)
+: no 
+CompilerSpec
+ key in 
+: could not create a build rule from 
+: no 
+Script
+ key in 
+ dictionary where 'CompilerSpec' is '
+' (ignoring dictionary)
+: no 
+OutputFiles
+ key in 
+RunOncePerArchitecture
+ item in 
+InputFiles
+ in 
+ dictionary is not a string (ignoring dictionary)
+ item in 
+OutputFiles
+ in 
+: no 
+FilePatterns
+ key in 
+ dictionary where 'FileType' is '
+__XCODE_BUILT_PRODUCTS_DIR_PATHS
+signature type 
+_TtC7XCBCore9PIFLoader
+provider
+userNamespace
+knownReferences
+projectModelItemsToAwaken
+loadedObjects
+_TtC7XCBCore20IncrementalPIFLoader
+cachePath
+_TtCC7XCBCore20IncrementalPIFLoader14LoadingSession
+incrementalLoader
+workspaceSignature
+availableDataObjects
+didUseCache
+_missingObjects
+' has already been registered
+ was added, but not required
+unexpected top-level object
+Couldn't set atribute on intermediates directory: 
+IncrementalPIFLoader.objectsCachedInMemory
+The number of PIF objects which hit the in-memory cache.
+IncrementalPIFLoader.objectsLoaded
+The number of PIF objects which were loaded, in any form.
+IncrementalPIFLoader.objectsCachedOnDisk
+The number of PIF objects which hit the on-disk cache.
+IncrementalPIFLoader.objectsRequested
+The number of PIF objects which were requested.
+IncrementalPIFLoader.objectsTransferred
+The number of PIF objects which were transferred.
+IncrementalPIFLoader.loadsRequested
+The total number of top-level objects requested.
+Build Carbon Resources
+Compile AppleScript Files
+Build Java Resources
+_TtC7XCBCore10BuildPhase
+_TtC7XCBCore24BuildPhaseWithBuildFiles
+buildFiles
+_TtC7XCBCore17SourcesBuildPhase
+_TtC7XCBCore20FrameworksBuildPhase
+_TtC7XCBCore17HeadersBuildPhase
+_TtC7XCBCore19ResourcesBuildPhase
+_TtC7XCBCore19CopyFilesBuildPhase
+_TtC7XCBCore21ShellScriptBuildPhase
+_name
+shellPath
+inputFilePaths
+emitEnvironment
+dependencyInfo
+_TtC7XCBCore13RezBuildPhase
+_TtC7XCBCore21AppleScriptBuildPhase
+_TtC7XCBCore21JavaArchiveBuildPhase
+<builtProductsDir>
+$(CONTENTS_FOLDER_PATH)/XPCServices
+$(XPCSERVICES_FOLDER_PATH)
+BuildPhase makefile dependency format expects 1 dependency file path, found 
+BuildPhase dependencyInfo dependency format expects 1 dependency file path, found 
+' from project '
+com.apple.dt.xcbuild.diagnostic.string
+Loaded spec with identifier '
+, but was not of the expected type '
+Couldn't load spec with identifier '
+sourcecode.module-map
+_TtC7XCBCore9SpecProxy
+classType
+basedOn
+basedOnProxy
+localizedStrings
+loadedSpec
+_TtC7XCBCore18SpecDomainRegistry
+proxiesByIdentifier
+_TtC7XCBCore12SpecRegistry
+delegateQueue
+proxiesByDomain
+domainInclusions
+internalMacroNamespace
+treatMissingBasedOnReferencesAsErrors
+isFrozen
+proxyCache
+_TtCFC7XCBCore9SpecProxy4loadFCS_12SpecRegistryGSqCS_4Spec_L_8Delegate
+specRegistry
+proxy
+ (while parsing '
+ (unable to load base spec)
+encountered cyclic dependency while loading 
+init(_:_:_:loadBuiltinImplementations:)-registration.delegateQueue
+init(_:_:_:loadBuiltinImplementations:)-registrationQueue
+init(_:_:_:loadBuiltinImplementations:)-discovery
+/Library/Caches/com.apple.xbs/Sources/XCBuild/XCBuild-15509/XCBCore/Specs/SpecRegistry.swift
+unexpected concrete implementation
+unable to load spec data
+unexpected specification data in 
+invalid 'BasedOn' field
+invalid 'Domain' field
+:com.apple.build-system.external
+:com.apple.build-system.jam
+:com.apple.compilers.llvm.clang.1_0.migrator
+:com.apple.compilers.llvm.clang.1_0.migrator.xctest
+embedded-shared:com.apple.product-type.framework.static
+embedded-shared:com.apple.product-type.application
+embedded-shared:com.apple.product-type.app-extension
+embedded-shared:com.apple.product-type.pluginkit-plugin
+embedded:com.apple.product-type.app-extension
+embedded-simulator:com.apple.product-type.app-extension
+iphoneos-shared:com.apple.product-type.application.messages
+iphoneos-shared:com.apple.product-type.app-extension.messages
+iphoneos-shared:com.apple.product-type.app-extension.messages-sticker-pack
+iphoneos-shared:com.apple.product-type.application.watchapp2-container
+appletvos-shared:com.apple.product-type.application.cpsdkapp
+appletvos-shared:com.apple.product-type.tv-app-extension
+appletvos-shared:com.apple.product-type.tv-broadcast-extension
+watchos-shared:com.apple.product-type.application.watchapp2
+watchos-shared:com.apple.product-type.app-extension.base
+watchos-shared:com.apple.product-type.watchkit2-extension
+watchos-shared:com.apple.product-type.clockface-extension
+watchos-shared:com.apple.product-type.app-extension.intents-service
+watchos-shared:com.apple.compilers.llvm.clang.1_0
+unexpected `.strings` file content
+unexpected value for key '
+' in `.strings` file
+invalid 'Class' field
+unknown spec 'Class': '
+missing 'Type' field
+unknown spec 'Type': '
+unexpected 'Type' field with known type 
+PlatformStandardUniversal
+ already registered from 
+warning: ignoring duplicate spec 
+(canonicalName: '
+    "options": [
+          "name": 
+          "displayName": 
+          "description": 
+unable to find SDK named macosx
+unable to find SDK named iphoneos
+XCODE_DEVELOPER_DIR_PATH
+unable to create core: 
+_TtC7XCBCore4Core
+registryDelegate
+applicationPath
+developerPath
+inferiorProductsPath
+additionalContentPaths
+xcodeVersionString
+xcodeVersion
+xcodeProductBuildVersionString
+xcodeProductBuildVersion
+xcodeIsAppleInternal
+buildServiceModTime
+$__lazy_storage_$_coreSettings
+$__lazy_storage_$_isRuntimeOSAppleInternal
+isRuntimeOSAppleInternalOverride
+$__lazy_storage_$_devToolsCoreFrameworkPath
+$__lazy_storage_$_builtinSpecPaths
+$__lazy_storage_$_legacyPluginPaths
+$__lazy_storage_$_pluginPaths
+$__lazy_storage_$_sdkPaths
+$__lazy_storage_$_toolchainPaths
+$__lazy_storage_$_platformRegistry
+$__lazy_storage_$_legacyPluginManager
+$__lazy_storage_$_xcodePluginManager
+$__lazy_storage_$_sdkRegistry
+$__lazy_storage_$_toolchainRegistry
+$__lazy_storage_$_specRegistry
+_TtCZFC7XCBCore4Core17createTestingCoreFT_S0_L_8Delegate
+_TtCZFC7XCBCore4Core28createInitializedTestingCoreFzT28xcodeIsAppleInternalOverrideGSqSb_29simulatedInferiorProductsPathGSqV7XCBUtil4Path__S0_L_8Delegate
+xcodeIsAppleInternalOverride
+Contents/PlugIns
+Contents/SharedFrameworks
+Contents/Frameworks
+Contents/Developer/AppleInternal/Library/Xcode/Plug-ins
+Contents/Developer/AppleInternal/Library/Xcode/PrivatePlugIns
+Developer/Library/Xcode/PrivatePlugIns
+AppleInternal/Developer/Library/Xcode/PrivatePlugIns
+Contents/Developer/Toolchains
+/Library/Developer/Toolchains
+EXTERNAL_TOOLCHAINS_DIR
+Library/Developer/Toolchains
+ strict 
+/Applications/Xcode.app
+Contents/Developer
+Contents/version.plist
+/Library/Caches/com.apple.xbs/Sources/XCBuild/XCBuild-15509/XCBCore/Core.swift
+AppleInternal/Library/Xcode/AppleInternal.plist
+invalid content in '
+' - ProductBuildVersion '
+' does not match CFBundleShortVersionString '
+' because their major version numbers differ (
+ProductBuildVersion: 
+invalid Xcode.app 'version.plist'
+CFBundleShortVersionString
+DevToolsCore.framework
+Could not determine path to Xcode.app: 
+Contents/PlugIns/Xcode3Core.ideplugin
+Contents/SharedSupport
+Developer/Library/Xcode/Plug-ins
+Developer/AppleInternal/Library/Xcode/Plug-ins
+Library/Xcode/Third-Party Plug-ins
+AppleInternal/Library/Xcode/PrivatePlugIns
+Contents/PlugIns/Xcode3Core.ideplugin/Contents/Frameworks/DevToolsCore.framework
+Xcode.XCSpecDomainComposition
+unexpected XCSpecDomainComposition data
+Xcode.XCSpecProvider
+unexpected XCSpecProvider data
+couldn't find resource named '
+Developer/AppleInternal/Library/Xcode/Specifications
+Developer/Library/Xcode/Specifications
+_TtC7XCBCore15MacroExpression
+stringRep
+evalProgram
+_TtC7XCBCore21MacroStringExpression
+_TtC7XCBCore25MacroStringListExpression
+_TtC7XCBCore13BuiltinMacros
+ON_DEMAND_RESOURCES_PREFETCH_ORDER
+/Library/Caches/com.apple.xbs/Sources/XCBuild/XCBuild-15509/XCBCore/Settings/BuiltinMacros.swift
+ON_DEMAND_RESOURCES_INITIAL_INSTALL_TAGS
+ASSET_PACK_FOLDER_PATH
+USE_LLVM_TARGET_TRIPLES_FOR_TAPI
+USE_LLVM_TARGET_TRIPLES_FOR_LD
+USE_LLVM_TARGET_TRIPLES_FOR_CLANG
+LLVM_TARGET_TRIPLE_VENDOR
+LLVM_TARGET_TRIPLE_OS_VERSION
+RC_ProjectSourceVersion
+RC_ProjectNameAndSourceVersion
+RC_ProjectNameAndBuildVersion
+RC_ProjectCanonicalSourceVersion
+RC_ProjectBuildVersion
+RC_PROJECT_COMPILATION_PLATFORM
+RC_IS_SIDE_BUILD_TRAIN
+RC_DEPLOYMENT_TARGET_SETTING_NAME
+RC_BASE_PROJECT_NAME
+RC_DEBUG_OPTIONS
+DITTOKEEPBINARIESPATTERN
+WRAPPER_EXTENSION
+WATCHKIT_EXTENSION_MAIN_LEGACY_SHIM_PATH
+WATCHKIT_EXTENSION_MAIN_LDFLAGS
+WATCHKIT_2_SUPPORT_FOLDER_PATH
+VERSION_INFO_SUFFIX
+VERSION_INFO_STRING
+VERSION_INFO_PREFIX
+VERSION_INFO_FILE
+VERSION_INFO_EXPORT_DECL
+VERSIONPLIST_PATH
+VERSIONING_SYSTEM
+VALIDATE_PRODUCT
+USE_HIERARCHICAL_LAYOUT_FOR_COPIED_ASIDE_PRODUCTS
+USES_SWIFTPM_UNSAFE_FLAGS
+UNEXPORTED_SYMBOLS_FILE
+THIN_PRODUCT_STUB_BINARY
+TAPI_ENABLE_VERIFICATION_MODE
+TAPI_ENABLE_PROJECT_HEADERS
+SWIFT_STDLIB_TOOL
+SWIFT_FORCE_DYNAMIC_LINK_STDLIB
+SUPPORTS_TEXT_BASED_API
+STRINGS_FILE_OUTPUT_ENCODING
+STRINGS_FILE_INPUT_ENCODING
+REMOVE_SVN_FROM_RESOURCES
+REMOVE_HG_FROM_RESOURCES
+REMOVE_HEADERS_FROM_EMBEDDED_BUNDLES
+REMOVE_GIT_FROM_RESOURCES
+REMOVE_CVS_FROM_RESOURCES
+RECURSIVE_SEARCH_PATHS_FOLLOW_SYMLINKS
+RCPROJECT_CODEGEN_SWIFT_VERSION
+RCPROJECT_CODEGEN_LANGUAGE
+PROVISIONING_PROFILE_SPECIFIER
+PROVISIONING_PROFILE
+PRODUCT_SPECIFIC_LDFLAGS
+PRODUCT_BINARY_SOURCE_PATH
+MODULEMAP_PRIVATE_FILE
+MODULEMAP_FILE_CONTENTS
+MESSAGES_APPLICATION_EXTENSION_PRODUCT_BINARY_SOURCE_PATH
+MESSAGES_APPLICATION_PRODUCT_BINARY_SOURCE_PATH
+MESSAGES_APPLICATION_EXTENSION_SUPPORT_FOLDER_PATH
+MESSAGES_APPLICATION_SUPPORT_FOLDER_PATH
+LD_BITCODE_GENERATION_MODE
+KERNEL_EXTENSION_HEADER_SEARCH_PATHS
+KEEP_PRIVATE_EXTERNS
+JAVA_FOLDER_PATH
+InputFileAbsolutePath
+INSTALL_MODE_FLAG
+INSTALLLOC_SCRIPT_PHASE
+INSTALLLOC_LANGUAGE
+INSTALLHDRS_SCRIPT_PHASE
+INSTALLHDRS_COPY_PHASE
+INPUT_FILE_SUFFIX
+INPUT_FILE_REGION_PATH_COMPONENT
+INFOPLIST_PREPROCESSOR_DEFINITIONS
+INFOPLIST_PREPROCESS
+INFOPLIST_PREFIX_HEADER
+INFOPLIST_OTHER_PREPROCESSOR_FLAGS
+INCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES
+HEADER_OUTPUT_DIR
+GENERATE_TEXT_BASED_STUBS
+GENERATE_PKGINFO_FILE
+GENERATE_MASTER_OBJECT_FILE
+EXPORTED_SYMBOLS_FILE
+EXECUTABLE_SUFFIX
+EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES
+ENABLE_HEADER_DEPENDENCIES
+EMBEDDED_CONTENT_CONTAINS_SWIFT
+EAGER_COMPILATION_REQUIRE
+EAGER_COMPILATION_DISABLE
+EAGER_COMPILATION_ALLOW_SCRIPTS
+DYLIB_INSTALL_NAME_BASE
+DWARF_DSYM_FILE_SHOULD_ACCOMPANY_PRODUCT
+DWARF_DSYM_FILE_NAME
+DONT_RUN_SWIFT_STDLIB_TOOL
+DONT_CREATE_BUILT_PRODUCTS_DIR_SYMLINKS
+DISABLE_INFOPLIST_PLATFORM_PROCESSING
+DISABLE_DIAMOND_PROBLEM_DIAGNOSTIC
+DERIVED_FILES_DIR
+DEFAULT_KEXT_INSTALL_PATH
+DEFAULT_COMPILER
+CURRENT_PROJECT_VERSION
+CPP_PREPROCESSOR_DEFINITIONS
+CPP_PREFIX_HEADER
+CPP_OTHER_PREPROCESSOR_FLAGS
+CPP_HEADERMAP_FILE
+COPY_HEADERS_RUN_UNIFDEF
+COPYING_PRESERVES_HFS_DATA
+COMPRESS_PNG_FILES
+CLANG_WARN_STRICT_PROTOTYPES
+CLANG_WARN_OBJC_LITERAL_CONVERSION
+CLANG_WARN_NON_LITERAL_NULL_CONVERSION
+CLANG_WARN_FLOAT_CONVERSION
+CLANG_WARN_COMMA
+CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING
+CLANG_MODULES_ENABLE_VERIFIER_TOOL
+CLANG_INDEX_STORE_PATH
+ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1
+ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1
+APPLY_RULES_IN_COPY_HEADERS
+APPLY_RULES_IN_COPY_FILES
+ALWAYS_USE_SEPARATE_HEADERMAPS
+ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES
+ALTERNATE_PERMISSIONS_FILES
+ALLOW_UNSUPPORTED_TEXT_BASED_API
+TEST_BUILD_STYLE
+INTERNAL_TESTING_FRAMEWORK_PATH
+INTERNAL_AUTOMATION_SUPPORT_FRAMEWORK_PATH
+CODE_SIGN_ALLOW_ENTITLEMENTS_MODIFICATION
+ENTITLEMENTS_DESTINATION
+ENTITLEMENTS_ALLOWED
+CODE_SIGN_RESOURCE_RULES_PATH
+CODE_SIGN_LOCAL_EXECUTION_IDENTITY
+CODE_SIGN_INJECT_BASE_ENTITLEMENTS
+CODE_SIGNING_REQUIRES_TEAM
+AD_HOC_CODE_SIGNING_ALLOWED
+USE_RECURSIVE_SCRIPT_INPUTS_IN_SCRIPT_PHASES
+IMPLICIT_DEPENDENCIES_IGNORE_LDFLAGS
+OBJC_ABI_VERSION
+DEPLOYMENT_TARGET_CLANG_FLAG_PREFIX
+SUPPORTED_DEVICE_FAMILIES
+KASAN_DEFAULT_CFLAGS
+GCC_THUMB_SUPPORT
+SUPPORTS_UIKITFORMAC
+SUPPORTS_MACCATALYST
+ALLOW_BUILDING_IOSMAC_ON_MOJAVE
+PRODUCT_TYPE_LIBRARY_SEARCH_PATHS
+ADDITIONAL_SDK_DIRS
+CODESIGNING_FOLDER_PATH
+EXECUTABLE_VARIANT_SUFFIX
+ENABLE_UNDEFINED_BEHAVIOR_SANITIZER
+ENABLE_THREAD_SANITIZER
+ENABLE_ADDRESS_SANITIZER
+ENABLE_TESTABILITY
+SEPARATE_SYMBOL_EDIT
+RETAIN_RAW_BINARIES
+GCC_ENABLE_OBJC_GC
+INDEX_ENABLE_DATA_STORE
+INDEX_DATA_STORE_DIR
+INDEX_PRECOMPS_DIR
+MODULE_CACHE_DIR
+TeamIdentifierPrefix
+AppIdentifierPrefix
+EXPANDED_PROVISIONING_PROFILE
+EMBEDDED_PROFILE_NAME
+ONLY_ACTIVE_ARCH
+ENABLE_PREVIEWS_DYLIB
+LD_EXPORT_GLOBAL_SYMBOLS
+GCC_SYMBOLS_PRIVATE_EXTERN
+CLANG_MODULES_BUILD_SESSION_FILE
+XCODE_PRODUCT_BUILD_VERSION
+XCODE_VERSION_ACTUAL
+XCODE_VERSION_MINOR
+XCODE_VERSION_MAJOR
+MAC_OS_X_PRODUCT_BUILD_VERSION
+MAC_OS_X_VERSION_ACTUAL
+MAC_OS_X_VERSION_MINOR
+MAC_OS_X_VERSION_MAJOR
+DEVELOPMENT_LANGUAGE
+PROJECT_TEMP_DIR
+PROJECT_FILE_PATH
+DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER
+DERIVE_UIKITFORMAC_PRODUCT_BUNDLE_IDENTIFIER
+DERIVE_IOSMAC_PRODUCT_BUNDLE_IDENTIFIER
+STRIP_BITCODE_FROM_COPIED_FILES
+SDK_VERSION_MAJOR
+SDK_VERSION_MINOR
+SDK_VERSION_ACTUAL
+PLATFORM_DEVELOPER_SDK_DIR
+PLATFORM_DEVELOPER_BIN_DIR
+PLATFORM_DEVELOPER_USR_DIR
+PLATFORM_DEVELOPER_LIBRARY_DIR
+PLATFORM_DEVELOPER_TOOLS_DIR
+PLATFORM_DEVELOPER_APPLICATIONS_DIR
+PLATFORM_PREFERRED_ARCH
+PLATFORM_PRODUCT_BUILD_VERSION
+EFFECTIVE_PLATFORM_SUFFIX
+EFFECTIVE_PLATFORM_NAME
+PLATFORM_DISPLAY_NAME
+CORRESPONDING_SIMULATOR_SDK_DIR
+CORRESPONDING_SIMULATOR_SDK_NAME
+CORRESPONDING_SIMULATOR_PLATFORM_DIR
+CORRESPONDING_SIMULATOR_PLATFORM_NAME
+CORRESPONDING_DEVICE_SDK_DIR
+CORRESPONDING_DEVICE_SDK_NAME
+CORRESPONDING_DEVICE_PLATFORM_DIR
+CORRESPONDING_DEVICE_PLATFORM_NAME
+DEPLOYMENT_TARGET_CLANG_ENV_NAME
+DEPLOYMENT_TARGET_CLANG_FLAG_NAME
+NATIVE_ARCH_64_BIT
+NATIVE_ARCH_32_BIT
+NATIVE_ARCH_ACTUAL
+CONFIGURATION_TEMP_DIR
+CONFIGURATION_BUILD_DIR
+PER_VARIANT_OBJECT_FILE_DIR
+DEPLOYMENT_TARGET_LD_FLAG_NAME
+DEPLOYMENT_TARGET_LD_ENV_NAME
+LIBRARY_SEARCH_PATHS
+UNSTRIPPED_PRODUCT
+STRIP_INSTALLED_PRODUCT
+WRAP_ASSET_PACKS_IN_SEPARATE_DIRECTORIES
+DERIVED_DATA_DIR
+EFFECTIVE_TOOLCHAINS_DIRS
+SUPPORTED_PLATFORMS
+COMBINE_HIDPI_IMAGES
+VERSIONPLIST_OUTPUT_FORMAT
+GENERATE_VERSION_PLIST
+DEVICE_DEVELOPER_DIR
+XCODE_INSTALL_PATH
+DEVELOPER_INSTALL_DIR
+AVAILABLE_PLATFORMS
+XCODE_APP_SUPPORT_DIR
+DEVELOPER_SDK_DIR
+DEVELOPER_BIN_DIR
+SYSTEM_DEVELOPER_BIN_DIR
+DEVELOPER_USR_DIR
+SYSTEM_DEVELOPER_USR_DIR
+DEVELOPER_TOOLS_DIR
+SYSTEM_DEVELOPER_TOOLS
+SYSTEM_DEVELOPER_TOOLS_RELEASENOTES_DIR
+SYSTEM_DEVELOPER_RELEASENOTES_DIR
+SYSTEM_DEVELOPER_TOOLS_DOC_DIR
+SYSTEM_DEVELOPER_DOC_DIR
+SYSTEM_DEVELOPER_DEMOS_DIR
+SYSTEM_DEVELOPER_UTILITIES_DIR
+SYSTEM_DEVELOPER_GRAPHICS_TOOLS_DIR
+SYSTEM_DEVELOPER_PERFORMANCE_TOOLS_DIR
+SYSTEM_DEVELOPER_JAVA_TOOLS_DIR
+DEVELOPER_FRAMEWORKS_DIR_QUOTED
+DEVELOPER_FRAMEWORKS_DIR
+DEVELOPER_LIBRARY_DIR
+DEVELOPER_APPLICATIONS_DIR
+SYSTEM_DEVELOPER_APPS_DIR
+LEGACY_DEVELOPER_DIR
+SYSTEM_DEVELOPER_DIR
+APPLE_INTERNAL_TOOLS
+APPLE_INTERNAL_LIBRARY_DIR
+APPLE_INTERNAL_DOCUMENTATION_DIR
+APPLE_INTERNAL_DEVELOPER_DIR
+APPLE_INTERNAL_DIR
+USER_LIBRARY_DIR
+LOCAL_LIBRARY_DIR
+LOCAL_DEVELOPER_EXECUTABLES_DIR
+LOCAL_DEVELOPER_DIR
+LOCAL_ADMIN_APPS_DIR
+SYSTEM_DEVELOPER_EXECUTABLES_DIR
+SYSTEM_LIBRARY_EXECUTABLES_DIR
+SYSTEM_DOCUMENTATION_DIR
+SYSTEM_CORE_SERVICES_DIR
+SYSTEM_LIBRARY_DIR
+SYSTEM_DEMOS_DIR
+SYSTEM_ADMIN_APPS_DIR
+SWIFT_LIBRARY_PATH
+SWIFT_FORCE_SYSTEM_LINK_STDLIB
+SWIFT_FORCE_STATIC_LINK_STDLIB
+SWIFT_OPTIMIZATION_LEVEL
+SWIFT_COMPILATION_MODE
+SWIFT_WHOLE_MODULE_OPTIMIZATION
+SWIFT_INSTALL_OBJC_HEADER
+SWIFT_INDEX_STORE_ENABLE
+SWIFT_TARGET_TRIPLE_VARIANTS
+SWIFT_UNEXTENDED_VFS_OVERLAY_PATH
+SWIFT_UNEXTENDED_MODULE_MAP_PATH
+SWIFT_OBJC_BRIDGING_HEADER
+GCC_PREPROCESSOR_DEFINITIONS
+SWIFT_OBJC_INTERFACE_HEADER_NAME
+SWIFT_EMIT_MODULE_INTERFACE
+SWIFT_EMIT_PARSEABLE_MODULE
+SWIFT_MODULE_NAME
+SWIFT_USE_PARALLEL_WHOLE_MODULE_OPTIMIZATION
+TAPI_DYLIB_INSTALL_NAME
+SWIFT_LIBRARIES_ONLY
+PRODUCT_TYPE_SWIFT_INCLUDE_PATHS
+SWIFT_INCLUDE_PATHS
+SWIFT_SWIFT3_OBJC_INFERENCE
+SWIFT_MIGRATE_DIR
+INSTALLAPI_MODE_ENABLED
+SWIFT_MIGRATE_CODE
+USE_SWIFT_RESPONSE_FILE
+SWIFT_TARGET_TRIPLE
+SWIFT_DEPLOYMENT_TARGET
+LLVM_TARGET_TRIPLE_SUFFIX
+SWIFT_PLATFORM_TARGET_PREFIX
+build_file_compiler_flags
+TempResourcesDir
+InputFileTextEncoding
+InputFileRelativePath
+InputFileRegionPathComponent
+CLANG_ARC_MIGRATE_PRECHECK
+PER_VARIANT_OTHER_LIPOFLAGS
+SHARED_SUPPORT_FOLDER_PATH
+SHARED_FRAMEWORKS_FOLDER_PATH
+SCRIPTS_FOLDER_PATH
+FRAMEWORKS_FOLDER_PATH
+EXECUTABLE_FOLDER_PATH
+CONTENTS_FOLDER_PATH
+TapiFileListPath
+PRODUCT_TYPE_FRAMEWORK_SEARCH_PATHS
+ENABLE_DEFAULT_HEADER_SEARCH_PATHS
+PRODUCT_TYPE_HEADER_SEARCH_PATHS
+USER_HEADER_SEARCH_PATHS
+CPP_HEADER_SYMLINKS_DIR
+USE_HEADER_SYMLINKS
+CPP_HEADERMAP_FILE_FOR_PROJECT_FILES
+CPP_HEADERMAP_FILE_FOR_ALL_TARGET_HEADERS
+CPP_HEADERMAP_PRODUCT_HEADERS_VFS_FILE
+CPP_HEADERMAP_FILE_FOR_ALL_NON_FRAMEWORK_TARGET_HEADERS
+CPP_HEADERMAP_FILE_FOR_OWN_TARGET_HEADERS
+CPP_HEADERMAP_FILE_FOR_GENERATED_FILES
+CLANG_ENABLE_MODULES
+HEADERMAP_USES_VFS
+ALWAYS_SEARCH_USER_PATHS
+DEVELOPMENT_TEAM
+CODE_SIGN_IDENTITY
+CREATE_INFOPLIST_SECTION_IN_BINARY
+DONT_GENERATE_INFOPLIST_FILE
+GENERATE_INFOPLIST_FILE
+DISABLE_TEST_HOST_PLATFORM_PROCESSING
+_BUILDABLE_SERIALIZATION_KEY
+PROVISIONING_PROFILE_DESTINATION_PATH
+ENTITLEMENTS_REQUIRED
+DWARF_DSYM_FOLDER_PATH
+TARGET_BUILD_SUBPATH
+DEBUG_INFORMATION_FORMAT
+TEST_FRAMEWORK_SEARCH_PATHS
+TEST_LIBRARY_SEARCH_PATHS
+TEST_FRAMEWORK_DEVELOPER_VARIANT_SUBPATH
+DEPLOYMENT_LOCATION
+_WRAPPER_RESOURCES_DIR
+_WRAPPER_PARENT_PATH
+_WRAPPER_CONTENTS_DIR
+XPCSERVICES_FOLDER_PATH
+PLUGINS_FOLDER_PATH
+MODULES_FOLDER_PATH
+FRAMEWORK_VERSION
+VERSIONS_FOLDER_PATH
+DYLIB_CURRENT_VERSION
+DYLIB_COMPATIBILITY_VERSION
+VALIDATE_WORKSPACE
+DEVELOPMENT_ASSET_PATHS
+VALIDATE_WORKSPACE_SKIPPED_SDK_FRAMEWORKS
+INCLUDED_SOURCE_FILE_NAMES
+EXCLUDED_SOURCE_FILE_NAMES
+VALIDATE_DEVELOPMENT_ASSET_PATHS
+CLANG_STATIC_ANALYZER_MODE
+C_COMPILER_LAUNCHER
+OTHER_PRECOMP_CFLAGS
+SDK_PRODUCT_BUILD_VERSION
+CLANG_INDEX_STORE_ENABLE
+GCC_INCREASE_PRECOMPILED_HEADER_SHARING
+SHARED_PRECOMPS_DIR
+GCC_PRECOMPILE_PREFIX_HEADER
+GCC_PFE_FILE_C_DIALECTS
+GCC_PREFIX_HEADER
+CLANG_OPTIMIZATION_PROFILE_FILE
+CLANG_INSTRUMENT_FOR_OPTIMIZATION_PROFILING
+RUN_CLANG_STATIC_ANALYZER
+GCC_OTHER_CFLAGS_NOT_USED_IN_PRECOMPS
+GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS
+CLANG_USE_OPTIMIZATION_PROFILE
+GCC_INPUT_FILETYPE
+GCC_GENERATE_PROFILING_CODE
+PER_VARIANT_CFLAGS
+OTHER_CPLUSPLUSFLAGS
+OPTIMIZATION_CFLAGS
+ValidateForStore
+COPY_HEADERS_UNIFDEF_FLAGS
+UnlocalizedProductResourcesDir
+EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE
+ASSET_PACK_MANIFEST_URL_PREFIX
+FULL_PRODUCT_NAME
+PRODUCT_MODULE_NAME
+SWIFT_STDLIB_TOOL_FOLDERS_TO_SCAN
+CodeSignEntitlements
+CODE_SIGN_ENTITLEMENTS
+BUILD_COMPONENTS
+INFOPLIST_OUTPUT_FORMAT
+INFOPLIST_EXPAND_BUILD_SETTINGS
+INFOPLIST_ENFORCE_MINIMUM_OS
+PBXCP_BITCODE_STRIP_TOOL
+PBXCP_BITCODE_STRIP_MODE
+COPY_PHASE_STRIP
+PBXCP_STRIP_BITCODE
+BITCODE_GENERATION_MODE
+CODE_SIGN_IDENTIFIER
+CODE_SIGNING_REQUIRED
+CODE_SIGNING_ALLOWED
+EXPANDED_CODE_SIGN_IDENTITY_NAME
+CODESIGN_ALLOCATE
+CODE_SIGN_RESTRICT
+ENABLE_HARDENED_RUNTIME
+OTHER_CODE_SIGN_FLAGS
+DEPLOYMENT_POSTPROCESSING
+CODE_SIGN_KEYCHAIN
+EXPANDED_CODE_SIGN_IDENTITY
+RESMERGER_SOURCES_FORK
+OTHER_RESMERGERFLAGS
+MACOS_CREATOR_ARG
+REZ_COLLECTOR_DIR
+DYNAMIC_LIBRARY_EXTENSION
+PER_ARCH_LDPLUSPLUS
+LD_LTO_OBJECT_FILE
+TAPI_OUTPUT_PATH
+PER_ARCH_OBJECT_FILE_DIR
+GCC_GENERATE_DEBUGGING_SYMBOLS
+AdditionalCommandLineArguments
+LD_RUNPATH_SEARCH_PATHS
+LD_DYLIB_INSTALL_NAME
+LD_ENTITLEMENTS_SECTION
+EXECUTABLE_PREVIEW_DYLIB_PATH
+LD_DEPENDENCY_INFO_FILE
+__INPUT_FILE_LIST_PATH__
+YACC_GENERATED_FILE_STEM
+SYSTEM_HEADER_SEARCH_PATHS
+HEADER_SEARCH_PATHS
+SYSTEM_FRAMEWORK_SEARCH_PATHS
+FRAMEWORK_SEARCH_PATHS
+REZ_NO_AUTOMATIC_SEARCH_PATHS
+REZ_SEARCH_PATHS
+PRODUCT_BUNDLE_IDENTIFIER
+OPENCL_AUTO_VECTORIZE_ENABLE
+OPENCL_DENORMS_ARE_ZERO
+OPENCL_FAST_RELAXED_MATH
+OPENCL_MAD_ENABLE
+DERIVED_SOURCES_DIR
+OPENCL_OTHER_BC_FLAGS
+OPENCL_DOUBLE_AS_SINGLE
+OPENCL_OPTIMIZATION_LEVEL
+OPENCL_PREPROCESSOR_DEFINITIONS
+OPENCL_COMPILER_VERSION
+UNLOCALIZED_RESOURCES_FOLDER_PATH
+CLANG_DIAGNOSTICS_FILE
+MTLCOMPILER_DEPENDENCY_INFO_FILE
+PRIVATE_HEADERS_FOLDER_PATH
+PUBLIC_HEADERS_FOLDER_PATH
+TARGET_BUILD_DIR
+INTENTS_CODEGEN_LANGUAGE
+INSTRUMENTS_PACKAGE_BUILDER_DEPENDENCY_INFO_FILE
+COREML_CODEGEN_SWIFT_GLOBAL_MODULE
+MLKIT_CODEGEN_SWIFT_VERSION
+COREML_CODEGEN_SWIFT_VERSION
+MLKIT_CODEGEN_LANGUAGE
+COREML_CODEGEN_LANGUAGE
+DERIVED_FILE_DIR
+ASSETCATALOG_COMPILER_DEPENDENCY_INFO_FILE
+ASSETCATALOG_COMPILER_STICKER_PACK_STRINGS
+ASSETCATALOG_COMPILER_INPUTS
+RESOURCES_PLATFORM_NAME
+ENABLE_ON_DEMAND_RESOURCES
+ProductResourcesDir
+IBC_REGIONS_AND_STRINGS_FILES
+RESOURCES_MINIMUM_DEPLOYMENT_TARGET
+TARGETED_DEVICE_FAMILY
+RESOURCES_TARGETED_DEVICE_FAMILY
+SWIFT_DEVELOPMENT_TOOLCHAIN
+SWIFT_USE_DEVELOPMENT_TOOLCHAIN_RUNTIME
+_TtC7XCBCore20WorkspaceHeaderIndex
+projectHeaderInfo
+XCBCore.WorkspaceHeaderIndex.queue
+XCBCore.ProjectHeaderInfo.queue
+_TtC7XCBCore15IIGCompilerSpec
+_TtC7XCBCore23ImpartedBuildProperties
+buildSettingsCache
+buildSettingsData
+_TtC7XCBCore21MacroExpressionParser
+currIdx
+utf8
+Product references should not be included in a project's group tree
+_TtC7XCBCore9Reference
+_TtC7XCBCore18GroupTreeReference
+sourceTree
+_TtC7XCBCore13FileReference
+_TtC7XCBCore12VersionGroup
+children
+_TtC7XCBCore9FileGroup
+_TtC7XCBCore12VariantGroup
+_TtC7XCBCore16ProductReference
+_TtC7XCBCore25LinkageDependencyResolver
+targetsByProductName
+targetsByProductNameStem
+dependenciesPerTarget
+visitedDiscoveredTargets
+Multiple targets match implicit dependency for 
+. Consider adding an explicit dependency on the intended target to resolve this ambiguity.
+product bundle executable reference '
+product reference '
+key value 
+_TtC7XCBCore9BuildRule
+filePatterns
+scriptContents
+outputFilePaths
+BuildRule compiler is shell script, but no script contents were defined
+BuildRule input file type is pattern, but no pattern string was defined
+BuildRule makefile dependency format expects 1 dependency file path, found 
+BuildRule dependencyInfo dependency format expects 1 dependency file path, found 
+_TtC7XCBCore14MacroNamespace
+parentNamespace
+macroRegistry
+macroRegistryLock
+debugDescription
+conditionParameters
+_TtCC7XCBCore14MacroNamespaceP33_4D2892F7354040D37465C8FF48C9E70E41MacroExpressionInstructionEmitterDelegate
+programBuilder
+alwaysEvalAsStringNestingLevel
+macroNameNestingLevel
+diagnosticsHandler
+MacroNamespace.parsedLists
+The number of lists which were parsed into macro expression.
+XCBCore.MacroNamespace.interningQueue
+MacroNamespace.parsedStrings
+The number of strings which were parsed into macro expressions.
+Register execution policy exception for $(InputFile)
+/Library/Caches/com.apple.xbs/Sources/XCBuild/XCBuild-15509/XCBCore/Specs/Tools/RegisterExecutionPolicyException.swift
+RegisterExecutionPolicyException 
+_TtC7XCBCore40RegisterExecutionPolicyExceptionToolSpec
+builtin-RegisterExecutionPolicyException
+RegisterExecutionPolicyException
+_TtC7XCBCore16FilePathResolver
+projectDir
+fileGroupCache
+buildSettingCache
+unexpected character 
+_TtC7XCBCore21MacroConfigFileParser
+bytes
+currLine
+_TtCZFC7XCBCore21MacroConfigFileParser29parseMacroNameAndConditionSetFSSTGSqSS_GSqGSaT5paramSS7patternSS____L_23SingleMacroNameDelegate
+macroName
+expected a preprocessor directive, but found 
+unsupported preprocessor directive 
+unterminated file name
+unexpected character at end of line: 
+unexpected end-of-line after 
+expected a 
+, but found 
+unterminated macro condition
+expected to find 
+ in macro condition
+unterminated macro condition on line 
+expected a macro name, but found 
+param pattern 
+_TtC7XCBCore18BuildConfiguration
+baseConfigurationFileReferenceGUID
+/Library/Caches/com.apple.xbs/Sources/XCBuild/XCBuild-15509/XCBCore/ProjectModel/BuildConfiguration.swift
+unexpected build configuration data
+WriteAuxiliaryFile
+com.apple.build-tools.gate
+/Library/Caches/com.apple.xbs/Sources/XCBuild/XCBuild-15509/XCBCore/Specs/Tools/InternalTools.swift
+com.apple.build-tools.set-attributes
+com.apple.build-tools.version-plist-utility
+builtin-versionPlistUtility
+-canonicalSourceVersion
+GenerateVersionPlistFile
+Generate version.plist
+com.apple.build-tools.write-file
+com.apple.build-tools.master-object-link
+_TtC7XCBCore8GateSpec
+_TtC7XCBCore20MasterObjectLinkSpec
+_TtC7XCBCore17SetAttributesSpec
+_TtC7XCBCore20VersionPlistToolSpec
+_TtC7XCBCore13WriteFileSpec
+Could not find path to ld binary
+MasterObjectLink
+-keep_private_externs
+SetOwnerAndGroup
+Set Owner and Group
+_TtC7XCBCore21ExecutableSearchPaths
+paths
+resolvedExecutables
+/Library/Caches/com.apple.xbs/Sources/XCBuild/XCBuild-15509/XCBCore/Macros/MacroConditionExpression.swift
+This method is a subclass responsibility.
+_TtC7XCBCore24MacroConditionExpression
+_TtC7XCBCoreP33_38A0383A3AA0E75FCB33F81A7A5A3C7C30MacroConditionStringExpression
+_TtC7XCBCoreP33_38A0383A3AA0E75FCB33F81A7A5A3C7C38MacroConditionStringConstantExpression
+macroExpr
+_TtC7XCBCoreP33_38A0383A3AA0E75FCB33F81A7A5A3C7C31MacroConditionBooleanExpression
+_TtC7XCBCoreP33_38A0383A3AA0E75FCB33F81A7A5A3C7C36MacroConditionUnaryBooleanExpression
+expr
+_TtC7XCBCoreP33_38A0383A3AA0E75FCB33F81A7A5A3C7C34MacroConditionLogicalNOTExpression
+_TtC7XCBCoreP33_38A0383A3AA0E75FCB33F81A7A5A3C7C37MacroConditionBinaryBooleanExpression
+leftExpr
+rightExpr
+_TtC7XCBCoreP33_38A0383A3AA0E75FCB33F81A7A5A3C7C32MacroConditionEqualityExpression
+_TtC7XCBCoreP33_38A0383A3AA0E75FCB33F81A7A5A3C7C34MacroConditionInequalityExpression
+_TtC7XCBCoreP33_38A0383A3AA0E75FCB33F81A7A5A3C7C34MacroConditionLogicalANDExpression
+_TtC7XCBCoreP33_38A0383A3AA0E75FCB33F81A7A5A3C7C33MacroConditionLogicalORExpression
+_TtC7XCBCoreP33_38A0383A3AA0E75FCB33F81A7A5A3C7C32MacroConditionContainsExpression
+_TtC7XCBCoreP33_38A0383A3AA0E75FCB33F81A7A5A3C7C42MacroConditionTernaryConditionalExpression
+condExpr
+thenExpr
+elseExpr
+_TtC7XCBCoreP33_38A0383A3AA0E75FCB33F81A7A5A3C7C12ScannerState
+_TtC7XCBCoreP33_38A0383A3AA0E75FCB33F81A7A5A3C7C11ParserState
+scanner
+nextToken
+macroNamespace
+expected operator or end-of-string, but found '
+expected ':' but found '
+expected ')' but found '
+Unable to parse string: 
+_TtC7XCBCore12CompilerSpec
+archs
+supportedLanguageVersions
+_TtC7XCBCore19GenericCompilerSpec
+SupportedLanguageVersions
+BuiltinJambaseRuleName
+ShowOnlySelfDefinedProperties
+LanguageVersionDisplayNames
+Could not parse `SupportedLanguageVersions`: 
+_TtC7XCBCore14MacroCondition
+parameter
+valuePattern
+PRODUCT_SETTINGS_PATH
+PKGINFO_FILE_PATH
+_TtC7XCBCore18DependencyResolver
+buildRequest
+serialQueue
+buildParametersByTarget
+configuredTargetsByTarget
+multiple configured targets of '
+' are being created for 
+XCBCore.TargetDependencyResolver.serialQueue
+_TtC7XCBCore23MacroConditionParameter
+_TtC7XCBCore3SDK
+aliases
+displayName
+overrideSettingsTable
+variants
+defaultVariant
+librarySearchPaths
+versionMap
+directoryMacro
+isBaseSDK
+settingConditionValues
+maximumDeploymentTarget
+knownFrameworkNamesCache
+perVariantKnownFrameworkNamesCache
+_TtC7XCBCore10SDKVariant
+settingsTable
+defaultDeploymentTarget
+validDeploymentTargets
+minimumDeploymentTarget
+llvmTargetTripleVendor
+llvmTargetTripleSys
+llvmTargetTripleEnvironment
+buildVersionPlatformID
+_TtC7XCBCore11SDKRegistry
+type
+sdksByCanonicalName
+sdksByAlias
+sdksByPath
+allKnownPublicFrameworkNamesCache
+allKnownInternalFrameworkNamesCache
+knownUnavailableFrameworksForSDKsCache
+knownFrameworksCache
+/Library/Caches/com.apple.xbs/Sources/XCBuild/XCBuild-15509/XCBCore/SDKRegistry.swift
+unexpected macro parsing failure loading SDK 
+SDKSettings.plist
+unable to load SDK: '
+unexpected SDK data
+invalid or missing 'CanonicalName' field
+MaximumDeploymentTarget
+CustomProperties
+SupportedTargets
+HeaderSearchPaths
+FrameworkSearchPaths
+LibrarySearchPaths
+PropertyConditionFallbackNames
+System/Library/CoreServices/SystemVersion.plist
+Unable to create version map for '
+unable to load SDK version info: '
+invalid 'Version' field: 
+value of 'DefaultVariant' field, '
+', isn't the name of an SDK variant
+empty value for 'DefaultVariant' field
+expected array of dictionaries in 'Variants' field, but found 
+missing 'Name' field in variant dictionary
+missing 'BuildSettings' field in variant dictionary
+found multiple entries in 'Variants' field with the name '
+empty value for 'Name' field in variant dictionary
+expected array of strings in 'Aliases' field, but found: 
+MobileDevice.sdk
+bridgeOSHostAdditions.sdk
+iOSHostAdditions
+' is not allowed in sparse SDK
+_DEPLOYMENT_TARGET
+DefaultDeploymentTarget
+MinimumDeploymentTarget
+ValidDeploymentTargets
+LLVMTargetTripleEnvironment
+LLVMTargetTripleSys
+LLVMTargetTripleVendor
+BuildVersionPlatformID
+$(TOOLCHAIN_DIR)/usr/lib/swift/iosmac
+$(UIKITFORMAC_SWIFT_TOOLCHAIN_LIBRARY_DIR)
+../../../Developer/Library/Frameworks
+System/Library/Frameworks
+../../../AppleInternal/Library/Frameworks
+../../../Developer/AppleInternal/Library/Frameworks
+../../../Library/Frameworks
+../../../System/Library/Frameworks
+../Raft.sdk/Library/Frameworks
+AppleInternal/Library/Frameworks
+Developer/Library/Frameworks
+Developer/Library/PrivateFrameworks
+System/Library/PrivateFrameworks
+System/iOSSupport/System/Library/PrivateFrameworks
+System/DriverKit/System/Library/PrivateFrameworks
+System/DriverKit/System/Library/Frameworks
+sdkPath sdkPathResolved 
+MobileCoreServices
+PACKAGE-PRODUCT:
+Named reference '
+' cannot be resolved
+The workspace has a reference to a missing target with GUID '
+The workspace has a reference to a missing package product named '
+    leftProjects: 
+    rightProjects: 
+    leftTargets: 
+    rightTargets: 
+    leftReferences: 
+    rightReferences: 
+_TtC7XCBCore9Workspace
+projects
+projectsByGUID
+targetsByGUID
+projectsByTarget
+referencesByGUID
+projectsByName
+_TtC7XCBCoreP33_C7927A06EBA0E00A838F05F5A408ED7620DiscoveredTargetInfo
+immediateDependencies
+packageProductDependencies
+_TtC7XCBCoreP33_C7927A06EBA0E00A838F05F5A408ED7624TargetDependencyResolver
+discoveredTargets
+linkageDependencyResolver
+immediateDependenciesByConfiguredTarget
+Computing dependencies for '
+_TtC7XCBCore14PlatformFilter
+_environment
+_TtC7XCBCore21RCProjectCompilerSpec
+RCProjectGenerated
+: RCPROJECT_CODEGEN_LANGUAGE set to unsupported language "
+".  Set RCPROJECT_CODEGEN_LANGUAGE to preferred language.
+: Objective-C code generation not supported.  Set RCPROJECT_CODEGEN_LANGUAGE to 'Automatic', 'Swift', or 'None'.
+Unsupported language
+--swift-version=
+Could not determine generated file paths for RC project code generation: 
+Error preparing RC project "
+RCProjectCodegen
+Could not determine output argument position
+" for code generation: could not determine output argument position
+ language interface for RC project 
+: No Swift version specified.  Set RCPROJECT_CODEGEN_SWIFT_VERSION to preferred Swift version.
+Disabled in project (RC Project Code Generation Language set to "none")
+: No predominant language detected.  Set RCPROJECT_CODEGEN_LANGUAGE to preferred language.
+" is not supported for RC project code generation.  Selecting Swift by default.  Set RCPROJECT_CODEGEN_LANGUAGE to preferred language.
+RCPROJECTCOMPILER_GENERATOR_ERROR
+RCPROJECTCOMPILER_LANGUAGE_TO_GENERATE
+RCPROJECTCOMPILER_GENERATOR_NOTICE
+RCPROJECTCOMPILER_GENERATED_FILE_PATHS
+XCBCore.CreateDirectoryProvisionalTask
+init(identifier:mustBeDependedOn:)
+XCBCore.CreateSymlinkProvisionalTask
+_TtC7XCBCore15ProvisionalTask
+assignedTask
+used
+outputNode
+_TtC7XCBCore15ProvisionalNode
+concreteNode
+_TtC7XCBCore30CreateDirectoryProvisionalTask
+nullifyIfProducedByAnotherTask
+_TtC7XCBCore28CreateSymlinkProvisionalTask
+descriptor
+_TtC7XCBCore36ProductPostprocessingProvisionalTask
+_TtC7XCBCore22MacroEvaluationProgram
+_TtC7XCBCore29MacroEvaluationProgramBuilder
+instrs
+_TtC7XCBCore28MacroEvaluationResultBuilder
+accumulatedString
+listElementSeparators
+needsListElementSeparator
+hasHadAnyTextAppended
+Unexpected type code for EvalInstr: 
+Unexpected associated value for EvalInstr.beginSubresult.
+rfc1034identifier
+c99extidentifier
+Unexpected value '
+' for EvalInstr.applyReplacementOperator
+' for EvalInstr.applyRetrievalOperator
+Unexpected associated value for EvalInstr.mergeSubresult.
+Expected to be able to shift index with distance 
+ from its startIndex in 
+ to its new position in 
+ but it's greater then the endIndex. Count of the string before appending: 
+, count after appending: 
+/Library/Caches/com.apple.xbs/Sources/XCBuild/XCBuild-15509/XCBCore/Macros/MacroEvaluationProgram.swift
+OnDemandResources
+NSBundleResourceRequestTags
+NSBundleResourceRequestAssetPacks
+primaryContentHash
+uncompressedSize
+downloadPriority
+_TtC7XCBCore19BuildRuleTaskAction
+toolSpec
+_TtC7XCBCore21BuildRuleScriptAction
+interpreterPath
+scriptSource
+inputFiles
+outputFiles
+_TtC7XCBCore17MacroConditionSet
+conditions
+_TtC7XCBCoreP33_34BC4D4C8775FF5ED40706DC054BC47019BoolBuildOptionType
+typeName
+isListType
+supportsValuesDefinitions
+_TtC7XCBCoreP33_34BC4D4C8775FF5ED40706DC054BC47031CodeSignIdentityBuildOptionType
+_TtC7XCBCoreP33_34BC4D4C8775FF5ED40706DC054BC47028CodeSignStyleBuildOptionType
+_TtC7XCBCoreP33_34BC4D4C8775FF5ED40706DC054BC47030CompilerVersionBuildOptionType
+_TtC7XCBCoreP33_34BC4D4C8775FF5ED40706DC054BC47030DevelopmentTeamBuildOptionType
+_TtC7XCBCoreP33_34BC4D4C8775FF5ED40706DC054BC47019EnumBuildOptionType
+_TtC7XCBCoreP33_34BC4D4C8775FF5ED40706DC054BC47021StringBuildOptionType
+_TtC7XCBCoreP33_34BC4D4C8775FF5ED40706DC054BC47025StringListBuildOptionType
+_TtC7XCBCoreP33_34BC4D4C8775FF5ED40706DC054BC47034OpenCLArchitecturesBuildOptionType
+_TtC7XCBCoreP33_34BC4D4C8775FF5ED40706DC054BC47019PathBuildOptionType
+_TtC7XCBCoreP33_34BC4D4C8775FF5ED40706DC054BC47023PathListBuildOptionType
+_TtC7XCBCoreP33_34BC4D4C8775FF5ED40706DC054BC47034ProvisioningProfileBuildOptionType
+_TtC7XCBCoreP33_34BC4D4C8775FF5ED40706DC054BC47043ProvisioningProfileSpecifierBuildOptionType
+_TtC7XCBCore11BuildOption
+localizedName
+localizedDescription
+appearsAfter
+defaultValue
+emptyValueDefn
+otherValueDefn
+condition
+architectures
+fileTypeIdentifiers
+flattenRecursiveSearchPathsInValue
+valueDefns
+environmentVariableNameOpt
+supportedVersionRangesOpt
+_TtC7XCBCore18PropertyDomainSpec
+buildOptions
+deletedOptionNames
+flattenedBuildOptionsCache
+flattenedOrderedBuildOptionsCache
+DeletedProperties
+IsGlobalDomainInUI
+OptionConditionFlavors
+cannot define both 'Properties' and 'Options'
+expected build option array for '
+missing build option key 'Name' in data: 
+unable to declare macro for option '
+expected string value for build option key 'DefaultValue'
+CLANG_THREAD_SANITIZER
+' missing type declaration (as '
+CommandLinePrefixFlag
+AdditionalLinkerArgs
+SetValueInEnvironmentVariable
+AvoidMacroDefinition
+CommandLineCondition
+CommandLineFlagIfFalse
+ConditionFlavors
+FlattenRecursiveSearchPathsInValue
+IsInputDependency
+IsOutputDependency
+OutputDependencies
+SupportedVersionRanges
+unknown build option key '
+expected array value for build option key '
+expected bool value for build option key '
+expected string value for build option key '
+deprecated build option key '
+' (use 'CommandLineArgs' with a 'NO' key instead) for option '
+invalid build option key '
+expected string in '
+expected dictionary value for build option key '
+expected string, array, or dict value for build option key '
+expected string in 'CommandLineArgs'
+', cannot combine with '
+cannot specify both 'AllowedValues' and 'Values'
+unknown build option type '
+unable to parse value for build option key '
+unexpected value '
+' in array for '
+' - array contains more than 2 elements
+could not parse first element of value '
+could not parse second element of value '
+could not parse value '
+macro parsing error in 'DefaultValue'
+unexpected value for '
+' in 'AdditionalLinkerArgs'
+' linker args definition for boolean type (expected only 'YES' or 'NO')
+expected string for '
+' value definition for boolean type (expected only 'YES' or 'NO')
+' in 'CommandLineArgs', a command line template was already defined in 'Values'
+deprecated use of dictionary-form 'CommandLineArgs' with list type
+invalid value definition data '
+duplicate value definition '
+missing required build option key 'Values' used with type '
+invalid build option key 'Values' used with type '
+missing build option value key 'Value' in option '
+unknown build option value key '
+expected string value for build option value key '
+expected array value for build option value key '
+invalid build option value key '
+invalid build option value for '
+' in 'CommandLineArgs'
+macro parsing error for '
+macro parsing error on 'CommandLineArgs'
+macro parsing error in 'CommandLineArgs'
+CodeSignIdentity
+OpenCLArchitectures
+ProvisioningProfile
+ProvisioningProfileSpecifier
+expected build option definition dictionary instead of item: 
+/Library/Caches/com.apple.xbs/Sources/XCBuild/XCBuild-15509/XCBCore/Specs/PropertyDomainSpec.swift
+invalid template type for Bool option
+_TtC7XCBCoreP33_0E6B41A6FA057E92F5D4D89C992220A58PathNode
+_supernode
+subnodes
+subnodesLock
+_TtC7XCBCoreP33_0E6B41A6FA057E92F5D4D89C992220A517DirectoryTreeNode
+pathNode
+exclusionPatterns
+_TtC7XCBCoreP33_0E6B41A6FA057E92F5D4D89C992220A511VirtualNode
+_TtC7XCBCore27RecursiveSearchPathResolver
+requestCache
+unable to expand children of '
+unable to get file information for '
+recursive header search expansion aborted (reached maximum limit)
+header visibility
+MiG code generation mode
+Intents code generation visibility
+_TtC7XCBCore9BuildFile
+buildableItemStorage
+fileReferenceGUID
+additionalArgs
+decompress
+migCodegenFiles
+assetTags
+String or [String]
+PBXApplicationWrapperFileType
+PBXCFBundleWrapperFileType
+PBXFrameworkWrapperFileType
+PBXMachOFileType
+PBXPlistFileType
+PBXPlugInKitPluginWrapperFileType
+PBXSpotlightImporternWrapperFileType
+XCStaticFrameworkWrapperFileType
+PBXXPCServiceWrapperFileType
+PBXXCFrameworkWrapperFileType
+_TtC7XCBCore30ApplicationWrapperFileTypeSpec
+_TtC7XCBCore27CFBundleWrapperFileTypeSpec
+_TtC7XCBCore28FrameworkWrapperFileTypeSpec
+_TtC7XCBCore16HTMLFileTypeSpec
+_TtC7XCBCore17MachOFileTypeSpec
+_TtC7XCBCore17PlistFileTypeSpec
+_TtC7XCBCore34PlugInKitPluginWrapperFileTypeSpec
+_TtC7XCBCore37SpotlightImporternWrapperFileTypeSpec
+_TtC7XCBCore34StaticFrameworkWrapperFileTypeSpec
+_TtC7XCBCore29XPCServiceWrapperFileTypeSpec
+_TtC7XCBCore30XCFrameworkWrapperFileTypeSpec
+_TtC7XCBCore16FileToBuildGroup
+files
+assignedBuildRuleAction
+_TtCs12_SwiftObject
+__TEXT
+SSSg
+SiSg
+7XCBUtil4PathVSg
+7XCBUtil10ByteStringV
+11XCBProtocol11BuildActionO
+11XCBProtocol18RunDestinationInfoVSg
+11XCBProtocol9ArenaInfoVSg
+SDyS2SG
+So35NSStringEncodingDetectionOptionsKeya
+So8NSStringC
+$sSY
+$ss21_ObjectiveCBridgeableP
+7XCBCore13BuildStepSpecC
+Say7XCBCore18BuildRuleCondition_p_AA0bC6Action_ptG
+7XCBCore15BuildRuleAction_pSg
+Say7XCBUtil10DiagnosticV8BehaviorO_SStG
+$s7XCBCore25ToolchainRegistryDelegateP
+7XCBUtil7VersionV
+ShySSG
+7XCBUtil4PathV
+SDySS7XCBUtil16PropertyListItemOG
+7XCBCore21ExecutableSearchPathsC
+7XCBUtil7FSProxy_p
+SDySS
+7XCBUtil16StringDiagnosticV
+$s7XCBCore16ProjectModelItemP
+$s7XCBCore13PIFStringEnumP
+7XCBCore15PIFParsingErrorO
+SS7keyName_7XCBCore16ProjectModelItem_pXp10objectTypet
+SS7keyName_7XCBCore16ProjectModelItem_pXp10objectTypeSS08expectedH0SSSg011destinationH0t
+SS7keyName_7XCBCore16ProjectModelItem_pXp10objectTypeSS08expectedH0t
+SS7keyName_7XCBCore16ProjectModelItem_pXp10objectTypeSS11actualValueAB13PIFStringEnum_pXp011destinationH0t
+7XCBCore12PIFBoolValueO
+7XCBCore24PIFDependencyFormatValueO
+7XCBCore22PIFBuildPhaseTypeValueO
+7XCBCore18PIFTargetTypeValueO
+7XCBCore27PIFReferenceSourceTreeValueO
+SS4name_t
+7XCBCore21PIFReferenceTypeValueO
+Say7XCBCore12PIFBoolValueOG
+Say7XCBCore24PIFDependencyFormatValueOG
+Say7XCBCore22PIFBuildPhaseTypeValueOG
+Say7XCBCore18PIFTargetTypeValueOG
+Say7XCBCore21PIFReferenceTypeValueOG
+$ss12CaseIterableP
+7XCBCore19CommandLineToolSpecC
+7XCBCore25MacroStringListExpressionC
+7XCBCore21MacroStringExpressionC
+7XCBCore19CommandBuildContextV
+7XCBCore19CommandBuildContextVz_Xx
+7XCBCore16MacroDeclarationCAA0B10ExpressionCSgIeggo_Sg
+7XCBCore30DiscoveredLdLinkerToolSpecInfoV
+7XCBCore25MacroStringListExpressionCSg
+$s7XCBCore21IbtoolCompilerSupport33_32AFFC04E3ECE5DB9ED2E01D6E2DE9DCLLP
+7XCBCore19GenericCompilerSpecC
+$s7XCBCore36AssetCatalogTaskConstructionDelegateP
+7XCBUtil7VersionVSg
+7XCBUtil8RegistryCySS
+$s7XCBCore37CoreDataModelTaskConstructionDelegateP
+$s7XCBCore30CoreMLTaskConstructionDelegateP
+$s7XCBCore31IntentsTaskConstructionDelegateP
+7XCBCore12CompilerSpecC
+7XCBCore17GenericLinkerSpecC
+7XCBUtil8RegistryCySS
+7XCBUtil8RegistryCySS
+7XCBCore26GenericCommandLineToolSpecC
+7XCBUtil17DiagnosticsEngineC
+7XCBCore24IbtoolPlatformDefinitionV
+SaySSG
+SDySiSSG
+7XCBCore26LdLinkerTaskPreviewPayloadVSg
+7XCBCore11FileToBuildV
+7XCBCore27MetalSourceFileIndexingInfoV
+7XCBCore17MetalCompilerSpecC
+Say7XCBUtil4PathVGSg
+Say7XCBUtil4PathVG
+Say7XCBCore11FileToBuildVG
+Say7XCBUtil4PathV11stringsFile_SS6regiontG
+7XCBCore26LdLinkerTaskPreviewPayloadV
+7XCBCore26LdLinkerTaskPreviewPayloadV9LinkStyleO
+Say7XCBUtil4PathVG18generatedFilePaths_t
+SS5error_t
+Say7XCBUtil4PathVGSg18generatedFilePaths_SS18languageToGenerateSSSg6noticet
+Say7XCBUtil10ByteStringVG
+7XCBCore15BuildParametersV
+7XCBCore6TargetC
+7XCBUtil10ByteStringVSg
+$s7XCBCore34ConfiguredTargetSerializerDelegateP
+$s7XCBCore36ConfiguredTargetDeserializerDelegateP
+$s7XCBCore18BuildRuleConditionP
+Say7XCBCore12FileTypeSpecCG
+Say7XCBCore21MacroStringExpressionCG
+7XCBCore16MacroDeclarationC
+7XCBCore14MacroNamespaceC
+SDy7XCBCore16MacroDeclarationC
+$s7XCBCore45MacroValueAssignmentTableDeserializerDelegateP
+7XCBCore15MacroExpressionC
+7XCBCore17MacroConditionSetCSg
+$s7XCBCore18SpecParserDelegateP
+7XCBCore9SpecProxyC
+7XCBCore10SpecParserC
+Sbz_Xx
+7XCBCore19InstrumentExtension_p
+$s7XCBCore15InstrumentEventP
+$s7XCBCore22InstrumentEventSessionP
+$s7XCBCore19InstrumentExtensionP
+7XCBCore24InstrumentExtensionPointV
+$s7XCBUtil14ExtensionPointP
+7XCBCore27ClangSourceFileIndexingInfoV
+7XCBCore27DiscoveredClangToolSpecInfoV
+7XCBCore14ExecutableTask_p
+7XCBCore16WorkspaceContextCSg
+7XCBCore24TaskOutputParserDelegate_p
+7XCBUtil8RegistryCySS
+7XCBUtil8RegistryCy
+7XCBCore20MacroEvaluationScopeC
+7XCBCore12FileTypeSpecC
+7XCBCore17SearchPathBuilderC
+7XCBCore15ClangPrefixInfoVSg
+7XCBCore15ClangPrefixInfoV7PCHInfoV
+7XCBCore15ClangPrefixInfoV
+7XCBCore15ClangPrefixInfoV7PCHInfoVSg
+7XCBCore16TargetBuildGraphV
+7XCBCore33TargetDiagnosticProducingDelegate_p
+$s7XCBCore27DelayedEvaluationDiagnosticP
+$s7XCBCore27AnyConsolidatableDiagnosticP
+$s7XCBCore24ConsolidatableDiagnosticP
+7XCBCore16ConfiguredTargetC
+7XCBUtil10DiagnosticV8LocationO
+Shy7XCBUtil12BuildVersionV8PlatformOG
+7XCBUtil12BuildVersionV8PlatformO
+s6UInt32V
+7XCBUtil10DiagnosticV
+7XCBCore42IncompatibleBinaryContentDiagnosticContextC20ConsolidationKeyTypeV
+7XCBCore45IncompatibleLinkedOrEmbeddedContentDiagnosticC20ConsolidationKeyTypeV
+7XCBCore19BooleanWarningLevelO
+s11AnyHashableV
+7XCBCore52IncompatibleLinkedOrEmbeddedContentDiagnosticContextO
+SDySS7XCBUtil4PathVG
+7XCBCore4SpecC
+7XCBCore25MacroValueAssignmentTableC
+7XCBCore25MacroValueAssignmentTableCSg
+SbSg
+SDySSSay
+7XCBUtil16PropertyListItemOSg
+7XCBUtil16PropertyListItemO
+Say7XCBUtil4PathVG19buildOnlyTheseFiles_t
+5style_t
+7XCBCore4CoreC
+7XCBCore9WorkspaceC
+7XCBCore17WorkspaceSettingsCSg
+7XCBUtil9LazyCacheCy
+7XCBUtil9LazyCacheCy
+7XCBCore20WorkspaceHeaderIndexCG
+7XCBUtil10HeavyCacheCy
+7XCBUtil10HeavyCacheCyAA4PathV
+7XCBUtil4LockC
+7XCBCore8SettingsCSg
+7XCBUtil9LazyCacheCy
+AA4PathVG
+7XCBUtil10OrderedSetVy
+7XCBCore22ProvisioningTaskInputsVSg
+Say7XCBCore23ImpartedBuildPropertiesCGSg
+Say7XCBCore17SDKRegistryLookup_pG
+7XCBCore16WorkspaceContextC
+7XCBCore8SettingsC
+SgXw
+7XCBUtil10OrderedSetVyAA4PathVG
+Shy7XCBUtil4PathVG
+$s7XCBCore28SearchPathCommandLineBuilderP
+$s7XCBCore39GCCCompatibleCompilerCommandLineBuilderP
+SS11dialectName_t
+7XCBCore15SearchPathEntryO
+7XCBUtil4PathV4path_t
+7XCBUtil4PathV4path_Sb19asSeparateArgumentst
+Say7XCBCore6TargetCG
+7XCBCore9FileGroupC
+Say7XCBCore18BuildConfigurationCG
+7XCBCore25MacroConfigFileDiagnosticV4KindO
+7XCBCore25MacroConfigFileDiagnosticV5LevelO
+SS7version_t
+11libraryType_SS0A10Identifiert
+11libraryType_AA012otherLibraryB0t
+SS17libraryIdentifier_t
+SS17libraryIdentifier_SS012otherLibraryB0t
+7XCBUtil10OrderedSetVy
+SS13fileExtension_t
+7XCBUtil10OrderedSetVySSG
+7XCBCore23XCFrameworkInfoPlist_V1V
+Say7XCBCore23XCFrameworkInfoPlist_V1V7LibraryVG
+7XCBCore23XCFrameworkInfoPlist_V1V7LibraryV
+7XCBCore23XCFrameworkInfoPlist_V1V7LibraryV10CodingKeysO
+7XCBCore11XCFrameworkV8ArgumentO
+7XCBUtil4PathV4path_ACSg07headersB0t
+7XCBCore11XCFrameworkV24CommandLineParsingResultO
+Say7XCBCore11XCFrameworkV8ArgumentOG_Sb25allowInternalDistributiont
+7XCBCore11XCFrameworkV15LibraryPathsKeyV
+7XCBCore11XCFrameworkV10LibraryKeyV
+7XCBCore23XCFrameworkInfoPlist_V1V10CodingKeysO
+Shy7XCBCore14PlatformFilterCG
+7XCBCore23ImpartedBuildPropertiesC
+Say7XCBCore10BuildPhaseCG
+7XCBCore17SourcesBuildPhaseCSg
+7XCBCore20FrameworksBuildPhaseCSg
+7XCBCore17HeadersBuildPhaseCSg
+7XCBCore19ResourcesBuildPhaseCSg
+Say7XCBCore9BuildRuleCG
+7XCBCore16ProductReferenceC
+Say11XCBProtocol22ProvisioningSourceDataVG
+11XCBProtocol22ProvisioningSourceDataV
+11XCBProtocol22ProvisioningSourceDataV7XCBCoreE10CodingKeysO
+SDy7XCBCore23MacroConditionParameterCSaySSGG
+7XCBUtil8RegistryCy7XCBCore16MacroDeclarationCSSG
+7XCBUtil8RegistryCy7XCBCore16MacroDeclarationCSaySSGG
+7XCBUtil8RegistryCy
+7XCBCore16MacroDeclarationCSg
+7XCBCore20MacroValueAssignmentCSg
+7XCBCore15MacroExpressionCSgAA0B11DeclarationCcSg
+7XCBCore23MacroConditionParameterC
+$s7XCBCore24PlatformRegistryDelegateP
+7XCBCore20SpecRegistryProvider_p
+7XCBCore22StringMacroDeclarationCSg
+7XCBCore21MacroStringExpressionCSg
+SgXw
+7XCBUtil9LazyCacheCy
+7XCBCore22PlatformSigningContext_pG
+7XCBUtil9LazyCacheCy
+SaySSG7targets_AA12VersionRangeV5rangetG
+Say7XCBCore3SDKCG
+7XCBCore24IbtoolPlatformDefinitionVSg
+SDySS
+7XCBCore9SpecProxyCSgXw
+Sny7XCBUtil7VersionVGSg
+7XCBCore28GCCCompatibleLanguageDialectOSg
+7XCBCore22StringMacroDeclarationC
+7XCBCore18PropertyDomainSpecC
+7XCBCore26ClangSerializedDiagnosticsC12LoadingErrorO
+SS7message_t
+7XCBCore14MacroNamespaceCXo
+$s7XCBCore27LegacyPluginManagerDelegateP
+SDySS
+$s7XCBCore13SpecDataCacheP
+$s7XCBCore15CommandProducerP
+Say7XCBCore11PlannedNode_pG
+7XCBCore25BuildPhaseInfoForToolSpec_pSg
+7XCBCore16ArchitectureSpecCSg
+7XCBCore16ConfiguredTargetCSg
+_pSg
+7XCBCore19EnvironmentBindingsV
+Say7XCBCore11PlannedTask_pG
+7XCBCore17PlannedTaskAction_pSg
+$s7XCBCore18CoreClientDelegateP
+$s7XCBCore22TaskGenerationDelegateP
+$s7XCBCore19TaskTypeDescriptionP
+$s7XCBCore11TaskPayloadP
+$s7XCBCore22SourceFileIndexingInfoP
+$s7XCBCore23SubtaskProgressReporterP
+$s7XCBCore16TaskOutputParserP
+7XCBUtil4UUIDV
+$s7XCBCore24TaskOutputParserDelegateP
+SnySS5IndexVG
+7XCBCore25MacroExpressionDiagnosticV5LevelO
+7XCBCore25MacroExpressionDiagnosticV4KindO
+$s7XCBCore26XcodePluginManagerDelegateP
+SDySS
+$s7XCBCore32InputFileGroupingStrategyContextP
+$s7XCBCore25InputFileGroupingStrategyP
+$s7XCBCore25BuildPhaseInfoForToolSpecP
+$s7XCBCore33DiscoveredCommandLineToolSpecInfoP
+Say7XCBCore21MacroStringExpressionCGSg
+SDySS7XCBCore21MacroStringExpressionCGSg
+_pGSg
+7XCBUtil5RegExV
+Says5UInt8VG
+7XCBCore19CommandLineToolSpecC0bC11TemplateArgO
+7XCBCore25MacroStringListExpressionC5value_t
+7XCBCore19CommandLineToolSpecC19RuleInfoTemplateArgO
+s12StaticStringV
+7XCBCore23InputFileTypeDescriptorV
+Says10ArraySliceVys5UInt8VGG
+7XCBCore16MacroDeclarationCAA0B10ExpressionCSgIeggo_
+s6UInt64V
+$ss33ExpressibleByUnicodeScalarLiteralP
+$ss43ExpressibleByExtendedGraphemeClusterLiteralP
+$ss26ExpressibleByStringLiteralP
+$s7XCBCore11PlannedTaskP
+_pXo
+$s7XCBCore14ExecutableTaskP
+7XCBCore15ProvisionalTaskCSgXw
+7XCBCore11TaskPayload_pXpSg
+11XCBProtocol13EventCategoryO
+7XCBCore14TaskIdentifierV
+7XCBCore22TaskGenerationDelegate_p
+7XCBCore27SwiftSourceFileIndexingInfoV
+7XCBCore35DiscoveredSwiftCompilerToolSpecInfoV
+7XCBCore14ExecutableTask_pSg
+SDySi
+7XCBCore23SubtaskProgressReporter_pSg
+7XCBUtil21LLVMStyleCommandCodecC
+7XCBCore24SwiftCommandOutputParserC7SubtaskV
+7XCBCore17SwiftCompilerSpecC0B15CompilationModeO
+SDy7XCBUtil4PathVACG
+7XCBUtil4PathV8remapDir_t
+SS14triplePlatform_SS0A6Suffixt
+SnySiG
+SDySS
+7XCBCore24SettingsBuilderExtension_p
+7XCBCore4CoreCXo
+7XCBCore8PlatformCSg
+7XCBCore9ToolchainCSg
+7XCBCore15BuildSystemSpecCSg
+7XCBUtil8RegistryCySS7XCBCore25MacroValueAssignmentTableC_SaySSG6errorstG
+7XCBUtil9LazyCacheCy
+7XCBCore25MacroValueAssignmentTableCG
+7XCBUtil8RegistryCy
+7XCBCore16WorkspaceContextCXo
+7XCBUtil8RegistryCy
+7XCBCore7ProjectC
+7XCBCore6TargetCSg
+7XCBCore18BuildConfigurationCSg
+7XCBCore8PlatformC
+7XCBCore3SDKCSg
+7XCBCore10SDKVariantCSg
+Say7XCBCore9ToolchainCG
+7XCBCore15ProductTypeSpecCSg
+7XCBCore15PackageTypeSpecCSg
+Shy7XCBCore16MacroDeclarationCG
+7XCBCore16FilePathResolverC
+7XCBCore22ProvisioningTaskInputsV
+$s7XCBCore24SettingsBuilderExtensionP
+7XCBCore17SDKRegistryLookup_p
+ShySiG
+7XCBUtil9LazyCacheCy
+AA10ByteStringVG
+7XCBCore25MacroValueAssignmentTableCG
+7XCBCore12CoreSettingsC23SystemBuildRuleCacheKeyV
+7XCBUtil3RefVy7XCBCore8PlatformCG
+7XCBCore12CoreSettingsC16SystemBuildRulesV
+Say7XCBUtil4PathV_SStG
+7XCBCore17WorkspaceSettingsC07BuiltinC7InfoKeyV
+7XCBCore10TargetTypeOSg
+7XCBCore17WorkspaceSettingsC07BuiltinC4InfoV
+SDySSSaySSGG
+7XCBCore16ArchitectureSpecC
+7XCBCore29SettingsBuilderExtensionPointV
+$s7XCBCore17PlannedTaskActionP
+$s7XCBCore26TaskActionCreationDelegateP
+$s7XCBCore9PIFObjectP
+$s7XCBCore17PIFObjectProviderP
+SDySS7XCBCore9ReferenceCG
+Say7XCBCore16ProjectModelItem_pG
+7XCBUtil10HeavyCacheCy
+7XCBCore20IncrementalPIFLoaderC14LoadingSessionC
+7XCBCore15PIFLoadingErrorO
+SSSg8typeName_t
+7XCBCore18PIFObjectReferenceV3key_t
+7XCBCore9PIFLoaderCm4type_SS4guidt
+7XCBCore18PIFObjectReferenceV
+7XCBCore9PIFObject_pXp
+SDy7XCBCore18PIFObjectReferenceVAA15EncodedPIFValueOG
+$s7XCBCore25BuildFileFilteringContextP
+Say7XCBCore9BuildFileCG
+7XCBCore20DependencyInfoFormatOSg
+7XCBUtil9ComponentO
+$s7XCBCore27DiagnosticProducingDelegateP
+$s7XCBCore33TargetDiagnosticProducingDelegateP
+7XCBCore22StringTargetDiagnosticV
+$s7XCBCore12InternalSpecP
+$s7XCBCore20SpecRegistryDelegateP
+SS10identifier_SS6domaint
+SS10identifier_SS6domain7XCBCore4SpecCm4typet
+$s7XCBCore8SpecTypeP
+$s7XCBCore22SpecImplementationTypeP
+$s7XCBCore18IdentifiedSpecTypeP
+$s7XCBCore13SpecClassTypeP
+_pXp
+_pXpSg
+SDyS2SGSg
+SDySS
+So17OS_dispatch_queueC
+SDySS
+7XCBUtil5CacheCy
+$s7XCBCore20SpecRegistryProviderP
+7XCBUtil3RefVy7XCBCore8SpecType_pXpG
+7XCBCore9SpecProxyC06LoadedB4KindO
+7XCBCore4SpecC4spec_t
+7XCBCore12SpecRegistryC
+SgXw
+7XCBUtil16PropertyListItemOz_Xx
+7XCBCore8SpecType_pXmTSg
+7XCBCore9SpecProxyCIegg_
+So17OS_dispatch_groupC
+7XCBCore3SDKC
+7XCBCore11BuildOptionC
+$s7XCBCore12CoreDelegateP
+7XCBUtil19ProductBuildVersionV
+7XCBCore12CoreSettingsCSg
+Say7XCBUtil4PathV_7XCBCore8PlatformCSgtGSg
+Say7XCBUtil4PathV_Sb6stricttGSg
+7XCBCore16PlatformRegistryCSg
+7XCBCore19LegacyPluginManagerCSg
+7XCBCore18XcodePluginManagerCSg
+7XCBCore11SDKRegistryCSg
+7XCBCore17ToolchainRegistryCSg
+7XCBCore12SpecRegistryCSg
+SgXw
+7XCBCore22MacroEvaluationProgramC
+$s7XCBCore20EnumerationMacroTypeP
+7XCBCore23EntitlementsDestinationO
+SDy7XCBCore7ProjectC
+7XCBUtil10OrderedSetVy7XCBCore13FileReferenceCG
+SDy7XCBCore16BuildPhaseTargetC
+Say7XCBCore13FileReferenceCG
+SDy7XCBCore7ProjectCAA0B10HeaderInfoVG
+SDy7XCBCore7ProjectCAA0B10HeaderInfoVGz_Xx
+7XCBCore17ProjectHeaderInfoV
+SDy7XCBCore16BuildPhaseTargetCAA0D10HeaderInfoVG
+SDy7XCBCore16BuildPhaseTargetCAA0D10HeaderInfoVGz_Xx
+7XCBCore16BuildPhaseTargetC
+7XCBCore16TargetHeaderInfoV
+7XCBUtil9LazyCacheCy
+7XCBCore25MacroValueAssignmentTableCG
+SS5IndexV
+Ss8UTF8ViewV
+$s7XCBCore29MacroExpressionParserDelegateP
+SgXo
+11XCBProtocol10SourceTreeO
+11XCBProtocol16FileTextEncodingVSg
+7XCBCore6TargetCSgXo
+7XCBCore12BuildRequestC
+7XCBUtil10OrderedSetVy7XCBCore16ConfiguredTargetCG
+SDy7XCBCore16ConfiguredTargetCSayACGG
+7XCBUtil9LazyCacheCy
+SDySSSaySSGGG
+7XCBCore18DependencyResolverC
+SDySSShy7XCBCore14StandardTargetCGG
+Shy7XCBCore16ConfiguredTargetCG
+7XCBCore25LinkageDependencyResolverC
+Say7XCBCore16ConfiguredTargetCG
+s10ArraySliceVys5UInt8VG
+SS_SStSgIego_
+SS_SSt
+s11AnyIteratorVySS_SStG
+$sST
+Say7XCBCore25MacroStringListExpressionCGSg
+SDySS7XCBCore16MacroDeclarationCG
+SDySS7XCBCore23MacroConditionParameterCG
+7XCBCore29MacroEvaluationProgramBuilderC
+y7XCBCore25MacroExpressionDiagnosticVcSg
+7XCBCore9MacroTypeO08previousC0_SS4namet
+SS4name_7XCBCore9MacroTypeO4type7XCBUtil16PropertyListItemO5valuet
+7XCBCore40RegisterExecutionPolicyExceptionToolSpecC
+7XCBUtil5CacheCy7XCBCore9FileGroupCAA4PathVG
+7XCBUtil5CacheCy7XCBCore16MacroDeclarationCAA4PathVG
+_pSg
+$s7XCBCore29MacroConfigFileParserDelegateP
+SaySS5param_SS7patterntGSg
+7XCBUtil9LazyCacheCy
+7XCBCore25MacroValueAssignmentTableCG
+7XCBUtil5CacheCyAA4PathVAESgG
+s4Int8V
+SSSgz_Xx
+SSIegg_
+$s7XCBCore22PlatformSigningContextP
+7XCBCore17MacSigningContextV
+7XCBCore23SimulatorSigningContextV
+7XCBCore20DeviceSigningContextV
+7XCBCore19EntitlementsVariantO
+Say7XCBUtil7VersionVG
+7XCBCore12CompilerSpecC17ArchitecturesKindO
+$s7XCBCore32TargetDependencyResolverDelegateP
+SDy7XCBCore6TargetCAA15BuildParametersVG
+SDy7XCBCore6TargetCSayAA010ConfiguredB0CGG
+$s7XCBCore19SDKRegistryDelegateP
+SDySS
+SDySSSDy7XCBUtil7VersionVACGG
+7XCBUtil9LazyCacheCy
+ShySSGG
+7XCBUtil17LazyKeyValueCacheCy
+SgtSSShySSGG
+SaySSGSg
+Say7XCBUtil7VersionVGSg
+7XCBUtil12VersionRangeV
+$s7XCBCore17SDKRegistryLookupP
+SSSg11replacement_t
+SS11replacement_t
+7XCBUtil8RegistryCySS
+7XCBUtil8RegistryCyAA4PathV
+7XCBUtil9LazyCacheCy
+ShySSGG
+7XCBUtil17LazyKeyValueCacheCy
+SgtSSShySSGG
+7XCBUtil17LazyKeyValueCacheCy
+SbSDySSShyAA12BuildVersionV8PlatformOGGG
+7XCBCore11SDKRegistryC0B4TypeO
+Say7XCBCore7ProjectCG
+SDySS7XCBCore7ProjectCG
+SDySS7XCBCore6TargetCG
+SDy7XCBCore6TargetCAA7ProjectCG
+SDySSSay7XCBCore7ProjectCGG
+Say7XCBCore9ReferenceCG
+7XCBUtil9LazyCacheCy
+SDySSSaySSGGG
+Say7XCBCore20PackageProductTargetCG
+SDy7XCBCore16ConfiguredTargetC
+7XCBCore25LinkageDependencyResolverCSg
+SDy7XCBCore16ConfiguredTargetC7XCBUtil10OrderedSetVyACGGSg
+$s7XCBCore26RCTaskConstructionDelegateP
+7XCBCore11PlannedNode_pSg
+$s7XCBCore32ProvisionalTaskValidationContextP
+7XCBCore17SymlinkDescriptorV
+7XCBCore15ProvisionalTaskC08AssignedC0O
+7XCBCore11PlannedTask_p
+SaySS5IndexVG
+Say7XCBCore22MacroEvaluationProgramC9EvalInstrOG
+7XCBCore22MacroEvaluationProgramC9EvalInstrO
+Sb8asString_Sb28preserveOriginalIfUnresolvedt
+7XCBCore22MacroEvaluationProgramC0bC17RetrievalOperatorO
+7XCBCore22MacroEvaluationProgramC0bC19ReplacementOperatorO
+SdSg
+SDySSShySSGG
+10Foundation4DateV
+$s7XCBCore15BuildRuleActionP
+Say7XCBCore14MacroConditionCG
+$s7XCBCore15BuildOptionType33_34BC4D4C8775FF5ED40706DC054BC470LLP
+7XCBCore15MacroExpressionCSg
+7XCBCore24MacroConditionExpressionCSg
+ShySSGSg
+SDySS
+Say7XCBUtil12VersionRangeVGSg
+$s7XCBCore28BuildOptionGenerationContextP
+7XCBUtil9LazyCacheCy
+SDySS
+7XCBUtil9LazyCacheCy
+7XCBCore16BuildOptionValueV
+7XCBCore16BuildOptionValueV28CommandLineTemplateSpecifierOSg
+7XCBCore15CommandProducer_p
+7XCBCore16BuildOptionValueV28CommandLineTemplateSpecifierO
+$s7XCBCore11PlannedNodeP
+$s7XCBCore15PlannedPathNodeP
+$s7XCBCore24PlannedDirectoryTreeNodeP
+$s7XCBCore18PlannedVirtualNodeP
+7XCBUtil10UnfairLockC
+7XCBUtil8RegistryCy
+$s7XCBCore22BuildFileRepresentableP
+11XCBProtocol9BuildFileV16HeaderVisibilityOSg
+11XCBProtocol9BuildFileV15MigCodegenFilesOSg
+11XCBProtocol9BuildFileV24IntentsCodegenVisibilityO
+SS4guid_t
+SS4name_SS18fileTypeIdentifiert
+7XCBCore9BuildFileCSg
+$s7XCBCore14RegionVariableP
+project
+update
+sourceVersion
+buildNumber
+buildRecord
+signature
+action
+configuration
+activeRunDestination
+activeArchitecture
+arena
+overrides
+commandLineOverrides
+commandLineConfigOverrides
+environmentConfigOverrides
+toolchainOverride
+xbsParameters
+_rawValue
+RawValue
+_ObjectiveCType
+rules
+action
+diagnostics
+identifier
+version
+aliases
+path
+defaultSettings
+overrideSettings
+defaultSettingsWhenPrimary
+executableSearchPaths
+toolchainsByIdentifier
+toolchainsByAlias
+missingRequiredKey
+incorrectType
+incorrectTypeInArray
+invalidEnumValue
+custom
+true
+false
+dependencyInfo
+makefile
+makefiles
+sources
+frameworks
+headers
+resources
+copyfiles
+shellscript
+applescript
+javaarchive
+aggregate
+external
+packageProduct
+standard
+buildSetting
+absolute
+group
+file
+product
+versionGroup
+variantGroup
+AllCases
+RawValue
+allInputFilenames
+toolPath
+toolVersion
+discoveredInfoCache
+error
+architectures
+inputIndexInRuleInfo
+diagnosticsEngine
+pluginName
+pluginIdentifier
+explicitTargetDeviceName
+supportedPlatformNames
+explicitLinkerOutputFileNames
+targetedDeviceFamilyIdentifierToTargetDeviceName
+outputPath
+tbdOutputPath
+previewPayload
+architecture
+buildVariant
+objectFileDir
+linkStyle
+success
+failure
+inputPath
+indexingPayload
+serializedDiagnosticsPath
+sourceFile
+outputFile
+commandLine
+builtProductsDir
+toolchains
+dylib
+bundleLoader
+sourceFileIndex
+outputFileIndex
+workingDir
+RawValue
+parameters
+target
+$__lazy_storage_$_signature
+high
+normal
+none
+fileTypes
+namePatterns
+namespace
+valueAssignments
+expression
+conditions
+next
+delegate
+proxy
+parsedKeys
+failure
+success
+ExtensionProtocol
+task
+workspaceContext
+payload
+delegate
+toolPath
+clangVersion
+llvmVersion
+exact
+prefix
+fnmatch
+precompNeutralFlagPatterns
+discoveredInfoCache
+constantFlagsCache
+scope
+inputFileType
+flags
+headerSearchPaths
+sourceFile
+outputFile
+sourceLanguage
+commandLine
+builtProductsDir
+prefixInfo
+toolchains
+serializedDiagnosticsPath
+indexingPayload
+sourceFileIndex
+outputFileIndex
+sourceLanguageIndex
+workingDir
+diagnosticsEngine
+input
+output
+hashCriteria
+buildGraph
+delegate
+target
+diagnosticLocation
+path
+buildPlatforms
+buildArchs
+context
+message
+otherTargetName
+otherTargetPlatforms
+otherProductType
+projectModel
+cxxCompiler
+swiftCompiler
+linker
+linked
+embedded
+linkedAndEmbedded
+self
+dependency
+appex
+framework
+item
+library
+level
+consolidationKey
+RawValue
+kind
+path
+shouldLinkWeakly
+useSearchPaths
+swiftModulePaths
+fromTargetProduct
+static
+dynamic
+textBased
+framework
+object
+buildSettings
+overridingBuildSettingsTable
+defaultPackageTypeIdentifier
+isWrapper
+hasInfoPlist
+frameworksRunpathSearchPath
+canEmbedCompilerSanitizerLibraries
+validateEmbeddedBinaries
+productValidationToolSpecIdentifier
+buildPhaseFileRefAdditions
+infoPlistAdditions
+supportsOnDemandResources
+deprecationInfo
+warning
+error
+reason
+level
+path
+regionVariantName
+location
+toPath
+effectiveToPath
+description
+recoverySuggestion
+identityHash
+identityName
+profileName
+profileUUID
+profilePath
+designatedRequirements
+signedEntitlements
+simulatedEntitlements
+appIdentifierPrefix
+teamIdentifierPrefix
+keychainPath
+errors
+warnings
+signature
+regular
+legacy
+generateAssemblyCode
+generatePreprocessedFile
+singleFileBuild
+cleanBuildFolder
+build
+prepareForIndexing
+migrate
+preview
+launch
+test
+profile
+archive
+parameters
+buildTargets
+useParallelTargets
+useImplicitDependencies
+useDryRun
+useEagerCompilation
+continueBuildingAfterErrors
+hideShellScriptEnvironment
+showNonLoggedProgress
+shouldCollectMetrics
+buildPlanDiagnosticsDirPath
+buildCommand
+schemeCommand
+target
+user
+group
+home
+processEnvironment
+buildSystemEnvironment
+usePerConfigurationBuildDirectories
+operatingSystemVersion
+productBuildVersion
+nativeArchitecture
+underlyingLookup
+core
+workspace
+userInfo
+systemInfo
+workspaceSettings
+sdkRegistryCache
+headerIndexCache
+settingsCache
+macroConfigCache
+lock
+settings
+table
+warnings
+errors
+dependencyPaths
+signature
+path
+resolvedPathCache
+normalizedPathCache
+diagnosticsEngine
+namespace
+paths
+parameters
+projectGUID
+targetGUID
+provisioningTaskInputs
+impartedBuildProperties
+registries
+context
+basePath
+searchPaths
+diagnostics
+nestedConfigurations
+ancestorIncludes
+searchPathEntries
+inputPaths
+headerSearchPaths
+systemHeaderSearchPaths
+frameworkSearchPaths
+systemFrameworkSearchPaths
+other
+cPlusPlus
+objectiveC
+objectiveCPlusPlus
+userHeaderSearchPath
+headerSearchPath
+systemHeaderSearchPath
+frameworkSearchPath
+systemFrameworkSearchPath
+literalArguments
+headerSearchPathSplitter
+toolPath
+toolVersion
+signature
+guid
+xcodeprojPath
+sourceRoot
+name
+targets
+groupTree
+buildConfigurations
+defaultConfigurationName
+developmentRegion
+appPreferencesBuildSettings
+isPackage
+kind
+level
+message
+lineNumber
+unexpectedCharacter
+missingMacroName
+missingEqualsInAssignment
+unterminatedConditionClause
+missingConditionParameter
+missingEqualsInCondition
+unterminatedIncludeDirective
+unknownPreprocessorDirective
+missingIncludedFile
+cyclicIncludeFileDirective
+warning
+error
+unsupportedVersion
+unsupportedLibraryType
+mixedLibraryTypes
+libraryPathEmpty
+supportedPlatformEmpty
+headersPathEmpty
+platformVariantEmpty
+headerPathNotSupported
+conflictingLibraryDefinitions
+duplicateLibraryIdentifier
+missingInfoPlist
+missingXCFramework
+noLibraries
+message
+version
+libraries
+unknown
+framework
+dynamicLibrary
+staticLibrary
+libraryIdentifier
+supportedPlatform
+supportedArchitectures
+platformVariant
+libraryPath
+headersPath
+libraryType
+bundleCode
+library
+output
+internalDistribution
+arguments
+help
+identifier
+platform
+RawValue
+standard
+aggregate
+external
+packageProduct
+guid
+platformFilters
+signature
+name
+buildConfigurations
+impartedBuildProperties
+dependencies
+errors
+warnings
+buildPhases
+sourcesBuildPhase
+frameworksBuildPhase
+headersBuildPhase
+resourcesBuildPhase
+buildRules
+productTypeIdentifier
+productReference
+isUnitTest
+isPackageTarget
+performanceTestsBaselinesPath
+predominantSourceCodeLanguage
+classPrefix
+provisioningSourceData
+other
+undefined
+swift
+objectiveC
+cPlusPlus
+objectiveCPlusPlus
+toolPath
+arguments
+workingDirectory
+passBuildSettingsInEnvironment
+configurationName
+appIDHasFeaturesEnabled
+provisioningStyle
+legacyTeamID
+bundleIdentifierFromInfoPlist
+RawValue
+defaultValue
+toolPath
+toolVersion
+table
+conditionParameterValues
+stringCache
+stringListCache
+subscopes
+scope
+parent
+macro
+value
+lookup
+parameter
+values
+name
+displayName
+familyName
+identifier
+path
+version
+productBuildVersion
+defaultSettings
+defaultSettingsTable
+isDeploymentPlatform
+additionalInfoPlistEntries
+specRegistryProvider
+preferredArch
+additionalBuiltProductsDirMacro
+additionalBuiltProductsDirValue
+deploymentTargetMacro
+deploymentTargetClangFlagName
+deploymentTargetClangEnvName
+deploymentTargetLdEnvName
+deploymentTargetLdFlagName
+swiftTargetPrefix
+embeddedProvisioningProfileName
+sdkCanonicalNamePublic
+sdkCanonicalNameInternal
+useFallbackEntitlementsInXBS
+correspondingDevicePlatform
+correspondingSimulatorPlatform
+signingContextCache
+deploymentTargetsCache
+addressSanitizerLibraryName
+threadSanitizerLibraryName
+undefinedBehaviorSanitizerLibraryName
+appStoreSubmissionConfigurationBitCodeDefaultSupportLevel
+sdks
+ibtoolPlatformDefinition
+unsupported
+supported
+required
+deprecated
+delegate
+platforms
+platformsByIdentifier
+platformsByName
+allDeploymentTargetMacroNames
+hasLoadedExtendedInfo
+hasLoadedIbtoolPlatformDefinitions
+proxy
+domain
+identifier
+basedOnSpec
+name
+canonicalName
+archSetting
+realArchs
+compatibilityArchs
+deploymentTargetRange
+errorOutsideDeploymentTargetRange
+deprecated
+deprecatedError
+isBundle
+isFramework
+extensions
+languageDialect
+isEmbeddableInProduct
+codeSignOnCopy
+validateOnCopy
+buildSettings
+productReferenceFileTypeIdentifier
+buildSetting
+dontCreateIfProducedByAnotherTask
+handle
+unknown
+cannotLoad
+invalidFile
+name
+namespace
+name
+identifier
+path
+delegate
+searchPaths
+pluginsByName
+pluginsByIdentifier
+forSwiftOnly
+exportsSwiftObjCAPI
+moduleMapTmpPath
+privateModuleMapTmpPath
+producer
+scope
+inputs
+outputs
+commandOrderingInputs
+commandOrderingOutputs
+buildPhaseInfo
+resourcesDir
+tmpResourcesDir
+unlocalizedResourcesDir
+isPreferredArch
+currentArchSpec
+forTarget
+type
+dependencyData
+payload
+ruleInfo
+additionalSignatureData
+commandLine
+additionalOutput
+environment
+workingDirectory
+mustPrecede
+allowDeduplication
+action
+showEnvironment
+execDescription
+preparesForIndexing
+llbuildControlDisabled
+targetDependencies
+isGate
+dependencyInfo
+makefile
+makefiles
+sourceFile
+thunkVariantSuffix
+architecture
+buildVariant
+input
+output
+Swift
+uuid
+RawValue
+string
+range
+kind
+level
+warning
+error
+deprecatedMacroRefSyntax
+trailingDollarSign
+trailingEscapeCharacter
+unterminatedQuotation
+unterminatedMacroSubexpression
+missingMacroName
+missingOperatorName
+invalidOperatorCharacter
+unknownRetrievalOperator
+unknownReplacementOperator
+identifier
+path
+data
+delegate
+searchPaths
+pluginsByIdentifier
+requiresPluginData
+groupIdentifier
+toolName
+commandLineTemplate
+ruleInfoTemplate
+execPath
+execDescription
+outputs
+environmentVariables
+includeInUnionedDefaults
+wantsBuildSettingsInEnvironment
+generatedInfoPlistContent
+sourceFileOption
+additionalDirectoriesToCreate
+inputFileTypeDescriptors
+shouldSynthesizeBuildRules
+inputFileGroupingStrategies
+dontProcessOutputs
+isArchitectureNeutral
+areInputsDirectoryTrees
+isUnsafeToInterrupt
+swapOutputsWithInputsForIndexing
+llbuildControlDisabled
+delegate
+workspaceContext
+task
+diagnosticRegex
+toolBasenames
+unparsedBytes
+undefinedSymbols
+collectingUndefinedSymbols
+undefinedSymbolCountLimit
+literal
+input
+inputs
+options
+output
+specialArgs
+string
+identifier
+UnicodeScalarLiteralType
+ExtendedGraphemeClusterLiteralType
+StringLiteralType
+rawValue
+instance
+identifier
+additionalSignatureData
+inputs
+outputs
+mustPrecede
+execTask
+allowDeduplication
+provisionalTask
+payloadType
+eventCategory
+isUnsafeToInterrupt
+RawValue
+commandLine
+builtProductsDir
+toolchains
+outputFile
+delegate
+task
+workspaceContext
+targetName
+workingDirectory
+variant
+arch
+buffer
+hasStreamError
+subtasks
+progressReporter
+commandDecoder
+toolPath
+swiftVersion
+swiftlangVersion
+swiftABIVersion
+clangVersion
+valid
+validMajor
+invalid
+moduleName
+indexingPayload
+previewPayload
+numExpectedCompileSubtasks
+serializedDiagnosticsPaths
+inputs
+inputReplacements
+objectFileDir
+architecture
+buildVariant
+migrate
+zipperedModule
+compile
+filePaths
+range
+RawValue
+extensionPoints
+extensionPointsByIdentifier
+identifier
+displayName
+supportedPlatforms
+macCatalyst
+macOS
+tvOS
+watchOS
+core
+defaultPlatform
+defaultToolchain
+coreBuildSystemSpec
+externalBuildSystemSpec
+nativeBuildSystemSpec
+unionedToolDefaultsCache
+universalDefaultsCache
+systemBuildRuleCache
+workspaceContext
+builtinSettingsInfoCache
+parameters
+project
+target
+targetConfiguration
+userNamespace
+platform
+sdkVariant
+toolchains
+sparseSDKs
+table
+productType
+packageType
+preferredArch
+exportedMacroNames
+exportedNativeMacroNames
+globalScope
+filePathResolver
+executableSearchPaths
+errors
+warnings
+notes
+macroConfigPaths
+macroConfigSignature
+systemBuildRules
+signingSettings
+deploymentTarget
+supportedBuildVersionPlatforms
+inputs
+identity
+profile
+signedEntitlements
+simulatedEntitlements
+hash
+name
+input
+output
+context
+sdkRegistry
+provisioningTaskInputs
+forBindingProperties
+includeExports
+_table
+exportedMacroIDs
+exportedNativeIDs
+macroConfigSignatureCache
+namespace
+tables
+combineHiDPIImages
+rules
+targetType
+domain
+exportedMacros
+none
+exported
+exportedForNative
+ExtensionProtocol
+scope
+productType
+platform
+cleanupRequiredArchitectures
+json
+binary
+provider
+userNamespace
+knownReferences
+projectModelItemsToAwaken
+loadedObjects
+cachePath
+incrementalLoader
+workspaceSignature
+availableDataObjects
+didUseCache
+_missingObjects
+session
+invalidObject
+nonRequiredObject
+guidAlreadyRegistered
+signature
+type
+objects
+guid
+buildFiles
+destinationSubfolder
+destinationSubpath
+runOnlyForDeploymentPostprocessing
+_name
+shellPath
+scriptContents
+originalObjectID
+inputFilePaths
+inputFileListPaths
+outputFilePaths
+outputFileListPaths
+emitEnvironment
+dependencyInfo
+description
+alternativeDescription
+component
+target
+projectName
+projectPath
+workspace
+overrideTarget
+default
+global
+notFound
+wrongType
+identifier
+domain
+path
+type
+classType
+basedOn
+basedOnProxy
+data
+localizedStrings
+loadedSpec
+proxiesByIdentifier
+delegate
+delegateQueue
+proxiesByDomain
+domainInclusions
+internalMacroNamespace
+treatMissingBasedOnReferencesAsErrors
+isFrozen
+proxyCache
+specRegistry
+proxy
+diagnosticsEngine
+includeInherited
+loaded
+notLoaded
+error
+loading
+delegate
+registryDelegate
+applicationPath
+developerPath
+inferiorProductsPath
+additionalContentPaths
+xcodeVersionString
+xcodeVersion
+xcodeProductBuildVersionString
+xcodeProductBuildVersion
+xcodeIsAppleInternal
+buildServiceModTime
+$__lazy_storage_$_coreSettings
+$__lazy_storage_$_isRuntimeOSAppleInternal
+isRuntimeOSAppleInternalOverride
+$__lazy_storage_$_devToolsCoreFrameworkPath
+$__lazy_storage_$_builtinSpecPaths
+$__lazy_storage_$_legacyPluginPaths
+$__lazy_storage_$_pluginPaths
+$__lazy_storage_$_sdkPaths
+$__lazy_storage_$_toolchainPaths
+$__lazy_storage_$_platformRegistry
+$__lazy_storage_$_legacyPluginManager
+$__lazy_storage_$_xcodePluginManager
+$__lazy_storage_$_sdkRegistry
+$__lazy_storage_$_toolchainRegistry
+$__lazy_storage_$_specRegistry
+diagnosticsEngine
+xcodeIsAppleInternalOverride
+core
+stringRep
+evalProgram
+yesError
+codeSignature
+entitlementsSection
+none
+RawValue
+projectHeaderInfo
+knownHeaders
+targetHeaderInfo
+publicHeaders
+privateHeaders
+projectHeaders
+toolPath
+toolVersion
+buildSettingsCache
+buildSettingsData
+namespace
+dependencyInfo
+makefile
+makefiles
+delegate
+string
+currIdx
+utf8
+guid
+parent
+sourceTree
+path
+fileTypeIdentifier
+regionVariantName
+fileTextEncoding
+children
+name
+target
+workspaceContext
+buildRequest
+allTargets
+targetDependencies
+_targetDependenciesByName
+targetsByProductName
+targetsByProductNameStem
+dependenciesPerTarget
+visitedDiscoveredTargets
+bindings
+Element
+Iterator
+boolean
+string
+stringList
+userDefined
+name
+guid
+fileTypeIdentifier
+filePatterns
+compilerSpecificationIdentifier
+scriptContents
+inputFilePaths
+outputFilePaths
+outputFilesCompilerFlags
+dependencyInfo
+runOncePerArchitecture
+parentNamespace
+macroRegistry
+macroRegistryLock
+debugDescription
+conditionParameters
+programBuilder
+alwaysEvalAsStringNestingLevel
+macroNameNestingLevel
+diagnosticsHandler
+conflictingMacroDeclarationType
+unknownMacroDeclarationType
+inconsistentMacroDefinition
+scope
+projectDir
+fileGroupCache
+buildSettingCache
+delegate
+bytes
+path
+currIdx
+currLine
+macroName
+conditions
+name
+buildSettingsCache
+buildSettingsData
+namespace
+baseConfigurationFileReferenceGUID
+paths
+resolvedExecutables
+macroExpr
+expr
+leftExpr
+rightExpr
+condExpr
+thenExpr
+elseExpr
+bytes
+currIdx
+scanner
+nextToken
+macroNamespace
+type
+flags
+offset
+length
+invalid
+string
+true
+false
+equals
+notEquals
+contains
+matches
+questionMark
+colon
+leftParen
+rightParen
+RawValue
+signed
+simulated
+RawValue
+archs
+supportedLanguageVersions
+explicitSet
+validArchs
+parameter
+valuePattern
+externalTarget
+shellScriptPhase
+buildRequest
+workspaceContext
+delegate
+serialQueue
+buildParametersByTarget
+configuredTargetsByTarget
+name
+namespace
+canonicalName
+aliases
+displayName
+path
+version
+productBuildVersion
+defaultSettings
+defaultSettingsTable
+overrideSettings
+overrideSettingsTable
+variants
+defaultVariant
+headerSearchPaths
+frameworkSearchPaths
+librarySearchPaths
+versionMap
+directoryMacro
+isBaseSDK
+settingConditionValues
+toolchains
+maximumDeploymentTarget
+knownFrameworkNamesCache
+perVariantKnownFrameworkNamesCache
+name
+settings
+settingsTable
+archs
+defaultDeploymentTarget
+validDeploymentTargets
+minimumDeploymentTarget
+deploymentTargetRange
+llvmTargetTripleVendor
+llvmTargetTripleSys
+llvmTargetTripleEnvironment
+buildVersionPlatformID
+deprecated
+renamed
+type
+delegate
+sdksByCanonicalName
+sdksByAlias
+sdksByPath
+allKnownPublicFrameworkNamesCache
+allKnownInternalFrameworkNamesCache
+knownUnavailableFrameworksForSDKsCache
+knownFrameworksCache
+builtin
+overriding
+external
+RawValue
+missingPackageProduct
+missingTargetProductReference
+namedReferencesCannotBeResolved
+signature
+guid
+name
+path
+projects
+userNamespace
+projectsByGUID
+targetsByGUID
+projectsByTarget
+referencesByGUID
+projectsByName
+leftProjects
+rightProjects
+leftTargets
+rightTargets
+leftReferences
+rightReferences
+workspaceContext
+buildRequest
+allTargets
+targetDependencies
+_targetDependenciesByName
+immediateDependencies
+packageProductDependencies
+visitedDiscoveredTargets
+discoveredTargets
+linkageDependencyResolver
+immediateDependenciesByConfiguredTarget
+platform
+_environment
+error
+inputPath
+indexingPayload
+success
+failure
+identifier
+assignedTask
+used
+outputNode
+concreteNode
+nullifyIfProducedByAnotherTask
+descriptor
+actualTask
+noTask
+variant
+instrs
+accumulatedString
+listElementSeparators
+needsListElementSeparator
+hasHadAnyTextAppended
+literal
+instructions
+empty
+appendLiteral
+appendStringFormOnlyLiteral
+setNeedsListSeparator
+evalNamedMacro
+applyRetrievalOperator
+applyReplacementOperator
+beginSubresult
+mergeSubresult
+quote
+upper
+lower
+identifier
+rfc1034identifier
+c99extidentifier
+file
+base
+suffix
+standardizepath
+RawValue
+identifier
+tags
+path
+priority
+entries
+tagsToAssetPacks
+assetPacksToSubPaths
+resources
+assetPackBundleIdentifier
+isStreamable
+primaryContentHash
+uncompressedSize
+downloadPriority
+modtime
+toolSpec
+guid
+interpreterPath
+scriptSource
+inputFiles
+outputFiles
+dependencyInfo
+runOncePerArchitecture
+path
+additionalCompilerFlags
+conditions
+typeName
+isListType
+supportsValuesDefinitions
+name
+localizedName
+localizedDescription
+type
+macro
+appearsAfter
+defaultValue
+emptyValueDefn
+otherValueDefn
+condition
+architectures
+fileTypeIdentifiers
+flattenRecursiveSearchPathsInValue
+valueDefns
+environmentVariableNameOpt
+supportedVersionRangesOpt
+buildOptions
+deletedOptionNames
+flattenedBuildOptionsCache
+flattenedOrderedBuildOptionsCache
+commandLineTemplate
+additionalLinkerArgs
+args
+flag
+prefixFlag
+empty
+literal
+name
+_supernode
+subnodes
+subnodesLock
+pathNode
+exclusionPatterns
+requestCache
+path
+sourcePath
+excludedPatterns
+includedPatterns
+paths
+warnings
+request
+result
+stringValue
+guid
+buildableItemStorage
+fileReferenceGUID
+headerVisibility
+additionalArgs
+decompress
+migCodegenFiles
+intentsCodegenVisibility
+codeSignOnCopy
+removeHeadersOnCopy
+shouldLinkWeakly
+assetTags
+platformFilters
+reference
+targetProduct
+namedReference
+absolutePath
+fileType
+buildFile
+additionalArgs
+regionVariantName
+shouldUsePrefixHeader
+uniquingSuffix
+indexingInputReplacement
+identifier
+files
+assignedBuildRuleAction
+initWithPath:
+fileHandleForReadingAtPath:
+executablePath
+defaultManager
+fileExistsAtPath:
+processInfo
+activeProcessorCount
+initWithBool:
+stringEncodingForData:encodingOptions:convertedString:usedLossyConversion:
+stringFromDate:
+init
+setFormatOptions:
+maccatalyst
+uikitformac
+iosmac
+<absolute>
+<group>
+flex
+bison
+libtool
+-Xlinker
+-kext
+-nostdlib
+-lkmodc++
+-lkmod
+-lcc_kext
+-Xlinker
+-lc++
+-framework
+Foundation
+builtin-copy
+-exclude
+Headers
+-exclude
+PrivateHeaders
+-exclude
+Modules
+-exclude
+*.tbd
+$(inherited)
+$(inherited)
+macosx
+$(inherited)
+sourcecode.c.c
+sourcecode.asm
+$(inherited)
+$(inherited)
+$(inherited)
+$(inherited)
+sourcecode.c.h
+file.xib
+file.storyboard
+embedded
+embedded
+embedded
+embedded
+embedded
+iphoneos
+iphonesimulator
+iphoneos
+iphonesimulator
+iphoneos
+iphonesimulator
+iphoneos
+iphonesimulator
+appletvos
+appletvos
+appletvos
+watchos
+watchsimulator
+watchos
+watchsimulator
+watchos
+watchsimulator
+watchos
+watchsimulator
+watchos
+watchsimulator
+watchos
+watchsimulator
+CodeCoverage
+dylib
+-framework
+-weak_framework
+-lazy_framework
+-weak-l
+-reexport-l
+-lazy-l
+guid
+name
+path
+type
+platformFilters
+projects
+projectName
+targets
+groupTree
+sourceTree
+fileType
+children
+dependencies
+buildPhases
+buildRules
+isUnitTest
+isPackageTarget
+classPrefix
+toolPath
+arguments
+buildFiles
+emitEnvironment
+inputFilePaths
+name
+outputFilePaths
+shellPath
+scriptContents
+fileReference
+targetReference
+assetTags
+decompress
+migCodegenFiles
+codeSignOnCopy
+filePatterns
+scriptContents
+inputFilePaths
+outputFilePaths
+buildSettings
+Bool
+target type
+reference type
+source tree
+project
+target
+maccatalyst.
+-maccatalyst
+iosmac
+pattern.proxy
+workspace
+PBXHTMLFileType

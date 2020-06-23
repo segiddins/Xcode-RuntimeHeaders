@@ -1,0 +1,908 @@
+16XCBTaskExecution18TaskOutputDelegate_p
+16XCBTaskExecution10TaskActionC
+So20NSPropertyListFormatV
+So28_ConditionalAllocationBuffera
+$sSY
+7XCBCore20MacroEvaluationScopeC
+$s16XCBTaskExecution31CoreDataModelTaskActionDelegateP
+s11AnyIteratorVySSG
+7XCBCore14TaskIdentifierVXMT
+$s16XCBTaskExecution36BuildDescriptionConstructionDelegateP
+7XCBUtil10ByteStringV
+Say7XCBUtil4PathVG
+SDyS2SG
+Say7XCBCore27RecursiveSearchPathResolverC12CachedResultVG
+Say16XCBTaskExecution4TaskCG
+SDy7XCBCore14TaskIdentifierV16XCBTaskExecution0B0CG
+SDySS16XCBTaskExecution10TaskActionCmG
+7XCBUtil4PathVSg
+SDy7XCBCore16ConfiguredTargetCSiG
+SDySSSaySSGG
+Say7XCBUtil10DiagnosticVG
+SDy7XCBUtil3RefVy7XCBCore11PlannedTask_pG
+Shy7XCBUtil3RefVy7XCBCore11PlannedNode_pGG
+SDy7XCBUtil3RefVy7XCBCore11PlannedTask_pG
+SDySS7XCBUtil10ByteStringVG
+7XCBUtil17DiagnosticsEngineC
+SDy7XCBCore16ConfiguredTargetCSay7XCBUtil4PathVGG
+SDy7XCBCore16ConfiguredTargetCSSG
+SDy7XCBCore16ConfiguredTargetCAA8SettingsCG
+7XCBCore9WorkspaceC
+Say7XCBCore11PlannedNode_pG
+7XCBCore18PlannedVirtualNode_pSg
+Say7XCBCore18PlannedVirtualNode_pG
+SDy16XCBTaskExecution4TaskCSiG
+SDy7XCBCore15BuildParametersVSiG
+7XCBUtil32UniquingSerializationCoordinatorC
+7XCBCore16PlatformRegistryC
+Say7XCBCore15BuildParametersVG
+Say7XCBCore16ConfiguredTargetCG
+7XCBCore12SpecRegistryC
+7XCBUtil34UniquingDeserializationCoordinatorC
+7XCBCore11PlannedTask_pSg
+Say7XCBCore11PlannedTask_pG
+SDy7XCBUtil3RefVy7XCBCore11PlannedNode_pGSayAD0D4Task_pGG
+SDy7XCBUtil3RefVy7XCBCore11PlannedTask_pG16XCBTaskExecution23BuildDescriptionBuilderC8NodeListCG
+7XCBUtil16StringDiagnosticV
+7XCBCore22StringTargetDiagnosticV
+16XCBTaskExecution35BuildDescriptionSerializationFormatO
+SiSg
+s5Int32VSg
+16XCBTaskExecution27TaskActionMessageCollectionCSg
+7XCBUtil16PropertyListItemOSg
+SSIgo_
+s5Error_pSg
+s5Error_p
+7XCBUtil15SwiftABIVersionOSg
+ShySSG
+Say7XCBUtil4UUIDVG
+7XCBCore14ExecutableTask_p
+16XCBTaskExecution04TaskB8Delegate_p
+So17OS_dispatch_queueC
+SSSg
+Shy7XCBUtil4PathVG
+7XCBUtil10OrderedSetVyAA4PathVG
+7XCBUtil16PropertyListItemO
+7XCBCore19EntitlementsVariantO
+$ss12CaseIterableP
+7XCBCore19TaskTypeDescription_p
+7XCBCore19DependencyDataStyleOSg
+7XCBCore11TaskPayload_pSg
+7XCBCore16ConfiguredTargetCSg
+Say7XCBUtil10ByteStringVG
+7XCBUtil10ByteStringVSg
+7XCBCore19EnvironmentBindingsV
+16XCBTaskExecution10TaskActionCSg
+$s16XCBTaskExecution24TaskDeserializerDelegateP
+$s16XCBTaskExecution04TaskB8DelegateP
+$s16XCBTaskExecution18TaskOutputDelegateP
+$s16XCBTaskExecution25IntentsTaskActionDelegateP
+SS_SSt
+$s16XCBTaskExecution42EmbeddedBinaryValidationTaskActionDelegateP
+10Foundation12CharacterSetVz_Xx
+$s16XCBTaskExecution04TaskB14ClientDelegateP
+16XCBTaskExecution17TaskActionMessageO
+SaySSG
+19XCBTaskConstruction16BuildPlanRequestV
+7XCBCore16WorkspaceContextC
+7XCBCore12BuildRequestC
+7XCBCore15BuildParametersV
+7XCBUtil10OrderedSetVy7XCBCore16ConfiguredTargetCG
+7XCBCore16TargetBuildGraphV
+SaySSGz_Xx
+7XCBCore16ConfiguredTargetCACIeggg_
+Say7XCBCore7ProjectCG
+7XCBCore4CoreC
+7XCBUtil4PathV
+7XCBCore10SystemInfoV
+7XCBUtil7VersionV
+7XCBCore7ProjectC
+7XCBCore8SettingsC
+7XCBCore16ConfiguredTargetC
+7XCBCore6TargetC
+7XCBCore22ProvisioningTaskInputsV
+7XCBCore35InfoPlistProcessorTaskActionContextV
+So20NSPropertyListFormatVSg
+SS8UTF8ViewV
+10Foundation4DataV
+SpySo28_ConditionalAllocationBufferaGIgy_
+16XCBTaskExecution16BuildDescriptionC
+16XCBTaskExecution23BuildDescriptionManagerC
+7XCBUtil7FSProxy_p
+Si8inMemory_Si6onDiskt
+7XCBUtil10HeavyCacheCyAA10ByteStringV16XCBTaskExecution16BuildDescriptionCG
+19XCBTaskConstruction16BuildPlanRequestVSg
+SDy7XCBUtil4PathV7XCBCore07PlannedB4Node_pG
+16XCBTaskExecution36BuildDescriptionConstructionDelegate_p
+19XCBTaskConstruction26TaskPlanningClientDelegate_p
+16XCBTaskExecution23BuildDescriptionManagerC21OnDiskCacheIndexErrorO
+OS_dispatch_queue
+XCBTaskExecution.BuildDescriptionManager.descriptionCreationQueue
+XCBTaskExecution.BuildDescriptionManager.onDiskCacheAccessQueue
+YAML
+JSON
+none
+binary
+com.apple.testmanagerd
+com.apple.coresymbolicationd
+_TtC16XCBTaskExecution18FileCopyTaskAction
+coredatamodel-codegenerator
+deployment-target
+XCBTaskExecution.CoreDataModelCodegenTaskAction
+init()
+_TtC16XCBTaskExecution30CoreDataModelCodegenTaskAction
+input
+scope
+register-execution-policy-exception
+Execution policy exception registration failed and was skipped: 
+Execution policy exception registration was skipped because the DisableExecutionPolicyExceptionRegistration feature flag is set
+_TtC16XCBTaskExecution42RegisterExecutionPolicyExceptionTaskAction
+invalid number of arguments
+<<missing program name>>
+swift-header-tool
+__ARM64_ARCH_8_32__
+Unsupported Swift architectures: 
+_TtC16XCBTaskExecution25SwiftHeaderToolTaskAction
+builtin-swiftHeaderTool
+ [[-arch <arch> <input-file>] ...] -o <output-file>
+Unrecognized argument: 
+Failed to parse arguments: 
+ requires an argument
+Failed to parse arguments: expected a single 
+validate-product
+Failed to read Info.plist of app 
+: Contents of file are not a dictionary
+XCBTaskExecution.ValidateProductTaskAction
+_TtC16XCBTaskExecution25ValidateProductTaskAction
+LSApplicationCategoryType
+No App Category is set for target '
+'. Set a category by using the General tab for your target, or by adding an appropriate LSApplicationCategory value to your Info.plist.
+DTPlatformVersion
+UIRequiresFullScreen
+UISupportedInterfaceOrientations~ipad
+UISupportedInterfaceOrientations
+UIInterfaceOrientationPortrait
+UIInterfaceOrientationPortraitUpsideDown
+UIInterfaceOrientationLandscapeLeft
+UIInterfaceOrientationLandscapeRight
+All interface orientations must be supported unless the app requires full screen.
+UILaunchStoryboardName~ipad
+UILaunchStoryboardName
+UILaunchStoryboards~ipad
+UILaunchStoryboards
+UIDefaultLaunchStoryboard
+A launch storyboard or xib must be provided unless the app requires full screen.
+UILaunchStoryboardDefinitions
+UILaunchStoryboardFile
+UILaunchStoryboardIdentifier
+unknown application extension '.
+: expected '.app' or '.ipa'
+no application path specified
+-no-validate-extension
+multiple application paths specified
+unrecognized option: 
+ <application-path>
+/Library/Caches/com.apple.xbs/Sources/XCBuild/XCBuild-15509/XCBTaskExecution/BuildDescription.swift
+delegate must be a BuildDescriptionSerializerDelegate
+delegate must be a BuildDescriptionDeserializerDelegate
+ in BuildDescription is out of range (
+Invalid TaskAction code: 
+_TtC16XCBTaskExecution16BuildDescription
+signature
+invalidationPaths
+copiedPathMap
+invalidationSignature
+recursiveSearchPathResults
+tasks
+commandMap
+enableStaleFileRemoval
+taskActionMap
+moduleSessionFilePath
+targetTaskCounts
+targetDependencies
+diagnostics
+uncachedDiagnostics
+_TtC16XCBTaskExecution23BuildDescriptionBuilder
+path
+bypassActualTasks
+taskAdditionalInputs
+mutatedNodes
+mutatingTasks
+targetDefinitions
+toolDefinitions
+nodeDefinitions
+commandDefinitions
+allInputs
+allOutputs
+diagnosticsEngine
+outputPathsPerTarget
+rootPathsPerTarget
+defaultConfigurationNamePerTarget
+settingsPerTarget
+workspace
+_TtCC16XCBTaskExecution23BuildDescriptionBuilder8NodeList
+nodes
+_TtCC16XCBTaskExecution23BuildDescriptionBuilder16MutatingTaskInfo
+triggerNode
+commandDependencies
+_TtC16XCBTaskExecution34BuildDescriptionSerializerDelegate
+taskIndexes
+currentBuildParametersIndex
+buildParametersIndexes
+currentConfiguredTargetIndex
+configuredTargetIndexes
+uniquingCoordinator
+_TtC16XCBTaskExecution36BuildDescriptionDeserializerDelegate
+platformRegistry
+buildParameters
+configuredTargets
+specRegistry
+_TtCZFC16XCBTaskExecution16BuildDescription9constructFzT9workspaceC7XCBCore9Workspace5tasksGSaPS1_11PlannedTask__4pathV7XCBUtil4Path9signatureVS4_10ByteString12buildCommandOS1_12BuildCommand11diagnosticsGSaVS4_10Diagnostic_12indexingInfoGSaT9forTargetGSqCS1_16ConfiguredTarget_4pathS5_12indexingInfoPS1_22SourceFileIndexingInfo___2fsPS4_7FSProxy_17bypassActualTasksSb21moduleSessionFilePathGSqS5__17invalidationPathsGSaS5__26recursiveSearchPathResultsGSaVCS1_27RecursiveSearchPathResolver12CachedResult_13copiedPathMapGVs10DictionarySSSS_18rootPathsPerTargetGS14_S9_GSaS5___33defaultConfigurationNamePerTargetGS14_S9_SS_17settingsPerTargetGS14_S9_CS1_8Settings_8delegatePS_36BuildDescriptionConstructionDelegate_18targetDependenciesGS14_SSGSaSS___GSqS0__L_15MutableNodeInfo
+creator
+Constructing build graph
+Computing build graph information
+CreateBuildDirectory
+Writing build description
+unknown concrete task type
+missing creator for mutated node: ('
+unexpected mutating task ('
+') with no relation to prior mutator ('
+Multiple commands produce '
+unable to force ordering of task (no outputs): 
+Constructing build graph: 
+unexpected task with no outputs: '
+duplicate output file '
+') with mutable output but no other virtual output node
+is-command-timestamp
+working-directory
+can-safely-interrupt
+always-out-of-date
+allow-missing-inputs
+unable to create build description: 
+unable to write manifest to '
+-stale-file-removal
+stale-file-removal
+key value 
+content-exclusion-patterns
+unable to write file '
+unable to set permissions on file '
+XCBTaskExecution.AuxiliaryFileTaskAction
+_TtC16XCBTaskExecution23AuxiliaryFileTaskAction
+output
+contents
+permissions
+process-product-provisioning-profile
+unable to read input file '
+unable to create 
+ property list data: 
+could not write profile file: 
+_TtC16XCBTaskExecution43ProcessProductProvisioningProfileTaskAction
+unable to read input file as a property list: 
+input file is not a dictionary
+no input file specified
+missing required option: -o
+multiple input paths specified
+unrecognized argument: 
+missing argument for option: 
+failed to parse option: 
+ [-format <name>] <input-file> -o <output-path>
+  --format {none|binary|xml}
+      The output format of the entitlements.
+      Specify the output path to which to write the entitlements.
+unifdef failed: 
+_TtC16XCBTaskExecution17UnifdefTaskAction
+generate-version-plist
+No parsing result present
+No version plist data present
+No version plist output path present
+unable to convert property list to output format, unknown error
+unable to convert property list to output format, error: 
+unable to write property list to output file `
+_TtC16XCBTaskExecution30GenerateVersionPlistTaskAction
+configParsingResult
+configParsingMessages
+propertyList
+no XBS project specified
+-canonicalSourceVersion
+no XBS base project specified
+no build version specified
+no bundle version specified
+no canonical source version specified
+no Info.plist path specified
+no output path specified
+Unable to read Info.plist contents
+Unable to read convert Info.plist data into a PropertyList
+The Info.plist doesn't have a dictionary root item
+CFBundleShortVersionString
+The Info.plist doesn't contain a value for CFBundleShortVersionString
+unable to convert version dictionary to property list
+missing argument for 
+multiple output files specified
+multiple canonical source versions specified
+multiple Info.plist paths specified
+multiple bundle versions specified
+multiple build numbers specified
+multiple XBS base projects specified
+multiple XBS projects specified
+ (use 'xml' or 'binary')
+unrecognized argument to 
+' (use 'xml' or 'binary')
+LaunchServices registration failed and was skipped: 
+_TtC16XCBTaskExecution23LSRegisterURLTaskAction
+embed-swift-stdlib
+_TtC16XCBTaskExecution26EmbedSwiftStdLibTaskAction
+swift-stdlib-tool
+/usr/bin/codesign
+XCBTaskExecution.EmbedSwiftStdLibTaskAction.signingCoordinationQueue
+Requested Swift ABI version based on scanned binaries: 
+v8@?0
+ is up to date at 
+Failed with exit code 
+Destination UUIDs 
+Expected a single Swift ABI version in 
+: Failed to parse executable: 
+Code signature of 
+ is unchanged; keeping original
+Failed to remove: '
+Probing signature of 
+ for Swift ABI version 
+Found library with mismatched Swift ABI version: 
+Exiting early, found no Swift version in executables.
+The following binaries use incompatible versions of Swift:
+XCBTaskExecution.EmbedSwiftStdLibTaskAction.emitOutputQueue
+LD_WARN_ON_SWIFT_ABI_VERSION_MISMATCHES
+at least one of --source-libraries and --platform must be set
+usr/lib/swift-5.0/
+Passed --strip-bitcode without --strip-bitcode-tool.
+--scan-executable
+--source-libraries
+--unsigned-destination
+--strip-bitcode-tool
+--resource-library
+--resource-destination
+--emit-dependency-info
+--filter-for-swift-os
+builtin-swiftStdLibTool
+Failed to scan executable: 
+Ignoring --toolchain paths because --source-libraries was set.
+Ignoring --strip-bitcode because --sign was not passed
+libXCTestBundleInject.dylib
+libXCTestSwiftSupport.dylib
+ because it is part of an XCTest bundle
+ because it is an XCTest support library
+ because it is a Swift standard library copied by this tool
+ because it is not a Swift executable file
+ because is not a Swift executable file
+Effective srcDirs:
+process-product-entitlements
+could not write entitlements file: 
+Entitlements file "
+" was modified during the build, which is not supported. You can disable this error by setting 'CODE_SIGN_ALLOW_ENTITLEMENTS_MODIFICATION' to 'YES', however this may cause the built product's code signature or provisioning profile to contain incorrect entitlements.
+" was modified during the build. Using user-modified entitlements:
+Original entitlements:
+XCBTaskExecution.ProcessProductEntitlementsTaskAction
+_TtC16XCBTaskExecution36ProcessProductEntitlementsTaskAction
+entitlements
+entitlementsVariant
+destinationPlatformName
+entitlementsFilePath
+entitlementsModificationTimestamp
+Unable to apply test host sandboxing entitlements due to unexpected input data
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.Internal.sdk/usr/lib/swift/Swift.swiftmodule/x86_64.swiftinterface
+Duplicate values for key: '
+com.apple.security.temporary-exception.mach-lookup.global-name
+com.apple.security.temporary-exception.files.absolute-path.read-only
+missing required option: -entitlements
+ -entitlements [-format <name>] <input-file> -o <output-path>
+  -entitlements
+      Handle entitlements in the input file.  This option is required.
+/Library/Caches/com.apple.xbs/Sources/XCBuild/XCBuild-15509/XCBTaskExecution/TaskActions/ProcessProductEntitlementsTaskAction.swift
+entitlements must be a PropertyListItem.plDict
+entitlementsFilePath, if set, must be an absolute path
+destinationPlatformName must be non-empty
+/Library/Caches/com.apple.xbs/Sources/XCBuild/XCBuild-15509/XCBTaskExecution/Task.swift
+Fatal error
+delegate must be a ConfiguredTargetSerializerDelegate
+delegate must be a TaskDeserializerDelegate
+Could not find CommandLineToolSpec with identifier '
+' to use as task type
+Expected a `payloadType` from 
+delegate must be a ConfiguredTargetDeserializerDelegate
+BuildParameters placeholder was unexpected value '
+ConfiguredTarget index 
+ is out of range (
+ configured targets)
+_TtC16XCBTaskExecution4Task
+type
+dependencyData
+payload
+forTarget
+additionalSignatureData
+ruleInfo
+commandLine
+additionalOutput
+environment
+workingDirectory
+showEnvironment
+execDescription
+action
+preparesForIndexing
+llbuildControlDisabled
+isGate
+PhaseScriptExecution
+ExternalBuildToolExecution
+/Library/Caches/com.apple.xbs/Sources/XCBuild/XCBuild-15509/XCBTaskExecution/TaskActions/TaskAction.swift
+This method is a subclass responsibility
+intentdefinition-codegenerator
+XCBTaskExecution.IntentsCodegenTaskAction
+_TtC16XCBTaskExecution24IntentsCodegenTaskAction
+outputDir
+validate-embedded-binary
+_TtC16XCBTaskExecution32ValidateEmbeddedBinaryTaskAction
+no input files specified: must provide a path to an embedded binary
+-info-plist-path
+multiple input files specified
+ [-signing-cert <sha1>] [-info-plist-path <path>] <input-file>
+  -signing-cert {sha1}
+      The SHA-1 hash of the signing certificate to match.
+  -info-plist-path {path}
+      The path of the parent app's proceessed Info.plist.
+_TtC16XCBTaskExecution19CopyPlistTaskAction
+missing required '--outdir' argument
+no input files specified
+unrecognized argument: '
+missing argument for option: '
+unrecognized argument to '
+ [--validate] [--convert <name>] --outdir <path> -- {input-file}*
+      Validate the property list contents when copied.
+  --convert {same-as-input|binary|xml1}
+      Convert the property list to the named format when copied.
+  --outdir <path>
+      Specify the output directory to copy to.
+create-asset-pack-manifest
++,-./0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ_abcdefghijklmnopqrstuvwxyz~
+_TtC16XCBTaskExecution30ODRAssetPackManifestTaskAction
+expected dictionary in 
+CFBundleIdentifier
+expected string in 
+ : CFBundleIdentifier
+expected number in 
+could not percent-encode 
+http://127.0.0.1
+ to be a subpath of 
+_TtC16XCBTaskExecution10TaskAction
+_TtC16XCBTaskExecution27TaskActionMessageCollection
+messages
+copy-strings-file
+unable to read input file: 
+no --inputencoding specified and could not detect encoding from input file
+could not decode input file using specified encoding: 
+, and the file contents appear to be encoded in 
+detected encoding of input file as 
+failed to encode .strings file as 
+creating binary plist data failed: 
+validation failed: 
+ignoring byte-order mark in input file
+_TtC16XCBTaskExecution25CopyStringsFileTaskAction
+missing required option: --outdir
+--outputencoding
+  --inputencoding {encoding}
+      The input file is in the given encoding
+  --outputencoding {binary|{encoding}}
+      The output file should be written as either a binary property list, or in the given encoding
+buildRequestParameters
+useParallelTargets
+useImplicitDependencies
+numberOfProjects
+xcodeVersionString
+xcodeProductBuildVersionString
+operatingSystemVersion
+productBuildVersion
+ macroConfigSignature
+ provisioningInputs
+label value 
+enableStaleFileRemoval=
+/usr/bin/tiffutil
+tiffutil failed: 
+_TtC16XCBTaskExecution18CopyTiffTaskAction
+ [--compression none|<method>] --outdir <path> {input-file}*
+  --compression {none|<tiffutil method>
+      The name of a compression method for use with tiffutil(1).
+info-plist-processor
+task working directory 
+ is not an absolute path
+no output file specified
+unable to read property list from file: 
+contents of file is not a dictionary: 
+CFBundleDevelopmentRegion
+CFBundleExecutable
+CFBundleGetInfoString
+CFBundleIconFile
+CFBundlePackageType
+CFBundleResourceSpecification
+CFBundleSignature
+CFBundleTypeIconFile
+CFBundleTypeRole
+NSPrincipalClass
+Content of file '
+' is not a dictionary
+CFBundleDocumentTypes
+LSSupportsOpeningDocumentsInPlace
+'LSSupportsOpeningDocumentsInPlace = NO' is not supported on macOS. Either remove the entry or set it to YES, and also ensure that the application does open documents in place on macOS.
+UISupportsDocumentBrowser
+The application supports opening files, but doesn't declare whether it supports opening them in place. You can add an LSSupportsOpeningDocumentsInPlace entry or an UISupportsDocumentBrowser entry to your Info.plist to declare support.
+LSMinimumSystemVersion
+NSBuiltWithThreadSanitizer
+$(DEVELOPMENT_LANGUAGE)
+$(EXECUTABLE_NAME)
+$(PRODUCT_BUNDLE_IDENTIFIER)
+CFBundleInfoDictionaryVersion
+$(PRODUCT_BUNDLE_PACKAGE_TYPE)
+$(MARKETING_VERSION)
+$(CURRENT_PROJECT_VERSION)
+LSRequiresIPhoneOS
+Platform lookup failed for identifier: 
+XCBTaskExecution.InfoPlistProcessorTaskAction
+_TtC16XCBTaskExecution28InfoPlistProcessorTaskAction
+context
+productTypeIdentifier
+inputPath
+outputPath
+pkgInfoPath
+platformName
+enforceMinimumOS
+expandBuildSettings
+resourceRulesFileName
+additionalContentFilePaths
+requiredArchitectures
+outputFormat
+Product type lookup failed for identifier: 
+com.apple.product-type.application.watchapp2
+' in 'Info.plist' is not a valid string value
+' in 'Info.plist' must be a four character string
+v16@?0^{?=^vQB}8
+'UILaunchImages' has been deprecated starting in tvOS 13.0, use launch storyboards instead.
+'UILaunchImages' has been deprecated, use launch storyboards instead.
+the value for Bundle Identifier must be of type string, but is 
+invalid character in Bundle Identifier. This string must be a uniform type identifier (UTI) that contains only alphanumeric (A-Z,a-z,0-9), hyphen (-), and period (.) characters.
+User-supplied CFBundleIdentifier value '
+' in the Info.plist must be the same as the PRODUCT_BUNDLE_IDENTIFIER build setting value '
+NSSupportsAutomaticTermination
+NSSupportsSuddenTermination
+not supported on 
+removing entry for "
+only supported on 
+adding entry for "
+unexpected TARGETED_DEVICE_FAMILY item: `
+User supplied UIDeviceFamily key in the Info.plist will be overwritten. Please use the build setting TARGETED_DEVICE_FAMILY and remove UIDeviceFamily from your Info.plist.
+TARGETED_DEVICE_FAMILY value
+ does not contain any device family values compatible with the 
+. Please add one or more of the following values to the TARGETED_DEVICE_FAMILY build setting to indicate the device families supported by this target: 
+ to indicate that this target supports the '
+. Please add the value '
+' to the TARGETED_DEVICE_FAMILY build setting
+Info.plist contents are not a dictionary prior to adding additional entries from platform
+' in 'AdditionalInfo' dictionary for platform 
+ uses unsupported bracket evaluation convention for its value '
+Info.plist contents are not a dictionary prior to setting required device capabilities
+UIRequiredDeviceCapabilities
+'UIRequiredDeviceCapabilities' must be an array or dictionary but it is 
+unable to read additional content file '
+unable to read property list from additional content file: 
+additional content file is not a dictionary: 
+Info.plist contents are not a dictionary prior to adding entries from additional content files
+ value for key '
+all values in 'UIRequiredDeviceCapabilities' must be strings (file 
+-enforceminimumos
+-expandbuildsettings
+-resourcerulesfile
+-additionalcontentfile
+-requiredArchitecture
+multiple resource rules files specified
+argument to -platform '
+' differs from platform being targeted '
+multiple platform names specified
+' differs from product type being built '
+multiple product types specified
+multiple pkginfo paths specified
+ (use 'openstep', 'xml', or 'binary')
+' (use 'openstep', 'xml', or 'binary')
+Loading build description from disk
+Constructing build description
+Using build description '
+Build description constructed in 
+Using build description from disk
+Build description loaded in 
+Using build description from memory
+_TtC16XCBTaskExecution23BuildDescriptionManager
+descriptionCreationQueue
+onDiskCacheAccessQueue
+maxCacheSize
+inMemoryCachedBuildDescriptions
+lastBuildPlanRequest
+_TtCC16XCBTaskExecution23BuildDescriptionManager16OnDiskCacheIndex
+timestamp
+signatures
+_TtC16XCBTaskExecutionP33_4A3EC2AB51D5BBD7665F08D8C149E74531BuildSystemTaskPlanningDelegate
+allPlannedBuildDirectoryNodes
+queue
+constructionDelegate
+clientDelegate
+New build description signature because of:
+BuildDescriptionManager.descriptionRequests
+The number of build descriptions which were requested.
+BuildDescriptionCacheIndex-
+Failed to remove: 
+Could not read file at path: 
+BuildDescriptionManager.descriptionsLoaded
+The number of build descriptions which were loaded from disk.
+BuildDescriptionManager.descriptionsComputed
+The number of build descriptions which were computed.
+XCBTaskExecution.BuildSystemTaskPlanningDelegate.queue
+create-build-directory
+wrong number of arguments
+_TtC16XCBTaskExecution30CreateBuildDirectoryTaskAction
+_TtCs12_SwiftObject
+__TEXT
+XCBTaskExecution
+FileCopyTaskAction
+PropertyListFormat
+NNSPropertyListFormat
+Foundation
+XCBTaskExecution
+CoreDataModelCodegenTaskAction
+CoreDataGenerateFilesError
+CoreDataModelTaskActionDelegate
+XCBTaskExecution
+RegisterExecutionPolicyExceptionTaskAction
+XCBTaskExecution
+SwiftHeaderToolTaskAction
+XCBTaskExecution
+ValidateProductTaskAction
+XCBTaskExecution
+BuildDescriptionConstructionDelegate
+BuildDescription
+BuildDescriptionBuilder
+NodeList
+MutatingTaskInfo
+BuildDescriptionSerializerDelegate
+BuildDescriptionDeserializerDelegate
+BuildDescriptionSerializationFormat
+MutableNodeInfo
+XCBTaskExecution
+AuxiliaryFileTaskAction
+XCBTaskExecution
+ProcessProductProvisioningProfileTaskAction
+XCBTaskExecution
+UnifdefTaskAction
+XCBTaskExecution
+GenerateVersionPlistTaskAction
+XCBTaskExecution
+LSRegisterURLTaskAction
+XCBTaskExecution
+EmbedSwiftStdLibTaskAction
+Executable
+RunningTask
+XCBTaskExecution
+ProcessProductEntitlementsTaskAction
+TestingEntitlement
+XCBTaskExecution
+Task
+TaskDeserializerDelegate
+TaskExecutionDelegate
+TaskOutputDelegate
+XCBTaskExecution
+IntentsCodegenTaskAction
+IntentsGenerateFilesError
+IntentsTaskActionDelegate
+XCBTaskExecution
+ValidateEmbeddedBinaryTaskAction
+EmbeddedBinaryValidationError
+EmbeddedBinaryValidationTaskActionDelegate
+XCBTaskExecution
+CopyPlistTaskAction
+XCBTaskExecution
+ODRAssetPackManifestTaskAction
+XCBTaskExecution
+TaskAction
+TaskExecutionClientDelegate
+TaskActionMessageCollection
+TaskActionMessage
+XCBTaskExecution
+CopyStringsFileTaskAction
+XCBTaskExecution
+CopyTiffTaskAction
+XCBTaskExecution
+InfoPlistProcessorTaskAction
+PlatformFamilySupportInfo
+XCBTaskExecution
+BuildDescriptionRetrievalSource
+BuildDescriptionRetrievalInfo
+BuildDescriptionManager
+OnDiskCacheIndex
+BuildSystemTaskPlanningDelegate
+OnDiskCacheIndexError
+XCBTaskExecution
+CreateBuildDirectoryTaskAction
+@(#)PROGRAM:XCBTaskExecution  PROJECT:xcbuild-15509
+@__swift5_proto
+memory
+capacity
+onStack
+RawValue
+input
+outputDir
+scope
+error
+scope
+signature
+invalidationPaths
+copiedPathMap
+invalidationSignature
+recursiveSearchPathResults
+tasks
+commandMap
+enableStaleFileRemoval
+taskActionMap
+moduleSessionFilePath
+targetTaskCounts
+targetDependencies
+diagnostics
+uncachedDiagnostics
+path
+bypassActualTasks
+taskAdditionalInputs
+mutatedNodes
+mutatingTasks
+targetDefinitions
+toolDefinitions
+nodeDefinitions
+commandDefinitions
+allInputs
+allOutputs
+diagnosticsEngine
+outputPathsPerTarget
+rootPathsPerTarget
+defaultConfigurationNamePerTarget
+settingsPerTarget
+workspace
+nodes
+triggerNode
+commandDependencies
+taskIndexes
+currentBuildParametersIndex
+buildParametersIndexes
+currentConfiguredTargetIndex
+configuredTargetIndexes
+uniquingCoordinator
+platformRegistry
+buildParameters
+configuredTargets
+specRegistry
+YAML
+JSON
+creator
+RawValue
+output
+contents
+permissions
+configParsingResult
+configParsingMessages
+outputPath
+outputFormat
+propertyList
+path
+swiftABIVersion
+linkedSwiftLibNames
+uuids
+task
+executionDelegate
+outputDelegate
+effectiveEnvironment
+verbose
+emitOutputQueue
+codeSignIdentity
+keychain
+otherCodeSignFlags
+scanExecutables
+scanDirs
+platform
+toolchainsDirs
+srcDir
+dstDir
+unsignedDstDir
+resourceDstDir
+resourceLibraries
+shouldPrint
+shouldCopy
+shouldStripBitcode
+bitcodeStripPath
+srcDirs
+discoveredDepsOutputFile
+ignoreABIVersion
+filterForSwiftOS
+allowedLibsForSwiftOS
+scope
+entitlements
+entitlementsVariant
+destinationPlatformName
+entitlementsFilePath
+entitlementsModificationTimestamp
+fileSystem
+machLookup
+AllCases
+type
+dependencyData
+payload
+forTarget
+additionalSignatureData
+ruleInfo
+commandLine
+additionalOutput
+environment
+workingDirectory
+showEnvironment
+execDescription
+action
+preparesForIndexing
+llbuildControlDisabled
+targetDependencies
+isGate
+input
+outputDir
+scope
+error
+error
+errorAndWarning
+signature
+messages
+error
+warning
+note
+context
+configParsingResult
+configParsingMessages
+productTypeIdentifier
+inputPath
+outputPath
+pkgInfoPath
+platformName
+enforceMinimumOS
+expandBuildSettings
+resourceRulesFileName
+additionalContentFilePaths
+requiredArchitectures
+outputFormat
+supportedOnlyOn
+notSupportedOn
+inMemoryCache
+onDiskCache
+buildDescription
+source
+inMemoryCacheSize
+onDiskCacheSize
+onDiskCachePath
+descriptionCreationQueue
+onDiskCacheAccessQueue
+maxCacheSize
+inMemoryCachedBuildDescriptions
+lastBuildPlanRequest
+timestamp
+signatures
+diagnosticsEngine
+allPlannedBuildDirectoryNodes
+queue
+constructionDelegate
+clientDelegate
+readError
+writeError
+init
+addPolicyExceptionForURL:error:
+localizedDescription
+isEqual:
+<all>
+<all>
+<all>
+libswiftXCTest
+signature
+xcbuild

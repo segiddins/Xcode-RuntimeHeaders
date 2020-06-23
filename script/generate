@@ -19,6 +19,8 @@ folders = [
   xcode_folder(xcode, 'SharedFrameworks'),
   xcode_folder(xcode, 'PlugIns'),
   xcode_folder(xcode, 'PlugIns/Xcode3Core.ideplugin/Contents/Frameworks'),
+  xcode_folder(xcode, 'SharedFrameworks/SourceKit.framework/XPCServices/com.apple.dt.SKAgent.xpc/Contents/Frameworks'),
+  xcode_folder(xcode, 'SharedFrameworks/XCBuild.framework/PlugIns/XCBBuildService.bundle/Contents/Frameworks'),
 ]
 
 def system(*args)
