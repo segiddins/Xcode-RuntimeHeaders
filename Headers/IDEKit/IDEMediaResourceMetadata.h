@@ -8,7 +8,7 @@
 
 #import <IDEKit/NSCopying-Protocol.h>
 
-@class NSArray, NSString;
+@class NSArray, NSNumber, NSString;
 
 @interface IDEMediaResourceMetadata : NSObject <NSCopying>
 {
@@ -18,12 +18,14 @@
     NSString *_usageInformation;
     NSArray *_keywords;
     NSString *_nameForNonDeprecatedSymbol;
+    NSNumber *_osVersionAvailability;
 }
 
 + (id)metadataForSystemResource;
-+ (id)metadataForSystemResourceWithKeywords:(id)arg1 usageInformation:(id)arg2 preferredOrder:(long long)arg3 nameForNonDeprecatedSymbol:(id)arg4 isPrivate:(BOOL)arg5;
-+ (id)metadataForResourceWithKeywords:(id)arg1 usageInformation:(id)arg2 preferredOrder:(long long)arg3 nameForNonDeprecatedSymbol:(id)arg4 isPrivate:(BOOL)arg5;
++ (id)metadataForSystemResourceWithKeywords:(id)arg1 usageInformation:(id)arg2 preferredOrder:(long long)arg3 nameForNonDeprecatedSymbol:(id)arg4 osVersionAvailability:(id)arg5 isPrivate:(BOOL)arg6;
++ (id)metadataForResourceWithKeywords:(id)arg1 usageInformation:(id)arg2 preferredOrder:(long long)arg3 nameForNonDeprecatedSymbol:(id)arg4 osVersionAvailability:(id)arg5 isPrivate:(BOOL)arg6;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSNumber *osVersionAvailability; // @synthesize osVersionAvailability=_osVersionAvailability;
 @property(readonly, nonatomic) NSString *nameForNonDeprecatedSymbol; // @synthesize nameForNonDeprecatedSymbol=_nameForNonDeprecatedSymbol;
 @property(readonly, nonatomic) NSArray *keywords; // @synthesize keywords=_keywords;
 @property(readonly, nonatomic) NSString *usageInformation; // @synthesize usageInformation=_usageInformation;
@@ -36,7 +38,7 @@
 - (BOOL)isEqualToMediaResourceMetadata:(id)arg1;
 @property(readonly, nonatomic) BOOL isDeprecated;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)initWithKeywords:(id)arg1 isSystemResource:(BOOL)arg2 usageInformation:(id)arg3 preferredOrder:(long long)arg4 nameForNonDeprecatedSymbol:(id)arg5 isPrivate:(BOOL)arg6;
+- (id)initWithKeywords:(id)arg1 isSystemResource:(BOOL)arg2 usageInformation:(id)arg3 preferredOrder:(long long)arg4 nameForNonDeprecatedSymbol:(id)arg5 osVersionAvailability:(id)arg6 isPrivate:(BOOL)arg7;
 
 @end
 

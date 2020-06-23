@@ -9,7 +9,7 @@
 #import <UVKit/NSObject-Protocol.h>
 
 @class DVTFilePath, DVTSDK, DVTSourceCodeLanguage, DVTToolsVersion, IDEBuildParameters, IDEContainer, IDEFileReference, IDEGroup, IDEPIFGUID, IDESourceFileBuildInfo, IDETestBlueprintHostSettings, IDETypeIdentifier, IDEWorkspace, IDEWorkspaceArenaSnapshot, NSArray, NSDictionary, NSSet, NSString;
-@protocol IDEBlueprintProvider, IDEBuildable, IDECustomDataStoring, IDEProvisionable;
+@protocol DVTMacroExpansion, IDEBlueprintProvider, IDEBuildable, IDECustomDataStoring, IDEProvisionable;
 
 @protocol IDEBlueprint <NSObject, IDEIssueLogDataSource, IDESigningEditorConfigurationManagerProviderProtocol>
 - (DVTFilePath *)entitlementsFilePathForBuildConfiguration:(NSString *)arg1;
@@ -28,6 +28,8 @@
 - (IDEContainer<IDEBlueprintProvider> *)blueprintProvider;
 
 @optional
+@property(nonatomic, readonly) BOOL alwaysDisplayIssuesIndependentOfActiveSchemeFilter;
+@property(nonatomic, readonly) NSString *dynamicVariantBlueprintIdentifier;
 @property(nonatomic, readonly) BOOL isTransparentForRunDestinations;
 - (BOOL)setEnabledForMacCatalyst:(BOOL)arg1 error:(id *)arg2;
 - (void)removeFileReferenceFromBuildables:(IDEFileReference *)arg1;
@@ -49,10 +51,10 @@
 - (BOOL)isUnitTest;
 @property(nonatomic, retain) IDETestBlueprintHostSettings *testBlueprintUITestingTargetAppSettings;
 @property(nonatomic, retain) IDETestBlueprintHostSettings *testBlueprintHostSettings;
-- (NSArray *)additionalOverridingCompilerArgumentsForSourceCodeBuildFileReference:(IDEFileReference *)arg1;
-- (void)setOverridingAdditionalCompilerArguments:(NSArray *)arg1 forSourceCodeBuildFileReference:(IDEFileReference *)arg2;
-- (NSArray *)additionalCompilerArgumentsForSourceCodeBuildFileReference:(IDEFileReference *)arg1;
-- (void)setAdditionalCompilerArguments:(NSArray *)arg1 forSourceCodeBuildFileReference:(IDEFileReference *)arg2;
+- (NSArray<DVTMacroExpansion> *)additionalOverridingCompilerArgumentsForSourceCodeBuildFileReference:(IDEFileReference *)arg1;
+- (void)setOverridingAdditionalCompilerArguments:(NSArray<DVTMacroExpansion> *)arg1 forSourceCodeBuildFileReference:(IDEFileReference *)arg2;
+- (NSArray<DVTMacroExpansion> *)additionalCompilerArgumentsForSourceCodeBuildFileReference:(IDEFileReference *)arg1;
+- (void)setAdditionalCompilerArguments:(NSArray<DVTMacroExpansion> *)arg1 forSourceCodeBuildFileReference:(IDEFileReference *)arg2;
 - (NSSet *)linkedBinaries;
 - (NSSet *)allProjectHeaderFiles;
 - (NSSet *)allPrivateHeaderFiles;
@@ -92,6 +94,7 @@
 - (NSSet *)supportedPlatformsForConfiguration:(NSString *)arg1 workspaceArenaSnapshot:(IDEWorkspaceArenaSnapshot *)arg2;
 - (NSSet *)supportedPlatformsForBuildParameters:(IDEBuildParameters *)arg1;
 @property(nonatomic, readonly) NSString *compilerSpecificationIdentifier;
+- (NSArray *)architecturesForBuildParameters:(IDEBuildParameters *)arg1;
 - (NSArray *)availableArchitecturesForConfiguration:(NSString *)arg1 workspaceArenaSnapshot:(IDEWorkspaceArenaSnapshot *)arg2;
 - (NSArray *)availableArchitecturesForBuildParameters:(IDEBuildParameters *)arg1;
 @property(nonatomic, readonly) NSString *defaultConfigurationName;

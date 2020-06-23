@@ -12,9 +12,11 @@
 {
     NSAttributedString *_string;
     NSImage *_image;
+    unsigned long long _arrowDirection;
 }
 
 - (void).cxx_destruct;
+@property(nonatomic) unsigned long long arrowDirection; // @synthesize arrowDirection=_arrowDirection;
 @property(retain, nonatomic) NSImage *image; // @synthesize image=_image;
 @property(copy, nonatomic) NSAttributedString *string; // @synthesize string=_string;
 - (void)setContentsScale:(double)arg1;

@@ -31,6 +31,7 @@
 @property(retain) DBGLLDBSession *debugSession; // @synthesize debugSession=_debugSession;
 @property(readonly) int lldbRPCServerPID; // @synthesize lldbRPCServerPID=_lldbRPCServerPID;
 @property(readonly) BOOL terminateCalled; // @synthesize terminateCalled=_terminateCalled;
+- (id)_storeKitConfigurationFileSync;
 - (void)primitiveInvalidate;
 - (void)terminate;
 - (void)start;
@@ -48,6 +49,7 @@
 - (void)_createTargetConsoleAdaptorForPTY:(id)arg1;
 - (void)_reportTarget:(id)arg1 failedToLaunchError:(id)arg2;
 - (id)_doAttachWithTarget:(id)arg1 childPID:(unsigned long long *)arg2;
+- (void)_logSetUID:(unsigned int)arg1;
 - (id)_modifyMessageForDisplay:(id)arg1;
 - (void)_showLaunchErrorForDescription:(id)arg1 message:(id)arg2 rawErrorMessage:(id)arg3;
 - (id)parseConsoleOutputFromOriginalOutput:(id)arg1;

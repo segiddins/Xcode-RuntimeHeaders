@@ -6,21 +6,11 @@
 
 #import <DVTUserInterfaceKit/DVTToolbarViewController.h>
 
-#import <IDEKit/DVTDelayedMenuButtonDelegate-Protocol.h>
-
-@class NSString;
-
-@interface IDELibraryToolbarViewController : DVTToolbarViewController <DVTDelayedMenuButtonDelegate>
+@interface IDELibraryToolbarViewController : DVTToolbarViewController
 {
 }
 
 - (id)initWithToolbarItemIdentifier:(id)arg1 window:(id)arg2;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

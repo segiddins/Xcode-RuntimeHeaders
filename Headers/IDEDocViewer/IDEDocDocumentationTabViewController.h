@@ -70,6 +70,8 @@
 - (void)loadURL:(id)arg1;
 @property(readonly) IDEDocContentAreaViewController *contentAreaViewController;
 - (void)installContentView;
+- (void)copyLinkToPasteboard;
+- (id)makeCopyToURLPasteboardService;
 - (id)anchoringViewForSharingService:(id)arg1 showRelativeToRect:(struct CGRect *)arg2 preferredEdge:(unsigned long long *)arg3;
 - (void)_shareFromService:(id)arg1;
 @property(readonly, copy) NSMenu *shareMenu;

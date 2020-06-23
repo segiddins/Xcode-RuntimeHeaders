@@ -24,6 +24,7 @@
 @property(nonatomic, readonly) double highlightFrameCornerRadius;
 - (struct CGRect)hitTestFrameInWindow:(id)arg1;
 - (struct CGRect)highlightFrameInWindow:(id)arg1;
+@property(nonatomic, readonly) long long navigationTargetType;
 - (id)initWithEdge:(unsigned long long)arg1 edgeOffset:(double)arg2 relativeTarget:(id)arg3;
 @property(nonatomic, readonly) id <_TtP6IDEKit26IDENavigationOverlayTarget_> relativeTarget; // @synthesize relativeTarget;
 @property(nonatomic, readonly) double edgeOffset; // @synthesize edgeOffset;

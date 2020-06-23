@@ -37,6 +37,8 @@
 - (void)restoreSelectionFromUserDefaults;
 - (struct CGRect)_frameForControl:(id)arg1 option:(id)arg2 mainViewBounds:(struct CGRect)arg3 minLabelWidth:(double)arg4;
 - (void)setupOptionViews;
+- (double)requiredLabelAdjustmentForOption:(id)arg1;
+- (BOOL)shouldCreateLabelForOption:(id)arg1;
 @property(readonly) NSArray *additionalSortedOptions;
 @property(readonly) NSArray *additionalOptions;
 - (double)requiredViewSpacingForOption:(id)arg1;

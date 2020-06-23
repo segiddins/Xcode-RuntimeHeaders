@@ -214,6 +214,7 @@
 - (void)convertToDocumentAtFilePath:(id)arg1 forFileDataType:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 @property BOOL ide_isTemporaryDocument;
 - (id)handleCloseScriptCommand:(id)arg1;
+- (id)observeCloseWithHandler:(CDUnknownBlockType)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

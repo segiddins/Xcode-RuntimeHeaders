@@ -12,7 +12,9 @@
 {
     MISSING_TYPE *longRunningProcess;
     MISSING_TYPE *bundleIdentifier;
-    MISSING_TYPE *cache;
+    MISSING_TYPE *symbolBundleIdentifier;
+    MISSING_TYPE *referenceCache;
+    MISSING_TYPE *symbolCache;
 }
 
 @end

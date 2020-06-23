@@ -11,18 +11,17 @@
 #import <DebuggerUI/NSTouchBarDelegate-Protocol.h>
 #import <DebuggerUI/NSTouchBarProvider-Protocol.h>
 
-@class DBGSceneViewController, DBGViewDebuggerAdditionUIController, DBGViewDebuggerDocument, DBGViewObject, DBGViewWindow, DVTBorderedView, DVTDelayedInvocation, DVTGradientImageButton, DVTGradientImagePopUpButton, DVTObservingToken, DVTRangeSliderCell, IDECanvasAppearanceSwitcherController, NSArray, NSLayoutConstraint, NSMenuItem, NSProgressIndicator, NSSegmentedControl, NSSet, NSSlider, NSString, NSTextField, NSTouchBar, NSView, NSVisualEffectView;
+@class DBGSceneViewController, DBGViewDebuggerAdditionUIController, DBGViewDebuggerDocument, DBGViewObject, DBGViewWindow, DVTBorderedView, DVTGradientImageButton, DVTGradientImagePopUpButton, DVTObservingToken, DVTRangeSliderCell, IDECanvasAppearanceSwitcherController, NSArray, NSLayoutConstraint, NSMenuItem, NSProgressIndicator, NSSegmentedControl, NSSet, NSSlider, NSString, NSTextField, NSTouchBar, NSView, NSVisualEffectView;
 @protocol DBGFocusableViewObject, DVTCancellable;
 
 @interface DBGViewDebuggerEditor : IDEEditor <NSTouchBarProvider, NSTouchBarDelegate, DBGSceneViewControllerDelegate, IDEFocusedHierarchy>
 {
     NSArray *_currentSelectedItems;
     DBGViewWindow *_selectedWindow;
-    DBGViewDebuggerAdditionUIController *_viewDebuggerUIController;
-    DVTDelayedInvocation *_handleOutputSelectionChangeInvocation;
     DVTObservingToken *_editorContextNavigableItemObservingToken;
     DVTObservingToken *_showOnlyVisibleViewObjectsObservingToken;
     DVTObservingToken *_showLayersObservingToken;
+    DVTObservingToken *_showPerfRuntimeIssuesObservingToken;
     DVTObservingToken *_viewOutlineStructureObservingToken;
     DVTObservingToken *_navigatorOutputSelectionObserver;
     DVTObservingToken *_constraintsEnabledObservingToken;
@@ -31,6 +30,9 @@
     DVTObservingToken *_numberOfZPlanesObservingToken;
     DVTObservingToken *_rangeSliderLeftObservingToken;
     DVTObservingToken *_rangeSliderRightObservingToken;
+    DVTObservingToken *_workspaceFinishedLoadingObservation;
+    DVTObservingToken *_backupWorkspaceExecEnvObservation;
+    DVTObservingToken *_debuggingAdditionsObservation;
     id <DVTCancellable> _viewDebuggerAdditionUIControllerObservingToken;
     DBGViewObject<DBGFocusableViewObject> *_formerlyFocusedObject;
     double _formerCameraZoom;
@@ -45,6 +47,7 @@
     DVTObservingToken *_viewRangeMaxValueObservationToken;
     DVTObservingToken *_viewRangeValueObservationToken;
     DVTObservingToken *_zDistanceValueObservationToken;
+    DBGViewDebuggerAdditionUIController *_viewDebuggerUIController;
     NSMenuItem *_backgroundColorsSubmenuItem;
     IDECanvasAppearanceSwitcherController *_canvasAppearanceSwitcherController;
     DBGSceneViewController *_sceneViewController;
@@ -59,6 +62,7 @@
     DVTGradientImageButton *_constraintsButton;
     NSSlider *_viewRangeSlider;
     DVTRangeSliderCell *_viewRangeSliderCell;
+    NSLayoutConstraint *_viewRangeSliderCenterYConstraint;
     DVTGradientImageButton *_showClippedContentButton;
     DVTGradientImageButton *_showTrueSpacingBoxesButton;
     NSLayoutConstraint *_trueSpacingBoxesButtonWidthConstraint;
@@ -87,6 +91,7 @@
 @property __weak NSLayoutConstraint *trueSpacingBoxesButtonWidthConstraint; // @synthesize trueSpacingBoxesButtonWidthConstraint=_trueSpacingBoxesButtonWidthConstraint;
 @property __weak DVTGradientImageButton *showTrueSpacingBoxesButton; // @synthesize showTrueSpacingBoxesButton=_showTrueSpacingBoxesButton;
 @property __weak DVTGradientImageButton *showClippedContentButton; // @synthesize showClippedContentButton=_showClippedContentButton;
+@property __weak NSLayoutConstraint *viewRangeSliderCenterYConstraint; // @synthesize viewRangeSliderCenterYConstraint=_viewRangeSliderCenterYConstraint;
 @property __weak DVTRangeSliderCell *viewRangeSliderCell; // @synthesize viewRangeSliderCell=_viewRangeSliderCell;
 @property __weak NSSlider *viewRangeSlider; // @synthesize viewRangeSlider=_viewRangeSlider;
 @property __weak DVTGradientImageButton *constraintsButton; // @synthesize constraintsButton=_constraintsButton;
@@ -101,6 +106,7 @@
 @property(retain) DBGSceneViewController *sceneViewController; // @synthesize sceneViewController=_sceneViewController;
 @property(retain) IDECanvasAppearanceSwitcherController *canvasAppearanceSwitcherController; // @synthesize canvasAppearanceSwitcherController=_canvasAppearanceSwitcherController;
 @property(retain) NSMenuItem *backgroundColorsSubmenuItem; // @synthesize backgroundColorsSubmenuItem=_backgroundColorsSubmenuItem;
+@property(retain) DBGViewDebuggerAdditionUIController *viewDebuggerUIController; // @synthesize viewDebuggerUIController=_viewDebuggerUIController;
 @property(retain) DVTObservingToken *zDistanceValueObservationToken; // @synthesize zDistanceValueObservationToken=_zDistanceValueObservationToken;
 @property(retain) DVTObservingToken *viewRangeValueObservationToken; // @synthesize viewRangeValueObservationToken=_viewRangeValueObservationToken;
 @property(retain) DVTObservingToken *viewRangeMaxValueObservationToken; // @synthesize viewRangeMaxValueObservationToken=_viewRangeMaxValueObservationToken;
@@ -124,8 +130,6 @@
 - (void)reloadSelectionInEditor;
 - (void)addViewObjectsToSelectedItems:(id)arg1;
 - (void)mouseClickedViewObject:(id)arg1 withEvent:(id)arg2;
-- (id)_layerVisibilityToggleTitle;
-- (id)_viewControllerBannerToggleTitle;
 - (id)_2D3DToggleTitle;
 - (id)_constraintsToggleTitle;
 - (id)_clippedContentToggleTitle;
@@ -133,6 +137,9 @@
 - (void)_update2D3DToggleButtonLabelAndTooltip;
 - (void)_updateConstraintsToggleButtonLabelAndTooltip;
 - (void)_updateClippedContentButtonLabelAndTooltip;
+- (BOOL)validateMenuItem:(id)arg1;
+- (void)setupEditorMenu:(id)arg1;
+- (void)_updateSliderMaxValue;
 - (void)rangeSliderKVOCompliantValueChangeWithBlock:(CDUnknownBlockType)arg1;
 @property(readonly) double viewRangeMinValue;
 @property(readonly) double viewRangeMaxValue;
@@ -140,7 +147,6 @@
 @property(readonly) double zDistanceMinValue;
 @property(readonly) double zDistanceMaxValue;
 @property(readonly) double zDistanceValue;
-- (BOOL)validateMenuItem:(id)arg1;
 - (void)switchToContentModeWireframesAndContents:(id)arg1;
 - (void)switchToContentModeWireframes:(id)arg1;
 - (void)switchToContentModeContents:(id)arg1;
@@ -148,6 +154,7 @@
 - (void)zoomActualCanvas:(id)arg1;
 - (void)zoomInCanvas:(id)arg1;
 - (void)toggleClippingOfContent:(id)arg1;
+- (void)toggleShowOptimizationOpportunities:(id)arg1;
 - (void)toggleShowLayers:(id)arg1;
 - (void)toggleShowControllers:(id)arg1;
 - (void)toggleShowConstraints:(id)arg1;
@@ -159,13 +166,6 @@
 - (void)zDistanceDidChange;
 - (void)zDistanceSliderChanged:(id)arg1;
 - (void)_reloadSceneViewController;
-- (void)_updateBackgroundColorsSubmenuSelection;
-- (void)changeBackgroundColor:(id)arg1;
-- (id)_newBackgroundColorsSubmenu;
-- (id)_newBackgroundColorsMenuItem;
-- (id)_findToggleControllerMenuItemInMenu:(id)arg1;
-- (long long)_backgroundColorMenuItemInsertionIndexForMenu:(id)arg1;
-- (void)_setupBackgroundColorSubmenuInMenu:(id)arg1;
 @property(retain) NSArray *objectsToReveal; // @synthesize objectsToReveal=_objectsToReveal;
 @property(retain) DBGViewWindow *selectedWindow;
 @property(retain, nonatomic) NSArray *currentSelectedItems;
@@ -175,11 +175,19 @@
 - (void)selectDocumentLocations:(id)arg1;
 - (void)navigateToAnnotationWithRepresentedObject:(id)arg1 wantsIndicatorAnimation:(BOOL)arg2 exploreAnnotationRepresentedObject:(id)arg3;
 - (void)_handleNavigatorOutputSelectionChanged;
+- (id)_getDebugSessionForRunDestination:(id)arg1 workspace:(id)arg2 withDebugHierarchyFile:(id)arg3;
+- (id)_getRunDestinationForSyntheticDebugSession;
+- (void)setupInfrastructureForDebugHierarchyFile:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)setupSytheticDebugSessionAndViewDebuggingAdditionWithCompletion:(CDUnknownBlockType)arg1;
 - (void)viewWillUninstall;
-- (void)_updateSliderMaxValue;
-- (void)setupEditorMenu:(id)arg1;
 - (void)_cancelAndClearObservingTokens;
+- (void)_setupSceneViewControllerPropertyObservers;
+- (void)_navigateToInitialItemAfterLaunch;
+- (void)viewDidAppear;
+- (void)_setupUIControllerDependencies;
 - (void)viewDidInstall;
+- (id)_failedStatusMessageDescription;
+- (void)_refreshStatusMessageView;
 - (void)_handleViewDebuggerPercentLoadedChanged;
 - (void)_configureCanvasAppearanceSwitcher;
 - (void)_configureViewModePopUpButtonAndMenu;
@@ -213,6 +221,13 @@
 - (id)_viewDebuggerTouchBar;
 - (void)_registerToolBarVisibilityChangedObserver;
 - (id)makeTouchBar;
+- (void)_updateBackgroundColorsSubmenuSelection;
+- (void)changeBackgroundColor:(id)arg1;
+- (id)_newBackgroundColorsSubmenu;
+- (id)_newBackgroundColorsMenuItem;
+- (id)_findToggleControllerMenuItemInMenu:(id)arg1;
+- (long long)_backgroundColorMenuItemInsertionIndexForMenu:(id)arg1;
+- (void)_setupBackgroundColorSubmenuInMenu:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

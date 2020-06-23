@@ -22,6 +22,7 @@
 - (id)containingClassName;
 - (id)qualifiedType;
 - (id)_effectiveNameForFirstArgument:(id)arg1;
+- (unsigned long long)methodKind;
 - (id)defaultType;
 
 @end

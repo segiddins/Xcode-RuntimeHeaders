@@ -8,7 +8,7 @@
 
 #import <IDESceneKitEditor/NSTableViewDelegate-Protocol.h>
 
-@class DVTObservingToken, DVTScopeBarView, DVTScrollView, DVTTableView, NSArrayController, NSString, SKEStaticTableViewInspectorTableView;
+@class DVTObservingToken, DVTScopeBarView, DVTScrollView, DVTTableView, NSArray, NSArrayController, NSString, SKEStaticTableViewInspectorTableView;
 
 @interface SKEStaticTableViewInspector : SKEInspectorViewController <NSTableViewDelegate>
 {
@@ -18,6 +18,7 @@
     NSArrayController *_arrayController;
     DVTObservingToken *_arrayControllerContentObservingToken;
     NSString *_emptyContentString;
+    NSArray *_contentViewConstraints;
 }
 
 + (id)tableColumnTitles;

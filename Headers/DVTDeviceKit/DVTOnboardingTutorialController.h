@@ -6,28 +6,30 @@
 
 #import <DVTDeviceKit/DVTTutorialController.h>
 
-@class DVTDeveloperAccount, DVTDevice, NSArray, NSString;
+@class DVTDeveloperAccount, DVTDevice, NSArray;
 
 @interface DVTOnboardingTutorialController : DVTTutorialController
 {
     NSArray *_developerTeams;
+    unsigned long long _startKey;
     DVTDevice *_selectedDeviceForSetup;
     DVTDeveloperAccount *_accountForSetup;
-    NSString *_teamID;
 }
 
 - (void).cxx_destruct;
-@property(retain, nonatomic) NSString *teamID; // @synthesize teamID=_teamID;
 @property(retain, nonatomic) DVTDeveloperAccount *accountForSetup; // @synthesize accountForSetup=_accountForSetup;
-@property(nonatomic) __weak DVTDevice *selectedDeviceForSetup; // @synthesize selectedDeviceForSetup=_selectedDeviceForSetup;
+@property(retain, nonatomic) DVTDevice *selectedDeviceForSetup; // @synthesize selectedDeviceForSetup=_selectedDeviceForSetup;
 - (id)developerTeamsForAccount;
 - (id)_devicesForPlatforms:(id)arg1;
 - (id)pageController:(id)arg1 viewControllerForIdentifier:(id)arg2;
 - (id)identifierForPageController;
-- (void)restartTutorial;
+- (void)restartTutorial:(unsigned long long)arg1;
 - (void)nextPage;
 - (BOOL)currentPageShouldEnableNextButton;
 - (id)identifiersForPagesInStoryboard;
+- (id)_identifiersForRemotePages;
+- (id)_identifiersForConnectedPages;
+@property(readonly, nonatomic) BOOL focusOnConnected;
 - (id)devices;
 - (id)init;
 

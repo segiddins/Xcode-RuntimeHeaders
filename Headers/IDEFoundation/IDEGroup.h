@@ -52,8 +52,8 @@
 - (BOOL)structureEditRemoveSubitemsAtIndexes:(id)arg1 error:(id *)arg2;
 - (BOOL)structureEditRemoveSubitemsPreflightForIndexes:(id)arg1 error:(id *)arg2;
 - (BOOL)canStructureEditRemoveSubitemsAtIndexes:(id)arg1;
-- (BOOL)structureEditSortSubitemsAtIndexes:(id)arg1 byNameOrByType:(BOOL)arg2;
-- (BOOL)canStructureEditSortSubitemsAtIndexes:(id)arg1 byNameOrByType:(BOOL)arg2;
+- (BOOL)structureEditSortSubitemsAtIndexes:(id)arg1 sortStyle:(unsigned long long)arg2;
+- (BOOL)canStructureEditSortSubitemsAtIndexes:(id)arg1 sortStyle:(unsigned long long)arg2;
 - (id)structureEditInsertFileURLs:(id)arg1 atIndex:(unsigned long long)arg2 createGroupsForFolders:(BOOL)arg3;
 - (BOOL)canStructureEditInsertFileURLs:(id)arg1 atIndex:(unsigned long long)arg2;
 - (id)structureEditInsertSubitems:(id)arg1 atIndex:(unsigned long long)arg2;
@@ -117,7 +117,8 @@
 - (id)ideFindScope_componentForGroupPath;
 - (void)ideFindScope_accumulateFilePaths:(id)arg1 andVisitedContainers:(id)arg2;
 - (id)ideModelObjectTypeIdentifier;
-- (void)ide_populateSnapshotGroups:(id)arg1 filePaths:(id)arg2 visitedContainers:(id)arg3;
+- (void)ide_populateFilePaths:(id)arg1 parentSuffixIndex:(long long)arg2 visitedContainers:(id)arg3;
+- (void)ide_populateFilePathsSkipingOwnSuffix:(id)arg1 parentSuffixIndex:(long long)arg2 visitedContainers:(id)arg3;
 - (id)structureEditingCopyOperationTo:(id)arg1 insertionHelper:(CDUnknownBlockType)arg2 errorHandlingBlock:(CDUnknownBlockType)arg3;
 - (id)structureEditingMoveOperationTo:(id)arg1 insertionHelper:(CDUnknownBlockType)arg2 errorHandlingBlock:(CDUnknownBlockType)arg3;
 @property(nonatomic, readonly) BOOL handlesStructureEditing;

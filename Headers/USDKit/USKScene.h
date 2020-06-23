@@ -10,7 +10,7 @@
 
 @interface USKScene : USKObject
 {
-    TfRefPtr_a9ae0d85 _usdStage;
+    TfRefPtr_8a332644 _usdStage;
     NSURL *_fileURL;
 }
 
@@ -42,10 +42,12 @@
 - (void)saveAndCreateARKitUSDZPackageWithURL:(id)arg1;
 - (void)saveAndCreateUSDZPackageWithURL:(id)arg1;
 - (void)save;
-- (TfRefPtr_a9ae0d85)usdStage;
-- (id)initWithUsdStage:(TfRefPtr_a9ae0d85)arg1 fileURL:(id)arg2;
+- (BOOL)exportToURL:(id)arg1;
+- (TfRefPtr_8a332644)usdStage;
+- (id)initWithUsdStage:(TfRefPtr_8a332644)arg1 fileURL:(id)arg2;
 - (id)initSceneFromURL:(id)arg1 error:(id *)arg2;
 - (id)initSceneFromURL:(id)arg1;
+- (id)init;
 
 @end
 

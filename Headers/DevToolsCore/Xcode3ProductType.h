@@ -33,11 +33,13 @@
 - (BOOL)isWatchApplication;
 - (BOOL)isWatch1Application;
 - (BOOL)isWatch2Application;
+- (BOOL)isAppClip;
 - (BOOL)isAppExtension;
 - (BOOL)isApplication;
 - (BOOL)isSystemExtension;
 - (BOOL)isDriverExtension;
 - (BOOL)isCommandLineTool;
+- (BOOL)_isKindOfIdentifier:(id)arg1;
 - (BOOL)isKindOfProductType:(id)arg1;
 - (id)superType;
 - (id)localizedDescription;

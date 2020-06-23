@@ -83,6 +83,7 @@ __attribute__((visibility("hidden")))
 - (void)navigateToItem:(id)arg1 navigationType:(unsigned long long)arg2;
 - (void)navigateToItem:(id)arg1 userInfo:(id)arg2;
 - (void)navigateToItem:(id)arg1;
+- (void)navigateToAnnotationWithRepresentedObject:(id)arg1 wantsIndicatorAnimation:(BOOL)arg2 exploreAnnotationRepresentedObject:(id)arg3;
 - (id)_openSpecifierForItem:(id)arg1 userInfo:(id)arg2;
 - (void)_handleDebuggingAdditionUIControllerCreated:(id)arg1;
 - (void)_teardownObservers;

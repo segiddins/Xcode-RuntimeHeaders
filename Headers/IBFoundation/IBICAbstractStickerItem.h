@@ -10,5 +10,7 @@
 {
 }
 
++ (id)classNameComponents;
+
 @end
 

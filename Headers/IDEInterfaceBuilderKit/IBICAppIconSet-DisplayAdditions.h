@@ -7,8 +7,6 @@
 #import <IBFoundation/IBICAppIconSet.h>
 
 @interface IBICAppIconSet (DisplayAdditions)
-- (void)setIbInspectedPreRendered:(BOOL)arg1;
-- (BOOL)ibInspectedPreRendered;
 - (id)includedAttributesInspectorSlicesForChild:(id)arg1;
 @end
 

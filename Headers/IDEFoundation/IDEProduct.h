@@ -10,7 +10,7 @@
 #import <IDEFoundation/DVTServicesJSONSerialization-Protocol.h>
 #import <IDEFoundation/NSCopying-Protocol.h>
 
-@class AnalyticsMetricsConsolidatedSource, DVTStackBacktrace, IDEProductCategory, IDEProductCoordinator, IDEProductIdentifier, IDEProductVersion, NSArray, NSString, NSURL;
+@class DVTStackBacktrace, IDEProductCategory, IDEProductCoordinator, IDEProductIdentifier, IDEProductVersion, NSArray, NSString, NSURL;
 
 @interface IDEProduct : NSObject <DVTServicesJSONSerialization, DVTInvalidation, NSCopying>
 {
@@ -18,7 +18,6 @@
     NSArray *_archives;
     IDEProductIdentifier *_identifier;
     NSArray *_productVersions;
-    AnalyticsMetricsConsolidatedSource *_metricsSource;
     IDEProductCoordinator *_coordinator;
 }
 
@@ -33,7 +32,6 @@
 + (void)initialize;
 - (void).cxx_destruct;
 @property(nonatomic) __weak IDEProductCoordinator *coordinator; // @synthesize coordinator=_coordinator;
-@property(retain) AnalyticsMetricsConsolidatedSource *metricsSource; // @synthesize metricsSource=_metricsSource;
 @property(retain) NSArray *productVersions; // @synthesize productVersions=_productVersions;
 @property(readonly) IDEProductIdentifier *identifier; // @synthesize identifier=_identifier;
 - (id)copyWithZone:(struct _NSZone *)arg1;

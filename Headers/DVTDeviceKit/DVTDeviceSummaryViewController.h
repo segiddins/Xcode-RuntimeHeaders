@@ -10,7 +10,7 @@
 #import <DVTDeviceKit/DVTTableViewDelegate-Protocol.h>
 #import <DVTDeviceKit/NSTableViewDataSource-Protocol.h>
 
-@class DVTBorderedView, DVTDevice, DVTDeviceErrorsAndWarningsController, DVTDeviceSummaryAboutViewController, DVTDeviceSummaryAppsViewController, DVTGradientImageButton, DVTStackBacktrace, DVTTableView, NSArray, NSButton, NSImageView, NSMutableArray, NSMutableDictionary, NSScrollView, NSSet, NSStackView, NSString, NSTextField, NSView;
+@class DVTBorderedView, DVTDevice, DVTDeviceErrorsAndWarningsController, DVTDeviceSummaryAboutViewController, DVTDeviceSummaryAppsViewController, DVTDeviceSummaryRootsViewController, DVTGradientImageButton, DVTStackBacktrace, DVTTableView, NSArray, NSButton, NSImageView, NSMutableArray, NSMutableDictionary, NSScrollView, NSSet, NSStackView, NSString, NSTextField, NSView;
 @protocol NSObject;
 
 @interface DVTDeviceSummaryViewController : DVTViewController <DVTDevicesWindowDetailViewController, NSTableViewDataSource, DVTTableViewDelegate>
@@ -45,6 +45,7 @@
     DVTGradientImageButton *_deletePairedDeviceButton;
     DVTDeviceErrorsAndWarningsController *_errorsController;
     DVTDeviceSummaryAppsViewController *_appsViewController;
+    DVTDeviceSummaryRootsViewController *_rootsViewController;
     NSString *_violatorMessage;
     NSString *_violatorDescription;
     NSArray *_deviceInfo;
@@ -65,6 +66,7 @@
 @property(retain) NSString *violatorMessage; // @synthesize violatorMessage=_violatorMessage;
 @property BOOL updateViolatorPending; // @synthesize updateViolatorPending=_updateViolatorPending;
 @property BOOL showViolator; // @synthesize showViolator=_showViolator;
+@property(retain) DVTDeviceSummaryRootsViewController *rootsViewController; // @synthesize rootsViewController=_rootsViewController;
 @property(retain) DVTDeviceSummaryAppsViewController *appsViewController; // @synthesize appsViewController=_appsViewController;
 @property(retain) DVTDeviceErrorsAndWarningsController *errorsController; // @synthesize errorsController=_errorsController;
 @property(retain) DVTGradientImageButton *deletePairedDeviceButton; // @synthesize deletePairedDeviceButton=_deletePairedDeviceButton;
@@ -108,6 +110,7 @@
 - (id)tableView:(id)arg1 objectValueForTableColumn:(id)arg2 row:(long long)arg3;
 - (long long)numberOfRowsInTableView:(id)arg1;
 @property(readonly) BOOL showApplicationList;
+@property(readonly) BOOL showInstalledRootList;
 - (id)activeProxiedDevice;
 @property(readonly) NSSet *proxiedDevices;
 @property(readonly) BOOL showProxiedDeviceSlice;

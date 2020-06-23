@@ -25,8 +25,8 @@
     IDEIndexContainerSymbol *_containerSymbol;
 }
 
-+ (id)newSymbolOfKind:(id)arg1 language:(id)arg2 name:(id)arg3 moduleName:(id)arg4 resolution:(id)arg5 isVirtual:(BOOL)arg6 role:(long long)arg7 isImplicit:(BOOL)arg8 location:(id)arg9 symbolProviderKind:(int)arg10 forQueryProvider:(id)arg11;
-+ (id)newSymbolOfKind:(id)arg1 language:(id)arg2 name:(id)arg3 resolution:(id)arg4 isVirtual:(BOOL)arg5 role:(long long)arg6 isImplicit:(BOOL)arg7 location:(id)arg8 forQueryProvider:(id)arg9;
++ (id)newSymbolOfKind:(id)arg1 language:(id)arg2 name:(id)arg3 moduleName:(id)arg4 resolution:(id)arg5 isVirtual:(BOOL)arg6 role:(long long)arg7 isImplicit:(BOOL)arg8 isSystemLocation:(BOOL)arg9 location:(id)arg10 symbolProviderKind:(int)arg11 forQueryProvider:(id)arg12;
++ (id)newSymbolOfKind:(id)arg1 language:(id)arg2 name:(id)arg3 resolution:(id)arg4 isVirtual:(BOOL)arg5 role:(long long)arg6 isImplicit:(BOOL)arg7 isSystemLocation:(BOOL)arg8 location:(id)arg9 forQueryProvider:(id)arg10;
 + (id)newSymbolOfKind:(id)arg1 language:(id)arg2 name:(id)arg3 resolution:(id)arg4 forQueryProvider:(id)arg5;
 + (Class)classForSymbolKind:(id)arg1;
 - (void).cxx_destruct;
@@ -44,6 +44,7 @@
 - (id)propertyForIVar;
 - (id)specializations;
 - (id)specializesSymbols;
+- (id)overridingSymbolOccurrencesBySymbol:(id)arg1;
 - (id)overridingSymbols;
 - (id)overriddenSymbols;
 - (id)containerSymbol;
@@ -61,7 +62,7 @@
 - (id)occurrence;
 - (void)setContainerSymbol:(id)arg1;
 @property(readonly, nonatomic) BOOL hasOccurrence;
-- (void)setModelOccurrenceRole:(long long)arg1 isImplicit:(BOOL)arg2 location:(id)arg3;
+- (void)setModelOccurrenceRole:(long long)arg1 isImplicit:(BOOL)arg2 isSystem:(BOOL)arg3 location:(id)arg4;
 - (void)setModelOccurrence:(id)arg1;
 - (id)modelOccurrence;
 - (BOOL)isInProject;

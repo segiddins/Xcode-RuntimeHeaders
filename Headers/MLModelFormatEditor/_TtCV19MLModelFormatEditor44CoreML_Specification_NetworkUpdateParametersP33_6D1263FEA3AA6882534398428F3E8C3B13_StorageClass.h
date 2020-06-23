@@ -13,6 +13,8 @@
     MISSING_TYPE *_lossLayers;
     MISSING_TYPE *_optimizer;
     MISSING_TYPE *_epochs;
+    MISSING_TYPE *_shuffle;
+    MISSING_TYPE *_seed;
 }
 
 @end

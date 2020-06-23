@@ -40,6 +40,7 @@
 - (id)_generateBuildInfo:(id)arg1 functionName:(id)arg2 fileURL:(id)arg3 sourceURL:(id)arg4 buildFlags:(unsigned long long)arg5 error:(id *)arg6;
 - (void)_createDependencyTargetMapForExtractedSourceAtURL:(id)arg1 linkMachinePaths:(BOOL)arg2 error:(id *)arg3;
 - (BOOL)_compileBuildTargets:(id)arg1 compileTargets:(id)arg2 sourceAtURL:(id)arg3 flags:(unsigned long long)arg4 error:(id *)arg5;
+- (unsigned long long)_indexOfMetalFilePathFromOptions:(id)arg1;
 - (id)generateBuildInfoForFunction:(id)arg1 functionFileURL:(id)arg2 sourceURL:(id)arg3 flags:(unsigned long long)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (id)buildLibraryForFunction:(id)arg1 sourceAtURL:(id)arg2 flags:(unsigned long long)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (id)buildLibraryWithSourceAtURL:(id)arg1 flags:(unsigned long long)arg2 modifiedFileURLs:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
@@ -48,8 +49,8 @@
 - (id)extractSourceFromLibraryAtURL:(id)arg1 options:(unsigned long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)initWithCaptureStore:(id)arg1;
 - (id)initWithCaptureStore:(id)arg1 platformSDK:(id)arg2;
-- (id)initWithPlatform:(int)arg1 platformSDK:(id)arg2;
 - (void)_initWithDeviceOSVersion:(id)arg1 platform:(int)arg2 platformSDK:(id)arg3;
+- (id)initWithPlatform:(int)arg1 platformSDK:(id)arg2;
 - (id)initWithDeviceInfo:(id)arg1 platformSDK:(id)arg2;
 
 @end

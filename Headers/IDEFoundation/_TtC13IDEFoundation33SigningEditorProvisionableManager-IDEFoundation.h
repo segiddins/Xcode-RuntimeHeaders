@@ -10,5 +10,6 @@
 
 @interface _TtC13IDEFoundation33SigningEditorProvisionableManager (IDEFoundation) <IDEProvisioningTeamsDataSourceDelegate>
 - (void)didUpdateTeams:(id)arg1;
+- (void)didChangeWithProvisionable:(id)arg1;
 @end
 

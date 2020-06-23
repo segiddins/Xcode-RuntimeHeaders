@@ -6,22 +6,32 @@
 
 #import <objc/NSObject.h>
 
-@class MISSING_TYPE;
+@class MISSING_TYPE, NSString;
 
 @interface _TtC18IDESourceControlUI29SourceControlDraftPullRequest : NSObject
 {
+    MISSING_TYPE *listenerStore;
+    MISSING_TYPE *dataSourceListenerStore;
+    MISSING_TYPE *modifiedMarkdown;
+    MISSING_TYPE *markdownObserver;
+    MISSING_TYPE *author;
+    MISSING_TYPE *_participants;
+    MISSING_TYPE *dateCreated;
     MISSING_TYPE *workingCopy;
-    MISSING_TYPE *sourceBranchIdentifier;
-    MISSING_TYPE *targetRepositoryIdentifier;
-    MISSING_TYPE *targetBranchIdentifier;
+    MISSING_TYPE *targetBranch;
+    MISSING_TYPE *sourceBranch;
+    MISSING_TYPE *commonAncestor;
     MISSING_TYPE *text;
-    MISSING_TYPE *workingTitle;
+    MISSING_TYPE *title;
     MISSING_TYPE *identifier;
-    MISSING_TYPE *listeners;
+    MISSING_TYPE *events;
 }
 
 - (void).cxx_destruct;
 - (id)init;
+- (void)dealloc;
+@property(nonatomic, copy) NSString *title;
+@property(nonatomic, copy) NSString *modifiedMarkdown;
 
 @end
 

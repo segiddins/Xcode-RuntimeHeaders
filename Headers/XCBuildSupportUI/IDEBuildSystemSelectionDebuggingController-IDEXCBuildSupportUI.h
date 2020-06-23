@@ -8,8 +8,10 @@
 
 #import <XCBuildSupportUI/IDECommandHandler-Protocol.h>
 #import <XCBuildSupportUI/IDECommandHandlerVendor-Protocol.h>
+#import <XCBuildSupportUI/NSUserInterfaceValidations-Protocol.h>
 
-@interface IDEBuildSystemSelectionDebuggingController (IDEXCBuildSupportUI) <IDECommandHandlerVendor, IDECommandHandler>
+@interface IDEBuildSystemSelectionDebuggingController (IDEXCBuildSupportUI) <IDECommandHandlerVendor, IDECommandHandler, NSUserInterfaceValidations>
 + (id)handlerForAction:(SEL)arg1 withSelectionSource:(id)arg2;
+- (BOOL)validateUserInterfaceItem:(id)arg1;
 @end
 

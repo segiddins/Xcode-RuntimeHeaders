@@ -6,10 +6,11 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSData, NSDate, NSDictionary, NSMutableArray, NSString, NSUUID, XCElementSnapshot, XCSynthesizedEventRecord;
+@class IDESchemeActionTestSummary, NSArray, NSData, NSDate, NSDictionary, NSMutableArray, NSString, NSUUID, XCElementSnapshot;
 
 @interface IDESchemeActionTestActivitySummary : NSObject
 {
+    IDESchemeActionTestSummary *_test;
     NSString *_title;
     NSString *_activityType;
     NSString *_attachmentsDirectory;
@@ -18,14 +19,19 @@
     NSDate *_finish;
     NSArray *_attachments;
     NSMutableArray *_subActivities;
+    id _urlRedirector;
+    NSMutableArray *_mutableFailureSummaryIDs;
 }
 
 + (id)_legacyFileNameForAttachmentWithName:(id)arg1 activityUUID:(id)arg2;
 + (id)_convertedAttachmentsFromActivityRecord:(id)arg1 attachmentsDirectory:(id)arg2 outTitle:(id *)arg3;
++ (id)screenshotNameBasedOnUTI:(id)arg1;
 + (void)loadLegacyAttachmentMetadataFromActivityRecord:(id)arg1 outTitle:(id *)arg2;
 + (BOOL)_attachments:(id)arg1 containAttachmentWithName:(id)arg2;
 + (id)summariesFromSummaries:(id)arg1 withAttachmentsExtractedToDirectory:(id)arg2;
 - (void).cxx_destruct;
+@property(retain) NSMutableArray *mutableFailureSummaryIDs; // @synthesize mutableFailureSummaryIDs=_mutableFailureSummaryIDs;
+@property __weak id urlRedirector; // @synthesize urlRedirector=_urlRedirector;
 @property(readonly, copy) NSMutableArray *subActivities; // @synthesize subActivities=_subActivities;
 @property(copy) NSArray *attachments; // @synthesize attachments=_attachments;
 @property(readonly, copy) NSDate *finish; // @synthesize finish=_finish;
@@ -34,6 +40,8 @@
 @property(copy) NSString *attachmentsDirectory; // @synthesize attachmentsDirectory=_attachmentsDirectory;
 @property(readonly, copy) NSString *activityType; // @synthesize activityType=_activityType;
 @property(readonly, copy) NSString *title; // @synthesize title=_title;
+@property(readonly, copy) NSArray *failureSummaryIDs;
+- (void)addFailureSummaryID:(id)arg1;
 - (id)attachmentWithName:(id)arg1;
 - (BOOL)hasAttachmentWithName:(id)arg1;
 - (void)pruneAttachmentsWithLifetimes:(id)arg1 deletedAutomationScreenshots:(char *)arg2 deletedUserAttachments:(char *)arg3;
@@ -47,7 +55,6 @@
 @property(readonly, copy) NSData *screenshotData;
 @property(readonly, copy) NSString *snapshotFileName;
 @property(readonly, copy) XCElementSnapshot *snapshot;
-@property(readonly, copy) XCSynthesizedEventRecord *synthesizedEvent;
 - (id)_fileNameForAttachmentName:(id)arg1;
 - (id)_unarchiveIfPresentAttachmentWithName:(id)arg1 expectedClassName:(id)arg2;
 - (id)_dataIfPresentForAttachmentName:(id)arg1;
@@ -55,12 +62,14 @@
 @property(readonly, copy) NSArray *subActivitiesSnapshot;
 - (void)addSubActivity:(id)arg1;
 - (void)updateFromActivityRecord:(id)arg1;
+@property __weak IDESchemeActionTestSummary *test; // @synthesize test=_test;
+@property(readonly, copy) NSArray *allAttachments;
 - (void)addAttachment:(id)arg1;
 - (void)loadDiagnosticsFromFilePromise:(id)arg1;
 - (void)loadAttachmentsFromDirectory:(id)arg1;
 @property(readonly) NSDictionary *dictionaryRepresentation;
 - (id)initWithDictionaryRepresentation:(id)arg1;
-- (id)initWithTitle:(id)arg1 activityType:(id)arg2 uuid:(id)arg3 start:(id)arg4 finish:(id)arg5 subactivities:(id)arg6 attachments:(id)arg7;
+- (id)initWithTitle:(id)arg1 activityType:(id)arg2 uuid:(id)arg3 start:(id)arg4 finish:(id)arg5 subactivities:(id)arg6 attachments:(id)arg7 failureSummaryIDs:(id)arg8;
 - (id)initWithActivityRecord:(id)arg1 attachmentsDirectory:(id)arg2;
 
 @end

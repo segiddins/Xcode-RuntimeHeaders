@@ -10,6 +10,7 @@
 @protocol MTLDevice;
 
 @protocol MTLRenderPipelineState <NSObject>
+@property(nonatomic, readonly) long long textureWriteFPRoundingMode;
 @property(nonatomic, readonly) BOOL supportIndirectCommandBuffers;
 @property(nonatomic, readonly) id <MTLDevice> device;
 @property(nonatomic, readonly) NSString *label;

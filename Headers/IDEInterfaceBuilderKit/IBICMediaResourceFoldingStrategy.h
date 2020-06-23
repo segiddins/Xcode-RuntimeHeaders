@@ -6,7 +6,7 @@
 
 #import <IDEKit/IDEMediaResourceFoldingStrategy.h>
 
-@class IBICPlatform;
+@class IBICPlatform, NSSet;
 
 @interface IBICMediaResourceFoldingStrategy : IDEMediaResourceFoldingStrategy
 {
@@ -20,6 +20,7 @@
 - (void)setupVariablesAndDefaultVariantsFromSchema;
 - (id)description;
 - (id)firstResourceMatchingVariant:(id)arg1 fromVariantSet:(id)arg2;
+@property(readonly, nonatomic) NSSet *validIdioms;
 - (id)variantObjectResourceSetFromVariantSet:(id)arg1;
 - (long long)valueForSlotComponentClass:(Class)arg1 inVariant:(id)arg2 fallback:(id)arg3 mediaType:(id)arg4;
 - (id)variableForSlotComponentClass:(Class)arg1 andMediaType:(id)arg2;

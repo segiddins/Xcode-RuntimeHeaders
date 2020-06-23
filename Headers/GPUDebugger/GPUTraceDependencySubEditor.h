@@ -13,7 +13,7 @@
 #import <GPUDebugger/NSMenuDelegate-Protocol.h>
 #import <GPUDebugger/NSScrollViewDelegate-Protocol.h>
 
-@class DVTBorderedView, DVTFuture, DependencyGraphVisualRepresentation, DependencyViewerGraph, GPUFilterCompletionsEngine, GPUFilterTokenHelper, GPUFilteringCoordinator, GPUTraceOutlineItem, IDETokenFilterControlBar, NSButton, NSMenu, NSMutableArray, NSMutableDictionary, NSPopover, NSProgressIndicator, NSScrollView, NSSegmentedControl, NSString, NSTextField, NSView;
+@class DVTBorderedView, DVTFuture, DependencyGraphVisualRepresentation, DependencyViewerGraph, GPUFilterCompletionsEngine, GPUFilterTokenHelper, GPUFilteringCoordinator, GPUTraceOutlineItem, IDETokenFilterControlBar, NSButton, NSMenu, NSMutableArray, NSPopover, NSProgressIndicator, NSScrollView, NSSegmentedControl, NSString, NSTextField, NSView;
 @protocol DYPDependencyGraph, GPUTraceDependencyViewerView, NSObject;
 
 __attribute__((visibility("hidden")))
@@ -38,11 +38,8 @@ __attribute__((visibility("hidden")))
     DependencyViewerGraph *_dvGraph;
     id <DYPDependencyGraph> _dypDependencyGraph;
     DependencyGraphVisualRepresentation *_dvGraphVisualRepresentation;
-    NSMutableDictionary *_groupToGraphNode;
     DVTFuture *_graphLayoutFuture;
-    DVTFuture *_thumbnailGenerationFuture;
     double _graphLayoutProgress;
-    double _thumbnailGenerationProgress;
     GPUTraceOutlineItem *_currentSelection;
     id <NSObject> _selectionObserver;
     id <NSObject> _navigationObserver;
@@ -84,11 +81,8 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) id <NSObject> navigationObserver; // @synthesize navigationObserver=_navigationObserver;
 @property(retain, nonatomic) id <NSObject> selectionObserver; // @synthesize selectionObserver=_selectionObserver;
 @property(nonatomic) __weak GPUTraceOutlineItem *currentSelection; // @synthesize currentSelection=_currentSelection;
-@property double thumbnailGenerationProgress; // @synthesize thumbnailGenerationProgress=_thumbnailGenerationProgress;
 @property double graphLayoutProgress; // @synthesize graphLayoutProgress=_graphLayoutProgress;
-@property(retain, nonatomic) DVTFuture *thumbnailGenerationFuture; // @synthesize thumbnailGenerationFuture=_thumbnailGenerationFuture;
 @property(retain, nonatomic) DVTFuture *graphLayoutFuture; // @synthesize graphLayoutFuture=_graphLayoutFuture;
-@property(retain, nonatomic) NSMutableDictionary *groupToGraphNode; // @synthesize groupToGraphNode=_groupToGraphNode;
 @property(nonatomic) __weak DependencyGraphVisualRepresentation *dvGraphVisualRepresentation; // @synthesize dvGraphVisualRepresentation=_dvGraphVisualRepresentation;
 @property(nonatomic) __weak id <DYPDependencyGraph> dypDependencyGraph; // @synthesize dypDependencyGraph=_dypDependencyGraph;
 @property(nonatomic) __weak DependencyViewerGraph *dvGraph; // @synthesize dvGraph=_dvGraph;
@@ -127,7 +121,6 @@ __attribute__((visibility("hidden")))
 - (void)_collapseGroup:(id)arg1;
 - (void)_onGraphLoaded:(id)arg1 initiator:(id)arg2 onTransitionDone:(CDUnknownBlockType)arg3;
 - (void)_startLoading;
-- (void)_buildEncoderMappings;
 - (void)_setupView;
 - (BOOL)isValidIssue:(id)arg1;
 - (void)updateToolbar;

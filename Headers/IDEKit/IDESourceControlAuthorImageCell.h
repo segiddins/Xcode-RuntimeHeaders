@@ -13,6 +13,7 @@
 - (id)accessibilityHitTest:(struct CGPoint)arg1;
 - (BOOL)accessibilityIsIgnored;
 - (void)drawInteriorWithFrame:(struct CGRect)arg1 inView:(id)arg2;
+- (id)borderColor;
 
 @end
 

@@ -49,6 +49,7 @@ __attribute__((visibility("hidden")))
 - (void)draw;
 - (id)_createEventNote:(id)arg1 withLabel:(id)arg2;
 - (id)_createBorder:(struct CGRect)arg1 lineWidth:(double)arg2 lineColor:(id)arg3;
+- (void)issueStateChanged:(BOOL)arg1;
 - (void)addStats;
 - (void)dealloc;
 - (id)initWithNode:(id)arg1 withIssues:(BOOL)arg2 withTextureCache:(id)arg3;

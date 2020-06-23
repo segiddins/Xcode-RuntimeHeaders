@@ -8,14 +8,12 @@
 
 #import <DVTInstrumentsFoundation/NSCopying-Protocol.h>
 
-@class NSMutableDictionary, NSString, NSURL;
+@class NSMutableDictionary, NSString;
 @protocol DTTapBulkDataReceiver;
 
 @interface DTTapConfig : NSObject <NSCopying>
 {
     NSMutableDictionary *_dict;
-    NSURL *_archivingURL;
-    _Bool _createdArchivingURL;
     BOOL _filePreservation;
     NSString *_serviceName;
     long long _serviceVersion;
@@ -38,15 +36,14 @@
 @property(nonatomic) unsigned long long windowSize;
 @property(nonatomic) unsigned long long bufferMode;
 @property(nonatomic) unsigned long long pollingInterval;
+@property(nonatomic) BOOL discardHeartbeatsWhenPossible;
 - (void)setSpoolToDiskWhenPossible:(BOOL)arg1;
 - (BOOL)spoolToDiskWhenPossible;
 - (void)setIsDeferredDisplay:(BOOL)arg1;
 @property(readonly, nonatomic) BOOL isDeferredDisplay;
 - (void)_dispatchStatus:(unsigned int)arg1 timestamp:(unsigned long long)arg2 notice:(id)arg3 info:(id)arg4;
 - (void)_runningMetadataChanged:(id)arg1;
-- (BOOL)setArchivingURL:(id)arg1 error:(id *)arg2;
 - (void)refreshUUID;
-- (id)archivingURL;
 - (void)_removeSerializableObjectForKey:(id)arg1;
 - (id)_getSerializableObjectForKey:(id)arg1;
 - (void)_setSerializableObject:(id)arg1 forKey:(id)arg2;

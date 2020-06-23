@@ -6,16 +6,23 @@
 
 #import <IDEPegasusPlaygroundEditor/_TtC26IDEPegasusPlaygroundEditor18PlaygroundDocument.h>
 
+#import <IDEPegasusPlaygroundEditor/IDEPlaygroundContentsObserver-Protocol.h>
+#import <IDEPegasusPlaygroundEditor/IDEPlaygroundExecutor-Protocol.h>
+
 @class DVTSDK;
 
-@interface _TtC26IDEPegasusPlaygroundEditor18PlaygroundDocument (IDEPegasusPlaygroundEditor)
+@interface _TtC26IDEPegasusPlaygroundEditor18PlaygroundDocument (IDEPegasusPlaygroundEditor) <IDEPlaygroundExecutor, IDEPlaygroundContentsObserver>
 + (id)keyPathsForValuesAffectingTimelineScrubberEnabled;
 + (id)keyPathsForValuesAffectingSdk;
 + (id)keyPathsForValuesAffectingRenderDocumentation;
 + (id)keyPathsForValuesAffectingRenderDocumentationSupported;
 @property(nonatomic) BOOL timelineScrubberEnabled;
+@property(nonatomic) BOOL buildActiveScheme;
+@property(nonatomic, readonly) BOOL buildActiveSchemeSupported;
 @property(nonatomic, retain) DVTSDK *sdk;
 @property(nonatomic) BOOL renderDocumentation;
 @property(nonatomic, readonly) BOOL renderDocumentationSupported;
+@property(nonatomic, readonly) BOOL isPlaygroundCurrentlyExecuting;
+- (void)playgroundContentsDidChange:(id)arg1;
 @end
 

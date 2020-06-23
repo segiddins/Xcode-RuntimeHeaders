@@ -6,15 +6,14 @@
 
 #import <DVTViewControllerKit/DVTViewController.h>
 
-#import <UVKit/WebPolicyDelegate-Protocol.h>
-
 @class MISSING_TYPE;
 
 __attribute__((visibility("hidden")))
-@interface _TtC5UVKit27LibraryDetailViewController : DVTViewController <WebPolicyDelegate>
+@interface _TtC5UVKit27LibraryDetailViewController : DVTViewController
 {
     MISSING_TYPE *currentLoadToken;
     MISSING_TYPE *workspace;
+    MISSING_TYPE *webView;
     MISSING_TYPE *fontAndColorThemeChangedObserver;
     MISSING_TYPE *currentUSR;
     MISSING_TYPE *currentDisplayName;
@@ -23,7 +22,6 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (void)webView:(id)arg1 decidePolicyForNavigationAction:(id)arg2 request:(id)arg3 frame:(id)arg4 decisionListener:(id)arg5;
 - (void)loadView;
 - (void)primitiveInvalidate;
 - (void)viewWillUninstall;

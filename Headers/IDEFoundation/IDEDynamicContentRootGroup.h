@@ -10,7 +10,7 @@
 {
 }
 
-- (BOOL)canStructureEditSortSubitemsAtIndexes:(id)arg1 byNameOrByType:(BOOL)arg2;
+- (BOOL)canStructureEditSortSubitemsAtIndexes:(id)arg1 sortStyle:(unsigned long long)arg2;
 - (BOOL)canStructureEditRemoveSubitemsAtIndexes:(id)arg1;
 - (BOOL)canStructureEditInsertSubitems:(id)arg1 atIndex:(unsigned long long)arg2;
 - (BOOL)canStructureEditInsertFileURLs:(id)arg1 atIndex:(unsigned long long)arg2;

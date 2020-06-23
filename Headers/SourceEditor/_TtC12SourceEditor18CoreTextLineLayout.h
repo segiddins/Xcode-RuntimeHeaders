@@ -21,7 +21,7 @@
     MISSING_TYPE *lineLayoutManager;
     MISSING_TYPE *placeholderRanges;
     MISSING_TYPE *lineIdentifierOffsets;
-    MISSING_TYPE *attributedString;
+    MISSING_TYPE *string;
 }
 
 @end

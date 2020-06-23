@@ -10,6 +10,10 @@
 {
 }
 
++ (id)_targetDeviceArgumentNameForTargetedDeviceFamily:(id)arg1 platformName:(id)arg2;
++ (id)platformDefinitionForPlatformName:(id)arg1;
++ (id)_platformDefinitionsByPlatformName;
++ (id)allPlatformDefinitions;
 - (id)doSpecialCodeGenerationSetupForCommand:(id)arg1 withInputNodes:(id)arg2 withMacroExpansionScope:(id)arg3;
 - (id)sourceGenerationVersion:(id)arg1;
 - (id)sourceGenerationLanguages:(id)arg1;
@@ -21,9 +25,6 @@
 - (id)doSpecialDependencySetupForCommand:(id)arg1 withInputNodes:(id)arg2 withMacroExpansionScope:(id)arg3;
 - (void)_addDeploymentTargetArgumentsForCommand:(id)arg1 withMacroExpansionScope:(id)arg2;
 - (void)_addTargetDeviceArgumentsForCommand:(id)arg1 withMacroExpansionScope:(id)arg2;
-- (id)_targetDeviceArgumentNameForTargetedDeviceFamily:(id)arg1 platformName:(id)arg2;
-- (id)platformDefinitionForPlatformName:(id)arg1;
-- (id)_platformDefinitionsByPlatformName;
 
 @end
 

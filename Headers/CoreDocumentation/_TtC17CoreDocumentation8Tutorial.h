@@ -18,6 +18,7 @@
     MISSING_TYPE *sections;
     MISSING_TYPE *assessments;
     MISSING_TYPE *callToActionImage;
+    MISSING_TYPE *redirects;
 }
 
 @end

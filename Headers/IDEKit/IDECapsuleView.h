@@ -28,6 +28,7 @@
         unsigned int validateDrop:1;
         unsigned int drawBorderBelowHeader:1;
         unsigned int suppressBottomSeparator:1;
+        unsigned int bottomSeparatorFrame:1;
         unsigned int canRemove:1;
         unsigned int canRename:1;
         unsigned int clickedRemoveButton:1;
@@ -97,6 +98,7 @@
 - (BOOL)_shouldDrawContent;
 - (BOOL)_shouldDrawFooter;
 - (BOOL)_shouldSuppressBottomSeparator;
+- (struct CGRect)_bottomSeparatorRectForBounds:(struct CGRect)arg1;
 - (struct CGRect)_footerRectForBounds:(struct CGRect)arg1;
 - (struct CGRect)_headerRectForBounds:(struct CGRect)arg1;
 - (struct CGRect)capsuleBoundsForRect:(struct CGRect)arg1;

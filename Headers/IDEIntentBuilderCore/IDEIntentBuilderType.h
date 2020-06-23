@@ -50,6 +50,7 @@
 - (id)collectionPropertyAttributesForSourceLanguage:(unsigned long long)arg1 objectGroupItem:(id)arg2;
 - (id)collectionTypeNameForSourceLanguage:(unsigned long long)arg1 objectGroupItem:(id)arg2;
 - (id)typeNameForSourceLanguage:(unsigned long long)arg1 objectGroupItem:(id)arg2;
+- (id)referenceTypeNameForSourceLanguage:(unsigned long long)arg1 objectGroupItem:(id)arg2;
 @property(readonly, copy) NSString *description;
 - (id)path;
 @property(readonly, copy, nonatomic) NSString *typeGroupName;

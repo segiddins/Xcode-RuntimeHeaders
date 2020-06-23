@@ -20,6 +20,7 @@
     unsigned int _startAtBOL:1;
     unsigned int _startAtColumnZero:1;
     unsigned int _isFoldable:1;
+    unsigned int _shouldTraverse:1;
     unsigned int _ignoreToken:1;
     unsigned int _inheritsNodeType:1;
     unsigned int _altIgnoreToken:1;

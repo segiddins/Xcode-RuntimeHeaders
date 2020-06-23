@@ -18,7 +18,6 @@
 - (id)initWithLabel:(id)arg1;
 
 // Remaining properties
-@property(nonatomic) double barWidth;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(getter=isDisabled) BOOL disabled;

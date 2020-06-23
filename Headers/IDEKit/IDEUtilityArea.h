@@ -8,16 +8,17 @@
 
 #import <IDEKit/IDENavigableItemCoordinatorDelegate-Protocol.h>
 
-@class DVTBorderView, DVTBorderedView, DVTChoice, DVTChooserView, DVTDelayedInvocation, DVTDisclosureView, DVTEmptyContentPlaceholder, DVTExtension, DVTNotificationToken, DVTStackView_ML, IDEEditorDocument, IDENavigableItemCoordinator, IDESelection, NSArray, NSMapTable, NSMutableArray, NSMutableOrderedSet, NSScrollView, NSSet, NSString;
+@class DVTBorderView, DVTBorderedView, DVTChoice, DVTChooserView, DVTDelayedInvocation, DVTDisclosureView, DVTEmptyContentPlaceholder, DVTExtension, DVTNotificationToken, DVTObservingToken, DVTScrollView, DVTStackView_ML, IDEEditorDocument, IDENavigableItemCoordinator, IDESelection, NSArray, NSMapTable, NSMutableArray, NSMutableOrderedSet, NSSet, NSString, NSView;
 @protocol DVTCancellable;
 
 @interface IDEUtilityArea : IDEViewController <IDENavigableItemCoordinatorDelegate>
 {
+    NSView *_contentView;
     DVTChooserView *_chooserView;
     DVTBorderedView *_borderedView;
     DVTStackView_ML *_stackView;
-    NSScrollView *_scrollView;
-    DVTBorderView *_leftDividerView;
+    DVTScrollView *_scrollView;
+    DVTBorderView *_chooserDividerView;
     DVTDisclosureView *_lastDisclosureView;
     DVTChoice *_selectedCategoryChoice;
     NSMapTable *_categoriesToChoices;
@@ -34,6 +35,8 @@
     IDESelection *_content;
     id <DVTCancellable> _installToken;
     id <DVTCancellable> _clipViewFillToken;
+    BOOL _isVisibleOrPreparingShow;
+    DVTObservingToken *_effectiveAppearanceObservingToken;
     NSSet *_selectedDocuments;
     IDENavigableItemCoordinator *_navigableItemCoordinator;
     DVTEmptyContentPlaceholder *_placeholderView;
@@ -43,7 +46,6 @@
     BOOL _forceInputSelectionToEmpty;
     NSSet *_inputURLs;
     NSMutableArray *_refreshCallbacks;
-    BOOL _visibleOrPreparingShow;
     NSArray *_categoryChoices;
     DVTChoice *_defaultChoice;
 }
@@ -57,7 +59,6 @@
 - (void).cxx_destruct;
 @property(readonly, nonatomic) DVTChoice *defaultChoice; // @synthesize defaultChoice=_defaultChoice;
 @property(readonly, copy) NSArray *categoryChoices; // @synthesize categoryChoices=_categoryChoices;
-@property(nonatomic) BOOL visibleOrPreparingShow; // @synthesize visibleOrPreparingShow=_visibleOrPreparingShow;
 @property(readonly) DVTExtension *displayedCategory; // @synthesize displayedCategory=_displayedCategory;
 @property(readonly) NSSet *displayedSlices; // @synthesize displayedSlices=_displayedSlices;
 @property(copy, nonatomic) NSArray *builtinCategories; // @synthesize builtinCategories=_builtinCategories;
@@ -71,12 +72,14 @@
 - (void)invalidateContentView:(id)arg1;
 - (void)commitStateToDictionary:(id)arg1;
 - (void)revertStateWithDictionary:(id)arg1;
+- (void)startObservingApplicationEffectiveAppearance;
+- (void)installFullSizeContentViewConstraints;
+- (void)viewDidDisappear;
+- (void)viewWillAppear;
 - (void)viewWillUninstall;
 - (void)viewDidInstall;
 - (void)setupInputsAndStartObserving;
 - (void)clearInputsAndStopObserving;
-- (void)styleForEmbeddedInWindow;
-- (void)styleForPopover;
 - (void)loadView;
 - (void)userSelectedCategoryChoiceFromMenu:(id)arg1;
 - (void)simulateUserSelectionOfChoice:(id)arg1;
@@ -101,6 +104,8 @@
 - (void)_inputEditorDocumentWillClose:(id)arg1;
 - (void)_stackClippingViewFrameChanged:(id)arg1;
 - (void)_updateLastDisclosureViewBorderColor;
+- (void)_updateChooserDividerViewVisibility;
+- (BOOL)isShowingPlaceholder;
 - (id)_categoriesForNavigables:(id)arg1;
 - (id)editorContributedCategoryExtensionsForNavigable:(id)arg1;
 - (id)editorExtensionForNavigable:(id)arg1;
@@ -132,7 +137,7 @@
 - (id)titleForSlice:(id)arg1;
 - (id)toolTipForCategoryExtension:(id)arg1;
 - (id)titleForCategoryExtension:(id)arg1;
-- (id)alternateImageForCategoryExtension:(id)arg1;
+- (id)selectedImageForCategoryExtension:(id)arg1;
 - (id)imageForCategoryExtension:(id)arg1;
 - (id)defaultCategoryFromExtensions:(id)arg1;
 - (BOOL)categorySupportsMultipleSlices:(id)arg1;

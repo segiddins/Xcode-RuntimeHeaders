@@ -6,7 +6,7 @@
 
 #import <AppKit/NSGestureRecognizer.h>
 
-@class MISSING_TYPE;
+@class MISSING_TYPE, NSString;
 
 __attribute__((visibility("hidden")))
 @interface _TtC8RCShared21DropGestureRecognizer : NSGestureRecognizer
@@ -26,8 +26,15 @@ __attribute__((visibility("hidden")))
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
 - (void)updateGesture;
 - (void)reset;
+@property(nonatomic, readonly) NSString *description;
 - (void)dealloc;
 - (id)initWithCoder:(id)arg1;
+- (BOOL)performDragOperation:(id)arg1;
+- (void)draggingEnded:(id)arg1;
+- (void)draggingExited:(id)arg1;
+- (unsigned long long)draggingUpdated:(id)arg1;
+- (unsigned long long)draggingEntered:(id)arg1;
+- (struct CGPoint)locationInView:(id)arg1;
 
 @end
 

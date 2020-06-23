@@ -6,13 +6,12 @@
 
 #import <IDEFoundation/NSObject-Protocol.h>
 
-@class NSDictionary, NSError, NSNumber, NSString, XCActivityRecord, XCTProcessLaunchParameters, XCTSourceLocation, XCTTestIdentifier;
+@class NSDictionary, NSError, NSNumber, NSString, XCActivityRecord, XCTIssue, XCTProcessLaunchParameters, XCTSourceLocation, XCTTestIdentifier;
 @protocol NSSecureCoding><NSCopying><NSObject, XCTTestRunnerSession;
 
 @protocol XCTTestRunnerSessionDelegate <NSObject>
 - (void)testRunnerSession:(id <XCTTestRunnerSession>)arg1 didReportSelfDiagnosisIssue:(NSString *)arg2 description:(NSString *)arg3;
 - (void)testRunnerSession:(id <XCTTestRunnerSession>)arg1 didReceiveDebugLogMessage:(NSString *)arg2;
-- (void)testRunnerSession:(id <XCTTestRunnerSession>)arg1 didReceiveLogMessage:(NSString *)arg2;
 - (NSNumber *)testRunnerSession:(id <XCTTestRunnerSession>)arg1 progressForLaunchWithToken:(id <NSSecureCoding><NSCopying><NSObject>)arg2 error:(id *)arg3;
 - (BOOL)testRunnerSession:(id <XCTTestRunnerSession>)arg1 terminateProcessWithToken:(id <NSSecureCoding><NSCopying><NSObject>)arg2 error:(id *)arg3;
 - (void)testRunnerSession:(id <XCTTestRunnerSession>)arg1 launchProcessWithParameters:(XCTProcessLaunchParameters *)arg2 completion:(void (^)(id <NSSecureCoding><NSCopying><NSObject>, NSError *))arg3;
@@ -21,11 +20,12 @@
 - (void)testRunnerSession:(id <XCTTestRunnerSession>)arg1 testCase:(NSString *)arg2 method:(NSString *)arg3 didFinishActivity:(XCActivityRecord *)arg4;
 - (void)testRunnerSession:(id <XCTTestRunnerSession>)arg1 testCase:(NSString *)arg2 method:(NSString *)arg3 willStartActivity:(XCActivityRecord *)arg4;
 - (void)testRunnerSession:(id <XCTTestRunnerSession>)arg1 testCaseDidFinishForTestClass:(NSString *)arg2 method:(NSString *)arg3 status:(NSString *)arg4 duration:(double)arg5;
-- (void)testRunnerSession:(id <XCTTestRunnerSession>)arg1 testCaseDidFailForTestClass:(NSString *)arg2 method:(NSString *)arg3 failureMessage:(NSString *)arg4 sourceLocation:(XCTSourceLocation *)arg5;
+- (void)testRunnerSession:(id <XCTTestRunnerSession>)arg1 testCaseWithIdentifier:(XCTTestIdentifier *)arg2 didRecordIssue:(XCTIssue *)arg3;
 - (void)testRunnerSession:(id <XCTTestRunnerSession>)arg1 testCaseWasSkippedForTestClass:(NSString *)arg2 method:(NSString *)arg3 message:(NSString *)arg4 sourceLocation:(XCTSourceLocation *)arg5;
 - (void)testRunnerSession:(id <XCTTestRunnerSession>)arg1 testCaseDidStartForTestClass:(NSString *)arg2 method:(NSString *)arg3;
 - (void)testRunnerSession:(id <XCTTestRunnerSession>)arg1 testSuite:(NSString *)arg2 didFinishAt:(NSString *)arg3 runCount:(unsigned long long)arg4 skipCount:(unsigned long long)arg5 failureCount:(unsigned long long)arg6 unexpectedFailureCount:(unsigned long long)arg7 testDuration:(double)arg8 totalDuration:(double)arg9;
 - (void)testRunnerSession:(id <XCTTestRunnerSession>)arg1 testCase:(NSString *)arg2 method:(NSString *)arg3 didStallOnMainThreadAtSourceLocation:(XCTSourceLocation *)arg4;
+- (void)testRunnerSession:(id <XCTTestRunnerSession>)arg1 testSuiteWithIdentifier:(XCTTestIdentifier *)arg2 didRecordIssue:(XCTIssue *)arg3;
 - (void)testRunnerSession:(id <XCTTestRunnerSession>)arg1 testSuite:(NSString *)arg2 didStartAt:(NSString *)arg3;
 - (void)testRunnerSession:(id <XCTTestRunnerSession>)arg1 initializationForUITestingDidFailWithError:(NSError *)arg2;
 - (void)testRunnerSessionDidStartInitializingForUITesting:(id <XCTTestRunnerSession>)arg1;

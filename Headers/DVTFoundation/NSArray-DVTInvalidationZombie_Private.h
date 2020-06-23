@@ -33,6 +33,9 @@
 @property(readonly) NSNumber *numberValue;
 @property(readonly) NSData *dataValue;
 @property(readonly) NSString *stringValue;
+- (id)dvt_maximumObject:(CDUnknownBlockType)arg1;
+- (id)dvt_minimumObject:(CDUnknownBlockType)arg1;
+- (struct _NSRange)dvt_fullRange;
 - (id)dvt_objectBeforeFirstOccurenceOfObject:(id)arg1;
 - (id)dvt_objectAtWrappedIndex:(long long)arg1;
 - (id)dvt_objectAtIndexIfInBounds:(long long)arg1;
@@ -57,6 +60,7 @@
 - (BOOL)dvt_areAnyObjectsPassingTest:(CDUnknownBlockType)arg1;
 - (id)dvt_onlyObjectPassingTest:(CDUnknownBlockType)arg1;
 - (BOOL)dvt_areAllObjectsPassingTest:(CDUnknownBlockType)arg1;
+- (id)dvt_uniqueObjects;
 - (id)dvt_objectsPassingTest:(CDUnknownBlockType)arg1;
 - (id)dvt_objectsOfClass:(Class)arg1;
 - (id)dvt_objectByFoldingWithBlock:(CDUnknownBlockType)arg1;

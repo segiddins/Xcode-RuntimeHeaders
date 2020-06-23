@@ -55,6 +55,7 @@
     DVTStateToken *_stateToken;
     BOOL _shouldPerformWindowClose;
     BOOL _didRestoreFromStateSaving;
+    BOOL _showToolbar;
     BOOL _tabBarWasVisibleWithSingleTab;
     BOOL _isSettingUpWindowControllerClone;
     NSString *_stateSavingIdentifier;
@@ -84,6 +85,7 @@
 @property(retain) IDEWorkspaceDFRController *systemModalWorkspaceTouchBarController; // @synthesize systemModalWorkspaceTouchBarController=_systemModalWorkspaceTouchBarController;
 @property(retain) IDEWorkspaceDFRController *standardWorkspaceTouchBarController; // @synthesize standardWorkspaceTouchBarController=_standardWorkspaceTouchBarController;
 @property(retain) DVTWeakInterposer *firstResponderInterposer; // @synthesize firstResponderInterposer=_firstResponderInterposer;
+@property(nonatomic) BOOL showToolbar; // @synthesize showToolbar=_showToolbar;
 @property BOOL didRestoreFromStateSaving; // @synthesize didRestoreFromStateSaving=_didRestoreFromStateSaving;
 @property(retain) DVTStackBacktrace *windowDidLoadBacktrace; // @synthesize windowDidLoadBacktrace=_windowDidLoadBacktrace;
 @property BOOL shouldPerformWindowClose; // @synthesize shouldPerformWindowClose=_shouldPerformWindowClose;
@@ -157,15 +159,19 @@
 - (void)_convertToSimpleEditorWindowForDocumentURL:(id)arg1;
 - (id)_tabStateContextForTabController:(id)arg1;
 - (void)_changeSizeForSimpleEditorWindowLayoutWithEditorDocumentURLOrNil:(id)arg1 forSingleFile:(BOOL)arg2 workspaceTabController:(id)arg3;
-@property(nonatomic) BOOL showToolbar;
 - (void)toggleToolbarShown:(id)arg1;
 - (BOOL)wantsToolbarVisibleInFullScreen;
 @property(readonly) BOOL shouldEnableToolbarItems;
+- (void)_updateToolbarConfigurationWithIdentifier:(id)arg1;
+- (void)_updateToolbarConfiguration;
+- (void)_updateToolbarVisibilityForFullScreen;
+- (void)_updateToolbarVisibilityForWorkspace:(id)arg1;
 - (id)document;
 - (void)windowDidEndSheet:(id)arg1;
 - (void)windowWillBeginSheet:(id)arg1;
 - (void)windowDidResignMain:(id)arg1;
 - (void)windowDidBecomeMain:(id)arg1;
+- (void)_startObservingTabBarVisibility;
 - (void)_observeInvalidationOfFirstResponder:(id)arg1 firstResponderAssignedBacktrace:(id)arg2;
 - (void)windowDidLoad;
 - (void)_purgeOldIdentifiersFromUserDefaults;

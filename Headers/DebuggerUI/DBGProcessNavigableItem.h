@@ -7,7 +7,7 @@
 #import <IDEKit/IDEKeyDrivenNavigableItem.h>
 
 @class DBGMemoryDataProcessWrapper, DBGViewDebuggerAdditionUIController, DVTObservingToken, NSArray, NSString, XRMemoryGraphDebuggerAdditionUIController;
-@protocol IDEDebuggingAdditionUIController;
+@protocol DBGDebugNavigatorContentDataSource, IDEDebuggingAdditionUIController;
 
 @interface DBGProcessNavigableItem : IDEKeyDrivenNavigableItem
 {
@@ -27,6 +27,7 @@
     int _navigatorContentMode;
     DBGViewDebuggerAdditionUIController *_viewDebuggingUIController;
     NSString *_filterString;
+    id <DBGDebugNavigatorContentDataSource> _activeContentDataSource;
 }
 
 + (id)keyPathsForValuesAffectingLeaf;
@@ -37,6 +38,7 @@
 + (id)keyPathsForValuesAffectingProcess;
 + (id)_mainQueueName;
 - (void).cxx_destruct;
+@property __weak id <DBGDebugNavigatorContentDataSource> activeContentDataSource; // @synthesize activeContentDataSource=_activeContentDataSource;
 @property(retain, nonatomic) DBGMemoryDataProcessWrapper *memoryDataGroup; // @synthesize memoryDataGroup=_memoryDataGroup;
 @property(copy, nonatomic) NSString *filterString; // @synthesize filterString=_filterString;
 @property(nonatomic) __weak id <IDEDebuggingAdditionUIController> memoryDebuggingUIController; // @synthesize memoryDebuggingUIController=_memoryDebuggingUIController;
@@ -50,8 +52,11 @@
 - (void)primitiveInvalidate;
 - (void)invalidateChildItems;
 - (void)recursivelyInvalidateChildItems;
+- (void)_navigatorContentModeDidChange;
+- (void)setDebugNavigatorContentDataSourceModeWithDataSource:(id)arg1;
 - (id)childItemsToSearchForFindingDescendant:(id)arg1;
 - (void)_addGaugeDocumentLocationsIfNecessary:(id)arg1;
+- (id)_childRepresentedObjectsForDebugNavigatorContentDataSourceMode;
 - (id)_childRepresentedObjectsForDebugNavigatorViewMode;
 - (id)childRepresentedObjects;
 - (void)findInterestingThreads:(id *)arg1 filteredInterestingThreads:(id *)arg2 fromThreads:(id)arg3;

@@ -18,6 +18,7 @@
     NSArray *_outputPaths;
     NSArray *_outputFileListPaths;
     NSString *_dependencyFile;
+    BOOL _alwaysOutOfDate;
 }
 
 + (id)archivableAttributes;
@@ -28,9 +29,11 @@
 + (id)identifier;
 - (void).cxx_destruct;
 - (Class)dependencyGraphSnapshotClass;
+- (BOOL)shouldArchiveAlwaysOutOfDate;
 - (id)readFromPListUnarchiver:(id)arg1;
 - (BOOL)shouldArchiveShowEnvVarsInLog;
 - (void)findFeaturesInUseAndAddToSet:(id)arg1 usingPathPrefix:(id)arg2;
+@property BOOL alwaysOutOfDate;
 @property BOOL showEnvVarsInLog;
 - (BOOL)acceptsReference:(id)arg1 checkFileType:(BOOL)arg2;
 @property(retain) NSString *dependencyFile;

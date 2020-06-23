@@ -31,12 +31,12 @@
 - (id)deviceBarAppearanceGroupTitle;
 - (id)deviceSubtypeForIdentifier:(id)arg1;
 - (id)symbolicConstantValueForFirstAttribute:(unsigned long long)arg1 andSecondAttribute:(unsigned long long)arg2;
+- (BOOL)supportsLayoutGuideStandardSpacingConstraints;
 - (BOOL)supportsVerticalBaselineStandardSpacingConstraints;
 - (BOOL)supportsSafeAreaLayoutGuides;
 - (double)effectiveScaleFactorForPlatformToolDescriptionScaleFactor:(double)arg1;
 - (id)systemGuideSetsByIdentifier;
 - (id)guideSetForIdentifier:(id)arg1;
-- (id)designablesAgentName;
 - (void)populateVariantForResolvingMediaResources:(id)arg1 forDocument:(id)arg2;
 - (id)variantForResolvingMediaResourcesForDocument:(id)arg1;
 - (id)foldingStrategy;
@@ -54,7 +54,6 @@
 - (id)extensionsForExtensionPoint:(id)arg1;
 - (BOOL)matchesExtension:(id)arg1;
 - (BOOL)wantsDefaultMatchesForExtension:(id)arg1;
-- (Class)screenMetricsClass;
 - (Class)storyboardVerifierClass;
 - (Class)xibVerifierClass;
 - (Class)storyboardCompilerClass;
@@ -72,7 +71,6 @@
 - (id)designatedIdiomForConfigurations;
 - (id)pluralUserLabelForConfigurations;
 - (id)singularUserLabelForConfigurations;
-- (id)perConfigurationInspectorHeaderMenuItemTitle;
 - (id)backwardsDeploymentConfiguration;
 - (BOOL)isInspectorCategoryApplicable:(id)arg1;
 - (BOOL)isApplicableForObjectLibraryAssetProviderExtension:(id)arg1;
@@ -92,10 +90,10 @@
 - (id)deviceDetailForConfiguration:(id)arg1;
 - (id)deviceMaskForConfiguration:(id)arg1;
 - (id)deviceMaskForSubtype:(id)arg1;
-- (id)deviceTypeDescriptionForSubtype:(id)arg1;
+- (id)deviceTypeDescriptionForDeviceConfiguration:(id)arg1;
 - (id)makeDeviceDetailForConfiguration:(id)arg1;
 - (id)makeDeviceMaskForSubtype:(id)arg1;
-- (id)normalizedDeviceMaskPathForSubtype:(id)arg1;
+- (id)normalizedDeviceMaskPathForSubtype:(id)arg1 maskType:(long long)arg2;
 - (BOOL)shouldIncludeDeviceSubtype:(id)arg1;
 - (void)populateSubtypes:(id)arg1;
 - (id)subtypes;

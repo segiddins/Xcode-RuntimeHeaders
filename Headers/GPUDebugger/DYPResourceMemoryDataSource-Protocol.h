@@ -4,11 +4,11 @@
 //  Copyright (C) 1997-2019 Steve Nygard.
 //
 
-#import <GPUDebugger/NSObject-Protocol.h>
+#import <GPUDebugger/DYPAnalyzerDataSource-Protocol.h>
 
 @class NSArray;
 
-@protocol DYPResourceMemoryDataSource <NSObject>
+@protocol DYPResourceMemoryDataSource <DYPAnalyzerDataSource>
 - (BOOL)doesCaptureHaveFeature:(unsigned long long)arg1;
 @property(nonatomic, readonly) NSArray *commandBuffers;
 @property(nonatomic, readonly) NSArray *rootMemoryResources;

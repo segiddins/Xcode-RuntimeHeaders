@@ -20,7 +20,6 @@
 - (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *selectedItems; // @synthesize selectedItems=_selectedItems;
 @property(readonly, nonatomic) NSArray *navigableItemArchivableRepresentationsForTemporaryCompatibility;
-- (id)navigableItemArchivableRepresentations;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithNavigableItemArchivableRepresentations:(id)arg1;

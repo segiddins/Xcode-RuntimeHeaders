@@ -18,6 +18,7 @@
     NSMutableSet *_slotComponentClasses;
     NSMutableSet *_slotComponents;
     NSMutableDictionary *_slotsComponentsByClassThenIdentifier;
+    NSMutableDictionary *_dynamicSlotComponentsByClassThenIdentifier;
     NSMutableDictionary *_compilerResultAmendersBySlot;
     NSMutableDictionary *_slotsComponentsByClass;
     NSMutableDictionary *_slotsComponentsBySlotClassThenComponentClass;
@@ -247,6 +248,7 @@
 - (void)addExtraSlotComponents:(id)arg1 forSuggestionSetsBelowIdiom:(id)arg2 forSlotClasses:(id)arg3;
 - (void)addSlotComponentsToAllApplicableSlotClasses:(id)arg1;
 - (id)slotComponentClasses;
+- (void)addDynamicSlotComponent:(id)arg1;
 - (void)addSlotComponents:(id)arg1 toSlotClasses:(id)arg2;
 - (void)addSlotComponentClasses:(id)arg1;
 - (void)assignSlotComponentIDs;

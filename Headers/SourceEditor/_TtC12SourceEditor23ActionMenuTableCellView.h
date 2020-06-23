@@ -16,6 +16,8 @@
     MISSING_TYPE *icon;
     MISSING_TYPE *tintedIcon;
     MISSING_TYPE *isEnabled;
+    MISSING_TYPE *useInsetLayout;
+    MISSING_TYPE *defaultInset;
     MISSING_TYPE *backgroundVisualEffectView;
     MISSING_TYPE *isSelected;
     MISSING_TYPE *requiresMoreTime;

@@ -6,27 +6,26 @@
 
 #import <swiftCore/_TtCs12_SwiftObject.h>
 
-#import <IDEKit/IDEEditorHistoryControllerItem-Protocol.h>
-
 @class DVTDocumentLocation, MISSING_TYPE, NSDictionary, NSString, NSURL;
 
-@interface _TtCC6IDEKit13IDEEditorCore11HistoryItem : _TtCs12_SwiftObject <IDEEditorHistoryControllerItem>
+@interface _TtCC6IDEKit13IDEEditorCore11HistoryItem : _TtCs12_SwiftObject
 {
     MISSING_TYPE *location;
     MISSING_TYPE *documentExtensionIdentifier;
     MISSING_TYPE *historyMenuItemTitle;
+    MISSING_TYPE *documentDisplayName;
     MISSING_TYPE *documentURL;
     MISSING_TYPE *stateSavingStateDictionary;
     MISSING_TYPE *domainIdentifier;
     MISSING_TYPE *documentLocation;
 }
 
-- (void)setCachedImage:(id)arg1 isDark:(BOOL)arg2;
 - (BOOL)isEqualToHistoryControllerItem:(id)arg1;
 @property(nonatomic, retain) DVTDocumentLocation *documentLocation; // @synthesize documentLocation;
 @property(nonatomic, copy) NSString *domainIdentifier;
 @property(nonatomic, copy) NSDictionary *stateSavingStateDictionary;
 @property(nonatomic, copy) NSURL *documentURL;
+@property(nonatomic, copy) NSString *documentDisplayName;
 @property(nonatomic, copy) NSString *historyMenuItemTitle;
 @property(nonatomic, copy) NSString *documentExtensionIdentifier;
 

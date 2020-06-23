@@ -6,20 +6,20 @@
 
 #import <DVTViewControllerKit/DVTViewController.h>
 
-@class MISSING_TYPE, NSScrollView, NSView, _TtC18IDESourceControlUI38PullRequestAddCollaboratorsSearchField, _TtC18IDESourceControlUI38PullRequestParticipantsTableController;
+@class MISSING_TYPE, NSBox, NSScrollView, NSView, _TtC18IDESourceControlUI38PullRequestAddCollaboratorsSearchField, _TtC18IDESourceControlUI38PullRequestParticipantsTableController;
 
 @interface _TtC18IDESourceControlUI37PullRequestParticipantsPopoverContent : DVTViewController
 {
     MISSING_TYPE *topScrollView;
     MISSING_TYPE *searchHostView;
     MISSING_TYPE *bottomScrollView;
+    MISSING_TYPE *horizontalDividier;
     MISSING_TYPE *searchField;
     MISSING_TYPE *participantsController;
     MISSING_TYPE *candidatesController;
     MISSING_TYPE *userSearchOperation;
-    MISSING_TYPE *moveDownCallback;
     MISSING_TYPE *hostPopover;
-    MISSING_TYPE *usersSearchOperation;
+    MISSING_TYPE *defaultPlaceholder;
     MISSING_TYPE *searchTimer;
     MISSING_TYPE *owner;
     MISSING_TYPE *pullRequest;
@@ -30,6 +30,7 @@
 - (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+@property(nonatomic) struct CGSize preferredContentSize;
 - (void)viewWillLayout;
 - (BOOL)control:(id)arg1 textView:(id)arg2 doCommandBySelector:(SEL)arg3;
 - (void)controlTextDidChange:(id)arg1;
@@ -39,6 +40,7 @@
 @property(nonatomic, retain) _TtC18IDESourceControlUI38PullRequestParticipantsTableController *candidatesController; // @synthesize candidatesController;
 @property(nonatomic, retain) _TtC18IDESourceControlUI38PullRequestParticipantsTableController *participantsController; // @synthesize participantsController;
 @property(nonatomic) __weak _TtC18IDESourceControlUI38PullRequestAddCollaboratorsSearchField *searchField; // @synthesize searchField;
+@property(nonatomic) __weak NSBox *horizontalDividier; // @synthesize horizontalDividier;
 @property(nonatomic) __weak NSScrollView *bottomScrollView; // @synthesize bottomScrollView;
 @property(nonatomic) __weak NSView *searchHostView; // @synthesize searchHostView;
 @property(nonatomic) __weak NSScrollView *topScrollView; // @synthesize topScrollView;

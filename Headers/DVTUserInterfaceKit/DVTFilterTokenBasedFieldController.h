@@ -22,6 +22,7 @@
     NSMutableArray *_completionSections;
     NSMutableArray *_recentFilterItems;
     _DVTFilterTokenFieldValue *_itemToBeAddedToRecents;
+    BOOL _accessingFieldObjectValueDuringTokenAddition;
     BOOL _recentFiltersEnabled;
     DVTFilterTokenField *_tokenField;
     NSArray *_additionalIconMenuItems;
@@ -55,6 +56,7 @@
 - (void)clearField;
 - (void)addFilterTokens:(id)arg1;
 - (void)addFilterToken:(id)arg1;
+- (id)_currentFieldItems;
 - (id)_mergeFirstTwoStringsFromArrayIfEligible:(id)arg1;
 - (void)_tokenFieldMenuItemDidClick:(id)arg1;
 - (void)tokenField:(id)arg1 globalOperatorDidChange:(int)arg2;
@@ -62,7 +64,7 @@
 - (unsigned long long)tokenField:(id)arg1 styleForRepresentedObject:(id)arg2;
 - (id)tokenField:(id)arg1 shouldAddObjects:(id)arg2 atIndex:(unsigned long long)arg3;
 - (id)tokenField:(id)arg1 setUpTokenAttachmentCell:(id)arg2 forRepresentedObject:(id)arg3;
-- (id)_attachmentCellForToken:(id)arg1;
+- (id)attachmentCellForToken:(id)arg1;
 - (id)tokenField:(id)arg1 editingStringForRepresentedObject:(id)arg2;
 - (id)tokenField:(id)arg1 displayStringForRepresentedObject:(id)arg2;
 - (BOOL)tokenField:(id)arg1 hasMenuForRepresentedObject:(id)arg2;

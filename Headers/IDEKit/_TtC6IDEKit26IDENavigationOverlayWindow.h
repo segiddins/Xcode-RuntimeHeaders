@@ -12,6 +12,7 @@ __attribute__((visibility("hidden")))
 @interface _TtC6IDEKit26IDENavigationOverlayWindow : NSWindow
 {
     MISSING_TYPE *internallyAdjustingFrame;
+    MISSING_TYPE *whitelistedMenuActions;
     MISSING_TYPE *navigationAccessibilityElement;
 }
 
@@ -28,7 +29,8 @@ __attribute__((visibility("hidden")))
 - (BOOL)validateUserInterfaceItem:(id)arg1;
 - (void)handlePressGesture:(id)arg1;
 - (void)mouseMoved:(id)arg1;
-- (void)keyDown:(id)arg1;
+- (void)flagsChanged:(id)arg1;
+- (BOOL)performKeyEquivalent:(id)arg1;
 - (void)sendEvent:(id)arg1;
 - (void)setFrame:(struct CGRect)arg1 display:(BOOL)arg2;
 @property(nonatomic, retain) NSWindow *parentWindow;

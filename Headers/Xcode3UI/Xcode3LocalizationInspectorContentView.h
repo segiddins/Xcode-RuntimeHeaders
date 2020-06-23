@@ -10,6 +10,7 @@
 
 @interface Xcode3LocalizationInspectorContentView : DVTLayoutView_ML
 {
+    double _viewHeightForLayout;
     NSView *makeLocalizedView;
     Xcode3LocalizationsInspector *_inspector;
     DVTTableView *_localizationsTableView;
@@ -19,7 +20,8 @@
 @property(retain) DVTTableView *localizationsTableView; // @synthesize localizationsTableView=_localizationsTableView;
 @property(retain) Xcode3LocalizationsInspector *inspector; // @synthesize inspector=_inspector;
 @property NSView *makeLocalizedView; // @synthesize makeLocalizedView;
-- (void)layoutBottomUp;
+- (void)dvt_positionSubviewsAndSizeSelfAfterSubviewLayout;
+- (void)dvt_configureSubviewsBeforeSubviewLayout;
 - (void)awakeFromNib;
 
 @end

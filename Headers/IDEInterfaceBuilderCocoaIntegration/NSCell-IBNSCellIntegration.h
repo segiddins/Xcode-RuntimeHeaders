@@ -16,9 +16,11 @@
 + (id)keyPathsForValuesAffectingIbInspectedContinuous;
 + (id)keyPathsForValuesAffectingIbInspectedBaseWritingDirection;
 + (id)keyPathsForValuesAffectingIbInspectedUserInterfaceLayoutDirection;
++ (id)keyPathsForValuesAffectingIbInspectedAlignment;
 + (id)keyPathsForValuesAffectingIbInspectedTruncatesLastVisibleLine;
 + (id)keyPathsForValuesAffectingIbInspectedRefusesFirstResponder;
 + (id)keyPathsForValuesAffectingIbInspectedEnabled;
++ (id)keyPathsForValuesAffectingIbHasInspectedControl;
 + (id)keyPathsForValuesAffectingIbInspectedControl;
 + (id)keyPathsForValuesAffectingIbInspectedCell;
 + (id)keyPathsForValuesAffectingIbInspectedBordered;
@@ -38,6 +40,8 @@
 @property BOOL ibInspectedContinuous;
 @property long long ibInspectedBaseWritingDirection;
 @property long long ibInspectedUserInterfaceLayoutDirection;
+- (void)setIbInspectedAlignment:(long long)arg1;
+- (long long)ibInspectedAlignment;
 @property BOOL ibInspectedTruncatesLastVisibleLine;
 @property BOOL ibInspectedRefusesFirstResponder;
 - (BOOL)ibInspectedOverridesSetTag;
@@ -46,6 +50,7 @@
 - (void)ibPopulateRequiredDocumentCapabilities:(id)arg1 document:(id)arg2;
 - (id)ibEquivalentSourceForToOneOutlet:(id)arg1;
 - (Class)ibEditorClass;
+- (BOOL)ibHasInspectedControl;
 - (id)ibInspectedControl;
 - (id)ibInspectedCell;
 @property BOOL ibInspectedBordered;
@@ -58,6 +63,8 @@
 - (Class)ibPreferredControlClass;
 - (id)ibPreferredSizeForSize:(struct CGSize)arg1 suggestedWidth:(char *)arg2 suggestedHeight:(char *)arg3 scaleAxesIndependently:(char *)arg4;
 - (BOOL)ibWantsBoundsIndicatorDuringTracking;
+- (void)setIbShadowedControlSize:(unsigned long long)arg1;
+- (BOOL)ibSupportsLargeControlSize;
 @property unsigned long long ibInspectedControlSize;
 - (id)ibExposedElusiveDescendantsKeyPaths;
 - (id)ibDefaultDataValueForTableView:(id)arg1;

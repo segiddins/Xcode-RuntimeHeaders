@@ -16,6 +16,7 @@
 }
 
 + (Class)requiredChildrenClass;
++ (Class)slotClass;
 + (id)allocWithZone:(struct _NSZone *)arg1;
 + (id)createDefaultInstancesForUnitTesting;
 - (void).cxx_destruct;

@@ -6,7 +6,13 @@
 
 #import <IDETestPlanEditor/_TtC17IDETestPlanEditor27TestPlanTestsViewController.h>
 
-@interface _TtC17IDETestPlanEditor27TestPlanTestsViewController (IDETestPlanEditor)
+#import <IDETestPlanEditor/IDETestTargetsOutlineViewControllerDataSource-Protocol.h>
+#import <IDETestPlanEditor/IDETestTargetsOutlineViewControllerDelegate-Protocol.h>
+
+@interface _TtC17IDETestPlanEditor27TestPlanTestsViewController (IDETestPlanEditor) <IDETestTargetsOutlineViewControllerDataSource, IDETestTargetsOutlineViewControllerDelegate>
 - (void)replacementView:(id)arg1 willInstallViewController:(id)arg2;
+- (id)testableReferencesForTestTargetsViewController:(id)arg1;
+- (unsigned long long)permittedOptionsForTestTargetsViewController:(id)arg1;
+- (void)testTargetsViewController:(id)arg1 changedTestableReferences:(id)arg2;
 @end
 

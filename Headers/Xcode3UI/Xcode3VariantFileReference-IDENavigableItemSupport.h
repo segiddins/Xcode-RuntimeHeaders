@@ -9,6 +9,7 @@
 @interface Xcode3VariantFileReference (IDENavigableItemSupport)
 + (id)keyPathsForValuesAffectingNavigableItem_name;
 - (id)navigableItem_name;
+- (id)explorableName;
 - (id)ideInspectedName;
 - (BOOL)ideInspectedIsNameEditable;
 @end

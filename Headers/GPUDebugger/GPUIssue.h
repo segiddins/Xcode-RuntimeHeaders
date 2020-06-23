@@ -6,16 +6,16 @@
 
 #import <IDEFoundation/IDEIssue.h>
 
-@class DYAnalyzerFinding;
+@protocol GPUAnalyzerFinding;
 
 __attribute__((visibility("hidden")))
 @interface GPUIssue : IDEIssue
 {
-    DYAnalyzerFinding *_finding;
+    id <GPUAnalyzerFinding> _finding;
 }
 
 - (void).cxx_destruct;
-@property(nonatomic) __weak DYAnalyzerFinding *finding; // @synthesize finding=_finding;
+@property(nonatomic) __weak id <GPUAnalyzerFinding> finding; // @synthesize finding=_finding;
 - (id)synopsis;
 - (id)category;
 

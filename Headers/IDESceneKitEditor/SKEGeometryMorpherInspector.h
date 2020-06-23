@@ -6,15 +6,18 @@
 
 #import <IDESceneKitEditor/SKEStaticTableViewInspector.h>
 
+#import <IDESceneKitEditor/NSSearchFieldDelegate-Protocol.h>
 #import <IDESceneKitEditor/NSTableViewDataSource-Protocol.h>
 #import <IDESceneKitEditor/NSTableViewDelegate-Protocol.h>
 
-@class DVTGradientImageButton, NSString;
+@class DVTGradientImageButton, DVTSearchField, NSString;
 
-@interface SKEGeometryMorpherInspector : SKEStaticTableViewInspector <NSTableViewDelegate, NSTableViewDataSource>
+@interface SKEGeometryMorpherInspector : SKEStaticTableViewInspector <NSSearchFieldDelegate, NSTableViewDelegate, NSTableViewDataSource>
 {
     DVTGradientImageButton *_deleteButton;
     DVTGradientImageButton *_actionsButton;
+    DVTSearchField *_searchField;
+    NSString *_filterString;
 }
 
 + (BOOL)wantsEditionBar;
@@ -29,6 +32,8 @@
 - (void)deleteAction:(id)arg1;
 - (void)quickLookAction:(id)arg1;
 - (void)configureEditionBar;
+- (void)setFilterString:(id)arg1;
+- (id)filterString;
 - (void)initViewData;
 - (void)loadView;
 - (void)primitiveInvalidate;

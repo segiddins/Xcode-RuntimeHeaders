@@ -12,7 +12,7 @@
 {
 }
 
-- (id)copyWithZone:(struct _NSZone *)arg1;
++ (id)defaultSimulatedMetricsForDocument:(id)arg1;
 
 @end
 

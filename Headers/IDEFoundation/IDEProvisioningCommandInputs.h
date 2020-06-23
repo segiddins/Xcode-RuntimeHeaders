@@ -6,13 +6,13 @@
 
 #import <objc/NSObject.h>
 
-@class DVTFilePath, IDEProvisionableEntitlements, NSArray, NSString;
+@class DVTFilePath, DVTSigningCertificateSerialNumber, IDEProvisionableEntitlements, NSArray, NSString;
 
 @interface IDEProvisioningCommandInputs : NSObject
 {
     NSString *_identityHash;
     NSString *_identityName;
-    NSString *_identityCertificateSerialNumber;
+    DVTSigningCertificateSerialNumber *_identityCertificateSerialNumber;
     NSString *_profileName;
     NSString *_profileUUID;
     DVTFilePath *_profilePath;
@@ -27,6 +27,7 @@
 + (id)_identityCertificateSerialNumberFromSnapshot:(id)arg1;
 + (id)_identityNameFromSnapshot:(id)arg1;
 + (id)_identityHashFromSnapshot:(id)arg1;
++ (id)inputsFromEvaluation:(id)arg1 teamAccountPairManager:(id)arg2;
 + (id)inputsFromEvaluation:(id)arg1;
 - (void).cxx_destruct;
 @property(readonly) NSArray *warnings; // @synthesize warnings=_warnings;
@@ -38,7 +39,7 @@
 @property(readonly) DVTFilePath *profilePath; // @synthesize profilePath=_profilePath;
 @property(readonly) NSString *profileUUID; // @synthesize profileUUID=_profileUUID;
 @property(readonly) NSString *profileName; // @synthesize profileName=_profileName;
-@property(readonly) NSString *identityCertificateSerialNumber; // @synthesize identityCertificateSerialNumber=_identityCertificateSerialNumber;
+@property(readonly) DVTSigningCertificateSerialNumber *identityCertificateSerialNumber; // @synthesize identityCertificateSerialNumber=_identityCertificateSerialNumber;
 @property(readonly) NSString *identityName; // @synthesize identityName=_identityName;
 @property(readonly) NSString *identityHash; // @synthesize identityHash=_identityHash;
 - (unsigned long long)hash;

@@ -38,7 +38,7 @@
 - (void)_adjustAvailableDevicesForChangeKind:(unsigned long long)arg1 addedObjects:(id)arg2 removedObjects:(id)arg3;
 - (void)_stopObservingDevice:(id)arg1;
 - (void)_startObservingDevice:(id)arg1;
-- (id)_discoverDeviceLocators;
+@property(readonly, copy) NSSet *deviceLocators;
 - (id)deviceAtDeviceLocation:(id)arg1;
 - (id)_deviceLocatorForDeviceLocationScheme:(id)arg1;
 - (id)devicesMatchingPredicate:(id)arg1;

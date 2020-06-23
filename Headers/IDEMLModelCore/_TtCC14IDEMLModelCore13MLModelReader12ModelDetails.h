@@ -10,14 +10,14 @@
 
 @interface _TtCC14IDEMLModelCore13MLModelReader12ModelDetails : _TtCs12_SwiftObject
 {
+    MISSING_TYPE *rawMetadata;
     MISSING_TYPE *targetMLKitLanguage;
     MISSING_TYPE *metadataOutputVersion;
-    MISSING_TYPE *descriptionText;
     MISSING_TYPE *longDescription;
     MISSING_TYPE *shortDescription;
     MISSING_TYPE *modelClassName;
     MISSING_TYPE *modelType;
-    MISSING_TYPE *compatibilityVersion;
+    MISSING_TYPE *specificationVersion;
     MISSING_TYPE *authorName;
     MISSING_TYPE *licenseSummary;
     MISSING_TYPE *inputSchema;

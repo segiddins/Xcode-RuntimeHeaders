@@ -19,7 +19,7 @@
 - (void).cxx_destruct;
 @property __weak IDETestReportViewController *reportViewController; // @synthesize reportViewController=_reportViewController;
 @property(retain) id <IDETestReport_TestRun> testRun; // @synthesize testRun=_testRun;
-@property __weak NSButton *button; // @synthesize button=_button;
+@property(retain) NSButton *button; // @synthesize button=_button;
 - (void)showPerfPopover:(id)arg1;
 
 @end

@@ -18,6 +18,7 @@
     BOOL _interiorRuleMayHaveTemporaryLexerFlags;
     BOOL _saveEndToken;
     BOOL _blockScope;
+    BOOL _shouldTraverse;
     BOOL _inheritsNodeType;
     BOOL _ignoreToken;
     BOOL _itemIsVolatile;
@@ -44,6 +45,7 @@
 @property(nonatomic) BOOL itemIsVolatile; // @synthesize itemIsVolatile=_itemIsVolatile;
 @property(nonatomic) BOOL ignoreToken; // @synthesize ignoreToken=_ignoreToken;
 @property(nonatomic) BOOL inheritsNodeType; // @synthesize inheritsNodeType=_inheritsNodeType;
+@property(nonatomic) BOOL shouldTraverse; // @synthesize shouldTraverse=_shouldTraverse;
 @property(nonatomic) BOOL blockScope; // @synthesize blockScope=_blockScope;
 @property(nonatomic) short itemSyntaxType; // @synthesize itemSyntaxType=_itemSyntaxType;
 @property(nonatomic) long long itemToken; // @synthesize itemToken=_itemToken;

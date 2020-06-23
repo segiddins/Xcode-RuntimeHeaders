@@ -19,6 +19,7 @@
 
 + (id)userRepresentationOfVersion:(id)arg1 build:(id)arg2;
 + (id)currentDarwinVersion;
++ (id)currentiOSSupportSystemVersion;
 + (id)currentSystemVersion;
 + (id)versionWithStringValue:(id)arg1;
 + (id)versionWithStringValue:(id)arg1 buildNumber:(id)arg2;

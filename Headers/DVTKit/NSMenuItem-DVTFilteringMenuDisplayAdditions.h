@@ -7,7 +7,7 @@
 #import <AppKit/NSMenuItem.h>
 
 @interface NSMenuItem (DVTFilteringMenuDisplayAdditions)
-- (void)clearMatchingPatternAttributes;
+- (void)resetAttributedTitle;
 - (void)applyMatchingPatternAttributesForRanges:(id)arg1;
 @end
 

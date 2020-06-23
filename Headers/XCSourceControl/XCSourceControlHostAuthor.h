@@ -24,6 +24,7 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)description;
 - (id)initWithFullName:(id)arg1 email:(id)arg2;

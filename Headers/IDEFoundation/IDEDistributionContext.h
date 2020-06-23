@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class DVTDeveloperAccount, DVTDeveloperAccountManager, DVTLogAspect, DVTMutableOrderedDictionary, DVTProvisioningProfileManager, DVTSigningCertificateManager, IDEAppStoreSubmissionConfiguration, IDEDistributionCoalescedThinningVariantAbstractClass, IDEDistributionLogging, IDEDistributionManifest, IDEDistributionMethod, IDEDistributionProcessingPipeline, IDEDistributionProvisioningEvaluation, IDEDistributionProvisioningManualSigningMap, IDEITunesConnect, IDEITunesConnectApplicationDescription, IDEITunesConnectConfigurationResponse, IDEProvisioningTeamManager, NSArray, NSDate, NSDictionary, NSMutableOrderedSet, NSMutableSet, NSNumber, NSSet, NSString, NSURL;
+@class DVTDeveloperAccount, DVTDeveloperAccountManager, DVTFilePath, DVTLogAspect, DVTMutableOrderedDictionary, DVTProvisioningProfileManager, DVTSigningCertificateManager, DistributionArchiveValidatedReformatterSelection, IDEAppStoreSubmissionConfiguration, IDEDistributionCoalescedThinningVariantAbstractClass, IDEDistributionLogging, IDEDistributionManifest, IDEDistributionMethod, IDEDistributionProcessingPipeline, IDEDistributionProvisioningEvaluation, IDEDistributionProvisioningManualSigningMap, IDEITunesConnect, IDEITunesConnectApplicationDescription, IDEITunesConnectConfigurationResponse, IDEProvisioningTeamManager, NSArray, NSDate, NSDictionary, NSMutableOrderedSet, NSMutableSet, NSNumber, NSSet, NSString, NSURL;
 @protocol IDEDistributable, IDEProvisioningBasicTeam;
 
 @interface IDEDistributionContext : NSObject
@@ -54,6 +54,8 @@
     NSDictionary *_cachedDeviceDisplayNameToCoalescedThinningVariantSet;
     NSNumber *_registerRequiredDevices;
     NSDictionary *_infoPlistOverrides;
+    DVTFilePath *_temporaryDirectory;
+    DistributionArchiveValidatedReformatterSelection *_validatedReformatterSelection;
     NSSet *_allowedInputs;
     NSSet *_allowedOutputs;
     NSArray *_stepClasses;
@@ -66,6 +68,8 @@
 @property(readonly, nonatomic) NSArray *stepClasses; // @synthesize stepClasses=_stepClasses;
 @property(readonly, nonatomic) NSSet *allowedOutputs; // @synthesize allowedOutputs=_allowedOutputs;
 @property(readonly, nonatomic) NSSet *allowedInputs; // @synthesize allowedInputs=_allowedInputs;
+@property(retain, nonatomic) DistributionArchiveValidatedReformatterSelection *validatedReformatterSelection; // @synthesize validatedReformatterSelection=_validatedReformatterSelection;
+@property(retain, nonatomic) DVTFilePath *temporaryDirectory; // @synthesize temporaryDirectory=_temporaryDirectory;
 @property(retain, nonatomic) NSDictionary *infoPlistOverrides; // @synthesize infoPlistOverrides=_infoPlistOverrides;
 @property(retain, nonatomic) NSNumber *registerRequiredDevices; // @synthesize registerRequiredDevices=_registerRequiredDevices;
 @property(retain, nonatomic) NSDictionary *cachedDeviceDisplayNameToCoalescedThinningVariantSet; // @synthesize cachedDeviceDisplayNameToCoalescedThinningVariantSet=_cachedDeviceDisplayNameToCoalescedThinningVariantSet;

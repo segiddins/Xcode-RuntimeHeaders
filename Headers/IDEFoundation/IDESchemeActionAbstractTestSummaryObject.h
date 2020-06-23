@@ -16,6 +16,7 @@
 - (void).cxx_destruct;
 @property(copy) NSString *name; // @synthesize name=_name;
 - (id)_testActivitySummariesForSummaryObject:(id)arg1;
+@property(readonly, copy) NSArray *allAttachments;
 @property(readonly) NSArray *testActivitySummaries;
 - (id)description;
 - (BOOL)updateWithDictionaryRepresentation:(id)arg1;

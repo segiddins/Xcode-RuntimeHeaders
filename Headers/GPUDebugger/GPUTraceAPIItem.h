@@ -9,7 +9,7 @@
 #import <GPUDebugger/DYPTraceAPIItem-Protocol.h>
 #import <GPUDebugger/IDEKeyDrivenNavigableItemRepresentedObject-Protocol.h>
 
-@class DVTDocumentLocation, DVTFileDataType, DVTSymbol, GPUTraceFramebufferItem, GPUTracePerformanceItem, GPUTracePipelineStatisticsItem, GPUTracePostVertexTransformItem, GPUTraceResourcesItem, IDEFileReference, NSArray, NSImage, NSNull, NSString, NSURL;
+@class DVTDocumentLocation, DVTFileDataType, GPUTraceFramebufferItem, GPUTracePerformanceItem, GPUTracePipelineStatisticsItem, GPUTracePostVertexTransformItem, GPUTraceResourcesItem, IDEFileReference, NSArray, NSImage, NSNull, NSString, NSURL, _TtC13DVTFoundation9DVTSymbol;
 @protocol DYPStateMirror, DYPTraceAPIItem;
 
 @interface GPUTraceAPIItem : GPUTraceOutlineItem <IDEKeyDrivenNavigableItemRepresentedObject, DYPTraceAPIItem>
@@ -59,8 +59,7 @@
 - (id)initWithController:(id)arg1 parent:(id)arg2 functionIndex:(int)arg3 displayIndex:(int)arg4;
 - (BOOL)isHiddenForGPUIssueFilter;
 - (id)maxSeverityImage;
-@property(readonly) int maxIssueSeverity;
-@property(readonly, nonatomic) NSString *navigableItem_subtitle;
+- (int)maxIssueSeverity;
 @property(readonly) NSString *navigableItem_name;
 - (id)itemForCategoryIdentifier:(id)arg1;
 @property(readonly, nonatomic) NSImage *navigableItem_image;
@@ -85,8 +84,9 @@
 @property(readonly, nonatomic) BOOL navigableItem_missingReferencedContentIsImportant;
 @property(readonly, nonatomic) id navigableItem_parentRepresentedObject;
 @property(readonly, nonatomic) BOOL navigableItem_referencedContentExists;
-@property(readonly, nonatomic) DVTSymbol *navigableItem_representedSymbol;
+@property(readonly, nonatomic) _TtC13DVTFoundation9DVTSymbol *navigableItem_representedSymbol;
 @property(readonly, nonatomic) NSURL *navigableItem_representedURL;
+@property(readonly, nonatomic) NSString *navigableItem_subtitle;
 @property(readonly, nonatomic) NSString *navigableItem_toolTip;
 @property(readonly) Class superclass;
 

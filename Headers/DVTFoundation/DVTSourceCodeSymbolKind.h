@@ -24,6 +24,7 @@
 + (id)sourceCodeSymbolKindForIdentifier:(id)arg1;
 + (id)_sourceCodeSymbolKindForExtension:(id)arg1;
 + (void)initialize;
++ (id)blockDirectiveKind;
 + (id)toDoSymbolKind;
 + (id)questionSymbolKind;
 + (id)markSymbolKind;
@@ -51,6 +52,7 @@
 + (id)structSymbolKind;
 + (id)protocolSymbolKind;
 + (id)staticPropertySymbolKind;
++ (id)staticMethodSymbolKind;
 + (id)classPropertySymbolKind;
 + (id)propertySymbolKind;
 + (id)parameterSymbolKind;

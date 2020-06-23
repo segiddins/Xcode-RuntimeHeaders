@@ -69,6 +69,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSNumber *aliasable;
 @property(readonly, copy, nonatomic) NSString *purgeableState;
 @property(readonly, copy, nonatomic) NSString *storageMode;
+@property(readonly, nonatomic) NSNumber *allocationID;
 @property(readonly, nonatomic) unsigned long long allocatedSize;
 @property(readonly, nonatomic) long long type;
 @property(readonly, nonatomic) unsigned long long issueCount;

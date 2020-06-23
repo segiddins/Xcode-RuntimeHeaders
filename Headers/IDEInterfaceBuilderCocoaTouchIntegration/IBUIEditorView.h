@@ -39,6 +39,8 @@
 @property(readonly) IBCocoaTouchTargetRuntime *targetRuntime; // @synthesize targetRuntime=_targetRuntime;
 @property(nonatomic) __weak IBSceneUpdateContentView *owningSceneUpdateContentView; // @synthesize owningSceneUpdateContentView=_owningSceneUpdateContentView;
 - (id)maskImageForContentView:(id)arg1;
+- (id)normalizedMaskPathForContentView:(id)arg1 maskType:(long long)arg2;
+- (id)normalizedBackgroundMaskPathForContentView:(id)arg1;
 - (id)normalizedMaskPathForContentView:(id)arg1;
 - (id)maskIdentifierForContentView:(id)arg1;
 - (double)maskRotationInRadiansForContentView:(id)arg1;

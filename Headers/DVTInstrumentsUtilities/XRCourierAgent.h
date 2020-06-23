@@ -6,12 +6,13 @@
 
 #import <DVTInstrumentsUtilities/XRMobileAgent.h>
 
+#import <DVTInstrumentsUtilities/XRMinorFrameAgent-Protocol.h>
 #import <DVTInstrumentsUtilities/XRMobileAgentVisitor-Protocol.h>
 
 @class NSDictionary, NSString;
 @protocol XRMobileAgentOwner;
 
-@interface XRCourierAgent : XRMobileAgent <XRMobileAgentVisitor>
+@interface XRCourierAgent : XRMobileAgent <XRMobileAgentVisitor, XRMinorFrameAgent>
 {
     XRMobileAgent<XRMobileAgentOwner> *_roomOwner;
     NSString *_message;
@@ -27,6 +28,7 @@
 @property(readonly, nonatomic) NSString *message; // @synthesize message=_message;
 @property(retain, nonatomic) XRMobileAgent<XRMobileAgentOwner> *roomOwner; // @synthesize roomOwner=_roomOwner;
 - (void)executeStopOnItinerary:(id)arg1;
+@property(nonatomic) _Atomic char *yieldNow;
 - (id)agentDiagnosticsName;
 - (id)init;
 - (void)sendToWaitingRoom:(id)arg1 replyStop:(id)arg2 replyTicket:(id)arg3;

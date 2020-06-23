@@ -6,10 +6,11 @@
 
 #import <DebuggerLLDB/NSObject-Protocol.h>
 
-@protocol DBGSBBroadcaster, DBGSBError, DBGSBFileSpec, DBGSBQueue, DBGSBTarget, DBGSBThread, DBGSBThreadCollection;
+@protocol DBGSBBroadcaster, DBGSBError, DBGSBFileSpec, DBGSBQueue, DBGSBStructuredData, DBGSBTarget, DBGSBThread, DBGSBThreadCollection;
 
 @protocol DBGSBProcess <NSObject>
 - (_Bool)StateIsStoppedState;
+- (id <DBGSBStructuredData>)GetExtendedCrashInformation;
 - (id <DBGSBBroadcaster>)GetBroadcaster;
 - (id <DBGSBThreadCollection>)GetHistoryThreads:(unsigned long long)arg1;
 - (id <DBGSBQueue>)GetQueueAtIndex:(unsigned long long)arg1;

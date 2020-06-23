@@ -14,6 +14,7 @@
 - (id)domainIdentifier;
 - (id)ideModelObjectTypeIdentifier;
 - (id)logRecords;
+- (id)workspace;
 - (id)initWithDomainItem:(id)arg1;
 
 @end

@@ -28,7 +28,6 @@ __attribute__((visibility("hidden")))
 - (id)functionWithPipeline:(id)arg1 shaderType:(unsigned int)arg2 functionInfo:(id)arg3 identifier:(id)arg4;
 - (id)pipelineStateWithProgramGroup:(id)arg1 programType:(unsigned int)arg2 pipelineStateID:(unsigned long long)arg3 stateMirrorObject:(const void *)arg4 containerID:(unsigned long long)arg5 identifier:(id)arg6;
 - (id)functionInfoWithSourceFilePath:(id)arg1 onlineCompiled:(BOOL)arg2 functionID:(unsigned long long)arg3;
-- (id)functionInfoWithSourceURL:(id)arg1 lineNumber:(long long)arg2 onlineCompiled:(BOOL)arg3 functionID:(unsigned long long)arg4;
 - (id)rawBytesItemWithGroup:(id)arg1 bytesType:(unsigned long long)arg2 bindingIndex:(unsigned int)arg3 stateMirrorObject:(const void *)arg4 containerID:(unsigned long long)arg5 identifier:(id)arg6;
 - (id)shaderItemWithProgram:(id)arg1 shaderType:(unsigned int)arg2 functionInfo:(id)arg3 identifier:(id)arg4;
 - (id)programItemWithGroup:(id)arg1 programType:(unsigned int)arg2 programID:(unsigned long long)arg3 stateMirrorObject:(const void *)arg4 containerID:(unsigned long long)arg5 identifier:(id)arg6;

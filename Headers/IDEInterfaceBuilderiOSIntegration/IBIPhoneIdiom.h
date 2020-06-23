@@ -20,10 +20,13 @@
 }
 
 - (void).cxx_destruct;
+- (id)normalizedMaskNotchlessPath_iPhone5_9InchSubtype;
+- (id)normalizedMaskNotchlessPath_iPhone6_1InchSubtype;
+- (id)normalizedMaskNotchlessPath_iPhone6_5InchSubtype;
 - (id)normalizedMaskPath_iPhone5_9InchSubtype;
 - (id)normalizedMaskPath_iPhone6_1InchSubtype;
 - (id)normalizedMaskPath_iPhone6_5InchSubtype;
-- (id)normalizedDeviceMaskPathForSubtype:(id)arg1;
+- (id)normalizedDeviceMaskPathForSubtype:(id)arg1 maskType:(long long)arg2;
 - (struct CGSize)pageSheetFixedSizeForOrientationMetrics:(id)arg1 screenMetrics:(id)arg2;
 - (struct CGSize)formSheetFixedSizeForOrientationMetrics:(id)arg1 screenMetrics:(id)arg2;
 - (long long)legacyTypeForScreenMetrics:(id)arg1;
@@ -58,7 +61,7 @@
 - (id)defaultSubtypeForArchiving;
 - (id)defaultSubtype;
 - (BOOL)supportsBranchingForTraitVariations;
-- (long long)deviceInterfaceIdiom;
+- (long long)defaultDeviceInterfaceIdiom;
 - (id)icon;
 - (BOOL)supportsSplitViewControllersOnIOS7AndEarlier;
 - (BOOL)ignoresStatusBarForUIBarStyleComputation;

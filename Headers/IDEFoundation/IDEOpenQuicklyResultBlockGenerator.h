@@ -6,28 +6,26 @@
 
 #import <IDEFoundation/IDEOpenQuicklyResultGenerator.h>
 
-@class IDEOpenQuicklyQuery, IDEOpenQuicklyQueryCandidateBlock, NSArray;
+@class DVTFuzzyMatchCandidateBlock, IDEOpenQuicklyQuery, NSArray;
 
 @interface IDEOpenQuicklyResultBlockGenerator : IDEOpenQuicklyResultGenerator
 {
     long long _previousResultsGeneration;
     IDEOpenQuicklyQuery *_previousResultsQuery;
     NSArray *_previousResults;
-    IDEOpenQuicklyQueryCandidateBlock *_previousCandidateBlock;
-    IDEOpenQuicklyQueryCandidateBlock *_originalCandidateBlock;
-    NSArray *_prototypes;
+    DVTFuzzyMatchCandidateBlock *_previousCandidateBlock;
+    DVTFuzzyMatchCandidateBlock *_originalCandidateBlock;
 }
 
 - (void).cxx_destruct;
-@property(readonly) NSArray *prototypes; // @synthesize prototypes=_prototypes;
 - (void)updateUserInput:(id)arg1 generation:(long long)arg2;
 - (void)continueProcessing;
 - (id)regenerateResults;
 - (id)candidateBlockForQuery:(id)arg1;
-- (id)resultForPrototype:(id)arg1 candidate:(struct IDEOpenQuicklyQueryCandidate *)arg2 query:(id)arg3 fromIndex:(long long)arg4;
+- (id)resultForCandidate:(struct DVTFuzzyMatchCandidate *)arg1 query:(id)arg2 fromIndex:(long long)arg3;
 - (BOOL)supportsLineNumberMatches;
 - (void)start;
-- (id)initWithPrototypes:(id)arg1 candidates:(id)arg2 queryContext:(id)arg3 consumer:(id)arg4;
+- (id)initWithCandidates:(id)arg1 queryContext:(id)arg2 consumer:(id)arg3;
 
 @end
 

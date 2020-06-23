@@ -9,9 +9,9 @@
 @class NSArray, NSSet, NSString;
 
 @protocol IDETestContainer <NSObject>
-@property(readonly, copy) NSArray *arrangedSubtests;
-@property(readonly, copy) NSSet *subtests;
-@property(readonly) BOOL canHaveSubtests;
-@property(readonly, copy) NSString *name;
+@property(nonatomic, readonly) NSArray *arrangedSubtests;
+@property(nonatomic, readonly) NSSet *subtests;
+@property(nonatomic, readonly) BOOL canHaveSubtests;
+@property(nonatomic, readonly) NSString *name;
 @end
 

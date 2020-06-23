@@ -16,6 +16,8 @@
     MISSING_TYPE *serialQueue;
     MISSING_TYPE *buildParametersByTarget;
     MISSING_TYPE *configuredTargetsByTarget;
+    MISSING_TYPE *defaultImposedParameters;
+    MISSING_TYPE *platformBuildParameters;
 }
 
 @end

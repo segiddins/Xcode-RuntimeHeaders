@@ -9,7 +9,7 @@
 #import <DebuggerUI/IDEDebugGaugeReportTopSectionContentDelegate-Protocol.h>
 #import <DebuggerUI/IDEGraphDelegate-Protocol.h>
 
-@class DVTCapacitySegment, DVTMeterView, IDEPlotGraph, NSButton, NSByteCountFormatter, NSString, NSTextField, NSView;
+@class DVTCapacitySegment, DVTMeterView, IDECoreChartPlotGraph, NSButton, NSByteCountFormatter, NSString, NSTextField, NSView;
 
 @interface DBGGaugeMemoryEditor : DBGGaugeEditor <IDEDebugGaugeReportTopSectionContentDelegate, IDEGraphDelegate>
 {
@@ -30,14 +30,14 @@
     NSTextField *_topSectionSpeedBottomUnitLabel;
     NSButton *_profileButton;
     NSView *_topGraphContainer;
-    IDEPlotGraph *_topGraph;
+    IDECoreChartPlotGraph *_topGraph;
     NSTextField *_topGraphDescription;
     NSTextField *_topGraphDuration;
     NSTextField *_topGraphHigh;
     NSTextField *_topGraphLow;
     NSTextField *_cap;
     NSView *_bottomGraphContainer;
-    IDEPlotGraph *_bottomGraph;
+    IDECoreChartPlotGraph *_bottomGraph;
     NSTextField *_bottomGraphDescription;
     NSTextField *_bottomGraphDuration;
     NSTextField *_bottomGraphHigh;
@@ -54,14 +54,14 @@
 @property __weak NSTextField *bottomGraphHigh; // @synthesize bottomGraphHigh=_bottomGraphHigh;
 @property __weak NSTextField *bottomGraphDuration; // @synthesize bottomGraphDuration=_bottomGraphDuration;
 @property __weak NSTextField *bottomGraphDescription; // @synthesize bottomGraphDescription=_bottomGraphDescription;
-@property __weak IDEPlotGraph *bottomGraph; // @synthesize bottomGraph=_bottomGraph;
+@property __weak IDECoreChartPlotGraph *bottomGraph; // @synthesize bottomGraph=_bottomGraph;
 @property __weak NSView *bottomGraphContainer; // @synthesize bottomGraphContainer=_bottomGraphContainer;
 @property __weak NSTextField *cap; // @synthesize cap=_cap;
 @property __weak NSTextField *topGraphLow; // @synthesize topGraphLow=_topGraphLow;
 @property __weak NSTextField *topGraphHigh; // @synthesize topGraphHigh=_topGraphHigh;
 @property __weak NSTextField *topGraphDuration; // @synthesize topGraphDuration=_topGraphDuration;
 @property __weak NSTextField *topGraphDescription; // @synthesize topGraphDescription=_topGraphDescription;
-@property __weak IDEPlotGraph *topGraph; // @synthesize topGraph=_topGraph;
+@property __weak IDECoreChartPlotGraph *topGraph; // @synthesize topGraph=_topGraph;
 @property __weak NSView *topGraphContainer; // @synthesize topGraphContainer=_topGraphContainer;
 @property __weak NSButton *profileButton; // @synthesize profileButton=_profileButton;
 @property __weak NSTextField *topSectionSpeedBottomUnitLabel; // @synthesize topSectionSpeedBottomUnitLabel=_topSectionSpeedBottomUnitLabel;

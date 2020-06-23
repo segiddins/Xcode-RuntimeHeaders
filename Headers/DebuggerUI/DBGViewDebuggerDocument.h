@@ -6,29 +6,69 @@
 
 #import <IDEKit/IDEEditorDocument.h>
 
-@class DBGViewDebugger, DBGViewDebuggerDocumentIssueGenerator, DVTObservingToken;
+#import <DebuggerUI/IDEDocumentStructureProviding-Protocol.h>
 
-@interface DBGViewDebuggerDocument : IDEEditorDocument
+@class DBGViewDebugger, DBGViewDebuggerDocumentIssueGenerator, DVTObservingToken, NSArray, NSDictionary, NSFileWrapper, NSString, NSURL;
+
+@interface DBGViewDebuggerDocument : IDEEditorDocument <IDEDocumentStructureProviding>
 {
     DVTObservingToken *_controlStateObserver;
     DVTObservingToken *_coalescedStateObserver;
+    DVTObservingToken *_debuggingAdditionsObservation;
+    DVTObservingToken *_viewDebuggerValidObserverToken;
+    BOOL _performingSaveAs;
     DBGViewDebugger *_viewDebugger;
     DBGViewDebuggerDocumentIssueGenerator *_issueGenerator;
+    NSArray *_ideTopLevelStructureObjects;
+    CDUnknownBlockType _documentSavedCallback;
+    NSURL *_savedLocation;
+    NSFileWrapper *_documentWrapper;
+    NSDictionary *_metadata;
 }
 
++ (BOOL)shouldShowInspectorAreaAtLoadForSimpleFilesFocusedWorkspace;
 + (id)documentForViewDebugger:(id)arg1;
 - (void).cxx_destruct;
+@property(retain) NSDictionary *metadata; // @synthesize metadata=_metadata;
+@property(retain) NSFileWrapper *documentWrapper; // @synthesize documentWrapper=_documentWrapper;
+@property(retain, nonatomic) NSURL *savedLocation; // @synthesize savedLocation=_savedLocation;
+@property(copy, nonatomic) CDUnknownBlockType documentSavedCallback; // @synthesize documentSavedCallback=_documentSavedCallback;
+@property(retain) NSArray *ideTopLevelStructureObjects; // @synthesize ideTopLevelStructureObjects=_ideTopLevelStructureObjects;
 @property(retain) DBGViewDebuggerDocumentIssueGenerator *issueGenerator; // @synthesize issueGenerator=_issueGenerator;
-@property(retain) DBGViewDebugger *viewDebugger; // @synthesize viewDebugger=_viewDebugger;
 - (id)_viewDebuggerForURL:(id)arg1 inWorkspace:(id)arg2;
 - (id)_viewDebuggerForURL:(id)arg1;
 - (id)viewObjectForLocation:(id)arg1;
-- (id)displayName;
+@property(retain) DBGViewDebugger *viewDebugger; // @synthesize viewDebugger=_viewDebugger;
 - (int)readOnlyStatus;
 - (void)editorDocumentDidClose;
-- (BOOL)readFromURL:(id)arg1 ofType:(id)arg2 error:(id *)arg3;
 - (void)_closeDocumentIfNecessary;
+- (id)displayName;
+- (BOOL)performingSaveAs;
+- (void)isPerformingSaveAs:(BOOL)arg1;
+- (void)populateSnapshotModelFromFileWrapper;
+- (void)populateMetadataFromFileWrapper;
+- (id)_metadataDictionary;
+- (id)fileWrapperOfType:(id)arg1 error:(id *)arg2;
+- (BOOL)readFromFileWrapper:(id)arg1 ofType:(id)arg2 error:(id *)arg3;
+- (void)document:(id)arg1 didSave:(BOOL)arg2 contextInfo:(void *)arg3;
+- (void)export:(CDUnknownBlockType)arg1;
+- (void)exportDocument:(id)arg1;
+- (BOOL)validateUserInterfaceItem:(id)arg1;
+- (BOOL)canSave;
+@property(readonly) NSString *processDisplayName;
+@property(readonly) NSString *documentVersion;
+@property(readonly) BOOL isLoadedFromFile;
+- (void)_setupCloseDocumentObservers;
+- (void)_initializeFileBackedDocumentForURL:(id)arg1 withContentsOfURL:(id)arg2 ofType:(id)arg3;
+- (void)_initializeInMemoryDocumentForURL:(id)arg1 withContentsOfURL:(id)arg2 ofType:(id)arg3;
+- (BOOL)readFromURL:(id)arg1 ofType:(id)arg2 error:(id *)arg3;
 - (id)initForURL:(id)arg1 withContentsOfURL:(id)arg2 ofType:(id)arg3 error:(id *)arg4;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

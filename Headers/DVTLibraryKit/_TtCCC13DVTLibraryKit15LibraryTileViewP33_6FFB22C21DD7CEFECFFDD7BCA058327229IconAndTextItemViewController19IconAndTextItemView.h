@@ -16,6 +16,8 @@
     MISSING_TYPE *iconToTextSpace;
     MISSING_TYPE *titleToSummarySpacing;
     MISSING_TYPE *accessoryLeadingSpace;
+    MISSING_TYPE *selectionBackgroundHorizontalInset;
+    MISSING_TYPE *selectionBackgroundCornerRadius;
     MISSING_TYPE *textField;
     MISSING_TYPE *badgeView;
     MISSING_TYPE *informationTextButton;

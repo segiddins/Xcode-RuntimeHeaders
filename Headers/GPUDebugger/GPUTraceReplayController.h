@@ -45,10 +45,11 @@
 - (id)endDebuggerReplaySession;
 - (id)endReplaySession;
 - (void)sendDebugBeginMessage:(id)arg1;
+- (void)generatePixelHistoryForRequestedRenderCommandEncoder:(unsigned long long)arg1 unionTextures:(id)arg2 atX:(long long)arg3 y:(long long)arg4 withFuture:(id)arg5;
 - (void)toggleDeviceSideThumbnailGeneration:(BOOL)arg1 withFuture:(id)arg2;
 - (void)generateDependencyGraphThumbnailsForRequestedTextures:(id)arg1 withFuture:(id)arg2 forResolution:(CDStruct_b00b4bef)arg3;
-- (void)_harvestDependencyGraphThumbnails:(id)arg1;
-- (void)_harvestThumbnails:(id)arg1;
+- (void)_harvestDependencyGraphThumbnails:(id)arg1 device:(id)arg2 group:(id)arg3 queue:(id)arg4;
+- (void)_harvestThumbnails:(id)arg1 device:(id)arg2 group:(id)arg3 queue:(id)arg4;
 - (void)setDeviceSideOutlinePresentingEnabled:(BOOL)arg1 future:(id)arg2;
 - (void)toggleDeviceSideDrawPresenting:(BOOL)arg1 withFuture:(id)arg2;
 - (void)setWireframeLineWidth:(float)arg1 withFuture:(id)arg2;

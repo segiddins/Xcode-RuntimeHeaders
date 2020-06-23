@@ -12,6 +12,7 @@
 {
     MISSING_TYPE *parameters;
     MISSING_TYPE *target;
+    MISSING_TYPE *specializeGuidForActiveRunDestination;
     MISSING_TYPE *$__lazy_storage_$_signature;
 }
 

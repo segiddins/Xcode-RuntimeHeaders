@@ -14,6 +14,7 @@
     MISSING_TYPE *buildExecutor;
     MISSING_TYPE *environment;
     MISSING_TYPE *filesWithDisabledThunking;
+    MISSING_TYPE *allSchemeBuildables;
     MISSING_TYPE *cache;
 }
 

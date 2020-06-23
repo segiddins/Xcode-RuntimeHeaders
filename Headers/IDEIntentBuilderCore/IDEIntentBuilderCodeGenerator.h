@@ -13,6 +13,7 @@
 + (id)codeGeneratorExtensionIdentifierForFileDataType:(id)arg1;
 + (void)_registerCodeGeneratorExtensionIdentifier:(id)arg1 forFileDataType:(id)arg2;
 + (id)_codeGeneratorIdentifierRegistry;
+- (Class)toolClassForCommandLineEquivalent;
 - (id)_loadModelForInputFile:(id)arg1 error:(id *)arg2;
 - (void)generateCodeForInputFile:(id)arg1 outputFilePath:(id)arg2 completionQueue:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (id)generatedFilePathsForInputFilePath:(id)arg1 outputFilePath:(id)arg2 error:(id *)arg3;

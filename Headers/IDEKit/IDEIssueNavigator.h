@@ -8,14 +8,14 @@
 
 #import <IDEKit/DVTOutlineViewDelegate-Protocol.h>
 
-@class DVTBorderView, DVTNotificationToken, DVTObservingToken, DVTScopeBarView, DVTScrollView, DVTTableCellViewMultiLineHeightEstimator, DVTTimeSlicedMainThreadWorkQueue, NSArray, NSButton, NSMenuItem, NSMutableArray, NSMutableSet, NSSet, NSString;
+@class DVTNotificationToken, DVTObservingToken, DVTScopeBarView, DVTScrollView, DVTTableCellViewMultiLineHeightEstimator, DVTTimeSlicedMainThreadWorkQueue, NSArray, NSButton, NSMenuItem, NSMutableArray, NSMutableSet, NSSet, NSString;
+@protocol DVTInvalidation;
 
 @interface IDEIssueNavigator : IDEOutlineBasedNavigator <DVTOutlineViewDelegate>
 {
     DVTScopeBarView *_scopeBarView;
     NSButton *_scopeByBuildtimeButton;
     NSButton *_scopeByRuntimeButton;
-    DVTBorderView *_dividerView;
     NSMenuItem *_viewByFileMenuItem;
     NSMenuItem *_viewByTypeMenuItem;
     NSMutableSet *_collapsedGroupsForStateSaving;
@@ -37,6 +37,7 @@
     DVTObservingToken *_numBuildtimeIssuesObservingToken;
     DVTObservingToken *_numRuntimeIssuesObservingToken;
     DVTNotificationToken *_issueDetailLevelObservingToken;
+    id <DVTInvalidation> _rowSizeStyleChangedObserver;
     BOOL _restoringState;
     BOOL _clearingFilter;
     BOOL _showByRuntime;
@@ -139,10 +140,12 @@
 - (id)structureEditorOpenSpecifierForLogDocumentForIssue:(id)arg1 error:(id *)arg2;
 - (void)scopeByRuntime:(id)arg1;
 - (void)scopeByBuildtime:(id)arg1;
+- (BOOL)displaysAdditionalScopeBars;
 - (id)domainIdentifier;
 @property(readonly) BOOL derivedShowByType;
 - (id)issueManager;
 - (void)primitiveInvalidate;
+- (void)_handleRowSizeStyleDidChange;
 - (void)_handleDetailLevelDefaultDidChange;
 - (void)viewDidInstall;
 - (void)_updateScopeButtons;

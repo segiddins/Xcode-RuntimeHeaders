@@ -6,7 +6,18 @@
 
 #import <IDETestPlanEditor/_TtC17IDETestPlanEditor20TestPlanMenuDelegate.h>
 
-@interface _TtC17IDETestPlanEditor20TestPlanMenuDelegate (IDETestPlanEditor)
+#import <IDETestPlanEditor/IDECommandHandler-Protocol.h>
+#import <IDETestPlanEditor/IDECommandHandlerVendor-Protocol.h>
+
+@interface _TtC17IDETestPlanEditor20TestPlanMenuDelegate (IDETestPlanEditor) <IDECommandHandler, IDECommandHandlerVendor>
++ (id)handlerForAction:(SEL)arg1 withSelectionSource:(id)arg2;
 - (void)menuNeedsUpdate:(id)arg1;
+- (BOOL)validateUserInterfaceItem:(id)arg1;
+- (void)createNewTestPlan:(id)arg1;
+- (void)selectTestPlan:(id)arg1;
+- (void)manageTestPlans:(id)arg1;
+- (void)editTestPlan:(id)arg1;
+- (void)selectPreviousTestPlan:(id)arg1;
+- (void)selectNextTestPlan:(id)arg1;
 @end
 

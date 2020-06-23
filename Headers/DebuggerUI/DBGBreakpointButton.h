@@ -38,8 +38,8 @@
 - (id)initWithBreakpointImageSize:(struct CGSize)arg1;
 
 // Remaining properties
+@property(nonatomic) long long dvt_rowSizeStyle;
 @property(readonly) BOOL hasDisplayableStatus;
-@property(nonatomic) long long tableViewRowSizeStyle;
 
 @end
 

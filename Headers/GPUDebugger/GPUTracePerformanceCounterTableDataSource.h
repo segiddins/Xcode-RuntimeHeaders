@@ -61,7 +61,6 @@ __attribute__((visibility("hidden")))
 - (long long)outlineView:(id)arg1 numberOfChildrenOfItem:(id)arg2;
 - (id)contextMenuItemForSelectedItem:(id)arg1;
 - (id)refreshData:(id)arg1;
-- (void)_updateRawCounters:(unsigned long long)arg1;
 - (void)_createGroups:(unsigned long long)arg1;
 - (void)_resolveResourceLink:(id)arg1;
 - (void)_updateAdditionalValuesForItem:(id)arg1 dataStore:(id)arg2 plane:(unsigned long long)arg3;

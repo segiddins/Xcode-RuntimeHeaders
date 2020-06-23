@@ -17,8 +17,5 @@
 - (void)start;
 - (void)setTap:(DTTapLocal *)arg1;
 - (DTTapStatusMemo *)validateConfig;
-
-@optional
-- (void)setTaskForPidBlock:(unsigned int (^)(int))arg1;
 @end
 

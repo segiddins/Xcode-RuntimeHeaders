@@ -8,6 +8,6 @@
 
 @interface NSFileHandle (XCBCSupport)
 - (BOOL)xcb_writeData:(id)arg1 error:(out id *)arg2;
-- (BOOL)xcb_closeAndReturnError:(out id *)arg1;
+- (id)xcb_readDataToEndOfFile:(out id *)arg1;
 @end
 

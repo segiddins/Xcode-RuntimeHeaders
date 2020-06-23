@@ -9,7 +9,7 @@
 #import <DVTSourceControl/NSCopying-Protocol.h>
 #import <DVTSourceControl/NSSecureCoding-Protocol.h>
 
-@class CNContact, NSArray, NSImage, NSString;
+@class CNContact, NSArray, NSImage, NSString, NSURL;
 
 @interface DVTSourceControlAuthor : NSObject <NSSecureCoding, NSCopying>
 {
@@ -20,12 +20,14 @@
     NSString *_name;
     NSString *_displayName;
     NSArray *_emails;
+    NSURL *_avatarURL;
     NSImage *_image;
 }
 
 + (BOOL)supportsSecureCoding;
 - (void).cxx_destruct;
 @property(retain) NSImage *image; // @synthesize image=_image;
+@property(retain) NSURL *avatarURL; // @synthesize avatarURL=_avatarURL;
 @property(retain) NSArray *emails; // @synthesize emails=_emails;
 @property(retain) NSString *displayName; // @synthesize displayName=_displayName;
 @property(retain) NSString *name; // @synthesize name=_name;
@@ -37,6 +39,7 @@
 - (id)_displayNameFromContact:(id)arg1;
 - (id)description;
 - (id)initWithPairedAddressBookPerson:(id)arg1;
+- (id)initWithUsername:(id)arg1 displayName:(id)arg2 email:(id)arg3 avatarURL:(id)arg4;
 - (id)initWithUsername:(id)arg1 email:(id)arg2;
 - (id)initWithUsername:(id)arg1 displayName:(id)arg2 emails:(id)arg3;
 - (id)copyWithZone:(struct _NSZone *)arg1;

@@ -74,7 +74,6 @@
 - (BOOL)_isTrulyEditable;
 - (void)_setEditable_transient:(BOOL)arg1;
 - (void)setEditable:(BOOL)arg1;
-@property BOOL drawStepperBackground;
 - (void)_dvtStepperTextField_commonInit;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

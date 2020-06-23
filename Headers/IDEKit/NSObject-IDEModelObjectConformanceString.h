@@ -8,13 +8,23 @@
 
 #import <IDEKit/IDETestReport_Base-Protocol.h>
 
-@class NSNumber, NSString;
+@class DVTTextDocumentLocation, NSArray, NSNumber, NSString;
 @protocol IDETestReport_Base;
 
 @interface NSObject (IDEModelObjectConformanceString) <IDETestReport_Base>
 @property(readonly, nonatomic) NSString *navigableItem_conformanceString;
 @property(nonatomic) __weak id <IDETestReport_Base> ide_testReport_base_parent;
 @property(readonly, copy, nonatomic) NSString *ide_testReport_base_identifier;
+@property(readonly, copy, nonatomic) DVTTextDocumentLocation *ide_test_activity_primaryDocumentLocation;
+@property(readonly, copy, nonatomic) NSArray *ide_testReport_testRun_topLevelFailureSummaries;
+- (id)ide_testReport_failureSummary_childAtIndex:(long long)arg1;
+@property(readonly) long long ide_testReport_failureSummary_numberOfChildren;
+@property(readonly, copy) NSArray *ide_testReport_failureSummary_attachments;
+@property(readonly, copy) NSArray *ide_testReport_failureSummary_callStackSymbolInfos;
+@property(readonly, copy, nonatomic) DVTTextDocumentLocation *ide_testReport_failureSummary_documentLocation;
+@property(readonly, nonatomic) BOOL ide_testReport_failureSummary_isTopLevelFailure;
+@property(readonly, copy, nonatomic) NSArray *ide_testReport_testRun_activitiesExcludingFailures;
+@property(readonly, copy, nonatomic) NSArray *ide_test_activity_failureSummaries;
 - (id)ide_testReport_device_combined_platformName_and_osVersion;
 @property(readonly, nonatomic) BOOL ide_testReport_deviceTestRuns_mixedStatus;
 @property(readonly, nonatomic) BOOL ide_testReport_test_mixedStatus;

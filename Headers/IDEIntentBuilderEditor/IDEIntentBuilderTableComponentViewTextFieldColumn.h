@@ -12,9 +12,13 @@
 {
     NSString *_editableKeyPath;
     NSString *_enabledKeyPath;
+    NSString *_emptyStatePlaceholder;
+    unsigned long long _inputType;
 }
 
 - (void).cxx_destruct;
+@property(nonatomic) unsigned long long inputType; // @synthesize inputType=_inputType;
+@property(copy) NSString *emptyStatePlaceholder; // @synthesize emptyStatePlaceholder=_emptyStatePlaceholder;
 @property(copy) NSString *enabledKeyPath; // @synthesize enabledKeyPath=_enabledKeyPath;
 @property(copy) NSString *editableKeyPath; // @synthesize editableKeyPath=_editableKeyPath;
 - (id)makeTableCellViewWithOwner:(id)arg1 inTableView:(id)arg2;

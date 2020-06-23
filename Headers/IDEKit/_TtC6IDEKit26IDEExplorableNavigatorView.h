@@ -16,6 +16,7 @@
     MISSING_TYPE *filterControlBar;
     MISSING_TYPE *delegate;
     MISSING_TYPE *auxiliaryView;
+    MISSING_TYPE *drawsAuxiliaryViewDivider;
     MISSING_TYPE *dividerView;
 }
 

@@ -20,6 +20,7 @@
 - (id)nextRequesterCreatingIfNecessaryWithBlock:(CDUnknownBlockType)arg1;
 - (id)firstRequesterCreatingIfNecessaryWithBlock:(CDUnknownBlockType)arg1;
 @property(readonly) long long count;
+- (id)requesters;
 - (id)initWithMaximumSize:(long long)arg1;
 
 @end

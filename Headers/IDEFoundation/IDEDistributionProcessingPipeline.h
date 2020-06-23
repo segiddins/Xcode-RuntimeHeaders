@@ -19,6 +19,7 @@
 + (id)pipelineWithInAppPurchaseContext:(id)arg1;
 + (id)pipelineWithAppContext:(id)arg1;
 + (id)pipelineWithContext:(id)arg1;
++ (void)initialize;
 - (void).cxx_destruct;
 @property BOOL cancelled; // @synthesize cancelled=_cancelled;
 @property(retain) IDEDistributionProcessingPipelineContext *context; // @synthesize context=_context;

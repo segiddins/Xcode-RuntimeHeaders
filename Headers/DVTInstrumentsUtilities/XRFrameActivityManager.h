@@ -33,12 +33,15 @@
 @property(readonly, nonatomic) unsigned char currentSlot; // @synthesize currentSlot=_currentSlot;
 - (BOOL)holdBackArrivingAgent:(id)arg1;
 - (BOOL)holdBackRevisitingAgent:(id)arg1;
+- (void)startingMajorFrame;
 - (void)extendingMinorFrame:(unsigned char)arg1;
 - (void)underrunMinorFrame:(unsigned char)arg1;
 - (void)yieldingMinorFrame:(unsigned char)arg1;
 - (void)enteringMinorFrame:(unsigned char)arg1;
 - (shared_ptr_5180c3d3 *)_secondTierManagerImplPtr;
 - (shared_ptr_5180c3d3 *)_managerImplPtr;
+- (void)_shutdown;
+- (void)_startingMajorFrame;
 - (void)_extendingMinorFrame:(unsigned char)arg1;
 - (void)_underrunMinorFrame:(unsigned char)arg1;
 - (void)_yieldingMinorFrame:(unsigned char)arg1;

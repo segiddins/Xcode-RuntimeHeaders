@@ -6,7 +6,7 @@
 
 #import <Xcode3UI/Xcode3BuildPhaseViewController.h>
 
-@class DVTBorderedView, DVTGradientImageButton, DVTStackView_ML, DVTTableView, MISSING_TYPE, NSButton, NSScrollView, NSString, _TtC8Xcode3UI50Xcode3PegasusShellScriptBuildPhaseSourceEditorView;
+@class DVTBorderedView, DVTGradientImageButton, DVTStackView_ML, DVTTableView, MISSING_TYPE, NSButton, NSScrollView, NSString, NSTextField, _TtC8Xcode3UI50Xcode3PegasusShellScriptBuildPhaseSourceEditorView;
 
 __attribute__((visibility("hidden")))
 @interface _TtC8Xcode3UI48Xcode3PegasusShellScriptBuildPhaseViewController : Xcode3BuildPhaseViewController
@@ -41,13 +41,17 @@ __attribute__((visibility("hidden")))
     MISSING_TYPE *addOutputFileListButton;
     MISSING_TYPE *removeOutputFileListsButton;
     MISSING_TYPE *showEnvironmentVariablesCheckBox;
-    MISSING_TYPE *runScriptOnlyWhenInstallingCheckBox;
+    MISSING_TYPE *runScriptInstallBuildOnlyCheckBox;
+    MISSING_TYPE *runScriptBasedOnDependencyAnalysisCheckBox;
+    MISSING_TYPE *runScriptDisclaimerLabel;
     MISSING_TYPE *dependencyFileCheckBox;
     MISSING_TYPE *stackView;
 }
 
 - (void).cxx_destruct;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (void)updateBasedOnDependencyAnalysisState:(id)arg1;
+- (void)updateRunScriptInstallBuildOnlyState:(id)arg1;
 - (void)dependencyFileChanged:(id)arg1;
 - (void)toggleDependencyFile:(id)arg1;
 - (void)removeFiles:(id)arg1;
@@ -66,7 +70,9 @@ __attribute__((visibility("hidden")))
 - (id)initWithBuildPhase:(id)arg1;
 @property(nonatomic, retain) DVTStackView_ML *stackView; // @synthesize stackView;
 @property(nonatomic, retain) NSButton *dependencyFileCheckBox; // @synthesize dependencyFileCheckBox;
-@property(nonatomic, retain) NSButton *runScriptOnlyWhenInstallingCheckBox; // @synthesize runScriptOnlyWhenInstallingCheckBox;
+@property(nonatomic, retain) NSTextField *runScriptDisclaimerLabel; // @synthesize runScriptDisclaimerLabel;
+@property(nonatomic, retain) NSButton *runScriptBasedOnDependencyAnalysisCheckBox; // @synthesize runScriptBasedOnDependencyAnalysisCheckBox;
+@property(nonatomic, retain) NSButton *runScriptInstallBuildOnlyCheckBox; // @synthesize runScriptInstallBuildOnlyCheckBox;
 @property(nonatomic, retain) NSButton *showEnvironmentVariablesCheckBox; // @synthesize showEnvironmentVariablesCheckBox;
 @property(nonatomic, retain) DVTGradientImageButton *removeOutputFileListsButton; // @synthesize removeOutputFileListsButton;
 @property(nonatomic, retain) DVTGradientImageButton *addOutputFileListButton; // @synthesize addOutputFileListButton;

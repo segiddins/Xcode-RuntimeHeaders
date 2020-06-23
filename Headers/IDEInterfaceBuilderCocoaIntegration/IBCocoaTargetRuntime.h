@@ -15,11 +15,13 @@
 
 + (id)sharedInstance;
 - (void).cxx_destruct;
+- (id)processingRequestForIncrementallyUpdatingAttribute:(id)arg1 ofObject:(id)arg2 withObjectID:(id)arg3 marshallingContext:(id)arg4;
+- (Class)sceneUpdateRequestProcessorClass;
 - (Class)imageRequestProcessorClass;
 - (id)defaultToolProxyManager;
 - (id)idiom;
 @property(readonly) id <DVTFontTextFieldDataSource> fontDataSource; // @synthesize fontDataSource=_fontDataSource;
-- (id)colorList;
+- (id)colorListForDocument:(id)arg1;
 - (id)archiveIdentifier;
 - (id)identifier;
 - (id)platform;

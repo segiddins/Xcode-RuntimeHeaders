@@ -12,18 +12,21 @@
 {
     struct dispatch_source_s *_readSource;
     struct dispatch_source_s *_writeSource;
-    DYSharedMemoryTransport *_smTransport;
+    DYSharedMemoryTransport *_smTransportCapture;
+    DYSharedMemoryTransport *_smTransportDiagnostics;
     _Bool _writeSourceIsSuspended;
     _Bool _scheduledReadOnWritableSocket;
 }
 
-@property(readonly, nonatomic) DYSharedMemoryTransport *smTransport; // @synthesize smTransport=_smTransport;
+@property(readonly, nonatomic) DYSharedMemoryTransport *smTransportDiagnostics; // @synthesize smTransportDiagnostics=_smTransportDiagnostics;
+@property(readonly, nonatomic) DYSharedMemoryTransport *smTransportCapture; // @synthesize smTransportCapture=_smTransportCapture;
 - (unsigned int)_nextMessageSerial;
+- (BOOL)relayMessageOverSecondarySharedMemoryTransport:(id)arg1 error:(id *)arg2;
 - (BOOL)relayMessageOverSharedMemoryTransport:(id)arg1 error:(id *)arg2;
 - (void)destroySharedMemoryTransport;
 - (void)_destroySharedMemoryTransport;
-- (id)createNewSharedMemoryTransportWithURL:(id)arg1 uniqueIdentifier:(id)arg2;
-- (id)createNewSharedMemoryTransportWithUniqueIdentifier:(id)arg1;
+- (struct DYBaseSocketTransportSharedMemoryURLs)createNewSharedMemoryTransportWithURLs:(struct DYBaseSocketTransportSharedMemoryURLs)arg1 uniqueIdentifier:(id)arg2 loadCapture:(BOOL)arg3 loadDiagnostics:(BOOL)arg4;
+- (struct DYBaseSocketTransportSharedMemoryURLs)createNewSharedMemoryTransportWithUniqueIdentifier:(id)arg1 loadCapture:(BOOL)arg2 loadDiagnostics:(BOOL)arg3;
 - (void)_invalidate;
 - (void)setPrioritizeOutgoingMessages:(BOOL)arg1;
 - (BOOL)connected;

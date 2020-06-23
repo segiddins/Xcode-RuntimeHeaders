@@ -15,16 +15,20 @@
 
 @interface XCSUIService (IDEKitSupport) <IDEKeyDrivenNavigableItemRepresentedObject, IDELogNavigatorItem, IDECIService, IDEAccountPrefsPaneAccount>
 + (id)keyPathsForValuesAffectingNavigableItem_childRepresentedObjects;
++ (id)keyPathsForValuesAffectingCurrentChildItems;
 + (id)keyPathsForValuesAffectingNavigableItem_isLeaf;
++ (id)keyPathsForValuesAffectingToolTip;
 + (id)keyPathsForValuesAffectingNavigableItem_toolTip;
++ (id)keyPathsForValuesAffectingProgressValue;
 + (id)keyPathsForValuesAffectingNavigableItem_progressValue;
 + (id)keyPathsForValuesAffectingSubtitle;
 + (id)keyPathsForValuesAffectingTitle;
++ (id)keyPathsForValuesAffectingNavigableItem_name;
 + (id)keyPathsForValuesAffectingAccountReachability;
 + (id)keyPathsForValuesAffectingAccountEnabled;
 + (id)keyPathsForValuesAffectingAccountTitle;
-+ (id)keyPathsForValuesAffectingAccountImage;
-+ (id)keyPathsForValuesAffectingNavigableItem_statusImages;
++ (id)keyPathsForValuesAffectingImage;
++ (id)keyPathsForValuesAffectingStatusImages;
 @property(readonly, nonatomic) NSString *lastCreatedBotID;
 @property(readonly, nonatomic) NSArray *navigableItem_childRepresentedObjects;
 - (id)currentChildItems;

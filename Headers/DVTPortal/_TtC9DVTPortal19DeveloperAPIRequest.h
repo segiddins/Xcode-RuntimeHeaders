@@ -8,7 +8,6 @@
 
 @class MISSING_TYPE, NSDictionary, NSString, NSURL;
 
-__attribute__((visibility("hidden")))
 @interface _TtC9DVTPortal19DeveloperAPIRequest : DVTPortalRequest
 {
     MISSING_TYPE *payload;

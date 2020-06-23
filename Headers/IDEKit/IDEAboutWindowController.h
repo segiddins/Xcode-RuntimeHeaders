@@ -8,7 +8,7 @@
 
 #import <IDEKit/NSWindowRestoration-Protocol.h>
 
-@class DVTFilePath, NSBox, NSString, NSTextField;
+@class DVTFilePath, NSBox, NSImageView, NSString, NSTextField;
 
 @interface IDEAboutWindowController : NSWindowController <NSWindowRestoration>
 {
@@ -17,6 +17,7 @@
     NSTextField *_versionAndBuildLabel;
     NSTextField *_revisionMultilineLabel;
     NSTextField *_toolchainLabel;
+    NSImageView *_imageView;
     NSBox *_boxContainer;
     DVTFilePath *_filePathToAcknowledgments;
 }

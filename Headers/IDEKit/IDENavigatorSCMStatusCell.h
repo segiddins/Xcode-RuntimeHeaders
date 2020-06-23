@@ -10,11 +10,11 @@
 
 @interface IDENavigatorSCMStatusCell : DVTStructuredLayoutTextFieldCell
 {
-    NSString *_localStatus;
-    NSString *_serverStatus;
     NSAttributedString *_localAttrString;
     NSAttributedString *_serverAttrString;
     BOOL _hideLocalStatus;
+    NSString *_localStatus;
+    NSString *_serverStatus;
 }
 
 + (id)keyPathsForValuesAffectingHasDisplayableStatus;

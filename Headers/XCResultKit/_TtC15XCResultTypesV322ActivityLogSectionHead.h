@@ -13,6 +13,7 @@
     MISSING_TYPE *domainType;
     MISSING_TYPE *title;
     MISSING_TYPE *startTime;
+    MISSING_TYPE *location;
 }
 
 @end

@@ -10,8 +10,8 @@
 {
 }
 
-- (BOOL)structureEditSortSubitemsAtIndexes:(id)arg1 byNameOrByType:(BOOL)arg2;
-- (BOOL)canStructureEditSortSubitemsAtIndexes:(id)arg1 byNameOrByType:(BOOL)arg2;
+- (BOOL)structureEditSortSubitemsAtIndexes:(id)arg1 sortStyle:(unsigned long long)arg2;
+- (BOOL)canStructureEditSortSubitemsAtIndexes:(id)arg1 sortStyle:(unsigned long long)arg2;
 - (id)structureEditInsertFileURLs:(id)arg1 atIndex:(unsigned long long)arg2 createGroupsForFolders:(BOOL)arg3;
 - (BOOL)canStructureEditInsertFileURLs:(id)arg1 atIndex:(unsigned long long)arg2;
 - (BOOL)canStructureEditRemoveSubitemsAtIndexes:(id)arg1;

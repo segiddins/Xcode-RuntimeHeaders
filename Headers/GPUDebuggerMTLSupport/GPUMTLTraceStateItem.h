@@ -29,6 +29,7 @@ __attribute__((visibility("hidden")))
 - (id)rewriteReceiver:(unsigned long long)arg1;
 - (id)rewriteURL:(const char *)arg1;
 - (id)generateFenumInfo;
+- (id)label;
 - (id)generateLabel;
 - (BOOL)isInterestingAPICall;
 - (BOOL)isGroupMarkerCall;

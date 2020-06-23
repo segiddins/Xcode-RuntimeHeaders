@@ -10,10 +10,11 @@
 {
 }
 
-+ (id)searchableGroupsForWorkspace:(id)arg1;
++ (id)searchableContextualizedFilePathsForWorkspace:(id)arg1;
++ (id)wrappedContainerForWorkspace:(id)arg1;
 + (id)decodeFromPropertyListRepresentation:(id)arg1;
 + (id)propertyListIdentifier;
-- (void)accessContentGroupsWithWorkspace:(id)arg1 priority:(long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)accessContentWithWorkspace:(id)arg1 priority:(long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)accumulateContributingSources:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqualToFileSourceWithIdenticalClass:(id)arg1;

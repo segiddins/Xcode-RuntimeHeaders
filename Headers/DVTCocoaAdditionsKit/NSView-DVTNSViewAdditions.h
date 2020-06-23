@@ -9,8 +9,7 @@
 @class DVTViewController, NSString;
 
 @interface NSView (DVTNSViewAdditions)
-+ (double)dvt_floatValueForSizeStyle:(long long)arg1 smallValue:(double)arg2 mediumValue:(double)arg3 largeValue:(double)arg4;
-+ (id)keyPathsForValuesAffectingDvt_isDark;
++ (id)keyPathsForValuesAffectingDvt_hasDarkAppearance;
 - (struct CGSize)dvt_ceilSizeForScaleFactor:(struct CGSize)arg1;
 - (struct CGSize)dvt_floorSizeForScaleFactor:(struct CGSize)arg1;
 - (struct CGPoint)dvt_ceilPointForScaleFactor:(struct CGPoint)arg1;
@@ -24,8 +23,8 @@
 - (id)dvt_backgroundVisualEffectViewCreatingIfNeeded:(BOOL)arg1;
 - (void)dvt_setBackgroundMaterial:(long long)arg1;
 - (void)dvt_addMinimumSizeAutolayoutConstraints:(struct CGSize)arg1;
+- (id)dvt_conditionalAnimator:(BOOL)arg1;
 @property(readonly) BOOL dvt_hasDarkAppearance;
-@property(readonly) BOOL dvt_isDark;
 - (void)dvt_setMinimumSizeAutolayoutConstraints:(struct CGSize)arg1;
 - (void)_setCachedMinimumSize:(struct CGSize)arg1;
 @property(readonly, nonatomic) struct CGSize dvt_minimumSize;
@@ -77,6 +76,7 @@
 @property(readonly, nonatomic) DVTViewController *dvt_closestViewController;
 - (void)setDvt_viewController:(id)arg1;
 @property(readonly, nonatomic) DVTViewController *dvt_viewController;
+@property(nonatomic, readonly) BOOL dvt_isMouseOverOutsideOfEventStream;
 @property(nonatomic, readonly) NSString *dvt_locationInWindowDescription;
 
 // Remaining properties

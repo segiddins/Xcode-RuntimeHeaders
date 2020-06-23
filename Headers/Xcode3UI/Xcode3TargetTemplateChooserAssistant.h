@@ -10,6 +10,7 @@
 {
 }
 
++ (BOOL)showsOtherSection;
 + (BOOL)showsCrossPlatformSection;
 + (id)supportedTemplateKind;
 - (id)nextAssistantIdentifier;

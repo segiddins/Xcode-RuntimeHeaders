@@ -8,5 +8,6 @@
 
 @protocol IDEDebuggerBarEditorInfoProvider <NSObject>
 @property BOOL showDebuggerArea;
+- (void)setShowDebuggerArea:(BOOL)arg1 animated:(BOOL)arg2;
 @end
 

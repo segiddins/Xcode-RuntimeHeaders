@@ -121,7 +121,6 @@
 - (void)becomeKeyWindow;
 - (BOOL)resignFirstResponder;
 - (BOOL)becomeFirstResponder;
-- (BOOL)canBecomeKeyView;
 - (BOOL)acceptsFirstResponder;
 - (void)_removeSeparatorPlane;
 - (void)_insertSeparatorForPlane:(id)arg1 below:(id)arg2;
@@ -187,7 +186,6 @@
 @property(readonly, copy, nonatomic) NSString *rangeIndicatorDescription;
 - (void)clearZoomIndicator;
 @property(retain, nonatomic) id selectionColorEffect;
-- (void)clearSelectedTimeRange;
 @property(nonatomic) BOOL displayCurrentInspectionTime;
 @property(readonly, nonatomic) long long midpointNanosecondOffset;
 @property(nonatomic) long long nanosecondOffset;

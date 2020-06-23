@@ -10,7 +10,7 @@
 #import <GPUDebugger/IDEVariablesViewContentProvider-Protocol.h>
 #import <GPUDebugger/IDEVariablesViewContextMenuDelegate-Protocol.h>
 
-@class DVTObservingToken, DVTStackBacktrace, GPUDebuggerController, GPUSharedTabUIState, GPUSharedWorkspaceUIState, IDEVariablesView, NSString;
+@class DVTObservingToken, DVTStackBacktrace, GPUDebuggerController, GPUSharedTabUIState, GPUSharedWorkspaceUIState, IDEVariablesView, NSLock, NSMutableArray, NSString;
 @protocol IDEVariablesViewContextMenuDelegate, NSObject;
 
 @interface GPUVariablesViewContentProvider : NSObject <IDEVariablesViewContextMenuDelegate, IDEVariablesViewContentProvider, DVTInvalidation>
@@ -28,6 +28,8 @@
     DVTObservingToken *_debugStateObserverToken;
     DVTObservingToken *_showRedundantCallIssuesToken;
     id <NSObject> _updateVariablesViewNotificationObserver;
+    NSMutableArray *_allFindings;
+    NSLock *_findingsLock;
     int _comparisonMode;
     int _objectFilterMode;
     int _textMode;
@@ -69,6 +71,7 @@
 - (void)_setTextModeVerbose:(id)arg1;
 - (void)_setCompareStateWithLastDraw:(id)arg1;
 - (void)_setCompareStateWithDefault:(id)arg1;
+- (void)addAnalyzerManagerFindingContent:(id)arg1 toArray:(id)arg2;
 - (void)addAnalyzerFindingContent:(id)arg1 toArray:(id)arg2;
 - (void)updateCurrentLocation:(id)arg1;
 - (void)updateFilteredList;

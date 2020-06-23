@@ -7,6 +7,8 @@
 #import <Foundation/NSError.h>
 
 @interface NSError (UVObjCAdditions)
-+ (id)uv_errorWithLocalizedDescription:(id)arg1;
++ (id)uv_errorWithFormat:(id)arg1;
++ (id)uv_errorWithDescription:(id)arg1;
++ (id)uv_errorWithUserInfo:(id)arg1;
 @end
 

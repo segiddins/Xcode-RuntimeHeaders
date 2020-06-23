@@ -6,9 +6,10 @@
 
 #import <IDEInterfaceBuilderKit/NSObject-Protocol.h>
 
-@class IBBorderlessEditorCanvasFrame;
+@class IBEditorCanvasFrame, NSShadow;
 
 @protocol IBEditorCanvasFrameShadowDelegate <NSObject>
-- (void)borderlessEditorCanvasFrame:(IBBorderlessEditorCanvasFrame *)arg1 drawUnshadowedBackgroundInRect:(struct CGRect)arg2;
+- (NSShadow *)shadowForEditorCanvasFrame:(IBEditorCanvasFrame *)arg1;
+- (void)editorCanvasFrame:(IBEditorCanvasFrame *)arg1 drawUnshadowedBackgroundInRect:(struct CGRect)arg2;
 @end
 

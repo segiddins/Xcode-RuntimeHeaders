@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
     GPUTraceEncoderPerformanceItem *_emptyEncoderItem;
 }
 
++ (BOOL)allowInstantUpdateGeniusResultsWhenIdle;
 + (Class)editorDocumentClass;
 - (void).cxx_destruct;
 - (void)_updateGeniusResultsWithEmptyEncoder:(id)arg1;

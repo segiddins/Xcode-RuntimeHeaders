@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class DVTPlatform, DVTPortalAppIDFeatures, DVTPortalCertificatePurpose, DVTPortalProfilePurpose, DVTPortalProfileType, IDEProfileSpecifier, IDEProvisionableEntitlements, IDEProvisionableSnapshot, NSSet, NSString, _TtC13IDEFoundation32IDEProvisioningDeviceRequirement;
+@class DVTPlatform, DVTPortalAppIDFeatures, DVTPortalProfilePurpose, DVTPortalProfileType, IDEProfileSpecifier, IDEProvisionableEntitlements, IDEProvisionableSnapshot, NSSet, NSString, _TtC13IDEFoundation32IDEProvisioningDeviceRequirement, _TtC9DVTPortal27DVTPortalCertificatePurpose;
 @protocol IDEProvisioningBasicTeam, IDEProvisioningErrorProvider;
 
 @interface IDEProvisioningInputs : NSObject
@@ -24,7 +24,7 @@
     NSString *_configuration;
 }
 
-+ (id)_deviceRequirementFromDeviceRequirement:(id)arg1 forPlatform:(id)arg2 provisioningPurpose:(id)arg3;
++ (id)_deviceRequirementFromDeviceRequirement:(id)arg1 forProfileType:(id)arg2;
 + (id)_platformForProvisionableSnapshot:(id)arg1 configuration:(id)arg2;
 + (id)inputsFromProvisionableSnapshot:(id)arg1 configuration:(id)arg2 deviceRequirement:(id)arg3 signingCertificates:(id)arg4 provisioningProfiles:(id)arg5 entitlements:(id)arg6 errorProvider:(id)arg7 validateAcrossConfigurations:(BOOL)arg8 error:(id *)arg9;
 + (id)inputsFromProvisionableSnapshot:(id)arg1 configuration:(id)arg2 deviceRequirement:(id)arg3 signingCertificates:(id)arg4 provisioningProfiles:(id)arg5 entitlements:(id)arg6 errorProvider:(id)arg7 error:(id *)arg8;
@@ -40,7 +40,7 @@
 @property(readonly, nonatomic) _TtC13IDEFoundation32IDEProvisioningDeviceRequirement *deviceRequirement; // @synthesize deviceRequirement=_deviceRequirement;
 @property(readonly, nonatomic) DVTPlatform *platform; // @synthesize platform=_platform;
 @property(readonly, nonatomic) NSString *certificateIdentifier;
-@property(readonly, nonatomic) DVTPortalCertificatePurpose *certificatePurpose;
+@property(readonly, nonatomic) _TtC9DVTPortal27DVTPortalCertificatePurpose *certificatePurpose;
 - (id)certificatePurposeBasedOnAutomaticSelectors;
 @property(readonly, nonatomic) DVTPortalProfileType *profileType;
 - (BOOL)needsBundleIdentifier;

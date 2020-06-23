@@ -6,24 +6,28 @@
 
 #import <objc/NSObject.h>
 
-@class DVTDocumentLocation, DVTFilePath, IDEOpenQuicklyQuery, NSArray, NSString, NSURL;
+@class DVTDocumentLocation, DVTFilePath, DVTRangeArray, IDEOpenQuicklyQuery, NSArray, NSString, NSURL;
 
 @interface IDEOpenQuicklyResult : NSObject
 {
-    double _score;
-    struct IDEOpenQuicklyQueryCandidate *_candidate;
+    double _textScore;
+    double _compositeScore;
+    DVTRangeArray *_matchedRanges;
+    struct DVTFuzzyMatchCandidate *_candidate;
     IDEOpenQuicklyQuery *_query;
 }
 
 + (id)documentLocationForFilePath:(id)arg1 lineNumber:(id)arg2;
 + (id)documentLocationForURL:(id)arg1 lineNumber:(id)arg2;
-+ (double)scoreCandidate:(struct IDEOpenQuicklyQueryCandidate *)arg1 isFileName:(BOOL)arg2 fromFilePathOrURL:(id)arg3 isFromProject:(BOOL)arg4 sourceSDKFilePath:(id)arg5 isFromInterestingFramework:(BOOL)arg6 query:(id)arg7;
-+ (id)resultWithCandidate:(struct IDEOpenQuicklyQueryCandidate *)arg1 query:(id)arg2 score:(double)arg3;
++ (double)scoreCandidate:(struct DVTFuzzyMatchCandidate *)arg1 precision:(long long)arg2 isFileName:(BOOL)arg3 fromFilePathOrURL:(id)arg4 isFromProject:(BOOL)arg5 sourceSDKFilePath:(id)arg6 isFromInterestingFramework:(BOOL)arg7 isPrivateSDKContent:(BOOL)arg8 query:(id)arg9 textScore:(double *)arg10 matchedRanges:(id *)arg11;
++ (id)resultWithCandidate:(struct DVTFuzzyMatchCandidate *)arg1 query:(id)arg2 textScore:(double)arg3 compositeScore:(double)arg4 matchedRanges:(id)arg5;
 - (void).cxx_destruct;
 @property(readonly) IDEOpenQuicklyQuery *query; // @synthesize query=_query;
-@property(readonly) struct IDEOpenQuicklyQueryCandidate *candidate; // @synthesize candidate=_candidate;
-@property(readonly) double score; // @synthesize score=_score;
-- (long long)compareScoreInDescendingOrder:(id)arg1;
+@property(readonly) struct DVTFuzzyMatchCandidate *candidate; // @synthesize candidate=_candidate;
+@property(readonly) DVTRangeArray *matchedRanges; // @synthesize matchedRanges=_matchedRanges;
+@property(readonly) double compositeScore; // @synthesize compositeScore=_compositeScore;
+@property(readonly) double textScore; // @synthesize textScore=_textScore;
+- (long long)compareCompositeScoreInDescendingOrder:(id)arg1;
 @property(readonly) BOOL isFromPoject;
 @property(readonly) BOOL isSymbolic;
 @property(readonly) DVTFilePath *sourceSDKFilePath;
@@ -39,7 +43,7 @@
 @property(readonly) BOOL isAlternateGroupRepresentingMultipleSDKs;
 - (id)description;
 @property(readonly) NSString *text;
-- (id)updatedResultForQuery:(id)arg1;
+- (id)updatedResultForQuery:(id)arg1 precision:(long long)arg2;
 - (id)flattenToPrimaryResult;
 
 @end

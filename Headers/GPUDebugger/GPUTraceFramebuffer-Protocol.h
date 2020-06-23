@@ -10,15 +10,15 @@
 @protocol DYFramebuffer, DYResource;
 
 @protocol GPUTraceFramebuffer <NSObject>
-@property(readonly) id <DYResource> solidTexture;
-@property(readonly) id <DYResource> outlineTexture;
-@property(readonly) id <DYResource> wireframeTexture;
-@property(retain) id <DYResource> stencilResourceObject;
-@property(retain) id <DYResource> depthResourceObject;
-@property(readonly) NSMutableDictionary *colorResourceObjects;
-@property(readonly) id <DYFramebuffer> frameBufferObject;
 - (NSArray *)attachments;
 - (id)attachmentForAttachmentID:(unsigned long long)arg1;
 - (id)initWithFBO:(id <DYFramebuffer>)arg1;
+@property(nonatomic, readonly) id <DYResource> solidTexture;
+@property(nonatomic, readonly) id <DYResource> outlineTexture;
+@property(nonatomic, readonly) id <DYResource> wireframeTexture;
+@property(nonatomic, retain) id <DYResource> stencilResourceObject;
+@property(nonatomic, retain) id <DYResource> depthResourceObject;
+@property(nonatomic, readonly) NSMutableDictionary *colorResourceObjects;
+@property(nonatomic, readonly) id <DYFramebuffer> frameBufferObject;
 @end
 

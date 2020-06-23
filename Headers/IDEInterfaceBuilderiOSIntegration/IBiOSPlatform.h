@@ -22,6 +22,7 @@
 - (id)traitCollectionForConfiguration:(id)arg1;
 - (id)variableValueForDisplayGamut:(long long)arg1;
 - (id)variableValueForSizeClass:(long long)arg1;
+- (long long)userInterfaceIdiomForConfiguration:(id)arg1;
 - (long long)displayGamutForConfiguration:(id)arg1;
 - (id)variablesAddedInXcode8;
 - (long long)sizeClassForVariable:(id)arg1 inConfiguration:(id)arg2;

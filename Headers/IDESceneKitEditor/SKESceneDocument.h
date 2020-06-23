@@ -145,7 +145,7 @@
 - (void)editorDocumentWillClose;
 - (void)attemptRecoveryFromError:(id)arg1 optionIndex:(unsigned long long)arg2 delegate:(id)arg3 didRecoverSelector:(SEL)arg4 contextInfo:(void *)arg5;
 - (void)duplicateToSCNWithCompletionBlock:(CDUnknownBlockType)arg1;
-- (BOOL)writeToURL:(id)arg1 ofType:(id)arg2 error:(id *)arg3;
+- (BOOL)writeToURL:(id)arg1 ofType:(id)arg2 forSaveOperation:(unsigned long long)arg3 originalContentsURL:(id)arg4 error:(id *)arg5;
 - (BOOL)writeSafelyToURL:(id)arg1 ofType:(id)arg2 forSaveOperation:(unsigned long long)arg3 error:(id *)arg4;
 - (id)writableTypesForSaveOperation:(unsigned long long)arg1;
 - (id)fileNameExtensionForType:(id)arg1 saveOperation:(unsigned long long)arg2;

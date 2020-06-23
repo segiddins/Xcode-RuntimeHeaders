@@ -12,6 +12,7 @@
 @property(nonatomic) __weak IBSceneUpdateContentView *owningSceneUpdateContentView;
 - (double)maskRotationInRadiansForContentView:(IBSceneUpdateContentView *)arg1;
 - (NSImage *)maskImageForContentView:(IBSceneUpdateContentView *)arg1;
+- (NSBezierPath *)normalizedBackgroundMaskPathForContentView:(IBSceneUpdateContentView *)arg1;
 - (NSBezierPath *)normalizedMaskPathForContentView:(IBSceneUpdateContentView *)arg1;
 - (NSString *)maskIdentifierForContentView:(IBSceneUpdateContentView *)arg1;
 - (NSColor *)backgroundColorForSceneUpdateContentView:(IBSceneUpdateContentView *)arg1;

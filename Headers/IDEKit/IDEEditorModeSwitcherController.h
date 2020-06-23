@@ -7,19 +7,15 @@
 #import <objc/NSObject.h>
 
 #import <IDEKit/DVTInvalidation-Protocol.h>
-#import <IDEKit/DVTWindowActivationStateObserver-Protocol.h>
 #import <IDEKit/NSMenuDelegate-Protocol.h>
 
-@class DVTDelayedInvocation, DVTDelayedMenuGradientImageButton, DVTStackBacktrace, IDEEditorContext, NSImage, NSString;
-@protocol DVTCancellable;
+@class DVTDelayedMenuGradientImageButton, DVTStackBacktrace, IDEEditorContext, NSImage, NSString;
 
-@interface IDEEditorModeSwitcherController : NSObject <DVTWindowActivationStateObserver, DVTInvalidation, NSMenuDelegate>
+@interface IDEEditorModeSwitcherController : NSObject <DVTInvalidation, NSMenuDelegate>
 {
     IDEEditorContext *_editorContext;
     DVTDelayedMenuGradientImageButton *_button;
     NSImage *_cachedDefaultButtonImage;
-    DVTDelayedInvocation *_updateButtonInvocation;
-    id <DVTCancellable> _activationStateObserver;
     BOOL _editorContextDidInstall;
     BOOL _editorModeSwitcherHasMenu;
 }
@@ -36,9 +32,8 @@
 - (BOOL)_menuHasEditorSplitMenuItemIDs;
 - (BOOL)_menuHasMenuItems;
 - (id)_defaultButtonImage;
-- (void)updateButtonStates;
+- (void)_updateButton;
 - (id)editorModeSwitcherView;
-- (void)window:(id)arg1 didChangeActivationState:(long long)arg2;
 - (void)editorContextDidInstall;
 - (void)primitiveInvalidate;
 - (id)initWithEditorContext:(id)arg1;

@@ -6,29 +6,39 @@
 
 #import <DVTKit/NSObject-Protocol.h>
 
-@class NSArray, NSAttributedString, NSDictionary, NSImage, NSString;
+@class DVTRangeArray, DVTSourceCodeLanguage, NSArray, NSAttributedString, NSDictionary, NSImage, NSString;
 
 @protocol DVTTextCompletionItem <NSObject>
-@property(readonly) BOOL notRecommended;
-@property double fuzzyMatchingScore;
-@property double priority;
-@property(readonly) unsigned long long priorityComparatorKind;
-@property(readonly) long long priorityBucket;
-@property(readonly) NSImage *icon;
-@property(readonly, copy) NSAttributedString *descriptionText;
-@property(readonly, copy) NSString *parentText;
-@property(readonly, copy) NSString *completionText;
-@property(readonly, copy) NSString *displayType;
-@property(readonly, copy) NSString *displayText;
-@property(readonly, copy) NSString *name;
+@property(nonatomic, readonly) BOOL notRecommended;
+@property(nonatomic, retain) DVTRangeArray *fuzzyMatchingRanges;
+@property(nonatomic) double fuzzyMatchingScore;
+@property(nonatomic) double priority;
+@property(nonatomic, readonly) unsigned long long priorityComparatorKind;
+@property(nonatomic, readonly) long long priorityBucket;
+@property(nonatomic, readonly) NSImage *icon;
+@property(nonatomic, readonly) NSAttributedString *descriptionText;
+@property(nonatomic, readonly) NSString *parentText;
+@property(nonatomic, readonly) NSString *completionText;
+@property(nonatomic, readonly) NSString *displayType;
+@property(nonatomic, readonly) NSString *displayText;
+@property(nonatomic, readonly) NSString *name;
 
 @optional
-@property(readonly, copy) NSString *action;
-@property(readonly) NSImage *highlightedStatusIcon;
-@property(readonly) NSImage *statusIcon;
-@property(readonly, copy) NSArray *additionalCompletions;
-@property(readonly) int completionItemStyle;
+@property(nonatomic, readonly) NSString *usr;
+@property(nonatomic, readonly) NSString *action;
+@property(nonatomic, readonly) NSImage *highlightedStatusIcon;
+@property(nonatomic, readonly) NSImage *statusIcon;
+@property(nonatomic, readonly) NSArray *additionalCompletions;
+@property(nonatomic, readonly) int completionItemStyle;
 - (unsigned long long)leadingCharactersToReplaceFromString:(NSString *)arg1 location:(unsigned long long)arg2;
 - (void)infoViewControllerWithWidth:(double)arg1 context:(NSDictionary *)arg2 completionBlock:(void (^)(DVTViewController<DVTInvalidation> *))arg3;
+@property(nonatomic, readonly) DVTSourceCodeLanguage *language;
+@property(nonatomic, readonly) NSString *displaySignature;
+@property(nonatomic, readonly) NSAttributedString *attributedDisplaySignature;
+@property(nonatomic, readonly) DVTRangeArray *briefDisplayTextRanges;
+@property(nonatomic, readonly) DVTRangeArray *displayTextRanges;
+@property(nonatomic, readonly) DVTRangeArray *nameRanges;
+@property(nonatomic, readonly) NSString *briefDisplayText;
+@property(nonatomic, readonly) NSAttributedString *attributedDisplayType;
 @end
 

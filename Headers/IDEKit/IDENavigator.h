@@ -10,18 +10,23 @@
 #import <IDEKit/DVTReplacementViewDelegate-Protocol.h>
 #import <IDEKit/IDENavigableItemCoordinatorDelegate-Protocol.h>
 
-@class DVTNotificationToken, DVTObservingToken, IDENavigableItem, IDENavigableItemAsyncFilteringCoordinator, IDENavigableItemFilter, NSMenu, NSMutableDictionary, NSString, NSView;
+@class DVTNotificationToken, DVTObservingToken, IDENavigableItem, IDENavigableItemAsyncFilteringCoordinator, IDENavigableItemFilter, NSMenu, NSMutableDictionary, NSScrollView, NSString, NSView;
 
 @interface IDENavigator : IDEViewController <IDENavigableItemCoordinatorDelegate, DVTFilterControlBarTarget, DVTReplacementViewDelegate>
 {
     BOOL _usesManualNavigableItemCoordinatorManagement;
     DVTNotificationToken *_willForgetNavigableItemsNotificationToken;
     DVTObservingToken *_editorSelectedItemObservingToken;
+    IDENavigableItem *_cachedItemToSelectFromActiveEditorSelection;
+    DVTObservingToken *_itemToSelectToken;
+    BOOL _cachedItemToSelectNeedsUpdate;
+    BOOL _displaysAdditionalScopeBars;
     BOOL _wantsCachedNavigableItemCoordinator;
     BOOL _wantsUniquingNavigableItemCoordinator;
     BOOL _filteringEnabled;
     IDENavigableItem *_rootNavigableItem;
     IDENavigableItemAsyncFilteringCoordinator *_navigableItemCoordinator;
+    NSScrollView *_navigatorScrollView;
     IDENavigableItemFilter *_filter;
     NSMutableDictionary *_cachedStateForParentViewController;
     NSView *__primaryFilterControl;
@@ -39,11 +44,20 @@
 @property BOOL wantsCachedNavigableItemCoordinator; // @synthesize wantsCachedNavigableItemCoordinator=_wantsCachedNavigableItemCoordinator;
 @property __weak NSMutableDictionary *cachedStateForParentViewController; // @synthesize cachedStateForParentViewController=_cachedStateForParentViewController;
 @property(retain, nonatomic) IDENavigableItemFilter *filter; // @synthesize filter=_filter;
+@property BOOL displaysAdditionalScopeBars; // @synthesize displaysAdditionalScopeBars=_displaysAdditionalScopeBars;
+@property(retain) NSScrollView *navigatorScrollView; // @synthesize navigatorScrollView=_navigatorScrollView;
 @property(readonly, nonatomic) IDENavigableItemAsyncFilteringCoordinator *navigableItemCoordinator; // @synthesize navigableItemCoordinator=_navigableItemCoordinator;
 @property(retain, nonatomic) IDENavigableItem *rootNavigableItem; // @synthesize rootNavigableItem=_rootNavigableItem;
 - (void)willForgetNavigableItems:(id)arg1;
 - (void)_navigableItemCoordinatorWillForgetNavigableItems:(id)arg1;
-- (void)focusedEditorDidSelectItem;
+- (BOOL)_isNavItemDescendantOfRootNavItem:(id)arg1;
+- (id)itemToSelectFromActiveEditorSelection:(id)arg1;
+@property(retain) id cachedItemToSelectFromActiveEditorSelection;
+- (void)_createEditorSelectedItemObserverIfNecessary;
+- (void)showSelectionFromActiveEditor:(id)arg1 expandAncestors:(BOOL)arg2 scrollToVisible:(BOOL)arg3;
+- (void)showCachedSelectionFromActiveEditor;
+@property(readonly) BOOL canShowSelectionFromActiveEditor;
+@property(readonly) BOOL wantsStrongSelectionOnNavigatorLoad;
 - (id)navigableItemsForArchivedNavigableItems:(id)arg1;
 - (void)revealSelection:(id)arg1;
 - (void)revealArchivedNavigableItems:(id)arg1;
@@ -64,10 +78,6 @@
 - (void)setOutputSelection:(id)arg1;
 - (void)updateBoundSelection;
 - (void)viewWillUninstall;
-@property(readonly) BOOL prefersStrongSelection;
-- (BOOL)_isNavItemDescendantOfRootNavItem:(id)arg1;
-@property(readonly) IDENavigableItem *itemToSelectBasedOnItemBeingEdited;
-- (void)_createEditorSelectedItemObserverIfNecessary;
 - (void)viewDidInstall;
 - (id)_createNavigableItemCoordinator;
 - (void)loadView;

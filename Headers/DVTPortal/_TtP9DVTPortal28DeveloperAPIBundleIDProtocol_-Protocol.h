@@ -13,6 +13,8 @@
 - (BOOL)removeFeatures:(NSArray *)arg1 session:(id <DVTServicesSession>)arg2 error:(id *)arg3;
 - (BOOL)enableFeatures:(DVTPortalAppIDFeatures *)arg1 session:(id <DVTServicesSession>)arg2 error:(id *)arg3;
 - (BOOL)matchesBundleID:(NSString *)arg1;
+@property(nonatomic, readonly) long long bundleType;
+@property(nonatomic, readonly) NSString *teamID;
 @property(nonatomic, readonly) BOOL isWildcard;
 @property(nonatomic, readonly) NSString *name;
 @property(nonatomic, readonly) NSString *identifier;

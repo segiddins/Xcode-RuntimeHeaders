@@ -6,9 +6,13 @@
 
 #import <GPUDebugger/_TtC11GPUDebugger23GPUFilterViewController.h>
 
-@interface _TtC11GPUDebugger23GPUFilterViewController (GPUDebugger)
+#import <GPUDebugger/DVTFilterTokenFieldControllerDelegate-Protocol.h>
+
+@interface _TtC11GPUDebugger23GPUFilterViewController (GPUDebugger) <DVTFilterTokenFieldControllerDelegate>
 - (void)viewDidDisappear;
 - (void)viewWillAppear;
 - (void)viewDidLoad;
+- (id)filterTokenFieldController:(id)arg1 completionTokensForString:(id)arg2;
+- (void)filterTokenFieldController:(id)arg1 tokensDidUpdate:(id)arg2 editingString:(id)arg3 globalOperator:(int)arg4;
 @end
 

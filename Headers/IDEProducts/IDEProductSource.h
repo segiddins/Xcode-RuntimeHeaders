@@ -12,7 +12,7 @@
 
 @interface IDEProductSource : NSObject <NSCopying>
 {
-    BOOL _busy;
+    BOOL _isBusy;
     BOOL _hasCompletedInitialLoading;
     IDEProductManager *_productManager;
     NSArray *_products;
@@ -22,7 +22,7 @@
 @property(retain) NSArray *products; // @synthesize products=_products;
 @property __weak IDEProductManager *productManager; // @synthesize productManager=_productManager;
 @property(readonly) BOOL hasCompletedInitialLoading; // @synthesize hasCompletedInitialLoading=_hasCompletedInitialLoading;
-@property(getter=isBusy) BOOL busy; // @synthesize busy=_busy;
+@property BOOL isBusy; // @synthesize isBusy=_isBusy;
 - (void)prioritizeDeliveryOfResultsForProductIdentifier:(id)arg1;
 - (void)refreshProducts;
 - (void)startLocating;

@@ -34,6 +34,7 @@
 - (id)referenceKey;
 @property(readonly) IDEWorkspace *workspace;
 - (void)primitiveInvalidate;
+- (id)partialClassDescriptions;
 @property(readonly, copy) NSString *description;
 - (id)initWithWorkspaceDocument:(id)arg1;
 

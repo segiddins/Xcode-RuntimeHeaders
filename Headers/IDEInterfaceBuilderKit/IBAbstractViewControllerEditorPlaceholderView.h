@@ -19,6 +19,7 @@
     struct CGRect _placeholderAlignmentRect;
 }
 
++ (id)viewWithFrame:(struct CGRect)arg1 title:(id)arg2;
 - (void).cxx_destruct;
 @property(nonatomic, getter=isShowingDropHighlight) BOOL showingDropHighlight; // @synthesize showingDropHighlight=_showingDropHighlight;
 @property(copy, nonatomic) NSString *explanatoryText; // @synthesize explanatoryText=_explanatoryText;

@@ -9,7 +9,7 @@
 #import <IDEInterfaceBuilderKit/IBDocumentArchiving-Protocol.h>
 #import <IDEInterfaceBuilderKit/IBIDEAutolayoutItem-Protocol.h>
 
-@class NSArray, NSObject, NSSet, NSString, NSValue;
+@class IBAutolayoutGuide, NSArray, NSObject, NSSet, NSString, NSValue;
 @protocol IBAutolayoutItem, IBCollection, IBIDEAutolayoutItem, IBOrderedCollection;
 
 @interface NSView (IBViewAdditions) <IBIDEAutolayoutItem, IBDocumentArchiving>
@@ -27,6 +27,7 @@
 + (id)keyPathsForValuesAffectingIbInspectedHorizontalContentCompressionResistancePriority;
 + (id)keyPathsForValuesAffectingIbInspectedVerticalContentHuggingPriority;
 + (id)keyPathsForValuesAffectingIbInspectedHorizontalContentHuggingPriority;
++ (id)keyPathsForValuesAffectingIbInspectedViewLayoutModeTitles;
 + (id)keyPathsForValuesAffectingIbInspectedViewLayoutMode;
 + (unsigned long long)ibDefaultAutoresizingMaskForViewsUsingConstraints;
 + (id)keyPathsForValuesAffectingIbInspectedTranslatesAutoresizingMaskIntoConstraints;
@@ -42,6 +43,7 @@
 + (long long)ibDevelopmentTargetForDocumentContentView;
 + (id)ibKeyPathForDocumentContentView;
 + (id)ibDefaultImageForInstance:(id)arg1 targetRuntime:(id)arg2;
++ (BOOL)ibIsCocoaNSView;
 + (id)instantiateWithDocumentUnarchiver:(id)arg1;
 - (void)ib_removeFromSuperviewMakingAncestorFirstResponderIfNeeded;
 - (void)ib_setSubviewsMakingAncestorFirstResponderIfNeeded:(id)arg1;
@@ -101,8 +103,8 @@
 - (CDStruct_c519178c)ibInspectedAlignmentInset;
 @property(copy, nonatomic) id <IBOrderedCollection> ibSubviewCandidates;
 - (void)ibLiveViewClassDidChange;
-- (BOOL)ibHasDesignableCustomClass;
 - (void)ibInvalidateLiveViewsBundleInDocument:(id)arg1;
+@property(copy, nonatomic) NSValue *ibDesignableIntrinsicContentSizeOnLastStatusUpdate;
 - (BOOL)ibCanHaveDescendantViewHierarchy;
 - (void)ibSwizzledSetValue:(id)arg1 forKeyPath:(id)arg2;
 - (void)setIbInspectedHasDesignTimeIntrinsicContentSize:(BOOL)arg1;
@@ -184,6 +186,9 @@
 @property(readonly, nonatomic) BOOL ibShouldIgnoreSizeAmbiguity;
 @property(readonly, nonatomic) BOOL ibShouldIgnorePositionAmbiguity;
 - (BOOL)ibShouldIgnoreForAmbiguityGroup:(id)arg1;
+- (id)ibInspectedViewLayoutModeValues;
+- (id)ibInspectedViewLayoutModeTitlesForMultipleSelection;
+- (id)ibInspectedViewLayoutModeTitles;
 @property(nonatomic) long long ibInspectedViewLayoutMode;
 - (BOOL)ibShouldChildBeIncludedInArbitrationUnitWithParent:(id)arg1;
 @property(readonly, nonatomic) BOOL ibShouldPropagateFramesDuringFrameDecision;
@@ -202,7 +207,6 @@
 - (CDUnknownBlockType)ibWindow:(id *)arg1 forUpdatingConstraintsInDocument:(id)arg2;
 - (BOOL)ibPropagatedTranslatesAutoresizingConstraintsOfChildView:(id)arg1 forCopyOfChildView:(id)arg2 engine:(id)arg3;
 - (unsigned long long)ibAmbiguityStatusForRepresentationOfItem:(id)arg1 inEngine:(id)arg2;
-- (void)ibPropagatePropertiesToCopyOfReceiver:(id)arg1 forLayoutEngine:(id)arg2;
 - (void)ibMapCopyOfReceiver:(id)arg1 intoLayoutEngine:(id)arg2;
 - (struct CGRect)ibDropInsetLayoutBoundsForSubviews;
 @property(readonly, nonatomic) BOOL ibIsSelfManagedContainerInEngine;
@@ -297,6 +301,8 @@
 @property(readonly, nonatomic) id <IBCollection> ibInstalledReferencingConstraints;
 - (id)ibInstalledReferencingConstraintsIfInDocument;
 - (BOOL)ibIsValidConstraintItem;
+- (void)ibUnarchiveLayoutGuides:(id)arg1;
+- (void)ibArchiveLayoutGuides:(id)arg1;
 - (void)ibUnArchivePlatformItems:(id)arg1;
 - (void)ibArchivePlatformItems:(id)arg1;
 - (BOOL)ibShouldArchiveMenuItems;
@@ -307,6 +313,7 @@
 - (void)ibArchiveAutolayoutProperties:(id)arg1;
 - (void)_ibUnarchiveConstraints:(id)arg1;
 - (void)ibArchiveConstraints:(id)arg1;
+- (void)ibUnarchiveLegacyCanDrawConcurrently:(id)arg1;
 - (void)ibUnarchiveTranslatesAutoresizingMaskIntoConstraints:(id)arg1;
 - (void)ibArchiveTranslatesAutoresizingMaskIntoConstraints:(id)arg1;
 - (void)ibUnarchiveAutoresizingMask:(id)arg1;
@@ -364,8 +371,7 @@
 - (BOOL)ibIsClippingContent;
 - (struct CGRect)ibSecondaryDragHitAreaFrame;
 @property(copy, nonatomic) NSValue *ibExternalDesignTimeIntrinsicContentSize;
-- (void)setIbAssociatedDesignTimeIntrinsicContentSize:(id)arg1;
-- (id)ibAssociatedDesignTimeIntrinsicContentSize;
+@property(retain, nonatomic) NSValue *ibAssociatedDesignTimeIntrinsicContentSize;
 - (void)ibPreserveLayoutFrameDuring:(CDUnknownBlockType)arg1;
 - (long long)ibPreferredResizeDirectionMask;
 - (struct CGSize)ibPreferredSizeRespectingNearestLegalBoundsSize;
@@ -463,8 +469,9 @@
 @property(readonly, nonatomic) NSView *ibDesignableContentView;
 - (void)setIbArchivedDesignableContentView:(id)arg1 unarchiver:(id)arg2;
 @property(readonly, nonatomic) NSView *ibArchivedDesignableContentView;
-@property BOOL ibExternalCanDrawConcurrently;
-@property(readonly) BOOL ibCanDirectlySetCanDrawConcurrently;
+@property BOOL ibDidHaveCanDrawConcurrentlySetOnUnarchive;
+@property(retain, nonatomic) IBAutolayoutGuide<IBAutolayoutItem> *ibLayoutMarginsGuide;
+@property(retain, nonatomic) IBAutolayoutGuide<IBAutolayoutItem> *ibSafeAreaLayoutGuide;
 - (void)ibDidAddWithDefaultChildrenToDocument:(id)arg1;
 - (BOOL)ibShouldIncludeKeyPath:(id)arg1 inInitialChildrenForDocument:(id)arg2;
 - (id)ibObjectsToReparentWhenAddingOrRemovingActiveContentView;
@@ -487,8 +494,13 @@
 - (void)ibPopulateRequiredDocumentCapabilities:(id)arg1 document:(id)arg2;
 - (id)ibArchiveKeyForConfigurableRelationship:(id)arg1;
 - (id)ibLocalPerConfigurationToManyChildRelationshipKeyPaths;
+- (id)ibSwizzledNSViewInitWithCoder:(id)arg1;
+- (void)ibSwizzledNSViewEncodeWithCoder:(id)arg1;
 - (BOOL)ibIsChildTypicalConnectionTarget:(id)arg1;
 - (BOOL)ibSelectingChildWithMouseRequiresEditorConsent:(id)arg1;
+- (BOOL)ibShouldConsiderHitTestingForChild:(id)arg1;
+- (id)ibEffectiveViewLayoutGuidesInDescendingPriorityOrder;
+- (id)ibEffectiveViewLayoutGuides;
 - (struct CGRect)ibRectForChild:(id)arg1 inFrameController:(id)arg2;
 - (id)ibSecondaryHitTestingRectsForChild:(id)arg1 inFrameController:(id)arg2;
 - (id)ibHitRectsForConstraint:(id)arg1 inFrameController:(id)arg2;

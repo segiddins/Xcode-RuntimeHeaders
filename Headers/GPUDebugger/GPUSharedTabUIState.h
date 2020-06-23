@@ -26,9 +26,11 @@
     NSString *_traceAPIItemCategoryIdentifier;
     GPUTraceOutlineItem *_currentSelectedOutlineItem;
     NSDictionary *_memoryReportStateDictionary;
+    NSDictionary *_landingPageStateDictionary;
 }
 
 - (void).cxx_destruct;
+@property(retain) NSDictionary *landingPageStateDictionary; // @synthesize landingPageStateDictionary=_landingPageStateDictionary;
 @property(retain) NSDictionary *memoryReportStateDictionary; // @synthesize memoryReportStateDictionary=_memoryReportStateDictionary;
 @property(retain) GPUTraceOutlineItem *currentSelectedOutlineItem; // @synthesize currentSelectedOutlineItem=_currentSelectedOutlineItem;
 @property(copy) NSString *traceAPIItemCategoryIdentifier; // @synthesize traceAPIItemCategoryIdentifier=_traceAPIItemCategoryIdentifier;

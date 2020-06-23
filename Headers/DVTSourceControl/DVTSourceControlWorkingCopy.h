@@ -43,6 +43,8 @@
 + (id)cachedLocationsUpdateQueue;
 + (id)scanForWorkingCopiesInFolderPaths:(id)arg1 traversingUp:(BOOL)arg2 ignoringFolders:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;
 + (id)scanForWorkingCopiesInFolderPaths:(id)arg1 traversingUp:(BOOL)arg2 ignoringFolders:(id)arg3 usingSourceControlSystems:(id)arg4 completionBlock:(CDUnknownBlockType)arg5;
++ (id)scanForWorkingCopiesIn:(id)arg1:(CDUnknownBlockType)arg2;
++ (id)scanFolderPathsIn:(id)arg1 traversingUp:(BOOL)arg2 ignoringFolders:(id)arg3;
 + (void)setCachedLocationsQueue:(id)arg1;
 + (id)cachedLocationsQueue;
 - (void).cxx_destruct;
@@ -68,11 +70,19 @@
 @property(readonly) NSHashTable *locationObservers;
 - (void)removeWorkingCopyStatusObserver:(id)arg1;
 - (void)addWorkingCopyStatusObserver:(id)arg1;
+- (id)cachedPathsWithRemoteStatusIgnoringStatus:(unsigned long long)arg1;
+- (id)cachedPathsWithRemoteStatusContainingStatus:(unsigned long long)arg1;
+- (id)cachedPathsWithLocalStatusIgnoringStatus:(unsigned long long)arg1;
+- (id)cachedPathsWithLocalStatusContainingStatus:(unsigned long long)arg1;
+- (id)_cachedPathsForMapTable:(id)arg1 ignoringStatus:(unsigned long long)arg2;
+- (id)_cachedPathsForMapTable:(id)arg1 containingStatus:(unsigned long long)arg2;
+- (id)_cachedPathsForMapTable:(id)arg1 filteredBy:(CDUnknownBlockType)arg2;
 @property(readonly) NSSet *cachedPathsWithRemoteStatus;
 @property(readonly) NSSet *cachedPathsWithLocalStatus;
 @property(readonly) NSSet *cachedPathsWithStatus;
 - (unsigned long long)cachedSourceControlRemoteStatusForFile:(id)arg1;
 - (unsigned long long)cachedSourceControlLocalStatusForFile:(id)arg1;
+- (unsigned long long)_unsafeCachedSourceControlStatusForMapping:(id)arg1 relativePath:(id)arg2;
 - (BOOL)updateCachedRemoteStatus:(id)arg1;
 - (BOOL)updateCachedLocalStatus:(id)arg1;
 - (void)unsafeSetCachedRemoteStatus:(id)arg1;
@@ -154,7 +164,6 @@
 - (void)updateCachedLocations;
 @property(nonatomic, readonly) BOOL lastAttemptFailedLongEnoughAgo;
 - (id)setAuthor:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
-- (id)defaultAuthorWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (id)authorWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (id)blameFile:(id)arg1 revision:(id)arg2 ignoreWhitespace:(BOOL)arg3 completionBlock:(CDUnknownBlockType)arg4;
 - (id)blameFile:(id)arg1 revision:(id)arg2 fromLocation:(id)arg3 ignoreWhitespace:(BOOL)arg4 completionBlock:(CDUnknownBlockType)arg5;

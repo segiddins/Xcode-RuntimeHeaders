@@ -38,6 +38,11 @@ struct CoreFunction {
     void *_field11;
 };
 
+struct DYBaseSocketTransportSharedMemoryURLs {
+    id _field1;
+    id _field2;
+};
+
 struct Fbuf {
     CDUnion_8f472182 _field1;
     void *_field2;

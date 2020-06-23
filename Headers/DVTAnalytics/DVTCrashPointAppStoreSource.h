@@ -12,6 +12,7 @@
 
 @interface DVTCrashPointAppStoreSource : NSObject <NSCopying>
 {
+    BOOL _isAppClip;
     DVTAnalyticsAppIdentifier *_appIdentifier;
     NSString *_appExtensionPointIdentifier;
     NSMapTable *_filterToSourceMap;
@@ -26,6 +27,7 @@
 @property(readonly) DVTCrashPointParameters *parameters; // @synthesize parameters=_parameters;
 @property(readonly) NSMapTable *identifierToCrashPointRecordObservedMap; // @synthesize identifierToCrashPointRecordObservedMap=_identifierToCrashPointRecordObservedMap;
 @property(readonly) NSMapTable *filterToSourceMap; // @synthesize filterToSourceMap=_filterToSourceMap;
+@property(readonly) BOOL isAppClip; // @synthesize isAppClip=_isAppClip;
 @property(readonly) NSString *appExtensionPointIdentifier; // @synthesize appExtensionPointIdentifier=_appExtensionPointIdentifier;
 @property(readonly) DVTAnalyticsAppIdentifier *appIdentifier; // @synthesize appIdentifier=_appIdentifier;
 - (id)copyWithZone:(struct _NSZone *)arg1;
@@ -39,7 +41,7 @@
 - (id)_cacheLock;
 - (id)crashPointRecordForIdentifier:(id)arg1 summary:(id)arg2;
 - (id)parameterizedSourceForFilter:(id)arg1;
-- (id)initWithAppIdentifier:(id)arg1 appExtensionPointIdentifier:(id)arg2 parameters:(id)arg3 cachePath:(id)arg4;
+- (id)initWithAppIdentifier:(id)arg1 appExtensionPointIdentifier:(id)arg2 isAppClip:(BOOL)arg3 parameters:(id)arg4 cachePath:(id)arg5;
 - (id)init;
 
 @end

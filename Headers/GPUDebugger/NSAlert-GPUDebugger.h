@@ -9,6 +9,7 @@
 @interface NSAlert (GPUDebugger)
 + (id)gpuDebuggerAlertWithErrorMessageText:(id)arg1;
 + (id)gpuDebuggerAlertForRevlock:(id)arg1 messageText:(id)arg2;
++ (id)gpuDebuggerAlertWithError:(id)arg1 messageText:(id)arg2 showBugReportMessage:(BOOL)arg3;
 + (id)gpuDebuggerAlertWithError:(id)arg1 messageText:(id)arg2;
 @end
 

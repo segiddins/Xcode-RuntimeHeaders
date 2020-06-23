@@ -13,9 +13,9 @@ __attribute__((visibility("hidden")))
 {
     MISSING_TYPE *titleField;
     MISSING_TYPE *visualEffectView;
-    MISSING_TYPE *backgroundView;
     MISSING_TYPE *titleHeight;
     MISSING_TYPE *title;
+    MISSING_TYPE *isPinned;
 }
 
 - (void).cxx_destruct;

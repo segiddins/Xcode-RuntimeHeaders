@@ -57,6 +57,7 @@
 + (void)initialize;
 - (void).cxx_destruct;
 @property(retain) IDENavigatorOutlineView *outlineView; // @synthesize outlineView=_outlineView;
+- (id)outlineView:(id)arg1 tintColorForItem:(id)arg2;
 - (double)outlineView:(id)arg1 heightOfRowByItem:(id)arg2;
 - (double)_outlineView:(id)arg1 heightOfRowByItem:(id)arg2;
 - (BOOL)outlineView:(id)arg1 isGroupHeaderItem:(id)arg2;

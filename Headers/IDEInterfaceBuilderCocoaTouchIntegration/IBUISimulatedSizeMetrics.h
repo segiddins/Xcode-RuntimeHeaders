@@ -21,7 +21,6 @@
 + (id)splitViewMasterSizeMetrics;
 + (id)modalFormSheetSizeMetrics;
 + (id)modalPageSheetSizeMetrics;
-+ (id)sharedInstance;
 + (id)instantiateWithCoder:(id)arg1;
 + (id)instantiateWithDocumentUnarchiver:(id)arg1;
 @property(readonly, nonatomic) NSValue *documentViewInset;

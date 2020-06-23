@@ -11,6 +11,7 @@
 @property(nonatomic, readonly) BOOL wantsHighlightEdgeAdornments;
 @property(nonatomic, readonly) double highlightFrameCornerRadius;
 @property(nonatomic, readonly) double highlightFrameBorderWidth;
+@property(nonatomic, readonly) long long navigationTargetType;
 - (struct CGRect)hitTestFrameInWindow:(NSWindow *)arg1;
 - (struct CGRect)highlightFrameInWindow:(NSWindow *)arg1;
 @end

@@ -8,7 +8,7 @@
 
 #import <DVTKit/DVTTextCompletionItem-Protocol.h>
 
-@class DVTFilePath, NSArray, NSAttributedString, NSImage, NSString;
+@class DVTFilePath, DVTRangeArray, DVTSourceCodeLanguage, NSArray, NSAttributedString, NSImage, NSString;
 
 @interface DVTFilePathTextCompletionItem : DVTStringTextCompletionItem <DVTTextCompletionItem>
 {
@@ -23,17 +23,26 @@
 // Remaining properties
 @property(readonly, copy) NSString *action;
 @property(readonly, copy) NSArray *additionalCompletions;
+@property(readonly, copy) NSAttributedString *attributedDisplaySignature;
+@property(readonly, copy) NSAttributedString *attributedDisplayType;
+@property(readonly, copy) NSString *briefDisplayText;
+@property(readonly, copy) DVTRangeArray *briefDisplayTextRanges;
 @property(readonly) int completionItemStyle;
 @property(readonly, copy) NSString *completionText;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly, copy) NSAttributedString *descriptionText;
+@property(readonly, copy) NSString *displaySignature;
 @property(readonly, copy) NSString *displayText;
+@property(readonly, copy) DVTRangeArray *displayTextRanges;
 @property(readonly, copy) NSString *displayType;
+@property(retain) DVTRangeArray *fuzzyMatchingRanges;
 @property double fuzzyMatchingScore;
 @property(readonly) unsigned long long hash;
 @property(readonly) NSImage *highlightedStatusIcon;
-@property(readonly, copy) NSString *name;
+@property(readonly) DVTSourceCodeLanguage *language;
+@property(readonly, copy, nonatomic) NSString *name;
+@property(readonly, copy) DVTRangeArray *nameRanges;
 @property(readonly) BOOL notRecommended;
 @property(readonly, copy) NSString *parentText;
 @property double priority;
@@ -41,6 +50,7 @@
 @property(readonly) unsigned long long priorityComparatorKind;
 @property(readonly) NSImage *statusIcon;
 @property(readonly) Class superclass;
+@property(readonly) NSString *usr;
 
 @end
 

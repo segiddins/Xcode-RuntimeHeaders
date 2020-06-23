@@ -8,5 +8,6 @@
 
 @interface _TtC8RCShared28ImportProgressViewController (RCShared)
 - (id)tableView:(id)arg1 viewForTableColumn:(id)arg2 row:(long long)arg3;
+- (long long)numberOfRowsInTableView:(id)arg1;
 @end
 

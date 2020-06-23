@@ -6,7 +6,7 @@
 
 #import <IDEProducts/IDEProductSource.h>
 
-@class DVTDelayedInvocation, DVTFilePath, DVTPerformanceMetric, NSArray, NSMutableDictionary, NSMutableSet, NSSet;
+@class DVTDelayedInvocation, DVTFilePath, DVTPerformanceMetric, NSMutableDictionary, NSMutableSet, NSSet, _TtC13DVTFoundation11RateLimiter;
 @protocol DVTInvalidation;
 
 @interface IDEAppStoreProductSource : IDEProductSource
@@ -18,37 +18,25 @@
     NSSet *_developerAccountPasswordObservers;
     NSMutableDictionary *_deliveryQueue;
     NSMutableSet *_priorityDeliveryQueue;
-    NSMutableDictionary *_rateLimiters;
-    NSArray *_lastNetworkRefreshErrors;
+    _TtC13DVTFoundation11RateLimiter *_rateLimiter;
     DVTFilePath *_productsRootDirectory;
 }
 
 + (id)defaultProductsRootDirectory;
-+ (BOOL)isAdamIdBlacklisted:(id)arg1;
-+ (BOOL)isAdamIdWhitelisted:(id)arg1;
-+ (id)blackListedAdamIDs;
-+ (id)whiteListedAdamIDs;
 - (void).cxx_destruct;
 @property(retain, nonatomic) DVTFilePath *productsRootDirectory; // @synthesize productsRootDirectory=_productsRootDirectory;
-@property(retain, nonatomic) NSArray *lastNetworkRefreshErrors; // @synthesize lastNetworkRefreshErrors=_lastNetworkRefreshErrors;
-@property(retain, nonatomic) NSMutableDictionary *rateLimiters; // @synthesize rateLimiters=_rateLimiters;
+@property(retain, nonatomic) _TtC13DVTFoundation11RateLimiter *rateLimiter; // @synthesize rateLimiter=_rateLimiter;
 @property(retain, nonatomic) NSMutableSet *priorityDeliveryQueue; // @synthesize priorityDeliveryQueue=_priorityDeliveryQueue;
 @property(retain, nonatomic) NSMutableDictionary *deliveryQueue; // @synthesize deliveryQueue=_deliveryQueue;
 @property(retain) NSSet *developerAccountPasswordObservers; // @synthesize developerAccountPasswordObservers=_developerAccountPasswordObservers;
 @property(retain) id <DVTInvalidation> developerAccountsObserver; // @synthesize developerAccountsObserver=_developerAccountsObserver;
 @property(retain, nonatomic) DVTDelayedInvocation *delayedRefreshInvocation; // @synthesize delayedRefreshInvocation=_delayedRefreshInvocation;
 @property BOOL hasCompletedInitialLoading; // @synthesize hasCompletedInitialLoading=_hasCompletedInitialLoading;
-- (id)binaryInfosForVersion:(id)arg1;
-- (id)supportedDeviceTypesForAppVersion:(id)arg1 productCategory:(id)arg2;
-- (id)productFromAppDescription:(id)arg1 versionDescriptions:(id)arg2 session:(id)arg3 coordinator:(id)arg4 errors:(id *)arg5;
-- (id)appStoreProductsResultForAccount:(id)arg1 iTunesConnect:(id)arg2 coordinator:(id)arg3 productLocationResultNotification:(CDUnknownBlockType)arg4;
+- (id)productsFromAppDescription:(id)arg1 versionDescriptions:(id)arg2 coordinator:(id)arg3;
 - (id)appStoreProductsForCoordinator:(id)arg1 productLocationResultNotification:(CDUnknownBlockType)arg2;
-- (id)productForAppDescription:(id)arg1 session:(id)arg2 iTunesConnect:(id)arg3 coordinator:(id)arg4;
-- (id)versionDescriptionsForAppDescription:(id)arg1 session:(id)arg2 iTunesConnect:(id)arg3 error:(id *)arg4;
-- (id)appDescriptionsForAccountSession:(id)arg1 iTunesConnect:(id)arg2 error:(id *)arg3;
-- (void)_setBusyOnMainThread:(BOOL)arg1;
+- (void)setIsBusyOnMainThread:(BOOL)arg1;
 - (void)delayedRefreshProducts;
-- (id)rateLimiter;
+- (id)rateLimiterKey;
 - (void)drainAllProductsInPriorityDeliveryQueue;
 - (void)drainAllProductsInDeliveryQueue;
 - (id)drainProductsDeliveryQueueOfProductIdentifiers:(id)arg1;
@@ -59,7 +47,7 @@
 - (BOOL)networkRefreshEnabled;
 - (id)resultByMergingProductResults:(id)arg1 withCoordinator:(id)arg2;
 - (id)updateCacheWithResult:(id)arg1;
-- (id)readProductsFromCacheWithCoordinator:(id)arg1 withNetworkErrors:(id)arg2;
+- (id)readProductsFromCacheWithCoordinator:(id)arg1;
 - (id)readProductFromCachedProductDir:(id)arg1 withCoordinator:(id)arg2;
 - (id)appIconPathForProduct:(id)arg1;
 - (id)filePathForProductVersion:(id)arg1 rootProductVersion:(id)arg2 parentProduct:(id)arg3;

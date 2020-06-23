@@ -17,7 +17,6 @@
     NSDictionary *_childrenIdentifiersToConflictStates;
 }
 
-+ (id)defaultInstanceWithChildSlots:(id)arg1;
 + (BOOL)fileNameIsIdentifier;
 + (BOOL)supportsLocalization;
 + (Class)requiredChildrenClass;
@@ -26,7 +25,8 @@
 @property(copy, nonatomic) NSDictionary *childrenIdentifiersToConflictStates; // @synthesize childrenIdentifiersToConflictStates=_childrenIdentifiersToConflictStates;
 @property(copy, nonatomic) NSDictionary *childrenIdentifiersToSlots; // @synthesize childrenIdentifiersToSlots=_childrenIdentifiersToSlots;
 - (BOOL)isEqualForUnitTests:(id)arg1;
-- (void)populateMutatorsToAddRequiredChildCounterparts:(id)arg1;
+- (void)populateMutatorsToAddRequiredChildCounterparts:(id)arg1 filter:(CDUnknownBlockType)arg2;
+- (id)createDefaultChildForSlot:(id)arg1 suggestedIdioms:(id)arg2;
 - (BOOL)shouldMutateChild:(id)arg1 byCopyingContentToNewSlot:(id)arg2;
 - (BOOL)isChildMinimallyFitForCompiling:(id)arg1;
 - (id)conflictFreeChildForSlot:(id)arg1;
@@ -49,6 +49,7 @@
 - (void)setConflictState:(unsigned long long)arg1 forChildWithIdentifier:(id)arg2;
 - (unsigned long long)conflictStateForChildWithIdentifier:(id)arg1;
 - (id)childrenForSlot:(id)arg1;
+- (id)requiredPixelSizeForRep:(id)arg1 ofChild:(id)arg2;
 - (id)childIdentfiersForSlot:(id)arg1;
 - (id)slotForChild:(id)arg1;
 - (void)setSlot:(id)arg1 forChild:(id)arg2;

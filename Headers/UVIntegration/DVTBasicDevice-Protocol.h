@@ -18,6 +18,7 @@
 @property(nonatomic, readonly) DVTPlatform *platform;
 @property(nonatomic, readonly) NSString *operatingSystemVersionWithBuildNumber;
 @property(nonatomic, readonly) NSString *operatingSystemBuild;
+@property(nonatomic, readonly) NSString *iOSSupportVersion;
 @property(nonatomic, readonly) NSString *operatingSystemVersion;
 @property(nonatomic, readonly) NSString *processorDescription;
 @property(nonatomic, readonly) NSString *modelUTI;

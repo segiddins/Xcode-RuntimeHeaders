@@ -6,12 +6,12 @@
 
 #import <DebuggerUI/DBGGaugeGraphSlice.h>
 
-@class IDEPlotGraph, NSNumber, NSString;
+@class IDECoreChartPlotGraph, NSNumber, NSString;
 
 @interface DBGGaugeCPUGraphSlice : DBGGaugeGraphSlice
 {
     NSString *_threadDisplayName;
-    IDEPlotGraph *_graph;
+    IDECoreChartPlotGraph *_graph;
     NSNumber *_threadID;
     NSString *_qualityOfServiceValue;
 }

@@ -18,6 +18,7 @@
     IDEBreakpointManager *_breakpointsManager;
     IDEEditorArea *_editorArea;
     GPUTraceFPSTrayCell *_trayFPSCell;
+    BOOL _captureDoneAlerted;
     id <DVTInvalidation> _gfxDebuggingAdditionObserver;
     IDEWorkspaceTabController *_workspaceTabController;
     GPUDebuggingAddition *_debuggingAddition;
@@ -59,6 +60,7 @@
 - (void)_activateGPUDebuggerUI;
 - (BOOL)_hasSingleTraceSessionReference;
 - (void)_traceSessionComplete;
+- (void)_removeGaugeWithScheme:(id)arg1 launchSession:(id)arg2;
 - (void)fakeSessionComplete;
 - (void)_reopenStandaloneTraceDocument;
 - (void)_closeAllDocuments;

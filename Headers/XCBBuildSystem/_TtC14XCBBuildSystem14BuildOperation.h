@@ -18,7 +18,6 @@
     MISSING_TYPE *persistent;
     MISSING_TYPE *serial;
     MISSING_TYPE *queue;
-    MISSING_TYPE *buildDebugging;
     MISSING_TYPE *clientDelegate;
     MISSING_TYPE *buildOutputDelegate;
     MISSING_TYPE *system;
@@ -27,6 +26,7 @@
     MISSING_TYPE *nodesToBuild;
     MISSING_TYPE *workspace;
     MISSING_TYPE *core;
+    MISSING_TYPE *userPreferences;
 }
 
 @end

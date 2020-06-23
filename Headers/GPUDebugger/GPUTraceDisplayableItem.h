@@ -8,7 +8,7 @@
 
 #import <GPUDebugger/GPUAbstractTraceDisplayableItem-Protocol.h>
 
-@class DYFuture, NSArray, NSImage, NSLock, NSMapTable, NSMutableDictionary, NSObject, NSSet;
+@class DYFuture, NSArray, NSImage, NSLock, NSMapTable, NSMutableArray, NSMutableDictionary, NSObject;
 @protocol DYTexture, GPUTraceDisplaySet, OS_dispatch_queue;
 
 @interface GPUTraceDisplayableItem : GPUTraceAPIItem <GPUAbstractTraceDisplayableItem>
@@ -23,17 +23,19 @@
     NSLock *_thumbnailNotifyLock;
     NSMutableDictionary *thumbnailImageToReadyStatusDict;
     NSMapTable *_dependencyGraphThumbnailNotify;
+    NSMapTable *_dependencyGraphSortedThumbnailNotify;
     NSLock *_dependencyGraphThumbnailNotifyLock;
     NSArray *_dependencyGraphThumbnails;
     NSMutableDictionary *_requestedTextureToThumbnailImageDict;
+    NSMutableArray *_sortedThumbnails;
     unsigned char _thumbnailStatus;
     unsigned char _dependencyGraphThumbnailStatus;
     DYFuture *_updateDisplaySetFuture;
-    NSSet *_precomputedFilterItems;
+    CDUnknownBlockType _generateBoundResourceFilterItems;
 }
 
 - (void).cxx_destruct;
-@property(retain, nonatomic) NSSet *precomputedFilterItems; // @synthesize precomputedFilterItems=_precomputedFilterItems;
+@property(copy, nonatomic) CDUnknownBlockType generateBoundResourceFilterItems; // @synthesize generateBoundResourceFilterItems=_generateBoundResourceFilterItems;
 @property(retain) DYFuture *updateDisplaySetFuture; // @synthesize updateDisplaySetFuture=_updateDisplaySetFuture;
 @property(nonatomic) unsigned char dependencyGraphThumbnailStatus; // @synthesize dependencyGraphThumbnailStatus=_dependencyGraphThumbnailStatus;
 @property(nonatomic) unsigned char thumbnailStatus; // @synthesize thumbnailStatus=_thumbnailStatus;
@@ -52,6 +54,9 @@
 - (id)_startLoadingDisplaySet;
 - (id)imageToExportToFile;
 - (void)cancelNotifyOnThumbnailForSender:(id)arg1;
+- (void)cancelNotifyOnDependencyGraphSortedThumbnailForSender:(id)arg1;
+- (void)cancelNotifyOnDependencyGraphThumbnailForSender:(id)arg1;
+- (void)notifyWithSender:(id)arg1 onDependencyGraphSortedThumbnail:(CDUnknownBlockType)arg2;
 - (void)notifyWithSender:(id)arg1 onDependencyGraphThumbnail:(CDUnknownBlockType)arg2;
 - (void)notifyWithSender:(id)arg1 onThumbnail:(CDUnknownBlockType)arg2;
 - (void)_setDependencyGraphThumbnails:(id)arg1 withThumbnailToResourceInfoDict:(id)arg2;
@@ -65,6 +70,7 @@
 - (id)_realizeDisplaySetElements;
 - (void)generateFilterItems;
 - (id)createRenderJobsForDisplaySetWithRenderTargetArrayIndex:(unsigned long long)arg1;
+- (id)parentFromOutlineMode:(unsigned long long)arg1;
 - (id)parent;
 - (id)description;
 - (id)initWithController:(id)arg1 parent:(id)arg2 functionIndex:(int)arg3 displayIndex:(int)arg4;

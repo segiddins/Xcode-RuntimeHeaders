@@ -11,7 +11,7 @@
 @interface _TtC7XCBUtil15StatisticsGroup : _TtCs12_SwiftObject
 {
     MISSING_TYPE *name;
-    MISSING_TYPE *statistics;
+    MISSING_TYPE *_statistics;
 }
 
 @end

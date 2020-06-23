@@ -17,6 +17,7 @@
     DVTPlatform *_platform;
 }
 
++ (id)otherSectionName;
 + (id)crossPlatformSectionName;
 - (void).cxx_destruct;
 @property BOOL showsCategoriesAsChildren; // @synthesize showsCategoriesAsChildren=_showsCategoriesAsChildren;

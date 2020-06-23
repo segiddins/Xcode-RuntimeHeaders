@@ -6,15 +6,14 @@
 
 #import <DTGraphKit/DTTimelineGraph.h>
 
-@class DTTimelineDecoratedPlane, GPUTimelineGraphDataSource, GPUTimelineGraphOverlayView, GPUTimelineGraphTimelineDecorator, GPUTimelineRulerGraph, NSMutableArray, NSTimer, NSTrackingArea, NSView;
+@class DTTimelineDecoratedPlane, GPUTimelineGraphDataSource, GPUTimelineGraphOverlayView, GPUTimelineGraphTimelineDecorator, GPUTimelineRulerGraph, NSArray, NSMutableArray, NSTimer, NSTrackingArea, NSView;
 @protocol GPUTimelineGraphContextMenuProvider, GPUTimelineGraphTheme, GPUTimelineGraphThumbnailView, GPUTimelineGraphTooltipView;
 
 @interface GPUTimelineGraph : DTTimelineGraph
 {
-    NSMutableArray *_decorators;
-    NSMutableArray *_planes;
+    NSMutableArray *_planeDecorators;
     NSMutableArray *_groupPlanes;
-    NSMutableArray *_groupPlaneChildIndexes;
+    NSMutableArray *_filteredPlanes;
     id <GPUTimelineGraphTheme> _theme;
     struct CGPoint _lastMousePosition;
     BOOL _isFiltering;
@@ -26,6 +25,7 @@
     BOOL _showReferencePlane;
     BOOL _showTimeRuler;
     BOOL _showMarkers;
+    BOOL _flattenGroups;
     GPUTimelineGraphDataSource *_dataSource;
     unsigned long long _selectedIndex;
     id <GPUTimelineGraphContextMenuProvider> _contextMenuProvider;
@@ -45,6 +45,7 @@
 @property(retain, nonatomic) GPUTimelineGraphOverlayView *overlayView; // @synthesize overlayView=_overlayView;
 @property(retain, nonatomic) GPUTimelineRulerGraph *rulerGraph; // @synthesize rulerGraph=_rulerGraph;
 @property(readonly, nonatomic) DTTimelineDecoratedPlane *rulerPlane; // @synthesize rulerPlane=_rulerPlane;
+@property(nonatomic) BOOL flattenGroups; // @synthesize flattenGroups=_flattenGroups;
 @property(nonatomic) BOOL showMarkers; // @synthesize showMarkers=_showMarkers;
 @property(nonatomic) BOOL showTimeRuler; // @synthesize showTimeRuler=_showTimeRuler;
 @property(nonatomic) BOOL showReferencePlane; // @synthesize showReferencePlane=_showReferencePlane;
@@ -55,6 +56,8 @@
 @property(readonly, nonatomic) unsigned long long selectedIndex; // @synthesize selectedIndex=_selectedIndex;
 @property(retain, nonatomic) id <GPUTimelineGraphTheme> theme; // @synthesize theme=_theme;
 @property(retain, nonatomic) GPUTimelineGraphDataSource *dataSource; // @synthesize dataSource=_dataSource;
+- (void)scrollItemToVisible:(unsigned long long)arg1;
+- (BOOL)isItemVisible:(unsigned long long)arg1;
 - (id)hitTest:(struct CGPoint)arg1;
 - (void)setNeedsDisplay:(BOOL)arg1;
 - (BOOL)acceptsFirstResponder;
@@ -98,20 +101,24 @@
 - (const struct GPUTimelineGraphReferencePlaneCell *)currentReferencePlaneCell;
 - (id)nameForPlane:(unsigned long long)arg1;
 - (id)planeInfoAtPoint:(struct CGPoint)arg1;
-- (id)decoratorAtPoint:(struct CGPoint)arg1;
+- (id)timelinePlaneAtPoint:(struct CGPoint)arg1;
 - (void)clearSelection;
 - (void)selectIndex:(unsigned long long)arg1;
 - (void)invalidateCellAtIndex:(unsigned long long)arg1;
 - (void)scrollToEndOfTimeline;
 - (void)_buildPlaneStructure:(BOOL)arg1 collapseGroups:(BOOL)arg2;
+- (void)removeFilteredPlane:(unsigned long long)arg1;
+- (void)addFilteredPlane:(unsigned long long)arg1;
 - (void)_buildPlanes;
 @property(readonly, nonatomic) double rulerHeight;
 - (void)setContextMenu:(id)arg1;
-- (id)_planeFromDataSourcePlane:(unsigned long long)arg1;
+- (id)_decoratorFromDataSourcePlane:(unsigned long long)arg1;
 - (void)boundsDidChange:(id)arg1;
+- (void)invalidateDynamicRanges;
 - (void)invalidateCellsAtIndicies:(id)arg1;
 - (void)invalidateGraph;
 - (void)visiblePlanesChanged:(id)arg1;
+@property(retain, nonatomic) NSArray *filteredPlanes;
 - (void)visibleIndexesChanged:(id)arg1;
 - (void)_setup;
 - (void)reset;

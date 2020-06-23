@@ -68,10 +68,10 @@ struct Function {
     void *_field14;
 };
 
-struct ProgressDigest<6> {
+struct ProgressDigest<5> {
     long long MaxMonitorValue;
     long long InvalidIndex;
-    long long _indices[6];
+    long long _indices[5];
     struct vector<long long, std::__1::allocator<long long>> _monitorValues;
 };
 

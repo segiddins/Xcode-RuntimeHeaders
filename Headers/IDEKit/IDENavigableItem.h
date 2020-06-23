@@ -146,6 +146,7 @@
 - (id)coordinator;
 - (void)_setRepresentedObject:(id)arg1;
 - (id)initWithRepresentedObject:(id)arg1;
+@property(readonly, nonatomic) unsigned long long depth;
 @property(readonly, nonatomic) NSArray *additionalFilterMatchingText;
 @property(readonly, nonatomic) NSString *accessibleImageDescription; // @dynamic accessibleImageDescription;
 @property(readonly, nonatomic) NSImage *image; // @dynamic image;
@@ -176,8 +177,10 @@
 - (unsigned long long)_titleStyleForReferencedContentExistance;
 - (BOOL)_allowsNonFileReferenceDocumentInFileInspector;
 - (BOOL)ide_canStructureEditName;
+- (BOOL)hasAncestorInSet:(id)arg1;
 - (id)representedContainerItem;
-- (unsigned long long)indexUnderParent;
+- (id)actualRepresentedObject;
+- (long long)indexUnderParent;
 - (id)parentStructureEditingItem;
 - (BOOL)_alwaysBypassFilter;
 - (BOOL)coordinatorFilteringShouldFilterChildItems;

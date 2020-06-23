@@ -18,6 +18,7 @@
     NSMutableArray *_classesBeingEncoded;
     NSMutableArray *_archivingErrorMessages;
     NSNumber *_archiveVersion;
+    long long _nestedResourceReferenceArchivingCount;
     id <IBArchivableDocument> _archivedDocument;
 }
 

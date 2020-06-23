@@ -6,9 +6,11 @@
 
 #import <IDEFoundation/_TtC13IDEFoundation24IDESchemeOptionReference.h>
 
-@class MISSING_TYPE;
+#import <IDEFoundation/DVTXMLUnarchiving-Protocol.h>
 
-@interface _TtC13IDEFoundation28IDELocationScenarioReference : _TtC13IDEFoundation24IDESchemeOptionReference
+@class MISSING_TYPE, NSString;
+
+@interface _TtC13IDEFoundation28IDELocationScenarioReference : _TtC13IDEFoundation24IDESchemeOptionReference <DVTXMLUnarchiving>
 {
     MISSING_TYPE *referenceType;
 }
@@ -20,6 +22,15 @@
 - (id)initWithLocationScenario:(id)arg1;
 - (id)initWithIdentifier:(id)arg1 referenceType:(long long)arg2;
 @property(nonatomic) long long referenceType; // @synthesize referenceType;
+- (void)dvt_encodeRelationshipsWithXMLArchiver:(id)arg1 version:(id)arg2;
+- (void)dvt_encodeAttributesWithXMLArchiver:(id)arg1 version:(id)arg2;
+- (void)setReferenceTypeFromUTF8String:(char *)arg1 fromXMLUnarchiver:(id)arg2;
+- (id)initFromXMLUnarchiver:(id)arg1 archiveVersion:(float)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

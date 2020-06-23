@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
 
 - (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long attachmentIndex; // @synthesize attachmentIndex=_attachmentIndex;
+- (id)canonicalTextureName;
 - (id)displayElementName;
 - (BOOL)isStencilDisplayElement;
 - (BOOL)isDepthDisplayElement;

@@ -99,6 +99,8 @@
 - (id)accessibilityHitTest:(struct CGPoint)arg1;
 - (id)accessibilityChildren;
 - (BOOL)isAccessibilityElement;
+- (id)canvasFrameShadow;
+- (CDStruct_c519178c)canvasFrameShadowInset;
 - (id)hitTest:(struct CGPoint)arg1;
 - (struct CGRect)boundsForHitTesting;
 - (BOOL)isEligibleForBandSelection;
@@ -141,6 +143,7 @@
 - (void)invokeWithPinnedKnob:(CDUnion_31865a80)arg1 block:(CDUnknownBlockType)arg2;
 - (void)setAnchor:(struct CGPoint)arg1;
 - (id)contentPathForActivationDarkeningInOverlayView:(id)arg1;
+- (BOOL)showMinimapContentBorder;
 @property(nonatomic) BOOL showSceneMask;
 - (id)initWithFrame:(struct CGRect)arg1;
 

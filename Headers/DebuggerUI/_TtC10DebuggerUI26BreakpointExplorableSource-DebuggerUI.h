@@ -6,16 +6,26 @@
 
 #import <DebuggerUI/_TtC10DebuggerUI26BreakpointExplorableSource.h>
 
+#import <DebuggerUI/DVTFilterExpressionPresentationDelegate-Protocol.h>
 #import <DebuggerUI/DVTFilteredDataSource-Protocol.h>
 
-@class OS_dispatch_queue;
+@class NSString, OS_dispatch_queue;
 
-@interface _TtC10DebuggerUI26BreakpointExplorableSource (DebuggerUI) <DVTFilteredDataSource>
+@interface _TtC10DebuggerUI26BreakpointExplorableSource (DebuggerUI) <DVTFilteredDataSource, DVTFilterExpressionPresentationDelegate>
 - (void)watchpointEnablementChanged:(id)arg1;
 - (void)breakpointTextFilterablePropertyChanged:(id)arg1;
 - (void)breakpointEnablementChanged:(id)arg1;
 - (void)breakpointModificationChanged:(id)arg1;
 - (void)filterWithFilterSession:(id)arg1;
 @property(nonatomic, readonly) OS_dispatch_queue *filteringQueue;
+- (id)buttonsForCustomFilterExpressions;
+- (id)editingStringForFilterExpression:(id)arg1;
+- (id)menuDisplayStringForFilterExpression:(id)arg1;
+- (id)fieldDisplayStringForFilterExpression:(id)arg1;
+- (id)validFilterExpressionsForExpressions:(id)arg1 currentFilterExpression:(id)arg2;
+- (id)filterExpressionForText:(id)arg1 isComplete:(BOOL)arg2 currentFilterExpression:(id)arg3;
+- (id)titleForFilterIdentifier:(id)arg1;
+@property(nonatomic, readonly) NSString *filterFieldAccessibilityDescription;
+@property(nonatomic, readonly) NSString *filterFieldToolTip;
 @end
 

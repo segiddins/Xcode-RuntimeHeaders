@@ -68,6 +68,7 @@
 - (unsigned long long)draggingSession:(id)arg1 sourceOperationMaskForDraggingContext:(long long)arg2;
 - (void)_performDragInComponentCell:(id)arg1 inRect:(struct CGRect)arg2 ofView:(id)arg3 event:(id)arg4;
 - (void)filterItems:(id)arg1 inMenu:(id)arg2 forSearchString:(id)arg3;
+- (id)titleForFilteringMenuItem:(id)arg1;
 - (void)_openURLInFinder:(id)arg1;
 - (BOOL)popUpMenuForComponentCell:(id)arg1 inRect:(struct CGRect)arg2 ofView:(id)arg3;
 - (void)_handlePressureClickForCell:(id)arg1;

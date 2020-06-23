@@ -41,6 +41,7 @@ __attribute__((visibility("hidden")))
     MISSING_TYPE *mouseTrackingArea;
     MISSING_TYPE *mouseInsideOfTrackingArea;
     MISSING_TYPE *mouseTrackingTimer;
+    MISSING_TYPE *showISA;
     MISSING_TYPE *_shaderDebuggerSelectedNode;
 }
 
@@ -66,6 +67,10 @@ __attribute__((visibility("hidden")))
 - (void)viewWillDisappear;
 - (void)viewDidLoad;
 - (void)setRepresentedObject:(id)arg1 userInfo:(id)arg2;
+- (void)exportISA:(id)arg1;
+- (void)jumpToFunctionDefinition:(id)arg1;
+- (void)setupContextMenuWithAuxiliaryViewController:(id)arg1 selectedSymbol:(id)arg2 menu:(id)arg3;
+- (void)viewDidResizeWithAuxiliaryViewController:(id)arg1;
 
 @end
 

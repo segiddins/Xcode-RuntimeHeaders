@@ -26,7 +26,6 @@
 + (id)keyPathsForValuesAffectingIbInspectedLabelForInspectedSegment;
 + (id)keyPathsForValuesAffectingIbInspectedToolTipForInspectedSegment;
 + (id)keyPathsForValuesAffectingIbInspectedSegmentValue;
-+ (id)keyPathsForValuesAffectingIbShadowedSegmentDistribution;
 - (id)ibEnclosingSegmentedControl;
 - (void)setIbInspectedSpringLoaded:(BOOL)arg1;
 - (BOOL)ibInspectedSpringLoaded;
@@ -62,7 +61,6 @@
 @property(retain) NSArray *ibShadowedTags;
 @property(retain) NSArray *ibShadowedLabels;
 @property(retain) NSArray *ibShadowedAlignments;
-@property long long ibShadowedSegmentDistribution;
 - (long long)ibPreferredResizeDirectionMask;
 - (Class)ibPreferredControlClass;
 - (id)ibDefaultFontForCurrentConfiguration;
@@ -74,6 +72,7 @@
 - (id)ibOrderedSnapshotAttributesKeyPaths;
 - (Class)ibEditorClass;
 - (id)ibQualifyingInfoForDefaultLabel;
+- (id)ibRecoverySuggestionForMisuseOfSymbolCharactersInValueForInspectorKeyPath:(id)arg1;
 - (id)ibDocumentationSymbolInfosForKeyPath:(id)arg1;
 - (void)ibRemoveChildren:(id)arg1;
 - (void)ibPopulateChildRelationOrder:(id)arg1;

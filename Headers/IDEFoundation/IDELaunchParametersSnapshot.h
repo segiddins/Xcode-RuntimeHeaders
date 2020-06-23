@@ -32,6 +32,9 @@
         unsigned int _allowDeviceSensorReplayData:1;
         unsigned int _deviceSensorReplayFile:1;
         unsigned int _skipInstallForTest:1;
+        unsigned int _enableGPUShaderValidationMode:1;
+        unsigned int _storeKitConfigurationFileReference:1;
+        unsigned int _processLauncherKind:1;
     } _uninitializedFlags;
     BOOL _debugPauseAtEntry;
     BOOL _enableAddressSanitizer;
@@ -66,6 +69,7 @@
     BOOL _mallocStackLoggingLite;
     BOOL _skipInternalInstallSDKCheck;
     int _debugserverPort;
+    int _enableGPUShaderValidationMode;
     int _launchStyle;
     int _runnableType;
     unsigned int _debugProcessAsUID;
@@ -86,6 +90,8 @@
     long long _attachingToiOSApp;
     IDERuntimeProfileInfo *_runtimeProfileInfo;
     NSString *_deviceSensorReplayFile;
+    IDESchemeOptionReference *_storeKitConfigurationFileReference;
+    unsigned long long _processLauncherKind;
     IDEEntityIdentifier *_schemeIdentifier;
     NSString *_selectedLauncherIdentifier;
     NSString *_selectedDebuggerIdentifier;
@@ -94,7 +100,6 @@
     NSDictionary *_appExtensionBuiltPaths;
     DVTFilePath *_replacementRunnableLocation;
     DVTFilePath *_workingDirectory;
-    NSString *_architecture;
     IDELocationScenarioReference *_locationScenarioReference;
     NSString *_language;
     NSString *_region;
@@ -123,7 +128,7 @@
 + (id)environmentVariablesToMergeFromTestingEnvironmentVariablesByAppendingUserValues;
 + (id)environmentVariablesToMergeFromTestingEnvironmentVariablesByPrependingUserValues;
 + (id)snapshotForUnitTestingWithLauncherIdentifier:(id)arg1 debuggerIdentifier:(id)arg2 runnableLocation:(id)arg3 commandLineArgs:(id)arg4 environmentVariables:(id)arg5;
-+ (id)launchParametersWithSchemeIdentifier:(id)arg1 launcherIdentifier:(id)arg2 debuggerIdentifier:(id)arg3 launchStyle:(int)arg4 runnableLocation:(id)arg5 debugProcessAsUID:(unsigned int)arg6 workingDirectory:(id)arg7 commandLineArgs:(id)arg8 environmentVariables:(id)arg9 architecture:(id)arg10 platformIdentifier:(id)arg11 buildConfiguration:(id)arg12 buildableProduct:(id)arg13 deviceAppDataPackage:(id)arg14 allowLocationSimulation:(BOOL)arg15 locationScenarioReference:(id)arg16 showNonLocalizedStrings:(BOOL)arg17 language:(id)arg18 region:(id)arg19 routingCoverageFileReference:(id)arg20 enableGPUFrameCaptureMode:(int)arg21 enableGPUValidationMode:(int)arg22 debugXPCServices:(BOOL)arg23 debugAppExtensions:(BOOL)arg24 internalIOSLaunchStyle:(int)arg25 internalIOSSubstitutionApp:(id)arg26 launchAutomaticallySubstyle:(unsigned long long)arg27;
++ (id)launchParametersWithSchemeIdentifier:(id)arg1 launcherIdentifier:(id)arg2 debuggerIdentifier:(id)arg3 launchStyle:(int)arg4 runnableLocation:(id)arg5 debugProcessAsUID:(unsigned int)arg6 workingDirectory:(id)arg7 commandLineArgs:(id)arg8 environmentVariables:(id)arg9 platformIdentifier:(id)arg10 buildConfiguration:(id)arg11 buildableProduct:(id)arg12 deviceAppDataPackage:(id)arg13 allowLocationSimulation:(BOOL)arg14 locationScenarioReference:(id)arg15 showNonLocalizedStrings:(BOOL)arg16 language:(id)arg17 region:(id)arg18 routingCoverageFileReference:(id)arg19 enableGPUFrameCaptureMode:(int)arg20 enableGPUValidationMode:(int)arg21 debugXPCServices:(BOOL)arg22 debugAppExtensions:(BOOL)arg23 internalIOSLaunchStyle:(int)arg24 internalIOSSubstitutionApp:(id)arg25 launchAutomaticallySubstyle:(unsigned long long)arg26;
 - (void).cxx_destruct;
 @property(nonatomic) BOOL skipInternalInstallSDKCheck; // @synthesize skipInternalInstallSDKCheck=_skipInternalInstallSDKCheck;
 @property(nonatomic) BOOL mallocStackLoggingLite; // @synthesize mallocStackLoggingLite=_mallocStackLoggingLite;
@@ -172,7 +177,6 @@
 @property(readonly) BOOL showNonLocalizedStrings; // @synthesize showNonLocalizedStrings=_showNonLocalizedStrings;
 @property(readonly) IDELocationScenarioReference *locationScenarioReference; // @synthesize locationScenarioReference=_locationScenarioReference;
 @property(readonly) BOOL allowLocationSimulation; // @synthesize allowLocationSimulation=_allowLocationSimulation;
-@property(readonly, copy) NSString *architecture; // @synthesize architecture=_architecture;
 @property(readonly) DVTFilePath *workingDirectory; // @synthesize workingDirectory=_workingDirectory;
 @property unsigned int debugProcessAsUID; // @synthesize debugProcessAsUID=_debugProcessAsUID;
 @property(copy) DVTFilePath *replacementRunnableLocation; // @synthesize replacementRunnableLocation=_replacementRunnableLocation;
@@ -185,6 +189,9 @@
 @property(readonly) NSString *selectedDebuggerIdentifier; // @synthesize selectedDebuggerIdentifier=_selectedDebuggerIdentifier;
 @property(readonly) NSString *selectedLauncherIdentifier; // @synthesize selectedLauncherIdentifier=_selectedLauncherIdentifier;
 @property(readonly) IDEEntityIdentifier *schemeIdentifier; // @synthesize schemeIdentifier=_schemeIdentifier;
+@property(nonatomic) unsigned long long processLauncherKind; // @synthesize processLauncherKind=_processLauncherKind;
+@property(retain, nonatomic) IDESchemeOptionReference *storeKitConfigurationFileReference; // @synthesize storeKitConfigurationFileReference=_storeKitConfigurationFileReference;
+@property(nonatomic) int enableGPUShaderValidationMode; // @synthesize enableGPUShaderValidationMode=_enableGPUShaderValidationMode;
 @property(nonatomic) BOOL skipInstallForTest; // @synthesize skipInstallForTest=_skipInstallForTest;
 @property(retain, nonatomic) NSString *deviceSensorReplayFile; // @synthesize deviceSensorReplayFile=_deviceSensorReplayFile;
 @property(nonatomic) BOOL allowDeviceSensorReplayData; // @synthesize allowDeviceSensorReplayData=_allowDeviceSensorReplayData;

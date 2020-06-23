@@ -8,7 +8,7 @@
 
 #import <IDEProductsUI/DVTReplacementViewDelegate-Protocol.h>
 
-@class DVTDelayedInvocation, DVTObservingToken, DVTReplacementView, IDEArchivesViewController, NSString;
+@class DVTObservingToken, DVTReplacementView, IDEArchivesViewController, NSString;
 
 @interface IDEArchivesSectionViewController : IDEProductSectionViewController <DVTReplacementViewDelegate>
 {
@@ -17,24 +17,22 @@
     DVTObservingToken *_inspectableObserver;
     DVTObservingToken *_selectedProductObserver;
     DVTObservingToken *_hasCompletedInitialLoadingObserver;
-    DVTDelayedInvocation *_delayedHideSpinner;
 }
 
 + (BOOL)canShowContentForProduct:(id)arg1;
 - (void).cxx_destruct;
-@property(retain) DVTDelayedInvocation *delayedHideSpinner; // @synthesize delayedHideSpinner=_delayedHideSpinner;
 @property(retain) DVTObservingToken *hasCompletedInitialLoadingObserver; // @synthesize hasCompletedInitialLoadingObserver=_hasCompletedInitialLoadingObserver;
 @property(retain) DVTObservingToken *selectedProductObserver; // @synthesize selectedProductObserver=_selectedProductObserver;
 @property(retain) DVTObservingToken *inspectableObserver; // @synthesize inspectableObserver=_inspectableObserver;
 @property __weak DVTReplacementView *replacementView; // @synthesize replacementView=_replacementView;
 - (BOOL)vendorIsBusy;
+- (id)toolbarItems;
 - (BOOL)shouldShowNoSelection;
 - (void)handleAction:(id)arg1 fromInspectable:(id)arg2;
 - (void)replacementView:(id)arg1 willCloseViewController:(id)arg2;
 - (void)replacementView:(id)arg1 didInstallViewController:(id)arg2;
 @property(readonly) IDEArchivesViewController *archivesViewController;
-- (void)_updateSectionView;
-- (void)setSelectedProduct:(id)arg1;
+- (void)updateSectionView;
 - (BOOL)showEmptyView;
 - (void)primitiveInvalidate;
 - (void)viewDidLoad;

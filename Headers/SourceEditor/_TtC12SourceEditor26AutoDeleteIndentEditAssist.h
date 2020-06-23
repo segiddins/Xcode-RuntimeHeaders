@@ -10,7 +10,7 @@
 
 @interface _TtC12SourceEditor26AutoDeleteIndentEditAssist : _TtCs12_SwiftObject
 {
-    MISSING_TYPE *indentBeforeDeletion;
+    MISSING_TYPE *state;
 }
 
 @end

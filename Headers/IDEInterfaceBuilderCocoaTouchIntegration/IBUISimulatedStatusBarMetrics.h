@@ -20,6 +20,7 @@
 + (id)simulatedBarMetricsForBarView:(id)arg1;
 + (id)simulatedStatusBarMetricsForStatusBar:(id)arg1;
 @property(readonly, nonatomic) long long statusBarStyle; // @synthesize statusBarStyle=_statusBarStyle;
+- (id)metricChainWithPrecedingMetric:(id)arg1;
 - (void)unarchiveWithDocumentUnarchiver:(id)arg1;
 - (void)archiveWithDocumentArchiver:(id)arg1;
 @property(readonly, copy) NSString *description;

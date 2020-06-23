@@ -6,19 +6,21 @@
 
 #import <IDEFoundation/IDEBatchFindAbstractMatchResult.h>
 
-@class NSRegularExpression, NSTextCheckingResult;
+@class NSRegularExpression, NSString, NSTextCheckingResult;
 
 @interface IDEBatchFindRegularExpressionResult : IDEBatchFindAbstractMatchResult
 {
     NSRegularExpression *_regularExpression;
     NSTextCheckingResult *_textCheckingResult;
+    NSString *_searchedText;
 }
 
 - (void).cxx_destruct;
+@property(readonly) NSString *searchedText; // @synthesize searchedText=_searchedText;
 @property(readonly) NSTextCheckingResult *textCheckingResult; // @synthesize textCheckingResult=_textCheckingResult;
 @property(readonly) NSRegularExpression *regularExpression; // @synthesize regularExpression=_regularExpression;
 - (id)generateFindResult;
-- (id)initWithDocumentLocation:(id)arg1 contextText:(id)arg2 contextTextMatchingRange:(struct _NSRange)arg3 regularExpression:(id)arg4 textCheckingResult:(id)arg5 initialNumberOfLinesCalculator:(CDUnknownBlockType)arg6 parent:(id)arg7 queryIdentifier:(long long)arg8 resultIdentifier:(long long)arg9;
+- (id)initWithDocumentLocation:(id)arg1 contextText:(id)arg2 contextTextMatchingRange:(struct _NSRange)arg3 regularExpression:(id)arg4 searchedText:(id)arg5 textCheckingResult:(id)arg6 initialNumberOfLinesCalculator:(CDUnknownBlockType)arg7 parent:(id)arg8 queryIdentifier:(long long)arg9 resultIdentifier:(long long)arg10;
 
 @end
 

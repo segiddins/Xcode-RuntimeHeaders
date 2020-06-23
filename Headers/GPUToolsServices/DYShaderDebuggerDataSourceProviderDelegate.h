@@ -20,6 +20,7 @@
 
 - (void).cxx_destruct;
 - (id)requestShaderDebuggerTraceWithOptions:(id)arg1;
+- (id)requestShaderDebuggerTraceWithOptions:(id)arg1 error:(id *)arg2;
 - (void)dealloc;
 - (id)initWithTransport:(id)arg1;
 

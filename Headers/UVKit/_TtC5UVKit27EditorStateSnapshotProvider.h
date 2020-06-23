@@ -10,8 +10,7 @@
 
 @interface _TtC5UVKit27EditorStateSnapshotProvider : _TtCs12_SwiftObject
 {
-    MISSING_TYPE *editorStateSnapshot;
-    MISSING_TYPE *objectWillChange;
+    MISSING_TYPE *_editorStateSnapshot;
 }
 
 @end

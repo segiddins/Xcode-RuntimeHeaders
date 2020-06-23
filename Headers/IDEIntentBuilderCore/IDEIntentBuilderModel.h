@@ -28,6 +28,8 @@
     NSString *_namespace;
     unsigned long long _sourceLanguage;
     IDEIntentBuilderDocument *_document;
+    unsigned long long __visibility;
+    NSString *__moduleName;
 }
 
 + (void)initialize;
@@ -37,6 +39,8 @@
 + (void)_registerModelClass:(Class)arg1 forFileDataType:(id)arg2;
 + (id)_modelClassRegistry;
 - (void).cxx_destruct;
+@property(copy, nonatomic, setter=_setModuleName:) NSString *_moduleName; // @synthesize _moduleName=__moduleName;
+@property(nonatomic, setter=_setVisibility:) unsigned long long _visibility; // @synthesize _visibility=__visibility;
 @property(nonatomic, getter=_isSystemModel, setter=_setSystemModel:) BOOL _systemModel; // @synthesize _systemModel=__systemModel;
 @property(nonatomic, setter=_setDocument:) __weak IDEIntentBuilderDocument *document; // @synthesize document=_document;
 @property(nonatomic) BOOL manualCodegen; // @synthesize manualCodegen=_manualCodegen;
@@ -65,6 +69,7 @@
 - (id)groupWithIdentifier:(id)arg1;
 - (void)addGroup:(id)arg1;
 - (id)_latestVersionAsString;
+- (id)_versionAsString;
 - (unsigned long long)_versionWithString:(id)arg1;
 - (void)_clearTransientGroupItems;
 - (Class)_groupItemClassForGroup:(id)arg1;

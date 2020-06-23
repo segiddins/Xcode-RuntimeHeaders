@@ -6,7 +6,11 @@
 
 #import <AppKit/NSView.h>
 
-@interface NSView (IBBackgroundFiltersEffectsInspectorAdditions)
+#import <IDEInterfaceBuilderCocoaIntegration/IBNSViewAutolayoutGuideDelegate-Protocol.h>
+
+@class CATransition, CIFilter, IBNSViewAutolayoutGuide, NSArray, NSShadow, NSString;
+
+@interface NSView (IBBackgroundFiltersEffectsInspectorAdditions) <IBNSViewAutolayoutGuideDelegate>
 + (id)keyPathsForValuesAffectingIbShadowedInspectedBackgroundFilters;
 + (id)keyPathsForValuesAffectingIbInspectedCompositingFilterName;
 + (id)keyPathsForValuesAffectingIbShadowedInspectedCompositingFilter;
@@ -25,6 +29,7 @@
 + (id)keyPathsForValuesAffectingIbInspectedShadow;
 + (id)keyPathsForValuesAffectingIbInspectedAllViewsForRenderTree;
 + (id)ibSwizzledNSViewLayoutMetrics;
++ (id)keyPathsForValuesAffectingIbInspectedUseSafeAreaLayoutGuide;
 + (void)ibPopulateAdditionalCocoaInspectorSlices:(id)arg1 forCategory:(id)arg2;
 + (id)keyPathsForValuesAffectingIbInspectedDesignableSubviewsTransitionName;
 + (id)keyPathsForValuesAffectingIbShadowedDesignableSubviewsTransition;
@@ -35,9 +40,14 @@
 - (id)ibInspectedCompositingFilterName;
 - (id)ibShadowedInspectedCompositingFilter;
 - (id)ibShadowedInspectedContentFilters;
+- (void)ibSwizzledNSViewUnarchiveLayoutGuides:(id)arg1;
+- (void)ibSwizzledNSViewArchiveLayoutGuides:(id)arg1;
+- (void)ibPrepareToBackwardsDeployToOSVersion:(id)arg1 inDocument:(id)arg2;
+- (void)ibPopulateAdditionalTargetOSVersions:(id)arg1 forCompilingDocument:(id)arg2;
 - (id)ibViewsRelevantToPriorityOfKeyPath:(id)arg1 atIndex:(unsigned long long)arg2;
 - (id)ibDescriptiveTextOfCustomPriorityType:(id)arg1 withPriority:(long long)arg2;
 - (id)ibLabelForPriorityOfKeyPath:(id)arg1 atIndex:(unsigned long long)arg2;
+- (id)ibSwizzledNSViewEffectiveViewLayoutGuidesInDescendingPriorityOrder;
 - (void)ibSwizzledNSViewPopulateResourceReferences:(id)arg1 resourceManager:(id)arg2;
 - (BOOL)ibCanEmbedDirectlyInSplitView;
 - (Class)ibSwizzledNSViewTrackerClass;
@@ -48,20 +58,18 @@
 - (id)ibSwizzledNSViewLastInspectedTranslatesAutoresizingMaskIntoConstraintsMetadataKeyInDocument:(id)arg1;
 - (id)ibSwizzledNSViewTranslatesAutoresizingMaskIntoConstraintsMetadataKeyInDocument:(id)arg1;
 - (id)ibSwizzledNSViewConstraintsMetadataKeyInDocument:(id)arg1;
+- (id)ibNSViewPreferredItemForContainerConstraintFromDescendant:(id)arg1 attribute:(unsigned long long)arg2;
+- (id)ibLayoutGuideForAttribute:(unsigned long long)arg1;
+- (void)ibConvertConstraintsToSafeAreaLayoutGuide:(BOOL)arg1 forDocument:(id)arg2;
 - (BOOL)ibWrapperViewForEditorCanvasFrameIsAffectedByChangeToProperty:(id)arg1;
 - (id)ibWrapperViewForEditorCanvasFrame:(id)arg1;
-- (void)setIbExternalNSViewSimulatedAppContext:(unsigned long long)arg1;
-- (unsigned long long)ibExternalNSViewSimulatedAppContext;
-- (void)setIbInspectedCompositingFilter:(id)arg1;
-- (id)ibInspectedCompositingFilter;
-- (void)setIbInspectedBackgroundFilters:(id)arg1;
-- (id)ibInspectedBackgroundFilters;
-- (void)setIbInspectedContentFilters:(id)arg1;
-- (id)ibInspectedContentFilters;
-- (void)setDesignableSubviewsTransition:(id)arg1;
-- (id)designableSubviewsTransition;
+@property unsigned long long ibExternalNSViewSimulatedAppContext;
+@property(retain) CIFilter *ibInspectedCompositingFilter;
+@property(copy) NSArray *ibInspectedBackgroundFilters;
+@property(copy) NSArray *ibInspectedContentFilters;
+@property(retain) CATransition *designableSubviewsTransition;
 - (void)setLastKnownDesignableSubviewsTransitionSubtype:(id)arg1;
-- (id)lastKnownDesignableSubviewsTransitionSubtype;
+@property(readonly) NSString *lastKnownDesignableSubviewsTransitionSubtype;
 - (id)ibInspectedEffectiveAppearance;
 - (id)ibInspectedInheritedAppearance;
 - (BOOL)ibIsNSAppearanceContainer;
@@ -75,8 +83,7 @@
 - (double)ibInspectedShadowOffsetHeight;
 - (void)setIbInspectedShadowOffsetWidth:(double)arg1;
 - (double)ibInspectedShadowOffsetWidth;
-- (void)setIbInspectedShadow:(id)arg1;
-- (id)ibInspectedShadow;
+@property(retain) NSShadow *ibInspectedShadow;
 - (BOOL)ibInspectedIsTreeRenderingWithLayers;
 - (void)ibEnableWantsLayerForBestViewInHierarchy;
 - (id)ibInspectedAllViewsForRenderTree;
@@ -87,15 +94,33 @@
 - (BOOL)ibInspectedImplementsSetTag;
 - (id)ibSwizzledNSViewViewFromPasteboardImage:(id)arg1 inDocument:(id)arg2;
 - (BOOL)ibCanBeBoundToFromObject:(id)arg1;
-- (void)setIbExternalGestureRecognizers:(id)arg1;
-- (id)ibExternalGestureRecognizers;
+@property(copy, nonatomic) NSArray *ibExternalGestureRecognizers;
 - (void)ibSwizzledNSViewRemoveChildren:(id)arg1;
 - (void)ibSwizzledNSViewPopulateChildRelationOrder:(id)arg1;
 - (id)ibSwizzledNSViewAcceptContentsOfPasteboard:(id)arg1 inDocument:(id)arg2 insertionContext:(id)arg3;
 - (BOOL)ibSwizzledNSViewCanAcceptContentsOfPasteboard:(id)arg1 inDocument:(id)arg2 targetChildRelation:(id *)arg3;
+- (BOOL)ibCanRemoveChildren:(id)arg1;
+- (BOOL)ibWantsLayoutGuides;
+- (id)ibSystemLayoutGuideForType:(long long)arg1;
+- (BOOL)ibShouldPreferLayoutMarginsGuide;
+- (BOOL)ibShouldInsetSafeAreaLayoutGuide;
+- (struct CGRect)ibFrameForViewLayoutGuide:(id)arg1;
+- (id)ibLayoutGuideForViewLayoutGuide:(id)arg1;
+- (id)ibEffectiveParentItemForReferencingConstraintTraversalOfViewLayoutGuide:(id)arg1;
+- (id)ibContainingItemForViewLayoutGuide:(id)arg1;
+- (void)ibPropagatePropertiesToCopyOfReceiver:(id)arg1 forLayoutEngine:(id)arg2;
+@property(retain, nonatomic) IBNSViewAutolayoutGuide *ibSwizzledNSViewLayoutMarginsGuide;
+@property(retain, nonatomic) IBNSViewAutolayoutGuide *ibSwizzledNSViewSafeAreaLayoutGuide;
+@property(nonatomic) BOOL ibInspectedUseSafeAreaLayoutGuide;
+- (void)ibDowngradeConstraintsAndRemoveLayoutGuide:(id)arg1 document:(id)arg2;
+- (void)ibUpgradeConstraintsToLayoutGuide:(id)arg1 document:(id)arg2;
+- (void)setEnableIbSafeAreaLayoutGuide:(BOOL)arg1 document:(id)arg2;
+- (BOOL)ibInspectedSupportsSafeAreaLayoutGuide;
 - (BOOL)ibSwizzledNSViewAcceptsPasteboardImageResourcesAsViews;
 - (BOOL)ibAllowsVibrantDarkAndVibrantLightAppearance;
 - (void)ibSwizzledNSView_ibPopulateIssues:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
+- (void)ibEncodeIBNSViewWithCoder:(id)arg1;
+- (id)ibInitIBNSViewWithCoder:(id)arg1;
 - (id)ibLocalAttributeKeyPaths;
 - (BOOL)ibIsInspectorSliceApplicable:(id)arg1 forCategory:(id)arg2;
 - (id)ibDocumentationSymbolInfosForKeyPath:(id)arg1;
@@ -103,8 +128,15 @@
 - (id)ibLocalLocalizableStringsAttributeKeyPaths;
 - (id)ibLocalLocalizableGeometryAttributeKeyPaths;
 - (id)ibLocalChildToManyRelationshipsKeyPaths;
+- (id)ibLocalChildToOneRelationshipsKeyPaths;
 - (void)setIbInspectedDesignableSubviewsTransitionName:(id)arg1;
 - (id)ibInspectedDesignableSubviewsTransitionName;
 - (id)ibShadowedDesignableSubviewsTransition;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @end
 

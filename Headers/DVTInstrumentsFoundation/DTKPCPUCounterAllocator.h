@@ -16,6 +16,7 @@
     unsigned long long _pmiThreshold;
     unsigned long long _fixedCounterCount;
     unsigned long long _configurableCounterCount;
+    unsigned long long _eventsUniqueIds;
     DTKPCPU *_cpu;
 }
 
@@ -27,7 +28,6 @@
 - (int)forceCounters:(id *)arg1;
 - (int)configurePMIActionID:(unsigned int)arg1 error:(id *)arg2;
 - (int)configureHardwarePMIPeriods:(id *)arg1;
-- (unsigned long long)_indexOfPMIEvent;
 - (int)configureHardwareCounters:(id *)arg1;
 - (unsigned long long)recordConfigWordsIntoBuffer:(unsigned long long *)arg1;
 @property(readonly, nonatomic) unsigned long long pmiThreshold;
@@ -41,9 +41,9 @@
 - (void)removeAllEvents;
 - (int)addPMCEventName:(id)arg1 error:(id *)arg2;
 - (int)setPMIEventName:(id)arg1 pmiThreshold:(unsigned long long)arg2 error:(id *)arg3;
-- (id)_counterNameForEventIndex:(unsigned long long)arg1 error:(id *)arg2;
-- (unsigned long long)_counterIndexForEventIndex:(unsigned long long)arg1 absolute:(BOOL)arg2 error:(id *)arg3;
-- (unsigned int)_counterClassForEventIndex:(unsigned long long)arg1 error:(id *)arg2;
+- (id)_counterNameForEvent:(id)arg1 error:(id *)arg2;
+- (unsigned long long)_counterIndexForEvent:(id)arg1 absolute:(BOOL)arg2 error:(id *)arg3;
+- (unsigned int)_counterClassForEvent:(id)arg1 error:(id *)arg2;
 - (unsigned long long)_hardwareEventCount;
 - (void)dealloc;
 - (id)initWithCPU:(id)arg1 error:(id *)arg2;

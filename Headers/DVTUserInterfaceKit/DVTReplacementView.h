@@ -20,8 +20,8 @@
     DVTViewController *_installedViewController;
     id _forwardedBindingInfo;
     id <DVTReplacementViewDelegate> _delegate;
-    int _horizontalContentViewResizingMode;
-    int _verticalContentViewResizingMode;
+    unsigned long long _horizontalContentViewResizingMode;
+    unsigned long long _verticalContentViewResizingMode;
     struct {
         unsigned int _needToReloadSubview:1;
         unsigned int _shouldNotifyInstalledViewControllerObservers:1;
@@ -40,8 +40,8 @@
 - (void).cxx_destruct;
 @property(nonatomic) BOOL usesAutoLayout; // @synthesize usesAutoLayout=_usesAutoLayout;
 @property BOOL isGrouped; // @synthesize isGrouped=_isGrouped;
-@property(nonatomic) int verticalContentViewResizingMode; // @synthesize verticalContentViewResizingMode=_verticalContentViewResizingMode;
-@property(nonatomic) int horizontalContentViewResizingMode; // @synthesize horizontalContentViewResizingMode=_horizontalContentViewResizingMode;
+@property(nonatomic) unsigned long long verticalContentViewResizingMode; // @synthesize verticalContentViewResizingMode=_verticalContentViewResizingMode;
+@property(nonatomic) unsigned long long horizontalContentViewResizingMode; // @synthesize horizontalContentViewResizingMode=_horizontalContentViewResizingMode;
 @property(retain, nonatomic) Class controllerClass; // @synthesize controllerClass=_controllerClass;
 - (id)accessibilityRole;
 - (BOOL)isAccessibilityElement;

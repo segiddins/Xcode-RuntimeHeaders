@@ -4,7 +4,7 @@
 //  Copyright (C) 1997-2019 Steve Nygard.
 //
 
-#import <Quartz/PDFView.h>
+#import <PDFKit/PDFView.h>
 
 #import <IDEInterfaceBuilderCocoaIntegration/IBDocumentArchiving-Protocol.h>
 

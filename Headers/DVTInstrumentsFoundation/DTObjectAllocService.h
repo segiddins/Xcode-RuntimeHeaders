@@ -7,10 +7,11 @@
 #import <DTXConnectionServices/DTXService.h>
 
 #import <DVTInstrumentsFoundation/DTObjectAllocServiceAuthorizedAPI-Protocol.h>
+#import <DVTInstrumentsFoundation/DTObjectAllocServiceLegacyAPI-Protocol.h>
 
 @class DTAllocationsRecorder, NSString;
 
-@interface DTObjectAllocService : DTXService <DTObjectAllocServiceAuthorizedAPI>
+@interface DTObjectAllocService : DTXService <DTObjectAllocServiceLegacyAPI, DTObjectAllocServiceAuthorizedAPI>
 {
     unsigned int _task;
     DTAllocationsRecorder *_recorder;

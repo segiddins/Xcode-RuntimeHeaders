@@ -6,7 +6,7 @@
 
 #import <IDEKit/IDEAssistantContext.h>
 
-@class DVTSourceControlRemoteRepository, IDESourcePackageRequirement, NSArray, NSMutableDictionary, NSString, PBXTarget, Xcode3Project;
+@class DVTSourceControlRemoteRepository, IDESourcePackageRequirement, NSArray, NSDictionary, NSMutableDictionary, NSString, PBXTarget, Xcode3Project;
 @protocol DVTCancellable;
 
 @interface Xcode3PackageAddPackageAssistantContext : IDEAssistantContext
@@ -20,9 +20,11 @@
     NSString *_resolvedPackageName;
     NSArray *_dependencyProducts;
     NSMutableDictionary *_selectedProducts;
+    NSDictionary *_binaryArtifacts;
 }
 
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSDictionary *binaryArtifacts; // @synthesize binaryArtifacts=_binaryArtifacts;
 @property(nonatomic) BOOL hasValidRequirement; // @synthesize hasValidRequirement=_hasValidRequirement;
 @property(retain, nonatomic) NSMutableDictionary *selectedProducts; // @synthesize selectedProducts=_selectedProducts;
 @property(copy, nonatomic) NSArray *dependencyProducts; // @synthesize dependencyProducts=_dependencyProducts;

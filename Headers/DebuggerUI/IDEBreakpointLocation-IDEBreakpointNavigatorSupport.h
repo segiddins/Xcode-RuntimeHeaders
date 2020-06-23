@@ -16,6 +16,7 @@
 - (id)popUpEditorDisplayName;
 @property(readonly, nonatomic) NSImage *navigableItem_image;
 @property(readonly, nonatomic) NSString *navigableItem_subtitle;
+- (id)_debuggerIdentifierSuffix:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

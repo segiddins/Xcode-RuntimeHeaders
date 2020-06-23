@@ -33,7 +33,7 @@
 + (id)templateMenuWithIdentifier:(id)arg1 targetRuntime:(id)arg2;
 + (id)fallbacksForAnchor:(id)arg1;
 + (id)keyPathsForValuesAffectingIdentifierName;
-+ (id)systemMenuIdentifiersToNamesMap;
++ (id)nameForSystemMenuIdentifier:(id)arg1;
 + (id)keyPathsForValuesAffectingIbInspectedSystemMenuChildDeletions;
 + (id)keyPathsForValuesAffectingIbInspectedCanBeInitialMenu;
 + (id)keyPathsForValuesAffectingIbInspectedIdentifier;

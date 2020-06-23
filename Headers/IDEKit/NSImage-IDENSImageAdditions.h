@@ -7,6 +7,9 @@
 #import <AppKit/NSImage.h>
 
 @interface NSImage (IDENSImageAdditions)
++ (id)ide_dividerImage:(BOOL)arg1;
++ (id)ide_testReportAssistantImage;
++ (id)ide_attachmentImage;
 + (id)ide_moreImage;
 + (id)ide_textualSearchResultImage;
 + (id)ide_contextPhaseBuildImage;
@@ -26,10 +29,7 @@
 + (id)ide_sourceControlTag;
 + (id)ide_sourceControlMerged;
 + (id)ide_sourceControlPullRequestFolder;
-+ (id)ide_sourceControlPullRequestCommits;
 + (id)ide_sourceControlPullRequest;
-+ (id)ide_sourceControlPullRequestChanges;
-+ (id)ide_sourceControlPullRequestActivity;
 + (id)ide_sourceControlBranch;
 + (id)ide_sourceControlWorkingCopy;
 + (id)ide_sourceControlRepositoryStarredSelected;

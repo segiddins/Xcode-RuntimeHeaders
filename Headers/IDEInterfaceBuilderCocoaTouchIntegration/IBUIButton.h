@@ -363,6 +363,7 @@
 - (id)ibFontFromFontDescription;
 - (id)ibDefaultFontDescriptionKeyPath;
 - (id)ibDefaultFontKeyPath;
+- (id)ibRecoverySuggestionForMisuseOfSymbolCharactersInValueForInspectorKeyPath:(id)arg1;
 - (void)ibPopulateIssues:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
 - (void)ibCustomizeForInsertionIntoIBUIView:(id)arg1 withObjects:(id)arg2 fromLibraryOrDifferentTargetRuntime:(BOOL)arg3 andInsertionContext:(id)arg4;
 - (id)ibAcceptContentsOfPasteboard:(id)arg1 inDocument:(id)arg2 insertionContext:(id)arg3;

@@ -20,7 +20,6 @@ __attribute__((visibility("hidden")))
     MISSING_TYPE *collapsedColorPickerConstraint;
     MISSING_TYPE *expanded;
     MISSING_TYPE *color;
-    MISSING_TYPE *cellIdentifier;
 }
 
 - (void).cxx_destruct;

@@ -6,7 +6,7 @@
 
 #import <IDEInterfaceBuilderKit/IBEditorCanvasFrameController.h>
 
-@class DVTDelayedInvocation, DVTNotificationToken, DVTObservingToken, IBCanvasOverlay, IBEditorFrameLayoutGuideGeneratorDelegate, IBLayoutGuideCanvasOverlay, IBLayoutManager, IBMeasurementDrawingHandler, IBRelativeMeasurementDrawingHandler, IBSceneDetailOverlay, IBViewTracker, NSArray, NSMutableArray;
+@class DVTDelayedInvocation, DVTObservingToken, IBCanvasOverlay, IBEditorFrameLayoutGuideGeneratorDelegate, IBLayoutGuideCanvasOverlay, IBLayoutManager, IBMeasurementDrawingHandler, IBRelativeMeasurementDrawingHandler, IBSceneDetailOverlay, IBViewTracker, NSArray, NSMutableArray;
 @protocol DVTInvalidation;
 
 @interface IBViewEditorCanvasFrameController : IBEditorCanvasFrameController
@@ -21,10 +21,7 @@
     DVTDelayedInvocation *_validateUserGuidesInvocation;
     id <DVTInvalidation> _hiddenViewDrawingToken;
     BOOL _observingHiddenState;
-    DVTNotificationToken *_showingLayoutRectsNotification;
-    DVTNotificationToken *_showingBoundsRectsNotification;
-    DVTNotificationToken *_showingSceneMaskAndBezelsNotification;
-    DVTNotificationToken *_showingPlaceholderBackgroundsNotification;
+    NSArray *_editorNotificationTokens;
     DVTObservingToken *_deviceConfigurationObservingToken;
     IBSceneDetailOverlay *_sceneDetailOverlay;
     BOOL _shouldDrawHiddenViews;

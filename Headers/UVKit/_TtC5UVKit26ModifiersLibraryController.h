@@ -15,15 +15,17 @@ __attribute__((visibility("hidden")))
 }
 
 - (void).cxx_destruct;
+- (void)primitiveInvalidate;
 - (void)activeEditorDidChange:(id)arg1;
 - (void)populatePasteboard:(id)arg1 withAssets:(id)arg2 defaultDraggedImageState:(id *)arg3 identifierMapTable:(id *)arg4;
 - (id)inlineDetailViewForAssets:(id)arg1;
 - (void)populatePasteboard:(id)arg1 withAssets:(id)arg2;
 - (void)libraryDidLoad;
 - (BOOL)showsSectionHeaders;
+- (id)initWithLibrary:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithWorkspaceDocument:(id)arg1;
+- (id)initWithWorkspaceDocument:(id)arg1 andLibrary:(id)arg2;
 
 @end
 

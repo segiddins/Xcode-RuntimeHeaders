@@ -16,12 +16,16 @@
     BOOL _invalidated;
     _Bool _ownsInferior;
     _Bool _capturingInferior;
+    BOOL _shouldLoadCapture;
+    BOOL _shouldLoadDiagnostics;
     int _inferiorPid;
     DYBaseSocketTransport *_transport;
     NSString *_extensionSlot;
     id <DYCaptureAPISupport> _captureApiSupport;
 }
 
+@property(nonatomic) BOOL shouldLoadDiagnostics; // @synthesize shouldLoadDiagnostics=_shouldLoadDiagnostics;
+@property(nonatomic) BOOL shouldLoadCapture; // @synthesize shouldLoadCapture=_shouldLoadCapture;
 @property(nonatomic) _Bool capturingInferior; // @synthesize capturingInferior=_capturingInferior;
 @property(retain, nonatomic) id <DYCaptureAPISupport> captureApiSupport; // @synthesize captureApiSupport=_captureApiSupport;
 @property(retain, nonatomic) NSString *extensionSlot; // @synthesize extensionSlot=_extensionSlot;

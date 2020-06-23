@@ -59,7 +59,9 @@
 @property(nonatomic) BOOL allInspectedDocumentsAreNotUsingAutolayout; // @synthesize allInspectedDocumentsAreNotUsingAutolayout=_allInspectedDocumentsAreNotUsingAutolayout;
 @property(copy, nonatomic) NSArray *availableNibNames; // @synthesize availableNibNames=_availableNibNames;
 @property(copy, nonatomic) NSArray *availableStoryboardNames; // @synthesize availableStoryboardNames=_availableStoryboardNames;
-- (id)inspectorProperty:(id)arg1 toolTipContentFromKeyPath:(id)arg2 titleAttribute:(id)arg3 placeholderAttribute:(id)arg4;
+- (id)inspectorToolTipContentFromKeyPath:(id)arg1 title:(id)arg2;
+- (id)inspectorChooser:(id)arg1 toolTipContentFromKeyPath:(id)arg2 titleAttribute:(id)arg3;
+- (id)inspectorProperty:(id)arg1 toolTipContentFromKeyPath:(id)arg2 titleAttribute:(id)arg3;
 - (id)filePathForExternalInspectorContentWithIdentifier:(id)arg1;
 - (id)searchableAttributesForProperty:(id)arg1;
 - (void)didSetInspectedObjects:(id)arg1;

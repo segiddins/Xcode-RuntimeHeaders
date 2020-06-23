@@ -84,7 +84,7 @@
 - (void)_displayError:(id)arg1;
 - (void)signInClick:(id)arg1;
 - (id)_hostedAccount;
-- (id)_authentication;
+- (id)_authenticationWithHostURL:(id)arg1;
 - (id)_hostURL;
 @property(nonatomic) BOOL authenticating; // @synthesize authenticating=_authenticating;
 - (void)pinFieldViewTextDidChange:(id)arg1;
@@ -94,11 +94,15 @@
 - (void)beginSheetModalForWindow:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 @property(readonly, nonatomic) BOOL signInEnabled;
 - (void)forgotPasswordClick:(id)arg1;
+- (void)openLoginHelpURL:(id)arg1;
 @property __weak NSTextField *accountTextField; // @synthesize accountTextField=_accountTextField;
 @property __weak NSTextField *urlTextField; // @synthesize urlTextField=_urlTextField;
 @property(retain, nonatomic) DVTSourceControlHostedAccount *lockedAccount; // @synthesize lockedAccount=_lockedAccount;
 - (void)resendAuthCode:(id)arg1;
 - (id)endpointPersonalAccessTokenHelpURL;
+- (id)endpointPasswordHelpURLForHostURL:(id)arg1;
+- (id)_endpointLinkForKey:(id)arg1;
+- (id)_endpointLinkRelativeToURL:(id)arg1 relativeLinkKey:(id)arg2;
 - (BOOL)endpointUsesPrivateTokenAuth;
 - (BOOL)endpointUsesBearerAuth;
 - (BOOL)endpointRequiresPersonalAccessToken;

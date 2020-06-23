@@ -8,7 +8,7 @@
 
 #import <IDEKit/IDECapsuleListViewDataSource-Protocol.h>
 
-@class DVTChoice, DVTFilePathFieldCell, DVTNotificationToken, DVTTabChooserView, IDEArgumentsCapsuleSheetController, IDECapsuleListView, IDEDiagnosticsTabAdvisoryContentController, IDEEnvironmentVariablesCapsuleSheetController, IDELaunchTestSchemeAction, IDEScheme, IDESchemeCommand, IDEWorkspace, NSArray, NSButton, NSMenuItem, NSMutableArray, NSPopUpButton, NSScrollView, NSStackView, NSString, NSTabView, NSTextField, NSView;
+@class DVTChoice, DVTFilePathFieldCell, DVTNotificationToken, DVTScrollView, DVTTabChooserView, IDEArgumentsCapsuleSheetController, IDECapsuleListView, IDEDiagnosticsTabAdvisoryContentController, IDEEnvironmentVariablesCapsuleSheetController, IDELaunchTestSchemeAction, IDEScheme, IDESchemeCommand, IDEWorkspace, NSArray, NSButton, NSMenuItem, NSMutableArray, NSPopUpButton, NSStackView, NSString, NSTabView, NSTextField, NSView;
 @protocol IDEPrimitiveSchemeCommand;
 
 @interface IDELaunchTestRunPhaseSheetController : IDEViewController <IDECapsuleListViewDataSource>
@@ -27,7 +27,7 @@
     NSMenuItem *_runnableOtherItem;
     DVTFilePathFieldCell *_lldbCustomInitFileCell;
     IDECapsuleListView *_capsuleListView;
-    NSScrollView *_argumentsCapsuleListScrollView;
+    DVTScrollView *_argumentsCapsuleListScrollView;
     NSPopUpButton *_macroExpansionRunnableBuildablesPopUp;
     NSTextField *_macroExpansionDescription;
     IDEArgumentsCapsuleSheetController *_argumentsViewController;
@@ -64,6 +64,9 @@
     NSArray *_extensionsForAllOptions;
 }
 
++ (id)keyPathsForValuesAffectingAllowMTCBreakpointCreation;
++ (id)keyPathsForValuesAffectingAllowUBSanBreakpointCreation;
++ (id)keyPathsForValuesAffectingAllowTSanBreakpointCreation;
 + (id)keyPathsForValuesAffectingAllowEnablingMemgraphOnResourceException;
 + (id)keyPathsForValuesAffectingAllowMemoryOptions;
 + (id)keyPathsForValuesAffectingAllowEnablingMallocStackType;
@@ -86,6 +89,10 @@
 - (void)primitiveInvalidate;
 - (id)capsuleListView:(id)arg1 viewControllerForRow:(long long)arg2;
 - (long long)numberOfObjectsInCapsuleListView:(id)arg1;
+@property(readonly, nonatomic) BOOL allowMTCBreakpointCreation;
+@property(readonly, nonatomic) BOOL allowUBSanBreakpointCreation;
+@property(readonly, nonatomic) BOOL allowTSanBreakpointCreation;
+- (BOOL)_allowSanitizerBreakpointCreation:(id)arg1;
 - (BOOL)allowEnablingMemgraphOnResourceException;
 - (BOOL)allowMemoryOptions;
 - (BOOL)allowEnablingMallocStackType;
@@ -93,7 +100,7 @@
 - (BOOL)allowEnablingUBSanitizer;
 - (BOOL)_allowEnableThreadSanitizersByOtherMemoryOptions:(id *)arg1;
 - (BOOL)allowEnablingThreadSanitizer;
-- (void)_configureExplanation:(id)arg1 enabled:(BOOL)arg2 featureButton:(id)arg3 infoButton:(id)arg4;
+- (void)configureExplanation:(id)arg1 enabled:(BOOL)arg2 featureButton:(id)arg3 infoButton:(id)arg4;
 - (BOOL)_allowEnableAddressSanitizersByOtherMemoryOptions:(id *)arg1;
 - (id)_determineEnabledMemoryOptions:(BOOL)arg1 guardEdges:(BOOL)arg2 guardMalloc:(BOOL)arg3 mallocStackLogging:(BOOL)arg4 memoryGraphOnResourceException:(BOOL)arg5;
 - (BOOL)allowEnablingAddressSanitizer;

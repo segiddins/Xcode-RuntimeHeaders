@@ -13,6 +13,7 @@
     NSDictionary *_options;
     struct CGImageSource *_imageSource;
     struct CGPDFDocument *_pdfDocument;
+    struct CGSVGDocument *_svgDocument;
     struct CGDataProvider *_dataProvider;
 }
 
@@ -21,10 +22,12 @@
 + (id)imageSourceWithPath:(id)arg1 options:(id)arg2;
 - (void).cxx_destruct;
 @property(nonatomic) struct CGDataProvider *dataProvider; // @synthesize dataProvider=_dataProvider;
+@property(nonatomic) struct CGSVGDocument *svgDocument; // @synthesize svgDocument=_svgDocument;
 @property(nonatomic) struct CGPDFDocument *pdfDocument; // @synthesize pdfDocument=_pdfDocument;
 @property(nonatomic) struct CGImageSource *imageSource; // @synthesize imageSource=_imageSource;
 @property(retain, nonatomic) NSDictionary *options; // @synthesize options=_options;
 - (void)addImageAtIndex:(long long)arg1 toImageDestination:(struct CGImageDestination *)arg2 preferredSize:(id)arg3 scale:(double)arg4 colorSpace:(struct CGColorSpace *)arg5;
+- (void)drawImageAtIndex:(long long)arg1 intoContext:(struct CGContext *)arg2 atSize:(struct CGSize)arg3;
 - (struct CGImage *)imageAtIndex:(long long)arg1 preferredSize:(id)arg2 scale:(double)arg3 colorSpace:(struct CGColorSpace *)arg4;
 - (id)fileUTI;
 - (id)fileType;

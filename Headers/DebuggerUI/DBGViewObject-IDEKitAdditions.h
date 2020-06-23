@@ -24,6 +24,7 @@
 - (id)navigableItem_archivingIdentifer;
 @property(readonly, nonatomic) DVTDocumentLocation *navigableItem_contentDocumentLocation;
 @property(readonly, nonatomic) DVTFileDataType *navigableItem_documentType;
+@property(readonly, nonatomic) id navigableItem_parentRepresentedObject;
 - (id)_customNavigableIcon;
 - (BOOL)_isUVPluginLoaded;
 @property(readonly, nonatomic) NSImage *navigableItem_image;
@@ -45,7 +46,6 @@
 @property(readonly, nonatomic) BOOL navigableItem_isMajorGroup;
 @property(readonly, nonatomic) BOOL navigableItem_isVisible;
 @property(readonly, nonatomic) BOOL navigableItem_missingReferencedContentIsImportant;
-@property(readonly, nonatomic) id navigableItem_parentRepresentedObject;
 @property(readonly, nonatomic) BOOL navigableItem_referencedContentExists;
 @property(readonly, nonatomic) _TtC13DVTFoundation9DVTSymbol *navigableItem_representedSymbol;
 @property(readonly, nonatomic) NSURL *navigableItem_representedURL;

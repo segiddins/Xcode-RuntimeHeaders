@@ -10,6 +10,7 @@
 {
 }
 
++ (id)supportedFileExtensions;
 - (id)processParserOutput:(id)arg1 fromFile:(id)arg2 errors:(id *)arg3;
 - (id)parserLaunchPath;
 

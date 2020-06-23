@@ -174,7 +174,7 @@
 - (void)reopenDocumentForURL:(id)arg1 withContentsOfURL:(id)arg2 display:(BOOL)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)asyncSaveUntitledWorkspaceDocument:(id)arg1 forProjectDocument:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)openUntitledWorkspaceDocumentAndDisplay:(BOOL)arg1 error:(id *)arg2;
-- (id)_openUntitledWorkspaceDocumentAndDisplay:(BOOL)arg1 simpleFilesFocused:(BOOL)arg2 forSingleFile:(BOOL)arg3 editorDocumentURLOrNil:(id)arg4 error:(id *)arg5;
+- (id)_openUntitledWorkspaceDocumentAndDisplay:(BOOL)arg1 simpleFilesFocused:(BOOL)arg2 forSingleFile:(BOOL)arg3 hostsOnlyPlayground:(BOOL)arg4 editorDocumentURLOrNil:(id)arg5 error:(id *)arg6;
 - (void)beginOpenPanelWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)openDocument:(id)arg1;
 - (id)documentForURL:(id)arg1;

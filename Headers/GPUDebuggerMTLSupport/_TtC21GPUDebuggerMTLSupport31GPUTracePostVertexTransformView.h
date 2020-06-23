@@ -41,6 +41,7 @@ __attribute__((visibility("hidden")))
     MISSING_TYPE *modelVertices;
     MISSING_TYPE *modelViewportArrayIndices;
     MISSING_TYPE *modelRenderTargetArrayIndices;
+    MISSING_TYPE *modelAmplificationIdIndices;
     MISSING_TYPE *modelVertexBuffer;
     MISSING_TYPE *modelIndexBuffer;
     MISSING_TYPE *modelBoundingBox;

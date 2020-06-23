@@ -42,6 +42,7 @@
 @property(readonly, nonatomic) NSString *subsystem;
 @property(readonly, nonatomic) unsigned long long time;
 - (BOOL)next;
+- (void)addData:(id)arg1;
 - (void)addMemo:(id)arg1;
 - (id)init;
 

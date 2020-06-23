@@ -22,14 +22,6 @@
     NSDictionary *idDictionary;
     NSArray *transUnitsWithInlineElements;
     id plistObject;
-    id reserved1;
-    id reserved2;
-    id reserved3;
-    id reserved4;
-    id reserved5;
-    id reserved6;
-    id reserved7;
-    id reserved8;
     struct _xmlDoc *xmlDocument;
 }
 

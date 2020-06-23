@@ -10,7 +10,7 @@
 #import <IDEiPhoneSupport/IDECapsuleListViewDataSource-Protocol.h>
 #import <IDEiPhoneSupport/NSTextFieldDelegate-Protocol.h>
 
-@class DVTBorderedView, DVTDelayedInvocation, DVTObservingToken, DVTStackView_ML, IDECapsuleListView, IDETargetEditorAppCategorySelectionViewController, IDEiOSIconsAndLaunchImagesViewController, NSArray, NSBox, NSButton, NSColor, NSComboBox, NSDictionary, NSGridView, NSMutableArray, NSPopUpButton, NSString, NSTableView, NSTextField, NSView, Xcode3TargetEditor, _TtC13IDEFoundation28TargetEditorBundleIdentifier;
+@class DVTDelayedInvocation, DVTObservingToken, DVTStackView_ML, IDECapsuleListView, IDEExtendedDeploymentTargetEditor, IDETargetEditorAppCategorySelectionViewController, IDEiOSIconsAndLaunchImagesViewController, NSArray, NSBox, NSButton, NSColor, NSComboBox, NSDictionary, NSGridView, NSMutableArray, NSPopUpButton, NSSet, NSString, NSTextField, NSView, Xcode3TargetEditor, _TtC13IDEFoundation28TargetEditorBundleIdentifier;
 @protocol DVTInvalidation, IDECapsuleViewController;
 
 @interface IDEiOSTargetEditor : IDEViewController <NSTextFieldDelegate, DVTInfoPlistValueCellDelegate, IDECapsuleListViewDataSource>
@@ -26,8 +26,6 @@
     NSPopUpButton *_targetDevicePopup;
     NSComboBox *_deploymentOSCombo;
     NSTextField *_targetIdentifierField;
-    NSTableView *_deploymentTargetTable;
-    DVTBorderedView *_deploymentTargetTableBorder;
     IDEViewController<IDECapsuleViewController> *_identityViewController;
     IDEViewController<IDECapsuleViewController> *_standardDeploymentInfoViewController;
     IDEViewController<IDECapsuleViewController> *_imageViewController;
@@ -68,6 +66,7 @@
     NSMutableArray *_subviewControllers;
     IDEiOSIconsAndLaunchImagesViewController *_iconsViewController;
     IDEiOSIconsAndLaunchImagesViewController *_launchImagesViewController;
+    IDEExtendedDeploymentTargetEditor *_extendedDeploymentTargetEditor;
     BOOL _supportsWatchComplications;
     BOOL _iPhoneStatusBarTintingAvailable;
     BOOL _iPhoneStatusBarTintingCustom;
@@ -143,7 +142,6 @@
 - (BOOL)_shouldShowLaunchImages;
 - (BOOL)_shouldShowAppIcons;
 - (void)convertToAssetCatalogFromIconsAndLaunchImagesViewController:(id)arg1;
-- (void)showLaunchImageAlertForImageName:(id)arg1;
 - (void)deploymentOSChanged:(id)arg1;
 @property(readonly) id headerFont;
 @property(copy) NSArray *targetIPadOrientations;
@@ -165,8 +163,10 @@
 @property BOOL allowAppExtensionAPIOnly;
 - (void)setTargetDisplayName:(id)arg1;
 - (id)targetDisplayName;
+- (BOOL)hasInfoPlist;
+@property(copy) NSString *macCatalystTargetDeploymentOS;
 @property(copy) NSString *targetDeploymentOS;
-@property(copy) NSString *targetDevice;
+@property(copy) NSSet *targetDevices;
 - (void)selectLocations:(id)arg1;
 @property BOOL iPadStatusBarHidden;
 @property BOOL iPhoneStatusBarHidden;
@@ -185,6 +185,7 @@
 - (void)pickInfoPlistFile:(id)arg1;
 - (id)deploymentOSVersions:(id)arg1;
 - (id)deploymentOSVersions;
+- (id)macCatalystDeploymentOSVersions;
 @property BOOL iPadLandscape2;
 @property BOOL iPadPortrait2;
 @property BOOL iPadLandscape;
@@ -196,7 +197,6 @@
 - (id)deploymentInfoViews;
 - (void)_updateDeploymentInfoStackView;
 - (void)updateUIForTargetDeviceChange;
-- (void)targetDeviceChanged:(id)arg1;
 - (void)removeOrientation:(id)arg1 forDevice:(id)arg2;
 - (void)setOrientation:(id)arg1 forDevice:(id)arg2;
 - (void)didUpdateBuildSettings;
@@ -213,8 +213,10 @@
 - (id)evaluateIOSMacBundleIdentifier;
 - (id)iosmacBundleIdentifier;
 - (void)controlTextDidEndEditing:(id)arg1;
-@property(readonly) BOOL iPadTargeted;
-@property(readonly) BOOL iPhoneTargeted;
+@property BOOL macTargeted;
+@property BOOL iPadTargeted;
+@property BOOL iPhoneTargeted;
+- (void)_setTargetsDevice:(BOOL)arg1 withID:(id)arg2;
 - (BOOL)_targetsDeviceWithID:(id)arg1;
 @property(readonly) int appIconImageType;
 @property(readonly) BOOL supportsTargetDeviceFamily;

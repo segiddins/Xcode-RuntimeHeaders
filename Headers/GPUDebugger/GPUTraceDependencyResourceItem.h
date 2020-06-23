@@ -6,17 +6,20 @@
 
 #import <GPUDebugger/GPUTraceOutlineItem.h>
 
-@class GPUTraceResourceItem;
+@class GPUTraceResourceItem, NSNumber;
 
 @interface GPUTraceDependencyResourceItem : GPUTraceOutlineItem
 {
     GPUTraceResourceItem *_wrappedResource;
+    NSNumber *_attachmentIndex;
 }
 
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSNumber *attachmentIndex; // @synthesize attachmentIndex=_attachmentIndex;
 @property(nonatomic) __weak GPUTraceResourceItem *wrappedResource; // @synthesize wrappedResource=_wrappedResource;
 - (id)APIItem;
 - (id)label;
+- (id)initWithResourceItem:(id)arg1 attachmentIndex:(id)arg2 withParent:(id)arg3;
 - (id)initWithResourceItem:(id)arg1 withParent:(id)arg2;
 
 @end

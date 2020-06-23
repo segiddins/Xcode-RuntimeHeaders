@@ -11,11 +11,15 @@
 
 @protocol DYShaderProfilerDelegate <NSObject>
 @property(readonly) DYDeviceInfo *deviceInfo;
+- (void)notifyStreamingShaderProfilingDataOnQueue:(NSObject<OS_dispatch_queue> *)arg1 handler:(void (^)(NSDictionary *))arg2;
 - (void)removeProfilingUpdateObserver:(id)arg1;
 - (void)notifyProfilingDataUpdateObservers:(NSDictionary *)arg1;
 - (id)registerForProfilingDataUpdatesOnQueue:(NSObject<OS_dispatch_queue> *)arg1 handler:(void (^)(NSDictionary *))arg2;
 - (void)notifyCounterGraphItemChangedOnQueue:(NSObject<OS_dispatch_queue> *)arg1 handler:(void (^)(NSDictionary *))arg2;
 - (void)notifyBatchedCounterDataOnQueue:(NSObject<OS_dispatch_queue> *)arg1 handler:(void (^)(NSDictionary *))arg2;
+- (BOOL)supportsImmediateModeDrawCounters;
+- (BOOL)supportsBatchIdFiltering;
+- (BOOL)supportsShaderProfiler;
 - (BOOL)dumpInstructions;
 - (BOOL)wantsDerivedCounters;
 - (BOOL)isForInternalTool;

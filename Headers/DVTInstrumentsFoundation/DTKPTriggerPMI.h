@@ -10,7 +10,6 @@
 
 @interface DTKPTriggerPMI : DTKPTrigger
 {
-    unsigned int _targetTask;
     NSString *_pmiEventNameOrAlias;
     unsigned long long _thresholdCount;
 }
@@ -18,7 +17,6 @@
 - (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long thresholdCount; // @synthesize thresholdCount=_thresholdCount;
 @property(readonly, retain, nonatomic) NSString *pmiEventNameOrAlias; // @synthesize pmiEventNameOrAlias=_pmiEventNameOrAlias;
-@property(nonatomic) unsigned int targetTask; // @synthesize targetTask=_targetTask;
 - (int)stop:(id *)arg1;
 - (int)start:(id *)arg1;
 @property(readonly, nonatomic) unsigned long long pmcEventCount;

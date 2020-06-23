@@ -6,25 +6,26 @@
 
 #import <objc/NSObject.h>
 
-@class NSString;
+@class NSString, _TtC13IDEFoundation29IDEProductExtensionIdentifier;
 
 @interface IDEProductExtensionCategory : NSObject
 {
     NSString *_userDescription;
     long long _sortOrder;
-    NSString *_identifier;
+    _TtC13IDEFoundation29IDEProductExtensionIdentifier *_identifier;
     NSString *_imageName;
 }
 
-+ (id)productExtensionCategoryForExtensionPointIdentifier:(id)arg1;
++ (id)productExtensionCategoryForAppClip;
++ (id)productExtensionCategoryForExtensionIdentifier:(id)arg1;
 + (id)identifierToProductExtensionCategory;
 + (id)productExtensions;
 - (void).cxx_destruct;
 @property(readonly) NSString *imageName; // @synthesize imageName=_imageName;
-@property(readonly) NSString *identifier; // @synthesize identifier=_identifier;
+@property(readonly) _TtC13IDEFoundation29IDEProductExtensionIdentifier *identifier; // @synthesize identifier=_identifier;
 @property(readonly) long long sortOrder; // @synthesize sortOrder=_sortOrder;
 @property(readonly) NSString *userDescription; // @synthesize userDescription=_userDescription;
-- (id)initWithIdentifier:(id)arg1 userDescription:(id)arg2 sortOrder:(long long)arg3 imageName:(id)arg4;
+- (id)initWithIdentifier:(id)arg1 userDescription:(id)arg2 sortOrder:(long long)arg3 imageName:(id)arg4 isAppClip:(BOOL)arg5;
 
 @end
 

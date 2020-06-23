@@ -9,7 +9,7 @@
 #import <DVTKit/NSMenuDelegate-Protocol.h>
 
 @class DVTNotificationToken, DVTObservingToken, NSArray, NSIndexSet, NSMenu, NSPointerArray, NSString, NSTrackingArea, NSView;
-@protocol DVTComparisonSplitViewDelegate, DVTSourceCodeComparisonTextView;
+@protocol DVTComparisonSplitViewDelegate, DVTSourceCodeComparisonEditorTextView;
 
 @interface DVTComparisonSplitView : DVTSplitView <NSMenuDelegate>
 {
@@ -20,8 +20,8 @@
     NSArray *_diffDescriptors;
     NSIndexSet *_modifiedDiffDescriptorIndexes;
     NSIndexSet *_hiddenDiffDescriptorIndexes;
-    NSView<DVTSourceCodeComparisonTextView> *_primaryTextView;
-    NSView<DVTSourceCodeComparisonTextView> *_secondaryTextView;
+    NSView<DVTSourceCodeComparisonEditorTextView> *_primaryTextView;
+    NSView<DVTSourceCodeComparisonEditorTextView> *_secondaryTextView;
     NSIndexSet *_selectedDiffDescriptorIndexes;
     NSIndexSet *_toggledDiffDescriptorIndexes;
     NSMenu *_diffMenu;
@@ -79,8 +79,8 @@
 @property BOOL isBinaryComparison;
 @property BOOL isThreeWayDiff;
 @property(retain) NSIndexSet *toggledDiffDescriptorIndexes; // @synthesize toggledDiffDescriptorIndexes=_toggledDiffDescriptorIndexes;
-@property(retain) NSView<DVTSourceCodeComparisonTextView> *secondaryTextView; // @synthesize secondaryTextView=_secondaryTextView;
-@property(retain) NSView<DVTSourceCodeComparisonTextView> *primaryTextView; // @synthesize primaryTextView=_primaryTextView;
+@property(retain) NSView<DVTSourceCodeComparisonEditorTextView> *secondaryTextView; // @synthesize secondaryTextView=_secondaryTextView;
+@property(retain) NSView<DVTSourceCodeComparisonEditorTextView> *primaryTextView; // @synthesize primaryTextView=_primaryTextView;
 @property(retain) NSIndexSet *selectedDiffDescriptorIndexes; // @synthesize selectedDiffDescriptorIndexes=_selectedDiffDescriptorIndexes;
 @property BOOL selected; // @synthesize selected=_selected;
 - (void)updateBoundTimestamp;

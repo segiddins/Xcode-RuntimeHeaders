@@ -17,10 +17,10 @@
 - (MTLSharedTextureHandle *)newSharedTextureHandle;
 - (id <MTLTexture>)newTextureViewWithPixelFormat:(unsigned long long)arg1 textureType:(unsigned long long)arg2 levels:(struct _NSRange)arg3 slices:(struct _NSRange)arg4;
 - (id <MTLTexture>)newTextureViewWithPixelFormat:(unsigned long long)arg1;
-- (void)replaceRegion:(CDStruct_4c83c94d)arg1 mipmapLevel:(long long)arg2 withBytes:(void *)arg3 bytesPerRow:(long long)arg4;
-- (void)getBytes:(void *)arg1 bytesPerRow:(long long)arg2 fromRegion:(CDStruct_4c83c94d)arg3 mipmapLevel:(long long)arg4;
-- (void)replaceRegion:(CDStruct_4c83c94d)arg1 mipmapLevel:(long long)arg2 slice:(long long)arg3 withBytes:(void *)arg4 bytesPerRow:(long long)arg5 bytesPerImage:(long long)arg6;
-- (void)getBytes:(void *)arg1 bytesPerRow:(long long)arg2 bytesPerImage:(long long)arg3 fromRegion:(CDStruct_4c83c94d)arg4 mipmapLevel:(long long)arg5 slice:(long long)arg6;
+- (void)replaceRegion:(CDStruct_4c83c94d)arg1 mipmapLevel:(unsigned long long)arg2 withBytes:(const void *)arg3 bytesPerRow:(unsigned long long)arg4;
+- (void)getBytes:(void *)arg1 bytesPerRow:(unsigned long long)arg2 fromRegion:(CDStruct_4c83c94d)arg3 mipmapLevel:(unsigned long long)arg4;
+- (void)replaceRegion:(CDStruct_4c83c94d)arg1 mipmapLevel:(unsigned long long)arg2 slice:(unsigned long long)arg3 withBytes:(const void *)arg4 bytesPerRow:(unsigned long long)arg5 bytesPerImage:(unsigned long long)arg6;
+- (void)getBytes:(void *)arg1 bytesPerRow:(unsigned long long)arg2 bytesPerImage:(unsigned long long)arg3 fromRegion:(CDStruct_4c83c94d)arg4 mipmapLevel:(unsigned long long)arg5 slice:(unsigned long long)arg6;
 @property(nonatomic, readonly) BOOL allowGPUOptimizedContents;
 - (BOOL)isFramebufferOnly;
 - (BOOL)isShareable;

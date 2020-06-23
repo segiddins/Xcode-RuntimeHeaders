@@ -7,6 +7,7 @@
 #import <DVTFoundation/DVTCodesignableDeviceSnapshot.h>
 
 @interface DVTCodesignableDeviceSnapshot (PortalAdditions)
++ (id)snapshotWithPortalDevice:(id)arg1;
 - (id)dvt_portalDevice;
 @end
 

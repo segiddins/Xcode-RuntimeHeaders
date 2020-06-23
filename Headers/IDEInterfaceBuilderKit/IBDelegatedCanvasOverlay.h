@@ -23,6 +23,7 @@
 - (id)hitTest:(struct CGPoint)arg1;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)viewWillDraw;
+- (void)setNeedsDisplayInPath:(id)arg1;
 @property(readonly) long long numberOfInstalledHandlers;
 - (void)installDrawHandler:(id)arg1 withSelector:(SEL)arg2 priority:(long long)arg3 whilePerformingBlock:(CDUnknownBlockType)arg4;
 - (id)installDrawHandler:(id)arg1 willDrawSelector:(SEL)arg2 drawSelector:(SEL)arg3 priority:(long long)arg4;

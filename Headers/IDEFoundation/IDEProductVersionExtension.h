@@ -6,7 +6,7 @@
 
 #import <IDEFoundation/IDEProductVersion.h>
 
-@class IDEProductExtensionCategory, NSString;
+@class IDEProductExtensionCategory, NSString, _TtC13IDEFoundation29IDEProductExtensionIdentifier;
 
 @interface IDEProductVersionExtension : IDEProductVersion
 {
@@ -14,13 +14,13 @@
     NSString *_version;
     NSString *_buildNumber;
     IDEProductExtensionCategory *_extensionCategory;
-    NSString *_extensionPointIdentifier;
+    _TtC13IDEFoundation29IDEProductExtensionIdentifier *_extensionIdentifier;
 }
 
 + (id)objectFromJSONRepresentation:(id)arg1 error:(id *)arg2;
 + (id)productVersionByMerging:(id)arg1;
 - (void).cxx_destruct;
-@property(retain) NSString *extensionPointIdentifier; // @synthesize extensionPointIdentifier=_extensionPointIdentifier;
+@property(retain) _TtC13IDEFoundation29IDEProductExtensionIdentifier *extensionIdentifier; // @synthesize extensionIdentifier=_extensionIdentifier;
 @property(readonly) IDEProductExtensionCategory *extensionCategory; // @synthesize extensionCategory=_extensionCategory;
 @property(retain) NSString *buildNumber; // @synthesize buildNumber=_buildNumber;
 @property(retain) NSString *version; // @synthesize version=_version;
@@ -30,7 +30,7 @@
 - (BOOL)isEqual:(id)arg1;
 - (id)productExtensionCategory;
 - (id)cachePathWithRootProductVersion:(id)arg1 productDirectory:(id)arg2;
-- (id)initWithProductVersionIdentifier:(id)arg1 bundleIdentifier:(id)arg2 version:(id)arg3 buildNumber:(id)arg4 name:(id)arg5 childProducts:(id)arg6 productCategory:(id)arg7 extensionPointIdentifier:(id)arg8;
+- (id)initWithProductVersionIdentifier:(id)arg1 bundleIdentifier:(id)arg2 version:(id)arg3 buildNumber:(id)arg4 name:(id)arg5 childProducts:(id)arg6 productCategory:(id)arg7 extensionIdentifier:(id)arg8;
 
 @end
 

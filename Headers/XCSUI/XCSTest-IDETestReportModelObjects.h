@@ -45,6 +45,8 @@
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(nonatomic) __weak id <IDETestReport_Base> ide_testReport_base_parent;
+@property(readonly, copy, nonatomic) NSArray *ide_testReport_testRun_activitiesExcludingFailures;
+@property(readonly, copy, nonatomic) NSArray *ide_testReport_testRun_topLevelFailureSummaries;
 @property(readonly) Class superclass;
 @end
 

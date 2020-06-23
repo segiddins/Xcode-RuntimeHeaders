@@ -10,10 +10,6 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 
 #pragma mark Named Structures
 
-struct AlignedCharArrayUnion<char, char, char, char, char, char, char, char, char, char> {
-    char _field1[1];
-};
-
 struct CXUnsavedFile {
     char *_field1;
     char *_field2;
@@ -21,7 +17,13 @@ struct CXUnsavedFile {
 };
 
 struct CanonicalFilePath {
-    struct SmallString<128> _field1;
+    basic_string_a1f69cfb _field1;
+};
+
+struct CompileTaskResult {
+    char _field1;
+    int _field2;
+    int _field3;
 };
 
 struct CompileTrackingCallbacks;
@@ -172,13 +174,6 @@ struct SKToolchainUIDSet {
 struct SKToolchainUIDValues;
 
 struct ScanFileInfo;
-
-struct SmallString<128> {
-    void *_field1;
-    unsigned int _field2;
-    unsigned int _field3;
-    struct AlignedCharArrayUnion<char, char, char, char, char, char, char, char, char, char> _field4[128];
-};
 
 struct SmartMutex<false> {
     struct MutexImpl impl;

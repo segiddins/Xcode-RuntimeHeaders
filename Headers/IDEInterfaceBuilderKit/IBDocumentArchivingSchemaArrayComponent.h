@@ -10,6 +10,7 @@
 {
 }
 
+- (id)schemaIdentifier;
 - (void)insertIntoSchema:(id)arg1;
 
 @end

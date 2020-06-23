@@ -17,6 +17,7 @@
     NSError *_error;
 }
 
++ (id)wrapperForResultOfBlock:(CDUnknownBlockType)arg1;
 + (id)wrapperForResult:(id)arg1 orError:(id)arg2;
 + (id)wrapperForError:(id)arg1;
 + (id)wrapperForResult:(id)arg1;

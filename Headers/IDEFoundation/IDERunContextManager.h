@@ -18,6 +18,7 @@
     NSMapTable *_storeToSpecifierMap;
     NSMapTable *_storeToUserDataMap;
     NSMutableArray *_runContexts;
+    NSArray *_nonTransientRunContexts;
     IDEScheme *_activeRunContext;
     IDERunDestination *_activeRunDestination;
     NSMutableArray *_ignoredChangesDevices;
@@ -37,12 +38,14 @@
 + (id)observeAllBlueprintChangesOnQueue:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
 + (BOOL)automaticallyNotifiesObserversOfActiveRunDestination;
 + (BOOL)automaticallyNotifiesObserversOfActiveRunContext;
++ (id)keyPathsForValuesAffectingNonTransientRunContexts;
 + (void)initialize;
 + (unsigned long long)assertionBehaviorForKeyValueObservationsAtEndOfEvent;
 - (void).cxx_destruct;
 @property(readonly) NSCountedSet *schemeNameCounts; // @synthesize schemeNameCounts=_schemeNameCounts;
 @property(retain, nonatomic) IDERunDestination *activeRunDestination; // @synthesize activeRunDestination=_activeRunDestination;
 @property(retain, nonatomic) IDEScheme *activeRunContext; // @synthesize activeRunContext=_activeRunContext;
+@property(readonly) NSArray *nonTransientRunContexts; // @synthesize nonTransientRunContexts=_nonTransientRunContexts;
 @property(readonly) NSArray *runContexts; // @synthesize runContexts=_runContexts;
 @property(readonly) IDEWorkspace *workspace; // @synthesize workspace=_workspace;
 - (void)setActiveRunContext:(id)arg1 andRunDestination:(id)arg2;

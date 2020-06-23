@@ -12,17 +12,18 @@
 {
     MISSING_TYPE *appStoreSource;
     MISSING_TYPE *localSource;
-    MISSING_TYPE *logAspect;
     MISSING_TYPE *consolidatedPoints;
     MISSING_TYPE *rateLimiter;
     MISSING_TYPE *hasCompletedInitialLoading;
     MISSING_TYPE *appExtensionPointIdentifier;
+    MISSING_TYPE *isAppClip;
 }
 
 - (void).cxx_destruct;
 - (id)init;
 @property(nonatomic, readonly) NSString *description;
-- (id)initWithAppIdentifier:(id)arg1 path:(id)arg2 appExtensionPointIdentifier:(id)arg3;
+- (id)initWithAppIdentifier:(id)arg1 path:(id)arg2 appExtensionPointIdentifier:(id)arg3 isAppClip:(BOOL)arg4;
+@property(nonatomic) BOOL isAppClip; // @synthesize isAppClip;
 @property(nonatomic, copy) NSString *appExtensionPointIdentifier;
 @property(nonatomic) BOOL hasCompletedInitialLoading; // @synthesize hasCompletedInitialLoading;
 

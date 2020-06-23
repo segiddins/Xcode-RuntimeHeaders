@@ -16,9 +16,6 @@ __attribute__((visibility("hidden")))
     MISSING_TYPE *resetButton;
     MISSING_TYPE *unit;
     MISSING_TYPE *editors;
-    MISSING_TYPE *xValue;
-    MISSING_TYPE *yValue;
-    MISSING_TYPE *zValue;
 }
 
 - (void).cxx_destruct;

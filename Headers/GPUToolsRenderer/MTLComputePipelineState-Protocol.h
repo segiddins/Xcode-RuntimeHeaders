@@ -6,11 +6,15 @@
 
 #import <GPUToolsRenderer/NSObject-Protocol.h>
 
-@class NSString;
-@protocol MTLDevice;
+@class MTLIntersectionFunctionTableDescriptor, MTLVisibleFunctionTableDescriptor, NSArray, NSString;
+@protocol MTLComputePipelineState, MTLDevice, MTLFunction, MTLFunctionHandle, MTLIntersectionFunctionTable, MTLVisibleFunctionTable;
 
 @protocol MTLComputePipelineState <NSObject>
-@property(nonatomic, readonly) BOOL supportIndirectCommandBuffers;
+- (id <MTLIntersectionFunctionTable>)newIntersectionFunctionTableWithDescriptor:(MTLIntersectionFunctionTableDescriptor *)arg1;
+- (id <MTLVisibleFunctionTable>)newVisibleFunctionTableWithDescriptor:(MTLVisibleFunctionTableDescriptor *)arg1;
+- (id <MTLComputePipelineState>)newComputePipelineStateWithAdditionalBinaryFunctions:(NSArray *)arg1 error:(id *)arg2;
+- (id <MTLFunctionHandle>)functionHandleWithFunction:(id <MTLFunction>)arg1;
+@property(nonatomic, readonly) long long textureWriteFPRoundingMode;
 @property(nonatomic, readonly) long long staticThreadgroupMemoryLength;
 @property(nonatomic, readonly) long long threadExecutionWidth;
 @property(nonatomic, readonly) long long maxTotalThreadsPerThreadgroup;

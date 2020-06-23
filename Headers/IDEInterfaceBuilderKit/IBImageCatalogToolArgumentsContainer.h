@@ -14,21 +14,26 @@
     BOOL _printVersion;
     BOOL _includeDebugOutput;
     BOOL _printContents;
+    BOOL _printAssetTagCombinations;
     BOOL _printErrorMessages;
     BOOL _printWarningMessages;
     BOOL _printNoticeMessages;
     BOOL _printMessageCategoryInfo;
     BOOL _compressPNGs;
     BOOL _enableOnDemandResources;
+    BOOL _includeStickerContent;
     BOOL _dumpAssets;
     BOOL _enableIncrementalDistill;
     BOOL _printSearchDescription;
+    long long _standaloneIconBehavior;
     NSString *_platformName;
     NSString *_userInterfaceFrameworkFamily;
     NSString *_compilationOutputPath;
     NSString *_partialInfoPlistOutputPath;
     NSString *_appIconName;
     NSString *_launchImageName;
+    NSString *_accentColorName;
+    NSString *_widgetBackgroundColorName;
     NSString *_minimumDeploymentTarget;
     NSString *_exportDependencyInfoPath;
     NSString *_commonAssetRepositoryFileName;
@@ -37,19 +42,21 @@
     NSString *_optimization;
     NSString *_targetName;
     NSString *_stickerPackIdentifierPrefix;
+    long long _stickersIconRole;
     NSString *_developmentLanguage;
     NSMutableDictionary *_stringFilesByStickerPackAndLanguage;
-    NSString *_productType;
     NSMutableDictionary *_additionalEnvironment;
     NSDictionary *_assetPackOutputSpecifications;
+    NSString *_productType;
 }
 
 - (void).cxx_destruct;
+@property(copy) NSString *productType; // @synthesize productType=_productType;
 @property(copy) NSDictionary *assetPackOutputSpecifications; // @synthesize assetPackOutputSpecifications=_assetPackOutputSpecifications;
 @property(retain, nonatomic) NSMutableDictionary *additionalEnvironment; // @synthesize additionalEnvironment=_additionalEnvironment;
-@property(copy) NSString *productType; // @synthesize productType=_productType;
 @property(retain, nonatomic) NSMutableDictionary *stringFilesByStickerPackAndLanguage; // @synthesize stringFilesByStickerPackAndLanguage=_stringFilesByStickerPackAndLanguage;
 @property(copy) NSString *developmentLanguage; // @synthesize developmentLanguage=_developmentLanguage;
+@property long long stickersIconRole; // @synthesize stickersIconRole=_stickersIconRole;
 @property(copy) NSString *stickerPackIdentifierPrefix; // @synthesize stickerPackIdentifierPrefix=_stickerPackIdentifierPrefix;
 @property(copy) NSArray *targetDevices; // @synthesize targetDevices=_targetDevices;
 @property(copy) NSString *targetName; // @synthesize targetName=_targetName;
@@ -59,6 +66,8 @@
 @property(copy) NSString *commonAssetRepositoryFileName; // @synthesize commonAssetRepositoryFileName=_commonAssetRepositoryFileName;
 @property(copy) NSString *exportDependencyInfoPath; // @synthesize exportDependencyInfoPath=_exportDependencyInfoPath;
 @property(copy) NSString *minimumDeploymentTarget; // @synthesize minimumDeploymentTarget=_minimumDeploymentTarget;
+@property(copy) NSString *widgetBackgroundColorName; // @synthesize widgetBackgroundColorName=_widgetBackgroundColorName;
+@property(copy) NSString *accentColorName; // @synthesize accentColorName=_accentColorName;
 @property(copy) NSString *launchImageName; // @synthesize launchImageName=_launchImageName;
 @property(copy) NSString *appIconName; // @synthesize appIconName=_appIconName;
 @property(copy) NSString *partialInfoPlistOutputPath; // @synthesize partialInfoPlistOutputPath=_partialInfoPlistOutputPath;
@@ -68,12 +77,15 @@
 @property BOOL printSearchDescription; // @synthesize printSearchDescription=_printSearchDescription;
 @property BOOL enableIncrementalDistill; // @synthesize enableIncrementalDistill=_enableIncrementalDistill;
 @property BOOL dumpAssets; // @synthesize dumpAssets=_dumpAssets;
+@property BOOL includeStickerContent; // @synthesize includeStickerContent=_includeStickerContent;
+@property long long standaloneIconBehavior; // @synthesize standaloneIconBehavior=_standaloneIconBehavior;
 @property BOOL enableOnDemandResources; // @synthesize enableOnDemandResources=_enableOnDemandResources;
 @property BOOL compressPNGs; // @synthesize compressPNGs=_compressPNGs;
 @property BOOL printMessageCategoryInfo; // @synthesize printMessageCategoryInfo=_printMessageCategoryInfo;
 @property BOOL printNoticeMessages; // @synthesize printNoticeMessages=_printNoticeMessages;
 @property BOOL printWarningMessages; // @synthesize printWarningMessages=_printWarningMessages;
 @property BOOL printErrorMessages; // @synthesize printErrorMessages=_printErrorMessages;
+@property BOOL printAssetTagCombinations; // @synthesize printAssetTagCombinations=_printAssetTagCombinations;
 @property BOOL printContents; // @synthesize printContents=_printContents;
 @property BOOL includeDebugOutput; // @synthesize includeDebugOutput=_includeDebugOutput;
 @property BOOL printVersion; // @synthesize printVersion=_printVersion;
@@ -81,6 +93,9 @@
 - (id)objectOptionsThatRequireInputDocuments;
 - (id)booleanOptionsThatRequireInputDocuments;
 - (id)optionIndex;
+- (void)mergeStringFilesByStickerPackAndLanguage:(id)arg1;
+- (BOOL)deprecatedProductTypeMatchesExactly:(id)arg1;
+- (id)enumValueMappingForOptionDescription:(id)arg1;
 - (void)interpretOption:(id)arg1 optionalParameter:(id)arg2 collectingErrors:(id)arg3;
 - (id)init;
 

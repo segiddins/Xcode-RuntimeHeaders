@@ -10,6 +10,7 @@
 {
 }
 
++ (CDUnknownBlockType)demanglerForDataType:(id)arg1 demanglingKind:(unsigned long long)arg2 toolchains:(id)arg3;
 + (CDUnknownBlockType)demanglerForDataType:(id)arg1 toolchains:(id)arg2;
 
 @end

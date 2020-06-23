@@ -18,6 +18,7 @@
     MISSING_TYPE *needAnnotationAccessibilityUpdate;
     MISSING_TYPE *lineNumberLayers;
     MISSING_TYPE *lastLineCount;
+    MISSING_TYPE *lineNumberLayersChangedSinceLastLayout;
     MISSING_TYPE *lineNumbersEnabled;
     MISSING_TYPE *lineNumberFont;
     MISSING_TYPE *layerSizeCache;
@@ -25,6 +26,7 @@
     MISSING_TYPE *lineIdentifierOrderedAnnotations;
     MISSING_TYPE *interaction;
     MISSING_TYPE *hoveringAnnotation;
+    MISSING_TYPE *hoveringLine;
     MISSING_TYPE *layoutIntentMap;
 }
 
@@ -32,6 +34,11 @@
 - (BOOL)isFlipped;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
+- (id)accessibilityLabel;
+- (id)accessibilityIdentifier;
+- (id)accessibilityRole;
+- (BOOL)isAccessibilityElement;
+- (id)accessibilityChildren;
 
 // Remaining properties
 @property(nonatomic, readonly) BOOL flipped;

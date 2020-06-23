@@ -19,6 +19,7 @@
     MISSING_TYPE *subHandle;
     MISSING_TYPE *sceneRootEntityInstance;
     MISSING_TYPE *onPreviewAddedEventSource;
+    MISSING_TYPE *startingPhysicsSettings;
 }
 
 @end

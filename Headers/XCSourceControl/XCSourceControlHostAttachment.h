@@ -9,7 +9,7 @@
 #import <XCSourceControl/NSCopying-Protocol.h>
 #import <XCSourceControl/NSSecureCoding-Protocol.h>
 
-@class NSString, NSURL, XCSourceControlHostParticipant, XCSourceControlPullRequestEvent;
+@class NSString, NSURL, XCSourceControlHostParticipant, _TtC15XCSourceControl31XCSourceControlPullRequestEvent;
 
 @interface XCSourceControlHostAttachment : NSObject <NSSecureCoding, NSCopying>
 {
@@ -17,12 +17,12 @@
     NSString *_identifier;
     NSURL *_url;
     XCSourceControlHostParticipant *_user;
-    XCSourceControlPullRequestEvent *_event;
+    _TtC15XCSourceControl31XCSourceControlPullRequestEvent *_event;
 }
 
 + (BOOL)supportsSecureCoding;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) XCSourceControlPullRequestEvent *event; // @synthesize event=_event;
+@property(readonly, nonatomic) _TtC15XCSourceControl31XCSourceControlPullRequestEvent *event; // @synthesize event=_event;
 @property(readonly, nonatomic) XCSourceControlHostParticipant *user; // @synthesize user=_user;
 @property(readonly, copy, nonatomic) NSURL *url; // @synthesize url=_url;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;

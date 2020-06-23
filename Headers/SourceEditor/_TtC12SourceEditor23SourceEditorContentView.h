@@ -7,10 +7,11 @@
 #import <AppKit/NSView.h>
 
 #import <SourceEditor/CALayerDelegate-Protocol.h>
+#import <SourceEditor/NSAccessibilityCustomRotorItemSearchDelegate-Protocol.h>
 
-@class MISSING_TYPE;
+@class MISSING_TYPE, NSString;
 
-@interface _TtC12SourceEditor23SourceEditorContentView : NSView <CALayerDelegate>
+@interface _TtC12SourceEditor23SourceEditorContentView : NSView <NSAccessibilityCustomRotorItemSearchDelegate, CALayerDelegate>
 {
     MISSING_TYPE *contentLayer;
     MISSING_TYPE *underlayLayer;
@@ -41,6 +42,43 @@
 - (void)viewDidChangeBackingProperties;
 - (BOOL)isFlipped;
 - (void)prepareContentInRect:(struct CGRect)arg1;
+- (id)accessibilityCustomRotors;
+- (id)rotor:(id)arg1 resultForSearchParameters:(id)arg2;
+- (struct CGRect)accessibilityFrameForRange:(struct _NSRange)arg1;
+- (id)accessibilityStringForRange:(struct _NSRange)arg1;
+- (struct _NSRange)accessibilityRangeForLine:(long long)arg1;
+- (long long)accessibilityLineForIndex:(long long)arg1;
+- (long long)accessibilityInsertionPointLineNumber;
+- (void)setAccessibilityVisibleCharacterRange:(struct _NSRange)arg1;
+- (struct _NSRange)accessibilityVisibleCharacterRange;
+- (long long)accessibilityNumberOfCharacters;
+- (struct _NSRange)accessibilitySharedCharacterRange;
+- (id)accessibilitySharedTextUIElements;
+- (id)accessibilityAttributedStringForRange:(struct _NSRange)arg1;
+- (id)accessibilityAttributeValue:(id)arg1 forParameter:(id)arg2;
+- (id)accessibilityParameterizedAttributeNames;
+- (BOOL)accessibilityIsAttributeSettable:(id)arg1;
+- (id)accessibilityAttributeValue:(id)arg1;
+- (id)accessibilityAttributeNames;
+- (void)setAccessibilitySelectedText:(id)arg1;
+- (id)accessibilitySelectedText;
+- (id)accessibilitySelectedTextRanges;
+- (void)setAccessibilitySelectedTextRange:(struct _NSRange)arg1;
+- (struct _NSRange)accessibilitySelectedTextRange;
+- (void)setAccessibilityValue:(id)arg1;
+- (id)accessibilityValue;
+- (id)accessibilityLabel;
+- (id)accessibilityChildren;
+- (id)accessibilityRole;
+- (BOOL)isAccessibilityElement;
+@property(nonatomic, readonly) NSString *debugDescription;
+@property(nonatomic, readonly) NSString *description;
+- (void)concludeDragOperation:(id)arg1;
+- (BOOL)performDragOperation:(id)arg1;
+- (BOOL)prepareForDragOperation:(id)arg1;
+- (void)draggingExited:(id)arg1;
+- (unsigned long long)draggingUpdated:(id)arg1;
+- (unsigned long long)draggingEntered:(id)arg1;
 
 // Remaining properties
 @property(nonatomic, readonly) BOOL flipped;

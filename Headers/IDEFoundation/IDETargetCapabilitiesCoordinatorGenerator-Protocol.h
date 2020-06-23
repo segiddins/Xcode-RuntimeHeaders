@@ -4,14 +4,14 @@
 //  Copyright (C) 1997-2019 Steve Nygard.
 //
 
-@class NSString;
+@class NSObject, NSString;
 @protocol IDEAppIDFeatureCoordination, IDEBuildSettingsCoordination, IDEEntitlementsCoordination, IDEInfoPlistCoordination, IDELinkedFrameworksCoordination;
 
 @protocol IDETargetCapabilitiesCoordinatorGenerator
-- (id <IDELinkedFrameworksCoordination>)generateLinkedFrameworksCoordinatorForConfiguration:(NSString *)arg1;
-- (id <IDEBuildSettingsCoordination>)generateBuildSettingsCoordinatorForConfiguration:(NSString *)arg1;
-- (id <IDEAppIDFeatureCoordination>)generateAppIDFeatureCoordinatorForConfiguration:(NSString *)arg1;
-- (id <IDEEntitlementsCoordination>)generateEntitlementsCoordinatorForConfiguration:(NSString *)arg1;
-- (id <IDEInfoPlistCoordination>)generateInfoPlistCoordinatorForConfiguration:(NSString *)arg1;
+- (NSObject<IDELinkedFrameworksCoordination> *)generateLinkedFrameworksCoordinatorForConfiguration:(NSString *)arg1;
+- (NSObject<IDEBuildSettingsCoordination> *)generateBuildSettingsCoordinatorForConfiguration:(NSString *)arg1;
+- (NSObject<IDEAppIDFeatureCoordination> *)generateAppIDFeatureCoordinatorForConfiguration:(NSString *)arg1;
+- (NSObject<IDEEntitlementsCoordination> *)generateEntitlementsCoordinatorForConfiguration:(NSString *)arg1;
+- (NSObject<IDEInfoPlistCoordination> *)generateInfoPlistCoordinatorForConfiguration:(NSString *)arg1;
 @end
 

@@ -6,25 +6,47 @@
 
 #import <objc/NSObject.h>
 
-@class NSString;
+@class DVTTextDocumentLocation, NSArray, NSDate, NSError, NSString, NSUUID, XCTSourceCodeContext;
 
 @interface IDESchemeActionTestFailureSummary : NSObject
 {
-    BOOL _isPerformanceFailure;
+    BOOL _isTopLevelFailure;
+    NSArray *_callStackSymbolInfos;
+    NSArray *_failureSteps;
     NSString *_message;
-    NSString *_fileName;
-    long long _lineNumber;
+    NSString *_detailedDescription;
+    NSString *_issueType;
+    XCTSourceCodeContext *_sourceCodeContext;
+    NSUUID *_uuid;
+    NSArray *_attachments;
+    NSError *_associatedError;
+    NSDate *_timestamp;
+    id _urlRedirector;
 }
 
 - (void).cxx_destruct;
-@property(readonly) BOOL isPerformanceFailure; // @synthesize isPerformanceFailure=_isPerformanceFailure;
-@property(readonly) long long lineNumber; // @synthesize lineNumber=_lineNumber;
-@property(readonly, copy) NSString *fileName; // @synthesize fileName=_fileName;
+@property __weak id urlRedirector; // @synthesize urlRedirector=_urlRedirector;
+@property(readonly) BOOL isTopLevelFailure; // @synthesize isTopLevelFailure=_isTopLevelFailure;
+@property(readonly, copy) NSDate *timestamp; // @synthesize timestamp=_timestamp;
+@property(readonly, copy) NSError *associatedError; // @synthesize associatedError=_associatedError;
+@property(readonly, copy) NSArray *attachments; // @synthesize attachments=_attachments;
+@property(readonly, copy) NSUUID *uuid; // @synthesize uuid=_uuid;
+@property(readonly) XCTSourceCodeContext *sourceCodeContext; // @synthesize sourceCodeContext=_sourceCodeContext;
+@property(readonly) NSString *issueType; // @synthesize issueType=_issueType;
+@property(readonly, copy) NSString *detailedDescription; // @synthesize detailedDescription=_detailedDescription;
 @property(readonly, copy) NSString *message; // @synthesize message=_message;
+@property(readonly, copy) NSArray *failureSteps; // @synthesize failureSteps=_failureSteps;
+@property(readonly, copy) NSArray *callStackSymbolInfos; // @synthesize callStackSymbolInfos=_callStackSymbolInfos;
+@property(readonly) BOOL isPerformanceFailure;
 - (BOOL)isEqualToTestFailureSummary:(id)arg1;
 - (id)dictionaryRepresentation;
+@property(readonly) DVTTextDocumentLocation *documentLocation;
+@property(readonly) long long lineNumber;
+@property(readonly, copy) NSString *fileName;
 - (id)initWithDictionaryRepresentation:(id)arg1;
-- (id)initWithMessage:(id)arg1 fileName:(id)arg2 lineNumber:(long long)arg3 isPerformanceFailure:(BOOL)arg4;
+- (id)initSystemFailureWithMessage:(id)arg1 associatedError:(id)arg2;
+- (id)initWithIssue:(id)arg1 attachmentsDirectory:(id)arg2 isTopLevelFailure:(BOOL)arg3;
+- (id)initWithUUID:(id)arg1 message:(id)arg2 issueType:(id)arg3 detailedDescription:(id)arg4 sourceCodeContext:(id)arg5 associatedError:(id)arg6 attachments:(id)arg7 timestamp:(id)arg8 isTopLevelFailure:(BOOL)arg9;
 
 @end
 

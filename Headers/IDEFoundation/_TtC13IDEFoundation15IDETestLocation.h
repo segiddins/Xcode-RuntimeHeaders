@@ -14,8 +14,6 @@
     MISSING_TYPE *location;
     MISSING_TYPE *tests;
     MISSING_TYPE *compositeState;
-    MISSING_TYPE *testsHaveDifferingTargets;
-    MISSING_TYPE *testsHaveDifferingClasses;
 }
 
 - (void).cxx_destruct;
@@ -26,8 +24,6 @@
 @property(nonatomic, readonly) _TtC13IDEFoundation15IDETestLocation *inheritedTestLocation;
 @property(nonatomic, readonly) BOOL canHaveSubtests;
 - (id)initWithTestIdentifier:(id)arg1 location:(id)arg2 tests:(id)arg3 compositeState:(unsigned long long)arg4;
-@property(nonatomic, readonly) BOOL testsHaveDifferingClasses; // @synthesize testsHaveDifferingClasses;
-@property(nonatomic, readonly) BOOL testsHaveDifferingTargets; // @synthesize testsHaveDifferingTargets;
 @property(nonatomic, readonly) unsigned long long compositeState; // @synthesize compositeState;
 @property(nonatomic, readonly) NSArray *tests;
 @property(nonatomic, readonly) DVTTextDocumentLocation *location; // @synthesize location;

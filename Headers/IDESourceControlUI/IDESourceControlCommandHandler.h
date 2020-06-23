@@ -22,6 +22,7 @@
 - (void).cxx_destruct;
 @property(readonly) NSAlert *waitingOnInitialScanAlert; // @synthesize waitingOnInitialScanAlert=_waitingOnInitialScanAlert;
 @property(readonly) id <IDESelectionSource> selectionSource; // @synthesize selectionSource=_selectionSource;
+- (void)sourceControlNetworkDebuggerCommand:(id)arg1;
 - (void)createPullRequestCommand:(id)arg1;
 - (void)stashCommand:(id)arg1;
 - (void)cherryPickCommand:(id)arg1;

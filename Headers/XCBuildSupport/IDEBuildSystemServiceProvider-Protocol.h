@@ -6,20 +6,16 @@
 
 #import <XCBuildSupport/NSObject-Protocol.h>
 
-@class DVTFilePath, IDEBuildOperationConfiguration, IDERunDestination, IDEScheme, IDEWorkspace, NSArray, NSSet, NSString;
-@protocol IDEBlueprint, IDEBlueprintProvider;
+@class IDEWorkspace, NSArray, NSNumber, NSSet, NSString;
+@protocol IDEBuildSystemService;
 
 @protocol IDEBuildSystemServiceProvider <NSObject>
+- (id <IDEBuildSystemService>)createServiceForWorkspace:(IDEWorkspace *)arg1;
+- (void)setObjectRootPathOverride:(NSString *)arg1;
+- (NSArray *)createXCFramework:(NSArray *)arg1 currentWorkingDirectory:(NSString *)arg2;
+- (NSNumber *)isMacCatalystSupportedForProductTypeIdentifier:(NSString *)arg1 error:(id *)arg2;
 - (NSSet *)macCatalystFrameworkNameBlacklist:(id *)arg1;
 - (NSSet *)macCatalystAppExtensionPointIdentifierWhitelist:(id *)arg1;
-- (NSArray *)createXCFramework:(NSArray *)arg1 currentWorkingDirectory:(NSString *)arg2;
-- (void)setObjectRootPathOverride:(NSString *)arg1;
-- (void)noteBuildFolderCleanedInWorkspace:(IDEWorkspace *)arg1;
-- (void)noteBlueprintProviderDidChange:(id <IDEBlueprintProvider>)arg1 inWorkspace:(IDEWorkspace *)arg2;
-- (void)generatePreviewInfoForWorkspace:(IDEWorkspace *)arg1 scheme:(IDEScheme *)arg2 runDestination:(IDERunDestination *)arg3 blueprint:(id <IDEBlueprint>)arg4 sourceFilePath:(DVTFilePath *)arg5 thunkVariantSuffix:(NSString *)arg6 completionBlock:(void (^)(NSArray *, NSError *))arg7;
-- (void)generatePreviewInfoForBuildOperationConfiguration:(IDEBuildOperationConfiguration *)arg1 blueprint:(id <IDEBlueprint>)arg2 sourceFilePath:(DVTFilePath *)arg3 thunkVariantSuffix:(NSString *)arg4 completionBlock:(void (^)(NSArray *, NSError *))arg5;
-- (void)generateIndexingInfoForWorkspace:(IDEWorkspace *)arg1 blueprint:(id <IDEBlueprint>)arg2 completionBlock:(void (^)(NSDictionary *, NSError *))arg3;
-@property(nonatomic, readonly) Class buildOperationClass;
 @property(nonatomic, readonly) BOOL isModern;
 @end
 

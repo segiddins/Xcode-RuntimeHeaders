@@ -11,9 +11,9 @@
 __attribute__((visibility("hidden")))
 @interface _TtC5UVKit21DragDestinationNSView : NSView
 {
-    MISSING_TYPE *interactionResolver;
-    MISSING_TYPE *interactions;
-    MISSING_TYPE *isActivelyDragging;
+    MISSING_TYPE *_interactionResolver;
+    MISSING_TYPE *_interactions;
+    MISSING_TYPE *_isActivelyDragging;
 }
 
 - (void).cxx_destruct;

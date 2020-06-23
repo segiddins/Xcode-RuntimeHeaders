@@ -14,13 +14,16 @@
     BOOL _zoom;
     BOOL _makeVisible;
     BOOL _animate;
+    BOOL _editName;
     NSString *_channelIdentifier;
     IBSelectionChannel *_source;
 }
 
++ (id)selectionContextIndicatingMakeVisible:(BOOL)arg1 zoom:(BOOL)arg2 animate:(BOOL)arg3 editName:(BOOL)arg4;
 + (id)selectionContextIndicatingMakeVisible:(BOOL)arg1 zoom:(BOOL)arg2 animate:(BOOL)arg3;
-+ (id)contextWithIdentifier:(id)arg1 makeVisible:(BOOL)arg2 zoom:(BOOL)arg3 animate:(BOOL)arg4;
++ (id)contextWithIdentifier:(id)arg1 makeVisible:(BOOL)arg2 zoom:(BOOL)arg3 animate:(BOOL)arg4 editName:(BOOL)arg5;
 - (void).cxx_destruct;
+@property BOOL editName; // @synthesize editName=_editName;
 @property BOOL animate; // @synthesize animate=_animate;
 @property BOOL makeVisible; // @synthesize makeVisible=_makeVisible;
 @property BOOL zoom; // @synthesize zoom=_zoom;

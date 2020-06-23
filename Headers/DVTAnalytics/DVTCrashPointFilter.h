@@ -27,7 +27,7 @@
 @property(readonly, copy) NSString *description;
 - (BOOL)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;
-- (id)initWithFilterType:(long long)arg1 filter:(id)arg2;
+- (id)initEmptyFilter;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -7,7 +7,7 @@
 @class NSString;
 
 @protocol IDETestOperationStateMachineDelegate
-- (void)waitForTestProcessToConnect;
+- (void)testRunnerHungAfterAcquiringPID;
 - (void)launchSessionDidFinalizeWithDescription:(NSString *)arg1;
 - (void)launchSessionWillFinalize;
 @end

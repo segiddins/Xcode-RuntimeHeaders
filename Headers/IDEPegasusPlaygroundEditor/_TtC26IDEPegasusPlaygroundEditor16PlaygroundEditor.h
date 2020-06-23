@@ -9,11 +9,12 @@
 #import <IDEPegasusPlaygroundEditor/IDEPlaygroundHostingEditor-Protocol.h>
 #import <IDEPegasusPlaygroundEditor/IDESourceCodePlaygroundSectionAccessoryViewAnnotationInteractionDelegate-Protocol.h>
 #import <IDEPegasusPlaygroundEditor/IDEToyHostingViewControllerDelegate-Protocol.h>
+#import <IDEPegasusPlaygroundEditor/IDEWorkspaceRunGroupFunctionBarOverride-Protocol.h>
 
 @class MISSING_TYPE, NSSet;
 
 __attribute__((visibility("hidden")))
-@interface _TtC26IDEPegasusPlaygroundEditor16PlaygroundEditor : _$s15IDESourceEditor010SourceCodeB0CN <IDEPlaygroundHostingEditor, IDESourceCodePlaygroundSectionAccessoryViewAnnotationInteractionDelegate, IDEToyHostingViewControllerDelegate>
+@interface _TtC26IDEPegasusPlaygroundEditor16PlaygroundEditor : _$s15IDESourceEditor010SourceCodeB0CN <IDEWorkspaceRunGroupFunctionBarOverride, IDEPlaygroundHostingEditor, IDESourceCodePlaygroundSectionAccessoryViewAnnotationInteractionDelegate, IDEToyHostingViewControllerDelegate>
 {
     MISSING_TYPE *playgroundDocument;
     MISSING_TYPE *errorScopeBarController;
@@ -70,6 +71,9 @@ __attribute__((visibility("hidden")))
 - (void)viewDidLoad;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2 document:(id)arg3;
+- (BOOL)shouldSuppressWorkspaceDebugControlTouchBarItem;
+- (id)identifierForWorkspaceRunGroupFunctionBarOverride;
+- (id)makeTouchBar;
 
 @end
 

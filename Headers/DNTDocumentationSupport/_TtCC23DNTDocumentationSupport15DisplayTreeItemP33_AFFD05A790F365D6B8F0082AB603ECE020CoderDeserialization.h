@@ -6,9 +6,7 @@
 
 #import <swiftCore/_TtCs12_SwiftObject.h>
 
-#import <DNTDocumentationSupport/DNTDisplayTreeIndexDeserializationDelegate-Protocol.h>
-
-@interface _TtCC23DNTDocumentationSupport15DisplayTreeItemP33_AFFD05A790F365D6B8F0082AB603ECE020CoderDeserialization : _TtCs12_SwiftObject <DNTDisplayTreeIndexDeserializationDelegate>
+@interface _TtCC23DNTDocumentationSupport15DisplayTreeItemP33_AFFD05A790F365D6B8F0082AB603ECE020CoderDeserialization : _TtCs12_SwiftObject
 {
 }
 

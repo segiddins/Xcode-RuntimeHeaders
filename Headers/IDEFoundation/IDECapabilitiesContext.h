@@ -20,6 +20,7 @@
     NSObject<IDEAppIDFeatureCoordination> *_appIDFeatureCoordinator;
     NSObject<IDELinkedFrameworksCoordination> *_linkedFrameworksCoordinator;
     NSString *_platformIdentifier;
+    NSString *_productTypeIdentifier;
     NSString *_bundleIdentifier;
     id <IDEBlueprint> _blueprint;
     NSArray *_capabilityItemModels;
@@ -37,6 +38,7 @@
 @property(readonly) id <IDEBlueprint> blueprint; // @synthesize blueprint=_blueprint;
 @property(readonly, getter=isInternal) BOOL internal; // @synthesize internal=_internal;
 @property(readonly) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
+@property(readonly) NSString *productTypeIdentifier; // @synthesize productTypeIdentifier=_productTypeIdentifier;
 @property(readonly) NSString *platformIdentifier; // @synthesize platformIdentifier=_platformIdentifier;
 @property(readonly) NSObject<IDELinkedFrameworksCoordination> *linkedFrameworksCoordinator; // @synthesize linkedFrameworksCoordinator=_linkedFrameworksCoordinator;
 @property(readonly) NSObject<IDEAppIDFeatureCoordination> *appIDFeatureCoordinator; // @synthesize appIDFeatureCoordinator=_appIDFeatureCoordinator;

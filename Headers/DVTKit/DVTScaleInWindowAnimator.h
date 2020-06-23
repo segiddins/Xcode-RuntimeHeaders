@@ -15,12 +15,15 @@
     NSWindow *_windowToScaleIn;
     struct CGPoint _pointToScaleFrom;
     double _finalAlpha;
+    CDUnknownBlockType _completionHandler;
     NSWindow *_animationWindow;
     CALayer *_animationLayer;
 }
 
 + (id)scaleInWindow:(id)arg1 fromPoint:(struct CGPoint)arg2 finalAlpha:(double)arg3;
++ (id)scaleInWindow:(id)arg1 fromPoint:(struct CGPoint)arg2 finalAlpha:(double)arg3 completionHandler:(CDUnknownBlockType)arg4;
 + (id)scaleInWindow:(id)arg1 fromPoint:(struct CGPoint)arg2;
++ (id)scaleInWindow:(id)arg1 fromPoint:(struct CGPoint)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void).cxx_destruct;
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
 - (void)cancel;
@@ -29,7 +32,7 @@
 - (id)_createScaleInAndFadeInAnimation;
 - (void)_scaleInWindow;
 - (struct CATransform3D)_transformForScale:(double)arg1;
-- (id)_initWithWindow:(id)arg1 point:(struct CGPoint)arg2 finalAlpha:(double)arg3;
+- (id)_initWithWindow:(id)arg1 point:(struct CGPoint)arg2 finalAlpha:(double)arg3 completionHandler:(CDUnknownBlockType)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -6,18 +6,22 @@
 
 #import <IDEFoundation/NSObject-Protocol.h>
 
-@class DVTSourceCodeSymbolKind, NSAttributedString, NSString;
+@class DVTRangeArray, DVTSourceCodeLanguage, DVTSourceCodeSymbolKind, NSAttributedString, NSString;
 
 @protocol IDEIndexCompletionItem <NSObject>
 @property(readonly) BOOL notRecommended;
+@property(retain) DVTRangeArray *fuzzyMatchingRanges;
 @property(nonatomic) double fuzzyMatchingScore;
 @property(readonly) double priority;
 @property(readonly) DVTSourceCodeSymbolKind *symbolKind;
 @property(readonly) NSAttributedString *descriptionText;
 @property(readonly, copy) NSString *parentText;
-@property(readonly) NSString *completionText;
-@property(readonly) NSString *displayType;
-@property(readonly) NSString *displayText;
-@property(readonly) NSString *name;
+@property(readonly) DVTSourceCodeLanguage *language;
+@property(readonly, copy) NSString *completionText;
+@property(readonly, copy) NSString *displaySignature;
+@property(readonly, copy) NSString *briefDisplayText;
+@property(readonly, copy) NSString *displayType;
+@property(readonly, copy) NSString *displayText;
+@property(readonly, copy) NSString *name;
 @end
 

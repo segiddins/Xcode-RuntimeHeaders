@@ -37,6 +37,7 @@
 - (id)navigableItem_documentType;
 - (id)navigableItem_image;
 - (id)navigableItem_name;
+- (BOOL)isEqual:(id)arg1;
 - (id)childItemsForCoordinator:(id)arg1;
 @property(readonly) DBGViewObject *proxiedViewObject;
 - (id)pasteboardStringWithDebugNavigatorContentDelegate:(id)arg1;

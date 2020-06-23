@@ -7,7 +7,7 @@
 #import <objc/NSObject.h>
 
 @class DVTFilePath, IDEExecutionEnvironment, IDERunDestination, IDESchemeActionsInvocationRecord, IDESchemeCommand, NSArray, NSDictionary, NSNumber, NSString;
-@protocol IDEBuildOperationClientInfo, IDETestDevicePool;
+@protocol IDEBuildOperationClientInfo, IDETestRunDestinationPool;
 
 @interface IDESchemeOperationParameters : NSObject
 {
@@ -21,7 +21,7 @@
     NSString *_commandName;
     IDESchemeActionsInvocationRecord *_invocationRecord;
     DVTFilePath *_filePathForSingleFileAction;
-    id <IDETestDevicePool> _testingDevicePool;
+    id <IDETestRunDestinationPool> _testingRunDestinationPool;
     NSArray *_overridingTestingSpecifierGroups;
     NSArray *_overridingTestPlanReferences;
     NSArray *_onlyTestConfigurations;
@@ -36,10 +36,14 @@
     NSNumber *_maximumTestExecutionTimeAllowance;
     NSString *_contextString;
     id <IDEBuildOperationClientInfo> _buildOperationClientInfo;
+    NSNumber *_traceCollectionEnabled;
+    NSDictionary *_performanceTestConfiguration;
 }
 
 + (id)operationParametersWithSchemeTask:(long long)arg1 buildCommand:(long long)arg2 executionEnvironment:(id)arg3 runDestination:(id)arg4 schemeCommand:(id)arg5 commandName:(id)arg6 invocationRecord:(id)arg7;
 - (void).cxx_destruct;
+@property(retain) NSDictionary *performanceTestConfiguration; // @synthesize performanceTestConfiguration=_performanceTestConfiguration;
+@property(retain) NSNumber *traceCollectionEnabled; // @synthesize traceCollectionEnabled=_traceCollectionEnabled;
 @property(retain) id <IDEBuildOperationClientInfo> buildOperationClientInfo; // @synthesize buildOperationClientInfo=_buildOperationClientInfo;
 @property BOOL collectTimelineMetrics; // @synthesize collectTimelineMetrics=_collectTimelineMetrics;
 @property(copy) NSString *contextString; // @synthesize contextString=_contextString;
@@ -56,7 +60,7 @@
 @property(copy) NSArray *onlyTestConfigurations; // @synthesize onlyTestConfigurations=_onlyTestConfigurations;
 @property(copy) NSArray *overridingTestPlanReferences; // @synthesize overridingTestPlanReferences=_overridingTestPlanReferences;
 @property(copy) NSArray *overridingTestingSpecifierGroups; // @synthesize overridingTestingSpecifierGroups=_overridingTestingSpecifierGroups;
-@property(retain) id <IDETestDevicePool> testingDevicePool; // @synthesize testingDevicePool=_testingDevicePool;
+@property(retain) id <IDETestRunDestinationPool> testingRunDestinationPool; // @synthesize testingRunDestinationPool=_testingRunDestinationPool;
 @property(copy) DVTFilePath *filePathForSingleFileAction; // @synthesize filePathForSingleFileAction=_filePathForSingleFileAction;
 @property(retain) IDESchemeActionsInvocationRecord *invocationRecord; // @synthesize invocationRecord=_invocationRecord;
 @property(copy) NSString *commandName; // @synthesize commandName=_commandName;

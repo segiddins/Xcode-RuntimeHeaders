@@ -19,6 +19,7 @@
     MISSING_TYPE *continueBuildingAfterErrors;
     MISSING_TYPE *hideShellScriptEnvironment;
     MISSING_TYPE *showNonLoggedProgress;
+    MISSING_TYPE *buildDescriptionID;
     MISSING_TYPE *enableIndexBuildArena;
     MISSING_TYPE *shouldCollectMetrics;
     MISSING_TYPE *buildPlanDiagnosticsDirPath;

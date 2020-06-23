@@ -15,6 +15,7 @@
     BOOL _terminateCalled;
     BOOL _targetReallyDead;
     BOOL _responsibleForTermination;
+    int _childPID;
     DVTDispatchLock *_lifeCycleLock;
     DVTDispatchLock *_deathMutex;
 }

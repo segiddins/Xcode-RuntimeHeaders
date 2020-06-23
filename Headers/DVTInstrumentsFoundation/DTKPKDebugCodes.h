@@ -14,7 +14,6 @@
     XRIntKeyedDictionary *_codeMap;
 }
 
-+ (id)legacyTraceCodesURLForOS:(unsigned long long)arg1 productVersion:(id)arg2;
 + (id)codesFromURL:(id)arg1 error:(id *)arg2;
 + (id)localKDebugCodes:(id *)arg1;
 + (void)initialize;

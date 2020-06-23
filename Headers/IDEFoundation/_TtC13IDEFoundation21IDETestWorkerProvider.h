@@ -15,7 +15,7 @@
     MISSING_TYPE *testRunSpecification;
     MISSING_TYPE *testRunSpecificationGroup;
     MISSING_TYPE *artifactsDirectory;
-    MISSING_TYPE *testDeviceAllocator;
+    MISSING_TYPE *testRunDestinationAllocator;
 }
 
 - (void).cxx_destruct;
@@ -23,7 +23,7 @@
 - (BOOL)supportsMultipleWorkersFor:(id)arg1;
 - (void)returnWorker:(id)arg1;
 - (id)vendWorker;
-- (id)initWithTestRunSpecification:(id)arg1 testRunSpecificationGroup:(id)arg2 artifactsDirectory:(id)arg3 testDeviceAllocator:(id)arg4;
+- (id)initWithTestRunSpecification:(id)arg1 testRunSpecificationGroup:(id)arg2 artifactsDirectory:(id)arg3 testRunDestinationAllocator:(id)arg4;
 
 @end
 

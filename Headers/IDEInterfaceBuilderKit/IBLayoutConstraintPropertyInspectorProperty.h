@@ -10,6 +10,7 @@
 {
 }
 
+- (id)makeEditingController;
 - (void)setupRefreshTriggersAndConfigure;
 
 @end

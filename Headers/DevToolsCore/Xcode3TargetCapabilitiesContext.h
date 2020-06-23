@@ -22,6 +22,7 @@
     NSMutableDictionary *_capabilityModelsByItemIdentifier;
     NSArray *_capabilityItemModels;
     NSString *_platformIdentifier;
+    NSString *_productTypeIdentifier;
     NSString *_buildConfiguration;
     Xcode3Target *_target;
     DVTDelayedInvocation *_coordinatorNotificationProcessingInvocation;
@@ -37,6 +38,7 @@
 @property(retain, nonatomic) DVTDelayedInvocation *coordinatorNotificationProcessingInvocation; // @synthesize coordinatorNotificationProcessingInvocation=_coordinatorNotificationProcessingInvocation;
 @property(readonly) Xcode3Target *target; // @synthesize target=_target;
 - (id)buildConfiguration;
+- (id)productTypeIdentifier;
 - (id)platformIdentifier;
 - (void)_processCoordinatorNotifications;
 - (void)_coordinatorChanged:(id)arg1;

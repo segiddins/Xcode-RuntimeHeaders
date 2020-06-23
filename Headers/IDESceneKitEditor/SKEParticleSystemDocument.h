@@ -16,12 +16,14 @@
     NSURL *_documentURL;
     SCNAssetCatalog *_assetCatalog;
     SCNParticleSystem *_particleSystem;
+    BOOL _alreadyProposedToUpgrade;
     id _inspectedSceneEditor;
 }
 
 + (void)initialize;
 - (void).cxx_destruct;
 @property(retain) id inspectedSceneEditor; // @synthesize inspectedSceneEditor=_inspectedSceneEditor;
+@property(readonly) BOOL alreadyProposedToUpgrade; // @synthesize alreadyProposedToUpgrade=_alreadyProposedToUpgrade;
 @property(readonly) unsigned long long featureAvailability;
 - (void)makeDocumentAssetCatalogCurrent;
 - (void)refreshAssetCatalogWithURL:(id)arg1;
@@ -48,7 +50,6 @@
 - (id)init;
 
 // Remaining properties
-@property(readonly) BOOL alreadyProposedToUpgrade;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) DVTFilePath *filePath;

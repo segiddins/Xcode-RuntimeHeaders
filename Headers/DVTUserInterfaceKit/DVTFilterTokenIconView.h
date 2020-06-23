@@ -12,7 +12,6 @@
 
 @interface DVTFilterTokenIconView : NSView <NSAccessibilityButton>
 {
-    double _lineWidth;
     struct CGRect _iconContentViewContainer;
     struct CGRect _filterIconContainer;
     struct CGRect _comparisonTextContainer;
@@ -22,7 +21,6 @@
     NSFont *_comparisonTextFont;
     NSImage *_dropDownIcon;
     NSImage *_dropDownIconActive;
-    double _currentAlpha;
     double _screenScaleFactor;
     NSMenuItem *_itemANY;
     NSMenuItem *_itemALL;
@@ -48,13 +46,15 @@
 @property(nonatomic, getter=isActive) BOOL active; // @synthesize active=_active;
 - (struct CGRect)_drawRect;
 - (void)drawRect:(struct CGRect)arg1;
+- (struct CGRect)_capsuleRect;
 - (struct CGRect)_filterIconContainerWithOrigin:(struct CGPoint)arg1;
 - (void)_drawFilterIconInContainer:(struct CGRect)arg1;
-- (void)_drawText:(struct CGRect)arg1;
+- (void)_drawText:(struct CGRect)arg1 withColor:(id)arg2;
+- (BOOL)_shouldShowComparisonOperators;
 - (id)drawingColor;
-- (id)drawingColorWithAlpha;
 - (double)_expandedWidth;
-- (double)_shrinkedWidth;
+- (double)_compactWidth;
+- (double)_popUpWidthPlusMargins;
 - (struct CGRect)_calculateIconWidthContentContainer;
 - (struct CGRect)_iconContentViewContainerWithOrigin:(struct CGPoint)arg1;
 - (struct CGRect)_comparisonTextContainerWithOrigin:(struct CGPoint)arg1;
@@ -70,7 +70,6 @@
 - (void)_animateFrameToWidth:(double)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (BOOL)_isDrawingIconOnly;
 - (double)_xOffset;
-- (double)_alphaBasedOnWidth;
 - (id)initWithOrigin:(struct CGPoint)arg1;
 - (void)_updateMenu;
 - (id)accessibilityParent;

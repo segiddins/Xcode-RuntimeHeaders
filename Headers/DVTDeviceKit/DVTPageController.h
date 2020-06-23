@@ -8,7 +8,11 @@
 
 @interface DVTPageController : NSPageController
 {
+    BOOL _disableSwipeWithScrollWheel;
 }
+
+@property BOOL disableSwipeWithScrollWheel; // @synthesize disableSwipeWithScrollWheel=_disableSwipeWithScrollWheel;
+- (void)scrollWheel:(id)arg1;
 
 @end
 

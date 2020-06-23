@@ -10,6 +10,7 @@
 {
 }
 
+- (id)validIdioms;
 - (BOOL)namesForFilesOfTypeIncludeFileExtensions:(id)arg1;
 - (id)initWithPlatform:(id)arg1;
 

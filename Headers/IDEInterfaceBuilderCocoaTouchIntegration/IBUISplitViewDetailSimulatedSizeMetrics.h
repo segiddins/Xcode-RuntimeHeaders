@@ -10,6 +10,8 @@
 {
 }
 
++ (id)instantiateWithCoder:(id)arg1;
++ (id)instantiateWithDocumentUnarchiver:(id)arg1;
 + (id)sharedInstance;
 - (id)configurationForScreenMetrics:(id)arg1 orientationMetrics:(id)arg2;
 - (id)fixedSizeMetricsForScreenMetrics:(id)arg1 orientationMetrics:(id)arg2 freeformSize:(struct CGSize)arg3;

@@ -36,6 +36,7 @@
     MISSING_TYPE *sdkCanonicalNamePublic;
     MISSING_TYPE *sdkCanonicalNameInternal;
     MISSING_TYPE *useFallbackEntitlementsInXBS;
+    MISSING_TYPE *requiresIbtoolPlatformDefinition;
     MISSING_TYPE *correspondingDevicePlatform;
     MISSING_TYPE *correspondingSimulatorPlatform;
     MISSING_TYPE *signingContextCache;

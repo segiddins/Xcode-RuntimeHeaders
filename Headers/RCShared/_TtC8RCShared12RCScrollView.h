@@ -18,6 +18,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (void)scrollWheel:(id)arg1;
+@property(nonatomic) struct CGSize contentSize;
 
 @end
 

@@ -34,6 +34,7 @@
     NSMutableArray *_drawCallInfoList;
     NSMutableArray *_encoderInfoList;
     NSMutableArray *_encoderProgramInfoList;
+    NSMutableArray *_encoderFunctionIndexList;
     NSMutableArray *_programInfoList;
     NSMutableArray *_programPipelineInfoList;
     NSMutableDictionary *_encoderFunctionIndexToEncoderIndexMap;
@@ -42,11 +43,25 @@
     NSArray *_blitTimeData;
     unsigned long long _frameTime;
     double _gpuTime;
+    NSMutableArray *_effectiveKickTimes;
+    NSMutableArray *_effectivePerEncoderDrawKickTimes;
+    NSMutableArray *_loadActionTimes;
+    NSMutableArray *_storeActionTimes;
+    NSMutableArray *_perCommandBufferEncoderCount;
+    NSDictionary *_encoderIndexToLabelMap;
+    double _xpState;
 }
 
 + (BOOL)supportsSecureCoding;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) double xpState; // @synthesize xpState=_xpState;
+@property(retain, nonatomic) NSDictionary *encoderIndexToLabelMap; // @synthesize encoderIndexToLabelMap=_encoderIndexToLabelMap;
+@property(retain, nonatomic) NSMutableArray *perCommandBufferEncoderCount; // @synthesize perCommandBufferEncoderCount=_perCommandBufferEncoderCount;
+@property(retain, nonatomic) NSMutableArray *storeActionTimes; // @synthesize storeActionTimes=_storeActionTimes;
+@property(retain, nonatomic) NSMutableArray *loadActionTimes; // @synthesize loadActionTimes=_loadActionTimes;
+@property(retain, nonatomic) NSMutableArray *effectivePerEncoderDrawKickTimes; // @synthesize effectivePerEncoderDrawKickTimes=_effectivePerEncoderDrawKickTimes;
+@property(retain, nonatomic) NSMutableArray *effectiveKickTimes; // @synthesize effectiveKickTimes=_effectiveKickTimes;
 @property(nonatomic) double gpuTime; // @synthesize gpuTime=_gpuTime;
 @property(nonatomic) unsigned int rendererUtilization; // @synthesize rendererUtilization=_rendererUtilization;
 @property(nonatomic) unsigned int tilerUtilization; // @synthesize tilerUtilization=_tilerUtilization;
@@ -66,6 +81,7 @@
 @property(readonly, nonatomic) NSMutableDictionary *encoderFunctionIndexToEncoderIndexMap; // @synthesize encoderFunctionIndexToEncoderIndexMap=_encoderFunctionIndexToEncoderIndexMap;
 @property(retain, nonatomic) NSMutableArray *programPipelineInfoList; // @synthesize programPipelineInfoList=_programPipelineInfoList;
 @property(retain, nonatomic) NSMutableArray *programInfoList; // @synthesize programInfoList=_programInfoList;
+@property(readonly, nonatomic) NSMutableArray *encoderFunctionIndexList; // @synthesize encoderFunctionIndexList=_encoderFunctionIndexList;
 @property(readonly, nonatomic) NSMutableArray *encoderProgramInfoList; // @synthesize encoderProgramInfoList=_encoderProgramInfoList;
 @property(readonly, nonatomic) NSMutableArray *encoderInfoList; // @synthesize encoderInfoList=_encoderInfoList;
 @property(retain, nonatomic) NSMutableArray *drawCallInfoList; // @synthesize drawCallInfoList=_drawCallInfoList;

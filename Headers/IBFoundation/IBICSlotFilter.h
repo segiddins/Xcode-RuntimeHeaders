@@ -30,7 +30,7 @@
 - (id)filterByIntersectingWithFilter:(id)arg1;
 - (id)filterByUnioningWithFilter:(id)arg1;
 - (BOOL)_continueEnumeratingUsingBlock:(CDUnknownBlockType)arg1;
-- (void)enumerateMatchingSlotsUsingBlock:(CDUnknownBlockType)arg1;
+- (void)enumerateMatchingSlotsWithOptions:(unsigned long long)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (BOOL)matchesRep:(id)arg1;
 - (BOOL)matchesSlot:(id)arg1;
 - (BOOL)isEqual:(id)arg1;

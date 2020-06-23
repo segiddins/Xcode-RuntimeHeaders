@@ -9,6 +9,7 @@
 #import <IDEKit/IDETestReport_TestAttachment-Protocol.h>
 
 @class NSDate, NSNumber, NSString;
+@protocol IDETestReport_Base;
 
 @interface IDESchemeActionTestAttachment (IDETestReport_TestAttachment) <IDETestReport_TestAttachment>
 @property(readonly, copy, nonatomic) NSNumber *ide_test_attachment_payloadSize;
@@ -16,11 +17,13 @@
 @property(readonly, copy, nonatomic) NSString *ide_test_activity_UTI;
 @property(readonly, copy, nonatomic) NSString *ide_test_activity_attachment_base_title;
 @property(readonly, copy, nonatomic) NSDate *sortingTimestamp;
+@property(readonly, copy, nonatomic) NSString *ide_testReport_base_identifier;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
+@property(nonatomic) __weak id <IDETestReport_Base> ide_testReport_base_parent;
 @property(readonly) Class superclass;
 @end
 

@@ -9,15 +9,11 @@
 @interface LOCPropertyHTMLFile : LOCPropertyAttributedFile
 {
     BOOL wellFormedXML;
-    id reserved11;
-    id reserved22;
-    id reserved33;
     struct _xmlDoc *htmlDocument;
 }
 
 + (unsigned long long)segmentOptions;
 + (BOOL)convertHTMLAtPath:(id)arg1 toRTFPath:(id)arg2 error:(id *)arg3;
-- (void).cxx_destruct;
 @property BOOL wellFormedXML; // @synthesize wellFormedXML;
 @property struct _xmlDoc *htmlDocument; // @synthesize htmlDocument;
 - (id)attributesForElement:(id)arg1;

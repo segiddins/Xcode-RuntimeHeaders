@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
     MISSING_TYPE *icon;
     MISSING_TYPE *tintedIcon;
     MISSING_TYPE *isEnabled;
+    MISSING_TYPE *useInsetLayout;
     MISSING_TYPE *backgroundVisualEffectView;
     MISSING_TYPE *isSelected;
     MISSING_TYPE *requiresMoreTime;

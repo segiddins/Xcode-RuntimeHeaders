@@ -7,10 +7,11 @@
 #import <IDEPlaygroundsFoundation/IDEPlaygroundCommonSharedContext.h>
 
 #import <IDEPlaygroundsFoundation/IDESwiftMigrator-Protocol.h>
+#import <IDEPlaygroundsFoundation/_TtP24IDEPlaygroundsFoundation29PlaygroundBuildStatusObserver_-Protocol.h>
 
-@class DVTDevice, DVTFilePath, DVTSDK, IDEPlaygroundVersion, NSArray, NSError, NSMutableArray, NSMutableDictionary, NSNumber, NSString;
+@class DVTDevice, DVTFilePath, DVTSDK, IDEPlayground, IDEPlaygroundPageSharedContext, IDEPlaygroundVersion, NSArray, NSError, NSMutableArray, NSMutableDictionary, NSNumber, NSString;
 
-@interface IDEPlaygroundSharedContext : IDEPlaygroundCommonSharedContext <IDESwiftMigrator>
+@interface IDEPlaygroundSharedContext : IDEPlaygroundCommonSharedContext <_TtP24IDEPlaygroundsFoundation29PlaygroundBuildStatusObserver_, IDESwiftMigrator>
 {
     NSMutableDictionary *_pagesByFilename;
     NSMutableArray *_pageFilenames;
@@ -19,11 +20,14 @@
     BOOL _allowsReset;
     BOOL _executeOnSourceChanges;
     BOOL _timelineScrubberEnabled;
+    BOOL _buildActiveSchemeEnabled;
+    IDEPlayground *_playgroundReference;
     NSError *_deviceError;
     IDEPlaygroundVersion *_playgroundVersion;
     NSString *_targetPlatformIdentifier;
     long long _displayMode;
     NSString *_organizationName;
+    NSArray *_dependencyPIFGUIDs;
     NSArray *_discreteFileSections;
     NSNumber *_autoTerminationDelay;
     NSString *_lastSwiftMigration;
@@ -39,7 +43,7 @@
 + (id)keyPathsForValuesAffectingFirstPageContext;
 + (id)keyPathsForValuesAffectingPageContexts;
 + (void)changeFilePath:(id)arg1 forSharedContext:(id)arg2;
-+ (id)sharedPlaygroundContextForFilePath:(id)arg1 error:(id *)arg2;
++ (id)sharedPlaygroundContextForFilePath:(id)arg1 playground:(id)arg2 error:(id *)arg3;
 + (id)knownPageTypeUTIs;
 + (id)contextsForFilePaths;
 + (Class)contextDeserializerClass;
@@ -52,6 +56,8 @@
 @property(copy, nonatomic) NSString *lastSwiftMigration; // @synthesize lastSwiftMigration=_lastSwiftMigration;
 @property(retain, nonatomic) NSNumber *autoTerminationDelay; // @synthesize autoTerminationDelay=_autoTerminationDelay;
 @property(retain, nonatomic) NSArray *discreteFileSections; // @synthesize discreteFileSections=_discreteFileSections;
+@property(retain) NSArray *dependencyPIFGUIDs; // @synthesize dependencyPIFGUIDs=_dependencyPIFGUIDs;
+@property(nonatomic) BOOL buildActiveSchemeEnabled; // @synthesize buildActiveSchemeEnabled=_buildActiveSchemeEnabled;
 @property(copy, nonatomic) NSString *organizationName; // @synthesize organizationName=_organizationName;
 @property(nonatomic) BOOL timelineScrubberEnabled; // @synthesize timelineScrubberEnabled=_timelineScrubberEnabled;
 @property(nonatomic) BOOL executeOnSourceChanges; // @synthesize executeOnSourceChanges=_executeOnSourceChanges;
@@ -60,8 +66,11 @@
 @property(copy, nonatomic) NSString *targetPlatformIdentifier; // @synthesize targetPlatformIdentifier=_targetPlatformIdentifier;
 @property(retain, nonatomic) IDEPlaygroundVersion *playgroundVersion; // @synthesize playgroundVersion=_playgroundVersion;
 @property(retain, nonatomic) NSError *deviceError; // @synthesize deviceError=_deviceError;
+@property __weak IDEPlayground *playgroundReference; // @synthesize playgroundReference=_playgroundReference;
 - (void)migrateWithMigrationDir:(id)arg1 buildQueueSet:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (void)migratePageContext:(id)arg1 withMigrationDir:(id)arg2 buildQueueSet:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;
+- (id)developerDirectoryFrameworkSearchPathArguments;
+- (id)basicCommandArguments;
 - (id)commandArgumentsWithMigrationDir:(id)arg1 pageContext:(id)arg2;
 - (void)fillArguments:(id)arg1 outputFileMap:(id)arg2 inMigrationDir:(id)arg3 forContext:(id)arg4;
 - (void)updateLastSwiftMigrationToCurrent;
@@ -72,9 +81,14 @@
 - (void)_workspaceRunContextsChanged;
 - (BOOL)unregisterReferencingContainer:(id)arg1;
 - (BOOL)registerReferencingContainer:(id)arg1;
+- (void)builderSettingsDidChange:(id)arg1;
+- (void)builderSettingsWillChange:(id)arg1;
+- (void)builderDidBuild:(id)arg1 error:(id)arg2;
+- (void)builderWillBuild:(id)arg1;
 - (BOOL)representsLegacyInteractiveLearningDocument;
 - (id)_targetTripleForAuxiliarySource;
 - (id)_sdkForAuxiliarySource;
+- (id)swiftModuleSearchPaths;
 - (id)frameworkSearchPaths;
 - (id)defaultToolchainRegistry;
 @property(readonly, nonatomic) NSString *targetTriple;
@@ -92,16 +106,22 @@
 - (id)_createPlaygroundPageContextForFilePath:(id)arg1;
 - (id)_addPageContextForFilePath:(id)arg1 atIndex:(unsigned long long)arg2;
 - (id)pageContextForPath:(id)arg1;
-@property(readonly, nonatomic) IDEPlaygroundCommonSharedContext *firstPageContext;
+@property(readonly, nonatomic) IDEPlaygroundPageSharedContext *firstPageContext;
 @property(readonly, nonatomic) NSArray *pageContexts;
-- (id)description;
+@property(readonly) IDEPlayground *playground;
+- (void)setDelegate:(id)arg1;
+@property(readonly, copy) NSString *description;
 - (id)initWithFilePath:(id)arg1 parentContext:(id)arg2;
 - (void)_invalidatePageContexts;
 - (void)setFilePath:(id)arg1;
+@property(readonly, nonatomic) BOOL buildActiveSchemeSupported;
 
 // Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned long long hash;
 @property(readonly, nonatomic) NSMutableArray *mutablePageFilenames; // @dynamic mutablePageFilenames;
 @property(readonly, nonatomic) NSArray *pageFilenames; // @dynamic pageFilenames;
+@property(readonly) Class superclass;
 
 @end
 

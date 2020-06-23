@@ -9,7 +9,7 @@
 #import <IDEKit/IDEIndexSymbolSelectionSource-Protocol.h>
 #import <IDEKit/IDESourceExpressionSource-Protocol.h>
 
-@class DVTBorderView, DVTDispatchLock, DVTNotificationToken, DVTObservingToken, DVTPerformanceMetric, DVTSDK, DVTScopeBarView, DVTScrollView, DVTSourceExpression, DVTSourceLanguageService, DVTStackBacktrace, NSArray, NSDictionary, NSLayoutConstraint, NSMutableSet, NSSet, NSString, NSView;
+@class DVTDispatchLock, DVTNotificationToken, DVTObservingToken, DVTPerformanceMetric, DVTSDK, DVTScopeBarView, DVTScrollView, DVTSourceExpression, DVTSourceLanguageService, DVTStackBacktrace, NSArray, NSDictionary, NSLayoutConstraint, NSMutableSet, NSSet, NSString, NSView;
 @protocol IDEOpenRequest;
 
 @interface IDESymbolNavigator : IDEOutlineBasedNavigator <IDEIndexSymbolSelectionSource, IDESourceExpressionSource>
@@ -39,9 +39,7 @@
     DVTSourceExpression *_mouseOverExpression;
     DVTScrollView *_symbolNavigatorScrollView;
     DVTScopeBarView *_scopeBarView;
-    DVTBorderView *_scopeBarBottomDividerView;
     NSLayoutConstraint *_scopeBarViewHeightConstraint;
-    DVTBorderView *_dividerView;
     struct CGRect _currentSelectionFrame;
 }
 
@@ -50,9 +48,7 @@
 + (unsigned long long)assertionBehaviorAfterEndOfEventForSelector:(SEL)arg1;
 + (void)initialize;
 - (void).cxx_destruct;
-@property __weak DVTBorderView *dividerView; // @synthesize dividerView=_dividerView;
 @property __weak NSLayoutConstraint *scopeBarViewHeightConstraint; // @synthesize scopeBarViewHeightConstraint=_scopeBarViewHeightConstraint;
-@property __weak DVTBorderView *scopeBarBottomDividerView; // @synthesize scopeBarBottomDividerView=_scopeBarBottomDividerView;
 @property __weak DVTScopeBarView *scopeBarView; // @synthesize scopeBarView=_scopeBarView;
 @property __weak DVTScrollView *symbolNavigatorScrollView; // @synthesize symbolNavigatorScrollView=_symbolNavigatorScrollView;
 @property(retain, nonatomic) DVTSourceExpression *mouseOverExpression; // @synthesize mouseOverExpression=_mouseOverExpression;
@@ -105,6 +101,7 @@
 - (void)commitStateToDictionary:(id)arg1;
 - (void)revertStateWithDictionary:(id)arg1;
 - (id)dvt_extraBindings;
+- (BOOL)displaysAdditionalScopeBars;
 - (BOOL)isCurrentGeneration:(unsigned long long)arg1;
 @property(readonly) unsigned long long currentGeneration; // @dynamic currentGeneration;
 - (void)primitiveInvalidate;

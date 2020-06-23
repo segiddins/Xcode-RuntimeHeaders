@@ -64,6 +64,7 @@
 - (unsigned long long)status;
 - (void)loadDiagnosticsFromFilePromise:(id)arg1;
 - (id)validDiagnosticTypes;
+- (id)allAttachments;
 - (void)loadAttachmentsFromDirectory:(id)arg1;
 - (id)initWithDictionaryRepresentation:(id)arg1;
 - (id)initWithName:(id)arg1 blueprintProviderRelativePath:(id)arg2 blueprintName:(id)arg3 diagnosticsDirectory:(id)arg4 testKind:(id)arg5 testLanguage:(id)arg6 testRegion:(id)arg7 tests:(id)arg8 failureSummaries:(id)arg9;

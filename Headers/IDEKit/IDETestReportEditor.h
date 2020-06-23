@@ -9,6 +9,7 @@
 #import <IDEKit/IDETestReport_RootObject-Protocol.h>
 
 @class DVTObservingToken, DVTReplacementView, IDESchemeActionsInvocationRecord, NSArray, NSString;
+@protocol IDEResultBundleURLRedirecting;
 
 @interface IDETestReportEditor : IDEResultBundleEditor <IDETestReport_RootObject>
 {
@@ -18,10 +19,12 @@
     NSArray *_currentSelectedItems;
     double _totalDuration;
     DVTObservingToken *_invocationFinishedObserver;
+    id <IDEResultBundleURLRedirecting> _urlRedirector;
 }
 
 + (id)keyPathsForValuesAffectingCurrentSelectedItems;
 - (void).cxx_destruct;
+@property(retain) id <IDEResultBundleURLRedirecting> urlRedirector; // @synthesize urlRedirector=_urlRedirector;
 @property(retain) DVTObservingToken *invocationFinishedObserver; // @synthesize invocationFinishedObserver=_invocationFinishedObserver;
 @property(nonatomic) double totalDuration; // @synthesize totalDuration=_totalDuration;
 @property(copy, nonatomic) NSArray *currentSelectedItems; // @synthesize currentSelectedItems=_currentSelectedItems;
@@ -40,6 +43,7 @@
 @property(readonly, copy, nonatomic) NSArray *ide_testReport_rootObject_devices;
 @property(readonly, copy, nonatomic) NSString *ide_testReport_rootObject_identifier;
 @property(readonly, nonatomic) double ide_testReport_rootObject_duration;
+- (void)_installURLRedirector;
 - (void)installReport;
 - (void)replacementView:(id)arg1 didInstallViewController:(id)arg2;
 - (id)testReport;

@@ -15,6 +15,7 @@
 
 + (id)assetRepWithSlot:(id)arg1 fileName:(id)arg2 explicitlyUnassigned:(BOOL)arg3;
 + (id)assetRepWithRepIdentifier:(id)arg1;
++ (id)contentReferenceTypeName;
 + (id)allocWithZone:(struct _NSZone *)arg1;
 - (void).cxx_destruct;
 @property(copy, nonatomic) IBICCatalogContentReference *contentReference; // @synthesize contentReference=_contentReference;

@@ -6,11 +6,11 @@
 
 #import <Localization/LOCExportRequest.h>
 
-@class NSFileManager, NSString;
+@class LOCXcloc, NSString;
 
 @interface LOCXclocExportRequest : LOCExportRequest
 {
-    NSFileManager *_fileManager;
+    LOCXcloc *_xcloc;
     NSString *_sourceContentsPath;
     NSString *_localizedContentsPath;
     NSString *_referencesPath;
@@ -26,7 +26,6 @@
 - (BOOL)_copyReferenceFile:(id)arg1 error:(id *)arg2;
 - (BOOL)_filterAndCopyAssetCatalogIntoSourceContents:(id)arg1 error:(id *)arg2;
 - (BOOL)_copyFileIntoSourceContents:(id)arg1 error:(id *)arg2;
-- (id)_generateContentsJSON;
 - (BOOL)_createXclocStructureWithError:(id *)arg1;
 - (id)initWithHandler:(id)arg1 localizedFiles:(id)arg2 referenceFiles:(id)arg3 outputPath:(id)arg4 targetLocale:(id)arg5 ITSRulesFilePath:(id)arg6 queue:(id)arg7 ibFilesQueue:(id)arg8;
 

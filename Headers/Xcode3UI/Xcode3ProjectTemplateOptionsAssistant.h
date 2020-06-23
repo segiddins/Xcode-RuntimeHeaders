@@ -18,6 +18,7 @@
 - (void).cxx_destruct;
 - (void)didSelectTeam:(id)arg1;
 - (struct CGRect)_frameForControl:(id)arg1 option:(id)arg2 mainViewBounds:(struct CGRect)arg3 minLabelWidth:(double)arg4;
+- (double)requiredLabelAdjustmentForOption:(id)arg1;
 - (id)createControlForOption:(id)arg1 withOptionArray:(id)arg2;
 - (id)additionalSortedOptions;
 - (void)primitiveInvalidate;

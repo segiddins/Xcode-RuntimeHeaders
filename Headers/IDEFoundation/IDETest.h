@@ -24,7 +24,7 @@
     IDETest *_supertest;
     NSString *_parentClassName;
     DVTTextDocumentLocation *_indexLocation;
-    NSArray *_recentErrorLocations;
+    NSArray *_recentDynamicallyReportedSourceCodeLocations;
 }
 
 + (BOOL)automaticallyNotifiesObserversForIndexLocationWasSet;
@@ -35,7 +35,7 @@
 + (void)initialize;
 - (void).cxx_destruct;
 @property BOOL indexLocationWasSet; // @synthesize indexLocationWasSet=_indexLocationWasSet;
-@property(copy) NSArray *recentErrorLocations; // @synthesize recentErrorLocations=_recentErrorLocations;
+@property(copy) NSArray *recentDynamicallyReportedSourceCodeLocations; // @synthesize recentDynamicallyReportedSourceCodeLocations=_recentDynamicallyReportedSourceCodeLocations;
 @property(copy, nonatomic) DVTTextDocumentLocation *indexLocation; // @synthesize indexLocation=_indexLocation;
 @property BOOL canHaveSubtests; // @synthesize canHaveSubtests=_canHaveSubtests;
 @property(copy) NSString *parentClassName; // @synthesize parentClassName=_parentClassName;
@@ -46,7 +46,7 @@
 @property(readonly, copy) NSArray *arrangedSubtests; // @dynamic arrangedSubtests;
 - (void)_primitiveRemoveSubtest:(id)arg1;
 - (void)_primitiveAddSubtest:(id)arg1;
-- (void)_setErrorLocations:(id)arg1;
+- (void)_setDynamicallyReportedSourceCodeLocations:(id)arg1;
 - (void)_setIndexLocation:(id)arg1;
 - (void)_primitiveSetIndexLocation:(id)arg1;
 - (void)_setIndexLocation:(id)arg1 forSubtest:(id)arg2;

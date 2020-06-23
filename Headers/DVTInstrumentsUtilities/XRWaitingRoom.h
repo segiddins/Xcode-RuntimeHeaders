@@ -24,6 +24,7 @@
 - (void)abandon;
 - (void)setupOwnerVisit:(id)arg1 mode:(id)arg2;
 - (void)setupOwnerVisit:(id)arg1 leaveWhenEmpty:(BOOL)arg2 mode:(id)arg3;
+- (id)ownerTicketForAgent:(id)arg1 leaveWhenEmpty:(BOOL)arg2;
 - (id)visitorTicketForAgent:(id)arg1 team:(id)arg2;
 - (void)setupMeetingWithOwner:(id)arg1 worker:(id)arg2 team:(id)arg3 mode:(id)arg4;
 - (void)setupMeetingWithOwner:(id)arg1 worker:(id)arg2 mode:(id)arg3;

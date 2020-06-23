@@ -11,15 +11,15 @@
 @interface _TtC5UVKit19XcodeWorkspaceScene : _TtCs12_SwiftObject
 {
     MISSING_TYPE *queryManager;
+    MISSING_TYPE *queryResolverProviders;
+    MISSING_TYPE *index;
     MISSING_TYPE *workspace;
     MISSING_TYPE *isValid;
     MISSING_TYPE *filesWithDisabledThunking;
     MISSING_TYPE *listener;
     MISSING_TYPE *listeningToken;
     MISSING_TYPE *observers;
-    MISSING_TYPE *workspaceMetadataQueryResolver;
     MISSING_TYPE *colorNameProvider;
-    MISSING_TYPE *queryManagerObservationToken;
     MISSING_TYPE *editorScenes;
     MISSING_TYPE *workspaceSchemeBuildingQueue;
     MISSING_TYPE *environmentCoalescer;
@@ -34,6 +34,7 @@
     MISSING_TYPE *shouldInvalidatePreviewsOnExternalFileChanges;
     MISSING_TYPE *didChangeXcodeBuildingState;
     MISSING_TYPE *notifyAccessibilityToken;
+    MISSING_TYPE *indexSubscription;
     MISSING_TYPE *debuggerAttachedCallback;
 }
 

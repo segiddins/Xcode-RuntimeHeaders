@@ -32,6 +32,7 @@
 @property(readonly) unsigned long long hash;
 @property(readonly, copy) NSString *description;
 @property(readonly) DVTPlatform *platform;
+- (id)initWithName:(id)arg1 nameForDeveloperPortal:(id)arg2 identifier:(id)arg3 platformIdentifier:(id)arg4 supportsProvisioning:(BOOL)arg5 proxiedDevices:(id)arg6;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

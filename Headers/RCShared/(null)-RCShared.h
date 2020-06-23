@@ -4,11 +4,17 @@
 //  Copyright (C) 1997-2019 Steve Nygard.
 //
 
-@interface (null) (RCShared)
+#import <RCShared/NSSearchFieldDelegate-Protocol.h>
+
+@interface (null) (RCShared) <NSSearchFieldDelegate>
 - (void)importItem:(id)arg1;
 - (void)flagsChanged:(id)arg1;
 - (void)viewDidDisappear;
 - (void)viewWillAppear;
 - (void)viewDidLoad;
+- (void)searchFieldTextDidChange:(id)arg1;
+- (void)tableViewSelectionDidChange:(id)arg1;
+- (id)tableView:(id)arg1 viewForTableColumn:(id)arg2 row:(long long)arg3;
+- (long long)numberOfRowsInTableView:(id)arg1;
 @end
 

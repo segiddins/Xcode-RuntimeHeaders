@@ -76,6 +76,7 @@
 @property BOOL isTracingOnDeviceAndTargetGotJetsam; // @synthesize isTracingOnDeviceAndTargetGotJetsam=_isTracingOnDeviceAndTargetGotJetsam;
 @property(copy) NSString *RPCServerCrashedOrExitedMessage; // @synthesize RPCServerCrashedOrExitedMessage=_RPCServerCrashedOrExitedMessage;
 - (id)memoryProfilingDisabledMessage;
+- (void)setValue:(id)arg1 forGlobalVariable:(id)arg2 ofType:(id)arg3 completionHandler:(CDUnknownBlockType)arg4 queue:(id)arg5;
 - (void)_delayedTurnOnMemoryDebugging;
 - (void)_handleSessionThreadEndOfLifeWithExitCode:(long long)arg1 exitDescription:(id)arg2;
 - (BOOL)_showErrorMessageForExitDescription:(id)arg1;

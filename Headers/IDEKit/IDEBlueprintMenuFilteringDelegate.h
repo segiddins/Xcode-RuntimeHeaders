@@ -15,6 +15,7 @@
 }
 
 - (void)filterItems:(id)arg1 inMenu:(id)arg2 forSearchString:(id)arg3;
+- (id)filterTitleForItem:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

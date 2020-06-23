@@ -11,7 +11,7 @@
 #import <IDEKit/IDEFindNavigatorScopeChooserControllerDelegate-Protocol.h>
 #import <IDEKit/NSTextFieldDelegate-Protocol.h>
 
-@class DVTBorderView, DVTDelayedInvocation, DVTScopeBarButton, IDEBatchFindNamedScope, IDEBatchFindQueryTerm, IDEFindNavigatorPathControl, IDEFindNavigatorScopeChooserController, IDEFindNavigatorTwoControlLeftPriorityLayout, IDEProgressSearchField, NSArray, NSButton, NSPopUpButton, NSString, NSView;
+@class DVTDelayedInvocation, DVTScopeBarButton, IDEBatchFindNamedScope, IDEBatchFindQueryTerm, IDEFindNavigatorPathControl, IDEFindNavigatorScopeChooserController, IDEFindNavigatorTwoControlLeftPriorityLayout, IDEProgressSearchField, NSArray, NSButton, NSPopUpButton, NSString, NSView;
 @protocol DVTInvalidation, IDEFindNavigatorQueryParametersControllerDelegate, IDEFindNavigatorQueryParametersPresentedController;
 
 @interface IDEFindNavigatorQueryParametersController : IDEViewController <IDEFindNavigatorPathControlDelegate, IDEFindNavigatorScopeChooserControllerDelegate, DVTFindPatternManager, NSTextFieldDelegate>
@@ -28,7 +28,6 @@
     IDEFindNavigatorTwoControlLeftPriorityLayout *_textOptionsAndScopeContainer;
     NSPopUpButton *_caseMatchingChooserPopUp;
     DVTScopeBarButton *_showScopesButton;
-    DVTBorderView *_dividerView;
     IDEBatchFindQueryTerm *_selectedQueryTerm;
     long long _selectedQueryAction;
     Class _selectedQueryClass;
@@ -54,6 +53,7 @@
 - (BOOL)pathControl:(id)arg1 shouldHighlightSelectionForValue:(id)arg2 ofSegment:(id)arg3;
 - (id)pathControl:(id)arg1 titleForValue:(id)arg2 ofSegment:(id)arg3;
 - (id)pathControl:(id)arg1 candidatesForSegment:(id)arg2;
+- (id)pathControl:(id)arg1 accessibilityIdentifierForSegment:(id)arg2;
 - (id)pathControl:(id)arg1 valueForSegment:(id)arg2;
 - (id)pathControlSegments:(id)arg1;
 - (void)scoperChooserUserDidInitiateQuery:(id)arg1;
@@ -75,7 +75,7 @@
 - (void)enterFindText:(id)arg1;
 - (void)enterQueryTerm:(id)arg1;
 - (BOOL)focusFindFieldAfterPreparingTheNavigatorForFocus;
-- (void)switchAwayFromCumbersomeQueryTypeIfNeeded;
+- (void)prepareForExternallyInvokedTextualQuery;
 - (Class)preferredEasilyManuallyInitiatableQueryClass;
 - (void)selectMatchCase:(BOOL)arg1;
 - (void)selectQueryAnchoring:(long long)arg1;
@@ -85,6 +85,7 @@
 - (id)currentQuerySpecification;
 - (void)controlTextDidChange:(id)arg1;
 - (void)chooseScope:(id)arg1;
+- (void)dismissPresentedController;
 - (void)replaceAllItems:(id)arg1;
 - (void)replaceSelectedItems:(id)arg1;
 - (id)replacementText;

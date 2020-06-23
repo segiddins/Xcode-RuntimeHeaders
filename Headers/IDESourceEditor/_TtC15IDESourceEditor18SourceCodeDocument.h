@@ -6,13 +6,17 @@
 
 #import <IDEKit/IDEEditorDocument.h>
 
+#import <IDESourceEditor/DVTSourceLanguagePrimaryCompletionStrategy-Protocol.h>
 #import <IDESourceEditor/DVTTextFindable-Protocol.h>
+#import <IDESourceEditor/IDEDocumentStructureProviding-Protocol.h>
 #import <IDESourceEditor/IDEIndexCompatibleDocumentLocationConverter-Protocol.h>
 #import <IDESourceEditor/IDEMediaLibraryDelegate-Protocol.h>
+#import <IDESourceEditor/IDESourceCodeDocument-Protocol.h>
+#import <IDESourceEditor/IDESourceCodeGenerationDestination-Protocol.h>
 
-@class DVTSourceCodeLanguage, IDEMediaResourceVariantContext, MISSING_TYPE, NSDictionary, NSPrintInfo, NSURL, _TtC15DVTSourceEditor23DVTSourceEditorLandmark, _TtC18SourceModelSupport26SourceModelLanguageService;
+@class DVTSourceCodeLanguage, IDEMediaResourceVariantContext, MISSING_TYPE, NSArray, NSDictionary, NSPrintInfo, NSString, NSURL, _TtC15IDESourceEditor23DVTSourceEditorLandmark, _TtC18SourceModelSupport26SourceModelLanguageService;
 
-@interface _TtC15IDESourceEditor18SourceCodeDocument : IDEEditorDocument <IDEIndexCompatibleDocumentLocationConverter, DVTTextFindable, IDEMediaLibraryDelegate>
+@interface _TtC15IDESourceEditor18SourceCodeDocument : IDEEditorDocument <DVTSourceLanguagePrimaryCompletionStrategy, IDESourceCodeGenerationDestination, IDEDocumentStructureProviding, IDESourceCodeDocument, IDEIndexCompatibleDocumentLocationConverter, DVTTextFindable, IDEMediaLibraryDelegate>
 {
     MISSING_TYPE *identifier;
     MISSING_TYPE *notifiesWhenClosing;
@@ -62,7 +66,7 @@
 - (BOOL)replaceFindResults:(id)arg1 withString:(id)arg2 withError:(id *)arg3;
 - (id)findStringMatchingDescriptor:(id)arg1 backwards:(BOOL)arg2 from:(id)arg3 to:(id)arg4;
 - (void)updateLandmarks;
-@property(nonatomic, readonly) _TtC15DVTSourceEditor23DVTSourceEditorLandmark *topLandmark;
+@property(nonatomic, readonly) _TtC15IDESourceEditor23DVTSourceEditorLandmark *topLandmark;
 - (id)updatedLocationFromLocation:(id)arg1 toTimestamp:(double)arg2;
 - (id)indexCompatibleDocumentLocationFromLocation:(id)arg1;
 @property(nonatomic, readonly) NSDictionary *buildSettings;
@@ -84,6 +88,78 @@
 - (id)newUndoManager;
 - (void)editorDocumentWillClose;
 - (id)init;
+- (id)completionItemsForDocumentLocation:(id)arg1 context:(id)arg2 highlyLikelyCompletionItems:(id *)arg3 areDefinitive:(char *)arg4;
+- (id)lineRangeCharacterRangeConverter;
+- (id)sourceCodeGenerator:(id)arg1 commitInsertionOfSourceCodeForCompositeResult:(id)arg2 error:(id *)arg3;
+- (id)sourceCodeGenerator:(id)arg1 prepareToAddObjectiveCAtSynthesizeWithName:(id)arg2 inClassNamed:(id)arg3 options:(id)arg4 error:(id *)arg5;
+- (id)sourceCodeGenerator:(id)arg1 prepareToAddObjectiveCPropertyDeclarationWithName:(id)arg2 type:(id)arg3 inClassNamed:(id)arg4 options:(id)arg5 error:(id *)arg6;
+- (id)sourceCodeGenerator:(id)arg1 prepareToAddObjectiveCPropertyReleaseForTeardownWithName:(id)arg2 type:(id)arg3 inClassNamed:(id)arg4 options:(id)arg5 error:(id *)arg6;
+- (id)sourceCodeGenerator:(id)arg1 prepareToAddObjectiveCInstanceVariableReleaseForTeardownWithName:(id)arg2 inClassNamed:(id)arg3 options:(id)arg4 error:(id *)arg5;
+- (id)_primitiveAddObjectiveCReleaseForTeardownMethodWithSourceCodeGenerator:(id)arg1 withReleaseCallCode:(id)arg2 inClassNamed:(id)arg3 options:(id)arg4 error:(id *)arg5;
+- (id)sourceCodeGenerator:(id)arg1 prepareToAddObjectiveCInstanceVariableDeclarationWithName:(id)arg2 type:(id)arg3 inClassNamed:(id)arg4 options:(id)arg5 error:(id *)arg6;
+- (id)sourceCodeGenerator:(id)arg1 prepareToAddObjectiveCClassMethodDefinitionWithName:(id)arg2 inClassNamed:(id)arg3 options:(id)arg4 error:(id *)arg5;
+- (id)sourceCodeGenerator:(id)arg1 prepareToAddObjectiveCClassMethodDeclarationWithName:(id)arg2 inClassNamed:(id)arg3 options:(id)arg4 error:(id *)arg5;
+- (id)sourceCodeGenerator:(id)arg1 prepareToAddObjectiveCInstanceMethodDefinitionWithName:(id)arg2 inClassNamed:(id)arg3 options:(id)arg4 error:(id *)arg5;
+- (id)_primitiveAppendObjectiveCSourceCode:(id)arg1 afterItem:(id)arg2 prependNewLine:(BOOL)arg3;
+- (id)sourceCodeGenerator:(id)arg1 prepareToAddObjectiveCInstanceMethodDeclarationWithName:(id)arg2 inClassNamed:(id)arg3 options:(id)arg4 error:(id *)arg5;
+- (id)_primitiveAddObjectiveCMethodSourceCode:(id)arg1 toClassItem:(id)arg2 withOptions:(id)arg3 error:(id *)arg4;
+- (id)_primitiveAddObjectiveCSourceCode:(id)arg1 toClassItem:(id)arg2 withOptions:(id)arg3 insertAdditionalNewlineWhenInsertingWithAfterBeforeHint:(BOOL)arg4 insertAtEndWhenInsertingWithoutHint:(BOOL)arg5 insertAfterObjCBlockWhenInsertingAtBeginning:(BOOL)arg6 ignoreHintItemsConformingToSpecifications:(id)arg7 onlyConsiderItemsConformingToSpecifications:(id)arg8 error:(id *)arg9;
+- (id)_insertObjectiveCSourceCode:(id)arg1 inTeardownMethodForClassNamed:(id)arg2 options:(id)arg3 error:(id *)arg4;
+- (id)_teardownMethodNameForSourceModelCodeGeneratorWithOptions:(id)arg1;
+- (BOOL)_hasObjCMethodImplementationForName:(id)arg1 forClassNamed:(id)arg2;
+- (id)_objCMethodImplementationItemForName:(id)arg1 inClassItem:(id)arg2;
+- (id)_sourceModelAlternateNamesForGeneralName:(id)arg1;
+- (id)_insertObjCSourceCode:(id)arg1 inTopLevelOfClassItem:(id)arg2 withInsertAfterHint:(id)arg3 andInsertBeforeHint:(id)arg4 ignoreHintItemsConformingToSpecifications:(id)arg5 onlyConsiderItemsConformingToSpecifications:(id)arg6 insertAdditionalNewline:(BOOL)arg7 insertAtEndWhenInsertingWithoutHint:(BOOL)arg8 insertAfterObjCBlockWhenInsertingAtBeginning:(BOOL)arg9;
+- (id)_insertObjCSourceCode:(id)arg1 inContainingSourceModelItem:(id)arg2 withInsertAfterHint:(id)arg3 andInsertBeforeHint:(id)arg4 ignoreHintItemsConformingToSpecifications:(id)arg5 onlyConsiderItemsConformingToSpecifications:(id)arg6 insertAdditionalNewline:(BOOL)arg7 fallbackInsertionBlock:(CDUnknownBlockType)arg8;
+- (long long)_insertionHintMatchPriorityForObjCSourceModelItem:(id)arg1 givenInsertionHintItemName:(id)arg2 andLanguageSpecification:(id)arg3 ignoreItemsConformingToSpecifications:(id)arg4 onlyConsiderItemsConformingToSpecifications:(id)arg5;
+- (id)_insertObjCSourceCode:(id)arg1 inTopLevelOfClassItem:(id)arg2 asCloseAsPossibleToLineNumber:(unsigned long long)arg3 error:(id *)arg4;
+- (id)_insertObjCSourceCode:(id)arg1 inContainingSourceModelItem:(id)arg2 asCloseAsPossibleToLineNumber:(unsigned long long)arg3 firstPossibleItemToInsertBefore:(id)arg4 error:(id *)arg5;
+- (unsigned long long)_insertionLineForInsertingIntoContainerItem:(id)arg1 firstPossibleItemToInsertBefore:(id)arg2 suggestedLineNumber:(long long)arg3 itemToInsertBefore:(id *)arg4 itemToInsertAfter:(id *)arg5;
+- (id)_insertionHintForObjCSourceModelItem:(id)arg1;
+- (id)_firstObjCSourceModelItemToInsertBeforeInInstanceVariableBlock:(id)arg1;
+- (id)_firstTopLevelObjCInterfaceSourceModelItemToInsertBeforeInClassItem:(id)arg1;
+- (id)_insertSourceCode:(id)arg1 atBeginningOfClassSourceModelItem:(id)arg2 insertOnNextLine:(BOOL)arg3 insertAfterObjCBlock:(BOOL)arg4;
+- (id)_insertSourceCode:(id)arg1 atEndOfClassSourceModelItem:(id)arg2 insertOnNextLine:(BOOL)arg3;
+- (id)_insertSourceCode:(id)arg1 atEndOfContainingSourceModelItem:(id)arg2 insertOnNextLine:(BOOL)arg3 beforeItemMatchingPredicateBlock:(CDUnknownBlockType)arg4;
+- (id)_insertSourceCode:(id)arg1 atBeginningOfContainingSourceModelItem:(id)arg2 insertOnNextLine:(BOOL)arg3 afterItemMatchingPredicateBlock:(CDUnknownBlockType)arg4;
+- (id)_primitiveInsertSourceCode:(id)arg1 atBeginning:(BOOL)arg2 ofContainingSourceModelItem:(id)arg3 insertOnNextLine:(BOOL)arg4 afterOrBeforeItemMatchingPredicateBlock:(CDUnknownBlockType)arg5;
+- (id)textDocumentLocationForInsertingSourceCode:(id)arg1 atLocation:(unsigned long long)arg2;
+- (id)_instanceVariableDeclarationBlockItemForClassItem:(id)arg1;
+- (id)_objCCategoryImplementationClassModelItemForClassNamed:(id)arg1 categoryName:(id)arg2 error:(id *)arg3;
+- (id)_objCCategoryInterfaceClassModelItemForClassNamed:(id)arg1 categoryName:(id)arg2 options:(id)arg3 error:(id *)arg4;
+- (id)_objCImplementationClassModelItemForClassNamed:(id)arg1 error:(id *)arg2;
+- (id)_objCInterfaceClassModelItemForClassNamed:(id)arg1 error:(id *)arg2;
+- (id)_classModelItemForClassNamed:(id)arg1 withConditionBlock:(CDUnknownBlockType)arg2;
+- (id)errorForNotFindingClassItemForClassNamed:(id)arg1 humanReadableClassItemType:(id)arg2;
+- (id)supportedSourceCodeLanguagesForSourceCodeGeneration;
+- (BOOL)classItemIsValid:(id)arg1;
+- (id)sourceCodeGenerator:(id)arg1 prepareToAddSwiftClassMethodDefinitionWithName:(id)arg2 inClassItem:(id)arg3 options:(id)arg4 error:(id *)arg5;
+- (id)sourceCodeGenerator:(id)arg1 prepareToAddSwiftInstanceMethodDefinitionWithName:(id)arg2 inClassItem:(id)arg3 options:(id)arg4 error:(id *)arg5;
+- (id)_primitiveAddSwiftMethodSourceCode:(id)arg1 toClassItem:(id)arg2 withOptions:(id)arg3 error:(id *)arg4;
+- (id)sourceCodeGenerator:(id)arg1 prepareToAddSwiftInstanceVariableReleaseForTeardownWithName:(id)arg2 inClassItem:(id)arg3 options:(id)arg4 error:(id *)arg5;
+- (id)_primitiveAddSwiftReleaseForTeardownMethodWithSourceCodeGenerator:(id)arg1 withReleaseCallCode:(id)arg2 inClassItem:(id)arg3 options:(id)arg4 error:(id *)arg5;
+- (id)_insertSwiftSourceCode:(id)arg1 inTeardownMethodForClassItem:(id)arg2 options:(id)arg3 error:(id *)arg4;
+- (id)_swiftMethodItemForName:(id)arg1 inClassItem:(id)arg2;
+- (id)_teardownMethodNameForSwiftSourceCodeGeneratorWithOptions:(id)arg1;
+- (id)sourceCodeGenerator:(id)arg1 prepareToAddSwiftPropertyDeclarationWithName:(id)arg2 type:(id)arg3 inClassItem:(id)arg4 options:(id)arg5 error:(id *)arg6;
+- (id)_primitiveAddSwiftSourceCode:(id)arg1 toClassItem:(id)arg2 withOptions:(id)arg3 insertAdditionalNewlineWhenInsertingWithAfterBeforeHint:(BOOL)arg4 insertAtEndWhenInsertingWithoutHint:(BOOL)arg5 error:(id *)arg6;
+- (id)_insertSwiftSourceCode:(id)arg1 inTopLevelOfClassItem:(id)arg2 asCloseAsPossibleToLineNumber:(unsigned long long)arg3 error:(id *)arg4;
+- (id)_insertSwiftSourceCode:(id)arg1 inContainingSourceLandmarkItem:(id)arg2 asCloseAsPossibleToLineNumber:(unsigned long long)arg3 firstPossibleItemToInsertBefore:(id)arg4 error:(id *)arg5;
+- (unsigned long long)_insertionLineForInsertingIntoContainerItem:(id)arg1 firstPossibleItemToInsertBefore:(id)arg2 suggestedLineNumber:(long long)arg3;
+@property(readonly) NSArray *ideTopLevelStructureObjects;
+- (BOOL)hasMultiLineAnnotationHighlight;
+- (id)documentLocationWithLastLineRangeAtLocation:(id)arg1;
+- (id)documentLocation:(id)arg1 byUnion:(id)arg2;
+- (id)documentLocationWithEnclosingLineRangeAtLocation:(id)arg1;
+- (id)insertCharactersAfterLocation:(id)arg1 withString:(id)arg2;
+- (id)insertCharactersBeforeLocation:(id)arg1 withString:(id)arg2;
+- (id)replaceCharactersAtLocation:(id)arg1 withString:(id)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

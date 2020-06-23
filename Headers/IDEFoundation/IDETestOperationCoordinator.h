@@ -16,7 +16,7 @@
 #import <IDEFoundation/XCTTestWorker-Protocol.h>
 #import <IDEFoundation/_TtP13IDEFoundation31IDETestDaemonControllerObserver_-Protocol.h>
 
-@class DVTDevice, DVTDisallowFinishToken, DVTObservingToken, DVTOperation, DVTStackBacktrace, IDELaunchSessionEventSource, IDERunOperation, IDETestIdentifier, IDETestOperationEventSource, IDETestOperationStateMachine, IDETestOutputProcessor, IDETestRunSpecification, IDETestingActivity, IDETestingDiagnosticLogArbiter, NSData, NSDateFormatter, NSMutableArray, NSMutableDictionary, NSMutableSet, NSOutputStream, NSString, NSTimer, NSUUID, _TtC13IDEFoundation29IDETestingInstallationTracker;
+@class DVTDevice, DVTDisallowFinishToken, DVTObservingToken, DVTOperation, DVTStackBacktrace, IDELaunchSessionEventSource, IDERunOperation, IDETestIdentifier, IDETestOperationEventSource, IDETestOperationStateMachine, IDETestOutputProcessor, IDETestRunSpecification, IDETestingActivity, IDETestingDiagnosticLogArbiter, NSDateFormatter, NSMutableArray, NSMutableDictionary, NSMutableSet, NSOutputStream, NSString, NSTimer, NSUUID, _TtC13IDEFoundation29IDETestingInstallationTracker, _TtC13IDEFoundation42IDETestRunnerBootstrappingDiagnosticReport;
 @protocol IDETestDaemonController, IDETestOperationCoordinatorEvents, IDETestingActivityGenerating, IDETestingLaunchSession, IDETestingOutputStream, OS_dispatch_queue, XCTTestRunnerSession;
 
 @interface IDETestOperationCoordinator : NSObject <IDETestingDiagnosticLogWriter, IDETestOperationEventSourceEvents, _TtP13IDEFoundation31IDETestDaemonControllerObserver_, XCTDebugLogDelegate, XCTTestWorker, DVTInvalidation, XCTTestRunnerSessionDelegate, IDELaunchSessionEventSourceEvents, IDETestOperationStateMachineDelegate>
@@ -28,6 +28,7 @@
     BOOL _targetIsiOSSimulator;
     BOOL _testingIsFinished;
     BOOL _testRunnerHasBecomeReady;
+    BOOL _initializedForUserInteraction;
     int _testRunnerPID;
     IDERunOperation *_operation;
     NSString *_diagnosticLogPath;
@@ -46,7 +47,6 @@
     id _deviceKitLogHandlerToken;
     id _iPhoneSimulatorLogHandlerToken;
     DVTDisallowFinishToken *_disallowFinishToken;
-    NSTimer *_startupTimeoutTimer;
     IDETestOutputProcessor *_outputProcessor;
     NSMutableArray *_consoleChunkQueue;
     NSMutableArray *_delegateBlockQueue;
@@ -62,14 +62,10 @@
     DVTObservingToken *_debuggerPausedObserverToken;
     id <IDETestingActivityGenerating> _activityReporter;
     IDETestingActivity *_finalizingActivity;
-    NSData *_testRunnerCrash;
+    _TtC13IDEFoundation42IDETestRunnerBootstrappingDiagnosticReport *_testRunnerBootstrappingDiagnostic;
     IDETestIdentifier *_currentTestIdentifier;
     _TtC13IDEFoundation29IDETestingInstallationTracker *_testingInstallationTracker;
-    NSMutableDictionary *_testTokensToExecutionTrackers;
-    NSMutableDictionary *_testTokensToLaunchSessions;
-    NSMutableDictionary *_testTokensToOperations;
-    NSMutableDictionary *_testTokensToErrors;
-    NSMutableSet *_launchedApplicationTokens;
+    NSMutableDictionary *_testTokensToTargetAppLaunchInfo;
     NSMutableSet *_executionTrackerObservationTokens;
     NSMutableSet *_displayNamesOfLaunchedProcesses;
 }
@@ -77,21 +73,17 @@
 + (id)nextLaunchSessionToken;
 + (id)_messageForErrorWithDiagnosticLogPath:(id)arg1;
 + (id)_resultBundlePathFromDiagnosticLogPath:(id)arg1;
-+ (void)disableTestTimeoutsInTestProcessUsingDebugSession:(id)arg1 forTestOperationCoordinator:(id)arg2;
 + (BOOL)supportsInvalidationPrevention;
 + (void)logDebugMessage:(id)arg1;
 + (void)initialize;
 - (void).cxx_destruct;
+@property(getter=isInitializedForUserInteraction) BOOL initializedForUserInteraction; // @synthesize initializedForUserInteraction=_initializedForUserInteraction;
 @property(retain) NSMutableSet *displayNamesOfLaunchedProcesses; // @synthesize displayNamesOfLaunchedProcesses=_displayNamesOfLaunchedProcesses;
 @property(retain) NSMutableSet *executionTrackerObservationTokens; // @synthesize executionTrackerObservationTokens=_executionTrackerObservationTokens;
-@property(retain) NSMutableSet *launchedApplicationTokens; // @synthesize launchedApplicationTokens=_launchedApplicationTokens;
-@property(retain) NSMutableDictionary *testTokensToErrors; // @synthesize testTokensToErrors=_testTokensToErrors;
-@property(retain) NSMutableDictionary *testTokensToOperations; // @synthesize testTokensToOperations=_testTokensToOperations;
-@property(retain) NSMutableDictionary *testTokensToLaunchSessions; // @synthesize testTokensToLaunchSessions=_testTokensToLaunchSessions;
-@property(retain) NSMutableDictionary *testTokensToExecutionTrackers; // @synthesize testTokensToExecutionTrackers=_testTokensToExecutionTrackers;
+@property(retain) NSMutableDictionary *testTokensToTargetAppLaunchInfo; // @synthesize testTokensToTargetAppLaunchInfo=_testTokensToTargetAppLaunchInfo;
 @property(retain) _TtC13IDEFoundation29IDETestingInstallationTracker *testingInstallationTracker; // @synthesize testingInstallationTracker=_testingInstallationTracker;
 @property(retain) IDETestIdentifier *currentTestIdentifier; // @synthesize currentTestIdentifier=_currentTestIdentifier;
-@property(retain) NSData *testRunnerCrash; // @synthesize testRunnerCrash=_testRunnerCrash;
+@property(retain) _TtC13IDEFoundation42IDETestRunnerBootstrappingDiagnosticReport *testRunnerBootstrappingDiagnostic; // @synthesize testRunnerBootstrappingDiagnostic=_testRunnerBootstrappingDiagnostic;
 @property(retain) IDETestingActivity *finalizingActivity; // @synthesize finalizingActivity=_finalizingActivity;
 @property(readonly) id <IDETestingActivityGenerating> activityReporter; // @synthesize activityReporter=_activityReporter;
 @property BOOL testRunnerHasBecomeReady; // @synthesize testRunnerHasBecomeReady=_testRunnerHasBecomeReady;
@@ -111,7 +103,6 @@
 @property(retain) NSMutableArray *consoleChunkQueue; // @synthesize consoleChunkQueue=_consoleChunkQueue;
 @property(retain) IDETestOutputProcessor *outputProcessor; // @synthesize outputProcessor=_outputProcessor;
 @property int testRunnerPID; // @synthesize testRunnerPID=_testRunnerPID;
-@property(retain) NSTimer *startupTimeoutTimer; // @synthesize startupTimeoutTimer=_startupTimeoutTimer;
 @property(retain) DVTDisallowFinishToken *disallowFinishToken; // @synthesize disallowFinishToken=_disallowFinishToken;
 @property BOOL hasStartedTests; // @synthesize hasStartedTests=_hasStartedTests;
 @property BOOL hasFailed; // @synthesize hasFailed=_hasFailed;
@@ -135,17 +126,18 @@
 - (void)cancelExecutionTrackersWithCompletion:(CDUnknownBlockType)arg1;
 - (BOOL)terminateProcessWithToken:(id)arg1 error:(id *)arg2;
 - (id)progressForLaunchWithToken:(id)arg1 error:(id *)arg2;
-- (void)launchProcessWithParameters:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)_executeOperation:(id)arg1 withPath:(id)arg2 bundleID:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)launchProcessWithParameters:(id)arg1 token:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)_executeOperation:(id)arg1 withPath:(id)arg2 bundleID:(id)arg3 token:(id)arg4 completion:(CDUnknownBlockType)arg5;
 - (id)_testingLaunchSessionForLaunchSession:(id)arg1 bundleID:(id)arg2 path:(id)arg3;
 - (void)_observeExitOfLaunchSession:(id)arg1 withToken:(id)arg2;
+- (BOOL)recursivelyCheckError:(id)arg1 forDomain:(id)arg2 code:(long long)arg3;
+- (BOOL)checkErrorRecursivelyForReinstallationError:(id)arg1;
 - (void)_observeCompletionOfTracker:(id)arg1 withToken:(id)arg2 path:(id)arg3 bundleID:(id)arg4;
 - (id)_launchParametersForProcessWithPath:(id)arg1 bundleID:(id)arg2 arguments:(id)arg3 environmentVariables:(id)arg4;
 - (id)_addMainThreadCheckerToEnvironmentVariables:(id)arg1;
 - (id)_addTargetBootstrapInjectionToEnvironmentVariables:(id)arg1;
 - (void)testRunnerSession:(id)arg1 didReportSelfDiagnosisIssue:(id)arg2 description:(id)arg3;
 - (void)testRunnerSession:(id)arg1 didReceiveDebugLogMessage:(id)arg2;
-- (void)testRunnerSession:(id)arg1 didReceiveLogMessage:(id)arg2;
 - (id)testRunnerSession:(id)arg1 progressForLaunchWithToken:(id)arg2 error:(id *)arg3;
 - (BOOL)testRunnerSession:(id)arg1 terminateProcessWithToken:(id)arg2 error:(id *)arg3;
 - (void)testRunnerSession:(id)arg1 launchProcessWithParameters:(id)arg2 completion:(CDUnknownBlockType)arg3;
@@ -154,18 +146,21 @@
 - (void)testRunnerSession:(id)arg1 testCase:(id)arg2 method:(id)arg3 willStartActivity:(id)arg4;
 - (void)testRunnerSession:(id)arg1 testCase:(id)arg2 method:(id)arg3 didStallOnMainThreadAtSourceLocation:(id)arg4;
 - (void)testRunnerSession:(id)arg1 testCaseDidFinishForTestClass:(id)arg2 method:(id)arg3 status:(id)arg4 duration:(double)arg5;
-- (void)testRunnerSession:(id)arg1 testCaseDidFailForTestClass:(id)arg2 method:(id)arg3 failureMessage:(id)arg4 sourceLocation:(id)arg5;
+- (void)testRunnerSession:(id)arg1 testCaseWithIdentifier:(id)arg2 didRecordIssue:(id)arg3;
 - (void)testRunnerSession:(id)arg1 testCaseWasSkippedForTestClass:(id)arg2 method:(id)arg3 message:(id)arg4 sourceLocation:(id)arg5;
 - (void)testRunnerSession:(id)arg1 testCaseDidStartForTestClass:(id)arg2 method:(id)arg3;
 - (void)testRunnerSession:(id)arg1 testSuite:(id)arg2 didFinishAt:(id)arg3 runCount:(unsigned long long)arg4 skipCount:(unsigned long long)arg5 failureCount:(unsigned long long)arg6 unexpectedFailureCount:(unsigned long long)arg7 testDuration:(double)arg8 totalDuration:(double)arg9;
+- (void)testRunnerSession:(id)arg1 testSuiteWithIdentifier:(id)arg2 didRecordIssue:(id)arg3;
 - (void)testRunnerSession:(id)arg1 testSuite:(id)arg2 didStartAt:(id)arg3;
 - (void)testRunnerSession:(id)arg1 initializationForUITestingDidFailWithError:(id)arg2;
 - (void)testRunnerSessionDidStartInitializingForUITesting:(id)arg1;
+@property(readonly) BOOL testRunnerLaunchSessionHasFinishedReceivingData;
 - (void)_considerFinishing;
 - (void)testRunnerSessionDidFinishExecutingTests:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)testRunnerSessionDidStartExecutingTests:(id)arg1;
 - (void)testRunnerSessionDidDisconnect:(id)arg1;
 - (void)testRunnerSession:(id)arg1 testWithIdentifier:(id)arg2 didExceedExecutionTimeAllowance:(double)arg3;
+- (void)attachSpindumpToCurrentTestWithIssueMessage:(id)arg1 sourceLocation:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (void)testRunnerSession:(id)arg1 didFailToBootstrapWithError:(id)arg2;
 - (void)testRunnerSession:(id)arg1 didFailInitializationWithError:(id)arg2;
 - (void)testRunnerSessionDidBecomeReady:(id)arg1;
@@ -199,9 +194,6 @@
 - (void)writeLogStatus:(id)arg1;
 - (void)writeLogData:(id)arg1;
 - (void)_reportStartupFailure:(id)arg1 errorCode:(long long)arg2 underlyingError:(id)arg3;
-- (void)_reportStartupProgress:(id)arg1 withTimeoutInterval:(double)arg2;
-- (void)_startupTimedOut:(id)arg1;
-- (void)_waitForLaunch;
 - (double)_defaultTimeoutInterval;
 - (void)_requestCrashReportCollection;
 - (void)_updateCrashObserverWithCompletion:(CDUnknownBlockType)arg1;
@@ -212,12 +204,10 @@
 - (void)_handleUITestingPermissionsResponseForPID:(int)arg1 isPermitted:(BOOL)arg2 error:(id)arg3;
 - (void)_setXcodeUITestingAgentAsResponsibleProcessForPID:(int)arg1;
 - (void)_whitelistTestRunnerPID:(int)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)waitForTestProcessToConnect;
 - (void)launchSessionDidFinalizeWithDescription:(id)arg1;
 - (void)launchSessionWillFinalize;
-- (void)launchSessionExitedWithCode:(int)arg1 hasCrashed:(BOOL)arg2;
+- (void)testRunnerHungAfterAcquiringPID;
 - (void)launchSessionGotPID:(int)arg1;
-- (void)launchSessionCompletedInitialIntensiveFileIO;
 - (void)launchSessionExpired;
 - (void)launchSessionEncounteredAlertError:(id)arg1;
 - (void)launchSessionStarted;
@@ -225,6 +215,7 @@
 - (void)testOperationCancelledWithError:(id)arg1;
 - (void)_observeDebuggerPauseForLaunchSession:(id)arg1;
 - (void)_handleDebugSessionStateChange:(id)arg1;
+- (void)disableTestTimeoutsInTestProcessUsingDebugSession:(id)arg1;
 - (void)_notifyTestProcessThatDebugSessionPaused:(id)arg1;
 - (void)_registerHandlersForOtherLogAspects;
 - (BOOL)isLog:(id)arg1 specificToDevice:(id)arg2;

@@ -15,6 +15,7 @@
 - (id)effectiveReturnTypeClassNameForMethodDeclaration;
 - (id)effectiveReturnTypeClassName;
 - (id)returnTypeForInsertion;
+- (unsigned long long)methodKind;
 
 @end
 

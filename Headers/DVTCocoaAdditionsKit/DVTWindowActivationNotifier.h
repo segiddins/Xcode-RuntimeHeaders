@@ -6,16 +6,17 @@
 
 #import <objc/NSObject.h>
 
-@class DVTWeakInterposer, NSMapTable, NSWindow;
+@class NSMapTable, NSWindow;
 
 @interface DVTWindowActivationNotifier : NSObject
 {
     NSMapTable *_activationStateObservers;
     long long _nextKey;
-    DVTWeakInterposer *_window_dvtWeakInterposer;
+    NSWindow *_window;
 }
 
 - (void).cxx_destruct;
+@property __weak NSWindow *window; // @synthesize window=_window;
 - (void)windowDidResignMain:(id)arg1;
 - (void)windowDidBecomeMain:(id)arg1;
 - (void)windowDidResignKey:(id)arg1;
@@ -24,7 +25,6 @@
 - (id)registerActivationStateObserver:(id)arg1;
 - (void)dealloc;
 - (id)initWithWindow:(id)arg1;
-@property __weak NSWindow *window;
 
 @end
 

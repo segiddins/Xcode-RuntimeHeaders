@@ -6,11 +6,12 @@
 
 #import <DTGraphKit/DTTimelineDecorator.h>
 
-@class GPUTimelineGraphDataSource;
+@class GPUTimelineGraphDataSource, NSArray, NSMutableArray;
 @protocol GPUTimelineGraphTheme;
 
 @interface GPUTimelineDecorator : DTTimelineDecorator
 {
+    NSMutableArray *_timelinePlanes;
     GPUTimelineGraphDataSource *_dataSource;
     unsigned long long _plane;
     id <GPUTimelineGraphTheme> _theme;
@@ -21,6 +22,7 @@
 }
 
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *timelinePlanes; // @synthesize timelinePlanes=_timelinePlanes;
 @property(nonatomic) unsigned long long decorationColorState; // @synthesize decorationColorState=_decorationColorState;
 @property(nonatomic) unsigned long long nanosecondsPerPoint; // @synthesize nanosecondsPerPoint=_nanosecondsPerPoint;
 @property(nonatomic) unsigned long long selectedIndex; // @synthesize selectedIndex=_selectedIndex;
@@ -28,9 +30,13 @@
 @property(retain, nonatomic) id <GPUTimelineGraphTheme> theme; // @synthesize theme=_theme;
 @property(readonly, nonatomic) unsigned long long plane; // @synthesize plane=_plane;
 @property(readonly, nonatomic) GPUTimelineGraphDataSource *dataSource; // @synthesize dataSource=_dataSource;
+- (void)invalidateDynamicRange;
+- (void)clearPlanes;
+- (void)removePlane:(id)arg1;
+- (id)addPlane;
 - (id)decorateInspectionRanges:(id)arg1;
 - (id)decorateContainer:(struct DTTimelineDecorationContainer *)arg1;
-- (id)_lerpHSV:(id)arg1 end:(id)arg2 ratio:(float)arg3;
+- (id)_lerpHSB:(id)arg1 end:(id)arg2 ratio:(float)arg3;
 @property(readonly, nonatomic) long long maxValue;
 - (void)setDefaultsForPlane:(id)arg1;
 @property(readonly, nonatomic) unsigned long long duration;

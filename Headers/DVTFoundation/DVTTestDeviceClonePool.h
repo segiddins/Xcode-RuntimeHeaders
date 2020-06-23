@@ -13,6 +13,7 @@
 
 @interface DVTTestDeviceClonePool : NSObject <DVTTestDeviceCloneProvider>
 {
+    BOOL _shuttingDownUnusedClone;
     NSObject<OS_dispatch_queue> *_queue;
     NSMutableDictionary *_clonesByDevice;
     NSMutableArray *_observations;
@@ -26,6 +27,7 @@
 
 + (id)sharedPool;
 - (void).cxx_destruct;
+@property(getter=isShuttingDownUnusedClone) BOOL shuttingDownUnusedClone; // @synthesize shuttingDownUnusedClone=_shuttingDownUnusedClone;
 @property(readonly) NSMutableSet *inFlightCloneRequests; // @synthesize inFlightCloneRequests=_inFlightCloneRequests;
 @property(retain) NSMutableArray *requests; // @synthesize requests=_requests;
 @property(retain) NSNumber *pendingMaxVendCount; // @synthesize pendingMaxVendCount=_pendingMaxVendCount;

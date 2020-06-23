@@ -12,14 +12,14 @@
 {
     MISSING_TYPE *didSetCallback;
     MISSING_TYPE *pushingSelectionToJumpBar;
-    MISSING_TYPE *rootSiblings;
+    MISSING_TYPE *topLevelObjects;
     MISSING_TYPE *selection;
 }
 
 - (void).cxx_destruct;
 - (id)init;
 @property(nonatomic, retain) DVTExplorableJumpBarControllerHandle *selection; // @synthesize selection;
-@property(nonatomic, copy) NSArray *rootSiblings;
+@property(nonatomic, copy) NSArray *topLevelObjects;
 
 @end
 

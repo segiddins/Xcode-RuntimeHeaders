@@ -17,9 +17,11 @@
     struct kpep_event *_kpepEvent;
     DTKPCPUCounterAllocatorRecord *_parent;
     DTKPCPUCounterAllocatorRecord *_child;
+    unsigned long long _hwIdx;
 }
 
 - (void).cxx_destruct;
+@property(readonly, nonatomic) unsigned long long hwIdx; // @synthesize hwIdx=_hwIdx;
 @property(nonatomic) __weak DTKPCPUCounterAllocatorRecord *child; // @synthesize child=_child;
 @property(nonatomic) __weak DTKPCPUCounterAllocatorRecord *parent; // @synthesize parent=_parent;
 @property(nonatomic) struct kpep_event *kpepEvent; // @synthesize kpepEvent=_kpepEvent;
@@ -27,7 +29,7 @@
 @property(retain, nonatomic) NSString *counterName; // @synthesize counterName=_counterName;
 @property(retain, nonatomic) NSString *eventOrAliasName; // @synthesize eventOrAliasName=_eventOrAliasName;
 @property(retain, nonatomic) NSString *eventName; // @synthesize eventName=_eventName;
-- (id)initWithName:(id)arg1 nameOrAlias:(id)arg2 counterName:(id)arg3 kpepEvent:(struct kpep_event *)arg4 isPMI:(BOOL)arg5;
+- (id)initWithName:(id)arg1 nameOrAlias:(id)arg2 counterName:(id)arg3 kpepEvent:(struct kpep_event *)arg4 isPMI:(BOOL)arg5 hwIdx:(unsigned long long)arg6;
 
 @end
 

@@ -15,5 +15,7 @@
     MISSING_TYPE *logCategory;
 }
 
+- (id)pathForDiagnosticID:(id)arg1;
+
 @end
 

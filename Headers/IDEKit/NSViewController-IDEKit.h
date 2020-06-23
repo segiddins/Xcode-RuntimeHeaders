@@ -15,5 +15,6 @@
 @property(nonatomic, readonly) double highlightFrameCornerRadius;
 - (struct CGRect)hitTestFrameInWindow:(id)arg1;
 - (struct CGRect)highlightFrameInWindow:(id)arg1;
+@property(nonatomic, readonly) long long navigationTargetType;
 @end
 

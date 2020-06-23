@@ -11,7 +11,7 @@
 #import <Xcode3UI/NSOutlineViewDelegate-Protocol.h>
 #import <Xcode3UI/Xcode3SourceListItemEditor-Protocol.h>
 
-@class DVTBorderedView, DVTDelayedInvocation, DVTFilePath, DVTGradientImageButton, DVTMutableOrderedDictionary, DVTOutlineView, DVTPerformanceMetric, DVTSearchField, DVTSourceExpression, IDEBuildOperation, NSArray, NSButton, NSLayoutConstraint, NSMapTable, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, PBXProject, Xcode3ProjectEditor, Xcode3Target;
+@class DVTBorderedView, DVTDelayedInvocation, DVTFilePath, DVTGradientImageButton, DVTMutableOrderedDictionary, DVTOutlineView, DVTPerformanceMetric, DVTScopeBarButton, DVTSearchField, DVTSourceExpression, IDEBuildOperation, NSArray, NSLayoutConstraint, NSMapTable, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, PBXProject, Xcode3ProjectEditor, Xcode3Target;
 @protocol DVTCancellable, IDEBlueprint;
 
 @interface Xcode3AssetTagsEditor : IDEViewController <Xcode3SourceListItemEditor, NSOutlineViewDataSource, NSOutlineViewDelegate, IDEAssetTagChangeListener>
@@ -36,8 +36,8 @@
     long long _displayMode;
     DVTMutableOrderedDictionary *_tagGroups;
     DVTMutableOrderedDictionary *_filteredTagGroups;
-    NSButton *_toggleButtonAll;
-    NSButton *_toggleButtonPriority;
+    DVTScopeBarButton *_toggleButtonAll;
+    DVTScopeBarButton *_toggleButtonPriority;
     DVTOutlineView *_tagsOutlineView;
     DVTSearchField *_searchField;
     NSLayoutConstraint *_topOutlineViewConstraint;
@@ -52,8 +52,8 @@
 @property(retain, nonatomic) NSLayoutConstraint *topOutlineViewConstraint; // @synthesize topOutlineViewConstraint=_topOutlineViewConstraint;
 @property(retain, nonatomic) DVTSearchField *searchField; // @synthesize searchField=_searchField;
 @property(retain, nonatomic) DVTOutlineView *tagsOutlineView; // @synthesize tagsOutlineView=_tagsOutlineView;
-@property(retain, nonatomic) NSButton *toggleButtonPriority; // @synthesize toggleButtonPriority=_toggleButtonPriority;
-@property(retain, nonatomic) NSButton *toggleButtonAll; // @synthesize toggleButtonAll=_toggleButtonAll;
+@property(retain, nonatomic) DVTScopeBarButton *toggleButtonPriority; // @synthesize toggleButtonPriority=_toggleButtonPriority;
+@property(retain, nonatomic) DVTScopeBarButton *toggleButtonAll; // @synthesize toggleButtonAll=_toggleButtonAll;
 @property(retain, nonatomic) DVTMutableOrderedDictionary *filteredTagGroups; // @synthesize filteredTagGroups=_filteredTagGroups;
 @property(retain, nonatomic) DVTMutableOrderedDictionary *tagGroups; // @synthesize tagGroups=_tagGroups;
 @property(nonatomic) long long displayMode; // @synthesize displayMode=_displayMode;

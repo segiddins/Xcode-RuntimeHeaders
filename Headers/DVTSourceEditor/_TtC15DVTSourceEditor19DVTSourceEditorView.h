@@ -6,9 +6,11 @@
 
 #import "_$s12SourceEditor0aB4ViewCN.h"
 
+#import <DVTSourceEditor/DVTFindPatternManager-Protocol.h>
+
 @class MISSING_TYPE;
 
-@interface _TtC15DVTSourceEditor19DVTSourceEditorView : _$s12SourceEditor0aB4ViewCN
+@interface _TtC15DVTSourceEditor19DVTSourceEditorView : _$s12SourceEditor0aB4ViewCN <DVTFindPatternManager>
 {
     MISSING_TYPE *featureControllers;
     MISSING_TYPE *defaultFeatureControllerClasses;
@@ -16,6 +18,26 @@
 
 - (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
+- (void)selectFindMatchesInSelection:(id)arg1;
+- (void)selectAllFindMatches:(id)arg1;
+- (void)selectPreviousOccurrence:(id)arg1;
+- (void)selectNextOccurrence:(id)arg1;
+- (void)useSelectionForReplace:(id)arg1;
+- (void)useSelectionForFind:(id)arg1;
+- (void)hideFindBar:(id)arg1;
+- (void)replaceAndFindPrevious:(id)arg1;
+- (void)replaceAndFindNext:(id)arg1;
+- (void)replaceAll:(id)arg1;
+- (void)replace:(id)arg1;
+- (void)findAndSelectPrevious:(id)arg1;
+- (void)findAndSelectNext:(id)arg1;
+- (void)findPrevious:(id)arg1;
+- (void)findNext:(id)arg1;
+- (void)findAndReplace:(id)arg1;
+- (void)find:(id)arg1;
+- (BOOL)supportsPatterns;
+- (id)replaceFieldForField:(id)arg1;
+- (id)findFieldForField:(id)arg1;
 
 @end
 

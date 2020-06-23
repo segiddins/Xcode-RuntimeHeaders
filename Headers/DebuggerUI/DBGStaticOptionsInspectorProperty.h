@@ -6,28 +6,33 @@
 
 #import <IDEKit/IDEInspectorProperty.h>
 
-@class IDEInspectorKeyPath, NSDictionary, NSString, NSTextField;
+@class IDEInspectorKeyPath, NSDictionary, NSStackView;
 
 @interface DBGStaticOptionsInspectorProperty : IDEInspectorProperty
 {
-    NSTextField *_textField;
+    NSStackView *_stackView;
     IDEInspectorKeyPath *_valueKeyPath;
-    NSString *_staticText;
-    NSDictionary *_titleByValue;
+    NSDictionary *_optionsByValue;
 }
 
 - (void).cxx_destruct;
-@property(retain) NSDictionary *titleByValue; // @synthesize titleByValue=_titleByValue;
-@property(retain) NSString *staticText; // @synthesize staticText=_staticText;
+@property(retain) NSDictionary *optionsByValue; // @synthesize optionsByValue=_optionsByValue;
 @property(retain) IDEInspectorKeyPath *valueKeyPath; // @synthesize valueKeyPath=_valueKeyPath;
-@property __weak NSTextField *textField; // @synthesize textField=_textField;
+@property __weak NSStackView *stackView; // @synthesize stackView=_stackView;
 - (void)_configureEnumeratedOptions;
 - (void)_extractOptionGroupsFromElement:(id)arg1 intoDictionary:(id)arg2;
 - (void)_extractOptionsFromElement:(id)arg1 intoDictionary:(id)arg2;
+- (void)_configureEnabledRefresh;
 - (void)setupRefreshTriggersAndConfigure;
 - (double)baseline;
+- (void)_setMatchingOptions:(id)arg1;
+- (void)_setNumberOfTextFields:(long long)arg1;
+- (void)_setStringValue:(id)arg1 placeholder:(id)arg2 tooltip:(id)arg3;
+- (void)_setPlaceholder:(id)arg1;
+- (void)_setStringValue:(id)arg1;
 - (id)_matchingOptionsForValue:(unsigned long long)arg1;
 - (void)_adjustHeightTo:(double)arg1;
+- (double)_stackViewHeight;
 - (void)refresh;
 
 @end

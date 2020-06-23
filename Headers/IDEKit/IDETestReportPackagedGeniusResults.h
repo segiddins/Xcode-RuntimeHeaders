@@ -10,6 +10,7 @@
 {
 }
 
++ (id)callStackCodeRollAssistantResultsForResultBundle:(id)arg1 failureSummary:(id)arg2 inTest:(id)arg3 forDocument:(id)arg4;
 + (void)attachmentsAssistantForLocation:(id)arg1 results:(CDUnknownBlockType)arg2;
 + (id)diagnosticsAssistantResultsForTest:(id)arg1 testIdentifierString:(id)arg2 testReportDocument:(id)arg3 workspace:(id)arg4;
 + (id)referencedFilesAssistantResultsForTestDocumentLocation:(id)arg1;

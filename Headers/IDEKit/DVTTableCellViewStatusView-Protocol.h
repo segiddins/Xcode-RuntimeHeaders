@@ -8,6 +8,6 @@
 
 @optional
 @property(readonly) BOOL hasDisplayableStatus;
-@property(nonatomic) long long tableViewRowSizeStyle;
+@property(nonatomic) long long dvt_rowSizeStyle;
 @end
 

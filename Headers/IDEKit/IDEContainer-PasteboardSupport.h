@@ -8,12 +8,13 @@
 
 #import <IDEKit/IDEKeyDrivenNavigableItemRepresentedObject-Protocol.h>
 
-@class DVTDocumentLocation, DVTFileDataType, DVTSymbol, IDEFileReference, NSArray, NSImage, NSNull, NSString, NSURL;
+@class DVTDocumentLocation, DVTFileDataType, DVTSymbol, IDEContainerItem, IDEFileReference, NSArray, NSImage, NSNull, NSString, NSURL;
 
 @interface IDEContainer (PasteboardSupport) <IDEKeyDrivenNavigableItemRepresentedObject>
 - (id)containerItemFromPlistRepresentation:(id)arg1;
+- (id)containerItemFromNameAndIndexPath:(id)arg1 rootGroup:(id)arg2;
 - (id)plistRepresentationForContainerItem:(id)arg1;
-- (id)_pathToContainerItem:(id)arg1;
+- (id)pathToContainerItem:(id)arg1;
 @property(readonly, nonatomic) NSString *navigableItem_name;
 @property(readonly) BOOL ide_shouldSupressNavigation;
 - (id)ide_defaultNewFileTemplate;
@@ -25,6 +26,8 @@
 @property(readonly) BOOL ideInspectedReferenceRelativeLocationShouldChooseFile;
 @property(readonly) BOOL ideInspectedReferenceShowsFileTypePopUp;
 @property(readonly) BOOL ideInspectedIsReferenceNameEditable;
+@property(readonly) IDEContainerItem *explorableItemForNavigation;
+@property(readonly) NSString *explorableName;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

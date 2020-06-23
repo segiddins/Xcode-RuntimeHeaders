@@ -9,7 +9,7 @@
 #import <XCSourceControl/NSCopying-Protocol.h>
 #import <XCSourceControl/NSSecureCoding-Protocol.h>
 
-@class NSArray, NSDate, NSDictionary, NSSet, NSString, NSURL, XCSourceControlHostMilestone, XCSourceControlHostParticipant, XCSourceControlHostRenderableContent, XCSourceControlHostRepository, _TtC15XCSourceControl25XCSourceControlHostBranch;
+@class NSArray, NSDate, NSDictionary, NSSet, NSString, NSURL, XCSourceControlHostMilestone, XCSourceControlHostParticipant, XCSourceControlHostParticipantSet, XCSourceControlHostRenderableContent, XCSourceControlHostRepository, _TtC15XCSourceControl25XCSourceControlHostBranch;
 
 @interface XCSourceControlHostPullRequest : NSObject <NSSecureCoding, NSCopying>
 {
@@ -20,7 +20,7 @@
     NSDate *_dateCreated;
     NSDate *_dateUpdated;
     unsigned long long _status;
-    NSDictionary *_participants;
+    XCSourceControlHostParticipantSet *_participants;
     _TtC15XCSourceControl25XCSourceControlHostBranch *_source;
     _TtC15XCSourceControl25XCSourceControlHostBranch *_target;
     NSArray *_events;
@@ -31,6 +31,7 @@
     NSDictionary *_info;
 }
 
++ (id)updatedPullRequest:(id)arg1 target:(id)arg2;
 + (id)updatedPullRequest:(id)arg1 title:(id)arg2 description:(id)arg3;
 + (BOOL)supportsSecureCoding;
 - (void).cxx_destruct;
@@ -42,7 +43,7 @@
 @property(readonly, copy, nonatomic) NSArray *events; // @synthesize events=_events;
 @property(readonly, copy, nonatomic) _TtC15XCSourceControl25XCSourceControlHostBranch *target; // @synthesize target=_target;
 @property(readonly, copy, nonatomic) _TtC15XCSourceControl25XCSourceControlHostBranch *source; // @synthesize source=_source;
-@property(readonly, nonatomic) NSDictionary *participants; // @synthesize participants=_participants;
+@property(readonly, copy, nonatomic) XCSourceControlHostParticipantSet *participants; // @synthesize participants=_participants;
 @property(readonly, nonatomic) unsigned long long status; // @synthesize status=_status;
 @property(readonly, copy, nonatomic) NSDate *dateUpdated; // @synthesize dateUpdated=_dateUpdated;
 @property(readonly, copy, nonatomic) NSDate *dateCreated; // @synthesize dateCreated=_dateCreated;
@@ -50,17 +51,19 @@
 @property(readonly, copy, nonatomic) XCSourceControlHostRenderableContent *content; // @synthesize content=_content;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
+@property(readonly, copy, nonatomic) XCSourceControlHostParticipant *owner; // @dynamic owner;
+- (id)_updatedCopy;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)description;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
-- (void)setMilestone:(id)arg1 labels:(id)arg2;
-@property(readonly, copy, nonatomic) XCSourceControlHostParticipant *owner;
 @property(readonly, copy, nonatomic) XCSourceControlHostRepository *repository;
 - (id)initWithName:(id)arg1 identifier:(id)arg2 content:(id)arg3 url:(id)arg4 dateCreated:(id)arg5 dateUpdated:(id)arg6 status:(unsigned long long)arg7 source:(id)arg8 target:(id)arg9 participants:(id)arg10 events:(id)arg11 permittedAbilities:(unsigned long long)arg12 permittedWorkflowActions:(id)arg13 labels:(id)arg14 milestone:(id)arg15 info:(id)arg16;
 - (id)initWithName:(id)arg1 content:(id)arg2 source:(id)arg3 target:(id)arg4 participants:(id)arg5 attachments:(id)arg6;
+- (void)updateParticipants:(id)arg1;
+- (void)setMilestone:(id)arg1 labels:(id)arg2;
 
 @end
 

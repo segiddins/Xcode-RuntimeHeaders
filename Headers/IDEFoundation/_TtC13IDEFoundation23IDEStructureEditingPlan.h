@@ -11,6 +11,7 @@
 @interface _TtC13IDEFoundation23IDEStructureEditingPlan : _TtCs12_SwiftObject
 {
     MISSING_TYPE *creationBacktrace;
+    MISSING_TYPE *logAspect;
     MISSING_TYPE *errors;
 }
 

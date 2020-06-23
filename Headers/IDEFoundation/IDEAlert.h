@@ -26,6 +26,7 @@
 + (id)alertExtensions;
 + (void)_cacheAlerts;
 + (void)_registerAlert:(id)arg1;
++ (id)_identifierForAlertExtension:(id)arg1;
 + (void)initialize;
 - (void).cxx_destruct;
 @property double executionPriority; // @synthesize executionPriority=_executionPriority;

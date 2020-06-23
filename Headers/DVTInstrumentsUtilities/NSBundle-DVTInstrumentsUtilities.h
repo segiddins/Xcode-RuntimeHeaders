@@ -7,7 +7,6 @@
 #import <Foundation/NSBundle.h>
 
 @interface NSBundle (DVTInstrumentsUtilities)
-- (id)cfBundleShortVersionString;
 - (id)cfBundleVersionString;
 - (id)topLevelKeyValueForPlistName:(id)arg1 key:(id)arg2;
 @end

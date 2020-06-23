@@ -36,6 +36,9 @@
 - (BOOL)evaluteScript:(id)arg1 scriptURL:(id)arg2;
 - (void)_clearCache;
 - (void)setValues:(id)arg1;
+- (void)setRawArrayValues:(id)arg1 withUint64Values:(unsigned long long *)arg2 andNumCounters:(unsigned long long)arg3;
+- (struct OpaqueJSValue *)createArrayRef:(id)arg1;
+- (void)setRawArrayValues:(id)arg1 withUint32Values:(unsigned int *)arg2 andNumCounters:(unsigned long long)arg3;
 - (id)setValue:(id)arg1 value:(id)arg2;
 - (basic_string_a1f69cfb)_jsValueToString:(struct OpaqueJSValue *)arg1;
 - (basic_string_a1f69cfb)_jsStringToString:(struct OpaqueJSString *)arg1;

@@ -6,15 +6,16 @@
 
 #import <IDEKit/IDEDebugBarContentProvider.h>
 
-@class DVTGradientImageButton, DVTGradientImagePopUpButton, DVTObservingToken, IDESimulateLocationMenuController, NSPopover;
+@class DVTDelayedMenuGradientImageButton, DVTGradientImageButton, DVTObservingToken, IDESimulateLocationMenuController, NSMenu, NSPopover;
 
 @interface IDESimulatedLocationDebugBarContentProvider : IDEDebugBarContentProvider
 {
     DVTObservingToken *_locationSimulatorStateToken;
     DVTObservingToken *_locationSimulatorToken;
-    DVTGradientImagePopUpButton *_locationPopUpButton;
+    DVTDelayedMenuGradientImageButton *_locationPopUpButton;
     DVTGradientImageButton *_locationPopoverButton;
     IDESimulateLocationMenuController *_simulateLocationMenuController;
+    NSMenu *_locationMenu;
     NSPopover *_popover;
 }
 
@@ -27,6 +28,7 @@
 - (void)willBeDetachedFromDebugBar:(id)arg1;
 - (void)wasAttachedToDebugBar:(id)arg1;
 - (id)_imageForState:(long long)arg1;
+- (id)_locationMenu;
 - (void)_configureLocationMenu;
 - (void)_updateButtonDisplay;
 - (void)_currentLaunchSessionLocationSimulatorChanged;

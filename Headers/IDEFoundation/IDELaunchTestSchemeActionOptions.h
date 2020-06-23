@@ -30,6 +30,12 @@
 @property(nonatomic, readonly) NSArray *commandLineArgumentEntries;
 @property(nonatomic, readonly) long long hash;
 - (BOOL)isEqual:(id)arg1;
+- (id)buildableForMacroExpansionUsing:(id)arg1;
+- (id)environmentVariablesForScheme:(id)arg1 expandedUsingBuildParameters:(id)arg2;
+- (id)commandLineArgumentsForScheme:(id)arg1 expandedUsingBuildParameters:(id)arg2;
+@property(nonatomic, readonly) NSString *mallocStackLoggingType;
+@property(nonatomic, readonly) BOOL isAddressSanitizerStackUseAfterReturnEnabled;
+@property(nonatomic, readonly) BOOL isAddressSanitizerEnabled;
 
 @end
 

@@ -11,18 +11,8 @@
 @class NSString;
 
 @interface NSLevelIndicator (IBLevelIndicatorIntegration) <IBDocumentArchiving>
-+ (id)keyPathsForValuesAffectingIbInspectedCriticalFillColor;
-+ (id)keyPathsForValuesAffectingIbInspectedWarningFillColor;
-+ (id)keyPathsForValuesAffectingIbInspectedFillColor;
 + (id)keyPathsForValuesAffectingIbStyleIsRating;
 + (id)keyPathsForValuesAffectingIbStyleIsCapacity;
-- (void)setIbInspectedCriticalFillColor:(id)arg1;
-- (id)ibInspectedCriticalFillColor;
-- (void)setIbInspectedWarningFillColor:(id)arg1;
-- (id)ibInspectedWarningFillColor;
-- (void)setIbInspectedFillColor:(id)arg1;
-- (id)ibInspectedFillColor;
-- (BOOL)ibSupportsCustomFillColors;
 - (BOOL)ibStyleIsRating;
 - (BOOL)ibStyleIsCapacity;
 - (id)ibInspectedCell;

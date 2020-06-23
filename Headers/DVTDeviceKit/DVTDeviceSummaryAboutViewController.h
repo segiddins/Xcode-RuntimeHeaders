@@ -6,7 +6,7 @@
 
 #import <DVTViewControllerKit/DVTViewController.h>
 
-@class DVTBorderedView, DVTDevice, NSAppleScript, NSButton, NSImageView, NSStackView, NSString, NSTextField, NSView;
+@class DVTDevice, NSAppleScript, NSButton, NSImageView, NSStackView, NSString, NSTextField, NSView;
 @protocol DVTDeviceAction;
 
 @interface DVTDeviceSummaryAboutViewController : DVTViewController
@@ -15,7 +15,6 @@
     DVTDevice *_device;
     Class _deviceLogsViewControllerClass;
     NSView *_gridViewPlaceholder;
-    DVTBorderedView *_backgroundView;
     NSTextField *_osVersionTextField;
     NSTextField *_modelTextField;
     NSButton *_showAsDestinationsButton;
@@ -64,7 +63,6 @@
 @property(retain) NSButton *showAsDestinationsButton; // @synthesize showAsDestinationsButton=_showAsDestinationsButton;
 @property(retain) NSTextField *modelTextField; // @synthesize modelTextField=_modelTextField;
 @property(retain) NSTextField *osVersionTextField; // @synthesize osVersionTextField=_osVersionTextField;
-@property(retain) DVTBorderedView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(retain) NSView *gridViewPlaceholder; // @synthesize gridViewPlaceholder=_gridViewPlaceholder;
 @property(retain) Class deviceLogsViewControllerClass; // @synthesize deviceLogsViewControllerClass=_deviceLogsViewControllerClass;
 @property(retain, nonatomic) DVTDevice *device; // @synthesize device=_device;
@@ -77,6 +75,7 @@
 - (void)_performAction:(id)arg1 onDevice:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 @property(nonatomic) long long wifiConnectionEnabled;
 @property(readonly) NSString *connectWiFiButtonTooltip;
+- (BOOL)enableViewDeviceLogs;
 @property(readonly) BOOL enableOpenConsole;
 @property(readonly) BOOL enableScreenshots;
 @property(readonly) BOOL enableConnectWiFiButton;

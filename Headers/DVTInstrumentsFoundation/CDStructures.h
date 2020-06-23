@@ -91,35 +91,8 @@ struct _CSRange {
 };
 
 struct _CSTypeRef {
-    unsigned long long _field1;
-    unsigned long long _field2;
-};
-
-struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, int>, void *>*> {
-    struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, int>, void *>*> *__next_;
-};
-
-struct __sFILE {
-    char *_field1;
-    int _field2;
-    int _field3;
-    short _field4;
-    short _field5;
-    struct __sbuf _field6;
-    int _field7;
-    void *_field8;
-    CDUnknownFunctionPointerType _field9;
-    CDUnknownFunctionPointerType _field10;
-    CDUnknownFunctionPointerType _field11;
-    CDUnknownFunctionPointerType _field12;
-    struct __sbuf _field13;
-    struct __sFILEX *_field14;
-    int _field15;
-    unsigned char _field16[3];
-    unsigned char _field17[1];
-    struct __sbuf _field18;
-    int _field19;
-    long long _field20;
+    unsigned long long _opaque_1;
+    unsigned long long _opaque_2;
 };
 
 struct __sbuf {
@@ -153,113 +126,9 @@ struct in_addr {
     unsigned int _field1;
 };
 
-struct kpdecode_callstack {
-    unsigned int _field1;
-    unsigned int _field2;
-    unsigned long long _field3[128];
-};
-
-struct kpdecode_pmc {
-    int _field1;
-    unsigned long long _field2[32];
-};
-
-struct kpdecode_record {
-    unsigned long long _field1;
-    unsigned long long _field2;
-    unsigned long long _field3;
-    int _field4;
-    struct {
-        char _field1[20];
-    } _field5;
-    struct {
-        unsigned int _field1;
-        unsigned long long _field2[4];
-    } _field6;
-    struct {
-        int _field1;
-        int _field2;
-        unsigned long long _field3;
-    } _field7;
-    struct kpdecode_callstack _field8;
-    struct kpdecode_callstack _field9;
-    struct kpdecode_pmc _field10;
-    struct {
-        unsigned int _field1;
-        unsigned int _field2;
-        unsigned int _field3;
-        unsigned int _field4;
-    } _field11;
-    struct {
-        unsigned int _field1;
-        unsigned long long _field2;
-        unsigned long long _field3;
-        unsigned long long _field4;
-        unsigned long long _field5;
-    } _field12;
-    struct {
-        unsigned long long _field1;
-        unsigned long long _field2;
-        unsigned int _field3;
-        short _field4;
-        short _field5;
-        unsigned int :3;
-        unsigned int :3;
-        unsigned int :3;
-        unsigned int :3;
-    } _field13;
-    struct {
-        unsigned long long _field1;
-        int _field2;
-        int _field3;
-        unsigned long long _field4;
-        unsigned long long _field5;
-    } _field14;
-    struct {
-        unsigned long long _field1;
-        unsigned long long _field2;
-        short _field3;
-        unsigned char _field4;
-    } _field15;
-    CDStruct_69d7cc99 _field16;
-    struct {
-        unsigned int _field1;
-        unsigned int _field2;
-    } _field17;
-    struct {
-        unsigned long long _field1;
-        int _field2;
-    } _field18;
-    struct {
-        int _field1;
-        unsigned long long *_field2;
-    } _field19;
-    CDStruct_69d7cc99 _field20;
-    struct {
-        unsigned int _field1;
-        int _field2;
-    } _field21;
-    struct {
-        char _field1[256];
-        unsigned long long _field2;
-        unsigned long long _field3;
-        unsigned int _field4;
-    } _field22;
-    struct {
-        unsigned long long _field1;
-        unsigned long long _field2;
-        unsigned long long _field3;
-        unsigned long long _field4;
-    } _field23;
-    struct {
-        unsigned long long _field1;
-        unsigned long long _field2;
-    } _field24;
-    struct {
-        unsigned int :3;
-        unsigned int :3;
-        unsigned int :3;
-    } _field25;
+struct mach_timebase_info {
+    unsigned int numer;
+    unsigned int denom;
 };
 
 struct map<unsigned long long, std::__1::map<unsigned int, OAKeyFrame *, std::__1::less<unsigned int>, std::__1::allocator<std::__1::pair<const unsigned int, OAKeyFrame *>>>, std::__1::less<unsigned long long>, std::__1::allocator<std::__1::pair<const unsigned long long, std::__1::map<unsigned int, OAKeyFrame *, std::__1::less<unsigned int>, std::__1::allocator<std::__1::pair<const unsigned int, OAKeyFrame *>>>>>> {
@@ -319,32 +188,6 @@ struct unique_ptr<DTTableRowDecoder, std::__1::default_delete<DTTableRowDecoder>
     } __ptr_;
 };
 
-struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, int>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, int>, void *>*>*>>> {
-    struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, int>, void *>*>**, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, int>, void *>*>*>>> {
-        struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, int>, void *>*> **__value_;
-        struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, int>, void *>*>*>> {
-            struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, int>, void *>*>*>> {
-                unsigned long long __value_;
-            } __data_;
-        } __value_;
-    } __ptr_;
-};
-
-struct unordered_map<unsigned long long, int, std::__1::hash<unsigned long long>, std::__1::equal_to<unsigned long long>, std::__1::allocator<std::__1::pair<const unsigned long long, int>>> {
-    struct __hash_table<std::__1::__hash_value_type<unsigned long long, int>, std::__1::__unordered_map_hasher<unsigned long long, std::__1::__hash_value_type<unsigned long long, int>, std::__1::hash<unsigned long long>, true>, std::__1::__unordered_map_equal<unsigned long long, std::__1::__hash_value_type<unsigned long long, int>, std::__1::equal_to<unsigned long long>, true>, std::__1::allocator<std::__1::__hash_value_type<unsigned long long, int>>> {
-        struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, int>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, int>, void *>*>*>>> __bucket_list_;
-        struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, int>, void *>*>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, int>, void *>>> {
-            struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, int>, void *>*> __value_;
-        } __p1_;
-        struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<unsigned long long, std::__1::__hash_value_type<unsigned long long, int>, std::__1::hash<unsigned long long>, true>> {
-            unsigned long long __value_;
-        } __p2_;
-        struct __compressed_pair<float, std::__1::__unordered_map_equal<unsigned long long, std::__1::__hash_value_type<unsigned long long, int>, std::__1::equal_to<unsigned long long>, true>> {
-            float __value_;
-        } __p3_;
-    } __table_;
-};
-
 struct vector<DTKPDataStreamMemoryRecord *, std::__1::allocator<DTKPDataStreamMemoryRecord *>> {
     id *__begin_;
     id *__end_;
@@ -383,10 +226,6 @@ typedef struct {
     unsigned int _field3;
     unsigned int _field4;
 } CDStruct_cbbc06c7;
-
-typedef struct {
-    unsigned long long _field1;
-} CDStruct_69d7cc99;
 
 typedef struct {
     double _field1;

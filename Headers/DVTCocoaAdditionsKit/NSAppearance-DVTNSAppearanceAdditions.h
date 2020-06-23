@@ -12,7 +12,9 @@
 + (id)dvt_vibrantDarkAppearance;
 + (id)dvt_vibrantLightAppearance;
 + (void)dvt_useAppearance:(id)arg1 toPerformBlock:(CDUnknownBlockType)arg2;
+@property(readonly) NSAppearance *dvt_nonVibrantAppearance;
 @property(readonly) BOOL dvt_hasDarkAppearance;
+@property(readonly) BOOL dvt_usesMetricsAppearance;
 - (void)dvt_performBlock:(CDUnknownBlockType)arg1;
 @end
 

@@ -10,10 +10,17 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 
 #pragma mark Named Structures
 
-struct IDEOpenQuicklyQueryCandidate {
+struct DVTFuzzyMatchCandidate {
     unsigned int _field1;
     unsigned long long _field2;
-    unsigned char _field3;
+    union {
+        unsigned char _field1;
+        struct {
+            unsigned int :1;
+            unsigned int :1;
+            unsigned int :6;
+        } _field2;
+    } _field3;
     unsigned char _field4[0];
 };
 
@@ -165,7 +172,10 @@ struct IDESourceKitUIDKeys {
     struct _sourcekit_uid_s *DestinationSDKVariant;
     struct _sourcekit_uid_s *IndexDatabasePath;
     struct _sourcekit_uid_s *ToolchainInvocationLoggingPath;
+    struct _sourcekit_uid_s *DisableBackgroundIndexer;
+    struct _sourcekit_uid_s *EnableExplicitOutputUnits;
     struct _sourcekit_uid_s *EnableFullStoreVisibility;
+    struct _sourcekit_uid_s *EnablePCHCreation;
     struct _sourcekit_uid_s *DumpIndexables;
     struct _sourcekit_uid_s *InitialDBSize;
     struct _sourcekit_uid_s *ThrottleFactor;
@@ -177,6 +187,7 @@ struct IDESourceKitUIDKeys {
     struct _sourcekit_uid_s *RefactoringActionToken;
     struct _sourcekit_uid_s *DatabaseFile;
     struct _sourcekit_uid_s *IndexDataDump;
+    struct _sourcekit_uid_s *WaitForProcessing;
     struct _sourcekit_uid_s *QueryName;
     struct _sourcekit_uid_s *DocLocation;
     struct _sourcekit_uid_s *FileContent;
@@ -230,6 +241,8 @@ struct IDESourceKitUIDKeys {
     struct _sourcekit_uid_s *PreferredTargets;
     struct _sourcekit_uid_s *PriorityTargets;
     struct _sourcekit_uid_s *LinkedIndexableIds;
+    struct _sourcekit_uid_s *IsBuiltForRun;
+    struct _sourcekit_uid_s *IsImplicitDependency;
     struct _sourcekit_uid_s *CallbackKind;
     struct _sourcekit_uid_s *OnWillIndexWorkspaceDeferredReindexing;
     struct _sourcekit_uid_s *OnIsIndexingWorkspaceUserInfo;
@@ -252,7 +265,9 @@ struct IDESourceKitUIDRequests {
     struct _sourcekit_uid_s *IndexClose;
     struct _sourcekit_uid_s *IndexRegisterObject;
     struct _sourcekit_uid_s *IndexUnregisterObject;
-    struct _sourcekit_uid_s *IndexRegisterPreferredTargets;
+    struct _sourcekit_uid_s *IndexAddUnitOutFilePaths;
+    struct _sourcekit_uid_s *IndexRemoveUnitOutFilePaths;
+    struct _sourcekit_uid_s *IndexUpdatePreferredTargets;
     struct _sourcekit_uid_s *IndexSetThrottleFactor;
     struct _sourcekit_uid_s *IndexIsQuiescent;
     struct _sourcekit_uid_s *IndexSuspendIndexing;
@@ -283,6 +298,7 @@ struct IDESourceKitUIDRequests {
     struct _sourcekit_uid_s *WorkspaceSymbolAllSuperclasses;
     struct _sourcekit_uid_s *WorkspaceSymbolAllSubclasses;
     struct _sourcekit_uid_s *WorkspaceSymbolImplementingClassesForProtocol;
+    struct _sourcekit_uid_s *WorkspaceImplementingSymbolsForProtocol;
     struct _sourcekit_uid_s *WorkspaceSymbolReferencingFiles;
     struct _sourcekit_uid_s *WorkspaceSymbolModelOccurrence;
     struct _sourcekit_uid_s *WorkspaceSymbolContainer;
@@ -405,6 +421,7 @@ struct IDESourceKitUIDValues {
     struct _sourcekit_uid_s *SymbolKindClassTemplate;
     struct _sourcekit_uid_s *SymbolKindMacro;
     struct _sourcekit_uid_s *SymbolKindNamespace;
+    struct _sourcekit_uid_s *SymbolKindUnknown;
     struct _sourcekit_uid_s *RefactoringActionStateRequested;
     struct _sourcekit_uid_s *RefactoringActionStateRunning;
     struct _sourcekit_uid_s *RefactoringActionStateSucceeded;

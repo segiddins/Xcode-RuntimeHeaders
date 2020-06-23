@@ -6,12 +6,20 @@
 
 #import <IDEFoundation/IDERunOperationWorker.h>
 
+@class NSObject;
+@protocol OS_dispatch_queue;
+
 @interface IDEInstallLocalMacWorker : IDERunOperationWorker
 {
+    NSObject<OS_dispatch_queue> *_installQueue;
 }
 
+- (void).cxx_destruct;
 - (void)terminate;
+- (void)_finishOnMainQueueWithError:(id)arg1;
+- (void)_doPostInstallWork;
 - (void)performWorkerAction;
+- (id)initWithExtensionIdentifier:(id)arg1 launchSession:(id)arg2;
 
 @end
 

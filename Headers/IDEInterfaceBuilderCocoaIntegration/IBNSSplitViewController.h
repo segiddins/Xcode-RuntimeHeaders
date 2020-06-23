@@ -26,6 +26,8 @@
 - (id)initWithCoder:(id)arg1;
 - (void)ibPopulateChildRelationOrder:(id)arg1;
 - (void)ibMakeDefaultView;
+- (BOOL)isPropertyAffectingSplitViewEditorAppearanceForKeyPath:(id)arg1 forObject:(id)arg2;
+- (BOOL)isPropertyAffectingSplitViewEditorAppearanceForKeyPath:(id)arg1 forSpltViewItem:(id)arg2;
 - (id)ibAcceptContentsOfPasteboard:(id)arg1 inDocument:(id)arg2 insertionContext:(id)arg3;
 - (BOOL)ibCanAcceptContentsOfPasteboard:(id)arg1 inDocument:(id)arg2 targetChildRelation:(id *)arg3;
 - (void)ibRemoveChildren:(id)arg1;

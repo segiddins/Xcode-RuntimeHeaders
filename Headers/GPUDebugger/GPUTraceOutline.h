@@ -49,6 +49,7 @@
 - (id)apiItemForTrueFunctionIndex:(unsigned int)arg1;
 - (id)apiItemFromFunctionIndex:(unsigned int)arg1;
 - (id)apiItemFromDisplayIndex:(unsigned int)arg1;
+- (id)apiItemForDisplayIndex:(unsigned int)arg1 subCommandIndex:(int)arg2;
 @property(readonly) unsigned int totalfunctionIndexCount;
 - (id)locateDisplayableItemToDraw:(id)arg1;
 - (void)addDisplayableItem:(id)arg1;

@@ -27,6 +27,7 @@
 - (id)idiom;
 - (id)displayName;
 - (id)normalizedOrientationToSizeMap;
+- (unsigned long long)hash;
 - (BOOL)isEqualToSimulatedSizeMetrics:(id)arg1;
 - (void)archiveWithDocumentArchiver:(id)arg1;
 - (Class)classForCoder;

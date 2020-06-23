@@ -209,6 +209,15 @@ struct ContextStateMirror<GPUTools::AnalyzerBaseObjectTypes> {
     unsigned long long _field191;
 };
 
+struct DYGLShaderProfilerProgramAddress {
+    unsigned int _field1;
+    unsigned int _field2;
+    unsigned long long _field3;
+    unsigned long long _field4;
+    unsigned long long _field5;
+    unsigned long long _field6;
+};
+
 struct DYGLShaderProfilerUSCSample {
     unsigned int _field1;
     union {

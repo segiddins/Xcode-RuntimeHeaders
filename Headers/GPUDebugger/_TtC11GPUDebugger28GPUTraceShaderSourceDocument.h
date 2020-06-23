@@ -20,7 +20,6 @@ __attribute__((visibility("hidden")))
 
 - (void).cxx_destruct;
 - (id)init;
-@property(nonatomic, readonly) BOOL isDocumentEdited;
 @property(nonatomic, readonly) NSString *editedSource;
 - (void)saveWithCompletionHandler:(CDUnknownBlockType)arg1;
 @property(nonatomic, readonly) NSURL *fileURL;

@@ -6,12 +6,14 @@
 
 #import <objc/NSObject.h>
 
-@class DVTObservingToken, IDERunDestination, NSMapTable, NSMutableSet, NSSet;
+@class DVTDevice, DVTDeviceManager, DVTObservingToken, IDERunDestination, NSMapTable, NSMutableSet, NSSet;
 
 @interface IDERunDestinationManager : NSObject
 {
     NSMapTable *_runDestinationsByDeviceCache;
     NSMutableSet *_availableRunDestinations;
+    DVTDeviceManager *_deviceManager;
+    DVTDevice *_fallbackDevice;
     DVTObservingToken *_deviceManagerObservation;
     IDERunDestination *_fallbackRunDestination;
 }
@@ -43,6 +45,7 @@
 - (id)_cachedRunDestinationForDevice:(id)arg1 architecture:(id)arg2 SDK:(id)arg3 SDKVariant:(id)arg4;
 - (void)_cacheRunDestination:(id)arg1;
 - (id)init;
+- (id)initWithDeviceManager:(id)arg1 fallbackDevice:(id)arg2;
 - (void)_startWatchingDeviceManager;
 - (id)_deviceManager;
 - (void)_adjustKnownRunDestinationsForChangeKind:(unsigned long long)arg1 addedObjects:(id)arg2 removedObjects:(id)arg3;

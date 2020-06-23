@@ -17,6 +17,7 @@
 - (void)setFill;
 - (void)set;
 - (struct CGColor *)CGColor;
+- (id)colorUsingColorSpace:(id)arg1;
 - (id)colorSpaceName;
 - (id)colorSpace;
 - (id)_actualColor;

@@ -11,8 +11,9 @@
 @interface _TtC12SourceEditor22DisplayLinkedAnimation : _TtCs12_SwiftObject
 {
     MISSING_TYPE *identifier;
+    MISSING_TYPE *updateBlocks;
+    MISSING_TYPE *completion;
     MISSING_TYPE *duration;
-    MISSING_TYPE *updateBlock;
     MISSING_TYPE *displayLink;
 }
 

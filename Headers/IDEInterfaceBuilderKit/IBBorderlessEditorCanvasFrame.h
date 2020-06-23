@@ -58,7 +58,6 @@
 - (double)effectiveHeaderCornerRadius;
 - (double)effectiveHeaderHeight;
 - (double)effectiveHeaderViewOffset;
-- (id)canvasFrameShadow;
 - (void)setContentViewCornerRadius:(double)arg1;
 - (void)setChromeScaleFactor:(double)arg1;
 - (void)setFrame:(struct CGRect)arg1;

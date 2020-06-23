@@ -54,7 +54,6 @@
 - (void)_hideEmptyView;
 - (void)_showEmptyView;
 - (void)viewWillUninstall;
-- (void)viewDidLoad;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

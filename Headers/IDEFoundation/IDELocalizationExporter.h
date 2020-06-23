@@ -21,7 +21,6 @@
     DVTNotificationToken *_localizationNonFatalErrorObserver;
     BOOL _complete;
     NSArray *_targetLanguages;
-    NSString *_itsRulePath;
     NSURL *_destinationUrl;
     CDUnknownBlockType _onErrorBlock;
     CDUnknownBlockType _onCompletedBlock;
@@ -39,7 +38,6 @@
 @property(copy) CDUnknownBlockType onCompletedBlock; // @synthesize onCompletedBlock=_onCompletedBlock;
 @property(copy) CDUnknownBlockType onErrorBlock; // @synthesize onErrorBlock=_onErrorBlock;
 @property(copy) NSURL *destinationUrl; // @synthesize destinationUrl=_destinationUrl;
-@property(copy) NSString *itsRulePath; // @synthesize itsRulePath=_itsRulePath;
 @property(copy) NSArray *targetLanguages; // @synthesize targetLanguages=_targetLanguages;
 - (void)cancel;
 - (void)start;

@@ -6,10 +6,14 @@
 
 #import <IDEFoundation/NSObject-Protocol.h>
 
-@class NSSet, _TtC13IDEFoundation15IDETestLocation;
+@class IDETestPlan, NSArray, NSSet;
 
 @protocol IDETestCollection <NSObject>
-@property(nonatomic, readonly) _TtC13IDEFoundation15IDETestLocation *testLocation;
+- (id)subsetContainedInTestPlan:(IDETestPlan *)arg1;
+@property(nonatomic, readonly) BOOL isEmpty;
 @property(nonatomic, readonly) NSSet *testContainers;
+
+@optional
+@property(nonatomic, readonly) NSArray *orderedTestContainers;
 @end
 

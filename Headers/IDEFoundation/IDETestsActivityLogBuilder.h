@@ -25,7 +25,6 @@
     NSString *_testPlanName;
 }
 
-+ (id)recursiveDescriptionForError:(id)arg1;
 - (void).cxx_destruct;
 @property(copy) NSString *testPlanName; // @synthesize testPlanName=_testPlanName;
 @property(retain) IDEActivityLogSectionRecorder *currentTestRunSpecificationGroupRecorder; // @synthesize currentTestRunSpecificationGroupRecorder=_currentTestRunSpecificationGroupRecorder;
@@ -38,11 +37,10 @@
 @property BOOL testsFinishedSuccessfully; // @synthesize testsFinishedSuccessfully=_testsFinishedSuccessfully;
 - (void)worker:(id)arg1 testTargetRunner:(id)arg2 didFinishTestWithIdentifier:(id)arg3 withTestResult:(id)arg4 rawOutput:(id)arg5;
 - (void)worker:(id)arg1 testTargetRunner:(id)arg2 didSkipTestWithIdentifier:(id)arg3 withTestResultMessage:(id)arg4 rawOutput:(id)arg5;
-- (void)worker:(id)arg1 testTargetRunner:(id)arg2 didFailTestWithIdentifier:(id)arg3 withTestResultMessage:(id)arg4 rawOutput:(id)arg5;
+- (void)worker:(id)arg1 testTargetRunner:(id)arg2 testCaseWithIdentifier:(id)arg3 didRecordIssue:(id)arg4 rawOutput:(id)arg5;
 - (void)worker:(id)arg1 testTargetRunner:(id)arg2 testWithIdentifier:(id)arg3 didFinishActivity:(id)arg4;
 - (void)worker:(id)arg1 testTargetRunner:(id)arg2 testWithIdentifier:(id)arg3 willStartActivity:(id)arg4;
 - (void)worker:(id)arg1 testTargetRunner:(id)arg2 testWithIdentifier:(id)arg3 didMeasurePerformanceMetric:(id)arg4 rawOutput:(id)arg5;
-- (void)worker:(id)arg1 testTargetRunner:(id)arg2 testDidOutput:(id)arg3;
 - (void)worker:(id)arg1 testTargetRunner:(id)arg2 didStartTestWithIdentifier:(id)arg3 withRawOutput:(id)arg4;
 - (void)worker:(id)arg1 testTargetRunner:(id)arg2 testSuiteDidFinishWithRunCount:(unsigned long long)arg3 skipCount:(unsigned long long)arg4 failureCount:(unsigned long long)arg5 unexpectedFailureCount:(unsigned long long)arg6 testDuration:(double)arg7 totalDuration:(double)arg8 rawOutput:(id)arg9;
 - (void)worker:(id)arg1 testTargetRunner:(id)arg2 testSuite:(id)arg3 willFinishAt:(id)arg4 rawOutput:(id)arg5;
@@ -51,7 +49,7 @@
 - (void)worker:(id)arg1 testTargetRunner:(id)arg2 willFinishWithSuccess:(BOOL)arg3 withError:(id)arg4;
 - (void)worker:(id)arg1 testTargetRunner:(id)arg2 didLaunchWithDiagnosticLogPath:(id)arg3;
 - (void)addSectionIfNecessaryForWorker:(id)arg1 diagnosticLogPath:(id)arg2;
-- (void)testTargetRunner:(id)arg1 didEndWithCancellation:(BOOL)arg2;
+- (void)testTargetRunner:(id)arg1 didEndWithError:(id)arg2 wasCanceled:(BOOL)arg3;
 - (void)testTargetRunnerDidStart:(id)arg1;
 - (id)initWithActivityLogSection:(id)arg1 testPlanName:(id)arg2 delegate:(id)arg3;
 

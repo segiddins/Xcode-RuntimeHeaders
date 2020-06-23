@@ -9,6 +9,7 @@
 #import <DVTFoundation/DVTAccountBasedSession-Protocol.h>
 
 @class DVTDeveloperAccount, DVTDeveloperAccountSession, DVTDispatchLock, DVTLogAspect, NSData, NSNumber, NSString;
+@protocol DVTDeveloperPortalDefaultsProtocol;
 
 @interface DVTServicesAccountBasedSession : NSObject <DVTAccountBasedSession>
 {
@@ -18,6 +19,7 @@
     DVTLogAspect *_backingLogAspect;
     DVTDeveloperAccount *_account;
     long long _executionContext;
+    id <DVTDeveloperPortalDefaultsProtocol> _defaults;
     NSString *_portalSessionID;
     DVTLogAspect *_logAspect;
     DVTDeveloperAccountSession *_accountSession;
@@ -30,6 +32,7 @@
 - (void).cxx_destruct;
 @property(retain, nonatomic) DVTDeveloperAccountSession *accountSession; // @synthesize accountSession=_accountSession;
 @property(retain, nonatomic) DVTLogAspect *logAspect; // @synthesize logAspect=_logAspect;
+@property(readonly, nonatomic) id <DVTDeveloperPortalDefaultsProtocol> defaults; // @synthesize defaults=_defaults;
 @property(readonly) long long executionContext; // @synthesize executionContext=_executionContext;
 @property(readonly) DVTDeveloperAccount *account; // @synthesize account=_account;
 @property(readonly, copy) NSString *description;

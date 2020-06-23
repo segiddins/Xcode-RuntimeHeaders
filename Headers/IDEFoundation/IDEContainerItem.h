@@ -26,6 +26,8 @@
 }
 
 + (id)keyPathsForValuesAffectingExpectedFilePath;
++ (void)postProgressUpdateForItem:(id)arg1;
++ (id)observeProgressUpdatesForContainer:(id)arg1 observer:(CDUnknownBlockType)arg2;
 + (id)keyPathsForValuesAffectingWrapsLines;
 + (id)keyPathsForValuesAffectingIndentWidth;
 + (id)keyPathsForValuesAffectingTabWidth;
@@ -51,6 +53,7 @@
 - (BOOL)_getPath:(id *)arg1 forStrategies:(id)arg2 absolutePath:(id)arg3;
 - (id)_absolutePath;
 - (id)resolutionContextForStrategies:(id)arg1;
+@property(readonly) NSString *progressDescription;
 @property(readonly) long long progress; // @dynamic progress;
 - (id)issueLog;
 @property(readonly) unsigned long long aggregateSourceControlConflictStatus;

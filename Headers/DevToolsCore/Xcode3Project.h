@@ -178,6 +178,7 @@
 @property(readonly) DVTStackBacktrace *invalidationBacktrace;
 @property(readonly, nonatomic) DVTModelObjectGraph *objectGraph;
 @property(readonly) Class superclass;
+@property(readonly) BOOL supportsSourceFolders;
 @property(readonly, nonatomic, getter=isValid) BOOL valid;
 
 @end

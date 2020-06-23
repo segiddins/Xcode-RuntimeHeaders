@@ -36,6 +36,7 @@
 - (NSString *)collectionPropertyAttributesForSourceLanguage:(unsigned long long)arg1 objectGroupItem:(IDEIntentBuilderObjectGroupItem *)arg2;
 - (NSString *)propertyAttributesForSourceLanguage:(unsigned long long)arg1 objectGroupItem:(IDEIntentBuilderObjectGroupItem *)arg2;
 - (NSString *)collectionTypeNameForSourceLanguage:(unsigned long long)arg1 objectGroupItem:(IDEIntentBuilderObjectGroupItem *)arg2;
+- (NSString *)referenceTypeNameForSourceLanguage:(unsigned long long)arg1 objectGroupItem:(IDEIntentBuilderObjectGroupItem *)arg2;
 - (NSString *)typeNameForSourceLanguage:(unsigned long long)arg1 objectGroupItem:(IDEIntentBuilderObjectGroupItem *)arg2;
 
 @optional

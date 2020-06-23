@@ -20,6 +20,7 @@
 @property(retain, nonatomic) NSString *navigator; // @synthesize navigator=_navigator;
 - (int)alertPropertyListVersion;
 - (void)runForEvent:(id)arg1 inWorkspace:(id)arg2 context:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;
+- (void)switchToNavigatorInWorkspaceTabController:(id)arg1;
 - (id)initWithPropertyList:(id)arg1;
 - (id)propertyList;
 - (id)valuesForProperty:(id)arg1;

@@ -14,12 +14,12 @@
     DTKPKDebugCodeSet *_codeSet;
 }
 
-+ (int)kDebugCallstacksEnable:(BOOL)arg1;
 - (void).cxx_destruct;
 @property(readonly, retain, nonatomic) DTKPKDebugCodeSet *codeSet; // @synthesize codeSet=_codeSet;
 @property(nonatomic) int filterMode; // @synthesize filterMode=_filterMode;
 - (int)stop:(id *)arg1;
 - (int)start:(id *)arg1;
+- (void)enableDebugID:(unsigned int)arg1;
 - (void)enableClass:(unsigned char)arg1 subclass:(unsigned char)arg2;
 - (void)enableClass:(unsigned char)arg1;
 - (void)addCodeSet:(id)arg1;

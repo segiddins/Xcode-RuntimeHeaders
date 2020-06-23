@@ -11,16 +11,16 @@
 @interface _IDETestReportAttachmentCellView : NSTableCellView
 {
     NSButton *_quickLookButton;
+    NSButton *_assistantButton;
     NSProgressIndicator *_loadingProgress;
 }
 
 - (void).cxx_destruct;
-@property __weak NSProgressIndicator *loadingProgress; // @synthesize loadingProgress=_loadingProgress;
-@property __weak NSButton *quickLookButton; // @synthesize quickLookButton=_quickLookButton;
+@property(retain) NSProgressIndicator *loadingProgress; // @synthesize loadingProgress=_loadingProgress;
+@property(retain) NSButton *assistantButton; // @synthesize assistantButton=_assistantButton;
+@property(retain) NSButton *quickLookButton; // @synthesize quickLookButton=_quickLookButton;
 - (void)stopLoading;
 - (void)startLoading;
-- (void)setBackgroundStyle:(long long)arg1;
-- (void)awakeFromNib;
 
 @end
 

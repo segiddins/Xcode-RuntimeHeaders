@@ -59,6 +59,8 @@
 @property long long constraintStatus; // @synthesize constraintStatus=_constraintStatus;
 @property(readonly, nonatomic) NSArray *proposedChanges; // @synthesize proposedChanges=_proposedChanges;
 - (void)primitiveInvalidate;
+- (void)resizeConstraints;
+- (void)deleteConstraints;
 - (id)initWithView:(id)arg1 document:(id)arg2 warningType:(long long)arg3;
 - (id)initWithView:(id)arg1 document:(id)arg2;
 - (id)initWithConstraint:(id)arg1 document:(id)arg2;

@@ -21,9 +21,6 @@
     NSArray *nonWhiteSpaceSegmentSizes;
     NSMutableArray *leverageStatusForNonWhiteSpaceSegment;
     unsigned long long segmentUnit;
-    id reserved1;
-    id reserved2;
-    id reserved3;
 }
 
 + (id)whitespaceCharacterSet;

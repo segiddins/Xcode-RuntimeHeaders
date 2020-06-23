@@ -46,9 +46,5 @@
 - (id)initWithTransUnits:(id)arg1 fromInternalGlossary:(id)arg2 asIfAtPath:(id)arg3 configFile:(id)arg4 error:(id *)arg5;
 - (id)initWithContentsOfFile:(id)arg1 configFile:(id)arg2 locale:(id)arg3 transformationLocale:(id)arg4 error:(id *)arg5;
 
-// Remaining properties
-@property(retain) NSString *filePath;
-@property(retain) NSString *locale;
-
 @end
 

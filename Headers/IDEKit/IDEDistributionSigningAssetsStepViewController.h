@@ -11,7 +11,7 @@
     IDEDistributionStepViewController *_actualViewController;
 }
 
-+ (BOOL)skipStepForContext:(id)arg1 assistantDirection:(int)arg2;
++ (BOOL)skipStepForContext:(id)arg1 assistantDirection:(long long)arg2;
 + (id)keyPathsForValuesAffectingAdditionalActionTitle;
 + (id)keyPathsForValuesAffectingWantsPreviousAction;
 + (id)keyPathsForValuesAffectingCanGoPrevious;

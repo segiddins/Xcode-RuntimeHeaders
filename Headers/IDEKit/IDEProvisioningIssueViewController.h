@@ -8,7 +8,7 @@
 
 #import <IDEKit/IDEProvisioningIssueSliceViewDelegate-Protocol.h>
 
-@class DVTStackView_AppKitAutolayout, DVTWrapperView, IDEProvisioningIssue, IDEProvisioningSliceConfiguration, NSImageView;
+@class DVTObservingToken, DVTStackView_AppKitAutolayout, DVTWrapperView, IDEProvisioningIssue, IDEProvisioningSliceConfiguration, NSImageView;
 
 @interface IDEProvisioningIssueViewController : IDEViewController <IDEProvisioningIssueSliceViewDelegate>
 {
@@ -17,9 +17,11 @@
     DVTStackView_AppKitAutolayout *_issuesStackView;
     DVTWrapperView *_wrapperView;
     IDEProvisioningSliceConfiguration *_configuration;
+    DVTObservingToken *_runDestinationObserver;
 }
 
 - (void).cxx_destruct;
+@property(retain, nonatomic) DVTObservingToken *runDestinationObserver; // @synthesize runDestinationObserver=_runDestinationObserver;
 @property(retain, nonatomic) IDEProvisioningSliceConfiguration *configuration; // @synthesize configuration=_configuration;
 @property(retain) DVTWrapperView *wrapperView; // @synthesize wrapperView=_wrapperView;
 @property(retain) DVTStackView_AppKitAutolayout *issuesStackView; // @synthesize issuesStackView=_issuesStackView;
@@ -28,7 +30,9 @@
 - (void)primitiveInvalidate;
 - (void)didSelectIssueActionFromProvisioningIssuesSliceView:(id)arg1;
 - (void)didSelectSubtitleActionFromProvisioningIssueSliceView:(id)arg1;
+- (id)statusImageForSelectedRunDestination:(id)arg1;
 - (void)viewDidLoad;
+- (void)configureStatusImageView;
 - (id)initWithIssue:(id)arg1 configuration:(id)arg2;
 
 @end

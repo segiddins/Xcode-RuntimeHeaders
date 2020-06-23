@@ -6,13 +6,10 @@
 
 #import <GPUDebugger/_TtC11GPUDebugger36GPUTraceShaderProfilerLegendCellView.h>
 
-#import <GPUDebugger/NSTableViewDataSource-Protocol.h>
-#import <GPUDebugger/NSTableViewDelegate-Protocol.h>
-
 @class MISSING_TYPE, NSTableView;
 
 __attribute__((visibility("hidden")))
-@interface _TtC11GPUDebugger38GPUTraceShaderProfilerDetailedCellView : _TtC11GPUDebugger36GPUTraceShaderProfilerLegendCellView <NSTableViewDataSource, NSTableViewDelegate>
+@interface _TtC11GPUDebugger38GPUTraceShaderProfilerDetailedCellView : _TtC11GPUDebugger36GPUTraceShaderProfilerLegendCellView
 {
     MISSING_TYPE *detailTableView;
     MISSING_TYPE *opcodeType;

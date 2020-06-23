@@ -12,7 +12,7 @@
 
 + (id)disambiguationAdditionsForDisambiguationInfos:(id)arg1;
 + (id)disambiguatedRunDestinationsWithNameAdditionsForRunDestinations:(id)arg1;
-+ (id)disambiguatedRunDestinationsWithNameAdditionForRunDestinations:(id)arg1 scheme:(id)arg2;
++ (id)disambiguatedRunDestinationsWithNameAdditionForRunDestinations:(id)arg1 scheme:(id)arg2 runDestinationManager:(id)arg3;
 
 @end
 

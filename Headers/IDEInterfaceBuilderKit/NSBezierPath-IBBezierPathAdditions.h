@@ -21,6 +21,7 @@
 + (id)bezierPathWithDashedRoundedRect:(struct CGRect)arg1 andRadius:(double)arg2;
 + (id)bezierPathWithRoundedRect:(struct CGRect)arg1 topLeftRadius:(double)arg2 topRightRadius:(double)arg3 bottomRightRadius:(double)arg4 bottomLeftRadius:(double)arg5 flipped:(BOOL)arg6;
 + (id)bezierPathWithRoundedRect:(struct CGRect)arg1 andRadius:(double)arg2;
++ (id)bezierPathWithLineFromPoint:(struct CGPoint)arg1 toPoint:(struct CGPoint)arg2 width:(double)arg3;
 + (id)bezierPathWithLineFromPoint:(struct CGPoint)arg1 toPoint:(struct CGPoint)arg2;
 + (id)arrowPathWithArmHeight:(double)arg1 inRect:(struct CGRect)arg2;
 + (id)arrowPathInRect:(struct CGRect)arg1;

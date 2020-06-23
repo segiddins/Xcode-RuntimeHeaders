@@ -59,7 +59,7 @@
 @property BOOL disableEvaluation; // @synthesize disableEvaluation=_disableEvaluation;
 @property(copy, nonatomic) NSArray *statusErrors; // @synthesize statusErrors=_statusErrors;
 @property(retain, nonatomic) IDEProvisionableStatusEvaluator *statusEvaluator; // @synthesize statusEvaluator=_statusEvaluator;
-@property(retain) id <IDEProvisionable> provisionable; // @synthesize provisionable=_provisionable;
+@property(retain, nonatomic) id <IDEProvisionable> provisionable; // @synthesize provisionable=_provisionable;
 @property __weak id <IDEProvisioningTeamsDataSourceDelegate> delegate; // @synthesize delegate;
 @property(readonly) BOOL requiresImmediateUserActionResolution;
 - (void)_performRepairsForConfigurations:(id)arg1 retryExistingRepairs:(BOOL)arg2 completionBlock:(CDUnknownBlockType)arg3;

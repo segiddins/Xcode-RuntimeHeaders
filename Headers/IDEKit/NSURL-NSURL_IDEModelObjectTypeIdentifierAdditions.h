@@ -17,7 +17,7 @@
 @property(readonly, nonatomic) NSString *navigableItem_name;
 @property(readonly, nonatomic) NSImage *navigableItem_image;
 - (BOOL)ide_isSameDocumentAsURL:(id)arg1;
-- (BOOL)_isSameMemoryGraphAsURL:(id)arg1;
+- (BOOL)_ide_isSameMemoryGraphAsURL:(id)arg1;
 - (BOOL)_hasSameModuleConfigAsModuleURL:(id)arg1;
 
 // Remaining properties

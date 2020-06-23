@@ -16,11 +16,6 @@
 + (long long)nodeTypesCount;
 + (id)nodeTypeNameForId:(short)arg1;
 + (short)registerNodeTypeNamed:(id)arg1;
-+ (short)nextTypeId;
-+ (void)addTypeName:(id)arg1;
-+ (id)typeNameForTypeId:(short)arg1;
-+ (void)setTypeIdNumber:(id)arg1 forTypeName:(id)arg2;
-+ (id)typeIdNumberForTypeName:(id)arg1;
 + (void)initialize;
 
 @end

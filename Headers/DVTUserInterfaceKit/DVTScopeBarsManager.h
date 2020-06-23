@@ -31,8 +31,8 @@
 @property(nonatomic) unsigned long long borderSides; // @synthesize borderSides=_borderSides;
 @property(readonly) NSArray *scopeBarControllers; // @synthesize scopeBarControllers=_scopeBarControllers;
 - (void)animationDidEnd:(id)arg1;
-- (void)_adjustViewsForOriginYOffset:(double)arg1 heightOffset:(double)arg2 animate:(BOOL)arg3 extraAnimations:(id)arg4 completionBlock:(CDUnknownBlockType)arg5;
-- (id)viewAnimationsForOriginYOffset:(double)arg1 heightOffset:(double)arg2 extraAnimations:(id)arg3 progressRemaining:(float)arg4;
+- (void)_adjustViewsForOriginYOffset:(double)arg1 heightOffset:(double)arg2 hostTopLayoutInset:(double)arg3 animate:(BOOL)arg4 extraAnimations:(id)arg5 completionBlock:(CDUnknownBlockType)arg6;
+- (id)viewAnimationsForOriginYOffset:(double)arg1 heightOffset:(double)arg2 hostTopLayoutInset:(double)arg3 extraAnimations:(id)arg4 progressRemaining:(float)arg5;
 - (BOOL)dismissLastScopeBar;
 - (void)removeAllScopeBarsAnimate:(BOOL)arg1;
 - (void)removeScopeBar:(id)arg1 animate:(BOOL)arg2;

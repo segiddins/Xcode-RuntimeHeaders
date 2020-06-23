@@ -26,8 +26,5 @@
 - (id)initWithBase64String:(id)arg1 locale:(id)arg2 pathExtension:(id)arg3 error:(id *)arg4;
 - (id)initWithContentsOfFile:(id)arg1 locale:(id)arg2 error:(id *)arg3;
 
-// Remaining properties
-@property(retain) NSString *locale;
-
 @end
 

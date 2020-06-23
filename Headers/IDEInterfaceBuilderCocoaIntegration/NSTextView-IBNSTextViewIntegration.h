@@ -24,6 +24,7 @@
 - (id)ibDefaultTypingAttributes;
 - (BOOL)ibShouldPropagateFramesDuringFrameDecision;
 - (BOOL)ibShouldUseConstraintsInsteadOfAutoresizingWhenChildOfClipView;
+@property(nonatomic) long long ibShadowedContentType;
 - (void)ibPrepareCocoaDocumentForCompiling:(id)arg1 withContext:(id)arg2;
 - (void)setIbInspectedAllowsOnlyRomanCharacters:(BOOL)arg1;
 - (BOOL)ibInspectedAllowsOnlyRomanCharacters;

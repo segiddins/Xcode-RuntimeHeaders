@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
     MISSING_TYPE *editorView;
     MISSING_TYPE *sourceFileWasDependencyAnalyzedNotificationObserverToken;
     MISSING_TYPE *prebuildDoneNotificationObserverToken;
+    MISSING_TYPE *modelPackageInfo;
     MISSING_TYPE *handlePossibleGenerationUpdate;
 }
 

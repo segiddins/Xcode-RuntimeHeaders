@@ -6,7 +6,9 @@
 
 #import <RCShared/_TtC8RCShared13RCManipulator.h>
 
-@interface _TtC8RCShared13RCManipulator (RCShared)
+#import <RCShared/NSGestureRecognizerDelegate-Protocol.h>
+
+@interface _TtC8RCShared13RCManipulator (RCShared) <NSGestureRecognizerDelegate>
 - (void)onPinch:(id)arg1;
 - (void)onPanTwoFingers:(id)arg1;
 - (void)onRotate:(id)arg1;
@@ -14,5 +16,9 @@
 - (void)onLongPress:(id)arg1;
 - (void)onDoubleTap:(id)arg1;
 - (void)onSingleTap:(id)arg1;
+- (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
+- (BOOL)gestureRecognizer:(id)arg1 shouldRequireFailureOfGestureRecognizer:(id)arg2;
+- (BOOL)gestureRecognizerShouldBegin:(id)arg1;
+- (BOOL)gestureRecognizer:(id)arg1 shouldAttemptToRecognizeWithEvent:(id)arg2;
 @end
 

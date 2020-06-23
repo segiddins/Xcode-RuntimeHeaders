@@ -10,14 +10,14 @@
 {
 }
 
-+ (id)resultWithCandidate:(struct IDEOpenQuicklyQueryCandidate *)arg1 query:(id)arg2;
++ (id)resultWithCandidate:(struct DVTFuzzyMatchCandidate *)arg1 precision:(long long)arg2 query:(id)arg3;
 - (BOOL)isFromPoject;
 - (id)sourceSDKFilePath;
 - (id)location;
 - (BOOL)representsSameResult:(id)arg1;
 - (BOOL)representsSameResultAsSymbolIntermediateResult:(id)arg1;
 - (unsigned long long)hashOfResultIdentity;
-- (id)updatedResultForQuery:(id)arg1;
+- (id)updatedResultForQuery:(id)arg1 precision:(long long)arg2;
 
 @end
 

@@ -29,6 +29,7 @@
 - (void)addDropIndicators:(id)arg1;
 - (void)setDropIndicators:(id)arg1;
 - (id)dropIndicators;
+- (void)setHighlightedDragDestinationAssetRepIdentifiers:(id)arg1;
 - (BOOL)getAssetIdentifier:(id *)arg1 andDropLocation:(long long *)arg2 nearestPoint:(struct CGPoint)arg3 allowingDropOnto:(BOOL)arg4;
 - (id)delegate;
 - (id)initWithFrame:(struct CGRect)arg1;

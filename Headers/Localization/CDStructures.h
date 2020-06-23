@@ -10,6 +10,12 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 
 #pragma mark Named Structures
 
+struct _LOCSemanticVersionNumber {
+    long long _field1;
+    long long _field2;
+    long long _field3;
+};
+
 struct _NSRange {
     unsigned long long location;
     unsigned long long length;

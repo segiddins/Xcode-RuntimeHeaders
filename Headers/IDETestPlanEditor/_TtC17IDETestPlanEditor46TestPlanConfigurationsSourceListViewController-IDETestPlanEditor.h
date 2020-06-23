@@ -6,13 +6,29 @@
 
 #import <IDETestPlanEditor/_TtC17IDETestPlanEditor46TestPlanConfigurationsSourceListViewController.h>
 
+#import <IDETestPlanEditor/DVTTableViewDelegate-Protocol.h>
+#import <IDETestPlanEditor/NSMenuDelegate-Protocol.h>
 #import <IDETestPlanEditor/NSTableViewDataSource-Protocol.h>
+#import <IDETestPlanEditor/NSTextFieldDelegate-Protocol.h>
 
-@interface _TtC17IDETestPlanEditor46TestPlanConfigurationsSourceListViewController (IDETestPlanEditor) <NSTableViewDataSource>
+@interface _TtC17IDETestPlanEditor46TestPlanConfigurationsSourceListViewController (IDETestPlanEditor) <NSTableViewDataSource, DVTTableViewDelegate, NSMenuDelegate, NSTextFieldDelegate>
++ (long long)version;
++ (void)configureStateSavingObjectPersistenceByName:(id)arg1;
 - (BOOL)tableView:(id)arg1 acceptDrop:(id)arg2 row:(long long)arg3 dropOperation:(unsigned long long)arg4;
 - (unsigned long long)tableView:(id)arg1 validateDrop:(id)arg2 proposedRow:(long long)arg3 proposedDropOperation:(unsigned long long)arg4;
 - (BOOL)tableView:(id)arg1 writeRowsWithIndexes:(id)arg2 toPasteboard:(id)arg3;
 - (double)tableView:(id)arg1 heightOfRow:(long long)arg2;
 - (long long)numberOfRowsInTableView:(id)arg1;
+- (BOOL)tableView:(id)arg1 doCommandBySelector:(SEL)arg2;
+- (void)tableViewSelectionDidChange:(id)arg1;
+- (id)tableView:(id)arg1 rowViewForRow:(long long)arg2;
+- (void)duplicateSelectedConfigurations;
+- (void)disableChosenConfigurations;
+- (void)enableChosenConfigurations;
+- (void)menuNeedsUpdate:(id)arg1;
+- (BOOL)control:(id)arg1 textShouldEndEditing:(id)arg2;
+- (void)controlTextDidEndEditing:(id)arg1;
+- (void)commitStateToDictionary:(id)arg1;
+- (void)revertStateWithDictionary:(id)arg1;
 @end
 

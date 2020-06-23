@@ -6,7 +6,10 @@
 
 #import <GPUDebugger/_TtC11GPUDebugger23GPUTraceSourceSubEditor.h>
 
-@interface _TtC11GPUDebugger23GPUTraceSourceSubEditor (GPUDebugger)
+#import <GPUDebugger/GPUTraceShaderDataProviderDelegate-Protocol.h>
+#import <GPUDebugger/IDEJumpToLineDestination-Protocol.h>
+
+@interface _TtC11GPUDebugger23GPUTraceSourceSubEditor (GPUDebugger) <GPUTraceShaderDataProviderDelegate, IDEJumpToLineDestination>
 - (BOOL)validateMenuItem:(id)arg1;
 - (void)GPUDebugger_exportShader:(id)arg1;
 - (void)ide_saveDocumentAs:(id)arg1;
@@ -18,5 +21,12 @@
 - (void)editThemes:(id)arg1;
 - (void)changeTheme:(id)arg1;
 - (void)menuNeedsUpdate:(id)arg1;
+- (void)workspaceIndexDidUpdate;
+- (void)compilerAnnotationDidUpdate;
+- (void)annotationDidUpdate;
+- (void)sourceDidUpdate;
+- (void)viewISA:(id)arg1;
+- (id)initialQueryForJumpToLine;
+- (id)documentLocationForJumpToLineQuery:(id)arg1;
 @end
 

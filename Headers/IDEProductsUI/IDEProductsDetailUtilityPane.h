@@ -25,7 +25,6 @@
     DVTObservingToken *_detailsObservingToken;
 }
 
-+ (double)heightForString:(id)arg1 font:(id)arg2 width:(double)arg3 lineBreakMode:(unsigned long long)arg4;
 - (void).cxx_destruct;
 @property(retain) DVTObservingToken *detailsObservingToken; // @synthesize detailsObservingToken=_detailsObservingToken;
 @property(retain) DVTNotificationToken *frameChangedObserver; // @synthesize frameChangedObserver=_frameChangedObserver;
@@ -38,12 +37,12 @@
 @property(readonly) NSString *detailsKeyPath; // @synthesize detailsKeyPath=_detailsKeyPath;
 @property(readonly) NSString *detailsTitleKeyPath; // @synthesize detailsTitleKeyPath=_detailsTitleKeyPath;
 - (id)tableView:(id)arg1 viewForTableColumn:(id)arg2 row:(long long)arg3;
-- (double)tableView:(id)arg1 heightOfRow:(long long)arg2;
 - (id)tableView:(id)arg1 objectValueForTableColumn:(id)arg2 row:(long long)arg3;
 - (long long)numberOfRowsInTableView:(id)arg1;
 - (void)primitiveInvalidate;
 - (id)details;
-- (void)resizeTableView;
+- (void)viewDidLayout;
+- (void)calculateSizeForContent;
 - (void)viewDidLoad;
 - (id)initWithInspectable:(id)arg1 detailsKeyPath:(id)arg2 detailsTitleKeyPath:(id)arg3;
 - (id)initWithInspectable:(id)arg1;

@@ -8,6 +8,12 @@
 
 @interface NSView (DVTTrimSliderUtilities)
 - (double)dvt_roundedToPixelScale:(double)arg1;
+- (id)dvt_activeStateObservers;
+- (void)dvt_unregisterActiveStateObservationWithToken:(id)arg1;
+- (id)dvt_registerActiveStateObservationForNearestAncestor;
+- (void)dvt_setupOrTearDownActiveStateObservationWithToken:(id *)arg1;
+- (void)dvt_pushActiveStateToDescendantObservers:(BOOL)arg1;
+- (void)dvt_pushActiveStateToDescendantObservers;
 - (void)_dvt_setNeedsDisplayRecursively;
 @end
 

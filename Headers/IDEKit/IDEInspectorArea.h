@@ -17,7 +17,6 @@
 - (void).cxx_destruct;
 - (BOOL)delegateFirstResponder;
 - (id)_descendantsAcceptingKeyView:(id)arg1;
-- (void)loadView;
 - (id)placeholderStringForInputNavigableItems:(id)arg1 derivedItems:(id)arg2 inCategory:(id)arg3;
 - (void)invalidateContentView:(id)arg1;
 - (void)pushContentNavigables:(id)arg1 toInstalledSlices:(id)arg2;
@@ -37,7 +36,6 @@
 - (id)slicesForNavigableItems:(id)arg1 inCategory:(id)arg2 withWorkspaceDocument:(id)arg3;
 - (id)navigableItemsForInputNavigableItems:(id)arg1 inCategory:(id)arg2;
 - (id)categoryControllerForCategory:(id)arg1;
-- (void)viewDidLoad;
 - (void)viewDidInstall;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 

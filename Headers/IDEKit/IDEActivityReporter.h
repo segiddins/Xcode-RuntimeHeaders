@@ -23,8 +23,8 @@
 @property(readonly) IDEWorkspace *workspace; // @synthesize workspace=_workspace;
 @property(readonly) DVTExtension *extension; // @synthesize extension=_extension;
 - (void)primitiveInvalidate;
-- (id)newActivityReportWithTitle:(id)arg1 options:(int)arg2;
-- (id)newActivityReportWithTitle:(id)arg1 options:(int)arg2 isUserVisible:(BOOL)arg3 fileIOPriority:(unsigned long long)arg4 fileIOCoordinatorBlock:(CDUnknownBlockType)arg5;
+- (id)newActivityReportWithTitle:(id)arg1 options:(unsigned int)arg2;
+- (id)newActivityReportWithTitle:(id)arg1 options:(unsigned int)arg2 isUserVisible:(BOOL)arg3 fileIOPriority:(unsigned long long)arg4 fileIOCoordinatorBlock:(CDUnknownBlockType)arg5;
 - (id)initWithWorkspace:(id)arg1;
 
 // Remaining properties

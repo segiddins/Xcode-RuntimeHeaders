@@ -8,29 +8,30 @@
 
 #import <IDEKit/IDETestsInTestableObserver-Protocol.h>
 
-@class IDETest, NSButton, NSImageView, NSString;
+@class IDETest, IDETestReportViewController, NSButton, NSImageView, NSString;
 @protocol IDETestReport_Common;
 
 @interface _IDETestReportsTestTableCellView : NSTableCellView <IDETestsInTestableObserver>
 {
     IDETest *_jumpToTest;
-    BOOL _selected;
     NSImageView *_statusImageView;
     NSButton *_jumpButton;
+    NSButton *_assistantButton;
     id <IDETestReport_Common> _item;
+    IDETestReportViewController *_reportViewController;
 }
 
 - (void).cxx_destruct;
+@property __weak IDETestReportViewController *reportViewController; // @synthesize reportViewController=_reportViewController;
 @property(retain) id <IDETestReport_Common> item; // @synthesize item=_item;
-@property __weak NSButton *jumpButton; // @synthesize jumpButton=_jumpButton;
-@property __weak NSImageView *statusImageView; // @synthesize statusImageView=_statusImageView;
-- (void)resizeSubviewsWithOldSize:(struct CGSize)arg1;
-- (void)viewDidMoveToSuperview;
-- (void)fitViews;
+@property(retain) NSButton *assistantButton; // @synthesize assistantButton=_assistantButton;
+@property(retain) NSButton *jumpButton; // @synthesize jumpButton=_jumpButton;
+@property(retain) NSImageView *statusImageView; // @synthesize statusImageView=_statusImageView;
 - (void)testsChanged:(id)arg1;
 - (void)allTestablesChanged;
 - (void)setBackgroundStyle:(long long)arg1;
 - (void)testablesChanged:(id)arg1;
+- (void)showAssistant:(id)arg1;
 - (void)jumpToTestSourceCode:(id)arg1;
 
 // Remaining properties

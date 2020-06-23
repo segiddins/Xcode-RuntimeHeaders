@@ -8,7 +8,7 @@
 
 #import <DebuggerFoundation/DVTInvalidation-Protocol.h>
 
-@class DBGApplicationObject, DBGDataCoordinator, DBGSnapshotManagerXcode, DBGViewDebuggerAssetManager, DBGViewObject, DVTStackBacktrace, DVTTimeSlicedMainThreadWorkQueue, IDEDebugSession, NSArray, NSMapTable, NSString, NSURL;
+@class DBGApplicationObject, DBGDataCoordinator, DBGSnapshotManagerXcode, DBGViewDebuggerAssetManager, DBGViewObject, DVTStackBacktrace, DVTTimeSlicedMainThreadWorkQueue, IDEDebugSession, NSArray, NSMapTable, NSString;
 @protocol DBGViewDescriber;
 
 @interface DBGViewDebugger : NSObject <DVTInvalidation>
@@ -19,7 +19,6 @@
     int _loadedState;
     IDEDebugSession *_debugSession;
     id <DBGViewDescriber> _viewDescriber;
-    NSURL *_url;
     DBGSnapshotManagerXcode *_snapshotManager;
     DBGDataCoordinator *_dataCoordinator;
     DBGViewDebuggerAssetManager *_assetManager;
@@ -28,7 +27,6 @@
 }
 
 + (Class)dataSourceConnectionClassForPlatform:(id)arg1;
-+ (Class)dataCoordinatorClassForPlatform:(id)arg1;
 + (id)fetchedDocumentForViewDebuggerObjectWithID:(id)arg1 inLaunchSessionWithReference:(id)arg2;
 + (Class)viewDescriberClassForLaunchSession:(id)arg1;
 + (void)initialize;
@@ -39,12 +37,12 @@
 @property(readonly) DBGViewDebuggerAssetManager *assetManager; // @synthesize assetManager=_assetManager;
 @property(readonly) __weak DBGDataCoordinator *dataCoordinator; // @synthesize dataCoordinator=_dataCoordinator;
 @property(readonly) DBGSnapshotManagerXcode *snapshotManager; // @synthesize snapshotManager=_snapshotManager;
-@property(readonly) NSURL *url; // @synthesize url=_url;
 @property(readonly) id <DBGViewDescriber> viewDescriber; // @synthesize viewDescriber=_viewDescriber;
 @property(readonly, nonatomic) DBGApplicationObject *application; // @synthesize application=_application;
 @property(readonly) BOOL usesDebugHierarchyInfrastructure; // @synthesize usesDebugHierarchyInfrastructure=_usesDebugHierarchyInfrastructure;
 @property(retain) IDEDebugSession *debugSession; // @synthesize debugSession=_debugSession;
 - (void)primitiveInvalidate;
+- (BOOL)_shouldLogCaptureFailureDetails;
 - (id)_environmentInfoToReportCaptureFailure;
 - (id)_dataSourceConnectionForPlatform:(id)arg1 debugSession:(id)arg2;
 @property(readonly, nonatomic) NSArray *rootObjects;

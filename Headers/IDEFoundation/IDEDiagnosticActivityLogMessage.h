@@ -40,6 +40,7 @@
 - (BOOL)_isEqualToDiagnosticItem:(id)arg1 disregardingTimestamp:(BOOL)arg2;
 - (BOOL)_array:(id)arg1 isEqualToArray:(id)arg2;
 - (id)init;
+- (id)initWithSeverity:(long long)arg1 title:(id)arg2 location:(id)arg3 fixItItems:(id)arg4;
 - (id)initWithSeverity:(long long)arg1 title:(id)arg2 location:(id)arg3;
 
 @end

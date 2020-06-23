@@ -29,6 +29,7 @@
 @property(nonatomic) unsigned long long transitionOptions; // @synthesize transitionOptions=_transitionOptions;
 @property(nonatomic) long long tabStyle; // @synthesize tabStyle=_tabStyle;
 @property(nonatomic) long long selectedTabViewItemIndex; // @synthesize selectedTabViewItemIndex=_selectedTabViewItemIndex;
+- (void)setRelationshipSegueTrackingItems:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)init;
@@ -40,14 +41,17 @@
 - (id)ibInspectedTabPrototype;
 - (void)ibPopulateChildRelationOrder:(id)arg1;
 - (void)ibMakeDefaultView;
+- (BOOL)ibOwnsWindowToolbar;
 - (id)ibTitleForItemAtIndex:(long long)arg1;
 - (void)ibSetTitle:(id)arg1 forTabViewItem:(id)arg2;
 - (id)ibTitleForTabViewItem:(id)arg1;
 - (id)ibInspectedTabViewDisplayItems;
+- (unsigned long long)ibRepresentativeTabPosition;
 @property(nonatomic) long long ibInspectedTabStyle;
 - (id)ibSelectedTabViewItem;
 - (void)setIbSelectedTabViewItem:(id)arg1;
 - (struct CGRect)ibRectForChild:(id)arg1 inFrameController:(id)arg2;
+- (BOOL)ibShouldRefreshWindowContentViewControllerForChangeToKeyPath:(id)arg1 ofObject:(id)arg2;
 - (void)ibPopulateIssues:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
 - (id)ibEditorViewWithSuggestedSize:(struct CGSize)arg1 forDocument:(id)arg2;
 - (Class)ibEditorClass;

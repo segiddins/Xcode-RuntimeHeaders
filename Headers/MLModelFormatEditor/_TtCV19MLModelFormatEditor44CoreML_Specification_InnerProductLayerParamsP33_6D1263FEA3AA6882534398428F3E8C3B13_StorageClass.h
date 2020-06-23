@@ -15,6 +15,7 @@
     MISSING_TYPE *_hasBias_p;
     MISSING_TYPE *_weights;
     MISSING_TYPE *_bias;
+    MISSING_TYPE *_int8DynamicQuantize;
 }
 
 @end

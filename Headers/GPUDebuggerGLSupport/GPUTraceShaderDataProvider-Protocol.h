@@ -6,8 +6,8 @@
 
 #import <GPUDebuggerGLSupport/NSObject-Protocol.h>
 
-@class DYShaderAnalyzerResult, GPUTraceShaderDataItem, GPUTraceShaderSampleInfo, IDEEditorDocument, IDEIndex, IDEWorkspaceDocument, NSArray, NSDictionary, NSString;
-@protocol DYPShaderSourceDocument, GPUTraceShaderDataProviderDelegate;
+@class DYShaderAnalyzerResult, GPUTraceShaderDataItem, IDEEditorDocument, IDEIndex, IDEWorkspaceDocument, NSArray, NSDictionary, NSString;
+@protocol DYPShaderSampleInfo, DYPShaderSourceDocument, GPUTraceShaderDataProviderDelegate;
 
 @protocol GPUTraceShaderDataProvider <NSObject>
 @property(readonly, nonatomic) IDEIndex *index;
@@ -15,6 +15,7 @@
 @property(nonatomic) __weak GPUTraceShaderDataItem *dataItem;
 @property(nonatomic) __weak id <DYPShaderSourceDocument> document;
 @property(nonatomic) __weak id <GPUTraceShaderDataProviderDelegate> delegate;
+- (NSString *)irSourceForShaderType:(unsigned int)arg1;
 - (IDEEditorDocument *)retainedEditorDocumentWithWorkspaceDocument:(IDEWorkspaceDocument *)arg1;
 - (void)shaderSourceChanged:(id <DYPShaderSourceDocument>)arg1;
 - (NSString *)alertInfoKey;
@@ -22,7 +23,7 @@
 - (NSArray *)remarks;
 - (double)shaderTimingForShaderType:(unsigned int)arg1;
 - (DYShaderAnalyzerResult *)shaderAnalyzerResultForShaderType:(unsigned int)arg1 baseData:(BOOL)arg2;
-- (GPUTraceShaderSampleInfo *)sampleInfoForShaderType:(unsigned int)arg1 baseData:(BOOL)arg2;
+- (id <DYPShaderSampleInfo>)sampleInfoForShaderType:(unsigned int)arg1 baseData:(BOOL)arg2;
 - (NSArray *)allDiassemblyInfoForShaderType:(unsigned int)arg1 baseData:(BOOL)arg2;
 - (NSDictionary *)perLineSourceInfoDictForShaderType:(unsigned int)arg1 baseData:(BOOL)arg2;
 - (float)shaderBinaryCostForShaderType:(unsigned int)arg1;

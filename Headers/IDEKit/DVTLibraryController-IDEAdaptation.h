@@ -8,6 +8,6 @@
 
 @interface DVTLibraryController (IDEAdaptation)
 - (void)setContentDefiningWorkspaceTabController:(id)arg1;
-- (id)initWithWorkspaceDocument:(id)arg1;
+- (id)initWithWorkspaceDocument:(id)arg1 andLibrary:(id)arg2;
 @end
 

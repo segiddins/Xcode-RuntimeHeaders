@@ -20,10 +20,11 @@
 - (void)primitiveInvalidate;
 - (id)ideModelObjectTypeIdentifier;
 - (id)displayNameForIssueTypeIdentifier:(id)arg1;
-- (id)createBreakpointIfNecessaryIgnoreExisting:(BOOL)arg1;
+- (id)createBreakpointIfNecessary:(id)arg1 ignoreExisting:(BOOL)arg2;
 - (BOOL)canCreateBreakpoint;
 - (unsigned long long)breakpointType;
 - (void)_handleLaunchSessionsChanged:(id)arg1;
+- (id)_categoryFromRuntimeIssueTypeIdentifier:(id)arg1;
 @property(readonly) NSString *issueTypeIdentifier;
 - (id)issueProviderContext;
 - (id)initWithIssueManager:(id)arg1 extension:(id)arg2;

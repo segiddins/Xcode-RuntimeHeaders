@@ -19,5 +19,9 @@
     MISSING_TYPE *$__lazy_storage_$_viewportSpellCheckingContinuation;
 }
 
+- (void)learnSpellingOfSelected:(id)arg1;
+- (void)ignoreSpellingOfSelected:(id)arg1;
+- (void)replaceSelectedWithGuess:(id)arg1;
+
 @end
 

@@ -15,11 +15,11 @@
     MISSING_TYPE *delegate;
 }
 
-+ (BOOL)shouldPresentMenuForTestLocation:(id)arg1 testPlan:(id)arg2 allowSelectingConfiguration:(BOOL)arg3;
++ (BOOL)shouldPresentMenuForTestCollection:(id)arg1 configurations:(id)arg2 allowSelectingConfiguration:(BOOL)arg3;
 - (void).cxx_destruct;
 - (id)init;
 - (void)showPopoverRelativeToFrame:(struct CGRect)arg1 ofView:(id)arg2 preferredEdge:(unsigned long long)arg3 dark:(BOOL)arg4;
-- (id)initWithTestLocation:(id)arg1 testPlan:(id)arg2 allowSelectingConfiguration:(BOOL)arg3;
+- (id)initWithTestCollection:(id)arg1 configurations:(id)arg2 allowSelectingConfiguration:(BOOL)arg3;
 @property(nonatomic) __weak id <_TtP6IDEKit38IDETestingAnnotationActionMenuDelegate_> delegate; // @synthesize delegate;
 
 @end

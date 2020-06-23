@@ -26,6 +26,9 @@
 - (void)Clear;
 - (_Bool)IsValid;
 - (id)initWithSBTarget:(const struct SBTarget *)arg1;
+- (id)FindFirstType:(const char *)arg1;
+- (id)FindSymbols:(const char *)arg1 type:(int)arg2;
+- (id)CreateValue:(const char *)arg1 address:(id)arg2 type:(id)arg3;
 - (id)GetStatistics;
 - (id)FindGlobalFunctions:(const char *)arg1 max_matches:(unsigned int)arg2 match_type:(int)arg3;
 - (id)ResolveLoadAddress:(unsigned long long)arg1;

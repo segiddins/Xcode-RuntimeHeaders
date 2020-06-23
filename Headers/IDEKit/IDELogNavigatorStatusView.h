@@ -14,6 +14,7 @@
 {
     IDEIssueStatusImageView *_statusImageView;
     NSProgressIndicator *_progressIndicator;
+    long long _dvt_rowSizeStyle;
     long long _progressValue;
     id _representedObject;
 }
@@ -23,7 +24,7 @@
 @property(readonly) IDEIssueStatusImageView *statusImageView; // @synthesize statusImageView=_statusImageView;
 @property(nonatomic) __weak id representedObject; // @synthesize representedObject=_representedObject;
 @property(nonatomic) long long progressValue; // @synthesize progressValue=_progressValue;
-@property(nonatomic) long long tableViewRowSizeStyle;
+@property(nonatomic) long long dvt_rowSizeStyle; // @synthesize dvt_rowSizeStyle=_dvt_rowSizeStyle;
 - (void)dvt_positionSubviewsAndSizeSelfAfterSubviewLayout;
 - (void)dvt_configureSubviewsBeforeSubviewLayout;
 @property(readonly) BOOL hasDisplayableStatus;

@@ -9,7 +9,6 @@
 @class NSString, NSURL;
 
 @protocol DYPShaderSourceDocument <NSObject>
-@property(nonatomic, readonly) BOOL isDocumentEdited;
 - (void)saveWithCompletionHandler:(void (^)(NSError *))arg1;
 @property(nonatomic, readonly) NSString *editedSource;
 @property(nonatomic, readonly) NSURL *fileURL;

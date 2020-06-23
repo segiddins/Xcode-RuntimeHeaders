@@ -23,9 +23,10 @@
     MISSING_TYPE *moduleSessionFilePath;
     MISSING_TYPE *targetTaskCounts;
     MISSING_TYPE *targetDependencies;
+    MISSING_TYPE *tasksByTargetCache;
     MISSING_TYPE *capturedBuildInfo;
     MISSING_TYPE *diagnostics;
-    MISSING_TYPE *uncachedDiagnostics;
+    MISSING_TYPE *lockedUncachedDiagnostics;
 }
 
 @end

@@ -4,14 +4,15 @@
 //  Copyright (C) 1997-2019 Steve Nygard.
 //
 
-#import <IDEiOSSupportCore/IDEDeviceRunOperationWorker.h>
+#import <IDEiOSSupportCore/IDEDeviceLaunchRunOperationWorker.h>
 
 #import <IDEiOSSupportCore/DTMISProcessControlServiceAuthorizedAPI-Protocol.h>
-#import <IDEiOSSupportCore/XCDTMobileIS_AppPosixSpawnProcotol-Protocol.h>
+#import <IDEiOSSupportCore/DTProcessControlObserver-Protocol.h>
+#import <IDEiOSSupportCore/ImplementedProcessControlObserverOptionalMethods-Protocol.h>
 
 @class DTXChannel, DVTiOSDevice, NSString;
 
-@interface IDELaunchiPhoneLauncher : IDEDeviceRunOperationWorker <XCDTMobileIS_AppPosixSpawnProcotol, DTMISProcessControlServiceAuthorizedAPI>
+@interface IDELaunchiPhoneLauncher : IDEDeviceLaunchRunOperationWorker <DTProcessControlObserver, ImplementedProcessControlObserverOptionalMethods, DTMISProcessControlServiceAuthorizedAPI>
 {
     DTXChannel *_serviceHubProcessControlChannel;
     DTXChannel *_assetServerChannel;
@@ -35,11 +36,14 @@
 - (void)observeProcessWithPID:(int)arg1;
 - (void)launchProcessWithPath:(id)arg1 bundleIdentifier:(id)arg2 environment:(id)arg3 arguments:(id)arg4 options:(id)arg5;
 - (void)terminate;
+- (void)_continueWithLaunching;
 - (void)_deviceWoke;
+- (void)processWithPID:(id)arg1 terminatedWithExitCode:(id)arg2 orCrashingSignal:(id)arg3;
 - (void)pidDiedCallback:(id)arg1;
 - (id)bundleIDToLaunch;
 - (void)_cancelServiceHubProcessControlChannel;
 - (id)_serviceHubProcessControlChannel;
+- (unsigned long long)_processLauncherKind;
 - (id)_bestPrimaryInstrumentsServer;
 - (void)launchNewAppInstanceForBundleIdentifier:(id)arg1 path:(id)arg2 environment:(id)arg3 arguments:(id)arg4 options:(id)arg5;
 - (void)useExistingAppInstanceForBundleIdentifier:(id)arg1;

@@ -6,7 +6,7 @@
 
 #import <IDEFoundation/DVTBasicDevice-Protocol.h>
 
-@class DVTFilePath, DVTOperation, IDEBuildParameters, IDELaunchSession, IDEOverridingBuildProperties, IDEWorkspace, NSArray, NSDictionary, NSString;
+@class DVTFilePath, DVTOperation, IDEBuildParameters, IDEBuildableContext, IDELaunchSession, IDEOverridingBuildProperties, IDEWorkspace, NSArray, NSDictionary, NSString;
 @protocol IDEAnalysisToolService, IDEBuildable;
 
 @protocol IDEBuildableTargetDevice <DVTBasicDevice>
@@ -18,12 +18,12 @@
 - (BOOL)supportsRunningExecutableAtPath:(DVTFilePath *)arg1 usingArchitecture:(NSString *)arg2 error:(id *)arg3;
 - (BOOL)supportsExecutionForArchitecture:(NSString *)arg1 launchSession:(IDELaunchSession *)arg2 error:(id *)arg3;
 - (IDEOverridingBuildProperties *)deviceSpecificOverridingPropertiesForBuildable:(id <IDEBuildable>)arg1 withBaselineParameters:(IDEBuildParameters *)arg2;
-- (NSArray *)supportedSDKsForBuildable:(id <IDEBuildable>)arg1 buildParameters:(IDEBuildParameters *)arg2 error:(id *)arg3;
-- (NSArray *)supportedArchitecturesForBuildable:(id <IDEBuildable>)arg1 buildParameters:(IDEBuildParameters *)arg2 error:(id *)arg3;
-- (BOOL)shouldPresentDeviceForBuildable:(id <IDEBuildable>)arg1 buildParameters:(IDEBuildParameters *)arg2 error:(id *)arg3;
+- (NSArray *)supportedSDKsForBuildableContext:(IDEBuildableContext *)arg1 buildParameters:(IDEBuildParameters *)arg2 error:(id *)arg3;
+- (NSArray *)supportedArchitecturesForBuildableContext:(IDEBuildableContext *)arg1 buildParameters:(IDEBuildParameters *)arg2 error:(id *)arg3;
+- (BOOL)shouldPresentDeviceForBuildableContext:(IDEBuildableContext *)arg1 buildParameters:(IDEBuildParameters *)arg2 error:(id *)arg3;
 - (BOOL)shouldPresentDeviceForPathRunnableWithArchitecture:(NSString *)arg1;
 - (BOOL)canBeDefaultDeviceForBuildable:(id <IDEBuildable>)arg1 buildParameters:(IDEBuildParameters *)arg2;
-- (BOOL)deviceSupportsBuildable:(id <IDEBuildable>)arg1 buildParameters:(IDEBuildParameters *)arg2 error:(id *)arg3;
+- (BOOL)deviceSupportsBuildable:(IDEBuildableContext *)arg1 buildParameters:(IDEBuildParameters *)arg2 error:(id *)arg3;
 - (BOOL)canBeRunDestination;
 @end
 

@@ -6,10 +6,15 @@
 
 #import <XCSUI/_TtC5XCSUI21XCSUIUserGroupsPicker.h>
 
+#import <XCSUI/NSTableViewDataSource-Protocol.h>
 #import <XCSUI/NSTableViewDelegate-Protocol.h>
+#import <XCSUI/NSTextFieldDelegate-Protocol.h>
 
-@interface _TtC5XCSUI21XCSUIUserGroupsPicker (XCSUI) <NSTableViewDelegate>
+@interface _TtC5XCSUI21XCSUIUserGroupsPicker (XCSUI) <NSTableViewDelegate, NSTableViewDataSource, NSTextFieldDelegate>
 - (id)tableView:(id)arg1 viewForTableColumn:(id)arg2 row:(long long)arg3;
 - (void)tableView:(id)arg1 didAddRowView:(id)arg2 forRow:(long long)arg3;
+- (id)tableView:(id)arg1 objectValueForTableColumn:(id)arg2 row:(long long)arg3;
+- (long long)numberOfRowsInTableView:(id)arg1;
+- (BOOL)control:(id)arg1 textView:(id)arg2 doCommandBySelector:(SEL)arg3;
 @end
 

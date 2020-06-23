@@ -37,6 +37,7 @@
     int _launchStyle;
     int _enableGPUFrameCaptureMode;
     int _enableGPUValidationMode;
+    int _enableGPUShaderValidationMode;
     int _internalIOSLaunchStyle;
     NSString *_resolvedCustomWorkingDirectory;
     NSMutableOrderedSet *_debugServiceExtensionContents;
@@ -48,6 +49,7 @@
     _TtC13IDEFoundation24IDESchemeOptionReference *_routingCoverageFileReference;
     NSNumber *_simulatorIPhoneDisplay;
     NSNumber *_simulatorIPadDisplay;
+    _TtC13IDEFoundation24IDESchemeOptionReference *_storeKitConfigurationFileReference;
     NSString *_launchdServiceSpecifier;
     NSString *_internalIOSSubstitutionApp;
     long long _consoleMode;
@@ -72,10 +74,12 @@
 @property int internalIOSLaunchStyle; // @synthesize internalIOSLaunchStyle=_internalIOSLaunchStyle;
 @property(retain) NSDictionary *additionalSchemeSettings; // @synthesize additionalSchemeSettings=_additionalSchemeSettings;
 @property(retain) NSString *launchdServiceSpecifier; // @synthesize launchdServiceSpecifier=_launchdServiceSpecifier;
+@property int enableGPUShaderValidationMode; // @synthesize enableGPUShaderValidationMode=_enableGPUShaderValidationMode;
 @property int enableGPUValidationMode; // @synthesize enableGPUValidationMode=_enableGPUValidationMode;
 @property int enableGPUFrameCaptureMode; // @synthesize enableGPUFrameCaptureMode=_enableGPUFrameCaptureMode;
 @property BOOL debugDocumentVersioning; // @synthesize debugDocumentVersioning=_debugDocumentVersioning;
 @property BOOL ignoresPersistentStateOnLaunch; // @synthesize ignoresPersistentStateOnLaunch=_ignoresPersistentStateOnLaunch;
+@property(retain) _TtC13IDEFoundation24IDESchemeOptionReference *storeKitConfigurationFileReference; // @synthesize storeKitConfigurationFileReference=_storeKitConfigurationFileReference;
 @property(retain) NSNumber *simulatorIPadDisplay; // @synthesize simulatorIPadDisplay=_simulatorIPadDisplay;
 @property(retain) NSNumber *simulatorIPhoneDisplay; // @synthesize simulatorIPhoneDisplay=_simulatorIPhoneDisplay;
 @property(retain) _TtC13IDEFoundation24IDESchemeOptionReference *routingCoverageFileReference; // @synthesize routingCoverageFileReference=_routingCoverageFileReference;
@@ -98,6 +102,7 @@
 @property(retain) _TtC13IDEFoundation25IDEDeviceAppDataReference *deviceAppDataReference; // @synthesize deviceAppDataReference=_deviceAppDataReference;
 - (void)primitiveInvalidate;
 - (void)addDeviceSensorReplayFileReference:(id)arg1 fromXMLUnarchiver:(id)arg2;
+- (void)addStoreKitConfigurationFileReference:(id)arg1 fromXMLUnarchiver:(id)arg2;
 - (void)addRoutingCoverageFileReference:(id)arg1 fromXMLUnarchiver:(id)arg2;
 - (void)addLocationScenarioReference:(id)arg1 fromXMLUnarchiver:(id)arg2;
 - (void)addDeviceAppData:(id)arg1 fromXMLUnarchiver:(id)arg2;
@@ -121,6 +126,7 @@
 - (void)setShowNonLocalizedStringsFromUTF8String:(char *)arg1 fromXMLUnarchiver:(id)arg2;
 - (void)setAllowDeviceSensorReplayDataFromUTF8String:(char *)arg1 fromXMLUnarchiver:(id)arg2;
 - (void)setAllowLocationSimulationFromUTF8String:(char *)arg1 fromXMLUnarchiver:(id)arg2;
+- (void)setEnableGPUShaderValidationModeFromUTF8String:(char *)arg1 fromXMLUnarchiver:(id)arg2;
 - (void)setEnableGPUValidationModeFromUTF8String:(char *)arg1 fromXMLUnarchiver:(id)arg2;
 - (void)setEnableGPUFrameCaptureModeFromUTF8String:(char *)arg1 fromXMLUnarchiver:(id)arg2;
 - (void)setDebugServiceExtensionContentsStringFromUTF8String:(char *)arg1 fromXMLUnarchiver:(id)arg2;
@@ -148,6 +154,8 @@
 @property(readonly) BOOL gpuDebuggerAvailable;
 - (void)_prepareForMessageTracer:(id)arg1;
 - (id)runOperationForSchemeOperationParameters:(id)arg1 buildOperation:(id)arg2 buildParameters:(id)arg3 buildableProductDirectories:(id)arg4 schemeCommand:(id)arg5 schemeActionRecord:(id)arg6 outError:(id *)arg7 actionCallbackBlock:(CDUnknownBlockType)arg8;
+- (BOOL)_checkRunDestination:(id *)arg1 buildParameters:(id)arg2 displayName:(id)arg3 schemeActionRecord:(id)arg4 outError:(id *)arg5;
+- (id)_checkRunnablePathFromBuildParameters:(id)arg1 schemeActionRecord:(id)arg2 outError:(id *)arg3;
 - (void)_checkForAnalysisToolServiceProvidedExecutableToSet;
 - (void)_tweakCommandLineArgumentsBasedOnAnalysisToolServiceProvidedExecutable:(id)arg1;
 - (BOOL)_tweakEnvironmentVariables:(id)arg1 buildParameters:(id)arg2 buildableProductDirectories:(id)arg3 schemeCommand:(id)arg4 schemeActionRecord:(id)arg5 shouldSetupExtraDebuggingSupport:(BOOL)arg6 extensionInfos:(id)arg7 outError:(id *)arg8;

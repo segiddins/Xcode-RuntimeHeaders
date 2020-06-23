@@ -12,19 +12,29 @@
 {
     BOOL _supportsDynamicEnumeration;
     BOOL _customDisambiguation;
+    BOOL _fixedSizeArray;
+    BOOL _configurable;
     BOOL _supportsResolution;
+    BOOL _supportsSearch;
+    long long _windowSize;
     NSArray *_confirmationReasons;
     NSString *_resolutionResultClassName;
     NSArray *_promptDialogs;
     NSArray *_unsupportedReasons;
+    NSArray *_arraySizes;
 }
 
 - (void).cxx_destruct;
+@property(copy, nonatomic, setter=_setArraySizes:) NSArray *arraySizes; // @synthesize arraySizes=_arraySizes;
 @property(copy, nonatomic, setter=_setUnsupportedReasons:) NSArray *unsupportedReasons; // @synthesize unsupportedReasons=_unsupportedReasons;
 @property(copy, nonatomic, setter=_setPromptDialogs:) NSArray *promptDialogs; // @synthesize promptDialogs=_promptDialogs;
 @property(copy, nonatomic) NSString *resolutionResultClassName; // @synthesize resolutionResultClassName=_resolutionResultClassName;
 @property(copy, nonatomic, setter=_setConfirmationReasons:) NSArray *confirmationReasons; // @synthesize confirmationReasons=_confirmationReasons;
+@property(nonatomic) long long windowSize; // @synthesize windowSize=_windowSize;
+@property(nonatomic) BOOL supportsSearch; // @synthesize supportsSearch=_supportsSearch;
 @property(nonatomic) BOOL supportsResolution; // @synthesize supportsResolution=_supportsResolution;
+@property(nonatomic, getter=isConfigurable) BOOL configurable; // @synthesize configurable=_configurable;
+@property(nonatomic, getter=isFixedSizeArray) BOOL fixedSizeArray; // @synthesize fixedSizeArray=_fixedSizeArray;
 - (void)_updateDefaultUnsupportedReasons;
 - (void)_addPromptDialog:(id)arg1;
 @property(readonly, nonatomic) BOOL _typeSupportsNeedsValueResolution;
@@ -33,6 +43,7 @@
 - (void)updateWithDictionary:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)keyPrefix;
+- (BOOL)validateValue:(inout id *)arg1 forKey:(id)arg2 error:(out id *)arg3;
 - (id)generateIssues;
 @property(readonly, nonatomic) BOOL _shouldGenerateResolutionIssues;
 - (void)primitiveInvalidate;
@@ -43,6 +54,8 @@
 @property(nonatomic) BOOL supportsDynamicEnumeration; // @synthesize supportsDynamicEnumeration=_supportsDynamicEnumeration;
 @property(nonatomic) BOOL customDisambiguation; // @synthesize customDisambiguation=_customDisambiguation;
 @property(readonly, nonatomic) BOOL hasCustomResolutionResult;
+- (id)arraySizeWithSizeClass:(id)arg1;
+- (id)arraySizeWithIdentifier:(id)arg1;
 - (id)confirmationReasonWithCode:(id)arg1;
 - (id)confirmationReasonWithIdentifier:(id)arg1;
 - (id)unsupportedReasonWithCode:(id)arg1;
@@ -50,10 +63,9 @@
 - (id)promptDialogWithType:(long long)arg1;
 - (id)promptDialogWithIdentifier:(id)arg1;
 - (void)setDisplayName:(id)arg1;
-- (void)setUserFacing:(BOOL)arg1;
-@property(readonly, nonatomic, getter=isUserFacing) BOOL userFacing;
 - (id)availableTokensForPromptDialogType:(long long)arg1;
 @property(readonly, nonatomic) NSArray *availableTokensForUnsupportedReasons;
+@property(retain, nonatomic) NSString *fixedSizeArrayLargeSize;
 - (void)removeConfirmationReason:(id)arg1;
 - (void)addConfirmationReason:(id)arg1;
 - (void)removeUnsupportedReason:(id)arg1;
@@ -61,7 +73,11 @@
 - (void)removePromptDialog:(id)arg1;
 - (void)addPromptDialog:(id)arg1;
 - (id)codegen_forwardDeclarationsForSourceLanguage:(unsigned long long)arg1;
+- (id)codegen_dynamicEnumerationDeprecationForSourceLanguage:(unsigned long long)arg1;
+- (id)codegen_legacyDynamicEnumerationAvailabilityForSourceLanguage:(unsigned long long)arg1;
 - (id)codegen_dynamicEnumerationAvailabilityForSourceLanguage:(unsigned long long)arg1;
+- (id)codegen_reasonVisibilityForSourceLanguage:(unsigned long long)arg1;
+- (id)codegen_resolutionVisibilityForSourceLanguage:(unsigned long long)arg1;
 - (id)codegen_resolutionAvailabilityForSourceLanguage:(unsigned long long)arg1;
 - (id)codegen_resolutionResultImplementationForSourceLanguage:(unsigned long long)arg1;
 - (id)codegen_resolutionResultDeclarationForSourceLanguage:(unsigned long long)arg1;

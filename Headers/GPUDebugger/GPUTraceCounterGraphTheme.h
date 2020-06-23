@@ -17,9 +17,14 @@ __attribute__((visibility("hidden")))
     NSColor *_referencePlaneHighlightColor;
     NSColor *_inactiveColor;
     NSColor *_inactiveHighlightColor;
+    NSColor *_heatMapColorBegin;
+    NSColor *_heatMapColorEnd;
 }
 
 - (void).cxx_destruct;
+- (BOOL)useHeatmap;
+- (id)heatMapColorEnd;
+- (id)heatMapColorBegin;
 - (id)inactiveHighlightColor;
 - (id)inactiveColor;
 - (id)referencePlaneHighlightColor;

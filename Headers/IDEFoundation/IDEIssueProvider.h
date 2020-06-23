@@ -27,7 +27,7 @@
 @property(retain) IDEIssueProviderSession *currentProviderSession; // @synthesize currentProviderSession=_currentProviderSession;
 @property(readonly) DVTExtension *extension; // @synthesize extension=_extension;
 @property(retain) IDEIssueManager *issueManager; // @synthesize issueManager=_issueManager;
-- (id)createBreakpointIfNecessaryIgnoreExisting:(BOOL)arg1;
+- (id)createBreakpointIfNecessary:(id)arg1 ignoreExisting:(BOOL)arg2;
 - (BOOL)allowsExistingIssuesToBeCoalesced;
 - (BOOL)allowsNewIssuesToBeCoalesced;
 @property(readonly) BOOL _filterIssuesByActiveScheme;

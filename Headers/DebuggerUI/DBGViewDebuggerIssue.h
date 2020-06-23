@@ -10,21 +10,19 @@
 
 @interface DBGViewDebuggerIssue : NSObject
 {
-    unsigned long long _issueType;
-    DBGViewDebuggerDocument *_document;
     DBGViewDebuggerDocumentLocation *_documentLocation;
-    NSString *_messageExcludingViewReference;
-    NSString *_messageIncludingViewReference;
-    DBGViewSurface *_affectedView;
+    DBGViewDebuggerDocument *_document;
+    DBGViewSurface *_affectedSurface;
 }
 
 - (void).cxx_destruct;
-@property(readonly) DBGViewSurface *affectedView; // @synthesize affectedView=_affectedView;
+@property(readonly) DBGViewSurface *affectedSurface; // @synthesize affectedSurface=_affectedSurface;
 @property(readonly) DBGViewDebuggerDocument *document; // @synthesize document=_document;
-@property(readonly) unsigned long long issueType; // @synthesize issueType=_issueType;
-- (id)messageIncludingReferenceToView:(BOOL)arg1;
-@property(readonly) DBGViewDebuggerDocumentLocation *documentLocation;
-- (id)initWithDocument:(id)arg1 affectedView:(id)arg2 issueType:(unsigned long long)arg3;
+- (id)messageWithVerbosity:(unsigned long long)arg1;
+@property(readonly) NSString *categoryName;
+@property(readonly) unsigned long long issueType;
+@property(retain) DBGViewDebuggerDocumentLocation *documentLocation; // @synthesize documentLocation=_documentLocation;
+- (id)initWithDocument:(id)arg1 affectedSurface:(id)arg2;
 
 @end
 

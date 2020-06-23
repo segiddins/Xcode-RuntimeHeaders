@@ -16,6 +16,7 @@
     MISSING_TYPE *resourceContextObservingToken;
     MISSING_TYPE *colorNames;
     MISSING_TYPE *indexColorNames;
+    MISSING_TYPE *indexCancellable;
 }
 
 @end

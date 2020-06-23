@@ -12,7 +12,6 @@
 
 + (id)objectForKey:(id)arg1;
 + (id)internalizedSettings;
-+ (void)configureWithAdditionalURLs:(id)arg1;
 + (void)initialize;
 
 @end

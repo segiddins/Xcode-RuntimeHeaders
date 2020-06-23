@@ -17,6 +17,7 @@
     MISSING_TYPE *defaultSettings;
     MISSING_TYPE *overrideSettings;
     MISSING_TYPE *defaultSettingsWhenPrimary;
+    MISSING_TYPE *librarySearchPaths;
     MISSING_TYPE *executableSearchPaths;
 }
 

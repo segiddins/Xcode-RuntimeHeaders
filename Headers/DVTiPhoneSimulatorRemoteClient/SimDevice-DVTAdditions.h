@@ -26,5 +26,6 @@
 - (id)dvt_notifyOfBootOnQueue:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (id)dvt_registerNotificationHandlerOnQueue:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (id)dvt_registerNotificationHandler:(CDUnknownBlockType)arg1;
+- (id)dvt_supportedArchs;
 @end
 

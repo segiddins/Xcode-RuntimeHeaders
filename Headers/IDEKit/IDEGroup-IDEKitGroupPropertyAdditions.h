@@ -28,6 +28,7 @@
 @property(readonly, nonatomic) NSArray *navigableItem_childRepresentedObjects;
 @property(readonly, nonatomic) NSString *navigableItem_accessibleImageDescription;
 @property(readonly, nonatomic) NSImage *navigableItem_image;
+- (id)structureEditingTemplateInsertionTargetForProposedItem:(id)arg1;
 @property(readonly) unsigned long long navigableItem_conflictStateForUpdateOrMerge;
 - (unsigned long long)navigableItem_sourceControlServerStatusFlag;
 @property(readonly) NSString *navigableItem_sourceControlServerStatus;
@@ -44,6 +45,9 @@
 - (BOOL)ideInspectedRelativeLocationShouldChooseFile;
 - (BOOL)ideInspectedIsNameEditable;
 - (id)applicableInspectorSlicesForCategory:(id)arg1 suggestedSlices:(id)arg2;
+- (id)groupOrContainingGroup;
+- (id)explorableDocumentType;
+- (BOOL)explorableHidesSCMStatusWhileExpanded;
 - (id)explorableIcon;
 @property(nonatomic, readonly) NSString *containerFocusedHierarchyDescription;
 @property(nonatomic, readonly) NSString *containerHierarchyDescription;

@@ -22,6 +22,7 @@
     MISSING_TYPE *xcodeProductBuildVersion;
     MISSING_TYPE *xcodeIsAppleInternal;
     MISSING_TYPE *buildServiceModTime;
+    MISSING_TYPE *connectionMode;
     MISSING_TYPE *$__lazy_storage_$_coreSettings;
     MISSING_TYPE *$__lazy_storage_$_isRuntimeOSAppleInternal;
     MISSING_TYPE *isRuntimeOSAppleInternalOverride;

@@ -16,21 +16,20 @@
     vector_e98c3527 _referencePlane;
     vector_553fcf91 _dataPlanes;
     NSArray *_planes;
-    struct unordered_map<unsigned long long, unsigned long long, std::__1::hash<unsigned long long>, std::__1::equal_to<unsigned long long>, std::__1::allocator<std::__1::pair<const unsigned long long, unsigned long long>>> _indexToVisiblePlane;
     struct _NSRange _selectionRange;
     struct vector<long long, std::__1::allocator<long long>> _maxValueInSelectionRange;
     struct vector<float, std::__1::allocator<float>> _averageValueInSelectionRange;
     struct vector<float, std::__1::allocator<float>> _medianValueInSelectionRange;
     struct vector<long long, std::__1::allocator<long long>> _totalValueInSelectionRange;
-    vector_7984f87c _groupStartTime;
+    struct vector<unsigned long long, std::__1::allocator<unsigned long long>> _groupStartTime;
     vector_2c9ce4e9 _markerStack;
     NSMutableArray *_visiblePlaneNames;
     BOOL _showEmptyPlane;
     id <GPUTimelineGraphDataProvider> _dataProvider;
+    NSArray *_groups;
     unsigned long long _xAxis;
     unsigned long long _valueScaler;
     vector_2c9ce4e9 _markers;
-    vector_7984f87c _visiblePlanes;
 }
 
 - (id).cxx_construct;
@@ -38,11 +37,12 @@
 @property(nonatomic) BOOL showEmptyPlane; // @synthesize showEmptyPlane=_showEmptyPlane;
 @property(readonly, nonatomic) unsigned long long valueScaler; // @synthesize valueScaler=_valueScaler;
 @property(readonly, nonatomic) unsigned long long xAxis; // @synthesize xAxis=_xAxis;
-@property(nonatomic) vector_7984f87c visiblePlanes; // @synthesize visiblePlanes=_visiblePlanes;
 @property(readonly, nonatomic) vector_2c9ce4e9 markers; // @synthesize markers=_markers;
+@property(readonly, nonatomic) NSArray *groups; // @synthesize groups=_groups;
 @property(readonly, nonatomic) NSArray *planes; // @synthesize planes=_planes;
 @property(retain, nonatomic) id <GPUTimelineGraphDataProvider> dataProvider; // @synthesize dataProvider=_dataProvider;
 @property(readonly, nonatomic) NSString *label;
+- (void)finalizeUpdate;
 - (void)updateValuesInIndices:(vector_eb9481f9)arg1;
 - (void)popMarkerAtIndex:(unsigned long long)arg1;
 - (void)pushMarkerAtIndex:(unsigned long long)arg1 label:(id)arg2;
@@ -69,9 +69,7 @@
 - (unsigned long long)numberOfEntries;
 - (long long)minCounterValueForPlaneIndex:(unsigned long long)arg1;
 - (long long)maxCounterValueForPlaneIndex:(unsigned long long)arg1 dataMax:(BOOL)arg2;
-- (void)resetVisiblePlanes;
 - (void)_updateData;
-- (void)_setVisiblePlanes:(vector_7984f87c)arg1;
 - (id)initWithDataProvider:(id)arg1 xAxis:(unsigned long long)arg2 valueScaler:(unsigned long long)arg3;
 
 @end

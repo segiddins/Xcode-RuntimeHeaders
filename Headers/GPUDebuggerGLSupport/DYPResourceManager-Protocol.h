@@ -6,11 +6,12 @@
 
 #import <GPUDebuggerGLSupport/NSObject-Protocol.h>
 
-@class DYDeviceInfo, DYFuture, DYResourceStreamer, NSArray, NSDictionary;
+@class DYDeviceInfo, DYFuture, DYResourceStreamer, NSArray, NSData, NSDictionary;
 @protocol DYCaptureStore, DYPResourceItem, DYPStateMirror, DYPlatformSDK, DYResource;
 
 @protocol DYPResourceManager <NSObject>
 + (id <DYResource>)updatedResourceWithType:(unsigned int)arg1 objectID:(unsigned long long)arg2 containerID:(unsigned long long)arg3 changes:(NSDictionary *)arg4;
+- (DYFuture *)loadTexturesWithDescriptors:(NSArray *)arg1;
 - (DYFuture *)performUpdateWithResource:(id <DYResource>)arg1;
 - (DYFuture *)loadThumbnailBatchWithContainerID:(unsigned long long)arg1 resourceInfo:(NSArray *)arg2;
 - (DYFuture *)loadThumbnailImageWithResourceInfo:(NSDictionary *)arg1;
@@ -25,7 +26,7 @@
 - (id)initWithCaptureStore:(id <DYCaptureStore>)arg1 resourceStreamer:(DYResourceStreamer *)arg2;
 
 @optional
+- (id <DYResource>)loadResourceWithPixel:(NSData *)arg1 pixelFormat:(unsigned long long)arg2;
 - (id)initWithCaptureStore:(id <DYCaptureStore>)arg1 resourceStreamer:(DYResourceStreamer *)arg2 deviceInfo:(DYDeviceInfo *)arg3 platformSDK:(id <DYPlatformSDK>)arg4;
-- (id)initWithCaptureStore:(id <DYCaptureStore>)arg1 resourceStreamer:(DYResourceStreamer *)arg2 platformSDK:(id <DYPlatformSDK>)arg3;
 @end
 

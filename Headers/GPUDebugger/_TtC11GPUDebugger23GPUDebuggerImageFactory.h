@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class MISSING_TYPE;
+@class MISSING_TYPE, NSImage;
 
 __attribute__((visibility("hidden")))
 @interface _TtC11GPUDebugger23GPUDebuggerImageFactory : NSObject
@@ -18,6 +18,11 @@ __attribute__((visibility("hidden")))
 + (id)shared;
 - (void).cxx_destruct;
 - (id)init;
+@property(nonatomic, readonly) NSImage *metalEventIcon;
+@property(nonatomic, readonly) NSImage *metalFenceIcon;
+@property(nonatomic, readonly) NSImage *metalBufferIcon;
+@property(nonatomic, readonly) NSImage *metalICBIcon;
+@property(nonatomic, readonly) NSImage *metalBufferICBIcon;
 
 @end
 

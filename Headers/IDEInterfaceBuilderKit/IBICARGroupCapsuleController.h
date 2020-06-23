@@ -14,6 +14,7 @@
 - (id)allowedFileTypesForDragAndDrop;
 - (Class)assetClass;
 - (Class)assetCapsuleClass;
+- (void)loadView;
 
 @end
 

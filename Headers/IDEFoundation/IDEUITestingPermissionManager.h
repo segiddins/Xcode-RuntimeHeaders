@@ -26,6 +26,7 @@
 - (BOOL)_checkPermissionsWithPrompt:(BOOL)arg1 error:(id *)arg2;
 - (BOOL)_waitForXcodeHelperToBeAvailable:(id *)arg1;
 - (BOOL)_needToLaunchXcodeHelper;
+- (void)dealloc;
 - (id)init;
 
 @end

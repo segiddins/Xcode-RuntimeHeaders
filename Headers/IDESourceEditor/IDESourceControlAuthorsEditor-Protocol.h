@@ -7,6 +7,7 @@
 @protocol NSValidatedUserInterfaceItem;
 
 @protocol IDESourceControlAuthorsEditor
+- (void)hideAuthorsIfNeeded;
 - (void)showAuthorsIfNeeded;
 - (void)toggleAuthorsShown:(id)arg1;
 - (BOOL)isAuthorsShown;

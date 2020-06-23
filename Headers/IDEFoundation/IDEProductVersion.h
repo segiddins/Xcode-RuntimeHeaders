@@ -11,14 +11,10 @@
 #import <IDEFoundation/NSCopying-Protocol.h>
 
 @class DVTStackBacktrace, IDEProductCategory, IDEProductVersionBinaryInfos, IDEProductVersionIdentifier, NSArray, NSDate, NSSet, NSString, NSURL;
-@protocol DVTAnalyticsAppStoreSourceProtocol;
 
 @interface IDEProductVersion : NSObject <DVTServicesJSONSerialization, DVTInvalidation, NSCopying>
 {
-    BOOL _isAnalyticsAppStoreSourceProtocolEnsured;
     NSString *_name;
-    id <DVTAnalyticsAppStoreSourceProtocol> _crashPointParameterizedAppStoreSource;
-    id <DVTAnalyticsAppStoreSourceProtocol> _processorUsagePointConsolidatedSource;
     IDEProductVersionIdentifier *_productVersionIdentifier;
     NSString *_platformSDKIdentifier;
     NSURL *_imageURL;
@@ -40,7 +36,6 @@
 + (id)mostRecentVersion:(id)arg1;
 + (void)initialize;
 - (void).cxx_destruct;
-@property(nonatomic) BOOL isAnalyticsAppStoreSourceProtocolEnsured; // @synthesize isAnalyticsAppStoreSourceProtocolEnsured=_isAnalyticsAppStoreSourceProtocolEnsured;
 @property unsigned long long appStoreStatus; // @synthesize appStoreStatus=_appStoreStatus;
 @property(retain) NSArray *archives; // @synthesize archives=_archives;
 @property(retain) IDEProductVersionBinaryInfos *binaryInfos; // @synthesize binaryInfos=_binaryInfos;
@@ -53,8 +48,6 @@
 @property(retain) NSURL *imageURL; // @synthesize imageURL=_imageURL;
 @property(retain) NSString *platformSDKIdentifier; // @synthesize platformSDKIdentifier=_platformSDKIdentifier;
 @property(readonly) IDEProductVersionIdentifier *productVersionIdentifier; // @synthesize productVersionIdentifier=_productVersionIdentifier;
-@property(nonatomic) __weak id <DVTAnalyticsAppStoreSourceProtocol> processorUsagePointConsolidatedSource; // @synthesize processorUsagePointConsolidatedSource=_processorUsagePointConsolidatedSource;
-@property(nonatomic) __weak id <DVTAnalyticsAppStoreSourceProtocol> crashPointParameterizedAppStoreSource; // @synthesize crashPointParameterizedAppStoreSource=_crashPointParameterizedAppStoreSource;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;

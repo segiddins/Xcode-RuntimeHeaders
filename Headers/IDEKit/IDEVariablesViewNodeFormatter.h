@@ -43,6 +43,7 @@
 - (id)_nameOnlyString:(id)arg1;
 - (id)_nameString:(id)arg1;
 - (double)_adjustedFontSize:(double)arg1;
+- (id)filteredNameFont;
 - (id)nameFont;
 - (id)summaryFont;
 - (id)changedFont;

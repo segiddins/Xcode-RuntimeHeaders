@@ -24,6 +24,7 @@
 - (BOOL)isAtFirstArgumentInMethodCallAtLocation:(unsigned long long)arg1 inCall:(char *)arg2;
 - (BOOL)_isTextEmptyInBetweenItem:(id)arg1 prevItem:(id)arg2;
 - (id)_textInBetweenItem:(id)arg1 prevItem:(id)arg2;
+- (id)_enclosingParenLikeItemAtLocation:(unsigned long long)arg1;
 - (id)_parenLikeItemAtLocation:(unsigned long long)arg1;
 - (BOOL)_isItemParenExpression:(id)arg1;
 - (BOOL)_isItemBlockExpression:(id)arg1;

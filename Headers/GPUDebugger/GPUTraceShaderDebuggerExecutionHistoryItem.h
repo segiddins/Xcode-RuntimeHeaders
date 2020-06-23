@@ -6,13 +6,12 @@
 
 #import <GPUDebugger/GPUTraceOutlineItem.h>
 
-@class GPUShaderDebuggerExecutionHistoryDataSource, GPUTraceShaderItem, NSObject;
-@protocol DYPShaderDebuggerExecutionHistoryNode, OS_dispatch_queue;
+@class GPUShaderDebuggerExecutionHistoryDataSource, GPUTraceShaderItem;
+@protocol DYPShaderDebuggerExecutionHistoryNode;
 
 @interface GPUTraceShaderDebuggerExecutionHistoryItem : GPUTraceOutlineItem
 {
     GPUShaderDebuggerExecutionHistoryDataSource *_dataSource;
-    NSObject<OS_dispatch_queue> *_queue;
     id <DYPShaderDebuggerExecutionHistoryNode> _historyNode;
     GPUTraceShaderItem *_shaderItem;
 }
@@ -25,6 +24,8 @@
 - (id)filterableChildObjects;
 - (id)APIItem;
 - (id)label;
+- (void)_addModelItemToFactory;
+- (void)_makeFilterItems;
 - (id)initWithController:(id)arg1 parent:(id)arg2 shaderItem:(id)arg3 historyNode:(id)arg4 dataSource:(id)arg5;
 - (id)navigableItem_childRepresentedObjects;
 - (BOOL)navigableItem_isLeaf;

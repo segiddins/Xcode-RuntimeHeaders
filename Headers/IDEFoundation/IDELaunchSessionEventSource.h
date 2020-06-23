@@ -28,7 +28,6 @@
 @property(retain) DVTObservingToken *launchSessionHasCrashedObserverToken; // @synthesize launchSessionHasCrashedObserverToken=_launchSessionHasCrashedObserverToken;
 @property(retain) DVTObservingToken *launchSessionStartObserverToken; // @synthesize launchSessionStartObserverToken=_launchSessionStartObserverToken;
 - (void)_observeRunnablePIDForLaunchSession:(id)arg1;
-- (void)_observeCrashForLaunchSession:(id)arg1;
 - (void)_observeStartForLaunchSession:(id)arg1;
 - (void)_observeAlertsForLaunchSession:(id)arg1;
 - (void)primitiveInvalidate;

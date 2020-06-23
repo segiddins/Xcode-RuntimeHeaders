@@ -13,6 +13,7 @@
     MISSING_TYPE *workspace;
     MISSING_TYPE *uploadTagsButton;
     MISSING_TYPE *workQueue;
+    MISSING_TYPE *pushViewContext;
 }
 
 - (void).cxx_destruct;
@@ -20,6 +21,7 @@
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)primaryAction;
 - (void)willBeginSheet;
+@property(nonatomic, copy) id context;
 @property(nonatomic, readonly) NSString *windowSubtitle;
 @property(nonatomic, readonly) NSString *windowTitle;
 @property(nonatomic, readonly) NSString *primaryButtonTitle;

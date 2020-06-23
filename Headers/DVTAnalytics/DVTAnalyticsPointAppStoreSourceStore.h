@@ -6,20 +6,18 @@
 
 #import <objc/NSObject.h>
 
-@class DVTDispatchLock, NSMutableDictionary;
+@class NSMutableDictionary;
 
 @interface DVTAnalyticsPointAppStoreSourceStore : NSObject
 {
     NSMutableDictionary *_analyticsPointSources;
-    DVTDispatchLock *_analyticsPointSourcesLock;
 }
 
 + (id)defaultStore;
 - (void).cxx_destruct;
-@property(retain, nonatomic) DVTDispatchLock *analyticsPointSourcesLock; // @synthesize analyticsPointSourcesLock=_analyticsPointSourcesLock;
 @property(retain, nonatomic) NSMutableDictionary *analyticsPointSources; // @synthesize analyticsPointSources=_analyticsPointSources;
-- (void)addAnalyticsPointAppStoreSource:(id)arg1 type:(long long)arg2;
-- (id)analyticsPointAppStoreSourceForAppIdentifier:(id)arg1 extensionPointIdentifier:(id)arg2 type:(long long)arg3;
+- (void)addAnalyticsPointAppStoreSource:(id)arg1 reportType:(id)arg2;
+- (id)analyticsPointAppStoreSourceForAppIdentifier:(id)arg1 extensionPointIdentifier:(id)arg2 isAppClip:(BOOL)arg3 reportType:(id)arg4;
 - (id)init;
 
 @end

@@ -15,7 +15,6 @@
 @interface SKEShadableEditorMainViewController : IDEViewController <_TtP17IDESceneKitEditor23SKEShaderSourceDelegate_, NSOutlineViewDelegate, NSOutlineViewDataSource>
 {
     NSArray *_content;
-    NSArray *_shadableContentsObservingTokens;
     DVTOneShotBlock *_cancellationTokens;
     NSOutlineView *_entryPointsOutline;
     _TtC17IDESceneKitEditor21SKEShaderSourceEditor *_sourceEditor;

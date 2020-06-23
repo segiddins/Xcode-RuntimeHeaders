@@ -14,6 +14,7 @@
 }
 
 - (void).cxx_destruct;
+- (struct CGRect)frameOfCellAtColumn:(long long)arg1 row:(long long)arg2;
 - (void)doCommandBySelector:(SEL)arg1;
 - (void)dvt_expandRowAndPossiblySiblings:(id)arg1;
 - (id)delegate;

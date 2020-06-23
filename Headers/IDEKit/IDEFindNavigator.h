@@ -10,15 +10,15 @@
 #import <IDEKit/IDEFindNavigatorQueryParametersControllerDelegate-Protocol.h>
 #import <IDEKit/IDEFindNavigatorQueryResultsControllerDelegate-Protocol.h>
 
-@class DVTBorderView, DVTDelayedInvocation, IDEFindNavigatorOutlineView, IDEFindNavigatorQueryParametersController, NSScrollView, NSString, NSTextField, NSView;
+@class DVTBorderView, DVTDelayedInvocation, DVTScrollView, IDEFindNavigatorOutlineView, IDEFindNavigatorQueryParametersController, NSString, NSTextField, NSView;
 
 @interface IDEFindNavigator : IDENavigator <IDEFindNavigatorQueryResultsControllerDelegate, IDEFindNavigatorQueryParametersControllerDelegate, IDEFindNavigatorLayoutViewDelegate>
 {
     NSView *_summaryRow;
     NSTextField *_summaryTextField;
     IDEFindNavigatorOutlineView *_resultOutlineView;
-    NSScrollView *_resultOutlineScrollView;
-    DVTBorderView *findResultsBottomDividerView;
+    DVTScrollView *_resultOutlineScrollView;
+    DVTBorderView *_findResultsDividerView;
     DVTDelayedInvocation *_interfaceValidator;
     BOOL _didFirstLayoutAfterInstall;
     BOOL _enableFilter;
@@ -51,6 +51,7 @@
 - (void)setStateToken:(id)arg1;
 - (void)viewDidLoad;
 - (void)refreshUserInterface:(id)arg1;
+- (id)navigatorScrollView;
 - (id)filterDefinitionIdentifier;
 - (id)domainIdentifier;
 - (id)view;

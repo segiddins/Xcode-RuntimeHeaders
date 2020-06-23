@@ -6,7 +6,7 @@
 
 #import <DVTPortal/_TtC9DVTPortal19DeveloperAPIProfile.h>
 
-@class NSData, NSDate, NSString;
+@class NSData, NSDate, NSSet, NSString;
 @protocol _TtP9DVTPortal28DeveloperAPIBundleIDProtocol_;
 
 @interface _TtC9DVTPortal19DeveloperAPIProfile (DVTPortal)
@@ -19,5 +19,13 @@
 @property(nonatomic, readonly) NSDate *expirationDate;
 @property(nonatomic, readonly) NSString *UUID;
 @property(nonatomic, readonly) id <_TtP9DVTPortal28DeveloperAPIBundleIDProtocol_> appID;
+- (BOOL)matchesBundleIdentifier:(id)arg1;
+@property(nonatomic, readonly) BOOL isExpired;
+@property(nonatomic, readonly) NSDate *dateExpired;
+@property(nonatomic, readonly) NSSet *platforms;
+@property(nonatomic, readonly) NSString *appIdentifierEntitlementWithoutPrefix;
+@property(nonatomic, readonly) NSString *teamName;
+@property(nonatomic, readonly) NSString *teamID;
+@property(nonatomic, readonly) BOOL isActive;
 @end
 

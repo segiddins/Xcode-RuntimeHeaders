@@ -16,17 +16,16 @@
     float _load;
     struct atomic_flag _noProvidersNeedFulfillment;
     struct atomic_flag _noProvidersHaveRequests;
+    _Atomic int _frequencyDivider;
     BOOL _highLoadDetected;
     BOOL _renderFrameMustRun;
     BOOL _deliveryFrameMustRun;
     BOOL _dynamicFrameRatesEnabled;
-    int _frequencyDivider;
     int _requestsFulfilled;
 }
 
 - (void).cxx_destruct;
 @property(nonatomic) int requestsFulfilled; // @synthesize requestsFulfilled=_requestsFulfilled;
-@property(nonatomic) int frequencyDivider; // @synthesize frequencyDivider=_frequencyDivider;
 @property(nonatomic) BOOL dynamicFrameRatesEnabled; // @synthesize dynamicFrameRatesEnabled=_dynamicFrameRatesEnabled;
 @property(nonatomic) BOOL deliveryFrameMustRun; // @synthesize deliveryFrameMustRun=_deliveryFrameMustRun;
 @property(nonatomic) BOOL renderFrameMustRun; // @synthesize renderFrameMustRun=_renderFrameMustRun;
@@ -38,6 +37,7 @@
 - (void)handOffRequests;
 - (void)providerInvalidated:(id)arg1;
 - (void)providerHasRequest:(id)arg1;
+@property(nonatomic) int frequencyDivider;
 - (BOOL)canHandOffToRender;
 - (BOOL)canExtendRenderWork;
 - (void)demandSatisfied;

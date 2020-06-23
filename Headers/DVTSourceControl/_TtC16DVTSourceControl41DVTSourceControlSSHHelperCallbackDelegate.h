@@ -12,7 +12,8 @@
 
 - (void).cxx_destruct;
 - (id)init;
-- (void)passphraseForSSHKey:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
+- (void)setPassphrasesForSSHKeysAuthStrategies:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
+- (void)setPassphraseForSSHKeysAuthStrategy:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 
 @end
 

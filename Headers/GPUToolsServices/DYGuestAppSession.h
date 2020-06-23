@@ -98,6 +98,7 @@
 - (id)queryForGraphicsAPIUsage;
 - (id)getDisplayLinkInfo;
 - (id)activateCaptureSessionInitatedByInferior:(id)arg1 sessionSerial:(unsigned int)arg2;
+- (id)symbolicator;
 - (id)activateCaptureSession:(id)arg1;
 - (id)prepareSymbolicator;
 - (void)removeObserver:(id)arg1;
@@ -112,6 +113,7 @@
 - (void)drainQueue;
 - (void)invalidate;
 - (void)_invalidate:(id)arg1;
+- (void)_sendCleanupDaemon;
 - (void)bringToForeground;
 - (void)unlockGraphics;
 - (void)lockGraphics;

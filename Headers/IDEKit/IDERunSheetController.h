@@ -18,14 +18,15 @@
 @interface IDERunSheetController : IDEViewController <NSTouchBarProvider, NSTouchBarDelegate, IDEWorkspaceDocumentProvider, DVTStateRepositoryDelegate, NSWindowDelegate>
 {
     NSWindow *_sheetWindow;
+    NSView *_contentView;
     DVTBorderedView *_masterBorderedView;
-    IDENavigatorOutlineView *_runPhasesOutlineView;
     DVTBorderedView *_detailBorderedView;
-    NSArrayController *_customDataStoresArrayController;
+    DVTBorderedView *_detailContentBorderedView;
+    IDENavigatorOutlineView *_runPhasesOutlineView;
     NSTextField *_nameField;
-    NSView *contentView;
+    NSImageView *_schemeImageView;
     NSButton *_sharedButton;
-    NSImageView *_schemeImage;
+    NSArrayController *_customDataStoresArrayController;
     NSArray *_phaseModels;
     NSArray *_phaseModelNavigables;
     IDENavigatorDataCell *_phaseCell;
@@ -66,6 +67,7 @@
 + (id)keyPathsForValuesAffectingExecutionEnvironment;
 + (void)configureStateSavingObjectPersistenceByName:(id)arg1;
 + (void)beginSheetForWindow:(id)arg1 workspaceWindow:(id)arg2 editingIdentity:(BOOL)arg3 forSchemeCommand:(id)arg4 okButtonReflectsSchemeCommand:(BOOL)arg5 showDoneButton:(BOOL)arg6 completionHandler:(CDUnknownBlockType)arg7;
++ (BOOL)useLegacyNib;
 + (id)sheetOpeningLogAspect;
 - (void).cxx_destruct;
 @property __weak DVTReplacementView *detailReplacementView; // @synthesize detailReplacementView=_detailReplacementView;
@@ -89,14 +91,10 @@
 - (void)_bindDetailViewContent;
 - (void)_unbindDetailViewContent;
 - (void)_forceEditingToEnd;
-- (id)outlineView:(id)arg1 dataCellForTableColumn:(id)arg2 item:(id)arg3;
-- (id)_subphaseCell;
-- (id)_phaseCell;
+- (id)outlineView:(id)arg1 viewForTableColumn:(id)arg2 item:(id)arg3;
 - (double)outlineView:(id)arg1 heightOfRowByItem:(id)arg2;
 - (void)outlineViewSelectionDidChange:(id)arg1;
 - (BOOL)outlineView:(id)arg1 isGroupHeaderItem:(id)arg2;
-- (void)viewWillUninstall;
-- (void)viewDidInstall;
 - (BOOL)validateUserInterfaceItem:(id)arg1;
 - (double)maxWidthForSchemePathControl;
 - (void)controlTextDidEndEditing:(id)arg1;
@@ -116,8 +114,9 @@
 - (void)_beginSheetForWindow:(id)arg1 workspaceWindow:(id)arg2 editingIdentity:(BOOL)arg3 forSchemeCommand:(id)arg4 okButtonReflectsSchemeCommand:(BOOL)arg5 showDoneButton:(BOOL)arg6 completionHandler:(CDUnknownBlockType)arg7;
 - (int)_runControllerPhaseRowIndexForSchemeCommand:(id)arg1;
 - (void)_setUpObservation;
+- (void)_setUpSchemeViews;
 - (void)_setUpDetailView;
-- (void)_setUpMainUI;
+- (void)_setupMasterView;
 - (void)_updatePhaseNavigables;
 - (void)_chooserSelectedAction:(id)arg1;
 - (id)_chooserViewsForViewController:(id)arg1;

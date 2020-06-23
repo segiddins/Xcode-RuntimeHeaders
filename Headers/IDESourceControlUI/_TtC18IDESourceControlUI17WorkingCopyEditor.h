@@ -6,9 +6,11 @@
 
 #import <IDEKit/IDEEditor.h>
 
+#import <IDESourceControlUI/NSTouchBarDelegate-Protocol.h>
+
 @class DVTBorderedView, DVTFilterTokenField, DVTReplacementView, DVTScopeBarButton, MISSING_TYPE, NSProgressIndicator, NSScrollView, _TtC18IDESourceControlUI26SourceControlLogItemHolder;
 
-@interface _TtC18IDESourceControlUI17WorkingCopyEditor : IDEEditor
+@interface _TtC18IDESourceControlUI17WorkingCopyEditor : IDEEditor <NSTouchBarDelegate>
 {
     MISSING_TYPE *borderedView;
     MISSING_TYPE *topBarView;
@@ -58,6 +60,8 @@
 @property(nonatomic) __weak DVTReplacementView *replacementView; // @synthesize replacementView;
 @property(nonatomic) __weak DVTBorderedView *topBarView; // @synthesize topBarView;
 @property(nonatomic) __weak DVTBorderedView *borderedView; // @synthesize borderedView;
+- (id)touchBar:(id)arg1 makeItemForIdentifier:(id)arg2;
+- (id)makeTouchBar;
 
 @end
 

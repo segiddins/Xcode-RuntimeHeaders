@@ -35,7 +35,6 @@
 - (id)entitlementsFilePathForFileReference:(id)arg1;
 - (id)bestTargetEntitlementFileName;
 - (id)entitlementsValuesProxy;
-- (id)fileReferenceForFileName:(id)arg1;
 - (BOOL)entitlementsContainsEntitlementKey:(id)arg1;
 - (BOOL)entitlementsContainsEntitlementKeyForItem:(id)arg1;
 - (id)_allEntitlementKeys;

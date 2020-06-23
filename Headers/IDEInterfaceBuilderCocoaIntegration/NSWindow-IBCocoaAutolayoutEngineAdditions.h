@@ -12,6 +12,8 @@
 - (BOOL)ibNeedsMaskForRoundedBottomCorners;
 - (id)ibMakeMatchingWindowTemplate;
 - (Class)ibWindowTemplateClass;
+- (void)ibShimSetSubtitle:(id)arg1;
+- (id)ibShimSubtitle;
 - (void)ibSwizzledSetDefaultButtonCell:(id)arg1;
 - (void)ibSwizzledAddHeartBeatClientView:(id)arg1;
 @end

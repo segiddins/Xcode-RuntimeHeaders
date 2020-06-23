@@ -7,9 +7,11 @@
 #import <AppKit/NSFont.h>
 
 @interface NSFont (DVTPrivate)
-- (BOOL)dvt_isStyledFont;
++ (void)load;
+- (id)dvt_fontTextStyle;
+- (BOOL)dvt_isNonSystemMetaFont;
 - (BOOL)dvt_isNonRegularNonBoldSystemFontWeight;
 - (BOOL)dvt_isAnySystemFont;
-- (unsigned long long)metaFontType;
+- (unsigned long long)dvt_metaFontType;
 @end
 

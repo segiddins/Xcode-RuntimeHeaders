@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSDictionary, NSError;
+@class NSData, NSDictionary, NSError;
 @protocol NSSecureCoding><NSObject;
 
 @interface DTXMessage : NSObject
@@ -14,9 +14,7 @@
     unsigned int _messageType;
     int _compressionType;
     unsigned int _status;
-    CDUnknownBlockType _destructor;
-    const char *_internalBuffer;
-    unsigned long long _internalBufferLength;
+    NSData *_payloadData;
     unsigned long long _cost;
     id <NSSecureCoding><NSObject> _payloadObject;
     void *_auxiliary;
@@ -31,8 +29,10 @@
 
 + (_Bool)extractSerializedCompressionInfoFromBuffer:(const char *)arg1 length:(unsigned long long)arg2 compressionType:(int *)arg3 uncompressedLength:(unsigned long long *)arg4 compressedDataOffset:(unsigned long long *)arg5;
 + (id)message;
++ (id)messageWithSelector:(SEL)arg1 arguments:(id)arg2;
 + (id)messageWithSelector:(SEL)arg1 objectArguments:(id)arg2;
 + (id)messageWithSelector:(SEL)arg1 typesAndArguments:(unsigned int)arg2;
++ (id)messageWithData:(id)arg1;
 + (id)messageReferencingBuffer:(const void *)arg1 length:(unsigned long long)arg2 destructor:(CDUnknownBlockType)arg3;
 + (id)messageWithBuffer:(const void *)arg1 length:(unsigned long long)arg2;
 + (id)messageWithPrimitive:(void *)arg1;
@@ -52,6 +52,9 @@
 @property(readonly, nonatomic) unsigned long long serializedLength;
 - (void)serializedFormApply:(CDUnknownBlockType)arg1;
 - (id)initWithSerializedForm:(const char *)arg1 length:(unsigned long long)arg2 destructor:(CDUnknownBlockType)arg3 compressor:(id)arg4;
+- (id)initWithSerializedForm:(id)arg1 compressor:(id)arg2;
+- (id)_initWithReferencedSerializedForm:(id)arg1 compressor:(id)arg2 payloadSet:(CDUnknownBlockType)arg3;
+- (id)_decompressedData:(id)arg1 compressor:(id)arg2 compressionType:(int)arg3;
 - (void)invokeWithTarget:(id)arg1 replyChannel:(id)arg2 validator:(CDUnknownBlockType)arg3;
 - (BOOL)shouldInvokeWithTarget:(id)arg1;
 @property(nonatomic) unsigned int messageType;
@@ -77,9 +80,9 @@
 - (id)objectWithAllowedClasses:(id)arg1;
 @property(copy, nonatomic) id <NSSecureCoding><NSObject> payloadObject;
 - (void)_setPayloadBuffer:(const char *)arg1 length:(unsigned long long)arg2 shouldCopy:(BOOL)arg3 destructor:(CDUnknownBlockType)arg4;
-- (void)_clearPayloadBuffer;
 - (void)dealloc;
 - (id)initWithInvocation:(id)arg1;
+- (id)initWithSelector:(SEL)arg1 objects:(id)arg2;
 - (id)initWithSelector:(SEL)arg1 firstArg:(id)arg2 remainingObjectArgs:(struct __va_list_tag [1])arg3;
 - (id)newReplyReferencingBuffer:(const void *)arg1 length:(unsigned long long)arg2 destructor:(CDUnknownBlockType)arg3;
 - (id)newReplyWithMessage:(id)arg1;
@@ -89,6 +92,7 @@
 - (void)compressWithCompressor:(id)arg1 usingType:(int)arg2 forCompatibilityWithVersion:(long long)arg3;
 - (id)descriptionWithRoutingInformation:(struct DTXMessageRoutingInfo)arg1;
 - (id)description;
+@property(readonly, nonatomic) NSData *data; // @synthesize data=_payloadData;
 
 @end
 

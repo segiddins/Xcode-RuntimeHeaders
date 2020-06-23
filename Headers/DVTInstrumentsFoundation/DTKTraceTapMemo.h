@@ -6,8 +6,8 @@
 
 #import <DVTInstrumentsFoundation/DTTapDataMemo.h>
 
-@class NSData, NSValue;
-@protocol DTKPDatastream;
+@class NSData, NSObject, NSValue;
+@protocol DTKPDatastream, OS_xpc_object;
 
 @interface DTKTraceTapMemo : DTTapDataMemo
 {
@@ -15,11 +15,13 @@
     unsigned int _triggerCount;
     NSData *_triggerIDs;
     id <DTKPDatastream> _datastream;
+    NSObject<OS_xpc_object> *_stackshot;
     NSValue *_containers;
 }
 
 - (void).cxx_destruct;
 @property(retain, nonatomic) NSValue *containers; // @synthesize containers=_containers;
+@property(retain, nonatomic) NSObject<OS_xpc_object> *stackshot; // @synthesize stackshot=_stackshot;
 @property(retain, nonatomic) id <DTKPDatastream> datastream; // @synthesize datastream=_datastream;
 @property(retain, nonatomic) NSData *triggerIDs; // @synthesize triggerIDs=_triggerIDs;
 @property(nonatomic) unsigned int triggerCount; // @synthesize triggerCount=_triggerCount;

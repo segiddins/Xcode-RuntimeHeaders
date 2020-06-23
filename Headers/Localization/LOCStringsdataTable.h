@@ -17,6 +17,8 @@
 - (void).cxx_destruct;
 @property(retain) NSMutableArray *entries; // @synthesize entries=_entries;
 @property(copy) NSString *name; // @synthesize name=_name;
+- (BOOL)writeAsStringsFile:(id)arg1 error:(id *)arg2;
+- (void)mergeWithOtherTable:(id)arg1;
 - (id)propertyListRepresentation;
 - (id)initWithName:(id)arg1 propertyListRepresentation:(id)arg2;
 @property(readonly, copy) NSDictionary *entriesByKey;

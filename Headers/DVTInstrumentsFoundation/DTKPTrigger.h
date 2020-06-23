@@ -14,6 +14,7 @@
     BOOL _collectUserStacks;
     BOOL _collectKernelStacks;
     unsigned int _triggerID;
+    int _targetPid;
     unsigned int _actionID;
     unsigned int _samplers;
     NSObject<OS_dispatch_semaphore> *_lock;
@@ -28,10 +29,11 @@
 @property(readonly, retain, nonatomic) NSObject<OS_dispatch_semaphore> *lock; // @synthesize lock=_lock;
 @property(nonatomic) BOOL collectKernelStacks; // @synthesize collectKernelStacks=_collectKernelStacks;
 @property(nonatomic) BOOL collectUserStacks; // @synthesize collectUserStacks=_collectUserStacks;
+@property(nonatomic) int targetPid; // @synthesize targetPid=_targetPid;
 @property(readonly, nonatomic) unsigned int triggerID; // @synthesize triggerID=_triggerID;
 @property(readonly, retain, nonatomic) DTKPCPUCounterAllocator *queryCounterAllocator;
 @property(readonly, retain, nonatomic) DTKPCPUCounterAllocator *counterAllocator;
-- (int)_setFilterByTask:(unsigned int)arg1 forAction:(unsigned int)arg2;
+- (int)_setFilterByPid:(int)arg1 forAction:(unsigned int)arg2;
 - (int)_setSamplers:(unsigned int)arg1 forAction:(unsigned int)arg2;
 - (void)_actionDealloc:(unsigned int)arg1;
 - (unsigned int)_actionAlloc;

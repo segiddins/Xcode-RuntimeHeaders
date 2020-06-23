@@ -34,7 +34,6 @@
 @property(readonly, nonatomic) NSString *latestMajorVersion;
 - (id)initWithIdentifier:(id)arg1 title:(id)arg2 latestVersion:(id)arg3 coreUIValue:(long long)arg4 displayOrder:(double)arg5;
 - (long long)componentID;
-- (id)xctest_defaultOptions;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -28,6 +28,7 @@
 - (void)recalculateKeyViewLoop;
 - (BOOL)canBecomeMainWindow;
 - (BOOL)canBecomeKeyWindow;
+- (void)dvt_closeActiveEditorTab:(id)arg1;
 - (void)becomeMainWindow;
 - (void)setWindowController:(id)arg1;
 - (void)setDelegate:(id)arg1;

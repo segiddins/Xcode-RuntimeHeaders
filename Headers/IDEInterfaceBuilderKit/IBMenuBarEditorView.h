@@ -13,7 +13,7 @@
 - (void)layoutTopDown;
 - (void)drawRect:(struct CGRect)arg1;
 - (Class)menuItemEditorViewClass;
-- (int)layoutDirection;
+- (unsigned long long)layoutDirection;
 - (id)distanceToDragToAddItem;
 - (double)maxEdgeInset;
 - (double)minEdgeInset;

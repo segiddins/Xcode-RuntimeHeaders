@@ -7,6 +7,7 @@
 @class NSArray;
 
 @protocol GPUAbstractDebuggerController
+- (NSArray *)issuesForRangeOfFunctionIndices:(struct _NSRange)arg1 fileFunctionIndices:(struct _NSRange)arg2;
 - (NSArray *)issuesForRangeOfFunctionIndices:(struct _NSRange)arg1;
 @end
 

@@ -65,7 +65,8 @@
 - (void)_loadMemoryGraphFromLocalFile:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) DTMemoryGraphItem *initialItem;
 - (id)instrumentsServer;
-- (void)_updateIssues;
+- (void)_updateMemoryGraphIndexAndIssuesFromIndex:(id)arg1 withCompletionOnMain:(CDUnknownBlockType)arg2;
+- (void)_updateMemoryGraphIndex:(id)arg1 leakedItems:(id)arg2 abandonedItems:(id)arg3;
 - (id)children;
 - (id)initWithPlatform:(id)arg1 debugSession:(id)arg2;
 @property(readonly, nonatomic) NSArray *navigableItem_childRepresentedObjects;

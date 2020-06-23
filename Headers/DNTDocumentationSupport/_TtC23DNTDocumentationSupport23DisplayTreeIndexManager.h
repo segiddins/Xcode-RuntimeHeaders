@@ -6,9 +6,7 @@
 
 #import <objc/NSObject.h>
 
-#import <DNTDocumentationSupport/DNTDisplayTreeIndexDelegate-Protocol.h>
-
-@interface _TtC23DNTDocumentationSupport23DisplayTreeIndexManager : NSObject <DNTDisplayTreeIndexDelegate>
+@interface _TtC23DNTDocumentationSupport23DisplayTreeIndexManager : NSObject
 {
 }
 

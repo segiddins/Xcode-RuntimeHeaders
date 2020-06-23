@@ -4,11 +4,11 @@
 //  Copyright (C) 1997-2019 Steve Nygard.
 //
 
-#import <swiftCore/_TtCs12_SwiftObject.h>
+#import <objc/NSObject.h>
 
 @class MISSING_TYPE;
 
-@interface _TtC13DVTFoundation11RateLimiter : _TtCs12_SwiftObject
+@interface _TtC13DVTFoundation11RateLimiter : NSObject
 {
     MISSING_TYPE *collectionKey;
     MISSING_TYPE *rateLimit;
@@ -16,6 +16,12 @@
     MISSING_TYPE *cache;
     MISSING_TYPE *$__lazy_storage_$_overrideRateLimit;
 }
+
+- (void).cxx_destruct;
+- (id)init;
+- (BOOL)wantsRefreshWithKey:(id)arg1;
+- (void)refreshedWithKey:(id)arg1 on:(id)arg2;
+- (id)initWithCollectionKey:(id)arg1 rateLimit:(double)arg2 logAspect:(id)arg3 cacheSize:(unsigned long long)arg4;
 
 @end
 

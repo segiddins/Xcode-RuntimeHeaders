@@ -9,5 +9,7 @@
 @interface _TtC12DVTAnalytics19ProcessorUsagePoint (DVTAnalytics)
 + (id)objectFromFilePath:(id)arg1 error:(id *)arg2;
 - (id)snapshotWithError:(id *)arg1;
+- (BOOL)isEqual:(id)arg1;
+@property(nonatomic, readonly) long long hash;
 @end
 

@@ -11,7 +11,7 @@
 #import <SKIndex/IDEIndexDatabaseDelegate-Protocol.h>
 #import <SKIndex/SKScanIndexDelegate-Protocol.h>
 
-@class DVTDispatchLock, DVTFilePath, DVTNotificationToken, DVTStackBacktrace, IDEBoltIndexDatabase, IDECoalescingInvocation, IDEIndexQPManager, IDEIndexingEngine, IDEWorkspace, NSDate, NSMutableDictionary, NSSet, NSString, SKToolchainResolver, SKUnitTestsIndex;
+@class DVTDispatchLock, DVTFilePath, DVTNotificationToken, DVTStackBacktrace, IDEBoltIndexDatabase, IDECoalescingInvocation, IDEIndexQPManager, IDEIndexingEngine, IDEWorkspace, NSDate, NSDictionary, NSMutableDictionary, NSString, SKToolchainResolver, SKUnitTestsIndex;
 @protocol OS_dispatch_queue;
 
 @interface IDEIndex : NSObject <IDEBoltIndexDatabaseProgressDelegate, IDEIndexDatabaseDelegate, SKScanIndexDelegate, DVTInvalidation>
@@ -21,8 +21,12 @@
     DVTFilePath *_databaseFile;
     DVTFilePath *_datastoreFolder;
     DVTFilePath *_folder;
+    DVTFilePath *_pchFolder;
     DVTFilePath *_toolchainInvocationLoggingPath;
+    BOOL _enableBackgroundIndexer;
+    BOOL _enableExplicitOutputUnits;
     BOOL _enableFullStoreVisibility;
+    BOOL _enablePCHCreation;
     BOOL _dumpIndexables;
     IDEIndexingEngine *_engine;
     IDEIndexQPManager *_qpManager;
@@ -31,8 +35,7 @@
     NSMutableDictionary *_indexablesToProductHeaders;
     NSMutableDictionary *_copiedHeadersToSources;
     NSMutableDictionary *_sourceHeadersToIndexables;
-    NSSet *_preferredTargets;
-    NSSet *_priorityTargets;
+    NSDictionary *_preferredTargets;
     IDEBoltIndexDatabase *_workspaceDatabase;
     DVTDispatchLock *_stateLock;
     DVTDispatchLock *_pchCreationLock;
@@ -68,7 +71,8 @@
 + (unsigned long long)assertionBehaviorAfterEndOfEventForSelector:(SEL)arg1;
 + (BOOL)supportsInvalidationPrevention;
 + (void)dumpIndexableAsPropertyList:(id)arg1 settings:(id)arg2;
-+ (id)createIndexForWorkspace:(id)arg1 toolchainResolver:(id)arg2 datastoreFolder:(id)arg3 toolchainInvocationLoggingPath:(id)arg4 enableFullStoreVisibility:(BOOL)arg5 dumpIndexables:(BOOL)arg6 initialDBSize:(unsigned long long)arg7;
++ (id)createIndexForWorkspace:(id)arg1 toolchainResolver:(id)arg2 datastoreFolder:(id)arg3 toolchainInvocationLoggingPath:(id)arg4 enableBackgroundIndexer:(BOOL)arg5 enableExplicitOutputUnits:(BOOL)arg6 enableFullStoreVisibility:(BOOL)arg7 enablePCHCreation:(id)arg8 dumpIndexables:(BOOL)arg9 initialDBSize:(unsigned long long)arg10;
++ (id)_pchFolderForWorkspace:(id)arg1;
 + (id)_databaseFolderForWorkspace:(id)arg1;
 + (void)initialize;
 + (id)schedulingLogAspect;
@@ -94,7 +98,7 @@
 - (void)activeRunDestinationDidChange;
 - (void)_clearAllCachedBuildSettings;
 - (BOOL)isTargetMatchingActiveDestinationPlatform:(id)arg1;
-- (BOOL)isPreferredTarget:(id)arg1 priority:(char *)arg2;
+- (BOOL)isPreferredTarget:(id)arg1 isBuiltForRun:(char *)arg2 isImplicitDependency:(char *)arg3;
 - (BOOL)isPreferredTarget:(id)arg1;
 - (id)databaseQueryProvider;
 - (id)queryProviderForLocation:(id)arg1 highPriority:(BOOL)arg2;
@@ -143,8 +147,12 @@
 - (void)suspendIndexing;
 @property(readonly, nonatomic) BOOL isPaused;
 @property(readonly, nonatomic) BOOL isQuiescent;
+@property(readonly) BOOL isPCHCreationEnabled;
+@property(readonly) BOOL isBackgroundIndexingEnabled;
 - (id)indexableForIdentifier:(id)arg1;
-- (void)registerPreferredTargets:(id)arg1 priorityTargets:(id)arg2;
+- (void)removeUnitOutFilePaths:(id)arg1 waitForProcessing:(BOOL)arg2;
+- (void)addUnitOutFilePaths:(id)arg1 waitForProcessing:(BOOL)arg2;
+- (void)updatePreferredTargets:(id)arg1;
 - (void)unregisterObject:(id)arg1;
 - (void)registerObject:(id)arg1;
 - (void)postNotificationName:(id)arg1;
@@ -157,10 +165,11 @@
 - (id)defaultToolchain;
 - (id)toolchainForSettings:(id)arg1 tool:(int)arg2;
 - (id)toolchainInvocationLoggingPath;
+- (id)pchFolder;
 - (id)datastoreFolder;
 - (BOOL)openDatabase;
-- (id)initWithFolder:(id)arg1 datastoreFolder:(id)arg2 toolchainInvocationLoggingPath:(id)arg3 enableFullStoreVisibility:(BOOL)arg4 readonly:(BOOL)arg5 initialDBSize:(unsigned long long)arg6;
-- (id)initWithFolder:(id)arg1 forWorkspace:(id)arg2 toolchainResolver:(id)arg3 datastoreFolder:(id)arg4 toolchainInvocationLoggingPath:(id)arg5 enableFullStoreVisibility:(BOOL)arg6 dumpIndexables:(BOOL)arg7 readonly:(BOOL)arg8 initialDBSize:(unsigned long long)arg9;
+- (id)initWithFolder:(id)arg1 datastoreFolder:(id)arg2 toolchainInvocationLoggingPath:(id)arg3 enableBackgroundIndexer:(BOOL)arg4 enableExplicitOutputUnits:(BOOL)arg5 enableFullStoreVisibility:(BOOL)arg6 enablePCHCreation:(id)arg7 readonly:(BOOL)arg8 initialDBSize:(unsigned long long)arg9;
+- (id)initWithFolder:(id)arg1 forWorkspace:(id)arg2 toolchainResolver:(id)arg3 datastoreFolder:(id)arg4 toolchainInvocationLoggingPath:(id)arg5 enableBackgroundIndexer:(BOOL)arg6 enableExplicitOutputUnits:(BOOL)arg7 enableFullStoreVisibility:(BOOL)arg8 enablePCHCreation:(id)arg9 dumpIndexables:(BOOL)arg10 readonly:(BOOL)arg11 initialDBSize:(unsigned long long)arg12;
 - (id)_databaseFileURLForFolder:(id)arg1;
 - (void)_setupObservers;
 - (id)translateName:(id)arg1 ofSymbol:(id)arg2 toLanguageOfRef:(id)arg3 withCurrentFileContentDictionary:(id)arg4;

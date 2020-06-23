@@ -10,7 +10,7 @@
 #import <IDEKit/IDEEditorMenuStepperViewDelegate-Protocol.h>
 #import <IDEKit/NSMenuDelegate-Protocol.h>
 
-@class DVTObservingToken, DVTStackBacktrace, IDEEditorContext, IDEEditorMenuStepperView, IDEIssue, IDEIssueManager, NSArray, NSImage, NSMenu, NSString, NSURL;
+@class DVTObservingToken, DVTStackBacktrace, IDEEditorContext, IDEEditorMenuStepperView, IDEIssue, IDEIssueManager, NSArray, NSMenu, NSString, NSURL;
 @protocol DVTCancellable;
 
 @interface IDEEditorIssueMenuController : NSObject <IDEEditorMenuStepperViewDelegate, NSMenuDelegate, DVTInvalidation>
@@ -34,8 +34,6 @@
     BOOL _canMoveToFixIt;
     BOOL _showIssueMenuController;
     BOOL _canJump;
-    NSImage *_defaultLeftArrowButtonImage;
-    NSImage *_defaultRightArrowButtonImage;
 }
 
 + (void)initialize;
@@ -50,7 +48,6 @@
 - (BOOL)canMoveToFixIt;
 - (BOOL)canMove;
 - (id)menuForStepperView;
-- (void)updateButtonStatesWithEditorContext:(id)arg1;
 - (void)editorNavigatedToAnnotationRepresentedObject:(id)arg1;
 - (void)_issueMenuAction:(id)arg1;
 - (void)_navigateToIssue:(id)arg1 fixIt:(BOOL)arg2;

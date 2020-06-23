@@ -10,11 +10,9 @@
 {
 }
 
-+ (BOOL)wantsReformattingOfArchive:(id)arg1 distributionMethod:(id)arg2;
-+ (id)reformatterForArchive:(id)arg1 distributionMethod:(id)arg2;
 + (id)propertyListForContext:(id)arg1;
 + (id)availableOptionsForPropertyList;
-- (BOOL)reformatArchiveWithError:(id *)arg1;
+- (BOOL)reformatArchiveWithError:(id *)arg1 warnings:(id *)arg2;
 - (BOOL)loadFromExportOptions:(id)arg1 error:(id *)arg2;
 - (id)providedOutputContextPropertyNames;
 - (id)requiredInputContextPropertyNames;

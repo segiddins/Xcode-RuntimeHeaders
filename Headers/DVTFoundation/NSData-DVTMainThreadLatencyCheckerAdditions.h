@@ -30,7 +30,7 @@
 - (id)dvt_hexStringLowercased:(BOOL)arg1;
 - (id)dvt_dataWithSHA256Digest;
 - (id)dvt_dataWithSHA1Digest;
-- (id)dvt_dataWithMD5Digest;
+- (id)dvt_dataWithInsecureMD5Digest;
 - (struct __sFILE *)openForReading;
 - (id)dvt_dataDecryptedWithKey:(struct __SecKey *)arg1 error:(id *)arg2;
 - (id)dvt_dataEncryptedWithKey:(struct __SecKey *)arg1 error:(id *)arg2;

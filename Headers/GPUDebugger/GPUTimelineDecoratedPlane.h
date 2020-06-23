@@ -8,14 +8,11 @@
 
 @interface GPUTimelineDecoratedPlane : DTTimelineDecoratedPlane
 {
-    unsigned long long _sortingIndex;
 }
 
-@property(nonatomic) unsigned long long sortingIndex; // @synthesize sortingIndex=_sortingIndex;
 - (id)_unselectedTextColor;
 - (id)_selectedTextColor;
 - (BOOL)_wantsBottomBorderLayerWhenInGroupPlane;
-- (long long)compare:(id)arg1;
 
 @end
 

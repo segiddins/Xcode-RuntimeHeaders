@@ -32,6 +32,7 @@
 - (void)_quickLookNextRow;
 - (void)_quickLookPreviousRow;
 - (void)quickLookAttachment:(id)arg1 activity:(id)arg2 test:(id)arg3 relativeToView:(id)arg4 loadingHandler:(CDUnknownBlockType)arg5;
+- (void)quickLookAttachmentsInFailureSummary:(id)arg1 relativeToView:(id)arg2;
 - (void)quickLookAttachmentsInActivity:(id)arg1 relativeToView:(id)arg2;
 - (void)_showQuickLook:(id)arg1 relativeToView:(id)arg2;
 - (void)showCrashLogForTestActivity:(id)arg1 withDataFromURL:(id)arg2;

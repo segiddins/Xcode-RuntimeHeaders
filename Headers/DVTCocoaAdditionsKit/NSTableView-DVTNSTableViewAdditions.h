@@ -11,6 +11,7 @@
 @interface NSTableView (DVTNSTableViewAdditions)
 @property(readonly) NSIndexSet *dvt_contextMenuSelectedRowIndexes;
 @property(readonly) NSIndexSet *dvt_clickedRowIndexes;
+- (void)dvt_setStyle:(long long)arg1;
 - (void)dvt_scrollRowToVisibleCentered:(long long)arg1;
 - (void)dvt_scrollRowToVisibleTop:(long long)arg1;
 - (BOOL)dvt_autoscrollWithExternalDragEvent:(id)arg1 animate:(BOOL)arg2;

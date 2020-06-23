@@ -29,6 +29,7 @@
 - (id)updateResource:(id)arg1 sharegroup:(unsigned long long)arg2;
 - (BOOL)hasResourceBeenUpdated:(unsigned long long)arg1 resourceType:(unsigned int)arg2 container:(unsigned long long)arg3;
 - (void)invalidateDeviceResource:(id)arg1 sharegroup:(unsigned long long)arg2 functionIndex:(unsigned int)arg3;
+- (id)realizeTextures:(id)arg1 compression:(unsigned long long)arg2 createResourceBlock:(CDUnknownBlockType)arg3;
 - (void)invalidateDeviceCache;
 - (id)loadDeviceResourceBatch:(id)arg1 withCompression:(unsigned long long)arg2 priority:(long long)arg3 sharegroup:(unsigned long long)arg4 functionIndex:(unsigned int)arg5;
 - (id)loadDeviceResource:(id)arg1 sharegroup:(unsigned long long)arg2 functionIndex:(unsigned int)arg3 subCommandIndex:(int)arg4;

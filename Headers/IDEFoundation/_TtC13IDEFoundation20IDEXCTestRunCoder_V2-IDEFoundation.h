@@ -6,9 +6,12 @@
 
 #import <IDEFoundation/_TtC13IDEFoundation20IDEXCTestRunCoder_V2.h>
 
+#import <IDEFoundation/IDEXCTestRunCoder-Protocol.h>
 #import <IDEFoundation/IDEXCTestRunDecoder-Protocol.h>
+#import <IDEFoundation/IDEXCTestRunEncoder-Protocol.h>
 
-@interface _TtC13IDEFoundation20IDEXCTestRunCoder_V2 (IDEFoundation) <IDEXCTestRunDecoder>
+@interface _TtC13IDEFoundation20IDEXCTestRunCoder_V2 (IDEFoundation) <IDEXCTestRunDecoder, IDEXCTestRunEncoder, IDEXCTestRunCoder>
 - (id)testRunFileWithDictionaryRepresentation:(id)arg1 removingPathPlaceholdersForTestRootPath:(id)arg2 derivedDataPath:(id)arg3 error:(id *)arg4;
+- (id)dictionaryRepresentationWithTestPlanInfo:(id)arg1 testRunSpecificationGroups:(id)arg2 codeCoverageBuildableInfos:(id)arg3 testRootPathPlaceholder:(id)arg4 derivedDataPathPlaceholder:(id)arg5;
 @end
 

@@ -17,8 +17,8 @@
     id <IDEOpenQuicklyIndexSymbol> _symbol;
 }
 
-+ (id)resultWithCandidate:(struct IDEOpenQuicklyQueryCandidate *)arg1 symbol:(id)arg2 query:(id)arg3;
-+ (double)scoreAdjustmentForSymbolKind:(id)arg1;
++ (id)resultWithCandidate:(struct DVTFuzzyMatchCandidate *)arg1 precision:(long long)arg2 symbol:(id)arg3 query:(id)arg4;
++ (double)scoreAdjustmentForSymbolKind:(id)arg1 isComplex:(BOOL)arg2;
 - (void).cxx_destruct;
 @property(readonly) id <IDEOpenQuicklyIndexSymbol> symbol; // @synthesize symbol=_symbol;
 - (id)alternateTitleGivenParentResult:(id)arg1;
@@ -31,7 +31,7 @@
 - (BOOL)representsSameResult:(id)arg1;
 - (BOOL)representsSameResultAsSymbolResult:(id)arg1;
 - (unsigned long long)hashOfResultIdentity;
-- (id)updatedResultForQuery:(id)arg1;
+- (id)updatedResultForQuery:(id)arg1 precision:(long long)arg2;
 
 @end
 

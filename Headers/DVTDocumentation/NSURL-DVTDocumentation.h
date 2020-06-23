@@ -10,5 +10,6 @@
 @property(nonatomic, readonly) BOOL dvt_isCoreDocURL;
 @property(nonatomic, readonly) BOOL dvt_isUnmappedReferenceURL;
 @property(nonatomic, readonly) BOOL dvt_isAppleReferenceURL;
+@property(nonatomic, readonly) BOOL dvt_isDocumentationURL;
 @end
 

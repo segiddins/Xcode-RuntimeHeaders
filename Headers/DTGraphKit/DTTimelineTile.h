@@ -9,7 +9,7 @@
 #import <DTGraphKit/CALayerDelegate-Protocol.h>
 #import <DTGraphKit/DTRenderableContentProviderDelegate-Protocol.h>
 
-@class CALayer, DTTimelineDecorator, DTTimelineTileDrawingContent, DTTimelineTileDrawingProvider, NSString;
+@class CALayer, DTTimelineDecorator, DTTimelineTileDrawingContent, DTTimelineTileDrawingProvider, NSMutableArray, NSString;
 
 __attribute__((visibility("hidden")))
 @interface DTTimelineTile : NSObject <DTRenderableContentProviderDelegate, CALayerDelegate>
@@ -19,6 +19,7 @@ __attribute__((visibility("hidden")))
     DTTimelineDecorator *_decorator;
     DTTimelineTileDrawingProvider *_drawingProvider;
     DTTimelineTileDrawingContent *_drawableContent;
+    NSMutableArray *_log;
     BOOL _contentComing;
     BOOL _presentingCheckerboard;
     unsigned long long _tileIndex;
@@ -38,6 +39,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) double displayScale;
 - (void)prepareTileForReuseAtIndex:(unsigned long long)arg1;
 - (void)dealloc;
+- (void)log:(id)arg1;
 - (id)initWithIndex:(unsigned long long)arg1 tileSize:(struct CGSize)arg2 tileMetrics:(struct TileMetrics *)arg3 decorator:(id)arg4;
 - (void)discardContentIfPossible;
 - (BOOL)isContentDiscarded;

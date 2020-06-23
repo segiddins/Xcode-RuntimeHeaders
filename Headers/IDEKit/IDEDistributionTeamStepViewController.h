@@ -19,7 +19,7 @@
 
 + (id)keyPathsForValuesAffectingTeamError;
 + (id)keyPathsForValuesAffectingCanGoNext;
-+ (BOOL)skipStepForContext:(id)arg1 assistantDirection:(int)arg2;
++ (BOOL)skipStepForContext:(id)arg1 assistantDirection:(long long)arg2;
 - (void).cxx_destruct;
 @property(retain) DVTObservingToken *teamsObserver; // @synthesize teamsObserver=_teamsObserver;
 @property(retain) NSTextField *errorLabel; // @synthesize errorLabel=_errorLabel;

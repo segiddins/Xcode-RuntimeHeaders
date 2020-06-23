@@ -21,6 +21,7 @@
 @property(readonly) NSArray *deviceSummaryPropertyDictionaries;
 @property(readonly) int deviceWindowCategory;
 @property(readonly) unsigned long long hash;
+@property(readonly, copy) NSString *iOSSupportVersion;
 @property(readonly, copy, nonatomic) NSString *identifier;
 @property(readonly) BOOL isProxiedDevice;
 @property(readonly, copy, nonatomic) NSString *modelCode;

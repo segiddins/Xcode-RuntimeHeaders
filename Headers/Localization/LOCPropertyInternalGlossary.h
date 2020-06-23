@@ -6,13 +6,13 @@
 
 #import <objc/NSObject.h>
 
-@class NSDictionary, NSMutableDictionary, NSString, NSXMLDocument;
+@class NSArray, NSDictionary, NSMutableDictionary, NSString, NSXMLDocument;
 
 @interface LOCPropertyInternalGlossary : NSObject
 {
     NSMutableDictionary *fileAttributesDict;
-    NSDictionary *globalsDict;
     NSMutableDictionary *transUnitsDict;
+    NSDictionary *globalsDict;
     NSXMLDocument *intermediateXLIFF;
     NSString *originalFilePath;
     NSDictionary *newTargetStringsDict;
@@ -23,10 +23,6 @@
     NSMutableDictionary *cachedEntities;
     NSDictionary *newSegSourceDict;
     NSDictionary *doNotTranslateTermList;
-    id reserved5;
-    id reserved6;
-    id reserved7;
-    id reserved8;
 }
 
 + (id)originalsInXliffObject:(id)arg1;
@@ -41,9 +37,8 @@
 @property(retain, getter=theNewTargetStringsDict) NSDictionary *newTargetStringsDict; // @synthesize newTargetStringsDict;
 @property(retain) NSString *originalFilePath; // @synthesize originalFilePath;
 @property(retain) NSXMLDocument *intermediateXLIFF; // @synthesize intermediateXLIFF;
-@property(retain) NSMutableDictionary *transUnitsDict; // @synthesize transUnitsDict;
 @property(retain) NSDictionary *globalsDict; // @synthesize globalsDict;
-@property(retain) NSMutableDictionary *fileAttributesDict; // @synthesize fileAttributesDict;
+- (id)debugDescription;
 - (unsigned long long)newTransUnitCount;
 - (unsigned long long)signedOffTransUnitCount;
 - (unsigned long long)transUnitCountForState:(id)arg1;
@@ -67,28 +62,31 @@
 - (BOOL)addTransUnitWithTransUnitAttributes:(id)arg1 sourceString:(id)arg2 sourceAttributes:(id)arg3 targetString:(id)arg4 targetAttributes:(id)arg5 note:(id)arg6 segSourceString:(id)arg7 forTransUnitID:(id)arg8 error:(id *)arg9;
 - (void)setGlossary:(id)arg1;
 - (void)setFileContentEntryWithSourceString:(id)arg1 targetString:(id)arg2 comment:(id)arg3 targetAttribute:(id)arg4;
+- (BOOL)_setTransUnitDictionary:(id)arg1 fileAttributes:(id)arg2 globals:(id)arg3 originalPath:(id)arg4 transformationWithXSLT:(id)arg5 doNotTranslateTermList:(id)arg6 error:(id *)arg7;
+- (id)_mergedTransUnitsDictionaryFromSourceStrings:(id)arg1 targetStrings:(id)arg2 comments:(id)arg3 segSourceStrings:(id)arg4 transUnitAttributes:(id)arg5 targetAttributes:(id)arg6;
+- (BOOL)_setSourceStrings:(id)arg1 targetStrings:(id)arg2 comments:(id)arg3 segSourceStrings:(id)arg4 fileAttributes:(id)arg5 transUnitAttributes:(id)arg6 targetAttributes:(id)arg7 globals:(id)arg8 originalPath:(id)arg9 transformationWithXSLT:(id)arg10 error:(id *)arg11;
 - (void)setSourceStrings:(id)arg1 targetStrings:(id)arg2 comments:(id)arg3 transUnitAttributes:(id)arg4 targetAttributes:(id)arg5;
 - (id)unsegmentedTranslationsWithGlossary:(id)arg1 locale:(id)arg2;
 - (id)addSegmentAttributes:(id)arg1 parentNode:(id)arg2 error:(id *)arg3;
 - (id)updateSegmentAttributes:(id)arg1 parentNode:(id)arg2 error:(id *)arg3;
 - (id)plainSourceStringForTransUnitID:(id)arg1;
-- (id)fileExtension;
-- (id)fileName;
-- (id)filePath;
+@property(readonly, copy) NSString *fileExtension;
+@property(readonly, copy) NSString *fileName;
+@property(readonly, copy) NSString *filePath;
 - (id)calculatePerSegmentWordCountForTransUnitID:(id)arg1 error:(id *)arg2;
 - (id)calculatePerSegmentWordCountForTransUnitID:(id)arg1 options:(unsigned long long)arg2 error:(id *)arg3;
 - (id)calculateWordCountForTransUnitID:(id)arg1 error:(id *)arg2;
 - (id)calculateWordCountForTransUnitID:(id)arg1 options:(unsigned long long)arg2 error:(id *)arg3;
 - (id)transUnitsOrder;
 - (void)diffWithGlossary:(id)arg1 newIDs:(id *)arg2 obsoleteIDs:(id *)arg3 identicalIDs:(id *)arg4 changedIDs:(id *)arg5 options:(unsigned long long)arg6;
-- (BOOL)isMonolingual;
-- (id)targetLanguage;
-- (id)sourceLanguage;
+@property(readonly) BOOL isMonolingual;
+@property(readonly, copy) NSString *targetLanguage;
+@property(readonly, copy) NSString *sourceLanguage;
 - (id)attributeValueInFileElementForKey:(id)arg1;
 - (id)namespacePrefixforGMXVWithError:(id *)arg1;
 - (id)stageElementsWithError:(id *)arg1;
 - (id)metricsElementWithNamespacePrefix:(id)arg1 error:(id *)arg2;
-- (void)setInternalFileContents:(id)arg1 error:(id *)arg2;
+- (BOOL)setInternalFileContents:(id)arg1 error:(id *)arg2;
 - (id)internalFileWithError:(id *)arg1;
 - (BOOL)inlineElementReady;
 - (id)leverageWithGlossary:(id)arg1 options:(unsigned long long)arg2 flatten:(BOOL)arg3 skipTranslationsMatchingSource:(BOOL)arg4 error:(id *)arg5;
@@ -108,14 +106,14 @@
 - (BOOL)setNewSegSource:(id)arg1 refresh:(BOOL)arg2 error:(id *)arg3;
 - (BOOL)setNewTargetStrings:(id)arg1 refresh:(BOOL)arg2 error:(id *)arg3;
 - (id)stringValuesForXPath:(id)arg1 toTransUnitID:(id)arg2 error:(id *)arg3;
-- (id)idStrings;
+@property(readonly) NSArray *idStrings;
 - (id)applyXSLT:(id)arg1 to:(id)arg2 arguments:(id)arg3 error:(id *)arg4;
 - (id)createIntermediateXmlTreeObjectWithXSLT:(id)arg1 error:(id *)arg2;
 - (id)createIntermediateXmlTreeObjectWithError:(id *)arg1;
 - (id)initWithXliffObject:(id)arg1 originalPath:(id)arg2 xslt:(id)arg3 error:(id *)arg4;
 - (id)initWithIntermediateXliffObject:(id)arg1 originalPath:(id)arg2 xslt:(id)arg3 error:(id *)arg4;
 - (id)initWithXliffPath:(id)arg1 originalPath:(id)arg2 xslt:(id)arg3 error:(id *)arg4;
-- (void)replaceAllEntriesWithSourceStrings:(id)arg1 targetStrings:(id)arg2 comments:(id)arg3 transUnitAttributes:(id)arg4 targetAttributes:(id)arg5 error:(id *)arg6;
+- (BOOL)replaceAllEntriesWithSourceStrings:(id)arg1 targetStrings:(id)arg2 comments:(id)arg3 transUnitAttributes:(id)arg4 targetAttributes:(id)arg5 error:(id *)arg6;
 - (id)initWithSourceStrings:(id)arg1 targetStrings:(id)arg2 comments:(id)arg3 originalPath:(id)arg4 error:(id *)arg5;
 - (id)initWithSourceStrings:(id)arg1 targetStrings:(id)arg2 comments:(id)arg3 fileAttributes:(id)arg4 globals:(id)arg5 originalPath:(id)arg6 error:(id *)arg7;
 - (id)initWithSourceStrings:(id)arg1 targetStrings:(id)arg2 comments:(id)arg3 fileAttributes:(id)arg4 transUnitAttributes:(id)arg5 globals:(id)arg6 originalPath:(id)arg7 error:(id *)arg8;
@@ -123,32 +121,36 @@
 - (id)initWithSourceStrings:(id)arg1 targetStrings:(id)arg2 comments:(id)arg3 segSourceStrings:(id)arg4 fileAttributes:(id)arg5 transUnitAttributes:(id)arg6 targetAttributes:(id)arg7 globals:(id)arg8 originalPath:(id)arg9 transformationWithXSLT:(id)arg10 error:(id *)arg11;
 - (id)altTransLOCXMLNodesDictWithNodeInitOptions:(unsigned long long)arg1;
 - (id)altTranslationsForTransUnitID:(id)arg1;
-- (id)altTranslationsDict;
+@property(readonly) NSDictionary *altTranslationsDict;
 - (id)targetAttributesForTransUnitID:(id)arg1;
-- (id)targetAttributesDict;
+@property(readonly) NSDictionary *targetAttributesDict;
 - (id)transUnitAttributesForTransUnitID:(id)arg1;
-- (id)transUnitAttributesDict;
+@property(readonly) NSDictionary *transUnitAttributesDict;
 - (id)commentForTransUnitID:(id)arg1;
-- (id)commentsDict;
+@property(readonly) NSDictionary *commentsDict;
 - (id)addWhiteSpaceOnlyTextNodesBetweenMrkSegElementsToNode:(id)arg1 originalNode:(id)arg2 whiteSpaces:(id)arg3;
 - (id)removeTopLevelWhiteSpaceOnlyTextNodesBetweenMrkSegElementsFromNode:(id)arg1 whiteSpaces:(id)arg2;
 - (id)segSourceStringForTransUnitID:(id)arg1;
 - (id)segSourceLOCXMLNodesDictWithNodeInitOptions:(unsigned long long)arg1;
-- (id)flatSegSourceStringsDict;
-- (id)segSourceStringsDict;
+@property(readonly) NSDictionary *flatSegSourceStringsDict;
+@property(readonly) NSDictionary *segSourceStringsDict;
 - (id)segSourceObjectsDictForNodeObjectType:(unsigned long long)arg1 nodeInitOptions:(unsigned long long)arg2 flatten:(BOOL)arg3;
 - (void)addInterSegmentWhiteSpace:(id)arg1 toNode:(id)arg2;
 - (id)targetStringForTransUnitID:(id)arg1;
 - (id)targetLOCXMLNodesDictWithNodeInitOptions:(unsigned long long)arg1;
-- (id)flatTargetStringsDict;
-- (id)targetStringsDict;
+@property(readonly) NSDictionary *flatTargetStringsDict;
+@property(readonly) NSDictionary *targetStringsDict;
 - (id)targetObjectsDictForNodeObjectType:(unsigned long long)arg1 nodeInitOptions:(unsigned long long)arg2 flatten:(BOOL)arg3;
 - (id)sourceStringForTransUnitID:(id)arg1;
 - (id)sourceLOCXMLNodesDictWithNodeInitOptions:(unsigned long long)arg1;
-- (id)flatSourceStringsDict;
-- (id)sourceStringsDict;
+@property(readonly) NSDictionary *flatSourceStringsDict;
+@property(readonly) NSDictionary *sourceStringsDict;
 - (id)sourceObjectsDictForNodeObjectType:(unsigned long long)arg1 nodeInitOptions:(unsigned long long)arg2 flatten:(BOOL)arg3;
 - (id)nodeForSimpleDOMObject:(id)arg1 elementName:(id)arg2 elementAttributes:(id)arg3 nodeInitOptions:(unsigned long long)arg4;
+- (void)_refreshIndexTable;
+@property(retain) NSDictionary *transUnitsDict;
+- (void)setFileAttribute:(id)arg1 forKey:(id)arg2;
+@property(retain) NSDictionary *fileAttributesDict;
 - (void)removeAllEntries;
 - (void)dealloc;
 - (id)initWithTransUnitDictionary:(id)arg1 fileAttributes:(id)arg2 globals:(id)arg3 originalPath:(id)arg4 transformationWithXSLT:(id)arg5 doNotTranslateTermList:(id)arg6 error:(id *)arg7;

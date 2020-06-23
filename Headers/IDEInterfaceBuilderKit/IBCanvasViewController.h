@@ -14,7 +14,7 @@
 #import <IDEInterfaceBuilderKit/NSScrollViewDelegate-Protocol.h>
 
 @class DVTDelayedInvocation, DVTDraggedImageState, DVTMutableOrderedSet, DVTObservingToken, IBAbstractDocumentEditor, IBCancellationToken, IBCanvasControllerLayoutGuideGeneratorDelegate, IBCanvasScrollView, IBCanvasView, IBDeviceBarViewController, IBHitDetectionMap, IBLayoutGuideCanvasOverlay, IBLayoutManager, IBMutableIdentityDictionary, NSButton, NSDate, NSMutableArray, NSMutableOrderedSet, NSMutableSet, NSNumber, NSSegmentedControl, NSString;
-@protocol IBInvalidation;
+@protocol DVTInvalidation, IBInvalidation;
 
 @interface IBCanvasViewController : IDEViewController <IBEditorTreeDelegate, NSScrollViewDelegate, IDEWorkspaceTabControllerCursorRectInterceptor, IBCanvasViewDelegate, IBSelectionProvider, IBHighlightProvider>
 {
@@ -40,11 +40,12 @@
     NSNumber *_canvasZoomFactorAfterAnimation;
     NSSegmentedControl *_zoomSegmentedControl;
     DVTObservingToken *_currentZoomToken;
-    IBCancellationToken *_scrollViewNotificationTokens;
+    IBCancellationToken *_notificationTokens;
     unsigned long long _updateFramesSegmentIndex;
     NSSegmentedControl *_embedButton;
     NSSegmentedControl *_actionAreaButton;
     DVTObservingToken *_usesAutolayoutObservingToken;
+    id <DVTInvalidation> _assetUpdateObservingToken;
     IBCancellationToken *_developmentTargetObservingToken;
     DVTObservingToken *_currentSelectedItemsToken;
     id <IBInvalidation> _eventMonitorToken;
@@ -179,6 +180,7 @@
 - (void)canvasView:(id)arg1 draggingExited:(id)arg2;
 - (BOOL)canvasView:(id)arg1 prepareForDragOperation:(id)arg2;
 - (void)canvasView:(id)arg1 dragWillForceRedrawOfDestinationWindowPriorToDragEnd:(id)arg2;
+- (BOOL)canCaptureMinimapInBackgroundThreadForCanvasView:(id)arg1;
 - (BOOL)canvasView:(id)arg1 performDragOperation:(id)arg2;
 - (long long)insertionIndexForDragInfo:(id)arg1;
 - (BOOL)didAddObjects:(id)arg1 whilePerformingDragOperation:(id)arg2 insertionContext:(id)arg3;
@@ -195,6 +197,7 @@
 - (id)dragOffsetsForObjects:(id)arg1 fromPasteboard:(id)arg2;
 - (id)frameToWindowTransformForPasteboardViews:(id)arg1;
 - (double)scaleForRasterizedDragImages;
+@property(nonatomic) struct NSEdgeInsets scrollViewContentInsets;
 - (void)_zoomCanvasInDirection:(unsigned long long)arg1;
 - (void)zoomCanvasOut:(id)arg1;
 - (void)zoomCanvasIn:(id)arg1;
@@ -216,6 +219,7 @@
 - (BOOL)canZoomIn;
 - (void)updateDocumentEditorMenuTarget;
 - (id)magnificationInflectionPointsForScrollView:(id)arg1;
+- (void)takeShowingMinimapFromDocumentEditor:(id)arg1;
 - (void)canvasScrollViewDidEndLiveScroll:(id)arg1;
 - (void)canvasScrollViewWillStartLiveScroll:(id)arg1;
 - (void)canvasScrollViewDidEndLiveMagnify:(id)arg1;

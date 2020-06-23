@@ -13,6 +13,9 @@
 + (Class)idiomClass;
 + (id)targetRuntimes;
 + (id)targetRuntimeWithIdentifier:(id)arg1;
++ (id)ibPreferredItemForContainerConstraintToItem:(id)arg1 fromDescendant:(id)arg2 attribute:(unsigned long long)arg3;
++ (id)initIBView:(id)arg1 withCoder:(id)arg2;
++ (void)encodeIBView:(id)arg1 withCoder:(id)arg2;
 + (id)instantiateLibraryObjectForAssetIdentifier:(id)arg1;
 - (id)identifierToObjectMapForGeneratedSourceInDocument:(id)arg1;
 - (id)ibRequiredFrameworksForGeneratedSource;
@@ -40,6 +43,7 @@
 - (Class)fallbackSegueClassForUnknownSegueKind;
 - (Class)externalPrimarySceneObjectClass;
 - (Class)simulatedMetricsContainerClass;
+- (long long)minimumVersionSupportingSystemSymbols;
 - (BOOL)useGlobalImageForImageName:(id)arg1;
 - (Class)resourceManagerClass;
 - (long long)minimumVersionSupportingNamedColors;
@@ -52,6 +56,9 @@
 - (id)standinIBNSClasses;
 - (void)unarchivePlatformDependentDocumentManagedDataForObject:(id)arg1 withDocumentUnarchiver:(id)arg2;
 - (void)archivePlatformDependentDocumentManagedDataForObject:(id)arg1 withDocumentArchiver:(id)arg2;
+- (id)runtimeConfigurableConstraintConstantKeyPath;
+- (id)archiveKeyForUsesConfigurations;
+- (BOOL)supportPerConfigurationProperties;
 - (id)autolayoutDescriptiveTextForPriority:(float)arg1;
 - (Class)arbitrationUnitClass;
 - (Class)autolayoutEngineClass;
@@ -79,6 +86,7 @@
 - (Class)targetRuntimeClass;
 - (id)targetRuntimeWithArchiveIdentifier:(id)arg1 variantIdentifier:(id)arg2;
 - (id)marketingVersionFromAvailabilityVersion:(long long)arg1;
+- (long long)availabilityVersionFromMarketingVersion:(id)arg1;
 - (BOOL)downgradingToAutoIncrementingIDsIsEnabled;
 - (BOOL)shouldOpenDocument:(id)arg1 error:(id *)arg2;
 - (id)systemDocumentDependency;

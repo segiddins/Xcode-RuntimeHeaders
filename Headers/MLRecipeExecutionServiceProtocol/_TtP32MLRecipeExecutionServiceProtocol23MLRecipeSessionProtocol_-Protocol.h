@@ -8,8 +8,11 @@
 
 @protocol _TtP32MLRecipeExecutionServiceProtocol23MLRecipeSessionProtocol_
 - (void)evaluateWithModelURL:(NSURL *)arg1 dataURL:(NSURL *)arg2 encodedParameters:(NSData *)arg3 reply:(void (^)(NSData *, NSError *))arg4;
+- (void)inferMultipleWithModelURL:(NSURL *)arg1 dataURL:(NSURL *)arg2 max:(long long)arg3 reply:(void (^)(id <_TtP10CombineXPC21XPCPublisherInterface_>, NSError *))arg4;
 - (void)inferWithModelURL:(NSURL *)arg1 dataURL:(NSURL *)arg2 index:(long long)arg3 encodedParameters:(NSData *)arg4 reply:(void (^)(NSData *, NSError *))arg5;
 - (void)modelAnalysisWithModelURL:(NSURL *)arg1 reply:(void (^)(NSData *, NSError *))arg2;
+- (void)cancelCheckpoint;
+- (void)trainUsingJobWithEncodedOptions:(NSData *)arg1 with:(void (^)(id <_TtP32MLRecipeExecutionServiceProtocol13MLJobProtocol_>, NSError *))arg2;
 - (void)trainUsingDataWithEncodedOptions:(NSData *)arg1 with:(void (^)(NSData *, NSError *))arg2;
 - (void)analyzeDataWithEncodedOptions:(NSData *)arg1 with:(void (^)(NSData *, NSError *))arg2;
 - (void)analyzeRawDataWith:(void (^)(NSData *, NSError *))arg1;

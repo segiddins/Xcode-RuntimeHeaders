@@ -4,15 +4,14 @@
 //  Copyright (C) 1997-2019 Steve Nygard.
 //
 
-@class DVTTestPerformanceMetricOutput, IDETestIdentifier, IDETestResult, IDETestResultMessage, NSError, NSString, XCActivityRecord;
+@class DVTTestPerformanceMetricOutput, IDETestIdentifier, IDETestResult, IDETestResultMessage, NSError, NSString, XCActivityRecord, XCTIssue;
 @protocol IDETestRunner, IDETestTargetRunner;
 
 @protocol IDETestTargetRunnerEvents
 - (void)worker:(id <IDETestRunner>)arg1 forTestTargetRunner:(id <IDETestTargetRunner>)arg2 didFinishTestWithIdentifier:(IDETestIdentifier *)arg3 withTestResult:(IDETestResult *)arg4 rawOutput:(NSString *)arg5;
 - (void)worker:(id <IDETestRunner>)arg1 forTestTargetRunner:(id <IDETestTargetRunner>)arg2 didSkipTestWithIdentifier:(IDETestIdentifier *)arg3 withTestResultMessage:(IDETestResultMessage *)arg4 rawOutput:(NSString *)arg5;
-- (void)worker:(id <IDETestRunner>)arg1 forTestTargetRunner:(id <IDETestTargetRunner>)arg2 didFailTestWithIdentifier:(IDETestIdentifier *)arg3 withTestResultMessage:(IDETestResultMessage *)arg4 rawOutput:(NSString *)arg5;
+- (void)worker:(id <IDETestRunner>)arg1 forTestTargetRunner:(id <IDETestTargetRunner>)arg2 testCaseWithIdentifier:(IDETestIdentifier *)arg3 didRecordIssue:(XCTIssue *)arg4 rawOutput:(NSString *)arg5;
 - (void)worker:(id <IDETestRunner>)arg1 forTestTargetRunner:(id <IDETestTargetRunner>)arg2 testWithIdentifier:(IDETestIdentifier *)arg3 didMeasurePerformanceMetric:(DVTTestPerformanceMetricOutput *)arg4 rawOutput:(NSString *)arg5;
-- (void)worker:(id <IDETestRunner>)arg1 forTestTargetRunner:(id <IDETestTargetRunner>)arg2 didOutput:(NSString *)arg3;
 - (void)worker:(id <IDETestRunner>)arg1 forTestTargetRunner:(id <IDETestTargetRunner>)arg2 testWithIdentifier:(IDETestIdentifier *)arg3 didFinishActivity:(XCActivityRecord *)arg4;
 - (void)worker:(id <IDETestRunner>)arg1 forTestTargetRunner:(id <IDETestTargetRunner>)arg2 testWithIdentifier:(IDETestIdentifier *)arg3 willStartActivity:(XCActivityRecord *)arg4;
 - (void)worker:(id <IDETestRunner>)arg1 forTestTargetRunner:(id <IDETestTargetRunner>)arg2 didStartTestWithIdentifier:(IDETestIdentifier *)arg3 rawOutput:(NSString *)arg4;
@@ -21,7 +20,7 @@
 - (void)worker:(id <IDETestRunner>)arg1 forTestTargetRunner:(id <IDETestTargetRunner>)arg2 testSuite:(IDETestIdentifier *)arg3 didStartAt:(NSString *)arg4 rawOutput:(NSString *)arg5;
 - (void)worker:(id <IDETestRunner>)arg1 forTestTargetRunner:(id <IDETestTargetRunner>)arg2 willFinishWithError:(NSError *)arg3 didCancel:(BOOL)arg4;
 - (void)worker:(id <IDETestRunner>)arg1 forTestTargetRunner:(id <IDETestTargetRunner>)arg2 didLaunchWithDiagnosticLogPath:(NSString *)arg3;
-- (void)testTargetRunner:(id <IDETestTargetRunner>)arg1 didEndWithCancellation:(BOOL)arg2;
+- (void)testTargetRunner:(id <IDETestTargetRunner>)arg1 didEndWithError:(NSError *)arg2 wasCanceled:(BOOL)arg3;
 - (void)testTargetRunnerDidStart:(id <IDETestTargetRunner>)arg1;
 @end
 

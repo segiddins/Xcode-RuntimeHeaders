@@ -30,6 +30,7 @@
 @property(readonly, copy) NSString *description;
 @property(readonly) _Bool deviceIsBusy;
 @property(readonly) unsigned long long hash;
+@property(readonly, copy) NSString *iOSSupportVersion;
 @property(readonly, copy, nonatomic) NSString *identifier;
 @property(readonly) BOOL isProxiedDevice;
 @property(readonly, copy, nonatomic) NSString *modelCode;

@@ -14,6 +14,7 @@
     NSDictionary *stringKeyValueCommentDictionary;
     NSDictionary *legacyKeyMapping;
     NSError *parseError;
+    NSMutableArray *allParseErrors;
     NSError *errorFromPropertyListFromStringsFileFormat;
     BOOL allowMinorError;
     BOOL processedAsXMLFormatStringsFile;
@@ -28,6 +29,7 @@
 @property BOOL allowMinorError; // @synthesize allowMinorError;
 @property(retain) NSMutableArray *tokens; // @synthesize tokens;
 @property(retain) NSError *errorFromPropertyListFromStringsFileFormat; // @synthesize errorFromPropertyListFromStringsFileFormat;
+@property(retain) NSMutableArray *allParseErrors; // @synthesize allParseErrors;
 @property(retain) NSError *parseError; // @synthesize parseError;
 @property(retain) NSDictionary *legacyKeyMapping; // @synthesize legacyKeyMapping;
 @property(retain) NSDictionary *stringKeyValueCommentDictionary; // @synthesize stringKeyValueCommentDictionary;
@@ -38,7 +40,6 @@
 - (id)createInternalGlossaryRelativeTo:(id)arg1 withError:(id *)arg2;
 - (id)createInternalGlossaryWithError:(id *)arg1;
 - (id)internalGlossaryWithError:(id *)arg1;
-- (id)escapeForDoubleQuotedString:(id)arg1;
 - (id)translatePureStringsFileWithTranslation:(id)arg1 writeTo:(id)arg2 options:(unsigned long long)arg3 error:(id *)arg4;
 - (id)writeTransUnitsOfPureStringsFileWithTranslations:(id)arg1 writeTo:(id)arg2 options:(unsigned long long)arg3 error:(id *)arg4;
 - (id)translateXMLFormatStringsFileWithTranslation:(id)arg1 writeTo:(id)arg2 options:(unsigned long long)arg3 error:(id *)arg4;
@@ -47,6 +48,7 @@
 - (id)stringKeyOrderDictionary;
 - (id)stringKeyCommentDictionary;
 - (id)stringKeyValueDictionary;
+- (void)recordError:(id)arg1;
 - (BOOL)validStringsFile;
 - (BOOL)flatStringDictionary:(id)arg1;
 - (void)traversePlistTree:(id)arg1 path:(id)arg2 backwardCompatiblePath:(id)arg3 extractedStringDictionary:(id)arg4 backwardCompatibleExtractedStringDictionary:(id)arg5;

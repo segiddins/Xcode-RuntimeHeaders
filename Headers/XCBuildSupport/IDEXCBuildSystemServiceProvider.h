@@ -6,22 +6,23 @@
 
 #import <objc/NSObject.h>
 
-@class MISSING_TYPE, NSString;
+@class MISSING_TYPE;
 
 @interface IDEXCBuildSystemServiceProvider : NSObject
 {
-    MISSING_TYPE *_buildablesToken;
-    MISSING_TYPE *_buildablesForCachedScheme;
-    MISSING_TYPE *_blueprintsForCachedScheme;
-    MISSING_TYPE *_cachedScheme;
     MISSING_TYPE *_objectRootPathOverride;
-    MISSING_TYPE *_sortedCacheOfAllBuildables;
+    MISSING_TYPE *xcbService;
 }
 
 - (void).cxx_destruct;
-- (void)dealloc;
+- (id)createServiceForWorkspace:(id)arg1;
+- (id)isMacCatalystSupportedForProductTypeIdentifier:(id)arg1 error:(id *)arg2;
+- (id)macCatalystFrameworkNameBlacklist:(id *)arg1;
+- (id)macCatalystAppExtensionPointIdentifierWhitelist:(id *)arg1;
+- (id)createXCFramework:(id)arg1 currentWorkingDirectory:(id)arg2;
+- (void)setObjectRootPathOverride:(id)arg1;
+@property(nonatomic, readonly) BOOL isModern;
 - (id)init;
-@property(nonatomic, readonly) NSString *objectRootPathOverride;
 
 @end
 

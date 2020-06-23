@@ -19,8 +19,6 @@ __attribute__((visibility("hidden")))
     NSString *_sourceCode;
     NSMutableArray *_mutableAnnotations;
     NSMutableDictionary *_shaderBinaryCost;
-    NSMutableDictionary *_shaderSampleInfo;
-    NSMutableDictionary *_shaderSampleInfoBase;
     id <NSObject> _libraryUpdateAttemptedObserver;
     id <NSObject> _shaderProfilerDidEndObserver;
     id <GPUTraceShaderDataProviderDelegate> delegate;
@@ -35,15 +33,14 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) IDEIndex *index; // @synthesize index=_index;
 @property(nonatomic) __weak id <DYPShaderSourceDocument> document; // @synthesize document;
 @property(nonatomic) __weak id <GPUTraceShaderDataProviderDelegate> delegate; // @synthesize delegate;
+- (id)irSourceForShaderType:(unsigned int)arg1;
 - (double)shaderTimingForShaderType:(unsigned int)arg1;
 - (id)retainedEditorDocumentWithWorkspaceDocument:(id)arg1;
 - (id)remarks;
 - (float)shaderBinaryCostForShaderType:(unsigned int)arg1;
 - (id)allDiassemblyInfoForShaderType:(unsigned int)arg1 baseData:(BOOL)arg2;
-- (id)sampleInfoForShaderType:(unsigned int)arg1 baseData:(BOOL)arg2;
-- (id)_buildShaderSampleInfo:(unsigned int)arg1 baseData:(BOOL)arg2;
 - (id)perLineSourceInfoDictForShaderType:(unsigned int)arg1 baseData:(BOOL)arg2;
-- (id)_functionNameForShaderType:(unsigned int)arg1;
+- (id)sampleInfoForShaderType:(unsigned int)arg1 baseData:(BOOL)arg2;
 - (id)shaderAnalyzerResultForShaderType:(unsigned int)arg1 baseData:(BOOL)arg2;
 - (void)_handleProfilerData:(id)arg1;
 - (void)_storeBinaryPercentageOfShaderItem:(id)arg1;

@@ -10,14 +10,18 @@
 
 @interface _TtC17CoreDocumentation20DocumentationContext : _TtCs12_SwiftObject
 {
-    MISSING_TYPE *locale;
     MISSING_TYPE *dataProvider;
     MISSING_TYPE *topicGraph;
-    MISSING_TYPE *documentlocationMap;
+    MISSING_TYPE *documentLocationMap;
     MISSING_TYPE *documentationCache;
     MISSING_TYPE *assetManagers;
     MISSING_TYPE *problems;
     MISSING_TYPE *externalReferenceResolvers;
+    MISSING_TYPE *externalSymbolResolver;
+    MISSING_TYPE *externallyResolvedReferences;
+    MISSING_TYPE *articleCache;
+    MISSING_TYPE *documentationExtensionCache;
+    MISSING_TYPE *externalMetadata;
     MISSING_TYPE *symbolIndex;
     MISSING_TYPE *checks;
 }

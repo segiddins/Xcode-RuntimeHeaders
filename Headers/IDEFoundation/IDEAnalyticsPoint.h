@@ -8,7 +8,7 @@
 
 #import <IDEFoundation/IDEDebugTopNavigableModel-Protocol.h>
 
-@class DVTStackBacktrace, IDEAnalyticsLog, IDEDebugSession, IDELaunchSession, NSArray, NSString;
+@class AnalyticsReportType, DVTStackBacktrace, IDEAnalyticsLog, IDEDebugSession, IDELaunchSession, NSArray, NSString;
 
 @interface IDEAnalyticsPoint : NSObject <IDEDebugTopNavigableModel>
 {
@@ -17,7 +17,7 @@
     NSArray *_threads;
     NSArray *_queues;
     IDEAnalyticsLog *_analyticsLog;
-    long long _type;
+    AnalyticsReportType *_reportType;
     NSString *_appName;
     IDEDebugSession *_parentDebugSession;
 }
@@ -27,7 +27,7 @@
 - (void).cxx_destruct;
 @property(retain, nonatomic) IDEDebugSession *parentDebugSession; // @synthesize parentDebugSession=_parentDebugSession;
 @property(copy, nonatomic) NSString *appName; // @synthesize appName=_appName;
-@property(nonatomic) long long type; // @synthesize type=_type;
+@property(retain, nonatomic) AnalyticsReportType *reportType; // @synthesize reportType=_reportType;
 @property(copy, nonatomic) IDEAnalyticsLog *analyticsLog; // @synthesize analyticsLog=_analyticsLog;
 @property(copy, nonatomic) NSArray *queues; // @synthesize queues=_queues;
 @property(copy, nonatomic) NSArray *threads; // @synthesize threads=_threads;

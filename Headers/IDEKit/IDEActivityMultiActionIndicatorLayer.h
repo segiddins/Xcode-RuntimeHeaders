@@ -4,7 +4,7 @@
 //  Copyright (C) 1997-2019 Steve Nygard.
 //
 
-#import <DVTKit/DVTClickableLayer.h>
+#import <DVTUserInterfaceKit/DVTClickableLayer.h>
 
 #import <IDEKit/IDEActivityThemeableLayer-Protocol.h>
 

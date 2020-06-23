@@ -14,14 +14,15 @@
 }
 
 - (void).cxx_destruct;
-- (void)populateLaunchJobsForSimulatorSessionType:(long long)arg1 requiredIdentifiers:(id)arg2 disabledIdentifiers:(id)arg3;
+- (void)populateLaunchJobRequiredIdentifiers:(id)arg1 disabledIdentifiers:(id)arg2;
 - (BOOL)supportsSimRuntime:(id)arg1;
 - (id)simDeviceTypeForToolDescription:(id)arg1 error:(id *)arg2;
 - (id)trySimDeviceTypeForIdentifier:(id)arg1 error:(id *)arg2;
 - (id)defaultSimulatorDeviceType;
 - (id)effectiveDeviceTypeIdentifierForScaleFactor:(double)arg1;
 - (void)populateAdditionalSimDeviceTypeSearchPaths:(id)arg1;
-- (id)deviceTypeDescriptionForSubtype:(id)arg1;
+- (id)designablesAgentName;
+- (id)deviceTypeDescriptionForDeviceConfiguration:(id)arg1;
 - (BOOL)hasSimulatorDeviceTypeForIdentifier:(id)arg1;
 - (id)makeDeviceMaskForSubtype:(id)arg1;
 - (id)symbolicConstantValueForFirstAttribute:(unsigned long long)arg1 andSecondAttribute:(unsigned long long)arg2;
@@ -36,7 +37,7 @@
 - (id)splitViewMasterFixedSizeMetricsForOrientationMetrics:(id)arg1 screenMetrics:(id)arg2;
 - (id)splitViewDetailMemberConfigurationForOrientationMetrics:(id)arg1 screenMetrics:(id)arg2;
 - (id)splitViewMasterMemberConfigurationForOrientationMetrics:(id)arg1 screenMetrics:(id)arg2;
-- (double)masterWidthForScreenWidth:(double)arg1;
+- (double)splitViewMasterWidthForScreenWidth:(double)arg1;
 - (BOOL)detailUsesSplitScreen:(id)arg1 screenMetrics:(id)arg2;
 - (BOOL)masterUsesSplitScreen:(id)arg1 screenMetrics:(id)arg2;
 - (long long)legacyTypeForScreenMetrics:(id)arg1;
@@ -86,7 +87,8 @@
 - (BOOL)supportsWeightedItalicSystemFonts;
 - (BOOL)supportsBuiltInCustomFonts;
 - (BOOL)supportsTopToolbars;
-- (long long)deviceInterfaceIdiom;
+- (long long)deviceInterfaceIdiomForRenderMode:(id)arg1;
+- (long long)defaultDeviceInterfaceIdiom;
 - (id)deviceBarAppearanceGroupTitle;
 - (id)appearances;
 - (long long)defaultOrientationForArchiving;

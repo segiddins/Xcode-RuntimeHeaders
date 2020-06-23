@@ -12,7 +12,7 @@
 #import <DVTKit/NSTableViewDelegate-Protocol.h>
 #import <DVTKit/NSTextFieldDelegate-Protocol.h>
 
-@class DVTNavigationPopoverDivider, MISSING_TYPE, NSLayoutConstraint, NSScrollView, NSTableView, NSView, _TtC6DVTKit31DVTNavigationPopoverFilterField;
+@class DVTNavigationPopoverDivider, DVTScrollView, MISSING_TYPE, NSLayoutConstraint, NSProgressIndicator, NSTableView, NSView, _TtC6DVTKit31DVTNavigationPopoverFilterField;
 
 @interface _TtC6DVTKit30DVTNavigationPopoverController : NSViewController <NSTableViewDataSource, NSTableViewDelegate, NSTextFieldDelegate, NSPopoverDelegate, NSObject>
 {
@@ -29,10 +29,13 @@
     MISSING_TYPE *currentPreferredEdge;
     MISSING_TYPE *contexts;
     MISSING_TYPE *uniqueIdentifierCounter;
+    MISSING_TYPE *filterDelegate;
     MISSING_TYPE *filteredItems;
     MISSING_TYPE *tableView;
     MISSING_TYPE *scrollView;
     MISSING_TYPE *filterField;
+    MISSING_TYPE *loadingProgressIndicatorView;
+    MISSING_TYPE *filterFieldTrailingConstraint;
     MISSING_TYPE *controlSize;
     MISSING_TYPE *currentPopover;
     MISSING_TYPE *width;
@@ -41,6 +44,7 @@
     MISSING_TYPE *sizingTextField;
     MISSING_TYPE *sizingSecondaryTextField;
     MISSING_TYPE *sizingSubtitleTextField;
+    MISSING_TYPE *useInsetLayout;
     MISSING_TYPE *lastKnownSelectedRow;
     MISSING_TYPE *currentlySelectingItem;
     MISSING_TYPE *itemsRequiringMoreTime;
@@ -62,8 +66,10 @@
 - (void)popoverDidClose:(id)arg1;
 - (void)viewDidLoad;
 - (id)initWithCoder:(id)arg1;
+@property(nonatomic) __weak NSLayoutConstraint *filterFieldTrailingConstraint; // @synthesize filterFieldTrailingConstraint;
+@property(nonatomic) __weak NSProgressIndicator *loadingProgressIndicatorView; // @synthesize loadingProgressIndicatorView;
 @property(nonatomic) __weak _TtC6DVTKit31DVTNavigationPopoverFilterField *filterField; // @synthesize filterField;
-@property(nonatomic) __weak NSScrollView *scrollView; // @synthesize scrollView;
+@property(nonatomic) __weak DVTScrollView *scrollView; // @synthesize scrollView;
 @property(nonatomic) __weak NSTableView *tableView; // @synthesize tableView;
 @property(nonatomic) __weak NSLayoutConstraint *accessoryViewWidthConstraint; // @synthesize accessoryViewWidthConstraint;
 @property(nonatomic) __weak DVTNavigationPopoverDivider *accessoryViewDivider; // @synthesize accessoryViewDivider;

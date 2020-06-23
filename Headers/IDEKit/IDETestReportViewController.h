@@ -6,16 +6,17 @@
 
 #import <IDEKit/IDEViewController.h>
 
+#import <IDEKit/IDETestReportOutlineViewDelegate-Protocol.h>
 #import <IDEKit/IDETestsInTestableObserver-Protocol.h>
 #import <IDEKit/NSMenuDelegate-Protocol.h>
 #import <IDEKit/NSOutlineViewDataSource-Protocol.h>
-#import <IDEKit/NSOutlineViewDelegate-Protocol.h>
 #import <IDEKit/NSPopoverDelegate-Protocol.h>
+#import <IDEKit/_TtP6IDEKit44IDETestReportDurationColumnFormatterDelegate_-Protocol.h>
 
-@class DVTEmptyContentPlaceholder, DVTObservingToken, DVTOutlineView, DVTReplacementView, IDETestReportAttachmentsSupport, IDETestReportRemoteAssetDownloader, IDETestReportScopeBar, IDETestReportSelectionDocumentLocation, IDETestReportStateSaving, NSArray, NSDictionary, NSMapTable, NSMutableArray, NSMutableIndexSet, NSMutableSet, NSPopover, NSScrollView, NSString, NSTableColumn, NSURL, NSView, _TtC6IDEKit17IDEMultiSelection;
+@class DVTEmptyContentPlaceholder, DVTObservingToken, DVTOutlineView, DVTReplacementView, IDETestReportAttachmentsSupport, IDETestReportRemoteAssetDownloader, IDETestReportScopeBar, IDETestReportSelectionDocumentLocation, IDETestReportStateSaving, NSArray, NSDictionary, NSMapTable, NSMutableArray, NSMutableIndexSet, NSMutableSet, NSPopover, NSScrollView, NSString, NSTableColumn, NSURL, NSView, _TtC6IDEKit17IDEMultiSelection, _TtC6IDEKit36IDETestReportDurationColumnFormatter;
 @protocol IDETestReport_RootObject;
 
-@interface IDETestReportViewController : IDEViewController <NSOutlineViewDelegate, NSOutlineViewDataSource, NSPopoverDelegate, IDETestsInTestableObserver, NSMenuDelegate>
+@interface IDETestReportViewController : IDEViewController <IDETestReportOutlineViewDelegate, NSOutlineViewDataSource, NSPopoverDelegate, IDETestsInTestableObserver, NSMenuDelegate, _TtP6IDEKit44IDETestReportDurationColumnFormatterDelegate_>
 {
     NSMapTable *_filteredTestsAndGroupItems;
     NSPopover *_setBaselinePopover;
@@ -24,7 +25,6 @@
     BOOL _readyToReloadView;
     NSMutableArray *_remoteDownloadHelpers;
     NSMutableIndexSet *_multilineAssertionRowIndexes;
-    NSMutableArray *_assertionOutlineObjects;
     NSMutableArray *_filteredGroupsWithNamesMatchingFilterPredicate;
     IDETestReportAttachmentsSupport *_attachmentsSupport;
     IDETestReportStateSaving *_stateSavingHelper;
@@ -33,6 +33,7 @@
     BOOL _attachmentsHaveBeenPruned;
     BOOL _disableJumpToSource;
     BOOL _testsHaveDifferentialResultsOnDevices;
+    _TtC6IDEKit36IDETestReportDurationColumnFormatter *_durationFormatter;
     id <IDETestReport_RootObject> _rootObject;
     CDUnknownBlockType _selectionChangedCallback;
     NSArray *_selectedItems;
@@ -102,8 +103,10 @@
 - (void)popoverDidClose:(id)arg1;
 - (void)quickLookFirstAttachmentInActivity:(id)arg1 relativeToView:(id)arg2;
 - (id)quickLookAnimationSourceViewFrom:(id)arg1;
+- (void)quickLookAttachmentsInFailureSummary:(id)arg1 relativeToView:(id)arg2;
 - (void)quickLookAttachmentsInActivity:(id)arg1 relativeToView:(id)arg2;
 - (void)_quickLookAttachment:(id)arg1 activity:(id)arg2 relativeToView:(id)arg3;
+- (void)showAssistant:(id)arg1;
 - (void)quickLookRow:(id)arg1;
 - (id)attachmentsSupport;
 - (BOOL)outlineView:(id)arg1 insertText:(id)arg2;
@@ -113,9 +116,9 @@
 - (void)outlineViewColumnDidResize:(id)arg1;
 - (void)outlineViewItemWillCollapse:(id)arg1;
 - (void)outlineViewItemWillExpand:(id)arg1;
+- (id)outlineView:(id)arg1 contextMenuForTableColumn:(id)arg2 item:(id)arg3;
 - (id)outlineView:(id)arg1 viewForTableColumn:(id)arg2 item:(id)arg3;
 - (id)cellViewForAssertionItem:(id)arg1;
-- (double)outlineView:(id)arg1 heightOfRowByItem:(id)arg2;
 - (id)combinedAssertionsStringForFailureSummaries:(id)arg1;
 - (void)copy:(id)arg1;
 - (id)outlineView:(id)arg1 rowViewForItem:(id)arg2;
@@ -127,6 +130,7 @@
 - (id)outlineView:(id)arg1 child:(long long)arg2 ofItem:(id)arg3;
 - (BOOL)outlineView:(id)arg1 isItemExpandable:(id)arg2;
 - (long long)outlineView:(id)arg1 numberOfChildrenOfItem:(id)arg2;
+- (id)childrenForTestRun:(id)arg1;
 - (unsigned long long)numberOfChildrenForTestRun:(id)arg1;
 - (unsigned long long)numberOfChildrenForDeviceTestRuns:(id)arg1;
 - (unsigned long long)numberOfChildrenForTest:(id)arg1;
@@ -143,7 +147,9 @@
 - (void)doubleClickTableRow:(id)arg1;
 - (void)saveRemoteAttachments:(id)arg1 forActivity:(id)arg2 destinationDirectory:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)scopeBarRunsButtonPressed:(id)arg1;
+- (void)configurationSelectionChanged:(id)arg1;
 - (void)scopeBarDevicesButtonPressed:(id)arg1;
+- (void)deviceSelectionChanged:(id)arg1;
 - (void)showTestForClassName:(id)arg1 methodName:(id)arg2;
 - (void)reloadAndFilterOutline;
 - (id)filterString;
@@ -153,14 +159,18 @@
 - (void)viewWillDisappear;
 - (void)scopeBarChanged;
 - (BOOL)shouldDisplaySummaryColumn;
+- (void)updateTotalDuration;
 - (void)configureColumns;
+- (void)activeFormatterDidChange:(id)arg1;
+@property(readonly, nonatomic) _TtC6IDEKit36IDETestReportDurationColumnFormatter *durationFormatter; // @synthesize durationFormatter=_durationFormatter;
 - (void)reloadAndExpandOutlineView;
 - (void)disableStateSavingWithinBlock:(CDUnknownBlockType)arg1;
 - (void)expandItemUsingIdentifier:(id)arg1;
 - (void)restoreExpansionState;
 - (void)_stashSelection:(id)arg1;
 @property(readonly, nonatomic) NSArray *allPerfTestGroups;
-- (id)testClassesWithScopeBarFiltering;
+- (id)testClassesFilteredBySelectedScopeBarButton:(id)arg1;
+- (id)testClassesFilteredByDeviceAndRunSelection;
 @property(readonly, nonatomic) IDETestReportScopeBar *scopeBarViewController;
 - (BOOL)showOnlyMixedTests;
 - (BOOL)showOnlySkippedTests;

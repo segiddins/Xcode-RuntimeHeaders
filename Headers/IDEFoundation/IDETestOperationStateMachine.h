@@ -13,11 +13,10 @@
 {
     BOOL _testPlanDidStartExecuting;
     BOOL _testRunnerHasFinishedExecutingTests;
-    BOOL _readyForTestBundleToConnect;
-    BOOL _launchSessionInitialIntensiveFileIODone;
     CDUnknownBlockType _logger;
     id <IDETestOperationStateMachineDelegate> _delegate;
-    double _timeout;
+    double _finalizationTimeout;
+    double _bootstrappingTimeout;
     unsigned long long _state;
     NSString *_candidateDescription;
     NSString *_crashReportDescription;
@@ -32,13 +31,13 @@
 @property(copy, nonatomic) NSString *crashReportDescription; // @synthesize crashReportDescription=_crashReportDescription;
 @property(copy, nonatomic) NSString *candidateDescription; // @synthesize candidateDescription=_candidateDescription;
 @property(nonatomic) unsigned long long state; // @synthesize state=_state;
-@property(readonly) double timeout; // @synthesize timeout=_timeout;
+@property(readonly) double bootstrappingTimeout; // @synthesize bootstrappingTimeout=_bootstrappingTimeout;
+@property(readonly) double finalizationTimeout; // @synthesize finalizationTimeout=_finalizationTimeout;
 @property(readonly) __weak id <IDETestOperationStateMachineDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy) CDUnknownBlockType logger; // @synthesize logger=_logger;
-@property BOOL launchSessionInitialIntensiveFileIODone; // @synthesize launchSessionInitialIntensiveFileIODone=_launchSessionInitialIntensiveFileIODone;
-@property BOOL readyForTestBundleToConnect; // @synthesize readyForTestBundleToConnect=_readyForTestBundleToConnect;
 @property BOOL testRunnerHasFinishedExecutingTests; // @synthesize testRunnerHasFinishedExecutingTests=_testRunnerHasFinishedExecutingTests;
 @property BOOL testPlanDidStartExecuting; // @synthesize testPlanDidStartExecuting=_testPlanDidStartExecuting;
+- (void)log:(id)arg1;
 - (void)_on_queue_testExceededTimeout;
 - (void)testExceededTimeout;
 - (void)_on_queue_receivedCrashReportForTestRunnerProcessWithDescription:(id)arg1;
@@ -48,15 +47,17 @@
 - (void)_on_queue_handleFinalizationEventWithDescription:(id)arg1;
 - (void)testmanagerdConnectionLost;
 - (void)launchSessionConnectionLost;
-- (void)launchSessionExpired;
+- (void)launchSessionExpiredWithExitCode:(id)arg1 terminatingSignal:(id)arg2 hasCrashed:(BOOL)arg3;
 - (void)_on_queue_launchSessionExitedWithCode:(int)arg1;
-- (void)_on_queue_launchSessionCrashedWithSignal:(int)arg1;
-- (void)_on_queue_launchSessionExitedWithCode:(int)arg1 hasCrashed:(BOOL)arg2;
-- (void)launchSessionExitedWithCode:(int)arg1 hasCrashed:(BOOL)arg2;
+- (void)_on_queue_launchSessionCrashedWithSignal:(id)arg1;
+- (void)startedInteractivelyDebugging;
+- (void)_on_queue_startedExecutingTests;
+- (void)startedExecutingTests;
+- (void)_on_queue_testRunnerAcquiredPID;
+- (void)testRunnerAcquiredPID;
 - (id)_runnerExitDescriptionWithMessage:(id)arg1;
-- (void)launchSessionInitialIntensiveFileIODoneState;
 - (id)initWithDelegate:(id)arg1 callbackQueue:(id)arg2 logger:(CDUnknownBlockType)arg3;
-- (id)initWithDelegate:(id)arg1 timeout:(double)arg2 callbackQueue:(id)arg3 logger:(CDUnknownBlockType)arg4;
+- (id)initWithDelegate:(id)arg1 finalizationTimeout:(double)arg2 bootstrappingTimeout:(double)arg3 callbackQueue:(id)arg4 logger:(CDUnknownBlockType)arg5;
 
 @end
 

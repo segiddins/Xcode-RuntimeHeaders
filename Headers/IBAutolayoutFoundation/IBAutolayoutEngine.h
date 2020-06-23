@@ -101,7 +101,6 @@
 - (struct CGRect)layoutFrameForView:(id)arg1;
 - (BOOL)ambiguityIsAccurateForView:(id)arg1;
 - (unsigned long long)ambiguityStatusForView:(id)arg1;
-- (unsigned long long)ambiguityStatusForRepresentedView:(id)arg1;
 - (BOOL)hasAmbiguousLayoutForView:(id)arg1;
 - (id)realConstraintsFromCollectionOfRepresentedConstraints:(id)arg1;
 - (BOOL)hasRepresentationOfConstraint:(id)arg1;

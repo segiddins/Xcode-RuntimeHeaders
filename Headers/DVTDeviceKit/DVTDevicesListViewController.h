@@ -9,14 +9,15 @@
 #import <DVTDeviceKit/NSMenuDelegate-Protocol.h>
 #import <DVTDeviceKit/NSOutlineViewDelegate-Protocol.h>
 
-@class DVTDelayedInvocation, DVTDevice, DVTGradientImageButton, DVTObservingToken, DVTSearchField, NSArray, NSMenu, NSMenuItem, NSMutableDictionary, NSMutableSet, NSOutlineView, NSString, NSTreeController;
-@protocol DVTDeviceAction, DVTDevicesListViewControllerDelegate;
+@class DVTDelayedInvocation, DVTDevice, DVTGradientImageButton, DVTObservingToken, DVTScopeBarButton, DVTSearchField, NSArray, NSMenu, NSMenuItem, NSMutableDictionary, NSMutableSet, NSOutlineView, NSString, NSTreeController, NSView;
+@protocol DVTDeviceAction, DVTDevicesListViewControllerDelegate, DVTInvalidation;
 
 @interface DVTDevicesListViewController : DVTViewController <NSOutlineViewDelegate, NSMenuDelegate>
 {
     DVTObservingToken *_devicesObserver;
     NSMutableDictionary *_deviceObservationTokens;
     DVTDelayedInvocation *_delayedDevicesDisplayUpdateInvocation;
+    id <DVTInvalidation> _sidebarLayoutObserverToken;
     BOOL _updatingDevicesForDisplay;
     BOOL _helpMenuItemAdded;
     BOOL _promptingForDelete;
@@ -24,9 +25,12 @@
     long long _mode;
     id <DVTDevicesListViewControllerDelegate> _delegate;
     NSTreeController *_devicesTreeController;
+    NSView *_contentView;
     NSOutlineView *_devicesOutline;
     DVTGradientImageButton *_addDevice;
     DVTSearchField *_searchField;
+    DVTScopeBarButton *_devicesScopeButton;
+    DVTScopeBarButton *_simulatorsScopeButton;
     NSMenu *_devicesMenu;
     NSMenuItem *_deleteSimMenuItem;
     NSMenuItem *_connectViaAddressMenuItem;
@@ -61,12 +65,15 @@
 @property(retain) NSMenuItem *connectViaAddressMenuItem; // @synthesize connectViaAddressMenuItem=_connectViaAddressMenuItem;
 @property(retain) NSMenuItem *deleteSimMenuItem; // @synthesize deleteSimMenuItem=_deleteSimMenuItem;
 @property(retain) NSMenu *devicesMenu; // @synthesize devicesMenu=_devicesMenu;
+@property(retain) DVTScopeBarButton *simulatorsScopeButton; // @synthesize simulatorsScopeButton=_simulatorsScopeButton;
+@property(retain) DVTScopeBarButton *devicesScopeButton; // @synthesize devicesScopeButton=_devicesScopeButton;
 @property(retain) DVTSearchField *searchField; // @synthesize searchField=_searchField;
 @property(retain) DVTGradientImageButton *addDevice; // @synthesize addDevice=_addDevice;
 @property(retain) NSOutlineView *devicesOutline; // @synthesize devicesOutline=_devicesOutline;
+@property(retain) NSView *contentView; // @synthesize contentView=_contentView;
 @property(retain) NSTreeController *devicesTreeController; // @synthesize devicesTreeController=_devicesTreeController;
 @property __weak id <DVTDevicesListViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-@property long long mode; // @synthesize mode=_mode;
+@property(nonatomic) long long mode; // @synthesize mode=_mode;
 - (id)_deviceWithIdentifier:(id)arg1;
 - (void)_removeDevices:(id)arg1;
 - (void)_addDevices:(id)arg1;
@@ -81,6 +88,7 @@
 - (void)_startObservingDeviceAvailabilty;
 - (id)_simulatorLocator;
 - (id)_contextuallySelectedDevice;
+- (id)_contextuallySelectedDevices;
 - (void)selectDevice:(id)arg1;
 - (BOOL)includesDevice:(id)arg1;
 - (void)menuWillOpen:(id)arg1;
@@ -90,6 +98,7 @@
 - (void)_selectDeviceWithIdentifier:(id)arg1;
 - (id)tableView:(id)arg1 rowActionsForRow:(long long)arg2 edge:(long long)arg3;
 - (id)_purportedSelectedDeviceWithSelectionIndexPaths:(id)arg1;
+- (id)outlineView:(id)arg1 tintColorForItem:(id)arg2;
 - (id)outlineView:(id)arg1 viewForTableColumn:(id)arg2 item:(id)arg3;
 - (BOOL)outlineView:(id)arg1 isGroupItem:(id)arg2;
 - (BOOL)outlineView:(id)arg1 shouldSelectItem:(id)arg2;
@@ -99,7 +108,10 @@
 - (void)deleteBackward:(id)arg1;
 - (void)keyDown:(id)arg1;
 - (void)performDeviceAction:(id)arg1;
+- (id)_selectedDevicesFromMenuItem:(id)arg1;
 - (void)_deleteSimulator:(id)arg1 prompt:(BOOL)arg2;
+- (void)_deleteSimulators:(id)arg1;
+- (void)_deleteSimulator:(id)arg1;
 - (void)deleteSimulator:(id)arg1;
 - (BOOL)validateMenuItem:(id)arg1;
 - (void)showProvisioningProfiles:(id)arg1;
@@ -109,10 +121,14 @@
 - (void)copyDeviceName:(id)arg1;
 - (void)addDevice:(id)arg1;
 - (void)addSimulator:(id)arg1;
+- (void)addDeviceButtonClicked:(id)arg1;
 @property(readonly) DVTDevice *selectedDevice;
 @property(copy) NSString *selectedDeviceIdentifier;
 - (id)_selectedDeviceDefaultsKey;
+- (void)scopeButtonClicked:(id)arg1;
+- (void)_installContentViewYConstraints;
 - (void)viewWillDisappear;
+- (void)viewDidAppear;
 - (void)viewWillAppear;
 - (void)viewDidLoad;
 - (void)primitiveInvalidate;

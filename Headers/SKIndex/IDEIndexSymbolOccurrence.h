@@ -14,6 +14,7 @@ __attribute__((visibility("hidden")))
 {
     long long _role;
     BOOL _isImplicit;
+    BOOL _isSystemLocation;
     DVTDocumentLocation *_location;
     long long _lineNumber;
     long long _column;
@@ -27,12 +28,13 @@ __attribute__((visibility("hidden")))
     int _symbolProviderKind;
 }
 
-+ (id)newSymbolOccurrenceForSymbol:(id)arg1 role:(long long)arg2 isImplicit:(BOOL)arg3 location:(id)arg4 forQueryProvider:(id)arg5;
++ (id)newSymbolOccurrenceForSymbol:(id)arg1 role:(long long)arg2 isImplicit:(BOOL)arg3 isSystem:(BOOL)arg4 location:(id)arg5 forQueryProvider:(id)arg6;
 - (void).cxx_destruct;
 @property(nonatomic) int symbolProviderKind; // @synthesize symbolProviderKind=_symbolProviderKind;
 @property(readonly, nonatomic) NSObject<IDEIndexGlobalQueryProvider> *queryProvider; // @synthesize queryProvider=_queryProvider;
 @property(readonly, nonatomic) long long column; // @synthesize column=_column;
 @property(readonly, nonatomic) long long lineNumber; // @synthesize lineNumber=_lineNumber;
+@property(readonly, nonatomic) BOOL isSystemLocation; // @synthesize isSystemLocation=_isSystemLocation;
 @property(readonly, nonatomic) BOOL isImplicit; // @synthesize isImplicit=_isImplicit;
 @property(readonly, nonatomic) long long role; // @synthesize role=_role;
 - (id)callees;
@@ -44,7 +46,7 @@ __attribute__((visibility("hidden")))
 - (void)setContainingSymbol:(id)arg1;
 - (id)description;
 - (void)setOccurrence:(id)arg1;
-- (void)setRole:(long long)arg1 isImplicit:(BOOL)arg2 location:(id)arg3;
+- (void)setRole:(long long)arg1 isImplicit:(BOOL)arg2 isSystem:(BOOL)arg3 location:(id)arg4;
 - (void)setLineNumber:(long long)arg1 column:(long long)arg2 file:(id)arg3;
 - (id)correspondingSymbol;
 - (id)initWithCorrespondingSymbol:(id)arg1 forQueryProvider:(id)arg2;

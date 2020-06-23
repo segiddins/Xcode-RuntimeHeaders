@@ -71,10 +71,11 @@
 - (void)_recordedExceptionThreadForThread:(id)arg1;
 - (void)_exceptionStopReason:(id *)arg1 fromSBValue:(id)arg2;
 - (void)_updateThreadStateAndStopReason:(id)arg1 controlState:(int *)arg2;
+- (void)_retrieveCrashInfo;
 - (id)_getStopReasonText:(id)arg1;
 - (void)_handleStopForInstrumentation:(id)arg1 controlState:(int *)arg2 threadState:(int *)arg3 hasCrashed:(char *)arg4;
 - (BOOL)isSignalNumberFatal:(unsigned long long)arg1;
-- (BOOL)isMemoryResourceException:(unsigned long long)arg1 thread:(id)arg2;
+- (BOOL)_isMemoryResourceException:(unsigned long long)arg1 thread:(id)arg2;
 - (BOOL)isLLDBExceptionFatal:(unsigned long long)arg1;
 - (id)subtitle;
 - (void)clearQueueThreadStackStates;

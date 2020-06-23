@@ -13,6 +13,7 @@
     MISSING_TYPE *_shape;
     MISSING_TYPE *_dataType;
     MISSING_TYPE *_shapeFlexibility;
+    MISSING_TYPE *_defaultOptionalValue;
 }
 
 @end

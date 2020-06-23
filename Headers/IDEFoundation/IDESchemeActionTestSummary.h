@@ -33,6 +33,7 @@
 @property(copy) NSString *identifier; // @synthesize identifier=_identifier;
 @property double duration; // @synthesize duration=_duration;
 @property unsigned long long status; // @synthesize status=_status;
+- (id)allAttachments;
 - (BOOL)updateWithDictionaryRepresentation:(id)arg1;
 - (id)dictionaryRepresentation;
 - (void)loadDiagnosticsFromFilePromise:(id)arg1;

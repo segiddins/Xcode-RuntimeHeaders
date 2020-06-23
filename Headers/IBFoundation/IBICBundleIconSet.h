@@ -10,13 +10,11 @@
 
 @interface IBICBundleIconSet : IBICSlottedAsset
 {
-    BOOL _preRendered;
 }
 
 + (id)catalogItemFileExtension;
 + (id)allocWithZone:(struct _NSZone *)arg1;
 + (Class)assetRepClass;
-@property(nonatomic, getter=isPreRendered) BOOL preRendered; // @synthesize preRendered=_preRendered;
 - (BOOL)isEqualForUnitTests:(id)arg1;
 - (BOOL)requiresRootNamespace;
 - (void)manifestArchivist:(id)arg1 populateManifestEntry:(id)arg2 forChild:(id)arg3;
@@ -35,6 +33,7 @@
 - (id)assetRepForIdentifier:(id)arg1;
 - (id)conflictFreeChildForSlot:(id)arg1;
 - (id)assetRepMatchingVariant:(id)arg1 forPlatform:(id)arg2;
+- (id)slotForChild:(id)arg1;
 - (id)assetRepForSlot:(id)arg1;
 
 @end

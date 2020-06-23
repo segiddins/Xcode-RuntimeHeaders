@@ -31,7 +31,6 @@
     NSString *_toolTip;
     unsigned long long _specificValue;
     unsigned long long _labelValue;
-    double _barWidth;
     double _maximumValueFromValues;
     unsigned long long _lastCountOfDisplayableBars;
     double _failingPoint;
@@ -52,7 +51,6 @@
 @property(nonatomic) unsigned long long lastCountOfDisplayableBars; // @synthesize lastCountOfDisplayableBars=_lastCountOfDisplayableBars;
 @property(nonatomic) double maximumValueFromValues; // @synthesize maximumValueFromValues=_maximumValueFromValues;
 @property(nonatomic) double maximumValue; // @synthesize maximumValue=_maximumValue;
-@property(nonatomic) double barWidth; // @synthesize barWidth=_barWidth;
 @property(nonatomic) int valueButtonFormat; // @synthesize valueButtonFormat=_valueButtonFormat;
 @property(nonatomic) unsigned long long labelValue; // @synthesize labelValue=_labelValue;
 @property(nonatomic) unsigned long long specificValue; // @synthesize specificValue=_specificValue;

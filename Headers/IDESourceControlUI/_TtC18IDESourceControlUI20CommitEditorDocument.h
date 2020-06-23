@@ -17,7 +17,6 @@
     MISSING_TYPE *revision;
     MISSING_TYPE *fileSystemFiles;
     MISSING_TYPE *flatFiles;
-    MISSING_TYPE *exportedDocumentCache;
     MISSING_TYPE *exportOperationQueue;
     MISSING_TYPE *flatTreeNodes;
     MISSING_TYPE *structuredTreeNodes;

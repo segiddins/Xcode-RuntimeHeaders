@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
     MISSING_TYPE *stackView;
     MISSING_TYPE *collapsedBottomConstraint;
     MISSING_TYPE *expandedBottomConstraint;
+    MISSING_TYPE *buttonWidthConstraint;
     MISSING_TYPE *listValue;
 }
 

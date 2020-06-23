@@ -25,7 +25,6 @@ __attribute__((visibility("hidden")))
     NSString *_tooltip;
     NSString *_unit;
     GPUTracePerformanceCounterTableGroup *_group;
-    unsigned long long _sortingIndex;
     unsigned long long _plane;
     NSSet *_filterItems;
 }
@@ -33,7 +32,6 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 @property(retain, nonatomic) NSSet *filterItems; // @synthesize filterItems=_filterItems;
 @property(nonatomic) unsigned long long plane; // @synthesize plane=_plane;
-@property(nonatomic) unsigned long long sortingIndex; // @synthesize sortingIndex=_sortingIndex;
 @property(nonatomic) __weak GPUTracePerformanceCounterTableGroup *group; // @synthesize group=_group;
 @property(nonatomic) BOOL availablePerDraw; // @synthesize availablePerDraw=_availablePerDraw;
 @property(retain, nonatomic) NSString *unit; // @synthesize unit=_unit;
@@ -47,7 +45,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSString *functionName; // @synthesize functionName=_functionName;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 - (id)pasteboardString;
-- (long long)compare:(id)arg1;
 - (id)init;
 
 // Remaining properties

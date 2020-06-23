@@ -20,6 +20,7 @@
 
 + (id)detailAreaGroupPathForIdiom:(id)arg1 role:(id)arg2 size:(id)arg3;
 + (id)orderedComponentClasses;
++ (id)genesisSlotsForSlots:(id)arg1;
 + (id)slotWithIdiom:(id)arg1 size:(id)arg2 role:(id)arg3 subtype:(id)arg4 scale:(id)arg5;
 + (id)slotWithIdiom:(id)arg1 size:(id)arg2 scale:(id)arg3 role:(id)arg4;
 + (id)slotWithIdiom:(id)arg1 size:(id)arg2 scale:(id)arg3;

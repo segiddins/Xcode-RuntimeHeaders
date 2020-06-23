@@ -17,6 +17,7 @@
     MISSING_TYPE *assessments;
     MISSING_TYPE *callToActionImage;
     MISSING_TYPE *landmarks;
+    MISSING_TYPE *redirects;
 }
 
 @end

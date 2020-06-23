@@ -7,11 +7,14 @@
 #import <DVTFoundation/DVTLocalComputer.h>
 
 @interface DVTLocalComputer (IDEFoundationAdditions)
-+ (BOOL)isTargetBootstrapInjectionSupportedOnVersion:(id)arg1 buildVersion:(id)arg2 internal:(BOOL)arg3 overrideValue:(id)arg4;
 - (void)showTodayViewForExtensions:(id)arg1 pid:(int)arg2;
+- (void)showWidgetKit:(id)arg1 pid:(int)arg2 completed:(CDUnknownBlockType)arg3;
+- (BOOL)_isBundleIdentifierAlreadyRunning:(id)arg1 timeout:(double)arg2;
 - (BOOL)canBeDefaultDeviceForBuildable:(id)arg1 buildParameters:(id)arg2;
+- (id)claimDeviceForTestingWithMode:(long long)arg1 sessionIdentifier:(id)arg2 error:(id *)arg3;
 - (long long)maxConcurrentTestingProcesses;
-- (id)connectionServicesFrameworkPath;
+- (id)extraTestingLibrarySearchPathsWithInternalTestBuildStyle:(BOOL)arg1;
+- (id)extraTestingFrameworkSearchPathsWithInternalTestBuildStyle:(BOOL)arg1;
 - (id)additionalTestRunnerEnvironmentVariablesForBuildableProduct:(id)arg1 buildParameters:(id)arg2;
 - (id)internalSystemTestBundleInjectionLibraryPathForBuildableProduct:(id)arg1 buildParameters:(id)arg2;
 - (id)internalSystemTestingToolPathForBuildableProduct:(id)arg1 buildParameters:(id)arg2;
@@ -20,9 +23,6 @@
 - (BOOL)requiresLocalTCCPermissionForUITesting;
 - (BOOL)usesTestDaemonForUIRecording;
 - (id)automationFrameworkPath;
-- (id)targetBootstrapInjectionPath;
-- (BOOL)supportsTargetBootstrapInjection;
 - (BOOL)supportsTestDaemonControlSession;
-- (BOOL)supportsOverridingTestingToolPath;
 @end
 

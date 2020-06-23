@@ -17,8 +17,8 @@
 }
 
 - (void).cxx_destruct;
-- (void)processFilePath:(id)arg1 fromGroup:(id)arg2 withIndex:(id)arg3 queryStartTime:(id)arg4 statusAggregator:(id)arg5 resultOrder:(long long)arg6 completionHandler:(CDUnknownBlockType)arg7;
-- (void)generateFileMatchIfNeeded:(id *)arg1 populatingResults:(id *)arg2 forFilePath:(id)arg3 fromGroup:(id)arg4 resultOrder:(long long)arg5 statusAggregator:(id)arg6;
+- (void)processFilePath:(id)arg1 explicitFileDataType:(id)arg2 fromIndex:(long long)arg3 of:(id)arg4 queryStartTime:(id)arg5 statusAggregator:(id)arg6 resultOrder:(long long)arg7 completionHandler:(CDUnknownBlockType)arg8;
+- (void)generateFileMatchIfNeeded:(id *)arg1 populatingResults:(id *)arg2 forFilePath:(id)arg3 fromIndex:(long long)arg4 snapshot:(id)arg5 resultOrder:(long long)arg6 statusAggregator:(id)arg7;
 - (BOOL)requiresEditorDocumentsToSaveBeforeSearching;
 - (BOOL)treatsTextAsRegularExpression;
 - (id)initWithSpecification:(id)arg1 priority:(long long)arg2 initialNumberOfLinesCalculator:(CDUnknownBlockType)arg3 initialLineWrappingParameters:(id)arg4 workspace:(id)arg5 error:(id *)arg6;

@@ -8,7 +8,7 @@
 
 #import <IDEKit/IDEDataSourceReloadable-Protocol.h>
 
-@class IDEDebugGaugeTrayChartView, NSByteCountFormatter, NSImageView, NSNumberFormatter, NSString, NSTextField;
+@class IDEDebugGaugeTrayChartView, NSByteCountFormatter, NSImageView, NSLayoutConstraint, NSNumberFormatter, NSString, NSTextField;
 @protocol IDEDebugGaugeDataSource;
 
 @interface IDEDebugGaugeTrayTableCellView : NSTableCellView <IDEDataSourceReloadable>
@@ -16,16 +16,22 @@
     NSNumberFormatter *_noFloatFormatter;
     NSByteCountFormatter *_byteCountFormatter;
     id <IDEDebugGaugeDataSource> _gaugeDataSource;
+    long long _dvt_rowSizeStyle;
     NSTextField *_lastValueField;
     NSTextField *_labelField;
     IDEDebugGaugeTrayChartView *_chartView;
+    NSLayoutConstraint *_imageHeightConstraint;
+    NSLayoutConstraint *_imageWidthConstraint;
 }
 
 + (void)registerNibWithOutlineView:(id)arg1 forIdentifier:(id)arg2;
 - (void).cxx_destruct;
+@property __weak NSLayoutConstraint *imageWidthConstraint; // @synthesize imageWidthConstraint=_imageWidthConstraint;
+@property __weak NSLayoutConstraint *imageHeightConstraint; // @synthesize imageHeightConstraint=_imageHeightConstraint;
 @property __weak IDEDebugGaugeTrayChartView *chartView; // @synthesize chartView=_chartView;
 @property __weak NSTextField *labelField; // @synthesize labelField=_labelField;
 @property __weak NSTextField *lastValueField; // @synthesize lastValueField=_lastValueField;
+@property(nonatomic) long long dvt_rowSizeStyle; // @synthesize dvt_rowSizeStyle=_dvt_rowSizeStyle;
 @property(retain, nonatomic) id <IDEDebugGaugeDataSource> gaugeDataSource; // @synthesize gaugeDataSource=_gaugeDataSource;
 - (void)reloadData;
 - (void)updateLastValueColors;

@@ -10,7 +10,7 @@
 
 @interface IDEProductsEmptyContentViewController : IDEViewController
 {
-    BOOL _busy;
+    BOOL _isBusy;
     BOOL _shouldDelayShowingTitleAndSubtitle;
     BOOL _showResolutionButton;
     BOOL _shouldShowDelayedTitleAndSubtitle;
@@ -40,7 +40,7 @@
 @property __weak NSTextField *titleField; // @synthesize titleField=_titleField;
 @property __weak NSProgressIndicator *spinner; // @synthesize spinner=_spinner;
 @property BOOL shouldDelayShowingTitleAndSubtitle; // @synthesize shouldDelayShowingTitleAndSubtitle=_shouldDelayShowingTitleAndSubtitle;
-@property(nonatomic) BOOL busy; // @synthesize busy=_busy;
+@property(nonatomic) BOOL isBusy; // @synthesize isBusy=_isBusy;
 @property(copy, nonatomic) NSString *emptyContentSubtitle; // @synthesize emptyContentSubtitle=_emptyContentSubtitle;
 @property(copy, nonatomic) NSString *emptyContentTitle; // @synthesize emptyContentTitle=_emptyContentTitle;
 - (void)primitiveInvalidate;

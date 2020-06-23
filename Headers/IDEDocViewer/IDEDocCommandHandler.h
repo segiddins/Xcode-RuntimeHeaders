@@ -33,6 +33,7 @@
 - (void)windowMenu_showDocumentation:(id)arg1;
 - (void)showWhatsNewInXcode:(id)arg1;
 - (void)showContinuousIntegrationGuide:(id)arg1;
+- (void)showHumanInterfaceGuidelines:(id)arg1;
 - (void)showSwiftProgrammingLanguageBook:(id)arg1;
 - (void)showAppStoreConnectHelp:(id)arg1;
 - (void)showDeveloperAccountHelp:(id)arg1;

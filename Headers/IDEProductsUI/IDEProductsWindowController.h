@@ -6,35 +6,26 @@
 
 #import <AppKit/NSWindowController.h>
 
-#import <IDEProductsUI/NSToolbarDelegate-Protocol.h>
+@class IDEProductsViewController, _TtC13IDEProductsUI39ProductSelectionPopUpMenuViewController;
+@protocol _TtP13IDEProductsUI39IDEProductsWindowToolbarManagerProtocol_;
 
-@class IDEProductsViewController, NSSegmentedControl, NSString, NSToolbarItem;
-
-@interface IDEProductsWindowController : NSWindowController <NSToolbarDelegate>
+@interface IDEProductsWindowController : NSWindowController
 {
-    NSSegmentedControl *_segmentControl;
     IDEProductsViewController *_productsViewController;
-    NSToolbarItem *_segmentControlToolbarItem;
+    _TtC13IDEProductsUI39ProductSelectionPopUpMenuViewController *_popUpMenuViewController;
+    id <_TtP13IDEProductsUI39IDEProductsWindowToolbarManagerProtocol_> _toolbarManager;
 }
 
 + (id)sharedProductsWindowController;
 - (void).cxx_destruct;
-@property __weak NSToolbarItem *segmentControlToolbarItem; // @synthesize segmentControlToolbarItem=_segmentControlToolbarItem;
+@property(retain) id <_TtP13IDEProductsUI39IDEProductsWindowToolbarManagerProtocol_> toolbarManager; // @synthesize toolbarManager=_toolbarManager;
+@property(retain) _TtC13IDEProductsUI39ProductSelectionPopUpMenuViewController *popUpMenuViewController; // @synthesize popUpMenuViewController=_popUpMenuViewController;
 @property(retain) IDEProductsViewController *productsViewController; // @synthesize productsViewController=_productsViewController;
-@property __weak NSSegmentedControl *segmentControl; // @synthesize segmentControl=_segmentControl;
-- (void)_configureSegmentedControl;
-- (void)showProductsSectionWithIdentifier:(id)arg1 forProductIdentifier:(id)arg2 didShowProduct:(CDUnknownBlockType)arg3;
+- (void)showProductsSectionWithIdentifier:(id)arg1 forProductIdentifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)refresh;
-- (void)resizeSegmentControl;
 - (void)windowWillClose:(id)arg1;
 - (void)showWindow:(id)arg1;
 - (void)windowDidLoad;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

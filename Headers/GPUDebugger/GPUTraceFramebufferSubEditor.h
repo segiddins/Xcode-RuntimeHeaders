@@ -53,11 +53,15 @@ __attribute__((visibility("hidden")))
     NSButton *_debugButton;
     NSProgressIndicator *_debugProgress;
     NSPopUpButton *_renderTargetArrayIndexButton;
+    NSMenuItem *_viewPixelHistoryMenuItem;
+    NSMenuItem *_viewPixelHistoryForRenderBufferMenuItem;
 }
 
 + (BOOL)asyncLoadingSupported;
 + (unsigned long long)assertionBehaviorAfterEndOfEventForSelector:(SEL)arg1;
 - (void).cxx_destruct;
+@property __weak NSMenuItem *viewPixelHistoryForRenderBufferMenuItem; // @synthesize viewPixelHistoryForRenderBufferMenuItem=_viewPixelHistoryForRenderBufferMenuItem;
+@property __weak NSMenuItem *viewPixelHistoryMenuItem; // @synthesize viewPixelHistoryMenuItem=_viewPixelHistoryMenuItem;
 @property __weak NSPopUpButton *renderTargetArrayIndexButton; // @synthesize renderTargetArrayIndexButton=_renderTargetArrayIndexButton;
 @property __weak NSProgressIndicator *debugProgress; // @synthesize debugProgress=_debugProgress;
 @property __weak NSButton *debugButton; // @synthesize debugButton=_debugButton;
@@ -81,6 +85,10 @@ __attribute__((visibility("hidden")))
 - (struct CGPoint)_getLoupePositionViewsPosition:(id)arg1;
 - (void)_setLoupePositionViewsPosition:(struct CGPoint)arg1 view:(id)arg2;
 - (void)renderBufferViewDidChangeState:(id)arg1;
+- (void)_viewPixelHistoryAtRegionForTextures:(id)arg1 renderingAttributes:(id)arg2 fullPixelHistory:(BOOL)arg3 withCompletionHandler:(CDUnknownBlockType)arg4;
+- (void)_viewPixelHistory;
+- (void)GPUDebugger_viewPixelHistoryForRenderBuffer:(id)arg1;
+- (void)GPUDebugger_viewPixelHistory:(id)arg1;
 - (void)_updateShaderDebuggerRegion;
 - (void)_debugFragment;
 - (void)_refreshROI;
@@ -105,6 +113,7 @@ __attribute__((visibility("hidden")))
 - (double)maximumZoomScale;
 - (double)minimumZoomScale;
 - (void)GPUDebugger_changeLoupePosition:(id)arg1;
+- (void)_updateStateForViewPixelHistory:(id)arg1 menuItem:(id)arg2;
 - (void)_updateStateForDebugButton:(id)arg1 menuItem:(id)arg2;
 - (void)GPUDebugger_hideLoupe:(id)arg1;
 - (void)GPUDebugger_showLoupe:(id)arg1;

@@ -24,7 +24,7 @@
 + (id)ibKeyPathsAcceptingModuleNameBackfill;
 + (id)keyPathsForValuesAffectingIbEffectiveClassName;
 + (int)ibLibraryInclusionStatusForTargetRuntime:(id)arg1 andDocumentClass:(Class)arg2 assetIdentifier:(id)arg3;
-+ (void)ibDidInstantiateForObject:(id)arg1 forAsset:(id)arg2 role:(long long)arg3;
++ (void)ibDidInstantiateObject:(id)arg1 forAsset:(id)arg2 role:(long long)arg3;
 + (id)ibInstantiateForRole:(long long)arg1 withTargetRuntime:(id)arg2 documentClass:(Class)arg3 assetIdentifier:(id)arg4;
 + (id)ibInspectorPropertySearchDescriptionsForKeyPath:(id)arg1 inInspectorSlices:(id)arg2 idiom:(id)arg3;
 + (id)ibSearchableInspectorSlicesForIdiom:(id)arg1;
@@ -45,6 +45,7 @@
 - (id)ibUserHostableDocumentClasses;
 - (BOOL)ibIsInspectorSliceApplicable:(id)arg1 forCategory:(id)arg2;
 - (id)ibApplicableInspectorSlicesForCategory:(id)arg1 suggestedSlices:(id)arg2;
+- (BOOL)ibHasDesignableCustomClass;
 - (void)ibRestoreDevelopmentStringArraysDuringCompilingInDocument:(id)arg1 usingContext:(id)arg2;
 - (void)ibSwapInLocalizableStringArraysDuringCompilingInDocument:(id)arg1 usingContext:(id)arg2;
 - (void)ibRestoreDevelopmentStringsDuringCompilingInDocument:(id)arg1 usingContext:(id)arg2;
@@ -69,6 +70,7 @@
 - (void)ibPopulateAdditionalTargetOSVersions:(id)arg1 forCompilingDocument:(id)arg2;
 - (void)ibInvalidatePlaceholderBackground;
 @property(copy, nonatomic) NSArray *ibLiveViewsSceneUpdateWarningMessages;
+@property(nonatomic) BOOL ibLiveViewsSceneUpdateShouldUseFallbackTool;
 @property(copy, nonatomic) NSError *ibLiveViewsSceneUpdateError;
 - (BOOL)ibShouldInvalidateAutolayoutStatusForChangeToKeyPath:(id)arg1;
 - (BOOL)ibShouldInvalidateSceneOrAutolayoutStatusForChangeToKeyPath:(id)arg1;
@@ -184,6 +186,7 @@
 - (BOOL)ibChildPrefersToHorizontallyResizeWithContainer:(id)arg1;
 - (BOOL)ibInspectedDocumentIsNotUsingAutolayout;
 - (BOOL)ibInspectedDocumentIsUsingAutolayout;
+- (void)ibAwakeAfterOldFormattedXMLDecoding;
 - (BOOL)ibIsValidTraitStorageListContainer;
 - (void)ibPopulateObjectsToRetainInCompiledTraitStorage:(id)arg1;
 - (id)ibCompiledCandidatesForToManyChildRelationshipKeyPath:(id)arg1 withPropertyStorage:(id)arg2 context:(id)arg3;
@@ -281,7 +284,11 @@
 - (id)ibDocumentationProtocolNames;
 - (id)ibDocumentationClassName;
 - (id)ibDisplayNameForKeyPath:(id)arg1;
+- (void)ibEnumerateSearchableStringValuesWithDocument:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (void)ibPopulateIssues:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
+- (id)ibRecoverySuggestionForMisuseOfSymbolCharactersInValueForInspectorKeyPath:(id)arg1;
+- (id)ibIssueForMisuseOfSymbolCharactersInString:(id)arg1 atKeyPath:(id)arg2 forDocument:(id)arg3 withComputationContext:(id)arg4;
+- (void)ibPopulateIssues:(id)arg1 forMisuseOfSymbolCharactersInString:(id)arg2 atKeyPath:(id)arg3 forDocument:(id)arg4 withComputationContext:(id)arg5;
 - (void)ibPopulateIssues:(id)arg1 forUserDefinedRuntimeAttributes:(id)arg2 forDocument:(id)arg3 withComputationContext:(id)arg4;
 - (BOOL)ibCouldPopulateIssuesForUserDefinedRuntimeAttributesForDocument:(id)arg1;
 - (id)ibUnembedChildrenInDocument:(id)arg1;
@@ -434,10 +441,10 @@
 - (id)ibAttributeSearchLocationDatasForPrimitiveValue:(id)arg1 forKeyPath:(id)arg2 inDocument:(id)arg3;
 - (id)ibVisibleAttributeSearchLocationsForKeyPath:(id)arg1 inInspectorSlices:(id)arg2 inDocument:(id)arg3;
 - (id)ibVisibleAttributeSearchLocationsForKeyPath:(id)arg1 inDocument:(id)arg2;
-- (BOOL)ibReplaceValueForAttributeSearchLocation:(id)arg1 withStringValue:(id)arg2 inDocument:(id)arg3;
+- (BOOL)ibReplaceValueForAttributeSearchLocation:(id)arg1 withPartialString:(id)arg2 finalString:(id)arg3 inDocument:(id)arg4;
 - (BOOL)ibGetUserDefinedRuntimeAttributeAtSearchLocation:(id)arg1 outRuntimeAttribute:(id *)arg2 outProperty:(id *)arg3 outIndex:(unsigned long long *)arg4;
 - (BOOL)ibGetArrayObjectAtAttributeSearchLocation:(id)arg1 outObject:(id *)arg2 outIndex:(unsigned long long *)arg3;
-- (id)ibPrimitiveReplacementValueForString:(id)arg1 atLocation:(id)arg2 withCurrentValue:(id)arg3 inDocument:(id)arg4;
+- (id)ibPrimitiveReplacementValueForFinalString:(id)arg1 partialString:(id)arg2 atLocation:(id)arg3 withCurrentValue:(id)arg4 inDocument:(id)arg5;
 - (id)ibSearchableStringValueForPrimitiveValue:(id)arg1 atLocation:(id)arg2 inDocument:(id)arg3;
 - (id)ibDefaultValueForNumericAttributeSearchLocation:(id)arg1 inDocument:(id)arg2;
 - (id)ibStringValueForAttributeSearchLocation:(id)arg1 knownToBeVisible:(BOOL)arg2 inInspectorSlices:(id)arg3 inDocument:(id)arg4;
@@ -462,6 +469,8 @@
 - (id)ibDefaultFontDescriptionKeyPath;
 - (void)ibPopulateObjectsForFloatingPanels:(id)arg1;
 - (id)ibDefaultFontKeyPath;
+- (BOOL)ibWantsDraggedImagePlaceholder;
+- (id)ibDraggedImagePlaceholderWithSceneSize:(struct CGSize)arg1 document:(id)arg2;
 - (BOOL)ibWantsSceneMaskOrBezel;
 - (void)populateRefactoringModifications:(id)arg1 forRenameRefactoringRequest:(id)arg2 inDocument:(id)arg3;
 @property(copy) NSValue *ibExternalLastKnownCanvasAnchor;
@@ -486,6 +495,7 @@
 - (BOOL)ibSelectingChildWithMouseRequiresEditorConsent:(id)arg1;
 - (BOOL)ibShouldConsiderHitTestingForChild:(id)arg1;
 - (BOOL)ibIsChildSelectableInSameEditor:(id)arg1;
+- (BOOL)ibShouldPreferLayoutMarginsGuideForChildView:(id)arg1;
 - (BOOL)ibShouldHiddenChildViewBeVisible:(id)arg1;
 - (BOOL)ibIsChildViewSizable:(id)arg1;
 - (BOOL)ibIsChildViewMovable:(id)arg1;

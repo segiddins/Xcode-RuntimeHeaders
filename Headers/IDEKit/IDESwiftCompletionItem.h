@@ -8,39 +8,71 @@
 
 #import <IDEKit/DVTTextCompletionItem-Protocol.h>
 
-@class NSArray, NSAttributedString, NSImage, NSString;
+@class DVTRangeArray, DVTSourceCodeLanguage, NSArray, NSAttributedString, NSImage, NSString;
 
 @interface IDESwiftCompletionItem : NSObject <DVTTextCompletionItem>
 {
     CDStruct_4c46f3f5 _obj;
     struct _sourcekit_uid_s *_completionsKind;
+    BOOL _containsOptionalArgumentLabelOnly;
+    NSString *_briefDisplayText;
+    NSAttributedString *_attributedDisplayText;
+    NSAttributedString *_attributedDisplayType;
+    NSAttributedString *_attributedDisplaySignature;
+    DVTRangeArray *_nameRanges;
+    DVTRangeArray *_displayTextRanges;
+    DVTRangeArray *_briefDisplayTextRanges;
+    unsigned long long _options;
+    BOOL _isAnnotatedDescriptionParsed;
+    BOOL _isAnnotatedDescriptionParsedSuccessfully;
+    BOOL _isAnnotatedTypenameParsed;
+    BOOL _isAnnotatedTypenameParsedSuccessfully;
+    BOOL _notRecommended;
     double _priority;
     double _fuzzyMatchingScore;
+    DVTRangeArray *_fuzzyMatchingRanges;
     NSString *_action;
     long long _priorityBucket;
     NSString *_name;
+    NSString *_displayText;
+    DVTSourceCodeLanguage *_language;
 }
 
++ (id)_attributesForElementName:(id)arg1 options:(unsigned long long)arg2;
++ (id)plainTextAttributes;
 - (void).cxx_destruct;
-@property(readonly, copy) NSString *name; // @synthesize name=_name;
+@property(readonly) DVTSourceCodeLanguage *language; // @synthesize language=_language;
+@property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly) long long priorityBucket; // @synthesize priorityBucket=_priorityBucket;
+@property(retain) DVTRangeArray *fuzzyMatchingRanges; // @synthesize fuzzyMatchingRanges=_fuzzyMatchingRanges;
 @property double fuzzyMatchingScore; // @synthesize fuzzyMatchingScore=_fuzzyMatchingScore;
 @property double priority; // @synthesize priority=_priority;
+@property(readonly) NSString *usr;
 - (unsigned long long)leadingCharactersToReplaceFromString:(id)arg1 location:(unsigned long long)arg2;
 - (void)infoViewControllerWithWidth:(double)arg1 context:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 @property(readonly) NSArray *associatedUSRs;
 @property(readonly, copy) NSString *description;
 @property(readonly, copy) NSString *action; // @synthesize action=_action;
-@property(readonly) BOOL notRecommended;
+@property(readonly) BOOL notRecommended; // @synthesize notRecommended=_notRecommended;
 @property(readonly) unsigned long long priorityComparatorKind;
 @property(readonly) NSImage *icon;
 - (id)symbolKind;
 @property(readonly, copy) NSAttributedString *descriptionText;
 @property(readonly, copy) NSString *parentText;
 @property(readonly, copy) NSString *completionText;
+@property(readonly, copy) NSString *displaySignature;
+@property(readonly, copy) NSAttributedString *attributedDisplaySignature;
+@property(readonly, copy) DVTRangeArray *displayTextRanges;
+@property(readonly, copy) DVTRangeArray *briefDisplayTextRanges;
+@property(readonly, copy) DVTRangeArray *nameRanges;
+@property(readonly, copy) NSString *briefDisplayText;
 @property(readonly, copy) NSString *displayType;
-@property(readonly, copy) NSString *displayText;
-- (id)initWithSourceKitDictionary:(CDStruct_4c46f3f5)arg1 completionsKind:(struct _sourcekit_uid_s *)arg2;
+@property(readonly, copy) NSAttributedString *attributedDisplayType;
+- (BOOL)_parseAnnotatedTypename;
+@property(readonly, copy) NSString *displayText; // @synthesize displayText=_displayText;
+- (id)_attributedDisplayText;
+- (BOOL)_parseAnnotatedDescription;
+- (id)initWithSourceKitDictionary:(CDStruct_4c46f3f5)arg1 completionsKind:(struct _sourcekit_uid_s *)arg2 language:(id)arg3 options:(unsigned long long)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSArray *additionalCompletions;

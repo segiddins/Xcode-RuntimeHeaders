@@ -22,6 +22,7 @@
     NSMutableArray *_filterButtonStateObservers;
     BOOL _needsIconMenu;
     BOOL _popUpPullsUp;
+    BOOL _omitBorder;
     BOOL _hidesProgress;
     BOOL _isBecomingFirstResponder;
     int _globalOperatorType;
@@ -44,6 +45,7 @@
 @property BOOL isBecomingFirstResponder; // @synthesize isBecomingFirstResponder=_isBecomingFirstResponder;
 @property(nonatomic) BOOL hidesProgress; // @synthesize hidesProgress=_hidesProgress;
 @property(readonly) NSProgressIndicator *progressIndicator; // @synthesize progressIndicator=_progressIndicator;
+@property(nonatomic) BOOL omitBorder; // @synthesize omitBorder=_omitBorder;
 @property(copy, nonatomic) NSArray *filterMatchStrings; // @synthesize filterMatchStrings=_filterMatchStrings;
 @property(nonatomic) BOOL popUpPullsUp; // @synthesize popUpPullsUp=_popUpPullsUp;
 @property(nonatomic) BOOL needsIconMenu; // @synthesize needsIconMenu=_needsIconMenu;
@@ -70,6 +72,7 @@
 - (void)_updateCompletionWindow;
 - (void)_reloadTableViewData;
 - (void)_updateCompletionWindowFrame;
+- (void)hideIconView;
 @property(nonatomic) long long progress;
 - (void)_updateStateForProgress:(long long)arg1;
 - (void)updateBoundProgress;

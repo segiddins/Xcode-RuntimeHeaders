@@ -6,18 +6,18 @@
 
 #import <GPUDebugger/GPUTraceShaderDataItem.h>
 
-@class GPUTraceShaderSampleFunctionInfo;
+@protocol DYPShaderSampleFunctionInfo;
 
 @interface GPUTraceShaderSampleFunctionItem : GPUTraceShaderDataItem
 {
     float _costPercentage;
-    GPUTraceShaderSampleFunctionInfo *_functionInfo;
+    id <DYPShaderSampleFunctionInfo> _functionInfo;
 }
 
 + (id)buildTreeFromSampleInfo:(id)arg1 functionInfo:(id)arg2 shaderItem:(id)arg3 parentItem:(id)arg4;
 + (id)buildTreeFromSampleInfo:(id)arg1 functionInfo:(id)arg2 shaderItem:(id)arg3;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) GPUTraceShaderSampleFunctionInfo *functionInfo; // @synthesize functionInfo=_functionInfo;
+@property(readonly, nonatomic) id <DYPShaderSampleFunctionInfo> functionInfo; // @synthesize functionInfo=_functionInfo;
 @property(nonatomic) float costPercentage; // @synthesize costPercentage=_costPercentage;
 - (id)dataProvider;
 - (id)APIItem;

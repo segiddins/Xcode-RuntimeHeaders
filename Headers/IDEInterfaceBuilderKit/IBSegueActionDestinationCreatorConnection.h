@@ -25,8 +25,10 @@
 - (id)explicitDisplayNameWithRespectToPredecessors:(id)arg1;
 - (id)errorMessageForExistenceWithoutPrototypeInDocument:(id)arg1;
 - (id)displayValuesWithRespectToPrototype:(id)arg1 inDocument:(id)arg2;
+- (id)displayDescriptionInDocument:(id)arg1;
 - (BOOL)isPrototypeFor:(id)arg1;
 - (BOOL)isEquivalentToPrototypeFor:(id)arg1 inDocument:(id)arg2;
+- (id)equivalentPrototypeWithRespectToEquivalentEndPoint:(id)arg1 inDocument:(id)arg2;
 - (id)prototypeWithRespectTo:(id)arg1;
 - (id)missingComponents;
 - (BOOL)validateDestination:(id)arg1;

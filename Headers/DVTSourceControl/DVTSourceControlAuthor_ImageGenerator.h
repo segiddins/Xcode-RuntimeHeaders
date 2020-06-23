@@ -10,6 +10,7 @@
 {
 }
 
++ (id)defaultImageForAuthor:(id)arg1 size:(struct CGSize)arg2;
 + (id)defaultImageForAuthor:(id)arg1;
 
 @end

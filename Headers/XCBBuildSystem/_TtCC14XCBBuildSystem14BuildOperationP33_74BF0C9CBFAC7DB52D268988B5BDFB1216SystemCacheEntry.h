@@ -10,6 +10,7 @@
 
 @interface _TtCC14XCBBuildSystem14BuildOperationP33_74BF0C9CBFAC7DB52D268988B5BDFB1216SystemCacheEntry : _TtCs12_SwiftObject
 {
+    MISSING_TYPE *lock;
     MISSING_TYPE *environment;
     MISSING_TYPE *buildDescription;
     MISSING_TYPE *adaptor;

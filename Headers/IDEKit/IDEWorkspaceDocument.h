@@ -132,6 +132,8 @@
 - (void)removeWindowController:(id)arg1;
 - (void)addWindowController:(id)arg1;
 - (void)makeWindowControllers;
+- (void)_setupStateSaving;
+- (void)_setUpSimpleFilesFocusedObservingToken;
 - (id)createWindowWithUserDefinedTabLabel:(id)arg1 addToTabGroup:(BOOL)arg2 activate:(BOOL)arg3;
 - (id)createWindowWithUserDefinedTabLabel:(id)arg1 inNewWindow:(BOOL)arg2 restoringAfter:(double)arg3;
 - (id)existingWindowWithUserDefinedTabLabel:(id)arg1;

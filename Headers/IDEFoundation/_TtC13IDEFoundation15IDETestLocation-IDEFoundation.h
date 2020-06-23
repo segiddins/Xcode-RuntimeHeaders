@@ -6,10 +6,12 @@
 
 #import <IDEFoundation/_TtC13IDEFoundation15IDETestLocation.h>
 
-@class NSSet;
+@class NSArray, NSSet;
 
 @interface _TtC13IDEFoundation15IDETestLocation (IDEFoundation)
-@property(nonatomic, readonly) _TtC13IDEFoundation15IDETestLocation *testLocation;
+@property(nonatomic, readonly) NSArray *orderedTestContainers;
 @property(nonatomic, readonly) NSSet *testContainers;
+@property(nonatomic, readonly) BOOL isEmpty;
+- (id)subsetContainedInTestPlan:(id)arg1;
 @end
 

@@ -12,7 +12,12 @@
 {
     MISSING_TYPE *generatedHeadersCompletionNode;
     MISSING_TYPE *generatedHeadersCompletionTask;
+    MISSING_TYPE *copyHeadersCompletionNode;
+    MISSING_TYPE *copyHeadersCompletionTask;
     MISSING_TYPE *frameworksBuildPhase;
+    MISSING_TYPE *preparedForIndexNode;
+    MISSING_TYPE *prepareTargetForIndexInputs;
+    MISSING_TYPE *prepareTargetForIndexInputsObjectSet;
 }
 
 @end

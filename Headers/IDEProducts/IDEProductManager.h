@@ -7,22 +7,23 @@
 #import <objc/NSObject.h>
 
 #import <IDEProducts/DVTInvalidation-Protocol.h>
+#import <IDEProducts/IDEProductManagerProtocol-Protocol.h>
 
-@class DVTAnalyticsPointAppStoreSourceStore, DVTStackBacktrace, IDEAppStoreProductSource, IDEArchiveProductSource, IDEProductCoordinator, NSArray, NSMapTable, NSMutableArray, NSMutableSet, NSString, _TtC12DVTAnalytics39AnalyticsMetricsConsolidatedSourceStore;
-@protocol DVTProductManagerDelegate;
+@class DVTObservingToken, DVTStackBacktrace, IDEAppStoreProductSource, IDEArchiveProductSource, IDEProductCoordinator, NSArray, NSMapTable, NSMutableArray, NSString;
+@protocol IDEProductManagerDelegate;
 
-@interface IDEProductManager : NSObject <DVTInvalidation>
+@interface IDEProductManager : NSObject <DVTInvalidation, IDEProductManagerProtocol>
 {
     NSMutableArray *_products;
-    NSMutableSet *_crashPointAppStoreSourcesToRetain;
+    BOOL _hasCompletedInitialLoading;
     BOOL _cacheEnabled;
     BOOL _hasStartedLocating;
     IDEAppStoreProductSource *_appStoreProductSource;
-    id <DVTProductManagerDelegate> _delegate;
+    id <IDEProductManagerDelegate> _delegate;
+    DVTObservingToken *_appStoreProductSourceHasCompletedInitialLoading;
+    DVTObservingToken *_archiveProductSourceHasCompletedInitialLoading;
     IDEProductCoordinator *_coordinator;
     IDEArchiveProductSource *_archiveProductSource;
-    DVTAnalyticsPointAppStoreSourceStore *_analyticsPointAppStoreSourceStore;
-    _TtC12DVTAnalytics39AnalyticsMetricsConsolidatedSourceStore *_metricsConsolidatedSourceStore;
     NSMapTable *_sourcesToProducts;
     Class _appStoreProductSourceClass;
     Class _archiveProductSourceClass;
@@ -36,21 +37,14 @@
 @property(readonly) NSMapTable *sourcesToProducts; // @synthesize sourcesToProducts=_sourcesToProducts;
 @property BOOL hasStartedLocating; // @synthesize hasStartedLocating=_hasStartedLocating;
 @property(getter=isCacheEnabled) BOOL cacheEnabled; // @synthesize cacheEnabled=_cacheEnabled;
-@property(retain, nonatomic) _TtC12DVTAnalytics39AnalyticsMetricsConsolidatedSourceStore *metricsConsolidatedSourceStore; // @synthesize metricsConsolidatedSourceStore=_metricsConsolidatedSourceStore;
-@property(retain, nonatomic) DVTAnalyticsPointAppStoreSourceStore *analyticsPointAppStoreSourceStore; // @synthesize analyticsPointAppStoreSourceStore=_analyticsPointAppStoreSourceStore;
 @property(retain, nonatomic) IDEArchiveProductSource *archiveProductSource; // @synthesize archiveProductSource=_archiveProductSource;
 @property(retain) IDEProductCoordinator *coordinator; // @synthesize coordinator=_coordinator;
-@property __weak id <DVTProductManagerDelegate> delegate; // @synthesize delegate=_delegate;
+@property(retain) DVTObservingToken *archiveProductSourceHasCompletedInitialLoading; // @synthesize archiveProductSourceHasCompletedInitialLoading=_archiveProductSourceHasCompletedInitialLoading;
+@property(retain) DVTObservingToken *appStoreProductSourceHasCompletedInitialLoading; // @synthesize appStoreProductSourceHasCompletedInitialLoading=_appStoreProductSourceHasCompletedInitialLoading;
+@property(nonatomic) BOOL hasCompletedInitialLoading; // @synthesize hasCompletedInitialLoading=_hasCompletedInitialLoading;
+@property __weak id <IDEProductManagerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) IDEAppStoreProductSource *appStoreProductSource; // @synthesize appStoreProductSource=_appStoreProductSource;
-- (void)handleLocationErrors:(id)arg1;
 - (void)handleLocationErrors:(id)arg1 fromSource:(id)arg2;
-- (void)ensureProductHasAnalyticsPointSources:(id)arg1;
-- (void)ensureProductVersionHasAnalyticPointSources:(id)arg1 rootProductVersion:(id)arg2 forProduct:(id)arg3;
-- (void)ensureProductHasAnalyticsMetricsSource:(id)arg1;
-- (void)ensureProductHasAnalyticsMetricsSourceForProduct:(id)arg1 assignToProduct:(BOOL)arg2;
-- (id)metricsConsolidatedSourceForAppIdentifier:(id)arg1 productCachePath:(id)arg2;
-- (id)processorUsagePointConsolidatedSourceForAppIdentifier:(id)arg1 extensionPointIdentifier:(id)arg2 versionCachePath:(id)arg3;
-- (id)crashPointParameterizedAppStoreSourceForAppIdentifier:(id)arg1 extensionPointIdentifier:(id)arg2 productVersion:(id)arg3 versionCachePath:(id)arg4;
 - (void)setLocationResult:(id)arg1 forSource:(id)arg2 oldProductsFromSourceDict:(id)arg3 inputProductsDict:(id)arg4 invalidateOldProductsFromSource:(id)arg5;
 - (void)setLocationResult:(id)arg1 forSource:(id)arg2;
 - (void)addLocationResult:(id)arg1 forSource:(id)arg2;
@@ -64,6 +58,8 @@
 - (void)primitiveInvalidate;
 - (id)initWithCacheEnabled:(BOOL)arg1;
 - (id)init;
+- (void)updateHasCompletedInitialLoading;
+- (void)setUpHasCompletedInitialLoadingObservations;
 
 // Remaining properties
 @property(retain) DVTStackBacktrace *creationBacktrace;

@@ -41,7 +41,9 @@
 - (void)paste:(id)arg1;
 - (void)copy:(id)arg1;
 - (BOOL)validateUserInterfaceItem:(id)arg1;
+- (struct CGRect)capsuleView:(id)arg1 bottomSeparatorFrameForSuggestedFrame:(struct CGRect)arg2;
 - (double)capsuleView:(id)arg1 preferredContentViewWidthForCapsuleWidth:(double)arg2;
+- (BOOL)suppressBottomSeparator:(id)arg1;
 - (BOOL)shouldDrawBorderBelowHeaderForCapsuleView:(id)arg1;
 @property BOOL canRemoveItems;
 @property BOOL canAddItems;

@@ -26,6 +26,7 @@
 - (id)_createAddressesToViewObjectsMap;
 - (id)selectableViewObjectForIdentifier:(id)arg1;
 - (void)updateSelectableViewObjectsCache;
+- (unsigned long long)recursivelyUpdateNumberOfChildObjectsWithIssues;
 - (void)setChildViewObjects:(id)arg1;
 - (void)primitiveInvalidate;
 - (id)_formattedDisplayNameForUISceneInstance:(id)arg1;

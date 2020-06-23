@@ -14,11 +14,6 @@
     NSDictionary *countLookupDict;
     NSString *namespacePrefix;
     NSDictionary *stateQualifierToCountCategoryDict;
-    id reserved1;
-    id reserved2;
-    id reserved3;
-    id reserved4;
-    id reserved5;
 }
 
 + (id)defaultHyphenCharacterSet;

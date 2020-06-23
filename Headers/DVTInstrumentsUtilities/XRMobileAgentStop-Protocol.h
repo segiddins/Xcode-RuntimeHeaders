@@ -4,9 +4,11 @@
 //  Copyright (C) 1997-2019 Steve Nygard.
 //
 
+#import <DVTInstrumentsUtilities/NSObject-Protocol.h>
+
 @class XRMobileAgent;
 
-@protocol XRMobileAgentStop
+@protocol XRMobileAgentStop <NSObject>
 - (void)receiveMobileAgent:(XRMobileAgent *)arg1;
 
 @optional

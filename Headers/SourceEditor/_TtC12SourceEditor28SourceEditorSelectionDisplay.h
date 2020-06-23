@@ -19,7 +19,6 @@
     MISSING_TYPE *reusableCursorLayers;
     MISSING_TYPE *selectionLayers;
     MISSING_TYPE *reusableSelectionLayers;
-    MISSING_TYPE *shouldDifferentiatePrimarySelection;
     MISSING_TYPE *insertionPointColor;
     MISSING_TYPE *selectionColor;
     MISSING_TYPE *$__lazy_storage_$_allowCursorBlinkAnimation;

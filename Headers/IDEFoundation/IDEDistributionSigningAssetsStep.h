@@ -19,7 +19,7 @@
 @property(retain) NSSet *testDevices; // @synthesize testDevices=_testDevices;
 - (id)_wrappedErrors;
 - (BOOL)populateProvisioningEvaluationtWithError:(id *)arg1;
-- (id)_devicesFromPortalForSessionProvider:(id)arg1 teamID:(id)arg2 portalPlatform:(id)arg3 error:(id *)arg4;
+- (id)_devicesFromPortalForSessionProvider:(id)arg1 teamID:(id)arg2 profileType:(id)arg3 error:(id *)arg4;
 - (id)requiredDevices;
 - (id)_portalPlatform;
 - (id)_platformForArchive;

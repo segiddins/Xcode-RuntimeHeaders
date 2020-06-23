@@ -10,18 +10,23 @@
 {
 }
 
++ (id)exactSymbolsDirectoryForPlatform:(id)arg1 preferringPlatformForModel:(id)arg2 architecture:(id)arg3 version:(id)arg4 build:(id)arg5 error:(id *)arg6;
 + (id)exactSymbolsDirectoryForModel:(id)arg1 architecture:(id)arg2 version:(id)arg3 build:(id)arg4;
 + (id)exactSymbolsDirectoryForModel:(id)arg1 architecture:(id)arg2 version:(id)arg3 build:(id)arg4 error:(id *)arg5;
-+ (id)exactSymbolsDirectoryForPlatform:(id)arg1 preferringPlatformForModel:(id)arg2 architecture:(id)arg3 version:(id)arg4 build:(id)arg5 error:(id *)arg6;
-+ (id)exactSymbolsDirectoryForPlatform:(id)arg1 preferringPlatformForModel:(id)arg2 architecture:(id)arg3 version:(id)arg4 build:(id)arg5;
-+ (id)_exactSymbolsDirectoryForPlatform:(id)arg1 model:(id)arg2 architecture:(id)arg3 version:(id)arg4 build:(id)arg5 error:(id *)arg6;
-+ (id)_exactDeveloperDiskImageForPlatform:(id)arg1 version:(id)arg2 build:(id)arg3 error:(id *)arg4;
-+ (id)_idealDeveloperDiskImageForPlatform:(id)arg1 version:(id)arg2 build:(id)arg3 error:(id *)arg4;
-+ (id)idealDeveloperDiskImageForModel:(id)arg1 version:(id)arg2 build:(id)arg3;
-+ (id)idealDeveloperDiskImageForModel:(id)arg1 version:(id)arg2 build:(id)arg3 error:(id *)arg4;
-+ (id)idealDeveloperDiskImageForPlatform:(id)arg1 version:(id)arg2 build:(id)arg3 error:(id *)arg4;
 + (id)idealDeveloperDiskImageForPlatform:(id)arg1 version:(id)arg2 build:(id)arg3;
 + (id)idealDeveloperDiskImageForPlatform:(id)arg1 model:(id)arg2 version:(id)arg3 build:(id)arg4;
++ (id)idealDeveloperDiskImageForModel:(id)arg1 version:(id)arg2 build:(id)arg3;
++ (id)existingSymbolsDirectoryForModel:(id)arg1 architecture:(id)arg2 version:(id)arg3 build:(id)arg4 error:(id *)arg5;
++ (id)_DVTPlatformForDeviceModelCode:(id)arg1 error:(id *)arg2;
++ (id)existingSymbolsDirectoryForPlatform:(id)arg1 preferringPlatformForModel:(id)arg2 architecture:(id)arg3 version:(id)arg4 build:(id)arg5 error:(id *)arg6;
++ (id)_existingSymbolsDirectoryForPlatform:(id)arg1 model:(id)arg2 architecture:(id)arg3 version:(id)arg4 build:(id)arg5 error:(id *)arg6;
++ (id)symbolsDirectoryForPlatform:(id)arg1 preferringPlatformForModel:(id)arg2 preferringUniversalSymbols:(BOOL)arg3 architecture:(id)arg4 version:(id)arg5 build:(id)arg6 error:(id *)arg7;
++ (id)_symbolsDirectoryForPlatform:(id)arg1 model:(id)arg2 architecture:(id)arg3 version:(id)arg4 build:(id)arg5 preferringUniversalSymbols:(BOOL)arg6 error:(id *)arg7;
++ (BOOL)_validateSymbolsDirectoryParametersForPlatform:(id)arg1 model:(id)arg2 version:(id)arg3 build:(id)arg4 error:(id *)arg5;
++ (id)_exactDeveloperDiskImageForPlatform:(id)arg1 version:(id)arg2 build:(id)arg3 error:(id *)arg4;
++ (id)_idealDeveloperDiskImageForPlatform:(id)arg1 version:(id)arg2 build:(id)arg3 error:(id *)arg4;
++ (id)idealDeveloperDiskImageForModel:(id)arg1 version:(id)arg2 build:(id)arg3 error:(id *)arg4;
++ (id)idealDeveloperDiskImageForPlatform:(id)arg1 version:(id)arg2 build:(id)arg3 error:(id *)arg4;
 + (id)idealDeveloperDiskImageForPlatform:(id)arg1 version:(id)arg2 build:(id)arg3 allowFallback:(_Bool)arg4;
 
 @end

@@ -4,24 +4,22 @@
 //  Copyright (C) 1997-2019 Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import <swiftCore/_TtCs12_SwiftObject.h>
 
 @class MISSING_TYPE;
 
-@interface _TtC18IDESourceControlUI30SourceControlHostedPullRequest : NSObject
+@interface _TtC18IDESourceControlUI30SourceControlHostedPullRequest : _TtCs12_SwiftObject
 {
     MISSING_TYPE *hostPullRequest;
+    MISSING_TYPE *commonAncestor;
+    MISSING_TYPE *events;
     MISSING_TYPE *hostRepository;
     MISSING_TYPE *workingCopy;
-    MISSING_TYPE *remoteRepository;
-    MISSING_TYPE *listeners;
+    MISSING_TYPE *remoteName;
+    MISSING_TYPE *modifiedMarkdown;
+    MISSING_TYPE *listenerStore;
+    MISSING_TYPE *dataSourceListenerStore;
 }
-
-- (void).cxx_destruct;
-- (id)init;
-@property(nonatomic, readonly) long long hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
 
 @end
 

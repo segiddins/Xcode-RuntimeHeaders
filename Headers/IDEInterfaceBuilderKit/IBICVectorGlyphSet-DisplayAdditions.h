@@ -7,6 +7,7 @@
 #import <IBFoundation/IBICVectorGlyphSet.h>
 
 @interface IBICVectorGlyphSet (DisplayAdditions)
+- (id)detachedSlottedAssetRepByAcceptingPasteboardObject:(id)arg1 forRepIdentifier:(id)arg2;
 - (id)overviewCapsuleSpecification;
 - (id)includedAttributesInspectorSlicesForChild:(id)arg1;
 @end

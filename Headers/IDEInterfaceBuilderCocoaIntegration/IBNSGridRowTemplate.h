@@ -59,10 +59,12 @@
 - (void)ibWillPutObjects:(id)arg1 withDescendants:(id)arg2 onPasteboard:(id)arg3 fromDocument:(id)arg4 context:(id)arg5;
 - (id)ibInspectedRowAlignmentInheritedDisplayString;
 @property(readonly, nonatomic) long long ibEffectiveRowAlignment;
+- (id)ibInspectedRowAlignmentInheritedAndNoneTitlesForMultipleSelection;
 - (id)ibInspectedRowAlignmentInheritedAndNoneTitles;
 - (id)ibInspectedRowAlignmentInheritedAndNoneValues;
 - (id)ibInspectedYPlacementInheritedDisplayString;
 @property(readonly, nonatomic) long long ibEffectiveYPlacement;
+- (id)ibInspectedYPlacementInheritedAndNoneTitlesForMultipleSelection;
 - (id)ibInspectedYPlacementInheritedAndNoneTitles;
 - (id)ibInspectedYPlacementInheritedAndNoneValues;
 - (void)invalidatePlacementAndAlignmentIfNeeded;

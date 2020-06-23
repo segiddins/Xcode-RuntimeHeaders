@@ -8,12 +8,11 @@
 
 #import <DVTInstrumentsFoundation/DTKPTriggerCounterAllocatorProvider-Protocol.h>
 
-@class DTKPCPUCounterAllocator, DTKPRecordDecoder, DTKPTriggerKDebug, DTKPTriggerPMI, NSMutableArray, NSString;
+@class DTKPCPUCounterAllocator, DTKPTriggerKDebug, DTKPTriggerPMI, NSMutableArray, NSString;
 @protocol DTKPDatastream, OS_dispatch_semaphore;
 
 @interface DTKPSession : NSObject <DTKPTriggerCounterAllocatorProvider>
 {
-    DTKPRecordDecoder *_recordDecoder;
     unsigned int _sessionID;
     BOOL _holdingSessionLock;
     BOOL _replayOnly;
@@ -40,7 +39,6 @@
 }
 
 + (int)blessPid:(int)arg1;
-+ (BOOL)existsInDirectory:(id)arg1;
 + (void)initialize;
 - (void).cxx_destruct;
 @property(retain, nonatomic) id <DTKPDatastream> onDeckDatastream; // @synthesize onDeckDatastream=_onDeckDatastream;
@@ -67,7 +65,7 @@
 - (int)start:(id *)arg1;
 - (int)_validateConfigLocked;
 - (int)_reinitializeKperf:(id *)arg1;
-- (int)_configureSettingsForKDebug:(BOOL)arg1 callstacks:(BOOL)arg2 contextSwitch:(BOOL)arg3 error:(id *)arg4;
+- (int)_configureSettingsForKDebug:(BOOL)arg1 callstacks:(BOOL)arg2 contextSwitch:(BOOL)arg3 resamplePMCs:(BOOL)arg4 error:(id *)arg5;
 - (int)_setSessionConfigLocked:(BOOL)arg1;
 - (id)allTriggerTime;
 - (id)firstTriggerTime;
@@ -85,15 +83,11 @@
 - (int)_setActiveSessionLocked;
 - (id)swapOutCurrentDatastream:(id *)arg1;
 - (id)_swapOutCurrentDatastreamLocked:(id *)arg1;
-- (void)logKPRecsIncludingCallstacks:(BOOL)arg1 toFile:(struct __sFILE *)arg2;
-- (void)setEnumerateTimeRangeStart:(unsigned long long)arg1 stop:(unsigned long long)arg2;
 - (int)exportData:(char *)arg1 error:(id *)arg2 block:(CDUnknownBlockType)arg3;
-- (int)enumerateRecords:(id *)arg1 block:(CDUnknownBlockType)arg2;
 - (id)queryCounterAllocator;
 - (id)counterAllocator;
 @property(readonly, nonatomic) unsigned int sessionID;
 - (void)dealloc;
-- (id)initAsFileBackedWithDirectory:(id)arg1 retainFiles:(BOOL)arg2 error:(id *)arg3;
 - (id)initAsMemoryBackedWithError:(id *)arg1;
 - (id)init;
 - (BOOL)_commonInitWithError:(id *)arg1;

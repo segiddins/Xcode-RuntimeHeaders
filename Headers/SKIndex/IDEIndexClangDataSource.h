@@ -13,9 +13,15 @@
     IDEIndexingJob *_job;
 }
 
++ (void)wrapCompileForFile:(id)arg1 arguments:(id)arg2 workingDirectory:(id)arg3 withPCH:(id)arg4 forPrefixHeader:(id)arg5 pchArguments:(id)arg6 toolchain:(id)arg7 index:(id)arg8 compileBlock:(CDUnknownBlockType)arg9;
++ (id)canonicalPathForFile:(void *)arg1 workingDirectory:(id)arg2 index:(id)arg3 clangAPI:(struct libclang_functions_s *)arg4;
++ (id)_diagnosticItemsFromDiagnosticSet:(void *)arg1 parentDiagnostic:(void *)arg2 location:(id)arg3 workingDirectory:(id)arg4 forIndex:(id)arg5 clangAPI:(struct libclang_functions_s *)arg6;
++ (id)diagnosticItemsFromDiagnosticSet:(void *)arg1 location:(id)arg2 workingDirectory:(id)arg3 forIndex:(id)arg4 clangAPI:(struct libclang_functions_s *)arg5;
++ (id)diagnosticsFromTU:(struct CXTranslationUnitImpl *)arg1 workingDirectory:(id)arg2 index:(id)arg3 clangAPI:(struct libclang_functions_s *)arg4;
++ (BOOL)createPCHFile:(id)arg1 forPrefixHeader:(id)arg2 arguments:(id)arg3 workingDirectory:(id)arg4 toolchain:(id)arg5 index:(id)arg6;
 + (id)processArguments:(id)arg1;
 + (id)addHeaderMapInclude:(id)arg1 forBuildProductsDir:(id)arg2 useSpellChecking:(BOOL)arg3 toArguments:(id)arg4;
-+ (id)canonicalPathForPath:(id)arg1 index:(id)arg2 arguments:(id)arg3 workingDirectory:(id *)arg4;
++ (id)canonicalPathForPath:(id)arg1 index:(id)arg2 workingDirectory:(id)arg3;
 + (id)workingDirFromArgs:(id)arg1;
 + (void)logMemoryUsageImpl_uncovered_:(struct CXTranslationUnitImpl *)arg1 clangAPI:(struct libclang_functions_s *)arg2 forFile:(id)arg3;
 + (void)logMemoryUsage:(struct CXTranslationUnitImpl *)arg1 clangAPI:(struct libclang_functions_s *)arg2 forFile:(id)arg3;

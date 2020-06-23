@@ -9,7 +9,7 @@
 #import <IDEInterfaceBuilderKit/IBAbstractPlatformTool-Protocol.h>
 #import <IDEInterfaceBuilderKit/IBDiagnosticsHandlerConfigurator-Protocol.h>
 
-@class DVTStackBacktrace, IBAbstractPlatformToolExecutionContext, IBMessageSendChannel, IBPlatformToolLaunchContext, NSMutableArray, NSPipe, NSString;
+@class DVTStackBacktrace, IBAbstractPlatformToolExecutionContext, IBMessageSendChannel, IBPlatformToolLaunchContext, NSMutableArray, NSNumber, NSPipe, NSString;
 @protocol IBAbstractPlatformToolProxyDelegate, OS_dispatch_queue, OS_dispatch_source;
 
 @interface IBAbstractPlatformToolProxy : NSObject <IBAbstractPlatformTool, IBDiagnosticsHandlerConfigurator>
@@ -51,6 +51,7 @@
 - (void)populateRequestContext:(id)arg1;
 - (void)recordLastCommandBacktrace:(id)arg1 cmd:(SEL)arg2;
 - (id)effectiveMarshallingResultGivenResult:(id)arg1 andPossibleError:(id)arg2;
+- (BOOL)isBusyForAtLeast:(double)arg1;
 - (BOOL)isIdleForAtLeast:(double)arg1;
 - (void)setIdleTimeToAtLeast:(double)arg1;
 - (double)timeSinceLastIdleOrBusy;
@@ -62,6 +63,7 @@
 - (id)errorByAddingAdditionalCrashInformationToError:(id)arg1 orRaiseIfNeededOnFailure:(BOOL)arg2;
 - (void)configureDiagnosticsHandler:(id)arg1;
 - (id)_previousCommandsBacktrace;
+@property(readonly, nonatomic) NSNumber *processIdentifier;
 - (id)initWithWriteDescriptor:(int)arg1 readDescriptor:(int)arg2 executionContext:(id)arg3 launchContext:(id)arg4 proxyDelegate:(id)arg5 shouldRaiseOnFailures:(BOOL)arg6 terminationHandler:(CDUnknownBlockType)arg7 error:(id *)arg8;
 - (id)initWithSocket:(int)arg1 executionContext:(id)arg2 launchContext:(id)arg3 proxyDelegate:(id)arg4 shouldRaiseOnFailures:(BOOL)arg5 terminationHandler:(CDUnknownBlockType)arg6 error:(id *)arg7;
 - (void)setupToolExitDispatchSource;

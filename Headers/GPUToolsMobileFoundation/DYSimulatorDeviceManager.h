@@ -6,23 +6,16 @@
 
 #import <objc/NSObject.h>
 
-@class DYSimulatorRootsObserver, NSMapTable;
+@class NSMapTable;
 
 @interface DYSimulatorDeviceManager : NSObject
 {
-    DYSimulatorRootsObserver *_simulatorRootsObserver;
     NSMapTable *_deviceMap;
-    NSMapTable *_observersMap;
-    struct dispatch_queue_s *_queue;
     int _lock;
 }
 
 + (id)sharedSimulatorDeviceManager;
 - (void).cxx_destruct;
-- (void)removeObserver:(id)arg1;
-- (id)notifyOnQueue:(struct dispatch_queue_s *)arg1 handler:(CDUnknownBlockType)arg2;
-- (id)allDevices;
-- (id)_allDevicesWithoutLock;
 - (id)faultDeviceForAMDIdentifier:(id)arg1 simDevice:(id)arg2;
 - (id)init;
 

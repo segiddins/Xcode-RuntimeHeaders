@@ -14,24 +14,23 @@
 {
     DTTapLocal *_tap;
     DTKTraceTapConfig *_config;
-    CDUnknownBlockType _taskForPid;
     BOOL _removeArchivingURLWhenComplete;
     long long _triggerCount;
     unsigned int *_triggerIDs;
-    NSMutableArray *_metadataByTriggerIndex;
+    NSMutableArray *_actionIDsByTriggerIndex;
     DTKPSession *_session;
     BOOL _stopWasCalled;
     NSArray *_localEventProducers;
 }
 
 - (void).cxx_destruct;
+- (void)_sendStackshot;
 - (void)fetchDataForReason:(unsigned long long)arg1 block:(CDUnknownBlockType)arg2;
 - (BOOL)canFetchWhileArchiving;
 - (void)unpause;
 - (void)pause;
 - (void)stop;
 - (void)start;
-- (void)setTaskForPidBlock:(CDUnknownBlockType)arg1;
 - (void)setTap:(id)arg1;
 - (id)validateConfig;
 - (id)initWithConfig:(id)arg1;

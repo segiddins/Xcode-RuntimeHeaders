@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
 
 - (void).cxx_destruct;
 - (id)init;
+- (void)revealWithoutSimulatorDiagnostics:(id)arg1;
 - (void)revealInFinder:(id)arg1;
 - (void)fileRadar:(id)arg1;
 

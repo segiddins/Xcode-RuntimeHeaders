@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableArray;
+@class NSArray, NSMutableArray;
 
 @interface SMSourceModelItem : NSObject
 {
@@ -15,6 +15,7 @@
     unsigned int _isOpaque:1;
     unsigned int _dirty:1;
     unsigned int _isBlock:1;
+    unsigned int _shouldTraverse:1;
     unsigned int _ignoreToken:1;
     unsigned int _inheritsNodeType:1;
     unsigned int _isIdentifier:1;
@@ -32,10 +33,11 @@
 + (id)sourceModelItemWithRange:(struct _NSRange)arg1 language:(long long)arg2 token:(long long)arg3 nodeType:(short)arg4;
 - (void).cxx_destruct;
 @property struct _NSRange relativeLocation; // @synthesize relativeLocation=_relativeLocation;
-@property(retain, nonatomic) NSMutableArray *children; // @synthesize children=_children;
+@property(retain, nonatomic) NSMutableArray *mutableChildren; // @synthesize mutableChildren=_children;
 @property(nonatomic) SMSourceModelItem *parent; // @synthesize parent=_parent;
 @property long long token; // @synthesize token=_token;
 @property long long langId; // @synthesize langId=_langId;
+- (id)firstChildItemWithLangId:(long long)arg1;
 - (void)enumerateIdentifierItemsInRelativeRange:(struct _NSRange)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (void)enumerateDescendentsUsingBlock:(CDUnknownBlockType)arg1;
 - (void)clearAdjustedNodeTypes;
@@ -54,6 +56,7 @@
 - (unsigned long long)indexOfChildAtLocation:(unsigned long long)arg1;
 - (unsigned long long)indexOfChildAfterLocation:(unsigned long long)arg1;
 - (unsigned long long)indexOfChildBeforeLocation:(unsigned long long)arg1;
+@property(readonly, nonatomic) NSArray *children;
 - (unsigned long long)numberOfChildren;
 - (void)addChildrenFromArray:(id)arg1 inRange:(struct _NSRange)arg2;
 - (void)addChildren:(id)arg1;
@@ -77,6 +80,8 @@
 - (short)rawNodeType;
 - (BOOL)isOpaque;
 - (void)setIsOpaque:(BOOL)arg1;
+- (BOOL)shouldTraverse;
+- (void)setShouldTraverse:(BOOL)arg1;
 - (short)nodeType;
 - (void)setNodeType:(short)arg1;
 - (struct _NSRange)rangeBetweenChildrenAtLocation:(unsigned long long)arg1;

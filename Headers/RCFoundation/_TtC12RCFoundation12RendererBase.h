@@ -35,7 +35,7 @@
     MISSING_TYPE *postProcessRenderGraphAsset;
     MISSING_TYPE *cameraRenderGraphAsset;
     MISSING_TYPE *backdropAssetHandle;
-    MISSING_TYPE *backdropAssetHandleAR;
+    MISSING_TYPE *fullscreenARKitPassthroughHandle;
     MISSING_TYPE *selectionRenderGraphAsset;
     MISSING_TYPE *outlineEdgeMaterialAsset;
     MISSING_TYPE *userDefaults;

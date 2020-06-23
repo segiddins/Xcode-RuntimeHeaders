@@ -20,8 +20,7 @@
 }
 
 + (id)genesisSlotsForSlots:(id)arg1;
-+ (id)slotWithIdiom:(id)arg1 appearance:(id)arg2;
-+ (id)slotWithIdiom:(id)arg1 colorSpace:(id)arg2;
++ (id)slotWithIdiom:(id)arg1;
 + (id)orderedComponentClasses;
 + (Class)assetRepClass;
 + (Class)assetSetClass;
@@ -35,6 +34,7 @@
 @property(readonly) IBICColorSpace *colorSpace; // @synthesize colorSpace=_colorSpace;
 @property(readonly) IBICSubtype *subtype; // @synthesize subtype=_subtype;
 @property(readonly) IBICIdiom *idiom; // @synthesize idiom=_idiom;
+- (id)outputFileNameGivenBaseName:(id)arg1 andExtension:(id)arg2;
 - (BOOL)hasUnspecifiedLocale;
 - (BOOL)hasUnspecifiedAppearance;
 - (id)detailAreaPath;

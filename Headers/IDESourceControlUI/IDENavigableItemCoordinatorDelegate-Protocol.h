@@ -6,13 +6,13 @@
 
 #import <IDESourceControlUI/NSObject-Protocol.h>
 
-@class IDEEditorDocument, IDENavigableItem, IDENavigableItemCoordinator, NSArray;
+@class IDEEditorDocument, IDENavigableItem, IDENavigableItemCoordinator, NSArray, NSHashTable;
 
 @protocol IDENavigableItemCoordinatorDelegate <NSObject>
 
 @optional
-- (void)navigableItemCoordinator:(IDENavigableItemCoordinator *)arg1 didForgetItems:(id)arg2;
-- (void)navigableItemCoordinator:(IDENavigableItemCoordinator *)arg1 willForgetItems:(id)arg2;
+- (void)navigableItemCoordinator:(IDENavigableItemCoordinator *)arg1 didForgetItems:(NSHashTable *)arg2;
+- (void)navigableItemCoordinator:(IDENavigableItemCoordinator *)arg1 willForgetItems:(NSHashTable *)arg2;
 - (void)didEndTransactionScopeForNavigableItemCoordinator:(IDENavigableItemCoordinator *)arg1;
 - (void)willBeginTransactionScopeForNavigableItemCoordinator:(IDENavigableItemCoordinator *)arg1;
 - (NSArray *)navigableItem:(IDENavigableItem *)arg1 childRepresentedObjectsForArray:(NSArray *)arg2;

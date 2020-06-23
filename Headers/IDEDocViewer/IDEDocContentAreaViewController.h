@@ -10,13 +10,12 @@
 #import <IDEDocViewer/DVTFindBarHostable-Protocol.h>
 #import <IDEDocViewer/DVTReplacementViewDelegate-Protocol.h>
 #import <IDEDocViewer/DVTScopeBarHost-Protocol.h>
-#import <IDEDocViewer/NSSplitViewDelegate-Protocol.h>
 #import <IDEDocViewer/_TtP12IDEDocViewer27IDEDocNavigatorAreaDelegate_-Protocol.h>
 #import <IDEDocViewer/_WKFindDelegate-Protocol.h>
 
-@class DVTBasicFindBar, DVTReplacementView, DVTScopeBarController, DVTScopeBarsManager, DVTSplitView, DVTSplitViewItem, IDEDocWebViewContentViewController, NSMenu, NSScrollView, NSString, NSView, _TtC12IDEDocViewer19IDEDocNavigatorArea, _TtC16DVTExplorableKit23DVTExplorableIdentifier;
+@class DVTBasicFindBar, DVTScopeBarController, DVTScopeBarsManager, IDEDocWebViewContentViewController, NSMenu, NSScrollView, NSSplitViewController, NSSplitViewItem, NSString, NSView, _TtC12IDEDocViewer19IDEDocNavigatorArea, _TtC16DVTExplorableKit23DVTExplorableIdentifier;
 
-@interface IDEDocContentAreaViewController : DVTViewController <NSSplitViewDelegate, DVTFindBarHostable, DVTScopeBarHost, DVTReplacementViewDelegate, _TtP12IDEDocViewer27IDEDocNavigatorAreaDelegate_, _WKFindDelegate, DVTBasicFindBarFindable>
+@interface IDEDocContentAreaViewController : DVTViewController <DVTFindBarHostable, DVTScopeBarHost, DVTReplacementViewDelegate, _TtP12IDEDocViewer27IDEDocNavigatorAreaDelegate_, _WKFindDelegate, DVTBasicFindBarFindable>
 {
     NSView *_findBarView;
     DVTScopeBarsManager *_scopeBarsMgr;
@@ -25,22 +24,21 @@
     BOOL _findCaseSensitive;
     DVTScopeBarController *_findBarScopeBarController;
     NSString *_UUID;
-    DVTReplacementView *_contentReplacementView;
-    DVTSplitView *_contentAreaSplitView;
+    NSSplitViewController *_splitViewController;
+    IDEDocWebViewContentViewController *_contentViewController;
     _TtC12IDEDocViewer19IDEDocNavigatorArea *_navigatorArea;
-    DVTSplitViewItem *_navigatorAreaSplitViewItem;
+    NSSplitViewItem *_navigatorAreaSplitViewItem;
 }
 
 + (id)keyPathsForValuesAffectingSidebarVisible;
 + (id)keyPathsForValuesAffectingWebViewTextSizeMultiplier;
 + (id)keyPathsForValuesAffectingWebViewWebViewScrollPosition;
-+ (id)keyPathsForValuesAffectingInstalledContentViewController;
 + (id)keyPathsForValuesAffectingWebView;
 - (void).cxx_destruct;
-@property(retain) DVTSplitViewItem *navigatorAreaSplitViewItem; // @synthesize navigatorAreaSplitViewItem=_navigatorAreaSplitViewItem;
+@property(retain) NSSplitViewItem *navigatorAreaSplitViewItem; // @synthesize navigatorAreaSplitViewItem=_navigatorAreaSplitViewItem;
 @property(retain) _TtC12IDEDocViewer19IDEDocNavigatorArea *navigatorArea; // @synthesize navigatorArea=_navigatorArea;
-@property(retain) DVTSplitView *contentAreaSplitView; // @synthesize contentAreaSplitView=_contentAreaSplitView;
-@property(retain) DVTReplacementView *contentReplacementView; // @synthesize contentReplacementView=_contentReplacementView;
+@property(readonly) IDEDocWebViewContentViewController *contentViewController; // @synthesize contentViewController=_contentViewController;
+@property(retain) NSSplitViewController *splitViewController; // @synthesize splitViewController=_splitViewController;
 @property(retain, nonatomic) NSString *UUID; // @synthesize UUID=_UUID;
 - (void)printDocument:(id)arg1;
 - (id)printInfo;
@@ -93,20 +91,14 @@
 @property(readonly) _TtC16DVTExplorableKit23DVTExplorableIdentifier *jumpBarSelectedExplorableIdentifier;
 @property double webViewTextSizeMultiplier;
 @property int webViewScrollPosition;
-@property(readonly) IDEDocWebViewContentViewController *installedContentViewController;
 - (BOOL)isCoreDocContent;
 - (id)wkWebView;
 - (id)webView;
-- (double)splitView:(id)arg1 constrainSplitPosition:(double)arg2 ofSubviewAt:(long long)arg3;
-- (double)splitView:(id)arg1 constrainMaxCoordinate:(double)arg2 ofSubviewAt:(long long)arg3;
-- (double)splitView:(id)arg1 constrainMinCoordinate:(double)arg2 ofSubviewAt:(long long)arg3;
-- (double)maxSplitterPosition;
-- (double)minSplitterPosition;
-- (BOOL)splitView:(id)arg1 shouldCollapseSubview:(id)arg2 forDoubleClickOnDividerAtIndex:(long long)arg3;
-- (BOOL)splitView:(id)arg1 canCollapseSubview:(id)arg2;
 @property(readonly) DVTScopeBarsManager *scopeBarsManager;
 - (void)primitiveInvalidate;
+- (void)viewDidInstall;
 - (void)loadView;
+- (void)navigatorArea:(id)arg1 didSelectHide:(BOOL)arg2;
 - (void)navigatorArea:(id)arg1 didSelectURL:(id)arg2 explorableIdentifier:(id)arg3;
 
 // Remaining properties
@@ -114,6 +106,7 @@
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) NSScrollView *scopeBarsAdjustableScrollView;
+@property(readonly) struct NSEdgeInsets scopeBarsTopInsets;
 @property(readonly) Class superclass;
 
 @end

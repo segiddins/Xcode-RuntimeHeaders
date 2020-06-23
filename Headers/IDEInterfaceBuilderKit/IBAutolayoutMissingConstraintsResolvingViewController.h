@@ -20,6 +20,8 @@
 @property(readonly, nonatomic) NSString *descriptionText; // @synthesize descriptionText=_descriptionText;
 @property(readonly, nonatomic) IBDocument *document; // @synthesize document=_document;
 @property(readonly, nonatomic) id <IBCollection> views; // @synthesize views=_views;
+- (void)resizeConstraints;
+- (void)deleteConstraints;
 - (void)confirmChanges;
 - (void)primitiveInvalidate;
 - (id)initWithViews:(id)arg1 document:(id)arg2;

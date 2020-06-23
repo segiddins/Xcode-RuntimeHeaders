@@ -7,6 +7,8 @@
 #import <IBAutolayoutFoundation/IBLayoutRuleManager.h>
 
 @interface IBLayoutRuleManager (IBIDELayoutRuleManagerAdditions)
-+ (id)layoutRuleFilePaths;
++ (id)standardLayoutRuleFilePaths;
++ (id)snappingLayoutRuleFilePaths;
++ (id)layoutRuleFilePathsWithType:(id)arg1;
 @end
 

@@ -12,8 +12,6 @@
 {
     NSMutableDictionary *nodeDictionary;
     NSArray *interSegmentWhitespace;
-    id reserved1;
-    id reserved2;
 }
 
 + (id)mutableCopyOfLOCXMLNodeWithAppleGlotEscapeSequence:(id)arg1;

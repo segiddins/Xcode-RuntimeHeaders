@@ -4,39 +4,27 @@
 //  Copyright (C) 1997-2019 Steve Nygard.
 //
 
-#import <AppKit/NSView.h>
+#import <AppKit/NSButton.h>
 
 @class MISSING_TYPE;
 
-@interface _TtC18IDESourceControlUI22PullRequestStatusBadge : NSView
+@interface _TtC18IDESourceControlUI22PullRequestStatusBadge : NSButton
 {
+    MISSING_TYPE *isNavigatorBadge;
+    MISSING_TYPE *isEditable;
     MISSING_TYPE *status;
-    MISSING_TYPE *type;
-    MISSING_TYPE *statusString;
-    MISSING_TYPE *centerInFrame;
-    MISSING_TYPE *tokenCornerRadius;
-    MISSING_TYPE *tokenInset;
-    MISSING_TYPE *tokenFont;
-    MISSING_TYPE *defaultStateTokenColor;
-    MISSING_TYPE *defaultTokenBackgroundColor;
-    MISSING_TYPE *verbTokenBackgroundColor;
-    MISSING_TYPE *approvedTokenBackgroundColor;
-    MISSING_TYPE *terminalTokenBackgroundColor;
-    MISSING_TYPE *draftTokenTextColor;
-    MISSING_TYPE *draftTokenBackgroundColor;
-    MISSING_TYPE *token;
-    MISSING_TYPE *backgroundColor;
-    MISSING_TYPE *borderColor;
-    MISSING_TYPE *minimumWidth;
+    MISSING_TYPE *mouseDownInView;
 }
 
++ (void)setCellClass:(Class)arg1;
++ (Class)cellClass;
 - (void).cxx_destruct;
-- (void)drawRect:(struct CGRect)arg1;
-- (void)viewWillDraw;
-- (void)viewDidChangeEffectiveAppearance;
 - (id)initWithCoder:(id)arg1;
-@property(nonatomic, readonly) struct CGSize intrinsicContentSize;
 - (id)initWithFrame:(struct CGRect)arg1;
+- (void)mouseUp:(id)arg1;
+- (void)mouseDown:(id)arg1;
+- (void)sizeToFitWithMax:(double)arg1;
+- (void)sizeToFit;
 
 @end
 

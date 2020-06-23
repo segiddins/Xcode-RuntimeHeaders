@@ -54,6 +54,7 @@
     int _beforeMaximizeComparisonMode_UserVisibleEditorMode;
     NSDictionary *_unrestoredStateDictionary;
     NSNumber *_setShowDebuggerAreaReentrancyCheck;
+    BOOL _alwaysShowTabBar;
     BOOL _isRestoringState;
     IDEEditorAreaSplit *_primaryEditorAreaSplit;
     NSArray *_editorAreaSplits;
@@ -81,6 +82,7 @@
 - (void).cxx_destruct;
 @property BOOL isRestoringState; // @synthesize isRestoringState=_isRestoringState;
 @property long long maximizedState; // @synthesize maximizedState=_maximizedState;
+@property BOOL alwaysShowTabBar; // @synthesize alwaysShowTabBar=_alwaysShowTabBar;
 @property(retain) IDEEditorContext *navigationTargetedEditorContext; // @synthesize navigationTargetedEditorContext=_navigationTargetedEditorContext;
 @property(retain, nonatomic) IDEEditorAreaSplit *selectedEditorAreaSplit; // @synthesize selectedEditorAreaSplit=_selectedEditorAreaSplit;
 @property(retain) IDEEditorDocument *primaryEditorDocument; // @synthesize primaryEditorDocument=_primaryEditorDocument;
@@ -99,6 +101,13 @@
 - (void)editorMultipleSplit:(id)arg1 didCreateSplitItem:(id)arg2;
 - (void)_updateEditorAreaSplitsWithoutSplitItem:(id)arg1;
 - (void)_updateEditorAreaSplits;
+- (void)_closeOtherTabsForEditorContext:(id)arg1 client:(unsigned long long)arg2;
+- (BOOL)_canCloseOtherEditorTabsForEditorContext:(id)arg1;
+- (void)_closeActiveTabForEditorContext:(id)arg1 client:(unsigned long long)arg2;
+- (BOOL)_canCloseActiveTabForEditorContext:(id)arg1;
+- (void)_showNextEditorTab:(id)arg1;
+- (void)_showPreviousEditorTab:(id)arg1;
+- (void)_newEditorTab:(id)arg1;
 - (id)_maximizeComparisonMode:(BOOL)arg1 withEditorAreaSplit:(id)arg2 client:(unsigned long long)arg3;
 - (void)_primitiveRestoreEditorSplitsWithStateDictionaries:(id)arg1 maximizedState:(long long)arg2 selectedEditorSplitIndexPath:(id)arg3 primaryHistoryStackForSelectedEditor:(id)arg4 secondaryHistoryStackForSelectedEditor:(id)arg5 client:(unsigned long long)arg6;
 - (void)_restoreEditorSplitsWithStateDictionaries:(id)arg1 maximizedState:(long long)arg2 selectedEditorSplitIndexPath:(id)arg3 primaryHistoryStackForSelectedEditor:(id)arg4 secondaryHistoryStackForSelectedEditor:(id)arg5 client:(unsigned long long)arg6;
@@ -154,6 +163,8 @@
 - (BOOL)validateUserInterfaceItem:(id)arg1;
 - (void)toggleDebuggerVisibility:(id)arg1;
 - (void)activateConsole:(id)arg1;
+- (void)toggleEditorTabBar:(id)arg1;
+- (void)setShowDebuggerArea:(BOOL)arg1 animated:(BOOL)arg2;
 @property BOOL showDebuggerArea;
 - (void)_setShowDebuggerArea:(BOOL)arg1 animate:(BOOL)arg2;
 - (void)showDebuggerArea:(id)arg1;
@@ -172,8 +183,8 @@
 - (void)setStateSavingDefaultPersistentRepresentations:(id)arg1;
 - (id)stateSavingDefaultPersistentRepresentations;
 - (id)_editorContexts;
-- (BOOL)_openEditorOpenSpecifier:(id)arg1 editorContext:(id)arg2 takeFocus:(BOOL)arg3;
-- (BOOL)_openEditorHistoryItem:(id)arg1 editorContext:(id)arg2 takeFocus:(BOOL)arg3;
+- (BOOL)_openEditorOpenSpecifier:(id)arg1 editorContext:(id)arg2 options:(unsigned long long)arg3;
+- (BOOL)_openEditorHistoryItem:(id)arg1 editorContext:(id)arg2 options:(unsigned long long)arg3;
 @property(readonly) IDENavigableItemArchivableRepresentation *selectedNavigableItemArchivedRepresentation;
 @property(readonly) IDEEditorDocument *navigationTargetedEditorDocument;
 @property(readonly) IDEEditorContext *primaryEditorContext;

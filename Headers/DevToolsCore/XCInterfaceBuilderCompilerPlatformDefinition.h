@@ -11,6 +11,7 @@
 @interface XCInterfaceBuilderCompilerPlatformDefinition : NSObject
 {
     NSDictionary *_targetedDeviceFamilyIdentifierToTargetDeviceName;
+    NSDictionary *_targetedDeviceFamilyIdentifierToDisplayName;
     DVTExtension *_extension;
     NSString *_explicitTargetDeviceName;
     NSSet *_supportedPlatformNames;
@@ -22,6 +23,7 @@
 @property(readonly, nonatomic) NSSet *supportedPlatformNames; // @synthesize supportedPlatformNames=_supportedPlatformNames;
 @property(readonly, nonatomic) NSString *explicitTargetDeviceName; // @synthesize explicitTargetDeviceName=_explicitTargetDeviceName;
 - (id)description;
+- (id)displayNameForTargetedDeviceFamilyIdentifier:(id)arg1;
 - (id)targetDeviceNameForTargetedDeviceFamilyIdentifier:(id)arg1;
 - (id)initWithDVTExtension:(id)arg1;
 

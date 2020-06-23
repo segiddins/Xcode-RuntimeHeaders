@@ -17,6 +17,7 @@
 - (BOOL)hasFindPattern;
 - (NSString *)replacementExpression;
 - (NSString *)regularExpression;
+@property(nonatomic) BOOL searchesImmediatelyAfterInsertingPattern;
 @property(nonatomic, copy) DVTFindPatternComponents *findPatternComponents;
 @property(nonatomic) __weak id <DVTFindPatternManager> findPatternManager;
 - (void)setFindPatternArray:(NSArray *)arg1;

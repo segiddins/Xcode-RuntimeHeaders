@@ -12,6 +12,7 @@
 {
     MISSING_TYPE *_orderedNames;
     MISSING_TYPE *_placedItems;
+    MISSING_TYPE *logAspect;
 }
 
 @end

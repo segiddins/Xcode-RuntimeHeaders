@@ -9,12 +9,15 @@
 @class DYMTLShaderProfilerResult, NSArray, NSNumber;
 
 @protocol DYPDependencyGraphEncoderNode <DYPDependencyGraphNode>
-@property(readonly, nonatomic) struct _NSRange range;
-@property(readonly, nonatomic) int fileFunctionIndex;
-@property(readonly, nonatomic) unsigned long long encoderType;
-@property(readonly, nonatomic) unsigned long long encoderID;
+@property(nonatomic, readonly) struct _NSRange range;
+@property(nonatomic, readonly) int fileFunctionIndex;
+- (BOOL)isICBWriteOnly:(unsigned long long)arg1;
+- (BOOL)isBufferWriteOnly:(unsigned long long)arg1;
+- (BOOL)isTextureWriteOnly:(unsigned long long)arg1;
+- (NSArray *)allResources;
+@property(nonatomic, readonly) unsigned long long encoderType;
+@property(nonatomic, readonly) unsigned long long encoderID;
 - (double)encoderTime:(DYMTLShaderProfilerResult *)arg1;
 - (NSNumber *)vertexCount:(DYMTLShaderProfilerResult *)arg1;
-- (NSArray *)allResources;
 @end
 

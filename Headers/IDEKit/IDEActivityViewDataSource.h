@@ -37,6 +37,7 @@
     IDEActivityStatusCategory *_legacyBuildSystemIssueCategory;
     IDEActivityStatusCategory *_newBuildSystemIssueCategory;
     IDEActivityStatusCategory *_slowBuildIssueCategory;
+    IDEActivityStatusCategory *_codesigningIssueCategory;
     NSArray *_issueCategories;
     double _minimumReportTime;
 }

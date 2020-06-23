@@ -35,6 +35,7 @@
 @property(readonly, nonatomic) NSImage *navigableItem_image;
 @property(readonly, nonatomic) NSString *navigableItem_subtitle;
 @property(readonly, nonatomic) NSString *navigableItem_name;
+@property(readonly) BOOL shouldDisplayAnnotationsForSubissues;
 @property(readonly) id exploreAnnotationRepresentedObject;
 @property(readonly) id annotationRepresentedObject;
 - (id)fixItImage;

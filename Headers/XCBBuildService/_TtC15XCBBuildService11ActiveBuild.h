@@ -17,6 +17,7 @@
     MISSING_TYPE *request;
     MISSING_TYPE *workspaceContext;
     MISSING_TYPE *buildRequest;
+    MISSING_TYPE *onlyCreatesBuildDescription;
     MISSING_TYPE *state;
     MISSING_TYPE *subspan;
     MISSING_TYPE *preparationProgressDelegate;

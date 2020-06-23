@@ -10,21 +10,34 @@
 
 @interface DVTScrollView : NSScrollView
 {
-    BOOL _handleBoundsOrFrameChangePending;
+    NSView *_topBorderView;
+    NSView *_topShadowView;
     NSView *_bottomBorderView;
     id _contentViewBoundsChangeNotificationToken;
     id _documentViewFrameChangeNotificationToken;
-    BOOL _showsBorderOnBottom;
-    BOOL _borderComesAndGoesBasedOnScrollPosition;
+    BOOL _isUpdatingContentInsets;
+    struct NSEdgeInsets _borderContentInsets;
+    struct NSEdgeInsets _contentInsetsExcludingBorders;
+    BOOL _showsBorderOnTop;
+    BOOL _showsShadowOnTopWhenScrolled;
+    BOOL _showsBorderOnBottomWhenScrolled;
+    BOOL _showsBorderOnTopWhenScrolled;
+    BOOL _wantsMetricsAppearanceInsetsIfAvailable;
 }
 
 - (void).cxx_destruct;
-@property(nonatomic) BOOL borderComesAndGoesBasedOnScrollPosition; // @synthesize borderComesAndGoesBasedOnScrollPosition=_borderComesAndGoesBasedOnScrollPosition;
-@property(nonatomic) BOOL showsBorderOnBottom; // @synthesize showsBorderOnBottom=_showsBorderOnBottom;
-- (void)tile;
-- (void)_defferedHandleBoundsOrFrameChanged;
+@property(nonatomic) struct NSEdgeInsets contentInsetsExcludingBorders; // @synthesize contentInsetsExcludingBorders=_contentInsetsExcludingBorders;
+@property(nonatomic) BOOL wantsMetricsAppearanceInsetsIfAvailable; // @synthesize wantsMetricsAppearanceInsetsIfAvailable=_wantsMetricsAppearanceInsetsIfAvailable;
+@property(nonatomic) BOOL showsBorderOnTopWhenScrolled; // @synthesize showsBorderOnTopWhenScrolled=_showsBorderOnTopWhenScrolled;
+@property(nonatomic) BOOL showsBorderOnBottomWhenScrolled; // @synthesize showsBorderOnBottomWhenScrolled=_showsBorderOnBottomWhenScrolled;
+@property(nonatomic) BOOL showsShadowOnTopWhenScrolled; // @synthesize showsShadowOnTopWhenScrolled=_showsShadowOnTopWhenScrolled;
+@property(nonatomic) BOOL showsBorderOnTop; // @synthesize showsBorderOnTop=_showsBorderOnTop;
 - (void)_handleBoundsOrFrameChanged;
-- (void)_conditionallyInstallOrRemoveNotificationObservers;
+- (void)_installOrRemoveNotificationObservers;
+- (void)_updateMetricsAppearanceInsets;
+- (void)_updateContentInsetsForBorders;
+- (void)setContentInsets:(struct NSEdgeInsets)arg1;
+- (void)setDocumentView:(id)arg1;
 - (void)viewDidMoveToWindow;
 - (void)_dvtScrollViewCommonInit;
 - (id)initWithCoder:(id)arg1;

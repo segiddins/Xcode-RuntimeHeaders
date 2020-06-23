@@ -6,7 +6,7 @@
 
 #import <DVTFoundation/DVTSigningCertificate.h>
 
-@class NSDate, NSSet, NSString;
+@class DVTSigningCertificateSerialNumber, NSDate, NSSet, NSString;
 
 @interface DVTMockSigningCertificate : DVTSigningCertificate
 {
@@ -23,14 +23,14 @@
     NSDate *_issueDateMock;
     NSDate *_expirationDateMock;
     NSString *_sha1HashMock;
-    NSString *_serialNumberMock;
+    DVTSigningCertificateSerialNumber *_serialNumberMock;
 }
 
 + (id)underlyingObject;
 - (void).cxx_destruct;
 @property BOOL isForServerMock; // @synthesize isForServerMock=_isForServerMock;
 @property BOOL isValidForCodesigningMock; // @synthesize isValidForCodesigningMock=_isValidForCodesigningMock;
-@property(copy) NSString *serialNumberMock; // @synthesize serialNumberMock=_serialNumberMock;
+@property(copy) DVTSigningCertificateSerialNumber *serialNumberMock; // @synthesize serialNumberMock=_serialNumberMock;
 @property(copy) NSString *sha1HashMock; // @synthesize sha1HashMock=_sha1HashMock;
 @property BOOL isTrustedMock; // @synthesize isTrustedMock=_isTrustedMock;
 @property(copy) NSDate *expirationDateMock; // @synthesize expirationDateMock=_expirationDateMock;

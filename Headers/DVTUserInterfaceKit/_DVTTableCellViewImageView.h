@@ -10,7 +10,6 @@
 {
 }
 
-+ (Class)cellClass;
 - (id)_enclosingTableCellView;
 - (id)accessibilityTitle;
 

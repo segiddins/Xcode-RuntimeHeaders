@@ -10,6 +10,7 @@
 
 @interface _TtCC13DVTLibraryKit15LibraryTileViewP33_C0F3AC17EE40AF25668D05576E012FB410GridLayout : _TtCC13DVTLibraryKit15LibraryTileView6Layout
 {
+    MISSING_TYPE *itemWidthExpansion;
     MISSING_TYPE *columnRanges;
     MISSING_TYPE *sectionRanges;
 }

@@ -13,7 +13,6 @@
 
 + (id)_nonCurrentStepTheme;
 + (id)_currentStepTheme;
-+ (id)sidebarIconBorderMask;
 + (id)sidebarIcon;
 + (double)precedence;
 @property BOOL isCurrentStep; // @synthesize isCurrentStep=_isCurrentStep;

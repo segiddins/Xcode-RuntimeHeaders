@@ -9,6 +9,7 @@
 @class DVTFilePath, NSString;
 
 @protocol IDEDistributableContent <NSObject>
+@property(readonly) NSString *bundleName;
 @property(readonly) NSString *bundleIdentifier;
 @property(readonly) DVTFilePath *path;
 @end

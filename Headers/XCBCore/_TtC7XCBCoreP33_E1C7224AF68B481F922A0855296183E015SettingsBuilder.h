@@ -23,7 +23,6 @@
     MISSING_TYPE *productType;
     MISSING_TYPE *packageType;
     MISSING_TYPE *preferredArch;
-    MISSING_TYPE *sdk;
     MISSING_TYPE *signingSettings;
     MISSING_TYPE *_table;
     MISSING_TYPE *exportedMacroNames;

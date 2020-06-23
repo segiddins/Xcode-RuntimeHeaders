@@ -48,6 +48,7 @@
 @property(readonly, copy, nonatomic) NSString *operatingSystemVersionWithBuildNumber;
 @property(readonly) DVTPlatform *platform;
 @property(readonly, copy) NSString *operatingSystemBuild;
+@property(readonly, copy) NSString *iOSSupportVersion;
 @property(readonly, copy) NSString *operatingSystemVersion;
 @property(readonly, copy) NSString *processorDescription;
 @property(readonly, copy, nonatomic) NSString *modelUTI;

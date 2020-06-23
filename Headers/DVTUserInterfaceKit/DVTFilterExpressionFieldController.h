@@ -40,7 +40,7 @@
 - (id)_menuItemTitleForExpression:(id)arg1;
 - (id)_menuItemTitleForCategoryExpression:(id)arg1;
 - (id)tokenField:(id)arg1 shouldAddObjects:(id)arg2 atIndex:(unsigned long long)arg3;
-- (id)_attachmentCellForToken:(id)arg1;
+- (id)attachmentCellForToken:(id)arg1;
 - (void)_handleCompletionFromStorage:(id)arg1 andLastChangeID:(unsigned long long)arg2;
 - (Class)_tokenClass;
 - (void)clearField;
@@ -51,6 +51,7 @@
 - (void)configureSampleFilterMenuItems;
 - (void)configureAdditionalFilterMenuItems;
 - (void)_addToggleExpression:(id)arg1;
+- (id)_currentFieldItems;
 - (void)removeFilterToken:(id)arg1;
 - (void)configureToggleButtons;
 - (void)toggleButtonPressed:(id)arg1;

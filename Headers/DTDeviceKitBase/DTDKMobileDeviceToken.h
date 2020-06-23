@@ -338,7 +338,6 @@
 - (_Bool)stopSimulatingLocationWithError:(id *)arg1;
 - (id)copyAndProcessSharedCacheWithOperation:(id)arg1;
 - (BOOL)mountDeveloperDiskImageWithError:(id *)arg1;
-- (id)developerDiskImageForDeviceType:(id)arg1 productVersion:(id)arg2 buildVersion:(id)arg3;
 - (BOOL)_mountDeveloperDiskImage:(id)arg1 withError:(id *)arg2;
 - (id)idealExistingSymbolsDirectory:(id *)arg1;
 - (struct _AMDServiceConnection *)startLocationSimulationServiceWithError:(id *)arg1;
@@ -362,7 +361,9 @@
 - (id)primaryInstrumentsServer;
 - (id)startInstrumentsServerService;
 - (id)startSyslogService;
+- (id)startSecureProxiedAppListService;
 - (id)startAppListService;
+- (id)startAppListServiceForDebugService:(id)arg1;
 - (id)startLocationSimulationService;
 - (id)startSharedCacheCopyingService;
 - (id)startCrashReportCopyMobileService;
@@ -370,8 +371,9 @@
 - (id)startAppInstallationService;
 - (id)startSpringboardService;
 - (id)startDarwinNotificationService;
+- (id)startSecureProxiedDebugServerServiceWithExtension:(id)arg1;
 - (id)startDebugServerServiceWithExtension:(id)arg1;
-- (id)_debugServiceArrayWithExtension:(id)arg1 services:(id)arg2;
+- (id)startDebugServerService:(id)arg1 extension:(id)arg2;
 - (id)startFirstServiceOf:(id)arg1 unlockKeybag:(_Bool)arg2;
 - (id)startFirstServiceOf:(id)arg1;
 - (id)startServiceWithIdentifier:(id)arg1;
@@ -407,6 +409,7 @@
 - (_Bool)isConnected;
 - (_Bool)isSupportedOS;
 - (id)platform;
+- (BOOL)decomposeBuildVersionToMajorVersion:(long long *)arg1 trainLetter:(id *)arg2;
 - (void)dealloc;
 - (id)dictionaryRepresentation;
 - (void)awakeWithDictionaryRepresentation:(id)arg1;

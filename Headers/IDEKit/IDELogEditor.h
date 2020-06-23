@@ -101,6 +101,7 @@
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) NSScrollView *scopeBarsAdjustableScrollView;
+@property(readonly) struct NSEdgeInsets scopeBarsTopInsets;
 @property(readonly) Class superclass;
 
 @end

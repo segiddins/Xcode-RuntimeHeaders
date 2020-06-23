@@ -17,7 +17,6 @@
     NSMenuItem *_duplicateSelectedThemeMenuItem;
     NSMenuItem *_newThemeFromTemplateMenuItem;
     DVTImageAndTextColumn *_tableColumn;
-    DVTBorderedView *_viewControllerBorderedView;
     NSTableView *_tableView;
     DVTGradientImagePopUpButton *_addPopUpButton;
     DVTGradientImageButton *_removeButton;

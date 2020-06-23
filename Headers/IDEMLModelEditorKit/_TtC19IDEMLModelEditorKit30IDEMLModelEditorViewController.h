@@ -6,7 +6,7 @@
 
 #import <IDEKit/IDEViewController.h>
 
-@class IDECapsuleListView, MISSING_TYPE, NSImageView, NSMutableArray, NSOutlineView, NSTableColumn, NSTextField, NSTextFieldCell, NSTreeController, _TtC19IDEMLModelEditorKit31IDEMLModelCapsuleViewController, _TtC19IDEMLModelEditorKit39IDEMLModelExperimentationViewController;
+@class IDECapsuleListView, MISSING_TYPE, NSImageView, NSMutableArray, NSOutlineView, NSTableColumn, NSTextField, NSTextFieldCell, NSTreeController, _TtC19IDEMLModelEditorKit31IDEMLModelCapsuleViewController;
 
 __attribute__((visibility("hidden")))
 @interface _TtC19IDEMLModelEditorKit30IDEMLModelEditorViewController : IDEViewController
@@ -64,7 +64,7 @@ __attribute__((visibility("hidden")))
 - (void)clickedClass:(id)arg1;
 @property(nonatomic) BOOL fileLinkEnabled; // @synthesize fileLinkEnabled;
 @property(nonatomic) __weak NSImageView *issueImage; // @synthesize issueImage;
-@property(nonatomic, retain) _TtC19IDEMLModelEditorKit39IDEMLModelExperimentationViewController *experimentationCapsuleViewController; // @synthesize experimentationCapsuleViewController;
+@property(nonatomic, retain) _TtC19IDEMLModelEditorKit31IDEMLModelCapsuleViewController *experimentationCapsuleViewController; // @synthesize experimentationCapsuleViewController;
 @property(nonatomic, retain) _TtC19IDEMLModelEditorKit31IDEMLModelCapsuleViewController *issueCapsuleViewController; // @synthesize issueCapsuleViewController;
 @property(nonatomic, retain) _TtC19IDEMLModelEditorKit31IDEMLModelCapsuleViewController *generatedInterfaceCapsuleViewController; // @synthesize generatedInterfaceCapsuleViewController;
 @property(nonatomic, retain) _TtC19IDEMLModelEditorKit31IDEMLModelCapsuleViewController *DependenciesCapsuleViewController; // @synthesize DependenciesCapsuleViewController;

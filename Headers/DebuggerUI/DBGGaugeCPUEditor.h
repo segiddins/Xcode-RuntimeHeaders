@@ -9,7 +9,7 @@
 #import <DebuggerUI/IDEDebugGaugeReportTopSectionContentDelegate-Protocol.h>
 #import <DebuggerUI/IDEGraphDelegate-Protocol.h>
 
-@class DVTCapacitySegment, DVTMeterView, DVTStackView_AppKitAutolayout, IDEPlotGraph, NSButton, NSMutableArray, NSNumber, NSString, NSTextField, NSView;
+@class DVTCapacitySegment, DVTMeterView, DVTStackView_AppKitAutolayout, IDECoreChartPlotGraph, NSButton, NSMutableArray, NSNumber, NSString, NSTextField, NSView;
 
 @interface DBGGaugeCPUEditor : DBGGaugeEditor <IDEDebugGaugeReportTopSectionContentDelegate, IDEGraphDelegate>
 {
@@ -32,13 +32,13 @@
     NSTextField *_utilizationLow;
     NSTextField *_utilizationCap;
     NSTextField *_utilizationAverage;
-    IDEPlotGraph *_utilizationGraph;
+    IDECoreChartPlotGraph *_utilizationGraph;
     NSButton *_profileButton;
 }
 
 - (void).cxx_destruct;
 @property __weak NSButton *profileButton; // @synthesize profileButton=_profileButton;
-@property __weak IDEPlotGraph *utilizationGraph; // @synthesize utilizationGraph=_utilizationGraph;
+@property __weak IDECoreChartPlotGraph *utilizationGraph; // @synthesize utilizationGraph=_utilizationGraph;
 @property __weak NSTextField *utilizationAverage; // @synthesize utilizationAverage=_utilizationAverage;
 @property __weak NSTextField *utilizationCap; // @synthesize utilizationCap=_utilizationCap;
 @property __weak NSTextField *utilizationLow; // @synthesize utilizationLow=_utilizationLow;

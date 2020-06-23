@@ -42,9 +42,9 @@
 @property(readonly) NSString *targetSDKForSorting;
 @property(readonly) NSString *targetDeviceForSorting;
 @property(readonly) NSString *displayOrder;
-- (BOOL)shouldPresentRunDestinationForScheme:(id)arg1 schemeTask:(long long)arg2 schemeCommand:(id)arg3 executionEnvironment:(id)arg4 overridingTestingSpecifiers:(id)arg5 error:(id *)arg6;
 - (BOOL)isValidRunDestinationForScheme:(id)arg1 schemeTask:(long long)arg2 schemeCommand:(id)arg3 executionEnvironment:(id)arg4 overridingTestingSpecifiers:(id)arg5 error:(id *)arg6;
-- (BOOL)_isValidRunDestinationForScheme:(id)arg1 schemeTask:(long long)arg2 schemeCommand:(id)arg3 executionEnvironment:(id)arg4 overridingTestingSpecifiers:(id)arg5 forPresentation:(BOOL)arg6 error:(id *)arg7;
+- (BOOL)isValidRunDestinationForScheme:(id)arg1 schemeTask:(long long)arg2 schemeCommand:(id)arg3 executionEnvironment:(id)arg4 overridingTestingSpecifiers:(id)arg5 runDestinationManager:(id)arg6 error:(id *)arg7;
+- (BOOL)_isValidRunDestinationForScheme:(id)arg1 schemeTask:(long long)arg2 schemeCommand:(id)arg3 executionEnvironment:(id)arg4 overridingTestingSpecifiers:(id)arg5 runDestinationManager:(id)arg6 forPresentation:(BOOL)arg7 error:(id *)arg8;
 - (id)description;
 @property(readonly, copy) NSString *fullDisplayName;
 @property(readonly) NSString *displayableIneligibilityLongDescription;

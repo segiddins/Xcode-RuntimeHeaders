@@ -88,6 +88,7 @@
     IBMutableIdentityDictionary *_objectsToDesignTimeRecensionTokens;
     IBFileBuildSettingsSnapshot *_cachedBuildSettingsSnapshot;
     unsigned long long _cachedBuildSettingsSnapshotNestingCount;
+    id <DVTInvalidation> _blueprintObserver;
     IBLiveViewsManager *_cachedLiveViewsManager;
     NSMutableArray *_blockingSaveErrors;
     BOOL _debugContinuousDocumentSaveEnabled;
@@ -123,6 +124,7 @@
     NSSet *_configurationVariablesForBranching;
     IBMemberConfiguration *_baseMemberConfigurationForViewing;
     IBDeviceConfiguration *_deviceConfiguration;
+    NSString *_assetCatalogCompilerGlobalAccentColorName;
     IBSimulatedMetricsInferrer *_metricsInferrer;
     IDEWorkspaceDocument *_explicitWorkspaceDocument;
     IBResourceManager *_resourceManager;
@@ -171,7 +173,6 @@
 + (id)documentForMember:(id)arg1;
 + (id)documentForObject:(id)arg1;
 + (id)documentForConnection:(id)arg1;
-+ (Class)stripperClassForPlatform:(id)arg1;
 + (id)connectToSourceLastUserSelectedStorageTypeForConnectingAncestorToDescendant;
 + (id)keyPathsForValuesAffectingVariantForResolvingMediaResources;
 + (id)keyPathsForValuesAffectingVariantContextForMediaLibrary;
@@ -183,6 +184,8 @@
 + (void)setPreventsAutosavingInPlace:(BOOL)arg1;
 + (BOOL)preventsAutosavingInPlace;
 + (BOOL)shouldShowInspectorAreaAtLoadForSimpleFilesFocusedWorkspace;
++ (BOOL)shouldShowMinimapByDefault;
++ (id)showMinimapDefaultKey;
 + (int)libraryInclusionStatusForMainMenu;
 + (int)libraryInclusionStatusForExternalPrimarySceneObject;
 + (int)libraryInclusionStatusForContainerView;
@@ -249,6 +252,7 @@
 @property(nonatomic) struct CGSize canvasLayoutPositioningScale; // @synthesize canvasLayoutPositioningScale=_canvasLayoutPositioningScale;
 @property(readonly, nonatomic) BOOL undoableEditingActionNameOpenedUndoGroup; // @synthesize undoableEditingActionNameOpenedUndoGroup=_undoableEditingActionNameOpenedUndoGroup;
 @property(readonly, getter=isTransientPasteboardDocument) BOOL transientPasteboardDocument; // @synthesize transientPasteboardDocument=_transientPasteboardDocument;
+@property(readonly, nonatomic) NSString *assetCatalogCompilerGlobalAccentColorName; // @synthesize assetCatalogCompilerGlobalAccentColorName=_assetCatalogCompilerGlobalAccentColorName;
 @property(readonly) BOOL wasUnarchivedWithDocumentUnarchiver; // @synthesize wasUnarchivedWithDocumentUnarchiver=_wasUnarchivedWithDocumentUnarchiver;
 @property(retain, nonatomic) IBDeviceConfiguration *deviceConfiguration; // @synthesize deviceConfiguration=_deviceConfiguration;
 @property(retain, nonatomic) IBMemberConfiguration *baseMemberConfigurationForViewing; // @synthesize baseMemberConfigurationForViewing=_baseMemberConfigurationForViewing;
@@ -494,7 +498,9 @@
 - (id)documentSystemColorNamed:(id)arg1 fallbackColor:(id)arg2;
 - (id)documentColorNamed:(id)arg1 genericColor:(id)arg2;
 - (id)documentColorNamed:(id)arg1;
-- (id)documentImageNamed:(id)arg1 usingSizeValueForPlaceholderImageIfNeeded:(id)arg2 namespaceID:(id)arg3;
+- (id)documentImageNamed:(id)arg1 usingSizeValueForPlaceholderImageIfNeeded:(id)arg2 namespaceID:(id)arg3 modifier:(id)arg4;
+- (Class)imageMediaResourceClassForImageNamed:(id)arg1 namespaceID:(id)arg2;
+- (id)imageInfoForPlaceholderImageNamed:(id)arg1 namespaceID:(id)arg2;
 - (id)documentImageNamed:(id)arg1 usingSizeValueForPlaceholderImageIfNeeded:(id)arg2;
 - (id)documentImageNamed:(id)arg1;
 - (id)nameForDocumentCIImage:(id)arg1;
@@ -658,7 +664,7 @@
 - (id)classNamesForForcingPersistenceOfClassDescriptions;
 - (id)objectsDescendingFromClassNamed:(id)arg1;
 - (id)classNames;
-- (void)backfillCustomModuleNamesBasedOnWorkspace:(id)arg1;
+- (void)backfillCustomModuleNamesFromBuildSettings;
 - (void)backfillCustomModuleNames;
 - (id)userVisibleConnectionDataForEndPoint:(id)arg1;
 - (id)aggregatePredecessors:(id)arg1 andEquivalents:(id)arg2 byPrototypes:(id)arg3 withReferenceEndPoint:(id)arg4;
@@ -824,10 +830,12 @@
 - (void)objectContainer:(id)arg1 didChangeMetadataPropertyFromValue:(id)arg2 toValue:(id)arg3 forKey:(id)arg4 ofMember:(id)arg5;
 - (BOOL)objectContainer:(id)arg1 shouldPersistMemberConfigurationsForCoder:(id)arg2;
 - (BOOL)objectContainer:(id)arg1 shouldPersistMetadataForKey:(id)arg2 ofMember:(id)arg3;
+- (void)blueprintsDidChange:(id)arg1;
 - (void)cacheBuildSettingsSnapshotDuring:(CDUnknownBlockType)arg1;
 - (id)buildSettingsAssetCatalogAppIconPassingTest:(CDUnknownBlockType)arg1;
 - (id)buildSettingsProductBundleIdentifier;
 - (id)buildSettingsProductName;
+- (id)buildSettingsSnapshotOrNil;
 - (id)buildSettingsSnapshot;
 - (id)connectToSourceTargetCandidatesForContainingClassNamed:(id)arg1 toObject:(id)arg2 preferredTarget:(id *)arg3;
 - (id)connectToSourceCandidatesForConnectingToObject:(id)arg1 preferredCandidates:(id *)arg2;
@@ -879,7 +887,9 @@
 - (void)unregisterWorkspaceDocumentForEditorViewController:(id)arg1;
 - (void)registerWorkspaceDocument:(id)arg1 forEditorViewController:(id)arg2;
 - (void)temporarySetExplicitWorkspaceDocument:(id)arg1 whileInvokingBlock:(CDUnknownBlockType)arg2;
+- (void)refreshValuesFromWorksapceBuildSettings;
 - (void)refreshWorkspaceSourcedContent;
+- (void)updateAssetCatalogCompilerGlobalAccentColorName;
 - (void)updateWorkspaceDocumentDeploymentVersion;
 - (void)updateWorkspaceDocumentAndTargetRuntimeClassProviders;
 - (void)setSceneUpdateManager:(id)arg1;
@@ -930,6 +940,7 @@
 - (long long)documentArchivingCompatibilityVersion;
 - (id)archiveTypeForFileType:(id)arg1;
 - (Class)documentUnarchiver:(id)arg1 classForUnknownElementNamed:(id)arg2;
+- (id)documentUnarchiver:(id)arg1 objectForResourceReference:(id)arg2 referenceType:(id)arg3;
 - (id)documentUnarchiver:(id)arg1 objectForReferenceID:(id)arg2 namespaceID:(id)arg3 referenceType:(id)arg4;
 - (BOOL)unarchivePlatformIndependentDataWithUnarchiver:(id)arg1 error:(id *)arg2;
 - (BOOL)unarchiveDocumentWithUnarchiver:(id)arg1 error:(id *)arg2;
@@ -943,8 +954,9 @@
 - (void)documentUnarchiver:(id)arg1 willUnarchiveDocumentObject:(id)arg2;
 - (BOOL)documentUnarchiverIsUnarchivingStackBasedTreeNode:(id)arg1;
 - (id)documentUnarchiverAllowedReferenceTypes:(id)arg1;
+- (id)documentArchiver:(id)arg1 resourceReferenceIfNeededForObject:(id)arg2 referenceType:(id)arg3;
 - (id)documentArchiver:(id)arg1 namespaceForObject:(id)arg2 referenceType:(id)arg3;
-- (id)namespaceForObject:(id)arg1 referenceType:(id)arg2;
+- (id)archivingNamespaceForObject:(id)arg1 referenceType:(id)arg2;
 - (id)documentArchiver:(id)arg1 referenceIDForObject:(id)arg2 referenceType:(id)arg3 forFirstReferencingThroughKey:(id)arg4;
 - (id)synthesizeReferencingKeyForArchiver:(id)arg1 givenFirstReferencingKey:(id)arg2;
 - (void)archivePlatformIndependentDataWithDocumentArchiver:(id)arg1;
@@ -958,15 +970,18 @@
 - (void)unarchiveConfigurationPropertyStorageForObject:(id)arg1 withDocumentUnarchiver:(id)arg2;
 - (void)unarchiveDocumentManagedDataForObject:(id)arg1 withDocumentUnarchiver:(id)arg2;
 - (void)archiveDocumentManagedDataForObject:(id)arg1 withDocumentArchiver:(id)arg2;
+- (void)unarchiveDocumentDesignableIntrinsicSizesWithDocumentUnarchiver:(id)arg1;
 - (void)unarchiveDocumentResourcesWithDocumentUnarchiver:(id)arg1;
 - (id)patchDecodedImageNameToWorkaround13103555:(id)arg1;
+- (void)archiveDocumentDesignableIntrinsicSizesWithDocumentArchiver:(id)arg1;
 - (void)archiveDocumentResourcesWithDocumentArchiver:(id)arg1;
 - (void)unarchiveDocumentDependenciesWithDocumentUnarchiver:(id)arg1;
 - (id)archiveDocumentDependenciesWithDocumentArchiver:(id)arg1;
 - (id)unarchiveDocumentDeviceConfigurationWithDocumentUnarchiver:(id)arg1;
 - (void)initializeDeviceConfigurationIfNeeded;
 - (void)archiveDocumentDeviceConfigurationWithDocumentArchiver:(id)arg1;
-- (id)validateDeviceConfiguration:(id)arg1 usingConfigurations:(BOOL)arg2;
+- (BOOL)isValidDeviceConfiguration:(id)arg1 shouldUseConfigurations:(BOOL)arg2 error:(id *)arg3;
+- (id)validatedDeviceConfigurationForConfiguration:(id)arg1 shouldUseConfigurations:(BOOL)arg2;
 @property(readonly, nonatomic) IBDeviceConfiguration *effectiveInitialConfigurationForDeviceBar;
 - (void)archiveDocumentCapabilitiesWithDocumentArchiver:(id)arg1 appendingToGroup:(id)arg2;
 - (void)archiveDocumentCapabilities:(id)arg1 withDocumentArchiver:(id)arg2;

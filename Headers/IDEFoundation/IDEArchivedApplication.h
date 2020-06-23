@@ -8,7 +8,7 @@
 
 #import <IDEFoundation/IDEDistributableApplication-Protocol.h>
 
-@class DVTFilePath, DVTPlatform, NSString;
+@class DVTFilePath, DVTPlatform, NSArray, NSString;
 
 @interface IDEArchivedApplication : IDEArchivedContent <IDEDistributableApplication>
 {
@@ -23,11 +23,13 @@
 @property(readonly) DVTPlatform *platform;
 - (id)platformName;
 @property(readonly) DVTFilePath *applicationPath;
+@property(readonly) NSArray *architectures;
 @property(readonly) NSString *teamID;
 @property(readonly) NSString *signingIdentity;
 
 // Remaining properties
 @property(readonly) NSString *bundleIdentifier;
+@property(readonly) NSString *bundleName;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;

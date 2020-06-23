@@ -27,7 +27,6 @@
 @property(copy, nonatomic) NSString *referenceColorPlatform; // @synthesize referenceColorPlatform=_referenceColorPlatform;
 @property(copy, nonatomic) NSString *referenceColorName; // @synthesize referenceColorName=_referenceColorName;
 @property(retain, nonatomic) IBICColor *color; // @synthesize color=_color;
-- (void)populateIssues:(id)arg1 context:(id)arg2;
 - (BOOL)isDraggable;
 - (id)copyUsingSlot:(id)arg1 andFileName:(id)arg2;
 - (BOOL)isEqualForUnitTests:(id)arg1;

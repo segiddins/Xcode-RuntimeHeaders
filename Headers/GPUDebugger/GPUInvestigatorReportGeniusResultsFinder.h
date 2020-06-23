@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
     DVTObservingToken *_reportSelectionObserver;
 }
 
++ (BOOL)allowInstantUpdateGeniusResultsWhenIdle;
 + (Class)editorDocumentClass;
 - (void).cxx_destruct;
 - (void)_updateGeniusResults;

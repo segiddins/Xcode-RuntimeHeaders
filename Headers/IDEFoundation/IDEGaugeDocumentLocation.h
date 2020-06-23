@@ -6,9 +6,11 @@
 
 #import <DVTFoundation/DVTDocumentLocation.h>
 
-@class NSString;
+#import <IDEFoundation/IDEDebugNavigableModel-Protocol.h>
 
-@interface IDEGaugeDocumentLocation : DVTDocumentLocation
+@class IDELaunchSession, NSString;
+
+@interface IDEGaugeDocumentLocation : DVTDocumentLocation <IDEDebugNavigableModel>
 {
     BOOL _displaysWhileTracing;
     NSString *_displayName;
@@ -22,7 +24,15 @@
 @property BOOL displaysWhileTracing; // @synthesize displaysWhileTracing=_displaysWhileTracing;
 @property(readonly) unsigned long long priority; // @synthesize priority=_priority;
 @property(readonly) NSString *displayName; // @synthesize displayName=_displayName;
+@property(readonly) IDELaunchSession *launchSession;
+@property(readonly, copy) NSString *associatedProcessUUID;
 - (id)initWithDisplayName:(id)arg1 documentURL:(id)arg2 priority:(unsigned long long)arg3;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

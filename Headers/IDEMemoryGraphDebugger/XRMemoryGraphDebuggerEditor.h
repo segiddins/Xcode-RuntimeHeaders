@@ -10,7 +10,7 @@
 #import <IDEMemoryGraphDebugger/NSTouchBarDelegate-Protocol.h>
 #import <IDEMemoryGraphDebugger/NSTouchBarProvider-Protocol.h>
 
-@class DTMemoryGraphItem, DTVMUObjectGridGraphViewController, DVTBorderedView, DVTGradientImageButton, DVTObservingToken, IDEVariablesViewQuickLookPopover, NSArray, NSMutableSet, NSProgressIndicator, NSSegmentedControl, NSString, NSTextField, NSTouchBar, NSView, NSVisualEffectView, XRMemoryGraphDebuggerEditorDFRSupport, XRMemoryGraphDebuggerIndexSearchManager, XRMemoryGraphDebuggerRadarManager;
+@class DTMemoryGraphItem, DTVMUObjectGridGraphViewController, DVTBorderedView, DVTGradientImageButton, DVTObservingToken, IDEVariablesViewQuickLookPopover, NSArray, NSButton, NSMutableSet, NSProgressIndicator, NSSegmentedControl, NSString, NSTextField, NSTouchBar, NSView, NSVisualEffectView, XRMemoryGraphDebuggerEditorDFRSupport, XRMemoryGraphDebuggerIndexSearchManager, XRMemoryGraphDebuggerRadarManager;
 @protocol DTObjectGridNode, DVTCancellable;
 
 @interface XRMemoryGraphDebuggerEditor : IDEEditor <NSTouchBarProvider, NSTouchBarDelegate, DTObjectGridGraphDelegate>
@@ -45,6 +45,7 @@
     id <DTObjectGridNode> _currentPopoverNode;
     XRMemoryGraphDebuggerRadarManager *_radarManager;
     XRMemoryGraphDebuggerIndexSearchManager *_indexSearchManager;
+    NSButton *_exploreModeButton;
     id <DVTCancellable> _rootPathsBuilderActionToken;
 }
 
@@ -56,6 +57,7 @@
 - (void).cxx_destruct;
 @property BOOL shouldBeShowingGraphView; // @synthesize shouldBeShowingGraphView=_shouldBeShowingGraphView;
 @property(retain) id <DVTCancellable> rootPathsBuilderActionToken; // @synthesize rootPathsBuilderActionToken=_rootPathsBuilderActionToken;
+@property(retain, nonatomic) NSButton *exploreModeButton; // @synthesize exploreModeButton=_exploreModeButton;
 @property(retain, nonatomic) XRMemoryGraphDebuggerIndexSearchManager *indexSearchManager; // @synthesize indexSearchManager=_indexSearchManager;
 @property(retain, nonatomic) XRMemoryGraphDebuggerRadarManager *radarManager; // @synthesize radarManager=_radarManager;
 @property(nonatomic) __weak id <DTObjectGridNode> currentPopoverNode; // @synthesize currentPopoverNode=_currentPopoverNode;
@@ -129,11 +131,15 @@
 - (id)_getRunDestination;
 - (void)setupInfrastructureForMemgraphFile:(id)arg1;
 - (BOOL)_viewingMemgraphFile;
+- (BOOL)_isExploreModeEnabled;
+- (void)_exploreModeButtonAction:(id)arg1;
+- (void)_setupExploreModeButtonIfAvailable;
 - (void)_showGraphViewAfterDelay;
 - (void)_showGraphViewImmediately;
 - (void)_hideGraphViewAfterDelay;
 - (void)_hideGraphViewImmediately;
 - (id)memoryGraphDebuggerDocument;
+- (void)_reloadGraphViewWithNodeIdentifier:(unsigned int)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_setDocumentInstanceItem:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_setDocumentInstanceItem:(id)arg1;
 - (void)viewDidAppear;

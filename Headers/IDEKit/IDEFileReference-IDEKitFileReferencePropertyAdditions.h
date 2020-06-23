@@ -9,7 +9,7 @@
 #import <IDEKit/IDEKeyDrivenNavigableItemRepresentedObject-Protocol.h>
 #import <IDEKit/IDESchemeOptionMenuItem-Protocol.h>
 
-@class DVTDocumentLocation, DVTFileDataType, DVTSymbol, IDEGroup, NSArray, NSImage, NSNull, NSString, NSURL;
+@class DVTDocumentLocation, DVTFileDataType, DVTSymbol, IDEContainer, IDEGroup, NSArray, NSImage, NSNull, NSString, NSURL;
 
 @interface IDEFileReference (IDEKitFileReferencePropertyAdditions) <IDEKeyDrivenNavigableItemRepresentedObject, IDESchemeOptionMenuItem>
 + (id)keyPathsForValuesAffectingNavigableItem_accessibleImageDescription;
@@ -35,6 +35,7 @@
 @property(readonly, nonatomic) DVTDocumentLocation *navigableItem_contentDocumentLocation;
 @property(readonly, nonatomic) DVTFileDataType *navigableItem_documentType;
 - (void)navigableItem_noteDocumentEditedStateChanged;
+- (id)structureEditingTemplateInsertionTargetForProposedItem:(id)arg1;
 @property(readonly) unsigned long long navigableItem_conflictStateForUpdateOrMerge;
 - (unsigned long long)navigableItem_sourceControlServerStatusFlag;
 @property(readonly) NSString *navigableItem_sourceControlServerStatus;
@@ -59,9 +60,21 @@
 - (BOOL)ideInspectedShowsFileTypePopUp;
 - (BOOL)ideInspectedIsNameEditable;
 - (id)applicableInspectorSlicesForCategory:(id)arg1 suggestedSlices:(id)arg2;
+- (id)groupOrContainingGroup;
+- (id)referencedOrContainingFolder;
+- (id)menuItemWhitelistProvider;
+- (id)explorableDocumentType;
+- (BOOL)explorableHasFilterableSCMStatus;
+- (BOOL)explorableIsRecentStatusFilterable;
+- (BOOL)_referencesXcode3Project;
+- (id)explorableLocalSCMStatus;
+- (BOOL)treatAsExplorableLeaf;
+- (id)explorableName;
+- (id)explorableItemForNavigation;
 - (id)explorableIcon;
 @property(nonatomic, readonly) NSString *containerFocusedHierarchyDescription;
 @property(nonatomic, readonly) NSString *containerHierarchyDescription;
+@property(nonatomic, readonly) IDEContainer *representedContainer;
 @property(nonatomic, readonly) IDEGroup *referencedGroup;
 @property(nonatomic, readonly) IDEGroup *representedGroup;
 

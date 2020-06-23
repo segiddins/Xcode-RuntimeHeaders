@@ -12,6 +12,7 @@
 
 - (BOOL)effectiveDrawsActivationDarkening;
 - (BOOL)forbidsShowingSelectionIndicators;
+- (void)resizeFrameViewWithEvent:(id)arg1 fromEditorCanvasFrameKnob:(CDUnion_42e99c75)arg2;
 - (BOOL)interceptEvent:(id)arg1;
 - (BOOL)shouldCloseWithEvent:(id)arg1;
 - (BOOL)isEditingSubmenu;

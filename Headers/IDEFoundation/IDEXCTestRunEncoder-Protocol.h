@@ -4,9 +4,9 @@
 //  Copyright (C) 1997-2019 Steve Nygard.
 //
 
-@class NSArray, NSDictionary, NSString, _TtC13IDEFoundation28IDEXCTestRunFileTestPlanInfo;
+@class IDEXCTestRunFileTestPlanInfo, NSArray, NSDictionary, NSString;
 
 @protocol IDEXCTestRunEncoder
-- (NSDictionary *)dictionaryRepresentationWithTestPlanInfo:(_TtC13IDEFoundation28IDEXCTestRunFileTestPlanInfo *)arg1 testRunSpecificationGroups:(NSArray *)arg2 codeCoverageBuildableInfos:(NSArray *)arg3 testRootPathPlaceholder:(NSString *)arg4 derivedDataPathPlaceholder:(NSString *)arg5;
+- (NSDictionary *)dictionaryRepresentationWithTestPlanInfo:(IDEXCTestRunFileTestPlanInfo *)arg1 testRunSpecificationGroups:(NSArray *)arg2 codeCoverageBuildableInfos:(NSArray *)arg3 testRootPathPlaceholder:(NSString *)arg4 derivedDataPathPlaceholder:(NSString *)arg5;
 @end
 

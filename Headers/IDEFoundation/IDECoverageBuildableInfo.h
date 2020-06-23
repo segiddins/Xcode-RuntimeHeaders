@@ -20,6 +20,7 @@
     NSSet *_sourceFiles;
 }
 
++ (id)preferredToolchainForProfileAggregationForBuildableInfos:(id)arg1;
 + (id)infoForBuildable:(id)arg1 withBuildParameterVariants:(id)arg2;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL isStatic; // @synthesize isStatic=_isStatic;

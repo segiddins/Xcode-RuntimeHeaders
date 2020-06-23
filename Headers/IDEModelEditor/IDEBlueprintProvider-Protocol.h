@@ -21,6 +21,7 @@
 - (id <IDEBlueprint>)blueprintForIdentifier:(NSString *)arg1;
 
 @optional
+@property(readonly) BOOL supportsSourceFolders;
 @property(readonly) NSArray *sourcePackageReferences;
 @property int buildSystemType;
 @end

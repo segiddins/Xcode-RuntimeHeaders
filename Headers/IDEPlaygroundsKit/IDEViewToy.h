@@ -34,11 +34,11 @@
 @property struct CGPoint remoteWindowOffset; // @synthesize remoteWindowOffset=_remoteWindowOffset;
 @property double remoteViewScreenScale; // @synthesize remoteViewScreenScale=_remoteViewScreenScale;
 @property struct CGSize remoteViewScreenSize; // @synthesize remoteViewScreenSize=_remoteViewScreenSize;
-@property struct CGSize remoteViewSize; // @synthesize remoteViewSize=_remoteViewSize;
 @property(retain) NSNumber *iosurfaceID; // @synthesize iosurfaceID=_iosurfaceID;
 @property BOOL processPlaygroundDataEnabled; // @synthesize processPlaygroundDataEnabled=_processPlaygroundDataEnabled;
 @property unsigned long long remoteViewState; // @synthesize remoteViewState=_remoteViewState;
 @property(readonly) BOOL lastExecutionDidComplete; // @synthesize lastExecutionDidComplete=_lastExecutionDidComplete;
+@property struct CGSize remoteViewSize; // @synthesize remoteViewSize=_remoteViewSize;
 @property(retain, nonatomic) NSView *targetView; // @synthesize targetView=_targetView;
 @property(retain, nonatomic) IDEPlaygroundRemoteViewController *remoteViewController; // @synthesize remoteViewController=_remoteViewController;
 @property(readonly, copy) NSString *subjectIdentifier; // @synthesize subjectIdentifier=_subjectIdentifier;
@@ -49,6 +49,7 @@
 - (BOOL)shouldDisplayInTimeline;
 - (BOOL)isLiveToy;
 - (BOOL)_shouldCaptureAllImagesForCurrentGeneration;
+- (id)debugDescription;
 - (void)processPlaygroundResult:(id)arg1;
 - (void)executionGenerationDidEndAndCompleted:(BOOL)arg1;
 - (void)executionGenerationWillEnd;

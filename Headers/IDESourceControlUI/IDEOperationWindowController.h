@@ -53,8 +53,9 @@
 @property __weak NSImageView *subIconView; // @synthesize subIconView=_subIconView;
 @property __weak NSImageView *iconView; // @synthesize iconView=_iconView;
 @property unsigned long long alertStyle; // @synthesize alertStyle=_alertStyle;
+- (id)touchBar:(id)arg1 makeItemForIdentifier:(id)arg2;
 - (id)makeTouchBar;
-- (id)makeButtonGroupButtonWithButton:(id)arg1;
+- (id)_touchBarItemForButton:(id)arg1;
 - (void)dealloc;
 - (void)sheetDidEnd:(id)arg1 returnCode:(long long)arg2 contextInfo:(void *)arg3;
 - (void)_reallyBeginSheet:(id)arg1 completion:(CDUnknownBlockType)arg2;

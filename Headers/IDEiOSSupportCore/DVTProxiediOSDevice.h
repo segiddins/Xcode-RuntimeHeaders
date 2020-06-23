@@ -6,13 +6,13 @@
 
 #import <IDEiOSSupportCore/DVTBasicProxiediOSDevice.h>
 
-@class DVTProxiedDeviceSymbolsCoordinator;
+@class DVTDeviceSymbolsCoordinator;
 @protocol DTDKRemoteDeviceToken;
 
 @interface DVTProxiediOSDevice : DVTBasicProxiediOSDevice
 {
     id <DTDKRemoteDeviceToken> _token;
-    DVTProxiedDeviceSymbolsCoordinator *_symbolsCoordinator;
+    DVTDeviceSymbolsCoordinator *_symbolsCoordinator;
 }
 
 + (id)keyPathsForValuesAffectingIsAvailable;
@@ -31,7 +31,7 @@
 + (id)keyPathsForValuesAffectingName;
 + (id)keyPathsForValuesAffectingIdentifier;
 - (void).cxx_destruct;
-@property(retain) DVTProxiedDeviceSymbolsCoordinator *symbolsCoordinator; // @synthesize symbolsCoordinator=_symbolsCoordinator;
+@property(retain) DVTDeviceSymbolsCoordinator *symbolsCoordinator; // @synthesize symbolsCoordinator=_symbolsCoordinator;
 @property(readonly) id <DTDKRemoteDeviceToken> token; // @synthesize token=_token;
 - (BOOL)deviceSupportsBuildable:(id)arg1 buildParameters:(id)arg2 error:(id *)arg3;
 - (id)unavailabilityError;

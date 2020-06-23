@@ -8,6 +8,7 @@
 
 @interface _TtC13IDEFoundation11IDETestPlan (IDEFoundation)
 - (BOOL)isCodeCoverageEnabled;
+- (id)coverageBuildableInfosForScheme:(id)arg1 buildableResolver:(id)arg2 buildParameterVariants:(id)arg3;
 
 // Remaining properties
 @property(nonatomic, readonly) BOOL codeCoverageEnabled;

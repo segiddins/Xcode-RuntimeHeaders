@@ -25,6 +25,7 @@
 - (void)capsuleView:(IDECapsuleView *)arg1 setTitle:(NSString *)arg2;
 - (NSString *)capsuleViewTitleForEditing:(IDECapsuleView *)arg1;
 - (BOOL)capsuleViewCanBeRenamed:(IDECapsuleView *)arg1;
+- (struct CGRect)capsuleView:(IDECapsuleView *)arg1 bottomSeparatorFrameForSuggestedFrame:(struct CGRect)arg2;
 - (BOOL)suppressBottomSeparator:(IDECapsuleView *)arg1;
 - (BOOL)shouldDrawBorderBelowHeaderForCapsuleView:(IDECapsuleView *)arg1;
 - (BOOL)capsuleView:(IDECapsuleView *)arg1 acceptDrop:(id <NSDraggingInfo>)arg2;

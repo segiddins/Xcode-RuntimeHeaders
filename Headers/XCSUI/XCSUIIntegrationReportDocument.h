@@ -18,7 +18,6 @@
     NSError *_errorFetchingIntegration;
 }
 
-+ (id)keyPathsForValuesAffectingIDE_DisplayName;
 + (id)keyPathsForValuesAffectingDisplayName;
 + (id)keyPathsForValuesAffectingBot;
 + (BOOL)shouldUnlockFileURLBeforeMakingChanges;

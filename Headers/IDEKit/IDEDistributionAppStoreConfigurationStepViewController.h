@@ -10,7 +10,7 @@
 {
 }
 
-+ (BOOL)skipStepForContext:(id)arg1 assistantDirection:(int)arg2;
++ (BOOL)skipStepForContext:(id)arg1 assistantDirection:(long long)arg2;
 - (BOOL)canGoPrevious;
 - (BOOL)canGoNext;
 - (id)title;

@@ -20,6 +20,7 @@
     MISSING_TYPE *buildConfigurations;
     MISSING_TYPE *defaultConfigurationName;
     MISSING_TYPE *developmentRegion;
+    MISSING_TYPE *classPrefix;
     MISSING_TYPE *appPreferencesBuildSettings;
     MISSING_TYPE *isPackage;
 }

@@ -6,12 +6,20 @@
 
 #import <IDEIntentBuilderEditor/IDEIntentBuilderEditorInfoCapsuleViewController.h>
 
+@class DVTObservingToken;
+
 @interface IDEIntentBuilderEditorIntentCapsuleViewController : IDEIntentBuilderEditorInfoCapsuleViewController
 {
+    DVTObservingToken *_ineligibleForSuggestionsObservationToken;
+    DVTObservingToken *_configurableObservationToken;
 }
 
 + (id)defaultViewNibName;
+- (void).cxx_destruct;
 - (id)stackComponentViews;
+- (void)primitiveInvalidate;
+- (void)unbind;
+- (void)bind;
 
 @end
 

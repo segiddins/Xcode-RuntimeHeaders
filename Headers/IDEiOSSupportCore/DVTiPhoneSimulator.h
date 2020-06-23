@@ -96,7 +96,7 @@
 - (id)_transformPathForDevice:(id)arg1 forRsync:(BOOL)arg2 error:(id *)arg3;
 - (id)systemBasePath;
 - (BOOL)_updateDeviceApplicationDatabaseForProductInstallWithWorkspace:(id)arg1 originalName:(id)arg2 rsyncResult:(id)arg3 anyAppsInstalledToNonStagingPaths:(BOOL)arg4 anyAppsInstalledToStagingPath:(BOOL)arg5 disableMobileInstallRebuilt:(BOOL)arg6 outError:(id *)arg7;
-- (BOOL)_validateRsyncInstallWithError:(id *)arg1;
+- (BOOL)_validateRsyncInstallWithSession:(id)arg1 error:(id *)arg2;
 - (void)stopLocationSimulation;
 - (void)simulateLocationWithLatitude:(id)arg1 longitude:(id)arg2;
 @property(readonly, copy) NSString *description;
@@ -119,8 +119,8 @@
 - (void)_launchSimulatorAndUpdateApplicationsWhenReady;
 - (id)uncachedOverridingPropertiesForBuildable:(id)arg1 buildParameters:(id)arg2;
 - (id)executionDisplayName;
-- (id)supportedSDKsForBuildable:(id)arg1 buildParameters:(id)arg2 error:(id *)arg3;
-- (BOOL)shouldPresentDeviceForBuildable:(id)arg1 buildParameters:(id)arg2 error:(id *)arg3;
+- (id)supportedSDKsForBuildableContext:(id)arg1 buildParameters:(id)arg2 error:(id *)arg3;
+- (BOOL)shouldPresentDeviceForBuildableContext:(id)arg1 buildParameters:(id)arg2 error:(id *)arg3;
 - (BOOL)canBeDefaultDeviceForBuildable:(id)arg1 buildParameters:(id)arg2;
 - (id)softwareVersion;
 - (void)setDisplayOrder:(id)arg1;
@@ -196,9 +196,7 @@
 - (id)internalSystemTestBundleInjectionLibraryPathForBuildableProduct:(id)arg1 buildParameters:(id)arg2;
 - (id)internalSystemTestingToolPathForBuildableProduct:(id)arg1 buildParameters:(id)arg2;
 - (BOOL)prepareDeviceForLaunchSession:(id)arg1 error:(id *)arg2;
-- (id)claimDeviceForTestingWithSessionIdentifier:(id)arg1;
-- (id)testArchitectureForBuildableProduct:(id)arg1 buildParameters:(id)arg2;
-- (id)_availableArchitecturesForArchitecture:(id)arg1;
+- (id)claimDeviceForTestingWithMode:(long long)arg1 sessionIdentifier:(id)arg2 error:(id *)arg3;
 - (id)testRunnerSessionForConfiguration:(id)arg1;
 - (void)requestTestDaemonRecordingSessionWithCompletion:(CDUnknownBlockType)arg1;
 - (void)requestTestDaemonControlSessionWithCompletion:(CDUnknownBlockType)arg1;

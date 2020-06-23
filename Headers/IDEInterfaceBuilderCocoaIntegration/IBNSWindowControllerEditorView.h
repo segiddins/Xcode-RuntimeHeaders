@@ -13,6 +13,7 @@
 }
 
 + (id)windowViewForWindow:(id)arg1;
+- (void)layoutBottomUp;
 @property(readonly, nonatomic) IBNSViewControllerItemPlaceholderView *placeholder;
 
 @end

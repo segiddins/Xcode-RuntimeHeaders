@@ -23,15 +23,18 @@
 #import <IDESourceEditor/IDETestingSelection-Protocol.h>
 #import <IDESourceEditor/IDETestsInFileObserver-Protocol.h>
 #import <IDESourceEditor/NSMenuDelegate-Protocol.h>
+#import <IDESourceEditor/NSTouchBarDelegate-Protocol.h>
 #import <IDESourceEditor/NSUserInterfaceValidations-Protocol.h>
 #import <IDESourceEditor/_TtP15IDESourceEditor26IDEWorkspaceEmbeddedEditor_-Protocol.h>
 #import <IDESourceEditor/_TtP15IDESourceEditor28IDESourceEditorViewContainer_-Protocol.h>
+#import <IDESourceEditor/_TtP6IDEKit23IDEHostEditorNavigating_-Protocol.h>
+#import <IDESourceEditor/_TtP6IDEKit42IDEHostingScrollViewForDropdownAnnotations_-Protocol.h>
 #import <IDESourceEditor/_TtP9DVTMarkup28PlaygroundMarkupViewDelegate_-Protocol.h>
 
 @class DVTSDK, DVTSourceExpression, IDEAnalyzerResultsExplorer, IDENoteAnnotationExplorer, MISSING_TYPE, NSColor, NSScrollView, NSString, NSView, _TtC15IDESourceEditor19IDESourceEditorView;
 @protocol IDETestCollection;
 
-@interface _TtC15IDESourceEditor16SourceCodeEditor : IDEEditor <DVTPathCellDelegate, NSUserInterfaceValidations, NSMenuDelegate, _TtP15IDESourceEditor26IDEWorkspaceEmbeddedEditor_, DVTInvalidation, DVTAnnotationManagerDelegate, IDETestsInFileObserver, IDESourceExpressionSource, IDEQuickHelpDataContextService, IDEBreakpointObserver, IDEJumpToLineDestination, IDETestingSelection, IDEAnalyzerResultsHostingEditor, _TtP15IDESourceEditor28IDESourceEditorViewContainer_, IDESingleFileCommandSupportingEditor, DVTColorLiteralQuickEditViewControllerDelegate, DVTImageLiteralQuickEditViewControllerDelegate, DVTFileLiteralQuickEditViewControllerDelegate, _TtP9DVTMarkup28PlaygroundMarkupViewDelegate_, IDELibraryContentDestination, IDEEditorInternalErrorBannerControllerDelegate>
+@interface _TtC15IDESourceEditor16SourceCodeEditor : IDEEditor <NSTouchBarDelegate, DVTPathCellDelegate, NSUserInterfaceValidations, NSMenuDelegate, _TtP15IDESourceEditor26IDEWorkspaceEmbeddedEditor_, DVTInvalidation, DVTAnnotationManagerDelegate, IDETestsInFileObserver, IDESourceExpressionSource, IDEQuickHelpDataContextService, IDEBreakpointObserver, IDEJumpToLineDestination, IDETestingSelection, IDEAnalyzerResultsHostingEditor, _TtP15IDESourceEditor28IDESourceEditorViewContainer_, IDESingleFileCommandSupportingEditor, DVTColorLiteralQuickEditViewControllerDelegate, DVTImageLiteralQuickEditViewControllerDelegate, DVTFileLiteralQuickEditViewControllerDelegate, _TtP9DVTMarkup28PlaygroundMarkupViewDelegate_, IDELibraryContentDestination, IDEEditorInternalErrorBannerControllerDelegate, _TtP6IDEKit23IDEHostEditorNavigating_, _TtP6IDEKit42IDEHostingScrollViewForDropdownAnnotations_>
 {
     MISSING_TYPE *sourceEditorView;
     MISSING_TYPE *containerView;
@@ -56,7 +59,6 @@
     MISSING_TYPE *coverageFile;
     MISSING_TYPE *$__lazy_storage_$_touchBarController;
     MISSING_TYPE *allowBecomeMainViewController;
-    MISSING_TYPE *selectedRangeObserver;
     MISSING_TYPE *lastPosition;
     MISSING_TYPE *currentLandmark;
     MISSING_TYPE *selectionObservers;
@@ -70,8 +72,6 @@
     MISSING_TYPE *issueObserverToken;
     MISSING_TYPE *issueManager;
     MISSING_TYPE *annotationManager;
-    MISSING_TYPE *diffCoordinator;
-    MISSING_TYPE *exportOperation;
     MISSING_TYPE *analyzerVisualizations;
     MISSING_TYPE *analyzerResultsExplorer;
     MISSING_TYPE *analyzerResultsScopeBar;
@@ -86,17 +86,25 @@
     MISSING_TYPE *sourceEditorExtensionCancellationScopeBarController;
     MISSING_TYPE *sourceEditorExtensionErrorScopeBarController;
     MISSING_TYPE *sourceKitServiceStatusObserver;
+    MISSING_TYPE *languageServiceStatusObserver;
     MISSING_TYPE *sourceKitSemaDisabledObserver;
     MISSING_TYPE *sourceKitErrorTimeout;
     MISSING_TYPE *sourceKitErrorTimeoutDuration;
     MISSING_TYPE *sourceKitErrorScopeBarController;
+    MISSING_TYPE *languageServiceCrashedTimeout;
+    MISSING_TYPE *languageServiceCrashedTimeoutDuration;
+    MISSING_TYPE *languageServiceCrashedScopeBarController;
+    MISSING_TYPE *editorForNavigationRequests;
 }
 
 + (id)keyPathsForValuesAffectingSelectedExpression;
 + (id)keyPathsForValuesAffectingIsWorkspaceBuilding;
 + (void)configureStateSavingObjectPersistenceByName:(id)arg1;
++ (BOOL)supportsFullSizeContent;
 - (void).cxx_destruct;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+@property(nonatomic) __weak NSScrollView *dropdownHostingScrollView;
+@property(nonatomic, retain) IDEEditor *editorForNavigationRequests; // @synthesize editorForNavigationRequests;
 - (void)sourceCodeAuxiliaryEditorMenuItem3:(id)arg1;
 - (void)sourceCodeAuxiliaryEditorMenuItem2:(id)arg1;
 - (void)sourceCodeAuxiliaryEditorMenuItem1:(id)arg1;
@@ -195,6 +203,7 @@
 - (void)navigateToAnnotationWithRepresentedObject:(id)arg1 wantsIndicatorAnimation:(BOOL)arg2 exploreAnnotationRepresentedObject:(id)arg3;
 - (void)selectAndHighlightDocumentLocations:(id)arg1;
 - (void)selectDocumentLocations:(id)arg1;
+@property(nonatomic) struct NSEdgeInsets fullSizeContentInsets;
 @property(nonatomic, readonly) BOOL canBecomeMainViewController;
 @property(nonatomic) BOOL allowBecomeMainViewController; // @synthesize allowBecomeMainViewController;
 - (void)takeFocus;
@@ -226,6 +235,25 @@
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2 document:(id)arg3 sourceEditorScrollViewClass:(Class)arg4;
 @property(nonatomic, readonly) NSScrollView *mainScrollView;
 @property(nonatomic, retain) _TtC15IDESourceEditor19IDESourceEditorView *sourceEditorView; // @synthesize sourceEditorView;
+- (void)installCodeCoverageVisualization;
+- (void)toggleCodeCoverageShown:(id)arg1;
+- (void)indentSourceCodeSelection:(id)arg1;
+- (id)touchBar:(id)arg1 makeItemForIdentifier:(id)arg2;
+- (id)makeTouchBar;
+- (void)renameRefactor:(id)arg1;
+- (void)localRefactor:(id)arg1;
+- (void)wrapInNSLocalizedString:(id)arg1;
+- (void)generateMemberwiseInitializer:(id)arg1;
+- (void)generateMissingFunctionDefinitions:(id)arg1;
+- (void)expandDefault:(id)arg1;
+- (void)convertToSwitch:(id)arg1;
+- (void)addMissingSwitchCases:(id)arg1;
+- (void)addMissingProtocolRequirements:(id)arg1;
+- (void)addMissingAbstractClassOverrides:(id)arg1;
+- (void)extractRepeatedExpression:(id)arg1;
+- (void)extractExpression:(id)arg1;
+- (void)extractMethod:(id)arg1;
+- (void)extractFunction:(id)arg1;
 
 @end
 

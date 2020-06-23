@@ -12,6 +12,7 @@
 {
     MISSING_TYPE *workspace;
     MISSING_TYPE *workspaceObservingToken;
+    MISSING_TYPE *recentDocumentsObservingToken;
     MISSING_TYPE *objectGraphNotificationToken;
     MISSING_TYPE *objectGraphWillCoalesceNotificationToken;
     MISSING_TYPE *objectGraphDidCoalesceNotificationToken;
@@ -21,11 +22,16 @@
     MISSING_TYPE *pendingGraphObjectInsertions;
     MISSING_TYPE *pendingGraphObjectDeletions;
     MISSING_TYPE *fileRefsWithDeletedContainers;
-    MISSING_TYPE *$__lazy_storage_$_predicateProducer;
     MISSING_TYPE *synchronizationQueue;
     MISSING_TYPE *broadcaster;
     MISSING_TYPE *containerItemTree;
+    MISSING_TYPE *recentDocumentIDObservers;
+    MISSING_TYPE *recentDocumentURLs;
+    MISSING_TYPE *canonicalRecentDocumentItems;
     MISSING_TYPE *logExplorableRequests;
+    MISSING_TYPE *shouldSkipCount;
+    MISSING_TYPE *shouldUpdateCount;
+    MISSING_TYPE *canonicalTreeObservers;
 }
 
 + (id)activeSourceFor:(id)arg1;

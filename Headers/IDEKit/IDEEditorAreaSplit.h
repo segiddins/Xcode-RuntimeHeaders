@@ -6,33 +6,42 @@
 
 #import <IDEKit/IDEViewController.h>
 
+#import <IDEKit/DVTStateRepositoryDelegate-Protocol.h>
 #import <IDEKit/IDEEditorMultipleSplitItem-Protocol.h>
 #import <IDEKit/IDEEditorMutableMultipleSplitItem-Protocol.h>
 #import <IDEKit/NSUserInterfaceValidations-Protocol.h>
 #import <IDEKit/_IDEEditorModeActions-Protocol.h>
+#import <IDEKit/_TtP6IDEKit34IDEEditorTabViewControllerDelegate_-Protocol.h>
 
-@class DVTNotificationToken, DVTObservingToken, IDEEditorArea, IDEEditorContext, IDEEditorModeViewController, IDEEditorMultipleSplit, IDENavigableItemArchivableRepresentation, NSArray, NSMutableDictionary, NSNumber, NSString, NSView;
+@class DVTNotificationToken, DVTObservingToken, DVTStateRepository, IDEEditorArea, IDEEditorAreaSplitView, IDEEditorContext, IDEEditorModeViewController, IDEEditorMultipleSplit, IDEEditorTabBar, IDENavigableItemArchivableRepresentation, NSArray, NSMutableDictionary, NSNumber, NSString, NSView, _TtC6IDEKit26IDEEditorTabViewController, _TtC6IDEKit38IDEEditorTabViewDoubleClickTransaction;
 
-@interface IDEEditorAreaSplit : IDEViewController <NSUserInterfaceValidations, _IDEEditorModeActions, IDEEditorMutableMultipleSplitItem, IDEEditorMultipleSplitItem>
+@interface IDEEditorAreaSplit : IDEViewController <DVTStateRepositoryDelegate, _TtP6IDEKit34IDEEditorTabViewControllerDelegate_, NSUserInterfaceValidations, _IDEEditorModeActions, IDEEditorMutableMultipleSplitItem, IDEEditorMultipleSplitItem>
 {
-    NSView *_editorModeHostView;
     DVTObservingToken *_workspaceActivityObserver;
     NSNumber *_lastChangedEditorModeTimeIntervalNumber;
     int _userVisibleEditorMode;
     int _editorMode;
     unsigned long long _subEditorLayout;
     DVTNotificationToken *_primaryFrameChangeToken;
+    DVTStateRepository *_stateRepository;
     NSMutableDictionary *_editorIdToManuallySetEditorMode;
+    _TtC6IDEKit38IDEEditorTabViewDoubleClickTransaction *_willChangeToken;
     BOOL _needsToRefreshContexts;
     BOOL _isRefreshingContexts;
     BOOL _isSettingEditorMode;
     BOOL _didInstall;
     BOOL _didRestoreState;
+    BOOL _loadViewDidComplete;
+    BOOL _isActive;
     IDEEditorMultipleSplit *parentEditorMultipleSplit;
     IDEEditorArea *editorArea;
     IDEEditorModeViewController *_editorModeViewController;
     IDENavigableItemArchivableRepresentation *_selectedNavigableItemArchivedRepresentation;
+    _TtC6IDEKit26IDEEditorTabViewController *_tabViewController;
     long long _subEditorOrientation;
+    IDEEditorAreaSplitView *_editorAreaSplitView;
+    NSView *_editorModeHostView;
+    IDEEditorTabBar *_tabBar;
     unsigned long long _borderSides;
     IDEEditorContext *_lastActiveEditorContext;
 }
@@ -42,16 +51,27 @@
 + (id)keyPathsForValuesAffectingEditorContexts;
 + (id)keyPathsForValuesAffectingIsPrimaryEditorAreaSplit;
 + (id)keyPathsForValuesAffectingPrimaryEditorContext;
++ (id)defaultViewNibName;
++ (void)_createEditorsForWorkspaceWindow:(BOOL)arg1 block:(CDUnknownBlockType)arg2;
 - (void).cxx_destruct;
+@property BOOL isActive; // @synthesize isActive=_isActive;
 @property unsigned long long subEditorLayout; // @synthesize subEditorLayout=_subEditorLayout;
 @property(retain) IDEEditorContext *lastActiveEditorContext; // @synthesize lastActiveEditorContext=_lastActiveEditorContext;
 @property(nonatomic) unsigned long long borderSides; // @synthesize borderSides=_borderSides;
+@property(retain) IDEEditorTabBar *tabBar; // @synthesize tabBar=_tabBar;
+@property(retain) NSView *editorModeHostView; // @synthesize editorModeHostView=_editorModeHostView;
+@property(retain) IDEEditorAreaSplitView *editorAreaSplitView; // @synthesize editorAreaSplitView=_editorAreaSplitView;
 @property(nonatomic) long long subEditorOrientation; // @synthesize subEditorOrientation=_subEditorOrientation;
+@property(retain) _TtC6IDEKit26IDEEditorTabViewController *tabViewController; // @synthesize tabViewController=_tabViewController;
 @property(readonly) IDENavigableItemArchivableRepresentation *selectedNavigableItemArchivedRepresentation; // @synthesize selectedNavigableItemArchivedRepresentation=_selectedNavigableItemArchivedRepresentation;
 @property(retain) IDEEditorModeViewController *editorModeViewController; // @synthesize editorModeViewController=_editorModeViewController;
 @property(retain) IDEEditorArea *editorArea; // @synthesize editorArea;
 @property(retain) IDEEditorMultipleSplit *parentEditorMultipleSplit; // @synthesize parentEditorMultipleSplit;
 @property(readonly) BOOL isRefreshingContexts; // @synthesize isRefreshingContexts=_isRefreshingContexts;
+- (void)tabViewControllerDidUpdateEditorTabs:(id)arg1;
+- (void)stateRepositoryDidChange:(id)arg1;
+- (void)_applyTabViewStateDictionary:(id)arg1;
+- (id)_tabViewStateDictionary;
 @property(readonly) NSArray *editorAreaSplits;
 @property(readonly) struct CGSize minimumContentViewFrameSize;
 - (void)resetEditorSizes;
@@ -76,7 +96,7 @@
 - (int)validateEditorMode:(int)arg1;
 - (void)setUserVisibleEditorMode:(int)arg1 client:(unsigned long long)arg2;
 - (void)_updateDefaultModeForEditorIDWithEditorMode:(int)arg1 client:(unsigned long long)arg2;
-- (void)_restoreUserVisibleEditorMode:(int)arg1 primaryHistoryStack:(id)arg2 secondaryHistoryStack:(id)arg3 primaryEditorHasKeyFocus:(BOOL)arg4 secondaryEditorHasKeyFocus:(BOOL)arg5 client:(unsigned long long)arg6;
+- (void)_restoreUserVisibleEditorMode:(int)arg1 primaryHistoryStack:(id)arg2 secondaryHistoryStack:(id)arg3 tabViewStateDictionary:(id)arg4 primaryEditorHasKeyFocus:(BOOL)arg5 secondaryEditorHasKeyFocus:(BOOL)arg6 client:(unsigned long long)arg7;
 - (void)setUserVisibleEditorMode:(int)arg1;
 @property(readonly, nonatomic) int userVisibleEditorMode;
 - (void)_setEditorMode:(int)arg1;
@@ -90,6 +110,7 @@
 - (void)newEditorAreaSplit:(id)arg1;
 - (void)compareRevisionChange:(id)arg1;
 - (void)showBlame;
+- (void)invalidateEditorContextsTopInsets;
 - (id)editorContexts;
 @property(readonly) BOOL isPrimaryEditorAreaSplit;
 @property(readonly) IDEEditorContext *primaryEditorContext;
@@ -97,10 +118,14 @@
 - (void)viewWillUninstall;
 - (void)viewDidInstall;
 - (void)editorContext:(id)arg1 didSetEditor:(id)arg2;
+- (void)editorContext:(id)arg1 willSetEditor:(id)arg2;
 - (int)_primitiveDefaultEditorModeForExtension:(id)arg1;
 - (id)_editorModeCompatibleEditorIDsForDocumentExtension:(id)arg1;
 - (id)_editorIdentifierKeyForDocumentExtension:(id)arg1;
+- (void)editorContextDidInvalidateNavBarLayout:(id)arg1;
 - (void)loadView;
+- (BOOL)_requiresTabBar;
+@property(nonatomic) BOOL isTabBarVisible;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

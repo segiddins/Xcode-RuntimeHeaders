@@ -7,6 +7,9 @@
 #import <AppKit/NSPopover.h>
 
 @interface NSPopover (DVTNSPopoverAdditions)
+- (struct CGSize)dvt_anchorSize;
+- (void)dvt_allowTopToMove;
+- (void)dvt_keepTopStable;
 - (void)dvt_showWithAnchor:(id)arg1 edge:(unsigned long long)arg2;
 @end
 

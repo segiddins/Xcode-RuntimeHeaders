@@ -35,6 +35,7 @@ __attribute__((visibility("hidden")))
 - (void)bubbleUpChangeStatusHighlighting:(id)arg1;
 - (void)setEmptyVarView;
 - (id)newStateValue;
+- (void)addAnalyzerManagerFindingContent:(id)arg1 toArray:(id)arg2;
 - (void)addAnalyzerFindingContent:(id)arg1 toArray:(id)arg2;
 - (void)_updateFilteredListForAuto;
 - (void)_updateFilteredListForContextInfo;

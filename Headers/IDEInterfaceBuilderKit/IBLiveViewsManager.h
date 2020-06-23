@@ -32,15 +32,19 @@
     IBLiveViewsBundleBlueprintMap *_bundlesByBlueprintMap;
 }
 
++ (id)firstBuildFailedTextResultFromLog:(id)arg1;
++ (id)conciseBuildFailureFromString:(id)arg1;
 + (id)managerForWorkspace:(id)arg1;
 + (id)managersByWorkspace;
 + (void)initialize;
 - (void).cxx_destruct;
 @property(retain) IBLiveViewsBundleBlueprintMap *bundlesByBlueprintMap; // @synthesize bundlesByBlueprintMap=_bundlesByBlueprintMap;
 @property(nonatomic, getter=isEnabled) BOOL enabled; // @synthesize enabled=_enabled;
+- (void)asyncCachedRequestProxyAttachingIfNeededWithDescription:(id)arg1 sessionIdentifier:(id)arg2 block:(CDUnknownBlockType)arg3;
 - (id)cachedRequestProxyAttachingIfNeededWithDescription:(id)arg1 returningFailedLoadResult:(id *)arg2;
 - (id)marshallingResultErrorWithMessage:(id)arg1;
 - (BOOL)_INSIDE_LOCK_loadLiveViewsBundleBuiltInstances:(id)arg1 inTool:(id)arg2 returningFailedLoadResult:(id *)arg3;
+- (void)_INSIDE_LOCK_asyncCachedRequestProxyAttachingIfNeededWithDescription:(id)arg1 sessionIdentifier:(id)arg2 insideLockCompletionHandler:(CDUnknownBlockType)arg3;
 - (id)_INSIDE_LOCK_cachedRequestProxyAttachingIfNeededWithDescription:(id)arg1;
 - (id)attachedRemoteToolForIdentifier:(id)arg1;
 - (id)sceneUpdateRequesterForTargetRuntime:(id)arg1 deviceTypeDescription:(id)arg2;

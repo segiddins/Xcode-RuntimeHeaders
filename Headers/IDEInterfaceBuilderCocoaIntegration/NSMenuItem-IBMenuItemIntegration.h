@@ -43,12 +43,12 @@
 - (id)ibPasteboardTypes;
 - (void)ibRemoveChildren:(id)arg1;
 - (void)ibPopulateChildRelationOrder:(id)arg1;
+- (id)ibRecoverySuggestionForMisuseOfSymbolCharactersInValueForInspectorKeyPath:(id)arg1;
 - (BOOL)ibCanSupportIdentifierProperty;
 - (id)ibEditedMenuItemRepresentation;
 - (Class)ibEditorClass;
 - (id)ibLocalAdditionalLocalizableAttributeKeyPaths;
 - (id)ibLocalLocalizableStringsAttributeKeyPaths;
-- (id)_ibLocalAttributeKeyPaths_NSMenuItem;
 - (id)ibLocalAttributeKeyPaths;
 - (id)ibLocalChildToOneRelationshipsKeyPaths;
 @property(copy) NSString *ibPredicateExpressionValue;

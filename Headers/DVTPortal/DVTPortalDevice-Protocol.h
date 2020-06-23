@@ -9,8 +9,8 @@
 @class DVTPlatform, NSString;
 
 @protocol DVTPortalDevice <NSObject>
-@property(readonly, copy, nonatomic) NSString *identifier;
-@property(readonly, nonatomic) DVTPlatform *platform;
-@property(readonly, copy, nonatomic) NSString *name;
+@property(nonatomic, readonly) NSString *identifier;
+@property(nonatomic, readonly) DVTPlatform *platform;
+@property(nonatomic, readonly) NSString *name;
 @end
 

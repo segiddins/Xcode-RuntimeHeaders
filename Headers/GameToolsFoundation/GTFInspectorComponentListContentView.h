@@ -20,7 +20,8 @@
 @property(retain, nonatomic) id <GTFInspectorComponentListContentViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSView *menuView; // @synthesize menuView=_menuView;
 @property(retain, nonatomic) NSTableView *tableView; // @synthesize tableView=_tableView;
-- (void)layoutBottomUp;
+- (void)dvt_positionSubviewsAndSizeSelfAfterSubviewLayout;
+- (void)dvt_configureSubviewsBeforeSubviewLayout;
 
 @end
 

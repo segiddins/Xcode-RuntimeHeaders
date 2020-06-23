@@ -8,6 +8,5 @@
 
 @interface NSArray (DVTServicesAdditions)
 - (BOOL)dvt_areAllObjectsKindOfClass:(Class)arg1;
-- (id)dvt_uniqueObjects;
 @end
 

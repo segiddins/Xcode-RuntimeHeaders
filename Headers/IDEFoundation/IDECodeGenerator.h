@@ -15,10 +15,14 @@
     NSDictionary *_userInfo;
 }
 
++ (long long)executeCommandLineMainWithIdentifier:(id)arg1;
 + (id)codeGeneratorWithIdentifier:(id)arg1;
 + (void)initialize;
 - (void).cxx_destruct;
 @property(copy) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
+- (long long)commandLineMain;
+- (long long)executeCommandLineEquivalent:(id)arg1 returningStandardOutput:(id *)arg2 standardError:(id *)arg3;
+- (Class)toolClassForCommandLineEquivalent;
 - (void)generateCodeForInputFile:(id)arg1 outputFilePath:(id)arg2 completionQueue:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (id)generatedFilePathsForInputFilePath:(id)arg1 outputFilePath:(id)arg2 error:(id *)arg3;
 - (void)primitiveInvalidate;

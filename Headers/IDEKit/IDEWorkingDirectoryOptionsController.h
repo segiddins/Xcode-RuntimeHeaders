@@ -6,11 +6,16 @@
 
 #import <IDEKit/IDELaunchActionOptionViewController.h>
 
+@class DVTFilePathFieldCell;
+
 @interface IDEWorkingDirectoryOptionsController : IDELaunchActionOptionViewController
 {
+    DVTFilePathFieldCell *_workingDirectoryTextFieldCell;
 }
 
 + (BOOL)availableForScheme:(id)arg1;
+- (void).cxx_destruct;
+- (void)loadView;
 
 @end
 

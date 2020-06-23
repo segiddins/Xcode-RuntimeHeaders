@@ -17,6 +17,7 @@
     BOOL _cancelsTouchesInView;
     BOOL _delaysTouchesBegan;
     BOOL _delaysTouchesEnded;
+    BOOL _requiresExclusiveTouchType;
     unsigned long long _allowedPressTypes;
     IBCocoaTouchTargetRuntime *_targetRuntime;
 }
@@ -27,6 +28,7 @@
 - (void).cxx_destruct;
 @property(retain) IBCocoaTouchTargetRuntime *targetRuntime; // @synthesize targetRuntime=_targetRuntime;
 @property unsigned long long allowedPressTypes; // @synthesize allowedPressTypes=_allowedPressTypes;
+@property BOOL requiresExclusiveTouchType; // @synthesize requiresExclusiveTouchType=_requiresExclusiveTouchType;
 @property BOOL delaysTouchesEnded; // @synthesize delaysTouchesEnded=_delaysTouchesEnded;
 @property BOOL delaysTouchesBegan; // @synthesize delaysTouchesBegan=_delaysTouchesBegan;
 @property BOOL cancelsTouchesInView; // @synthesize cancelsTouchesInView=_cancelsTouchesInView;

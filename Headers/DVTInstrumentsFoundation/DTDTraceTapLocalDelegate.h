@@ -15,7 +15,6 @@
 {
     DTTapLocal *_tap;
     DTDTraceTapConfig *_config;
-    CDUnknownBlockType _taskForPid;
     NSObject<OS_xpc_object> *_daemonConnection;
     NSObject<OS_dispatch_semaphore> *_daemonSemaphore;
     NSObject<OS_dispatch_semaphore> *_fragmentsLock;
@@ -32,7 +31,6 @@
 - (void)stop;
 - (void)start;
 - (void)_prepareXPCConnection;
-- (void)setTaskForPidBlock:(CDUnknownBlockType)arg1;
 - (void)setTap:(id)arg1;
 - (id)validateConfig;
 - (id)initWithConfig:(id)arg1;

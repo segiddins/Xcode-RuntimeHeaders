@@ -16,10 +16,13 @@
 + (BOOL)supportsInvalidationPrevention;
 + (unsigned long long)assertionBehaviorForKeyValueObservationsAtEndOfEvent;
 + (unsigned long long)assertionBehaviorAfterEndOfEventForSelector:(SEL)arg1;
-@property(retain) DVTStackBacktrace *creationBacktrace;
-@property(readonly) DVTStackBacktrace *invalidationBacktrace;
-@property(readonly, nonatomic, getter=isValid) BOOL valid;
 - (void)addAutoInvalidatedObject:(id <DVTInvalidation>)arg1;
+@property(nonatomic, retain) DVTStackBacktrace *creationBacktrace;
+@property(nonatomic, readonly) DVTStackBacktrace *invalidationBacktrace;
+- (BOOL)isValid;
 - (void)invalidate;
+
+// Remaining properties
+@property(nonatomic, readonly) BOOL valid;
 @end
 

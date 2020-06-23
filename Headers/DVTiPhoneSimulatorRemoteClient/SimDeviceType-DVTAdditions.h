@@ -10,8 +10,5 @@
 - (id)dvt_platform;
 - (id)dvt_deviceClass;
 - (id)dvt_latestRuntime;
-- (id)dvt_supportedArchs;
-- (id)dvt_supportedArchStrings;
-- (_Bool)dvt_has64BitArch;
 @end
 

@@ -26,6 +26,7 @@
     MISSING_TYPE *preparesForIndexing;
     MISSING_TYPE *llbuildControlDisabled;
     MISSING_TYPE *targetDependencies;
+    MISSING_TYPE *executionInputs;
     MISSING_TYPE *isGate;
 }
 

@@ -6,13 +6,14 @@
 
 #import <objc/NSObject.h>
 
-@class IBUISimulatedDeviceContextMetricChain, IBUISimulatedModalPresentationMetricChain, IBUISimulatedNavigationControllerMetricChain, IBUISimulatedPopoverPresentationMetricChain, IBUISimulatedSplitViewMetricChain, IBUISimulatedStatusBarMetricChain, IBUISimulatedTabBarControllerMetricChain, IBUISimulatedWindowSizeMetricChain;
+@class IBUISimulatedContentSizeMetricChain, IBUISimulatedDeviceContextMetricChain, IBUISimulatedModalPresentationMetricChain, IBUISimulatedNavigationControllerMetricChain, IBUISimulatedPopoverPresentationMetricChain, IBUISimulatedSplitViewMetricChain, IBUISimulatedStatusBarMetricChain, IBUISimulatedTabBarControllerMetricChain, IBUISimulatedWindowSizeMetricChain;
 
 @interface IBUISimulatedMetricChainVerificationState : NSObject
 {
     IBUISimulatedDeviceContextMetricChain *_deviceContextMetric;
     IBUISimulatedStatusBarMetricChain *_statusBarMetric;
     IBUISimulatedWindowSizeMetricChain *_windowSizeMetric;
+    IBUISimulatedContentSizeMetricChain *_contentSizeMetric;
     IBUISimulatedNavigationControllerMetricChain *_navigationControllerMetric;
     IBUISimulatedTabBarControllerMetricChain *_tabBarControllerMetric;
     IBUISimulatedSplitViewMetricChain *_splitViewControllerMetric;
@@ -26,6 +27,7 @@
 @property(retain, nonatomic) IBUISimulatedSplitViewMetricChain *splitViewControllerMetric; // @synthesize splitViewControllerMetric=_splitViewControllerMetric;
 @property(retain, nonatomic) IBUISimulatedTabBarControllerMetricChain *tabBarControllerMetric; // @synthesize tabBarControllerMetric=_tabBarControllerMetric;
 @property(retain, nonatomic) IBUISimulatedNavigationControllerMetricChain *navigationControllerMetric; // @synthesize navigationControllerMetric=_navigationControllerMetric;
+@property(retain, nonatomic) IBUISimulatedContentSizeMetricChain *contentSizeMetric; // @synthesize contentSizeMetric=_contentSizeMetric;
 @property(retain, nonatomic) IBUISimulatedWindowSizeMetricChain *windowSizeMetric; // @synthesize windowSizeMetric=_windowSizeMetric;
 @property(retain, nonatomic) IBUISimulatedStatusBarMetricChain *statusBarMetric; // @synthesize statusBarMetric=_statusBarMetric;
 @property(retain, nonatomic) IBUISimulatedDeviceContextMetricChain *deviceContextMetric; // @synthesize deviceContextMetric=_deviceContextMetric;

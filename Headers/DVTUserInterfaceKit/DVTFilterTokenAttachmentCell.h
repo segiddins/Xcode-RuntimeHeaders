@@ -28,7 +28,6 @@
     NSFont *_keyFont;
     NSFont *_valueFont;
     NSImage *_keyImage;
-    double _bottomMargin;
     NSString *_editingString;
     NSString *_constructedKeyString;
     NSString *_constructedValueString;
@@ -38,7 +37,6 @@
 @property(copy, nonatomic) NSString *constructedValueString; // @synthesize constructedValueString=_constructedValueString;
 @property(copy, nonatomic) NSString *constructedKeyString; // @synthesize constructedKeyString=_constructedKeyString;
 @property(copy, nonatomic) NSString *editingString; // @synthesize editingString=_editingString;
-@property(nonatomic) double bottomMargin; // @synthesize bottomMargin=_bottomMargin;
 @property(nonatomic) BOOL menuAttachment; // @synthesize menuAttachment=_menuAttachment;
 @property(nonatomic) BOOL exclusion; // @synthesize exclusion=_exclusion;
 @property(nonatomic) BOOL showsExclusionStyle; // @synthesize showsExclusionStyle=_showsExclusionStyle;
@@ -83,6 +81,7 @@
 - (struct CGSize)cellSizeForBounds:(struct CGRect)arg1;
 - (struct CGRect)drawingRectForBounds:(struct CGRect)arg1;
 - (struct CGRect)_calculateAttachmentContainerForFrame:(struct CGRect)arg1;
+- (double)_bottomMargin;
 - (struct CGRect)_keyContainerForOriginX:(double)arg1 forOriginY:(double)arg2;
 - (struct CGRect)_keyContentContainerForOriginX:(double)arg1 forOriginY:(double)arg2;
 - (struct CGRect)_keyPullDownIconRectContainerForOriginX:(double)arg1 forOriginY:(double)arg2;
@@ -90,7 +89,6 @@
 - (struct CGRect)_keyImageRectContainerForOriginX:(double)arg1 forOriginY:(double)arg2;
 - (struct CGRect)_valueContainerForOriginX:(double)arg1 forOriginY:(double)arg2 hasKeyContainer:(BOOL)arg3;
 - (struct CGRect)_valueContentContainerForOriginX:(double)arg1 forOriginY:(double)arg2;
-- (id)init;
 
 @end
 

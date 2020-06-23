@@ -8,15 +8,17 @@
 
 @interface IDEDistributionReformatArchiveStepViewController : IDEDistributionStepViewController
 {
+    BOOL _canGoNext;
+    BOOL _canGoPrevious;
     double _startTime;
 }
 
-+ (BOOL)skipStepForContext:(id)arg1 assistantDirection:(int)arg2;
++ (BOOL)skipStepForContext:(id)arg1 assistantDirection:(long long)arg2;
 @property double startTime; // @synthesize startTime=_startTime;
+@property BOOL canGoPrevious; // @synthesize canGoPrevious=_canGoPrevious;
+@property BOOL canGoNext; // @synthesize canGoNext=_canGoNext;
 - (void)spinProgressIndicatorForMinimumDurationAndContinue;
 - (void)reformatArchive;
-- (BOOL)canGoPrevious;
-- (BOOL)canGoNext;
 - (id)title;
 - (void)viewDidLoad;
 

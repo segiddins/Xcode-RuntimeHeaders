@@ -8,7 +8,7 @@
 
 #import <DVTAnalytics/DVTAnalyticsAppStoreSourceProtocol-Protocol.h>
 
-@class DVTAnalyticsAppIdentifier, DVTAnalyticsAppStoreSourceUserDefaultsKey, DVTAnalyticsDownloadMoreLogsOptions, DVTAnalyticsPointDistributionOptions, DVTCrashPointAppStoreSource, DVTCrashPointFilter, DVTCrashPointParameters, NSArray, NSMutableArray, NSString, _TtC12DVTAnalytics34AnalyticsAppStoreSourceRateLimiter;
+@class DVTAnalyticsAppIdentifier, DVTAnalyticsAppStoreSourceUserDefaultsKey, DVTAnalyticsDownloadMoreLogsOptions, DVTAnalyticsPointDistributionOptions, DVTCrashPointAppStoreSource, DVTCrashPointFilter, DVTCrashPointParameters, NSArray, NSMutableArray, NSString, _TtC12DVTAnalytics19AnalyticsReportType, _TtC13DVTFoundation11RateLimiter;
 
 @interface DVTCrashPointParameterizedAppStoreSource : DVTCrashPointSource <DVTAnalyticsAppStoreSourceProtocol>
 {
@@ -16,7 +16,7 @@
     NSArray *_defaultCrashPointListOptions;
     DVTAnalyticsPointDistributionOptions *_defaultCrashPointDownloadOptions;
     DVTAnalyticsDownloadMoreLogsOptions *_defaultCrashPointMoreLogsOptions;
-    _TtC12DVTAnalytics34AnalyticsAppStoreSourceRateLimiter *_rateLimiter;
+    _TtC13DVTFoundation11RateLimiter *_rateLimiter;
     Class _crashPointListClass;
     Class _crashPointDownloadDataClass;
     Class _crashPointMoreLogsClass;
@@ -29,11 +29,11 @@
 - (void).cxx_destruct;
 @property(readonly) DVTCrashPointFilter *filter; // @synthesize filter=_filter;
 @property(readonly) DVTCrashPointParameters *filteredParameters; // @synthesize filteredParameters=_filteredParameters;
-@property __weak DVTCrashPointAppStoreSource *appStoreSource; // @synthesize appStoreSource=_appStoreSource;
+@property(retain) DVTCrashPointAppStoreSource *appStoreSource; // @synthesize appStoreSource=_appStoreSource;
 @property(retain) Class crashPointMoreLogsClass; // @synthesize crashPointMoreLogsClass=_crashPointMoreLogsClass;
 @property(retain) Class crashPointDownloadDataClass; // @synthesize crashPointDownloadDataClass=_crashPointDownloadDataClass;
 @property(retain) Class crashPointListClass; // @synthesize crashPointListClass=_crashPointListClass;
-@property(retain, nonatomic) _TtC12DVTAnalytics34AnalyticsAppStoreSourceRateLimiter *rateLimiter; // @synthesize rateLimiter=_rateLimiter;
+@property(retain, nonatomic) _TtC13DVTFoundation11RateLimiter *rateLimiter; // @synthesize rateLimiter=_rateLimiter;
 @property(readonly) DVTAnalyticsDownloadMoreLogsOptions *_defaultCrashPointMoreLogsOptions; // @synthesize _defaultCrashPointMoreLogsOptions;
 - (id)_requestMoreLogsForCrashPointIdentifier:(id)arg1 withSession:(id)arg2 options:(id)arg3 error:(id *)arg4;
 - (id)_requestCrashPointForIdentifier:(id)arg1 withSession:(id)arg2 options:(id)arg3 error:(id *)arg4;
@@ -44,10 +44,11 @@
 - (id)_requestTopCrashesListForAppIdentifier:(id)arg1 withSession:(id)arg2 options:(id)arg3 error:(id *)arg4;
 - (id)_requestTopCrashesListForAppIdentifier:(id)arg1 withSession:(id)arg2 error:(id *)arg3;
 @property(readonly) NSArray *_defaultCrashPointListOptions; // @synthesize _defaultCrashPointListOptions;
+@property(readonly) BOOL isAppClip;
 @property(readonly) NSString *appExtensionPointIdentifier;
 @property(readonly) DVTAnalyticsAppIdentifier *appIdentifier;
 - (BOOL)downloadMoreLogsForCrashPoint:(id)arg1 withSession:(id)arg2 error:(id *)arg3;
-@property(readonly) long long type;
+@property(readonly) _TtC12DVTAnalytics19AnalyticsReportType *reportType;
 - (id)_crashLogsFromLogDataList:(id)arg1 cachePath:(id)arg2;
 - (id)_fetchCrashPointDataForIdentifier:(id)arg1 fromNetworkWithSession:(id)arg2 error:(id *)arg3;
 - (id)_fetchCrashPoinListFromNetworkWithSession:(id)arg1 error:(id *)arg2;

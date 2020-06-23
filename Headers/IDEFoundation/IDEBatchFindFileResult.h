@@ -20,6 +20,7 @@
 - (BOOL)textRepresentationForPasteboardIsFileName;
 - (id)textRepresentationForPasteboard;
 - (BOOL)allowsSummarization;
+- (BOOL)emphasizesTitle;
 - (BOOL)contributesToResultCount;
 - (BOOL)contributesToFileResultCount;
 - (id)initWithFilePath:(id)arg1 contextualSuffix:(id)arg2 parent:(id)arg3 suggestedOrder:(long long)arg4 childOrderingSelector:(SEL)arg5 queryIdentifier:(long long)arg6 resultIdentifier:(long long)arg7;

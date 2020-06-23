@@ -28,6 +28,8 @@
 - (IDEContainer<IDEBlueprintProvider> *)blueprintProvider;
 
 @optional
+@property(readonly) BOOL alwaysDisplayIssuesIndependentOfActiveSchemeFilter;
+@property(readonly) NSString *dynamicVariantBlueprintIdentifier;
 @property(readonly) BOOL isTransparentForRunDestinations;
 @property(readonly) BOOL shouldHideInUI;
 @property(readonly) BOOL participatesInSchemeAutocreation;
@@ -94,6 +96,7 @@
 - (DVTSDK *)baseSDKForBuildConfigurationName:(NSString *)arg1;
 - (NSSet *)supportedPlatformsForConfiguration:(NSString *)arg1 workspaceArenaSnapshot:(IDEWorkspaceArenaSnapshot *)arg2;
 - (NSSet *)supportedPlatformsForBuildParameters:(IDEBuildParameters *)arg1;
+- (NSArray *)architecturesForBuildParameters:(IDEBuildParameters *)arg1;
 - (NSArray *)availableArchitecturesForConfiguration:(NSString *)arg1 workspaceArenaSnapshot:(IDEWorkspaceArenaSnapshot *)arg2;
 - (NSArray *)availableArchitecturesForBuildParameters:(IDEBuildParameters *)arg1;
 @end

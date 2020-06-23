@@ -15,6 +15,9 @@
 @property(readonly, nonatomic) unsigned long long encoderID;
 - (double)encoderTime:(DYMTLShaderProfilerResult *)arg1;
 - (NSNumber *)vertexCount:(DYMTLShaderProfilerResult *)arg1;
+- (BOOL)isICBWriteOnly:(unsigned long long)arg1;
+- (BOOL)isBufferWriteOnly:(unsigned long long)arg1;
+- (BOOL)isTextureWriteOnly:(unsigned long long)arg1;
 - (NSArray *)allResources;
 @end
 

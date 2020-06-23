@@ -8,16 +8,19 @@
 
 #import <GPUDebugger/IDEDebugTopNavigableModel-Protocol.h>
 
-@class DVTStackBacktrace, IDEDebugSession, IDELaunchSession, NSString;
+@class DVTStackBacktrace, GPUTracePixelHistoryItem, IDEDebugSession, IDELaunchSession, NSString;
 
 @interface GPUTraceProcessItem : GPUTraceGroupItem <IDEDebugTopNavigableModel>
 {
+    NSString *_associatedProcessUUID;
     unsigned long long _outlineMode_forProgramMode_JumpBar_fix;
     GPUTraceGroupItem *_shaderDebuggerGroup;
+    GPUTracePixelHistoryItem *_pixelHistoryGroup;
 }
 
 + (void)initialize;
 - (void).cxx_destruct;
+@property(retain, nonatomic) GPUTracePixelHistoryItem *pixelHistoryGroup; // @synthesize pixelHistoryGroup=_pixelHistoryGroup;
 @property(retain, nonatomic) GPUTraceGroupItem *shaderDebuggerGroup; // @synthesize shaderDebuggerGroup=_shaderDebuggerGroup;
 @property(nonatomic) unsigned long long outlineMode_forProgramMode_JumpBar_fix; // @synthesize outlineMode_forProgramMode_JumpBar_fix=_outlineMode_forProgramMode_JumpBar_fix;
 - (void)primitiveInvalidate;

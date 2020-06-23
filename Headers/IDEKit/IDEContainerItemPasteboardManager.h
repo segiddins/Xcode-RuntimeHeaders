@@ -12,7 +12,10 @@
 
 + (id)sharedPasteboardManager;
 - (id)fileURLsForDraggingInfo:(id)arg1;
+- (id)containerItemFileURLsFromPasteboard:(id)arg1 forWorkspace:(id)arg2;
+- (id)containerItemsFromPasteboard:(id)arg1 forWorkspace:(id)arg2;
 - (void)containerItems:(id *)arg1 orFileURLs:(id *)arg2 forDraggingInfo:(id)arg3;
+- (void)containerItems:(id *)arg1 orFileURLs:(id *)arg2 fromPasteboard:(id)arg3 forWorkspace:(id)arg4;
 - (BOOL)writeContainerItems:(id)arg1 filePaths:(id)arg2 toPasteboard:(id)arg3;
 - (id)_plistRepsForContainerItems:(id)arg1;
 - (BOOL)writeItems:(id)arg1 toPasteboard:(id)arg2;

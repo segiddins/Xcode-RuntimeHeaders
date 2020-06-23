@@ -11,6 +11,7 @@
 @interface _TtC12SourceEditor15GenericLanguage : _TtCs12_SwiftObject
 {
     MISSING_TYPE *name;
+    MISSING_TYPE *identifier;
     MISSING_TYPE *langServiceClass;
     MISSING_TYPE *contentGeneratingLangServiceClass;
     MISSING_TYPE *lineDataFactory;

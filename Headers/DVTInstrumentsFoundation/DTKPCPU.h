@@ -16,16 +16,12 @@
     NSString *_name;
 }
 
-+ (id)legacyKPEPDatabaseURLForProductType:(id)arg1;
 + (id)cpuNamed:(id)arg1 fromSerializedData:(id)arg2 error:(id *)arg3;
-+ (id)cpuNamed:(id)arg1 error:(id *)arg2;
 + (id)localCPU:(id *)arg1;
-+ (id)localOverrideName;
 + (void)initialize;
 - (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *events; // @synthesize events=_events;
 @property(readonly, retain, nonatomic) NSString *name; // @synthesize name=_name;
-- (id)serializationData:(id *)arg1;
 - (id)allAliasAndNameStrings;
 - (id)eventFromNameOrAlias:(id)arg1;
 - (id)eventFromName:(id)arg1;

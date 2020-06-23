@@ -6,22 +6,24 @@
 
 #import <DVTPortal/_TtC9DVTPortal20DeveloperAPIResource.h>
 
-@class DVTPlatform, MISSING_TYPE, NSString;
+#import <DVTPortal/DVTPortalRegisteredDevice-Protocol.h>
 
-@interface _TtC9DVTPortal18DeveloperAPIDevice : _TtC9DVTPortal20DeveloperAPIResource
+@class DVTPlatform, MISSING_TYPE, NSString, _TtC9DVTPortal20DVTPortalDeviceClass;
+
+@interface _TtC9DVTPortal18DeveloperAPIDevice : _TtC9DVTPortal20DeveloperAPIResource <DVTPortalRegisteredDevice>
 {
     MISSING_TYPE *portalDeviceClass;
-    MISSING_TYPE *platform;
     MISSING_TYPE *rawDeviceAttributes;
 }
 
 + (BOOL)registerDevice:(id)arg1 session:(id)arg2 team:(id)arg3 error:(id *)arg4;
 + (id)registeredDevicesForSession:(id)arg1 team:(id)arg2 program:(id)arg3 error:(id *)arg4;
++ (id)registeredDevicesForSession:(id)arg1 team:(id)arg2 error:(id *)arg3;
 + (id)developerAPIDeviceErrorDomain;
 - (void).cxx_destruct;
 @property(nonatomic, readonly) NSString *debugDescription;
-@property(nonatomic, retain) DVTPlatform *platform; // @synthesize platform;
-@property(nonatomic, readonly) NSString *portalDeviceClass;
+@property(nonatomic, readonly) DVTPlatform *platform;
+@property(nonatomic, readonly) _TtC9DVTPortal20DVTPortalDeviceClass *portalDeviceClass; // @synthesize portalDeviceClass;
 @property(nonatomic, readonly) NSString *identifier;
 @property(nonatomic, readonly) NSString *name;
 

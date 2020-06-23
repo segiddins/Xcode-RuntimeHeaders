@@ -34,9 +34,11 @@
     NSString *pointeeAddress;
     NSString *address;
     NSString *_itemSummary;
+    unsigned long long _nameAndDescriptionHash;
 }
 
 - (void).cxx_destruct;
+@property(readonly) unsigned long long nameAndDescriptionHash; // @synthesize nameAndDescriptionHash=_nameAndDescriptionHash;
 @property BOOL sortAlwaysEnd; // @synthesize sortAlwaysEnd=_sortAlwaysEnd;
 @property BOOL childValuesCountValid; // @synthesize childValuesCountValid=_childValuesCountValid;
 @property(copy) NSString *itemSummary; // @synthesize itemSummary=_itemSummary;
@@ -46,7 +48,6 @@
 @property(retain) id <DYPStateMirror> stateMirror; // @synthesize stateMirror=_stateMirror;
 @property unsigned long long objectID; // @synthesize objectID=_objectID;
 @property BOOL itemDescriptionHasChanged; // @synthesize itemDescriptionHasChanged=_itemDescriptionHasChanged;
-@property(copy) NSString *itemDescription; // @synthesize itemDescription=_itemDescription;
 @property BOOL typeHasChanged; // @synthesize typeHasChanged=_typeHasChanged;
 @property(copy) NSString *type; // @synthesize type=_type;
 @property(readonly) BOOL logicalValueHasChanged; // @synthesize logicalValueHasChanged=_logicalValueHasChanged;
@@ -54,6 +55,7 @@
 @property BOOL valueHasChanged; // @synthesize valueHasChanged=_valueHasChanged;
 @property(copy) NSString *value; // @synthesize value=_value;
 @property(readonly) IDEStackFrame *stackFrame; // @synthesize stackFrame=_stackFrame;
+- (BOOL)isNameAndItemDescriptionEqual:(id)arg1;
 - (id)formattedSummary;
 - (long long)compareName:(id)arg1;
 - (id)_contentDescription;
@@ -69,6 +71,7 @@
 - (void)addChildValues:(id)arg1;
 - (void)addChildValue:(id)arg1;
 @property(copy) NSArray *childValues;
+@property(copy) NSString *itemDescription; // @synthesize itemDescription=_itemDescription;
 @property(copy) NSString *name;
 - (void)setStateValue:(id)arg1 withName:(id)arg2 withType:(id)arg3 withItemDescription:(id)arg4;
 

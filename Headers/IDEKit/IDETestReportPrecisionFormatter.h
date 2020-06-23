@@ -10,8 +10,6 @@
 {
 }
 
-+ (id)formatDuration:(double)arg1;
-+ (id)formatSubsecondInterval:(double)arg1;
 + (id)formatterWithThreeSignificantDigits;
 
 @end

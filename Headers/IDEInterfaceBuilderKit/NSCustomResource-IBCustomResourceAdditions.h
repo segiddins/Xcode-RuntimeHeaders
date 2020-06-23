@@ -6,7 +6,15 @@
 
 #import <AppKit/NSCustomResource.h>
 
+@class IBImageConfiguration, NSString, NSValue;
+
 @interface NSCustomResource (IBCustomResourceAdditions)
+@property(copy) IBImageConfiguration *ibImageConfiguration;
+@property(copy) NSValue *ibDesignSize;
+@property(copy) NSString *ibResourceCatalogName;
+@property(copy) NSString *ibResourceNamespaceID;
 - (id)ibSwizzledAwakeAfterUsingCoder:(id)arg1;
+- (void)ibSwizzledEncodeWithCoder:(id)arg1;
+- (id)ibSwizzledInitWithCoder:(id)arg1;
 @end
 

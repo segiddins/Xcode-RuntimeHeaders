@@ -48,6 +48,11 @@
 - (BOOL)_adjustParameterData:(id)arg1 usingSchema:(id)arg2;
 - (id)requiredValueForKey:(id)arg1;
 - (id)objectForKeyedSubscript:(id)arg1;
+- (long long)integerForKey:(id)arg1;
+- (double)doubleForKey:(id)arg1;
+- (BOOL)boolForKey:(id)arg1;
+- (id)requiredStringForKey:(id)arg1;
+- (id)stringForKey:(id)arg1;
 - (BOOL)hasValueForKey:(id)arg1;
 - (BOOL)_hasValueForKey:(id)arg1 inParameterData:(id)arg2 usingSchema:(id)arg3;
 - (id)valueForKey:(id)arg1 error:(id *)arg2;

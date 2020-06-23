@@ -13,6 +13,7 @@
 #import <DebuggerUI/NSOutlineViewDelegate-Protocol.h>
 
 @class DVTObservingToken, IDEBreakpointManager, IDEBreakpointNavigatorModel, NSArray, NSMutableArray, NSMutableSet, NSPasteboard, NSString;
+@protocol DVTInvalidation;
 
 @interface IDEBreakpointNavigableNavigator : IDEOutlineBasedNavigator <IDEBreakpointObserver, IDEBreakpointNavigatorModelObserver, IDEBreakpointNavigatorSupport, NSOutlineViewDelegate, NSMenuDelegate>
 {
@@ -21,8 +22,9 @@
     IDEBreakpointNavigatorModel *_model;
     BOOL _restoringState;
     DVTObservingToken *_selectedObjectsListToken;
-    DVTObservingToken *_systemRowSizeStyleToken;
+    id <DVTInvalidation> _rowSizeStyleChangedObserver;
     NSMutableArray *_copiedBreakpoints;
+    NSMutableArray *_enableDisableLocations;
     NSArray *_draggedItems;
     NSPasteboard *_draggedPasteboard;
     BOOL _filterOnModifiedBreakpoints;
@@ -52,7 +54,9 @@
 - (id)openSpecifierForNavigableItem:(id)arg1 error:(id *)arg2;
 - (void)_addMenuItemToMenu:(id)arg1 forBucket:(id)arg2;
 - (void)_addMoveMenuToMenu:(id)arg1 rightClickedItems:(id)arg2 plural:(BOOL)arg3;
-- (void)_addDeleteMenuItemToMenu:(id)arg1 plural:(BOOL)arg2 isEnabled:(BOOL)arg3;
+- (void)_enableBreakpointLocations:(id)arg1;
+- (void)_addEnableBreakpointLocationsMenuItemToMenu:(id)arg1;
+- (void)_addDeleteMenuItemsToMenu:(id)arg1 rightClickedItems:(id)arg2 plural:(BOOL)arg3;
 - (void)_editRightClickedBreakpoint:(id)arg1;
 - (void)_addEditMenuItemToMenu:(id)arg1 itemToEdit:(id)arg2;
 - (void)_shareOrUnshareBreakpoints:(id)arg1;
@@ -75,6 +79,7 @@
 - (id)_tableCellViewForBreakpointGroupNavItem:(id)arg1;
 - (void)_breakpointButtonClicked:(id)arg1;
 - (id)_tableCellViewForBreakpointNavItem:(id)arg1;
+- (void)_unbindForBreakpointButton:(id)arg1;
 - (id)outlineView:(id)arg1 viewForTableColumn:(id)arg2 item:(id)arg3;
 - (BOOL)outlineView:(id)arg1 acceptDrop:(id)arg2 item:(id)arg3 childIndex:(long long)arg4;
 - (unsigned long long)outlineView:(id)arg1 validateDrop:(id)arg2 proposedItem:(id)arg3 proposedChildIndex:(long long)arg4;
@@ -87,10 +92,11 @@
 - (void)breakpointLocationsAdded:(id)arg1 removed:(id)arg2;
 - (void)_clearDraggedItems;
 - (void)_selectItemNearDeletedItemIndex:(long long)arg1 parentItem:(id)arg2;
-- (long long)_smallestRowIndexOfNavigableItemInArray:(id)arg1;
+- (long long)_smallestRowIndexOfNavigableItemInArray:(id)arg1 forDeleting:(BOOL)arg2;
 - (void)_deleteBreakpointsForNavigableItems:(id)arg1;
 - (void)_deleteDraggedItems;
 - (BOOL)_canDeleteDraggedItems;
+- (void)_deleteDisabledBreakpointsFromRightClickedItems;
 - (void)_deleteRightClickedItems;
 - (void)_deleteSelectedItems;
 - (void)_repaintRowForBreakpoint:(id)arg1;

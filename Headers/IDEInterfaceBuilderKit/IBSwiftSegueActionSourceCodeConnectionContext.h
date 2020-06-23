@@ -16,6 +16,7 @@
 - (id)senderArgumentForInsertion;
 - (id)coderArgumentForInsertion;
 - (id)bodyForInsertion;
+- (unsigned long long)methodKind;
 - (id)representativeCounterpart;
 - (BOOL)parseSourceLandmarkItem:(id)arg1;
 - (id)containingClassName;

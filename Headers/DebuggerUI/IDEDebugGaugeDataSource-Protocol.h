@@ -14,7 +14,6 @@
 @property(copy, nonatomic) NSImage *icon;
 @property(nonatomic) double warningPoint;
 @property(nonatomic) unsigned long long lastCountOfDisplayableBars;
-@property(nonatomic) double barWidth;
 @property(nonatomic) double failingPoint;
 @property(nonatomic) BOOL largerValueIsBetter;
 @property(nonatomic) int valueButtonFormat;

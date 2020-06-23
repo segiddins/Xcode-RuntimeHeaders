@@ -21,6 +21,7 @@
 @property __weak DBGViewSurface *view; // @synthesize view=_view;
 - (void)_recursivelyUpdateAddressesToViewObjectsWithMapTable:(id)arg1;
 - (id)_createAddressesToViewObjectsMap;
+- (unsigned long long)recursivelyUpdateNumberOfChildObjectsWithIssues;
 @property(readonly) struct CGRect bounds;
 - (id)selectableViewObjectForIdentifier:(id)arg1;
 - (void)updateSelectableViewObjectsCache;

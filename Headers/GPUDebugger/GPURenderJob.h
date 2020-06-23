@@ -30,6 +30,7 @@
 @property(readonly, nonatomic) __weak GPUTraceModelFactory *modelFactory; // @synthesize modelFactory=_modelFactory;
 @property(readonly, copy, nonatomic) NSDictionary *overlayResources; // @synthesize overlayResources=_overlayResources;
 @property(nonatomic) __weak id <DYResource> resource; // @synthesize resource=_resource;
+- (id)canonicalTextureName;
 - (BOOL)wantsDepth;
 - (struct CGSize)imageSize;
 @property(readonly, nonatomic) BOOL isStencilDisplayElement;

@@ -12,10 +12,9 @@
 {
     MISSING_TYPE *lock;
     MISSING_TYPE *pullRequestsCaches;
-    MISSING_TYPE *commentsCaches;
-    MISSING_TYPE *listeners;
     MISSING_TYPE *updateTimer;
     MISSING_TYPE *operationManager;
+    MISSING_TYPE *listenerStore;
     MISSING_TYPE *hostedAccountsObserver;
     MISSING_TYPE *lastCacheDateCheck;
 }

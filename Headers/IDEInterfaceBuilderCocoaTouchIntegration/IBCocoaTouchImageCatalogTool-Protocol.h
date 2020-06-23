@@ -6,11 +6,9 @@
 
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBAbstractPlatformTool-Protocol.h>
 
-@class IBICCatalogCompilerOptions, IBICCatalogCompilerResult, IBResultOrError, NSData, NSDictionary, NSNumber, NSSet, NSString, NSValue;
+@class IBICCatalogCompilerOptions, IBICCatalogCompilerResult, NSData, NSDictionary, NSNumber, NSSet, NSString, NSValue;
 
 @protocol IBCocoaTouchImageCatalogTool <IBAbstractPlatformTool>
-- (IBResultOrError *)renderRepresentativeVectorGlyphWithData:(NSData *)arg1;
-- (IBResultOrError *)renderVectorGlyphSheetWithData:(NSData *)arg1;
 - (NSData *)imageDataForImageAtPath:(NSString *)arg1 destinationUTI:(NSString *)arg2 preferredSize:(NSValue *)arg3 scale:(NSNumber *)arg4 colorSpaceName:(NSString *)arg5;
 - (void)registerSchemaProviders:(NSSet *)arg1 withSchemaProviderContextData:(NSDictionary *)arg2;
 - (IBICCatalogCompilerResult *)compileItemsWithCatalogRelativeIdentifierPaths:(NSDictionary *)arg1 tagSolutionSpace:(NSDictionary *)arg2 andStickerPacksWithCatalogRelativeIdentifierPaths:(NSDictionary *)arg3 options:(IBICCatalogCompilerOptions *)arg4;

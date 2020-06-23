@@ -6,13 +6,14 @@
 
 #import <AppKit/NSView.h>
 
+#import <DVTUserInterfaceKit/NSColorChanging-Protocol.h>
 #import <DVTUserInterfaceKit/NSDraggingSource-Protocol.h>
 #import <DVTUserInterfaceKit/NSMenuDelegate-Protocol.h>
 
 @class DVTDelayedInvocation, DVTMutableOrderedDictionary, DVTObservingToken, NSAppearance, NSArray, NSColor, NSMenu, NSMenuItem, NSObject, NSString;
 @protocol DVTColorPickerDelegate;
 
-@interface DVTAbstractColorPicker : NSView <NSMenuDelegate, NSDraggingSource>
+@interface DVTAbstractColorPicker : NSView <NSMenuDelegate, NSDraggingSource, NSColorChanging>
 {
     NSMenu *_colorsMenu;
     NSMenuItem *_defaultColorMenuItem;
@@ -23,6 +24,7 @@
     NSArray *_namedColorMenuItems;
     NSMenuItem *_customColorMenuItem;
     DVTDelayedInvocation *_updateInvocation;
+    DVTDelayedInvocation *_recordRecentColorInvocation;
     BOOL _pushingToColorPanel;
     id _colorValueBindingController;
     NSString *_colorValueBindingKeyPath;
@@ -32,7 +34,6 @@
     BOOL _showingMultipleValues;
     BOOL _showsCurrentColorInMenu;
     BOOL _enabled;
-    BOOL _linkedToColorPanel;
     BOOL _highlighted;
     int _defaultColorMode;
     NSColor *_color;
@@ -51,7 +52,6 @@
 @property(retain, nonatomic) NSMenuItem *selectedMenuItem; // @synthesize selectedMenuItem=_selectedMenuItem;
 @property(retain) DVTMutableOrderedDictionary *colorGroups; // @synthesize colorGroups=_colorGroups;
 @property(nonatomic, getter=isHighlighted) BOOL highlighted; // @synthesize highlighted=_highlighted;
-@property(nonatomic) BOOL linkedToColorPanel; // @synthesize linkedToColorPanel=_linkedToColorPanel;
 @property(nonatomic, getter=isEnabled) BOOL enabled; // @synthesize enabled=_enabled;
 @property(nonatomic) unsigned long long controlSize; // @synthesize controlSize=_controlSize;
 @property __weak NSObject<DVTColorPickerDelegate> *delegate; // @synthesize delegate=_delegate;
@@ -68,20 +68,20 @@
 - (void)bind:(id)arg1 toObject:(id)arg2 withKeyPath:(id)arg3 options:(id)arg4;
 - (void)observedColorValueDidChangeToValue:(id)arg1;
 - (void)displayColorPanel:(id)arg1;
-- (void)takeDrawnColorFrom:(id)arg1;
 - (void)takeDrawnColorFromPopUpMenu:(id)arg1;
 - (void)sendAction;
+- (void)colorChosenFromRecentColorChooser:(id)arg1;
+- (void)changeColor:(id)arg1;
 - (unsigned long long)draggingSession:(id)arg1 sourceOperationMaskForDraggingContext:(long long)arg2;
 - (void)beginColorDragForEvent:(id)arg1;
 - (id)imageForDraggedColor:(id)arg1;
 - (BOOL)performDragOperation:(id)arg1;
 - (unsigned long long)draggingEntered:(id)arg1;
-- (void)colorPanelColorChanged:(id)arg1;
-- (void)colorPanelWillClose:(id)arg1;
-- (void)colorPickerDidBecomeActive:(id)arg1;
-- (void)colorChosenFromColorChooser:(id)arg1;
+- (void)resignFirstResponderOnColorPanelClose:(id)arg1;
+- (BOOL)resignFirstResponder;
+- (BOOL)becomeFirstResponder;
+- (void)recordRecentColorIfAppropriate;
 - (void)_pushColorToActiveColorPanel;
-- (void)viewWillMoveToWindow:(id)arg1;
 - (void)showColorsMenu;
 - (double)minimumPopUpMenuWidth;
 - (struct CGPoint)popUpMenuLocation;

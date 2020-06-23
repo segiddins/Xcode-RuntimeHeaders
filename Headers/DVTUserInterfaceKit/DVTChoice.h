@@ -6,31 +6,40 @@
 
 #import <objc/NSObject.h>
 
-@class NSImage, NSString;
+@class DVTChooserView, NSImage, NSString;
 
 @interface DVTChoice : NSObject
 {
-    NSImage *_alternateImage;
-    id _representedObject;
     BOOL _enabled;
+    BOOL _hasAlternate;
+    BOOL _choseAlternate;
     NSString *_title;
     NSString *_toolTip;
     NSImage *_image;
+    NSImage *_selectedImage;
     NSString *_identifier;
+    id _representedObject;
     NSString *_buttonAccessibilityIdentifier;
+    DVTChooserView *_chooserView;
 }
 
 - (void).cxx_destruct;
+@property __weak DVTChooserView *chooserView; // @synthesize chooserView=_chooserView;
 @property(copy) NSString *buttonAccessibilityIdentifier; // @synthesize buttonAccessibilityIdentifier=_buttonAccessibilityIdentifier;
+@property(nonatomic) BOOL choseAlternate; // @synthesize choseAlternate=_choseAlternate;
+@property(readonly) BOOL hasAlternate; // @synthesize hasAlternate=_hasAlternate;
 @property(getter=isEnabled) BOOL enabled; // @synthesize enabled=_enabled;
 @property(readonly) id representedObject; // @synthesize representedObject=_representedObject;
 @property(copy) NSString *identifier; // @synthesize identifier=_identifier;
-@property(retain) NSImage *alternateImage; // @synthesize alternateImage=_alternateImage;
+@property(retain) NSImage *selectedImage; // @synthesize selectedImage=_selectedImage;
 @property(readonly) NSImage *image; // @synthesize image=_image;
 @property(readonly, copy) NSString *toolTip; // @synthesize toolTip=_toolTip;
 @property(readonly, copy) NSString *title; // @synthesize title=_title;
+@property(retain) NSImage *alternateImage;
 - (id)description;
 - (id)initWithIdentifier:(id)arg1 title:(id)arg2 toolTip:(id)arg3 image:(id)arg4 alternateImage:(id)arg5;
+- (id)initWithIdentifier:(id)arg1 title:(id)arg2 toolTip:(id)arg3 image:(id)arg4 selectedImage:(id)arg5 hasAlternate:(BOOL)arg6 representedObject:(id)arg7;
+- (id)initWithIdentifier:(id)arg1 title:(id)arg2 toolTip:(id)arg3 image:(id)arg4 selectedImage:(id)arg5 representedObject:(id)arg6;
 - (id)initWithTitle:(id)arg1 toolTip:(id)arg2 image:(id)arg3 representedObject:(id)arg4;
 
 @end

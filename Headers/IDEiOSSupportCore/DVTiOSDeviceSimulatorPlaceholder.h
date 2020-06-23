@@ -32,7 +32,7 @@
 - (id)analysisOperationWithAnalysisToolService:(id)arg1 location:(id)arg2 workingDirectory:(id)arg3 workspaceFilePath:(id)arg4 projectFilePath:(id)arg5 packagesPaths:(id)arg6 outError:(id *)arg7;
 - (id)_generalRunErrorWithLaunchSession:(id)arg1;
 - (id)uncachedOverridingPropertiesForBuildable:(id)arg1 buildParameters:(id)arg2;
-- (id)supportedSDKsForBuildable:(id)arg1 buildParameters:(id)arg2 error:(id *)arg3;
+- (id)supportedSDKsForBuildableContext:(id)arg1 buildParameters:(id)arg2 error:(id *)arg3;
 - (id)nativeArchitecture;
 - (id)supportedArchitectures;
 - (BOOL)canBeDefaultDeviceForBuildable:(id)arg1 buildParameters:(id)arg2;

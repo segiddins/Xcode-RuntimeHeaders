@@ -15,6 +15,7 @@
     BOOL _wasApprovedForSaleDistribution;
     NSURL *_imageURL;
     NSArray *_extensions;
+    NSArray *_appClips;
     NSArray *_supportedOSVersions;
     NSArray *_supportedDevices;
 }
@@ -26,6 +27,7 @@
 @property(readonly) BOOL wasApprovedForInternalTestFlightDistribution; // @synthesize wasApprovedForInternalTestFlightDistribution=_wasApprovedForInternalTestFlightDistribution;
 @property(readonly) NSArray *supportedDevices; // @synthesize supportedDevices=_supportedDevices;
 @property(readonly) NSArray *supportedOSVersions; // @synthesize supportedOSVersions=_supportedOSVersions;
+@property(readonly) NSArray *appClips; // @synthesize appClips=_appClips;
 @property(readonly) NSArray *extensions; // @synthesize extensions=_extensions;
 @property(readonly) NSURL *imageURL; // @synthesize imageURL=_imageURL;
 - (unsigned long long)hash;
@@ -34,7 +36,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithITunesSoftwareApplicationVersionDescription:(id)arg1;
-- (id)initWithName:(id)arg1 displayableDescription:(id)arg2 platformIdentifier:(id)arg3 bundleIdentifier:(id)arg4 marketingVersion:(id)arg5 shortVersion:(id)arg6 version:(id)arg7 generations:(id)arg8 imageURL:(id)arg9 extensions:(id)arg10 supportedOSVersions:(id)arg11 supportedDevices:(id)arg12 wasApprovedForInternalTestFlightDistribution:(BOOL)arg13 wasApprovedForPrereleaseDistribution:(BOOL)arg14 wasApprovedForSaleDistribution:(BOOL)arg15;
+- (id)initWithName:(id)arg1 displayableDescription:(id)arg2 platformIdentifier:(id)arg3 bundleIdentifier:(id)arg4 marketingVersion:(id)arg5 shortVersion:(id)arg6 version:(id)arg7 isMacOSEligible:(BOOL)arg8 generations:(id)arg9 imageURL:(id)arg10 extensions:(id)arg11 appClips:(id)arg12 supportedOSVersions:(id)arg13 supportedDevices:(id)arg14 wasApprovedForInternalTestFlightDistribution:(BOOL)arg15 wasApprovedForPrereleaseDistribution:(BOOL)arg16 wasApprovedForSaleDistribution:(BOOL)arg17;
 
 @end
 

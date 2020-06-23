@@ -17,7 +17,7 @@
 #import <IDEInterfaceBuilderKit/NSTextFinderClient-Protocol.h>
 #import <IDEInterfaceBuilderKit/NSUserInterfaceValidations-Protocol.h>
 
-@class DVTDelayedInvocation, DVTMutableOrderedSet, DVTNotificationToken, DVTObservingToken, DVTPerformanceMetric, DVTReplacementView, DVTSDK, DVTSourceExpression, DVTSourceLanguageService, DVTSplitView, DVTStackBacktrace, IBAttributeSearchLocation, IBAutolayoutStatus, IBCancellationToken, IBCanvasView, IBCanvasViewController, IBDocument, IBDocumentAsynchronousToolLoadingQueue, IBDocumentEditorLoadingViewController, IBInvalidationToken, IBMenuTargetResponderForwarder, IBMutableIdentityDictionary, IBStructureAreaDockLabelContainer, IBStructureViewController, NSArray, NSDictionary, NSMutableArray, NSMutableOrderedSet, NSMutableSet, NSObject, NSOrderedSet, NSPopover, NSSegmentedControl, NSSet, NSString, NSTimer, NSView;
+@class DVTDelayedInvocation, DVTMutableOrderedSet, DVTNotificationToken, DVTObservingToken, DVTPerformanceMetric, DVTReplacementView, DVTSDK, DVTSourceExpression, DVTSourceLanguageService, DVTStackBacktrace, IBAttributeSearchLocation, IBAutolayoutStatus, IBCancellationToken, IBCanvasView, IBCanvasViewController, IBDocument, IBDocumentAsynchronousToolLoadingQueue, IBDocumentEditorLoadingViewController, IBDocumentEditorSplitView, IBInvalidationToken, IBMenuTargetResponderForwarder, IBMutableIdentityDictionary, IBStructureAreaDockLabelContainer, IBStructureViewController, NSArray, NSDictionary, NSMutableArray, NSMutableOrderedSet, NSMutableSet, NSObject, NSOrderedSet, NSPopover, NSSegmentedControl, NSSet, NSString, NSTimer, NSView, NSVisualEffectView;
 @protocol IBSelectionProvider, OS_dispatch_queue;
 
 @interface IBAbstractDocumentEditor : IDEEditor <IBStructureViewControllerDelegate, NSPopoverDelegate, DVTFindBarFindable, NSTextFinderClient, IBDocumentEditorLoadingViewControllerDelegate, IBDocumentAsynchronousToolLoadingQueueDelegate, DVTReplacementViewDelegate, IDESourceExpressionSource, NSUserInterfaceValidations, IBDocumentArbitrationResponder>
@@ -71,8 +71,9 @@
     NSSet *_draggingSessionCancellationToken;
     IBCanvasViewController *_canvasViewController;
     IBStructureAreaDockLabelContainer *_dockItemLabelPopUpContainer;
+    IBDocumentEditorSplitView *_structureAreaSplitView;
+    NSVisualEffectView *_structureAreaVisualEffectView;
     DVTReplacementView *_structureAreaContainer;
-    DVTSplitView *_structureAreaSplitView;
     DVTReplacementView *_canvasContainer;
     NSArray *_currentSelectedItems;
     IBStructureViewController *_structureViewController;
@@ -90,6 +91,7 @@
 + (id)showTargetIdentifierForObjects:(id)arg1 showLabels:(BOOL)arg2 inDocuments:(id)arg3;
 + (void)cancelAllOutstandingTargetIdentifiers;
 + (id)keyPathsForValuesAffectingDeviceConfigurationAppearance;
++ (BOOL)supportsFullSizeContent;
 + (id)lastActiveDocumentEditorForWorkspaceTabController:(id)arg1 forDocument:(id)arg2;
 + (id)lastActiveDocumentEditorForWorkspaceTabController:(id)arg1;
 + (void)noteEditorWillDeactivate:(id)arg1 inWorkspaceTabController:(id)arg2;
@@ -106,8 +108,9 @@
 @property(retain, nonatomic) IBStructureViewController *structureViewController; // @synthesize structureViewController=_structureViewController;
 @property(copy, nonatomic) NSArray *currentSelectedItems; // @synthesize currentSelectedItems=_currentSelectedItems;
 @property(retain, nonatomic) DVTReplacementView *canvasContainer; // @synthesize canvasContainer=_canvasContainer;
-@property(retain, nonatomic) DVTSplitView *structureAreaSplitView; // @synthesize structureAreaSplitView=_structureAreaSplitView;
 @property(retain, nonatomic) DVTReplacementView *structureAreaContainer; // @synthesize structureAreaContainer=_structureAreaContainer;
+@property(retain, nonatomic) NSVisualEffectView *structureAreaVisualEffectView; // @synthesize structureAreaVisualEffectView=_structureAreaVisualEffectView;
+@property(retain, nonatomic) IBDocumentEditorSplitView *structureAreaSplitView; // @synthesize structureAreaSplitView=_structureAreaSplitView;
 @property(retain, nonatomic) IBStructureAreaDockLabelContainer *dockItemLabelPopUpContainer; // @synthesize dockItemLabelPopUpContainer=_dockItemLabelPopUpContainer;
 @property(retain, nonatomic) IBCanvasViewController *canvasViewController; // @synthesize canvasViewController=_canvasViewController;
 - (void)debugShowRemoteToolErrorBanner:(id)arg1;
@@ -188,6 +191,7 @@
 - (BOOL)canAcceptPasteboardTypes:(id)arg1;
 - (id)typeForTopLevelPastingWithPasteboard:(id)arg1;
 - (void)makeImplicitCanvasAnchorsExplicit;
+- (void)updateCanvasViewContentInsets;
 - (void)updateCanvasLayoutPositioningScale;
 - (void)centerCanvasOnAnchorSpacePoint:(struct CGPoint)arg1;
 - (struct CGPoint)canvasAnchorSpaceCenter;
@@ -199,12 +203,16 @@
 - (void)toggleShowingIntrinsicSizeConstraints:(id)arg1;
 - (void)toggleShowingConstraints:(id)arg1;
 - (void)toggleShowingBoundsRectangles:(id)arg1;
+- (void)toggleShowingMinimap:(id)arg1;
 - (void)toggleShowingPlaceholderBackgrounds:(id)arg1;
 - (void)toggleSceneMaskAndBezels:(id)arg1;
 - (void)toggleShowingLayoutRectangles:(id)arg1;
 @property(getter=isShowingInvolvedViewsForSelectedConstraints) BOOL showingInvolvedViewsForSelectedConstraints;
 @property(getter=isShowingIntrinsicSizeConstraints) BOOL showingIntrinsicSizeConstraints;
 @property(getter=isShowingConstraints) BOOL showingConstraints;
+@property(getter=isShowingMinimap) BOOL showingMinimap;
+- (id)showMinimapDefaultKey;
+- (BOOL)shouldShowMinimapByDefault;
 @property(getter=isShowingPlaceholderBackgrounds) BOOL showingPlaceholderBackgrounds;
 @property(getter=isShowingSceneMaskAndBezels) BOOL showingSceneMaskAndBezels;
 @property(getter=isShowingBoundsRectangles) BOOL showingBoundsRectangles;
@@ -242,6 +250,7 @@
 @property(readonly) DVTSourceExpression *contextMenuExpression;
 @property(readonly, nonatomic) struct CGRect currentSelectionFrame;
 - (void)updateSelectedExpression;
+- (void)splitViewDidResizeSubviews:(id)arg1;
 - (BOOL)splitView:(id)arg1 canCollapseSubview:(id)arg2;
 - (double)splitView:(id)arg1 constrainSplitPosition:(double)arg2 ofSubviewAt:(long long)arg3;
 - (double)splitView:(id)arg1 constrainMinCoordinate:(double)arg2 ofSubviewAt:(long long)arg3;
@@ -327,6 +336,7 @@
 @property(readonly) IBCanvasView *canvasView;
 - (Class)canvasViewControllerClass;
 - (Class)structureViewControllerClass;
+- (void)setFullSizeContentInsets:(struct NSEdgeInsets)arg1;
 - (void)addExtraInvalidationBlock:(CDUnknownBlockType)arg1;
 - (void)primitiveInvalidate;
 - (BOOL)automaticallyInvalidatesChildViewControllers;

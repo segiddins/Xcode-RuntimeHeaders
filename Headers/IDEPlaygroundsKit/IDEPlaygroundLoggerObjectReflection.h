@@ -14,10 +14,11 @@
 @interface IDEPlaygroundLoggerObjectReflection : NSObject <IDEPlaygroundLoggerLogEntry>
 {
     NSString *_name;
-    BOOL _hasDecodedObject;
+    BOOL _hasAttemptedObjectDecoding;
     id _decodedObject;
     BOOL _summaryIsPreferredSidebarRepresentation;
     NSString *_typeName;
+    NSString *_typeNameForDisplay;
     NSString *_summary;
     NSString *_tag;
     NSData *_data;
@@ -31,6 +32,7 @@
 @property(readonly, copy) NSString *tag; // @synthesize tag=_tag;
 @property(readonly, copy) NSString *summary; // @synthesize summary=_summary;
 @property(readonly) BOOL summaryIsPreferredSidebarRepresentation; // @synthesize summaryIsPreferredSidebarRepresentation=_summaryIsPreferredSidebarRepresentation;
+@property(readonly, copy) NSString *typeNameForDisplay; // @synthesize typeNameForDisplay=_typeNameForDisplay;
 @property(readonly, copy) NSString *typeName; // @synthesize typeName=_typeName;
 @property(readonly, copy) NSString *name; // @synthesize name=_name;
 @property(readonly, copy) NSString *description;

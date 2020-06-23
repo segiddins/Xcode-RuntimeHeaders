@@ -59,6 +59,7 @@
 - (void)_setForcedUpdateTimer;
 - (void)_clearForcedUpdateTimer;
 - (void)_doUpdateGeniusResultsAfterOneSecond;
+- (BOOL)_allGeniusReultsFindersAllowInstantUpdateGeniusResultsWhenIdle;
 - (BOOL)_allGeniusFindersAreIdle;
 @property(readonly, copy) NSString *description;
 - (id)initWithEditorModeViewController:(id)arg1 navigableItemCoordinator:(id)arg2;

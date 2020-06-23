@@ -10,10 +10,11 @@
 @property(readonly, nonatomic) NSDictionary *vendorAnalysisConfigurationVariables;
 @property(readonly, nonatomic) NSDictionary *vendorAnalysisFunctions;
 @property(readonly, nonatomic) NSString *vendorAnalysisScript;
+- (NSString *)pipelineStaeLabel:(GPUTraceCounterGraphDataItem *)arg1;
 - (void)exportScriptingContext:(DYJSScriptingContext *)arg1 dataItem:(GPUTraceCounterGraphDataItem *)arg2;
 - (NSArray *)computeMaskIndices;
 - (NSArray *)collectToolsCounters:(GPUTraceCounterGraphDataItem *)arg1;
-- (NSArray *)samplesForAnalysis;
+- (BOOL)baseDataBatchIDFiltered:(unsigned long long)arg1;
 - (NSArray *)samplesBase;
 - (NSArray *)samples;
 @end

@@ -19,7 +19,7 @@
 
 + (id)keyPathsForValuesAffectingCanCancel;
 + (id)keyPathsForValuesAffectingWantsCancelAction;
-+ (BOOL)skipStepForContext:(id)arg1 assistantDirection:(int)arg2;
++ (BOOL)skipStepForContext:(id)arg1 assistantDirection:(long long)arg2;
 - (void).cxx_destruct;
 @property BOOL cancelable; // @synthesize cancelable=_cancelable;
 @property BOOL wantsCancel; // @synthesize wantsCancel=_wantsCancel;

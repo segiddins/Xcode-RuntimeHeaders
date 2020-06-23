@@ -11,6 +11,7 @@
 @interface _TtC5UVKit29SDKMetadataIntegrationManager : _TtCs12_SwiftObject
 {
     MISSING_TYPE *state;
+    MISSING_TYPE *executor;
 }
 
 @end

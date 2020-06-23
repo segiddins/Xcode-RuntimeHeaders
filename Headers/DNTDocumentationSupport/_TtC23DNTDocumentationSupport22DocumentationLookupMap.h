@@ -14,6 +14,7 @@
     MISSING_TYPE *logCategory;
     MISSING_TYPE *database;
     MISSING_TYPE *isReadOnly;
+    MISSING_TYPE *isCoreDocumentationCache;
 }
 
 @end

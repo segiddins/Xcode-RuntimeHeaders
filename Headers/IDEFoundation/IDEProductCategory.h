@@ -11,8 +11,6 @@
 @interface IDEProductCategory : NSObject
 {
     BOOL _wantsRoundedIcons;
-    BOOL _analyticsPointInspectableShouldShowDeviceTypes;
-    BOOL _supportsProcessorUsageLogs;
     BOOL _supportsAnalyticsMetricsData;
     BOOL _supportedByNotaryService;
     NSString *_identifier;
@@ -22,7 +20,6 @@
     NSString *_platformDisambiguationString;
     NSString *_productVersionSupportedDeviceTypesKey;
     NSString *_supportedOSVersionStringFormat;
-    NSString *_analyticsPointInspectableOSVersionDescriptor;
     NSSet *_overridingDeviceTypes;
     NSString *_userDescriptionWhenNoPlatformExists;
 }
@@ -33,14 +30,12 @@
 + (id)productCategoryForIdentifier:(id)arg1;
 + (id)productCategoryForPlatformSDKIdentifier:(id)arg1;
 + (id)productCategories;
++ (id)sortedProductCategories;
 - (void).cxx_destruct;
 @property(retain, nonatomic) NSString *userDescriptionWhenNoPlatformExists; // @synthesize userDescriptionWhenNoPlatformExists=_userDescriptionWhenNoPlatformExists;
 @property(readonly) BOOL supportedByNotaryService; // @synthesize supportedByNotaryService=_supportedByNotaryService;
 @property(readonly) BOOL supportsAnalyticsMetricsData; // @synthesize supportsAnalyticsMetricsData=_supportsAnalyticsMetricsData;
-@property(readonly) BOOL supportsProcessorUsageLogs; // @synthesize supportsProcessorUsageLogs=_supportsProcessorUsageLogs;
 @property(readonly) NSSet *overridingDeviceTypes; // @synthesize overridingDeviceTypes=_overridingDeviceTypes;
-@property(readonly) BOOL analyticsPointInspectableShouldShowDeviceTypes; // @synthesize analyticsPointInspectableShouldShowDeviceTypes=_analyticsPointInspectableShouldShowDeviceTypes;
-@property(readonly) NSString *analyticsPointInspectableOSVersionDescriptor; // @synthesize analyticsPointInspectableOSVersionDescriptor=_analyticsPointInspectableOSVersionDescriptor;
 @property(readonly) NSString *supportedOSVersionStringFormat; // @synthesize supportedOSVersionStringFormat=_supportedOSVersionStringFormat;
 @property(readonly) NSString *productVersionSupportedDeviceTypesKey; // @synthesize productVersionSupportedDeviceTypesKey=_productVersionSupportedDeviceTypesKey;
 @property(readonly) NSString *platformDisambiguationString; // @synthesize platformDisambiguationString=_platformDisambiguationString;
@@ -55,7 +50,7 @@
 - (id)platformForCategoryIdentifier:(id)arg1;
 @property(readonly) NSString *userDescriptionPluralForm;
 @property(readonly) NSString *userDescription;
-- (id)initWithIdentifier:(id)arg1 userDescriptionWhenNoPlatformExists:(id)arg2 archiveDescription:(id)arg3 sortOrder:(long long)arg4 deprecatedIdentifier:(long long)arg5 wantsRoundedIcons:(BOOL)arg6 supportedOSVersionStringFormat:(id)arg7 analyticsPointInspectableOSVersionDescriptor:(id)arg8 overridingDeviceTypes:(id)arg9 platformDisambiguationString:(id)arg10 productVersionSupportedDeviceTypesKey:(id)arg11 analyticsPointInspectableShouldShowDeviceTypes:(BOOL)arg12 supportsProcessorUsageLogs:(BOOL)arg13 supportsAnalyticsMetricsData:(BOOL)arg14 supportedByNotaryService:(BOOL)arg15;
+- (id)initWithIdentifier:(id)arg1 userDescriptionWhenNoPlatformExists:(id)arg2 archiveDescription:(id)arg3 sortOrder:(long long)arg4 deprecatedIdentifier:(long long)arg5 wantsRoundedIcons:(BOOL)arg6 supportedOSVersionStringFormat:(id)arg7 overridingDeviceTypes:(id)arg8 platformDisambiguationString:(id)arg9 productVersionSupportedDeviceTypesKey:(id)arg10 supportsAnalyticsMetricsData:(BOOL)arg11 supportedByNotaryService:(BOOL)arg12;
 - (id)platformDisambiguationStringWithPrefixString:(id)arg1;
 
 @end

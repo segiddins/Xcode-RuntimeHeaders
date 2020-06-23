@@ -17,7 +17,7 @@
     IDEDistributionAccountIssueViewController *_accountIssuesVC;
 }
 
-+ (BOOL)skipStepForContext:(id)arg1 assistantDirection:(int)arg2;
++ (BOOL)skipStepForContext:(id)arg1 assistantDirection:(long long)arg2;
 + (id)keyPathsForValuesAffectingCanGoPrevious;
 + (id)keyPathsForValuesAffectingAdditionalActionTitle;
 + (id)keyPathsForValuesAffectingTitle;

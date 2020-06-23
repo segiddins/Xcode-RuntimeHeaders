@@ -17,5 +17,9 @@
 - (void)toggleBehaviors:(id)arg1;
 - (void)toggleScenePicker:(id)arg1;
 - (void)toggleManipulatorMode:(id)arg1;
+- (void)handlePlaceText:(id)arg1;
+- (void)presentSceneAnchorPicker:(id)arg1;
+- (void)restoreUserActivityState:(id)arg1;
+- (void)updateUserActivityState:(id)arg1;
 @end
 

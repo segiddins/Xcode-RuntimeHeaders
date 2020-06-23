@@ -8,7 +8,7 @@
 
 #import <IDEInterfaceBuilderCocoaTouchIntegration/IBDocumentArchiving-Protocol.h>
 
-@class IBColor, NSArray, NSMutableArray, NSString;
+@class IBColor, NSArray, NSImage, NSMutableArray, NSNumber, NSString;
 
 @interface IBUISegmentedControl : IBUIControl <IBDocumentArchiving>
 {
@@ -88,13 +88,10 @@
 - (id)ibInspectedContentYOffsetsForInspectedSegment;
 - (void)setIbInspectedContentXOffsetsForInspectedSegment:(id)arg1;
 - (id)ibInspectedContentXOffsetsForInspectedSegment;
-- (void)setIbInspectedImageForInspectedSegment:(id)arg1;
-- (id)ibInspectedImageForInspectedSegment;
-- (void)setIbInspectedTitleForInspectedSegment:(id)arg1;
-- (id)ibInspectedTitleForInspectedSegment;
+@property(retain, nonatomic) NSImage *ibInspectedImageForInspectedSegment;
+@property(copy, nonatomic) NSString *ibInspectedTitleForInspectedSegment;
 - (long long)ibInspectedSegmentValue;
-- (void)setIbExternalInspectedSegment:(id)arg1;
-- (id)ibExternalInspectedSegment;
+@property(copy, nonatomic) NSNumber *ibExternalInspectedSegment;
 - (void)setIbInspectedSegmentControlStyle:(int)arg1;
 - (int)ibInspectedSegmentControlStyle;
 - (void)ibPrepareToBackwardsDeployToOSVersion:(id)arg1 inDocument:(id)arg2;
@@ -103,6 +100,7 @@
 - (void)ibArchiveEvaluatedValue:(id)arg1 forAttribute:(id)arg2 inConfiguration:(id)arg3 withDocumentArchiver:(id)arg4;
 - (id)ibCompiledKeyPathForDesignTimeConfigurableKeyPath:(id)arg1;
 - (id)ibLocalPerConfigurationAttributeKeyPaths;
+- (id)ibRecoverySuggestionForMisuseOfSymbolCharactersInValueForInspectorKeyPath:(id)arg1;
 - (void)ibPopulateIssues:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
 - (void)ibCustomizeForInsertionIntoIBUIToolbar:(id)arg1 withObjects:(id)arg2 fromLibraryOrDifferentTargetRuntime:(BOOL)arg3 andInsertionContext:(id)arg4;
 - (void)ibCustomizeForInsertionIntoIBUINavigationItem:(id)arg1 withObjects:(id)arg2 fromLibraryOrDifferentTargetRuntime:(BOOL)arg3 andInsertionContext:(id)arg4;

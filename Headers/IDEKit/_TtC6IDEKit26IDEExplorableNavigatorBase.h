@@ -10,9 +10,9 @@
 
 @interface _TtC6IDEKit26IDEExplorableNavigatorBase : IDENavigator
 {
-    MISSING_TYPE *outlineView;
     MISSING_TYPE *filterExpressionControlBar;
     MISSING_TYPE *explorableNavigatorView;
+    MISSING_TYPE *outlineView;
     MISSING_TYPE *_didFirstLayoutAfterInstall;
 }
 

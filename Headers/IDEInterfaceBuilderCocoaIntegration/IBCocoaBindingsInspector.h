@@ -8,7 +8,7 @@
 
 #import <IDEInterfaceBuilderCocoaIntegration/IBCocoaBindingsInspectorSliceDelegate-Protocol.h>
 
-@class DVTDelayedInvocation, DVTNotificationToken, DVTStackView_ML, IBCocoaBindingsSuggestedKeyPathProvider, NSArray, NSMutableArray, NSMutableSet, NSScrollView, NSString;
+@class DVTDelayedInvocation, DVTNotificationToken, DVTScrollView, DVTStackView_ML, IBCocoaBindingsSuggestedKeyPathProvider, NSArray, NSMutableArray, NSMutableSet, NSString;
 
 @interface IBCocoaBindingsInspector : IBInspectorViewController <IBCocoaBindingsInspectorSliceDelegate>
 {
@@ -28,7 +28,7 @@
     BOOL _refreshing;
     IBCocoaBindingsSuggestedKeyPathProvider *_keyPathProvider;
     NSArray *_controllers;
-    NSScrollView *_scrollView;
+    DVTScrollView *_scrollView;
     DVTStackView_ML *_mainView;
     NSArray *_controllerInfo;
 }
@@ -37,7 +37,7 @@
 - (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *controllerInfo; // @synthesize controllerInfo=_controllerInfo;
 @property(retain) DVTStackView_ML *mainView; // @synthesize mainView=_mainView;
-@property(retain) NSScrollView *scrollView; // @synthesize scrollView=_scrollView;
+@property(retain) DVTScrollView *scrollView; // @synthesize scrollView=_scrollView;
 @property(retain, nonatomic) NSArray *controllers; // @synthesize controllers=_controllers;
 @property(retain) IBCocoaBindingsSuggestedKeyPathProvider *keyPathProvider; // @synthesize keyPathProvider=_keyPathProvider;
 - (void)unbindDocumentBindingNamed:(id)arg1;
@@ -59,7 +59,9 @@
 - (void)viewWillUninstall;
 - (void)primitiveInvalidate;
 - (BOOL)automaticallyInvalidatesChildViewControllers;
+- (BOOL)useLargeLayoutMetrics;
 - (void)viewDidInstall;
+- (void)viewDidLoad;
 - (void)setContent:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 

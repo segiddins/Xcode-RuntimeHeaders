@@ -10,11 +10,13 @@
 
 @interface IDEITunesConnectApplicationDescription : IDEITunesConnectBundleDescription
 {
+    BOOL _didOptInToMacAppStore;
     NSString *_adamID;
 }
 
 + (BOOL)supportsSecureCoding;
 - (void).cxx_destruct;
+@property(readonly) BOOL didOptInToMacAppStore; // @synthesize didOptInToMacAppStore=_didOptInToMacAppStore;
 @property(readonly) NSString *adamID; // @synthesize adamID=_adamID;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
@@ -22,7 +24,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithITunesSoftwareApplicationDescription:(id)arg1;
-- (id)initWithAdamID:(id)arg1 name:(id)arg2 displayableDescription:(id)arg3 platformIdentifier:(id)arg4 bundleIdentifier:(id)arg5;
+- (id)initWithAdamID:(id)arg1 didOptInToMacAppStore:(BOOL)arg2 name:(id)arg3 displayableDescription:(id)arg4 platformIdentifier:(id)arg5 bundleIdentifier:(id)arg6;
 
 @end
 

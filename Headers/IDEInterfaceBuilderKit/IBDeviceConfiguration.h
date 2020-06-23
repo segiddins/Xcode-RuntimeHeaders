@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class IBDeviceAdaptation, IBDeviceAppearance, IBDeviceLayout, IBDeviceOrientation, IBDeviceSubtype, IBMemberConfiguration, NSArray, NSString;
+@class IBDeviceAdaptation, IBDeviceAppearance, IBDeviceLayout, IBDeviceOrientation, IBDeviceRenderMode, IBDeviceSubtype, IBMemberConfiguration, NSArray, NSString;
 
 @interface IBDeviceConfiguration : NSObject
 {
@@ -18,18 +18,22 @@
 }
 
 + (id)deviceConfigurationWithDeviceSubtype:(id)arg1 adaptation:(id)arg2;
-+ (id)deviceConfigurationWithPropertyList:(id)arg1;
++ (id)deviceConfigurationForSubtypeArchivingName:(id)arg1 orientationArchivingName:(id)arg2 layoutArchivingName:(id)arg3 appearanceArchivingName:(id)arg4 renderModeArchivingName:(id)arg5;
++ (id)deviceConfigurationWithPropertyListUsingArchivingNames:(id)arg1;
++ (id)deviceConfigurationWithPropertyListUsingIdentifiers:(id)arg1;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *stateSavingTuple; // @synthesize stateSavingTuple=_stateSavingTuple;
 @property(readonly, nonatomic) IBDeviceAdaptation *adaptation; // @synthesize adaptation=_adaptation;
 @property(readonly, nonatomic) IBDeviceSubtype *subtype; // @synthesize subtype=_subtype;
+- (id)configurationBySwitchingToRenderMode:(id)arg1;
 - (id)configurationByRotatingToOrientation:(id)arg1;
 - (long long)compareAdaptationDisplayOrderSizesByReverseHeightReverseWidth:(id)arg1;
 @property(readonly, nonatomic) NSString *displayName;
 @property(readonly, nonatomic) NSString *accessibilityIdentifier;
 @property(readonly, nonatomic) IBMemberConfiguration *memberConfiguration;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)propertyListRepresentation;
+- (id)propertyListRepresentationUsingIdentifiers;
+@property(readonly, nonatomic) IBDeviceRenderMode *renderMode;
 @property(readonly, nonatomic) IBDeviceAppearance *appearance;
 @property(readonly, nonatomic) IBDeviceLayout *layout;
 @property(readonly, nonatomic) IBDeviceOrientation *orientation;

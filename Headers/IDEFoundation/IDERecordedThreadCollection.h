@@ -16,6 +16,7 @@
     NSMutableArray *_delayedInvalidationChildren;
     DVTDispatchLock *_delayedInvalidationChildrenLock;
     BOOL _usedInRuntimeIssue;
+    BOOL _selectStackFrameWhenFirstShown;
     IDEDebugProcess *_parentProcess;
     NSArray *_recordedThreads;
     NSString *_displayName;
@@ -23,6 +24,7 @@
 
 + (void)initialize;
 - (void).cxx_destruct;
+@property BOOL selectStackFrameWhenFirstShown; // @synthesize selectStackFrameWhenFirstShown=_selectStackFrameWhenFirstShown;
 @property BOOL usedInRuntimeIssue; // @synthesize usedInRuntimeIssue=_usedInRuntimeIssue;
 @property(copy) NSString *displayName; // @synthesize displayName=_displayName;
 @property(copy, nonatomic) NSArray *recordedThreads; // @synthesize recordedThreads=_recordedThreads;

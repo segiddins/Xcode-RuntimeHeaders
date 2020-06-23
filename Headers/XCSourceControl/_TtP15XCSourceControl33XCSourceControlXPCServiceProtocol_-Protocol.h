@@ -6,9 +6,10 @@
 
 #import <XCSourceControl/_TtP15XCSourceControl30XCSourceControlXPCBaseProtocol_-Protocol.h>
 
-@class NSString, XCSourceControlHostAccount;
+@class NSString, XCSourceControlHostAccount, XCSourceControlHostRepository;
 
 @protocol _TtP15XCSourceControl33XCSourceControlXPCServiceProtocol_ <_TtP15XCSourceControl30XCSourceControlXPCBaseProtocol_>
+- (void)searchBranches:(NSString *)arg1 account:(XCSourceControlHostAccount *)arg2 repository:(XCSourceControlHostRepository *)arg3 query:(NSString *)arg4 reply:(void (^)(NSError *))arg5;
 - (void)searchCodeRepositories:(NSString *)arg1 account:(XCSourceControlHostAccount *)arg2 type:(unsigned long long)arg3 query:(NSString *)arg4 path:(NSString *)arg5 filename:(NSString *)arg6 fileExtension:(NSString *)arg7 reply:(void (^)(NSError *))arg8;
 - (void)paginatedRepositories:(NSString *)arg1 account:(XCSourceControlHostAccount *)arg2 type:(unsigned long long)arg3 reply:(void (^)(NSError *))arg4;
 @end

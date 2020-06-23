@@ -136,6 +136,7 @@
 @property(readonly) BOOL supportsOnDemandResources;
 @property(readonly, getter=isFolderLike) BOOL folderLike;
 @property(readonly, getter=isMajorGroup) BOOL majorGroup;
+@property(readonly) BOOL allowsRenaming;
 @property(readonly, getter=isEditable) BOOL editable;
 - (void)_initRootGroup;
 - (id)createRootGroup;

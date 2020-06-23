@@ -6,12 +6,15 @@
 
 #import <objc/NSObject.h>
 
+#import <GPUDebugger/GPUTimelineGraphGroupInfo-Protocol.h>
+
 @class NSArray, NSMenuItem, NSString;
 
-@interface GPUTraceCounterGraphGroupItem : NSObject
+@interface GPUTraceCounterGraphGroupItem : NSObject <GPUTimelineGraphGroupInfo>
 {
     BOOL _maskInCompute;
     BOOL _maskInDraw;
+    BOOL _isRawCounterGroup;
     int _resourceLink;
     NSArray *_subPlaneIndexes;
     NSString *_name;
@@ -21,12 +24,14 @@
 
 - (void).cxx_destruct;
 @property(nonatomic) int resourceLink; // @synthesize resourceLink=_resourceLink;
+@property(nonatomic) BOOL isRawCounterGroup; // @synthesize isRawCounterGroup=_isRawCounterGroup;
 @property(nonatomic) unsigned long long groupIndex; // @synthesize groupIndex=_groupIndex;
 @property(nonatomic) BOOL maskInDraw; // @synthesize maskInDraw=_maskInDraw;
 @property(nonatomic) BOOL maskInCompute; // @synthesize maskInCompute=_maskInCompute;
 @property(retain, nonatomic) NSMenuItem *contextMenuItem; // @synthesize contextMenuItem=_contextMenuItem;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 @property(retain, nonatomic) NSArray *subPlaneIndexes; // @synthesize subPlaneIndexes=_subPlaneIndexes;
+- (BOOL)isVisible;
 
 @end
 

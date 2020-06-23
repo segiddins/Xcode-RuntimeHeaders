@@ -4,13 +4,25 @@
 //  Copyright (C) 1997-2019 Steve Nygard.
 //
 
-#import <IDEKit/NSObject-Protocol.h>
+#import <IDEKit/IDETestReport_Base-Protocol.h>
+#import <IDEKit/IDETest_ActivityAttachment_Base-Protocol.h>
 
-@class NSString;
+@class DVTTextDocumentLocation, NSArray, NSString;
+@protocol IDEResultBundleURLRedirecting, IDETestReport_Base;
 
-@protocol IDETestReport_FailureSummary <NSObject>
-@property(readonly, nonatomic) long long ide_testReport_failureSummary_lineNumber;
-@property(readonly, copy, nonatomic) NSString *ide_testReport_failureSummary_fileName;
-@property(readonly, copy, nonatomic) NSString *ide_testReport_failureSummary_message;
+@protocol IDETestReport_FailureSummary <IDETest_ActivityAttachment_Base, IDETestReport_Base>
+@property(nonatomic, readonly) long long ide_testReport_failureSummary_lineNumber;
+@property(nonatomic, readonly) NSString *ide_testReport_failureSummary_fileName;
+@property(nonatomic, readonly) NSString *ide_testReport_failureSummary_message;
+
+@optional
+@property(nonatomic) __weak id <IDEResultBundleURLRedirecting> ide_testReport_failureSummary_urlRedirector;
+- (id <IDETestReport_Base>)ide_testReport_failureSummary_childAtIndex:(long long)arg1;
+@property(nonatomic, readonly) long long ide_testReport_failureSummary_numberOfChildren;
+@property(nonatomic, readonly) NSArray *ide_testReport_failureSummary_attachments;
+@property(nonatomic, readonly) NSArray *ide_testReport_failureSummary_failureSteps;
+@property(nonatomic, readonly) NSArray *ide_testReport_failureSummary_callStackSymbolInfos;
+@property(nonatomic, readonly) DVTTextDocumentLocation *ide_testReport_failureSummary_documentLocation;
+@property(nonatomic, readonly) BOOL ide_testReport_failureSummary_isTopLevelFailure;
 @end
 

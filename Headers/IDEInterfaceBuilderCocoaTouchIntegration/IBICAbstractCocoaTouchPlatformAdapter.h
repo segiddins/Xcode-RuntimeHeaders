@@ -41,7 +41,7 @@
 - (id)processSystemPNGOutputImages:(id)arg1 forClasses:(id)arg2 withImageName:(id)arg3 fromSelection:(id)arg4 options:(id)arg5 populatingResults:(id)arg6 andReturningEmptyPlaceholder:(id *)arg7;
 - (void)addErrorForEmptyPlaceholderFromSelection:(id)arg1 forSlottedAssetOfPossibleClasses:(id)arg2 name:(id)arg3 results:(id)arg4 andReturningEmptyPlaceholder:(id *)arg5;
 - (id)imageCatalogCompilerOptionsFromToolArguments:(id)arg1 forCatalogCollection:(id)arg2 populatingResults:(id)arg3;
-- (id)targetPlatformForArguments:(id)arg1;
+- (id)targetPlatform;
 - (id)minimumDeploymentTargetSupportingIconsInCARFiles;
 - (id)minimumDeploymentTargetSupportingAppIconsInCARFiles;
 - (id)minimumDeploymentTargetSupportingModels;

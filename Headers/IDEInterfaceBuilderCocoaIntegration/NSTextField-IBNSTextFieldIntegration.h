@@ -17,10 +17,9 @@
 - (void)ibPopulateIssues:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
 - (void)decodePreferredMaxLayoutWidthForUnarchiver:(id)arg1;
 - (void)encodePreferredMaxLayoutWidthForArchiver:(id)arg1;
-- (void)unarchiveAutomaticTextCompletionEnabled:(id)arg1;
-- (void)archiveAutomaticTextCompletionEnabled:(id)arg1;
 - (void)unarchiveAllowsCharacterPickerTouchBarItem:(id)arg1;
 - (void)archiveAllowsCharacterPickerTouchBarItem:(id)arg1;
+@property(nonatomic) long long ibShadowedContentType;
 - (void)setIbInspectedPreferredWidthMode:(long long)arg1;
 - (long long)ibInspectedPreferredWidthMode;
 @property(copy) NSNumber *ibExternalPreferredMaxLayoutWidth;
@@ -46,9 +45,8 @@
 - (struct CGSize)ibPreferredSize;
 - (struct CGSize)ibMaximumSize;
 - (struct CGSize)ibMinimumSize;
-- (id)_ibLocalAttributeKeyPaths;
+- (void)ibDidAddToDocument:(id)arg1 phase:(unsigned long long)arg2;
 - (id)ibLocalAttributeKeyPaths;
-- (BOOL)ibTouchBarPropertiesAreAvailable;
 - (void)unarchiveWithDocumentUnarchiver:(id)arg1;
 - (void)archiveWithDocumentArchiver:(id)arg1;
 

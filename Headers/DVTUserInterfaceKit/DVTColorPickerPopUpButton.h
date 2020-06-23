@@ -18,6 +18,8 @@
 - (void)updateLayer;
 - (void)mouseDown:(id)arg1;
 - (id)hitTest:(struct CGPoint)arg1;
+- (void)drawFocusRingMask;
+- (struct CGRect)focusRingMaskBounds;
 - (double)swatchWidth;
 - (double)swatchHeight;
 - (double)baseline;

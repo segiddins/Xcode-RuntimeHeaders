@@ -6,10 +6,11 @@
 
 #import <IDESourceEditor/NSObject-Protocol.h>
 
-@class NSArray, NSAttributedString, NSDictionary, NSImage, NSString;
+@class DVTRangeArray, DVTSourceCodeLanguage, NSArray, NSAttributedString, NSDictionary, NSImage, NSString;
 
 @protocol DVTTextCompletionItem <NSObject>
 @property(readonly) BOOL notRecommended;
+@property(retain) DVTRangeArray *fuzzyMatchingRanges;
 @property double fuzzyMatchingScore;
 @property double priority;
 @property(readonly) unsigned long long priorityComparatorKind;
@@ -20,14 +21,23 @@
 @property(readonly, copy) NSString *completionText;
 @property(readonly, copy) NSString *displayType;
 @property(readonly, copy) NSString *displayText;
-@property(readonly, copy) NSString *name;
+@property(readonly, copy, nonatomic) NSString *name;
 
 @optional
+@property(readonly) NSString *usr;
 @property(readonly, copy) NSString *action;
 @property(readonly) NSImage *highlightedStatusIcon;
 @property(readonly) NSImage *statusIcon;
 @property(readonly, copy) NSArray *additionalCompletions;
 @property(readonly) int completionItemStyle;
+@property(readonly) DVTSourceCodeLanguage *language;
+@property(readonly, copy) NSString *displaySignature;
+@property(readonly, copy) NSAttributedString *attributedDisplaySignature;
+@property(readonly, copy) DVTRangeArray *briefDisplayTextRanges;
+@property(readonly, copy) DVTRangeArray *displayTextRanges;
+@property(readonly, copy) DVTRangeArray *nameRanges;
+@property(readonly, copy) NSString *briefDisplayText;
+@property(readonly, copy) NSAttributedString *attributedDisplayType;
 - (unsigned long long)leadingCharactersToReplaceFromString:(NSString *)arg1 location:(unsigned long long)arg2;
 - (void)infoViewControllerWithWidth:(double)arg1 context:(NSDictionary *)arg2 completionBlock:(void (^)(DVTViewController<DVTInvalidation> *))arg3;
 @end

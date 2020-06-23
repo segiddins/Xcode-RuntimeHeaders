@@ -16,7 +16,7 @@
     NSString *_namespaceID;
     IDEMediaType *_type;
     IDEMediaResourceMetadata *_metadata;
-    NSImage *_image;
+    NSImage *_icon;
     NSColor *_color;
 }
 
@@ -25,7 +25,7 @@
 + (id)namedResourceWithGroupName:(id)arg1;
 - (void).cxx_destruct;
 @property(copy, nonatomic) NSColor *color; // @synthesize color=_color;
-@property(copy, nonatomic) NSImage *image; // @synthesize image=_image;
+@property(retain, nonatomic) NSImage *icon; // @synthesize icon=_icon;
 @property(nonatomic) BOOL isPlaceholder; // @synthesize isPlaceholder=_isPlaceholder;
 @property(nonatomic) BOOL isGroup; // @synthesize isGroup=_isGroup;
 @property(readonly, nonatomic) IDEMediaResourceMetadata *metadata; // @synthesize metadata=_metadata;

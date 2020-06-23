@@ -16,6 +16,7 @@
 - (void).cxx_destruct;
 - (id)init;
 - (BOOL)shouldSkipInstallationForBundleIdentifier:(id)arg1 hostBuildProductPath:(id)arg2 onDevice:(id)arg3;
+- (void)removeBundleIdentifier:(id)arg1 hostBuildProductPath:(id)arg2 fromDevice:(id)arg3;
 - (void)addBundleIdentifier:(id)arg1 hostBuildProductPath:(id)arg2 toDevice:(id)arg3;
 
 @end

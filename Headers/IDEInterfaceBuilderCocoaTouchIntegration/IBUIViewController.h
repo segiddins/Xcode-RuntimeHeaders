@@ -205,6 +205,8 @@
 - (void)ibAddStoryboardCommitSegueTemplate:(id)arg1 inDocument:(id)arg2;
 - (void)ibAddStoryboardPreviewSegueTemplate:(id)arg1 inDocument:(id)arg2;
 - (void)ibAddStoryboardPreviewingRegistrantIfNecessaryForView:(id)arg1 inDocument:(id)arg2;
+- (BOOL)ibWantsDraggedImagePlaceholder;
+- (id)ibDraggedImagePlaceholderWithSceneSize:(struct CGSize)arg1 document:(id)arg2;
 - (void)ibConfigureDiagnosticsHandler:(id)arg1 afterSceneUpdateDidFailWithRoot:(id)arg2;
 - (void)ibConfigureSceneUpdateRequest:(id)arg1;
 - (id)ibMarshalledRepresentationForRendering;

@@ -30,6 +30,10 @@
 - (BOOL)isEnabled;
 @property(nonatomic, copy) NSString *value;
 @property(nonatomic, copy) NSString *key;
+- (void)setIsEnabledFromUTF8String:(char *)arg1 fromXMLUnarchiver:(id)arg2;
+- (void)setValueFromUTF8String:(char *)arg1 fromXMLUnarchiver:(id)arg2;
+- (void)setKeyFromUTF8String:(char *)arg1 fromXMLUnarchiver:(id)arg2;
+- (void)dvt_encodeAttributesWithXMLArchiver:(id)arg1 version:(id)arg2;
 
 @end
 

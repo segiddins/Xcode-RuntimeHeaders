@@ -14,14 +14,26 @@
 + (id)systemMediaRepository;
 + (id)_osVersionBySystemColorName;
 + (id)_systemColorNamesByOSVersion;
-+ (id)_systemImageResources;
-+ (id)_systemImageNamesByOSVersion;
-+ (id)_systemSoundResources;
++ (id)systemCoreGlyphPrivateSymbolResources;
++ (id)systemCoreGlyphPrivateSymbolRecordsByOSVersion;
++ (id)systemCoreGlyphSymbolResources;
++ (id)systemCoreGlyphSymbolRecordsByOSVersion;
++ (id)platform;
++ (id)systemNSImageNamedResources;
++ (id)systemNSImageNamedResourceNames;
++ (id)systemImageNamesByOSVersion;
++ (id)systemSoundResources;
+- (id)effectiveNamespaceIDForArchivedResourceValue:(id)arg1;
+- (id)effectiveNamespaceIDForUnarchivedResourceName:(id)arg1 namespaceID:(id)arg2;
+- (BOOL)isASystemImageNamedResource:(id)arg1;
 - (void)populateRequiredDocumentCapabilities:(id)arg1 forArchivedValueWhichMightBeResource:(id)arg2;
 - (void)populateIssues:(id)arg1 forResourceReferences:(id)arg2;
 - (id)placeholderResourceIconForMediaType:(id)arg1;
 - (id)placeholderResourceContentForMediaType:(id)arg1 runtimeName:(id)arg2 originalValue:(id)arg3;
 - (id)typesForDefaultMediaRepositories;
+- (id)defaultImageConfiguration;
+- (BOOL)supportsImageConfiguration;
+- (Class)systemSymbolImageMediaResourceClass;
 
 @end
 

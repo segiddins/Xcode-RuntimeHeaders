@@ -11,10 +11,9 @@
 @interface _TtC17CoreDocumentation9Resources : _TtC17CoreDocumentation8Semantic
 {
     MISSING_TYPE *originalMarkup;
-    MISSING_TYPE *technology;
     MISSING_TYPE *content;
     MISSING_TYPE *tiles;
-    MISSING_TYPE *callToActionImage;
+    MISSING_TYPE *redirects;
 }
 
 @end

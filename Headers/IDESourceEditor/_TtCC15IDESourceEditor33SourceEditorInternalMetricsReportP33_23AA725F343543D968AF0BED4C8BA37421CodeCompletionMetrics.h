@@ -17,6 +17,7 @@
     MISSING_TYPE *resultsCount;
     MISSING_TYPE *didSelect;
     MISSING_TYPE *didDismiss;
+    MISSING_TYPE *definitiveStrategy;
 }
 
 @end

@@ -13,7 +13,7 @@
     IBCocoaTouchPlatform *_platform;
 }
 
-+ (id)fetchContentForSystemImageName:(id)arg1 systemNamespace:(long long)arg2 platform:(id)arg3 minimumPixelSize:(struct CGSize)arg4 maximumPixelSize:(struct CGSize)arg5 scale:(double)arg6;
++ (id)fetchContentForSystemImageName:(id)arg1 systemNamespace:(long long)arg2 encodeAsFirstGenenerationImage:(BOOL)arg3 platform:(id)arg4 minimumPixelSize:(struct CGSize)arg5 maximumPixelSize:(struct CGSize)arg6 scale:(double)arg7;
 + (id)createPlaceholderImage;
 + (id)generateContentWithContext:(id)arg1;
 + (id)generateIconWithContext:(id)arg1;

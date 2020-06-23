@@ -16,7 +16,7 @@
 }
 
 @property BOOL hasDebugSession; // @synthesize hasDebugSession=_hasDebugSession;
-- (id)renderImagesForRequests:(id)arg1;
+- (id)renderImageAndLayoutInfosForRequests:(id)arg1;
 - (id)loadBuiltLiveViewBundleInstances:(id)arg1;
 
 // Remaining properties

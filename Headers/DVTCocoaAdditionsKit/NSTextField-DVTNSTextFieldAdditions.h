@@ -6,8 +6,11 @@
 
 #import <AppKit/NSTextField.h>
 
+@class NSTextFieldCell;
+
 @interface NSTextField (DVTNSTextFieldAdditions)
 - (id)dvt_linkAtPoint:(struct CGPoint)arg1;
 - (void)dvt_selectAllText;
+@property(readonly) NSTextFieldCell *dvt_textFieldCell;
 @end
 

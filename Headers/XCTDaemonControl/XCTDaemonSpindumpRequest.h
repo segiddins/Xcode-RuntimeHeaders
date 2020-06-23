@@ -16,13 +16,11 @@
     CDUnknownBlockType _completion;
 }
 
-+ (id)latestProtocolVersion;
-+ (id)minimumProtocolVersion;
 - (void).cxx_destruct;
 @property(readonly, copy) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(readonly) XCTSpindumpRequestSpecification *specification; // @synthesize specification=_specification;
 - (void)handleConnectionFailure:(id)arg1;
-- (void)executeWithDaemonProxy:(id)arg1 protocolVersion:(id)arg2;
+- (void)executeWithDaemonProxy:(id)arg1 daemonCapabilities:(id)arg2;
 - (id)initWithCompletion:(CDUnknownBlockType)arg1;
 - (id)initWithSpecification:(id)arg1 completion:(CDUnknownBlockType)arg2;
 

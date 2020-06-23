@@ -31,6 +31,7 @@
     NSMutableArray *_developerPrepErrorsStorage;
     NSMutableArray *_developerPrepWarningsStorage;
     id <DVTCancellable> _watchPowerAssertion;
+    NSString *_cloudDeviceName;
     BOOL _ignored;
     _Bool _deviceHasWritableSystemPartition;
     _Bool _deviceReady;
@@ -71,6 +72,7 @@
 + (id)keyPathsForValuesAffectingCanRename;
 + (id)keyPathsForValuesAffectingDeviceAttached;
 + (id)itemWithPlistRepresentation:(id)arg1;
++ (BOOL)shouldUseRsyncToDownloadCodeCoveragProfilesForApplicationWithBundleID:(id)arg1 containerPath:(id)arg2 isSystemApp:(BOOL)arg3 devicePlatform:(id)arg4 deviceOSVersion:(id)arg5;
 + (id)keyPathsForValuesAffectingSupportedArchitectures;
 + (id)keyPathsForValuesAffectingNativeArchitecture;
 + (id)keyPathsForValuesAffectingUnavailabilityError;
@@ -106,6 +108,10 @@
 @property(retain, nonatomic) DVTDispatchLock *deviceProgressOperationLock; // @synthesize deviceProgressOperationLock;
 @property(retain) DVTDeviceOperation *deviceProgressOperation; // @synthesize deviceProgressOperation;
 @property(retain) NSString *bootArgs; // @synthesize bootArgs;
+- (id)uninstallRootsWithIdentifiers:(id)arg1;
+- (id)installRootsAtLocalPaths:(id)arg1;
+- (id)fetchInstalledRoots;
+- (BOOL)supportsInstalledRoots;
 @property(readonly) DVTConditionInducerSession *conditionInducerSession;
 - (void)_syncDeviceCrashLogsDirectoryWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (BOOL)wantsDeviceOperationActivityReporting;
@@ -154,17 +160,17 @@
 - (void)setCrashLogDirectory:(id)arg1;
 - (id)plistRepresentation;
 - (BOOL)downloadRuntimeProfilesFromDirectories:(id)arg1 forApplicationWithBundleIdentifier:(id)arg2 toDestinationDirectory:(id)arg3 error:(id *)arg4;
-- (id)createRuntimeProfileDirectoryForApplicationWithBundleIdentifier:(id)arg1 error:(id *)arg2;
+- (id)createRuntimeProfileDirectoryForApplicationWithBundleIdentifier:(id)arg1 runnableLocation:(id)arg2 error:(id *)arg3;
 - (BOOL)deferProfileGenerationSetupUntilAfterInstallation;
 - (id)scriptingEnvironment;
 - (id)uncachedOverridingPropertiesForBuildable:(id)arg1 buildParameters:(id)arg2;
 - (id)executionDisplayName;
-- (id)supportedSDKsForBuildable:(id)arg1 buildParameters:(id)arg2 error:(id *)arg3;
+- (id)supportedSDKsForBuildableContext:(id)arg1 buildParameters:(id)arg2 error:(id *)arg3;
 - (BOOL)canBeDefaultDeviceForBuildable:(id)arg1 buildParameters:(id)arg2;
 - (id)displayNameAdditionsWhenUsingArchitecture:(id)arg1 withSDK:(id)arg2;
 - (id)supportedArchitectures;
 - (id)nativeArchitecture;
-- (BOOL)shouldPresentDeviceForBuildable:(id)arg1 buildParameters:(id)arg2 error:(id *)arg3;
+- (BOOL)shouldPresentDeviceForBuildableContext:(id)arg1 buildParameters:(id)arg2 error:(id *)arg3;
 - (id)errorMessageForBuildable:(id)arg1 buildParameters:(id)arg2;
 - (BOOL)deviceSupportsBuildable:(id)arg1 buildParameters:(id)arg2 error:(id *)arg3;
 - (id)supportedDeviceFamilies;
@@ -177,6 +183,7 @@
 - (void)cancelWatchPowerAssertion;
 - (void)takeWatchPowerAssertionName:(id)arg1 details:(id)arg2;
 - (id)unavailabilityError;
+- (id)_cloudDeviceIsProvisioningError;
 - (id)_deviceIsUnpairedError;
 - (long long)directSSHPort;
 - (_Bool)_askForAlternateApplicationIfNeeded:(id *)arg1;
@@ -232,6 +239,7 @@
 - (id)initWithDeviceLocation:(id)arg1 extension:(id)arg2;
 - (void)didFinishRunning;
 - (id)startDebugServerServiceForLaunchSession:(id)arg1;
+- (void)configureFutureDebugService:(id)arg1 forLaunchSession:(id)arg2 withFutureResult:(id)arg3;
 - (id)deviceArbitrationForcedCheckIn;
 - (id)deviceArbitrationCheckIn;
 - (BOOL)installApplicationWithLaunchSession:(id)arg1 error:(id *)arg2;
@@ -251,7 +259,7 @@
 - (BOOL)installForTestBundleWithSession:(id)arg1 error:(id *)arg2;
 - (id)_productsToSendToDeviceForTestBundleLaunchSession:(id)arg1 error:(id *)arg2;
 - (id)_testingFrameworkPathsForLaunchParametersSnapshot:(id)arg1 error:(id *)arg2;
-- (id)_testingToolPathWithError:(id *)arg1;
+- (id)_testingToolPathForLaunchParametersSnapshot:(id)arg1 error:(id *)arg2;
 - (id)_mockObjectsFrameworkPath;
 - (id)_testingSwiftSupportLibraryPathWithError:(id *)arg1;
 - (id)_automationSupportFrameworkPathWithError:(id *)arg1;
@@ -262,7 +270,7 @@
 - (id)applicationForSession:(id)arg1;
 - (_Bool)_copyBackAlternateApplication:(id)arg1 atPath:(id *)arg2 error:(id *)arg3;
 - (id)taskForDeviceCommand:(id)arg1 withArguments:(id)arg2 error:(id *)arg3;
-- (BOOL)_validateRsyncInstallWithError:(id *)arg1;
+- (BOOL)_validateRsyncInstallWithSession:(id)arg1 error:(id *)arg2;
 - (id)_executeUpdateRemoteSSHStatusRequest;
 - (id)_executeEnableRemoteSSHRequest;
 - (id)_executeMakeDirectoryCommandWithPath:(id)arg1;
@@ -307,7 +315,6 @@
 - (void)_installApplicationsImpl:(id)arg1 allowReplacing:(BOOL)arg2 options:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;
 - (void)processAppInstallSet:(id)arg1 appUninstallSet:(id)arg2 installOptions:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;
 - (id)validateApplicationAtPath:(id)arg1 forInstallationToToken:(id)arg2;
-- (BOOL)_checkForARM64SliceAtPath:(id)arg1 executableName:(id)arg2 zipFile:(id)arg3 subpath:(id)arg4;
 - (id)installedApplicationWithBundleIdentifier:(id)arg1;
 - (long long)maxConcurrentTestingProcesses;
 - (id)crashReportsDirectoryPaths;

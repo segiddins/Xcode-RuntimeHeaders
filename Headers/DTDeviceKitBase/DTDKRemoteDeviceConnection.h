@@ -75,6 +75,7 @@
 @property(readonly, copy) NSString *identifier; // @synthesize identifier=_identifier;
 @property __weak id <DTDKRemoteDeviceToken> owner; // @synthesize owner=_owner;
 - (void)cancelInstrumentsConnection;
+- (id)instrumentsConnectionSecured:(id *)arg1;
 - (void)removeConnectionMonitor:(id)arg1;
 - (id)monitorConnection;
 - (void)_createPingTimerIfNecessary;

@@ -13,15 +13,15 @@
 {
     MISSING_TYPE *serviceIdentifier;
     MISSING_TYPE *exportedObject;
-    MISSING_TYPE *xpcConnection;
-    MISSING_TYPE *$__lazy_storage_$_serviceProxy;
+    MISSING_TYPE *serviceProxy;
+    MISSING_TYPE *_connection;
 }
 
 - (void).cxx_destruct;
 - (id)init;
-@property(nonatomic, retain) id <_TtP15XCSourceControl33XCSourceControlXPCServiceProtocol_> serviceProxy;
 @property(nonatomic, readonly) NSXPCConnection *connection;
 - (id)initWithIdentifier:(id)arg1 exportedObject:(id)arg2;
+@property(nonatomic, readonly) id <_TtP15XCSourceControl33XCSourceControlXPCServiceProtocol_> serviceProxy; // @synthesize serviceProxy;
 @property(nonatomic, readonly) id <_TtP15XCSourceControl41XCSourceControlXPCExportedServiceProtocol_> exportedObject; // @synthesize exportedObject;
 @property(nonatomic, readonly) NSString *serviceIdentifier;
 

@@ -13,8 +13,9 @@
     MISSING_TYPE *originalMarkup;
     MISSING_TYPE *name;
     MISSING_TYPE *content;
-    MISSING_TYPE *media;
+    MISSING_TYPE *image;
     MISSING_TYPE *topicReferences;
+    MISSING_TYPE *redirects;
 }
 
 @end

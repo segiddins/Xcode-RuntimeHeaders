@@ -23,6 +23,7 @@
 - (id)codeSigningDictionaryWithAdditionalCSFlags:(unsigned int)arg1 architecture:(id)arg2 error:(id *)arg3;
 - (BOOL)isAppleSigned;
 - (id)initWithFilePath:(id)arg1 error:(id *)arg2;
+- (id)shortDescription;
 
 @end
 

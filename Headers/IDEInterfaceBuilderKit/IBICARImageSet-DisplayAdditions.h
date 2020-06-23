@@ -14,6 +14,7 @@
 + (id)itemsFromOverlayOrnament:(id)arg1;
 + (id)arImagePaths:(id)arg1;
 + (id)itemsFromImageReps:(id)arg1;
+- (id)detachedSlottedAssetRepByAcceptingPasteboardObject:(id)arg1 forRepIdentifier:(id)arg2;
 - (BOOL)applyContentFromDropIndicator:(id)arg1;
 - (id)catalogItemForHostingInContainer:(id)arg1;
 - (id)overviewCapsuleSpecification;

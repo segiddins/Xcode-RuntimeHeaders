@@ -10,5 +10,6 @@
 
 @interface _TtC13IDEFoundation41SigningEditorCapabilityEditingItemManager (IDEFoundation) <IDESigningEditorCapabilityItemEditingConsolidatedContextSourceProviderDelegate>
 - (void)didUpdate:(id)arg1 source:(id)arg2;
+- (void)didUpdate:(id)arg1 configurationToEnabledItems:(id)arg2;
 @end
 

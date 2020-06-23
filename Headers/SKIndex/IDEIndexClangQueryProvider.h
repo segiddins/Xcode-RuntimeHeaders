@@ -69,7 +69,6 @@ __attribute__((visibility("hidden")))
 - (id)processedSymbolsInContext:(id)arg1 initFunction:(CDUnknownBlockType)arg2 visitorFunction:(CDUnknownBlockType)arg3 includeSymbolLocations:(BOOL)arg4 withCurrentFileContentDictionary:(id)arg5 forIndex:(id)arg6;
 - (id)codeDiagnosticsAtLocation:(id)arg1 withCurrentFileContentDictionary:(id)arg2 forIndex:(id)arg3;
 - (id)parsedCodeCommentAtLocation:(id)arg1 withCurrentFileContentDictionary:(id)arg2 forIndex:(id)arg3;
-- (id)_diagnosticItemsFromDiagnosticSet:(void *)arg1 parentDiagnostic:(void *)arg2 location:(id)arg3 forIndex:(id)arg4;
 - (void)libclangCompletionsAtLocation:(id)arg1 withCurrentFileContentDictionary:(id)arg2 receiver:(CDUnknownBlockType)arg3 forIndex:(id)arg4;
 - (id)symbolsMatchingName:(id)arg1 inContext:(id)arg2 withCurrentFileContentDictionary:(id)arg3 forIndex:(id)arg4;
 - (id)_symbolsMatchingName:(id)arg1 forCXCursor:(CDStruct_a94d320b)arg2 cxTU:(struct CXTranslationUnitImpl *)arg3 checkLocation:(id)arg4 forIndex:(id)arg5;
@@ -79,7 +78,7 @@ __attribute__((visibility("hidden")))
 - (id)diagnosticsFromTU:(struct CXTranslationUnitImpl *)arg1 index:(id)arg2;
 - (BOOL)needToBuildASTForCurrentFileContent:(id)arg1;
 - (id)_canonicalPathForFile:(void *)arg1 index:(id)arg2;
-- (id)_canonicalPathForPath:(id)arg1 index:(id)arg2;
+- (id)workingDirectory;
 - (id)compilerASTBuiltProductsDir;
 - (id)compilerASTCommandArguments;
 - (id)pchFile;

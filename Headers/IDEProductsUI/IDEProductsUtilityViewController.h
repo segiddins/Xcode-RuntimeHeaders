@@ -6,7 +6,7 @@
 
 #import <IDEKit/IDEViewController.h>
 
-@class DVTBorderedView, DVTDelayedInvocation, DVTStackView_AppKitAutolayout, NSMutableSet, NSObject, NSScrollView, NSTextField;
+@class DVTBorderedView, DVTDelayedInvocation, DVTStackView_AppKitAutolayout, NSLayoutConstraint, NSMutableSet, NSObject, NSScrollView, NSTextField, NSVisualEffectView;
 @protocol IDEProductsInspectable, IDEProductsInspectableVending;
 
 @interface IDEProductsUtilityViewController : IDEViewController
@@ -15,25 +15,32 @@
     DVTDelayedInvocation *_delayedUpdateLayout;
     NSObject<IDEProductsInspectable> *_inspectable;
     id <IDEProductsInspectableVending> _inspectableVendor;
+    DVTBorderedView *_borderedView;
+    NSVisualEffectView *_contentView;
     DVTBorderedView *_topBorderedView;
     DVTStackView_AppKitAutolayout *_infoPaneStackView;
     NSScrollView *_infoPaneScrollView;
-    DVTBorderedView *_borderedView;
     NSTextField *_typeTextField;
+    NSLayoutConstraint *_scrollViewTopConstraint;
+    NSLayoutConstraint *_inspectableInformationViewHeightConstraint;
 }
 
 + (id)keyPathsForValuesAffectingShouldShowEmptyMessage;
 + (id)utilityPaneExtensionForIdentifier:(id)arg1;
 + (id)utilityExtensionForIdentifier:(id)arg1;
 - (void).cxx_destruct;
+@property __weak NSLayoutConstraint *inspectableInformationViewHeightConstraint; // @synthesize inspectableInformationViewHeightConstraint=_inspectableInformationViewHeightConstraint;
+@property __weak NSLayoutConstraint *scrollViewTopConstraint; // @synthesize scrollViewTopConstraint=_scrollViewTopConstraint;
 @property __weak NSTextField *typeTextField; // @synthesize typeTextField=_typeTextField;
-@property __weak DVTBorderedView *borderedView; // @synthesize borderedView=_borderedView;
 @property __weak NSScrollView *infoPaneScrollView; // @synthesize infoPaneScrollView=_infoPaneScrollView;
 @property __weak DVTStackView_AppKitAutolayout *infoPaneStackView; // @synthesize infoPaneStackView=_infoPaneStackView;
 @property __weak DVTBorderedView *topBorderedView; // @synthesize topBorderedView=_topBorderedView;
+@property __weak NSVisualEffectView *contentView; // @synthesize contentView=_contentView;
+@property __weak DVTBorderedView *borderedView; // @synthesize borderedView=_borderedView;
 @property(retain, nonatomic) id <IDEProductsInspectableVending> inspectableVendor; // @synthesize inspectableVendor=_inspectableVendor;
 @property(retain, nonatomic) NSObject<IDEProductsInspectable> *inspectable; // @synthesize inspectable=_inspectable;
 - (id)_customPaneWithExtension:(id)arg1;
+- (id)_analyticsPointDescriptionPaneWithExtension:(id)arg1;
 - (id)_descriptionPaneWithExtension:(id)arg1;
 - (id)_detailPaneWithExtension:(id)arg1;
 - (id)_doubleButtonPaneWithButtons:(id)arg1;
@@ -44,6 +51,8 @@
 - (void)bindTypeUserDescriptionForKeyPath:(id)arg1;
 @property(readonly, nonatomic) BOOL shouldShowEmptyMessage;
 - (void)primitiveInvalidate;
+- (void)installFullSizeContentViewConstraints;
+- (void)viewDidAppear;
 - (void)loadView;
 
 @end

@@ -20,8 +20,13 @@ __attribute__((visibility("hidden")))
 + (id)builtinIdResolution;
 + (id)addIndexStoreOptionWithPath:(id)arg1 inArray:(id)arg2;
 + (id)appendNewArguments:(id)arg1 inArray:(id)arg2;
-+ (id)substituteNewArgument:(id)arg1 forOldArgument:(id)arg2 inArray:(id)arg3;
-+ (BOOL)invokeCompilerForIndexingWithArguments:(id)arg1 tool:(int)arg2 toolchain:(id)arg3 job:(id)arg4;
++ (id)substituteNewArgument:(id)arg1 forOldArgument:(id)arg2 orOldArgument:(id)arg3 inArray:(id)arg4;
++ (BOOL)invokeCompilerForIndexingWithArguments:(id)arg1 file:(id)arg2 tool:(int)arg3 toolchain:(id)arg4 index:(id)arg5 job:(id)arg6 outStatus:(int *)arg7;
++ (struct CompileTaskResult)_runCompileTaskForExecutable:(id)arg1 arguments:(id)arg2 sysrootEnv:(id)arg3 standardOutput:(id *)arg4 standardError:(id *)arg5 error:(id *)arg6;
++ (id)createTemporaryResponseFileForArguments:(id)arg1;
++ (BOOL)isASTReadErrorInData:(id)arg1;
++ (BOOL)invokeCompilerForIndexingWithArguments:(id)arg1 tool:(int)arg2 toolchain:(id)arg3 job:(id)arg4 outStatus:(int *)arg5;
++ (id)expandResponseFiles:(id)arg1 error:(id *)arg2;
 - (void).cxx_destruct;
 @property(retain, nonatomic) DVTPerformanceMetric *generatorMetric; // @synthesize generatorMetric=_generatorMetric;
 @property(readonly, nonatomic) NSString *source; // @synthesize source=_source;

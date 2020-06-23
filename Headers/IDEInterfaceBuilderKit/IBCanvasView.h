@@ -7,13 +7,14 @@
 #import <DVTStructuredLayoutKit/DVTLayoutView_ML.h>
 
 #import <IDEInterfaceBuilderKit/DVTInvalidation-Protocol.h>
+#import <IDEInterfaceBuilderKit/IBMinimapViewDelegate-Protocol.h>
 #import <IDEInterfaceBuilderKit/IBSelectionOwnerDelegate-Protocol.h>
 #import <IDEInterfaceBuilderKit/NSAccessibilityLayoutArea-Protocol.h>
 
-@class DVTStackBacktrace, IBCanvasBackgroundView, IBCanvasBandSelectionView, IBCanvasFrame, IBCanvasScrollView, IBMutableIdentityDictionary, IBSelectionOwner, NSArray, NSMutableArray, NSMutableDictionary, NSMutableSet, NSSet, NSString, NSValue, NSView;
+@class DVTStackBacktrace, IBCanvasBackgroundView, IBCanvasBandSelectionView, IBCanvasFrame, IBCanvasScrollView, IBMinimapView, IBMutableIdentityDictionary, IBSelectionOwner, NSArray, NSMutableArray, NSMutableDictionary, NSMutableSet, NSSet, NSString, NSValue, NSView;
 @protocol IBCanvasViewDelegate;
 
-@interface IBCanvasView : DVTLayoutView_ML <IBSelectionOwnerDelegate, NSAccessibilityLayoutArea, DVTInvalidation>
+@interface IBCanvasView : DVTLayoutView_ML <IBSelectionOwnerDelegate, NSAccessibilityLayoutArea, IBMinimapViewDelegate, DVTInvalidation>
 {
     long long _trackingAreaUpdateSuppressionCount;
     IBMutableIdentityDictionary *_overlaysPerCanvasFrame;
@@ -38,11 +39,13 @@
     id <IBCanvasViewDelegate> _delegate;
     IBCanvasFrame *_keyCanvasFrame;
     NSValue *_contextMenuFocusLocation;
+    IBMinimapView *_minimapView;
     struct CGSize _layoutPositioningScale;
 }
 
 + (void)initialize;
 - (void).cxx_destruct;
+@property(readonly) IBMinimapView *minimapView; // @synthesize minimapView=_minimapView;
 @property(retain, nonatomic) NSValue *contextMenuFocusLocation; // @synthesize contextMenuFocusLocation=_contextMenuFocusLocation;
 @property(nonatomic) struct CGSize layoutPositioningScale; // @synthesize layoutPositioningScale=_layoutPositioningScale;
 @property(nonatomic) BOOL shrinksToFitFrames; // @synthesize shrinksToFitFrames=_shrinksToFitFrames;
@@ -84,6 +87,15 @@
 - (void)adjustScrollersForCanvasContentSizingAndMovingWhileInvoking:(CDUnknownBlockType)arg1;
 - (void)centerToPoint:(struct CGPoint)arg1;
 - (void)setMagnification:(double)arg1 centeredAtPoint:(struct CGPoint)arg2 animated:(BOOL)arg3;
+- (struct CGRect)viewBoxInVisibleRectForMinimapView:(id)arg1;
+- (struct CGRect)visibleContentRectForMinimapView:(id)arg1;
+- (id)backgroundColorForMinimapView:(id)arg1;
+- (void)minimapView:(id)arg1 scrollPointToVisibleCenterViewportWithoutResizingCanvas:(struct CGPoint)arg2 animate:(BOOL)arg3;
+- (void)minimapView:(id)arg1 zoomRectToVisible:(struct CGRect)arg2 maxMagnification:(double)arg3 shouldCenter:(BOOL)arg4 animate:(BOOL)arg5;
+- (id)editorCanvasFramesForMinimapView:(id)arg1;
+- (struct CGRect)desiredVisibleRectForMinimapView:(id)arg1;
+- (void)minimapViewDidEndGesture:(id)arg1;
+- (void)minimapViewDidStartGestures:(id)arg1;
 - (struct CGPoint)convertFrameSpacePointToAnchorSpacePoint:(struct CGPoint)arg1;
 - (struct CGPoint)convertAnchorSpacePointToFrameSpacePoint:(struct CGPoint)arg1;
 - (void)_updateTrackingAreasWithInvalidCursorRects:(BOOL)arg1;

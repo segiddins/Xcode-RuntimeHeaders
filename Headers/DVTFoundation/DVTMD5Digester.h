@@ -4,16 +4,11 @@
 //  Copyright (C) 1997-2019 Steve Nygard.
 //
 
-#import <DVTFoundation/DVTDataDigester.h>
+#import <DVTFoundation/DVTInsecureMD5Digester.h>
 
-@interface DVTMD5Digester : DVTDataDigester
+@interface DVTMD5Digester : DVTInsecureMD5Digester
 {
-    struct CC_MD5state_st _ctxt;
 }
-
-- (id)digest;
-- (void)updateWithBytes:(const void *)arg1 length:(unsigned long long)arg2;
-- (id)init;
 
 @end
 

@@ -15,6 +15,7 @@
 - (Class)deviceLogsViewControllerClass;
 - (id)additionalSliceViewControllerClasses;
 - (BOOL)showApplicationList;
+- (BOOL)showInstalledRootList;
 
 @end
 

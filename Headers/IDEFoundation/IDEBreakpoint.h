@@ -25,6 +25,7 @@
     BOOL _textInFilterableTextFieldModified;
     BOOL _shouldBeModifiedAfterCreation;
     BOOL _debuggerIdentifierChanged;
+    BOOL _isRuntimeIssue;
     int _breakpointStackSelectionBehavior;
     NSString *_uuid;
     NSString *_displayName;
@@ -46,6 +47,7 @@
 + (id)breakpointForUUID:(id)arg1;
 + (void)initialize;
 - (void).cxx_destruct;
+@property(readonly) BOOL isRuntimeIssue; // @synthesize isRuntimeIssue=_isRuntimeIssue;
 @property(readonly) NSSet *actionClassesToIgnoreAsModified; // @synthesize actionClassesToIgnoreAsModified=_actionClassesToIgnoreAsModified;
 @property(copy) NSString *customStopReasonString; // @synthesize customStopReasonString=_customStopReasonString;
 @property BOOL debuggerIdentifierChanged; // @synthesize debuggerIdentifierChanged=_debuggerIdentifierChanged;

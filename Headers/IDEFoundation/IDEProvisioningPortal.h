@@ -28,8 +28,7 @@
 - (id)errorForMissingProfileData;
 - (id)listTeamsAndRolesWithAccount:(id)arg1 error:(id *)arg2;
 - (id)portalTeamForTeam:(id)arg1 session:(id)arg2 error:(id *)arg3;
-- (id)devicesForPrograms:(id)arg1 session:(id)arg2 team:(id)arg3 error:(id *)arg4;
-- (BOOL)_addDevices:(id)arg1 session:(id)arg2 team:(id)arg3 error:(id *)arg4;
+- (id)devicesWithSession:(id)arg1 team:(id)arg2 error:(id *)arg3;
 - (id)profilesWithSession:(id)arg1 team:(id)arg2 error:(id *)arg3;
 - (id)profilesWithSession:(id)arg1 team:(id)arg2 platform:(id)arg3 sdkVariant:(id)arg4 error:(id *)arg5;
 - (id)inMemoryProfileForPortalProfile:(id)arg1 session:(id)arg2 error:(id *)arg3;

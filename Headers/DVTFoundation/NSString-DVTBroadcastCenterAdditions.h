@@ -104,6 +104,7 @@
 - (BOOL)dvt_isLegalCIdentifier;
 - (BOOL)dvt_isSemanticVersion;
 - (BOOL)dvt_hasLeadingZero;
+- (BOOL)dvt_hasContent;
 - (BOOL)dvt_isNonEmpty;
 - (BOOL)dvt_isEmpty;
 - (id)dvt_stringByEscapingForXML;

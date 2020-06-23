@@ -34,10 +34,10 @@
     BOOL _sizesToFitFixedDimension;
     BOOL _drawsWithActiveLook;
     BOOL _drawsGroupDividers;
-    int _layoutDirection;
     IBStructureAreaDockLabelContainer *_labelPopUpContainer;
     id <IBStructureAreaDockViewDelegate> _delegate;
     IBDockObjectAndGroupPair *_insertionIndicatorPair;
+    unsigned long long _layoutDirection;
     unsigned long long _labelArrowEdge;
     NSDictionary *_targetIdentifiedRepresentedObjects;
     IBDockObjectAndGroupPair *_rolledOverObjectAndGroupPair;
@@ -50,7 +50,7 @@
 @property(retain, nonatomic) IBDockObjectAndGroupPair *rolledOverObjectAndGroupPair; // @synthesize rolledOverObjectAndGroupPair=_rolledOverObjectAndGroupPair;
 @property(copy, nonatomic) NSDictionary *targetIdentifiedRepresentedObjects; // @synthesize targetIdentifiedRepresentedObjects=_targetIdentifiedRepresentedObjects;
 @property(nonatomic) unsigned long long labelArrowEdge; // @synthesize labelArrowEdge=_labelArrowEdge;
-@property(nonatomic) int layoutDirection; // @synthesize layoutDirection=_layoutDirection;
+@property(nonatomic) unsigned long long layoutDirection; // @synthesize layoutDirection=_layoutDirection;
 @property(retain, nonatomic) IBDockObjectAndGroupPair *insertionIndicatorPair; // @synthesize insertionIndicatorPair=_insertionIndicatorPair;
 @property(nonatomic) BOOL drawsGroupDividers; // @synthesize drawsGroupDividers=_drawsGroupDividers;
 @property(nonatomic) BOOL drawsWithActiveLook; // @synthesize drawsWithActiveLook=_drawsWithActiveLook;

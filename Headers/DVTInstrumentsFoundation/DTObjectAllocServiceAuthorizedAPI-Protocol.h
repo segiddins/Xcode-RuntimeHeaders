@@ -10,7 +10,6 @@
 
 @protocol DTObjectAllocServiceAuthorizedAPI <DTXAllowedRPC>
 - (void)stopCollection;
-- (void)startCollectionWithPid:(int)arg1;
 - (NSNumber *)attachToPid:(NSNumber *)arg1 eventsMask:(NSNumber *)arg2;
 - (NSDictionary *)preparedEnvironmentForLaunch:(NSDictionary *)arg1 eventsMask:(NSNumber *)arg2;
 @end

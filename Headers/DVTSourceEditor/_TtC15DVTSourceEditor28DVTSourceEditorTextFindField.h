@@ -4,14 +4,14 @@
 //  Copyright (C) 1997-2019 Steve Nygard.
 //
 
-#import <DVTSourceEditor/DVTSourceEditorPatternSearchField.h>
+#import <DVTUserInterfaceKit/DVTFindPatternSearchField.h>
 
 #import <DVTSourceEditor/_TtP12SourceEditor34SourceEditorTextFindPanelFieldType_-Protocol.h>
 
 @class MISSING_TYPE, _TtC12SourceEditor25SourceEditorTextFindPanel;
 
 __attribute__((visibility("hidden")))
-@interface _TtC15DVTSourceEditor28DVTSourceEditorTextFindField : DVTSourceEditorPatternSearchField <_TtP12SourceEditor34SourceEditorTextFindPanelFieldType_>
+@interface _TtC15DVTSourceEditor28DVTSourceEditorTextFindField : DVTFindPatternSearchField <_TtP12SourceEditor34SourceEditorTextFindPanelFieldType_>
 {
     MISSING_TYPE *panel;
     MISSING_TYPE *insets;

@@ -6,7 +6,27 @@
 
 #import <IDESourceEditor/_TtC15IDESourceEditor18SourceCodeDocument.h>
 
-@interface _TtC15IDESourceEditor18SourceCodeDocument (IDESourceEditor1)
+#import <IDESourceEditor/DVTTextDocumentLocationCharacterRangeConverter-Protocol.h>
+
+@class NSScriptObjectSpecifier;
+
+@interface _TtC15IDESourceEditor18SourceCodeDocument (IDESourceEditor1) <DVTTextDocumentLocationCharacterRangeConverter>
 - (id)insertSourceCodeFrom:(id)arg1;
+- (id)documentLocationFromCharacterRange:(struct _NSRange)arg1;
+- (struct _NSRange)characterRangeFromDocumentLocation:(id)arg1;
+- (struct _NSRange)lineRangeForCharacterRange:(struct _NSRange)arg1;
+- (struct _NSRange)characterRangeForLineRange:(struct _NSRange)arg1;
+- (id)applicableInspectorCategoriesGivenSuggestion:(id)arg1;
+- (void)setSdefSupport_selectedParagraphRange:(id)arg1;
+- (id)sdefSupport_selectedParagraphRange;
+- (void)setSdefSupport_selectedCharacterRange:(id)arg1;
+- (id)sdefSupport_selectedCharacterRange;
+- (void)setSdefSupport_text:(id)arg1;
+- (id)sdefSupport_text;
+- (void)setSdefSupport_notifiesWhenClosing:(BOOL)arg1;
+- (BOOL)sdefSupport_notifiesWhenClosing:(BOOL)arg1;
+- (void)setSdefSupport_contents:(id)arg1;
+- (id)sdefSupport_contents;
+@property(nonatomic, readonly) NSScriptObjectSpecifier *objectSpecifier;
 @end
 

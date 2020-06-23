@@ -13,6 +13,7 @@
 {
     BOOL _highlighted;
     BOOL _removeBottomMargin;
+    BOOL _useLargeControlSize;
     NSString *_buttonTitle;
     NSString *_buttonTitleKeyPath;
     NSString *_buttonEnabledKeyPath;
@@ -20,16 +21,13 @@
     NSButton *_button;
     id <IDEProductsInspectableVending> _vendor;
     NSLayoutConstraint *_bottomMarginConstraint;
-    NSLayoutConstraint *_centeringConstraint;
-    NSLayoutConstraint *_contentHeightConstraint;
 }
 
 - (void).cxx_destruct;
-@property(retain) NSLayoutConstraint *contentHeightConstraint; // @synthesize contentHeightConstraint=_contentHeightConstraint;
-@property(retain) NSLayoutConstraint *centeringConstraint; // @synthesize centeringConstraint=_centeringConstraint;
 @property(retain) NSLayoutConstraint *bottomMarginConstraint; // @synthesize bottomMarginConstraint=_bottomMarginConstraint;
 @property __weak id <IDEProductsInspectableVending> vendor; // @synthesize vendor=_vendor;
 @property(retain) NSButton *button; // @synthesize button=_button;
+@property(nonatomic) BOOL useLargeControlSize; // @synthesize useLargeControlSize=_useLargeControlSize;
 @property(nonatomic) BOOL removeBottomMargin; // @synthesize removeBottomMargin=_removeBottomMargin;
 @property(nonatomic) BOOL highlighted; // @synthesize highlighted=_highlighted;
 @property(retain, nonatomic) NSString *buttonAction; // @synthesize buttonAction=_buttonAction;

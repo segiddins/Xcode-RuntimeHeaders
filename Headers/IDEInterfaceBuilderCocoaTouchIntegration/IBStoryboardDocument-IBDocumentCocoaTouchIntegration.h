@@ -16,6 +16,8 @@
 - (void)unarchiveCocoaTouchDataWithDocumentUnarchiver:(id)arg1;
 - (void)archiveCocoaTouchDataWithDocumentArchiver:(id)arg1;
 @property(copy, nonatomic) IBColor *globalTintColor;
+- (id)globalTintOverrideWarning;
+- (BOOL)shouldShowGlobalTintOverrideWarning;
 - (id)cocoaTouchPlatformAdapter;
 - (void)flattenConnectionsIfNecessary;
 - (void)replaceSystemMenusWithDiffs;

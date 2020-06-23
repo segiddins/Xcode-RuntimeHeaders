@@ -6,7 +6,7 @@
 
 #import <Foundation/NSFormatter.h>
 
-@class NSDate, NSDateFormatter, NSNumberFormatter;
+@class NSDate, NSDateFormatter, NSMeasurementFormatter, NSNumberFormatter;
 
 @interface XREngineeringValueFormatter : NSFormatter
 {
@@ -15,6 +15,7 @@
     NSNumberFormatter *_fpsFormatter;
     NSNumberFormatter *_fixedDecimalFormatter;
     NSDateFormatter *_timeOfDayFormatter;
+    NSMeasurementFormatter *_measurementFormatter;
     BOOL _multiline;
     BOOL _highestResolutionTimeEnabled;
     BOOL _withinNarrative;

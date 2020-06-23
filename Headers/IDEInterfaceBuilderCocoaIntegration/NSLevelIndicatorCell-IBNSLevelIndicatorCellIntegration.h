@@ -30,7 +30,6 @@
 - (id)ibOrderedSnapshotAttributesKeyPaths;
 - (void)setIbInspectedImage:(id)arg1;
 - (id)ibInspectedImage;
-- (BOOL)ibShouldArchiveImage;
 - (BOOL)ibStyleIsRating;
 - (BOOL)ibStyleIsCapacity;
 - (void)setIbInspectedLevelIndicatorStyle:(unsigned long long)arg1;

@@ -16,6 +16,6 @@
 @property(nonatomic, readonly) id <MDLMeshBufferAllocator> allocator;
 @property(nonatomic, readonly) long long length;
 - (MDLMeshBufferMap *)map;
-- (void)fillData:(NSData *)arg1 offset:(long long)arg2;
+- (void)fillData:(NSData *)arg1 offset:(unsigned long long)arg2;
 @end
 

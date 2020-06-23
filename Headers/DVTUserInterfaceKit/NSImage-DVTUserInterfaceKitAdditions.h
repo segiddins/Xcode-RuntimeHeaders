@@ -14,6 +14,9 @@
 + (id)dvt_stackFrameIconForLibraryPath:(id)arg1 hasSymbols:(BOOL)arg2 overrideColor:(id)arg3;
 + (id)dvt_groupLibrarySourceIcon;
 + (id)dvt_navPluginIcon;
++ (id)dvt_incrementalFindGlyphWithStyle:(id)arg1;
++ (id)dvt_toolbarViewUtilitiesAreaButtonIcon;
++ (id)dvt_toolbarViewNavigatorAreaButtonIcon;
 + (id)dvt_recentOnImage;
 + (id)dvt_recentOffImage;
 + (id)dvt_memoryGraphDebuggerIcon;
@@ -24,6 +27,7 @@
 + (id)dvt_downloadArrowDarkIcon;
 + (id)dvt_downloadArrowIcon;
 + (id)dvt_processorUsagePointIcon;
++ (id)dvt_diskWritePointIcon;
 + (id)dvt_crashPointIcon;
 + (id)dvt_archiveIcon;
 + (id)dvt_navSubmoduleIcon;
@@ -37,6 +41,7 @@
 + (id)dvt_navWatchOSApplicationIcon;
 + (id)dvt_navIOSApplicationIcon;
 + (id)dvt_navApplicationIcon;
++ (id)dvt_navApplicationIcon_small;
 + (id)dvt_navLibraryIcon;
 + (id)dvt_navXCFrameworkIcon;
 + (id)dvt_navFrameworkIcon;

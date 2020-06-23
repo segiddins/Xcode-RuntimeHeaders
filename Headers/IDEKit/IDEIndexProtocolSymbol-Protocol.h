@@ -9,6 +9,7 @@
 @class IDEIndexCollection;
 
 @protocol IDEIndexProtocolSymbol <IDEIndexContainerSymbol>
+- (IDEIndexCollection *)implementingSymbols;
 - (IDEIndexCollection *)implementingClasses;
 - (IDEIndexCollection *)subProtocols;
 - (IDEIndexCollection *)properties;

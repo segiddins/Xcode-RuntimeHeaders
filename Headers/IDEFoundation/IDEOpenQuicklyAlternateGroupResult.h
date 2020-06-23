@@ -34,7 +34,7 @@
 - (id)sourceSDKFilePath;
 - (id)location;
 - (BOOL)isSymbolic;
-- (id)updatedResultForQuery:(id)arg1;
+- (id)updatedResultForQuery:(id)arg1 precision:(long long)arg2;
 
 @end
 

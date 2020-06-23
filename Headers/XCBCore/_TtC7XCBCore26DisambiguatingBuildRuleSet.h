@@ -11,6 +11,7 @@
 @interface _TtC7XCBCore26DisambiguatingBuildRuleSet : _TtCs12_SwiftObject
 {
     MISSING_TYPE *rules;
+    MISSING_TYPE *enableDebugActivityLogs;
 }
 
 @end

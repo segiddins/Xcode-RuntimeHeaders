@@ -13,15 +13,19 @@
 
 @interface DBGDataCoordinator : NSObject <DBGDataSourceConnectionDelegate>
 {
+    BOOL _shouldStoreCompletedRequests;
     DBGSnapshotManager *_snapshotManager;
     id <DBGDataSourceConnection> _dataSourceConnection;
     NSMutableArray *_snapshotTransformerStore;
     NSMutableArray *_enqueuedRequests;
     DebugHierarchyRequest *_executingRequest;
+    NSMutableArray *_completedRequests;
 }
 
 + (id)coordinatorWithDataSourceConnection:(id)arg1;
 - (void).cxx_destruct;
+@property(retain) NSMutableArray *completedRequests; // @synthesize completedRequests=_completedRequests;
+@property BOOL shouldStoreCompletedRequests; // @synthesize shouldStoreCompletedRequests=_shouldStoreCompletedRequests;
 @property(retain) DebugHierarchyRequest *executingRequest; // @synthesize executingRequest=_executingRequest;
 @property(retain) NSMutableArray *enqueuedRequests; // @synthesize enqueuedRequests=_enqueuedRequests;
 @property(retain) NSMutableArray *snapshotTransformerStore; // @synthesize snapshotTransformerStore=_snapshotTransformerStore;

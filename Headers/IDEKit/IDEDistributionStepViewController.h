@@ -20,7 +20,7 @@
     NSString *_helpID;
 }
 
-+ (BOOL)skipStepForContext:(id)arg1 assistantDirection:(int)arg2;
++ (BOOL)skipStepForContext:(id)arg1 assistantDirection:(long long)arg2;
 + (Class)correspondingStepClass;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *helpID; // @synthesize helpID=_helpID;
@@ -32,6 +32,7 @@
 @property(readonly) IDEDistributionAssistantWindowController *assistantWindowController; // @synthesize assistantWindowController=_assistantWindowController;
 @property(readonly) IDEDistributionStep *distributionStep; // @synthesize distributionStep=_distributionStep;
 - (void)help:(id)arg1;
+- (void)presentWarnings:(id)arg1;
 - (void)presentErrorAndCancel:(id)arg1;
 @property(readonly) NSSet *providedOutputContextPropertyNames;
 @property(readonly) NSSet *requiredInputContextPropertyNames;

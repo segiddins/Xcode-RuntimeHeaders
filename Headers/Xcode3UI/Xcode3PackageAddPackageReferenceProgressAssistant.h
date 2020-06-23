@@ -51,7 +51,7 @@
 @property(nonatomic) BOOL resolutionComplete; // @synthesize resolutionComplete=_resolutionComplete;
 @property(nonatomic) BOOL hadFatalError; // @synthesize hadFatalError=_hadFatalError;
 - (void)preflightResolutionDidUpdateStatus:(id)arg1 progress:(long long)arg2;
-- (void)preflightResolutionDidCompleteWithPackageName:(id)arg1 products:(id)arg2 logSection:(id)arg3 success:(BOOL)arg4;
+- (void)preflightResolutionDidCompleteWithPackageName:(id)arg1 products:(id)arg2 logSection:(id)arg3 success:(BOOL)arg4 binaryArtifacts:(id)arg5;
 - (id)packageAssistantContext;
 - (BOOL)canGoBack;
 - (BOOL)canGoForward;

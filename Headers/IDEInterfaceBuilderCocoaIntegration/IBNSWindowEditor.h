@@ -6,20 +6,24 @@
 
 #import <IDEInterfaceBuilderKit/IBEditor.h>
 
-#import <IDEInterfaceBuilderCocoaIntegration/NSAnimationDelegate-Protocol.h>
+#import <IDEInterfaceBuilderCocoaIntegration/IBNSWindowEditorViewDelegate-Protocol.h>
 
 @class NSString;
 @protocol DVTInvalidation;
 
-@interface IBNSWindowEditor : IBEditor <NSAnimationDelegate>
+@interface IBNSWindowEditor : IBEditor <IBNSWindowEditorViewDelegate>
 {
     id <DVTInvalidation> resourcesDidUpdateToken;
     BOOL toolbarSheetIsUp;
 }
 
 - (void).cxx_destruct;
+- (id)contentViewControllerForWindowEditorView:(id)arg1;
+- (id)toolbarForWindowEditorView:(id)arg1;
 - (void)resizeFrameViewWithEvent:(id)arg1 fromEditorCanvasFrameKnob:(CDUnion_42e99c75)arg2;
 - (CDStruct_d2b197d1)canvasAlignmentInsetForEditorFrame;
+- (id)calculateActivationHighlightPath;
+- (BOOL)effectiveDrawsActivationDarkening;
 - (BOOL)childEditorShouldDrawActivationDarkening:(id)arg1;
 - (BOOL)isChildToolbarEditor:(id)arg1;
 - (BOOL)canSizeSelectionToFit;
@@ -33,11 +37,11 @@
 - (BOOL)isSimulatingSheet;
 - (BOOL)interceptEvent:(id)arg1;
 - (void)noteDescendant:(id)arg1 didChangeProperty:(id)arg2 fromValue:(id)arg3;
+- (void)rebuildWindowToMimic;
+- (id)buildContentViewControllerForWindow;
 - (id)activeEditor;
-- (void)rebuildToolbar;
 - (void)willClose;
 - (void)didOpen;
-- (id)editorToolbarCounterpart;
 - (id)editedContentView;
 - (struct CGRect)toolbarRectInView:(id)arg1;
 - (id)toolbar;

@@ -15,6 +15,8 @@ __attribute__((visibility("hidden")))
     DVTFilePath *_path;
     DVTFilePath *_storePath;
     IDEIndexingEngine *_engine;
+    BOOL _enableOutOfDateFileWatching;
+    BOOL _enableExplicitOutputUnits;
     BOOL _enableFullStoreVisibility;
     NSObject<IDEIndexGlobalQueryProvider> *_queryProvider;
     struct IndexSystemWrapper _boltDBWrap;
@@ -66,13 +68,15 @@ __attribute__((visibility("hidden")))
 - (BOOL)isUnitOutOfDateWithOutputPath:(id)arg1 dirtyFiles:(id)arg2;
 - (void)_processOutOfDateFiles;
 - (void)_unitIsOutOfDate:(basic_string_a1f69cfb)arg1 mainFilePath:(struct CanonicalFilePath)arg2 outOfDateModTime:(time_point_246828ed)arg3 triggerHint:(shared_ptr_c8050cd8)arg4;
+- (void)removeUnitOutFilePaths:(id)arg1 waitForProcessing:(BOOL)arg2;
+- (void)addUnitOutFilePaths:(id)arg1 waitForProcessing:(BOOL)arg2;
 - (void)close;
 - (void)openReadOnly:(BOOL)arg1 initialDBSize:(unsigned long long)arg2 index:(id)arg3;
 - (void)didLoadWithIndex:(id)arg1;
 - (shared_ptr_971d954e)_getBoltDB;
 @property(readonly, nonatomic) NSArray *errors;
 - (id)init;
-- (id)initWithDatabasePath:(id)arg1 storePath:(id)arg2 engine:(id)arg3 enableFullStoreVisibility:(BOOL)arg4;
+- (id)initWithDatabasePath:(id)arg1 storePath:(id)arg2 engine:(id)arg3 enableOutOfDateFileWatching:(BOOL)arg4 enableExplicitOutputUnits:(BOOL)arg5 enableFullStoreVisibility:(BOOL)arg6;
 
 @end
 

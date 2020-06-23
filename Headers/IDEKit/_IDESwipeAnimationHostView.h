@@ -10,8 +10,6 @@
 {
 }
 
-- (void)updateLayer;
-- (BOOL)wantsUpdateLayer;
 - (BOOL)performKeyEquivalent:(id)arg1;
 - (void)rightMouseDown:(id)arg1;
 - (void)mouseDown:(id)arg1;

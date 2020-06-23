@@ -9,6 +9,7 @@
 @interface IBICModelSet (IBICModelSetDisplayAdditions)
 + (CDStruct_7ddbbeae)capsuleGroupingAttributesForGroupWithPath:(id)arg1;
 - (id)verifyExistenceInCompiledBundle:(id)arg1 forPlatform:(id)arg2;
+- (id)detachedSlottedAssetRepByAcceptingPasteboardObject:(id)arg1 forRepIdentifier:(id)arg2;
 - (id)icon;
 @end
 

@@ -4,22 +4,24 @@
 //  Copyright (C) 1997-2019 Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import <DVTFoundation/DVTInvalidation_NSObject.h>
 
 @class DVTDocumentLocation, DVTFileDataType, DVTSourceControlWorkingCopy, MISSING_TYPE, NSArray, NSDate, NSImage, NSString, NSURL;
 
-@interface _TtC18IDESourceControlUI30SourceControlWorkingCopyHolder : NSObject
+@interface _TtC18IDESourceControlUI30SourceControlWorkingCopyHolder : DVTInvalidation_NSObject
 {
     MISSING_TYPE *workspace;
     MISSING_TYPE *name;
     MISSING_TYPE *identifier;
     MISSING_TYPE *treeBuildingDispatchQueue;
-    MISSING_TYPE *treeBuildingOperationQueue;
     MISSING_TYPE *workingCopy;
     MISSING_TYPE *branchesTreeNode;
     MISSING_TYPE *tagsTreeNode;
     MISSING_TYPE *remotesTreeNode;
     MISSING_TYPE *stashesTreeNode;
+    MISSING_TYPE *personalPullRequestsTreeNode;
+    MISSING_TYPE *openPullRequestsTreeNode;
+    MISSING_TYPE *recentlyClosedPullRequestsTreeNode;
     MISSING_TYPE *contentDocumentLocation;
     MISSING_TYPE *treeCompletion;
     MISSING_TYPE *rootNodes;
@@ -27,9 +29,12 @@
     MISSING_TYPE *cachedCurrentLocationLastUpdatedToken;
     MISSING_TYPE *cachedCurrentStateToken;
     MISSING_TYPE *treeLastBuilt;
+    MISSING_TYPE *hostedAccountsObserver;
     MISSING_TYPE *status;
     MISSING_TYPE *willBuildTree;
     MISSING_TYPE *didBuildTree;
+    MISSING_TYPE *pullRequestTreeBuildTimer;
+    MISSING_TYPE *buildTreeTimer;
 }
 
 + (id)keyPathsForValuesAffectingNavigableItem_childRepresentedObjects;

@@ -17,7 +17,6 @@
 - (void).cxx_destruct;
 - (id)executionContextForDescription:(id)arg1 error:(id *)arg2;
 - (id)contextForLaunchingToolWithDescription:(id)arg1 error:(id *)arg2;
-- (long long)maximumToolsPerDescription;
 
 @end
 

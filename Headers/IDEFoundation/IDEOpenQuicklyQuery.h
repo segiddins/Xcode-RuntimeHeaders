@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class IDEOpenQuicklyQueryContext, IDEOpenQuicklyQueryPattern, IDEOpenQuicklyQueryUserInput;
+@class DVTFuzzyMatchPattern, IDEOpenQuicklyQueryContext, IDEOpenQuicklyQueryUserInput;
 
 @interface IDEOpenQuicklyQuery : NSObject
 {
@@ -18,7 +18,7 @@
 @property(readonly) IDEOpenQuicklyQueryContext *context; // @synthesize context=_context;
 @property(readonly) IDEOpenQuicklyQueryUserInput *userInput; // @synthesize userInput=_userInput;
 - (id)description;
-@property(readonly) IDEOpenQuicklyQueryPattern *pattern;
+@property(readonly) DVTFuzzyMatchPattern *pattern;
 - (id)initWithUserInput:(id)arg1 context:(id)arg2;
 
 @end

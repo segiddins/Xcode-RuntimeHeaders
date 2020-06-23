@@ -20,6 +20,7 @@
 
 + (id)detailAreaGroupPathForVersion:(id)arg1 idiom:(id)arg2 orientation:(id)arg3 extent:(id)arg4;
 + (id)orderedComponentClasses;
++ (id)genesisSlotsForSlots:(id)arg1;
 + (id)slotWithIdiom:(id)arg1 subtype:(id)arg2 scale:(id)arg3 deviceOrientation:(id)arg4 extent:(id)arg5 minimumSystemVersion:(id)arg6;
 + (Class)assetRepClass;
 + (Class)assetSetClass;

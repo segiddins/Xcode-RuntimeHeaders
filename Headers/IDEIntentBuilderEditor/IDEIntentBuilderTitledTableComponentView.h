@@ -6,9 +6,16 @@
 
 #import <IDEIntentBuilderEditor/IDEIntentBuilderTableComponentView.h>
 
+@class NSLayoutConstraint;
+
 @interface IDEIntentBuilderTitledTableComponentView : IDEIntentBuilderTableComponentView
 {
+    NSLayoutConstraint *_tableContentViewBottomConstraint;
 }
+
+- (void).cxx_destruct;
+@property __weak NSLayoutConstraint *tableContentViewBottomConstraint; // @synthesize tableContentViewBottomConstraint=_tableContentViewBottomConstraint;
+- (void)setIncludesBottomBar:(BOOL)arg1;
 
 @end
 

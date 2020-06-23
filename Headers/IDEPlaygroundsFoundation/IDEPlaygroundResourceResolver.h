@@ -10,6 +10,7 @@
 {
 }
 
++ (id)resolvedResourceDictionaryForPrimaryResourceDirectoryPath:(id)arg1 parentResourceDirectory:(id)arg2 error:(id *)arg3;
 + (id)resolvedResourcePathsForContext:(id)arg1 error:(id *)arg2;
 
 @end

@@ -17,11 +17,13 @@
     NSNumber *_fixedAlignmentWidth;
     NSNumber *_maximumAlignmentWidth;
     NSNumber *_fixedFrameHeight;
+    NSNumber *_explicitAllowsVibrancy;
 }
 
 + (Class)cellClass;
 + (void)initialize;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSNumber *explicitAllowsVibrancy; // @synthesize explicitAllowsVibrancy=_explicitAllowsVibrancy;
 @property(copy, nonatomic) NSNumber *fixedFrameHeight; // @synthesize fixedFrameHeight=_fixedFrameHeight;
 @property(copy, nonatomic) NSNumber *maximumAlignmentWidth; // @synthesize maximumAlignmentWidth=_maximumAlignmentWidth;
 @property(copy, nonatomic) NSNumber *fixedAlignmentWidth; // @synthesize fixedAlignmentWidth=_fixedAlignmentWidth;
@@ -31,6 +33,7 @@
 - (double)frameWidthForAlignmentWidth:(double)arg1;
 - (void)dvt_configureSubviewsBeforeSubviewLayout;
 - (void)textDidChange:(id)arg1;
+- (BOOL)allowsVibrancy;
 - (void)setFont:(id)arg1;
 - (void)setFormatter:(id)arg1;
 - (void)setBaseWritingDirection:(long long)arg1;

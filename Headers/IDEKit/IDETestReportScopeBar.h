@@ -60,6 +60,7 @@
 @property __weak DVTScopeBarButton *scopeBarAllButton; // @synthesize scopeBarAllButton=_scopeBarAllButton;
 @property __weak DVTSearchField *filterField; // @synthesize filterField=_filterField;
 - (void)setBaselinesAction:(id)arg1;
+- (void)updateScopeButtonTitlesToIncludeCountsFromTestGroups:(id)arg1;
 - (void)updateProgressBarValue:(double)arg1;
 @property(readonly, copy, nonatomic) NSString *filterFieldStringValue;
 - (void)hideBaselinesButton:(BOOL)arg1;

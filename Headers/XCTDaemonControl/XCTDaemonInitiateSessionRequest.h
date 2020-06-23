@@ -7,28 +7,29 @@
 #import <objc/NSObject.h>
 
 #import <XCTDaemonControl/XCTConfigurableDebugLogger-Protocol.h>
-#import <XCTDaemonControl/XCTDaemonRequest-Protocol.h>
 
-@class NSString, NSUUID;
+@class NSString, NSUUID, XCTCapabilities;
 @protocol XCTDebugLogDelegate;
 
-@interface XCTDaemonInitiateSessionRequest : NSObject <XCTDaemonRequest, XCTConfigurableDebugLogger>
+@interface XCTDaemonInitiateSessionRequest : NSObject <XCTConfigurableDebugLogger>
 {
     id <XCTDebugLogDelegate> _logDelegate;
     NSUUID *_sessionIdentifier;
+    XCTCapabilities *_IDECapabilities;
     CDUnknownBlockType _completion;
 }
 
-+ (id)minimumProtocolVersion;
++ (id)daemonCapabilitiesForLegacyProtocolVersion:(unsigned long long)arg1;
 + (id)currentProcessDisplayPath;
 + (id)clientProcessUniqueIdentifier;
 - (void).cxx_destruct;
 @property(readonly) CDUnknownBlockType completion; // @synthesize completion=_completion;
+@property(readonly) XCTCapabilities *IDECapabilities; // @synthesize IDECapabilities=_IDECapabilities;
 @property(readonly) NSUUID *sessionIdentifier; // @synthesize sessionIdentifier=_sessionIdentifier;
 @property __weak id <XCTDebugLogDelegate> logDelegate; // @synthesize logDelegate=_logDelegate;
-- (void)handleConnectionFailure:(id)arg1;
-- (void)executeWithDaemonProxy:(id)arg1 protocolVersion:(id)arg2;
-- (id)initWithSessionIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_attemptVersion9APIWithDaemonProxy:(id)arg1;
+- (void)executeWithDaemonProxy:(id)arg1;
+- (id)initWithSessionIdentifier:(id)arg1 capabilities:(id)arg2 completion:(CDUnknownBlockType)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

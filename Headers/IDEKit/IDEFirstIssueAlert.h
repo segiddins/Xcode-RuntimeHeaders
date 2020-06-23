@@ -21,7 +21,6 @@
 - (id)initWithPropertyList:(id)arg1;
 - (id)propertyList;
 - (id)valuesForProperty:(id)arg1;
-- (id)findLogInItem:(id)arg1;
 - (id)findLogInWorkspace:(id)arg1;
 - (id)findIssue:(id)arg1 inItem:(id)arg2;
 - (id)destinations;

@@ -38,6 +38,7 @@
 
 + (id)displayOrderedCatalogItemsForDetailViewFromItems:(id)arg1;
 + (void)configureStateSavingObjectPersistenceByName:(id)arg1;
++ (BOOL)supportsFullSizeContent;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) IBICCatalogSlicingController *slicingController; // @synthesize slicingController=_slicingController;
 @property(readonly, nonatomic) IBICCatalogOverviewController *overviewController; // @synthesize overviewController=_overviewController;
@@ -66,7 +67,6 @@
 - (void)copy:(id)arg1;
 - (void)paste:(id)arg1;
 - (void)pasteItems:(BOOL)arg1;
-- (void)setupEditorMenu:(id)arg1;
 - (BOOL)validateMenuItem:(id)arg1;
 - (BOOL)validateUserInterfaceItem:(id)arg1;
 - (BOOL)canPerformDuplicateWithActionContext:(id)arg1;
@@ -75,7 +75,6 @@
 - (BOOL)canPerformCopyWithActionContext:(id)arg1;
 - (BOOL)validateDeviceSlotMenuItem:(id)arg1 actionContext:(id)arg2;
 - (id)imageSetsForActionContext:(id)arg1;
-- (void)convertDarkSuffixedAssets:(id)arg1;
 - (void)openImageCatalogItemsInExternalEditor:(id)arg1;
 - (void)showImageCatalogItemsInFinder:(id)arg1;
 - (void)removeImageCatalogItemsBasedOnSelectionContext:(id)arg1;
@@ -86,7 +85,6 @@
 - (void)setCurrentDetailController:(id)arg1;
 - (id)startingLocationForFindBar:(id)arg1 findingBackwards:(BOOL)arg2;
 - (void)dvtFindBar:(id)arg1 didUpdateCurrentResult:(id)arg2;
-- (BOOL)canConvertDarkSuffixedAssets;
 - (BOOL)canImportImageCatalogContentWithActionContext:(id)arg1;
 - (BOOL)canRemoveItemsWithActionContext:(id)arg1;
 - (BOOL)canOpenImageCatalogItemsInExternalEditorWithActionContext:(id)arg1;
@@ -132,6 +130,7 @@
 - (void)revertStateWithDictionary:(id)arg1;
 - (void)setStateToken:(id)arg1;
 - (void)viewWillUninstall;
+- (void)setFullSizeContentInsets:(struct NSEdgeInsets)arg1;
 - (void)viewDidInstall;
 - (BOOL)automaticallyInvalidatesChildViewControllers;
 - (void)primitiveInvalidate;

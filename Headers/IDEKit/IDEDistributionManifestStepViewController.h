@@ -15,7 +15,7 @@
 }
 
 + (id)keyPathsForValuesAffectingCanGoNext;
-+ (BOOL)skipStepForContext:(id)arg1 assistantDirection:(int)arg2;
++ (BOOL)skipStepForContext:(id)arg1 assistantDirection:(long long)arg2;
 - (void).cxx_destruct;
 @property BOOL wantsAssetPackManifestURL; // @synthesize wantsAssetPackManifestURL=_wantsAssetPackManifestURL;
 @property __weak NSLayoutConstraint *centeredViewHeightConstraint; // @synthesize centeredViewHeightConstraint=_centeredViewHeightConstraint;

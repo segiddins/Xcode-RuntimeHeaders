@@ -41,7 +41,6 @@
     MISSING_TYPE *comparisonEditorObservingToken;
     MISSING_TYPE *selectedFilePathsObservingToken;
     MISSING_TYPE *keyEditorObservingToken;
-    MISSING_TYPE *outputSelectionObservingToken;
     MISSING_TYPE *loadPathsOperation;
     MISSING_TYPE *primaryActionOperation;
     MISSING_TYPE *secondaryActionOperation;

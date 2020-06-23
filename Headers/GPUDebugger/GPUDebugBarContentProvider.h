@@ -13,12 +13,9 @@ __attribute__((visibility("hidden")))
 {
     GPUDebuggingAddition *_currentDebuggingAddition;
     DVTObservingToken *_debuggingAdditionsObservation;
-    DVTObservingToken *_debugStateObserverToken;
-    BOOL _prefersDebugBarToAlwaysBeShown;
 }
 
 - (void).cxx_destruct;
-- (BOOL)prefersDebugBarToAlwaysBeShown;
 @property(retain) GPUDebuggingAddition *currentDebuggingAddition; // @synthesize currentDebuggingAddition=_currentDebuggingAddition;
 - (void)willBeDetachedFromDebugBar:(id)arg1;
 - (void)wasAttachedToDebugBar:(id)arg1;

@@ -17,7 +17,6 @@
     unsigned int _coreCount;
     long long _triggerCount;
     unsigned int *_triggerIDs;
-    NSMutableArray *_metadataByTriggerIndex;
 }
 
 - (void).cxx_destruct;

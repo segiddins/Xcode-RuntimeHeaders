@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
     struct TileMetrics _tileMetrics;
     struct CGPath *_defaultColorPath;
     struct unordered_map<NSColor *, CGPath *, std::__1::hash<NSColor *>, std::__1::equal_to<NSColor *>, std::__1::allocator<std::__1::pair<NSColor *const, CGPath *>>> _paths;
+    struct unordered_map<NSColor *, CGPath *, std::__1::hash<NSColor *>, std::__1::equal_to<NSColor *>, std::__1::allocator<std::__1::pair<NSColor *const, CGPath *>>> _borderPaths;
     struct unordered_map<NSColor *, CGColor *, std::__1::hash<NSColor *>, std::__1::equal_to<NSColor *>, std::__1::allocator<std::__1::pair<NSColor *const, CGColor *>>> _resolvedColors;
     NSMutableDictionary *_stringsDictionary;
     NSMutableArray *_clippableStringsArray;
@@ -48,7 +49,7 @@ __attribute__((visibility("hidden")))
 - (void)addArrayOfIntervalValues:(const long long *)arg1 colors:(const id *)arg2 count:(unsigned int)arg3 span:(struct Span)arg4;
 - (void)addIntervalValue:(long long)arg1 color:(id)arg2 secondaryColor:(id)arg3 icon:(id)arg4 span:(struct Span)arg5;
 - (void)addCenteredCircleAtPt:(double)arg1 color:(id)arg2;
-- (void)addCapsuleShapeInSpan:(struct Span)arg1 color:(id)arg2;
+- (void)addCapsuleShapeInSpan:(struct Span)arg1 color:(id)arg2 forceCompression:(BOOL)arg3;
 - (void)addEventIcon:(id)arg1 origin:(double)arg2 multiplicity:(unsigned int)arg3;
 - (void)addPointValue:(long long)arg1 color:(id)arg2 position:(double)arg3;
 - (void)dealloc;

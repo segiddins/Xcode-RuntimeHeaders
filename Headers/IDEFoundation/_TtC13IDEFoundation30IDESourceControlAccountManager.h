@@ -20,7 +20,6 @@
     MISSING_TYPE *_accounts;
     MISSING_TYPE *sourceControlManager;
     MISSING_TYPE *userDefaults;
-    MISSING_TYPE *accountMigrator;
     MISSING_TYPE *isLoadingHostedAccounts;
     MISSING_TYPE *accountsMutationLock;
     MISSING_TYPE *queue;
@@ -35,8 +34,11 @@
 - (void)loadHostedAccounts;
 @property(nonatomic, readonly) NSArray *hostedAccounts;
 - (void)updateUserDefaults;
+- (void)remove:(id)arg1 deleteFromKeychain:(BOOL)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)remove:(id)arg1 deleteFromKeychain:(BOOL)arg2;
+- (void)remove:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)removeAccount:(id)arg1;
+- (void)add:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)addAccount:(id)arg1;
 - (id)existingAccountLikeAccount:(id)arg1 addingIfNew:(BOOL)arg2;
 - (id)existingAccountForRepository:(id)arg1 authenticationStrategy:(id)arg2 createIfNeeded:(BOOL)arg3;
@@ -45,6 +47,7 @@
 - (void)accountChanged:(id)arg1 previousUsername:(id)arg2;
 - (id)initWithSavedAccounts:(BOOL)arg1 sourceControlManager:(id)arg2 credentialsManager:(id)arg3 userDefaults:(id)arg4;
 - (id)initWithSavedAccounts:(BOOL)arg1 sourceControlManager:(id)arg2;
+- (id)initWithUserDefaults:(id)arg1;
 @property(nonatomic, readonly) NSArray *accounts;
 @property(nonatomic, readonly) NSArray *knownRepositories;
 

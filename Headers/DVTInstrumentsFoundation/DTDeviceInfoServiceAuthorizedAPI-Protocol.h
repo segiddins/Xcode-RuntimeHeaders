@@ -9,10 +9,6 @@
 @class NSArray, NSData, NSDictionary, NSNumber, NSSet, NSString;
 
 @protocol DTDeviceInfoServiceAuthorizedAPI <DTXAllowedRPC>
-- (NSSet *)netstatRouteAttributes;
-- (NSSet *)netstatUDPAttributes;
-- (NSSet *)netstatTCPAttributes;
-- (NSSet *)netstatCountsAttributes;
 - (NSSet *)sysmonCoalitionAttributes;
 - (NSSet *)sysmonSystemAttributes;
 - (NSSet *)sysmonProcessAttributes;
@@ -24,6 +20,7 @@
 - (NSDictionary *)iconDescriptionFileForAppPath:(NSString *)arg1;
 - (NSArray *)directoryListingForPath:(NSString *)arg1;
 - (NSDictionary *)symbolicatorSignaturesForExpiredPids;
+- (void)enableExpiredPidTracking:(NSNumber *)arg1;
 - (void)unregisterSignatureTrackingForPid:(NSNumber *)arg1;
 - (NSData *)symbolicatorSignatureForPid:(NSNumber *)arg1 trackingSelector:(NSString *)arg2;
 - (NSString *)machKernelName;

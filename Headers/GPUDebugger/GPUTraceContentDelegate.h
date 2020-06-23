@@ -29,6 +29,9 @@ __attribute__((visibility("hidden")))
     BOOL _shaderEditContinueActive;
     id <DVTCancellable> _uiControllerObserver;
     id <DVTCancellable> _sessionStateObserver;
+    id <NSObject> _summaryNotificationObserver;
+    id <NSObject> _openCountersNotificationObserver;
+    id <NSObject> _openMemoryViewerNotificationObserver;
     id <NSObject> _depedencyGraphNotificationObserver;
     id <NSObject> _scrubberNotificationObserver;
     id <NSObject> _shaderEditContinueBeginObserver;
@@ -38,6 +41,7 @@ __attribute__((visibility("hidden")))
     id <NSObject> _shaderDebuggerSessionSelectedItemDidChangeObserver;
     id <NSObject> _counterGraphSelectedItemDidChangeObserver;
     id <NSObject> _memoryReportRevealInDebugNavigatorObserver;
+    id <NSObject> _pixelHistorySelectedItemDidChangeObserver;
     GPUNavigableItemFilteringCoordinator *_filteringCoordinator;
     GPUNavigatorFilterControlBar *_filterControlBar;
     NSArray *_filterMatchStrings;
@@ -47,7 +51,6 @@ __attribute__((visibility("hidden")))
     NSTrackingArea *_trackArea;
     BOOL _mouseInside;
     BOOL _thumbnailDisplay;
-    BOOL _thumbnailTooltipDisplay;
     GPUTraceDisplayableItem *_previousDisplay;
     BOOL _windowWasAcceptingMouseEvents;
     unsigned long long _previousTraceOutlineMode;
@@ -68,10 +71,10 @@ __attribute__((visibility("hidden")))
 @property(readonly) IDEDebugSession *debugSession; // @synthesize debugSession=_debugSession;
 @property(readonly) IDEDebugNavigator *debugNavigator; // @synthesize debugNavigator=_debugNavigator;
 - (void)_runShaderProfiler:(id)arg1;
-- (id)_memoryGaugeLocationWithLaunchSession:(id)arg1;
+- (id)_summaryGaugeLocationWithLaunchSession:(id)arg1;
+- (id)_memoryGaugeLocationWithLaunchSession:(id)arg1 addToGaugeLocations:(BOOL)arg2;
 - (id)_countersGaugeLocationWithLaunchSession:(id)arg1;
 - (id)_FPSGaugeLocationWithLaunchSession:(id)arg1;
-- (void)_updateShaderCallStackInfo;
 - (void)_addSelfAndDescendentArchRepsFor:(id)arg1 archReps:(id)arg2;
 - (void)_revealInGPUGauge:(id)arg1;
 - (void)_revealInIssueNavigator:(id)arg1;
@@ -79,6 +82,7 @@ __attribute__((visibility("hidden")))
 - (void)_showAPIDoc:(id)arg1;
 - (id)_outlineItemForClickOrSelection;
 - (id)dataSourcesForNavigationProcessHeader;
+- (unsigned long long)_memoryFootprintSizeForDataSource:(id)arg1;
 - (id)trayCellsForProcessHeader;
 - (void)filterTokenFieldController:(id)arg1 tokensDidUpdate:(id)arg2 editingString:(id)arg3 globalOperator:(int)arg4;
 - (id)_highlightEnabledFilterIDs;
@@ -138,23 +142,13 @@ __attribute__((visibility("hidden")))
 - (void)_generateFilterItemsForExecutionHistoryItemWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)registerTableCellViewsWithOutlineView:(id)arg1;
 - (id)tableCellViewForRepresentedObject:(id)arg1 withOutlineView:(id)arg2;
-- (id)shaderExecutionHistoryItemTableCellViewWithOutlineView:(id)arg1;
-- (id)relatedDisplayablesTableCellViewWithOutlineView:(id)arg1;
-- (id)commandEncoderHeaderTableCellViewWithOutlineView:(id)arg1;
-- (id)commandBufferHeaderTableCellViewWithOutlineView:(id)arg1;
-- (id)contextHeaderTableCellViewWithOutlineView:(id)arg1;
-- (id)standardOneLineTableCellViewForIdentifier:(id)arg1 withOutlineView:(id)arg2;
-- (id)displayableProgramOrShaderTableCellViewWithOutlineView:(id)arg1;
-- (id)displayableItemTableCellViewWithOutlineView:(id)arg1;
 - (id)postTessellationVertexThreadPickerTableCellViewForRepresentedObject:(id)arg1 withOutlineView:(id)arg2;
 - (id)fragmentThreadPickerTableCellViewForRepresentedObject:(id)arg1 withOutlineView:(id)arg2;
 - (id)vertexThreadPickerTableCellViewForRepresentedObject:(id)arg1 withOutlineView:(id)arg2;
 - (id)kernelThreadPickerTableCellViewForRepresentedObject:(id)arg1 withOutlineView:(id)arg2;
-- (void)addSubtitleStatusViewToTableCellView:(id)arg1;
-- (void)addSeverityStatusViewToTableCellView:(id)arg1;
-- (id)markerGroupTableCellViewWithOutlineView:(id)arg1;
 - (void)willDisplayCell:(id)arg1 forRepresentedObject:(id)arg2 item:(id)arg3;
 - (void)_selectOutlineItem:(id)arg1 openLocation:(BOOL)arg2;
+- (void)_expandToOutlineItem:(id)arg1 makeSelection:(BOOL)arg2 openLocation:(BOOL)arg3;
 - (BOOL)_navigatorFirstShownWithNoSelectedItems;
 - (void)_updateDebugNavigatorForShaderDebuggerSession:(id)arg1;
 - (void)_onShaderEditContinueNotificationReceived:(id)arg1;
@@ -162,15 +156,14 @@ __attribute__((visibility("hidden")))
 - (void)_handleDebuggingAdditionUIControllerCreated:(id)arg1;
 - (void)debugNavigatorViewWillUninstall;
 - (void)debugNavigatorViewDidInstall;
+@property(readonly) BOOL prefersStrongSelection;
 @property(readonly) NSString *associatedProcessUUID;
 - (id)processNavigableItem;
 - (id)workspaceTabController;
 - (void)mouseExited:(id)arg1;
 - (void)mouseMoved:(id)arg1;
 - (void)mouseEntered:(id)arg1;
-- (void)_resetTooltip;
 - (void)_resetHover;
-- (void)_thumbnailTooltip;
 - (void)_thumbnailHover;
 - (double)_thumbnailHoverDelay;
 - (double)_thumbnailTooltipDelay;
@@ -192,7 +185,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) DVTStackBacktrace *invalidationBacktrace;
-@property(readonly) BOOL prefersStrongSelection;
 @property(readonly) Class superclass;
 @property(readonly, nonatomic, getter=isValid) BOOL valid;
 

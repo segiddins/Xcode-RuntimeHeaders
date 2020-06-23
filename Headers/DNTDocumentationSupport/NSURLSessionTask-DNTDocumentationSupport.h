@@ -6,8 +6,6 @@
 
 #import <Foundation/NSURLSessionTask.h>
 
-#import <DNTDocumentationSupport/_TtP23DNTDocumentationSupport23ProgressiveDownloadTask_-Protocol.h>
-
-@interface NSURLSessionTask (DNTDocumentationSupport) <_TtP23DNTDocumentationSupport23ProgressiveDownloadTask_>
+@interface NSURLSessionTask (DNTDocumentationSupport)
 @end
 

@@ -6,9 +6,11 @@
 
 #import <objc/NSObject.h>
 
+#import <IDEFoundation/DVTXMLUnarchiving-Protocol.h>
+
 @class MISSING_TYPE, NSString;
 
-@interface _TtC13IDEFoundation25IDEDeviceAppDataReference : NSObject
+@interface _TtC13IDEFoundation25IDEDeviceAppDataReference : NSObject <DVTXMLUnarchiving>
 {
     MISSING_TYPE *resolvedPath;
     MISSING_TYPE *appDataBundleId;
@@ -20,6 +22,18 @@
 @property(nonatomic, copy) NSString *appDataDownloadDate;
 @property(nonatomic, copy) NSString *appDataBundleId;
 @property(nonatomic, copy) NSString *resolvedPath;
+- (void)dvt_encodeRelationshipsWithXMLArchiver:(id)arg1 version:(id)arg2;
+- (void)setAppDataDownloadDateFromUTF8String:(char *)arg1 fromXMLUnarchiver:(id)arg2;
+- (void)setAppDataBundleIdFromUTF8String:(char *)arg1 fromXMLUnarchiver:(id)arg2;
+- (void)setResolvedPathFromUTF8String:(char *)arg1 fromXMLUnarchiver:(id)arg2;
+- (void)dvt_encodeAttributesWithXMLArchiver:(id)arg1 version:(id)arg2;
+- (id)initFromXMLUnarchiver:(id)arg1 archiveVersion:(float)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

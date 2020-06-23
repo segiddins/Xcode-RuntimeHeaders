@@ -21,6 +21,7 @@
 + (id)_lastMigrationAttributeForContext:(id)arg1 error:(id *)arg2;
 + (id)_timelineScrubberEnabledAttributeForContext:(id)arg1 error:(id *)arg2;
 + (id)_executeOnSourceChangeAttributeForContext:(id)arg1 error:(id *)arg2;
++ (id)_buildActiveSchemeAttributeForContext:(id)arg1 error:(id *)arg2;
 + (id)_displayModeToggleAttributeForContext:(id)arg1 error:(id *)arg2;
 + (id)_autoTerminationDelayAttributeForContext:(id)arg1 error:(id *)arg2;
 + (id)_allowsResetAttributeForContext:(id)arg1 error:(id *)arg2;

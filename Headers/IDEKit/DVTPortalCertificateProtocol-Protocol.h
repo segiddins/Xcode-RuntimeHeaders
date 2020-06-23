@@ -4,13 +4,13 @@
 //  Copyright (C) 1997-2019 Steve Nygard.
 //
 
-@class DVTPortalCertificateType, DVTPortalTeam, DVTSigningCertificate, NSDate, NSString;
+@class DVTPortalCertificateType, DVTPortalTeam, DVTSigningCertificate, DVTSigningCertificateSerialNumber, NSDate, NSString;
 @protocol DVTServicesSession;
 
 @protocol DVTPortalCertificateProtocol
 @property(readonly, nonatomic) NSString *creatorEmail;
 @property(readonly, nonatomic) NSString *creatorName;
-@property(readonly, copy, nonatomic) NSString *serialNumber;
+@property(readonly, copy, nonatomic) DVTSigningCertificateSerialNumber *serialNumber;
 @property(readonly, nonatomic, getter=isExpired) BOOL expired;
 @property(readonly, copy, nonatomic) NSDate *expirationDate;
 @property(readonly, nonatomic) DVTPortalCertificateType *portalCertificateType;

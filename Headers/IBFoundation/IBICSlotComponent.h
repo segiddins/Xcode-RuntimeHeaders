@@ -23,9 +23,12 @@
     double _displayOrder;
 }
 
++ (id)effectiveValueInSlot:(id)arg1;
 + (id)valueFromFileName:(id)arg1 inRange:(struct _NSRange *)arg2 returningDefaultValue:(BOOL)arg3;
 + (id)identifierFromFileName:(id)arg1 inRange:(struct _NSRange *)arg2;
 + (id)fallbackContentsJSONKeys;
++ (id)createDynamicComponentWithIdentifier:(id)arg1;
++ (BOOL)createsComponentsDynamically;
 + (id)displayName;
 + (id)descriptionKey;
 + (id)contentsJSONKey;

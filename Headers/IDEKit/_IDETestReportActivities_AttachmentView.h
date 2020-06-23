@@ -8,43 +8,41 @@
 
 #import <IDEKit/NSMenuDelegate-Protocol.h>
 
-@class NSAttributedString, NSButton, NSFileManager, NSString, _IDETestReportActivities_TableCellView;
+@class NSButton, NSString;
+@protocol _IDETestReportActivities_AttachmentView_DataSource;
 
 @interface _IDETestReportActivities_AttachmentView : NSView <NSMenuDelegate>
 {
-    NSFileManager *_fm;
-    NSAttributedString *_attachmentAttString;
-    NSButton *_indicatorButton;
     BOOL _showIndicator;
-    unsigned long long _attachmentsCount;
     NSButton *_attachmentButton;
-    _IDETestReportActivities_TableCellView *_tableViewCell;
-    long long _backgroundStyle;
+    id <_IDETestReportActivities_AttachmentView_DataSource> _dataSource;
+    NSButton *_indicatorButton;
 }
 
 - (void).cxx_destruct;
-@property(nonatomic) long long backgroundStyle; // @synthesize backgroundStyle=_backgroundStyle;
-@property(nonatomic) BOOL showIndicator; // @synthesize showIndicator=_showIndicator;
-@property __weak _IDETestReportActivities_TableCellView *tableViewCell; // @synthesize tableViewCell=_tableViewCell;
+@property(retain, nonatomic) NSButton *indicatorButton; // @synthesize indicatorButton=_indicatorButton;
+@property(nonatomic) __weak id <_IDETestReportActivities_AttachmentView_DataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(retain, nonatomic) NSButton *attachmentButton; // @synthesize attachmentButton=_attachmentButton;
-@property(nonatomic) unsigned long long attachmentsCount; // @synthesize attachmentsCount=_attachmentsCount;
+@property(nonatomic) BOOL showIndicator; // @synthesize showIndicator=_showIndicator;
 - (void)menuDidClose:(id)arg1;
 - (void)menuWillOpen:(id)arg1;
 - (void)quickLookFirstActivityInAttachment:(id)arg1;
 - (void)quickLookAllActivitiesInAttachment:(id)arg1;
-- (void)saveItem:(id)arg1;
 - (void)_saveItemAtPath:(id)arg1;
+- (void)saveItem:(id)arg1;
 - (id)activitesCellView;
 - (void)saveAll:(id)arg1;
+- (id)_attachmentsMenuSecondaryAttributedStringWithText:(id)arg1;
+- (id)_attachmentsMenuStandardAttributedStringWithText:(id)arg1;
+- (id)_attachmentsMenuSaveButtonTextWithAttachmentsSize:(long long)arg1 numberOfAttachments:(unsigned long long)arg2;
 - (id)attachmentsMenu;
 - (id)attachments;
 - (id)accessibilityIdentifier;
 - (id)accessibilityRole;
 - (BOOL)isAccessibilityElement;
 - (void)mouseDown:(id)arg1;
-- (void)layoutViews;
+- (id)configuredButtonWithImage:(id)arg1;
 - (void)awakeFromNib;
-- (id)formatter;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -25,18 +25,20 @@
     NSArray *_validEditorCategories;
     NSString *_emptyContentString;
     BOOL _showRelatedItemsControl;
-    BOOL _showNavBarHistoryStepperControls;
+    BOOL _showHistoryStepperControls;
     BOOL _showSiblingStepperControls;
     BOOL _showMiniIssueNavigators;
+    BOOL _showNavBarHistoryStepperControls;
 }
 
 + (void)initialize;
 - (void).cxx_destruct;
+@property(nonatomic) BOOL showNavBarHistoryStepperControls; // @synthesize showNavBarHistoryStepperControls=_showNavBarHistoryStepperControls;
 @property(copy) NSArray *validEditorCategories; // @synthesize validEditorCategories=_validEditorCategories;
 @property(copy) NSArray *defaultEditorCategories; // @synthesize defaultEditorCategories=_defaultEditorCategories;
 @property(nonatomic) BOOL showMiniIssueNavigators; // @synthesize showMiniIssueNavigators=_showMiniIssueNavigators;
 @property(nonatomic) BOOL showSiblingStepperControls; // @synthesize showSiblingStepperControls=_showSiblingStepperControls;
-@property(nonatomic) BOOL showNavBarHistoryStepperControls; // @synthesize showNavBarHistoryStepperControls=_showNavBarHistoryStepperControls;
+@property(nonatomic) BOOL showHistoryStepperControls; // @synthesize showHistoryStepperControls=_showHistoryStepperControls;
 @property(nonatomic) BOOL showRelatedItemsControl; // @synthesize showRelatedItemsControl=_showRelatedItemsControl;
 @property(retain, nonatomic) id <IDEEditorContextDelegate> editorContextDelegate; // @synthesize editorContextDelegate=_editorContextDelegate;
 @property(nonatomic) int layout; // @synthesize layout=_layout;
@@ -75,7 +77,6 @@
 - (id)_addSplitAtIndex:(unsigned long long)arg1;
 - (id)secondEditorContext;
 - (id)firstEditorContext;
-- (void)_adjustEditorBorders;
 - (BOOL)_editorsAreStackedVertically;
 - (id)_splitView;
 - (void)loadView;

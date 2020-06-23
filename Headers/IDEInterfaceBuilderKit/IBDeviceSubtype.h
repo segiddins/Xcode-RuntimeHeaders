@@ -8,11 +8,11 @@
 
 #import <IDEInterfaceBuilderKit/NSCopying-Protocol.h>
 
-@class IBDeviceOrientation, IBGenericDeviceTypeDescription, IBIdiom, NSArray, NSDictionary, NSNumber, NSOrderedSet, NSString;
+@class IBDeviceOrientation, IBDeviceRenderMode, IBGenericDeviceTypeDescription, IBIdiom, NSArray, NSDictionary, NSNumber, NSOrderedSet, NSString;
 
 @interface IBDeviceSubtype : NSObject <NSCopying>
 {
-    NSDictionary *_layoutsByOrientation;
+    NSDictionary *_layoutsByRenderModeByOrientation;
     NSDictionary *_defaultLayoutByOrientation;
     NSDictionary *_adaptationsByOrientation;
     NSDictionary *_defaultAdaptationByOrientation;
@@ -30,6 +30,8 @@
     NSNumber *_bezelCornerRadius;
     NSNumber *_bezelCornerRadiusInset;
     NSArray *_appearances;
+    NSArray *_renderModes;
+    IBDeviceRenderMode *_defaultRenderMode;
     NSArray *_orientations;
     IBDeviceOrientation *_defaultOrientation;
     NSArray *_layouts;
@@ -41,6 +43,8 @@
 @property(readonly, nonatomic) NSArray *layouts; // @synthesize layouts=_layouts;
 @property(readonly, nonatomic) IBDeviceOrientation *defaultOrientation; // @synthesize defaultOrientation=_defaultOrientation;
 @property(readonly, nonatomic) NSArray *orientations; // @synthesize orientations=_orientations;
+@property(readonly, nonatomic) IBDeviceRenderMode *defaultRenderMode; // @synthesize defaultRenderMode=_defaultRenderMode;
+@property(readonly, nonatomic) NSArray *renderModes; // @synthesize renderModes=_renderModes;
 @property(readonly, nonatomic) NSArray *appearances; // @synthesize appearances=_appearances;
 @property(readonly, nonatomic) NSNumber *bezelCornerRadiusInset; // @synthesize bezelCornerRadiusInset=_bezelCornerRadiusInset;
 @property(readonly, nonatomic) NSNumber *bezelCornerRadius; // @synthesize bezelCornerRadius=_bezelCornerRadius;
@@ -54,18 +58,20 @@
 @property(readonly, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(readonly, nonatomic) NSString *archivingName; // @synthesize archivingName=_archivingName;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (id)displayNameForAdaptation:(id)arg1 includeOrientation:(BOOL)arg2 includeAppearance:(BOOL)arg3;
+- (id)displayNameForAdaptation:(id)arg1 includeOrientation:(BOOL)arg2 includeAppearance:(BOOL)arg3 includeRenderMode:(BOOL)arg4;
 - (id)defaultDeviceConfiguration;
 - (id)adaptationForLayoutIdentifier:(id)arg1 orientation:(id)arg2;
 - (id)defaultAdaptation;
 - (id)defaultAdaptationForAppearance:(id)arg1;
 - (id)defaultAdaptationForOrientation:(id)arg1;
-- (id)adaptationForOrientation:(id)arg1 layout:(id)arg2 appearance:(id)arg3;
-- (id)adaptationsForOrientation:(id)arg1 layout:(id)arg2 appearance:(id)arg3;
+- (id)adaptationForOrientation:(id)arg1 layout:(id)arg2 appearance:(id)arg3 renderMode:(id)arg4;
+- (id)adaptationsForOrientation:(id)arg1 layout:(id)arg2 appearance:(id)arg3 renderMode:(id)arg4;
 - (id)defaultLayoutForOrientation:(id)arg1;
-- (id)layoutsForOrientation:(id)arg1;
+- (id)layoutsForOrientation:(id)arg1 renderMode:(id)arg2;
 - (id)layoutForArchivingName:(id)arg1;
 - (id)orientationForArchivingName:(id)arg1;
+- (id)renderModeForArchivingName:(id)arg1;
+- (id)renderModeForIdentifier:(id)arg1;
 - (id)defaultAppearance;
 - (id)appearanceForArchivingName:(id)arg1;
 - (id)appearanceForIdentifier:(id)arg1;

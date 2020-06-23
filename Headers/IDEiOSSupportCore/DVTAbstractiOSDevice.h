@@ -32,6 +32,9 @@
 - (void)simulateNotificationWithBundleID:(id)arg1 payload:(id)arg2 onProxy:(BOOL)arg3 completed:(CDUnknownBlockType)arg4;
 - (void)pressHomeButtonOnProxy:(BOOL)arg1 completed:(CDUnknownBlockType)arg2;
 - (void)showSiriForExtensions:(id)arg1 queryText:(id)arg2 pid:(int)arg3 onProxy:(BOOL)arg4 completed:(CDUnknownBlockType)arg5;
+- (void)showWidgetKit:(id)arg1 pid:(int)arg2 completed:(CDUnknownBlockType)arg3;
+- (id)_appendEnvSettings:(id)arg1 fromEnv:(id)arg2 toProcessControl:(id)arg3;
+- (void)showAppClipWithBundleIdentifer:(id)arg1 pid:(int)arg2 context:(id)arg3 completed:(CDUnknownBlockType)arg4;
 - (void)showTodayViewForExtensions:(id)arg1 pid:(int)arg2;
 - (id)makeServiceHubProcessControlChannelForLauncher:(unsigned long long)arg1 onProxy:(BOOL)arg2;
 - (id)makeServiceHubProcessControlChannelForLauncher:(unsigned long long)arg1;
@@ -83,7 +86,6 @@
 - (BOOL)_installTestArtifactsForRsyncDeveloperModelForApplication:(id)arg1 launchSession:(id)arg2 parameters:(id)arg3 outError:(id *)arg4;
 - (BOOL)_copyLocalTestConfigurationAtPath:(id)arg1 toDeviceDirectory:(id)arg2 error:(id *)arg3;
 - (void)_updateTestingEnvironmentVariables:(id)arg1 forApplication:(id)arg2 deviceConfigPath:(id)arg3 testConfiguration:(id)arg4;
-- (void)_updateXCTestBundleInjectEnvironmentVariables:(id)arg1 forApplication:(id)arg2;
 - (BOOL)_determineInstalledAppPathForRsyncDeveloperModeWithLaunchSession:(id)arg1 parameters:(id)arg2 alternateRemoteAppPath:(id)arg3 installReportStart:(id)arg4 outApplication:(id *)arg5 outInstalledAppPath:(id *)arg6 outError:(id *)arg7;
 - (BOOL)_performApplyRootForRsyncDeveloperModeWithLaunchSession:(id)arg1 bundleId:(id)arg2 deviceBuiltProductsPath:(id)arg3 filePath:(id)arg4 outInstalledAppPath:(id *)arg5 outError:(id *)arg6;
 - (BOOL)_performStageRootForRsyncDeveloperModeWithLaunchSession:(id)arg1 localBuiltProductsPath:(id)arg2 deviceBuiltProductsPath:(id)arg3 deviceBuiltProductsDir:(id)arg4 filePath:(id)arg5 outInstalledAppPath:(id *)arg6 outError:(id *)arg7;
@@ -98,17 +100,19 @@
 - (void)_gatherRootPropertiesFromBuildables:(id)arg1 forProductInstallWithWorkspace:(id)arg2 installPath:(id)arg3 buildParameters:(id)arg4 outAdditionalPaths:(id *)arg5 outAnyAppsInstalledToStagingPath:(char *)arg6 outAnyAppsInstalledToNonStagingPaths:(char *)arg7 outDisableMobileInstallRebuild:(char *)arg8;
 - (id)_newInstallErrorForInstallNamed:(id)arg1 activityDescription:(id)arg2 details:(id)arg3 underlyingError:(id)arg4;
 - (_Bool)_copyBackAlternateApplication:(id)arg1 atPath:(id *)arg2 error:(id *)arg3;
-- (id)_waitForApplicationForSession:(id)arg1 error:(id *)arg2;
+- (id)_waitForApplication:(id)arg1 forSession:(id)arg2 error:(id *)arg3;
 - (id)_localBuiltProductsPathWithSession:(id)arg1 error:(id *)arg2;
 - (id)deviceInstallPathForLaunchSession:(id)arg1 andBuildProductsPath:(id)arg2;
 @property(readonly) NSString *deviceTestRelatedArtifactsDir;
 - (id)deviceBuiltProductsDir;
+- (void)remotePathForBundleIdentifier:(id)arg1 onProxy:(BOOL)arg2 handler:(CDUnknownBlockType)arg3;
 - (id)fetchApplications;
+- (id)installedApplicationWithBundleIdentifier:(id)arg1;
 - (id)applicationForSession:(id)arg1;
 - (id)_uncachedBundleIdentifierForSession:(id)arg1;
 - (id)buildParametersForLaunchSession:(id)arg1;
 - (id)_launchDatabaseRebuildTriggerForRsyncResult:(id)arg1 bundleIdentifier:(id)arg2;
-- (BOOL)_validateRsyncInstallWithError:(id *)arg1;
+- (BOOL)_validateRsyncInstallWithSession:(id)arg1 error:(id *)arg2;
 - (id)installSubstitutionPathsForDebugger;
 - (BOOL)addUUIDToActiveInstalls:(id)arg1 error:(id *)arg2;
 - (BOOL)copyBackActiveInstallsWithError:(id *)arg1;
@@ -116,7 +120,7 @@
 - (BOOL)canInstallBuildablesError:(id *)arg1;
 - (id)preferredSDKForDeviceOptions:(id)arg1 error:(id *)arg2;
 - (id)preferredArchitectureForDeviceOptions:(id)arg1 error:(id *)arg2;
-- (id)supportedArchitecturesForBuildable:(id)arg1 buildParameters:(id)arg2 error:(id *)arg3;
+- (id)supportedArchitecturesForBuildableContext:(id)arg1 buildParameters:(id)arg2 error:(id *)arg3;
 - (BOOL)deviceSupportsBuildable:(id)arg1 buildParameters:(id)arg2 error:(id *)arg3;
 - (long long)hostAuthenticatedOneLineCommand:(id)arg1 withArg:(id)arg2 result:(id *)arg3;
 - (id)taskForHostCommand:(id)arg1 withArguments:(id)arg2 error:(id *)arg3;
@@ -130,7 +134,7 @@
 - (void)renameDevice:(id)arg1;
 - (void)setName:(id)arg1;
 - (_Bool)canRenameDevice;
-- (BOOL)shouldPresentDeviceForBuildable:(id)arg1 buildParameters:(id)arg2 error:(id *)arg3;
+- (BOOL)shouldPresentDeviceForBuildableContext:(id)arg1 buildParameters:(id)arg2 error:(id *)arg3;
 - (_Bool)isWireless;
 @property(readonly) _Bool isPasscodeLocked;
 - (BOOL)isConcreteDevice;
@@ -140,6 +144,7 @@
 - (id)processNamesToObserveForCrashReportsDuringTesting;
 - (id)internalSystemTestBundleInjectionLibraryPathForBuildableProduct:(id)arg1 buildParameters:(id)arg2;
 - (id)internalSystemTestingToolPathForBuildableProduct:(id)arg1 buildParameters:(id)arg2;
+- (id)targetBootstrapInjectionPath;
 - (BOOL)supportsTargetBootstrapInjection;
 
 // Remaining properties
@@ -148,6 +153,7 @@
 @property(readonly, copy) NSString *description;
 @property(readonly) _Bool deviceIsBusy;
 @property(readonly) unsigned long long hash;
+@property(readonly, copy) NSString *iOSSupportVersion;
 @property(readonly, copy, nonatomic) NSString *identifier;
 @property(readonly) BOOL isProxiedDevice;
 @property(readonly, copy, nonatomic) NSString *modelCode;

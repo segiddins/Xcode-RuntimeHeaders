@@ -10,6 +10,7 @@
 @protocol DVTDraggingInfo, NSDraggingInfo;
 
 @protocol IBCanvasViewDelegate <NSObject>
+- (BOOL)canCaptureMinimapInBackgroundThreadForCanvasView:(IBCanvasView *)arg1;
 - (NSArray *)draggedTypesForCanvasView:(IBCanvasView *)arg1;
 - (void)canvasView:(IBCanvasView *)arg1 transferFirstResponderAfterDragConclusion:(id <DVTDraggingInfo>)arg2;
 - (void)canvasView:(IBCanvasView *)arg1 draggingEnded:(id <NSDraggingInfo>)arg2;

@@ -22,6 +22,7 @@
 + (id)_createResource:(id)arg1 funcStreamData:(id)arg2 objectCache:(id)arg3;
 + (id)findDataForURL:(const char *)arg1 inCache:(id)arg2;
 - (void).cxx_destruct;
+- (id)realizeTextures:(id)arg1 compression:(unsigned long long)arg2 createResourceBlock:(CDUnknownBlockType)arg3;
 - (id)updateResource:(id)arg1;
 - (id)realizeResourceBatch:(id)arg1 withCompression:(unsigned long long)arg2 priority:(long long)arg3 functionIndex:(unsigned long long)arg4;
 - (id)realizeResource:(id)arg1 functionIndex:(unsigned long long)arg2;

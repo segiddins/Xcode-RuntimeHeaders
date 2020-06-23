@@ -8,8 +8,8 @@
 
 #import <GPUDebugger/NSMenuDelegate-Protocol.h>
 
-@class DependencyGraphVisualRepresentation, DependencyViewerAnimationDriver, DependencyViewerAnimationGroup, DependencyViewerEdge, DependencyViewerSKTextureCache, DependencyViewerVertex, DependencyViewerView_SpriteKit, GPUTraceDependencyViewerQuadTreeNode, NSArray, NSMutableDictionary, NSPopover, NSSet, NSString, SKNode;
-@protocol SKSelectable;
+@class DependencyGraphVisualRepresentation, DependencyViewerAnimationDriver, DependencyViewerAnimationGroup, DependencyViewerEdge, DependencyViewerSKTextureCache, DependencyViewerVertex, DependencyViewerView_SpriteKit, GPUTraceDependencyViewerQuadTreeNode, NSArray, NSMutableDictionary, NSObject, NSPopover, NSSet, NSString, SKNode;
+@protocol OS_dispatch_queue, SKSelectable;
 
 __attribute__((visibility("hidden")))
 @interface GPUTraceDependencyViewerSKScene : SKScene <NSMenuDelegate>
@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     DependencyViewerAnimationGroup *_fadeGroup;
     NSPopover *_popover;
     SKNode *_popoverAnchor;
+    NSObject<OS_dispatch_queue> *_processingQueue;
     BOOL _statsVisible;
     BOOL _animating;
     DependencyViewerView_SpriteKit *_dvView;

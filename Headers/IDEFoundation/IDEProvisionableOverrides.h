@@ -6,8 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class DVTPlatform, DVTPortalAppIDFeatures, DVTPortalProfilePurpose, DVTSDK, IDEProvisionableEntitlements, IDEProvisioningEntitlementsExpansion, NSDictionary, NSNumber, NSString;
-@protocol IDEProvisioningBasicTeam;
+@class DVTPlatform, DVTPortalAppIDFeatures, DVTPortalProfilePurpose, DVTSDK, IDEProvisionableEntitlements, IDEProvisioningEntitlementsExpansion, IDEProvisioningTeamReference, NSDictionary, NSNumber, NSString;
 
 @interface IDEProvisionableOverrides : NSObject
 {
@@ -15,7 +14,7 @@
     NSNumber *_profileSupport;
     NSNumber *_provisioningStyle;
     DVTPortalProfilePurpose *_provisioningPurpose;
-    id <IDEProvisioningBasicTeam> _team;
+    IDEProvisioningTeamReference *_team;
     DVTPlatform *_platform;
     DVTSDK *_sdk;
     NSString *_sdkVariant;
@@ -49,7 +48,7 @@
 @property(readonly, nonatomic) NSString *sdkVariant; // @synthesize sdkVariant=_sdkVariant;
 @property(readonly, nonatomic) DVTSDK *sdk; // @synthesize sdk=_sdk;
 @property(readonly, nonatomic) DVTPlatform *platform; // @synthesize platform=_platform;
-@property(readonly, nonatomic) id <IDEProvisioningBasicTeam> team; // @synthesize team=_team;
+@property(readonly, nonatomic) IDEProvisioningTeamReference *team; // @synthesize team=_team;
 @property(readonly, nonatomic) DVTPortalProfilePurpose *provisioningPurpose; // @synthesize provisioningPurpose=_provisioningPurpose;
 @property(readonly, nonatomic) NSNumber *provisioningStyle; // @synthesize provisioningStyle=_provisioningStyle;
 @property(readonly, nonatomic) NSNumber *profileSupport; // @synthesize profileSupport=_profileSupport;

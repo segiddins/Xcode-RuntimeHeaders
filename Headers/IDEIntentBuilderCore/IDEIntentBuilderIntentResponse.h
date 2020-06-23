@@ -45,6 +45,7 @@
 - (id)codegen_customInitializerImplementationsForSourceLanguage:(unsigned long long)arg1;
 - (id)codegen_customInitializerDeclarationsForSourceLanguage:(unsigned long long)arg1;
 - (id)codegen_customCodesForSourceLanguage:(unsigned long long)arg1;
+- (id)codegen_codeVisibilityForSourceLanguage:(unsigned long long)arg1;
 
 @end
 

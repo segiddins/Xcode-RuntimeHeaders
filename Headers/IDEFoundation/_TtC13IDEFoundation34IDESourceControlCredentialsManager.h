@@ -27,7 +27,8 @@
 - (id)sshKeyPasswordForURL:(id)arg1 error:(id *)arg2;
 - (BOOL)savePasswordFor:(id)arg1 oldUsername:(id)arg2 authenticationStrategy:(id)arg3 error:(id *)arg4;
 - (BOOL)saveAuthenticationFor:(id)arg1 error:(id *)arg2;
-- (void)handleSSHKeysPassphraseRequest:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
+- (void)handleSSHKeysAuthStrategiesPassphrasesRequest:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
+- (void)handleSSHKeysAuthStrategyPassphraseRequest:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 
 @end
 

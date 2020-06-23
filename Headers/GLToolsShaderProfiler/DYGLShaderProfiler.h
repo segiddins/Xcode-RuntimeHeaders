@@ -23,6 +23,7 @@
 - (void).cxx_destruct;
 - (void)collectBatchFilteredDataForShaderProfilerResult:(id)arg1;
 - (void)_addSampleWithPC:(unsigned int)arg1 state:(unsigned int)arg2 drawCallIdx:(unsigned int)arg3 shaderBinary:(id)arg4;
+- (void)_saveAddressList:(struct DYGLShaderProfilerProgramAddress *)arg1 size:(unsigned int)arg2 filename:(const char *)arg3;
 - (void)_generateSamplesForResult:(id)arg1 withProgramAddressLUT:(vector_763be9b2 *)arg2 withBatchIndexMin:(unsigned int)arg3 andBatchIndexMax:(unsigned int)arg4 withUSCSampleList:(struct DYGLShaderProfilerUSCSample *)arg5 withUSCSampleNum:(unsigned int)arg6;
 - (void)_preProcessUSCSampleData:(id)arg1 result:(id)arg2 targetIndex:(int)arg3;
 - (id)profileShader:(id)arg1;

@@ -10,5 +10,6 @@
 + (id)_IDEIntentBuilderCore_developerLibraryBundleWithRelativePathString:(id)arg1 isDirectory:(BOOL)arg2;
 + (id)IDEIntentBuilderCore_developerLibraryIntentDefinitionsBundle;
 + (id)IDEIntentBuilderCore_developerLibraryIntentsBundle;
++ (id)IDEIntentBuilderCore_metadataBundle;
 @end
 

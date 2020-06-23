@@ -110,6 +110,7 @@
 - (void)imageCatalogItemWillChangeDisplayOrderedChildren:(id)arg1;
 - (void)imageCatalogItem:(id)arg1 didChangeKey:(id)arg2 fromValue:(id)arg3 toValue:(id)arg4;
 - (void)mainViewControllerDrawingStrategyActivationStateDidChange:(id)arg1;
+@property(nonatomic) struct NSEdgeInsets scrollViewContentInsets;
 - (id)catalog;
 - (id)document;
 - (void)takeFocus;

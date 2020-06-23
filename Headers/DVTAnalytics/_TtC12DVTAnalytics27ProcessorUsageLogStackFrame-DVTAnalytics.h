@@ -6,11 +6,9 @@
 
 #import <DVTAnalytics/_TtC12DVTAnalytics27ProcessorUsageLogStackFrame.h>
 
-#import <DVTAnalytics/DVTAnalyticsLogStackFrameProtocol-Protocol.h>
-
 @class NSString;
 
-@interface _TtC12DVTAnalytics27ProcessorUsageLogStackFrame (DVTAnalytics) <DVTAnalyticsLogStackFrameProtocol>
+@interface _TtC12DVTAnalytics27ProcessorUsageLogStackFrame (DVTAnalytics)
 - (BOOL)isEqual:(id)arg1;
 @property(nonatomic, readonly) NSString *instructionPointerAddressString;
 @property(nonatomic, readonly) unsigned long long stackFrameOffset;

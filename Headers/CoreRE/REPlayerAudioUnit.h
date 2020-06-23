@@ -46,14 +46,15 @@ __attribute__((visibility("hidden")))
 - (void)deallocateRenderResources;
 - (BOOL)allocateRenderResourcesAndReturnError:(id *)arg1;
 @property double playbackPosition;
+- (double)outputSampleRate;
 @property(readonly) double assetDuration;
 - (void)resume;
 - (void)pause;
 - (void)stop;
 - (void)play;
 @property(readonly) BOOL isPrepared;
-- (void)prepareToPlayBuffer:(id)arg1 looping:(BOOL)arg2;
-- (void)prepareToPlayFile:(id)arg1 looping:(BOOL)arg2;
+- (void)prepareToPlayBuffer:(id)arg1 withLayoutTag:(unsigned int)arg2 looping:(BOOL)arg3;
+- (void)prepareToPlayFile:(id)arg1 withLayoutTag:(unsigned int)arg2 looping:(BOOL)arg3;
 - (void)scheduleCurrentResourceOnPlayer:(id)arg1 startingProgress:(double)arg2;
 - (void)scheduleCurrentResourceOnPlayer:(id)arg1;
 - (void)_playbackCompletionCallback;

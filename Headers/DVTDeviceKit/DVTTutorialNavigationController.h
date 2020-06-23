@@ -6,11 +6,13 @@
 
 #import <AppKit/NSViewController.h>
 
-@class DVTTutorialController, NSButton, NSView;
+@class DVTTutorialController, NSButton, NSString, NSView;
 
 @interface DVTTutorialNavigationController : NSViewController
 {
     BOOL _isOnLastPage;
+    NSString *_nextButtonTitle;
+    CDUnknownBlockType _additionalAction;
     NSButton *_nextButton;
     NSButton *_previousButton;
     NSButton *_cancelButton;
@@ -26,6 +28,7 @@
 @property __weak NSButton *cancelButton; // @synthesize cancelButton=_cancelButton;
 @property __weak NSButton *previousButton; // @synthesize previousButton=_previousButton;
 @property __weak NSButton *nextButton; // @synthesize nextButton=_nextButton;
+- (void)setNextButton:(id)arg1 additionalAction:(CDUnknownBlockType)arg2;
 - (void)setNextButtonEnabled:(BOOL)arg1;
 - (void)setPageControllerIsOnFirstPage:(BOOL)arg1;
 - (void)setPageControllerIsOnLastPage:(BOOL)arg1;

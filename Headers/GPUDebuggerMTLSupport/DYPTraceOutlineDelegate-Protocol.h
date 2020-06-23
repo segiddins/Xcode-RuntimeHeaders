@@ -12,9 +12,11 @@
 @protocol DYPTraceOutlineDelegate <NSObject>
 - (Class)outlineVisitorFilterItemClass:(id <DYPTraceOutlineVisitor>)arg1;
 - (void)outlineVisitor:(id <DYPTraceOutlineVisitor>)arg1 createExecuteCommandWithLabel:(NSString *)arg2 fromFunction:(shared_ptr_2d3f6817)arg3 parentFunction:(shared_ptr_2d3f6817)arg4 subCommandIndex:(unsigned long long)arg5 filterItems:(NSSet *)arg6;
+- (void)outlineVisitor:(id <DYPTraceOutlineVisitor>)arg1 createExecuteCommandWithLabel:(NSString *)arg2 fromFunction:(shared_ptr_2d3f6817)arg3 parentFunction:(shared_ptr_2d3f6817)arg4 subCommandIndex:(unsigned long long)arg5 generateFilterItems:(NSSet * (^)(void))arg6;
 - (void)outlineVisitor:(id <DYPTraceOutlineVisitor>)arg1 addPipelineStateToCurrentDisplayable:(unsigned long long)arg2;
 - (void)outlineVisitor:(id <DYPTraceOutlineVisitor>)arg1 createDisplayableOfType:(long long)arg2 fromFunction:(struct Function *)arg3 disclosureHandler:(void (^)(struct Function *))arg4;
 - (void)outlineVisitor:(id <DYPTraceOutlineVisitor>)arg1 createDisplayableOfType:(long long)arg2 fromFunction:(struct Function *)arg3 filterItems:(NSSet *)arg4 disclosureHandler:(void (^)(struct Function *))arg5;
+- (void)outlineVisitor:(id <DYPTraceOutlineVisitor>)arg1 createDisplayableOfType:(long long)arg2 fromFunction:(struct Function *)arg3 generateFilterItems:(NSSet * (^)(void))arg4 disclosureHandler:(void (^)(struct Function *))arg5;
 - (void)outlineVisitor:(id <DYPTraceOutlineVisitor>)arg1 createAPIItemFromFunction:(struct Function *)arg2 disclosureHandler:(void (^)(struct Function *))arg3;
 - (void)outlineVisitor:(id <DYPTraceOutlineVisitor>)arg1 pushDisclosureLevelWithLabel:(NSString *)arg2 forObjectID:(unsigned long long)arg3 ofType:(unsigned int)arg4;
 - (void)outlineVisitorPopDisclosureLevel:(id <DYPTraceOutlineVisitor>)arg1;

@@ -19,6 +19,8 @@
     NSDate *_startTime;
 }
 
++ (id)activityRetrievalErrorWithUnderlyingError:(id)arg1;
++ (BOOL)addTestActivitiesForResultBundle:(id)arg1 inWorkspace:(id)arg2 toArray:(id)arg3 destinationLanguages:(id)arg4 systemLanguage:(id)arg5 systemRegion:(id)arg6 error:(id *)arg7;
 + (id)allTestActivitiesForWorkspace:(id)arg1 error:(id *)arg2 destinationLanguages:(id)arg3;
 + (id)mergePlistWithAttachmentsFromAttachments:(id)arg1;
 - (void).cxx_destruct;

@@ -10,14 +10,12 @@
 {
     unsigned int _timerID;
     BOOL _profileEveryThread;
-    unsigned int _targetTask;
     unsigned long long _sampleRate;
 }
 
 + (int)reinitializeKperf:(id *)arg1;
 @property(nonatomic) BOOL profileEveryThread; // @synthesize profileEveryThread=_profileEveryThread;
 @property(nonatomic) unsigned long long sampleRate; // @synthesize sampleRate=_sampleRate;
-@property(nonatomic) unsigned int targetTask; // @synthesize targetTask=_targetTask;
 - (int)stop:(id *)arg1;
 - (int)start:(id *)arg1;
 - (int)_configureTimer:(unsigned int)arg1 actionID:(unsigned int)arg2 period:(unsigned long long)arg3 userData:(unsigned int)arg4;

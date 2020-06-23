@@ -10,7 +10,7 @@
 #import <IDEInterfaceBuilderKit/IBDeviceTraitPickerPopoverViewControllerDelegate-Protocol.h>
 #import <IDEInterfaceBuilderKit/NSPopoverDelegate-Protocol.h>
 
-@class DVTObservingToken, IBDeviceAppearance, IBDeviceBarBranchModeButton, IBDeviceBarGroupViewController, IBDeviceConfiguration, IBDeviceLayout, IBDeviceOrientation, IBDocument, NSArray, NSMutableArray, NSMutableDictionary, NSPopover, NSStackView, NSString, _IBDeviceBarStackDividerView;
+@class DVTObservingToken, IBDeviceAppearance, IBDeviceBarBranchModeButton, IBDeviceBarGroupViewController, IBDeviceConfiguration, IBDeviceLayout, IBDeviceOrientation, IBDeviceRenderMode, IBDocument, NSArray, NSMutableArray, NSMutableDictionary, NSPopover, NSStackView, NSString, _IBDeviceBarStackDividerView;
 
 @interface IBDeviceBarViewController : DVTViewController <NSPopoverDelegate, IBDeviceBarGroupViewControllerDelegate, IBDeviceTraitPickerPopoverViewControllerDelegate>
 {
@@ -19,9 +19,11 @@
     NSMutableArray *_visibleGroups;
     NSArray *_outerStackViewPinningConstraints;
     _IBDeviceBarStackDividerView *_stackDividerBeforeAppearancesGroup;
+    _IBDeviceBarStackDividerView *_stackDividerBeforeRenderModeGroup;
     _IBDeviceBarStackDividerView *_stackDividerBeforeOrientationsGroup;
     _IBDeviceBarStackDividerView *_stackDividerBeforeLayoutsGroup;
     IBDeviceAppearance *_downstreamSelectedAppearance;
+    IBDeviceRenderMode *_downstreamSelectedRenderMode;
     IBDeviceOrientation *_downstreamSelectedOrientation;
     IBDeviceLayout *_downstreamSelectedLayout;
     IBDeviceConfiguration *_deviceConfigurationBeforeCustomizing;
@@ -40,6 +42,7 @@
     IBDeviceConfiguration *_deviceConfiguration;
     IBDeviceBarGroupViewController *_devicesGroup;
     IBDeviceBarGroupViewController *_appearancesGroup;
+    IBDeviceBarGroupViewController *_renderModeGroup;
     IBDeviceBarGroupViewController *_orientationsGroup;
     IBDeviceBarGroupViewController *_layoutsGroup;
     IBDeviceBarGroupViewController *_devicesGroupForBranchMode;
@@ -49,6 +52,7 @@
 @property(retain, nonatomic) IBDeviceBarGroupViewController *devicesGroupForBranchMode; // @synthesize devicesGroupForBranchMode=_devicesGroupForBranchMode;
 @property(retain, nonatomic) IBDeviceBarGroupViewController *layoutsGroup; // @synthesize layoutsGroup=_layoutsGroup;
 @property(retain, nonatomic) IBDeviceBarGroupViewController *orientationsGroup; // @synthesize orientationsGroup=_orientationsGroup;
+@property(retain, nonatomic) IBDeviceBarGroupViewController *renderModeGroup; // @synthesize renderModeGroup=_renderModeGroup;
 @property(retain, nonatomic) IBDeviceBarGroupViewController *appearancesGroup; // @synthesize appearancesGroup=_appearancesGroup;
 @property(retain, nonatomic) IBDeviceBarGroupViewController *devicesGroup; // @synthesize devicesGroup=_devicesGroup;
 @property(retain, nonatomic) IBDeviceConfiguration *deviceConfiguration; // @synthesize deviceConfiguration=_deviceConfiguration;
@@ -74,12 +78,16 @@
 - (void)_updateCustomizeButtonTitle;
 - (id)_selectedMemberConfiguration;
 - (id)_sortedSelectionButtonsForButtons:(id)arg1;
+- (id)buttonForConfiguration:(id)arg1 image:(id)arg2 accessibilityIdentifier:(id)arg3 displayName:(id)arg4 forBranchMode:(BOOL)arg5;
 - (id)buttonForConfiguration:(id)arg1 accessibilityIdentifier:(id)arg2 displayName:(id)arg3 forBranchMode:(BOOL)arg4;
 - (id)_addGroupDividerView;
 - (void)_makeConfigurationsStackView;
 - (void)restoreConfiguration:(id)arg1 resetAll:(BOOL)arg2;
+- (id)validRenderModesForDeviceSubtype:(id)arg1 buildSettingsSnapshot:(id)arg2;
 - (id)defaultDevice;
 - (id)selectedConfigurationDevice;
+- (id)selectedConfigurationLayout;
+- (id)selectedConfigurationRenderMode;
 - (id)selectedConfigurationOrientation;
 - (id)selectedConfigurationAppearance;
 - (id)sizeClassFieldsFont;
@@ -89,6 +97,7 @@
 - (id)defaultBackgroundColor;
 - (id)_layoutGroupButtons;
 - (id)_orientationGroupButtons;
+- (id)_renderModeGroupButtons;
 - (id)_appearanceGroupButtons;
 - (id)_deviceGroupButtonsForBranchMode:(BOOL)arg1;
 - (void)_selectButtonsMatchingSelectedConfiguration;
@@ -96,10 +105,12 @@
 - (void)_configureGroupViewControllers;
 - (void)_updateGroupsStartingFromLayouts;
 - (void)_updateGroupsStartingFromOrientations;
+- (void)_updateGroupsStartingFromRenderModes;
 - (void)_updateGroupsStartingFromAppearances;
 - (void)_updateGroupsStartingFromDevicesInCustomizationMode:(BOOL)arg1;
 - (BOOL)isShowingLayoutsGroup;
 - (BOOL)isShowingOrientationsGroup;
+- (BOOL)isShowingRenderModeGroup;
 - (BOOL)isShowingAppearancesGroup;
 - (BOOL)isShowingDevicesGroup;
 - (void)_removeGroupViewController:(id)arg1;

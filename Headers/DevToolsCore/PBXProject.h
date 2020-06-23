@@ -101,6 +101,7 @@
 + (id)_formatForIdentifier:(id)arg1;
 + (id)_latestKnownFormat;
 + (id)_defaultFormat;
++ (id)_xcode12_0Format;
 + (id)_xcode11_4Format;
 + (id)_xcode11_0Format;
 + (id)_xcode10_0Format;

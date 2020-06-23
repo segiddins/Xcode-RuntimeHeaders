@@ -12,7 +12,6 @@
 {
     MISSING_TYPE *sourceCodeStore;
     MISSING_TYPE *allActiveSelectablePaths;
-    MISSING_TYPE *queryManager;
     MISSING_TYPE *colorNames;
     MISSING_TYPE *indexColorNames;
     MISSING_TYPE *previewFileIsPinned;

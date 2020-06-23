@@ -8,7 +8,7 @@
 
 #import <IDEFoundation/IDEBuildableTargetDevice-Protocol.h>
 
-@class DVTPlatform, NSArray, NSError, NSSet, NSString;
+@class DVTFilePath, DVTPlatform, NSArray, NSError, NSSet, NSString;
 
 @interface DVTDevice (IDEFoundationAdditions) <IDEBuildableTargetDevice>
 - (id)analysisOperationWithAnalysisToolService:(id)arg1 location:(id)arg2 workingDirectory:(id)arg3 workspaceFilePath:(id)arg4 projectFilePath:(id)arg5 packagesPaths:(id)arg6 outError:(id *)arg7;
@@ -20,26 +20,27 @@
 - (BOOL)supportsExecutionForArchitecture:(id)arg1 launchSession:(id)arg2 error:(id *)arg3;
 - (id)uncachedOverridingPropertiesForBuildable:(id)arg1 buildParameters:(id)arg2;
 - (id)deviceSpecificOverridingPropertiesForBuildable:(id)arg1 withBaselineParameters:(id)arg2;
-- (id)supportedSDKsForBuildable:(id)arg1 buildParameters:(id)arg2 error:(id *)arg3;
-- (id)supportedArchitecturesForBuildable:(id)arg1 buildParameters:(id)arg2 error:(id *)arg3;
-- (BOOL)shouldPresentDeviceForBuildable:(id)arg1 buildParameters:(id)arg2 error:(id *)arg3;
+- (id)supportedSDKsForBuildableContext:(id)arg1 buildParameters:(id)arg2 error:(id *)arg3;
+- (id)supportedArchitecturesForBuildableContext:(id)arg1 buildParameters:(id)arg2 error:(id *)arg3;
+- (BOOL)shouldPresentDeviceForBuildableContext:(id)arg1 buildParameters:(id)arg2 error:(id *)arg3;
 - (BOOL)shouldPresentDeviceForPathRunnableWithArchitecture:(id)arg1;
 - (BOOL)deviceSupportsBuildable:(id)arg1 buildParameters:(id)arg2 error:(id *)arg3;
 - (BOOL)canBeDefaultDeviceForBuildable:(id)arg1 buildParameters:(id)arg2;
 - (id)displayNameAdditionsWhenUsingArchitecture:(id)arg1 withSDK:(id)arg2;
 - (id)displayNameWhenUsingArchitecture:(id)arg1 withSDK:(id)arg2;
 - (BOOL)canBeRunDestination;
+- (id)claimDeviceForTestingWithMode:(long long)arg1 sessionIdentifier:(id)arg2 error:(id *)arg3;
 @property(readonly, getter=isLogArchiveCollectionEnabled) BOOL logArchiveCollectionEnabled;
 @property(readonly) long long maxConcurrentTestingProcesses;
-@property(readonly) NSString *mockObjectsFrameworkDir;
+- (id)mockObjectsFrameworkDir;
 @property(readonly) NSSet *processNamesToObserveForCrashReportsDuringTesting;
 @property(readonly) NSArray *crashReportsDirectoryPaths;
-@property(readonly) NSString *connectionServicesFrameworkPath;
+- (id)extraTestingLibrarySearchPathsWithInternalTestBuildStyle:(BOOL)arg1;
+- (id)extraTestingFrameworkSearchPathsWithInternalTestBuildStyle:(BOOL)arg1;
 - (BOOL)prepareDeviceForLaunchSession:(id)arg1 error:(id *)arg2;
-- (id)claimDeviceForTestingWithSessionIdentifier:(id)arg1;
 - (id)additionalTestRunnerEnvironmentVariablesForBuildableProduct:(id)arg1 buildParameters:(id)arg2;
 - (BOOL)supportsTestHostStyle:(long long)arg1 withError:(id *)arg2;
-- (id)testArchitectureForBuildableProduct:(id)arg1 buildParameters:(id)arg2;
+@property(readonly) DVTFilePath *testBundleInjectionLibraryPath;
 - (id)internalSystemTestBundleInjectionLibraryPathForBuildableProduct:(id)arg1 buildParameters:(id)arg2;
 - (id)testHostPathForBuildableProduct:(id)arg1 buildParameters:(id)arg2 error:(id *)arg3;
 - (id)_testingToolPathForBuildableProduct:(id)arg1 buildParameters:(id)arg2;
@@ -57,7 +58,6 @@
 @property(readonly) BOOL supportsTargetBootstrapInjection;
 - (Class)testingUIRecorderClass;
 @property(readonly) BOOL supportsTestDaemonControlSession;
-@property(readonly) BOOL supportsOverridingTestingToolPath;
 @property(readonly) BOOL supportsUIRecording;
 - (BOOL)supportsUITestingWithError:(id *)arg1;
 
@@ -67,6 +67,7 @@
 @property(readonly, copy) NSString *description;
 @property(readonly) _Bool deviceIsBusy;
 @property(readonly) unsigned long long hash;
+@property(readonly, copy) NSString *iOSSupportVersion;
 @property(readonly, copy, nonatomic) NSString *identifier;
 @property(readonly) BOOL isProxiedDevice;
 @property(readonly, copy, nonatomic) NSString *modelCode;

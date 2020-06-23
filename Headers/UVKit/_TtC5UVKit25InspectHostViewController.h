@@ -12,10 +12,11 @@ __attribute__((visibility("hidden")))
 @interface _TtC5UVKit25InspectHostViewController : NSViewController
 {
     MISSING_TYPE *editorStateSnapshotProvider;
-    MISSING_TYPE *selectionStore;
+    MISSING_TYPE *queryManager;
     MISSING_TYPE *idealSizeSubscription;
-    MISSING_TYPE *frameSubscription;
+    MISSING_TYPE *path;
     MISSING_TYPE *ownsScrolling;
+    MISSING_TYPE *preferredSizeObserver;
 }
 
 - (void).cxx_destruct;

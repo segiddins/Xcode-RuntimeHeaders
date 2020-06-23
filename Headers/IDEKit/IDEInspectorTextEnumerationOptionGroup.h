@@ -14,6 +14,7 @@
     NSString *_title;
     IDEInspectorKeyPath *_valuesKeyPath;
     IDEInspectorKeyPath *_displayValueKeyPath;
+    IDEInspectorKeyPath *_displayValuesForMultipleSelectionKeyPath;
     IDEInspectorKeyPath *_displayImagesKeyPath;
     IDEInspectorKeyPath *_visibleKeyPath;
     NSArray *_options;
@@ -25,6 +26,7 @@
 @property(readonly, getter=isDynamic) BOOL dynamic; // @synthesize dynamic=_dynamic;
 @property(readonly) IDEInspectorKeyPath *visibleKeyPath; // @synthesize visibleKeyPath=_visibleKeyPath;
 @property(readonly) IDEInspectorKeyPath *displayImagesKeyPath; // @synthesize displayImagesKeyPath=_displayImagesKeyPath;
+@property(readonly) IDEInspectorKeyPath *displayValuesForMultipleSelectionKeyPath; // @synthesize displayValuesForMultipleSelectionKeyPath=_displayValuesForMultipleSelectionKeyPath;
 @property(readonly) IDEInspectorKeyPath *displayValueKeyPath; // @synthesize displayValueKeyPath=_displayValueKeyPath;
 @property(readonly) IDEInspectorKeyPath *valuesKeyPath; // @synthesize valuesKeyPath=_valuesKeyPath;
 @property(readonly) NSString *title; // @synthesize title=_title;

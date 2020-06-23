@@ -16,6 +16,7 @@
 + (id)keyPathsForValuesAffectingIbInspectedBoxTypeIsCustom;
 + (long long)ibDevelopmentTargetForDocumentContentView;
 + (id)ibKeyPathForDocumentContentView;
++ (id)keyPathsForValueAffectingIbShadowedBorderType;
 + (id)keyPathsForValuesAffectingIbArchivedDesignableContentView;
 + (id)keyPathsForValuesAffectingIbDesignableContentView;
 + (id)keyPathsForValuesAffectingIbDefaultImage;
@@ -39,6 +40,8 @@
 - (void)ibAwakeInDocument:(id)arg1;
 - (double)ibBaselineAtIndex:(long long)arg1 inCoordinateSpaceOfItem:(id)arg2;
 - (long long)ibBaselineCount;
+- (void)setIbShadowedBorderType:(unsigned long long)arg1;
+- (unsigned long long)ibShadowedBorderType;
 - (CDStruct_d2b197d1)ibInsetToDesignableContentArea;
 - (unsigned long long)ibOrientationsForSizingToFitFromLibrary;
 - (struct CGSize)ibPreferredSize;

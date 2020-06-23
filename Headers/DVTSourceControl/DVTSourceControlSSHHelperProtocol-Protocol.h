@@ -12,6 +12,7 @@
 - (void)agentHasValidKeyForURL:(NSURL *)arg1 completionBlock:(void (^)(DVTSourceControlBoolResultType *))arg2;
 - (void)knownHostsWithCompletionBlock:(void (^)(DVTSourceControlStringMappingResultType *))arg1;
 - (void)defaultSSHKeyAuthenticationStrategyForURL:(NSURL *)arg1 completionBlock:(void (^)(DVTSourceControlSSHKeysAuthenticationStrategyResultType *))arg2;
+- (void)sshKeysAuthenticationStrategiesForURL:(NSURL *)arg1 completionBlock:(void (^)(DVTSourceControlSSHKeysAuthenticationStrategiesResultType *))arg2;
 - (void)generateSSHKeysWithName:(NSString *)arg1 comment:(NSString *)arg2 passphrase:(NSString *)arg3 inFolder:(NSURL *)arg4 completionBlock:(void (^)(DVTSourceControlSSHKeysAuthenticationStrategyResultType *))arg5;
 - (void)validateSSHKeysWithPrivateKeyURL:(NSURL *)arg1 passphrase:(NSString *)arg2 completionBlock:(void (^)(DVTSourceControlXPCResultType *))arg3;
 - (void)listSSHKeys:(void (^)(DVTSourceControlSSHKeysAuthenticationStrategiesResultType *))arg1;

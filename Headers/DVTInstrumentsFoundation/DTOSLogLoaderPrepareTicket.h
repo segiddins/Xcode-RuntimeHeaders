@@ -6,12 +6,14 @@
 
 #import <DVTInstrumentsFoundation/DTOSLogLoaderTicket.h>
 
-@class NSPredicate;
+@class NSPredicate, NSURL;
 
 __attribute__((visibility("hidden")))
 @interface DTOSLogLoaderPrepareTicket : DTOSLogLoaderTicket
 {
+    BOOL _trackPidToExecNameMapping;
     unsigned long long _mode;
+    NSURL *_archiveURL;
     unsigned long long _signpostConfig;
     unsigned long long _exclusions;
     NSPredicate *_filterPredicate;
@@ -21,7 +23,10 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSPredicate *filterPredicate; // @synthesize filterPredicate=_filterPredicate;
 @property(nonatomic) unsigned long long exclusions; // @synthesize exclusions=_exclusions;
 @property(nonatomic) unsigned long long signpostConfig; // @synthesize signpostConfig=_signpostConfig;
+@property(nonatomic) BOOL trackPidToExecNameMapping; // @synthesize trackPidToExecNameMapping=_trackPidToExecNameMapping;
+@property(retain, nonatomic) NSURL *archiveURL; // @synthesize archiveURL=_archiveURL;
 @property(nonatomic) unsigned long long mode; // @synthesize mode=_mode;
+- (void)_setupLoaderForLoggedEventStore:(id)arg1 agent:(id)arg2 setDatesBasedOnSource:(BOOL)arg3 genericFailureReason:(id)arg4;
 - (void)holdAgent:(id)arg1 loader:(id)arg2;
 
 @end

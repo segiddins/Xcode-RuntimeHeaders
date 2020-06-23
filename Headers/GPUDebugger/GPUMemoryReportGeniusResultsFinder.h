@@ -13,6 +13,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
++ (BOOL)allowInstantUpdateGeniusResultsWhenIdle;
 + (Class)editorDocumentClass;
 - (void)_updateGeniusResults;
 - (void)primitiveInvalidate;

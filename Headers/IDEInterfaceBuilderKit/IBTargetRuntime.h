@@ -12,7 +12,7 @@
 @interface IBTargetRuntime : NSObject
 {
     NSMutableDictionary *_imageRequestersByDeviceTypeDescription;
-    NSMutableDictionary *_sceneUpdateRequesterQueueByDeviceTypeDescription;
+    NSMutableDictionary *_sceneUpdateRequesterQueueBySceneQueueIdentifier;
     BOOL _installedColorList;
     NSSet *_connectionClasses;
     NSSet *_segueClasses;
@@ -24,7 +24,8 @@
 - (void).cxx_destruct;
 @property(readonly, nonatomic) IBOSVersion *osVersion; // @synthesize osVersion=_osVersion;
 - (BOOL)populateEnvironment:(id)arg1 forExecutionContext:(id)arg2 error:(id *)arg3;
-- (id)sceneUpdateRequesterWithDeviceTypeDescription:(id)arg1 incrementalUpdateSessionIdentifier:(id)arg2;
+- (void)ibTestingClearQueuesReferencingManager:(id)arg1;
+- (id)sceneUpdateRequesterWithDeviceTypeDescription:(id)arg1 incrementalUpdateSessionIdentifier:(id)arg2 liveViewsManager:(id)arg3;
 - (id)imageRequesterWithDeviceTypeDescription:(id)arg1;
 - (id)processingRequestForIncrementallyUpdatingAttribute:(id)arg1 ofObject:(id)arg2 withObjectID:(id)arg3 marshallingContext:(id)arg4;
 - (Class)sceneUpdateRequestProcessorClass;
@@ -39,8 +40,8 @@
 - (id)connectionClasses;
 - (id)segueClasses;
 @property(readonly) id <DVTFontTextFieldDataSource> fontDataSource;
-- (void)installColorListIfNeeded;
-- (id)colorList;
+- (void)installColorListIfNeededForDocument:(id)arg1;
+- (id)colorListForDocument:(id)arg1;
 - (id)archiveVariantIdentifier;
 - (BOOL)isIOSMac;
 - (id)archiveIdentifier;

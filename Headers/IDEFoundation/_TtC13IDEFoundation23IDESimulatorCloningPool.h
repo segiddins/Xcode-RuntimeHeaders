@@ -6,22 +6,26 @@
 
 #import <objc/NSObject.h>
 
-@class IDERunDestination, MISSING_TYPE;
+@class DVTPlatformFamily, MISSING_TYPE, NSString;
 
 @interface _TtC13IDEFoundation23IDESimulatorCloningPool : NSObject
 {
-    MISSING_TYPE *canonicalRunDestination;
+    MISSING_TYPE *templateSimulator;
     MISSING_TYPE *sharedClonePool;
 }
 
 - (void).cxx_destruct;
 - (id)init;
-@property(nonatomic, readonly) BOOL canVendMoreThanOneDevice;
-- (void)deallocateDevice:(id)arg1;
-- (id)allocateDevice;
+@property(nonatomic, readonly) BOOL canVendMoreThanOneRunDestination;
+- (void)deallocateRunDestination:(id)arg1;
+- (id)allocateRunDestinationFor:(id)arg1;
+- (BOOL)preflightWithTestRunSpecification:(id)arg1 error:(id *)arg2;
+- (void)testSessionDidEnd;
+- (BOOL)prepareForTestSessionWithTestingMode:(long long)arg1 error:(id *)arg2;
 - (id)initWithTemplateSimulator:(id)arg1 sharedClonePool:(id)arg2;
 - (id)initWithTemplateSimulator:(id)arg1;
-@property(nonatomic, readonly) IDERunDestination *canonicalRunDestination; // @synthesize canonicalRunDestination;
+@property(nonatomic, readonly) NSString *displayName;
+@property(nonatomic, readonly) DVTPlatformFamily *platformFamily;
 
 @end
 

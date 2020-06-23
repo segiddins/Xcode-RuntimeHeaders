@@ -25,10 +25,11 @@
 - (void).cxx_destruct;
 @property(retain) DVTTutorialNavigationController *navigationController; // @synthesize navigationController=_navigationController;
 @property(retain) NSStoryboard *storyboard; // @synthesize storyboard=_storyboard;
-@property(nonatomic) __weak NSButton *currentPageNavigationButton; // @synthesize currentPageNavigationButton=_currentPageNavigationButton;
+@property(retain, nonatomic) NSButton *currentPageNavigationButton; // @synthesize currentPageNavigationButton=_currentPageNavigationButton;
 @property(retain) DVTPageController *pageController; // @synthesize pageController=_pageController;
 @property(copy, nonatomic) CDUnknownBlockType cancelHandler; // @synthesize cancelHandler=_cancelHandler;
 - (void)primitiveInvalidate;
+- (void)setNextButton:(id)arg1 additionalAction:(CDUnknownBlockType)arg2;
 - (void)pageController:(id)arg1 prepareViewController:(id)arg2 withObject:(id)arg3;
 - (void)pageController:(id)arg1 didTransitionToObject:(id)arg2;
 - (void)_updateNavigationButtons;
@@ -39,7 +40,7 @@
 - (id)init;
 - (BOOL)currentPageShouldEnableNextButton;
 - (void)validateCurrentPage;
-- (void)reloadIdentifiers;
+- (void)reloadIdentifiers:(BOOL)arg1;
 - (id)identifierForPageController;
 - (id)identifiersForPagesInStoryboard;
 @property(readonly) NSView *tutorialView;

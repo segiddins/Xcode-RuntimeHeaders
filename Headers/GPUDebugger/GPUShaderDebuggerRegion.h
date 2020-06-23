@@ -16,6 +16,7 @@
     unsigned long long _type;
 }
 
++ (id)reducedRegionWithRegion:(id)arg1;
 + (id)regionWithRegionOfInterest:(id)arg1 selectedThread:(id)arg2;
 @property(readonly, nonatomic) unsigned long long type; // @synthesize type=_type;
 - (id)initWithType:(unsigned long long)arg1;

@@ -15,15 +15,18 @@
 {
     id <IDEBuildableProduct> _buildableProduct;
     IDESchemeBuildableReference *_buildableReference;
+    NSString *_filePath;
 }
 
 + (id)keyPathsForValuesAffectingBuildableProduct;
 + (id)keyPathsForValuesAffectingHasRunnablePath;
 + (id)keyPathsForValuesAffectingDisplayName;
 - (void).cxx_destruct;
+@property(readonly, copy) NSString *filePath; // @synthesize filePath=_filePath;
 @property(retain) IDESchemeBuildableReference *buildableReference; // @synthesize buildableReference=_buildableReference;
 - (void)dvt_encodeRelationshipsWithXMLArchiver:(id)arg1 version:(id)arg2;
 - (void)dvt_encodeAttributesWithXMLArchiver:(id)arg1 version:(id)arg2;
+- (void)setFilePathFromUTF8String:(char *)arg1 fromXMLUnarchiver:(id)arg2;
 - (void)addBuildableProductReference:(id)arg1 fromXMLUnarchiver:(id)arg2;
 - (void)addBuildableReference:(id)arg1 fromXMLUnarchiver:(id)arg2;
 - (void)dvt_awakeFromXMLUnarchiver:(id)arg1;

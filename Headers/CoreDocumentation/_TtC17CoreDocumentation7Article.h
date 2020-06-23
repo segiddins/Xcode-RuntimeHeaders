@@ -11,6 +11,8 @@
 @interface _TtC17CoreDocumentation7Article : _TtC17CoreDocumentation8Semantic
 {
     MISSING_TYPE *markup;
+    MISSING_TYPE *metadata;
+    MISSING_TYPE *redirects;
     MISSING_TYPE *discussionStore;
 }
 

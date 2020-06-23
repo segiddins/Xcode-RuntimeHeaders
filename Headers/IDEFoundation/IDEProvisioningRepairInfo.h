@@ -13,7 +13,7 @@
 
 @interface IDEProvisioningRepairInfo : NSObject <IDERepairable>
 {
-    BOOL _preferExplicitAppID;
+    BOOL _matchingExplicitAppIDExistsOnPortal;
     NSString *_repairableName;
     id <IDEProvisioningBasicTeam> _team;
     DVTPortalCertificatePurpose *_certificatePurpose;
@@ -40,7 +40,7 @@
 @property(readonly, nonatomic) DVTPortalAppIDFeatures *appIDFeatures; // @synthesize appIDFeatures=_appIDFeatures;
 @property(readonly, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
 @property(readonly, nonatomic) DVTPortalProfileType *profileType; // @synthesize profileType=_profileType;
-@property(nonatomic) BOOL preferExplicitAppID; // @synthesize preferExplicitAppID=_preferExplicitAppID;
+@property(nonatomic) BOOL matchingExplicitAppIDExistsOnPortal; // @synthesize matchingExplicitAppIDExistsOnPortal=_matchingExplicitAppIDExistsOnPortal;
 @property(readonly, nonatomic) IDEProvisionableEntitlements *entitlements; // @synthesize entitlements=_entitlements;
 @property(readonly, nonatomic) DVTPlatform *platform; // @synthesize platform=_platform;
 @property(readonly, nonatomic) id <IDEProvisioningBasicProfile> profile; // @synthesize profile=_profile;

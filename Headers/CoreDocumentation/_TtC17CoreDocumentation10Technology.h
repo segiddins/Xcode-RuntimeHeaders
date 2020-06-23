@@ -13,8 +13,10 @@
     MISSING_TYPE *originalMarkup;
     MISSING_TYPE *name;
     MISSING_TYPE *hero;
-    MISSING_TYPE *sections;
-    MISSING_TYPE *callToActionImage;
+    MISSING_TYPE *volumes;
+    MISSING_TYPE *resources;
+    MISSING_TYPE *supportedLanguages;
+    MISSING_TYPE *redirects;
 }
 
 @end

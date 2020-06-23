@@ -6,9 +6,13 @@
 
 #import <objc/NSObject.h>
 
-@class MISSING_TYPE, _TtC12IDEDocViewer26IDEAllDocsExplorableSource;
+#import <IDEDocViewer/DVTFilterExpressionPredicateProducerDelegate-Protocol.h>
+#import <IDEDocViewer/DVTFilterExpressionPresentationDelegate-Protocol.h>
+#import <IDEDocViewer/DVTFilteredDataSource-Protocol.h>
 
-@interface _TtC12IDEDocViewer37IDECollectionSpecificExplorableSource : NSObject
+@class MISSING_TYPE, NSString, OS_dispatch_queue, _TtC12IDEDocViewer26IDEAllDocsExplorableSource;
+
+@interface _TtC12IDEDocViewer37IDECollectionSpecificExplorableSource : NSObject <DVTFilterExpressionPredicateProducerDelegate, DVTFilterExpressionPresentationDelegate, DVTFilteredDataSource>
 {
     MISSING_TYPE *synchronizationQueue;
     MISSING_TYPE *rootIdentifier;
@@ -17,20 +21,32 @@
     MISSING_TYPE *allDocsSource;
     MISSING_TYPE *predicateProducer;
     MISSING_TYPE *pendingFilterSession;
-    MISSING_TYPE *$__lazy_storage_$_allEntityIdentifiers;
-    MISSING_TYPE *$__lazy_storage_$_availablePlatforms;
-    MISSING_TYPE *$__lazy_storage_$_frameworks;
-    MISSING_TYPE *$__lazy_storage_$_frameworkNames;
-    MISSING_TYPE *$__lazy_storage_$_articles;
-    MISSING_TYPE *$__lazy_storage_$_codeSamples;
-    MISSING_TYPE *$__lazy_storage_$_tutorials;
-    MISSING_TYPE *$__lazy_storage_$_plistKeys;
     MISSING_TYPE *$__lazy_storage_$_availablePlatformIDsToNames;
 }
 
 - (void).cxx_destruct;
 - (id)init;
 @property(nonatomic, readonly) _TtC12IDEDocViewer26IDEAllDocsExplorableSource *allDocsSource; // @synthesize allDocsSource;
+- (CDUnknownBlockType)accessorBlockForNumericalExpression:(id)arg1;
+- (CDUnknownBlockType)accessorBlockForTextExpression:(id)arg1;
+- (CDUnknownBlockType)accessorBlockForCustomExpression:(id)arg1;
+- (id)textFragmentsForFilterExpression:(id)arg1;
+- (id)relatedFilterExpressionsAffectingTypeIncludingExpression:(id)arg1;
+- (id)relatedFilterExpressionsIncludingExpression:(id)arg1;
+- (id)editingStringForFilterExpression:(id)arg1;
+- (id)menuDisplayStringForFilterExpression:(id)arg1;
+- (id)suffixFieldDisplayStringForFilterExpression:(id)arg1;
+- (id)prefixFieldDisplayStringForFilterExpression:(id)arg1;
+- (id)fieldDisplayStringForFilterExpression:(id)arg1;
+- (id)titleForFilterIdentifier:(id)arg1;
+- (id)filterExpressionForText:(id)arg1 isComplete:(BOOL)arg2 currentFilterExpression:(id)arg3;
+- (id)validFilterExpressionsForExpressions:(id)arg1 currentFilterExpression:(id)arg2;
+- (id)filterExpressionCompletionsForText:(id)arg1 currentFilterExpression:(id)arg2;
+- (id)filterExpressionsForAdditionalFilteringOptionsMenu;
+@property(nonatomic, readonly) NSString *filterFieldAccessibilityDescription;
+@property(nonatomic, readonly) NSString *filterFieldToolTip;
+- (void)filterWithFilterSession:(id)arg1;
+@property(nonatomic, readonly) OS_dispatch_queue *filteringQueue;
 
 @end
 

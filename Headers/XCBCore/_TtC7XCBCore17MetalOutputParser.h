@@ -11,8 +11,8 @@
 @interface _TtC7XCBCore17MetalOutputParser : _TtCs12_SwiftObject
 {
     MISSING_TYPE *task;
-    MISSING_TYPE *workspaceContext;
     MISSING_TYPE *payload;
+    MISSING_TYPE *workspaceContext;
     MISSING_TYPE *delegate;
 }
 

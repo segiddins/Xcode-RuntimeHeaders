@@ -24,6 +24,9 @@
 @property(copy, nonatomic) NSString *debugRepresentedImageName; // @synthesize debugRepresentedImageName=_debugRepresentedImageName;
 @property(copy, nonatomic) NSString *cacheKey; // @synthesize cacheKey=_cacheKey;
 - (id)description;
+- (id)copyWithZone:(struct _NSZone *)arg1;
+- (BOOL)isEqualToImageInfo:(id)arg1;
+- (unsigned long long)hash;
 - (void)encodeWithBinaryArchiver:(id)arg1;
 - (id)initWithBinaryUnarchiver:(id)arg1;
 - (BOOL)hasIntrinsicSize;

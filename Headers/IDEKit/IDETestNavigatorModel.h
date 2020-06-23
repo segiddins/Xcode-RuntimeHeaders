@@ -9,27 +9,32 @@
 #import <IDEKit/IDEKeyDrivenNavigableItemRepresentedObject-Protocol.h>
 #import <IDEKit/IDETestsInTestableObserver-Protocol.h>
 
-@class DVTDocumentLocation, DVTFileDataType, DVTObservingToken, IDEFileReference, IDETestManager, NSArray, NSImage, NSNull, NSString, NSURL, _TtC13DVTFoundation9DVTSymbol;
+@class DVTDocumentLocation, DVTFileDataType, DVTObservingToken, DVTSymbol, IDEFileReference, IDETestManager, NSArray, NSImage, NSNull, NSString, NSURL;
 
 @interface IDETestNavigatorModel : NSObject <IDETestsInTestableObserver, IDEKeyDrivenNavigableItemRepresentedObject>
 {
-    IDETestManager *_testManager;
-    CDUnknownBlockType _viewUpdater;
+    BOOL _loadingComplete;
+    BOOL _filteringByScheme;
+    DVTObservingToken *_testableReferencesObservingToken;
     DVTObservingToken *_testableOriginObservingToken;
     DVTObservingToken *_activeRunContextObservingToken;
     DVTObservingToken *_loadingCompleteObservingToken;
-    BOOL _filteringByScheme;
-    BOOL _loadingComplete;
+    IDETestManager *_testManager;
     NSArray *_orderedTestables;
-    DVTObservingToken *_testableReferencesObservingToken;
+    CDUnknownBlockType _viewUpdater;
 }
 
 + (id)keyPathsForValuesAffectingModelItems;
 - (void).cxx_destruct;
+@property(copy) CDUnknownBlockType viewUpdater; // @synthesize viewUpdater=_viewUpdater;
+@property(retain) NSArray *orderedTestables; // @synthesize orderedTestables=_orderedTestables;
+@property(retain) IDETestManager *testManager; // @synthesize testManager=_testManager;
+@property(retain) DVTObservingToken *loadingCompleteObservingToken; // @synthesize loadingCompleteObservingToken=_loadingCompleteObservingToken;
+@property(retain) DVTObservingToken *activeRunContextObservingToken; // @synthesize activeRunContextObservingToken=_activeRunContextObservingToken;
+@property(retain) DVTObservingToken *testableOriginObservingToken; // @synthesize testableOriginObservingToken=_testableOriginObservingToken;
 @property(retain) DVTObservingToken *testableReferencesObservingToken; // @synthesize testableReferencesObservingToken=_testableReferencesObservingToken;
-@property(nonatomic) BOOL loadingComplete; // @synthesize loadingComplete=_loadingComplete;
 @property(nonatomic) BOOL filteringByScheme; // @synthesize filteringByScheme=_filteringByScheme;
-@property(copy) NSArray *orderedTestables; // @synthesize orderedTestables=_orderedTestables;
+@property(nonatomic) BOOL loadingComplete; // @synthesize loadingComplete=_loadingComplete;
 @property(readonly, nonatomic) NSString *navigableItem_name;
 - (void)allTestablesChanged;
 - (void)testablesChanged:(id)arg1;
@@ -37,6 +42,7 @@
 - (void)_stopMonitoringTests;
 - (void)_startMonitoringTests:(CDUnknownBlockType)arg1;
 - (void)_updateObservedTestables;
+- (id)_orderTestablesUsingTestManager:(id)arg1;
 - (id)modelItems;
 - (id)ideModelObjectTypeIdentifier;
 - (void)_setupLoadingCompleteObservation;
@@ -63,7 +69,7 @@
 @property(readonly, nonatomic) BOOL navigableItem_missingReferencedContentIsImportant;
 @property(readonly, nonatomic) id navigableItem_parentRepresentedObject;
 @property(readonly, nonatomic) BOOL navigableItem_referencedContentExists;
-@property(readonly, nonatomic) _TtC13DVTFoundation9DVTSymbol *navigableItem_representedSymbol;
+@property(readonly, nonatomic) DVTSymbol *navigableItem_representedSymbol;
 @property(readonly, nonatomic) NSURL *navigableItem_representedURL;
 @property(readonly, nonatomic) NSString *navigableItem_subtitle;
 @property(readonly, nonatomic) NSString *navigableItem_toolTip;

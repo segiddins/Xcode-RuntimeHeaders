@@ -5,6 +5,9 @@
 //
 
 @protocol GPUAbstractTraceDisplayableItem
+- (void)cancelNotifyOnDependencyGraphSortedThumbnailForSender:(id)arg1;
+- (void)cancelNotifyOnDependencyGraphThumbnailForSender:(id)arg1;
+- (void)notifyWithSender:(id)arg1 onDependencyGraphSortedThumbnail:(void (^)(NSArray *))arg2;
 - (void)notifyWithSender:(id)arg1 onDependencyGraphThumbnail:(void (^)(NSDictionary *))arg2;
 @end
 

@@ -11,6 +11,7 @@
 }
 
 + (id)productPathExtension;
+- (id)compileWithOptions:(id)arg1 error:(id *)arg2;
 - (id)intermediateDocument;
 - (id)sourceDocument;
 

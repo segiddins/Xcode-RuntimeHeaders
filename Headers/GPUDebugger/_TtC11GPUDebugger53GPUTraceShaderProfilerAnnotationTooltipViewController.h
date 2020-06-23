@@ -6,13 +6,10 @@
 
 #import <GPUDebugger/_TtC11GPUDebugger40GPUTraceShaderProfilerDataViewController.h>
 
-#import <GPUDebugger/NSTableViewDataSource-Protocol.h>
-#import <GPUDebugger/NSTableViewDelegate-Protocol.h>
-
 @class MISSING_TYPE, NSScrollView, NSTableView, _TtC11GPUDebugger40GPUTraceShaderProfilerPerformancePieView;
 
 __attribute__((visibility("hidden")))
-@interface _TtC11GPUDebugger53GPUTraceShaderProfilerAnnotationTooltipViewController : _TtC11GPUDebugger40GPUTraceShaderProfilerDataViewController <NSTableViewDataSource, NSTableViewDelegate>
+@interface _TtC11GPUDebugger53GPUTraceShaderProfilerAnnotationTooltipViewController : _TtC11GPUDebugger40GPUTraceShaderProfilerDataViewController
 {
     MISSING_TYPE *tableViewScrollView;
     MISSING_TYPE *tableView;

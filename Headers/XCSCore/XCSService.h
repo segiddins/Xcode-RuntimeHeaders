@@ -236,6 +236,7 @@
 - (void)listenForBotCreation:(CDUnknownBlockType)arg1 withOwner:(id)arg2;
 - (void)listenForBotCreation:(CDUnknownBlockType)arg1;
 - (void)stopListeningForBotCreationWithOwner:(id)arg1;
+- (void)checkBotsForUpdatesWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)statsForBot:(id)arg1 sinceDate:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)statsForBot:(id)arg1 onDate:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)integrateBot:(id)arg1 shouldClean:(BOOL)arg2 completionHandler:(CDUnknownBlockType)arg3;

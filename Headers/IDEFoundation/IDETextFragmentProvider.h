@@ -17,7 +17,7 @@
 + (id)allTextFragmentsForSeed:(id)arg1 fromFilePath:(id)arg2;
 + (BOOL)retainsSeed;
 + (void)generateTextFragmentProviderSeedForFilePath:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-+ (Class)textProviderClassForFilePath:(id)arg1;
++ (Class)textProviderClassForFilePath:(id)arg1 explicitFileDataType:(id)arg2;
 + (void)faultProviderClasses;
 + (id)textFragmentProviderLookupEntriesInPriorityOrder;
 - (void).cxx_destruct;

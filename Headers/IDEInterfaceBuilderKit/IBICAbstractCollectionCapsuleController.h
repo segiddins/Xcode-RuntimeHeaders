@@ -26,6 +26,12 @@
 - (id)dragTypesForView:(id)arg1;
 - (id)chooseDropTargetGettingAllowedDragOperations:(unsigned long long *)arg1 forDraggingInfo:(id)arg2;
 - (BOOL)isValidPath:(id)arg1 forDroppingOnComponentWithID:(id)arg2;
+- (id)addDroppedItem:(id)arg1 withComponentID:(id)arg2;
+- (id)addItemFromPasteboardReferencedFilePath:(id)arg1 withComponentID:(id)arg2;
+- (id)addItemFromDroppedContentObject:(id)arg1 withComponentID:(id)arg2;
+- (id)inferredComponentIDsForImageReps:(id)arg1;
+- (id)inferredComponentIDsForPaths:(id)arg1;
+- (id)prepareConvertedCopyOfDroppedFallbackItem:(id)arg1 toReplaceExistingItem:(id)arg2 context:(id)arg3 targetDropLocation:(id *)arg4;
 - (void)groupedRepCapsule:(id)arg1 configureAssetView:(id)arg2 forAssetRepIdentifier:(id)arg3;
 - (void)groupedRepCapsule:(id)arg1 configureGroupView:(id)arg2 forGroupWithPath:(id)arg3;
 - (id)groupedRepCapsule:(id)arg1 detailAreaPathForIdentifier:(id)arg2;

@@ -20,6 +20,7 @@
     BOOL _shouldAutoSwitchDebugNavigatorContentMode;
     BOOL _showsOnlyVisibleViewObjects;
     BOOL _showsLayers;
+    BOOL _showsPerformanceRuntimeIssues;
     IDEWorkspaceTabController *_workspaceTabController;
     DBGViewDebuggerAddition *_debuggingAddition;
     long long _userInterfaceState;
@@ -38,6 +39,7 @@
 @property(readonly) DVTExtension *extension; // @synthesize extension=_extension;
 @property(retain, nonatomic) DBGViewObject<DBGFocusableViewObject> *focusedHierarchyRootObject; // @synthesize focusedHierarchyRootObject=_focusedHierarchyRootObject;
 @property(retain) DBGHierarchyNavigationCoordinator *hierarchyNavigationCoordinator; // @synthesize hierarchyNavigationCoordinator=_hierarchyNavigationCoordinator;
+@property(nonatomic) BOOL showsPerformanceRuntimeIssues; // @synthesize showsPerformanceRuntimeIssues=_showsPerformanceRuntimeIssues;
 @property(nonatomic) BOOL showsLayers; // @synthesize showsLayers=_showsLayers;
 @property(nonatomic) BOOL showsOnlyVisibleViewObjects; // @synthesize showsOnlyVisibleViewObjects=_showsOnlyVisibleViewObjects;
 @property(nonatomic) BOOL shouldAutoSwitchDebugNavigatorContentMode; // @synthesize shouldAutoSwitchDebugNavigatorContentMode=_shouldAutoSwitchDebugNavigatorContentMode;

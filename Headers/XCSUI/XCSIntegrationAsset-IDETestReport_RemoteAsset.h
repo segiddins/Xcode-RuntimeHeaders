@@ -8,7 +8,7 @@
 
 #import <XCSUI/IDETestReport_RemoteAsset-Protocol.h>
 
-@class NSString, NSURL;
+@class NSString, NSURL, NSURLRequest;
 
 @interface XCSIntegrationAsset (IDETestReport_RemoteAsset) <IDETestReport_RemoteAsset>
 @property(readonly, nonatomic) unsigned long long ide_testReport_remoteAsset_size;
@@ -19,6 +19,7 @@
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
+@property(readonly, copy, nonatomic) NSURLRequest *ide_testReport_remoteAsset_downloadURLRequest;
 @property(readonly) Class superclass;
 @end
 

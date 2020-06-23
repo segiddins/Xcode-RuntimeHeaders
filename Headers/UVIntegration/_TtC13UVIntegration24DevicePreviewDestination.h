@@ -16,7 +16,7 @@
     MISSING_TYPE *compositeDevice;
     MISSING_TYPE *platform;
     MISSING_TYPE *sdk;
-    MISSING_TYPE *buildTargetDestinationComponents;
+    MISSING_TYPE *buildTarget;
     MISSING_TYPE *serviceHubConnectionStore;
     MISSING_TYPE *availableObservingToken;
     MISSING_TYPE *productsStore;

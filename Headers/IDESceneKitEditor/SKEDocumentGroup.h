@@ -63,6 +63,7 @@
 - (void)document:(id)arg1 willRemoveChildMember:(id)arg2 fromMember:(id)arg3;
 - (void)document:(id)arg1 didAddChildMember:(id)arg2 toMember:(id)arg3;
 - (void)document:(id)arg1 willAddChildMember:(id)arg2 toMember:(id)arg3;
+- (id)ske_hierarchyAttributesStatusIconNames;
 - (void)ske_setAttribute:(id)arg1 ofClass:(Class)arg2;
 - (id)ske_attributeOfClass:(Class)arg1;
 @property(readonly) NSArray *ske_attributesMembers;

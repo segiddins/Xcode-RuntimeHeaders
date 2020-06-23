@@ -4,9 +4,13 @@
 //  Copyright (C) 1997-2019 Steve Nygard.
 //
 
-#import <Foundation/NSMutableData.h>
+#import <objc/NSObject.h>
 
-@interface DYVMBuffer : NSMutableData
+#import <GPUToolsCore/DYVMBuffer-Protocol.h>
+
+@class NSString;
+
+@interface DYVMBuffer : NSObject <DYVMBuffer>
 {
     struct VMBuffer *_vmBuffer;
 }
@@ -21,6 +25,12 @@
 - (id)initWithLength:(unsigned long long)arg1;
 - (id)initWithCapacity:(unsigned long long)arg1;
 - (id)initWithVMBuffer:(struct VMBuffer *)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

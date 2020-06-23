@@ -11,7 +11,6 @@
 
 @interface DTTapLocal : DTTap
 {
-    CDUnknownBlockType _nextTaskForPid;
     NSObject<OS_dispatch_source> *_pollTimer;
     BOOL _validConfig;
     id <DTTapLocalDelegate> _delegate;
@@ -26,7 +25,6 @@
 - (void)_pause;
 - (void)_stop;
 - (void)_start;
-- (void)setTaskForPidBlock:(CDUnknownBlockType)arg1;
 - (id)initWithConfig:(id)arg1 memoHandler:(id)arg2 delegate:(id)arg3;
 
 @end

@@ -12,7 +12,7 @@
 {
     BOOL _stepTransitionReentrancyGuard;
     Class _firstStepClass;
-    int _currentDirection;
+    long long _currentDirection;
     IDEDistributionContext *_context;
     IDEDistributionStepViewController *_distributionStepViewController;
     DVTBorderedView *_stepContainerView;
@@ -32,9 +32,10 @@
 @property(retain) DVTBorderedView *stepContainerView; // @synthesize stepContainerView=_stepContainerView;
 @property(retain, nonatomic) IDEDistributionStepViewController *distributionStepViewController; // @synthesize distributionStepViewController=_distributionStepViewController;
 @property(retain) IDEDistributionContext *context; // @synthesize context=_context;
-@property(nonatomic) int currentDirection; // @synthesize currentDirection=_currentDirection;
+@property(nonatomic) long long currentDirection; // @synthesize currentDirection=_currentDirection;
 - (void)primitiveInvalidate;
 - (void)presentUnrecoverableError:(id)arg1;
+- (void)presentWarnings:(id)arg1;
 - (void)exportPackage;
 - (void)exportPackageWithStepName:(id)arg1 closeAssistantWhenComplete:(BOOL)arg2;
 - (void)done:(id)arg1;

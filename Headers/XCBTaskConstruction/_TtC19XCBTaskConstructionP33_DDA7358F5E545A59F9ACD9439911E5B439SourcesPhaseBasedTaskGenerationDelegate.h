@@ -12,6 +12,7 @@
 {
     MISSING_TYPE *producer;
     MISSING_TYPE *delegate;
+    MISSING_TYPE *userPreferences;
 }
 
 @end

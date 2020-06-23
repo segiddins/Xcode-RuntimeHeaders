@@ -6,14 +6,19 @@
 
 #import <DVTFoundation/DVTDeviceLocator.h>
 
-@class DVTNotificationToken, NSMapTable, NSMutableSet, NSSet;
+@class DVTNotificationToken, NSMapTable, NSMutableSet, NSSet, _TtC17IDEiOSSupportCore17CloudDeviceHelper;
 
 @interface DVTiOSDeviceLocator : DVTDeviceLocator
 {
     DVTNotificationToken *_deviceAttachedToken;
     DVTNotificationToken *_deviceDetachedToken;
+    DVTNotificationToken *_cloudDevicePlaceholderAttachedToken;
+    DVTNotificationToken *_cloudDevicePlaceholderDetachedToken;
+    DVTNotificationToken *_cloudDevicePlaceholderIdentifierChangedToken;
+    _TtC17IDEiOSSupportCore17CloudDeviceHelper *_cloudDeviceHelper;
     NSMapTable *_deviceObservingTokens;
     NSMutableSet *_savedDevices;
+    NSMutableSet *_forgottenCloudDevicePlaceholders;
     NSSet *_placeholderDevices;
     NSSet *_platforms;
 }
@@ -26,15 +31,25 @@
 - (BOOL)validateDeviceSpecifierOptions:(id)arg1 genericOnly:(BOOL)arg2 allowMultipleMatches:(BOOL)arg3 error:(id *)arg4;
 - (id)deviceType;
 - (void)presentError:(id)arg1;
+- (void)markDeviceAsCloudDevice:(id)arg1;
+- (void)_removeCloudDevicePlaceholder:(id)arg1;
+- (id)_cloudDevicePlaceholderFromNotification:(id)arg1;
+- (void)_downloadCachedSymbolForDevice:(id)arg1 buildTrain:(id)arg2;
+- (id)_cloudLocationScheme;
+- (void)_cloudDevicePlaceholderIdentifierChanged:(id)arg1;
+- (void)_cloudDevicePlaceholderDetached:(id)arg1;
+- (void)_cloudDevicePlaceholderAttached:(id)arg1;
 - (void)deviceDetached:(id)arg1;
 - (void)deviceAttached:(id)arg1;
 - (BOOL)_shouldCreateDeviceInstanceForDeviceRepresentedByToken:(id)arg1;
-- (id)iOSDeviceWithIdentifier:(id)arg1;
+- (id)_cloudDevicePlaceholderWithIdentifier:(id)arg1;
+- (id)_iOSDeviceWithIdentifier:(id)arg1;
 - (id)knownDeviceAtDeviceLocation:(id)arg1;
 - (id)platforms;
 - (id)deviceLocationScheme;
 - (void)stopLocating;
 - (void)startLocating;
+- (void)forgetCloudDevicePlaceholder:(id)arg1;
 - (void)forgetDevice:(id)arg1;
 - (void)beginWatchingDevice:(id)arg1;
 - (void)updateDefaultsForDevice:(id)arg1;

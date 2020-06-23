@@ -12,6 +12,7 @@
 - (void)pathControl:(IDEFindNavigatorPathControl *)arg1 userChoseValue:(id)arg2 forSegment:(id)arg3;
 - (BOOL)pathControl:(IDEFindNavigatorPathControl *)arg1 shouldHighlightSelectionForValue:(id)arg2 ofSegment:(id)arg3;
 - (NSString *)pathControl:(IDEFindNavigatorPathControl *)arg1 titleForValue:(id)arg2 ofSegment:(id)arg3;
+- (NSString *)pathControl:(IDEFindNavigatorPathControl *)arg1 accessibilityIdentifierForSegment:(id)arg2;
 - (NSArray *)pathControl:(IDEFindNavigatorPathControl *)arg1 candidatesForSegment:(id)arg2;
 - (id)pathControl:(IDEFindNavigatorPathControl *)arg1 valueForSegment:(id)arg2;
 - (NSArray *)pathControlSegments:(IDEFindNavigatorPathControl *)arg1;

@@ -8,17 +8,19 @@
 
 #import <IDEKit/DVTInvalidation-Protocol.h>
 
-@class DVTDeveloperAccount, DVTStackBacktrace, NSString;
+@class DVTDeveloperAccount, DVTStackBacktrace, NSMutableSet, NSString;
 @protocol IDEAccountDetailsRefresherDelegate;
 
 @interface IDEAccountDetailsRefresher : NSObject <DVTInvalidation>
 {
     id <IDEAccountDetailsRefresherDelegate> _delegate;
     DVTDeveloperAccount *_developerAccount;
+    NSMutableSet *_debugTeamDescriptions;
 }
 
 + (void)initialize;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableSet *debugTeamDescriptions; // @synthesize debugTeamDescriptions=_debugTeamDescriptions;
 @property(readonly, nonatomic) DVTDeveloperAccount *developerAccount; // @synthesize developerAccount=_developerAccount;
 @property(readonly, nonatomic) id <IDEAccountDetailsRefresherDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)primitiveInvalidate;

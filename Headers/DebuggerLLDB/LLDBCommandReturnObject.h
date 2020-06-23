@@ -13,7 +13,7 @@
 @interface LLDBCommandReturnObject : NSObject <DBGSBCommandReturnObject>
 {
     struct SBCommandReturnObject {
-        struct unique_ptr<lldb_private::CommandReturnObject, std::__1::default_delete<lldb_private::CommandReturnObject>> m_opaque_up;
+        struct unique_ptr<lldb_private::SBCommandReturnObjectImpl, std::__1::default_delete<lldb_private::SBCommandReturnObjectImpl>> m_opaque_up;
     } _commandReturnObject;
 }
 

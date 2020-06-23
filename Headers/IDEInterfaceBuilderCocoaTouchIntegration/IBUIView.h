@@ -66,7 +66,6 @@
     IBDirectionalEdgeInsetsWrapper *_explicitDirectionalLayoutMargins;
     IBUIAccessibilityConfiguration *_accessibilityConfiguration;
     NSArray *_gestureRecognizers;
-    IBUIViewAutolayoutGuide *_safeAreaLayoutGuide;
     unsigned long long _simulatedAppContext;
     IBUIViewController *_viewController;
     IBUIStoryboardPreviewingSegueTemplateStorage *_previewingSegueTemplateStorage;
@@ -78,6 +77,7 @@
 + (id)keyPathsForValuesAffectingIbLayoutMargins;
 + (id)keyPathsForValuesAffectingEffectiveTintColor;
 + (id)keyPathsForValuesAffectingInheritedTintColor;
++ (BOOL)ibIsCocoaNSView;
 + (BOOL)shouldArchiveTintColorWithUIViewProperties;
 + (BOOL)ibSupportsCocoaTouchAccessibility;
 + (id)keyPathsForValuesAffectingInspectedContentStretch_size_height;
@@ -101,7 +101,7 @@
 + (id)keyPathsForValuesAffectingIbInspectedUseSafeAreaLayoutGuide;
 + (id)ibSimulatedMetricsKeyPathsAffectingEditorView;
 + (void)ibDidInstantiateView:(id)arg1 forAsset:(id)arg2 role:(long long)arg3;
-+ (void)ibDidInstantiateForObject:(id)arg1 forAsset:(id)arg2 role:(long long)arg3;
++ (void)ibDidInstantiateObject:(id)arg1 forAsset:(id)arg2 role:(long long)arg3;
 + (id)ibInstantiateForRole:(long long)arg1 withTargetRuntime:(id)arg2 documentClass:(Class)arg3 assetIdentifier:(id)arg4;
 + (id)ibInstantiateViewForRole:(long long)arg1 withTargetRuntime:(id)arg2 documentClass:(Class)arg3 assetIdentifier:(id)arg4;
 + (long long)ibInstantiationSizeBehavior;
@@ -111,7 +111,6 @@
 @property(retain, nonatomic) IBUIStoryboardPreviewingSegueTemplateStorage *previewingSegueTemplateStorage; // @synthesize previewingSegueTemplateStorage=_previewingSegueTemplateStorage;
 @property(nonatomic) __weak IBUIViewController *viewController; // @synthesize viewController=_viewController;
 @property(nonatomic) unsigned long long simulatedAppContext; // @synthesize simulatedAppContext=_simulatedAppContext;
-@property(retain, nonatomic) IBUIViewAutolayoutGuide *safeAreaLayoutGuide; // @synthesize safeAreaLayoutGuide=_safeAreaLayoutGuide;
 @property(retain, nonatomic) NSArray *gestureRecognizers; // @synthesize gestureRecognizers=_gestureRecognizers;
 @property(retain, nonatomic) IBUIAccessibilityConfiguration *accessibilityConfiguration; // @synthesize accessibilityConfiguration=_accessibilityConfiguration;
 @property(nonatomic) struct CGRect contentStretch; // @synthesize contentStretch=_contentStretch;
@@ -157,6 +156,7 @@
 - (struct NSEdgeInsets)defaultLayoutMargins;
 - (void)populateGeometryMarshallingContext:(id)arg1;
 - (void)configurePlaceholderDrawingAttributes:(id)arg1;
+- (id)effectivePlaceholderTitle;
 - (BOOL)shouldDrawAsPlaceholder;
 - (id)defaultTextColor;
 - (id)defaultBackgroundColor;
@@ -187,6 +187,7 @@
 - (BOOL)ibSupportsFirstBaseline;
 - (double)baselineOffsetFromBottom;
 - (struct CGSize)intrinsicContentSize;
+- (void)updateDesignableIntrinsicContentSizeFromCachedSize;
 - (void)setCachedIntrinsicContentSize:(id)arg1;
 - (void)ibAllowDirectIntrisicContentSizeQueryOnCacheMissDuring:(CDUnknownBlockType)arg1;
 - (struct CGRect)ibLayoutFrameworkBounds;
@@ -245,9 +246,7 @@
 - (id)ibUIShadowedSubviewsFirstView;
 - (void)setIbShadowedSubviews:(id)arg1;
 - (BOOL)ibShouldPropagateDesignFramesToCopiedView;
-@property(readonly) NSArray *ibEffectiveViewLayoutGuides;
-- (void)unarchiveSafeAreaLayoutGuide:(id)arg1;
-- (void)archiveSafeAreaLayoutGuide:(id)arg1;
+@property(retain, nonatomic) IBUIViewAutolayoutGuide *ibSafeAreaLayoutGuide;
 - (void)unarchiveInsetsLayoutMarginsFromSafeArea:(id)arg1;
 - (void)archiveInsetsLayoutMarginsFromSafeArea:(id)arg1;
 - (void)unarchiveLayoutMarginsFollowReadableWidth:(id)arg1;
@@ -385,6 +384,7 @@
 - (BOOL)ibOverridesFrameworkMetricsForPreferredSize;
 - (BOOL)ibPrefersToBeSizedToFitAfterEditingTitle;
 - (struct CGRect)ibInlineTextEditingRectForKeyPath:(id)arg1;
+- (void)ibAwakeAfterOldFormattedXMLDecoding;
 - (BOOL)ibIsValidTraitStorageListContainer;
 - (id)ibCompiledCandidatesForToManyChildRelationshipKeyPath:(id)arg1 withPropertyStorage:(id)arg2 context:(id)arg3;
 - (id)ibCompiledValueForKeyPath:(id)arg1 withPropertyStorage:(id)arg2 inConfiguration:(id)arg3 context:(id)arg4;
@@ -394,11 +394,7 @@
 - (id)ibCompiledKeyPathForDesignTimeConfigurableKeyPath:(id)arg1;
 - (id)ibUnarchiveValueForAttribute:(id)arg1 inConfiguration:(id)arg2 withDocumentUnarchiver:(id)arg3;
 - (void)ibArchiveEvaluatedValue:(id)arg1 forAttribute:(id)arg2 inConfiguration:(id)arg3 withDocumentArchiver:(id)arg4;
-- (void)setNilValueForKey:(id)arg1;
 - (id)ibLocalPerConfigurationAttributeKeyPaths;
-- (BOOL)ibShouldConsiderHitTestingForChild:(id)arg1;
-- (void)ibPopulateChildBackToFrontRelationOrder:(id)arg1;
-- (struct CGRect)ibRectForChild:(id)arg1 inFrameController:(id)arg2;
 - (void)ibEnumerateLayoutGuidesForDrawingWithBlock:(CDUnknownBlockType)arg1;
 - (void)ibDidExtractPasteboardObjects:(id)arg1 intoDocument:(id)arg2 context:(id)arg3;
 - (void)ibVerifyAndPrepareContentViewConstraintItemMappings:(id)arg1 fromOldView:(id)arg2 document:(id)arg3;
@@ -443,6 +439,7 @@
 - (id)ibLocalSearchableNumericAttributeKeyPaths;
 - (BOOL)ibWantsSceneMaskOrBezel;
 - (id)layoutGuideForAttribute:(unsigned long long)arg1;
+- (id)ibEffectiveViewLayoutGuidesInDescendingPriorityOrder;
 - (void)ibConvertConstraintsToSafeAreaLayoutGuide:(BOOL)arg1 forDocument:(id)arg2;
 - (void)ibDowngradeConstraintsAndRemoveLayoutGuide:(id)arg1 document:(id)arg2;
 - (void)setEnableSafeAreaLayoutGuide:(BOOL)arg1 document:(id)arg2;

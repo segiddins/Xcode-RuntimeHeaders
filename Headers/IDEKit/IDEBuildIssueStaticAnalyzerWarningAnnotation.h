@@ -14,7 +14,6 @@
 + (id)editedTheme;
 + (id)focusedTheme;
 + (id)normalTheme;
-+ (id)sidebarIconBorderMask;
 + (id)sidebarIcon;
 + (double)precedence;
 - (id)annotationDisplayName;

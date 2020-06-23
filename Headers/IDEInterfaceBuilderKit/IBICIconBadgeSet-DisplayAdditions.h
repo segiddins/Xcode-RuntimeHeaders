@@ -8,6 +8,7 @@
 
 @interface IBICIconBadgeSet (DisplayAdditions)
 + (CDStruct_7ddbbeae)capsuleGroupingAttributesForGroupWithPath:(id)arg1;
+- (id)detachedSlottedAssetRepByAcceptingPasteboardObject:(id)arg1 forRepIdentifier:(id)arg2;
 - (id)includedAttributesInspectorSlicesForChild:(id)arg1;
 @end
 

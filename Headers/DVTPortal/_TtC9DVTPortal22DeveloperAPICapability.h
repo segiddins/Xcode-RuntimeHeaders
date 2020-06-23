@@ -8,7 +8,6 @@
 
 @class MISSING_TYPE;
 
-__attribute__((visibility("hidden")))
 @interface _TtC9DVTPortal22DeveloperAPICapability : _TtC9DVTPortal20DeveloperAPIResource
 {
     MISSING_TYPE *rawCapabilityAttributes;

@@ -10,9 +10,7 @@
 
 @interface _TtC16XCBTaskExecution23AuxiliaryFileTaskAction : _TtC16XCBTaskExecution10TaskAction
 {
-    MISSING_TYPE *output;
-    MISSING_TYPE *contents;
-    MISSING_TYPE *permissions;
+    MISSING_TYPE *context;
 }
 
 @end

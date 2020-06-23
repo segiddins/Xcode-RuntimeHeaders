@@ -19,8 +19,9 @@
 
 + (BOOL)supportsSecureCoding;
 - (void).cxx_destruct;
-@property(readonly, copy, nonatomic) NSString *html; // @synthesize html=_html;
+@property(copy, nonatomic) NSString *html; // @synthesize html=_html;
 @property(readonly, copy, nonatomic) NSString *markdown; // @synthesize markdown=_markdown;
+- (void)updateHTML:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

@@ -6,18 +6,18 @@
 
 #import <objc/NSObject.h>
 
-@class IDEOpenQuicklyQueryPattern, NSNumber;
+@class DVTFuzzyMatchPattern, NSNumber;
 
 @interface IDEOpenQuicklyQueryUserInput : NSObject
 {
-    IDEOpenQuicklyQueryPattern *_pattern;
+    DVTFuzzyMatchPattern *_pattern;
     NSNumber *_explicitLineNumber;
 }
 
 + (void)extractPatternText:(id *)arg1 andExplicitLineNumber:(id *)arg2 fromString:(id)arg3;
 - (void).cxx_destruct;
 @property(readonly) NSNumber *explicitLineNumber; // @synthesize explicitLineNumber=_explicitLineNumber;
-@property(readonly) IDEOpenQuicklyQueryPattern *pattern; // @synthesize pattern=_pattern;
+@property(readonly) DVTFuzzyMatchPattern *pattern; // @synthesize pattern=_pattern;
 - (id)initWithPattern:(id)arg1 explicitLineNumber:(id)arg2;
 - (id)initWithText:(id)arg1;
 

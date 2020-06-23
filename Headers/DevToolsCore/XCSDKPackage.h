@@ -65,6 +65,7 @@
 - (id)copyDefaultDeploymentVersionDict;
 @property(readonly) BOOL supportsBitcode;
 - (id)supportedBuildToolComponents;
+- (id)librariesIncludingUnzipperedTwins:(BOOL)arg1;
 - (id)libraries;
 - (id)commandLineToolSearchPath;
 @property(readonly, getter=isBaseSDK) BOOL baseSDK;

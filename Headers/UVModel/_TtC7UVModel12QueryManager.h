@@ -12,12 +12,13 @@
 {
     MISSING_TYPE *executionQueue;
     MISSING_TYPE *pendingFuturesByQuery;
-    MISSING_TYPE *didChangeResolversObservers;
-    MISSING_TYPE *inObserveMethodNestingCount;
-    MISSING_TYPE *unsafeResolvers;
+    MISSING_TYPE *resolversChangedCancellation;
+    MISSING_TYPE *state;
+    MISSING_TYPE *resolversChanged;
+    MISSING_TYPE *delegateChanged;
+    MISSING_TYPE *objectWillChange;
     MISSING_TYPE *testing_didAddCachedFutureHandler;
     MISSING_TYPE *testing_didRemoveCompletedCachedFutureHandler;
-    MISSING_TYPE *testing_changingResolversDuringObserveFailureHandler;
 }
 
 @end

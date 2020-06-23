@@ -37,6 +37,7 @@
 @property(nonatomic, readonly) NSString *status;
 @property(nonatomic, readonly) NSString *jobId;
 @property(nonatomic, readonly) long long logFormatVersion; // @synthesize logFormatVersion;
+@property(readonly) long long distributionEventState;
 
 @end
 

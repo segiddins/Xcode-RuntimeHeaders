@@ -31,7 +31,7 @@
 }
 
 + (unsigned long long)assertionBehaviorAfterEndOfEventForSelector:(SEL)arg1;
-+ (id)standardDebugBarButtonWithImage:(id)arg1 alternateImage:(id)arg2 toolTip:(id)arg3 accessibilityDescription:(id)arg4;
++ (id)standardDebugBarButtonWithImage:(id)arg1 toolTip:(id)arg2 accessibilityDescription:(id)arg3;
 + (struct CGSize)standardDebugBarButtonSize;
 - (void).cxx_destruct;
 @property BOOL prefersToAlwaysBeShown; // @synthesize prefersToAlwaysBeShown=_prefersToAlwaysBeShown;
@@ -53,6 +53,7 @@
 - (void)installContentProvidersForNewDefaultCategory:(id)arg1;
 - (void)installContentProvidersForCategory:(id)arg1;
 - (void)installContentProvidersForDefaultCategory;
+- (void)_showHideDebugAreaButtonAction:(id)arg1;
 - (id)_createShowHideDebugAreaButton;
 - (void)loadView;
 

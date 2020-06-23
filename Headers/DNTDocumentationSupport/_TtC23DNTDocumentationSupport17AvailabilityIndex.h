@@ -6,11 +6,9 @@
 
 #import <swiftCore/_TtCs12_SwiftObject.h>
 
-#import <DNTDocumentationSupport/_TtP23DNTDocumentationSupport26AvailabilityIndexQueryable_-Protocol.h>
-
 @class MISSING_TYPE;
 
-@interface _TtC23DNTDocumentationSupport17AvailabilityIndex : _TtCs12_SwiftObject <_TtP23DNTDocumentationSupport26AvailabilityIndexQueryable_>
+@interface _TtC23DNTDocumentationSupport17AvailabilityIndex : _TtCs12_SwiftObject
 {
     MISSING_TYPE *platformVersionMap;
     MISSING_TYPE *availabilityItems;

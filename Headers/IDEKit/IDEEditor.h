@@ -6,12 +6,13 @@
 
 #import <IDEKit/IDEViewController.h>
 
+#import <IDEKit/IDEFullSizeContentEditor-Protocol.h>
 #import <IDEKit/NSUserInterfaceValidations-Protocol.h>
 
-@class DVTFindBar, DVTNotificationToken, DVTObservingToken, DVTScopeBarsManager, IDEAuxiliaryEditor, IDEAuxiliaryEditorContext, IDEAuxiliaryEditorProvider, IDEEditorContext, IDEEditorDocument, IDEFileTextSettings, NSScrollView, NSSet;
+@class DVTFindBar, DVTNotificationToken, DVTObservingToken, DVTScopeBarsManager, IDEAuxiliaryEditor, IDEAuxiliaryEditorContext, IDEAuxiliaryEditorProvider, IDEEditorContext, IDEEditorDocument, IDEFileTextSettings, NSScrollView, NSSet, NSString;
 @protocol DVTTextFindable, IDEEditorDelegate;
 
-@interface IDEEditor : IDEViewController <NSUserInterfaceValidations>
+@interface IDEEditor : IDEViewController <NSUserInterfaceValidations, IDEFullSizeContentEditor>
 {
     DVTFindBar *_findBar;
     DVTNotificationToken *_documentDidChangeNotificationToken;
@@ -27,9 +28,11 @@
     IDEAuxiliaryEditor *_auxiliaryEditor;
     IDEAuxiliaryEditorProvider *_auxiliaryEditorProvider;
     IDEEditorContext *_editorContext;
+    struct NSEdgeInsets _fullSizeContentInsets;
 }
 
 + (unsigned long long)assertionBehaviorAfterEndOfEventForSelector:(SEL)arg1;
++ (BOOL)supportsFullSizeContent;
 + (BOOL)canProvideCurrentSelectedItems;
 - (void).cxx_destruct;
 @property(retain) IDEEditorContext *editorContext; // @synthesize editorContext=_editorContext;
@@ -41,6 +44,7 @@
 @property(retain, nonatomic) IDEEditorDocument *documentForNavBarStructure; // @synthesize documentForNavBarStructure=_documentForNavBarStructure;
 @property(retain) IDEEditorDocument *document; // @synthesize document=_document;
 @property(retain) id <IDEEditorDelegate> delegate; // @synthesize delegate=_delegate;
+@property struct NSEdgeInsets fullSizeContentInsets; // @synthesize fullSizeContentInsets=_fullSizeContentInsets;
 @property(retain, nonatomic) IDEAuxiliaryEditorContext *auxiliaryEditorContext;
 @property(readonly) NSSet *applicableLibraryExtensionIDs;
 - (void)shouldNavigateAway:(CDUnknownBlockType)arg1;
@@ -79,6 +83,12 @@
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)initUsingDefaultNib;
 - (BOOL)wantsToSuppressEditorAreaFunctionBar;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

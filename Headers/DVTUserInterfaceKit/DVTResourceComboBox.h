@@ -9,8 +9,8 @@
 #import <DVTUserInterfaceKit/NSTableViewDataSource-Protocol.h>
 #import <DVTUserInterfaceKit/NSTableViewDelegate-Protocol.h>
 
-@class DVTResourceComboBoxColorSwatchOrImageView, DVTResourceComboBoxFilterTableView, NSButton, NSColor, NSImage, NSLayoutConstraint, NSObject, NSScrollView, NSString, NSWindow;
-@protocol DVTResourceComboBoxDataSource;
+@class DVTResourceComboBoxColorSwatchOrImageView, DVTResourceComboBoxFilterTableView, NSButton, NSColor, NSImage, NSLayoutConstraint, NSScrollView, NSString, NSWindow;
+@protocol DVTResourceComboBoxDataSource, DVTResourceComboBoxDelegate;
 
 @interface DVTResourceComboBox : NSTextField <NSTableViewDataSource, NSTableViewDelegate>
 {
@@ -19,8 +19,10 @@
     BOOL _hasScheduledReloadData;
     DVTResourceComboBoxColorSwatchOrImageView *_iconView;
     NSLayoutConstraint *_iconViewWidthConstraint;
-    NSObject<DVTResourceComboBoxDataSource> *_dataSource;
-    double _trailingTextEditAreaInset;
+    BOOL _showsFollowButton;
+    id <DVTResourceComboBoxDataSource> _dataSource;
+    id <DVTResourceComboBoxDelegate> _resourceComboBoxDelegate;
+    NSButton *_followButton;
     DVTResourceComboBoxFilterTableView *_popupFilterTableView;
     NSScrollView *_popupFilterScrollView;
 }
@@ -29,8 +31,10 @@
 - (void).cxx_destruct;
 @property(retain) NSScrollView *popupFilterScrollView; // @synthesize popupFilterScrollView=_popupFilterScrollView;
 @property(retain) DVTResourceComboBoxFilterTableView *popupFilterTableView; // @synthesize popupFilterTableView=_popupFilterTableView;
-@property(nonatomic) double trailingTextEditAreaInset; // @synthesize trailingTextEditAreaInset=_trailingTextEditAreaInset;
-@property __weak NSObject<DVTResourceComboBoxDataSource> *dataSource; // @synthesize dataSource=_dataSource;
+@property(retain) NSButton *followButton; // @synthesize followButton=_followButton;
+@property(nonatomic) BOOL showsFollowButton; // @synthesize showsFollowButton=_showsFollowButton;
+@property __weak id <DVTResourceComboBoxDelegate> resourceComboBoxDelegate; // @synthesize resourceComboBoxDelegate=_resourceComboBoxDelegate;
+@property __weak id <DVTResourceComboBoxDataSource> dataSource; // @synthesize dataSource=_dataSource;
 - (id)textView:(id)arg1 completions:(id)arg2 forPartialWordRange:(struct _NSRange)arg3 indexOfSelectedItem:(long long *)arg4;
 - (BOOL)textView:(id)arg1 doCommandBySelector:(SEL)arg2;
 - (id)tableView:(id)arg1 viewForTableColumn:(id)arg2 row:(long long)arg3;
@@ -56,12 +60,14 @@
 - (double)popupButtonAlignmentWidth;
 - (void)initializePopupFilterButton;
 - (void)initializeIcon;
-- (void)initializeStyle;
+- (void)initializeStyle:(unsigned long long)arg1;
 - (void)initializedPopupFilterTableViewAndScrollView;
 - (double)displayingIconWidth;
 - (BOOL)isDisplayingIcon;
+@property(readonly) unsigned long long boxStyle;
 - (id)resourceCell;
-- (void)initializeCommon;
+- (void)initializeCommonWithBoxStyle:(unsigned long long)arg1;
+- (void)followButtonPressed:(id)arg1;
 - (void)resizeWithOldSuperviewSize:(struct CGSize)arg1;
 - (void)keyUp:(id)arg1;
 - (void)forwardKeyEventTablePopupAsKeyDown:(id)arg1;
@@ -70,11 +76,14 @@
 - (void)clearIconRepresentation;
 @property(copy, nonatomic) NSColor *iconColorRepresentation;
 @property(retain, nonatomic) NSImage *iconImageRepresentation;
+- (void)layout;
+@property(copy, nonatomic) NSString *namespaceLabel;
 - (void)reloadData;
 - (void)clickedRowInTableView:(id)arg1;
 - (void)textDidEndEditing:(id)arg1;
 - (void)textDidChange:(id)arg1;
 - (void)mouseDown:(id)arg1;
+- (id)initWithBoxStyle:(unsigned long long)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)initWithCoder:(id)arg1;
 

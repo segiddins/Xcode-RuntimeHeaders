@@ -4,12 +4,16 @@
 //  Copyright (C) 1997-2019 Steve Nygard.
 //
 
-@class IDEContainerItem;
+#import <IDEKit/NSObject-Protocol.h>
+
+@class IDEContainerItem, NSSet;
 @protocol IDEStructureEditingItem;
 
-@protocol IDEStructureEditingItem
+@protocol IDEStructureEditingItem <NSObject>
+- (BOOL)hasAncestorInSet:(NSSet *)arg1;
+- (id)actualRepresentedObject;
 - (id <IDEStructureEditingItem>)parentStructureEditingItem;
-- (unsigned long long)indexUnderParent;
+- (long long)indexUnderParent;
 - (IDEContainerItem *)representedContainerItem;
 @end
 

@@ -31,7 +31,6 @@
 @property(readonly) NSView<DVTTextCompletionSupportingTextView> *textView; // @synthesize textView=_textView;
 - (id)debugStateString;
 - (BOOL)showInfoPanelForSelectedCompletion;
-- (id)attributesForCompletionAtCharacterIndex:(unsigned long long)arg1 effectiveRange:(struct _NSRange *)arg2;
 - (BOOL)_textViewShouldInsertTab;
 - (BOOL)_textViewShouldHandleCancel;
 - (BOOL)_textViewShouldHandleComplete;

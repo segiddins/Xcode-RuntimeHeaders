@@ -40,7 +40,7 @@
 - (struct CGRect)stateImageHitTestRectForRepresentedObject:(id)arg1;
 - (struct CGRect)keyEquivalentHitTestRectForRepresentedObject:(id)arg1;
 - (struct CGRect)frameForMenuItemWithRepresentedObject:(id)arg1;
-- (int)layoutDirection;
+- (unsigned long long)layoutDirection;
 - (id)createMenuItemEditorViewForMenuItem:(id)arg1;
 - (Class)menuItemEditorViewClass;
 - (id)representedObjectAtPoint:(struct CGPoint)arg1;

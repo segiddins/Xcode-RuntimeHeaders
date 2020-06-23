@@ -100,6 +100,7 @@
 - (id)ibAcceptContentsOfPasteboard:(id)arg1 inDocument:(id)arg2 insertionContext:(id)arg3;
 - (BOOL)ibCanAcceptContentsOfPasteboard:(id)arg1 inDocument:(id)arg2 targetChildRelation:(id *)arg3;
 - (BOOL)shouldAcceptImages;
+- (id)ibRecoverySuggestionForMisuseOfSymbolCharactersInValueForInspectorKeyPath:(id)arg1;
 - (void)ibConfigureSceneUpdateRequest:(id)arg1;
 - (id)ibQualifyingInfoForDefaultLabel;
 - (id)ibInitialConnectionLabelSearchTerm;

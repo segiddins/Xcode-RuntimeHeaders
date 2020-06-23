@@ -6,7 +6,7 @@
 
 #import <IDEKit/IDEViewController.h>
 
-@class IDEDocContentAreaViewController, MISSING_TYPE, NSString, NSView, NSVisualEffectView;
+@class IDEDocContentAreaViewController, MISSING_TYPE, NSString, NSView;
 @protocol _TtP12IDEDocViewer27IDEDocNavigatorAreaDelegate_;
 
 __attribute__((visibility("hidden")))
@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     MISSING_TYPE *UUID;
     MISSING_TYPE *delegate;
     MISSING_TYPE *contentAreaViewController;
-    MISSING_TYPE *visualEffectView;
     MISSING_TYPE *explorerContainer;
     MISSING_TYPE *documentationNavigator;
+    MISSING_TYPE *navigatorViewConstraints;
 }
 
 - (void).cxx_destruct;
@@ -30,9 +30,9 @@ __attribute__((visibility("hidden")))
 - (void)giveFilterFieldFocus;
 - (void)primitiveInvalidate;
 - (void)setStateToken:(id)arg1;
+- (void)viewDidInstall;
 - (void)loadView;
 @property(nonatomic, retain) NSView *explorerContainer; // @synthesize explorerContainer;
-@property(nonatomic, retain) NSVisualEffectView *visualEffectView; // @synthesize visualEffectView;
 @property(nonatomic) __weak IDEDocContentAreaViewController *contentAreaViewController; // @synthesize contentAreaViewController;
 @property(nonatomic, retain) id <_TtP12IDEDocViewer27IDEDocNavigatorAreaDelegate_> delegate; // @synthesize delegate;
 @property(nonatomic, copy) NSString *UUID;

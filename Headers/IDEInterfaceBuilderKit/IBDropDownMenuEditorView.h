@@ -16,10 +16,11 @@
 }
 
 - (void)drawRect:(struct CGRect)arg1;
-- (void)borderlessEditorCanvasFrame:(id)arg1 drawUnshadowedBackgroundInRect:(struct CGRect)arg2;
+- (id)shadowForEditorCanvasFrame:(id)arg1;
+- (void)editorCanvasFrame:(id)arg1 drawUnshadowedBackgroundInRect:(struct CGRect)arg2;
 - (id)createMenuItemEditorViewForMenuItem:(id)arg1;
 - (Class)menuItemEditorViewClass;
-- (int)layoutDirection;
+- (unsigned long long)layoutDirection;
 - (id)distanceToDragToAddItem;
 - (double)maxEdgeInset;
 - (double)minEdgeInset;

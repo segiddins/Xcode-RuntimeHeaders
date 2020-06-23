@@ -6,7 +6,7 @@
 
 #import <IDEIntentBuilderEditor/IDEIntentBuilderEditorCapsuleViewController.h>
 
-@class DVTObservingToken, IDEIntentBuilderEditorImageButton, NSArrayController, NSTableView;
+@class DVTObservingToken, IDEIntentBuilderEditorImageButton, NSArrayController, NSScrollView, NSTableView;
 
 @interface IDEIntentBuilderEditorCapsuleTableViewController : IDEIntentBuilderEditorCapsuleViewController
 {
@@ -15,9 +15,11 @@
     NSArrayController *_contentArrayController;
     IDEIntentBuilderEditorImageButton *_addButton;
     IDEIntentBuilderEditorImageButton *_deleteButton;
+    NSScrollView *_tableScrollView;
 }
 
 - (void).cxx_destruct;
+@property __weak NSScrollView *tableScrollView; // @synthesize tableScrollView=_tableScrollView;
 @property __weak IDEIntentBuilderEditorImageButton *deleteButton; // @synthesize deleteButton=_deleteButton;
 @property __weak IDEIntentBuilderEditorImageButton *addButton; // @synthesize addButton=_addButton;
 @property __weak NSArrayController *contentArrayController; // @synthesize contentArrayController=_contentArrayController;

@@ -6,8 +6,32 @@
 
 #import <GPUDebugger/_TtC11GPUDebugger26GPUResourcesViewController.h>
 
-@interface _TtC11GPUDebugger26GPUResourcesViewController (GPUDebugger)
+#import <GPUDebugger/NSMenuItemValidation-Protocol.h>
+
+@interface _TtC11GPUDebugger26GPUResourcesViewController (GPUDebugger) <NSMenuItemValidation>
 @property(nonatomic, copy) id representedObject;
 - (void)viewDidLoad;
+- (void)issueCellButton_click:(id)arg1;
+- (void)outlineViewRow_doubleClick:(id)arg1;
+- (void)outlineView:(id)arg1 sortDescriptorsDidChange:(id)arg2;
+- (BOOL)outlineView:(id)arg1 isItemExpandable:(id)arg2;
+- (id)outlineView:(id)arg1 child:(long long)arg2 ofItem:(id)arg3;
+- (long long)outlineView:(id)arg1 numberOfChildrenOfItem:(id)arg2;
+- (void)outlineViewItemDidCollapse:(id)arg1;
+- (void)outlineViewItemDidExpand:(id)arg1;
+- (void)outlineViewSelectionDidChange:(id)arg1;
+- (id)outlineView:(id)arg1 pasteboardWriterForItem:(id)arg2;
+- (BOOL)outlineView:(id)arg1 shouldReorderColumn:(long long)arg2 toColumn:(long long)arg3;
+- (BOOL)outlineView:(id)arg1 shouldSelectItem:(id)arg2;
+- (BOOL)outlineView:(id)arg1 shouldExpandItem:(id)arg2;
+- (BOOL)outlineView:(id)arg1 isGroupItem:(id)arg2;
+- (id)outlineView:(id)arg1 viewForTableColumn:(id)arg2 item:(id)arg3;
+- (void)columnMenu_toggleColumn:(id)arg1;
+- (void)contextMenu_selectTag:(id)arg1;
+- (void)contextMenu_sortBy:(id)arg1;
+- (void)contextMenu_groupBy:(id)arg1;
+- (void)menuDidClose:(id)arg1;
+- (void)menuWillOpen:(id)arg1;
+- (BOOL)validateMenuItem:(id)arg1;
 @end
 

@@ -37,6 +37,7 @@
 @property(readonly) NSString *productModuleName;
 @property(readonly) NSSet *namesOfLinkedBinaries;
 - (id)orderedRecursiveDependenciesIncludingSelf:(BOOL)arg1;
+- (id)orderedRecursiveDependenciesIncludingSelf:(BOOL)arg1 includingPackages:(BOOL)arg2;
 - (id)toolSearchPathWithBuildParameters:(id)arg1;
 - (id)allBuildSettingNamesWithBuildParameters:(id)arg1;
 - (id)absolutePathByEvaluatingBuildSettingExpressionString:(id)arg1 withBuildParameters:(id)arg2;

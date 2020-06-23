@@ -8,11 +8,11 @@
 
 @class MISSING_TYPE;
 
-__attribute__((visibility("hidden")))
 @interface _TtC9DVTPortal30DeveloperAPIBundleIDCapability : _TtC9DVTPortal20DeveloperAPIResource
 {
     MISSING_TYPE *enabled;
     MISSING_TYPE *capability;
+    MISSING_TYPE *parentBundleID;
 }
 
 - (void).cxx_destruct;

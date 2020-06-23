@@ -39,6 +39,7 @@
 - (void)createBranchFromBranchEditorCommand:(id)arg1;
 - (void)createBranchEditorCommand:(id)arg1;
 - (void)createBranchNavigatorCommand:(id)arg1;
+- (void)createPullRequestNavigatorCommand:(id)arg1;
 - (void)copyIdentifierEditorCommand:(id)arg1;
 - (void)copyCommitEditorCommand:(id)arg1;
 - (void)checkoutBranchEditorCommand:(id)arg1;

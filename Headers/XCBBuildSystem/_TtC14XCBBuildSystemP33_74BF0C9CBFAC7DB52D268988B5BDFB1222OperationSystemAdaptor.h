@@ -14,9 +14,11 @@
     MISSING_TYPE *buildOutputDelegate;
     MISSING_TYPE *core;
     MISSING_TYPE *isCompleted;
+    MISSING_TYPE *dynamicTasks;
     MISSING_TYPE *queue;
     MISSING_TYPE *_progressStatistics;
     MISSING_TYPE *commandOutputDelegates;
+    MISSING_TYPE *dynamicOperationContext;
     MISSING_TYPE *startedTargets;
     MISSING_TYPE *preparedTaskCounts;
     MISSING_TYPE *completedTaskCounts;

@@ -6,17 +6,17 @@
 
 #import <objc/NSObject.h>
 
-@class DTKPSessionRecordEnumerator, DTTapMemo;
+@class DTTapMemo, NSArray;
 
 @interface DTKPSessionRecordBundle : NSObject
 {
-    DTKPSessionRecordEnumerator *_enumerator;
+    NSArray *_dataBlocks;
     DTTapMemo *_memo;
 }
 
 - (void).cxx_destruct;
 @property(retain, nonatomic) DTTapMemo *memo; // @synthesize memo=_memo;
-@property(retain, nonatomic) DTKPSessionRecordEnumerator *enumerator; // @synthesize enumerator=_enumerator;
+@property(copy, nonatomic) NSArray *dataBlocks; // @synthesize dataBlocks=_dataBlocks;
 
 @end
 

@@ -50,6 +50,8 @@
 @property(readonly, nonatomic) BOOL ide_testReport_common_passed; // @synthesize ide_testReport_common_passed=_ide_testReport_common_passed;
 - (void)ide_testReport_testRun_schemeActionsInvocationRecord:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) BOOL ide_testReport_testRun_fetchesSchemeActionsInvocationRecordAsync;
+@property(readonly, copy, nonatomic) NSArray *ide_testReport_testRun_topLevelFailureSummaries;
+@property(readonly, copy, nonatomic) NSArray *ide_testReport_testRun_activitiesExcludingFailures;
 @property(readonly, nonatomic) NSString *ide_testReport_common_statusTooltip;
 @property(readonly, nonatomic) NSImage *ide_testReport_common_typeImage;
 @property(readonly, nonatomic) NSImage *ide_testReport_common_statusImage;

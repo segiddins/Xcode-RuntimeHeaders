@@ -9,6 +9,9 @@
 @class NSColor, NSFont, NSMutableParagraphStyle;
 
 @protocol GPUTimelineGraphTheme <NSObject>
+@property(readonly, nonatomic) BOOL useHeatmap;
+@property(readonly, nonatomic) NSColor *heatMapColorEnd;
+@property(readonly, nonatomic) NSColor *heatMapColorBegin;
 @property(readonly, nonatomic) NSColor *dividerLightGray;
 @property(readonly, nonatomic) NSColor *timelinePlaneHighlightColor;
 @property(readonly, nonatomic) NSColor *timelinePlaneColor;

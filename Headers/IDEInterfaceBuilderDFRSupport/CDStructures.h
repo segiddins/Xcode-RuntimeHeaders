@@ -34,3 +34,13 @@ typedef struct {
     } _field1[3][3];
 } CDStruct_25164d3b;
 
+#pragma mark Typedef'd Unions
+
+typedef union {
+    struct {
+        long long _field1;
+        long long _field2;
+    } _field1;
+    long long _field2[2];
+} CDUnion_42e99c75;
+

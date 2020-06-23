@@ -9,9 +9,12 @@
 __attribute__((visibility("hidden")))
 @interface GPUTracePopoverThumbnailView : NSImageView
 {
+    BOOL _drawsCheckerboard;
 }
 
+@property(nonatomic) BOOL drawsCheckerboard; // @synthesize drawsCheckerboard=_drawsCheckerboard;
 - (void)drawRect:(struct CGRect)arg1;
+- (id)initWithCoder:(id)arg1;
 
 @end
 

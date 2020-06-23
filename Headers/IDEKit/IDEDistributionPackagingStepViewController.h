@@ -16,7 +16,7 @@
     double _startTime;
 }
 
-+ (BOOL)skipStepForContext:(id)arg1 assistantDirection:(int)arg2;
++ (BOOL)skipStepForContext:(id)arg1 assistantDirection:(long long)arg2;
 - (void).cxx_destruct;
 - (void)setCancelled:(BOOL)arg1;
 - (void)_pipelineFailedWithError:(id)arg1;

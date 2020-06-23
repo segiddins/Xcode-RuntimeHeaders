@@ -4,7 +4,7 @@
 //  Copyright (C) 1997-2019 Steve Nygard.
 //
 
-#import <Quartz/PDFAnnotation.h>
+#import <PDFKit/PDFAnnotation.h>
 
 __attribute__((visibility("hidden")))
 @interface GPUPDFIssueAnnotation : PDFAnnotation

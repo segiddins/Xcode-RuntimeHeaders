@@ -6,7 +6,7 @@
 
 #import <IDESceneKitEditor/NSObject-Protocol.h>
 
-@class IDEInspectorContentView, IDEInspectorProperty, IDEWorkspaceTabController, NSArray, NSAttributedString, NSBundle, NSSet, NSString, NSView, NSXMLElement;
+@class IDEInspectorChooser, IDEInspectorContentView, IDEInspectorProperty, IDEWorkspaceTabController, NSArray, NSAttributedString, NSBundle, NSSet, NSString, NSView, NSXMLElement;
 
 @protocol IDEBindableDeclarativeInspectorController <NSObject>
 + (NSArray *)inspectedArrayControllerKeys;
@@ -22,7 +22,8 @@
 - (NSAttributedString *)attributedTitleForSliverElement:(NSXMLElement *)arg1;
 - (NSView *)accessoryViewForInspectorProperty:(IDEInspectorProperty *)arg1;
 - (id)aggregateReplacementBySettingValue:(id)arg1 forKeyPath:(NSString *)arg2 onObject:(id)arg3 fromKeyPath:(NSString *)arg4 ofObject:(id)arg5;
-- (NSAttributedString *)inspectorProperty:(IDEInspectorProperty *)arg1 toolTipContentFromKeyPath:(NSString *)arg2 titleAttribute:(NSString *)arg3 placeholderAttribute:(NSString *)arg4;
+- (NSAttributedString *)inspectorChooser:(IDEInspectorChooser *)arg1 toolTipContentFromKeyPath:(NSString *)arg2 titleAttribute:(NSString *)arg3;
+- (NSAttributedString *)inspectorProperty:(IDEInspectorProperty *)arg1 toolTipContentFromKeyPath:(NSString *)arg2 titleAttribute:(NSString *)arg3;
 - (NSSet *)searchableAttributesForProperty:(IDEInspectorProperty *)arg1;
 @end
 

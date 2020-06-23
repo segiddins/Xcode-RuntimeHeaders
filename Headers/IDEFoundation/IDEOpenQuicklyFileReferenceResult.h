@@ -14,7 +14,7 @@
     DVTFilePath *_filePath;
 }
 
-+ (id)resultWithCandidate:(struct IDEOpenQuicklyQueryCandidate *)arg1 filePath:(id)arg2 representsDynamicContent:(BOOL)arg3 query:(id)arg4;
++ (id)resultWithCandidate:(struct DVTFuzzyMatchCandidate *)arg1 precision:(long long)arg2 filePath:(id)arg3 representsDynamicContent:(BOOL)arg4 query:(id)arg5;
 - (void).cxx_destruct;
 @property(readonly) BOOL representsDynamicContent; // @synthesize representsDynamicContent=_representsDynamicContent;
 @property(readonly) DVTFilePath *filePath; // @synthesize filePath=_filePath;
@@ -28,7 +28,7 @@
 - (BOOL)representsSameResult:(id)arg1;
 - (BOOL)representsSameResultAsFileReferenceProviderResult:(id)arg1;
 - (unsigned long long)hashOfResultIdentity;
-- (id)updatedResultForQuery:(id)arg1;
+- (id)updatedResultForQuery:(id)arg1 precision:(long long)arg2;
 
 @end
 

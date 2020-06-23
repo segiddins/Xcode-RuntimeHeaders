@@ -29,6 +29,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)runtimeClassNameForContext:(id)arg1 returningOptionalFallbackClassName:(id *)arg2;
 - (BOOL)ibConnectionsRequireClassSwapper;
+- (id)ibDraggedImagePlaceholderWithSceneSize:(struct CGSize)arg1 document:(id)arg2;
 - (BOOL)ibWantsSceneMaskOrBezel;
 - (BOOL)ibIsInspectorSliceApplicable:(id)arg1 forCategory:(id)arg2;
 - (void)ibPopulateIssues:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;

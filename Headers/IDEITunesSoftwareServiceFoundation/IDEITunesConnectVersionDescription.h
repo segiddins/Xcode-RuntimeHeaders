@@ -10,6 +10,7 @@
 
 @interface IDEITunesConnectVersionDescription : IDEITunesConnectBundleDescription
 {
+    BOOL _isMacOSEligible;
     NSString *_marketingVersion;
     NSString *_shortVersion;
     NSString *_version;
@@ -19,6 +20,7 @@
 + (BOOL)supportsSecureCoding;
 - (void).cxx_destruct;
 @property(readonly) NSArray *generations; // @synthesize generations=_generations;
+@property(readonly) BOOL isMacOSEligible; // @synthesize isMacOSEligible=_isMacOSEligible;
 @property(readonly) NSString *version; // @synthesize version=_version;
 @property(readonly) NSString *shortVersion; // @synthesize shortVersion=_shortVersion;
 @property(readonly) NSString *marketingVersion; // @synthesize marketingVersion=_marketingVersion;
@@ -28,7 +30,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithITunesSoftwareVersionDescription:(id)arg1;
-- (id)initWithName:(id)arg1 displayableDescription:(id)arg2 platformIdentifier:(id)arg3 bundleIdentifier:(id)arg4 marketingVersion:(id)arg5 shortVersion:(id)arg6 version:(id)arg7 generations:(id)arg8;
+- (id)initWithName:(id)arg1 displayableDescription:(id)arg2 platformIdentifier:(id)arg3 bundleIdentifier:(id)arg4 marketingVersion:(id)arg5 shortVersion:(id)arg6 version:(id)arg7 isMacOSEligible:(BOOL)arg8 generations:(id)arg9;
 
 @end
 

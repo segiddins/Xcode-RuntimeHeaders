@@ -6,17 +6,19 @@
 
 #import <objc/NSObject.h>
 
-@class DVTAnalyticsLogProvider, DVTAnalyticsPointDistributionInfo, DVTFilePath, NSString;
+@class AnalyticsReportType, DVTAnalyticsLogProvider, DVTAnalyticsPointDistributionInfo, DVTFilePath, NSString;
 @protocol DVTAnalyticsPointIdentifierProtocol, DVTAnalyticsPointUserDataProtocol;
 
 @interface DVTAnalyticsPointAbstractClass : NSObject
 {
     BOOL _placeholder;
+    BOOL _isAppClip;
     DVTAnalyticsLogProvider *_analyticsLogProvider;
     NSString *_appExtensionPointIdentifier;
 }
 
 - (void).cxx_destruct;
+@property BOOL isAppClip; // @synthesize isAppClip=_isAppClip;
 @property(copy) NSString *appExtensionPointIdentifier; // @synthesize appExtensionPointIdentifier=_appExtensionPointIdentifier;
 @property BOOL placeholder; // @synthesize placeholder=_placeholder;
 @property(copy) DVTAnalyticsLogProvider *analyticsLogProvider; // @synthesize analyticsLogProvider=_analyticsLogProvider;
@@ -24,16 +26,21 @@
 // Remaining properties
 @property(readonly) id <DVTAnalyticsPointIdentifierProtocol> analyticsPointIdentifier; // @dynamic analyticsPointIdentifier;
 @property(readonly) DVTFilePath *cachePath; // @dynamic cachePath;
+@property(readonly) NSString *chartTimePeriodDescription; // @dynamic chartTimePeriodDescription;
+@property(readonly) unsigned long long chartViewValue; // @dynamic chartViewValue;
 @property(readonly) DVTAnalyticsPointDistributionInfo *distributionInfo; // @dynamic distributionInfo;
+@property(readonly) unsigned long long impactValue; // @dynamic impactValue;
+@property(readonly) NSString *impactValuePluralFormatString; // @dynamic impactValuePluralFormatString;
+@property(readonly) NSString *impactValueSingularFormatString; // @dynamic impactValueSingularFormatString;
 @property(readonly) NSString *inspectableAnalyticsLogDetailsSectionTitle; // @dynamic inspectableAnalyticsLogDetailsSectionTitle;
 @property(readonly) NSString *inspectableAnalyticsLogReportTypeUserDescription; // @dynamic inspectableAnalyticsLogReportTypeUserDescription;
 @property(readonly) NSString *inspectableIconImageName; // @dynamic inspectableIconImageName;
 @property(readonly) NSString *inspectableTypeUserDescription; // @dynamic inspectableTypeUserDescription;
 @property(readonly) BOOL isSystemTerminationEvent; // @dynamic isSystemTerminationEvent;
 @property(readonly) BOOL isTopPoint; // @dynamic isTopPoint;
-@property(readonly) long long sourceFileLine; // @dynamic sourceFileLine;
+@property(readonly) AnalyticsReportType *reportType; // @dynamic reportType;
+@property(readonly) unsigned long long sourceFileLine; // @dynamic sourceFileLine;
 @property(readonly) NSString *sourceFileName; // @dynamic sourceFileName;
-@property(readonly) long long uniqueDeviceCount; // @dynamic uniqueDeviceCount;
 @property(readonly) id <DVTAnalyticsPointUserDataProtocol> userData; // @dynamic userData;
 
 @end

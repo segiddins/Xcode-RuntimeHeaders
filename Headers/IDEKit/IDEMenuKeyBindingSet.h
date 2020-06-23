@@ -10,7 +10,6 @@
 
 @interface IDEMenuKeyBindingSet : IDEKeyBindingSet
 {
-    NSMutableDictionary *_menuKeyBindingForCommandIdentifier;
     NSMutableDictionary *_menuKeyBindingForCombinedIdentifier;
     NSMutableDictionary *_menuKeyBindingsForCommandGroupIdentifier;
     id _keyBindingDidChangeShortcutsNotificationObservingToken;

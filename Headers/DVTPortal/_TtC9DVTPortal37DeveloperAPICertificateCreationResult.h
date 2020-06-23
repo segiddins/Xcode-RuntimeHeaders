@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class DVTPortalCertificateType, DVTPortalTeam, DVTSigningCertificate, MISSING_TYPE, NSDate, NSString, _TtC9DVTPortal23DeveloperAPICertificate;
+@class DVTPortalCertificateType, DVTPortalTeam, DVTSigningCertificate, DVTSigningCertificateSerialNumber, MISSING_TYPE, NSDate, NSString, _TtC9DVTPortal23DeveloperAPICertificate;
 
 @interface _TtC9DVTPortal37DeveloperAPICertificateCreationResult : NSObject
 {
@@ -22,7 +22,7 @@
 @property(nonatomic, readonly) DVTSigningCertificate *signingCertificate;
 @property(nonatomic, readonly) NSString *creatorEmail;
 @property(nonatomic, readonly) NSString *creatorName;
-@property(nonatomic, readonly) NSString *serialNumber;
+@property(nonatomic, readonly) DVTSigningCertificateSerialNumber *serialNumber;
 - (BOOL)isExpired;
 @property(nonatomic, readonly) NSDate *expirationDate;
 @property(nonatomic, readonly) DVTPortalCertificateType *portalCertificateType;

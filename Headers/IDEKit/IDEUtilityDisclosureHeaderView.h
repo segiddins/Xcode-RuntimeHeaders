@@ -15,18 +15,19 @@
 }
 
 - (void).cxx_destruct;
-- (void)dealloc;
+- (BOOL)useLargeLayoutMetrics;
 - (void)didCompleteLayout;
 - (void)mouseExited:(id)arg1;
 - (void)mouseEntered:(id)arg1;
 - (void)setMouseInside:(BOOL)arg1;
-- (void)refreshDisclosureButtonVisibility;
 - (void)unregisterForMouseEvents;
 - (void)registerForMouseEvents;
-- (void)commonInit;
+- (void)refreshDisclosureButtonVisibility;
 - (void)setDisclosed:(BOOL)arg1;
 - (void)_updateDisclosureButtonAttributedTitle;
 - (id)defaultDisclosureButton;
+- (void)dealloc;
+- (void)commonInit;
 
 @end
 

@@ -8,7 +8,7 @@
 
 #import <IDESourceEditor/DVTTextCompletionItem-Protocol.h>
 
-@class NSArray, NSAttributedString, NSImage, NSString;
+@class DVTRangeArray, DVTSourceCodeLanguage, NSArray, NSAttributedString, NSImage, NSString;
 
 @interface IDECodeSnippetCompletionItem : NSObject <DVTTextCompletionItem>
 {
@@ -16,23 +16,29 @@
     NSString *_completionText;
     NSString *_displayText;
     NSString *_displayType;
+    NSString *_displaySignature;
     double _priority;
     NSString *_name;
     NSImage *_icon;
     NSString *_action;
+    NSString *_briefDisplayText;
     double _fuzzyMatchingScore;
+    DVTRangeArray *_fuzzyMatchingRanges;
 }
 
 + (id)infoViewControllerFont;
 - (void).cxx_destruct;
 @property(readonly, copy) NSString *action; // @synthesize action=_action;
+@property(retain) DVTRangeArray *fuzzyMatchingRanges; // @synthesize fuzzyMatchingRanges=_fuzzyMatchingRanges;
 @property double fuzzyMatchingScore; // @synthesize fuzzyMatchingScore=_fuzzyMatchingScore;
 @property(readonly) NSImage *icon; // @synthesize icon=_icon;
 @property(readonly, copy) NSString *completionText; // @synthesize completionText=_completionText;
+@property(readonly, copy) NSString *displaySignature; // @synthesize displaySignature=_displaySignature;
+@property(readonly, copy) NSString *briefDisplayText; // @synthesize briefDisplayText=_briefDisplayText;
 @property(readonly, copy) NSString *displayType; // @synthesize displayType=_displayType;
 @property(readonly, copy) NSString *displayText; // @synthesize displayText=_displayText;
 @property double priority; // @synthesize priority=_priority;
-@property(readonly, copy) NSString *name; // @synthesize name=_name;
+@property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, copy) NSString *description;
 - (void)infoViewControllerWithWidth:(double)arg1 context:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 @property(readonly) unsigned long long priorityComparatorKind;
@@ -44,12 +50,19 @@
 
 // Remaining properties
 @property(readonly, copy) NSArray *additionalCompletions;
+@property(readonly, copy) NSAttributedString *attributedDisplaySignature;
+@property(readonly, copy) NSAttributedString *attributedDisplayType;
+@property(readonly, copy) DVTRangeArray *briefDisplayTextRanges;
 @property(readonly) int completionItemStyle;
 @property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) DVTRangeArray *displayTextRanges;
 @property(readonly) unsigned long long hash;
 @property(readonly) NSImage *highlightedStatusIcon;
+@property(readonly) DVTSourceCodeLanguage *language;
+@property(readonly, copy) DVTRangeArray *nameRanges;
 @property(readonly) NSImage *statusIcon;
 @property(readonly) Class superclass;
+@property(readonly) NSString *usr;
 
 @end
 

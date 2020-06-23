@@ -10,15 +10,15 @@
 
 @interface IDEAttributedStringControlParagraphStylePopoverInsetView : DVTLayoutView_ML
 {
-    int _horizontalResizingMode;
-    int _verticalResizingMode;
     NSView *_contentView;
+    unsigned long long _horizontalResizingMode;
+    unsigned long long _verticalResizingMode;
     CDStruct_bf6d4a14 _inset;
 }
 
 - (void).cxx_destruct;
-@property int verticalResizingMode; // @synthesize verticalResizingMode=_verticalResizingMode;
-@property int horizontalResizingMode; // @synthesize horizontalResizingMode=_horizontalResizingMode;
+@property unsigned long long verticalResizingMode; // @synthesize verticalResizingMode=_verticalResizingMode;
+@property unsigned long long horizontalResizingMode; // @synthesize horizontalResizingMode=_horizontalResizingMode;
 @property(nonatomic) CDStruct_bf6d4a14 inset; // @synthesize inset=_inset;
 @property(retain, nonatomic) NSView *contentView; // @synthesize contentView=_contentView;
 - (void)layoutBottomUp;

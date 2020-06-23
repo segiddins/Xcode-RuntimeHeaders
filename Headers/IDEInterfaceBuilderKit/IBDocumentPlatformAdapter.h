@@ -34,6 +34,7 @@
 - (void)repopulateCustomFontFilenames:(id)arg1;
 - (id)allCustomFontFilenames;
 - (BOOL)validateBaseSimulatedMetricsMenuItem:(id)arg1;
+- (id)defaultTintColor;
 - (id)applicableInspectorCategoriesGivenSuggestion:(id)arg1;
 - (struct CGSize)canvasPositioningScaleForSimulatedMetricsContainer:(id)arg1;
 - (void)documentDidDisableMemberConfigurations;
@@ -54,11 +55,13 @@
 - (id)forcedUpgradeFileTypeForFileType:(id)arg1;
 - (id)intrinsicPackageContentForNewlyGeneratedPackageWithFileType:(id)arg1;
 - (id)archiveTypeForFileType:(id)arg1;
+- (id)issueReasonForMisuseOfSymbolCharactersInString;
 - (void)populateDocumentResourceReferences:(id)arg1 resourceManager:(id)arg2;
 - (id)documentCIImageNamed:(id)arg1 usingSizeValueForPlaceholderImageIfNeeded:(id)arg2;
 - (id)documentFallbackColorForSystemColor:(id)arg1;
 - (id)documentSystemColorNamed:(id)arg1;
 - (id)documentSystemColorNamed:(id)arg1 fallbackColor:(id)arg2;
+- (id)draggedImageBackgroundColorForAppearance:(id)arg1 document:(id)arg2;
 - (id)effectiveAppearanceForEditorCanvasFrameController:(id)arg1;
 - (id)effectiveAppearanceForConfiguration:(id)arg1;
 - (void)frameDecider:(id)arg1 didPropagateFrameSize:(struct CGSize)arg2 toView:(id)arg3;

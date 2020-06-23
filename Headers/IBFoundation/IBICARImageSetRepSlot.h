@@ -19,7 +19,7 @@
 + (id)slot;
 + (Class)assetRepClass;
 + (Class)assetSetClass;
-+ (id)slotFilter;
++ (id)slotFilterForIdioms:(id)arg1;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) IBICIdiom *idiom; // @synthesize idiom=_idiom;
 - (id)outputFileNameGivenBaseName:(id)arg1 andExtension:(id)arg2;

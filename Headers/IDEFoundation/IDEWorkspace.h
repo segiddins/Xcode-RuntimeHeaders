@@ -12,7 +12,7 @@
 #import <IDEFoundation/IDEProvisionableProvider-Protocol.h>
 
 @class DVTFilePath, DVTNotificationToken, DVTObservingToken, DVTStackBacktrace, IDEActivityLogMessage, IDEActivityLogSection, IDEBreakpointManager, IDEConcreteClientTracker, IDEContainer, IDEContainerQuery, IDEDeviceInstallWorkspaceMonitor, IDEDynamicContentRootGroup, IDEExecutionEnvironment, IDEIndex, IDEIssueManager, IDELocalizationManager, IDELogManager, IDENoticeCollator, IDEProvisioningManager, IDEProvisioningWorkspaceMonitor, IDERefactoring, IDERunContextManager, IDESourceControlWorkspaceMonitor, IDETestManager, IDETextFragmentIndex, IDEWorkspaceArena, IDEWorkspaceSharedSettings, IDEWorkspaceUpgradeTasksController, IDEWorkspaceUserSettings, NSArray, NSDate, NSDictionary, NSHashTable, NSMapTable, NSMutableArray, NSMutableDictionary, NSMutableOrderedSet, NSMutableSet, NSNumber, NSSet, NSString, _TtC13IDEFoundation22IDEBuildNoticeProvider, _TtC13IDEFoundation30IDEStructureEditingCoordinator, _TtC16DVTDocumentation23DVTDocumentationManager;
-@protocol IDEActiveRunContextStoring, IDEBuildNoticeLogSection, IDEBuildSystemServiceProvider, IDECustomDataStoring, IDEWorkspaceDelegate;
+@protocol IDEActiveRunContextStoring, IDEBuildNoticeLogSection, IDEBuildSystemService, IDECustomDataStoring, IDEWorkspaceDelegate;
 
 @interface IDEWorkspace : IDEXMLPackageContainer <IDEBuildNoticeWorkspace, IDEClientTracking, IDEIssueLogDataSource, IDEProvisionableProvider>
 {
@@ -53,7 +53,7 @@
     IDELocalizationManager *_localizationManager;
     _TtC13IDEFoundation30IDEStructureEditingCoordinator *_structureEditingMoveCoordinator;
     NSNumber *_shouldUseLegacyBuildSystem;
-    id <IDEBuildSystemServiceProvider> _buildSystemServiceProvider;
+    id <IDEBuildSystemService> _buildSystemService;
     DVTNotificationToken *_buildSystemSettingsNotificationToken;
     DVTFilePath *_wrappedContainerPath;
     IDEContainer<IDECustomDataStoring> *_wrappedContainer;
@@ -96,6 +96,7 @@
     IDERefactoring *_refactoring;
     IDEWorkspaceUpgradeTasksController *_deferredUpgradeTasksController;
     NSDate *_icloudDriveLastHeldDate;
+    NSString *_nameOverride;
     id <IDEActiveRunContextStoring> _activeRunContextStore;
 }
 
@@ -125,6 +126,7 @@
 - (void).cxx_destruct;
 @property(retain) id <IDEActiveRunContextStoring> activeRunContextStore; // @synthesize activeRunContextStore=_activeRunContextStore;
 @property(nonatomic) BOOL isPotentiallyClosing; // @synthesize isPotentiallyClosing=_isPotentiallyClosing;
+@property(retain) NSString *nameOverride; // @synthesize nameOverride=_nameOverride;
 @property(copy) NSDate *icloudDriveLastHeldDate; // @synthesize icloudDriveLastHeldDate=_icloudDriveLastHeldDate;
 @property(retain) IDEWorkspaceUpgradeTasksController *deferredUpgradeTasksController; // @synthesize deferredUpgradeTasksController=_deferredUpgradeTasksController;
 @property(retain, nonatomic) IDEWorkspaceSharedSettings *sharedSettings; // @synthesize sharedSettings=_sharedSettings;
@@ -156,7 +158,7 @@
 @property(retain) IDEDynamicContentRootGroup *dynamicContentRootGroup; // @synthesize dynamicContentRootGroup=_dynamicContentRootGroup;
 @property(readonly, nonatomic) NSSet *provisionableDevices;
 @property(readonly, nonatomic) NSSet *provisionables;
-- (void)notifyBuildSystemServiceProviderThatBlueprintProviderDidChange:(id)arg1;
+- (void)notifyBuildSystemServiceThatBlueprintProviderDidChange:(id)arg1;
 - (id)buildableProductsForBaseName:(id)arg1;
 - (void)_handleIndexablesChange:(id)arg1;
 - (void)_enqueueRegistrationFromPendingIndexables;
@@ -179,6 +181,7 @@
 @property(readonly, getter=isSimpleFilesFocused) BOOL simpleFilesFocused;
 - (void)_setSimpleFilesFocused:(BOOL)arg1;
 - (void)_primitiveSetSimpleFilesFocused:(BOOL)arg1;
+- (void)_setHostsOnlyPlayground:(BOOL)arg1;
 @property(readonly) NSString *representingTitle;
 @property(readonly) DVTFilePath *representingFilePath;
 @property(retain) IDEExecutionEnvironment *executionEnvironment;
@@ -189,10 +192,11 @@
 - (id)displayName;
 @property(readonly) NSString *name;
 @property(readonly) BOOL supportsSourcePackages;
-@property(readonly) id <IDEBuildSystemServiceProvider> buildSystemServiceProvider;
+@property(readonly) id <IDEBuildSystemService> buildSystemService;
+@property(readonly) id <IDEBuildSystemService> buildSystemServiceProvider;
 @property(readonly) BOOL wantsModernBuildSystem;
 @property(readonly) BOOL usesModernBuildSystem;
-- (void)_invalidateBuildSystemServiceProvider;
+- (void)_invalidateBuildSystemService;
 @property(retain, nonatomic) NSNumber *shouldUseLegacyBuildSystem; // @dynamic shouldUseLegacyBuildSystem;
 @property(readonly) _TtC13IDEFoundation30IDEStructureEditingCoordinator *structureEditingMoveCoordinator;
 @property(readonly) IDELocalizationManager *localizationManager;

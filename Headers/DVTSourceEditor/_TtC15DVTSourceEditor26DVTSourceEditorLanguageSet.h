@@ -12,6 +12,7 @@
 {
     MISSING_TYPE *potentiallyUnsortedLanguages;
     MISSING_TYPE *languagesAreSorted;
+    MISSING_TYPE *externalLanguageProviders;
     MISSING_TYPE *swift;
     MISSING_TYPE *markup;
 }

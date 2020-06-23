@@ -16,6 +16,8 @@
     BOOL _shouldUseRolloverAppearance;
 }
 
++ (double)standardToolbarButtonWidth;
++ (id)standardToolbarButton;
 @property(nonatomic) BOOL shouldUseRolloverAppearance; // @synthesize shouldUseRolloverAppearance=_shouldUseRolloverAppearance;
 @property(nonatomic) BOOL redrawOnMouseEnteredAndExited; // @synthesize redrawOnMouseEnteredAndExited=_redrawOnMouseEnteredAndExited;
 - (void)rightMouseDown:(id)arg1;

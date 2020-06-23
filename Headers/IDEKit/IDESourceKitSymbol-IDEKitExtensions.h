@@ -8,11 +8,12 @@
 
 #import <IDEKit/DVTTextCompletionItem-Protocol.h>
 
-@class NSArray, NSAttributedString, NSImage, NSString;
+@class DVTRangeArray, DVTSourceCodeLanguage, NSArray, NSAttributedString, NSImage, NSString;
 
 @interface IDESourceKitSymbol (IDEKitExtensions) <DVTTextCompletionItem>
 - (void)infoViewControllerWithWidth:(double)arg1 context:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 @property(readonly) BOOL notRecommended;
+@property(retain) DVTRangeArray *fuzzyMatchingRanges;
 @property double fuzzyMatchingScore;
 @property double priority;
 @property(readonly) unsigned long long priorityComparatorKind;
@@ -21,20 +22,29 @@
 @property(readonly) NSImage *icon;
 @property(readonly, copy) NSAttributedString *descriptionText;
 @property(readonly, copy) NSString *parentText;
-@property(readonly, copy) NSString *displayType;
 @property(readonly, copy) NSString *completionText;
+@property(readonly, copy) NSString *displaySignature;
+@property(readonly, copy) NSString *briefDisplayText;
+@property(readonly, copy) NSString *displayType;
 @property(readonly, copy) NSString *displayText;
 
 // Remaining properties
 @property(readonly, copy) NSString *action;
 @property(readonly, copy) NSArray *additionalCompletions;
+@property(readonly, copy) NSAttributedString *attributedDisplaySignature;
+@property(readonly, copy) NSAttributedString *attributedDisplayType;
+@property(readonly, copy) DVTRangeArray *briefDisplayTextRanges;
 @property(readonly) int completionItemStyle;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
+@property(readonly, copy) DVTRangeArray *displayTextRanges;
 @property(readonly) unsigned long long hash;
 @property(readonly) NSImage *highlightedStatusIcon;
-@property(readonly, copy) NSString *name;
+@property(readonly) DVTSourceCodeLanguage *language;
+@property(readonly, copy, nonatomic) NSString *name;
+@property(readonly, copy) DVTRangeArray *nameRanges;
 @property(readonly) NSImage *statusIcon;
 @property(readonly) Class superclass;
+@property(readonly) NSString *usr;
 @end
 

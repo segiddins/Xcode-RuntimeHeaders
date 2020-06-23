@@ -9,6 +9,7 @@
 @interface IBICSlotSuggestionSetActionDeleteComponent (DisplayAdditions)
 - (long long)applicationStateToItem:(id)arg1 inDocument:(id)arg2;
 - (BOOL)applyToCatalogItem:(id)arg1 inDocument:(id)arg2 dryRun:(BOOL)arg3;
+- (BOOL)isInNullState:(id)arg1;
 - (double)applicationOrder;
 - (id)invertedActions;
 @end

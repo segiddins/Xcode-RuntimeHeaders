@@ -27,7 +27,11 @@
 + (int)libraryInclusionStatusForAssetClass:(Class)arg1 assetIdentifier:(id)arg2;
 + (BOOL)alwaysRequiresExplicitDowngrade;
 + (BOOL)supportsSceneUpdates;
++ (BOOL)supportsRenderServerAndIOSurfaces;
 + (BOOL)supportsHighFidelityBackgroundTools;
++ (id)ibPreferredItemForContainerConstraintToItem:(id)arg1 fromDescendant:(id)arg2 attribute:(unsigned long long)arg3;
++ (id)initIBView:(id)arg1 withCoder:(id)arg2;
++ (void)encodeIBView:(id)arg1 withCoder:(id)arg2;
 + (void)customizeEstablishedViewOutletsForObject:(id)arg1 inDocument:(id)arg2;
 + (void)customizeObjectForLibraryInstantiation:(id)arg1;
 + (Class)idiomClass;
@@ -111,7 +115,6 @@
 - (void)populateAdditionalSearchableAttributeKeyPaths:(id)arg1 ofClass:(Class)arg2 forInspectorCategory:(id)arg3;
 - (void)populateAdditionalInspectorSlices:(id)arg1 ofClass:(Class)arg2 forCategory:(id)arg3;
 - (BOOL)warnOnMissingImageResourcesForDocument:(id)arg1;
-- (BOOL)supportsSystemNamespaceForImages;
 - (BOOL)useGlobalImageForImageName:(id)arg1;
 - (void)fontsObserverInvalidated;
 - (void)notifyObjectsFontsDidChange:(id)arg1;
@@ -168,12 +171,12 @@
 - (void)registerMemberConfigurationVariables;
 - (id)sdkBuildVersion;
 - (id)sdkCanonicalName;
+- (long long)availabilityVersionFromMarketingVersion:(id)arg1;
 - (id)marketingVersionFromAvailabilityVersion:(long long)arg1;
 - (id)sdkVariant;
 - (id)buildSystemPlatformIdentifier;
 - (id)buildSystemPlatformName;
 - (id)backingPlatform;
-- (id)pluginName;
 - (Class)documentPlatformAdapterClass;
 - (id)operatingSystemName;
 - (id)identifier;

@@ -13,6 +13,7 @@
 
 @interface IDEInspectorChooser : IDEInspectorLayoutStack <IDEInspectorValueElement>
 {
+    NSString *_title;
     NSArray *_categories;
     NSPopUpButton *_choicePopUp;
     NSDictionary *_choicesByValue;
@@ -37,6 +38,7 @@
 + (id)choiceValueForElement:(id)arg1 type:(id)arg2;
 - (void).cxx_destruct;
 @property(retain, nonatomic) IDEInspectorLayoutGroup *selectedChoiceLayoutGroup; // @synthesize selectedChoiceLayoutGroup=_selectedChoiceLayoutGroup;
+- (id)toolTipManager:(id)arg1 toolTipForView:(id)arg2 location:(struct CGPoint)arg3 tipSourceRect:(struct CGRect *)arg4 maximumWidth:(double *)arg5;
 - (void)uninstallFromInspectorContentView;
 - (void)installIntoInspectorContentView:(id)arg1;
 - (void)userMadeSelection:(id)arg1;

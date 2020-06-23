@@ -19,7 +19,8 @@
 + (void)initialize;
 - (void).cxx_destruct;
 - (void)setShowRoleColumn:(BOOL)arg1;
-- (void)layoutBottomUp;
+- (void)dvt_positionSubviewsAndSizeSelfAfterSubviewLayout;
+- (void)dvt_configureSubviewsBeforeSubviewLayout;
 - (void)primitiveInvalidate;
 - (void)awakeFromNib;
 

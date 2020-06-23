@@ -14,16 +14,16 @@
 @interface XCSourceControlHostFile : NSObject <NSSecureCoding, NSCopying>
 {
     NSString *_filePath;
+    NSString *_previousFilePath;
     long long _status;
     NSURL *_remoteURL;
-    NSString *_patch;
 }
 
 + (BOOL)supportsSecureCoding;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) NSString *patch; // @synthesize patch=_patch;
 @property(readonly, nonatomic) NSURL *remoteURL; // @synthesize remoteURL=_remoteURL;
 @property(readonly, nonatomic) long long status; // @synthesize status=_status;
+@property(readonly, nonatomic) NSString *previousFilePath; // @synthesize previousFilePath=_previousFilePath;
 @property(readonly, nonatomic) NSString *filePath; // @synthesize filePath=_filePath;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
@@ -31,8 +31,10 @@
 - (id)description;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)initWithFilePath:(id)arg1 status:(long long)arg2 remoteURL:(id)arg3 patch:(id)arg4;
+- (id)initWithFilePath:(id)arg1 previousFilePath:(id)arg2 status:(long long)arg3 remoteURL:(id)arg4;
 - (id)initWithFilePath:(id)arg1 status:(long long)arg2;
+- (id)initWithFilePath:(id)arg1 previousFilePath:(id)arg2 status:(long long)arg3;
+- (id)initWithFilePath:(id)arg1;
 
 @end
 

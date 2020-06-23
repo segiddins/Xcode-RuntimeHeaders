@@ -25,7 +25,9 @@
 - (BOOL)runsDirectlyOnProxy;
 - (BOOL)runsOnProxy;
 - (BOOL)installsOnProxy;
+- (BOOL)usesInstallCoordination;
 - (BOOL)shouldAutocreateSchemes;
+- (BOOL)isAppClip;
 - (BOOL)isWatch1AppExtension;
 - (BOOL)isWatch2AppExtension;
 - (BOOL)isWatchAppExtension;

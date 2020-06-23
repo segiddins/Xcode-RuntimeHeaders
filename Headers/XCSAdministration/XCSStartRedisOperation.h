@@ -12,7 +12,7 @@
 
 - (void)undo;
 - (id)undoStatusDescription;
-- (BOOL)checkServerRespondingWithRetryAttempts:(BOOL)arg1;
+- (BOOL)checkServerRespondingWithRetryAttempts:(long long)arg1;
 - (id)pingRedisProcess;
 - (id)redisPathForTool:(id)arg1;
 - (void)run;

@@ -16,6 +16,7 @@
     MISSING_TYPE *name;
 }
 
++ (id)keyPathsForValuesAffectingNavigableItem_name;
 + (id)keyPathsForValuesAffectingNavigableItem_childRepresentedObjects;
 - (void).cxx_destruct;
 - (id)init;
@@ -26,7 +27,7 @@
 - (BOOL)isEqual:(id)arg1;
 @property(nonatomic, readonly) DVTDocumentLocation *navigableItem_contentDocumentLocation;
 - (BOOL)isEqualTo:(id)arg1;
-@property(nonatomic, readonly) NSString *name;
+@property(nonatomic, copy) NSString *name;
 @property(nonatomic, readonly) NSArray *navigableItem_childRepresentedObjects;
 @property(nonatomic, copy) NSArray *childItems;
 

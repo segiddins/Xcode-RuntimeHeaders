@@ -11,7 +11,7 @@
 @interface DTTimelineInspectionDecorationContainer : NSObject
 {
     struct map<XRTimeRange, DTTimelineInspectionDecoration *, std::__1::less<XRTimeRange>, std::__1::allocator<std::__1::pair<const XRTimeRange, DTTimelineInspectionDecoration *>>> _decorationsByTimeRange;
-    BOOL _pleaseCancel;
+    struct atomic<bool> _pleaseCancel;
     XRIntKeyedDictionary *_associatedObjects;
     DTTimelineDecoratedPlane *_plane;
 }

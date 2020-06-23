@@ -9,18 +9,19 @@
 #import <IDEKit/DVTInvalidation-Protocol.h>
 #import <IDEKit/_IDEEditorContextSplitViewDelegate-Protocol.h>
 
-@class DVTStackBacktrace, NSSplitViewItem, NSString, NSViewController, _IDEEditorContextSplitView;
+@class DVTStackBacktrace, IDEEditorContainerViewController, NSSplitViewItem, NSString, _IDEEditorContextSplitView;
 @protocol _IDEEditorContextSplitViewControllerDelegate;
 
 @interface _IDEEditorContextSplitViewController : NSSplitViewController <_IDEEditorContextSplitViewDelegate, DVTInvalidation>
 {
-    NSViewController *_editorContentViewController;
     NSSplitViewItem *_auxiliarySplitViewItem;
     id <_IDEEditorContextSplitViewControllerDelegate> _delegate;
+    IDEEditorContainerViewController *_editorContentViewController;
 }
 
 + (void)initialize;
 - (void).cxx_destruct;
+@property(retain) IDEEditorContainerViewController *editorContentViewController; // @synthesize editorContentViewController=_editorContentViewController;
 @property __weak id <_IDEEditorContextSplitViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)removeSplitViewItem:(id)arg1;
 - (void)addSplitViewItem:(id)arg1;

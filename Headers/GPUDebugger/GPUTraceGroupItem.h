@@ -9,7 +9,7 @@
 #import <GPUDebugger/GPUAbstractTraceGroupItem-Protocol.h>
 #import <GPUDebugger/IDEKeyDrivenNavigableItemRepresentedObject-Protocol.h>
 
-@class DVTDocumentLocation, DVTFileDataType, DVTSymbol, IDEFileReference, NSArray, NSImage, NSNull, NSString, NSURL;
+@class DVTDocumentLocation, DVTFileDataType, IDEFileReference, NSArray, NSImage, NSNull, NSString, NSURL, _TtC13DVTFoundation9DVTSymbol;
 @protocol GPUAbstractDebuggerController, GPUAbstractTraceDisplayableItem;
 
 @interface GPUTraceGroupItem : GPUTraceOutlineItem <IDEKeyDrivenNavigableItemRepresentedObject, GPUAbstractTraceGroupItem>
@@ -43,7 +43,7 @@
 - (id)initWithController:(id)arg1 parent:(id)arg2 identifier:(id)arg3 groupType:(unsigned int)arg4 functionIndex:(int)arg5 descText:(id)arg6;
 - (BOOL)isHiddenForGPUIssueFilter;
 - (id)maxSeverityImage;
-@property(readonly) int maxIssueSeverity;
+- (int)maxIssueSeverity;
 @property(readonly) NSString *navigableItem_subtitle;
 - (struct DYShaderProfilerTiming)shaderTime:(BOOL)arg1;
 - (BOOL)hasShaderTiming;
@@ -53,7 +53,7 @@
 @property(readonly) NSString *navigableItem_name;
 
 // Remaining properties
-@property(readonly, nonatomic) NSString *UUID;
+@property(readonly, nonatomic) long long UUID;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
@@ -73,7 +73,7 @@
 @property(readonly, nonatomic) BOOL navigableItem_missingReferencedContentIsImportant;
 @property(readonly, nonatomic) id navigableItem_parentRepresentedObject;
 @property(readonly, nonatomic) BOOL navigableItem_referencedContentExists;
-@property(readonly, nonatomic) DVTSymbol *navigableItem_representedSymbol;
+@property(readonly, nonatomic) _TtC13DVTFoundation9DVTSymbol *navigableItem_representedSymbol;
 @property(readonly, nonatomic) NSURL *navigableItem_representedURL;
 @property(readonly, nonatomic) NSString *navigableItem_toolTip;
 @property(readonly) Class superclass;

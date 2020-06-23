@@ -11,6 +11,7 @@
 }
 
 - (id)labelForCompletingConnectionPrototypeForInsertion;
+- (unsigned long long)methodKind;
 
 @end
 

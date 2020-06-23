@@ -65,7 +65,7 @@
 - (id)outlineView:(id)arg1 child:(long long)arg2 ofItem:(id)arg3;
 - (long long)outlineView:(id)arg1 numberOfChildrenOfItem:(id)arg2;
 - (id)childrenOfItem:(id)arg1;
-- (void)tableDoubleClickAction:(id)arg1;
+- (void)tableSingleClickAction:(id)arg1;
 - (void)togglePreferGeneratedInterface:(id)arg1;
 - (id)contentViewNibName;
 - (void)continuePerfTest;

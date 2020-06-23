@@ -39,7 +39,6 @@
     MISSING_TYPE *_inDeferredMode;
     MISSING_TYPE *_copiedPathMap;
     MISSING_TYPE *_stubBinaries;
-    MISSING_TYPE *_xcframeworkLibraries;
     MISSING_TYPE *_additionalCodeSignInputs;
     MISSING_TYPE *notes;
     MISSING_TYPE *warnings;
@@ -76,6 +75,7 @@
     MISSING_TYPE *swiftCompilerSpec;
     MISSING_TYPE *swiftHeaderToolSpec;
     MISSING_TYPE *swiftStdlibToolSpec;
+    MISSING_TYPE *_swiftABICheckerToolSpec;
     MISSING_TYPE *symlinkSpec;
     MISSING_TYPE *tapiSpec;
     MISSING_TYPE *tapiMergeSpec;

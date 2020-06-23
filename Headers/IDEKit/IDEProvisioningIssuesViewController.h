@@ -6,7 +6,7 @@
 
 #import <IDEKit/IDEViewController.h>
 
-@class DVTObservingToken, DVTStackView_AppKitAutolayout, IDEProvisioningSliceConfiguration, NSBox, NSLayoutConstraint, NSTextField;
+@class DVTObservingToken, DVTStackView_AppKitAutolayout, IDEProvisioningSliceConfiguration, NSBox, NSLayoutConstraint, NSMutableArray, NSTextField;
 @protocol IDEProvisioningIssuesDataSource;
 
 @interface IDEProvisioningIssuesViewController : IDEViewController
@@ -20,9 +20,11 @@
     NSBox *_divider;
     DVTObservingToken *_errorsObserver;
     IDEProvisioningSliceConfiguration *_configuration;
+    NSMutableArray *_issueViewControllersToInvalidate;
 }
 
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *issueViewControllersToInvalidate; // @synthesize issueViewControllersToInvalidate=_issueViewControllersToInvalidate;
 @property(retain, nonatomic) IDEProvisioningSliceConfiguration *configuration; // @synthesize configuration=_configuration;
 @property(retain, nonatomic) DVTObservingToken *errorsObserver; // @synthesize errorsObserver=_errorsObserver;
 @property(retain, nonatomic) NSBox *divider; // @synthesize divider=_divider;

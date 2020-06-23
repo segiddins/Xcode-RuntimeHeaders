@@ -12,6 +12,8 @@
 
 + (Class)instanceScopingClass;
 + (id)defaultHybridNIBPackageRuntimeFileName;
++ (id)OSX1016AndLaterVersion;
++ (id)OSX1015AndLaterVersion;
 + (id)OSX1014AndLaterVersion;
 + (id)OSX1013AndLaterVersion;
 + (id)OSX1012AndEarlierVersion;

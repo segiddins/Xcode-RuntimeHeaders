@@ -8,13 +8,13 @@
 
 #import <DVTPortal/DVTPortalCertificateProtocol-Protocol.h>
 
-@class DVTPortalCertificateType, DVTPortalTeam, DVTSigningCertificate, NSDate, NSString;
+@class DVTPortalCertificateType, DVTPortalTeam, DVTSigningCertificate, DVTSigningCertificateSerialNumber, NSDate, NSString;
 
 @interface DVTPortalCertificate : NSObject <DVTPortalCertificateProtocol>
 {
     DVTPortalCertificateType *portalCertificateType;
     NSDate *expirationDate;
-    NSString *serialNumber;
+    DVTSigningCertificateSerialNumber *serialNumber;
     NSString *creatorEmail;
     NSString *portalID;
     NSString *_name;
@@ -45,7 +45,7 @@
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, copy, nonatomic) NSString *portalID; // @synthesize portalID;
 @property(readonly, nonatomic) NSString *creatorEmail; // @synthesize creatorEmail;
-@property(readonly, copy, nonatomic) NSString *serialNumber; // @synthesize serialNumber;
+@property(readonly, copy, nonatomic) DVTSigningCertificateSerialNumber *serialNumber; // @synthesize serialNumber;
 @property(readonly, copy, nonatomic) NSDate *expirationDate; // @synthesize expirationDate;
 @property(readonly, nonatomic) DVTPortalCertificateType *portalCertificateType; // @synthesize portalCertificateType;
 - (unsigned long long)hash;

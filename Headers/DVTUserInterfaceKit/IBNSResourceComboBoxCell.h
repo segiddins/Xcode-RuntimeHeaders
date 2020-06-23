@@ -6,17 +6,16 @@
 
 #import <AppKit/NSComboBoxCell.h>
 
-@class DVTResourceComboBox;
+@class DVTResourceComboBoxTextFieldCell;
 
 @interface IBNSResourceComboBoxCell : NSComboBoxCell
 {
-    DVTResourceComboBox *_controlComboBox;
+    DVTResourceComboBoxTextFieldCell *_owningCell;
 }
 
 - (void).cxx_destruct;
-@property __weak DVTResourceComboBox *controlComboBox; // @synthesize controlComboBox=_controlComboBox;
-- (struct CGRect)textFieldCellFrameForRect:(struct CGRect)arg1;
-- (struct CGRect)drawingRectForBounds:(struct CGRect)arg1;
+@property __weak DVTResourceComboBoxTextFieldCell *owningCell; // @synthesize owningCell=_owningCell;
+- (struct CGRect)boundsForTextCell:(struct CGRect)arg1;
 
 @end
 

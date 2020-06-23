@@ -7,7 +7,7 @@
 @class NSArray, NSAttributedString;
 
 @protocol NSTextInputClient
-- (long long)characterIndexForPoint:(struct CGPoint)arg1;
+- (unsigned long long)characterIndexForPoint:(struct CGPoint)arg1;
 - (struct CGRect)firstRectForCharacterRange:(struct _NSRange)arg1 actualRange:(struct _NSRange *)arg2;
 - (NSArray *)validAttributesForMarkedText;
 - (NSAttributedString *)attributedSubstringForProposedRange:(struct _NSRange)arg1 actualRange:(struct _NSRange *)arg2;
@@ -20,9 +20,9 @@
 - (void)insertText:(id)arg1 replacementRange:(struct _NSRange)arg2;
 
 @optional
-- (BOOL)drawsVerticallyForCharacterAtIndex:(long long)arg1;
+- (BOOL)drawsVerticallyForCharacterAtIndex:(unsigned long long)arg1;
 - (long long)windowLevel;
-- (double)baselineDeltaForCharacterAtIndex:(long long)arg1;
+- (double)baselineDeltaForCharacterAtIndex:(unsigned long long)arg1;
 - (double)fractionOfDistanceThroughGlyphForPoint:(struct CGPoint)arg1;
 - (NSAttributedString *)attributedString;
 @end

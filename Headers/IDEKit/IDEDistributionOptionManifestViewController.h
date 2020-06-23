@@ -12,6 +12,7 @@
 
 - (void)setCheckboxValue:(BOOL)arg1;
 - (BOOL)checkboxValue;
+- (BOOL)needsInteraction;
 - (id)checkboxDescription;
 - (id)checkboxTitle;
 

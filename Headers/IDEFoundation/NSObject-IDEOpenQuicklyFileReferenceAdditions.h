@@ -17,7 +17,7 @@
 - (id)ideFindScope_componentForGroupPath;
 - (void)ideFindScope_accumulateFilePaths:(id)arg1 andVisitedContainers:(id)arg2;
 - (id)ideModelObjectTypeIdentifier;
-- (void)ide_populateSnapshotGroups:(id)arg1 filePaths:(id)arg2 visitedContainers:(id)arg3;
+- (void)ide_populateFilePaths:(id)arg1 parentSuffixIndex:(long long)arg2 visitedContainers:(id)arg3;
 - (BOOL)textIndex_shouldSkipDescendantsForBatchFind;
 @property(readonly) NSString *ide_schemeActionIssueSummaryProducingTargetName;
 @end

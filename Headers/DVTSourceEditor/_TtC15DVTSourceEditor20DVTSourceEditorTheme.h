@@ -15,9 +15,16 @@
     MISSING_TYPE *cachedFonts;
     MISSING_TYPE *$__lazy_storage_$_plainTextFont;
     MISSING_TYPE *$__lazy_storage_$_lineNumberFont;
+    MISSING_TYPE *$__lazy_storage_$_markdownHeader1Font;
+    MISSING_TYPE *$__lazy_storage_$_markdownHeader2Font;
+    MISSING_TYPE *$__lazy_storage_$_markdownEmphasisFont;
+    MISSING_TYPE *$__lazy_storage_$_markdownEmphasisStrongFont;
+    MISSING_TYPE *$__lazy_storage_$_markdownQuoteFont;
+    MISSING_TYPE *$__lazy_storage_$_strikethroughAttributes;
     MISSING_TYPE *$__lazy_storage_$_commentFont;
     MISSING_TYPE *$__lazy_storage_$_documentationCommentFont;
     MISSING_TYPE *$__lazy_storage_$_documentationCommentKeywordFont;
+    MISSING_TYPE *$__lazy_storage_$_documentationCommentPlainTextFont;
     MISSING_TYPE *$__lazy_storage_$_markFont;
     MISSING_TYPE *$__lazy_storage_$_stringFont;
     MISSING_TYPE *$__lazy_storage_$_characterFont;
@@ -40,6 +47,7 @@
     MISSING_TYPE *$__lazy_storage_$_externalTypeNameFont;
     MISSING_TYPE *$__lazy_storage_$_externalInstanceGlobalVariableFont;
     MISSING_TYPE *$__lazy_storage_$_externalPreprocessorMacroFont;
+    MISSING_TYPE *$__lazy_storage_$_documentationMarkupAsideTagFont;
     MISSING_TYPE *$__lazy_storage_$_backgroundColor;
     MISSING_TYPE *$__lazy_storage_$_selectionColor;
     MISSING_TYPE *$__lazy_storage_$_inactiveSelectionColor;

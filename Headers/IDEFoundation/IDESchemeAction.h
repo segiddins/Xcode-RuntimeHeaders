@@ -42,6 +42,7 @@
 + (BOOL)addThreadSanitizerEnvironmentVariables:(id)arg1 buildParameters:(id)arg2 buildable:(id)arg3 debugAppExtensions:(BOOL)arg4 debugging:(BOOL)arg5 testingSpecifier:(id)arg6 error:(id *)arg7;
 + (BOOL)addAddressSanitizerEnvironmentVariables:(id)arg1 buildParameters:(id)arg2 buildable:(id)arg3 debugAppExtensions:(BOOL)arg4 debugging:(BOOL)arg5 testingSpecifier:(id)arg6 error:(id *)arg7;
 + (BOOL)_addSanitizer:(unsigned long long)arg1 environmentVariables:(id)arg2 buildParameters:(id)arg3 buildable:(id)arg4 debugAppExtensions:(BOOL)arg5 debugging:(BOOL)arg6 testingSpecifier:(id)arg7 error:(id *)arg8;
++ (id)_sanitizerOptions:(id)arg1 debugging:(BOOL)arg2 testingSpecifier:(id)arg3;
 + (id)keyPathsForValuesAffectingRunnable;
 + (BOOL)shouldAllowCustomPhaseActions;
 + (BOOL)runDestinationSupportsSwiftDevelopmentRuntime:(id)arg1 outError:(id *)arg2;
@@ -113,11 +114,13 @@
 - (BOOL)mallocStackLightAllowedForRunDestination:(id)arg1;
 - (BOOL)UBSanitizerAllowedForRunnable;
 - (BOOL)threadSanitizerAllowedForRunDestination:(id)arg1;
-- (BOOL)_runDestinationIsArm64:(id)arg1;
-- (BOOL)_runDestinationIsX86_64:(id)arg1;
+- (BOOL)_isTSanSupportedArch:(id)arg1;
 - (BOOL)mainThreadCheckerEnabledForSchemeCommand:(id)arg1 runDestination:(id)arg2;
+- (BOOL)UBSanitizerEnabledWithOverride;
 - (BOOL)UBSanitizerEnabledForSchemeCommand:(id)arg1 runDestination:(id)arg2;
+- (BOOL)threadSanitizerEnabledWithOverride;
 - (BOOL)threadSanitizerEnabledForSchemeCommand:(id)arg1 runDestination:(id)arg2;
+- (BOOL)addressSanitizerEnabledWithOverride;
 - (BOOL)addressSanitizerEnabledForSchemeCommand:(id)arg1;
 - (id)_sanitizerSchemeActionForSchemeCommand:(id)arg1;
 - (id)buildableForPlaceholderPathRunnable;
@@ -137,6 +140,7 @@
 @property(readonly) BOOL doesNonActionWork;
 @property(readonly) NSString *subtitle;
 @property(readonly) NSString *name;
+- (void)updateRunnableForDevice;
 - (void)setupObservers;
 - (id)initFromXMLUnarchiver:(id)arg1 archiveVersion:(float)arg2;
 - (id)init;

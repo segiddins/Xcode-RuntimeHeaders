@@ -11,8 +11,6 @@
 @interface IBICFolder : IBICAbstractCatalogItem
 {
     IBICManifestArchivist *_manifestArchivist;
-    BOOL _preserveLackOfTrailingNewline;
-    BOOL _preserveLackOfJSONSortedKeys;
     BOOL _providesNamespace;
 }
 
@@ -34,9 +32,6 @@
 - (id)imageSetWithFileName:(id)arg1;
 - (id)folderForFileName:(id)arg1;
 - (void)manifestArchivist:(id)arg1 populateManifest:(id)arg2;
-- (unsigned long long)jsonWritingOptionsWithoutSortingKeys;
-- (BOOL)shouldAppendNewlineToManifestFile;
-- (unsigned long long)jsonWritingOptions;
 - (void)manifestArchivist:(id)arg1 applyPropertiesFromManifest:(id)arg2 manifestFileData:(id)arg3;
 - (BOOL)manifestArchivist:(id)arg1 validateManifest:(id)arg2 results:(id)arg3;
 - (id)initializeManifestArchivist;

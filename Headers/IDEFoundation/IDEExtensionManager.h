@@ -6,19 +6,29 @@
 
 #import <objc/NSObject.h>
 
+@class NSMutableSet, NSSet;
+
 @interface IDEExtensionManager : NSObject
 {
+    struct os_unfair_lock_s _discoveredPreXcode12ExtensionDescriptionsLock;
+    NSMutableSet *_discoveredPreXcode12ExtensionDescriptions;
 }
 
 + (id)permanentlyEnabledExtensionIdentifiers;
 + (id)sharedExtensionManager;
 + (void)initialize;
+- (void).cxx_destruct;
+- (void)_warnAboutUnknownPreXcode12Extensions;
+- (void)warnAboutUnknownPreXcode12Extensions;
+- (void)registerPreXcode12ExtensionDescriptionWithName:(id)arg1 identifier:(id)arg2 toolsVersion:(id)arg3 path:(id)arg4;
+@property(readonly, copy) NSSet *discoveredPreXcode12ExtensionDescriptions;
 - (BOOL)checkWhetherExtension:(id)arg1 matchesCodeSigningRequirements:(struct __SecRequirement *)arg2 error:(id *)arg3;
 - (id)startSearchingForExtensionsOfExtensionPoint:(id)arg1 callback:(CDUnknownBlockType)arg2;
 - (void)endMatchingExtensions:(id)arg1;
 - (id)beginMatchingExtensionsWithAttributes:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)_minimumVersionForExtension:(id)arg1;
 - (id)_attributesForMatchingWithExtensionPointIdentifier:(id)arg1;
+- (id)init;
 
 @end
 

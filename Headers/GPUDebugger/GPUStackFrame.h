@@ -9,7 +9,7 @@
 #import <GPUDebugger/IDEDebugNavigableModel-Protocol.h>
 #import <GPUDebugger/IDEKeyDrivenNavigableItemRepresentedObject-Protocol.h>
 
-@class DVTDocumentLocation, DVTFileDataType, DVTSymbol, DYStackFrame, IDEFileReference, IDELaunchSession, NSArray, NSImage, NSNull, NSString, NSURL;
+@class DVTDocumentLocation, DVTFileDataType, DYStackFrame, IDEFileReference, IDELaunchSession, NSArray, NSImage, NSNull, NSString, NSURL, _TtC13DVTFoundation9DVTSymbol;
 
 @interface GPUStackFrame : NSObject <IDEDebugNavigableModel, IDEKeyDrivenNavigableItemRepresentedObject>
 {
@@ -50,7 +50,7 @@
 @property(readonly, nonatomic) BOOL navigableItem_missingReferencedContentIsImportant;
 @property(readonly, nonatomic) id navigableItem_parentRepresentedObject;
 @property(readonly, nonatomic) BOOL navigableItem_referencedContentExists;
-@property(readonly, nonatomic) DVTSymbol *navigableItem_representedSymbol;
+@property(readonly, nonatomic) _TtC13DVTFoundation9DVTSymbol *navigableItem_representedSymbol;
 @property(readonly, nonatomic) NSURL *navigableItem_representedURL;
 @property(readonly, nonatomic) NSString *navigableItem_subtitle;
 @property(readonly, nonatomic) NSString *navigableItem_toolTip;

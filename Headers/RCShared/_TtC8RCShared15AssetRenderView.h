@@ -26,6 +26,7 @@
 - (void)viewWillMoveToSuperview:(id)arg1;
 - (void)doUpdateSelector;
 - (void)setFrameSize:(struct CGSize)arg1;
+- (id)menuForEvent:(id)arg1;
 
 @end
 

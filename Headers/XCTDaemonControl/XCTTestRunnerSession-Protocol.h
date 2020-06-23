@@ -7,10 +7,11 @@
 #import <XCTDaemonControl/XCTConfigurableCallbackQueue-Protocol.h>
 #import <XCTDaemonControl/XCTConfigurableDebugLogger-Protocol.h>
 
-@class NSObject, NSSet, NSString;
+@class NSObject, NSSet, NSString, XCTCapabilities;
 @protocol NSSecureCoding><NSCopying><NSObject, OS_dispatch_queue, XCTTestRunnerSessionDelegate;
 
 @protocol XCTTestRunnerSession <XCTConfigurableCallbackQueue, XCTConfigurableDebugLogger>
+@property(readonly) XCTCapabilities *runnerCapabilities;
 @property __weak id <XCTTestRunnerSessionDelegate> delegate;
 - (void)invalidate;
 - (void)processWithToken:(id <NSSecureCoding><NSCopying><NSObject>)arg1 exitedWithStatus:(long long)arg2;

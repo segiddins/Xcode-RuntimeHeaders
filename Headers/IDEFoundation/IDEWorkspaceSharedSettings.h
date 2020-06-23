@@ -15,6 +15,7 @@
 
 + (BOOL)automaticallyNotifiesObserversForPreviewsEnabled;
 - (void).cxx_destruct;
+@property BOOL disableBuildSystemDeprecationWarning;
 @property BOOL previewsEnabled;
 - (void)setBuildSystemType:(int)arg1;
 - (void)primitiveInvalidate;

@@ -9,7 +9,7 @@
 #import <DVTKit/DVTColorLiteralQuickEditViewControllerDelegate-Protocol.h>
 #import <DVTKit/DVTFileLiteralQuickEditViewControllerDelegate-Protocol.h>
 #import <DVTKit/DVTImageLiteralQuickEditViewControllerDelegate-Protocol.h>
-#import <DVTKit/DVTSourceCodeComparisonTextView-Protocol.h>
+#import <DVTKit/DVTSourceCodeComparisonEditorTextView-Protocol.h>
 #import <DVTKit/DVTSourceEditorViewProtocol-Protocol.h>
 #import <DVTKit/DVTSourceTextScrollViewDelegate-Protocol.h>
 #import <DVTKit/NSAnimationDelegate-Protocol.h>
@@ -18,7 +18,7 @@
 @class DVTAnnotationManager, DVTMutableRangeArray, DVTObservingToken, DVTSourceCodeLanguage, DVTTextAnnotationIndicatorAnimation, DVTTextDocumentLocation, DVTTextPageGuideVisualization, NSAnimation, NSArray, NSColor, NSHashTable, NSMapTable, NSMutableArray, NSMutableIndexSet, NSString, NSTimer, NSView, NSWindow;
 @protocol DVTCancellable, DVTSourceTextViewDelegate, DVTSourceTextViewQuickEditDataSource;
 
-@interface DVTSourceTextView : DVTCompletingTextView <DVTSourceCodeComparisonTextView, DVTSourceEditorViewProtocol, NSAnimationDelegate, NSLayoutManagerDelegate, DVTSourceTextScrollViewDelegate, DVTColorLiteralQuickEditViewControllerDelegate, DVTFileLiteralQuickEditViewControllerDelegate, DVTImageLiteralQuickEditViewControllerDelegate>
+@interface DVTSourceTextView : DVTCompletingTextView <DVTSourceCodeComparisonEditorTextView, DVTSourceEditorViewProtocol, NSAnimationDelegate, NSLayoutManagerDelegate, DVTSourceTextScrollViewDelegate, DVTColorLiteralQuickEditViewControllerDelegate, DVTFileLiteralQuickEditViewControllerDelegate, DVTImageLiteralQuickEditViewControllerDelegate>
 {
     unsigned long long _oldFocusLocation;
     NSAnimation *_blockAnimation;

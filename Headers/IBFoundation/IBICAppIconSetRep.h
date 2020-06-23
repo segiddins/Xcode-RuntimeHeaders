@@ -16,7 +16,7 @@
 + (id)assetRepWithSlot:(id)arg1 fileName:(id)arg2 explicitlyUnassigned:(BOOL)arg3;
 + (id)assetRepWithRepIdentifier:(id)arg1;
 + (id)createDefaultInstancesForUnitTesting;
-- (id)languageComponentsRepresentedByConflictFreeSiblings;
+- (BOOL)shouldConsiderSiblingSlotForLanguageDirectionComponents:(id)arg1;
 - (void)setSlot:(id)arg1;
 - (id)structuredIdentifier;
 - (id)slot;

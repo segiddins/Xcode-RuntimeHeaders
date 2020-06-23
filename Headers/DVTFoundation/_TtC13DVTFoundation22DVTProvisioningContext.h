@@ -16,14 +16,16 @@
     MISSING_TYPE *usePortalDeveloperAPI;
     MISSING_TYPE *useSharedAppID;
     MISSING_TYPE *enableAppIdentifierPrefixedEntitlementsProcessor;
+    MISSING_TYPE *enableClientSideBundleIDTypeFiltering;
 }
 
 + (id)defaultContext;
 - (void).cxx_destruct;
 - (id)init;
-- (id)initWithServiceExecutionContext:(long long)arg1 isRunningAsXcodeApp:(BOOL)arg2 enableInternalExceptions:(BOOL)arg3 usePortalDeveloperAPI:(BOOL)arg4 useSharedAppID:(BOOL)arg5 enableAppIdentifierPrefixedEntitlementsProcessor:(BOOL)arg6;
+- (id)initWithServiceExecutionContext:(long long)arg1 isRunningAsXcodeApp:(BOOL)arg2 enableInternalExceptions:(BOOL)arg3 usePortalDeveloperAPI:(BOOL)arg4 useSharedAppID:(BOOL)arg5 enableAppIdentifierPrefixedEntitlementsProcessor:(BOOL)arg6 enableClientSideBundleIDTypeFiltering:(BOOL)arg7;
 @property(nonatomic, readonly) BOOL isXcodeServer;
 @property(nonatomic, readonly) BOOL isManaged;
+@property(nonatomic, readonly) BOOL enableClientSideBundleIDTypeFiltering; // @synthesize enableClientSideBundleIDTypeFiltering;
 @property(nonatomic, readonly) BOOL enableAppIdentifierPrefixedEntitlementsProcessor; // @synthesize enableAppIdentifierPrefixedEntitlementsProcessor;
 @property(nonatomic, readonly) BOOL useSharedAppID; // @synthesize useSharedAppID;
 @property(nonatomic, readonly) BOOL usePortalDeveloperAPI; // @synthesize usePortalDeveloperAPI;

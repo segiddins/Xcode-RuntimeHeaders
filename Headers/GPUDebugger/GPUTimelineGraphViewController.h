@@ -43,7 +43,6 @@
 - (void)inputHandlerForGraph:(id)arg1 requestsDisplayInspectionInfoForNanosecond:(unsigned long long)arg2 point:(struct CGPoint)arg3;
 - (id)_viewForThumbnail:(unsigned long long)arg1 point:(struct CGPoint)arg2;
 - (id)_viewForGPUTimeTooltip:(unsigned long long)arg1;
-- (id)_viewForTooltip:(unsigned long long)arg1 point:(struct CGPoint)arg2;
 - (void)inputHandlerForGraph:(id)arg1 rightMouseClicked:(struct CGPoint)arg2;
 - (void)inputHandlerForGraph:(id)arg1 unhandledClickAtTime:(unsigned long long)arg2 clickCount:(long long)arg3 onPlanes:(id)arg4 modifierFlags:(unsigned long long)arg5;
 - (void)inputHandlerForGraph:(id)arg1 unhandledClickAtTime:(unsigned long long)arg2 clickCount:(long long)arg3 onPlanes:(id)arg4;

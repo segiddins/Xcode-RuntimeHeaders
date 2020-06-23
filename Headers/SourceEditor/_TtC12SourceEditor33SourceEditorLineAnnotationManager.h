@@ -12,6 +12,7 @@
 {
     MISSING_TYPE *sourceEditorView;
     MISSING_TYPE *interactionDelegate;
+    MISSING_TYPE *_dropdownHostingScrollView;
     MISSING_TYPE *annotations;
     MISSING_TYPE *interaction;
     MISSING_TYPE *needsAnnotationGroupsUpdate;

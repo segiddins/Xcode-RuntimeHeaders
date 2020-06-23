@@ -49,6 +49,8 @@
     unsigned long long _preferredNavigationPopoverEdge;
 }
 
++ (void)_openURLInFinder:(id)arg1;
++ (void)populatePopUpMenu:(id)arg1 forShowingProxyForFileURL:(id)arg2;
 + (void)initialize;
 + (unsigned long long)defaultFocusRingType;
 + (double)navigationPopoverDefaultWidth;
@@ -81,7 +83,7 @@
 - (unsigned long long)draggingSession:(id)arg1 sourceOperationMaskForDraggingContext:(long long)arg2;
 - (void)_performDragInComponentCell:(id)arg1 inRect:(struct CGRect)arg2 ofView:(id)arg3 event:(id)arg4;
 - (void)filterItems:(id)arg1 inMenu:(id)arg2 forSearchString:(id)arg3;
-- (void)_openURLInFinder:(id)arg1;
+- (id)titleForFilteringMenuItem:(id)arg1;
 - (BOOL)popUpMenuForComponentCell:(id)arg1 inRect:(struct CGRect)arg2 ofView:(id)arg3;
 @property(readonly) BOOL _delegateRespondsToChildItemDataSourceForItem;
 - (void)_handlePressureClickForCell:(id)arg1;

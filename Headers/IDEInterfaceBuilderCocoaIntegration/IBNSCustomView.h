@@ -28,7 +28,6 @@
 - (void)willRemoveSubview:(id)arg1;
 - (void)didAddSubview:(id)arg1;
 - (BOOL)drawsDirectlyAsPlaceholder;
-- (BOOL)ibCanDirectlySetCanDrawConcurrently;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)drawPlaceholder:(struct CGRect)arg1;
 - (BOOL)prefersCachedImageBasedDrawing;

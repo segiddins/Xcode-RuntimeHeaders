@@ -21,6 +21,7 @@
     MISSING_TYPE *emitEnvironment;
     MISSING_TYPE *runOnlyForDeploymentPostprocessing;
     MISSING_TYPE *dependencyInfo;
+    MISSING_TYPE *alwaysOutOfDate;
 }
 
 @end

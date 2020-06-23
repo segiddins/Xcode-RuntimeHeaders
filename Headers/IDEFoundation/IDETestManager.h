@@ -54,8 +54,9 @@
     id <IDETestManagerUITestingPermissionSheetDelegate> _UITestingPermissionSheetDelegate;
 }
 
++ (id)staticLibraryDependenciesForBlueprint:(id)arg1 inWorkspace:(id)arg2;
 + (id)testLocationsForFileURL:(id)arg1 fromTestablesByFileURL:(id)arg2 testablesInScheme:(id)arg3 compositeStateBlock:(CDUnknownBlockType)arg4;
-+ (id)testsForFileURL:(id)arg1 fromTestablesByFileURL:(id)arg2 testablesInScheme:(id)arg3;
++ (id)testsForFileURL:(id)arg1 fromTestablesByFileURL:(id)arg2;
 + (void)initialize;
 + (id)testingTypeIdentifier;
 - (void).cxx_destruct;
@@ -91,7 +92,7 @@
 - (id)testableDataSourceForTestingSystemWithIdentifier:(id)arg1;
 - (void)setTestableDataSource:(id)arg1 forTestingSystemWithIdentifier:(id)arg2;
 - (void)didCompleteFor:(id)arg1;
-- (id)testOperationForTestRunSpecificationGroups:(id)arg1 executionEnvironment:(id)arg2 devicePool:(id)arg3 actionRecord:(id)arg4 schemeIdentifier:(id)arg5 outSchemeActionResultOperation:(id *)arg6 launchParametersBlock:(CDUnknownBlockType)arg7 actionCallbackBlock:(CDUnknownBlockType)arg8 error:(id *)arg9;
+- (id)testOperationForTestRunSpecificationGroups:(id)arg1 executionEnvironment:(id)arg2 runDestinationPool:(id)arg3 actionRecord:(id)arg4 schemeIdentifier:(id)arg5 outSchemeActionResultOperation:(id *)arg6 launchParametersBlock:(CDUnknownBlockType)arg7 actionCallbackBlock:(CDUnknownBlockType)arg8 error:(id *)arg9;
 - (void)finishTestingForTestingSpecifier:(id)arg1;
 - (void)_purgeInvalidRuntimeDiscoveredTestsForTest:(id)arg1 withSkippedTests:(id)arg2;
 - (BOOL)_shouldPurgeRuntimeDiscoveredTestTestResultForTest:(id)arg1;

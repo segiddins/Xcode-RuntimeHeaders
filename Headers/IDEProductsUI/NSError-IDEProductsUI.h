@@ -7,16 +7,15 @@
 #import <Foundation/NSError.h>
 
 @interface NSError (IDEProductsUI)
-+ (id)ide_productsErrorWrappingAnalyticsError:(id)arg1 product:(id)arg2 pointType:(long long)arg3 wasUpdate:(BOOL)arg4;
-+ (id)ide_logInErrorForFailedSessionAccountNames:(id)arg1 accountsCount:(unsigned long long)arg2;
++ (id)productsUI_errorWrappingAppStoreProductSourceError:(id)arg1 window:(id)arg2;
++ (id)productsUI_logInErrorForFailedSessionAccountNames:(id)arg1 accountsCount:(unsigned long long)arg2 window:(id)arg3;
 + (void)showAccountsPreferences;
-+ (id)ide_errorForNoAccounts;
-+ (id)ide_genericInternetConnectionErrorForProducts;
-+ (id)ide_genericInternetConnectionErrorForAnalyticsPointType:(long long)arg1 wasUpdating:(BOOL)arg2;
++ (id)productsUI_errorForNoAccountsWithWindow:(id)arg1;
++ (id)productsUI_genericInternetConnectionErrorForProducts;
 + (CDUnknownBlockType)refreshProductsRecoveryBlock;
 + (id)refreshProductsRecoveryOptions;
-- (id)ide_accountsError;
-- (id)ide_productRequestErrorForUnspecifiedOrForProduct:(id)arg1;
-- (BOOL)ide_isInternetConnectionError;
+- (id)productsUI_accountsError;
+- (id)productsUI_productRequestErrorForUnspecifiedOrForProduct:(id)arg1;
+- (BOOL)productsUI_isInternetConnectionError;
 @end
 

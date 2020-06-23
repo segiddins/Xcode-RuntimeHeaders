@@ -6,9 +6,10 @@
 
 #import <DVTInstrumentsFoundation/DTXAllowedRPC-Protocol.h>
 
-@class NSArray, NSData, NSMutableDictionary, NSString;
+@class NSArray, NSData, NSDictionary, NSMutableDictionary, NSString;
 
 @protocol DTFileBrowserServiceAuthorizedAPI <DTXAllowedRPC>
+- (NSDictionary *)fileExistsAtPath:(NSString *)arg1;
 - (NSMutableDictionary *)updateAttributesForItem:(NSMutableDictionary *)arg1;
 - (NSArray *)contentsOfDirectoryAtPath:(NSString *)arg1;
 - (NSData *)dataFromFileAtPath:(NSString *)arg1;

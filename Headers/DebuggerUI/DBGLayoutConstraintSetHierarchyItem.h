@@ -18,6 +18,7 @@
 - (id)navigableItem_name;
 - (id)launchSession;
 - (id)associatedProcessUUID;
+- (BOOL)isEqual:(id)arg1;
 - (id)childItemsForCoordinator:(id)arg1;
 @property(readonly) DBGLayoutConstraintSet *proxiedLayoutConstraintSet;
 

@@ -12,7 +12,6 @@
 
 - (id)classNamesForFailedRequestsSeparatedByComma:(id)arg1;
 - (id)issueRequests:(id)arg1 toTool:(id)arg2;
-- (struct CGColorSpace *)colorSpace;
 
 @end
 

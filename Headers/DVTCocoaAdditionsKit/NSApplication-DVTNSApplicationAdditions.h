@@ -7,6 +7,7 @@
 #import <AppKit/NSApplication.h>
 
 @interface NSApplication (DVTNSApplicationAdditions)
++ (void)adjustApplicationIconWithAppVersion:(id)arg1;
 - (void)dvt_debugScheduleBlockOnEventQueue:(CDUnknownBlockType)arg1;
 - (BOOL)dvt_hasDarkAppearance;
 @end

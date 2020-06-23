@@ -63,7 +63,6 @@
 + (BOOL)canHostItems:(id)arg1;
 + (BOOL)canHostItemsOfClass:(Class)arg1;
 + (id)keysThatImpactDisplayOrder;
-+ (id)manifestFileDataWithContent:(id)arg1 jsonWritingOptions:(unsigned long long)arg2 ensureTrailingNewline:(BOOL)arg3;
 + (BOOL)fileNameIsIdentifier;
 + (id)keysThatImpactIdentifier;
 + (id)displayNameForChildren;
@@ -75,6 +74,7 @@
 + (id)itemWithItemName:(id)arg1;
 + (id)itemWithContentsOfPath:(id)arg1 results:(id)arg2;
 + (id)allocWithZone:(struct _NSZone *)arg1;
++ (BOOL)populateNamedAssetImportInfo:(id)arg1 withIdiom:(id)arg2 options:(id)arg3 isIcon:(BOOL)arg4 error:(id *)arg5;
 + (id)createDefaultInstancesForUnitTesting;
 - (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *compressionType; // @synthesize compressionType=_compressionType;
@@ -157,6 +157,7 @@
 @property(readonly, copy) NSString *debugDescription;
 - (id)descriptionWithIndent:(long long)arg1 includeChildren:(BOOL)arg2;
 - (void)enumerateDescriptionAttributeComponents:(CDUnknownBlockType)arg1;
+- (void)populateMutatorsToAddRequiredChildCounterparts:(id)arg1 filter:(CDUnknownBlockType)arg2;
 - (void)populateMutatorsToAddRequiredChildCounterparts:(id)arg1;
 - (void)removeAllChildren;
 - (void)removeFromParent;
@@ -169,6 +170,7 @@
 - (void)addChild:(id)arg1;
 - (void)insertChild:(id)arg1 atIndex:(id)arg2;
 @property(readonly, nonatomic) long long childOrdering;
+- (id)fullyQualifiedRuntimeNameForCARCompiler;
 - (id)fullyQualifiedRuntimeNameProvidingItemForCARCompiler;
 - (id)fullyQualifiedRuntimeName;
 - (id)fullyQualifiedRuntimeNameWithSeparator:(id)arg1;
@@ -185,8 +187,6 @@
 - (long long)compareDisplayOrder:(id)arg1;
 @property(readonly) NSString *absoluteManifestFilePath;
 @property(readonly) NSDictionary *manifestContent;
-@property(readonly, nonatomic) unsigned long long jsonWritingOptions;
-@property(readonly, nonatomic) BOOL shouldAppendNewlineToManifestFile;
 @property(readonly) NSData *manifestFileData;
 @property(readonly) NSString *manifestFileName;
 @property(readonly, nonatomic) NSString *relativeFilePathFromRoot;
@@ -222,10 +222,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)init;
 - (void)enumerateSizeProvidingItemsForValidatingBrandAssetCollection:(CDUnknownBlockType)arg1;
-- (void)populateLocaleImportInfo:(id)arg1 forLocale:(id)arg2 withDevelopmentLanguage:(id)arg3;
-- (void)populateAppearanceImportInfo:(id)arg1 withOptions:(id)arg2 forLuminosityAppearance:(id)arg3 vibrancyAppearance:(id)arg4 contrastAppearance:(id)arg5;
 - (BOOL)populateNamedAssetImportInfo:(id)arg1 allCompiledItems:(id)arg2 withOptions:(id)arg3 error:(id *)arg4;
-- (id)fullyQualifiedRuntimeNameWithOptions:(id)arg1;
 - (Class)manifestArchivist:(id)arg1 childClassForChildEntry:(id)arg2 results:(id)arg3;
 - (void)manifestArchivist:(id)arg1 finishCreatingChildren:(CDStruct_dbbaf529 *)arg2;
 - (long long)manifestArchivist:(id)arg1 orderChildrenForSlotConflictResolutionByComparing:(id)arg2 to:(id)arg3;

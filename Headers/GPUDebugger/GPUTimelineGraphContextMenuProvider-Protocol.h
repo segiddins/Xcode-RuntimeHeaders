@@ -9,7 +9,7 @@
 @class NSMenu;
 
 @protocol GPUTimelineGraphContextMenuProvider <NSObject>
-- (NSMenu *)contextMenuForPlane:(const struct GPUTimelineGraphReferencePlaneCell *)arg1;
-- (NSMenu *)contextMenuForItem:(const struct GPUTimelineGraphReferencePlaneCell *)arg1 atIndex:(unsigned long long)arg2;
+- (NSMenu *)contextMenuForPlane:(const struct GPUTimelineGraphReferencePlaneCell *)arg1 plane:(unsigned long long)arg2;
+- (NSMenu *)contextMenuForItem:(const struct GPUTimelineGraphReferencePlaneCell *)arg1 atIndex:(unsigned long long)arg2 plane:(unsigned long long)arg3;
 @end
 

@@ -14,6 +14,7 @@
 - (void)SetEnabled:(_Bool)arg1;
 - (void)SetIgnoreCount:(unsigned int)arg1;
 - (unsigned int)GetIgnoreCount;
+- (unsigned int)GetHitCount;
 - (const char *)GetCondition;
 - (void)SetCondition:(const char *)arg1;
 - (id <DBGSBBreakpoint>)GetBreakpoint;

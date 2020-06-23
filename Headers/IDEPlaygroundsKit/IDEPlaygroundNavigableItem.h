@@ -15,6 +15,8 @@
 {
 }
 
+- (id)image;
+- (id)name;
 - (id)representedURL;
 - (id)contentDocumentLocation;
 @property(readonly, nonatomic) NSString *debugAreaExtensionID;

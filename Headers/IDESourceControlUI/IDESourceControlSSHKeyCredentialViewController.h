@@ -53,7 +53,7 @@
 - (void)_handleError:(id)arg1 passphraseRequired:(BOOL)arg2;
 - (void)_handleSSHKeyValidation:(BOOL)arg1 error:(id)arg2 passphraseRequired:(BOOL)arg3;
 - (void)_handleUnlockOrUpload:(BOOL)arg1;
-- (void)_didSetSSHKeyAuthenticationStrategy;
+- (void)_didSetSSHKeyAuthenticationStrategy:(BOOL)arg1;
 - (void)sshKeyActionClick:(id)arg1;
 - (void)chooseExisting:(id)arg1;
 - (void)createNew:(id)arg1;
@@ -67,6 +67,7 @@
 - (void)_updateViewHeight;
 @property(retain, nonatomic, setter=setSSHKeysAuthStrategy:) DVTSourceControlSSHKeysAuthenticationStrategy *sshKeysAuthStrategy;
 - (void)_updateSSHKeyPassphrase:(id)arg1;
+- (void)setSSHKeysAuthStrategy:(id)arg1 clearHostedAccount:(BOOL)arg2 validate:(BOOL)arg3;
 - (void)setSSHKeysAuthStrategy:(id)arg1 clearHostedAccount:(BOOL)arg2;
 - (void)reloadSSHKeyStatus;
 - (void)sshKeySelectionDidChange:(id)arg1;

@@ -10,6 +10,7 @@
 {
 }
 
+- (void)_verifyCanDrawConcurrentlyAndPopulateMessages:(id)arg1;
 - (void)_verifyScrollViewsHaveBothScrollers;
 - (void)_verifyTextControlColors;
 - (void)_verifyPopUpMenuCellsAndPopulateMessages:(id)arg1;

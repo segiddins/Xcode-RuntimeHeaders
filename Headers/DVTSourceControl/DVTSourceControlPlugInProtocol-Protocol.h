@@ -81,7 +81,6 @@
 - (void)listBranchesOfRepository:(DVTSourceControlRepository *)arg1 completionBlock:(void (^)(DVTSourceControlListBranchesResultType *))arg2;
 - (void)blameFile:(NSString *)arg1 inWorkingCopy:(DVTSourceControlWorkingCopy *)arg2 fromRevisionLocation:(DVTSourceControlRevisionLocation *)arg3 ignoreWhitespace:(BOOL)arg4 completionBlock:(void (^)(DVTSourceControlBlameResultType *))arg5;
 - (void)setAuthor:(DVTSourceControlAuthor *)arg1 forWorkingCopy:(DVTSourceControlWorkingCopy *)arg2 completionBlock:(void (^)(DVTSourceControlXPCResultType *))arg3;
-- (void)defaultAuthorForWorkingCopy:(DVTSourceControlWorkingCopy *)arg1 completionBlock:(void (^)(DVTSourceControlAuthorResultType *))arg2;
 - (void)authorForWorkingCopy:(DVTSourceControlWorkingCopy *)arg1 completionBlock:(void (^)(DVTSourceControlAuthorResultType *))arg2;
 - (void)validateAuthenticationOfRemoteRepository:(DVTSourceControlRemoteRepository *)arg1 completionBlock:(void (^)(DVTSourceControlXPCResultType *))arg2;
 - (void)operationsFinished;

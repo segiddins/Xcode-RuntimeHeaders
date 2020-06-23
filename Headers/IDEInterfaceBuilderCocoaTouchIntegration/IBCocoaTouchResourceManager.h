@@ -13,24 +13,22 @@
 + (id)systemPrivateImageRecordsByOSVersion;
 + (id)systemImageRecordsByOSVersion;
 + (id)resourcesFromImageRecordsByOSVersion:(id)arg1;
-+ (void)populateResourceSet:(id)arg1 namespaceID:(id)arg2 withOrderedSymbolNames:(id)arg3 symbolSemanticNamesMap:(id)arg4 symbolToUsageInfomationMap:(id)arg5 deprecationAliasMap:(id)arg6 preferredOrderingOffset:(long long)arg7 extraKeyword:(id)arg8;
-+ (id)systemImageResourceForTargetBundlePath:(id)arg1 namespaceID:(id)arg2 fallbackResourceNamePrefix:(id)arg3 preferredOrderingOffset:(long long)arg4 extraKeyword:(id)arg5;
-+ (id)simRuntimeRootPath;
++ (id)coreGlyphSystemRuntimeRootPath;
 + (id)systemPrivateMediaRepository;
 + (id)systemMediaRepository;
 + (id)platform;
 + (void)imageMediaResourceDidCreateImageContent:(id)arg1;
-+ (void)initialize;
-+ (id)missingImage;
++ (void)registerForMediaResourceNotifications;
+- (void)populateRequiredDocumentCapabilities:(id)arg1 forArchivedValueWhichMightBeResource:(id)arg2;
 - (void)populateAdditionalTargetOSVersions:(id)arg1 forCompilingDocument:(id)arg2;
 - (void)populateIssues:(id)arg1 forResourceReferences:(id)arg2;
-- (id)namespaceIDForResourceValue:(id)arg1;
+- (Class)systemSymbolImageMediaResourceClass;
 - (id)typesForDefaultMediaRepositories;
 - (id)placeholderResourceIconForMediaType:(id)arg1;
 - (id)placeholderResourceContentForMediaType:(id)arg1 runtimeName:(id)arg2 originalValue:(id)arg3;
 - (void)_validateResourceValue:(id)arg1 forMediaType:(id)arg2 withRuntimeName:(id)arg3;
-- (id)firstResourceValueOfMediaType:(id)arg1 withRuntimeName:(id)arg2 namespaceID:(id)arg3 creatingPlaceholderOfClassIfMissing:(Class)arg4 fromOriginalValue:(id)arg5;
-- (id)firstResourceValueOfMediaType:(id)arg1 withRuntimeName:(id)arg2 namespaceID:(id)arg3;
+- (id)firstResourceValueOfMediaType:(id)arg1 withRuntimeName:(id)arg2 namespaceID:(id)arg3 modifier:(id)arg4 creatingPlaceholderOfClassIfMissing:(Class)arg5 fromOriginalValue:(id)arg6;
+- (id)firstResourceValueOfMediaType:(id)arg1 withRuntimeName:(id)arg2 namespaceID:(id)arg3 modifier:(id)arg4;
 
 @end
 

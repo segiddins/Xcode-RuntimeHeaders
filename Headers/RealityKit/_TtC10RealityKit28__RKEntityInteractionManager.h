@@ -13,6 +13,7 @@
     MISSING_TYPE *customTriggerFiredActions;
     MISSING_TYPE *areInteractionsEnabled;
     MISSING_TYPE *automaticallyInvokesStartTrigger;
+    MISSING_TYPE *proximityEnabled;
     MISSING_TYPE *sceneRef;
     MISSING_TYPE *key;
     MISSING_TYPE *__entityLookupTable;

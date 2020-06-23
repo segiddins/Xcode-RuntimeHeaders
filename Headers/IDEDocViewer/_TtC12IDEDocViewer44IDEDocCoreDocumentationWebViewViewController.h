@@ -6,37 +6,41 @@
 
 #import <DVTViewControllerKit/DVTViewController.h>
 
-@class IDEDocWebViewContentViewController, MISSING_TYPE, WKWebView;
+@class IDEDocWebViewContentViewController, MISSING_TYPE, _TtC12IDEDocViewer13IDEDocWebView;
 
 @interface _TtC12IDEDocViewer44IDEDocCoreDocumentationWebViewViewController : DVTViewController
 {
     MISSING_TYPE *hostViewController;
-    MISSING_TYPE *topicSchemeHandler;
+    MISSING_TYPE *docSchemeHandler;
     MISSING_TYPE *imageSchemeHandler;
-    MISSING_TYPE *snapshotView;
     MISSING_TYPE *webView;
     MISSING_TYPE *communicationBridge;
+    MISSING_TYPE *javascriptEvaluator;
+    MISSING_TYPE *receiveCommunicationBridgeMessage;
+    MISSING_TYPE *isRendererAppMounted;
+    MISSING_TYPE *retrieveBuiltDocumentationCancellable;
     MISSING_TYPE *_fontAndColorThemeChangedObserver;
-    MISSING_TYPE *baseURL;
+    MISSING_TYPE *$__lazy_storage_$_builtDocumentationProvider;
     MISSING_TYPE *_webViewURLObservation;
     MISSING_TYPE *_inFlightRequest;
     MISSING_TYPE *_loadedURL;
-    MISSING_TYPE *_currentEntityID;
+    MISSING_TYPE *currentDocument;
+    MISSING_TYPE *urlToLoad;
     MISSING_TYPE *_blankURL;
 }
 
 - (void).cxx_destruct;
-- (void)dealloc;
 - (void)clearContent;
 - (void)stopLoading;
-- (void)loadCoreDocumentationContentWithUrl:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)loadCoreDocumentationContentWithUrl:(id)arg1;
 @property(nonatomic, readonly) BOOL isDisplayingContent;
+- (void)reloadContent;
 - (void)viewWillLayout;
 - (void)viewDidLoad;
 - (void)primitiveInvalidate;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)initWithCoder:(id)arg1;
-@property(nonatomic, retain) WKWebView *webView; // @synthesize webView;
+@property(nonatomic, retain) _TtC12IDEDocViewer13IDEDocWebView *webView; // @synthesize webView;
 @property(nonatomic) __weak IDEDocWebViewContentViewController *hostViewController; // @synthesize hostViewController;
 
 @end

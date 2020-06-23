@@ -19,7 +19,6 @@
 @property unsigned long long borderSides; // @synthesize borderSides=_borderSides;
 @property(nonatomic) int gradientStyle; // @synthesize gradientStyle=_gradientStyle;
 - (id)accessibilityRole;
-- (BOOL)_isTabStyleCell;
 - (BOOL)_shouldUseSystemAccentColorStyle;
 - (BOOL)_isSelected;
 - (id)_imageToDraw:(BOOL)arg1 isActive:(BOOL)arg2;

@@ -13,6 +13,7 @@
 - (BOOL)isCollapsible;
 - (void)setFilteredChildren:(id)arg1;
 - (id)filteredChildren;
+- (long long)topLevelObjectInsertionIndexForChildIndex:(long long)arg1;
 - (unsigned long long)dragOperationForDropInfo:(id)arg1 proposedIndex:(long long)arg2 acceptingIndex:(long long *)arg3 isAlternativeItem:(BOOL)arg4;
 
 @end

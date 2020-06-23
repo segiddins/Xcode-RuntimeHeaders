@@ -20,13 +20,14 @@
     BOOL _canBeCreatedByFreeTeams;
     NSString *_identifier;
     NSString *_portalIdentifier;
+    NSSet *_supportedDeviceClasses;
     NSString *_sdkVariant;
+    NSString *_manualProfileNamePrefix;
     NSSet *_certificateTypes;
     DVTPortalCertificateType *_primaryCertificateType;
     DVTPortalProfilePurpose *_purpose;
     NSString *_userDescription;
     NSArray *_supportedICloudEnvironments;
-    NSString *_namePostfix;
     DVTPortalPlatform *_portalPlatform;
     long long _devicesStyle;
 }
@@ -43,7 +44,6 @@
 @property(readonly, nonatomic) BOOL canBeCreatedByMembers; // @synthesize canBeCreatedByMembers=_canBeCreatedByMembers;
 @property(readonly, nonatomic, getter=isEnterpriseOnly) BOOL enterpriseOnly; // @synthesize enterpriseOnly=_enterpriseOnly;
 @property(readonly, nonatomic) DVTPortalPlatform *portalPlatform; // @synthesize portalPlatform=_portalPlatform;
-@property(readonly, nonatomic) NSString *namePostfix; // @synthesize namePostfix=_namePostfix;
 @property(readonly, nonatomic) NSArray *supportedICloudEnvironments; // @synthesize supportedICloudEnvironments=_supportedICloudEnvironments;
 @property(readonly, nonatomic) BOOL requiresExplicitAppID; // @synthesize requiresExplicitAppID=_requiresExplicitAppID;
 @property(readonly, nonatomic) NSString *userDescription; // @synthesize userDescription=_userDescription;
@@ -51,7 +51,9 @@
 @property(readonly, nonatomic, getter=isTeamProfile) BOOL teamProfile; // @synthesize teamProfile=_teamProfile;
 @property(readonly, nonatomic) DVTPortalCertificateType *primaryCertificateType; // @synthesize primaryCertificateType=_primaryCertificateType;
 @property(readonly, nonatomic) NSSet *certificateTypes; // @synthesize certificateTypes=_certificateTypes;
+@property(readonly, nonatomic) NSString *manualProfileNamePrefix; // @synthesize manualProfileNamePrefix=_manualProfileNamePrefix;
 @property(readonly, nonatomic) NSString *sdkVariant; // @synthesize sdkVariant=_sdkVariant;
+@property(readonly, nonatomic) NSSet *supportedDeviceClasses; // @synthesize supportedDeviceClasses=_supportedDeviceClasses;
 @property(readonly, nonatomic) NSString *portalIdentifier; // @synthesize portalIdentifier=_portalIdentifier;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (BOOL)supportsFeatures:(id)arg1 error:(id *)arg2;
@@ -59,7 +61,7 @@
 - (BOOL)isEqual:(id)arg1;
 @property(readonly, nonatomic) DVTPlatform *platform;
 - (id)description;
-- (id)initWithIdentifier:(id)arg1 portalIdentifier:(id)arg2 portalPlatform:(id)arg3 certificateTypes:(id)arg4 primaryCertificateType:(id)arg5 isTeamProfile:(BOOL)arg6 purpose:(id)arg7 enterpriseOnly:(BOOL)arg8 canBeCreatedByMembers:(BOOL)arg9 canBeCreatedByAdmins:(BOOL)arg10 canBeCreatedByEnterpriseTeams:(BOOL)arg11 canBeCreatedByUniversityTeams:(BOOL)arg12 canBeCreatedByFreeTeams:(BOOL)arg13 requiresExplicitAppID:(BOOL)arg14 devicesStyle:(long long)arg15 namePostfix:(id)arg16 userDescription:(id)arg17 iCloudEnvironments:(id)arg18 sdkVariant:(id)arg19;
+- (id)initWithIdentifier:(id)arg1 portalIdentifier:(id)arg2 portalPlatform:(id)arg3 manualProfileNamePrefix:(id)arg4 certificateTypes:(id)arg5 primaryCertificateType:(id)arg6 isTeamProfile:(BOOL)arg7 purpose:(id)arg8 enterpriseOnly:(BOOL)arg9 canBeCreatedByMembers:(BOOL)arg10 canBeCreatedByAdmins:(BOOL)arg11 canBeCreatedByEnterpriseTeams:(BOOL)arg12 canBeCreatedByUniversityTeams:(BOOL)arg13 canBeCreatedByFreeTeams:(BOOL)arg14 requiresExplicitAppID:(BOOL)arg15 devicesStyle:(long long)arg16 deviceClasses:(id)arg17 userDescription:(id)arg18 iCloudEnvironments:(id)arg19 sdkVariant:(id)arg20;
 
 @end
 

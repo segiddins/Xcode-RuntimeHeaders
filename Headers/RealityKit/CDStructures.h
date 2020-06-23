@@ -28,6 +28,12 @@ struct CGSize {
 #pragma mark Typedef'd Structures
 
 typedef struct {
+    unsigned int _field1;
+    unsigned int _field2;
+    unsigned int _field3;
+} CDStruct_32a7f38a;
+
+typedef struct {
     unsigned long long _field1;
     unsigned long long _field2;
     unsigned long long _field3;

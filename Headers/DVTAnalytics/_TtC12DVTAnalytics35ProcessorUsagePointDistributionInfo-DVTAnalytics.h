@@ -6,9 +6,7 @@
 
 #import <DVTAnalytics/_TtC12DVTAnalytics35ProcessorUsagePointDistributionInfo.h>
 
-#import <DVTAnalytics/DVTServicesJSONSerialization-Protocol.h>
-
-@interface _TtC12DVTAnalytics35ProcessorUsagePointDistributionInfo (DVTAnalytics) <DVTServicesJSONSerialization>
+@interface _TtC12DVTAnalytics35ProcessorUsagePointDistributionInfo (DVTAnalytics)
 + (id)objectFromJSONRepresentation:(id)arg1 error:(id *)arg2;
 - (id)JSONRepresentation;
 @end

@@ -78,6 +78,7 @@
 - (BOOL)ibIsValidConstraintItem;
 - (BOOL)ibIsInspectorSliceApplicable:(id)arg1 forCategory:(id)arg2;
 - (BOOL)ibIsValidOutletDestination;
+- (BOOL)shouldConsiderHitTesting;
 @property(readonly) BOOL isSystemType;
 - (id)ibPasteboardTypes;
 - (BOOL)ibCanBeReferencedByConstraintWithContainingView:(id)arg1;

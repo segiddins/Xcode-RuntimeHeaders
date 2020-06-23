@@ -4,9 +4,9 @@
 //  Copyright (C) 1997-2019 Steve Nygard.
 //
 
-@class _TtC13IDEFoundation26SigningEditorConfiguration;
+@class SigningEditorConfiguration;
 
 @protocol IDESigningEditorConfigurationDataSourceDelegate
-- (void)willUpdateConfigurationScope:(_TtC13IDEFoundation26SigningEditorConfiguration *)arg1;
+- (void)willUpdateConfigurationScope:(SigningEditorConfiguration *)arg1;
 @end
 

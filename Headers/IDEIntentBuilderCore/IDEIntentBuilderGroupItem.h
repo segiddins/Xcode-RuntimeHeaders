@@ -58,6 +58,7 @@
 - (id)codegen_headerFilePrefixForSourceLanguage:(unsigned long long)arg1;
 - (id)codegen_contentsForFileOfType:(unsigned long long)arg1;
 - (BOOL)codegen_generatesFileOfType:(unsigned long long)arg1;
+- (id)codegen_visibilityForSourceLanguage:(unsigned long long)arg1;
 - (id)codegen_availabilityForSourceLanguage:(unsigned long long)arg1;
 - (BOOL)codegen_isInternal;
 

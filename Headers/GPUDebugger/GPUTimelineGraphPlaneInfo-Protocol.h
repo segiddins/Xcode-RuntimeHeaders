@@ -11,7 +11,6 @@
 - (unsigned long long)decorationColorState;
 - (BOOL)isLineGraph;
 - (BOOL)isVisible;
-- (unsigned long long)sortingIndex;
 - (unsigned long long)groupIndex;
 - (long long)maxValue;
 - (NSString *)additionalDescription;

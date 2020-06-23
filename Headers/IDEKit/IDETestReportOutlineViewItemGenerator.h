@@ -16,11 +16,10 @@
 + (id)cellViewForItem:(id)arg1 inPerfMetricColumn:(id)arg2 outlineView:(id)arg3 testReport:(id)arg4;
 + (id)cellViewForTest:(id)arg1 inSummaryColumn:(id)arg2 outlineView:(id)arg3;
 + (id)summaryStatusForTestRunsByDevice:(id)arg1;
-+ (id)cellViewForItemInDurationColumn:(id)arg1 outlineView:(id)arg2;
-+ (id)durationStringFromTimeInterval:(double)arg1;
-+ (id)cellViewForItemInTitleColumn:(id)arg1 outlineView:(id)arg2 highlightString:(id)arg3;
++ (id)cellViewForItemInDurationColumn:(id)arg1 durationFormatter:(id)arg2 outlineView:(id)arg3;
++ (id)cellViewForItemInTitleColumn:(id)arg1 outlineView:(id)arg2 highlightString:(id)arg3 testReport:(id)arg4;
 + (id)accessibilityLabelForTestItem:(id)arg1;
-+ (id)cellViewForTestGroup:(id)arg1 outlineView:(id)arg2 highlightString:(id)arg3;
++ (id)cellViewForTestGroup:(id)arg1 durationFormatter:(id)arg2 outlineView:(id)arg3 highlightString:(id)arg4;
 + (void)addFilterStringSubrangeHighlightsToCell:(id)arg1 cellString:(id)arg2 highlightString:(id)arg3;
 + (id)assertionsAttributedStringForTestFailure:(id)arg1 backgroundStyle:(long long)arg2 activity:(id)arg3 failureSummary:(id)arg4 wraps:(BOOL)arg5;
 + (id)attributedStringForTestName:(id)arg1 parentGroupName:(id)arg2 passFailString:(id)arg3;

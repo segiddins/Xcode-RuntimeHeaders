@@ -7,6 +7,8 @@
 #import <Foundation/NSUserDefaults.h>
 
 @interface NSUserDefaults (GPUDebugger)
+- (void)GPUDebugger_setUserDefinedCounterGroups:(id)arg1;
+- (id)GPUDebugger_userDefinedCounterGroups;
 - (void)GPUDebugger_setProfileOnTraceLoad:(BOOL)arg1;
 - (BOOL)GPUDebugger_profileOnTraceLoad;
 - (BOOL)GPUDebugger_showFunctionIndex;
@@ -25,6 +27,7 @@
 - (id)GPUDebugger_overlayColor;
 - (double)GPUDebugger_loupeDiameterWithMin:(double)arg1 max:(double)arg2;
 - (double)GPUDebugger_textureMaxScaleWithMin:(double)arg1 max:(double)arg2;
+- (id)GPUDebugger_arrayForKey:(id)arg1 defaultValue:(id)arg2 registerDefault:(BOOL)arg3;
 - (id)GPUDebugger_colorForKey:(id)arg1 defaultValue:(id)arg2 registerDefault:(BOOL)arg3;
 - (id)GPUDebugger_colorForKey:(id)arg1;
 - (id)GPUDebugger_stringForKey:(id)arg1 defaultValue:(id)arg2 registerDefault:(BOOL)arg3;
@@ -47,8 +50,5 @@
 @property(readonly) BOOL GPUDebugger_dependencyViewerAutoExpandSingletonGroups;
 @property(readonly) double GPUDebugger_dependencyViewerStatsMagnificationBoundry;
 @property(readonly) BOOL GPUDebugger_dependencyViewerHideEmptyGroups;
-@property(readonly) BOOL GPUDebugger_dependencyViewerShowDebugProgressBars;
-@property(readonly) BOOL GPUDebugger_dependencyViewerShouldPreRenderThumbnails;
-@property(readonly) BOOL GPUDebugger_dependencyViewerShouldSmoothScroll;
 @end
 

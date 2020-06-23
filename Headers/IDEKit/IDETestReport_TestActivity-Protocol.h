@@ -7,7 +7,8 @@
 #import <IDEKit/IDETestReport_Base-Protocol.h>
 #import <IDEKit/IDETest_ActivityAttachment_Base-Protocol.h>
 
-@class NSArray, NSDate, NSString;
+@class DVTTextDocumentLocation, NSArray, NSDate, NSString;
+@protocol IDEResultBundleURLRedirecting;
 
 @protocol IDETestReport_TestActivity <IDETest_ActivityAttachment_Base, IDETestReport_Base>
 @property(readonly, copy, nonatomic) NSArray *ide_test_activity_transitiveAttachments;
@@ -25,5 +26,10 @@
 @property(readonly, nonatomic) double ide_test_activity_duration;
 @property(readonly, copy, nonatomic) NSString *ide_test_activity_activityType;
 @property(readonly, copy, nonatomic) NSString *ide_test_activity_UUID;
+
+@optional
+@property __weak id <IDEResultBundleURLRedirecting> ide_testReport_activity_urlRedirector;
+@property(readonly, copy, nonatomic) DVTTextDocumentLocation *ide_test_activity_primaryDocumentLocation;
+@property(readonly, copy, nonatomic) NSArray *ide_test_activity_failureSummaries;
 @end
 

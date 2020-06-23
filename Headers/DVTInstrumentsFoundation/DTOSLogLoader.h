@@ -18,6 +18,7 @@
     NSError *_failureReason;
     NSDate *_startTime;
     NSDate *_endTime;
+    unsigned long long _slackInMachTimeUnits;
     XRMobileAgent<DTOSLogLoaderVisitor> *_agentWaitingForStop;
     DTOSLogLoaderFetchTicket *_lastFetchTicket;
     struct _opaque_pthread_cond_t _stateChanged;
@@ -55,6 +56,8 @@
     BOOL _running;
     unsigned long long _signpostConfig;
     unsigned long long _exclusions;
+    BOOL _trackPidToExecNameMapping;
+    XRIntKeyedDictionary *_pidToExecNameMapping;
     NSPredicate *_filterPredicate;
     id <DTOSLogLoaderDelegate> _delegate;
 }
@@ -78,7 +81,7 @@
 - (void)_prepareAgentToExecute:(id)arg1 withTicket:(id)arg2;
 - (id)ticketToStopStream:(id)arg1;
 - (id)ticketToFetchData:(id)arg1 window:(double)arg2;
-- (id)ticketToPrepare:(id)arg1 filterPredicate:(id)arg2 signposting:(unsigned long long)arg3 exclusions:(unsigned long long)arg4 mode:(unsigned long long)arg5;
+- (id)ticketToPrepare:(id)arg1 filterPredicate:(id)arg2 signposting:(unsigned long long)arg3 exclusions:(unsigned long long)arg4 mode:(unsigned long long)arg5 archiveURL:(id)arg6 trackPidToExecNameMapping:(BOOL)arg7;
 - (id)ticketToStartStream:(id)arg1;
 - (BOOL)_holdReceivedAgent:(id)arg1 ticket:(id)arg2;
 - (void)dealloc;

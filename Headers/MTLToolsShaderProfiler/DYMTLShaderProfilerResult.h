@@ -6,7 +6,7 @@
 
 #import <GPUToolsShaderProfiler/DYShaderProfilerResult.h>
 
-@class NSArray, NSDictionary, NSNumber;
+@class NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSNumber;
 
 @interface DYMTLShaderProfilerResult : DYShaderProfilerResult
 {
@@ -17,10 +17,18 @@
     NSNumber *_parameterBufferMaxSizeNeverMemless;
     NSDictionary *_parameterBufferPercentFullDict;
     NSDictionary *_softwareCounterInfo;
+    NSMutableDictionary *_perRingPerFrameLimiterData;
+    NSMutableArray *_shaderProfilingFrameTimes;
+    NSMutableDictionary *_blitEncoderTimeInfo;
+    double _shaderProfilingTime;
 }
 
 + (BOOL)supportsSecureCoding;
 - (void).cxx_destruct;
+@property(nonatomic) double shaderProfilingTime; // @synthesize shaderProfilingTime=_shaderProfilingTime;
+@property(retain, nonatomic) NSMutableDictionary *blitEncoderTimeInfo; // @synthesize blitEncoderTimeInfo=_blitEncoderTimeInfo;
+@property(retain, nonatomic) NSMutableArray *shaderProfilingFrameTimes; // @synthesize shaderProfilingFrameTimes=_shaderProfilingFrameTimes;
+@property(retain, nonatomic) NSMutableDictionary *perRingPerFrameLimiterData; // @synthesize perRingPerFrameLimiterData=_perRingPerFrameLimiterData;
 @property(retain, nonatomic) NSDictionary *softwareCounterInfo; // @synthesize softwareCounterInfo=_softwareCounterInfo;
 @property(retain, nonatomic) NSDictionary *parameterBufferPercentFullDict; // @synthesize parameterBufferPercentFullDict=_parameterBufferPercentFullDict;
 @property(retain, nonatomic) NSNumber *parameterBufferMaxSizeNeverMemless; // @synthesize parameterBufferMaxSizeNeverMemless=_parameterBufferMaxSizeNeverMemless;
@@ -36,6 +44,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)init;
 
 @end
 

@@ -10,10 +10,12 @@
 
 @interface DVTExtendedPlatformInfo : NSObject
 {
+    BOOL _includeGameCenterInPortalRequests;
     BOOL _requiresProxiedDevicesToBeRegistered;
     BOOL _requiresPortalAppGroups;
     BOOL _deprecatedRequiresLocalGameCenterEntitlement;
     BOOL _useFallbackEntitlementsInXBS;
+    BOOL _requiresIbtoolPlatformDefinition;
     BOOL _supportsUnrestrictedEntitlements;
     BOOL _allowsAdHocSigning;
     BOOL _supportsUploadingBitcode;
@@ -34,7 +36,9 @@
     NSString *_minimumOSForDeviceSupport;
     NSString *_additionalBuiltProductsDirName;
     NSString *_additionalBuiltProductsDirExpression;
+    NSSet *_devicesEligibleForAdditionalPlatforms;
     NSString *_minimumOSForDownloadableSymbols;
+    NSString *_minimumOSForDownloadingSymbolsByOSVersion;
     NSString *_productCategoryIdentifier;
     NSString *_minimumOSForASANWithoutDyldInsertLibrary;
     NSString *_minimumOSForTSanWithoutDyldInsertLibrary;
@@ -86,8 +90,10 @@
 @property(readonly) NSString *productCategoryIdentifier; // @synthesize productCategoryIdentifier=_productCategoryIdentifier;
 @property(readonly) BOOL ignoreDevices; // @synthesize ignoreDevices=_ignoreDevices;
 @property(readonly) BOOL signForLocalExecutionUsingCertificate; // @synthesize signForLocalExecutionUsingCertificate=_signForLocalExecutionUsingCertificate;
+@property(readonly) NSString *minimumOSForDownloadingSymbolsByOSVersion; // @synthesize minimumOSForDownloadingSymbolsByOSVersion=_minimumOSForDownloadingSymbolsByOSVersion;
 @property(readonly) NSString *minimumOSForDownloadableSymbols; // @synthesize minimumOSForDownloadableSymbols=_minimumOSForDownloadableSymbols;
 @property(readonly) BOOL prefersModelSpecificSupportDirectories; // @synthesize prefersModelSpecificSupportDirectories=_prefersModelSpecificSupportDirectories;
+@property(readonly) NSSet *devicesEligibleForAdditionalPlatforms; // @synthesize devicesEligibleForAdditionalPlatforms=_devicesEligibleForAdditionalPlatforms;
 @property(readonly) BOOL devicesEligibleOnlyIfRunnableMatchesPlatform; // @synthesize devicesEligibleOnlyIfRunnableMatchesPlatform=_devicesEligibleOnlyIfRunnableMatchesPlatform;
 @property(readonly) NSString *additionalBuiltProductsDirExpression; // @synthesize additionalBuiltProductsDirExpression=_additionalBuiltProductsDirExpression;
 @property(readonly) NSString *additionalBuiltProductsDirName; // @synthesize additionalBuiltProductsDirName=_additionalBuiltProductsDirName;
@@ -98,12 +104,14 @@
 @property(readonly) BOOL supportsUploadingBitcode; // @synthesize supportsUploadingBitcode=_supportsUploadingBitcode;
 @property(readonly) BOOL allowsAdHocSigning; // @synthesize allowsAdHocSigning=_allowsAdHocSigning;
 @property(readonly) BOOL supportsUnrestrictedEntitlements; // @synthesize supportsUnrestrictedEntitlements=_supportsUnrestrictedEntitlements;
+@property(readonly) BOOL requiresIbtoolPlatformDefinition; // @synthesize requiresIbtoolPlatformDefinition=_requiresIbtoolPlatformDefinition;
 @property(readonly) BOOL useFallbackEntitlementsInXBS; // @synthesize useFallbackEntitlementsInXBS=_useFallbackEntitlementsInXBS;
 @property(readonly) BOOL deprecatedRequiresLocalGameCenterEntitlement; // @synthesize deprecatedRequiresLocalGameCenterEntitlement=_deprecatedRequiresLocalGameCenterEntitlement;
 @property(readonly) NSString *pushNotificationServiceEntitlement; // @synthesize pushNotificationServiceEntitlement=_pushNotificationServiceEntitlement;
 @property(readonly) BOOL requiresPortalAppGroups; // @synthesize requiresPortalAppGroups=_requiresPortalAppGroups;
 @property(readonly) NSArray *provisioningProfileUTIs; // @synthesize provisioningProfileUTIs=_provisioningProfileUTIs;
 @property(readonly) BOOL requiresProxiedDevicesToBeRegistered; // @synthesize requiresProxiedDevicesToBeRegistered=_requiresProxiedDevicesToBeRegistered;
+@property(readonly) BOOL includeGameCenterInPortalRequests; // @synthesize includeGameCenterInPortalRequests=_includeGameCenterInPortalRequests;
 @property(readonly) NSString *platformIdentifier; // @synthesize platformIdentifier=_platformIdentifier;
 @property(readonly) DVTPlatform *primaryPlatform;
 @property(readonly) BOOL isSimulatorPlatform;

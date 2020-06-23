@@ -10,7 +10,7 @@
 #import <DVTKit/DVTTextCompletionDataSourceDelegate-Protocol.h>
 #import <DVTKit/DVTTextCompletionListDataSource-Protocol.h>
 
-@class DVTObservingToken, DVTPerformanceMetric, DVTStackBacktrace, DVTTextCompletionListWindowController, NSArray, NSDictionary, NSString, NSView;
+@class DVTObservingToken, DVTPerformanceMetric, DVTStackBacktrace, DVTTextCompletionListWindowController, DVTTextCompletionSessionScoringState, NSArray, NSDictionary, NSIndexSet, NSString, NSView;
 @protocol DVTTextCompletionSupportingTextView;
 
 @interface DVTTextCompletionSession : NSObject <DVTTextCompletionDataSourceDelegate, DVTTextCompletionListDataSource, DVTInvalidation>
@@ -19,12 +19,13 @@
     DVTTextCompletionListWindowController *_listWindowController;
     unsigned long long _wordStartLocation;
     unsigned long long _cursorLocation;
-    NSString *_filteringPrefix;
+    NSString *_patternString;
     DVTObservingToken *_readyToShowListener;
     NSArray *_allCompletions;
-    NSArray *_filteredCompletionsAlpha;
+    DVTTextCompletionSessionScoringState *_scoringState;
+    NSArray *_arrangedCompletionItems;
     NSString *_usefulPrefix;
-    long long _selectedCompletionIndex;
+    unsigned long long _selectedCompletionItemIndex;
     NSDictionary *_priorityCoefficients;
     DVTPerformanceMetric *_currentMetric;
     int _pendingRequestState;
@@ -35,11 +36,15 @@
     BOOL _hidingCompletions;
     BOOL _autoCompleteTimerExpired;
     NSDictionary *_currentCompletionContext;
-    NSArray *_highlyLikelyCompletions;
+    NSArray *_highlyLikelyCompletionItems;
+    long long _arrangedCompletionItemsChangeGeneration;
 }
 
 + (void)_addToRecentCompletions:(id)arg1;
++ (long long)_indexOfItem:(id)arg1 inSomewhatAlphabeticalList:(id)arg2;
++ (unsigned long long)initialSelectedIndexForTransitioningFromResults:(id)arg1 forPattern:(id)arg2 toResults:(id)arg3 forPattern:(id)arg4 previouslySelectedIndex:(long long)arg5;
 + (id)completionPriorityCoefficientsForLanguage:(id)arg1;
++ (id)keyPathsForValuesAffectingSelectedCompletionItemIndexes;
 + (id)keyPathsForValuesAffectingShowingCompletions;
 + (id)infrequentTextCompletionsSetForLanguage:(id)arg1;
 + (id)infrequentTextCompletionsForLanguage:(id)arg1;
@@ -50,13 +55,15 @@
 + (void)initialize;
 + (id)keyPathsForValuesAffectingReadyToShowCompletions;
 - (void).cxx_destruct;
-@property(copy) NSString *filteringPrefix; // @synthesize filteringPrefix=_filteringPrefix;
-@property(retain) NSArray *highlyLikelyCompletions; // @synthesize highlyLikelyCompletions=_highlyLikelyCompletions;
+@property(copy) NSString *patternString; // @synthesize patternString=_patternString;
+@property(readonly) long long arrangedCompletionItemsChangeGeneration; // @synthesize arrangedCompletionItemsChangeGeneration=_arrangedCompletionItemsChangeGeneration;
+@property(retain) NSArray *highlyLikelyCompletionItems; // @synthesize highlyLikelyCompletionItems=_highlyLikelyCompletionItems;
 @property(readonly, nonatomic) NSDictionary *currentCompletionContext; // @synthesize currentCompletionContext=_currentCompletionContext;
 @property BOOL autoCompleteTimerExpired; // @synthesize autoCompleteTimerExpired=_autoCompleteTimerExpired;
-@property(nonatomic) long long selectedCompletionIndex; // @synthesize selectedCompletionIndex=_selectedCompletionIndex;
+@property(nonatomic) unsigned long long selectedCompletionItemIndex; // @synthesize selectedCompletionItemIndex=_selectedCompletionItemIndex;
 @property(copy) NSString *usefulPrefix; // @synthesize usefulPrefix=_usefulPrefix;
-@property(retain) NSArray *filteredCompletionsAlpha; // @synthesize filteredCompletionsAlpha=_filteredCompletionsAlpha;
+@property(retain) NSArray *arrangedCompletionItems; // @synthesize arrangedCompletionItems=_arrangedCompletionItems;
+@property(retain) DVTTextCompletionSessionScoringState *scoringState; // @synthesize scoringState=_scoringState;
 @property(retain) NSArray *allCompletions; // @synthesize allCompletions=_allCompletions;
 @property(nonatomic) unsigned long long cursorLocation; // @synthesize cursorLocation=_cursorLocation;
 @property(readonly) unsigned long long wordStartLocation; // @synthesize wordStartLocation=_wordStartLocation;
@@ -69,16 +76,16 @@
 - (id)_prefixForCurrentLocation;
 - (struct _NSRange)rangeOfFirstWordInString:(id)arg1;
 - (void)completionsChangedForDataSource:(id)arg1;
-- (long long)_indexOfItem:(id)arg1 inAlphabeticalList:(id)arg2;
-- (id)_commonPrefixForItems:(id)arg1;
-- (id)_usefulPartialCompletionPrefixForItems:(id)arg1 selectedIndex:(unsigned long long)arg2 filteringPrefix:(id)arg3;
+- (id)_commonPrefixForCompletionItems:(id)arg1;
+- (id)_usefulPartialCompletionPrefixForCompletionItems:(id)arg1 selectedIndex:(unsigned long long)arg2 patternString:(id)arg3;
 - (long long)_priorityBucketForItem:(id)arg1 usingPrefix:(id)arg2;
 - (double)_intrinsicPriorityForItem:(id)arg1 usingPrefix:(id)arg2;
-- (id)filterCompletionItems:(id)arg1 openQuicklyPattern:(id)arg2;
-- (id)_doFilterCompletionItems:(id)arg1 range:(struct _NSRange)arg2 openQuicklyPattern:(id)arg3 language:(id)arg4 highestPriority:(double *)arg5 highestPriorityBucket:(long long *)arg6;
-- (void)_setFilteringPrefix:(id)arg1 forceFilter:(BOOL)arg2;
+- (void)_setPatternString:(id)arg1 forceFilter:(BOOL)arg2;
 - (void)_ensureCompletionsUpToDate;
-- (id)attributesForCompletionAtCharacterIndex:(unsigned long long)arg1 effectiveRange:(struct _NSRange *)arg2;
+- (void)integrateCompletions:(id)arg1 highlyLikelyCompletions:(id)arg2 fromDataSource:(id)arg3 performanceMetric:(id)arg4;
+- (void)clearCompletionItemsIfNeeded;
+- (id)targetDocumentLocation;
+- (void)postArrangedItemsChanged;
 - (BOOL)_gotUsefulCompletionsToShowInList:(id)arg1;
 - (BOOL)_shouldSetCursorLocation:(unsigned long long)arg1;
 - (BOOL)shouldBeDismissedForSelectionChange;
@@ -97,19 +104,22 @@
 - (BOOL)handleTextViewShouldSetMarkedText:(id)arg1 selectedRange:(struct _NSRange)arg2;
 - (BOOL)handleTextViewShouldChangeTextInRange:(struct _NSRange)arg1 replacementString:(id)arg2;
 - (BOOL)handleInsertText:(id)arg1;
-- (void)selectPreviousCompletionAlpha;
-- (void)selectNextCompletionAlpha;
+- (void)selectPreviousCompletionItem;
+- (void)selectNextCompletionItem;
 - (BOOL)_insertCurrentCompletionNameCharacters:(unsigned long long)arg1;
 - (BOOL)insertUsefulPrefix;
+- (id)completionTextForCompletionItem:(id)arg1;
 - (BOOL)insertCurrentCompletion;
 - (void)hideCompletionsWithReason:(int)arg1;
 - (void)showTemporarilyHiddenCompletionsForReasonMask:(unsigned long long)arg1;
 - (void)showCompletionsExplicitly:(BOOL)arg1;
+- (void)showCompletionsExplicitly:(BOOL)arg1 forTextView:(id)arg2 wordRange:(struct _NSRange)arg3;
 - (void)_autoCompletionWaitIsOver;
 @property(readonly, getter=isShownExplicitly) BOOL shownExplicitly;
 @property(readonly) BOOL readyToShowCompletions;
 - (id)_listWindowController;
 - (void)setPendingRequestState:(int)arg1;
+@property(retain) NSIndexSet *selectedCompletionItemIndexes;
 @property(readonly, getter=isShowingCompletions) BOOL showingCompletions;
 - (id)initWithTextView:(id)arg1 atLocation:(unsigned long long)arg2 cursorLocation:(unsigned long long)arg3;
 - (id)init;

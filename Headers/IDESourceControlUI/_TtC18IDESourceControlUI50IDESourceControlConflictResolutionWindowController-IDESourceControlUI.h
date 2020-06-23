@@ -14,5 +14,10 @@
 - (id)workspaceNavigableItem;
 - (id)flatNavigableItem;
 - (id)fileSystemNavigableItem;
+- (void)comparisonContextMenu_chooseRightThenLeftDiffDescriptor:(id)arg1;
+- (void)comparisonContextMenu_chooseLeftThenRightDiffDescriptor:(id)arg1;
+- (void)comparisonContextMenu_chooseRightDiffDescriptor:(id)arg1;
+- (void)comparisonContextMenu_chooseLeftDiffDescriptor:(id)arg1;
+- (BOOL)validateMenuItem:(id)arg1;
 @end
 

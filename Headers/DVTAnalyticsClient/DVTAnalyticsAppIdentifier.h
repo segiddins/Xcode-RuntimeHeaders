@@ -25,7 +25,7 @@
 }
 
 + (id)objectFromJSONRepresentation:(id)arg1 error:(id *)arg2;
-+ (BOOL)hasValidAnalyticsPlatformIdentifierForPlatformSDKIdentifier:(id)arg1;
++ (BOOL)isValidAnalyticsPlatformIdentifierForPlatformSDKIdentifier:(id)arg1;
 + (id)analyticsPlatformIdentifierForPlatformSDKIdentifier:(id)arg1;
 + (id)platformSDKIdentifierForAnalyticsPlatformIdentifier:(id)arg1;
 + (id)appIdentifierWithAdamId:(id)arg1 bundleIdentifier:(id)arg2 version:(id)arg3 buildNumber:(id)arg4 rootVersion:(id)arg5 rootBuildNumber:(id)arg6 isBeta:(BOOL)arg7 platformSDKIdentifierOrNil:(id)arg8;
@@ -41,6 +41,7 @@
 @property(readonly) NSArray *pathComponents;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
+@property(readonly) NSString *userDefaultsKey;
 @property(copy) NSString *rootBuildNumber; // @synthesize rootBuildNumber=_rootBuildNumber;
 @property(copy) NSString *rootVersion; // @synthesize rootVersion=_rootVersion;
 @property(readonly) NSString *analyticsPlatformIdentifier; // @synthesize analyticsPlatformIdentifier=_analyticsPlatformIdentifier;

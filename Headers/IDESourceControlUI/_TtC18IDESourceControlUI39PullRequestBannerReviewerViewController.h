@@ -12,15 +12,15 @@
 {
     MISSING_TYPE *pullRequest;
     MISSING_TYPE *participant;
-    MISSING_TYPE *viewDimension;
+    MISSING_TYPE *reviewerDimension;
+    MISSING_TYPE *annotationHeight;
     MISSING_TYPE *view;
-    MISSING_TYPE *imageView;
-    MISSING_TYPE *participantsPopover;
+    MISSING_TYPE *hostView;
+    MISSING_TYPE *buttonView;
 }
 
 - (void).cxx_destruct;
 - (id)init;
-- (void)showParticipants:(id)arg1;
 
 @end
 

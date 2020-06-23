@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class DVTLogAspect, DVTSigningCertificateValidity, NSArray, NSDate, NSDictionary, NSNumber, NSSet, NSString, SFCertificateData;
+@class DVTLogAspect, DVTSigningCertificateSerialNumber, DVTSigningCertificateValidity, NSArray, NSDate, NSDictionary, NSNumber, NSSet, NSString, SFCertificateData;
 
 @interface DVTSigningCertificate : NSObject
 {
@@ -26,7 +26,7 @@
     NSDate *_issueDate;
     NSDate *_expirationDate;
     NSString *_sha1Hash;
-    NSString *_serialNumber;
+    DVTSigningCertificateSerialNumber *_serialNumber;
     NSDictionary *_certificateValues;
     DVTSigningCertificateValidity *_validity;
     id _underlyingType;
@@ -54,7 +54,7 @@
 @property(readonly) BOOL isSelfSigned;
 - (id)defaultDesignatedRequirementsForIdentifier:(id)arg1;
 - (id)defaultDesignatedRequirements;
-@property(readonly) NSString *serialNumber; // @synthesize serialNumber=_serialNumber;
+@property(readonly) DVTSigningCertificateSerialNumber *serialNumber; // @synthesize serialNumber=_serialNumber;
 @property(readonly) NSString *sha1Hash; // @synthesize sha1Hash=_sha1Hash;
 @property(readonly, getter=isForServer) BOOL forServer;
 @property(readonly, getter=isExpired) BOOL expired;

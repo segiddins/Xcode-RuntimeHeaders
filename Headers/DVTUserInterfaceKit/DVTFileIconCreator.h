@@ -11,6 +11,7 @@
 }
 
 + (BOOL)_checkIfDirty:(id)arg1;
++ (id)iconForDVTFilePath:(id)arg1 fileDataTypeHint:(id)arg2 isDirty:(BOOL)arg3 isMissing:(BOOL)arg4;
 + (id)iconForDVTFilePath:(id)arg1 fileDataTypeHint:(id)arg2 decorated:(BOOL)arg3;
 + (id)_iconForDVTFileType:(id)arg1 isDirty:(BOOL)arg2 isMissing:(BOOL)arg3;
 + (id)_xcodeBundleFileTypeConformedToByFileType:(id)arg1;
@@ -24,6 +25,9 @@
 + (id)overriderImageProviderClassByUTI;
 + (id)_xcodeBundleIconForFileType:(id)arg1;
 + (id)_xcodeBundleIconForFileExtension:(id)arg1;
++ (id)_xcodeBundleIconForName:(id)arg1;
++ (BOOL)lookupIconsDirectlyWithIconServices;
++ (id)imageFromISIcon:(id)arg1 name:(id)arg2;
 + (id)_xcodeBundleExtensionsToIconNames;
 + (id)_xcodeBundleFileDataTypesToIconNames;
 + (id)missingIconWithBaseIcon:(id)arg1;

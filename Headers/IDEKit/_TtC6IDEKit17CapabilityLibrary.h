@@ -23,7 +23,8 @@
 - (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (id)initWithWorkspaceDocument:(id)arg1;
+- (id)initWithLibrary:(id)arg1;
+- (id)initWithWorkspaceDocument:(id)arg1 andLibrary:(id)arg2;
 - (void)invalidate;
 - (void)activeEditorDidChange:(id)arg1;
 - (id)inlineDetailViewForAssets:(id)arg1;

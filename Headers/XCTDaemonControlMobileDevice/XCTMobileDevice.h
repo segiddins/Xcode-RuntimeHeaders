@@ -32,6 +32,8 @@
 - (void)invalidate;
 - (BOOL)startSessionAndReturnError:(id *)arg1;
 - (id)performWithSession:(CDUnknownBlockType)arg1;
+- (id)_transportForServiceWithIdentifier:(id)arg1 secure:(BOOL)arg2 error:(id *)arg3;
+- (id)secureTransportForServiceWithIdentifier:(id)arg1 error:(id *)arg2;
 - (id)transportForServiceWithIdentifier:(id)arg1 error:(id *)arg2;
 - (void)dealloc;
 - (id)initWithIdentifier:(id)arg1;

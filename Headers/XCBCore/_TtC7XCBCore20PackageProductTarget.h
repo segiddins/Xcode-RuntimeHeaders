@@ -12,6 +12,7 @@
 {
     MISSING_TYPE *frameworksBuildPhase;
     MISSING_TYPE *productReference;
+    MISSING_TYPE *dynamicTargetVariantGuid;
 }
 
 @end

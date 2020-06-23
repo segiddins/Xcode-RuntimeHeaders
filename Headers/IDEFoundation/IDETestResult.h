@@ -20,11 +20,13 @@
     double _duration;
     NSMutableArray *_mutablePerformanceMetrics;
     NSMutableArray *_mutableMessages;
-    NSMutableSet *_mutableFailureLocations;
+    NSMutableArray *_mutableIssues;
+    NSMutableSet *_mutableValidatedSourceCodeLocations;
 }
 
 - (void).cxx_destruct;
-@property(retain) NSMutableSet *mutableFailureLocations; // @synthesize mutableFailureLocations=_mutableFailureLocations;
+@property(retain) NSMutableSet *mutableValidatedSourceCodeLocations; // @synthesize mutableValidatedSourceCodeLocations=_mutableValidatedSourceCodeLocations;
+@property(retain) NSMutableArray *mutableIssues; // @synthesize mutableIssues=_mutableIssues;
 @property(retain) NSMutableArray *mutableMessages; // @synthesize mutableMessages=_mutableMessages;
 @property(retain) NSMutableArray *mutablePerformanceMetrics; // @synthesize mutablePerformanceMetrics=_mutablePerformanceMetrics;
 @property double duration; // @synthesize duration=_duration;
@@ -34,14 +36,15 @@
 @property(readonly, copy) NSString *testName; // @synthesize testName=_testName;
 @property(readonly, copy) IDETestIdentifier *identifier; // @synthesize identifier=_identifier;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)addFailureLocation:(id)arg1;
-@property(readonly) NSSet *failureLocations;
+- (void)addDynamicallyReportedSourceCodeLocation:(id)arg1;
+@property(readonly, copy) NSSet *dynamicallyReportedSourceCodeLocations;
+- (void)addIssue:(id)arg1;
+@property(readonly, copy) NSArray *issues;
 - (void)addMessage:(id)arg1;
-@property(readonly) NSArray *messages;
+@property(readonly, copy) NSArray *messages;
 - (void)addPerformanceMetric:(id)arg1;
-@property(readonly) NSArray *performanceMetrics;
+@property(readonly, copy) NSArray *performanceMetrics;
 - (id)initWithIdentifier:(id)arg1 testName:(id)arg2 configurationName:(id)arg3;
-- (id)init;
 
 @end
 

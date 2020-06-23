@@ -10,5 +10,7 @@
 {
 }
 
+- (unsigned long long)methodKind;
+
 @end
 

@@ -7,30 +7,34 @@
 #import <IDEKit/IDEViewController.h>
 
 #import <IDEProductsUI/IDEProductsInspectableVending-Protocol.h>
+#import <IDEProductsUI/IDEProductsWindowToolbarItemProvider-Protocol.h>
 
-@class IDEProduct, IDEProductsViewController, NSString;
-@protocol IDEProductsInspectable;
+@class IDEProductsViewController, NSArray, NSString;
+@protocol IDEProductsInspectable, IDEProductsWindowToolbarManagerProtocol, IDESelectableProduct;
 
-@interface IDEProductSectionViewController : IDEViewController <IDEProductsInspectableVending>
+@interface IDEProductSectionViewController : IDEViewController <IDEProductsInspectableVending, IDEProductsWindowToolbarItemProvider>
 {
     BOOL _hasCompletedInitialLoading;
-    BOOL _busy;
-    BOOL _empty;
-    IDEProduct *_selectedProduct;
+    BOOL _isBusy;
+    BOOL _isEmpty;
+    id <IDEProductsWindowToolbarManagerProtocol> toolbarManager;
+    id <IDESelectableProduct> _selectedProduct;
     IDEProductsViewController *_productsViewController;
     NSString *_busyReason;
     id <IDEProductsInspectable> _currentInspectable;
 }
 
-+ (BOOL)canShowContentForProduct:(id)arg1;
++ (BOOL)isSupportedProductSection;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) BOOL empty; // @synthesize empty=_empty;
+@property(readonly, nonatomic) BOOL isEmpty; // @synthesize isEmpty=_isEmpty;
 @property(retain, nonatomic) id <IDEProductsInspectable> currentInspectable; // @synthesize currentInspectable=_currentInspectable;
 @property(readonly, nonatomic) NSString *busyReason; // @synthesize busyReason=_busyReason;
-@property(readonly, nonatomic) BOOL busy; // @synthesize busy=_busy;
+@property(readonly, nonatomic) BOOL isBusy; // @synthesize isBusy=_isBusy;
 @property(nonatomic) BOOL hasCompletedInitialLoading; // @synthesize hasCompletedInitialLoading=_hasCompletedInitialLoading;
 @property __weak IDEProductsViewController *productsViewController; // @synthesize productsViewController=_productsViewController;
-@property(retain, nonatomic) IDEProduct *selectedProduct; // @synthesize selectedProduct=_selectedProduct;
+@property(retain, nonatomic) id <IDESelectableProduct> selectedProduct; // @synthesize selectedProduct=_selectedProduct;
+@property __weak id <IDEProductsWindowToolbarManagerProtocol> toolbarManager; // @synthesize toolbarManager;
+@property(readonly) NSArray *toolbarItems;
 @property(readonly) BOOL shouldShowNoSelection;
 - (void)handleAction:(id)arg1 fromInspectable:(id)arg2;
 - (void)productManager:(id)arg1 receivedErrors:(id)arg2 fromSource:(id)arg3;

@@ -6,12 +6,14 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSHashTable, NSMutableArray, NSMutableDictionary;
+@class NSArray, NSHashTable, NSMutableArray, NSMutableDictionary, NSMutableSet, NSSet, NSURL;
 
 @interface IDEDocumentIssueSummary : NSObject
 {
     NSMutableArray *_vendedIssuesBySeqNum;
+    NSMutableSet *_issuesWithSecondaryLocationsMatchingDocument;
     unsigned long long _maxSeverity;
+    NSURL *_url;
     NSMutableDictionary *_issuesIndexedByCoalescingIdentifier;
     NSHashTable *_observers;
     unsigned long long _testFailureCount;
@@ -34,13 +36,17 @@
 @property(readonly) unsigned long long testFailureCount; // @synthesize testFailureCount=_testFailureCount;
 @property(retain) NSHashTable *observers; // @synthesize observers=_observers;
 @property(retain) NSMutableDictionary *issuesIndexedByCoalescingIdentifier; // @synthesize issuesIndexedByCoalescingIdentifier=_issuesIndexedByCoalescingIdentifier;
+@property(readonly, copy) NSURL *url; // @synthesize url=_url;
+@property(readonly, copy) NSSet *issuesWithSecondaryLocationsMatchingDocument; // @synthesize issuesWithSecondaryLocationsMatchingDocument=_issuesWithSecondaryLocationsMatchingDocument;
 @property(copy, nonatomic) NSArray *vendedIssuesBySeqNum; // @synthesize vendedIssuesBySeqNum=_vendedIssuesBySeqNum;
 @property(readonly) unsigned long long maxSeverity;
+- (void)removeIssueWithSecondaryLocationsMatchingDocument:(id)arg1;
+- (void)addIssueWithSecondaryLocationsMatchingDocument:(id)arg1;
 - (void)removeVendedIssuesBySeqNumAtIndexes:(id)arg1;
 - (void)insertVendedIssuesBySeqNum:(id)arg1 atIndexes:(id)arg2;
 - (void)removeObjectFromVendedIssuesBySeqNumAtIndex:(unsigned long long)arg1;
 - (void)insertObject:(id)arg1 inVendedIssuesBySeqNumAtIndex:(unsigned long long)arg2;
-- (id)init;
+- (id)initWithURL:(id)arg1;
 
 @end
 

@@ -18,6 +18,7 @@
 - (BOOL)disconnectFromDevice:(struct _AMDevice *)arg1 error:(id *)arg2;
 - (BOOL)stopSessionWithDevice:(struct _AMDevice *)arg1 error:(id *)arg2;
 - (void)invalidateServiceConnection:(struct _AMDServiceConnection *)arg1;
+- (int)secureSocketFromServiceConnection:(struct _AMDServiceConnection *)arg1;
 - (int)socketFromServiceConnection:(struct _AMDServiceConnection *)arg1;
 - (struct _AMDServiceConnection *)startServiceOnDevice:(struct _AMDevice *)arg1 identifier:(id)arg2 options:(id)arg3 error:(id *)arg4;
 - (BOOL)startSessionWithDevice:(struct _AMDevice *)arg1 error:(id *)arg2;

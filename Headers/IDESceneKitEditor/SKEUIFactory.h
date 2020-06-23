@@ -10,7 +10,8 @@
 {
 }
 
-+ (id)tableViewActionPullDownButtonWithToolTip:(id)arg1;
++ (id)navigatorActionPullDownButtonWithToolTip:(id)arg1;
++ (id)navigatorActionButtonWithIcon:(id)arg1 toolTip:(id)arg2 target:(id)arg3 action:(SEL)arg4;
 + (id)tableViewActionButtonWithIcon:(id)arg1 toolTip:(id)arg2 target:(id)arg3 action:(SEL)arg4;
 + (id)barSeparator;
 + (id)barButtonWithTitle:(id)arg1 icon:(id)arg2 alternateIcon:(id)arg3 target:(id)arg4 action:(SEL)arg5 highlightedWhenPressed:(BOOL)arg6;

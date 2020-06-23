@@ -20,7 +20,7 @@
 - (void).cxx_destruct;
 - (id)normalizedMaskPath_iPad12_9InchRoundedSubtype;
 - (id)normalizedMaskPath_iPad11_0InchRoundedSubtype;
-- (id)normalizedDeviceMaskPathForSubtype:(id)arg1;
+- (id)normalizedDeviceMaskPathForSubtype:(id)arg1 maskType:(long long)arg2;
 - (struct CGSize)pageSheetFixedSizeForOrientationMetrics:(id)arg1 screenMetrics:(id)arg2;
 - (struct CGSize)formSheetFixedSizeForOrientationMetrics:(id)arg1 screenMetrics:(id)arg2;
 - (BOOL)detailUsesSplitScreen:(id)arg1 screenMetrics:(id)arg2;
@@ -54,7 +54,7 @@
 - (BOOL)supportsSearchBarsEmbeddedInBarButtonItems;
 - (BOOL)supportsTopToolbars;
 - (BOOL)supportsForceTouchSeguesInDocument:(id)arg1;
-- (long long)deviceInterfaceIdiom;
+- (long long)defaultDeviceInterfaceIdiom;
 - (id)icon;
 - (id)xibArchiveType;
 - (id)colorListName;

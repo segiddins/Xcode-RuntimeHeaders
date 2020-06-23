@@ -51,7 +51,6 @@
 @property(readonly, copy) NSSet *assets;
 - (void)validateOrder;
 - (void)primitiveInvalidate;
-- (id)initWithExtension:(id)arg1 andLibraryController:(id)arg2;
 - (id)initWithIdentifier:(id)arg1 andTitle:(id)arg2;
 - (void)addAsset:(id)arg1 toLibrarySourceWithIdentifier:(id)arg2 subpath:(id)arg3;
 - (void)removeLibrarySourceWithIdentifier:(id)arg1;

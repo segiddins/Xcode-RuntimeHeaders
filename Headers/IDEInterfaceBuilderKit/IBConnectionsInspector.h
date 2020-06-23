@@ -6,7 +6,7 @@
 
 #import <IDEKit/IDEInspectorViewController.h>
 
-@class DVTBorderedView, DVTObservingToken, IBConnectionsInspectorLayoutView, IBConnectionsViewController, IBDocument, NSScrollView, NSView;
+@class DVTBorderedView, DVTObservingToken, DVTScrollView, IBConnectionsInspectorLayoutView, IBConnectionsViewController, IBDocument, NSView;
 
 @interface IBConnectionsInspector : IDEInspectorViewController
 {
@@ -15,7 +15,7 @@
     NSView *_scrolledDocumentView;
     IBConnectionsViewController *_connectionsController;
     DVTObservingToken *_classDataIsUpdatingObservanceToken;
-    NSScrollView *_scrollView;
+    DVTScrollView *_scrollView;
     DVTBorderedView *_statusAreaView;
     IBConnectionsInspectorLayoutView *_layoutView;
 }
@@ -23,7 +23,7 @@
 - (void).cxx_destruct;
 @property(retain, nonatomic) IBConnectionsInspectorLayoutView *layoutView; // @synthesize layoutView=_layoutView;
 @property(retain, nonatomic) DVTBorderedView *statusAreaView; // @synthesize statusAreaView=_statusAreaView;
-@property(retain, nonatomic) NSScrollView *scrollView; // @synthesize scrollView=_scrollView;
+@property(retain, nonatomic) DVTScrollView *scrollView; // @synthesize scrollView=_scrollView;
 - (id)findIndicatorContentViewForInspectedKeyPath:(id)arg1 withContext:(id)arg2;
 - (void)setContent:(id)arg1;
 - (void)primitiveInvalidate;

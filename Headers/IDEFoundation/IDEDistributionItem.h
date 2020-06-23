@@ -8,14 +8,13 @@
 
 #import <IDEFoundation/NSCopying-Protocol.h>
 
-@class DVTCodeSigningInformation, DVTFilePath, DVTPortalAppIDFeatures, DVTProvisioningProfile, IDEDistributionItemPlatform, NSArray, NSDictionary, NSNumber, NSString;
+@class DVTCodeSigningInformation, DVTFilePath, DVTProvisioningProfile, IDEDistributionItemPlatform, NSArray, NSDictionary, NSNumber, NSString;
 @protocol IDEProvisioningBasicTeam;
 
 @interface IDEDistributionItem : NSObject <NSCopying>
 {
     NSNumber *_isAssetPack;
     BOOL _canHaveProvisioningProfile;
-    DVTPortalAppIDFeatures *_appIDFeatures;
     DVTFilePath *_path;
     DVTFilePath *_machOPath;
     IDEDistributionItem *_parent;
@@ -47,9 +46,9 @@
 @property(readonly, nonatomic) DVTFilePath *machOPath; // @synthesize machOPath=_machOPath;
 @property(readonly, nonatomic) DVTFilePath *path; // @synthesize path=_path;
 @property(readonly, nonatomic) BOOL isAssetPack;
-@property(readonly, nonatomic) DVTPortalAppIDFeatures *appIDFeatures; // @synthesize appIDFeatures=_appIDFeatures;
 @property(readonly, nonatomic) NSString *appID;
 @property(readonly, nonatomic) NSDictionary *entitlements;
+@property(readonly, nonatomic) NSString *sdkVariant;
 - (id)platformWithError:(id *)arg1;
 - (id)isAppleProvidedContentFromArchive:(id)arg1 error:(id *)arg2;
 - (BOOL)isManuallyProvisionedFromArchive:(id)arg1 logAspect:(id)arg2;
@@ -59,6 +58,7 @@
 - (BOOL)isEqual:(id)arg1;
 - (long long)compare:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+@property(readonly, nonatomic) NSString *bundleName;
 @property(readonly, nonatomic) NSString *bundleID;
 - (id)initWithPath:(id)arg1 platform:(id)arg2 infoDictionary:(id)arg3 canHaveProvisioningProfile:(BOOL)arg4 codeSigningInfo:(id)arg5 provisioningProfile:(id)arg6 childItems:(id)arg7;
 - (id)init;

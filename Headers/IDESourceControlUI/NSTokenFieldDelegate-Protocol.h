@@ -19,7 +19,7 @@
 - (id)tokenField:(NSTokenField *)arg1 representedObjectForEditingString:(NSString *)arg2;
 - (NSString *)tokenField:(NSTokenField *)arg1 editingStringForRepresentedObject:(id)arg2;
 - (NSString *)tokenField:(NSTokenField *)arg1 displayStringForRepresentedObject:(id)arg2;
-- (NSArray *)tokenField:(NSTokenField *)arg1 shouldAddObjects:(NSArray *)arg2 atIndex:(long long)arg3;
+- (NSArray *)tokenField:(NSTokenField *)arg1 shouldAddObjects:(NSArray *)arg2 atIndex:(unsigned long long)arg3;
 - (NSArray *)tokenField:(NSTokenField *)arg1 completionsForSubstring:(NSString *)arg2 indexOfToken:(long long)arg3 indexOfSelectedItem:(long long *)arg4;
 @end
 

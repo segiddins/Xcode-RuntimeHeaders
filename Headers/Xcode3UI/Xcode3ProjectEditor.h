@@ -14,19 +14,11 @@
 #import <Xcode3UI/NSTextFieldDelegate-Protocol.h>
 #import <Xcode3UI/_TtP13IDEFoundation51SigningEditorConfigurationSelectionProtocolDelegate_-Protocol.h>
 
-@class DVTBorderedView, DVTChoice, DVTGradientImageButton, DVTImageAndTextCell, DVTObservingToken, DVTOutlineView, DVTReplacementView, DVTSDK, DVTScrollView, DVTSourceExpression, DVTSourceLanguageService, DVTSplitView, DVTStackBacktrace, DVTStateToken, DVTTabChooserView, IDENavigableItemCoordinator, IDENavigableItemSyncFilteringCoordinator, IDESearchFilterControlBar, IDEUpgradeTaskWindowController, NSArray, NSMenu, NSMutableArray, NSPopUpButton, NSString, NSTableColumn, NSTreeController, NSView, NSViewController, Xcode3ProjectEditorTopBarView, Xcode3TargetEditingGroup, _TtC13IDEFoundation46SigningEditorCapabilityItemLibraryAssetManager;
+@class DVTChoice, DVTImageAndTextCell, DVTObservingToken, DVTSDK, DVTSourceExpression, DVTSourceLanguageService, DVTStackBacktrace, DVTStateToken, IDENavigableItemCoordinator, IDENavigableItemSyncFilteringCoordinator, IDEUpgradeTaskWindowController, NSArray, NSMenu, NSMutableArray, NSString, NSTreeController, NSView, NSViewController, Xcode3ProjectEditorContentView, Xcode3TargetEditingGroup, _TtC13IDEFoundation46SigningEditorCapabilityItemLibraryAssetManager;
 
 @interface Xcode3ProjectEditor : IDEEditor <NSTextFieldDelegate, DVTSourceExpressionSource, DVTFilterControlBarTarget, NSSplitViewDelegate, IDESigningEditorCapabilityItemLibraryAssetManagerProvider, _TtP13IDEFoundation51SigningEditorConfigurationSelectionProtocolDelegate_, IDELibraryContentDestination>
 {
-    DVTSplitView *_splitView;
-    DVTTabChooserView *_tabChooserView;
-    DVTReplacementView *_replacementView;
-    DVTBorderedView *_leftBorderedView;
-    DVTBorderedView *_rightBorderedView;
-    DVTOutlineView *_outlineView;
-    NSTableColumn *_mainTableColumn;
     NSTreeController *_treeController;
-    IDESearchFilterControlBar *_filterBar;
     NSArray *_tabChoices;
     DVTChoice *_selectedChoice;
     Class _previousProjectEditorClass;
@@ -53,14 +45,8 @@
     BOOL _isRefreshingTabChooserView;
     IDENavigableItemSyncFilteringCoordinator *_outlineViewNavItemCoordinator;
     IDENavigableItemCoordinator *_popUpNavItemCoordinator;
-    DVTGradientImageButton *_sourceListVisiblityToggleButton;
-    NSPopUpButton *_sourceListPopUp;
-    Xcode3ProjectEditorTopBarView *_topBarView;
-    DVTGradientImageButton *_addTargetButton;
-    DVTGradientImageButton *_removeTargetButton;
     NSString *_filterString;
-    DVTBorderedView *_filterBarContainerView;
-    DVTScrollView *_sourceListScrollView;
+    Xcode3ProjectEditorContentView *_contentView;
 }
 
 + (BOOL)shouldShowCombinedLinkedAndEmbeddedBinariesSliceInTargetEditor;
@@ -71,19 +57,13 @@
 + (id)metricLogAspect;
 + (void)initialize;
 - (void).cxx_destruct;
+@property(retain) Xcode3ProjectEditorContentView *contentView; // @synthesize contentView=_contentView;
 @property(nonatomic) BOOL isRefreshingTabChooserView; // @synthesize isRefreshingTabChooserView=_isRefreshingTabChooserView;
-@property(retain) DVTScrollView *sourceListScrollView; // @synthesize sourceListScrollView=_sourceListScrollView;
-@property(retain) DVTBorderedView *filterBarContainerView; // @synthesize filterBarContainerView=_filterBarContainerView;
 @property(getter=isFiltered) BOOL filtered; // @synthesize filtered=_filtered;
 @property(copy, nonatomic) NSString *filterString; // @synthesize filterString=_filterString;
 @property(nonatomic, getter=isSourceListVisible) BOOL sourceListVisible; // @synthesize sourceListVisible=_sourceListVisible;
-@property(retain) DVTGradientImageButton *removeTargetButton; // @synthesize removeTargetButton=_removeTargetButton;
-@property(retain) DVTGradientImageButton *addTargetButton; // @synthesize addTargetButton=_addTargetButton;
-@property(retain) Xcode3ProjectEditorTopBarView *topBarView; // @synthesize topBarView=_topBarView;
-@property(retain) NSPopUpButton *sourceListPopUp; // @synthesize sourceListPopUp=_sourceListPopUp;
-@property(retain) DVTGradientImageButton *sourceListVisiblityToggleButton; // @synthesize sourceListVisiblityToggleButton=_sourceListVisiblityToggleButton;
-@property(readonly) IDENavigableItemCoordinator *popUpNavItemCoordinator; // @synthesize popUpNavItemCoordinator=_popUpNavItemCoordinator;
-@property(readonly) IDENavigableItemSyncFilteringCoordinator *outlineViewNavItemCoordinator; // @synthesize outlineViewNavItemCoordinator=_outlineViewNavItemCoordinator;
+@property(retain) IDENavigableItemCoordinator *popUpNavItemCoordinator; // @synthesize popUpNavItemCoordinator=_popUpNavItemCoordinator;
+@property(retain) IDENavigableItemSyncFilteringCoordinator *outlineViewNavItemCoordinator; // @synthesize outlineViewNavItemCoordinator=_outlineViewNavItemCoordinator;
 @property(copy) NSArray *currentSelectedItems; // @synthesize currentSelectedItems=_currentSelectedItems;
 @property(copy) NSArray *draggingTreeNodes; // @synthesize draggingTreeNodes=_draggingTreeNodes;
 @property(retain, nonatomic) DVTChoice *selectedChoice; // @synthesize selectedChoice=_selectedChoice;

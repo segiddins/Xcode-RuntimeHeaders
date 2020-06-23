@@ -31,6 +31,8 @@
     DVTSearchPath *_commandLineToolSearchPath;
     NSArray *_headerSearchPaths;
     NSArray *_frameworkSearchPaths;
+    NSDictionary *_iOSToMacOSVersionMap;
+    NSDictionary *_macOSToiOSVersionMap;
     NSDictionary *_versionInfo;
     NSArray *_toolchains;
     NSString *_canonicalNameForBuildSettings;
@@ -62,6 +64,8 @@
 @property(readonly, copy) NSDictionary *debuggerOptions; // @synthesize debuggerOptions=_debuggerOptions;
 @property(readonly, copy) NSArray *toolchainNames; // @synthesize toolchainNames=_toolchainNames;
 @property(readonly, copy) NSString *canonicalNameForBuildSettings; // @synthesize canonicalNameForBuildSettings=_canonicalNameForBuildSettings;
+@property(readonly) NSDictionary *macOSToiOSVersionMap; // @synthesize macOSToiOSVersionMap=_macOSToiOSVersionMap;
+@property(readonly) NSDictionary *iOSToMacOSVersionMap; // @synthesize iOSToMacOSVersionMap=_iOSToMacOSVersionMap;
 @property(readonly, copy) NSArray *propertyConditionFallbackNames; // @synthesize propertyConditionFallbackNames=_propertyConditionFallbackNames;
 @property(readonly, copy) NSDictionary *defaultProperties; // @synthesize defaultProperties=_defaultProperties;
 @property(readonly, copy) NSArray *toolchains; // @synthesize toolchains=_toolchains;

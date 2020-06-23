@@ -18,6 +18,7 @@
     MISSING_TYPE *markupEmphasis;
     MISSING_TYPE *markupEmphasisStrong;
     MISSING_TYPE *markupStrikethrough;
+    MISSING_TYPE *markupAsideKind;
     MISSING_TYPE *parameter;
 }
 

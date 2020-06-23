@@ -37,6 +37,7 @@
 }
 
 + (void)configureStateSavingObjectPersistenceByName:(id)arg1;
++ (BOOL)supportsFullSizeContent;
 + (id)defaultViewNibBundle;
 + (id)defaultViewNibName;
 - (void).cxx_destruct;
@@ -99,6 +100,7 @@
 - (void)viewDidInstall;
 - (void)viewWillUninstall;
 - (id)initialRecipe;
+- (void)setFullSizeContentInsets:(struct NSEdgeInsets)arg1;
 - (void)loadView;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2 document:(id)arg3;
 

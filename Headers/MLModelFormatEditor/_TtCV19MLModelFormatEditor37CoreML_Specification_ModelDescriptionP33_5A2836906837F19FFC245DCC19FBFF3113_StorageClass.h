@@ -14,6 +14,7 @@
     MISSING_TYPE *_output;
     MISSING_TYPE *_predictedFeatureName;
     MISSING_TYPE *_predictedProbabilitiesName;
+    MISSING_TYPE *_trainingInput;
     MISSING_TYPE *_metadata;
 }
 

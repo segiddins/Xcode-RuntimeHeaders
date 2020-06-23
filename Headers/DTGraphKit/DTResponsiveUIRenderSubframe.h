@@ -8,14 +8,17 @@
 
 @interface DTResponsiveUIRenderSubframe : DTResponsiveUISubframe
 {
-    BOOL _performedLoadTest;
+    struct atomic_flag _performedLoadTest;
     unsigned char _displayPressureCutOffFrame;
 }
 
 + (BOOL)enableConcurrentActivities;
 @property(nonatomic) unsigned char displayPressureCutOffFrame; // @synthesize displayPressureCutOffFrame=_displayPressureCutOffFrame;
 - (void)yieldingMinorFrame:(unsigned char)arg1;
+- (void)underrunMinorFrame:(unsigned char)arg1;
 - (void)extendingMinorFrame:(unsigned char)arg1;
+- (void)enteringMinorFrame:(unsigned char)arg1;
+- (void)startingMajorFrame;
 - (void)_scheduleFulfillments;
 - (void)_earlyExposeProviderToMainThread:(id)arg1;
 - (void)_testFrameRateLoad;

@@ -38,6 +38,7 @@
 - (id)_absolutePathToBinaryNamed:(id)arg1 bySearchingInStandardLocationsAtRootPath:(id)arg2;
 @property(readonly) NSArray *companionLibraries;
 @property(readonly) NSArray *libraries;
+- (BOOL)shouldExposeLibraryFromSDK:(id)arg1;
 @property(readonly) NSDictionary *versionInfo;
 @property(readonly) NSDictionary *infoDictionary;
 @property(readonly) BOOL exists;

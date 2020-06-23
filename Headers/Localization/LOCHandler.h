@@ -18,6 +18,7 @@
     NSMutableArray *_importedFileDescriptions;
     NSObject<OS_dispatch_queue> *_importedFileDescriptionsQueue;
     NSMutableArray *_exportRequests;
+    BOOL _mergeImport;
     NSString *_sourceLocale;
     NSString *_ITSRulesFilePath;
     NSString *_destinationURL;
@@ -30,6 +31,7 @@
 @property(retain) LOCITSRulesFile *rulesFile; // @synthesize rulesFile=_rulesFile;
 @property(copy) NSDictionary *toolInfo; // @synthesize toolInfo=_toolInfo;
 @property(copy) NSString *projectDirPath; // @synthesize projectDirPath=_projectDirPath;
+@property BOOL mergeImport; // @synthesize mergeImport=_mergeImport;
 @property(readonly, copy) NSString *destinationURL; // @synthesize destinationURL=_destinationURL;
 @property(readonly, copy) NSString *ITSRulesFilePath; // @synthesize ITSRulesFilePath=_ITSRulesFilePath;
 @property(copy) NSString *sourceLocale; // @synthesize sourceLocale=_sourceLocale;
@@ -70,17 +72,20 @@
 - (void)_addImportedFile:(id)arg1;
 - (void)_importGlossaryEntryWithPath:(id)arg1 glossary:(id)arg2 sourceFile:(id)arg3 allowingCrossoverWithOtherSourceFile:(id)arg4 generatedFiles:(id)arg5;
 - (void)_importGlossaryEntryWithPath:(id)arg1 glossary:(id)arg2 sourceFile:(id)arg3;
+- (id)_defaultTargetLocaleForImport:(id)arg1;
 - (BOOL)_findXliff:(id)arg1 xliffPath:(id *)arg2 error:(id *)arg3;
 - (void)_importNonxliffablesFrom:(id)arg1 toFiles:(id)arg2 importAll:(BOOL)arg3 error:(id *)arg4;
 - (id)_findValidOverrideKeysIn:(id)arg1 forStringsdict:(id)arg2 givenStrings:(id)arg3 generatedFiles:(id)arg4;
 - (id)_mergeStringsFile:(id)arg1 withGeneratedStringsFiles:(id)arg2 error:(id *)arg3;
-- (id)_xliffDocFromFile:(id)arg1 error:(id *)arg2;
+- (id)_preprocessStringsdata:(id)arg1 error:(id *)arg2;
 - (void)_postFileNotification:(id)arg1 forFile:(id)arg2 description:(id)arg3 error:(id)arg4;
 - (void)_postNotification:(id)arg1 userInfo:(id)arg2;
 - (void)_createRulesFileWithPath:(id)arg1;
 - (id)_existingTargetFileForPath:(id)arg1 inLprojForLocale:(id)arg2 error:(id *)arg3;
 - (BOOL)_isXliffable:(id)arg1;
 - (BOOL)_isIBFile:(id)arg1;
+- (void)importLocalizationsForFiles:(id)arg1 fromFile:(id)arg2 ITSRulesPath:(id)arg3 projDirPath:(id)arg4 importAll:(BOOL)arg5 mergeImport:(BOOL)arg6 completionHandler:(CDUnknownBlockType)arg7;
+- (void)importLocalizationsForFiles:(id)arg1 fromFile:(id)arg2 ITSRulesPath:(id)arg3 projDirPath:(id)arg4 mergeImport:(BOOL)arg5 completionHandler:(CDUnknownBlockType)arg6;
 - (void)importLocalizationsForFiles:(id)arg1 fromFile:(id)arg2 ITSRulesPath:(id)arg3 projDirPath:(id)arg4 importAll:(BOOL)arg5 completionHandler:(CDUnknownBlockType)arg6;
 - (void)importLocalizationsForFiles:(id)arg1 fromFile:(id)arg2 ITSRulesPath:(id)arg3 projDirPath:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)importFromFile:(id)arg1 ITSRulesPath:(id)arg2 projDirPath:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;

@@ -14,8 +14,8 @@
 }
 
 - (void).cxx_destruct;
-- (void)populateLaunchJobsForSimulatorSessionType:(long long)arg1 requiredIdentifiers:(id)arg2 disabledIdentifiers:(id)arg3;
-- (double)masterWidthForScreenWidth:(double)arg1;
+- (void)populateLaunchJobRequiredIdentifiers:(id)arg1 disabledIdentifiers:(id)arg2;
+- (double)splitViewMasterWidthForScreenWidth:(double)arg1;
 - (id)effectiveDeviceTypeIdentifierForScaleFactor:(double)arg1;
 - (void)populateAdditionalSimDeviceTypeSearchPaths:(id)arg1;
 - (id)designablesAgentName;
@@ -51,6 +51,7 @@
 - (id)previewEditorAddMenuDeviceConfigurationsForDocumentConfiguration:(id)arg1;
 - (Class)storyboardVerifierClass;
 - (Class)xibVerifierClass;
+- (id)identifier;
 - (id)platform;
 - (id)pluginName;
 - (id)defaultOrientationMetricsForConfiguration:(id)arg1;

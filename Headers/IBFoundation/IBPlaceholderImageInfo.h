@@ -13,6 +13,9 @@
 
 @property(nonatomic) struct CGSize placeholderSize; // @synthesize placeholderSize=_placeholderSize;
 - (id)description;
+- (id)copyWithZone:(struct _NSZone *)arg1;
+- (BOOL)isEqualToImageInfo:(id)arg1;
+- (unsigned long long)hash;
 - (void)encodeWithBinaryArchiver:(id)arg1;
 - (id)initWithBinaryUnarchiver:(id)arg1;
 - (id)initWithSize:(struct CGSize)arg1;

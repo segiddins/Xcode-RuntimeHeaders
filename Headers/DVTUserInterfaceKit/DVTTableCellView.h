@@ -8,7 +8,7 @@
 
 #import <DVTUserInterfaceKit/DVTStructuredLayoutView-Protocol.h>
 
-@class DVTStructuredLayoutViewState, NSArray, NSAttributedString, NSDictionary, NSFont, NSImage, NSImageView, NSMutableArray, NSMutableDictionary, NSNumber, NSString, NSValue, NSView, _DVTTableCellViewTextField;
+@class DVTStructuredLayoutViewState, NSArray, NSAttributedString, NSDictionary, NSImage, NSImageView, NSMutableArray, NSMutableDictionary, NSNumber, NSString, NSValue, NSView, _DVTTableCellViewTextField;
 @protocol DVTTableCellViewTitleEditingDelegate;
 
 @interface DVTTableCellView : DVTTableCellViewSuper <DVTStructuredLayoutView>
@@ -22,8 +22,6 @@
     _DVTTableCellViewTextField *_deprioritizedTextField;
     BOOL _subviewOrderIsValid;
     BOOL _usesGroupHeaderStyle;
-    BOOL _usesEdgeToEdgeImages;
-    BOOL _usesSecondarySelectionStyle;
     DVTStructuredLayoutViewState *_dvt_layoutState;
     id <DVTTableCellViewTitleEditingDelegate> _titleEditingDelegate;
     double _titleInsetWithoutImage;
@@ -32,13 +30,11 @@
     double _leadingImagePadding;
     double _statusViewSpacing;
     double _statusViewTrailingPadding;
-    double _imageToTitleSpacing;
     double _titleToSubtitleSpacing;
     NSValue *_explicitImageSize;
+    NSNumber *_explicitImageToTitleSpacing;
     NSNumber *_explicitTopPadding;
     NSNumber *_explicitBottomPadding;
-    NSFont *_explicitTitleFont;
-    NSFont *_explicitSubtitleFont;
     unsigned long long _statusViewVerticalAnchor;
     long long _dvt_rowSizeStyle;
     NSDictionary *_objectToViewOneWayPropertyBindings;
@@ -58,8 +54,6 @@
 + (id)keyPathsForValuesAffectingImage;
 + (void)initialize;
 - (void).cxx_destruct;
-@property(nonatomic) BOOL usesSecondarySelectionStyle; // @synthesize usesSecondarySelectionStyle=_usesSecondarySelectionStyle;
-@property(nonatomic) BOOL usesEdgeToEdgeImages; // @synthesize usesEdgeToEdgeImages=_usesEdgeToEdgeImages;
 @property(retain) _DVTTableCellViewTextField *subtitleTextField; // @synthesize subtitleTextField=_subtitleTextField;
 @property(retain) _DVTTableCellViewTextField *titleTextField; // @synthesize titleTextField=_titleTextField;
 @property(retain, nonatomic) NSString *filterMatchString; // @synthesize filterMatchString=_filterMatchString;
@@ -67,13 +61,11 @@
 @property(copy, nonatomic) NSDictionary *objectToViewOneWayPropertyBindings; // @synthesize objectToViewOneWayPropertyBindings=_objectToViewOneWayPropertyBindings;
 @property(nonatomic) long long dvt_rowSizeStyle; // @synthesize dvt_rowSizeStyle=_dvt_rowSizeStyle;
 @property(nonatomic) unsigned long long statusViewVerticalAnchor; // @synthesize statusViewVerticalAnchor=_statusViewVerticalAnchor;
-@property(copy, nonatomic) NSFont *explicitSubtitleFont; // @synthesize explicitSubtitleFont=_explicitSubtitleFont;
-@property(copy, nonatomic) NSFont *explicitTitleFont; // @synthesize explicitTitleFont=_explicitTitleFont;
 @property(copy, nonatomic) NSNumber *explicitBottomPadding; // @synthesize explicitBottomPadding=_explicitBottomPadding;
 @property(copy, nonatomic) NSNumber *explicitTopPadding; // @synthesize explicitTopPadding=_explicitTopPadding;
+@property(copy, nonatomic) NSNumber *explicitImageToTitleSpacing; // @synthesize explicitImageToTitleSpacing=_explicitImageToTitleSpacing;
 @property(copy, nonatomic) NSValue *explicitImageSize; // @synthesize explicitImageSize=_explicitImageSize;
 @property(nonatomic) double titleToSubtitleSpacing; // @synthesize titleToSubtitleSpacing=_titleToSubtitleSpacing;
-@property(nonatomic) double imageToTitleSpacing; // @synthesize imageToTitleSpacing=_imageToTitleSpacing;
 @property(nonatomic) double statusViewTrailingPadding; // @synthesize statusViewTrailingPadding=_statusViewTrailingPadding;
 @property(nonatomic) double statusViewSpacing; // @synthesize statusViewSpacing=_statusViewSpacing;
 @property(nonatomic) double leadingImagePadding; // @synthesize leadingImagePadding=_leadingImagePadding;
@@ -103,15 +95,16 @@
 - (void)invalidateSubviewOrder;
 - (void)synchronizeSubviewInstalledStateAndOrder;
 - (void)synchronizeStatusControllerInstallation:(id)arg1 shouldBeInstalled:(BOOL)arg2;
-- (id)imageViewCell;
 - (double)effectiveBottomPadding;
 - (double)effectiveTopPadding;
 - (double)implicitVerticalPadding;
 - (struct CGSize)effectiveImageSize;
-- (struct CGSize)implicitImageSize;
-- (double)effectiveImageInset;
+- (struct CGSize)_implicitImageSize;
+- (double)effectiveImageToTitleSpacing;
+- (double)_implicitImageToTitleSpacing;
 - (long long)textFieldOrientation;
 - (BOOL)isVariableHeight;
+- (BOOL)titleIsEditing;
 - (void)startEditingTitleTextField;
 - (id)statusViewWithName:(id)arg1 creatingIfNeeded:(CDUnknownBlockType)arg2;
 - (id)statusControllerWithName:(id)arg1 creatingIfNeeded:(CDUnknownBlockType)arg2;
@@ -126,10 +119,8 @@
 @property(readonly) BOOL hasStatusViews;
 - (id)toolTip;
 - (id)_titleColor;
-- (id)effectiveSubtitleFont;
-- (id)implicitSubtitleFont;
-- (id)effectiveTitleFont;
-- (id)implicitTitleFont;
+- (id)_subtitleFont;
+- (id)_titleFont;
 @property(retain, nonatomic) NSAttributedString *attributedSubtitle;
 @property(retain, nonatomic) NSAttributedString *attributedTitle;
 @property(nonatomic) unsigned long long subtitleLineBreakMode;
@@ -145,10 +136,8 @@
 - (void)_startObservingAutoProperties;
 - (void)_updateAutoProperties;
 - (void)setObjectValue:(id)arg1;
-- (void)prepareForReuse;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)makeInlineActionButtonWithTitle:(id)arg1 target:(id)arg2 action:(SEL)arg3;
 
 @end
 

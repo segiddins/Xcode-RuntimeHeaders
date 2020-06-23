@@ -26,6 +26,8 @@
     _Bool _deviceIsBusy;
     BOOL _ignored;
     BOOL _canSelectArchitectureToExecute;
+    BOOL _isCloudDevice;
+    BOOL _isCloudDevicePlaceholder;
     BOOL _supportsSensorReplayFile;
     BOOL _available;
     BOOL _usedForDevelopment;
@@ -44,6 +46,7 @@
     NSString *_modelCode;
     DVTPlatform *_platform;
     NSString *_operatingSystemVersion;
+    NSString *_iOSSupportVersion;
     NSString *_operatingSystemBuild;
     NSString *_identifier;
 }
@@ -59,6 +62,7 @@
 - (void).cxx_destruct;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(copy) NSString *operatingSystemBuild; // @synthesize operatingSystemBuild=_operatingSystemBuild;
+@property(copy) NSString *iOSSupportVersion; // @synthesize iOSSupportVersion=_iOSSupportVersion;
 @property(copy) NSString *operatingSystemVersion; // @synthesize operatingSystemVersion=_operatingSystemVersion;
 @property(retain) DVTPlatform *platform; // @synthesize platform=_platform;
 @property(nonatomic, getter=isUsedForDevelopment) BOOL usedForDevelopment; // @synthesize usedForDevelopment=_usedForDevelopment;
@@ -69,6 +73,8 @@
 @property(readonly) long long remoteSSHPort; // @synthesize remoteSSHPort=_remoteSSHPort;
 @property(readonly) long long directSSHPort; // @synthesize directSSHPort=_directSSHPort;
 @property(readonly) BOOL supportsSensorReplayFile; // @synthesize supportsSensorReplayFile=_supportsSensorReplayFile;
+@property BOOL isCloudDevicePlaceholder; // @synthesize isCloudDevicePlaceholder=_isCloudDevicePlaceholder;
+@property BOOL isCloudDevice; // @synthesize isCloudDevice=_isCloudDevice;
 @property BOOL canSelectArchitectureToExecute; // @synthesize canSelectArchitectureToExecute=_canSelectArchitectureToExecute;
 @property(copy) NSOrderedSet *supportedArchitectures; // @synthesize supportedArchitectures=_supportedArchitectures;
 @property(retain) DVTDeviceType *deviceType; // @synthesize deviceType=_deviceType;
@@ -78,13 +84,21 @@
 @property(copy, nonatomic) NSString *operatingSystemVersionWithBuildNumber; // @synthesize operatingSystemVersionWithBuildNumber=_operatingSystemVersionWithBuildNumber;
 @property(readonly, copy) NSURL *deviceLocation; // @synthesize deviceLocation=_deviceLocation;
 @property(readonly) DVTExtension *extension; // @synthesize extension=_extension;
+- (id)uninstallRootsWithIdentifiers:(id)arg1;
+- (id)installRootsAtLocalPaths:(id)arg1;
+- (id)fetchInstalledRoots;
+- (BOOL)supportsInstalledRoots;
+- (id)_storeKitServerConnection:(BOOL)arg1;
+- (id)handleStoreKitConfigurationSyncForBundleID:(id)arg1 configurationFilePath:(id)arg2 linkedFrameworks:(id)arg3 runsOnProxy:(BOOL)arg4;
 - (void)cancelWatchPowerAssertion;
 - (void)takeWatchPowerAssertionName:(id)arg1 details:(id)arg2;
+- (BOOL)shouldLaunchSuspendedForWatchAppLaunchStyle:(unsigned long long)arg1;
 - (BOOL)supportsDYLDPrintToStdErr;
 - (BOOL)supportsNewLogging;
 - (id)_mobileDevice;
 - (id)loggingStream;
 - (id)fetchSpecificLaunchFailureReason;
+- (id)launchApplicationAtPath:(id)arg1 withArguments:(id)arg2 environment:(id)arg3 options:(id)arg4;
 - (id)launchApplicationWithBundleIdentifier:(id)arg1 withArguments:(id)arg2 environment:(id)arg3 options:(id)arg4;
 - (id)applicationIsInstalledWithBundleIdentifier:(id)arg1;
 - (id)uninstallApplicationWithBundleIdentifier:(id)arg1 andOptions:(id)arg2;
@@ -146,6 +160,8 @@
 - (void)pressHomeButtonOnProxy:(BOOL)arg1 completed:(CDUnknownBlockType)arg2;
 - (void)showSiriForExtensions:(id)arg1 queryText:(id)arg2 pid:(int)arg3 onProxy:(BOOL)arg4 completed:(CDUnknownBlockType)arg5;
 - (void)showQuicklookPreviewForExtension:(id)arg1;
+- (void)showWidgetKit:(id)arg1 pid:(int)arg2 completed:(CDUnknownBlockType)arg3;
+- (void)showAppClipWithBundleIdentifer:(id)arg1 pid:(int)arg2 context:(id)arg3 completed:(CDUnknownBlockType)arg4;
 - (void)showTodayViewForExtensions:(id)arg1 pid:(int)arg2;
 - (id)serviceHubProcessControlChannelOnProxy:(BOOL)arg1;
 - (id)serviceHubProcessControlChannel;
@@ -196,7 +212,7 @@
 - (BOOL)threadSanitizerRequiresDyldInsertLibrary;
 - (BOOL)addressSanitizerRequiresDyldInsertLibrary;
 - (BOOL)downloadRuntimeProfilesFromDirectories:(id)arg1 forApplicationWithBundleIdentifier:(id)arg2 toDestinationDirectory:(id)arg3 error:(id *)arg4;
-- (id)createRuntimeProfileDirectoryForApplicationWithBundleIdentifier:(id)arg1 error:(id *)arg2;
+- (id)createRuntimeProfileDirectoryForApplicationWithBundleIdentifier:(id)arg1 runnableLocation:(id)arg2 error:(id *)arg3;
 @property(readonly) BOOL deferProfileGenerationSetupUntilAfterInstallation;
 - (BOOL)supportsPGOReturningError:(id *)arg1;
 @property(readonly) BOOL disablesOnlyActiveArch;
@@ -221,6 +237,7 @@
 @property(readonly) BOOL supportsAttachByPIDOrName;
 @property(readonly, copy, nonatomic) NSString *modelCodename;
 @property(readonly, copy) NSString *processorDescription;
+- (void)remotePathForBundleIdentifier:(id)arg1 onProxy:(BOOL)arg2 handler:(CDUnknownBlockType)arg3;
 - (void)requestProcessInformationsOnPairedDevice:(BOOL)arg1 handler:(CDUnknownBlockType)arg2;
 @property(readonly) NSString *executionDisplayName;
 - (id)viewDebuggerDylibPathWithOptions:(id)arg1;

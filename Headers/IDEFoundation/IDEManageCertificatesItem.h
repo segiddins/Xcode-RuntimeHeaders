@@ -6,13 +6,13 @@
 
 #import <objc/NSObject.h>
 
-@class DVTPortalCertificateType, DVTSigningCertificate, NSDate, NSString;
+@class DVTPortalCertificateType, DVTSigningCertificate, DVTSigningCertificateSerialNumber, NSDate, NSString;
 @protocol DVTPortalCertificateProtocol;
 
 @interface IDEManageCertificatesItem : NSObject
 {
     BOOL _isValid;
-    NSString *_serialNumber;
+    DVTSigningCertificateSerialNumber *_serialNumber;
     NSString *_creatorEmail;
     DVTPortalCertificateType *_type;
     id <DVTPortalCertificateProtocol> _portalCertificate;
@@ -32,7 +32,7 @@
 @property(retain, nonatomic) id <DVTPortalCertificateProtocol> portalCertificate; // @synthesize portalCertificate=_portalCertificate;
 @property(retain, nonatomic) DVTPortalCertificateType *type; // @synthesize type=_type;
 @property(retain, nonatomic) NSString *creatorEmail; // @synthesize creatorEmail=_creatorEmail;
-@property(readonly, nonatomic) NSString *serialNumber; // @synthesize serialNumber=_serialNumber;
+@property(readonly, nonatomic) DVTSigningCertificateSerialNumber *serialNumber; // @synthesize serialNumber=_serialNumber;
 - (unsigned long long)_stateForPortalCertificate:(id)arg1 localCertificate:(id)arg2;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

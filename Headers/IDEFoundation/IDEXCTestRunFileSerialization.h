@@ -16,7 +16,7 @@
     long long _version;
 }
 
-+ (id)fileNameForTestRunFileWithSchemeName:(id)arg1 testPlanName:(id)arg2 runDestinationIdentifier:(id)arg3;
++ (id)fileNameForTestRunFileWithSchemeName:(id)arg1 testPlanName:(id)arg2 sdkName:(id)arg3 architectures:(id)arg4;
 + (id)testRunFileWithContentsOfURL:(id)arg1 derivedDataPath:(id)arg2 error:(id *)arg3;
 + (id)testRunFileWithDictionaryRepresentation:(id)arg1 removingPathPlaceholdersForTestRootPath:(id)arg2 derivedDataPath:(id)arg3 error:(id *)arg4;
 - (void).cxx_destruct;

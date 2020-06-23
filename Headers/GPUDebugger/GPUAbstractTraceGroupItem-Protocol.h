@@ -9,7 +9,7 @@
 
 @protocol GPUAbstractTraceGroupItem
 @property(nonatomic) __weak id <GPUAbstractTraceDisplayableItem> abstractDisplayableItem;
-@property(readonly, nonatomic) NSString *UUID;
+@property(readonly, nonatomic) long long UUID;
 @property(nonatomic) __weak id <GPUAbstractDebuggerController> abstractController;
 @property(retain, nonatomic) NSString *label;
 @end

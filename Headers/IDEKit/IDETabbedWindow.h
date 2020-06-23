@@ -18,8 +18,7 @@
 - (id)dataByEncodingRestorableState;
 - (void)restoreStateWithData:(id)arg1;
 - (void)restoreStateWithCoder:(id)arg1;
-- (void)closeOtherTabs:(id)arg1;
-- (void)closeWindowAsTab:(id)arg1;
+- (void)closeOtherWindowTabs:(id)arg1;
 - (id)currentlySelectedTabbedWindow;
 @property(setter=setTabBarIsVisible:) BOOL tabBarIsVisible;
 - (BOOL)validateMenuItem:(id)arg1;

@@ -28,7 +28,6 @@
 - (id)xcodeMinorVersion;
 - (id)xcodeMajorVersion;
 - (id)buildMachineActualOSVersion;
-- (id)buildMachineMinorOSVersion;
 - (id)buildMachineMajorOSVersion;
 @property(readonly) NSString *buildMachineOSProductBuildVersion;
 - (void)_populateVersionStrings;

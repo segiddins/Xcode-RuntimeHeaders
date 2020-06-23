@@ -12,6 +12,7 @@
 
 @interface NSSwitch (IBNSSwitchIntegration) <IBDocumentArchiving>
 + (BOOL)ibIsCellBasedControl;
++ (id)ibInstantiateForRole:(long long)arg1 withTargetRuntime:(id)arg2 documentClass:(Class)arg3 assetIdentifier:(id)arg4;
 - (void)ibPopulateIssues:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
 - (id)ibInspectedCell;
 - (BOOL)ibIsUserSizable;

@@ -10,8 +10,6 @@
 
 @interface DYRenderingAttributes : NSObject
 {
-    MISSING_TYPE *_enabledStates;
-    double _toneMapFactors[4];
     GPUHistogram *_histograms[4];
     BOOL _hasUserDefinedChannelMappings;
     BOOL _hasUserDefinedToneMapping;
@@ -24,11 +22,13 @@
     int _selectedLayer;
     int _renderTargetArrayIndex;
     unsigned int _pixelFormat;
-    unsigned long long _channelFlags;
+    MISSING_TYPE *_enabledStates;
     MISSING_TYPE *_minValues;
     MISSING_TYPE *_maxValues;
-    MISSING_TYPE *_defaultMinValues;
-    MISSING_TYPE *_defaultMaxValues;
+    MISSING_TYPE *_tonemappingMinValues;
+    MISSING_TYPE *_tonemappingMaxValues;
+    MISSING_TYPE *_defaultTonemappingMinValues;
+    MISSING_TYPE *_defaultTonemappingMaxValues;
     MISSING_TYPE *_histogramMinValues;
     MISSING_TYPE *_histogramMaxValues;
 }
@@ -39,15 +39,16 @@
 @property(nonatomic) MISSING_TYPE *histogramMaxValues; // @synthesize histogramMaxValues=_histogramMaxValues;
 @property(nonatomic) MISSING_TYPE *histogramMinValues; // @synthesize histogramMinValues=_histogramMinValues;
 @property(nonatomic) BOOL premultipliedAlpha; // @synthesize premultipliedAlpha=_premultipliedAlpha;
-@property(readonly, nonatomic) unsigned long long channelFlags; // @synthesize channelFlags=_channelFlags;
 @property(readonly, nonatomic) unsigned int pixelFormat; // @synthesize pixelFormat=_pixelFormat;
 @property(nonatomic) BOOL flipped; // @synthesize flipped=_flipped;
 @property(nonatomic) int renderTargetArrayIndex; // @synthesize renderTargetArrayIndex=_renderTargetArrayIndex;
 @property(nonatomic) int selectedLayer; // @synthesize selectedLayer=_selectedLayer;
 @property(nonatomic) int selectedMipmapLevel; // @synthesize selectedMipmapLevel=_selectedMipmapLevel;
 @property(nonatomic) BOOL hasUserDefinedToneMapping; // @synthesize hasUserDefinedToneMapping=_hasUserDefinedToneMapping;
-@property(nonatomic) MISSING_TYPE *defaultMaxValues; // @synthesize defaultMaxValues=_defaultMaxValues;
-@property(nonatomic) MISSING_TYPE *defaultMinValues; // @synthesize defaultMinValues=_defaultMinValues;
+@property(nonatomic) MISSING_TYPE *defaultTonemappingMaxValues; // @synthesize defaultTonemappingMaxValues=_defaultTonemappingMaxValues;
+@property(nonatomic) MISSING_TYPE *defaultTonemappingMinValues; // @synthesize defaultTonemappingMinValues=_defaultTonemappingMinValues;
+@property(nonatomic) MISSING_TYPE *tonemappingMaxValues; // @synthesize tonemappingMaxValues=_tonemappingMaxValues;
+@property(nonatomic) MISSING_TYPE *tonemappingMinValues; // @synthesize tonemappingMinValues=_tonemappingMinValues;
 @property(nonatomic) MISSING_TYPE *maxValues; // @synthesize maxValues=_maxValues;
 @property(nonatomic) MISSING_TYPE *minValues; // @synthesize minValues=_minValues;
 @property(nonatomic) BOOL hasUserDefinedChannelMappings; // @synthesize hasUserDefinedChannelMappings=_hasUserDefinedChannelMappings;
@@ -55,15 +56,10 @@
 @property(nonatomic) union DYTextureChannelMappings channelMappings; // @synthesize channelMappings=_channelMappings;
 @property(nonatomic) MISSING_TYPE *enabledStates; // @synthesize enabledStates=_enabledStates;
 - (id)description;
-- (void)getChannelMap:(unsigned char [4])arg1;
-- (void)updateWithMinValues:(double [4])arg1 maxValues:(double [4])arg2 minLimits:(double [4])arg3 maxLimits:(double [4])arg4 factors:(double [4])arg5;
-- (double)toneMapFactorForChannelIndex:(unsigned char)arg1;
 - (void)setHistogram:(id)arg1 forChannel:(long long)arg2;
 - (id)histogramForChannel:(long long)arg1;
-- (void)setChannelEnabled:(BOOL)arg1 forIndex:(unsigned char)arg2;
-- (BOOL)isChannelEnabledForIndex:(unsigned char)arg1;
-- (void)setMaxValue:(double)arg1 forChannel:(long long)arg2;
-- (void)setMinValue:(double)arg1 forChannel:(long long)arg2;
+- (void)setTonemappingMaxValue:(double)arg1 forChannel:(long long)arg2;
+- (void)setTonemappingMinValue:(double)arg1 forChannel:(long long)arg2;
 - (void)setChannelMapping:(unsigned char)arg1 forChannel:(long long)arg2;
 - (unsigned char)channelMappingForChannel:(long long)arg1;
 - (void)setEnabledState:(BOOL)arg1 forChannel:(long long)arg2;

@@ -4,17 +4,20 @@
 //  Copyright (C) 1997-2019 Steve Nygard.
 //
 
-#import <IDESourceControlUI/_TtC18IDESourceControlUI24SourceControlGroupHolder.h>
+#import <objc/NSObject.h>
 
-@class DVTDocumentLocation, DVTFileDataType, MISSING_TYPE, NSImage;
+@class DVTDocumentLocation, DVTFileDataType, MISSING_TYPE, NSImage, NSString;
 
-@interface _TtC18IDESourceControlUI17PullRequestHolder : _TtC18IDESourceControlUI24SourceControlGroupHolder
+@interface _TtC18IDESourceControlUI17PullRequestHolder : NSObject
 {
     MISSING_TYPE *pullRequest;
     MISSING_TYPE *documentLocation;
+    MISSING_TYPE *navigableItem_name;
+    MISSING_TYPE *identifier;
 }
 
 - (void).cxx_destruct;
+- (id)init;
 @property(nonatomic, readonly) DVTDocumentLocation *navigableItem_contentDocumentLocation;
 @property(nonatomic, readonly) DVTFileDataType *navigableItem_documentType;
 @property(nonatomic, readonly) BOOL navigableItem_isLeaf;
@@ -22,6 +25,7 @@
 @property(nonatomic, readonly) long long hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)ideModelObjectTypeIdentifier;
+@property(nonatomic, copy) NSString *navigableItem_name;
 
 @end
 

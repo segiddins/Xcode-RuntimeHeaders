@@ -27,7 +27,6 @@
     long long _progress;
     NSString *_phase;
     NSString *_workTitle;
-    NSString *_itsRulePath;
     NSURL *_sourceUrl;
 }
 
@@ -35,7 +34,6 @@
 - (void).cxx_destruct;
 @property BOOL allowProjectChanges; // @synthesize allowProjectChanges=_allowProjectChanges;
 @property(copy) NSURL *sourceUrl; // @synthesize sourceUrl=_sourceUrl;
-@property(copy) NSString *itsRulePath; // @synthesize itsRulePath=_itsRulePath;
 @property(copy) NSString *workTitle; // @synthesize workTitle=_workTitle;
 @property(copy) NSString *phase; // @synthesize phase=_phase;
 @property long long progress; // @synthesize progress=_progress;

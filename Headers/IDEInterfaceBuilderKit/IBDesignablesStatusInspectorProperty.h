@@ -6,37 +6,46 @@
 
 #import <IDEKit/IDEInspectorProperty.h>
 
-@class IBDesignablesStatusAction, IBInspectorViewController, IDEInspectorKeyPath, NSButton, NSDate, NSLayoutConstraint, NSString, NSTextField;
+@class IBDesignablesStatusAction, IBInspectorViewController, IDEInspectorKeyPath, NSButton, NSDate, NSPopover, NSString, NSTextField;
 
 @interface IBDesignablesStatusInspectorProperty : IDEInspectorProperty
 {
     IDEInspectorKeyPath *_statusKeyPath;
     long long _tooltipTag;
     NSString *_statusText;
+    NSString *_statusSecondaryText;
     NSString *_statusToolTip;
     long long _statusValue;
     NSDate *_lastUpdateDate;
     IBDesignablesStatusAction *_action;
     NSTextField *_statusLabel;
     NSButton *_actionButton;
-    NSLayoutConstraint *_currentStatusTextTrailingConstraint;
+    NSButton *_secondaryStatusButton;
+    NSPopover *_secondaryStatusPopover;
+    NSTextField *_secondaryStatusTextLabel;
 }
 
 - (void).cxx_destruct;
-@property(retain, nonatomic) NSLayoutConstraint *currentStatusTextTrailingConstraint; // @synthesize currentStatusTextTrailingConstraint=_currentStatusTextTrailingConstraint;
+@property(retain, nonatomic) NSTextField *secondaryStatusTextLabel; // @synthesize secondaryStatusTextLabel=_secondaryStatusTextLabel;
+@property(retain, nonatomic) NSPopover *secondaryStatusPopover; // @synthesize secondaryStatusPopover=_secondaryStatusPopover;
+@property(retain, nonatomic) NSButton *secondaryStatusButton; // @synthesize secondaryStatusButton=_secondaryStatusButton;
 @property(retain, nonatomic) NSButton *actionButton; // @synthesize actionButton=_actionButton;
 @property(retain, nonatomic) NSTextField *statusLabel; // @synthesize statusLabel=_statusLabel;
 @property(retain, nonatomic) IBDesignablesStatusAction *action; // @synthesize action=_action;
 @property(retain, nonatomic) NSDate *lastUpdateDate; // @synthesize lastUpdateDate=_lastUpdateDate;
 @property(nonatomic) long long statusValue; // @synthesize statusValue=_statusValue;
 @property(retain, nonatomic) NSString *statusToolTip; // @synthesize statusToolTip=_statusToolTip;
+@property(retain, nonatomic) NSString *statusSecondaryText; // @synthesize statusSecondaryText=_statusSecondaryText;
 @property(retain, nonatomic) NSString *statusText; // @synthesize statusText=_statusText;
 - (void)userDidSelectActionButton:(id)arg1;
+- (void)userDidSelectSecondaryInfoButton:(id)arg1;
 - (void)setupRefreshTriggersAndConfigure;
 - (void)_updateActionButton;
+- (void)_updateStatusSecondaryInfoButtonIcon;
 - (void)_updateLabelColors;
 - (id)view:(id)arg1 stringForToolTip:(long long)arg2 point:(struct CGPoint)arg3 userData:(void *)arg4;
-- (id)_effectiveToolTip;
+- (id)effectiveStatusToolTip;
+- (id)lastUpdatedString;
 - (void)_updateLabel;
 - (void)_setupViewTooltip;
 - (void)refresh;

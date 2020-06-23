@@ -21,8 +21,6 @@
 + (id)defaultViewNibName;
 - (void).cxx_destruct;
 - (void)primitiveInvalidate;
-- (BOOL)_isHiddenValueNegated;
-- (id)_hiddenKeyPath;
 @property(readonly, nonatomic) DVTBorderedView *separatorView; // @synthesize separatorView=_separatorView;
 - (id)_intentInputViewController;
 @property(readonly, nonatomic) IDEIntentBuilderEditorIntentManagedParameterCombinationsInfoViewController *_parameterCombinationsInfoViewController;
@@ -33,7 +31,6 @@
 - (void)viewDidLayout;
 - (void)loadView;
 - (id)contentViews;
-- (void)setContentHidden:(BOOL)arg1;
 - (id)title;
 
 // Remaining properties

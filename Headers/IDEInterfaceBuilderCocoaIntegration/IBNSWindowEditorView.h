@@ -6,29 +6,36 @@
 
 #import <DVTStructuredLayoutKit/DVTLayoutView_ML.h>
 
+#import <IDEInterfaceBuilderCocoaIntegration/IBEditorCanvasFrameDocumentViewCustomizer-Protocol.h>
 #import <IDEInterfaceBuilderCocoaIntegration/IBWindowContentBorderThicknessTarget-Protocol.h>
 
-@class IBNinePartImage, NSImage, NSShadow, NSString, NSToolbar, NSView, NSWindow;
+@class IBNinePartImage, NSImage, NSShadow, NSString, NSView, NSWindow;
+@protocol IBNSWindowEditorViewDelegate;
 
-@interface IBNSWindowEditorView : DVTLayoutView_ML <IBWindowContentBorderThicknessTarget>
+@interface IBNSWindowEditorView : DVTLayoutView_ML <IBEditorCanvasFrameDocumentViewCustomizer, IBWindowContentBorderThicknessTarget>
 {
     NSShadow *_windowShadow;
     NSView *_contentViewContainer;
     NSImage *_cachedWindowImage;
     double _cachedWindowImageScale;
     IBNinePartImage *_cachedShadowImage;
+    BOOL _needsContentViewControllerUpdate;
+    BOOL _needsToolbarUpdate;
     BOOL _liveResizing;
-    int _contentResizingMode;
     NSWindow *_windowToMimic;
+    id <IBNSWindowEditorViewDelegate> _delegate;
     NSView *_contentView;
+    unsigned long long _contentResizingMode;
 }
 
 + (id)windowViewForWindow:(id)arg1 andContentView:(id)arg2;
 - (void).cxx_destruct;
 @property BOOL liveResizing; // @synthesize liveResizing=_liveResizing;
-@property(nonatomic) int contentResizingMode; // @synthesize contentResizingMode=_contentResizingMode;
+@property(nonatomic) unsigned long long contentResizingMode; // @synthesize contentResizingMode=_contentResizingMode;
 @property(retain, nonatomic) NSView *contentView; // @synthesize contentView=_contentView;
+@property(nonatomic) __weak id <IBNSWindowEditorViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSWindow *windowToMimic; // @synthesize windowToMimic=_windowToMimic;
+- (BOOL)hasMinimapContentBorderForEditorCanvasFrame:(id)arg1;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)applyAndInvalidateAppearance;
 - (void)effectiveAppearanceDidChange;
@@ -56,18 +63,23 @@
 - (CDStruct_d2b197d1)insetToContentView;
 - (CDStruct_d2b197d1)insetFromShadowToWindow;
 - (struct CGRect)mimickedToolbarFrame;
-@property(retain) NSToolbar *toolbar;
-- (BOOL)autorecalculatesContentBorderThicknessForEdge:(unsigned long long)arg1;
+- (BOOL)simulatedContentViewControllerOwnsToolbar;
 - (void)setAutorecalculatesContentBorderThickness:(BOOL)arg1 forEdge:(unsigned long long)arg2;
-- (double)contentBorderThicknessForEdge:(unsigned long long)arg1;
+- (BOOL)autorecalculatesContentBorderThicknessForEdge:(unsigned long long)arg1;
 - (void)setContentBorderThickness:(double)arg1 forEdge:(unsigned long long)arg2;
+- (double)contentBorderThicknessForEdge:(unsigned long long)arg1;
 @property unsigned long long collectionBehavior;
 @property long long titleVisibility;
 @property BOOL titlebarAppearsTransparent;
+@property(copy) NSString *subtitle;
 @property(copy) NSString *title;
 @property BOOL hasShadow;
 - (id)windowShadowImage;
 - (id)windowShadow;
+- (void)setSimulatedContentViewController:(id)arg1;
+- (id)simulatedContentViewController;
+- (void)invalidateToolbar;
+- (void)invalidateContentViewController;
 - (void)awakeFromNib;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)initWithCoder:(id)arg1;

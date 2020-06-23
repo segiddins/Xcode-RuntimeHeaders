@@ -12,6 +12,7 @@
 {
     MISSING_TYPE *topLevelOperation;
     MISSING_TYPE *_mainThreadTimeSlicingQueue;
+    MISSING_TYPE *logAspect;
 }
 
 - (void).cxx_destruct;

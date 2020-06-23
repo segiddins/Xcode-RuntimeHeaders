@@ -14,6 +14,7 @@
 @interface IDEIntentBuilderPropertyType : NSObject <NSCopying, IDEIntentBuilderPropertyType>
 {
     NSMutableDictionary *_typeNameForSourceLanguageDictionary;
+    NSMutableDictionary *_referenceTypeNameForSourceLanguageDictionary;
     NSMutableDictionary *_collectionTypeNameForSourceLanguageDictionary;
     NSMutableDictionary *_propertyAttributesForSourceLanguageDictionary;
     NSMutableDictionary *_collectionPropertyAttributesForSourceLanguageDictionary;
@@ -77,6 +78,7 @@
 - (id)collectionPropertyAttributesForSourceLanguage:(unsigned long long)arg1 objectGroupItem:(id)arg2;
 - (id)propertyAttributesForSourceLanguage:(unsigned long long)arg1 objectGroupItem:(id)arg2;
 - (id)collectionTypeNameForSourceLanguage:(unsigned long long)arg1 objectGroupItem:(id)arg2;
+- (id)referenceTypeNameForSourceLanguage:(unsigned long long)arg1 objectGroupItem:(id)arg2;
 - (id)typeNameForSourceLanguage:(unsigned long long)arg1 objectGroupItem:(id)arg2;
 @property(readonly, copy, nonatomic) NSString *namespace;
 - (void)_setAPIAvailability:(id)arg1 forSourceLanguage:(unsigned long long)arg2 internal:(BOOL)arg3;
@@ -87,6 +89,7 @@
 - (void)_setCollectionPropertyAttributes:(id)arg1 forSourceLanguage:(unsigned long long)arg2;
 - (void)_setPropertyAttributes:(id)arg1 forSourceLanguage:(unsigned long long)arg2;
 - (void)_setCollectionTypeName:(id)arg1 forSourceLanguage:(unsigned long long)arg2;
+- (void)_setReferenceTypeName:(id)arg1 forSourceLanguage:(unsigned long long)arg2;
 - (void)_setTypeName:(id)arg1 forSourceLanguage:(unsigned long long)arg2;
 
 // Remaining properties

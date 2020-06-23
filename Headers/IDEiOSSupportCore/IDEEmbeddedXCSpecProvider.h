@@ -11,6 +11,7 @@
 }
 
 + (id)XCSpecProvider_specifications;
++ (id)targetedDeviceFamilySpec;
 + (id)deploymentTargetSpecForBuildSettingNamed:(id)arg1 buildSettingDisplayName:(id)arg2 platformDisplayName:(id)arg3 allowedValues:(id)arg4;
 
 @end

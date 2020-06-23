@@ -9,7 +9,7 @@
 #import <IDEKit/DVTFilePathFieldCellDelegate-Protocol.h>
 #import <IDEKit/IDEBuildFolderLocationSheetControllerDelegate-Protocol.h>
 
-@class DVTBorderedView, DVTFilePathField, IDEWorkspace, NSButton, NSMenuItem, NSPopUpButton, NSStackView, NSString, NSTextField, NSWindow;
+@class DVTBorderedView, DVTFilePathField, IDEWorkspace, NSButton, NSImageView, NSMenuItem, NSPopUpButton, NSStackView, NSString, NSTextField, NSView, NSWindow;
 
 @interface IDEWorkspaceUserSettingsSheetController : IDEViewController <IDEBuildFolderLocationSheetControllerDelegate, DVTFilePathFieldCellDelegate>
 {
@@ -44,6 +44,11 @@
     BOOL _showSharedSchemesAutomatically;
     int _sharedBuildSystemType;
     int _buildSystemType;
+    NSButton *_disableBuildSystemDeprecationWarningButton;
+    NSView *_buildDeprecationWarningView;
+    NSImageView *_legacyBuildSystemWarningIcon;
+    NSImageView *_userLegacyBuildSettingWarningIcon;
+    NSImageView *_sharedLegacyBuildSettingWarningIcon;
 }
 
 + (id)keyPathsForValuesAffectingDerivedDataWorkspaceRelativeLocation;
@@ -52,6 +57,11 @@
 + (void)runSheetForWindow:(id)arg1;
 + (void)beginSheetForWindow:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void).cxx_destruct;
+@property __weak NSImageView *sharedLegacyBuildSettingWarningIcon; // @synthesize sharedLegacyBuildSettingWarningIcon=_sharedLegacyBuildSettingWarningIcon;
+@property __weak NSImageView *userLegacyBuildSettingWarningIcon; // @synthesize userLegacyBuildSettingWarningIcon=_userLegacyBuildSettingWarningIcon;
+@property __weak NSImageView *legacyBuildSystemWarningIcon; // @synthesize legacyBuildSystemWarningIcon=_legacyBuildSystemWarningIcon;
+@property __weak NSView *buildDeprecationWarningView; // @synthesize buildDeprecationWarningView=_buildDeprecationWarningView;
+@property __weak NSButton *disableBuildSystemDeprecationWarningButton; // @synthesize disableBuildSystemDeprecationWarningButton=_disableBuildSystemDeprecationWarningButton;
 @property BOOL showSharedSchemesAutomatically; // @synthesize showSharedSchemesAutomatically=_showSharedSchemesAutomatically;
 @property BOOL previewsEnabled; // @synthesize previewsEnabled=_previewsEnabled;
 @property int buildSystemType; // @synthesize buildSystemType=_buildSystemType;
@@ -66,6 +76,8 @@
 @property(copy) NSString *derivedDataCustomLocation; // @synthesize derivedDataCustomLocation=_derivedDataCustomLocation;
 @property int derivedDataLocationStyle; // @synthesize derivedDataLocationStyle=_derivedDataLocationStyle;
 @property(retain) NSWindow *hostWindow; // @synthesize hostWindow=_hostWindow;
+@property BOOL disableBuildSystemDeprecationWarning;
+- (void)updateDeprecationWarningView;
 - (id)currentDerivedDataFolderPath;
 - (void)buildFolderLocationSheetDidEndWithBuildLocationStyle:(int)arg1 sharedBuildFolderName:(id)arg2 customBuildLocationType:(int)arg3 customBuildProductsPath:(id)arg4 customBuildIntermediatesPath:(id)arg5;
 - (void)showBuildFolderLocationSheet:(id)arg1;

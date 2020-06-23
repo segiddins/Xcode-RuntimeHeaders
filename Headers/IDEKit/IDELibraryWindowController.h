@@ -77,6 +77,7 @@
 - (double)minimumWidth;
 - (double)defaultContentHeight;
 - (BOOL)isVerticallyResizable;
+- (void)makeWindowVisible:(BOOL)arg1;
 - (void)windowDidLoad;
 - (void)showLibrary:(id)arg1 pin:(BOOL)arg2 showDetails:(id)arg3;
 - (void)showLibrary:(id)arg1 pin:(BOOL)arg2;
@@ -93,7 +94,6 @@
 - (void)windowWillClose:(id)arg1;
 - (void)detachWindowContent;
 - (id)libraryControllerForWorkspaceDocument:(id)arg1 extensionID:(id)arg2;
-- (BOOL)isSystemInDarkMode;
 - (id)registerWorkspaceTabController:(id)arg1;
 - (void)toggleLibraryFromButton:(id)arg1 preferingLibrary:(id)arg2;
 - (id)init;

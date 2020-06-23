@@ -11,5 +11,9 @@
 - (void)invalidateLayoutWithContext:(id)arg1;
 - (BOOL)shouldInvalidateLayoutForBoundsChange:(struct CGRect)arg1;
 - (id)invalidationContextForBoundsChange:(struct CGRect)arg1;
+- (id)layoutAttributesForSupplementaryViewOfKind:(id)arg1 atIndexPath:(id)arg2;
+- (id)layoutAttributesForItemAtIndexPath:(id)arg1;
+- (id)layoutAttributesForElementsInRect:(struct CGRect)arg1;
+@property(nonatomic, readonly) struct CGSize collectionViewContentSize;
 @end
 

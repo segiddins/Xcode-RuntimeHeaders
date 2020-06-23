@@ -27,6 +27,11 @@
 - (id)initWithCoder:(id)arg1;
 - (void)layout;
 - (void)scrollWheel:(id)arg1;
+- (BOOL)performDragOperation:(id)arg1;
+- (void)draggingExited:(id)arg1;
+- (void)draggingEnded:(id)arg1;
+- (unsigned long long)draggingUpdated:(id)arg1;
+- (unsigned long long)draggingEntered:(id)arg1;
 
 @end
 

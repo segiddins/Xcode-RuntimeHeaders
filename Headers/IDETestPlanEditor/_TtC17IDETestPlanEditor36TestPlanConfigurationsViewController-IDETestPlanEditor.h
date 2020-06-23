@@ -9,8 +9,12 @@
 #import <IDETestPlanEditor/NSSplitViewDelegate-Protocol.h>
 
 @interface _TtC17IDETestPlanEditor36TestPlanConfigurationsViewController (IDETestPlanEditor) <NSSplitViewDelegate>
++ (long long)version;
++ (void)configureStateSavingObjectPersistenceByName:(id)arg1;
 - (BOOL)splitView:(id)arg1 canCollapseSubview:(id)arg2;
 - (double)splitView:(id)arg1 constrainMaxCoordinate:(double)arg2 ofSubviewAt:(long long)arg3;
 - (double)splitView:(id)arg1 constrainMinCoordinate:(double)arg2 ofSubviewAt:(long long)arg3;
+- (void)commitStateToDictionary:(id)arg1;
+- (void)revertStateWithDictionary:(id)arg1;
 @end
 

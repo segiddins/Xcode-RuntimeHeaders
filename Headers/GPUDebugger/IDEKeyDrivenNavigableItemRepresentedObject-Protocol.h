@@ -6,7 +6,7 @@
 
 #import <GPUDebugger/NSObject-Protocol.h>
 
-@class DVTDocumentLocation, DVTFileDataType, DVTSymbol, IDEFileReference, NSArray, NSImage, NSNull, NSString, NSURL;
+@class DVTDocumentLocation, DVTFileDataType, IDEFileReference, NSArray, NSImage, NSNull, NSString, NSURL, _TtC13DVTFoundation9DVTSymbol;
 
 @protocol IDEKeyDrivenNavigableItemRepresentedObject <NSObject>
 @property(readonly, nonatomic) NSString *navigableItem_name;
@@ -20,7 +20,7 @@
 @property(readonly, nonatomic) BOOL navigableItem_isEnabled;
 @property(readonly, nonatomic) BOOL navigableItem_missingReferencedContentIsImportant;
 @property(readonly, nonatomic) BOOL navigableItem_referencedContentExists;
-@property(readonly, nonatomic) DVTSymbol *navigableItem_representedSymbol;
+@property(readonly, nonatomic) _TtC13DVTFoundation9DVTSymbol *navigableItem_representedSymbol;
 @property(readonly, nonatomic) NSURL *navigableItem_representedURL;
 @property(readonly, nonatomic) DVTDocumentLocation *navigableItem_contentDocumentLocation;
 @property(readonly, nonatomic) DVTFileDataType *navigableItem_documentType;

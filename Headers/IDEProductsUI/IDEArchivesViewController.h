@@ -7,16 +7,16 @@
 #import <IDEKit/IDEViewController.h>
 
 #import <IDEProductsUI/DVTFilterControlBarTarget-Protocol.h>
-#import <IDEProductsUI/DVTTableCellViewTitleEditingDelegate-Protocol.h>
 #import <IDEProductsUI/DVTTableRowViewMouseInsideDelegate-Protocol.h>
 #import <IDEProductsUI/IDEInitialization-Protocol.h>
 #import <IDEProductsUI/IDEProductsInspectableVending-Protocol.h>
 #import <IDEProductsUI/NSTableViewDelegate-Protocol.h>
+#import <IDEProductsUI/_TtP13IDEProductsUI26ArchiveNameEditingDelegate_-Protocol.h>
 
-@class DVTBorderedView, DVTDelayedInvocation, DVTNotificationToken, DVTObservingToken, DVTTableView, IDESearchFilterControlBar, NSAlert, NSArray, NSArrayController, NSImage, NSMenu, NSString, NSTableHeaderView, NSTextField, NSView;
+@class DVTBorderedView, DVTDelayedInvocation, DVTNotificationToken, DVTObservingToken, IDESearchFilterControlBar, NSAlert, NSArray, NSArrayController, NSImage, NSMenu, NSString, NSTableHeaderView, NSTextField, NSView, _TtC13IDEProductsUI20IDEArchivesTableView;
 @protocol IDEProductsInspectable;
 
-@interface IDEArchivesViewController : IDEViewController <DVTFilterControlBarTarget, NSTableViewDelegate, DVTTableCellViewTitleEditingDelegate, IDEInitialization, DVTTableRowViewMouseInsideDelegate, IDEProductsInspectableVending>
+@interface IDEArchivesViewController : IDEViewController <DVTFilterControlBarTarget, NSTableViewDelegate, _TtP13IDEProductsUI26ArchiveNameEditingDelegate_, IDEInitialization, DVTTableRowViewMouseInsideDelegate, IDEProductsInspectableVending>
 {
     BOOL _shouldRefreshArchiveStatus;
     DVTDelayedInvocation *_archiveStatusRefreshInvocation;
@@ -25,7 +25,7 @@
     DVTBorderedView *_bottomBorderView;
     NSArrayController *_archivesArrayController;
     NSTableHeaderView *_tableHeaderView;
-    DVTTableView *_archivesTableView;
+    _TtC13IDEProductsUI20IDEArchivesTableView *_archivesTableView;
     NSTextField *_statusBarTextField;
     NSImage *_archiveImage;
     DVTObservingToken *_selectedArchivesObservingToken;
@@ -58,14 +58,14 @@
 @property(retain) DVTObservingToken *selectedArchivesObservingToken; // @synthesize selectedArchivesObservingToken=_selectedArchivesObservingToken;
 @property(readonly) NSImage *archiveImage; // @synthesize archiveImage=_archiveImage;
 @property __weak NSTextField *statusBarTextField; // @synthesize statusBarTextField=_statusBarTextField;
-@property __weak DVTTableView *archivesTableView; // @synthesize archivesTableView=_archivesTableView;
+@property __weak _TtC13IDEProductsUI20IDEArchivesTableView *archivesTableView; // @synthesize archivesTableView=_archivesTableView;
 @property __weak NSTableHeaderView *tableHeaderView; // @synthesize tableHeaderView=_tableHeaderView;
 @property(retain) NSArrayController *archivesArrayController; // @synthesize archivesArrayController=_archivesArrayController;
 @property __weak DVTBorderedView *bottomBorderView; // @synthesize bottomBorderView=_bottomBorderView;
 @property(copy) NSString *searchString; // @synthesize searchString=_searchString;
 @property __weak IDESearchFilterControlBar *controlBar; // @synthesize controlBar=_controlBar;
 - (struct _NSRange)initialSelectionRangeForTableCellView:(id)arg1 usingProposedRange:(struct _NSRange)arg2;
-- (void)titleDidChangeForTableCellView:(id)arg1;
+- (void)titleDidChangeForTableCellView:(id)arg1 title:(id)arg2;
 - (BOOL)validateMenuItem:(id)arg1;
 - (BOOL)tableView:(id)arg1 doCommandBySelector:(SEL)arg2;
 - (void)tableRowView:(id)arg1 mouseInside:(BOOL)arg2;
@@ -101,6 +101,7 @@
 - (void)configureWithProduct:(id)arg1;
 - (void)viewDidLoad;
 - (void)loadView;
+- (void)performAction:(long long)arg1 archive:(id)arg2;
 - (void)revealArchive:(id)arg1;
 
 // Remaining properties

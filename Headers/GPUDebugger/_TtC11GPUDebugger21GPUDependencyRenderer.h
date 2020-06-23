@@ -29,6 +29,7 @@ __attribute__((visibility("hidden")))
     MISSING_TYPE *renderDescriptor;
     MISSING_TYPE *msaa;
     MISSING_TYPE *stencil;
+    MISSING_TYPE *sampleCount;
     MISSING_TYPE *inFlightSemaphore;
     MISSING_TYPE *uniformBufferOffset;
     MISSING_TYPE *uniformBufferIndex;

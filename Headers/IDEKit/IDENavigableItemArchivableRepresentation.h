@@ -44,6 +44,7 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, copy) NSString *description;
 - (id)initWithNavigableItem:(id)arg1;
+- (id)initWithDomainIdentifier:(id)arg1 documentLocation:(id)arg2 contextualDocumentType:(id)arg3 identifierPath:(id)arg4 indexOfDocumentIdentifier:(unsigned long long)arg5;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

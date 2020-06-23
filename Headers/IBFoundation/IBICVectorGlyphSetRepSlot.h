@@ -20,13 +20,14 @@
 + (id)genesisSlotsForSlots:(id)arg1;
 + (Class)assetRepClass;
 + (Class)assetSetClass;
-+ (id)slotFilterWithNilMatching:(long long)arg1 idioms:(id)arg2 locales:(id)arg3 languageDirections:(id)arg4 luminositySlots:(id)arg5;
-+ (id)slotFilterUnionedWithStandardUniversalCounterpart:(BOOL)arg1 idioms:(id)arg2 locales:(id)arg3 languageDirections:(id)arg4 luminositySlots:(id)arg5;
++ (id)slotFilterWithNilMatching:(long long)arg1 idioms:(id)arg2 includeLocales:(BOOL)arg3 languageDirections:(id)arg4 luminositySlots:(id)arg5;
++ (id)slotFilterUnionedWithStandardUniversalCounterpart:(BOOL)arg1 idioms:(id)arg2 includeLocales:(BOOL)arg3 languageDirections:(id)arg4 luminositySlots:(id)arg5;
 - (void).cxx_destruct;
 @property(readonly) IBICLuminosityAppearance *luminosityAppearance; // @synthesize luminosityAppearance=_luminosityAppearance;
 @property(readonly) IBICLocale *locale; // @synthesize locale=_locale;
 @property(readonly) IBICLanguageDirection *languageDirection; // @synthesize languageDirection=_languageDirection;
 @property(readonly) IBICIdiom *idiom; // @synthesize idiom=_idiom;
+- (id)outputFileNameGivenBaseName:(id)arg1 andExtension:(id)arg2;
 - (BOOL)hasUnspecifiedLocale;
 - (BOOL)hasUnspecifiedAppearance;
 - (id)detailAreaPath;

@@ -8,7 +8,8 @@
 
 #import <XCSUI/IDETestReport_FailureSummary-Protocol.h>
 
-@class NSString;
+@class DVTTextDocumentLocation, NSArray, NSDate, NSString;
+@protocol IDEResultBundleURLRedirecting, IDETestReport_Base;
 
 @interface XCSFailureSummary (IDETestReportModelObjects) <IDETestReport_FailureSummary>
 @property(readonly, nonatomic) long long ide_testReport_failureSummary_lineNumber;
@@ -19,6 +20,17 @@
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
+@property(readonly, copy, nonatomic) NSString *ide_testReport_base_identifier;
+@property(nonatomic) __weak id <IDETestReport_Base> ide_testReport_base_parent;
+@property(readonly, copy) NSArray *ide_testReport_failureSummary_attachments;
+@property(readonly, copy) NSArray *ide_testReport_failureSummary_callStackSymbolInfos;
+@property(readonly, copy, nonatomic) DVTTextDocumentLocation *ide_testReport_failureSummary_documentLocation;
+@property(readonly, copy) NSArray *ide_testReport_failureSummary_failureSteps;
+@property(readonly, nonatomic) BOOL ide_testReport_failureSummary_isTopLevelFailure;
+@property(readonly) long long ide_testReport_failureSummary_numberOfChildren;
+@property __weak id <IDEResultBundleURLRedirecting> ide_testReport_failureSummary_urlRedirector;
+@property(readonly, copy, nonatomic) NSString *ide_test_activity_attachment_base_title;
+@property(readonly, copy, nonatomic) NSDate *sortingTimestamp;
 @property(readonly) Class superclass;
 @end
 

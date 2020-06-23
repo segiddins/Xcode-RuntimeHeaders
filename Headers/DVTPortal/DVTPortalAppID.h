@@ -19,6 +19,7 @@
     DVTPortalTeam *_team;
 }
 
++ (id)errorForAppIDWithInvalidType:(id)arg1 expectedAppIDType:(long long)arg2 foundAppIDType:(long long)arg3;
 + (id)errorForManagedUpdateAppID:(id)arg1 features:(id)arg2;
 + (id)errorForManagedAddAppID:(id)arg1;
 + (id)errorForUnsupportedFeatures:(id)arg1 program:(id)arg2;
@@ -33,6 +34,7 @@
 + (id)createAppIDWithSession:(id)arg1 team:(id)arg2 program:(id)arg3 bundleID:(id)arg4 features:(id)arg5 requiresExplicitAppID:(BOOL)arg6 error:(id *)arg7;
 + (id)_listAppIDsServiceWithTeam:(id)arg1 program:(id)arg2;
 + (id)_legacyAppIDsWithSession:(id)arg1 team:(id)arg2 program:(id)arg3 error:(id *)arg4;
++ (id)appIDsWithSession:(id)arg1 appIDType:(long long)arg2 team:(id)arg3 program:(id)arg4 error:(id *)arg5;
 + (id)appIDsWithSession:(id)arg1 team:(id)arg2 program:(id)arg3 error:(id *)arg4;
 + (BOOL)_usePortalDeveloperAPI;
 - (void).cxx_destruct;
@@ -49,9 +51,11 @@
 - (BOOL)enableFeatures:(id)arg1 session:(id)arg2 error:(id *)arg3;
 - (BOOL)removeFeatures:(id)arg1 session:(id)arg2 error:(id *)arg3;
 - (id)description;
+@property(nonatomic, readonly) NSString *teamID;
 @property(nonatomic, readonly) NSString *identifier;
 @property(nonatomic, readonly) NSString *portalIdentifier;
 - (id)featuresWithSession:(id)arg1 error:(id *)arg2;
+@property(nonatomic, readonly) long long bundleType;
 
 @end
 

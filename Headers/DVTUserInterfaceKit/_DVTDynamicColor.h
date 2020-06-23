@@ -6,13 +6,14 @@
 
 #import <AppKit/NSDynamicNamedColor.h>
 
-@class NSAppearance, NSColor;
+@class NSAppearance, NSColor, NSString;
 
 @interface _DVTDynamicColor : NSDynamicNamedColor
 {
     CDUnknownBlockType _resolver;
     NSColor *_cachedResolvedColor;
     NSAppearance *_lastAppearance;
+    NSString *_name;
     struct os_unfair_lock_s _lock;
 }
 
@@ -23,7 +24,7 @@
 - (id)colorSpaceName;
 - (id)description;
 - (id)resolvedColor;
-- (id)initWithResolver:(CDUnknownBlockType)arg1;
+- (id)initWithName:(id)arg1 resolver:(CDUnknownBlockType)arg2;
 
 @end
 

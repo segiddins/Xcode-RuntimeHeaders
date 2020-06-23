@@ -10,6 +10,7 @@
 {
 }
 
++ (BOOL)isFileAtPathValidVectorGlyph:(id)arg1 returningError:(id *)arg2;
 + (id)inferredRepIdentifierForPath:(id)arg1;
 + (id)inferredRepIdentifiersGroupedByItemNameForPaths:(id)arg1;
 + (Class)slotClass;

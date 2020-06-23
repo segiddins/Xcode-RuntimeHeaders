@@ -11,7 +11,7 @@
     double _startTime;
 }
 
-+ (BOOL)skipStepForContext:(id)arg1 assistantDirection:(int)arg2;
++ (BOOL)skipStepForContext:(id)arg1 assistantDirection:(long long)arg2;
 @property double startTime; // @synthesize startTime=_startTime;
 - (void)_spinProgressIndicatorForMinimumDurationAndContinue;
 - (void)_preloadTeamsWithCallback:(CDUnknownBlockType)arg1;

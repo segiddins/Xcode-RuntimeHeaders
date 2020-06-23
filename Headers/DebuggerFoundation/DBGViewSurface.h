@@ -88,6 +88,7 @@
 - (id)_childViewSurfacesFromPlist:(id)arg1 forViewDescriber:(id)arg2;
 - (void)primitiveInvalidate;
 - (id)forwardFocusToViewObject;
+- (unsigned long long)recursivelyUpdateNumberOfChildObjectsWithIssues;
 - (id)childWithIdentifier:(id)arg1;
 - (id)allFetchedDocuments;
 @property(readonly) DBGLayoutConstraintSet *referencingConstraintsSetForDisplay;

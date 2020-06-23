@@ -17,7 +17,6 @@
 + (id)editedTheme;
 + (id)focusedTheme;
 + (id)normalTheme;
-+ (id)sidebarIconBorderMask;
 + (id)sidebarIcon;
 + (unsigned long long)severity;
 + (double)precedence;
@@ -25,6 +24,7 @@
 - (void)didClickInTextSidebarView:(id)arg1 event:(id)arg2;
 - (void)didClickMessageBubbleOnIcon:(BOOL)arg1 inView:(id)arg2 event:(id)arg3;
 - (void)_didClickInView:(id)arg1 event:(id)arg2;
+- (id)_removeScrollDecelerationFromString:(id)arg1;
 - (id)annotationMenuForPerformanceMetricsFromPreviousRun:(id)arg1;
 - (BOOL)validateMenuItem:(id)arg1;
 - (void)contextMenu_revealInReport:(id)arg1;

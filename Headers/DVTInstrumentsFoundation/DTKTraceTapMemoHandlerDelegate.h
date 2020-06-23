@@ -8,19 +8,16 @@
 
 #import <DVTInstrumentsFoundation/DTTapMemoHandlerDelegate-Protocol.h>
 
-@class DTKPRecordDecoder, NSString;
+@class NSString;
 
 @interface DTKTraceTapMemoHandlerDelegate : NSObject <DTTapMemoHandlerDelegate>
 {
-    DTKPRecordDecoder *_recordDecoder;
 }
 
-- (void).cxx_destruct;
 - (id)peekAtMemo:(id)arg1;
 - (void)sendHeartbeatMemo:(id)arg1 toClientUsingConfig:(id)arg2;
 - (void)sendDataMemo:(id)arg1 toClientUsingConfig:(id)arg2;
 - (void)sendDataMemo:(id)arg1 toBulkReceiver:(id)arg2;
-- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

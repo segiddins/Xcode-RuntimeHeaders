@@ -12,6 +12,7 @@
 @interface DNTDisplayTreeItem : NSObject
 {
     MISSING_TYPE *info;
+    MISSING_TYPE *navigatorNode;
     MISSING_TYPE *$__lazy_storage_$__hash;
 }
 

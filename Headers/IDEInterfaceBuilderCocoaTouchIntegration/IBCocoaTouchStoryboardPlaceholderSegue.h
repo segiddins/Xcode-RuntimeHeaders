@@ -15,6 +15,7 @@
 + (id)classIdentifier;
 + (id)placeholderSegueFromSegue:(id)arg1;
 - (BOOL)shouldArchiveKind;
+- (id)metricChainSucceedingMetric:(id)arg1;
 - (id)segueForInheritableMetrics;
 - (id)instantiateSegueTemplate;
 - (BOOL)_isPreviewPhase;

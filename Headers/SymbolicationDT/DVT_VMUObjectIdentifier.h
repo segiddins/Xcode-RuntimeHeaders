@@ -29,7 +29,6 @@
     NSMutableDictionary *_nonobjectClassInfosDict;
     NSMutableArray *_objCClassStructureClassInfoIndexes;
     unsigned long long _coreFoundationCFTypeIsa;
-    unsigned long long _foundationCFTypeIsa;
     unsigned long long _objCClassCount;
     unsigned long long _swiftClassCount;
     unsigned long long _cfClassCount;
@@ -51,9 +50,12 @@
     unsigned int _osDispatchMachOffsetInOSXPCConnection;
     unsigned long long _taggedPointerMask;
     unsigned long long _taggedPointerObfuscator;
+    unsigned char _taggedPointerPermutations[8];
+    struct VMUAutoreleasePoolPageLayout *_autoreleasePoolPageLayout;
 }
 
 - (void).cxx_destruct;
+@property(readonly, nonatomic) struct VMUAutoreleasePoolPageLayout *autoreleasePoolPageLayout; // @synthesize autoreleasePoolPageLayout=_autoreleasePoolPageLayout;
 @property(readonly) unsigned int objcABI; // @synthesize objcABI=_objcABI;
 @property(readonly, nonatomic) struct _CSTypeRef symbolicator; // @synthesize symbolicator=_symbolicator;
 @property(readonly, nonatomic) unsigned long long taggedPointerMask; // @synthesize taggedPointerMask=_taggedPointerMask;
@@ -114,16 +116,19 @@
 - (id)labelForNSArray:(void *)arg1 length:(unsigned long long)arg2 remoteAddress:(unsigned long long)arg3;
 - (id)labelForItemCount:(long long)arg1;
 - (id)labelForNSDate:(void *)arg1 length:(unsigned long long)arg2 remoteAddress:(unsigned long long)arg3;
+- (id)formattedDateLabel:(id)arg1;
 - (id)labelForNSNumber:(void *)arg1 length:(unsigned long long)arg2 remoteAddress:(unsigned long long)arg3;
 - (id)labelForNSBundle:(void *)arg1 length:(unsigned long long)arg2 remoteAddress:(unsigned long long)arg3;
 - (id)labelForCFBundle:(void *)arg1 length:(unsigned long long)arg2 remoteAddress:(unsigned long long)arg3;
 - (id)labelForNSPathStore2:(void *)arg1 length:(unsigned long long)arg2 remoteAddress:(unsigned long long)arg3;
 - (id)labelForNSURL:(void *)arg1 length:(unsigned long long)arg2 remoteAddress:(unsigned long long)arg3;
 - (id)labelForNSConcreteAttributedString:(void *)arg1 length:(unsigned long long)arg2 remoteAddress:(unsigned long long)arg3;
+- (id)labelForNSTaggedPointerStringCStringContainer:(void *)arg1 length:(unsigned long long)arg2 remoteAddress:(unsigned long long)arg3;
 - (id)labelForNSCFStringAtRemoteAddress:(unsigned long long)arg1 printDetail:(BOOL)arg2;
 - (id)labelForNSString:(void *)arg1 mappedSize:(unsigned long long)arg2 remoteAddress:(unsigned long long)arg3 printDetail:(BOOL)arg4;
 - (id)labelForNSString:(void *)arg1 length:(unsigned long long)arg2 remoteAddress:(unsigned long long)arg3;
 - (id)uniquifyStringLabel:(id)arg1 stringType:(int)arg2 printDetail:(BOOL)arg3;
+- (BOOL)isTaggedPointer:(void *)arg1;
 - (id)classNameForTaggedPointer:(void *)arg1;
 - (id)labelForTaggedPointer:(void *)arg1;
 - (BOOL)_remoteAddressIsOKtoRead:(unsigned long long)arg1;
@@ -135,6 +140,7 @@
 - (struct _VMURange)vmRegionRangeForAddress:(unsigned long long)arg1;
 - (unsigned long long)translateIsaPointer:(unsigned long long)arg1;
 - (void)setupIsaTranslator;
+- (struct VMUAutoreleasePoolPageLayout *)createAutoreleasePoolPageLayout;
 - (void)findObjCAndSwiftClasses;
 - (void)_findObjCAndSwiftClassesFromClass:(unsigned long long)arg1 recursionDepth:(unsigned int)arg2;
 - (void)findCFTypes;

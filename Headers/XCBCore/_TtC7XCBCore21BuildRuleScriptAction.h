@@ -19,6 +19,7 @@
     MISSING_TYPE *dependencyInfo;
     MISSING_TYPE *runOncePerArchitecture;
     MISSING_TYPE *runDuringInstallAPI;
+    MISSING_TYPE *runDuringInstallHeaders;
 }
 
 @end

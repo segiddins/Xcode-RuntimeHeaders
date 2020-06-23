@@ -14,6 +14,7 @@
 - (id)foldingStrategy;
 - (Class)storyboardCompilerClass;
 - (Class)xibCompilerClass;
+- (BOOL)supportsLayoutGuideStandardSpacingConstraints;
 - (BOOL)allowsEditingWhileCanvasZoomed;
 - (BOOL)allowsZoomingCanvas;
 - (BOOL)usesSceneExitPlaceholder;
@@ -27,6 +28,7 @@
 - (Class)xibAssetProviderClass;
 - (Class)storyboardVerifierClass;
 - (Class)xibVerifierClass;
+- (id)backwardsDeploymentConfiguration;
 - (id)appearances;
 - (id)branchModeLabelSuffixForConfiguration:(id)arg1;
 - (double)defaultEditingZoomFactorForCanvasBackingScaleFactor:(double)arg1;

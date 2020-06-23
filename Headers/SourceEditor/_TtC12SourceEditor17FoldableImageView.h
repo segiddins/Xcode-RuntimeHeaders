@@ -11,8 +11,7 @@
 @interface _TtC12SourceEditor17FoldableImageView : NSView
 {
     MISSING_TYPE *image;
-    MISSING_TYPE *foldedLineRange;
-    MISSING_TYPE *firstLineIdentifier;
+    MISSING_TYPE *lineIdentifier;
     MISSING_TYPE *containerLayer;
     MISSING_TYPE *topFoldLayer;
     MISSING_TYPE *topDarkeningLayer;

@@ -7,6 +7,10 @@
 #import <IDEFoundation/IDELaunchTestSchemeActionResolvedOptions-Protocol.h>
 #import <IDEFoundation/IDETestPlanOptions-Protocol.h>
 
+@class NSNumber;
+
 @protocol IDETestPlanResolvedOptions <IDELaunchTestSchemeActionResolvedOptions, IDETestPlanOptions>
+@property(nonatomic, readonly) NSNumber *maximumTestExecutionTimeAllowance;
+@property(nonatomic, readonly) NSNumber *defaultTestExecutionTimeAllowance;
 @end
 

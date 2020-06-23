@@ -14,20 +14,22 @@
     DVTFilePath *_basePath;
     NSMutableArray *_filePathArrays;
     NSMutableArray *_candidateBlocks;
+    NSMutableArray *_privatePathsIndexSets;
     NSMutableArray *_consumers;
     NSObject<OS_dispatch_queue> *_notificationQueue;
     BOOL _complete;
 }
 
-+ (void)exploreURL:(id)arg1 accumulatedFilePaths:(id)arg2;
++ (void)exploreURL:(id)arg1 accumulatedFilePaths:(id)arg2 accumulatedIsPrivateIndexes:(id)arg3 isPrivate:(BOOL)arg4;
++ (void)accumulateIsPrivateIndexes:(id)arg1 toTrackAccumulatedFilePaths:(id)arg2 isTransitioningToPrivate:(BOOL)arg3 during:(CDUnknownBlockType)arg4;
 + (void)exploreBasePath:(id)arg1 withProgressHandler:(CDUnknownBlockType)arg2;
-+ (void)saveCacheForBasePath:(id)arg1 withFilePaths:(id)arg2 andFileNameCandidateBlocks:(id)arg3;
++ (void)saveCacheForBasePath:(id)arg1 withFilePaths:(id)arg2 fileNameCandidateBlocks:(id)arg3 andPrivateFilePathIndexSets:(id)arg4;
 + (BOOL)loadBasePathFromCache:(id)arg1 withProgressHandler:(CDUnknownBlockType)arg2;
 + (void)collectFilePathsInSearchPath:(id)arg1 withConsumer:(CDUnknownBlockType)arg2;
 + (id)synchronizationQueue;
 + (id)explorationQueue;
 - (void).cxx_destruct;
-- (void)didDiscoverFilePaths:(id)arg1 withCandidates:(id)arg2;
+- (void)didDiscoverFilePaths:(id)arg1 withCandidates:(id)arg2 privateFilePathsIndexSet:(id)arg3;
 - (void)addConsumer:(CDUnknownBlockType)arg1;
 - (void)beginIndexing;
 - (id)initWithFilePath:(id)arg1;

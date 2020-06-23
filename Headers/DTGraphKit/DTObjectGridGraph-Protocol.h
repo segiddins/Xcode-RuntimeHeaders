@@ -13,6 +13,7 @@
 @property(readonly, nonatomic) id <DTObjectGridReference> selectedReference;
 @property(readonly, nonatomic) id <DTObjectGridNode> selectedNode;
 @property(retain) NSColor *canvasBackgroundColor;
+@property(nonatomic) long long layoutMode;
 @property(copy, nonatomic) NSArray *onScreenNodeIdentifiers;
 @property(nonatomic) struct CGPoint cameraPosition;
 @property(readonly, nonatomic) unsigned int pivotNodeIdentifier;

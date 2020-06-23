@@ -10,6 +10,7 @@
 {
 }
 
++ (Class)assetSetClass;
 - (id)requiredPointSize;
 - (double)scaleMultiple;
 - (id)requiredPixelSize;

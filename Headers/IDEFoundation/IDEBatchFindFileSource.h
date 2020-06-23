@@ -16,11 +16,11 @@
 + (id)decodeFromPropertyListRepresentation:(id)arg1;
 + (id)propertyListIdentifier;
 + (id)plistDecoder;
-- (void)accessContentGroupsWithWorkspace:(id)arg1 priority:(long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)accessContentWithWorkspace:(id)arg1 priority:(long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)accumulateContributingSources:(id)arg1;
 - (void)accessOrderedContentGroupsForSources:(id)arg1 withWorkspace:(id)arg2 priority:(long long)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)accessTextFragmentIndexContentSnapshotsWithWorkspace:(id)arg1 priority:(long long)arg2 filter:(CDUnknownBlockType)arg3 andCompletionHandler:(CDUnknownBlockType)arg4;
-- (id)buildTextIndexSnapshotsByUniquingAndApplyingFilter:(CDUnknownBlockType)arg1 toContentGroups:(id)arg2 representingTextIndexes:(id)arg3;
+- (id)buildTextIndexSnapshotsByUniquingAndApplyingFilter:(CDUnknownBlockType)arg1 toFilePathTables:(id)arg2 withSuffixTrees:(id)arg3 representingTextIndexes:(id)arg4;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned long long)hash;

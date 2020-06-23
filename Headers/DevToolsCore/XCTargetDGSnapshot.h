@@ -139,6 +139,7 @@
 - (id)init;
 - (id)initWithInformationFromTarget:(id)arg1 withBuildParameters:(id)arg2;
 - (id)predominantSourceCodeLanguage;
+- (void)analyzeMacroExpansionScope:(id)arg1 depGraphContext:(id)arg2;
 - (id)scopeByPreparingForDependencyGraphCreationWithScope:(id)arg1;
 - (void)computeDependenciesWithMacroExpansionScope:(id)arg1;
 

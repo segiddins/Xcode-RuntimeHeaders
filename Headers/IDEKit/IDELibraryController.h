@@ -26,7 +26,7 @@
 @property(readonly) IDEWorkspace *workspace;
 - (void)activeEditorDidChange:(id)arg1;
 - (void)primitiveInvalidate;
-- (id)initWithWorkspaceDocument:(id)arg1;
+- (id)initWithWorkspaceDocument:(id)arg1 andLibrary:(id)arg2;
 
 @end
 

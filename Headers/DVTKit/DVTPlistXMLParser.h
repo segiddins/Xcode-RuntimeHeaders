@@ -8,7 +8,7 @@
 
 #import <DVTKit/NSXMLParserDelegate-Protocol.h>
 
-@class DVTPlistNode, NSString, NSXMLParser;
+@class DVTPlistNode, NSError, NSString, NSXMLParser;
 
 @interface DVTPlistXMLParser : NSObject <NSXMLParserDelegate>
 {
@@ -18,7 +18,7 @@
     NSString *currentString;
     NSXMLParser *parser;
     BOOL interestedInCharacters;
-    NSString *_errorFoundByDelegate;
+    NSError *_error;
 }
 
 - (void).cxx_destruct;
@@ -26,7 +26,6 @@
 - (void)parser:(id)arg1 didEndElement:(id)arg2 namespaceURI:(id)arg3 qualifiedName:(id)arg4;
 - (void)parser:(id)arg1 didStartElement:(id)arg2 namespaceURI:(id)arg3 qualifiedName:(id)arg4 attributes:(id)arg5;
 - (void)addToParent:(id)arg1;
-- (id)errorFoundByDelegate;
 - (void)parser:(id)arg1 parseErrorOccurred:(id)arg2;
 - (void)parseError:(id)arg1;
 - (id)error;

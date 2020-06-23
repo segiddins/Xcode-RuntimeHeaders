@@ -13,12 +13,15 @@
     DVTDelayedInvocation *_synchronizeInvocation;
 }
 
++ (id)createSplitViewItemWithBehavior:(long long)arg1 childViewController:(id)arg2;
++ (id)_placeholderSplitViewItemsWithViewType:(long long)arg1 fromModelController:(id)arg2;
++ (void)populateDisplaySplitViewController:(id)arg1 withViewType:(long long)arg2 fromModelController:(id)arg3;
++ (void)populateDisplaySplitView:(id)arg1 withViewType:(long long)arg2 fromModelController:(id)arg3;
 - (void).cxx_destruct;
 - (void)willClose;
 - (void)childViewControllerChanged:(id)arg1 keyPath:(id)arg2 previousValue:(id)arg3;
 - (void)noteDescendant:(id)arg1 didChangeProperty:(id)arg2 fromValue:(id)arg3;
 - (void)_rebuildItems;
-- (void)_rebuildView;
 - (void)synchronizeWithEditedViewController;
 - (id)modelSplitView;
 - (id)editorSplitView;

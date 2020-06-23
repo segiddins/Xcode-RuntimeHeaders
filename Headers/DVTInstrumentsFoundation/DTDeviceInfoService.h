@@ -8,21 +8,22 @@
 
 #import <DVTInstrumentsFoundation/DTDeviceInfoServiceAuthorizedAPI-Protocol.h>
 
-@class NSString;
+@class NSMutableDictionary, NSObject, NSString;
+@protocol OS_dispatch_queue;
 
 @interface DTDeviceInfoService : DTXService <DTDeviceInfoServiceAuthorizedAPI>
 {
-    struct __CFDictionary *_trackingSymbolicatorsByPid;
+    NSMutableDictionary *_peerTrackingSelectorsByPid;
+    NSObject<OS_dispatch_queue> *_trackingSymbolicatorQueue;
+    struct TFPPidWatcher _dtsecurityPidWatcher;
+    BOOL _expiredPidTrackingEnabled;
     struct kpep_db *_kpepDB;
 }
 
 + (BOOL)isApplication:(id)arg1;
 + (void)registerCapabilities:(id)arg1;
+- (void).cxx_destruct;
 - (id)networkInformation;
-- (id)netstatRouteAttributes;
-- (id)netstatUDPAttributes;
-- (id)netstatTCPAttributes;
-- (id)netstatCountsAttributes;
 - (id)sysmonCoalitionAttributes;
 - (id)sysmonSystemAttributes;
 - (id)sysmonProcessAttributes;
@@ -43,6 +44,7 @@
 - (id)iconDescriptionFileForAppPath:(id)arg1;
 - (id)directoryListingForPath:(id)arg1;
 - (id)symbolicatorSignaturesForExpiredPids;
+- (void)enableExpiredPidTracking:(id)arg1;
 - (void)unregisterSignatureTrackingForPid:(id)arg1;
 - (id)symbolicatorSignatureForPid:(id)arg1 trackingSelector:(id)arg2;
 - (id)machKernelName;
@@ -53,7 +55,6 @@
 - (id)runningProcesses;
 - (id)machTimeInfo;
 - (void)messageReceived:(id)arg1;
-- (void)dealloc;
 - (id)initWithChannel:(id)arg1;
 
 // Remaining properties

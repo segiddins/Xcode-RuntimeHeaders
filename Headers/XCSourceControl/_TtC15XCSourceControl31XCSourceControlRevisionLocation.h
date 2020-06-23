@@ -31,6 +31,7 @@
 @property(nonatomic, readonly) XCSourceControlHostRepository *repository; // @synthesize repository;
 @property(nonatomic, readonly) XCSourceControlHostRevision *revision; // @synthesize revision;
 @property(nonatomic, readonly) NSString *identifier;
+@property(nonatomic, readonly) BOOL valid;
 
 @end
 

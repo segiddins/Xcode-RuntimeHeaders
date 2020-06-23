@@ -17,7 +17,7 @@
 + (id)propertyListIdentifier;
 - (void).cxx_destruct;
 @property(readonly) NSString *SDKIdentifier; // @synthesize SDKIdentifier=_SDKIdentifier;
-- (void)accessContentGroupsWithWorkspace:(id)arg1 priority:(long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)accessContentWithWorkspace:(id)arg1 priority:(long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)accumulateContributingSources:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqualToFileSourceWithIdenticalClass:(id)arg1;

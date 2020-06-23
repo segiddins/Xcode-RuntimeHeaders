@@ -108,6 +108,7 @@
 - (void)ibPrepareCocoaDocumentForCompiling:(id)arg1 withContext:(id)arg2;
 - (id)ibArchivedSubviewsWithConfigurationPropertyStorage:(id)arg1;
 @property BOOL ibExternalDetachesHiddenViews;
+- (void)updateSubviewCandidatesFrom:(long long)arg1 to:(long long)arg2;
 - (void)setIbInspectedDistribution:(long long)arg1;
 - (long long)ibInspectedDistribution;
 - (void)_updateEffectiveStackingDistribution;

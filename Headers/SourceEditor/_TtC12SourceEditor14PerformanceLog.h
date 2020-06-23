@@ -15,5 +15,7 @@
     MISSING_TYPE *completedSessions;
 }
 
+- (void)flushPerformanceLogsNotification:(id)arg1;
+
 @end
 

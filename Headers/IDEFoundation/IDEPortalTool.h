@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class DVTKeychain, DVTPortalTeam, DVTServicesAccountBasedSession, NSArray, NSError, NSFileHandle, NSString;
+@class DVTKeychain, DVTPortalTeam, DVTServicesAccountBasedSession, DVTSigningCertificateSerialNumber, NSArray, NSError, NSFileHandle, NSString;
 
 @interface IDEPortalTool : NSObject
 {
@@ -32,7 +32,7 @@
     NSArray *_inputContainerIdentifiers;
     NSString *_inputMachineName;
     NSString *_inputMachineID;
-    NSString *_inputSerialNumber;
+    DVTSigningCertificateSerialNumber *_inputSerialNumber;
     long long _command;
     DVTServicesAccountBasedSession *_session;
     DVTPortalTeam *_team;
@@ -46,7 +46,7 @@
 @property(retain, nonatomic) DVTPortalTeam *team; // @synthesize team=_team;
 @property(retain, nonatomic) DVTServicesAccountBasedSession *session; // @synthesize session=_session;
 @property(nonatomic) long long command; // @synthesize command=_command;
-@property(retain, nonatomic) NSString *inputSerialNumber; // @synthesize inputSerialNumber=_inputSerialNumber;
+@property(retain, nonatomic) DVTSigningCertificateSerialNumber *inputSerialNumber; // @synthesize inputSerialNumber=_inputSerialNumber;
 @property(retain, nonatomic) NSString *inputMachineID; // @synthesize inputMachineID=_inputMachineID;
 @property(retain, nonatomic) NSString *inputMachineName; // @synthesize inputMachineName=_inputMachineName;
 @property(retain, nonatomic) NSArray *inputContainerIdentifiers; // @synthesize inputContainerIdentifiers=_inputContainerIdentifiers;

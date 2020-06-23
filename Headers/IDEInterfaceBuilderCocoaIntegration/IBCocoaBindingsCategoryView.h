@@ -17,6 +17,7 @@
 - (void).cxx_destruct;
 @property(retain) NSTextField *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(copy, nonatomic) NSString *stringValue; // @synthesize stringValue=_stringValue;
+- (BOOL)useLargeLayoutMetrics;
 - (void)layoutBottomUp;
 - (void)layoutTopDown;
 - (void)updateTitleLabel;

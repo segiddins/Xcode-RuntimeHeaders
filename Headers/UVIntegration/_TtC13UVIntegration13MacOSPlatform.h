@@ -6,8 +6,11 @@
 
 #import <swiftCore/_TtCs12_SwiftObject.h>
 
+@class MISSING_TYPE;
+
 @interface _TtC13UVIntegration13MacOSPlatform : _TtCs12_SwiftObject
 {
+    MISSING_TYPE *rawPlatform;
 }
 
 @end

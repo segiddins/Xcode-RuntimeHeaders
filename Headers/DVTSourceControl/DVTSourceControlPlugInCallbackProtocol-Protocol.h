@@ -6,9 +6,10 @@
 
 #import <DVTSourceControl/NSObject-Protocol.h>
 
-@class NSArray, NSDictionary, NSUUID;
+@class DVTSourceControlAuthenticationStrategy, DVTSourceControlRemoteRepository, NSArray, NSDictionary, NSUUID;
 
 @protocol DVTSourceControlPlugInCallbackProtocol <NSObject>
+- (void)setAuthenticationStrategy:(DVTSourceControlAuthenticationStrategy *)arg1 repository:(DVTSourceControlRemoteRepository *)arg2;
 - (void)incrementalLogStatus:(NSArray *)arg1 info:(NSDictionary *)arg2 progressIdentifier:(NSUUID *)arg3;
 - (void)progressStatus:(long long)arg1 info:(NSDictionary *)arg2 progressIdentifier:(NSUUID *)arg3;
 @end

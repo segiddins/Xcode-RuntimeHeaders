@@ -6,18 +6,24 @@
 
 #import <AppKit/NSTableCellView.h>
 
-@class MISSING_TYPE, NSTextField;
+@class MISSING_TYPE, NSButton, NSTextField;
 
 @interface _TtC18IDESourceControlUI36PullRequestParticipantsTableCellView : NSTableCellView
 {
     MISSING_TYPE *subtitle;
-    MISSING_TYPE *isAuthor;
+    MISSING_TYPE *deleteButton;
+    MISSING_TYPE *pullRequest;
+    MISSING_TYPE *annotatedAvatar;
+    MISSING_TYPE *fetchedAvatar;
 }
 
 - (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
+@property(nonatomic) long long backgroundStyle;
 @property(nonatomic, copy) id objectValue;
+- (void)awakeFromNib;
+@property(nonatomic) __weak NSButton *deleteButton; // @synthesize deleteButton;
 @property(nonatomic, retain) NSTextField *subtitle; // @synthesize subtitle;
 
 @end

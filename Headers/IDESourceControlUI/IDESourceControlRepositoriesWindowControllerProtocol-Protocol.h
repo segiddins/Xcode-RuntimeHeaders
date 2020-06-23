@@ -4,13 +4,11 @@
 //  Copyright (C) 1997-2019 Steve Nygard.
 //
 
-#import <IDESourceControlUI/NSObject-Protocol.h>
+#import <IDESourceControlUI/IDESourceControlWindowControllerProtocol-Protocol.h>
 
 @class NSURL;
 
-@protocol IDESourceControlRepositoriesWindowControllerProtocol <NSObject>
+@protocol IDESourceControlRepositoriesWindowControllerProtocol <IDESourceControlWindowControllerProtocol>
 - (void)cloneFrom:(NSURL *)arg1;
-- (void)showWindow:(id)arg1;
-@property(nonatomic, copy) CDUnknownBlockType willCloseCallback;
 @end
 

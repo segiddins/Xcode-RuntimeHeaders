@@ -13,7 +13,6 @@
     MISSING_TYPE *reference;
     MISSING_TYPE *kind;
     MISSING_TYPE *source;
-    MISSING_TYPE *locale;
     MISSING_TYPE *title;
 }
 

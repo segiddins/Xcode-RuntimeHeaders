@@ -6,19 +6,31 @@
 
 #import <AppKit/NSButton.h>
 
+#import <DVTUserInterfaceKit/DVTActiveStateAware-Protocol.h>
+
+@class DVTActiveStateAwareToken;
 @protocol DVTScopeBarButtonDelegate;
 
-@interface DVTScopeBarButton : NSButton
+@interface DVTScopeBarButton : NSButton <DVTActiveStateAware>
 {
+    DVTActiveStateAwareToken *_activeStateAwareToken;
+    BOOL _inActiveContext;
+    BOOL _toggles;
     id <DVTScopeBarButtonDelegate> _delegate;
     double _extraHorizontalPadding;
+    unsigned long long _style;
 }
 
 + (Class)cellClass;
 - (void).cxx_destruct;
+@property BOOL toggles; // @synthesize toggles=_toggles;
+@property(nonatomic) unsigned long long style; // @synthesize style=_style;
 @property(nonatomic) double extraHorizontalPadding; // @synthesize extraHorizontalPadding=_extraHorizontalPadding;
 @property(nonatomic) __weak id <DVTScopeBarButtonDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic, getter=isInActiveContext) BOOL inActiveContext; // @synthesize inActiveContext=_inActiveContext;
 - (void)layout;
+- (void)viewDidMoveToWindow;
+- (void)sizeToFit;
 - (struct CGSize)intrinsicContentSize;
 - (struct NSEdgeInsets)alignmentRectInsets;
 - (void)_dvt_scopeBarButtonCommonInit;

@@ -22,6 +22,7 @@
     IBICFileType *_jpegFileType;
     IBICFileType *_pdfFileType;
     IBICFileType *_gifFileType;
+    IBICFileType *_svgFileType;
     IBICFileType *_avicFileType;
     IBICFileType *_heicFileType;
     IBICFileType *_heifFileType;
@@ -30,7 +31,6 @@
     NSSet *_allAlphaEnabledBitmapFileTypes;
     NSSet *_allVectorFileTypes;
     NSSet *_allVectorAndBitmapFileTypes;
-    NSSet *_allVectorAndAlphaEnabledBitmapFileTypes;
     NSSet *_arkit3DFileTypes;
     NSArray *_modelFileTypes;
     IBICWidthClass *_anyWidthClass;

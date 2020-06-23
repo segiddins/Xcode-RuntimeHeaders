@@ -14,11 +14,15 @@
 {
     MISSING_TYPE *listenerDelegate;
     MISSING_TYPE *workQueue;
+    MISSING_TYPE *logNetworkRequests;
 }
 
 - (void).cxx_destruct;
 - (id)init;
+- (void)logNetworkRequest:(id)arg1;
+- (void)paginate:(id)arg1 repositoryBranches:(id)arg2;
 - (void)paginateRepositories:(id)arg1 participant:(id)arg2 repositories:(id)arg3;
+- (void)setNetworkActivityLoggingEnabled:(BOOL)arg1;
 - (void)searchCodeRepositories:(id)arg1 account:(id)arg2 type:(unsigned long long)arg3 query:(id)arg4 path:(id)arg5 filename:(id)arg6 fileExtension:(id)arg7 reply:(CDUnknownBlockType)arg8;
 - (id)initWithListenerDelegate:(id)arg1;
 

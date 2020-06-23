@@ -11,6 +11,7 @@
 @interface _TtC7XCBUtil14MsgPackEncoder : _TtCs12_SwiftObject
 {
     MISSING_TYPE *bytes;
+    MISSING_TYPE *enableIntegrityChecks;
     MISSING_TYPE *_expectedElementCount;
     MISSING_TYPE *_actualElementCount;
 }

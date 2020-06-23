@@ -19,6 +19,7 @@ __attribute__((visibility("hidden")))
 
 - (void).cxx_destruct;
 @property(readonly, nonatomic) SKNode *issueBtn; // @synthesize issueBtn=_issueBtn;
+- (void)removeIssueBadge;
 - (unsigned long long)numberOfLines;
 - (void)highlight:(BOOL)arg1;
 - (void)addBadgeLine:(id)arg1;

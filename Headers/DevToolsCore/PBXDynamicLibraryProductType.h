@@ -14,6 +14,7 @@
 - (void)generateInstallAPIForLinkedProductWithMacroExpansionScope:(id)arg1;
 - (void)addBaseLinkerFlagsWithMacroExpansionScope:(id)arg1;
 - (id)linkerSpecificationForObjectFilesWithMacroExpansionScope:(id)arg1;
+- (BOOL)supportsDefinesModule;
 
 @end
 

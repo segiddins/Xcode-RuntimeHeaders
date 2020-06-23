@@ -14,6 +14,8 @@
     MISSING_TYPE *operationCreationBlock;
 }
 
++ (BOOL)isOneshot;
++ (void)invalidateProxyObject:(id)arg1;
 - (void).cxx_destruct;
 - (id)init;
 - (BOOL)setupConnection;

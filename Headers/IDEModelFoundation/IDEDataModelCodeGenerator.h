@@ -16,6 +16,7 @@
 
 + (void)initialize;
 - (void).cxx_destruct;
+- (Class)toolClassForCommandLineEquivalent;
 - (void)generateCodeForInputFile:(id)arg1 outputFilePath:(id)arg2 completionQueue:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (id)generatedFilePathsForInputFilePath:(id)arg1 outputFilePath:(id)arg2 error:(id *)arg3;
 - (BOOL)_loadModelFromInputFilePath:(id)arg1 error:(id *)arg2;

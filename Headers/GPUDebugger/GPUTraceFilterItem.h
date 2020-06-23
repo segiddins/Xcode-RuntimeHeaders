@@ -26,8 +26,6 @@
 - (BOOL)localizedCaseInsensitiveContainsFilterString:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, nonatomic) NSArray *filterStrings; // @synthesize filterStrings=_filterStrings;
-- (id)initWithFilterText:(id)arg1 andType:(int)arg2 andSource:(int)arg3;
-- (id)initWithFilterText:(id)arg1 andType:(int)arg2;
 - (id)initWithCombinedFilterStrings:(id)arg1 andType:(int)arg2 andSource:(int)arg3;
 - (id)initWithFilterStrings:(id)arg1 andType:(int)arg2 andSource:(int)arg3;
 - (id)initWithFilterStrings:(id)arg1 andType:(int)arg2;

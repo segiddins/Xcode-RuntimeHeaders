@@ -13,6 +13,7 @@
 @interface IDEArchive (ProductsUI) <IDEProductsInspectable>
 + (id)keyPathsForValuesAffectingArchiveDeveloperIDStatus;
 + (id)keyPathsForValuesAffectingArchiveDetails;
++ (id)reformatterArchiveDetails:(id)arg1;
 + (id)grayAttributedString:(id)arg1;
 - (id)archiveDeveloperIDStatus;
 - (id)archiveDetails;
@@ -24,9 +25,11 @@
 - (id)inspectableSubtitle;
 - (id)productsUI_toolchainDisplayName;
 - (BOOL)wantsToolChainDisplayed;
+- (id)productsUI_displayableArchitectures;
 - (id)productsUI_displayableTeam;
 - (id)productsUI_creationDate;
 - (id)productsUI_archiveImage;
+- (id)productsUI_statusString;
 - (id)productsUI_version;
 - (id)productsUI_userRepresentationOfVersion;
 - (BOOL)isKnownError:(id)arg1;

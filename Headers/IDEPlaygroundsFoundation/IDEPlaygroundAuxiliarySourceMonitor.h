@@ -33,7 +33,7 @@
 @property(copy, nonatomic) NSSet *sourcesDirectorySwiftFiles; // @synthesize sourcesDirectorySwiftFiles=_sourcesDirectorySwiftFiles;
 @property(retain, nonatomic) NSDate *lastModificationDate; // @synthesize lastModificationDate=_lastModificationDate;
 @property(readonly) __weak IDEPlaygroundAuxiliarySourceMonitor *dependency; // @synthesize dependency=_dependency;
-@property(readonly, nonatomic) IDEPlaygroundCommonSharedContext *context; // @synthesize context=_context;
+@property(readonly, nonatomic) __weak IDEPlaygroundCommonSharedContext *context; // @synthesize context=_context;
 - (id)_hashesForSwiftFiles:(id)arg1;
 - (void)sourceDirectorySwiftFilesUpdated;
 - (void)primitiveInvalidate;

@@ -9,22 +9,20 @@
 #import <GPUDebugger/IDEIssueRuntimeGroupingObject-Protocol.h>
 #import <GPUDebugger/IDEKeyDrivenNavigableItemRepresentedObject-Protocol.h>
 
-@class DVTDocumentLocation, DVTFileDataType, DVTSymbol, IDEDebugSession, IDEFileReference, NSArray, NSImage, NSMutableDictionary, NSNull, NSString, NSURL;
+@class DVTDocumentLocation, DVTFileDataType, IDEDebugSession, IDEFileReference, NSArray, NSImage, NSMutableDictionary, NSNull, NSString, NSURL, _TtC13DVTFoundation9DVTSymbol;
 
 __attribute__((visibility("hidden")))
 @interface GPUIssueRuntimeGroupingObject : NSObject <IDEIssueRuntimeGroupingObject, IDEKeyDrivenNavigableItemRepresentedObject>
 {
     NSString *_name;
     IDEDebugSession *_debugSession;
-    id _issueTypeIdentifier;
-    NSArray *_subgroupTypeIdentifiers;
+    NSMutableDictionary *_typeIdentifierToSubgroupTypeIdenfiers;
     NSImage *_image;
 }
 
 - (void).cxx_destruct;
 @property(retain) NSImage *image; // @synthesize image=_image;
-@property(copy) NSArray *subgroupTypeIdentifiers; // @synthesize subgroupTypeIdentifiers=_subgroupTypeIdentifiers;
-@property(copy) id issueTypeIdentifier; // @synthesize issueTypeIdentifier=_issueTypeIdentifier;
+@property(copy) NSMutableDictionary *typeIdentifierToSubgroupTypeIdenfiers; // @synthesize typeIdentifierToSubgroupTypeIdenfiers=_typeIdentifierToSubgroupTypeIdenfiers;
 @property(readonly) IDEDebugSession *debugSession; // @synthesize debugSession=_debugSession;
 @property(copy) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) NSImage *navigableItem_image;
@@ -34,6 +32,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
+@property(copy) id issueTypeIdentifier;
 @property(readonly, nonatomic) NSString *navigableItem_accessibilityIdentifier;
 @property(readonly, nonatomic) NSString *navigableItem_accessibleImageDescription;
 @property(readonly, nonatomic) NSArray *navigableItem_additionalFilterMatchingText;
@@ -50,12 +49,12 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) BOOL navigableItem_missingReferencedContentIsImportant;
 @property(readonly, nonatomic) id navigableItem_parentRepresentedObject;
 @property(readonly, nonatomic) BOOL navigableItem_referencedContentExists;
-@property(readonly, nonatomic) DVTSymbol *navigableItem_representedSymbol;
+@property(readonly, nonatomic) _TtC13DVTFoundation9DVTSymbol *navigableItem_representedSymbol;
 @property(readonly, nonatomic) NSURL *navigableItem_representedURL;
 @property(readonly, nonatomic) NSString *navigableItem_subtitle;
 @property(readonly, nonatomic) NSString *navigableItem_toolTip;
+@property(copy) NSArray *subgroupTypeIdentifiers;
 @property(readonly) Class superclass;
-@property(copy) NSMutableDictionary *typeIdentifierToSubgroupTypeIdenfiers;
 
 @end
 

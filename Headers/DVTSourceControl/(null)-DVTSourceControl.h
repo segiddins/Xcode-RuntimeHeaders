@@ -5,6 +5,7 @@
 //
 
 @interface (null) (DVTSourceControl)
++ (void)adjustExportedInterface:(id)arg1;
 + (void)adjustRemoteObjectInterface:(id)arg1;
 + (id)exportedObjectProtocol;
 + (id)remoteObjectProtocol;

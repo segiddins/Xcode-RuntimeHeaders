@@ -8,5 +8,6 @@
 
 @interface IDEXCBuildConsoleController (IDEXCBuildSupportUI)
 + (id)handlerForAction:(SEL)arg1 withSelectionSource:(id)arg2;
+- (BOOL)validateUserInterfaceItem:(id)arg1;
 @end
 

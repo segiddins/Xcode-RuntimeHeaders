@@ -33,7 +33,7 @@
 - (void)processRequests;
 - (void)_connectToToolProxyWithSupersessionIdentifier:(id)arg1 during:(CDUnknownBlockType)arg2;
 - (void)processResults;
-- (void)waitForRequestWithIDs:(id)arg1 timeout:(id)arg2;
+- (BOOL)waitForRequestWithIDs:(id)arg1 timeout:(id)arg2;
 - (BOOL)waitForRequestWithID:(id)arg1 timeout:(id)arg2;
 - (void)cancelRequestWithID:(id)arg1;
 - (id)issueRequestWithData:(id)arg1 supersessionIdentifier:(id)arg2 diagnosticsBlock:(CDUnknownBlockType)arg3 completionBlock:(CDUnknownBlockType)arg4;

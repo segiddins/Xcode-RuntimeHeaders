@@ -20,6 +20,8 @@
     double _scaleFactor;
     struct CGRect _lastSceneMaskBounds;
     NSString *_lastSceneMaskIdentifier;
+    id _cachedMinimapContent;
+    BOOL _supportsSceneUpdates;
     id <IBSceneUpdateContentViewDelegate> _delegate;
 }
 
@@ -32,7 +34,14 @@
 - (void)configureIncrementalSceneUpdateRequest:(id)arg1;
 - (void)configureFullSceneUpdateRequest:(id)arg1;
 - (id)maskPathByTransformingNormalizedBezierMask:(id)arg1 forBounds:(struct CGRect)arg2;
+- (void)prepareLayer:(id)arg1 backgroundLayer:(id)arg2 lastSceneMaskBounds:(struct CGRect *)arg3 lastMaskIdentifier:(id *)arg4;
+- (void)prepareMinimapBitmapLayer:(id)arg1 backgroundLayer:(id)arg2;
 - (void)updateLayer;
+- (id)ibImageRepresentation;
+- (id)minimapContent;
+- (BOOL)supportsSceneUpdates;
+- (BOOL)minimapContentHasChanged;
+- (void)invalidateMinimapContent;
 - (BOOL)wantsUpdateLayer;
 - (BOOL)wantsToDrawMask;
 - (Class)renderingProcessingRequestClass;

@@ -8,5 +8,6 @@
 
 @interface NSString (DVTXMLArchiving)
 - (void)dvt_encodeAttributesWithXMLArchiver:(id)arg1 version:(id)arg2;
+- (id)ide_trailingPathComponentsMatchingPathComponents:(id)arg1;
 @end
 

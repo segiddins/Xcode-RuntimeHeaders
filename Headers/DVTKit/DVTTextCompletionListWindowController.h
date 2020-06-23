@@ -6,97 +6,90 @@
 
 #import "DVTDealloc2Main_WindowController.h"
 
-#import <DVTKit/DVTInvalidation-Protocol.h>
-#import <DVTKit/DVTTextCompletionTableViewScrollEventDelegate-Protocol.h>
 #import <DVTKit/NSAnimationDelegate-Protocol.h>
 #import <DVTKit/NSTableViewDataSource-Protocol.h>
 #import <DVTKit/NSTableViewDelegate-Protocol.h>
 #import <DVTKit/NSWindowDelegate-Protocol.h>
 
-@class DVTBorderedView, DVTDelayedInvocation, DVTObservingToken, DVTScaleInWindowAnimator, DVTStackBacktrace, DVTTextCompletionTableView, DVTViewController, NSScrollView, NSString, NSTableColumn, NSTextField, NSViewAnimation;
-@protocol DVTInvalidation, DVTTextCompletionListDataSource;
+@class DVTBindingToken, DVTDelayedInvocation, DVTNotificationToken, DVTTextCompletionItemTableCellView, DVTTextCompletionSession, DVTTextCompletionWindow, DVTViewController, NSMapTable, NSNumber, NSScrollView, NSString, NSTableView, NSView, NSViewAnimation, _TtC6DVTKit25DVTTextCompletionListView;
+@protocol DVTInvalidation, DVTTextCompletionItem, DVTTextCompletionListDataSource;
 
-@interface DVTTextCompletionListWindowController : DVTDealloc2Main_WindowController <DVTTextCompletionTableViewScrollEventDelegate, DVTInvalidation, NSAnimationDelegate, NSTableViewDataSource, NSTableViewDelegate, NSWindowDelegate>
+@interface DVTTextCompletionListWindowController : DVTDealloc2Main_WindowController <NSAnimationDelegate, NSTableViewDataSource, NSTableViewDelegate, NSWindowDelegate>
 {
-    NSTextField *_messagesField;
-    DVTTextCompletionTableView *_completionsTableView;
-    NSTableColumn *_leftPaddingColumn;
-    NSTableColumn *_iconColumn;
-    NSTableColumn *_typeColumn;
-    NSTableColumn *_typeTitlePaddingColumn;
-    NSTableColumn *_titleColumn;
-    NSScrollView *_completionsScrollView;
-    DVTBorderedView *_quickHelpView;
-    DVTBorderedView *_divider;
-    id <DVTTextCompletionListDataSource> _dataSource;
-    struct CGRect _referenceFrameInView;
-    DVTScaleInWindowAnimator *_fadeInAnimator;
+    struct CGRect _wordRectInScreen;
     NSViewAnimation *_fadeOutAnimation;
-    DVTObservingToken *_sessionCompletionsObserver;
-    DVTObservingToken *_sessionSelectionObserver;
-    int _hideReason;
+    DVTNotificationToken *_arrangedCompletionItemsObservation;
+    NSMapTable *_compoundFormatContextForItem;
     BOOL _showingWindow;
-    BOOL _shouldIgnoreSelectionChange;
-    BOOL _quickHelpOnTop;
-    DVTDelayedInvocation *_delayedQuickHelpClearing;
-    BOOL _tableViewHasScrolled;
-    BOOL _userResizedWindow;
+    DVTDelayedInvocation *_delayedQuickHelpPlaceholderClearing;
+    DVTDelayedInvocation *_delayedUpdateInfoNewSelection;
+    long long _usageGeneration;
+    DVTBindingToken *_tableContentBinding;
+    DVTBindingToken *_tableSelectionBinding;
+    _TtC6DVTKit25DVTTextCompletionListView *_listView;
+    NSTableView *_completionsTableView;
+    DVTTextCompletionItemTableCellView *_measurementCellView;
+    NSNumber *_lastObservedCompletionListGeneration;
+    BOOL _preparingForUse;
+    id <DVTTextCompletionListDataSource> _dataSource;
+    NSView *_infoPlaceholder;
+    id <DVTTextCompletionItem> _previousQuickHelpTarget;
+    int _hideReason;
+    NSScrollView *_completionsScrollView;
     DVTViewController<DVTInvalidation> *_infoContentViewController;
     NSString *_debugStateString;
 }
 
-+ (void)initialize;
++ (long long)maximumVisibleRows;
++ (double)windowCornerRadius;
++ (void)relenquishWindowControllerForReuse:(id)arg1;
++ (id)dequeReusableWindowForDataSource:(id)arg1;
 - (void).cxx_destruct;
-@property BOOL userResizedWindow; // @synthesize userResizedWindow=_userResizedWindow;
-@property BOOL tableViewHasScrolled; // @synthesize tableViewHasScrolled=_tableViewHasScrolled;
 @property(readonly) NSString *debugStateString; // @synthesize debugStateString=_debugStateString;
-@property(readonly) DVTViewController<DVTInvalidation> *infoContentViewController; // @synthesize infoContentViewController=_infoContentViewController;
-@property(nonatomic) int hideReason; // @synthesize hideReason=_hideReason;
-@property(readonly) id <DVTTextCompletionListDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(readonly) BOOL showingWindow; // @synthesize showingWindow=_showingWindow;
+@property(nonatomic) int hideReason; // @synthesize hideReason=_hideReason;
+@property(readonly) DVTViewController<DVTInvalidation> *infoContentViewController; // @synthesize infoContentViewController=_infoContentViewController;
 @property(readonly) NSScrollView *completionsScrollView; // @synthesize completionsScrollView=_completionsScrollView;
 - (id)tableView:(id)arg1 toolTipForCell:(id)arg2 rect:(struct CGRect *)arg3 tableColumn:(id)arg4 row:(long long)arg5 mouseLocation:(struct CGPoint)arg6;
-- (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forTableColumn:(id)arg3 row:(long long)arg4;
 - (void)tableViewSelectionDidChange:(id)arg1;
-- (id)tableView:(id)arg1 objectValueForTableColumn:(id)arg2 row:(long long)arg3;
-- (long long)numberOfRowsInTableView:(id)arg1;
-- (void)windowDidEndLiveResize:(id)arg1;
-- (void)_updateInfoNewSelection;
+- (id)tableView:(id)arg1 viewForTableColumn:(id)arg2 row:(long long)arg3;
 - (BOOL)showInfoForSelectedCompletionItem;
-- (id)_selectedCompletionItem;
-- (void)_updateInfoPaneForCompletionItem:(id)arg1 andViewController:(id)arg2;
+- (void)_removeQuickHelpViewAndPlaceholder;
+- (void)_replaceQuickHelpViewWithPlaceholderIfNeeded;
 - (void)_removeQuickHelpView;
-- (void)showInfoPaneForCompletionItem:(id)arg1;
+- (void)storeInfoContentViewController:(id)arg1 generatedFromCompletionItem:(id)arg2;
 - (void)close;
-- (struct CGRect)_preferredWindowFrameForTextFrame:(struct CGRect)arg1 columnsWidth:(double *)arg2 titleColumnX:(double)arg3 minWindowSize:(struct CGSize *)arg4 maxWindowSize:(struct CGSize *)arg5;
-- (void)_getTitleColumnWidth:(double *)arg1 typeColumnWidth:(double *)arg2;
-- (void)_updateSelectedRow;
+- (id)longestCompletionItemInRange:(struct _NSRange)arg1 lengthCalculator:(CDUnknownBlockType)arg2;
+- (struct _NSRange)candidateRangeForInitialWindowSize;
+- (id)longestInitialSignatureItem;
+- (id)longestInitialTableViewItem;
 - (void)_updateCurrentDisplayState;
-- (void)_updatePositionOfMessageLabelUsingWindowFrame:(struct CGRect)arg1;
-- (double)_preferredHeightForMessageLabel;
-- (void)_updateCurrentDisplayStateForQuickHelp;
-- (void)selectedCompletionIndexChanged;
+- (BOOL)_signatureInfluencesWidth;
+- (id)signatureValueForItem:(id)arg1;
+- (id)signatureAttributedStringValueForCompletionItem:(id)arg1;
+- (id)signatureStringValueForCompletionItem:(id)arg1;
+- (id)completionItemToMeasureBasedOn:(id)arg1;
+@property(retain) DVTTextCompletionWindow *window; // @dynamic window;
 - (void)completionListChanged;
+- (id)formatContextForCompletionItem:(id)arg1;
 - (void)_doubleClickOnRow:(id)arg1;
 - (void)animationDidEnd:(id)arg1;
 - (void)animationDidStop:(id)arg1;
 - (void)hideWindowWithReason:(int)arg1;
 - (void)_hideWindow;
-- (void)showWindowForTextFrame:(struct CGRect)arg1 explicitAnimation:(BOOL)arg2;
-- (void)primitiveInvalidate;
-- (void)completionTableView:(id)arg1 didReceiveScrollWheelEvent:(id)arg2;
-- (void)windowDidLoad;
-- (id)initWithDataSource:(id)arg1;
-- (id)window;
+- (void)showWindowForWordRect:(struct CGRect)arg1 animate:(BOOL)arg2;
+- (void)begingObservingDataSource;
+- (id)_selectedCompletionItem;
+@property(readonly) DVTTextCompletionSession *session;
+- (void)prepareToQueueForFutureReuse;
+- (void)prepareToDequeueForUseWithDataSource:(id)arg1;
+- (void)loadWindow;
 
 // Remaining properties
-@property(retain) DVTStackBacktrace *creationBacktrace;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
-@property(readonly) DVTStackBacktrace *invalidationBacktrace;
 @property(readonly) Class superclass;
-@property(readonly, nonatomic, getter=isValid) BOOL valid;
 
 @end
 

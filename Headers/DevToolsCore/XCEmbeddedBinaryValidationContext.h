@@ -6,23 +6,28 @@
 
 #import <objc/NSObject.h>
 
-@class NSDictionary, NSString, XCEmbeddedBinaryCodeSignatureSource;
+@class MISSING_TYPE, NSDictionary, NSString, _TtC12DevToolsCore35XCEmbeddedBinaryCodeSignatureSource;
 
 @interface XCEmbeddedBinaryValidationContext : NSObject
 {
-    NSString *_signingCertSHA1;
-    NSDictionary *_parentInfoDictionary;
-    NSString *_embeddedBinaryPath;
-    NSDictionary *_embeddedBinaryInfoDictionary;
-    XCEmbeddedBinaryCodeSignatureSource *_signatureSource;
+    MISSING_TYPE *signingCertSHA1;
+    MISSING_TYPE *parentBinaryPath;
+    MISSING_TYPE *parentInfoDictionary;
+    MISSING_TYPE *embeddedBinaryPath;
+    MISSING_TYPE *embeddedBinaryInfoDictionary;
+    MISSING_TYPE *signatureSource;
+    MISSING_TYPE *parentSignatureSource;
 }
 
 - (void).cxx_destruct;
-@property(retain) XCEmbeddedBinaryCodeSignatureSource *signatureSource; // @synthesize signatureSource=_signatureSource;
-@property(retain) NSDictionary *embeddedBinaryInfoDictionary; // @synthesize embeddedBinaryInfoDictionary=_embeddedBinaryInfoDictionary;
-@property(retain) NSString *embeddedBinaryPath; // @synthesize embeddedBinaryPath=_embeddedBinaryPath;
-@property(retain) NSDictionary *parentInfoDictionary; // @synthesize parentInfoDictionary=_parentInfoDictionary;
-@property(retain) NSString *signingCertSHA1; // @synthesize signingCertSHA1=_signingCertSHA1;
+- (id)init;
+@property(nonatomic, retain) _TtC12DevToolsCore35XCEmbeddedBinaryCodeSignatureSource *parentSignatureSource; // @synthesize parentSignatureSource;
+@property(nonatomic, retain) _TtC12DevToolsCore35XCEmbeddedBinaryCodeSignatureSource *signatureSource; // @synthesize signatureSource;
+@property(nonatomic, copy) NSDictionary *embeddedBinaryInfoDictionary;
+@property(nonatomic, copy) NSString *embeddedBinaryPath;
+@property(nonatomic, copy) NSDictionary *parentInfoDictionary;
+@property(nonatomic, copy) NSString *parentBinaryPath;
+@property(nonatomic, copy) NSString *signingCertSHA1;
 
 @end
 

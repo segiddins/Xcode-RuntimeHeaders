@@ -16,6 +16,7 @@
     DVTObservingToken *_nameObservingToken;
     DVTDispatchLock *_instrumentsServerLock;
     DTXConnection *_instrumentsConnection;
+    NSMutableDictionary *_watchDogAssertionMap;
     NSString *_cpuKind;
     unsigned long long _cpuCount;
     unsigned long long _cpuSpeedInMHz;
@@ -25,6 +26,7 @@
     unsigned long long _logicalCPUCoresPerPackage;
 }
 
++ (id)logAspect;
 + (id)provisioningManager;
 + (void)initialize;
 - (void).cxx_destruct;
@@ -35,6 +37,8 @@
 @property unsigned long long cpuSpeedInMHz; // @synthesize cpuSpeedInMHz=_cpuSpeedInMHz;
 @property unsigned long long cpuCount; // @synthesize cpuCount=_cpuCount;
 @property(copy) NSString *cpuKind; // @synthesize cpuKind=_cpuKind;
+- (BOOL)deferProfileGenerationSetupUntilAfterInstallation;
+- (id)createRuntimeProfileDirectoryForApplicationWithBundleIdentifier:(id)arg1 runnableLocation:(id)arg2 error:(id *)arg3;
 - (void)cancelPrimaryInstrumentsServer;
 - (id)primaryInstrumentsServer;
 - (id)listenForInstallOfAppExtensionIdentifiers:(id)arg1 onPairedDevice:(BOOL)arg2;
@@ -43,6 +47,8 @@
 - (void)debugXPCServices:(id)arg1 onPairedDevice:(BOOL)arg2 completionSemaphore:(id)arg3;
 - (void)_enableExtension:(id)arg1;
 - (void)attachToServiceName:(id)arg1 pid:(int)arg2 parentPID:(int)arg3 stdoutFH:(id)arg4 stderrFH:(id)arg5;
+- (void)_removeWatchDogForPid:(int)arg1;
+- (void)_addWatchDogForPid:(int)arg1;
 - (id)_xpcDebugConnectionForPid:(id)arg1 create:(BOOL)arg2 needsRoot:(BOOL)arg3;
 - (id)_keyForPid:(int)arg1;
 - (BOOL)supportsLocationSimulation;

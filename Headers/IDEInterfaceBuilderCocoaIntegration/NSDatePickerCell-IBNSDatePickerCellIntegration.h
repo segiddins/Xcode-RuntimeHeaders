@@ -15,6 +15,7 @@
 + (id)keyPathsForValuesAffectingIbInspectedHasMinDate;
 + (id)keyPathsForValuesAffectingIbInspectedMaxDate;
 + (id)keyPathsForValuesAffectingIbInspectedMinDate;
++ (id)keyPathsForValuesAffectingIbInspectedDateType;
 - (Class)ibPreferredControlClass;
 - (id)ibPreferredSizeForSize:(struct CGSize)arg1 suggestedWidth:(char *)arg2 suggestedHeight:(char *)arg3 scaleAxesIndependently:(char *)arg4;
 - (BOOL)ibTitleEditsSelf;
@@ -33,8 +34,13 @@
 - (id)ibInspectedMaxDate;
 - (void)setIbInspectedMinDate:(id)arg1;
 - (id)ibInspectedMinDate;
+- (void)setIbInspectedDateType:(unsigned long long)arg1;
+- (unsigned long long)ibInspectedDateType;
+@property BOOL ibExternalUseCurrentDate;
 @property(copy) NSDate *ibShadowedMaxDate;
 @property(copy) NSDate *ibShadowedMinDate;
+- (BOOL)ibSupportsUseCurrentDateDuringDecoding;
+- (void)ibDidAddToDocument:(id)arg1 phase:(unsigned long long)arg2;
 - (id)ibLocalAttributeKeyPaths;
 - (void)unarchiveWithDocumentUnarchiver:(id)arg1;
 - (void)archiveWithDocumentArchiver:(id)arg1;

@@ -27,6 +27,9 @@
 - (id)placeholder;
 - (id)windowControllerEditorView;
 - (id)viewEditorFrameController;
+- (id)buildContentViewControllerForWindow;
+- (id)contentTabViewController;
+- (id)contentSplitViewController;
 - (id)editedWindowTemplate;
 - (id)editedNSWindowController;
 

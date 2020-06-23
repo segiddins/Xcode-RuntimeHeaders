@@ -14,6 +14,7 @@
 @property(readonly) BOOL isLocallySymbolicatedCachePath;
 @property(readonly) NSString *longUserDescription;
 @property(readonly) NSString *blameThreadDescription;
+@property(readonly) NSString *codeType;
 @property(readonly) NSString *hardwareModelDescription;
 @property(readonly) NSString *identifier;
 @property(readonly) NSString *osBuild;

@@ -4,7 +4,7 @@
 //  Copyright (C) 1997-2019 Steve Nygard.
 //
 
-#import <DVTKit/DVTLayerHostingView.h>
+#import <DVTUserInterfaceKit/DVTLayerHostingView.h>
 
 #import <IDEKit/DVTInvalidation-Protocol.h>
 #import <IDEKit/DVTWindowActivationStateObserver-Protocol.h>
@@ -15,6 +15,7 @@
 
 @interface IDEActivityView : DVTLayerHostingView <IDEActivityViewDataConsumer, DVTWindowActivationStateObserver, DVTInvalidation>
 {
+    NSView *_backgroundView;
     NSView *_layerView;
     IDEActivityMultiActionIndicatorLayer *_multiActionIndicatorLayer;
     IDEActivityStatusContainerLayer *_issuesContainerLayer;

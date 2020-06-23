@@ -34,6 +34,7 @@
 @property(nonatomic) unsigned long long framesToCapture; // @synthesize framesToCapture=_framesToCapture;
 @property(nonatomic) unsigned long long sessionId; // @synthesize sessionId=_sessionId;
 @property(readonly, nonatomic) unsigned long long api; // @synthesize api=_api;
+- (void)dealloc;
 - (id)initWithAPI:(unsigned long long)arg1;
 
 @end

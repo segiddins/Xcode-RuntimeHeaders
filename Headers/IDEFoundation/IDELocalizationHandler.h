@@ -13,6 +13,8 @@
 
 @interface IDELocalizationHandler : NSObject <DVTInvalidation>
 {
+    BOOL _didCalculateItsRulesPath;
+    DVTFilePath *_itsRulesPath;
     DVTFilePath *_projectDirectoryFilePath;
     IDEWorkspace *_workspace;
     IDEBuildParameters *_buildParameters;
@@ -65,6 +67,8 @@
 @property(retain) IDEContainer<IDELocalizedContainer> *container; // @synthesize container=_container;
 @property(copy) IDEBuildParameters *buildParameters; // @synthesize buildParameters=_buildParameters;
 @property(retain) IDEWorkspace *workspace; // @synthesize workspace=_workspace;
+@property BOOL didCalculateItsRulesPath; // @synthesize didCalculateItsRulesPath=_didCalculateItsRulesPath;
+@property(readonly, copy) DVTFilePath *itsRulesPath; // @synthesize itsRulesPath=_itsRulesPath;
 - (BOOL)hasWorkspaceSupport;
 @property(readonly, copy) NSSet *blueprintProvidersForWorkspace;
 - (void)cleanUpTemporaryFiles;

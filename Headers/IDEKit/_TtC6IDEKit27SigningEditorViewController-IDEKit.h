@@ -6,9 +6,17 @@
 
 #import <IDEKit/_TtC6IDEKit27SigningEditorViewController.h>
 
+#import <IDEKit/IDECapsuleListViewDataSource-Protocol.h>
+#import <IDEKit/IDESigningEditorCapabilityEditingItemChangeExistenceProtocol-Protocol.h>
 #import <IDEKit/IDESigningEditorCapsuleViewStateRestorationRecordProviderDelegate-Protocol.h>
 
-@interface _TtC6IDEKit27SigningEditorViewController (IDEKit) <IDESigningEditorCapsuleViewStateRestorationRecordProviderDelegate>
+@interface _TtC6IDEKit27SigningEditorViewController (IDEKit) <IDESigningEditorCapsuleViewStateRestorationRecordProviderDelegate, IDECapsuleListViewDataSource, IDESigningEditorCapabilityEditingItemChangeExistenceProtocol>
 - (BOOL)isCollapsedSavedStateForRestorationRecord:(id)arg1;
+- (void)capsuleListView:(id)arg1 didCollapseRow:(long long)arg2;
+- (void)capsuleListView:(id)arg1 didExpandRow:(long long)arg2;
+- (BOOL)isCollapsedSavedStateForRow:(long long)arg1;
+- (id)capsuleListView:(id)arg1 viewControllerForRow:(long long)arg2;
+- (long long)numberOfObjectsInCapsuleListView:(id)arg1;
+- (void)addCapabilityItemWithIdentifiers:(id)arg1;
 @end
 

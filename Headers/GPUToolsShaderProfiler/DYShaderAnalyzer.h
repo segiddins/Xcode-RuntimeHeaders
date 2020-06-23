@@ -20,7 +20,9 @@
 - (id)disassembleBinary:(id)arg1;
 - (id)analyzeFragmentBinary:(id)arg1 uscSamples:(id)arg2 targetIndex:(int)arg3;
 - (id)analyzeVertexBinary:(id)arg1 uscSamples:(id)arg2 targetIndex:(int)arg3;
+- (id)analyzedBinary:(id)arg1 processedUscSamples:(id)arg2 targetIndex:(int)arg3 withKey:(id)arg4 withShaderSourcePath:(id)arg5;
 - (id)analyzeBinary:(id)arg1 uscSamples:(id)arg2 targetIndex:(int)arg3 withTextSegment:(id)arg4 withKey:(id)arg5 withShaderSourcePath:(id)arg6 forDataMaster:(unsigned int)arg7 withPerDrawLimiterData:(id)arg8;
+- (void)setupForAnalysis;
 - (id)initWithDelegate:(id)arg1;
 
 @end

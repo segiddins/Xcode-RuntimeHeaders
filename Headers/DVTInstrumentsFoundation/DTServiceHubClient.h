@@ -10,11 +10,13 @@
 {
 }
 
++ (id)localDeviceConnectionWithError:(id *)arg1 returningServerPid:(int *)arg2;
++ (id)localDeviceConnectionWithError:(id *)arg1;
++ (BOOL)blessSimulatorServiceHub:(id)arg1 error:(id *)arg2;
++ (id)serviceHubBinaryPath;
 + (id)localConnectionWithAuthorization:(struct AuthorizationOpaqueRef *)arg1 returningServerPid:(int *)arg2 error:(id *)arg3;
 + (id)localConnectionWithAuthorization:(struct AuthorizationOpaqueRef *)arg1 returningServerPid:(int *)arg2;
 + (id)localConnectionWithAuthorization:(struct AuthorizationOpaqueRef *)arg1;
-+ (BOOL)blessSimulatorServiceHub:(id)arg1 error:(id *)arg2;
-+ (id)getServerBinaryPath;
 
 @end
 

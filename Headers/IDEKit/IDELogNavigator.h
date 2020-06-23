@@ -9,7 +9,7 @@
 #import <IDEKit/DVTOutlineViewDelegate-Protocol.h>
 #import <IDEKit/NSMenuDelegate-Protocol.h>
 
-@class DVTBorderView, DVTObservingToken, DVTScopeBarView, DVTScrollView, IDELogNavigatorRootItem, NSButton, NSDictionary, NSImage, NSLayoutConstraint, NSMutableArray, NSMutableSet, NSPredicate, NSSet, NSString;
+@class DVTObservingToken, DVTScopeBarView, DVTScrollView, IDELogNavigatorRootItem, NSButton, NSDictionary, NSImage, NSLayoutConstraint, NSMutableArray, NSMutableSet, NSPredicate, NSSet, NSString;
 
 @interface IDELogNavigator : IDEOutlineBasedNavigator <NSMenuDelegate, DVTOutlineViewDelegate>
 {
@@ -35,7 +35,6 @@
     NSButton *_byGroupedButton;
     NSButton *_byTimeButton;
     DVTScrollView *_logNavigatorScrollView;
-    DVTBorderView *_dividerView;
     NSLayoutConstraint *_scopeBarViewHeightConstraint;
 }
 
@@ -45,7 +44,6 @@
 + (void)initialize;
 - (void).cxx_destruct;
 @property __weak NSLayoutConstraint *scopeBarViewHeightConstraint; // @synthesize scopeBarViewHeightConstraint=_scopeBarViewHeightConstraint;
-@property __weak DVTBorderView *dividerView; // @synthesize dividerView=_dividerView;
 @property __weak DVTScrollView *logNavigatorScrollView; // @synthesize logNavigatorScrollView=_logNavigatorScrollView;
 @property(nonatomic) BOOL groupByTime; // @synthesize groupByTime=_groupByTime;
 @property(retain, nonatomic) NSButton *byTimeButton; // @synthesize byTimeButton=_byTimeButton;
@@ -84,7 +82,9 @@
 - (void)_updateVisibilityOfStatusViewIfNecessary:(id)arg1 statusView:(id)arg2;
 - (void)outlineViewItemDidCollapse:(id)arg1;
 - (void)outlineViewItemDidExpand:(id)arg1;
-- (BOOL)prefersStrongSelection;
+- (id)itemToSelectFromActiveEditorSelection:(id)arg1;
+- (BOOL)wantsStrongSelectionOnNavigatorLoad;
+- (BOOL)canShowSelectionFromActiveEditor;
 - (void)setOutputSelection:(id)arg1;
 - (void)setSelectedObjects:(id)arg1;
 @property(copy) NSString *visibleRectString;
@@ -141,6 +141,7 @@
 - (void)openSelectedNavigableItemsKeyAction:(id)arg1;
 - (id)openSpecifierForNavigableItem:(id)arg1 error:(id *)arg2;
 - (BOOL)isLoadMoreItem:(id)arg1;
+- (BOOL)displaysAdditionalScopeBars;
 - (id)domainIdentifier;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 

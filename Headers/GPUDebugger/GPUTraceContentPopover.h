@@ -18,9 +18,11 @@ __attribute__((visibility("hidden")))
     NSTableView *_content;
     NSImageView *_thumbnail;
     NSTextField *_apiTitle;
+    NSTextField *_messageView;
 }
 
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSTextField *messageView; // @synthesize messageView=_messageView;
 @property(nonatomic) __weak NSTextField *apiTitle; // @synthesize apiTitle=_apiTitle;
 @property(nonatomic) __weak NSImageView *thumbnail; // @synthesize thumbnail=_thumbnail;
 @property(nonatomic) __weak NSTableView *content; // @synthesize content=_content;

@@ -60,6 +60,7 @@
 - (void)tearDownPublisherObservations;
 - (void)setUpPublisherObservations;
 - (BOOL)enableWithError:(id *)arg1;
+- (BOOL)allowsRemoval;
 - (BOOL)hasDisclosableContent;
 - (BOOL)entitlementsContainsEntitlementKey:(id)arg1;
 - (BOOL)entitlementsContainsEntitlementKey;

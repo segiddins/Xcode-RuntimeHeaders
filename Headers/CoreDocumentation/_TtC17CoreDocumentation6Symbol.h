@@ -12,20 +12,27 @@
 {
     MISSING_TYPE *kind;
     MISSING_TYPE *title;
+    MISSING_TYPE *subHeading;
+    MISSING_TYPE *navigator;
     MISSING_TYPE *roleHeading;
     MISSING_TYPE *platformName;
     MISSING_TYPE *moduleName;
     MISSING_TYPE *isRequired;
+    MISSING_TYPE *externalID;
+    MISSING_TYPE *deprecatedSummary;
     MISSING_TYPE *declaration;
+    MISSING_TYPE *constraints;
     MISSING_TYPE *availability;
     MISSING_TYPE *relationships;
-    MISSING_TYPE *abstract;
+    MISSING_TYPE *abstractSection;
     MISSING_TYPE *discussion;
     MISSING_TYPE *topics;
     MISSING_TYPE *defaultImplementations;
     MISSING_TYPE *seeAlso;
     MISSING_TYPE *returnsSection;
     MISSING_TYPE *parametersSection;
+    MISSING_TYPE *redirects;
+    MISSING_TYPE *$__lazy_storage_$_isDeprecated;
 }
 
 @end

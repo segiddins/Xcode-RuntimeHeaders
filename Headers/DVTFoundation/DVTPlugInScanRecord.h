@@ -47,6 +47,9 @@
 - (BOOL)_loadBundleRawInfoPlist:(id *)arg1;
 - (BOOL)loadPlugInPlist:(id *)arg1;
 - (id)_contentsOfPlistAtURL:(id)arg1 error:(id *)arg2;
+@property(readonly) BOOL hasPlugInPlist;
+@property(readonly, getter=isFramework) BOOL framework;
+- (id)_plugInPlistURL;
 - (void)_instantiateBundleIfNecessary;
 - (BOOL)isEquivalentToPlistRepresentation:(id)arg1;
 - (void)encodeIntoPropertyList:(id)arg1;

@@ -33,7 +33,7 @@
 }
 
 + (id)resolveDependenciesForBuildables:(id)arg1 buildParameters:(id)arg2 executionEnvironment:(id)arg3 includeImplicitDependencies:(BOOL)arg4;
-+ (id)_uniquedBuildablesForBuildables:(id)arg1 includingDependencies:(BOOL)arg2;
++ (id)_uniquedBuildablesForBuildables:(id)arg1 includingDependencies:(BOOL)arg2 includingPackages:(BOOL)arg3;
 + (id)buildablesForTestingSpecifiers:(id)arg1 includingDependencies:(BOOL)arg2;
 + (id)keyPathsForValuesAffectingAvailableBuildConfigurations;
 + (id)keyPathsForValuesAffectingSubtitle;
@@ -59,20 +59,24 @@
 @property(readonly) BOOL needsNewSchemeVersionForExplicitTestPlanEntries;
 - (void)setOverridingBuildProperties:(id)arg1 forBuildable:(id)arg2;
 - (void)postBuildablesDidChangeNotification;
-- (CDUnknownBlockType)_matcherBlockForCommand:(id)arg1;
+- (CDUnknownBlockType)_matcherBlockForCommand:(id)arg1 operationParameters:(id)arg2;
 - (id)buildablesByConfiguration;
 - (id)buildableReferencesForSchemeCommand:(id)arg1;
 - (id)buildableReferences;
 - (id)extensionTypesOfBuildablesForSchemeCommand:(id)arg1 includingDependencies:(BOOL)arg2;
+- (id)buildablesForSchemeCommand:(id)arg1 operationParameters:(id)arg2 includingDependencies:(BOOL)arg3;
+- (id)buildablesForSchemeCommand:(id)arg1 operationParameters:(id)arg2 includingDependencies:(BOOL)arg3 includingPackages:(BOOL)arg4;
 - (id)buildablesForSchemeCommand:(id)arg1 includingDependencies:(BOOL)arg2;
-- (id)buildablesForSchemeCommand:(id)arg1 testingSpecifiers:(id)arg2 includingDependencies:(BOOL)arg3;
+- (id)buildablesForSchemeCommand:(id)arg1 includingDependencies:(BOOL)arg2 includingPackages:(BOOL)arg3;
 - (id)buildablesForAllSchemeCommandsIncludingDependencies:(BOOL)arg1;
+- (id)buildablesForAllSchemeCommandsIncludingDependencies:(BOOL)arg1 includingPackages:(BOOL)arg2;
 - (id)buildablesForShowingIssues;
 - (id)resolveImplicitDependenciesIfEnabledForBuildables:(id)arg1;
-- (id)_buildablesIncludingDependencies:(BOOL)arg1 restrictToSchemeCommand:(id)arg2;
+- (id)_buildablesIncludingDependencies:(BOOL)arg1 includingPackages:(BOOL)arg2 restrictToSchemeCommand:(id)arg3 operationParameters:(id)arg4;
 - (id)buildableReferenceForBuildable:(id)arg1;
 @property(readonly) NSArray *availableBuildConfigurations;
 - (id)buildDirectoryPathsForBuildParameters:(id)arg1 schemeCommand:(id)arg2;
+- (id)buildDirectoryPathsForBuildParameters:(id)arg1 schemeCommand:(id)arg2 buildableProductFilter:(CDUnknownBlockType)arg3;
 - (void)moveBuildActionEntriesAtIndexes:(id)arg1 toIndex:(unsigned long long)arg2;
 - (id)addBuildActionEntryForBuildableReference:(id)arg1;
 - (void)removeBuildActionEntries:(id)arg1;

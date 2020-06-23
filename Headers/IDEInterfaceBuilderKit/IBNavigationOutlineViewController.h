@@ -6,14 +6,13 @@
 
 #import <IDEInterfaceBuilderKit/IBNavigationController.h>
 
-#import <IDEInterfaceBuilderKit/IBAutolayoutSidebarViewControllerDelegate-Protocol.h>
 #import <IDEInterfaceBuilderKit/IBHighlightProvider-Protocol.h>
 #import <IDEInterfaceBuilderKit/IBHybridStructureSelectionProvider-Protocol.h>
 #import <IDEInterfaceBuilderKit/IBOutlineViewControllerDelegate-Protocol.h>
 
 @class IBAbstractDocumentEditor, IBAutolayoutSidebarViewController, IBNavigationControllerItem, IBOutlineViewController, NSString;
 
-@interface IBNavigationOutlineViewController : IBNavigationController <IBAutolayoutSidebarViewControllerDelegate, IBHybridStructureSelectionProvider, IBOutlineViewControllerDelegate, IBHighlightProvider>
+@interface IBNavigationOutlineViewController : IBNavigationController <IBHybridStructureSelectionProvider, IBOutlineViewControllerDelegate, IBHighlightProvider>
 {
     IBNavigationControllerItem *_currentAutolayoutIssuesItem;
     IBNavigationControllerItem *_rootNavigationItem;
@@ -26,8 +25,6 @@
 @property(readonly, nonatomic) IBOutlineViewController *outlineViewController; // @synthesize outlineViewController=_outlineViewController;
 - (void)didPopNavigationItem:(id)arg1;
 - (void)didPushNavigationItem:(id)arg1 previousItem:(id)arg2;
-- (void)autolayoutSidebar:(id)arg1 isFinishedWithResolvingViewController:(id)arg2;
-- (void)autolayoutSidebar:(id)arg1 wantsToShowResolvingViewController:(id)arg2;
 - (id)selectionProviderForOutlineViewController:(id)arg1;
 - (void)outlineViewController:(id)arg1 didSelectAutolayoutIssuesItemForObject:(id)arg2;
 - (id)documentEditor:(id)arg1 highlightObjects:(id)arg2 showLabels:(BOOL)arg3 successfulObjects:(id *)arg4;

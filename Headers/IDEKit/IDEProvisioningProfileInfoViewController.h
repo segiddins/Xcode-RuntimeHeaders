@@ -51,6 +51,7 @@
 @property(retain, nonatomic) IDEProfileQualification *qualification; // @synthesize qualification=_qualification;
 - (void)primitiveInvalidate;
 - (double)tableView:(id)arg1 heightOfRow:(long long)arg2;
+- (double)calculateWrappingHeightForProvisioningCellSubtitle:(id)arg1;
 - (BOOL)tableView:(id)arg1 shouldSelectRow:(long long)arg2;
 - (id)tableView:(id)arg1 viewForTableColumn:(id)arg2 row:(long long)arg3;
 - (long long)numberOfRowsInTableView:(id)arg1;

@@ -28,7 +28,9 @@ __attribute__((visibility("hidden")))
 - (id)resourceDictionaryForDeviceID:(unsigned long long)arg1;
 - (void)outlineVisitor:(id)arg1 addPipelineStateToCurrentDisplayable:(unsigned long long)arg2;
 - (void)outlineVisitor:(id)arg1 createDisplayableOfType:(long long)arg2 fromFunction:(struct Function *)arg3 filterItems:(id)arg4 disclosureHandler:(CDUnknownBlockType)arg5;
+- (void)outlineVisitor:(id)arg1 createDisplayableOfType:(long long)arg2 fromFunction:(struct Function *)arg3 generateFilterItems:(CDUnknownBlockType)arg4 disclosureHandler:(CDUnknownBlockType)arg5;
 - (void)outlineVisitor:(id)arg1 createExecuteCommandWithLabel:(id)arg2 fromFunction:(shared_ptr_2d3f6817)arg3 parentFunction:(shared_ptr_2d3f6817)arg4 subCommandIndex:(unsigned long long)arg5 filterItems:(id)arg6;
+- (void)outlineVisitor:(id)arg1 createExecuteCommandWithLabel:(id)arg2 fromFunction:(shared_ptr_2d3f6817)arg3 parentFunction:(shared_ptr_2d3f6817)arg4 subCommandIndex:(unsigned long long)arg5 generateFilterItems:(CDUnknownBlockType)arg6;
 - (void)outlineVisitor:(id)arg1 createDisplayableOfType:(long long)arg2 fromFunction:(struct Function *)arg3 disclosureHandler:(CDUnknownBlockType)arg4;
 - (Class)outlineVisitorFilterItemClass:(id)arg1;
 - (void)outlineVisitor:(id)arg1 createAPIItemFromFunction:(struct Function *)arg2 disclosureHandler:(CDUnknownBlockType)arg3;

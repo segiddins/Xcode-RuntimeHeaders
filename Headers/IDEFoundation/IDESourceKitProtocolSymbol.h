@@ -15,6 +15,7 @@
 }
 
 - (BOOL)isKindOfClass:(Class)arg1;
+- (id)implementingSymbols;
 - (id)implementingClasses;
 - (id)subProtocols;
 - (id)properties;

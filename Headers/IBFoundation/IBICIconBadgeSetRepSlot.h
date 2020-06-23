@@ -28,6 +28,7 @@
 @property(readonly, nonatomic) IBICScale *scale; // @synthesize scale=_scale;
 @property(readonly, nonatomic) IBICSize *size; // @synthesize size=_size;
 @property(readonly, nonatomic) IBICIdiom *idiom; // @synthesize idiom=_idiom;
+- (id)outputFileNameGivenBaseName:(id)arg1 andExtension:(id)arg2;
 - (BOOL)hasColorSpace;
 - (id)detailAreaPath;
 - (id)requiredPixelSize;

@@ -8,7 +8,7 @@
 
 #import <IDEKit/NSMenuDelegate-Protocol.h>
 
-@class DVTGradientImageButton, DVTNotificationToken, DVTObservingToken, IDENavigableItem, IDENavigatorOutlineView, IDENavigatorSearchFilterControlBar, NSArray, NSLayoutConstraint, NSMapTable, NSMenuItem, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, NSView;
+@class DVTGradientImageButton, DVTNotificationToken, DVTObservingToken, IDENavigatorOutlineView, IDENavigatorSearchFilterControlBar, NSArray, NSLayoutConstraint, NSMapTable, NSMenuItem, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, NSView;
 
 @interface IDEDebugNavigator : IDENavigator <NSMenuDelegate>
 {
@@ -20,7 +20,6 @@
     IDENavigatorSearchFilterControlBar *_filterControl;
     NSMapTable *_processHeaderCellViewsForContentDelegateTable;
     DVTGradientImageButton *_gaugesToggleButton;
-    IDENavigableItem *_itemToSelectBasedOnItemBeingEdited;
     NSMutableArray *_cachedNavigableDebugItems;
     NSMapTable *_contentDelegateForIdentifierTable;
     DVTNotificationToken *_coordinatorWillForgetObservingToken;
@@ -28,6 +27,7 @@
     DVTObservingToken *_allFinishedObservingToken;
     DVTObservingToken *_coalescedStateObservingToken;
     DVTNotificationToken *_selectedObjectsDidChangeObservingToken;
+    DVTNotificationToken *_didExpandNotificationToken;
     BOOL _isInUserDirectSelection;
     BOOL _isInOutlineViewProcessPendingChanges;
     BOOL _showGaugesNotSetToSupportMessageTrace;
@@ -119,7 +119,6 @@
 - (id)_tableCellViewToHostGaugeTrayItem:(id)arg1 withOutlineView:(id)arg2 tableColumn:(id)arg3 item:(id)arg4;
 - (double)outlineView:(id)arg1 heightOfRowByItem:(id)arg2;
 - (void)outlineView:(id)arg1 didRemoveRowView:(id)arg2 forRow:(long long)arg3;
-- (void)outlineView:(id)arg1 didAddRowView:(id)arg2 forRow:(long long)arg3;
 - (BOOL)_representedObjectIsWaitingToAttach:(id)arg1;
 - (id)outlineView:(id)arg1 viewForTableColumn:(id)arg2 item:(id)arg3;
 - (void)outlineView:(id)arg1 willDisplayCell:(id)arg2 forTableColumn:(id)arg3 item:(id)arg4;
@@ -139,6 +138,7 @@
 - (void)_makeNavItemReflectShowGaugesStoredState:(id)arg1;
 @property(readonly, copy) NSArray *navigableDebugItems;
 - (BOOL)delegateFirstResponder;
+- (id)navigatorScrollView;
 - (id)domainIdentifier;
 - (id)_selectedRepresentedObjects;
 - (BOOL)validateUserInterfaceItem:(id)arg1;
@@ -156,10 +156,9 @@
 - (void)openDoubleClickedNavigableItemsAction:(id)arg1;
 - (void)openClickedNavigableItemAction:(id)arg1;
 - (void)openSelectedNavigableItemsKeyAction:(id)arg1;
-- (id)itemToSelectBasedOnItemBeingEdited;
-- (BOOL)prefersStrongSelection;
-- (void)_updateSelectionToReflectActivelyEditedItem;
-- (void)focusedEditorDidSelectItem;
+- (id)itemToSelectFromActiveEditorSelection:(id)arg1;
+- (BOOL)canShowSelectionFromActiveEditor;
+- (void)showSelectionFromActiveEditor:(id)arg1 expandAncestors:(BOOL)arg2 scrollToVisible:(BOOL)arg3;
 - (void)revealArchivedNavigableItems:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)_toggleButtonsFromContainer:(id)arg1;

@@ -4,14 +4,14 @@
 //  Copyright (C) 1997-2019 Steve Nygard.
 //
 
-#import <IDEFoundation/IDEOpenQuicklyResultBlockGenerator.h>
+#import <IDEFoundation/IDEOpenQuicklyPrototypeBasedResultBlockGenerator.h>
 
-@interface IDEOpenQuicklySymbolResultGenerator : IDEOpenQuicklyResultBlockGenerator
+@interface IDEOpenQuicklySymbolResultGenerator : IDEOpenQuicklyPrototypeBasedResultBlockGenerator
 {
 }
 
 - (BOOL)supportsLineNumberMatches;
-- (id)resultForPrototype:(id)arg1 candidate:(struct IDEOpenQuicklyQueryCandidate *)arg2 query:(id)arg3 fromIndex:(long long)arg4;
+- (id)resultForPrototype:(id)arg1 candidate:(struct DVTFuzzyMatchCandidate *)arg2 query:(id)arg3 fromIndex:(long long)arg4;
 
 @end
 

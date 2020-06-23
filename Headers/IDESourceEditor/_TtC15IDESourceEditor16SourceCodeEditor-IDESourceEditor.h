@@ -6,13 +6,22 @@
 
 #import <IDESourceEditor/_TtC15IDESourceEditor16SourceCodeEditor.h>
 
+#import <IDESourceEditor/DVTTextAnnotationDisplayDelegate-Protocol.h>
+#import <IDESourceEditor/IDEComparisonEditorHostContext-Protocol.h>
 #import <IDESourceEditor/IDESourceControlBlameForLineEditorDataSource-Protocol.h>
 
 @class NSView;
 
-@interface _TtC15IDESourceEditor16SourceCodeEditor (IDESourceEditor) <IDESourceControlBlameForLineEditorDataSource>
+@interface _TtC15IDESourceEditor16SourceCodeEditor (IDESourceEditor) <IDESourceControlBlameForLineEditorDataSource, DVTTextAnnotationDisplayDelegate, IDEComparisonEditorHostContext>
 - (struct CGRect)boundsForLineRange:(struct _NSRange)arg1;
 @property(nonatomic, readonly) NSView *blameForLineView;
 @property(nonatomic, readonly) struct _NSRange selectedLineRange;
+- (void)textAnnotation:(id)arg1 locationChanged:(id)arg2;
+- (void)textAnnotation:(id)arg1 sidebarMarkerImageChanged:(id)arg2;
+- (void)disableAllEditorOptions;
+- (void)toggleMinimapShown:(id)arg1;
+- (void)toggleInvisibleCharactersShown:(id)arg1;
+- (BOOL)editorDocumentIsCurrentRevision;
+- (BOOL)editorIsHostedInComparisonEditor;
 @end
 

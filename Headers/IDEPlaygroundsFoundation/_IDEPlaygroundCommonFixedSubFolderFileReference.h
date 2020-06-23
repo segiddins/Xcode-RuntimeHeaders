@@ -10,6 +10,7 @@
 {
 }
 
+- (BOOL)allowUserModificationOfSubitems;
 - (id)navigableItem_conformanceString;
 - (id)_initWithPath:(id)arg1;
 

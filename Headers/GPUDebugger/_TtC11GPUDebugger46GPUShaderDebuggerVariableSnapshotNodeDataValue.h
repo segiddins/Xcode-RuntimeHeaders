@@ -8,7 +8,7 @@
 
 #import <GPUDebugger/IDEDataValue-Protocol.h>
 
-@class IDEStackFrame, MISSING_TYPE, NSArray, NSString;
+@class IDEStackFrame, MISSING_TYPE, NSArray, NSAttributedString, NSString;
 
 __attribute__((visibility("hidden")))
 @interface _TtC11GPUDebugger46GPUShaderDebuggerVariableSnapshotNodeDataValue : NSObject <IDEDataValue>
@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
 
 - (void).cxx_destruct;
 - (id)init;
+@property(nonatomic, readonly) NSAttributedString *formattedSummary;
 @property(nonatomic, readonly) BOOL isMemoryFault;
 @property(nonatomic, readonly) BOOL childValuesCountValid;
 @property(nonatomic, readonly) NSArray *childValues;

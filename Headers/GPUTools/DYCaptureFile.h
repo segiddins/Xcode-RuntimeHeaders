@@ -27,6 +27,7 @@
 - (id)decodeArchivedObject;
 - (void)updateName:(id)arg1;
 - (id)openFunctionStream:(id *)arg1;
+- (id)copyData:(id *)arg1;
 - (id)copyMutableData:(id *)arg1;
 - (BOOL)acceptCaptureVisitor:(id)arg1;
 - (BOOL)getInfo:(CDStruct_61ea625d *)arg1 error:(id *)arg2;

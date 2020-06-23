@@ -38,6 +38,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) IDEIndex *index; // @synthesize index;
 @property(nonatomic) __weak id <DYPShaderSourceDocument> document; // @synthesize document;
 @property(nonatomic) __weak id <GPUTraceShaderDataProviderDelegate> delegate; // @synthesize delegate;
+- (id)irSourceForShaderType:(unsigned int)arg1;
 - (double)shaderTimingForShaderType:(unsigned int)arg1;
 - (id)retainedEditorDocumentWithWorkspaceDocument:(id)arg1;
 - (id)remarks;

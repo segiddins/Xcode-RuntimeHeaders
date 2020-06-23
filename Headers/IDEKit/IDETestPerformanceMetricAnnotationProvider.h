@@ -39,6 +39,7 @@
 @property(readonly, copy) NSString *description;
 - (id)initWithContext:(id)arg1;
 - (id)_createAnnotationForMessageBubbleText:(id)arg1 test:(id)arg2 targetArchitecture:(id)arg3 targetDevice:(id)arg4 location:(id)arg5;
+- (id)_displayNameForMetric:(id)arg1;
 - (id)_messageBubbleTextForTest:(id)arg1 previousPerformanceMetricOutput:(id)arg2;
 
 // Remaining properties

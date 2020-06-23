@@ -8,11 +8,13 @@
 
 #import <IDEIntentBuilderEditor/NSTableViewDelegate-Protocol.h>
 
-@class DVTBorderedView, DVTObservingToken, DVTTableView, IDEIntentBuilderArrayController, IDEIntentBuilderEditorImageButton, NSArray, NSString;
+@class DVTBorderedView, DVTObservingToken, DVTTableView, IDEIntentBuilderArrayController, IDEIntentBuilderEditorImageButton, NSArray, NSString, NSView;
 
 @interface IDEIntentBuilderTableComponentView : IDEIntentBuilderComponentView <NSTableViewDelegate>
 {
     DVTObservingToken *_arrayObservationToken;
+    BOOL _includesBottomBar;
+    BOOL _selectable;
     IDEIntentBuilderArrayController *primaryControl;
     NSArray *_tableColumns;
     Class _itemClass;
@@ -24,11 +26,15 @@
     IDEIntentBuilderEditorImageButton *_deleteButton;
     DVTTableView *_tableView;
     DVTBorderedView *_bottomBar;
+    NSView *_tableContainerView;
 }
 
 - (void).cxx_destruct;
+@property __weak NSView *tableContainerView; // @synthesize tableContainerView=_tableContainerView;
 @property __weak DVTBorderedView *bottomBar; // @synthesize bottomBar=_bottomBar;
 @property __weak DVTTableView *tableView; // @synthesize tableView=_tableView;
+@property(nonatomic) BOOL selectable; // @synthesize selectable=_selectable;
+@property(nonatomic) BOOL includesBottomBar; // @synthesize includesBottomBar=_includesBottomBar;
 @property __weak IDEIntentBuilderEditorImageButton *deleteButton; // @synthesize deleteButton=_deleteButton;
 @property SEL deleteSelector; // @synthesize deleteSelector=_deleteSelector;
 @property __weak id deleteTarget; // @synthesize deleteTarget=_deleteTarget;

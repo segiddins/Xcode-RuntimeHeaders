@@ -19,6 +19,5 @@
 @property(nonatomic, readonly) NSArray *pifSubobjects;
 - (id)pifInfoForSerializer:(id)arg1;
 @property(nonatomic, readonly) IDEPIFGUID *PIFGUID;
-- (id)allBinaryPIFObjects;
 @end
 

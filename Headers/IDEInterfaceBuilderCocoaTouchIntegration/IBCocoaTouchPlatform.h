@@ -35,7 +35,7 @@
 - (BOOL)shouldUIVisualEffectViewAllowVibrancyEffectStyles;
 - (BOOL)shouldUIVisualEffectViewAllowSystemBlurEffectStyles;
 - (BOOL)shouldUIVisualEffectViewAllowExtraDarkBlurEffectStyle;
-- (BOOL)shouldUIButtonAllowPlainType;
+- (BOOL)shouldUIButtonAllowType:(long long)arg1;
 - (unsigned long long)preferredActionEventTypeForUIButton;
 - (id)minimumLayoutSizeForWidget:(id)arg1;
 - (BOOL)supportsBlackBarsForSimulationMetrics;
@@ -53,7 +53,6 @@
 - (unsigned long long)applicableTraits;
 - (long long)userInterfaceStyleForConfiguration:(id)arg1;
 - (id)traitCollectionForConfiguration:(id)arg1;
-- (id)systemNamesToGenericColorsMapResourceNameForTargetRuntime:(id)arg1;
 - (id)runtimeConfigurableConstraintConstantKeyPath;
 - (id)archiveKeyForUsesConfigurations;
 - (Class)previewGeniusResultsItemGroupClass;
@@ -74,7 +73,6 @@
 - (id)xibHybridPackageEditableDocumentFilename;
 - (id)xibPreferredFileType;
 - (Class)userDefinedRuntimeAttributesPlaceholderClass;
-- (BOOL)supportsSystemNamespaceForImages;
 - (void)fontsObserverInvalidated;
 - (void)notifyObjectsFontsDidChange:(id)arg1;
 - (void)unregisterCustomFontsWithURLs:(id)arg1;
@@ -110,6 +108,7 @@
 - (Class)targetRuntimeClass;
 - (id)targetRuntimeWithArchiveIdentifier:(id)arg1 variantIdentifier:(id)arg2;
 - (id)marketingVersionFromAvailabilityVersion:(long long)arg1;
+- (long long)availabilityVersionFromMarketingVersion:(id)arg1;
 - (BOOL)shouldOpenDocument:(id)arg1 error:(id *)arg2;
 - (id)systemDocumentDependency;
 - (id)interfaceBuilderDocumentDependency;

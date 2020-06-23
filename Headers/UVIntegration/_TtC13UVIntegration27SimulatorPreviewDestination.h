@@ -12,14 +12,14 @@
 {
     MISSING_TYPE *identifier;
     MISSING_TYPE *stateMonitor;
-    MISSING_TYPE *buildTargetDestinationComponents;
+    MISSING_TYPE *buildTarget;
     MISSING_TYPE *platform;
     MISSING_TYPE *device;
     MISSING_TYPE *concreteDevice;
     MISSING_TYPE *compositeDeviceHint;
     MISSING_TYPE *sdk;
     MISSING_TYPE *appAgentBundle;
-    MISSING_TYPE *appAgentConfiguration;
+    MISSING_TYPE *resolvedAppAgentConfiguration;
     MISSING_TYPE *agentKitPath;
     MISSING_TYPE *serviceHubConnectionStore;
     MISSING_TYPE *notificationHandler;

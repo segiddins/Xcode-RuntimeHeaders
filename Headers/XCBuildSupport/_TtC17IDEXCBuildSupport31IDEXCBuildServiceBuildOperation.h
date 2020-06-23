@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
     MISSING_TYPE *_latestTargetDisplayName;
     MISSING_TYPE *_isRunningInConsole;
     MISSING_TYPE *_showCommandsUnderTargets;
+    MISSING_TYPE *_allowInProcessExternalToolExecution;
     MISSING_TYPE *_planOnlyMetric;
     MISSING_TYPE *_xcbuildServiceSession;
     MISSING_TYPE *_activeTargets;

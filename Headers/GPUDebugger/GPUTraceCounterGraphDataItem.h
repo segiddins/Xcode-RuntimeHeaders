@@ -17,7 +17,6 @@
     id <GPUTraceCounterGraphSampleProvider> _sampleProvider;
     NSMutableArray *_values;
     NSMutableArray *_valuesBase;
-    NSMutableArray *_valuesForAnalysis;
     BOOL _isEmptyEncoder;
     BOOL _encoderData;
     BOOL _batchFilteredDataLoaded;
@@ -32,12 +31,13 @@
     NSString *_commandBufferLabel;
     NSString *_debugMarkers;
     DYPPerformanceAnalysisResult *_performanceAnalysisResult;
+    NSString *_pipelineStateLabel;
 }
 
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *pipelineStateLabel; // @synthesize pipelineStateLabel=_pipelineStateLabel;
 @property(readonly, nonatomic) BOOL batchFilteredDataLoaded; // @synthesize batchFilteredDataLoaded=_batchFilteredDataLoaded;
 @property(readonly, nonatomic) DYPPerformanceAnalysisResult *performanceAnalysisResult; // @synthesize performanceAnalysisResult=_performanceAnalysisResult;
-@property(readonly, nonatomic) NSArray *valuesForAnalysis; // @synthesize valuesForAnalysis=_valuesForAnalysis;
 @property(readonly, nonatomic) NSArray *valuesBase; // @synthesize valuesBase=_valuesBase;
 @property(readonly, nonatomic) NSArray *values; // @synthesize values=_values;
 @property(readonly, nonatomic) NSString *debugMarkers; // @synthesize debugMarkers=_debugMarkers;

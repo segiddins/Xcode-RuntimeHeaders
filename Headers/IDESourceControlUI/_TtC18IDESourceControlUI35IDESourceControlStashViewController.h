@@ -6,10 +6,11 @@
 
 #import <IDESourceControlUI/_TtC18IDESourceControlUI58IDESourceControlMultipleWorkingCopyOperationViewController.h>
 
-@class DVTTextViewWithPlaceholder, MISSING_TYPE, NSScrollView, NSString;
+@class DVTTextViewWithPlaceholder, IDEWorkspace, MISSING_TYPE, NSScrollView, NSString;
 
 @interface _TtC18IDESourceControlUI35IDESourceControlStashViewController : _TtC18IDESourceControlUI58IDESourceControlMultipleWorkingCopyOperationViewController
 {
+    MISSING_TYPE *workspace;
     MISSING_TYPE *messageTextView;
     MISSING_TYPE *messageScrollView;
     MISSING_TYPE *workQueue;
@@ -35,6 +36,7 @@
 @property(nonatomic, readonly) NSString *nibName;
 @property(nonatomic) __weak NSScrollView *messageScrollView; // @synthesize messageScrollView;
 @property(nonatomic, retain) DVTTextViewWithPlaceholder *messageTextView; // @synthesize messageTextView;
+@property(nonatomic, retain) IDEWorkspace *workspace; // @synthesize workspace;
 
 @end
 

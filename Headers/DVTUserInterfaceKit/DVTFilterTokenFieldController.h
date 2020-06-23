@@ -23,7 +23,7 @@
 - (id)tokenField:(id)arg1 menuForRepresentedObject:(id)arg2;
 - (id)tokenField:(id)arg1 shouldAddObjects:(id)arg2 atIndex:(unsigned long long)arg3;
 - (id)_menuItemsForSampleFilters;
-- (id)_attachmentCellForToken:(id)arg1;
+- (id)attachmentCellForToken:(id)arg1;
 - (void)_handleCompletionFromStorage:(id)arg1 andLastChangeID:(unsigned long long)arg2;
 - (Class)_tokenClass;
 

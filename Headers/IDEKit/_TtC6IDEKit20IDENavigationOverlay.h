@@ -14,11 +14,12 @@
     MISSING_TYPE *overlayWindowController;
     MISSING_TYPE *navigationTargets;
     MISSING_TYPE *selectionHandler;
+    MISSING_TYPE *infoTextProducer;
     MISSING_TYPE *delegate;
 }
 
 + (void)makeKeyAndOrderFrontOverlayForParentWindow:(id)arg1;
-+ (void)displayInParentWindow:(id)arg1 navigationTargets:(id)arg2 initialHighlightTarget:(id)arg3 accessibilityIntent:(id)arg4 delegate:(id)arg5 selectionHandler:(CDUnknownBlockType)arg6;
++ (void)displayInParentWindow:(id)arg1 navigationTargets:(id)arg2 initialHighlightTarget:(id)arg3 accessibilityIntent:(id)arg4 delegate:(id)arg5 selectionHandler:(CDUnknownBlockType)arg6 infoTextProducer:(CDUnknownBlockType)arg7;
 - (void).cxx_destruct;
 - (id)init;
 - (void)windowFrameDidChange:(id)arg1;

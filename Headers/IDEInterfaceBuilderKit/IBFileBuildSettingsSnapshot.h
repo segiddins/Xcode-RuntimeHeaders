@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSDictionary, NSMutableDictionary, NSString;
+@class NSArray, NSDictionary, NSMutableDictionary, NSSet, NSString;
 
 @interface IBFileBuildSettingsSnapshot : NSObject
 {
@@ -22,6 +22,7 @@
 @property(readonly) NSArray *unpreprocessedInfoPlistPaths;
 - (void)enumerateValuesForBuildSetting:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
 - (id)minimumDeploymentTargetForPlatform:(id)arg1;
+@property(readonly) NSSet *wrapperExtensions;
 @property(readonly) NSString *minimumIOSDeploymentTarget;
 @property(readonly) NSString *minimumMacOSXDeploymentTarget;
 - (id)minimumDeploymentTargetOfTargets:(id)arg1;

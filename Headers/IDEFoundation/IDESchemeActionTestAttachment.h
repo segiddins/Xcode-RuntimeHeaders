@@ -35,7 +35,7 @@
 @property(readonly) long long inActivityIdentifier; // @synthesize inActivityIdentifier=_inActivityIdentifier;
 @property(readonly) long long lifetime; // @synthesize lifetime=_lifetime;
 @property(readonly, copy) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
-@property(copy) NSDate *timestamp; // @synthesize timestamp=_timestamp;
+@property(readonly, copy) NSDate *timestamp; // @synthesize timestamp=_timestamp;
 @property(readonly, copy) NSString *name; // @synthesize name=_name;
 @property(readonly, copy) NSString *uniformTypeIdentifier; // @synthesize uniformTypeIdentifier=_uniformTypeIdentifier;
 @property(readonly) NSDictionary *dictionaryRepresentation;
@@ -46,6 +46,8 @@
 @property(readonly, copy) NSData *payload;
 @property(readonly, copy) NSString *payloadFilePath;
 @property(readonly, copy) NSString *payloadFileName;
+- (id)humanReadableNameForTarArchiveFromFileName:(id)arg1;
+- (BOOL)attachmentIsTarArchiveWithMultipleExtensions;
 - (void)_resolveLazyPayload:(id)arg1;
 - (id)initWithUniformTypeIdentifier:(id)arg1 name:(id)arg2 timestamp:(id)arg3 userInfo:(id)arg4 lifetime:(long long)arg5 inActivityIdentifier:(long long)arg6 fileName:(id)arg7 activityUUID:(id)arg8 attachmentsDirectory:(id)arg9 hasPayload:(BOOL)arg10 payloadSize:(long long)arg11;
 - (id)initWithAttachment:(id)arg1 inActivityIdentifier:(long long)arg2 activityUUID:(id)arg3 attachmentsDirectory:(id)arg4;

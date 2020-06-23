@@ -4,14 +4,16 @@
 //  Copyright (C) 1997-2019 Steve Nygard.
 //
 
-#import <IDEFoundation/IDEOpenQuicklyAbstractWorkspaceResultAggregator.h>
+#import <IDEFoundation/IDEOpenQuicklyAbstractWorkspaceResultProvider.h>
 
-@interface IDEOpenQuicklyMasterResultGenerator : IDEOpenQuicklyAbstractWorkspaceResultAggregator
+@interface IDEOpenQuicklyMasterResultGenerator : IDEOpenQuicklyAbstractWorkspaceResultProvider
 {
+    BOOL _matchesExhaustively;
 }
 
 + (BOOL)sendsIncompleteResults;
 - (id)transformAggregateResults:(id)arg1;
+- (id)exhaustivelyScoreResults:(id)arg1;
 - (void)generateGeneratorsWithCompletionGroup:(id)arg1 forWorkspace:(id)arg2;
 
 @end

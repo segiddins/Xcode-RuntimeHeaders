@@ -11,7 +11,7 @@
 #import <DVTKit/NSOutlineViewDataSource-Protocol.h>
 #import <DVTKit/NSUserInterfaceValidations-Protocol.h>
 
-@class DVTNonLossyASCIIFormatter, DVTNotificationToken, DVTPlistComboBoxCell, DVTPlistDataFormatter, DVTPlistNode, DVTPlistOutlineView, DVTPlistSelection, DVTPlistTextFieldCell, DVTPlistTitledPopupCell, NSArray, NSButtonCell, NSDateFormatter, NSDictionary, NSDocument, NSMutableSet, NSPopUpButtonCell, NSScrollView, NSString, NSTableHeaderView;
+@class DVTNonLossyASCIIFormatter, DVTNotificationToken, DVTPlistComboBoxCell, DVTPlistDataFormatter, DVTPlistNode, DVTPlistOutlineView, DVTPlistSelection, DVTPlistTextFieldCell, DVTPlistTitledPopupCell, NSArray, NSButtonCell, NSDictionary, NSDocument, NSISO8601DateFormatter, NSMutableSet, NSPopUpButtonCell, NSScrollView, NSString, NSTableHeaderView;
 @protocol DVTPlistDocumentProtocol, DVTPlistViewControllerDelegate;
 
 @interface DVTPlistViewController : DVTViewController <DVTPlistViewControllerProtocol, DVTPlistOutlineViewDelegate, NSOutlineViewDataSource, NSUserInterfaceValidations>
@@ -22,7 +22,7 @@
     NSPopUpButtonCell *_classPopUpCell;
     NSPopUpButtonCell *_rootClassPopUpCell;
     DVTPlistDataFormatter *_dataFormatter;
-    NSDateFormatter *_dateFormatter;
+    NSISO8601DateFormatter *_dateFormatter;
     DVTNonLossyASCIIFormatter *_nonLossyASCIIFormatter;
     DVTPlistComboBoxCell *_comboBoxCell;
     DVTPlistTitledPopupCell *_popupCell;

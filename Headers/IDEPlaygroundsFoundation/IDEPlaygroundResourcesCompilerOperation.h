@@ -11,13 +11,13 @@
 @interface IDEPlaygroundResourcesCompilerOperation : DVTOperation
 {
     IDEPlaygroundCommonSharedContext *_context;
-    DVTFilePath *_sourcesResourceFile;
+    DVTFilePath *_inputFilePath;
     DVTTask *_compilerTask;
 }
 
 - (void).cxx_destruct;
 @property(retain) DVTTask *compilerTask; // @synthesize compilerTask=_compilerTask;
-@property(readonly, copy) DVTFilePath *sourcesResourceFile; // @synthesize sourcesResourceFile=_sourcesResourceFile;
+@property(readonly, copy) DVTFilePath *inputFilePath; // @synthesize inputFilePath=_inputFilePath;
 @property __weak IDEPlaygroundCommonSharedContext *context; // @synthesize context=_context;
 - (void)buildResourceForCoreML;
 - (void)buildResourceForInterfaceBuilder;
@@ -25,7 +25,7 @@
 - (void)cancel;
 - (void)makeHighestPriority;
 - (void)makeDefaultPriority;
-- (id)initWithContext:(id)arg1 resourceSourceFiles:(id)arg2;
+- (id)initWithContext:(id)arg1 input:(id)arg2;
 
 @end
 

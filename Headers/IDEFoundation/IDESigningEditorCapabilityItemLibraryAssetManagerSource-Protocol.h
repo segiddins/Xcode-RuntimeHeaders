@@ -4,14 +4,14 @@
 //  Copyright (C) 1997-2019 Steve Nygard.
 //
 
-@class _TtC13IDEFoundation51SigningEditorCapabilityItemLibraryAssetSourceResult, _TtC13IDEFoundation63SigningEditorCapabilityItemLibraryAssetManagerCoaelescedContext;
+@class SigningEditorCapabilityItemLibraryAssetManagerCoaelescedContext, SigningEditorCapabilityItemLibraryAssetSourceResult;
 @protocol IDESigningEditorCapabilityItemLibraryAssetManagerSourceDelegate;
 
 @protocol IDESigningEditorCapabilityItemLibraryAssetManagerSource
 @property(nonatomic) __weak id <IDESigningEditorCapabilityItemLibraryAssetManagerSourceDelegate> delegate;
-- (BOOL)isBusyForContext:(_TtC13IDEFoundation63SigningEditorCapabilityItemLibraryAssetManagerCoaelescedContext *)arg1;
-- (BOOL)wantsRefreshForContext:(_TtC13IDEFoundation63SigningEditorCapabilityItemLibraryAssetManagerCoaelescedContext *)arg1;
-- (_TtC13IDEFoundation51SigningEditorCapabilityItemLibraryAssetSourceResult *)resultForContext:(_TtC13IDEFoundation63SigningEditorCapabilityItemLibraryAssetManagerCoaelescedContext *)arg1;
-- (void)refreshForContext:(_TtC13IDEFoundation63SigningEditorCapabilityItemLibraryAssetManagerCoaelescedContext *)arg1;
+- (BOOL)isBusyForContext:(SigningEditorCapabilityItemLibraryAssetManagerCoaelescedContext *)arg1;
+- (BOOL)wantsRefreshForContext:(SigningEditorCapabilityItemLibraryAssetManagerCoaelescedContext *)arg1;
+- (SigningEditorCapabilityItemLibraryAssetSourceResult *)resultForContext:(SigningEditorCapabilityItemLibraryAssetManagerCoaelescedContext *)arg1;
+- (void)refreshForContext:(SigningEditorCapabilityItemLibraryAssetManagerCoaelescedContext *)arg1;
 @end
 

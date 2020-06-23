@@ -19,13 +19,12 @@
     CDUnknownBlockType _completion;
 }
 
-+ (id)minimumProtocolVersion;
 - (void).cxx_destruct;
 @property(readonly) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(readonly) int pid; // @synthesize pid=_pid;
 @property __weak id <XCTDebugLogDelegate> logDelegate; // @synthesize logDelegate=_logDelegate;
 - (void)handleConnectionFailure:(id)arg1;
-- (void)executeWithDaemonProxy:(id)arg1 protocolVersion:(id)arg2;
+- (void)executeWithDaemonProxy:(id)arg1 daemonCapabilities:(id)arg2;
 - (id)initWithPID:(int)arg1 completion:(CDUnknownBlockType)arg2;
 
 // Remaining properties

@@ -54,6 +54,7 @@
     NSDictionary *_exportPropertiesDescription3;
     NSDictionary *_importProperties;
     NSDictionary *_importProperties3;
+    NSString *_rawDeviceConfiguration;
     NSString *_outputDocumentPath;
     NSString *_inputStringsFilePath;
     NSString *_priorLocalizedDocumentPath;
@@ -116,6 +117,7 @@
 @property(copy) NSString *outputDocumentPath; // @synthesize outputDocumentPath=_outputDocumentPath;
 @property(copy) NSArray *pluginSearchPaths; // @synthesize pluginSearchPaths=_pluginSearchPaths;
 @property(copy) NSArray *pluginPaths; // @synthesize pluginPaths=_pluginPaths;
+@property(copy) NSString *rawDeviceConfiguration; // @synthesize rawDeviceConfiguration=_rawDeviceConfiguration;
 @property(copy) NSDictionary *importProperties3; // @synthesize importProperties3=_importProperties3;
 @property(copy) NSDictionary *importProperties; // @synthesize importProperties=_importProperties;
 @property(copy) NSDictionary *exportPropertiesDescription3; // @synthesize exportPropertiesDescription3=_exportPropertiesDescription3;
@@ -149,6 +151,7 @@
 - (id)optionIndex;
 - (id)generateEquivalentArgumentArrayForIBToolVersion:(long long)arg1;
 - (BOOL)isMissingRequiredArgumentsForIncrementalLocalization;
+- (id)enumValueMappingForOptionDescription:(id)arg1;
 - (id)optionsToSkipForIBTool3;
 - (id)collectionOptionsThatRequireInputDocuments;
 - (id)objectOptionsThatRequireInputDocuments;

@@ -135,6 +135,7 @@
 - (void)setCPUUsageThreadName:(id)arg1 forThreadID:(id)arg2;
 - (void)setCurrentCPUFirstIndicator:(id)arg1;
 - (void)_setLastValue:(id)arg1 inGaugeValues:(id)arg2;
+- (void)setValue:(id)arg1 forGlobalVariable:(id)arg2 ofType:(id)arg3 completionHandler:(CDUnknownBlockType)arg4 queue:(id)arg5;
 - (id)symbolicatedFramesFromUUIDsAndOffsets:(id)arg1 markRecorded:(BOOL)arg2;
 - (void)forceRefreshPausedStates;
 - (id)supportedDataValueFormatsForDataValue:(id)arg1;

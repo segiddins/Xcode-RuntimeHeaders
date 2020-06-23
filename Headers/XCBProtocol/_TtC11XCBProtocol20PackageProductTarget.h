@@ -11,6 +11,7 @@
 @interface _TtC11XCBProtocol20PackageProductTarget : _TtC11XCBProtocol6Target
 {
     MISSING_TYPE *frameworksBuildPhase;
+    MISSING_TYPE *dynamicTargetVariantGuid;
 }
 
 @end

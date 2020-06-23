@@ -17,17 +17,17 @@
 }
 
 + (id)indexPathForWorkspace:(id)arg1;
-+ (void)deriveEntryForFilePath:(id)arg1 initialTimestamp:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
-+ (void)runProvider:(Class)arg1 forFilePath:(id)arg2 initialTimestamp:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
++ (void)deriveEntryForFilePath:(id)arg1 explicitFileDataType:(id)arg2 initialTimestamp:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
++ (void)runProvider:(Class)arg1 forFilePath:(id)arg2 explicitFileDataType:(id)arg3 initialTimestamp:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void).cxx_destruct;
 @property BOOL completedPrescan; // @synthesize completedPrescan=_completedPrescan;
 - (void)loadContentWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)scheduleSaveAndOptionallyTrimToFilePaths:(id)arg1;
 - (void)dropIndex;
-- (void)ensureEntryForFilePathIsUpToDate:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)fragmentProviderForFilePath:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)fragmentProviderForFilePath:(id)arg1 thatMightMatchQueryTextFragmentProbe:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (void)fragmentProviderForFilePath:(id)arg1 indexEntryFilter:(CDUnknownBlockType)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)ensureEntryForFilePathIsUpToDate:(id)arg1 explicitFileDataType:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)fragmentProviderForFilePath:(id)arg1 explicitFileDataType:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)fragmentProviderForFilePath:(id)arg1 explicitFileDataType:(id)arg2 thatMightMatchQueryTextFragmentProbe:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (void)fragmentProviderForFilePath:(id)arg1 explicitFileDataType:(id)arg2 indexEntryFilter:(CDUnknownBlockType)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (id)initWithStoragePathLocationResolver:(CDUnknownBlockType)arg1;
 - (id)init;
 

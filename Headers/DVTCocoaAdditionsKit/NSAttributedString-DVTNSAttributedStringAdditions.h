@@ -14,6 +14,7 @@
 - (struct _NSRange)dvt_fullRange;
 - (id)dvt_attributedStringByApplyingFallbackAttributes:(id)arg1;
 - (struct CGSize)dvt_sizeConstrainedToWidth:(double)arg1;
+- (struct CGSize)dvt_sizeConstrainedToWidth2:(double)arg1;
 - (void)dvt_drawInRectByVerticallyCenteringAndTruncating:(struct CGRect)arg1;
 - (id)dvt_stringByTruncatingMultilineTextToFitSize:(struct CGSize)arg1;
 - (unsigned long long)dvt_nextSubwordFromIndex:(unsigned long long)arg1 forward:(BOOL)arg2;

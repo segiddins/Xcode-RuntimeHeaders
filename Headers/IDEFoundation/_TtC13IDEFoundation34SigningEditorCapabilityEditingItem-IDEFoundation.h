@@ -7,10 +7,17 @@
 #import <IDEFoundation/_TtC13IDEFoundation34SigningEditorCapabilityEditingItem.h>
 
 #import <IDEFoundation/IDECoalescableCapabilityEditingItemDelegate-Protocol.h>
+#import <IDEFoundation/_TtP13IDEFoundation40SigningEditorCapabilityEditingItemParent_-Protocol.h>
 
-@interface _TtC13IDEFoundation34SigningEditorCapabilityEditingItem (IDEFoundation) <IDECoalescableCapabilityEditingItemDelegate>
+@class NSString, _TtC13IDEFoundation46SigningEditorCapsuleViewStateRestorationRecord;
+
+@interface _TtC13IDEFoundation34SigningEditorCapabilityEditingItem (IDEFoundation) <IDECoalescableCapabilityEditingItemDelegate, _TtP13IDEFoundation40SigningEditorCapabilityEditingItemParent_>
 - (void)didSet:(id)arg1 keyPath:(id)arg2 value:(id)arg3;
 - (BOOL)willSet:(id)arg1 keyPath:(id)arg2 dataSources:(id)arg3 error:(id *)arg4;
 - (void)didUpdateDataSource;
+- (void)invalidateCachedIsEnabled;
+- (BOOL)addCapabilityEditingItemWithIdentifiers:(id)arg1 error:(id *)arg2;
+@property(nonatomic, readonly) NSString *title;
+@property(nonatomic, readonly) _TtC13IDEFoundation46SigningEditorCapsuleViewStateRestorationRecord *restorationRecord;
 @end
 

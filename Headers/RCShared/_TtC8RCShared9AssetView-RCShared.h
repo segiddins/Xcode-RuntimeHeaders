@@ -6,7 +6,10 @@
 
 #import <RCShared/_TtC8RCShared9AssetView.h>
 
-@interface _TtC8RCShared9AssetView (RCShared)
+#import <RCShared/NSMenuDelegate-Protocol.h>
+
+@interface _TtC8RCShared9AssetView (RCShared) <NSMenuDelegate>
+- (void)menuDidClose:(id)arg1;
 - (id)menuForEvent:(id)arg1;
 @end
 

@@ -10,7 +10,7 @@
 {
 }
 
-+ (id)insertToolbarForToolbarDefinitionIdentifier:(id)arg1 inWindow:(id)arg2;
++ (id)insertToolbarForToolbarDefinitionIdentifier:(id)arg1 inWindow:(id)arg2 initialVisibility:(BOOL)arg3;
 + (id)toolbarIdentifierForToolbarDefinition:(id)arg1;
 
 @end

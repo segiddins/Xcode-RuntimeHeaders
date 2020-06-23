@@ -21,13 +21,6 @@
     NSMutableArray *xliffAttributeOrder;
     BOOL initializedFromGlossary;
     NSString *preferredXLIFFNamespace;
-    id reserved102;
-    id reserved103;
-    id reserved104;
-    id reserved105;
-    id reserved106;
-    id reserved107;
-    id reserved108;
     NSDictionary *_toolInfo;
 }
 
@@ -83,6 +76,7 @@
 - (id)initWithXMLString:(id)arg1 options:(unsigned long long)arg2 schemaString:(id)arg3 error:(id *)arg4;
 - (id)initWithData:(id)arg1 options:(unsigned long long)arg2 schemaString:(id)arg3 error:(id *)arg4;
 - (id)initWithData:(id)arg1 options:(unsigned long long)arg2 error:(id *)arg3;
+- (id)initWithContentsOfFile:(id)arg1 error:(id *)arg2;
 
 @end
 

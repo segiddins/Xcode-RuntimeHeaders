@@ -6,12 +6,23 @@
 
 #import <SourceEditor/NSObject-Protocol.h>
 
-@class MTLCompileOptions, MTLComputePipelineDescriptor, MTLCounterSampleBufferDescriptor, MTLDepthStencilDescriptor, MTLHeapDescriptor, MTLIndirectCommandBufferDescriptor, MTLRasterizationRateMapDescriptor, MTLRenderPipelineDescriptor, MTLSamplerDescriptor, MTLSharedEventHandle, MTLSharedTextureHandle, MTLTextureDescriptor, NSArray, NSBundle, NSString, NSURL, OS_dispatch_data;
-@protocol MTLArgumentEncoder, MTLBuffer, MTLCommandQueue, MTLComputePipelineState, MTLCounterSampleBuffer, MTLDepthStencilState, MTLEvent, MTLFence, MTLFunction, MTLHeap, MTLIndirectCommandBuffer, MTLLibrary, MTLRasterizationRateMap, MTLRenderPipelineState, MTLSamplerState, MTLSharedEvent, MTLTexture;
+@class MTLAccelerationStructureDescriptor, MTLBinaryArchiveDescriptor, MTLCompileOptions, MTLComputePipelineDescriptor, MTLCounterSampleBufferDescriptor, MTLDepthStencilDescriptor, MTLHeapDescriptor, MTLIndirectCommandBufferDescriptor, MTLRasterizationRateMapDescriptor, MTLRenderPipelineDescriptor, MTLSamplerDescriptor, MTLSharedEventHandle, MTLSharedTextureHandle, MTLTextureDescriptor, NSArray, NSBundle, NSString, NSURL, OS_dispatch_data;
+@protocol MTLAccelerationStructure, MTLArgumentEncoder, MTLBinaryArchive, MTLBuffer, MTLCommandQueue, MTLComputePipelineState, MTLCounterSampleBuffer, MTLDepthStencilState, MTLDynamicLibrary, MTLEvent, MTLFence, MTLFunction, MTLHeap, MTLIndirectCommandBuffer, MTLLibrary, MTLRasterizationRateMap, MTLRenderPipelineState, MTLSamplerState, MTLSharedEvent, MTLTexture;
 
 @protocol MTLDevice <NSObject>
-- (BOOL)supportsVertexAmplificationCount:(long long)arg1;
-- (void)sampleTimestamps:(long long *)arg1 gpuTimestamp:(long long *)arg2;
+@property(nonatomic, readonly) BOOL supportsBinaryFunctionPointers;
+@property(nonatomic, readonly) BOOL supportsFunctionPointers;
+- (id <MTLAccelerationStructure>)newAccelerationStructureWithDescriptor:(MTLAccelerationStructureDescriptor *)arg1;
+- (id <MTLAccelerationStructure>)newAccelerationStructureWithSize:(unsigned long long)arg1;
+- (CDStruct_32a7f38a)accelerationStructureSizesWithDescriptor:(MTLAccelerationStructureDescriptor *)arg1;
+@property(nonatomic, readonly) BOOL supportsRaytracing;
+- (id <MTLBinaryArchive>)newBinaryArchiveWithDescriptor:(MTLBinaryArchiveDescriptor *)arg1 error:(id *)arg2;
+- (id <MTLDynamicLibrary>)newDynamicLibraryWithURL:(NSURL *)arg1 error:(id *)arg2;
+- (id <MTLDynamicLibrary>)newDynamicLibrary:(id <MTLLibrary>)arg1 error:(id *)arg2;
+@property(nonatomic, readonly) BOOL supportsDynamicLibraries;
+- (BOOL)supportsVertexAmplificationCount:(unsigned long long)arg1;
+- (BOOL)supportsCounterSampling:(unsigned long long)arg1;
+- (void)sampleTimestamps:(unsigned long long *)arg1 gpuTimestamp:(unsigned long long *)arg2;
 - (id <MTLCounterSampleBuffer>)newCounterSampleBufferWithDescriptor:(MTLCounterSampleBufferDescriptor *)arg1 error:(id *)arg2;
 @property(nonatomic, readonly) NSArray *counterSets;
 @property(nonatomic, readonly) long long maxBufferLength;
@@ -21,17 +32,17 @@
 - (id <MTLSharedEvent>)newSharedEventWithHandle:(MTLSharedEventHandle *)arg1;
 - (id <MTLSharedEvent>)newSharedEvent;
 - (id <MTLEvent>)newEvent;
-- (id <MTLIndirectCommandBuffer>)newIndirectCommandBufferWithDescriptor:(MTLIndirectCommandBufferDescriptor *)arg1 maxCommandCount:(long long)arg2 options:(unsigned long long)arg3;
+- (id <MTLIndirectCommandBuffer>)newIndirectCommandBufferWithDescriptor:(MTLIndirectCommandBufferDescriptor *)arg1 maxCommandCount:(unsigned long long)arg2 options:(unsigned long long)arg3;
 - (id <MTLRasterizationRateMap>)newRasterizationRateMapWithDescriptor:(MTLRasterizationRateMapDescriptor *)arg1;
-- (BOOL)supportsRasterizationRateMapWithLayerCount:(long long)arg1;
+- (BOOL)supportsRasterizationRateMapWithLayerCount:(unsigned long long)arg1;
 - (id <MTLArgumentEncoder>)newArgumentEncoderWithArguments:(NSArray *)arg1;
-- (void)getDefaultSamplePositions:(CDStruct_b2fbf00d *)arg1 count:(long long)arg2;
+- (void)getDefaultSamplePositions:(CDStruct_b2fbf00d *)arg1 count:(unsigned long long)arg2;
 - (BOOL)areProgrammableSamplePositionsSupported;
 @property(nonatomic, readonly) long long maxArgumentBufferSamplerCount;
 @property(nonatomic, readonly) long long maxThreadgroupMemoryLength;
-- (long long)minimumTextureBufferAlignmentForPixelFormat:(unsigned long long)arg1;
-- (long long)minimumLinearTextureAlignmentForPixelFormat:(unsigned long long)arg1;
-- (BOOL)supportsTextureSampleCount:(long long)arg1;
+- (unsigned long long)minimumTextureBufferAlignmentForPixelFormat:(unsigned long long)arg1;
+- (unsigned long long)minimumLinearTextureAlignmentForPixelFormat:(unsigned long long)arg1;
+- (BOOL)supportsTextureSampleCount:(unsigned long long)arg1;
 - (BOOL)supportsFamily:(long long)arg1;
 - (BOOL)supportsFeatureSet:(unsigned long long)arg1;
 - (id <MTLFence>)newFence;
@@ -55,20 +66,21 @@
 - (id <MTLSamplerState>)newSamplerStateWithDescriptor:(MTLSamplerDescriptor *)arg1;
 - (id <MTLTexture>)newSharedTextureWithHandle:(MTLSharedTextureHandle *)arg1;
 - (id <MTLTexture>)newSharedTextureWithDescriptor:(MTLTextureDescriptor *)arg1;
-- (id <MTLTexture>)newTextureWithDescriptor:(MTLTextureDescriptor *)arg1 iosurface:(struct __IOSurface *)arg2 plane:(long long)arg3;
+- (id <MTLTexture>)newTextureWithDescriptor:(MTLTextureDescriptor *)arg1 iosurface:(struct __IOSurface *)arg2 plane:(unsigned long long)arg3;
 - (id <MTLTexture>)newTextureWithDescriptor:(MTLTextureDescriptor *)arg1;
 - (id <MTLDepthStencilState>)newDepthStencilStateWithDescriptor:(MTLDepthStencilDescriptor *)arg1;
-- (id <MTLBuffer>)newBufferWithBytesNoCopy:(void *)arg1 length:(long long)arg2 options:(unsigned long long)arg3 deallocator:(void (^)(void *, long long))arg4;
-- (id <MTLBuffer>)newBufferWithBytes:(void *)arg1 length:(long long)arg2 options:(unsigned long long)arg3;
-- (id <MTLBuffer>)newBufferWithLength:(long long)arg1 options:(unsigned long long)arg2;
+- (id <MTLBuffer>)newBufferWithBytesNoCopy:(void *)arg1 length:(unsigned long long)arg2 options:(unsigned long long)arg3 deallocator:(void (^)(void *, unsigned long long))arg4;
+- (id <MTLBuffer>)newBufferWithBytes:(const void *)arg1 length:(unsigned long long)arg2 options:(unsigned long long)arg3;
+- (id <MTLBuffer>)newBufferWithLength:(unsigned long long)arg1 options:(unsigned long long)arg2;
 - (id <MTLHeap>)newHeapWithDescriptor:(MTLHeapDescriptor *)arg1;
-- (CDStruct_4bcfbbae)heapBufferSizeAndAlignWithLength:(long long)arg1 options:(unsigned long long)arg2;
+- (CDStruct_4bcfbbae)heapBufferSizeAndAlignWithLength:(unsigned long long)arg1 options:(unsigned long long)arg2;
 - (CDStruct_4bcfbbae)heapTextureSizeAndAlignWithDescriptor:(MTLTextureDescriptor *)arg1;
-- (id <MTLCommandQueue>)newCommandQueueWithMaxCommandBufferCount:(long long)arg1;
+- (id <MTLCommandQueue>)newCommandQueueWithMaxCommandBufferCount:(unsigned long long)arg1;
 - (id <MTLCommandQueue>)newCommandQueue;
 @property(nonatomic, readonly) long long currentAllocatedSize;
 @property(nonatomic, readonly) BOOL supportsShaderBarycentricCoordinates;
 - (BOOL)areBarycentricCoordsSupported;
+@property(nonatomic, readonly) BOOL supportsPullModelInterpolation;
 - (BOOL)areRasterOrderGroupsSupported;
 @property(nonatomic, readonly) unsigned long long argumentBuffersSupport;
 @property(nonatomic, readonly) unsigned long long readWriteTextureSupport;

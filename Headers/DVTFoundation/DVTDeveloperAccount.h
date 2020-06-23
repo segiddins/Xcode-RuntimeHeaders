@@ -8,7 +8,8 @@
 
 #import <DVTFoundation/DVTServicesSessionProvider-Protocol.h>
 
-@class DVTDeveloperAccountCredentials, DVTDeveloperAccountSession, DVTDispatchLock, NSDictionary, NSString;
+@class DVTDeveloperAccountCredentials, DVTDeveloperAccountPortalContext, DVTDeveloperAccountSession, DVTDispatchLock, DVTSigningCertificateSerialNumber, NSDictionary, NSString;
+@protocol DVTDeveloperPortalDefaultsProtocol;
 
 @interface DVTDeveloperAccount : NSObject <DVTServicesSessionProvider>
 {
@@ -18,6 +19,7 @@
     DVTDeveloperAccountCredentials *_accountCredentials;
     NSString *_credentialsErrorDescription;
     long long _accountType;
+    DVTDeveloperAccountPortalContext *_context;
     NSString *_userDescription;
 }
 
@@ -29,9 +31,11 @@
 + (id)_accountWithPropertyListRepresentation:(id)arg1 keychain:(id)arg2 error:(id *)arg3;
 + (id)accountWithIdentity:(struct __SecIdentity *)arg1;
 + (id)accountWithCredentials:(id)arg1;
++ (id)accountWithCredentials:(id)arg1 context:(id)arg2;
 - (void).cxx_destruct;
 @property(copy, nonatomic) NSString *userDescription; // @synthesize userDescription=_userDescription;
 @property BOOL enabled; // @synthesize enabled=_enabled;
+@property(retain, nonatomic) DVTDeveloperAccountPortalContext *context; // @synthesize context=_context;
 @property long long accountType; // @synthesize accountType=_accountType;
 @property(retain) NSString *credentialsErrorDescription; // @synthesize credentialsErrorDescription=_credentialsErrorDescription;
 @property(copy) DVTDeveloperAccountCredentials *accountCredentials; // @synthesize accountCredentials=_accountCredentials;
@@ -41,7 +45,7 @@
 @property(readonly) NSString *userDescriptionOrBestGuess;
 @property(readonly) BOOL hasPassword;
 @property(copy) NSString *password;
-@property(readonly) NSString *certSerialNumber;
+@property(readonly) DVTSigningCertificateSerialNumber *certSerialNumber;
 @property(readonly) NSString *certCommonName;
 @property(readonly) struct __SecIdentity *identity;
 @property(readonly) BOOL isCertBased;
@@ -56,6 +60,7 @@
 - (id)sessionByLoggingInIfNeeded:(id *)arg1;
 - (id)_sessionByLoggingIn:(id *)arg1;
 - (id)servicesSessionWithError:(id *)arg1;
+@property(readonly, nonatomic) id <DVTDeveloperPortalDefaultsProtocol> sessionDefaults;
 - (id)init;
 - (id)description;
 

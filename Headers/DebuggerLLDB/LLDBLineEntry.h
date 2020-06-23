@@ -19,6 +19,7 @@
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (unsigned int)GetColumn;
 - (unsigned int)GetLine;
 - (_Bool)IsValid;
 - (id)initWithSBLineEntry:(struct SBLineEntry *)arg1;

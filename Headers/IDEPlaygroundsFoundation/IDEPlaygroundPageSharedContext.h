@@ -27,6 +27,7 @@
 - (id)_targetTripleForAuxiliarySource;
 - (id)_sdkForAuxiliarySource;
 - (id)_platformForFrameworkSearchPaths;
+- (id)swiftModuleSearchPaths;
 - (id)frameworkSearchPaths;
 - (id)sourcesDirectoryPath;
 - (id)resourcesDirectoryPath;

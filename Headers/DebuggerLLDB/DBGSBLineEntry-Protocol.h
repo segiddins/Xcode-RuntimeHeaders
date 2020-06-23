@@ -10,6 +10,7 @@
 
 @protocol DBGSBLineEntry <NSObject>
 - (BOOL)isEqual:(id <DBGSBLineEntry>)arg1;
+- (unsigned int)GetColumn;
 - (unsigned int)GetLine;
 - (id <DBGSBAddress>)GetStartAddress;
 - (id <DBGSBFileSpec>)GetFileSpec;

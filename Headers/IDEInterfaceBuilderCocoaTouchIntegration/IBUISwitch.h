@@ -15,12 +15,16 @@
     BOOL _on;
     IBColor *_onTintColor;
     IBColor *_thumbTintColor;
+    NSString *_title;
+    long long _switchStyle;
 }
 
 + (BOOL)shouldArchiveTintColorWithUIViewProperties;
 + (BOOL)ibSupportsCocoaTouchAccessibility;
 + (id)ibInstantiateViewForRole:(long long)arg1 withTargetRuntime:(id)arg2 documentClass:(Class)arg3 assetIdentifier:(id)arg4;
 - (void).cxx_destruct;
+@property(nonatomic) long long switchStyle; // @synthesize switchStyle=_switchStyle;
+@property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(copy, nonatomic) IBColor *thumbTintColor; // @synthesize thumbTintColor=_thumbTintColor;
 @property(copy, nonatomic) IBColor *onTintColor; // @synthesize onTintColor=_onTintColor;
 @property(nonatomic) BOOL on; // @synthesize on=_on;
@@ -34,12 +38,14 @@
 - (id)initWithCoder:(id)arg1;
 - (unsigned long long)ibDefaultAccessibilityTraits;
 - (BOOL)ibIsAccessibilityElementByDefault;
+- (BOOL)ibInspectedAreTitleAndStyleAvailable;
 - (id)ibUnarchiveValueForAttribute:(id)arg1 inConfiguration:(id)arg2 withDocumentUnarchiver:(id)arg3;
 - (void)ibArchiveEvaluatedValue:(id)arg1 forAttribute:(id)arg2 inConfiguration:(id)arg3 withDocumentArchiver:(id)arg4;
 - (id)ibLocalPerConfigurationAttributeKeyPaths;
 - (void)ibPopulateAdditionalKeyValuePairs:(id)arg1 forCompilationWithMarshallingContext:(id)arg2;
 - (unsigned long long)ibPreferredActionEventType;
 - (id)ibWidgetType;
+- (id)ibLocalLocalizableStringsAttributeKeyPaths;
 - (id)ibLocalAttributeKeyPaths;
 - (void)unarchiveWithDocumentUnarchiver:(id)arg1;
 - (void)archiveWithDocumentArchiver:(id)arg1;

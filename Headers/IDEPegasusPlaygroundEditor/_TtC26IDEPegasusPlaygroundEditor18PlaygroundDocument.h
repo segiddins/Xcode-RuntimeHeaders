@@ -10,10 +10,11 @@
 #import <IDEPegasusPlaygroundEditor/IDEPlaygroundExecutionSessionDelegate-Protocol.h>
 #import <IDEPegasusPlaygroundEditor/IDEPlaygroundHostingDocument-Protocol.h>
 #import <IDEPegasusPlaygroundEditor/IDEToyboxDelegate-Protocol.h>
+#import <IDEPegasusPlaygroundEditor/_TtP24IDEPlaygroundsFoundation29PlaygroundBuildStatusObserver_-Protocol.h>
 
 @class IDEPlaygroundPageSharedContext, IDEPlaygroundSharedContext, IDEToybox, MISSING_TYPE, NSArray, NSDictionary, NSMutableArray, NSString, NSURL;
 
-@interface _TtC26IDEPegasusPlaygroundEditor18PlaygroundDocument : _$s15IDESourceEditor18SourceCodeDocumentCN <IDEPlaygroundHostingDocument, IDEPlaygroundExecutionSessionDelegate, IDEToyboxDelegate, IDEPlaygroundExecutionDeviceViewContentReceiver>
+@interface _TtC26IDEPegasusPlaygroundEditor18PlaygroundDocument : _$s15IDESourceEditor18SourceCodeDocumentCN <IDEPlaygroundHostingDocument, IDEPlaygroundExecutionSessionDelegate, IDEToyboxDelegate, IDEPlaygroundExecutionDeviceViewContentReceiver, _TtP24IDEPlaygroundsFoundation29PlaygroundBuildStatusObserver_>
 {
     MISSING_TYPE *notificationTokens;
     MISSING_TYPE *observationTokens;
@@ -40,10 +41,12 @@
     MISSING_TYPE *auxiliarySourceCompilationInProgress;
     MISSING_TYPE *playgroundExpressionIsComplete;
     MISSING_TYPE *shouldExecuteWhenSessionIsReady;
+    MISSING_TYPE *locationToExecuteToWhenBuildFinishes;
     MISSING_TYPE *executionSessionSetupFailed;
     MISSING_TYPE *shouldIgnoreExecutionErrors;
     MISSING_TYPE *lastExpressionDidComplete;
     MISSING_TYPE *_playgroundContext;
+    MISSING_TYPE *shouldBlockExecutionDueToAuxiliarySourceFrameworks;
     MISSING_TYPE *_auxiliarySourceFrameworks;
     MISSING_TYPE *lastExecutedLineContent;
     MISSING_TYPE *skipCancelExecutionOnNextEdit;
@@ -63,6 +66,10 @@
 @property(nonatomic, copy) NSArray *sourceCodePlaygroundSections;
 @property(nonatomic, copy) NSArray *playgroundSections;
 @property(nonatomic, readonly) NSString *contents;
+- (void)builderSettingsDidChange:(id)arg1;
+- (void)builderSettingsWillChange:(id)arg1;
+- (void)builderDidBuild:(id)arg1 error:(id)arg2;
+- (void)builderWillBuild:(id)arg1;
 - (void)pegasusUpgradeFormat:(id)arg1;
 - (void)unregisterDocumentEditor:(id)arg1;
 - (void)viewContentProvider:(id)arg1 didUpdateIOSurfaceID:(unsigned int)arg2 screenSize:(struct CGSize)arg3;

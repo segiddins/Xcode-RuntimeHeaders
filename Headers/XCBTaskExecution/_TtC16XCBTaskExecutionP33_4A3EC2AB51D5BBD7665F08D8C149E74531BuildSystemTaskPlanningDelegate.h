@@ -12,6 +12,7 @@
 {
     MISSING_TYPE *diagnosticsEngine;
     MISSING_TYPE *allPlannedBuildDirectoryNodes;
+    MISSING_TYPE *allPlannedXCFrameworkNodes;
     MISSING_TYPE *queue;
     MISSING_TYPE *constructionDelegate;
     MISSING_TYPE *clientDelegate;

@@ -57,6 +57,7 @@
 - (id)collectionPropertyAttributesForSourceLanguage:(unsigned long long)arg1 objectGroupItem:(id)arg2;
 - (id)collectionTypeNameForSourceLanguage:(unsigned long long)arg1 objectGroupItem:(id)arg2;
 - (id)typeNameForSourceLanguage:(unsigned long long)arg1 objectGroupItem:(id)arg2;
+- (id)referenceTypeNameForSourceLanguage:(unsigned long long)arg1 objectGroupItem:(id)arg2;
 @property(readonly, copy) NSString *description;
 - (id)valueWithIndex:(long long)arg1;
 - (id)valueWithName:(id)arg1;
@@ -68,8 +69,10 @@
 - (void)removeValue:(id)arg1;
 - (void)addValue:(id)arg1;
 - (void)setName:(id)arg1;
+- (id)codegen_resolutionResultVisibilityForSourceLanguage:(unsigned long long)arg1;
 - (id)codegen_resolutionResultAvailabilityForSourceLanguage:(unsigned long long)arg1;
 - (id)codegen_declarationForSourceLanguage:(unsigned long long)arg1 inObjectGroupItem:(id)arg2;
+- (id)codegen_visibilityForSourceLanguage:(unsigned long long)arg1;
 - (id)codegen_declarationForSourceLanguage:(unsigned long long)arg1;
 - (id)codegen_contentsForFileOfType:(unsigned long long)arg1;
 - (BOOL)codegen_generatesFileOfType:(unsigned long long)arg1;

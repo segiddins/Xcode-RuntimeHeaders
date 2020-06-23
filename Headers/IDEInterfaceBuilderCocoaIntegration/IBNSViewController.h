@@ -80,10 +80,12 @@
 - (id)ibImageForOwnedScene;
 - (CDUnknownBlockType)ibWindow:(id *)arg1 forUpdatingConstraintsInDocument:(id)arg2;
 - (id)ibTopLevelViewForLayoutEngine:(id)arg1;
+- (void)ibConvertConstraintsToSafeAreaLayoutGuide:(BOOL)arg1 forDocument:(id)arg2;
 - (BOOL)ibIsLegalArbitrationUnitRoot;
 - (BOOL)ibShouldUseClassSwapper;
 - (void)ibPropagatePropertiesToCompiledSceneObject:(id)arg1;
 - (id)ibInspectedEffectiveAppearance;
+- (BOOL)ibShouldPreferLayoutMarginsGuideForChildView:(id)arg1;
 - (BOOL)ibChildView:(id)arg1 shouldUseConstraintsInsteadOfAutoresizingWhenAddedToDocument:(id)arg2;
 - (BOOL)ibIsChildViewUserMovable:(id)arg1;
 - (void)ibPopulateIssues:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
@@ -93,6 +95,7 @@
 - (struct CGSize)effectiveSimulatedContentSize;
 - (id)ibEditorCanvasFrameControllerForDocument:(id)arg1;
 - (BOOL)ibIsValidCocoaEmbedSegueDestination;
+- (BOOL)ibOwnsWindowToolbar;
 - (BOOL)ibAllowsEditingTitle;
 - (BOOL)ibRequiresOutletToStoryboard;
 - (Class)ibEditorClass;

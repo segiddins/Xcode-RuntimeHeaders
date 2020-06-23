@@ -23,6 +23,7 @@
 @property(retain, nonatomic) CALayer *representedLayer; // @synthesize representedLayer=_representedLayer;
 - (void)primitiveInvalidate;
 - (BOOL)supportsCALayerInspectorProperties;
+- (unsigned long long)recursivelyUpdateNumberOfChildObjectsWithIssues;
 - (BOOL)representsLayer;
 - (id)representedObjectClassName;
 - (id)identifier;

@@ -91,7 +91,6 @@
 - (void)rebaseStateForWorkingCopy:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)setIgnoredFiles:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)ignoredFilesWithCompletionBlock:(CDUnknownBlockType)arg1;
-- (void)defaultAuthorForWorkingCopy:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)setAuthor:(id)arg1 forWorkingCopy:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (void)authorForWorkingCopy:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)receivedLogItems;
@@ -99,6 +98,7 @@
 - (void)waitForLogItemsReceivedWithTimeout:(double)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)_waitForLogItemsReceivedUntilDate:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)sentLogItems;
+- (void)setAuthenticationStrategy:(id)arg1 repository:(id)arg2;
 - (void)setIncrementalLogStatus:(id)arg1 progressValue:(double)arg2 progressIdentifier:(id)arg3;
 - (void)setProgressStatus:(long long)arg1 progressValue:(double)arg2 userReadableString:(id)arg3 progressIdentifier:(id)arg4;
 - (BOOL)shouldUpdateProgress;

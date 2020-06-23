@@ -8,7 +8,7 @@
 
 #import <IDEiPhoneSupport/DVTTableViewDelegate-Protocol.h>
 
-@class DVTBorderedView, DVTDelayedInvocation, DVTGradientImageButton, DVTObservingToken, DVTTableView, IDEIntentsExtensionModel, IDEiOSTargetEditor, NSArrayController, NSString, NSView, Xcode3TargetEditor;
+@class DVTBorderedView, DVTDelayedInvocation, DVTEmptyContentPlaceholder, DVTGradientImageButton, DVTObservingToken, DVTTableView, IDEIntentsExtensionModel, IDEiOSTargetEditor, NSArrayController, NSString, NSTextField, NSView, Xcode3TargetEditor;
 @protocol DVTInvalidation;
 
 @interface IDEIntentsExtensionConfigurationViewController : IDETargetEditorSectionViewController <DVTTableViewDelegate>
@@ -32,9 +32,17 @@
     DVTBorderedView *_separatorView;
     DVTGradientImageButton *_addButton;
     DVTGradientImageButton *_deleteButton;
+    NSTextField *_mediaCategoriesDescriptionTextField;
+    NSView *_tableContainerView;
+    DVTBorderedView *_placeholderContainerView;
+    DVTEmptyContentPlaceholder *_placeholderView;
 }
 
 - (void).cxx_destruct;
+@property(retain) DVTEmptyContentPlaceholder *placeholderView; // @synthesize placeholderView=_placeholderView;
+@property __weak DVTBorderedView *placeholderContainerView; // @synthesize placeholderContainerView=_placeholderContainerView;
+@property __weak NSView *tableContainerView; // @synthesize tableContainerView=_tableContainerView;
+@property __weak NSTextField *mediaCategoriesDescriptionTextField; // @synthesize mediaCategoriesDescriptionTextField=_mediaCategoriesDescriptionTextField;
 @property __weak DVTGradientImageButton *deleteButton; // @synthesize deleteButton=_deleteButton;
 @property __weak DVTGradientImageButton *addButton; // @synthesize addButton=_addButton;
 @property __weak DVTBorderedView *separatorView; // @synthesize separatorView=_separatorView;
@@ -58,9 +66,11 @@
 - (void)_resizeView;
 - (void)_updateMediaCategories;
 - (BOOL)_mediaCategoriesHidden;
+- (id)extensionAttributesDictionary;
 - (void)_updateInfoPlist;
 - (void)_readInfoPlist;
 - (void)_setupObservers;
+- (void)viewDidLayout;
 - (void)viewDidLoad;
 - (id)initWithTargetEditor:(id)arg1 type:(unsigned long long)arg2;
 - (void)categoryCheckboxPressed:(id)arg1;

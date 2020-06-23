@@ -17,6 +17,7 @@
 + (void)enumerateAlternateAppearanceSlotsOfRep:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
 + (id)appearanceSpecificationToPlatformAppearanceMapping;
 + (void)verifyCatalogDocument:(id)arg1 presentingConfirmationOnWindow:(id)arg2;
++ (id)resultWithColorName:(id)arg1 forInfoPlistKey:(id)arg2 ifPresentInSelection:(id)arg3 softErrorWhenMissing:(id)arg4;
 + (id)systemCatalogColors;
 + (id)platform;
 + (BOOL)supportsSidebarIconSets;
@@ -24,6 +25,7 @@
 + (BOOL)supportsLocales;
 + (BOOL)supportsAppearances;
 + (id)adapterForPlatformNamed:(id)arg1 userInterfaceFrameworkFamily:(id)arg2 error:(id *)arg3;
++ (id)adapterForArguments:(id)arg1 error:(id *)arg2;
 + (id)platformAdapterClassesForSDK:(id)arg1 variant:(id)arg2;
 + (id)platformAdapterClassesForPlatformID:(id)arg1;
 + (id)platformAdapterClasses;
@@ -91,7 +93,7 @@
 - (id)platformForDeviceThinningDatabase;
 - (id)minimumDeploymentTargetSupportingARReferenceObjects;
 - (id)minimumDeploymentTargetSupportingARImageResources;
-- (id)targetPlatformForArguments:(id)arg1;
+- (id)targetPlatform;
 - (id)defaultTargetDevices;
 - (BOOL)supportsICNSFiles;
 - (id)minimumDeploymentTargetSupportingIconsInCARFiles;

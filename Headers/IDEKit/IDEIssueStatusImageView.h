@@ -12,21 +12,20 @@
 
 @interface IDEIssueStatusImageView : DVTStructuredLayoutView <DVTTableCellViewStatusView>
 {
+    long long _dvt_rowSizeStyle;
     long long _backgroundStyle;
-    double _currentRowHeight;
 }
 
 + (id)keyPathsForValuesAffectingHasDisplayableStatus;
-@property(nonatomic) double currentRowHeight; // @synthesize currentRowHeight=_currentRowHeight;
 @property(nonatomic) long long backgroundStyle; // @synthesize backgroundStyle=_backgroundStyle;
+@property(nonatomic) long long dvt_rowSizeStyle; // @synthesize dvt_rowSizeStyle=_dvt_rowSizeStyle;
 @property(readonly) BOOL hasDisplayableStatus;
 - (void)dvt_positionSubviewsAndSizeSelfAfterSubviewLayout;
 - (double)computeHeightAfterSubviewLayout;
 - (void)dvt_configureSubviewsBeforeSubviewLayout;
-@property(nonatomic) long long tableViewRowSizeStyle;
+- (void)set_Dvt_rowSizeStyle:(long long)arg1;
 @property(retain, nonatomic) NSArray *images;
 @property(retain, nonatomic) NSImage *image;
-- (id)init;
 
 @end
 

@@ -28,6 +28,7 @@
 - (BOOL)isValidWithError:(id *)arg1;
 - (BOOL)canPlatform:(id)arg1 containContentForPlatform:(id)arg2;
 - (BOOL)shouldCheckBundleIdentifierPrefixWithInfoDictionary:(id)arg1;
+- (BOOL)validateEmbeddedBundleVersionsWithIsWarning:(BOOL)arg1 error:(id *)arg2;
 
 @end
 

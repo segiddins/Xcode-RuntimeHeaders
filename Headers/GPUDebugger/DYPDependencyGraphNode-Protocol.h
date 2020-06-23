@@ -10,20 +10,20 @@
 @protocol DYPDependencyGraphNode;
 
 @protocol DYPDependencyGraphNode <NSObject>
-@property(readonly, nonatomic) unsigned long long dispatchCount;
-@property(readonly, nonatomic) unsigned long long drawCount;
-@property(readonly, nonatomic) struct _NSRange fileFunctionIndexRange;
-@property(readonly, nonatomic) int fileFunctionIndexEnd;
-@property(readonly, nonatomic) int fileFunctionIndexBegin;
-@property(readonly, nonatomic) struct _NSRange functionIndexRange;
-@property(readonly, nonatomic) int functionIndexEnd;
-@property(readonly, nonatomic) int functionIndexBegin;
-@property(readonly, nonatomic) NSString *label;
-@property(readonly, nonatomic) NSArray *children;
-@property(readonly, nonatomic) id <DYPDependencyGraphNode> parent;
-@property(readonly, nonatomic) unsigned long long type;
-- (void)enumerateNodesDFS:(void (^)(id <DYPDependencyGraphNode>, char *))arg1;
+- (BOOL)enumerateNodesDFS:(void (^)(id <DYPDependencyGraphNode>, char *))arg1;
 - (double)encoderTime;
 - (NSNumber *)vertexCount;
+@property(nonatomic, readonly) unsigned long long dispatchCount;
+@property(nonatomic, readonly) unsigned long long drawCount;
+@property(nonatomic, readonly) struct _NSRange fileFunctionIndexRange;
+@property(nonatomic, readonly) int fileFunctionIndexEnd;
+@property(nonatomic, readonly) int fileFunctionIndexBegin;
+@property(nonatomic, readonly) struct _NSRange functionIndexRange;
+@property(nonatomic, readonly) int functionIndexEnd;
+@property(nonatomic, readonly) int functionIndexBegin;
+@property(nonatomic, readonly) NSString *label;
+@property(nonatomic, readonly) NSArray *children;
+@property(nonatomic, readonly) id <DYPDependencyGraphNode> parent;
+@property(nonatomic, readonly) unsigned long long type;
 @end
 

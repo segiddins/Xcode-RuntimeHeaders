@@ -8,15 +8,24 @@
 
 #import <IDEInterfaceBuilderCocoaIntegration/IBDocumentArchiving-Protocol.h>
 
-@class NSColor, NSString;
+@class NSColor, NSFont, NSString;
 
 @interface NSImageView (IBNSImageViewIntegration) <IBDocumentArchiving>
++ (id)keyPathsForValuesAffectingIbInspectedSymbolFontConfiguration;
 - (void)ibCustomizeForInsertionIntoNSView:(id)arg1 withObjects:(id)arg2 fromLibraryOrDifferentTargetRuntime:(BOOL)arg3 andInsertionContext:(id)arg4;
+- (void)ibUpdateSymbolScale;
+@property(nonatomic) long long ibExternalSymbolScale;
+- (void)ibUpdateSymbolFont;
+@property(copy, nonatomic) NSFont *ibExternalSymbolFont;
+- (void)setIbInspectedSymbolFontConfiguration:(long long)arg1;
+- (long long)ibInspectedSymbolFontConfiguration;
+- (BOOL)ibInspectedEnableSymbolConfiguration;
 - (struct CGSize)ibPreferredSize;
 - (id)ibWidgetType;
 - (BOOL)ibWantsBoundsIndicatorDuringTracking;
 - (BOOL)ibIsBorderless;
 @property(copy, nonatomic) NSColor *ibExternalContentTintColor;
+- (void)ibDidAddToDocument:(id)arg1 phase:(unsigned long long)arg2;
 - (id)ibLocalAttributeKeyPaths;
 - (void)unarchiveWithDocumentUnarchiver:(id)arg1;
 - (void)archiveWithDocumentArchiver:(id)arg1;

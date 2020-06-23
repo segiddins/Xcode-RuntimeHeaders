@@ -33,6 +33,8 @@
 @property(readonly, nonatomic) IBDocument *document; // @synthesize document=_document;
 @property(readonly, nonatomic) IBAutolayoutMisplacementStatus *status; // @synthesize status=_status;
 - (void)primitiveInvalidate;
+- (void)resizeConstraints;
+- (void)deleteConstraints;
 - (void)confirmChanges;
 @property(nonatomic) BOOL shouldResetToSuggestedConstraints;
 - (void)setShouldResetToSuggestedConstraintsAction:(id)arg1;

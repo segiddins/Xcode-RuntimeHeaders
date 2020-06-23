@@ -4,13 +4,25 @@
 //  Copyright (C) 1997-2019 Steve Nygard.
 //
 
-#import <XCSUI/NSObject-Protocol.h>
+#import <XCSUI/IDETestReport_Base-Protocol.h>
+#import <XCSUI/IDETest_ActivityAttachment_Base-Protocol.h>
 
-@class NSString;
+@class DVTTextDocumentLocation, NSArray, NSString;
+@protocol IDEResultBundleURLRedirecting, IDETestReport_Base;
 
-@protocol IDETestReport_FailureSummary <NSObject>
+@protocol IDETestReport_FailureSummary <IDETest_ActivityAttachment_Base, IDETestReport_Base>
 @property(readonly, nonatomic) long long ide_testReport_failureSummary_lineNumber;
 @property(readonly, copy, nonatomic) NSString *ide_testReport_failureSummary_fileName;
 @property(readonly, copy, nonatomic) NSString *ide_testReport_failureSummary_message;
+
+@optional
+@property __weak id <IDEResultBundleURLRedirecting> ide_testReport_failureSummary_urlRedirector;
+@property(readonly) long long ide_testReport_failureSummary_numberOfChildren;
+@property(readonly, copy) NSArray *ide_testReport_failureSummary_attachments;
+@property(readonly, copy) NSArray *ide_testReport_failureSummary_failureSteps;
+@property(readonly, copy) NSArray *ide_testReport_failureSummary_callStackSymbolInfos;
+@property(readonly, copy, nonatomic) DVTTextDocumentLocation *ide_testReport_failureSummary_documentLocation;
+@property(readonly, nonatomic) BOOL ide_testReport_failureSummary_isTopLevelFailure;
+- (id <IDETestReport_Base>)ide_testReport_failureSummary_childAtIndex:(long long)arg1;
 @end
 

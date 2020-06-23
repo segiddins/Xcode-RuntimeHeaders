@@ -18,8 +18,12 @@
     NSMutableArray *_environmentEntries;
     NSMutableArray *_mutableEnvironmentEntries;
     NSString *_title;
+    BOOL _shouldLoadCapture;
+    BOOL _shouldLoadDiagnostics;
+    BOOL _shouldLoadReplayer;
     _Bool _useDeferredLaunch;
     BOOL _applyShellTokenizationToArguments;
+    int _shaderValidationMode;
     NSURL *_url;
     NSURL *_trueBinary;
     NSURL *_hostURL;
@@ -41,6 +45,10 @@
 @property(copy, nonatomic) NSString *currentWorkingDirectory; // @synthesize currentWorkingDirectory=_currentWorkingDirectory;
 @property(copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(copy, nonatomic) NSDictionary *infoPlist; // @synthesize infoPlist=_infoPlist;
+@property(nonatomic) BOOL shouldLoadReplayer; // @synthesize shouldLoadReplayer=_shouldLoadReplayer;
+@property(nonatomic) int shaderValidationMode; // @synthesize shaderValidationMode=_shaderValidationMode;
+@property(nonatomic) BOOL shouldLoadDiagnostics; // @synthesize shouldLoadDiagnostics=_shouldLoadDiagnostics;
+@property(nonatomic) BOOL shouldLoadCapture; // @synthesize shouldLoadCapture=_shouldLoadCapture;
 @property(retain, nonatomic) NSURL *hostURL; // @synthesize hostURL=_hostURL;
 @property(retain, nonatomic) NSURL *trueBinary; // @synthesize trueBinary=_trueBinary;
 @property(retain, nonatomic) NSURL *url; // @synthesize url=_url;

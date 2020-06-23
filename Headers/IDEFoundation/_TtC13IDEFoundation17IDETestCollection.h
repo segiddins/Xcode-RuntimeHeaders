@@ -6,20 +6,20 @@
 
 #import <objc/NSObject.h>
 
-@class MISSING_TYPE, NSSet, _TtC13IDEFoundation15IDETestLocation;
+@class MISSING_TYPE;
 
 @interface _TtC13IDEFoundation17IDETestCollection : NSObject
 {
-    MISSING_TYPE *testContainers;
+    MISSING_TYPE *tests;
 }
 
 + (id)emptyTestCollection;
 - (void).cxx_destruct;
 - (id)init;
-@property(nonatomic, readonly) _TtC13IDEFoundation15IDETestLocation *testLocation;
+- (BOOL)isEqual:(id)arg1;
+@property(nonatomic, readonly) long long hash;
 - (id)initWithTestContainer:(id)arg1;
 - (id)initWithTestContainers:(id)arg1;
-@property(nonatomic, readonly) NSSet *testContainers;
 
 @end
 

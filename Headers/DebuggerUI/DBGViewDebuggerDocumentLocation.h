@@ -16,6 +16,8 @@
     NSString *_viewObjectAddress;
 }
 
++ (id)documentLocationWithURL:(id)arg1 snapshotNode:(id)arg2;
++ (id)documentLocationWithURL:(id)arg1 viewObject:(id)arg2;
 - (void).cxx_destruct;
 @property(readonly) NSString *viewObjectAddress; // @synthesize viewObjectAddress=_viewObjectAddress;
 @property(readonly, nonatomic) id <NSCopying> issueCoalescingGroupIdentifier;
@@ -23,8 +25,8 @@
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualDisregardingTimestamp:(id)arg1;
-- (id)initWithDocumentURL:(id)arg1 timestamp:(id)arg2 snapshotNode:(id)arg3;
-- (id)initWithDocumentURL:(id)arg1 timestamp:(id)arg2 viewObject:(id)arg3;
+- (id)initWithDocumentURL:(id)arg1 snapshotNode:(id)arg2;
+- (id)initWithDocumentURL:(id)arg1 viewObject:(id)arg2;
 
 // Remaining properties
 @property(readonly, nonatomic) id <NSCopying> issueCoalescingIdentifier; // @dynamic issueCoalescingIdentifier;

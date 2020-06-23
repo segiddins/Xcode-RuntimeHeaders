@@ -47,7 +47,9 @@
 - (void)setDrawsKeyEquivalentRect:(BOOL)arg1;
 - (void)setKeyEquivalentOffset:(double)arg1;
 - (id)attributedTitle;
+- (id)keyEquivalentTextAttributes;
 - (id)textAttributes;
+- (id)effectiveKeyEquivalentTextColor;
 - (id)effectiveTextColor;
 - (id)effectiveFont;
 - (id)initWithMenuItem:(id)arg1;

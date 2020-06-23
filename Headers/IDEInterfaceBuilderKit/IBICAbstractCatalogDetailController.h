@@ -29,11 +29,13 @@
     IBICDetailOverlay *_overlay;
     IBICDetailScrollView *_scrollView;
     IBICDetailPlaceholderView *_placeholderView;
+    struct NSEdgeInsets _scrollViewContentInsets;
 }
 
 - (void).cxx_destruct;
 @property(retain, nonatomic) IBICDetailPlaceholderView *placeholderView; // @synthesize placeholderView=_placeholderView;
 @property(readonly) BOOL drawsWithKeyAppearance; // @synthesize drawsWithKeyAppearance=_drawsWithKeyAppearance;
+@property(nonatomic) struct NSEdgeInsets scrollViewContentInsets; // @synthesize scrollViewContentInsets=_scrollViewContentInsets;
 @property(retain, nonatomic) IBICDetailScrollView *scrollView; // @synthesize scrollView=_scrollView;
 @property(readonly) IBICDetailOverlay *overlay; // @synthesize overlay=_overlay;
 @property(readonly) IBICAbstractCatalogDocument *document; // @synthesize document=_document;

@@ -18,6 +18,7 @@
 + (id)XCXCFrameworkSupportFeature;
 + (id)XCBuildRuleArchitectureNeutralFlagFeature;
 + (id)XCBuildRuleInputDependenciesFeature;
++ (id)XCScriptPhaseAlwaysOutOfDateFeature;
 + (id)XCScriptPhaseDependencyFileFeature;
 + (id)XCScriptPhaseOutputFileListFeature;
 + (id)XCScriptPhaseInputFileListFeature;

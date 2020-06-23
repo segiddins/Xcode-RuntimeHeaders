@@ -12,10 +12,11 @@
 {
     DVTFilePath *_sourceSDKFilePath;
     BOOL _fromInterestingFramework;
+    BOOL _isPrivateSDKContent;
     DVTFilePath *_filePath;
 }
 
-+ (id)resultWithCandidate:(struct IDEOpenQuicklyQueryCandidate *)arg1 sourceSDKFilePath:(id)arg2 filePath:(id)arg3 isFromInterestingFramework:(BOOL)arg4 query:(id)arg5;
++ (id)resultWithCandidate:(struct DVTFuzzyMatchCandidate *)arg1 precision:(long long)arg2 sourceSDKFilePath:(id)arg3 filePath:(id)arg4 isFromInterestingFramework:(BOOL)arg5 isPrivateSDKContent:(BOOL)arg6 query:(id)arg7;
 - (void).cxx_destruct;
 @property(readonly) DVTFilePath *filePath; // @synthesize filePath=_filePath;
 - (id)alternateTitleGivenParentResult:(id)arg1;
@@ -28,7 +29,7 @@
 - (BOOL)representsSameResultAsSDKFilePathResult:(id)arg1;
 - (unsigned long long)hashOfResultIdentity;
 - (BOOL)isSymbolic;
-- (id)updatedResultForQuery:(id)arg1;
+- (id)updatedResultForQuery:(id)arg1 precision:(long long)arg2;
 
 @end
 

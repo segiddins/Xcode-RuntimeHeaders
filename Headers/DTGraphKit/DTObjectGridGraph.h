@@ -28,6 +28,7 @@
 - (void)setPivotNodeIdentifier:(unsigned int)arg1 maintainingCoordinates:(id)arg2 initialGenerations:(BOOL)arg3;
 - (void)setPivotNodeIdentifier:(unsigned int)arg1 maintainingCoordinates:(id)arg2;
 @property(retain) NSColor *canvasBackgroundColor;
+@property(nonatomic) long long layoutMode;
 @property(copy, nonatomic) NSArray *onScreenNodeIdentifiers;
 @property(nonatomic) struct CGPoint cameraPosition;
 @property(readonly, nonatomic) unsigned int pivotNodeIdentifier;

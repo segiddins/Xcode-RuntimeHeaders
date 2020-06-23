@@ -14,6 +14,7 @@
     MISSING_TYPE *commandQueue;
     MISSING_TYPE *commandQueueAux;
     MISSING_TYPE *loadingCommandQueue;
+    MISSING_TYPE *imageRendererCommandQueue;
     MISSING_TYPE *renderPipelineCache;
     MISSING_TYPE *library;
 }

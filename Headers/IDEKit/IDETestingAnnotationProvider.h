@@ -32,6 +32,7 @@
 - (void)didEndRolloverOnAnnotation:(id)arg1 inTextSidebarView:(id)arg2 event:(id)arg3;
 - (void)didBeginRolloverOnAnnotation:(id)arg1 inTextSidebarView:(id)arg2 event:(id)arg3;
 - (BOOL)_shouldAllowLaunchingTests;
+- (void)presentActionMenu:(id)arg1 textSidebar:(id)arg2 annotation:(id)arg3;
 - (void)didClickAnnotation:(id)arg1 inTextSidebar:(id)arg2 event:(id)arg3;
 - (void)_runTestCollection:(id)arg1 testPlanConfigurations:(id)arg2 contextPrefix:(id)arg3;
 - (void)allTestablesChanged;

@@ -7,6 +7,7 @@
 #import <Foundation/NSString.h>
 
 @interface NSString (IDEIndexAdditions)
+- (id)ideindex_quoteForShellIfNeeded;
 - (id)ideIndex_stringByResolvingSymlinksInPath;
 @end
 

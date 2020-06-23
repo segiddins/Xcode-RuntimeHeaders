@@ -11,16 +11,23 @@
 @interface DVTSegmentColorWell : DVTAbstractColorPicker
 {
     NSImageCell *_iconCell;
+    BOOL _drawsAsFirstResponder;
 }
 
 - (void).cxx_destruct;
+@property(nonatomic) BOOL drawsAsFirstResponder; // @synthesize drawsAsFirstResponder=_drawsAsFirstResponder;
+- (void)drawFocusRingMask;
+- (struct CGRect)focusRingMaskBounds;
 - (void)drawRect:(struct CGRect)arg1;
+- (BOOL)resignFirstResponder;
+- (BOOL)becomeFirstResponder;
 - (struct CGRect)swatchRect;
 - (double)swatchHeight;
 - (void)mouseDown:(id)arg1;
 - (id)effectiveBorderColor;
 - (id)effectiveDarkColor;
 - (id)effectiveLightColor;
+- (void)setColor:(id)arg1;
 @property(retain, nonatomic) NSImage *icon;
 
 @end

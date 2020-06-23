@@ -21,6 +21,7 @@
 - (void).cxx_destruct;
 - (BOOL)_isAppleInternal;
 - (BOOL)_hasDVTFoundationFramework;
+@property(readonly) BOOL isRunningASAN;
 @property(readonly) BOOL hasUnlimitedPower;
 @property(readonly) BOOL isRuntimeOSAppleInternal;
 @property(readonly) DVTVersion *runtimeDarwinVersion;

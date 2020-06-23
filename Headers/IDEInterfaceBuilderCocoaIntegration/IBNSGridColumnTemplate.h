@@ -57,6 +57,7 @@
 - (void)ibWillPutObjects:(id)arg1 withDescendants:(id)arg2 onPasteboard:(id)arg3 fromDocument:(id)arg4 context:(id)arg5;
 - (id)ibInspectedXPlacementInheritedDisplayString;
 @property(readonly, nonatomic) long long ibEffectiveXPlacement;
+- (id)ibInspectedXPlacementInheritedAndNoneTitlesForMultipleSelection;
 - (id)ibInspectedXPlacementInheritedAndNoneTitles;
 - (id)ibInspectedXPlacementInheritedAndNoneValues;
 - (void)invalidatePlacementIfNeeded;

@@ -11,6 +11,8 @@
 @interface NSBundle (DVTPlatformAdditions)
 + (id)dvt_platformForBundleAtPath:(id)arg1 error:(id *)arg2;
 + (id)dvt_platformFamilyForBundleAtPath:(id)arg1 error:(id *)arg2;
++ (void)dvt_installBundleForClassCheckerUsingClassFromMainBundle:(Class)arg1;
++ (id)dvt_swizzledBundleForClass:(Class)arg1;
 + (id)dvt_rawInfoDictionaryForBundleAtPath:(id)arg1 error:(id *)arg2;
 + (id)dvt_infoPlistURLForBundleAtPath:(id)arg1;
 + (id)dvt_filteredInfoDictionaryForBundleAtPath:(id)arg1 error:(id *)arg2;
@@ -23,6 +25,8 @@
 + (id)dvt_uncachedValueForKey:(id)arg1 inBundleAtPath:(id)arg2;
 + (id)dvt_uncachedExtensionInfoAtPath:(id)arg1;
 + (id)dvt_uncachedBundleExecutableAtPath:(id)arg1;
++ (id)dvt_uncachedBundleNameAtPath:(id)arg1;
++ (id)dvt_uncachedBundleNameAtURL:(id)arg1;
 + (id)dvt_uncachedBundleIdentifierAtPath:(id)arg1;
 + (id)dvt_uncachedBundleExecutableAtURL:(id)arg1;
 + (id)dvt_uncachedBundleIdentifierAtURL:(id)arg1;

@@ -13,6 +13,7 @@
 @interface IDEIntentsExtensionModel : NSObject <DVTInvalidation>
 {
     unsigned long long _type;
+    unsigned long long _editorType;
     NSArray *_intentRepresentations;
     NSDictionary *_categories;
 }
@@ -21,13 +22,15 @@
 - (void).cxx_destruct;
 @property(retain) NSDictionary *categories; // @synthesize categories=_categories;
 @property(retain) NSArray *intentRepresentations; // @synthesize intentRepresentations=_intentRepresentations;
+@property(readonly) unsigned long long editorType; // @synthesize editorType=_editorType;
 @property(readonly) unsigned long long type; // @synthesize type=_type;
+- (id)modelKeyWithName:(long long)arg1;
 - (void)primitiveInvalidate;
 - (void)deleteIntentRepresentation:(id)arg1;
 - (void)addIntentRepresentation:(id)arg1;
 - (id)extensionAttributesDictionaryRepresentationWithDictionary:(id)arg1;
 - (void)updateWithExtensionAttributesDictionary:(id)arg1;
-- (id)initWithType:(unsigned long long)arg1;
+- (id)initWithType:(unsigned long long)arg1 editorType:(unsigned long long)arg2;
 
 // Remaining properties
 @property(retain) DVTStackBacktrace *creationBacktrace;

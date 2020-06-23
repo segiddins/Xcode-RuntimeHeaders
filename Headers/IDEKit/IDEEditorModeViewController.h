@@ -51,8 +51,8 @@
 - (BOOL)automaticallyInvalidatesChildViewControllers;
 - (id)_stealPrimaryEditorContext;
 - (id)editorContexts;
-- (BOOL)openEditorOpenSpecifier:(id)arg1 editorContext:(id)arg2;
-- (BOOL)openEditorHistoryItem:(id)arg1 editorContext:(id)arg2;
+- (BOOL)openEditorOpenSpecifier:(id)arg1 editorContext:(id)arg2 options:(unsigned long long)arg3;
+- (BOOL)openEditorHistoryItem:(id)arg1 editorContext:(id)arg2 options:(unsigned long long)arg3;
 @property(readonly) struct CGSize minimumContentViewFrameSize;
 - (BOOL)canCreateSplitForNavigationHUD;
 - (void)resetAssistantEditorSelection;

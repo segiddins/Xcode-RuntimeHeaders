@@ -10,8 +10,9 @@
 
 @interface _TtCCC13DVTLibraryKit15LibraryTileViewP33_6FFB22C21DD7CEFECFFDD7BCA058327226IconOnlyItemViewController16IconOnlyItemView : DVTLibraryTileViewAssetView
 {
-    MISSING_TYPE *backgroundInset;
     MISSING_TYPE *selectionBackground;
+    MISSING_TYPE *selectionBackgroundInset;
+    MISSING_TYPE *selectionBackgroundCornerRadius;
     MISSING_TYPE *informationTextButton;
     MISSING_TYPE *_toolTip;
 }

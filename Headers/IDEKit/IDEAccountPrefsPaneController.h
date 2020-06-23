@@ -21,7 +21,6 @@
     id <IDECIService> _newlyAddedService;
     NSArray *_knownXCSServices;
     DVTObservingToken *_developerAccountManagerObserver;
-    DVTObservingToken *_sourceControlAccountManagerObserver;
     BOOL _hasLoadedDeveloperAccounts;
     DVTBorderedView *_accountListBorderView;
     DVTBorderedView *_accountGlassBarBorderView;

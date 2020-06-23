@@ -36,6 +36,7 @@
 - (void)documentDidAddDraggedObjects:(id)arg1;
 - (id)readableAssetPasteboardTypes;
 - (void)populatePasteboard:(id)arg1 withAssets:(id)arg2 defaultDraggedImageState:(id *)arg3 identifierMapTable:(id *)arg4;
+- (id)lastActiveDocument;
 - (id)lastActiveDocumentEditor;
 - (id)viewBackedDragImageOfAsset:(id)arg1;
 - (id)bitmapDragImageOfAsset:(id)arg1;

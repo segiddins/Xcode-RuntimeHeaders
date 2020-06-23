@@ -19,10 +19,10 @@
     DVTGradientImageButton *_toggleSizeForSplitButton;
     BOOL _showAddSplitBelowIcon;
     BOOL _showToggleSizeAsMaximize;
-    NSImage *_defaultAddSplitButtonImage;
-    NSImage *_defaultRemoveSplitButtonImage;
-    NSImage *_defaultToggleSizeForSplitButtonMaximizeImage;
-    NSImage *_defaultToggleSizeForSplitButtonMinimizeImage;
+    NSImage *_addSplitButtonOnRightImage;
+    NSImage *_addSplitButtonBelowImage;
+    NSImage *_toggleSizeForSplitButtonMaximizeImage;
+    NSImage *_toggleSizeForSplitButtonMinimizeImage;
     id <DVTInvalidation> _optionKeyEventMonitor;
     BOOL _canSelectAddSplitButton;
     BOOL _canSelectRemoveSplitButton;
@@ -42,7 +42,6 @@
 - (id)toggleSizeForSplitButton;
 - (id)removeSplitButton;
 - (id)addSplitButton;
-- (void)updateButtonStatesWithEditorContext:(id)arg1;
 - (id)initWithEditorContext:(id)arg1;
 @property BOOL showToggleSizeAsMaximize;
 - (void)_updateAddSplitButtonImageToBelowIcon:(BOOL)arg1;

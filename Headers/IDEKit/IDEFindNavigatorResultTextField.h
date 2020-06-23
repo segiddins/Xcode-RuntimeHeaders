@@ -10,9 +10,12 @@
 
 @interface IDEFindNavigatorResultTextField : NSTextField
 {
+    CDStruct_bf6d4a14 _layoutInset;
 }
 
 + (Class)cellClass;
+@property CDStruct_bf6d4a14 layoutInset; // @synthesize layoutInset=_layoutInset;
+- (BOOL)allowsVibrancy;
 @property(copy) NSAttributedString *expansionText;
 
 @end

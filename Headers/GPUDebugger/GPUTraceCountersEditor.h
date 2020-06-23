@@ -15,16 +15,17 @@
     DVTObservingToken *_activeDebuggerControllerObserverToken;
     GPUDebuggingAddition *_debuggingAddition;
     DVTStackView_AppKitAutolayout *_mainStackView;
-    NSString *_outlineItemUUIDToOpen;
     GPUDebuggerController *_debuggerController;
     GPUTraceCounterGraphEditor *_counterGraphEditor;
     NSArray *_selectedDocumentLocations;
+    long long _outlineItemUUIDToOpen;
 }
 
 + (void)configureStateSavingObjectPersistenceByName:(id)arg1;
 + (id)keyPathsForValuesAffectingCurrentSelectedItems;
 + (id)keyPathsForValuesAffectingCurrentSelectedDocumentLocations;
 - (void).cxx_destruct;
+@property(nonatomic) long long outlineItemUUIDToOpen; // @synthesize outlineItemUUIDToOpen=_outlineItemUUIDToOpen;
 @property(readonly, nonatomic) NSArray *selectedDocumentLocations; // @synthesize selectedDocumentLocations=_selectedDocumentLocations;
 @property(retain, nonatomic) GPUTraceCounterGraphEditor *counterGraphEditor; // @synthesize counterGraphEditor=_counterGraphEditor;
 @property(readonly, nonatomic) __weak GPUDebuggerController *debuggerController; // @synthesize debuggerController=_debuggerController;
@@ -49,6 +50,7 @@
 - (void)_setup;
 - (void)viewWillUninstall;
 - (void)viewDidInstall;
+- (void)viewDidLoad;
 - (void)reset;
 - (void)primitiveInvalidate;
 - (BOOL)hasDefaultTopSection;

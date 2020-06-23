@@ -33,6 +33,7 @@ __attribute__((visibility("hidden")))
 - (id)containingSymbolForOccurrence:(id)arg1;
 - (id)correspondingSymbolForOccurrence:(id)arg1;
 - (id)relatedClassForCategory:(id)arg1;
+- (id)implementingSymbolsForProtocol:(id)arg1;
 - (id)implementingClassesForProtocol:(id)arg1;
 - (id)interfacesForClass:(id)arg1;
 - (id)allProtocolsForClass:(id)arg1;
@@ -51,6 +52,7 @@ __attribute__((visibility("hidden")))
 - (id)propertyForCallable:(id)arg1;
 - (id)specializationsForSymbol:(id)arg1;
 - (id)specializesSymbolsForSymbol:(id)arg1;
+- (id)overridingOccurrencesForSymbol:(id)arg1 bySymbol:(id)arg2;
 - (id)overridingSymbolsForSymbol:(id)arg1;
 - (id)overriddenSymbolsForSymbol:(id)arg1;
 - (id)referencesForSymbol:(id)arg1;

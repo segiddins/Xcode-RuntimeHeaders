@@ -18,6 +18,7 @@
     NSSet *_allowedBuildPhaseIdentifiers;
     NSDictionary *_allowedFileTypesByBuildPhaseIdentifier;
     NSArray *_packageTypes;
+    NSDictionary *_defaultEntitlements;
 }
 
 + (id)specificationRegistryName;
@@ -75,6 +76,7 @@
 - (id)computeCustomContextForMacroExpansionScope:(id)arg1;
 - (id)initializeTemporaryBuildSettingsWithMacroExpansionScope:(id)arg1;
 - (void)computeDependenciesWithMacroExpansionScope:(id)arg1;
+@property(readonly) BOOL supportsDefinesModule;
 @property(readonly) BOOL isUITest;
 @property(readonly) BOOL isUnitTest;
 - (id)additonalFileRefsForBuildPhase:(id)arg1 macroExpansionScope:(id)arg2;

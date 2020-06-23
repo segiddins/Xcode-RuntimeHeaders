@@ -24,6 +24,9 @@
 @property(nonatomic) BOOL enabled;
 - (BOOL)isEnabled;
 @property(nonatomic, copy) NSString *argument;
+- (void)setIsEnabledFromUTF8String:(char *)arg1 fromXMLUnarchiver:(id)arg2;
+- (void)setArgumentFromUTF8String:(char *)arg1 fromXMLUnarchiver:(id)arg2;
+- (void)dvt_encodeAttributesWithXMLArchiver:(id)arg1 version:(id)arg2;
 
 @end
 

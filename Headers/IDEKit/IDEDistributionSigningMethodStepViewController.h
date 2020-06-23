@@ -15,7 +15,7 @@
     NSButton *_manualRadio;
 }
 
-+ (BOOL)skipStepForContext:(id)arg1 assistantDirection:(int)arg2;
++ (BOOL)skipStepForContext:(id)arg1 assistantDirection:(long long)arg2;
 - (void).cxx_destruct;
 @property(retain) NSButton *manualRadio; // @synthesize manualRadio=_manualRadio;
 @property(retain) NSButton *automaticRadio; // @synthesize automaticRadio=_automaticRadio;

@@ -9,11 +9,12 @@
 #import <IDEKit/IDEStructureEditingDropTarget-Protocol.h>
 #import <IDEKit/IDEStructureEditingGroupingTarget-Protocol.h>
 #import <IDEKit/IDEStructureEditingRemoveSubitemsTarget-Protocol.h>
+#import <IDEKit/IDEStructureEditingTemplateInsertionTarget-Protocol.h>
 
 @class DVTObservingToken, IDEGroup, IDEWorkspace, NSString;
 @protocol IDEStructureEditingItem;
 
-@interface IDEContainerItemStructureEditingTarget : NSObject <IDEStructureEditingDropTarget, IDEStructureEditingGroupingTarget, IDEStructureEditingRemoveSubitemsTarget>
+@interface IDEContainerItemStructureEditingTarget : NSObject <IDEStructureEditingDropTarget, IDEStructureEditingGroupingTarget, IDEStructureEditingRemoveSubitemsTarget, IDEStructureEditingTemplateInsertionTarget>
 {
     IDEGroup *_targetGroup;
     DVTObservingToken *_targetGroupValidObservationToken;
@@ -47,10 +48,11 @@
 - (void)structureEditingGroupSubitemsAtIndexes:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (BOOL)structureEditingCanGroupSubitemsAtIndexes:(id)arg1;
 - (BOOL)_canGroupSubitemsAtIndexes:(id)arg1 shouldGroup:(BOOL)arg2 completionBlock:(CDUnknownBlockType)arg3;
-- (BOOL)structureEditingAddNewSubgroup;
+- (BOOL)structureEditingAddNewSubgroupWithGroupCreatedBlock:(CDUnknownBlockType)arg1;
 - (BOOL)structureEditingCanAddNewSubgroup;
 - (id)allowedFileTypesForNewFile;
-- (BOOL)_testOrAddNewGroupAtChildIndex:(long long)arg1 shouldAdd:(BOOL)arg2;
+- (BOOL)_addNewGroupAtChildIndex:(long long)arg1 newGroupBlock:(CDUnknownBlockType)arg2;
+- (BOOL)_canAddNewGroupAtChildIndex:(long long)arg1;
 - (BOOL)_addNewSubgroupAtIndex:(unsigned long long)arg1 newGroupBlock:(CDUnknownBlockType)arg2;
 - (BOOL)structureEditingAcceptInsertionOfSubitemsForContext:(id)arg1;
 - (BOOL)initiateMoveCopyUsingMoveCoordinator:(id)arg1 atIndex:(unsigned long long)arg2 commandKeyDown:(BOOL)arg3 optionKeyDown:(BOOL)arg4;
@@ -66,13 +68,13 @@
 - (id)actualTargetStructureEditingItem;
 - (id)actualNavigableItem;
 - (long long)actualChildIndex;
+@property(readonly, copy) NSString *description;
 @property(readonly, copy) NSString *debugDescription;
 - (void)dealloc;
 - (id)_initWithOperation:(unsigned long long)arg1 targetGroup:(id)arg2 targetStructureEditingItem:(id)arg3 targetIndex:(long long)arg4 inWorkspace:(id)arg5;
 - (id)init;
 
 // Remaining properties
-@property(readonly, copy) NSString *description;
 @property(readonly) Class superclass;
 
 @end

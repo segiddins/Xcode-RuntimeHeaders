@@ -11,7 +11,7 @@
 #import <XCTDaemonControl/XCTDaemonControlSession-Protocol.h>
 #import <XCTDaemonControl/XCTestManager_IDEInterface-Protocol.h>
 
-@class NSString, XCTProtocolVersion;
+@class NSString, XCTCapabilities;
 @protocol OS_dispatch_queue, XCTDaemonControlSessionDelegate, XCTDaemonProxy, XCTDaemonProxyProviding, XCTDebugLogDelegate, XCTRemoteHostDiagnosticReportsSynchronizing;
 
 @interface XCTDaemonControlSession : NSObject <XCTestManager_IDEInterface, XCTConfigurableCallbackQueue, XCTConfigurableDebugLogger, XCTDaemonControlSession>
@@ -21,18 +21,20 @@
     NSObject<OS_dispatch_queue> *_callbackQueue;
     id <XCTDaemonProxy> _daemonProxy;
     id <XCTDaemonProxyProviding> _proxyProvider;
-    XCTProtocolVersion *_daemonProtocolVersion;
+    XCTCapabilities *_daemonCapabilities;
     id <XCTRemoteHostDiagnosticReportsSynchronizing> _diagnosticReportsSynchronizer;
     id <XCTDaemonControlSessionDelegate> _delegate;
 }
 
++ (id)exportedCapabilities;
++ (void)requestSessionForRemoteDevice:(id)arg1 completion:(CDUnknownBlockType)arg2;
 + (void)requestSessionForSimulatorDevice:(id)arg1 completion:(CDUnknownBlockType)arg2;
 + (void)requestSessionForLocalComputerWithCompletion:(CDUnknownBlockType)arg1;
 + (void)requestSessionWithDTXConnectionProvider:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void).cxx_destruct;
 @property __weak id <XCTDaemonControlSessionDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly) id <XCTRemoteHostDiagnosticReportsSynchronizing> diagnosticReportsSynchronizer; // @synthesize diagnosticReportsSynchronizer=_diagnosticReportsSynchronizer;
-@property(readonly, copy) XCTProtocolVersion *daemonProtocolVersion; // @synthesize daemonProtocolVersion=_daemonProtocolVersion;
+@property(readonly) XCTCapabilities *daemonCapabilities; // @synthesize daemonCapabilities=_daemonCapabilities;
 @property(readonly) id <XCTDaemonProxyProviding> proxyProvider; // @synthesize proxyProvider=_proxyProvider;
 @property(readonly) id <XCTDaemonProxy> daemonProxy; // @synthesize daemonProxy=_daemonProxy;
 @property BOOL isConnected; // @synthesize isConnected=_isConnected;
@@ -49,7 +51,7 @@
 - (void)_executeRequest:(id)arg1;
 - (void)invalidate;
 - (void)setDelegate:(id)arg1 callbackQueue:(id)arg2 logDelegate:(id)arg3;
-- (id)initWithDaemonProxy:(id)arg1 proxyProvider:(id)arg2 protocolVersion:(id)arg3 diagnosticReportsSynchronizer:(id)arg4;
+- (id)initWithDaemonProxy:(id)arg1 proxyProvider:(id)arg2 daemonCapabilities:(id)arg3 diagnosticReportsSynchronizer:(id)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

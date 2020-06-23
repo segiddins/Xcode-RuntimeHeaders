@@ -6,9 +6,10 @@
 
 #import <DVTSourceControl/NSObject-Protocol.h>
 
-@class NSURL;
+@class DVTSourceControlSSHKeysAuthenticationStrategy, NSArray;
 
 @protocol DVTSourceControlSSHHelperCallbackProtocol <NSObject>
-- (void)passphraseForSSHKey:(NSURL *)arg1 completionBlock:(void (^)(NSString *))arg2;
+- (void)setPassphrasesForSSHKeysAuthStrategies:(NSArray *)arg1 completionBlock:(void (^)(DVTSourceControlSSHKeysAuthenticationStrategiesResultType *))arg2;
+- (void)setPassphraseForSSHKeysAuthStrategy:(DVTSourceControlSSHKeysAuthenticationStrategy *)arg1 completionBlock:(void (^)(DVTSourceControlSSHKeysAuthenticationStrategyResultType *))arg2;
 @end
 

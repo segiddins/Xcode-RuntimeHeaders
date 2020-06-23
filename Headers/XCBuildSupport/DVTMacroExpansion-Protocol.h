@@ -8,13 +8,14 @@
 #import <XCBuildSupport/NSObject-Protocol.h>
 
 @class DVTMacroExpansionScope, NSArray, NSString;
+@protocol DVTMacroExpansion;
 
 @protocol DVTMacroExpansion <NSObject, NSCopying>
 - (NSString *)dvt_debugDescription;
 - (void)dvt_assertInternalConsistency;
-- (NSString *)dvt_stringForm;
+- (NSString<DVTMacroExpansion> *)dvt_stringForm;
 - (BOOL)dvt_isLiteral;
-- (NSArray *)dvt_evaluateAsStringListInScope:(DVTMacroExpansionScope *)arg1 withState:(void *)arg2;
-- (NSString *)dvt_evaluateAsStringInScope:(DVTMacroExpansionScope *)arg1 withState:(void *)arg2;
+- (NSArray *)dvt_evaluateAsStringListInScope:(DVTMacroExpansionScope *)arg1 withState:(const struct DVTNestedMacroExpansionState *)arg2;
+- (NSString *)dvt_evaluateAsStringInScope:(DVTMacroExpansionScope *)arg1 withState:(const struct DVTNestedMacroExpansionState *)arg2;
 @end
 

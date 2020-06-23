@@ -22,7 +22,7 @@
 @property(readonly, nonatomic) NSArray *children;
 @property(readonly, nonatomic) id <DYPDependencyGraphNode> parent;
 @property(readonly, nonatomic) unsigned long long type;
-- (void)enumerateNodesDFS:(void (^)(id <DYPDependencyGraphNode>, char *))arg1;
+- (BOOL)enumerateNodesDFS:(void (^)(id <DYPDependencyGraphNode>, char *))arg1;
 - (double)encoderTime;
 - (NSNumber *)vertexCount;
 @end

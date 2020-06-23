@@ -10,11 +10,9 @@
 
 @interface _TtC5UVKit23XcodeDeviceDataProvider : _TtCs12_SwiftObject
 {
-    MISSING_TYPE *didChange;
-    MISSING_TYPE *objectWillChange;
+    MISSING_TYPE *_devices;
     MISSING_TYPE *analyticsLogger;
     MISSING_TYPE *devicesDidChangeToken;
-    MISSING_TYPE *devices;
 }
 
 @end

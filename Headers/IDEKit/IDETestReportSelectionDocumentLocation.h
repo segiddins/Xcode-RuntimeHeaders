@@ -6,12 +6,14 @@
 
 #import <DVTFoundation/DVTDocumentLocation.h>
 
-@class IDETest, NSString;
-@protocol IDETestReport_Test, IDETestReport_TestActivity, IDETestReport_TestAttachment;
+@class IDESchemeActionTestFailureStep, IDETest, NSString;
+@protocol IDETestReport_FailureSummary, IDETestReport_Test, IDETestReport_TestActivity, IDETestReport_TestAttachment;
 
 @interface IDETestReportSelectionDocumentLocation : DVTDocumentLocation
 {
     BOOL _attachmentsHaveBeenPruned;
+    IDESchemeActionTestFailureStep *_failureStep;
+    id <IDETestReport_FailureSummary> _failureSummary;
     id <IDETestReport_TestAttachment> _attachment;
     id <IDETestReport_TestActivity> _activity;
     id <IDETestReport_Test> _test;
@@ -19,17 +21,19 @@
 }
 
 - (void).cxx_destruct;
-@property(retain, nonatomic) IDETest *ide_test; // @synthesize ide_test=_ide_test;
-@property(retain, nonatomic) id <IDETestReport_Test> test; // @synthesize test=_test;
-@property(retain, nonatomic) id <IDETestReport_TestActivity> activity; // @synthesize activity=_activity;
-@property(retain, nonatomic) id <IDETestReport_TestAttachment> attachment; // @synthesize attachment=_attachment;
-@property(nonatomic) BOOL attachmentsHaveBeenPruned; // @synthesize attachmentsHaveBeenPruned=_attachmentsHaveBeenPruned;
+@property(readonly, nonatomic) IDETest *ide_test; // @synthesize ide_test=_ide_test;
+@property(readonly, nonatomic) id <IDETestReport_Test> test; // @synthesize test=_test;
+@property(readonly, nonatomic) id <IDETestReport_TestActivity> activity; // @synthesize activity=_activity;
+@property(readonly, nonatomic) id <IDETestReport_TestAttachment> attachment; // @synthesize attachment=_attachment;
+@property(readonly, nonatomic) id <IDETestReport_FailureSummary> failureSummary; // @synthesize failureSummary=_failureSummary;
+@property(readonly, nonatomic) IDESchemeActionTestFailureStep *failureStep; // @synthesize failureStep=_failureStep;
+@property(readonly, nonatomic) BOOL attachmentsHaveBeenPruned; // @synthesize attachmentsHaveBeenPruned=_attachmentsHaveBeenPruned;
 @property(readonly, nonatomic) NSString *testName;
 @property(readonly, nonatomic) NSString *testClassName;
 - (id)description;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
-- (id)initWithDocumentURL:(id)arg1 test:(id)arg2 ide_test:(id)arg3 activity:(id)arg4 attachment:(id)arg5 attachmentsHaveBeenPruned:(BOOL)arg6;
+- (id)initWithDocumentURL:(id)arg1 test:(id)arg2 ide_test:(id)arg3 activity:(id)arg4 attachment:(id)arg5 failureSummary:(id)arg6 failureStep:(id)arg7 attachmentsHaveBeenPruned:(BOOL)arg8;
 
 @end
 

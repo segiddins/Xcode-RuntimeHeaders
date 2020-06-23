@@ -9,8 +9,8 @@
 @interface DVTBuildTargetDevice (IDEFoundationAdditions)
 - (BOOL)disablesOnlyActiveArch;
 - (id)uncachedOverridingPropertiesForBuildable:(id)arg1 buildParameters:(id)arg2;
-- (id)supportedSDKsForBuildable:(id)arg1 buildParameters:(id)arg2 error:(id *)arg3;
-- (id)supportedArchitecturesForBuildable:(id)arg1 buildParameters:(id)arg2 error:(id *)arg3;
+- (id)supportedSDKsForBuildableContext:(id)arg1 buildParameters:(id)arg2 error:(id *)arg3;
+- (id)supportedArchitecturesForBuildableContext:(id)arg1 buildParameters:(id)arg2 error:(id *)arg3;
 - (BOOL)canBeDefaultDeviceForBuildable:(id)arg1 buildParameters:(id)arg2;
 - (id)_generalRunErrorWithLaunchSession:(id)arg1;
 - (id)displayNameAdditionsWhenUsingArchitecture:(id)arg1 withSDK:(id)arg2;

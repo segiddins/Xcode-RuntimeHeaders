@@ -15,8 +15,8 @@
     NSNumber *_trackingTag;
     long long _progress;
     NSMutableArray *_filterButtonStateObservers;
-    BOOL _isBecomingFirstResponder;
     BOOL _hidesProgress;
+    BOOL _isBecomingFirstResponder;
     CDUnknownBlockType _searchMenuBlock;
     NSMutableArray *_filterButtons;
     NSProgressIndicator *_progressIndicator;
@@ -26,10 +26,10 @@
 + (void)initialize;
 + (Class)cellClass;
 - (void).cxx_destruct;
-@property(nonatomic) BOOL hidesProgress; // @synthesize hidesProgress=_hidesProgress;
 @property(readonly) NSProgressIndicator *progressIndicator; // @synthesize progressIndicator=_progressIndicator;
 @property(readonly) NSMutableArray *filterButtons; // @synthesize filterButtons=_filterButtons;
 @property BOOL isBecomingFirstResponder; // @synthesize isBecomingFirstResponder=_isBecomingFirstResponder;
+@property(nonatomic) BOOL hidesProgress; // @synthesize hidesProgress=_hidesProgress;
 @property(copy, nonatomic) CDUnknownBlockType searchMenuBlock; // @synthesize searchMenuBlock=_searchMenuBlock;
 @property(readonly) BOOL hasActiveFilter;
 @property(readonly) BOOL hasKeyboardFocus;

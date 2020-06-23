@@ -14,6 +14,7 @@
     NSSet *_observers;
 }
 
++ (id)createPlaceholderViewForType:(long long)arg1 withFrame:(struct CGRect)arg2 title:(id)arg3;
 - (void).cxx_destruct;
 @property(retain) NSSet *observers; // @synthesize observers=_observers;
 @property(retain) IBNSRelationshipSegueModeledViewControllerView *viewControllerEditorView; // @synthesize viewControllerEditorView=_viewControllerEditorView;

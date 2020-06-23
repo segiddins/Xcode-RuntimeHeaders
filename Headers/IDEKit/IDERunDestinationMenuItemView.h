@@ -6,38 +6,35 @@
 
 #import <AppKit/NSView.h>
 
-@class IDERunDestination, IDERunDestinationMenuItemColoredSpinner, NSImage, NSImageView, NSLayoutConstraint, NSMenuItem, NSMutableArray, NSTextField;
+@class IDERunDestination, NSImage, NSImageView, NSMenuItem, NSMutableArray, NSTextField;
 
 @interface IDERunDestinationMenuItemView : NSView
 {
     NSMutableArray *_cancellationTokens;
+    NSImage *_cloudImage;
+    NSImage *_highlightedCloudImage;
     NSImage *_wifiImage;
     NSImage *_highlightedWifiImage;
-    BOOL _wantsResizeOnLayout;
     BOOL _isWatchDestination;
     IDERunDestination *_runDestination;
     NSMenuItem *_menuItem;
-    NSView *_indentView;
-    NSLayoutConstraint *_indentConstraint;
     NSTextField *_stateView;
     NSImageView *_imageView;
     NSTextField *_titleView;
-    IDERunDestinationMenuItemColoredSpinner *_spinnerView;
-    NSImageView *_wifiView;
+    NSImageView *_wifiOrCloudView;
 }
 
-+ (id)keyPathsForValuesAffectingHideWifi;
-+ (id)keyPathsForValuesAffectingHideSpinner;
++ (id)keyPathsForValuesAffectingHideWifiOrCloud;
 + (id)keyPathsForValuesAffectingAccessory;
++ (id)keyPathsForValuesAffectingWifiOrCloudImage;
++ (id)runDestinationRepresentedObjectFromMenuItem:(id)arg1;
++ (BOOL)menuItemNeedsCustomView:(id)arg1;
 + (void)applyToMenuItem:(id)arg1;
 - (void).cxx_destruct;
-@property(retain, nonatomic) NSImageView *wifiView; // @synthesize wifiView=_wifiView;
-@property(retain, nonatomic) IDERunDestinationMenuItemColoredSpinner *spinnerView; // @synthesize spinnerView=_spinnerView;
+@property(retain, nonatomic) NSImageView *wifiOrCloudView; // @synthesize wifiOrCloudView=_wifiOrCloudView;
 @property(retain, nonatomic) NSTextField *titleView; // @synthesize titleView=_titleView;
 @property(retain, nonatomic) NSImageView *imageView; // @synthesize imageView=_imageView;
 @property(retain, nonatomic) NSTextField *stateView; // @synthesize stateView=_stateView;
-@property(retain, nonatomic) NSLayoutConstraint *indentConstraint; // @synthesize indentConstraint=_indentConstraint;
-@property(retain, nonatomic) NSView *indentView; // @synthesize indentView=_indentView;
 @property(retain, nonatomic) NSMenuItem *menuItem; // @synthesize menuItem=_menuItem;
 @property(nonatomic) BOOL isWatchDestination; // @synthesize isWatchDestination=_isWatchDestination;
 @property(retain, nonatomic) IDERunDestination *runDestination; // @synthesize runDestination=_runDestination;
@@ -51,18 +48,20 @@
 - (void)keyDown:(id)arg1;
 - (BOOL)acceptsFirstResponder;
 - (void)_selectAndClose;
-- (void)drawRect:(struct CGRect)arg1;
-- (void)layout;
-- (BOOL)hideWifi;
-- (BOOL)hideSpinner;
+- (BOOL)hideWifiOrCloud;
 - (long long)accessory;
 - (void)_removeBindings;
 - (void)_addBindings;
+- (id)wifiOrCloudImage;
+- (void)resetFrameSizeAndLayout;
+- (struct CGSize)sizeForMenuItem:(id)arg1;
+- (struct CGSize)menuItemTitleSize;
+- (void)layout;
 - (void)_observe:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
 - (void)_bind:(id)arg1 toKeyPath:(id)arg2;
 - (void)_bind:(id)arg1 toKeyPath:(id)arg2 options:(id)arg3;
 - (void)viewDidMoveToWindow;
-- (void)awakeFromNib;
+- (id)initWithFrame:(struct CGRect)arg1 menuItem:(id)arg2;
 
 @end
 

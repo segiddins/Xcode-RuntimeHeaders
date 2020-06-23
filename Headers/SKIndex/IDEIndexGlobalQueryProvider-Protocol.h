@@ -18,6 +18,7 @@
 - (IDEIndexSymbol *)containingSymbolForOccurrence:(IDEIndexSymbolOccurrence *)arg1;
 - (IDEIndexSymbol *)correspondingSymbolForOccurrence:(IDEIndexSymbolOccurrence *)arg1;
 - (IDEIndexClassSymbol *)relatedClassForCategory:(IDEIndexCategorySymbol *)arg1;
+- (IDEIndexCollection *)implementingSymbolsForProtocol:(IDEIndexProtocolSymbol *)arg1;
 - (IDEIndexCollection *)implementingClassesForProtocol:(IDEIndexProtocolSymbol *)arg1;
 - (IDEIndexCollection *)interfacesForClass:(IDEIndexClassSymbol *)arg1;
 - (IDEIndexCollection *)allProtocolsForClass:(IDEIndexClassSymbol *)arg1;
@@ -36,6 +37,7 @@
 - (IDEIndexPropertySymbol *)propertyForCallable:(IDEIndexCallableSymbol *)arg1;
 - (IDEIndexCollection *)specializationsForSymbol:(IDEIndexSymbol *)arg1;
 - (IDEIndexCollection *)specializesSymbolsForSymbol:(IDEIndexSymbol *)arg1;
+- (IDEIndexCollection *)overridingOccurrencesForSymbol:(IDEIndexSymbol *)arg1 bySymbol:(IDEIndexSymbol *)arg2;
 - (IDEIndexCollection *)overridingSymbolsForSymbol:(IDEIndexSymbol *)arg1;
 - (IDEIndexCollection *)overriddenSymbolsForSymbol:(IDEIndexSymbol *)arg1;
 - (IDEIndexCollection *)referencesForSymbol:(IDEIndexSymbol *)arg1;

@@ -28,6 +28,7 @@
 - (void).cxx_destruct;
 - (BOOL)pluginIsLoaded:(id)arg1;
 - (BOOL)loadPluginBundle:(id)arg1;
+- (BOOL)isPluginBundle:(id)arg1;
 - (BOOL)loadPluginBundle:(id)arg1 forDomain:(id)arg2;
 - (void)findAndLoadPlugins;
 - (void)findAndLoadPluginsInDomain:(id)arg1;

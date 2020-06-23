@@ -8,24 +8,28 @@
 
 #import <XCTDaemonControl/XCTConfigurableDebugLogger-Protocol.h>
 
-@class NSString;
+@class NSString, XCTCapabilities;
 @protocol XCTDebugLogDelegate;
 
 @interface XCTDaemonInitiateControlSessionRequest : NSObject <XCTConfigurableDebugLogger>
 {
     struct atomic_flag _finished;
     id <XCTDebugLogDelegate> _logDelegate;
+    XCTCapabilities *_IDECapabilities;
     CDUnknownBlockType _completion;
 }
 
++ (id)daemonCapabilitiesForLegacyProtocolVersion:(unsigned long long)arg1;
 - (void).cxx_destruct;
-@property(copy) CDUnknownBlockType completion; // @synthesize completion=_completion;
+@property(readonly, copy) CDUnknownBlockType completion; // @synthesize completion=_completion;
+@property(readonly) XCTCapabilities *IDECapabilities; // @synthesize IDECapabilities=_IDECapabilities;
 @property __weak id <XCTDebugLogDelegate> logDelegate; // @synthesize logDelegate=_logDelegate;
 - (void)_attemptVersion13APIWithDaemonProxy:(id)arg1;
 - (void)_attemptVersion16APIWithDaemonProxy:(id)arg1;
+- (void)_attemptVersion27APIWithDaemonProxy:(id)arg1;
 - (void)executeWithDaemonProxy:(id)arg1 timeout:(double)arg2;
-- (void)_finishWithProtocolVersion:(id)arg1 error:(id)arg2;
-- (id)initWithCompletion:(CDUnknownBlockType)arg1;
+- (void)_finishWithCapabilities:(id)arg1 error:(id)arg2;
+- (id)initWithIDECapabilities:(id)arg1 completion:(CDUnknownBlockType)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

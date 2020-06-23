@@ -41,6 +41,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak NSView *resourcesViewContainer; // @synthesize resourcesViewContainer;
 @property(nonatomic) __weak NSView *summaryViewContainer; // @synthesize summaryViewContainer;
 @property(nonatomic) __weak NSSplitView *splitView; // @synthesize splitView;
+- (void)selectResourceItemWithItem:(id)arg1;
 
 @end
 

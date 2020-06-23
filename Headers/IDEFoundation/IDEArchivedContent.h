@@ -32,6 +32,7 @@
 + (id)contentClasses;
 - (void).cxx_destruct;
 @property(readonly) __weak IDEArchive *archive; // @synthesize archive=_archive;
+@property(readonly) NSString *bundleName;
 @property(readonly) NSString *teamIdentifier;
 @property(readonly) NSString *shortBundleVersionString;
 @property(readonly) NSString *bundleVersion;

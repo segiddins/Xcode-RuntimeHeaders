@@ -9,7 +9,7 @@
 #import <XCSourceControl/NSCopying-Protocol.h>
 #import <XCSourceControl/NSSecureCoding-Protocol.h>
 
-@class NSString;
+@class NSString, NSURL;
 
 @interface XCSourceControlHostParticipant : NSObject <NSSecureCoding, NSCopying>
 {
@@ -17,25 +17,36 @@
     NSString *_identifier;
     NSString *_username;
     NSString *_email;
+    NSURL *_avatarURL;
+    unsigned long long _reviewStatus;
+    unsigned long long _role;
     unsigned long long _type;
 }
 
 + (BOOL)supportsSecureCoding;
 - (void).cxx_destruct;
-@property(readonly) unsigned long long type; // @synthesize type=_type;
+@property(readonly, nonatomic) unsigned long long type; // @synthesize type=_type;
+@property(nonatomic) unsigned long long role; // @synthesize role=_role;
+@property(nonatomic) unsigned long long reviewStatus; // @synthesize reviewStatus=_reviewStatus;
+@property(readonly, copy, nonatomic) NSURL *avatarURL; // @synthesize avatarURL=_avatarURL;
 @property(readonly, copy, nonatomic) NSString *email; // @synthesize email=_email;
 @property(readonly, copy, nonatomic) NSString *username; // @synthesize username=_username;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
+- (void)updateReviewStatus:(unsigned long long)arg1;
+- (void)addRole:(unsigned long long)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)descriptionFromReviewStatus:(unsigned long long)arg1;
+- (id)descriptionFromRole:(unsigned long long)arg1;
+- (id)descriptionFromParticipantType:(unsigned long long)arg1;
 - (id)description;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 @property(readonly, copy, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 - (void)setDisplayName:(id)arg1;
-- (id)initWithIdentifier:(id)arg1 username:(id)arg2 displayName:(id)arg3 email:(id)arg4 type:(unsigned long long)arg5;
-- (id)initWithIdentifier:(id)arg1 username:(id)arg2 type:(unsigned long long)arg3;
+- (id)initWithIdentifier:(id)arg1 ownerGroupName:(id)arg2 displayName:(id)arg3;
+- (id)initWithIdentifier:(id)arg1 username:(id)arg2 displayName:(id)arg3 email:(id)arg4 avatarURL:(id)arg5 type:(unsigned long long)arg6 role:(unsigned long long)arg7 reviewStatus:(unsigned long long)arg8;
 
 @end
 

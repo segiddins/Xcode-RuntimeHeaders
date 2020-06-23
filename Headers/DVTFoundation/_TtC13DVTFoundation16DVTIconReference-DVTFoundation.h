@@ -7,10 +7,14 @@
 #import <DVTFoundation/_TtC13DVTFoundation16DVTIconReference.h>
 
 @interface _TtC13DVTFoundation16DVTIconReference (DVTFoundation)
++ (id)toEmoji:(id)arg1;
++ (id)toBaseReference:(id)arg1 badgeReference:(id)arg2;
++ (id)toFilePath:(id)arg1 fileType:(id)arg2 isDirty:(BOOL)arg3 isMissing:(BOOL)arg4;
 + (id)toFilePath:(id)arg1;
 + (id)toFileType:(id)arg1;
 + (id)toSymbolKind:(id)arg1;
 + (id)toSystemType:(id)arg1 isTemplate:(BOOL)arg2;
++ (id)to:(id)arg1 bundleIdentifier:(id)arg2;
 + (id)to:(id)arg1 in:(id)arg2 with:(id)arg3 isTemplate:(BOOL)arg4;
 + (id)to:(id)arg1 in:(id)arg2 with:(id)arg3;
 @end

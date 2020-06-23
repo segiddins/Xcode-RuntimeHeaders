@@ -16,7 +16,7 @@
     IBAssetScannerNode *_root;
     NSMutableDictionary *_itemsIndexedByTypeThenFullyQualifiedName;
     NSMutableArray *_allNodes;
-    NSMutableDictionary *_definitAdornersByAndornees;
+    NSMutableDictionary *_definiteAdornersByAndornees;
     NSMutableDictionary *_maybeAdornersByAndornees;
     NSSet *_allTagSets;
 }

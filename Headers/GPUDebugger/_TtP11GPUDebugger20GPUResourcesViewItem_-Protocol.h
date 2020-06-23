@@ -27,6 +27,7 @@
 @property(nonatomic, readonly) NSString *identifier;
 
 @optional
+@property(nonatomic, readonly) NSNumber *allocationID;
 @property(nonatomic, readonly) NSNumber *indirectCommandBufferSize;
 @property(nonatomic, readonly) NSNumber *heapUsedSize;
 @property(nonatomic, readonly) NSNumber *heapSize;

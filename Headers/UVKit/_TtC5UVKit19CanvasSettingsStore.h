@@ -14,6 +14,7 @@
     MISSING_TYPE *_showViewBoundaries;
     MISSING_TYPE *_zoom;
     MISSING_TYPE *_showDeviceBezels;
+    MISSING_TYPE *_showSelection;
 }
 
 @end

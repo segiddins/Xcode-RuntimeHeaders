@@ -14,6 +14,7 @@
     IBObjectLibraryAsset *_abPersonViewAsset;
     IBObjectLibraryAsset *_windowAsset;
     IBObjectLibraryAsset *_windowControllerAsset;
+    IBObjectLibraryAsset *_windowControllerWithSidebarAsset;
     IBObjectLibraryAsset *_viewControllerAsset;
     IBObjectLibraryAsset *_panelAsset;
     IBObjectLibraryAsset *_headsUpDisplayAsset;
@@ -25,6 +26,8 @@
     IBObjectLibraryAsset *_standardSpaceToolbarItemAsset;
     IBObjectLibraryAsset *_standardPrintToolbarItemAsset;
     IBObjectLibraryAsset *_standardFlexibleSpaceToolbarItemAsset;
+    IBObjectLibraryAsset *_searchToolbarItemAsset;
+    IBObjectLibraryAsset *_toolbarAsset;
     IBObjectLibraryAsset *_gradientButtonAsset;
     IBObjectLibraryAsset *_multilineBorderedTextFieldAsset;
     IBObjectLibraryAsset *_multilineLabelAsset;
@@ -35,6 +38,7 @@
     IBObjectLibraryAsset *_numberFormatterAsset;
     IBObjectLibraryAsset *_dateFormatterAsset;
     IBObjectLibraryAsset *_treeControllerAsset;
+    IBObjectLibraryAsset *_viewAsset;
     IBObjectLibraryAsset *_tableCellViewAsset;
     IBObjectLibraryAsset *_textOnlyTableCellViewAsset;
     IBObjectLibraryAsset *_pageControllerAsset;
@@ -82,6 +86,7 @@
 @property(retain) IBObjectLibraryAsset *pageControllerAsset; // @synthesize pageControllerAsset=_pageControllerAsset;
 @property(retain) IBObjectLibraryAsset *textOnlyTableCellViewAsset; // @synthesize textOnlyTableCellViewAsset=_textOnlyTableCellViewAsset;
 @property(retain) IBObjectLibraryAsset *tableCellViewAsset; // @synthesize tableCellViewAsset=_tableCellViewAsset;
+@property(retain) IBObjectLibraryAsset *viewAsset; // @synthesize viewAsset=_viewAsset;
 @property(retain) IBObjectLibraryAsset *treeControllerAsset; // @synthesize treeControllerAsset=_treeControllerAsset;
 @property(retain) IBObjectLibraryAsset *dateFormatterAsset; // @synthesize dateFormatterAsset=_dateFormatterAsset;
 @property(retain) IBObjectLibraryAsset *numberFormatterAsset; // @synthesize numberFormatterAsset=_numberFormatterAsset;
@@ -92,6 +97,8 @@
 @property(retain) IBObjectLibraryAsset *multilineLabelAsset; // @synthesize multilineLabelAsset=_multilineLabelAsset;
 @property(retain) IBObjectLibraryAsset *multilineBorderedTextFieldAsset; // @synthesize multilineBorderedTextFieldAsset=_multilineBorderedTextFieldAsset;
 @property(retain) IBObjectLibraryAsset *gradientButtonAsset; // @synthesize gradientButtonAsset=_gradientButtonAsset;
+@property(retain) IBObjectLibraryAsset *toolbarAsset; // @synthesize toolbarAsset=_toolbarAsset;
+@property(retain) IBObjectLibraryAsset *searchToolbarItemAsset; // @synthesize searchToolbarItemAsset=_searchToolbarItemAsset;
 @property(retain) IBObjectLibraryAsset *standardFlexibleSpaceToolbarItemAsset; // @synthesize standardFlexibleSpaceToolbarItemAsset=_standardFlexibleSpaceToolbarItemAsset;
 @property(retain) IBObjectLibraryAsset *standardPrintToolbarItemAsset; // @synthesize standardPrintToolbarItemAsset=_standardPrintToolbarItemAsset;
 @property(retain) IBObjectLibraryAsset *standardSpaceToolbarItemAsset; // @synthesize standardSpaceToolbarItemAsset=_standardSpaceToolbarItemAsset;
@@ -103,6 +110,7 @@
 @property(retain) IBObjectLibraryAsset *headsUpDisplayAsset; // @synthesize headsUpDisplayAsset=_headsUpDisplayAsset;
 @property(retain) IBObjectLibraryAsset *panelAsset; // @synthesize panelAsset=_panelAsset;
 @property(retain) IBObjectLibraryAsset *viewControllerAsset; // @synthesize viewControllerAsset=_viewControllerAsset;
+@property(retain) IBObjectLibraryAsset *windowControllerWithSidebarAsset; // @synthesize windowControllerWithSidebarAsset=_windowControllerWithSidebarAsset;
 @property(retain) IBObjectLibraryAsset *windowControllerAsset; // @synthesize windowControllerAsset=_windowControllerAsset;
 @property(retain) IBObjectLibraryAsset *windowAsset; // @synthesize windowAsset=_windowAsset;
 @property(retain) IBObjectLibraryAsset *abPersonViewAsset; // @synthesize abPersonViewAsset=_abPersonViewAsset;
@@ -111,6 +119,7 @@
 - (id)processPasteboardObjectsForAsset:(id)arg1;
 - (id)windowAssetForWindowObjectAsset:(id)arg1;
 - (void)document:(id)arg1 didAddDraggedObjects:(id)arg2 fromDraggedObjectLibraryAsset:(id)arg3;
+- (void)didAddWindowControllerWithSidebarAssetProducts:(id)arg1 toDocument:(id)arg2;
 - (void)didAddMenuItemAsset:(id)arg1 withProducts:(id)arg2 toDocument:(id)arg3;
 - (void)didAddGradientButtonAssetProducts:(id)arg1 toDocument:(id)arg2;
 - (void)didAddTableViewAssetProducts:(id)arg1 toDocument:(id)arg2;

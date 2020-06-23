@@ -39,7 +39,6 @@
 @property BOOL complete; // @synthesize complete=_complete;
 @property(retain) IDELocalizationImporter *worker; // @synthesize worker=_worker;
 @property(retain, nonatomic) IDELocalizationImportAction *action; // @synthesize action=_action;
-- (double)reviewFilesNavigator:(id)arg1 outlineView:(id)arg2 rowHeightForNavigableItem:(id)arg3;
 - (id)reviewFilesNavigator:(id)arg1 documentLocationForNavigableItem:(id)arg2;
 - (id)workspace;
 - (BOOL)shouldSelectFirstDiff;

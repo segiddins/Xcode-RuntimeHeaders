@@ -8,31 +8,38 @@
 
 #import <IDEFoundation/IDEIndexCompletionItem-Protocol.h>
 
-@class DVTSourceCodeSymbolKind, IDESourceKitResponse, IDESourceKitUIDSet, NSAttributedString, NSString;
+@class DVTRangeArray, DVTSourceCodeLanguage, DVTSourceCodeSymbolKind, IDESourceKitResponse, IDESourceKitUIDSet, NSAttributedString, NSString;
 
 @interface IDESourceKitCompletionItem : NSObject <IDEIndexCompletionItem>
 {
     CDStruct_4c46f3f5 _obj;
     IDESourceKitResponse *_response;
     IDESourceKitUIDSet *_UID;
+    BOOL _notRecommended;
     double _priority;
     double _fuzzyMatchingScore;
+    DVTRangeArray *_fuzzyMatchingRanges;
     NSString *_name;
+    DVTSourceCodeLanguage *_language;
 }
 
 - (void).cxx_destruct;
-@property(readonly) NSString *name; // @synthesize name=_name;
+@property(readonly) DVTSourceCodeLanguage *language; // @synthesize language=_language;
+@property(readonly, copy) NSString *name; // @synthesize name=_name;
+@property(retain) DVTRangeArray *fuzzyMatchingRanges; // @synthesize fuzzyMatchingRanges=_fuzzyMatchingRanges;
 @property(nonatomic) double fuzzyMatchingScore; // @synthesize fuzzyMatchingScore=_fuzzyMatchingScore;
-@property(readonly, nonatomic) double priority; // @synthesize priority=_priority;
+@property(readonly) double priority; // @synthesize priority=_priority;
 @property(readonly, copy) NSString *description;
-@property(readonly) BOOL notRecommended;
+@property(readonly) BOOL notRecommended; // @synthesize notRecommended=_notRecommended;
 @property(readonly) DVTSourceCodeSymbolKind *symbolKind;
 @property(readonly) NSAttributedString *descriptionText;
 @property(readonly, copy) NSString *parentText;
-@property(readonly) NSString *completionText;
-@property(readonly) NSString *displayType;
-@property(readonly) NSString *displayText;
-- (id)initWithSourceKitDictionary:(CDStruct_4c46f3f5)arg1 completionResponse:(id)arg2 UIDSet:(id)arg3;
+@property(readonly, copy) NSString *completionText;
+@property(readonly, copy) NSString *displaySignature;
+@property(readonly, copy) NSString *briefDisplayText;
+@property(readonly, copy) NSString *displayType;
+@property(readonly, copy) NSString *displayText;
+- (id)initWithSourceKitDictionary:(CDStruct_4c46f3f5)arg1 completionResponse:(id)arg2 UIDSet:(id)arg3 language:(id)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

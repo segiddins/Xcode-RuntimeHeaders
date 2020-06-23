@@ -44,11 +44,12 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) double magnification; // @synthesize magnification=_magnification;
 - (void)_rebuildTextureForConfiguration:(id)arg1;
 - (id)_labelAttributes;
-- (id)_cacheKey;
+- (unsigned long long)_cacheKey;
 - (void)setTexture:(id)arg1;
 - (void)forceTextureRebuild;
 - (void)updateTextColor:(id)arg1 withBackgroundColor:(id)arg2;
 - (void)updateTextColor:(id)arg1;
+- (void)update:(id)arg1 textColor:(id)arg2 withBackgroundColor:(id)arg3 maxWidth:(double)arg4;
 - (void)_updateLabelText;
 - (id)initWithFont:(id)arg1 weight:(double)arg2 configurations:(id)arg3 desiredHeight:(double)arg4 withTextureCache:(id)arg5;
 

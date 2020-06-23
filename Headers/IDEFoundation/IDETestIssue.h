@@ -6,20 +6,25 @@
 
 #import <IDEFoundation/IDEIssue.h>
 
-@class IDETest, NSArray;
+@class IDETest, NSArray, NSString;
 
 @interface IDETestIssue : IDEIssue
 {
+    BOOL _shouldNotDisplayAnnotation;
     IDETest *_test;
     NSArray *_performanceMetrics;
+    NSString *_annotationMessage;
     unsigned long long _issueGeneration;
 }
 
 - (void).cxx_destruct;
 @property(readonly) unsigned long long issueGeneration; // @synthesize issueGeneration=_issueGeneration;
+@property BOOL shouldNotDisplayAnnotation; // @synthesize shouldNotDisplayAnnotation=_shouldNotDisplayAnnotation;
+@property(readonly, copy) NSString *annotationMessage; // @synthesize annotationMessage=_annotationMessage;
 @property(readonly) NSArray *performanceMetrics; // @synthesize performanceMetrics=_performanceMetrics;
 @property(readonly) IDETest *test; // @synthesize test=_test;
-- (id)initWithIssueProvider:(id)arg1 test:(id)arg2 performanceMetrics:(id)arg3 documentLocation:(id)arg4 messageText:(id)arg5 issueTypeIdentifier:(id)arg6 issueGeneration:(unsigned long long)arg7;
+- (id)secondaryDocumentURLs;
+- (id)initWithIssueProvider:(id)arg1 test:(id)arg2 performanceMetrics:(id)arg3 documentLocation:(id)arg4 messageText:(id)arg5 annotationMessage:(id)arg6 issueTypeIdentifier:(id)arg7 issueGeneration:(unsigned long long)arg8 severity:(unsigned long long)arg9;
 
 @end
 

@@ -15,6 +15,7 @@
 
 - (void).cxx_destruct;
 @property(copy) NSString *collectionType; // @synthesize collectionType=_collectionType;
+- (id)prepareToInsertSourceCode:(id *)arg1;
 - (id)qualifiedCollectionType;
 - (id)description;
 - (id)validatedSourceCodeConnectionNameForName:(id)arg1 error:(id *)arg2;

@@ -15,10 +15,11 @@
 #import <IDEDocViewer/WebUIDelegate-Protocol.h>
 #import <IDEDocViewer/_TtP6IDEKit38IDEExplorableJumpBarControllerDelegate_-Protocol.h>
 
-@class DVTBorderedView, DVTNotificationToken, DVTObservingToken, DVTStackBacktrace, IDEDocContentAreaViewController, IDEExplorableJumpBarController, IDENavBar, NSArray, NSString, NSURL, NSVisualEffectView, WKWebView, WebView, _TtC12IDEDocViewer44IDEDocCoreDocumentationWebViewViewController, _TtC16DVTExplorableKit23DVTExplorableIdentifier;
+@class DVTBorderedView, DVTNotificationToken, DVTObservingToken, DVTStackBacktrace, IDEDocContentAreaViewController, IDEExplorableJumpBarController, IDENavBar, NSArray, NSString, NSURL, NSView, NSVisualEffectView, WKWebView, WebView, _TtC12IDEDocViewer44IDEDocCoreDocumentationWebViewViewController, _TtC16DVTExplorableKit23DVTExplorableIdentifier;
 
 @interface IDEDocWebViewContentViewController : DVTViewController <NSPopoverDelegate, WebFrameLoadDelegate, WebPolicyDelegate, WebUIDelegate, WebResourceLoadDelegate, _TtP6IDEKit38IDEExplorableJumpBarControllerDelegate_, DOMEventListener, IDEDocContentView>
 {
+    NSView *_wrapperView;
     IDENavBar *_navBar;
     DVTObservingToken *_mainFrameURLObservingToken;
     DVTObservingToken *_allDocsSourceObservingToken;
@@ -48,9 +49,11 @@
 @property(retain) NSVisualEffectView *webViewVisualEffectView; // @synthesize webViewVisualEffectView=_webViewVisualEffectView;
 @property(retain) WebView *webView; // @synthesize webView=_webView;
 @property __weak IDEDocContentAreaViewController *hostContentAreaViewController; // @synthesize hostContentAreaViewController=_hostContentAreaViewController;
+- (void)coreDocViewControllerLoaded:(id)arg1 with:(id)arg2;
 - (void)_updateCoreDocViewController:(id)arg1;
 @property(readonly) BOOL isRenderingCoreDocContent;
 @property(readonly, nonatomic) WKWebView *wkWebView;
+@property(readonly, nonatomic) _TtC12IDEDocViewer44IDEDocCoreDocumentationWebViewViewController *coreDocWebViewController;
 - (void)handleEvent:(id)arg1;
 @property int webViewScrollPosition;
 - (id)_bodyElementWithScrollHeight;
@@ -75,7 +78,7 @@
 @property(readonly) NSString *selectedStringInWebView;
 - (void)loadURL:(id)arg1 explorableIdentifier:(id)arg2;
 - (id)webViewURLString;
-- (BOOL)wantsRootLineageTrimForJumpBarController:(id)arg1;
+- (BOOL)hidesFirstLevelOfTreeForJumpBarController:(id)arg1;
 - (id)selectedJumpBarExplorableIdentifier;
 - (id)_documentationURLForIdentifier:(id)arg1;
 - (void)jumpBarController:(id)arg1 userDidSelectIdentifier:(id)arg2;
@@ -83,6 +86,8 @@
 - (void)_updateJumpBar;
 - (id)_parentTabController;
 - (void)primitiveInvalidate;
+- (void)_installFullSizeContentViewConstraintsIfNeeded;
+- (void)viewDidInstall;
 - (void)loadView;
 
 // Remaining properties

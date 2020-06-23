@@ -10,6 +10,7 @@
 {
 }
 
+- (struct CGRect)bottomBorderRect;
 - (void)_ideUtilityDisclosureViewCommonInit;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

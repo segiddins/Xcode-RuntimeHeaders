@@ -10,7 +10,7 @@
 
 @interface IBDocumentArchivingSchemaEnumerationComponent : IBDocumentArchivingSchemaComponent
 {
-    CDStruct_6db0658e *_map;
+    CDStruct_4a440f6d *_map;
     long long _mapCount;
     NSString *_typeName;
 }
@@ -22,7 +22,7 @@
 - (void)insertIntoSchema:(id)arg1;
 - (id)stringForValue:(long long)arg1;
 - (BOOL)decodeValue:(long long *)arg1 fromString:(id)arg2;
-- (id)initWithTypeName:(id)arg1 enumerationMap:(CDStruct_6db0658e *)arg2 count:(long long)arg3 copy:(BOOL)arg4;
+- (id)initWithTypeName:(id)arg1 enumerationMap:(CDStruct_4a440f6d *)arg2 count:(long long)arg3 copy:(BOOL)arg4;
 
 @end
 

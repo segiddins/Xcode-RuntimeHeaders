@@ -27,7 +27,7 @@
 - (BOOL)isUnitTest;
 @property(nonatomic, readonly) NSString *productType;
 - (NSString *)productNameWithBuildSetting:(NSString *)arg1 workspace:(IDEWorkspace *)arg2;
-- (id)copyWithZone:(void *)arg1;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)clearCachedBuildSettings;
 @property(nonatomic) __weak id <IDEIndexable> proxy;
 - (NSDictionary *)settingsForFile:(DVTFilePath *)arg1;

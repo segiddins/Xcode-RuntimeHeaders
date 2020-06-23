@@ -32,6 +32,7 @@
 - (id)ibDocumentationSymbolInfosForKeyPath:(id)arg1;
 - (BOOL)ibPrefersToBeSizedToFitAfterEditingTitle;
 - (BOOL)ibIdentifierPropertyCanConflictsWithObject:(id)arg1;
+- (BOOL)ibHasInspectedControl;
 - (id)ibInspectedControl;
 - (id)ibInspectedCell;
 @property long long ibInspectedLineBreakMode;
@@ -45,6 +46,8 @@
 - (void)ibCustomizeForInsertionIntoNSView:(id)arg1 withObjects:(id)arg2 fromLibraryOrDifferentTargetRuntime:(BOOL)arg3 andInsertionContext:(id)arg4;
 - (BOOL)ibHasSingleCell;
 - (void)ibPopulateObjectsForFloatingPanels:(id)arg1;
+- (void)setIbShadowedControlSize:(unsigned long long)arg1;
+- (BOOL)ibSupportsLargeControlSize;
 - (void)setIbInspectedControlSize:(unsigned long long)arg1;
 - (unsigned long long)ibInspectedControlSize;
 - (id)ibExposedElusiveDescendantsKeyPaths;
@@ -55,6 +58,7 @@
 - (BOOL)ibIsChildInitiallySelectable:(id)arg1;
 - (BOOL)ibIsChildTypicalConnectionTarget:(id)arg1;
 - (struct CGRect)ibRectForChild:(id)arg1 inFrameController:(id)arg2;
+- (id)ibRecoverySuggestionForMisuseOfSymbolCharactersInValueForInspectorKeyPath:(id)arg1;
 - (void)ibPopulateIssues:(id)arg1 forDocument:(id)arg2 withComputationContext:(id)arg3;
 - (void)ibInvalidateIssuesAfterDescendant:(id)arg1 changedProperty:(id)arg2 inDocument:(id)arg3 fromValue:(id)arg4;
 - (BOOL)ibIsBaselineAtIndex:(long long)arg1 inMotionWithKnob:(CDUnion_42e99c75)arg2;

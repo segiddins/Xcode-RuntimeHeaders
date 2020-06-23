@@ -37,7 +37,6 @@ __attribute__((visibility("hidden")))
     MISSING_TYPE *workspaceSessionResignedActive;
     MISSING_TYPE *isAttemptingUpgrade;
     MISSING_TYPE *$__lazy_storage_$_choices;
-    MISSING_TYPE *$__lazy_storage_$_emptyChoices;
 }
 
 - (void).cxx_destruct;

@@ -104,6 +104,7 @@
 - (DVTFuture *)startXcodeDeviceMonitorService;
 - (DVTFuture *)startInstrumentsServerService;
 - (DVTFuture *)startSyslogService;
+- (DVTFuture *)startSecureProxiedAppListService;
 - (DVTFuture *)startAppListService;
 - (DVTFuture *)startLocationSimulationService;
 - (DVTFuture *)startSharedCacheCopyingService;
@@ -111,6 +112,7 @@
 - (DVTFuture *)startCrashReportMoverService;
 - (DVTFuture *)startAppInstallationService;
 - (DVTFuture *)startSpringboardService;
+- (DVTFuture *)startSecureProxiedDebugServerServiceWithExtension:(NSString *)arg1;
 - (DVTFuture *)startDebugServerServiceWithExtension:(NSString *)arg1;
 - (DVTFuture *)startServiceWithIdentifier:(NSString *)arg1;
 - (void)startSecureServices;

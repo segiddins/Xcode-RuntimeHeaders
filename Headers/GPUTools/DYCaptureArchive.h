@@ -56,6 +56,7 @@
 + (id)createArchiveInTemporaryDirectoryWithName:(id)arg1 deleteOnClose:(BOOL)arg2 error:(id *)arg3;
 + (id)createArchiveInTemporaryDirectoryWithName:(id)arg1 error:(id *)arg2;
 + (id)createArchiveInTemporaryDirectory:(id *)arg1;
++ (id)getReturnAllFilesPredicate;
 + (id)coreArchiveBundleFilesPredicate;
 + (unsigned long long)contextFromFilename:(id)arg1;
 + (BOOL)isNotSpecialFilename:(id)arg1;

@@ -18,7 +18,7 @@
     NSMutableDictionary *_callbackEntriesByDescription;
     NSObject<OS_dispatch_queue> *_asyncLaunchingQueue;
     NSMutableDictionary *_toolsLaunchingCount;
-    DVTDelayedInvocation *_shutdownToolsExceedingTimeoutDelayedInvocation;
+    DVTDelayedInvocation *_shutdownToolsExceedingIdleTimeoutDelayedInvocation;
     NSObject<OS_dispatch_queue> *_executionQueue;
 }
 
@@ -33,7 +33,7 @@
 - (void)didShutdownTool:(id)arg1;
 - (void)didLaunchTool:(id)arg1 withDescription:(id)arg2;
 - (void)shutdownToolsIgnoringToolDescriptions:(id)arg1 delayedShutdown:(BOOL)arg2;
-- (id)shutdownToolsExceedingTimeoutDelayedInvocation;
+- (id)shutdownToolsExceedingIdleTimeoutDelayedInvocation;
 - (void)shutdownAndClearReferencesToTool:(id)arg1;
 - (void)clearReferencesToTool:(id)arg1;
 - (void)asyncLaunchNewToolWithDescription:(id)arg1 queue:(id)arg2 completionHandler:(CDUnknownBlockType)arg3 forReason:(CDUnknownBlockType)arg4;
@@ -43,12 +43,14 @@
 - (id)launchNewToolWithDescription:(id)arg1 error:(id *)arg2 forReason:(CDUnknownBlockType)arg3;
 - (BOOL)_determineContextsForLaunchingToolWithDescription:(id)arg1 returningLaunchContext:(id *)arg2 returningExecutionContext:(id *)arg3 returningFailureContext:(id *)arg4 error:(id *)arg5 forReason:(CDUnknownBlockType)arg6;
 - (void)asyncCachedToolIncrementBusyWithDescription:(id)arg1 sessionIdentifier:(id)arg2 queue:(id)arg3 completionHandler:(CDUnknownBlockType)arg4 forReason:(CDUnknownBlockType)arg5;
-- (void)shutdownToolsExceedingTimeoutOf:(double)arg1;
-- (void)shutdownToolsExceedingTimeout;
+- (void)shutdownToolsExceedingBusyTimeoutOf:(double)arg1;
+- (void)shutdownToolsExceedingIdleTimeoutOf:(double)arg1;
+- (void)shutdownToolsExceedingIdleTimeout:(BOOL)arg1 andBusyTimeout:(BOOL)arg2;
 - (id)cachedToolIncrementBusyWithDescription:(id)arg1 error:(id *)arg2 forReason:(CDUnknownBlockType)arg3;
 - (void)_saveCachedTool:(id)arg1 sessionIdentifier:(id)arg2 forDescription:(id)arg3 orLogLaunchError:(id)arg4;
 - (id)_existingCachedToolAndIncrementAsBusyWithDescription:(id)arg1 sessionIdentifier:(id)arg2 includingAlreadyBusy:(BOOL)arg3 requestingMethod:(id)arg4 forReason:(CDUnknownBlockType)arg5;
 - (long long)maximumToolsPerDescription;
+- (double)maximumBusyTimeForTool;
 - (double)maximumIdleTimeForTool;
 - (long long)defaultToolsPerDescriptionBasedOnProcessor;
 - (id)executionContextForDescription:(id)arg1 error:(id *)arg2;

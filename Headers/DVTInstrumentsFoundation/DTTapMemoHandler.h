@@ -12,7 +12,7 @@
 @interface DTTapMemoHandler : NSObject
 {
     NSObject<OS_dispatch_queue> *_serialQueue;
-    BOOL _seenNonStatusMemo;
+    BOOL _sentRecordingInfo;
     DTTapConfig *_config;
     id <DTTapMemoHandlerDelegate> _delegate;
 }

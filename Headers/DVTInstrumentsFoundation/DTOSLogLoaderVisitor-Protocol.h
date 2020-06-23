@@ -4,7 +4,7 @@
 //  Copyright (C) 1997-2019 Steve Nygard.
 //
 
-@class NSData, NSError;
+@class NSData, NSError, XRIntKeyedDictionary;
 
 @protocol DTOSLogLoaderVisitor
 @property(retain, nonatomic) NSError *failureReason;
@@ -12,5 +12,6 @@
 @property(nonatomic) unsigned long long lastMachContinuousTime;
 @property(nonatomic, getter=isFetchComplete) BOOL fetchComplete;
 @property(retain, nonatomic) NSData *nextOutputBytes;
+- (void)addPidToExecEntriesFromMapping:(XRIntKeyedDictionary *)arg1;
 @end
 

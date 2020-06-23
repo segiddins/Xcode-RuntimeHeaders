@@ -20,6 +20,7 @@
 @property(retain) NSObject *controller; // @synthesize controller=_controller;
 @property(copy) NSString *keyPath; // @synthesize keyPath=_keyPath;
 @property(copy) NSString *binding; // @synthesize binding=_binding;
+- (id)prepareToInsertSourceCode:(id *)arg1;
 - (id)containingClassImage;
 - (id)insertionConnectionTypeString;
 - (BOOL)parseSourceModelItem:(id)arg1;

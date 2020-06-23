@@ -15,6 +15,7 @@
     long long _type;
 }
 
++ (void)initialize;
 + (id)keyPathsForValuesAffectingNavigableItem_childRepresentedObjects;
 + (id)keyPathsForValuesAffectingNavigableItem_isLeaf;
 - (void).cxx_destruct;

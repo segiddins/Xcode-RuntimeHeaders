@@ -32,6 +32,7 @@
 + (id)name;
 + (id)validateSSHKeysWithPrivateKeyURL:(id)arg1 passphrase:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 + (id)defaultSSHKeyAuthenticationStrategyForURL:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
++ (id)sshKeysAuthenticationStrategiesForURL:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 + (id)generateSSHKeysWithName:(id)arg1 comment:(id)arg2 passphrase:(id)arg3 inFolder:(id)arg4 completionBlock:(CDUnknownBlockType)arg5;
 + (id)listSSHKeys:(CDUnknownBlockType)arg1;
 - (void).cxx_destruct;

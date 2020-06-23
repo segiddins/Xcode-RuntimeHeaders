@@ -28,6 +28,7 @@
 - (id)toolTipNameAndAbstractForSymbols:(id)arg1 error:(id *)arg2;
 - (id)urlForDiagnosticID:(id)arg1;
 - (BOOL)canOpenReferenceURL:(id)arg1 language:(int)arg2;
+- (id)remappedDocumentationURLForAppleReferenceURL:(id)arg1;
 - (id)documentationWebURLFor:(id)arg1 qos:(long long)arg2 error:(id *)arg3;
 - (id)documentationWebURLFor:(id)arg1 language:(int)arg2;
 - (void)primitiveInvalidate;

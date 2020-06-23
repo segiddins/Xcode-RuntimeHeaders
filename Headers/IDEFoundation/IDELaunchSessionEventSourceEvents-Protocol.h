@@ -9,9 +9,7 @@
 @protocol IDELaunchSessionEventSourceEvents
 - (void)launchSessionExpired;
 - (void)launchSessionGotPID:(int)arg1;
-- (void)launchSessionExitedWithCode:(int)arg1 hasCrashed:(BOOL)arg2;
 - (void)launchSessionEncounteredAlertError:(NSError *)arg1;
-- (void)launchSessionCompletedInitialIntensiveFileIO;
 - (void)launchSessionStarted;
 @end
 

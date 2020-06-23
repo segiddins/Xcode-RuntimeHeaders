@@ -8,8 +8,8 @@
 
 #import <XCSUI/IDETestReport_TestActivity-Protocol.h>
 
-@class NSArray, NSDate, NSString;
-@protocol IDETestReport_Base;
+@class DVTTextDocumentLocation, NSArray, NSDate, NSString;
+@protocol IDEResultBundleURLRedirecting, IDETestReport_Base;
 
 @interface XCSTestActivity (IDETestReport_TestActivity) <IDETestReport_TestActivity>
 @property(readonly, copy, nonatomic) NSArray *ide_test_activity_subitems;
@@ -34,8 +34,11 @@
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
+@property __weak id <IDEResultBundleURLRedirecting> ide_testReport_activity_urlRedirector;
 @property(readonly, copy, nonatomic) NSString *ide_testReport_base_identifier;
 @property(nonatomic) __weak id <IDETestReport_Base> ide_testReport_base_parent;
+@property(readonly, copy, nonatomic) NSArray *ide_test_activity_failureSummaries;
+@property(readonly, copy, nonatomic) DVTTextDocumentLocation *ide_test_activity_primaryDocumentLocation;
 @property(readonly) Class superclass;
 @end
 

@@ -14,7 +14,6 @@ __attribute__((visibility("hidden")))
     MISSING_TYPE *editorViewController;
     MISSING_TYPE *editorStateSnapshotProvider;
     MISSING_TYPE *selectionStore;
-    MISSING_TYPE *didChange;
     MISSING_TYPE *canvasSettingsStore;
     MISSING_TYPE *queryManager;
     MISSING_TYPE *workspaceScene;
@@ -41,6 +40,9 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) BOOL showing;
 - (BOOL)isShowing;
 - (void)willClosePrincipalEditor:(id)arg1;
+- (void)toggleShowSelection:(id)arg1;
+- (void)zoomCanvas:(id)arg1;
+- (void)togglePinPreview:(id)arg1;
 - (void)toggleThunkingEnabled:(id)arg1;
 - (void)toggleDeviceBezels:(id)arg1;
 - (void)toggleViewBoundaries:(id)arg1;

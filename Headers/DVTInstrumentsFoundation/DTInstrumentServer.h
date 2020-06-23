@@ -7,30 +7,27 @@
 #import <objc/NSObject.h>
 
 #import <DVTInstrumentsFoundation/DTInstrumentServerAllowedRPC-Protocol.h>
+#import <DVTInstrumentsFoundation/DTInstrumentServerAuthorizationEscalation-Protocol.h>
 #import <DVTInstrumentsFoundation/DTInstrumentServerSimulatorPrivilege-Protocol.h>
 
 @class DTXConnection, NSString;
 
-@interface DTInstrumentServer : NSObject <DTInstrumentServerAllowedRPC, DTInstrumentServerSimulatorPrivilege>
+@interface DTInstrumentServer : NSObject <DTInstrumentServerAllowedRPC, DTInstrumentServerSimulatorPrivilege, DTInstrumentServerAuthorizationEscalation>
 {
     DTXConnection *_connection;
-    CDUnknownBlockType _channelRestrictBlock;
 }
 
 + (void)_tfpPortReceived:(unsigned int)arg1;
 + (void)_taskInvalid:(unsigned int)arg1 forPid:(int)arg2;
 + (unsigned int)taskForPid:(int)arg1;
-+ (void)prohibitPromptingForAuthorization;
-+ (struct AuthorizationOpaqueRef *)sharedAuthorization;
 + (void)takeOwnershipOfSharedAuthorization:(struct AuthorizationOpaqueRef *)arg1;
 + (BOOL)isAppleInternal;
 - (void).cxx_destruct;
-@property(copy) CDUnknownBlockType channelRestrictBlock; // @synthesize channelRestrictBlock=_channelRestrictBlock;
 @property(readonly, nonatomic) DTXConnection *connection; // @synthesize connection=_connection;
 - (id)_blessSimulatorHub:(int)arg1;
 - (void)_notifyOfTFPCommunicationsPort:(unsigned int)arg1;
-- (void)restrictChannelsWithBlock:(CDUnknownBlockType)arg1;
 - (void)loadServicesAtPath:(id)arg1;
+- (void)_promoteAuthorization:(id)arg1;
 - (void)setMaxConnectionEnqueue:(unsigned long long)arg1;
 - (void)cancel;
 - (void)resume;

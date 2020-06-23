@@ -16,6 +16,8 @@
 + (id)keyPathsForValuesAffectingNavigableItem_image;
 + (id)keyPathsForValuesAffectingNavigableItem_name;
 - (id)containerItemFromPlistRepresentation:(id)arg1;
+- (id)_containerItemFromPlistRepresentation:(id)arg1;
+- (id)pathToContainerItem:(id)arg1;
 @property(readonly) NSImage *displayImage;
 - (BOOL)isUserSymbol:(id)arg1;
 - (id)symbolsExcludingExternalPackageSymbols:(id)arg1;

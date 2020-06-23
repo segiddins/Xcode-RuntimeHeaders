@@ -17,6 +17,7 @@
     NSOperationQueue *__compilerOperationQueue;
 }
 
++ (BOOL)createSymlinksForPageResourceDirectoryPath:(id)arg1 parentResourceDirectory:(id)arg2 inAntechamber:(id)arg3 error:(id *)arg4;
 + (void)initialize;
 + (BOOL)isResourceNeededForCompilation:(id)arg1;
 + (BOOL)isResourceTypeXIB:(id)arg1;

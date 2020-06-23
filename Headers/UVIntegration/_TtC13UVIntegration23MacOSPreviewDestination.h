@@ -12,7 +12,7 @@
 {
     MISSING_TYPE *identifier;
     MISSING_TYPE *stateMonitor;
-    MISSING_TYPE *buildTargetDestinationComponents;
+    MISSING_TYPE *buildTarget;
     MISSING_TYPE *productsStore;
     MISSING_TYPE *renderingApp;
     MISSING_TYPE *agentKitPath;

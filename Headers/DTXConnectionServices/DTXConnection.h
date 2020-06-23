@@ -92,6 +92,7 @@
 - (double)preflightSynchronouslyWithTimeout:(double)arg1;
 - (id)_sendHeartbeatAsyncWithTimeout:(double)arg1;
 - (id)localCapabilities;
+- (BOOL)publishCapability:(id)arg1 withVersion:(int)arg2 forClass:(Class)arg3 error:(id *)arg4;
 - (void)publishCapability:(id)arg1 withVersion:(int)arg2 forClass:(Class)arg3;
 @property(nonatomic) unsigned long long maximumEnqueueSize;
 @property(readonly, copy) NSString *description;

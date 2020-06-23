@@ -12,9 +12,6 @@
 {
     NSDictionary *docAttributes;
     NSArray *attributeRuns;
-    id reserved11;
-    id reserved22;
-    id reserved33;
 }
 
 + (unsigned long long)segmentOptions;

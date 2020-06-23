@@ -11,7 +11,6 @@
 @class NSArray, NSString, NSTableColumn;
 
 @interface NSTableView (IBNSTableViewIntegration) <IBDocumentArchiving>
-+ (id)keyPathsForValuesAffectingIbShadowedUsesAutomaticRowHeights;
 + (id)keyPathsForValuesAffectingIbInspectedRowHeight;
 + (id)keyPathsForValuesAffectingIbShadowedRowHeight;
 + (id)keyPathsForValuesAffectingIbShadowedRowSizeStyle;
@@ -21,6 +20,8 @@
 + (id)keyPathsForValuesAffectingIbInspectedHorizontalGridStyleMask;
 + (id)keyPathsForValuesAffectingIbInspectedNumberOfTableColumns;
 + (id)keyPathsForValuesAffectingIbInspectedHasHeaderView;
++ (id)keyPathsForValuesAffectingIbInspectedSelectionHighlightStyle;
++ (id)keyPathsForValuesAffectingIbExternalStyle;
 + (id)keyPathsForValuesAffectingIbInspectedIsInViewBasedMode;
 - (void)unarchivePlaceholderTables:(id)arg1;
 - (void)archivePlaceholderTables:(id)arg1;
@@ -33,7 +34,6 @@
 - (void)ibPrepareCocoaDocumentForCompiling:(id)arg1 withContext:(id)arg2;
 - (BOOL)isContainedTableColumn:(id)arg1;
 - (void)ibSyncRowHeightWithContainedViewsIfNecessary;
-@property BOOL ibShadowedUsesAutomaticRowHeights;
 - (id)ibPlaceholderRowHeight;
 - (void)setIbInspectedRowHeight:(id)arg1;
 - (id)ibInspectedRowHeight;
@@ -81,6 +81,8 @@
 @property(copy) NSArray *ibShadowedTableColumns;
 - (void)ibRemoveTableColumnObservers;
 - (void)ibAddTableColumnObservers;
+- (void)ibApplyDefaultMetricsFromTableView:(id)arg1;
+- (void)ibApplyDefaultTableMetrics;
 - (struct CGSize)ibPreferredSize;
 - (struct CGSize)ibPreferredSizeForSize:(struct CGSize)arg1 suggestedWidth:(char *)arg2 suggestedHeight:(char *)arg3 scaleAxesIndependently:(char *)arg4;
 - (double)ibClosestHeightForHeight:(double)arg1;
@@ -111,6 +113,9 @@
 - (id)ibLocalAttributeKeyPaths;
 - (id)ibLocalChildToManyRelationshipsKeyPaths;
 - (id)ibLocalNonChildToOneRelationshipsKeyPaths;
+- (void)setIbInspectedSelectionHighlightStyle:(long long)arg1;
+- (long long)ibInspectedSelectionHighlightStyle;
+@property long long ibExternalStyle;
 - (id)ibSuggestUserInterfaceItemIdentifierForObject:(id)arg1;
 @property BOOL ibInspectedIsInViewBasedMode;
 @property BOOL ibExternalIsInViewBasedMode;

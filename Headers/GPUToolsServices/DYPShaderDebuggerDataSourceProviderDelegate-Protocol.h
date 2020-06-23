@@ -10,5 +10,6 @@
 
 @protocol DYPShaderDebuggerDataSourceProviderDelegate <NSObject>
 - (DYFuture *)requestShaderDebuggerTraceWithOptions:(NSDictionary *)arg1;
+- (NSDictionary *)requestShaderDebuggerTraceWithOptions:(NSDictionary *)arg1 error:(id *)arg2;
 @end
 

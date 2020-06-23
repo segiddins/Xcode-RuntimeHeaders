@@ -24,6 +24,7 @@
 @property(nonatomic, readonly) NSString *description;
 - (id)initWithIdentifier:(id)arg1 name:(id)arg2 revision:(id)arg3 repository:(id)arg4;
 @property(nonatomic, readonly) NSString *name;
+@property(nonatomic, readonly) BOOL valid;
 
 @end
 

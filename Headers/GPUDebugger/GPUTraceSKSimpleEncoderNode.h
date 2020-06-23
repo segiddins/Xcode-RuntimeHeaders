@@ -7,16 +7,18 @@
 #import <GPUDebugger/DependencyViewerGraphObjectNode.h>
 
 #import <GPUDebugger/GPUIssuesViewControllerDelegate-Protocol.h>
+#import <GPUDebugger/GPUTraceDependencyViewerFindingProviderDelegate-Protocol.h>
 
-@class DependencyViewerSKTextureCache, GPUTraceOutlineItem, GPUTraceSKHighlight, GPUTraceSKResourceElement, GPUTraceTitleElement, NSMutableArray, NSString, SKShapeNode;
+@class DependencyViewerSKTextureCache, GPUTraceDependencyViewerFindingProvider, GPUTraceOutlineItem, GPUTraceSKHighlight, GPUTraceSKResourceElement, GPUTraceTitleElement, NSMutableArray, NSString, SKShapeNode;
 
 __attribute__((visibility("hidden")))
-@interface GPUTraceSKSimpleEncoderNode : DependencyViewerGraphObjectNode <GPUIssuesViewControllerDelegate>
+@interface GPUTraceSKSimpleEncoderNode : DependencyViewerGraphObjectNode <GPUTraceDependencyViewerFindingProviderDelegate, GPUIssuesViewControllerDelegate>
 {
     struct vector<CGPoint, std::__1::allocator<CGPoint>> _slotPositions;
     SKShapeNode *_bg;
     GPUTraceSKResourceElement *_selectedResource;
     GPUTraceOutlineItem *_selectedOutlineItem;
+    GPUTraceDependencyViewerFindingProvider *_findingProvider;
     BOOL _statsShowing;
     GPUTraceTitleElement *_titleElement;
     NSMutableArray *_resourceElements;
@@ -30,8 +32,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) GPUTraceSKHighlight *highlight; // @synthesize highlight=_highlight;
 @property(retain, nonatomic) NSMutableArray *resourceElements; // @synthesize resourceElements=_resourceElements;
 @property(readonly, nonatomic) GPUTraceTitleElement *titleElement; // @synthesize titleElement=_titleElement;
-- (void)hideStats;
-- (void)showStats;
 - (void)setMagnification:(double)arg1;
 - (id)contextMenuAtLocation:(struct CGPoint)arg1;
 - (void)addEventMenuItem:(id)arg1 menu:(id)arg2;
@@ -42,6 +42,7 @@ __attribute__((visibility("hidden")))
 - (id)_adjacencyMenuItem:(id)arg1;
 - (void)navigateToCluster:(id)arg1;
 - (void)performNavigation:(id)arg1;
+- (void)_updateIssueBadgeVisibility;
 - (void)removeHighlightStyle:(unsigned long long)arg1;
 - (void)addHighlightStyle:(unsigned long long)arg1;
 - (void)_updateHighlight;
@@ -65,8 +66,11 @@ __attribute__((visibility("hidden")))
 - (void)setupResources;
 - (id)resources;
 - (id)vertex;
-- (id)initWithNode:(id)arg1 withTextureCache:(id)arg2 statsShowing:(BOOL)arg3;
+- (id)initWithNode:(id)arg1 withTextureCache:(id)arg2 statsShowing:(BOOL)arg3 processingQueue:(id)arg4;
 - (void)issuesViewControllerWillAppear:(id)arg1;
+- (void)findingsRemoved:(id)arg1;
+- (void)findingsAdded:(id)arg1;
+- (BOOL)shouldKeep:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

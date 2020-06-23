@@ -68,6 +68,20 @@ struct DVTBitSet {
     unsigned long long _field2[0];
 };
 
+struct DVTFuzzyMatchCandidate {
+    unsigned int _field1;
+    unsigned long long _field2;
+    union {
+        unsigned char _field1;
+        struct {
+            unsigned int :1;
+            unsigned int :1;
+            unsigned int :6;
+        } _field2;
+    } _field3;
+    unsigned char _field4[0];
+};
+
 struct DVTMacroNameLookupCursor {
     id _field1;
     unsigned long long _field2;
@@ -183,6 +197,17 @@ struct fastsimplearray {
 
 struct fsid {
     int _field1[2];
+};
+
+struct mach_header_64 {
+    unsigned int _field1;
+    int _field2;
+    int _field3;
+    unsigned int _field4;
+    unsigned int _field5;
+    unsigned int _field6;
+    unsigned int _field7;
+    unsigned int _field8;
 };
 
 struct os_unfair_lock_s {

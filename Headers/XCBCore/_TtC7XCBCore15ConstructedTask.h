@@ -17,6 +17,7 @@
     MISSING_TYPE *mustPrecede;
     MISSING_TYPE *execTask;
     MISSING_TYPE *allowDeduplication;
+    MISSING_TYPE *alwaysExecuteTask;
     MISSING_TYPE *provisionalTask;
 }
 

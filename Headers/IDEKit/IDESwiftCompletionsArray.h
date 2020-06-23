@@ -6,12 +6,15 @@
 
 #import <Foundation/NSArray.h>
 
+@class DVTSourceCodeLanguage;
+
 @interface IDESwiftCompletionsArray : NSArray
 {
     CDStruct_4c46f3f5 _completions;
     CDUnknownBlockType _deallocHandler;
     id *_items;
     unsigned long long _itemCount;
+    DVTSourceCodeLanguage *_language;
 }
 
 - (void).cxx_destruct;
@@ -21,7 +24,7 @@
 - (id)objectAtIndex:(unsigned long long)arg1;
 - (unsigned long long)count;
 - (void)dealloc;
-- (id)initWithSourceKitArray:(CDStruct_4c46f3f5)arg1 kind:(struct _sourcekit_uid_s *)arg2 deallocHandler:(CDUnknownBlockType)arg3;
+- (id)initWithSourceKitArray:(CDStruct_4c46f3f5)arg1 kind:(struct _sourcekit_uid_s *)arg2 language:(id)arg3 options:(unsigned long long)arg4 deallocHandler:(CDUnknownBlockType)arg5;
 
 @end
 

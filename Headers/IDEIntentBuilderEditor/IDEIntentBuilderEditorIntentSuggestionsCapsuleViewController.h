@@ -8,27 +8,20 @@
 
 #import <IDEIntentBuilderEditor/IDEIntentBuilderEditorCapsuleViewControllerDelegate-Protocol.h>
 
-@class DVTBorderedView, DVTObservingToken, IDEIntentBuilderEditorIntentParameterCombinationsCapsuleViewController, IDEIntentBuilderEditorIntentParameterCombinationsInfoViewController, NSArray, NSString;
+@class DVTBorderedView, DVTObservingToken, IDEIntentBuilderEditorIntentParameterCombinationsCapsuleViewController, NSArray, NSString;
 
 @interface IDEIntentBuilderEditorIntentSuggestionsCapsuleViewController : IDEIntentBuilderEditorCapsuleViewController <IDEIntentBuilderEditorCapsuleViewControllerDelegate>
 {
     DVTObservingToken *_observationToken;
-    BOOL _contentHidden;
     IDEIntentBuilderEditorIntentParameterCombinationsCapsuleViewController *_parameterCombinationsViewController;
-    IDEIntentBuilderEditorIntentParameterCombinationsInfoViewController *_parameterCombinationsInfoViewController;
     DVTBorderedView *_borderedView;
 }
 
 - (void).cxx_destruct;
 @property(retain) DVTBorderedView *borderedView; // @synthesize borderedView=_borderedView;
-@property(nonatomic, getter=isContentHidden) BOOL contentHidden; // @synthesize contentHidden=_contentHidden;
-@property(readonly, nonatomic, getter=_isHiddenValueNegated) BOOL _hiddenValueNegated;
-@property(readonly, copy, nonatomic) NSString *_hiddenKeyPath;
-@property(readonly, nonatomic) IDEIntentBuilderEditorIntentParameterCombinationsInfoViewController *_parameterCombinationsInfoViewController; // @synthesize _parameterCombinationsInfoViewController;
 @property(readonly, nonatomic) IDEIntentBuilderEditorIntentParameterCombinationsCapsuleViewController *_parameterCombinationsViewController; // @synthesize _parameterCombinationsViewController;
 @property(readonly, nonatomic) double _separatorFrameX;
 - (void)_resize;
-- (void)_updateVisibilityAndResize;
 - (void)editorCapsuleViewControllerDidResize:(id)arg1;
 - (void)setParentEditor:(id)arg1;
 - (void)unbind;

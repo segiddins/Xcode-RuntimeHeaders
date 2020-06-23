@@ -6,29 +6,37 @@
 
 #import <objc/NSObject.h>
 
-@class DVTDispatchLock, DVTFuture, DVTObservingToken, IDEDebugSession, IDELaunchSessionRuntimeGroup, NSArray, NSMutableArray, NSString;
+@class DVTDispatchLock, DVTFuture, DVTObservingToken, IDEDebugSession, IDELaunchSessionRuntimeGroup, IDERecordedThreadCollection, NSArray, NSMutableArray, NSString;
 
 @interface IDERuntimeIssuesCollector : NSObject
 {
     IDEDebugSession *_debugSession;
-    DVTObservingToken *_debugSessionToken;
     NSMutableArray *_issues;
+    IDERecordedThreadCollection *_collectionForBreakpoint;
+    DVTDispatchLock *_collectionForBreakpointLock;
     DVTFuture *_tokenFuture;
     NSString *_token;
     BOOL _useThirdPartyPredicate;
+    DVTObservingToken *_debugSessionToken;
+    DVTObservingToken *_coalescedStateToken;
     BOOL _stillReceivingIssues;
     DVTDispatchLock *_stillReceivingIssuesLock;
     IDELaunchSessionRuntimeGroup *_groupingObject;
 }
 
++ (id)_whiteListedImages;
++ (void)unregisterDelegate:(id)arg1 forIdentifier:(id)arg2;
++ (void)registerDelegate:(id)arg1 forIdentifier:(id)arg2;
 + (void)initialize;
 - (void).cxx_destruct;
 @property(readonly) IDELaunchSessionRuntimeGroup *groupingObject; // @synthesize groupingObject=_groupingObject;
 - (BOOL)shouldDisplayRuntimeIssueWithSubsystem:(id)arg1 category:(id)arg2 imagePath:(id)arg3 environmentVariables:(id)arg4;
 - (void)addSubcategory:(id)arg1 forTopCategory:(id)arg2;
 - (void)cancel;
+- (void)_parseMessage:(id)arg1 forMessage:(id *)arg2 delegate:(id *)arg3;
 - (id)_locationFromThreads:(id)arg1;
 - (id)_backtraceThreads:(id)arg1;
+- (id)_getBacktraceFromDelegate:(id)arg1 orDecoder:(id)arg2;
 - (id)initWithLaunchSession:(id)arg1;
 - (id)init;
 

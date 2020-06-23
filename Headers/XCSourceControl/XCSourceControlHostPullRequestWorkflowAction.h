@@ -17,6 +17,14 @@
     unsigned long long _workflowType;
 }
 
++ (id)closeAction;
++ (id)mergeAction;
++ (id)deleteAction;
++ (id)needsWorkAction;
++ (id)unapproveAction;
++ (id)reopenAction;
++ (id)declineAction;
++ (id)approveAction;
 + (BOOL)supportsSecureCoding;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long workflowType; // @synthesize workflowType=_workflowType;

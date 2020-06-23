@@ -10,15 +10,15 @@
 
 @interface DVTInsetView : DVTLayoutView_ML
 {
-    int _verticalContentViewResizingMode;
-    int _horizontalContentViewResizingMode;
     NSView *_contentView;
+    unsigned long long _verticalContentViewResizingMode;
+    unsigned long long _horizontalContentViewResizingMode;
     CDStruct_bf6d4a14 _inset;
 }
 
 - (void).cxx_destruct;
-@property(nonatomic) int horizontalContentViewResizingMode; // @synthesize horizontalContentViewResizingMode=_horizontalContentViewResizingMode;
-@property(nonatomic) int verticalContentViewResizingMode; // @synthesize verticalContentViewResizingMode=_verticalContentViewResizingMode;
+@property(nonatomic) unsigned long long horizontalContentViewResizingMode; // @synthesize horizontalContentViewResizingMode=_horizontalContentViewResizingMode;
+@property(nonatomic) unsigned long long verticalContentViewResizingMode; // @synthesize verticalContentViewResizingMode=_verticalContentViewResizingMode;
 @property(nonatomic) CDStruct_bf6d4a14 inset; // @synthesize inset=_inset;
 @property(readonly) NSView *contentView; // @synthesize contentView=_contentView;
 - (void)layoutBottomUp;

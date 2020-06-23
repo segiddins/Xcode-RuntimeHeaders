@@ -11,5 +11,9 @@
 @protocol DVTTableCellViewTitleEditingDelegate <NSObject>
 - (void)titleDidChangeForTableCellView:(DVTTableCellView *)arg1;
 - (struct _NSRange)initialSelectionRangeForTableCellView:(DVTTableCellView *)arg1 usingProposedRange:(struct _NSRange)arg2;
+
+@optional
+- (void)titleEditingDidAbortForTableCellView:(DVTTableCellView *)arg1;
+- (BOOL)titleIsEditableForTableCellView:(DVTTableCellView *)arg1;
 @end
 

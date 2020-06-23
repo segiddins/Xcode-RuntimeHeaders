@@ -21,7 +21,7 @@
     GPUDebuggerController *_controller;
     NSMutableSet *_filterItems;
     NSSet *_parentFilterItems;
-    NSString *_UUID;
+    long long _UUID;
     NSString *_label;
     NSMutableArray *_children;
     shared_ptr_2d3f6817 _decodedFunction;
@@ -29,14 +29,16 @@
     BOOL _filterItemsGenerated;
 }
 
++ (long long)UUIDFromNamespacedUUID:(id)arg1;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) __weak GPUTraceOutlineItem *parent; // @synthesize parent=_parent;
 @property(readonly, nonatomic) NSSet *parentFilterItems; // @synthesize parentFilterItems=_parentFilterItems;
-@property(readonly, nonatomic) NSString *UUID; // @synthesize UUID=_UUID;
+@property(readonly, nonatomic) long long UUID; // @synthesize UUID=_UUID;
 @property(nonatomic) __weak GPUDebuggerController *controller; // @synthesize controller=_controller;
 @property(retain, nonatomic) NSString *label; // @synthesize label=_label;
 @property(retain, nonatomic) NSMutableArray *children; // @synthesize children=_children;
+- (id)parentFromOutlineMode:(unsigned long long)arg1;
 - (id)pathToAncestorItem:(id)arg1;
 - (id)childAtIndex:(unsigned long long)arg1;
 - (unsigned long long)numberOfChildren;
@@ -44,6 +46,7 @@
 - (void)setDecodedFunctionPointer:(shared_ptr_2d3f6817)arg1;
 @property(readonly) IDELaunchSession *launchSession;
 @property(readonly, copy) NSString *associatedProcessUUID;
+@property(readonly, nonatomic) NSString *namespacedUUID;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)setParent_DoNotCallMe:(id)arg1;
@@ -57,14 +60,19 @@
 @property(readonly, nonatomic) NSURL *captureArchiveURL;
 @property(readonly, nonatomic) GPUGlobalStateManager *globalStateManager;
 - (void)dealloc;
+- (void)_addModelItemToFactory;
+- (void)_makeFilterItems;
 - (id)initWithController:(id)arg1 parent:(id)arg2;
 - (id)navigableItem_descendantRepresentedObjectsFromRepresentedObject:(id)arg1;
 @property(readonly, nonatomic) DVTFileDataType *navigableItem_documentType;
 @property(readonly, nonatomic) id navigableItem_parentRepresentedObject;
 @property(readonly, nonatomic) DVTDocumentLocation *navigableItem_contentDocumentLocation;
+@property(readonly, nonatomic) NSString *navigableItem_subtitle;
 @property(readonly, nonatomic) NSString *navigableItem_name;
+@property(readonly, nonatomic) NSImage *navigableItem_image;
 - (id)ideModelObjectTypeIdentifier;
 @property(readonly) BOOL isHiddenForGPUIssueFilter;
+@property(readonly) int maxIssueSeverity;
 - (BOOL)matchesWithPredicate:(id)arg1 recursive:(BOOL)arg2;
 @property(readonly, nonatomic) NSString *categoryIdentifier;
 
@@ -78,7 +86,6 @@
 @property(readonly, nonatomic) IDEFileReference *navigableItem_fileReference;
 @property(readonly, nonatomic) NSNull *navigableItem_filtered;
 @property(readonly, nonatomic) NSString *navigableItem_groupIdentifier;
-@property(readonly, nonatomic) NSImage *navigableItem_image;
 @property(readonly, nonatomic) BOOL navigableItem_isEnabled;
 @property(readonly, nonatomic) BOOL navigableItem_isLeaf;
 @property(readonly, nonatomic) BOOL navigableItem_isMajorGroup;
@@ -87,7 +94,6 @@
 @property(readonly, nonatomic) BOOL navigableItem_referencedContentExists;
 @property(readonly, nonatomic) _TtC13DVTFoundation9DVTSymbol *navigableItem_representedSymbol;
 @property(readonly, nonatomic) NSURL *navigableItem_representedURL;
-@property(readonly, nonatomic) NSString *navigableItem_subtitle;
 @property(readonly, nonatomic) NSString *navigableItem_toolTip;
 @property(readonly) Class superclass;
 

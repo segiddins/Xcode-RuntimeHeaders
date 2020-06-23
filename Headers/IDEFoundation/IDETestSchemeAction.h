@@ -30,7 +30,8 @@
 + (id)keyPathsForValuesAffectingTestBuildableReferences;
 + (id)keyPathsForValuesAffectingTestableReferences;
 + (id)keyPathsForValuesAffectingDoesNonActionWork;
-+ (void)forceCodeCoverageEnabledTo:(BOOL)arg1;
++ (void)setCodeCoverageEnabledOverride:(id)arg1;
++ (id)codeCoverageEnabledOverride;
 + (void)initialize;
 - (void).cxx_destruct;
 @property(nonatomic) BOOL suppressSimulatorApplication; // @synthesize suppressSimulatorApplication=_suppressSimulatorApplication;
@@ -65,6 +66,7 @@
 - (id)initFromXMLUnarchiver:(id)arg1 archiveVersion:(float)arg2;
 - (BOOL)shouldDebugAppExtensions;
 - (BOOL)shouldDebugXPCServices;
+- (BOOL)_shouldUseDebuggingSettingsFromLaunchAction;
 - (id)additionalOptions;
 - (void)setRunContext:(id)arg1;
 @property(readonly, getter=isTestable) BOOL testable;

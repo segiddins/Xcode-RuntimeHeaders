@@ -6,12 +6,11 @@
 
 #import <XCTDaemonControl/NSObject-Protocol.h>
 
-@class NSError, XCTProtocolVersion;
+@class NSError, XCTCapabilities;
 @protocol XCTestManager_DaemonConnectionInterface;
 
 @protocol XCTDaemonRequest <NSObject>
-+ (XCTProtocolVersion *)minimumProtocolVersion;
 - (void)handleConnectionFailure:(NSError *)arg1;
-- (void)executeWithDaemonProxy:(id <XCTestManager_DaemonConnectionInterface>)arg1 protocolVersion:(XCTProtocolVersion *)arg2;
+- (void)executeWithDaemonProxy:(id <XCTestManager_DaemonConnectionInterface>)arg1 daemonCapabilities:(XCTCapabilities *)arg2;
 @end
 

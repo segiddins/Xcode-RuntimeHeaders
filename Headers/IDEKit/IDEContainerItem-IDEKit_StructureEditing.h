@@ -11,8 +11,8 @@
 #import <IDEKit/IDEStructureEditingTarget-Protocol.h>
 #import <IDEKit/IDEStructureNavigatorMenuItemWhitelistProvider-Protocol.h>
 
-@class DVTDocumentLocation, DVTFileDataType, DVTFilePath, DVTReferenceResolutionStrategy, DVTSymbol, IDEFileReference, IDEGroup, NSArray, NSImage, NSNull, NSString, NSURL;
-@protocol DVTPropertyListValue;
+@class DVTDocumentLocation, DVTFileDataType, DVTFilePath, DVTReferenceResolutionStrategy, DVTSymbol, IDEContainer, IDEFileReference, IDEFolder, IDEGroup, NSArray, NSImage, NSNull, NSString, NSURL;
+@protocol DVTPropertyListValue, IDEStructureNavigatorMenuItemWhitelistProvider, _TtP16DVTExplorableKit14ExplorableIcon_;
 
 @interface IDEContainerItem (IDEKit_StructureEditing) <IDEStructureEditingTarget, IDEKeyDrivenNavigableItemRepresentedObject, IDEInspectorMatching, IDEStructureNavigatorMenuItemWhitelistProvider>
 + (id)keyPathsForValuesAffectingNavigableItem_filtered;
@@ -33,6 +33,8 @@
 + (id)keyPathsForValuesAffectingNavigableItem_name;
 + (id)keyPathsForValuesAffectingIdeInspectedExpectedFilePathURL;
 + (id)keyPathsForValuesAffectingIdeInspectedExpectedFilePath;
+- (id)structureEditingTemplateInsertionTargetForProposedItem:(id)arg1;
+- (id)parentGroupForTemplateInsertionWithProposedItem:(id)arg1 insertionIndex:(long long *)arg2;
 - (id)structureEditingRemoveSubitemsTargetForParentItem:(id)arg1;
 - (id)structureEditingGroupingTargetForProposedItem:(id)arg1 proposedChildIndex:(long long)arg2 createDirectory:(BOOL)arg3 inWorkspace:(id)arg4;
 - (id)structureEditingTargetForProposedItem:(id)arg1 proposedChildIndex:(long long)arg2;
@@ -71,7 +73,28 @@
 @property(readonly, copy) NSString *idePendingInspectedName;
 @property(copy) NSString *ideInspectedName;
 - (id)applicableInspectorSlicesForCategory:(id)arg1 suggestedSlices:(id)arg2;
-@property(readonly) NSImage *explorableIcon;
+@property(readonly) BOOL isReferenceRemovable;
+@property(readonly) IDEGroup *groupOrContainingGroup;
+@property(readonly) IDEFolder *referencedOrContainingFolder;
+@property(readonly) id <IDEStructureNavigatorMenuItemWhitelistProvider> menuItemWhitelistProvider;
+@property(readonly) BOOL explorableTreatMissingContentAsError;
+@property(readonly) BOOL explorableContentIsMissing;
+@property(readonly) NSString *explorableArchivingIdentifier;
+@property(readonly) DVTFileDataType *explorableDocumentType;
+@property(readonly) BOOL explorableIsRecentStatusFilterable;
+@property(readonly) BOOL explorableHasFilterableSCMStatus;
+@property(readonly) BOOL explorableHidesSCMStatusWhileExpanded;
+@property(readonly) NSString *explorableRemoteSCMStatus;
+@property(readonly) NSString *explorableLocalSCMStatus;
+- (BOOL)isExplorableDocumentDirty;
+@property(readonly) IDEContainerItem *explorableItemForNavigation;
+@property(readonly) NSURL *explorableDocumentURL;
+@property(readonly) BOOL hidesSoleExplorableChild;
+@property(readonly) BOOL subTreeParticipatesInExplorableFiltering;
+@property(readonly) BOOL treatAsExplorableLeaf;
+@property(readonly) id <_TtP16DVTExplorableKit14ExplorableIcon_> explorableIcon;
+@property(readonly) NSString *explorableSubtitle;
+@property(readonly) NSString *explorableName;
 @property(readonly) id <DVTPropertyListValue> plistRepresentation;
 - (id)filterMenuWhitelistIdentifiers;
 - (id)contextualMenuWhitelistIdentifiers;
@@ -84,6 +107,7 @@
 @property(nonatomic, readonly) id navigableItem_parentRepresentedObject;
 @property(nonatomic, readonly) NSString *navigableItem_toolTip;
 @property(nonatomic, readonly) NSURL *ideInspectedExpectedFilePathURL;
+@property(nonatomic, readonly) IDEContainer *representedContainer;
 @property(nonatomic, readonly) NSString *containerFocusedHierarchyDescription;
 @property(nonatomic, readonly) NSString *containerHierarchyDescription;
 @property(nonatomic, readonly) IDEGroup *referencedGroup;

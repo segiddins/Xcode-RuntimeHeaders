@@ -15,6 +15,7 @@
 - (MKClusterAnnotation *)mapView:(MKMapView *)arg1 clusterAnnotationForMemberAnnotations:(NSArray *)arg2;
 - (void)mapView:(MKMapView *)arg1 didAddOverlayRenderers:(NSArray *)arg2;
 - (MKOverlayRenderer *)mapView:(MKMapView *)arg1 rendererForOverlay:(id <MKOverlay>)arg2;
+- (void)mapView:(MKMapView *)arg1 didChangeUserTrackingMode:(long long)arg2 animated:(BOOL)arg3;
 - (void)mapView:(MKMapView *)arg1 annotationView:(MKAnnotationView *)arg2 didChangeDragState:(unsigned long long)arg3 fromOldState:(unsigned long long)arg4;
 - (void)mapView:(MKMapView *)arg1 didFailToLocateUserWithError:(NSError *)arg2;
 - (void)mapView:(MKMapView *)arg1 didUpdateUserLocation:(MKUserLocation *)arg2;

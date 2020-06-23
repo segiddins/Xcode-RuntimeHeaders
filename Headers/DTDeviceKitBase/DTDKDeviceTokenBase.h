@@ -134,7 +134,6 @@
 - (_Bool)simulateLatitude:(id)arg1 andLongitude:(id)arg2 withError:(id *)arg3;
 - (id)developerDiskImageMountError;
 - (BOOL)mountDeveloperDiskImageWithError:(id *)arg1;
-- (id)developerDiskImageForDeviceType:(id)arg1 productVersion:(id)arg2 buildVersion:(id)arg3;
 - (id)copyAndProcessSharedCacheWithOperation:(id)arg1;
 - (id)idealExistingSymbolsDirectory:(id *)arg1;
 - (struct _AMDServiceConnection *)startXcodeDeviceMonitorServiceWithError:(id *)arg1;
@@ -157,6 +156,7 @@
 - (id)startXcodeDeviceMonitorService;
 - (id)startInstrumentsServerService;
 - (id)startSyslogService;
+- (id)startSecureProxiedAppListService;
 - (id)startAppListService;
 - (id)startLocationSimulationService;
 - (id)startSharedCacheCopyingService;
@@ -164,6 +164,7 @@
 - (id)startCrashReportMoverService;
 - (id)startAppInstallationService;
 - (id)startSpringboardService;
+- (id)startSecureProxiedDebugServerServiceWithExtension:(id)arg1;
 - (id)startDebugServerServiceWithExtension:(id)arg1;
 - (id)startServiceWithIdentifier:(id)arg1;
 - (void)startSecureServices;

@@ -47,6 +47,7 @@
 - (id)visibleStringSummaries;
 - (BOOL)_setPreferredHeight:(double)arg1;
 - (BOOL)_setCalculatedHeight:(double)arg1;
+@property(nonatomic) double intervalBorderWidth;
 @property(nonatomic) BOOL decoratesMajorMinorTicks;
 @property(nonatomic) unsigned long long intervalBarWidth;
 @property(nonatomic) double intervalRoundedRectRadius;

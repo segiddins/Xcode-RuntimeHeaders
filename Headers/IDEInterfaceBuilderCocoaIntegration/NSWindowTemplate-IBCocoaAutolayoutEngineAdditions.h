@@ -41,7 +41,7 @@
 + (id)keyPathsForValuesAffectingContentBorderThicknessMinXEdge;
 + (id)keyPathsForValuesAffectingIbShadowedContentBorderThicknessMinXEdge;
 + (id)keyPathsForValuesAffectingContentRect;
-+ (id)keyPathsForValuesAffectingIbShadowedIsRestorable;
++ (id)keyPathsForValuesAffectingIbInspectedToolbarStyle;
 + (id)keyPathsForValuesAffectingIbInspectedCollectionBehavior;
 + (id)ibBorderedWindowTemplateWithClassName:(id)arg1;
 + (id)ibContentBorderThicknessKeyPaths;
@@ -112,7 +112,8 @@
 @property struct CGPoint contentRectOrigin;
 @property struct CGSize contentRectSize;
 @property(retain) NSView *contentView;
-@property BOOL ibShadowedIsRestorable;
+- (void)setIbInspectedToolbarStyle:(long long)arg1;
+- (long long)ibInspectedToolbarStyle;
 - (void)setIbInspectedCollectionBehavior:(unsigned long long)arg1;
 - (unsigned long long)ibInspectedCollectionBehavior;
 @property unsigned long long ibShadowedAutoPositionMask;
@@ -124,6 +125,11 @@
 @property(copy) NSValue *ibShadowedMinFullScreenContentSize;
 @property(copy) NSValue *ibShadowedContentMaxSize;
 @property(copy) NSValue *ibShadowedContentMinSize;
+@property(nonatomic) long long ibExternalSimulatedWindowRole;
+- (void)_ibApplyToolbarStyle:(long long)arg1;
+@property(nonatomic) long long ibExternalToolbarStyle;
+- (void)_ibApplySubtitle:(id)arg1;
+@property(retain, nonatomic) NSString *ibExternalSubtitle;
 @property BOOL ibExternalVisibleAtLaunch;
 - (struct CGSize)ibContentSizeForFrameSize:(struct CGSize)arg1 inDocument:(id)arg2;
 - (struct CGSize)ibFrameSizeForContentSize:(struct CGSize)arg1 inDocument:(id)arg2;
@@ -135,16 +141,19 @@
 - (unsigned long long)ibStyleMaskForEditorWindow;
 - (BOOL)ibIsControlledByWindowController;
 - (BOOL)ibIsConfiguredAsPanel;
+- (void)ibDidAddToDocument:(id)arg1 phase:(unsigned long long)arg2;
 - (id)ibTopLevelViewForLayoutEngine:(id)arg1;
 - (BOOL)ibIsLegalArbitrationUnitRoot;
 - (CDUnknownBlockType)ibWindow:(id *)arg1 forUpdatingConstraintsInDocument:(id)arg2;
 - (BOOL)ibChildView:(id)arg1 shouldUseConstraintsInsteadOfAutoresizingWhenAddedToDocument:(id)arg2;
+- (long long)ibToolbarStyleForMimicWindow;
 - (BOOL)ibIsInspectorSliceApplicable:(id)arg1 forCategory:(id)arg2;
 - (id)ibAcceptContentsOfPasteboard:(id)arg1 inDocument:(id)arg2 insertionContext:(id)arg3;
 - (BOOL)ibCanAcceptContentsOfPasteboard:(id)arg1 inDocument:(id)arg2 targetChildRelation:(id *)arg3;
 - (id)ibContainerWidgetTypeForChildView:(id)arg1;
 - (CDStruct_d2b197d1)ibInsetToDesignableContentAreaForChildView:(id)arg1;
 - (BOOL)ibCalculatesInsetToDesignableContentAreaForChildView:(id)arg1;
+- (BOOL)ibShouldPreferLayoutMarginsGuideForChildView:(id)arg1;
 - (BOOL)ibIsChildSelectableInSameEditor:(id)arg1;
 - (BOOL)ibIsChildViewMovable:(id)arg1;
 - (BOOL)ibIsChildViewSizable:(id)arg1;
@@ -176,7 +185,6 @@
 - (id)ibRuntimeClassName;
 - (BOOL)ibCanBeBoundToFromObject:(id)arg1;
 - (BOOL)ibShouldUseClassSwapper;
-- (id)_ibLocalAttributeKeyPaths;
 - (id)ibLocalAttributeKeyPaths;
 - (id)ibLocalChildToOneRelationshipsKeyPaths;
 - (BOOL)ibIsNSAppearanceContainer;

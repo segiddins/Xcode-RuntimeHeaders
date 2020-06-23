@@ -12,6 +12,7 @@ __attribute__((visibility("hidden")))
 @interface _TtCC13DVTLibraryKit15LibraryTileView9SolidView : NSView
 {
     MISSING_TYPE *backgroundColor;
+    MISSING_TYPE *cornerRadius;
 }
 
 - (void).cxx_destruct;

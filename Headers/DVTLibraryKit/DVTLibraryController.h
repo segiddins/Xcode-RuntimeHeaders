@@ -168,9 +168,9 @@
 - (void)loadView;
 - (void)syncEmphmeralPresentation;
 - (BOOL)sendResponderActionToTileView:(SEL)arg1;
-- (void)setRepresentedExtension:(id)arg1;
 - (void)addObserver:(id)arg1 forKeyPath:(id)arg2 options:(unsigned long long)arg3 context:(void *)arg4;
 - (void)primitiveInvalidate;
+- (id)initWithLibrary:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 
 @end

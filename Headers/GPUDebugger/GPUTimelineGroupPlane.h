@@ -6,12 +6,17 @@
 
 #import <DTGraphKit/DTTimelineGroupPlane.h>
 
+@class NSArray;
+
 __attribute__((visibility("hidden")))
 @interface GPUTimelineGroupPlane : DTTimelineGroupPlane
 {
     unsigned long long _groupIndex;
+    NSArray *_subPlaneIndexes;
 }
 
+- (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *subPlaneIndexes; // @synthesize subPlaneIndexes=_subPlaneIndexes;
 @property(nonatomic) unsigned long long groupIndex; // @synthesize groupIndex=_groupIndex;
 - (id)_unselectedTextColor;
 - (id)_selectedTextColor;

@@ -4,9 +4,9 @@
 //  Copyright (C) 1997-2019 Steve Nygard.
 //
 
-#import <AppKit/NSWindow.h>
+#import <AppKit/NSPanel.h>
 
-@interface IBConnectionPanel : NSWindow
+@interface IBConnectionPanel : NSPanel
 {
 }
 

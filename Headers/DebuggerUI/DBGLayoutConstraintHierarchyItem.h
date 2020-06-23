@@ -21,6 +21,7 @@
 @property(readonly, copy) NSString *constraintIdentifier;
 - (id)navigableItem_additionalFilterMatchingText;
 - (id)navigableItem_image;
+- (BOOL)isEqual:(id)arg1;
 @property(readonly) DBGLayoutConstraint *proxiedLayoutConstraint;
 
 @end

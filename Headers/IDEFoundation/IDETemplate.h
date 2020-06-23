@@ -12,6 +12,7 @@
 
 @interface IDETemplate : NSObject <IDETemplateOptionParent>
 {
+    BOOL _supportsSwiftPackage;
     BOOL _chooserOnly;
     BOOL _hiddenFromLibrary;
     BOOL _hiddenFromChooser;
@@ -19,6 +20,7 @@
     NSString *_defaultCompletionName;
     NSString *_mainTemplateFile;
     NSArray *_allowedTypes;
+    NSString *_templateIdentifier;
     NSDictionary *_templateInfo;
     DVTFilePath *_filePath;
     IDETemplateKind *_templateKind;
@@ -58,6 +60,7 @@
 @property(readonly) BOOL hiddenFromChooser; // @synthesize hiddenFromChooser=_hiddenFromChooser;
 @property(readonly) BOOL hiddenFromLibrary; // @synthesize hiddenFromLibrary=_hiddenFromLibrary;
 @property(readonly) BOOL chooserOnly; // @synthesize chooserOnly=_chooserOnly;
+@property(readonly) BOOL supportsSwiftPackage; // @synthesize supportsSwiftPackage=_supportsSwiftPackage;
 @property(readonly, copy) NSArray *templateOptions; // @synthesize templateOptions=_templateOptions;
 @property(readonly) NSArray *templatePlatforms; // @synthesize templatePlatforms=_templatePlatforms;
 @property(readonly, copy) NSString *templateCategory; // @synthesize templateCategory=_templateCategory;
@@ -78,7 +81,7 @@
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
-@property(readonly, copy) NSString *identifier;
+@property(readonly, copy) NSString *identifier; // @synthesize identifier=_templateIdentifier;
 - (Class)templateOptionClass;
 - (id)initWithTemplateInfo:(id)arg1 filePath:(id)arg2;
 

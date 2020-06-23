@@ -13,6 +13,7 @@
 @interface IBUISimulatedSearchBarMetrics (IDESupport) <IBDocumentArchiving>
 + (id)simulatedSearchBarMetricsForSearchBar:(id)arg1;
 + (id)simulatedBarMetricsForBarView:(id)arg1;
+- (id)metricChainWithPrecedingMetric:(id)arg1;
 - (id)simulatedBarMetricsByRemovingTintColor;
 - (void)unarchiveWithDocumentUnarchiver:(id)arg1;
 - (void)archiveWithDocumentArchiver:(id)arg1;

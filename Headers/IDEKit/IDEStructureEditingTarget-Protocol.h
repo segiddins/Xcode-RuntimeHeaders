@@ -7,9 +7,10 @@
 #import <IDEKit/NSObject-Protocol.h>
 
 @class IDEWorkspace;
-@protocol IDEStructureEditingDropTarget, IDEStructureEditingGroupingTarget, IDEStructureEditingItem, IDEStructureEditingRemoveSubitemsTarget;
+@protocol IDEStructureEditingDropTarget, IDEStructureEditingGroupingTarget, IDEStructureEditingItem, IDEStructureEditingRemoveSubitemsTarget, IDEStructureEditingTemplateInsertionTarget;
 
 @protocol IDEStructureEditingTarget <NSObject>
+- (id <IDEStructureEditingTemplateInsertionTarget>)structureEditingTemplateInsertionTargetForProposedItem:(id <IDEStructureEditingItem>)arg1;
 - (id <IDEStructureEditingRemoveSubitemsTarget>)structureEditingRemoveSubitemsTargetForParentItem:(id <IDEStructureEditingItem>)arg1;
 - (id <IDEStructureEditingGroupingTarget>)structureEditingGroupingTargetForProposedItem:(id <IDEStructureEditingItem>)arg1 proposedChildIndex:(long long)arg2 createDirectory:(BOOL)arg3 inWorkspace:(IDEWorkspace *)arg4;
 - (id <IDEStructureEditingDropTarget>)structureEditingTargetForProposedItem:(id <IDEStructureEditingItem>)arg1 proposedChildIndex:(long long)arg2;

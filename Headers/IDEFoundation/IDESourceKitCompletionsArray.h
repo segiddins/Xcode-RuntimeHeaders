@@ -6,7 +6,7 @@
 
 #import <Foundation/NSArray.h>
 
-@class IDESourceKitResponse, IDESourceKitUIDSet;
+@class DVTSourceCodeLanguage, IDESourceKitResponse, IDESourceKitUIDSet;
 
 @interface IDESourceKitCompletionsArray : NSArray
 {
@@ -15,13 +15,14 @@
     CDStruct_4c46f3f5 _completions;
     id *_items;
     unsigned long long _itemCount;
+    DVTSourceCodeLanguage *_language;
 }
 
 - (void).cxx_destruct;
 - (id)objectAtIndex:(unsigned long long)arg1;
 - (unsigned long long)count;
 - (void)dealloc;
-- (id)initWithSourceKitResponse:(id)arg1 UIDSet:(id)arg2;
+- (id)initWithSourceKitResponse:(id)arg1 UIDSet:(id)arg2 language:(id)arg3;
 
 @end
 

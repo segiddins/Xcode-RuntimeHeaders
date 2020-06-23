@@ -23,9 +23,13 @@
 - (BOOL)dvt_isRevealGesture;
 - (BOOL)dvt_isShowGesture;
 - (BOOL)dvt_isControlKeyDown;
+- (BOOL)dvt_isControlKeyFlagChangeEvent;
 - (BOOL)dvt_isCommandKeyDown;
+- (BOOL)dvt_isCommandKeyFlagChangeEvent;
 - (BOOL)dvt_isShiftKeyDown;
+- (BOOL)dvt_isShiftKeyFlagChangeEvent;
 - (BOOL)dvt_isOptionKeyDown;
+- (BOOL)dvt_isOptionKeyFlagChangeEvent;
 - (BOOL)dvt_isDeleteOrBackspaceKeyEvent;
 - (BOOL)dvt_isEscapeKeyDown;
 - (struct CGPoint)dvt_locationOnScreen;

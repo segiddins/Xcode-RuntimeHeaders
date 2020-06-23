@@ -25,6 +25,7 @@
 + (id)sharedInstance;
 - (id)colorTableVersionSuffix;
 - (long long)userInterfaceEra;
+- (id)identifier;
 - (void)didRegisterSharedInstance;
 
 @end

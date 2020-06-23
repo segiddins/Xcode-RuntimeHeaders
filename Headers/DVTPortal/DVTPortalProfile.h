@@ -30,7 +30,7 @@
 + (id)_deleteProfileServiceWithTeam:(id)arg1 program:(id)arg2 profile:(id)arg3;
 + (id)_downloadProfileServiceWithPortalID:(id)arg1 team:(id)arg2 program:(id)arg3;
 + (id)_existingAppIDMatchingBundleID:(id)arg1 requiresExplicitAppID:(BOOL)arg2 candidateAppIDs:(id)arg3;
-+ (BOOL)_existingAppIDMatchingBundleID:(id)arg1 requiresExplicitAppID:(BOOL)arg2 team:(id)arg3 platform:(id)arg4 session:(id)arg5 matchingAppID:(id *)arg6 error:(id *)arg7;
++ (BOOL)_existingAppIDMatchingBundleID:(id)arg1 appIDType:(long long)arg2 requiresExplicitAppID:(BOOL)arg3 team:(id)arg4 platform:(id)arg5 session:(id)arg6 matchingAppID:(id *)arg7 error:(id *)arg8;
 + (BOOL)_requiresExplicitAppIDForFeatures:(id)arg1;
 + (BOOL)_updateContainersForAppID:(id)arg1 withCharacteristics:(id)arg2 session:(id)arg3 error:(id *)arg4;
 + (id)_preparedAppIDWithCharacteristics:(id)arg1 session:(id)arg2 error:(id *)arg3;
@@ -39,12 +39,12 @@
 + (id)_errorForTeam:(id)arg1 unsupportedFeatures:(id)arg2 characteristics:(id)arg3;
 + (id)_errorForPermissionsFailure:(id)arg1;
 + (id)_errorForNoCertificates;
-+ (id)_errorForBundleIdentifierUnavailable:(id)arg1 withUnderlyingError:(id)arg2;
 + (id)_errorForNoDevicesWhenRequiringProfileForPlatform:(id)arg1 withUnderlyingError:(id)arg2;
 + (id)_profileMatchingName:(id)arg1 session:(id)arg2 team:(id)arg3 profileType:(id)arg4 error:(id *)arg5;
 + (BOOL)_deletePreExistingProfileForType:(id)arg1 name:(id)arg2 session:(id)arg3 team:(id)arg4 error:(id *)arg5;
 + (id)_certificatesForProfileType:(id)arg1 session:(id)arg2 team:(id)arg3 error:(id *)arg4;
 + (id)_createAndDownloadNonTeamProvisioningProfileWithTeam:(id)arg1 session:(id)arg2 profileType:(id)arg3 platform:(id)arg4 appID:(id)arg5 manualStyleProfileDevices:(id)arg6 manualStyleProfileName:(id)arg7 overrideDeletionOfPreExistingProfile:(BOOL)arg8 error:(id *)arg9;
++ (id)_nonTeamProfileName:(id)arg1 appID:(id)arg2;
 + (id)_downloadTeamProfileServiceWithTeam:(id)arg1 platform:(id)arg2 appID:(id)arg3 profileType:(id)arg4;
 + (id)_downloadTeamProfileServiceWithTeam:(id)arg1 platform:(id)arg2 appID:(id)arg3;
 + (id)_requestProfileWithAppID:(id)arg1 type:(id)arg2 registeredDevices:(id)arg3 unregisteredDevices:(id)arg4 manualStyleProfileName:(id)arg5 team:(id)arg6 platform:(id)arg7 overrideDeletionOfPreExistingProfile:(BOOL)arg8 session:(id)arg9 error:(id *)arg10;

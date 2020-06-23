@@ -9,10 +9,11 @@
 @class NSArray, NSDictionary, NSString, NSView;
 
 @protocol DVTTextCompletionListDataSource <NSObject>
-@property(readonly) NSString *filteringPrefix;
+@property(readonly) NSString *patternString;
 @property(readonly) NSDictionary *currentCompletionContext;
-@property long long selectedCompletionIndex;
-@property(readonly) NSArray *filteredCompletionsAlpha;
+@property long long selectedCompletionItemIndex;
+@property(readonly) long long arrangedCompletionItemsChangeGeneration;
+@property(readonly) NSArray *arrangedCompletionItems;
 @property(readonly) NSView *textView;
 - (void)insertCurrentCompletion;
 @end

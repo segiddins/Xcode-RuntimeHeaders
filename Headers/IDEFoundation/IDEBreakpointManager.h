@@ -57,7 +57,7 @@
 - (void)_notifyObserversOfActivationStateChange;
 - (void)removeBreakpointObserver:(id)arg1;
 - (void)addBreakpointObserver:(id)arg1;
-- (id)createSanitizerBreakpointIfNecessary:(unsigned long long)arg1 ignoreExisting:(BOOL)arg2;
+- (id)createSanitizerBreakpointIfNecessary:(unsigned long long)arg1 categories:(id)arg2 ignoreExisting:(BOOL)arg3;
 - (void)_handleBreakpointsForBucket:(id)arg1 change:(id)arg2;
 - (void)_addListenerToBucketsBreakpointList:(id)arg1;
 - (void)_removeListenerFromBucketsBreakpointList:(id)arg1;

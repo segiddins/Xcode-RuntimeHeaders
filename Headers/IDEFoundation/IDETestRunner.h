@@ -100,15 +100,15 @@
 @property int testRunnerPID;
 @property(readonly, copy) NSString *description;
 - (void)testCaseWithIdentifier:(id)arg1 didFinishWithStatus:(id)arg2 duration:(double)arg3 rawOutput:(id)arg4 sessionState:(id)arg5;
-- (void)testCaseWithIdentifier:(id)arg1 didFailWithMessage:(id)arg2 file:(id)arg3 line:(long long)arg4 rawOutput:(id)arg5 sessionState:(id)arg6;
+- (void)testCaseWithIdentifier:(id)arg1 didRecordIssue:(id)arg2 rawOutput:(id)arg3 sessionState:(id)arg4;
 - (void)testCaseWithIdentifier:(id)arg1 didMeasurePerformanceMetric:(id)arg2 rawOutput:(id)arg3 sessionState:(id)arg4;
-- (void)testDidOutput:(id)arg1 sessionState:(id)arg2;
 - (void)testCaseWithIdentifier:(id)arg1 didFinishActivity:(id)arg2 sessionState:(id)arg3;
 - (void)testCaseWithIdentifier:(id)arg1 willStartActivity:(id)arg2 sessionState:(id)arg3;
 - (void)testCaseWithIdentifier:(id)arg1 wasSkippedWithMessage:(id)arg2 file:(id)arg3 line:(long long)arg4 rawOutput:(id)arg5 sessionState:(id)arg6;
 - (void)testCaseWithIdentifier:(id)arg1 didStartWithRawOutput:(id)arg2 sessionState:(id)arg3;
 - (void)testSuiteDidFinishWithRunCount:(unsigned long long)arg1 skipCount:(unsigned long long)arg2 failureCount:(unsigned long long)arg3 unexpectedFailureCount:(unsigned long long)arg4 testDuration:(double)arg5 totalDuration:(double)arg6 rawOutput:(id)arg7 sessionState:(id)arg8;
 - (void)testSuiteWithIdentifier:(id)arg1 willFinishAt:(id)arg2 rawOutput:(id)arg3 sessionState:(id)arg4;
+- (void)testSuiteWithIdentifier:(id)arg1 didRecordIssue:(id)arg2 rawOutput:(id)arg3 sessionState:(id)arg4;
 - (void)testSuiteWithIdentifier:(id)arg1 didStartAt:(id)arg2 rawOutput:(id)arg3 sessionState:(id)arg4;
 - (void)_unwindTestSuiteStackForResultsProcessor:(id)arg1;
 - (void)willFinishWithError:(id)arg1 didCancel:(BOOL)arg2 sessionState:(id)arg3;
@@ -116,7 +116,7 @@
 - (BOOL)_hasTestsLeftToRun;
 - (id)_aggregateStatisticsFromLastLaunch;
 - (BOOL)_addTestRunOperation:(id *)arg1;
-@property(readonly) NSString *title;
+@property(readonly, copy) NSString *title;
 @property(readonly) NSString *currentDiagnosticLogPath;
 - (id)testOperationWithError:(id *)arg1;
 - (id)_testRunOperationWithLaunchParameters:(id)arg1 error:(id *)arg2;

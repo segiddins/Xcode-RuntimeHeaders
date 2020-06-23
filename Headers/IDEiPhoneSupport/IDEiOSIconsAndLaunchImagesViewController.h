@@ -40,6 +40,7 @@
 - (BOOL)statusBarHiddenForImageSection:(id)arg1;
 - (id)iconFilePathSetsByIconBaseNameForImageSection:(id)arg1;
 - (id)infoPlistCoordinatorForImageSection:(id)arg1;
+- (BOOL)macTargeted;
 - (BOOL)iPadTargeted;
 - (BOOL)iPhoneTargeted;
 @property(readonly) NSString *imageTypeString;

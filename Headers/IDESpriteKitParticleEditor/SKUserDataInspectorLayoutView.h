@@ -20,9 +20,8 @@
 @property(retain, nonatomic) DVTBorderedView *bottomBar; // @synthesize bottomBar=_bottomBar;
 @property(retain, nonatomic) NSTableView *tableView; // @synthesize tableView=_tableView;
 - (void)awakeFromNib;
-- (void)layoutBottomUp;
-- (void)layoutTopDown;
-- (struct CGSize)preferredTableViewSize;
+- (void)dvt_positionSubviewsAndSizeSelfAfterSubviewLayout;
+- (void)dvt_configureSubviewsBeforeSubviewLayout;
 
 @end
 

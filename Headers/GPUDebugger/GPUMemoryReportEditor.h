@@ -40,7 +40,6 @@ __attribute__((visibility("hidden")))
 - (void)_addSubviewFromViewController:(id)arg1;
 - (void)_setUpDebugging;
 - (void)selectDocumentLocations:(id)arg1;
-- (void)viewWillUninstall;
 - (void)viewDidInstall;
 - (void)primitiveInvalidate;
 - (void)revertStateWithDictionary:(id)arg1;

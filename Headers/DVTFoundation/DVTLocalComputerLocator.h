@@ -6,11 +6,15 @@
 
 #import <DVTFoundation/DVTDeviceLocator.h>
 
+@class DVTLocalComputer;
+
 @interface DVTLocalComputerLocator : DVTDeviceLocator
 {
+    DVTLocalComputer *_localComputer;
 }
 
 + (id)localComputer;
+- (void).cxx_destruct;
 - (BOOL)matchDevice:(id)arg1 againstOptions:(id)arg2 genericOnly:(BOOL)arg3 allowAliases:(BOOL)arg4;
 - (id)deviceType;
 - (id)knownDeviceAtDeviceLocation:(id)arg1;
@@ -18,6 +22,8 @@
 - (void)startLocating;
 - (id)platforms;
 - (id)deviceLocationScheme;
+- (id)initWithLocalComputer:(id)arg1;
+- (id)init;
 
 @end
 

@@ -10,14 +10,14 @@
 
 @interface GPUTraceGaugeDocumentLocation : IDEGaugeDocumentLocation
 {
-    NSString *_outlineItemUUID;
     NSString *_associatedProcessUUID;
+    long long _outlineItemUUID;
 }
 
 + (BOOL)supportsSecureCoding;
 - (void).cxx_destruct;
+@property(nonatomic) long long outlineItemUUID; // @synthesize outlineItemUUID=_outlineItemUUID;
 @property(copy, nonatomic) NSString *associatedProcessUUID; // @synthesize associatedProcessUUID=_associatedProcessUUID;
-@property(copy, nonatomic) NSString *outlineItemUUID; // @synthesize outlineItemUUID=_outlineItemUUID;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

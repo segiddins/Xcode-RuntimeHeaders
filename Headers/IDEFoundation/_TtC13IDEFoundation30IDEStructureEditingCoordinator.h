@@ -11,6 +11,7 @@
 @interface _TtC13IDEFoundation30IDEStructureEditingCoordinator : DVTInvalidation_NSObject
 {
     MISSING_TYPE *_backgroundQueue;
+    MISSING_TYPE *logAspect;
     MISSING_TYPE *activeProcedures;
 }
 

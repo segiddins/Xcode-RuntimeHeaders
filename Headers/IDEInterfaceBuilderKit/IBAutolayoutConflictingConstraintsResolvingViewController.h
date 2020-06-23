@@ -22,6 +22,7 @@
 @property(copy, nonatomic) NSArray *items; // @synthesize items=_items;
 @property(retain, nonatomic) NSTableView *tableView; // @synthesize tableView=_tableView;
 @property(readonly, nonatomic) IBDocument *document; // @synthesize document=_document;
+- (void)resizeConstraints;
 - (void)deleteConstraints;
 - (void)confirmChanges;
 - (void)_didChangeItemSelectionState;

@@ -15,6 +15,7 @@
 
 - (void).cxx_destruct;
 - (id)init;
+- (void)setAuthenticationStrategy:(id)arg1 repository:(id)arg2;
 - (void)progressStatus:(long long)arg1 info:(id)arg2 progressIdentifier:(id)arg3;
 - (void)incrementalLogStatus:(id)arg1 info:(id)arg2 progressIdentifier:(id)arg3;
 

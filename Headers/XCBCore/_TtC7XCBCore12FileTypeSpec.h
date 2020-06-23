@@ -17,6 +17,7 @@
     MISSING_TYPE *isEmbeddableInProduct;
     MISSING_TYPE *codeSignOnCopy;
     MISSING_TYPE *validateOnCopy;
+    MISSING_TYPE *isWrapper;
 }
 
 @end

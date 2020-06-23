@@ -14,20 +14,24 @@
 @interface XCTMobileDeviceDTXConnectionProvider : NSObject <XCTDaemonDTXConnectionProviding>
 {
     id <XCTDebugLogDelegate> _logDelegate;
-    NSString *_serviceName;
-    NSString *_identifier;
+    NSString *_secureServiceName;
+    NSString *_fallbackUnsecureServiceName;
+    CDUnknownBlockType _mobileDeviceProvider;
     XCTMobileDevice *_mobileDevice;
 }
 
++ (void)initialize;
 - (void).cxx_destruct;
 @property(retain) XCTMobileDevice *mobileDevice; // @synthesize mobileDevice=_mobileDevice;
-@property(readonly) NSString *identifier; // @synthesize identifier=_identifier;
-@property(readonly, copy) NSString *serviceName; // @synthesize serviceName=_serviceName;
+@property(copy) CDUnknownBlockType mobileDeviceProvider; // @synthesize mobileDeviceProvider=_mobileDeviceProvider;
+@property(readonly, copy) NSString *fallbackUnsecureServiceName; // @synthesize fallbackUnsecureServiceName=_fallbackUnsecureServiceName;
+@property(readonly, copy) NSString *secureServiceName; // @synthesize secureServiceName=_secureServiceName;
 @property __weak id <XCTDebugLogDelegate> logDelegate; // @synthesize logDelegate=_logDelegate;
 @property(readonly) id <XCTRemoteHostDiagnosticReportsSynchronizing> remoteHostDiagnosticReportsSynchronizer;
 - (void)invalidate;
 - (void)makeConnectionWithCompletion:(CDUnknownBlockType)arg1;
-- (id)initWithMobileDeviceIdentifier:(id)arg1 serviceName:(id)arg2;
+- (id)initWithMobileDeviceProvider:(CDUnknownBlockType)arg1 secureServiceName:(id)arg2 fallbackUnsecureServiceName:(id)arg3;
+- (id)initWithMobileDeviceIdentifier:(id)arg1 secureServiceName:(id)arg2 fallbackUnsecureServiceName:(id)arg3;
 - (id)initWithMobileDeviceIdentifier:(id)arg1;
 
 // Remaining properties

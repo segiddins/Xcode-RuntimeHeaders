@@ -12,7 +12,7 @@
 #import <GPUDebugger/GPUAbstractDebuggerController-Protocol.h>
 #import <GPUDebugger/GPUPerformanceDataProvider-Protocol.h>
 
-@class DVTObservingToken, DVTStackBacktrace, DYCaptureSessionInfo, DYDeviceInfo, DYFuture, DYInvestigatorCaseConfigData, DYShaderProfiler, DYShaderProfilerResult, GPUCaptureInfoMessage, GPUInferiorSession, GPUInvestigatorReportItem, GPUShaderDebuggerSession, GPUTraceModelFactory, GPUTraceSession, NSArray, NSDictionary, NSError, NSImage, NSMutableArray, NSNumber, NSSet, NSString, NSURL;
+@class DVTObservingToken, DVTStackBacktrace, DYCaptureSessionInfo, DYDeviceInfo, DYFuture, DYInvestigatorCaseConfigData, DYShaderProfiler, DYShaderProfilerResult, GPUCaptureInfoMessage, GPUInferiorSession, GPUInvestigatorReportItem, GPUShaderDebuggerSession, GPUTraceModelFactory, GPUTraceSession, NSArray, NSError, NSImage, NSMutableArray, NSMutableDictionary, NSNumber, NSSet, NSString, NSURL, _TtC11GPUDebugger19GPUFindingsProvider;
 @protocol DYPPipelineStatistics, DYPResourceManager, DYPResourceMemoryDataSource, GPUCapturableObject, OS_dispatch_queue;
 
 @interface GPUDebuggerController : NSObject <DVTInvalidation, DYShaderProfilerDelegate, DYPDebuggerControllerProxyDelegate, GPUPerformanceDataProvider, GPUAbstractDebuggerController>
@@ -26,7 +26,7 @@
     NSString *_apiDisplayName;
     double _appFrameRate;
     double _appTargetFrameRate;
-    NSDictionary *_maxIssueSeverity;
+    NSMutableDictionary *_maxIssueSeverity;
     DYShaderProfiler *_shaderProfiler;
     NSObject<OS_dispatch_queue> *_shaderProfilerReplyQueue;
     DYShaderProfilerResult *_shaderProfilerResults;
@@ -41,16 +41,25 @@
     NSNumber *_shaderDebuggerAvailable;
     NSError *_shaderDebuggerAvailableError;
     DYFuture *_shaderProfilerFuture;
+    _TtC11GPUDebugger19GPUFindingsProvider *_findingsProvider;
+    NSMutableArray *_allFindings;
+    NSMutableDictionary *_shaderDebugItemPreferredOptions;
+    BOOL _pauseBatchIDFilteredCounters;
     BOOL _supportsInvestigator;
     BOOL _isInvestigatorReady;
+    BOOL _hasResourceMemoryAllocatedSizes;
     BOOL _shouldProfileOnGPUTraceLoad;
     BOOL _didDismissRunProfilerScopeBar;
     BOOL _noRecentGPUWorkloadDetected;
     BOOL _requiresXcodeSelect;
+    BOOL _shouldLoadCapture;
+    BOOL _shouldLoadDiagnostics;
+    BOOL _runningSimulatorCapture;
     BOOL _shadersUpdatable;
     int _debugState;
     int _profilerState;
     int _enableGPUValidationMode;
+    int _shaderValidationMode;
     GPUShaderDebuggerSession *_shaderDebuggerSession;
     id <DYPResourceManager> _resourceManager;
     GPUTraceModelFactory *_modelFactory;
@@ -69,6 +78,7 @@
     NSSet *_fenumsWithErrors;
     NSURL *_captureArchiveURL;
     id <DYPResourceMemoryDataSource> _resourceMemoryDataSource;
+    NSError *_captureError;
     GPUCaptureInfoMessage *_captureInfoMessage;
     NSObject<OS_dispatch_queue> *_synchronousJobQueue;
 }
@@ -81,6 +91,11 @@
 @property(readonly) NSObject<OS_dispatch_queue> *synchronousJobQueue; // @synthesize synchronousJobQueue=_synchronousJobQueue;
 @property(retain) GPUCaptureInfoMessage *captureInfoMessage; // @synthesize captureInfoMessage=_captureInfoMessage;
 @property BOOL shadersUpdatable; // @synthesize shadersUpdatable=_shadersUpdatable;
+@property(readonly, nonatomic) BOOL runningSimulatorCapture; // @synthesize runningSimulatorCapture=_runningSimulatorCapture;
+@property(retain, nonatomic) NSError *captureError; // @synthesize captureError=_captureError;
+@property(nonatomic) int shaderValidationMode; // @synthesize shaderValidationMode=_shaderValidationMode;
+@property(nonatomic) BOOL shouldLoadDiagnostics; // @synthesize shouldLoadDiagnostics=_shouldLoadDiagnostics;
+@property(nonatomic) BOOL shouldLoadCapture; // @synthesize shouldLoadCapture=_shouldLoadCapture;
 @property(readonly) BOOL requiresXcodeSelect; // @synthesize requiresXcodeSelect=_requiresXcodeSelect;
 @property BOOL noRecentGPUWorkloadDetected; // @synthesize noRecentGPUWorkloadDetected=_noRecentGPUWorkloadDetected;
 @property int enableGPUValidationMode; // @synthesize enableGPUValidationMode=_enableGPUValidationMode;
@@ -90,11 +105,11 @@
 @property BOOL shouldProfileOnGPUTraceLoad; // @synthesize shouldProfileOnGPUTraceLoad=_shouldProfileOnGPUTraceLoad;
 @property(readonly) DYShaderProfilerResult *shaderProfilerResultsBase; // @synthesize shaderProfilerResultsBase=_shaderProfilerResultsBase;
 @property(readonly) DYShaderProfilerResult *shaderProfilerResults; // @synthesize shaderProfilerResults=_shaderProfilerResults;
+@property(readonly, nonatomic) BOOL hasResourceMemoryAllocatedSizes; // @synthesize hasResourceMemoryAllocatedSizes=_hasResourceMemoryAllocatedSizes;
 @property(readonly, nonatomic) id <DYPResourceMemoryDataSource> resourceMemoryDataSource; // @synthesize resourceMemoryDataSource=_resourceMemoryDataSource;
 @property(retain) NSURL *captureArchiveURL; // @synthesize captureArchiveURL=_captureArchiveURL;
 @property(retain) NSSet *fenumsWithErrors; // @synthesize fenumsWithErrors=_fenumsWithErrors;
 @property(retain) NSArray *extensions; // @synthesize extensions=_extensions;
-@property(readonly) NSArray *extraAnalyzerFindings; // @synthesize extraAnalyzerFindings=_extraAnalyzerFindings;
 @property(retain) NSArray *analyzerFindings; // @synthesize analyzerFindings=_analyzerFindings;
 @property(readonly) double appTargetFrameRate; // @synthesize appTargetFrameRate=_appTargetFrameRate;
 @property(readonly) double appFrameRate; // @synthesize appFrameRate=_appFrameRate;
@@ -117,20 +132,25 @@
 @property(readonly) NSString *apiDisplayName; // @synthesize apiDisplayName=_apiDisplayName;
 @property(readonly) unsigned int api; // @synthesize api=_api;
 @property(retain) id <GPUCapturableObject> currentCapturableObject; // @synthesize currentCapturableObject=_currentCapturableObject;
-@property(readonly) NSArray *capturableObjects; // @synthesize capturableObjects=_capturableObjects;
+- (BOOL)supportsSourcesInMetallib:(id *)arg1;
 - (void)requestPerLineShaderProfilerData:(unsigned long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)stopShaderDebuggerSessionWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)startShaderDebuggerSessionWithShaderItem:(id)arg1 region:(id)arg2 userInfo:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (BOOL)isShaderDebuggerAvailableWithError:(id *)arg1;
 @property(retain) GPUShaderDebuggerSession *shaderDebuggerSession; // @synthesize shaderDebuggerSession=_shaderDebuggerSession;
+- (id)gpuVendorForAPIItem:(id)arg1;
+- (id)gpuNameForAPIItem:(id)arg1;
 - (id)allIssues;
-- (id)issuesForRangeOfFunctionIndices:(struct _NSRange)arg1;
-- (id)issuesForFunctionIndex:(int)arg1;
+- (id)issuesForRangeOfFunctionIndices:(struct _NSRange)arg1 fileFunctionIndices:(struct _NSRange)arg2;
+- (id)issuesForFunctionIndex:(int)arg1 fileFunctionIndex:(int)arg2;
+- (void)_insertFindingToArray:(id)arg1 finding:(id)arg2 funcIndex:(int)arg3 fileFunctionIndex:(int)arg4;
+- (id)issuesForAPIItem:(id)arg1;
 @property(nonatomic) int issueFilterLevel;
 - (id)maxIssueSeverityImage:(int)arg1;
 - (int)maxIssueSeverity:(int)arg1;
 - (void)addExtraAnalyzerFindings:(id)arg1;
 - (id)getExtraAnalyzerFindings;
+@property(readonly) NSArray *extraAnalyzerFindings;
 @property(readonly) NSArray *invalidOverrides;
 - (void)dumpFramesTime:(id)arg1;
 - (id)modifiedCaptureArchive;
@@ -146,18 +166,23 @@
 @property(readonly) BOOL isDeploymentTargetOlderThanDeviceVersionForiOS;
 @property(readonly) BOOL isDisassemblerAvailable;
 @property(readonly) BOOL shaderProfilerResultsHaveBeenUpdated;
-@property(readonly, nonatomic) BOOL isSimulatorDevice;
+@property(readonly) BOOL supportsImmediateModeDrawCounters;
+@property(readonly) BOOL supportsBatchIdFiltering;
+@property(readonly) BOOL supportsShaderProfiler;
+@property(readonly) BOOL isSimulatorDevice;
 @property(readonly) BOOL isMacOSXDevice;
 - (void)removeProfilingUpdateObserver:(id)arg1;
 - (void)notifyProfilingDataUpdateObservers:(id)arg1;
 - (id)registerForProfilingDataUpdatesOnQueue:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)notifyCounterGraphItemChangedOnQueue:(id)arg1 handler:(CDUnknownBlockType)arg2;
+- (void)notifyStreamingShaderProfilingDataOnQueue:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)notifyBatchedCounterDataOnQueue:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (BOOL)dumpInstructions;
 - (BOOL)wantsDerivedCounters;
 @property(readonly) BOOL isRuntimeOSAppleInternal;
 - (id)queryShaderInfoWithPayload:(id)arg1;
 - (BOOL)isForInternalTool;
+@property(nonatomic) BOOL pauseBatchIDFilteredCounters;
 - (id)derivedCounterInfo:(id)arg1;
 - (unsigned long long)_getTargetFrameRateFromDisplayLinkInfo:(id)arg1;
 - (void)createReportWithCompletionBlock:(CDUnknownBlockType)arg1;
@@ -171,9 +196,13 @@
 - (void)addCapturableObject:(id)arg1;
 - (void)removeAllCapturableObjectsWithType:(id)arg1;
 - (void)removeAllCapturableObjects;
+@property(readonly) NSArray *capturableObjects;
 - (BOOL)isSafeToDeactivate;
 - (BOOL)isDebuggingReplayedTrace;
+- (id)shaderProfilerAnalyzer;
 - (id)dependencyGraph;
+- (id)analyzerManager;
+@property(readonly) _TtC11GPUDebugger19GPUFindingsProvider *findingsProvider;
 - (void)handleTraceSessionFinalization:(unsigned int)arg1;
 - (void)queueShaderProfilerIfNeeded;
 - (void)_runShaderProfilerJobSync;
@@ -185,6 +214,7 @@
 - (void)startGPUTraceSessionInitiatedByInferior:(id)arg1;
 - (void)stopGPUCapture;
 - (void)captureGPUTraceFromBreakpoint:(id)arg1;
+- (BOOL)presentCaptureError;
 - (id)copyAdjunctDataForFilename:(id)arg1 error:(id *)arg2;
 - (BOOL)storeAdjunctData:(id)arg1 filename:(id)arg2 error:(id *)arg3;
 - (id)retrieveArchivedDataForKey:(id)arg1 error:(id *)arg2;
@@ -195,6 +225,7 @@
 - (BOOL)analyzeStoredCaptureArchive;
 - (void)setupCaptureSessionInfoWithArchive:(id)arg1;
 - (void)setupCaptureSession:(id)arg1;
+- (void)addFinding:(id)arg1;
 - (void)setupGuestAppSession:(id)arg1;
 - (BOOL)archiveLastDisplayableRenderBufferImage;
 @property(readonly) NSImage *archivedRenderbufferImage;

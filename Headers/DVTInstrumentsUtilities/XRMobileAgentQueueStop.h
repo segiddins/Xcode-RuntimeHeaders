@@ -8,6 +8,7 @@
 
 #import <DVTInstrumentsUtilities/XRMobileAgentStop-Protocol.h>
 
+@class NSString;
 @protocol OS_dispatch_queue;
 
 @interface XRMobileAgentQueueStop : NSObject <XRMobileAgentStop>
@@ -42,6 +43,12 @@
 - (void)_escortAgentToExit:(id)arg1 withTicket:(id)arg2;
 - (void)_prepareAgentToExecute:(id)arg1 withTicket:(id)arg2;
 - (id)_funnelQueue;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

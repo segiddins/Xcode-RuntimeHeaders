@@ -11,6 +11,7 @@
 @interface _TtC7llbuild10BuildValue : _TtCs12_SwiftObject
 {
     MISSING_TYPE *internalBuildValue;
+    MISSING_TYPE *owned;
 }
 
 @end

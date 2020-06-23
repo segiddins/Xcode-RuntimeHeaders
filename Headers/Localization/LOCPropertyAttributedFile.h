@@ -13,9 +13,6 @@
     NSAttributedString *attributedString;
     unsigned long long segmentUnit;
     BOOL createdFromData;
-    id reserved1;
-    id reserved2;
-    id reserved3;
 }
 
 - (void).cxx_destruct;

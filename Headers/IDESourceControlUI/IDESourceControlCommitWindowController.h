@@ -44,6 +44,7 @@
     IDEEditorDocument *_currentReadOnlyDocument;
     BOOL _pushToRemoteEnabled;
     _TtC18IDESourceControlUI43IDESourceControlCommitAndPushMenuController *_singlePushMenuController;
+    unsigned long long _mode;
     IDESourceControlWorkspaceUIHandler *_workspaceUIHandler;
     NSArray *_forcedPushInfos;
     CDUnknownBlockType _commitWindowCompletionBlock;
@@ -59,6 +60,7 @@
 @property(copy) CDUnknownBlockType commitWindowCompletionBlock; // @synthesize commitWindowCompletionBlock=_commitWindowCompletionBlock;
 @property(retain) NSArray *forcedPushInfos; // @synthesize forcedPushInfos=_forcedPushInfos;
 @property(retain) IDESourceControlWorkspaceUIHandler *workspaceUIHandler; // @synthesize workspaceUIHandler=_workspaceUIHandler;
+@property unsigned long long mode; // @synthesize mode=_mode;
 @property(retain) _TtC18IDESourceControlUI43IDESourceControlCommitAndPushMenuController *singlePushMenuController; // @synthesize singlePushMenuController=_singlePushMenuController;
 @property(copy) NSString *commitMessage; // @synthesize commitMessage=_commitMessage;
 - (BOOL)textView:(id)arg1 doCommandBySelector:(SEL)arg2;

@@ -18,6 +18,7 @@
     MISSING_TYPE *tonemappingRangeKernel;
     MISSING_TYPE *histogramKernel;
     MISSING_TYPE *readPixelKernel;
+    MISSING_TYPE *histogramBinCounts;
 }
 
 @end

@@ -17,7 +17,7 @@
     NSMutableArray *_commandLineArgumentEntries;
     NSMutableArray *_environmentVariableEntries;
     DVTNotificationToken *_buildablesToken;
-    BOOL _mallocStackLoggingSelected;
+    IDESchemeBuildableReference *_loadingBuildableReferenceToUseForMacroExpansion;
     BOOL _codeCoverageEnabled;
     BOOL _onlyGenerateCoverageForSpecifiedTargets;
     BOOL _askForAppToLaunch;
@@ -98,7 +98,7 @@
 - (void)dvt_awakeFromXMLUnarchiver:(id)arg1;
 - (void)_updateSelectedMallocStackTooltip:(id)arg1;
 - (void)_setSelectedMallocStackLoggingType:(id)arg1;
-@property BOOL mallocStackLoggingSelected; // @synthesize mallocStackLoggingSelected=_mallocStackLoggingSelected;
+@property BOOL mallocStackLoggingSelected;
 @property(copy) NSString *selectedMallocStackLoggingType; // @synthesize selectedMallocStackLoggingType=_selectedMallocStackLoggingType;
 @property(readonly) NSArray *availableMallocStackLoggingTypes;
 - (BOOL)containSwiftForTheRunnable;
@@ -122,6 +122,7 @@
 @property(copy) NSString *selectedDebuggerIdentifier; // @synthesize selectedDebuggerIdentifier=_selectedDebuggerIdentifier;
 @property(readonly, nonatomic) IDESchemeCommand<IDEPrimitiveSchemeCommand> *schemeCommand;
 - (void)_updateBuildableToUseForMacroExpansion;
+- (void)_initializeBuildableReferenceToUseForMacroExpansion;
 - (id)_verifyReference:(id)arg1 inBuildableReferences:(id)arg2;
 - (void)updateBuildableForChangeInRunnable;
 - (void)setRunContext:(id)arg1;

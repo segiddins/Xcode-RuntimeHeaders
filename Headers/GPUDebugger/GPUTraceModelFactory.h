@@ -8,13 +8,16 @@
 
 #import <GPUDebugger/DVTInvalidation-Protocol.h>
 
-@class DVTStackBacktrace, DYFuture, DYGLCaptureSessionInfo, GPUDebuggerController, GPUTraceDisplayableItem, GPUTraceProcessItem, GPUTraceSession, NSArray, NSMapTable, NSMutableArray, NSMutableDictionary, NSString;
+@class DVTStackBacktrace, DYFuture, DYGLCaptureSessionInfo, GPUDebuggerController, GPUTraceDisplayableItem, GPUTraceProcessItem, GPUTraceSession, NSArray, NSMapTable, NSMutableArray, NSString;
 @protocol DYPPluginFactory, OS_dispatch_queue;
 
 @interface GPUTraceModelFactory : NSObject <DVTInvalidation>
 {
     NSObject<OS_dispatch_queue> *_queue;
-    NSMutableDictionary *_modelObjectDictionary;
+    NSMutableArray *_modelObjects;
+    unsigned long long _baseModelIndex;
+    NSMutableArray *_shaderModelObjects;
+    unsigned long long _baseShaderModelIndex;
     id <DYPPluginFactory> _pluginFactory;
     GPUDebuggerController *_controller;
     Class _variablesViewContentProviderClass;
@@ -64,12 +67,15 @@
 - (void)notifyUnusedResourcesStreamAvailable;
 - (id)labelForObjectID:(unsigned long long)arg1 functionIndex:(int)arg2;
 - (void)generateOutlineItemsForShaderDebuggerSession:(id)arg1;
+- (void)invalidateShaderModel;
 - (void)invalidateModel;
 - (void)generateModelWithTraceSession:(id)arg1;
 @property(readonly) unsigned long long totalDisplayableCount;
 @property(readonly, nonatomic) __weak DYGLCaptureSessionInfo *captureSessionInfo;
-- (id)itemForUUID:(id)arg1;
-- (void)addModelItem:(id)arg1;
+- (id)itemForNamespacedUUID:(id)arg1;
+- (id)itemForUUID:(long long)arg1;
+- (long long)addShaderModelItem:(id)arg1;
+- (long long)addModelItem:(id)arg1;
 - (id)initWithController:(id)arg1 variablesViewContentProviderClass:(Class)arg2 pluginFactory:(id)arg3;
 - (void)primitiveInvalidate;
 

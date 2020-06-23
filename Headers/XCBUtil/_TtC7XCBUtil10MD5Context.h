@@ -10,7 +10,7 @@
 
 @interface _TtC7XCBUtil10MD5Context : _TtCs12_SwiftObject
 {
-    MISSING_TYPE *context;
+    MISSING_TYPE *md5Hash;
     MISSING_TYPE *digest;
     MISSING_TYPE *result;
 }

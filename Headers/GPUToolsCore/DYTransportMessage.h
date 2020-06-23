@@ -7,10 +7,11 @@
 #import <objc/NSObject.h>
 
 #import <GPUToolsCore/NSCopying-Protocol.h>
+#import <GPUToolsCore/NSKeyedArchiverDelegate-Protocol.h>
 
-@class DYTransport, NSData, NSDictionary;
+@class DYTransport, NSData, NSDictionary, NSString;
 
-@interface DYTransportMessage : NSObject <NSCopying>
+@interface DYTransportMessage : NSObject <NSKeyedArchiverDelegate, NSCopying>
 {
     NSData *_payload;
     NSDictionary *_attributes;
@@ -44,6 +45,7 @@
 @property(readonly, retain, nonatomic) NSDictionary *attributes; // @synthesize attributes=_attributes;
 @property(readonly, retain, nonatomic) NSData *payload; // @synthesize payload=_payload;
 @property(readonly, nonatomic) int kind; // @synthesize kind=_kind;
+- (id)archiver:(id)arg1 willEncodeObject:(id)arg2;
 - (id)objectPayload;
 - (id)stringPayload;
 - (id)plistPayload;
@@ -56,7 +58,7 @@
 - (void)_setTransportSize:(unsigned int)arg1;
 - (void)_setSerial:(unsigned int)arg1 replySerial:(unsigned int)arg2 transport:(id)arg3;
 - (BOOL)hasBeenSent;
-- (id)description;
+@property(readonly, copy) NSString *description;
 - (void)dealloc;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithKind:(int)arg1 attributes:(id)arg2 objectPayload:(id)arg3;
@@ -65,6 +67,11 @@
 - (id)initWithKind:(int)arg1 attributes:(id)arg2 boolPayload:(BOOL)arg3;
 - (id)initWithKind:(int)arg1 attributes:(id)arg2 payload:(id)arg3;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

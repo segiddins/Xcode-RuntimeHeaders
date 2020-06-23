@@ -6,12 +6,13 @@
 
 #import <SourceEditor/NSObject-Protocol.h>
 
-@class NSString;
+@class MTLCommandBufferDescriptor, NSString;
 @protocol MTLCommandBuffer, MTLDevice;
 
 @protocol MTLCommandQueue <NSObject>
 - (void)insertDebugCaptureBoundary;
 - (id <MTLCommandBuffer>)commandBufferWithUnretainedReferences;
+- (id <MTLCommandBuffer>)commandBufferWithDescriptor:(MTLCommandBufferDescriptor *)arg1;
 - (id <MTLCommandBuffer>)commandBuffer;
 @property(nonatomic, readonly) id <MTLDevice> device;
 @property(nonatomic, copy) NSString *label;

@@ -4,9 +4,12 @@
 //  Copyright (C) 1997-2019 Steve Nygard.
 //
 
-@class NSArray, NSString, XCSourceControlHostParticipant;
+#import <IDEFoundation/_TtP15XCSourceControl29XCSourceControlNetworkLogging_-Protocol.h>
 
-@protocol _TtP15XCSourceControl41XCSourceControlXPCExportedServiceProtocol_
+@class NSArray, NSDictionary, NSString, XCSourceControlHostParticipant;
+
+@protocol _TtP15XCSourceControl41XCSourceControlXPCExportedServiceProtocol_ <_TtP15XCSourceControl29XCSourceControlNetworkLogging_>
+- (void)paginate:(NSString *)arg1 repositoryBranches:(NSDictionary *)arg2;
 - (void)paginateRepositories:(NSString *)arg1 participant:(XCSourceControlHostParticipant *)arg2 repositories:(NSArray *)arg3;
 @end
 

@@ -29,9 +29,12 @@
 - (id)filePathForBuildParameters:(id)arg1;
 @property(readonly) DVTFilePath *filePath;
 @property(readonly, copy) NSString *legacyIdentifier;
+@property(readonly) BOOL isWidgetKitExtension;
 - (id)_productSettingsForWatchExtension;
+@property(readonly) BOOL productIsApp;
 @property(readonly) BOOL isWatchAppRunsIndependentlyOfCompanionApplication;
 @property(readonly) BOOL isWatchOnlyApplication;
+@property(readonly) NSString *extensionPointIdentifier;
 @property(readonly) BOOL productIsExecutable;
 - (void)setProductSetting:(id)arg1 forKey:(id)arg2;
 - (id)productSettingForKey:(id)arg1;

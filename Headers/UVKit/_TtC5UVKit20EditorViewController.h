@@ -8,15 +8,18 @@
 
 #import <UVKit/NSUserInterfaceValidations-Protocol.h>
 
-@class MISSING_TYPE;
+@class MISSING_TYPE, NSUndoManager;
 
 __attribute__((visibility("hidden")))
 @interface _TtC5UVKit20EditorViewController : IDEViewController <NSUserInterfaceValidations>
 {
     MISSING_TYPE *editorCoordinator;
-    MISSING_TYPE *canvasSelectionCancellation;
+    MISSING_TYPE *responderChangeSubscription;
     MISSING_TYPE *canvasStoreCancellation;
     MISSING_TYPE *pinnedPreviewCancellation;
+    MISSING_TYPE *actionMenuBridge;
+    MISSING_TYPE *canvasFocusSubscription;
+    MISSING_TYPE *environmentStore;
 }
 
 + (void)configureStateSavingObjectPersistenceByName:(id)arg1;
@@ -24,13 +27,17 @@ __attribute__((visibility("hidden")))
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)commitStateToDictionary:(id)arg1;
 - (void)revertStateWithDictionary:(id)arg1;
+- (void)redo:(id)arg1;
+- (void)undo:(id)arg1;
 - (void)duplicate:(id)arg1;
 - (void)paste:(id)arg1;
 - (void)cut:(id)arg1;
 - (void)delete:(id)arg1;
 - (void)copy:(id)arg1;
 - (BOOL)validateUserInterfaceItem:(id)arg1;
+@property(nonatomic, readonly) NSUndoManager *undoManager;
 - (void)loadView;
+@property(nonatomic, readonly) BOOL canBecomeMainViewController;
 - (id)initWithCoder:(id)arg1;
 - (id)init;
 

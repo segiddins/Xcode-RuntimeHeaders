@@ -19,6 +19,7 @@
 - (id)editorView;
 - (id)control;
 - (id)editedCell;
+- (void)resizeFrameViewWithEvent:(id)arg1 fromEditorCanvasFrameKnob:(CDUnion_42e99c75)arg2;
 
 @end
 

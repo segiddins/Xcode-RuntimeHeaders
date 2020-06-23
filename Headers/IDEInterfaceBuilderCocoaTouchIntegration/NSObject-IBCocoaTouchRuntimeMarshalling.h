@@ -74,7 +74,7 @@
 - (unsigned long long)ibPreferredActionEventType;
 - (BOOL)ibTabBarShouldArchiveItems:(id)arg1;
 - (BOOL)ibToolbarShouldArchiveItems:(id)arg1;
-- (id)valueByTransitioningFromTargetRuntime:(id)arg1 toTargetRuntime:(id)arg2;
+- (id)valueByTransitioningFromTargetRuntime:(id)arg1 toTargetRuntime:(id)arg2 document:(id)arg3;
 - (void)didChangeTargetRuntimeInDocument:(id)arg1 withContext:(id)arg2;
 - (void)willChangeTargetRuntimeInDocument:(id)arg1 withContext:(id)arg2;
 - (void)ibSwizzledCocoaTouchDidAddToDocument:(id)arg1 phase:(unsigned long long)arg2;

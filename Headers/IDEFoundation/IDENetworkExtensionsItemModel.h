@@ -14,6 +14,7 @@
 }
 
 + (id)coalescableReadOnlyKeyPaths;
++ (id)keyPathsForValuesAffectingDnsSettings;
 + (id)keyPathsForValuesAffectingDnsProxy;
 + (id)keyPathsForValuesAffectingPacketTunnelProvider;
 + (id)keyPathsForValuesAffectingContentFilterProvider;
@@ -21,6 +22,8 @@
 - (void).cxx_destruct;
 @property(retain, nonatomic) NSSet *networkExtensionCapabilities; // @synthesize networkExtensionCapabilities=_networkExtensionCapabilities;
 - (id)coalescableWriteableKeyPathToDataSource;
+@property(nonatomic) BOOL dnsSettings; // @dynamic dnsSettings;
+- (void)_setDnsSettings:(BOOL)arg1;
 @property(nonatomic) BOOL dnsProxy; // @dynamic dnsProxy;
 - (void)_setDnsProxy:(BOOL)arg1;
 @property(nonatomic) BOOL packetTunnelProvider; // @dynamic packetTunnelProvider;

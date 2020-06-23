@@ -10,6 +10,7 @@
 {
 }
 
++ (BOOL)supportsRenderServerAndIOSurfaces;
 - (id)osVersionsToCompileForDocument:(id)arg1 options:(id)arg2;
 - (id)supportedTargetDevices;
 - (id)frameworkSearchPathsForOverlayTools;

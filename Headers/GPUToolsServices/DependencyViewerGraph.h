@@ -35,6 +35,7 @@
 - (id)createCluster:(id)arg1 outlineItem:(id)arg2;
 - (id)clusters;
 - (void)populateClusterOutputs;
+- (void)addOutput:(id)arg1 toClusterVertex:(id)arg2 fromEnclosedVertex:(id)arg3;
 - (id)rootCluster;
 - (id)createEdgeFrom:(id)arg1 to:(id)arg2 atPort:(unsigned long long)arg3;
 - (id)_createEdgeFrom:(id)arg1 to:(id)arg2 atPort:(unsigned long long)arg3;

@@ -57,8 +57,8 @@
 - (void)setAssistantEditorsLayout:(unsigned long long)arg1;
 - (BOOL)canChangeAssistantEditorsLayout;
 - (id)editorContexts;
-- (BOOL)openEditorOpenSpecifier:(id)arg1 editorContext:(id)arg2;
-- (BOOL)openEditorHistoryItem:(id)arg1 editorContext:(id)arg2;
+- (BOOL)openEditorOpenSpecifier:(id)arg1 editorContext:(id)arg2 options:(unsigned long long)arg3;
+- (BOOL)openEditorHistoryItem:(id)arg1 editorContext:(id)arg2 options:(unsigned long long)arg3;
 - (void)_setPersistentRepresentation:(id)arg1 forIdentifier:(id)arg2;
 - (void)_setPersistentRepresentation:(id)arg1 forIdentifier:(id)arg2 excludingEditorContext:(id)arg3;
 - (id)_persistentRepresentationForIdentifier:(id)arg1;

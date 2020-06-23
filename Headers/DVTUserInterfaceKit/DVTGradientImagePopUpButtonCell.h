@@ -26,7 +26,6 @@
 - (struct NSEdgeInsets)_popupBezelInsets;
 - (void)drawWithFrame:(struct CGRect)arg1 inView:(id)arg2;
 - (void)drawImageWithFrame:(struct CGRect)arg1 inView:(id)arg2;
-- (long long)interiorBackgroundStyle;
 
 @end
 

@@ -15,7 +15,7 @@
 - (long long)actualChildIndex;
 - (void)structureEditingGroupSubitemsAtIndexes:(NSIndexSet *)arg1 completionBlock:(void (^)(BOOL, NSError *))arg2;
 - (BOOL)structureEditingCanGroupSubitemsAtIndexes:(NSIndexSet *)arg1;
-- (BOOL)structureEditingAddNewSubgroup;
+- (BOOL)structureEditingAddNewSubgroupWithGroupCreatedBlock:(void (^)(IDEGroup *))arg1;
 - (BOOL)structureEditingCanAddNewSubgroup;
 - (NSSet *)allowedFileTypesForNewFile;
 @end

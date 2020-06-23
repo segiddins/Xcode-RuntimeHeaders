@@ -6,13 +6,12 @@
 
 #import <IDEInterfaceBuilderKit/NSObject-Protocol.h>
 
-@class IBICAbstractCatalogItem, IBICSlot;
-@protocol IBCollection;
+@class IBICAbstractCatalogItem, IBICSlot, NSSet;
 
 @protocol IBICAssetWithSlottedChildren <NSObject>
 + (BOOL)supportsLocalization;
-+ (id)defaultInstanceWithChildSlots:(id <IBCollection>)arg1;
 + (Class)slotClass;
+- (IBICAbstractCatalogItem *)createDefaultChildForSlot:(IBICSlot *)arg1 suggestedIdioms:(NSSet *)arg2;
 - (BOOL)shouldMutateChild:(IBICAbstractCatalogItem *)arg1 byCopyingContentToNewSlot:(IBICSlot *)arg2;
 - (void)setConflictState:(unsigned long long)arg1 forChild:(IBICAbstractCatalogItem *)arg2;
 - (BOOL)isChildMinimallyFitForCompiling:(IBICAbstractCatalogItem *)arg1;

@@ -10,10 +10,13 @@
 
 @interface _TtC12IDEDocViewer26IDEAllDocsExplorableSource : NSObject
 {
+    MISSING_TYPE *referenceQueue;
+    MISSING_TYPE *referenceToNode;
     MISSING_TYPE *synchronizationQueue;
     MISSING_TYPE *rootIdentifier;
     MISSING_TYPE *broadcaster;
     MISSING_TYPE *index;
+    MISSING_TYPE *indexProviderCancellable;
     MISSING_TYPE *availabilityIndex;
     MISSING_TYPE *displayTreeItems;
     MISSING_TYPE *parentIdentifiers;
@@ -26,7 +29,16 @@
     MISSING_TYPE *initialLoadingTimeLimit;
     MISSING_TYPE *backgroundLoadingTimeLimit;
     MISSING_TYPE *identifiersQueriedUnsuccessfullyDuringIndexLoading;
+    MISSING_TYPE *staticItemStore;
+    MISSING_TYPE *featuredPagesIdentifiers;
+    MISSING_TYPE *workspaceDocumentationIdentifier;
+    MISSING_TYPE *indexForBundle;
+    MISSING_TYPE *extraNodes;
+    MISSING_TYPE *swiftIdentifier;
+    MISSING_TYPE *swiftChildren;
+    MISSING_TYPE *extraIdentifiers;
     MISSING_TYPE *finishedLoading;
+    MISSING_TYPE *interfaceLanguageMap;
 }
 
 + (id)makeJumpBarController;
@@ -35,6 +47,7 @@
 - (id)init;
 - (id)urlFor:(id)arg1;
 - (id)anyIdentifierFor:(id)arg1;
+- (void)subscribeToExtraIndexing;
 @property(nonatomic) BOOL finishedLoading; // @synthesize finishedLoading;
 @property(nonatomic, copy) NSError *loadingError;
 

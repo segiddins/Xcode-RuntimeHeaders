@@ -14,10 +14,12 @@
     MISSING_TYPE *targetTaskInfos;
     MISSING_TYPE *impartedBuildPropertiesByTarget;
     MISSING_TYPE *sharedIntermediateNodes;
+    MISSING_TYPE *taskPlanningDelegate;
     MISSING_TYPE *sharedVFSContents;
     MISSING_TYPE *moduleInfo;
     MISSING_TYPE *recursiveSearchPathResolver;
     MISSING_TYPE *needsVFSCache;
+    MISSING_TYPE *derivedProperties;
     MISSING_TYPE *targetsForTestHostPathsCache;
 }
 

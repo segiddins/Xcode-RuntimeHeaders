@@ -6,12 +6,15 @@
 
 #import <GPUDebugger/GPUTraceOutlineItem.h>
 
-@class GPUTraceAPIItem;
+@class GPUTraceAPIItem, NSSet;
 
 @interface GPUTraceFramebufferItem : GPUTraceOutlineItem
 {
+    NSSet *_onlyShowResourcesOfCanonicalTextureNames;
 }
 
+- (void).cxx_destruct;
+@property(retain, nonatomic) NSSet *onlyShowResourcesOfCanonicalTextureNames; // @synthesize onlyShowResourcesOfCanonicalTextureNames=_onlyShowResourcesOfCanonicalTextureNames;
 - (id)APIItem;
 - (id)initWithController:(id)arg1 parent:(id)arg2;
 - (id)categoryIdentifier;

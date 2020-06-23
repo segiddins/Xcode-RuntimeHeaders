@@ -37,10 +37,13 @@
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
+@property(readonly, nonatomic) NSColor *heatMapColorBegin;
+@property(readonly, nonatomic) NSColor *heatMapColorEnd;
 @property(readonly, nonatomic) NSColor *inactiveHighlightColor;
 @property(readonly, nonatomic) NSColor *itemColor;
 @property(readonly, nonatomic) NSColor *referencePlaneColor;
 @property(readonly) Class superclass;
+@property(readonly, nonatomic) BOOL useHeatmap;
 
 @end
 

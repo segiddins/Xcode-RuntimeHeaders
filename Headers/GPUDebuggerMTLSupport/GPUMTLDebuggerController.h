@@ -7,12 +7,13 @@
 #import <GPUDebugger/GPUDebuggerController.h>
 
 #import <GPUDebuggerMTLSupport/DYPShaderReloaderDelegate-Protocol.h>
+#import <GPUDebuggerMTLSupport/GPUTraceCounterGraphDataStoreObserver-Protocol.h>
 
-@class DVTFilePath, DVTObservingToken, DYAsyncTaskToken, DYMTLAnalyzerArchiveVisitor, NSArray, NSMapTable, NSMutableArray, NSObject, NSString;
-@protocol DYPDebuggerControllerProxy, DYPDependencyGraph, DYPResourceMemoryDataSource, DYPShaderReloader, OS_dispatch_queue;
+@class DVTFilePath, DVTObservingToken, DYAsyncTaskToken, DYMTLAnalyzerArchiveVisitor, DYMTLDeviceProfile, GPUMTLDiagnosticsHandler, NSArray, NSError, NSMapTable, NSMutableArray, NSMutableDictionary, NSObject, NSOperationQueue, NSString;
+@protocol DYPAnalyzerManager, DYPAnalyzerPerformanceIssues, DYPAnalyzerShadersDataSource, DYPDebuggerControllerProxy, DYPDependencyGraph, DYPResourceMemoryDataSource, DYPShaderReloader, OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
-@interface GPUMTLDebuggerController : GPUDebuggerController <DYPShaderReloaderDelegate>
+@interface GPUMTLDebuggerController : GPUDebuggerController <GPUTraceCounterGraphDataStoreObserver, DYPShaderReloaderDelegate>
 {
     DYMTLAnalyzerArchiveVisitor *_analyzerVisitor;
     NSArray *_invalidOverridesCache;
@@ -20,28 +21,45 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_overviewSampleArray;
     DVTFilePath *_defaultLibraryPath;
     BOOL _updateDefaultLibrary;
+    unsigned long long _loadedCounterDataStores;
     id <DYPDebuggerControllerProxy> _platformDebuggerController;
     id <DYPShaderReloader> _shaderReloader;
     DYAsyncTaskToken *_currentShaderReloadTask;
     NSMapTable *_batchCounterDataHandlerMap;
     NSMapTable *_highPriorityBatchRequestHandlerMap;
     NSMapTable *_profilingDataUpdateHandlerMap;
+    NSMapTable *_streamingShaderProfilingDataHandlerMap;
+    id <DYPAnalyzerManager> _analyzerManager;
     id <DYPDependencyGraph> _dependencyGraph;
     id <DYPResourceMemoryDataSource> _resourceMemoryDataSource;
+    id <DYPAnalyzerShadersDataSource> _shadersDataSource;
+    id <DYPAnalyzerPerformanceIssues> _perfIssuesAnalyzer;
     struct unordered_set<unsigned long long, std::__1::hash<unsigned long long>, std::__1::equal_to<unsigned long long>, std::__1::allocator<unsigned long long>> _handledHighPriorityBatchRequests;
     id _batchCounterDataUpdateToken;
+    id _streamingShaderProfilerToken;
     NSObject<OS_dispatch_queue> *_queue;
+    NSOperationQueue *_operationQueue;
+    GPUMTLDiagnosticsHandler *_diagnosticsHandler;
+    DYMTLDeviceProfile *_profile;
+    NSMutableDictionary *_displayIndexToIssueSeverity;
     BOOL _shadersUpdatable;
     BOOL _requiresXcodeSelect;
     NSArray *_invalidOverrides;
+    NSError *_captureError;
 }
 
 + (id)assetBundle;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (void)setCaptureError:(id)arg1;
+- (id)captureError;
 - (BOOL)requiresXcodeSelect;
 - (void)setShadersUpdatable:(BOOL)arg1;
 - (BOOL)shadersUpdatable;
+- (void)dataStoreFinishedUpdatingBatchIDFilteredCounters:(id)arg1;
+- (void)dataStoreLoadingData:(id)arg1;
+- (void)dataStoreLoaded:(id)arg1;
+- (void)dataStoreUpdated:(id)arg1 updatedIndicies:(id)arg2;
 - (id)buildDefaultLibraryAtURL:(id)arg1 error:(id *)arg2;
 - (id)_buildProductsDefaultLibraryURL:(id)arg1;
 - (id)gpuVendorForAPIItem:(id)arg1;
@@ -50,16 +68,22 @@ __attribute__((visibility("hidden")))
 - (BOOL)dumpInstructions;
 - (BOOL)wantsDerivedCounters;
 - (BOOL)analyzeStoredCaptureArchive;
+- (BOOL)runningSimulatorCapture;
+- (BOOL)_runningSimulatorCaptureForArchive:(id)arg1;
 - (void)requestPerLineShaderProfilerData:(unsigned long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (BOOL)isDisassemblerAvailable;
 - (void)notifyProfilingDataUpdateObservers:(id)arg1;
 - (void)removeProfilingUpdateObserver:(id)arg1;
 - (id)registerForProfilingDataUpdatesOnQueue:(id)arg1 handler:(CDUnknownBlockType)arg2;
+- (void)notifyStreamingShaderProfilingDataOnQueue:(id)arg1 handler:(CDUnknownBlockType)arg2;
+- (void)_handleStreamingShaderProfilingData;
 - (void)notifyBatchedCounterDataOnQueue:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)_handleBatchDerivedCountersUpdate;
 - (void)_requestHighPriortyBatch:(id)arg1;
 - (void)notifyCounterGraphItemChangedOnQueue:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (id)runShaderProfiler:(int)arg1;
+- (void)_runShaderProfilerAnalyzerWithUpdatedResults:(id)arg1;
+- (void)_runPerformanceAnalysis;
 - (void)traceSessionEstablishedWithNewArchive:(BOOL)arg1;
 - (BOOL)_configureInvestigatorWithCaseConfigData:(id)arg1;
 - (id)createProgramPerformanceReportProvider:(id)arg1;
@@ -71,6 +95,7 @@ __attribute__((visibility("hidden")))
 - (void)_restartShaderDebuggerIfActive;
 - (BOOL)_purgeCachedResources;
 - (void)_updateShaders:(CDUnknownBlockType)arg1;
+- (void)_clearProfilerDataSources;
 - (void)updateShaders;
 - (void)handleDocumentChanged:(id)arg1 shaderItem:(id)arg2;
 - (void)startShaderDebuggerSessionWithShaderItem:(id)arg1 region:(id)arg2 userInfo:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
@@ -82,12 +107,20 @@ __attribute__((visibility("hidden")))
 - (id)newGuestAppSessionWithGuestApp:(id)arg1 device:(id)arg2 deferLaunch:(BOOL)arg3 error:(id *)arg4;
 - (void)createModelFactory;
 - (void)setDeviceInfo:(id)arg1;
+- (BOOL)supportsImmediateModeDrawCounters;
+- (BOOL)supportsBatchIdFiltering;
+- (BOOL)supportsShaderProfiler;
+- (void)_loadGPUProfile;
 - (BOOL)supportsInvestigator;
+- (void)handleCaptureSessionTearDown;
 - (void)primitiveInvalidate;
 - (id)init;
 - (void)setupCaptureSession:(id)arg1;
+- (id)shaderProfilerAnalyzer;
+- (BOOL)hasResourceMemoryAllocatedSizes;
 - (id)resourceMemoryDataSource;
 - (id)dependencyGraph;
+- (id)analyzerManager;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
     MISSING_TYPE *stackView;
     MISSING_TYPE *isEditing;
     MISSING_TYPE *value;
+    MISSING_TYPE *initialPlaceholderString;
 }
 
 - (void).cxx_destruct;

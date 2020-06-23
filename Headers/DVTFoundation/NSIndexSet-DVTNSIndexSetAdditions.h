@@ -8,6 +8,7 @@
 
 @interface NSIndexSet (DVTNSIndexSetAdditions)
 + (id)dvt_indexSetWithIndexes:(id)arg1;
+- (id)dvt_indexesInRange:(struct _NSRange)arg1;
 - (id)dvt_allIndexes;
 @end
 

@@ -8,47 +8,63 @@
 
 #import <DVTKit/DVTTextCompletionItem-Protocol.h>
 
-@class DVTSourceCodeSymbolKind, NSArray, NSAttributedString, NSImage, NSString;
+@class DVTRangeArray, DVTSourceCodeLanguage, DVTSourceCodeSymbolKind, NSArray, NSAttributedString, NSImage, NSString;
 
 @interface DVTStringTextCompletionItem : NSObject <DVTTextCompletionItem>
 {
-    double _priority;
-    double _fuzzyMatchingScore;
     NSString *_name;
-    NSString *_localizedName;
-    DVTSourceCodeSymbolKind *_symbolKind;
+    NSString *_displayText;
+    NSString *_displayType;
+    NSString *_briefDisplayText;
+    NSString *_displaySignature;
+    NSString *_completionText;
     long long _priorityBucket;
     unsigned long long _priorityComparatorKind;
+    double _priority;
+    double _fuzzyMatchingScore;
+    DVTRangeArray *_fuzzyMatchingRanges;
+    DVTSourceCodeSymbolKind *_symbolKind;
 }
 
 - (void).cxx_destruct;
-@property unsigned long long priorityComparatorKind; // @synthesize priorityComparatorKind=_priorityComparatorKind;
-@property long long priorityBucket; // @synthesize priorityBucket=_priorityBucket;
 @property(copy) DVTSourceCodeSymbolKind *symbolKind; // @synthesize symbolKind=_symbolKind;
-@property(copy) NSString *localizedName; // @synthesize localizedName=_localizedName;
-@property(copy) NSString *name; // @synthesize name=_name;
+@property(retain) DVTRangeArray *fuzzyMatchingRanges; // @synthesize fuzzyMatchingRanges=_fuzzyMatchingRanges;
 @property double fuzzyMatchingScore; // @synthesize fuzzyMatchingScore=_fuzzyMatchingScore;
 @property double priority; // @synthesize priority=_priority;
+@property unsigned long long priorityComparatorKind; // @synthesize priorityComparatorKind=_priorityComparatorKind;
+@property long long priorityBucket; // @synthesize priorityBucket=_priorityBucket;
+@property(readonly, copy) NSString *completionText; // @synthesize completionText=_completionText;
+@property(readonly, copy) NSString *displaySignature; // @synthesize displaySignature=_displaySignature;
+@property(readonly, copy) NSString *briefDisplayText; // @synthesize briefDisplayText=_briefDisplayText;
+@property(readonly, copy) NSString *displayType; // @synthesize displayType=_displayType;
+@property(readonly, copy) NSString *displayText; // @synthesize displayText=_displayText;
+@property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly) BOOL notRecommended;
-@property(readonly, copy) NSAttributedString *descriptionText;
 @property(readonly) NSImage *icon;
-@property(readonly, copy) NSString *completionText;
+@property(readonly, copy) NSAttributedString *descriptionText;
 @property(readonly, copy) NSString *parentText;
-@property(readonly, copy) NSString *displayType;
-@property(readonly, copy) NSString *displayText;
+@property(readonly) DVTSourceCodeLanguage *language;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
+- (BOOL)isEqualToStringCompletionItem:(id)arg1;
 @property(readonly, copy) NSString *description;
 - (id)initWithName:(id)arg1;
+- (id)initWithName:(id)arg1 displayText:(id)arg2 displayType:(id)arg3 briefDisplayText:(id)arg4 displaySignature:(id)arg5 completionText:(id)arg6;
 
 // Remaining properties
 @property(readonly, copy) NSString *action;
 @property(readonly, copy) NSArray *additionalCompletions;
+@property(readonly, copy) NSAttributedString *attributedDisplaySignature;
+@property(readonly, copy) NSAttributedString *attributedDisplayType;
+@property(readonly, copy) DVTRangeArray *briefDisplayTextRanges;
 @property(readonly) int completionItemStyle;
 @property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) DVTRangeArray *displayTextRanges;
 @property(readonly) NSImage *highlightedStatusIcon;
+@property(readonly, copy) DVTRangeArray *nameRanges;
 @property(readonly) NSImage *statusIcon;
 @property(readonly) Class superclass;
+@property(readonly) NSString *usr;
 
 @end
 

@@ -9,6 +9,7 @@
 @class NSData;
 
 @protocol DYPPostVertexTransformModel <NSObject>
+@property(nonatomic, readonly) BOOL isNearGreaterThanFar;
 @property(nonatomic, readonly) unsigned long long cullMode;
 @property(nonatomic, readonly) unsigned long long winding;
 @property(nonatomic, readonly) unsigned long long primitiveType;

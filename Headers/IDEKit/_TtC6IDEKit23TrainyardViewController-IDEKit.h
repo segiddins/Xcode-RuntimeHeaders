@@ -6,8 +6,18 @@
 
 #import <IDEKit/_TtC6IDEKit23TrainyardViewController.h>
 
-@interface _TtC6IDEKit23TrainyardViewController (IDEKit)
+#import <IDEKit/DVTTextFindable-Protocol.h>
+
+@interface _TtC6IDEKit23TrainyardViewController (IDEKit) <DVTTextFindable>
 - (id)tableView:(id)arg1 objectValueForTableColumn:(id)arg2 row:(long long)arg3;
 - (long long)numberOfRowsInTableView:(id)arg1;
+- (id)tableView:(id)arg1 viewForTableColumn:(id)arg2 row:(long long)arg3;
+- (id)tableView:(id)arg1 rowViewForRow:(long long)arg2;
+- (void)tableViewSelectionDidChange:(id)arg1;
+- (void)tableViewSelectionIsChanging:(id)arg1;
+- (id)tableView:(id)arg1 selectionIndexesForProposedSelection:(id)arg2;
+- (double)tableView:(id)arg1 heightOfRow:(long long)arg2;
+- (BOOL)tableView:(id)arg1 doCommandBySelector:(SEL)arg2;
+- (id)findStringMatchingDescriptor:(id)arg1 backwards:(BOOL)arg2 from:(id)arg3 to:(id)arg4;
 @end
 

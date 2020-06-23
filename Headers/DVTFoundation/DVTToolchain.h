@@ -30,6 +30,7 @@
     DVTMacroDefinitionTable *_additionalDefaultMacrosIfTopToolchain;
     DVTSearchPath *_executableBinarySearchPath;
     DVTSearchPath *_librarySearchPath;
+    DVTSearchPath *_headerSearchPath;
     NSURL *_reportProblemURL;
     NSString *_shortDisplayName;
     NSDate *_createdDate;
@@ -44,6 +45,7 @@
 @property(readonly) NSDate *createdDate; // @synthesize createdDate=_createdDate;
 @property(readonly) NSString *shortDisplayName; // @synthesize shortDisplayName=_shortDisplayName;
 @property(readonly) NSURL *reportProblemURL; // @synthesize reportProblemURL=_reportProblemURL;
+@property(readonly) DVTSearchPath *headerSearchPath; // @synthesize headerSearchPath=_headerSearchPath;
 @property(readonly) DVTSearchPath *librarySearchPath; // @synthesize librarySearchPath=_librarySearchPath;
 @property(readonly) DVTSearchPath *executableBinarySearchPath; // @synthesize executableBinarySearchPath=_executableBinarySearchPath;
 @property(readonly) DVTMacroDefinitionTable *additionalDefaultMacrosIfTopToolchain; // @synthesize additionalDefaultMacrosIfTopToolchain=_additionalDefaultMacrosIfTopToolchain;

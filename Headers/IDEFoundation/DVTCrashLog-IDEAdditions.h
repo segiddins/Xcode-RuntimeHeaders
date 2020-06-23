@@ -22,6 +22,7 @@
 @property(readonly) NSString *appName;
 @property(readonly) NSString *blameThreadDescription;
 @property(readonly) NSString *build;
+@property(readonly) NSString *codeType;
 @property(readonly) DVTCrashLogThread *crashingThread;
 @property(readonly) NSString *hardwareModelDescription;
 @property(readonly) NSString *identifier;

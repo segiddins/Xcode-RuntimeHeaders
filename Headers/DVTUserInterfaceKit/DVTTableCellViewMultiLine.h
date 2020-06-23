@@ -11,10 +11,8 @@
     unsigned long long _imageVerticalAlignment;
 }
 
-+ (double)singleLineHeightForFont:(id)arg1;
 @property(nonatomic) unsigned long long imageVerticalAlignment; // @synthesize imageVerticalAlignment=_imageVerticalAlignment;
 - (void)positionImageViewVerticallyAfterLayingoutTextFields;
-- (double)imageViewCenteringOffset;
 - (long long)textFieldOrientation;
 - (BOOL)subtitleShouldBeInstalled;
 @property(nonatomic) long long maxNumberOfSubtitleLines;

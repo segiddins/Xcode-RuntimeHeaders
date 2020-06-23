@@ -14,6 +14,7 @@
     MISSING_TYPE *title;
     MISSING_TYPE *introduction;
     MISSING_TYPE *stepsContent;
+    MISSING_TYPE *redirects;
 }
 
 @end

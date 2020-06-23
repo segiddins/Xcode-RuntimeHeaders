@@ -10,16 +10,16 @@
 
 @interface IDEToolbarStopButtonViewController : DVTGenericButtonViewController
 {
-    NSToolbarItem *_toolbarItem;
     DVTObservingToken *_workspaceFinishedLoadingObservingToken;
     DVTObservingToken *_workspaceWindowControllerIdleObservingToken;
     DVTObservingToken *_executionTrackersObservingToken;
     DVTObservingToken *_executionTrackersStatusObserverToken;
     BOOL _lastEnabled;
+    NSToolbarItem *_toolbarItem;
 }
 
 - (void).cxx_destruct;
-@property(retain) NSToolbarItem *toolbarItem; // @synthesize toolbarItem=_toolbarItem;
+@property __weak NSToolbarItem *toolbarItem; // @synthesize toolbarItem=_toolbarItem;
 - (void)_stopLaunchSession:(id)arg1;
 - (void)_handleExecutionTrackersChanged:(id)arg1 forExecutionEnvironment:(id)arg2;
 - (void)_handleWorkspaceFinishedLoadingStateChange:(id)arg1 workspace:(id)arg2;

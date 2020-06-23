@@ -15,6 +15,8 @@
     DVTMutableOrderedSet *_segueConnections;
 }
 
++ (BOOL)shouldShowMinimapByDefault;
++ (id)showMinimapDefaultKey;
 + (Class)documentGroupMemberWrapperClass;
 + (Class)metricsInferrerClass;
 + (Class)libraryAssetProviderClassForIdiom:(id)arg1;

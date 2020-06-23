@@ -14,9 +14,10 @@ __attribute__((visibility("hidden")))
 {
     struct mutex _loadingMutex;
     struct mutex _notifyMutex;
-    NSCache *_cache;
+    NSCache *_spriteCache;
+    NSCache *_labelCache;
     struct vector<std::__1::shared_ptr<AsyncTexture>, std::__1::allocator<std::__1::shared_ptr<AsyncTexture>>> _textureQueue;
-    struct unordered_map<std::__1::basic_string<char>, std::__1::shared_ptr<AsyncTexture>, std::__1::hash<std::__1::basic_string<char>>, std::__1::equal_to<std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, std::__1::shared_ptr<AsyncTexture>>>> _idToAsyncTextures;
+    struct unordered_map<std::__1::basic_string<char>, std::__1::unordered_map<unsigned long long, std::__1::shared_ptr<AsyncTexture>, std::__1::hash<unsigned long long>, std::__1::equal_to<unsigned long long>, std::__1::allocator<std::__1::pair<const unsigned long long, std::__1::shared_ptr<AsyncTexture>>>>, std::__1::hash<std::__1::basic_string<char>>, std::__1::equal_to<std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, std::__1::unordered_map<unsigned long long, std::__1::shared_ptr<AsyncTexture>, std::__1::hash<unsigned long long>, std::__1::equal_to<unsigned long long>, std::__1::allocator<std::__1::pair<const unsigned long long, std::__1::shared_ptr<AsyncTexture>>>>>>> _idToAsyncTextures;
     NSObject<OS_dispatch_queue> *_workerQueue;
     unsigned long long _asyncTaskCount;
 }
@@ -24,7 +25,7 @@ __attribute__((visibility("hidden")))
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)createSKTextureForImage:(id)arg1 textureKey:(id)arg2 withCallback:(CDUnknownBlockType)arg3;
-- (void)createSKTextureForLabel:(id)arg1 attributes:(id)arg2 size:(struct CGSize)arg3 labelKey:(id)arg4 callback:(CDUnknownBlockType)arg5;
+- (void)createSKTextureForLabel:(id)arg1 attributes:(id)arg2 size:(struct CGSize)arg3 labelKey:(unsigned long long)arg4 callback:(CDUnknownBlockType)arg5;
 - (id)SKTextureForIconImage:(id)arg1 textureKey:(id)arg2;
 - (void)flush;
 - (id)init;

@@ -9,7 +9,8 @@
 #import <XCSUI/IDETestReport_RemoteAsset-Protocol.h>
 #import <XCSUI/IDETestReport_TestAttachment-Protocol.h>
 
-@class NSDate, NSNumber, NSString, NSURL;
+@class NSDate, NSNumber, NSString, NSURL, NSURLRequest;
+@protocol IDETestReport_Base;
 
 @interface XCSTestAttachment (IDETestReport_TestAttachment) <IDETestReport_TestAttachment, IDETestReport_RemoteAsset>
 @property(readonly, copy, nonatomic) NSNumber *ide_test_attachment_payloadSize;
@@ -25,6 +26,9 @@
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
+@property(readonly, copy, nonatomic) NSString *ide_testReport_base_identifier;
+@property(nonatomic) __weak id <IDETestReport_Base> ide_testReport_base_parent;
+@property(readonly, copy, nonatomic) NSURLRequest *ide_testReport_remoteAsset_downloadURLRequest;
 @property(readonly) Class superclass;
 @end
 

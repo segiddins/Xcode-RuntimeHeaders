@@ -8,5 +8,7 @@
 
 @interface _TtC18IDESourceControlUI58IDESourceControlMultipleWorkingCopyOperationViewController (IDESourceControlUI)
 - (long long)numberOfRowsInTableView:(id)arg1;
+- (id)tableView:(id)arg1 viewForTableColumn:(id)arg2 row:(long long)arg3;
+- (double)tableView:(id)arg1 heightOfRow:(long long)arg2;
 @end
 

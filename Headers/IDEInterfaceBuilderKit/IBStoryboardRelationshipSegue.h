@@ -38,6 +38,7 @@
 - (id)userPresentableLabel;
 - (id)_relationshipDescriptionForKeyPath:(id)arg1;
 @property(readonly) NSString *relationshipKeyPath;
+- (id)instantiateSegueTemplate;
 - (void)setDestinationCreationSelectorName:(id)arg1;
 - (id)destinationCreationSelectorName;
 - (void)unarchiveWithDocumentUnarchiver:(id)arg1;

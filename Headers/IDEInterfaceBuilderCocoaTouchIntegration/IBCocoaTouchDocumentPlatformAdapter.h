@@ -16,6 +16,7 @@
 
 - (void).cxx_destruct;
 @property(copy, nonatomic) IBColor *storyboardGlobalTintColor; // @synthesize storyboardGlobalTintColor=_storyboardGlobalTintColor;
+- (id)issueReasonForMisuseOfSymbolCharactersInString;
 - (void)populateDocumentResourceReferences:(id)arg1 resourceManager:(id)arg2;
 - (id)documentFallbackColorForSystemColor:(id)arg1;
 - (id)documentSystemColorNamed:(id)arg1;
@@ -26,6 +27,8 @@
 - (id)customFontFilenamesPlistKey;
 - (void)repopulateCustomFontFilenames:(id)arg1;
 - (id)allCustomFontFilenames;
+- (id)defaultTintColor;
+- (id)draggedImageBackgroundColorForAppearance:(id)arg1 document:(id)arg2;
 - (struct CGSize)canvasPositioningScaleForSimulatedMetricsContainer:(id)arg1;
 - (void)documentDidDisableMemberConfigurations;
 - (void)refreshDocumentAppearance;
@@ -43,6 +46,8 @@
 - (void)addActionFromSender:(id)arg1 toReceiver:(id)arg2 withSelector:(id)arg3;
 - (id)intrinsicPackageContentForNewlyGeneratedPackageWithFileType:(id)arg1;
 - (id)archiveTypeForFileType:(id)arg1;
+- (id)globalTintOverrideWarning;
+- (BOOL)shouldShowGlobalTintOverrideWarning;
 - (void)didUpdateSceneWithRootObject:(id)arg1;
 - (void)didFinishUpdatingScenesWithRootObjects:(id)arg1;
 - (void)documentWillBeginRegisteringUndoableChanges;

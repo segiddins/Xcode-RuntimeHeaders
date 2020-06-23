@@ -13,7 +13,6 @@
 
 @property BOOL didFinishLayout; // @synthesize didFinishLayout=_didFinishLayout;
 - (void)didCompleteLayout;
-- (void)setFrame:(struct CGRect)arg1;
 
 @end
 

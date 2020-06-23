@@ -6,11 +6,22 @@
 
 #import <DVTUserInterfaceKit/_TtC19DVTUserInterfaceKit28DVTIconPreviewViewController.h>
 
-@class OS_dispatch_queue;
+#import <DVTUserInterfaceKit/NSCollectionViewDataSource-Protocol.h>
+#import <DVTUserInterfaceKit/NSCollectionViewDelegateFlowLayout-Protocol.h>
 
-@interface _TtC19DVTUserInterfaceKit28DVTIconPreviewViewController (DVTUserInterfaceKit)
+@class NSArray, OS_dispatch_queue;
+
+@interface _TtC19DVTUserInterfaceKit28DVTIconPreviewViewController (DVTUserInterfaceKit) <NSCollectionViewDataSource, NSCollectionViewDelegateFlowLayout>
 - (void)filterSessionDidEnd:(id)arg1;
 - (void)filterWithFilterSession:(id)arg1;
 @property(nonatomic, readonly) OS_dispatch_queue *filteringQueue;
+@property(nonatomic, copy) NSArray *highlightFragments;
+- (void)showMatches:(id)arg1 added:(id)arg2 removed:(id)arg3;
+@property(nonatomic, readonly) long long filterProgress;
+- (id)collectionView:(id)arg1 viewForSupplementaryElementOfKind:(id)arg2 atIndexPath:(id)arg3;
+- (id)collectionView:(id)arg1 itemForRepresentedObjectAtIndexPath:(id)arg2;
+- (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
+- (long long)numberOfSectionsInCollectionView:(id)arg1;
+- (struct CGSize)collectionView:(id)arg1 layout:(id)arg2 referenceSizeForHeaderInSection:(long long)arg3;
 @end
 

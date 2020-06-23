@@ -31,6 +31,7 @@
     NSNumber *_framePointer;
     NSURL *_fileURL;
     NSNumber *_lineNumber;
+    NSNumber *_columnNumber;
     IDECodeModule *_module;
     NSNumber *_percentageOfTotalSample;
     NSString *_instructionPointerAddressString;
@@ -65,6 +66,7 @@
 @property(readonly, nonatomic, getter=isSwiftThunk) BOOL swiftThunk; // @synthesize swiftThunk=_swiftThunk;
 @property(nonatomic, getter=isRecorded) BOOL recorded; // @synthesize recorded=_recorded;
 @property(retain, nonatomic) IDECodeModule *module; // @synthesize module=_module;
+@property(copy, nonatomic) NSNumber *columnNumber; // @synthesize columnNumber=_columnNumber;
 @property(copy, nonatomic) NSNumber *lineNumber; // @synthesize lineNumber=_lineNumber;
 @property(copy, nonatomic) NSURL *fileURL; // @synthesize fileURL=_fileURL;
 @property(nonatomic) BOOL hasSymbols; // @synthesize hasSymbols=_hasSymbols;

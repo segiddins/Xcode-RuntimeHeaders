@@ -11,15 +11,18 @@
 @interface DVTCodeSigningInformation : NSObject
 {
     BOOL _isAppleSigned;
+    NSDictionary *_entitlements;
     NSSet *_codeSignatureSlices;
     NSString *_designatedRequirement;
     NSDictionary *_codesigningInfo;
+    NSString *_shortDescription;
 }
 
 + (id)codeSigningInformationForProcessID:(int)arg1 error:(id *)arg2;
 + (id)codeSigningInformationForFilePath:(id)arg1 error:(id *)arg2;
 + (id)codeSigningDictionaryForCode:(struct __SecCode *)arg1 additionalCSFlags:(unsigned int)arg2 error:(id *)arg3;
 - (void).cxx_destruct;
+@property(readonly) NSString *shortDescription; // @synthesize shortDescription=_shortDescription;
 @property(retain) NSDictionary *codesigningInfo; // @synthesize codesigningInfo=_codesigningInfo;
 @property(readonly) BOOL isAppleSigned; // @synthesize isAppleSigned=_isAppleSigned;
 - (id)architecturesWithError:(id *)arg1;
@@ -33,7 +36,7 @@
 @property(readonly) BOOL hardenedRuntime;
 @property(readonly) NSString *identifier;
 @property(readonly) NSString *teamID;
-@property(readonly) NSDictionary *entitlements;
+@property(readonly) NSDictionary *entitlements; // @synthesize entitlements=_entitlements;
 @property(readonly) DVTSigningCertificate *signingCertificate;
 @property(readonly) BOOL isAdHocSigned;
 @property(readonly) BOOL isSigned;

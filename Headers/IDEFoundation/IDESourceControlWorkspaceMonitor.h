@@ -94,6 +94,8 @@
 - (void)_updateServerStatusForWorkingTreesWithForce:(BOOL)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)_fetchFromWorkingCopiesWithForce:(BOOL)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)_disableRemote:(id)arg1 fromWorkingCopy:(id)arg2;
+- (void)setDisabledRemotes:(id)arg1 forWorkingCopy:(id)arg2;
+- (id)disabledRemotesForWorkingCopy:(id)arg1;
 - (void)fetchAndUpdateServerStatusForWorkingTreesWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)forceUpdateServerStatusForWorkingTreesWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)fetchAndUpdateServerStatusForWorkingCopies;

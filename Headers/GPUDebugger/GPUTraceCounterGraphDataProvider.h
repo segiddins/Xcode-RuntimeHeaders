@@ -6,19 +6,22 @@
 
 #import <objc/NSObject.h>
 
-@class DVTObservingToken, GPUDebuggerController, GPUTraceCounterGraphDataStore, GPUTracePerformanceItem, NSPointerArray;
+@class DVTObservingToken, GPUDebuggerController, GPUTraceCounterGraphDataStore, GPUTracePerformanceItem, NSArray, NSLock, NSMutableArray, NSPointerArray;
 
 @interface GPUTraceCounterGraphDataProvider : NSObject
 {
-    GPUDebuggerController *_controller;
     BOOL _hasBatchFilteredDataForIOS;
     DVTObservingToken *_shaderProfilerResultsObserver;
     NSPointerArray *_observers;
+    NSMutableArray *_userDefinedGroupItems;
+    unsigned long long _currentUserDefinedGroupIndex;
+    NSLock *_observerLock;
     BOOL _showEncoderData;
     int _platform;
     GPUTraceCounterGraphDataStore *_dataStorePerEncoder;
     GPUTraceCounterGraphDataStore *_dataStorePerDraw;
     GPUTracePerformanceItem *_selectedPerformanceItem;
+    GPUDebuggerController *_controller;
 }
 
 + (id)sharedDataProviderForController:(id)arg1;
@@ -27,6 +30,8 @@
 - (void).cxx_destruct;
 @property(readonly, nonatomic) int platform; // @synthesize platform=_platform;
 @property(nonatomic) BOOL showEncoderData; // @synthesize showEncoderData=_showEncoderData;
+@property(nonatomic) __weak GPUDebuggerController *controller; // @synthesize controller=_controller;
+@property(readonly, nonatomic) NSArray *userDefinedGroupItems; // @synthesize userDefinedGroupItems=_userDefinedGroupItems;
 @property(nonatomic) __weak GPUTracePerformanceItem *selectedPerformanceItem; // @synthesize selectedPerformanceItem=_selectedPerformanceItem;
 @property(readonly, nonatomic) GPUTraceCounterGraphDataStore *dataStorePerDraw; // @synthesize dataStorePerDraw=_dataStorePerDraw;
 @property(readonly, nonatomic) GPUTraceCounterGraphDataStore *dataStorePerEncoder; // @synthesize dataStorePerEncoder=_dataStorePerEncoder;
@@ -42,6 +47,13 @@
 @property(readonly, nonatomic) GPUTraceCounterGraphDataStore *dataStoreForCounterGraph;
 - (void)_updateShaderProfilerResult;
 - (void)updateShaderProfilerResult;
+- (void)_removeFilterItemsForUserDefinedGroup:(id)arg1 group:(id)arg2;
+- (void)_updateFilterItemsForUserDefinedGroup:(id)arg1;
+- (void)saveUserDefinedGroups;
+- (void)renameUserDefinedGroup:(id)arg1 newName:(id)arg2;
+- (void)removeUserDefinedGroup:(id)arg1;
+- (id)newUserDefinedGroupWithName:(id)arg1;
+- (void)_loadUserDefinedGroups;
 - (void)dealloc;
 - (id)initWithController:(id)arg1;
 

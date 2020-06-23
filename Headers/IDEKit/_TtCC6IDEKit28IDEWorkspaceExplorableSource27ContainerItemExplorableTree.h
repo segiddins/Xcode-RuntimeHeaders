@@ -16,9 +16,15 @@
     MISSING_TYPE *sourceIdToContainerItem;
     MISSING_TYPE *cycleIdentifiers;
     MISSING_TYPE *countedMappedContainerItems;
+    MISSING_TYPE *transactionLogger;
     MISSING_TYPE *rootIdentifier;
     MISSING_TYPE *childrenVisited;
-    MISSING_TYPE *rootGroupFileReferenceIdentifiers;
+    MISSING_TYPE *containerReferencesByContainerRootGroup;
+    MISSING_TYPE *containerRootGroupByContainerReference;
+    MISSING_TYPE *rootGroupProgressObservations;
+    MISSING_TYPE *containerItemProgressUpdateObservation;
+    MISSING_TYPE *dynamicContentRootGroupID;
+    MISSING_TYPE *_canonicalTree;
 }
 
 @end

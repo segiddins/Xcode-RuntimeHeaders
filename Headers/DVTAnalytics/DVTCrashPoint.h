@@ -15,7 +15,7 @@
     BOOL _isTopPoint;
     DVTAnalyticsPointUserData *_userData;
     DVTAnalyticsLogProvider *_analyticsLogProvider;
-    unsigned long long _uniqueDeviceCount;
+    unsigned long long _impactValue;
     unsigned long long _crashLogsCount;
     DVTAnalyticsPointDistributionInfo *_distributionInfo;
     NSString *_lastCrashReporterKey;
@@ -45,7 +45,7 @@
 @property(retain) NSString *lastCrashReporterKey; // @synthesize lastCrashReporterKey=_lastCrashReporterKey;
 @property(retain) DVTAnalyticsPointDistributionInfo *distributionInfo; // @synthesize distributionInfo=_distributionInfo;
 @property unsigned long long crashLogsCount; // @synthesize crashLogsCount=_crashLogsCount;
-@property unsigned long long uniqueDeviceCount; // @synthesize uniqueDeviceCount=_uniqueDeviceCount;
+@property unsigned long long impactValue; // @synthesize impactValue=_impactValue;
 - (void)setAnalyticsLogProvider:(id)arg1;
 - (id)analyticsLogProvider;
 @property(retain) DVTAnalyticsPointUserData *userData; // @synthesize userData=_userData;
@@ -58,11 +58,16 @@
 - (BOOL)_analyticsPointBlameLineMatchesImage:(id)arg1 symbol:(id)arg2 offset:(unsigned long long)arg3;
 - (id)analyticsPointIdentifier;
 - (id)inspectableIconImageName;
+- (id)reportType;
 - (BOOL)isSystemTerminationEvent;
 - (id)inspectableAnalyticsLogReportLongUserDescription;
 - (id)inspectableAnalyticsLogReportTypeUserDescription;
 - (id)inspectableAnalyticsLogDetailsSectionTitle;
 - (id)inspectableTypeUserDescription;
+- (id)chartTimePeriodDescription;
+- (unsigned long long)chartViewValue;
+- (id)impactValuePluralFormatString;
+- (id)impactValueSingularFormatString;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)description;

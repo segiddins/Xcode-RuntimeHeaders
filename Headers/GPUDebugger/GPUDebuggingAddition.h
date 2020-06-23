@@ -30,6 +30,8 @@
 
 + (id)_extensionsWithIdentifier:(id)arg1 predicate:(id)arg2;
 + (BOOL)shouldInstantiateInLaunchSession:(id)arg1;
++ (BOOL)_shouldLoadCaptureSession:(id)arg1;
++ (BOOL)_shouldLoadDiagnosticsSession:(id)arg1;
 + (void)_reportValidationModeUsage:(int)arg1;
 + (BOOL)shouldInstantiateForReportEditorOnly:(id)arg1;
 + (BOOL)isLinkedToOtherGraphicsFrameworks:(id)arg1;

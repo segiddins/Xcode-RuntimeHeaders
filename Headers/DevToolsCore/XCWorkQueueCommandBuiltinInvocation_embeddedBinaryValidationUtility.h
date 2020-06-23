@@ -6,17 +6,18 @@
 
 #import <DevToolsCore/XCWorkQueueCommandBuiltinInvocation.h>
 
-@class XCEmbeddedBinaryCodeSignatureSource;
+@class _TtC12DevToolsCore35XCEmbeddedBinaryCodeSignatureSource;
 
 @interface XCWorkQueueCommandBuiltinInvocation_embeddedBinaryValidationUtility : XCWorkQueueCommandBuiltinInvocation
 {
-    XCEmbeddedBinaryCodeSignatureSource *_embeddedBinaryCodeSignatureSource;
+    _TtC12DevToolsCore35XCEmbeddedBinaryCodeSignatureSource *_embeddedBinaryCodeSignatureSource;
 }
 
++ (id)runTaskWithInputPath:(id)arg1 certSHA1Hash:(id)arg2 parentInfoPlistPath:(id)arg3 parentBundlePath:(id)arg4 embeddedBinaryCodeSignatureSource:(id)arg5;
 + (id)runTaskWithInputPath:(id)arg1 certSHA1Hash:(id)arg2 parentInfoPlistPath:(id)arg3;
-+ (id)_runTaskWithInputPath:(id)arg1 certSHA1Hash:(id)arg2 parentInfoPlistPath:(id)arg3 embeddedBinaryCodeSignatureSource:(id)arg4;
++ (id)_runTaskWithArguments:(id)arg1 workingDirectoryPath:(id)arg2;
 - (void).cxx_destruct;
-@property(readonly) XCEmbeddedBinaryCodeSignatureSource *embeddedBinaryCodeSignatureSource; // @synthesize embeddedBinaryCodeSignatureSource=_embeddedBinaryCodeSignatureSource;
+@property(readonly) _TtC12DevToolsCore35XCEmbeddedBinaryCodeSignatureSource *embeddedBinaryCodeSignatureSource; // @synthesize embeddedBinaryCodeSignatureSource=_embeddedBinaryCodeSignatureSource;
 - (int)runTaskWithArguments:(id)arg1 environment:(id)arg2 workingDirectoryPath:(id)arg3 infd:(int)arg4 outerrfd:(int)arg5;
 - (id)initWithCodeSignatureSource:(id)arg1;
 

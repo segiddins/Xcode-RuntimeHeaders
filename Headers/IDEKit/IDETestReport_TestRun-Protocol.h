@@ -13,6 +13,8 @@
 @protocol IDETestReport_TestRun <IDETestReport_Base, IDETestReport_Common>
 @property(readonly, nonatomic) IDESchemeActionRunDestinationRecord *ide_testReport_testRun_schemeActionRunDestinationRecord;
 @property(readonly, nonatomic) BOOL ide_testReport_testRun_fetchesSchemeActionsInvocationRecordAsync;
+@property(readonly, copy, nonatomic) NSArray *ide_testReport_testRun_topLevelFailureSummaries;
+@property(readonly, copy, nonatomic) NSArray *ide_testReport_testRun_activitiesExcludingFailures;
 @property(readonly, copy, nonatomic) NSArray *ide_testReport_testRun_activities;
 @property(readonly, copy, nonatomic) NSString *ide_testReport_testRun_testableBlueprintPath;
 @property(readonly, copy, nonatomic) NSString *ide_testReport_testRun_testableBlueprintName;

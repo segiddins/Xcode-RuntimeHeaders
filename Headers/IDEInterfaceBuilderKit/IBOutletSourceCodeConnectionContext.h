@@ -18,6 +18,7 @@
 @property long long storageType; // @synthesize storageType=_storageType;
 - (void)saveStorageTypeSelectionToDocument;
 - (id)outletTeardownCounterparts;
+- (id)prepareToInsertSourceCode:(id *)arg1;
 - (long long)effectivePropertyObjCStorageType;
 - (long long)effectiveInstanceVariableObjCStorageType;
 - (long long)primitiveEffectiveInternalStorageType;

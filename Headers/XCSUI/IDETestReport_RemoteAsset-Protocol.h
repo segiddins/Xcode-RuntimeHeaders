@@ -6,11 +6,14 @@
 
 #import <XCSUI/NSObject-Protocol.h>
 
-@class NSString, NSURL;
+@class NSString, NSURL, NSURLRequest;
 
 @protocol IDETestReport_RemoteAsset <NSObject>
 @property(readonly, nonatomic) unsigned long long ide_testReport_remoteAsset_size;
 @property(readonly, copy, nonatomic) NSURL *ide_testReport_remoteAsset_downloadURL;
 @property(readonly, copy, nonatomic) NSString *ide_testReport_remoteAsset_fileName;
+
+@optional
+@property(readonly, copy, nonatomic) NSURLRequest *ide_testReport_remoteAsset_downloadURLRequest;
 @end
 

@@ -4,10 +4,10 @@
 //  Copyright (C) 1997-2019 Steve Nygard.
 //
 
-#import <DVTSourceEditor/DVTSourceEditorPatternSearchFieldCell.h>
+#import <DVTUserInterfaceKit/DVTSearchFieldCell.h>
 
 __attribute__((visibility("hidden")))
-@interface _TtC15DVTSourceEditor32DVTSourceEditorTextFindFieldCell : DVTSourceEditorPatternSearchFieldCell
+@interface _TtC15DVTSourceEditor32DVTSourceEditorTextFindFieldCell : DVTSearchFieldCell
 {
 }
 

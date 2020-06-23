@@ -4,7 +4,7 @@
 //  Copyright (C) 1997-2019 Steve Nygard.
 //
 
-@class DVTTestPerformanceMetricOutput, IDETestIdentifier, IDETestOperationCoordinator, NSError, NSString, XCActivityRecord;
+@class DVTTestPerformanceMetricOutput, IDETestIdentifier, IDETestOperationCoordinator, NSError, NSString, XCActivityRecord, XCTIssue;
 
 @protocol IDETestOperationCoordinatorEvents
 - (void)willFinishWithError:(NSError *)arg1 didCancel:(BOOL)arg2 sessionState:(IDETestOperationCoordinator *)arg3;
@@ -14,11 +14,11 @@
 - (void)testCaseWithIdentifier:(IDETestIdentifier *)arg1 didMeasurePerformanceMetric:(DVTTestPerformanceMetricOutput *)arg2 rawOutput:(NSString *)arg3 sessionState:(IDETestOperationCoordinator *)arg4;
 - (void)testCaseWithIdentifier:(IDETestIdentifier *)arg1 didFinishActivity:(XCActivityRecord *)arg2 sessionState:(IDETestOperationCoordinator *)arg3;
 - (void)testCaseWithIdentifier:(IDETestIdentifier *)arg1 willStartActivity:(XCActivityRecord *)arg2 sessionState:(IDETestOperationCoordinator *)arg3;
-- (void)testCaseWithIdentifier:(IDETestIdentifier *)arg1 didFailWithMessage:(NSString *)arg2 file:(NSString *)arg3 line:(long long)arg4 rawOutput:(NSString *)arg5 sessionState:(IDETestOperationCoordinator *)arg6;
+- (void)testCaseWithIdentifier:(IDETestIdentifier *)arg1 didRecordIssue:(XCTIssue *)arg2 rawOutput:(NSString *)arg3 sessionState:(IDETestOperationCoordinator *)arg4;
 - (void)testCaseWithIdentifier:(IDETestIdentifier *)arg1 wasSkippedWithMessage:(NSString *)arg2 file:(NSString *)arg3 line:(long long)arg4 rawOutput:(NSString *)arg5 sessionState:(IDETestOperationCoordinator *)arg6;
 - (void)testCaseWithIdentifier:(IDETestIdentifier *)arg1 didStartWithRawOutput:(NSString *)arg2 sessionState:(IDETestOperationCoordinator *)arg3;
+- (void)testSuiteWithIdentifier:(IDETestIdentifier *)arg1 didRecordIssue:(XCTIssue *)arg2 rawOutput:(NSString *)arg3 sessionState:(IDETestOperationCoordinator *)arg4;
 - (void)testSuiteWithIdentifier:(IDETestIdentifier *)arg1 didStartAt:(NSString *)arg2 rawOutput:(NSString *)arg3 sessionState:(IDETestOperationCoordinator *)arg4;
-- (void)testDidOutput:(NSString *)arg1 sessionState:(IDETestOperationCoordinator *)arg2;
 - (void)testProcessDidBecomeReadyForWork:(IDETestOperationCoordinator *)arg1;
 - (void)launchSessionStarted:(IDETestOperationCoordinator *)arg1 diagnosticLogPath:(NSString *)arg2;
 @end

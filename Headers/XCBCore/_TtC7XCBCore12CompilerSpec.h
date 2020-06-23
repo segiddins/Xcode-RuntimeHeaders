@@ -10,7 +10,6 @@
 
 @interface _TtC7XCBCore12CompilerSpec : _TtC7XCBCore19CommandLineToolSpec
 {
-    MISSING_TYPE *archs;
     MISSING_TYPE *supportedLanguageVersions;
 }
 

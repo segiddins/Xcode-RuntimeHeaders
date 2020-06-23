@@ -6,7 +6,7 @@
 
 #import <IDEFoundation/IDEIssueProvider.h>
 
-@class DVTObservingToken, GPUDebuggerController, GPUSharedWorkspaceUIState, GPUTraceSession, IDEDebugSession, IDEIssue, NSDictionary, NSMutableArray, NSObject, _TtC16DVTDocumentation23DVTDocumentationManager;
+@class DVTObservingToken, GPUDebuggerController, GPUSharedWorkspaceUIState, GPUTraceSession, IDEDebugSession, IDEIssue, NSDictionary, NSLock, NSMutableArray, NSObject, _TtC16DVTDocumentation23DVTDocumentationManager;
 @protocol IDEIssueRuntimeGroupingObject, OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
@@ -25,6 +25,8 @@ __attribute__((visibility("hidden")))
     _TtC16DVTDocumentation23DVTDocumentationManager *_docManager;
     IDEIssue *_shaderProfilerResultUnavailableIssueCache;
     NSMutableArray *_allIssues;
+    NSMutableArray *_analyzerManagerFindings;
+    NSLock *_analyzerManagerFindingsLock;
     NSDictionary *_unsortedToSortedIndexMapDict;
 }
 
@@ -41,11 +43,15 @@ __attribute__((visibility("hidden")))
 - (id)_sortedFunctionIndicesForFinding:(id)arg1;
 - (id)_gpuIssueAllocateForFinding:(id)arg1 documentLocations:(id)arg2 issueTypeIdentifier:(id)arg3 fullMessage:(id)arg4;
 - (id)_createGPUIssueFromFinding:(id)arg1 withDocLocations:(id)arg2 issueTypeIdentifier:(id)arg3 apiItem:(id)arg4;
+- (id)_createGPUIssueFromAnalyzerManagerFinding:(id)arg1 withDocLocations:(id)arg2 issueTypeIdentifier:(id)arg3 apiItem:(id)arg4;
+- (id)_createLeafIssueFromAnalyzerFinding:(id)arg1 issueTypeIdentifier:(id)arg2 isPartOfGroup:(BOOL)arg3;
 - (id)_createIssueAndSubissuesFromAnalyzerFinding:(id)arg1 issueTypeIdentifier:(id)arg2 apiItem:(id)arg3;
 - (id)_createIssueFromAnalyzerFinding:(id)arg1 issueTypeIdentifier:(id)arg2;
+- (id)_createIssueFromAnalyzerManagerFinding:(id)arg1 issueTypeIdentifier:(id)arg2;
 - (void)_recordNumIssues:(unsigned int)arg1;
 - (unsigned int)_createIssuesFromFindings:(id)arg1 issueMap:(id)arg2;
 - (id)_shaderProfilerResultUnavailableIssue;
+- (unsigned int)_createAnalyzerManagerIssues:(id)arg1;
 - (unsigned int)_createAnalyzerIssues;
 - (void)_createRuntimeIssues;
 - (id)initWithIssueManager:(id)arg1 extension:(id)arg2;

@@ -17,13 +17,12 @@
     CDUnknownBlockType _completion;
 }
 
-+ (id)minimumProtocolVersion;
 - (void).cxx_destruct;
 @property(readonly) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(readonly) NSArray *processNames; // @synthesize processNames=_processNames;
 @property(readonly) NSArray *directories; // @synthesize directories=_directories;
 - (void)handleConnectionFailure:(id)arg1;
-- (void)executeWithDaemonProxy:(id)arg1 protocolVersion:(id)arg2;
+- (void)executeWithDaemonProxy:(id)arg1 daemonCapabilities:(id)arg2;
 - (id)initWithDirectories:(id)arg1 matchingProcessNames:(id)arg2 completion:(CDUnknownBlockType)arg3;
 
 // Remaining properties

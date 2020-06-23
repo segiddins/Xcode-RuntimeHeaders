@@ -8,7 +8,7 @@
 
 #import <IDEKit/NSCopying-Protocol.h>
 
-@class NSImage, NSString, NSURL;
+@class NSDate, NSImage, NSString, NSURL;
 @protocol NSRecentDocumentInfo;
 
 @interface IDERecentDocumentInfo : NSObject <NSCopying>
@@ -17,6 +17,7 @@
     NSURL *_url;
 }
 
++ (id)shortLastOpenedDateInfoForURL:(id)arg1;
 + (id)shortLastOpenedDateForURL:(id)arg1;
 + (id)_lastOpenedDateWithPrefix:(BOOL)arg1 url:(id)arg2;
 + (id)_descriptionForLastOpenedDate:(id)arg1 isLastOpenedDate:(BOOL)arg2 withPrefix:(BOOL)arg3;
@@ -27,8 +28,8 @@
 + (id)recentsForRecentInfos:(id)arg1;
 - (void).cxx_destruct;
 @property(readonly) NSString *shortLastOpenedDate;
+@property(readonly) NSDate *fullLastOpenedDate;
 @property(readonly) NSString *lastOpenedDate;
-- (id)_lastOpenedDateWithPrefix:(BOOL)arg1;
 - (id)recentDocumentInfo;
 - (long long)state;
 @property(readonly) NSString *truncatedPath;

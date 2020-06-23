@@ -7,12 +7,13 @@
 #import <objc/NSObject.h>
 
 #import <IDEFoundation/DVTInvalidation-Protocol.h>
+#import <IDEFoundation/IDEIndexStringSetFileWatcherDelegate-Protocol.h>
 #import <IDEFoundation/IDESourceKitWorkspaceDelegate-Protocol.h>
 
-@class DVTDispatchLock, DVTFilePath, DVTNotificationToken, DVTObservingToken, DVTStackBacktrace, IDEIndexingPrebuildController, IDESourceKitConnection, IDEWorkspace, NSMutableDictionary, NSString;
+@class DVTDispatchLock, DVTFilePath, DVTNotificationToken, DVTObservingToken, DVTStackBacktrace, IDEIndexStringSetFileWatcher, IDEIndexingPrebuildController, IDESourceKitConnection, IDEWorkspace, NSMutableDictionary, NSString;
 @protocol DVTInvalidation;
 
-@interface IDESourceKitWorkspace : NSObject <IDESourceKitWorkspaceDelegate, DVTInvalidation>
+@interface IDESourceKitWorkspace : NSObject <IDEIndexStringSetFileWatcherDelegate, IDESourceKitWorkspaceDelegate, DVTInvalidation>
 {
     IDESourceKitConnection *_conn;
     long long _indexerToken;
@@ -38,6 +39,7 @@
     DVTNotificationToken *_buildOperationDidStopNotificationObservingToken;
     DVTNotificationToken *_prebuildNotificationToken;
     DVTNotificationToken *_applicationIsQuittingNotificationToken;
+    IDEIndexStringSetFileWatcher *_outPathsFileWatcher;
     DVTNotificationToken *_connectionInterruptedNotificationToken;
     DVTNotificationToken *_connectionRestoredNotificationToken;
     _Atomic char _connectionWasInterrupted;
@@ -48,6 +50,7 @@
 + (unsigned long long)assertionBehaviorAfterEndOfEventForSelector:(SEL)arg1;
 + (BOOL)supportsInvalidationPrevention;
 + (void)syncPerformBlockOnMainThread:(CDUnknownBlockType)arg1;
++ (id)auxiliaryIndexPreferencesForWorkspace:(id)arg1;
 + (void)initialize;
 + (BOOL)isDataStoreForBuildEnabled;
 - (void).cxx_destruct;
@@ -82,7 +85,7 @@
 - (id)workspaceHeadersForIndexable:(id)arg1;
 - (id)headerMapFilePath;
 - (void)filesContainingWordWithInfo:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
-- (void)_computePreferredTargets:(id)arg1 priorityTargets:(id)arg2;
+- (id)_computePreferredTargets;
 - (void)onSettingsForIndexableWithInfo:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)onGatherProductHeadersWithInfo:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)onWriteHeaderMapWithInfo:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
@@ -113,6 +116,7 @@
 - (id)symbolContainer:(id)arg1;
 - (id)symbolModelOccurrence:(id)arg1;
 - (id)symbolReferencingFiles:(id)arg1;
+- (id)implementingSymbolsForProtocol:(id)arg1;
 - (id)symbolImplementingClassesForProtocol:(id)arg1;
 - (id)symbolAllSubclassesForClass:(id)arg1;
 - (id)symbolAllSuperclassesForClass:(id)arg1;
@@ -159,6 +163,7 @@
 - (id)symbolsMatchingName:(id)arg1 inContext:(id)arg2 withCurrentFileContentDictionary:(id)arg3;
 - (id)symbolsMatchingName:(id)arg1 inContext:(id)arg2;
 - (id)codeCompletionsAtLocation:(id)arg1 withCurrentFileContentDictionary:(id)arg2 completionContext:(id *)arg3;
+- (id)codeCompletionsAtLocation:(id)arg1 withCurrentFileContentDictionary:(id)arg2 language:(id)arg3 completionContext:(id *)arg4;
 - (id)collectTestMethodsPerTestTargets;
 - (id)symbolsContaining:(id)arg1 anchorStart:(BOOL)arg2 anchorEnd:(BOOL)arg3 subsequence:(BOOL)arg4 ignoreCase:(BOOL)arg5 cancelWhen:(CDUnknownBlockType)arg6;
 - (id)symbolsContaining:(id)arg1 anchorStart:(BOOL)arg2 anchorEnd:(BOOL)arg3 subsequence:(BOOL)arg4 ignoreCase:(BOOL)arg5;
@@ -178,6 +183,7 @@
 - (void)registerBuildSettingsNotificationsForFileDelegate:(id)arg1 forFile:(id)arg2 inQueue:(id)arg3;
 - (void)unregisterObject:(id)arg1;
 - (void)registerObject:(id)arg1;
+- (void)fileAddedStrings:(id)arg1 removedStrings:(id)arg2 watcher:(id)arg3;
 - (void)_applicationIsQuitting;
 - (BOOL)isCurrentForWorkspace:(id)arg1;
 - (void)_connectionDidRestore;
@@ -196,7 +202,7 @@
 - (id)UIDSet;
 - (long long)indexerToken;
 - (id)init;
-- (id)initWithWorkspaceName:(id)arg1 indexFolderPath:(id)arg2 indexStorePath:(id)arg3 indexPCHFolderPath:(id)arg4 enableFullStoreVisibility:(BOOL)arg5 workspace:(id)arg6 error:(id *)arg7;
+- (id)initWithWorkspaceName:(id)arg1 indexFolderPath:(id)arg2 indexStorePath:(id)arg3 indexPCHFolderPath:(id)arg4 unitOutputsListPath:(id)arg5 disableBackgroundIndexer:(BOOL)arg6 enableFullStoreVisibility:(BOOL)arg7 enablePCHCreation:(id)arg8 workspace:(id)arg9 error:(id *)arg10;
 - (id)initWithWorkspaceName:(id)arg1 indexFolderPath:(id)arg2 error:(id *)arg3;
 - (id)initWithWorkspace:(id)arg1 error:(id *)arg2;
 - (id)testFilesContainingWord:(id)arg1 queue:(id)arg2 completion:(CDUnknownBlockType)arg3;
@@ -275,6 +281,8 @@
 - (id)symbolModelOccurrence:(id)arg1 error:(id *)arg2;
 - (id)symbolReferencingFiles:(id)arg1 queue:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)symbolReferencingFiles:(id)arg1 error:(id *)arg2;
+- (id)implementingSymbolsForProtocol:(id)arg1 queue:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (id)implementingSymbolsForProtocol:(id)arg1 error:(id *)arg2;
 - (id)symbolImplementingClassesForProtocol:(id)arg1 queue:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)symbolImplementingClassesForProtocol:(id)arg1 error:(id *)arg2;
 - (id)symbolAllSubclasses:(id)arg1 queue:(id)arg2 completion:(CDUnknownBlockType)arg3;
@@ -351,8 +359,12 @@
 - (BOOL)notifyIndexableDidAddFile:(id)arg1 filePath:(id)arg2 error:(id *)arg3;
 - (id)prebuildCompleted:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (BOOL)prebuildCompleted:(id *)arg1;
-- (id)registerPreferredTargets:(id)arg1 priorityTargets:(id)arg2 queue:(id)arg3 completion:(CDUnknownBlockType)arg4;
-- (BOOL)registerPreferredTargets:(id)arg1 priorityTargets:(id)arg2 error:(id *)arg3;
+- (id)updatePreferredTargets:(id)arg1 queue:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (BOOL)updatePreferredTargets:(id)arg1 error:(id *)arg2;
+- (id)removeUnitOutFilePaths:(id)arg1 waitForProcessing:(BOOL)arg2 queue:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (BOOL)removeUnitOutFilePaths:(id)arg1 waitForProcessing:(BOOL)arg2 error:(id *)arg3;
+- (id)addUnitOutFilePaths:(id)arg1 waitForProcessing:(BOOL)arg2 queue:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (BOOL)addUnitOutFilePaths:(id)arg1 waitForProcessing:(BOOL)arg2 error:(id *)arg3;
 - (id)unregisterIndexable:(id)arg1 queue:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (BOOL)unregisterIndexable:(id)arg1 error:(id *)arg2;
 - (id)registerIndexable:(id)arg1 queue:(id)arg2 completion:(CDUnknownBlockType)arg3;

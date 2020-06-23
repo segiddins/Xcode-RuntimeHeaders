@@ -8,7 +8,6 @@
 
 @class MISSING_TYPE;
 
-__attribute__((visibility("hidden")))
 @interface _TtC9DVTPortal20DeveloperAPIResponse : DVTPortalResponse
 {
     MISSING_TYPE *payload;

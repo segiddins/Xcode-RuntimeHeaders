@@ -16,7 +16,6 @@
 #import <IDEInterfaceBuilderKit/NSPopoverDelegate-Protocol.h>
 
 @class DVTDelayedInvocation, DVTNotificationToken, DVTObservingToken, IBAbstractDocumentEditor, IBAutolayoutStatus, IBCancellationToken, IBDocument, IBOutlineView, NSObject, NSOrderedSet, NSPopover, NSSet, NSString, NSTextField;
-@protocol IBAutolayoutSidebarViewControllerDelegate;
 
 @interface IBAutolayoutSidebarViewController : IDEViewController <NSOutlineViewDelegate, IBOutlineViewDelegate, NSOutlineViewDataSource, IBAutolayoutIssueTableCellViewDelegate, IBAutolayoutIssueResolvingViewControllerDelegate, NSPopoverDelegate, IBHybridStructureSelectionProvider, IBSelectionProvider>
 {
@@ -33,7 +32,6 @@
     BOOL _drawsWithActiveLook;
     IBAbstractDocumentEditor *_documentEditor;
     NSObject *_topLevelObject;
-    id <IBAutolayoutSidebarViewControllerDelegate> _delegate;
     IBOutlineView *_outlineView;
     NSOrderedSet *_topLevelItems;
     IBAutolayoutStatus *_status;
@@ -48,7 +46,6 @@
 @property(retain, nonatomic) IBAutolayoutStatus *status; // @synthesize status=_status;
 @property(copy, nonatomic) NSOrderedSet *topLevelItems; // @synthesize topLevelItems=_topLevelItems;
 @property(nonatomic) __weak IBOutlineView *outlineView; // @synthesize outlineView=_outlineView;
-@property(nonatomic) __weak id <IBAutolayoutSidebarViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) BOOL drawsWithActiveLook; // @synthesize drawsWithActiveLook=_drawsWithActiveLook;
 @property(retain, nonatomic) NSObject *topLevelObject; // @synthesize topLevelObject=_topLevelObject;
 @property(nonatomic) __weak IBAbstractDocumentEditor *documentEditor; // @synthesize documentEditor=_documentEditor;

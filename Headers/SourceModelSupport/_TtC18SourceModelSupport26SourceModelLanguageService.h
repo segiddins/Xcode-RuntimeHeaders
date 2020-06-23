@@ -12,6 +12,7 @@
 {
     MISSING_TYPE *buffer;
     MISSING_TYPE *hostExtension;
+    MISSING_TYPE *nodeTypeAdjuster;
     MISSING_TYPE *sourceEditorLanguage;
     MISSING_TYPE *sourceCodeLanguage;
     MISSING_TYPE *identifier;
@@ -38,6 +39,8 @@
     MISSING_TYPE *markupEmphasisStrongType;
     MISSING_TYPE *markupStrikethroughType;
     MISSING_TYPE *markupQuoteType;
+    MISSING_TYPE *blockDirectiveNameType;
+    MISSING_TYPE *markupAsideKindType;
     MISSING_TYPE *urlType;
     MISSING_TYPE *mailURLType;
     MISSING_TYPE *identifierType;
@@ -68,14 +71,14 @@
     MISSING_TYPE *diffUnifiedRangeInformationType;
     MISSING_TYPE *diffUnifiedChangeDeletionType;
     MISSING_TYPE *diffUnifiedChangeAdditionType;
+    MISSING_TYPE *topLevelBlockType;
     MISSING_TYPE *heading1;
     MISSING_TYPE *heading2;
     MISSING_TYPE *heading3;
     MISSING_TYPE *heading4;
     MISSING_TYPE *heading5;
     MISSING_TYPE *heading6;
-    MISSING_TYPE *topLevelBlockType;
-    MISSING_TYPE *symbolTable;
+    MISSING_TYPE *swiftVariableDeclarationID;
     MISSING_TYPE *topLandmark;
     MISSING_TYPE *landmarksNeedUpdating;
     MISSING_TYPE *landmarkMap;
@@ -87,7 +90,6 @@
     MISSING_TYPE *basicDiagnosticProvider;
     MISSING_TYPE *$__lazy_storage_$_hostProvidedDiagnosticsContinuation;
     MISSING_TYPE *hostProvidedDiagnosticsGeneration;
-    MISSING_TYPE *indentationTriggers;
     MISSING_TYPE *_cachedBufferStringInfo;
 }
 

@@ -19,6 +19,7 @@
 - (void)loadView;
 - (void)didSetInspectedObjects:(id)arg1;
 - (id)willSetInspectedObjects:(id)arg1;
+- (void)pushDesignableStatus:(id)arg1;
 - (id)sliceElement;
 - (id)inspectedClass;
 - (void)push:(id)arg1 booleanSliverForInspectable:(id)arg2;

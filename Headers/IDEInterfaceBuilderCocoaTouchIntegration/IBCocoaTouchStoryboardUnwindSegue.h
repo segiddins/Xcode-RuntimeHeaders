@@ -29,6 +29,8 @@
 - (void)archiveWithDocumentArchiver:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)metricChainSucceedingMetric:(id)arg1;
+- (id)badgeImage;
 - (id)explicitDisplayNameWithRespectToPredecessors:(id)arg1;
 - (id)displayValuesWithRespectToPrototype:(id)arg1 inDocument:(id)arg2;
 - (id)destinationDisplayName;

@@ -4,22 +4,16 @@
 //  Copyright (C) 1997-2019 Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import <swiftCore/_TtCs12_SwiftObject.h>
 
 @class MISSING_TYPE;
 
-@interface _TtC17IDEXCBuildSupport17IDEXCBuildService : NSObject
+@interface _TtC17IDEXCBuildSupport17IDEXCBuildService : _TtCs12_SwiftObject
 {
     MISSING_TYPE *xcbService;
     MISSING_TYPE *queue;
     MISSING_TYPE *toolchainObservationToken;
 }
-
-+ (void)setSharedService:(id)arg1;
-+ (id)sharedService;
-- (void).cxx_destruct;
-- (void)dealloc;
-- (id)init;
 
 @end
 

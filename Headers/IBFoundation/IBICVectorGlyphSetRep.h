@@ -19,7 +19,6 @@
 - (BOOL)isEqualForUnitTests:(id)arg1;
 - (BOOL)parseGlyphInIDEForIssuesReturningError:(id *)arg1;
 - (void)populateIssues:(id)arg1 context:(id)arg2;
-- (id)languageComponentsRepresentedByConflictFreeSiblings;
 - (CDStruct_550fdc95)taggingSupport;
 - (id)initWithSlot:(id)arg1;
 - (void)setSlot:(id)arg1;

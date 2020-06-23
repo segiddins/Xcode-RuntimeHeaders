@@ -16,18 +16,20 @@
     id <DVTCancellable> _windowActivationObservation;
     BOOL _allowsVibrancy;
     BOOL _needsVisibleBorderViewUpdate;
-    int _horizontalContentViewResizingMode;
-    int _verticalContentViewResizingMode;
     unsigned long long _borderSides;
     NSColor *_backgroundColor;
     NSColor *_inactiveBackgroundColor;
     NSGradient *_backgroundGradient;
     NSGradient *_inactiveBackgroundGradient;
     NSView *_contentView;
+    unsigned long long _horizontalContentViewResizingMode;
+    unsigned long long _verticalContentViewResizingMode;
     DVTBorderView *_leftBorderView;
     DVTBorderView *_rightBorderView;
     DVTBorderView *_topBorderView;
     DVTBorderView *_bottomBorderView;
+    struct NSEdgeInsets _borderSizeInsets;
+    CDStruct_bf6d4a14 _contentInset;
 }
 
 - (void).cxx_destruct;
@@ -35,13 +37,15 @@
 @property(retain, nonatomic) DVTBorderView *topBorderView; // @synthesize topBorderView=_topBorderView;
 @property(retain, nonatomic) DVTBorderView *rightBorderView; // @synthesize rightBorderView=_rightBorderView;
 @property(retain, nonatomic) DVTBorderView *leftBorderView; // @synthesize leftBorderView=_leftBorderView;
-@property(nonatomic) int verticalContentViewResizingMode; // @synthesize verticalContentViewResizingMode=_verticalContentViewResizingMode;
-@property(nonatomic) int horizontalContentViewResizingMode; // @synthesize horizontalContentViewResizingMode=_horizontalContentViewResizingMode;
+@property(nonatomic) unsigned long long verticalContentViewResizingMode; // @synthesize verticalContentViewResizingMode=_verticalContentViewResizingMode;
+@property(nonatomic) unsigned long long horizontalContentViewResizingMode; // @synthesize horizontalContentViewResizingMode=_horizontalContentViewResizingMode;
 @property(retain, nonatomic) NSView *contentView; // @synthesize contentView=_contentView;
+@property(nonatomic) CDStruct_bf6d4a14 contentInset; // @synthesize contentInset=_contentInset;
 @property(copy, nonatomic) NSGradient *inactiveBackgroundGradient; // @synthesize inactiveBackgroundGradient=_inactiveBackgroundGradient;
 @property(copy, nonatomic) NSGradient *backgroundGradient; // @synthesize backgroundGradient=_backgroundGradient;
 @property(copy, nonatomic) NSColor *inactiveBackgroundColor; // @synthesize inactiveBackgroundColor=_inactiveBackgroundColor;
 @property(copy, nonatomic) NSColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
+@property(nonatomic) struct NSEdgeInsets borderSizeInsets; // @synthesize borderSizeInsets=_borderSizeInsets;
 @property(nonatomic) unsigned long long borderSides; // @synthesize borderSides=_borderSides;
 - (void)window:(id)arg1 didChangeActivationState:(long long)arg2;
 - (void)viewWillMoveToWindow:(id)arg1;
@@ -55,6 +59,7 @@
 - (struct CGRect)bottomBorderFrame;
 - (struct CGRect)topBorderFrame;
 - (void)layoutBottomUp;
+- (void)setFramesizeWithoutAutosizingContentView:(struct CGSize)arg1;
 - (void)layoutTopDown;
 - (void)updateVisibleBorderViewsIfNeeded;
 - (void)_insertBorderView:(id)arg1;
@@ -65,8 +70,7 @@
 - (struct CGSize)frameSizeForContentSize:(struct CGSize)arg1;
 - (struct CGSize)boundSizeForContentSize:(struct CGSize)arg1;
 @property(readonly) struct CGRect contentRect;
-- (CDStruct_bf6d4a14)_contentInset;
-- (CDStruct_bf6d4a14)_borderInset;
+- (CDStruct_bf6d4a14)_borderLayoutInset;
 @property BOOL allowsVibrancy;
 - (id)backgroundGradientForWindowState;
 - (id)backgroundColorForWindowState;

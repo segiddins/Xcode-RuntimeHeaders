@@ -9,6 +9,9 @@
 @class DVTFileDataType, DVTFilePath, IDEBuildParameters, NSDictionary, NSString;
 
 @protocol IDEBuildableProduct <IDEBuildable>
+@property(nonatomic, readonly) BOOL isWidgetKitExtension;
+@property(nonatomic, readonly) NSString *extensionPointIdentifier;
+@property(nonatomic, readonly) BOOL productIsApp;
 @property(nonatomic, readonly) BOOL isWatchAppRunsIndependentlyOfCompanionApplication;
 @property(nonatomic, readonly) BOOL isWatchOnlyApplication;
 @property(nonatomic, readonly) BOOL productIsExecutable;

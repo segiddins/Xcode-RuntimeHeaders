@@ -17,6 +17,7 @@
     NSString *_selectionBindingKeyPath;
     id _selectionBindingController;
     BOOL _selectionBindingIsPlural;
+    BOOL _sendsDidSelectOnRepeatedClicks;
     int _gradientStyle;
     DVTChoice *_selectedChoice;
     id <DVTChooserViewDelegate> _delegate;
@@ -26,12 +27,15 @@
 
 - (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *explicitImageScaling; // @synthesize explicitImageScaling=_explicitImageScaling;
+@property(nonatomic) BOOL sendsDidSelectOnRepeatedClicks; // @synthesize sendsDidSelectOnRepeatedClicks=_sendsDidSelectOnRepeatedClicks;
 @property(nonatomic) double buttonSpacing; // @synthesize buttonSpacing=_buttonSpacing;
 @property(retain) id <DVTChooserViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSArray *choices; // @synthesize choices=_choices;
 @property(retain, nonatomic) DVTChoice *selectedChoice; // @synthesize selectedChoice=_selectedChoice;
 @property(nonatomic) int gradientStyle; // @synthesize gradientStyle=_gradientStyle;
 @property(nonatomic) unsigned long long selectedIndex;
+- (void)selectChoiceWithRepresentedObject:(id)arg1;
+- (id)choiceWithRepresentedObject:(id)arg1;
 - (void)setBackgroundColor:(id)arg1;
 - (void)layoutBottomUp;
 - (void)layoutTopDown;

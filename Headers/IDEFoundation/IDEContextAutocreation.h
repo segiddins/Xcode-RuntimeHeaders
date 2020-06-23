@@ -11,8 +11,11 @@
 }
 
 + (id)_watchKitStoryboardFilesInWorkspace:(id)arg1;
++ (BOOL)_isAppClip:(id)arg1;
 + (BOOL)_isAppExtension:(id)arg1;
 + (BOOL)_hasComplication:(id)arg1;
++ (BOOL)_hasSwiftUINotificationController:(id)arg1;
++ (id)_watchExtensionProductForBuildableProduct:(id)arg1;
 + (id)platformProductTypeOfBuildable:(id)arg1;
 + (id)possibleSchemeNamesForAutocreationInWorkspace:(id)arg1;
 + (id)possibleSchemeContentsForAutocreationInWorkspace:(id)arg1 fromAddingBlueprint:(BOOL)arg2 withBuildablesToCreateContextsFor:(id)arg3;
@@ -37,6 +40,7 @@
 + (id)buildablesNotPartOfExistingContextAmongBuildables:(id)arg1 inWorkspace:(id)arg2;
 + (BOOL)_shouldAutocreateSchemesForBuildableProduct:(id)arg1;
 + (void)_setDefaultProfileActionForScheme:(id)arg1 forBuildable:(id)arg2 inWorkspace:(id)arg3;
++ (void)_addEnvEntriesInScheme:(id)arg1 forSettings:(id)arg2;
 + (void)_setDefaultLaunchActionForScheme:(id)arg1 forBuildable:(id)arg2 inWorkspace:(id)arg3;
 + (void)_setDefaultBuildActionForScheme:(id)arg1 forBuildable:(id)arg2 inWorkspace:(id)arg3;
 + (void)_setDefaultConfigurationsInScheme:(id)arg1 forBuildable:(id)arg2;

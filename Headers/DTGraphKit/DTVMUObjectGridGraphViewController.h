@@ -21,6 +21,7 @@
     DVT_VMUProcessObjectGraph *_sourceGraph;
     unsigned int _rootInspectedNode;
     BOOL _restrictToPivot;
+    BOOL _maintainCoordinatesOnSwitchingPivot;
     id <DTObjectGridGraphDelegate> _delegate;
     struct CGSize _minimumViewportSize;
 }
@@ -48,11 +49,13 @@
 - (void)loadView;
 - (void)resetZoomLevel;
 - (void)adjustCameraZoomLevelWithValue:(double)arg1;
+- (void)displayExplorePathsForNode:(unsigned int)arg1 inGraph:(id)arg2;
 - (void)displayImmediateReferencesForNode:(unsigned int)arg1 inGraph:(id)arg2;
 - (void)displayLeakHierarchyForNode:(unsigned int)arg1 inGraph:(id)arg2;
 - (void)displayRootPathsForNode:(unsigned int)arg1 inGraph:(id)arg2 rootPathsGraph:(id)arg3 initialGenerations:(BOOL)arg4;
 - (void)displayRootPathsForNode:(unsigned int)arg1 inGraph:(id)arg2 initialGenerations:(BOOL)arg3;
 - (void)displayRootPathsForNode:(unsigned int)arg1 inGraph:(id)arg2;
+@property(readonly, nonatomic) unsigned int pivotNodeIdentifier;
 - (void)setPivotNodeIdentifier:(unsigned int)arg1 maintainingCoordinates:(id)arg2 initialGenerations:(BOOL)arg3;
 - (void)setPivotNodeIdentifier:(unsigned int)arg1 maintainingCoordinates:(id)arg2;
 - (unsigned int)_setupDataSourcesForPivot:(unsigned int)arg1;

@@ -17,7 +17,7 @@
 - (id)objectContainerFromAsset:(id)arg1 forInsertionIntoPasteboard:(id)arg2;
 - (id)objectContainerForCollectionViewItemAsset:(id)arg1;
 - (id)objectContainerForPageControllerAsset:(id)arg1;
-- (id)objectContainerForSplitViewControllerAsset:(id)arg1;
+- (id)objectContainerForSplitViewControllerAsset:(id)arg1 subviewProportion:(double)arg2;
 - (id)objectContainerForTabViewControllerAsset:(id)arg1;
 - (id)objectContainerForWindowControllerAsset:(id)arg1;
 - (BOOL)shouldIncludeAsset:(id)arg1;

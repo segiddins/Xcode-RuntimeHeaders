@@ -11,7 +11,7 @@
 @interface _TtC8RCShared24PeerAdvertiserController : NSObject
 {
     MISSING_TYPE *document;
-    MISSING_TYPE *presentingVC;
+    MISSING_TYPE *_presentingVC;
     MISSING_TYPE *advertiser;
     MISSING_TYPE *session;
     MISSING_TYPE *didStart;

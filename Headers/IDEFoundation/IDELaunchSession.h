@@ -8,7 +8,7 @@
 
 #import <IDEFoundation/_TtP13IDEFoundation37IDETestingLaunchSession_LaunchSession_-Protocol.h>
 
-@class DVTFileDataType, DVTFuture, DVTObservingToken, DVTPerformanceMetric, IDEDebugSession, IDEExecutionEnvironment, IDEExecutionTracker, IDELaunchParametersSnapshot, IDELocationSimulator, IDERunDestination, IDERuntimeIssuesCollector, IDESchemeActionRecord, IDESchemeCommand, NSArray, NSError, NSMapTable, NSMutableArray, NSMutableSet, NSSet, NSString, XCTestConfiguration;
+@class DVTFileDataType, DVTFuture, DVTObservingToken, DVTPerformanceMetric, IDEDebugSession, IDEExecutionEnvironment, IDEExecutionTracker, IDELaunchParametersSnapshot, IDELocationSimulator, IDERunDestination, IDERuntimeIssuesCollector, IDESchemeActionRecord, IDESchemeCommand, NSArray, NSError, NSMapTable, NSMutableArray, NSMutableSet, NSNumber, NSSet, NSString, XCTestConfiguration;
 @protocol IDETraceInferiorSession;
 
 @interface IDELaunchSession : NSObject <_TtP13IDEFoundation37IDETestingLaunchSession_LaunchSession_>
@@ -24,6 +24,7 @@
     BOOL _hasAlreadyOutputExitString;
     DVTFuture *_appExtensionInstallFuture;
     DVTObservingToken *_appExtensionObserverToken;
+    NSMutableSet *_debugserverFileHandles;
     unsigned long long _launchTimeInContinuousTime;
     BOOL _debuggerShouldAttachToTarget;
     BOOL _wasDetached;
@@ -52,6 +53,7 @@
     NSArray *_xpcServices;
     XCTestConfiguration *_testConfiguration;
     long long _exitCode;
+    NSNumber *_terminatingSignal;
     IDERuntimeIssuesCollector *_runtimeIssuesCollector;
     NSMutableSet *_consoleAdaptors;
     NSMapTable *_targetConsoleAdaptorToTerminationToken;
@@ -79,6 +81,7 @@
 @property(retain, nonatomic) NSMutableSet *consoleAdaptors; // @synthesize consoleAdaptors=_consoleAdaptors;
 @property(retain) IDERuntimeIssuesCollector *runtimeIssuesCollector; // @synthesize runtimeIssuesCollector=_runtimeIssuesCollector;
 @property BOOL hasCrashed; // @synthesize hasCrashed=_hasCrashed;
+@property(retain) NSNumber *terminatingSignal; // @synthesize terminatingSignal=_terminatingSignal;
 @property long long exitCode; // @synthesize exitCode=_exitCode;
 @property BOOL hasExitCode; // @synthesize hasExitCode=_hasExitCode;
 @property(retain) XCTestConfiguration *testConfiguration; // @synthesize testConfiguration=_testConfiguration;
@@ -104,6 +107,7 @@
 @property(nonatomic) int state; // @synthesize state=_state;
 @property(retain) IDEExecutionTracker *executionTracker; // @synthesize executionTracker=_executionTracker;
 @property(retain) IDESchemeActionRecord *schemeActionRecord; // @synthesize schemeActionRecord=_schemeActionRecord;
+- (id)storeKitConfigurationSync;
 - (void)performanceMetric_xpcDebuggingCheckpointWithLabel:(id)arg1;
 - (void)performanceMetric_xpcDebuggingCompleted;
 - (void)performanceMetric_xpcDebuggingStarted;
@@ -137,6 +141,7 @@
 - (id)_frameworkNamesIncludingExtensionsFromLoadedCodeModules;
 - (id)_createDebuggingAdditionForExtension:(id)arg1 availableBinariesNames:(id)arg2 anyMatchCriteriaFailuresDueToAvailableBinaries:(char *)arg3;
 - (BOOL)_extensionHasLinkedFrameworkNameMatchCriteria:(id)arg1;
+- (void)startDebugLaunchOfDaemonWithLaunchd;
 - (void)_didStart;
 - (void)_removeConsoleAdaptorObservations:(id)arg1;
 - (void)_handleConsoleAdaptorOutputTerminated:(id)arg1;
@@ -151,6 +156,7 @@
 @property(readonly) int CPUType;
 - (void)dealloc;
 - (id)initWithExecutionEnvironment:(id)arg1 launchParameters:(id)arg2 runnableDisplayName:(id)arg3 runnableType:(id)arg4 runDestination:(id)arg5;
+@property(nonatomic, readonly) BOOL isForXCTestToolHostedTesting;
 
 // Remaining properties
 @property(copy) NSArray *debugSessions; // @dynamic debugSessions;

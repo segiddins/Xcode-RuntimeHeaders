@@ -9,7 +9,7 @@
 #import <IDEFoundation/NSObject-Protocol.h>
 
 @class IDEBuildParameters, IDEScheme, IDETest, IDETestRunSpecification, IDEWorkspace, NSArray, NSSet, NSString, NSURL;
-@protocol IDEBuildable, IDEBuildableProduct, IDETestableProvider, _TtP13IDEFoundation19IDETestingSpecifier_;
+@protocol IDEBuildable, IDEBuildableProduct, IDETestableProvider, IDETestingSpecifier;
 
 @protocol IDETestable <IDETestContainer, DVTInvalidation, NSObject>
 - (void)removeSubtest:(IDETest *)arg1;
@@ -24,7 +24,7 @@
 @property(nonatomic, readonly) id <IDEBuildable> primaryBuildable;
 @property(nonatomic, readonly) BOOL isSearchingForTests;
 - (void)searchForTestsInWorkspace:(IDEWorkspace *)arg1;
-- (IDETestRunSpecification *)testRunSpecificationWithTestingSpecifier:(id <_TtP13IDEFoundation19IDETestingSpecifier_>)arg1 forScheme:(IDEScheme *)arg2 buildParameters:(IDEBuildParameters *)arg3 buildables:(NSArray *)arg4 error:(id *)arg5;
+- (IDETestRunSpecification *)testRunSpecificationWithTestingSpecifier:(id <IDETestingSpecifier>)arg1 forScheme:(IDEScheme *)arg2 buildParameters:(IDEBuildParameters *)arg3 buildables:(NSArray *)arg4 error:(id *)arg5;
 @property(nonatomic, readonly) BOOL isUITest;
 @property(nonatomic, readonly) NSSet *testFiles;
 @property(nonatomic, readonly) id <IDETestableProvider> testableProvider;

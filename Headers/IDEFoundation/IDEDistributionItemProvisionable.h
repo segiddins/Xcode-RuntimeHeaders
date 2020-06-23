@@ -6,14 +6,15 @@
 
 #import <IDEFoundation/IDEDistributionProvisionable.h>
 
-@class IDEProvisionableEntitlements, NSString;
+@class DVTPortalAppIDFeatures, IDEProvisionableEntitlements;
 
 @interface IDEDistributionItemProvisionable : IDEDistributionProvisionable
 {
     IDEProvisionableEntitlements *_baseEntitlements;
-    NSString *_sdkVariant;
+    DVTPortalAppIDFeatures *_appIDFeatures;
 }
 
++ (id)availableCapabilitiesForPlatform:(id)arg1 sdkVariant:(id)arg2;
 - (void).cxx_destruct;
 - (id)sdkVariantForBuildParameters:(id)arg1;
 - (id)appIDFeaturesForBuildParameters:(id)arg1;

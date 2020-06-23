@@ -38,7 +38,6 @@
 - (id)usrSearchPathForPlatform:(id)arg1;
 - (id)sdksSearchPathForPlatform:(id)arg1;
 - (id)developerInstallationInfoDirectoryForPlatform:(id)arg1;
-- (id)sourceSpecificationSearchPathForPlatform:(id)arg1;
 - (id)appleInternalPrivatePlugInSearchPathForPlatform:(id)arg1;
 - (id)thirdPartyPlugInSearchPathForPlatform:(id)arg1;
 - (id)corePlugInSearchPathForPlatform:(id)arg1;

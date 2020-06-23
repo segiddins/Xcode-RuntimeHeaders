@@ -25,6 +25,7 @@
 - (BOOL)isTestingEnabledForTestContainer:(id)arg1;
 @property(nonatomic, readonly) NSArray *enabledTestingSpecifierGroups;
 - (id)addConfigurationWithName:(id)arg1;
+@property(nonatomic, readonly) NSArray *testables;
 - (id)addTestableReferenceWithTestable:(id)arg1 inScheme:(id)arg2;
 - (void)addTestableReference:(id)arg1;
 - (void)configureDefaultOptionsUsingTestSchemeAction:(id)arg1;

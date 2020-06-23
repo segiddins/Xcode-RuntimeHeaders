@@ -12,6 +12,7 @@
 @interface IDEIntentBuilderPropertyMetadataComponent : NSObject
 {
     BOOL _localizable;
+    BOOL _allowsEmptyValues;
     IDEIntentBuilderPropertyMetadataComponentSection *_section;
     id <IDEIntentBuilderPropertyMetadataComponentDataSource> _dataSource;
     NSString *_name;
@@ -30,6 +31,7 @@
 @property(copy, nonatomic) NSArray *supportedPaths; // @synthesize supportedPaths=_supportedPaths;
 @property(readonly, nonatomic) __weak IDEIntentBuilderPropertyMetadata *metadata; // @synthesize metadata=_metadata;
 @property(nonatomic) long long appearance; // @synthesize appearance=_appearance;
+@property(nonatomic) BOOL allowsEmptyValues; // @synthesize allowsEmptyValues=_allowsEmptyValues;
 @property(nonatomic, getter=isLocalizable) BOOL localizable; // @synthesize localizable=_localizable;
 @property(retain, nonatomic) id defaultValue; // @synthesize defaultValue=_defaultValue;
 @property(copy, nonatomic) NSArray *hiddenPredicateAffectingKeyPaths; // @synthesize hiddenPredicateAffectingKeyPaths=_hiddenPredicateAffectingKeyPaths;

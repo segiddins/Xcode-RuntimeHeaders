@@ -8,57 +8,68 @@
 
 #import <IDEFoundation/IDESourceControlHostServiceEndpointProtocol-Protocol.h>
 
-@class IDESourceControlHostService, NSDictionary, NSMutableDictionary, NSString, NSURL;
+@class IDESourceControlHostService, NSDictionary, NSString, NSURL;
 
 @interface IDESourceControlHostServiceEndpoint : NSObject <IDESourceControlHostServiceEndpointProtocol>
 {
-    NSMutableDictionary *_cachedCapabilities;
     IDESourceControlHostService *_extension;
     NSString *_name;
     NSString *_identifier;
     NSURL *_forcedURL;
+    NSDictionary *_relativeLinks;
     NSDictionary *_links;
     unsigned long long _staticCapabilities;
-    unsigned long long _capabilities;
 }
 
 + (double)cancellationDelay;
 + (void)initialize;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) unsigned long long capabilities; // @synthesize capabilities=_capabilities;
-@property(readonly, nonatomic) unsigned long long staticCapabilities; // @synthesize staticCapabilities=_staticCapabilities;
+@property(nonatomic) unsigned long long staticCapabilities; // @synthesize staticCapabilities=_staticCapabilities;
 @property(readonly, copy) NSDictionary *links; // @synthesize links=_links;
+@property(readonly, copy) NSDictionary *relativeLinks; // @synthesize relativeLinks=_relativeLinks;
 @property(readonly, copy) NSURL *forcedURL; // @synthesize forcedURL=_forcedURL;
 @property(readonly, copy) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly, copy) NSString *name; // @synthesize name=_name;
 @property(readonly) __weak IDESourceControlHostService *extension; // @synthesize extension=_extension;
+- (void)setNetworkActivityLoggingEnabled:(BOOL)arg1;
 - (id)_setupOperation:(CDUnknownBlockType)arg1;
+- (id)commonAncestor:(id)arg1 repository:(id)arg2 sourceBranch:(id)arg3 targetBranch:(id)arg4 completionBlock:(CDUnknownBlockType)arg5;
 - (id)setLabels:(id)arg1 on:(id)arg2 account:(id)arg3 repository:(id)arg4 completion:(CDUnknownBlockType)arg5;
 - (id)fetchLabels:(id)arg1 repository:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)setMilestone:(id)arg1 on:(id)arg2 account:(id)arg3 repository:(id)arg4 completion:(CDUnknownBlockType)arg5;
 - (id)fetchMilestones:(id)arg1 repository:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)statusAnnotation:(id)arg1 repository:(id)arg2 commit:(id)arg3 reply:(CDUnknownBlockType)arg4;
 - (id)listChanges:(id)arg1 pullRequest:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (id)exportFile:(id)arg1 file:(id)arg2 revision:(id)arg3 repositoryURL:(id)arg4 completionBlock:(CDUnknownBlockType)arg5;
 - (id)exportFile:(id)arg1 file:(id)arg2 revisionLocation:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;
 - (id)listCommits:(id)arg1 pullRequest:(id)arg2 file:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;
 - (id)listCommits:(id)arg1 pullRequest:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
+- (id)commitDetails:(id)arg1 repository:(id)arg2 revision:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;
 - (id)renderMarkdown:(id)arg1 account:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (id)findUsersMatching:(id)arg1 account:(id)arg2 repository:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;
 - (id)commentFor:(id)arg1 in:(id)arg2 account:(id)arg3 repository:(id)arg4 completionBlock:(CDUnknownBlockType)arg5;
 - (id)fetchEventsIn:(id)arg1 account:(id)arg2 repository:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;
-- (id)delete:(id)arg1 inPullRequest:(id)arg2 account:(id)arg3 repository:(id)arg4 completionBlock:(CDUnknownBlockType)arg5;
+- (id)deleteComment:(id)arg1 pullRequest:(id)arg2 account:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;
 - (id)replyTo:(id)arg1 withComment:(id)arg2 inPullRequest:(id)arg3 account:(id)arg4 repository:(id)arg5 completionBlock:(CDUnknownBlockType)arg6;
 - (id)repositoryForURL:(id)arg1 account:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
-- (id)add:(id)arg1 toPullRequest:(id)arg2 account:(id)arg3 repository:(id)arg4 completionBlock:(CDUnknownBlockType)arg5;
+- (id)updateComment:(id)arg1 pullRequest:(id)arg2 account:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;
+- (id)createComment:(id)arg1 pullRequest:(id)arg2 account:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;
+- (id)createFileDiscussion:(id)arg1 pullRequest:(id)arg2 account:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;
 - (id)updateRepositoryPermissions:(id)arg1 repository:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (id)actionPullRequest:(id)arg1 pullRequest:(id)arg2 action:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;
 - (id)removeParticipants:(id)arg1 pullRequest:(id)arg2 participants:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;
 - (id)addParticipants:(id)arg1 pullRequest:(id)arg2 participants:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;
-- (id)uploadPullRequestAttachments:(id)arg1 repository:(id)arg2 pullRequest:(id)arg3 fileURLs:(id)arg4 completionBlock:(CDUnknownBlockType)arg5;
+- (id)fetchParticipants:(id)arg1 repository:(id)arg2 pullRequest:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;
+- (id)uploadPullRequestAttachments:(id)arg1 repository:(id)arg2 fileURLs:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;
+- (id)updatePullRequest:(id)arg1 pullRequest:(id)arg2 targetBranch:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;
 - (id)updatePullRequest:(id)arg1 pullRequest:(id)arg2 force:(BOOL)arg3 completionBlock:(CDUnknownBlockType)arg4;
-- (id)repositoryBranches:(id)arg1 repository:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
+- (id)searchBranches:(id)arg1 repository:(id)arg2 query:(id)arg3 paginationBlock:(CDUnknownBlockType)arg4 completionBlock:(CDUnknownBlockType)arg5;
+- (id)repositoryBranches:(id)arg1 repository:(id)arg2 includeUpstream:(BOOL)arg3 completionBlock:(CDUnknownBlockType)arg4;
 - (id)createPullRequest:(id)arg1 pullRequest:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (id)pullRequest:(id)arg1 repository:(id)arg2 identifier:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;
+- (id)branch:(id)arg1 repositoryURL:(id)arg2 branchName:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;
+- (id)mergePullRequest:(id)arg1 pullRequest:(id)arg2 action:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;
+- (id)pullRequestMergabilityInformation:(id)arg1 pullRequest:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (id)pullRequests:(id)arg1 repository:(id)arg2 filter:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;
 - (id)usernameFromURL:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (id)repositoryMetadata:(id)arg1 repository:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
@@ -72,9 +83,7 @@
 - (id)repositories:(id)arg1 type:(unsigned long long)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (id)repositories:(id)arg1 type:(unsigned long long)arg2 paginationBlock:(CDUnknownBlockType)arg3 completionBlock:(CDUnknownBlockType)arg4;
 - (id)createRepository:(id)arg1 owner:(id)arg2 name:(id)arg3 description:(id)arg4 homepage:(id)arg5 private:(BOOL)arg6 completionBlock:(CDUnknownBlockType)arg7;
-- (id)avatar:(id)arg1 email:(id)arg2 size:(unsigned int)arg3 completionBlock:(CDUnknownBlockType)arg4;
-- (id)avatar:(id)arg1 username:(id)arg2 size:(unsigned int)arg3 completionBlock:(CDUnknownBlockType)arg4;
-- (id)loginHelpURL:(id)arg1 username:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
+- (id)avatar:(id)arg1 email:(id)arg2 username:(id)arg3 url:(id)arg4 size:(unsigned int)arg5 completionBlock:(CDUnknownBlockType)arg6;
 - (id)webURLComponents:(CDUnknownBlockType)arg1;
 - (id)webURL:(id)arg1 branch:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (id)webURL:(id)arg1 tag:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
@@ -88,6 +97,10 @@
 - (id)validateCredentials:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (id)extensionIdentifier;
 @property(readonly, copy) NSString *description;
+- (BOOL)requiresPersonalAccessToken;
+- (BOOL)usesBearerAuthentication;
+- (BOOL)usesPrivateTokenAuthentication;
+- (BOOL)_checkForStaticCapabilities:(unsigned long long)arg1;
 - (id)initWithEndpointDefinition:(id)arg1 inExtension:(id)arg2;
 
 // Remaining properties

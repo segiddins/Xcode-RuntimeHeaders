@@ -49,7 +49,9 @@
     unsigned int _updatedResourcesChangeCount;
     GPUSourceIndexer *_sourceIndexer;
     NSString *_captureUnavailabilityReason;
-    DYProgressDigest *_progressDigest;
+    DYProgressDigest *_captureProgressDigest;
+    DYProgressDigest *_shaderDebugProgressDigest;
+    DYProgressDigest *_shaderReloadProgressDigest;
     NSString *_inferiorAppName;
     NSString *_sessionID;
     NSString *_deploymentTargetVersion;
@@ -66,7 +68,9 @@
 @property(readonly) NSString *sessionID; // @synthesize sessionID=_sessionID;
 @property(readonly) NSString *inferiorAppName; // @synthesize inferiorAppName=_inferiorAppName;
 @property BOOL isRemoteDebuggingEnabled; // @synthesize isRemoteDebuggingEnabled=_isRemoteDebuggingEnabled;
-@property(retain, nonatomic) DYProgressDigest *progressDigest; // @synthesize progressDigest=_progressDigest;
+@property(retain, nonatomic) DYProgressDigest *shaderReloadProgressDigest; // @synthesize shaderReloadProgressDigest=_shaderReloadProgressDigest;
+@property(retain, nonatomic) DYProgressDigest *shaderDebugProgressDigest; // @synthesize shaderDebugProgressDigest=_shaderDebugProgressDigest;
+@property(retain, nonatomic) DYProgressDigest *captureProgressDigest; // @synthesize captureProgressDigest=_captureProgressDigest;
 @property(readonly) NSString *captureUnavailabilityReason; // @synthesize captureUnavailabilityReason=_captureUnavailabilityReason;
 @property(readonly) unsigned int deviceInterposeVersionMetal; // @synthesize deviceInterposeVersionMetal=_deviceInterposeVersionMetal;
 @property(readonly) unsigned int deviceInterposeVersionGL; // @synthesize deviceInterposeVersionGL=_deviceInterposeVersionGL;

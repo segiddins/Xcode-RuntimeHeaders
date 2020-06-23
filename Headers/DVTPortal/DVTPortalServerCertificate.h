@@ -6,13 +6,13 @@
 
 #import <objc/NSObject.h>
 
-@class DVTSigningCertificate, NSDate, NSString;
+@class DVTSigningCertificate, DVTSigningCertificateSerialNumber, NSDate, NSString;
 
 @interface DVTPortalServerCertificate : NSObject
 {
     DVTSigningCertificate *_signingCertificate;
     NSDate *_expirationDate;
-    NSString *_serialNumber;
+    DVTSigningCertificateSerialNumber *_serialNumber;
     NSString *_name;
     NSString *_portalID;
     NSString *_status;
@@ -26,7 +26,7 @@
 @property(readonly, nonatomic) NSString *status; // @synthesize status=_status;
 @property(readonly, nonatomic) NSString *portalID; // @synthesize portalID=_portalID;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
-@property(readonly, nonatomic) NSString *serialNumber; // @synthesize serialNumber=_serialNumber;
+@property(readonly, nonatomic) DVTSigningCertificateSerialNumber *serialNumber; // @synthesize serialNumber=_serialNumber;
 @property(readonly, nonatomic) NSDate *expirationDate; // @synthesize expirationDate=_expirationDate;
 @property(readonly, nonatomic) DVTSigningCertificate *signingCertificate; // @synthesize signingCertificate=_signingCertificate;
 

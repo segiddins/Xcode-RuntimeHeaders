@@ -17,7 +17,7 @@
     NSLayoutConstraint *_heightConstraint;
 }
 
-+ (BOOL)skipStepForContext:(id)arg1 assistantDirection:(int)arg2;
++ (BOOL)skipStepForContext:(id)arg1 assistantDirection:(long long)arg2;
 + (id)keyPathsForValuesAffectingCanGoPrevious;
 - (void).cxx_destruct;
 @property(nonatomic) BOOL loading; // @synthesize loading=_loading;

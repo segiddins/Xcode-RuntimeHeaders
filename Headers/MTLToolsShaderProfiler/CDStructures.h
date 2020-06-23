@@ -10,10 +10,19 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 
 #pragma mark Named Structures
 
+struct CounterIndexInfo {
+    unsigned long long _field1;
+    unsigned long long _field2;
+    unsigned long long _field3;
+    unsigned long long _field4;
+    unsigned long long _field5;
+};
+
 struct DYMTLShaderProfilerProgramAddress {
-    unsigned int :8;
-    unsigned int :24;
-    unsigned int _field1;
+    union {
+        CDStruct_da69630e _field1;
+        CDStruct_da69630e _field2;
+    } _field1;
     unsigned long long _field2;
     unsigned long long _field3;
 };
@@ -35,6 +44,54 @@ struct DYMTLShaderProfilerUSCSample {
     } _field2;
 };
 
+struct DebugInfo {
+    struct vector<DebugInfo::LineEntry, std::__1::allocator<DebugInfo::LineEntry>> _field1;
+    struct vector<DebugInfo::LineDisassemblyInfo, std::__1::allocator<DebugInfo::LineDisassemblyInfo>> _field2;
+    struct unordered_map<std::__1::basic_string<char>, unsigned int, std::__1::hash<std::__1::basic_string<char>>, std::__1::equal_to<std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, unsigned int>>> _field3;
+    struct vector<std::__1::basic_string<char>, std::__1::allocator<std::__1::basic_string<char>>> _field4;
+    unsigned int _field5;
+    unsigned int _field6;
+    unsigned int _field7;
+    unsigned int _field8;
+    unsigned int _field9;
+};
+
+struct GRCPerFrameData;
+
+struct LineDisassemblyInfo {
+    id _field1;
+    id _field2;
+    double _field3;
+    unsigned int _field4;
+    unsigned int _field5;
+    unsigned int _field6;
+    unsigned int _field7;
+};
+
+struct LineEntry;
+
+struct PerFileCost {
+    struct PerLineCost _field1;
+    struct unordered_map<unsigned int, PerFileCost::PerLineCost, std::__1::hash<unsigned int>, std::__1::equal_to<unsigned int>, std::__1::allocator<std::__1::pair<const unsigned int, PerFileCost::PerLineCost>>> _field2;
+};
+
+struct PerLineCost {
+    struct vector<double, std::__1::allocator<double>> _field1;
+    double _field2;
+};
+
+struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, unsigned int>, void *>*> {
+    struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, unsigned int>, void *>*> *_field1;
+};
+
+struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, PerFileCost::PerLineCost>, void *>*> {
+    struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, PerFileCost::PerLineCost>, void *>*> *_field1;
+};
+
+struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, double>, void *>*> {
+    struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, double>, void *>*> *_field1;
+};
+
 struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, std::__1::pair<unsigned int, unsigned int>>, void *>*> {
     struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, std::__1::pair<unsigned int, unsigned int>>, void *>*> *_field1;
 };
@@ -51,11 +108,62 @@ struct __hash_node_base<std::__1::__hash_node<unsigned long long, void *>*> {
     struct __hash_node_base<std::__1::__hash_node<unsigned long long, void *>*> *_field1;
 };
 
-struct tuple<unsigned long, unsigned long, unsigned long> {
-    struct __tuple_impl<std::__1::__tuple_indices<0, 1, 2>, unsigned long, unsigned long, unsigned long> {
-        unsigned long long _field1;
-        unsigned long long _field2;
-        unsigned long long _field3;
+struct atomic<bool> {
+    struct __cxx_atomic_impl<bool, std::__1::__cxx_atomic_base_impl<bool>> {
+        _Atomic _Bool __a_value;
+    } __a_;
+};
+
+struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>;
+
+struct mutex {
+    struct _opaque_pthread_mutex_t {
+        long long __sig;
+        char __opaque[56];
+    } __m_;
+};
+
+struct pair<std::__1::vector<unsigned int, std::__1::allocator<unsigned int>>, std::__1::vector<std::__1::vector<DebugInfo::LineEntry *, std::__1::allocator<DebugInfo::LineEntry *>>, std::__1::allocator<std::__1::vector<DebugInfo::LineEntry *, std::__1::allocator<DebugInfo::LineEntry *>>>>> {
+    vector_f672cb0f _field1;
+    vector_378a2f7a _field2;
+};
+
+struct unique_ptr<GRCPerFrameData, std::__1::default_delete<GRCPerFrameData>> {
+    struct __compressed_pair<GRCPerFrameData *, std::__1::default_delete<GRCPerFrameData>> {
+        struct GRCPerFrameData *__value_;
+    } __ptr_;
+};
+
+struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, unsigned int>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, unsigned int>, void *>*>*>>> {
+    struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, unsigned int>, void *>*>**, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, unsigned int>, void *>*>*>>> {
+        struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, unsigned int>, void *>*> **_field1;
+        struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, unsigned int>, void *>*>*>> {
+            struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, unsigned int>, void *>*>*>> {
+                unsigned long long _field1;
+            } _field1;
+        } _field2;
+    } _field1;
+};
+
+struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, PerFileCost::PerLineCost>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, PerFileCost::PerLineCost>, void *>*>*>>> {
+    struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, PerFileCost::PerLineCost>, void *>*>**, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, PerFileCost::PerLineCost>, void *>*>*>>> {
+        struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, PerFileCost::PerLineCost>, void *>*> **_field1;
+        struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, PerFileCost::PerLineCost>, void *>*>*>> {
+            struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, PerFileCost::PerLineCost>, void *>*>*>> {
+                unsigned long long _field1;
+            } _field1;
+        } _field2;
+    } _field1;
+};
+
+struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, double>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, double>, void *>*>*>>> {
+    struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, double>, void *>*>**, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, double>, void *>*>*>>> {
+        struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, double>, void *>*> **_field1;
+        struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, double>, void *>*>*>> {
+            struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, double>, void *>*>*>> {
+                unsigned long long _field1;
+            } _field1;
+        } _field2;
     } _field1;
 };
 
@@ -100,6 +208,51 @@ struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<unsigned long
                 unsigned long long _field1;
             } _field1;
         } _field2;
+    } _field1;
+};
+
+struct unordered_map<std::__1::basic_string<char>, unsigned int, std::__1::hash<std::__1::basic_string<char>>, std::__1::equal_to<std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, unsigned int>>> {
+    struct __hash_table<std::__1::__hash_value_type<std::__1::basic_string<char>, unsigned int>, std::__1::__unordered_map_hasher<std::__1::basic_string<char>, std::__1::__hash_value_type<std::__1::basic_string<char>, unsigned int>, std::__1::hash<std::__1::basic_string<char>>, true>, std::__1::__unordered_map_equal<std::__1::basic_string<char>, std::__1::__hash_value_type<std::__1::basic_string<char>, unsigned int>, std::__1::equal_to<std::__1::basic_string<char>>, true>, std::__1::allocator<std::__1::__hash_value_type<std::__1::basic_string<char>, unsigned int>>> {
+        struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, unsigned int>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, unsigned int>, void *>*>*>>> _field1;
+        struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, unsigned int>, void *>*>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, unsigned int>, void *>>> {
+            struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, unsigned int>, void *>*> _field1;
+        } _field2;
+        struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<std::__1::basic_string<char>, std::__1::__hash_value_type<std::__1::basic_string<char>, unsigned int>, std::__1::hash<std::__1::basic_string<char>>, true>> {
+            unsigned long long _field1;
+        } _field3;
+        struct __compressed_pair<float, std::__1::__unordered_map_equal<std::__1::basic_string<char>, std::__1::__hash_value_type<std::__1::basic_string<char>, unsigned int>, std::__1::equal_to<std::__1::basic_string<char>>, true>> {
+            float _field1;
+        } _field4;
+    } _field1;
+};
+
+struct unordered_map<unsigned int, PerFileCost::PerLineCost, std::__1::hash<unsigned int>, std::__1::equal_to<unsigned int>, std::__1::allocator<std::__1::pair<const unsigned int, PerFileCost::PerLineCost>>> {
+    struct __hash_table<std::__1::__hash_value_type<unsigned int, PerFileCost::PerLineCost>, std::__1::__unordered_map_hasher<unsigned int, std::__1::__hash_value_type<unsigned int, PerFileCost::PerLineCost>, std::__1::hash<unsigned int>, true>, std::__1::__unordered_map_equal<unsigned int, std::__1::__hash_value_type<unsigned int, PerFileCost::PerLineCost>, std::__1::equal_to<unsigned int>, true>, std::__1::allocator<std::__1::__hash_value_type<unsigned int, PerFileCost::PerLineCost>>> {
+        struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, PerFileCost::PerLineCost>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, PerFileCost::PerLineCost>, void *>*>*>>> _field1;
+        struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, PerFileCost::PerLineCost>, void *>*>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, PerFileCost::PerLineCost>, void *>>> {
+            struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, PerFileCost::PerLineCost>, void *>*> _field1;
+        } _field2;
+        struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<unsigned int, std::__1::__hash_value_type<unsigned int, PerFileCost::PerLineCost>, std::__1::hash<unsigned int>, true>> {
+            unsigned long long _field1;
+        } _field3;
+        struct __compressed_pair<float, std::__1::__unordered_map_equal<unsigned int, std::__1::__hash_value_type<unsigned int, PerFileCost::PerLineCost>, std::__1::equal_to<unsigned int>, true>> {
+            float _field1;
+        } _field4;
+    } _field1;
+};
+
+struct unordered_map<unsigned int, double, std::__1::hash<unsigned int>, std::__1::equal_to<unsigned int>, std::__1::allocator<std::__1::pair<const unsigned int, double>>> {
+    struct __hash_table<std::__1::__hash_value_type<unsigned int, double>, std::__1::__unordered_map_hasher<unsigned int, std::__1::__hash_value_type<unsigned int, double>, std::__1::hash<unsigned int>, true>, std::__1::__unordered_map_equal<unsigned int, std::__1::__hash_value_type<unsigned int, double>, std::__1::equal_to<unsigned int>, true>, std::__1::allocator<std::__1::__hash_value_type<unsigned int, double>>> {
+        struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, double>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, double>, void *>*>*>>> _field1;
+        struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, double>, void *>*>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, double>, void *>>> {
+            struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, double>, void *>*> _field1;
+        } _field2;
+        struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<unsigned int, std::__1::__hash_value_type<unsigned int, double>, std::__1::hash<unsigned int>, true>> {
+            unsigned long long _field1;
+        } _field3;
+        struct __compressed_pair<float, std::__1::__unordered_map_equal<unsigned int, std::__1::__hash_value_type<unsigned int, double>, std::__1::equal_to<unsigned int>, true>> {
+            float _field1;
+        } _field4;
     } _field1;
 };
 
@@ -165,11 +318,67 @@ struct unordered_set<unsigned long long, std::__1::hash<unsigned long long>, std
 
 struct vector<DYMTLShaderProfilerProgramAddress *, std::__1::allocator<DYMTLShaderProfilerProgramAddress *>>;
 
+struct vector<DebugInfo::LineDisassemblyInfo, std::__1::allocator<DebugInfo::LineDisassemblyInfo>> {
+    struct LineDisassemblyInfo *_field1;
+    struct LineDisassemblyInfo *_field2;
+    struct __compressed_pair<DebugInfo::LineDisassemblyInfo *, std::__1::allocator<DebugInfo::LineDisassemblyInfo>> {
+        struct LineDisassemblyInfo *_field1;
+    } _field3;
+};
+
+struct vector<DebugInfo::LineEntry *, std::__1::allocator<DebugInfo::LineEntry *>> {
+    struct LineEntry **_field1;
+    struct LineEntry **_field2;
+    struct __compressed_pair<DebugInfo::LineEntry **, std::__1::allocator<DebugInfo::LineEntry *>> {
+        struct LineEntry **_field1;
+    } _field3;
+};
+
+struct vector<DebugInfo::LineEntry, std::__1::allocator<DebugInfo::LineEntry>> {
+    struct LineEntry *_field1;
+    struct LineEntry *_field2;
+    struct __compressed_pair<DebugInfo::LineEntry *, std::__1::allocator<DebugInfo::LineEntry>> {
+        struct LineEntry *_field1;
+    } _field3;
+};
+
+struct vector<PerFileCost, std::__1::allocator<PerFileCost>> {
+    struct PerFileCost *_field1;
+    struct PerFileCost *_field2;
+    struct __compressed_pair<PerFileCost *, std::__1::allocator<PerFileCost>> {
+        struct PerFileCost *_field1;
+    } _field3;
+};
+
+struct vector<double, std::__1::allocator<double>> {
+    double *_field1;
+    double *_field2;
+    struct __compressed_pair<double *, std::__1::allocator<double>> {
+        double *_field1;
+    } _field3;
+};
+
+struct vector<std::__1::basic_string<char>, std::__1::allocator<std::__1::basic_string<char>>> {
+    struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> *_field1;
+    struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> *_field2;
+    struct __compressed_pair<std::__1::basic_string<char>*, std::__1::allocator<std::__1::basic_string<char>>> {
+        struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> *_field1;
+    } _field3;
+};
+
 struct vector<std::__1::vector<DYMTLShaderProfilerProgramAddress *, std::__1::allocator<DYMTLShaderProfilerProgramAddress *>>, std::__1::allocator<std::__1::vector<DYMTLShaderProfilerProgramAddress *, std::__1::allocator<DYMTLShaderProfilerProgramAddress *>>>> {
     struct vector<DYMTLShaderProfilerProgramAddress *, std::__1::allocator<DYMTLShaderProfilerProgramAddress *>> *_field1;
     struct vector<DYMTLShaderProfilerProgramAddress *, std::__1::allocator<DYMTLShaderProfilerProgramAddress *>> *_field2;
     struct __compressed_pair<std::__1::vector<DYMTLShaderProfilerProgramAddress *, std::__1::allocator<DYMTLShaderProfilerProgramAddress *>>*, std::__1::allocator<std::__1::vector<DYMTLShaderProfilerProgramAddress *, std::__1::allocator<DYMTLShaderProfilerProgramAddress *>>>> {
         struct vector<DYMTLShaderProfilerProgramAddress *, std::__1::allocator<DYMTLShaderProfilerProgramAddress *>> *_field1;
+    } _field3;
+};
+
+struct vector<std::__1::vector<DebugInfo::LineEntry *, std::__1::allocator<DebugInfo::LineEntry *>>, std::__1::allocator<std::__1::vector<DebugInfo::LineEntry *, std::__1::allocator<DebugInfo::LineEntry *>>>> {
+    vector_8aa0e651 *_field1;
+    vector_8aa0e651 *_field2;
+    struct __compressed_pair<std::__1::vector<DebugInfo::LineEntry *, std::__1::allocator<DebugInfo::LineEntry *>>*, std::__1::allocator<std::__1::vector<DebugInfo::LineEntry *, std::__1::allocator<DebugInfo::LineEntry *>>>> {
+        vector_8aa0e651 *_field1;
     } _field3;
 };
 
@@ -183,14 +392,32 @@ struct vector<unsigned int, std::__1::allocator<unsigned int>> {
 
 #pragma mark Typedef'd Structures
 
+typedef struct {
+    unsigned int :8;
+    unsigned int :24;
+    unsigned int _field1;
+} CDStruct_da69630e;
+
 // Template types
-typedef struct tuple<unsigned long, unsigned long, unsigned long> {
-    struct __tuple_impl<std::__1::__tuple_indices<0, 1, 2>, unsigned long, unsigned long, unsigned long> {
-        unsigned long long _field1;
-        unsigned long long _field2;
-        unsigned long long _field3;
+typedef struct pair<std::__1::vector<unsigned int, std::__1::allocator<unsigned int>>, std::__1::vector<std::__1::vector<DebugInfo::LineEntry *, std::__1::allocator<DebugInfo::LineEntry *>>, std::__1::allocator<std::__1::vector<DebugInfo::LineEntry *, std::__1::allocator<DebugInfo::LineEntry *>>>>> {
+    vector_f672cb0f _field1;
+    vector_378a2f7a _field2;
+} pair_5954a2fc;
+
+typedef struct unordered_map<unsigned int, double, std::__1::hash<unsigned int>, std::__1::equal_to<unsigned int>, std::__1::allocator<std::__1::pair<const unsigned int, double>>> {
+    struct __hash_table<std::__1::__hash_value_type<unsigned int, double>, std::__1::__unordered_map_hasher<unsigned int, std::__1::__hash_value_type<unsigned int, double>, std::__1::hash<unsigned int>, true>, std::__1::__unordered_map_equal<unsigned int, std::__1::__hash_value_type<unsigned int, double>, std::__1::equal_to<unsigned int>, true>, std::__1::allocator<std::__1::__hash_value_type<unsigned int, double>>> {
+        struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, double>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, double>, void *>*>*>>> _field1;
+        struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, double>, void *>*>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, double>, void *>>> {
+            struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, double>, void *>*> _field1;
+        } _field2;
+        struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<unsigned int, std::__1::__hash_value_type<unsigned int, double>, std::__1::hash<unsigned int>, true>> {
+            unsigned long long _field1;
+        } _field3;
+        struct __compressed_pair<float, std::__1::__unordered_map_equal<unsigned int, std::__1::__hash_value_type<unsigned int, double>, std::__1::equal_to<unsigned int>, true>> {
+            float _field1;
+        } _field4;
     } _field1;
-} tuple_944faa43;
+} unordered_map_96ead0af;
 
 typedef struct unordered_map<unsigned int, std::__1::pair<unsigned int, unsigned int>, std::__1::hash<unsigned int>, std::__1::equal_to<unsigned int>, std::__1::allocator<std::__1::pair<const unsigned int, std::__1::pair<unsigned int, unsigned int>>>> {
     struct __hash_table<std::__1::__hash_value_type<unsigned int, std::__1::pair<unsigned int, unsigned int>>, std::__1::__unordered_map_hasher<unsigned int, std::__1::__hash_value_type<unsigned int, std::__1::pair<unsigned int, unsigned int>>, std::__1::hash<unsigned int>, true>, std::__1::__unordered_map_equal<unsigned int, std::__1::__hash_value_type<unsigned int, std::__1::pair<unsigned int, unsigned int>>, std::__1::equal_to<unsigned int>, true>, std::__1::allocator<std::__1::__hash_value_type<unsigned int, std::__1::pair<unsigned int, unsigned int>>>> {
@@ -252,6 +479,22 @@ typedef struct unordered_set<unsigned long long, std::__1::hash<unsigned long lo
     } _field1;
 } unordered_set_ef4c6246;
 
+typedef struct vector<DebugInfo::LineEntry *, std::__1::allocator<DebugInfo::LineEntry *>> {
+    struct LineEntry **_field1;
+    struct LineEntry **_field2;
+    struct __compressed_pair<DebugInfo::LineEntry **, std::__1::allocator<DebugInfo::LineEntry *>> {
+        struct LineEntry **_field1;
+    } _field3;
+} vector_8aa0e651;
+
+typedef struct vector<PerFileCost, std::__1::allocator<PerFileCost>> {
+    struct PerFileCost *_field1;
+    struct PerFileCost *_field2;
+    struct __compressed_pair<PerFileCost *, std::__1::allocator<PerFileCost>> {
+        struct PerFileCost *_field1;
+    } _field3;
+} vector_a001aeee;
+
 typedef struct vector<std::__1::vector<DYMTLShaderProfilerProgramAddress *, std::__1::allocator<DYMTLShaderProfilerProgramAddress *>>, std::__1::allocator<std::__1::vector<DYMTLShaderProfilerProgramAddress *, std::__1::allocator<DYMTLShaderProfilerProgramAddress *>>>> {
     struct vector<DYMTLShaderProfilerProgramAddress *, std::__1::allocator<DYMTLShaderProfilerProgramAddress *>> *_field1;
     struct vector<DYMTLShaderProfilerProgramAddress *, std::__1::allocator<DYMTLShaderProfilerProgramAddress *>> *_field2;
@@ -259,6 +502,14 @@ typedef struct vector<std::__1::vector<DYMTLShaderProfilerProgramAddress *, std:
         struct vector<DYMTLShaderProfilerProgramAddress *, std::__1::allocator<DYMTLShaderProfilerProgramAddress *>> *_field1;
     } _field3;
 } vector_321b30a3;
+
+typedef struct vector<std::__1::vector<DebugInfo::LineEntry *, std::__1::allocator<DebugInfo::LineEntry *>>, std::__1::allocator<std::__1::vector<DebugInfo::LineEntry *, std::__1::allocator<DebugInfo::LineEntry *>>>> {
+    vector_8aa0e651 *_field1;
+    vector_8aa0e651 *_field2;
+    struct __compressed_pair<std::__1::vector<DebugInfo::LineEntry *, std::__1::allocator<DebugInfo::LineEntry *>>*, std::__1::allocator<std::__1::vector<DebugInfo::LineEntry *, std::__1::allocator<DebugInfo::LineEntry *>>>> {
+        vector_8aa0e651 *_field1;
+    } _field3;
+} vector_378a2f7a;
 
 typedef struct vector<unsigned int, std::__1::allocator<unsigned int>> {
     unsigned int *_field1;

@@ -17,7 +17,6 @@
 - (id)effectivePreviewAppearanceForRecipe:(id)arg1;
 - (void)userAddedNewConfiguration:(id)arg1;
 - (id)applicableIdioms;
-- (BOOL)supportsAddConfigurationMenu;
 - (Class)previewRecipeClass;
 
 @end

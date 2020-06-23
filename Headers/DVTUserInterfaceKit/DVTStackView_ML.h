@@ -12,14 +12,14 @@
     double _lastClipViewBreadthMagnitude;
     double subviewSpacing;
     CDStruct_bf6d4a14 subviewInset;
-    int layoutDirection;
-    int breadthResizingMode;
+    unsigned long long layoutDirection;
+    unsigned long long breadthResizingMode;
 }
 
-@property(nonatomic) int breadthResizingMode; // @synthesize breadthResizingMode;
+@property(nonatomic) unsigned long long breadthResizingMode; // @synthesize breadthResizingMode;
 @property(nonatomic) CDStruct_bf6d4a14 subviewInset; // @synthesize subviewInset;
 @property(nonatomic) double subviewSpacing; // @synthesize subviewSpacing;
-@property(nonatomic) int layoutDirection; // @synthesize layoutDirection;
+@property(nonatomic) unsigned long long layoutDirection; // @synthesize layoutDirection;
 - (void)willRemoveSubview:(id)arg1;
 - (void)didAddSubview:(id)arg1;
 - (void)viewDidMoveToWindow;

@@ -28,7 +28,7 @@
 - (void)asyncCachedToolIncrementBusyWithDescription:(id)arg1 sessionIdentifier:(id)arg2 queue:(id)arg3 completionHandler:(CDUnknownBlockType)arg4 forReason:(CDUnknownBlockType)arg5;
 - (id)launchNewToolWithDescription:(id)arg1 error:(id *)arg2 forReason:(CDUnknownBlockType)arg3;
 - (id)cachedToolIncrementBusyWithDescription:(id)arg1 error:(id *)arg2 forReason:(CDUnknownBlockType)arg3;
-- (void)shutdownToolsExceedingTimeoutOf:(double)arg1;
+- (void)shutdownToolsExceedingIdleTimeoutOf:(double)arg1;
 - (id)executionContextsStillInUse;
 - (void)enumerateExecutionContextsWithBlock:(CDUnknownBlockType)arg1;
 - (void)shutdownToolsIgnoringToolDescriptions:(id)arg1 delayedShutdown:(BOOL)arg2;

@@ -7,7 +7,6 @@
 #import <IDEKit/IDEViewController.h>
 
 #import <IDEKit/DVTEditor-Protocol.h>
-#import <IDEKit/DVTReplacementViewDelegate-Protocol.h>
 #import <IDEKit/DVTStatefulObject-Protocol.h>
 #import <IDEKit/IDEAttachToProcessErrorHandler-Protocol.h>
 #import <IDEKit/IDEEditorAreaContainer-Protocol.h>
@@ -17,17 +16,11 @@
 #import <IDEKit/NSTextViewDelegate-Protocol.h>
 #import <IDEKit/_IDEEditorModeActions-Protocol.h>
 
-@class DVTMutableOrderedSet, DVTObservingToken, DVTReplacementView, DVTSplitView, DVTSplitViewItem, DVTTextDocumentLocation, IDEARCConversionAssistantContext, IDEAppChooserWindowController, IDEBuildAlertMonitor, IDEEditorArea, IDEExecutionHoldAlertHelper, IDEFindNavigatorQueryResultsController, IDEInspectorArea, IDELaunchSession, IDENavigatorArea, IDEObjCModernizationAssistantContext, IDERunAlertMonitor, IDESwiftMigrationAssistantContext, IDEWorkspace, IDEWorkspaceDocument, IDEWorkspaceWindowController, NSAlert, NSMapTable, NSMutableArray, NSString, _TtC6IDEKit29IDEFindResultExplorableSource;
+@class DVTMutableOrderedSet, DVTObservingToken, DVTTextDocumentLocation, IDEARCConversionAssistantContext, IDEAppChooserWindowController, IDEBuildAlertMonitor, IDEEditorArea, IDEExecutionHoldAlertHelper, IDEFindNavigatorQueryResultsController, IDEInspectorArea, IDELaunchSession, IDENavigatorArea, IDEObjCModernizationAssistantContext, IDERunAlertMonitor, IDESwiftMigrationAssistantContext, IDEWorkspace, IDEWorkspaceDesignAreaSplitViewController, IDEWorkspaceDocument, IDEWorkspaceWindowController, NSAlert, NSMapTable, NSMutableArray, NSSplitViewItem, NSString, _TtC6IDEKit29IDEFindResultExplorableSource;
 @protocol DVTInvalidation;
 
-@interface IDEWorkspaceTabController : IDEViewController <NSTextViewDelegate, _IDEEditorModeActions, DVTStatefulObject, DVTReplacementViewDelegate, IDEEditorAreaContainer, IDEStructureEditingWorkspaceTabContext, IDEWorkspaceDocumentProvider, DVTEditor, IDEProvisioningManagerDelegate, IDEAttachToProcessErrorHandler>
+@interface IDEWorkspaceTabController : IDEViewController <NSTextViewDelegate, _IDEEditorModeActions, DVTStatefulObject, IDEEditorAreaContainer, IDEStructureEditingWorkspaceTabContext, IDEWorkspaceDocumentProvider, DVTEditor, IDEProvisioningManagerDelegate, IDEAttachToProcessErrorHandler>
 {
-    DVTSplitView *_designAreaSplitView;
-    DVTReplacementView *_navReplacementView;
-    DVTReplacementView *_editorReplacementView;
-    DVTReplacementView *_inspectorReplacementView;
-    DVTSplitViewItem *_navigatorAreaSplitViewItem;
-    DVTSplitViewItem *_inspectorsAreaSplitViewItem;
     DVTMutableOrderedSet *_cursorRectInterceptors;
     NSMapTable *_additionControllersForLaunchSessionTable;
     NSMutableArray *_debuggingUIControllerLifeCycleObservers;
@@ -52,16 +45,22 @@
     BOOL _isOpeningSimpleFileEditorOpenSpecifier;
     BOOL _userWantsInspectorAreaVisible;
     BOOL _userWantsNavigatorVisible;
-    BOOL _isAnimatingInspectorArea;
     BOOL _completedInitialStateRestore;
     BOOL _tabLoadingCompleted;
     IDEWorkspaceDocument *_workspaceDocument;
     NSString *_userDefinedTabLabel;
     IDELaunchSession *_currentLaunchSession;
+    IDEWorkspaceDesignAreaSplitViewController *_designAreaSplitViewController;
+    IDENavigatorArea *_navigatorArea;
+    IDEEditorArea *_editorArea;
+    IDEInspectorArea *_inspectorArea;
     IDEFindNavigatorQueryResultsController *_findNavigatorQueryResultsController;
     _TtC6IDEKit29IDEFindResultExplorableSource *_findResultExplorableSource;
     DVTTextDocumentLocation *_issueInstructionPointerLocation;
     DVTTextDocumentLocation *_issueInstructionPointerLocationForDisassembly;
+    NSSplitViewItem *_navigatorAreaSplitViewItem;
+    NSSplitViewItem *_editorAreaSplitViewItem;
+    NSSplitViewItem *_inspectorAreaSplitViewItem;
     DVTObservingToken *_documentLoadingObservationToken;
     DVTObservingToken *_firstIssueObservationToken;
     DVTObservingToken *_buildCompleteObservationToken;
@@ -75,8 +74,6 @@
 }
 
 + (void)initialize;
-+ (id)keyPathsForValuesAffectingEditorArea;
-+ (id)keyPathsForValuesAffectingNavigatorArea;
 + (id)keyPathsForValuesAffectingWindowController;
 + (id)keyPathsForValuesAffectingShowNavigator;
 + (id)keyPathsForValuesAffectingShowInspectorArea;
@@ -98,18 +95,22 @@
 @property(retain) DVTObservingToken *firstIssueObservationToken; // @synthesize firstIssueObservationToken=_firstIssueObservationToken;
 @property(retain) DVTObservingToken *documentLoadingObservationToken; // @synthesize documentLoadingObservationToken=_documentLoadingObservationToken;
 @property BOOL completedInitialStateRestore; // @synthesize completedInitialStateRestore=_completedInitialStateRestore;
-@property(retain) DVTReplacementView *editorReplacementView; // @synthesize editorReplacementView=_editorReplacementView;
+@property(retain) NSSplitViewItem *inspectorAreaSplitViewItem; // @synthesize inspectorAreaSplitViewItem=_inspectorAreaSplitViewItem;
+@property(retain) NSSplitViewItem *editorAreaSplitViewItem; // @synthesize editorAreaSplitViewItem=_editorAreaSplitViewItem;
+@property(retain) NSSplitViewItem *navigatorAreaSplitViewItem; // @synthesize navigatorAreaSplitViewItem=_navigatorAreaSplitViewItem;
 @property(retain) DVTTextDocumentLocation *issueInstructionPointerLocationForDisassembly; // @synthesize issueInstructionPointerLocationForDisassembly=_issueInstructionPointerLocationForDisassembly;
 @property(retain) DVTTextDocumentLocation *issueInstructionPointerLocation; // @synthesize issueInstructionPointerLocation=_issueInstructionPointerLocation;
 @property(retain, nonatomic) _TtC6IDEKit29IDEFindResultExplorableSource *findResultExplorableSource; // @synthesize findResultExplorableSource=_findResultExplorableSource;
 @property(retain, nonatomic) IDEFindNavigatorQueryResultsController *findNavigatorQueryResultsController; // @synthesize findNavigatorQueryResultsController=_findNavigatorQueryResultsController;
+@property(retain) IDEInspectorArea *inspectorArea; // @synthesize inspectorArea=_inspectorArea;
+@property(retain) IDEEditorArea *editorArea; // @synthesize editorArea=_editorArea;
+@property(retain) IDENavigatorArea *navigatorArea; // @synthesize navigatorArea=_navigatorArea;
+@property(retain) IDEWorkspaceDesignAreaSplitViewController *designAreaSplitViewController; // @synthesize designAreaSplitViewController=_designAreaSplitViewController;
 @property(retain, nonatomic) IDELaunchSession *currentLaunchSession; // @synthesize currentLaunchSession=_currentLaunchSession;
 @property(copy) NSString *userDefinedTabLabel; // @synthesize userDefinedTabLabel=_userDefinedTabLabel;
-@property(nonatomic) BOOL isAnimatingInspectorArea; // @synthesize isAnimatingInspectorArea=_isAnimatingInspectorArea;
 @property(nonatomic) BOOL userWantsNavigatorVisible; // @synthesize userWantsNavigatorVisible=_userWantsNavigatorVisible;
 @property(nonatomic) BOOL userWantsInspectorAreaVisible; // @synthesize userWantsInspectorAreaVisible=_userWantsInspectorAreaVisible;
 @property(retain) IDEWorkspaceDocument *workspaceDocument; // @synthesize workspaceDocument=_workspaceDocument;
-@property(retain) DVTReplacementView *navigatorReplacementView; // @synthesize navigatorReplacementView=_navReplacementView;
 - (void)discardEditing;
 - (BOOL)commitEditingForAction:(int)arg1 errors:(id)arg2;
 - (void)provisioningManager:(id)arg1 repairable:(id)arg2 shouldAuthorizeUserAction:(id)arg3 authorizationCallback:(CDUnknownBlockType)arg4;
@@ -177,6 +178,7 @@
 - (void)_doCommandForEditAndSchemeCommand:(id)arg1;
 - (void)_doCommandForEditAndSchemeCommand:(id)arg1 schemeTask:(long long)arg2;
 - (void)showAppChooserIfNecessaryForScheme:(id)arg1 runDestination:(id)arg2 command:(id)arg3 onCompletion:(CDUnknownBlockType)arg4;
+- (id)_extensionPathRunnableForBundleIdentifier:(id)arg1 BuildableProduct:(id)arg2 Scheme:(id)arg3 extensionRunMode:(int)arg4;
 - (id)_extensionRunnableForBundleIdentifier:(id)arg1 BuildableProduct:(id)arg2 Scheme:(id)arg3 extensionRunMode:(int)arg4;
 - (BOOL)_shouldShowAppChooserForScheme:(id)arg1 command:(id)arg2;
 - (void)_showAppChooserForCurrentSchemeIfNecessaryForCommand:(id)arg1 launch:(CDUnknownBlockType)arg2;
@@ -265,12 +267,15 @@
 - (void)hideNavigator:(id)arg1;
 - (BOOL)isNavigatorVisible;
 - (void)toggleNavigatorsVisibility:(id)arg1;
+- (void)changeToNavigatorWithIdentifier:(id)arg1 sender:(id)arg2;
+- (void)showNavigatorWithIdentifier:(id)arg1;
 - (void)changeToBreakpointsNavigator:(id)arg1;
 - (void)changeToDebuggerNavigator:(id)arg1;
 - (void)changeToWorkingCopiesNavigator:(id)arg1;
 - (void)changeToFindNavigator:(id)arg1;
 - (void)changeToTestNavigator:(id)arg1;
 - (void)_changeToIssuesNavigatorForBuildIssues;
+- (void)changeToIssuesNavigatorAndShowRuntime:(BOOL)arg1 clearFilterType:(unsigned long long)arg2 openNavigatorArea:(BOOL)arg3;
 - (void)changeToIssuesNavigator:(id)arg1 showRuntime:(BOOL)arg2 clearFilterType:(unsigned long long)arg3;
 - (void)changeToIssuesNavigator:(id)arg1;
 - (void)changeToLogsNavigator:(id)arg1;
@@ -278,13 +283,10 @@
 - (void)revealInBreakpointNavigator:(id)arg1 showEditor:(BOOL)arg2;
 - (void)revealSelectionInProjectNavigator:(id)arg1;
 - (void)changeToStructureNavigator:(id)arg1;
-- (void)showNavigatorWithIdentifier:(id)arg1;
-- (void)changeToNavigatorWithIdentifier:(id)arg1 sender:(id)arg2;
 - (void)_splitViewDidToggleClosed;
 - (void)showInspectorWithChoiceFromSender:(id)arg1;
 - (void)showInspectorCategoryWithExtensionIdentifier:(id)arg1;
 - (void)showInspectorWithChoice:(id)arg1;
-@property(readonly) IDEInspectorArea *inspectorArea;
 - (void)filterInNavigator:(id)arg1;
 - (void)_toggleShowCodeReviewForEditor:(id)arg1;
 - (void)_setSubEditorPositionToBelow:(id)arg1;
@@ -303,6 +305,8 @@
 - (void)closeOtherEditors:(id)arg1;
 - (void)resetEditorSizes:(id)arg1;
 - (void)resetAssistantEditorSelection:(id)arg1;
+- (void)_closeOtherEditorTabs:(id)arg1;
+- (void)dvt_closeActiveEditorTab:(id)arg1;
 - (void)_closeActiveEditor:(id)arg1;
 - (void)tabController_newEditorAreaSplitAlternate:(id)arg1;
 - (void)tabController_newEditorAreaSplit:(id)arg1;
@@ -314,18 +318,7 @@
 @property(readonly) IDEWorkspace *structureEditWorkspace;
 - (BOOL)validateUserInterfaceItem:(id)arg1;
 - (id)supplementalTargetForAction:(SEL)arg1 sender:(id)arg2;
-@property(readonly) IDEEditorArea *editorArea;
-@property(readonly) IDENavigatorArea *navigatorArea;
 @property(readonly) IDEWorkspaceWindowController *windowController;
-- (id)splitView:(id)arg1 needsRectanglesForViewsWithState:(id)arg2 forSize:(struct CGSize)arg3;
-- (void)splitView:(id)arg1 resizeSubviewsWithOldSize:(struct CGSize)arg2;
-- (void)_adjustDesignAreaSplitViewWithOldSize:(struct CGSize)arg1;
-- (id)_framesForDesignAreaWithNavigatorState:(unsigned long long)arg1 editorAreaState:(unsigned long long)arg2 inspectorAreaState:(unsigned long long)arg3 forSize:(struct CGSize)arg4;
-- (id)splitView:(id)arg1 additionalEffectiveRectsOfDividerAtIndex:(long long)arg2;
-- (double)splitView:(id)arg1 constrainSplitPosition:(double)arg2 ofSubviewAt:(long long)arg3;
-- (BOOL)splitView:(id)arg1 canCollapseSubview:(id)arg2;
-- (double)splitView:(id)arg1 constrainMaxCoordinate:(double)arg2 ofSubviewAt:(long long)arg3;
-- (double)splitView:(id)arg1 constrainMinCoordinate:(double)arg2 ofSubviewAt:(long long)arg3;
 - (struct CGSize)minimumSizeForView:(id)arg1;
 - (void)updateMinimumWindowSize:(BOOL)arg1;
 - (struct CGSize)minimumSizeForDesignArea;
@@ -359,19 +352,19 @@
 - (void)dismissExecutionHoldAlert;
 - (void)showExecutionHoldAlertWithError:(id)arg1;
 - (void)showAlertModallyInWorkspaceForError:(id)arg1;
-- (void)replacementView:(id)arg1 willInstallViewController:(id)arg2;
 - (void)primitiveInvalidate;
 - (void)viewWillUninstall;
 - (void)viewDidInstall;
 - (void)_performExtraViewDidInstallWork;
 - (void)commitStateToDictionary:(id)arg1;
 - (void)revertStateWithDictionary:(id)arg1;
-- (void)_refreshInspectorAreaVisibility;
+- (BOOL)_isAnimatingInspectorArea;
 - (void)_updateTabLabel;
 - (BOOL)setUserDefinedTabLabel:(id)arg1 error:(id *)arg2;
 - (void)_setup32bitOnlyMacTargetWarning;
 - (void)loadView;
-- (void)setSplitGroupAccessibility;
+- (void)_setDefaultSplitViewItemWidths;
+- (void)_setSplitGroupAccessibility;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)setLastApplicableLibraryExtensionIDs:(id)arg1;
 - (id)lastApplicableLibraryExtensionIDs;

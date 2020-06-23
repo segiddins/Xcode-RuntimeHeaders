@@ -20,6 +20,7 @@
 }
 
 + (id)buildablesIncludingImplicitDependenciesForWorkspace:(id)arg1 scheme:(id)arg2;
++ (id)buildablesIncludingImplicitDependenciesForWorkspace:(id)arg1 scheme:(id)arg2 includingPackages:(BOOL)arg3;
 + (BOOL)buildableProducesWatchApp:(id)arg1;
 + (Class)migrationTargetSublass;
 + (void)initialize;

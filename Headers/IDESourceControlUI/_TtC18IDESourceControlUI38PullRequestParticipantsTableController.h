@@ -12,17 +12,19 @@
 
 @interface _TtC18IDESourceControlUI38PullRequestParticipantsTableController : NSObject <NSCoding>
 {
-    MISSING_TYPE *moveUpCallback;
-    MISSING_TYPE *table;
-    MISSING_TYPE *owner;
-    MISSING_TYPE *pullRequest;
-    MISSING_TYPE *hostParticipants;
-    MISSING_TYPE *participants;
     MISSING_TYPE *tableCellIdentifier;
+    MISSING_TYPE *moveUpCallback;
+    MISSING_TYPE *moveDownCallback;
+    MISSING_TYPE *didAddParticipantCallback;
+    MISSING_TYPE *pullRequest;
+    MISSING_TYPE *participants;
+    MISSING_TYPE *table;
 }
 
 - (void).cxx_destruct;
+- (void)removeParticipant:(id)arg1;
 - (void)addParticipant:(id)arg1;
+- (id)tableView:(id)arg1 rowViewForRow:(long long)arg2;
 - (BOOL)tableView:(id)arg1 doCommandBySelector:(SEL)arg2;
 - (id)tableView:(id)arg1 viewForTableColumn:(id)arg2 row:(long long)arg3;
 - (long long)numberOfRowsInTableView:(id)arg1;

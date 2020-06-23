@@ -56,7 +56,7 @@
 - (id)ibLocalLocalizableStringsAttributeKeyPaths;
 - (id)ibLocalAdditionalLocalizableAttributeKeyPaths;
 - (id)ibLocalAttributeKeyPaths;
-- (BOOL)ibTouchBarPropertiesAreAvailable;
+- (id)ibInspectedControl;
 - (void)unarchiveWithDocumentUnarchiver:(id)arg1;
 - (void)archiveWithDocumentArchiver:(id)arg1;
 

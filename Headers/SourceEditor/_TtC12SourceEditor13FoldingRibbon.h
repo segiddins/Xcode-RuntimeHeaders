@@ -16,8 +16,14 @@
     MISSING_TYPE *ribbonContentView;
     MISSING_TYPE *expandedLayer;
     MISSING_TYPE *cachedLayers;
+    MISSING_TYPE *prevViewportLineRange;
+    MISSING_TYPE *prevFoldableRanges;
+    MISSING_TYPE *prevCascadedFoldedRangesEmpty;
+    MISSING_TYPE *prevLayoutBounds;
     MISSING_TYPE *consumerPriority;
     MISSING_TYPE *interaction;
+    MISSING_TYPE *pendingExpandedLayer;
+    MISSING_TYPE *$__lazy_storage_$_showExpandedLayerContinuation;
 }
 
 @end

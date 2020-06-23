@@ -25,6 +25,8 @@
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(retain) NSView *view; // @synthesize view=_view;
 @property __weak DVTSplitView *splitView; // @synthesize splitView=_splitView;
+- (double)maximumThickness;
+- (double)minimumThickness;
 - (void)setVisibilityUsingAnimation:(BOOL)arg1;
 - (void)toggleVisibilityUsingAnimation;
 - (void)primitiveSetVisible:(BOOL)arg1;

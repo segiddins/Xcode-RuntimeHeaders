@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)loadClientDataBufferFromArchive:(id)arg1 offset:(long long)arg2 functionIndex:(unsigned int)arg3;
+- (id)loadTexturesWithDescriptors:(id)arg1;
 - (id)loadSolidImageWithContainerID:(unsigned long long)arg1 functionIndex:(unsigned int)arg2 subCommandIndex:(int)arg3;
 - (id)loadSolidImageWithContainerID:(unsigned long long)arg1 functionIndex:(unsigned int)arg2;
 - (id)loadOutlineImageWithContainerID:(unsigned long long)arg1 functionIndex:(unsigned int)arg2 subCommandIndex:(int)arg3;

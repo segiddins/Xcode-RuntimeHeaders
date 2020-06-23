@@ -7,6 +7,7 @@
 #import <Foundation/NSData.h>
 
 @interface NSData (PlistDataExtensions)
+- (id)plist_textPlistString;
 - (id)plist_stringValue;
 @end
 

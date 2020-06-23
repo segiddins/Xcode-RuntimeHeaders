@@ -11,6 +11,7 @@
 @protocol LSApplicationWorkspaceObserverProtocol <NSObject>
 
 @optional
+- (void)applicationsDidChangePersonas:(NSArray *)arg1;
 - (void)deviceManagementPolicyDidChange:(NSArray *)arg1;
 - (BOOL)observeLaunchProhibitedApps;
 - (void)networkUsageChanged:(BOOL)arg1;

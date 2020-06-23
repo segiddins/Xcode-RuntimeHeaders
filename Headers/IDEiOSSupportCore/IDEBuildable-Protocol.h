@@ -24,6 +24,7 @@
 - (NSArray *)implicitDependenciesForBuildParameters:(IDEBuildParameters *)arg1 executionEnvironment:(IDEExecutionEnvironment *)arg2 returningMessages:(id *)arg3;
 - (NSArray *)directDependencies;
 - (NSArray *)orderedRecursiveDependenciesIncludingSelf:(BOOL)arg1;
+- (NSArray *)orderedRecursiveDependenciesIncludingSelf:(BOOL)arg1 includingPackages:(BOOL)arg2;
 - (DVTSearchPath *)toolSearchPathWithBuildParameters:(IDEBuildParameters *)arg1;
 - (NSString *)absolutePathByEvaluatingBuildSettingExpressionString:(NSString *)arg1 withBuildParameters:(IDEBuildParameters *)arg2;
 - (NSString *)stringByEvaluatingBuildSettingExpressionString:(NSString *)arg1 withBuildParameters:(IDEBuildParameters *)arg2;

@@ -15,14 +15,13 @@ __attribute__((visibility("hidden")))
     MISSING_TYPE *collectionView;
     MISSING_TYPE *previewSizeChooserGrid;
     MISSING_TYPE *exportButton;
-    MISSING_TYPE *backgroundMaterialChooser;
+    MISSING_TYPE *backgroundAppearanceChooser;
     MISSING_TYPE *contentScrollView;
     MISSING_TYPE *settingsPanel;
     MISSING_TYPE *filterTokenField;
-    MISSING_TYPE *_selectedMaterialDefaultsKey;
-    MISSING_TYPE *_selectedMaterialDefaultValue;
-    MISSING_TYPE *_backgroundMaterialList;
-    MISSING_TYPE *_backgroundMaterials;
+    MISSING_TYPE *_selectedAppearanceDefaultsKey;
+    MISSING_TYPE *_backgroundAppearanceList;
+    MISSING_TYPE *_backgroundAppearances;
     MISSING_TYPE *_filterDefaultsKey;
     MISSING_TYPE *_filteredIconSetModel;
     MISSING_TYPE *_selectedPreviewSizeDefaultsKey;
@@ -36,7 +35,6 @@ __attribute__((visibility("hidden")))
     MISSING_TYPE *_predicateProducer;
     MISSING_TYPE *_filterSession;
     MISSING_TYPE *selectedPreviewSizes;
-    MISSING_TYPE *selectedBackgroundMaterialName;
 }
 
 - (void).cxx_destruct;
@@ -45,12 +43,12 @@ __attribute__((visibility("hidden")))
 - (void)export:(id)arg1;
 - (struct CGSize)collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
 - (void)updatePreviewSizes:(id)arg1;
-- (void)updateBackgroundMaterial:(id)arg1;
+- (void)updateBackgroundAppearance:(id)arg1;
 - (void)viewDidLoad;
 @property(nonatomic, retain) DVTFilterTokenField *filterTokenField; // @synthesize filterTokenField;
 @property(nonatomic, retain) NSVisualEffectView *settingsPanel; // @synthesize settingsPanel;
 @property(nonatomic, retain) NSScrollView *contentScrollView; // @synthesize contentScrollView;
-@property(nonatomic, retain) NSPopUpButton *backgroundMaterialChooser; // @synthesize backgroundMaterialChooser;
+@property(nonatomic, retain) NSPopUpButton *backgroundAppearanceChooser; // @synthesize backgroundAppearanceChooser;
 @property(nonatomic, retain) NSButton *exportButton; // @synthesize exportButton;
 @property(nonatomic, retain) NSGridView *previewSizeChooserGrid; // @synthesize previewSizeChooserGrid;
 @property(nonatomic, retain) NSCollectionView *collectionView; // @synthesize collectionView;

@@ -6,7 +6,10 @@
 
 #import <IDEFoundation/_TtC13IDEFoundation23IDETestDaemonController.h>
 
-@interface _TtC13IDEFoundation23IDETestDaemonController (IDEFoundation)
+#import <IDEFoundation/XCTDaemonControlSessionDelegate-Protocol.h>
+#import <IDEFoundation/XCTDebugLogDelegate-Protocol.h>
+
+@interface _TtC13IDEFoundation23IDETestDaemonController (IDEFoundation) <XCTDaemonControlSessionDelegate, XCTDebugLogDelegate>
 - (void)requestSpindumpWithPid:(int)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)collectLogArchiveFromDate:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)addProcessNamesToMonitoredCrashReports:(id)arg1 completion:(CDUnknownBlockType)arg2;
@@ -14,5 +17,10 @@
 - (void)activate;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1 queue:(id)arg2;
+- (void)daemonControlSession:(id)arg1 didReportSelfDiagnosisIssue:(id)arg2 description:(id)arg3;
+- (void)daemonControlSession:(id)arg1 didReceiveDebugLogMessage:(id)arg2;
+- (void)daemonControlSession:(id)arg1 didReceiveCrashReportData:(id)arg2 fileName:(id)arg3;
+- (void)daemonControlSessionDidDisconnect:(id)arg1;
+- (void)logDebugMessage:(id)arg1;
 @end
 

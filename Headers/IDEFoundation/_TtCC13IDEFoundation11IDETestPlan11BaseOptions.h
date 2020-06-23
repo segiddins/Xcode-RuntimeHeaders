@@ -18,6 +18,8 @@
     MISSING_TYPE *areLocalizationScreenshotsEnabled;
     MISSING_TYPE *userAttachmentLifetime;
     MISSING_TYPE *testTimeoutsEnabled;
+    MISSING_TYPE *defaultTestExecutionTimeAllowance;
+    MISSING_TYPE *maximumTestExecutionTimeAllowance;
 }
 
 - (void).cxx_destruct;

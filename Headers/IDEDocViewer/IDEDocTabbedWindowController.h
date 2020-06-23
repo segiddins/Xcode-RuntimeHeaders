@@ -23,7 +23,6 @@
 @interface IDEDocTabbedWindowController : NSWindowController <IDEDocSearchFieldEditorDelegate, NSTextFieldDelegate, NSToolbarDelegate, NSWindowDelegate, NSWindowRestoration, DVTInvalidation, DVTStatefulObject, DVTStateRepositoryDelegate, IDEDocTabbedWindowControllerProtocol, IDEEditorMenuContentProvider, IDETabbedWindowController>
 {
     DVTObservingToken *_tabLabelWatcher;
-    DVTObservingToken *_sidebarVisibleWatcher;
     DVTObservingToken *_firstResponderWatcher;
     id _leftMouseUpEventMonitor;
     IDEDocSearchResultsController *_toolbarSearchResultsController;
@@ -43,6 +42,7 @@
     NSString *_downloadsToolbarItemIdentifier;
     NSToolbarItem *_downloadsToolbarItem;
     NSToolbarItem *_shareToolbarItem;
+    NSToolbarItem *_separatorToolbarItem;
     DVTStateToken *_stateToken;
     DVTStateRepository *_stateRepository;
     NSMutableSet *_stateChangeObservingTokens;
@@ -50,6 +50,7 @@
     DVTNotificationToken *_progressFinishedObservingToken;
     DVTNotificationToken *_applicationIsWillTerminateNotificationToken;
     BOOL _disableWindowRestoration;
+    BOOL _isTabBarVisible;
     IDEDocDocumentationTabViewController *_documentationTabViewController;
     NSString *_currentSearchString;
 }
@@ -63,6 +64,7 @@
 + (void)initialize;
 - (void).cxx_destruct;
 @property(copy) NSString *currentSearchString; // @synthesize currentSearchString=_currentSearchString;
+@property BOOL isTabBarVisible; // @synthesize isTabBarVisible=_isTabBarVisible;
 @property(retain, nonatomic) IDEDocDocumentationTabViewController *documentationTabViewController; // @synthesize documentationTabViewController=_documentationTabViewController;
 - (id)extensionForMenuContent;
 - (id)toolbar:(id)arg1 itemForItemIdentifier:(id)arg2 willBeInsertedIntoToolbar:(BOOL)arg3;
@@ -70,6 +72,8 @@
 - (void)_closeDownloadsHUDPopUp:(id)arg1;
 - (void)_updateDownloadHUDLocation;
 - (void)_showDownloadsHUDPopUp:(id)arg1;
+- (id)_separatorToolbarItem;
+- (id)_rootSplitView;
 - (id)_downloadsToolbarItem;
 - (void)_shareToolbarItemAction:(id)arg1;
 - (id)_shareToolbarItem;
@@ -147,6 +151,7 @@
 - (void)toolbar_backForward:(id)arg1;
 - (void)goForward:(id)arg1;
 - (void)goBack:(id)arg1;
+- (void)openFeaturedPage;
 - (void)makeNewTabAndLoadURL:(id)arg1;
 - (void)setWindowTitleFromTabViewController:(id)arg1;
 - (void)clearSearchField;
@@ -161,6 +166,8 @@
 - (void)windowWillStartLiveResize:(id)arg1;
 - (void)_searchWithString:(id)arg1;
 - (void)windowDidLoad;
+- (void)_updateWindowForTabBarVisibility;
+- (void)_startObservingTabBarVisibility;
 - (void)_endObservingDownload:(id)arg1;
 - (void)_beginObservingDownload:(id)arg1;
 - (void)_updateDownloadsButtonProgress;

@@ -8,38 +8,35 @@
 
 #import <IDEFoundation/IDETestsInTestableObserver-Protocol.h>
 
-@class IDEWorkspace, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString;
+@class IDEWorkspace, NSMutableDictionary, NSMutableSet, NSString;
 
 @interface IDETestableIssueProvider : IDEIssueProvider <IDETestsInTestableObserver>
 {
     IDEWorkspace *_workspace;
     NSMutableDictionary *_issuesByTestID;
-    NSMutableArray *_genericIssues;
     unsigned long long _currentIssueGeneration;
     NSMutableSet *_observedTestables;
     BOOL _shouldPrefixAnnotationsWithConfigurationName;
 }
 
-+ (id)_documentLocationForFilePath:(id)arg1 lineNumber:(id)arg2 timestamp:(id)arg3;
 + (unsigned long long)assertionBehaviorAfterEndOfEventForSelector:(SEL)arg1;
 - (void).cxx_destruct;
 @property BOOL shouldPrefixAnnotationsWithConfigurationName; // @synthesize shouldPrefixAnnotationsWithConfigurationName=_shouldPrefixAnnotationsWithConfigurationName;
 - (void)_processResult:(id)arg1 forTest:(id)arg2;
-- (void)_addIssuesForTest:(id)arg1 issues:(id)arg2 isGeneric:(BOOL)arg3;
+- (id)issuesForTestResult:(id)arg1 test:(id)arg2;
+- (void)_addIssuesForTest:(id)arg1 issues:(id)arg2;
 - (void)_clearStaleIssuesForTest:(id)arg1;
-- (void)_clearGenericIssues;
 - (void)_postTestIssue:(id)arg1 forTestable:(id)arg2;
-- (id)_documentLocationForFilePath:(id)arg1 lineNumber:(id)arg2 timestamp:(id)arg3;
-- (id)_headingNameForTest:(id)arg1;
 - (void)_beginNewIssueGenerationPrefixingAnnotationsWithConfigurationName:(BOOL)arg1;
 - (BOOL)_filterIssuesByActiveScheme;
+- (BOOL)shouldAutoExpandIssueInNavigator:(id)arg1;
 - (id)displayNameForIssueTypeIdentifier:(id)arg1;
 - (void)testsChanged:(id)arg1;
 - (void)testablesChanged:(id)arg1;
 - (void)allTestablesChanged;
 - (void)_updateObservedTestablesForTest:(id)arg1;
 - (void)primitiveInvalidate;
-- (id)_initWithWorkspace:(id)arg1;
+- (id)initWithWorkspace:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

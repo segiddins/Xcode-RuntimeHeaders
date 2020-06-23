@@ -6,11 +6,12 @@
 
 #import <DVTSourceControl/DVTSourceControlXPCResultType.h>
 
-@class DVTSourceControlAuthor, MISSING_TYPE;
+@class MISSING_TYPE, NSString;
 
 @interface DVTSourceControlAuthorResultType : DVTSourceControlXPCResultType
 {
-    MISSING_TYPE *author;
+    MISSING_TYPE *name;
+    MISSING_TYPE *email;
 }
 
 + (BOOL)supportsSecureCoding;
@@ -19,9 +20,10 @@
 - (id)copyWithZone:(void *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithAuthor:(id)arg1 error:(id)arg2;
+- (id)initWithName:(id)arg1 email:(id)arg2 error:(id)arg3;
 - (id)initWithError:(id)arg1;
-@property(nonatomic, readonly) DVTSourceControlAuthor *value; // @synthesize value=author;
+@property(nonatomic, readonly) NSString *email;
+@property(nonatomic, readonly) NSString *name;
 
 @end
 

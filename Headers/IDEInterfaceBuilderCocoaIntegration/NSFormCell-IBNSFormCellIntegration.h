@@ -11,9 +11,12 @@
 @class NSString;
 
 @interface NSFormCell (IBNSFormCellIntegration) <IBDocumentArchiving>
++ (id)keyPathsForValuesAffectingIbInspectedTitleAlignment;
 + (id)keyPathsForValuesAffectingIbInspectedTitle;
 - (struct CGSize)ibPreferredSizeForSize:(struct CGSize)arg1;
 - (Class)ibEditorClass;
+- (void)setIbInspectedTitleAlignment:(long long)arg1;
+- (long long)ibInspectedTitleAlignment;
 - (void)setIbInspectedTitle:(id)arg1;
 - (id)ibInspectedTitle;
 - (id)ibDefaultFontKeyPath;

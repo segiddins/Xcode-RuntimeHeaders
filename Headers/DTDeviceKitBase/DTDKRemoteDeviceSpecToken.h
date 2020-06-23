@@ -28,7 +28,6 @@
 - (id)platform;
 - (long long)_NSIntegerForKeyInTokenProperties:(id)arg1;
 - (id)_objectForKeyInTokenProperties:(id)arg1;
-- (id)developerDiskImageForDeviceType:(id)arg1 productVersion:(id)arg2 buildVersion:(id)arg3;
 - (id)initWithDeviceIdentifier:(id)arg1 tokenProperties:(id)arg2;
 
 @end

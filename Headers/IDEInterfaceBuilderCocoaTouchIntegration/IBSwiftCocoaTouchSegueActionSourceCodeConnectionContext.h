@@ -21,6 +21,7 @@
 - (id)containingClassName;
 - (id)qualifiedType;
 - (id)defaultType;
+- (unsigned long long)methodKind;
 
 @end
 

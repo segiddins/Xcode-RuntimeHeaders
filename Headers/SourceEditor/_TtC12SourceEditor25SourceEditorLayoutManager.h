@@ -56,6 +56,8 @@
     MISSING_TYPE *$__lazy_storage_$_dataSourceObserver;
     MISSING_TYPE *$__lazy_storage_$_identifier;
     MISSING_TYPE *isAdjustingViewport;
+    MISSING_TYPE *cachedLineLayerCount;
+    MISSING_TYPE *layoutScale;
     MISSING_TYPE *hasPreviouslyAttachedAuxiliaryView;
     MISSING_TYPE *hasPreviouslyAttachedSubstitutionView;
 }

@@ -14,9 +14,11 @@
     unsigned long long _status;
     unsigned long long _sortBy;
     unsigned long long _sortDirection;
+    long long _limit;
 }
 
 + (BOOL)supportsSecureCoding;
+@property(readonly, nonatomic) long long limit; // @synthesize limit=_limit;
 @property(readonly, nonatomic) unsigned long long sortDirection; // @synthesize sortDirection=_sortDirection;
 @property(readonly, nonatomic) unsigned long long sortBy; // @synthesize sortBy=_sortBy;
 @property(readonly, nonatomic) unsigned long long status; // @synthesize status=_status;
@@ -26,7 +28,9 @@
 - (id)description;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
-- (id)initWithStatus:(unsigned long long)arg1 sortBy:(unsigned long long)arg2 sortDirection:(unsigned long long)arg3;
+- (id)initWithStatus:(unsigned long long)arg1 sortBy:(unsigned long long)arg2 sortDirection:(unsigned long long)arg3 limit:(long long)arg4;
+- (id)initWithStatus:(unsigned long long)arg1 limit:(long long)arg2;
+- (id)initWithStatus:(unsigned long long)arg1;
 
 @end
 

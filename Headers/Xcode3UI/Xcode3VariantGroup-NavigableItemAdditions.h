@@ -20,6 +20,12 @@
 @property(readonly, nonatomic) NSArray *navigableItem_childRepresentedObjects;
 @property(readonly, nonatomic) NSString *navigableItem_toolTip;
 @property(readonly, nonatomic) NSString *navigableItem_name;
+- (BOOL)explorableHasFilterableSCMStatus;
+- (id)explorableIcon;
+- (id)explorableDocumentType;
+- (id)explorableItemForNavigation;
+- (id)explorableDocumentURL;
+- (BOOL)hidesSoleExplorableChild;
 - (id)applicableInspectorSlicesForCategory:(id)arg1 suggestedSlices:(id)arg2;
 - (id)referenceForAssetTagEditor;
 - (id)ideInspectedExpectedDevReigonFilePath;

@@ -11,6 +11,7 @@
 @interface DTAllocationsRecorder : NSObject
 {
     struct DTXSharedMemory *_shmem;
+    struct _CSTypeRef _trackingSymbolicator;
     NSObject<OS_dispatch_queue> *_processingQueue;
     NSObject<OS_dispatch_queue> *_serialEventQueue;
     CDStruct_6c9135d0 *_partialEvent;
@@ -30,7 +31,8 @@
 }
 
 + (BOOL)configureLocalLaunchEnvironment:(id)arg1 recordedEventsMask:(unsigned int)arg2;
-+ (long long)currentVersion;
++ (id)_libraryPath;
++ (int)currentVersion;
 + (id)serviceIdentifier;
 + (unsigned int)cppClassNamesMask;
 + (unsigned int)zombieEventsMask;
@@ -54,9 +56,8 @@
 - (void)addKeyFrame:(CDStruct_6c9135d0 *)arg1;
 - (BOOL)_startWithError:(id *)arg1;
 - (BOOL)startForProcessingBuffersWithError:(id *)arg1;
-- (BOOL)startWithLaunchedTask:(unsigned int)arg1 error:(id *)arg2;
-- (BOOL)startAttachingToRunningTask:(unsigned int)arg1 recordedEventsMask:(unsigned int)arg2 error:(id *)arg3;
-- (unsigned long long)_setupSharedMemoryInTask:(unsigned int)arg1 error:(id *)arg2;
+- (void)startAttachingToTask:(unsigned int)arg1 recordedEventsMask:(unsigned int)arg2 errorHandler:(CDUnknownBlockType)arg3;
+- (unsigned long long)_setupSharedMemoryInTask:(unsigned int)arg1;
 - (void)dealloc;
 - (id)init;
 

@@ -42,7 +42,6 @@
     id _targetProductSettingsDidChangeNotificationObservingToken;
     id _buildOperationDidStopNotificationObservingToken;
     id _targetNameDidChangeNotificationObservingToken;
-    id _capabilitiesDidChangeNotificationObservingToken;
     id _availableConfigurationNamesDidChangeObservingToken;
     id _projectSettingsDidChangeObservingToken;
     IDEActivityLogSection *_issueLog;
@@ -148,7 +147,6 @@
 - (void)_respondToTargetWillBeRemovedNotification:(id)arg1;
 - (void)_respondToProjectSettingsDidChangeNotification:(id)arg1;
 - (void)_respondToAvailableConfigurationNamesDidChangeNotification:(id)arg1;
-- (void)_respondToCapabilitiesDidChangeBroadcast:(id)arg1;
 - (void)_respondToProjectIntegrityLogDidChangeNotification:(id)arg1;
 - (void)_respondToBuildOperationDidStopNotification:(id)arg1;
 - (void)_respondToTargetNameDidChangeNotification:(id)arg1;
@@ -277,6 +275,7 @@
 - (id)customDataStore;
 - (id)supportedPlatformsForConfiguration:(id)arg1 workspaceArenaSnapshot:(id)arg2;
 - (id)supportedPlatformsForBuildParameters:(id)arg1;
+- (id)architecturesForBuildParameters:(id)arg1;
 - (id)availableArchitecturesForConfiguration:(id)arg1 workspaceArenaSnapshot:(id)arg2;
 - (id)availableArchitecturesForBuildParameters:(id)arg1;
 @property(readonly, copy) NSString *defaultConfigurationName;
@@ -319,8 +318,10 @@
 // Remaining properties
 @property(readonly, copy) IDEPIFGUID *PIFGUID;
 @property(readonly) IDETypeIdentifier *activityLogDomainType;
+@property(readonly) BOOL alwaysDisplayIssuesIndependentOfActiveSchemeFilter;
 @property(retain) DVTStackBacktrace *creationBacktrace;
 @property(readonly, copy) NSString *debugDescription;
+@property(readonly) NSString *dynamicVariantBlueprintIdentifier;
 @property(readonly) unsigned long long hash;
 @property(readonly) DVTStackBacktrace *invalidationBacktrace;
 @property(readonly) BOOL participatesInSchemeAutocreation;

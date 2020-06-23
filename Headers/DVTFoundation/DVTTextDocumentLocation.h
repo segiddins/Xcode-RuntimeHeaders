@@ -30,6 +30,7 @@
 - (id)dvt_initFromPersistableStringRepresentation:(id)arg1 error:(out id *)arg2;
 - (id)copyWithURL:(id)arg1;
 - (long long)compare:(id)arg1;
+- (unsigned long long)hash;
 - (BOOL)isEqualDisregardingTimestamp:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 @property(readonly) struct _NSRange lineRange;

@@ -15,7 +15,9 @@
     MISSING_TYPE *fs;
     MISSING_TYPE *userInfo;
     MISSING_TYPE *systemInfo;
+    MISSING_TYPE *userPreferences;
     MISSING_TYPE *workspaceSettings;
+    MISSING_TYPE *xcframeworks;
     MISSING_TYPE *sdkRegistryCache;
     MISSING_TYPE *headerIndexCache;
     MISSING_TYPE *settingsCache;

@@ -39,10 +39,12 @@
     BOOL _showsPhysFootprint;
     unsigned int _objectContentLevel;
     unsigned int _objectContentLevelForNodeLabels;
+    NSDictionary *_srcAddressToExtraAutoreleaseCountDict;
 }
 
 - (void).cxx_destruct;
 @property(nonatomic) unsigned int objectContentLevelForNodeLabels; // @synthesize objectContentLevelForNodeLabels=_objectContentLevelForNodeLabels;
+@property(retain, nonatomic) NSDictionary *srcAddressToExtraAutoreleaseCountDict; // @synthesize srcAddressToExtraAutoreleaseCountDict=_srcAddressToExtraAutoreleaseCountDict;
 @property(nonatomic) unsigned int objectContentLevel; // @synthesize objectContentLevel=_objectContentLevel;
 @property(nonatomic) BOOL showsPhysFootprint; // @synthesize showsPhysFootprint=_showsPhysFootprint;
 @property(readonly, nonatomic) NSString *executablePath; // @synthesize executablePath=_executablePath;
@@ -106,7 +108,7 @@
 - (void)setThreadName:(id)arg1 forRange:(struct _VMURange)arg2;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)archiveDictionaryRepresentation:(id)arg1 options:(unsigned long long)arg2;
-- (id)initWithArchived:(id)arg1 version:(long long)arg2 options:(unsigned long long)arg3 diskLogs:(id)arg4;
+- (id)initWithArchived:(id)arg1 version:(long long)arg2 options:(unsigned long long)arg3 diskLogs:(id)arg4 error:(id *)arg5;
 - (void)dealloc;
 - (id)initWithPid:(int)arg1 nodes:(struct _VMUBlockNode *)arg2 nodeCount:(unsigned int)arg3 zoneNames:(id)arg4 classInfoMap:(id)arg5 regions:(id)arg6 pthreadOffsets:(id)arg7 userMarked:(void *)arg8;
 

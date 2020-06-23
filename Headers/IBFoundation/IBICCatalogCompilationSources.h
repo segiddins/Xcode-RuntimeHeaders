@@ -39,6 +39,7 @@
 @property(readonly) NSSet *pathsToDeleteAtEndOfCompilation; // @synthesize pathsToDeleteAtEndOfCompilation=_pathsToDeleteAtEndOfCompilation;
 @property(retain) IBICCatalogCollection *catalogCollection; // @synthesize catalogCollection=_catalogCollection;
 - (id)description;
+- (BOOL)hasColorNamed:(id)arg1;
 - (BOOL)hasAppIconForCARFileNamed:(id)arg1;
 - (void)addPathToDeleteAtEndOfCompilation:(id)arg1;
 - (id)allItems;

@@ -19,7 +19,7 @@
 - (void)primitiveInvalidate;
 - (id)identifierForStatePreservationForModel:(id)arg1;
 - (id)imageForIssueTypeIdentifier:(id)arg1 ofSize:(long long)arg2;
-- (id)createBreakpointIfNecessaryIgnoreExisting:(BOOL)arg1;
+- (id)createBreakpointIfNecessary:(id)arg1 ignoreExisting:(BOOL)arg2;
 - (BOOL)canCreateBreakpoint;
 - (unsigned long long)breakpointType;
 - (id)ideModelObjectTypeIdentifier;

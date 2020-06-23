@@ -6,10 +6,12 @@
 
 #import <IDEKit/IDEViewController.h>
 
-@class NSPopUpButton, NSTextField;
+@class NSButton, NSPopUpButton, NSTextField;
 
 @interface IDENavigationPrefsPaneController : IDEViewController
 {
+    NSButton *_activationWindowBehaviorButton;
+    NSButton *_fullscreenWindowBehaviorButton;
     NSPopUpButton *_commandClickOnCodePopUpButton;
     NSPopUpButton *_optionClickOnCodePopUpButton;
     NSPopUpButton *_navigationPopUpButton;
@@ -42,6 +44,8 @@
 @property(retain) NSPopUpButton *navigationPopUpButton; // @synthesize navigationPopUpButton=_navigationPopUpButton;
 @property(retain) NSPopUpButton *optionClickOnCodePopUpButton; // @synthesize optionClickOnCodePopUpButton=_optionClickOnCodePopUpButton;
 @property(retain) NSPopUpButton *commandClickOnCodePopUpButton; // @synthesize commandClickOnCodePopUpButton=_commandClickOnCodePopUpButton;
+@property(retain) NSButton *fullscreenWindowBehaviorButton; // @synthesize fullscreenWindowBehaviorButton=_fullscreenWindowBehaviorButton;
+@property(retain) NSButton *activationWindowBehaviorButton; // @synthesize activationWindowBehaviorButton=_activationWindowBehaviorButton;
 - (void)setDoubleClickTarget:(unsigned long long)arg1;
 - (unsigned long long)doubleClickTarget;
 - (void)_setupDoubleClickNavigationPopUpButton;

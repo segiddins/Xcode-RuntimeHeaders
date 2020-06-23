@@ -19,12 +19,13 @@
     DVTObservingToken *_workspaceIsCleaningObservingToken;
     NSString *_label;
     NSString *_tooltip;
-    NSToolbarItem *_toolbarItem;
     BOOL _isValidToolbarItem;
+    NSToolbarItem *_toolbarItem;
 }
 
 + (void)initialize;
 - (void).cxx_destruct;
+@property __weak NSToolbarItem *toolbarItem; // @synthesize toolbarItem=_toolbarItem;
 @property BOOL isValidToolbarItem; // @synthesize isValidToolbarItem=_isValidToolbarItem;
 - (void)performAnalyzeAction:(id)arg1;
 - (void)performProfileAction:(id)arg1;
@@ -33,8 +34,6 @@
 - (void)_performAction:(SEL)arg1 actionWithoutBuild:(SEL)arg2 buildAction:(SEL)arg3 editAction:(SEL)arg4 buttonStyleAction:(SEL)arg5 actionOnlyType:(int)arg6 buildOnlyType:(int)arg7 sender:(id)arg8;
 - (void)buildActiveRunContextWithTimingSummary:(id)arg1;
 - (BOOL)menuItemRepresentsBuildOnly:(id)arg1;
-- (void)setToolbarItem:(id)arg1;
-- (id)_toolbarItem;
 - (void)_setButtonToBuildStyle:(id)arg1 menuItem:(id)arg2;
 - (void)_setButtonToAnalyzeStyle:(id)arg1 menuItem:(id)arg2;
 - (void)_setButtonToProfileStyle:(id)arg1 menuItem:(id)arg2;

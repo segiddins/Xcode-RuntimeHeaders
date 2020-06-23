@@ -24,9 +24,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) DependencyGraphVisualRepresentation *gvVisualRepresentation; // @synthesize gvVisualRepresentation=_gvVisualRepresentation;
 @property(retain, nonatomic) NSArray *encoderItems; // @synthesize encoderItems=_encoderItems;
 @property(retain, nonatomic) DVTFuture *layoutFuture; // @synthesize layoutFuture=_layoutFuture;
-- (id)loadThumbnails:(id)arg1 replayController:(id)arg2;
-- (void)_renderThumbnails:(id)arg1;
-- (void)_harvestThumbnails:(id)arg1 replayController:(id)arg2 promise:(id)arg3;
 - (id)layoutGraph;
 - (id)buildGraph;
 - (id)_findGroup:(id)arg1 depth:(int)arg2;

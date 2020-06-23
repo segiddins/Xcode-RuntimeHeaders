@@ -4,25 +4,26 @@
 //  Copyright (C) 1997-2019 Steve Nygard.
 //
 
-#import <IDEFoundation/IDEOpenQuicklyResultBlockGenerator.h>
+#import <IDEFoundation/IDEOpenQuicklyPrototypeBasedResultBlockGenerator.h>
 
-@class DVTFilePath, IDEOpenQuicklyQueryCandidateBlock;
+@class DVTFilePath, DVTFuzzyMatchCandidateBlock, NSIndexSet;
 
-@interface IDEOpenQuicklySDKFilePathResultGenerator : IDEOpenQuicklyResultBlockGenerator
+@interface IDEOpenQuicklySDKFilePathResultGenerator : IDEOpenQuicklyPrototypeBasedResultBlockGenerator
 {
     DVTFilePath *_sourceSDKFilePath;
-    char *_prototypeIsInInterestingFramework;
-    IDEOpenQuicklyQueryCandidateBlock *_frameworkStyleCandidates;
+    unsigned char *_candidateFlags;
+    DVTFuzzyMatchCandidateBlock *_frameworkStyleCandidates;
+    NSIndexSet *_privateFilePathsIndexSet;
 }
 
-+ (void)populateInterestingFrameworkValues:(char *)arg1 fromFilePaths:(id)arg2 givenInterestingFrameworkNames:(id)arg3;
++ (void)populateCandidateFlags:(unsigned char *)arg1 fromFilePaths:(id)arg2 givenInterestingFrameworkNames:(id)arg3 privateFilePathsIndexSet:(id)arg4;
 - (void).cxx_destruct;
 - (id)candidateBlockForQuery:(id)arg1;
 - (id)frameworkStyleCandidates;
 - (BOOL)supportsLineNumberMatches;
-- (id)resultForPrototype:(id)arg1 candidate:(struct IDEOpenQuicklyQueryCandidate *)arg2 query:(id)arg3 fromIndex:(long long)arg4;
+- (id)resultForPrototype:(id)arg1 candidate:(struct DVTFuzzyMatchCandidate *)arg2 query:(id)arg3 fromIndex:(long long)arg4;
 - (void)dealloc;
-- (id)initWithPrototypes:(id)arg1 candidates:(id)arg2 sourceSDKFilePath:(id)arg3 queryContext:(id)arg4 consumer:(id)arg5;
+- (id)initWithPrototypes:(id)arg1 candidates:(id)arg2 privateFilePathsIndexSet:(id)arg3 sourceSDKFilePath:(id)arg4 queryContext:(id)arg5 consumer:(id)arg6;
 
 @end
 

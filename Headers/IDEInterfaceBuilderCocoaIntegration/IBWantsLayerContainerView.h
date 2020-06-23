@@ -15,8 +15,8 @@
 
 - (void).cxx_destruct;
 @property(retain) NSTableView *tableView; // @synthesize tableView=_tableView;
-- (void)layoutBottomUp;
-- (void)layoutTopDown;
+- (void)dvt_positionSubviewsAndSizeSelfAfterSubviewLayout;
+- (void)dvt_configureSubviewsBeforeSubviewLayout;
 - (id)scrollView;
 
 @end

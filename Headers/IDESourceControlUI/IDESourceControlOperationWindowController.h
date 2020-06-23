@@ -31,6 +31,7 @@
 - (void)_beginSheetForWorkspaceTabController:(id)arg1 workingCopy:(id)arg2 workingCopies:(id)arg3 operationViewControllerClass:(Class)arg4 context:(id)arg5 completion:(CDUnknownBlockType)arg6;
 - (void)beginSheetForWorkspaceTabController:(id)arg1 workingCopy:(id)arg2 operationViewControllerClass:(Class)arg3 context:(id)arg4;
 - (void)beginSheetForWorkspaceTabController:(id)arg1 workingCopy:(id)arg2 operationViewControllerClass:(Class)arg3 context:(id)arg4 completion:(CDUnknownBlockType)arg5;
+- (void)beginSheetForWorkspaceTabController:(id)arg1 workingCopies:(id)arg2 operationViewControllerClass:(Class)arg3 context:(id)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)beginSheetForWorkspaceTabController:(id)arg1 workingCopies:(id)arg2 operationViewControllerClass:(Class)arg3 context:(id)arg4;
 
 // Remaining properties

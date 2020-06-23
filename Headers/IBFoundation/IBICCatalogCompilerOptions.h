@@ -16,12 +16,13 @@
     NSMutableSet *_impliedIdiomIdentifiers;
     BOOL _compressPNGs;
     BOOL _enableOnDemandResources;
-    BOOL _appIconAsPNGOnly;
     BOOL _enableIncrementalDistill;
     BOOL _thinArtwork;
     BOOL _dumpAssets;
+    BOOL _includeStickerContent;
     BOOL _supportsResizableImages;
     BOOL _supportsTemplateRenderingIntent;
+    long long _appIconOutputLocation;
     long long _optimization;
     NSString *_issueTextForUnavailableOnDemandResourcesBuildSupport;
     NSString *_outputDirectory;
@@ -29,6 +30,8 @@
     NSString *_brandAssetCollectionName;
     NSString *_appIconName;
     NSString *_launchImageName;
+    NSString *_accentColorName;
+    NSString *_widgetBackgroundColorName;
     NSString *_minimumDeploymentTarget;
     NSString *_targetPlatform;
     NSNumber *_platformCoreUIValue;
@@ -38,7 +41,7 @@
     NSDictionary *_extendedParameters;
     NSString *_stickerPackIdentifierPrefix;
     NSDictionary *_stringFilesByStickerPackAndLanguage;
-    NSString *_productType;
+    long long _stickersIconRole;
     NSDictionary *_buildEnvironment;
     NSDictionary *_additionalEnvironment;
     NSString *_sourceGenerationOutputDirectory;
@@ -74,7 +77,8 @@
 @property(copy) NSString *sourceGenerationOutputDirectory; // @synthesize sourceGenerationOutputDirectory=_sourceGenerationOutputDirectory;
 @property(copy, nonatomic) NSDictionary *additionalEnvironment; // @synthesize additionalEnvironment=_additionalEnvironment;
 @property(copy, nonatomic) NSDictionary *buildEnvironment; // @synthesize buildEnvironment=_buildEnvironment;
-@property(copy, nonatomic) NSString *productType; // @synthesize productType=_productType;
+@property(nonatomic) long long stickersIconRole; // @synthesize stickersIconRole=_stickersIconRole;
+@property(nonatomic) BOOL includeStickerContent; // @synthesize includeStickerContent=_includeStickerContent;
 @property(copy, nonatomic) NSDictionary *stringFilesByStickerPackAndLanguage; // @synthesize stringFilesByStickerPackAndLanguage=_stringFilesByStickerPackAndLanguage;
 @property(copy, nonatomic) NSString *stickerPackIdentifierPrefix; // @synthesize stickerPackIdentifierPrefix=_stickerPackIdentifierPrefix;
 @property(nonatomic) BOOL dumpAssets; // @synthesize dumpAssets=_dumpAssets;
@@ -87,6 +91,8 @@
 @property(copy, nonatomic) NSNumber *platformCoreUIValue; // @synthesize platformCoreUIValue=_platformCoreUIValue;
 @property(copy) NSString *targetPlatform; // @synthesize targetPlatform=_targetPlatform;
 @property(copy) NSString *minimumDeploymentTarget; // @synthesize minimumDeploymentTarget=_minimumDeploymentTarget;
+@property(copy) NSString *widgetBackgroundColorName; // @synthesize widgetBackgroundColorName=_widgetBackgroundColorName;
+@property(copy) NSString *accentColorName; // @synthesize accentColorName=_accentColorName;
 @property(copy) NSString *launchImageName; // @synthesize launchImageName=_launchImageName;
 @property(copy) NSString *appIconName; // @synthesize appIconName=_appIconName;
 @property(copy) NSString *brandAssetCollectionName; // @synthesize brandAssetCollectionName=_brandAssetCollectionName;
@@ -95,7 +101,7 @@
 @property(copy) NSString *issueTextForUnavailableOnDemandResourcesBuildSupport; // @synthesize issueTextForUnavailableOnDemandResourcesBuildSupport=_issueTextForUnavailableOnDemandResourcesBuildSupport;
 @property(nonatomic) long long optimization; // @synthesize optimization=_optimization;
 @property(nonatomic) BOOL enableIncrementalDistill; // @synthesize enableIncrementalDistill=_enableIncrementalDistill;
-@property BOOL appIconAsPNGOnly; // @synthesize appIconAsPNGOnly=_appIconAsPNGOnly;
+@property(nonatomic) long long appIconOutputLocation; // @synthesize appIconOutputLocation=_appIconOutputLocation;
 @property BOOL enableOnDemandResources; // @synthesize enableOnDemandResources=_enableOnDemandResources;
 @property BOOL compressPNGs; // @synthesize compressPNGs=_compressPNGs;
 - (id)failureIssueTextForName:(id)arg1;

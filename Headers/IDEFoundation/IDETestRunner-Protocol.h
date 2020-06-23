@@ -11,7 +11,7 @@
 
 @protocol IDETestRunner <DVTInvalidation>
 @property __weak id <IDETestRunnerEvents> testEventsObserver;
-@property(readonly) NSString *title;
+@property(readonly, copy) NSString *title;
 @property(readonly) NSString *currentDiagnosticLogPath;
 @property(readonly) DVTFilePath *runnerArtifactsDirectory;
 @property(readonly) int testRunnerPID;

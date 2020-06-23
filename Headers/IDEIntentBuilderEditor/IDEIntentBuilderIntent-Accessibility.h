@@ -25,15 +25,15 @@
 + (id)pluralPropertyDisplayName;
 + (id)singularPropertyDisplayName;
 + (id)keyPathsForValuesAffectingAllowsCategorySelection;
++ (id)keyPathsForValuesAffectingConfigurable;
 + (id)keyPathsForValuesAffectingIneligibleForSuggestionsEnabled;
 + (id)keyPathsForValuesAffectingUserConfirmationRequiredEnabled;
 + (id)keyPathsForValuesAffectingPossibleRestrictionNames;
 + (id)keyPathsForValuesAffectingPossibleRestrictions;
++ (id)keyPathsForValuesAffectingAllowsConfiguration;
 + (id)keyPathsForValuesAffectingCanAddParameterCombinations;
-+ (id)keyPathsForValuesAffectingCanAddResolvableParameters;
-+ (id)keyPathsForValuesAffectingResolvedParameters;
-+ (id)keyPathsForValuesAffectingUnresolvedParameters;
 + (id)keyPathsForValuesAffectingAllowsInputSelection;
++ (id)keyPathsForValuesAffectingSynonymsDisclosureViewTitle;
 - (id)accessibilityLabel;
 - (void)setSelectedKeyParameters:(id)arg1;
 - (id)selectedKeyParameters;
@@ -55,19 +55,21 @@
 - (id)generatedClassName;
 - (id)originalGeneratedClassName;
 @property(readonly, nonatomic) BOOL allowsCategorySelection;
+@property(readonly, nonatomic, getter=isConfigurableEnabled) BOOL configurableEnabled;
 @property(readonly, nonatomic, getter=isIneligibleForSuggestionsEnabled) BOOL ineligibleForSuggestionsEnabled;
+@property(readonly, nonatomic, getter=isEligibleForWidgetsEnabled) BOOL eligibleForWidgetsEnabled;
 @property(readonly, nonatomic, getter=isUserConfirmationRequiredEnabled) BOOL userConfirmationRequiredEnabled;
 @property(readonly, nonatomic) NSArray *possibleRestrictionNames;
 @property(readonly, nonatomic) NSArray *possibleRestrictions;
+@property(readonly, nonatomic) BOOL canEditDeprecated;
 @property(readonly, nonatomic) BOOL canEditSystemAttributes;
 @property(readonly, nonatomic) BOOL canAddParameterCombinations;
-@property(readonly, nonatomic) BOOL canAddResolvableParameters;
-@property(readonly, nonatomic) NSArray *resolvedParameters;
-@property(readonly, nonatomic) NSArray *unresolvedParameters;
 - (void)updateOriginalGeneratedClassName;
 @property(readonly, nonatomic) BOOL allowsKeyParameterSelection;
 @property(readonly, nonatomic) BOOL allowsInputSelection;
 - (BOOL)isSelectableWhenInserted;
+@property(readonly, copy) NSString *phrasesDisclosureViewTitle;
+@property(readonly) BOOL canAddPhrases;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

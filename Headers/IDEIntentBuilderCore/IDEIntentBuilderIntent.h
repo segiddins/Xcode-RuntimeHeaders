@@ -13,9 +13,12 @@
     NSString *_originalCategoryName;
     NSString *_originalCategoryVerb;
     BOOL _allowsConfiguration;
+    BOOL _supportsInvocationPhrases;
+    BOOL _deprecated;
     BOOL _userConfirmationRequired;
     BOOL _customizable;
     BOOL _ineligibleForSuggestions;
+    BOOL _eligibleForWidgets;
     BOOL _configurable;
     NSString *_domain;
     NSString *_defaultImageName;
@@ -31,6 +34,7 @@
     IDEIntentBuilderIntentParameterCombination *_primaryParameterCombination;
     long long _restrictions;
     NSArray *_parameterCombinations;
+    NSArray *_phrases;
 }
 
 + (id)keyPathsForValuesAffectingUnmanagedParameterCombinations;
@@ -40,8 +44,10 @@
 + (Class)propertyClass;
 + (id)defaultPropertyName;
 - (void).cxx_destruct;
+@property(copy, nonatomic, setter=_setPhrases:) NSArray *phrases; // @synthesize phrases=_phrases;
 @property(copy, nonatomic) NSArray *parameterCombinations; // @synthesize parameterCombinations=_parameterCombinations;
 @property(nonatomic, getter=isConfigurable) BOOL configurable; // @synthesize configurable=_configurable;
+@property(nonatomic, getter=isEligibleForWidgets) BOOL eligibleForWidgets; // @synthesize eligibleForWidgets=_eligibleForWidgets;
 @property(nonatomic, getter=isIneligibleForSuggestions) BOOL ineligibleForSuggestions; // @synthesize ineligibleForSuggestions=_ineligibleForSuggestions;
 @property(nonatomic, getter=isCustomizable) BOOL customizable; // @synthesize customizable=_customizable;
 @property(nonatomic) long long restrictions; // @synthesize restrictions=_restrictions;
@@ -50,6 +56,8 @@
 @property(nonatomic, getter=isUserConfirmationRequired) BOOL userConfirmationRequired; // @synthesize userConfirmationRequired=_userConfirmationRequired;
 @property(nonatomic) long long type; // @synthesize type=_type;
 @property(retain, nonatomic) IDEIntentBuilderIntentCategory *category; // @synthesize category=_category;
+@property(nonatomic, getter=isDeprecated) BOOL deprecated; // @synthesize deprecated=_deprecated;
+@property(nonatomic) BOOL supportsInvocationPhrases; // @synthesize supportsInvocationPhrases=_supportsInvocationPhrases;
 @property(retain, nonatomic) IDEIntentBuilderIntentParameter *keyParameter; // @synthesize keyParameter=_keyParameter;
 @property(retain, nonatomic) IDEIntentBuilderIntentParameter *input; // @synthesize input=_input;
 @property(copy, nonatomic, setter=_setIntentDescriptionID:) NSString *intentDescriptionID; // @synthesize intentDescriptionID=_intentDescriptionID;
@@ -88,9 +96,17 @@
 - (void)addProperty:(id)arg1;
 - (void)addState;
 - (void)updateManagedParameterCombinations;
+- (id)phraseWithIdentifier:(id)arg1;
+- (void)removePhrase:(id)arg1;
+- (void)addPhrase:(id)arg1;
 - (id)codegen_parameterDefaultValuesForSourceLanguage:(unsigned long long)arg1;
+- (id)codegen_deprecatedDynamicEnumerationMethodsForSourceLanguage:(unsigned long long)arg1;
+- (id)codegen_legacyDynamicEnumerationMethodsForSourceLanguage:(unsigned long long)arg1;
 - (id)codegen_dynamicEnumerationMethodsForSourceLanguage:(unsigned long long)arg1;
+- (BOOL)codegen_requiresHandle;
 - (BOOL)codegen_hasDefaultValues;
+- (BOOL)codegen_hasDeprecatedDynamicEnumerations;
+- (BOOL)codegen_hasDynamicEnumerationSearchTerm;
 - (BOOL)codegen_hasDynamicEnumerations;
 - (id)codegen_resolutionResultsImplementationsForSourceLanguage:(unsigned long long)arg1;
 - (id)codegen_resolutionResultsDeclarationsForSourceLanguage:(unsigned long long)arg1;

@@ -6,12 +6,12 @@
 
 #import <IDEFoundation/DVTCancellable-Protocol.h>
 
-@class NSError;
+@class DVTFuture, NSError;
 
 @protocol DVTPromise <DVTCancellable>
-- (id)future;
-- (void)trackFuture:(id)arg1;
-- (void)trackFuture:(id)arg1 progress:(float)arg2 cancel:(BOOL)arg3 result:(BOOL)arg4 error:(BOOL)arg5;
+- (DVTFuture *)future;
+- (void)trackFuture:(DVTFuture *)arg1;
+- (void)trackFuture:(DVTFuture *)arg1 progress:(float)arg2 cancel:(BOOL)arg3 result:(BOOL)arg4 error:(BOOL)arg5;
 - (void)setProgress:(long long)arg1;
 - (void)failWithError:(NSError *)arg1 afterTimeout:(double)arg2;
 - (void)succeedWithResult:(id)arg1 afterTimeout:(double)arg2;

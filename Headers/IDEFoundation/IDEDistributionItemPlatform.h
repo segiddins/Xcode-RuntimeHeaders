@@ -6,17 +6,19 @@
 
 #import <objc/NSObject.h>
 
-@class DVTPlatform, NSError;
+@class DVTPlatform, NSError, NSString;
 
 @interface IDEDistributionItemPlatform : NSObject
 {
     DVTPlatform *_platform;
+    NSString *_sdkVariant;
     NSError *_platformError;
 }
 
-+ (id)distributionItemPlatformWithPlatform:(id)arg1 platformError:(id)arg2;
++ (id)distributionItemPlatformWithPlatform:(id)arg1 sdkVariant:(id)arg2 platformError:(id)arg3;
 - (void).cxx_destruct;
 @property(readonly) NSError *platformError; // @synthesize platformError=_platformError;
+@property(readonly) NSString *sdkVariant; // @synthesize sdkVariant=_sdkVariant;
 @property(readonly) DVTPlatform *platform; // @synthesize platform=_platform;
 
 @end

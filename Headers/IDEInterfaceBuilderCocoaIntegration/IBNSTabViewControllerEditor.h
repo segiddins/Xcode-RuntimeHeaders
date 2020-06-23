@@ -13,6 +13,10 @@
     DVTDelayedInvocation *_synchronizeInvocation;
 }
 
++ (id)_placeholderTabViewItemWithViewType:(long long)arg1 title:(id)arg2 forModelController:(id)arg3;
++ (id)_placeholderTabViewItemsWithViewType:(long long)arg1 fromModelController:(id)arg2;
++ (void)populateDisplayTabViewController:(id)arg1 withViewType:(long long)arg2 fromModelController:(id)arg3;
++ (void)populateDisplayTabView:(id)arg1 withViewType:(long long)arg2 fromModelController:(id)arg3;
 + (Class)ibDropTargetResolverClass;
 - (void).cxx_destruct;
 - (void)willClose;

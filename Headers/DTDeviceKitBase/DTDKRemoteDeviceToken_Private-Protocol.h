@@ -6,7 +6,7 @@
 
 #import <DTDeviceKitBase/DTDKRemoteDeviceToken-Protocol.h>
 
-@class DTDKRemoteDeviceConnection, NSArray, NSDictionary, NSNumber, NSSet, NSString, NSURL;
+@class DTDKRemoteDeviceConnection, NSArray, NSDictionary, NSNumber, NSSet, NSString;
 
 @protocol DTDKRemoteDeviceToken_Private <DTDKRemoteDeviceToken>
 @property(copy, nonatomic) NSString *bonjourServiceName;
@@ -45,7 +45,6 @@
 @property(retain) DTDKRemoteDeviceConnection *primaryWiredConnection;
 @property(retain) DTDKRemoteDeviceConnection *primaryConnection;
 - (void)setWirelessEnabled:(BOOL)arg1;
-- (NSURL *)developerDiskImageForDeviceType:(NSString *)arg1 productVersion:(NSString *)arg2 buildVersion:(NSString *)arg3;
 - (void)removeConnection:(DTDKRemoteDeviceConnection *)arg1;
 - (void)addConnection:(DTDKRemoteDeviceConnection *)arg1;
 - (void)awakeWithDictionaryRepresentation:(NSDictionary *)arg1;

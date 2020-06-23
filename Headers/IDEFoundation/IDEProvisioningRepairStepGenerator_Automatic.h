@@ -16,6 +16,8 @@
 - (BOOL)_evaluateDevicesWithSession:(id)arg1 context:(id)arg2 repairable:(id)arg3 steps:(id)arg4 userAction:(id *)arg5 error:(id *)arg6;
 - (id)_errorForDistributionCertsAlreadyExist:(id)arg1 context:(id)arg2;
 - (BOOL)_evaluateCertificatesWithSession:(id)arg1 context:(id)arg2 repairable:(id)arg3 steps:(id)arg4 userAction:(id *)arg5 error:(id *)arg6;
+- (id)_getPrimaryCertificateType:(id)arg1 team:(id)arg2 context:(id)arg3;
+- (id)_allCertificateTypesForProgram:(id)arg1 purpose:(id)arg2 profileType:(id)arg3 context:(id)arg4;
 - (id)_createCertificateRepairStepWithCertificateType:(id)arg1;
 - (BOOL)_isUnderLimitForCertificateType:(id)arg1 certificates:(id)arg2 context:(id)arg3;
 - (BOOL)_newestLocalCertIsOnPortal:(id)arg1 purpose:(id)arg2 context:(id)arg3;

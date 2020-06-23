@@ -24,7 +24,6 @@
 }
 
 + (id)cellWithRow:(id)arg1 column:(id)arg2;
-+ (void)initialize;
 + (id)instantiateWithDocumentUnarchiver:(id)arg1;
 - (void).cxx_destruct;
 @property BOOL encodeAsRuntimeInstance; // @synthesize encodeAsRuntimeInstance=_encodeAsRuntimeInstance;
@@ -46,15 +45,18 @@
 - (void)ibPopulateChildRelationOrder:(id)arg1;
 - (id)ibPasteboardTypes;
 - (id)ibInspectedRowAlignmentInheritedDisplayString;
+- (id)ibInspectedRowAlignmentInheritedAndNoneTitlesForMultipleSelection;
 - (id)ibInspectedRowAlignmentInheritedAndNoneTitles;
 - (id)ibInspectedRowAlignmentInheritedAndNoneValues;
 - (void)invalidatePlacementAndAlignmentIfNeeded;
 - (id)ibInspectedYPlacementInheritedDisplayString;
 @property(readonly, nonatomic) long long ibEffectiveYPlacement;
+- (id)ibInspectedYPlacementInheritedAndNoneTitlesForMultipleSelection;
 - (id)ibInspectedYPlacementInheritedAndNoneTitles;
 - (id)ibInspectedYPlacementInheritedAndNoneValues;
 - (id)ibInspectedXPlacementInheritedDisplayString;
 @property(readonly, nonatomic) long long ibEffectiveXPlacement;
+- (id)ibInspectedXPlacementInheritedAndNoneTitlesForMultipleSelection;
 - (id)ibInspectedXPlacementInheritedAndNoneTitles;
 - (id)ibInspectedXPlacementInheritedAndNoneValues;
 @property(readonly, nonatomic) BOOL hasMergedOrUnmergedContent;

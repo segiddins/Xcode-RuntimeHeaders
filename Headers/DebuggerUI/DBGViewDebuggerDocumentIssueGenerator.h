@@ -21,7 +21,9 @@
 - (void)_addIssueForAmbiguousView:(id)arg1;
 - (BOOL)_viewRepresentsAWindow:(id)arg1;
 - (BOOL)_shouldIgnoreViewObject:(id)arg1 options:(id)arg2;
+- (void)_recursivelyGenerateCAOptimizationIssuesForViewSurface:(id)arg1 options:(id)arg2;
 - (void)_recursivelyGenerateAmbiguousConstraintsIssuesForView:(id)arg1 options:(id)arg2;
+- (void)generateCAOptimizationIssuesForAllWindowsWithOptions:(id)arg1 issueContainer:(id)arg2;
 - (void)generateAmbiguousConstraintsIssuesForAllWindowsWithOptions:(id)arg1 issueContainer:(id)arg2;
 - (void)generateIssuesForAllWindowsWithOptions:(id)arg1 issueContainer:(id)arg2;
 - (void)clearAllIssues;

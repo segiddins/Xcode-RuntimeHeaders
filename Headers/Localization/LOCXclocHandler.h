@@ -11,7 +11,7 @@
 }
 
 - (id)_findLocalizableFilesIn:(id)arg1 nonxliffableOnly:(BOOL)arg2 error:(id *)arg3;
-- (id)_targetLocaleForXcloc:(id)arg1;
+- (id)_defaultTargetLocaleForImport:(id)arg1;
 - (BOOL)_findXliff:(id)arg1 xliffPath:(id *)arg2 error:(id *)arg3;
 - (id)_createFileSetsForFilesIsAssetCatalog:(id)arg1;
 - (id)_compareNonxliffableFileSets:(id)arg1;

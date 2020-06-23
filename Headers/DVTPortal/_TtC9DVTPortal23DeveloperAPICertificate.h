@@ -6,7 +6,7 @@
 
 #import <DVTPortal/_TtC9DVTPortal20DeveloperAPIResource.h>
 
-@class DVTPortalCertificateType, DVTSigningCertificate, MISSING_TYPE, NSDate, NSString;
+@class DVTPortalCertificateType, DVTSigningCertificate, DVTSigningCertificateSerialNumber, MISSING_TYPE, NSDate, NSString;
 
 @interface _TtC9DVTPortal23DeveloperAPICertificate : _TtC9DVTPortal20DeveloperAPIResource
 {
@@ -27,7 +27,7 @@
 @property(nonatomic, readonly) NSString *name;
 @property(nonatomic, readonly) NSString *machineName;
 @property(nonatomic, readonly) NSString *machineID;
-@property(nonatomic, readonly) NSString *serialNumber;
+@property(nonatomic, readonly) DVTSigningCertificateSerialNumber *serialNumber;
 - (BOOL)isExpired;
 @property(nonatomic, readonly) NSDate *expirationDate;
 @property(nonatomic, readonly) DVTSigningCertificate *signingCertificate; // @synthesize signingCertificate;

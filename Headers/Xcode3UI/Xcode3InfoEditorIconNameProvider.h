@@ -6,10 +6,18 @@
 
 #import <Xcode3UI/Xcode3InfoEditorProjectItemNameProvider.h>
 
+@class IDEContainerQuery;
+
 @interface Xcode3InfoEditorIconNameProvider : Xcode3InfoEditorProjectItemNameProvider
 {
+    IDEContainerQuery *_assetCatalogQuery;
 }
 
++ (id)keyPathsForValuesAffectingListContents;
+- (void).cxx_destruct;
+@property(readonly) IDEContainerQuery *assetCatalogQuery; // @synthesize assetCatalogQuery=_assetCatalogQuery;
+- (id)listContents;
+- (void)primitiveInvalidate;
 - (id)initWithBlueprint:(id)arg1 workspace:(id)arg2;
 
 @end

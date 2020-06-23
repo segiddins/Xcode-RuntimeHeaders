@@ -15,6 +15,7 @@
     MISSING_TYPE *backgroundQueue;
     MISSING_TYPE *deviceChromeDescriptionCache;
     MISSING_TYPE *deviceSizeInfoCache;
+    MISSING_TYPE *haveRunPurgeCheck;
 }
 
 @end

@@ -6,10 +6,12 @@
 
 #import <DVTInstrumentsFoundation/DTTapConfig.h>
 
-@class NSDictionary, NSString;
+@class NSDictionary, NSString, NSURL;
 
 @interface DTDTraceTapConfig : DTTapConfig
 {
+    NSURL *_archivingURL;
+    _Bool _createdArchivingURL;
     CDUnknownBlockType _sessionHandler;
     const struct AuthorizationOpaqueRef *_authorization;
 }
@@ -18,6 +20,8 @@
 - (void).cxx_destruct;
 @property(nonatomic) const struct AuthorizationOpaqueRef *authorization; // @synthesize authorization=_authorization;
 @property(copy, nonatomic) CDUnknownBlockType sessionHandler; // @synthesize sessionHandler=_sessionHandler;
+- (BOOL)setArchivingURL:(id)arg1 error:(id *)arg2;
+- (id)archivingURL;
 @property(nonatomic) unsigned int maxStackDepth;
 @property(retain, nonatomic) NSString *preprocessorPath;
 @property(retain, nonatomic) NSDictionary *scriptTextByIdentifier;

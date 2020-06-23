@@ -27,9 +27,10 @@
 @property(nonatomic) BOOL shouldHandleLiveIssues; // @synthesize shouldHandleLiveIssues=_shouldHandleLiveIssues;
 @property(retain) IDEAnnotationContext *context; // @synthesize context=_context;
 - (void)providerWillUninstall;
+- (id)_annotationForIssue:(id)arg1;
+- (id)_issuesForDocumentWithURL:(id)arg1;
 - (void)_rebuildAnnotations;
 - (id)initWithContext:(id)arg1;
-- (id)init;
 - (void)didDeleteOrReplaceParagraphForAnnotation:(id)arg1;
 - (void)_revealInIssueNavigator:(id)arg1;
 - (double)sidebarMarkerOpacityForAnnotation:(id)arg1;

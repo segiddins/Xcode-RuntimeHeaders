@@ -33,8 +33,6 @@
     MISSING_TYPE *lockedLandmarkScope;
     MISSING_TYPE *$__lazy_storage_$_hideSelectedLandmarkHighlightContinuation;
     MISSING_TYPE *$__lazy_storage_$_changeHoveredLandmarkScopeDepthContinuation;
-    MISSING_TYPE *layoutVisualizations;
-    MISSING_TYPE *marginAccessories;
     MISSING_TYPE *isHoldingCommand;
     MISSING_TYPE *didStartDragInMinimap;
     MISSING_TYPE *mouseDownInfo;
@@ -45,6 +43,7 @@
     MISSING_TYPE *contentHeight;
     MISSING_TYPE *minimapScrollHeight;
     MISSING_TYPE *layoutBoundsWidth;
+    MISSING_TYPE *config;
     MISSING_TYPE *scrollViewOrigin;
     MISSING_TYPE *gestureState;
     MISSING_TYPE *$__lazy_storage_$_pendingInteractionContinuation;

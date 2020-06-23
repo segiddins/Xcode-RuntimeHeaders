@@ -23,6 +23,7 @@
 @property(readonly) NSString *projectPath; // @synthesize projectPath=_projectPath;
 @property(readonly) NSString *projectName; // @synthesize projectName=_projectName;
 @property(readonly) NSString *name; // @synthesize name=_name;
+@property(readonly) BOOL productIsApp;
 - (id)initWithInformationFromTarget:(id)arg1;
 
 @end

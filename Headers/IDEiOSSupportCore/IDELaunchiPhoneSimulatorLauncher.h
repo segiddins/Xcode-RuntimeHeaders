@@ -4,13 +4,13 @@
 //  Copyright (C) 1997-2019 Steve Nygard.
 //
 
-#import <IDEiOSSupportCore/IDEDeviceRunOperationWorker.h>
+#import <IDEiOSSupportCore/IDEDeviceLaunchRunOperationWorker.h>
 
 #import <IDEiOSSupportCore/DTMISProcessControlServiceAuthorizedAPI-Protocol.h>
 
 @class DTXChannel, DVTDispatchLock, DVTFuture, DVTObservingToken, DVTiPhoneSimulator, IDEPseudoTerminal, NSString;
 
-@interface IDELaunchiPhoneSimulatorLauncher : IDEDeviceRunOperationWorker <DTMISProcessControlServiceAuthorizedAPI>
+@interface IDELaunchiPhoneSimulatorLauncher : IDEDeviceLaunchRunOperationWorker <DTMISProcessControlServiceAuthorizedAPI>
 {
     BOOL _debugSessionStarted;
     BOOL _responsibleForTermination;
@@ -37,10 +37,11 @@
 - (void)_cancelProcessControlChannel;
 - (id)_instrumentsProcessControlChannel:(BOOL)arg1;
 - (void)launchCompleteWithAppPID:(int)arg1;
-- (void)executionDidEnd;
+- (void)executionDidEndWithExitCode:(id)arg1 orSignal:(id)arg2;
 - (void)terminate;
 - (void)performWorkerAction;
 - (BOOL)_setupPTY;
+- (id)_fixEnvDyldPathsForWatchSim:(id)arg1 oldRoot:(id)arg2 newRoot:(id)arg3;
 - (void)_setUpSimulatorSessionForAttaching;
 - (void)primitiveInvalidate;
 - (id)initWithExtensionIdentifier:(id)arg1 launchSession:(id)arg2;

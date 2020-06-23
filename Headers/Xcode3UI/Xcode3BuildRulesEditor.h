@@ -9,13 +9,13 @@
 #import <Xcode3UI/IDECapsuleListViewDataSource-Protocol.h>
 #import <Xcode3UI/Xcode3SourceListItemEditor-Protocol.h>
 
-@class DVTBorderedView, DVTGradientImageButton, DVTPerformanceMetric, DVTSearchField, DVTSourceExpression, IDECapsuleListView, NSArray, NSButton, NSMutableArray, NSPredicate, NSString, Xcode3ProjectEditor;
+@class DVTBorderedView, DVTGradientImageButton, DVTPerformanceMetric, DVTScopeBarButton, DVTSearchField, DVTSourceExpression, IDECapsuleListView, NSArray, NSMutableArray, NSPredicate, NSString, Xcode3ProjectEditor;
 @protocol IDEBlueprint;
 
 @interface Xcode3BuildRulesEditor : IDEViewController <Xcode3SourceListItemEditor, IDECapsuleListViewDataSource>
 {
-    NSButton *_displayModeButton_Custom;
-    NSButton *_displayModeButton_All;
+    DVTScopeBarButton *_displayModeButton_Custom;
+    DVTScopeBarButton *_displayModeButton_All;
     DVTSearchField *_searchField;
     IDECapsuleListView *_stackView;
     DVTBorderedView *_topBorderView;

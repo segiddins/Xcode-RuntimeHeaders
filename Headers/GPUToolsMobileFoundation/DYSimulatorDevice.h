@@ -6,7 +6,7 @@
 
 #import <GPUToolsServices/DYDevice.h>
 
-@class DYSimulatorDaemonInstance, NSError, NSString;
+@class NSError;
 @protocol DYSimDevice;
 
 @interface DYSimulatorDevice : DYDevice
@@ -17,8 +17,6 @@
     BOOL _gputoolsServiceAvailable;
     NSError *_gputoolsServiceAvailabilityError;
     BOOL _communicationAvailable;
-    DYSimulatorDaemonInstance *_daemon;
-    NSString *_sdkRoot;
 }
 
 + (id)replayerAppIdentifier;
@@ -27,8 +25,6 @@
 + (Class)launchStrategyClass;
 + (void)initialize;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) NSString *sdkRoot; // @synthesize sdkRoot=_sdkRoot;
-@property(retain, nonatomic) DYSimulatorDaemonInstance *daemon; // @synthesize daemon=_daemon;
 - (id)unlocked;
 - (id)streamArchiveWithTransport:(id)arg1 atURL:(id)arg2 destinationName:(id)arg3;
 - (id)iconDataForApplicationIdentifiers:(id)arg1;

@@ -8,5 +8,10 @@
 
 @interface _TtC18IDESourceControlUI49IDESourceControlCherryPickSelectionViewController (IDESourceControlUI)
 - (void)controlTextDidChange:(id)arg1;
+- (id)tableView:(id)arg1 objectValueForTableColumn:(id)arg2 row:(long long)arg3;
+- (long long)numberOfRowsInTableView:(id)arg1;
+- (void)tableViewSelectionDidChange:(id)arg1;
+- (id)tableView:(id)arg1 viewForTableColumn:(id)arg2 row:(long long)arg3;
+- (double)tableView:(id)arg1 heightOfRow:(long long)arg2;
 @end
 

@@ -18,6 +18,7 @@
     unsigned long long _options;
 }
 
++ (id)initialBranchName;
 + (BOOL)supportsSecureCoding;
 - (void).cxx_destruct;
 @property unsigned long long options; // @synthesize options=_options;
@@ -38,6 +39,7 @@
 - (BOOL)isExactlyEqual:(id)arg1;
 - (unsigned long long)hashWithPushAndPullCount;
 - (unsigned long long)hash;
+- (id)identifierForHashing;
 - (id)dictionaryRepresentationWithOptions:(unsigned long long)arg1;
 - (id)initWithDictionary:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

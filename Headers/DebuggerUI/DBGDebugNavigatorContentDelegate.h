@@ -11,13 +11,14 @@
 #import <DebuggerUI/IDEDebugNavigableContentDelegate-Protocol.h>
 
 @class DBGGaugeCPUTrayCell, DBGGaugeMemoryTrayCell, DBGProcessNavigableItem, DBGViewDebuggerAdditionUIController, DVTObservingToken, DVTStackBacktrace, IDEDebugNavigator, IDEDebugSession, IDEGaugeDocumentLocation, IDENavigableItem, IDENavigatorOutlineView, IDENavigatorSearchFilterControlBar, IDENavigatorTokenFilterControlBar, IDEStackFrame, IDEThread, IDEWorkspaceTabController, NSArray, NSMenuItem, NSMutableSet, NSSet, NSString, NSView, XRMemoryGraphDebuggerAdditionUIController;
-@protocol DVTCancellable, IDEDebugGaugeDataSource;
+@protocol DBGDebugNavigatorContentDataSource, DVTCancellable, IDEDebugGaugeDataSource;
 
 @interface DBGDebugNavigatorContentDelegate : NSObject <DVTFilterTokenFieldControllerDelegate, IDEDebugNavigableContentDelegate, DVTInvalidation>
 {
     int _navigatorContentMode;
     NSView *_filterViewContainer;
     IDENavigatorTokenFilterControlBar *_CPUDebugFilterControl;
+    IDENavigatorSearchFilterControlBar *_contentDataSourceFilterControl;
     IDENavigatorSearchFilterControlBar *_viewDebugFilterControl;
     IDENavigatorSearchFilterControlBar *_memoryGraphDebugFilterControl;
     DVTObservingToken *_userHasRequestedViewDebuggingObservingToken;
@@ -56,9 +57,11 @@
     BOOL _showsCompressedStackFrames;
     BOOL _showsOnlyInterestingContent;
     BOOL _showsOnlyRunningBlocks;
+    IDEDebugNavigator *_debugNavigator;
     IDENavigatorOutlineView *_outlineView;
     IDEDebugSession *_debugSession;
-    IDEDebugNavigator *_debugNavigator;
+    NSMutableSet *_registeredContentDataSources;
+    id <DBGDebugNavigatorContentDataSource> _activeContentDataSource;
     XRMemoryGraphDebuggerAdditionUIController *_memoryGraphDebuggingUIController;
     DBGViewDebuggerAdditionUIController *_viewDebuggingUIController;
 }
@@ -71,11 +74,14 @@
 @property(nonatomic) BOOL showsCompressedStackFrames; // @synthesize showsCompressedStackFrames=_showsCompressedStackFrames;
 @property(retain) DBGViewDebuggerAdditionUIController *viewDebuggingUIController; // @synthesize viewDebuggingUIController=_viewDebuggingUIController;
 @property(retain) XRMemoryGraphDebuggerAdditionUIController *memoryGraphDebuggingUIController; // @synthesize memoryGraphDebuggingUIController=_memoryGraphDebuggingUIController;
-@property(retain) IDEDebugNavigator *debugNavigator; // @synthesize debugNavigator=_debugNavigator;
+@property __weak id <DBGDebugNavigatorContentDataSource> activeContentDataSource; // @synthesize activeContentDataSource=_activeContentDataSource;
+@property(retain) NSMutableSet *registeredContentDataSources; // @synthesize registeredContentDataSources=_registeredContentDataSources;
 @property(retain) IDEDebugSession *debugSession; // @synthesize debugSession=_debugSession;
 @property(retain) IDENavigatorOutlineView *outlineView; // @synthesize outlineView=_outlineView;
+@property(retain) IDEDebugNavigator *debugNavigator; // @synthesize debugNavigator=_debugNavigator;
 @property(readonly) NSString *associatedProcessUUID; // @synthesize associatedProcessUUID=_associatedProcessUUID;
 - (void)primitiveInvalidate;
+- (void)switchToContentDataSourceModeWithDataSource:(id)arg1;
 @property(nonatomic) int debugNavigatorContentMode;
 - (void)setStoredNavigatorContentMode:(id)arg1;
 - (id)storedNavigatorContentMode;
@@ -140,6 +146,8 @@
 - (void)_cancelObservingTokensAddedDuringInstall;
 - (void)_setCurrentFrameIndicatorForStackFrame:(id)arg1 visible:(BOOL)arg2;
 - (void)debugNavigatorViewDidInstall;
+- (void)unregisterContentDataSources;
+- (void)registerContentDataSource:(id)arg1;
 - (BOOL)_isCPUDebugging;
 - (void)_handleCurrentStackFrameChange:(id)arg1;
 - (BOOL)_handleSettingCurrentStackFrame;
@@ -176,6 +184,8 @@
 - (void)memoryDatasForProcessDidChange:(id)arg1;
 - (BOOL)shouldAddThreadItemsForMemoryDataObject:(id)arg1;
 - (id)contentObjectDataSourceClassesForMemoryDataDebugging;
+- (void)handleProcessChildItemsChangedForContentDataSource;
+- (BOOL)isContentDataSourceActive;
 - (id)createTokenFilterControlBarForCPUDebuggingWithFrame:(struct CGRect)arg1;
 - (id)contentObjectDataSourceClassesForCPUDebugging;
 

@@ -10,9 +10,7 @@
 
 @interface _TtC5UVKit27InteractionResolverProvider : _TtCs12_SwiftObject
 {
-    MISSING_TYPE *interactionResolver;
-    MISSING_TYPE *objectWillChange;
-    MISSING_TYPE *didChange;
+    MISSING_TYPE *_interactionResolver;
 }
 
 @end

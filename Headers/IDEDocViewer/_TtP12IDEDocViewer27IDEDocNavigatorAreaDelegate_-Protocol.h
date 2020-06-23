@@ -7,6 +7,7 @@
 @class NSURL, _TtC12IDEDocViewer19IDEDocNavigatorArea, _TtC16DVTExplorableKit23DVTExplorableIdentifier;
 
 @protocol _TtP12IDEDocViewer27IDEDocNavigatorAreaDelegate_
+- (void)navigatorArea:(_TtC12IDEDocViewer19IDEDocNavigatorArea *)arg1 didSelectHide:(BOOL)arg2;
 - (void)navigatorArea:(_TtC12IDEDocViewer19IDEDocNavigatorArea *)arg1 didSelectURL:(NSURL *)arg2 explorableIdentifier:(_TtC16DVTExplorableKit23DVTExplorableIdentifier *)arg3;
 @end
 

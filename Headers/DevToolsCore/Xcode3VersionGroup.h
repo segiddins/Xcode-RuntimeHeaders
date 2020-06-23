@@ -7,10 +7,11 @@
 #import <DevToolsCore/Xcode3Group.h>
 
 #import <DevToolsCore/IDEStructureEditing-Protocol.h>
+#import <DevToolsCore/IDEVersionGroup-Protocol.h>
 
-@class NSString, XCVersionGroup;
+@class IDEFileReference, NSArray, NSString, XCVersionGroup;
 
-@interface Xcode3VersionGroup : Xcode3Group <IDEStructureEditing>
+@interface Xcode3VersionGroup : Xcode3Group <IDEStructureEditing, IDEVersionGroup>
 {
     XCVersionGroup *_versionGroup;
 }
@@ -28,9 +29,10 @@
 - (Class)_fileReferenceClassForFileReference:(id)arg1;
 - (id)versionWithName:(id)arg1;
 - (BOOL)makeVersionWithName:(id)arg1;
-- (void)setCurrentVersion:(id)arg1;
+@property(retain) IDEFileReference *currentVersion;
 - (BOOL)saveCurrentVersion;
-- (id)currentVersion;
+@property(readonly) NSString *groupPathString;
+@property(readonly) NSArray *versions;
 - (id)primarySubitem;
 - (id)_pbxFileReferenceForIDEFileReference:(id)arg1;
 - (id)_ideFileReferenceForPBXFileReference:(id)arg1;
@@ -44,6 +46,12 @@
 - (id)initWithXCVersionGroup:(id)arg1;
 - (id)initWithPBXGroup:(id)arg1;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

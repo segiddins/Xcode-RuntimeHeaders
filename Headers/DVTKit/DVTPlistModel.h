@@ -54,6 +54,8 @@
 - (void)_renameKey:(id)arg1 forKeyPath:(id)arg2;
 @property(retain) DVTPlistStructureDefinition *plistStructureDefinition;
 - (id)plistFromString:(id)arg1;
+- (id)plistFromOldFormatData:(id)arg1 error:(id *)arg2;
+- (id)plistFromXMLData:(id)arg1 error:(id *)arg2;
 - (id)plistFromData:(id)arg1;
 - (id)dataOfType:(id)arg1 error:(id *)arg2;
 - (id)xmlPropertyListForNode:(id)arg1;

@@ -7,15 +7,16 @@
 #import <DVTAnalytics/NSCopying-Protocol.h>
 #import <DVTAnalytics/NSObject-Protocol.h>
 
-@class DVTAnalyticsAppIdentifier, DVTAnalyticsAppStoreSourceUserDefaultsKey, DVTAnalyticsPointAbstractClass, DVTFilePath, DVTServicesAccountBasedSession, NSArray, NSString;
+@class DVTAnalyticsAppIdentifier, DVTAnalyticsAppStoreSourceUserDefaultsKey, DVTAnalyticsPointAbstractClass, DVTFilePath, DVTServicesAccountBasedSession, NSArray, NSString, _TtC12DVTAnalytics19AnalyticsReportType;
 
 @protocol DVTAnalyticsAppStoreSourceProtocol <NSObject, NSCopying>
 - (void)cacheAnalyticsPoints:(NSArray *)arg1;
 - (BOOL)updateFromNetworkWithSession:(DVTServicesAccountBasedSession *)arg1 error:(id *)arg2;
 - (void)fetchFromDisk;
 - (DVTFilePath *)cachedPathForAnalyticsPoint:(DVTAnalyticsPointAbstractClass *)arg1;
-@property(nonatomic, readonly) long long type;
+@property(nonatomic, readonly) _TtC12DVTAnalytics19AnalyticsReportType *reportType;
 @property(nonatomic, readonly) DVTAnalyticsAppStoreSourceUserDefaultsKey *userDefaultsKey;
+@property(nonatomic, readonly) BOOL isAppClip;
 @property(nonatomic, readonly) NSString *appExtensionPointIdentifier;
 @property(nonatomic, readonly) DVTAnalyticsAppIdentifier *appIdentifier;
 @property(nonatomic, readonly) BOOL isBeta;

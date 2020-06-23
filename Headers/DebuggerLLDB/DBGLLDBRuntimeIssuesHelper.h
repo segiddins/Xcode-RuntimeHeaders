@@ -11,6 +11,7 @@
 }
 
 - (BOOL)shouldStopForRuntimeIssuesBreakpointAtLocation:(id)arg1 session:(id)arg2 frame:(id)arg3;
+- (BOOL)_shouldBreakpointAfterConsultingBreakpoints:(id)arg1 category:(id)arg2;
 - (const char *)breakpointSymbolName;
 
 @end

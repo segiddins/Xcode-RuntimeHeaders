@@ -14,9 +14,19 @@
 {
 }
 
-+ (id)_createRunPauseContinueButton:(id)arg1;
++ (void)_toolbarItemViewFrameChanged:(id)arg1;
++ (void)_startObservingFrameChangesIfNeededForToolbarItem:(id)arg1;
++ (id)_createSplitViewDividerToolbarItemWithIdentifier:(id)arg1 window:(id)arg2;
++ (id)_createSpaceToolbarItemWithIdentifier:(id)arg1 window:(id)arg2;
++ (id)_createToggleInspectorToolbarItemWithIdentifier:(id)arg1 window:(id)arg2;
++ (id)_createComparisonModeToolbarItemWithIdentifier:(id)arg1 window:(id)arg2;
++ (id)_createLibraryToolbarItemWithIdentifier:(id)arg1 window:(id)arg2;
++ (id)_createActivityViewToolbarItemWithIdentifier:(id)arg1 window:(id)arg2;
++ (id)_createActiveSchemeToolbarItemWithIdentifier:(id)arg1 window:(id)arg2;
++ (id)_createStopToolbarItemWithIdentifier:(id)arg1 window:(id)arg2;
++ (id)_createRunPauseContinueToolbarItemWithIdentifier:(id)arg1 window:(id)arg2;
++ (id)_createToggleNavigatorToolbarItemWithIdentifier:(id)arg1 window:(id)arg2;
 + (id)itemForItemIdentifier:(id)arg1 forToolbarInWindow:(id)arg2;
-+ (double)runAndStopButtonWidthOn10_10;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -26,7 +26,8 @@
 - (id)shutdownAllButOneAfterBlock:(CDUnknownBlockType)arg1;
 - (void)shutdownAllAfterBlock:(CDUnknownBlockType)arg1;
 - (void)shutdownAndRemoveProxy:(id)arg1;
-- (void)shutdownToolsIdleForAtleast:(double)arg1 afterBlock:(CDUnknownBlockType)arg2;
+- (void)shutdownToolsBusyForAtLeast:(double)arg1 afterBlock:(CDUnknownBlockType)arg2;
+- (void)shutdownToolsIdleForAtLeast:(double)arg1 afterBlock:(CDUnknownBlockType)arg2;
 
 @end
 

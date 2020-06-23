@@ -15,6 +15,7 @@
 
 + (id)slotWithLevel:(long long)arg1;
 + (id)baseSlot;
++ (id)genesisSlotsForSlots:(id)arg1;
 + (id)slotWithMipmapLevel:(id)arg1;
 + (id)orderedComponentClasses;
 + (Class)assetRepClass;

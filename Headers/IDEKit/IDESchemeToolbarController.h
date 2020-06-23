@@ -40,7 +40,7 @@
 - (BOOL)validateUserInterfaceItem:(id)arg1;
 - (id)pathCell:(id)arg1 accessibilityDescriptionForPathComponentCell:(id)arg2 atIndex:(unsigned long long)arg3;
 - (id)pathCellNoSelectionTitle;
-- (void)_updatePathControlSize;
+- (void)_updateSize;
 - (void)pathCell:(id)arg1 didUpdateMenu:(id)arg2;
 - (BOOL)pathCell:(id)arg1 shouldSeparateDisplayOfChildItemsForItem:(id)arg2;
 - (void)didUpdateRunDestinationMenu:(id)arg1;
@@ -54,6 +54,7 @@
 - (void)menuDidClose:(id)arg1;
 - (void)menuWillOpen:(id)arg1;
 - (void)primitiveInvalidate;
+- (void)viewDidAppear;
 - (void)loadView;
 - (id)initWithToolbarItemIdentifier:(id)arg1 window:(id)arg2;
 @property(readonly) IDEWorkspaceTabController *activeWorkspaceTabController;

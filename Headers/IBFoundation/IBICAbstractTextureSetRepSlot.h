@@ -18,6 +18,7 @@
 }
 
 + (Class)assetRepClass;
++ (Class)assetSetClass;
 + (id)allocWithZone:(struct _NSZone *)arg1;
 - (void).cxx_destruct;
 @property(readonly) IBICColorSpace *colorSpace; // @synthesize colorSpace=_colorSpace;

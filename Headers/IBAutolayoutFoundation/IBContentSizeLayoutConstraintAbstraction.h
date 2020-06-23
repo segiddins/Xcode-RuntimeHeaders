@@ -20,6 +20,7 @@
 @property(nonatomic) unsigned long long attribute; // @synthesize attribute=_attribute;
 @property(nonatomic) double contentSize; // @synthesize contentSize=_contentSize;
 @property(retain, nonatomic) NSObject<IBAutolayoutItem> *view; // @synthesize view=_view;
+- (id)makeRepresentingConstraintWithProvider:(id)arg1;
 - (id)constraintInDocument;
 - (unsigned long long)hash;
 - (BOOL)isEqualToAbstraction:(id)arg1;

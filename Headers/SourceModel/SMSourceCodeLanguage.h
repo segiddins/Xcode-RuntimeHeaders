@@ -46,6 +46,7 @@
 + (id)sourceCodeLanguageWithIdentifier:(id)arg1;
 + (id)sourceCodeLanguages;
 + (id)loadAndCacheSourceCodeLanguageWithPlist:(id)arg1;
++ (id)registerSourceCodeLanguageWithMetadata:(id)arg1;
 + (void)loadAndCacheDefaultSourceCodeLanguages;
 + (void)ensureDefaultSourceCodeLanguagesLoaded;
 + (id)_sourceCodeLanguageForMetadata:(id)arg1;
@@ -78,6 +79,7 @@
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithLanguageDescription:(id)arg1;
+- (id)arrayFromArrayOfDicts:(id)arg1 withKey:(id)arg2;
 
 @end
 

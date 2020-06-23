@@ -9,7 +9,7 @@
 #import <XCTDaemonControl/XCTConfigurableDebugLogger-Protocol.h>
 #import <XCTDaemonControl/XCTestManager_IDEInterface-Protocol.h>
 
-@class NSString, XCTProtocolVersion;
+@class NSString, XCTCapabilities;
 @protocol OS_dispatch_queue, XCTDaemonProxy, XCTDaemonProxyProviding, XCTDaemonRecordingSessionDelegate, XCTDebugLogDelegate;
 
 @interface XCTDaemonRecordingSession : NSObject <XCTestManager_IDEInterface, XCTConfigurableDebugLogger>
@@ -18,20 +18,20 @@
     id <XCTDebugLogDelegate> _logDelegate;
     id <XCTDaemonProxy> _daemonProxy;
     id <XCTDaemonProxyProviding> _proxyProvider;
-    XCTProtocolVersion *_daemonProtocolVersion;
+    XCTCapabilities *_daemonCapabilities;
     id <XCTDaemonRecordingSessionDelegate> _delegate;
     NSObject<OS_dispatch_queue> *_callbackQueue;
 }
 
++ (id)exportedCapabilities;
 + (void)requestSessionForSimulatorDevice:(id)arg1 completion:(CDUnknownBlockType)arg2;
 + (void)requestSessionForLocalComputerWithCompletion:(CDUnknownBlockType)arg1;
 + (void)requestSessionWithDTXConnectionProvider:(id)arg1 completion:(CDUnknownBlockType)arg2;
-+ (void)initialize;
 - (void).cxx_destruct;
 @property(retain) NSObject<OS_dispatch_queue> *callbackQueue; // @synthesize callbackQueue=_callbackQueue;
 @property __weak id <XCTDaemonRecordingSessionDelegate> delegate; // @synthesize delegate=_delegate;
 @property BOOL isConnected; // @synthesize isConnected=_isConnected;
-@property(readonly, copy) XCTProtocolVersion *daemonProtocolVersion; // @synthesize daemonProtocolVersion=_daemonProtocolVersion;
+@property(readonly, copy) XCTCapabilities *daemonCapabilities; // @synthesize daemonCapabilities=_daemonCapabilities;
 @property(readonly) id <XCTDaemonProxyProviding> proxyProvider; // @synthesize proxyProvider=_proxyProvider;
 @property(readonly) id <XCTDaemonProxy> daemonProxy; // @synthesize daemonProxy=_daemonProxy;
 @property __weak id <XCTDebugLogDelegate> logDelegate; // @synthesize logDelegate=_logDelegate;
@@ -40,13 +40,12 @@
 - (id)_XCT_recordedFirstResponderChangedWithApplicationSnapshot:(id)arg1;
 - (id)_XCT_recordedOrientationChange:(id)arg1;
 - (id)_XCT_recordedEventNames:(id)arg1 timestamp:(id)arg2 duration:(id)arg3 startLocation:(id)arg4 startElementSnapshot:(id)arg5 startApplicationSnapshot:(id)arg6 endLocation:(id)arg7 endElementSnapshot:(id)arg8 endApplicationSnapshot:(id)arg9;
-- (id)_XCT_exchangeCurrentProtocolVersion:(id)arg1 minimumVersion:(id)arg2;
 - (void)stopRecording;
 - (void)startRecordingProcessID:(int)arg1 configuration:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_executeRequest:(id)arg1;
 - (void)invalidate;
 - (void)setDelegate:(id)arg1 callbackQueue:(id)arg2 logDelegate:(id)arg3;
-- (id)initWithDaemonProxy:(id)arg1 proxyProvider:(id)arg2 protocolVersion:(id)arg3;
+- (id)initWithDaemonProxy:(id)arg1 proxyProvider:(id)arg2 daemonCapabilities:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

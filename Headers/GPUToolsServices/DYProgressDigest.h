@@ -10,7 +10,7 @@
 
 @interface DYProgressDigest : NSObject
 {
-    struct ProgressDigest<6> _digest;
+    struct ProgressDigest<5> _digest;
     NSHashTable *_observers;
     struct dispatch_queue_s *_queue;
     struct dispatch_source_s *_timer;

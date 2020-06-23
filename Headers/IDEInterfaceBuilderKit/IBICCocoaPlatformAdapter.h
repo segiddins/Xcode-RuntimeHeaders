@@ -38,7 +38,7 @@
 - (id)minimumDeploymentTargetSupportingPDFInCARFiles;
 - (id)minimumDeploymentTargetSupportingJPGInCARFiles;
 - (id)minimumDeploymentTargetSupportingCARFiles;
-- (id)targetPlatformForArguments:(id)arg1;
+- (id)targetPlatform;
 - (id)defaultTargetDevices;
 
 @end

@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) double cornerRadius;
 @property(nonatomic) double borderWidth;
 @property(nonatomic) struct CGRect frame;
+@property(nonatomic) double contentsScale;
 
 @end
 

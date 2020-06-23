@@ -10,6 +10,7 @@
 {
 }
 
++ (Class)catalogSetClass;
 - (void)addPostItemNameContent:(id)arg1;
 
 @end

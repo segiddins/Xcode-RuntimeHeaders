@@ -14,13 +14,13 @@
     MISSING_TYPE *invalidAfterNumberOfDays;
     MISSING_TYPE *fetcher;
     MISSING_TYPE *updateQueue;
-    MISSING_TYPE *inflightFetches;
     MISSING_TYPE *futuresLock;
     MISSING_TYPE *avatarFuturesByAuthor;
 }
 
 + (id)shared;
 - (void).cxx_destruct;
+- (id)avatarFor:(id)arg1 hostedAccount:(id)arg2;
 - (id)avatarFor:(id)arg1;
 - (id)init;
 

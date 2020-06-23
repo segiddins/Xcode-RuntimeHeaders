@@ -12,6 +12,8 @@
 
 @interface DVTPortalProfileFeature : NSObject <NSCopying>
 {
+    BOOL _useValueFromEntitlementsPropertyList;
+    BOOL _alwaysEnableBasedOnCapabilityModelValue;
     BOOL _isAvailableWithFreeProvisioning;
     BOOL _isAvailableWithEnterprise;
     BOOL _isAvailableWithUniversity;
@@ -46,6 +48,8 @@
 @property(readonly, nonatomic) BOOL isAvailableWithUniversity; // @synthesize isAvailableWithUniversity=_isAvailableWithUniversity;
 @property(readonly, nonatomic) BOOL isAvailableWithEnterprise; // @synthesize isAvailableWithEnterprise=_isAvailableWithEnterprise;
 @property(readonly, nonatomic) BOOL isAvailableWithFreeProvisioning; // @synthesize isAvailableWithFreeProvisioning=_isAvailableWithFreeProvisioning;
+@property(readonly, nonatomic) BOOL alwaysEnableBasedOnCapabilityModelValue; // @synthesize alwaysEnableBasedOnCapabilityModelValue=_alwaysEnableBasedOnCapabilityModelValue;
+@property(readonly, nonatomic) BOOL useValueFromEntitlementsPropertyList; // @synthesize useValueFromEntitlementsPropertyList=_useValueFromEntitlementsPropertyList;
 @property(readonly, nonatomic) NSString *defaultValue; // @synthesize defaultValue=_defaultValue;
 @property(readonly, nonatomic) NSSet *allowedValues; // @synthesize allowedValues=_allowedValues;
 @property(readonly, nonatomic) NSString *portalIdentifier; // @synthesize portalIdentifier=_portalIdentifier;
@@ -59,7 +63,7 @@
 - (id)description;
 - (BOOL)isEqual:(id)arg1;
 @property(readonly, nonatomic) NSSet *entitlements;
-- (id)initWithIdentifier:(id)arg1 legacyPortalKey:(id)arg2 portalIdentifier:(id)arg3 supportedPlatforms:(id)arg4 valueType:(long long)arg5 userDescription:(id)arg6 isAvailableWithFreeProvisioning:(BOOL)arg7 isAvailableWithEnterprise:(BOOL)arg8 isAvailableWithUniversity:(BOOL)arg9 isAvailableWithDirectDistribution:(BOOL)arg10 allowedValues:(id)arg11 defaultValue:(id)arg12 entitlements:(id)arg13 defaultSettings:(id)arg14 requiresPortalInteraction:(BOOL)arg15 isAutomaticallyEnabledInExplicitAppIDs:(BOOL)arg16;
+- (id)initWithIdentifier:(id)arg1 legacyPortalKey:(id)arg2 portalIdentifier:(id)arg3 supportedPlatforms:(id)arg4 valueType:(long long)arg5 userDescription:(id)arg6 isAvailableWithFreeProvisioning:(BOOL)arg7 isAvailableWithEnterprise:(BOOL)arg8 isAvailableWithUniversity:(BOOL)arg9 isAvailableWithDirectDistribution:(BOOL)arg10 allowedValues:(id)arg11 defaultValue:(id)arg12 useValueFromEntitlementsPropertyList:(BOOL)arg13 alwaysEnableBasedOnCapabilityModelValue:(BOOL)arg14 entitlements:(id)arg15 defaultSettings:(id)arg16 requiresPortalInteraction:(BOOL)arg17 isAutomaticallyEnabledInExplicitAppIDs:(BOOL)arg18;
 
 @end
 

@@ -31,6 +31,7 @@
 - (long long)numberOfElements;
 - (BOOL)hasInlineValues;
 - (BOOL)acceptAbstractValueElement:(id)arg1 error:(id *)arg2;
+- (BOOL)requestInsertionIntoParent:(id)arg1 error:(id *)arg2;
 - (id)initWithAttributes:(const char **)arg1 stringTable:(id)arg2 error:(id *)arg3;
 - (id)decodedObject;
 - (void)setDecodedObject:(id)arg1;

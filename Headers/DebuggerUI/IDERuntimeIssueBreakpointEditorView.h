@@ -6,12 +6,15 @@
 
 #import <AppKit/NSViewController.h>
 
-@class IDERuntimeIssueBreakpoint, NSButton, NSPopUpButton, NSStackView, NSTextField, NSView;
+@class IDERuntimeIssueBreakpoint, IDERuntimeIssueBreakpointCategoryAutocompletion, NSButton, NSPopUpButton, NSStackView, NSTextField, NSTokenField, NSView;
 
 @interface IDERuntimeIssueBreakpointEditorView : NSViewController
 {
+    IDERuntimeIssueBreakpointCategoryAutocompletion *_tokenFieldAutoCompletionDelegate;
     IDERuntimeIssueBreakpoint *_breakpoint;
     NSView *_typePopUpView;
+    NSView *_categoryView;
+    NSTokenField *_categoriesTokenField;
     NSView *_explanationView;
     NSPopUpButton *_typePopUp;
     NSTextField *_showDiagosticsExplanation;
@@ -23,9 +26,12 @@
 @property(retain) NSTextField *showDiagosticsExplanation; // @synthesize showDiagosticsExplanation=_showDiagosticsExplanation;
 @property(retain) NSPopUpButton *typePopUp; // @synthesize typePopUp=_typePopUp;
 @property(retain) NSView *explanationView; // @synthesize explanationView=_explanationView;
+@property(retain) NSTokenField *categoriesTokenField; // @synthesize categoriesTokenField=_categoriesTokenField;
+@property(retain) NSView *categoryView; // @synthesize categoryView=_categoryView;
 @property(retain) NSView *typePopUpView; // @synthesize typePopUpView=_typePopUpView;
 @property(retain) IDERuntimeIssueBreakpoint *breakpoint; // @synthesize breakpoint=_breakpoint;
 - (void)showDiagnosticsTab:(id)arg1;
+- (void)setCategories:(id)arg1;
 - (void)selectType:(id)arg1;
 - (void)viewDidLoad;
 - (id)initWithCoder:(id)arg1;

@@ -6,19 +6,23 @@
 
 #import <AppKit/NSViewController.h>
 
+#import <GPUDebugger/DVTFilterControlBarTarget-Protocol.h>
 #import <GPUDebugger/DVTFilterTokenFieldControllerDelegate-Protocol.h>
 #import <GPUDebugger/GPUFilteringCoordinatorDelegate-Protocol.h>
 #import <GPUDebugger/GPUTimelineGraphContextMenuProvider-Protocol.h>
 #import <GPUDebugger/GPUTimelineGraphDelegate-Protocol.h>
 #import <GPUDebugger/GPUTraceCounterGraphDataStoreObserver-Protocol.h>
-#import <GPUDebugger/IDEFilterControlBarTarget-Protocol.h>
+#import <GPUDebugger/GPUTraceCounterGraphSelectionSupport-Protocol.h>
+#import <GPUDebugger/GPUTraceCounterGraphTabViewDelegate-Protocol.h>
+#import <GPUDebugger/NSSplitViewDelegate-Protocol.h>
 
-@class DVTFilterMatchFormatter, DVTObservingToken, GPUDebuggerController, GPUFilterCompletionsEngine, GPUFilterTokenHelper, GPUFilterTokenPredicate, GPUFilteringCoordinator, GPUTimelineGraphDataSource, GPUTimelineGraphViewController, GPUTraceCounterGraphDataProvider, GPUTraceCounterGraphTheme, GPUTraceCounterGraphThumbnailView, GPUTraceCounterGraphTooltipView, GPUTraceCountersDocument, GPUTraceCountersEditor, GPUTraceProfilerStatusViewController, IDETokenFilterControlBar, NSBox, NSButton, NSDictionary, NSMenu, NSMenuItem, NSMutableArray, NSProgressIndicator, NSStackView, NSString, NSTextField, NSView;
+@class DVTFilterMatchFormatter, DVTObservingToken, GPUDebuggerController, GPUFilterCompletionsEngine, GPUFilterTokenHelper, GPUFilterTokenPredicate, GPUFilteringCoordinator, GPUTimelineGraphDataSource, GPUTimelineGraphViewController, GPUTraceCounterGraphDataProvider, GPUTraceCounterGraphDataStore, GPUTraceCounterGraphGroupItem, GPUTraceCounterGraphTabView, GPUTraceCounterGraphTableViewController, GPUTraceCounterGraphTheme, GPUTraceCounterGraphThumbnailView, GPUTraceCounterGraphTooltipView, GPUTraceCounterGraphUserDefinedGroupWindow, GPUTraceCountersDocument, GPUTraceCountersEditor, GPUTraceProfilerStatusViewController, IDETokenFilterControlBar, NSBox, NSButton, NSDictionary, NSLayoutConstraint, NSMenu, NSMenuItem, NSMutableArray, NSMutableDictionary, NSProgressIndicator, NSString, NSTextField, NSView;
 
 __attribute__((visibility("hidden")))
-@interface GPUTraceCounterGraphEditor : NSViewController <IDEFilterControlBarTarget, GPUFilteringCoordinatorDelegate, DVTFilterTokenFieldControllerDelegate, GPUTimelineGraphDelegate, GPUTimelineGraphContextMenuProvider, GPUTraceCounterGraphDataStoreObserver>
+@interface GPUTraceCounterGraphEditor : NSViewController <DVTFilterControlBarTarget, GPUFilteringCoordinatorDelegate, DVTFilterTokenFieldControllerDelegate, NSSplitViewDelegate, GPUTimelineGraphDelegate, GPUTimelineGraphContextMenuProvider, GPUTraceCounterGraphDataStoreObserver, GPUTraceCounterGraphSelectionSupport, GPUTraceCounterGraphTabViewDelegate>
 {
     GPUTimelineGraphViewController *_counterGraphController;
+    GPUTraceCounterGraphTableViewController *_tableViewController;
     GPUTraceProfilerStatusViewController *_statusViewController;
     DVTFilterMatchFormatter *_filterMatchFormatter;
     GPUFilterTokenHelper *_tokenHelper;
@@ -26,6 +30,7 @@ __attribute__((visibility("hidden")))
     GPUFilterTokenPredicate *_filterPredicate;
     NSMutableArray *_filteredItems;
     GPUTraceCounterGraphDataProvider *_dataProvider;
+    GPUTraceCounterGraphDataStore *_dataStore;
     GPUTraceCounterGraphTheme *_theme;
     DVTObservingToken *_shaderProfilerResultsObserver;
     GPUDebuggerController *_debuggerController;
@@ -33,16 +38,26 @@ __attribute__((visibility("hidden")))
     NSDictionary *_stateDictionary;
     NSMutableArray *_counterGraphFilterPlaneItems;
     BOOL _ignoreEditorState;
+    NSMutableDictionary *_counterGroups;
+    NSMutableDictionary *_planeNameToMenuItems;
+    unsigned long long _currentCounterGroup;
+    GPUTraceCounterGraphGroupItem *_filteringGroup;
+    NSButton *_filteringGroupButton;
+    GPUTraceCounterGraphUserDefinedGroupWindow *_customizedCounterGroupSaveWindow;
     _Bool _scaleToFit;
     BOOL _showEmptyCounters;
     BOOL _filterByDrawCall;
     GPUTraceCountersEditor *_parentEditor;
-    NSView *_containerView;
+    NSView *_graphContainerView;
+    NSView *_tableContainerView;
+    NSView *_splitView;
     NSView *_barView;
     IDETokenFilterControlBar *_filterControlBar;
     NSMenu *_contextMenu;
     NSMenu *_planeContextMenu;
     NSMenuItem *_contextMenuShowItem;
+    NSMenuItem *_contextMenuAddToGroupItem;
+    NSMenuItem *_contextMenuRemoveFromGroupItem;
     NSMenu *_contextMenuShowItemSubMenu;
     NSMenuItem *_contextMenuPipelineCostItem;
     NSMenuItem *_showCounterDocumentationItem;
@@ -51,10 +66,15 @@ __attribute__((visibility("hidden")))
     NSBox *_horizontalBorder;
     NSButton *_perDrawButton;
     NSButton *_perEncoderButton;
-    NSStackView *_stackView;
     NSView *_profilingStatusBarView;
     NSProgressIndicator *_profilingStatusIndicator;
     NSTextField *_profilingStatusTextView;
+    NSMenu *_counterGroupMenu;
+    NSMenuItem *_counterGroupMenuDeleteItem;
+    NSMenuItem *_counterGroupMenuAddItem;
+    GPUTraceCounterGraphTabView *_counterGroupButtonsView;
+    NSButton *_counterGroupActionButton;
+    NSLayoutConstraint *_counterGraphButtonsViewRightConstraint;
     id _objectValue;
     GPUFilteringCoordinator *_filteringCoordinator;
 }
@@ -63,10 +83,15 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) BOOL filterByDrawCall; // @synthesize filterByDrawCall=_filterByDrawCall;
 @property(retain, nonatomic) GPUFilteringCoordinator *filteringCoordinator; // @synthesize filteringCoordinator=_filteringCoordinator;
 @property(retain, nonatomic) id objectValue; // @synthesize objectValue=_objectValue;
+@property __weak NSLayoutConstraint *counterGraphButtonsViewRightConstraint; // @synthesize counterGraphButtonsViewRightConstraint=_counterGraphButtonsViewRightConstraint;
+@property __weak NSButton *counterGroupActionButton; // @synthesize counterGroupActionButton=_counterGroupActionButton;
+@property __weak GPUTraceCounterGraphTabView *counterGroupButtonsView; // @synthesize counterGroupButtonsView=_counterGroupButtonsView;
+@property __weak NSMenuItem *counterGroupMenuAddItem; // @synthesize counterGroupMenuAddItem=_counterGroupMenuAddItem;
+@property __weak NSMenuItem *counterGroupMenuDeleteItem; // @synthesize counterGroupMenuDeleteItem=_counterGroupMenuDeleteItem;
+@property __weak NSMenu *counterGroupMenu; // @synthesize counterGroupMenu=_counterGroupMenu;
 @property __weak NSTextField *profilingStatusTextView; // @synthesize profilingStatusTextView=_profilingStatusTextView;
 @property __weak NSProgressIndicator *profilingStatusIndicator; // @synthesize profilingStatusIndicator=_profilingStatusIndicator;
 @property __weak NSView *profilingStatusBarView; // @synthesize profilingStatusBarView=_profilingStatusBarView;
-@property __weak NSStackView *stackView; // @synthesize stackView=_stackView;
 @property __weak NSButton *perEncoderButton; // @synthesize perEncoderButton=_perEncoderButton;
 @property __weak NSButton *perDrawButton; // @synthesize perDrawButton=_perDrawButton;
 @property __weak NSBox *horizontalBorder; // @synthesize horizontalBorder=_horizontalBorder;
@@ -75,14 +100,43 @@ __attribute__((visibility("hidden")))
 @property __weak NSMenuItem *showCounterDocumentationItem; // @synthesize showCounterDocumentationItem=_showCounterDocumentationItem;
 @property __weak NSMenuItem *contextMenuPipelineCostItem; // @synthesize contextMenuPipelineCostItem=_contextMenuPipelineCostItem;
 @property __weak NSMenu *contextMenuShowItemSubMenu; // @synthesize contextMenuShowItemSubMenu=_contextMenuShowItemSubMenu;
+@property __weak NSMenuItem *contextMenuRemoveFromGroupItem; // @synthesize contextMenuRemoveFromGroupItem=_contextMenuRemoveFromGroupItem;
+@property __weak NSMenuItem *contextMenuAddToGroupItem; // @synthesize contextMenuAddToGroupItem=_contextMenuAddToGroupItem;
 @property __weak NSMenuItem *contextMenuShowItem; // @synthesize contextMenuShowItem=_contextMenuShowItem;
 @property __weak NSMenu *planeContextMenu; // @synthesize planeContextMenu=_planeContextMenu;
 @property __weak NSMenu *contextMenu; // @synthesize contextMenu=_contextMenu;
 @property __weak IDETokenFilterControlBar *filterControlBar; // @synthesize filterControlBar=_filterControlBar;
 @property __weak NSView *barView; // @synthesize barView=_barView;
-@property __weak NSView *containerView; // @synthesize containerView=_containerView;
+@property __weak NSView *splitView; // @synthesize splitView=_splitView;
+@property __weak NSView *tableContainerView; // @synthesize tableContainerView=_tableContainerView;
+@property __weak NSView *graphContainerView; // @synthesize graphContainerView=_graphContainerView;
 @property(nonatomic) BOOL showEmptyCounters; // @synthesize showEmptyCounters=_showEmptyCounters;
 @property(nonatomic) __weak GPUTraceCountersEditor *parentEditor; // @synthesize parentEditor=_parentEditor;
+- (void)tabView:(id)arg1 buttonClicked:(unsigned long long)arg2;
+- (unsigned long long)tabView:(id)arg1 removeButtonClicked:(unsigned long long)arg2;
+- (BOOL)tabView:(id)arg1 canRemoveButton:(unsigned long long)arg2;
+- (void)tabView:(id)arg1 renameButtonClicked:(unsigned long long)arg2 newName:(CDUnknownBlockType)arg3;
+- (BOOL)tabView:(id)arg1 canRenameButton:(unsigned long long)arg2;
+- (void)_counterGroupActionButtonLongPress:(id)arg1;
+- (void)removeCounterFromGroup:(id)arg1;
+- (void)addCounterToGroup:(id)arg1;
+- (void)removeCounterGroupClicked:(id)arg1;
+- (void)duplicateCounterGroupClicked:(id)arg1;
+- (void)addCounterGroupClicked:(id)arg1;
+- (id)_existingOrNewGroupWithName:(id)arg1;
+- (void)addCounterClicked:(id)arg1;
+- (void)addCounterPlaneClicked:(id)arg1;
+- (unsigned long long)_removeGroup:(id)arg1;
+- (void)_recusriveEnableMenuItems:(id)arg1 enabled:(BOOL)arg2;
+- (void)switchToCounterGroup:(unsigned long long)arg1 broadcast:(BOOL)arg2 force:(BOOL)arg3;
+- (void)_setFilterToGroup:(unsigned long long)arg1;
+- (unsigned long long)_removeButtonForGroup:(id)arg1;
+- (void)_buildCounterGroupingMenu;
+- (void)_createCounterGroup:(id)arg1;
+- (void)selectItemAtIndex:(long long)arg1 source:(id)arg2;
+- (BOOL)splitView:(id)arg1 shouldAdjustSizeOfSubview:(id)arg2;
+- (void)splitView:(id)arg1 resizeSubviewsWithOldSize:(struct CGSize)arg2;
+- (BOOL)splitView:(id)arg1 canCollapseSubview:(id)arg2;
 - (void)counterSourceSelected:(id)arg1;
 - (void)dataStoreFinishedUpdatingBatchIDFilteredCounters:(id)arg1;
 - (void)dataStoreLoadingData:(id)arg1;
@@ -107,8 +161,8 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSString *filterButtonToolTip;
 @property(readonly, nonatomic) NSMenu *filterButtonMenu;
 @property(readonly, nonatomic) NSString *filterDefinitionIdentifier;
-- (void)selectOutlineItemWithUUID:(id)arg1;
-- (void)selectOutlineItemWithUUID:(id)arg1 dataIndex:(unsigned long long)arg2;
+- (void)selectOutlineItemWithUUID:(long long)arg1;
+- (void)selectOutlineItemWithUUID:(long long)arg1 dataIndex:(unsigned long long)arg2;
 - (void)scaleToFit;
 - (void)snapToEncoderForCurrentSelectedItem;
 @property(readonly, nonatomic) BOOL isCounterGraphAvailable;
@@ -118,10 +172,11 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)counterGraph:(id)arg1 shouldMoveLeft:(const struct GPUTimelineGraphReferencePlaneCell *)arg2 atIndex:(unsigned long long)arg3;
 - (void)counterGraph:(id)arg1 itemDoubleClicked:(const struct GPUTimelineGraphReferencePlaneCell *)arg2 atIndex:(unsigned long long)arg3;
 - (void)counterGraph:(id)arg1 selectionRangeChanged:(struct _NSRange)arg2;
-- (void)counterGraphClearSelection;
-- (id)contextMenuForPlane:(const struct GPUTimelineGraphReferencePlaneCell *)arg1;
+- (void)counterGraphTriggerSelection:(id)arg1 previousSelectedIndex:(unsigned long long)arg2;
+- (id)contextMenuForPlane:(const struct GPUTimelineGraphReferencePlaneCell *)arg1 plane:(unsigned long long)arg2;
 - (void)_buildPipelineSubMenu:(id)arg1 encoderIndex:(unsigned long long)arg2;
-- (id)contextMenuForItem:(const struct GPUTimelineGraphReferencePlaneCell *)arg1 atIndex:(unsigned long long)arg2;
+- (id)contextMenuForItem:(const struct GPUTimelineGraphReferencePlaneCell *)arg1 atIndex:(unsigned long long)arg2 plane:(unsigned long long)arg3;
+- (void)counterGraphClearSelection;
 - (void)counterGraph:(id)arg1 itemClicked:(const struct GPUTimelineGraphReferencePlaneCell *)arg2 atIndex:(unsigned long long)arg3;
 - (void)zoomOut;
 - (void)zoomIn;
@@ -130,7 +185,8 @@ __attribute__((visibility("hidden")))
 - (void)_addStatusView;
 - (void)_updateProfilerStatusView;
 - (void)_updateDataSource;
-- (void)_updateStateControls;
+- (void)_updateControlStates;
+- (BOOL)_isCounterGroupActionButtonSave;
 - (double)_maxPlaneHandleWidth:(id)arg1;
 - (void)_setupTimelineGraph;
 @property(readonly, nonatomic) GPUTimelineGraphDataSource *dataSource;
@@ -139,8 +195,8 @@ __attribute__((visibility("hidden")))
 - (void)_buildCounterGraphFilterTokens;
 - (void)_constraintView:(id)arg1 toParentView:(id)arg2;
 - (void)setDebuggerController:(id)arg1 andDocument:(id)arg2 andFrame:(struct CGRect)arg3;
-- (void)viewWillAppear;
-- (void)viewWillDisappear;
+- (void)viewDidInstall;
+- (void)viewWillUninstall;
 - (void)viewDidLoad;
 - (void)loadView;
 

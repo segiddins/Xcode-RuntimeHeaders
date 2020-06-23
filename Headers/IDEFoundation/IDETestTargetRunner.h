@@ -63,9 +63,8 @@
 @property __weak id <IDETestTargetRunnerEvents> testEventsObserver; // @synthesize testEventsObserver=_testEventsObserver;
 - (void)testRunner:(id)arg1 didFinishTestWithIdentifier:(id)arg2 withTestResult:(id)arg3 rawOutput:(id)arg4;
 - (void)testRunner:(id)arg1 didSkipTestWithIdentifier:(id)arg2 withTestResultMessage:(id)arg3 rawOutput:(id)arg4;
-- (void)testRunner:(id)arg1 didFailTestWithIdentifier:(id)arg2 withTestResultMessage:(id)arg3 rawOutput:(id)arg4;
+- (void)testRunner:(id)arg1 testCaseWithIdentifier:(id)arg2 didRecordIssue:(id)arg3 rawOutput:(id)arg4;
 - (void)testRunner:(id)arg1 testWithIdentifier:(id)arg2 didMeasurePerformanceMetric:(id)arg3 rawOutput:(id)arg4;
-- (void)testRunner:(id)arg1 didOutput:(id)arg2;
 - (void)testRunner:(id)arg1 testWithIdentifier:(id)arg2 didFinishActivity:(id)arg3;
 - (void)testRunner:(id)arg1 testWithIdentifier:(id)arg2 willStartActivity:(id)arg3;
 - (void)testRunner:(id)arg1 didStartTestWithIdentifier:(id)arg2 rawOutput:(id)arg3;
@@ -85,9 +84,9 @@
 - (void)requestTestPlanUsingWorker:(id)arg1;
 - (void)handleCancellation;
 - (void)observeOperationCancellation;
-- (void)considerFinishingWithCancellation:(BOOL)arg1;
-- (void)failWithError:(id)arg1;
+- (void)considerFinishingWithError:(id)arg1 wasCanceled:(BOOL)arg2;
 - (void)requestNewWorkerIfNeeded;
+- (void)didFailToBootstrapWithError:(id)arg1;
 - (void)workerWasProvided:(id)arg1;
 - (void)requestNewWorker;
 - (void)setupOperation;

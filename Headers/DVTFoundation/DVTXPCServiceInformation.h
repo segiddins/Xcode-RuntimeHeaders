@@ -34,6 +34,7 @@
 @property(retain) NSDictionary *environment; // @synthesize environment=_environment;
 @property(retain) NSString *xpcServiceName; // @synthesize xpcServiceName=_xpcServiceName;
 @property int xpcParentPid; // @synthesize xpcParentPid=_xpcParentPid;
+- (BOOL)isWidgetKitExtension;
 - (BOOL)isWidgetExtension;
 - (id)extensionType;
 - (id)extensionInfo;

@@ -30,7 +30,7 @@
 - (BOOL)representsSameResult:(id)arg1;
 - (BOOL)representsSameResultAsSwiftGeneratedInterfaceResult:(id)arg1;
 - (unsigned long long)hashOfResultIdentity;
-- (id)updatedResultForQuery:(id)arg1;
+- (id)updatedResultForQuery:(id)arg1 precision:(long long)arg2;
 - (id)generateImage;
 
 @end

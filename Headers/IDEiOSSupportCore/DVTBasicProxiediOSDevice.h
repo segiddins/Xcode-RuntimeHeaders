@@ -24,9 +24,9 @@
 - (BOOL)supportsRunningExecutableAtPath:(id)arg1 usingArchitecture:(id)arg2 error:(id *)arg3;
 - (BOOL)supportsExecutionForArchitecture:(id)arg1 launchSession:(id)arg2 error:(id *)arg3;
 - (id)deviceSpecificOverridingPropertiesForBuildable:(id)arg1 withBaselineParameters:(id)arg2;
-- (id)supportedSDKsForBuildable:(id)arg1 buildParameters:(id)arg2 error:(id *)arg3;
-- (id)supportedArchitecturesForBuildable:(id)arg1 buildParameters:(id)arg2 error:(id *)arg3;
-- (BOOL)shouldPresentDeviceForBuildable:(id)arg1 buildParameters:(id)arg2 error:(id *)arg3;
+- (id)supportedSDKsForBuildableContext:(id)arg1 buildParameters:(id)arg2 error:(id *)arg3;
+- (id)supportedArchitecturesForBuildableContext:(id)arg1 buildParameters:(id)arg2 error:(id *)arg3;
+- (BOOL)shouldPresentDeviceForBuildableContext:(id)arg1 buildParameters:(id)arg2 error:(id *)arg3;
 - (BOOL)shouldPresentDeviceForPathRunnableWithArchitecture:(id)arg1;
 - (BOOL)canBeDefaultDeviceForBuildable:(id)arg1 buildParameters:(id)arg2;
 - (BOOL)deviceSupportsBuildable:(id)arg1 buildParameters:(id)arg2 error:(id *)arg3;
@@ -48,6 +48,7 @@
 @property(readonly, copy) NSString *nameForDeveloperPortal;
 @property(readonly, copy) NSSet *proxiedDevices;
 @property(readonly, copy, nonatomic) NSString *operatingSystemVersionWithBuildNumber;
+@property(readonly, copy) NSString *iOSSupportVersion;
 @property(readonly, copy) NSString *operatingSystemVersion;
 @property(readonly, copy) NSString *operatingSystemBuild;
 @property(readonly, copy) NSString *nativeArchitecture;

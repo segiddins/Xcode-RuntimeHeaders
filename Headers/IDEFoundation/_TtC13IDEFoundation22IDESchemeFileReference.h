@@ -8,10 +8,12 @@
 
 #import <IDEFoundation/DVTXMLUnarchiving-Protocol.h>
 
-@class DVTFilePath, IDEScheme, MISSING_TYPE;
+@class DVTFilePath, MISSING_TYPE, NSString;
+@protocol _TtP13IDEFoundation29IDESchemeFileReference_Scheme_;
 
 @interface _TtC13IDEFoundation22IDESchemeFileReference : NSObject <DVTXMLUnarchiving>
 {
+    MISSING_TYPE *dependencies;
     MISSING_TYPE *persistedReference;
     MISSING_TYPE *scheme;
     MISSING_TYPE *resolvedFilePathResult;
@@ -21,8 +23,10 @@
 - (void).cxx_destruct;
 - (void)setReferenceFromUTF8String:(char *)arg1 fromXMLUnarchiver:(id)arg2;
 - (void)dvt_encodeAttributesWithXMLArchiver:(id)arg1 version:(id)arg2;
+@property(nonatomic, readonly) NSString *persistedFileName;
 @property(nonatomic, retain) DVTFilePath *resolvedFilePath;
-@property(nonatomic, retain) IDEScheme *scheme; // @synthesize scheme;
+@property(nonatomic, retain) id <_TtP13IDEFoundation29IDESchemeFileReference_Scheme_> scheme; // @synthesize scheme;
+@property(nonatomic, copy) NSString *persistedReference;
 - (void)dealloc;
 - (id)initFromXMLUnarchiver:(id)arg1 archiveVersion:(float)arg2;
 - (id)init;

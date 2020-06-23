@@ -31,6 +31,7 @@
 @property(readonly) NSDictionary *applicableArgumentTypes;
 - (long long)effectiveArgumentType;
 - (BOOL)userCanConfigureType;
+- (unsigned long long)methodKind;
 - (id)init;
 
 @end

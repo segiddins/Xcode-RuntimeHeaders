@@ -11,11 +11,9 @@
 @interface _IDEEditorContextLine : NSView
 {
     CALayer *_colorLayer;
-    BOOL _inset;
 }
 
 - (void).cxx_destruct;
-@property BOOL inset; // @synthesize inset=_inset;
 - (void)updateLayer;
 - (BOOL)wantsUpdateLayer;
 

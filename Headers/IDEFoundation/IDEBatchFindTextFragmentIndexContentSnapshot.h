@@ -6,20 +6,21 @@
 
 #import <objc/NSObject.h>
 
-@class IDETextFragmentIndex, NSArray;
+@class IDEBatchFindContextualSuffixTree, IDEBatchFindFilePathTable, IDETextFragmentIndex, NSArray;
 
 @interface IDEBatchFindTextFragmentIndexContentSnapshot : NSObject
 {
     IDETextFragmentIndex *_textFragmentIndex;
-    NSArray *_filteredGroups;
+    IDEBatchFindContextualSuffixTree *_suffixTree;
+    IDEBatchFindFilePathTable *_filePathTable;
 }
 
 - (void).cxx_destruct;
-@property(readonly) NSArray *filteredGroups; // @synthesize filteredGroups=_filteredGroups;
+@property(readonly) IDEBatchFindFilePathTable *filePathTable; // @synthesize filePathTable=_filePathTable;
+@property(readonly) IDEBatchFindContextualSuffixTree *suffixTree; // @synthesize suffixTree=_suffixTree;
 @property(readonly) IDETextFragmentIndex *textFragmentIndex; // @synthesize textFragmentIndex=_textFragmentIndex;
-- (long long)totalNumberOfFilteredUniquedFilePaths;
-@property(readonly) NSArray *ordredCandidateFilePaths;
-- (id)initWithTextFragmentIndex:(id)arg1 filteredGroups:(id)arg2;
+@property(readonly) NSArray *allPossiblySkippedFilePaths;
+- (id)initWithContextualSuffixTree:(id)arg1 filePathTable:(id)arg2 textFragmentIndex:(id)arg3;
 
 @end
 

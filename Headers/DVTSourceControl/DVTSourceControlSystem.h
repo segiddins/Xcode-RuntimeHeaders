@@ -71,6 +71,7 @@
 - (id)setRebaseState:(unsigned long long)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (id)rebaseStateWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (id)setGlobalAuthor:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
+- (id)globalAuthorNameAndEmailWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (id)globalAuthorWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (id)remoteNameIsValid:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (id)setIgnoredFiles:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;

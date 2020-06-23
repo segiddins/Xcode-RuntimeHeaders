@@ -27,6 +27,7 @@
 }
 
 - (void).cxx_destruct;
+@property(readonly, nonatomic) DTXConnection *_connection; // @synthesize _connection;
 @property int compressionTypeHint; // @synthesize compressionTypeHint=_compressionTypeHint;
 @property(readonly, nonatomic) unsigned int channelCode; // @synthesize channelCode=_channelCode;
 @property BOOL isCanceled; // @synthesize isCanceled=_canceled;

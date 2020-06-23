@@ -13,7 +13,7 @@
 #import <Xcode3UI/XCEDataRootAdapterP-Protocol.h>
 #import <Xcode3UI/Xcode3SourceListItemEditor-Protocol.h>
 
-@class DVTBorderedView, DVTGradientImagePopUpButton, DVTMacroDefinitionConditionSet, DVTPerformanceMetric, DVTSearchField, DVTSourceExpression, NSArray, NSButton, NSMenu, NSMutableArray, NSMutableDictionary, NSMutableSet, NSOutlineView, NSScrollView, NSString, PBXProject, XCPropertyDefinition, Xcode3BuildPropertyEditor, Xcode3BuildPropertyOutlineView, Xcode3ConfigurableDataSource, Xcode3ProjectEditor;
+@class DVTBorderedView, DVTGradientImagePopUpButton, DVTMacroDefinitionConditionSet, DVTPerformanceMetric, DVTScopeBarButton, DVTSearchField, DVTSourceExpression, NSArray, NSMenu, NSMutableArray, NSMutableDictionary, NSMutableSet, NSOutlineView, NSScrollView, NSString, PBXProject, XCPropertyDefinition, Xcode3BuildPropertyEditor, Xcode3BuildPropertyOutlineView, Xcode3ConfigurableDataSource, Xcode3ProjectEditor;
 @protocol IDEBlueprint;
 
 @interface Xcode3BuildSettingsEditor : IDEViewController <Xcode3SourceListItemEditor, NSTableViewDataSource, NSTableViewDelegate, XCEDataRootAdapterP, XCEDataNodeAdapterP, DVTDelayedMenuButtonDelegate>
@@ -50,11 +50,11 @@
     NSString *_buildPropertyName;
     NSString *_buildPropertyLocalizedName;
     Xcode3ConfigurableDataSource *_outlineViewDataSource;
-    NSButton *_editorModeButton_basic;
-    NSButton *_editorModeButton_customized;
-    NSButton *_editorModeButton_all;
-    NSButton *_displayModeButton_combined;
-    NSButton *_displayModeButton_separated;
+    DVTScopeBarButton *_editorModeButton_basic;
+    DVTScopeBarButton *_editorModeButton_customized;
+    DVTScopeBarButton *_editorModeButton_all;
+    DVTScopeBarButton *_displayModeButton_combined;
+    DVTScopeBarButton *_displayModeButton_separated;
     DVTGradientImagePopUpButton *_addButton;
     DVTSearchField *_searchField;
     DVTBorderedView *_navigationBarBorderView;

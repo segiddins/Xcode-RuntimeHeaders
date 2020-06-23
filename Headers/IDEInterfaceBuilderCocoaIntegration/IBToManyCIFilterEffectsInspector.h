@@ -6,7 +6,7 @@
 
 #import <IDEInterfaceBuilderCocoaIntegration/IBCIFilterEffectsInspector.h>
 
-@class DVTBindingToken, DVTBorderedView, DVTObservingToken, DVTStackView_ML, DVTTableView, IDEControlGroup, IDEInspectorContentView, NSArrayController, NSIndexSet, NSView;
+@class DVTBindingToken, DVTBorderedView, DVTObservingToken, DVTStackView_ML, DVTTableView, IBToManyCIFilterEffectsInspectorContainerView, IDEControlGroup, IDEInspectorContentView, NSArrayController, NSIndexSet;
 
 @interface IBToManyCIFilterEffectsInspector : IBCIFilterEffectsInspector
 {
@@ -18,7 +18,7 @@
     NSIndexSet *_lastKnownIndexes;
     BOOL _canEditSelectedFilter;
     NSArrayController *_filtersArrayController;
-    NSView *_filterListContainerView;
+    IBToManyCIFilterEffectsInspectorContainerView *_filterListContainerView;
     DVTTableView *_filtersTableView;
     IDEControlGroup *_controlGroup;
     DVTBorderedView *_controlBar;
@@ -30,7 +30,7 @@
 @property(retain) DVTBorderedView *controlBar; // @synthesize controlBar=_controlBar;
 @property(retain) IDEControlGroup *controlGroup; // @synthesize controlGroup=_controlGroup;
 @property(retain) DVTTableView *filtersTableView; // @synthesize filtersTableView=_filtersTableView;
-@property(retain) NSView *filterListContainerView; // @synthesize filterListContainerView=_filterListContainerView;
+@property(retain) IBToManyCIFilterEffectsInspectorContainerView *filterListContainerView; // @synthesize filterListContainerView=_filterListContainerView;
 @property(retain) NSArrayController *filtersArrayController; // @synthesize filtersArrayController=_filtersArrayController;
 @property BOOL canEditSelectedFilter; // @synthesize canEditSelectedFilter=_canEditSelectedFilter;
 - (BOOL)tableView:(id)arg1 acceptDrop:(id)arg2 row:(long long)arg3 dropOperation:(unsigned long long)arg4;

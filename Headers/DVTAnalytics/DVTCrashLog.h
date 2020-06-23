@@ -27,6 +27,7 @@
     NSString *_version;
     NSString *_osVersion;
     NSString *_osBuild;
+    NSString *_codeType;
     DVTFilePath *_cachePath;
     NSArray *_orderedSections;
     NSDictionary *_sections;
@@ -43,6 +44,7 @@
 @property(readonly) NSDictionary *sections; // @synthesize sections=_sections;
 @property(readonly) NSArray *orderedSections; // @synthesize orderedSections=_orderedSections;
 @property(retain) DVTFilePath *cachePath; // @synthesize cachePath=_cachePath;
+@property(readonly) NSString *codeType; // @synthesize codeType=_codeType;
 @property(readonly) NSString *osBuild; // @synthesize osBuild=_osBuild;
 @property(readonly) NSString *osVersion; // @synthesize osVersion=_osVersion;
 @property(readonly) NSString *version; // @synthesize version=_version;

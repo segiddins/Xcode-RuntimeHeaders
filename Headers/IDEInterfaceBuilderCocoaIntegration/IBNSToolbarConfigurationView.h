@@ -7,11 +7,12 @@
 #import <DVTStructuredLayoutKit/DVTLayoutView_ML.h>
 
 #import <IDEInterfaceBuilderCocoaIntegration/DVTInvalidation-Protocol.h>
+#import <IDEInterfaceBuilderCocoaIntegration/IBEditorCanvasFrameShadowDelegate-Protocol.h>
 
 @class DVTStackBacktrace, IBDefaultNSToolbarItemsContainerView, IBDocument, IBMutableIdentityDictionary, IBNSToolbarItemsContainerView, NSButton, NSString, NSTextField;
 @protocol IBNSToolbarConfigurationViewDelegate;
 
-@interface IBNSToolbarConfigurationView : DVTLayoutView_ML <DVTInvalidation>
+@interface IBNSToolbarConfigurationView : DVTLayoutView_ML <DVTInvalidation, IBEditorCanvasFrameShadowDelegate>
 {
     IBMutableIdentityDictionary *_setupOffsets;
     IBDefaultNSToolbarItemsContainerView *_defaultItemsView;
@@ -35,7 +36,10 @@
 @property(readonly, nonatomic) NSString *localPasteboardType; // @synthesize localPasteboardType=_localPasteboardType;
 @property(retain, nonatomic) IBNSToolbarItemsContainerView *allowedItemsView; // @synthesize allowedItemsView=_allowedItemsView;
 @property(retain, nonatomic) IBDefaultNSToolbarItemsContainerView *defaultItemsView; // @synthesize defaultItemsView=_defaultItemsView;
+- (id)shadowForEditorCanvasFrame:(id)arg1;
+- (void)editorCanvasFrame:(id)arg1 drawUnshadowedBackgroundInRect:(struct CGRect)arg2;
 - (void)drawRect:(struct CGRect)arg1;
+- (id)backgroundFillPathInRect:(struct CGRect)arg1;
 - (void)layoutBottomUp;
 - (void)layoutTopDown;
 - (void)done:(id)arg1;

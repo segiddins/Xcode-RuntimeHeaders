@@ -6,9 +6,37 @@
 
 #import <GPUDebugger/_TtC11GPUDebugger24GPUMemoryReportSubEditor.h>
 
-@interface _TtC11GPUDebugger24GPUMemoryReportSubEditor (GPUDebugger)
+#import <GPUDebugger/GPUIssuesViewControllerDelegate-Protocol.h>
+#import <GPUDebugger/NSSplitViewDelegate-Protocol.h>
+
+@class GPUFilterTokenHelper, NSArray;
+
+@interface _TtC11GPUDebugger24GPUMemoryReportSubEditor (GPUDebugger) <NSSplitViewDelegate, GPUIssuesViewControllerDelegate>
 + (id)persistenceKeys;
 - (void)revertStateWith:(id)arg1;
 - (void)commitStateTo:(id)arg1;
+- (void)exportToCSV;
+- (BOOL)canExport;
+- (double)splitView:(id)arg1 constrainMaxCoordinate:(double)arg2 ofSubviewAt:(long long)arg3;
+- (double)splitView:(id)arg1 constrainMinCoordinate:(double)arg2 ofSubviewAt:(long long)arg3;
+- (BOOL)splitView:(id)arg1 canCollapseSubview:(id)arg2;
+- (BOOL)splitView:(id)arg1 shouldAdjustSizeOfSubview:(id)arg2;
+- (void)splitViewDidResizeSubviews:(id)arg1;
+- (void)resourcesViewControllerSelectionDidChange:(id)arg1;
+- (void)resourcesViewController:(id)arg1 showIssueForItem:(id)arg2 atClickedView:(id)arg3;
+- (void)resourcesViewController:(id)arg1 openLocationForItems:(id)arg2;
+- (BOOL)resourcesViewController:(id)arg1 shouldEnableGroup:(long long)arg2;
+- (void)contextMenu_filterInNavigator:(id)arg1;
+- (void)contextMenu_showInfo:(id)arg1;
+- (id)resourcesViewController:(id)arg1 contextMenuItemsForItem:(id)arg2;
+- (void)issuesButton_Clicked:(id)arg1;
+- (void)issuesViewControllerDidDisappear:(id)arg1;
+- (void)issuesViewControllerWillAppear:(id)arg1;
+- (void)issuesViewController:(id)arg1 navigateToIssues:(id)arg2;
+@property(nonatomic, readonly) GPUFilterTokenHelper *tokenHelper;
+@property(nonatomic, readonly) NSArray *filterableObjects;
+- (void)filterViewController:(id)arg1 didFinishFiltering:(id)arg2 result:(id)arg3;
+- (void)filterViewController:(id)arg1 willBeginFiltering:(id)arg2 objects:(id)arg3;
+- (void)filterViewController:(id)arg1 didClearTokenField:(id)arg2;
 @end
 

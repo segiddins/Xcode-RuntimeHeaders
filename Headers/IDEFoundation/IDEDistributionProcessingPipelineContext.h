@@ -10,7 +10,6 @@
 
 @interface IDEDistributionProcessingPipelineContext : IDEDistributionContext
 {
-    DVTFilePath *_temporaryDirectory;
     DVTFilePath *_destinationRoot;
     Class _packagingStep;
     NSDictionary *_onDemandResourcesAssetPacksOwningBundleForCopy;
@@ -45,7 +44,6 @@
 @property(retain, nonatomic) NSDictionary *onDemandResourcesAssetPacksOwningBundleForCopy; // @synthesize onDemandResourcesAssetPacksOwningBundleForCopy=_onDemandResourcesAssetPacksOwningBundleForCopy;
 @property(retain, nonatomic) Class packagingStep; // @synthesize packagingStep=_packagingStep;
 @property(retain, nonatomic) DVTFilePath *destinationRoot; // @synthesize destinationRoot=_destinationRoot;
-@property(retain, nonatomic) DVTFilePath *temporaryDirectory; // @synthesize temporaryDirectory=_temporaryDirectory;
 @property(readonly) DVTFilePath *swinfoOutputPath;
 - (id)assetPackManifestFileName:(id)arg1 forVariant:(id)arg2;
 - (id)assetPackFileName:(id)arg1 forVariant:(id)arg2;
@@ -59,6 +57,7 @@
 - (id)relativeDestinationPathForPipelineOutputAtSourcePath:(id)arg1;
 - (void)addPipelineOutputAtRelativePath:(id)arg1 fromSourcePath:(id)arg2;
 - (id)initWithParent:(id)arg1 stepClass:(Class)arg2 allowedInputs:(id)arg3 allowedOutputs:(id)arg4;
+- (BOOL)useTopLevelItemForPackageName;
 
 @end
 

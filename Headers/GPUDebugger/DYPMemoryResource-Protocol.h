@@ -10,7 +10,6 @@
 @protocol DYPMemoryResource;
 
 @protocol DYPMemoryResource <DYResource>
-@property(nonatomic, readonly) BOOL isPurgeable;
 - (NSNumber *)isBlockCompressed;
 - (NSNumber *)isUsedAsRenderAttachment;
 - (NSNumber *)hasAccessFlag:(unsigned int)arg1;

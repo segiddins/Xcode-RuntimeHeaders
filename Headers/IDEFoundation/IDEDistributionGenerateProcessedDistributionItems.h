@@ -10,8 +10,8 @@
 {
 }
 
-+ (id)processedTopLevelDistributionItemsForTopLevelDistributionItems:(id)arg1 flattenedDistributionItems:(id)arg2 distributionCoalescedThinningVariants:(id)arg3 context:(id)arg4 logging:(id)arg5;
-+ (id)processedTopLevelDistributionItemsForVariant:(id)arg1 topLevelDistributionItems:(id)arg2 flattenedDistributionItems:(id)arg3 distributionCoalescedThinningVariants:(id)arg4 context:(id)arg5 logging:(id)arg6;
++ (id)processedTopLevelDistributionItemsForTopLevelDistributionItems:(id)arg1 flattenedDistributionItems:(id)arg2 distributionCoalescedThinningVariants:(id)arg3 context:(id)arg4 logAspect:(id)arg5;
++ (id)processedTopLevelDistributionItemsForVariant:(id)arg1 topLevelDistributionItems:(id)arg2 flattenedDistributionItems:(id)arg3 distributionCoalescedThinningVariants:(id)arg4 context:(id)arg5 logAspect:(id)arg6;
 - (_Bool)runWithError:(id *)arg1;
 - (id)processedTopLevelDistributionItems;
 - (id)providedOutputContextPropertyNames;

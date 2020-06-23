@@ -13,7 +13,6 @@
     MISSING_TYPE *metalLayer;
     MISSING_TYPE *pipelineState;
     MISSING_TYPE *commandQueue;
-    MISSING_TYPE *attributesBuffer;
     MISSING_TYPE *barBuffer;
     MISSING_TYPE *layoutPass;
     MISSING_TYPE *attributes;

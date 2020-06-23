@@ -23,12 +23,12 @@
     NSString *_viewControllerClassName;
     BOOL _disablePaddingWarning;
     BOOL _isGrouped;
-    int _verticalContentViewResizingMode;
-    int _horizontalContentViewResizingMode;
     long long _horizontalAlignmentWhenClipping;
     long long _horizontalAlignmentWhenPadding;
     long long _verticalAlignmentWhenClipping;
     long long _verticalAlignmentWhenPadding;
+    unsigned long long _verticalContentViewResizingMode;
+    unsigned long long _horizontalContentViewResizingMode;
 }
 
 + (BOOL)requiresConstraintBasedLayout;
@@ -36,8 +36,8 @@
 - (void).cxx_destruct;
 @property BOOL isGrouped; // @synthesize isGrouped=_isGrouped;
 @property BOOL disablePaddingWarning; // @synthesize disablePaddingWarning=_disablePaddingWarning;
-@property(nonatomic) int horizontalContentViewResizingMode; // @synthesize horizontalContentViewResizingMode=_horizontalContentViewResizingMode;
-@property(nonatomic) int verticalContentViewResizingMode; // @synthesize verticalContentViewResizingMode=_verticalContentViewResizingMode;
+@property(nonatomic) unsigned long long horizontalContentViewResizingMode; // @synthesize horizontalContentViewResizingMode=_horizontalContentViewResizingMode;
+@property(nonatomic) unsigned long long verticalContentViewResizingMode; // @synthesize verticalContentViewResizingMode=_verticalContentViewResizingMode;
 @property(nonatomic) long long verticalAlignmentWhenPadding; // @synthesize verticalAlignmentWhenPadding=_verticalAlignmentWhenPadding;
 @property(nonatomic) long long verticalAlignmentWhenClipping; // @synthesize verticalAlignmentWhenClipping=_verticalAlignmentWhenClipping;
 @property(nonatomic) long long horizontalAlignmentWhenPadding; // @synthesize horizontalAlignmentWhenPadding=_horizontalAlignmentWhenPadding;
@@ -48,7 +48,6 @@
 - (BOOL)isAccessibilityElement;
 - (void)willRemoveSubview:(id)arg1;
 - (void)didAddSubview:(id)arg1;
-- (void)_invalidateLayoutBecauseOfSubviewFrameChange:(id)arg1;
 - (struct CGSize)dvt_minimumSize;
 @property(retain) NSView *contentView;
 - (void)dvt_insertBackgroundVisualEffectView:(id)arg1;
@@ -66,6 +65,7 @@
 @property(readonly, copy) NSString *description;
 - (void)primitiveInvalidate;
 - (void)invalidate;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (void)awakeFromNib;
 

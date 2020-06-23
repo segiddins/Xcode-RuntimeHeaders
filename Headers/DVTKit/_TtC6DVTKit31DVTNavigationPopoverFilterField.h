@@ -14,6 +14,7 @@ __attribute__((visibility("hidden")))
     MISSING_TYPE *filterFieldDelegate;
     MISSING_TYPE *filterButton;
     MISSING_TYPE *backButton;
+    MISSING_TYPE *useInsetLayout;
     MISSING_TYPE *mode;
 }
 

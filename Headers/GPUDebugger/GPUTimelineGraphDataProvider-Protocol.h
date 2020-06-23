@@ -11,6 +11,7 @@
 - (BOOL)shouldHighlightItemAtIndex:(unsigned long long)arg1 isGroup:(_Bool)arg2;
 - (unsigned long long)referencePlaneIndex;
 - (NSArray *)columns;
+- (NSArray *)groups;
 - (NSArray *)planes;
 @end
 

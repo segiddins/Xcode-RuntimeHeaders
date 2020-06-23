@@ -10,5 +10,7 @@
 {
 }
 
++ (Class)catalogSetClass;
+
 @end
 

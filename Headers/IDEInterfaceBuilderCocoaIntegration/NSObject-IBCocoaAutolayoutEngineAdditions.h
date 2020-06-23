@@ -60,6 +60,7 @@
 - (id)ibInspectedAppearancePopupValues;
 - (id)ibInspectedAppearancePopupTitles;
 - (id)ibInspectedAppearancePopupDefaultValues;
+- (id)ibInspectedAppearancePopupDefaultTitlesForMultipleSelection;
 - (id)ibInspectedAppearancePopupDefaultTitles;
 - (void)ibInitializeWithStartingAppearanceWhenAddingToDocument;
 - (BOOL)ibIsUsingSystemAppearance;

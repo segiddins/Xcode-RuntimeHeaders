@@ -140,6 +140,7 @@ struct PlaneMetrics {
     struct ViewMetrics _currentViewMetrics;
     double _height;
     double _inspectionLabelCenter;
+    double _intervalBorderWidth;
     struct DrawablesSettings _drawablesSettings;
     char _decoratesMajorMinorTicks;
     char _optionalContent;
@@ -251,8 +252,8 @@ struct __tree_end_node<std::__1::__tree_node_base<void *>*> {
 
 struct atomic<bool> {
     struct __cxx_atomic_impl<bool, std::__1::__cxx_atomic_base_impl<bool>> {
-        _Atomic _Bool _field1;
-    } _field1;
+        _Atomic _Bool __a_value;
+    } __a_;
 };
 
 struct atomic_flag {

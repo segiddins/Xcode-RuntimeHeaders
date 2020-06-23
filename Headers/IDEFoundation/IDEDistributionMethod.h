@@ -37,6 +37,7 @@
 @property(readonly) NSString *title;
 @property(readonly) NSString *commandLineName;
 - (id)commandLineNameForTask:(long long)arg1 destination:(long long)arg2;
+@property(readonly) BOOL supportsAppClips;
 @property(readonly) BOOL supportsManifestDistribution;
 @property(readonly, getter=isAppStoreBound) BOOL appStoreBound;
 @property(readonly) NSArray *supportedDestinations;

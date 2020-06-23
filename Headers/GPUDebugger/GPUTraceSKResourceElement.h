@@ -8,7 +8,7 @@
 
 #import <GPUDebugger/DVHighlightable-Protocol.h>
 
-@class DependencyViewerSKTextureCache, DependencyViewerVertex, GPUTraceSKHighlight, GPUTraceSKTruncatedLabel, GPUTraceStatBox, NSArray, NSString, SKShapeNode, SKSpriteNode, SKTexture;
+@class DependencyViewerSKTextureCache, DependencyViewerVertex, GPUTraceSKHighlight, GPUTraceSKTruncatedLabel, GPUTraceStatBox, NSArray, NSMutableArray, NSString, SKShapeNode, SKSpriteNode, SKTexture;
 @protocol DYPDependencyGraphResourceInfo;
 
 __attribute__((visibility("hidden")))
@@ -19,6 +19,8 @@ __attribute__((visibility("hidden")))
     NSString *_fadeActionKey;
     NSString *_issueFadeKey;
     struct CGSize _scaledImageSize;
+    unsigned long long _slotIndex;
+    NSMutableArray *_issues;
     DependencyViewerSKTextureCache *_textureCache;
     id <DYPDependencyGraphResourceInfo> _resource;
     SKTexture *_texture;
@@ -33,6 +35,7 @@ __attribute__((visibility("hidden")))
 
 - (void).cxx_destruct;
 @property(retain, nonatomic) NSString *label; // @synthesize label=_label;
+@property(readonly, nonatomic) NSArray *issues; // @synthesize issues=_issues;
 @property(readonly, nonatomic) unsigned long long highlightStyle; // @synthesize highlightStyle=_highlightStyle;
 @property(readonly, nonatomic) SKSpriteNode *resourceImage; // @synthesize resourceImage=_resourceImage;
 @property(readonly, nonatomic) GPUTraceSKHighlight *highlight; // @synthesize highlight=_highlight;
@@ -41,23 +44,25 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) GPUTraceStatBox *statBox; // @synthesize statBox=_statBox;
 @property(readonly) SKTexture *texture; // @synthesize texture=_texture;
 @property(readonly) id <DYPDependencyGraphResourceInfo> resource; // @synthesize resource=_resource;
+- (void)findingsChanged;
+- (BOOL)shouldKeepFinding:(id)arg1;
+- (void)removeFindings:(id)arg1;
+- (void)checkAndAddFinding:(id)arg1;
+- (id)_encoderGroupItem;
 - (id)selectableOutlineItemAtSlotIndex:(unsigned long long)arg1;
 - (BOOL)isSelected;
 - (void)setSelected:(BOOL)arg1;
 - (void)removeHighlightStyle:(unsigned long long)arg1;
 - (void)addHighlightStyle:(unsigned long long)arg1;
 - (void)updateHighlight;
-- (void)showStats;
-- (void)hideStats;
 - (void)draw:(id)arg1;
 - (double)elementHeight;
 - (double)elementWidth;
 - (void)setImage:(id)arg1;
 - (void)setSKTexture:(id)arg1;
 @property(readonly, nonatomic) BOOL hasIssues;
-@property(readonly, nonatomic) NSArray *issues;
 - (long long)resourceId;
-- (id)initWithNode:(id)arg1 textureCache:(id)arg2 resourceId:(id)arg3 andImage:(id)arg4;
+- (id)initWithNode:(id)arg1 textureCache:(id)arg2 resourceId:(id)arg3 andImage:(id)arg4 slotIndex:(unsigned long long)arg5;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

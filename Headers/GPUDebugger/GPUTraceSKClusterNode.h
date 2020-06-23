@@ -24,7 +24,7 @@ __attribute__((visibility("hidden")))
 - (void)loadResourceImages;
 - (void)setMagnification:(double)arg1;
 - (void)draw;
-- (id)initWithCluster:(id)arg1 withTextureCache:(id)arg2 statsShowing:(BOOL)arg3;
+- (id)initWithCluster:(id)arg1 withTextureCache:(id)arg2 statsShowing:(BOOL)arg3 processingQueue:(id)arg4;
 
 // Remaining properties
 @property(nonatomic) struct CGRect bounds;

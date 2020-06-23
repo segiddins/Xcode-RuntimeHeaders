@@ -19,6 +19,7 @@
 + (Class)ibDropTargetResolverClass;
 - (BOOL)objectShouldShowSelectionHighlight:(id)arg1;
 - (void)noteDescendant:(id)arg1 didChangeProperty:(id)arg2 fromValue:(id)arg3;
+- (void)resizeFrameViewWithEvent:(id)arg1 fromEditorCanvasFrameKnob:(CDUnion_42e99c75)arg2;
 - (id)hitTestEditorView:(struct CGPoint)arg1;
 - (BOOL)interceptEvent:(id)arg1;
 - (BOOL)handleDragForChild:(id)arg1 forDragEvent:(id)arg2;
@@ -32,6 +33,7 @@
 - (id)draggedImageStateForOrderedIdentifiedItemViews:(id)arg1 withName:(id)arg2;
 - (void)selectionOwner:(id)arg1 willSelect:(id)arg2 andDeselect:(id)arg3;
 - (void)setDecoratorNeedsDisplayForItem:(id)arg1;
+- (struct CGRect)rectForDecorationsOverlayWithScale:(double)arg1;
 - (void)didOpen;
 - (void)toolbarItemsContainerView:(id)arg1 didFinishDragging:(unsigned long long)arg2;
 - (void)toolbarConfigurationView:(id)arg1 doneButtonWasClicked:(id)arg2;

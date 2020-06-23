@@ -9,7 +9,7 @@
 #import <GPUDebugger/GPUFilterableObject-Protocol.h>
 #import <GPUDebugger/GPUTimelineGraphPlaneInfo-Protocol.h>
 
-@class GPUTraceCounterGraphGroupItem, NSArray, NSNumberFormatter, NSSet, NSString;
+@class GPUTraceCounterGraphGroupItem, NSArray, NSMutableSet, NSNumberFormatter, NSSet, NSString;
 
 @interface GPUTraceCounterGraphPlaneItem : NSObject <GPUFilterableObject, GPUTimelineGraphPlaneInfo>
 {
@@ -20,6 +20,7 @@
     BOOL _isEncoderData;
     BOOL _maskInCompute;
     BOOL _maskInDraw;
+    BOOL _isRawCounter;
     int _dataType;
     NSString *_name;
     NSString *_functionName;
@@ -28,15 +29,15 @@
     NSString *_subtitle;
     long long _maxValue;
     unsigned long long _planeIndex;
-    unsigned long long _sortingIndex;
     unsigned long long _groupIndex;
     GPUTraceCounterGraphGroupItem *_groupItem;
-    NSSet *_filterItems;
+    NSMutableSet *_filterItems;
 }
 
 - (void).cxx_destruct;
-@property(retain, nonatomic) NSSet *filterItems; // @synthesize filterItems=_filterItems;
+@property(retain, nonatomic) NSMutableSet *filterItems; // @synthesize filterItems=_filterItems;
 @property(nonatomic) __weak GPUTraceCounterGraphGroupItem *groupItem; // @synthesize groupItem=_groupItem;
+@property(nonatomic) BOOL isRawCounter; // @synthesize isRawCounter=_isRawCounter;
 @property(nonatomic) BOOL maskInDraw; // @synthesize maskInDraw=_maskInDraw;
 @property(nonatomic) BOOL maskInCompute; // @synthesize maskInCompute=_maskInCompute;
 @property(nonatomic) BOOL isEncoderData; // @synthesize isEncoderData=_isEncoderData;
@@ -44,7 +45,6 @@
 @property(nonatomic) BOOL availablePerDraw; // @synthesize availablePerDraw=_availablePerDraw;
 @property(nonatomic) BOOL isVisible; // @synthesize isVisible=_isVisible;
 @property(nonatomic) unsigned long long groupIndex; // @synthesize groupIndex=_groupIndex;
-@property(nonatomic) unsigned long long sortingIndex; // @synthesize sortingIndex=_sortingIndex;
 @property(nonatomic) unsigned long long planeIndex; // @synthesize planeIndex=_planeIndex;
 @property(nonatomic) long long maxValue; // @synthesize maxValue=_maxValue;
 @property(nonatomic) int dataType; // @synthesize dataType=_dataType;

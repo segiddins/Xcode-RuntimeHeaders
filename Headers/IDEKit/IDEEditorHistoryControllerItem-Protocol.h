@@ -4,16 +4,16 @@
 //  Copyright (C) 1997-2019 Steve Nygard.
 //
 
-@class DVTDocumentLocation, NSDictionary, NSImage, NSString, NSURL;
+@class DVTDocumentLocation, NSDictionary, NSString, NSURL;
 @protocol IDEEditorHistoryControllerItem;
 
 @protocol IDEEditorHistoryControllerItem
-- (void)setCachedImage:(NSImage *)arg1 isDark:(BOOL)arg2;
 - (BOOL)isEqualToHistoryControllerItem:(id <IDEEditorHistoryControllerItem>)arg1;
 @property(nonatomic, readonly) DVTDocumentLocation *documentLocation;
 @property(nonatomic, readonly) NSString *domainIdentifier;
 @property(nonatomic, readonly) NSDictionary *stateSavingStateDictionary;
 @property(nonatomic, readonly) NSURL *documentURL;
+@property(nonatomic, readonly) NSString *documentDisplayName;
 @property(nonatomic, readonly) NSString *historyMenuItemTitle;
 @property(nonatomic, readonly) NSString *documentExtensionIdentifier;
 @end

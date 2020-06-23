@@ -40,6 +40,7 @@
     DVTFileDataType *_assignedFileDataType;
 }
 
++ (id)keyPathsForValuesAffectingCanStructureEditName;
 + (BOOL)automaticallyNotifiesObserversOfAggregateSourceControlConflictStatus;
 + (BOOL)automaticallyNotifiesObserversOfAggregateSourceControlServerStatus;
 + (BOOL)automaticallyNotifiesObserversOfAggregateSourceControlLocalStatus;
@@ -64,8 +65,8 @@
 - (BOOL)canStructureEditName;
 - (BOOL)structureEditRemoveSubitemsAtIndexes:(id)arg1 error:(id *)arg2;
 - (BOOL)canStructureEditRemoveSubitemsAtIndexes:(id)arg1;
-- (BOOL)structureEditSortSubitemsAtIndexes:(id)arg1 byNameOrByType:(BOOL)arg2;
-- (BOOL)canStructureEditSortSubitemsAtIndexes:(id)arg1 byNameOrByType:(BOOL)arg2;
+- (BOOL)structureEditSortSubitemsAtIndexes:(id)arg1 sortStyle:(unsigned long long)arg2;
+- (BOOL)canStructureEditSortSubitemsAtIndexes:(id)arg1 sortStyle:(unsigned long long)arg2;
 - (id)structureEditInsertFileURLs:(id)arg1 atIndex:(unsigned long long)arg2 createGroupsForFolders:(BOOL)arg3;
 - (BOOL)canStructureEditInsertFileURLs:(id)arg1 atIndex:(unsigned long long)arg2;
 - (id)structureEditInsertSubitems:(id)arg1 atIndex:(unsigned long long)arg2;
@@ -134,7 +135,7 @@
 - (id)ideFindScope_predicateRoot;
 - (void)ideFindScope_accumulateFilePaths:(id)arg1 andVisitedContainers:(id)arg2;
 - (id)ideModelObjectTypeIdentifier;
-- (void)ide_populateSnapshotGroups:(id)arg1 filePaths:(id)arg2 visitedContainers:(id)arg3;
+- (void)ide_populateFilePaths:(id)arg1 parentSuffixIndex:(long long)arg2 visitedContainers:(id)arg3;
 - (void)setAssignedFileDataTypeFromUTF8String:(char *)arg1 fromXMLUnarchiver:(id)arg2;
 - (void)dvt_encodeRelationshipsWithXMLArchiver:(id)arg1 version:(id)arg2;
 - (void)dvt_encodeAttributesWithXMLArchiver:(id)arg1 version:(id)arg2;

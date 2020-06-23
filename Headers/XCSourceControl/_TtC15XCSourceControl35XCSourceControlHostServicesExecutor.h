@@ -13,16 +13,13 @@
 __attribute__((visibility("hidden")))
 @interface _TtC15XCSourceControl35XCSourceControlHostServicesExecutor : NSObject <NSURLSessionTaskDelegate>
 {
-    MISSING_TYPE *session;
     MISSING_TYPE *dataTask;
-    MISSING_TYPE *originalHeaders;
-    MISSING_TYPE *context;
+    MISSING_TYPE *session;
     MISSING_TYPE *isCancelled;
 }
 
 - (void).cxx_destruct;
 - (id)init;
-- (void)URLSession:(id)arg1 task:(id)arg2 willPerformHTTPRedirection:(id)arg3 newRequest:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 
 @end
 

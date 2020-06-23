@@ -57,6 +57,11 @@
 @property(readonly) BOOL usesCachedImageBasedDrawing;
 - (void)optimisticallyDropBitmapCache;
 - (BOOL)cachedImageIsInvalid;
+- (id)liveViewsPlaceholderTitle;
+- (BOOL)shouldDrawLiveViewsPlaceholder;
+- (BOOL)ibIsRenderingDesignable;
+- (BOOL)ibHasDesignableRenderingOrSceneError;
+@property(readonly, nonatomic) NSError *ibTopLevelLiveViewsSceneLevelError;
 - (void)invalidateCachedImage;
 - (void)invalidateRenderedScene;
 - (void)invalidateCachedImageIfCompositingWithinXcode;

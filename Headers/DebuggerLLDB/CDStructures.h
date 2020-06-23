@@ -22,8 +22,6 @@ struct Broadcaster;
 
 struct CommandInterpreter;
 
-struct CommandReturnObject;
-
 struct CompileUnit;
 
 struct Connection {
@@ -59,6 +57,8 @@ struct QueueImpl;
 struct QueueItem;
 
 struct SBAttachInfo;
+
+struct SBCommandReturnObjectImpl;
 
 struct SBLaunchInfo;
 
@@ -229,12 +229,6 @@ struct unique_ptr<lldb_private::Address, std::__1::default_delete<lldb_private::
     } __ptr_;
 };
 
-struct unique_ptr<lldb_private::CommandReturnObject, std::__1::default_delete<lldb_private::CommandReturnObject>> {
-    struct __compressed_pair<lldb_private::CommandReturnObject *, std::__1::default_delete<lldb_private::CommandReturnObject>> {
-        struct CommandReturnObject *__value_;
-    } __ptr_;
-};
-
 struct unique_ptr<lldb_private::EvaluateExpressionOptions, std::__1::default_delete<lldb_private::EvaluateExpressionOptions>> {
     struct __compressed_pair<lldb_private::EvaluateExpressionOptions *, std::__1::default_delete<lldb_private::EvaluateExpressionOptions>> {
         struct EvaluateExpressionOptions *__value_;
@@ -256,6 +250,12 @@ struct unique_ptr<lldb_private::FileSpecList, std::__1::default_delete<lldb_priv
 struct unique_ptr<lldb_private::LineEntry, std::__1::default_delete<lldb_private::LineEntry>> {
     struct __compressed_pair<lldb_private::LineEntry *, std::__1::default_delete<lldb_private::LineEntry>> {
         struct LineEntry *__value_;
+    } __ptr_;
+};
+
+struct unique_ptr<lldb_private::SBCommandReturnObjectImpl, std::__1::default_delete<lldb_private::SBCommandReturnObjectImpl>> {
+    struct __compressed_pair<lldb_private::SBCommandReturnObjectImpl *, std::__1::default_delete<lldb_private::SBCommandReturnObjectImpl>> {
+        struct SBCommandReturnObjectImpl *__value_;
     } __ptr_;
 };
 

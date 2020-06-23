@@ -51,7 +51,6 @@
     MISSING_TYPE *_secondarySelection;
     MISSING_TYPE *_dynamicObject;
     MISSING_TYPE *constraintSet;
-    MISSING_TYPE *overlappingBodyPairs;
     MISSING_TYPE *paramContext;
     MISSING_TYPE *commandIdGenerator;
     MISSING_TYPE *currentStartTransactionLayoutCommand;

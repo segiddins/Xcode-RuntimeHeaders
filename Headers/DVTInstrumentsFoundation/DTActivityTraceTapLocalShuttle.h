@@ -8,7 +8,7 @@
 
 #import <DVTInstrumentsFoundation/DTOSLogLoaderVisitor-Protocol.h>
 
-@class DTOSLogLoader, NSData, NSError, NSPredicate, XRMobileAgentDock;
+@class DTOSLogLoader, NSData, NSError, NSPredicate, NSURL, XRIntKeyedDictionary, XRMobileAgentDock;
 
 @interface DTActivityTraceTapLocalShuttle : XRMobileAgent <DTOSLogLoaderVisitor>
 {
@@ -27,6 +27,8 @@
     unsigned long long _signpostConfig;
     unsigned long long _exclusions;
     unsigned long long _logLoaderMode;
+    NSURL *_archiveURL;
+    XRIntKeyedDictionary *_pidToExecNameMapping;
     double _fetchWindow;
     NSPredicate *_predicate;
     DTOSLogLoader *_loaderStop;
@@ -38,6 +40,8 @@
 @property(retain, nonatomic) DTOSLogLoader *loaderStop; // @synthesize loaderStop=_loaderStop;
 @property(retain, nonatomic) NSPredicate *predicate; // @synthesize predicate=_predicate;
 @property(nonatomic) double fetchWindow; // @synthesize fetchWindow=_fetchWindow;
+@property(retain, nonatomic) XRIntKeyedDictionary *pidToExecNameMapping; // @synthesize pidToExecNameMapping=_pidToExecNameMapping;
+@property(retain, nonatomic) NSURL *archiveURL; // @synthesize archiveURL=_archiveURL;
 @property(nonatomic) unsigned long long logLoaderMode; // @synthesize logLoaderMode=_logLoaderMode;
 @property(nonatomic) unsigned long long exclusions; // @synthesize exclusions=_exclusions;
 @property(nonatomic) unsigned long long signpostConfig; // @synthesize signpostConfig=_signpostConfig;
@@ -52,6 +56,7 @@
 @property(nonatomic) unsigned long long lastMachContinuousTime; // @synthesize lastMachContinuousTime;
 @property(nonatomic, getter=isFetchComplete) BOOL fetchComplete; // @synthesize fetchComplete;
 @property(retain, nonatomic) NSData *nextOutputBytes; // @synthesize nextOutputBytes;
+- (void)addPidToExecEntriesFromMapping:(id)arg1;
 - (void)executeStopOnItinerary:(id)arg1;
 
 @end

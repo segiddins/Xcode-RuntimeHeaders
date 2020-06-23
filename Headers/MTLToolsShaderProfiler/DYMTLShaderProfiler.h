@@ -6,17 +6,19 @@
 
 #import <GPUToolsShaderProfiler/DYShaderProfiler.h>
 
-@class NSDictionary, NSString;
+@class NSDictionary, NSOperationQueue, NSString;
 @protocol DYPShaderProfiler;
 
 @interface DYMTLShaderProfiler : DYShaderProfiler
 {
     id <DYPShaderProfiler> _platformShaderProfiler;
     BOOL _useEncoderDataForCounters;
+    struct atomic<bool> _sessionIsInvalid;
     NSString *_metalPluginName;
     NSDictionary *_derivedCounterInfoResult;
     NSDictionary *_payload;
     NSDictionary *_shaderInfoResult;
+    NSOperationQueue *_parallelQueue;
 }
 
 + (BOOL)isDisassemblerAvailable;
@@ -29,18 +31,29 @@
 - (id)_constructPayload;
 - (id)initWithDelegate:(id)arg1;
 - (id)profileShader:(id)arg1;
+- (void)_addBlitTimesToEffectiveKickTimes:(id)arg1;
+- (void)_calculatePerDrawCosts:(id)arg1;
+- (void)_analyzeShaderBinarySamplesForResult:(id)arg1 forShaderKeyToSourcePath:(id)arg2;
+- (void)_preProcessStreamingUSCSampleData:(id)arg1 result:(id)arg2;
+- (void)_saveSampleDataFromGPURawCounters:(unsigned long long *)arg1 size:(unsigned int)arg2 filename:(const char *)arg3;
 - (id)_queryDerivedCounterDataWithDelegate:(id)arg1 withShaderInfoResult:(id)arg2 forPayload:(id)arg3 withShaderProfilerResult:(id)arg4;
 - (void)_showDrawCallDataforResult:(id)arg1;
 - (id)profileFrame;
 - (id)computeFromFrameInfoResult:(id)arg1 forFuture:(id)arg2;
 - (void)_dumpTraceProfileDataForResult:(id)arg1;
 - (id)computeFromShaderInfoResult:(id)arg1 forPayload:(id)arg2 forFuture:(id)arg3;
+- (id)_processHarvestedBinaryData:(id)arg1 forStreamedData:(id)arg2;
+- (void)_processDerivedEncoderCounterData:(id)arg1 forDerivedEncoderData:(id)arg2;
+- (id)_createPerCounterCommandData:(id)arg1 withPerCommandData:(id)arg2;
+- (void)_processFrameTimeData:(id)arg1 forProcessedFrameTimeData:(id)arg2;
+- (id)_effectiveBatchDrawKickTimes:(id)arg1 forShaderProfilerResult:(id)arg2;
 - (void)collectBatchFilteredDataForShaderProfilerResult:(id)arg1;
-- (id)_updateDrawCallTimingCounters:(unsigned int)arg1 forShaderProfilerResult:(id)arg2 withDrawCallData:(id)arg3 withBottleNeckAnalysisDrawCallsData:(id)arg4 withCounterIndices:(const tuple_944faa43 *)arg5;
+- (id)_updateDrawCallTimingCounters:(unsigned int)arg1 forShaderProfilerResult:(id)arg2 withDrawCallData:(id)arg3 withBottleNeckAnalysisDrawCallsData:(id)arg4 withCounterIndices:(const struct CounterIndexInfo *)arg5;
 - (id)_preparePrioritizedPerEncoderDrawListFromShaderProfilerResult:(id)arg1 andGetMaxDrawsPerEncoder:(unsigned long long *)arg2 andGetEncoderBatchIndexToDrawIndexMap:(unordered_map_84a1d227 *)arg3 andGetDrawCallIndexToEncoderBatchIndexMap:(unordered_map_82c9fb87 *)arg4;
 - (void)_setupFragmentEncoderCountersPerDrawCall:(id)arg1;
 - (id)_setupLimiterInfoPerDrawCall:(id)arg1 forPayload:(id)arg2;
 - (id)_processEncoderTimeData:(id)arg1 withKickTimeData:(id)arg2 forPayload:(id)arg3 withGPUTime:(unsigned long long)arg4;
+- (void)handleCaptureSessionTearDown;
 - (void)enumerateFragmentShadersForResult:(id)arg1 andShaderInfoDictionary:(id)arg2 usingBlock:(CDUnknownBlockType)arg3;
 - (void)initializeShaderAnalyzer;
 

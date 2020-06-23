@@ -23,7 +23,7 @@
 - (void)_removeDirectoryPathObservationForPath:(id)arg1;
 - (void)_addDirectoryPathObservationForPath:(id)arg1 block:(CDUnknownBlockType)arg2;
 - (void)_removePlaygroundDirectoriesObservation;
-- (void)_addPlaygroundDirectoriesObservation;
+- (void)_addPlaygroundDirectoriesObservationAndPostBefore;
 - (id)_sourcesDirectoryPath;
 - (BOOL)_shouldRespondToFileChangeOnDisk;
 - (id)createRootGroup;

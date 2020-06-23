@@ -11,12 +11,12 @@
 
 @interface DYAnalyzerEngine : NSObject
 {
+    int _fileFunctionIndex;
     int _captureBlockMode;
     int _frameNum;
     int _drawCallNum;
     DYAnalyzerFindingPool *_findingPool;
     int _funcCounter;
-    int _fileFunctionIndex;
     unsigned long long _lastTimestamp;
     NSMutableDictionary *_heuristicPoolDict;
     CDUnknownBlockType _graphicsEngineInfoProvider;

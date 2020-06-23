@@ -12,6 +12,7 @@ __attribute__((visibility("hidden")))
 @interface _TtC13IDEFoundation28IDEStructureEditingOperation : DVTOperation
 {
     MISSING_TYPE *_procedure;
+    MISSING_TYPE *logAspect;
 }
 
 - (void).cxx_destruct;

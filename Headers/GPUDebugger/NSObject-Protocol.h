@@ -8,19 +8,19 @@
 
 @protocol NSObject
 @property(nonatomic, readonly) NSString *description;
-- (void *)zone;
-- (long long)retainCount;
+- (struct _NSZone *)zone;
+- (unsigned long long)retainCount;
 - (id)autorelease;
-- (void)release;
+- (oneway void)release;
 - (id)retain;
 - (BOOL)respondsToSelector:(SEL)arg1;
 - (BOOL)conformsToProtocol:(Protocol *)arg1;
 - (BOOL)isMemberOfClass:(Class)arg1;
 - (BOOL)isKindOfClass:(Class)arg1;
 - (BOOL)isProxy;
-- (id *)performSelector:(SEL)arg1 withObject:(id)arg2 withObject:(id)arg3;
-- (id *)performSelector:(SEL)arg1 withObject:(id)arg2;
-- (id *)performSelector:(SEL)arg1;
+- (id)performSelector:(SEL)arg1 withObject:(id)arg2 withObject:(id)arg3;
+- (id)performSelector:(SEL)arg1 withObject:(id)arg2;
+- (id)performSelector:(SEL)arg1;
 - (id)self;
 - (Class)class;
 @property(nonatomic, readonly) Class superclass;

@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
 - (id)_generateThumbnailForImage:(id)arg1 withContentsScale:(double)arg2 nocache:(BOOL)arg3;
 - (id)_generateDefaultThumbnailForImage:(id)arg1;
 - (id)cachedThumbnailForResourceItem:(id)arg1;
+- (id)generatePixelPreviewForPixelTextureResource:(id)arg1 showDepth:(BOOL)arg2 withRenderingAttributes:(id)arg3;
 - (void)_addImageToThumbnailCache:(id)arg1 forResourceItem:(id)arg2 withCost:(unsigned long long)arg3;
 - (id)_placeholderThumbnail;
 - (id)init;

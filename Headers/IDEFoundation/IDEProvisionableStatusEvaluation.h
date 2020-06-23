@@ -20,8 +20,8 @@
     NSString *_configuration;
     IDECodesignParameterSnapshot *_codesignParameterSnapshot;
     IDEProvisioningRepairInfo *_repairInfo;
-    IDEProvisionableStatusEvalutorInputs *_evaluationInputs;
     DVTLogAspect *_logAspect;
+    IDEProvisionableStatusEvalutorInputs *_evaluationInputs;
     IDEProvisionableEntitlements *_rawEntitlements;
     NSArray *_rawErrors;
 }
@@ -31,8 +31,8 @@
 - (void).cxx_destruct;
 @property(readonly) NSArray *rawErrors; // @synthesize rawErrors=_rawErrors;
 @property(readonly) IDEProvisionableEntitlements *rawEntitlements; // @synthesize rawEntitlements=_rawEntitlements;
-@property(readonly) DVTLogAspect *logAspect; // @synthesize logAspect=_logAspect;
 @property(readonly) IDEProvisionableStatusEvalutorInputs *evaluationInputs; // @synthesize evaluationInputs=_evaluationInputs;
+@property(readonly) DVTLogAspect *logAspect; // @synthesize logAspect=_logAspect;
 @property(readonly, nonatomic) IDEProvisioningRepairInfo *repairInfo; // @synthesize repairInfo=_repairInfo;
 @property(readonly, nonatomic) IDECodesignParameterSnapshot *codesignParameterSnapshot; // @synthesize codesignParameterSnapshot=_codesignParameterSnapshot;
 @property(readonly, nonatomic) NSString *configuration; // @synthesize configuration=_configuration;

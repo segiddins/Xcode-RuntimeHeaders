@@ -8,12 +8,13 @@
 
 #import <IDEFoundation/NSSecureCoding-Protocol.h>
 
-@class DVTFilePath, IDETextFragmentIndexQuickRejectionFilter, NSError, NSNumber;
+@class DVTFileDataType, DVTFilePath, IDETextFragmentIndexQuickRejectionFilter, NSError, NSNumber;
 @protocol IDETextFragmentProviderSeed;
 
 @interface IDETextFragmentIndexEntry : NSObject <NSSecureCoding>
 {
     DVTFilePath *_filePath;
+    DVTFileDataType *_explicitFileDataType;
     Class _providerClass;
     NSNumber *_sourceFileModificationTimestamp;
     NSObject<IDETextFragmentProviderSeed> *_retainedSeed;
@@ -28,12 +29,13 @@
 @property(readonly) NSObject<IDETextFragmentProviderSeed> *retainedSeed; // @synthesize retainedSeed=_retainedSeed;
 @property(readonly) NSNumber *sourceFileModificationTimestamp; // @synthesize sourceFileModificationTimestamp=_sourceFileModificationTimestamp;
 @property(readonly) Class providerClass; // @synthesize providerClass=_providerClass;
+@property(readonly) DVTFileDataType *explicitFileDataType; // @synthesize explicitFileDataType=_explicitFileDataType;
 @property(readonly) DVTFilePath *filePath; // @synthesize filePath=_filePath;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFilePath:(id)arg1 providerClass:(Class)arg2 sourceFileModificationTimestamp:(id)arg3 seed:(id)arg4 retainFragments:(BOOL)arg5;
-- (id)initWithFilePath:(id)arg1 providerClass:(Class)arg2 sourceFileModificationTimestamp:(id)arg3 providerError:(id)arg4;
+- (id)initWithFilePath:(id)arg1 explicitFileDataType:(id)arg2 providerClass:(Class)arg3 sourceFileModificationTimestamp:(id)arg4 seed:(id)arg5 retainFragments:(BOOL)arg6;
+- (id)initWithFilePath:(id)arg1 explicitFileDataType:(id)arg2 providerClass:(Class)arg3 sourceFileModificationTimestamp:(id)arg4 providerError:(id)arg5;
 
 @end
 

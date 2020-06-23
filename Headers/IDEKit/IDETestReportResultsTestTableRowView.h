@@ -24,11 +24,12 @@
 - (void)mouseExited:(id)arg1;
 - (void)mouseEntered:(id)arg1;
 - (id)tableCellView;
+- (id)testFailureTableCellView;
+- (id)testActivityTableCellView;
 - (id)testAttachmentTableCellView;
 - (id)testTargetTableCellView;
 - (id)testTableCellView;
 - (void)updateTrackingAreas;
-- (void)ensureTrackingArea;
 - (BOOL)mouseInside;
 - (void)setMouseInside:(BOOL)arg1;
 - (void)drawSeparatorInRect:(struct CGRect)arg1;

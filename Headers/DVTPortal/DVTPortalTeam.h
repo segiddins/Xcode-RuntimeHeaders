@@ -29,9 +29,9 @@
 - (id)plaStatusWithSession:(id)arg1 error:(id *)arg2;
 - (id)membershipForPlatform:(id)arg1;
 - (BOOL)supportsOneCertPerMac;
-- (BOOL)isFreeProvisioningTeam;
-- (BOOL)isEnterpriseTeam;
-- (BOOL)isUniversityTeam;
+@property(readonly, nonatomic) BOOL isFreeProvisioningTeam;
+@property(readonly, nonatomic) BOOL isEnterpriseTeam;
+@property(readonly, nonatomic) BOOL isUniversityTeam;
 - (BOOL)dvt_servicesTypeInstanceDidFinishLoadingWithContext:(id)arg1 error:(id *)arg2;
 @property(readonly, copy, nonatomic) NSSet *portalPrograms;
 @property(readonly, copy, nonatomic) NSArray *memberships; // @synthesize memberships=_memberships;

@@ -10,7 +10,5 @@
 {
 }
 
-- (double)dividerThickness;
-
 @end
 

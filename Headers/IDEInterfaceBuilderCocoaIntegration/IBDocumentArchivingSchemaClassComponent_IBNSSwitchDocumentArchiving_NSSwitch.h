@@ -13,9 +13,7 @@
 + (id)sharedInstance;
 - (id)schemaIdentifier;
 - (id)elementName;
-- (id)archivableClassName;
 - (Class)archivableClass;
-- (id)minimumRequiredRuntimeOSVersion;
 
 @end
 

@@ -6,15 +6,20 @@
 
 #import <DVTInstrumentsFoundation/DTTapConfig.h>
 
-@class NSString;
+@class NSString, NSURL, XRIntKeyedDictionary;
 
 @interface DTActivityTraceTapConfig : DTTapConfig
 {
+    NSURL *_logArchiveURL;
     CDUnknownBlockType _memoHandler;
+    XRIntKeyedDictionary *_pidToExecNameMapping;
 }
 
 - (void).cxx_destruct;
+@property(retain, nonatomic) XRIntKeyedDictionary *pidToExecNameMapping; // @synthesize pidToExecNameMapping=_pidToExecNameMapping;
 @property(copy, nonatomic) CDUnknownBlockType memoHandler; // @synthesize memoHandler=_memoHandler;
+@property(retain, nonatomic) NSURL *logArchiveURL; // @synthesize logArchiveURL=_logArchiveURL;
+@property(nonatomic) BOOL trackPidToExecNameMapping;
 @property(nonatomic) BOOL excludeDebug;
 @property(nonatomic) BOOL excludeInfo;
 @property(nonatomic) BOOL trackExpiredPIDs;

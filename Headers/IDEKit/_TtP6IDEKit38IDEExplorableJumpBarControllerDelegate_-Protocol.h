@@ -10,6 +10,6 @@
 - (void)jumpBarController:(IDEExplorableJumpBarController *)arg1 userDidSelectIdentifier:(_TtC16DVTExplorableKit23DVTExplorableIdentifier *)arg2;
 
 @optional
-- (BOOL)wantsRootLineageTrimForJumpBarController:(IDEExplorableJumpBarController *)arg1;
+- (BOOL)hidesFirstLevelOfTreeForJumpBarController:(IDEExplorableJumpBarController *)arg1;
 @end
 

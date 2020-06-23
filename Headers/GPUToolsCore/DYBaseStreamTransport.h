@@ -6,13 +6,14 @@
 
 #import <GPUToolsCore/DYTransport.h>
 
-@class NSData, NSMutableData;
+@class NSData;
+@protocol DYVMBuffer;
 
 __attribute__((visibility("hidden")))
 @interface DYBaseStreamTransport : DYTransport
 {
     struct dy_transport_message_unpack_s *_tmu;
-    NSMutableData *_messageBuffer;
+    id <DYVMBuffer> _messageBuffer;
     void *_messageBufferWritePtr;
     unsigned long long _bytesToRead;
     struct iovec _iov[3];

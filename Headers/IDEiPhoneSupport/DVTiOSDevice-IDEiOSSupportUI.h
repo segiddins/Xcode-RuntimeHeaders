@@ -23,6 +23,7 @@
 + (id)keyPathsForValuesAffectingDeviceSummaryInternalPropertyDictionaries;
 + (id)keyPathsForValuesAffectingDvtDevicesWindow_isWirelessEnabled;
 - (_Bool)_askForAlternateApplicationIfNeeded:(id *)arg1;
+- (void)prepareToLaunchInCloudDevice;
 - (void)takeScreenshotWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (_Bool)canTakeScreenshot;
 - (void)addToPortal:(id)arg1;
@@ -35,7 +36,6 @@
 - (id)iconImage;
 - (id)tokenUI;
 - (id)statusImage;
-- (BOOL)shouldApplicationTerminate;
 - (void)userInterfacePresentAlertForNoRoutingCoverageFileAtPath:(id)arg1;
 - (BOOL)_canRemoteSSH;
 - (BOOL)_canDirectSSH;
@@ -51,6 +51,7 @@
 @property(readonly) _Bool deviceIsBusy;
 @property(readonly) int deviceWindowCategory;
 @property(readonly) unsigned long long hash;
+@property(readonly, copy) NSString *iOSSupportVersion;
 @property(readonly, copy, nonatomic) NSString *identifier;
 @property(readonly) BOOL isProxiedDevice;
 @property(readonly, copy, nonatomic) NSString *modelCode;

@@ -14,12 +14,11 @@
 - (void)execute;
 - (void)processContentSnapshots:(id)arg1 queryStartTime:(id)arg2 statusAggregator:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)continueProcessingSnapshots:(id)arg1 concurrencyIndex:(long long)arg2 baseResultIndex:(long long)arg3 snapshotIndex:(long long)arg4 queryStartTime:(id)arg5 statusAggregator:(id)arg6 completionHandler:(CDUnknownBlockType)arg7;
-- (void)continueProcessingSnapshotGroups:(id)arg1 withTextIndex:(id)arg2 concurrencyIndex:(long long)arg3 baseResultIndex:(long long)arg4 groupIndex:(long long)arg5 queryStartTime:(id)arg6 statusAggregator:(id)arg7 completionHandler:(CDUnknownBlockType)arg8;
-- (void)continueProcessingGroup:(id)arg1 withTextIndex:(id)arg2 filePathIndex:(long long)arg3 baseResultIndex:(long long)arg4 batchedProgress:(long long)arg5 queryStartTime:(id)arg6 statusAggregator:(id)arg7 completionHandler:(CDUnknownBlockType)arg8;
+- (void)continueProcessingSnapshot:(id)arg1 filePathCandidateIndex:(long long)arg2 baseResultIndex:(long long)arg3 batchedProgress:(long long)arg4 queryStartTime:(id)arg5 statusAggregator:(id)arg6 completionHandler:(CDUnknownBlockType)arg7;
 - (long long)totalNumberOfFilesInContentSnapshots:(id)arg1;
 - (BOOL)trimsIndexAfterCompletion;
-- (void)checkCancelStatusAndConitionallyProcessFilePath:(id)arg1 fromGroup:(id)arg2 withTextIndex:(id)arg3 queryStartTime:(id)arg4 statusAggregator:(id)arg5 resultOrder:(long long)arg6 completionHandler:(CDUnknownBlockType)arg7;
-- (void)processFilePath:(id)arg1 fromGroup:(id)arg2 withIndex:(id)arg3 queryStartTime:(id)arg4 statusAggregator:(id)arg5 resultOrder:(long long)arg6 completionHandler:(CDUnknownBlockType)arg7;
+- (void)checkCancelStatusAndConitionallyProcessFilePath:(id)arg1 explicitFileDataType:(id)arg2 fromIndex:(long long)arg3 of:(id)arg4 queryStartTime:(id)arg5 statusAggregator:(id)arg6 resultOrder:(long long)arg7 completionHandler:(CDUnknownBlockType)arg8;
+- (void)processFilePath:(id)arg1 explicitFileDataType:(id)arg2 fromIndex:(long long)arg3 of:(id)arg4 queryStartTime:(id)arg5 statusAggregator:(id)arg6 resultOrder:(long long)arg7 completionHandler:(CDUnknownBlockType)arg8;
 - (id)resultForRange:(struct _NSRange)arg1 ofText:(id)arg2 forDocumentLocation:(id)arg3 withTimestamp:(id)arg4 parent:(id)arg5;
 - (id)makeRootResult;
 

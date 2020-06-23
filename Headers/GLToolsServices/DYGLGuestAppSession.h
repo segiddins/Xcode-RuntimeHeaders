@@ -17,6 +17,7 @@
 @property(nonatomic) BOOL checkGLErrors; // @synthesize checkGLErrors=_checkGLErrors;
 @property(nonatomic) BOOL trapOnGLErrors; // @synthesize trapOnGLErrors=_trapOnGLErrors;
 - (id)newCaptureSessionWithArchive:(id)arg1;
+- (id)launch;
 - (id)queryContextsInfo;
 - (id)queryForGraphicsAPIUsage;
 - (void)_sendAdditionalConfigurations;

@@ -13,6 +13,7 @@
     MISSING_TYPE *_floatValue;
     MISSING_TYPE *_float16Value;
     MISSING_TYPE *_rawValue;
+    MISSING_TYPE *_int8RawValue;
     MISSING_TYPE *_quantization;
     MISSING_TYPE *_isUpdatable;
 }

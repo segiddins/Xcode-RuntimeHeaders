@@ -69,6 +69,7 @@
 - (id)ibQualifyingInfoForDefaultLabel;
 - (BOOL)ibWantsVerboseDefaultLabel;
 - (BOOL)ibCanRemoveChildren:(id)arg1;
+- (BOOL)ibShouldConsiderHitTestingForChild:(id)arg1;
 - (void)ibPopulateChildRelationOrder:(id)arg1;
 - (BOOL)ibIsNSAppearanceContainer;
 - (id)ibLocalAttributeKeyPaths;

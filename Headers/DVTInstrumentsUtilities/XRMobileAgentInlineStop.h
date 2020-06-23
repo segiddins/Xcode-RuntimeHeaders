@@ -8,12 +8,20 @@
 
 #import <DVTInstrumentsUtilities/XRMobileAgentStop-Protocol.h>
 
+@class NSString;
+
 @interface XRMobileAgentInlineStop : NSObject <XRMobileAgentStop>
 {
 }
 
 - (void)receiveMobileAgent:(id)arg1;
 - (int)agentStopDiagnosticsTypeCode;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

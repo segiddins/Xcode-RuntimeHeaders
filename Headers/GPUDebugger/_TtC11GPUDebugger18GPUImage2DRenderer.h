@@ -25,6 +25,8 @@ __attribute__((visibility("hidden")))
 
 - (void).cxx_destruct;
 - (id)init;
+- (struct CGImage *)renderCGImageWithRegion:(struct CGRect)arg1;
+- (struct CGImage *)renderCGImage;
 - (id)renderWithRegion:(struct CGRect)arg1;
 - (id)render;
 - (id)initWithImage2D:(id)arg1 drawableSize:(struct CGSize)arg2;

@@ -11,6 +11,7 @@
 }
 
 + (id)_borderColor:(id)arg1;
++ (double)_cornerRadius;
 + (id)_innerShadowColor:(id)arg1 forLineWidth:(double)arg2;
 + (id)_backgroundColor:(id)arg1;
 + (BOOL)_isKeyOrMainWindow:(id)arg1;

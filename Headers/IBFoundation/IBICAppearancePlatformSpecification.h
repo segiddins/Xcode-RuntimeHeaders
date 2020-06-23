@@ -19,6 +19,7 @@
 - (void).cxx_destruct;
 @property(readonly) long long identifier; // @synthesize identifier=_identifier;
 @property(readonly, copy) NSString *appearanceName; // @synthesize appearanceName=_appearanceName;
+@property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqualToAppearancePlatformSpecification:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
@@ -28,7 +29,6 @@
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) Class superclass;
 
 @end

@@ -6,16 +6,10 @@
 
 #import <AppKit/NSTableView.h>
 
-@protocol DVTTextCompletionTableViewScrollEventDelegate;
-
 @interface DVTTextCompletionTableView : NSTableView
 {
-    id <DVTTextCompletionTableViewScrollEventDelegate> _scrollEventDelegate;
 }
 
-- (void).cxx_destruct;
-@property __weak id <DVTTextCompletionTableViewScrollEventDelegate> scrollEventDelegate; // @synthesize scrollEventDelegate=_scrollEventDelegate;
-- (void)scrollWheel:(id)arg1;
 - (id)accessibilityChildren;
 
 @end

@@ -72,7 +72,6 @@
 - (void)_handleWatchpointHit:(id)arg1;
 - (void)_handleProcessRunStateChanged;
 - (void)_handleCurrentStackFrameChanged;
-- (void)_updateFileBreakpointsLocation;
 - (BOOL)_navigateEditorToMemoryGraphDebuggerInActiveTab;
 - (void)_navigateEditorToViewDebuggerInActiveTab;
 - (void)_selectNavigatorContentModeForViewDebugger;

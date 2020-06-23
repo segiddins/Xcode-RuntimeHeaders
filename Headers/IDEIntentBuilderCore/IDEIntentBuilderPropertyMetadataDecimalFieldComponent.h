@@ -4,13 +4,12 @@
 //  Copyright (C) 1997-2019 Steve Nygard.
 //
 
-#import <IDEIntentBuilderCore/IDEIntentBuilderPropertyMetadataTextFieldComponent.h>
+#import <IDEIntentBuilderCore/IDEIntentBuilderPropertyMetadataNumberFieldComponent.h>
 
-@interface IDEIntentBuilderPropertyMetadataDecimalFieldComponent : IDEIntentBuilderPropertyMetadataTextFieldComponent
+@interface IDEIntentBuilderPropertyMetadataDecimalFieldComponent : IDEIntentBuilderPropertyMetadataNumberFieldComponent
 {
 }
 
-- (id)decodeObject:(id)arg1;
 - (id)encodeObject:(id)arg1;
 
 @end

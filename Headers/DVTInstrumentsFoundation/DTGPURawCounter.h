@@ -16,6 +16,8 @@ __attribute__((visibility("hidden")))
 
 - (void).cxx_destruct;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
 - (id)initWithName:(id)arg1;
 
 @end

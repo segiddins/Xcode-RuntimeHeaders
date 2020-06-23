@@ -19,6 +19,7 @@ __attribute__((visibility("hidden")))
     id <DYPFenumUtils> _fenumUtils;
     int _subCommandIndex;
     shared_ptr_2d3f6817 _parentFunction;
+    BOOL _isMRCDispatch;
 }
 
 - (id).cxx_construct;

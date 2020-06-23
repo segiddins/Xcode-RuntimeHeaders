@@ -30,6 +30,7 @@
     NSData *_serializedCompatibilitySupportRepresentation;
     BOOL _needsCompatibilityConversion;
     BOOL _compressDuringTransport;
+    NSData *_rawResponseData;
 }
 
 + (id)requestWithDiscoveryType:(long long)arg1 actions:(id)arg2 completion:(CDUnknownBlockType)arg3;
@@ -38,6 +39,7 @@
 + (id)_compatibleRequestWithDictionary:(id)arg1;
 + (id)requestWithBase64Data:(id)arg1 error:(id *)arg2;
 - (void).cxx_destruct;
+@property(retain) NSData *rawResponseData; // @synthesize rawResponseData=_rawResponseData;
 @property BOOL compressDuringTransport; // @synthesize compressDuringTransport=_compressDuringTransport;
 @property BOOL needsCompatibilityConversion; // @synthesize needsCompatibilityConversion=_needsCompatibilityConversion;
 @property(retain) NSData *serializedCompatibilitySupportRepresentation; // @synthesize serializedCompatibilitySupportRepresentation=_serializedCompatibilitySupportRepresentation;

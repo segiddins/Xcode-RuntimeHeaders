@@ -6,13 +6,14 @@
 
 #import <objc/NSObject.h>
 
+#import <GPUDebugger/DYPAnalyzerGPUCountersDataSource-Protocol.h>
 #import <GPUDebugger/GPUTimelineGraphDataProvider-Protocol.h>
 #import <GPUDebugger/GPUTraceCounterGraphSampleProvider-Protocol.h>
 
-@class DYJSScriptingContext, DYShaderProfilerResult, GPUDebuggerController, GPUTimelineGraphDataSource, GPUTraceCounterGraphDataProvider, GPUTraceCounterGraphGroupItem, NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSString;
+@class DYJSScriptingContext, DYShaderProfilerResult, GPUDebuggerController, GPUTimelineGraphDataSource, GPUTraceCounterGraphDataProvider, NSArray, NSDictionary, NSLock, NSMutableArray, NSMutableDictionary, NSString;
 @protocol OS_dispatch_queue, OS_dispatch_source;
 
-@interface GPUTraceCounterGraphDataStore : NSObject <GPUTimelineGraphDataProvider, GPUTraceCounterGraphSampleProvider>
+@interface GPUTraceCounterGraphDataStore : NSObject <GPUTimelineGraphDataProvider, GPUTraceCounterGraphSampleProvider, DYPAnalyzerGPUCountersDataSource>
 {
     DYShaderProfilerResult *_shaderProfilerResult;
     DYShaderProfilerResult *_shaderProfilerResultBase;
@@ -20,25 +21,26 @@
     DYJSScriptingContext *_toolsCounterJSContext;
     GPUDebuggerController *_controller;
     GPUTraceCounterGraphDataProvider *_parent;
+    NSLock *_updateLock;
     NSMutableArray *_dataItems;
     NSMutableArray *_groupItems;
     NSMutableArray *_planeItems;
-    GPUTraceCounterGraphGroupItem *_miscGroup;
     NSMutableDictionary *_stringMap;
     NSMutableDictionary *_filterSynonyms;
+    NSMutableDictionary *_sampleIndexToPipelineID;
+    NSMutableDictionary *_pipelineIDToLabel;
     NSMutableDictionary *_counterNameToPlane;
     NSMutableArray *_counterNamesForAnalysis;
     NSMutableArray *_toolsCounterNames;
     NSMutableArray *_computeMaskIndices;
     NSMutableArray *_batchFilteredIndices;
+    NSMutableArray *_availableBatchIDFilteredCounters;
     NSString *_vendorAnalysisScript;
     NSDictionary *_vendorAnalysisFunctions;
     NSDictionary *_vendorAnalysisConfigurationVariables;
     NSArray *_samples;
     NSArray *_samplesBase;
-    NSArray *_samplesForAnalysis;
-    NSArray *_samplesPerEncoder;
-    NSArray *_samplesForAnalysisPerEncoder;
+    NSMutableArray *_baseBatchIDFilteredDrawIndexes;
     struct unordered_map<unsigned long, unsigned long, std::__1::hash<unsigned long>, std::__1::equal_to<unsigned long>, std::__1::allocator<std::__1::pair<const unsigned long, unsigned long>>> _drawIndexToSampleIndexMap;
     struct unordered_map<unsigned long, unsigned long, std::__1::hash<unsigned long>, std::__1::equal_to<unsigned long>, std::__1::allocator<std::__1::pair<const unsigned long, unsigned long>>> _sampleIndexToDrawIndexMap;
     unsigned int _nUnsupportedCalls;
@@ -53,10 +55,13 @@
     BOOL _encoderData;
     BOOL _loadingShaderProfilerResult;
     GPUTimelineGraphDataSource *_timelineDataSource;
+    unsigned long long _dataSourceType;
 }
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) unsigned long long dataSourceType; // @synthesize dataSourceType=_dataSourceType;
+@property(readonly, nonatomic) NSArray *availableBatchIDFilteredCounters; // @synthesize availableBatchIDFilteredCounters=_availableBatchIDFilteredCounters;
 @property(readonly, nonatomic) BOOL loadingShaderProfilerResult; // @synthesize loadingShaderProfilerResult=_loadingShaderProfilerResult;
 @property(readonly, nonatomic) BOOL encoderData; // @synthesize encoderData=_encoderData;
 @property(readonly, nonatomic) NSArray *toolsCounterNames; // @synthesize toolsCounterNames=_toolsCounterNames;
@@ -68,17 +73,28 @@
 @property(readonly, nonatomic) NSDictionary *vendorAnalysisConfigurationVariables; // @synthesize vendorAnalysisConfigurationVariables=_vendorAnalysisConfigurationVariables;
 @property(readonly, nonatomic) NSDictionary *vendorAnalysisFunctions; // @synthesize vendorAnalysisFunctions=_vendorAnalysisFunctions;
 @property(readonly, nonatomic) NSString *vendorAnalysisScript; // @synthesize vendorAnalysisScript=_vendorAnalysisScript;
+- (id)formatCounterValue:(id)arg1 commonName:(unsigned long long)arg2 usesGroupingSeparator:(BOOL)arg3;
+- (id)commonCounterValue:(unsigned long long)arg1 apiItem:(id)arg2;
+- (id)counterValueOfName:(id)arg1 apiItem:(id)arg2;
+- (void)enumerateCounterValues:(CDUnknownBlockType)arg1;
+- (id)allCounterValues:(int)arg1 subCommandIndex:(int)arg2;
+- (id)indexesOfCounterNames:(id)arg1;
+- (id)indexesOfCounter:(unsigned long long)arg1;
+- (id)commonCounterValue:(unsigned long long)arg1 functionIndex:(int)arg2 subCommandIndex:(int)arg3;
+- (id)nameOfNamedCounter:(unsigned long long)arg1;
+- (id)counterValueOfName:(id)arg1 functionIndex:(int)arg2 subCommandIndex:(int)arg3;
+- (id)planeIndexesFromNames:(id)arg1;
 @property(readonly, nonatomic) float profilingProgress;
 @property(readonly, nonatomic) BOOL isProfilerRunning;
-@property(readonly, nonatomic) unsigned long long miscGroupIndex;
 - (id)planeOfCounterName:(id)arg1;
 - (id)label;
 - (void)_updateQueuedUpdatedDrawcalls;
 - (void)_updateQueuedUpdatedDrawCalls:(id)arg1;
 - (void)_queueUpdatedDrawcalls:(id)arg1 highPriority:(BOOL)arg2 done:(BOOL)arg3;
 - (void)_setupUpdateTimer;
+- (id)pipelineStaeLabel:(id)arg1;
+- (BOOL)baseDataBatchIDFiltered:(unsigned long long)arg1;
 - (id)computeMaskIndices;
-- (id)samplesForAnalysis;
 - (id)samplesBase;
 - (id)samples;
 - (id)mappedStringForString:(id)arg1;
@@ -87,15 +103,16 @@
 - (void)_collectToolsDerivedCounters;
 - (unsigned long long)_addCounterWithName:(id)arg1 functionName:(id)arg2 dataType:(id)arg3 description:(id)arg4 unit:(id)arg5;
 - (void)exportScriptingContext:(id)arg1 dataItem:(id)arg2;
-- (id)itemDataForAPIItem:(id)arg1;
-- (unsigned long long)counterDataIndexFromAPIItem:(id)arg1;
+- (id)itemDataForFunctionIndex:(int)arg1 subCommandIndex:(int)arg2;
+- (unsigned long long)counterDataIndexFromFunctionIndex:(int)arg1 subCommandIndex:(int)arg2;
 - (BOOL)shouldHighlightItemAtIndex:(unsigned long long)arg1 isGroup:(_Bool)arg2;
-- (unsigned long long)sortingIndexOfPlaneIndex:(unsigned long long)arg1;
 - (id)formatValue:(float)arg1 forPlane:(unsigned long long)arg2 usesGroupingSeparator:(BOOL)arg3;
 - (unsigned long long)referencePlaneIndex;
+- (id)groups;
 - (id)columns;
 - (id)planes;
 - (id)_itemDataForCounterAtIndex:(unsigned long long)arg1;
+- (void)_buildSampleIndexToPipelineIDMap;
 - (void)_buildMarkers;
 - (void)_buildFilterItems;
 - (id)_filterStringsWithSynonyms:(id)arg1 synonyms:(id)arg2;
@@ -107,6 +124,12 @@
 - (void)updateShaderProfilerResult;
 - (void)dealloc;
 - (id)initWithController:(id)arg1 encoderData:(BOOL)arg2 parent:(id)arg3;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

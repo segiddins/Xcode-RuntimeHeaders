@@ -9,14 +9,18 @@
 @interface DVTScopeBarButtonCell : NSButtonCell
 {
     BOOL _rollover;
-    BOOL _toggles;
 }
 
-@property BOOL toggles; // @synthesize toggles=_toggles;
-- (void)drawBezelWithFrame:(struct CGRect)arg1 inView:(id)arg2;
++ (id)imageColorForForStyle:(unsigned long long)arg1 isInSidebar:(BOOL)arg2 isHighlighted:(BOOL)arg3 isSelected:(BOOL)arg4 isActiveContext:(BOOL)arg5 isActiveWindow:(BOOL)arg6;
++ (id)fillColorForForStyle:(unsigned long long)arg1 isInSidebar:(BOOL)arg2 isHovered:(BOOL)arg3 isHighlighted:(BOOL)arg4 isSelected:(BOOL)arg5 isActiveContext:(BOOL)arg6 isActiveWindow:(BOOL)arg7;
++ (id)textColorForForStyle:(unsigned long long)arg1 isInSidebar:(BOOL)arg2 isHighlighted:(BOOL)arg3 isSelected:(BOOL)arg4 isActiveContext:(BOOL)arg5 isActiveWindow:(BOOL)arg6;
 - (void)drawFocusRingMaskWithFrame:(struct CGRect)arg1 inView:(id)arg2;
 - (id)contentAreaPathWithFrame:(struct CGRect)arg1;
-- (BOOL)_preferOnArtForBezel;
+- (void)drawImage:(id)arg1 withFrame:(struct CGRect)arg2 inView:(id)arg3;
+- (void)drawBezelWithFrame:(struct CGRect)arg1 inView:(id)arg2;
+- (struct CGRect)titleRectForBounds:(struct CGRect)arg1;
+- (id)_attributedTitleForAttributedString:(id)arg1;
+- (id)attributedAlternateTitle;
 - (id)attributedTitle;
 - (long long)nextState;
 - (void)mouseExited:(id)arg1;

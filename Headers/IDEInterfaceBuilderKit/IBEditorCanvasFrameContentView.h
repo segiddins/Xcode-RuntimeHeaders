@@ -11,16 +11,16 @@
 @interface IBEditorCanvasFrameContentView : IBSceneUpdateContentView
 {
     BOOL _showSceneMask;
-    int _horizontalContentResizingMode;
-    int _verticalContentResizingMode;
     IBSceneSpaceView *_sceneSpaceView;
     NSView *_documentView;
     NSView *_wrapperView;
+    unsigned long long _horizontalContentResizingMode;
+    unsigned long long _verticalContentResizingMode;
 }
 
 - (void).cxx_destruct;
-@property(nonatomic) int verticalContentResizingMode; // @synthesize verticalContentResizingMode=_verticalContentResizingMode;
-@property(nonatomic) int horizontalContentResizingMode; // @synthesize horizontalContentResizingMode=_horizontalContentResizingMode;
+@property(nonatomic) unsigned long long verticalContentResizingMode; // @synthesize verticalContentResizingMode=_verticalContentResizingMode;
+@property(nonatomic) unsigned long long horizontalContentResizingMode; // @synthesize horizontalContentResizingMode=_horizontalContentResizingMode;
 @property(retain, nonatomic) NSView *wrapperView; // @synthesize wrapperView=_wrapperView;
 @property(retain, nonatomic) NSView *documentView; // @synthesize documentView=_documentView;
 @property(retain, nonatomic) IBSceneSpaceView *sceneSpaceView; // @synthesize sceneSpaceView=_sceneSpaceView;

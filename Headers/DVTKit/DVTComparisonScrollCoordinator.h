@@ -12,7 +12,7 @@
 #import <DVTKit/NSScrollerImpPairDelegate-Protocol.h>
 
 @class DVTBorderedView, DVTComparisonScroller, DVTComparisonSplitView, NSArray, NSIndexSet, NSMutableDictionary, NSScrollView, NSScrollerImpPair, NSString, NSView;
-@protocol DVTSourceCodeComparisonTextEditorView, DVTSourceCodeComparisonTextView;
+@protocol DVTSourceCodeComparisonEditorTextView, DVTSourceCodeComparisonEditorView;
 
 @interface DVTComparisonScrollCoordinator : NSObject <NSScrollerImpPairDelegate, DVTSourceTextScrollViewDelegate, DVTComparisonScrollContentAreaDelegate, DVTMarkedScrollerDelegate>
 {
@@ -92,10 +92,10 @@
 - (void)scrollViewWillStartLiveResize:(id)arg1;
 - (BOOL)scrollView:(id)arg1 shouldHandleScrollWheelEvent:(id)arg2;
 - (void)scrollWheel:(id)arg1;
-@property(readonly) NSView<DVTSourceCodeComparisonTextView> *rightTextView;
-@property(readonly) NSView<DVTSourceCodeComparisonTextView> *leftTextView;
-@property(readonly) NSView<DVTSourceCodeComparisonTextEditorView> *rightEditorView;
-@property(readonly) NSView<DVTSourceCodeComparisonTextEditorView> *leftEditorView;
+@property(readonly) NSView<DVTSourceCodeComparisonEditorTextView> *rightTextView;
+@property(readonly) NSView<DVTSourceCodeComparisonEditorTextView> *leftTextView;
+@property(readonly) NSView<DVTSourceCodeComparisonEditorView> *rightEditorView;
+@property(readonly) NSView<DVTSourceCodeComparisonEditorView> *leftEditorView;
 - (void)updateScrollerKnobStyle;
 - (void)updateBoundSelectedIndex;
 - (void)didClickMarkForLine:(long long)arg1;

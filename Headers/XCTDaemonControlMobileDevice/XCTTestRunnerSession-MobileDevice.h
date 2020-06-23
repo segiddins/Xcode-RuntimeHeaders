@@ -7,6 +7,6 @@
 #import <XCTDaemonControl/XCTTestRunnerSession.h>
 
 @interface XCTTestRunnerSession (MobileDevice)
-- (id)initForMobileDeviceWithIdentifier:(id)arg1 sessionIdentifier:(id)arg2;
+- (id)initForMobileDeviceWithIdentifier:(id)arg1 testConfiguration:(id)arg2;
 @end
 

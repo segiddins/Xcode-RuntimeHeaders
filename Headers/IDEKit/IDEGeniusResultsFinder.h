@@ -24,6 +24,7 @@
 }
 
 + (void)initialize;
++ (BOOL)allowInstantUpdateGeniusResultsWhenIdle;
 + (Class)editorDocumentClass;
 - (void).cxx_destruct;
 @property(retain) DVTExtension *extension; // @synthesize extension=_extension;

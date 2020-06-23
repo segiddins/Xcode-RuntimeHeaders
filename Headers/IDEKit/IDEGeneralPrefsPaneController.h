@@ -12,6 +12,7 @@
 {
     DVTLabeledSlider *_maxParallelTestingWorkersMacSlider;
     DVTLabeledSlider *_maxParallelTestingSimulatorsSlider;
+    NSPopUpButton *_navigatorRowSizeStylePopUpButton;
     NSPopUpButton *_issueNavigatorDetailPopUpButton;
     NSPopUpButton *_searchNavigatorDetailPopUpButton;
     NSPopUpButton *_appearancePopUpButton;
@@ -22,6 +23,7 @@
 @property(retain) NSPopUpButton *appearancePopUpButton; // @synthesize appearancePopUpButton=_appearancePopUpButton;
 @property(retain) NSPopUpButton *searchNavigatorDetailPopUpButton; // @synthesize searchNavigatorDetailPopUpButton=_searchNavigatorDetailPopUpButton;
 @property(retain) NSPopUpButton *issueNavigatorDetailPopUpButton; // @synthesize issueNavigatorDetailPopUpButton=_issueNavigatorDetailPopUpButton;
+@property(retain) NSPopUpButton *navigatorRowSizeStylePopUpButton; // @synthesize navigatorRowSizeStylePopUpButton=_navigatorRowSizeStylePopUpButton;
 @property(retain) DVTLabeledSlider *maxParallelTestingSimulatorsSlider; // @synthesize maxParallelTestingSimulatorsSlider=_maxParallelTestingSimulatorsSlider;
 @property(retain) DVTLabeledSlider *maxParallelTestingWorkersMacSlider; // @synthesize maxParallelTestingWorkersMacSlider=_maxParallelTestingWorkersMacSlider;
 - (void)maxParallelTestingSimulatorsSliderChanged:(id)arg1;
@@ -39,10 +41,13 @@
 - (unsigned long long)issueNavigatorDetailPopUpLevel;
 - (void)setSearchNavigatorDetailPopUpLevel:(unsigned long long)arg1;
 - (unsigned long long)searchNavigatorDetailPopUpLevel;
+- (void)setNavigatorRowSizeStyle:(long long)arg1;
+- (long long)navigatorRowSizeStyle;
 - (void)setAppearance:(id)arg1;
 - (void)loadView;
 - (id)_itemWithTitle:(id)arg1 tag:(long long)arg2;
 - (id)_menuForNavigatorDetailLevel;
+- (id)_menuForNavigatorRowSizeStyle;
 
 @end
 

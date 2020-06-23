@@ -17,8 +17,6 @@
 - (id)connectionBubbleFillColorRolledOver;
 - (id)connectionBubbleFillColor;
 - (id)connectionBubbleStrokeColor;
-- (id)disclosureHeaderButtonColorPressed;
-- (id)disclosureHeaderButtonColor;
 - (id)disclosureViewBottomBorderColor;
 - (id)disclosureView;
 - (id)disabledTextColor;

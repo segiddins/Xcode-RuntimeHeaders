@@ -6,7 +6,7 @@
 
 #import <IDEFoundation/IDELaunchTestSchemeActionOptions.h>
 
-@class MISSING_TYPE, _TtC13IDEFoundation25IDEDeviceAppDataReference, _TtC13IDEFoundation28IDELocationScenarioReference;
+@class MISSING_TYPE, NSNumber, _TtC13IDEFoundation25IDEDeviceAppDataReference, _TtC13IDEFoundation28IDELocationScenarioReference;
 
 @interface IDETestPlanOptions : IDELaunchTestSchemeActionOptions
 {
@@ -28,6 +28,8 @@
 - (id)copyWithZone:(void *)arg1;
 @property(nonatomic, readonly) long long hash;
 - (BOOL)isEqual:(id)arg1;
+@property(nonatomic, readonly) NSNumber *maximumTestExecutionTimeAllowance;
+@property(nonatomic, readonly) NSNumber *defaultTestExecutionTimeAllowance;
 
 @end
 

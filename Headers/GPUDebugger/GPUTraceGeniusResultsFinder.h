@@ -14,8 +14,10 @@ __attribute__((visibility("hidden")))
     GPUTraceDocumentLocation *_previousLocation;
 }
 
++ (BOOL)allowInstantUpdateGeniusResultsWhenIdle;
 + (Class)editorDocumentClass;
 - (void).cxx_destruct;
+- (void)_updateGeniusResultsForPixelHistoryDrawItem:(id)arg1;
 - (void)_updateGeniusResults;
 
 // Remaining properties

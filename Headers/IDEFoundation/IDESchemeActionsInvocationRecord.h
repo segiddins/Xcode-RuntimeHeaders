@@ -92,6 +92,7 @@
 + (id)readResultBundleWithPath:(id)arg1 error:(id *)arg2;
 + (id)createUnsupportedV1Error;
 + (BOOL)isModernResultBundleWithPath:(id)arg1;
++ (BOOL)isLikelyIncompleteModernResultBundleWithPath:(id)arg1;
 + (long long)resultBundleFormatVersionWithPath:(id)arg1;
 - (void).cxx_destruct;
 @property(retain, nonatomic) id _advisoryMessagesStream; // @synthesize _advisoryMessagesStream=__advisoryMessagesStream;

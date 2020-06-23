@@ -36,6 +36,7 @@
 + (id)keyPathsForValuesAffectingCanGoForward;
 + (id)defaultViewNibBundle;
 + (id)defaultViewNibName;
++ (BOOL)showsOtherSection;
 + (BOOL)showsCrossPlatformSection;
 + (id)supportedTemplateKind;
 - (void).cxx_destruct;

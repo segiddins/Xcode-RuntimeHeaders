@@ -35,7 +35,7 @@
     MISSING_TYPE *rootItemChildItemsToken;
     MISSING_TYPE *cachedRemnantsOfRestoration;
     MISSING_TYPE *objectsToken;
-    MISSING_TYPE *pendingStashToSelect;
+    MISSING_TYPE *pendingSelectableItem;
 }
 
 + (void)configureStateSavingObjectPersistenceByName:(id)arg1;
@@ -54,6 +54,7 @@
 - (void)showWorkingCopyWarning:(id)arg1;
 - (void)viewWillUninstall;
 - (void)loadView;
+@property(nonatomic, readonly) BOOL canShowSelectionFromActiveEditor;
 - (void)viewDidInstall;
 @property(nonatomic, copy) NSString *visibleRectString;
 - (void)revertStateWithDictionary:(id)arg1;

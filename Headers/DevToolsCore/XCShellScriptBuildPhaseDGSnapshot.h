@@ -20,6 +20,7 @@
     NSArray<DVTMacroExpansion> *_outputFileListPaths;
     BOOL _emitEnvVars;
     BOOL _hasDependencyFile;
+    BOOL _alwaysOutOfDate;
 }
 
 + (id)defaultName;

@@ -4,7 +4,7 @@
 //  Copyright (C) 1997-2019 Steve Nygard.
 //
 
-#import <DVTKit/DVTLayerHostingView.h>
+#import <DVTUserInterfaceKit/DVTLayerHostingView.h>
 
 #import <IDEKit/DVTInvalidation-Protocol.h>
 #import <IDEKit/IDEActivityPopUpContentLayerControllerDelegate-Protocol.h>

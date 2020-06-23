@@ -8,7 +8,7 @@
 
 #import <IDEKit/_IDEPrivateOpenRequest-Protocol.h>
 
-@class DVTTransactionScope, IDEEditorContext, IDEEditorOpenSpecifier, IDEWorkspaceTabController, NSString;
+@class DVTStackBacktrace, DVTTransactionScope, IDEEditorContext, IDEEditorOpenSpecifier, IDEWorkspaceTabController, NSString;
 @protocol IDEEditorHistoryControllerItem;
 
 @interface _IDEOpenRequest : NSObject <_IDEPrivateOpenRequest>
@@ -24,14 +24,23 @@
     DVTTransactionScope *_transactionScope;
     CDUnknownBlockType _completionBlock;
     BOOL _didNavigate;
+    BOOL _isWaitingToRunDoubleClickDelayBlock;
     int _requestState;
+    unsigned long long _eventBehavior;
+    CDUnknownBlockType _postDoubleClickDelayBlock;
+    DVTStackBacktrace *_postDoubleClickDelayBlockBacktrace;
 }
 
 + (unsigned long long)_defaultTakeFocusForTarget:(unsigned long long)arg1 takeFocus:(unsigned long long)arg2;
 - (void).cxx_destruct;
+@property BOOL isWaitingToRunDoubleClickDelayBlock; // @synthesize isWaitingToRunDoubleClickDelayBlock=_isWaitingToRunDoubleClickDelayBlock;
+@property(retain) DVTStackBacktrace *postDoubleClickDelayBlockBacktrace; // @synthesize postDoubleClickDelayBlockBacktrace=_postDoubleClickDelayBlockBacktrace;
+@property(copy) CDUnknownBlockType postDoubleClickDelayBlock; // @synthesize postDoubleClickDelayBlock=_postDoubleClickDelayBlock;
+@property unsigned long long eventBehavior; // @synthesize eventBehavior=_eventBehavior;
 @property int requestState; // @synthesize requestState=_requestState;
 - (void)cancel;
 - (void)_enqueueForEventBehavior:(unsigned long long)arg1;
+- (BOOL)_doubleClickToStaticEditorTabNavigatesTwice;
 - (void)_primitiveRunIfNecessary;
 - (void)_runIfNecessary;
 - (id)initWithOpenSpecifier:(id)arg1 explicitEditorContext:(id)arg2;
@@ -41,6 +50,7 @@
 - (id)initWithOpenSpecifier:(id)arg1 workspaceTabController:(id)arg2 editorContext:(id)arg3 target:(unsigned long long)arg4 takeFocus:(unsigned long long)arg5 client:(unsigned long long)arg6 completionBlock:(CDUnknownBlockType)arg7;
 - (id)initWithIgnore;
 - (void)addPostNavigationBlock:(CDUnknownBlockType)arg1;
+- (void)_performDoubleClickDelayBlock;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

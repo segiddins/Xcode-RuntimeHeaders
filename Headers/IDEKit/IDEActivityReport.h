@@ -13,7 +13,7 @@
 
 @interface IDEActivityReport : NSObject <DVTProgressReporting>
 {
-    int _options;
+    unsigned int _options;
     DVTSystemActivityToken *_systemActivityToken;
     BOOL _unfinished;
     NSString *_completionSummaryString;
@@ -50,7 +50,7 @@
 @property long long progress; // @synthesize progress=_progress;
 @property(copy, nonatomic) NSArray *titleSegments; // @synthesize titleSegments=_titleSegments;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-@property(readonly) int options; // @synthesize options=_options;
+@property(readonly) unsigned int options; // @synthesize options=_options;
 - (void)finishReport;
 @property(readonly) NSArray *stringSegments;
 @property(readonly) NSString *stringValue;
@@ -73,8 +73,8 @@
 - (void)dealloc;
 - (id)init;
 - (id)initWithDictionaryRepresentation:(id)arg1;
-- (id)initWithTitle:(id)arg1 titleSegments:(id)arg2 options:(int)arg3 fileIOPriority:(unsigned long long)arg4 fileIOCoordinatorBlock:(CDUnknownBlockType)arg5;
-- (id)_initWithTitle:(id)arg1 titleSegments:(id)arg2 options:(int)arg3 fileIOPriority:(unsigned long long)arg4 fileIOCoordinatorBlock:(CDUnknownBlockType)arg5 unarchived:(BOOL)arg6;
+- (id)initWithTitle:(id)arg1 titleSegments:(id)arg2 options:(unsigned int)arg3 fileIOPriority:(unsigned long long)arg4 fileIOCoordinatorBlock:(CDUnknownBlockType)arg5;
+- (id)_initWithTitle:(id)arg1 titleSegments:(id)arg2 options:(unsigned int)arg3 fileIOPriority:(unsigned long long)arg4 fileIOCoordinatorBlock:(CDUnknownBlockType)arg5 unarchived:(BOOL)arg6;
 - (void)setCompleted:(id)arg1;
 - (void)setProgressAsNSNumber:(id)arg1;
 @property(readonly, getter=isValid) BOOL valid;

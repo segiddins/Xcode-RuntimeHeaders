@@ -8,15 +8,18 @@
 
 #import <IDEKit/IDETestReport_TestActivity-Protocol.h>
 
-@class NSArray, NSDate, NSString;
-@protocol IDETestReport_Base;
+@class DVTTextDocumentLocation, NSArray, NSDate, NSString;
+@protocol IDEResultBundleURLRedirecting, IDETestReport_Base;
 
 @interface IDESchemeActionTestActivitySummary (IDETestReport_TestActivitySummary) <IDETestReport_TestActivity>
+@property __weak id <IDEResultBundleURLRedirecting> ide_testReport_activity_urlRedirector;
+@property(readonly, copy, nonatomic) DVTTextDocumentLocation *ide_test_activity_primaryDocumentLocation;
 @property(readonly, copy, nonatomic) NSArray *ide_test_activity_subitems;
 @property(readonly, copy, nonatomic) NSArray *ide_test_activity_transitiveAttachments;
 @property(readonly, copy, nonatomic) NSArray *ide_test_activity_directAttachments;
 @property(readonly, copy, nonatomic) NSDate *sortingTimestamp;
 @property(readonly, nonatomic) BOOL ide_test_activity_containsFailure;
+@property(readonly, copy, nonatomic) NSArray *ide_test_activity_failureSummaries;
 @property(readonly, copy, nonatomic) NSArray *ide_test_activity_subactivities;
 @property(readonly, copy, nonatomic) NSString *ide_test_activity_memoryGraphFileName;
 @property(readonly, copy, nonatomic) id ide_test_activity_memoryGraph;
@@ -29,12 +32,12 @@
 @property(readonly, copy, nonatomic) NSString *ide_test_activity_activityType;
 @property(readonly, copy, nonatomic) NSString *ide_test_activity_UUID;
 @property(readonly, copy, nonatomic) NSString *ide_test_activity_attachment_base_title;
+@property(readonly, copy, nonatomic) NSString *ide_testReport_base_identifier;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
-@property(readonly, copy, nonatomic) NSString *ide_testReport_base_identifier;
 @property(nonatomic) __weak id <IDETestReport_Base> ide_testReport_base_parent;
 @property(readonly) Class superclass;
 @end

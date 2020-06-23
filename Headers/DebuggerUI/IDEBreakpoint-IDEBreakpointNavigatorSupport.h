@@ -17,14 +17,12 @@
 + (id)keyPathsForValuesAffectingNavigableItem_childRepresentedObjects;
 + (id)keyPathsForValuesAffectingPopUpEditorDisplayName;
 + (id)keyPathsForValuesAffectingNavigableItem_name;
-+ (id)keyPathsForValuesAffectingNavigableItem_subtitle;
 @property(readonly, nonatomic) NSArray *navigableItem_additionalFilterMatchingText;
 @property(readonly, nonatomic) DVTDocumentLocation *navigableItem_contentDocumentLocation;
 @property(readonly, nonatomic) BOOL navigableItem_isLeaf;
 @property(readonly, nonatomic) NSArray *navigableItem_childRepresentedObjects;
 @property(readonly) NSString *popUpEditorDisplayName;
-@property(readonly, nonatomic) NSString *navigableItem_subtitle;
-- (id)basicSubtitle:(id)arg1;
+- (id)_debuggerIdentifierSuffix:(id)arg1;
 @property(readonly, nonatomic) NSString *navigableItem_name;
 
 // Remaining properties
@@ -46,6 +44,7 @@
 @property(readonly, nonatomic) BOOL navigableItem_referencedContentExists;
 @property(readonly, nonatomic) _TtC13DVTFoundation9DVTSymbol *navigableItem_representedSymbol;
 @property(readonly, nonatomic) NSURL *navigableItem_representedURL;
+@property(readonly, nonatomic) NSString *navigableItem_subtitle;
 @property(readonly, nonatomic) NSString *navigableItem_toolTip;
 @property(readonly) Class superclass;
 @end

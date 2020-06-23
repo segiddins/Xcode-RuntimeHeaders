@@ -16,6 +16,7 @@
 - (void).cxx_destruct;
 @property(readonly) DVTPlatform *supportedPlatform; // @synthesize supportedPlatform=_supportedPlatform;
 - (id)distributionOptionIdentifiers;
+- (BOOL)supportsAppClips;
 - (BOOL)supportsManifestDistribution;
 - (id)packagingStepIdentifierForDestination:(long long)arg1;
 - (id)exportStepName;

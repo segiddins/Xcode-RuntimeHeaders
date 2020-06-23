@@ -33,7 +33,7 @@
 @property(nonatomic) __weak id <IBSceneUpdateManagerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_updateScenesIteratively;
 - (void)_updateScenes;
-- (void)_updateScene:(id)arg1 waitForRequests:(BOOL)arg2 populatingPendingRequestIDsByRequester:(id)arg3;
+- (id)_updateSceneReturningRemoteRequester:(id)arg1 waitForRequests:(BOOL)arg2 populatingPendingRequestIDsByRequester:(id)arg3;
 - (id)_objectPackageForSceneUpdateRequest:(id)arg1;
 - (id)_sceneRootsForInvalidatedObjects;
 - (id)_remoteRequesterForSceneUpdate:(id)arg1;
@@ -45,7 +45,8 @@
 - (BOOL)isInIncrementalUpdateSession;
 - (void)establishIncrementalUpdateSessionForObject:(id)arg1 duringBlock:(CDUnknownBlockType)arg2;
 - (void)runIncrementalUpdateSessionForObject:(id)arg1 duringBlock:(CDUnknownBlockType)arg2;
-- (void)ibtesting_waitForPendingUpdates;
+- (void)loopedWaitForPendingUpdates;
+- (void)waitForRequestIDs:(id)arg1 remoteRequester:(id)arg2 sceneUpdates:(id)arg3;
 - (void)waitForPendingUpdates;
 - (void)removeReferencesToObject:(id)arg1;
 - (void)stopDelayingSceneUpdatesAndUpdatePendingScenes:(BOOL)arg1;

@@ -65,6 +65,7 @@
 - (void)unregisterWorkspace:(id)arg1;
 - (void)registerWorkspace:(id)arg1;
 - (id)workingCopyForFilePath:(id)arg1;
+@property(readonly) NSArray *workingCopies;
 - (void)asyncPerformBlockOnWorkingTreeQueue:(CDUnknownBlockType)arg1;
 - (void)addLegacyWorkingTree:(id)arg1;
 @property(readonly) NSArray *legacyWorkingTrees; // @synthesize legacyWorkingTrees=_legacyWorkingTrees;
@@ -77,6 +78,7 @@
 @property BOOL showChangeBar; // @synthesize showChangeBar=_showChangeBar;
 @property BOOL enableSourceControl;
 - (id)_blacklistedDirectories;
+@property(readonly) BOOL isSCMNetworkDebuggingEnabled;
 @property(readonly) BOOL isPullRequestSupportEnabled;
 - (id)initWithSavedAccounts:(BOOL)arg1 credentialsManager:(id)arg2 userDefaults:(id)arg3;
 - (id)initWithSavedAccounts:(BOOL)arg1;

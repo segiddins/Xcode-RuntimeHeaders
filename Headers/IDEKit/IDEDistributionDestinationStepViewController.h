@@ -15,7 +15,7 @@
 }
 
 + (id)keyPathsForValuesAffectingUpload;
-+ (BOOL)skipStepForContext:(id)arg1 assistantDirection:(int)arg2;
++ (BOOL)skipStepForContext:(id)arg1 assistantDirection:(long long)arg2;
 - (void).cxx_destruct;
 @property(retain) NSButton *exportRadio; // @synthesize exportRadio=_exportRadio;
 @property(retain) NSButton *uploadRadio; // @synthesize uploadRadio=_uploadRadio;

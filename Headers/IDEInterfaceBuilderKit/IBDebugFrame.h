@@ -19,6 +19,8 @@
 @property(copy, nonatomic) NSColor *color; // @synthesize color=_color;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)mouseDown:(id)arg1;
+- (id)hitTest:(struct CGPoint)arg1;
+- (struct CGRect)boundsForHitTesting;
 
 @end
 

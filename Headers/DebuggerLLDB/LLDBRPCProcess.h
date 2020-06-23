@@ -36,6 +36,7 @@
 - (_Bool)IsValid;
 - (id)initWithSBProcess:(const struct SBProcess *)arg1;
 - (const char *)GetPluginName;
+- (id)GetExtendedCrashInformation;
 - (id)GetBroadcaster;
 - (id)GetHistoryThreads:(unsigned long long)arg1;
 - (id)GetQueueAtIndex:(unsigned long long)arg1;

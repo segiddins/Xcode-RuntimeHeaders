@@ -8,13 +8,14 @@
 
 #import <SymbolicationDT/VMUCommonGraphInterface-Protocol.h>
 
-@class DVT_VMUClassInfoMap, DVT_VMUDebugTimer, DVT_VMUObjectIdentifier, DVT_VMUProcessObjectGraph, DVT_VMURangeArray, DVT_VMUTaskMemoryCache, DVT_VMUVMRegionIdentifier, NSMutableArray, NSMutableDictionary, NSString;
+@class DVT_VMUClassInfoMap, DVT_VMUDebugTimer, DVT_VMUObjectIdentifier, DVT_VMUProcessObjectGraph, DVT_VMURangeArray, DVT_VMUTaskMemoryCache, DVT_VMUTaskThreadStates, DVT_VMUVMRegionIdentifier, NSMutableArray, NSMutableDictionary, NSString;
 
 @interface DVT_VMUTaskMemoryScanner : NSObject <VMUCommonGraphInterface>
 {
     unsigned int _task;
     int _pid;
     unsigned long long _suspendTime;
+    unsigned long long _suspendTimeContinuous;
     unsigned int _suspensionToken;
     DVT_VMUTaskMemoryCache *_memoryCache;
     DVT_VMUObjectIdentifier *_objectIdentifier;
@@ -35,7 +36,7 @@
     struct _VMUZoneNode *_zones;
     unsigned int _zonesCount;
     unsigned int _zonesSize;
-    struct _VMUThreadNode *_threads;
+    DVT_VMUTaskThreadStates *_threadStates;
     unsigned int _threadsCount;
     struct _VMUInstanceValues *_instanceValues;
     unsigned int _instanceValuesCount;
@@ -67,6 +68,7 @@
     DVT_VMUProcessObjectGraph *_processObjectGraph;
     void *_userMarkedAbandoned;
     NSMutableDictionary *_variantCachesByIsaIndex;
+    NSMutableDictionary *_srcAddressToExtraAutoreleaseCountDict;
     unsigned long long _cfPasteboardReservedBase;
 }
 
@@ -74,6 +76,7 @@
 + (id)nodeDescription:(CDStruct_599faf0f)arg1 withNodeOffset:(unsigned long long)arg2 sortedVMRegions:(id)arg3;
 + (void)initialize;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) unsigned long long suspendTimeContinuous; // @synthesize suspendTimeContinuous=_suspendTimeContinuous;
 @property(nonatomic) BOOL recordRuntimeMetadataChunkInfo; // @synthesize recordRuntimeMetadataChunkInfo=_recordRuntimeMetadataChunkInfo;
 @property(readonly, nonatomic) unsigned long long physicalFootprintPeak; // @synthesize physicalFootprintPeak=_physicalFootprintPeak;
 @property(readonly, nonatomic) unsigned long long physicalFootprint; // @synthesize physicalFootprint=_physicalFootprint;

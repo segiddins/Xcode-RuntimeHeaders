@@ -15,9 +15,12 @@ __attribute__((visibility("hidden")))
     MISSING_TYPE *delegate;
     MISSING_TYPE *isClosed;
     MISSING_TYPE *accessibilityIntent;
+    MISSING_TYPE *highlightStrokeWidth;
     MISSING_TYPE *$__lazy_storage_$_highlightLayer;
     MISSING_TYPE *$__lazy_storage_$_highlightStrokeLayer;
-    MISSING_TYPE *highlightStrokeWidth;
+    MISSING_TYPE *$__lazy_storage_$_highlightInfoLayer;
+    MISSING_TYPE *allowAlternateSelectionTypes;
+    MISSING_TYPE *displayAlternateSelectionTypes;
     MISSING_TYPE *highlightedTarget;
     MISSING_TYPE *targets;
 }
@@ -25,6 +28,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithWindow:(id)arg1;
+- (void)menuDidStartTracking:(id)arg1;
 - (void)close;
 - (void)windowDidLoad;
 

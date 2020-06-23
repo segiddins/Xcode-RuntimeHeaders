@@ -8,13 +8,14 @@
 
 #import <IDEInterfaceBuilderKit/NSCopying-Protocol.h>
 
-@class IBDeviceAppearance, IBDeviceConfiguration, IBDeviceLayout, IBDeviceOrientation, IBDeviceSubtype, IBMemberConfiguration, NSBundle, NSString, NSValue;
+@class IBDeviceAppearance, IBDeviceConfiguration, IBDeviceLayout, IBDeviceOrientation, IBDeviceRenderMode, IBDeviceSubtype, IBMemberConfiguration, NSBundle, NSString, NSValue;
 
 @interface IBDeviceAdaptation : NSObject <NSCopying>
 {
     IBDeviceOrientation *_orientation;
     IBDeviceLayout *_layout;
     IBDeviceAppearance *_appearance;
+    IBDeviceRenderMode *_renderMode;
     IBDeviceConfiguration *_deviceConfiguration;
     IBMemberConfiguration *_memberConfiguration;
     NSBundle *_bundle;
@@ -25,7 +26,7 @@
     struct CGSize _size;
 }
 
-+ (id)adaptationWithSubtype:(id)arg1 orientation:(id)arg2 layout:(id)arg3 layoutParameter:(id)arg4 appearance:(id)arg5;
++ (id)adaptationWithSubtype:(id)arg1 orientation:(id)arg2 layout:(id)arg3 layoutParameter:(id)arg4 appearance:(id)arg5 renderMode:(id)arg6;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) NSValue *displayOrderSize; // @synthesize displayOrderSize=_displayOrderSize;
 @property(readonly, nonatomic) double drawingSkewAdjustment; // @synthesize drawingSkewAdjustment=_drawingSkewAdjustment;
@@ -35,6 +36,7 @@
 @property(readonly, nonatomic) struct CGSize size; // @synthesize size=_size;
 @property(readonly, nonatomic) IBMemberConfiguration *memberConfiguration; // @synthesize memberConfiguration=_memberConfiguration;
 @property(readonly, nonatomic) IBDeviceConfiguration *deviceConfiguration; // @synthesize deviceConfiguration=_deviceConfiguration;
+@property(readonly, nonatomic) IBDeviceRenderMode *renderMode; // @synthesize renderMode=_renderMode;
 @property(readonly, nonatomic) IBDeviceAppearance *appearance; // @synthesize appearance=_appearance;
 @property(readonly, nonatomic) IBDeviceLayout *layout; // @synthesize layout=_layout;
 @property(readonly, nonatomic) IBDeviceOrientation *orientation; // @synthesize orientation=_orientation;
@@ -43,7 +45,7 @@
 @property(readonly, nonatomic) IBDeviceSubtype *subtype;
 - (struct CGSize)effectiveDisplayOrderSize;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)initWithSubtype:(id)arg1 orientation:(id)arg2 layout:(id)arg3 appearance:(id)arg4 memberConfiguration:(id)arg5 size:(struct CGSize)arg6 displayOrderSize:(id)arg7 bundle:(id)arg8 imageName:(id)arg9 legacySimulatedMetricsIdentifier:(id)arg10 drawingSkewAdjustment:(double)arg11;
+- (id)initWithSubtype:(id)arg1 orientation:(id)arg2 layout:(id)arg3 appearance:(id)arg4 renderMode:(id)arg5 memberConfiguration:(id)arg6 size:(struct CGSize)arg7 displayOrderSize:(id)arg8 bundle:(id)arg9 imageName:(id)arg10 legacySimulatedMetricsIdentifier:(id)arg11 drawingSkewAdjustment:(double)arg12;
 
 @end
 

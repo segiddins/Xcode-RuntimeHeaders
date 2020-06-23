@@ -24,6 +24,7 @@
     BOOL _dontActuallyRunCommands;
     BOOL _skipUnavailableActions;
     BOOL _quieterOutput;
+    BOOL _mergeImport;
     BOOL _runSkippedTestsOnly;
     BOOL _disableConcurrentTesting;
     BOOL _disableAutomaticPackageResolution;
@@ -105,6 +106,8 @@
     NSArray *_templateRequiredOptions;
     NSString *_clonedSourcePackagesDirPath;
     NSArray *_xcrootPaths;
+    NSNumber *_traceCollectionEnabled;
+    NSDictionary *_performanceTestConfiguration;
     DVTMacroDefinitionTable *_synthesizedMacros;
     DVTMacroDefinitionTable *_macrosFromCommandLine;
     DVTMacroDefinitionTable *_macrosFromXcconfigOption;
@@ -161,6 +164,8 @@
 @property(retain) DVTMacroDefinitionTable *macrosFromXcconfigOption; // @synthesize macrosFromXcconfigOption=_macrosFromXcconfigOption;
 @property(retain) DVTMacroDefinitionTable *macrosFromCommandLine; // @synthesize macrosFromCommandLine=_macrosFromCommandLine;
 @property(retain) DVTMacroDefinitionTable *synthesizedMacros; // @synthesize synthesizedMacros=_synthesizedMacros;
+@property(retain) NSDictionary *performanceTestConfiguration; // @synthesize performanceTestConfiguration=_performanceTestConfiguration;
+@property(retain) NSNumber *traceCollectionEnabled; // @synthesize traceCollectionEnabled=_traceCollectionEnabled;
 @property(retain) NSArray *xcrootPaths; // @synthesize xcrootPaths=_xcrootPaths;
 @property BOOL collectBuildTimeStatistics; // @synthesize collectBuildTimeStatistics=_collectBuildTimeStatistics;
 @property BOOL usePackageSupportBuiltinSCM; // @synthesize usePackageSupportBuiltinSCM=_usePackageSupportBuiltinSCM;
@@ -192,6 +197,7 @@
 @property(retain) NSString *addressSanitizerEnabled; // @synthesize addressSanitizerEnabled=_addressSanitizerEnabled;
 @property(retain) NSString *localizableStringsDataEnabled; // @synthesize localizableStringsDataEnabled=_localizableStringsDataEnabled;
 @property(retain) NSString *codeCoverageEnabled; // @synthesize codeCoverageEnabled=_codeCoverageEnabled;
+@property BOOL mergeImport; // @synthesize mergeImport=_mergeImport;
 @property(retain) NSArray *exportLanguages; // @synthesize exportLanguages=_exportLanguages;
 @property(retain) NSString *localizationPath; // @synthesize localizationPath=_localizationPath;
 @property BOOL quieterOutput; // @synthesize quieterOutput=_quieterOutput;
@@ -289,9 +295,6 @@
 - (void)_workspace:(id)arg1 failedToResolveContainerForProjectFile:(id)arg2;
 - (void)_resolveInputOptionsWithTimingSection:(id)arg1;
 - (BOOL)waitForRemoteSourcePackagesToFinishLoading;
-- (id)_availableDestinationsDescriptionForDestinations:(id)arg1 scheme:(id)arg2;
-- (id)_unavailableRunDestinationsInDestinations:(id)arg1;
-- (id)_remainingUnavailableRunDestinationsAfterWaitingForDestinationsToBecomeAvailable:(id)arg1;
 - (BOOL)_shouldSkipRunDestinationValidation;
 - (void)_resolveRunDestinationsForBuildAction:(id)arg1;
 - (void)_resolveBaseSdk;

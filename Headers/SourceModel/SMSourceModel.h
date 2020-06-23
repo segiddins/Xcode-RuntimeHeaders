@@ -11,7 +11,7 @@
 
 @interface SMSourceModel : NSObject
 {
-    id <SMSourceBufferProvider> _sourceBufferProvider;
+    NSObject<SMSourceBufferProvider> *_sourceBufferProvider;
     CharStream *_inputStream;
     SourceScanner *_scanner;
     struct _NSRange _dirtyRange;
@@ -35,10 +35,13 @@
 - (BOOL)isItemDictionaryLiteral:(id)arg1;
 - (BOOL)isItemObjectLiteral:(id)arg1;
 - (BOOL)isItemForStatement:(id)arg1;
+- (BOOL)isItemContainer:(id)arg1;
 - (BOOL)isItemSemanticBlock:(id)arg1;
+- (BOOL)isItemBraceExpression:(id)arg1;
 - (BOOL)isItemBracketExpression:(id)arg1;
 - (BOOL)isItemAngleExpression:(id)arg1;
 - (BOOL)isItemParenExpression:(id)arg1;
+- (BOOL)isItemExpression:(id)arg1 startingWith:(unsigned short)arg2;
 - (BOOL)isPostfixExpressionAtLocation:(unsigned long long)arg1;
 - (BOOL)isInTokenizableCodeAtLocation:(unsigned long long)arg1;
 - (BOOL)isInPlainCodeAtLocation:(unsigned long long)arg1;
@@ -73,17 +76,20 @@
 - (void)addBlockItemsInTypeList:(long long *)arg1 fromItem:(id)arg2 toArray:(id)arg3;
 - (void)addIdentifierItemsFromItem:(id)arg1 toArray:(id)arg2;
 - (void)addItemsInTypeList:(long long *)arg1 fromItem:(id)arg2 toArray:(id)arg3;
+- (id)semanticItemAtLocation:(unsigned long long)arg1;
 - (id)functionOrMethodDefinitionAtLocation:(unsigned long long)arg1;
 - (id)functionOrMethodAtLocation:(unsigned long long)arg1;
 - (BOOL)isDeclarationOrDefinitionAtLocation:(unsigned long long)arg1;
 - (id)interfaceDeclarationAtLocation:(unsigned long long)arg1;
 - (id)typeDeclarationAtLocation:(unsigned long long)arg1;
+- (id)containersAtLocation:(unsigned long long)arg1;
 - (id)classAtLocation:(unsigned long long)arg1;
 - (struct _NSRange)methodOrFunctionRangeAtRange:(struct _NSRange)arg1;
 - (id)itemNameAtLocation:(unsigned long long)arg1 inTypeList:(long long *)arg2 nameRanges:(id *)arg3 scopeRange:(struct _NSRange *)arg4;
 - (id)nameOfItem:(id)arg1 nameRanges:(id *)arg2 scopeRange:(struct _NSRange *)arg3;
 - (void)enumerateIdentifierItemsInRange:(struct _NSRange)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (void)enumerateItemsUsingBlock:(CDUnknownBlockType)arg1;
+- (id)itemsAtLocation:(unsigned long long)arg1 inTypeList:(long long *)arg2;
 - (id)itemAtLocation:(unsigned long long)arg1 ofType:(id)arg2;
 - (id)itemAtLocation:(unsigned long long)arg1 inTypeList:(long long *)arg2;
 - (id)builtUpNameForItem:(id)arg1 nameRanges:(id *)arg2;

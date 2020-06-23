@@ -24,6 +24,9 @@
 - (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *concurrentRequestQueue; // @synthesize concurrentRequestQueue=_concurrentRequestQueue;
 @property(nonatomic) __weak DTXConnection *connection; // @synthesize connection=_connection;
+- (BOOL)_serveData:(id)arg1 usingChannel:(id)arg2 forRequestIdentifier:(id)arg3 checkForCancellation:(BOOL)arg4 error:(id *)arg5;
+- (void)_completeResponseOnChannel:(id)arg1 withIdentifier:(id)arg2;
+- (id)_bestChannelForRequestWithIdentifier:(id)arg1;
 - (void)registerManifestForApplicationAtPath:(id)arg1 onPort:(unsigned long long)arg2;
 - (void)startServerOnDeviceWithCompletion:(CDUnknownBlockType)arg1;
 - (BOOL)hasCancelledRequestWithIdentifier:(id)arg1 onChannel:(id)arg2;

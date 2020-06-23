@@ -6,14 +6,24 @@
 
 #import <DebuggerUI/DBGViewObjectHierarchyItem.h>
 
-@class DBGWindowControllerObject;
+#import <DebuggerUI/DBGDebugNavigatorContentObjectDataSource-Protocol.h>
 
-@interface DBGWindowControllerHierarchyItem : DBGViewObjectHierarchyItem
+@class DBGWindowControllerObject, NSString;
+
+@interface DBGWindowControllerHierarchyItem : DBGViewObjectHierarchyItem <DBGDebugNavigatorContentObjectDataSource>
 {
 }
 
++ (void)registerTableCellViewsForDebugNavigatorContentDelegateWithOutlineView:(id)arg1;
 - (id)childItemsForCoordinator:(id)arg1;
 @property(readonly) DBGWindowControllerObject *proxiedWindowController;
+- (id)createDebugNavigatorTableCellViewWithContentDelegate:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

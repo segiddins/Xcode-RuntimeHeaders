@@ -52,7 +52,6 @@
 @property(readonly) id <IDESigningEditorProvisionableManagerProvider> provisionableManagerProvider;
 @property(readonly) id <IDEProvisionable> provisionable;
 - (id)protocolConformingProviderForProtocolName:(id)arg1;
-- (void)showLaunchImageAlertForImageName:(id)arg1;
 - (void)pickInfoPlistFile:(id)arg1;
 - (void)_infoPlistPickerPanel:(id)arg1 completedWithResult:(unsigned long long)arg2;
 - (void)configureInfoPlistPickerPanel:(id)arg1;
@@ -65,7 +64,6 @@
 - (void)copyImagesAtFilePaths:(id)arg1 toFilePaths:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (id)targetFilePathForImageName:(id)arg1;
 - (void)setDefaultCodeSigningIdentity;
-- (id)fileReferenceForFileName:(id)arg1;
 - (void)convertToImageTable:(id)arg1;
 - (void)populateAssetCatalogPopUpButton:(id)arg1 forImageType:(int)arg2 includeAssetCatalogOptionMenuItem:(BOOL)arg3 selectedImageSet:(id)arg4;
 - (void)setAssetCatalogValueInPopUpButton:(id)arg1 forImageType:(int)arg2;
@@ -136,7 +134,6 @@
 - (void)selectLocations:(id)arg1;
 - (id)embeddedBinariesViewController;
 @property(readonly, nonatomic) id <IDETargetEditorBundleIdentifierSource> targetEditorBundleIdentifierSource;
-- (void)loadView;
 - (void)_refreshEditor:(id)arg1;
 - (Class)targetSummaryEditorClass;
 @property(readonly) DVTPlatform *platform;

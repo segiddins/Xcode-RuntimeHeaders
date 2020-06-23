@@ -7,8 +7,10 @@
 #import <AppKit/NSMenu.h>
 
 @interface NSMenu (IDEKit)
-+ (id)ide_subMenuForSettingEnabledAtTestLocation:(id)arg1 testPlan:(id)arg2 enabledStates:(id)arg3 customizationBlock:(CDUnknownBlockType)arg4;
-+ (id)ide_subMenuForProfilingAtTestLocation:(id)arg1 testPlan:(id)arg2 canProfileTestLocation:(CDUnknownBlockType)arg3 customizationBlock:(CDUnknownBlockType)arg4;
-+ (id)ide_subMenuForTestingAtTestLocation:(id)arg1 testPlan:(id)arg2 customizationBlock:(CDUnknownBlockType)arg3;
++ (id)ide_subMenuForSettingEnabledTestLocation:(id)arg1 configurations:(id)arg2 enabledStates:(id)arg3 customizationBlock:(CDUnknownBlockType)arg4;
++ (BOOL)ide_shouldPresentSubMenuForProfilingTestCollection:(id)arg1 configurations:(id)arg2 canProfileTestCollection:(CDUnknownBlockType)arg3;
++ (id)ide_subMenuForProfilingTestCollection:(id)arg1 configurations:(id)arg2 canProfileTestCollection:(CDUnknownBlockType)arg3 customizationBlock:(CDUnknownBlockType)arg4;
++ (BOOL)ide_shouldPresentSubMenuForTestingTestCollection:(id)arg1 configurations:(id)arg2;
++ (id)ide_subMenuForTestingTestCollection:(id)arg1 configurations:(id)arg2 customizationBlock:(CDUnknownBlockType)arg3;
 @end
 

@@ -27,8 +27,10 @@
 @property(retain, nonatomic) DYSymbolicator *symbolicator; // @synthesize symbolicator=_symbolicator;
 - (BOOL)hasSymbols;
 - (unsigned int)lineNumber;
+- (id)symbolName;
 - (id)shortFormat;
 - (id)fullFormat;
+- (id)filePath;
 @property(readonly, nonatomic) NSString *ownerPath;
 @property(readonly, nonatomic) NSString *ownerName;
 

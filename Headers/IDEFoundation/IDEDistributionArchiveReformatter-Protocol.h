@@ -4,13 +4,21 @@
 //  Copyright (C) 1997-2019 Steve Nygard.
 //
 
-@class IDEDistributionMethod, NSDictionary, NSString;
+#import <IDEFoundation/NSObject-Protocol.h>
+
+@class DVTFilePath, IDEDistributionMethod, NSArray, NSDictionary, NSString;
 @protocol IDEDistributable;
 
-@protocol IDEDistributionArchiveReformatter
-- (id <IDEDistributable>)reformattedArchive:(id <IDEDistributable>)arg1 distributionMethod:(IDEDistributionMethod *)arg2 error:(id *)arg3;
+@protocol IDEDistributionArchiveReformatter <NSObject>
+- (NSArray *)reformatterWarnings:(IDEDistributionMethod *)arg1 archive:(id <IDEDistributable>)arg2 error:(id *)arg3;
+- (id <IDEDistributable>)reformattedArchive:(id <IDEDistributable>)arg1 distributionMethod:(IDEDistributionMethod *)arg2 temporaryDirectory:(DVTFilePath *)arg3 error:(id *)arg4;
+- (NSString *)targetName:(id <IDEDistributable>)arg1 distributionMethod:(IDEDistributionMethod *)arg2 error:(id *)arg3;
+- (NSString *)targetBundleIdentifier:(id <IDEDistributable>)arg1 distributionMethod:(IDEDistributionMethod *)arg2 error:(id *)arg3;
 - (BOOL)wantsReformattingForArchive:(id <IDEDistributable>)arg1 distributionMethod:(IDEDistributionMethod *)arg2;
 - (BOOL)isAppStoreContainerAppInfoDictionary:(NSDictionary *)arg1;
+- (long long)sortOrder;
+- (NSString *)appTypeDescription;
+- (BOOL)supportsManifestDistribution;
 - (NSString *)inspectablePropertyValueForArchive:(id <IDEDistributable>)arg1;
 - (NSString *)inspectablePropertyName;
 @end

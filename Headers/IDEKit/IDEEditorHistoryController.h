@@ -56,10 +56,9 @@
 @property(readonly) BOOL canSelectBackButton;
 - (BOOL)canSelectButtonGoingForward:(BOOL)arg1;
 - (void)primitiveInvalidate;
-- (void)updateButtonStatesWithEditorContext:(id)arg1;
 - (id)forwardControl;
 - (id)backControl;
-- (void)navigateAwayFromCurrentDocumentWithURL:(id)arg1;
+- (void)navigateAwayFromCurrentDocumentWithURL:(id)arg1 removeHistoryItems:(BOOL)arg2;
 - (id)_lastHistoryItemNotMatchingDocumentURL:(id)arg1 goingForward:(BOOL)arg2;
 - (void)_removeHistoryItemsForDocumentURL:(id)arg1 goingForward:(BOOL)arg2;
 - (BOOL)_goNowhere;

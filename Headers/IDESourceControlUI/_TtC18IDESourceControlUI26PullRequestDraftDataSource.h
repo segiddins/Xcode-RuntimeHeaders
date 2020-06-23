@@ -10,10 +10,10 @@
 
 @interface _TtC18IDESourceControlUI26PullRequestDraftDataSource : NSObject
 {
+    MISSING_TYPE *listenerStore;
     MISSING_TYPE *serializor;
-    MISSING_TYPE *listeners;
     MISSING_TYPE *lock;
-    MISSING_TYPE *logger;
+    MISSING_TYPE *operationManager;
     MISSING_TYPE *draftPullRequestsCaches;
     MISSING_TYPE *didAttemptRestore;
 }

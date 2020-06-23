@@ -6,17 +6,21 @@
 
 #import <AppKit/NSViewController.h>
 
-@class DVTOnboardingTutorialController;
+@class DVTOnboardingTutorialController, NSLayoutConstraint, NSSegmentedControl;
 
 @interface DVTOnboardingPage : NSViewController
 {
+    NSSegmentedControl *deviceSourceSegmentedControl;
+    NSLayoutConstraint *topConstraint;
     DVTOnboardingTutorialController *_tutorialController;
 }
 
 - (void).cxx_destruct;
 @property(retain) DVTOnboardingTutorialController *tutorialController; // @synthesize tutorialController=_tutorialController;
+- (void)selectConnectedVsRemote:(id)arg1;
 - (BOOL)willNavigateToNextPage;
 - (BOOL)readyForNextPage;
+- (void)viewWillAppear;
 
 @end
 
